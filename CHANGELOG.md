@@ -21,6 +21,11 @@ ai-generated: true
 - «Бесплатные» улучшения из анализа рекомендаций команд C и Q:
   fail-closed semantics в `AI_QUICK_RULES.md` и capability taxonomy в
   `AI_GOVERNANCE.md`.
+- RFC стратегии миграции проекта Mango из Хаба в спок
+  (`docs/analysis/migration-strategy-rfc.md`, issue #8): аудит 23 артефактов
+  Хаба по полным URL, фазовая стратегия (Mermaid), edge cases, креативные
+  улучшения и триггеры эволюции. Стоп-фактор: физический перенос — после
+  Human Review.
 
 ### Changed
 
