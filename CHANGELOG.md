@@ -29,4 +29,12 @@ ai-generated: true
 
 ### Changed
 
+- Уточнён RFC стратегии миграции (`docs/analysis/migration-strategy-rfc.md`,
+  issue #10): добавлена таблица файлов Фазы 1, чек-лист нормализации промптов,
+  единый реестр research-зависимостей, корректное разделение
+  `standards/GLOSSARY.md` и `standards/MANGO_CLASSIFICATION_CONTRACT.md`,
+  а также правила переноса продуктовых экспериментов.
+
 ### Removed
+
+- Удалён технический корневой `.gitkeep`, созданный только для bootstrap PR.
