@@ -61,9 +61,9 @@ RFC. Открытые вопросы Q1–Q4 (RFC §7) остаются на р�
 | ID | Название | Приоритет | Зависимости | Статус | Оценка |
 |----|----------|-----------|-------------|--------|--------|
 | M-001 | Переписать README.md спока | P0 | — | TODO | 1ч |
-| M-002 | Создать структуру папок (`prompts/`, `standards/`, `kb/`) | P0 | — | TODO | 30мин |
+| M-002 | Создать базовую структуру папок проекта | P0 | — | TODO | 30мин |
 | M-003 | Скопировать `standards/GLOSSARY.md` из Хаба | P0 | M-002 | TODO | 15мин |
-| M-004 | Перенести и переименовать `classification-glossary` → `standards/MANGO_CLASSIFICATION_CONTRACT.md` | P0 | M-002 | TODO | 30мин |
+| M-004 | Перенести и переименовать `classification-glossary` → `standards/product-classification-contract.md` | P0 | M-002 | TODO | 30мин |
 | M-005 | Перенести эксперименты в `prompts/experiments/` | P0 | M-002 | TODO | 1ч |
 | M-006 | Нормализовать промпты (7 полей frontmatter) | P1 | M-002, M-003, M-004 | TODO | 3ч |
 | M-007 | Создать `docs/hub-research-dependencies.md` | P1 | M-006 | TODO | 1ч |
@@ -96,25 +96,29 @@ RFC. Открытые вопросы Q1–Q4 (RFC §7) остаются на р�
   - [ ] Есть ссылка на `CONTRIBUTING.md` (временный workflow).
 - **Артефакты:** `README.md`
 
-### M-002: Создать структуру папок (`prompts/`, `standards/`, `kb/`)
+### M-002: Создать базовую структуру папок проекта
 
 - **Приоритет:** P0 — **Зависимости:** — — **Оценка:** 30мин
-- **Контекст:** RFC §3.1 (переносим исполняемую ценность + минимальный контекст),
-  §3.2 (целевые артефакты Фазы 1); принцип Anti-Inflation P5 (§1.2).
+- **Контекст:** RFC §3.1, Edge Case E6.
 - **Что сделать:**
-  1. Создать каталог `prompts/` (и `prompts/experiments/`, `prompts/drafts/` —
-     по факту появления первого артефакта в M-005/M-006).
-  2. Создать каталог `standards/` под `GLOSSARY.md` и
-     `MANGO_CLASSIFICATION_CONTRACT.md`.
-  3. Каталог `kb/` уже существует (`kb/glossary.md`) — не дублировать, только
-     убедиться, что он остаётся словарём данных/практик, а не стандартом (E6).
+  1. Создать каталоги: `prompts/`, `prompts/experiments/`, `prompts/archive/`,
+     `standards/`, `kb/`, `docs/`, `docs/adr/`, `docs/audit/`.
+  2. В каждом каталоге создать `.gitkeep` с поясняющим комментарием о
+     назначении.
+  3. **Обработка существующего `kb/glossary.md`:**
+     - Если файл существует — удалить его (будет заменен копией из Хаба в
+       M-003).
+     - Каталог `kb/` сохранить — он предназначен для практик, примеров и
+       справочников, НЕ для глоссария.
+  4. Убедиться, что `standards/` создан как отдельный каталог для стандартов
+     (глоссарий, контракт классификации).
 - **DoD:**
-  - [ ] Каталоги создаются строго под реальные артефакты Фазы 1 (нет пустых
-        каталогов «на вырост», нет перенесённых `.gitkeep` Хаба — §2.3 RFC).
-  - [ ] Целевые пути соответствуют таблице файлов Фазы 1 (RFC §3.2).
-  - [ ] `kb/` не используется как место для стандартов (разделение ролей, E6).
-- **Артефакты:** `prompts/`, `standards/` (создаются вместе с первым файлом
-  соответствующей задачи)
+  - [ ] Все 8 каталогов созданы с `.gitkeep`.
+  - [ ] `kb/glossary.md` удалён (если существовал).
+  - [ ] Каталог `kb/` существует и пуст (готов для будущих практик).
+  - [ ] Каталог `standards/` существует и пуст (готов для M-003 и M-004).
+- **Артефакты:** `prompts/`, `prompts/experiments/`, `prompts/archive/`,
+  `standards/`, `kb/`, `docs/`, `docs/adr/`, `docs/audit/`
 
 ### M-003: Скопировать `standards/GLOSSARY.md` из Хаба
 
@@ -134,26 +138,26 @@ RFC. Открытые вопросы Q1–Q4 (RFC §7) остаются на р�
   - [ ] Файл — словарь терминов; классификация в него не смешивается (E6).
 - **Артефакты:** `standards/GLOSSARY.md`
 
-### M-004: Перенести и переименовать `classification-glossary` → `standards/MANGO_CLASSIFICATION_CONTRACT.md`
+### M-004: Перенести и переименовать `classification-glossary` → `standards/product-classification-contract.md`
 
 - **Приоритет:** P0 — **Зависимости:** M-002 — **Оценка:** 30мин
 - **Контекст:** RFC принцип P4 (§1.2), §2.3 (инвентарь), таблица файлов Фазы 1
   (§3.2); edge cases E2 и E6 / §4.1.
 - **Что сделать:**
   1. Перенести `projects/mango/standards/classification-glossary.md` Хаба в
-     `standards/MANGO_CLASSIFICATION_CONTRACT.md` спока (переименование).
+     `standards/product-classification-contract.md` спока (переименование).
   2. Внутренние ссылки на research заменить на `research_dep`/якоря реестра
      (`docs/hub-research-dependencies.md`, см. M-007 / E1, E8).
   3. Добавить взаимную ссылку на `standards/GLOSSARY.md` («Для значений терминов
      см. …», E6).
   4. Добавить provenance (`source_hub`, `source_sha`).
 - **DoD:**
-  - [ ] Файл размещён как `standards/MANGO_CLASSIFICATION_CONTRACT.md`
+  - [ ] Файл размещён как `standards/product-classification-contract.md`
         (не в `kb/`, не как `glossary`).
   - [ ] Контракт ссылается на `standards/GLOSSARY.md`; слияние не выполнено (E6).
   - [ ] Ссылки на research идут через `research_dep`/реестр, не относительными
         путями (E1).
-- **Артефакты:** `standards/MANGO_CLASSIFICATION_CONTRACT.md`
+- **Артефакты:** `standards/product-classification-contract.md`
 
 ### M-005: Перенести эксперименты в `prompts/experiments/`
 
