@@ -34,6 +34,12 @@ ai-generated: true
   единый реестр research-зависимостей, корректное разделение
   `standards/GLOSSARY.md` и `standards/MANGO_CLASSIFICATION_CONTRACT.md`,
   а также правила переноса продуктовых экспериментов.
+- Завершена доработка RFC (`docs/analysis/migration-strategy-rfc.md`,
+  issue #12, v0.3, блоки 3–8): реестр зависимостей от исследований Хаба (§3.5),
+  переписка README.md как обязательная задача Фазы 1, согласованные формулировки
+  edge cases E5 (все эксперименты — часть продукта) и E6 (разделение
+  глоссария и контракта классификации, §4.1), временный workflow промптов P0
+  для `CONTRIBUTING.md` (§5.2) и шаблон Migration Manifest (§5.3).
 
 ### Removed
 
