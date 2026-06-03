@@ -84,9 +84,9 @@ RFC **закреплены за коммитом** `038868d` Хаба, чтоб�
 последующих изменениях монорепо (см. творческое улучшение C3, §5).
 
 - Корень аудита (tree):
-  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/mango>
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango>
 - Исследования (tree):
-  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango>
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango>
 - Permalink-база для blob-ссылок ниже:
   `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/`
 
@@ -485,6 +485,35 @@ flowchart TD
 
 ---
 
+## §8. Решения фаундера по открытым вопросам (Human Review 2026-06)
+
+### Q1: Source paths Фазы 1
+
+**Решение:** Утверждаю таблицу файлов Фазы 1 из §3.2 как есть. Если имена в
+snapshot отличаются — заменить на подтверждённые Hub-пути перед переносом.
+
+### Q2: Стратегия ссылок на Хаб (C3, E7)
+
+**Решение:** Permalink на SHA (воспроизводимость). Ссылки на `main` запрещены.
+Обновление — через осознанное действие синхронизации.
+
+### Q3: Self-test gate (C2)
+
+**Решение:** Self-test — обязательный критерий пометки промпта «migrated». Без
+прохождения self-test промпт не считается нормализованным.
+
+### Q4: Фазирование
+
+**Решение:** Стандарты, промпты, эксперименты и
+`hub-research-dependencies.md` идут одним PR Фазы 1. Атомарная операция.
+
+---
+
+**Дата утверждения:** 2026-06-04
+**Утверждено:** Иван Гулиенко (фаундер)
+
+---
+
 ## Связанные артефакты
 
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/8>
@@ -494,6 +523,6 @@ flowchart TD
 - Целевые стандарты Фазы 1: `standards/GLOSSARY.md`,
   `standards/product-classification-contract.md`
 - Контракт и правила: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md)
-- Хаб, проект Mango (аудит): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/mango>
-- Хаб, исследования Mango: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango>
-- Хаб, шаблон спока: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/templates/spoke>
+- Хаб, проект Mango (аудит): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango>
+- Хаб, исследования Mango: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango>
+- Хаб, шаблон спока: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/templates/spoke>
