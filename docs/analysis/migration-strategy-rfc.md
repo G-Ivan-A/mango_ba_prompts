@@ -61,7 +61,7 @@ standalone-спок (`mango_ba_prompts`). Базовый геном спока �
 | P1 | **Исследования → остаются в Хабе** | Спок **ссылается** по полному URL, **не копирует** (избегаем дрейфа). |
 | P2 | **Стандарты → source of truth в Хабе, рабочая копия в `standards/` спока** | `standards/GLOSSARY.md` копируется из Хаба; синхронизация — явное действие спока. |
 | P3 | **Промпты → переносим сейчас; матрица/ADR — потом** | Физический перенос промптов; матрицу и ADR — по факту боли. |
-| P4 | **Классификация Mango → контракт, не глоссарий** | Mango-only классификация переносится как `standards/MANGO_CLASSIFICATION_CONTRACT.md`, а не смешивается с `kb/glossary.md`. |
+| P4 | **Классификация Mango → контракт, не глоссарий** | Mango-only классификация переносится как `standards/product-classification-contract.md`, а не смешивается с `kb/glossary.md`. |
 | P5 | **Anti-Inflation** (правило Хаба) | Каталог создаётся только под реальный артефакт, не «на вырост». |
 
 ### 1.3. Цель RFC
@@ -104,7 +104,7 @@ RFC **закреплены за коммитом** `038868d` Хаба, чтоб�
 | Артефакт (полный URL) | Размер | Тип | Что делаем | Обоснование |
 | :--- | :--- | :--- | :--- | :--- |
 | [`README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/README.md) | 13.7 KB | ⚫ Docs | **Не переносим.** Архивная ссылка в манифесте | Написан под монорепо Хаба (`status: canonical, v1.3`); относительные ссылки `../../standards/...`, `../../governance/...` за пределы спока; в споке уже есть свой spoke-README. Перенос дал бы битую навигацию (gap G6 предыдущего RFC). |
-| [`standards/classification-glossary.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/standards/classification-glossary.md) | 13.7 KB | ⚪ Контракт классификации (Mango-only) | **Переименовать + перенести в `standards/` спока** | Это не общий глоссарий, а контракт классификации `Domain → Capability → Feature → Atomic Function`; целевой путь: `standards/MANGO_CLASSIFICATION_CONTRACT.md`. |
+| [`standards/classification-glossary.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/standards/classification-glossary.md) | 13.7 KB | ⚪ Контракт классификации (Mango-only) | **Переименовать + перенести в `standards/` спока** | Это не общий глоссарий, а контракт классификации `Domain → Capability → Feature → Atomic Function`; целевой путь: `standards/product-classification-contract.md`. |
 | [`prompts/tz-stats-generator_exp-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/tz-stats-generator_exp-2026-05.md) | 1.6 KB | 🟢 Промпт | **Переносим** + нормализация | Готовый prompt asset (вариант `_exp`, ссылается на `research/mango/classification.md`). |
 | [`prompts/tz-stats-generator_simple-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/tz-stats-generator_simple-2026-05.md) | 2.6 KB | 🟢 Промпт | **Переносим** + нормализация | Готовый asset (вариант `_simple`, без доступа к репо). |
 | [`prompts/usecase-stepwise-generator_exp-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md) | 1.5 KB | 🟢 Промпт | **Переносим** + нормализация | Ссылается на `research/mango/classification.md` и `kb/glossary.md`. |
@@ -198,7 +198,7 @@ Human Review и оставляет спок в работоспособном с
 - **Зачем**: промпт должен быть исполняемым в споке без hub-относительных путей,
   а исследовательская база должна оставаться в Хабе без дублирования.
 - **Артефакты**: `prompts/*.md`, `prompts/experiments/*.md`,
-  `standards/GLOSSARY.md`, `standards/MANGO_CLASSIFICATION_CONTRACT.md`,
+  `standards/GLOSSARY.md`, `standards/product-classification-contract.md`,
   `docs/hub-research-dependencies.md`, обновлённые `README.md`/`CHANGELOG.md` и
   migration manifest.
 - **Зависимости**: требует Фазы 0.
@@ -212,7 +212,7 @@ Human Review и оставляет спок в работоспособном с
 | `https://.../projects/mango/prompts/*_exp-2026-05.md` | `prompts/<name>.md` | Перенести + нормализовать | Остальные 🟢 артефакты; нормализованные имена фиксируются в manifest. |
 | `https://.../projects/mango/experiments/*` (все 5 экспериментов) | `prompts/experiments/<file>.md` | **Перенести физически** | Все эксперименты — часть продукта (E5), не research Хаба; если фактическое имя в snapshot отличается, заменить на подтверждённый Hub-путь перед переносом. |
 | `https://.../projects/mango/experiments/prompts-selftest-2026-05-26.md` | `prompts/experiments/prompts-selftest-2026-05-26.md` | **Перенести физически** | Acceptance-сценарий для нормализации промптов (self-test gate, C2); не размещать в корневом `experiments/` спока. |
-| `https://.../projects/mango/standards/classification-glossary.md` | `standards/MANGO_CLASSIFICATION_CONTRACT.md` | **Переименовать + перенести в `standards/`** | Это контракт классификации, не глоссарий; путь = `standards/`. Если source в Хабе будет `projects/mango/kb/classification-glossary.md`, целевой путь не меняется. |
+| `https://.../projects/mango/standards/classification-glossary.md` | `standards/product-classification-contract.md` | **Переименовать + перенести в `standards/`** | Это контракт классификации, не глоссарий; путь = `standards/`. Если source в Хабе будет `projects/mango/kb/classification-glossary.md`, целевой путь не меняется. |
 | `https://.../standards/GLOSSARY.md` | `standards/GLOSSARY.md` | **Копировать из Хаба** | Стандарт Хаба, синхронизируется явно; используется в `glossary_ref`. |
 | `https://.../research/mango/*` | `docs/hub-research-dependencies.md#<anchor>` | Только зарегистрировать ссылку | Research не копируется; промпты ссылаются на якорь через `research_dep`. |
 | `https://.../projects/mango/README.md` | `README.md` (обновление навигации спока) | **Не переносить** | README Хаба архивируется в manifest; spoke-README обновляется только ссылками на новые локальные artifacts. |
@@ -244,9 +244,9 @@ Human Review и оставляет спок в работоспособном с
 
 | Anchor | Hub URL | Используется в | Политика |
 | :--- | :--- | :--- | :--- |
-| `#classification` | `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/<sha>/research/mango/classification.md` | `_exp`/canonical prompts, `standards/MANGO_CLASSIFICATION_CONTRACT.md` | Reference only; не копировать. |
+| `#classification` | `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/<sha>/research/mango/classification.md` | `_exp`/canonical prompts, `standards/product-classification-contract.md` | Reference only; не копировать. |
 | `#classification-tz` | `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/<sha>/research/mango/classification-tz.md` | `tz-stats-generator` | Reference only; не копировать. |
-| `#taxonomy-concept` | `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/<sha>/research/mango/taxonomy-concept-2026-05.md` | `standards/MANGO_CLASSIFICATION_CONTRACT.md` | Reference only до canonical-статуса в Хабе. |
+| `#taxonomy-concept` | `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/<sha>/research/mango/taxonomy-concept-2026-05.md` | `standards/product-classification-contract.md` | Reference only до canonical-статуса в Хабе. |
 
 ##### Переписка README.md спока (обязательная задача Фазы 1)
 
@@ -352,11 +352,11 @@ flowchart TD
 | # | Ситуация | Решение | Обоснование |
 | :--- | :--- | :--- | :--- |
 | **E1** | Промпт ссылается на исследование, которое **не переносим** (`_exp`-промпты → `research/mango/classification.md`). | Research URL записать в `docs/hub-research-dependencies.md`, а в промпте оставить `research_dep: docs/hub-research-dependencies.md#classification`. Не копировать исследование, не оставлять относительный путь. | P1: исследования живут в Хабе; единый реестр исключает дублирование длинных URL и делает сверку Фазы 2 машинно-простой. |
-| **E2** | `classification-glossary.md` выглядит как глоссарий, но фактически задаёт Mango-классификацию `Domain → Capability → Feature → Atomic Function`. | Переименовать в `standards/MANGO_CLASSIFICATION_CONTRACT.md`. Внутренние ссылки на research заменить на `research_dep`/якоря реестра. | Это контракт, не `kb`-глоссарий. Размещение в `standards/` совпадает с ролью файла и с принципом P4. |
+| **E2** | `classification-glossary.md` выглядит как глоссарий, но фактически задаёт Mango-классификацию `Domain → Capability → Feature → Atomic Function`. | Переименовать в `standards/product-classification-contract.md`. Внутренние ссылки на research заменить на `research_dep`/якоря реестра. | Это контракт, не `kb`-глоссарий. Размещение в `standards/` совпадает с ролью файла и с принципом P4. |
 | **E3** | Артефакт **не попадает ни в одну категорию** (`projects/mango/README.md` — навигация монорепо). | **Не переносим.** Регистрируем в migration manifest как «архивная ссылка» (archived/reference) с пометкой «заменён spoke-README»; spoke-README обновляем только локальной навигацией Фазы 1. | Перенос дал бы битую навигацию (gap G6). Манифест сохраняет трассируемость: видно, что артефакт **рассмотрен**, а не потерян. |
 | **E4** | Как работать с промптами **пока нет ADR и матрицы**? | Временный workflow (улучшение C5): промпты в `prompts/`, черновики — в `prompts/drafts/` (разрешено без human review по capability boundaries `AI_GOVERNANCE.md`); изменение существующего промпта — через issue→PR→review; матрицу **не вводим**, навигацию держим в spoke-README и manifest. | «Практика первична» (P3). Capability boundaries уже описывают `prompts/drafts/` — используем готовое, не плодим процесс. |
 | **E5** | Эксперименты в `projects/mango/experiments/` — research Хаба или часть продукта? | **Эксперименты = часть продукта.** Все эксперименты переносятся физически в `prompts/experiments/` спока (согласованная формулировка — см. §4.1). | Они не являются исследованиями Хаба; перенос обязателен для сохранения операционной истории проекта. |
-| **E6** | **Глоссарий vs Контракт + путь**: `standards/GLOSSARY.md` (словарь терминов) и `classification-glossary.md` (спецификация классификации) смешиваются по роли и пути. | Разделить роли и пути: `standards/GLOSSARY.md` = словарь; `standards/MANGO_CLASSIFICATION_CONTRACT.md` = контракт классификации (переименование `classification-glossary.md`); взаимные ссылки; слияние запрещено (согласованная формулировка — см. §4.1). | `kb/` остаётся только для данных и практик, не являющихся стандартами; слияние скрывает source of truth. |
+| **E6** | **Глоссарий vs Контракт + путь**: `standards/GLOSSARY.md` (словарь терминов) и `classification-glossary.md` (спецификация классификации) смешиваются по роли и пути. | Разделить роли и пути: `standards/GLOSSARY.md` = словарь; `standards/product-classification-contract.md` = контракт классификации (переименование `classification-glossary.md`); взаимные ссылки; слияние запрещено (согласованная формулировка — см. §4.1). | `kb/` остаётся только для данных и практик, не являющихся стандартами; слияние скрывает source of truth. |
 | **E7** | Исследование или стандарт в Хабе **обновится** после того, как спок сослался на него. | Ссылки в реестре и provenance фиксируем **permalink-ом на SHA** (C3); синхронизация — осознанное действие спока, фиксируется записью в `CHANGELOG.md`/manifest. | P2: «спок решает, когда синхронизировать». Permalink даёт воспроизводимость; обновление становится видимым решением. |
 | **E8** | Несколько промптов зависят от одного research-файла. | Один anchor в `docs/hub-research-dependencies.md`; в каждом промпте только `research_dep` на этот anchor. | Убирает расхождение ссылок между промптами и делает Фазу 2 проверяемой grep/валидатором. |
 
@@ -373,9 +373,9 @@ flowchart TD
 
 > **Разделение ролей и путей:**
 > - `standards/GLOSSARY.md` = словарь терминов (стандарт, копируется из Хаба).
-> - `standards/MANGO_CLASSIFICATION_CONTRACT.md` = спецификация классификации (переименовано из `classification-glossary.md`).
+> - `standards/product-classification-contract.md` = спецификация классификации (переименовано из `classification-glossary.md`).
 > - Контракт ссылается на глоссарий: «Для значений терминов см. `standards/GLOSSARY.md`».
-> - Глоссарий может ссылаться на контракт: «Классификация продуктов: `standards/MANGO_CLASSIFICATION_CONTRACT.md`».
+> - Глоссарий может ссылаться на контракт: «Классификация продуктов: `standards/product-classification-contract.md`».
 > - Слияние запрещено. `kb/` остаётся только для данных и практик, не являющихся стандартами.
 
 ---
@@ -402,7 +402,7 @@ flowchart TD
 | Артефакт (Хаб) | Категория | Действие | Статус | Ссылка/Назначение в споке |
 | -------------- | --------- | -------- | ------ | ------------------------- |
 | prompts/tz-stats-generator_exp-... | 🟢 | migrate+normalize | migrated | prompts/tz-stats-generator.md |
-| standards/classification-glossary.md | ⚪ | rename+copy | migrated | standards/MANGO_CLASSIFICATION_CONTRACT.md |
+| standards/classification-glossary.md | ⚪ | rename+copy | migrated | standards/product-classification-contract.md |
 | standards/GLOSSARY.md | ⚪ | copy+link | migrated | standards/GLOSSARY.md |
 | research/mango/classification.md | 🔵 | register | referenced | docs/hub-research-dependencies.md#classification |
 | projects/mango/README.md | ⚫ | archive | archived | (заменён spoke-README) |
@@ -444,9 +444,9 @@ flowchart TD
 
 | Отложенный артефакт | Почему не сейчас | **Триггер входа** (когда начинать) |
 | :--- | :--- | :--- |
-| **ADR-классификации** (как меняем `MANGO_CLASSIFICATION_CONTRACT.md`) | Целевой контракт уже задан, но правила его будущего изменения преждевременно усложнять. | Когда Unified Capability Taxonomy в Хабе перейдёт из `draft` в `canonical` **или** возникнет повторяющийся спор о классе при нормализации промптов. |
+| **ADR-классификации** (как меняем `product-classification-contract.md`) | Целевой контракт уже задан, но правила его будущего изменения преждевременно усложнять. | Когда Unified Capability Taxonomy в Хабе перейдёт из `draft` в `canonical` **или** возникнет повторяющийся спор о классе при нормализации промптов. |
 | **Матрица промптов** | 6 промптов навигируются README/manifest без матрицы; матрица «на вырост» (P5). | Когда число промптов/вариантов превысит обозримое в README **или** появятся повторяющиеся ошибки выбора нужного варианта. |
-| **Расширение `MANGO_CLASSIFICATION_CONTRACT.md` до стандарта вне Mango** | Сейчас контракт Mango-only; расширение за границы проекта нарушило бы scope Фазы 1. | Когда классификация согласована в Хабе как общий стандарт **и** спок ощутит боль рассинхрона рабочей копии. |
+| **Расширение `product-classification-contract.md` до стандарта вне Mango** | Сейчас контракт Mango-only; расширение за границы проекта нарушило бы scope Фазы 1. | Когда классификация согласована в Хабе как общий стандарт **и** спок ощутит боль рассинхрона рабочей копии. |
 | **Валидатор frontmatter промптов** (вкл. `temperature`, `output_format`, `glossary_ref`, `research_dep`) | Tooling-улучшение, не блокирует миграцию. | Когда ручная сверка чек-листа Фазы 1 станет узким местом (≥ повторных промахов по обязательным полям/ссылкам). |
 
 **Общий принцип триггера**: следующая фаза эволюции запускается **фактом боли**
@@ -475,7 +475,7 @@ flowchart TD
 
 Решения, уже зафиксированные issue #10 и не требующие повторного выбора:
 `classification-glossary.md` переносится как
-`standards/MANGO_CLASSIFICATION_CONTRACT.md`; общий глоссарий Хаба копируется в
+`standards/product-classification-contract.md`; общий глоссарий Хаба копируется в
 `standards/GLOSSARY.md`; research остаётся в Хабе и регистрируется в
 `docs/hub-research-dependencies.md`.
 
@@ -492,7 +492,7 @@ flowchart TD
 - Предыдущий RFC (bootstrap + черновой план): [`docs/audit/initial-state-2026-06.md`](../audit/initial-state-2026-06.md)
 - Локальный глоссарий спока: [`kb/glossary.md`](../../kb/glossary.md)
 - Целевые стандарты Фазы 1: `standards/GLOSSARY.md`,
-  `standards/MANGO_CLASSIFICATION_CONTRACT.md`
+  `standards/product-classification-contract.md`
 - Контракт и правила: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md)
 - Хаб, проект Mango (аудит): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/projects/mango>
 - Хаб, исследования Mango: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/research/mango>
