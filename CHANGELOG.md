@@ -32,8 +32,13 @@ ai-generated: true
 - Уточнён RFC стратегии миграции (`docs/analysis/migration-strategy-rfc.md`,
   issue #10): добавлена таблица файлов Фазы 1, чек-лист нормализации промптов,
   единый реестр research-зависимостей, корректное разделение
-  `standards/GLOSSARY.md` и `standards/MANGO_CLASSIFICATION_CONTRACT.md`,
+  `standards/GLOSSARY.md` и `standards/product-classification-contract.md`,
   а также правила переноса продуктовых экспериментов.
+- Зафиксированы решения фаундера по Q1–Q4 в RFC миграции
+  (`docs/analysis/migration-strategy-rfc.md`, issue #21): таблица Фазы 1
+  утверждена, Hub-ссылки должны быть permalink на SHA, self-test стал
+  обязательным gate для статуса `migrated`, а стандарты, промпты, эксперименты и
+  `hub-research-dependencies.md` идут одним PR Фазы 1.
 - Завершена доработка RFC (`docs/analysis/migration-strategy-rfc.md`,
   issue #12, v0.3, блоки 3–8): реестр зависимостей от исследований Хаба (§3.5),
   переписка README.md как обязательная задача Фазы 1, согласованные формулировки
