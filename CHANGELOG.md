@@ -18,6 +18,10 @@ ai-generated: true
 - Создан базовый каркас каталогов Фазы 1 (`prompts/`,
   `prompts/experiments/`, `prompts/archive/`, `standards/`, `kb/`, `docs/`,
   `docs/adr/`, `docs/audit/`) с поясняющими `.gitkeep`-файлами для M-002.
+- Скопирован `standards/GLOSSARY.md` из Хаба для M-003: файл закреплён за
+  permalink на SHA `038868dd125b4e2d849ff73604890f1d2787ac0f`, содержит
+  `source_hub`/`source_sha` и фиксирует, что source of truth остаётся в Хабе,
+  а синхронизация выполняется явным действием спока.
 
 ### Added — Initial repository structure based on hybrid-Intelligence-lab templates
 
@@ -82,4 +86,6 @@ ai-generated: true
 - Удалён `kb/glossary.md`: каталог `kb/` сохранён для практик, примеров и
   справочников; глоссарий будет заменён стандартом `standards/GLOSSARY.md` в
   M-003.
+- Удалён placeholder `standards/.gitkeep`: каталог `standards/` теперь содержит
+  реальный стандарт `standards/GLOSSARY.md`.
 - Удалён технический корневой `.gitkeep`, созданный только для bootstrap PR.
