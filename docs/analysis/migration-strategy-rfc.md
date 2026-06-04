@@ -519,7 +519,7 @@ snapshot отличаются — заменить на подтверждённ
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/8>
 - Refinement issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/10>
 - Предыдущий RFC (bootstrap + черновой план): [`docs/audit/initial-state-2026-06.md`](../audit/initial-state-2026-06.md)
-- Локальный глоссарий спока: [`kb/glossary.md`](../../kb/glossary.md)
+- Целевой глоссарий спока: `standards/GLOSSARY.md` (M-003)
 - Целевые стандарты Фазы 1: `standards/GLOSSARY.md`,
   `standards/product-classification-contract.md`
 - Контракт и правила: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md)
