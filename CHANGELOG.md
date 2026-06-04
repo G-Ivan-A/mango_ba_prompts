@@ -35,6 +35,10 @@ ai-generated: true
 
 ### Changed
 
+- Добавлен временный workflow создания промптов в `CONTRIBUTING.md` (issue #35,
+  M-008): ровно 5 шагов `draft → frontmatter → marker → prompt:review →
+  canonical`, capability boundary `prompts/drafts/` и минимальный пример
+  frontmatter для черновика без введения матрицы или ADR-процесса.
 - Переписан корневой `README.md` под standalone-спок (issue #28, M-001, v2.0):
   README теперь описывает `mango_ba_prompts` как **библиотеку промптов для
   бизнес-аналитиков** (ТЗ-статистика, use-case, user story), а не как базу

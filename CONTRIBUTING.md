@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-02
+updated: 2026-06-04
 ai-generated: true
 ---
 
@@ -19,6 +19,35 @@ traceability и практическую полезность для hybrid huma
    unrelated restructuring. Связывайте PR с issue.
 3. **Review.** Финальные решения по vision, publication и merge остаются за
    человеком согласно [AI_GOVERNANCE.md](AI_GOVERNANCE.md).
+
+## Временный workflow промптов
+
+До появления ADR это единственный разрешённый способ создания новых промптов в
+споке. Workflow опирается на capability boundary `prompts/drafts/` и не вводит
+матрицу решений или дополнительный ADR-процесс.
+
+1. **Draft.** Создать файл в `prompts/drafts/` с именем
+   `[biz-process]-[purpose].md`.
+2. **Frontmatter.** Добавить обязательный frontmatter: `status: draft`,
+   `version: 0.1`, `updated: {{date}}`, `temperature: 0.1`.
+3. **Experimental marker.** Добавить комментарий
+   `<!-- Experimental: for [task/link], no formal research yet -->`.
+4. **Review issue.** Создать issue `prompt:review` с бизнес-контекстом.
+5. **Canonical promotion.** После human review переместить файл в `prompts/`,
+   обновить `status: canonical`, `version: 1.0`.
+
+Минимальный черновик:
+
+```markdown
+---
+status: draft
+version: 0.1
+updated: {{date}}
+temperature: 0.1
+---
+
+<!-- Experimental: for [task/link], no formal research yet -->
+```
 
 ## AI-Assisted Work
 
