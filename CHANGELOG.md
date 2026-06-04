@@ -25,6 +25,11 @@ ai-generated: true
 
 ### Added — Phase 1 migration scaffold
 
+- Перенесены 5 продуктовых экспериментов Mango из зафиксированного snapshot
+  Хаба (`038868dd125b4e2d849ff73604890f1d2787ac0f`) в
+  `prompts/experiments/` для M-005: прототип ТЗ-статистики, stepwise alignment
+  use-case генератора, генератор user story из raw request, аудит промптов и
+  self-test сценарий `prompts-selftest-2026-05-26.md`.
 - Создан базовый каркас каталогов Фазы 1 (`prompts/`,
   `prompts/experiments/`, `prompts/archive/`, `standards/`, `kb/`, `docs/`,
   `docs/adr/`, `docs/audit/`) с поясняющими `.gitkeep`-файлами для M-002.
