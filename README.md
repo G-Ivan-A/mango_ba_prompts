@@ -66,6 +66,23 @@ ai-generated: true
 
 | Путь | Роль |
 | --- | --- |
+| `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, capability taxonomy, DoD. |
+| `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента (включая fail-closed semantics). |
+| `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
+| `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
+| `LICENSE` | Лицензия проекта (MIT). |
+| `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
+| `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
+| `prompts/experiments/` | Продуктовые эксперименты и self-test сценарии для промптов. |
+| `prompts/archive/` | Архивные версии промптов и устаревшие варианты. |
+| `standards/` | Стандарты проекта: глоссарий и контракт классификации. |
+| `kb/` | Практики, примеры и справочники, не являющиеся стандартами. |
+| `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
+| `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
+| `docs/analysis/` | RFC и аналитические отчёты (например, стратегия миграции из Хаба). |
+
+Базовые каталоги Фазы 1 созданы для миграции по M-002. Содержательные артефакты
+переносятся отдельными задачами M-003…M-009.
 | `standards/GLOSSARY.md` | Словарь терминов (рабочая копия общего глоссария Хаба). |
 | `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Atomic Function`. Это спецификация, **не** глоссарий. |
 
@@ -89,12 +106,13 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Нужно понять | Куда идти |
 | --- | --- |
 | Что за проект и зачем он существует | Этот `README.md` |
+| Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
+| Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
+| Где появятся стандарты и глоссарий | `standards/` |
+| Почему проект связан с лабораторией | Раздел [«Связь с Хабом»](#-связь-с-хабом) |
 | Как вносить вклад (временный workflow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
-| Какие термины использовать | [`kb/glossary.md`](kb/glossary.md) |
-| Какие стандарты действуют | `standards/` |
-| На какие исследования Хаба опираемся | `docs/hub-research-dependencies.md` (единый реестр) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |
 
 ## 👥 Контакты и ответственные

@@ -13,6 +13,12 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Phase 1 migration scaffold
+
+- Создан базовый каркас каталогов Фазы 1 (`prompts/`,
+  `prompts/experiments/`, `prompts/archive/`, `standards/`, `kb/`, `docs/`,
+  `docs/adr/`, `docs/audit/`) с поясняющими `.gitkeep`-файлами для M-002.
+
 ### Added — Initial repository structure based on hybrid-Intelligence-lab templates
 
 - Инициализация спока `mango_ba_prompts` из «ДНК-шаблона» Хаба
@@ -73,4 +79,7 @@ ai-generated: true
 
 ### Removed
 
+- Удалён `kb/glossary.md`: каталог `kb/` сохранён для практик, примеров и
+  справочников; глоссарий будет заменён стандартом `standards/GLOSSARY.md` в
+  M-003.
 - Удалён технический корневой `.gitkeep`, созданный только для bootstrap PR.
