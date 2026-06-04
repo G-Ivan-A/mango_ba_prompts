@@ -35,6 +35,13 @@ ai-generated: true
 
 ### Changed
 
+- Переписан корневой `README.md` под standalone-спок (issue #28, M-001, v2.0):
+  README теперь описывает `mango_ba_prompts` как **библиотеку промптов для
+  бизнес-аналитиков** (ТЗ-статистика, use-case, user story), а не как базу
+  знаний. Добавлены quickstart по чтению frontmatter промптов, структура
+  `prompts/` и `standards/`, навигация на `CONTRIBUTING.md` и контакты/роли.
+  Удалены унаследованные из «ДНК-шаблона» Хаба прямые и hub-относительные
+  ссылки; единственный мост в Хаб — через `docs/hub-research-dependencies.md`.
 - Уточнён RFC стратегии миграции (`docs/analysis/migration-strategy-rfc.md`,
   issue #10): добавлена таблица файлов Фазы 1, чек-лист нормализации промптов,
   единый реестр research-зависимостей, корректное разделение
