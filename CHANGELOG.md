@@ -55,6 +55,14 @@ ai-generated: true
   приоритетами, зависимостями, DoD и трассировкой на разделы утверждённого RFC,
   плюс Mermaid-диаграмма критического пути. Бэклог = один файл (Anti-Inflation);
   выполнение задач не начато.
+- Материализован бэклог Фазы 1 в 9 готовых к созданию GitHub Issues
+  (`governance/migration-phase1-issues.md`, issue #23): каждый пункт M-001…M-009
+  оформлен по стандарту Хаба `ISSUE_WORKFLOW.md` (шаблон `task.yml`) с явным
+  Operating Mode (`Creative`/`Structured`), приоритетом, зависимостями, DoD,
+  трассировкой на RFC/бэклог и полными permalink-ссылками на Хаб (SHA
+  `038868dd…`, решение Q2). Live-Issues создаёт человек при ревью (среда
+  AI-агента имеет только `pull`-доступ; создание Issues — fail-closed,
+  outward-facing). Сами задачи бэклога не выполняются.
 
 ### Removed
 
