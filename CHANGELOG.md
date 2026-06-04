@@ -13,6 +13,16 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — M-004 product classification contract
+
+- Перенесён Mango-only контракт классификации из Хаба в
+  `standards/product-classification-contract.md` (переименование из
+  `projects/mango/standards/classification-glossary.md`, snapshot
+  `038868dd125b4e2d849ff73604890f1d2787ac0f`). Контракт отделён от
+  `standards/GLOSSARY.md`, содержит provenance (`source_hub`, `source_sha`) и
+  использует `research_dep`-якоря будущего реестра
+  `docs/hub-research-dependencies.md` вместо Hub-relative research-ссылок.
+
 ### Added — Phase 1 migration scaffold
 
 - Создан базовый каркас каталогов Фазы 1 (`prompts/`,
