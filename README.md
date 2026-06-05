@@ -114,6 +114,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |
+| Снимок миграции из Хаба (что перенесено / осталось / архивировано) | [`governance/migration-manifest.md`](governance/migration-manifest.md) |
 
 ## 👥 Контакты и ответственные
 
