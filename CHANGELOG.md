@@ -24,6 +24,18 @@ ai-generated: true
   `not-migrated` (P5). Все ссылки на Хаб закреплены permalink-ом на snapshot
   `038868dd125b4e2d849ff73604890f1d2787ac0f` (C3). Манифест ведётся по ходу
   Фаз 0–3 и закрывается в Фазе 3.
+### Added — M-007 hub research dependency registry
+
+- Создан единый реестр зависимостей от research Хаба
+  `docs/hub-research-dependencies.md` (заголовок «Реестр зависимостей от
+  исследований Хаба»). Файл-дубль `hub-research-links.md` не создаётся
+  (запрет RFC §3.5).
+- Заведены якоря на каждый артефакт `research/mango/*` (`#classification`,
+  `#classification-tz`, `#taxonomy-concept`, `#requirements-flow`,
+  `#requirements-lifecycle`, `#capability-decomposition`, `#rag-mapping`,
+  `#research-readme`) с полным permalink на SHA
+  `038868dd125b4e2d849ff73604890f1d2787ac0f` и списком consumers. Промпты и
+  контракт классификации резолвят `research_dep` через эти якоря (E1, E8).
 
 ### Added — M-006 prompt frontmatter normalization
 
