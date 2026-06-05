@@ -13,6 +13,20 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — M-006 prompt frontmatter normalization
+
+- Перенесены и нормализованы 6 prompt assets Mango в `prompts/`:
+  `tz-stats-generator.md`, `tz-stats-generator-simple.md`,
+  `user-story-generator.md`, `user-story-generator-simple.md`,
+  `usecase-stepwise-generator.md` и `usecase-stepwise-generator-simple.md`.
+  Каждый файл получил 7 обязательных frontmatter-полей, provenance
+  (`source_hub`, `source_sha`, `based_on`), явные настройки запуска
+  (`temperature: 0.1`, `output_format: markdown`) и отметку
+  `migration_status: migrated` после self-test gate.
+- Для `_exp`/canonical-вариантов добавлен явный раздел «ФОРМАТ ВЫВОДА»; для
+  standalone `_simple`-вариантов с `research_dep: none` добавлен комментарий о
+  бизнес-задаче и отсутствии формальной research-зависимости.
+
 ### Added — M-004 product classification contract
 
 - Перенесён Mango-only контракт классификации из Хаба в
@@ -105,6 +119,8 @@ ai-generated: true
 - Удалён `kb/glossary.md`: каталог `kb/` сохранён для практик, примеров и
   справочников; глоссарий будет заменён стандартом `standards/GLOSSARY.md` в
   M-003.
+- Удалён placeholder `prompts/.gitkeep`: каталог `prompts/` теперь содержит
+  реальные нормализованные prompt assets.
 - Удалён placeholder `standards/.gitkeep`: каталог `standards/` теперь содержит
   реальный стандарт `standards/GLOSSARY.md`.
 - Удалён технический корневой `.gitkeep`, созданный только для bootstrap PR.
