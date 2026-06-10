@@ -13,7 +13,7 @@ source_sha: "117e4a553815af9b05d841c81dd725dd4a4c4d44"
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
 > Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
 > отдельно: локально — [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md),
-> канонически — в Хабе ([governance/agent-onboarding-protocol.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/governance/agent-onboarding-protocol.md)).
+> канонически — в Хабе ([governance/agent-onboarding-protocol.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md)).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
 > Я как ИИ-агент в HTOM-команде Mango BA Prompts должен выполнить готовый Handover
@@ -64,7 +64,7 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 а не только в Хабе.
 
 > **Источник истины — Хаб.** Канонический *Handover Prompt* и полный 4-шаговый
-> протокол живут в Хабе: [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/governance/agent-onboarding-protocol.md)
+> протокол живут в Хабе: [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md)
 > (Хаб `hybrid-Intelligence-lab`, [https://github.com/G-Ivan-A/hybrid-Intelligence-lab](https://github.com/G-Ivan-A/hybrid-Intelligence-lab)). Этот файл — **адаптированная
 > копия шаблона** для удобства HTOM-команды. При расхождении приоритет у хабовой
 > версии; правки вносятся сначала в Хаб, затем переносятся сюда.
@@ -73,7 +73,7 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 `hybrid-Intelligence-lab`), чтобы «доверенность» переносилась в любую HTOM-команду
 без правок. В этой инстанцированной команде он уже подставлен — `mango_ba_prompts`
 (issue #46). Канонический параметризованный шаблон остаётся в Хабе:
-[`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
+[`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
 
 > **Где у HTOM-команды лежат governance-файлы.** Полный 4-шаговый протокол есть
 > локально ([`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md),
@@ -93,5 +93,5 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
   эскалация, DoD.
 - [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
   — локальная адаптированная копия полного 4-шагового протокола онбординга.
-- Хаб [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/governance/agent-onboarding-protocol.md)
+- Хаб [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md)
   — полный 4-шаговый протокол и канонический *Handover Prompt* (источник истины).
