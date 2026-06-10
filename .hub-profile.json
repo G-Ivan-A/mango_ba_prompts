@@ -1,0 +1,9 @@
+{
+  "_comment": "Профиль проекта для Smart Sync (tools/sync-from-hub.sh Хаба, PR #208). Ключи соответствуют тому, что фактически читает клиент Smart Sync: target_type / stack / phase / hub_url / last_sync. Issue #46 предлагал project_type/current_phase — переименованы в target_type/phase ради работоспособности Smart Sync (см. docs/adr/0001-hub-sync-pr208.md). last_sync пуст: первая синхронизация ещё не выполнялась клиентом.",
+  "project_name": "mango_ba_prompts",
+  "target_type": "HTOM",
+  "stack": "python",
+  "phase": 1,
+  "hub_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+  "last_sync": {}
+}

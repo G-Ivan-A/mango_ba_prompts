@@ -13,6 +13,48 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #46 governance sync with Hub (PR #208)
+
+- Создан корневой артефакт онбординга
+  [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) — готовый к
+  копированию *Handover Prompt* для запуска ИИ-агента в новой сессии. Источник —
+  Хаб `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, закреплён permalink-ом на
+  merge-SHA PR #208 `117e4a553815af9b05d841c81dd725dd4a4c4d44`. Плейсхолдеры
+  `{{REPO_NAME}}`/`{{project_name}}`/`{{hub_url}}` инстанцированы под mango; Шаг 1
+  читает реально присутствующие локальные контракты команды, фундаментальные
+  governance-контракты Хаба — по permalink-ам.
+- Создан протокол онбординга
+  [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+  (kebab-case, адаптированная копия канонического протокола Хаба v1.2): семантическое
+  разделение «артефакт ↔ протокол» из PR #208. Раздел Design Rationale сжат,
+  полная история вынесена ссылкой на Хаб.
+- Создан профиль Smart Sync [`.hub-profile.json`](.hub-profile.json) с ключами,
+  которые фактически читает `tools/sync-from-hub.sh` Хаба
+  (`target_type` / `phase` / `stack` / `hub_url` / `last_sync`).
+- Создан [`docs/adr/0001-hub-sync-pr208.md`](docs/adr/0001-hub-sync-pr208.md):
+  ADR фиксирует 8 осознанных отклонений от буквы issue (схема профиля, путь
+  онбординга, терминология HTOM, подстановка `{{REPO_NAME}}`, Anti-Inflation по
+  `tools/`, DoD без валидатора, исправление пути глоссария, permalink-провенанс) и
+  сохранённые mango-специфичные правила.
+- Добавлены строки навигации в [`README.md`](README.md) на оба новых
+  онбординг-файла.
+
+### Changed — sync `AI_GOVERNANCE.md` / `AI_QUICK_RULES.md` from `templates/htom/`
+
+- [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) синхронизирован с Хабом
+  `templates/htom/AI_GOVERNANCE.md` (SHA `117e4a55`): принята терминология
+  **«HTOM-команда»**, добавлен provenance (`source_hub`/`source_sha`). Сохранена
+  mango-специфичная taxonomy **«Capability Boundaries»** (с реальными путями и
+  ссылкой на fail-closed) поверх общей хабовой рубрики. Исправлен стэйл-путь
+  `kb/glossary.md` → `standards/GLOSSARY.md`. Строка DoD про
+  `./tools/validate-repository-structure.sh` заменена на ориентир
+  `docs/audit/initial-state-2026-06.md` (валидатора в mango нет — Anti-Inflation).
+- [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) синхронизирован с Хабом
+  `templates/htom/AI_QUICK_RULES.md` (SHA `117e4a55`): терминология
+  **«HTOM-команда»**, provenance, различение HTOM-команда ↔ spoke-репозиторий.
+  Сохранена явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её
+  свернул), чтобы оставалась резолвимой перекрёстная ссылка из `AI_GOVERNANCE.md`.
+
 ### Added — M-009 migration manifest
 
 - Создан живой снимок миграции `governance/migration-manifest.md` (творческое
