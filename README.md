@@ -113,6 +113,8 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как вносить вклад (временный workflow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
+| Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
+| Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |
 | Снимок миграции из Хаба (что перенесено / осталось / архивировано) | [`governance/migration-manifest.md`](governance/migration-manifest.md) |
 
