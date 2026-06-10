@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #54 миграция прикреплённого файла промптов в `prompts/drafts/`
+
+- Создан [`prompts/drafts/Промпт+для+БА (1).md`](prompts/drafts/) — миграция
+  единственного файла, прикреплённого к issue #54 (`Промпт+для+БА (1).pdf`, СПИСОК
+  ПРОМПТОВ для бизнес-анализа в Телеком SaaS). По правилу issue «один прикреплённый
+  файл = один файл в репозитории» PDF перенесён как один draft без разбиения на
+  отдельные промпты. Текст промптов скопирован из PDF без изменений; добавлены
+  обязательный frontmatter (`status: draft`, `version: 0.1`, `updated: 2026-06-10`,
+  `temperature: 0.1`) и experimental marker `<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->`.
+- Для draft-файла требуется issue `prompt:review` (labels `prompt:review`, `draft`).
+  Создание выполняется мейнтейнером: у автоматизации нет прав `triage`/`push` на
+  upstream для применения labels (заготовка issue приведена в описании PR).
+
 ### Changed — Issue #48 обогащение `AI_SESSION_HANDOVER_PROMPT.md` (роль члена команды и проверка шаблонов)
 
 - [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) дополнен командной
