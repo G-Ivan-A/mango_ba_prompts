@@ -141,5 +141,3 @@ mango (permalink-pinning, отсутствие валидатора структ
   [`.hub-profile.json`](../../.hub-profile.json)
 - Целевая структура (negative check): [`docs/audit/initial-state-2026-06.md`](../audit/initial-state-2026-06.md)
 - Снимок предыдущей миграции: [`governance/migration-manifest.md`](../../governance/migration-manifest.md)
-</content>
-</invoke>
