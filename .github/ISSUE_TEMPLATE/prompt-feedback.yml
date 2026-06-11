@@ -1,0 +1,54 @@
+name: "💬 Фидбек по промпту"
+description: "Быстрый отзыв о работе промпта: 2 обязательных поля, ~1 минута."
+title: "[feedback] "
+labels:
+  - "prompt:feedback"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за фидбек! Обязательны только два первых поля — остальное по желанию.
+
+        ⚠️ **Не вставляйте ссылки на закрытые корпоративные документы** (Confluence, Jira, диски и т. п.).
+        Если нужен пример — вставьте **обезличенный фрагмент текста** прямо сюда.
+
+  - type: input
+    id: prompt_name
+    attributes:
+      label: "Какой промпт"
+      description: "Имя файла из prompts/ — как помните, можно неточно."
+      placeholder: "fr-validation-stepwise"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: result
+    attributes:
+      label: "Результат"
+      options:
+        - "✅ Работает — результат использовал(а) в работе"
+        - "🟡 Частично — пришлось заметно дорабатывать руками"
+        - "❌ Не работает — результат непригоден"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: problems
+    attributes:
+      label: "Что именно не так (отметьте подходящее)"
+      options:
+        - label: "Выдумывает факты или детали (галлюцинации)"
+        - label: "Не тот формат вывода"
+        - label: "Пропускает важные разделы или вопросы"
+        - label: "Слишком многословно, «вода»"
+        - label: "Не учёл мой входной контекст"
+        - label: "Другое (опишу в комментарии)"
+
+  - type: textarea
+    id: details
+    attributes:
+      label: "Комментарий (опционально)"
+      description: "Что ожидали и что получили. Можно вставить обезличенный фрагмент входа/выхода."
+      placeholder: "Ожидал(а) таблицу требований, получил(а) сплошной текст…"
+    validations:
+      required: false

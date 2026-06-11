@@ -13,6 +13,45 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #52 фундамент: концепция, таксономия, RFC Хаба и базовая структура
+
+- Создан [`docs/taxonomy.md`](docs/taxonomy.md) — таксономия **13 когнитивных
+  операций** (9 базовых + 4 расширенных: `impact_analysis`,
+  `reverse_requirements`, `risk_analysis`, `release_readiness`) и **9 процессов
+  БА** с маппингом процессов на операции.
+- Создан [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) — RFC
+  (сознательно **не** ADR) о стратегическом направлении переноса лучших практик
+  спока в Хаб: критерии C1–C5, процесс из 6 шагов, provenance
+  `source_spoke`/`source_sha`.
+- Создан каталог [`patterns/`](patterns/) с README (паттерн = 8 полей:
+  `purpose`, `process_stage`, `context_requirements`, `prompt_template`,
+  `quality_gates`, `examples`, `output_schema`, `governance_rules`); сами
+  паттерны создаются отдельными задачами.
+- Создан [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) —
+  централизованный маппинг процесс ↔ операции ↔ паттерн ↔ промпты
+  (вместо хранения маппинга во frontmatter).
+- Создан [`docs/open-questions/template.md`](docs/open-questions/template.md) —
+  шаблон таблицы открытых вопросов (дата | автор | суть | статус | решение)
+  с правилом автоматической очистки решённых строк Конардом при закрытии
+  связанного issue.
+- Созданы контракты [`standards/prompt-standard.md`](standards/prompt-standard.md)
+  (ровно 4 обязательных поля frontmatter: `status` со значениями
+  `draft`/`canonical`/`archived`, `version`, `updated`, `temperature`;
+  именование `[домен]-[операция]-[режим].md`; RAG-формат ссылок
+  `См. [Глоссарий](standards/GLOSSARY.md)`; фиксация прогонов в
+  `prompts/experiments/`) и
+  [`standards/pattern-standard.md`](standards/pattern-standard.md)
+  (8 обязательных полей паттерна, универсальный `prompt_template`).
+- Создан шаблон issue
+  [`.github/ISSUE_TEMPLATE/prompt-feedback.yml`](.github/ISSUE_TEMPLATE/prompt-feedback.yml)
+  для фидбека БА: 2 обязательных поля (имя промпта + результат), чек-боксы
+  типовых проблем, явный запрет ссылок на закрытые корпоративные документы;
+  label `prompt:feedback` проставляется автоматически.
+- `README.md` (v2.1): добавлен раздел «Стратегия и тактика» (цель —
+  автоматизация БА Mango; тактика — библиотека паттернов и промптов; ссылка
+  на RFC), исправлена повреждённая таблица структуры, таблица frontmatter
+  приведена к 4 обязательным полям, обновлена навигация.
+
 ### Changed — Issue #56 разбиение draft-файла на 23 промпта со стандартизованной схемой именования
 
 - Файл `prompts/drafts/Промпт+для+БА (1).md` (созданный в issue #54 как единый
