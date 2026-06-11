@@ -17,8 +17,10 @@ ai-generated: true
 
 - Файл `prompts/drafts/Промпт+для+БА (1).md` (созданный в issue #54 как единый
   draft) разбит на **23 отдельных промпта** по схеме `[домен]-[операция]-[режим].md`
-  (kebab-case). **18 активных** промптов размещены в [`prompts/`](prompts/)
-  (`status: draft`, `version: 0.1`); **5 архивных** — в
+  (kebab-case). **18 новых** промптов размещены в [`prompts/`](prompts/)
+  (`status: draft`, `version: 0.1`); **5 legacy-промптов из PDF** также размещены
+  в [`prompts/`](prompts/) с суффиксом `-legacy` (`status: draft`, `version: 1.0`),
+  так как продолжают использоваться; **6 старых canonical-промптов** перенесены в
   [`prompts/archive/`](prompts/archive/) с суффиксом `-legacy` (`status: archived`,
   `version: 1.0`). Текст каждого промпта скопирован **дословно** (проверено
   побайтово против исходного среза); добавлены обязательный frontmatter (`status`,
