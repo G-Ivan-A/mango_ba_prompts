@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.0
-updated: 2026-06-04
+version: 2.1
+updated: 2026-06-11
 ai-generated: true
 ---
 
@@ -16,6 +16,19 @@ ai-generated: true
 ценность** (промпты и их рабочий контекст). Фундаментальные исследования
 остаются в Хабе — спок ссылается на них из **одной точки**:
 `docs/hub-research-dependencies.md` (единый реестр research-зависимостей).
+
+## 🧭 Стратегия и тактика
+
+- **Стратегическая цель** — автоматизация процессов бизнес-анализа в Mango.
+- **Тактика** — библиотека **паттернов** ([`patterns/`](patterns/)) и
+  **промптов** ([`prompts/`](prompts/)), организованная таксономией
+  13 когнитивных операций и 9 процессов БА
+  ([`docs/taxonomy.md`](docs/taxonomy.md)); маппинг процесс ↔ паттерн ↔
+  промпт ведётся централизованно в
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md).
+- **Стратегическое направление** — перенос лучших практик в Хаб; процесс и
+  критерии зафиксированы в RFC
+  [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md).
 
 ## 🎯 Что это за библиотека
 
@@ -35,12 +48,18 @@ ai-generated: true
 
    | Поле | Зачем |
    | --- | --- |
-   | `status` / `version` | Зрелость промпта: `canonical` (готов) или `draft`. |
-   | `temperature` | Рекомендуемая температура запуска (обычно `0.1`). |
-   | `output_format` | Ожидаемый формат вывода (обычно `markdown`). |
-   | `glossary_ref` | Словарь терминов: `standards/GLOSSARY.md` или `none`. |
-   | `research_dep` | Ссылка на исследование Хаба — **только** через якорь в `docs/hub-research-dependencies.md`. |
-   | `source_hub` / `source_sha` | Происхождение промпта (provenance): permalink на коммит Хаба. |
+   | `status` | Зрелость: `draft` / `canonical` (готов) / `archived`. **Обязательное.** |
+   | `version` | Версия содержимого. **Обязательное.** |
+   | `updated` | Дата последнего изменения. **Обязательное.** |
+   | `temperature` | Рекомендуемая температура запуска (обычно `0.1`). **Обязательное.** |
+   | `source_hub` / `source_sha` / `based_on` | Происхождение мигрированного промпта (provenance). *Опциональное.* |
+
+   Только 4 поля обязательны ([`standards/prompt-standard.md`](standards/prompt-standard.md)).
+   Маппинг на процессы и паттерны — в
+   [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md),
+   research-зависимости — в
+   [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md):
+   frontmatter ими не перегружается.
 
 3. **Запусти промпт** в своей LLM с указанной температурой и форматом вывода;
    следуй разделу **«ФОРМАТ ВЫВОДА»** внутри промпта.
@@ -58,11 +77,7 @@ ai-generated: true
 | `prompts/experiments/` | Продуктовые эксперименты: источники `based_on` промптов и self-test сценарии, сохраняющие операционную историю. |
 | `prompts/archive/` | Устаревшие промпты, выведенные из активного использования. |
 
-## 📐 Структура `standards/`
-
-`standards/` — рабочие копии стандартов. Source of truth для общих стандартов
-остаётся в Хабе; синхронизация копии — **осознанное** действие спока
-(фиксируется в [`CHANGELOG.md`](CHANGELOG.md)).
+## 📐 Структура репозитория
 
 | Путь | Роль |
 | --- | --- |
@@ -72,24 +87,33 @@ ai-generated: true
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
+| `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
-| `prompts/experiments/` | Продуктовые эксперименты и self-test сценарии для промптов. |
+| `prompts/experiments/` | Продуктовые эксперименты, self-test сценарии и результаты прогонов промптов. |
 | `prompts/archive/` | Архивные версии промптов и устаревшие варианты. |
-| `standards/` | Стандарты проекта: глоссарий и контракт классификации. |
+| `standards/` | Стандарты проекта: глоссарий, контракт классификации, стандарты промпта и паттерна. |
 | `kb/` | Практики, примеры и справочники, не являющиеся стандартами. |
+| `docs/taxonomy.md` | Таксономия: 13 когнитивных операций и 9 процессов БА. |
+| `docs/rfc-hub-integration.md` | RFC: процесс и критерии переноса практик в Хаб. |
+| `docs/ba-processes/` | Индекс процессов БА и центральный маппинг процесс ↔ паттерн ↔ промпт. |
+| `docs/open-questions/` | Открытые вопросы (шаблон с таблицей и правилами очистки). |
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
 | `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
 | `docs/analysis/` | RFC и аналитические отчёты (например, стратегия миграции из Хаба). |
 
-Базовые каталоги Фазы 1 созданы для миграции по M-002. Содержательные артефакты
-переносятся отдельными задачами M-003…M-009.
+`standards/` — рабочие копии стандартов. Source of truth для общих стандартов
+остаётся в Хабе; синхронизация копии — **осознанное** действие спока
+(фиксируется в [`CHANGELOG.md`](CHANGELOG.md)).
+
+| Путь | Роль |
+| --- | --- |
 | `standards/GLOSSARY.md` | Словарь терминов (рабочая копия общего глоссария Хаба). |
 | `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Atomic Function`. Это спецификация, **не** глоссарий. |
+| `standards/prompt-standard.md` | Контракт промпта: 4 обязательных поля frontmatter, именование, RAG-формат ссылок. |
+| `standards/pattern-standard.md` | Контракт паттерна: 8 обязательных полей, универсальный `prompt_template`. |
 
-> ℹ️ `prompts/` и `standards/` наполняются по ходу Фазы 1 миграции
-> (см. [`docs/analysis/migration-strategy-rfc.md`](docs/analysis/migration-strategy-rfc.md)).
-> Каталог появляется **только** под реальный артефакт — спок не носит с собой
-> пустых «органелл» (Anti-Inflation principle).
+> ℹ️ Каталог появляется **только** под реальный артефакт — спок не носит с
+> собой пустых «органелл» (Anti-Inflation principle).
 
 ## 🔗 Связь с Хабом — единственный мост
 
@@ -106,6 +130,11 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Нужно понять | Куда идти |
 | --- | --- |
 | Что за проект и зачем он существует | Этот `README.md` |
+| Таксономия операций и процессов БА | [`docs/taxonomy.md`](docs/taxonomy.md) |
+| Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
+| Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
+| Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
+| Куда записать открытый вопрос | [`docs/open-questions/template.md`](docs/open-questions/template.md) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Где появятся стандарты и глоссарий | `standards/` |
