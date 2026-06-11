@@ -1,16 +1,20 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-11
 ai-generated: true
 type: contract
 scope: patterns
 related_artifacts:
+  - "docs/adr/002-pattern-standard.md"
+  - "docs/adr/001-prompt-standard.md"
   - "standards/prompt-standard.md"
   - "docs/taxonomy.md"
   - "docs/ba-processes/00-index.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/52"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/63"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/64"
 ---
 
 # Стандарт паттерна
@@ -27,12 +31,16 @@ related_issues:
 класса задач БА; его исполняемые реализации живут в `prompts/`
 (см. [prompt-standard.md](prompt-standard.md)).
 
+Архитектурное обоснование стандарта — в
+[ADR-002 (pattern standard)](../docs/adr/002-pattern-standard.md).
+
 ## Обязательства
 
 ### Структура — 8 обязательных полей
 
 1. Паттерн **ДОЛЖЕН** содержать 8 полей — как разделы документа
-   (заголовки `## <поле>`), в этом порядке:
+   `patterns/[operation-name]/README.md` (заголовки `## <поле>`), в этом
+   порядке:
 
    | № | Поле | Содержание |
    | --- | --- | --- |
@@ -55,13 +63,17 @@ related_issues:
 
 ### Именование и жизненный цикл
 
-4. Имя файла **ДОЛЖНО** быть в kebab-case и отражать назначение:
-   `[операция]-[краткое-назначение].md`
-   (например, `validation-ft-completeness.md`).
-5. Новый паттерн **ДОЛЖЕН** проходить issue → PR → human review;
+4. Директория паттерна **ДОЛЖНА** быть в kebab-case и отражать операцию или
+   краткое назначение: `patterns/[operation-name]/`
+   (например, `patterns/ambiguity-elicitation/`,
+   `patterns/gap-analysis/`, `patterns/user-story-generation/`).
+5. Директория паттерна **ДОЛЖНА** содержать `README.md`, `examples/` и
+   **МОЖЕТ** содержать `related/`, если есть связанные артефакты.
+6. Новый паттерн **ДОЛЖЕН** проходить issue → PR → human review;
    `canonical` присваивается после подтверждённого применения
-   (зафиксированный прогон реализующего промпта в `prompts/experiments/`).
-6. Паттерн-кандидат на перенос в Хаб оценивается по критериям
+   (зафиксированный прогон реализующего промпта в `prompts/experiments/`,
+   ручной кейс БА или PR evidence).
+7. Паттерн-кандидат на перенос в Хаб оценивается по критериям
    [docs/rfc-hub-integration.md](../docs/rfc-hub-integration.md) (§3).
 
 ## Критерии соответствия (DoD)
@@ -71,6 +83,8 @@ related_issues:
 - [ ] Примеры обезличены (нет корпоративных данных и закрытых ссылок).
 - [ ] Паттерн отражён в колонке «Паттерн»
       [docs/ba-processes/00-index.md](../docs/ba-processes/00-index.md).
+- [ ] Директория соответствует `patterns/[operation-name]/README.md` и содержит
+      каталог `examples/`.
 
 ## Обоснование
 
@@ -81,3 +95,6 @@ related_issues:
 - **Маппинг вне файла.** Один паттерн → несколько промптов (режимы
   `stepwise`/`oneshot`); хранение связи в одном реестре исключает дрейф
   при добавлении/архивации промптов.
+- **Директория вместо одиночного файла.** Паттерну нужны основной текст,
+  few-shot examples и иногда связанные артефакты. Directory-first layout
+  сохраняет `README.md` компактным и не раздувает верхний уровень `patterns/`.

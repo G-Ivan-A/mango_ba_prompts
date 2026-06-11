@@ -13,6 +13,24 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #64 ADR на стандарт паттернов
+
+- Создан [`docs/adr/002-pattern-standard.md`](docs/adr/002-pattern-standard.md):
+  ADR фиксирует directory-first структуру `patterns/[operation-name]/README.md`,
+  8 обязательных полей паттерна, связь с 13 когнитивными операциями и 9
+  процессами БА, маппинг паттерн ↔ prompt только через
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md),
+  LLM-агностичность `prompt_template`, правила создания новых паттернов,
+  критерии зрелости, semver-версионирование и совместимость с
+  [`docs/adr/001-prompt-standard.md`](docs/adr/001-prompt-standard.md).
+- [`patterns/README.md`](patterns/README.md) и
+  [`standards/pattern-standard.md`](standards/pattern-standard.md) согласованы
+  с ADR: README остаётся краткой справкой, стандарт — операционным контрактом
+  для review.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_64_pattern_adr.py`](experiments/validate_issue_64_pattern_adr.py)
+  для воспроизведения и валидации требований issue #64.
+
 ### Added — Issue #66 экосистема работы БА с графами связей и картой процессов
 
 - Создан [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) — единая карта
@@ -42,6 +60,7 @@ ai-generated: true
   `expert` / `express`, 4 обязательных поля frontmatter, правила именования
   `[домен]-[операция]-[режим].md`, суффиксы `-legacy` / `-v2` / `-alt` и процессы
   `draft` -> `canonical` / архивации. Существующие промпты не изменялись.
+
 ### Changed — Issue #61 Creative-mode governance без архитектурного долга
 
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md)
