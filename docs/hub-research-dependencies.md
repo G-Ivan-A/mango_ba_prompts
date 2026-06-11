@@ -36,13 +36,13 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 
 | Якорь | Hub-файл (permalink на SHA) | Размер | Потребители в споке | Статус синхронизации |
 | :--- | :--- | :--- | :--- | :--- |
-| [`#classification`](#classification) | [`research/mango/classification.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/classification.md) | 122.6 KB | `prompts/tz-stats-generator.md`, `prompts/user-story-generator.md`, `prompts/usecase-stepwise-generator.md`, `standards/product-classification-contract.md` | 🔵 reference-only @ `038868d` |
-| [`#classification-tz`](#classification-tz) | [`research/mango/classification-tz.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/classification-tz.md) | 58.7 KB | `prompts/tz-stats-generator.md` | 🔵 reference-only @ `038868d` |
-| [`#taxonomy-concept`](#taxonomy-concept) | [`research/mango/taxonomy-concept-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/taxonomy-concept-2026-05.md) | 30.8 KB | `standards/product-classification-contract.md` | 🔵 reference-only @ `038868d` (draft до canonical в Хабе) |
-| [`#requirements-flow`](#requirements-flow) | [`research/mango/requirements-flow.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-flow.md) | 47.5 KB | — (зарезервирован) | 🔵 reference-only @ `038868d` |
-| [`#requirements-lifecycle`](#requirements-lifecycle) | [`research/mango/requirements-lifecycle-uncertainty-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-lifecycle-uncertainty-2026-05.md) | 52.8 KB | — (зарезервирован) | 🔵 reference-only @ `038868d` |
-| [`#capability-decomposition`](#capability-decomposition) | [`research/mango/capability-decomposition-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/capability-decomposition-2026-05.md) | 90.1 KB | — (зарезервирован) | 🔵 reference-only @ `038868d` |
-| [`#rag-mapping`](#rag-mapping) | [`research/mango/rag-mapping-roadmap-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/rag-mapping-roadmap-2026-05.md) | 44.8 KB | — (зарезервирован) | 🔵 reference-only @ `038868d` |
+| [`#classification`](#classification) | [`research/mango/classification.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/classification.md) | 122.6 KB | `prompts/tz-stats-generator.md`, `prompts/user-story-generator.md`, `prompts/usecase-stepwise-generator.md`, `standards/product-classification-contract.md`, `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#classification-tz`](#classification-tz) | [`research/mango/classification-tz.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/classification-tz.md) | 58.7 KB | `prompts/tz-stats-generator.md`, `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#taxonomy-concept`](#taxonomy-concept) | [`research/mango/taxonomy-concept-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/taxonomy-concept-2026-05.md) | 30.8 KB | `standards/product-classification-contract.md`, `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` (draft до canonical в Хабе) |
+| [`#requirements-flow`](#requirements-flow) | [`research/mango/requirements-flow.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-flow.md) | 47.5 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#requirements-lifecycle`](#requirements-lifecycle) | [`research/mango/requirements-lifecycle-uncertainty-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-lifecycle-uncertainty-2026-05.md) | 52.8 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#capability-decomposition`](#capability-decomposition) | [`research/mango/capability-decomposition-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/capability-decomposition-2026-05.md) | 90.1 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#rag-mapping`](#rag-mapping) | [`research/mango/rag-mapping-roadmap-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/rag-mapping-roadmap-2026-05.md) | 44.8 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
 | [`#research-readme`](#research-readme) | [`research/mango/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/README.md) | 2.8 KB | — (точка входа по навигации) | 🔵 reference-only @ `038868d` |
 
 > HTML-экспорты `classification.html`, `classification-tz.html`,
@@ -63,6 +63,7 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   - `prompts/user-story-generator.md`
   - `prompts/usecase-stepwise-generator.md`
   - `standards/product-classification-contract.md`
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="classification-tz"></a>
@@ -74,6 +75,7 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   `tz-stats-*`.
 - **Потребители (`research_dep`):**
   - `prompts/tz-stats-generator.md`
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="taxonomy-concept"></a>
@@ -85,6 +87,7 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   контракт классификации. Релевантна триггеру эволюции P4 (RFC §6).
 - **Потребители (`research_dep`):**
   - `standards/product-classification-contract.md`
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only до получения canonical-статуса в Хабе.
 
 <a id="requirements-flow"></a>
@@ -93,7 +96,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-flow.md>
 - **Описание:** flow требований для AI-анализа ТЗ.
-- **Потребители (`research_dep`):** — (зарезервирован для будущих промптов).
+- **Потребители (`research_dep`):**
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="requirements-lifecycle"></a>
@@ -102,7 +106,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-lifecycle-uncertainty-2026-05.md>
 - **Описание:** жизненный цикл требования и обработка неопределённости.
-- **Потребители (`research_dep`):** — (зарезервирован для будущих промптов).
+- **Потребители (`research_dep`):**
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="capability-decomposition"></a>
@@ -111,7 +116,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/capability-decomposition-2026-05.md>
 - **Описание:** справочник атомарных функций пилотных доменов.
-- **Потребители (`research_dep`):** — (зарезервирован для будущих промптов).
+- **Потребители (`research_dep`):**
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="rag-mapping"></a>
@@ -120,7 +126,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/rag-mapping-roadmap-2026-05.md>
 - **Описание:** RAG-навигатор и roadmap автоматизации бизнес-анализа.
-- **Потребители (`research_dep`):** — (зарезервирован для будущих промптов).
+- **Потребители (`research_dep`):**
+  - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
 
 <a id="research-readme"></a>
