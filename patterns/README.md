@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-11
 ai-generated: true
 type: navigation
@@ -13,10 +13,13 @@ type: navigation
 может реализовываться несколькими промптами (например, `stepwise` и
 `oneshot` режимами).
 
+Полное архитектурное решение — [ADR-002 (pattern standard)](../docs/adr/002-pattern-standard.md).
+
 ## Структура паттерна — 8 полей
 
-Каждый паттерн описывается восемью обязательными полями (нормативный
-контракт — [standards/pattern-standard.md](../standards/pattern-standard.md)):
+Каждый паттерн хранится в `patterns/[operation-name]/README.md` и описывается
+восемью обязательными полями (нормативный контракт —
+[standards/pattern-standard.md](../standards/pattern-standard.md)):
 
 | Поле | Содержание |
 | --- | --- |
@@ -29,6 +32,19 @@ type: navigation
 | `output_schema` | Структура ожидаемого результата (разделы, формат). |
 | `governance_rules` | Правила жизненного цикла: review, статусы, ограничения применения. |
 
+## Структура директории
+
+```text
+patterns/
+└── [operation-name]/
+    ├── README.md
+    ├── examples/
+    └── related/
+```
+
+`[operation-name]` — kebab-case slug паттерна, например
+`ambiguity-elicitation`, `gap-analysis`, `user-story-generation`.
+
 ## Правила каталога
 
 - Маппинг **паттерн ↔ промпт** ведётся только в
@@ -36,6 +52,9 @@ type: navigation
   не во frontmatter паттернов или промптов.
 - `prompt_template` пока универсальный: без привязки к конкретной LLM
   и без специализированных вариантов под модели.
+- Если нужна специфичная LLM-реализация, создаётся или обновляется отдельный
+  prompt-файл в `prompts/`, а паттерн не дробится.
 - Сейчас каталог пуст: паттерны создаются отдельными задачами
   (issue → PR → review) после утверждения фундамента
-  (issue [#52](https://github.com/G-Ivan-A/mango_ba_prompts/issues/52)).
+  (issue [#52](https://github.com/G-Ivan-A/mango_ba_prompts/issues/52),
+  ADR [#64](https://github.com/G-Ivan-A/mango_ba_prompts/issues/64)).
