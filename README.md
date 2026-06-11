@@ -25,7 +25,9 @@ ai-generated: true
   13 когнитивных операций и 9 процессов БА
   ([`docs/taxonomy.md`](docs/taxonomy.md)); маппинг процесс ↔ паттерн ↔
   промпт ведётся централизованно в
-  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md).
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md), а
+  граф связей, матрицы, классификации и сценарии запуска — в
+  [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md).
 - **Стратегическое направление** — перенос лучших практик в Хаб; процесс и
   критерии зафиксированы в RFC
   [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md).
@@ -94,6 +96,7 @@ ai-generated: true
 | `standards/` | Стандарты проекта: глоссарий, контракт классификации, стандарты промпта и паттерна. |
 | `kb/` | Практики, примеры и справочники, не являющиеся стандартами. |
 | `docs/taxonomy.md` | Таксономия: 13 когнитивных операций и 9 процессов БА. |
+| `docs/ba-ecosystem.md` | Экосистема работы БА: граф связей, матрицы, процессная карта, классификации, примеры запуска и стратегия перехода к агентам. |
 | `docs/rfc-hub-integration.md` | RFC: процесс и критерии переноса практик в Хаб. |
 | `docs/ba-processes/` | Индекс процессов БА и центральный маппинг процесс ↔ паттерн ↔ промпт. |
 | `docs/open-questions/` | Открытые вопросы (шаблон с таблицей и правилами очистки). |
@@ -131,6 +134,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | --- | --- |
 | Что за проект и зачем он существует | Этот `README.md` |
 | Таксономия операций и процессов БА | [`docs/taxonomy.md`](docs/taxonomy.md) |
+| Как связаны направления, шаблоны, процессы, операции и промпты | [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
