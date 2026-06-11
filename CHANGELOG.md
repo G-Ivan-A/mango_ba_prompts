@@ -21,6 +21,24 @@ ai-generated: true
   `expert` / `express`, 4 обязательных поля frontmatter, правила именования
   `[домен]-[операция]-[режим].md`, суффиксы `-legacy` / `-v2` / `-alt` и процессы
   `draft` -> `canonical` / архивации. Существующие промпты не изменялись.
+### Changed — Issue #61 Creative-mode governance без архитектурного долга
+
+- [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md)
+  и [`CONTRIBUTING.md`](CONTRIBUTING.md) обновлены: `Structured` сохраняет
+  fail-closed semantics, а `Creative` допускает обоснованный обход scope или
+  локального правила, если обход нужен для цели задачи и явно описан в PR.
+- Зафиксирована специфика работы с Конардом: **молчание = согласие** при merge
+  без комментариев; комментарий + ручной перезапуск задачи = итерация в той же
+  ветке PR; close PR = отказ от решения.
+- [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) переформулирован
+  как рекомендательный маршрут передачи практик в Хаб: Хаб — источник лучших
+  практик и обмена опытом, не ограничитель локальных решений `mango_ba_prompts`.
+- Созданы [`docs/task-for-konard-template.md`](docs/task-for-konard-template.md)
+  и [`docs/adr/0003-creative-mode-governance.md`](docs/adr/0003-creative-mode-governance.md):
+  шаблон задачи фиксирует WHAT/WHY без пошагового HOW, ADR описывает практику,
+  примеры было/стало, обоснованные обходы и self-test на кейсе PR #57.
+- [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) обновлён до
+  локального шаблона постановки задач для Конарда.
 
 ### Added — Issue #52 фундамент: концепция, таксономия, RFC Хаба и базовая структура
 
