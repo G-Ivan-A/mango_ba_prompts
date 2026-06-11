@@ -1,5 +1,5 @@
 ---
-status: archived
+status: draft
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1

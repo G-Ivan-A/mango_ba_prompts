@@ -1,5 +1,5 @@
 ---
-status: canonical
+status: archived
 version: 1.0
 updated: 2026-06-04
 ai-generated: true
