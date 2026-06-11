@@ -96,7 +96,7 @@ prompt patterns:
 | Практика | Что берём в стандарт |
 | --- | --- |
 | Christopher Alexander, pattern language | Паттерн описывает повторяющуюся проблему в контексте и ядро решения, которое можно применять много раз без буквального копирования. Источник: https://arl.human.cornell.edu/linked%20docs/Alexander_A_Pattern_Language.pdf |
-| Gang of Four, design patterns | У паттерна должны быть стабильное имя, intent/applicability, consequences и related patterns, чтобы команда использовала общий словарь. Источник: https://dl.acm.org/doi/10.5555/186897 |
+| Gang of Four, design patterns | У паттерна должны быть стабильное имя, intent/applicability, consequences и related patterns, чтобы команда использовала общий словарь. Источник: https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-software-9780201633610 |
 | Prompt Pattern Catalog | Prompt patterns полезны как переносимые способы структурировать взаимодействие с LLM, но конкретный prompt остаётся адаптируемой реализацией. Источник: https://arxiv.org/abs/2302.11382 |
 
 Вывод для Mango: библиотека должна строиться вокруг когнитивных операций и
@@ -511,6 +511,6 @@ python3 experiments/validate_issue_64_pattern_adr.py
 - `docs/taxonomy.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md
 - `docs/ba-processes/00-index.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md
 - `docs/ba-ecosystem.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md
-- GoF design patterns: https://dl.acm.org/doi/10.5555/186897
+- GoF design patterns: https://www.informit.com/store/design-patterns-elements-of-reusable-object-oriented-software-9780201633610
 - Christopher Alexander pattern language: https://arl.human.cornell.edu/linked%20docs/Alexander_A_Pattern_Language.pdf
 - Prompt Pattern Catalog: https://arxiv.org/abs/2302.11382
