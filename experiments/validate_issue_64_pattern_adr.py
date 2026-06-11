@@ -26,8 +26,10 @@ def require_existing_links(text: str, path: str) -> list[str]:
         "patterns/README.md",
         "standards/pattern-standard.md",
         "standards/prompt-standard.md",
+        "docs/adr/001-prompt-standard.md",
         "docs/taxonomy.md",
         "docs/ba-processes/00-index.md",
+        "docs/ba-ecosystem.md",
     ):
         if relative not in text:
             errors.append(f"{path}: missing reference to {relative}")
@@ -91,6 +93,8 @@ def main() -> int:
             "https://github.com/G-Ivan-A/mango_ba_prompts/pull/60",
             "https://github.com/G-Ivan-A/mango_ba_prompts/pull/57",
             "https://github.com/G-Ivan-A/mango_ba_prompts/pull/59",
+            "https://github.com/G-Ivan-A/mango_ba_prompts/pull/69",
+            "https://github.com/G-Ivan-A/mango_ba_prompts/issues/63",
             "https://github.com/G-Ivan-A/mango_ba_prompts/issues/61",
             "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
         )

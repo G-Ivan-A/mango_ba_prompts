@@ -10,9 +10,12 @@ related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/57"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/59"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/60"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/69"
 related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/63"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/61"
 related_artifacts:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/pattern-standard.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md"
@@ -65,6 +68,12 @@ https://github.com/G-Ivan-A/mango_ba_prompts/pull/60
 Связанный стандарт промптов уже зафиксировал, что маппинг паттерн <-> промпт <->
 процесс не живёт во frontmatter промпта:
 https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md
+
+ADR-001 (issue #63) зафиксировал стандарт промптов как архитектурное решение:
+структуры prompt-файлов, режимы `stepwise` / `oneshot` / `legacy`, frontmatter и
+именование. Этот ADR на стандарт паттернов не меняет prompt-контракт, а
+дополняет его слоем аналитических практик:
+https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md
 
 Issue #61 и PR #68 зафиксировали Creative-mode governance: если архитектурная
 практика меняется, решение нужно оформлять как ADR:
@@ -193,18 +202,20 @@ planned gap, потому что каталог `patterns/` пуст до отд
 
 Каждый процесс БА использует один или несколько паттернов. Маппинг ведётся в
 `docs/ba-processes/00-index.md`, не в файлах паттернов и не в prompt-frontmatter.
+Подробные workflow процессов описаны в карте экосистемы:
+https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md
 
 | Процесс БА | Ключевые операции | Примеры паттернов | Существующие prompt-реализации |
 | --- | --- | --- | --- |
-| Формирование ФТ/ТЗ | `ingestion`, `understanding`, `documentation`, `solution_design` | `glossary-context-generation`, `fr-generation`, `fr-validation`, `constraints-generation`, `technical-details-generation` | `asr-ingestion-oneshot.md`, `glossary-context-understanding-stepwise.md`, `glossary-context-understanding-oneshot.md`, `fr-documentation-stepwise.md`, `fr-documentation-oneshot.md`, `constraints-documentation-stepwise.md`, `constraints-documentation-oneshot.md`, `technical-details-solution-design-stepwise.md`, `technical-details-solution-design-oneshot.md` |
-| Валидация ФТ/ТЗ | `validation`, `quality` | `fr-validation`, `requirements-quality-check` | `fr-validation-stepwise.md`, `fr-validation-oneshot.md`, `fr-validation-legacy.md` |
-| Анализ тендерных ТЗ | `ingestion`, `understanding`, `validation`, `risk_analysis` | `tender-intake`, `tender-gap-analysis`, `tender-risk-scan` | Пока нет активных prompt-файлов |
-| Формирование UC/US | `modeling`, `understanding` | `use-case-modeling`, `user-story-generation` | `uc-modeling-stepwise.md`, `uc-modeling-oneshot.md`, `us-modeling-stepwise.md`, `us-modeling-oneshot.md` |
-| Визуализация UML/BPMN | `modeling`, `documentation` | `process-diagram-generation`, `sequence-diagram-generation` | Пока нет активных prompt-файлов |
-| Помощь ПО/ПМ | `understanding`, `documentation` | `meeting-summary`, `customer-question-generation`, `customer-letter-generation` | `meeting-team-documentation-stepwise.md`, `meeting-customer-documentation-stepwise.md`, `questions-customer-understanding-stepwise.md`, `questions-customer-understanding-legacy.md`, `letter-customer-documentation-legacy.md` |
-| Статистика | `quality`, `ingestion` | `requirements-quality-statistics`, `tz-statistics` | Активного prompt-файла нет; legacy-реализации находятся в `prompts/archive/` |
-| Impact Analysis | `impact_analysis`, `reverse_requirements` | `change-impact-map`, `legacy-feature-reconstruction` | Пока нет активных prompt-файлов |
-| Risk Analysis | `risk_analysis`, `release_readiness`, `validation` | `requirements-risk-register`, `release-readiness-check` | Пока нет активных prompt-файлов |
+| Формирование ФТ/ТЗ | `ingestion`, `understanding`, `modeling`, `documentation`, `solution_design`, `validation` | `glossary-context-generation`, `user-story-generation`, `use-case-modeling`, `fr-generation`, `fr-validation`, `constraints-generation`, `technical-details-generation` | `asr-ingestion-oneshot.md`, `glossary-context-understanding-stepwise.md`, `glossary-context-understanding-oneshot.md`, `questions-customer-understanding-stepwise.md`, `questions-customer-understanding-legacy.md`, `us-modeling-stepwise.md`, `us-modeling-oneshot.md`, `uc-modeling-stepwise.md`, `uc-modeling-oneshot.md`, `fr-documentation-stepwise.md`, `fr-documentation-oneshot.md`, `constraints-documentation-stepwise.md`, `constraints-documentation-oneshot.md`, `technical-details-solution-design-stepwise.md`, `technical-details-solution-design-oneshot.md`, `fr-validation-stepwise.md`, `fr-validation-oneshot.md`, `fr-validation-legacy.md` |
+| Валидация ФТ/ТЗ | `validation`, `quality`, `risk_analysis` | `fr-validation`, `requirements-quality-check`, `requirements-risk-scan` | `fr-validation-stepwise.md`, `fr-validation-oneshot.md`, `fr-validation-legacy.md` |
+| Анализ тендерных ТЗ | `ingestion`, `understanding`, `validation`, `risk_analysis`, `quality` | `tender-intake`, `tender-gap-analysis`, `tender-risk-scan`, `tender-quality-check` | `glossary-context-understanding-stepwise.md`, `glossary-context-understanding-oneshot.md`, `questions-customer-understanding-stepwise.md`, `questions-customer-understanding-legacy.md`, `fr-validation-stepwise.md`, `fr-validation-oneshot.md`, `fr-validation-legacy.md` |
+| Формирование UC/US | `understanding`, `modeling`, `validation` | `use-case-modeling`, `user-story-generation`, `scenario-validation` | `uc-modeling-stepwise.md`, `uc-modeling-oneshot.md`, `us-modeling-stepwise.md`, `us-modeling-oneshot.md`, `glossary-context-understanding-stepwise.md`, `glossary-context-understanding-oneshot.md` |
+| Визуализация UML/BPMN | `modeling`, `documentation`, `quality` | `process-diagram-generation`, `sequence-diagram-generation`, `diagram-quality-check` | Пока нет активных prompt-файлов |
+| Помощь ПО/ПМ | `ingestion`, `understanding`, `documentation`, `governance` | `meeting-summary`, `customer-question-generation`, `customer-letter-generation`, `decision-log-generation` | `asr-ingestion-oneshot.md`, `meeting-team-documentation-stepwise.md`, `meeting-customer-documentation-stepwise.md`, `questions-customer-understanding-stepwise.md`, `questions-customer-understanding-legacy.md`, `letter-customer-documentation-legacy.md` |
+| Статистика | `ingestion`, `quality`, `research` | `requirements-quality-statistics`, `tz-statistics`, `metric-research-summary` | Активного prompt-файла нет; legacy-реализации находятся в `prompts/archive/` |
+| Impact Analysis | `reverse_requirements`, `impact_analysis`, `validation`, `governance` | `change-impact-map`, `legacy-feature-reconstruction`, `impact-validation`, `change-decision-log` | Пока нет активных prompt-файлов |
+| Risk Analysis | `risk_analysis`, `release_readiness`, `validation`, `quality` | `requirements-risk-register`, `release-readiness-check`, `risk-validation`, `quality-risk-summary` | Пока нет активных prompt-файлов |
 
 Полные URL существующих prompt-файлов:
 
@@ -486,16 +497,20 @@ python3 experiments/validate_issue_64_pattern_adr.py
 - PR #57: https://github.com/G-Ivan-A/mango_ba_prompts/pull/57
 - PR #59: https://github.com/G-Ivan-A/mango_ba_prompts/pull/59
 - PR #60: https://github.com/G-Ivan-A/mango_ba_prompts/pull/60
+- PR #69: https://github.com/G-Ivan-A/mango_ba_prompts/pull/69
+- Issue #63: https://github.com/G-Ivan-A/mango_ba_prompts/issues/63
 - Issue #61: https://github.com/G-Ivan-A/mango_ba_prompts/issues/61
 - Хаб `hybrid-Intelligence-lab`: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
 - Репозиторий `clarify-engine-ai`: https://github.com/G-Ivan-A/clarify-engine-ai
 - Репозиторий `open-ai.ru`: https://github.com/G-Ivan-A/open-ai.ru
 - Текущий репозиторий `mango_ba_prompts`: https://github.com/G-Ivan-A/mango_ba_prompts
+- `docs/adr/001-prompt-standard.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md
 - `patterns/README.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md
 - `standards/pattern-standard.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/pattern-standard.md
 - `standards/prompt-standard.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md
 - `docs/taxonomy.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md
 - `docs/ba-processes/00-index.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md
+- `docs/ba-ecosystem.md`: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md
 - GoF design patterns: https://dl.acm.org/doi/10.5555/186897
 - Christopher Alexander pattern language: https://arl.human.cornell.edu/linked%20docs/Alexander_A_Pattern_Language.pdf
 - Prompt Pattern Catalog: https://arxiv.org/abs/2302.11382

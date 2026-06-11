@@ -21,7 +21,8 @@ ai-generated: true
   процессами БА, маппинг паттерн ↔ prompt только через
   [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md),
   LLM-агностичность `prompt_template`, правила создания новых паттернов,
-  критерии зрелости и semver-версионирование.
+  критерии зрелости, semver-версионирование и совместимость с
+  [`docs/adr/001-prompt-standard.md`](docs/adr/001-prompt-standard.md).
 - [`patterns/README.md`](patterns/README.md) и
   [`standards/pattern-standard.md`](standards/pattern-standard.md) согласованы
   с ADR: README остаётся краткой справкой, стандарт — операционным контрактом
@@ -29,6 +30,36 @@ ai-generated: true
 - Добавлена локальная проверка
   [`experiments/validate_issue_64_pattern_adr.py`](experiments/validate_issue_64_pattern_adr.py)
   для воспроизведения и валидации требований issue #64.
+
+### Added — Issue #66 экосистема работы БА с графами связей и картой процессов
+
+- Создан [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) — единая карта
+  экосистемы работы БА Mango: методология на основе research Хаба, Mermaid-граф
+  связей, определения сущностей, классификации направлений разработки, стилей и
+  пакетов документов, правила/практики, матрицы процесс ↔ операция ↔ промпт,
+  направление ↔ стиль ↔ шаблон и артефакт ↔ стиль.
+- В документ добавлена подробная карта 9 процессов БА: цель, входы, выходы,
+  workflow по когнитивным операциям, рекомендуемые промпты и known gaps по
+  каждому процессу. Зафиксированы 3 сценария запуска: клиентский заказ,
+  внутренняя доработка продукта и тендерное ТЗ.
+- Описана стратегия перехода от библиотеки промптов к системным промптам с
+  БЗ/RAG, агентам и мультиагентному контуру, включая критерии перехода между
+  уровнями и сохранение human gates.
+- [`README.md`](README.md) и
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) дополнены
+  навигацией на экосистемную карту; реестр
+  [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
+  отмечает новый документ как consumer релевантных research-якорей Хаба.
+- Удалён авто-сгенерированный корневой `.gitkeep`, созданный только для
+  открытия draft PR.
+### Added — Issue #63 ADR стандарта промптов
+
+- Создан [`docs/adr/001-prompt-standard.md`](docs/adr/001-prompt-standard.md):
+  ADR фиксирует две допустимые структуры промптов (Hub-style и Mango BA workflow),
+  токены режимов `stepwise` / `oneshot` / `legacy` с обоснованием отказа от
+  `expert` / `express`, 4 обязательных поля frontmatter, правила именования
+  `[домен]-[операция]-[режим].md`, суффиксы `-legacy` / `-v2` / `-alt` и процессы
+  `draft` -> `canonical` / архивации. Существующие промпты не изменялись.
 
 ### Changed — Issue #61 Creative-mode governance без архитектурного долга
 

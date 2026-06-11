@@ -7,11 +7,13 @@ type: contract
 scope: patterns
 related_artifacts:
   - "docs/adr/002-pattern-standard.md"
+  - "docs/adr/001-prompt-standard.md"
   - "standards/prompt-standard.md"
   - "docs/taxonomy.md"
   - "docs/ba-processes/00-index.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/52"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/63"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/64"
 ---
 
