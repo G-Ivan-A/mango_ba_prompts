@@ -13,6 +13,14 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #63 ADR стандарта промптов
+
+- Создан [`docs/adr/001-prompt-standard.md`](docs/adr/001-prompt-standard.md):
+  ADR фиксирует две допустимые структуры промптов (Hub-style и Mango BA workflow),
+  токены режимов `stepwise` / `oneshot` / `legacy` с обоснованием отказа от
+  `expert` / `express`, 4 обязательных поля frontmatter, правила именования
+  `[домен]-[операция]-[режим].md`, суффиксы `-legacy` / `-v2` / `-alt` и процессы
+  `draft` -> `canonical` / архивации. Существующие промпты не изменялись.
 ### Changed — Issue #61 Creative-mode governance без архитектурного долга
 
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md)
