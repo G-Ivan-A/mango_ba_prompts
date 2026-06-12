@@ -13,6 +13,14 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #65 README для `prompts/`
+
+- Создан [`prompts/README.md`](prompts/README.md): навигация по 23 активным
+  промптам и 6 архивным legacy-файлам, матрица назначение ↔ режим ↔ статус ↔
+  версия ↔ когнитивная операция ↔ процесс БА, описание структур Hub-style и
+  Mango BA workflow, токенов `stepwise` / `oneshot` / `legacy`, процесса
+  отладки и ссылок на таксономию, индекс процессов, стандарты и шаблон фидбека.
+
 ### Added — Issue #64 ADR на стандарт паттернов
 
 - Создан [`docs/adr/002-pattern-standard.md`](docs/adr/002-pattern-standard.md):
