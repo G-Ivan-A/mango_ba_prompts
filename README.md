@@ -42,6 +42,11 @@ ai-generated: true
 
 ## 🚀 Quickstart: как пользоваться промптами
 
+0. **Открой веб-каталог.** GitHub Pages интерфейс живёт в [`site/`](site/) и
+   собирается из Markdown source of truth командой
+   `node scripts/generate-pages-data.mjs`. Данные для браузера лежат в
+   [`site/data/`](site/data/), деплой в `gh-pages` выполняет
+   [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
 1. **Найди промпт.** Активные, готовые к работе ассеты лежат в `prompts/`
    (имена в формате `[biz-process]-[purpose].md`, например
    `prompts/tz-stats-generator.md`).
@@ -92,6 +97,9 @@ ai-generated: true
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
+| `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
+| `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
+| `site/` | Статический интерфейс каталога промптов, дашборда и roadmap. |
 | `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
 | `prompts/experiments/` | Продуктовые эксперименты, self-test сценарии и результаты прогонов промптов. |

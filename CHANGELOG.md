@@ -13,6 +13,29 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #74 GitHub Pages interface
+
+- Создан dependency-free GitHub Pages интерфейс в [`site/`](site/): дашборд
+  фаз внедрения, каталог 23 активных промптов и 6 архивных файлов, OR-фильтры по
+  когнитивным операциям / процессам БА / режимам, поиск и копирование prompt
+  content в буфер.
+- Добавлен генератор [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs):
+  он читает Markdown source of truth (`prompts/*.md`,
+  [`prompts/README.md`](prompts/README.md),
+  [`docs/taxonomy.md`](docs/taxonomy.md),
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md),
+  [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md)) и формирует статические
+  [`site/data/prompts.json`](site/data/prompts.json),
+  [`site/data/stats.json`](site/data/stats.json),
+  [`site/data/roadmap.json`](site/data/roadmap.json).
+- Настроен workflow
+  [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml):
+  при PR выполняется генерация и проверка, при push в `main` артефакт `site/`
+  публикуется в ветку `gh-pages` через `GITHUB_TOKEN`, без PAT и без GitHub API
+  в клиентском коде.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_74_github_pages.py`](experiments/validate_issue_74_github_pages.py)
+  для воспроизведения и валидации требований issue #74.
 ### Added — Issue #76 суммария синхронизации сессий Хаба
 
 - structured: зафиксировать суммарию синхронизации сессий Хаба в
