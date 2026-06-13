@@ -13,6 +13,30 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #78 промпт-суммаризатор сессий БА
+
+- Создан промпт
+  [`prompts/session-debug-documentation-oneshot.md`](prompts/session-debug-documentation-oneshot.md):
+  one-shot суммаризация длинной сессии работы с LLM в структурированное резюме
+  (контекст, ключевые решения с обоснованием, проблемы и обходные пути,
+  применённые промпты, открытые вопросы, следующие шаги). Формат совместим с
+  шаблоном блока суммарии в
+  [`governance/session-digests.md`](governance/session-digests.md).
+- Имя файла приведено к схеме ADR-001 `[домен]-[операция]-[режим].md`
+  (`session-debug` / `documentation` / `oneshot`) вместо запрошенного в issue
+  рабочего названия `session-debug-summarizer.md`, не соответствующего схеме.
+- Промпт добавлен в матрицу
+  [`prompts/README.md`](prompts/README.md) (новый раздел «Отладка и
+  суммаризация сессий», счётчик активных промптов 23 → 24) и в маппинг процесса
+  «Помощь ПО/ПМ»
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md).
+- Добавлен зафиксированный прогон
+  [`prompts/experiments/session-debug-summarizer-2026-06-13.md`](prompts/experiments/session-debug-summarizer-2026-06-13.md),
+  подтверждающий получение структурированного резюме за один запуск.
+- Обновлены контрольные счётчики в
+  [`experiments/validate_issue_74_github_pages.py`](experiments/validate_issue_74_github_pages.py)
+  (24 активных промпта, 30 всего).
+
 ### Added — Issue #74 GitHub Pages interface
 
 - Создан dependency-free GitHub Pages интерфейс в [`site/`](site/): дашборд

@@ -34,10 +34,11 @@ related_issues:
 | Нужно подготовить раздел 7 для разработки | [`technical-details-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md) |
 | Нужно обработать ASR-расшифровку | [`asr-ingestion-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md) |
 | Нужно сделать резюме встречи | [`meeting-customer-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md) или [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) |
+| Нужно суммаризировать длинную сессию работы с LLM | [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) |
 
 ## Матрица промптов
 
-В активной библиотеке сейчас 23 файла в `prompts/`. В архиве дополнительно
+В активной библиотеке сейчас 24 файла в `prompts/`. В архиве дополнительно
 сохранены 6 legacy-файлов в `prompts/archive/` для истории, сравнения и аудита.
 
 ### 1. Формирование ФТ/ТЗ
@@ -83,7 +84,13 @@ related_issues:
 | [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) | Пошагово формирует резюме внутренней встречи команды. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
 | [`letter-customer-documentation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md) | Унаследованный промпт для сопроводительного письма заказчику. | `legacy` | `draft` | `1.0` | `documentation` | Помощь ПО/ПМ |
 
-### 5. Архив: статистика и исторические генераторы
+### 5. Отладка и суммаризация сессий
+
+| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- |
+| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `governance/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+
+### 6. Архив: статистика и исторические генераторы
 
 | Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- |
