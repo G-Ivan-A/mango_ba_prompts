@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mango BA Prompts</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#dashboard" aria-label="Mango BA Prompts">
+        <span class="brand-mark" aria-hidden="true">M</span>
+        <span>
+          <span class="brand-title">Mango BA Prompts</span>
+          <span class="brand-subtitle">каталог промптов</span>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="Разделы">
+        <a href="#dashboard">Дашборд</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-band dashboard-band" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">GitHub Pages</p>
+            <h1 id="dashboard-title">Внедрение промптов, агентов и мультиагентов</h1>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="metrics-grid" id="metrics-grid" aria-live="polite"></div>
+        <div class="phase-lane" id="phase-lane"></div>
+      </section>
+
+      <section class="page-band catalog-band" id="catalog" aria-labelledby="catalog-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Prompt library</p>
+            <h2 id="catalog-title">Каталог</h2>
+          </div>
+          <output class="result-count" id="result-count" aria-live="polite"></output>
+        </div>
+
+        <div class="toolbar">
+          <label class="search-box">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" autocomplete="off" placeholder="Поиск по файлу, назначению, процессу" />
+          </label>
+          <button class="icon-button" id="clear-button" type="button" title="Сбросить поиск и фильтры" aria-label="Сбросить поиск и фильтры">×</button>
+        </div>
+
+        <div class="filters" id="filters-root" aria-label="Фильтры каталога"></div>
+        <div class="prompt-grid" id="prompt-grid"></div>
+      </section>
+
+      <section class="page-band roadmap-band" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Maturity roadmap</p>
+            <h2 id="roadmap-title">Переход от промптов к агентам</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="roadmap-timeline" id="roadmap-levels"></div>
+        <div class="gap-grid" id="roadmap-gaps"></div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js" type="module"></script>
+  </body>
+</html>
