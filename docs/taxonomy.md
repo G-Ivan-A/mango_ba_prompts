@@ -79,7 +79,7 @@ release-цикла.
 ## 3. Правила эволюции таксономии
 
 - Новая операция или процесс добавляется через issue → PR → human review;
-  решение — за фаундером ([AI_GOVERNANCE.md](../AI_GOVERNANCE.md)).
+  решение — за Пользователем ([AI_GOVERNANCE.md](../AI_GOVERNANCE.md)).
 - Переименование операции требует синхронного обновления имён промптов,
   использующих её, и маппинга в
   [docs/ba-processes/00-index.md](ba-processes/00-index.md).

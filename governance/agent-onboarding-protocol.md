@@ -1,18 +1,18 @@
 ---
 status: canonical
 version: 1.2
-updated: 2026-06-10
+updated: 2026-06-13
 ai-generated: true
 executable: true
 entrypoint: true
-source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md"
-source_sha: "117e4a553815af9b05d841c81dd725dd4a4c4d44"
+source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md"
+source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 source_of_truth: "hybrid-Intelligence-lab"
 sync_policy: "explicit spoke sync from pinned Hub commit"
 ---
 
 > 🔁 **Адаптированная копия из Хаба.** Source of truth — канонический протокол в
-> Хабе ([governance/agent-onboarding-protocol.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md),
+> Хабе ([governance/agent-onboarding-protocol.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md),
 > v1.2). Здесь он адаптирован под HTOM-команду `mango_ba_prompts`: ссылки на
 > файлы, которых нет в команде (живут только в Хабе), заменены на permalink'и на
 > `source_sha`; ссылки на глоссарий указывают на локальную рабочую копию
@@ -54,29 +54,82 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 артефактом в [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md).
 Канонический параметризованный шаблон (с плейсхолдером `{{REPO_NAME}}`, по
 умолчанию `hybrid-Intelligence-lab`) остаётся в Хабе:
-[`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
+[`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
 
 ```text
-Ты — ИИ-агент, работающий в чате диалога. Твой Источник контекста — репозиторий
-mango_ba_prompts (модель hub-and-spoke); ты обращаешься к нему, но не «живёшь» в нём.
+Ты — член команды (C, Q, G, D, O), работающий в чате диалога. Твой Источник
+контекста — репозиторий mango_ba_prompts (HTOM-команда, модель hub-and-spoke);
+ты обращаешься к нему, но не «живёшь» в нём. Хаб hybrid-Intelligence-lab —
+источник общих governance-правил и стандартов.
+
+Терминология ролей:
+- Пользователь — человек, который ставит задачу, утверждает решения и передаёт
+  контекст между чатами.
+- Исполнитель — агент или человек, который выполняет конкретную задачу через
+  issue → PR → review. Агент-исполнитель (например, Конард) не ведёт постоянную
+  память между задачами и не использует суммаризацию сессии во время исполнения.
+
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — взлёт (изменение
-файлов) запрещён до моего апрува.
+(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+файлов запрещено до апрува Пользователя.
+
+Контекст чата диалога:
+- Если Пользователь передал summary предыдущего чата, учти его как входной
+  контекст.
+- Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
+  вопросы. Не выдумывай отсутствующий контекст.
+- При старте нового чата сначала проверь индекс governance/session-digests.md.
+  Полные суммарии читай только когда тема релевантна текущей задаче.
+
+Канал взаимодействия с репо:
+- Если у тебя есть доступ к файлам/issue/PR, читай их сам.
+- Если доступа нет, попроси Пользователя вставить нужные фрагменты или дать
+  ссылки.
+- Прямые изменения в репо (файлы, issues, PR, коммиты) выполняются через
+  Исполнителя/Конарда.
+
+Периодическая суммаризация сессии (только при передаче контекста в чат):
+- Этот блок касается ТОЛЬКО внешнего агента в длинном диалоге с Пользователем.
+  Если ты агент-исполнитель задачи (например, Конард), пропусти его: НЕ
+  суммаризируй и не жги токены на это при исполнении задач.
+- Когда диалог становится длинным (порог: ~30 обращений или ~50К токенов),
+  спроси Пользователя, не пора ли суммаризировать сессию для передачи контекста
+  в новый чат. Вопрос инициируешь ты, решение — за Пользователем.
+- При согласии собери суммарию по структуре: Контекст, Решения, Открытые
+  вопросы, Следующие шаги — и предложи сохранить её в
+  governance/session-digests.md через issue → PR → review.
+- При старте нового чата читай сначала индекс governance/session-digests.md,
+  полные суммарии — по необходимости. Не пересказывай контекст из памяти,
+  ссылайся на артефакты репозитория.
 
 Сделай ровно по шагам:
-1. ЧЕК-ЛИСТ GOVERNANCE. Прочитай локальные контракты команды: AI_GOVERNANCE.md,
-   AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Фундаментальные governance-контракты
-   (repo-model, artifact-map, project-structure-inheritance) живут в Хабе — обращайся
-   к ним по ссылке из AI_GOVERNANCE.md, если они нужны для задачи.
-2. ЧЕК-ЛИСТ КОНТЕКСТА. Прочитай текст issue и последние комментарии, README команды
-   и блок «Быстрый контекст», если он есть. Для задач по промптам сверься с
-   AI_QUICK_RULES.md (чек-лист нормализации) и docs/hub-research-dependencies.md.
-3. READBACK. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
+1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+   Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
+   явного основания.
+2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md,
+   AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Если нужны фундаментальные
+   governance-контракты, прочитай их в Хабе: governance/repo-model.md,
+   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   standards/session-handover-standard.md.
+3. Чек-лист контекста. Прочитай текст issue и последние комментарии, текущий PR
+   (если есть), ближайший README и блок «Быстрый контекст», если он есть.
+   Учитывай summary от Пользователя и релевантные записи
+   governance/session-digests.md.
+4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
+   AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
+   и issue template, если они релевантны задаче. Если шаблона нет или ссылка на
+   Хаб сломана — зафиксируй это в Readback как риск.
+5. Формат постановки задач. Не меняй структуру issue и не заполняй пустые поля
+   выдуманными значениями. Operating Mode бери из issue; по умолчанию —
+   Structured. Для задач Конарда используй локальный шаблон
+   docs/task-for-konard-template.md.
+6. Readback. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
    запреты, которые ты понял, (в) релевантные стандарты, (г) план первых
-   действий. Затем задай вопросы по всему, что неоднозначно. Если контекста не
-   хватает — спрашивай, НЕ выдумывай.
-4. СТОП. Остановись и жди моего апрува. Не создавай и не меняй файлы до явного
-   «approve / поехали».
+   действий. Если учитываешь summary или session digest, явно назови источник.
+   Затем задай вопросы по всему, что неоднозначно. Если контекста не хватает —
+   спрашивай, НЕ выдумывай.
+7. Стоп. Остановись и жди апрува Пользователя. Не создавай и не меняй файлы до
+   явного «approve / поехали».
 
 Начни с Шага 1.
 ```
@@ -86,7 +139,7 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 > клон Хаба наследовал протокол «из коробки». Один источник (Хаб) — два места
 > применения: сам Хаб и его HTOM-команды. О разнице между HTOM-командой и
 > spoke-репозиторием см. Хаб
-> [`governance/rfc/htom-vs-spoke-clarification-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/rfc/htom-vs-spoke-clarification-2026-06.md)
+> [`governance/rfc/htom-vs-spoke-clarification-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/rfc/htom-vs-spoke-clarification-2026-06.md)
 > (этот RFC классифицирует `mango_ba_prompts` как HTOM-команду).
 
 ### Часть B. Четырёхшаговый протокол (исполняет Агент)
@@ -107,11 +160,11 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
   единственный мост к Хабу.
 - Фундаментальные governance-контракты живут в Хабе (команда их не дублирует, а
   ссылается — см. `AI_GOVERNANCE.md`): Хаб
-  [`governance/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/repo-model.md)
+  [`governance/repo-model.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/repo-model.md)
   (модель структуры и Anti-Inflation principle),
-  [`governance/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/artifact-map.md)
+  [`governance/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/artifact-map.md)
   (навигация по артефактам),
-  [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/standards/project-structure-inheritance.md)
+  [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/standards/project-structure-inheritance.md)
   (что можно, а что нельзя создавать).
 - Для задач по промптам — [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md)
   (единственный реестр research-зависимостей от Хаба).
@@ -175,7 +228,7 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 > в Хабе, локально лежит синхронизированная копия). Разделение Кейса 1 (этот файл)
 > и [Bootstrap-клонирования](../standards/GLOSSARY.md) (Кейс 2) — в манифесте двух
 > кейсов Хаба:
-> [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/rfc/rfc-two-cases-of-project-initialization.md).
+> [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/rfc/rfc-two-cases-of-project-initialization.md).
 
 ### ⚠️ Что может пойти не так (threat awareness)
 
@@ -197,9 +250,9 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 
 | Куда | Зачем |
 | --- | --- |
-| Хаб [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md) | Канонический протокол (source of truth) и его полный design-rationale. |
-| Хаб [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
-| Хаб [`templates/htom/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить HTOM-команду из «ДНК-шаблона» Хаба. |
+| Хаб [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md) | Канонический протокол (source of truth) и его полный design-rationale. |
+| Хаб [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
+| Хаб [`templates/htom/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить HTOM-команду из «ДНК-шаблона» Хаба. |
 | [`standards/GLOSSARY.md`](../standards/GLOSSARY.md) | Локальная рабочая копия определений терминов протокола (source of truth — в Хабе). |
 
 ## Design Rationale & History
@@ -207,7 +260,7 @@ mango_ba_prompts (модель hub-and-spoke); ты обращаешься к н
 Раздел сохраняет уникальное rationale из утверждённого дизайн-предложения,
 которое предшествовало этому executable-контракту. Полная история решений и
 привязка к ретроспективам Хаба остаются в канонической версии протокола в Хабе
-([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/agent-onboarding-protocol.md));
+([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md));
 ниже — операционно важная выжимка, достаточная, чтобы понять «почему так».
 
 ### Почему предполётный чек-лист и readback

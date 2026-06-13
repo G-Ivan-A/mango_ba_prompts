@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-05
+version: 0.2
+updated: 2026-06-13
 ai-generated: true
 type: research-dependency-registry
 scope: mango_ba_prompts
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
+latest_smart_sync_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 ---
 
@@ -29,6 +30,11 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   обновлении ветки `main` источника.
 - **Reference only.** Содержимое research не копируется в спок ни целиком, ни
   фрагментами; используется только как доказательная база по ссылке.
+- **External knowledge registry — reference-only.** Hub PR #229 добавил Base
+  Registry внешних источников:
+  [`research/external-knowledge/external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md).
+  Для `mango_ba_prompts` он не копируется в локальный `research/`: релевантные
+  строки регистрируются ниже как компактный срез.
 - **HTML-экспорты не регистрируются.** Файлы `*.html` — дубли соответствующих
   `*.md` (RFC §2.5) и якорей-потребителей не получают.
 
@@ -44,6 +50,9 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 | [`#capability-decomposition`](#capability-decomposition) | [`research/mango/capability-decomposition-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/capability-decomposition-2026-05.md) | 90.1 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
 | [`#rag-mapping`](#rag-mapping) | [`research/mango/rag-mapping-roadmap-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/rag-mapping-roadmap-2026-05.md) | 44.8 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
 | [`#research-readme`](#research-readme) | [`research/mango/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/README.md) | 2.8 KB | — (точка входа по навигации) | 🔵 reference-only @ `038868d` |
+| [`#external-sources-registry`](#external-sources-registry) | [`research/external-knowledge/external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | 105 lines | `docs/ba-ecosystem.md`, future requirements-flow pilots | 🔵 reference-only @ `b683341` |
+| [`#external-spec-driven`](#external-spec-driven) | `ext-003` in [`external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | row | future spec-driven requirements experiments | 🔵 reference-only @ `b683341` |
+| [`#external-context-engineering`](#external-context-engineering) | `ext-007` in [`external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | row | context engineering for long BA prompt sessions | 🔵 reference-only @ `b683341` |
 
 > HTML-экспорты `classification.html`, `classification-tz.html`,
 > `requirements-flow.html` присутствуют в Хабе, но **не регистрируются** как
@@ -138,3 +147,37 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 - **Описание:** точка входа по навигации в каталоге `research/mango/`.
 - **Потребители (`research_dep`):** — (используется как навигационная ссылка).
 - **Политика:** reference only; не копировать.
+
+<a id="external-sources-registry"></a>
+
+### `#external-sources-registry` — Base Registry внешних источников
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md>
+- **Описание:** Base Registry из Hub PR #229: карта внешних источников с
+  минимальными метаданными (`id`, тип, теги, stage, проекты, инсайт).
+- **Релевантные строки Mango:** `ext-003` и `ext-007`.
+- **Политика:** reference-only; Base Registry не копируется в локальный
+  `research/`. Local Extension для Mango не создаётся, пока нет отдельной
+  операционной боли и набора локальных источников.
+
+<a id="external-spec-driven"></a>
+
+### `#external-spec-driven` — `ext-003` Spec-Driven Development
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md>
+- **Источник:** `ext-003`, GitHub Spec Kit (Spec-Driven Development).
+- **Релевантность Mango:** гипотеза для требований, executable-spec и будущих
+  экспериментов по ТЗ-flow.
+- **Политика:** reference-only; не копировать первоисточник и не повышать в
+  practice без отдельного issue/PR.
+
+<a id="external-context-engineering"></a>
+
+### `#external-context-engineering` — `ext-007` Контекст-инжиниринг
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md>
+- **Источник:** `ext-007`, Habr: Контекст-инжиниринг для AI-агентов.
+- **Релевантность Mango:** русскоязычная практика context engineering для
+  длинных диалогов, prompt assets и handover/session-digest workflow.
+- **Политика:** reference-only; не копировать первоисточник и не создавать
+  локальный `research/` без отдельного решения Пользователя.
