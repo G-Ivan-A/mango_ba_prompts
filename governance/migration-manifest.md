@@ -183,7 +183,7 @@ Research **не копируется**; спок ссылается через �
 | Дата | Issue | Хаб PR / SHA | Локальные артефакты | Статус |
 | :--- | :--- | :--- | :--- | :--- |
 | 2026-06-13 | [#72](https://github.com/G-Ivan-A/mango_ba_prompts/issues/72) | PR [#224](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/224) + PR [#226](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/226), SHA [`f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b) | [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md), [`governance/agent-onboarding-protocol.md`](agent-onboarding-protocol.md), [`governance/session-digests.md`](session-digests.md), [`governance/artifact-map.md`](artifact-map.md), [`.hub-profile.json`](../.hub-profile.json) | `synced` |
-| 2026-06-13 | [#72](https://github.com/G-Ivan-A/mango_ba_prompts/issues/72) | PR [#229](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/229) + PR [#230](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/230), SHA [`b683341d22d4f518618917a02d9c7c394658b156`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/b683341d22d4f518618917a02d9c7c394658b156) | [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md), [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md), [`CONTRIBUTING.md`](../CONTRIBUTING.md), [`README.md`](../README.md), [`governance/artifact-map.md`](artifact-map.md), [`.hub-profile.json`](../.hub-profile.json) | `synced / reference-only` |
+| 2026-06-13 | [#72](https://github.com/G-Ivan-A/mango_ba_prompts/issues/72) | PR [#229](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/229) + PR [#230](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/230), SHA [`b683341d22d4f518618917a02d9c7c394658b156`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/b683341d22d4f518618917a02d9c7c394658b156) | [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md), [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md), [`CONTRIBUTING.md`](../CONTRIBUTING.md), [`README.md`](../README.md), [`docs/task-for-konard-template.md`](../docs/task-for-konard-template.md), [`docs/adr/0002-issue48-handover-local-enrichment.md`](../docs/adr/0002-issue48-handover-local-enrichment.md), [`docs/adr/0003-creative-mode-governance.md`](../docs/adr/0003-creative-mode-governance.md), [`governance/artifact-map.md`](artifact-map.md), [`.hub-profile.json`](../.hub-profile.json) | `synced / reference-only` |
 
 **Примечание по локальной специфике:** `governance/session-digests.md` создан как
 пустой локальный индекс `mango_ba_prompts`; хабовая первая суммария про
@@ -198,6 +198,9 @@ reference-only, а релевантные для Mango строки `ext-003` и
 Traceability contracts, Framework vs Template и Scope Resolver-а из PR #230
 рассмотрены как Hub-governance контракты и не создают новых локальных артефактов
 без отдельного решения Пользователя.
+Терминологическая часть PR #230 также обновляет связанные task-template, ADR,
+review и migration-era ссылки, чтобы текущий репозиторий использовал единый
+контракт ролей `Пользователь / Исполнитель`.
 
 ## Связанные артефакты
 

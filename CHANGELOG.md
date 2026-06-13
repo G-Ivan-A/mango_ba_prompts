@@ -45,10 +45,11 @@ ai-generated: true
   (Контекст-инжиниринг), без создания локального `research/`.
 - Hub PR #230: терминология активных guidance-файлов выровнена на
   `Пользователь / Исполнитель` в [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
-  [`CONTRIBUTING.md`](CONTRIBUTING.md) и [`README.md`](README.md); traceability
-  contracts, Framework vs Template и Scope Resolver-а задокументированы как
-  Hub-governance контракты, не требующие локальных артефактов в
-  `mango_ba_prompts`.
+  [`CONTRIBUTING.md`](CONTRIBUTING.md), [`README.md`](README.md),
+  [`docs/task-for-konard-template.md`](docs/task-for-konard-template.md) и
+  связанных ADR/исторических ссылках; traceability contracts, Framework vs
+  Template и Scope Resolver-а задокументированы как Hub-governance контракты,
+  не требующие локальных артефактов в `mango_ba_prompts`.
 
 ### Added — Issue #65 README для `prompts/`
 
@@ -184,7 +185,7 @@ ai-generated: true
   `modeling` (User Story §6.1, Use Case §6.2), `ingestion` (пост-обработка ASR §10).
 - **Режимы.** Токены `stepwise` (Экспертный, пошаговое согласование) / `oneshot`
   (Экспресс, one-shot) / `legacy` (архивный) выбраны по результатам международного
-  исследования (Фаундер допустил «другой режим по результатам исследования»):
+  исследования (Пользователь допустил «другой режим по результатам исследования»):
   `expert`/`express` не являются стандартной терминологией, а «expert» коллидирует
   с role-prompting-идиомой «act as an expert»; `stepwise` уже используется в
   репозитории (`usecase-stepwise-generator-simple.md`) и совпадает с формулировками
@@ -366,7 +367,7 @@ ai-generated: true
   единый реестр research-зависимостей, корректное разделение
   `standards/GLOSSARY.md` и `standards/product-classification-contract.md`,
   а также правила переноса продуктовых экспериментов.
-- Зафиксированы решения фаундера по Q1–Q4 в RFC миграции
+- Зафиксированы решения Пользователя по Q1–Q4 в RFC миграции
   (`docs/analysis/migration-strategy-rfc.md`, issue #21): таблица Фазы 1
   утверждена, Hub-ссылки должны быть permalink на SHA, self-test стал
   обязательным gate для статуса `migrated`, а стандарты, промпты, эксперименты и
@@ -381,7 +382,7 @@ ai-generated: true
   (`docs/reviews/migration-rfc-human-review-2026-06.md`, issue #13): сверка
   v0.3 против чек-листа из 11 пунктов (архитектурная целостность, операционная
   готовность, трассируемость) — все пункты пройдены; зафиксированы открытые
-  вопросы Q1–Q4 на решение фаундера перед стартом Фазы 0.
+  вопросы Q1–Q4 на решение Пользователя перед стартом Фазы 0.
 - Сформирован операционный бэклог Фазы 1 миграции
   (`governance/BACKLOG.md`, issue #14): 9 атомарных задач (M-001…M-009) с
   приоритетами, зависимостями, DoD и трассировкой на разделы утверждённого RFC,

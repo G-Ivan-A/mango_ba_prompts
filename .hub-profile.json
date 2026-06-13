@@ -26,9 +26,16 @@
       "governance/artifact-map.md",
       "governance/migration-manifest.md",
       "docs/hub-research-dependencies.md",
+      "docs/task-for-konard-template.md",
+      "docs/adr/0002-issue48-handover-local-enrichment.md",
+      "docs/adr/0003-creative-mode-governance.md",
+      "docs/analysis/migration-strategy-rfc.md",
+      "docs/reviews/migration-rfc-human-review-2026-06.md",
+      "governance/BACKLOG.md",
+      "governance/migration-phase1-issues.md",
       "README.md",
       "CHANGELOG.md"
     ],
-    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
+    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance, task templates, related ADR references, and migration-era references; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
   }
 }

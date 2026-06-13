@@ -43,6 +43,13 @@ def main() -> int:
         "AI_GOVERNANCE.md",
         "CONTRIBUTING.md",
         "docs/hub-research-dependencies.md",
+        "docs/task-for-konard-template.md",
+        "docs/adr/0002-issue48-handover-local-enrichment.md",
+        "docs/adr/0003-creative-mode-governance.md",
+        "docs/analysis/migration-strategy-rfc.md",
+        "docs/reviews/migration-rfc-human-review-2026-06.md",
+        "governance/BACKLOG.md",
+        "governance/migration-phase1-issues.md",
         "README.md",
         "CHANGELOG.md",
     ):
@@ -152,11 +159,39 @@ def main() -> int:
             "governance/session-digests.md",
             "governance/artifact-map.md",
             "docs/hub-research-dependencies.md",
+            "docs/task-for-konard-template.md",
+            "docs/adr/0002-issue48-handover-local-enrichment.md",
+            "docs/adr/0003-creative-mode-governance.md",
+            "docs/analysis/migration-strategy-rfc.md",
+            "docs/reviews/migration-rfc-human-review-2026-06.md",
+            "governance/BACKLOG.md",
+            "governance/migration-phase1-issues.md",
             "AI_GOVERNANCE.md",
             "CONTRIBUTING.md",
         ):
             if path not in synced_paths:
                 errors.append(f".hub-profile.json: synced_paths missing {path}")
+
+        errors += require(
+            "docs/task-for-konard-template.md",
+            "version: 0.2",
+            "updated: 2026-06-13",
+            "Пользователь",
+            "молчание = согласие",
+            "ручной перезапуск",
+        )
+        errors += reject("docs/task-for-konard-template.md", "Фаундер", "Иосполнитель")
+
+        for path in (
+            "docs/adr/0002-issue48-handover-local-enrichment.md",
+            "docs/adr/0003-creative-mode-governance.md",
+            "docs/analysis/migration-strategy-rfc.md",
+            "docs/reviews/migration-rfc-human-review-2026-06.md",
+            "governance/BACKLOG.md",
+            "governance/migration-phase1-issues.md",
+        ):
+            errors += require(path, "Пользовател")
+            errors += reject(path, "Фаундер", "фаундер", "Иосполнитель")
 
         errors += require(
             "README.md",
@@ -176,7 +211,7 @@ def main() -> int:
             "reference-only",
             HUB_SHA,
         )
-        errors += reject("CHANGELOG.md", "Иосполнитель")
+        errors += reject("CHANGELOG.md", "Фаундер", "Иосполнитель")
 
         errors += require(
             "governance/migration-manifest.md",
