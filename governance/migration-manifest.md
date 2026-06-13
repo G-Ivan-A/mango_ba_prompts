@@ -10,6 +10,8 @@ backlog_ref: "governance/BACKLOG.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/36"
 hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 hub_snapshot_ref: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango"
+latest_smart_sync_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
+latest_smart_sync_ref: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 phase: "Фаза 1 (в работе)"
 closed_in_phase: 3
 ---
@@ -172,6 +174,21 @@ Research **не копируется**; спок ссылается через �
 `research/mango/`) + внешний `standards/GLOSSARY.md`. **Недоступных и
 непрослеженных артефактов нет** — манифест показывает, что каждый артефакт
 **рассмотрен**, а не потерян (E3).
+
+## 5. Smart Sync snapshots
+
+Эта секция фиксирует последующие точечные синхронизации governance-генома из
+Хаба после исходной миграции Mango.
+
+| Дата | Issue | Хаб PR / SHA | Локальные артефакты | Статус |
+| :--- | :--- | :--- | :--- | :--- |
+| 2026-06-13 | [#72](https://github.com/G-Ivan-A/mango_ba_prompts/issues/72) | PR [#224](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/224) + PR [#226](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/226), SHA [`f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b) | [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md), [`governance/agent-onboarding-protocol.md`](agent-onboarding-protocol.md), [`governance/session-digests.md`](session-digests.md), [`governance/artifact-map.md`](artifact-map.md), [`.hub-profile.json`](../.hub-profile.json) | `synced` |
+
+**Примечание по локальной специфике:** `governance/session-digests.md` создан как
+пустой локальный индекс `mango_ba_prompts`; хабовая первая суммария про
+архитектуру документации не копировалась как контекст Mango. Handover prompt
+сохраняет локальные правила issue #48/#61 про канал работы через Конарда и
+терминологию Пользователь / Исполнитель.
 
 ## Связанные артефакты
 

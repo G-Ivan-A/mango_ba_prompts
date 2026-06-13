@@ -13,6 +13,29 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #72 Smart Sync последних обновлений Хаба
+
+- [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) синхронизирован
+  с Hub PR #226 (`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, SHA
+  `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`): добавлен механизм периодической
+  суммаризации сессий через `governance/session-digests.md`, сохранены локальные
+  правила issue #48/#61 про канал работы через Конарда и task template.
+- [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+  обновлён по source SHA `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`: встроенный
+  копируемый prompt теперь соответствует handover v0.5 и указывает на
+  `governance/session-digests.md`.
+- Созданы [`governance/session-digests.md`](governance/session-digests.md) как
+  пустой локальный индекс суммарий для `mango_ba_prompts` и
+  [`governance/artifact-map.md`](governance/artifact-map.md) как локальная карта
+  активных артефактов, адаптированная из хабовой карты PR #224/#226.
+- Обновлены [`README.md`](README.md), [`.hub-profile.json`](.hub-profile.json) и
+  [`governance/migration-manifest.md`](governance/migration-manifest.md), чтобы
+  зафиксировать Smart Sync snapshot, source SHA и терминологию
+  Пользователь / Исполнитель.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_72_hub_sync.py`](experiments/validate_issue_72_hub_sync.py)
+  для воспроизведения и валидации требований issue #72.
+
 ### Added — Issue #65 README для `prompts/`
 
 - Создан [`prompts/README.md`](prompts/README.md): навигация по 23 активным

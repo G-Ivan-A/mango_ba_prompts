@@ -1,9 +1,29 @@
 {
-  "_comment": "Профиль проекта для Smart Sync (tools/sync-from-hub.sh Хаба, PR #208). Ключи соответствуют тому, что фактически читает клиент Smart Sync: target_type / stack / phase / hub_url / last_sync. Issue #46 предлагал project_type/current_phase — переименованы в target_type/phase ради работоспособности Smart Sync (см. docs/adr/0001-hub-sync-pr208.md). last_sync пуст: первая синхронизация ещё не выполнялась клиентом.",
+  "_comment": "Профиль проекта для Smart Sync (tools/sync-from-hub.sh Хаба, PR #208). Ключи соответствуют тому, что фактически читает клиент Smart Sync: target_type / stack / phase / hub_url / last_sync. Issue #46 предлагал project_type/current_phase — переименованы в target_type/phase ради работоспособности Smart Sync (см. docs/adr/0001-hub-sync-pr208.md). last_sync фиксирует последний применённый snapshot Хаба.",
   "project_name": "mango_ba_prompts",
   "target_type": "HTOM",
   "stack": "python",
   "phase": 1,
   "hub_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-  "last_sync": {}
+  "last_sync": {
+    "date": "2026-06-13",
+    "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72",
+    "hub_repo": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+    "hub_prs": [
+      224,
+      226
+    ],
+    "hub_sha": "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b",
+    "mode": "Structured Smart Sync",
+    "synced_paths": [
+      "AI_SESSION_HANDOVER_PROMPT.md",
+      "governance/agent-onboarding-protocol.md",
+      "governance/session-digests.md",
+      "governance/artifact-map.md",
+      "governance/migration-manifest.md",
+      "README.md",
+      "CHANGELOG.md"
+    ],
+    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules."
+  }
 }

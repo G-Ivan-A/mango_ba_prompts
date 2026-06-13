@@ -85,9 +85,12 @@ ai-generated: true
 | --- | --- |
 | `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, capability taxonomy, DoD. |
 | `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента (включая fail-closed semantics). |
+| `AI_SESSION_HANDOVER_PROMPT.md` | Готовый prompt для Runtime-онбординга и передачи контекста между чатами. |
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
+| `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
+| `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
@@ -148,6 +151,8 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |
+| Карта активных артефактов и связей | [`governance/artifact-map.md`](governance/artifact-map.md) |
+| Суммарии длинных сессий для передачи контекста | [`governance/session-digests.md`](governance/session-digests.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |
 | Снимок миграции из Хаба (что перенесено / осталось / архивировано) | [`governance/migration-manifest.md`](governance/migration-manifest.md) |
 
