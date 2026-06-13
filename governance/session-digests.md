@@ -51,6 +51,10 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 4. Структура блока: **Контекст**, **Решения**, **Открытые вопросы**,
    **Следующие шаги**. Все ссылки — на артефакты репозитория, не на обсуждения
    в чатах.
+5. Если в суммарии есть открытые вопросы, Исполнитель добавляет их в
+   [`governance/BACKLOG.md`](BACKLOG.md#5-открытые-вопросы), если они ещё не
+   зафиксированы там. Это консолидирует вопросы из разных чатов в единый
+   трекер.
 
 ## Как удалять решённые вопросы (Traceability)
 
@@ -82,7 +86,8 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 
 ### Открытые вопросы
 
-- ...
+- ... (после добавления суммарии перенеси новые вопросы в
+  [`governance/BACKLOG.md`](BACKLOG.md#5-открытые-вопросы), если их там ещё нет)
 
 ### Следующие шаги
 
@@ -93,6 +98,8 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 
 - [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md) — готовый
   prompt с разделом «Периодическая суммаризация сессии».
+- [`governance/BACKLOG.md`](BACKLOG.md#5-открытые-вопросы) — единый трекер
+  открытых вопросов проекта.
 - [`governance/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) —
   Runtime-онбординг; это другой тип передачи контекста.
 - Хаб [`governance/session-digests.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/session-digests.md)

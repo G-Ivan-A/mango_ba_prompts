@@ -95,6 +95,7 @@ ai-generated: true
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
+| `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
@@ -110,7 +111,6 @@ ai-generated: true
 | `docs/ba-ecosystem.md` | Экосистема работы БА: граф связей, матрицы, процессная карта, классификации, примеры запуска и стратегия перехода к агентам. |
 | `docs/rfc-hub-integration.md` | RFC: процесс и критерии переноса практик в Хаб. |
 | `docs/ba-processes/` | Индекс процессов БА и центральный маппинг процесс ↔ паттерн ↔ промпт. |
-| `docs/open-questions/` | Открытые вопросы (шаблон с таблицей и правилами очистки). |
 | `docs/adr/` | Architecture Decision Records — «почему», а не только «что». |
 | `docs/audit/` | Ревизии, аудиты и проверки соответствия. |
 | `docs/analysis/` | RFC и аналитические отчёты (например, стратегия миграции из Хаба). |
@@ -149,7 +149,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
-| Куда записать открытый вопрос | [`docs/open-questions/template.md`](docs/open-questions/template.md) |
+| Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Где появятся стандарты и глоссарий | `standards/` |
