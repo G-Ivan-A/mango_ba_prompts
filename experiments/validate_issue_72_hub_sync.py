@@ -82,7 +82,7 @@ def main() -> int:
             "governance/session-digests.md",
             "# Session Digests — Mango BA Prompts",
             "Индекс",
-            "пока нет",
+            "Шаблон блока суммарии",
             "Пользователь",
             "Исполнитель",
             "агент-исполнитель",

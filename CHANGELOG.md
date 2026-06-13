@@ -36,6 +36,15 @@ ai-generated: true
 - Добавлена локальная проверка
   [`experiments/validate_issue_74_github_pages.py`](experiments/validate_issue_74_github_pages.py)
   для воспроизведения и валидации требований issue #74.
+### Added — Issue #76 суммария синхронизации сессий Хаба
+
+- structured: зафиксировать суммарию синхронизации сессий Хаба в
+  [`governance/session-digests.md`](governance/session-digests.md): добавлены
+  индексная запись `2026-06-14` и блок `#2026-06-14` для передачи контекста
+  между Чатом Хаба и Чатом БА Манго.
+- Локальная проверка [`experiments/validate_issue_72_hub_sync.py`](experiments/validate_issue_72_hub_sync.py)
+  больше не требует пустой индекс `session-digests.md`, так как первая суммария
+  теперь сохранена.
 
 ### Changed — Issue #72 Smart Sync последних обновлений Хаба
 
