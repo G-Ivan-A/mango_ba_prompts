@@ -1,12 +1,13 @@
 #!/usr/bin/env python3
-"""Local regression check for issue #72 Smart Sync from Hub PRs #224/#226."""
+"""Local regression check for issue #72 Smart Sync from Hub PRs #224/#226/#229/#230."""
 
 import json
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-HUB_SHA = "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
+SESSION_HANDOVER_SHA = "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
+HUB_SHA = "b683341d22d4f518618917a02d9c7c394658b156"
 OLD_SHA = "117e4a553815af9b05d841c81dd725dd4a4c4d44"
 
 
@@ -39,6 +40,9 @@ def main() -> int:
         "governance/session-digests.md",
         "governance/artifact-map.md",
         ".hub-profile.json",
+        "AI_GOVERNANCE.md",
+        "CONTRIBUTING.md",
+        "docs/hub-research-dependencies.md",
         "README.md",
         "CHANGELOG.md",
     ):
@@ -48,7 +52,7 @@ def main() -> int:
         errors += require(
             "AI_SESSION_HANDOVER_PROMPT.md",
             "version: 0.5",
-            HUB_SHA,
+            SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
             "governance/session-digests.md",
             "агент-исполнитель",
@@ -59,7 +63,7 @@ def main() -> int:
 
         errors += require(
             "governance/agent-onboarding-protocol.md",
-            HUB_SHA,
+            SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
             "governance/session-digests.md",
             "Пользователь",
@@ -93,21 +97,63 @@ def main() -> int:
             "Пользователь",
             "Исполнитель",
             HUB_SHA,
+            "Hub PR #229",
+            "Hub PR #230",
         )
         errors += reject("governance/artifact-map.md", "Иосполнитель")
+
+        errors += require(
+            "docs/hub-research-dependencies.md",
+            "external-sources-registry.md",
+            "ext-003",
+            "ext-007",
+            "Spec-Driven Development",
+            "Контекст-инжиниринг",
+            HUB_SHA,
+            "reference-only",
+            "не копируется в локальный `research/`",
+        )
+        if (ROOT / "research/external-knowledge/external-sources-registry.md").exists():
+            errors.append("research/external-knowledge/external-sources-registry.md: Base Registry must stay reference-only in mango")
+
+        errors += require(
+            "AI_GOVERNANCE.md",
+            HUB_SHA,
+            "Пользователь",
+            "молчание = согласие",
+            "комментарий + ручной перезапуск",
+            "`research/` Хаба, а не в команду",
+        )
+        errors += reject("AI_GOVERNANCE.md", "Founder & PO", "Фаундер", "Иосполнитель")
+
+        errors += require(
+            "CONTRIBUTING.md",
+            "Пользователь",
+            "молчание = согласие",
+            "ручной перезапуск",
+            "не создают `research/` в споке",
+        )
+        errors += reject("CONTRIBUTING.md", "Фаундер", "Иосполнитель")
 
         profile = json.loads(read(".hub-profile.json"))
         last_sync = profile.get("last_sync", {})
         if last_sync.get("issue") != "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72":
             errors.append(".hub-profile.json: last_sync.issue is not issue #72")
         if last_sync.get("hub_sha") != HUB_SHA:
-            errors.append(".hub-profile.json: last_sync.hub_sha is not PR #226 merge SHA")
+            errors.append(".hub-profile.json: last_sync.hub_sha is not latest Hub main SHA after PR #229/#230")
+        hub_prs = set(last_sync.get("hub_prs", []))
+        for hub_pr in (224, 226, 229, 230):
+            if hub_pr not in hub_prs:
+                errors.append(f".hub-profile.json: hub_prs missing {hub_pr}")
         synced_paths = set(last_sync.get("synced_paths", []))
         for path in (
             "AI_SESSION_HANDOVER_PROMPT.md",
             "governance/agent-onboarding-protocol.md",
             "governance/session-digests.md",
             "governance/artifact-map.md",
+            "docs/hub-research-dependencies.md",
+            "AI_GOVERNANCE.md",
+            "CONTRIBUTING.md",
         ):
             if path not in synced_paths:
                 errors.append(f".hub-profile.json: synced_paths missing {path}")
@@ -116,17 +162,30 @@ def main() -> int:
             "README.md",
             "governance/artifact-map.md",
             "governance/session-digests.md",
+            "Пользователь",
         )
-        errors += reject("README.md", "Иосполнитель")
+        errors += reject("README.md", "Founder & PO", "Иосполнитель")
 
         errors += require(
             "CHANGELOG.md",
             "Issue #72",
             "governance/session-digests.md",
             "governance/artifact-map.md",
+            "Hub PR #229",
+            "Hub PR #230",
+            "reference-only",
             HUB_SHA,
         )
         errors += reject("CHANGELOG.md", "Иосполнитель")
+
+        errors += require(
+            "governance/migration-manifest.md",
+            "PR [#229]",
+            "PR [#230]",
+            "external-sources-registry.md",
+            HUB_SHA,
+            "not-migrated",
+        )
 
     if errors:
         print("issue-72 hub sync validation: FAIL")

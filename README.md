@@ -163,10 +163,10 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 
 | Роль | Кто | Ответственность |
 | --- | --- | --- |
-| Founder & PO | Иван Гулиенко ([@G-Ivan-A](https://github.com/G-Ivan-A)) | Vision, приоритеты, границы публикации и финальные решения. |
+| Пользователь | Иван Гулиенко ([@G-Ivan-A](https://github.com/G-Ivan-A)) | Vision, приоритеты, границы публикации и финальные решения. |
 | Human reviewer | назначается на issue/PR | Проверяет структуру, источники, риски и полезность до merge. |
 | Contributor | любой участник | Создаёт issues, артефакты и pull requests внутри модели проекта. |
-| AI agent | по issue | Готовит черновики, проверки и summaries в пределах scope issue. |
+| Исполнитель / AI agent | по issue | Готовит черновики, проверки и summaries в пределах scope issue. |
 
 Вопросы и предложения — через [GitHub Issues](https://github.com/G-Ivan-A/mango_ba_prompts/issues).
 

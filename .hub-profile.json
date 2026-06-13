@@ -11,19 +11,24 @@
     "hub_repo": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
     "hub_prs": [
       224,
-      226
+      226,
+      229,
+      230
     ],
-    "hub_sha": "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b",
+    "hub_sha": "b683341d22d4f518618917a02d9c7c394658b156",
     "mode": "Structured Smart Sync",
     "synced_paths": [
       "AI_SESSION_HANDOVER_PROMPT.md",
+      "AI_GOVERNANCE.md",
+      "CONTRIBUTING.md",
       "governance/agent-onboarding-protocol.md",
       "governance/session-digests.md",
       "governance/artifact-map.md",
       "governance/migration-manifest.md",
+      "docs/hub-research-dependencies.md",
       "README.md",
       "CHANGELOG.md"
     ],
-    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules."
+    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
   }
 }

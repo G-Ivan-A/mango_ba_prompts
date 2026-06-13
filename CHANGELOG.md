@@ -35,6 +35,20 @@ ai-generated: true
 - Добавлена локальная проверка
   [`experiments/validate_issue_72_hub_sync.py`](experiments/validate_issue_72_hub_sync.py)
   для воспроизведения и валидации требований issue #72.
+- Досинхронизированы релевантные части Hub PR #229 и Hub PR #230, latest Hub SHA
+  `b683341d22d4f518618917a02d9c7c394658b156`.
+- Hub PR #229: Base Registry внешних источников
+  `research/external-knowledge/external-sources-registry.md` оставлен
+  reference-only в Хабе; для Mango в
+  [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
+  зарегистрированы строки `ext-003` (Spec-Driven Development) и `ext-007`
+  (Контекст-инжиниринг), без создания локального `research/`.
+- Hub PR #230: терминология активных guidance-файлов выровнена на
+  `Пользователь / Исполнитель` в [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
+  [`CONTRIBUTING.md`](CONTRIBUTING.md) и [`README.md`](README.md); traceability
+  contracts, Framework vs Template и Scope Resolver-а задокументированы как
+  Hub-governance контракты, не требующие локальных артефактов в
+  `mango_ba_prompts`.
 
 ### Added — Issue #65 README для `prompts/`
 

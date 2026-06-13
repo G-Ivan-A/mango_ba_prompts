@@ -5,8 +5,8 @@ updated: 2026-06-13
 temperature: 0.1
 ai-generated: true
 executable: false
-source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/artifact-map.md"
-source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
+source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/governance/artifact-map.md"
+source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 ---
 
 # Artifact Map — mango_ba_prompts
@@ -16,8 +16,8 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 лежит рабочий контекст, какие файлы являются входными точками и какие артефакты
 нужно обновлять при Smart Sync.
 
-> **Источник синхронизации:** Hub PR #224 + PR #226, merge SHA
-> `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`. Хабовая карта остаётся источником
+> **Источник синхронизации:** Hub PR #224 + PR #226 + PR #229 + PR #230, latest
+> Hub SHA `b683341d22d4f518618917a02d9c7c394658b156`. Хабовая карта остаётся источником
 > общих правил, а эта карта отражает фактическое состояние локального репозитория.
 
 ## Терминология ролей
@@ -44,7 +44,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 | `/governance/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
 | `/governance/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/governance/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
-| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам Хаба; research не копируется в спок. | Да | `prompts/`, `standards/product-classification-contract.md` |
+| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам Хаба, включая reference-only срез external sources registry из Hub PR #229; research не копируется в спок. | Да | `prompts/`, `standards/product-classification-contract.md` |
 | `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, графы связей и сценарии запуска. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
 | `/docs/taxonomy.md` | стандарт / модель | Таксономия когнитивных операций и процессов БА. | Да | `patterns/`, `prompts/` |
 | `/docs/ba-processes/00-index.md` | индекс | Маппинг процесс ↔ операция ↔ паттерн ↔ промпт. | Да | `patterns/`, `prompts/README.md` |
@@ -54,6 +54,18 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 | `/prompts/archive/` | каталог | Архивные legacy-промпты, выведенные из активного использования. | По необходимости | `prompts/README.md` |
 | `/standards/` | каталог | Локальные рабочие копии стандартов и контрактов. | Да | `README.md`, `docs/adr/` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
+
+## Smart Sync decisions: Hub PR #229/#230
+
+- **Hub PR #229:** `research/external-knowledge/external-sources-registry.md`
+  релевантен для Mango только как Base Registry. Он зарегистрирован в
+  [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md)
+  как reference-only срез (`ext-003`, `ext-007`) и не копируется в локальный
+  `research/`.
+- **Hub PR #230:** активная терминология `Пользователь / Исполнитель` применена
+  к текущим guidance-файлам. Traceability contracts, Framework vs Template и
+  Scope Resolver-а остаются Hub-governance контрактами и не создают новых
+  локальных артефактов в `mango_ba_prompts`.
 
 ## Как обновлять карту
 
@@ -68,7 +80,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 
 ## См. также
 
-- Хаб [`governance/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/artifact-map.md)
+- Хаб [`governance/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/governance/artifact-map.md)
   — источник общей карты артефактов.
 - [`governance/session-digests.md`](session-digests.md) — новый sync-артефакт
   issue #72.
