@@ -200,10 +200,10 @@ ai-generated: true
 - Создан [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) —
   централизованный маппинг процесс ↔ операции ↔ паттерн ↔ промпты
   (вместо хранения маппинга во frontmatter).
-- Создан [`docs/open-questions/template.md`](docs/open-questions/template.md) —
-  шаблон таблицы открытых вопросов (дата | автор | суть | статус | решение)
-  с правилом автоматической очистки решённых строк Конардом при закрытии
-  связанного issue.
+- Создан шаблон таблицы открытых вопросов (дата | автор | суть | статус |
+  решение) с правилом автоматической очистки решённых строк Конардом при
+  закрытии связанного issue. В issue #80 механизм заменён единым трекером в
+  [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы).
 - Созданы контракты [`standards/prompt-standard.md`](standards/prompt-standard.md)
   (ровно 4 обязательных поля frontmatter: `status` со значениями
   `draft`/`canonical`/`archived`, `version`, `updated`, `temperature`;
