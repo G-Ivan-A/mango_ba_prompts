@@ -74,8 +74,8 @@ def main() -> int:
     roadmap_data = read_json("site/data/roadmap.json")
     prompts = prompts_data.get("prompts", [])
 
-    if len(active_paths) != 23:
-        errors.append(f"prompts/: expected 23 active prompt files, found {len(active_paths)}")
+    if len(active_paths) != 24:
+        errors.append(f"prompts/: expected 24 active prompt files, found {len(active_paths)}")
     if len(archived_paths) != 6:
         errors.append(f"prompts/archive/: expected 6 archived prompt files, found {len(archived_paths)}")
     if len(prompts) != len(prompt_paths):
@@ -103,8 +103,8 @@ def main() -> int:
 
     active_generated = [prompt for prompt in prompts if not prompt.get("archived")]
     archived_generated = [prompt for prompt in prompts if prompt.get("archived")]
-    if len(active_generated) != 23:
-        errors.append(f"site/data/prompts.json: expected 23 active prompts, found {len(active_generated)}")
+    if len(active_generated) != 24:
+        errors.append(f"site/data/prompts.json: expected 24 active prompts, found {len(active_generated)}")
     if len(archived_generated) != 6:
         errors.append(f"site/data/prompts.json: expected 6 archived prompts, found {len(archived_generated)}")
 
@@ -119,11 +119,11 @@ def main() -> int:
 
     totals = stats_data.get("totals", {})
     expected_totals = {
-        "allPrompts": 29,
-        "activePrompts": 23,
+        "allPrompts": 30,
+        "activePrompts": 24,
         "archivedPrompts": 6,
         "testsPassed": 0,
-        "inWork": 23,
+        "inWork": 24,
         "deferred": 6,
     }
     for key, expected in expected_totals.items():

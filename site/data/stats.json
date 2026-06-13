@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T18:25:29.587Z",
+  "generatedAt": "2026-06-13T18:57:32.166Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -19,24 +19,24 @@
     }
   ],
   "totals": {
-    "allPrompts": 29,
-    "activePrompts": 23,
+    "allPrompts": 30,
+    "activePrompts": 24,
     "archivedPrompts": 6,
     "testsPassed": 0,
-    "inWork": 23,
+    "inWork": 24,
     "deferred": 6,
     "modes": {
       "legacy": 11,
-      "oneshot": 8,
+      "oneshot": 9,
       "stepwise": 10
     },
     "statuses": {
-      "draft": 23,
+      "draft": 24,
       "archived": 6
     },
     "operations": {
       "ingestion": 2,
-      "documentation": 7,
+      "documentation": 8,
       "validation": 3,
       "understanding": 4,
       "solution_design": 3,
@@ -45,7 +45,7 @@
     },
     "processes": {
       "Формирование ФТ/ТЗ": 18,
-      "Помощь ПО/ПМ": 7,
+      "Помощь ПО/ПМ": 8,
       "Валидация ФТ/ТЗ": 3,
       "Анализ тендерных ТЗ": 7,
       "Формирование UC/US": 10,
@@ -155,7 +155,8 @@
         "meeting_team_documentation_stepwise",
         "meeting_customer_documentation_stepwise",
         "questions_customer_understanding_*",
-        "letter_customer_documentation_legacy"
+        "letter_customer_documentation_legacy",
+        "session_debug_documentation_oneshot"
       ]
     },
     {
@@ -206,7 +207,7 @@
       "phase": 1,
       "title": "Промпты",
       "status": "current",
-      "progress": 79,
+      "progress": 80,
       "levelIds": [
         "level-1"
       ],
@@ -214,7 +215,7 @@
       "metrics": [
         {
           "label": "активных",
-          "value": 23
+          "value": 24
         },
         {
           "label": "проверено",
@@ -222,7 +223,7 @@
         },
         {
           "label": "в работе",
-          "value": 23
+          "value": 24
         }
       ]
     },

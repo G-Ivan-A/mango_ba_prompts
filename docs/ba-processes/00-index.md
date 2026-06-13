@@ -38,7 +38,7 @@ workflow и примеры запуска процессов — в
 | 3 | Анализ тендерных ТЗ | `ingestion`, `understanding`, `validation`, `risk_analysis`, `quality` | — (план) | `glossary-context-understanding-*`, `questions-customer-understanding-*`, `fr-validation-*` |
 | 4 | Формирование UC/US | `understanding`, `modeling`, `validation` | — (план) | `uc-modeling-*`, `us-modeling-*`, `glossary-context-understanding-*` |
 | 5 | Визуализация UML/BPMN | `modeling`, `documentation`, `quality` | — (план) | — (промптов пока нет) |
-| 6 | Помощь ПО/ПМ | `ingestion`, `understanding`, `documentation`, `governance` | — (план) | `asr-ingestion-oneshot`, `meeting-team-documentation-stepwise`, `meeting-customer-documentation-stepwise`, `questions-customer-understanding-*`, `letter-customer-documentation-legacy` |
+| 6 | Помощь ПО/ПМ | `ingestion`, `understanding`, `documentation`, `governance` | — (план) | `asr-ingestion-oneshot`, `meeting-team-documentation-stepwise`, `meeting-customer-documentation-stepwise`, `questions-customer-understanding-*`, `letter-customer-documentation-legacy`, `session-debug-documentation-oneshot` |
 | 7 | Статистика | `ingestion`, `quality`, `research` | — (план) | — (legacy в `prompts/archive/`, активного промпта нет) |
 | 8 | Impact Analysis | `reverse_requirements`, `impact_analysis`, `validation`, `governance` | — (план) | — (промптов пока нет) |
 | 9 | Risk Analysis | `risk_analysis`, `release_readiness`, `validation`, `quality` | — (план) | — (промптов пока нет) |
