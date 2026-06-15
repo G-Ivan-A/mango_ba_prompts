@@ -34,6 +34,9 @@ jobs:
       - name: Validate Pages artifact
         run: python3 experiments/validate_issue_74_github_pages.py
 
+      - name: Validate Mango Office widget
+        run: python3 experiments/validate_issue_86_mango_widget.py
+
       - name: Prepare artifact
         run: |
           mkdir -p pages-dist
