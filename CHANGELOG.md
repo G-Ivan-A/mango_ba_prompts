@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #86 Mango Office Multichannel widget
+
+- В GitHub Pages шаблон [`site/index.html`](site/index.html) добавлен виджет
+  Mango Office Multichannel с `id: 23303`: чат поддержки и заказ обратного
+  звонка загружаются перед закрывающим тегом `</body>`.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_86_mango_widget.py`](experiments/validate_issue_86_mango_widget.py),
+  закрепляющая наличие скрипта виджета, идентификатора `23303`, расположение
+  перед `</body>` и запись в changelog.
+- Workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml)
+  теперь запускает проверку интеграции виджета вместе с проверкой артефакта
+  GitHub Pages.
+
 ### Added — Issue #83 карта процессов БА
 
 - Развёрнут центральный индекс
