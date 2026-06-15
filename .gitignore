@@ -5,6 +5,3 @@
 *.swp
 .idea/
 .vscode/
-
-# Local experiment scratch (source attachments, extraction scripts)
-experiments/

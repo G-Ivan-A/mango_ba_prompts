@@ -177,7 +177,7 @@ def main() -> int:
         workflow,
         ".github/workflows/github-pages.yml",
         "node scripts/generate-pages-data.mjs",
-        "python3 experiments/validate_issue_74_github_pages.py",
+        "python3 scripts/validate_issue_74_github_pages.py",
         "gh-pages",
         "GITHUB_TOKEN",
     )
