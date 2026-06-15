@@ -25,6 +25,25 @@ ai-generated: true
 - Workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml)
   теперь запускает проверку интеграции виджета вместе с проверкой артефакта
   GitHub Pages.
+### Added — Issue #85 библиотека MVP-паттернов БА
+
+- Созданы 7 MVP-паттернов в `patterns/`: `glossary-context-generation`,
+  `fr-generation`, `fr-validation`, `user-story-generation`,
+  `usecase-generation`, `asr-ingestion` и `meeting-summary-generation`. Каждый
+  паттерн содержит 8 полей ADR-002, Product Layer, Commercial Layer, правила
+  адаптации, LLM-агностичный `prompt_template`, quality gates, output schema,
+  обезличенный пример и ссылки на существующие prompt-реализации.
+- Обновлён [`patterns/README.md`](patterns/README.md): добавлены навигация по
+  MVP-паттернам, матрица "паттерн ↔ процесс ↔ операция ↔ промпты", пример
+  маршрута использования и полные URL связанных PR/репозиториев.
+- В [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) заполнена
+  колонка "Паттерн" для процессов, покрытых MVP-библиотекой, сохранив
+  parser-compatible структуру центрального реестра.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_85_patterns_library.py`](experiments/validate_issue_85_patterns_library.py)
+  для воспроизведения требований issue #85: наличие 7 директорий, 8 секций,
+  Product/Commercial Layer, примеров, ссылок на существующие prompts, навигации
+  и центрального registry mapping.
 
 ### Added — Issue #83 карта процессов БА
 

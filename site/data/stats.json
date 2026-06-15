@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T17:30:59.487Z",
+  "generatedAt": "2026-06-15T18:30:25.888Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -68,7 +68,7 @@
         "solution_design",
         "validation"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "asr-ingestion, glossary-context-generation, user-story-generation, usecase-generation, fr-generation, fr-validation",
       "recommendedPrompts": [
         "asr_ingestion_oneshot.md",
         "asr_ingestion_legacy.md",
@@ -100,7 +100,7 @@
         "quality",
         "risk_analysis"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "fr-validation",
       "recommendedPrompts": [
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md",
@@ -117,7 +117,7 @@
         "risk_analysis",
         "quality"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "glossary-context-generation, fr-validation",
       "recommendedPrompts": [
         "glossary_context_understanding_stepwise.md",
         "glossary_context_understanding_oneshot.md",
@@ -137,7 +137,7 @@
         "validation",
         "documentation"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "glossary-context-generation, user-story-generation, usecase-generation, fr-validation",
       "recommendedPrompts": [
         "glossary_context_understanding_stepwise.md",
         "glossary_context_understanding_oneshot.md",
@@ -156,7 +156,7 @@
         "documentation",
         "quality"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "Косвенно: usecase-generation как сценарный источник",
       "recommendedPrompts": [
         "uc_modeling_stepwise.md",
         "uc_modeling_oneshot.md"
@@ -171,7 +171,7 @@
         "documentation",
         "governance"
       ],
-      "pattern": "— (workflow map)",
+      "pattern": "asr-ingestion, glossary-context-generation, meeting-summary-generation",
       "recommendedPrompts": [
         "asr_ingestion_oneshot.md",
         "meeting_customer_documentation_stepwise.md",
