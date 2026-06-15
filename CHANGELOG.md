@@ -13,6 +13,20 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #83 карта процессов БА
+
+- Развёрнут центральный индекс
+  [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) в детальную
+  карту 9 процессов БА с входами, выходами, workflow, cognitive operations,
+  direct links на prompt-файлы и явными manual gaps.
+- Добавлены рекомендации по режимам `stepwise` / `oneshot` / `legacy`, связь
+  маршрутов с Product Layer и Commercial Layer, 3 сценария запуска процессов с
+  Mermaid-диаграммами и полный traceability-блок по связанным PR/репозиториям.
+- Добавлена локальная проверка
+  [`experiments/validate_issue_83_ba_process_map.py`](experiments/validate_issue_83_ba_process_map.py)
+  для воспроизведения требований issue #83: наличие 9 процессов, 13 операций,
+  ссылок на 24 активных и 6 архивных prompts, known gaps и навигации.
+
 ### Added — Issue #78 промпт-суммаризатор сессий БА
 
 - Создан промпт

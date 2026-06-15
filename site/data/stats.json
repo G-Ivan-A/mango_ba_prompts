@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T18:57:32.166Z",
+  "generatedAt": "2026-06-15T17:30:59.487Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -68,17 +68,28 @@
         "solution_design",
         "validation"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "asr_ingestion_oneshot",
-        "glossary_context_understanding_*",
-        "questions_customer_understanding_*",
-        "us_modeling_*",
-        "uc_modeling_*",
-        "fr_documentation_*",
-        "constraints_documentation_*",
-        "technical_details_solution_design_*",
-        "fr_validation_*"
+        "asr_ingestion_oneshot.md",
+        "asr_ingestion_legacy.md",
+        "glossary_context_understanding_stepwise.md",
+        "glossary_context_understanding_oneshot.md",
+        "questions_customer_understanding_stepwise.md",
+        "questions_customer_understanding_legacy.md",
+        "us_modeling_stepwise.md",
+        "us_modeling_oneshot.md",
+        "uc_modeling_stepwise.md",
+        "uc_modeling_oneshot.md",
+        "fr_documentation_stepwise.md",
+        "fr_documentation_oneshot.md",
+        "constraints_documentation_stepwise.md",
+        "constraints_documentation_oneshot.md",
+        "technical_details_solution_design_stepwise.md",
+        "technical_details_solution_design_oneshot.md",
+        "technical_details_solution_design_legacy.md",
+        "fr_validation_stepwise.md",
+        "fr_validation_oneshot.md",
+        "fr_validation_legacy.md"
       ]
     },
     {
@@ -89,10 +100,11 @@
         "quality",
         "risk_analysis"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "fr_validation_stepwise",
-        "fr_validation_oneshot"
+        "fr_validation_stepwise.md",
+        "fr_validation_oneshot.md",
+        "fr_validation_legacy.md"
       ]
     },
     {
@@ -105,11 +117,15 @@
         "risk_analysis",
         "quality"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "glossary_context_understanding_*",
-        "questions_customer_understanding_*",
-        "fr_validation_*"
+        "glossary_context_understanding_stepwise.md",
+        "glossary_context_understanding_oneshot.md",
+        "questions_customer_understanding_stepwise.md",
+        "questions_customer_understanding_legacy.md",
+        "fr_validation_stepwise.md",
+        "fr_validation_oneshot.md",
+        "fr_validation_legacy.md"
       ]
     },
     {
@@ -118,13 +134,18 @@
       "operations": [
         "understanding",
         "modeling",
-        "validation"
+        "validation",
+        "documentation"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "uc_modeling_*",
-        "us_modeling_*",
-        "glossary_context_understanding_*"
+        "glossary_context_understanding_stepwise.md",
+        "glossary_context_understanding_oneshot.md",
+        "us_modeling_stepwise.md",
+        "us_modeling_oneshot.md",
+        "uc_modeling_stepwise.md",
+        "uc_modeling_oneshot.md",
+        "fr_validation_stepwise.md"
       ]
     },
     {
@@ -135,9 +156,10 @@
         "documentation",
         "quality"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "— (промптов пока нет)"
+        "uc_modeling_stepwise.md",
+        "uc_modeling_oneshot.md"
       ]
     },
     {
@@ -149,14 +171,15 @@
         "documentation",
         "governance"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "asr_ingestion_oneshot",
-        "meeting_team_documentation_stepwise",
-        "meeting_customer_documentation_stepwise",
-        "questions_customer_understanding_*",
-        "letter_customer_documentation_legacy",
-        "session_debug_documentation_oneshot"
+        "asr_ingestion_oneshot.md",
+        "meeting_customer_documentation_stepwise.md",
+        "meeting_team_documentation_stepwise.md",
+        "questions_customer_understanding_stepwise.md",
+        "questions_customer_understanding_legacy.md",
+        "letter_customer_documentation_legacy.md",
+        "session_debug_documentation_oneshot.md"
       ]
     },
     {
@@ -167,9 +190,10 @@
         "quality",
         "research"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "prompts/archive/"
+        "archive/tz_stats_generator_legacy.md",
+        "archive/tz_stats_generator_simple_legacy.md"
       ]
     },
     {
@@ -181,9 +205,12 @@
         "validation",
         "governance"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "— (промптов пока нет)"
+        "technical_details_solution_design_stepwise.md",
+        "technical_details_solution_design_oneshot.md",
+        "fr_validation_stepwise.md",
+        "fr_validation_oneshot.md"
       ]
     },
     {
@@ -195,9 +222,12 @@
         "validation",
         "quality"
       ],
-      "pattern": "— (план)",
+      "pattern": "— (workflow map)",
       "recommendedPrompts": [
-        "— (промптов пока нет)"
+        "constraints_documentation_stepwise.md",
+        "constraints_documentation_oneshot.md",
+        "fr_validation_stepwise.md",
+        "fr_validation_oneshot.md"
       ]
     }
   ],
