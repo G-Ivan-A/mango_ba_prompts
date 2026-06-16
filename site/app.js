@@ -24,7 +24,8 @@ const nodes = {
   suggestions: document.querySelector("#search-suggestions"),
   sort: document.querySelector("#sort-select"),
   exportButton: document.querySelector("#export-button"),
-  clear: document.querySelector("#clear-button"),
+  clearSearch: document.querySelector("#clear-search-button"),
+  clearFilters: document.querySelector("#clear-filters-button"),
   checksGrid: document.querySelector("#checks-grid"),
   checksByProcess: document.querySelector("#checks-byprocess"),
   checksActivity: document.querySelector("#checks-activity"),
@@ -157,7 +158,6 @@ function visiblePrompts() {
   const selectedProcesses = selectedValues("process");
   const selectedOperations = selectedValues("operation");
   const selectedModes = selectedValues("mode");
-  const selectedStatuses = selectedValues("status");
 
   const filtered = state.prompts.filter((prompt) => {
     if (query && !promptSearchText(prompt).includes(query)) {
@@ -173,9 +173,6 @@ function visiblePrompts() {
       return false;
     }
     if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
-      return false;
-    }
-    if (selectedStatuses.length > 0 && !selectedStatuses.includes(promptStatus(prompt))) {
       return false;
     }
     return true;
@@ -325,8 +322,8 @@ function filterButton({ token, icon, label, count, title, unavailable }) {
   return button;
 }
 
-function renderFilterGroup(title, items) {
-  const group = el("section", "filter-group");
+function renderFilterGroup(title, items, groupClass) {
+  const group = el("section", `filter-group${groupClass ? ` ${groupClass}` : ""}`);
   const heading = el("div", "filter-title", title);
   const row = el("div", "filter-row");
   row.append(...items.map(filterButton));
@@ -370,29 +367,10 @@ function renderFilters() {
     title: mode,
   }));
 
-  // ФТ-4: отдельный фильтр по статусу (Draft / Canonical / Archived).
-  const statusLabels = { draft: "Draft", canonical: "Canonical", archived: "Archived" };
-  const statusIcons = { draft: "✎", canonical: "✓", archived: "□" };
-  const statusCounts = state.prompts.reduce((counts, prompt) => {
-    const status = promptStatus(prompt);
-    counts[status] = (counts[status] || 0) + 1;
-    return counts;
-  }, {});
-  const statuses = ["draft", "canonical", "archived"]
-    .filter((status) => statusCounts[status])
-    .map((status) => ({
-      token: `status:${status}`,
-      icon: statusIcons[status] || "•",
-      label: statusLabels[status] || status,
-      count: statusCounts[status] || 0,
-      title: statusLabels[status] || status,
-    }));
-
   nodes.filters.replaceChildren(
-    renderFilterGroup("Процессы БА", processes),
-    renderFilterGroup("Операции", operations),
-    renderFilterGroup("Режимы", modes),
-    renderFilterGroup("Статус", statuses),
+    renderFilterGroup("Процессы БА", processes, "filter-group--processes"),
+    renderFilterGroup("Операции", operations, "filter-group--operations"),
+    renderFilterGroup("Режимы", modes, "filter-group--modes"),
   );
 }
 
@@ -406,17 +384,11 @@ function promptCard(prompt) {
   const idLabel = el("span", "prompt-id", prompt.id);
   idLabel.title = "Уникальный токен промпта";
   titleWrap.append(idLabel);
-  const source = el("a", "source-link", "↗");
-  source.href = prompt.url;
-  source.target = "_blank";
-  source.rel = "noreferrer";
-  source.title = "Открыть файл в GitHub";
-  source.setAttribute("aria-label", `Открыть ${prompt.file} в GitHub`);
-  head.append(titleWrap, source);
+  head.append(titleWrap);
 
   const description = el("p", "prompt-description", prompt.descriptionLong || prompt.description);
 
-  // Мета-строка вместо хэша: версия, дата обновления, статус тестов (ФТ-2).
+  // Мета-строка вместо хэша: версия, дата обновления, статус тестов.
   const tests = testsFor(prompt);
   const meta = el("div", "prompt-meta");
   meta.append(el("span", "prompt-meta-item", `v${String(prompt.version).replace(/^v/, "")}`));
@@ -447,13 +419,15 @@ function promptCard(prompt) {
   copy.dataset.copyId = prompt.id;
   copy.append(el("span", "", "⧉"));
   copy.append(el("span", "", "Копировать"));
-  const share = el("button", "icon-button share-button");
-  share.type = "button";
-  share.dataset.shareId = prompt.id;
-  share.title = "Скопировать ссылку на карточку";
-  share.setAttribute("aria-label", "Скопировать ссылку на карточку");
-  share.textContent = "↗";
-  actions.append(copy, share);
+  const repoLink = el("a", "repo-link");
+  repoLink.href = prompt.url;
+  repoLink.target = "_blank";
+  repoLink.rel = "noreferrer";
+  repoLink.title = "Открыть файл в GitHub";
+  repoLink.setAttribute("aria-label", `Открыть ${prompt.file} в GitHub`);
+  repoLink.append(el("span", "", "📁"));
+  repoLink.append(el("span", "", "Перейти в репо"));
+  actions.append(copy, repoLink);
 
   card.append(head, description, meta, tags, actions);
   return card;
@@ -961,9 +935,15 @@ async function init() {
   }
 }
 
+function updateClearButtonVisibility() {
+  nodes.clearSearch.hidden = !state.query;
+  nodes.clearFilters.hidden = state.selectedFilters.size === 0;
+}
+
 nodes.search.addEventListener("input", (event) => {
   state.query = event.target.value;
   renderPrompts();
+  updateClearButtonVisibility();
 });
 
 nodes.sort.addEventListener("change", (event) => {
@@ -973,11 +953,17 @@ nodes.sort.addEventListener("change", (event) => {
 
 nodes.exportButton.addEventListener("click", exportCatalog);
 
-nodes.clear.addEventListener("click", () => {
+nodes.clearSearch.addEventListener("click", () => {
   state.query = "";
-  state.selectedFilters.clear();
   nodes.search.value = "";
+  renderPrompts();
+  updateClearButtonVisibility();
+});
+
+nodes.clearFilters.addEventListener("click", () => {
+  state.selectedFilters.clear();
   rerenderInteractive();
+  updateClearButtonVisibility();
 });
 
 nodes.filters.addEventListener("click", (event) => {
@@ -996,6 +982,7 @@ nodes.filters.addEventListener("click", (event) => {
     state.selectedFilters.add(token);
   }
   rerenderInteractive();
+  updateClearButtonVisibility();
 });
 
 nodes.processExpand?.addEventListener("click", () => setAllProcessNodes(true));

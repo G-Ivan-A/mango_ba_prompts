@@ -100,14 +100,14 @@ def main() -> int:
         for forbidden in ("sourcePath", "contentHash", "checksum", "prompt-file"):
             if forbidden in card_body:
                 errors.append(f"site/app.js: promptCard must not render {forbidden!r}")
-        # New card content: long description, version, test count, id, share link.
+        # New card content: long description, version, test count, id.
+        # Note: shareId was replaced by repo-link in issue #103.
         errors += require(
             card_body,
             "site/app.js promptCard",
             "descriptionLong",
             "prompt.version",
             "prompt-id",
-            "shareId",
         )
         if "testsFor" not in card_body and "тест" not in card_body:
             errors.append("site/app.js: promptCard must show test status")
@@ -143,11 +143,7 @@ def main() -> int:
         "localStorage",
         "#prompt=",
     )
-    # Status filter is a fourth filter group built from the three statuses.
-    errors += require(app_js, "site/app.js", "status:${status}", "Статус")
-    for status in ("draft", "canonical", "archived"):
-        if status not in app_js:
-            errors.append(f"site/app.js: status filter missing {status!r}")
+    # Note: status filter was removed in issue #103.
     # Export builds a Markdown blob client-side.
     errors += require(app_js, "site/app.js", "Blob", "text/markdown")
     # Theme toggle wiring.
