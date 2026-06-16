@@ -1,4 +1,6 @@
 ---
+id: mango-user-story-generator-simple-legacy
+title: "User Story: Генератор, простой (архив)"
 status: archived
 version: 1.0
 updated: 2026-06-04

@@ -1,4 +1,6 @@
 ---
+id: mango-tz-stats-generator-legacy
+title: "ТЗ: Статистика, расширенный (архив)"
 status: archived
 version: 1.0
 updated: 2026-06-04

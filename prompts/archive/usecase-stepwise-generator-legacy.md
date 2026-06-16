@@ -1,4 +1,6 @@
 ---
+id: mango-usecase-stepwise-generator-legacy
+title: "Use Case: Генератор (архив)"
 status: archived
 version: 1.0
 updated: 2026-06-04

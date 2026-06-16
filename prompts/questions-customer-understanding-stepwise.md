@@ -1,10 +1,11 @@
 ---
+id: mango-questions-customer-understanding-stepwise
+title: "Вопросы: Выявление потребностей"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 # РОЛЬ
 Ты — команда экспертов в составе:

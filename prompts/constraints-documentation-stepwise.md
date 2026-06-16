@@ -1,10 +1,11 @@
 ---
+id: mango-constraints-documentation-stepwise
+title: "Ограничения: Документирование"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 Ты — ведущий бизнес-аналитик (CBAP) и архитектор решений в Телеком SaaS. Твоя
 задача: сформировать Раздел 6 (Особенности реализации / Ограничения), защищающий

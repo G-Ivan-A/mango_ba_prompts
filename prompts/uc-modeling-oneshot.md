@@ -1,10 +1,11 @@
 ---
+id: mango-uc-modeling-oneshot
+title: "Use Case: Моделирование за один ответ"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 # РОЛЬ
 Ты — команда экспертов: БА (CBAP), PO и системный аналитик с экспертизой в Телеком
