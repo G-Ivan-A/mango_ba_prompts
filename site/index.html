@@ -50,28 +50,33 @@
         </div>
 
         <div class="toolbar">
-          <label class="search-box">
-            <span class="search-icon" aria-hidden="true">⌕</span>
-            <input
-              id="search-input"
-              type="search"
-              autocomplete="off"
-              list="search-suggestions"
-              placeholder="Поиск по названию, ID, описанию, тегам"
-            />
-            <datalist id="search-suggestions"></datalist>
-          </label>
-          <label class="sort-box">
-            <span class="sort-label">Сортировка</span>
-            <select id="sort-select">
-              <option value="updated">По дате обновления</option>
-              <option value="usage">По популярности</option>
-              <option value="alpha">По алфавиту</option>
-              <option value="status">По статусу</option>
-            </select>
-          </label>
-          <button class="icon-button" id="export-button" type="button" title="Скачать каталог (Markdown) по текущим фильтрам" aria-label="Скачать каталог в Markdown">⤓</button>
-          <button class="icon-button" id="clear-button" type="button" title="Сбросить поиск и фильтры" aria-label="Сбросить поиск и фильтры">×</button>
+          <div class="toolbar-top">
+            <label class="sort-box">
+              <span class="sort-label">📅 Сортировать</span>
+              <select id="sort-select">
+                <option value="updated">По дате ↓</option>
+                <option value="usage">По популярности</option>
+                <option value="alpha">По алфавиту</option>
+                <option value="status">По статусу</option>
+              </select>
+            </label>
+            <button class="export-button" id="export-button" type="button" title="Скачать каталог (Markdown) по текущим фильтрам" aria-label="Скачать каталог в Markdown">📥 Скачать</button>
+          </div>
+          <div class="toolbar-bottom">
+            <label class="search-box">
+              <span class="search-icon" aria-hidden="true">⌕</span>
+              <input
+                id="search-input"
+                type="search"
+                autocomplete="off"
+                list="search-suggestions"
+                placeholder="Поиск по названию, ID, описанию, тегам"
+              />
+              <datalist id="search-suggestions"></datalist>
+            </label>
+            <button class="secondary-button" id="clear-search-button" type="button" title="Очистить поиск" aria-label="Очистить поиск" hidden>✕ Очистить поиск</button>
+            <button class="secondary-button" id="clear-filters-button" type="button" title="Сбросить фильтры" aria-label="Сбросить все фильтры" hidden>↺ Сбросить фильтры</button>
+          </div>
         </div>
 
         <div class="filters" id="filters-root" aria-label="Фильтры каталога"></div>

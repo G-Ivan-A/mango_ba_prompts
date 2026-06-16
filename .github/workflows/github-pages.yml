@@ -46,6 +46,9 @@ jobs:
       - name: Validate Pages optimization
         run: python3 scripts/validate_issue_99_pages_optimization.py
 
+      - name: Validate UI catalog fixes
+        run: python3 scripts/validate_issue_103_ui_fixes.py
+
       - name: Prepare artifact
         run: |
           mkdir -p pages-dist
