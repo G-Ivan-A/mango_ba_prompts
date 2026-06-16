@@ -13,6 +13,32 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #101 разбор эксперимента «Задача 1027» и стандарт фиксации экспериментов
+
+- Добавлен анализ первой реальной сессии БА
+  [`docs/analysis/experiment-1027-analysis.md`](docs/analysis/experiment-1027-analysis.md):
+  вердикты по 4 гипотезам БА с цитатами из стенограммы, **предложения** правок
+  промптов (P1–P5) как кандидаты в RFC и рекомендации по онтологии (без её
+  изменения). Сами промпты в этом PR **не меняются** — правки выносятся через
+  процесс отладки (см. ниже).
+- Добавлен легковесный стандарт фиксации экспериментов (Draft v0.1)
+  [`standards/experiment-log-standard.md`](standards/experiment-log-standard.md):
+  два уровня фиксации (GitHub Issue / лёгкий Markdown) и ядро из 6 метрик.
+- Добавлен первый прогон по стандарту (dogfood на сессии 1027)
+  [`prompts/experiments/fr-generation-1027-live_2026-06-16.md`](prompts/experiments/fr-generation-1027-live_2026-06-16.md).
+- Добавлен аудит контрактов
+  [`governance/audit-contracts-2026-06-17.md`](governance/audit-contracts-2026-06-17.md):
+  ревизия `AI_GOVERNANCE.md`, `CONTRIBUTING.md` и стандарта логирования,
+  выявленные пробелы (нет процесса отладки/RFC/критериев приёмки правок промптов).
+- Добавлен аудит исследования
+  [`governance/audit-research-1027.md`](governance/audit-research-1027.md):
+  проверка полноты разбора гипотез H1–H4, обоснованности рекомендаций O1–O3 и
+  передачи онтологии (ADR #3–#8).
+- Добавлен черновик процесса отладки промптов
+  [`governance/prompt-debugging-process.md`](governance/prompt-debugging-process.md)
+  и реестр RFC [`governance/rfc-register.md`](governance/rfc-register.md):
+  порядок «эксперимент → RFC → согласование с пользователем → изменение».
+
 ### Added — Issue #97 формализация онтологии БА и стандартов (Creative + Research)
 
 - Формализована онтология БА (артефакт ↔ процесс ↔ операция) и выпущен набор
