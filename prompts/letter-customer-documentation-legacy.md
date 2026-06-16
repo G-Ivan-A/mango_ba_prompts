@@ -1,10 +1,11 @@
 ---
+id: mango-letter-customer-documentation-legacy
+title: "Письмо клиенту: Сопровождение (устаревший)"
 status: draft
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 Роль:
 Вы — команда опытных бизнес-аналитиков (10+ лет) в ИТ/телекоме (SaaS, контакт-

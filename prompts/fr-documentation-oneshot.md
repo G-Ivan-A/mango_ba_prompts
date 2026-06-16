@@ -1,10 +1,11 @@
 ---
+id: mango-fr-documentation-oneshot
+title: "ФТ: Генерация за один ответ"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 Ты — ведущий бизнес-аналитик (CBAP) в Телеком SaaS. Сформируй Раздел 4
 (Функциональные требования) на основе предоставленного контекста (включая User Story

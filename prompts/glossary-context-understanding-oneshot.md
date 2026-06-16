@@ -1,10 +1,11 @@
 ---
+id: mango-glossary-context-understanding-oneshot
+title: "Контекст: Терминология за один ответ"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 Ты — эксперт по бизнес-анализу в Телеком SaaS. Сформируй Разделы 1 (Терминология) и
 2 (Проблема, цель, задачи) на основе предоставленного ниже текста.

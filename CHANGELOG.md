@@ -13,6 +13,28 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #92 метаданные промптов (`id` + `title`), удаление EXPERIMENTAL
+
+- В обязательный frontmatter всех 30 промптов (`prompts/` и `prompts/archive/`)
+  добавлены поля `id` (уникальный токен `mango-[операция]-[режим]`) и `title`
+  (человекочитаемое название на русском).
+- Из всех 24 активных промптов удалён маркер
+  `<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->`: экспериментальность уже
+  отражает `status: draft`.
+- Обновлён стандарт промптов: ADR-001
+  [`docs/adr/001-prompt-standard.md`](docs/adr/001-prompt-standard.md) и контракт
+  [`standards/prompt-standard.md`](standards/prompt-standard.md) теперь требуют
+  6 обязательных полей frontmatter (добавлены `id` и `title`).
+- Генератор [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs)
+  берёт `id`/`title` из frontmatter и формирует поле `body` — текст промпта без
+  frontmatter и маркеров для чистого копирования.
+- В интерфейсе GitHub Pages ([`site/app.js`](site/app.js),
+  [`site/styles.css`](site/styles.css)) карточка промпта выводит `title` жирным
+  заголовком и `id` мелкой меткой; кнопка «Копировать» копирует чистый текст без
+  frontmatter.
+- В матрицу [`prompts/README.md`](prompts/README.md) добавлены колонки
+  «Название» (title) и «Токен» (id); парсер матрицы в генераторе переведён на
+  поиск колонок по заголовку.
 ### Changed — Issue #91 улучшение GitHub Pages (порядок, фильтры, аналитика)
 
 - Изменён порядок секций в [`site/index.html`](site/index.html): **Каталог →

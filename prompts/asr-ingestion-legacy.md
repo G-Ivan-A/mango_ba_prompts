@@ -1,10 +1,11 @@
 ---
+id: mango-asr-ingestion-legacy
+title: "ASR: Обработка транскрипции (устаревший)"
 status: draft
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 Задача:
 Проводите обработку текста транскрибации и исправление ошибок распознавания для

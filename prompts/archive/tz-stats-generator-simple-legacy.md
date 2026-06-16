@@ -1,4 +1,6 @@
 ---
+id: mango-tz-stats-generator-simple-legacy
+title: "ТЗ: Статистика, простой (архив)"
 status: archived
 version: 1.0
 updated: 2026-06-04

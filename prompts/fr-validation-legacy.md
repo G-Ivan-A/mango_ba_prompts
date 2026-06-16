@@ -1,10 +1,11 @@
 ---
+id: mango-fr-validation-legacy
+title: "ФТ: Валидация (устаревший)"
 status: draft
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 1. Задача
 Проанализировать и валидировать исходные функциональные требования, сформировать

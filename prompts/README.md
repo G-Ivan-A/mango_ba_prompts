@@ -41,65 +41,74 @@ related_issues:
 В активной библиотеке сейчас 24 файла в `prompts/`. В архиве дополнительно
 сохранены 6 legacy-файлов в `prompts/archive/` для истории, сравнения и аудита.
 
+Колонка **«Название»** — это поле `title` из frontmatter: человекочитаемое
+название промпта на русском, которое выводится жирным заголовком в интерфейсе
+[GitHub Pages](https://g-ivan-a.github.io/mango_ba_prompts/). Колонка
+**«Токен»** — это поле `id`: уникальный идентификатор промпта для аналитики
+использования, по схеме `mango-[операция]-[режим]` (совпадает с именем файла с
+префиксом `mango-`). Оба поля обязательны и описаны в
+<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>
+и ADR-001.
+
 ### 1. Формирование ФТ/ТЗ
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`asr-ingestion-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md) | Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла. | `oneshot` | `draft` | `0.1` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
-| [`asr-ingestion-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md) | Исторический итеративный вариант обработки ASR-транскрипций. | `legacy` | `draft` | `1.0` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
-| [`glossary-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md) | Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
-| [`glossary-context-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md) | Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте. | `oneshot` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
-| [`questions-customer-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md) | Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
-| [`questions-customer-understanding-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md) | Унаследованный вариант анализа запроса и подготовки вопросов заказчику. | `legacy` | `draft` | `1.0` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
-| [`fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md) | Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`fr-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-oneshot.md) | Формирует раздел 4 ФТ одним ответом при уже собранном контексте. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md) | Пошагово формирует раздел 6 «Особенности реализации / Ограничения». | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`constraints-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md) | Формирует раздел 6 ограничений одним ответом. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`technical-details-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md) | Пошагово формирует раздел 7 «Список доработок» для разработки. | `stepwise` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
-| [`technical-details-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md) | Формирует раздел 7 для разработки одним ответом. | `oneshot` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
-| [`technical-details-solution-design-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-legacy.md) | Унаследованный вариант подготовки раздела 7 «Список доработок». | `legacy` | `draft` | `1.0` | `solution_design` | Формирование ФТ/ТЗ |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`asr-ingestion-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md) | ASR: Нормализация транскрипции | `mango-asr-ingestion-oneshot` | Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла. | `oneshot` | `draft` | `0.1` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
+| [`asr-ingestion-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md) | ASR: Обработка транскрипции (устаревший) | `mango-asr-ingestion-legacy` | Исторический итеративный вариант обработки ASR-транскрипций. | `legacy` | `draft` | `1.0` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
+| [`glossary-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md) | Контекст: Терминология и цели | `mango-glossary-context-understanding-stepwise` | Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
+| [`glossary-context-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md) | Контекст: Терминология за один ответ | `mango-glossary-context-understanding-oneshot` | Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте. | `oneshot` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
+| [`questions-customer-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md) | Вопросы: Выявление потребностей | `mango-questions-customer-understanding-stepwise` | Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
+| [`questions-customer-understanding-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md) | Вопросы: Подготовка заказчику (устаревший) | `mango-questions-customer-understanding-legacy` | Унаследованный вариант анализа запроса и подготовки вопросов заказчику. | `legacy` | `draft` | `1.0` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
+| [`fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md) | ФТ: Генерация требований | `mango-fr-documentation-stepwise` | Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`fr-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-oneshot.md) | ФТ: Генерация за один ответ | `mango-fr-documentation-oneshot` | Формирует раздел 4 ФТ одним ответом при уже собранном контексте. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md) | Ограничения: Документирование | `mango-constraints-documentation-stepwise` | Пошагово формирует раздел 6 «Особенности реализации / Ограничения». | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`constraints-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md) | Ограничения: За один ответ | `mango-constraints-documentation-oneshot` | Формирует раздел 6 ограничений одним ответом. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`technical-details-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md) | Технические детали: Проектирование | `mango-technical-details-solution-design-stepwise` | Пошагово формирует раздел 7 «Список доработок» для разработки. | `stepwise` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
+| [`technical-details-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md) | Технические детали: За один ответ | `mango-technical-details-solution-design-oneshot` | Формирует раздел 7 для разработки одним ответом. | `oneshot` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
+| [`technical-details-solution-design-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-legacy.md) | Технические детали: Доработки (устаревший) | `mango-technical-details-solution-design-legacy` | Унаследованный вариант подготовки раздела 7 «Список доработок». | `legacy` | `draft` | `1.0` | `solution_design` | Формирование ФТ/ТЗ |
 
 ### 2. Валидация ФТ/ТЗ и анализ тендерных ТЗ
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`fr-validation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md) | Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным. | `stepwise` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ |
-| [`fr-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md) | Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом. | `oneshot` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
-| [`fr-validation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md) | Унаследованный вариант анализа и валидации функциональных требований. | `legacy` | `draft` | `1.0` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`fr-validation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md) | ФТ: Валидация и аудит | `mango-fr-validation-stepwise` | Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным. | `stepwise` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ |
+| [`fr-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md) | ФТ: Экспресс-валидация | `mango-fr-validation-oneshot` | Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом. | `oneshot` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
+| [`fr-validation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md) | ФТ: Валидация (устаревший) | `mango-fr-validation-legacy` | Унаследованный вариант анализа и валидации функциональных требований. | `legacy` | `draft` | `1.0` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
 
 ### 3. Формирование UC/US
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md) | Пошагово формирует Use Case по Cockburn из сырого описания. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`uc-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md) | Формирует Use Case по Cockburn одним ответом. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`us-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md) | Пошагово формирует User Story из сырого запроса. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`us-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md) | Формирует User Story одним ответом. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md) | Use Case: Моделирование | `mango-uc-modeling-stepwise` | Пошагово формирует Use Case по Cockburn из сырого описания. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`uc-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md) | Use Case: Моделирование за один ответ | `mango-uc-modeling-oneshot` | Формирует Use Case по Cockburn одним ответом. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`us-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md) | User Story: Формирование | `mango-us-modeling-stepwise` | Пошагово формирует User Story из сырого запроса. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`us-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md) | User Story: Формирование за один ответ | `mango-us-modeling-oneshot` | Формирует User Story одним ответом. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
 
 ### 4. Помощь ПО/ПМ
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`meeting-customer-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md) | Пошагово формирует резюме встречи с заказчиком. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
-| [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) | Пошагово формирует резюме внутренней встречи команды. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
-| [`letter-customer-documentation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md) | Унаследованный промпт для сопроводительного письма заказчику. | `legacy` | `draft` | `1.0` | `documentation` | Помощь ПО/ПМ |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`meeting-customer-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md) | Встреча с клиентом: Резюме | `mango-meeting-customer-documentation-stepwise` | Пошагово формирует резюме встречи с заказчиком. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) | Встреча команды: Резюме | `mango-meeting-team-documentation-stepwise` | Пошагово формирует резюме внутренней встречи команды. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`letter-customer-documentation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md) | Письмо клиенту: Сопровождение (устаревший) | `mango-letter-customer-documentation-legacy` | Унаследованный промпт для сопроводительного письма заказчику. | `legacy` | `draft` | `1.0` | `documentation` | Помощь ПО/ПМ |
 
 ### 5. Отладка и суммаризация сессий
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `governance/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Сессия LLM: Суммаризация | `mango-session-debug-documentation-oneshot` | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `governance/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
 
 ### 6. Архив: статистика и исторические генераторы
 
-| Файл | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
-| --- | --- | --- | --- | --- | --- | --- |
-| [`tz-stats-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-legacy.md) | Архивный расширенный генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
-| [`tz-stats-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-simple-legacy.md) | Архивный простой генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
-| [`usecase-stepwise-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-legacy.md) | Архивный Hub-style генератор Use Case в пошаговой логике. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`usecase-stepwise-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-simple-legacy.md) | Архивный простой генератор Use Case. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`user-story-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-legacy.md) | Архивный Hub-style генератор User Story из сырого запроса. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`user-story-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-simple-legacy.md) | Архивный простой генератор User Story. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| [`tz-stats-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-legacy.md) | ТЗ: Статистика, расширенный (архив) | `mango-tz-stats-generator-legacy` | Архивный расширенный генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
+| [`tz-stats-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-simple-legacy.md) | ТЗ: Статистика, простой (архив) | `mango-tz-stats-generator-simple-legacy` | Архивный простой генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
+| [`usecase-stepwise-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-legacy.md) | Use Case: Генератор (архив) | `mango-usecase-stepwise-generator-legacy` | Архивный Hub-style генератор Use Case в пошаговой логике. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`usecase-stepwise-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-simple-legacy.md) | Use Case: Генератор, простой (архив) | `mango-usecase-stepwise-generator-simple-legacy` | Архивный простой генератор Use Case. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`user-story-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-legacy.md) | User Story: Генератор (архив) | `mango-user-story-generator-legacy` | Архивный Hub-style генератор User Story из сырого запроса. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`user-story-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-simple-legacy.md) | User Story: Генератор, простой (архив) | `mango-user-story-generator-simple-legacy` | Архивный простой генератор User Story. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
 
 Процессы «Визуализация UML/BPMN», «Impact Analysis» и «Risk Analysis» пока не
 имеют активных рекомендуемых промптов. Это зафиксировано в центральном индексе:

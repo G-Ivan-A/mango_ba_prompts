@@ -1,10 +1,11 @@
 ---
+id: mango-meeting-team-documentation-stepwise
+title: "Встреча команды: Резюме"
 status: draft
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 # РОЛЬ
 Ты — ведущий бизнес-аналитик (CBAP) с экспертизой в Телеком SaaS.

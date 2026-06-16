@@ -1,10 +1,11 @@
 ---
+id: mango-technical-details-solution-design-legacy
+title: "Технические детали: Доработки (устаревший)"
 status: draft
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
-<!-- EXPERIMENTAL: DO NOT USE IN PRODUCTION -->
 
 1. Роль:
 Ты — команда сертифицированных бизнес-аналитиков и системных архитекторов в

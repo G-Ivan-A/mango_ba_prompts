@@ -135,6 +135,20 @@ function parseFrontmatter(content) {
   return frontmatter;
 }
 
+function stripFrontmatter(content) {
+  // Remove the leading YAML frontmatter block and the legacy EXPERIMENTAL
+  // marker so the copied prompt is clean text without metadata noise.
+  let body = content;
+  if (body.startsWith("---\n")) {
+    const end = body.indexOf("\n---", 4);
+    if (end !== -1) {
+      body = body.slice(end + 4);
+    }
+  }
+  body = body.replace(/^\s*<!--\s*EXPERIMENTAL[^>]*-->\s*\n/m, "");
+  return body.replace(/^\s+/, "").replace(/\s+$/, "") + "\n";
+}
+
 function parseCodes(value) {
   const codes = [...value.matchAll(/`([^`]+)`/g)].map((match) => match[1]);
   if (codes.length > 0) {
@@ -203,27 +217,43 @@ function parseTaxonomy(markdown) {
 
 function parsePromptMatrix(markdown) {
   const matrixTables = parseTables(markdown).filter(
-    (table) => table.headers[0] === "Файл" && table.headers[1] === "Назначение",
+    (table) => table.headers.includes("Файл") && table.headers.includes("Назначение"),
   );
   const metadataByFile = new Map();
 
   for (const table of matrixTables) {
+    const col = (name) => table.headers.indexOf(name);
+    const idx = {
+      file: col("Файл"),
+      title: col("Название"),
+      token: col("Токен"),
+      description: col("Назначение"),
+      mode: col("Режим"),
+      status: col("Статус"),
+      version: col("Версия"),
+      operation: col("Когнитивная операция"),
+      processes: col("Процесс БА"),
+    };
+    const cell = (row, index) => (index >= 0 ? stripMarkdownInline(row[index]) : "");
+
     for (const row of table.rows) {
-      const file = extractFilename(row[0]);
+      const file = extractFilename(row[idx.file]);
       if (!file.endsWith(".md")) {
         continue;
       }
       metadataByFile.set(file, {
         file,
-        description: stripMarkdownInline(row[1]),
-        mode: stripMarkdownInline(row[2]),
-        status: stripMarkdownInline(row[3]),
-        version: stripMarkdownInline(row[4]),
-        operationId: stripMarkdownInline(row[5]).replace(/-/g, "_"),
-        processes: row[6]
-          .split(";")
-          .map(stripMarkdownInline)
-          .filter(Boolean),
+        title: cell(row, idx.title),
+        token: cell(row, idx.token),
+        description: cell(row, idx.description),
+        mode: cell(row, idx.mode),
+        status: cell(row, idx.status),
+        version: cell(row, idx.version),
+        operationId: cell(row, idx.operation).replace(/-/g, "_"),
+        processes:
+          idx.processes >= 0
+            ? row[idx.processes].split(";").map(stripMarkdownInline).filter(Boolean)
+            : [],
       });
     }
   }
@@ -566,10 +596,11 @@ async function main() {
     const mode = metadata?.mode || modeFromFilename(basename);
     const contentHash = crypto.createHash("sha256").update(content).digest("hex");
 
+    const slug = basename.replace(/\.md$/, "");
     prompts.push({
-      id: basename.replace(/\.md$/, ""),
+      id: frontmatter.id || `mango-${slug}`,
       file: basename,
-      title: basename.replace(/\.md$/, ""),
+      title: frontmatter.title || slug,
       sourcePath: file.relativePath,
       url: repoUrl(file.relativePath),
       archived: file.archived,
@@ -594,6 +625,7 @@ async function main() {
       })),
       frontmatter,
       content,
+      body: stripFrontmatter(content),
       contentHash,
       lineCount: content.split(/\r?\n/).length,
     });
