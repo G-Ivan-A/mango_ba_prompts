@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T11:30:46.313Z",
+  "generatedAt": "2026-06-16T12:47:41.061Z",
   "sourceFiles": [
     {
       "path": "prompts/experiments/",
@@ -32,28 +32,28 @@
       "icon": "1",
       "prompts": [
         {
-          "id": "us-modeling-oneshot",
+          "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
           "tests": 5,
           "feedback": 0,
           "usage": 5
         },
         {
-          "id": "us-modeling-stepwise",
+          "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
           "tests": 5,
           "feedback": 0,
           "usage": 5
         },
         {
-          "id": "uc-modeling-oneshot",
+          "id": "mango-uc-modeling-oneshot",
           "file": "uc-modeling-oneshot.md",
           "tests": 3,
           "feedback": 0,
           "usage": 3
         },
         {
-          "id": "uc-modeling-stepwise",
+          "id": "mango-uc-modeling-stepwise",
           "file": "uc-modeling-stepwise.md",
           "tests": 3,
           "feedback": 0,
@@ -67,21 +67,21 @@
       "icon": "2",
       "prompts": [
         {
-          "id": "fr-validation-legacy",
+          "id": "mango-fr-validation-legacy",
           "file": "fr-validation-legacy.md",
           "tests": 1,
           "feedback": 0,
           "usage": 1
         },
         {
-          "id": "fr-validation-oneshot",
+          "id": "mango-fr-validation-oneshot",
           "file": "fr-validation-oneshot.md",
           "tests": 1,
           "feedback": 0,
           "usage": 1
         },
         {
-          "id": "fr-validation-stepwise",
+          "id": "mango-fr-validation-stepwise",
           "file": "fr-validation-stepwise.md",
           "tests": 1,
           "feedback": 0,
@@ -95,21 +95,21 @@
       "icon": "3",
       "prompts": [
         {
-          "id": "fr-validation-legacy",
+          "id": "mango-fr-validation-legacy",
           "file": "fr-validation-legacy.md",
           "tests": 1,
           "feedback": 0,
           "usage": 1
         },
         {
-          "id": "fr-validation-oneshot",
+          "id": "mango-fr-validation-oneshot",
           "file": "fr-validation-oneshot.md",
           "tests": 1,
           "feedback": 0,
           "usage": 1
         },
         {
-          "id": "fr-validation-stepwise",
+          "id": "mango-fr-validation-stepwise",
           "file": "fr-validation-stepwise.md",
           "tests": 1,
           "feedback": 0,
@@ -123,28 +123,28 @@
       "icon": "4",
       "prompts": [
         {
-          "id": "us-modeling-oneshot",
+          "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
           "tests": 5,
           "feedback": 0,
           "usage": 5
         },
         {
-          "id": "us-modeling-stepwise",
+          "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
           "tests": 5,
           "feedback": 0,
           "usage": 5
         },
         {
-          "id": "user-story-generator-legacy",
+          "id": "mango-user-story-generator-legacy",
           "file": "user-story-generator-legacy.md",
           "tests": 5,
           "feedback": 0,
           "usage": 5
         },
         {
-          "id": "user-story-generator-simple-legacy",
+          "id": "mango-user-story-generator-simple-legacy",
           "file": "user-story-generator-simple-legacy.md",
           "tests": 5,
           "feedback": 0,
@@ -158,7 +158,7 @@
       "icon": "6",
       "prompts": [
         {
-          "id": "session-debug-documentation-oneshot",
+          "id": "mango-session-debug-documentation-oneshot",
           "file": "session-debug-documentation-oneshot.md",
           "tests": 1,
           "feedback": 0,
@@ -172,14 +172,14 @@
       "icon": "7",
       "prompts": [
         {
-          "id": "tz-stats-generator-legacy",
+          "id": "mango-tz-stats-generator-legacy",
           "file": "tz-stats-generator-legacy.md",
           "tests": 3,
           "feedback": 0,
           "usage": 3
         },
         {
-          "id": "tz-stats-generator-simple-legacy",
+          "id": "mango-tz-stats-generator-simple-legacy",
           "file": "tz-stats-generator-simple-legacy.md",
           "tests": 3,
           "feedback": 0,
@@ -190,7 +190,7 @@
   ],
   "prompts": [
     {
-      "id": "us-modeling-oneshot",
+      "id": "mango-us-modeling-oneshot",
       "file": "us-modeling-oneshot.md",
       "status": "draft",
       "operation": "modeling",
@@ -211,7 +211,7 @@
       "usage": 5
     },
     {
-      "id": "us-modeling-stepwise",
+      "id": "mango-us-modeling-stepwise",
       "file": "us-modeling-stepwise.md",
       "status": "draft",
       "operation": "modeling",
@@ -232,7 +232,7 @@
       "usage": 5
     },
     {
-      "id": "user-story-generator-legacy",
+      "id": "mango-user-story-generator-legacy",
       "file": "user-story-generator-legacy.md",
       "status": "archived",
       "operation": "modeling",
@@ -252,7 +252,7 @@
       "usage": 5
     },
     {
-      "id": "user-story-generator-simple-legacy",
+      "id": "mango-user-story-generator-simple-legacy",
       "file": "user-story-generator-simple-legacy.md",
       "status": "archived",
       "operation": "modeling",
@@ -272,7 +272,7 @@
       "usage": 5
     },
     {
-      "id": "tz-stats-generator-legacy",
+      "id": "mango-tz-stats-generator-legacy",
       "file": "tz-stats-generator-legacy.md",
       "status": "archived",
       "operation": "quality",
@@ -290,7 +290,7 @@
       "usage": 3
     },
     {
-      "id": "tz-stats-generator-simple-legacy",
+      "id": "mango-tz-stats-generator-simple-legacy",
       "file": "tz-stats-generator-simple-legacy.md",
       "status": "archived",
       "operation": "quality",
@@ -308,7 +308,7 @@
       "usage": 3
     },
     {
-      "id": "uc-modeling-oneshot",
+      "id": "mango-uc-modeling-oneshot",
       "file": "uc-modeling-oneshot.md",
       "status": "draft",
       "operation": "modeling",
@@ -327,7 +327,7 @@
       "usage": 3
     },
     {
-      "id": "uc-modeling-stepwise",
+      "id": "mango-uc-modeling-stepwise",
       "file": "uc-modeling-stepwise.md",
       "status": "draft",
       "operation": "modeling",
@@ -346,7 +346,7 @@
       "usage": 3
     },
     {
-      "id": "usecase-stepwise-generator-legacy",
+      "id": "mango-usecase-stepwise-generator-legacy",
       "file": "usecase-stepwise-generator-legacy.md",
       "status": "archived",
       "operation": "modeling",
@@ -364,7 +364,7 @@
       "usage": 3
     },
     {
-      "id": "usecase-stepwise-generator-simple-legacy",
+      "id": "mango-usecase-stepwise-generator-simple-legacy",
       "file": "usecase-stepwise-generator-simple-legacy.md",
       "status": "archived",
       "operation": "modeling",
@@ -382,7 +382,7 @@
       "usage": 3
     },
     {
-      "id": "fr-documentation-oneshot",
+      "id": "mango-fr-documentation-oneshot",
       "file": "fr-documentation-oneshot.md",
       "status": "draft",
       "operation": "documentation",
@@ -398,7 +398,7 @@
       "usage": 1
     },
     {
-      "id": "fr-documentation-stepwise",
+      "id": "mango-fr-documentation-stepwise",
       "file": "fr-documentation-stepwise.md",
       "status": "draft",
       "operation": "documentation",
@@ -414,7 +414,7 @@
       "usage": 1
     },
     {
-      "id": "fr-validation-legacy",
+      "id": "mango-fr-validation-legacy",
       "file": "fr-validation-legacy.md",
       "status": "draft",
       "operation": "validation",
@@ -431,7 +431,7 @@
       "usage": 1
     },
     {
-      "id": "fr-validation-oneshot",
+      "id": "mango-fr-validation-oneshot",
       "file": "fr-validation-oneshot.md",
       "status": "draft",
       "operation": "validation",
@@ -448,7 +448,7 @@
       "usage": 1
     },
     {
-      "id": "fr-validation-stepwise",
+      "id": "mango-fr-validation-stepwise",
       "file": "fr-validation-stepwise.md",
       "status": "draft",
       "operation": "validation",
@@ -466,7 +466,7 @@
       "usage": 1
     },
     {
-      "id": "session-debug-documentation-oneshot",
+      "id": "mango-session-debug-documentation-oneshot",
       "file": "session-debug-documentation-oneshot.md",
       "status": "draft",
       "operation": "documentation",
@@ -482,7 +482,7 @@
       "usage": 1
     },
     {
-      "id": "asr-ingestion-legacy",
+      "id": "mango-asr-ingestion-legacy",
       "file": "asr-ingestion-legacy.md",
       "status": "draft",
       "operation": "ingestion",
@@ -497,7 +497,7 @@
       "usage": 0
     },
     {
-      "id": "asr-ingestion-oneshot",
+      "id": "mango-asr-ingestion-oneshot",
       "file": "asr-ingestion-oneshot.md",
       "status": "draft",
       "operation": "ingestion",
@@ -512,7 +512,7 @@
       "usage": 0
     },
     {
-      "id": "constraints-documentation-oneshot",
+      "id": "mango-constraints-documentation-oneshot",
       "file": "constraints-documentation-oneshot.md",
       "status": "draft",
       "operation": "documentation",
@@ -526,7 +526,7 @@
       "usage": 0
     },
     {
-      "id": "constraints-documentation-stepwise",
+      "id": "mango-constraints-documentation-stepwise",
       "file": "constraints-documentation-stepwise.md",
       "status": "draft",
       "operation": "documentation",
@@ -540,7 +540,7 @@
       "usage": 0
     },
     {
-      "id": "glossary-context-understanding-oneshot",
+      "id": "mango-glossary-context-understanding-oneshot",
       "file": "glossary-context-understanding-oneshot.md",
       "status": "draft",
       "operation": "understanding",
@@ -556,7 +556,7 @@
       "usage": 0
     },
     {
-      "id": "glossary-context-understanding-stepwise",
+      "id": "mango-glossary-context-understanding-stepwise",
       "file": "glossary-context-understanding-stepwise.md",
       "status": "draft",
       "operation": "understanding",
@@ -572,7 +572,7 @@
       "usage": 0
     },
     {
-      "id": "letter-customer-documentation-legacy",
+      "id": "mango-letter-customer-documentation-legacy",
       "file": "letter-customer-documentation-legacy.md",
       "status": "draft",
       "operation": "documentation",
@@ -586,7 +586,7 @@
       "usage": 0
     },
     {
-      "id": "meeting-customer-documentation-stepwise",
+      "id": "mango-meeting-customer-documentation-stepwise",
       "file": "meeting-customer-documentation-stepwise.md",
       "status": "draft",
       "operation": "documentation",
@@ -600,7 +600,7 @@
       "usage": 0
     },
     {
-      "id": "meeting-team-documentation-stepwise",
+      "id": "mango-meeting-team-documentation-stepwise",
       "file": "meeting-team-documentation-stepwise.md",
       "status": "draft",
       "operation": "documentation",
@@ -614,7 +614,7 @@
       "usage": 0
     },
     {
-      "id": "questions-customer-understanding-legacy",
+      "id": "mango-questions-customer-understanding-legacy",
       "file": "questions-customer-understanding-legacy.md",
       "status": "draft",
       "operation": "understanding",
@@ -630,7 +630,7 @@
       "usage": 0
     },
     {
-      "id": "questions-customer-understanding-stepwise",
+      "id": "mango-questions-customer-understanding-stepwise",
       "file": "questions-customer-understanding-stepwise.md",
       "status": "draft",
       "operation": "understanding",
@@ -646,7 +646,7 @@
       "usage": 0
     },
     {
-      "id": "technical-details-solution-design-legacy",
+      "id": "mango-technical-details-solution-design-legacy",
       "file": "technical-details-solution-design-legacy.md",
       "status": "draft",
       "operation": "solution_design",
@@ -660,7 +660,7 @@
       "usage": 0
     },
     {
-      "id": "technical-details-solution-design-oneshot",
+      "id": "mango-technical-details-solution-design-oneshot",
       "file": "technical-details-solution-design-oneshot.md",
       "status": "draft",
       "operation": "solution_design",
@@ -674,7 +674,7 @@
       "usage": 0
     },
     {
-      "id": "technical-details-solution-design-stepwise",
+      "id": "mango-technical-details-solution-design-stepwise",
       "file": "technical-details-solution-design-stepwise.md",
       "status": "draft",
       "operation": "solution_design",

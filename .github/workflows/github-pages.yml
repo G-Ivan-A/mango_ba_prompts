@@ -40,6 +40,9 @@ jobs:
       - name: Validate Mango Office widget
         run: python3 scripts/validate_issue_86_mango_widget.py
 
+      - name: Validate prompt ID in copy
+        run: python3 scripts/validate_issue_95_prompt_id_in_copy.py
+
       - name: Prepare artifact
         run: |
           mkdir -p pages-dist
