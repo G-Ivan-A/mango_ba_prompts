@@ -86,6 +86,56 @@ release-цикла.
 - Операции в именах файлов записываются в kebab-case
   (`solution_design` → `solution-design`).
 
+## 4. Соответствие BABOK / ISO / ГОСТ и профиль аудита
+
+Раздел добавлен по [ADR-004](adr/004-operations-taxonomy.md) (issue #97, ФТ-2)
+**аддитивно**: 13 операций и 9 процессов §1-2 не меняются. Здесь фиксируется
+маппинг операций на области знаний BABOK Guide v3 и профиль критериев аудита.
+
+### 4.1. Маппинг операций на 6 областей знаний BABOK Guide v3
+
+Области знаний (Knowledge Areas): **BAPM** — Business Analysis Planning and
+Monitoring; **EC** — Elicitation and Collaboration; **RLCM** — Requirements Life
+Cycle Management; **SA** — Strategy Analysis; **RADD** — Requirements Analysis and
+Design Definition; **SE** — Solution Evaluation.
+
+| Операция | Основная KA | Доп. KA |
+| --- | --- | --- |
+| `ingestion` | EC | — |
+| `understanding` | EC | SA |
+| `validation` | RADD | RLCM |
+| `modeling` | RADD | — |
+| `solution_design` | RADD | SA |
+| `documentation` | RADD | EC |
+| `quality` | RADD | SE |
+| `research` | SA | EC |
+| `governance` | RLCM | BAPM |
+| `impact_analysis` | RLCM | SE |
+| `reverse_requirements` | SA | RADD |
+| `risk_analysis` | SA | BAPM |
+| `release_readiness` | SE | RLCM |
+
+### 4.2. Профиль критериев аудита (для `validation` и `quality`)
+
+«Аудит» — **не отдельная операция**, а именованный чек-лист характеристик
+качества из ISO/IEC/IEEE 29148:2018, который применяют операции `validation`
+(к требованиям) и `quality` (к документам/метрикам). Операция `validation`
+по BABOK покрывает обе грани: **Verify** (форма) и **Validate** (ценность).
+
+9 характеристик отдельного требования: Necessary, Appropriate, Unambiguous,
+Complete, Singular, Feasible, Verifiable, Correct, Conforming. 5 характеристик
+набора: Complete, Consistent, Feasible, Comprehensible, Able to be validated.
+Прохождение профиля = условие перехода артефакта в состояние `validated`
+(см. [стандарт онтологии](../standards/ba-ontology.md), §5).
+
+### 4.3. Соответствие стандартам (полные URL)
+
+- BABOK Guide v3: <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>
+- ISO/IEC/IEEE 29148:2018: <https://www.iso.org/standard/72089.html>
+- ISO/IEC 25010:2011: <https://www.iso.org/standard/35733.html> · 2023: <https://www.iso.org/standard/78176.html>
+- ГОСТ 34.602-2020 (структура ТЗ): <https://docs.cntd.ru/document/1200181804>
+- ГОСТ 34.601-90 (стадии создания АС): <https://docs.cntd.ru/document/1200006921>
+
 ## Связанные артефакты
 
 - [docs/ba-processes/00-index.md](ba-processes/00-index.md) — маппинг
