@@ -1,0 +1,691 @@
+{
+  "generatedAt": "2026-06-16T11:30:46.313Z",
+  "sourceFiles": [
+    {
+      "path": "prompts/experiments/",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/"
+    },
+    {
+      "path": "governance/prompt-feedback.json",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/prompt-feedback.json"
+    }
+  ],
+  "statuses": {
+    "draft": 24,
+    "canonical": 0,
+    "archived": 6
+  },
+  "tests": {
+    "logs": 6,
+    "total": 44,
+    "coveredPrompts": 16
+  },
+  "feedback": {
+    "label": "prompt:feedback",
+    "total": 0,
+    "prompts": 0
+  },
+  "activity": [
+    {
+      "id": 1,
+      "label": "Формирование ФТ/ТЗ",
+      "icon": "1",
+      "prompts": [
+        {
+          "id": "us-modeling-oneshot",
+          "file": "us-modeling-oneshot.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        },
+        {
+          "id": "us-modeling-stepwise",
+          "file": "us-modeling-stepwise.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        },
+        {
+          "id": "uc-modeling-oneshot",
+          "file": "uc-modeling-oneshot.md",
+          "tests": 3,
+          "feedback": 0,
+          "usage": 3
+        },
+        {
+          "id": "uc-modeling-stepwise",
+          "file": "uc-modeling-stepwise.md",
+          "tests": 3,
+          "feedback": 0,
+          "usage": 3
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "label": "Валидация ФТ/ТЗ",
+      "icon": "2",
+      "prompts": [
+        {
+          "id": "fr-validation-legacy",
+          "file": "fr-validation-legacy.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        },
+        {
+          "id": "fr-validation-oneshot",
+          "file": "fr-validation-oneshot.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        },
+        {
+          "id": "fr-validation-stepwise",
+          "file": "fr-validation-stepwise.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "label": "Анализ тендерных ТЗ",
+      "icon": "3",
+      "prompts": [
+        {
+          "id": "fr-validation-legacy",
+          "file": "fr-validation-legacy.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        },
+        {
+          "id": "fr-validation-oneshot",
+          "file": "fr-validation-oneshot.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        },
+        {
+          "id": "fr-validation-stepwise",
+          "file": "fr-validation-stepwise.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "label": "Формирование UC/US",
+      "icon": "4",
+      "prompts": [
+        {
+          "id": "us-modeling-oneshot",
+          "file": "us-modeling-oneshot.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        },
+        {
+          "id": "us-modeling-stepwise",
+          "file": "us-modeling-stepwise.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        },
+        {
+          "id": "user-story-generator-legacy",
+          "file": "user-story-generator-legacy.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        },
+        {
+          "id": "user-story-generator-simple-legacy",
+          "file": "user-story-generator-simple-legacy.md",
+          "tests": 5,
+          "feedback": 0,
+          "usage": 5
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "label": "Помощь ПО/ПМ",
+      "icon": "6",
+      "prompts": [
+        {
+          "id": "session-debug-documentation-oneshot",
+          "file": "session-debug-documentation-oneshot.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "label": "Статистика",
+      "icon": "7",
+      "prompts": [
+        {
+          "id": "tz-stats-generator-legacy",
+          "file": "tz-stats-generator-legacy.md",
+          "tests": 3,
+          "feedback": 0,
+          "usage": 3
+        },
+        {
+          "id": "tz-stats-generator-simple-legacy",
+          "file": "tz-stats-generator-simple-legacy.md",
+          "tests": 3,
+          "feedback": 0,
+          "usage": 3
+        }
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "us-modeling-oneshot",
+      "file": "us-modeling-oneshot.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 5,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "session-debug-summarizer-2026-06-13.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md",
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 5
+    },
+    {
+      "id": "us-modeling-stepwise",
+      "file": "us-modeling-stepwise.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 5,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "session-debug-summarizer-2026-06-13.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md",
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 5
+    },
+    {
+      "id": "user-story-generator-legacy",
+      "file": "user-story-generator-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 5,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "session-debug-summarizer-2026-06-13.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md",
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 5
+    },
+    {
+      "id": "user-story-generator-simple-legacy",
+      "file": "user-story-generator-simple-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 5,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "session-debug-summarizer-2026-06-13.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md",
+        "user-story_gen-from-raw-request_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 5
+    },
+    {
+      "id": "tz-stats-generator-legacy",
+      "file": "tz-stats-generator-legacy.md",
+      "status": "archived",
+      "operation": "quality",
+      "processes": [
+        "Статистика"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "tz-stats-prototype-2026-05.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "tz-stats-generator-simple-legacy",
+      "file": "tz-stats-generator-simple-legacy.md",
+      "status": "archived",
+      "operation": "quality",
+      "processes": [
+        "Статистика"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "tz-stats-prototype-2026-05.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "uc-modeling-oneshot",
+      "file": "uc-modeling-oneshot.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "uc-modeling-stepwise",
+      "file": "uc-modeling-stepwise.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "usecase-stepwise-generator-legacy",
+      "file": "usecase-stepwise-generator-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "usecase-stepwise-generator-simple-legacy",
+      "file": "usecase-stepwise-generator-simple-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "prompts-audit-2026-05-26.md",
+        "prompts-selftest-2026-05-26.md",
+        "usecase_gen-stepwise-alignment_2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "fr-documentation-oneshot",
+      "file": "fr-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "fr-documentation-stepwise",
+      "file": "fr-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "fr-validation-legacy",
+      "file": "fr-validation-legacy.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "fr-validation-oneshot",
+      "file": "fr-validation-oneshot.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "fr-validation-stepwise",
+      "file": "fr-validation-stepwise.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "session-debug-documentation-oneshot",
+      "file": "session-debug-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "asr-ingestion-legacy",
+      "file": "asr-ingestion-legacy.md",
+      "status": "draft",
+      "operation": "ingestion",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "asr-ingestion-oneshot",
+      "file": "asr-ingestion-oneshot.md",
+      "status": "draft",
+      "operation": "ingestion",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "constraints-documentation-oneshot",
+      "file": "constraints-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "constraints-documentation-stepwise",
+      "file": "constraints-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "glossary-context-understanding-oneshot",
+      "file": "glossary-context-understanding-oneshot.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "glossary-context-understanding-stepwise",
+      "file": "glossary-context-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "letter-customer-documentation-legacy",
+      "file": "letter-customer-documentation-legacy.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "meeting-customer-documentation-stepwise",
+      "file": "meeting-customer-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "meeting-team-documentation-stepwise",
+      "file": "meeting-team-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "questions-customer-understanding-legacy",
+      "file": "questions-customer-understanding-legacy.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "questions-customer-understanding-stepwise",
+      "file": "questions-customer-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "technical-details-solution-design-legacy",
+      "file": "technical-details-solution-design-legacy.md",
+      "status": "draft",
+      "operation": "solution_design",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "technical-details-solution-design-oneshot",
+      "file": "technical-details-solution-design-oneshot.md",
+      "status": "draft",
+      "operation": "solution_design",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "technical-details-solution-design-stepwise",
+      "file": "technical-details-solution-design-stepwise.md",
+      "status": "draft",
+      "operation": "solution_design",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    }
+  ]
+}

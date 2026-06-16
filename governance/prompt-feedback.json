@@ -1,0 +1,6 @@
+{
+  "description": "Статический срез обратной связи по промптам для модуля «Проверки» GitHub Pages. Заполняется по issues с лейблом prompt:feedback (вручную или скриптом синхронизации с GitHub API). Поле prompt — id промпта (имя файла без .md).",
+  "label": "prompt:feedback",
+  "updated": "2026-06-16",
+  "entries": []
+}

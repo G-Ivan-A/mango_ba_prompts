@@ -146,6 +146,12 @@ input {
   background: #ffffff;
 }
 
+.checks-band {
+  background:
+    linear-gradient(90deg, rgba(37, 99, 235, 0.07), transparent 36%),
+    var(--bg);
+}
+
 .roadmap-band {
   background:
     linear-gradient(90deg, rgba(180, 83, 9, 0.08), transparent 34%),
@@ -211,6 +217,8 @@ h3 {
 .toolbar,
 .filters,
 .prompt-grid,
+.checks-grid,
+.checks-activity,
 .roadmap-timeline,
 .gap-grid {
   width: min(1240px, 100%);
@@ -425,6 +433,15 @@ h3 {
   color: var(--teal);
 }
 
+.filter-button[data-unavailable="true"] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.filter-button[data-unavailable="true"]:hover {
+  border-color: var(--border);
+}
+
 .filter-icon {
   display: inline-grid;
   width: 24px;
@@ -587,6 +604,193 @@ h3 {
   border-left: 4px solid var(--amber);
 }
 
+.checks-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.check-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 150px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.check-title {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.check-big {
+  color: var(--ink);
+  font-size: 2.4rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.check-value-block {
+  display: grid;
+  gap: 10px;
+}
+
+.check-bar {
+  display: flex;
+  height: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #e8ece8;
+}
+
+.check-bar-part {
+  height: 100%;
+}
+
+.check-bar-part[data-kind="canonical"] {
+  background: var(--teal);
+}
+
+.check-bar-part[data-kind="draft"] {
+  background: var(--amber);
+}
+
+.check-bar-part[data-kind="archived"] {
+  background: var(--muted);
+}
+
+.check-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.check-metric {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 650;
+}
+
+.check-metric strong {
+  margin-right: 5px;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.check-activity-title {
+  width: min(1240px, 100%);
+  margin: 4px auto 12px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.activity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.activity-card {
+  display: grid;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.activity-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.activity-icon {
+  display: inline-grid;
+  width: 26px;
+  height: 26px;
+  place-items: center;
+  flex: 0 0 auto;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 850;
+  font-size: 0.82rem;
+}
+
+.activity-label {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.activity-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.activity-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  padding-top: 8px;
+  border-top: 1px solid var(--border);
+}
+
+.activity-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.activity-prompt {
+  min-width: 0;
+  color: var(--text);
+  font-family:
+    "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.78rem;
+  overflow-wrap: anywhere;
+}
+
+.activity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.activity-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 2px 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-strong);
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.activity-chip[data-kind="feedback"] {
+  border-color: rgba(180, 83, 9, 0.32);
+  background: rgba(180, 83, 9, 0.08);
+  color: var(--amber);
+}
+
 .empty-state {
   grid-column: 1 / -1;
   min-height: 160px;
@@ -628,6 +832,8 @@ h3 {
 
   .phase-lane,
   .prompt-grid,
+  .checks-grid,
+  .activity-grid,
   .gap-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -662,6 +868,8 @@ h3 {
   .metrics-grid,
   .phase-lane,
   .prompt-grid,
+  .checks-grid,
+  .activity-grid,
   .roadmap-timeline,
   .gap-grid {
     grid-template-columns: 1fr;

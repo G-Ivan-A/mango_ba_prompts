@@ -16,6 +16,10 @@ const SOURCE_FILES = {
   ecosystem: "docs/ba-ecosystem.md",
 };
 
+// Тестовые логи промптов и (опциональный) статический срез обратной связи.
+const EXPERIMENTS_DIR = "prompts/experiments";
+const FEEDBACK_SOURCE = "governance/prompt-feedback.json";
+
 const OPERATION_ICONS = {
   ingestion: "↓",
   understanding: "?",
@@ -385,6 +389,146 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
   };
 }
 
+function normalizeForMatch(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[_\s]+/g, "-")
+    .replace(/[^a-z0-9-]+/g, "-")
+    .replace(/-+/g, "-");
+}
+
+// Набор «топиков» промпта для сопоставления с тестовыми логами prompts/experiments/.
+function promptSearchTerms(prompt) {
+  const stem = prompt.file
+    .replace(/\.md$/, "")
+    .replace(/-(stepwise|oneshot|legacy|simple)$/g, "")
+    .replace(/-generator$/g, "");
+  const normalizedStem = normalizeForMatch(stem);
+  const words = normalizedStem.split("-").filter(Boolean);
+  const core = words.slice(0, 2).join("-");
+  const terms = new Set([normalizedStem, core].filter(Boolean));
+  // Устойчивые сокращения предметной области БА.
+  if (words[0] === "us" || normalizedStem.startsWith("user-story")) {
+    terms.add("user-story");
+  }
+  if (words[0] === "uc" || normalizedStem.startsWith("usecase")) {
+    terms.add("usecase");
+  }
+  if (normalizedStem.startsWith("tz-stats")) {
+    terms.add("tz-stats");
+  }
+  return [...terms];
+}
+
+async function loadExperiments() {
+  let names = [];
+  try {
+    names = await fs.readdir(path.join(ROOT, EXPERIMENTS_DIR));
+  } catch {
+    return [];
+  }
+  const experiments = [];
+  for (const name of names.filter((file) => file.endsWith(".md"))) {
+    const content = await read(`${EXPERIMENTS_DIR}/${name}`);
+    experiments.push({ name, normalized: normalizeForMatch(content) });
+  }
+  return experiments;
+}
+
+async function loadFeedback() {
+  try {
+    const parsed = JSON.parse(await read(FEEDBACK_SOURCE));
+    return Array.isArray(parsed.entries) ? parsed.entries : [];
+  } catch {
+    return [];
+  }
+}
+
+function makeChecks(prompts, processes, experiments, feedbackEntries) {
+  const statuses = { draft: 0, canonical: 0, archived: 0 };
+  for (const prompt of prompts) {
+    if (prompt.archived) {
+      statuses.archived += 1;
+    } else {
+      statuses[prompt.status] = (statuses[prompt.status] || 0) + 1;
+    }
+  }
+
+  const feedbackByPrompt = new Map();
+  for (const entry of feedbackEntries) {
+    const id = entry.prompt || entry.id;
+    if (!id) {
+      continue;
+    }
+    if (!feedbackByPrompt.has(id)) {
+      feedbackByPrompt.set(id, []);
+    }
+    feedbackByPrompt.get(id).push(entry);
+  }
+
+  const perPrompt = prompts.map((prompt) => {
+    const terms = promptSearchTerms(prompt);
+    const testFiles = experiments
+      .filter((experiment) => terms.some((term) => experiment.normalized.includes(term)))
+      .map((experiment) => experiment.name);
+    const feedback = feedbackByPrompt.get(prompt.id) || [];
+    return {
+      id: prompt.id,
+      file: prompt.file,
+      status: prompt.archived ? "archived" : prompt.status,
+      operation: prompt.operation.id,
+      processes: prompt.processes,
+      tests: testFiles.length,
+      testFiles,
+      feedback: feedback.length,
+      feedbackIssues: feedback,
+      usage: testFiles.length + feedback.length,
+    };
+  });
+
+  const byUsage = (left, right) => right.usage - left.usage || left.id.localeCompare(right.id);
+
+  const activity = processes
+    .map((process) => ({
+      id: process.id,
+      label: process.label,
+      icon: process.icon,
+      prompts: perPrompt
+        .filter((prompt) => prompt.processes.includes(process.label) && prompt.usage > 0)
+        .sort(byUsage)
+        .slice(0, 4)
+        .map((prompt) => ({
+          id: prompt.id,
+          file: prompt.file,
+          tests: prompt.tests,
+          feedback: prompt.feedback,
+          usage: prompt.usage,
+        })),
+    }))
+    .filter((group) => group.prompts.length > 0);
+
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [
+      { path: `${EXPERIMENTS_DIR}/`, url: repoUrl(`${EXPERIMENTS_DIR}/`) },
+      { path: FEEDBACK_SOURCE, url: repoUrl(FEEDBACK_SOURCE) },
+    ],
+    statuses,
+    tests: {
+      logs: experiments.length,
+      total: perPrompt.reduce((sum, prompt) => sum + prompt.tests, 0),
+      coveredPrompts: perPrompt.filter((prompt) => prompt.tests > 0).length,
+    },
+    feedback: {
+      label: "prompt:feedback",
+      total: perPrompt.reduce((sum, prompt) => sum + prompt.feedback, 0),
+      prompts: perPrompt.filter((prompt) => prompt.feedback > 0).length,
+    },
+    activity,
+    prompts: perPrompt.sort(byUsage),
+  };
+}
+
 async function main() {
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown] =
     await Promise.all([
@@ -481,14 +625,22 @@ async function main() {
     gaps: roadmap.gaps,
   };
 
+  const experiments = await loadExperiments();
+  const feedbackEntries = await loadFeedback();
+  const checksData = makeChecks(prompts, taxonomy.processes, experiments, feedbackEntries);
+
   await fs.mkdir(SITE_DATA_DIR, { recursive: true });
   await writeJson("site/data/prompts.json", promptsData);
   await writeJson("site/data/stats.json", makeStats(prompts, taxonomy, processIndex, roadmap));
   await writeJson("site/data/roadmap.json", roadmapData);
+  await writeJson("site/data/checks.json", checksData);
 
   console.log(`Generated ${prompts.length} prompts`);
   console.log(`Generated ${taxonomy.operations.length} operations and ${taxonomy.processes.length} processes`);
   console.log(`Generated ${roadmap.levels.length} roadmap levels and ${roadmap.gaps.length} gaps`);
+  console.log(
+    `Generated checks: ${checksData.tests.total} prompt tests in ${experiments.length} logs, ${checksData.feedback.total} feedback items`,
+  );
 }
 
 main().catch((error) => {

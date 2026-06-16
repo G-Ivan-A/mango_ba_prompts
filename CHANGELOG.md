@@ -13,6 +13,35 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #91 улучшение GitHub Pages (порядок, фильтры, аналитика)
+
+- Изменён порядок секций в [`site/index.html`](site/index.html): **Каталог →
+  Дашборд → Проверки → Roadmap**. Каталог промптов теперь основной контент и
+  виден сразу (ФТ-1).
+- Переупорядочены фильтры каталога в [`site/app.js`](site/app.js): **Процессы БА
+  → Операции → Режимы**. Внутри одного фильтра действует логика **ИЛИ**, между
+  фильтрами — **И** (ФТ-2).
+- Реализована умная каскадная фильтрация: при выборе процесса(ов) фильтр
+  «Операции» сужается до операций выбранных процессов (недоступные операции
+  подсвечиваются как неактивные), а фильтры «Процессы» и «Режимы» не
+  сокращаются (ФТ-3).
+- Добавлен модуль **«Проверки»** вместо карточки «Мультиагенты»: статус отладки
+  (`draft` / `canonical` / `archived`), число зафиксированных тестов в
+  [`prompts/experiments/`](prompts/experiments), обратная связь по лейблу
+  `prompt:feedback` и активность использования промптов по процессам БА (ФТ-4).
+- [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs) генерирует
+  новый артефакт [`site/data/checks.json`](site/data/checks.json) на основе
+  тестовых логов и статического среза
+  [`governance/prompt-feedback.json`](governance/prompt-feedback.json) (ФТ-6).
+- Решение по `experiments/` vs `scripts/`: корневой `experiments/` отсутствует
+  (Python-валидаторы уже консолидированы в `scripts/`), `prompts/experiments/`
+  сохранён как каноничное место тестовых логов промптов. Назначение директорий
+  задокументировано (ФТ-5).
+- Добавлена локальная проверка
+  [`scripts/validate_issue_91_pages_enhancements.py`](scripts/validate_issue_91_pages_enhancements.py)
+  и шаг в workflow
+  [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
+
 ### Added — Issue #86 Mango Office Multichannel widget
 
 - В GitHub Pages шаблон [`site/index.html`](site/index.html) добавлен виджет
