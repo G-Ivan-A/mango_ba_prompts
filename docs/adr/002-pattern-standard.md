@@ -484,7 +484,7 @@ Case в проверяемые функциональные требования
 Локальная проверка этого ADR:
 
 ```bash
-python3 experiments/validate_issue_64_pattern_adr.py
+python3 scripts/validate_issue_64_pattern_adr.py
 ```
 
 Проверка подтверждает наличие ADR, 8 обязательных полей, 13 операций

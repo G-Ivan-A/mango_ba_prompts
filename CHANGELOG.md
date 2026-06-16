@@ -19,7 +19,7 @@ ai-generated: true
   Mango Office Multichannel с `id: 23303`: чат поддержки и заказ обратного
   звонка загружаются перед закрывающим тегом `</body>`.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_86_mango_widget.py`](experiments/validate_issue_86_mango_widget.py),
+  [`scripts/validate_issue_86_mango_widget.py`](scripts/validate_issue_86_mango_widget.py),
   закрепляющая наличие скрипта виджета, идентификатора `23303`, расположение
   перед `</body>` и запись в changelog.
 - Workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml)
@@ -40,7 +40,7 @@ ai-generated: true
   колонка "Паттерн" для процессов, покрытых MVP-библиотекой, сохранив
   parser-compatible структуру центрального реестра.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_85_patterns_library.py`](experiments/validate_issue_85_patterns_library.py)
+  [`scripts/validate_issue_85_patterns_library.py`](scripts/validate_issue_85_patterns_library.py)
   для воспроизведения требований issue #85: наличие 7 директорий, 8 секций,
   Product/Commercial Layer, примеров, ссылок на существующие prompts, навигации
   и центрального registry mapping.
@@ -55,7 +55,7 @@ ai-generated: true
   маршрутов с Product Layer и Commercial Layer, 3 сценария запуска процессов с
   Mermaid-диаграммами и полный traceability-блок по связанным PR/репозиториям.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_83_ba_process_map.py`](experiments/validate_issue_83_ba_process_map.py)
+  [`scripts/validate_issue_83_ba_process_map.py`](scripts/validate_issue_83_ba_process_map.py)
   для воспроизведения требований issue #83: наличие 9 процессов, 13 операций,
   ссылок на 24 активных и 6 архивных prompts, known gaps и навигации.
 
@@ -80,7 +80,7 @@ ai-generated: true
   [`prompts/experiments/session-debug-summarizer-2026-06-13.md`](prompts/experiments/session-debug-summarizer-2026-06-13.md),
   подтверждающий получение структурированного резюме за один запуск.
 - Обновлены контрольные счётчики в
-  [`experiments/validate_issue_74_github_pages.py`](experiments/validate_issue_74_github_pages.py)
+  [`scripts/validate_issue_74_github_pages.py`](scripts/validate_issue_74_github_pages.py)
   (24 активных промпта, 30 всего).
 
 ### Added — Issue #74 GitHub Pages interface
@@ -104,7 +104,7 @@ ai-generated: true
   публикуется в ветку `gh-pages` через `GITHUB_TOKEN`, без PAT и без GitHub API
   в клиентском коде.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_74_github_pages.py`](experiments/validate_issue_74_github_pages.py)
+  [`scripts/validate_issue_74_github_pages.py`](scripts/validate_issue_74_github_pages.py)
   для воспроизведения и валидации требований issue #74.
 ### Added — Issue #76 суммария синхронизации сессий Хаба
 
@@ -112,7 +112,7 @@ ai-generated: true
   [`governance/session-digests.md`](governance/session-digests.md): добавлены
   индексная запись `2026-06-14` и блок `#2026-06-14` для передачи контекста
   между Чатом Хаба и Чатом БА Манго.
-- Локальная проверка [`experiments/validate_issue_72_hub_sync.py`](experiments/validate_issue_72_hub_sync.py)
+- Локальная проверка [`scripts/validate_issue_72_hub_sync.py`](scripts/validate_issue_72_hub_sync.py)
   больше не требует пустой индекс `session-digests.md`, так как первая суммария
   теперь сохранена.
 
@@ -136,7 +136,7 @@ ai-generated: true
   зафиксировать Smart Sync snapshot, source SHA и терминологию
   Пользователь / Исполнитель.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_72_hub_sync.py`](experiments/validate_issue_72_hub_sync.py)
+  [`scripts/validate_issue_72_hub_sync.py`](scripts/validate_issue_72_hub_sync.py)
   для воспроизведения и валидации требований issue #72.
 - Досинхронизированы релевантные части Hub PR #229 и Hub PR #230, latest Hub SHA
   `b683341d22d4f518618917a02d9c7c394658b156`.
@@ -177,7 +177,7 @@ ai-generated: true
   с ADR: README остаётся краткой справкой, стандарт — операционным контрактом
   для review.
 - Добавлена локальная проверка
-  [`experiments/validate_issue_64_pattern_adr.py`](experiments/validate_issue_64_pattern_adr.py)
+  [`scripts/validate_issue_64_pattern_adr.py`](scripts/validate_issue_64_pattern_adr.py)
   для воспроизведения и валидации требований issue #64.
 
 ### Added — Issue #66 экосистема работы БА с графами связей и картой процессов
