@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T22:20:39.922Z",
+  "generatedAt": "2026-06-16T22:35:08.049Z",
   "sourceFiles": [
     {
       "path": "prompts/experiments/",
@@ -16,7 +16,7 @@
     "archived": 6
   },
   "tests": {
-    "logs": 7,
+    "logs": 9,
     "total": 54,
     "coveredPrompts": 20
   },

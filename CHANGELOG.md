@@ -39,6 +39,51 @@ ai-generated: true
   и реестр RFC [`governance/rfc-register.md`](governance/rfc-register.md):
   порядок «эксперимент → RFC → согласование с пользователем → изменение».
 
+### Added — Issue #97 формализация онтологии БА и стандартов (Creative + Research)
+
+- Формализована онтология БА (артефакт ↔ процесс ↔ операция) и выпущен набор
+  стандартов в виде ADR: [ADR-003](docs/adr/003-ba-ontology.md) (онтология),
+  [ADR-004](docs/adr/004-operations-taxonomy.md) (таксономия 13 операций,
+  `risk_analysis` сохранён), [ADR-005](docs/adr/005-artifact-team-naming.md)
+  (нейминг артефактов/команд), [ADR-006](docs/adr/006-prompt-naming.md) (нейминг
+  промптов, запрет перегрузки), [ADR-007](docs/adr/007-kb-standard.md) (KB до
+  настоящего RAG), [ADR-008](docs/adr/008-industry-standards-standard.md)
+  (отраслевые стандарты и best practices),
+  [ADR-009](docs/adr/009-bcreq-formation-process.md) (многоуровневый процесс
+  BCREQ, механизм незавершённых подпроцессов),
+  [ADR-010](docs/adr/010-pages-ux.md) (UX GitHub Pages). Все ADR содержат
+  обязательные разделы ФТ-9 (Title, Status, Context, Decision, Consequences,
+  References, Examples).
+- Добавлены «живые» контракты-стандарты с нормативным словарём RFC 2119 / BCP 14
+  и блоком DoD: [`standards/ba-ontology.md`](standards/ba-ontology.md),
+  [`standards/artifact-naming-standard.md`](standards/artifact-naming-standard.md),
+  [`standards/team-directory.md`](standards/team-directory.md) (ровно две команды
+  `BCREQ` и `CCMO` + механизм добавления),
+  [`standards/kb-standard.md`](standards/kb-standard.md),
+  [`standards/industry-standards-standard.md`](standards/industry-standards-standard.md),
+  [`standards/bcreq-process-standard.md`](standards/bcreq-process-standard.md),
+  [`standards/pages-ux-standard.md`](standards/pages-ux-standard.md).
+- **ФТ-8 (GitHub Pages):** на странице «Процессы» SPA (рядом с карточками
+  процессов из issue #99) добавлена секция «Процессы и подпроцессы с промптами».
+  Генератор [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs)
+  строит полный список процессов/подпроцессов в
+  [`site/data/process-tree.json`](site/data/process-tree.json) (с флагом
+  `hasPrompts` и типом покрытия `kind`), а интерфейс
+  ([`site/index.html`](site/index.html), [`site/app.js`](site/app.js),
+  [`site/styles.css`](site/styles.css)) по жёсткому требованию выводит **только**
+  процессы/подпроцессы с промптами. При > 20 показанных подпроцессах используется
+  раскрывающееся дерево (`<details>`/`<summary>`). Прототип (скриншоты) — в
+  [ADR-010](docs/adr/010-pages-ux.md).
+- Доказательная база: эксперименты
+  [`prompts/experiments/standards-applied-ab-2026-06-16.md`](prompts/experiments/standards-applied-ab-2026-06-16.md)
+  и
+  [`prompts/experiments/kb-citation-check-2026-06-16.md`](prompts/experiments/kb-citation-check-2026-06-16.md).
+- Добавлена локальная проверка
+  [`scripts/validate_issue_97_ontology_standards.py`](scripts/validate_issue_97_ontology_standards.py)
+  (ADR-разделы ФТ-9, RFC 2119/DoD стандартов, инварианты `process-tree.json`,
+  две команды, отсутствие выдуманных кодов, сохранность `risk_analysis`) и шаг в
+  workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
+
 ### Fixed — Issue #103 корректировки UI каталога промптов
 
 - **ФТ-1. Карточка промпта.** Убрана стрелка (↗) из верхней части карточки;

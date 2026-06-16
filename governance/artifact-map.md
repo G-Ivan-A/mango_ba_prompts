@@ -51,6 +51,7 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 | `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `AI_GOVERNANCE.md` |
 | `/patterns/` | каталог | Паттерны БА как reusable способы решения классов задач. | Да | `standards/pattern-standard.md`, `docs/taxonomy.md` |
 | `/prompts/` | каталог | Активные prompt assets для бизнес-аналитиков Mango. | Да | `prompts/README.md`, `standards/prompt-standard.md` |
+| `/prompts/experiments/` | каталог | Эксперименты и self-test прогоны промптов (доказательная база, например для issue #97). | По необходимости | `docs/adr/`, `standards/` |
 | `/prompts/archive/` | каталог | Архивные legacy-промпты, выведенные из активного использования. | По необходимости | `prompts/README.md` |
 | `/standards/` | каталог | Локальные рабочие копии стандартов и контрактов. | Да | `README.md`, `docs/adr/` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
