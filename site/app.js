@@ -3,6 +3,7 @@ const state = {
   stats: null,
   roadmap: null,
   checks: null,
+  processTree: null,
   selectedFilters: new Set(),
   query: "",
 };
@@ -19,7 +20,17 @@ const nodes = {
   checksActivity: document.querySelector("#checks-activity"),
   roadmapLevels: document.querySelector("#roadmap-levels"),
   roadmapGaps: document.querySelector("#roadmap-gaps"),
+  processNote: document.querySelector("#process-note"),
+  processActions: document.querySelector("#process-actions"),
+  processExpand: document.querySelector("#process-expand"),
+  processCollapse: document.querySelector("#process-collapse"),
+  processTree: document.querySelector("#process-tree"),
   toast: document.querySelector("#toast"),
+};
+
+const KIND_LABELS = {
+  direct: "промпт",
+  support: "поддержка",
 };
 
 function el(tag, className, text) {
@@ -427,6 +438,89 @@ function renderChecks() {
   nodes.checksActivity.replaceChildren(heading, groups);
 }
 
+// ФТ-8: дерево «процесс -> подпроцессы». Жёсткое требование — показывать только
+// процессы и подпроцессы, для которых есть промпты (hasPrompts). Полный список
+// (с пустыми ветвями) остаётся в data/process-tree.json для прослеживаемости.
+function subprocessRow(subprocess) {
+  const row = el("li", "subprocess-row");
+  const head = el("div", "subprocess-head");
+  head.append(el("span", "subprocess-op", subprocess.operationIcon));
+  head.append(el("span", "subprocess-step", subprocess.step));
+  const kind = el("span", "subprocess-kind", KIND_LABELS[subprocess.kind] || subprocess.kind);
+  kind.dataset.kind = subprocess.kind;
+  kind.title =
+    subprocess.kind === "support"
+      ? "Ручной шаг, опирающийся на активный промпт"
+      : "Шаг выполняется активным промптом";
+  head.append(kind);
+  row.append(head);
+
+  const links = el("div", "subprocess-prompts");
+  for (const prompt of subprocess.prompts) {
+    const link = el("a", "subprocess-prompt", prompt.file);
+    link.href = prompt.url;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.title = `Открыть ${prompt.file} в GitHub`;
+    links.append(link);
+  }
+  row.append(links);
+  return row;
+}
+
+function processNode(process, useTree) {
+  const shown = process.subprocesses.filter((subprocess) => subprocess.hasPrompts);
+  const node = el("details", "process-node");
+  // > 20 подпроцессов: дерево остаётся свёрнутым (раскрывающийся список). Иначе —
+  // раскрыто, список короткий и помещается на экран.
+  node.open = !useTree;
+
+  const summary = el("summary", "process-summary");
+  summary.append(el("span", "process-index", process.icon));
+  const titleWrap = el("span", "process-titlewrap");
+  titleWrap.append(el("span", "process-title", process.label));
+  titleWrap.append(
+    el("span", "process-count", `${shown.length} подпроцессов с промптами из ${process.subprocessTotal}`),
+  );
+  summary.append(titleWrap);
+  node.append(summary);
+
+  const list = el("ul", "subprocess-list");
+  list.append(...shown.map(subprocessRow));
+  node.append(list);
+  return node;
+}
+
+function renderProcessTree() {
+  if (!state.processTree) {
+    return;
+  }
+  const tree = state.processTree;
+  const visible = tree.processes.filter((process) => process.subprocessShown > 0);
+
+  const treeNote = tree.useTree
+    ? ` Подпроцессов больше ${tree.treeThreshold} — список раскрывающийся (дерево).`
+    : "";
+  nodes.processNote.textContent =
+    `Показаны только процессы и подпроцессы, для которых есть промпты: ` +
+    `${tree.shownSubprocesses} подпроцессов из ${tree.totalSubprocesses} ` +
+    `в ${tree.shownProcesses} процессах из ${tree.totalProcesses}.${treeNote}`;
+
+  if (visible.length === 0) {
+    nodes.processTree.replaceChildren(el("div", "empty-state", "Нет процессов с промптами"));
+    return;
+  }
+
+  nodes.processActions.hidden = !tree.useTree;
+  nodes.processTree.replaceChildren(...visible.map((process) => processNode(process, tree.useTree)));
+}
+
+function setAllProcessNodes(open) {
+  for (const node of nodes.processTree.querySelectorAll("details.process-node")) {
+    node.open = open;
+  }
+}
+
 function renderRoadmap() {
   nodes.roadmapLevels.replaceChildren(
     ...state.roadmap.levels.map((level) => {
@@ -458,11 +552,12 @@ function rerenderInteractive() {
 
 async function init() {
   try {
-    const [promptsData, stats, roadmap, checks] = await Promise.all([
+    const [promptsData, stats, roadmap, checks, processTree] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
       fetch("data/checks.json").then((response) => response.json()),
+      fetch("data/process-tree.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
@@ -470,11 +565,13 @@ async function init() {
     state.stats = stats;
     state.roadmap = roadmap;
     state.checks = checks;
+    state.processTree = processTree;
 
     renderMetrics();
     renderPhases();
     renderFilters();
     renderPrompts();
+    renderProcessTree();
     renderChecks();
     renderRoadmap();
   } catch (error) {
@@ -512,6 +609,9 @@ nodes.filters.addEventListener("click", (event) => {
   }
   rerenderInteractive();
 });
+
+nodes.processExpand.addEventListener("click", () => setAllProcessNodes(true));
+nodes.processCollapse.addEventListener("click", () => setAllProcessNodes(false));
 
 nodes.promptGrid.addEventListener("click", async (event) => {
   const button = event.target.closest("[data-copy-id]");

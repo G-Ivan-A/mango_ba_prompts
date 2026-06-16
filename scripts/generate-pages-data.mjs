@@ -274,6 +274,134 @@ function parseProcessIndex(markdown) {
   }));
 }
 
+// Активные prompt-файлы, на которые ссылается ячейка «Промпты» детальной карты.
+// Архивные ссылки (`prompts/archive/...`) исключаются: `[^)/]+` обрывается на `/`.
+function parseActivePromptLinks(cell) {
+  const files = [];
+  const seen = new Set();
+  for (const match of cell.matchAll(/\((?:\.\.\/)+prompts\/([^)/]+\.md)\)/g)) {
+    const file = match[1];
+    if (!seen.has(file)) {
+      seen.add(file);
+      files.push(file);
+    }
+  }
+  return files;
+}
+
+// Тип подпроцесса по ячейке «Промпты»:
+//   direct  — шаг исполняется активным промптом;
+//   support — ручной шаг, опирающийся на активный промпт («Выполняется вручную ...»);
+//   gap     — промпта нет, нужен новый («Требуется разработка промпта»);
+//   archive — только legacy-ссылка в prompts/archive/;
+//   manual  — ручной шаг без промпта.
+// hasPrompts (для жёсткого требования ФТ-8) истинно только для direct и support.
+function subprocessKind(cell, activeCount) {
+  const manual = /Выполняется вручную/i.test(cell);
+  if (activeCount > 0) {
+    return manual ? "support" : "direct";
+  }
+  if (/Требуется разработка промпта/i.test(cell)) {
+    return "gap";
+  }
+  if (/prompts\/archive\//.test(cell)) {
+    return "archive";
+  }
+  return "manual";
+}
+
+// Дерево «процесс -> подпроцессы» из раздела «Детальная карта» 00-index.md.
+// Возвращает полный список (НФТ прослеживаемости) с флагом hasPrompts у каждого
+// подпроцесса; фильтрация «только с промптами» — жёсткое требование ФТ-8 — делается
+// на слое рендера, а сводные счётчики и useTree вычисляются здесь.
+function parseProcessTree(markdown, processIndex) {
+  const lines = markdown.split(/\r?\n/);
+  const indexById = new Map(processIndex.map((process) => [process.id, process]));
+  const processes = [];
+  let totalSubprocesses = 0;
+  let shownSubprocesses = 0;
+
+  for (let i = 0; i < lines.length; i += 1) {
+    const heading = lines[i].match(/^###\s+(\d+)\.\s+(.+?)\s*$/);
+    if (!heading) {
+      continue;
+    }
+    const id = Number(heading[1]);
+    const label = stripMarkdownInline(heading[2]);
+    const subprocesses = [];
+
+    for (let j = i + 1; j < lines.length; j += 1) {
+      if (/^#{2,3}\s/.test(lines[j])) {
+        break; // следующий раздел — таблицы шагов больше нет
+      }
+      if (!lines[j].trim().startsWith("|") || !isSeparatorRow(lines[j + 1] || "")) {
+        continue;
+      }
+      const headers = splitMarkdownRow(lines[j]).map(stripMarkdownInline);
+      if (headers[0] !== "Шаг") {
+        continue; // не таблица шагов
+      }
+      const stepCol = headers.indexOf("Шаг");
+      const opCol = headers.indexOf("Операция");
+      const promptCol = headers.findIndex((header) => header.startsWith("Промпт"));
+      let k = j + 2;
+      let order = 0;
+      while (k < lines.length && lines[k].trim().startsWith("|")) {
+        const cells = splitMarkdownRow(lines[k]);
+        if (cells.length === headers.length) {
+          const promptCell = promptCol >= 0 ? cells[promptCol] : "";
+          const files = parseActivePromptLinks(promptCell);
+          const opCell = opCol >= 0 ? cells[opCol] : "";
+          const operation = (opCell.match(/`([^`]+)`/)?.[1] || stripMarkdownInline(opCell)).replace(
+            /-/g,
+            "_",
+          );
+          order += 1;
+          subprocesses.push({
+            order,
+            step: stripMarkdownInline(cells[stepCol] || ""),
+            operation,
+            operationIcon: OPERATION_ICONS[operation] || "•",
+            kind: subprocessKind(promptCell, files.length),
+            hasPrompts: files.length > 0,
+            prompts: files.map((file) => ({ file, url: repoUrl(`prompts/${file}`) })),
+          });
+        }
+        k += 1;
+      }
+      break; // только первая таблица шагов под заголовком процесса
+    }
+
+    if (subprocesses.length === 0) {
+      continue;
+    }
+    const shown = subprocesses.filter((subprocess) => subprocess.hasPrompts).length;
+    totalSubprocesses += subprocesses.length;
+    shownSubprocesses += shown;
+    const indexed = indexById.get(id);
+    processes.push({
+      id,
+      label,
+      icon: String(id),
+      operations: indexed?.operations || [],
+      recommendedPrompts: indexed?.recommendedPrompts || [],
+      subprocessTotal: subprocesses.length,
+      subprocessShown: shown,
+      subprocesses,
+    });
+  }
+
+  return {
+    treeThreshold: 20,
+    totalProcesses: processes.length,
+    shownProcesses: processes.filter((process) => process.subprocessShown > 0).length,
+    totalSubprocesses,
+    shownSubprocesses,
+    useTree: shownSubprocesses > 20,
+    processes,
+  };
+}
+
 function parseRoadmap(markdown) {
   const tables = parseTables(markdown);
   const levelsTable = tables.find(
@@ -571,6 +699,7 @@ async function main() {
   const taxonomy = parseTaxonomy(taxonomyMarkdown);
   const promptMetadata = parsePromptMatrix(promptsReadme);
   const processIndex = parseProcessIndex(processIndexMarkdown);
+  const processTree = parseProcessTree(processIndexMarkdown, processIndex);
   const roadmap = parseRoadmap(ecosystemMarkdown);
   const promptFiles = await listPromptFiles();
   const operationIds = taxonomy.operations.map((operation) => operation.id);
@@ -657,6 +786,14 @@ async function main() {
     gaps: roadmap.gaps,
   };
 
+  const processTreeData = {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [
+      { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
+    ],
+    ...processTree,
+  };
+
   const experiments = await loadExperiments();
   const feedbackEntries = await loadFeedback();
   const checksData = makeChecks(prompts, taxonomy.processes, experiments, feedbackEntries);
@@ -666,10 +803,14 @@ async function main() {
   await writeJson("site/data/stats.json", makeStats(prompts, taxonomy, processIndex, roadmap));
   await writeJson("site/data/roadmap.json", roadmapData);
   await writeJson("site/data/checks.json", checksData);
+  await writeJson("site/data/process-tree.json", processTreeData);
 
   console.log(`Generated ${prompts.length} prompts`);
   console.log(`Generated ${taxonomy.operations.length} operations and ${taxonomy.processes.length} processes`);
   console.log(`Generated ${roadmap.levels.length} roadmap levels and ${roadmap.gaps.length} gaps`);
+  console.log(
+    `Generated process tree: ${processTree.shownSubprocesses}/${processTree.totalSubprocesses} subprocesses with prompts in ${processTree.shownProcesses}/${processTree.totalProcesses} processes (useTree=${processTree.useTree})`,
+  );
   console.log(
     `Generated checks: ${checksData.tests.total} prompt tests in ${experiments.length} logs, ${checksData.feedback.total} feedback items`,
   );
