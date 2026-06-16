@@ -37,16 +37,16 @@ ai-generated: true
   [`standards/industry-standards-standard.md`](standards/industry-standards-standard.md),
   [`standards/bcreq-process-standard.md`](standards/bcreq-process-standard.md),
   [`standards/pages-ux-standard.md`](standards/pages-ux-standard.md).
-- **ФТ-8 (GitHub Pages):** новая секция «Процессы и подпроцессы». Генератор
-  [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs) строит
-  полный список процессов/подпроцессов в
+- **ФТ-8 (GitHub Pages):** на странице «Процессы» SPA (рядом с карточками
+  процессов из issue #99) добавлена секция «Процессы и подпроцессы с промптами».
+  Генератор [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs)
+  строит полный список процессов/подпроцессов в
   [`site/data/process-tree.json`](site/data/process-tree.json) (с флагом
   `hasPrompts` и типом покрытия `kind`), а интерфейс
   ([`site/index.html`](site/index.html), [`site/app.js`](site/app.js),
   [`site/styles.css`](site/styles.css)) по жёсткому требованию выводит **только**
-  процессы/подпроцессы с промптами (показано 25/38 подпроцессов в 8/9 процессах).
-  При > 20 показанных подпроцессах используется раскрывающееся дерево
-  (`<details>`/`<summary>`). Прототип (скриншоты) — в
+  процессы/подпроцессы с промптами. При > 20 показанных подпроцессах используется
+  раскрывающееся дерево (`<details>`/`<summary>`). Прототип (скриншоты) — в
   [ADR-010](docs/adr/010-pages-ux.md).
 - Доказательная база: эксперименты
   [`prompts/experiments/standards-applied-ab-2026-06-16.md`](prompts/experiments/standards-applied-ab-2026-06-16.md)
@@ -57,6 +57,36 @@ ai-generated: true
   (ADR-разделы ФТ-9, RFC 2119/DoD стандартов, инварианты `process-tree.json`,
   две команды, отсутствие выдуманных кодов, сохранность `risk_analysis`) и шаг в
   workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
+
+### Added — Issue #99 оптимизация GitHub Pages (многостраничность и UX)
+
+- **ФТ-1. Многостраничность.** Сайт [`site/index.html`](site/index.html) разбит на
+  пять разделов с верхним меню: **Каталог** (главная, URL `/`), **Дашборд**,
+  **Roadmap**, **Процессы**, **Паттерны**. Переключение реализовано клиентским
+  hash-роутером в [`site/app.js`](site/app.js) (SPA), порядок секций сохранён.
+- **ФТ-2. Оптимизация карточек.** Из карточки убраны путь к файлу и хэш рядом с
+  «Копировать»; вместо хэша показаны версия (`v…`), дата обновления и статус
+  тестов (`✅ N тест(ов)`); ID вынесен мелким шрифтом под названием; добавлена
+  кнопка «Ссылка» (↗) — копирует deep-link `#prompt=<id>` на карточку; теги
+  процессов получили эмодзи-иконки; описания расширены до 150-300 символов
+  (генерируются динамически в [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs)).
+- **ФТ-3. Дашборд.** Блок «Проверки» показывает всего проверок, разбивку
+  **по процессам БА** (динамически из frontmatter, с бакетом «Прочее»),
+  обратную связь (`prompt:feedback`) и покрытие тестами (X/Y, %). Добавлен блок
+  «Активность» — топ-5 промптов. Дублирование метрик убрано.
+- **ФТ-4. UX.** Быстрый поиск с автодополнением (по названию/ID/описанию/тегам),
+  сортировка (дата, популярность, алфавит, статус), фильтр по статусу
+  (Draft/Canonical/Archived), карточка процесса по клику (описание, операции,
+  связанные промпты, паттерны, known gaps), экспорт каталога в Markdown по
+  текущим фильтрам и переключатель тёмной темы (сохраняется в `localStorage`).
+- **ФТ-5. Генерация данных.** Генератор формирует дополнительно
+  `site/data/processes.json` и `site/data/patterns.json`, расширенные
+  `checks.json` (по процессам, покрытие тестами) и длинные описания промптов;
+  процессы и эмодзи назначаются динамически — без хардкода типов артефактов.
+- **ФТ-6.** Обновлены README и этот CHANGELOG.
+- Добавлена локальная проверка
+  [`scripts/validate_issue_99_pages_optimization.py`](scripts/validate_issue_99_pages_optimization.py)
+  и шаг в workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
 
 ### Fixed — Issue #95 добавить ID промпта в копируемый текст
 

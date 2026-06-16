@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T21:11:53.097Z",
+  "generatedAt": "2026-06-16T21:45:03.564Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,7 +239,8 @@
           "documentation",
           "solution_design"
         ],
-        "icon": "1"
+        "icon": "1",
+        "emoji": "📋"
       },
       {
         "id": 2,
@@ -249,7 +250,8 @@
           "validation",
           "quality"
         ],
-        "icon": "2"
+        "icon": "2",
+        "emoji": "✅"
       },
       {
         "id": 3,
@@ -261,7 +263,8 @@
           "validation",
           "risk_analysis"
         ],
-        "icon": "3"
+        "icon": "3",
+        "emoji": "📑"
       },
       {
         "id": 4,
@@ -271,7 +274,8 @@
           "modeling",
           "understanding"
         ],
-        "icon": "4"
+        "icon": "4",
+        "emoji": "🎯"
       },
       {
         "id": 5,
@@ -281,7 +285,8 @@
           "modeling",
           "documentation"
         ],
-        "icon": "5"
+        "icon": "5",
+        "emoji": "📊"
       },
       {
         "id": 6,
@@ -291,7 +296,8 @@
           "understanding",
           "documentation"
         ],
-        "icon": "6"
+        "icon": "6",
+        "emoji": "🤝"
       },
       {
         "id": 7,
@@ -301,7 +307,8 @@
           "quality",
           "ingestion"
         ],
-        "icon": "7"
+        "icon": "7",
+        "emoji": "📈"
       },
       {
         "id": 8,
@@ -311,7 +318,8 @@
           "impact_analysis",
           "reverse_requirements"
         ],
-        "icon": "8"
+        "icon": "8",
+        "emoji": "🧭"
       },
       {
         "id": 9,
@@ -322,7 +330,8 @@
           "release_readiness",
           "validation"
         ],
-        "icon": "9"
+        "icon": "9",
+        "emoji": "🛡️"
       }
     ],
     "modes": [
@@ -344,6 +353,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md",
       "archived": false,
       "description": "Исторический итеративный вариант обработки ASR-транскрипций.",
+      "descriptionLong": "Исторический итеративный вариант обработки ASR-транскрипций. Превращает сырой вход (ASR-расшифровка, письмо, заметки, тендерное ТЗ) в форму, пригодную для анализа. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "draft",
@@ -364,12 +374,14 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -393,6 +405,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md",
       "archived": false,
       "description": "Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла.",
+      "descriptionLong": "Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла. Превращает сырой вход (ASR-расшифровка, письмо, заметки, тендерное ТЗ) в форму, пригодную для анализа. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери…",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -413,12 +426,14 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -442,6 +457,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md",
       "archived": false,
       "description": "Формирует раздел 6 ограничений одним ответом.",
+      "descriptionLong": "Формирует раздел 6 ограничений одним ответом. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -461,7 +477,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -485,6 +502,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует раздел 6 «Особенности реализации / Ограничения».",
+      "descriptionLong": "Пошагово формирует раздел 6 «Особенности реализации / Ограничения». Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -504,7 +522,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -528,6 +547,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-oneshot.md",
       "archived": false,
       "description": "Формирует раздел 4 ФТ одним ответом при уже собранном контексте.",
+      "descriptionLong": "Формирует раздел 4 ФТ одним ответом при уже собранном контексте. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -547,7 +567,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -571,6 +592,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC.",
+      "descriptionLong": "Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление…",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -590,7 +612,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -614,6 +637,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md",
       "archived": false,
       "description": "Унаследованный вариант анализа и валидации функциональных требований.",
+      "descriptionLong": "Унаследованный вариант анализа и валидации функциональных требований. Проверяет артефакт на полноту, непротиворечивость, тестируемость, соответствие стандартам. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "draft",
@@ -634,12 +658,14 @@
         {
           "id": 2,
           "label": "Валидация ФТ/ТЗ",
-          "icon": "2"
+          "icon": "2",
+          "emoji": "✅"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         }
       ],
       "frontmatter": {
@@ -663,6 +689,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
       "archived": false,
       "description": "Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом.",
+      "descriptionLong": "Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом. Проверяет артефакт на полноту, непротиворечивость, тестируемость, соответствие стандартам. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -683,12 +710,14 @@
         {
           "id": 2,
           "label": "Валидация ФТ/ТЗ",
-          "icon": "2"
+          "icon": "2",
+          "emoji": "✅"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         }
       ],
       "frontmatter": {
@@ -712,6 +741,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
       "archived": false,
       "description": "Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным.",
+      "descriptionLong": "Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным. Проверяет артефакт на полноту, непротиворечивость, тестируемость, соответствие стандартам. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает…",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -733,17 +763,20 @@
         {
           "id": 2,
           "label": "Валидация ФТ/ТЗ",
-          "icon": "2"
+          "icon": "2",
+          "emoji": "✅"
         },
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         }
       ],
       "frontmatter": {
@@ -767,6 +800,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md",
       "archived": false,
       "description": "Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте.",
+      "descriptionLong": "Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте. Извлекает термины, цели, неявные допущения; формирует уточняющие вопросы. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -788,17 +822,20 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         },
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {
@@ -822,6 +859,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ.",
+      "descriptionLong": "Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ. Извлекает термины, цели, неявные допущения; формирует уточняющие вопросы. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -843,17 +881,20 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         },
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {
@@ -877,6 +918,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md",
       "archived": false,
       "description": "Унаследованный промпт для сопроводительного письма заказчику.",
+      "descriptionLong": "Унаследованный промпт для сопроводительного письма заказчику. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "draft",
@@ -896,7 +938,8 @@
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -920,6 +963,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует резюме встречи с заказчиком.",
+      "descriptionLong": "Пошагово формирует резюме встречи с заказчиком. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -939,7 +983,8 @@
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -963,6 +1008,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует резюме внутренней встречи команды.",
+      "descriptionLong": "Пошагово формирует резюме внутренней встречи команды. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -982,7 +1028,8 @@
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -1006,6 +1053,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md",
       "archived": false,
       "description": "Унаследованный вариант анализа запроса и подготовки вопросов заказчику.",
+      "descriptionLong": "Унаследованный вариант анализа запроса и подготовки вопросов заказчику. Извлекает термины, цели, неявные допущения; формирует уточняющие вопросы. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "draft",
@@ -1027,17 +1075,20 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         },
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -1061,6 +1112,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md",
       "archived": false,
       "description": "Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику.",
+      "descriptionLong": "Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику. Извлекает термины, цели, неявные допущения; формирует уточняющие вопросы. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -1082,17 +1134,20 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         },
         {
           "id": 3,
           "label": "Анализ тендерных ТЗ",
-          "icon": "3"
+          "icon": "3",
+          "emoji": "📑"
         },
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -1116,6 +1171,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md",
       "archived": false,
       "description": "Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с governance/session-digests.md.",
+      "descriptionLong": "Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с governance/session-digests.md. Оформляет результаты анализа в целевые документы: ФТ, ТЗ, резюме встреч, письма. Режим one-shot — когда вход полный, а…",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -1135,7 +1191,8 @@
         {
           "id": 6,
           "label": "Помощь ПО/ПМ",
-          "icon": "6"
+          "icon": "6",
+          "emoji": "🤝"
         }
       ],
       "frontmatter": {
@@ -1159,6 +1216,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-legacy.md",
       "archived": false,
       "description": "Унаследованный вариант подготовки раздела 7 «Список доработок».",
+      "descriptionLong": "Унаследованный вариант подготовки раздела 7 «Список доработок». Прорабатывает системно-технические требования и варианты реализации. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "draft",
@@ -1178,7 +1236,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1202,6 +1261,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md",
       "archived": false,
       "description": "Формирует раздел 7 для разработки одним ответом.",
+      "descriptionLong": "Формирует раздел 7 для разработки одним ответом. Прорабатывает системно-технические требования и варианты реализации. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -1221,7 +1281,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1245,6 +1306,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует раздел 7 «Список доработок» для разработки.",
+      "descriptionLong": "Пошагово формирует раздел 7 «Список доработок» для разработки. Прорабатывает системно-технические требования и варианты реализации. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -1264,7 +1326,8 @@
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1288,6 +1351,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md",
       "archived": false,
       "description": "Формирует Use Case по Cockburn одним ответом.",
+      "descriptionLong": "Формирует Use Case по Cockburn одним ответом. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -1308,12 +1372,14 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         },
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1337,6 +1403,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует Use Case по Cockburn из сырого описания.",
+      "descriptionLong": "Пошагово формирует Use Case по Cockburn из сырого описания. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -1357,12 +1424,14 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         },
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1386,6 +1455,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md",
       "archived": false,
       "description": "Формирует User Story одним ответом.",
+      "descriptionLong": "Формирует User Story одним ответом. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
       "mode": "oneshot",
       "modeIcon": "●",
       "status": "draft",
@@ -1406,12 +1476,14 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         },
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1435,6 +1507,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md",
       "archived": false,
       "description": "Пошагово формирует User Story из сырого запроса.",
+      "descriptionLong": "Пошагово формирует User Story из сырого запроса. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
       "mode": "stepwise",
       "modeIcon": "↔",
       "status": "draft",
@@ -1455,12 +1528,14 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         },
         {
           "id": 1,
           "label": "Формирование ФТ/ТЗ",
-          "icon": "1"
+          "icon": "1",
+          "emoji": "📋"
         }
       ],
       "frontmatter": {
@@ -1484,6 +1559,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-legacy.md",
       "archived": true,
       "description": "Архивный расширенный генератор статистики по ТЗ.",
+      "descriptionLong": "Архивный расширенный генератор статистики по ТЗ. Оценивает качество артефактов и самих промптов; собирает метрики и статистику. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1503,7 +1579,8 @@
         {
           "id": 7,
           "label": "Статистика",
-          "icon": "7"
+          "icon": "7",
+          "emoji": "📈"
         }
       ],
       "frontmatter": {
@@ -1540,6 +1617,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-simple-legacy.md",
       "archived": true,
       "description": "Архивный простой генератор статистики по ТЗ.",
+      "descriptionLong": "Архивный простой генератор статистики по ТЗ. Оценивает качество артефактов и самих промптов; собирает метрики и статистику. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1559,7 +1637,8 @@
         {
           "id": 7,
           "label": "Статистика",
-          "icon": "7"
+          "icon": "7",
+          "emoji": "📈"
         }
       ],
       "frontmatter": {
@@ -1596,6 +1675,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-legacy.md",
       "archived": true,
       "description": "Архивный Hub-style генератор Use Case в пошаговой логике.",
+      "descriptionLong": "Архивный Hub-style генератор Use Case в пошаговой логике. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1615,7 +1695,8 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {
@@ -1652,6 +1733,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-simple-legacy.md",
       "archived": true,
       "description": "Архивный простой генератор Use Case.",
+      "descriptionLong": "Архивный простой генератор Use Case. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1671,7 +1753,8 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {
@@ -1708,6 +1791,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-legacy.md",
       "archived": true,
       "description": "Архивный Hub-style генератор User Story из сырого запроса.",
+      "descriptionLong": "Архивный Hub-style генератор User Story из сырого запроса. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1727,7 +1811,8 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {
@@ -1764,6 +1849,7 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-simple-legacy.md",
       "archived": true,
       "description": "Архивный простой генератор User Story.",
+      "descriptionLong": "Архивный простой генератор User Story. Структурирует требования в формальные модели: Use Case, User Story, диаграммы UML/BPMN. Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
       "mode": "legacy",
       "modeIcon": "⌁",
       "status": "archived",
@@ -1783,7 +1869,8 @@
         {
           "id": 4,
           "label": "Формирование UC/US",
-          "icon": "4"
+          "icon": "4",
+          "emoji": "🎯"
         }
       ],
       "frontmatter": {

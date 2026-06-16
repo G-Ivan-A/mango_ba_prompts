@@ -14,6 +14,7 @@ const SOURCE_FILES = {
   taxonomy: "docs/taxonomy.md",
   processIndex: "docs/ba-processes/00-index.md",
   ecosystem: "docs/ba-ecosystem.md",
+  patternsReadme: "patterns/README.md",
 };
 
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
@@ -41,6 +42,65 @@ const MODE_ICONS = {
   oneshot: "●",
   legacy: "⌁",
 };
+
+// Палитра эмодзи для процессов БА. Назначается по позиции процесса, поэтому
+// дашборд и каталог остаются гибкими: при добавлении новых процессов (после
+// задачи «Формализовать онтологию БА») иконка подбирается автоматически.
+const PROCESS_EMOJI_PALETTE = [
+  "📋",
+  "✅",
+  "📑",
+  "🎯",
+  "📊",
+  "🤝",
+  "📈",
+  "🧭",
+  "🛡️",
+  "🧩",
+  "🔍",
+  "⚙️",
+];
+
+// Подсказка «когда использовать» по режиму запуска промпта (ФТ-2: описание
+// 150-300 символов со структурой что/когда/ограничения). Режимы стабильны и не
+// относятся к типам артефактов, поэтому их можно держать в коде.
+const MODE_HINTS = {
+  stepwise:
+    "Режим stepwise подходит при средней или высокой неопределённости: БА видит промежуточный результат и подтверждает направление между шагами.",
+  oneshot:
+    "Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
+  legacy:
+    "Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
+};
+
+function processEmoji(index) {
+  return PROCESS_EMOJI_PALETTE[index % PROCESS_EMOJI_PALETTE.length];
+}
+
+// Собирает развёрнутое описание карточки (что делает + контекст операции +
+// когда использовать по режиму). Источники динамические, поэтому описание
+// адаптируется к новым операциям и режимам.
+function buildLongDescription(shortDescription, operation, mode) {
+  const parts = [];
+  const base = (shortDescription || "").trim();
+  if (base) {
+    parts.push(/[.!?]$/.test(base) ? base : `${base}.`);
+  }
+  if (operation?.description) {
+    parts.push(operation.description.trim());
+  }
+  if (MODE_HINTS[mode]) {
+    parts.push(MODE_HINTS[mode]);
+  }
+  let text = parts.join(" ").replace(/\s+/g, " ").trim();
+  // Держим описание в районе 150-300 символов: не обрезаем посреди слова.
+  if (text.length > 300) {
+    const clipped = text.slice(0, 297);
+    const lastSpace = clipped.lastIndexOf(" ");
+    text = `${clipped.slice(0, lastSpace > 0 ? lastSpace : 297).trimEnd()}…`;
+  }
+  return text;
+}
 
 async function read(relativePath) {
   return fs.readFile(path.join(ROOT, relativePath), "utf8");
@@ -201,7 +261,7 @@ function parseTaxonomy(markdown) {
     };
   });
 
-  const processes = (processTable?.rows || []).map((row) => {
+  const processes = (processTable?.rows || []).map((row, index) => {
     const id = Number(stripMarkdownInline(row[0]));
     return {
       id,
@@ -209,6 +269,7 @@ function parseTaxonomy(markdown) {
       description: stripMarkdownInline(row[2]),
       operations: parseCodes(row[3]),
       icon: String(id),
+      emoji: processEmoji(index),
     };
   });
 
@@ -261,17 +322,65 @@ function parsePromptMatrix(markdown) {
   return metadataByFile;
 }
 
+// Извлекает имена файлов промптов (`*.md`) из ячейки центрального маппинга.
+function extractPromptFilenames(cell) {
+  const codes = [...cell.matchAll(/`([^`]+\.md)`/g)].map((match) => match[1]);
+  const links = [...cell.matchAll(/\[`?([^\]`]+\.md)`?\]/g)].map((match) => match[1]);
+  const names = [...codes, ...links].map((name) => name.replace(/^archive\//, ""));
+  return [...new Set(names)];
+}
+
+// Извлекает slug паттернов (`patterns/<slug>/`) из ячейки.
+function extractPatternSlugs(cell) {
+  const slugs = [...cell.matchAll(/patterns\/([a-z0-9-]+)\//g)].map((match) => match[1]);
+  return [...new Set(slugs)];
+}
+
+// Извлекает slug паттерна из ячейки-имени (`[`slug`](slug/)`), где префикса
+// `patterns/` нет: сперва из ссылки `](slug/)`, затем из кода в backticks.
+function extractPatternSlug(cell) {
+  const fromPatternsPath = extractPatternSlugs(cell)[0];
+  if (fromPatternsPath) {
+    return fromPatternsPath;
+  }
+  const linkMatch = cell.match(/]\(([a-z0-9-]+)\/?\)/);
+  if (linkMatch) {
+    return linkMatch[1];
+  }
+  const codeMatch = cell.match(/`([a-z0-9-]+)`/);
+  return codeMatch ? codeMatch[1] : "";
+}
+
 function parseProcessIndex(markdown) {
   const table = parseTables(markdown).find(
     (candidate) => candidate.headers[0] === "№" && candidate.headers[1] === "Процесс",
   );
-  return (table?.rows || []).map((row) => ({
+  const gapsTable = parseTables(markdown).find(
+    (candidate) => candidate.headers[0] === "Gap" && candidate.headers[1] === "Процессы",
+  );
+
+  const processes = (table?.rows || []).map((row) => ({
     id: Number(stripMarkdownInline(row[0])),
     label: stripMarkdownInline(row[1]),
     operations: parseCodes(row[2]),
     pattern: stripMarkdownInline(row[3]),
+    patternSlugs: extractPatternSlugs(row[3]),
     recommendedPrompts: parseCodes(row[4]),
+    promptFiles: extractPromptFilenames(row[4]),
   }));
+
+  const gaps = (gapsTable?.rows || []).map((row, index) => ({
+    id: `process-gap-${index + 1}`,
+    gap: stripMarkdownInline(row[0]),
+    processes: stripMarkdownInline(row[1])
+      .split(/[,;]/)
+      .map((value) => value.trim())
+      .filter(Boolean),
+    status: stripMarkdownInline(row[2]),
+    nextArtifact: stripMarkdownInline(row[3]),
+  }));
+
+  return { processes, gaps };
 }
 
 // Активные prompt-файлы, на которые ссылается ячейка «Промпты» детальной карты.
@@ -400,6 +509,47 @@ function parseProcessTree(markdown, processIndex) {
     useTree: shownSubprocesses > 20,
     processes,
   };
+}
+
+// Парсит навигационную матрицу паттернов patterns/README.md.
+function parsePatterns(markdown) {
+  const tables = parseTables(markdown);
+  const navTable = tables.find(
+    (table) => table.headers[0] === "Паттерн" && table.headers[1] === "Путь",
+  );
+  const matrixTable = tables.find(
+    (table) => table.headers[0] === "Паттерн" && table.headers[1] === "Процесс БА",
+  );
+
+  const whenBySlug = new Map();
+  for (const row of navTable?.rows || []) {
+    const slug = extractPatternSlug(row[0]) || extractPatternSlugs(row[1])[0];
+    if (slug) {
+      whenBySlug.set(slug, stripMarkdownInline(row[2]));
+    }
+  }
+
+  const patterns = [];
+  for (const row of matrixTable?.rows || []) {
+    const slug = extractPatternSlug(row[0]);
+    if (!slug) {
+      continue;
+    }
+    patterns.push({
+      slug,
+      path: `patterns/${slug}/`,
+      url: repoUrl(`patterns/${slug}/`),
+      whenToStart: whenBySlug.get(slug) || "",
+      processes: stripMarkdownInline(row[1])
+        .split(/[;]/)
+        .map((value) => value.trim())
+        .filter(Boolean),
+      operation: stripMarkdownInline(row[2]),
+      promptFiles: extractPromptFilenames(row[3]),
+    });
+  }
+
+  return patterns;
 }
 
 function parseRoadmap(markdown) {
@@ -646,6 +796,43 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
 
   const byUsage = (left, right) => right.usage - left.usage || left.id.localeCompare(right.id);
 
+  // Показатели проверок по процессам (ФТ-3). Считаются динамически из processes
+  // во frontmatter промптов плюс бакет «Прочее» для промптов без процесса.
+  const OTHER_LABEL = "Прочее";
+  const checkedByLabel = new Map();
+  const promptsByLabel = new Map();
+  for (const process of processes) {
+    checkedByLabel.set(process.label, 0);
+    promptsByLabel.set(process.label, 0);
+  }
+  for (const prompt of perPrompt) {
+    const labels = prompt.processes.length > 0 ? prompt.processes : [OTHER_LABEL];
+    for (const label of labels) {
+      if (!checkedByLabel.has(label)) {
+        checkedByLabel.set(label, 0);
+        promptsByLabel.set(label, 0);
+      }
+      checkedByLabel.set(label, checkedByLabel.get(label) + prompt.tests);
+      promptsByLabel.set(label, promptsByLabel.get(label) + (prompt.tests > 0 ? 1 : 0));
+    }
+  }
+  const emojiByLabel = new Map(processes.map((process) => [process.label, process.emoji]));
+  const byProcess = [...checkedByLabel.entries()]
+    .map(([label, checks]) => ({
+      label,
+      emoji: emojiByLabel.get(label) || "🗂️",
+      checks,
+      coveredPrompts: promptsByLabel.get(label) || 0,
+    }))
+    .sort((left, right) => right.checks - left.checks || left.label.localeCompare(right.label, "ru"));
+
+  const coveredPrompts = perPrompt.filter((prompt) => prompt.tests > 0).length;
+  const testsPassed = {
+    covered: coveredPrompts,
+    total: perPrompt.length,
+    percent: perPrompt.length === 0 ? 0 : Math.round((coveredPrompts / perPrompt.length) * 100),
+  };
+
   const activity = processes
     .map((process) => ({
       id: process.id,
@@ -682,24 +869,121 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
       total: perPrompt.reduce((sum, prompt) => sum + prompt.feedback, 0),
       prompts: perPrompt.filter((prompt) => prompt.feedback > 0).length,
     },
+    totalChecked: perPrompt.reduce((sum, prompt) => sum + prompt.tests, 0),
+    testsPassed,
+    byProcess,
     activity,
     prompts: perPrompt.sort(byUsage),
   };
 }
 
+function promptSummary(prompt) {
+  return {
+    id: prompt.id,
+    file: prompt.file,
+    title: prompt.title,
+    url: prompt.url,
+    mode: prompt.mode,
+    modeIcon: prompt.modeIcon,
+    status: prompt.archived ? "archived" : prompt.status,
+    archived: prompt.archived,
+  };
+}
+
+// Карта процессов БА (страница «Процессы»): описание, операции, паттерны,
+// связанные промпты, known gaps и показатели проверок. Источники динамические.
+function makeProcesses(taxonomyProcesses, processIndexData, prompts, patternsList, checks) {
+  const promptByFile = new Map(prompts.map((prompt) => [prompt.file, prompt]));
+  const indexById = new Map(processIndexData.processes.map((process) => [process.id, process]));
+  const checksByLabel = new Map((checks.byProcess || []).map((entry) => [entry.label, entry]));
+  const patternBySlug = new Map(patternsList.map((pattern) => [pattern.slug, pattern]));
+
+  const processes = taxonomyProcesses.map((process) => {
+    const indexEntry = indexById.get(process.id) || {};
+    const operations = (process.operations || []).map((operationId) => operationId);
+    const promptFiles = indexEntry.promptFiles || [];
+    const linkedPrompts = promptFiles
+      .map((file) => promptByFile.get(file))
+      .filter(Boolean)
+      .map(promptSummary);
+    const patternSlugs = indexEntry.patternSlugs || [];
+    const patterns = patternSlugs
+      .map((slug) => patternBySlug.get(slug))
+      .filter(Boolean)
+      .map((pattern) => ({ slug: pattern.slug, path: pattern.path, url: pattern.url }));
+    const gaps = processIndexData.gaps.filter((gap) => gap.processes.includes(process.label));
+    const checkStats = checksByLabel.get(process.label) || { checks: 0, coveredPrompts: 0 };
+
+    return {
+      id: process.id,
+      label: process.label,
+      emoji: process.emoji,
+      description: process.description,
+      operations,
+      pattern: indexEntry.pattern || "",
+      patterns,
+      prompts: linkedPrompts,
+      gaps: gaps.map((gap) => ({ gap: gap.gap, status: gap.status, nextArtifact: gap.nextArtifact })),
+      checks: checkStats.checks,
+      coveredPrompts: checkStats.coveredPrompts,
+    };
+  });
+
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [
+      { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
+      { path: SOURCE_FILES.taxonomy, url: repoUrl(SOURCE_FILES.taxonomy) },
+    ],
+    processes,
+    gaps: processIndexData.gaps,
+  };
+}
+
+// Библиотека паттернов (страница «Паттерны»).
+function makePatterns(patternsList, prompts, operationsById) {
+  const promptByFile = new Map(prompts.map((prompt) => [prompt.file, prompt]));
+  const patterns = patternsList.map((pattern) => {
+    const operationId = pattern.operation.split(/\s|\+/)[0].replace(/-/g, "_");
+    const operation = operationsById.get(operationId);
+    return {
+      slug: pattern.slug,
+      path: pattern.path,
+      url: pattern.url,
+      whenToStart: pattern.whenToStart,
+      processes: pattern.processes,
+      operation: pattern.operation,
+      operationIcon: operation?.icon || "•",
+      prompts: pattern.promptFiles
+        .map((file) => promptByFile.get(file))
+        .filter(Boolean)
+        .map(promptSummary),
+    };
+  });
+
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [{ path: SOURCE_FILES.patternsReadme, url: repoUrl(SOURCE_FILES.patternsReadme) }],
+    patterns,
+  };
+}
+
 async function main() {
-  const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown] =
+  const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
       read(SOURCE_FILES.promptsReadme),
       read(SOURCE_FILES.taxonomy),
       read(SOURCE_FILES.processIndex),
       read(SOURCE_FILES.ecosystem),
+      read(SOURCE_FILES.patternsReadme),
     ]);
 
   const taxonomy = parseTaxonomy(taxonomyMarkdown);
   const promptMetadata = parsePromptMatrix(promptsReadme);
-  const processIndex = parseProcessIndex(processIndexMarkdown);
+  const processIndexData = parseProcessIndex(processIndexMarkdown);
+  const processIndex = processIndexData.processes;
   const processTree = parseProcessTree(processIndexMarkdown, processIndex);
+  const patternsList = parsePatterns(patternsReadme);
   const roadmap = parseRoadmap(ecosystemMarkdown);
   const promptFiles = await listPromptFiles();
   const operationIds = taxonomy.operations.map((operation) => operation.id);
@@ -734,6 +1018,11 @@ async function main() {
       url: repoUrl(file.relativePath),
       archived: file.archived,
       description: metadata?.description || "Описание отсутствует в prompts/README.md.",
+      descriptionLong: buildLongDescription(
+        metadata?.description || "Описание отсутствует в prompts/README.md.",
+        operation,
+        mode,
+      ),
       mode,
       modeIcon: MODE_ICONS[mode] || "•",
       status: frontmatter.status || metadata?.status || "unknown",
@@ -751,6 +1040,7 @@ async function main() {
         id: process.id,
         label: process.label,
         icon: process.icon,
+        emoji: process.emoji,
       })),
       frontmatter,
       content,
@@ -804,8 +1094,21 @@ async function main() {
   await writeJson("site/data/roadmap.json", roadmapData);
   await writeJson("site/data/checks.json", checksData);
   await writeJson("site/data/process-tree.json", processTreeData);
+  const processesData = makeProcesses(
+    taxonomy.processes,
+    processIndexData,
+    prompts,
+    patternsList,
+    checksData,
+  );
+  const patternsData = makePatterns(patternsList, prompts, operationsById);
+  await writeJson("site/data/processes.json", processesData);
+  await writeJson("site/data/patterns.json", patternsData);
 
   console.log(`Generated ${prompts.length} prompts`);
+  console.log(
+    `Generated ${processesData.processes.length} process cards and ${patternsData.patterns.length} patterns`,
+  );
   console.log(`Generated ${taxonomy.operations.length} operations and ${taxonomy.processes.length} processes`);
   console.log(`Generated ${roadmap.levels.length} roadmap levels and ${roadmap.gaps.length} gaps`);
   console.log(
