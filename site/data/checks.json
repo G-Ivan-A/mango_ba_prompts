@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T21:31:27.520Z",
+  "generatedAt": "2026-06-16T21:37:35.771Z",
   "sourceFiles": [
     {
       "path": "prompts/experiments/",
@@ -25,6 +25,68 @@
     "total": 0,
     "prompts": 0
   },
+  "totalChecked": 54,
+  "testsPassed": {
+    "covered": 20,
+    "total": 30,
+    "percent": 67
+  },
+  "byProcess": [
+    {
+      "label": "Формирование UC/US",
+      "emoji": "🎯",
+      "checks": 38,
+      "coveredPrompts": 10
+    },
+    {
+      "label": "Формирование ФТ/ТЗ",
+      "emoji": "📋",
+      "checks": 27,
+      "coveredPrompts": 11
+    },
+    {
+      "label": "Статистика",
+      "emoji": "📈",
+      "checks": 6,
+      "coveredPrompts": 2
+    },
+    {
+      "label": "Анализ тендерных ТЗ",
+      "emoji": "📑",
+      "checks": 5,
+      "coveredPrompts": 5
+    },
+    {
+      "label": "Валидация ФТ/ТЗ",
+      "emoji": "✅",
+      "checks": 3,
+      "coveredPrompts": 3
+    },
+    {
+      "label": "Помощь ПО/ПМ",
+      "emoji": "🤝",
+      "checks": 1,
+      "coveredPrompts": 1
+    },
+    {
+      "label": "Визуализация UML/BPMN",
+      "emoji": "📊",
+      "checks": 0,
+      "coveredPrompts": 0
+    },
+    {
+      "label": "Impact Analysis",
+      "emoji": "🧭",
+      "checks": 0,
+      "coveredPrompts": 0
+    },
+    {
+      "label": "Risk Analysis",
+      "emoji": "🛡️",
+      "checks": 0,
+      "coveredPrompts": 0
+    }
+  ],
   "activity": [
     {
       "id": 1,

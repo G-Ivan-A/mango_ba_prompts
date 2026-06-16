@@ -16,16 +16,31 @@
           <span class="brand-subtitle">каталог промптов</span>
         </span>
       </a>
-      <nav class="topnav" aria-label="Разделы">
-        <a href="#catalog">Каталог</a>
-        <a href="#dashboard">Дашборд</a>
-        <a href="#checks">Проверки</a>
-        <a href="#roadmap">Roadmap</a>
+      <nav class="topnav" id="topnav" aria-label="Разделы">
+        <a href="#catalog" data-nav="catalog">Каталог</a>
+        <a href="#dashboard" data-nav="dashboard">Дашборд</a>
+        <a href="#roadmap" data-nav="roadmap">Roadmap</a>
+        <a href="#processes" data-nav="processes">Процессы</a>
+        <a href="#patterns" data-nav="patterns">Паттерны</a>
+        <button
+          class="icon-button theme-toggle"
+          id="theme-toggle"
+          type="button"
+          title="Переключить тему"
+          aria-label="Переключить светлую и тёмную тему"
+        >
+          ◐
+        </button>
       </nav>
     </header>
 
     <main>
-      <section class="page-band catalog-band" id="catalog" aria-labelledby="catalog-title">
+      <section
+        class="page-band catalog-band"
+        id="catalog"
+        data-page="catalog"
+        aria-labelledby="catalog-title"
+      >
         <div class="section-head">
           <div>
             <p class="eyebrow">Prompt library</p>
@@ -37,8 +52,25 @@
         <div class="toolbar">
           <label class="search-box">
             <span class="search-icon" aria-hidden="true">⌕</span>
-            <input id="search-input" type="search" autocomplete="off" placeholder="Поиск по файлу, назначению, процессу" />
+            <input
+              id="search-input"
+              type="search"
+              autocomplete="off"
+              list="search-suggestions"
+              placeholder="Поиск по названию, ID, описанию, тегам"
+            />
+            <datalist id="search-suggestions"></datalist>
           </label>
+          <label class="sort-box">
+            <span class="sort-label">Сортировка</span>
+            <select id="sort-select">
+              <option value="updated">По дате обновления</option>
+              <option value="usage">По популярности</option>
+              <option value="alpha">По алфавиту</option>
+              <option value="status">По статусу</option>
+            </select>
+          </label>
+          <button class="icon-button" id="export-button" type="button" title="Скачать каталог (Markdown) по текущим фильтрам" aria-label="Скачать каталог в Markdown">⤓</button>
           <button class="icon-button" id="clear-button" type="button" title="Сбросить поиск и фильтры" aria-label="Сбросить поиск и фильтры">×</button>
         </div>
 
@@ -46,7 +78,12 @@
         <div class="prompt-grid" id="prompt-grid"></div>
       </section>
 
-      <section class="page-band dashboard-band" id="dashboard" aria-labelledby="dashboard-title">
+      <section
+        class="page-band dashboard-band"
+        id="dashboard"
+        data-page="dashboard"
+        aria-labelledby="dashboard-title"
+      >
         <div class="section-head">
           <div>
             <p class="eyebrow">GitHub Pages</p>
@@ -58,7 +95,12 @@
         <div class="phase-lane" id="phase-lane"></div>
       </section>
 
-      <section class="page-band checks-band" id="checks" aria-labelledby="checks-title">
+      <section
+        class="page-band checks-band"
+        id="checks"
+        data-page="dashboard"
+        aria-labelledby="checks-title"
+      >
         <div class="section-head">
           <div>
             <p class="eyebrow">Prompt observability</p>
@@ -67,10 +109,16 @@
           <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts/experiments" target="_blank" rel="noreferrer">↗</a>
         </div>
         <div class="checks-grid" id="checks-grid" aria-live="polite"></div>
+        <div class="checks-byprocess" id="checks-byprocess"></div>
         <div class="checks-activity" id="checks-activity"></div>
       </section>
 
-      <section class="page-band roadmap-band" id="roadmap" aria-labelledby="roadmap-title">
+      <section
+        class="page-band roadmap-band"
+        id="roadmap"
+        data-page="roadmap"
+        aria-labelledby="roadmap-title"
+      >
         <div class="section-head">
           <div>
             <p class="eyebrow">Maturity roadmap</p>
@@ -81,9 +129,48 @@
         <div class="roadmap-timeline" id="roadmap-levels"></div>
         <div class="gap-grid" id="roadmap-gaps"></div>
       </section>
+
+      <section
+        class="page-band processes-band"
+        id="processes"
+        data-page="processes"
+        aria-labelledby="processes-title"
+      >
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">BA process map</p>
+            <h2 id="processes-title">Процессы БА</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="process-grid" id="process-grid"></div>
+      </section>
+
+      <section
+        class="page-band patterns-band"
+        id="patterns"
+        data-page="patterns"
+        aria-labelledby="patterns-title"
+      >
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Pattern library</p>
+            <h2 id="patterns-title">Паттерны</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="pattern-grid" id="pattern-grid"></div>
+      </section>
     </main>
 
     <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <div class="modal" id="process-modal" hidden>
+      <div class="modal-backdrop" data-modal-close></div>
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="modal-close" type="button" aria-label="Закрыть">×</button>
+        <div class="modal-body" id="modal-body"></div>
+      </div>
+    </div>
     <script src="app.js" type="module"></script>
     <!-- Mango Office Widget -->
     <script>
