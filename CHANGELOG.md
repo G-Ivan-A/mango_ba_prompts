@@ -13,6 +13,18 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #95 добавить ID промпта в копируемый текст
+
+- Кнопка «Копировать» в карточке промпта теперь добавляет HTML-комментарий с ID
+  в начало копируемого текста: формат `<!-- {prompt.id} -->\n\n{body}`.
+- HTML-комментарий добавляется **только при копировании** — в отображаемой карточке
+  он не появляется (изменения только в [`site/app.js`](site/app.js)).
+- LLM игнорирует HTML-комментарий, при этом ID виден в истории чата и позволяет
+  отследить, какой промпт был использован.
+- Добавлена локальная проверка
+  [`scripts/validate_issue_95_prompt_id_in_copy.py`](scripts/validate_issue_95_prompt_id_in_copy.py)
+  и шаг в workflow [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
+
 ### Changed — Issue #92 метаданные промптов (`id` + `title`), удаление EXPERIMENTAL
 
 - В обязательный frontmatter всех 30 промптов (`prompts/` и `prompts/archive/`)

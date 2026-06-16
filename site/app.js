@@ -523,7 +523,8 @@ nodes.promptGrid.addEventListener("click", async (event) => {
     return;
   }
   try {
-    await copyText(prompt.body || prompt.content);
+    const body = prompt.body || prompt.content;
+    await copyText(`<!-- ${prompt.id} -->\n\n${body}`);
     button.dataset.copied = "true";
     showToast(`${prompt.file} скопирован`);
     window.setTimeout(() => {
