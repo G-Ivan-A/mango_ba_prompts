@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T12:47:41.061Z",
+  "generatedAt": "2026-06-16T21:31:27.520Z",
   "sourceFiles": [
     {
       "path": "prompts/experiments/",
@@ -16,9 +16,9 @@
     "archived": 6
   },
   "tests": {
-    "logs": 6,
-    "total": 44,
-    "coveredPrompts": 16
+    "logs": 7,
+    "total": 54,
+    "coveredPrompts": 20
   },
   "feedback": {
     "label": "prompt:feedback",
@@ -34,16 +34,16 @@
         {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         },
         {
           "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         },
         {
           "id": "mango-uc-modeling-oneshot",
@@ -114,6 +114,13 @@
           "tests": 1,
           "feedback": 0,
           "usage": 1
+        },
+        {
+          "id": "mango-glossary-context-understanding-oneshot",
+          "file": "glossary-context-understanding-oneshot.md",
+          "tests": 1,
+          "feedback": 0,
+          "usage": 1
         }
       ]
     },
@@ -125,30 +132,30 @@
         {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         },
         {
           "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         },
         {
           "id": "mango-user-story-generator-legacy",
           "file": "user-story-generator-legacy.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         },
         {
           "id": "mango-user-story-generator-simple-legacy",
           "file": "user-story-generator-simple-legacy.md",
-          "tests": 5,
+          "tests": 6,
           "feedback": 0,
-          "usage": 5
+          "usage": 6
         }
       ]
     },
@@ -198,8 +205,9 @@
         "Формирование UC/US",
         "Формирование ФТ/ТЗ"
       ],
-      "tests": 5,
+      "tests": 6,
       "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
         "prompts-audit-2026-05-26.md",
         "prompts-selftest-2026-05-26.md",
         "session-debug-summarizer-2026-06-13.md",
@@ -208,7 +216,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 5
+      "usage": 6
     },
     {
       "id": "mango-us-modeling-stepwise",
@@ -219,8 +227,9 @@
         "Формирование UC/US",
         "Формирование ФТ/ТЗ"
       ],
-      "tests": 5,
+      "tests": 6,
       "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
         "prompts-audit-2026-05-26.md",
         "prompts-selftest-2026-05-26.md",
         "session-debug-summarizer-2026-06-13.md",
@@ -229,7 +238,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 5
+      "usage": 6
     },
     {
       "id": "mango-user-story-generator-legacy",
@@ -239,8 +248,9 @@
       "processes": [
         "Формирование UC/US"
       ],
-      "tests": 5,
+      "tests": 6,
       "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
         "prompts-audit-2026-05-26.md",
         "prompts-selftest-2026-05-26.md",
         "session-debug-summarizer-2026-06-13.md",
@@ -249,7 +259,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 5
+      "usage": 6
     },
     {
       "id": "mango-user-story-generator-simple-legacy",
@@ -259,8 +269,9 @@
       "processes": [
         "Формирование UC/US"
       ],
-      "tests": 5,
+      "tests": 6,
       "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
         "prompts-audit-2026-05-26.md",
         "prompts-selftest-2026-05-26.md",
         "session-debug-summarizer-2026-06-13.md",
@@ -269,7 +280,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 5
+      "usage": 6
     },
     {
       "id": "mango-tz-stats-generator-legacy",
@@ -389,13 +400,14 @@
       "processes": [
         "Формирование ФТ/ТЗ"
       ],
-      "tests": 1,
+      "tests": 2,
       "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
         "session-debug-summarizer-2026-06-13.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 1
+      "usage": 2
     },
     {
       "id": "mango-fr-documentation-stepwise",
@@ -405,9 +417,42 @@
       "processes": [
         "Формирование ФТ/ТЗ"
       ],
+      "tests": 2,
+      "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md",
+        "session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-constraints-documentation-oneshot",
+      "file": "constraints-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
       "tests": 1,
       "testFiles": [
-        "session-debug-summarizer-2026-06-13.md"
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "mango-constraints-documentation-stepwise",
+      "file": "constraints-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
@@ -466,6 +511,42 @@
       "usage": 1
     },
     {
+      "id": "mango-glossary-context-understanding-oneshot",
+      "file": "glossary-context-understanding-oneshot.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "mango-glossary-context-understanding-stepwise",
+      "file": "glossary-context-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "fr-generation-1027-live_2026-06-16.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
       "id": "mango-session-debug-documentation-oneshot",
       "file": "session-debug-documentation-oneshot.md",
       "status": "draft",
@@ -504,66 +585,6 @@
       "processes": [
         "Формирование ФТ/ТЗ",
         "Помощь ПО/ПМ"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-constraints-documentation-oneshot",
-      "file": "constraints-documentation-oneshot.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-constraints-documentation-stepwise",
-      "file": "constraints-documentation-stepwise.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-glossary-context-understanding-oneshot",
-      "file": "glossary-context-understanding-oneshot.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Формирование UC/US"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-glossary-context-understanding-stepwise",
-      "file": "glossary-context-understanding-stepwise.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Формирование UC/US"
       ],
       "tests": 0,
       "testFiles": [],
