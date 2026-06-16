@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T12:47:41.067Z",
+  "generatedAt": "2026-06-16T21:08:07.236Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -16,6 +16,10 @@
     {
       "path": "docs/ba-ecosystem.md",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md"
+    },
+    {
+      "path": "patterns/README.md",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md"
     }
   ],
   "totals": {
@@ -69,6 +73,14 @@
         "validation"
       ],
       "pattern": "asr-ingestion, glossary-context-generation, user-story-generation, usecase-generation, fr-generation, fr-validation",
+      "patternSlugs": [
+        "asr-ingestion",
+        "glossary-context-generation",
+        "user-story-generation",
+        "usecase-generation",
+        "fr-generation",
+        "fr-validation"
+      ],
       "recommendedPrompts": [
         "asr_ingestion_oneshot.md",
         "asr_ingestion_legacy.md",
@@ -90,6 +102,28 @@
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md",
         "fr_validation_legacy.md"
+      ],
+      "promptFiles": [
+        "asr-ingestion-oneshot.md",
+        "asr-ingestion-legacy.md",
+        "glossary-context-understanding-stepwise.md",
+        "glossary-context-understanding-oneshot.md",
+        "questions-customer-understanding-stepwise.md",
+        "questions-customer-understanding-legacy.md",
+        "us-modeling-stepwise.md",
+        "us-modeling-oneshot.md",
+        "uc-modeling-stepwise.md",
+        "uc-modeling-oneshot.md",
+        "fr-documentation-stepwise.md",
+        "fr-documentation-oneshot.md",
+        "constraints-documentation-stepwise.md",
+        "constraints-documentation-oneshot.md",
+        "technical-details-solution-design-stepwise.md",
+        "technical-details-solution-design-oneshot.md",
+        "technical-details-solution-design-legacy.md",
+        "fr-validation-stepwise.md",
+        "fr-validation-oneshot.md",
+        "fr-validation-legacy.md"
       ]
     },
     {
@@ -101,10 +135,18 @@
         "risk_analysis"
       ],
       "pattern": "fr-validation",
+      "patternSlugs": [
+        "fr-validation"
+      ],
       "recommendedPrompts": [
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md",
         "fr_validation_legacy.md"
+      ],
+      "promptFiles": [
+        "fr-validation-stepwise.md",
+        "fr-validation-oneshot.md",
+        "fr-validation-legacy.md"
       ]
     },
     {
@@ -118,6 +160,10 @@
         "quality"
       ],
       "pattern": "glossary-context-generation, fr-validation",
+      "patternSlugs": [
+        "glossary-context-generation",
+        "fr-validation"
+      ],
       "recommendedPrompts": [
         "glossary_context_understanding_stepwise.md",
         "glossary_context_understanding_oneshot.md",
@@ -126,6 +172,15 @@
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md",
         "fr_validation_legacy.md"
+      ],
+      "promptFiles": [
+        "glossary-context-understanding-stepwise.md",
+        "glossary-context-understanding-oneshot.md",
+        "questions-customer-understanding-stepwise.md",
+        "questions-customer-understanding-legacy.md",
+        "fr-validation-stepwise.md",
+        "fr-validation-oneshot.md",
+        "fr-validation-legacy.md"
       ]
     },
     {
@@ -138,6 +193,12 @@
         "documentation"
       ],
       "pattern": "glossary-context-generation, user-story-generation, usecase-generation, fr-validation",
+      "patternSlugs": [
+        "glossary-context-generation",
+        "user-story-generation",
+        "usecase-generation",
+        "fr-validation"
+      ],
       "recommendedPrompts": [
         "glossary_context_understanding_stepwise.md",
         "glossary_context_understanding_oneshot.md",
@@ -146,6 +207,15 @@
         "uc_modeling_stepwise.md",
         "uc_modeling_oneshot.md",
         "fr_validation_stepwise.md"
+      ],
+      "promptFiles": [
+        "glossary-context-understanding-stepwise.md",
+        "glossary-context-understanding-oneshot.md",
+        "us-modeling-stepwise.md",
+        "us-modeling-oneshot.md",
+        "uc-modeling-stepwise.md",
+        "uc-modeling-oneshot.md",
+        "fr-validation-stepwise.md"
       ]
     },
     {
@@ -157,9 +227,16 @@
         "quality"
       ],
       "pattern": "Косвенно: usecase-generation как сценарный источник",
+      "patternSlugs": [
+        "usecase-generation"
+      ],
       "recommendedPrompts": [
         "uc_modeling_stepwise.md",
         "uc_modeling_oneshot.md"
+      ],
+      "promptFiles": [
+        "uc-modeling-stepwise.md",
+        "uc-modeling-oneshot.md"
       ]
     },
     {
@@ -172,6 +249,11 @@
         "governance"
       ],
       "pattern": "asr-ingestion, glossary-context-generation, meeting-summary-generation",
+      "patternSlugs": [
+        "asr-ingestion",
+        "glossary-context-generation",
+        "meeting-summary-generation"
+      ],
       "recommendedPrompts": [
         "asr_ingestion_oneshot.md",
         "meeting_customer_documentation_stepwise.md",
@@ -180,6 +262,15 @@
         "questions_customer_understanding_legacy.md",
         "letter_customer_documentation_legacy.md",
         "session_debug_documentation_oneshot.md"
+      ],
+      "promptFiles": [
+        "asr-ingestion-oneshot.md",
+        "meeting-customer-documentation-stepwise.md",
+        "meeting-team-documentation-stepwise.md",
+        "questions-customer-understanding-stepwise.md",
+        "questions-customer-understanding-legacy.md",
+        "letter-customer-documentation-legacy.md",
+        "session-debug-documentation-oneshot.md"
       ]
     },
     {
@@ -191,9 +282,14 @@
         "research"
       ],
       "pattern": "— (workflow map)",
+      "patternSlugs": [],
       "recommendedPrompts": [
         "archive/tz_stats_generator_legacy.md",
         "archive/tz_stats_generator_simple_legacy.md"
+      ],
+      "promptFiles": [
+        "tz-stats-generator-legacy.md",
+        "tz-stats-generator-simple-legacy.md"
       ]
     },
     {
@@ -206,11 +302,18 @@
         "governance"
       ],
       "pattern": "— (workflow map)",
+      "patternSlugs": [],
       "recommendedPrompts": [
         "technical_details_solution_design_stepwise.md",
         "technical_details_solution_design_oneshot.md",
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md"
+      ],
+      "promptFiles": [
+        "technical-details-solution-design-stepwise.md",
+        "technical-details-solution-design-oneshot.md",
+        "fr-validation-stepwise.md",
+        "fr-validation-oneshot.md"
       ]
     },
     {
@@ -223,11 +326,18 @@
         "quality"
       ],
       "pattern": "— (workflow map)",
+      "patternSlugs": [],
       "recommendedPrompts": [
         "constraints_documentation_stepwise.md",
         "constraints_documentation_oneshot.md",
         "fr_validation_stepwise.md",
         "fr_validation_oneshot.md"
+      ],
+      "promptFiles": [
+        "constraints-documentation-stepwise.md",
+        "constraints-documentation-oneshot.md",
+        "fr-validation-stepwise.md",
+        "fr-validation-oneshot.md"
       ]
     }
   ],
