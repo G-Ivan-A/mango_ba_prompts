@@ -212,7 +212,10 @@ function promptCard(prompt) {
 
   const head = el("div", "prompt-head");
   const titleWrap = el("div");
-  titleWrap.append(el("h3", "", prompt.title));
+  titleWrap.append(el("h3", "prompt-title", prompt.title));
+  const idLabel = el("span", "prompt-id", prompt.id);
+  idLabel.title = "Уникальный токен промпта";
+  titleWrap.append(idLabel);
   titleWrap.append(el("span", "prompt-file", prompt.sourcePath));
   const source = el("a", "source-link", "↗");
   source.href = prompt.url;
@@ -353,7 +356,7 @@ nodes.promptGrid.addEventListener("click", async (event) => {
     return;
   }
   try {
-    await copyText(prompt.content);
+    await copyText(prompt.body || prompt.content);
     button.dataset.copied = "true";
     showToast(`${prompt.file} скопирован`);
     window.setTimeout(() => {
