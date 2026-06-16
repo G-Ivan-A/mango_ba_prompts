@@ -2,6 +2,7 @@ const state = {
   prompts: [],
   stats: null,
   roadmap: null,
+  checks: null,
   selectedFilters: new Set(),
   query: "",
 };
@@ -14,6 +15,8 @@ const nodes = {
   resultCount: document.querySelector("#result-count"),
   search: document.querySelector("#search-input"),
   clear: document.querySelector("#clear-button"),
+  checksGrid: document.querySelector("#checks-grid"),
+  checksActivity: document.querySelector("#checks-activity"),
   roadmapLevels: document.querySelector("#roadmap-levels"),
   roadmapGaps: document.querySelector("#roadmap-gaps"),
   toast: document.querySelector("#toast"),
@@ -38,12 +41,29 @@ function normalize(value) {
     .trim();
 }
 
-function promptTokens(prompt) {
-  return [
-    `operation:${prompt.operation.id}`,
-    `mode:${prompt.mode}`,
-    ...prompt.processes.map((process) => `process:${process}`),
-  ];
+function selectedValues(kind) {
+  const prefix = `${kind}:`;
+  return [...state.selectedFilters]
+    .filter((token) => token.startsWith(prefix))
+    .map((token) => token.slice(prefix.length));
+}
+
+// Каскад: при выборе процессов фильтр «Операции» сужается до операций
+// выбранных процессов. Возвращает null, если процессы не выбраны (доступны все).
+function availableOperationIds() {
+  const selectedProcesses = selectedValues("process");
+  if (selectedProcesses.length === 0) {
+    return null;
+  }
+  const ids = new Set();
+  for (const process of state.promptsData.filters.processes) {
+    if (selectedProcesses.includes(process.label)) {
+      for (const operation of process.operations) {
+        ids.add(operation);
+      }
+    }
+  }
+  return ids;
 }
 
 function promptSearchText(prompt) {
@@ -59,15 +79,30 @@ function promptSearchText(prompt) {
   ].join(" "));
 }
 
+// Внутри одного фильтра — ИЛИ (несколько значений), между фильтрами — И.
 function visiblePrompts() {
   const query = normalize(state.query);
+  const selectedProcesses = selectedValues("process");
+  const selectedOperations = selectedValues("operation");
+  const selectedModes = selectedValues("mode");
+
   return state.prompts.filter((prompt) => {
-    const matchesQuery = !query || promptSearchText(prompt).includes(query);
-    const tokens = promptTokens(prompt);
-    const matchesFilters =
-      state.selectedFilters.size === 0 ||
-      tokens.some((token) => state.selectedFilters.has(token));
-    return matchesQuery && matchesFilters;
+    if (query && !promptSearchText(prompt).includes(query)) {
+      return false;
+    }
+    if (
+      selectedProcesses.length > 0 &&
+      !prompt.processes.some((process) => selectedProcesses.includes(process))
+    ) {
+      return false;
+    }
+    if (selectedOperations.length > 0 && !selectedOperations.includes(prompt.operation.id)) {
+      return false;
+    }
+    if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
+      return false;
+    }
+    return true;
   });
 }
 
@@ -119,8 +154,10 @@ function renderMetrics() {
 }
 
 function renderPhases() {
+  // Зрелость «Мультиагенты» вынесена в отдельный модуль «Проверки» (см. renderChecks).
+  const phases = state.stats.phases.filter((phase) => phase.id !== "multiagents");
   nodes.phases.replaceChildren(
-    ...state.stats.phases.map((phase) => {
+    ...phases.map((phase) => {
       const card = el("article", "phase-card");
       card.dataset.status = phase.status;
 
@@ -149,11 +186,15 @@ function renderPhases() {
   );
 }
 
-function filterButton({ token, icon, label, count, title }) {
+function filterButton({ token, icon, label, count, title, unavailable }) {
   const button = el("button", "filter-button");
   button.type = "button";
   button.dataset.filterToken = token;
   button.setAttribute("aria-pressed", String(state.selectedFilters.has(token)));
+  if (unavailable) {
+    button.dataset.unavailable = "true";
+    button.setAttribute("aria-disabled", "true");
+  }
   button.title = title || label;
   button.append(el("span", "filter-icon", icon));
   button.append(el("span", "filter-label", label));
@@ -172,13 +213,6 @@ function renderFilterGroup(title, items) {
 
 function renderFilters() {
   const totals = state.stats.totals;
-  const operations = state.promptsData.filters.operations.map((operation) => ({
-    token: `operation:${operation.id}`,
-    icon: operation.icon,
-    label: operation.label,
-    count: totals.operations[operation.id] || 0,
-    title: `${operation.label}: ${operation.description}`,
-  }));
   const processes = state.promptsData.filters.processes.map((process) => ({
     token: `process:${process.label}`,
     icon: process.icon,
@@ -186,6 +220,20 @@ function renderFilters() {
     count: totals.processes[process.label] || 0,
     title: `${process.label}: ${process.description}`,
   }));
+
+  const available = availableOperationIds();
+  const operations = state.promptsData.filters.operations.map((operation) => ({
+    token: `operation:${operation.id}`,
+    icon: operation.icon,
+    label: operation.label,
+    count: totals.operations[operation.id] || 0,
+    title:
+      available && !available.has(operation.id)
+        ? `${operation.label}: недоступна для выбранных процессов`
+        : `${operation.label}: ${operation.description}`,
+    unavailable: Boolean(available) && !available.has(operation.id),
+  }));
+
   const modeLabels = {
     stepwise: "Stepwise",
     oneshot: "One-shot",
@@ -200,8 +248,8 @@ function renderFilters() {
   }));
 
   nodes.filters.replaceChildren(
-    renderFilterGroup("Операции", operations),
     renderFilterGroup("Процессы БА", processes),
+    renderFilterGroup("Операции", operations),
     renderFilterGroup("Режимы", modes),
   );
 }
@@ -267,6 +315,118 @@ function renderPrompts() {
   nodes.promptGrid.replaceChildren(...prompts.map(promptCard));
 }
 
+function statusBar(segments) {
+  const total = segments.reduce((sum, segment) => sum + segment.value, 0) || 1;
+  const bar = el("div", "check-bar");
+  for (const segment of segments) {
+    if (segment.value <= 0) {
+      continue;
+    }
+    const part = el("span", "check-bar-part");
+    part.dataset.kind = segment.kind;
+    part.style.width = `${Math.round((segment.value / total) * 100)}%`;
+    part.title = `${segment.label}: ${segment.value}`;
+    bar.append(part);
+  }
+  return bar;
+}
+
+function checkCard(title, valueNode, footNode) {
+  const card = el("article", "check-card");
+  card.append(el("p", "check-title", title));
+  card.append(valueNode);
+  if (footNode) {
+    card.append(footNode);
+  }
+  return card;
+}
+
+function checkMetrics(items) {
+  const wrap = el("div", "check-metrics");
+  for (const [value, label] of items) {
+    const item = el("span", "check-metric");
+    item.append(el("strong", "", String(value)));
+    item.append(document.createTextNode(label));
+    wrap.append(item);
+  }
+  return wrap;
+}
+
+function renderChecks() {
+  if (!state.checks) {
+    return;
+  }
+  const checks = state.checks;
+  const statuses = checks.statuses || {};
+
+  const statusValue = el("div", "check-value-block");
+  statusValue.append(
+    statusBar([
+      { kind: "canonical", value: statuses.canonical || 0, label: "canonical" },
+      { kind: "draft", value: statuses.draft || 0, label: "draft" },
+      { kind: "archived", value: statuses.archived || 0, label: "archived" },
+    ]),
+  );
+  statusValue.append(
+    checkMetrics([
+      [statuses.canonical || 0, "canonical"],
+      [statuses.draft || 0, "draft"],
+      [statuses.archived || 0, "archived"],
+    ]),
+  );
+  const statusCard = checkCard("Статус отладки", statusValue);
+
+  const testsValue = el("span", "check-big", String(checks.tests.total));
+  const testsFoot = checkMetrics([
+    [checks.tests.coveredPrompts, "промптов с тестами"],
+    [checks.tests.logs, "логов в experiments"],
+  ]);
+  const testsCard = checkCard("Тесты", testsValue, testsFoot);
+
+  const feedbackValue = el("span", "check-big", String(checks.feedback.total));
+  const feedbackFoot = checkMetrics([
+    [checks.feedback.prompts, "промптов с feedback"],
+    [checks.feedback.label, ""],
+  ]);
+  const feedbackCard = checkCard("Обратная связь", feedbackValue, feedbackFoot);
+
+  nodes.checksGrid.replaceChildren(statusCard, testsCard, feedbackCard);
+
+  if (checks.activity.length === 0) {
+    nodes.checksActivity.replaceChildren(
+      el("div", "empty-state", "Нет зафиксированной активности использования"),
+    );
+    return;
+  }
+
+  const heading = el("p", "check-activity-title", "Активность использования по процессам БА");
+  const groups = el("div", "activity-grid");
+  for (const group of checks.activity) {
+    const card = el("article", "activity-card");
+    const head = el("div", "activity-head");
+    head.append(el("span", "activity-icon", group.icon));
+    head.append(el("span", "activity-label", group.label));
+    card.append(head);
+    const list = el("ul", "activity-list");
+    for (const prompt of group.prompts) {
+      const row = el("li", "activity-row");
+      row.append(el("span", "activity-prompt", prompt.file));
+      const meta = el("span", "activity-meta");
+      meta.append(el("span", "activity-chip", `тестов ${prompt.tests}`));
+      if (prompt.feedback > 0) {
+        const fb = el("span", "activity-chip", `feedback ${prompt.feedback}`);
+        fb.dataset.kind = "feedback";
+        meta.append(fb);
+      }
+      row.append(meta);
+      list.append(row);
+    }
+    card.append(list);
+    groups.append(card);
+  }
+  nodes.checksActivity.replaceChildren(heading, groups);
+}
+
 function renderRoadmap() {
   nodes.roadmapLevels.replaceChildren(
     ...state.roadmap.levels.map((level) => {
@@ -298,21 +458,24 @@ function rerenderInteractive() {
 
 async function init() {
   try {
-    const [promptsData, stats, roadmap] = await Promise.all([
+    const [promptsData, stats, roadmap, checks] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
+      fetch("data/checks.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
     state.prompts = promptsData.prompts;
     state.stats = stats;
     state.roadmap = roadmap;
+    state.checks = checks;
 
     renderMetrics();
     renderPhases();
     renderFilters();
     renderPrompts();
+    renderChecks();
     renderRoadmap();
   } catch (error) {
     nodes.promptGrid.replaceChildren(el("div", "empty-state", "Данные не загрузились"));
@@ -338,6 +501,10 @@ nodes.filters.addEventListener("click", (event) => {
     return;
   }
   const token = button.dataset.filterToken;
+  // Недоступную (каскадно скрытую) операцию нельзя выбрать, но можно снять.
+  if (button.dataset.unavailable === "true" && !state.selectedFilters.has(token)) {
+    return;
+  }
   if (state.selectedFilters.has(token)) {
     state.selectedFilters.delete(token);
   } else {

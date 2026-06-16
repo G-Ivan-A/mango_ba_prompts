@@ -9,7 +9,7 @@
   </head>
   <body>
     <header class="topbar">
-      <a class="brand" href="#dashboard" aria-label="Mango BA Prompts">
+      <a class="brand" href="#catalog" aria-label="Mango BA Prompts">
         <span class="brand-mark" aria-hidden="true">M</span>
         <span>
           <span class="brand-title">Mango BA Prompts</span>
@@ -17,30 +17,19 @@
         </span>
       </a>
       <nav class="topnav" aria-label="Разделы">
-        <a href="#dashboard">Дашборд</a>
         <a href="#catalog">Каталог</a>
+        <a href="#dashboard">Дашборд</a>
+        <a href="#checks">Проверки</a>
         <a href="#roadmap">Roadmap</a>
       </nav>
     </header>
 
     <main>
-      <section class="page-band dashboard-band" id="dashboard" aria-labelledby="dashboard-title">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow">GitHub Pages</p>
-            <h1 id="dashboard-title">Внедрение промптов, агентов и мультиагентов</h1>
-          </div>
-          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts" target="_blank" rel="noreferrer">↗</a>
-        </div>
-        <div class="metrics-grid" id="metrics-grid" aria-live="polite"></div>
-        <div class="phase-lane" id="phase-lane"></div>
-      </section>
-
       <section class="page-band catalog-band" id="catalog" aria-labelledby="catalog-title">
         <div class="section-head">
           <div>
             <p class="eyebrow">Prompt library</p>
-            <h2 id="catalog-title">Каталог</h2>
+            <h1 id="catalog-title">Каталог промптов</h1>
           </div>
           <output class="result-count" id="result-count" aria-live="polite"></output>
         </div>
@@ -55,6 +44,30 @@
 
         <div class="filters" id="filters-root" aria-label="Фильтры каталога"></div>
         <div class="prompt-grid" id="prompt-grid"></div>
+      </section>
+
+      <section class="page-band dashboard-band" id="dashboard" aria-labelledby="dashboard-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">GitHub Pages</p>
+            <h2 id="dashboard-title">Внедрение промптов, агентов и мультиагентов</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="metrics-grid" id="metrics-grid" aria-live="polite"></div>
+        <div class="phase-lane" id="phase-lane"></div>
+      </section>
+
+      <section class="page-band checks-band" id="checks" aria-labelledby="checks-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Prompt observability</p>
+            <h2 id="checks-title">Проверки</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/prompts/experiments" target="_blank" rel="noreferrer">↗</a>
+        </div>
+        <div class="checks-grid" id="checks-grid" aria-live="polite"></div>
+        <div class="checks-activity" id="checks-activity"></div>
       </section>
 
       <section class="page-band roadmap-band" id="roadmap" aria-labelledby="roadmap-title">
