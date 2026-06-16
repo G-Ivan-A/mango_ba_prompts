@@ -125,6 +125,7 @@ ai-generated: true
 | `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Atomic Function`. Это спецификация, **не** глоссарий. |
 | `standards/prompt-standard.md` | Контракт промпта: 4 обязательных поля frontmatter, именование, RAG-формат ссылок. |
 | `standards/pattern-standard.md` | Контракт паттерна: 8 обязательных полей, универсальный `prompt_template`. |
+| `standards/ba-ontology.md` *(+ `artifact-naming`, `team-directory`, `kb`, `industry-standards`, `bcreq-process`, `pages-ux`)* | Формализованная онтология БА и стандарты (issue #97); контракты-носители — [ADR-003…010](docs/adr/). |
 
 > ℹ️ Каталог появляется **только** под реальный артефакт — спок не носит с
 > собой пустых «органелл» (Anti-Inflation principle).
@@ -149,6 +150,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
+| Онтология БА, операции, нейминг, KB, процессы, UX Pages | [`standards/ba-ontology.md`](standards/ba-ontology.md), [`docs/adr/`](docs/adr/) |
 | Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |

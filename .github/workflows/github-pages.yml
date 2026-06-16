@@ -43,6 +43,9 @@ jobs:
       - name: Validate prompt ID in copy
         run: python3 scripts/validate_issue_95_prompt_id_in_copy.py
 
+      - name: Validate issue #97 ontology and standards
+        run: python3 scripts/validate_issue_97_ontology_standards.py
+
       - name: Prepare artifact
         run: |
           mkdir -p pages-dist
