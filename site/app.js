@@ -3,9 +3,15 @@ const state = {
   stats: null,
   roadmap: null,
   checks: null,
+  processes: null,
+  patterns: null,
   selectedFilters: new Set(),
   query: "",
+  sort: "updated",
 };
+
+const PAGES = ["catalog", "dashboard", "roadmap", "processes", "patterns"];
+const THEME_KEY = "mango-theme";
 
 const nodes = {
   metrics: document.querySelector("#metrics-grid"),
@@ -14,11 +20,22 @@ const nodes = {
   promptGrid: document.querySelector("#prompt-grid"),
   resultCount: document.querySelector("#result-count"),
   search: document.querySelector("#search-input"),
+  suggestions: document.querySelector("#search-suggestions"),
+  sort: document.querySelector("#sort-select"),
+  exportButton: document.querySelector("#export-button"),
   clear: document.querySelector("#clear-button"),
   checksGrid: document.querySelector("#checks-grid"),
+  checksByProcess: document.querySelector("#checks-byprocess"),
   checksActivity: document.querySelector("#checks-activity"),
   roadmapLevels: document.querySelector("#roadmap-levels"),
   roadmapGaps: document.querySelector("#roadmap-gaps"),
+  processGrid: document.querySelector("#process-grid"),
+  patternGrid: document.querySelector("#pattern-grid"),
+  topnav: document.querySelector("#topnav"),
+  themeToggle: document.querySelector("#theme-toggle"),
+  modal: document.querySelector("#process-modal"),
+  modalBody: document.querySelector("#modal-body"),
+  modalClose: document.querySelector("#modal-close"),
   toast: document.querySelector("#toast"),
 };
 
@@ -39,6 +56,27 @@ function normalize(value) {
     .normalize("NFKD")
     .replace(/\s+/g, " ")
     .trim();
+}
+
+function promptStatus(prompt) {
+  return prompt.archived ? "archived" : prompt.status;
+}
+
+// Количество тестовых логов по промпту берём из checks.json (динамически).
+function testsFor(prompt) {
+  if (!state.checks) {
+    return 0;
+  }
+  const entry = state.checks.prompts.find((item) => item.id === prompt.id);
+  return entry ? entry.tests : 0;
+}
+
+function usageFor(prompt) {
+  if (!state.checks) {
+    return 0;
+  }
+  const entry = state.checks.prompts.find((item) => item.id === prompt.id);
+  return entry ? entry.usage : 0;
 }
 
 function selectedValues(kind) {
@@ -68,9 +106,11 @@ function availableOperationIds() {
 
 function promptSearchText(prompt) {
   return normalize([
+    prompt.id,
     prompt.file,
     prompt.title,
     prompt.description,
+    prompt.descriptionLong,
     prompt.mode,
     prompt.status,
     prompt.operation.id,
@@ -79,14 +119,36 @@ function promptSearchText(prompt) {
   ].join(" "));
 }
 
+// Сортировка карточек (ФТ-4): дата обновления, популярность, алфавит, статус.
+function sortPrompts(prompts) {
+  const sorted = [...prompts];
+  const statusRank = { canonical: 0, draft: 1, archived: 2, unknown: 3 };
+  if (state.sort === "alpha") {
+    sorted.sort((left, right) => left.title.localeCompare(right.title, "ru"));
+  } else if (state.sort === "usage") {
+    sorted.sort((left, right) => usageFor(right) - usageFor(left) || left.title.localeCompare(right.title, "ru"));
+  } else if (state.sort === "status") {
+    sorted.sort(
+      (left, right) =>
+        (statusRank[promptStatus(left)] ?? 9) - (statusRank[promptStatus(right)] ?? 9) ||
+        left.title.localeCompare(right.title, "ru"),
+    );
+  } else {
+    // updated: свежие сверху, без даты — в конец.
+    sorted.sort((left, right) => String(right.updated || "").localeCompare(String(left.updated || "")));
+  }
+  return sorted;
+}
+
 // Внутри одного фильтра — ИЛИ (несколько значений), между фильтрами — И.
 function visiblePrompts() {
   const query = normalize(state.query);
   const selectedProcesses = selectedValues("process");
   const selectedOperations = selectedValues("operation");
   const selectedModes = selectedValues("mode");
+  const selectedStatuses = selectedValues("status");
 
-  return state.prompts.filter((prompt) => {
+  const filtered = state.prompts.filter((prompt) => {
     if (query && !promptSearchText(prompt).includes(query)) {
       return false;
     }
@@ -102,8 +164,13 @@ function visiblePrompts() {
     if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
       return false;
     }
+    if (selectedStatuses.length > 0 && !selectedStatuses.includes(promptStatus(prompt))) {
+      return false;
+    }
     return true;
   });
+
+  return sortPrompts(filtered);
 }
 
 function showToast(message) {
@@ -132,15 +199,60 @@ async function copyText(text) {
   textarea.remove();
 }
 
+function downloadFile(filename, text, type) {
+  const blob = new Blob([text], { type });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = filename;
+  document.body.append(link);
+  link.click();
+  link.remove();
+  URL.revokeObjectURL(url);
+}
+
+// Экспорт каталога по выделенным фильтрам в Markdown (ФТ-4).
+function exportCatalog() {
+  const prompts = visiblePrompts();
+  const lines = ["# Каталог промптов Mango BA", "", `Промптов в выборке: ${prompts.length} из ${state.prompts.length}`, ""];
+  for (const prompt of prompts) {
+    lines.push(`## ${prompt.title}`);
+    lines.push("");
+    lines.push(`- **ID:** \`${prompt.id}\``);
+    lines.push(`- **Версия:** ${prompt.version} · **Обновлён:** ${prompt.updated || "—"}`);
+    lines.push(`- **Режим:** ${prompt.mode} · **Статус:** ${promptStatus(prompt)} · **Тестов:** ${testsFor(prompt)}`);
+    lines.push(`- **Операция:** ${prompt.operation.label}`);
+    if (prompt.processes.length > 0) {
+      lines.push(`- **Процессы:** ${prompt.processes.join(", ")}`);
+    }
+    lines.push(`- **Файл:** ${prompt.url}`);
+    lines.push("");
+    lines.push(prompt.descriptionLong || prompt.description);
+    lines.push("");
+  }
+  downloadFile("mango-ba-catalog.md", lines.join("\n"), "text/markdown;charset=utf-8");
+  showToast(`Экспортировано промптов: ${prompts.length}`);
+}
+
+function renderSuggestions() {
+  const options = state.prompts.map((prompt) => {
+    const option = document.createElement("option");
+    option.value = prompt.title;
+    option.label = prompt.id;
+    return option;
+  });
+  nodes.suggestions.replaceChildren(...options);
+}
+
 function renderMetrics() {
   const totals = state.stats.totals;
   const metrics = [
     ["Всего", totals.allPrompts],
     ["Активных", totals.activePrompts],
     ["Архив", totals.archivedPrompts],
-    ["Тесты пройдены", totals.testsPassed],
+    ["Canonical", totals.statuses.canonical || 0],
     ["В работе", totals.inWork],
-    ["Отложено", totals.deferred],
+    ["Операций", state.stats.taxonomy.operations],
   ];
 
   nodes.metrics.replaceChildren(
@@ -215,7 +327,7 @@ function renderFilters() {
   const totals = state.stats.totals;
   const processes = state.promptsData.filters.processes.map((process) => ({
     token: `process:${process.label}`,
-    icon: process.icon,
+    icon: process.emoji || process.icon,
     label: process.label,
     count: totals.processes[process.label] || 0,
     title: `${process.label}: ${process.description}`,
@@ -247,10 +359,29 @@ function renderFilters() {
     title: mode,
   }));
 
+  // ФТ-4: отдельный фильтр по статусу (Draft / Canonical / Archived).
+  const statusLabels = { draft: "Draft", canonical: "Canonical", archived: "Archived" };
+  const statusIcons = { draft: "✎", canonical: "✓", archived: "□" };
+  const statusCounts = state.prompts.reduce((counts, prompt) => {
+    const status = promptStatus(prompt);
+    counts[status] = (counts[status] || 0) + 1;
+    return counts;
+  }, {});
+  const statuses = ["draft", "canonical", "archived"]
+    .filter((status) => statusCounts[status])
+    .map((status) => ({
+      token: `status:${status}`,
+      icon: statusIcons[status] || "•",
+      label: statusLabels[status] || status,
+      count: statusCounts[status] || 0,
+      title: statusLabels[status] || status,
+    }));
+
   nodes.filters.replaceChildren(
     renderFilterGroup("Процессы БА", processes),
     renderFilterGroup("Операции", operations),
     renderFilterGroup("Режимы", modes),
+    renderFilterGroup("Статус", statuses),
   );
 }
 
@@ -264,7 +395,6 @@ function promptCard(prompt) {
   const idLabel = el("span", "prompt-id", prompt.id);
   idLabel.title = "Уникальный токен промпта";
   titleWrap.append(idLabel);
-  titleWrap.append(el("span", "prompt-file", prompt.sourcePath));
   const source = el("a", "source-link", "↗");
   source.href = prompt.url;
   source.target = "_blank";
@@ -273,18 +403,29 @@ function promptCard(prompt) {
   source.setAttribute("aria-label", `Открыть ${prompt.file} в GitHub`);
   head.append(titleWrap, source);
 
-  const description = el("p", "prompt-description", prompt.description);
+  const description = el("p", "prompt-description", prompt.descriptionLong || prompt.description);
+
+  // Мета-строка вместо хэша: версия, дата обновления, статус тестов (ФТ-2).
+  const tests = testsFor(prompt);
+  const meta = el("div", "prompt-meta");
+  meta.append(el("span", "prompt-meta-item", `v${String(prompt.version).replace(/^v/, "")}`));
+  if (prompt.updated) {
+    meta.append(el("span", "prompt-meta-item", prompt.updated));
+  }
+  const testItem = el("span", "prompt-meta-item", tests > 0 ? `✅ ${tests} тест(ов)` : "тестов нет");
+  testItem.dataset.kind = tests > 0 ? "tested" : "untested";
+  meta.append(testItem);
 
   const tags = el("div", "tag-row");
   const mode = el("span", "tag", `${prompt.modeIcon} ${prompt.mode}`);
   mode.dataset.kind = "mode";
-  const status = el("span", "tag", prompt.archived ? "archived" : prompt.status);
+  const status = el("span", "tag", promptStatus(prompt));
   status.dataset.kind = "status";
   const operation = el("span", "tag", `${prompt.operation.icon} ${prompt.operation.label}`);
   operation.dataset.kind = "operation";
   tags.append(mode, status, operation);
-  for (const process of prompt.processes) {
-    const tag = el("span", "tag", process);
+  for (const process of prompt.processDetails.length > 0 ? prompt.processDetails : prompt.processes.map((label) => ({ label, emoji: "🗂️" }))) {
+    const tag = el("span", "tag", `${process.emoji || "🗂️"} ${process.label}`);
     tag.dataset.kind = "process";
     tags.append(tag);
   }
@@ -295,11 +436,15 @@ function promptCard(prompt) {
   copy.dataset.copyId = prompt.id;
   copy.append(el("span", "", "⧉"));
   copy.append(el("span", "", "Копировать"));
-  const checksum = el("span", "tag", prompt.contentHash.slice(0, 7));
-  checksum.title = "SHA-256 prompt content";
-  actions.append(copy, checksum);
+  const share = el("button", "icon-button share-button");
+  share.type = "button";
+  share.dataset.shareId = prompt.id;
+  share.title = "Скопировать ссылку на карточку";
+  share.setAttribute("aria-label", "Скопировать ссылку на карточку");
+  share.textContent = "↗";
+  actions.append(copy, share);
 
-  card.append(head, description, tags, actions);
+  card.append(head, description, meta, tags, actions);
   return card;
 }
 
@@ -358,6 +503,7 @@ function renderChecks() {
   }
   const checks = state.checks;
   const statuses = checks.statuses || {};
+  const testsPassed = checks.testsPassed || { covered: 0, total: 0, percent: 0 };
 
   const statusValue = el("div", "check-value-block");
   statusValue.append(
@@ -376,12 +522,13 @@ function renderChecks() {
   );
   const statusCard = checkCard("Статус отладки", statusValue);
 
-  const testsValue = el("span", "check-big", String(checks.tests.total));
-  const testsFoot = checkMetrics([
-    [checks.tests.coveredPrompts, "промптов с тестами"],
-    [checks.tests.logs, "логов в experiments"],
+  // ФТ-3: всего проверено + тесты пройдены (X/Y, %).
+  const checkedValue = el("span", "check-big", String(checks.totalChecked ?? checks.tests.total));
+  const checkedFoot = checkMetrics([
+    [`${testsPassed.covered}/${testsPassed.total}`, "промптов с тестами"],
+    [`${testsPassed.percent}%`, "покрытие тестами"],
   ]);
-  const testsCard = checkCard("Тесты", testsValue, testsFoot);
+  const checkedCard = checkCard("Всего проверок", checkedValue, checkedFoot);
 
   const feedbackValue = el("span", "check-big", String(checks.feedback.total));
   const feedbackFoot = checkMetrics([
@@ -390,41 +537,57 @@ function renderChecks() {
   ]);
   const feedbackCard = checkCard("Обратная связь", feedbackValue, feedbackFoot);
 
-  nodes.checksGrid.replaceChildren(statusCard, testsCard, feedbackCard);
+  nodes.checksGrid.replaceChildren(statusCard, checkedCard, feedbackCard);
 
-  if (checks.activity.length === 0) {
+  // ФТ-3: проверки по процессам (динамически, включая «Прочее»).
+  const byProcess = checks.byProcess || [];
+  if (byProcess.length > 0) {
+    const heading = el("p", "check-activity-title", "Проверки по процессам БА");
+    const maxChecks = Math.max(...byProcess.map((entry) => entry.checks), 1);
+    const grid = el("div", "byprocess-grid");
+    for (const entry of byProcess) {
+      const row = el("article", "byprocess-card");
+      const top = el("div", "byprocess-head");
+      top.append(el("span", "byprocess-icon", entry.emoji || "🗂️"));
+      top.append(el("span", "byprocess-label", entry.label));
+      top.append(el("span", "byprocess-count", String(entry.checks)));
+      const track = el("div", "progress-track");
+      const bar = el("div", "progress-bar");
+      bar.style.width = `${Math.round((entry.checks / maxChecks) * 100)}%`;
+      track.append(bar);
+      row.append(top, track, el("span", "byprocess-foot", `${entry.coveredPrompts} промптов с тестами`));
+      grid.append(row);
+    }
+    nodes.checksByProcess.replaceChildren(heading, grid);
+  } else {
+    nodes.checksByProcess.replaceChildren();
+  }
+
+  // ФТ-3: блок «Активность» — топ-5 промптов по использованию.
+  const topPrompts = checks.prompts.filter((prompt) => prompt.usage > 0).slice(0, 5);
+  if (topPrompts.length === 0) {
     nodes.checksActivity.replaceChildren(
       el("div", "empty-state", "Нет зафиксированной активности использования"),
     );
     return;
   }
 
-  const heading = el("p", "check-activity-title", "Активность использования по процессам БА");
-  const groups = el("div", "activity-grid");
-  for (const group of checks.activity) {
-    const card = el("article", "activity-card");
-    const head = el("div", "activity-head");
-    head.append(el("span", "activity-icon", group.icon));
-    head.append(el("span", "activity-label", group.label));
-    card.append(head);
-    const list = el("ul", "activity-list");
-    for (const prompt of group.prompts) {
-      const row = el("li", "activity-row");
-      row.append(el("span", "activity-prompt", prompt.file));
-      const meta = el("span", "activity-meta");
-      meta.append(el("span", "activity-chip", `тестов ${prompt.tests}`));
-      if (prompt.feedback > 0) {
-        const fb = el("span", "activity-chip", `feedback ${prompt.feedback}`);
-        fb.dataset.kind = "feedback";
-        meta.append(fb);
-      }
-      row.append(meta);
-      list.append(row);
+  const heading = el("p", "check-activity-title", "Активность — топ-5 промптов");
+  const list = el("ol", "top-list");
+  for (const prompt of topPrompts) {
+    const row = el("li", "top-row");
+    row.append(el("span", "top-id", prompt.id));
+    const meta = el("span", "activity-meta");
+    meta.append(el("span", "activity-chip", `тестов ${prompt.tests}`));
+    if (prompt.feedback > 0) {
+      const fb = el("span", "activity-chip", `feedback ${prompt.feedback}`);
+      fb.dataset.kind = "feedback";
+      meta.append(fb);
     }
-    card.append(list);
-    groups.append(card);
+    row.append(meta);
+    list.append(row);
   }
-  nodes.checksActivity.replaceChildren(heading, groups);
+  nodes.checksActivity.replaceChildren(heading, list);
 }
 
 function renderRoadmap() {
@@ -451,18 +614,230 @@ function renderRoadmap() {
   );
 }
 
+function renderProcesses() {
+  if (!state.processes) {
+    return;
+  }
+  nodes.processGrid.replaceChildren(
+    ...state.processes.processes.map((process) => {
+      const card = el("article", "process-card");
+      card.dataset.processId = String(process.id);
+      const head = el("div", "process-head");
+      head.append(el("span", "process-icon", process.emoji || "🗂️"));
+      head.append(el("h3", "process-title", process.label));
+      card.append(head);
+      card.append(el("p", "process-description", process.description));
+      const meta = el("div", "process-meta");
+      meta.append(el("span", "activity-chip", `промптов ${process.prompts.length}`));
+      meta.append(el("span", "activity-chip", `проверок ${process.checks}`));
+      if (process.gaps.length > 0) {
+        const gapChip = el("span", "activity-chip", `gaps ${process.gaps.length}`);
+        gapChip.dataset.kind = "feedback";
+        meta.append(gapChip);
+      }
+      card.append(meta);
+      const hint = el("span", "process-hint", "Подробнее →");
+      card.append(hint);
+      return card;
+    }),
+  );
+}
+
+function openProcessModal(processId) {
+  const process = state.processes.processes.find((item) => String(item.id) === String(processId));
+  if (!process) {
+    return;
+  }
+  const body = nodes.modalBody;
+  body.replaceChildren();
+
+  const head = el("div", "process-head");
+  head.append(el("span", "process-icon", process.emoji || "🗂️"));
+  head.append(el("h3", "modal-title", process.label));
+  head.querySelector("h3").id = "modal-title";
+  body.append(head);
+  body.append(el("p", "process-description", process.description));
+
+  if (process.operations.length > 0) {
+    body.append(el("h4", "modal-subhead", "Операции"));
+    const ops = el("div", "tag-row");
+    for (const operationId of process.operations) {
+      const tag = el("span", "tag", operationId);
+      tag.dataset.kind = "operation";
+      ops.append(tag);
+    }
+    body.append(ops);
+  }
+
+  body.append(el("h4", "modal-subhead", "Связанные промпты"));
+  if (process.prompts.length > 0) {
+    const list = el("ul", "modal-list");
+    for (const prompt of process.prompts) {
+      const item = el("li", "modal-list-row");
+      const link = el("a", "modal-link", `${prompt.modeIcon || "•"} ${prompt.title}`);
+      link.href = prompt.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      item.append(link);
+      item.append(el("span", "modal-list-id", prompt.id));
+      list.append(item);
+    }
+    body.append(list);
+  } else {
+    body.append(el("p", "process-description", "Промпты пока не привязаны."));
+  }
+
+  if (process.patterns.length > 0) {
+    body.append(el("h4", "modal-subhead", "Подпроцессы и паттерны"));
+    const list = el("ul", "modal-list");
+    for (const pattern of process.patterns) {
+      const item = el("li", "modal-list-row");
+      const link = el("a", "modal-link", pattern.slug);
+      link.href = pattern.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      item.append(link);
+      list.append(item);
+    }
+    body.append(list);
+  }
+
+  if (process.gaps.length > 0) {
+    body.append(el("h4", "modal-subhead", "Known gaps"));
+    const list = el("ul", "modal-list");
+    for (const gap of process.gaps) {
+      const item = el("li", "modal-gap-row");
+      item.append(el("span", "modal-gap-title", gap.gap));
+      if (gap.nextArtifact) {
+        item.append(el("span", "modal-gap-next", gap.nextArtifact));
+      }
+      list.append(item);
+    }
+    body.append(list);
+  }
+
+  nodes.modal.hidden = false;
+}
+
+function closeProcessModal() {
+  nodes.modal.hidden = true;
+}
+
+function renderPatterns() {
+  if (!state.patterns) {
+    return;
+  }
+  nodes.patternGrid.replaceChildren(
+    ...state.patterns.patterns.map((pattern) => {
+      const card = el("article", "pattern-card");
+      const head = el("div", "process-head");
+      head.append(el("span", "process-icon", pattern.operationIcon || "•"));
+      head.append(el("h3", "process-title", pattern.slug));
+      const link = el("a", "source-link", "↗");
+      link.href = pattern.url;
+      link.target = "_blank";
+      link.rel = "noreferrer";
+      link.title = "Открыть паттерн в GitHub";
+      const headWrap = el("div", "pattern-head");
+      headWrap.append(head, link);
+      card.append(headWrap);
+      if (pattern.whenToStart) {
+        card.append(el("p", "process-description", pattern.whenToStart));
+      }
+      const tags = el("div", "tag-row");
+      for (const process of pattern.processes) {
+        const tag = el("span", "tag", process);
+        tag.dataset.kind = "process";
+        tags.append(tag);
+      }
+      const operation = el("span", "tag", pattern.operation);
+      operation.dataset.kind = "operation";
+      tags.append(operation);
+      card.append(tags);
+      if (pattern.prompts.length > 0) {
+        const list = el("ul", "modal-list");
+        for (const prompt of pattern.prompts) {
+          const item = el("li", "modal-list-row");
+          const promptLink = el("a", "modal-link", `${prompt.modeIcon || "•"} ${prompt.title}`);
+          promptLink.href = prompt.url;
+          promptLink.target = "_blank";
+          promptLink.rel = "noreferrer";
+          item.append(promptLink);
+          list.append(item);
+        }
+        card.append(list);
+      }
+      return card;
+    }),
+  );
+}
+
+// Клиентский роутер на hash: одна из пяти страниц (по умолчанию каталог).
+function currentPage() {
+  const raw = (window.location.hash || "").replace(/^#/, "");
+  if (raw.startsWith("prompt=")) {
+    return "catalog";
+  }
+  const page = raw.split("?")[0];
+  return PAGES.includes(page) ? page : "catalog";
+}
+
+function applyRoute() {
+  const page = currentPage();
+  closeProcessModal();
+  for (const section of document.querySelectorAll("section[data-page]")) {
+    section.hidden = section.dataset.page !== page;
+  }
+  for (const link of nodes.topnav.querySelectorAll("a[data-nav]")) {
+    link.dataset.active = String(link.dataset.nav === page);
+  }
+
+  // Глубокая ссылка на карточку: #prompt=<id> открывает каталог и фокусирует поиск.
+  const raw = (window.location.hash || "").replace(/^#/, "");
+  if (raw.startsWith("prompt=")) {
+    const id = decodeURIComponent(raw.slice("prompt=".length));
+    const prompt = state.prompts.find((item) => item.id === id);
+    if (prompt) {
+      state.query = id;
+      nodes.search.value = id;
+      renderPrompts();
+    }
+  }
+  window.scrollTo({ top: 0, behavior: "auto" });
+}
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  nodes.themeToggle.textContent = theme === "dark" ? "☀" : "◐";
+  nodes.themeToggle.setAttribute("aria-pressed", String(theme === "dark"));
+}
+
+function initTheme() {
+  let stored = null;
+  try {
+    stored = window.localStorage.getItem(THEME_KEY);
+  } catch {
+    stored = null;
+  }
+  const prefersDark = window.matchMedia?.("(prefers-color-scheme: dark)").matches;
+  applyTheme(stored || (prefersDark ? "dark" : "light"));
+}
+
 function rerenderInteractive() {
   renderFilters();
   renderPrompts();
 }
 
 async function init() {
+  initTheme();
   try {
-    const [promptsData, stats, roadmap, checks] = await Promise.all([
+    const [promptsData, stats, roadmap, checks, processes, patterns] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
       fetch("data/checks.json").then((response) => response.json()),
+      fetch("data/processes.json").then((response) => response.json()),
+      fetch("data/patterns.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
@@ -470,13 +845,19 @@ async function init() {
     state.stats = stats;
     state.roadmap = roadmap;
     state.checks = checks;
+    state.processes = processes;
+    state.patterns = patterns;
 
+    renderSuggestions();
     renderMetrics();
     renderPhases();
     renderFilters();
     renderPrompts();
     renderChecks();
     renderRoadmap();
+    renderProcesses();
+    renderPatterns();
+    applyRoute();
   } catch (error) {
     nodes.promptGrid.replaceChildren(el("div", "empty-state", "Данные не загрузились"));
     console.error(error);
@@ -487,6 +868,13 @@ nodes.search.addEventListener("input", (event) => {
   state.query = event.target.value;
   renderPrompts();
 });
+
+nodes.sort.addEventListener("change", (event) => {
+  state.sort = event.target.value;
+  renderPrompts();
+});
+
+nodes.exportButton.addEventListener("click", exportCatalog);
 
 nodes.clear.addEventListener("click", () => {
   state.query = "";
@@ -514,6 +902,19 @@ nodes.filters.addEventListener("click", (event) => {
 });
 
 nodes.promptGrid.addEventListener("click", async (event) => {
+  const shareButton = event.target.closest("[data-share-id]");
+  if (shareButton) {
+    const id = shareButton.dataset.shareId;
+    const url = `${window.location.origin}${window.location.pathname}#prompt=${encodeURIComponent(id)}`;
+    try {
+      await copyText(url);
+      showToast("Ссылка на карточку скопирована");
+    } catch (error) {
+      showToast("Не удалось скопировать ссылку");
+    }
+    return;
+  }
+
   const button = event.target.closest("[data-copy-id]");
   if (!button) {
     return;
@@ -534,5 +935,38 @@ nodes.promptGrid.addEventListener("click", async (event) => {
     showToast("Не удалось скопировать");
   }
 });
+
+nodes.processGrid.addEventListener("click", (event) => {
+  const card = event.target.closest("[data-process-id]");
+  if (card) {
+    openProcessModal(card.dataset.processId);
+  }
+});
+
+nodes.modal.addEventListener("click", (event) => {
+  if (event.target.closest("[data-modal-close]")) {
+    closeProcessModal();
+  }
+});
+
+nodes.modalClose.addEventListener("click", closeProcessModal);
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !nodes.modal.hidden) {
+    closeProcessModal();
+  }
+});
+
+nodes.themeToggle.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  applyTheme(next);
+  try {
+    window.localStorage.setItem(THEME_KEY, next);
+  } catch {
+    /* localStorage может быть недоступен */
+  }
+});
+
+window.addEventListener("hashchange", applyRoute);
 
 init();

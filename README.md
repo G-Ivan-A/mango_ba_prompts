@@ -47,6 +47,11 @@ ai-generated: true
    `node scripts/generate-pages-data.mjs`. Данные для браузера лежат в
    [`site/data/`](site/data/), деплой в `gh-pages` выполняет
    [`.github/workflows/github-pages.yml`](.github/workflows/github-pages.yml).
+   Интерфейс — клиентский SPA из пяти разделов (верхнее меню): **Каталог**
+   (главная), **Дашборд**, **Roadmap**, **Процессы** и **Паттерны**. В каталоге
+   доступны поиск с автодополнением, сортировка, фильтры (процессы, операции,
+   режимы, статус), экспорт выборки в Markdown и тёмная тема; кнопка «Ссылка» на
+   карточке копирует прямую ссылку вида `#prompt=<id>`.
 1. **Найди промпт.** Активные, готовые к работе ассеты лежат в `prompts/`
    (имена в формате `[biz-process]-[purpose].md`, например
    `prompts/tz-stats-generator.md`).
@@ -100,7 +105,7 @@ ai-generated: true
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
 | `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
-| `site/` | Статический интерфейс каталога промптов, дашборда и roadmap. |
+| `site/` | Статический SPA-интерфейс: Каталог, Дашборд, Roadmap, Процессы и Паттерны. |
 | `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
 | `prompts/experiments/` | Продуктовые эксперименты, self-test сценарии и результаты прогонов промптов. |
