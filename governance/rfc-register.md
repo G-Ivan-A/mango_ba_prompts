@@ -1,18 +1,21 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-16
+version: 0.2
+updated: 2026-06-17
 ai-generated: true
 type: register
 scope: governance
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
 related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
   - "governance/sync-matrix-2026-06-17.md"
   - "docs/analysis/experiment-1027-analysis.md"
   - "governance/audit-contracts-2026-06-17.md"
+  - "governance/analysis-bcreq-1025-2026-06-17.md"
+  - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -91,6 +94,21 @@ PR #105 **не изменены** — сверка и правка идут то
 | RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`rfc-to-hub-001-knowledge-transfer.md`](rfc-to-hub-001-knowledge-transfer.md) | `proposed` | — |
 | RFC-HUB-002 | Процесс отладки промптов | [`rfc-to-hub-002-prompt-debugging-process.md`](rfc-to-hub-002-prompt-debugging-process.md) | `proposed` | — |
 
+## Открытые RFC по промптам (источник: эксперимент BCREQ-1025, issue #107)
+
+Правки ниже — **предложения** из разбора
+[`governance/analysis-bcreq-1025-2026-06-17.md`](analysis-bcreq-1025-2026-06-17.md).
+Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
+Полный RFC: [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
+
+| RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- | --- |
+| RFC-1025-P1 | `glossary-context-understanding-stepwise.md` | Явный запрос архитектурных компонентов/связок на Шаге 0 (паттерн Б5) | анализ BCREQ-1025 §2.2 Б5 | Minor | `proposed` | — |
+| RFC-1025-P2 | `fr-documentation-stepwise.md` | Явная матрица ролей + фиксация архитектурных границ в суммаризации Шага 1 (паттерны Б1+Б4) | анализ BCREQ-1025 §2.2 Б4, §2.3 Б1 | Minor | `proposed` | — |
+| RFC-1025-P3 | `fr-documentation-stepwise.md` | Пример-эталон стиля 4.x.1 (анти-канцелярит); усиление RFC-1027-P2 (паттерн Б3) | анализ BCREQ-1025 §2.1 Б3 | Minor | `proposed` | — |
+| RFC-1025-P4 | `fr-documentation-stepwise.md` | Явный запрет на 4-й уровень иерархии + правило раскладки многоусловных требований (паттерн Б2) | анализ BCREQ-1025 §2.1 Б2 | Minor | `proposed` | — |
+| RFC-1025-P5 | `constraints-documentation-stepwise.md` | Явный запрос архитектурных связок и границ между компонентами на Шаге 1 (паттерн Б5) | анализ BCREQ-1025 §2.2 Б5 | Minor | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -98,3 +116,7 @@ PR #105 **не изменены** — сверка и правка идут то
 - **2026-06-17** — добавлены RFC-SYNC-004…IW (сверка с Хабом) и RFC-HUB-001/002
   (передача знаний в Хаб) в статусе `proposed` по итогам issue #105 (синхронизация
   контрактов с Хабом). Реестр привязан к общему [`rfc-process.md`](rfc-process.md).
+- **2026-06-17** — добавлены RFC-1025-P1…P5 (промпты) в статусе `proposed` по
+  итогам эксперимента BCREQ-1025 (issue #107). Полный анализ —
+  [`governance/analysis-bcreq-1025-2026-06-17.md`](analysis-bcreq-1025-2026-06-17.md);
+  RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
