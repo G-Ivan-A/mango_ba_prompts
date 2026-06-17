@@ -13,6 +13,33 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #105 синхронизация контрактов с Хабом (Research + Structured)
+
+- Добавлен аудит контрактов спока
+  [`governance/audit-contracts-mango-2026-06-17.md`](governance/audit-contracts-mango-2026-06-17.md)
+  (**ФТ-1**): ревизия ADR #003–#010, 12 стандартов и governance-/root-контрактов с
+  классификацией (локальный / Smart Sync ← / сверить → RFC / передача знаний →).
+- Добавлен аудит ключевых документов Хаба
+  [`governance/audit-hub-2026-06-17.md`](governance/audit-hub-2026-06-17.md)
+  (**ФТ-2**): RFC, стандарты и governance Хаба с **полными permalink-URL** на снимок
+  `6ddffdf`, применимостью к Mango и пробелами.
+- Добавлена матрица синхронизации
+  [`governance/sync-matrix-2026-06-17.md`](governance/sync-matrix-2026-06-17.md)
+  (**ФТ-3**): соответствие контрактов спок ↔ Хаб, реестр RFC-сверки и передачи знаний.
+- Интегрирован RFC-процесс Хаба (**ФТ-4**):
+  [`governance/rfc-process.md`](governance/rfc-process.md) **ссылается** на
+  `knowledge-lifecycle-proposal.md` Хаба (не дублирует), отображает жизненный цикл
+  знаний на артефакты спока; реестр [`governance/rfc-register.md`](governance/rfc-register.md)
+  дополнен RFC-SYNC-* и RFC-HUB-*. Подготовлен RFC в Хаб о процессе отладки промптов
+  [`governance/rfc-to-hub-002-prompt-debugging-process.md`](governance/rfc-to-hub-002-prompt-debugging-process.md).
+- Подготовлена передача знаний в Хаб (**ФТ-5**):
+  каталог [`governance/knowledge-transfer-to-hub/`](governance/knowledge-transfer-to-hub/)
+  (онтология БА #003, таксономия операций #004, процесс BCREQ #009, UX Pages #010) и
+  umbrella-RFC [`governance/rfc-to-hub-001-knowledge-transfer.md`](governance/rfc-to-hub-001-knowledge-transfer.md).
+- Контракты спока в этом PR **не изменены**: расхождения с Хабом оформлены как RFC
+  `proposed`, уникальные практики — как документы передачи знаний (правило «не менять
+  сразу, а создать RFC»).
+
 ### Added — Issue #101 разбор эксперимента «Задача 1027» и стандарт фиксации экспериментов
 
 - Добавлен анализ первой реальной сессии БА
