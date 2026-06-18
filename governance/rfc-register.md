@@ -1,13 +1,14 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-17
+version: 0.3
+updated: 2026-06-18
 ai-generated: true
 type: register
 scope: governance
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
@@ -16,6 +17,7 @@ related_artifacts:
   - "governance/audit-contracts-2026-06-17.md"
   - "governance/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
+  - "governance/rfc/prompt-improvement-multichannel-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -109,6 +111,19 @@ PR #105 **не изменены** — сверка и правка идут то
 | RFC-1025-P4 | `fr-documentation-stepwise.md` | Явный запрет на 4-й уровень иерархии + правило раскладки многоусловных требований (паттерн Б2) | анализ BCREQ-1025 §2.1 Б2 | Minor | `proposed` | — |
 | RFC-1025-P5 | `constraints-documentation-stepwise.md` | Явный запрос архитектурных связок и границ между компонентами на Шаге 1 (паттерн Б5) | анализ BCREQ-1025 §2.2 Б5 | Minor | `proposed` | — |
 
+## Открытые RFC по промптам (источник: эксперимент «Многоканальная нагрузка агента», issue #109)
+
+Правки ниже — **предложения** из разбора
+[`docs/ba-process/multichannel-agent-workload/experiment-log.md`](../docs/ba-process/multichannel-agent-workload/experiment-log.md).
+Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
+Полный RFC: [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
+
+| RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- | --- |
+| RFC-MCH-P1 | `glossary-context-understanding-stepwise.md` | Явная фиксация архитектурного слоя (ЛК ВАТС vs КЦ) в ШАГ 0 (повтор Б1/Б5) | эксперимент #109 §М1 | Minor | `proposed` | — |
+| RFC-MCH-P2 | цепочка `understanding` (glossary↔questions) | Под-шаг/промпт «нормализация требования» (атомы + боль/решение + первичный gap) | эксперимент #109 §М2 | Minor | `proposed` | — |
+| RFC-MCH-P3 | `technical-details-solution-design-stepwise.md` (+ новый `options-*`) | Отдельный промпт «early-options» (варианты доработки, Раздел 3) отдельно от Раздела 7 | эксперимент #109 §М3 | Major | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -120,3 +135,7 @@ PR #105 **не изменены** — сверка и правка идут то
   итогам эксперимента BCREQ-1025 (issue #107). Полный анализ —
   [`governance/analysis-bcreq-1025-2026-06-17.md`](analysis-bcreq-1025-2026-06-17.md);
   RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
+- **2026-06-18** — добавлены RFC-MCH-P1…P3 (промпты) в статусе `proposed` по
+  итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
+  [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
+  P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
