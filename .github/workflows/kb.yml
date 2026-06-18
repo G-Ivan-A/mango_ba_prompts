@@ -1,0 +1,76 @@
+name: KB pipeline
+
+# База знаний (issue #111): на каждый PR/push — быстрая проверка деливераблов
+# (stdlib-only, без pip, детерминированно). Полный конвейер извлечения PDF
+# (pdfplumber/PyMuPDF/tiktoken) запускается ВРУЧНУЮ через workflow_dispatch:
+# он тяжелее и зависит от сети для pip, поэтому не должен блокировать обычный CI.
+# Это GitHub-native извлечение, которого требует ФТ-2.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: kb-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Лёгкая проверка на каждый PR/push — никаких зависимостей, только stdlib.
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate KB pipeline (issue #111)
+        run: python3 scripts/validate_issue_111_kb_pipeline.py
+
+  # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
+  # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):
+  # фикстура → извлечение → проверка. Результат выкладывается артефактом,
+  # коммит в репозиторий НЕ делается (источник истины — закоммиченный sample).
+  extract:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install extraction dependencies
+        run: pip install -r scripts/kb/requirements.txt
+
+      - name: Build sample fixture and extract
+        run: |
+          make kb-sample
+          make kb-extract
+
+      - name: Validate extracted KB
+        run: make kb-validate
+
+      - name: Show token footprint (index vs sections)
+        run: make kb-tokens
+
+      - name: Upload extracted KB artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: kb-processed
+          path: kb/processed/
+          if-no-files-found: error
