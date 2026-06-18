@@ -1,0 +1,76 @@
+{
+  "body_font_size": 10.5,
+  "doc_code": "CC",
+  "doc_title": "Контакт-центр MANGO OFFICE",
+  "doc_version": "1.26.23-sample",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 1,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "note": "Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue #111. Структура воспроизводит реальное руководство (issue #109). Замените PDF и перезапустите для реальных данных.",
+  "page_count": 7,
+  "section_count": 7,
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1",
+      "title": "Титульная часть",
+      "tokens": 62
+    },
+    {
+      "file": "sections/01-vvedenie.md",
+      "number": "1",
+      "order": "01",
+      "pages": "2",
+      "title": "Введение",
+      "tokens": 208
+    },
+    {
+      "file": "sections/02-rabochee-mesto-operatora.md",
+      "number": "2",
+      "order": "02",
+      "pages": "3",
+      "title": "Рабочее место оператора",
+      "tokens": 301
+    },
+    {
+      "file": "sections/03-kanaly-kommunikacii.md",
+      "number": "3",
+      "order": "03",
+      "pages": "4",
+      "title": "Каналы коммуникации",
+      "tokens": 294
+    },
+    {
+      "file": "sections/04-obrabotka-obrascheniy.md",
+      "number": "4",
+      "order": "04",
+      "pages": "5",
+      "title": "Обработка обращений",
+      "tokens": 378
+    },
+    {
+      "file": "sections/05-roli-i-prava-dostupa.md",
+      "number": "5",
+      "order": "05",
+      "pages": "6",
+      "title": "Роли и права доступа",
+      "tokens": 253
+    },
+    {
+      "file": "sections/06-otchety-i-analitika.md",
+      "number": "6",
+      "order": "06",
+      "pages": "7",
+      "title": "Отчёты и аналитика",
+      "tokens": 91
+    }
+  ],
+  "source_pdf": "kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf",
+  "source_sha256": "c4754a3407c4e523ac5b1d2915a981b942e0802f8f8d173682d71e34ec28fb55",
+  "table_count": 1,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 912,
+  "tokens_total": 1587
+}
