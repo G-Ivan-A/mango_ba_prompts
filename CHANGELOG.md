@@ -13,6 +13,28 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #109 dogfooding-эксперимент «Многоканальная нагрузка агента» (Creative + Structured)
+
+- Добавлен полный прогон цепочки промптов на сыром требовании заказчика
+  (одновременная работа агента с обращениями голос/чат/e-mail, лимит 3, приоритет) —
+  каталог [`docs/ba-process/multichannel-agent-workload/`](docs/ba-process/multichannel-agent-workload/README.md)
+  (**ФТ-1…ФТ-4**): вход ([`inputs/`](docs/ba-process/multichannel-agent-workload/inputs/)),
+  обоснованная цепочка ([`prompts-chain.md`](docs/ba-process/multichannel-agent-workload/prompts-chain.md)),
+  промежуточные результаты по шагам ([`steps/`](docs/ba-process/multichannel-agent-workload/steps/):
+  глоссарий+As-Is, нормализация+5 Whys+gap, вопросы заказчику, US/UC, варианты
+  доработки/Раздел 3) и [`final-artifact.md`](docs/ba-process/multichannel-agent-workload/final-artifact.md).
+- Зафиксирована выжимка БЗ из 2 PDF-руководств (КЦ + ЛК ВАТС) с цитатами
+  `[Документ, §Раздел, с.Страница]` и явными пометками «не найдено в документации»
+  ([`inputs/kb-files.md`](docs/ba-process/multichannel-agent-workload/inputs/kb-files.md), по ADR-007).
+- Добавлен лог эксперимента по [`standards/experiment-log-standard.md`](standards/experiment-log-standard.md)
+  ([`experiment-log.md`](docs/ba-process/multichannel-agent-workload/experiment-log.md), 6 метрик, verdict `works-with-edits`).
+- Добавлен индекс каталога прогонов BA-процесса
+  [`docs/ba-process/README.md`](docs/ba-process/README.md) (**ФТ-6**).
+- Подготовлен RFC по улучшению промптов (**ФТ-5**, промпты **не изменены**):
+  [`governance/rfc/prompt-improvement-multichannel-proposal.md`](governance/rfc/prompt-improvement-multichannel-proposal.md)
+  (RFC-MCH-P1…P3); реестр [`governance/rfc-register.md`](governance/rfc-register.md)
+  дополнен записями RFC-MCH-*. RFC-MCH-P1 — повтор паттернов Б1/Б5 из BCREQ-1025.
+
 ### Added — Issue #105 синхронизация контрактов с Хабом (Research + Structured)
 
 - Добавлен аудит контрактов спока
