@@ -6,3 +6,11 @@
 .idea/
 .vscode/
 .playwright-mcp/
+
+# KB (issue #111): не коммитим реальные исходные PDF (большие/лицензируемые);
+# синтетические фикстуры (*.fixture.pdf) и сгенерированный kb/processed/ — коммитим.
+kb/sources/**/*.pdf
+!kb/sources/**/*.fixture.pdf
+# временные артефакты конвейера извлечения
+kb/sources/**/_diagram.png
+scripts/kb/__pycache__/
