@@ -13,6 +13,45 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #111 машиночитаемая БЗ из PDF: эксперимент + инфраструктура + методология (Creative)
+
+- Построен сквозной конвейер **«источник → machine-readable БЗ»**
+  [`scripts/kb/extract.py`](scripts/kb/extract.py) (pdfplumber + PyMuPDF +
+  tiktoken): извлекает текст со структурой, картинки и таблицы, режет документ на
+  разделы-чанки (`index.md` + `sections/NN-*.md` + `images/` + `meta.json`),
+  считает токены. Нарезка — детерминированная (regex+кегли), **без LLM** по
+  умолчанию (LLM — задокументированный fallback для неструктурированных текстов,
+  **ФТ-3**). Вспомогательные скрипты: [`tokens.py`](scripts/kb/tokens.py),
+  [`make_sample_pdf.py`](scripts/kb/make_sample_pdf.py) (фикстура, т.к. реальный
+  `CC_manual_1.26.23.pdf` не загрузился в issue).
+- Создана **нейтральная** структура БЗ [`kb/`](kb/README.md) (**не** `mango-kc`,
+  **ФТ-4**) с **обязательным каталогом ручного ввода** [`kb/sources/`](kb/sources/README.md):
+  `sources/` (вход человека) → `processed/` (генерируется) → `fragments/`
+  (задел под RAG). Человекочитаемая инструкция пополнения (**ФТ-7**) —
+  [`kb/sources/README.md`](kb/sources/README.md); источники-ссылки —
+  [`kb/sources/web-links/`](kb/sources/web-links/README.md).
+- Добавлены **5 конкретных примеров** обращения промпта к БЗ на реальных данных
+  (индекс → выбор раздела → загрузка чанка → цитата `[CC, §4.2, с.5]` → сравнение
+  токенов 1587 vs 378) — [`kb/USAGE.md`](kb/USAGE.md) (**ФТ-6**).
+- Зафиксирован **отчёт по эксперименту** (**ФТ-8**)
+  [`docs/kb-experiment-report.md`](docs/kb-experiment-report.md): описание PDF и
+  оговорка о незагрузившемся файле, результаты и оценка качества извлечения
+  (ловушка кириллицы), иерархия разделов, сравнение инструментов
+  marker/nougat/MinerU **vs** pdfplumber с обоснованием выбора (**ФТ-2**,
+  качество > токенов), скрипты-vs-LLM, предложение структуры, оценка
+  автоматизации, устойчивость к драйфу ADR/промптов и явное указание, что БЗ —
+  **эволюционный шаг к векторной БЗ и RAG**.
+- Автоматизация (**ФТ-5**): [`Makefile`](Makefile) (`make kb-all` / `kb-sample` /
+  `kb-extract` / `kb-validate` / `kb-tokens`) и GitHub-native workflow
+  [`.github/workflows/kb.yml`](.github/workflows/kb.yml): лёгкая проверка на
+  каждый PR/push (stdlib-only) + ручной (`workflow_dispatch`) прогон полного
+  извлечения с выгрузкой артефакта.
+- Добавлена локальная/CI-проверка
+  [`scripts/validate_issue_111_kb_pipeline.py`](scripts/validate_issue_111_kb_pipeline.py)
+  (stdlib-only): наличие деливераблов и нейтрального имени, согласованность
+  `meta.json` ↔ разделы ↔ индекс ↔ токены ↔ картинки, наличие 5 примеров и
+  обязательных пунктов отчёта.
+
 ### Added — Issue #109 dogfooding-эксперимент «Многоканальная нагрузка агента» (Creative + Structured)
 
 - Добавлен полный прогон цепочки промптов на сыром требовании заказчика
