@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "13.4"
+pdf_section: "13.4"
 title: "Видеоконференции"
+pdf_heading: "13.4. Видеоконференции"
 pages: "401-406"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 401-406"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"401-406","global_pages":"401-406"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1901
+tokens: 1962
 status: extracted
 ai-generated: true
 ---
 # 13.4. Видеоконференции
+
+> Трассировка: PDF §13.4 · сквозные стр. 401-406 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.401-406.
 
 Видеозвонки позволяют двум и более участникам общаться друг с другом при помощи голоса и видео. В ходе групповой конференции возможен групповой чат и передача файлов (чат и файлы сохранятся и после завершения конференции). Исходящий видео вызов инициируется в любом статусе одним из следующих способов: • из персонального текстового чата с сотрудником; • из группового текстового чата; • из списка сотрудников вкладки "Внутреннее общение";
 

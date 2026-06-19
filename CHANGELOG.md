@@ -13,6 +13,23 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #117 KB pipeline: трассировка разделов и multi-part PDF
+
+- `scripts/kb/extract.py` теперь принимает один или несколько PDF одного
+  документа, обрабатывает split-руководства со сквозной пагинацией и сохраняет
+  точную привязку каждого раздела к PDF-части и локальным страницам.
+- В `meta.json` и frontmatter разделов добавлены `sources`, `source_pdfs`,
+  `part_count`, `pdf_section`, `pdf_heading`, `source_part`, `source_pages` и
+  `source_refs`; в каждом разделе выводится человекочитаемая строка
+  `Трассировка`.
+- Добавлена сформированная БЗ
+  [`kb/processed/mango-lk-manual/`](kb/processed/mango-lk-manual/) для 5 частей
+  руководства ЛК ВАТС v1.21: 568 сквозных страниц, 348 разделов, 1545
+  изображений.
+- Добавлен `make kb-lk` и регрессионная проверка
+  [`scripts/validate_issue_117_kb_traceability.py`](scripts/validate_issue_117_kb_traceability.py),
+  подключённая к workflow KB pipeline.
+
 ### Fixed — Issue #115 KB pipeline: реальное руководство не попадало в `kb/processed/`
 
 - Диагностирован KB Pipeline #11: успешный `workflow_dispatch` запуск извлекал

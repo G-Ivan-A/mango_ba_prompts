@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.3"
+pdf_section: "2.3"
 title: "Очередь обращений"
+pdf_heading: "2.3. Очередь обращений"
 pages: "26-27"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 26-27"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"26-27","global_pages":"26-27"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 915
+tokens: 976
 status: extracted
 ai-generated: true
 ---
 # 2.3. Очередь обращений
+
+> Трассировка: PDF §2.3 · сквозные стр. 26-27 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.26-27.
 
 | Вкладки панели "Очередь обращений" отображаются, если у пользователя Контакт- |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1.2"
-title: "Отчет "Анализ сотрудников""
+pdf_section: "16.1.2"
+title: "Отчет \"Анализ сотрудников\""
+pdf_heading: "16.1.2. Отчет \"Анализ сотрудников\""
 pages: "454-461"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 454-461"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"454-461","global_pages":"454-461"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 4589
+tokens: 4652
 status: extracted
 ai-generated: true
 ---
 # 16.1.2. Отчет "Анализ сотрудников"
+
+> Трассировка: PDF §16.1.2 · сквозные стр. 454-461 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.454-461.
 
 Отчет Анализ сотрудников состоит из трех блоков: 1. Блок фильтров 2. Блок визуализации «Срабатывание тематик» 3. Блок таблицы «Разговоры, детализация» Блок фильтров
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE"
 doc_version: "1.26.23-sample"
 section: "4"
+pdf_section: "4"
 title: "Обработка обращений"
+pdf_heading: "4 Обработка обращений"
 pages: "5"
 source: kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf
+source_part: "1"
+source_pages: "ч.1: 5"
+source_refs: '[{"source_pdf":"kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf","part":1,"pages":"5","global_pages":"5"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 378
+tokens: 426
 status: extracted
 ai-generated: true
 ---
 # 4. Обработка обращений
+
+> Трассировка: PDF §4 · сквозные стр. 5 · источники: ч.1 `kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf` с.5.
 
 ## 4.1 Контроль обращений
 

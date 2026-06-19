@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "5.1"
+pdf_section: "5.1"
 title: "Сделки в работе"
+pdf_heading: "5.1. Сделки в работе"
 pages: "170-179"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 170-179"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"170-179","global_pages":"170-179"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 5261
+tokens: 5322
 status: extracted
 ai-generated: true
 ---
 # 5.1. Сделки в работе
+
+> Трассировка: PDF §5.1 · сквозные стр. 170-179 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.170-179.
 
 Вкладка предназначена для мониторинга сделок со статусом В работе.
 

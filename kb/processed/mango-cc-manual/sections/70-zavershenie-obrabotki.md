@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.3.5"
+pdf_section: "4.3.5"
 title: "Завершение обработки"
+pdf_heading: "4.3.5. Завершение обработки"
 pages: "157-159"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 157-159"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"157-159","global_pages":"157-159"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2053
+tokens: 2116
 status: extracted
 ai-generated: true
 ---
 # 4.3.5. Завершение обработки
+
+> Трассировка: PDF §4.3.5 · сквозные стр. 157-159 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.157-159.
 
 Для звонковых обращений Звонковое обращение закрывается сразу с завершением вызова, т. е. кликом по кнопке "Повесить трубку". Для текстовых обращений При закрытии текстовому обращению (кроме СМС-обращений) назначается один из результатов: • Переведено – обращение переведено на другого сотрудника;
 

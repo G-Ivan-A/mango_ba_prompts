@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "12.2"
+pdf_section: "12.2"
 title: "Создание, импорт, экспорт скрипта"
+pdf_heading: "12.2. Создание, импорт, экспорт скрипта"
 pages: "379-387"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 379-387"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"379-387","global_pages":"379-387"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 5077
+tokens: 5138
 status: extracted
 ai-generated: true
 ---
 # 12.2. Создание, импорт, экспорт скрипта
+
+> Трассировка: PDF §12.2 · сквозные стр. 379-387 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.379-387.
 
 Для добавления нового скрипта откройте модуль "Скрипты" и нажмите кнопку Создать скрипт. Основная часть по созданию нового скрипта заключается в настройке шаблона разговора — набора реплик сотрудников и возможных вариантов ответов клиентов. При создании нового скрипта шаблон по умолчанию содержит несколько блоков, набор и положение которых можно редактировать.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.5"
+pdf_section: "2.5.5"
 title: "Перевод вызовов"
+pdf_heading: "2.5.5. Перевод вызовов"
 pages: "102-105"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 102-105"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"102-105","global_pages":"102-105"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1375
+tokens: 1438
 status: extracted
 ai-generated: true
 ---
 # 2.5.5. Перевод вызовов
+
+> Трассировка: PDF §2.5.5 · сквозные стр. 102-105 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.102-105.
 
 С помощью карточки разговора, находящейся в состоянии «Разговор», вы можете перевести вызов на другого пользователя Контакт-центра MANGO OFFICE, номер (способ связи), контакт из адресной книги или группу операторов. В процессе перевода вы можете немедленно перевести вызов на нужного абонента (т. н. перевод «Без консультации») или предварительно переговорить с абонентом, на которого переводите вызов, чтобы сообщить ему необходимую информацию (т. н. «перевод с консультацией»). Для перевода вызова наведите курсор на имя и нажмите Перевести. При наличии
 

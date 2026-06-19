@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.2.4"
+pdf_section: "16.2.4"
 title: "ИИ Тематики"
+pdf_heading: "16.2.4. ИИ Тематики"
 pages: "489-490"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 489-490"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"489-490","global_pages":"489-490"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 933
+tokens: 996
 status: extracted
 ai-generated: true
 ---
 # 16.2.4. ИИ Тематики
+
+> Трассировка: PDF §16.2.4 · сквозные стр. 489-490 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.489-490.
 
 Модуль Речевая аналитика поддерживает семантический анализ разговоров на основе запросов к ИИ, что делает возможным анализ диалогов без необходимости подбора ключевых слов. Модуль содержит 15 предустановленных ИИ тематик, которые дают возможность отфильтровать диалоги по используемым в них запросам.
 

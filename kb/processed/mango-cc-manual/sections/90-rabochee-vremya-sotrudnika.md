@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "7.3"
+pdf_section: "7.3"
 title: "Рабочее время сотрудника"
+pdf_heading: "7.3. Рабочее время сотрудника"
 pages: "220-223"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 220-223"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"220-223","global_pages":"220-223"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3533
+tokens: 3594
 status: extracted
 ai-generated: true
 ---
 # 7.3. Рабочее время сотрудника
+
+> Трассировка: PDF §7.3 · сквозные стр. 220-223 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.220-223.
 
 На вкладке можно получать аналитические данные о времени работы сотрудников Контакт- центра за выбранный период в разрезе их статусов. Для получения отчета об истории работы сотрудников отберите вызовы по периоду. Для этого выберите нужный период времени из списка Период.
 

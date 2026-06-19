@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "6.3"
+pdf_section: "6.3"
 title: "Список задач в верхней панели"
+pdf_heading: "6.3. Список задач в верхней панели"
 pages: "206-208"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 206-208"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"206-208","global_pages":"206-208"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1588
+tokens: 1649
 status: extracted
 ai-generated: true
 ---
 # 6.3. Список задач в верхней панели
+
+> Трассировка: PDF §6.3 · сквозные стр. 206-208 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.206-208.
 
 ![Изображение, стр. 206](../images/84-spisok-zadach-v-verhney-paneli-1.jpeg)
 

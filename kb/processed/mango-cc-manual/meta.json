@@ -1,1877 +1,4218 @@
 {
   "body_font_size": 11.0,
+  "body_font_sizes": [
+    11.0
+  ],
   "doc_code": "CC",
   "doc_title": "Контакт-центр MANGO OFFICE - Руководство пользователя",
   "doc_version": "1.26.23",
   "extracted_by": "pdfplumber 0.11.10",
   "image_count": 1771,
   "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
   "note": "Реальное руководство из issue 115; извлечено после диагностики KB Pipeline 11.",
   "page_count": 614,
+  "part_count": 1,
   "section_count": 232,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_sources": [
+    "pdf-outline (pymupdf 1.27.2.3)"
+  ],
   "sections": [
     {
       "file": "sections/00-titulnaya-chast.md",
       "number": "—",
       "order": "00",
       "pages": "1-9",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-9",
+          "pages": "1-9",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Титульная часть",
-      "tokens": 3952
+      "tokens": 4011
     },
     {
       "file": "sections/01-nachalo-raboty.md",
       "number": "1",
       "order": "01",
       "pages": "9",
+      "pdf_heading": "1. Начало работы",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "9",
+          "pages": "9",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Начало работы",
-      "tokens": 581
+      "tokens": 636
     },
     {
       "file": "sections/02-registraciya-novogo-polzovatelya.md",
       "number": "1.1",
       "order": "02",
       "pages": "9-17",
+      "pdf_heading": "1.1. Регистрация нового пользователя",
+      "pdf_section": "1.1",
+      "source_refs": [
+        {
+          "global_pages": "9-17",
+          "pages": "9-17",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Регистрация нового пользователя",
-      "tokens": 6182
+      "tokens": 6243
     },
     {
       "file": "sections/03-vhod-v-sistemu.md",
       "number": "1.2",
       "order": "03",
       "pages": "17-21",
+      "pdf_heading": "1.2. Вход в систему",
+      "pdf_section": "1.2",
+      "source_refs": [
+        {
+          "global_pages": "17-21",
+          "pages": "17-21",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вход в систему",
-      "tokens": 1752
+      "tokens": 1813
     },
     {
       "file": "sections/04-glavnoe-okno-programmy.md",
       "number": "2",
       "order": "04",
       "pages": "21-22",
+      "pdf_heading": "2. Главное окно программы",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "21-22",
+          "pages": "21-22",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Главное окно программы",
-      "tokens": 1025
+      "tokens": 1084
     },
     {
       "file": "sections/05-upravlenie-statusom.md",
       "number": "2.1",
       "order": "05",
       "pages": "22-24",
+      "pdf_heading": "2.1. Управление статусом",
+      "pdf_section": "2.1",
+      "source_refs": [
+        {
+          "global_pages": "22-24",
+          "pages": "22-24",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Управление статусом",
-      "tokens": 1489
+      "tokens": 1550
     },
     {
       "file": "sections/06-propuschennye-vyzovy.md",
       "number": "2.2",
       "order": "06",
       "pages": "24-26",
+      "pdf_heading": "2.2. Пропущенные вызовы",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "24-26",
+          "pages": "24-26",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пропущенные вызовы",
-      "tokens": 1637
+      "tokens": 1698
     },
     {
       "file": "sections/07-ochered-obrascheniy.md",
       "number": "2.3",
       "order": "07",
       "pages": "26-27",
+      "pdf_heading": "2.3. Очередь обращений",
+      "pdf_section": "2.3",
+      "source_refs": [
+        {
+          "global_pages": "26-27",
+          "pages": "26-27",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Очередь обращений",
-      "tokens": 915
+      "tokens": 976
     },
     {
       "file": "sections/08-vyzovy.md",
       "number": "2.3.1",
       "order": "08",
       "pages": "27-29",
+      "pdf_heading": "2.3.1. Вызовы",
+      "pdf_section": "2.3.1",
+      "source_refs": [
+        {
+          "global_pages": "27-29",
+          "pages": "27-29",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вызовы",
-      "tokens": 1393
+      "tokens": 1456
     },
     {
       "file": "sections/09-tekst.md",
       "number": "2.3.2",
       "order": "09",
       "pages": "29-30",
+      "pdf_heading": "2.3.2. Текст",
+      "pdf_section": "2.3.2",
+      "source_refs": [
+        {
+          "global_pages": "29-30",
+          "pages": "29-30",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текст",
-      "tokens": 794
+      "tokens": 857
     },
     {
       "file": "sections/10-zakazy-obratnogo-zvonka.md",
       "number": "2.3.3",
       "order": "10",
       "pages": "30-32",
+      "pdf_heading": "2.3.3. Заказы обратного звонка",
+      "pdf_section": "2.3.3",
+      "source_refs": [
+        {
+          "global_pages": "30-32",
+          "pages": "30-32",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Заказы обратного звонка",
-      "tokens": 633
+      "tokens": 696
     },
     {
       "file": "sections/11-panel-pokazateley.md",
       "number": "2.4",
       "order": "11",
       "pages": "32-36",
+      "pdf_heading": "2.4. Панель показателей",
+      "pdf_section": "2.4",
+      "source_refs": [
+        {
+          "global_pages": "32-36",
+          "pages": "32-36",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Панель показателей",
-      "tokens": 2272
+      "tokens": 2333
     },
     {
       "file": "sections/12-obschee-opisanie-pokazateley-proizvodite.md",
       "number": "2.4.1",
       "order": "12",
       "pages": "36-43",
+      "pdf_heading": "2.4.1. Общее описание показателей производительности",
+      "pdf_section": "2.4.1",
+      "source_refs": [
+        {
+          "global_pages": "36-43",
+          "pages": "36-43",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Общее описание показателей производительности",
-      "tokens": 6884
+      "tokens": 6947
     },
     {
       "file": "sections/13-nastroyka-porogovyh-znacheniy-pokazatele.md",
       "number": "2.4.2",
       "order": "13",
       "pages": "43-46",
+      "pdf_heading": "2.4.2. Настройка пороговых значений показателей производительности",
+      "pdf_section": "2.4.2",
+      "source_refs": [
+        {
+          "global_pages": "43-46",
+          "pages": "43-46",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка пороговых значений показателей производительности",
-      "tokens": 2297
+      "tokens": 2360
     },
     {
       "file": "sections/14-panel-upravleniya-telefoniey.md",
       "number": "2.5",
       "order": "14",
       "pages": "46-49",
+      "pdf_heading": "2.5. Панель управления телефонией",
+      "pdf_section": "2.5",
+      "source_refs": [
+        {
+          "global_pages": "46-49",
+          "pages": "46-49",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Панель управления телефонией",
-      "tokens": 1617
+      "tokens": 1678
     },
     {
       "file": "sections/15-menyu-programmy.md",
       "number": "2.5.1",
       "order": "15",
       "pages": "49",
+      "pdf_heading": "2.5.1. Меню программы",
+      "pdf_section": "2.5.1",
+      "source_refs": [
+        {
+          "global_pages": "49",
+          "pages": "49",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Меню программы",
-      "tokens": 632
+      "tokens": 691
     },
     {
       "file": "sections/16-profil.md",
       "number": "2.5.1.1",
       "order": "16",
       "pages": "49-52",
+      "pdf_heading": "2.5.1.1. Профиль",
+      "pdf_section": "2.5.1.1",
+      "source_refs": [
+        {
+          "global_pages": "49-52",
+          "pages": "49-52",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Профиль",
-      "tokens": 661
+      "tokens": 726
     },
     {
       "file": "sections/17-dostupnye-skripty.md",
       "number": "2.5.1.2",
       "order": "17",
       "pages": "52",
+      "pdf_heading": "2.5.1.2. Доступные скрипты",
+      "pdf_section": "2.5.1.2",
+      "source_refs": [
+        {
+          "global_pages": "52",
+          "pages": "52",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Доступные скрипты",
-      "tokens": 300
+      "tokens": 361
     },
     {
       "file": "sections/18-nastroyki.md",
       "number": "2.5.1.3",
       "order": "18",
       "pages": "52-54",
+      "pdf_heading": "2.5.1.3. Настройки",
+      "pdf_section": "2.5.1.3",
+      "source_refs": [
+        {
+          "global_pages": "52-54",
+          "pages": "52-54",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройки",
-      "tokens": 1217
+      "tokens": 1282
     },
     {
       "file": "sections/19-vats.md",
       "number": "2.5.1.3.1",
       "order": "19",
       "pages": "54-56",
+      "pdf_heading": "2.5.1.3.1. ВАТС",
+      "pdf_section": "2.5.1.3.1",
+      "source_refs": [
+        {
+          "global_pages": "54-56",
+          "pages": "54-56",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "ВАТС",
-      "tokens": 325
+      "tokens": 392
     },
     {
       "file": "sections/20-telefoniya-i-e-mail.md",
       "number": "2.5.1.3.2",
       "order": "20",
       "pages": "56-59",
+      "pdf_heading": "2.5.1.3.2. Телефония и E-mail",
+      "pdf_section": "2.5.1.3.2",
+      "source_refs": [
+        {
+          "global_pages": "56-59",
+          "pages": "56-59",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Телефония и E-mail",
-      "tokens": 2361
+      "tokens": 2428
     },
     {
       "file": "sections/21-baza-znaniy.md",
       "number": "2.5.1.3.3",
       "order": "21",
       "pages": "59",
+      "pdf_heading": "2.5.1.3.3. База знаний",
+      "pdf_section": "2.5.1.3.3",
+      "source_refs": [
+        {
+          "global_pages": "59",
+          "pages": "59",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "База знаний",
-      "tokens": 119
+      "tokens": 182
     },
     {
       "file": "sections/22-ishodyaschie-obrascheniya.md",
       "number": "2.5.1.3.4",
       "order": "22",
       "pages": "59-60",
+      "pdf_heading": "2.5.1.3.4. Исходящие обращения",
+      "pdf_section": "2.5.1.3.4",
+      "source_refs": [
+        {
+          "global_pages": "59-60",
+          "pages": "59-60",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Исходящие обращения",
-      "tokens": 481
+      "tokens": 548
     },
     {
       "file": "sections/23-avtosekretar.md",
       "number": "2.5.1.3.5",
       "order": "23",
       "pages": "60-62",
+      "pdf_heading": "2.5.1.3.5. Автосекретарь",
+      "pdf_section": "2.5.1.3.5",
+      "source_refs": [
+        {
+          "global_pages": "60-62",
+          "pages": "60-62",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Автосекретарь",
-      "tokens": 2020
+      "tokens": 2087
     },
     {
       "file": "sections/24-polzovatelskie.md",
       "number": "2.5.1.3.6",
       "order": "24",
       "pages": "62-65",
+      "pdf_heading": "2.5.1.3.6. Пользовательские",
+      "pdf_section": "2.5.1.3.6",
+      "source_refs": [
+        {
+          "global_pages": "62-65",
+          "pages": "62-65",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пользовательские",
-      "tokens": 2749
+      "tokens": 2816
     },
     {
       "file": "sections/25-softfon.md",
       "number": "2.5.1.3.7",
       "order": "25",
       "pages": "65-67",
+      "pdf_heading": "2.5.1.3.7. Софтфон",
+      "pdf_section": "2.5.1.3.7",
+      "source_refs": [
+        {
+          "global_pages": "65-67",
+          "pages": "65-67",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Софтфон",
-      "tokens": 1131
+      "tokens": 1198
     },
     {
       "file": "sections/26-podklyuchenie.md",
       "number": "2.5.1.3.8",
       "order": "26",
       "pages": "67-69",
+      "pdf_heading": "2.5.1.3.8. Подключение",
+      "pdf_section": "2.5.1.3.8",
+      "source_refs": [
+        {
+          "global_pages": "67-69",
+          "pages": "67-69",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Подключение",
-      "tokens": 1431
+      "tokens": 1498
     },
     {
       "file": "sections/27-spravochnik-tematik-obrascheniy.md",
       "number": "2.5.1.3.9",
       "order": "27",
       "pages": "69-71",
+      "pdf_heading": "2.5.1.3.9. Справочник тематик обращений",
+      "pdf_section": "2.5.1.3.9",
+      "source_refs": [
+        {
+          "global_pages": "69-71",
+          "pages": "69-71",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Справочник тематик обращений",
-      "tokens": 1729
+      "tokens": 1796
     },
     {
       "file": "sections/28-bystrye-otvety.md",
       "number": "2.5.1.3.10",
       "order": "28",
       "pages": "71-73",
+      "pdf_heading": "2.5.1.3.10. Быстрые ответы",
+      "pdf_section": "2.5.1.3.10",
+      "source_refs": [
+        {
+          "global_pages": "71-73",
+          "pages": "71-73",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Быстрые ответы",
-      "tokens": 1181
+      "tokens": 1248
     },
     {
       "file": "sections/29-shablony-soobscheniy.md",
       "number": "2.5.1.3.11",
       "order": "29",
       "pages": "73-78",
+      "pdf_heading": "2.5.1.3.11. Шаблоны сообщений",
+      "pdf_section": "2.5.1.3.11",
+      "source_refs": [
+        {
+          "global_pages": "73-78",
+          "pages": "73-78",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Шаблоны сообщений",
-      "tokens": 2881
+      "tokens": 2948
     },
     {
       "file": "sections/30-statusy-sotrudnikov.md",
       "number": "2.5.1.3.12",
       "order": "30",
       "pages": "78-79",
+      "pdf_heading": "2.5.1.3.12. Статусы сотрудников",
+      "pdf_section": "2.5.1.3.12",
+      "source_refs": [
+        {
+          "global_pages": "78-79",
+          "pages": "78-79",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Статусы сотрудников",
-      "tokens": 1034
+      "tokens": 1101
     },
     {
       "file": "sections/31-obrabotka-zvonkov.md",
       "number": "2.5.1.3.13",
       "order": "31",
       "pages": "79",
+      "pdf_heading": "2.5.1.3.13. Обработка звонков",
+      "pdf_section": "2.5.1.3.13",
+      "source_refs": [
+        {
+          "global_pages": "79",
+          "pages": "79",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Обработка звонков",
-      "tokens": 186
+      "tokens": 249
     },
     {
       "file": "sections/32-postvyzyvnaya-obrabotka.md",
       "number": "2.5.1.3.13.1",
       "order": "32",
       "pages": "79-81",
+      "pdf_heading": "2.5.1.3.13.1. Поствызывная обработка",
+      "pdf_section": "2.5.1.3.13.1",
+      "source_refs": [
+        {
+          "global_pages": "79-81",
+          "pages": "79-81",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Поствызывная обработка",
-      "tokens": 944
+      "tokens": 1013
     },
     {
       "file": "sections/33-rabota-s-propuschennymi.md",
       "number": "2.5.1.3.13.2",
       "order": "33",
       "pages": "81-83",
+      "pdf_heading": "2.5.1.3.13.2. Работа с пропущенными",
+      "pdf_section": "2.5.1.3.13.2",
+      "source_refs": [
+        {
+          "global_pages": "81-83",
+          "pages": "81-83",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Работа с пропущенными",
-      "tokens": 640
+      "tokens": 709
     },
     {
       "file": "sections/34-nastroyki-ats.md",
       "number": "2.5.1.3.14",
       "order": "34",
       "pages": "83",
+      "pdf_heading": "2.5.1.3.14. Настройки АТС",
+      "pdf_section": "2.5.1.3.14",
+      "source_refs": [
+        {
+          "global_pages": "83",
+          "pages": "83",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройки АТС",
-      "tokens": 104
+      "tokens": 167
     },
     {
       "file": "sections/35-finansy.md",
       "number": "2.5.1.3.15",
       "order": "35",
       "pages": "83-84",
+      "pdf_heading": "2.5.1.3.15. Финансы",
+      "pdf_section": "2.5.1.3.15",
+      "source_refs": [
+        {
+          "global_pages": "83-84",
+          "pages": "83-84",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Финансы",
-      "tokens": 134
+      "tokens": 201
     },
     {
       "file": "sections/36-smena-versii.md",
       "number": "2.5.1.3.16",
       "order": "36",
       "pages": "84",
+      "pdf_heading": "2.5.1.3.16. Смена версии",
+      "pdf_section": "2.5.1.3.16",
+      "source_refs": [
+        {
+          "global_pages": "84",
+          "pages": "84",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Смена версии",
-      "tokens": 145
+      "tokens": 208
     },
     {
       "file": "sections/37-tekstovye-kommunikacii.md",
       "number": "2.5.1.3.17",
       "order": "37",
       "pages": "84-85",
+      "pdf_heading": "2.5.1.3.17. Текстовые коммуникации",
+      "pdf_section": "2.5.1.3.17",
+      "source_refs": [
+        {
+          "global_pages": "84-85",
+          "pages": "84-85",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текстовые коммуникации",
-      "tokens": 469
+      "tokens": 536
     },
     {
       "file": "sections/38-vidimost-razdelov.md",
       "number": "2.5.1.3.18",
       "order": "38",
       "pages": "85-88",
+      "pdf_heading": "2.5.1.3.18. Видимость разделов",
+      "pdf_section": "2.5.1.3.18",
+      "source_refs": [
+        {
+          "global_pages": "85-88",
+          "pages": "85-88",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Видимость разделов",
-      "tokens": 2498
+      "tokens": 2565
     },
     {
       "file": "sections/39-http-zaprosy.md",
       "number": "2.5.1.3.19",
       "order": "39",
       "pages": "88-89",
+      "pdf_heading": "2.5.1.3.19. HTTP Запросы",
+      "pdf_section": "2.5.1.3.19",
+      "source_refs": [
+        {
+          "global_pages": "88-89",
+          "pages": "88-89",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "HTTP Запросы",
-      "tokens": 494
+      "tokens": 561
     },
     {
       "file": "sections/40-integracii.md",
       "number": "2.5.1.3.20",
       "order": "40",
       "pages": "89-91",
+      "pdf_heading": "2.5.1.3.20. Интеграции",
+      "pdf_section": "2.5.1.3.20",
+      "source_refs": [
+        {
+          "global_pages": "89-91",
+          "pages": "89-91",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Интеграции",
-      "tokens": 371
+      "tokens": 438
     },
     {
       "file": "sections/41-bitriks-24.md",
       "number": "2.5.1.3.20.1",
       "order": "41",
       "pages": "91",
+      "pdf_heading": "2.5.1.3.20.1. Битрикс 24",
+      "pdf_section": "2.5.1.3.20.1",
+      "source_refs": [
+        {
+          "global_pages": "91",
+          "pages": "91",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Битрикс 24",
-      "tokens": 380
+      "tokens": 445
     },
     {
       "file": "sections/42-yukassa.md",
       "number": "2.5.1.3.20.2",
       "order": "42",
       "pages": "91-92",
+      "pdf_heading": "2.5.1.3.20.2. ЮKassa",
+      "pdf_section": "2.5.1.3.20.2",
+      "source_refs": [
+        {
+          "global_pages": "91-92",
+          "pages": "91-92",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "ЮKassa",
-      "tokens": 440
+      "tokens": 509
     },
     {
       "file": "sections/43-unisender.md",
       "number": "2.5.1.3.20.3",
       "order": "43",
       "pages": "92-94",
+      "pdf_heading": "2.5.1.3.20.3. Unisender",
+      "pdf_section": "2.5.1.3.20.3",
+      "source_refs": [
+        {
+          "global_pages": "92-94",
+          "pages": "92-94",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Unisender",
-      "tokens": 931
+      "tokens": 1000
     },
     {
       "file": "sections/44-kvesty.md",
       "number": "2.5.1.4",
       "order": "44",
       "pages": "94-100",
+      "pdf_heading": "2.5.1.4. Квесты",
+      "pdf_section": "2.5.1.4",
+      "source_refs": [
+        {
+          "global_pages": "94-100",
+          "pages": "94-100",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Квесты",
-      "tokens": 3430
+      "tokens": 3495
     },
     {
       "file": "sections/45-vidzhet.md",
       "number": "2.5.2",
       "order": "45",
       "pages": "100",
+      "pdf_heading": "2.5.2. Виджет",
+      "pdf_section": "2.5.2",
+      "source_refs": [
+        {
+          "global_pages": "100",
+          "pages": "100",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Виджет",
-      "tokens": 394
+      "tokens": 453
     },
     {
       "file": "sections/46-sovershenie-ishodyaschih-vyzovov.md",
       "number": "2.5.3",
       "order": "46",
       "pages": "100-101",
+      "pdf_heading": "2.5.3. Совершение исходящих вызовов",
+      "pdf_section": "2.5.3",
+      "source_refs": [
+        {
+          "global_pages": "100-101",
+          "pages": "100-101",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Совершение исходящих вызовов",
-      "tokens": 817
+      "tokens": 880
     },
     {
       "file": "sections/47-priem-i-klassifikaciya-vhodyaschih-vyzov.md",
       "number": "2.5.4",
       "order": "47",
       "pages": "101-102",
+      "pdf_heading": "2.5.4. Прием и классификация входящих вызовов",
+      "pdf_section": "2.5.4",
+      "source_refs": [
+        {
+          "global_pages": "101-102",
+          "pages": "101-102",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Прием и классификация входящих вызовов",
-      "tokens": 1077
+      "tokens": 1140
     },
     {
       "file": "sections/48-perevod-vyzovov.md",
       "number": "2.5.5",
       "order": "48",
       "pages": "102-105",
+      "pdf_heading": "2.5.5. Перевод вызовов",
+      "pdf_section": "2.5.5",
+      "source_refs": [
+        {
+          "global_pages": "102-105",
+          "pages": "102-105",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Перевод вызовов",
-      "tokens": 1375
+      "tokens": 1438
     },
     {
       "file": "sections/49-postanovka-vyzovov-na-uderzhanie.md",
       "number": "2.5.6",
       "order": "49",
       "pages": "105-107",
+      "pdf_heading": "2.5.6. Постановка вызовов на удержание",
+      "pdf_section": "2.5.6",
+      "source_refs": [
+        {
+          "global_pages": "105-107",
+          "pages": "105-107",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Постановка вызовов на удержание",
-      "tokens": 703
+      "tokens": 766
     },
     {
       "file": "sections/50-organizaciya-konferenciy.md",
       "number": "2.5.7",
       "order": "50",
       "pages": "107-110",
+      "pdf_heading": "2.5.7. Организация конференций",
+      "pdf_section": "2.5.7",
+      "source_refs": [
+        {
+          "global_pages": "107-110",
+          "pages": "107-110",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Организация конференций",
-      "tokens": 1200
+      "tokens": 1263
     },
     {
       "file": "sections/51-otpravka-sms.md",
       "number": "2.5.8",
       "order": "51",
       "pages": "110-113",
+      "pdf_heading": "2.5.8. Отправка СМС",
+      "pdf_section": "2.5.8",
+      "source_refs": [
+        {
+          "global_pages": "110-113",
+          "pages": "110-113",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отправка СМС",
-      "tokens": 1674
+      "tokens": 1737
     },
     {
       "file": "sections/52-nastroyka-garnitury-vo-vremya-razgovora.md",
       "number": "2.5.9",
       "order": "52",
       "pages": "113",
+      "pdf_heading": "2.5.9. Настройка гарнитуры во время разговора",
+      "pdf_section": "2.5.9",
+      "source_refs": [
+        {
+          "global_pages": "113",
+          "pages": "113",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка гарнитуры во время разговора",
-      "tokens": 591
+      "tokens": 650
     },
     {
       "file": "sections/53-operativnoe-sozdanie-kontaktov.md",
       "number": "2.5.10",
       "order": "53",
       "pages": "113-114",
+      "pdf_heading": "2.5.10. Оперативное создание контактов",
+      "pdf_section": "2.5.10",
+      "source_refs": [
+        {
+          "global_pages": "113-114",
+          "pages": "113-114",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Оперативное создание контактов",
-      "tokens": 283
+      "tokens": 346
     },
     {
       "file": "sections/54-zapis-razgovorov.md",
       "number": "2.5.11",
       "order": "54",
       "pages": "114-115",
+      "pdf_heading": "2.5.11. Запись разговоров",
+      "pdf_section": "2.5.11",
+      "source_refs": [
+        {
+          "global_pages": "114-115",
+          "pages": "114-115",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Запись разговоров",
-      "tokens": 1074
+      "tokens": 1137
     },
     {
       "file": "sections/55-ispolzovanie-dtmf-komand.md",
       "number": "2.5.12",
       "order": "55",
       "pages": "115-116",
+      "pdf_heading": "2.5.12. Использование DTMF-команд",
+      "pdf_section": "2.5.12",
+      "source_refs": [
+        {
+          "global_pages": "115-116",
+          "pages": "115-116",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Использование DTMF-команд",
-      "tokens": 1137
+      "tokens": 1200
     },
     {
       "file": "sections/56-panel-grafika-raboty.md",
       "number": "2.6",
       "order": "56",
       "pages": "116-117",
+      "pdf_heading": "2.6. Панель графика работы",
+      "pdf_section": "2.6",
+      "source_refs": [
+        {
+          "global_pages": "116-117",
+          "pages": "116-117",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Панель графика работы",
-      "tokens": 1076
+      "tokens": 1137
     },
     {
       "file": "sections/57-dashboard.md",
       "number": "3",
       "order": "57",
       "pages": "117-119",
+      "pdf_heading": "3. Dashboard",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "117-119",
+          "pages": "117-119",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Dashboard",
-      "tokens": 1409
+      "tokens": 1468
     },
     {
       "file": "sections/58-sozdanie-i-nastroyka-vidzheta.md",
       "number": "3.1",
       "order": "58",
       "pages": "119-126",
+      "pdf_heading": "3.1. Создание и настройка виджета",
+      "pdf_section": "3.1",
+      "source_refs": [
+        {
+          "global_pages": "119-126",
+          "pages": "119-126",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание и настройка виджета",
-      "tokens": 7691
+      "tokens": 7752
     },
     {
       "file": "sections/59-redaktirovanie-vidzheta.md",
       "number": "3.2",
       "order": "59",
       "pages": "126-127",
+      "pdf_heading": "3.2. Редактирование виджета",
+      "pdf_section": "3.2",
+      "source_refs": [
+        {
+          "global_pages": "126-127",
+          "pages": "126-127",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Редактирование виджета",
-      "tokens": 350
+      "tokens": 411
     },
     {
       "file": "sections/60-udalenie-vidzheta.md",
       "number": "3.3",
       "order": "60",
       "pages": "127-128",
+      "pdf_heading": "3.3. Удаление виджета",
+      "pdf_section": "3.3",
+      "source_refs": [
+        {
+          "global_pages": "127-128",
+          "pages": "127-128",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Удаление виджета",
-      "tokens": 266
+      "tokens": 327
     },
     {
       "file": "sections/61-vidzhety-po-umolchaniyu.md",
       "number": "3.4",
       "order": "61",
       "pages": "128",
+      "pdf_heading": "3.4. Виджеты по умолчанию",
+      "pdf_section": "3.4",
+      "source_refs": [
+        {
+          "global_pages": "128",
+          "pages": "128",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Виджеты по умолчанию",
-      "tokens": 333
+      "tokens": 390
     },
     {
       "file": "sections/62-obrascheniya.md",
       "number": "4",
       "order": "62",
       "pages": "128-129",
+      "pdf_heading": "4. Обращения",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "128-129",
+          "pages": "128-129",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Обращения",
-      "tokens": 813
+      "tokens": 872
     },
     {
       "file": "sections/63-kontrol-obrascheniy.md",
       "number": "4.1",
       "order": "63",
       "pages": "129-132",
+      "pdf_heading": "4.1. Контроль обращений",
+      "pdf_section": "4.1",
+      "source_refs": [
+        {
+          "global_pages": "129-132",
+          "pages": "129-132",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Контроль обращений",
-      "tokens": 2406
+      "tokens": 2467
     },
     {
       "file": "sections/64-avtomaticheskoe-raspredelenie-obrascheni.md",
       "number": "4.2",
       "order": "64",
       "pages": "132-133",
+      "pdf_heading": "4.2. Автоматическое распределение обращений",
+      "pdf_section": "4.2",
+      "source_refs": [
+        {
+          "global_pages": "132-133",
+          "pages": "132-133",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Автоматическое распределение обращений",
-      "tokens": 1674
+      "tokens": 1735
     },
     {
       "file": "sections/65-moi-obrascheniya.md",
       "number": "4.3",
       "order": "65",
       "pages": "133-136",
+      "pdf_heading": "4.3. Мои обращения",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "133-136",
+          "pages": "133-136",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Мои обращения",
-      "tokens": 2187
+      "tokens": 2248
     },
     {
       "file": "sections/66-ishodyaschie-obrascheniya.md",
       "number": "4.3.1",
       "order": "66",
       "pages": "136-142",
+      "pdf_heading": "4.3.1. Исходящие обращения",
+      "pdf_section": "4.3.1",
+      "source_refs": [
+        {
+          "global_pages": "136-142",
+          "pages": "136-142",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Исходящие обращения",
-      "tokens": 3830
+      "tokens": 3893
     },
     {
       "file": "sections/67-obrabotka-obrascheniy.md",
       "number": "4.3.2",
       "order": "67",
       "pages": "142-154",
+      "pdf_heading": "4.3.2. Обработка обращений",
+      "pdf_section": "4.3.2",
+      "source_refs": [
+        {
+          "global_pages": "142-154",
+          "pages": "142-154",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Обработка обращений",
-      "tokens": 8897
+      "tokens": 8960
     },
     {
       "file": "sections/68-perevod-obrascheniy.md",
       "number": "4.3.3",
       "order": "68",
       "pages": "154-156",
+      "pdf_heading": "4.3.3. Перевод обращений",
+      "pdf_section": "4.3.3",
+      "source_refs": [
+        {
+          "global_pages": "154-156",
+          "pages": "154-156",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Перевод обращений",
-      "tokens": 981
+      "tokens": 1044
     },
     {
       "file": "sections/69-perenos-zadaniya-na-obzvon.md",
       "number": "4.3.4",
       "order": "69",
       "pages": "156-157",
+      "pdf_heading": "4.3.4. Перенос задания на обзвон",
+      "pdf_section": "4.3.4",
+      "source_refs": [
+        {
+          "global_pages": "156-157",
+          "pages": "156-157",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Перенос задания на обзвон",
-      "tokens": 393
+      "tokens": 456
     },
     {
       "file": "sections/70-zavershenie-obrabotki.md",
       "number": "4.3.5",
       "order": "70",
       "pages": "157-159",
+      "pdf_heading": "4.3.5. Завершение обработки",
+      "pdf_section": "4.3.5",
+      "source_refs": [
+        {
+          "global_pages": "157-159",
+          "pages": "157-159",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Завершение обработки",
-      "tokens": 2053
+      "tokens": 2116
     },
     {
       "file": "sections/71-nastroyka-avtomaticheskih-deystviy.md",
       "number": "4.4",
       "order": "71",
       "pages": "159-161",
+      "pdf_heading": "4.4. Настройка автоматических действий",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "159-161",
+          "pages": "159-161",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка автоматических действий",
-      "tokens": 717
+      "tokens": 778
     },
     {
       "file": "sections/72-istoriya-obrascheniy.md",
       "number": "4.5",
       "order": "72",
       "pages": "161-166",
+      "pdf_heading": "4.5. История обращений",
+      "pdf_section": "4.5",
+      "source_refs": [
+        {
+          "global_pages": "161-166",
+          "pages": "161-166",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "История обращений",
-      "tokens": 3822
+      "tokens": 3883
     },
     {
       "file": "sections/73-sdelki.md",
       "number": "5",
       "order": "73",
       "pages": "166-170",
+      "pdf_heading": "5. Сделки",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "166-170",
+          "pages": "166-170",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сделки",
-      "tokens": 2958
+      "tokens": 3017
     },
     {
       "file": "sections/74-sdelki-v-rabote.md",
       "number": "5.1",
       "order": "74",
       "pages": "170-179",
+      "pdf_heading": "5.1. Сделки в работе",
+      "pdf_section": "5.1",
+      "source_refs": [
+        {
+          "global_pages": "170-179",
+          "pages": "170-179",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сделки в работе",
-      "tokens": 5261
+      "tokens": 5322
     },
     {
       "file": "sections/75-istoriya-sdelok.md",
       "number": "5.2",
       "order": "75",
       "pages": "179-182",
+      "pdf_heading": "5.2. История сделок",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "179-182",
+          "pages": "179-182",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "История сделок",
-      "tokens": 1605
+      "tokens": 1666
     },
     {
       "file": "sections/76-voronka-prodazh.md",
       "number": "5.3",
       "order": "76",
       "pages": "182-185",
+      "pdf_heading": "5.3. Воронка продаж",
+      "pdf_section": "5.3",
+      "source_refs": [
+        {
+          "global_pages": "182-185",
+          "pages": "182-185",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Воронка продаж",
-      "tokens": 1808
+      "tokens": 1869
     },
     {
       "file": "sections/77-nastroyka-voronki-prodazh.md",
       "number": "5.4",
       "order": "77",
       "pages": "185-187",
+      "pdf_heading": "5.4. Настройка воронки продаж",
+      "pdf_section": "5.4",
+      "source_refs": [
+        {
+          "global_pages": "185-187",
+          "pages": "185-187",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка воронки продаж",
-      "tokens": 1138
+      "tokens": 1199
     },
     {
       "file": "sections/78-nastroyka-avtomaticheskih-deystviy.md",
       "number": "5.5",
       "order": "78",
       "pages": "187-196",
+      "pdf_heading": "5.5. Настройка автоматических действий",
+      "pdf_section": "5.5",
+      "source_refs": [
+        {
+          "global_pages": "187-196",
+          "pages": "187-196",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка автоматических действий",
-      "tokens": 5934
+      "tokens": 5995
     },
     {
       "file": "sections/79-nastroyka-polzovatelskih-poley.md",
       "number": "5.6",
       "order": "79",
       "pages": "196-200",
+      "pdf_heading": "5.6. Настройка пользовательских полей",
+      "pdf_section": "5.6",
+      "source_refs": [
+        {
+          "global_pages": "196-200",
+          "pages": "196-200",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка пользовательских полей",
-      "tokens": 2528
+      "tokens": 2589
     },
     {
       "file": "sections/80-nastroyka-prichin-otkaza.md",
       "number": "5.7",
       "order": "80",
       "pages": "200-203",
+      "pdf_heading": "5.7. Настройка причин отказа",
+      "pdf_section": "5.7",
+      "source_refs": [
+        {
+          "global_pages": "200-203",
+          "pages": "200-203",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка причин отказа",
-      "tokens": 932
+      "tokens": 993
     },
     {
       "file": "sections/81-zadachi.md",
       "number": "6",
       "order": "81",
       "pages": "203",
+      "pdf_heading": "6. Задачи",
+      "pdf_section": "6",
+      "source_refs": [
+        {
+          "global_pages": "203",
+          "pages": "203",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Задачи",
-      "tokens": 669
+      "tokens": 724
     },
     {
       "file": "sections/82-kalendar-zadach.md",
       "number": "6.1",
       "order": "82",
       "pages": "203-205",
+      "pdf_heading": "6.1. Календарь задач",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "203-205",
+          "pages": "203-205",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Календарь задач",
-      "tokens": 995
+      "tokens": 1056
     },
     {
       "file": "sections/83-otchet-po-zadacham.md",
       "number": "6.2",
       "order": "83",
       "pages": "205-206",
+      "pdf_heading": "6.2. Отчет по задачам",
+      "pdf_section": "6.2",
+      "source_refs": [
+        {
+          "global_pages": "205-206",
+          "pages": "205-206",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчет по задачам",
-      "tokens": 669
+      "tokens": 730
     },
     {
       "file": "sections/84-spisok-zadach-v-verhney-paneli.md",
       "number": "6.3",
       "order": "84",
       "pages": "206-208",
+      "pdf_heading": "6.3. Список задач в верхней панели",
+      "pdf_section": "6.3",
+      "source_refs": [
+        {
+          "global_pages": "206-208",
+          "pages": "206-208",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Список задач в верхней панели",
-      "tokens": 1588
+      "tokens": 1649
     },
     {
       "file": "sections/85-sozdanie-zadachi.md",
       "number": "6.4",
       "order": "85",
       "pages": "208-212",
+      "pdf_heading": "6.4. Создание задачи",
+      "pdf_section": "6.4",
+      "source_refs": [
+        {
+          "global_pages": "208-212",
+          "pages": "208-212",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание задачи",
-      "tokens": 4155
+      "tokens": 4216
     },
     {
       "file": "sections/86-prosmotr-zadach-iz-drugih-moduley.md",
       "number": "6.5",
       "order": "86",
       "pages": "212-214",
+      "pdf_heading": "6.5. Просмотр задач из других модулей",
+      "pdf_section": "6.5",
+      "source_refs": [
+        {
+          "global_pages": "212-214",
+          "pages": "212-214",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Просмотр задач из других модулей",
-      "tokens": 223
+      "tokens": 284
     },
     {
       "file": "sections/87-sotrudniki.md",
       "number": "7",
       "order": "87",
       "pages": "214",
+      "pdf_heading": "7. Сотрудники",
+      "pdf_section": "7",
+      "source_refs": [
+        {
+          "global_pages": "214",
+          "pages": "214",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сотрудники",
-      "tokens": 569
+      "tokens": 624
     },
     {
       "file": "sections/88-kontrol-sotrudnikov.md",
       "number": "7.1",
       "order": "88",
       "pages": "214-217",
+      "pdf_heading": "7.1. Контроль сотрудников",
+      "pdf_section": "7.1",
+      "source_refs": [
+        {
+          "global_pages": "214-217",
+          "pages": "214-217",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Контроль сотрудников",
-      "tokens": 2133
+      "tokens": 2194
     },
     {
       "file": "sections/89-kartochka-rabochego-dnya.md",
       "number": "7.2",
       "order": "89",
       "pages": "217-220",
+      "pdf_heading": "7.2. Карточка рабочего дня",
+      "pdf_section": "7.2",
+      "source_refs": [
+        {
+          "global_pages": "217-220",
+          "pages": "217-220",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Карточка рабочего дня",
-      "tokens": 2040
+      "tokens": 2101
     },
     {
       "file": "sections/90-rabochee-vremya-sotrudnika.md",
       "number": "7.3",
       "order": "90",
       "pages": "220-223",
+      "pdf_heading": "7.3. Рабочее время сотрудника",
+      "pdf_section": "7.3",
+      "source_refs": [
+        {
+          "global_pages": "220-223",
+          "pages": "220-223",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Рабочее время сотрудника",
-      "tokens": 3533
+      "tokens": 3594
     },
     {
       "file": "sections/91-proizvoditelnost-sotrudnikov.md",
       "number": "7.4",
       "order": "91",
       "pages": "223",
+      "pdf_heading": "7.4. Производительность сотрудников",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "223",
+          "pages": "223",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Производительность сотрудников",
-      "tokens": 231
+      "tokens": 288
     },
     {
       "file": "sections/92-vyzovy.md",
       "number": "7.4.1",
       "order": "92",
       "pages": "223-228",
+      "pdf_heading": "7.4.1. Вызовы",
+      "pdf_section": "7.4.1",
+      "source_refs": [
+        {
+          "global_pages": "223-228",
+          "pages": "223-228",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вызовы",
-      "tokens": 6021
+      "tokens": 6084
     },
     {
       "file": "sections/93-tekst.md",
       "number": "7.4.2",
       "order": "93",
       "pages": "228-235",
+      "pdf_heading": "7.4.2. Текст",
+      "pdf_section": "7.4.2",
+      "source_refs": [
+        {
+          "global_pages": "228-235",
+          "pages": "228-235",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текст",
-      "tokens": 3986
+      "tokens": 4049
     },
     {
       "file": "sections/94-proizvoditelnost-grupp.md",
       "number": "7.5",
       "order": "94",
       "pages": "235",
+      "pdf_heading": "7.5. Производительность групп",
+      "pdf_section": "7.5",
+      "source_refs": [
+        {
+          "global_pages": "235",
+          "pages": "235",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Производительность групп",
-      "tokens": 224
+      "tokens": 281
     },
     {
       "file": "sections/95-vyzovy.md",
       "number": "7.5.1",
       "order": "95",
       "pages": "235-239",
+      "pdf_heading": "7.5.1. Вызовы",
+      "pdf_section": "7.5.1",
+      "source_refs": [
+        {
+          "global_pages": "235-239",
+          "pages": "235-239",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вызовы",
-      "tokens": 4776
+      "tokens": 4839
     },
     {
       "file": "sections/96-tekst.md",
       "number": "7.5.2",
       "order": "96",
       "pages": "239-242",
+      "pdf_heading": "7.5.2. Текст",
+      "pdf_section": "7.5.2",
+      "source_refs": [
+        {
+          "global_pages": "239-242",
+          "pages": "239-242",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текст",
-      "tokens": 3064
+      "tokens": 3127
     },
     {
       "file": "sections/97-dostizheniya-sotrudnikov.md",
       "number": "7.6",
       "order": "97",
       "pages": "242-245",
+      "pdf_heading": "7.6. Достижения сотрудников",
+      "pdf_section": "7.6",
+      "source_refs": [
+        {
+          "global_pages": "242-245",
+          "pages": "242-245",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Достижения сотрудников",
-      "tokens": 1801
+      "tokens": 1862
     },
     {
       "file": "sections/98-plan-raboty-wfm.md",
       "number": "8",
       "order": "98",
       "pages": "245-246",
+      "pdf_heading": "8. План работы (WFM)",
+      "pdf_section": "8",
+      "source_refs": [
+        {
+          "global_pages": "245-246",
+          "pages": "245-246",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "План работы (WFM)",
-      "tokens": 782
+      "tokens": 841
     },
     {
       "file": "sections/99-grafik-raboty.md",
       "number": "8.1",
       "order": "99",
       "pages": "246-251",
+      "pdf_heading": "8.1. График работы",
+      "pdf_section": "8.1",
+      "source_refs": [
+        {
+          "global_pages": "246-251",
+          "pages": "246-251",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "График работы",
-      "tokens": 2634
+      "tokens": 2695
     },
     {
       "file": "sections/100-planirovanie-vhodyaschih.md",
       "number": "8.2",
       "order": "100",
       "pages": "251-256",
+      "pdf_heading": "8.2. Планирование входящих",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "251-256",
+          "pages": "251-256",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Планирование входящих",
-      "tokens": 3488
+      "tokens": 3549
     },
     {
       "file": "sections/101-makroprognoz.md",
       "number": "8.2.1",
       "order": "101",
       "pages": "256-258",
+      "pdf_heading": "8.2.1. Макропрогноз",
+      "pdf_section": "8.2.1",
+      "source_refs": [
+        {
+          "global_pages": "256-258",
+          "pages": "256-258",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Макропрогноз",
-      "tokens": 1095
+      "tokens": 1158
     },
     {
       "file": "sections/102-otchety.md",
       "number": "8.3",
       "order": "102",
       "pages": "258-262",
+      "pdf_heading": "8.3. Отчеты",
+      "pdf_section": "8.3",
+      "source_refs": [
+        {
+          "global_pages": "258-262",
+          "pages": "258-262",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты",
-      "tokens": 1928
+      "tokens": 1989
     },
     {
       "file": "sections/103-obmen-smenami.md",
       "number": "8.4",
       "order": "103",
       "pages": "262-266",
+      "pdf_heading": "8.4. Обмен сменами",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "262-266",
+          "pages": "262-266",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Обмен сменами",
-      "tokens": 2211
+      "tokens": 2272
     },
     {
       "file": "sections/104-nastroyki.md",
       "number": "8.5",
       "order": "104",
       "pages": "266-270",
+      "pdf_heading": "8.5. Настройки",
+      "pdf_section": "8.5",
+      "source_refs": [
+        {
+          "global_pages": "266-270",
+          "pages": "266-270",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройки",
-      "tokens": 1892
+      "tokens": 1953
     },
     {
       "file": "sections/105-avtomaticheskie-deystviya-wfm.md",
       "number": "8.5.1",
       "order": "105",
       "pages": "270-274",
+      "pdf_heading": "8.5.1. Автоматические действия (WFM)",
+      "pdf_section": "8.5.1",
+      "source_refs": [
+        {
+          "global_pages": "270-274",
+          "pages": "270-274",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Автоматические действия (WFM)",
-      "tokens": 1860
+      "tokens": 1923
     },
     {
       "file": "sections/106-proizvodstvennyy-kalendar.md",
       "number": "8.5.2",
       "order": "106",
       "pages": "274-276",
+      "pdf_heading": "8.5.2. Производственный календарь",
+      "pdf_section": "8.5.2",
+      "source_refs": [
+        {
+          "global_pages": "274-276",
+          "pages": "274-276",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Производственный календарь",
-      "tokens": 1119
+      "tokens": 1182
     },
     {
       "file": "sections/107-effektivnost-sotrudnika.md",
       "number": "8.5.3",
       "order": "107",
       "pages": "276-277",
+      "pdf_heading": "8.5.3. Эффективность сотрудника",
+      "pdf_section": "8.5.3",
+      "source_refs": [
+        {
+          "global_pages": "276-277",
+          "pages": "276-277",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Эффективность сотрудника",
-      "tokens": 830
+      "tokens": 893
     },
     {
       "file": "sections/108-istoriya-vyzovov.md",
       "number": "9",
       "order": "108",
       "pages": "277",
+      "pdf_heading": "9. История вызовов",
+      "pdf_section": "9",
+      "source_refs": [
+        {
+          "global_pages": "277",
+          "pages": "277",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "История вызовов",
-      "tokens": 459
+      "tokens": 514
     },
     {
       "file": "sections/109-istoriya-vyzovov.md",
       "number": "9.1",
       "order": "109",
       "pages": "277-281",
+      "pdf_heading": "9.1. История вызовов",
+      "pdf_section": "9.1",
+      "source_refs": [
+        {
+          "global_pages": "277-281",
+          "pages": "277-281",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "История вызовов",
-      "tokens": 2155
+      "tokens": 2216
     },
     {
       "file": "sections/110-filtraciya-gruppirovka-otbor-i-poisk-vyz.md",
       "number": "9.1.1",
       "order": "110",
       "pages": "281-285",
+      "pdf_heading": "9.1.1. Фильтрация, группировка, отбор и поиск вызовов",
+      "pdf_section": "9.1.1",
+      "source_refs": [
+        {
+          "global_pages": "281-285",
+          "pages": "281-285",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Фильтрация, группировка, отбор и поиск вызовов",
-      "tokens": 5180
+      "tokens": 5243
     },
     {
       "file": "sections/111-proslushivanie-razgovorov-i-povtornye-vy.md",
       "number": "9.1.2",
       "order": "111",
       "pages": "285-286",
+      "pdf_heading": "9.1.2. Прослушивание разговоров и повторные вызовы",
+      "pdf_section": "9.1.2",
+      "source_refs": [
+        {
+          "global_pages": "285-286",
+          "pages": "285-286",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Прослушивание разговоров и повторные вызовы",
-      "tokens": 814
+      "tokens": 877
     },
     {
       "file": "sections/112-tematiki-i-kommentarii-k-vyzovu.md",
       "number": "9.1.3",
       "order": "112",
       "pages": "286-288",
+      "pdf_heading": "9.1.3. Тематики и комментарии к вызову",
+      "pdf_section": "9.1.3",
+      "source_refs": [
+        {
+          "global_pages": "286-288",
+          "pages": "286-288",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Тематики и комментарии к вызову",
-      "tokens": 1381
+      "tokens": 1444
     },
     {
       "file": "sections/113-eksport-dannyh-iz-istorii-vyzovov.md",
       "number": "9.1.4",
       "order": "113",
       "pages": "288-290",
+      "pdf_heading": "9.1.4. Экспорт данных из истории вызовов",
+      "pdf_section": "9.1.4",
+      "source_refs": [
+        {
+          "global_pages": "288-290",
+          "pages": "288-290",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Экспорт данных из истории вызовов",
-      "tokens": 921
+      "tokens": 984
     },
     {
       "file": "sections/114-obsluzhivanie-vhodyaschih-vyzovov.md",
       "number": "9.2",
       "order": "114",
       "pages": "290-291",
+      "pdf_heading": "9.2. Обслуживание входящих вызовов",
+      "pdf_section": "9.2",
+      "source_refs": [
+        {
+          "global_pages": "290-291",
+          "pages": "290-291",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Обслуживание входящих вызовов",
-      "tokens": 819
+      "tokens": 880
     },
     {
       "file": "sections/115-propuschennye-vyzovy.md",
       "number": "9.3",
       "order": "115",
       "pages": "291-296",
+      "pdf_heading": "9.3. Пропущенные вызовы",
+      "pdf_section": "9.3",
+      "source_refs": [
+        {
+          "global_pages": "291-296",
+          "pages": "291-296",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пропущенные вызовы",
-      "tokens": 2648
+      "tokens": 2709
     },
     {
       "file": "sections/116-klienty.md",
       "number": "10",
       "order": "116",
       "pages": "296",
+      "pdf_heading": "10. Клиенты",
+      "pdf_section": "10",
+      "source_refs": [
+        {
+          "global_pages": "296",
+          "pages": "296",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Клиенты",
-      "tokens": 622
+      "tokens": 677
     },
     {
       "file": "sections/117-kontakty-adresnaya-kniga.md",
       "number": "10.1",
       "order": "117",
       "pages": "296-306",
+      "pdf_heading": "10.1. Контакты (адресная книга)",
+      "pdf_section": "10.1",
+      "source_refs": [
+        {
+          "global_pages": "296-306",
+          "pages": "296-306",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Контакты (адресная книга)",
-      "tokens": 6591
+      "tokens": 6652
     },
     {
       "file": "sections/118-sozdanie-i-redaktirovanie-klientov.md",
       "number": "10.1.1",
       "order": "118",
       "pages": "306-316",
+      "pdf_heading": "10.1.1. Создание и редактирование клиентов",
+      "pdf_section": "10.1.1",
+      "source_refs": [
+        {
+          "global_pages": "306-316",
+          "pages": "306-316",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание и редактирование клиентов",
-      "tokens": 9401
+      "tokens": 9464
     },
     {
       "file": "sections/119-import-i-eksport-kontaktov.md",
       "number": "10.1.2",
       "order": "119",
       "pages": "316-320",
+      "pdf_heading": "10.1.2. Импорт и экспорт контактов",
+      "pdf_section": "10.1.2",
+      "source_refs": [
+        {
+          "global_pages": "316-320",
+          "pages": "316-320",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Импорт и экспорт контактов",
-      "tokens": 2948
+      "tokens": 3011
     },
     {
       "file": "sections/120-organizacii.md",
       "number": "10.2",
       "order": "120",
       "pages": "320-322",
+      "pdf_heading": "10.2. Организации",
+      "pdf_section": "10.2",
+      "source_refs": [
+        {
+          "global_pages": "320-322",
+          "pages": "320-322",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Организации",
-      "tokens": 842
+      "tokens": 903
     },
     {
       "file": "sections/121-sozdanie-redaktirovanie-i-udalenie-organ.md",
       "number": "10.2.1",
       "order": "121",
       "pages": "322-325",
+      "pdf_heading": "10.2.1. Создание, редактирование и удаление организаций",
+      "pdf_section": "10.2.1",
+      "source_refs": [
+        {
+          "global_pages": "322-325",
+          "pages": "322-325",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание, редактирование и удаление организаций",
-      "tokens": 1682
+      "tokens": 1745
     },
     {
       "file": "sections/122-nastroyka-poley.md",
       "number": "10.3",
       "order": "122",
       "pages": "325-331",
+      "pdf_heading": "10.3. Настройка полей",
+      "pdf_section": "10.3",
+      "source_refs": [
+        {
+          "global_pages": "325-331",
+          "pages": "325-331",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка полей",
-      "tokens": 3080
+      "tokens": 3141
     },
     {
       "file": "sections/123-ishodyaschiy-obzvon.md",
       "number": "11",
       "order": "123",
       "pages": "331",
+      "pdf_heading": "11. Исходящий обзвон",
+      "pdf_section": "11",
+      "source_refs": [
+        {
+          "global_pages": "331",
+          "pages": "331",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Исходящий обзвон",
-      "tokens": 904
+      "tokens": 959
     },
     {
       "file": "sections/124-spisok-kampaniy.md",
       "number": "11.1",
       "order": "124",
       "pages": "331-337",
+      "pdf_heading": "11.1. Список кампаний",
+      "pdf_section": "11.1",
+      "source_refs": [
+        {
+          "global_pages": "331-337",
+          "pages": "331-337",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Список кампаний",
-      "tokens": 3944
+      "tokens": 4005
     },
     {
       "file": "sections/125-nastroyka-poley.md",
       "number": "11.2",
       "order": "125",
       "pages": "337-339",
+      "pdf_heading": "11.2. Настройка полей",
+      "pdf_section": "11.2",
+      "source_refs": [
+        {
+          "global_pages": "337-339",
+          "pages": "337-339",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка полей",
-      "tokens": 1322
+      "tokens": 1383
     },
     {
       "file": "sections/126-nastroyka-avtomaticheskih-deystviy.md",
       "number": "11.3",
       "order": "126",
       "pages": "339-345",
+      "pdf_heading": "11.3. Настройка автоматических действий",
+      "pdf_section": "11.3",
+      "source_refs": [
+        {
+          "global_pages": "339-345",
+          "pages": "339-345",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройка автоматических действий",
-      "tokens": 2280
+      "tokens": 2341
     },
     {
       "file": "sections/127-dobavlenie-kampanii.md",
       "number": "11.4",
       "order": "127",
       "pages": "345-347",
+      "pdf_heading": "11.4. Добавление кампании",
+      "pdf_section": "11.4",
+      "source_refs": [
+        {
+          "global_pages": "345-347",
+          "pages": "345-347",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Добавление кампании",
-      "tokens": 1904
+      "tokens": 1965
     },
     {
       "file": "sections/128-s-uchastiem-sotrudnika.md",
       "number": "11.4.1",
       "order": "128",
       "pages": "347-361",
+      "pdf_heading": "11.4.1. С участием сотрудника",
+      "pdf_section": "11.4.1",
+      "source_refs": [
+        {
+          "global_pages": "347-361",
+          "pages": "347-361",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "С участием сотрудника",
-      "tokens": 7268
+      "tokens": 7331
     },
     {
       "file": "sections/129-bez-uchastiya-sotrudnika.md",
       "number": "11.4.2",
       "order": "129",
       "pages": "361-366",
+      "pdf_heading": "11.4.2. Без участия сотрудника",
+      "pdf_section": "11.4.2",
+      "source_refs": [
+        {
+          "global_pages": "361-366",
+          "pages": "361-366",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Без участия сотрудника",
-      "tokens": 4600
+      "tokens": 4663
     },
     {
       "file": "sections/130-kartochka-kampanii.md",
       "number": "11.5",
       "order": "130",
       "pages": "366-367",
+      "pdf_heading": "11.5. Карточка кампании",
+      "pdf_section": "11.5",
+      "source_refs": [
+        {
+          "global_pages": "366-367",
+          "pages": "366-367",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Карточка кампании",
-      "tokens": 139
+      "tokens": 200
     },
     {
       "file": "sections/131-statistika-po-kampanii.md",
       "number": "11.5.1",
       "order": "131",
       "pages": "367-372",
+      "pdf_heading": "11.5.1. Статистика по кампании",
+      "pdf_section": "11.5.1",
+      "source_refs": [
+        {
+          "global_pages": "367-372",
+          "pages": "367-372",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Статистика по кампании",
-      "tokens": 5181
+      "tokens": 5244
     },
     {
       "file": "sections/132-effektivnost-kampanii.md",
       "number": "11.5.2",
       "order": "132",
       "pages": "372-374",
+      "pdf_heading": "11.5.2. Эффективность кампании",
+      "pdf_section": "11.5.2",
+      "source_refs": [
+        {
+          "global_pages": "372-374",
+          "pages": "372-374",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Эффективность кампании",
-      "tokens": 919
+      "tokens": 982
     },
     {
       "file": "sections/133-kartochka-vyzova.md",
       "number": "11.6",
       "order": "133",
       "pages": "374-377",
+      "pdf_heading": "11.6. Карточка вызова",
+      "pdf_section": "11.6",
+      "source_refs": [
+        {
+          "global_pages": "374-377",
+          "pages": "374-377",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Карточка вызова",
-      "tokens": 540
+      "tokens": 601
     },
     {
       "file": "sections/134-skripty.md",
       "number": "12",
       "order": "134",
       "pages": "377",
+      "pdf_heading": "12. Скрипты",
+      "pdf_section": "12",
+      "source_refs": [
+        {
+          "global_pages": "377",
+          "pages": "377",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Скрипты",
-      "tokens": 598
+      "tokens": 653
     },
     {
       "file": "sections/135-spisok-skriptov.md",
       "number": "12.1",
       "order": "135",
       "pages": "377-379",
+      "pdf_heading": "12.1. Список скриптов",
+      "pdf_section": "12.1",
+      "source_refs": [
+        {
+          "global_pages": "377-379",
+          "pages": "377-379",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Список скриптов",
-      "tokens": 1106
+      "tokens": 1167
     },
     {
       "file": "sections/136-sozdanie-import-eksport-skripta.md",
       "number": "12.2",
       "order": "136",
       "pages": "379-387",
+      "pdf_heading": "12.2. Создание, импорт, экспорт скрипта",
+      "pdf_section": "12.2",
+      "source_refs": [
+        {
+          "global_pages": "379-387",
+          "pages": "379-387",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание, импорт, экспорт скрипта",
-      "tokens": 5077
+      "tokens": 5138
     },
     {
       "file": "sections/137-statistika.md",
       "number": "12.3",
       "order": "137",
       "pages": "387",
+      "pdf_heading": "12.3. Статистика",
+      "pdf_section": "12.3",
+      "source_refs": [
+        {
+          "global_pages": "387",
+          "pages": "387",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Статистика",
-      "tokens": 190
+      "tokens": 247
     },
     {
       "file": "sections/138-effektivnost-sotrudnikov.md",
       "number": "12.3.1",
       "order": "138",
       "pages": "387-390",
+      "pdf_heading": "12.3.1. Эффективность сотрудников",
+      "pdf_section": "12.3.1",
+      "source_refs": [
+        {
+          "global_pages": "387-390",
+          "pages": "387-390",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Эффективность сотрудников",
-      "tokens": 1935
+      "tokens": 1998
     },
     {
       "file": "sections/139-statistika-otvetov.md",
       "number": "12.3.2",
       "order": "139",
       "pages": "390-393",
+      "pdf_heading": "12.3.2. Статистика ответов",
+      "pdf_section": "12.3.2",
+      "source_refs": [
+        {
+          "global_pages": "390-393",
+          "pages": "390-393",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Статистика ответов",
-      "tokens": 1836
+      "tokens": 1899
     },
     {
       "file": "sections/140-vnutrennee-obschenie.md",
       "number": "13",
       "order": "140",
       "pages": "393",
+      "pdf_heading": "13. Внутреннее общение",
+      "pdf_section": "13",
+      "source_refs": [
+        {
+          "global_pages": "393",
+          "pages": "393",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Внутреннее общение",
-      "tokens": 295
+      "tokens": 350
     },
     {
       "file": "sections/141-sotrudniki.md",
       "number": "13.1",
       "order": "141",
       "pages": "393-397",
+      "pdf_heading": "13.1. Сотрудники",
+      "pdf_section": "13.1",
+      "source_refs": [
+        {
+          "global_pages": "393-397",
+          "pages": "393-397",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сотрудники",
-      "tokens": 2781
+      "tokens": 2842
     },
     {
       "file": "sections/142-komnaty-konferenciy.md",
       "number": "13.2",
       "order": "142",
       "pages": "397-398",
+      "pdf_heading": "13.2. Комнаты конференций",
+      "pdf_section": "13.2",
+      "source_refs": [
+        {
+          "global_pages": "397-398",
+          "pages": "397-398",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Комнаты конференций",
-      "tokens": 738
+      "tokens": 799
     },
     {
       "file": "sections/143-chaty.md",
       "number": "13.3",
       "order": "143",
       "pages": "398-401",
+      "pdf_heading": "13.3. Чаты",
+      "pdf_section": "13.3",
+      "source_refs": [
+        {
+          "global_pages": "398-401",
+          "pages": "398-401",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Чаты",
-      "tokens": 2794
+      "tokens": 2855
     },
     {
       "file": "sections/144-videokonferencii.md",
       "number": "13.4",
       "order": "144",
       "pages": "401-406",
+      "pdf_heading": "13.4. Видеоконференции",
+      "pdf_section": "13.4",
+      "source_refs": [
+        {
+          "global_pages": "401-406",
+          "pages": "401-406",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Видеоконференции",
-      "tokens": 1901
+      "tokens": 1962
     },
     {
       "file": "sections/145-tekstovye-rassylki.md",
       "number": "14",
       "order": "145",
       "pages": "406",
+      "pdf_heading": "14. Текстовые рассылки",
+      "pdf_section": "14",
+      "source_refs": [
+        {
+          "global_pages": "406",
+          "pages": "406",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текстовые рассылки",
-      "tokens": 245
+      "tokens": 300
     },
     {
       "file": "sections/146-tekstovye-rassylki.md",
       "number": "14.1",
       "order": "146",
       "pages": "406-408",
+      "pdf_heading": "14.1. Текстовые рассылки",
+      "pdf_section": "14.1",
+      "source_refs": [
+        {
+          "global_pages": "406-408",
+          "pages": "406-408",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текстовые рассылки",
-      "tokens": 1281
+      "tokens": 1342
     },
     {
       "file": "sections/147-dobavlenie-kampanii.md",
       "number": "14.1.1",
       "order": "147",
       "pages": "408-415",
+      "pdf_heading": "14.1.1. Добавление кампании",
+      "pdf_section": "14.1.1",
+      "source_refs": [
+        {
+          "global_pages": "408-415",
+          "pages": "408-415",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Добавление кампании",
-      "tokens": 3244
+      "tokens": 3307
     },
     {
       "file": "sections/148-kartochka-kampanii.md",
       "number": "14.2",
       "order": "148",
       "pages": "415-417",
+      "pdf_heading": "14.2. Карточка кампании",
+      "pdf_section": "14.2",
+      "source_refs": [
+        {
+          "global_pages": "415-417",
+          "pages": "415-417",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Карточка кампании",
-      "tokens": 1538
+      "tokens": 1599
     },
     {
       "file": "sections/149-analiz-otpisok-i-nedostavlennyh-soobsche.md",
       "number": "14.2.1",
       "order": "149",
       "pages": "417-418",
+      "pdf_heading": "14.2.1. Анализ отписок и недоставленных сообщений.",
+      "pdf_section": "14.2.1",
+      "source_refs": [
+        {
+          "global_pages": "417-418",
+          "pages": "417-418",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Анализ отписок и недоставленных сообщений.",
-      "tokens": 655
+      "tokens": 718
     },
     {
       "file": "sections/150-nastroyki-poley.md",
       "number": "14.3",
       "order": "150",
       "pages": "418-419",
+      "pdf_heading": "14.3. Настройки полей",
+      "pdf_section": "14.3",
+      "source_refs": [
+        {
+          "global_pages": "418-419",
+          "pages": "418-419",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройки полей",
-      "tokens": 430
+      "tokens": 491
     },
     {
       "file": "sections/151-biznes-analitika.md",
       "number": "15",
       "order": "151",
       "pages": "419-422",
+      "pdf_heading": "15. Бизнес-аналитика",
+      "pdf_section": "15",
+      "source_refs": [
+        {
+          "global_pages": "419-422",
+          "pages": "419-422",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Бизнес-аналитика",
-      "tokens": 1279
+      "tokens": 1338
     },
     {
       "file": "sections/152-gruppa-otchetov-prodazhi.md",
       "number": "15.1",
       "order": "152",
       "pages": "422",
+      "pdf_heading": "15.1. Группа отчетов \"Продажи\"",
+      "pdf_section": "15.1",
+      "source_refs": [
+        {
+          "global_pages": "422",
+          "pages": "422",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Группа отчетов \"Продажи\"",
-      "tokens": 168
+      "tokens": 225
     },
     {
       "file": "sections/153-otchety-po-vhodyaschim-zvonkam.md",
       "number": "15.1.1",
       "order": "153",
       "pages": "422",
+      "pdf_heading": "15.1.1. Отчеты по входящим звонкам",
+      "pdf_section": "15.1.1",
+      "source_refs": [
+        {
+          "global_pages": "422",
+          "pages": "422",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты по входящим звонкам",
-      "tokens": 127
+      "tokens": 186
     },
     {
       "file": "sections/154-propuschennye-zvonki.md",
       "number": "15.1.1.1",
       "order": "154",
       "pages": "422-423",
+      "pdf_heading": "15.1.1.1. Пропущенные звонки",
+      "pdf_section": "15.1.1.1",
+      "source_refs": [
+        {
+          "global_pages": "422-423",
+          "pages": "422-423",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пропущенные звонки",
-      "tokens": 331
+      "tokens": 396
     },
     {
       "file": "sections/155-prichiny-propuschennyh-zvonkov.md",
       "number": "15.1.1.2",
       "order": "155",
       "pages": "423-425",
+      "pdf_heading": "15.1.1.2. Причины пропущенных звонков",
+      "pdf_section": "15.1.1.2",
+      "source_refs": [
+        {
+          "global_pages": "423-425",
+          "pages": "423-425",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Причины пропущенных звонков",
-      "tokens": 473
+      "tokens": 538
     },
     {
       "file": "sections/156-vremya-ozhidaniya.md",
       "number": "15.1.1.3",
       "order": "156",
       "pages": "425-426",
+      "pdf_heading": "15.1.1.3. Время ожидания",
+      "pdf_section": "15.1.1.3",
+      "source_refs": [
+        {
+          "global_pages": "425-426",
+          "pages": "425-426",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Время ожидания",
-      "tokens": 805
+      "tokens": 870
     },
     {
       "file": "sections/157-dlitelnost-razgovora.md",
       "number": "15.1.1.4",
       "order": "157",
       "pages": "426-428",
+      "pdf_heading": "15.1.1.4. Длительность разговора",
+      "pdf_section": "15.1.1.4",
+      "source_refs": [
+        {
+          "global_pages": "426-428",
+          "pages": "426-428",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Длительность разговора",
-      "tokens": 485
+      "tokens": 550
     },
     {
       "file": "sections/158-kolichestvo-perezvonov-po-propuschennym.md",
       "number": "15.1.1.5",
       "order": "158",
       "pages": "428-429",
+      "pdf_heading": "15.1.1.5. Количество \"перезвонов\" по пропущенным звонкам",
+      "pdf_section": "15.1.1.5",
+      "source_refs": [
+        {
+          "global_pages": "428-429",
+          "pages": "428-429",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Количество \"перезвонов\" по пропущенным звонкам",
-      "tokens": 646
+      "tokens": 711
     },
     {
       "file": "sections/159-naskolko-bystro-sotrudniki-pytayutsya-pe.md",
       "number": "15.1.1.6",
       "order": "159",
       "pages": "429-430",
+      "pdf_heading": "15.1.1.6. Насколько быстро сотрудники пытаются перезвонить",
+      "pdf_section": "15.1.1.6",
+      "source_refs": [
+        {
+          "global_pages": "429-430",
+          "pages": "429-430",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Насколько быстро сотрудники пытаются перезвонить",
-      "tokens": 757
+      "tokens": 822
     },
     {
       "file": "sections/160-otchety-po-ishodyaschim-zvonkam.md",
       "number": "15.1.2",
       "order": "160",
       "pages": "430-431",
+      "pdf_heading": "15.1.2. Отчеты по исходящим звонкам",
+      "pdf_section": "15.1.2",
+      "source_refs": [
+        {
+          "global_pages": "430-431",
+          "pages": "430-431",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты по исходящим звонкам",
-      "tokens": 108
+      "tokens": 171
     },
     {
       "file": "sections/161-kachestvennye-zvonki.md",
       "number": "15.1.2.1",
       "order": "161",
       "pages": "431-432",
+      "pdf_heading": "15.1.2.1. Качественные звонки",
+      "pdf_section": "15.1.2.1",
+      "source_refs": [
+        {
+          "global_pages": "431-432",
+          "pages": "431-432",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Качественные звонки",
-      "tokens": 885
+      "tokens": 950
     },
     {
       "file": "sections/162-kogda-luchshe-zvonit.md",
       "number": "15.1.2.2",
       "order": "162",
       "pages": "432-434",
+      "pdf_heading": "15.1.2.2. Когда лучше звонить",
+      "pdf_section": "15.1.2.2",
+      "source_refs": [
+        {
+          "global_pages": "432-434",
+          "pages": "432-434",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Когда лучше звонить",
-      "tokens": 560
+      "tokens": 625
     },
     {
       "file": "sections/163-ishodyaschiy-obzvon.md",
       "number": "15.1.2.3",
       "order": "163",
       "pages": "434-436",
+      "pdf_heading": "15.1.2.3. Исходящий обзвон",
+      "pdf_section": "15.1.2.3",
+      "source_refs": [
+        {
+          "global_pages": "434-436",
+          "pages": "434-436",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Исходящий обзвон",
-      "tokens": 1012
+      "tokens": 1077
     },
     {
       "file": "sections/164-dlitelnost-razgovorov.md",
       "number": "15.1.2.4",
       "order": "164",
       "pages": "436-438",
+      "pdf_heading": "15.1.2.4. Длительность разговоров",
+      "pdf_section": "15.1.2.4",
+      "source_refs": [
+        {
+          "global_pages": "436-438",
+          "pages": "436-438",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Длительность разговоров",
-      "tokens": 390
+      "tokens": 455
     },
     {
       "file": "sections/165-gruppa-otchetov-obsluzhivanie.md",
       "number": "15.2",
       "order": "165",
       "pages": "438",
+      "pdf_heading": "15.2. Группа отчетов \"Обслуживание\"",
+      "pdf_section": "15.2",
+      "source_refs": [
+        {
+          "global_pages": "438",
+          "pages": "438",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Группа отчетов \"Обслуживание\"",
-      "tokens": 191
+      "tokens": 248
     },
     {
       "file": "sections/166-otchety-po-prinyatym-zvonkam.md",
       "number": "15.2.1",
       "order": "166",
       "pages": "438",
+      "pdf_heading": "15.2.1. Отчеты по принятым звонкам",
+      "pdf_section": "15.2.1",
+      "source_refs": [
+        {
+          "global_pages": "438",
+          "pages": "438",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты по принятым звонкам",
-      "tokens": 133
+      "tokens": 192
     },
     {
       "file": "sections/167-skolko-zvonkov-prinyato-bystro.md",
       "number": "15.2.1.1",
       "order": "167",
       "pages": "438-439",
+      "pdf_heading": "15.2.1.1. Сколько звонков принято быстро",
+      "pdf_section": "15.2.1.1",
+      "source_refs": [
+        {
+          "global_pages": "438-439",
+          "pages": "438-439",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сколько звонков принято быстро",
-      "tokens": 379
+      "tokens": 444
     },
     {
       "file": "sections/168-srednyaya-prodolzhitelnost-zvonka.md",
       "number": "15.2.1.2",
       "order": "168",
       "pages": "439-440",
+      "pdf_heading": "15.2.1.2. Средняя продолжительность звонка",
+      "pdf_section": "15.2.1.2",
+      "source_refs": [
+        {
+          "global_pages": "439-440",
+          "pages": "439-440",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Средняя продолжительность звонка",
-      "tokens": 367
+      "tokens": 432
     },
     {
       "file": "sections/169-vremya-ozhidaniya-otveta.md",
       "number": "15.2.1.3",
       "order": "169",
       "pages": "440-441",
+      "pdf_heading": "15.2.1.3. Время ожидания ответа",
+      "pdf_section": "15.2.1.3",
+      "source_refs": [
+        {
+          "global_pages": "440-441",
+          "pages": "440-441",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Время ожидания ответа",
-      "tokens": 276
+      "tokens": 341
     },
     {
       "file": "sections/170-vremya-obsluzhivaniya-vyzova.md",
       "number": "15.2.1.4",
       "order": "170",
       "pages": "441-443",
+      "pdf_heading": "15.2.1.4. Время обслуживания вызова",
+      "pdf_section": "15.2.1.4",
+      "source_refs": [
+        {
+          "global_pages": "441-443",
+          "pages": "441-443",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Время обслуживания вызова",
-      "tokens": 441
+      "tokens": 506
     },
     {
       "file": "sections/171-skolko-sotrudnikov-reshayut-problemu-kli.md",
       "number": "15.2.1.5",
       "order": "171",
       "pages": "443",
+      "pdf_heading": "15.2.1.5. Сколько сотрудников решают проблему клиента",
+      "pdf_section": "15.2.1.5",
+      "source_refs": [
+        {
+          "global_pages": "443",
+          "pages": "443",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сколько сотрудников решают проблему клиента",
-      "tokens": 173
+      "tokens": 234
     },
     {
       "file": "sections/172-skolko-zvonkov-trebuetsya-klientu-dlya-r.md",
       "number": "15.2.1.6",
       "order": "172",
       "pages": "443-444",
+      "pdf_heading": "15.2.1.6. Сколько звонков требуется клиенту для решения проблемы",
+      "pdf_section": "15.2.1.6",
+      "source_refs": [
+        {
+          "global_pages": "443-444",
+          "pages": "443-444",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сколько звонков требуется клиенту для решения проблемы",
-      "tokens": 233
+      "tokens": 298
     },
     {
       "file": "sections/173-otchety-po-propuschennym-zvonkam.md",
       "number": "15.2.2",
       "order": "173",
       "pages": "444",
+      "pdf_heading": "15.2.2. Отчеты по пропущенным звонкам",
+      "pdf_section": "15.2.2",
+      "source_refs": [
+        {
+          "global_pages": "444",
+          "pages": "444",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты по пропущенным звонкам",
-      "tokens": 95
+      "tokens": 154
     },
     {
       "file": "sections/174-kolichestvo-propuschennyh-zvonkov.md",
       "number": "15.2.2.1",
       "order": "174",
       "pages": "444-446",
+      "pdf_heading": "15.2.2.1. Количество пропущенных звонков",
+      "pdf_section": "15.2.2.1",
+      "source_refs": [
+        {
+          "global_pages": "444-446",
+          "pages": "444-446",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Количество пропущенных звонков",
-      "tokens": 505
+      "tokens": 570
     },
     {
       "file": "sections/175-prichiny-propuschennyh-zvonkov.md",
       "number": "15.2.2.2",
       "order": "175",
       "pages": "446-448",
+      "pdf_heading": "15.2.2.2. Причины пропущенных звонков",
+      "pdf_section": "15.2.2.2",
+      "source_refs": [
+        {
+          "global_pages": "446-448",
+          "pages": "446-448",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Причины пропущенных звонков",
-      "tokens": 462
+      "tokens": 527
     },
     {
       "file": "sections/176-v-kakoe-vremya-teryayutsya-zvonki.md",
       "number": "15.2.2.3",
       "order": "176",
       "pages": "448-449",
+      "pdf_heading": "15.2.2.3. В какое время теряются звонки",
+      "pdf_section": "15.2.2.3",
+      "source_refs": [
+        {
+          "global_pages": "448-449",
+          "pages": "448-449",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "В какое время теряются звонки",
-      "tokens": 508
+      "tokens": 573
     },
     {
       "file": "sections/177-skolko-klienty-gotovy-zhdat-na-linii.md",
       "number": "15.2.2.4",
       "order": "177",
       "pages": "449-451",
+      "pdf_heading": "15.2.2.4. Сколько клиенты готовы ждать на линии",
+      "pdf_section": "15.2.2.4",
+      "source_refs": [
+        {
+          "global_pages": "449-451",
+          "pages": "449-451",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сколько клиенты готовы ждать на линии",
-      "tokens": 494
+      "tokens": 559
     },
     {
       "file": "sections/178-rechevaya-analitika.md",
       "number": "16",
       "order": "178",
       "pages": "451-452",
+      "pdf_heading": "16. Речевая аналитика",
+      "pdf_section": "16",
+      "source_refs": [
+        {
+          "global_pages": "451-452",
+          "pages": "451-452",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Речевая аналитика",
-      "tokens": 544
+      "tokens": 603
     },
     {
       "file": "sections/179-otchety-rechevoy-analitiki.md",
       "number": "16.1",
       "order": "179",
       "pages": "452-453",
+      "pdf_heading": "16.1. Отчеты речевой аналитики",
+      "pdf_section": "16.1",
+      "source_refs": [
+        {
+          "global_pages": "452-453",
+          "pages": "452-453",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты речевой аналитики",
-      "tokens": 422
+      "tokens": 483
     },
     {
       "file": "sections/180-rashody-rechevoy-analitiki.md",
       "number": "16.1.1",
       "order": "180",
       "pages": "453-454",
+      "pdf_heading": "16.1.1. Расходы Речевой аналитики",
+      "pdf_section": "16.1.1",
+      "source_refs": [
+        {
+          "global_pages": "453-454",
+          "pages": "453-454",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Расходы Речевой аналитики",
-      "tokens": 961
+      "tokens": 1024
     },
     {
       "file": "sections/181-otchet-analiz-sotrudnikov.md",
       "number": "16.1.2",
       "order": "181",
       "pages": "454-461",
+      "pdf_heading": "16.1.2. Отчет \"Анализ сотрудников\"",
+      "pdf_section": "16.1.2",
+      "source_refs": [
+        {
+          "global_pages": "454-461",
+          "pages": "454-461",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчет \"Анализ сотрудников\"",
-      "tokens": 4589
+      "tokens": 4652
     },
     {
       "file": "sections/182-otchet-analiz-razgovorov.md",
       "number": "16.1.3",
       "order": "182",
       "pages": "461-465",
+      "pdf_heading": "16.1.3. Отчет \"Анализ разговоров\"",
+      "pdf_section": "16.1.3",
+      "source_refs": [
+        {
+          "global_pages": "461-465",
+          "pages": "461-465",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчет \"Анализ разговоров\"",
-      "tokens": 2912
+      "tokens": 2975
     },
     {
       "file": "sections/183-analiz-po-chek-listam.md",
       "number": "16.1.4",
       "order": "183",
       "pages": "465-466",
+      "pdf_heading": "16.1.4. Анализ по чек-листам",
+      "pdf_section": "16.1.4",
+      "source_refs": [
+        {
+          "global_pages": "465-466",
+          "pages": "465-466",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Анализ по чек-листам",
-      "tokens": 842
+      "tokens": 905
     },
     {
       "file": "sections/184-konstruktor-chek-listov.md",
       "number": "16.1.4.1",
       "order": "184",
       "pages": "466-471",
+      "pdf_heading": "16.1.4.1. Конструктор чек-листов",
+      "pdf_section": "16.1.4.1",
+      "source_refs": [
+        {
+          "global_pages": "466-471",
+          "pages": "466-471",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Конструктор чек-листов",
-      "tokens": 3817
+      "tokens": 3882
     },
     {
       "file": "sections/185-statistika-po-chek-listam.md",
       "number": "16.1.4.2",
       "order": "185",
       "pages": "471-474",
+      "pdf_heading": "16.1.4.2. Статистика по чек-листам",
+      "pdf_section": "16.1.4.2",
+      "source_refs": [
+        {
+          "global_pages": "471-474",
+          "pages": "471-474",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Статистика по чек-листам",
-      "tokens": 1603
+      "tokens": 1668
     },
     {
       "file": "sections/186-lovec-insaytov.md",
       "number": "16.1.5",
       "order": "186",
       "pages": "474-476",
+      "pdf_heading": "16.1.5. Ловец инсайтов",
+      "pdf_section": "16.1.5",
+      "source_refs": [
+        {
+          "global_pages": "474-476",
+          "pages": "474-476",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Ловец инсайтов",
-      "tokens": 1458
+      "tokens": 1521
     },
     {
       "file": "sections/187-pokazateli-otchetov.md",
       "number": "16.1.6",
       "order": "187",
       "pages": "476-477",
+      "pdf_heading": "16.1.6. Показатели отчетов",
+      "pdf_section": "16.1.6",
+      "source_refs": [
+        {
+          "global_pages": "476-477",
+          "pages": "476-477",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Показатели отчетов",
-      "tokens": 1282
+      "tokens": 1345
     },
     {
       "file": "sections/188-tegirovanie-razgovorov-v-rechevoy-analit.md",
       "number": "16.2",
       "order": "188",
       "pages": "477-478",
+      "pdf_heading": "16.2. Тегирование разговоров в Речевoй аналитике",
+      "pdf_section": "16.2",
+      "source_refs": [
+        {
+          "global_pages": "477-478",
+          "pages": "477-478",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Тегирование разговоров в Речевoй аналитике",
-      "tokens": 948
+      "tokens": 1009
     },
     {
       "file": "sections/189-sozdanie-i-redaktirovanie-tematiki.md",
       "number": "16.2.1",
       "order": "189",
       "pages": "478-484",
+      "pdf_heading": "16.2.1. Создание и редактирование тематики",
+      "pdf_section": "16.2.1",
+      "source_refs": [
+        {
+          "global_pages": "478-484",
+          "pages": "478-484",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание и редактирование тематики",
-      "tokens": 3402
+      "tokens": 3465
     },
     {
       "file": "sections/190-primery-ispolzovaniya-tematik.md",
       "number": "16.2.2",
       "order": "190",
       "pages": "484",
+      "pdf_heading": "16.2.2. Примеры использования тематик",
+      "pdf_section": "16.2.2",
+      "source_refs": [
+        {
+          "global_pages": "484",
+          "pages": "484",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Примеры использования тематик",
-      "tokens": 406
+      "tokens": 465
     },
     {
       "file": "sections/191-pravila-i-sovety-po-nastroyke-tematik.md",
       "number": "16.2.3",
       "order": "191",
       "pages": "484-489",
+      "pdf_heading": "16.2.3. Правила и советы по настройке тематик",
+      "pdf_section": "16.2.3",
+      "source_refs": [
+        {
+          "global_pages": "484-489",
+          "pages": "484-489",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Правила и советы по настройке тематик",
-      "tokens": 2356
+      "tokens": 2419
     },
     {
       "file": "sections/192-ii-tematiki.md",
       "number": "16.2.4",
       "order": "192",
       "pages": "489-490",
+      "pdf_heading": "16.2.4. ИИ Тематики",
+      "pdf_section": "16.2.4",
+      "source_refs": [
+        {
+          "global_pages": "489-490",
+          "pages": "489-490",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "ИИ Тематики",
-      "tokens": 933
+      "tokens": 996
     },
     {
       "file": "sections/193-nastroyki-rechevoy-analitiki.md",
       "number": "16.3",
       "order": "193",
       "pages": "490-498",
+      "pdf_heading": "16.3. Настройки речевoй аналитики",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "490-498",
+          "pages": "490-498",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Настройки речевoй аналитики",
-      "tokens": 6179
+      "tokens": 6240
     },
     {
       "file": "sections/194-podklyuchennye-kanaly.md",
       "number": "16.4",
       "order": "194",
       "pages": "498",
+      "pdf_heading": "16.4. Подключенные каналы",
+      "pdf_section": "16.4",
+      "source_refs": [
+        {
+          "global_pages": "498",
+          "pages": "498",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Подключенные каналы",
-      "tokens": 128
+      "tokens": 185
     },
     {
       "file": "sections/195-poluchenie-zapisey-cherez-ftp.md",
       "number": "16.4.1",
       "order": "195",
       "pages": "498-500",
+      "pdf_heading": "16.4.1. Получение записей через FTP",
+      "pdf_section": "16.4.1",
+      "source_refs": [
+        {
+          "global_pages": "498-500",
+          "pages": "498-500",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Получение записей через FTP",
-      "tokens": 1455
+      "tokens": 1518
     },
     {
       "file": "sections/196-zayavki-na-uluchshenie-kachestva-raspozn.md",
       "number": "16.5",
       "order": "196",
       "pages": "500-501",
+      "pdf_heading": "16.5. Заявки на улучшение качества распознавания",
+      "pdf_section": "16.5",
+      "source_refs": [
+        {
+          "global_pages": "500-501",
+          "pages": "500-501",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Заявки на улучшение качества распознавания",
-      "tokens": 242
+      "tokens": 303
     },
     {
       "file": "sections/197-dobavlenie-slov.md",
       "number": "16.5.1",
       "order": "197",
       "pages": "501-502",
+      "pdf_heading": "16.5.1. Добавление слов",
+      "pdf_section": "16.5.1",
+      "source_refs": [
+        {
+          "global_pages": "501-502",
+          "pages": "501-502",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Добавление слов",
-      "tokens": 390
+      "tokens": 453
     },
     {
       "file": "sections/198-na-osnove-audio.md",
       "number": "16.5.2",
       "order": "198",
       "pages": "502-504",
+      "pdf_heading": "16.5.2. На основе аудио",
+      "pdf_section": "16.5.2",
+      "source_refs": [
+        {
+          "global_pages": "502-504",
+          "pages": "502-504",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "На основе аудио",
-      "tokens": 462
+      "tokens": 525
     },
     {
       "file": "sections/199-tekstovye-kommunikacii.md",
       "number": "16.6",
       "order": "199",
       "pages": "504",
+      "pdf_heading": "16.6. Текстовые коммуникации",
+      "pdf_section": "16.6",
+      "source_refs": [
+        {
+          "global_pages": "504",
+          "pages": "504",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Текстовые коммуникации",
-      "tokens": 284
+      "tokens": 341
     },
     {
       "file": "sections/200-spisok-tekstovyh-kommunikaciy.md",
       "number": "16.6.1",
       "order": "200",
       "pages": "504-507",
+      "pdf_heading": "16.6.1. Список текстовых коммуникаций",
+      "pdf_section": "16.6.1",
+      "source_refs": [
+        {
+          "global_pages": "504-507",
+          "pages": "504-507",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Список текстовых коммуникаций",
-      "tokens": 1237
+      "tokens": 1300
     },
     {
       "file": "sections/201-metki-na-oscillogramme-dialoga.md",
       "number": "16.6.2",
       "order": "201",
       "pages": "507-508",
+      "pdf_heading": "16.6.2. Метки на осциллограмме диалога",
+      "pdf_section": "16.6.2",
+      "source_refs": [
+        {
+          "global_pages": "507-508",
+          "pages": "507-508",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Метки на осциллограмме диалога",
-      "tokens": 1038
+      "tokens": 1101
     },
     {
       "file": "sections/202-ii-pomoschniki.md",
       "number": "16.7",
       "order": "202",
       "pages": "508-514",
+      "pdf_heading": "16.7. ИИ Помощники",
+      "pdf_section": "16.7",
+      "source_refs": [
+        {
+          "global_pages": "508-514",
+          "pages": "508-514",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "ИИ Помощники",
-      "tokens": 2524
+      "tokens": 2585
     },
     {
       "file": "sections/203-konstruktor-otchetov.md",
       "number": "17",
       "order": "203",
       "pages": "514-516",
+      "pdf_heading": "17. Конструктор отчетов",
+      "pdf_section": "17",
+      "source_refs": [
+        {
+          "global_pages": "514-516",
+          "pages": "514-516",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Конструктор отчетов",
-      "tokens": 1187
+      "tokens": 1246
     },
     {
       "file": "sections/204-primer-otcheta.md",
       "number": "17.1",
       "order": "204",
       "pages": "516-518",
+      "pdf_heading": "17.1. Пример отчета",
+      "pdf_section": "17.1",
+      "source_refs": [
+        {
+          "global_pages": "516-518",
+          "pages": "516-518",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пример отчета",
-      "tokens": 424
+      "tokens": 485
     },
     {
       "file": "sections/205-otchety.md",
       "number": "17.2",
       "order": "205",
       "pages": "518-519",
+      "pdf_heading": "17.2. Отчеты",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "518-519",
+          "pages": "518-519",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Отчеты",
-      "tokens": 1489
+      "tokens": 1550
     },
     {
       "file": "sections/206-dobavlenie-otcheta.md",
       "number": "17.2.1",
       "order": "206",
       "pages": "519-522",
+      "pdf_heading": "17.2.1. Добавление отчета",
+      "pdf_section": "17.2.1",
+      "source_refs": [
+        {
+          "global_pages": "519-522",
+          "pages": "519-522",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Добавление отчета",
-      "tokens": 1949
+      "tokens": 2012
     },
     {
       "file": "sections/207-prosmotr-otcheta.md",
       "number": "17.2.2",
       "order": "207",
       "pages": "522-523",
+      "pdf_heading": "17.2.2. Просмотр отчета",
+      "pdf_section": "17.2.2",
+      "source_refs": [
+        {
+          "global_pages": "522-523",
+          "pages": "522-523",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Просмотр отчета",
-      "tokens": 1260
+      "tokens": 1323
     },
     {
       "file": "sections/208-dannye.md",
       "number": "17.3",
       "order": "208",
       "pages": "523-524",
+      "pdf_heading": "17.3. Данные",
+      "pdf_section": "17.3",
+      "source_refs": [
+        {
+          "global_pages": "523-524",
+          "pages": "523-524",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Данные",
-      "tokens": 221
+      "tokens": 282
     },
     {
       "file": "sections/209-parametry.md",
       "number": "17.3.1",
       "order": "209",
       "pages": "524",
+      "pdf_heading": "17.3.1. Параметры",
+      "pdf_section": "17.3.1",
+      "source_refs": [
+        {
+          "global_pages": "524",
+          "pages": "524",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Параметры",
-      "tokens": 131
+      "tokens": 190
     },
     {
       "file": "sections/210-sistemnye-parametry.md",
       "number": "17.3.1.1",
       "order": "210",
       "pages": "524-525",
+      "pdf_heading": "17.3.1.1. Системные параметры",
+      "pdf_section": "17.3.1.1",
+      "source_refs": [
+        {
+          "global_pages": "524-525",
+          "pages": "524-525",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Системные параметры",
-      "tokens": 1414
+      "tokens": 1479
     },
     {
       "file": "sections/211-polzovatelskie-parametry.md",
       "number": "17.3.1.2",
       "order": "211",
       "pages": "525-526",
+      "pdf_heading": "17.3.1.2. Пользовательские параметры",
+      "pdf_section": "17.3.1.2",
+      "source_refs": [
+        {
+          "global_pages": "525-526",
+          "pages": "525-526",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Пользовательские параметры",
-      "tokens": 1087
+      "tokens": 1152
     },
     {
       "file": "sections/212-sozdanie-polzovatelskogo-parametra.md",
       "number": "17.3.1.3",
       "order": "212",
       "pages": "526-528",
+      "pdf_heading": "17.3.1.3. Создание пользовательского параметра",
+      "pdf_section": "17.3.1.3",
+      "source_refs": [
+        {
+          "global_pages": "526-528",
+          "pages": "526-528",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание пользовательского параметра",
-      "tokens": 785
+      "tokens": 850
     },
     {
       "file": "sections/213-suschnosti.md",
       "number": "17.3.2",
       "order": "213",
       "pages": "528-532",
+      "pdf_heading": "17.3.2. Сущности",
+      "pdf_section": "17.3.2",
+      "source_refs": [
+        {
+          "global_pages": "528-532",
+          "pages": "528-532",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Сущности",
-      "tokens": 4928
+      "tokens": 4991
     },
     {
       "file": "sections/214-sozdanie-suschnosti.md",
       "number": "17.3.2.1",
       "order": "214",
       "pages": "532-535",
+      "pdf_heading": "17.3.2.1. Создание сущности",
+      "pdf_section": "17.3.2.1",
+      "source_refs": [
+        {
+          "global_pages": "532-535",
+          "pages": "532-535",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание сущности",
-      "tokens": 1819
+      "tokens": 1884
     },
     {
       "file": "sections/215-pokazateli.md",
       "number": "17.3.3",
       "order": "215",
       "pages": "535-544",
+      "pdf_heading": "17.3.3. Показатели",
+      "pdf_section": "17.3.3",
+      "source_refs": [
+        {
+          "global_pages": "535-544",
+          "pages": "535-544",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Показатели",
-      "tokens": 8056
+      "tokens": 8119
     },
     {
       "file": "sections/216-sozdanie-pokazatelya.md",
       "number": "17.3.3.1",
       "order": "216",
       "pages": "544-547",
+      "pdf_heading": "17.3.3.1. Создание показателя",
+      "pdf_section": "17.3.3.1",
+      "source_refs": [
+        {
+          "global_pages": "544-547",
+          "pages": "544-547",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Создание показателя",
-      "tokens": 769
+      "tokens": 834
     },
     {
       "file": "sections/217-prilozhenie-1-upravlenie-pravami-dostupa.md",
       "number": "18",
       "order": "217",
       "pages": "547-552",
+      "pdf_heading": "18. Приложение 1. Управление правами доступа",
+      "pdf_section": "18",
+      "source_refs": [
+        {
+          "global_pages": "547-552",
+          "pages": "547-552",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 1. Управление правами доступа",
-      "tokens": 3648
+      "tokens": 3707
     },
     {
       "file": "sections/218-roli-i-prava-dostupa-lk-vats.md",
       "number": "18.1",
       "order": "218",
       "pages": "552-566",
+      "pdf_heading": "18.1. Роли и права доступа ЛК ВАТС",
+      "pdf_section": "18.1",
+      "source_refs": [
+        {
+          "global_pages": "552-566",
+          "pages": "552-566",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Роли и права доступа ЛК ВАТС",
-      "tokens": 13004
+      "tokens": 13065
     },
     {
       "file": "sections/219-vkladka-vats.md",
       "number": "18.2",
       "order": "219",
       "pages": "566-571",
+      "pdf_heading": "18.2. Вкладка ВАТС",
+      "pdf_section": "18.2",
+      "source_refs": [
+        {
+          "global_pages": "566-571",
+          "pages": "566-571",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка ВАТС",
-      "tokens": 3408
+      "tokens": 3469
     },
     {
       "file": "sections/220-vkladka-obrabotka-zvonkov.md",
       "number": "18.3",
       "order": "220",
       "pages": "571-575",
+      "pdf_heading": "18.3. Вкладка \"Обработка звонков\"",
+      "pdf_section": "18.3",
+      "source_refs": [
+        {
+          "global_pages": "571-575",
+          "pages": "571-575",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка \"Обработка звонков\"",
-      "tokens": 3048
+      "tokens": 3109
     },
     {
       "file": "sections/221-vkladka-nastroyka-ats.md",
       "number": "18.4",
       "order": "221",
       "pages": "575-577",
+      "pdf_heading": "18.4. Вкладка \"Настройка АТС\"",
+      "pdf_section": "18.4",
+      "source_refs": [
+        {
+          "global_pages": "575-577",
+          "pages": "575-577",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка \"Настройка АТС\"",
-      "tokens": 1760
+      "tokens": 1821
     },
     {
       "file": "sections/222-vkladka-finansy.md",
       "number": "18.5",
       "order": "222",
       "pages": "577-579",
+      "pdf_heading": "18.5. Вкладка \"Финансы\"",
+      "pdf_section": "18.5",
+      "source_refs": [
+        {
+          "global_pages": "577-579",
+          "pages": "577-579",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка \"Финансы\"",
-      "tokens": 876
+      "tokens": 937
     },
     {
       "file": "sections/223-vkladka-smena-versii.md",
       "number": "18.6",
       "order": "223",
       "pages": "579",
+      "pdf_heading": "18.6. Вкладка \"Смена версии\"",
+      "pdf_section": "18.6",
+      "source_refs": [
+        {
+          "global_pages": "579",
+          "pages": "579",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка \"Смена версии\"",
-      "tokens": 221
+      "tokens": 278
     },
     {
       "file": "sections/224-vkladka-vidzhety.md",
       "number": "18.7",
       "order": "224",
       "pages": "579-580",
+      "pdf_heading": "18.7. Вкладка \"Виджеты\"",
+      "pdf_section": "18.7",
+      "source_refs": [
+        {
+          "global_pages": "579-580",
+          "pages": "579-580",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Вкладка \"Виджеты\"",
-      "tokens": 248
+      "tokens": 309
     },
     {
       "file": "sections/225-prilozhenie-2-roli-i-prava-dostupa-konta.md",
       "number": "19",
       "order": "225",
       "pages": "580-595",
+      "pdf_heading": "19. Приложение 2: Роли и права доступа Контакт-центра",
+      "pdf_section": "19",
+      "source_refs": [
+        {
+          "global_pages": "580-595",
+          "pages": "580-595",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 2: Роли и права доступа Контакт-центра",
-      "tokens": 13251
+      "tokens": 13310
     },
     {
       "file": "sections/226-prilozhenie-3-otchety-ob-oshibkah.md",
       "number": "20",
       "order": "226",
       "pages": "595-597",
+      "pdf_heading": "20. Приложение 3: Отчеты об ошибках",
+      "pdf_section": "20",
+      "source_refs": [
+        {
+          "global_pages": "595-597",
+          "pages": "595-597",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 3: Отчеты об ошибках",
-      "tokens": 1360
+      "tokens": 1419
     },
     {
       "file": "sections/227-prilozhenie-4-associaciya-so-ssylkami-ca.md",
       "number": "21",
       "order": "227",
       "pages": "597-601",
+      "pdf_heading": "21. Приложение 4: Ассоциация со ссылками «callto» и «tel»",
+      "pdf_section": "21",
+      "source_refs": [
+        {
+          "global_pages": "597-601",
+          "pages": "597-601",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 4: Ассоциация со ссылками «callto» и «tel»",
-      "tokens": 2788
+      "tokens": 2847
     },
     {
       "file": "sections/228-prilozhenie-5-blokirovka-kontakt-centra.md",
       "number": "22",
       "order": "228",
       "pages": "601",
+      "pdf_heading": "22. Приложение 5: Блокировка Контакт-центра",
+      "pdf_section": "22",
+      "source_refs": [
+        {
+          "global_pages": "601",
+          "pages": "601",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 5: Блокировка Контакт-центра",
-      "tokens": 273
+      "tokens": 328
     },
     {
       "file": "sections/229-prilozhenie-6-dopolnitelnye-vozmozhnosti.md",
       "number": "23",
       "order": "229",
       "pages": "602-608",
+      "pdf_heading": "23. Приложение 6: Дополнительные возможности Контакт-Центра",
+      "pdf_section": "23",
+      "source_refs": [
+        {
+          "global_pages": "602-608",
+          "pages": "602-608",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 6: Дополнительные возможности Контакт-Центра",
-      "tokens": 5035
+      "tokens": 5094
     },
     {
       "file": "sections/230-prilozhenie-7-vzaimodeystvie-kc-so-storo.md",
       "number": "24",
       "order": "230",
       "pages": "608-609",
+      "pdf_heading": "24. Приложение 7. Взаимодействие КЦ со сторонними программами",
+      "pdf_section": "24",
+      "source_refs": [
+        {
+          "global_pages": "608-609",
+          "pages": "608-609",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 7. Взаимодействие КЦ со сторонними программами",
-      "tokens": 693
+      "tokens": 752
     },
     {
       "file": "sections/231-prilozhenie-8-ustranenie-nepoladok.md",
       "number": "25",
       "order": "231",
       "pages": "609-614",
+      "pdf_heading": "25. Приложение 8. Устранение неполадок",
+      "pdf_section": "25",
+      "source_refs": [
+        {
+          "global_pages": "609-614",
+          "pages": "609-614",
+          "part": 1,
+          "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        }
+      ],
       "title": "Приложение 8. Устранение неполадок",
-      "tokens": 1418
+      "tokens": 1477
     }
   ],
   "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf",
+  "source_pdfs": [
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+  ],
   "source_sha256": "78d5a99215cdf585c9543a46b6d72a0bd95d82f2d90dbfa3f97531a394bcc552",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 614,
+      "source_pdf": "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf",
+      "source_sha256": "78d5a99215cdf585c9543a46b6d72a0bd95d82f2d90dbfa3f97531a394bcc552"
+    }
+  ],
   "table_count": 524,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 20604,
-  "tokens_total": 415179
+  "tokens_index": 22645,
+  "tokens_total": 429565
 }

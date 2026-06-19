@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "10.3"
+pdf_section: "10.3"
 title: "Настройка полей"
+pdf_heading: "10.3. Настройка полей"
 pages: "325-331"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 325-331"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"325-331","global_pages":"325-331"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3080
+tokens: 3141
 status: extracted
 ai-generated: true
 ---
 # 10.3. Настройка полей
+
+> Трассировка: PDF §10.3 · сквозные стр. 325-331 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.325-331.
 
 Кнопка Добавить поле предназначена для добавления пользовательских полей в Контакты. Кнопка Настроить порядок полей позволяет настроить порядок, в котором пользовательские поля будут отображаться в карточке клиента и быстрой карточке в разделе "Мои обращения". По умолчанию отображаются только поля, помеченные как "Обязательно для заполнения".
 

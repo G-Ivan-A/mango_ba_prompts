@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "13.3"
+pdf_section: "13.3"
 title: "Чаты"
+pdf_heading: "13.3. Чаты"
 pages: "398-401"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 398-401"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"398-401","global_pages":"398-401"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2794
+tokens: 2855
 status: extracted
 ai-generated: true
 ---
 # 13.3. Чаты
+
+> Трассировка: PDF §13.3 · сквозные стр. 398-401 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.398-401.
 
 Чаты предназначены для общения сотрудников при помощи приложения Контакт-центр MANGO OFFICE, и также мобильного или десктопного приложения M. TALKER. Также чаты можно использовать для обмена важными сообщениями между руководителем и оператором. Например, руководитель может помочь оператору во время работы со сложными клиентами.
 

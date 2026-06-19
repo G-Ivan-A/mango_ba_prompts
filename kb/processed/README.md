@@ -10,6 +10,7 @@ related_artifacts:
   - "kb/USAGE.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/117"
 ---
 
 # `kb/processed/` — результаты извлечения (для агентов)
@@ -26,11 +27,11 @@ related_issues:
 
 ```
 kb/processed/<doc-slug>/
-├── index.md            ← карта разделов: раздел → файл → стр. → токены → «когда обращаться»
-├── meta.json           ← метаданные: инструмент, sha256 источника, счётчики, токены
+├── index.md            ← карта разделов: раздел → файл → стр. → источник → токены
+├── meta.json           ← метаданные: источники/части, sha256, счётчики, токены
 ├── sections/
 │   ├── 00-...md        ← титульная часть
-│   ├── 01-...md        ← раздел = чанк (frontmatter: id, pages, tokens, source)
+│   ├── 01-...md        ← раздел = чанк (frontmatter: id, pages, source_refs)
 │   └── NN-...md
 └── images/
     └── NN-...-1.png    ← извлечённые растровые изображения, ссылки — внутри разделов
@@ -45,12 +46,22 @@ kb/processed/<doc-slug>/
 id: <doc-slug>-NN-<section-slug>   # стабильный идентификатор (будущий chunk-id для RAG)
 doc_code: CC                       # короткий код документа для цитат
 section: "4"                       # номер раздела в документе
-pages: "5"                         # страницы источника (для цитаты [CC, §4, с.5])
+pdf_section: "4"                   # номер из PDF/outline или ближайший родитель
+pdf_heading: "4 Обращения"         # исходный заголовок PDF/bookmark
+pages: "5"                         # сквозные страницы документа
+source_part: "1"                   # часть split-документа
+source_pages: "ч.1: 5"             # локальные страницы внутри PDF-части
+source_refs: '[{"source_pdf":"kb/sources/.../*.pdf","part":1,"pages":"5","global_pages":"5"}]'
 tokens: 378                        # реальные токены (метод — token_method)
-source: kb/sources/.../*.pdf       # откуда извлечено
+source: kb/sources/.../*.pdf       # первичный PDF-источник раздела
 status: extracted
 ai-generated: true
 ```
+
+Сразу под H1 раздела выводится человекочитаемая строка `Трассировка` с номером
+PDF-раздела, сквозными страницами, PDF-частями и локальными страницами. Для
+multi-part документов `pages` остаётся сквозной пагинацией всего руководства, а
+`source_refs` хранит точный путь к части и локальный диапазон страниц.
 
 Это соответствует pre-RAG-механике стандарта БЗ (ADR-007, правила R1–R4):
 каждый раздел = файл = чанк; `index.md` = retrieval-шаг; адреса `path#anchor`
@@ -61,7 +72,8 @@ ai-generated: true
 | Документ | Статус |
 | --- | --- |
 | [`contact-center-manual-sample/`](contact-center-manual-sample/index.md) | извлечён из синтетической фикстуры (эксперимент issue #111) |
-| `contact-center-manual/` | появится, когда добавят реальный `CC_manual_1.26.23.pdf` (см. [манифест](../sources/contact-center-manual/source.md)) |
+| [`mango-cc-manual/`](mango-cc-manual/index.md) | извлечён из реального руководства КЦ v1.26.23 |
+| [`mango-lk-manual/`](mango-lk-manual/index.md) | извлечён из 5 PDF-частей руководства ЛК ВАТС v1.21 |
 
 ## Источники
 

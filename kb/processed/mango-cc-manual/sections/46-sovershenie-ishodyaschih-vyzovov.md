@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.3"
+pdf_section: "2.5.3"
 title: "Совершение исходящих вызовов"
+pdf_heading: "2.5.3. Совершение исходящих вызовов"
 pages: "100-101"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 100-101"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"100-101","global_pages":"100-101"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 817
+tokens: 880
 status: extracted
 ai-generated: true
 ---
 # 2.5.3. Совершение исходящих вызовов
+
+> Трассировка: PDF §2.5.3 · сквозные стр. 100-101 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.100-101.
 
 Чтобы позвонить, введите нужный номер (способ связи) в поле клавиатурного блока. Кнопка
 

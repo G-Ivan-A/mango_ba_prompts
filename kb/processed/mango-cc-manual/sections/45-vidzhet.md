@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.2"
+pdf_section: "2.5.2"
 title: "Виджет"
+pdf_heading: "2.5.2. Виджет"
 pages: "100"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 100"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"100","global_pages":"100"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 394
+tokens: 453
 status: extracted
 ai-generated: true
 ---
 # 2.5.2. Виджет
+
+> Трассировка: PDF §2.5.2 · сквозные стр. 100 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.100.
 
 Панель телефонии отображает только один вызов в состоянии "Разговор". Остальные принятые вызовы отображаются в виде виджетов. Расположите виджет на экране в удобном для вас месте, и система запомнит его размещение для отображения последующих вызовов. Также виджет отображается на экране в то время, когда: • свернута панель управления телефонии; • окно программы не активно; • окно программы свернуто.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "9.1"
+pdf_section: "9.1"
 title: "История вызовов"
+pdf_heading: "9.1. История вызовов"
 pages: "277-281"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 277-281"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"277-281","global_pages":"277-281"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2155
+tokens: 2216
 status: extracted
 ai-generated: true
 ---
 # 9.1. История вызовов
+
+> Трассировка: PDF §9.1 · сквозные стр. 277-281 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.277-281.
 
 При первом запуске программы отображается журнал вызовов за последние 2 дня по текущему пользователю, отсортированный по времени вызова, без группировки.
 

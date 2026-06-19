@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "5"
+pdf_section: "5"
 title: "Сделки"
+pdf_heading: "5. Сделки"
 pages: "166-170"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 166-170"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"166-170","global_pages":"166-170"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2958
+tokens: 3017
 status: extracted
 ai-generated: true
 ---
 # 5. Сделки
+
+> Трассировка: PDF §5 · сквозные стр. 166-170 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.166-170.
 
 | Модуль "Сделки" отображается, если у пользователя Контакт-центра имеются |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

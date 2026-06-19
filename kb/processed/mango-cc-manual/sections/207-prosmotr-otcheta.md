@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "17.2.2"
+pdf_section: "17.2.2"
 title: "Просмотр отчета"
+pdf_heading: "17.2.2. Просмотр отчета"
 pages: "522-523"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 522-523"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"522-523","global_pages":"522-523"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1260
+tokens: 1323
 status: extracted
 ai-generated: true
 ---
 # 17.2.2. Просмотр отчета
+
+> Трассировка: PDF §17.2.2 · сквозные стр. 522-523 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.522-523.
 
 На вкладке "Отчеты" Конструктора отчетов выберите строку отчета, который необходимо просмотреть, и нажмите на его название или на пиктограмму просмотра "глаз" .
 

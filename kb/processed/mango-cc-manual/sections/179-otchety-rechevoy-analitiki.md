@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1"
+pdf_section: "16.1"
 title: "Отчеты речевой аналитики"
+pdf_heading: "16.1. Отчеты речевой аналитики"
 pages: "452-453"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 452-453"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"452-453","global_pages":"452-453"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 422
+tokens: 483
 status: extracted
 ai-generated: true
 ---
 # 16.1. Отчеты речевой аналитики
+
+> Трассировка: PDF §16.1 · сквозные стр. 452-453 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.452-453.
 
 Вкладка Отчеты содержит детальную аналитическую информацию о распознанных вызовах в соответствии с заданными параметрами фильтрации. В подразделе Мои отчеты размещаются виджеты отчетов (не более 10-ти) с настроенными параметрами фильтрации, для быстрого перехода. Чтобы добавить новый виджет, нажмите кнопку «Добавить отчет», установите фильтры отчета.
 

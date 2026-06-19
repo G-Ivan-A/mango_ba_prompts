@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.12"
+pdf_section: "2.5.1.3.12"
 title: "Статусы сотрудников"
+pdf_heading: "2.5.1.3.12. Статусы сотрудников"
 pages: "78-79"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 78-79"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"78-79","global_pages":"78-79"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1034
+tokens: 1101
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.12. Статусы сотрудников
+
+> Трассировка: PDF §2.5.1.3.12 · сквозные стр. 78-79 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.78-79.
 
 | Добавление пользовательских статусов возможно, если подключена услуга "Настройка |  |
 | --- | --- |

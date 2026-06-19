@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "7.5.2"
+pdf_section: "7.5.2"
 title: "Текст"
+pdf_heading: "7.5.2. Текст"
 pages: "239-242"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 239-242"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"239-242","global_pages":"239-242"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3064
+tokens: 3127
 status: extracted
 ai-generated: true
 ---
 # 7.5.2. Текст
+
+> Трассировка: PDF §7.5.2 · сквозные стр. 239-242 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.239-242.
 
 Отчёт «Текст» предназначен для анализа входящих и исходящих текстовых сообщений. Он позволяет получать наглядную аналитику по текстовым каналам в отчёте ППГ с разбивкой по группам сотрудников. Это дает возможность отслеживать выполнение SLA, выявлять пропущенные диалоги и оценивать эффективность работы команд. Агрегированные табличные данные помогут быстро понять ситуацию и использовать полученную информацию для принятия решений и улучшения рабочих процессов.
 

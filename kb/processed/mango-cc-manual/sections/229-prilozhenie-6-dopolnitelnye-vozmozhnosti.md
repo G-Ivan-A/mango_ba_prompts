@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "23"
+pdf_section: "23"
 title: "Приложение 6: Дополнительные возможности Контакт-Центра"
+pdf_heading: "23. Приложение 6: Дополнительные возможности Контакт-Центра"
 pages: "602-608"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 602-608"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"602-608","global_pages":"602-608"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 5035
+tokens: 5094
 status: extracted
 ai-generated: true
 ---
 # 23. Приложение 6: Дополнительные возможности Контакт-Центра
+
+> Трассировка: PDF §23 · сквозные стр. 602-608 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.602-608.
 
 ![Изображение, стр. 602](../images/229-prilozhenie-6-dopolnitelnye-vozmozhnosti-1.jpeg)
 

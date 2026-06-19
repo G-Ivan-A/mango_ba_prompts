@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "3.1"
+pdf_section: "3.1"
 title: "Создание и настройка виджета"
+pdf_heading: "3.1. Создание и настройка виджета"
 pages: "119-126"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 119-126"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"119-126","global_pages":"119-126"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 7691
+tokens: 7752
 status: extracted
 ai-generated: true
 ---
 # 3.1. Создание и настройка виджета
+
+> Трассировка: PDF §3.1 · сквозные стр. 119-126 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.119-126.
 
 Для добавления на вкладку Dashboard нового виджета нажмите кнопку Добавить виджет. При создании нового виджета необходимо настроить показатели данных для быстрого формирования отчета о текущем состоянии системы.
 

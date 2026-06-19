@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.1.1.3"
+pdf_section: "15.1.1.3"
 title: "Время ожидания"
+pdf_heading: "15.1.1.3. Время ожидания"
 pages: "425-426"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 425-426"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"425-426","global_pages":"425-426"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 805
+tokens: 870
 status: extracted
 ai-generated: true
 ---
 # 15.1.1.3. Время ожидания
+
+> Трассировка: PDF §15.1.1.3 · сквозные стр. 425-426 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.425-426.
 
 Отчет «Время ожидания» отображает информацию о времени ожидания пропущенного внешнего входящего вызова, поступившего за выбранный временной период через выбранные линии. Звонки, пропущенные в IVR и не дошедшие до групп, в отчет не включаются. В верхней части отчета приведены данные о средней продолжительности вызовов в виде инфографики. В зависимости от значения времени ожидания формируется текст совета.
 

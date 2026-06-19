@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.1.1.1"
+pdf_section: "15.1.1.1"
 title: "Пропущенные звонки"
+pdf_heading: "15.1.1.1. Пропущенные звонки"
 pages: "422-423"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 422-423"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"422-423","global_pages":"422-423"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 331
+tokens: 396
 status: extracted
 ai-generated: true
 ---
 # 15.1.1.1. Пропущенные звонки
+
+> Трассировка: PDF §15.1.1.1 · сквозные стр. 422-423 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.422-423.
 
 Отчет «Пропущенные звонки» в графическом виде отображает информацию о входящих звонках по датам выбранного диапазона через выбранные линии с участием выбранных групп.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3"
+pdf_section: "2.5.1.3"
 title: "Настройки"
+pdf_heading: "2.5.1.3. Настройки"
 pages: "52-54"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 52-54"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"52-54","global_pages":"52-54"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1217
+tokens: 1282
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3. Настройки
+
+> Трассировка: PDF §2.5.1.3 · сквозные стр. 52-54 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.52-54.
 
 Окно Настройки позволяет создавать новые учетные записи и осуществлять настройку Контакт-центра MANGO OFFICE в соответствии с ролью пользователя и кругом его обязанностей.
 

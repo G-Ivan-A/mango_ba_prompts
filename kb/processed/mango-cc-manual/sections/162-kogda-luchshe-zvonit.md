@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.1.2.2"
+pdf_section: "15.1.2.2"
 title: "Когда лучше звонить"
+pdf_heading: "15.1.2.2. Когда лучше звонить"
 pages: "432-434"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 432-434"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"432-434","global_pages":"432-434"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 560
+tokens: 625
 status: extracted
 ai-generated: true
 ---
 # 15.1.2.2. Когда лучше звонить
+
+> Трассировка: PDF §15.1.2.2 · сквозные стр. 432-434 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.432-434.
 
 ![Изображение, стр. 433](../images/162-kogda-luchshe-zvonit-1.jpeg)
 

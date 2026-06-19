@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "11.2"
+pdf_section: "11.2"
 title: "Настройка полей"
+pdf_heading: "11.2. Настройка полей"
 pages: "337-339"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 337-339"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"337-339","global_pages":"337-339"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1322
+tokens: 1383
 status: extracted
 ai-generated: true
 ---
 # 11.2. Настройка полей
+
+> Трассировка: PDF §11.2 · сквозные стр. 337-339 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.337-339.
 
 На вкладке настраиваются пользовательские поля, информация которых используется во время исходящего обзвона. Имя пользовательского поля является переменной, которую можно добавить при настройке кампаний Исходящего обзвона.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.4.1"
+pdf_section: "16.4.1"
 title: "Получение записей через FTP"
+pdf_heading: "16.4.1. Получение записей через FTP"
 pages: "498-500"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 498-500"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"498-500","global_pages":"498-500"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1455
+tokens: 1518
 status: extracted
 ai-generated: true
 ---
 # 16.4.1. Получение записей через FTP
+
+> Трассировка: PDF §16.4.1 · сквозные стр. 498-500 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.498-500.
 
 | Вкладка доступна, если к Личному кабинету пользователя ВАТС подключена услуга |
 | --- |

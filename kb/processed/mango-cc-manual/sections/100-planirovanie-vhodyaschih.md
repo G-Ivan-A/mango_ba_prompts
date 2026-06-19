@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "8.2"
+pdf_section: "8.2"
 title: "Планирование входящих"
+pdf_heading: "8.2. Планирование входящих"
 pages: "251-256"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 251-256"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"251-256","global_pages":"251-256"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3488
+tokens: 3549
 status: extracted
 ai-generated: true
 ---
 # 8.2. Планирование входящих
+
+> Трассировка: PDF §8.2 · сквозные стр. 251-256 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.251-256.
 
 | Раздел отображается только для пользовательских ролей Администратор и Руководитель |
 | --- |

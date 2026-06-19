@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "6"
+pdf_section: "6"
 title: "Задачи"
+pdf_heading: "6. Задачи"
 pages: "203"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 203"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"203","global_pages":"203"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 669
+tokens: 724
 status: extracted
 ai-generated: true
 ---
 # 6. Задачи
+
+> Трассировка: PDF §6 · сквозные стр. 203 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.203.
 
 | Модуль Задачи доступен, если на продукте пользователя подключена соответствующая |
 | --- |

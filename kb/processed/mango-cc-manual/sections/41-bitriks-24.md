@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.20.1"
+pdf_section: "2.5.1.3.20.1"
 title: "Битрикс 24"
+pdf_heading: "2.5.1.3.20.1. Битрикс 24"
 pages: "91"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 91"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"91","global_pages":"91"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 380
+tokens: 445
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.20.1. Битрикс 24
+
+> Трассировка: PDF §2.5.1.3.20.1 · сквозные стр. 91 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.91.
 
 Для отправки данных из Контакт-центра в CRM Битрикс 24 необходимо подключить услугу Интеграции в Личном кабинете пользователя ВАТС, а также настроить API коннектор. Подключение осуществляется в разделе "Интеграции" → кнопка "API коннектор" → подраздел "Дополнительные параметры API". Установите галочку в чекбоксе "Отправка данных о лиде из Контакт-центра". Перезапустите приложение Контакт-центр MANGO OFFICE для обновления настроек.
 
