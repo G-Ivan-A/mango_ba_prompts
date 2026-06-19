@@ -8,23 +8,23 @@ pdf_section: "9.1.2"
 title: "Прослушивание разговоров и повторные вызовы"
 pdf_heading: "9.1.2. Прослушивание разговоров и повторные вызовы"
 pages: "285-286"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 285-286"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"285-286","global_pages":"285-286"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf
+source_part: "3"
+source_pages: "ч.3: 83-84"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf","part":3,"pages":"83-84","global_pages":"285-286"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 877
+tokens: 878
 status: extracted
 ai-generated: true
 ---
 # 9.1.2. Прослушивание разговоров и повторные вызовы
 
-> Трассировка: PDF §9.1.2 · сквозные стр. 285-286 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.285-286.
+> Трассировка: PDF §9.1.2 · сквозные стр. 285-286 · источники: ч.3 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf` с.83-84.
 
 Вы можете прослушивать записи разговоров и осуществлять повторные вызовы непосредственно в рабочей области Истории вызовов.
 
-![Изображение, стр. 286](../images/111-proslushivanie-razgovorov-i-povtornye-vy-1.jpeg)
+![Изображение, стр. 286](../images/111-proslushivanie-razgovorov-i-povtornye-vy-1.png)
 
 | Возможность прослушивания вызовов зависит от роли пользователя. Аналогичные |  |  |  |  |
 | --- | --- | --- | --- | --- |

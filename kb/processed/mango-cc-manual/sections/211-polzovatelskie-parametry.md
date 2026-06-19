@@ -8,25 +8,25 @@ pdf_section: "17.3.1.2"
 title: "Пользовательские параметры"
 pdf_heading: "17.3.1.2. Пользовательские параметры"
 pages: "525-526"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 525-526"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"525-526","global_pages":"525-526"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 20-21"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"20-21","global_pages":"525-526"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1152
+tokens: 1153
 status: extracted
 ai-generated: true
 ---
 # 17.3.1.2. Пользовательские параметры
 
-> Трассировка: PDF §17.3.1.2 · сквозные стр. 525-526 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.525-526.
+> Трассировка: PDF §17.3.1.2 · сквозные стр. 525-526 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.20-21.
 
 Пользовательские параметры – это параметры, созданные пользователем для решения конкретных задач.
 
 ![Изображение, стр. 525](../images/211-polzovatelskie-parametry-1.jpeg)
 
-![Изображение, стр. 526](../images/211-polzovatelskie-parametry-2.jpeg)
+![Изображение, стр. 526](../images/211-polzovatelskie-parametry-2.png)
 
 Элементы вкладки: 1) Выбор параметров для проведения операции удаления – общий чекбокс позволяет выбрать все параметры, а чекбоксы в каждой строке позволяют выбрать конкретные параметры для действий. 2) Название параметра – уникальное название параметра, которое идентифицирует или описывает его содержание. 3) Дата изменения параметра – дата и время последнего изменения данного параметра. 4) Дата создания параметра – дата и время создания данного параметра.
 

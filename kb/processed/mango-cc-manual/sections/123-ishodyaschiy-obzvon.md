@@ -8,19 +8,19 @@ pdf_section: "11"
 title: "Исходящий обзвон"
 pdf_heading: "11. Исходящий обзвон"
 pages: "331"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 331"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"331","global_pages":"331"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf
+source_part: "4"
+source_pages: "ч.4: 28"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf","part":4,"pages":"28","global_pages":"331"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 959
+tokens: 960
 status: extracted
 ai-generated: true
 ---
 # 11. Исходящий обзвон
 
-> Трассировка: PDF §11 · сквозные стр. 331 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.331.
+> Трассировка: PDF §11 · сквозные стр. 331 · источники: ч.4 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf` с.28.
 
 Исходящий обзвон предназначен для создания и настройки заданий исходящего обзвона и мониторинга их выполнения.
 

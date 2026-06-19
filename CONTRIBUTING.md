@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-11
+version: 0.3
+updated: 2026-06-19
 ai-generated: true
 ---
 
@@ -78,6 +78,18 @@ AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md) и
   добавляет их в [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы),
   если они ещё не добавлены. Это сохраняет единый трекер вопросов вместо
   разрозненных таблиц.
+
+## KB PDF and Git LFS
+
+PDF-источники БЗ хранятся только в `kb/sources/<slug>/` и отслеживаются через
+Git LFS (`*.pdf` в `.gitattributes`). Загружайте и заменяйте такие файлы через
+Codespace или локальный Git с `git lfs`, не через веб-интерфейс GitHub.
+
+При замене одного PDF на несколько частей обновите `meta.json`/`source.md`,
+перечислите все части в порядке страниц при запуске `make kb-extract` или
+workflow **KB pipeline**, затем закоммитьте регенерированный
+`kb/processed/<slug>/`. Подробная инструкция и команды:
+[`kb/sources/README.md`](kb/sources/README.md#как-обновлять-pdf-через-git-lfs).
 
 ## Pull Request Checklist
 

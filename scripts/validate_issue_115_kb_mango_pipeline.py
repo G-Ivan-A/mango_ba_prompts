@@ -1,16 +1,21 @@
 #!/usr/bin/env python3
-"""Regression check for issue #115 — real mango-cc-manual KB extraction.
+"""Regression check for issue #115/#119 — real mango-cc-manual KB extraction.
 
 The bug: KB Pipeline #11 succeeded but only extracted the sample fixture to an
 artifact. It did not process ``kb/sources/mango-cc-manual/`` and therefore did
 not create ``kb/processed/mango-cc-manual/`` in the repository.
 
+Issue #119 extended the regression: the CC manual is now six LFS-backed PDF
+parts, not one ``*_compressed.pdf`` file. The processed KB and workflow must
+handle those parts as one document with continuous page numbering.
+
 This stdlib-only check locks the fix:
 
-- the real processed KB exists and points to the uploaded PDF;
+- the real processed KB exists and points to all uploaded PDF parts;
 - it contains index/meta/sections/images with real-manual scale;
 - section boundaries come from the PDF outline, not bold numbered list items;
-- the GitHub workflow exposes manual inputs and passes them to ``make kb-extract``.
+- the GitHub workflow checks out LFS files and passes multi-part inputs to
+  ``make kb-extract``.
 """
 
 from __future__ import annotations
@@ -21,7 +26,16 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-SOURCE = "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+CC_SOURCES = [
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf",
+]
+CC_PAGE_COUNT = 614
+REMOVED_CC_SOURCE = "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
 PROCESSED = "kb/processed/mango-cc-manual"
 WORKFLOW = ".github/workflows/kb.yml"
 MAKEFILE = "Makefile"
@@ -51,9 +65,26 @@ def load_meta(errors: list[str]) -> dict:
         return {}
 
 
+def page_range_end(pages: str) -> int | None:
+    match = re.match(r"^\d+(?:-(\d+))?$", str(pages))
+    if not match:
+        return None
+    return int(match.group(1) or str(pages).split("-", 1)[0])
+
+
+def all_source_refs(sections: list[dict]) -> list[dict]:
+    refs = []
+    for section in sections:
+        for ref in section.get("source_refs", []):
+            if isinstance(ref, dict):
+                refs.append(ref)
+    return refs
+
+
 def check_processed_mango() -> list[str]:
     errors: list[str] = []
-    errors += require_path(SOURCE)
+    for source in CC_SOURCES:
+        errors += require_path(source)
     errors += require_path(f"{PROCESSED}/index.md")
     errors += require_path(f"{PROCESSED}/sections")
     errors += require_path(f"{PROCESSED}/images")
@@ -69,16 +100,21 @@ def check_processed_mango() -> list[str]:
     expected = {
         "doc_code": "CC",
         "doc_version": "1.26.23",
-        "source_pdf": SOURCE,
     }
     for key, value in expected.items():
         if meta.get(key) != value:
             errors.append(f"{PROCESSED}/meta.json: {key}={meta.get(key)!r}, expected {value!r}")
 
-    if meta.get("section_source", "").startswith("pdf-outline") is False:
-        errors.append(f"{PROCESSED}/meta.json: section_source must use pdf-outline")
-    if meta.get("page_count", 0) < 600:
-        errors.append(f"{PROCESSED}/meta.json: page_count must reflect the real 600+ page manual")
+    if meta.get("source_pdf") != "multi-part":
+        errors.append(f"{PROCESSED}/meta.json: source_pdf must be 'multi-part'")
+    if meta.get("source_pdfs") != CC_SOURCES:
+        errors.append(f"{PROCESSED}/meta.json: source_pdfs must list all six CC parts in order")
+    if meta.get("part_count") != len(CC_SOURCES):
+        errors.append(f"{PROCESSED}/meta.json: part_count must be {len(CC_SOURCES)}")
+    if meta.get("section_source", "").startswith("pdf-outline multi-part") is False:
+        errors.append(f"{PROCESSED}/meta.json: section_source must use pdf-outline multi-part")
+    if meta.get("page_count") != CC_PAGE_COUNT:
+        errors.append(f"{PROCESSED}/meta.json: page_count must be {CC_PAGE_COUNT}")
     if meta.get("section_count") != len(section_files):
         errors.append(
             f"{PROCESSED}/meta.json: section_count {meta.get('section_count')} "
@@ -94,6 +130,37 @@ def check_processed_mango() -> list[str]:
         errors.append(f"{PROCESSED}/meta.json: expected 100+ extracted tables")
     if meta.get("tokens_total", 0) < 100_000:
         errors.append(f"{PROCESSED}/meta.json: expected real-manual token volume")
+
+    sources = meta.get("sources", [])
+    if not isinstance(sources, list) or len(sources) != len(CC_SOURCES):
+        errors.append(f"{PROCESSED}/meta.json: sources must contain all six source parts")
+    else:
+        source_paths = [source.get("source_pdf") for source in sources]
+        if source_paths != CC_SOURCES:
+            errors.append(f"{PROCESSED}/meta.json: sources are not in CC part order")
+        source_pages = [source.get("page_count") for source in sources]
+        if not all(isinstance(page_count, int) and page_count > 0 for page_count in source_pages):
+            errors.append(f"{PROCESSED}/meta.json: every source must have positive page_count")
+        elif sum(source_pages) != CC_PAGE_COUNT:
+            errors.append(f"{PROCESSED}/meta.json: source page_count sum must be {CC_PAGE_COUNT}")
+        for index, source in enumerate(sources, start=1):
+            if source.get("order") != index:
+                errors.append(f"{PROCESSED}/meta.json: source part {index} has wrong order")
+            if not source.get("source_sha256"):
+                errors.append(f"{PROCESSED}/meta.json: source part {index} missing source_sha256")
+
+    refs = all_source_refs(meta.get("sections", []))
+    parts_seen = sorted({ref.get("part") for ref in refs})
+    if parts_seen != list(range(1, len(CC_SOURCES) + 1)):
+        errors.append(f"{PROCESSED}/meta.json: source_refs must cover CC parts 1-6")
+    if any(ref.get("source_pdf") == REMOVED_CC_SOURCE for ref in refs):
+        errors.append(f"{PROCESSED}/meta.json: source_refs still point to removed compressed PDF")
+    max_global_page = max(
+        (end for end in (page_range_end(ref.get("global_pages", "")) for ref in refs) if end),
+        default=0,
+    )
+    if max_global_page != CC_PAGE_COUNT:
+        errors.append(f"{PROCESSED}/meta.json: source_refs must reach global page {CC_PAGE_COUNT}")
 
     section_pairs = {(s.get("number"), s.get("title")) for s in meta.get("sections", [])}
     required_sections = {
@@ -115,7 +182,14 @@ def check_processed_mango() -> list[str]:
         )
 
     index = read_text(f"{PROCESSED}/index.md")
-    errors += require_text(index, f"{PROCESSED}/index.md", SOURCE, "Регистрация нового пользователя")
+    errors += require_text(
+        index,
+        f"{PROCESSED}/index.md",
+        *CC_SOURCES,
+        "Регистрация нового пользователя",
+    )
+    if REMOVED_CC_SOURCE in index:
+        errors.append(f"{PROCESSED}/index.md: still points to removed compressed PDF")
     return errors
 
 
@@ -135,13 +209,21 @@ def check_workflow_inputs() -> list[str]:
         "doc_title:",
         "doc_version:",
         "commit_result:",
-        SOURCE,
+        "actions/checkout@v7",
+        "actions/setup-python@v6",
+        "actions/upload-artifact@v7",
+        "lfs: true",
         PROCESSED,
         "make kb-extract \\",
-        'SRC="${{ inputs.source }}"',
+        'SRCS="${{ inputs.source }}"',
         'OUT="${{ inputs.out }}"',
         "scripts/validate_issue_115_kb_mango_pipeline.py",
     )
+    errors += require_text(text, WORKFLOW, *CC_SOURCES)
+    if text.count("lfs: true") < 2:
+        errors.append(f"{WORKFLOW}: both validate and extract jobs must checkout LFS files")
+    if REMOVED_CC_SOURCE in text:
+        errors.append(f"{WORKFLOW}: default source still points to removed compressed PDF")
     if re.search(r"Build sample fixture and extract|make kb-sample\s+make kb-extract", text):
         errors.append(f"{WORKFLOW}: workflow_dispatch extract job must not hardcode the sample fixture")
     return errors
@@ -152,16 +234,21 @@ def check_makefile_parameters() -> list[str]:
     if errors:
         return errors
     text = read_text(MAKEFILE)
-    return require_text(
+    errors += require_text(
         text,
         MAKEFILE,
         "SRC     ?= $(SAMPLE_PDF)",
         "OUT     ?= $(SAMPLE_OUT)",
+        "MANGO_SRCS",
         "kb-mango:",
         "$(MAKE) kb-extract \\",
-        'SRCS="$(MANGO_SRC)"',
+        'SRCS="$(MANGO_SRCS)"',
         'OUT="$(MANGO_OUT)"',
     )
+    errors += require_text(text, MAKEFILE, *CC_SOURCES)
+    if REMOVED_CC_SOURCE in text:
+        errors.append(f"{MAKEFILE}: MANGO source still points to removed compressed PDF")
+    return errors
 
 
 def main() -> int:

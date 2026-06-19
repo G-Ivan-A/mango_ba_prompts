@@ -8,19 +8,19 @@ pdf_section: "2.5.11"
 title: "Запись разговоров"
 pdf_heading: "2.5.11. Запись разговоров"
 pages: "114-115"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 114-115"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"114-115","global_pages":"114-115"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf
+source_part: "2"
+source_pages: "ч.2: 13-14"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"13-14","global_pages":"114-115"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1137
+tokens: 1138
 status: extracted
 ai-generated: true
 ---
 # 2.5.11. Запись разговоров
 
-> Трассировка: PDF §2.5.11 · сквозные стр. 114-115 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.114-115.
+> Трассировка: PDF §2.5.11 · сквозные стр. 114-115 · источники: ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.13-14.
 
 Контакт-центр MANGO OFFICE позволяет записывать текущий разговор непосредственно из карточки разговора.
 
@@ -39,7 +39,7 @@ ai-generated: true
 
 Чтобы начать запись разговора, нажмите кнопку . Также запись может начинаться автоматически, если в Личном кабинете подключен сервис "Запись разговоров" и в настройках установлена опция "Записывать все разговоры". На состояние записи указывает внешний вид кнопки.
 
-![Изображение, стр. 114](../images/54-zapis-razgovorov-3.jpeg)
+![Изображение, стр. 114](../images/54-zapis-razgovorov-3.png)
 
 Во время разговора остановить начатую запись нельзя. Запись останавливается автоматически после завершения разговора. После завершения записи вы сможете: • прослушать разговор с использованием Истории вызовов; • прослушать разговор, открыв карточку контакта; • прослушать разговор или скачать запись в почтовом ящике / облачном хранилище Виртуальной АТС, с которой используется Контакт-центр MANGO OFFICE.
 

@@ -8,23 +8,23 @@ pdf_section: "16.2.3"
 title: "Правила и советы по настройке тематик"
 pdf_heading: "16.2.3. Правила и советы по настройке тематик"
 pages: "484-489"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 484-489"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"484-489","global_pages":"484-489"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 80-85"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"80-85","global_pages":"484-489"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2419
+tokens: 2420
 status: extracted
 ai-generated: true
 ---
 # 16.2.3. Правила и советы по настройке тематик
 
-> Трассировка: PDF §16.2.3 · сквозные стр. 484-489 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.484-489.
+> Трассировка: PDF §16.2.3 · сквозные стр. 484-489 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.80-85.
 
 Терма – ключевое слово или словосочетание, которое необходимо найти в тексте записи разговора. При вводе терм допускается использование следующих символов: • Кавычки (" " или «») – для поиска точного соответствия поисковому запросу; • Дефис (тире) – для составных слов; • Буквы (кириллица, латиница); • Цифры; • Пробел; • Восклицательный знак (!).
 
-![Изображение, стр. 485](../images/191-pravila-i-sovety-po-nastroyke-tematik-1.jpeg)
+![Изображение, стр. 485](../images/191-pravila-i-sovety-po-nastroyke-tematik-1.png)
 
 Виды терм
 
@@ -38,7 +38,7 @@ ai-generated: true
 
 ![Изображение, стр. 485](../images/191-pravila-i-sovety-po-nastroyke-tematik-3.png)
 
-![Изображение, стр. 486](../images/191-pravila-i-sovety-po-nastroyke-tematik-4.jpeg)
+![Изображение, стр. 486](../images/191-pravila-i-sovety-po-nastroyke-tematik-4.png)
 
 Для поискового запроса !окно, найденные слова "окна", "окон" НЕ засчитываются как вхождение. Слово или словосочетание в точном соответствии, без учета словоформ «!купить окно» – используйте кавычки и символ ! для закрепления словоформы поискового запроса в точном соответствии. !«купить окно» – второй вариант для закрепления словоформы поискового запроса в точном соответствии. Вхождение засчитывается, если в каком-то из фрагментов разговора клиент скажет Я хочу купить окно с установкой. 1. Создавайте простые тематики, чтобы одна тематика решала максимум одну задачу. Лучше задать несколько узконаправленных тематик, нежели одну общую.
 
@@ -57,20 +57,20 @@ ai-generated: true
 
 2. Создавайте несколько тематик для решения одной задачи. По данным отчетов вы сможете увидеть, на каком этапе разговора у сотрудников возникают проблемы.
 
-![Изображение, стр. 487](../images/191-pravila-i-sovety-po-nastroyke-tematik-5.jpeg)
+![Изображение, стр. 487](../images/191-pravila-i-sovety-po-nastroyke-tematik-5.png)
 
 ![Изображение, стр. 487](../images/191-pravila-i-sovety-po-nastroyke-tematik-6.jpeg)
 
 3. Создавая тематики на негативные сценарии, используйте фильтр НЕ ГОВОРИЛ Помните, что тематики “отрицательной” направленности – Недобросовестные сотрудники, Отказ в услуге и т. д. – могут повлиять на результаты расчета рейтинга сотрудника/группы. 4. При настройке тематик не задавайте противоречащие друг другу условия. Пример двух противоречащих условий в одной тематике:
 
-![Изображение, стр. 487](../images/191-pravila-i-sovety-po-nastroyke-tematik-7.jpeg)
+![Изображение, стр. 487](../images/191-pravila-i-sovety-po-nastroyke-tematik-7.png)
 
-![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-8.jpeg)
+![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-8.png)
 
-![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-9.jpeg)
+![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-9.png)
 
 5. Создавайте тематику из нескольких условий, только если это необходимо для решения конкретной задачи. Например, если в одном разговоре требуется проанализировать отдельно два канала – сотрудник и клиент – на соответствие разным условиям.
 
-![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-10.jpeg)
+![Изображение, стр. 488](../images/191-pravila-i-sovety-po-nastroyke-tematik-10.png)
 
-![Изображение, стр. 489](../images/191-pravila-i-sovety-po-nastroyke-tematik-11.jpeg)
+![Изображение, стр. 489](../images/191-pravila-i-sovety-po-nastroyke-tematik-11.png)

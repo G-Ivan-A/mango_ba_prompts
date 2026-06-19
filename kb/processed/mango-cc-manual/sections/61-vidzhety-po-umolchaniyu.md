@@ -8,19 +8,19 @@ pdf_section: "3.4"
 title: "Виджеты по умолчанию"
 pdf_heading: "3.4. Виджеты по умолчанию"
 pages: "128"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 128"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"128","global_pages":"128"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf
+source_part: "2"
+source_pages: "ч.2: 27"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"27","global_pages":"128"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 390
+tokens: 391
 status: extracted
 ai-generated: true
 ---
 # 3.4. Виджеты по умолчанию
 
-> Трассировка: PDF §3.4 · сквозные стр. 128 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.128.
+> Трассировка: PDF §3.4 · сквозные стр. 128 · источники: ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.27.
 
 При первом входе на Dashboard для пользователя с любой ролью установлено 9 виджетов. • Входящие звонки • Пропущенные вызовы • Успешно перезвонили • Исходящие звонки • Исходящие звонки новым клиентам • Исходящие звонки существующим клиентам • Время на линии (суммарно) • Входящие разговоры (суммарно) • Исходящие разговоры (суммарно)
 

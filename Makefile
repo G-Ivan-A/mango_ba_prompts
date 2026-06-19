@@ -15,11 +15,17 @@ DOC_TITLE   := Контакт-центр MANGO OFFICE
 DOC_VERSION := 1.26.23-sample
 NOTE        := Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue 111. Структура воспроизводит реальное руководство (issue 109). Замените PDF и перезапустите для реальных данных.
 
-MANGO_SRC     := kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+MANGO_SRCS    := kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf \
+                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf \
+                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf \
+                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf \
+                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf \
+                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+MANGO_SRC     := $(MANGO_SRCS)
 MANGO_OUT     := kb/processed/mango-cc-manual
 MANGO_TITLE   := Контакт-центр MANGO OFFICE - Руководство пользователя
 MANGO_VERSION := 1.26.23
-MANGO_NOTE    := Реальное руководство из issue 115; извлечено после диагностики KB Pipeline 11.
+MANGO_NOTE    := Multi-part руководство КЦ из issue 119; 6 PDF частей обработаны как один документ со сквозной пагинацией.
 
 LK_SRCS     := kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf \
                kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf \
@@ -45,7 +51,7 @@ help:
 	@echo "  make kb-all       — kb-sample → kb-extract → kb-validate"
 	@echo "  make kb-sample    — собрать синтетическую фикстуру PDF (reportlab+Pillow)"
 	@echo "  make kb-extract   — извлечь SRC/SRCS в OUT (по умолчанию фикстура → $(SAMPLE_OUT))"
-	@echo "  make kb-mango     — извлечь реальный mango-cc-manual из issue #115"
+	@echo "  make kb-mango     — извлечь multi-part mango-cc-manual из issue #119"
 	@echo "  make kb-lk        — извлечь multi-part mango-lk-manual из issue #117"
 	@echo "  make kb-validate  — проверить конвейер БЗ (stdlib-only, как в CI)"
 	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
@@ -71,10 +77,10 @@ kb-extract:
 		--doc-version "$(VERSION)" \
 		--note "$(NOTE)"
 
-# Воспроизвести БЗ для реального руководства из issue #115.
+# Воспроизвести БЗ для split-руководства КЦ из issue #119.
 kb-mango:
 	$(MAKE) kb-extract \
-		SRCS="$(MANGO_SRC)" \
+		SRCS="$(MANGO_SRCS)" \
 		OUT="$(MANGO_OUT)" \
 		CODE="$(DOC_CODE)" \
 		TITLE="$(MANGO_TITLE)" \

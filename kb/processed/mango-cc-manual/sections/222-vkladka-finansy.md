@@ -8,19 +8,19 @@ pdf_section: "18.5"
 title: "Вкладка \"Финансы\""
 pdf_heading: "18.5. Вкладка \"Финансы\""
 pages: "577-579"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 577-579"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"577-579","global_pages":"577-579"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 72-74"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"72-74","global_pages":"577-579"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 937
+tokens: 938
 status: extracted
 ai-generated: true
 ---
 # 18.5. Вкладка "Финансы"
 
-> Трассировка: PDF §18.5 · сквозные стр. 577-579 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.577-579.
+> Трассировка: PDF §18.5 · сквозные стр. 577-579 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.72-74.
 
 Настройки, вкладка "Финансы"
 
@@ -31,7 +31,7 @@ ai-generated: true
 | и | па |  |  |  |  |  |  |  |
 | Просмотр<br>баланса |  | Нет | Нет | Нет | Да | Да | Да | Да |
 
-![Изображение, стр. 578](../images/222-vkladka-finansy-1.jpeg)
+![Изображение, стр. 578](../images/222-vkladka-finansy-1.png)
 
 | лицевого<br>счета |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -45,7 +45,7 @@ ai-generated: true
 | Редактиро<br>вание<br>реквизито<br>в<br>организац<br>ии |  | Нет | Нет | Нет | Да | Да | Нет | Да |
 | Управлен<br>ие<br>настройка |  | Нет | Нет | Нет | Да | Да | Да | Да |
 
-![Изображение, стр. 579](../images/222-vkladka-finansy-2.jpeg)
+![Изображение, стр. 579](../images/222-vkladka-finansy-2.png)
 
 | ми<br>уведомле<br>ний для<br>Лицевого<br>счета и<br>подписко<br>й на<br>Бизнес-<br>рецепты |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

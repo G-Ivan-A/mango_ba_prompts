@@ -8,21 +8,21 @@ pdf_section: "17.3.3.1"
 title: "Создание показателя"
 pdf_heading: "17.3.3.1. Создание показателя"
 pages: "544-547"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 544-547"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"544-547","global_pages":"544-547"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 39-42"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"39-42","global_pages":"544-547"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 834
+tokens: 835
 status: extracted
 ai-generated: true
 ---
 # 17.3.3.1. Создание показателя
 
-> Трассировка: PDF §17.3.3.1 · сквозные стр. 544-547 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.544-547.
+> Трассировка: PDF §17.3.3.1 · сквозные стр. 544-547 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.39-42.
 
-![Изображение, стр. 545](../images/216-sozdanie-pokazatelya-1.jpeg)
+![Изображение, стр. 545](../images/216-sozdanie-pokazatelya-1.png)
 
 На вкладке “Показатели” раздела “Данные” Конструктора отчетов нажмите кнопку Добавить показатель. Добавление показателя доступно в двух режимах: простой и расширенный.
 
@@ -40,7 +40,7 @@ ai-generated: true
 
 ![Изображение, стр. 545](../images/216-sozdanie-pokazatelya-4.png)
 
-![Изображение, стр. 546](../images/216-sozdanie-pokazatelya-5.jpeg)
+![Изображение, стр. 546](../images/216-sozdanie-pokazatelya-5.png)
 
 Для создания формулы показателя в расширенном режиме необходимо зафиксировать
 
@@ -48,6 +48,6 @@ ai-generated: true
 
 указатель мыши на пиктограмме заполненных блоков "переменная" и "число" и переместить их на поле, дополнив их математическими операциями, как показано на рисунке ниже. Перемещение очистит блок переменной и даст возможность формирования новой переменной. Затем новую переменную можно аналогичным образом переместить на поле.
 
-![Изображение, стр. 546](../images/216-sozdanie-pokazatelya-7.jpeg)
+![Изображение, стр. 546](../images/216-sozdanie-pokazatelya-7.png)
 
-![Изображение, стр. 547](../images/216-sozdanie-pokazatelya-8.jpeg)
+![Изображение, стр. 547](../images/216-sozdanie-pokazatelya-8.png)
