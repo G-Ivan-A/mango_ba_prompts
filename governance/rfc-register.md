@@ -9,6 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/113"
 related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
@@ -18,6 +19,8 @@ related_artifacts:
   - "governance/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "governance/rfc/prompt-improvement-multichannel-proposal.md"
+  - "governance/analysis-bcreq-1059-2026-06-19.md"
+  - "governance/rfc/prompt-improvement-bcreq-1059-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -124,6 +127,22 @@ PR #105 **не изменены** — сверка и правка идут то
 | RFC-MCH-P2 | цепочка `understanding` (glossary↔questions) | Под-шаг/промпт «нормализация требования» (атомы + боль/решение + первичный gap) | эксперимент #109 §М2 | Minor | `proposed` | — |
 | RFC-MCH-P3 | `technical-details-solution-design-stepwise.md` (+ новый `options-*`) | Отдельный промпт «early-options» (варианты доработки, Раздел 3) отдельно от Раздела 7 | эксперимент #109 §М3 | Major | `proposed` | — |
 
+## Открытые RFC по промптам (источник: боевой эксперимент BCREQ-1059, issue #113)
+
+Правки ниже — **предложения** из разбора
+[`governance/analysis-bcreq-1059-2026-06-19.md`](analysis-bcreq-1059-2026-06-19.md).
+Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
+Полный RFC: [`governance/rfc/prompt-improvement-bcreq-1059-proposal.md`](rfc/prompt-improvement-bcreq-1059-proposal.md).
+
+| RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Повторяемость | Тип версии | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| RFC-1059-P1 | `glossary-context-understanding-stepwise.md` | Явный запрос «архитектурной карты» компонентов и зон ответственности на Шаге 0 (усиление RFC-1025-P1) | анализ BCREQ-1059 §Э1 | 3 прогона (🔴 критический) | Minor | `proposed` | — |
+| RFC-1059-P2 | `fr-documentation-stepwise.md` | Правило «дерева решений» для ФТ + матрица приоритетов для многоусловных требований | анализ BCREQ-1059 §Э2 | 2 прогона (🟠 высокий) | Minor | `proposed` | — |
+| RFC-1059-P3 | `fr-documentation-stepwise.md` | Стилистические правила по уровням иерархии (анти-канцелярит, шаблоны для 4.x / 4.x.x / 4.x.x.x) | анализ BCREQ-1059 §Э3 | 2 прогона (🟠 высокий) | Minor | `proposed` | — |
+| RFC-1059-P4 | `fr-documentation-stepwise.md` | Правило «системные vs пользовательские действия» + явный запрос ролевой модели перед генерацией ФТ | анализ BCREQ-1059 §Э4 | 1 прогон (🟡 средний) | Minor | `proposed` | — |
+| RFC-1059-P5 | `fr-documentation-stepwise.md`, `constraints-documentation-stepwise.md` | Правило переноса UI-ограничений As-Is в Раздел 6 (Раздел 4 = только позитивные ФТ) | анализ BCREQ-1059 §У5/M4 | 1 прогон (🟡 средний) | Minor | `proposed` | — |
+| RFC-1059-P6 | `fr-documentation-stepwise.md` | Шаг финальной верификации синхронизации Цели (2.2) и ФТ (4.x) | анализ BCREQ-1059 §Э5 | 1 прогон (🟡 средний) | Minor | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -139,3 +158,9 @@ PR #105 **не изменены** — сверка и правка идут то
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
   [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
+- **2026-06-19** — добавлены RFC-1059-P1…P6 (промпты) в статусе `proposed` по
+  итогам боевого эксперимента BCREQ-1059 (issue #113). Полный анализ —
+  [`governance/analysis-bcreq-1059-2026-06-19.md`](analysis-bcreq-1059-2026-06-19.md);
+  RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1059-proposal.md`](rfc/prompt-improvement-bcreq-1059-proposal.md).
+  P1 — усиление RFC-1025-P1 (3-й прогон с паттерном архитектурной путаницы, 🔴 критический).
+  P2/P3 — усиление RFC-1025-P4 и RFC-1027-P2 (2-й прогон, 🟠 высокий).
