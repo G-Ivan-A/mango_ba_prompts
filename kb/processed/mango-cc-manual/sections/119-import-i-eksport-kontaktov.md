@@ -8,19 +8,19 @@ pdf_section: "10.1.2"
 title: "Импорт и экспорт контактов"
 pdf_heading: "10.1.2. Импорт и экспорт контактов"
 pages: "316-320"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 316-320"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"316-320","global_pages":"316-320"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf
+source_part: "4"
+source_pages: "ч.4: 13-17"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf","part":4,"pages":"13-17","global_pages":"316-320"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3011
+tokens: 3012
 status: extracted
 ai-generated: true
 ---
 # 10.1.2. Импорт и экспорт контактов
 
-> Трассировка: PDF §10.1.2 · сквозные стр. 316-320 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.316-320.
+> Трассировка: PDF §10.1.2 · сквозные стр. 316-320 · источники: ч.4 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf` с.13-17.
 
 Контакт-центр MANGO OFFICE обеспечивает возможность обмена данными с другими программными продуктами путем импорта (загрузки в нужную адресную книгу) и экспорта (выгрузки из нужной адресной книги) контактных данных. Импорт и экспорт может осуществляться с использованием общей либо личной адресной книги.
 
@@ -32,7 +32,7 @@ ai-generated: true
 
 ![Изображение, стр. 316](../images/119-import-i-eksport-kontaktov-1.png)
 
-![Изображение, стр. 316](../images/119-import-i-eksport-kontaktov-2.jpeg)
+![Изображение, стр. 316](../images/119-import-i-eksport-kontaktov-2.png)
 
 ![Изображение, стр. 317](../images/119-import-i-eksport-kontaktov-3.png)
 
@@ -59,7 +59,7 @@ ai-generated: true
 
 ![Изображение, стр. 317](../images/119-import-i-eksport-kontaktov-5.png)
 
-![Изображение, стр. 317](../images/119-import-i-eksport-kontaktov-6.jpeg)
+![Изображение, стр. 317](../images/119-import-i-eksport-kontaktov-6.png)
 
 ![Изображение, стр. 318](../images/119-import-i-eksport-kontaktov-7.png)
 
@@ -69,7 +69,7 @@ ai-generated: true
 
 Поля ФИО и Телефон являются обязательными для сопоставления.
 
-![Изображение, стр. 318](../images/119-import-i-eksport-kontaktov-9.jpeg)
+![Изображение, стр. 318](../images/119-import-i-eksport-kontaktov-9.png)
 
 | Для удобства в процессе сопоставления полей вы можете выбирать, какие поля данных |  |  |
 | --- | --- | --- |
@@ -88,7 +88,7 @@ ai-generated: true
 
 • Комментарий — текст, максимальное количество символов – 255; • Комментарий к номеру телефона или E-mail — текст, максимальное количество символов – 255. Когда вы определили соответствие полей в источнике и целевой адресной книге, нажмите кнопку Начать импорт. После этого начинается импорт контактов в целевую адресную книгу. При импорте контакта, телефон которого полностью совпадает с существующим в целевой адресной книге, на экране отображается окно с соответствующим предупреждающим сообщением.
 
-![Изображение, стр. 319](../images/119-import-i-eksport-kontaktov-12.jpeg)
+![Изображение, стр. 319](../images/119-import-i-eksport-kontaktov-12.png)
 
 Как экспортировать контакты Чтобы экспортировать контакты, выберите подлежащие выгрузке контакты в рабочей области.
 

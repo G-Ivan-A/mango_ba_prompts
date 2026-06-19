@@ -8,26 +8,26 @@ pdf_section: "15.2.2.2"
 title: "Причины пропущенных звонков"
 pdf_heading: "15.2.2.2. Причины пропущенных звонков"
 pages: "446-448"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 446-448"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"446-448","global_pages":"446-448"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 42-44"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"42-44","global_pages":"446-448"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 527
+tokens: 528
 status: extracted
 ai-generated: true
 ---
 # 15.2.2.2. Причины пропущенных звонков
 
-> Трассировка: PDF §15.2.2.2 · сквозные стр. 446-448 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.446-448.
+> Трассировка: PDF §15.2.2.2 · сквозные стр. 446-448 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.42-44.
 
 Отчет «Причины пропущенных звонков» отображает информацию о количестве и процентном соотношении пропущенных вызовов за определенный период в зависимости от причины, по которой они были пропущены.
 
-![Изображение, стр. 447](../images/175-prichiny-propuschennyh-zvonkov-1.jpeg)
+![Изображение, стр. 447](../images/175-prichiny-propuschennyh-zvonkov-1.png)
 
 ![Изображение, стр. 447](../images/175-prichiny-propuschennyh-zvonkov-2.png)
 
-![Изображение, стр. 448](../images/175-prichiny-propuschennyh-zvonkov-3.jpeg)
+![Изображение, стр. 448](../images/175-prichiny-propuschennyh-zvonkov-3.png)
 
 Отчет условно состоит из трех частей. В первой части приведено общее количество пропущенных вызовов в соответствии с условиями фильтрации. Во второй части отчета указывается количество и процентное соотношение пропущенных вызовов в зависимости от стадии вызова. Каждая стадия сопровождается мини-графиком, отражающим распределение пропущенных звонков по дням на протяжении выбранного периода. При наведении курсора на линию графика отображается всплывающее окно, содержащее информацию о дате и количестве пропущенных вызовов в соответствующий день. Третья часть отражает распределение звонков, пропущенных на каждой стадии дозвона, по причинам пропуска вызова.

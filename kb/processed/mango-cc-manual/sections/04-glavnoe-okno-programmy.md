@@ -8,23 +8,23 @@ pdf_section: "2"
 title: "Главное окно программы"
 pdf_heading: "2. Главное окно программы"
 pages: "21-22"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
 source_part: "1"
 source_pages: "ч.1: 21-22"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"21-22","global_pages":"21-22"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"21-22","global_pages":"21-22"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1084
+tokens: 1085
 status: extracted
 ai-generated: true
 ---
 # 2. Главное окно программы
 
-> Трассировка: PDF §2 · сквозные стр. 21-22 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.21-22.
+> Трассировка: PDF §2 · сквозные стр. 21-22 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.21-22.
 
 После входа пользователя в систему на экране отображается главное окно программы. В этом разделе мы рассмотрим основные элементы пользовательского интерфейса, отображаемые в главном окне, и их функциональное предназначение.
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-1.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-1.png)
 
 Верхняя панель содержит инструменты:
 
@@ -38,19 +38,19 @@ ai-generated: true
 
 ![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-2.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-3.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-3.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-4.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-4.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-5.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-5.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-6.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-6.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-7.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-7.png)
 
-![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-8.jpeg)
+![Изображение, стр. 21](../images/04-glavnoe-okno-programmy-8.png)
 
-![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-9.jpeg)
+![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-9.png)
 
 |  | Окно управления статусом; |
 | --- | --- |
@@ -63,20 +63,20 @@ ai-generated: true
 
 ![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-11.png)
 
-![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-12.jpeg)
+![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-12.png)
 
 ![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-13.png)
 
 ![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-14.png)
 
-![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-15.jpeg)
+![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-15.png)
 
 | Панель показателей – значок панели имеет два цвета |
 | --- |
 | состояния предельного значения какого-либо из показателей. |
 | Аватар пользователя – на аватаре пользователя отображается иконка "new" |
 
-![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-16.jpeg)
+![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-16.png)
 
 ![Изображение, стр. 22](../images/04-glavnoe-okno-programmy-17.jpeg)
 

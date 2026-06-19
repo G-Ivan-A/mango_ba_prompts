@@ -8,19 +8,19 @@ pdf_section: "16"
 title: "Речевая аналитика"
 pdf_heading: "16. Речевая аналитика"
 pages: "451-452"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 451-452"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"451-452","global_pages":"451-452"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 47-48"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"47-48","global_pages":"451-452"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 603
+tokens: 604
 status: extracted
 ai-generated: true
 ---
 # 16. Речевая аналитика
 
-> Трассировка: PDF §16 · сквозные стр. 451-452 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.451-452.
+> Трассировка: PDF §16 · сквозные стр. 451-452 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.47-48.
 
 Речевая аналитика распознает записанные разговоры и производит поиск (вручную или автоматически) необходимой информации в разговоре. Рабочая область раздела Речевая аналитика содержит следующие вкладки: Отчеты Настройки Заявки Тегирование разговоров Текстовые коммуникации ИИ Помощники Пользователю доступны следующие функции: • Поиск в распознанных записях разговоров заданных слов и выражений (см. Руководство пользователя Речевой аналитики) • Автоматическое проставление тематики звонка • Текстовая расшифровка разговора • Аналитика текстовых коммуникаций выбранных сотрудников • Составление отчетов • Формирования чек-листов и получение статистики по чек-листам • Получение уведомлений • Подача заявок на распознавание, для улучшения качества распознавания
 
@@ -33,4 +33,4 @@ ai-generated: true
 
 ![Изображение, стр. 451](../images/178-rechevaya-analitika-2.jpeg)
 
-![Изображение, стр. 452](../images/178-rechevaya-analitika-3.jpeg)
+![Изображение, стр. 452](../images/178-rechevaya-analitika-3.png)

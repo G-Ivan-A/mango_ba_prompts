@@ -8,19 +8,19 @@ pdf_section: "20"
 title: "Приложение 3: Отчеты об ошибках"
 pdf_heading: "20. Приложение 3: Отчеты об ошибках"
 pages: "595-597"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 595-597"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"595-597","global_pages":"595-597"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 90-92"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"90-92","global_pages":"595-597"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1419
+tokens: 1420
 status: extracted
 ai-generated: true
 ---
 # 20. Приложение 3: Отчеты об ошибках
 
-> Трассировка: PDF §20 · сквозные стр. 595-597 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.595-597.
+> Трассировка: PDF §20 · сквозные стр. 595-597 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.90-92.
 
 Вы можете отправлять отчеты о проблемах и ошибках, возникающих при использовании Контакт-центра MANGO OFFICE, сотрудникам отдела технической поддержки. Для отправки отчета об ошибке или проблеме 1. Щелкните правой кнопкой манипулятора по значку программы в области системных уведомлений (трее). 2. Выберите пункт меню Отправить отчет об ошибке. После этого на экране отображается окно Сообщить о проблеме.
 
@@ -36,7 +36,7 @@ ai-generated: true
 
 ![Изображение, стр. 595](../images/226-prilozhenie-3-otchety-ob-oshibkah-2.png)
 
-![Изображение, стр. 596](../images/226-prilozhenie-3-otchety-ob-oshibkah-3.jpeg)
+![Изображение, стр. 596](../images/226-prilozhenie-3-otchety-ob-oshibkah-3.png)
 
 5. Выберите способ отправки отчета, используя переключатель: • Отправить на Web-сервер — отчет о проблеме отправляется непосредственно из Контакт- центра MANGO OFFICE; • Отправить на E-mail — отчет о проблеме отправляется на указанный вами адрес электронной почты с использованием протокола SMTP:
 
@@ -59,8 +59,8 @@ ai-generated: true
 
 6. При необходимости нажмите ссылку Предпросмотр для чтобы просмотра содержимого отправляемого отчета о проблеме. При этом отчет открывается в используемом в системе по умолчанию браузере. 7. Нажмите кнопку Отправить. При успешной отправке отчета на Web-сервер на экране отображается соответствующее информационное сообщение.
 
-![Изображение, стр. 596](../images/226-prilozhenie-3-otchety-ob-oshibkah-5.jpeg)
+![Изображение, стр. 596](../images/226-prilozhenie-3-otchety-ob-oshibkah-5.png)
 
 8. Если вы хотите отслеживать решение вашей проблемы, запишите идентификатор проблемы и указывайте его специалистам отдела технической поддержки при последующих обращениях.
 
-![Изображение, стр. 597](../images/226-prilozhenie-3-otchety-ob-oshibkah-6.jpeg)
+![Изображение, стр. 597](../images/226-prilozhenie-3-otchety-ob-oshibkah-6.png)

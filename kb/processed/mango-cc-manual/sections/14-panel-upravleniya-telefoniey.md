@@ -8,19 +8,19 @@ pdf_section: "2.5"
 title: "Панель управления телефонией"
 pdf_heading: "2.5. Панель управления телефонией"
 pages: "46-49"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
 source_part: "1"
 source_pages: "ч.1: 46-49"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"46-49","global_pages":"46-49"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"46-49","global_pages":"46-49"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1678
+tokens: 1679
 status: extracted
 ai-generated: true
 ---
 # 2.5. Панель управления телефонией
 
-> Трассировка: PDF §2.5 · сквозные стр. 46-49 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.46-49.
+> Трассировка: PDF §2.5 · сквозные стр. 46-49 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.46-49.
 
 Помимо базовых возможностей телефонии (прием входящих вызовов, совершение исходящих вызовов, постановка вызовов на удержание), Контакт-центр MANGO OFFICE предоставляет дополнительные возможности управления вызовами.
 
@@ -32,7 +32,7 @@ ai-generated: true
 
 Более подробно эти функциональные возможности рассмотрены в последующих подразделах. • Совершение исходящих вызовов; • Прием и классификация входящих вызовов; • Перевод вызовов;
 
-![Изображение, стр. 47](../images/14-panel-upravleniya-telefoniey-2.jpeg)
+![Изображение, стр. 47](../images/14-panel-upravleniya-telefoniey-2.png)
 
 • Постановка вызовов на удержание; • Организация конференций; • Отправка СМС; • Настройка гарнитуры во время разговора; • Оперативное создание и редактирование контактов; • Запись разговоров; • Использование DTMF-команд;
 
@@ -40,7 +40,7 @@ ai-generated: true
 
 Для того, чтобы развернуть панель телефонии, нажмите на верхней панели. На рисунке ниже приведен пример развернутой панели управления телефонией в состоянии разговора.
 
-![Изображение, стр. 47](../images/14-panel-upravleniya-telefoniey-4.jpeg)
+![Изображение, стр. 47](../images/14-panel-upravleniya-telefoniey-4.png)
 
 На панели отображается информация о номере, с которого поступил вызов. В случае, когда номер принадлежит клиенту адресной книги, то вместо номера отображается имя клиента. При щелчке по имени выполняется переход к карточке клиента.
 
@@ -67,7 +67,7 @@ ai-generated: true
 
 Кнопки для открепления и закрепления клавиатурного блока. Окно с открепленным блоком может быть расположено в любом месте рабочего стола, и отображается поверх всех окон.
 
-![Изображение, стр. 48](../images/14-panel-upravleniya-telefoniey-9.jpeg)
+![Изображение, стр. 48](../images/14-panel-upravleniya-telefoniey-9.png)
 
 ![Изображение, стр. 48](../images/14-panel-upravleniya-telefoniey-10.png)
 
@@ -91,4 +91,4 @@ ai-generated: true
 
 указывающая на уровень качества связи. При наведении курсора на пиктограмму отображается подсказка.
 
-![Изображение, стр. 49](../images/14-panel-upravleniya-telefoniey-15.jpeg)
+![Изображение, стр. 49](../images/14-panel-upravleniya-telefoniey-15.png)

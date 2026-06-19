@@ -8,19 +8,19 @@ pdf_section: "11.6"
 title: "Карточка вызова"
 pdf_heading: "11.6. Карточка вызова"
 pages: "374-377"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 374-377"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"374-377","global_pages":"374-377"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf
+source_part: "4"
+source_pages: "ч.4: 71-74"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf","part":4,"pages":"71-74","global_pages":"374-377"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 601
+tokens: 602
 status: extracted
 ai-generated: true
 ---
 # 11.6. Карточка вызова
 
-> Трассировка: PDF §11.6 · сквозные стр. 374-377 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.374-377.
+> Трассировка: PDF §11.6 · сквозные стр. 374-377 · источники: ч.4 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf` с.71-74.
 
 Вид карточки входящего вызова во время дозвона абоненту зависит от выбранного режима обзвона: При режиме "Одновременно оператору и абоненту":
 
@@ -32,14 +32,14 @@ ai-generated: true
 
 Также внешний вид карточки вызова при дозвоне зависит от источника данных: если контакт был найден во внешнем справочнике. Карточка разговора выглядит следующим образом:
 
-![Изображение, стр. 375](../images/133-kartochka-vyzova-3.jpeg)
+![Изображение, стр. 375](../images/133-kartochka-vyzova-3.png)
 
-![Изображение, стр. 375](../images/133-kartochka-vyzova-4.jpeg)
+![Изображение, стр. 375](../images/133-kartochka-vyzova-4.png)
 
 После завершения вызова, в зависимости от установленного значения в поле "Поствызывная обработка" при добавлении кампании, сотруднику может быть предоставлено время для поствызывной обработки вызова. В течение этого времени новые вызовы на оператора не распределяются. Предусмотрена возможность инициировать готовность принятия следующего вызова, не дожидаясь времени поствызывной обработки. Для этого следует нажать кнопку "Не ждать" во всплывающем уведомлении.
 
-![Изображение, стр. 376](../images/133-kartochka-vyzova-5.jpeg)
+![Изображение, стр. 376](../images/133-kartochka-vyzova-5.png)
 
 ![Изображение, стр. 376](../images/133-kartochka-vyzova-6.png)
 
-![Изображение, стр. 377](../images/133-kartochka-vyzova-7.jpeg)
+![Изображение, стр. 377](../images/133-kartochka-vyzova-7.png)

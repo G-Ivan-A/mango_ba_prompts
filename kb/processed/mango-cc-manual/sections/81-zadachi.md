@@ -8,19 +8,19 @@ pdf_section: "6"
 title: "Задачи"
 pdf_heading: "6. Задачи"
 pages: "203"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 203"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"203","global_pages":"203"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf
+source_part: "3"
+source_pages: "ч.3: 1"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf","part":3,"pages":"1","global_pages":"203"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 724
+tokens: 725
 status: extracted
 ai-generated: true
 ---
 # 6. Задачи
 
-> Трассировка: PDF §6 · сквозные стр. 203 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.203.
+> Трассировка: PDF §6 · сквозные стр. 203 · источники: ч.3 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf` с.1.
 
 | Модуль Задачи доступен, если на продукте пользователя подключена соответствующая |
 | --- |

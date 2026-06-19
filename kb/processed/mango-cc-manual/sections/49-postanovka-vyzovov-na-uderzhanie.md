@@ -8,19 +8,19 @@ pdf_section: "2.5.6"
 title: "Постановка вызовов на удержание"
 pdf_heading: "2.5.6. Постановка вызовов на удержание"
 pages: "105-107"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 105-107"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"105-107","global_pages":"105-107"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf
+source_part: "2"
+source_pages: "ч.2: 4-6"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"4-6","global_pages":"105-107"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 766
+tokens: 767
 status: extracted
 ai-generated: true
 ---
 # 2.5.6. Постановка вызовов на удержание
 
-> Трассировка: PDF §2.5.6 · сквозные стр. 105-107 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.105-107.
+> Трассировка: PDF §2.5.6 · сквозные стр. 105-107 · источники: ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.4-6.
 
 Вы можете поставить текущий вызов в карточке разговора на удержание — например, чтобы ответить на другой входящий вызов. Затем вы можете снять вызов с удержания и продолжить разговор с абонентом.
 
@@ -28,13 +28,13 @@ ai-generated: true
 
 Чтобы поставить вызов на удержание, нажмите кнопку Удержание на панели либо на соответствующем виджете. Вызов ставится на удержание, при этом заголовок панели и виджет меняют цвет. Отображается счетчик длительности удержания.
 
-![Изображение, стр. 105](../images/49-postanovka-vyzovov-na-uderzhanie-2.jpeg)
+![Изображение, стр. 105](../images/49-postanovka-vyzovov-na-uderzhanie-2.png)
 
 ![Изображение, стр. 105](../images/49-postanovka-vyzovov-na-uderzhanie-3.png)
 
 Чтобы снять вызов с удержания, нажмите кнопку Удержание еще раз.
 
-![Изображение, стр. 106](../images/49-postanovka-vyzovov-na-uderzhanie-4.jpeg)
+![Изображение, стр. 106](../images/49-postanovka-vyzovov-na-uderzhanie-4.png)
 
 | При постановке вызова на удержание и снятии вызова с удержания длительность вызова |
 | --- |
@@ -44,8 +44,8 @@ ai-generated: true
 
 При наличии двух (и более) вызовов на панели управления отображается только активный вызов, при этом второй вызов, находящийся на удержании, отображается в виде виджета. При снятии с удержания второго вызова первый автоматически переходит в режим удержания, при этом на панели отображается второй вызов.
 
-![Изображение, стр. 106](../images/49-postanovka-vyzovov-na-uderzhanie-6.jpeg)
+![Изображение, стр. 106](../images/49-postanovka-vyzovov-na-uderzhanie-6.png)
 
 Кроме кнопки паузы, вызов можно поставить на удержание посредством DTMF-команды. Для этого при помощи клавиатурного блока введите команду ##. Более подробное описание DTMF-команд приведено в этом разделе.
 
-![Изображение, стр. 107](../images/49-postanovka-vyzovov-na-uderzhanie-7.jpeg)
+![Изображение, стр. 107](../images/49-postanovka-vyzovov-na-uderzhanie-7.png)

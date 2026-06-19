@@ -8,19 +8,19 @@ pdf_section: "8"
 title: "План работы (WFM)"
 pdf_heading: "8. План работы (WFM)"
 pages: "245-246"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 245-246"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"245-246","global_pages":"245-246"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf
+source_part: "3"
+source_pages: "ч.3: 43-44"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf","part":3,"pages":"43-44","global_pages":"245-246"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 841
+tokens: 842
 status: extracted
 ai-generated: true
 ---
 # 8. План работы (WFM)
 
-> Трассировка: PDF §8 · сквозные стр. 245-246 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.245-246.
+> Трассировка: PDF §8 · сквозные стр. 245-246 · источники: ч.3 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf` с.43-44.
 
 План работы (WFM) подключается в Личном кабинете пользователя ВАТС, в разделе "Контакт-центр" → "Дополнительные сервисы".
 
@@ -39,15 +39,15 @@ ai-generated: true
 |  | Руководитель компании, а также пользователь c ролью "Супервизор" могут ознакомиться с |  |
 | функционалом, пройдя по информационной ссылке. |  |  |
 
-![Изображение, стр. 245](../images/98-plan-raboty-wfm-2.jpeg)
+![Изображение, стр. 245](../images/98-plan-raboty-wfm-2.png)
 
-![Изображение, стр. 245](../images/98-plan-raboty-wfm-3.jpeg)
+![Изображение, стр. 245](../images/98-plan-raboty-wfm-3.png)
 
 Онбординг позволяет пользователю быстро адаптировать функционал вкладки под свои потребности.
 
-![Изображение, стр. 246](../images/98-plan-raboty-wfm-4.jpeg)
+![Изображение, стр. 246](../images/98-plan-raboty-wfm-4.png)
 
-![Изображение, стр. 246](../images/98-plan-raboty-wfm-5.jpeg)
+![Изображение, стр. 246](../images/98-plan-raboty-wfm-5.png)
 
 Возврат к разделам Онбординга происходит по нажатию кнопки "К списку кейсов"
 

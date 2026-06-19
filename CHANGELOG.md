@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-11
+version: 0.2
+updated: 2026-06-19
 ai-generated: true
 ---
 
@@ -12,6 +12,18 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Fixed — Issue #119 KB pipeline: multi-part PDF и Git LFS
+
+- Workflow KB pipeline обновлён для LFS-aware checkout (`lfs: true`) и текущих
+  major-версий `actions/checkout`, `actions/setup-python` и `actions/upload-artifact`.
+- `make kb-mango`, workflow defaults и регрессионная проверка
+  `validate_issue_115_kb_mango_pipeline.py` переведены с удалённого
+  `CC_manual_1.26.23_compressed.pdf` на 6 PDF-частей руководства КЦ.
+- БЗ `kb/processed/mango-cc-manual/` регенерирована как multi-part документ со
+  сквозной пагинацией и `source_refs` на конкретные LFS-части.
+- Документация пополнения БЗ описывает обновление PDF через Git LFS, Codespace
+  или локальный Git и обновление `meta.json` при замене одного файла частями.
 
 ### Fixed — Issue #117 KB pipeline: трассировка разделов и multi-part PDF
 

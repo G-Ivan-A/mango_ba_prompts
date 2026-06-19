@@ -8,19 +8,19 @@ pdf_section: "10"
 title: "Клиенты"
 pdf_heading: "10. Клиенты"
 pages: "296"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 296"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"296","global_pages":"296"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf
+source_part: "3"
+source_pages: "ч.3: 94"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf","part":3,"pages":"94","global_pages":"296"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 677
+tokens: 678
 status: extracted
 ai-generated: true
 ---
 # 10. Клиенты
 
-> Трассировка: PDF §10 · сквозные стр. 296 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.296.
+> Трассировка: PDF §10 · сквозные стр. 296 · источники: ч.3 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf` с.94.
 
 | Модуль "Клиенты" отображается, если у пользователя Контакт-центра имеются |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |

@@ -40,7 +40,7 @@ make kb-validate
 ```
 
 Через Makefile то же самое: `make kb-sample`, `make kb-extract`, `make kb-validate`.
-Для реального руководства из issue #115: `make kb-mango`. Для split-руководства
+Для split-руководства КЦ из issue #119: `make kb-mango`. Для split-руководства
 ЛК из issue #117: `make kb-lk`.
 
 ## `extract.py` — что делает (ФТ-1/ФТ-2/ФТ-3)

@@ -8,23 +8,23 @@ pdf_section: "17.3.1.3"
 title: "Создание пользовательского параметра"
 pdf_heading: "17.3.1.3. Создание пользовательского параметра"
 pages: "526-528"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 526-528"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"526-528","global_pages":"526-528"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 21-23"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"21-23","global_pages":"526-528"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 850
+tokens: 851
 status: extracted
 ai-generated: true
 ---
 # 17.3.1.3. Создание пользовательского параметра
 
-> Трассировка: PDF §17.3.1.3 · сквозные стр. 526-528 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.526-528.
+> Трассировка: PDF §17.3.1.3 · сквозные стр. 526-528 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.21-23.
 
 На вкладке "Параметры" раздела "Данные" Конструктора отчетов нажмите кнопку Добавить параметр.
 
-![Изображение, стр. 527](../images/212-sozdanie-polzovatelskogo-parametra-1.jpeg)
+![Изображение, стр. 527](../images/212-sozdanie-polzovatelskogo-parametra-1.png)
 
 ![Изображение, стр. 527](../images/212-sozdanie-polzovatelskogo-parametra-2.jpeg)
 
@@ -49,4 +49,4 @@ ai-generated: true
 
 Параметр 1 не может быть равен Параметру 2, и наоборот.
 
-![Изображение, стр. 528](../images/212-sozdanie-polzovatelskogo-parametra-4.jpeg)
+![Изображение, стр. 528](../images/212-sozdanie-polzovatelskogo-parametra-4.png)

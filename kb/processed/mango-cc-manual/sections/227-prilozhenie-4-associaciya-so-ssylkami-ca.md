@@ -8,19 +8,19 @@ pdf_section: "21"
 title: "Приложение 4: Ассоциация со ссылками «callto» и «tel»"
 pdf_heading: "21. Приложение 4: Ассоциация со ссылками «callto» и «tel»"
 pages: "597-601"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 597-601"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"597-601","global_pages":"597-601"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+source_part: "6"
+source_pages: "ч.6: 92-96"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"92-96","global_pages":"597-601"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2847
+tokens: 2848
 status: extracted
 ai-generated: true
 ---
 # 21. Приложение 4: Ассоциация со ссылками «callto» и «tel»
 
-> Трассировка: PDF §21 · сквозные стр. 597-601 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.597-601.
+> Трассировка: PDF §21 · сквозные стр. 597-601 · источники: ч.6 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf` с.92-96.
 
 Вы можете настроить Контакт-центр MANGO OFFICE для совершения исходящих вызовов при нажатии на ссылки callto и tel в браузере. Для этого потребуется внести изменения в реестр Windows.
 
@@ -40,11 +40,11 @@ ai-generated: true
 
 ![Изображение, стр. 597](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-1.png)
 
-![Изображение, стр. 597](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-2.jpeg)
+![Изображение, стр. 597](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-2.png)
 
 Создайте резервную копию соответствующих веток реестра с использованием Редактора реестра (regedit). Запустите программу с помощью поля Найти программы и файлы или формы Выполнить (вызывается сочетанием клавиш Win+R)
 
-![Изображение, стр. 597](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-3.jpeg)
+![Изображение, стр. 597](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-3.png)
 
 Затем экспортируйте (Файл / Экспорт) в файлы с расширением .reg следующие ветки реестра:
 
@@ -70,7 +70,7 @@ ai-generated: true
 | целевой системе, необходимо использовать двойную косую черту (\\) вместо |  |
 | одинарной — так, как указано в примере ниже. |  |
 
-![Изображение, стр. 598](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-6.jpeg)
+![Изображение, стр. 598](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-6.png)
 
 Для того, чтобы узнать путь установки , щелкните правой кнопкой по ярлыку программы на рабочем столе и выберите команду Свойства. См. пример для ОС Windows 7 на рисунке ниже.
 
@@ -86,7 +86,7 @@ ai-generated: true
 | "URL Protocol"="" |
 | [HKEY_CLASSES_ROOT\callto\DefaultIcon] |
 
-![Изображение, стр. 599](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-8.jpeg)
+![Изображение, стр. 599](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-8.png)
 
 | @="\"C:\\Users\\user\\AppData\\Local\\Mango Telecom\\MANGO OFFICE Contact |
 | --- |
@@ -135,7 +135,7 @@ ai-generated: true
 | --- |
 | запущен Контакт-центр MANGO OFFICE и выполнен вход пользователя в систему. |
 
-![Изображение, стр. 599](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-10.jpeg)
+![Изображение, стр. 599](../images/227-prilozhenie-4-associaciya-so-ssylkami-ca-10.png)
 
 Пример содержания файла тестовой страницы
 

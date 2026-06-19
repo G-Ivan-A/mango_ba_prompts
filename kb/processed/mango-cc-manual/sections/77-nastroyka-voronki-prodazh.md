@@ -8,19 +8,19 @@ pdf_section: "5.4"
 title: "Настройка воронки продаж"
 pdf_heading: "5.4. Настройка воронки продаж"
 pages: "185-187"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 185-187"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"185-187","global_pages":"185-187"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf
+source_part: "2"
+source_pages: "ч.2: 84-86"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"84-86","global_pages":"185-187"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1199
+tokens: 1200
 status: extracted
 ai-generated: true
 ---
 # 5.4. Настройка воронки продаж
 
-> Трассировка: PDF §5.4 · сквозные стр. 185-187 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.185-187.
+> Трассировка: PDF §5.4 · сквозные стр. 185-187 · источники: ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.84-86.
 
 | Воронки продаж настраиваются пользователями с правом доступа Руководитель |  |  |
 | --- | --- | --- |
@@ -35,27 +35,27 @@ ai-generated: true
 
 • Задать имя воронке – пиктограмма • Удалить воронку • Сохранить внесенные изменения • Производить действия с этапами воронки.
 
-![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-3.jpeg)
+![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-3.png)
 
 ![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-4.png)
 
 Действия с этапами воронки Каждая сделка воронки имеет определенный этап. Одному этапу может соответствовать сколь угодно сделок, при этом одна сделка может соответствовать только одному этапу. При создании сделки назначается первый этап из возможных. Любую сделку в статусе В работе можно перемещать между этапами. 1. Чтобы добавить новый этап воронки продаж, щелкните по значку +. Этап можно добавлять в любой части воронки. Для одной воронки допускается не более 10 этапов. 2. Чтобы отредактировать этап воронки продаж, наведите курсор на нужную строку и выберите один из двух вариантов:
 
-![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-5.jpeg)
+![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-5.png)
 
 – редактировать название этапа воронки
 
-![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-6.jpeg)
+![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-6.png)
 
 – редактировать цвет воронки
 
-![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-7.jpeg)
+![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-7.png)
 
 ![Изображение, стр. 186](../images/77-nastroyka-voronki-prodazh-8.png)
 
 3. Чтобы удалить этап, наведите курсор на нужную строку и щелкните по значку .
 
-![Изображение, стр. 187](../images/77-nastroyka-voronki-prodazh-9.jpeg)
+![Изображение, стр. 187](../images/77-nastroyka-voronki-prodazh-9.png)
 
 Если в удаляемом этапе имеются сделки со статусом В работе, выберите другой этап в выпадающем окне и переместите сделки. Подтвердите свое согласие на удаление. Сделки, которые не находятся в работе (со статусами Состоялась, Не состоялась, Удалена), перемещаются на другой этап автоматически.
 
