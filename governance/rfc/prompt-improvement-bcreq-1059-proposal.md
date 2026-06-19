@@ -5,8 +5,8 @@ updated: 2026-06-19
 ai-generated: true
 type: rfc
 scope: prompts
-source_experiment: "docs/ba-process/bcreq-1059-email-routing/experiment-log.md"
-source_analysis: "governance/analysis-bcreq-1059-2026-06-19.md"
+source_experiment: "prompts/experiments/2026-06-19-bcreq-1059-email-routing.md"
+source_analysis: "prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/113"
 related_artifacts:
@@ -38,8 +38,8 @@ related_artifacts:
 рассмотрения.
 
 Источники:
-- Эксперимент: [`docs/ba-process/bcreq-1059-email-routing/experiment-log.md`](../../docs/ba-process/bcreq-1059-email-routing/experiment-log.md)
-- Анализ: [`governance/analysis-bcreq-1059-2026-06-19.md`](../analysis-bcreq-1059-2026-06-19.md)
+- Эксперимент: [`prompts/experiments/2026-06-19-bcreq-1059-email-routing.md`](../../prompts/experiments/2026-06-19-bcreq-1059-email-routing.md)
+- Анализ: [`prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md`](../../prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md)
 
 ---
 

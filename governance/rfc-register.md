@@ -19,7 +19,7 @@ related_artifacts:
   - "governance/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "governance/rfc/prompt-improvement-multichannel-proposal.md"
-  - "governance/analysis-bcreq-1059-2026-06-19.md"
+  - "prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md"
   - "governance/rfc/prompt-improvement-bcreq-1059-proposal.md"
 ---
 
@@ -130,7 +130,7 @@ PR #105 **не изменены** — сверка и правка идут то
 ## Открытые RFC по промптам (источник: боевой эксперимент BCREQ-1059, issue #113)
 
 Правки ниже — **предложения** из разбора
-[`governance/analysis-bcreq-1059-2026-06-19.md`](analysis-bcreq-1059-2026-06-19.md).
+[`prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md`](../prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
 Полный RFC: [`governance/rfc/prompt-improvement-bcreq-1059-proposal.md`](rfc/prompt-improvement-bcreq-1059-proposal.md).
 
@@ -160,7 +160,7 @@ PR #105 **не изменены** — сверка и правка идут то
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
 - **2026-06-19** — добавлены RFC-1059-P1…P6 (промпты) в статусе `proposed` по
   итогам боевого эксперимента BCREQ-1059 (issue #113). Полный анализ —
-  [`governance/analysis-bcreq-1059-2026-06-19.md`](analysis-bcreq-1059-2026-06-19.md);
+  [`prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md`](../prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md);
   RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1059-proposal.md`](rfc/prompt-improvement-bcreq-1059-proposal.md).
   P1 — усиление RFC-1025-P1 (3-й прогон с паттерном архитектурной путаницы, 🔴 критический).
   P2/P3 — усиление RFC-1025-P4 и RFC-1027-P2 (2-й прогон, 🟠 высокий).

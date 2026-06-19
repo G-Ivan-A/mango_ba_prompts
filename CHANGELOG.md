@@ -55,17 +55,13 @@ ai-generated: true
 ### Added — Issue #113 боевой эксперимент BCREQ-1059: Email-маршрутизация по Точке входа (Creative)
 
 - Добавлен полный прогон цепочки из 3 промптов на задаче BCREQ-1059
-  (маршрутизация email-ответов по Точке входа в КЦ MANGO OFFICE) —
-  каталог [`docs/ba-process/bcreq-1059-email-routing/`](docs/ba-process/bcreq-1059-email-routing/README.md)
-  (**ФТ-1**): вход ([`inputs/`](docs/ba-process/bcreq-1059-email-routing/inputs/)),
-  цепочка промптов ([`prompts-chain.md`](docs/ba-process/bcreq-1059-email-routing/prompts-chain.md)),
-  промежуточные результаты по шагам ([`steps/`](docs/ba-process/bcreq-1059-email-routing/steps/):
-  глоссарий, контекст/цель, ФТ с матрицей приоритетов, ограничения),
-  финальное ТЗ ([`final-artifact.md`](docs/ba-process/bcreq-1059-email-routing/final-artifact.md))
-  и лог эксперимента ([`experiment-log.md`](docs/ba-process/bcreq-1059-email-routing/experiment-log.md)).
+  (маршрутизация email-ответов по Точке входа в КЦ MANGO OFFICE) (**ФТ-1**):
+  лог эксперимента —
+  [`prompts/experiments/2026-06-19-bcreq-1059-email-routing.md`](prompts/experiments/2026-06-19-bcreq-1059-email-routing.md).
 - Выполнен креативный анализ эксперимента (**ФТ-2**): 5 паттернов ошибок LLM (Э1–Э5),
   6 успешных паттернов (У1–У6), 6 методологических инсайтов (M1–M6), инсайты для
-  онтологии (ADR #003–#010) — [`governance/analysis-bcreq-1059-2026-06-19.md`](governance/analysis-bcreq-1059-2026-06-19.md).
+  онтологии (ADR #003–#010) —
+  [`prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md`](prompts/experiments/analyses/2026-06-19-bcreq-1059-analysis.md).
 - Подготовлен RFC по улучшению промптов (**ФТ-3**, промпты **не изменены**):
   [`governance/rfc/prompt-improvement-bcreq-1059-proposal.md`](governance/rfc/prompt-improvement-bcreq-1059-proposal.md)
   (RFC-1059-P1…P6); реестр [`governance/rfc-register.md`](governance/rfc-register.md)
