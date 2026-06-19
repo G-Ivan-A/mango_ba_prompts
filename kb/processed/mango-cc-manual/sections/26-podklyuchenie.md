@@ -8,23 +8,23 @@ pdf_section: "2.5.1.3.8"
 title: "Подключение"
 pdf_heading: "2.5.1.3.8. Подключение"
 pages: "67-69"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
 source_part: "1"
 source_pages: "ч.1: 67-69"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"67-69","global_pages":"67-69"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"67-69","global_pages":"67-69"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1498
+tokens: 1499
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.8. Подключение
 
-> Трассировка: PDF §2.5.1.3.8 · сквозные стр. 67-69 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.67-69.
+> Трассировка: PDF §2.5.1.3.8 · сквозные стр. 67-69 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.67-69.
 
 Данная вкладка предназначена для настройки подключения программы для доступа в Web.
 
-![Изображение, стр. 68](../images/26-podklyuchenie-1.jpeg)
+![Изображение, стр. 68](../images/26-podklyuchenie-1.png)
 
 ![Изображение, стр. 68](../images/26-podklyuchenie-2.png)
 
@@ -39,7 +39,7 @@ ai-generated: true
 |  | MANGO OFFICE. Самостоятельное изменение настроек сервера может привести к потере |  |
 | работоспособности программы. |  |  |
 
-![Изображение, стр. 68](../images/26-podklyuchenie-4.jpeg)
+![Изображение, стр. 68](../images/26-podklyuchenie-4.png)
 
 В случае, когда флаг Использовать другой сервер для доступа в Web установлен, но поля Хост и Порт не заполнены, на экране отображается соответствующее предупреждение. Также если при запуске Контакт-центра MANGO OFFICE система обнаружит установленный флаг, но отсутствие заполненных полей Хост и Порт, то будут использованы настройки по умолчанию. Флажок Использовать прокси-сервер для доступа в Web устанавливается в случае, если в вашей организации для доступа к интернету используется прокси-сервер. Информацию о прокси-сервере вы можете получить у вашего системного администратора. После установки флажка становятся активными дополнительные поля Хост и Порт. В них следует указать URL-адрес или IP-адрес хоста, а также номер порта прокси-сервера, используемого для доступа к интернету.
 

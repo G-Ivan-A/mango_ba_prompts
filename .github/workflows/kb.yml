@@ -4,7 +4,7 @@ name: KB pipeline
 # (stdlib-only, без pip, детерминированно). Полный конвейер извлечения PDF
 # (pdfplumber/PyMuPDF/tiktoken) запускается ВРУЧНУЮ через workflow_dispatch:
 # он тяжелее и зависит от сети для pip, поэтому не должен блокировать обычный CI.
-# По умолчанию ручной запуск обрабатывает реальный mango-cc-manual из issue #115.
+# По умолчанию ручной запуск обрабатывает multi-part mango-cc-manual из issue #119.
 # Это GitHub-native извлечение, которого требует ФТ-2.
 
 on:
@@ -19,7 +19,7 @@ on:
       source:
         description: "PDF source path(s) under kb/sources/; use spaces for multi-part manuals"
         required: true
-        default: "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+        default: "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf"
       out:
         description: "Output directory under kb/processed/"
         required: true
@@ -62,10 +62,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          lfs: true
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -84,10 +86,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
+        with:
+          lfs: true
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
@@ -97,7 +101,7 @@ jobs:
       - name: Extract requested source
         run: |
           make kb-extract \
-            SRC="${{ inputs.source }}" \
+            SRCS="${{ inputs.source }}" \
             OUT="${{ inputs.out }}" \
             CODE="${{ inputs.doc_code }}" \
             TITLE="${{ inputs.doc_title }}" \
@@ -113,7 +117,7 @@ jobs:
         run: make kb-tokens OUT="${{ inputs.out }}"
 
       - name: Upload extracted KB artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: kb-processed
           path: ${{ inputs.out }}/

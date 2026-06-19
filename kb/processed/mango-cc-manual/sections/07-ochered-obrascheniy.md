@@ -8,19 +8,19 @@ pdf_section: "2.3"
 title: "Очередь обращений"
 pdf_heading: "2.3. Очередь обращений"
 pages: "26-27"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
 source_part: "1"
 source_pages: "ч.1: 26-27"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"26-27","global_pages":"26-27"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"26-27","global_pages":"26-27"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 976
+tokens: 977
 status: extracted
 ai-generated: true
 ---
 # 2.3. Очередь обращений
 
-> Трассировка: PDF §2.3 · сквозные стр. 26-27 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.26-27.
+> Трассировка: PDF §2.3 · сквозные стр. 26-27 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.26-27.
 
 | Вкладки панели "Очередь обращений" отображаются, если у пользователя Контакт- |  |  |  |  |  |  |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -32,11 +32,11 @@ ai-generated: true
 
 Панель "Очередь обращений" открывается по нажатию на иконку в верхней части окна Контакт-центра.
 
-![Изображение, стр. 26](../images/07-ochered-obrascheniy-2.jpeg)
+![Изображение, стр. 26](../images/07-ochered-obrascheniy-2.png)
 
 Панель "Очередь обращений" отображает: • вызовы, находящихся в очереди на ACD-группах и вызовы от абонентов, которые висят на одном из этапов звукового приветствия; • текстовые обращения;
 
-![Изображение, стр. 27](../images/07-ochered-obrascheniy-3.jpeg)
+![Изображение, стр. 27](../images/07-ochered-obrascheniy-3.png)
 
 • заказы обратных звонков, оставленных с виджета на сайте.
 

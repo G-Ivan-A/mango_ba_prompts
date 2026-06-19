@@ -8,23 +8,23 @@ pdf_section: "15.2.2.3"
 title: "В какое время теряются звонки"
 pdf_heading: "15.2.2.3. В какое время теряются звонки"
 pages: "448-449"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 448-449"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"448-449","global_pages":"448-449"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 44-45"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"44-45","global_pages":"448-449"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 573
+tokens: 574
 status: extracted
 ai-generated: true
 ---
 # 15.2.2.3. В какое время теряются звонки
 
-> Трассировка: PDF §15.2.2.3 · сквозные стр. 448-449 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.448-449.
+> Трассировка: PDF §15.2.2.3 · сквозные стр. 448-449 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.44-45.
 
 Отчет «В какое время теряются звонки» в графическом виде отображает информацию о процентном соотношении количества принятых и пропущенных звонков в зависимости от времени суток. Таким образом, отчет поможет выявить часы, в течение которых пропускается больше всего вызовов, и принять меры по снижению количества пропущенных звонков в эти часы. Пример сформированного отчета приведен на рисунке ниже. Для получения более детальной информации о количестве вызовов в течение дня наведите курсор на любой столбец графика.
 
-![Изображение, стр. 449](../images/176-v-kakoe-vremya-teryayutsya-zvonki-1.jpeg)
+![Изображение, стр. 449](../images/176-v-kakoe-vremya-teryayutsya-zvonki-1.png)
 
 ![Изображение, стр. 449](../images/176-v-kakoe-vremya-teryayutsya-zvonki-2.png)
 

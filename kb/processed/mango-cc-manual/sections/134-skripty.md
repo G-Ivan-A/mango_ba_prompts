@@ -8,19 +8,19 @@ pdf_section: "12"
 title: "Скрипты"
 pdf_heading: "12. Скрипты"
 pages: "377"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 377"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"377","global_pages":"377"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf
+source_part: "4"
+source_pages: "ч.4: 74"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf","part":4,"pages":"74","global_pages":"377"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 653
+tokens: 654
 status: extracted
 ai-generated: true
 ---
 # 12. Скрипты
 
-> Трассировка: PDF §12 · сквозные стр. 377 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.377.
+> Трассировка: PDF §12 · сквозные стр. 377 · источники: ч.4 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf` с.74.
 
 Модуль Скрипты предназначен для создания и настройки так называемых скриптов. Скриптом является набор ответов сотрудника и клиента, объединенный единым набором параметров, например, наименованием скрипта, автором, датой создания, назначением и прочими параметрами.
 

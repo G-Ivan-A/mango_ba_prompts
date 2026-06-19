@@ -8,23 +8,23 @@ pdf_section: "2.5.4"
 title: "Прием и классификация входящих вызовов"
 pdf_heading: "2.5.4. Прием и классификация входящих вызовов"
 pages: "101-102"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 101-102"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"101-102","global_pages":"101-102"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
+source_part: "1,2"
+source_pages: "ч.1: 101; ч.2: 1"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"101","global_pages":"101"},{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"1","global_pages":"102"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1140
+tokens: 1169
 status: extracted
 ai-generated: true
 ---
 # 2.5.4. Прием и классификация входящих вызовов
 
-> Трассировка: PDF §2.5.4 · сквозные стр. 101-102 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.101-102.
+> Трассировка: PDF §2.5.4 · сквозные стр. 101-102 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.101; ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.1.
 
 При поступлении вызова на номер (средство связи), выбранный для обслуживания вызовов, на экране появляется всплывающее окно карточки входящего вызова.
 
-![Изображение, стр. 101](../images/47-priem-i-klassifikaciya-vhodyaschih-vyzov-1.jpeg)
+![Изображение, стр. 101](../images/47-priem-i-klassifikaciya-vhodyaschih-vyzov-1.png)
 
 В правом верхнем углу карточки входящего вызова отображается время дозвона (время, прошедшее с момента начала распределения текущего вызова на сотрудника). На самой карточке отображается: • контактная информация звонящего абонента (при ее наличии). Если контактная информация отсутствует, то отображается номер абонента.
 
@@ -43,6 +43,6 @@ ai-generated: true
 
 Каждый поступивший вызов, номер которого был не определен или не найден в адресной книге, можно вручную привязать к новому или существующему контакту. Кроме того, вы можете отредактировать информацию о существующем контакте непосредственно из
 
-![Изображение, стр. 102](../images/47-priem-i-klassifikaciya-vhodyaschih-vyzov-3.jpeg)
+![Изображение, стр. 102](../images/47-priem-i-klassifikaciya-vhodyaschih-vyzov-3.png)
 
 карточки разговора. Подробное описание оперативного создания контактов приведено в этом разделе.
