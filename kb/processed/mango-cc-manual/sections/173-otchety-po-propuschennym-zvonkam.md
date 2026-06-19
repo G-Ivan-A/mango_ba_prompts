@@ -1,0 +1,18 @@
+---
+id: mango-cc-manual-173-otchety-po-propuschennym-zvonkam
+doc_code: CC
+doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
+doc_version: "1.26.23"
+section: "15.2.2"
+title: "Отчеты по пропущенным звонкам"
+pages: "444"
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 95
+status: extracted
+ai-generated: true
+---
+# 15.2.2. Отчеты по пропущенным звонкам
+
+• Пропущенные звонки o Количество пропущенных звонков o Причины пропущенных звонков o В какое время теряются звонки o Сколько клиенты готовы ждать на линии

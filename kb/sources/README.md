@@ -87,9 +87,16 @@ python3 scripts/kb/extract.py kb/sources/cc-manual/CC_manual_1.26.23.pdf \
 ### Через GitHub Actions (без локального окружения)
 
 Actions → **KB pipeline** → *Run workflow* → укажите `source`, `out`, `doc_code`,
-`doc_title`, `doc_version`. Workflow поставит зависимости, выполнит извлечение и
-приложит результат артефактом запуска (скачайте и закоммитьте, либо запустите
-локально). Детали — [`.github/workflows/kb.yml`](../../.github/workflows/kb.yml).
+`doc_title`, `doc_version`. По умолчанию workflow настроен на реальное руководство
+из issue #115:
+
+- `source`: `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`
+- `out`: `kb/processed/mango-cc-manual`
+
+Workflow поставит зависимости, выполнит извлечение и приложит результат артефактом
+запуска. Если нужно сразу закоммитить результат в текущую ветку, установите
+`commit_result=true`; иначе скачайте артефакт и закоммитьте его отдельным PR либо
+запустите извлечение локально. Детали — [`.github/workflows/kb.yml`](../../.github/workflows/kb.yml).
 
 ---
 
