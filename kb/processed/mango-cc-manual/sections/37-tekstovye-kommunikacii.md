@@ -8,27 +8,27 @@ pdf_section: "2.5.1.3.17"
 title: "Текстовые коммуникации"
 pdf_heading: "2.5.1.3.17. Текстовые коммуникации"
 pages: "84-85"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf
 source_part: "1"
 source_pages: "ч.1: 84-85"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"84-85","global_pages":"84-85"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf","part":1,"pages":"84-85","global_pages":"84-85"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 536
+tokens: 537
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.17. Текстовые коммуникации
 
-> Трассировка: PDF §2.5.1.3.17 · сквозные стр. 84-85 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.84-85.
+> Трассировка: PDF §2.5.1.3.17 · сквозные стр. 84-85 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf` с.84-85.
 
 Данная вкладка предназначена для работы с группами каналов Текстовых коммуникаций.
 
-![Изображение, стр. 84](../images/37-tekstovye-kommunikacii-1.jpeg)
+![Изображение, стр. 84](../images/37-tekstovye-kommunikacii-1.png)
 
 На закладке отображается информация о тарифе и список подключенных групп каналов в порядке их создания. Для каждой группы указывается следующее:
 
-![Изображение, стр. 85](../images/37-tekstovye-kommunikacii-2.jpeg)
+![Изображение, стр. 85](../images/37-tekstovye-kommunikacii-2.png)
 
 • Активность группы с возможностью ее активировать/деактивировать, по умолчанию при создании группа активна. При деактивации не отображается на сайте, сообщения из соц. сетей не поступают.
 

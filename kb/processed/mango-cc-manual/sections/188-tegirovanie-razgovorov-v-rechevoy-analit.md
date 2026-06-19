@@ -8,19 +8,19 @@ pdf_section: "16.2"
 title: "Тегирование разговоров в Речевoй аналитике"
 pdf_heading: "16.2. Тегирование разговоров в Речевoй аналитике"
 pages: "477-478"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 477-478"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"477-478","global_pages":"477-478"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 73-74"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"73-74","global_pages":"477-478"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1009
+tokens: 1010
 status: extracted
 ai-generated: true
 ---
 # 16.2. Тегирование разговоров в Речевoй аналитике
 
-> Трассировка: PDF §16.2 · сквозные стр. 477-478 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.477-478.
+> Трассировка: PDF §16.2 · сквозные стр. 477-478 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.73-74.
 
 В Речевой аналитике тегирование разговоров выполняется автоматически на основе настроенных тематик, ключевых слов и анализа с использованием чата ИИ. Тематика – метка на разговор, которая устанавливается в зависимости от правил, заданных пользователем, и учитывающих вхождение введенных пользователем терм. Речевая аналитика позволяет автоматически проставлять звонку тематику. Таким образом Речевая аналитика классифицирует звонки, основываясь на наличии в разговоре заданных слов или фраз.
 
@@ -33,9 +33,9 @@ ai-generated: true
 
 По умолчанию в Речевой аналитике включены 35 предустановленных тематик. Рабочая область вкладки Тематики содержит список всех тематик Речевой аналитики: Мои тематики, Совместные, Предустановленные, а также строку поиска по наименованию тематики, ее создателю или ключевым словам.
 
-![Изображение, стр. 478](../images/188-tegirovanie-razgovorov-v-rechevoy-analit-2.jpeg)
+![Изображение, стр. 478](../images/188-tegirovanie-razgovorov-v-rechevoy-analit-2.png)
 
-![Изображение, стр. 478](../images/188-tegirovanie-razgovorov-v-rechevoy-analit-3.jpeg)
+![Изображение, стр. 478](../images/188-tegirovanie-razgovorov-v-rechevoy-analit-3.png)
 
 ![Изображение, стр. 478](../images/188-tegirovanie-razgovorov-v-rechevoy-analit-4.png)
 

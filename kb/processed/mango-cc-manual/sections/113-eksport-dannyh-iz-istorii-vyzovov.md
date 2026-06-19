@@ -8,19 +8,19 @@ pdf_section: "9.1.4"
 title: "Экспорт данных из истории вызовов"
 pdf_heading: "9.1.4. Экспорт данных из истории вызовов"
 pages: "288-290"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 288-290"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"288-290","global_pages":"288-290"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf
+source_part: "3"
+source_pages: "ч.3: 86-88"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf","part":3,"pages":"86-88","global_pages":"288-290"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 984
+tokens: 985
 status: extracted
 ai-generated: true
 ---
 # 9.1.4. Экспорт данных из истории вызовов
 
-> Трассировка: PDF §9.1.4 · сквозные стр. 288-290 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.288-290.
+> Трассировка: PDF §9.1.4 · сквозные стр. 288-290 · источники: ч.3 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf` с.86-88.
 
 Контакт-центр MANGO OFFICE обеспечивает возможность анализа данных об истории вызовов в других программных продуктах с помощью экспорта (выгрузки) данных. Экспорт осуществляется в формате CSV (значения, разделенные запятыми).
 
@@ -29,7 +29,7 @@ ai-generated: true
 |  | разреза: По группе или По сотруднику, а также и значений других критериев фильтрации, |  |
 | отбора, группировки и поиска. |  |  |
 
-![Изображение, стр. 288](../images/113-eksport-dannyh-iz-istorii-vyzovov-1.jpeg)
+![Изображение, стр. 288](../images/113-eksport-dannyh-iz-istorii-vyzovov-1.png)
 
 Чтобы экспортировать данные из истории вызовов, нажмите кнопку Экспорт в нижней части окна. После этого на экране отображается окно Экспорт.
 
@@ -43,6 +43,6 @@ ai-generated: true
 | --- |
 | могут некорректно формировать файл для импорта. |
 
-![Изображение, стр. 289](../images/113-eksport-dannyh-iz-istorii-vyzovov-4.jpeg)
+![Изображение, стр. 289](../images/113-eksport-dannyh-iz-istorii-vyzovov-4.png)
 
 <!-- изображение на стр. 290: байты не извлечены (PyMuPDF недоступен) -->

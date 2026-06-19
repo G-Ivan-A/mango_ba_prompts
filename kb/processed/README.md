@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-18
+version: 0.2
+updated: 2026-06-19
 ai-generated: true
 type: kb-processed-guide
 scope: kb/processed
@@ -11,6 +11,7 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/117"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/119"
 ---
 
 # `kb/processed/` — результаты извлечения (для агентов)
@@ -72,7 +73,7 @@ multi-part документов `pages` остаётся сквозной паг
 | Документ | Статус |
 | --- | --- |
 | [`contact-center-manual-sample/`](contact-center-manual-sample/index.md) | извлечён из синтетической фикстуры (эксперимент issue #111) |
-| [`mango-cc-manual/`](mango-cc-manual/index.md) | извлечён из реального руководства КЦ v1.26.23 |
+| [`mango-cc-manual/`](mango-cc-manual/index.md) | извлечён из 6 PDF-частей руководства КЦ v1.26.23 |
 | [`mango-lk-manual/`](mango-lk-manual/index.md) | извлечён из 5 PDF-частей руководства ЛК ВАТС v1.21 |
 
 ## Источники

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-18
+version: 0.2
+updated: 2026-06-19
 ai-generated: true
 type: kb-sources-guide
 scope: kb/sources
@@ -12,6 +12,7 @@ related_artifacts:
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/117"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/119"
 ---
 
 # `kb/sources/` — ручной ввод источников + инструкция по пополнению БЗ
@@ -39,10 +40,11 @@ kb/sources/                      ← ВЫ кладёте файлы сюда (р
 ```
 
 Один документ — один подкаталог в `kb/sources/<slug>/`. Туда же кладётся исходный
-файл (`*.pdf`, в перспективе `*.docx`) и манифест `source.md` (см. шаблон в
-[`contact-center-manual/source.md`](contact-center-manual/source.md)). Если
-документ разделён на несколько PDF из-за размера, все части лежат в том же
-подкаталоге и передаются в обработку в порядке страниц.
+файл (`*.pdf`, в перспективе `*.docx`) и манифест `source.md` или `meta.json`.
+См. шаблон в [`contact-center-manual/source.md`](contact-center-manual/source.md).
+Если документ разделён на несколько PDF из-за размера, все части лежат в том же
+подкаталоге и передаются в обработку в порядке страниц. PDF-файлы в репозитории
+ведутся через Git LFS (`.gitattributes`: `*.pdf filter=lfs ...`).
 
 ---
 
@@ -64,6 +66,40 @@ kb/sources/                      ← ВЫ кладёте файлы сюда (р
 
 5. **Проверьте результат** и закоммитьте `kb/sources/<slug>/` **и**
    `kb/processed/<slug>/` одним PR.
+
+---
+
+## Как обновлять PDF через Git LFS
+
+Большие PDF нельзя загружать через веб-интерфейс GitHub: так легко получить
+обычный blob или сломать LFS-указатель. Используйте Codespace или локальный Git
+с установленным Git LFS.
+
+```bash
+git lfs install
+git lfs pull
+git lfs ls-files
+```
+
+Если LFS ещё не был включён для PDF, выполните один раз:
+
+```bash
+git lfs track "*.pdf"
+git add .gitattributes
+```
+
+При замене руководства:
+
+1. Скопируйте новый PDF или все PDF-части в `kb/sources/<slug>/`.
+2. Обновите `meta.json` или `source.md`: `version`, `upload_date`, `parts`,
+   `total_pages`, `file_size_mb`, `split_method`.
+3. Проверьте, что PDF попали в LFS: `git lfs ls-files kb/sources/<slug>`.
+4. Перезапустите извлечение в тот же `kb/processed/<slug>/`.
+5. Закоммитьте источник, метаданные и регенерированный `kb/processed/<slug>/`.
+
+Если один PDF заменён несколькими частями, перечисляйте части в порядке страниц:
+`part-1.pdf part-2.pdf ...`. Сквозная пагинация появится в `meta.json.sections`
+и `source_refs`, а локальные страницы каждой части сохранятся отдельно.
 
 ---
 
@@ -104,15 +140,16 @@ python3 scripts/kb/extract.py kb/sources/cc-manual/CC_manual_1.26.23.pdf \
 Actions → **KB pipeline** → *Run workflow* → укажите `source`, `out`, `doc_code`,
 `doc_title`, `doc_version`. Для multi-part PDF перечислите пути в `source` через
 пробел в порядке страниц. По умолчанию workflow настроен на реальное руководство
-из issue #115:
+КЦ из issue #119:
 
-- `source`: `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`
+- `source`: `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf ... part-6.pdf`
 - `out`: `kb/processed/mango-cc-manual`
 
-Workflow поставит зависимости, выполнит извлечение и приложит результат артефактом
-запуска. Если нужно сразу закоммитить результат в текущую ветку, установите
-`commit_result=true`; иначе скачайте артефакт и закоммитьте его отдельным PR либо
-запустите извлечение локально. Детали — [`.github/workflows/kb.yml`](../../.github/workflows/kb.yml).
+Workflow делает checkout с `lfs: true`, поставит зависимости, выполнит извлечение
+и приложит результат артефактом запуска. Если нужно сразу закоммитить результат в
+текущую ветку, установите `commit_result=true`; иначе скачайте артефакт и
+закоммитьте его отдельным PR либо запустите извлечение локально. Детали —
+[`.github/workflows/kb.yml`](../../.github/workflows/kb.yml).
 
 ---
 
@@ -148,11 +185,13 @@ Workflow поставит зависимости, выполнит извлеч�
 
 ## Как обновить документ (новая версия PDF)
 
-1. Положите новый файл рядом со старым (или замените), обновите `version`/`date`
-   в `source.md`.
-2. Перезапустите извлечение **в тот же** `--out` (каталог пересоздаётся целиком —
+1. Положите новый файл или PDF-части рядом со старым набором, обновите
+   `version`/`date` в `source.md` или `meta.json`.
+2. Если изменилась разбивка на части, обновите `parts`, `total_pages`,
+   `split_method` и команду/Actions input `source`.
+3. Перезапустите извлечение **в тот же** `--out` (каталог пересоздаётся целиком —
    diff покажет ровно, что изменилось между версиями).
-3. Проверьте и закоммитьте. Историю версий хранит git; при необходимости
+4. Проверьте и закоммитьте. Историю версий хранит git; при необходимости
    зафиксируйте изменения в `CHANGELOG.md`.
 
 ---

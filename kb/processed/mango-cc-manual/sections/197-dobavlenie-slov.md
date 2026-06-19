@@ -8,19 +8,19 @@ pdf_section: "16.5.1"
 title: "Добавление слов"
 pdf_heading: "16.5.1. Добавление слов"
 pages: "501-502"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 501-502"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"501-502","global_pages":"501-502"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf
+source_part: "5"
+source_pages: "ч.5: 97-98"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf","part":5,"pages":"97-98","global_pages":"501-502"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 453
+tokens: 454
 status: extracted
 ai-generated: true
 ---
 # 16.5.1. Добавление слов
 
-> Трассировка: PDF §16.5.1 · сквозные стр. 501-502 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.501-502.
+> Трассировка: PDF §16.5.1 · сквозные стр. 501-502 · источники: ч.5 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf` с.97-98.
 
 Чтобы отправить заявку на добавление слова, которое не знакомо «Речевой аналитике», следует в разделе «Тематики» выбрать тематику, в которой имеются незнакомые слова, и открыть карточку тематики.
 
@@ -28,8 +28,8 @@ ai-generated: true
 
 Внизу карточки тематики будет присутствовать уведомление о незнакомом слове и предложение добавить его в систему. Нажмите кнопку Добавить. Заявка отобразится в окне раздела «Заявки на улучшение качества распознавания», на вкладке «Добавление слов».
 
-![Изображение, стр. 502](../images/197-dobavlenie-slov-2.jpeg)
+![Изображение, стр. 502](../images/197-dobavlenie-slov-2.png)
 
-![Изображение, стр. 502](../images/197-dobavlenie-slov-3.jpeg)
+![Изображение, стр. 502](../images/197-dobavlenie-slov-3.png)
 
 Окно заявки содержит следующие данные: • Номер заявки • Статус заявки – на рассмотрении, исправления приняты, исправления отклонены. • Дата создания заявки • Дата, до которой будет рассмотрена заявка Также в окне можно ознакомиться с предлагаемым для анализа словом.

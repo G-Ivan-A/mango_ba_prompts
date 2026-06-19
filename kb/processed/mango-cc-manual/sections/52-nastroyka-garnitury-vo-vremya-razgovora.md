@@ -8,19 +8,19 @@ pdf_section: "2.5.9"
 title: "Настройка гарнитуры во время разговора"
 pdf_heading: "2.5.9. Настройка гарнитуры во время разговора"
 pages: "113"
-source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
-source_part: "1"
-source_pages: "ч.1: 113"
-source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"113","global_pages":"113"}]'
+source: kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf
+source_part: "2"
+source_pages: "ч.2: 12"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf","part":2,"pages":"12","global_pages":"113"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 650
+tokens: 651
 status: extracted
 ai-generated: true
 ---
 # 2.5.9. Настройка гарнитуры во время разговора
 
-> Трассировка: PDF §2.5.9 · сквозные стр. 113 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.113.
+> Трассировка: PDF §2.5.9 · сквозные стр. 113 · источники: ч.2 `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf` с.12.
 
 ![Изображение, стр. 113](../images/52-nastroyka-garnitury-vo-vremya-razgovora-1.png)
 
