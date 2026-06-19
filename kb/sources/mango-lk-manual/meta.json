@@ -1,0 +1,23 @@
+{
+  "name": "Виртуальная АТС MANGO OFFICE - Справочник абонента",
+  "version": "1.21",
+  "type": "user_manual",
+  "product": "MANGO OFFICE Virtual PBX",
+  "language": "ru",
+  "upload_date": "2026-06-19",
+  "description": "Справочник абонента виртуальной АТС MANGO OFFICE. Руководство пользователя по настройке и использованию облачной телефонии.",
+  "topics": [
+    "настройка АТС",
+    "управление номерами",
+    "маршрутизация звонков",
+    "голосовая почта",
+    "конференц-связь",
+    "статистика звонков",
+    "интеграция с CRM"
+  ],
+  "total_pages": 568,
+  "parts": 5,
+  "split_method": "logical_chapters",
+  "file_size_mb": 29,
+  "source_url": null
+}
