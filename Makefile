@@ -13,21 +13,34 @@ SAMPLE_OUT  := kb/processed/contact-center-manual-sample
 DOC_CODE    := CC
 DOC_TITLE   := Контакт-центр MANGO OFFICE
 DOC_VERSION := 1.26.23-sample
-NOTE        := Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue #111. Структура воспроизводит реальное руководство (issue #109). Замените PDF и перезапустите для реальных данных.
+NOTE        := Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue 111. Структура воспроизводит реальное руководство (issue 109). Замените PDF и перезапустите для реальных данных.
 
-.PHONY: help kb-all kb-sample kb-extract kb-validate kb-tokens kb-clean
+MANGO_SRC     := kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+MANGO_OUT     := kb/processed/mango-cc-manual
+MANGO_TITLE   := Контакт-центр MANGO OFFICE - Руководство пользователя
+MANGO_VERSION := 1.26.23
+MANGO_NOTE    := Реальное руководство из issue 115; извлечено после диагностики KB Pipeline 11.
+
+SRC     ?= $(SAMPLE_PDF)
+OUT     ?= $(SAMPLE_OUT)
+CODE    ?= $(DOC_CODE)
+TITLE   ?= $(DOC_TITLE)
+VERSION ?= $(DOC_VERSION)
+
+.PHONY: help kb-all kb-sample kb-extract kb-mango kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
 	@echo "  make kb-all       — kb-sample → kb-extract → kb-validate"
 	@echo "  make kb-sample    — собрать синтетическую фикстуру PDF (reportlab+Pillow)"
-	@echo "  make kb-extract   — извлечь фикстуру в $(SAMPLE_OUT) (pdfplumber)"
+	@echo "  make kb-extract   — извлечь SRC в OUT (по умолчанию фикстура → $(SAMPLE_OUT))"
+	@echo "  make kb-mango     — извлечь реальный mango-cc-manual из issue #115"
 	@echo "  make kb-validate  — проверить конвейер БЗ (stdlib-only, как в CI)"
-	@echo "  make kb-tokens    — показать расход токенов по индексу и разделам"
+	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
 	@echo "  make kb-clean     — удалить временные файлы (pycache, _diagram.png)"
 	@echo ""
 	@echo "Зависимости извлечения: pip install -r scripts/kb/requirements.txt"
-	@echo "Свой PDF: PYTHON=python3 $(PYTHON) scripts/kb/extract.py <file.pdf> --out kb/processed/<slug> --doc-code XX"
+	@echo "Свой PDF: make kb-extract SRC=kb/sources/<slug>/<file.pdf> OUT=kb/processed/<slug> CODE=XX TITLE='...' VERSION=..."
 
 # Полный прогон конвейера на синтетической фикстуре.
 kb-all: kb-sample kb-extract kb-validate
@@ -36,14 +49,24 @@ kb-all: kb-sample kb-extract kb-validate
 kb-sample:
 	$(PYTHON) scripts/kb/make_sample_pdf.py "$(SAMPLE_PDF)"
 
-# Извлечь фикстуру в machine-readable БЗ (index.md + sections/ + images/ + meta.json).
+# Извлечь PDF в machine-readable БЗ (index.md + sections/ + images/ + meta.json).
 kb-extract:
-	$(PYTHON) scripts/kb/extract.py "$(SAMPLE_PDF)" \
-		--out "$(SAMPLE_OUT)" \
-		--doc-code "$(DOC_CODE)" \
-		--doc-title "$(DOC_TITLE)" \
-		--doc-version "$(DOC_VERSION)" \
+	$(PYTHON) scripts/kb/extract.py "$(SRC)" \
+		--out "$(OUT)" \
+		--doc-code "$(CODE)" \
+		--doc-title "$(TITLE)" \
+		--doc-version "$(VERSION)" \
 		--note "$(NOTE)"
+
+# Воспроизвести БЗ для реального руководства из issue #115.
+kb-mango:
+	$(MAKE) kb-extract \
+		SRC="$(MANGO_SRC)" \
+		OUT="$(MANGO_OUT)" \
+		CODE="$(DOC_CODE)" \
+		TITLE="$(MANGO_TITLE)" \
+		VERSION="$(MANGO_VERSION)" \
+		NOTE="$(MANGO_NOTE)"
 
 # Проверка деливераблов issue #111 — stdlib-only, идентична шагу в CI.
 kb-validate:
@@ -52,7 +75,7 @@ kb-validate:
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
 kb-tokens:
 	@echo "Расход токенов (метод см. в meta.json → token_method):"
-	@for f in "$(SAMPLE_OUT)/index.md" "$(SAMPLE_OUT)"/sections/*.md; do \
+	@for f in "$(OUT)/index.md" "$(OUT)"/sections/*.md; do \
 		printf '  %-58s ' "$$f"; $(PYTHON) scripts/kb/tokens.py "$$f"; \
 	done
 

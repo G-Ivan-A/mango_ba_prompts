@@ -13,6 +13,25 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #115 KB pipeline: реальное руководство не попадало в `kb/processed/`
+
+- Диагностирован KB Pipeline #11: успешный `workflow_dispatch` запуск извлекал
+  только синтетическую фикстуру `contact-center-manual-sample`, выгружал результат
+  артефактом и не обрабатывал загруженный
+  `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`.
+- Добавлена сформированная БЗ
+  [`kb/processed/mango-cc-manual/`](kb/processed/mango-cc-manual/) для реального
+  руководства v1.26.23: `index.md`, `meta.json`, `sections/`, `images/`.
+- `Makefile` и workflow KB pipeline параметризованы (`SRC`, `OUT`, `doc_code`,
+  `doc_title`, `doc_version`); ручной GitHub Actions запуск теперь по умолчанию
+  обрабатывает `mango-cc-manual`, а не фикстуру.
+- `extract.py` использует встроенное PDF outline/bookmarks, если оно есть, чтобы
+  не превращать жирные нумерованные пункты списков в отдельные разделы.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_115_kb_mango_pipeline.py`](scripts/validate_issue_115_kb_mango_pipeline.py):
+  фиксирует наличие реальной БЗ, корректный источник, outline-нарезку и
+  параметризованный workflow.
+
 ### Added — Issue #111 машиночитаемая БЗ из PDF: эксперимент + инфраструктура + методология (Creative)
 
 - Построен сквозной конвейер **«источник → machine-readable БЗ»**

@@ -4,6 +4,7 @@ name: KB pipeline
 # (stdlib-only, без pip, детерминированно). Полный конвейер извлечения PDF
 # (pdfplumber/PyMuPDF/tiktoken) запускается ВРУЧНУЮ через workflow_dispatch:
 # он тяжелее и зависит от сети для pip, поэтому не должен блокировать обычный CI.
+# По умолчанию ручной запуск обрабатывает реальный mango-cc-manual из issue #115.
 # Это GitHub-native извлечение, которого требует ФТ-2.
 
 on:
@@ -14,9 +15,42 @@ on:
     branches:
       - main
   workflow_dispatch:
+    inputs:
+      source:
+        description: "PDF source path under kb/sources/"
+        required: true
+        default: "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+      out:
+        description: "Output directory under kb/processed/"
+        required: true
+        default: "kb/processed/mango-cc-manual"
+      doc_code:
+        description: "Short document code for citations"
+        required: true
+        default: "CC"
+      doc_title:
+        description: "Document title for index/meta"
+        required: true
+        default: "Контакт-центр MANGO OFFICE - Руководство пользователя"
+      doc_version:
+        description: "Document version"
+        required: true
+        default: "1.26.23"
+      note:
+        description: "Extraction note stored in meta.json"
+        required: false
+        default: "Manual GitHub Actions extraction"
+      commit_result:
+        description: "Commit generated kb/processed output back to the current branch"
+        required: true
+        type: choice
+        options:
+          - "false"
+          - "true"
+        default: "false"
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: kb-${{ github.ref }}
@@ -35,13 +69,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Validate KB pipeline (issue #111)
-        run: python3 scripts/validate_issue_111_kb_pipeline.py
+      - name: Validate KB pipeline
+        run: |
+          python3 scripts/validate_issue_111_kb_pipeline.py
+          python3 scripts/validate_issue_115_kb_mango_pipeline.py
 
   # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
   # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):
-  # фикстура → извлечение → проверка. Результат выкладывается артефактом,
-  # коммит в репозиторий НЕ делается (источник истины — закоммиченный sample).
+  # source → extract.py → kb/processed/<slug> → проверка. Результат всегда
+  # выкладывается артефактом; при commit_result=true также коммитится в ветку.
   extract:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
@@ -57,20 +93,40 @@ jobs:
       - name: Install extraction dependencies
         run: pip install -r scripts/kb/requirements.txt
 
-      - name: Build sample fixture and extract
+      - name: Extract requested source
         run: |
-          make kb-sample
-          make kb-extract
+          make kb-extract \
+            SRC="${{ inputs.source }}" \
+            OUT="${{ inputs.out }}" \
+            CODE="${{ inputs.doc_code }}" \
+            TITLE="${{ inputs.doc_title }}" \
+            VERSION="${{ inputs.doc_version }}" \
+            NOTE="${{ inputs.note }}"
 
       - name: Validate extracted KB
-        run: make kb-validate
+        run: |
+          make kb-validate
+          python3 scripts/validate_issue_115_kb_mango_pipeline.py
 
       - name: Show token footprint (index vs sections)
-        run: make kb-tokens
+        run: make kb-tokens OUT="${{ inputs.out }}"
 
       - name: Upload extracted KB artifact
         uses: actions/upload-artifact@v4
         with:
           name: kb-processed
-          path: kb/processed/
+          path: ${{ inputs.out }}/
           if-no-files-found: error
+
+      - name: Commit extracted KB
+        if: ${{ inputs.commit_result == 'true' }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "${{ inputs.out }}"
+          if git diff --cached --quiet; then
+            echo "No generated KB changes to commit."
+          else
+            git commit -m "chore(kb): extract ${{ inputs.out }}"
+            git push
+          fi
