@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.3.2"
+pdf_section: "4.3.2"
 title: "Обработка обращений"
+pdf_heading: "4.3.2. Обработка обращений"
 pages: "142-154"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 142-154"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"142-154","global_pages":"142-154"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 8897
+tokens: 8960
 status: extracted
 ai-generated: true
 ---
 # 4.3.2. Обработка обращений
+
+> Трассировка: PDF §4.3.2 · сквозные стр. 142-154 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.142-154.
 
 Шапка обращения Шапка как голосового, так и текстового обращения содержит элементы:
 

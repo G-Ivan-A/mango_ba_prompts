@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.5.1"
+pdf_section: "16.5.1"
 title: "Добавление слов"
+pdf_heading: "16.5.1. Добавление слов"
 pages: "501-502"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 501-502"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"501-502","global_pages":"501-502"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 390
+tokens: 453
 status: extracted
 ai-generated: true
 ---
 # 16.5.1. Добавление слов
+
+> Трассировка: PDF §16.5.1 · сквозные стр. 501-502 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.501-502.
 
 Чтобы отправить заявку на добавление слова, которое не знакомо «Речевой аналитике», следует в разделе «Тематики» выбрать тематику, в которой имеются незнакомые слова, и открыть карточку тематики.
 

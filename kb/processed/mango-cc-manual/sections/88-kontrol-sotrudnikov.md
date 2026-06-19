@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "7.1"
+pdf_section: "7.1"
 title: "Контроль сотрудников"
+pdf_heading: "7.1. Контроль сотрудников"
 pages: "214-217"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 214-217"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"214-217","global_pages":"214-217"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2133
+tokens: 2194
 status: extracted
 ai-generated: true
 ---
 # 7.1. Контроль сотрудников
+
+> Трассировка: PDF §7.1 · сквозные стр. 214-217 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.214-217.
 
 Этот отчет позволяет получить аналитические данные о работе сотрудников Контакт-центра MANGO OFFICE в режиме реального времени. В отчете учитываются все каналы коммуникации – текстовые и звонковые, которые подключены в Личном кабинете пользователя ВАТС.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "3"
+pdf_section: "3"
 title: "Dashboard"
+pdf_heading: "3. Dashboard"
 pages: "117-119"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 117-119"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"117-119","global_pages":"117-119"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1409
+tokens: 1468
 status: extracted
 ai-generated: true
 ---
 # 3. Dashboard
+
+> Трассировка: PDF §3 · сквозные стр. 117-119 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.117-119.
 
 Вкладка Dashboard - элемент пользовательского интерфейса, отображается в главном окне программы. Вкладка доступна при наличии оплаченного подключения услуги. На вкладке располагается набор виджетов, создаваемых пользователем, для быстрого просмотра отчетов по выбранным показателям для каждой из воронок продаж. В отчете учитываются все каналы коммуникации – текстовые и звонковые, которые подключены в Личном кабинете пользователя ВАТС. На вкладке Dashboard пользователь может производить следующие действия: • создание, редактирование и удаление рабочих столов • фильтрацию отображаемых виджетов по периоду и участникам • создание нового виджета • дублирование существующего виджета
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.10"
+pdf_section: "2.5.1.3.10"
 title: "Быстрые ответы"
+pdf_heading: "2.5.1.3.10. Быстрые ответы"
 pages: "71-73"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 71-73"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"71-73","global_pages":"71-73"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1181
+tokens: 1248
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.10. Быстрые ответы
+
+> Трассировка: PDF §2.5.1.3.10 · сквозные стр. 71-73 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.71-73.
 
 На данной вкладке осуществляется редактирование списка быстрых ответов, применяемых при обработке обращений.
 

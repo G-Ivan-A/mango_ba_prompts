@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.2.2.1"
+pdf_section: "15.2.2.1"
 title: "Количество пропущенных звонков"
+pdf_heading: "15.2.2.1. Количество пропущенных звонков"
 pages: "444-446"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 444-446"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"444-446","global_pages":"444-446"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 505
+tokens: 570
 status: extracted
 ai-generated: true
 ---
 # 15.2.2.1. Количество пропущенных звонков
+
+> Трассировка: PDF §15.2.2.1 · сквозные стр. 444-446 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.444-446.
 
 ![Изображение, стр. 445](../images/174-kolichestvo-propuschennyh-zvonkov-1.jpeg)
 

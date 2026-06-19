@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "11.5.2"
+pdf_section: "11.5.2"
 title: "Эффективность кампании"
+pdf_heading: "11.5.2. Эффективность кампании"
 pages: "372-374"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 372-374"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"372-374","global_pages":"372-374"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 919
+tokens: 982
 status: extracted
 ai-generated: true
 ---
 # 11.5.2. Эффективность кампании
+
+> Трассировка: PDF §11.5.2 · сквозные стр. 372-374 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.372-374.
 
 Вкладка "Эффективность кампании" служит для оценки кампаний Исходящего обзвона. В зависимости от выбранных параметров пользователь может отслеживать различные показатели кампаний ИО и получать данные в форме структурированных отчетов. Для формирования отчета установите фильтр периода и нажмите кнопку Сформировать.
 

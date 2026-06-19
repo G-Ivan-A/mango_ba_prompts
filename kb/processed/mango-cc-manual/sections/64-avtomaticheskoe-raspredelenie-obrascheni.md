@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.2"
+pdf_section: "4.2"
 title: "Автоматическое распределение обращений"
+pdf_heading: "4.2. Автоматическое распределение обращений"
 pages: "132-133"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 132-133"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"132-133","global_pages":"132-133"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1674
+tokens: 1735
 status: extracted
 ai-generated: true
 ---
 # 4.2. Автоматическое распределение обращений
+
+> Трассировка: PDF §4.2 · сквозные стр. 132-133 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.132-133.
 
 Настройки автоматического распределения обращений позволяют оптимизировать поток звонков и текстовых обращений, направляя их к соответствующим сотрудникам или группам операторов.
 

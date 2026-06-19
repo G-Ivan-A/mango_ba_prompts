@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.4"
+pdf_section: "2.5.1.4"
 title: "Квесты"
+pdf_heading: "2.5.1.4. Квесты"
 pages: "94-100"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 94-100"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"94-100","global_pages":"94-100"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3430
+tokens: 3495
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.4. Квесты
+
+> Трассировка: PDF §2.5.1.4 · сквозные стр. 94-100 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.94-100.
 
 ![Изображение, стр. 95](../images/44-kvesty-1.jpeg)
 

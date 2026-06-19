@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "10.1.2"
+pdf_section: "10.1.2"
 title: "Импорт и экспорт контактов"
+pdf_heading: "10.1.2. Импорт и экспорт контактов"
 pages: "316-320"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 316-320"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"316-320","global_pages":"316-320"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2948
+tokens: 3011
 status: extracted
 ai-generated: true
 ---
 # 10.1.2. Импорт и экспорт контактов
+
+> Трассировка: PDF §10.1.2 · сквозные стр. 316-320 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.316-320.
 
 Контакт-центр MANGO OFFICE обеспечивает возможность обмена данными с другими программными продуктами путем импорта (загрузки в нужную адресную книгу) и экспорта (выгрузки из нужной адресной книги) контактных данных. Импорт и экспорт может осуществляться с использованием общей либо личной адресной книги.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "5.4"
+pdf_section: "5.4"
 title: "Настройка воронки продаж"
+pdf_heading: "5.4. Настройка воронки продаж"
 pages: "185-187"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 185-187"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"185-187","global_pages":"185-187"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1138
+tokens: 1199
 status: extracted
 ai-generated: true
 ---
 # 5.4. Настройка воронки продаж
+
+> Трассировка: PDF §5.4 · сквозные стр. 185-187 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.185-187.
 
 | Воронки продаж настраиваются пользователями с правом доступа Руководитель |  |  |
 | --- | --- | --- |

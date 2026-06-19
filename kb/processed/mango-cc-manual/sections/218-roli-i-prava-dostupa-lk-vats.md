@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "18.1"
+pdf_section: "18.1"
 title: "Роли и права доступа ЛК ВАТС"
+pdf_heading: "18.1. Роли и права доступа ЛК ВАТС"
 pages: "552-566"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 552-566"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"552-566","global_pages":"552-566"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 13004
+tokens: 13065
 status: extracted
 ai-generated: true
 ---
 # 18.1. Роли и права доступа ЛК ВАТС
+
+> Трассировка: PDF §18.1 · сквозные стр. 552-566 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.552-566.
 
 В данном приложении приведено сводное описание параметров доступности, разрешений (прав) и функциональных возможностей Личного кабинета ВАТС MANGO OFFICE в зависимости от выбранной роли.
 

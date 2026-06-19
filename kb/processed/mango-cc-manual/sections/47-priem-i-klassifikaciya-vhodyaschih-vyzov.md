@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.4"
+pdf_section: "2.5.4"
 title: "Прием и классификация входящих вызовов"
+pdf_heading: "2.5.4. Прием и классификация входящих вызовов"
 pages: "101-102"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 101-102"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"101-102","global_pages":"101-102"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1077
+tokens: 1140
 status: extracted
 ai-generated: true
 ---
 # 2.5.4. Прием и классификация входящих вызовов
+
+> Трассировка: PDF §2.5.4 · сквозные стр. 101-102 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.101-102.
 
 При поступлении вызова на номер (средство связи), выбранный для обслуживания вызовов, на экране появляется всплывающее окно карточки входящего вызова.
 

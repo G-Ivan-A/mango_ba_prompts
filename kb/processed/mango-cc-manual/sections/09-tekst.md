@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.3.2"
+pdf_section: "2.3.2"
 title: "Текст"
+pdf_heading: "2.3.2. Текст"
 pages: "29-30"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 29-30"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"29-30","global_pages":"29-30"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 794
+tokens: 857
 status: extracted
 ai-generated: true
 ---
 # 2.3.2. Текст
+
+> Трассировка: PDF §2.3.2 · сквозные стр. 29-30 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.29-30.
 
 Монитор очереди обращений содержит список текстовых обращений в порядке их поступления, от старых к новым. Общее количество обращений, не принятых в обработку, отображается в счетчике на переключателе. Для каждого текстового обращения указывается следующая информация: • Иконка, соответствующая каналу поступления обращения; • Наименование контакта. В случае, когда обращение инициировано контактом, занесенным в адресную книгу, в мониторе отображается имя контакта. Если обращение
 

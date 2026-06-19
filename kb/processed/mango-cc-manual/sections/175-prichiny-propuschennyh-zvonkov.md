@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.2.2.2"
+pdf_section: "15.2.2.2"
 title: "Причины пропущенных звонков"
+pdf_heading: "15.2.2.2. Причины пропущенных звонков"
 pages: "446-448"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 446-448"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"446-448","global_pages":"446-448"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 462
+tokens: 527
 status: extracted
 ai-generated: true
 ---
 # 15.2.2.2. Причины пропущенных звонков
+
+> Трассировка: PDF §15.2.2.2 · сквозные стр. 446-448 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.446-448.
 
 Отчет «Причины пропущенных звонков» отображает информацию о количестве и процентном соотношении пропущенных вызовов за определенный период в зависимости от причины, по которой они были пропущены.
 

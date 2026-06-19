@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.4"
+pdf_section: "2.5.1.3.4"
 title: "Исходящие обращения"
+pdf_heading: "2.5.1.3.4. Исходящие обращения"
 pages: "59-60"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 59-60"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"59-60","global_pages":"59-60"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 481
+tokens: 548
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.4. Исходящие обращения
+
+> Трассировка: PDF §2.5.1.3.4 · сквозные стр. 59-60 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.59-60.
 
 Вкладка Исходящие обращения предназначена для настройки аккаунтов, через которые оператор обращается к клиенту при инициации исходящего текстового обращения.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1.4"
+pdf_section: "16.1.4"
 title: "Анализ по чек-листам"
+pdf_heading: "16.1.4. Анализ по чек-листам"
 pages: "465-466"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 465-466"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"465-466","global_pages":"465-466"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 842
+tokens: 905
 status: extracted
 ai-generated: true
 ---
 # 16.1.4. Анализ по чек-листам
+
+> Трассировка: PDF §16.1.4 · сквозные стр. 465-466 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.465-466.
 
 Отчет предназначен для автоматической оценки разговора сотрудника с клиентом на соответствие стандартам компании. Клик по строке меню «Анализ по чек-листам» открывает перечень всех созданных пользователем чек-листов для оценки разговоров операторов. В окне списка доступен просмотр статистики по созданным чек-листам и создание нового чек-листа в Конструкторе.
 

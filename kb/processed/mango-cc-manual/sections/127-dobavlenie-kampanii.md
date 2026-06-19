@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "11.4"
+pdf_section: "11.4"
 title: "Добавление кампании"
+pdf_heading: "11.4. Добавление кампании"
 pages: "345-347"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 345-347"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"345-347","global_pages":"345-347"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1904
+tokens: 1965
 status: extracted
 ai-generated: true
 ---
 # 11.4. Добавление кампании
+
+> Трассировка: PDF §11.4 · сквозные стр. 345-347 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.345-347.
 
 Добавление новой кампании или кампании на базе существующей разбито на несколько шагов в зависимости от выбранного режима шаблона обзвона. После нажатия кнопки Добавить кампанию запускается Мастер создания кампании. Выберите режим и шаблон обзвона.
 

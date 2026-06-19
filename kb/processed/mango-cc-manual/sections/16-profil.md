@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.1"
+pdf_section: "2.5.1.1"
 title: "Профиль"
+pdf_heading: "2.5.1.1. Профиль"
 pages: "49-52"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 49-52"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"49-52","global_pages":"49-52"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 661
+tokens: 726
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.1. Профиль
+
+> Трассировка: PDF §2.5.1.1 · сквозные стр. 49-52 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.49-52.
 
 Для перехода к просмотру профиля текущего сотрудника следует нажать на аватар сотрудника, расположенный в правом верхнем углу приложения, и выбрать пункт меню Профиль. В результате на экране отобразится карточка сотрудника.
 

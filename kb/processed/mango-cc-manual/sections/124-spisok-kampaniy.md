@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "11.1"
+pdf_section: "11.1"
 title: "Список кампаний"
+pdf_heading: "11.1. Список кампаний"
 pages: "331-337"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 331-337"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"331-337","global_pages":"331-337"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3944
+tokens: 4005
 status: extracted
 ai-generated: true
 ---
 # 11.1. Список кампаний
+
+> Трассировка: PDF §11.1 · сквозные стр. 331-337 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.331-337.
 
 При первом запуске окно Исходящего обзвона открывается на списке кампаний. В дальнейшем окно модуля может быть открыто на карточке кампании – это зависит от того, что было открыто перед последним закрытием модуля. Данные о последнем открытом модуле хранятся локально в рамках текущего ПК пользователя. Вид модуля со списком кампаний приведен на рисунке ниже.
 

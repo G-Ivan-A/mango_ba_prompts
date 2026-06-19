@@ -21,18 +21,18 @@ ai-generated: true
 
 ## Разделы
 
-| № | Раздел | Файл | Стр. | Токены | Когда обращаться |
-| --- | --- | --- | --- | ---: | --- |
-| — | Титульная часть | [sections/00-titulnaya-chast.md](sections/00-titulnaya-chast.md) | 1 | 62 | Контакт-центр MANGO OFFICE |
-| 1 | Введение | [sections/01-vvedenie.md](sections/01-vvedenie.md) | 2 | 208 | Назначение документа; Системные требования и ограничения |
-| 2 | Рабочее место оператора | [sections/02-rabochee-mesto-operatora.md](sections/02-rabochee-mesto-operatora.md) | 3 | 301 | Статусы оператора; Очередь обращений |
-| 3 | Каналы коммуникации | [sections/03-kanaly-kommunikacii.md](sections/03-kanaly-kommunikacii.md) | 4 | 294 | Голосовые вызовы; Текстовые каналы; Электронная почта (e-mail) |
-| 4 | Обработка обращений | [sections/04-obrabotka-obrascheniy.md](sections/04-obrabotka-obrascheniy.md) | 5 | 378 | Контроль обращений; Правила распределения; Каналы обращений |
-| 5 | Роли и права доступа | [sections/05-roli-i-prava-dostupa.md](sections/05-roli-i-prava-dostupa.md) | 6 | 253 | Права на модуль «Обращения» и вкладки очереди настраиваются в ЛК ВАТС → |
-| 6 | Отчёты и аналитика | [sections/06-otchety-i-analitika.md](sections/06-otchety-i-analitika.md) | 7 | 91 | Отчёты строятся по вызовам и текстовым обращениям: длительность, время ожидания, |
-| | **ИТОГО** | | | **1587** | весь документ |
+| № PDF | Раздел | Файл | Стр. | Источник | Токены | Когда обращаться |
+| --- | --- | --- | --- | --- | ---: | --- |
+| — | Титульная часть | [sections/00-titulnaya-chast.md](sections/00-titulnaya-chast.md) | 1 | ч.1 с.1 | 110 | Контакт-центр MANGO OFFICE |
+| 1 | Введение | [sections/01-vvedenie.md](sections/01-vvedenie.md) | 2 | ч.1 с.2 | 256 | Назначение документа; Системные требования и ограничения |
+| 2 | Рабочее место оператора | [sections/02-rabochee-mesto-operatora.md](sections/02-rabochee-mesto-operatora.md) | 3 | ч.1 с.3 | 349 | Статусы оператора; Очередь обращений |
+| 3 | Каналы коммуникации | [sections/03-kanaly-kommunikacii.md](sections/03-kanaly-kommunikacii.md) | 4 | ч.1 с.4 | 342 | Голосовые вызовы; Текстовые каналы; Электронная почта (e-mail) |
+| 4 | Обработка обращений | [sections/04-obrabotka-obrascheniy.md](sections/04-obrabotka-obrascheniy.md) | 5 | ч.1 с.5 | 426 | Контроль обращений; Правила распределения; Каналы обращений |
+| 5 | Роли и права доступа | [sections/05-roli-i-prava-dostupa.md](sections/05-roli-i-prava-dostupa.md) | 6 | ч.1 с.6 | 301 | Права на модуль «Обращения» и вкладки очереди настраиваются в ЛК ВАТС → |
+| 6 | Отчёты и аналитика | [sections/06-otchety-i-analitika.md](sections/06-otchety-i-analitika.md) | 7 | ч.1 с.7 | 139 | Отчёты строятся по вызовам и текстовым обращениям: длительность, время ожидания, |
+| | **ИТОГО** | | | | **1923** | весь документ |
 
 ## Источники
 
-- Источник БЗ: `kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf`
+- Источник БЗ, часть 1: `kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf`
 - Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), [ADR-007](../../../docs/adr/007-kb-standard.md)

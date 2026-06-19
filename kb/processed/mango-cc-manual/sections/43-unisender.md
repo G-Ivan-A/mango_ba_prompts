@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.20.3"
+pdf_section: "2.5.1.3.20.3"
 title: "Unisender"
+pdf_heading: "2.5.1.3.20.3. Unisender"
 pages: "92-94"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 92-94"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"92-94","global_pages":"92-94"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 931
+tokens: 1000
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.20.3. Unisender
+
+> Трассировка: PDF §2.5.1.3.20.3 · сквозные стр. 92-94 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.92-94.
 
 Интеграция Контакт-центра Mango OFFICE с сервисом рассылок Unisender позволяет настроить синхронизацию списков рассылок в Unisender и списков клиентов в Адресной книге, вносить изменения в списки рассылок на стороне Unisender из Контакт-центра.
 

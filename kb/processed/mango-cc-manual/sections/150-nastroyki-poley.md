@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "14.3"
+pdf_section: "14.3"
 title: "Настройки полей"
+pdf_heading: "14.3. Настройки полей"
 pages: "418-419"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 418-419"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"418-419","global_pages":"418-419"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 430
+tokens: 491
 status: extracted
 ai-generated: true
 ---
 # 14.3. Настройки полей
+
+> Трассировка: PDF §14.3 · сквозные стр. 418-419 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.418-419.
 
 На вкладке настраиваются пользовательские поля, информация которых используется в кампании текстовой рассылки. Имя пользовательского поля является переменной, которую можно добавить при настройке кампаний.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "21"
+pdf_section: "21"
 title: "Приложение 4: Ассоциация со ссылками «callto» и «tel»"
+pdf_heading: "21. Приложение 4: Ассоциация со ссылками «callto» и «tel»"
 pages: "597-601"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 597-601"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"597-601","global_pages":"597-601"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2788
+tokens: 2847
 status: extracted
 ai-generated: true
 ---
 # 21. Приложение 4: Ассоциация со ссылками «callto» и «tel»
+
+> Трассировка: PDF §21 · сквозные стр. 597-601 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.597-601.
 
 Вы можете настроить Контакт-центр MANGO OFFICE для совершения исходящих вызовов при нажатии на ссылки callto и tel в браузере. Для этого потребуется внести изменения в реестр Windows.
 

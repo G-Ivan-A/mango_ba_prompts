@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.7"
+pdf_section: "2.5.1.3.7"
 title: "Софтфон"
+pdf_heading: "2.5.1.3.7. Софтфон"
 pages: "65-67"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 65-67"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"65-67","global_pages":"65-67"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1131
+tokens: 1198
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.7. Софтфон
+
+> Трассировка: PDF §2.5.1.3.7 · сквозные стр. 65-67 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.65-67.
 
 Данная вкладка предназначена для выбора устройств, которые вы будете использовать в качестве микрофона и динамиков (наушников гарнитуры) для осуществления разговоров, прослушивания записей разговоров и т. д. с использованием Контакт-центра MANGO OFFICE.
 

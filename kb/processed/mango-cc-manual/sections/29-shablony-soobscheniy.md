@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.11"
+pdf_section: "2.5.1.3.11"
 title: "Шаблоны сообщений"
+pdf_heading: "2.5.1.3.11. Шаблоны сообщений"
 pages: "73-78"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 73-78"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"73-78","global_pages":"73-78"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2881
+tokens: 2948
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.11. Шаблоны сообщений
+
+> Трассировка: PDF §2.5.1.3.11 · сквозные стр. 73-78 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.73-78.
 
 Вкладка предназначена для настройки сообщений, отправляемых пользователям по каналам СМС и WhatsApp. Шаблоны СМС Создавать, редактировать и удалять шаблоны могут пользователи, у которых имеется хотя бы
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1.3"
-title: "Отчет "Анализ разговоров""
+pdf_section: "16.1.3"
+title: "Отчет \"Анализ разговоров\""
+pdf_heading: "16.1.3. Отчет \"Анализ разговоров\""
 pages: "461-465"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 461-465"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"461-465","global_pages":"461-465"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2912
+tokens: 2975
 status: extracted
 ai-generated: true
 ---
 # 16.1.3. Отчет "Анализ разговоров"
+
+> Трассировка: PDF §16.1.3 · сквозные стр. 461-465 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.461-465.
 
 Отчет «Анализ разговоров» состоит из двух блоков: • Блока таблицы • Блока визуализаций: Тематики по словам и Динамика по времени. Блоки визуализаций отображаются по щелчку на соответствующей вкладке:
 
