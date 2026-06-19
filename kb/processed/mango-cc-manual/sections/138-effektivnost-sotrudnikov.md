@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "12.3.1"
+pdf_section: "12.3.1"
 title: "Эффективность сотрудников"
+pdf_heading: "12.3.1. Эффективность сотрудников"
 pages: "387-390"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 387-390"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"387-390","global_pages":"387-390"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1935
+tokens: 1998
 status: extracted
 ai-generated: true
 ---
 # 12.3.1. Эффективность сотрудников
+
+> Трассировка: PDF §12.3.1 · сквозные стр. 387-390 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.387-390.
 
 ![Изображение, стр. 388](../images/138-effektivnost-sotrudnikov-1.jpeg)
 

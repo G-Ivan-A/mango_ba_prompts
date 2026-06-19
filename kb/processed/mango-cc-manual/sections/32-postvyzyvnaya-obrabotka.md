@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.13.1"
+pdf_section: "2.5.1.3.13.1"
 title: "Поствызывная обработка"
+pdf_heading: "2.5.1.3.13.1. Поствызывная обработка"
 pages: "79-81"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 79-81"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"79-81","global_pages":"79-81"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 944
+tokens: 1013
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.13.1. Поствызывная обработка
+
+> Трассировка: PDF §2.5.1.3.13.1 · сквозные стр. 79-81 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.79-81.
 
 ![Изображение, стр. 80](../images/32-postvyzyvnaya-obrabotka-1.jpeg)
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15"
+pdf_section: "15"
 title: "Бизнес-аналитика"
+pdf_heading: "15. Бизнес-аналитика"
 pages: "419-422"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 419-422"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"419-422","global_pages":"419-422"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1279
+tokens: 1338
 status: extracted
 ai-generated: true
 ---
 # 15. Бизнес-аналитика
+
+> Трассировка: PDF §15 · сквозные стр. 419-422 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.419-422.
 
 Модуль Бизнес-аналитика позволяет формировать статистические отчеты, отображающие данные по работе сотрудников ВАТС, а также сведения о звонках в разных разрезах.
 

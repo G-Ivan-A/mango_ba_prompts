@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1.4.2"
+pdf_section: "16.1.4.2"
 title: "Статистика по чек-листам"
+pdf_heading: "16.1.4.2. Статистика по чек-листам"
 pages: "471-474"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 471-474"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"471-474","global_pages":"471-474"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1603
+tokens: 1668
 status: extracted
 ai-generated: true
 ---
 # 16.1.4.2. Статистика по чек-листам
+
+> Трассировка: PDF §16.1.4.2 · сквозные стр. 471-474 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.471-474.
 
 Статистика отчета по Чек-листам содержит вкладки «Таблица» и «График», которые позволяют комплексно анализировать результаты оценок в отчете. Вкладка "Таблица" Статистика по чек-листу отображается в процентах и числах и показывает результаты просчета чек-листа по заданным в блоке «Критерии» чек-листа критериям и фильтрам.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "17.3.2.1"
+pdf_section: "17.3.2.1"
 title: "Создание сущности"
+pdf_heading: "17.3.2.1. Создание сущности"
 pages: "532-535"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 532-535"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"532-535","global_pages":"532-535"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1819
+tokens: 1884
 status: extracted
 ai-generated: true
 ---
 # 17.3.2.1. Создание сущности
+
+> Трассировка: PDF §17.3.2.1 · сквозные стр. 532-535 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.532-535.
 
 На вкладке “Сущности” раздела “Данные” Конструктора отчетов нажмите кнопку Добавить сущность.
 

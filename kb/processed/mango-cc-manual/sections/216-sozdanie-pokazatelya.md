@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "17.3.3.1"
+pdf_section: "17.3.3.1"
 title: "Создание показателя"
+pdf_heading: "17.3.3.1. Создание показателя"
 pages: "544-547"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 544-547"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"544-547","global_pages":"544-547"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 769
+tokens: 834
 status: extracted
 ai-generated: true
 ---
 # 17.3.3.1. Создание показателя
+
+> Трассировка: PDF §17.3.3.1 · сквозные стр. 544-547 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.544-547.
 
 ![Изображение, стр. 545](../images/216-sozdanie-pokazatelya-1.jpeg)
 

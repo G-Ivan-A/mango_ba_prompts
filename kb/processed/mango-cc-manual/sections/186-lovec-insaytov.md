@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.1.5"
+pdf_section: "16.1.5"
 title: "Ловец инсайтов"
+pdf_heading: "16.1.5. Ловец инсайтов"
 pages: "474-476"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 474-476"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"474-476","global_pages":"474-476"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1458
+tokens: 1521
 status: extracted
 ai-generated: true
 ---
 # 16.1.5. Ловец инсайтов
+
+> Трассировка: PDF §16.1.5 · сквозные стр. 474-476 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.474-476.
 
 Данные отчета позволяют прослеживать – как фраза или тематика разговора повлияла на ход разговора. Таким образом отчет Ловец инсайтов позволяет в наглядном виде ознакомиться с причинами, которые не позволяют сотруднику работать на максимуме своей эффективности. Отчет состоит из двух блоков: 1) Блок параметров 2) Блок результатов Блок параметров
 

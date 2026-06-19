@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "18.3"
-title: "Вкладка "Обработка звонков""
+pdf_section: "18.3"
+title: "Вкладка \"Обработка звонков\""
+pdf_heading: "18.3. Вкладка \"Обработка звонков\""
 pages: "571-575"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 571-575"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"571-575","global_pages":"571-575"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3048
+tokens: 3109
 status: extracted
 ai-generated: true
 ---
 # 18.3. Вкладка "Обработка звонков"
+
+> Трассировка: PDF §18.3 · сквозные стр. 571-575 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.571-575.
 
 Настройки, вкладка "Обработка звонков"
 

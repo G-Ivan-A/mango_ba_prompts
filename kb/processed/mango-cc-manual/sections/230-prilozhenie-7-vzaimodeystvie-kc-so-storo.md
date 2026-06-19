@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "24"
+pdf_section: "24"
 title: "Приложение 7. Взаимодействие КЦ со сторонними программами"
+pdf_heading: "24. Приложение 7. Взаимодействие КЦ со сторонними программами"
 pages: "608-609"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 608-609"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"608-609","global_pages":"608-609"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 693
+tokens: 752
 status: extracted
 ai-generated: true
 ---
 # 24. Приложение 7. Взаимодействие КЦ со сторонними программами
+
+> Трассировка: PDF §24 · сквозные стр. 608-609 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.608-609.
 
 Punto Switcher Если на компьютере пользователя Контакт-центра установлена программа Punto Switcher, то для корректной работы необходимо внести Контакт-центр в список программ-исключений Punto Switcher. Для этого выполните следующие действия: 1. Нажмите правой кнопки мыши на значок Punto Switcher (на панели задач, в правом нижнем углу экрана). 2. Перейдите в меню Настройки → Программы-исключения.
 

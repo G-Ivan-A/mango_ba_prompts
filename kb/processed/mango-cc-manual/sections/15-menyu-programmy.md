@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1"
+pdf_section: "2.5.1"
 title: "Меню программы"
+pdf_heading: "2.5.1. Меню программы"
 pages: "49"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 49"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"49","global_pages":"49"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 632
+tokens: 691
 status: extracted
 ai-generated: true
 ---
 # 2.5.1. Меню программы
+
+> Трассировка: PDF §2.5.1 · сквозные стр. 49 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.49.
 
 Меню программы (открывается кликом на аватар пользователя) содержит следующие пункты: • Мой профиль – контактные данные текущего пользователя; • Доступные скрипты – предварительный просмотр шаблонов скриптов; • Все настройки – настройки программы; • Квесты – обучение работе с Контакт-центром в форме квеста; • Настройки звука – переход к настройкам софтфона; • Выйти – выход из Контакт-центра.
 

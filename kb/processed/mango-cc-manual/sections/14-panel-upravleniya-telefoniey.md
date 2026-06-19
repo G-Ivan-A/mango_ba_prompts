@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5"
+pdf_section: "2.5"
 title: "Панель управления телефонией"
+pdf_heading: "2.5. Панель управления телефонией"
 pages: "46-49"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 46-49"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"46-49","global_pages":"46-49"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1617
+tokens: 1678
 status: extracted
 ai-generated: true
 ---
 # 2.5. Панель управления телефонией
+
+> Трассировка: PDF §2.5 · сквозные стр. 46-49 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.46-49.
 
 Помимо базовых возможностей телефонии (прием входящих вызовов, совершение исходящих вызовов, постановка вызовов на удержание), Контакт-центр MANGO OFFICE предоставляет дополнительные возможности управления вызовами.
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.1.1.6"
+pdf_section: "15.1.1.6"
 title: "Насколько быстро сотрудники пытаются перезвонить"
+pdf_heading: "15.1.1.6. Насколько быстро сотрудники пытаются перезвонить"
 pages: "429-430"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 429-430"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"429-430","global_pages":"429-430"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 757
+tokens: 822
 status: extracted
 ai-generated: true
 ---
 # 15.1.1.6. Насколько быстро сотрудники пытаются перезвонить
+
+> Трассировка: PDF §15.1.1.6 · сквозные стр. 429-430 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.429-430.
 
 Отчет «Насколько быстро сотрудники пытаются перезвонить» отображает информацию о количестве перезвонов на пропущенные звонки с уникальных номеров в зависимости от времени. Отчет помогает установить, укладываются ли ваши сотрудники в требуемое время, отведенное на перезвон по пропущенному звонку.
 

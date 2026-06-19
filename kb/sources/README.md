@@ -11,6 +11,7 @@ related_artifacts:
   - "docs/kb-experiment-report.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/117"
 ---
 
 # `kb/sources/` — ручной ввод источников + инструкция по пополнению БЗ
@@ -39,7 +40,9 @@ kb/sources/                      ← ВЫ кладёте файлы сюда (р
 
 Один документ — один подкаталог в `kb/sources/<slug>/`. Туда же кладётся исходный
 файл (`*.pdf`, в перспективе `*.docx`) и манифест `source.md` (см. шаблон в
-[`contact-center-manual/source.md`](contact-center-manual/source.md)).
+[`contact-center-manual/source.md`](contact-center-manual/source.md)). Если
+документ разделён на несколько PDF из-за размера, все части лежат в том же
+подкаталоге и передаются в обработку в порядке страниц.
 
 ---
 
@@ -76,6 +79,15 @@ make kb-extract SRC=kb/sources/cc-manual/CC_manual_1.26.23.pdf \
                 CODE=CC TITLE="Контакт-центр MANGO OFFICE" VERSION=1.26.23
 ```
 
+Для multi-part PDF:
+
+```bash
+make kb-extract \
+    SRCS="kb/sources/lk-manual/part-1.pdf kb/sources/lk-manual/part-2.pdf" \
+    OUT=kb/processed/lk-manual \
+    CODE=LK TITLE="Виртуальная АТС MANGO OFFICE" VERSION=1.21
+```
+
 ### Локально (напрямую)
 
 ```bash
@@ -84,10 +96,14 @@ python3 scripts/kb/extract.py kb/sources/cc-manual/CC_manual_1.26.23.pdf \
     --doc-code CC --doc-title "Контакт-центр MANGO OFFICE" --doc-version 1.26.23
 ```
 
+Скрипт также принимает несколько PDF-путей перед `--out`; страницы в результате
+будут сквозными, а `source_refs` сохранит точный файл-часть и локальные страницы.
+
 ### Через GitHub Actions (без локального окружения)
 
 Actions → **KB pipeline** → *Run workflow* → укажите `source`, `out`, `doc_code`,
-`doc_title`, `doc_version`. По умолчанию workflow настроен на реальное руководство
+`doc_title`, `doc_version`. Для multi-part PDF перечислите пути в `source` через
+пробел в порядке страниц. По умолчанию workflow настроен на реальное руководство
 из issue #115:
 
 - `source`: `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`
@@ -118,6 +134,10 @@ Workflow поставит зависимости, выполнит извлеч�
 4. **Сверьте токены**: `cat kb/processed/<slug>/meta.json` — поля `tokens_total`,
    `tokens_index`, `token_method`. Так измеряется экономия «весь документ vs
    один раздел» (см. [`kb/USAGE.md`](../USAGE.md)).
+
+5. **Сверьте трассировку**: в `meta.json` проверьте `sources`, `source_pdfs`,
+   `part_count`, а в любом `sections/*.md` — frontmatter `pdf_section`,
+   `source_refs` и строку `Трассировка`.
 
 > ⚠️ **Кириллица как «мусор» (nnnn).** Если текст извлёкся набором квадратов/
 > «n» — у PDF нет ToUnicode-карты шрифтов (типично для сканов и некоторых

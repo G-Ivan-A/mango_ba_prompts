@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.3"
+pdf_section: "4.3"
 title: "Мои обращения"
+pdf_heading: "4.3. Мои обращения"
 pages: "133-136"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 133-136"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"133-136","global_pages":"133-136"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2187
+tokens: 2248
 status: extracted
 ai-generated: true
 ---
 # 4.3. Мои обращения
+
+> Трассировка: PDF §4.3 · сквозные стр. 133-136 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.133-136.
 
 Инструмент Мои обращения предназначен для обработки обращений, поступающих в Контакт-центр MANGO OFFICE посредством голосовых и текстовых обращений, получаемых при помощи мультиканальных виджетов, а также обратных звонков. Также сотрудник может создать входящее обращение вручную, и заполнить его необходимой информацией. Каждое обращение может быть связано: • с одной сделкой • с одним клиентом • с одной организацией Приём обращений в обработку осуществляется при помощи панели очереди обращений.
 

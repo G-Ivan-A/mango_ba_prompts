@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.2.1.4"
+pdf_section: "15.2.1.4"
 title: "Время обслуживания вызова"
+pdf_heading: "15.2.1.4. Время обслуживания вызова"
 pages: "441-443"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 441-443"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"441-443","global_pages":"441-443"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 441
+tokens: 506
 status: extracted
 ai-generated: true
 ---
 # 15.2.1.4. Время обслуживания вызова
+
+> Трассировка: PDF §15.2.1.4 · сквозные стр. 441-443 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.441-443.
 
 Отчет «Время обслуживания вызова» содержит информацию о количестве входящих вызовов, обслуженных за определенный период. По умолчанию оптимальной длительностью обслуживания вызова считается период от 30 секунд до 2 минут. При необходимости измените этот период самостоятельно, установив другое значение в поле С оптимальной длительностью от… до после формирования отчета. В верхней части отчета приведены данные о принятых звонках в виде инфографики.
 

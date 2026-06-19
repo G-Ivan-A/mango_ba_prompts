@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "8.4"
+pdf_section: "8.4"
 title: "Обмен сменами"
+pdf_heading: "8.4. Обмен сменами"
 pages: "262-266"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 262-266"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"262-266","global_pages":"262-266"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2211
+tokens: 2272
 status: extracted
 ai-generated: true
 ---
 # 8.4. Обмен сменами
+
+> Трассировка: PDF §8.4 · сквозные стр. 262-266 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.262-266.
 
 ![Изображение, стр. 263](../images/103-obmen-smenami-1.jpeg)
 

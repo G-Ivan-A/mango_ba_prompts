@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "11.4.2"
+pdf_section: "11.4.2"
 title: "Без участия сотрудника"
+pdf_heading: "11.4.2. Без участия сотрудника"
 pages: "361-366"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 361-366"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"361-366","global_pages":"361-366"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 4600
+tokens: 4663
 status: extracted
 ai-generated: true
 ---
 # 11.4.2. Без участия сотрудника
+
+> Трассировка: PDF §11.4.2 · сквозные стр. 361-366 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.361-366.
 
 Параметры, указываемые при создании кампании в режиме "Без участия сотрудника", зависят от выбранного шаблона Шаг 1. Выбор шаблона
 

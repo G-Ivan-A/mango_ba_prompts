@@ -159,7 +159,7 @@ def check_makefile_parameters() -> list[str]:
         "OUT     ?= $(SAMPLE_OUT)",
         "kb-mango:",
         "$(MAKE) kb-extract \\",
-        'SRC="$(MANGO_SRC)"',
+        'SRCS="$(MANGO_SRC)"',
         'OUT="$(MANGO_OUT)"',
     )
 

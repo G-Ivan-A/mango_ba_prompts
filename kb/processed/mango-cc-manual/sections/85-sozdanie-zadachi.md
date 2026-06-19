@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "6.4"
+pdf_section: "6.4"
 title: "Создание задачи"
+pdf_heading: "6.4. Создание задачи"
 pages: "208-212"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 208-212"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"208-212","global_pages":"208-212"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 4155
+tokens: 4216
 status: extracted
 ai-generated: true
 ---
 # 6.4. Создание задачи
+
+> Трассировка: PDF §6.4 · сквозные стр. 208-212 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.208-212.
 
 ![Изображение, стр. 208](../images/85-sozdanie-zadachi-1.png)
 

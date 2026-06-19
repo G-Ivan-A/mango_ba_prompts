@@ -72,6 +72,7 @@ def slugify(text: str, max_len: int = 40) -> str:
 
 # --- Детект заголовков ------------------------------------------------------
 _NUM_RE = re.compile(r"^(\d+(?:\.\d+)*)\.?\s+(.+)$")
+_SECTION_RE = re.compile(r"^Раздел\s+(\d+(?:\.\d+)*)\.?\s+(.+)$", re.IGNORECASE)
 
 
 def line_size(line: dict) -> float:
@@ -212,9 +213,13 @@ def normalize_heading(text: str) -> str:
 
 
 def parse_numbered_title(text: str):
-    match = _NUM_RE.match(text.strip())
+    text = text.strip()
+    match = _SECTION_RE.match(text)
+    if match:
+        return match.group(1), match.group(2).strip()
+    match = _NUM_RE.match(text)
     if not match:
-        return None, text.strip()
+        return None, text
     return match.group(1), match.group(2).strip()
 
 
@@ -237,14 +242,27 @@ def load_pdf_outline(pdf_path: Path) -> tuple[list[dict], str | None]:
         doc.close()
 
     entries = []
+    stack: dict[int, dict] = {}
     for level, raw_title, page_no in toc:
+        raw_title = raw_title.strip()
+        number, title = parse_numbered_title(raw_title)
+        for existing_level in list(stack):
+            if existing_level >= level:
+                del stack[existing_level]
+        parent_number = None
+        for parent_level in range(level - 1, 0, -1):
+            parent_number = stack.get(parent_level, {}).get("trace_number")
+            if parent_number:
+                break
+        trace_number = number or parent_number
+        stack[level] = {"number": number, "title": title, "trace_number": trace_number}
         if page_no < 1:
             continue
-        number, title = parse_numbered_title(raw_title)
         entries.append({
             "level": level,
-            "raw_title": raw_title.strip(),
+            "raw_title": raw_title,
             "number": number,
+            "trace_number": trace_number,
             "title": title,
             "page": page_no,
         })
@@ -304,7 +322,7 @@ def resolve_outline_positions(pdf, outline_entries: list[dict]) -> list[dict]:
 def page_number_footer(line: dict, page) -> bool:
     text = (line.get("text") or "").strip()
     return (
-        text == str(getattr(page, "page_number", ""))
+        text.isdigit()
         and line.get("top", 0) > getattr(page, "height", 0) - 80
     )
 
@@ -369,12 +387,15 @@ def build_sections_from_outline(pdf, outline_entries, image_map):
     def new_section(marker):
         return {
             "number": marker.get("number"),
+            "trace_number": marker.get("trace_number") or marker.get("number"),
             "title": marker["title"],
+            "pdf_heading": marker.get("raw_title") or marker["title"],
             "level": marker.get("level", 1),
             "blocks": [],
             "start_page": marker["page"],
             "end_page": marker["page"],
             "subheadings": [],
+            "source_refs": [],
             "n_tables": 0,
             "n_images": 0,
         }
@@ -402,12 +423,15 @@ def build_sections_from_outline(pdf, outline_entries, image_map):
     if first["page_index"] > 0 or first["top"] > 0:
         front = {
             "number": None,
+            "trace_number": None,
             "title": "Титульная часть",
+            "pdf_heading": "Титульная часть",
             "level": 1,
             "blocks": [],
             "start_page": 1,
             "end_page": 1,
             "subheadings": [],
+            "source_refs": [],
             "n_tables": 0,
             "n_images": 0,
         }
@@ -435,8 +459,12 @@ def build_sections(pdf, pdf_path):
             return sections, body_size, image_tool, f"pdf-outline ({outline_tool})"
 
     sections = []
-    front = {"number": None, "title": "Титульная часть", "level": 1, "blocks": [],
-             "start_page": 1, "end_page": 1, "subheadings": [], "n_tables": 0, "n_images": 0}
+    front = {
+        "number": None, "trace_number": None, "title": "Титульная часть",
+        "pdf_heading": "Титульная часть", "level": 1, "blocks": [],
+        "start_page": 1, "end_page": 1, "subheadings": [], "source_refs": [],
+        "n_tables": 0, "n_images": 0,
+    }
     current = front
 
     for page_index, page in enumerate(pdf.pages):
@@ -448,9 +476,11 @@ def build_sections(pdf, pdf_path):
                 elif current is not front:
                     sections.append(current)
                 current = {
-                    "number": el["number"], "title": el["text"], "level": 1,
+                    "number": el["number"], "trace_number": el["number"],
+                    "title": el["text"], "pdf_heading": f'{el["number"]} {el["text"]}',
+                    "level": 1,
                     "blocks": [], "start_page": page_no, "end_page": page_no,
-                    "subheadings": [], "n_tables": 0, "n_images": 0,
+                    "subheadings": [], "source_refs": [], "n_tables": 0, "n_images": 0,
                 }
                 continue
             current["end_page"] = page_no
@@ -477,15 +507,97 @@ def build_sections(pdf, pdf_path):
     return sections, body_size, image_tool, "layout-heuristic"
 
 
+def format_pages(start: int, end: int) -> str:
+    return f"{start}-{end}" if start != end else f"{start}"
+
+
+def rel_to_root(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return path.name
+
+
+def yaml_string(value) -> str:
+    return json.dumps(str(value), ensure_ascii=False)
+
+
+def source_refs_json(section: dict) -> str:
+    return json.dumps(section.get("source_refs", []), ensure_ascii=False, separators=(",", ":"))
+
+
+def trace_number(section: dict) -> str:
+    return section.get("trace_number") or section.get("number") or "—"
+
+
+def source_parts(section: dict) -> str:
+    parts = [str(ref["part"]) for ref in section.get("source_refs", [])]
+    return ",".join(dict.fromkeys(parts)) or "1"
+
+
+def source_pages(section: dict) -> str:
+    refs = section.get("source_refs", [])
+    if not refs:
+        return section.get("_pages", "")
+    return "; ".join(f'ч.{ref["part"]}: {ref["pages"]}' for ref in refs)
+
+
+def source_refs_summary(section: dict, include_file: bool = False) -> str:
+    refs = section.get("source_refs", [])
+    if not refs:
+        return "—"
+    parts = []
+    for ref in refs:
+        if include_file:
+            file_label = f' `{ref["source_pdf"]}`'
+        else:
+            file_label = ""
+        parts.append(f'ч.{ref["part"]}{file_label} с.{ref["pages"]}')
+    return "; ".join(parts)
+
+
+def merge_continuation_section(target: dict, continuation: dict) -> None:
+    target["blocks"].extend(continuation.get("blocks", []))
+    target["end_page"] = max(target["end_page"], continuation["end_page"])
+    target["subheadings"].extend(continuation.get("subheadings", []))
+    target["source_refs"].extend(continuation.get("source_refs", []))
+    target["n_tables"] += continuation.get("n_tables", 0)
+    target["n_images"] += continuation.get("n_images", 0)
+
+
+def annotate_source_trace(sections: list[dict], source: dict, page_offset: int) -> None:
+    for section in sections:
+        local_start = section["start_page"]
+        local_end = section["end_page"]
+        global_start = page_offset + local_start
+        global_end = page_offset + local_end
+        adjusted_blocks = []
+        for block in section["blocks"]:
+            if block[0] == "image":
+                adjusted_blocks.append(("image", block[1], page_offset + block[2]))
+            else:
+                adjusted_blocks.append(block)
+        section["blocks"] = adjusted_blocks
+        section["start_page"] = global_start
+        section["end_page"] = global_end
+        section["source_refs"] = [{
+            "source_pdf": source["source_pdf"],
+            "part": source["order"],
+            "pages": format_pages(local_start, local_end),
+            "global_pages": format_pages(global_start, global_end),
+        }]
+
+
 # --- Рендер раздела в Markdown ---------------------------------------------
 def render_section_markdown(section, meta, image_paths):
     fm_title = f'{section["number"]}. {section["title"]}' if section["number"] else section["title"]
-    pages = (
-        f'{section["start_page"]}-{section["end_page"]}'
-        if section["start_page"] != section["end_page"]
-        else f'{section["start_page"]}'
-    )
+    pages = format_pages(section["start_page"], section["end_page"])
     lines = ["# " + fm_title, ""]
+    lines.append(
+        f'> Трассировка: PDF §{trace_number(section)} · сквозные стр. {pages} · '
+        f'источники: {source_refs_summary(section, include_file=True)}.'
+    )
+    lines.append("")
     image_idx = 0
     paragraph = []
 
@@ -523,19 +635,26 @@ def render_section_markdown(section, meta, image_paths):
     tok = token_util.count_tokens(body)
     section["_tokens"] = tok
     section["_pages"] = pages
+    refs_json = source_refs_json(section)
+    primary_source = section["source_refs"][0]["source_pdf"] if section.get("source_refs") else meta["source_rel"]
 
     frontmatter = [
         "---",
         f'id: {section["_id"]}',
         f'doc_code: {meta["doc_code"]}',
-        f'doc_title: "{meta["doc_title"]}"',
-        f'doc_version: "{meta["doc_version"]}"',
-        f'section: "{section["number"] or "0"}"',
-        f'title: "{section["title"]}"',
-        f"pages: \"{pages}\"",
-        f'source: {meta["source_rel"]}',
-        f'extracted_by: "{meta["extracted_by"]}"',
-        f'token_method: "{meta["token_method"]}"',
+        f'doc_title: {yaml_string(meta["doc_title"])}',
+        f'doc_version: {yaml_string(meta["doc_version"])}',
+        f'section: {yaml_string(section["number"] or "0")}',
+        f'pdf_section: {yaml_string(trace_number(section))}',
+        f'title: {yaml_string(section["title"])}',
+        f'pdf_heading: {yaml_string(section.get("pdf_heading") or fm_title)}',
+        f'pages: {yaml_string(pages)}',
+        f'source: {primary_source}',
+        f'source_part: {yaml_string(source_parts(section))}',
+        f'source_pages: {yaml_string(source_pages(section))}',
+        f"source_refs: '{refs_json}'",
+        f'extracted_by: {yaml_string(meta["extracted_by"])}',
+        f'token_method: {yaml_string(meta["token_method"])}',
         f"tokens: {tok}",
         "status: extracted",
         "ai-generated: true",
@@ -559,8 +678,8 @@ def section_summary(section) -> str:
 
 # --- main -------------------------------------------------------------------
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Извлечь PDF в структуру БЗ (issue #111).")
-    parser.add_argument("pdf", help="путь к исходному PDF")
+    parser = argparse.ArgumentParser(description="Извлечь PDF в структуру БЗ (issue #111/#117).")
+    parser.add_argument("pdf", nargs="+", help="один PDF или несколько частей одного документа")
     parser.add_argument("--out", required=True, help="каталог результата, напр. kb/processed/<slug>")
     parser.add_argument("--doc-code", default="DOC", help="короткий код документа для цитат, напр. CC")
     parser.add_argument("--doc-title", default="", help="название документа (иначе из титула)")
@@ -570,9 +689,10 @@ def main(argv=None):
 
     import pdfplumber
 
-    pdf_path = Path(args.pdf).resolve()
-    if not pdf_path.exists():
-        parser.error(f"PDF не найден: {pdf_path}")
+    pdf_paths = [Path(p).resolve() for p in args.pdf]
+    for pdf_path in pdf_paths:
+        if not pdf_path.exists():
+            parser.error(f"PDF не найден: {pdf_path}")
     out_dir = Path(args.out).resolve()
     sections_dir = out_dir / "sections"
     images_dir = out_dir / "images"
@@ -582,19 +702,53 @@ def main(argv=None):
     for old in list(sections_dir.glob("*.md")) + list(images_dir.glob("*")):
         old.unlink()
 
-    source_sha = hashlib.sha256(pdf_path.read_bytes()).hexdigest()
-    try:
-        source_rel = str(pdf_path.relative_to(ROOT))
-    except ValueError:
-        source_rel = pdf_path.name
-
-    pdf = pdfplumber.open(str(pdf_path))
     pdf_version = getattr(__import__("pdfplumber"), "__version__", "?")
-    sections, body_size, image_tool, section_source = build_sections(pdf, pdf_path)
+    sections = []
+    source_infos = []
+    body_sizes = []
+    image_tools = []
+    section_sources = []
+    page_offset = 0
+    combined_sha = hashlib.sha256()
+
+    for order, pdf_path in enumerate(pdf_paths, start=1):
+        source_bytes = pdf_path.read_bytes()
+        source_sha = hashlib.sha256(source_bytes).hexdigest()
+        combined_sha.update(source_sha.encode("ascii"))
+        source_rel = rel_to_root(pdf_path)
+
+        pdf = pdfplumber.open(str(pdf_path))
+        try:
+            part_sections, body_size, image_tool, section_source = build_sections(pdf, pdf_path)
+            source_info = {
+                "order": order,
+                "source_pdf": source_rel,
+                "source_sha256": source_sha,
+                "page_count": len(pdf.pages),
+            }
+            annotate_source_trace(part_sections, source_info, page_offset)
+            if (
+                order > 1
+                and sections
+                and part_sections
+                and part_sections[0]["number"] is None
+                and part_sections[0]["title"] == "Титульная часть"
+            ):
+                merge_continuation_section(sections[-1], part_sections.pop(0))
+            sections.extend(part_sections)
+            source_infos.append(source_info)
+            body_sizes.append(body_size)
+            image_tools.append(image_tool or "none")
+            section_sources.append(section_source)
+            page_offset += len(pdf.pages)
+        finally:
+            pdf.close()
 
     doc_slug = slugify(out_dir.name)
     doc_title = args.doc_title or (sections[0]["title"] if sections else out_dir.name)
     doc_version = args.doc_version or "unknown"
+    source_rels = [source["source_pdf"] for source in source_infos]
+    source_rel = source_rels[0] if len(source_rels) == 1 else "; ".join(source_rels)
 
     meta = {
         "doc_code": args.doc_code,
@@ -636,10 +790,14 @@ def main(argv=None):
 
         index_rows.append({
             "order": prefix,
-            "number": section["number"] or "—",
+            "number": trace_number(section),
             "title": section["title"],
             "file": f"sections/{file_name}",
             "pages": section["_pages"],
+            "pdf_section": trace_number(section),
+            "pdf_heading": section.get("pdf_heading") or section["title"],
+            "source_refs": section.get("source_refs", []),
+            "source_summary": source_refs_summary(section),
             "tokens": section["_tokens"],
             "summary": section_summary(section),
         })
@@ -653,23 +811,37 @@ def main(argv=None):
         "doc_code": meta["doc_code"],
         "doc_title": meta["doc_title"],
         "doc_version": meta["doc_version"],
-        "source_pdf": source_rel,
-        "source_sha256": source_sha,
+        "source_pdf": source_rels[0] if len(source_rels) == 1 else "multi-part",
+        "source_pdfs": source_rels,
+        "sources": source_infos,
+        "part_count": len(source_infos),
+        "source_sha256": source_infos[0]["source_sha256"] if len(source_infos) == 1 else combined_sha.hexdigest(),
         "extracted_by": meta["extracted_by"],
-        "image_extractor": image_tool or "none",
-        "section_source": section_source,
+        "image_extractor": image_tools[0] if len(set(image_tools)) == 1 else "mixed",
+        "image_extractors": image_tools,
+        "section_source": (
+            section_sources[0]
+            if len(set(section_sources)) == 1 and len(source_infos) == 1
+            else f"pdf-outline multi-part ({len(source_infos)} PDF parts)"
+            if section_sources and all(s.startswith("pdf-outline") for s in section_sources)
+            else "; ".join(section_sources)
+        ),
+        "section_sources": section_sources,
         "token_method": meta["token_method"],
-        "page_count": len(pdf.pages),
+        "page_count": page_offset,
         "section_count": len(sections),
         "image_count": image_total,
         "table_count": table_total,
-        "body_font_size": body_size,
+        "body_font_size": body_sizes[0] if body_sizes else 0,
+        "body_font_sizes": body_sizes,
         "tokens_total": tokens_total,
         "tokens_index": index_tokens,
         "sections": [
             {
                 "order": r["order"], "number": r["number"], "title": r["title"],
-                "file": r["file"], "pages": r["pages"], "tokens": r["tokens"],
+                "file": r["file"], "pages": r["pages"], "pdf_section": r["pdf_section"],
+                "pdf_heading": r["pdf_heading"], "source_refs": r["source_refs"],
+                "tokens": r["tokens"],
             }
             for r in index_rows
         ],
@@ -678,8 +850,6 @@ def main(argv=None):
     (out_dir / "meta.json").write_text(
         json.dumps(meta_json, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
-    pdf.close()
-
     print(f"OK: {len(sections)} разделов, {image_total} изобр., {table_total} табл., "
           f"{tokens_total} токенов → {out_dir.relative_to(ROOT) if str(out_dir).startswith(str(ROOT)) else out_dir}")
     return 0
@@ -710,19 +880,20 @@ def build_index(meta, rows, tokens_total) -> str:
         "",
         "## Разделы",
         "",
-        "| № | Раздел | Файл | Стр. | Токены | Когда обращаться |",
-        "| --- | --- | --- | --- | ---: | --- |",
+        "| № PDF | Раздел | Файл | Стр. | Источник | Токены | Когда обращаться |",
+        "| --- | --- | --- | --- | --- | ---: | --- |",
     ]
     for r in rows:
         lines.append(
             f'| {r["number"]} | {r["title"]} | [{r["file"]}]({r["file"]}) | '
-            f'{r["pages"]} | {r["tokens"]} | {r["summary"]} |'
+            f'{r["pages"]} | {r["source_summary"]} | {r["tokens"]} | {r["summary"]} |'
         )
-    lines.append(f"| | **ИТОГО** | | | **{tokens_total}** | весь документ |")
+    lines.append(f"| | **ИТОГО** | | | | **{tokens_total}** | весь документ |")
     lines.append("")
     lines.append("## Источники")
     lines.append("")
-    lines.append(f'- Источник БЗ: `{meta["source_rel"]}`')
+    for idx, source in enumerate(str(meta["source_rel"]).split("; "), start=1):
+        lines.append(f"- Источник БЗ, часть {idx}: `{source}`")
     lines.append("- Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), "
                  "[ADR-007](../../../docs/adr/007-kb-standard.md)")
     return "\n".join(lines) + "\n"

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.6"
+pdf_section: "2.6"
 title: "Панель графика работы"
+pdf_heading: "2.6. Панель графика работы"
 pages: "116-117"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 116-117"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"116-117","global_pages":"116-117"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1076
+tokens: 1137
 status: extracted
 ai-generated: true
 ---
 # 2.6. Панель графика работы
+
+> Трассировка: PDF §2.6 · сквозные стр. 116-117 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.116-117.
 
 Панель графика работы предоставляет информацию о текущем статусе и активности сотрудников, а также обеспечивает возможность контроля за соблюдением рабочего графика.
 

@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       source:
-        description: "PDF source path under kb/sources/"
+        description: "PDF source path(s) under kb/sources/; use spaces for multi-part manuals"
         required: true
         default: "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
       out:
@@ -73,6 +73,7 @@ jobs:
         run: |
           python3 scripts/validate_issue_111_kb_pipeline.py
           python3 scripts/validate_issue_115_kb_mango_pipeline.py
+          python3 scripts/validate_issue_117_kb_traceability.py
 
   # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
   # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):

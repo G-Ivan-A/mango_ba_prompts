@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.4"
+pdf_section: "4.4"
 title: "Настройка автоматических действий"
+pdf_heading: "4.4. Настройка автоматических действий"
 pages: "159-161"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 159-161"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"159-161","global_pages":"159-161"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 717
+tokens: 778
 status: extracted
 ai-generated: true
 ---
 # 4.4. Настройка автоматических действий
+
+> Трассировка: PDF §4.4 · сквозные стр. 159-161 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.159-161.
 
 ![Изображение, стр. 159](../images/71-nastroyka-avtomaticheskih-deystviy-1.png)
 
