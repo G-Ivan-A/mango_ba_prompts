@@ -204,10 +204,235 @@ def page_elements(page, body_size, page_images):
     return elements
 
 
+def normalize_heading(text: str) -> str:
+    """Нормализация заголовков для сопоставления с PDF outline."""
+    text = text.replace("\u00a0", " ").replace("ё", "е").replace("Ё", "Е")
+    text = re.sub(r"\s+", " ", text).strip()
+    return text.rstrip(".")
+
+
+def parse_numbered_title(text: str):
+    match = _NUM_RE.match(text.strip())
+    if not match:
+        return None, text.strip()
+    return match.group(1), match.group(2).strip()
+
+
+def load_pdf_outline(pdf_path: Path) -> tuple[list[dict], str | None]:
+    """Возвращает outline/bookmarks PDF, если он есть.
+
+    Для больших руководств встроенное оглавление надежнее эвристики по жирным
+    нумерованным строкам: списки внутри раздела не становятся отдельными чанками.
+    """
+    try:
+        import fitz  # PyMuPDF
+    except Exception:
+        return [], None
+
+    doc = fitz.open(str(pdf_path))
+    try:
+        toc = doc.get_toc(simple=True)
+        version = f"pymupdf {fitz.VersionBind}"
+    finally:
+        doc.close()
+
+    entries = []
+    for level, raw_title, page_no in toc:
+        if page_no < 1:
+            continue
+        number, title = parse_numbered_title(raw_title)
+        entries.append({
+            "level": level,
+            "raw_title": raw_title.strip(),
+            "number": number,
+            "title": title,
+            "page": page_no,
+        })
+    return entries, version
+
+
+def heading_matches(line_text: str, outline_title: str) -> bool:
+    line = normalize_heading(line_text)
+    wanted = normalize_heading(outline_title)
+    if line == wanted:
+        return True
+    # Длинные заголовки иногда переносятся: первая строка должна совпадать
+    # с началом outline-заголовка, но короткие случайные совпадения отбрасываем.
+    return len(line) >= 12 and wanted.startswith(line + " ")
+
+
+def resolve_outline_positions(pdf, outline_entries: list[dict]) -> list[dict]:
+    """Находит вертикальную позицию каждого outline-заголовка на странице."""
+    lines_by_page: dict[int, list[dict]] = {}
+    last_top_by_page: dict[int, float] = {}
+    resolved = []
+
+    for entry in outline_entries:
+        page_index = entry["page"] - 1
+        if page_index < 0 or page_index >= len(pdf.pages):
+            continue
+        if page_index not in lines_by_page:
+            lines_by_page[page_index] = pdf.pages[page_index].extract_text_lines(layout=False)
+
+        last_top = last_top_by_page.get(page_index, -1.0)
+        candidates = [
+            line["top"]
+            for line in lines_by_page[page_index]
+            if heading_matches(line.get("text") or "", entry["raw_title"])
+        ]
+        top = None
+        for candidate in sorted(candidates):
+            if candidate > last_top + 0.5:
+                top = candidate
+                break
+        if top is None and candidates:
+            top = sorted(candidates)[0]
+        if top is None:
+            # Fail-open: если координату не нашли, все равно используем outline
+            # как границу страницы. Малый сдвиг сохраняет порядок на одной странице.
+            top = max(last_top + 0.01, 0.0)
+
+        marker = dict(entry)
+        marker["page_index"] = page_index
+        marker["top"] = top
+        resolved.append(marker)
+        last_top_by_page[page_index] = top
+
+    return resolved
+
+
+def page_number_footer(line: dict, page) -> bool:
+    text = (line.get("text") or "").strip()
+    return (
+        text == str(getattr(page, "page_number", ""))
+        and line.get("top", 0) > getattr(page, "height", 0) - 80
+    )
+
+
+def page_elements_plain(page, page_images):
+    """Элементы страницы без детекта заголовков; границы берет PDF outline."""
+    elements = []
+    tables = page.find_tables()
+    table_bboxes = [t.bbox for t in tables]
+
+    def in_table(top, bottom):
+        mid = (top + bottom) / 2
+        for x0, t0, x1, t1 in table_bboxes:
+            if t0 <= mid <= t1:
+                return True
+        return False
+
+    for line in page.extract_text_lines(layout=False):
+        if page_number_footer(line, page) or in_table(line["top"], line["bottom"]):
+            continue
+        text = (line.get("text") or "").strip()
+        if text:
+            elements.append({"type": "text", "top": line["top"], "text": text})
+
+    for table in tables:
+        elements.append({"type": "table", "top": table.bbox[1], "data": table.extract()})
+
+    pdfplumber_imgs = sorted(page.images, key=lambda im: im["top"])
+    byte_list = page_images or []
+    for idx, img in enumerate(pdfplumber_imgs):
+        payload = byte_list[idx] if idx < len(byte_list) else None
+        elements.append({"type": "image", "top": img["top"], "payload": payload})
+    for idx in range(len(pdfplumber_imgs), len(byte_list)):
+        elements.append({"type": "image", "top": 10 ** 6 + idx, "payload": byte_list[idx]})
+
+    elements.sort(key=lambda e: e["top"])
+    return elements
+
+
+def append_plain_element(section: dict, el: dict, page_no: int):
+    section["end_page"] = page_no
+    if el["type"] == "text":
+        if el["text"].strip():
+            section["blocks"].append(("text", el["text"].strip()))
+    elif el["type"] == "table":
+        md = render_table(el["data"])
+        if md:
+            section["blocks"].append(("table", md))
+            section["n_tables"] += 1
+    elif el["type"] == "image":
+        section["blocks"].append(("image", el.get("payload"), page_no))
+        section["n_images"] += 1
+
+
+def build_sections_from_outline(pdf, outline_entries, image_map):
+    markers = resolve_outline_positions(pdf, outline_entries)
+    if not markers:
+        return []
+
+    sections = []
+
+    def new_section(marker):
+        return {
+            "number": marker.get("number"),
+            "title": marker["title"],
+            "level": marker.get("level", 1),
+            "blocks": [],
+            "start_page": marker["page"],
+            "end_page": marker["page"],
+            "subheadings": [],
+            "n_tables": 0,
+            "n_images": 0,
+        }
+
+    def collect(section, start_page_index, start_top, end_marker):
+        end_page_index = end_marker["page_index"] if end_marker else len(pdf.pages) - 1
+        for page_index in range(start_page_index, end_page_index + 1):
+            page = pdf.pages[page_index]
+            lower = start_top if page_index == start_page_index else -1.0
+            upper = (
+                end_marker["top"]
+                if end_marker and page_index == end_marker["page_index"]
+                else float("inf")
+            )
+            for el in page_elements_plain(page, image_map.get(page_index)):
+                top = el["top"]
+                if page_index == start_page_index and top <= lower + 0.5:
+                    continue
+                if page_index == end_page_index and top >= upper - 0.5:
+                    continue
+                append_plain_element(section, el, page_index + 1)
+
+    # Титульные страницы и оглавление до первого outline-раздела сохраняем.
+    first = markers[0]
+    if first["page_index"] > 0 or first["top"] > 0:
+        front = {
+            "number": None,
+            "title": "Титульная часть",
+            "level": 1,
+            "blocks": [],
+            "start_page": 1,
+            "end_page": 1,
+            "subheadings": [],
+            "n_tables": 0,
+            "n_images": 0,
+        }
+        collect(front, 0, -1.0, first)
+        if front["blocks"]:
+            sections.append(front)
+
+    for idx, marker in enumerate(markers):
+        section = new_section(marker)
+        next_marker = markers[idx + 1] if idx + 1 < len(markers) else None
+        collect(section, marker["page_index"], marker["top"], next_marker)
+        sections.append(section)
+
+    return sections
+
+
 # --- Сборка разделов --------------------------------------------------------
 def build_sections(pdf, pdf_path):
     body_size = body_font_size(pdf.pages)
     image_map, image_tool = load_image_bytes(Path(pdf_path))
+    outline, outline_tool = load_pdf_outline(Path(pdf_path))
+    if outline:
+        sections = build_sections_from_outline(pdf, outline, image_map)
+        if sections:
+            return sections, body_size, image_tool, f"pdf-outline ({outline_tool})"
 
     sections = []
     front = {"number": None, "title": "Титульная часть", "level": 1, "blocks": [],
@@ -249,7 +474,7 @@ def build_sections(pdf, pdf_path):
             sections.append(front)
     else:
         sections.append(current)
-    return sections, body_size, image_tool
+    return sections, body_size, image_tool, "layout-heuristic"
 
 
 # --- Рендер раздела в Markdown ---------------------------------------------
@@ -365,7 +590,7 @@ def main(argv=None):
 
     pdf = pdfplumber.open(str(pdf_path))
     pdf_version = getattr(__import__("pdfplumber"), "__version__", "?")
-    sections, body_size, image_tool = build_sections(pdf, pdf_path)
+    sections, body_size, image_tool, section_source = build_sections(pdf, pdf_path)
 
     doc_slug = slugify(out_dir.name)
     doc_title = args.doc_title or (sections[0]["title"] if sections else out_dir.name)
@@ -432,6 +657,7 @@ def main(argv=None):
         "source_sha256": source_sha,
         "extracted_by": meta["extracted_by"],
         "image_extractor": image_tool or "none",
+        "section_source": section_source,
         "token_method": meta["token_method"],
         "page_count": len(pdf.pages),
         "section_count": len(sections),
