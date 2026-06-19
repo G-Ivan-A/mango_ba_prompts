@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.6"
+pdf_section: "2.5.1.3.6"
 title: "Пользовательские"
+pdf_heading: "2.5.1.3.6. Пользовательские"
 pages: "62-65"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 62-65"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"62-65","global_pages":"62-65"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2749
+tokens: 2816
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.6. Пользовательские
+
+> Трассировка: PDF §2.5.1.3.6 · сквозные стр. 62-65 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.62-65.
 
 Данная вкладка предназначена для редактирования настроек непосредственно программы.
 

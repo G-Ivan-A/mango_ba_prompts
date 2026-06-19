@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "25"
+pdf_section: "25"
 title: "Приложение 8. Устранение неполадок"
+pdf_heading: "25. Приложение 8. Устранение неполадок"
 pages: "609-614"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 609-614"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"609-614","global_pages":"609-614"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1418
+tokens: 1477
 status: extracted
 ai-generated: true
 ---
 # 25. Приложение 8. Устранение неполадок
+
+> Трассировка: PDF §25 · сквозные стр. 609-614 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.609-614.
 
 Помощь в устранении неполадок доступна в окне Меню справочной системы. Устранение неполадок со слышимостью Для устранения неполадок со слышимостью необходимо произвести очистку реестра. Действуйте в следующей последовательности: 1. Закройте все программы, которые имеют доступ к микрофону. Для этого откройте Диспетчер задач Windows, выберите необходимое приложение и нажмите кнопку Снять задачу.
 

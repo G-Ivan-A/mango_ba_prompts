@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "10.1"
+pdf_section: "10.1"
 title: "Контакты (адресная книга)"
+pdf_heading: "10.1. Контакты (адресная книга)"
 pages: "296-306"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 296-306"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"296-306","global_pages":"296-306"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 6591
+tokens: 6652
 status: extracted
 ai-generated: true
 ---
 # 10.1. Контакты (адресная книга)
+
+> Трассировка: PDF §10.1 · сквозные стр. 296-306 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.296-306.
 
 Контакты Адресной книги доступны пользователю в соответствии с его ролью в Контакт- центре.
 

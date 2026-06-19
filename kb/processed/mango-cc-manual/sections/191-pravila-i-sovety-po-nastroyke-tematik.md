@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "16.2.3"
+pdf_section: "16.2.3"
 title: "Правила и советы по настройке тематик"
+pdf_heading: "16.2.3. Правила и советы по настройке тематик"
 pages: "484-489"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 484-489"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"484-489","global_pages":"484-489"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2356
+tokens: 2419
 status: extracted
 ai-generated: true
 ---
 # 16.2.3. Правила и советы по настройке тематик
+
+> Трассировка: PDF §16.2.3 · сквозные стр. 484-489 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.484-489.
 
 Терма – ключевое слово или словосочетание, которое необходимо найти в тексте записи разговора. При вводе терм допускается использование следующих символов: • Кавычки (" " или «») – для поиска точного соответствия поисковому запросу; • Дефис (тире) – для составных слов; • Буквы (кириллица, латиница); • Цифры; • Пробел; • Восклицательный знак (!).
 

@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.3.1"
+pdf_section: "4.3.1"
 title: "Исходящие обращения"
+pdf_heading: "4.3.1. Исходящие обращения"
 pages: "136-142"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 136-142"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"136-142","global_pages":"136-142"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3830
+tokens: 3893
 status: extracted
 ai-generated: true
 ---
 # 4.3.1. Исходящие обращения
+
+> Трассировка: PDF §4.3.1 · сквозные стр. 136-142 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.136-142.
 
 Чтобы создать исходящее сообщение на вкладке Обращения/Мои обращения нажмите кнопку "Создать обращение". Далее из выпадающего списка выберите требуемый тип создаваемого обращения.
 

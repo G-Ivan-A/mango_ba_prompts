@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.5"
+pdf_section: "2.5.1.3.5"
 title: "Автосекретарь"
+pdf_heading: "2.5.1.3.5. Автосекретарь"
 pages: "60-62"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 60-62"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"60-62","global_pages":"60-62"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2020
+tokens: 2087
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.5. Автосекретарь
+
+> Трассировка: PDF §2.5.1.3.5 · сквозные стр. 60-62 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.60-62.
 
 Вкладка предназначена для настройки правил Автосекретаря.
 

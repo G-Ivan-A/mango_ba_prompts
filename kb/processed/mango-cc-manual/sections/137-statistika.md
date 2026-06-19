@@ -4,15 +4,22 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "12.3"
+pdf_section: "12.3"
 title: "Статистика"
+pdf_heading: "12.3. Статистика"
 pages: "387"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 387"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"387","global_pages":"387"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 190
+tokens: 247
 status: extracted
 ai-generated: true
 ---
 # 12.3. Статистика
+
+> Трассировка: PDF §12.3 · сквозные стр. 387 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.387.
 
 Если по скрипту был выполнен хотя бы один проход, то есть выбор хотя бы одного варианта ответа клиента или внесение хотя бы одного комментария к ответу клиента, то при щелчке по наименованию скрипта выполняется переход к статистическим отчетам по данному скрипту. Предусмотрены следующие отчеты: • Эффективность сотрудников — персональная статистика назначенных сотрудников; • Статистика ответов — статистика прохождения каждого шага скрипта.

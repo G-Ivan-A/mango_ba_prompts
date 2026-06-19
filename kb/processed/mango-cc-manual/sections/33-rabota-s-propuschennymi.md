@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.13.2"
+pdf_section: "2.5.1.3.13.2"
 title: "Работа с пропущенными"
+pdf_heading: "2.5.1.3.13.2. Работа с пропущенными"
 pages: "81-83"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 81-83"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"81-83","global_pages":"81-83"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 640
+tokens: 709
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.13.2. Работа с пропущенными
+
+> Трассировка: PDF §2.5.1.3.13.2 · сквозные стр. 81-83 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.81-83.
 
 Вкладка предназначена для настройки периода отображения пропущенных звонков.
 

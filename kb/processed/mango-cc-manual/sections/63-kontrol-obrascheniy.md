@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.1"
+pdf_section: "4.1"
 title: "Контроль обращений"
+pdf_heading: "4.1. Контроль обращений"
 pages: "129-132"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 129-132"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"129-132","global_pages":"129-132"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2406
+tokens: 2467
 status: extracted
 ai-generated: true
 ---
 # 4.1. Контроль обращений
+
+> Трассировка: PDF §4.1 · сквозные стр. 129-132 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.129-132.
 
 Данный инструмент предназначен для мониторинга обращений в режиме реального времени по выбранной группе в разрезе вызовов и текстовых обращений. Для получения отчета выберите одну либо несколько групп, по которым необходимо получить данные и нажмите кнопку Применить. Клик по кнопке "Очистить фильтр" удаляет заданные параметры фильтрации.
 

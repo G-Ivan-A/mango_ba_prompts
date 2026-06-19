@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "18"
+pdf_section: "18"
 title: "Приложение 1. Управление правами доступа"
+pdf_heading: "18. Приложение 1. Управление правами доступа"
 pages: "547-552"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 547-552"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"547-552","global_pages":"547-552"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3648
+tokens: 3707
 status: extracted
 ai-generated: true
 ---
 # 18. Приложение 1. Управление правами доступа
+
+> Трассировка: PDF §18 · сквозные стр. 547-552 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.547-552.
 
 В данном приложении приведено сводное описание параметров доступности, разрешений (прав) и функциональных возможностей Личного кабинета ВАТС MANGO OFFICE в зависимости от выбранной роли, установленных по умолчанию.
 

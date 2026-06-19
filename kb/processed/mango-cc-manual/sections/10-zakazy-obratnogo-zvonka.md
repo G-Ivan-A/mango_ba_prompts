@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.3.3"
+pdf_section: "2.3.3"
 title: "Заказы обратного звонка"
+pdf_heading: "2.3.3. Заказы обратного звонка"
 pages: "30-32"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 30-32"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"30-32","global_pages":"30-32"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 633
+tokens: 696
 status: extracted
 ai-generated: true
 ---
 # 2.3.3. Заказы обратного звонка
+
+> Трассировка: PDF §2.3.3 · сквозные стр. 30-32 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.30-32.
 
 Заказы обратных звонков группируются по виджетам. В шапке виджета указывается его название и количество запланированных обратных звонков. Всплывающие окна содержат детальную информацию о звонке.
 

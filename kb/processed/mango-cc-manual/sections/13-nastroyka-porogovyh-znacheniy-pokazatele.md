@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.4.2"
+pdf_section: "2.4.2"
 title: "Настройка пороговых значений показателей производительности"
+pdf_heading: "2.4.2. Настройка пороговых значений показателей производительности"
 pages: "43-46"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 43-46"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"43-46","global_pages":"43-46"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2297
+tokens: 2360
 status: extracted
 ai-generated: true
 ---
 # 2.4.2. Настройка пороговых значений показателей производительности
+
+> Трассировка: PDF §2.4.2 · сквозные стр. 43-46 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.43-46.
 
 ![Изображение, стр. 44](../images/13-nastroyka-porogovyh-znacheniy-pokazatele-1.jpeg)
 

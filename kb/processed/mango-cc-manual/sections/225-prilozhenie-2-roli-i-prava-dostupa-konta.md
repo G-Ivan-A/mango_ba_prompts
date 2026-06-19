@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "19"
+pdf_section: "19"
 title: "Приложение 2: Роли и права доступа Контакт-центра"
+pdf_heading: "19. Приложение 2: Роли и права доступа Контакт-центра"
 pages: "580-595"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 580-595"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"580-595","global_pages":"580-595"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 13251
+tokens: 13310
 status: extracted
 ai-generated: true
 ---
 # 19. Приложение 2: Роли и права доступа Контакт-центра
+
+> Трассировка: PDF §19 · сквозные стр. 580-595 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.580-595.
 
 В данном приложении приведено сводное описание параметров доступности, разрешений (прав) и функциональных возможностей Контакт-центра MANGO OFFICE в зависимости от выбранной роли.
 

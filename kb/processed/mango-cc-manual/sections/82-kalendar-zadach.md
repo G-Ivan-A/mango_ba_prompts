@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "6.1"
+pdf_section: "6.1"
 title: "Календарь задач"
+pdf_heading: "6.1. Календарь задач"
 pages: "203-205"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 203-205"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"203-205","global_pages":"203-205"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 995
+tokens: 1056
 status: extracted
 ai-generated: true
 ---
 # 6.1. Календарь задач
+
+> Трассировка: PDF §6.1 · сквозные стр. 203-205 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.203-205.
 
 Подраздел Календарь задач открывает окно календаря с кнопкой добавления задачи и выпадающим списком для выбора исполнителя задачи:
 

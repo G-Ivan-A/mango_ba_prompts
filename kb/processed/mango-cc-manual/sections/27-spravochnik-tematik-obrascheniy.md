@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.9"
+pdf_section: "2.5.1.3.9"
 title: "Справочник тематик обращений"
+pdf_heading: "2.5.1.3.9. Справочник тематик обращений"
 pages: "69-71"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 69-71"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"69-71","global_pages":"69-71"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1729
+tokens: 1796
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.9. Справочник тематик обращений
+
+> Трассировка: PDF §2.5.1.3.9 · сквозные стр. 69-71 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.69-71.
 
 На данной вкладке осуществляется редактирование списка папок и тематик обращений, применяемых при обработке вызова, при редактировании информации об уже совершенных вызовах, при создании кампании исходящего обзвона, а также для виджетов обратных звонков и т. д.
 

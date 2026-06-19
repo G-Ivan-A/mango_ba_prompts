@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "8.5"
+pdf_section: "8.5"
 title: "Настройки"
+pdf_heading: "8.5. Настройки"
 pages: "266-270"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 266-270"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"266-270","global_pages":"266-270"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1892
+tokens: 1953
 status: extracted
 ai-generated: true
 ---
 # 8.5. Настройки
+
+> Трассировка: PDF §8.5 · сквозные стр. 266-270 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.266-270.
 
 Вкладка Настройки содержит шесть информационных блоков.
 

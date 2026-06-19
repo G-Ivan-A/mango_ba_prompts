@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "9.3"
+pdf_section: "9.3"
 title: "Пропущенные вызовы"
+pdf_heading: "9.3. Пропущенные вызовы"
 pages: "291-296"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 291-296"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"291-296","global_pages":"291-296"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2648
+tokens: 2709
 status: extracted
 ai-generated: true
 ---
 # 9.3. Пропущенные вызовы
+
+> Трассировка: PDF §9.3 · сквозные стр. 291-296 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.291-296.
 
 Отчет "Пропущенные вызовы" позволяет получить детальную информацию в рамках истории перезвона по пропущенным групповым вызовам за выбранный период по выбранной группе.
 

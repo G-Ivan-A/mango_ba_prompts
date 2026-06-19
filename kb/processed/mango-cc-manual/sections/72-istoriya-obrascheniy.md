@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "4.5"
+pdf_section: "4.5"
 title: "История обращений"
+pdf_heading: "4.5. История обращений"
 pages: "161-166"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 161-166"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"161-166","global_pages":"161-166"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3822
+tokens: 3883
 status: extracted
 ai-generated: true
 ---
 # 4.5. История обращений
+
+> Трассировка: PDF §4.5 · сквозные стр. 161-166 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.161-166.
 
 Для просмотра аналитической информации по обращениям клиентов следует отобрать обращения по периоду времени. Для этого выберите нужный период времени. При выборе варианта Произвольный становятся доступными поля с и по, где вы можете ввести нужную
 

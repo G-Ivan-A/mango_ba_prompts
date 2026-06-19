@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "20"
+pdf_section: "20"
 title: "Приложение 3: Отчеты об ошибках"
+pdf_heading: "20. Приложение 3: Отчеты об ошибках"
 pages: "595-597"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 595-597"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"595-597","global_pages":"595-597"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1360
+tokens: 1419
 status: extracted
 ai-generated: true
 ---
 # 20. Приложение 3: Отчеты об ошибках
+
+> Трассировка: PDF §20 · сквозные стр. 595-597 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.595-597.
 
 Вы можете отправлять отчеты о проблемах и ошибках, возникающих при использовании Контакт-центра MANGO OFFICE, сотрудникам отдела технической поддержки. Для отправки отчета об ошибке или проблеме 1. Щелкните правой кнопкой манипулятора по значку программы в области системных уведомлений (трее). 2. Выберите пункт меню Отправить отчет об ошибке. После этого на экране отображается окно Сообщить о проблеме.
 

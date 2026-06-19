@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "1.2"
+pdf_section: "1.2"
 title: "Вход в систему"
+pdf_heading: "1.2. Вход в систему"
 pages: "17-21"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 17-21"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"17-21","global_pages":"17-21"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1752
+tokens: 1813
 status: extracted
 ai-generated: true
 ---
 # 1.2. Вход в систему
+
+> Трассировка: PDF §1.2 · сквозные стр. 17-21 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.17-21.
 
 При первом запуске Контакт-центра MANGO OFFICE на экране отображается окно входа в систему для ввода информации, необходимой для осуществления проверки полномочий пользователя и синхронизацией с сервером.
 

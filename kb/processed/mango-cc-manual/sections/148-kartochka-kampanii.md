@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "14.2"
+pdf_section: "14.2"
 title: "Карточка кампании"
+pdf_heading: "14.2. Карточка кампании"
 pages: "415-417"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 415-417"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"415-417","global_pages":"415-417"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1538
+tokens: 1599
 status: extracted
 ai-generated: true
 ---
 # 14.2. Карточка кампании
+
+> Трассировка: PDF §14.2 · сквозные стр. 415-417 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.415-417.
 
 Карточка кампании открывается по клику на наименование кампании в списке кампаний текстовых рассылок. Карточка кампании состоит из двух блоков:
 

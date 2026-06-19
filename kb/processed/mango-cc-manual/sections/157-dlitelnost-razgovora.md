@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "15.1.1.4"
+pdf_section: "15.1.1.4"
 title: "Длительность разговора"
+pdf_heading: "15.1.1.4. Длительность разговора"
 pages: "426-428"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 426-428"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"426-428","global_pages":"426-428"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 485
+tokens: 550
 status: extracted
 ai-generated: true
 ---
 # 15.1.1.4. Длительность разговора
+
+> Трассировка: PDF §15.1.1.4 · сквозные стр. 426-428 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.426-428.
 
 Отчет «Длительность разговора» отображает информацию о количестве входящих звонков на группу сотрудников, распределенных в зависимости от длительности разговора за определенный период. По умолчанию оптимальной длительностью разговора с клиентом считается период от 30 секунд до 5 минут. При необходимости измените этот период самостоятельно, установив другое значение в поле С оптимальной длительностью от… до после формирования отчета.
 

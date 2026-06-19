@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "7.5.1"
+pdf_section: "7.5.1"
 title: "Вызовы"
+pdf_heading: "7.5.1. Вызовы"
 pages: "235-239"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 235-239"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"235-239","global_pages":"235-239"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 4776
+tokens: 4839
 status: extracted
 ai-generated: true
 ---
 # 7.5.1. Вызовы
+
+> Трассировка: PDF §7.5.1 · сквозные стр. 235-239 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.235-239.
 
 Отчёт «Вызовы» предназначен для анализа входящих и исходящих телефонных звонков. Он позволяет оценить эффективность обработки вызовов, работу групп сотрудников, а также отслеживать динамику ключевых показателей производительности групп за выбранный период.
 

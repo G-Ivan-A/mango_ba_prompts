@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.1"
+pdf_section: "2.1"
 title: "Управление статусом"
+pdf_heading: "2.1. Управление статусом"
 pages: "22-24"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 22-24"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"22-24","global_pages":"22-24"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1489
+tokens: 1550
 status: extracted
 ai-generated: true
 ---
 # 2.1. Управление статусом
+
+> Трассировка: PDF §2.1 · сквозные стр. 22-24 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.22-24.
 
 Контакт-центр MANGO OFFICE позволяет в любой момент времени выбрать нужный статус пользователя, который определяет его готовность к приему вызовов. Для выбора доступны 1) предустановленные статусы – 5 статусов; 2) пользовательские статусы – до 30 статусов. Чтобы выбрать статус сотрудника, воспользуйтесь раскрывающимся списком в окне управления статусом.
 

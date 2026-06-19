@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "13.2"
+pdf_section: "13.2"
 title: "Комнаты конференций"
+pdf_heading: "13.2. Комнаты конференций"
 pages: "397-398"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 397-398"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"397-398","global_pages":"397-398"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 738
+tokens: 799
 status: extracted
 ai-generated: true
 ---
 # 13.2. Комнаты конференций
+
+> Трассировка: PDF §13.2 · сквозные стр. 397-398 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.397-398.
 
 Вкладка "Конференции" служит для группировки операторов по виртуальным комнатам конференций. Список и настройки комнат конференций ведется в Личном кабинете.
 

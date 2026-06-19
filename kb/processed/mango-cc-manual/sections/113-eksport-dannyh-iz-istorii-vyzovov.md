@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "9.1.4"
+pdf_section: "9.1.4"
 title: "Экспорт данных из истории вызовов"
+pdf_heading: "9.1.4. Экспорт данных из истории вызовов"
 pages: "288-290"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 288-290"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"288-290","global_pages":"288-290"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 921
+tokens: 984
 status: extracted
 ai-generated: true
 ---
 # 9.1.4. Экспорт данных из истории вызовов
+
+> Трассировка: PDF §9.1.4 · сквозные стр. 288-290 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.288-290.
 
 Контакт-центр MANGO OFFICE обеспечивает возможность анализа данных об истории вызовов в других программных продуктах с помощью экспорта (выгрузки) данных. Экспорт осуществляется в формате CSV (значения, разделенные запятыми).
 

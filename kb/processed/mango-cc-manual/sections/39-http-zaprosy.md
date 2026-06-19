@@ -4,16 +4,23 @@ doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
 section: "2.5.1.3.19"
+pdf_section: "2.5.1.3.19"
 title: "HTTP Запросы"
+pdf_heading: "2.5.1.3.19. HTTP Запросы"
 pages: "88-89"
 source: kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf
+source_part: "1"
+source_pages: "ч.1: 88-89"
+source_refs: '[{"source_pdf":"kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf","part":1,"pages":"88-89","global_pages":"88-89"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 494
+tokens: 561
 status: extracted
 ai-generated: true
 ---
 # 2.5.1.3.19. HTTP Запросы
+
+> Трассировка: PDF §2.5.1.3.19 · сквозные стр. 88-89 · источники: ч.1 `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` с.88-89.
 
 Функция предназначена для быстрого заполнения внешней базы данных, а также поиска по базе. При внешнем входящем вызове в браузере открывается заданная ссылка.
 
