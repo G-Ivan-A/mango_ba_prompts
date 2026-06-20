@@ -18,7 +18,7 @@ const SOURCE_FILES = {
 };
 
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
-const EXPERIMENTS_DIR = "prompts/experiments";
+const RUNS_DIR = "runs";
 const FEEDBACK_SOURCE = "governance/prompt-feedback.json";
 
 const OPERATION_ICONS = {
@@ -705,7 +705,7 @@ function normalizeForMatch(value) {
     .replace(/-+/g, "-");
 }
 
-// Набор «топиков» промпта для сопоставления с тестовыми логами prompts/experiments/.
+// Набор «топиков» промпта для сопоставления с тестовыми логами runs/.
 function promptSearchTerms(prompt) {
   const stem = prompt.file
     .replace(/\.md$/, "")
@@ -728,17 +728,32 @@ function promptSearchTerms(prompt) {
   return [...terms];
 }
 
-async function loadExperiments() {
-  let names = [];
+async function walkMarkdown(relativeDir) {
+  let entries = [];
   try {
-    names = await fs.readdir(path.join(ROOT, EXPERIMENTS_DIR));
+    entries = await fs.readdir(path.join(ROOT, relativeDir), { withFileTypes: true });
   } catch {
     return [];
   }
+
+  const files = [];
+  for (const entry of entries) {
+    const relativePath = `${relativeDir}/${entry.name}`;
+    if (entry.isDirectory()) {
+      files.push(...(await walkMarkdown(relativePath)));
+    } else if (entry.isFile() && entry.name.endsWith(".md")) {
+      files.push(relativePath);
+    }
+  }
+  return files;
+}
+
+async function loadExperiments() {
   const experiments = [];
-  for (const name of names.filter((file) => file.endsWith(".md"))) {
-    const content = await read(`${EXPERIMENTS_DIR}/${name}`);
-    experiments.push({ name, normalized: normalizeForMatch(content) });
+  const files = (await walkMarkdown(RUNS_DIR)).filter((file) => /\/(outputs|logs)\//.test(file));
+  for (const file of files) {
+    const content = await read(file);
+    experiments.push({ name: file, normalized: normalizeForMatch(content) });
   }
   return experiments;
 }
@@ -855,7 +870,7 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
   return {
     generatedAt: new Date().toISOString(),
     sourceFiles: [
-      { path: `${EXPERIMENTS_DIR}/`, url: repoUrl(`${EXPERIMENTS_DIR}/`) },
+      { path: `${RUNS_DIR}/`, url: repoUrl(`${RUNS_DIR}/`) },
       { path: FEEDBACK_SOURCE, url: repoUrl(FEEDBACK_SOURCE) },
     ],
     statuses,

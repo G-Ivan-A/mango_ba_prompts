@@ -315,7 +315,7 @@ C2 (self-test gate); бэклог M-006. Self-test (Q3) — **обязатель
 исследований — явно проставь `research_dep: none` **и** добавь комментарий о
 бизнес-задаче (зачем промпт нужен). Для зависимых промптов — `research_dep:
 docs/hub-research-dependencies.md#<anchor>` (anchors заводятся в M-007). Прогон
-self-test из `prompts/experiments/prompts-selftest-2026-05-26.md` — обязательный
+self-test из `runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md` — обязательный
 gate перед статусом `migrated` (Q3).
 
 ### 📄 Артефакты для создания/изменения

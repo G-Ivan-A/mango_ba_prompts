@@ -111,7 +111,7 @@ Directives, Part 2 (нормативные vs информативные пол�
 - **Anthropic Prompt Engineering Guide** (best practice для промптов):
   <https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/overview>
 - **A/B-эксперимент (ФТ-6):**
-  [`prompts/experiments/standards-applied-ab-2026-06-16.md`](../../prompts/experiments/standards-applied-ab-2026-06-16.md)
+  [`runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md`](../../runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md)
   — формирование/проверка FR с применением стандартов и без.
 
 ## Примеры
@@ -165,7 +165,7 @@ Directives, Part 2 (нормативные vs информативные пол�
 - Контракт (терминология, правила, реестр): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/industry-standards-standard.md>
 - ADR-007 (дисциплина цитирования, правило C4): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/007-kb-standard.md>
 - Таксономия (audit-профиль 29148): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>
-- A/B-эксперимент: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/standards-applied-ab-2026-06-16.md>
+- A/B-эксперимент: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md>
 
 ### Международные стандарты (полные URL, сверено)
 

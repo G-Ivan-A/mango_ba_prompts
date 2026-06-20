@@ -81,11 +81,11 @@ closed_in_phase: 3
 
 | Артефакт (Хаб) | Категория | Действие | Статус | Назначение в споке |
 | :--- | :--- | :--- | :--- | :--- |
-| [`experiments/tz-stats-prototype-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/tz-stats-prototype-2026-05.md) | ⚫ | migrate | `migrated` | [`prompts/experiments/tz-stats-prototype-2026-05.md`](../prompts/experiments/tz-stats-prototype-2026-05.md) |
-| [`experiments/usecase_gen-stepwise-alignment_2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md) | ⚫ | migrate | `migrated` | [`prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md`](../prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md) |
-| [`experiments/user-story_gen-from-raw-request_2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md) | ⚫ | migrate | `migrated` | [`prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md`](../prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md) |
-| [`experiments/prompts-audit-2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/prompts-audit-2026-05-26.md) | ⚫ | migrate | `migrated` | [`prompts/experiments/prompts-audit-2026-05-26.md`](../prompts/experiments/prompts-audit-2026-05-26.md) |
-| [`experiments/prompts-selftest-2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/prompts-selftest-2026-05-26.md) | ⚫ | migrate | `migrated` | [`prompts/experiments/prompts-selftest-2026-05-26.md`](../prompts/experiments/prompts-selftest-2026-05-26.md) (self-test gate, C2) |
+| [`experiments/tz-stats-prototype-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/tz-stats-prototype-2026-05.md) | ⚫ | migrate | `migrated` | [`runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md`](../runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md) |
+| [`experiments/usecase_gen-stepwise-alignment_2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/usecase_gen-stepwise-alignment_2026-05-26.md) | ⚫ | migrate | `migrated` | [`runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md`](../runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md) |
+| [`experiments/user-story_gen-from-raw-request_2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/user-story_gen-from-raw-request_2026-05-26.md) | ⚫ | migrate | `migrated` | [`runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md`](../runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md) |
+| [`experiments/prompts-audit-2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/prompts-audit-2026-05-26.md) | ⚫ | migrate | `migrated` | [`runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md`](../runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md) |
+| [`experiments/prompts-selftest-2026-05-26.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/experiments/prompts-selftest-2026-05-26.md) | ⚫ | migrate | `migrated` | [`runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md`](../runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md) (self-test gate, C2) |
 
 ### 2.4. Исследования (🔵 — остаются в Хабе, P1)
 
@@ -129,11 +129,11 @@ Research **не копируется**; спок ссылается через �
 - [x] `prompts/user-story-generator-simple.md` — 2026-06-04 — `status: canonical` — self-test `passed`
 - [x] `standards/GLOSSARY.md` — 2026-06-04 — `status: canonical` — copy+link (P2)
 - [x] `standards/product-classification-contract.md` — 2026-06-04 — `status: draft` — rename из `classification-glossary.md` (E2/E6)
-- [x] `prompts/experiments/tz-stats-prototype-2026-05.md` — часть продукта (E5)
-- [x] `prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md` — часть продукта (E5)
-- [x] `prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md` — часть продукта (E5)
-- [x] `prompts/experiments/prompts-audit-2026-05-26.md` — часть продукта (E5)
-- [x] `prompts/experiments/prompts-selftest-2026-05-26.md` — acceptance-сценарий self-test gate (C2)
+- [x] `runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md` — часть продукта (E5)
+- [x] `runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md` — часть продукта (E5)
+- [x] `runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md` — часть продукта (E5)
+- [x] `runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md` — часть продукта (E5)
+- [x] `runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md` — acceptance-сценарий self-test gate (C2)
 
 ### 🔵 Осталось в Хабе (зависимости задекларированы)
 

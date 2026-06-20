@@ -1,0 +1,14 @@
+run_id: RUN-0009
+process: industry-standards-ab-check
+version: "0.1"
+date: 2026-06-16
+author: "BA/AI"
+model: "not-recorded"
+status: draft
+source_paths:
+  - runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md
+outputs:
+  - outputs/standards-applied-ab-2026-06-16.md
+related_artifacts:
+  - standards/industry-standards-standard.md
+  - docs/adr/008-industry-standards-standard.md

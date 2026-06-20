@@ -28,7 +28,7 @@ related_issues:
 > [`../contact-center-manual-sample/`](../contact-center-manual-sample/), —
 > структурно воспроизводящей реальное руководство (нумерация разделов, таблица
 > ролей, диаграмма маршрутизации) по уже зафиксированной выжимке из issue #109:
-> [`docs/ba-process/multichannel-agent-workload/inputs/kb-files.md`](../../../docs/ba-process/multichannel-agent-workload/inputs/kb-files.md).
+> [`runs/2026/RUN-0011/inputs/kb-files.md`](../../../runs/2026/RUN-0011/inputs/kb-files.md).
 
 ## Как подключить реальный документ
 
@@ -56,4 +56,4 @@ related_issues:
 ## Источники
 
 - Веб-оригинал: _(укажите ссылку при наличии)_
-- Выжимка As-Is: [`docs/ba-process/multichannel-agent-workload/inputs/kb-files.md`](../../../docs/ba-process/multichannel-agent-workload/inputs/kb-files.md)
+- Выжимка As-Is: [`runs/2026/RUN-0011/inputs/kb-files.md`](../../../runs/2026/RUN-0011/inputs/kb-files.md)

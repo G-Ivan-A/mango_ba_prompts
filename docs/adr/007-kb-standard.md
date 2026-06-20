@@ -134,7 +134,7 @@ issue. Без обязательной проверки источника пр�
   <https://standards.narod.ru/gosts/gost34/34-602-89.htm>. Редакции «-2015» не
   существует — это и проверяет эксперимент.
 - **Эксперимент-доказательство (ФТ-5):**
-  [`prompts/experiments/kb-citation-check-2026-06-16.md`](../../prompts/experiments/kb-citation-check-2026-06-16.md)
+  [`runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md`](../../runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md)
   — прогон с проверкой цитирования и без неё.
 
 ## Примеры
@@ -197,7 +197,7 @@ issue. Без обязательной проверки источника пр�
 - KB индекс: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/kb/README.md>
 - Глоссарий: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/GLOSSARY.md>
 - ADR-006 (общий блок цитирования): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/006-prompt-naming.md>
-- Эксперимент-доказательство: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/kb-citation-check-2026-06-16.md>
+- Эксперимент-доказательство: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md>
 
 ### Международные стандарты (полные URL)
 

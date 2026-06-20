@@ -13,6 +13,22 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #123 единый каталог `runs/`
+
+- Добавлен единый каталог результатов выполнения процессов `runs/YYYY/RUN-XXXX/`
+  с обязательными `metadata.yaml`, `inputs/`, `outputs/`, `feedback/` и `logs/`.
+- Существующие результаты из `prompts/experiments/`,
+  `docs/ba-process/multichannel-agent-workload/` и
+  `governance/analysis-bcreq-1025-2026-06-17.md` перенесены в `runs/2026/`
+  с сохранением истории через `git mv`.
+- Добавлены [`runs/README.md`](runs/README.md),
+  [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  и регрессионная проверка
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py),
+  подключённая к GitHub Pages workflow.
+- GitHub Pages checks теперь собирают evidence из `runs/`, а не из бывшего
+  каталога `prompts/experiments/`.
+
 ### Added — Issue #121 KB pipeline: multi-file сценарии и обновление документов
 
 - Добавлен manifest-driven runner
@@ -125,17 +141,17 @@ ai-generated: true
 
 - Добавлен полный прогон цепочки промптов на сыром требовании заказчика
   (одновременная работа агента с обращениями голос/чат/e-mail, лимит 3, приоритет) —
-  каталог [`docs/ba-process/multichannel-agent-workload/`](docs/ba-process/multichannel-agent-workload/README.md)
-  (**ФТ-1…ФТ-4**): вход ([`inputs/`](docs/ba-process/multichannel-agent-workload/inputs/)),
-  обоснованная цепочка ([`prompts-chain.md`](docs/ba-process/multichannel-agent-workload/prompts-chain.md)),
-  промежуточные результаты по шагам ([`steps/`](docs/ba-process/multichannel-agent-workload/steps/):
+  каталог [`runs/2026/RUN-0011/`](runs/2026/RUN-0011/outputs/README.md)
+  (**ФТ-1…ФТ-4**): вход ([`inputs/`](runs/2026/RUN-0011/inputs/)),
+  обоснованная цепочка ([`prompts-chain.md`](runs/2026/RUN-0011/outputs/prompts-chain.md)),
+  промежуточные результаты по шагам ([`steps/`](runs/2026/RUN-0011/outputs/steps/):
   глоссарий+As-Is, нормализация+5 Whys+gap, вопросы заказчику, US/UC, варианты
-  доработки/Раздел 3) и [`final-artifact.md`](docs/ba-process/multichannel-agent-workload/final-artifact.md).
+  доработки/Раздел 3) и [`final-artifact.md`](runs/2026/RUN-0011/outputs/final-artifact.md).
 - Зафиксирована выжимка БЗ из 2 PDF-руководств (КЦ + ЛК ВАТС) с цитатами
   `[Документ, §Раздел, с.Страница]` и явными пометками «не найдено в документации»
-  ([`inputs/kb-files.md`](docs/ba-process/multichannel-agent-workload/inputs/kb-files.md), по ADR-007).
+  ([`inputs/kb-files.md`](runs/2026/RUN-0011/inputs/kb-files.md), по ADR-007).
 - Добавлен лог эксперимента по [`standards/experiment-log-standard.md`](standards/experiment-log-standard.md)
-  ([`experiment-log.md`](docs/ba-process/multichannel-agent-workload/experiment-log.md), 6 метрик, verdict `works-with-edits`).
+  ([`experiment-log.md`](runs/2026/RUN-0011/logs/experiment-log.md), 6 метрик, verdict `works-with-edits`).
 - Добавлен индекс каталога прогонов BA-процесса
   [`docs/ba-process/README.md`](docs/ba-process/README.md) (**ФТ-6**).
 - Подготовлен RFC по улучшению промптов (**ФТ-5**, промпты **не изменены**):
@@ -182,7 +198,7 @@ ai-generated: true
   [`standards/experiment-log-standard.md`](standards/experiment-log-standard.md):
   два уровня фиксации (GitHub Issue / лёгкий Markdown) и ядро из 6 метрик.
 - Добавлен первый прогон по стандарту (dogfood на сессии 1027)
-  [`prompts/experiments/fr-generation-1027-live_2026-06-16.md`](prompts/experiments/fr-generation-1027-live_2026-06-16.md).
+  [`runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md`](runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md).
 - Добавлен аудит контрактов
   [`governance/audit-contracts-2026-06-17.md`](governance/audit-contracts-2026-06-17.md):
   ревизия `AI_GOVERNANCE.md`, `CONTRIBUTING.md` и стандарта логирования,
@@ -232,9 +248,9 @@ ai-generated: true
   раскрывающееся дерево (`<details>`/`<summary>`). Прототип (скриншоты) — в
   [ADR-010](docs/adr/010-pages-ux.md).
 - Доказательная база: эксперименты
-  [`prompts/experiments/standards-applied-ab-2026-06-16.md`](prompts/experiments/standards-applied-ab-2026-06-16.md)
+  [`runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md`](runs/2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md)
   и
-  [`prompts/experiments/kb-citation-check-2026-06-16.md`](prompts/experiments/kb-citation-check-2026-06-16.md).
+  [`runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md`](runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md).
 - Добавлена локальная проверка
   [`scripts/validate_issue_97_ontology_standards.py`](scripts/validate_issue_97_ontology_standards.py)
   (ADR-разделы ФТ-9, RFC 2119/DoD стандартов, инварианты `process-tree.json`,
@@ -416,7 +432,7 @@ ai-generated: true
   «Помощь ПО/ПМ»
   [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md).
 - Добавлен зафиксированный прогон
-  [`prompts/experiments/session-debug-summarizer-2026-06-13.md`](prompts/experiments/session-debug-summarizer-2026-06-13.md),
+  [`runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md`](runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md),
   подтверждающий получение структурированного резюме за один запуск.
 - Обновлены контрольные счётчики в
   [`scripts/validate_issue_74_github_pages.py`](scripts/validate_issue_74_github_pages.py)

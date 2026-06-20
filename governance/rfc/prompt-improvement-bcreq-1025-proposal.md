@@ -5,8 +5,8 @@ updated: 2026-06-18
 ai-generated: true
 type: rfc
 scope: prompts
-source_experiment: "prompts/experiments/2026-06-17-bcreq-1025-email-routing.md"
-source_analysis: "governance/analysis-bcreq-1025-2026-06-17.md"
+source_experiment: "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
+source_analysis: "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
 related_artifacts:
@@ -38,8 +38,8 @@ related_artifacts:
 RFC-1027-P2), часть — новые для данной экосистемы промптов.
 
 Источники:
-- Эксперимент: [`prompts/experiments/2026-06-17-bcreq-1025-email-routing.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/2026-06-17-bcreq-1025-email-routing.md)
-- Анализ: [`governance/analysis-bcreq-1025-2026-06-17.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/analysis-bcreq-1025-2026-06-17.md)
+- Эксперимент: [`runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md)
+- Анализ: [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md)
 
 ---
 

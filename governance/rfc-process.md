@@ -61,7 +61,7 @@ Pattern — на RFC, RFC — на Research/Observation. RFC — обязате�
 | Стадия Хаба | Артефакт спока | Где живёт |
 | --- | --- | --- |
 | Observation | сигнал из прогона БА, issue `prompt:feedback` | issues, `governance/prompt-feedback.json` |
-| Research / Hypothesis | анализ эксперимента, гипотеза правки | `docs/analysis/*`, `prompts/experiments/*` |
+| Research / Hypothesis | анализ эксперимента, гипотеза правки | `docs/analysis/*`, `runs/*` |
 | **RFC** | запись в реестре RFC | [`governance/rfc-register.md`](rfc-register.md) |
 | Pattern | паттерн | `patterns/` ([`pattern-standard.md`](../standards/pattern-standard.md)) |
 | Standard | стандарт / ADR | `standards/`, `docs/adr/` |

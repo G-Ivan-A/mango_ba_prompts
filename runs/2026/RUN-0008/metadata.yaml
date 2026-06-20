@@ -1,0 +1,14 @@
+run_id: RUN-0008
+process: kb-citation-check
+version: "0.1"
+date: 2026-06-16
+author: "BA/AI"
+model: "not-recorded"
+status: draft
+source_paths:
+  - runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md
+outputs:
+  - outputs/kb-citation-check-2026-06-16.md
+related_artifacts:
+  - standards/kb-standard.md
+  - docs/adr/007-kb-standard.md

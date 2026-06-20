@@ -8,7 +8,7 @@ scope: experiments
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
-  - "prompts/experiments/"
+  - "runs/"
   - "docs/analysis/experiment-1027-analysis.md"
 ---
 
@@ -51,8 +51,9 @@ related_artifacts:
   зафиксированный прогон), либо
 - конкретной правки промпта (как в анализе 1027).
 
-Файл кладётся в `prompts/experiments/` по имени
-`[операция]-[ярлык]_[YYYY-MM-DD].md` и использует шаблон ниже.
+Файл кладётся в `runs/YYYY/RUN-XXXX/outputs/` по имени
+`[операция]-[ярлык]_[YYYY-MM-DD].md`; сам прогон оформляется по
+[`runs`-контракту](runs-contract-standard.md) с `metadata.yaml`.
 
 ## Ядро метрик (обязательно на обоих уровнях)
 
@@ -117,7 +118,7 @@ related_artifacts:
 ## Почему именно так (аргументация формата)
 
 - **Два уровня вместо одного.** Богатый формат существующих файлов в
-  `prompts/experiments/` отличен для канонизации, но тяжёл для повседневной
+  `runs/` отличен для канонизации, но тяжёл для повседневной
   фиксации. Уровень 0 (Issue + чат) снимает порог входа; Уровень 1 сохраняет
   совместимость с принятой практикой и требованием README.
 - **Ядро из 6 полей, а не 20.** Достаточно для сравнения прогонов между собой
@@ -133,7 +134,7 @@ related_artifacts:
 `verdict = works-with-edits`,
 `outcome` = «промпты отработали; правки P1–P5 по читаемости 4.x.1, канонике
 6.1.1–6.1.3 и фильтру избыточных ограничений». Полный прогон по этому стандарту —
-[`prompts/experiments/fr-generation-1027-live_2026-06-16.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/fr-generation-1027-live_2026-06-16.md).
+[`runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md).
 
 ## Открытые вопросы (валидировать на следующих экспериментах)
 

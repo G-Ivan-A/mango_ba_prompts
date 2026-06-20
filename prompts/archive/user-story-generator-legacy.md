@@ -14,9 +14,9 @@ glossary_ref: standards/GLOSSARY.md
 research_dep: docs/hub-research-dependencies.md#classification
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/user-story-generator_exp-2026-05.md"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
-based_on: prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md
+based_on: runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md
 migration_status: migrated
-selftest_ref: prompts/experiments/prompts-selftest-2026-05-26.md
+selftest_ref: runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md
 selftest_result: passed
 ---
 
