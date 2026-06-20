@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #134 стандарт README для репозитория
+
+- Добавлен стандарт
+  [`standards/readme-standard.md`](standards/readme-standard.md): четыре канона
+  README, обязательная структура, запреты на смешивание с журналами/контрактами/
+  реестрами, разделение ответственности и примеры хорошего/плохого README.
+- Добавлен шаблон
+  [`templates/readme-template.md`](templates/readme-template.md) для быстрого
+  создания новых README по стандарту.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_134_readme_standard.py`](scripts/validate_issue_134_readme_standard.py),
+  подключённая к GitHub Pages workflow.
+
 ### Added — Issue #127 синхронизация БА-онтологии с Hub RFC C1/C2/C3
 
 - В [`standards/ba-ontology.md`](standards/ba-ontology.md) и executable-слое
