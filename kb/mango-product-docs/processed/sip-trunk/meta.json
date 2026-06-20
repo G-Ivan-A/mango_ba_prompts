@@ -1,0 +1,747 @@
+{
+  "body_font_size": 10.0,
+  "body_font_sizes": [
+    10.0
+  ],
+  "doc_code": "SIPTRUNK",
+  "doc_title": "SIP TRUNK. Руководство пользователя",
+  "doc_version": "1.23.43",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 91,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Руководство пользователя по настройке и использованию SIP-транков в Mango Office. Описывает подключение внешних операторов, управление каналами, маршрутизацию и мониторинг.",
+  "page_count": 42,
+  "part_count": 1,
+  "processing_mode": "single",
+  "section_count": 39,
+  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_sources": [
+    "pdf-outline (pymupdf 1.27.2.3)"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1-2",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-2",
+          "pages": "1-2",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 114
+    },
+    {
+      "file": "sections/01-section.md",
+      "number": "—",
+      "order": "01",
+      "pages": "3",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "3",
+          "pages": "3",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/02-section.md",
+      "number": "—",
+      "order": "02",
+      "pages": "3",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "3",
+          "pages": "3",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 92
+    },
+    {
+      "file": "sections/03-section.md",
+      "number": "—",
+      "order": "03",
+      "pages": "4",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "4",
+          "pages": "4",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 92
+    },
+    {
+      "file": "sections/04-1.md",
+      "number": "—",
+      "order": "04",
+      "pages": "5",
+      "pdf_heading": "1.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "1.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/05-2.md",
+      "number": "—",
+      "order": "05",
+      "pages": "5",
+      "pdf_heading": "2.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "2.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/06-3.md",
+      "number": "—",
+      "order": "06",
+      "pages": "5",
+      "pdf_heading": "3.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "3.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/07-section.md",
+      "number": "—",
+      "order": "07",
+      "pages": "5",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/08-3-1-1-0-a-b-9-0.md",
+      "number": "—",
+      "order": "08",
+      "pages": "5-7",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00001\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "5-7",
+          "pages": "5-7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00001\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040",
+      "tokens": 226
+    },
+    {
+      "file": "sections/09-3-1-2-5-0.md",
+      "number": "—",
+      "order": "09",
+      "pages": "8",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00002\u0000.\u0000 \u0004˛\u0004>\u0004<\u00045\u0004@\u00040",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "8",
+          "pages": "8",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00002\u0000.\u0000 \u0004˛\u0004>\u0004<\u00045\u0004@\u00040",
+      "tokens": 142
+    },
+    {
+      "file": "sections/10-3-1-3-0-h-c-b-8-7-0-f-8-o.md",
+      "number": "—",
+      "order": "10",
+      "pages": "9-10",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u0000 \u0004˝\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "9-10",
+          "pages": "9-10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u0000 \u0004˝\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "tokens": 262
+    },
+    {
+      "file": "sections/11-3-1-3-1-0-2-8-0-8-a-l-7-2-0-8-5-0-a.md",
+      "number": "—",
+      "order": "11",
+      "pages": "11",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u00001\u0000.\u0000 \u0004˜\u0004@\u00040\u00042\u00048\u0004;\u00040\u0000 \u00048\u0004A\u0004?\u0004>\u0004;\u0004L\u00047\u0004>\u00042\u00040\u0004=\u00048\u00045\u0000 \u0004<\u00040\u0004A\u0004>\u0004:\u0000:",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "11",
+          "pages": "11",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u00001\u0000.\u0000 \u0004˜\u0004@\u00040\u00042\u00048\u0004;\u00040\u0000 \u00048\u0004A\u0004?\u0004>\u0004;\u0004L\u00047\u0004>\u00042\u00040\u0004=\u00048\u00045\u0000 \u0004<\u00040\u0004A\u0004>\u0004:\u0000:",
+      "tokens": 183
+    },
+    {
+      "file": "sections/12-3-1-3-2-0-2-8-0-5-1-0-7-2-0-8-o-5-0.md",
+      "number": "—",
+      "order": "12",
+      "pages": "12",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u00002\u0000.\u0000 \u0004˜\u0004@\u00040\u00042\u00048\u0004;\u00040\u0000 \u0004?\u0004@\u00045\u0004>\u00041\u0004@\u00040\u00047\u0004>\u00042\u00040\u0004=\u00048\u0004O\u0000 \u0004=\u0004>\u0004<\u00045\u0004@\u00040\u0000:",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "12",
+          "pages": "12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00001\u0000.\u00003\u0000.\u00002\u0000.\u0000 \u0004˜\u0004@\u00040\u00042\u00048\u0004;\u00040\u0000 \u0004?\u0004@\u00045\u0004>\u00041\u0004@\u00040\u00047\u0004>\u00042\u00040\u0004=\u00048\u0004O\u0000 \u0004=\u0004>\u0004<\u00045\u0004@\u00040\u0000:",
+      "tokens": 135
+    },
+    {
+      "file": "sections/13-section.md",
+      "number": "—",
+      "order": "13",
+      "pages": "12",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "12",
+          "pages": "12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 72
+    },
+    {
+      "file": "sections/14-section.md",
+      "number": "—",
+      "order": "14",
+      "pages": "13",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "13",
+          "pages": "13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/15-3-2-1-0-a-b-9-0.md",
+      "number": "—",
+      "order": "15",
+      "pages": "13",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00001\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "13",
+          "pages": "13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00001\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040",
+      "tokens": 156
+    },
+    {
+      "file": "sections/16-3-2-2-5-0.md",
+      "number": "—",
+      "order": "16",
+      "pages": "14",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00002\u0000.\u0000 \u0004˛\u0004>\u0004<\u00045\u0004@\u00040",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "14",
+          "pages": "14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00002\u0000.\u0000 \u0004˛\u0004>\u0004<\u00045\u0004@\u00040",
+      "tokens": 171
+    },
+    {
+      "file": "sections/17-3-2-3-0-h-c-b-8-7-0-f-8-o.md",
+      "number": "—",
+      "order": "17",
+      "pages": "15",
+      "pdf_heading": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00003\u0000.\u0000 \u0004˝\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "15",
+          "pages": "15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00003\u0000.\u00002\u0000.\u00003\u0000.\u0000 \u0004˝\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "tokens": 178
+    },
+    {
+      "file": "sections/18-section.md",
+      "number": "—",
+      "order": "18",
+      "pages": "16",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "16",
+          "pages": "16",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 92
+    },
+    {
+      "file": "sections/19-1.md",
+      "number": "—",
+      "order": "19",
+      "pages": "17",
+      "pdf_heading": "1.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "1.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/20-2.md",
+      "number": "—",
+      "order": "20",
+      "pages": "17",
+      "pdf_heading": "2.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "2.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/21-3.md",
+      "number": "—",
+      "order": "21",
+      "pages": "17",
+      "pdf_heading": "3.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "3.",
+      "tokens": 52
+    },
+    {
+      "file": "sections/22-3-1.md",
+      "number": "—",
+      "order": "22",
+      "pages": "17",
+      "pdf_heading": "3.1.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "3.1.",
+      "tokens": 54
+    },
+    {
+      "file": "sections/23-3-2.md",
+      "number": "—",
+      "order": "23",
+      "pages": "17",
+      "pdf_heading": "3.2.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "3.2.",
+      "tokens": 54
+    },
+    {
+      "file": "sections/24-3-3.md",
+      "number": "—",
+      "order": "24",
+      "pages": "17",
+      "pdf_heading": "3.3.",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "3.3.",
+      "tokens": 54
+    },
+    {
+      "file": "sections/25-section.md",
+      "number": "—",
+      "order": "25",
+      "pages": "17",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/26-section.md",
+      "number": "—",
+      "order": "26",
+      "pages": "17",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/27-section.md",
+      "number": "—",
+      "order": "27",
+      "pages": "17",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 92
+    },
+    {
+      "file": "sections/28-section.md",
+      "number": "—",
+      "order": "28",
+      "pages": "18",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "18",
+          "pages": "18",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 52
+    },
+    {
+      "file": "sections/29-section.md",
+      "number": "—",
+      "order": "29",
+      "pages": "18",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "18",
+          "pages": "18",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 252
+    },
+    {
+      "file": "sections/30-5-0-a-b-9-0-a-e-5-k-0-a-5-4-5-5-8-o-7-2.md",
+      "number": "—",
+      "order": "30",
+      "pages": "19-21",
+      "pdf_heading": "ï¿½ï¿½\u00005\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040\u0000 \u0004A\u0004E\u00045\u0004<\u0004K\u0000 \u0004@\u00040\u0004A\u0004?\u0004@\u00045\u00044\u00045\u0004;\u00045\u0004=\u00048\u0004O\u0000 \u00047\u00042\u0004>\u0004=\u0004:\u0004>\u00042\u0000 \u00042\u0000 \u0004˙\u00048\u0004G\u0004=\u0004>\u0004<\u0000 \u0004:\u00040\u00041\u00048\u0004=\u00045\u0004B\u00045",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "19-21",
+          "pages": "19-21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00005\u0000.\u0000 \u0004˛\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00040\u0000 \u0004A\u0004E\u00045\u0004<\u0004K\u0000 \u0004@\u00040\u0004A\u0004?\u0004@\u00045\u00044\u00045\u0004;\u00045\u0004=\u00048\u0004O\u0000 \u00047\u00042\u0004>\u0004=\u0004:\u0004>\u00042\u0000 \u00042\u0000 \u0004˙\u00048\u0004G\u0004=\u0004>\u0004<\u0000 \u0004:\u00040\u00041\u00048\u0004=\u00045\u0004B\u00045",
+      "tokens": 595
+    },
+    {
+      "file": "sections/31-6-8-5-k-0-a-b-9-8-7-2-2-g-5-5-7-s-i-p-t.md",
+      "number": "—",
+      "order": "31",
+      "pages": "22-29",
+      "pdf_heading": "ï¿½ï¿½\u00006\u0000.\u0000 \u0004˜\u0004@\u00048\u0004<\u00045\u0004@\u0004K\u0000 \u0004=\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00048\u0000 \u00047\u00042\u0004>\u0004=\u0004:\u0004>\u00042\u0000 \u0004G\u00045\u0004@\u00045\u00047\u0000 \u0000S\u0000I\u0000P\u0000 \u0000T\u0000r\u0000u\u0000n\u0000k",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "22-29",
+          "pages": "22-29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00006\u0000.\u0000 \u0004˜\u0004@\u00048\u0004<\u00045\u0004@\u0004K\u0000 \u0004=\u00040\u0004A\u0004B\u0004@\u0004>\u00049\u0004:\u00048\u0000 \u00047\u00042\u0004>\u0004=\u0004:\u0004>\u00042\u0000 \u0004G\u00045\u0004@\u00045\u00047\u0000 \u0000S\u0000I\u0000P\u0000 \u0000T\u0000r\u0000u\u0000n\u0000k",
+      "tokens": 864
+    },
+    {
+      "file": "sections/32-7-d-8-3-c-0-f-8-o-c-o-k-e-p-b-x.md",
+      "number": "—",
+      "order": "32",
+      "pages": "30",
+      "pdf_heading": "ï¿½ï¿½\u00007\u0000.\u0000 \u0004ˆ\u0004>\u0004=\u0004D\u00048\u00043\u0004C\u0004@\u00040\u0004F\u00048\u0004O\u0000 \u0004?\u0004>\u0004?\u0004C\u0004;\u0004O\u0004@\u0004=\u0004K\u0004E\u0000 \u0000P\u0000B\u0000X",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "30",
+          "pages": "30",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00007\u0000.\u0000 \u0004ˆ\u0004>\u0004=\u0004D\u00048\u00043\u0004C\u0004@\u00040\u0004F\u00048\u0004O\u0000 \u0004?\u0004>\u0004?\u0004C\u0004;\u0004O\u0004@\u0004=\u0004K\u0004E\u0000 \u0000P\u0000B\u0000X",
+      "tokens": 118
+    },
+    {
+      "file": "sections/33-section.md",
+      "number": "—",
+      "order": "33",
+      "pages": "30-34",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "30-34",
+          "pages": "30-34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 256
+    },
+    {
+      "file": "sections/34-7-1-1-0-2-5-8-b-l-a-a-b-o-8-5-b-0-0.md",
+      "number": "—",
+      "order": "34",
+      "pages": "35",
+      "pdf_heading": "ï¿½ï¿½\u00007\u0000.\u00001\u0000.\u00001\u0000.\u0000 \u0004ˆ\u00040\u0004:\u0000 \u0004?\u0004@\u0004>\u00042\u00045\u0004@\u00048\u0004B\u0004L\u0000 \u0004A\u0004>\u0004A\u0004B\u0004>\u0004O\u0004=\u00048\u00045\u0000 \u0004B\u0004@\u00040\u0004=\u0004:\u00040",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "35",
+          "pages": "35",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00007\u0000.\u00001\u0000.\u00001\u0000.\u0000 \u0004ˆ\u00040\u0004:\u0000 \u0004?\u0004@\u0004>\u00042\u00045\u0004@\u00048\u0004B\u0004L\u0000 \u0004A\u0004>\u0004A\u0004B\u0004>\u0004O\u0004=\u00048\u00045\u0000 \u0004B\u0004@\u00040\u0004=\u0004:\u00040",
+      "tokens": 132
+    },
+    {
+      "file": "sections/35-7-1-2-a-e-4-o-i-0-o-0-h-c-b-8-7-0-f-8-o.md",
+      "number": "—",
+      "order": "35",
+      "pages": "35-37",
+      "pdf_heading": "ï¿½ï¿½\u00007\u0000.\u00001\u0000.\u00002\u0000.\u0000 \u0004˘\u0004A\u0004E\u0004>\u00044\u0004O\u0004I\u00040\u0004O\u0000 \u0004<\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "35-37",
+          "pages": "35-37",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00007\u0000.\u00001\u0000.\u00002\u0000.\u0000 \u0004˘\u0004A\u0004E\u0004>\u00044\u0004O\u0004I\u00040\u0004O\u0000 \u0004<\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "tokens": 514
+    },
+    {
+      "file": "sections/36-section.md",
+      "number": "—",
+      "order": "36",
+      "pages": "38-39",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "38-39",
+          "pages": "38-39",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 176
+    },
+    {
+      "file": "sections/37-7-2-1-a-e-4-o-i-0-o-0-h-c-b-8-7-0-f-8-o.md",
+      "number": "—",
+      "order": "37",
+      "pages": "40-41",
+      "pdf_heading": "ï¿½ï¿½\u00007\u0000.\u00002\u0000.\u00001\u0000.\u0004˘\u0004A\u0004E\u0004>\u00044\u0004O\u0004I\u00040\u0004O\u0000 \u0004<\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "40-41",
+          "pages": "40-41",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "ï¿½ï¿½\u00007\u0000.\u00002\u0000.\u00001\u0000.\u0004˘\u0004A\u0004E\u0004>\u00044\u0004O\u0004I\u00040\u0004O\u0000 \u0004<\u00040\u0004@\u0004H\u0004@\u0004C\u0004B\u00048\u00047\u00040\u0004F\u00048\u0004O",
+      "tokens": 365
+    },
+    {
+      "file": "sections/38-section.md",
+      "number": "—",
+      "order": "38",
+      "pages": "42",
+      "pdf_heading": "��",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "42",
+          "pages": "42",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+        }
+      ],
+      "title": "��",
+      "tokens": 72
+    }
+  ],
+  "source_document": "sip-trunk",
+  "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf",
+  "source_pdfs": [
+    "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
+  ],
+  "source_set": "sip-trunk",
+  "source_sha256": "02abb50a0c9f0d4c965968b14216902ceca45227db302c808cdeba524bb69fa8",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 42,
+      "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf",
+      "source_sha256": "02abb50a0c9f0d4c965968b14216902ceca45227db302c808cdeba524bb69fa8"
+    }
+  ],
+  "table_count": 0,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 3421,
+  "tokens_total": 6137
+}

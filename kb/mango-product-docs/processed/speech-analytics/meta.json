@@ -1,0 +1,75 @@
+{
+  "collection_type": "multi_document",
+  "document_count": 4,
+  "documents": [
+    {
+      "doc_code": "RUKOVODSTVOP",
+      "index": "rukovodstvo-polzovatelya-rechevaya-analitika/index.md",
+      "meta": "rukovodstvo-polzovatelya-rechevaya-analitika/meta.json",
+      "output": "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika",
+      "page_count": 126,
+      "section_count": 76,
+      "slug": "rukovodstvo-polzovatelya-rechevaya-analitika",
+      "source_files": [
+        "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf"
+      ],
+      "title": "Руководство пользователя. Речевая аналитика",
+      "tokens_total": 86230,
+      "version": "1.26"
+    },
+    {
+      "doc_code": "RUKOVODSTVOP",
+      "index": "rukovodstvo-polzovatelya-rechevaya-analitika-kats/index.md",
+      "meta": "rukovodstvo-polzovatelya-rechevaya-analitika-kats/meta.json",
+      "output": "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika-kats",
+      "page_count": 146,
+      "section_count": 92,
+      "slug": "rukovodstvo-polzovatelya-rechevaya-analitika-kats",
+      "source_files": [
+        "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf"
+      ],
+      "title": "Руководство пользователя. Речевая аналитика & КАТС",
+      "tokens_total": 100207,
+      "version": "1.26"
+    },
+    {
+      "doc_code": "RUKOVODSTVOP",
+      "index": "rukovodstvo-polzovatelya-rechevaya-analitika-oflayn-skor/index.md",
+      "meta": "rukovodstvo-polzovatelya-rechevaya-analitika-oflayn-skor/meta.json",
+      "output": "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika-oflayn-skor",
+      "page_count": 133,
+      "section_count": 87,
+      "slug": "rukovodstvo-polzovatelya-rechevaya-analitika-oflayn-skor",
+      "source_files": [
+        "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf"
+      ],
+      "title": "Руководство пользователя. Речевая аналитика. Офлайн скоринг",
+      "tokens_total": 91583,
+      "version": "1.26"
+    },
+    {
+      "doc_code": "RUKOVODSTVOP",
+      "index": "rukovodstvo-polzovatelya-rechevaya-analitika-vats-oflayn/index.md",
+      "meta": "rukovodstvo-polzovatelya-rechevaya-analitika-vats-oflayn/meta.json",
+      "output": "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika-vats-oflayn",
+      "page_count": 143,
+      "section_count": 88,
+      "slug": "rukovodstvo-polzovatelya-rechevaya-analitika-vats-oflayn",
+      "source_files": [
+        "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf"
+      ],
+      "title": "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг",
+      "tokens_total": 97546,
+      "version": "1.26"
+    }
+  ],
+  "generated_by": "scripts/kb/process_sources.py",
+  "language": "ru",
+  "name": "Речевая аналитика – Комплект руководств пользователя",
+  "processing_mode": "multi_document",
+  "product": "Mango Office",
+  "source_dir": "kb/mango-product-docs/sources/speech-analytics",
+  "tokens_total": 375566,
+  "total_pages": 548,
+  "version": "1.26"
+}

@@ -1,0 +1,23 @@
+---
+id: android-user-guide-03-ustanovka-i-udalenie
+doc_code: MTALKER-MOB
+doc_title: "Mango Talker для Android - Руководство пользователя"
+doc_version: "23.08.2024"
+section: "0"
+pdf_section: "—"
+title: "Установка и удаление"
+pdf_heading: "Установка и удаление"
+pages: "6"
+source: kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf
+source_part: "1"
+source_pages: "ч.1: 6"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf","part":1,"pages":"6","global_pages":"6"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 57
+status: extracted
+ai-generated: true
+---
+# Установка и удаление
+
+> Трассировка: PDF §— · сквозные стр. 6 · источники: ч.1 `kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf` с.6.

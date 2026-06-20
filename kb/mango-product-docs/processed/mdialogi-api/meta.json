@@ -1,0 +1,1161 @@
+{
+  "body_font_size": 12.0,
+  "body_font_sizes": [
+    12.0
+  ],
+  "doc_code": "MDIALOGIAPI",
+  "doc_title": "Манго Диалоги. Справочник по API",
+  "doc_version": "27.02.2026",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 10,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Справочник по API для продукта Манго Диалоги. Содержит описание методов управления диалогами, интеграционными возможностями и настройками.",
+  "page_count": 91,
+  "part_count": 1,
+  "processing_mode": "single",
+  "section_count": 62,
+  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_sources": [
+    "pdf-outline (pymupdf 1.27.2.3)"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1-6",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-6",
+          "pages": "1-6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 2495
+    },
+    {
+      "file": "sections/01-o-mango-dialogah.md",
+      "number": "1",
+      "order": "01",
+      "pages": "6",
+      "pdf_heading": "1 О Манго Диалогах",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "6",
+          "pages": "6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "О Манго Диалогах",
+      "tokens": 65
+    },
+    {
+      "file": "sections/02-obschee.md",
+      "number": "1.1",
+      "order": "02",
+      "pages": "6",
+      "pdf_heading": "1.1 Общее",
+      "pdf_section": "1.1",
+      "source_refs": [
+        {
+          "global_pages": "6",
+          "pages": "6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 259
+    },
+    {
+      "file": "sections/03-podderzhivaemye-kanaly-kommunikacii.md",
+      "number": "1.2",
+      "order": "03",
+      "pages": "6-7",
+      "pdf_heading": "1.2 Поддерживаемые каналы коммуникации",
+      "pdf_section": "1.2",
+      "source_refs": [
+        {
+          "global_pages": "6-7",
+          "pages": "6-7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Поддерживаемые каналы коммуникации",
+      "tokens": 1155
+    },
+    {
+      "file": "sections/04-princip-tekstovyh-kommunikaciy-s-kliento.md",
+      "number": "1.3",
+      "order": "04",
+      "pages": "7-8",
+      "pdf_heading": "1.3 Принцип текстовых коммуникаций с Клиентом при помощи Манго Диалогов",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "7-8",
+          "pages": "7-8",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Принцип текстовых коммуникаций с Клиентом при помощи Манго Диалогов",
+      "tokens": 852
+    },
+    {
+      "file": "sections/05-osnovnye-suschnosti.md",
+      "number": "1.4",
+      "order": "05",
+      "pages": "8-10",
+      "pdf_heading": "1.4 Основные сущности",
+      "pdf_section": "1.4",
+      "source_refs": [
+        {
+          "global_pages": "8-10",
+          "pages": "8-10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Основные сущности",
+      "tokens": 1219
+    },
+    {
+      "file": "sections/06-nachalo-raboty-s-api.md",
+      "number": "2",
+      "order": "06",
+      "pages": "10",
+      "pdf_heading": "2 Начало работы с API",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "10",
+          "pages": "10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Начало работы с API",
+      "tokens": 62
+    },
+    {
+      "file": "sections/07-vvedenie-v-api.md",
+      "number": "2.1",
+      "order": "07",
+      "pages": "10",
+      "pdf_heading": "2.1 Введение в API",
+      "pdf_section": "2.1",
+      "source_refs": [
+        {
+          "global_pages": "10",
+          "pages": "10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Введение в API",
+      "tokens": 186
+    },
+    {
+      "file": "sections/08-neskolko-shagov-i-mozhno-pristupat-k-rab.md",
+      "number": "2.2",
+      "order": "08",
+      "pages": "10",
+      "pdf_heading": "2.2 Несколько шагов и можно приступать к работе",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "10",
+          "pages": "10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Несколько шагов и можно приступать к работе",
+      "tokens": 301
+    },
+    {
+      "file": "sections/09-obschie-polozheniya-o-vzaimodeystvii-sis.md",
+      "number": "2.3",
+      "order": "09",
+      "pages": "10",
+      "pdf_heading": "2.3 Общие положения о взаимодействии систем",
+      "pdf_section": "2.3",
+      "source_refs": [
+        {
+          "global_pages": "10",
+          "pages": "10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Общие положения о взаимодействии систем",
+      "tokens": 301
+    },
+    {
+      "file": "sections/10-model-avtorizacii.md",
+      "number": "2.3.1",
+      "order": "10",
+      "pages": "10-11",
+      "pdf_heading": "2.3.1 Модель авторизации",
+      "pdf_section": "2.3.1",
+      "source_refs": [
+        {
+          "global_pages": "10-11",
+          "pages": "10-11",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Модель авторизации",
+      "tokens": 467
+    },
+    {
+      "file": "sections/11-model-vzaimodeystviya.md",
+      "number": "2.3.2",
+      "order": "11",
+      "pages": "11-12",
+      "pdf_heading": "2.3.2 Модель взаимодействия",
+      "pdf_section": "2.3.2",
+      "source_refs": [
+        {
+          "global_pages": "11-12",
+          "pages": "11-12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Модель взаимодействия",
+      "tokens": 782
+    },
+    {
+      "file": "sections/12-vidy-zaprosov.md",
+      "number": "2.3.3",
+      "order": "12",
+      "pages": "12-13",
+      "pdf_heading": "2.3.3 Виды запросов",
+      "pdf_section": "2.3.3",
+      "source_refs": [
+        {
+          "global_pages": "12-13",
+          "pages": "12-13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Виды запросов",
+      "tokens": 354
+    },
+    {
+      "file": "sections/13-ogranicheniya.md",
+      "number": "2.3.4",
+      "order": "13",
+      "pages": "13",
+      "pdf_heading": "2.3.4 Ограничения",
+      "pdf_section": "2.3.4",
+      "source_refs": [
+        {
+          "global_pages": "13",
+          "pages": "13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Ограничения",
+      "tokens": 175
+    },
+    {
+      "file": "sections/14-limity-kolichestva-zaprosov-k-api.md",
+      "number": "2.3.5",
+      "order": "14",
+      "pages": "13-14",
+      "pdf_heading": "2.3.5 Лимиты количества запросов к API",
+      "pdf_section": "2.3.5",
+      "source_refs": [
+        {
+          "global_pages": "13-14",
+          "pages": "13-14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Лимиты количества запросов к API",
+      "tokens": 601
+    },
+    {
+      "file": "sections/15-razreshennye-ip-adresa.md",
+      "number": "2.3.6",
+      "order": "15",
+      "pages": "14",
+      "pdf_heading": "2.3.6 Разрешенные IP-адреса",
+      "pdf_section": "2.3.6",
+      "source_refs": [
+        {
+          "global_pages": "14",
+          "pages": "14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Разрешенные IP-адреса",
+      "tokens": 269
+    },
+    {
+      "file": "sections/16-ob-elektronnoy-podpisi-zaprosov.md",
+      "number": "2.3.7",
+      "order": "16",
+      "pages": "14",
+      "pdf_heading": "2.3.7 Об электронной подписи запросов",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "14",
+          "pages": "14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Об электронной подписи запросов",
+      "tokens": 75
+    },
+    {
+      "file": "sections/17-obschee.md",
+      "number": "2.3.7",
+      "order": "17",
+      "pages": "14-15",
+      "pdf_heading": "Общее",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "14-15",
+          "pages": "14-15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 220
+    },
+    {
+      "file": "sections/18-pole-json.md",
+      "number": "2.3.7",
+      "order": "18",
+      "pages": "15",
+      "pdf_heading": "Поле json",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "15",
+          "pages": "15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Поле json",
+      "tokens": 286
+    },
+    {
+      "file": "sections/19-unikalnyy-kod-vashey-vats-vpbx-api-key.md",
+      "number": "2.3.7",
+      "order": "19",
+      "pages": "15",
+      "pdf_heading": "Уникальный код вашей ВАТС (vpbx_api_key)",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "15",
+          "pages": "15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Уникальный код вашей ВАТС (vpbx_api_key)",
+      "tokens": 155
+    },
+    {
+      "file": "sections/20-klyuch-sozdaniya-podpisi-vpbx-api-salt.md",
+      "number": "2.3.7",
+      "order": "20",
+      "pages": "15-16",
+      "pdf_heading": "Ключ создания подписи (vpbx_api_salt)",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "15-16",
+          "pages": "15-16",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Ключ создания подписи (vpbx_api_salt)",
+      "tokens": 218
+    },
+    {
+      "file": "sections/21-elektronnaya-podpis-sign.md",
+      "number": "2.3.7",
+      "order": "21",
+      "pages": "16",
+      "pdf_heading": "Электронная подпись (sign)",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "16",
+          "pages": "16",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Электронная подпись (sign)",
+      "tokens": 226
+    },
+    {
+      "file": "sections/22-kak-uznat-svoy-unikalnyy-kod-vats-vpbx-a.md",
+      "number": "2.3.7",
+      "order": "22",
+      "pages": "16-17",
+      "pdf_heading": "Как узнать свой уникальный код ВАТС (vpbx_api_key) и ключ создания подписи (vpbx_api_salt)?",
+      "pdf_section": "2.3.7",
+      "source_refs": [
+        {
+          "global_pages": "16-17",
+          "pages": "16-17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Как узнать свой уникальный код ВАТС (vpbx_api_key) и ключ создания подписи (vpbx_api_salt)?",
+      "tokens": 336
+    },
+    {
+      "file": "sections/23-rukovodstvo-po-api.md",
+      "number": "3",
+      "order": "23",
+      "pages": "17",
+      "pdf_heading": "3 Руководство по API",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Руководство по API",
+      "tokens": 63
+    },
+    {
+      "file": "sections/24-obmen-soobscheniyami-v-whatsapp.md",
+      "number": "3.1",
+      "order": "24",
+      "pages": "17",
+      "pdf_heading": "3.1 Обмен сообщениями в WhatsApp",
+      "pdf_section": "3.1",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Обмен сообщениями в WhatsApp",
+      "tokens": 66
+    },
+    {
+      "file": "sections/25-obschee.md",
+      "number": "3.1.1",
+      "order": "25",
+      "pages": "17",
+      "pdf_heading": "3.1.1 Общее",
+      "pdf_section": "3.1.1",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 352
+    },
+    {
+      "file": "sections/26-dostup-k-metodam.md",
+      "number": "3.1.2",
+      "order": "26",
+      "pages": "17-18",
+      "pdf_heading": "3.1.2 Доступ к методам",
+      "pdf_section": "3.1.2",
+      "source_refs": [
+        {
+          "global_pages": "17-18",
+          "pages": "17-18",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Доступ к методам",
+      "tokens": 328
+    },
+    {
+      "file": "sections/27-poluchenie-spiska-hsm-shablonov.md",
+      "number": "3.1.3",
+      "order": "27",
+      "pages": "18-21",
+      "pdf_heading": "3.1.3 Получение списка HSM-шаблонов",
+      "pdf_section": "3.1.3",
+      "source_refs": [
+        {
+          "global_pages": "18-21",
+          "pages": "18-21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Получение списка HSM-шаблонов",
+      "tokens": 1628
+    },
+    {
+      "file": "sections/28-otpravlenie-hsm.md",
+      "number": "3.1.4",
+      "order": "28",
+      "pages": "21-23",
+      "pdf_heading": "3.1.4 Отправление HSM",
+      "pdf_section": "3.1.4",
+      "source_refs": [
+        {
+          "global_pages": "21-23",
+          "pages": "21-23",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Отправление HSM",
+      "tokens": 1373
+    },
+    {
+      "file": "sections/29-poluchenie-statusov-otpravlennyh-hsm-soo.md",
+      "number": "3.1.5",
+      "order": "29",
+      "pages": "23-25",
+      "pdf_heading": "3.1.5 Получение статусов отправленных HSM-сообщений",
+      "pdf_section": "3.1.5",
+      "source_refs": [
+        {
+          "global_pages": "23-25",
+          "pages": "23-25",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Получение статусов отправленных HSM-сообщений",
+      "tokens": 768
+    },
+    {
+      "file": "sections/30-otpravlenie-kaskada-soobscheniy-cherez-w.md",
+      "number": "3.2",
+      "order": "30",
+      "pages": "25",
+      "pdf_heading": "3.2 Отправление каскада сообщений через WhatsApp и SMS",
+      "pdf_section": "3.2",
+      "source_refs": [
+        {
+          "global_pages": "25",
+          "pages": "25",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Отправление каскада сообщений через WhatsApp и SMS",
+      "tokens": 82
+    },
+    {
+      "file": "sections/31-osnovnye-svedeniya.md",
+      "number": "3.2.1",
+      "order": "31",
+      "pages": "25",
+      "pdf_heading": "3.2.1 Основные сведения",
+      "pdf_section": "3.2.1",
+      "source_refs": [
+        {
+          "global_pages": "25",
+          "pages": "25",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Основные сведения",
+      "tokens": 144
+    },
+    {
+      "file": "sections/32-pravila-raboty.md",
+      "number": "3.2.2",
+      "order": "32",
+      "pages": "25-26",
+      "pdf_heading": "3.2.2 Правила работы",
+      "pdf_section": "3.2.2",
+      "source_refs": [
+        {
+          "global_pages": "25-26",
+          "pages": "25-26",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Правила работы",
+      "tokens": 959
+    },
+    {
+      "file": "sections/33-ogranicheniya.md",
+      "number": "3.2.3",
+      "order": "33",
+      "pages": "26-27",
+      "pdf_heading": "3.2.3 Ограничения",
+      "pdf_section": "3.2.3",
+      "source_refs": [
+        {
+          "global_pages": "26-27",
+          "pages": "26-27",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Ограничения",
+      "tokens": 366
+    },
+    {
+      "file": "sections/34-opisanie-zaprosa.md",
+      "number": "3.2.4",
+      "order": "34",
+      "pages": "27-29",
+      "pdf_heading": "3.2.4 Описание запроса",
+      "pdf_section": "3.2.4",
+      "source_refs": [
+        {
+          "global_pages": "27-29",
+          "pages": "27-29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Описание запроса",
+      "tokens": 1238
+    },
+    {
+      "file": "sections/35-api-raboty-s-vidzhetami.md",
+      "number": "3.3",
+      "order": "35",
+      "pages": "29",
+      "pdf_heading": "3.3 API работы с виджетами",
+      "pdf_section": "3.3",
+      "source_refs": [
+        {
+          "global_pages": "29",
+          "pages": "29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "API работы с виджетами",
+      "tokens": 66
+    },
+    {
+      "file": "sections/36-poluchit-spisok-vidzhetov.md",
+      "number": "3.3.1",
+      "order": "36",
+      "pages": "29-33",
+      "pdf_heading": "3.3.1 Получить список виджетов",
+      "pdf_section": "3.3.1",
+      "source_refs": [
+        {
+          "global_pages": "29-33",
+          "pages": "29-33",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Получить список виджетов",
+      "tokens": 2265
+    },
+    {
+      "file": "sections/37-poluchit-spisok-aktivnyh-sessiy.md",
+      "number": "3.3.2",
+      "order": "37",
+      "pages": "33-38",
+      "pdf_heading": "3.3.2 Получить список активных сессий",
+      "pdf_section": "3.3.2",
+      "source_refs": [
+        {
+          "global_pages": "33-38",
+          "pages": "33-38",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Получить список активных сессий",
+      "tokens": 3121
+    },
+    {
+      "file": "sections/38-api-upravleniya-sessiyami.md",
+      "number": "3.4",
+      "order": "38",
+      "pages": "38",
+      "pdf_heading": "3.4 API управления сессиями",
+      "pdf_section": "3.4",
+      "source_refs": [
+        {
+          "global_pages": "38",
+          "pages": "38",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "API управления сессиями",
+      "tokens": 67
+    },
+    {
+      "file": "sections/39-sozdat-novuyu-sessiyu.md",
+      "number": "3.4.1",
+      "order": "39",
+      "pages": "38-40",
+      "pdf_heading": "3.4.1 Создать новую сессию",
+      "pdf_section": "3.4.1",
+      "source_refs": [
+        {
+          "global_pages": "38-40",
+          "pages": "38-40",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Создать новую сессию",
+      "tokens": 1148
+    },
+    {
+      "file": "sections/40-vzyat-sessiyu-v-rabotu.md",
+      "number": "3.4.2",
+      "order": "40",
+      "pages": "40-42",
+      "pdf_heading": "3.4.2 Взять сессию в работу",
+      "pdf_section": "3.4.2",
+      "source_refs": [
+        {
+          "global_pages": "40-42",
+          "pages": "40-42",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Взять сессию в работу",
+      "tokens": 839
+    },
+    {
+      "file": "sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md",
+      "number": "3.4.3",
+      "order": "41",
+      "pages": "42-44",
+      "pdf_heading": "3.4.3 Перевод сессии на другого сотрудника или группу",
+      "pdf_section": "3.4.3",
+      "source_refs": [
+        {
+          "global_pages": "42-44",
+          "pages": "42-44",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Перевод сессии на другого сотрудника или группу",
+      "tokens": 1543
+    },
+    {
+      "file": "sections/42-zakryt-sessiyu.md",
+      "number": "3.4.4",
+      "order": "42",
+      "pages": "44-45",
+      "pdf_heading": "3.4.4 Закрыть сессию",
+      "pdf_section": "3.4.4",
+      "source_refs": [
+        {
+          "global_pages": "44-45",
+          "pages": "44-45",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Закрыть сессию",
+      "tokens": 686
+    },
+    {
+      "file": "sections/43-otpravit-soobschenie-operatora-k-klientu.md",
+      "number": "3.4.5",
+      "order": "43",
+      "pages": "45-48",
+      "pdf_heading": "3.4.5 Отправить сообщение оператора к Клиенту",
+      "pdf_section": "3.4.5",
+      "source_refs": [
+        {
+          "global_pages": "45-48",
+          "pages": "45-48",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Отправить сообщение оператора к Клиенту",
+      "tokens": 1570
+    },
+    {
+      "file": "sections/44-zagruzka-istorii-chata.md",
+      "number": "3.4.6",
+      "order": "44",
+      "pages": "48-53",
+      "pdf_heading": "3.4.6 Загрузка истории чата",
+      "pdf_section": "3.4.6",
+      "source_refs": [
+        {
+          "global_pages": "48-53",
+          "pages": "48-53",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Загрузка истории чата",
+      "tokens": 2618
+    },
+    {
+      "file": "sections/45-api-realtime-vebhuki.md",
+      "number": "3.5",
+      "order": "45",
+      "pages": "53",
+      "pdf_heading": "3.5 API Realtime (вебхуки)",
+      "pdf_section": "3.5",
+      "source_refs": [
+        {
+          "global_pages": "53",
+          "pages": "53",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "API Realtime (вебхуки)",
+      "tokens": 68
+    },
+    {
+      "file": "sections/46-sessiya-v-sostoyanii-ozhidaniya.md",
+      "number": "3.5.1",
+      "order": "46",
+      "pages": "53-57",
+      "pdf_heading": "3.5.1 Сессия в состоянии ожидания",
+      "pdf_section": "3.5.1",
+      "source_refs": [
+        {
+          "global_pages": "53-57",
+          "pages": "53-57",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сессия в состоянии ожидания",
+      "tokens": 2845
+    },
+    {
+      "file": "sections/47-sessiya-vzyata-v-rabotu.md",
+      "number": "3.5.2",
+      "order": "47",
+      "pages": "57-62",
+      "pdf_heading": "3.5.2 Сессия взята в работу",
+      "pdf_section": "3.5.2",
+      "source_refs": [
+        {
+          "global_pages": "57-62",
+          "pages": "57-62",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сессия взята в работу",
+      "tokens": 2782
+    },
+    {
+      "file": "sections/48-sessiya-zakryta.md",
+      "number": "3.5.3",
+      "order": "48",
+      "pages": "62-67",
+      "pdf_heading": "3.5.3 Сессия закрыта",
+      "pdf_section": "3.5.3",
+      "source_refs": [
+        {
+          "global_pages": "62-67",
+          "pages": "62-67",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сессия закрыта",
+      "tokens": 2860
+    },
+    {
+      "file": "sections/49-hsm-soobschenie-operatora-prochitano-kli.md",
+      "number": "3.5.4",
+      "order": "49",
+      "pages": "67-68",
+      "pdf_heading": "3.5.4 HSM-сообщение оператора прочитано клиентом",
+      "pdf_section": "3.5.4",
+      "source_refs": [
+        {
+          "global_pages": "67-68",
+          "pages": "67-68",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "HSM-сообщение оператора прочитано клиентом",
+      "tokens": 566
+    },
+    {
+      "file": "sections/50-soobschenie-operatora-ne-dostavleno-klie.md",
+      "number": "3.5.5",
+      "order": "50",
+      "pages": "68-69",
+      "pdf_heading": "3.5.5 Сообщение оператора не доставлено клиенту",
+      "pdf_section": "3.5.5",
+      "source_refs": [
+        {
+          "global_pages": "68-69",
+          "pages": "68-69",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сообщение оператора не доставлено клиенту",
+      "tokens": 478
+    },
+    {
+      "file": "sections/51-soobschenie-operatora-dostavleno-klientu.md",
+      "number": "3.5.6",
+      "order": "51",
+      "pages": "69-70",
+      "pdf_heading": "3.5.6 Сообщение оператора доставлено клиенту",
+      "pdf_section": "3.5.6",
+      "source_refs": [
+        {
+          "global_pages": "69-70",
+          "pages": "69-70",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сообщение оператора доставлено клиенту",
+      "tokens": 526
+    },
+    {
+      "file": "sections/52-soobschenie-operatora-prochitano-kliento.md",
+      "number": "3.5.7",
+      "order": "52",
+      "pages": "70-71",
+      "pdf_heading": "3.5.7 Сообщение оператора прочитано клиентом",
+      "pdf_section": "3.5.7",
+      "source_refs": [
+        {
+          "global_pages": "70-71",
+          "pages": "70-71",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Сообщение оператора прочитано клиентом",
+      "tokens": 534
+    },
+    {
+      "file": "sections/53-novoe-soobschenie-v-chate.md",
+      "number": "3.5.8",
+      "order": "53",
+      "pages": "71-74",
+      "pdf_heading": "3.5.8 Новое сообщение в чате",
+      "pdf_section": "3.5.8",
+      "source_refs": [
+        {
+          "global_pages": "71-74",
+          "pages": "71-74",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Новое сообщение в чате",
+      "tokens": 1504
+    },
+    {
+      "file": "sections/54-kody-oshibok.md",
+      "number": "4",
+      "order": "54",
+      "pages": "74",
+      "pdf_heading": "4 Коды ошибок",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "74",
+          "pages": "74",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Коды ошибок",
+      "tokens": 60
+    },
+    {
+      "file": "sections/55-vazhnaya-informaciya.md",
+      "number": "4.1",
+      "order": "55",
+      "pages": "74",
+      "pdf_heading": "4.1 Важная информация",
+      "pdf_section": "4.1",
+      "source_refs": [
+        {
+          "global_pages": "74",
+          "pages": "74",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Важная информация",
+      "tokens": 380
+    },
+    {
+      "file": "sections/56-vozmozhnye-kody-oshibok-api.md",
+      "number": "4.2",
+      "order": "56",
+      "pages": "74-76",
+      "pdf_heading": "4.2 Возможные коды ошибок API",
+      "pdf_section": "4.2",
+      "source_refs": [
+        {
+          "global_pages": "74-76",
+          "pages": "74-76",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Возможные коды ошибок API",
+      "tokens": 651
+    },
+    {
+      "file": "sections/57-primery-ispolzovaniya-api.md",
+      "number": "5",
+      "order": "57",
+      "pages": "76",
+      "pdf_heading": "5 Примеры использования API",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "76",
+          "pages": "76",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Примеры использования API",
+      "tokens": 61
+    },
+    {
+      "file": "sections/58-priem-i-obrabotka-obrascheniy-klienta.md",
+      "number": "5.1",
+      "order": "58",
+      "pages": "76-83",
+      "pdf_heading": "5.1 Прием и обработка обращений Клиента",
+      "pdf_section": "5.1",
+      "source_refs": [
+        {
+          "global_pages": "76-83",
+          "pages": "76-83",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Прием и обработка обращений Клиента",
+      "tokens": 2604
+    },
+    {
+      "file": "sections/59-operator-obraschaetsya-k-klientu.md",
+      "number": "5.2",
+      "order": "59",
+      "pages": "83-88",
+      "pdf_heading": "5.2 Оператор обращается к Клиенту",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "83-88",
+          "pages": "83-88",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Оператор обращается к Клиенту",
+      "tokens": 1902
+    },
+    {
+      "file": "sections/60-perevod-obrascheniya-na-drugogo-operator.md",
+      "number": "5.3",
+      "order": "60",
+      "pages": "88-91",
+      "pdf_heading": "5.3 Перевод обращения на другого оператора",
+      "pdf_section": "5.3",
+      "source_refs": [
+        {
+          "global_pages": "88-91",
+          "pages": "88-91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "Перевод обращения на другого оператора",
+      "tokens": 723
+    },
+    {
+      "file": "sections/61-istoriya-dokumenta.md",
+      "number": "—",
+      "order": "61",
+      "pages": "91",
+      "pdf_heading": "История документа",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "91",
+          "pages": "91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+        }
+      ],
+      "title": "История документа",
+      "tokens": 404
+    }
+  ],
+  "source_document": "mdialogi-api",
+  "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf",
+  "source_pdfs": [
+    "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
+  ],
+  "source_set": "mdialogi-api",
+  "source_sha256": "6e223e44f111758e5136922db4a57655e3ad0c690ae824bd1163862260c37786",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 91,
+      "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf",
+      "source_sha256": "6e223e44f111758e5136922db4a57655e3ad0c690ae824bd1163862260c37786"
+    }
+  ],
+  "table_count": 132,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 5882,
+  "tokens_total": 51297
+}

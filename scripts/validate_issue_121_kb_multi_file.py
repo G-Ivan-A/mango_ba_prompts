@@ -34,7 +34,7 @@ from process_sources import (  # noqa: E402
 RUNNER = "scripts/kb/process_sources.py"
 WORKFLOW = ".github/workflows/kb.yml"
 MAKEFILE = "Makefile"
-SOURCES_README = "kb/sources/README.md"
+SOURCES_README = "kb/mango-product-docs/sources/README.md"
 KB_README = "scripts/kb/README.md"
 
 CC_SOURCES = [
@@ -92,46 +92,46 @@ def rel_paths(paths: tuple[Path, ...], source_dir: Path) -> list[str]:
 def check_real_manifests() -> list[str]:
     errors: list[str] = []
 
-    cc = load_json("kb/sources/mango-cc-manual/meta.json", errors)
-    lk = load_json("kb/sources/mango-lk-manual/meta.json", errors)
-    mtalker = load_json("kb/sources/mtalker/meta.json", errors)
+    cc = load_json("kb/mango-product-docs/sources/mango-cc-manual/meta.json", errors)
+    lk = load_json("kb/mango-product-docs/sources/mango-lk-manual/meta.json", errors)
+    mtalker = load_json("kb/mango-product-docs/sources/mtalker/meta.json", errors)
     if errors:
         return errors
 
     if cc.get("processing_mode") != "multi_part":
-        errors.append("kb/sources/mango-cc-manual/meta.json: processing_mode must be multi_part")
+        errors.append("kb/mango-product-docs/sources/mango-cc-manual/meta.json: processing_mode must be multi_part")
     if cc.get("source_files") != CC_SOURCES:
-        errors.append("kb/sources/mango-cc-manual/meta.json: source_files must list six CC parts")
+        errors.append("kb/mango-product-docs/sources/mango-cc-manual/meta.json: source_files must list six CC parts")
     if cc.get("output_slug") != "mango-cc-manual" or cc.get("doc_code") != "CC":
-        errors.append("kb/sources/mango-cc-manual/meta.json: output_slug/doc_code mismatch")
+        errors.append("kb/mango-product-docs/sources/mango-cc-manual/meta.json: output_slug/doc_code mismatch")
 
     if lk.get("processing_mode") != "multi_part":
-        errors.append("kb/sources/mango-lk-manual/meta.json: processing_mode must be multi_part")
+        errors.append("kb/mango-product-docs/sources/mango-lk-manual/meta.json: processing_mode must be multi_part")
     if lk.get("source_files") != LK_SOURCES:
-        errors.append("kb/sources/mango-lk-manual/meta.json: source_files must list five LK parts")
+        errors.append("kb/mango-product-docs/sources/mango-lk-manual/meta.json: source_files must list five LK parts")
     if lk.get("output_slug") != "mango-lk-manual" or lk.get("doc_code") != "LK":
-        errors.append("kb/sources/mango-lk-manual/meta.json: output_slug/doc_code mismatch")
+        errors.append("kb/mango-product-docs/sources/mango-lk-manual/meta.json: output_slug/doc_code mismatch")
 
     if mtalker.get("processing_mode") != "multi_document":
-        errors.append("kb/sources/mtalker/meta.json: processing_mode must be multi_document")
+        errors.append("kb/mango-product-docs/sources/mtalker/meta.json: processing_mode must be multi_document")
     if mtalker.get("output_slug") != "mtalker":
-        errors.append("kb/sources/mtalker/meta.json: output_slug must be mtalker")
+        errors.append("kb/mango-product-docs/sources/mtalker/meta.json: output_slug must be mtalker")
 
     documents = mtalker.get("documents", [])
     by_slug = {doc.get("output_slug"): doc for doc in documents if isinstance(doc, dict)}
     if set(by_slug) != set(MTALKER_DOCS):
-        errors.append("kb/sources/mtalker/meta.json: documents must define the expected output slugs")
+        errors.append("kb/mango-product-docs/sources/mtalker/meta.json: documents must define the expected output slugs")
     for slug, file_name in MTALKER_DOCS.items():
         doc = by_slug.get(slug, {})
         if doc.get("file_name") != file_name:
-            errors.append(f"kb/sources/mtalker/meta.json: {slug} must point to {file_name}")
+            errors.append(f"kb/mango-product-docs/sources/mtalker/meta.json: {slug} must point to {file_name}")
         if not doc.get("doc_code"):
-            errors.append(f"kb/sources/mtalker/meta.json: {slug} missing doc_code")
+            errors.append(f"kb/mango-product-docs/sources/mtalker/meta.json: {slug} missing doc_code")
 
     for source_dir in (
-        ROOT / "kb/sources/mango-cc-manual",
-        ROOT / "kb/sources/mango-lk-manual",
-        ROOT / "kb/sources/mtalker",
+        ROOT / "kb/mango-product-docs/sources/mango-cc-manual",
+        ROOT / "kb/mango-product-docs/sources/mango-lk-manual",
+        ROOT / "kb/mango-product-docs/sources/mtalker",
     ):
         try:
             plan = build_plan(source_dir)

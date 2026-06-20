@@ -1,0 +1,25 @@
+---
+id: android-user-guide-76-kak-otklyuchit-uvedomleniya-o-novyh-soob
+doc_code: MTALKER-MOB
+doc_title: "Mango Talker для Android - Руководство пользователя"
+doc_version: "23.08.2024"
+section: "0"
+pdf_section: "—"
+title: "Как отключить уведомления о новых сообщениях в чате / канале"
+pdf_heading: "Как отключить уведомления о новых сообщениях в чате / канале"
+pages: "31-32"
+source: kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf
+source_part: "1"
+source_pages: "ч.1: 31-32"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf","part":1,"pages":"31-32","global_pages":"31-32"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 374
+status: extracted
+ai-generated: true
+---
+# Как отключить уведомления о новых сообщениях в чате / канале
+
+> Трассировка: PDF §— · сквозные стр. 31-32 · источники: ч.1 `kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf` с.31-32.
+
+Вы можете выключить показ уведомлений о новых сообщениях в чате или канале. При этом, вам перестанут приходить уведомления из этого чата / канала, однако все остальным участникам чата / канала продолжат приходить уведомления. По умолчанию включен показ уведомлений из всех чатов и каналов, в которых вы состоите. Чтобы выключить показ уведомлений, на закладке “Чаты” следует: 1. нажмите на строку с названием чата или канала; 2. нажмите на заголовок чата или канала. Будут открыты данные чата или канала; 3. нажмите переключатель “Уведомления”. Будет выключен показ вам уведомлений из данного чата / канала, а переключатель “Уведомления” станет серым. Mango Talker для ОС Android. Руководство пользователя | Версия от 23.08.2024

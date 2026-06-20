@@ -9,9 +9,9 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
 related_artifacts:
   - "scripts/kb/extract.py"
-  - "kb/USAGE.md"
-  - "kb/sources/README.md"
-  - "kb/processed/contact-center-manual-sample/index.md"
+  - "kb/mango-product-docs/USAGE.md"
+  - "kb/mango-product-docs/sources/README.md"
+  - "kb/mango-product-docs/processed/contact-center-manual-sample/index.md"
   - "docs/adr/007-kb-standard.md"
   - "standards/kb-standard.md"
 ---
@@ -42,10 +42,10 @@ related_artifacts:
 | Что | Значение |
 | --- | --- |
 | Конвейер | [`scripts/kb/extract.py`](../scripts/kb/extract.py) (pdfplumber + опц. PyMuPDF + tiktoken) |
-| Каталог ручного ввода (ФТ-4, обязательно) | [`kb/sources/`](../kb/sources/README.md) — **нейтральное имя**, не `mango-kc` |
-| Результат извлечения | [`kb/processed/contact-center-manual-sample/`](../kb/processed/contact-center-manual-sample/index.md) |
-| Примеры для промптов (ФТ-6) | [`kb/USAGE.md`](../kb/USAGE.md) — 5 примеров с реальными данными |
-| Инструкция человеку (ФТ-7) | [`kb/sources/README.md`](../kb/sources/README.md) |
+| Каталог ручного ввода (ФТ-4, обязательно) | [`kb/mango-product-docs/sources/`](../kb/mango-product-docs/sources/README.md) — **нейтральное имя**, не `mango-kc` |
+| Результат извлечения | [`kb/mango-product-docs/processed/contact-center-manual-sample/`](../kb/mango-product-docs/processed/contact-center-manual-sample/index.md) |
+| Примеры для промптов (ФТ-6) | [`kb/mango-product-docs/USAGE.md`](../kb/mango-product-docs/USAGE.md) — 5 примеров с реальными данными |
+| Инструкция человеку (ФТ-7) | [`kb/mango-product-docs/sources/README.md`](../kb/mango-product-docs/sources/README.md) |
 | Проверка в CI | [`scripts/validate_issue_111_kb_pipeline.py`](../scripts/validate_issue_111_kb_pipeline.py) + [`.github/workflows/kb.yml`](../.github/workflows/kb.yml) |
 
 ---
@@ -75,22 +75,22 @@ Issue прямо предупреждает: **не закладывать те�
 
 - Генератор фикстуры: [`scripts/kb/make_sample_pdf.py`](../scripts/kb/make_sample_pdf.py)
   (reportlab + Pillow; встроенный TTF-шрифт с кириллицей — см. §3 про ловушку).
-- Файл: `kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf`
+- Файл: `kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf`
   (7 страниц, реальный текст/таблица/диаграмма).
 - Манифест ожидания реального файла:
-  [`kb/sources/contact-center-manual/source.md`](../kb/sources/contact-center-manual/source.md)
+  [`kb/mango-product-docs/sources/contact-center-manual/source.md`](../kb/mango-product-docs/sources/contact-center-manual/source.md)
   (статус `pending-source-file`, команда воспроизведения).
 
 > **Как получить реальные данные.** Положить настоящий `CC_manual_1.26.23.pdf` в
-> `kb/sources/contact-center-manual/` и выполнить
-> `python3 scripts/kb/extract.py kb/sources/contact-center-manual/CC_manual_1.26.23.pdf --out kb/processed/contact-center-manual --doc-code CC`.
+> `kb/mango-product-docs/sources/contact-center-manual/` и выполнить
+> `python3 scripts/kb/extract.py kb/mango-product-docs/sources/contact-center-manual/CC_manual_1.26.23.pdf --out kb/mango-product-docs/processed/contact-center-manual --doc-code CC`.
 > Конвейер тот же — поменяется только источник. Числа ниже измерены на фикстуре и
 > будут пересчитаны на реальном файле автоматически.
 
 ## 3. Результаты извлечения и оценка качества (обязательно)
 
 Прогон `extract.py` на фикстуре (числа — из
-[`meta.json`](../kb/processed/contact-center-manual-sample/meta.json), метод
+[`meta.json`](../kb/mango-product-docs/processed/contact-center-manual-sample/meta.json), метод
 токенов `tiktoken:cl100k_base`):
 
 | Метрика | Значение |
@@ -202,7 +202,7 @@ MinerU) **сознательно отклонены как путь по умо�
 ## 7. Структура каталогов БЗ (ФТ-4)
 
 Имя **нейтральное** — `kb/` (исходно требовалось не использовать `mango-kc`).
-Обязательный **каталог ручного ввода** — `kb/sources/` (туда человек кладёт файлы).
+Обязательный **каталог ручного ввода** — `kb/mango-product-docs/sources/` (туда человек кладёт файлы).
 
 ```
 kb/
@@ -224,8 +224,8 @@ kb/
 Разделение **`sources/` (вход человека) ↔ `processed/` (выход скрипта)** —
 ключевое: правят **источник** и перезапускают извлечение, а не
 сгенерированные файлы. Подробности слоёв — в
-[`kb/sources/README.md`](../kb/sources/README.md),
-[`kb/processed/README.md`](../kb/processed/README.md),
+[`kb/mango-product-docs/sources/README.md`](../kb/mango-product-docs/sources/README.md),
+[`kb/mango-product-docs/processed/README.md`](../kb/mango-product-docs/processed/README.md),
 [`kb/fragments/README.md`](../kb/fragments/README.md).
 
 ## 8. Автоматизация (ФТ-5)
@@ -239,7 +239,7 @@ kb/
   - job `validate` — на каждый PR/push, **stdlib-only** (быстро, детерминированно);
   - job `extract` — **по ручному запуску** (`workflow_dispatch`): ставит
     зависимости, прогоняет конвейер на фикстуре, проверяет, выкладывает
-    `kb/processed/` артефактом. Это GitHub-native извлечение из ФТ-2; коммит в
+    `kb/mango-product-docs/processed/` артефактом. Это GitHub-native извлечение из ФТ-2; коммит в
     репозиторий не делается (источник истины — закоммиченный sample).
 - **Проверка** [`validate_issue_111_kb_pipeline.py`](../scripts/validate_issue_111_kb_pipeline.py):
   наличие файлов и нейтрального имени, согласованность `meta.json` ↔ разделы ↔
@@ -249,7 +249,7 @@ kb/
 
 Пять конкретных примеров с **реальными сниппетами** (индекс → выбор раздела →
 загрузка раздела → цитата → сравнение токенов) — в
-[`kb/USAGE.md`](../kb/USAGE.md). Ключевая таблица расхода токенов
+[`kb/mango-product-docs/USAGE.md`](../kb/mango-product-docs/USAGE.md). Ключевая таблица расхода токенов
 (метод `tiktoken:cl100k_base`):
 
 | Что грузит агент | Токены | Комментарий |
@@ -274,7 +274,7 @@ Issue требует спроектировать БЗ с учётом буду�
 промптов. Механизмы устойчивости:
 
 1. **Привязка к содержанию документа, а не к ADR.** Чанки и их адреса
-   (`kb/processed/<doc>/sections/NN#anchor`) зависят от текста источника, а не от
+   (`kb/mango-product-docs/processed/<doc>/sections/NN#anchor`) зависят от текста источника, а не от
    формулировок ADR. Переписали ADR — БЗ валидна, переизвлечение источника не
    меняет схему путей.
 2. **Стабильный контракт обращения.** Промпты ссылаются на БЗ через **формат

@@ -1,0 +1,25 @@
+---
+id: mdialogi-api-33-ogranicheniya
+doc_code: MDIALOGIAPI
+doc_title: "Манго Диалоги. Справочник по API"
+doc_version: "27.02.2026"
+section: "3.2.3"
+pdf_section: "3.2.3"
+title: "Ограничения"
+pdf_heading: "3.2.3 Ограничения"
+pages: "26-27"
+source: kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf
+source_part: "1"
+source_pages: "ч.1: 26-27"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf","part":1,"pages":"26-27","global_pages":"26-27"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 366
+status: extracted
+ai-generated: true
+---
+# 3.2.3. Ограничения
+
+> Трассировка: PDF §3.2.3 · сквозные стр. 26-27 · источники: ч.1 `kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf` с.26-27.
+
+1) Текст сообщения (параметр "text") должен быть заключен в кавычки и содержать не более (независимо от языка): - 1000 символов в сообщении WA; - 70 символов в сообщении SMS. При превышении лимита, сообщение НЕ отправится и будет выдано сообщение об ошибке "У элемента каскада sms слишком длинный текст", код ошибки 5000; 2) Номер телефона Клиента должен соответствовать требованиям: - состоять только из арабских цифр; - количество символов в номере: от 3 до 20 шт.; - в номере телефона должен быть указан код страны (7, 8). При превышении заданного значения, сообщение НЕ отправится и будет выдано сообщение об ошибке "Номер телефона имеет неправильный формат, должны быть только цифры", код ошибки 5000. Манго Диалоги. Справочник по API | Версия от 27.02.2026

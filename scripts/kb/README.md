@@ -1,7 +1,7 @@
 # `scripts/kb/` — конвейер извлечения БЗ (issues #111, #117)
 
 Скрипты превращают исходный документ (PDF) в структурированную, machine-readable
-базу знаний под `kb/processed/<doc>/`: разделы-чанки + индекс + метаданные. Это
+базу знаний под `kb/mango-product-docs/processed/<doc>/`: разделы-чанки + индекс + метаданные. Это
 **git-нативный, детерминированный** конвейер (без GPU, без обращений в сеть),
 который воспроизводимо гоняется и локально, и в GitHub Actions.
 
@@ -9,15 +9,15 @@
 > ML-альтернативами (marker / nougat / MinerU) см. в
 > [`docs/kb-experiment-report.md`](../../docs/kb-experiment-report.md).
 > Архитектура каталогов БЗ и инструкция по пополнению —
-> [`kb/sources/README.md`](../../kb/sources/README.md). Примеры обращения
-> промптов — [`kb/USAGE.md`](../../kb/USAGE.md).
+> [`kb/mango-product-docs/sources/README.md`](../../kb/mango-product-docs/sources/README.md). Примеры обращения
+> промптов — [`kb/mango-product-docs/USAGE.md`](../../kb/mango-product-docs/USAGE.md).
 
 ## Файлы
 
 | Скрипт | Назначение |
 | --- | --- |
 | [`extract.py`](extract.py) | Главный конвейер: PDF → `sections/*.md` + `index.md` + `meta.json` (+ `images/`). |
-| [`process_sources.py`](process_sources.py) | Manifest-driven runner для `kb/sources/<slug>/meta.json`: `single`, `multi_part`, `multi-document`, обновления 1→N/N→1 и product collections. |
+| [`process_sources.py`](process_sources.py) | Manifest-driven runner для `kb/mango-product-docs/sources/<slug>/meta.json`: `single`, `multi_part`, `multi-document`, обновления 1→N/N→1 и product collections. |
 | [`tokens.py`](tokens.py) | Подсчёт токенов (tiktoken `cl100k_base`, иначе эвристика). Числа в отчёте/`meta.json` — реальные. |
 | [`make_sample_pdf.py`](make_sample_pdf.py) | Генератор синтетической фикстуры КЦ (реальный PDF из issue не загрузился). |
 | [`requirements.txt`](requirements.txt) | Зависимости (только для извлечения/генерации; валидатору не нужны). |
@@ -32,8 +32,8 @@ python3 scripts/kb/make_sample_pdf.py
 
 # 2) извлечь PDF в структуру БЗ
 python3 scripts/kb/extract.py \
-    kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf \
-    --out kb/processed/contact-center-manual-sample \
+    kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf \
+    --out kb/mango-product-docs/processed/contact-center-manual-sample \
     --doc-code CC --doc-title "Контакт-центр MANGO OFFICE" --doc-version 1.26.23-sample
 
 # 3) проверить результат (только stdlib, как в CI)
@@ -48,10 +48,10 @@ make kb-validate
 
 ```bash
 # Только проверить план: PDF не читаются, подходит для CI/ревью meta.json.
-python3 scripts/kb/process_sources.py kb/sources/mtalker --dry-run
+python3 scripts/kb/process_sources.py kb/mango-product-docs/sources/mtalker --dry-run
 
 # Запустить извлечение по meta.json.
-python3 scripts/kb/process_sources.py kb/sources/mtalker
+python3 scripts/kb/process_sources.py kb/mango-product-docs/sources/mtalker
 ```
 
 `process_sources.py` отделяет модель источников от низкоуровневого извлечения:
@@ -100,8 +100,8 @@ extract.py <source.pdf> [<source-part-2.pdf> ...] --out <dir>
 
 ```bash
 make kb-extract \
-    SRCS="kb/sources/<slug>/part-1.pdf kb/sources/<slug>/part-2.pdf" \
-    OUT=kb/processed/<slug> CODE=LK TITLE="..." VERSION=1.21
+    SRCS="kb/mango-product-docs/sources/<slug>/part-1.pdf kb/mango-product-docs/sources/<slug>/part-2.pdf" \
+    OUT=kb/mango-product-docs/processed/<slug> CODE=LK TITLE="..." VERSION=1.21
 ```
 
 `--out` каждый раз **полностью пересоздаётся** (старые `sections/*` и `images/*`

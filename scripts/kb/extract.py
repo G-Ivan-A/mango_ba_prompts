@@ -27,7 +27,7 @@
 
 Запуск::
 
-    python3 scripts/kb/extract.py <source.pdf> --out kb/processed/<slug> \\
+    python3 scripts/kb/extract.py <source.pdf> --out kb/mango-product-docs/processed/<slug> \\
         --doc-code CC --doc-title "Контакт-центр MANGO OFFICE" --doc-version 1.26.23
 
 Вывод детерминирован (pdfplumber + tiktoken + фиксированный порядок).
@@ -38,6 +38,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -68,6 +69,10 @@ def slugify(text: str, max_len: int = 40) -> str:
     slug = transliterate(text)
     slug = re.sub(r"[^a-z0-9]+", "-", slug).strip("-")
     return slug[:max_len].strip("-") or "section"
+
+
+def rel_link(target: Path, base_dir: Path) -> str:
+    return Path(os.path.relpath(target, base_dir)).as_posix()
 
 
 # --- Детект заголовков ------------------------------------------------------
@@ -680,7 +685,7 @@ def section_summary(section) -> str:
 def main(argv=None):
     parser = argparse.ArgumentParser(description="Извлечь PDF в структуру БЗ (issue #111/#117).")
     parser.add_argument("pdf", nargs="+", help="один PDF или несколько частей одного документа")
-    parser.add_argument("--out", required=True, help="каталог результата, напр. kb/processed/<slug>")
+    parser.add_argument("--out", required=True, help="каталог результата, напр. kb/mango-product-docs/processed/<slug>")
     parser.add_argument("--doc-code", default="DOC", help="короткий код документа для цитат, напр. CC")
     parser.add_argument("--doc-title", default="", help="название документа (иначе из титула)")
     parser.add_argument("--doc-version", default="", help="версия документа")
@@ -760,6 +765,8 @@ def main(argv=None):
         "source_rel": source_rel,
         "extracted_by": f"pdfplumber {pdf_version}",
         "token_method": token_util.method(),
+        "kb_standard_link": rel_link(ROOT / "standards" / "kb-standard.md", out_dir),
+        "kb_adr_link": rel_link(ROOT / "docs" / "adr" / "007-kb-standard.md", out_dir),
     }
 
     # Присваиваем стабильные id и сохраняем секции/изображения.
@@ -882,7 +889,7 @@ def build_index(meta, rows, tokens_total) -> str:
         "## Как цитировать",
         "",
         f'`[{meta["doc_code"]}, §<номер>, с.<страница>]` — формат проекта (issue #109);',
-        "плюс адрес чанка `kb/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).",
+        "плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).",
         "",
         "## Разделы",
         "",
@@ -900,8 +907,11 @@ def build_index(meta, rows, tokens_total) -> str:
     lines.append("")
     for idx, source in enumerate(str(meta["source_rel"]).split("; "), start=1):
         lines.append(f"- Источник БЗ, часть {idx}: `{source}`")
-    lines.append("- Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), "
-                 "[ADR-007](../../../docs/adr/007-kb-standard.md)")
+    lines.append(
+        "- Стандарт цитирования: "
+        f'[`standards/kb-standard.md`]({meta["kb_standard_link"]}), '
+        f'[ADR-007]({meta["kb_adr_link"]})'
+    )
     return "\n".join(lines) + "\n"
 
 

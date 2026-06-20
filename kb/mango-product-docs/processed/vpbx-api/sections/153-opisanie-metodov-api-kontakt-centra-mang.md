@@ -1,0 +1,23 @@
+---
+id: vpbx-api-153-opisanie-metodov-api-kontakt-centra-mang
+doc_code: VPBXAPI
+doc_title: "API Mango Office"
+doc_version: "1.9"
+section: "4"
+pdf_section: "4"
+title: "Описание методов API Контакт-центра MANGO OFFICE"
+pdf_heading: "4 Описание методов API Контакт-центра MANGO OFFICE"
+pages: "207"
+source: kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf
+source_part: "1"
+source_pages: "ч.1: 207"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf","part":1,"pages":"207","global_pages":"207"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 75
+status: extracted
+ai-generated: true
+---
+# 4. Описание методов API Контакт-центра MANGO OFFICE
+
+> Трассировка: PDF §4 · сквозные стр. 207 · источники: ч.1 `kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf` с.207.

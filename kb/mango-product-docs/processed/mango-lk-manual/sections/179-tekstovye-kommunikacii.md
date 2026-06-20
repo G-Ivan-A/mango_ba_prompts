@@ -1,0 +1,29 @@
+---
+id: mango-lk-manual-179-tekstovye-kommunikacii
+doc_code: LK
+doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
+doc_version: "1.21"
+section: "4.5.11"
+pdf_section: "4.5.11"
+title: "Текстовые коммуникации"
+pdf_heading: "4.5.11 Текстовые коммуникации"
+pages: "277-278"
+source: kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
+source_part: "3"
+source_pages: "ч.3: 75-76"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"75-76","global_pages":"277-278"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 426
+status: extracted
+ai-generated: true
+---
+# 4.5.11. Текстовые коммуникации
+
+> Трассировка: PDF §4.5.11 · сквозные стр. 277-278 · источники: ч.3 `kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.75-76.
+
+Текстовые коммуникации – это модуль для коммуникаций с клиентами. Он объединяет в себе социальные сети, мессенджеры и чат-боты в единое пространство связи клиентов и сотрудников через сайт. Возможности модуля «Текстовые коммуникации»: • Общаться с клиентами и партнерами онлайн;
+
+![Изображение, стр. 278](../images/179-tekstovye-kommunikacii-1.jpeg)
+
+• Подключать цифровые каналы общения: социальные сети ВКонтакте, мессенджеры WhatsApp и Telegram, аккаунт Авито и Авито Работа, электронную почту, чат на сайте и др. • Сохранять контакты в адресной книге; • Сохранять диалог в чате в CRM Битрикс24; • Просматривать историю обращений; • Устанавливать режимы работы чата в рабочее/нерабочее время; • Создавать автоответы для нерабочего времени и праздничных дней.

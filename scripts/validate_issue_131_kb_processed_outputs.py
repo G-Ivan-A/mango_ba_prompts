@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """Regression check for issue #131: every KB source produces committed output.
 
-Issue #131 reported that the KB workflow was green while new ``kb/sources/*``
-manifests did not appear under ``kb/processed``. The failure was not PDF parsing:
+Issue #131 reported that the KB workflow was green while new ``kb/mango-product-docs/sources/*``
+manifests did not appear under ``kb/mango-product-docs/processed``. The failure was not PDF parsing:
 the push/PR workflow only ran lightweight validators and never asserted that
 generated outputs were present in git.
 
 This stdlib-only check locks the end-to-end contract:
 
-- every processable ``kb/sources/*/meta.json`` expands to committed
-  ``kb/processed`` deliverables;
+- every processable ``kb/mango-product-docs/sources/*/meta.json`` expands to committed
+  ``kb/mango-product-docs/processed`` deliverables;
 - every generated document KB has ``index.md``, ``meta.json``, ``sections/`` and
   ``images/``;
 - section metadata keeps traceability back to source PDFs;
 - source PDFs are real payloads, not Git LFS pointer files;
-- the KB workflow can extract all manifests and commit ``kb/processed`` changes;
+- the KB workflow can extract all manifests and commit ``kb/mango-product-docs/processed`` changes;
 - the short human upload guide exists outside the README.
 """
 
@@ -38,7 +38,7 @@ from process_sources import (  # noqa: E402
 WORKFLOW = ".github/workflows/kb.yml"
 MAKEFILE = "Makefile"
 CHANGELOG = "CHANGELOG.md"
-UPLOAD_GUIDE = "kb/UPLOAD-GUIDE.md"
+UPLOAD_GUIDE = "kb/mango-product-docs/UPLOAD-GUIDE.md"
 
 REQUIRED_DOC_PATHS = ("index.md", "meta.json", "sections", "images")
 REQUIRED_META_KEYS = (
@@ -212,7 +212,7 @@ def check_processed_outputs() -> list[str]:
         return [str(exc)]
 
     if not plans:
-        return ["kb/sources: no processable meta.json source manifests found"]
+        return ["kb/mango-product-docs/sources: no processable meta.json source manifests found"]
 
     for plan in plans:
         if plan.collection:
@@ -251,7 +251,7 @@ def check_workflow_and_makefile() -> list[str]:
         "scripts/validate_issue_131_kb_processed_outputs.py",
         "github.event_name == 'workflow_dispatch' || github.event_name == 'push'",
         "python3 scripts/kb/process_sources.py --all",
-        "git add kb/processed",
+        "git add kb/mango-product-docs/processed",
         "git push",
         "lfs: true",
         'default: "true"',
@@ -267,7 +267,7 @@ def check_workflow_and_makefile() -> list[str]:
         changelog,
         CHANGELOG,
         "Issue #131",
-        "kb/UPLOAD-GUIDE.md",
+        "kb/mango-product-docs/UPLOAD-GUIDE.md",
         "validate_issue_131_kb_processed_outputs.py",
     )
     return errors
