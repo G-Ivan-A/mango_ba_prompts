@@ -9,41 +9,41 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 ---
 
-# Прогоны BA-процесса (живые кейсы)
+# Прогоны BA-процесса (архивный указатель)
 
-> **Что это.** Каталог **реальных прогонов** цепочек промптов на конкретных
-> требованиях заказчика — от сырого входа до набора ранних артефактов. В отличие от
-> [`docs/ba-processes/`](../ba-processes/00-index.md) (карта *какие* промпты и в каком
-> порядке использовать), этот каталог хранит *результаты их применения* на кейсах.
+> **Статус после issue #123.** Результаты реальных прогонов больше не хранятся в
+> `docs/ba-process/`. Единый каталог результатов выполнения процессов —
+> [`runs/`](../../runs/README.md). Этот файл оставлен как навигационный указатель
+> для старых ссылок и объясняет границу между картой процесса и результатом run.
 
-## Зачем отдельный каталог
+## Где теперь хранить результаты
 
-- Один кейс = одна папка со всеми артефактами и логом эксперимента → воспроизводимость.
-- Накапливает доказательную базу для [реестра RFC](../../governance/rfc-register.md)
-  по улучшению промптов (см. [`standards/experiment-log-standard.md`](../../standards/experiment-log-standard.md)).
-- Демонстрирует «dogfooding»: библиотека промптов проверяется на собственных задачах.
+- Маршруты, операции и рекомендуемые промпты: [`docs/ba-processes/00-index.md`](../ba-processes/00-index.md).
+- Результаты выполнения: [`runs/YYYY/RUN-XXXX/`](../../runs/README.md).
+- Контракт записи результата: [`standards/runs-contract-standard.md`](../../standards/runs-contract-standard.md).
 
-## Кейсы
+## Перенесённые кейсы
 
 | Кейс | Требование (кратко) | Тип результата | Источник |
 | --- | --- | --- | --- |
-| [Многоканальная нагрузка агента](./multichannel-agent-workload/README.md) | Одновременная работа агента с обращениями голос/чат/e-mail, лимит 3, приоритет | Ранний разбор (нормализация + вопросы + US/UC + варианты, Раздел 3) | [issue #109](https://github.com/G-Ivan-A/mango_ba_prompts/issues/109) |
+| [Многоканальная нагрузка агента](../../runs/2026/RUN-0011/outputs/README.md) | Одновременная работа агента с обращениями голос/чат/e-mail, лимит 3, приоритет | Ранний разбор (нормализация + вопросы + US/UC + варианты, Раздел 3) | [issue #109](https://github.com/G-Ivan-A/mango_ba_prompts/issues/109) |
 
-## Структура папки кейса (конвенция)
+## Структура Run-записи
 
 ```
-<кейс>/
-  README.md            — навигация и TL;DR
-  inputs/              — сырой вход + выжимка БЗ (с цитатами)
-  prompts-chain.md     — выбранная цепочка промптов + обоснование
-  steps/               — промежуточный результат каждого шага
-  final-artifact.md    — консолидация + рекомендация БА
-  experiment-log.md    — лог по experiment-log-standard (6 метрик)
+runs/YYYY/RUN-XXXX/
+  metadata.yaml   — run_id, process, version, date, author, model, status
+  inputs/         — сырой вход + выжимка БЗ
+  outputs/        — итоговые и промежуточные артефакты
+  feedback/       — обратная связь
+  logs/           — логи эксперимента и метрики
 ```
 
 ## Связанные документы
 
 - Карта процессов и промптов: [`docs/ba-processes/00-index.md`](../ba-processes/00-index.md)
+- Реестр runs: [`runs/README.md`](../../runs/README.md)
+- Стандарт Run: [`standards/runs-contract-standard.md`](../../standards/runs-contract-standard.md)
 - Стандарт фиксации экспериментов: [`standards/experiment-log-standard.md`](../../standards/experiment-log-standard.md)
 - Реестр RFC: [`governance/rfc-register.md`](../../governance/rfc-register.md)
 - Стандарт работы с БЗ: [`standards/kb-standard.md`](../../standards/kb-standard.md) ([ADR-007](../adr/007-kb-standard.md))
