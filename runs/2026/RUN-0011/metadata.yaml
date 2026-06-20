@@ -1,0 +1,28 @@
+run_id: RUN-0011
+process: multichannel-agent-workload
+version: "0.1"
+date: 2026-06-18
+author: "BA-IH + LLM"
+model: "not-recorded"
+status: works-with-edits
+source_paths:
+  - outputs/README.md
+  - logs/experiment-log.md
+inputs:
+  - inputs/kb-files.md
+  - inputs/raw-requirement.md
+outputs:
+  - outputs/README.md
+  - outputs/final-artifact.md
+  - outputs/prompts-chain.md
+  - outputs/steps/step-1-glossary.md
+  - outputs/steps/step-2-normalization.md
+  - outputs/steps/step-3-questions.md
+  - outputs/steps/step-4-story.md
+  - outputs/steps/step-5-options.md
+logs:
+  - logs/experiment-log.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/109
+related_artifacts:
+  - governance/rfc/prompt-improvement-multichannel-proposal.md

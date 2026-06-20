@@ -1,0 +1,15 @@
+run_id: RUN-0004
+process: prompt-audit
+version: "0.1"
+date: 2026-05-26
+author: "BA/AI"
+model: "not-recorded"
+status: draft
+source_paths:
+  - runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md
+outputs:
+  - outputs/prompts-audit-2026-05-26.md
+related_runs:
+  - RUN-0001
+  - RUN-0002
+  - RUN-0003

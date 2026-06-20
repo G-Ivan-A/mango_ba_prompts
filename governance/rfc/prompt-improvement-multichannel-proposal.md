@@ -5,7 +5,7 @@ updated: 2026-06-18
 ai-generated: true
 type: rfc
 scope: prompts
-source_experiment: "docs/ba-process/multichannel-agent-workload/experiment-log.md"
+source_experiment: "runs/2026/RUN-0011/logs/experiment-log.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
@@ -35,8 +35,8 @@ related_artifacts:
 цепочки**, потребовавших ручных вставок БА.
 
 Источники:
-- Эксперимент: [`docs/ba-process/multichannel-agent-workload/experiment-log.md`](../../docs/ba-process/multichannel-agent-workload/experiment-log.md)
-- Итог разбора: [`docs/ba-process/multichannel-agent-workload/final-artifact.md`](../../docs/ba-process/multichannel-agent-workload/final-artifact.md)
+- Эксперимент: [`runs/2026/RUN-0011/logs/experiment-log.md`](../../runs/2026/RUN-0011/logs/experiment-log.md)
+- Итог разбора: [`runs/2026/RUN-0011/outputs/final-artifact.md`](../../runs/2026/RUN-0011/outputs/final-artifact.md)
 
 ---
 

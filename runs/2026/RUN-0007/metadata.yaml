@@ -1,0 +1,15 @@
+run_id: RUN-0007
+process: fr-generation
+version: "0.1"
+date: 2026-06-16
+author: "BA/AI"
+model: "not-recorded"
+status: works-with-edits
+source_paths:
+  - runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md
+outputs:
+  - outputs/fr-generation-1027-live_2026-06-16.md
+related_artifacts:
+  - docs/analysis/experiment-1027-analysis.md
+  - prompts/fr-documentation-stepwise.md
+  - prompts/constraints-documentation-oneshot.md

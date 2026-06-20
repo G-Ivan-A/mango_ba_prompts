@@ -1,0 +1,14 @@
+run_id: RUN-0001
+process: prompt-experiment
+version: "0.1"
+date: 2026-05-26
+author: "BA/AI"
+model: "not-recorded"
+status: experimental
+source_paths:
+  - runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md
+outputs:
+  - outputs/tz-stats-prototype-2026-05.md
+related_artifacts:
+  - prompts/archive/tz-stats-generator-legacy.md
+  - prompts/archive/tz-stats-generator-simple-legacy.md

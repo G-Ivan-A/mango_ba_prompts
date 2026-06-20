@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
   - "docs/analysis/experiment-1027-analysis.md"
-  - "prompts/experiments/fr-generation-1027-live_2026-06-16.md"
+  - "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md"
   - "standards/experiment-log-standard.md"
 ---
 

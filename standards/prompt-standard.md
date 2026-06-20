@@ -27,7 +27,7 @@ related_issues:
 
 Контракт обязывает всех contributors и AI-агентов, создающих или изменяющих
 файлы в `prompts/` (включая `prompts/archive/`). Не распространяется на
-`prompts/experiments/` (см. §Тестирование) и `patterns/`
+записи результатов в `runs/` (см. §Тестирование) и `patterns/`
 (см. [pattern-standard.md](pattern-standard.md)).
 
 ## Обязательства
@@ -90,9 +90,9 @@ related_issues:
 ### Тестирование
 
 9. Результаты прогонов промпта **СЛЕДУЕТ** фиксировать в
-   `prompts/experiments/` файлом
-   `[имя-промпта]-[сценарий]-[YYYY-MM-DD].md` (практика продуктовых
-   экспериментов, унаследованная из `projects/mango/experiments/` Хаба).
+   `runs/YYYY/RUN-XXXX/outputs/` файлом
+   `[имя-промпта]-[сценарий]-[YYYY-MM-DD].md`; сам прогон оформляется по
+   [контракту runs](runs-contract-standard.md).
    Перевод `draft → canonical` **ДОЛЖЕН** опираться минимум на один
    зафиксированный прогон.
 
