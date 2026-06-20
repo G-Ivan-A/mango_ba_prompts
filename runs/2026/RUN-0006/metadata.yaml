@@ -1,5 +1,6 @@
 run_id: RUN-0006
 process: session-debug-documentation
+run_type: documentation
 version: "0.1"
 date: 2026-06-13
 author: "BA/AI"

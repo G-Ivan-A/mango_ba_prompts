@@ -1,5 +1,6 @@
 run_id: RUN-0010
 process: bcreq-1025-email-routing
+run_type: business-task
 version: "0.2"
 date: 2026-06-17
 author: "BA-IH + LLM"

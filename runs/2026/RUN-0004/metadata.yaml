@@ -1,5 +1,6 @@
 run_id: RUN-0004
 process: prompt-audit
+run_type: validation
 version: "0.1"
 date: 2026-05-26
 author: "BA/AI"
