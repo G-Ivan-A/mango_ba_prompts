@@ -131,6 +131,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_117_kb_traceability.py
 	$(PYTHON) scripts/validate_issue_121_kb_multi_file.py
 	$(PYTHON) scripts/validate_issue_129_kb_all_sources.py
+	$(PYTHON) scripts/validate_issue_131_kb_processed_outputs.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
 kb-tokens:

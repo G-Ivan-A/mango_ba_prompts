@@ -20,9 +20,10 @@
     "pymupdf 1.27.2.3",
     "pymupdf 1.27.2.3"
   ],
-  "note": "Multi-part руководство ЛК из issue 117; 5 PDF частей обработаны как один документ со сквозной пагинацией.",
+  "note": "Справочник абонента виртуальной АТС MANGO OFFICE. Руководство пользователя по настройке и использованию облачной телефонии.",
   "page_count": 568,
   "part_count": 5,
+  "processing_mode": "multi_part",
   "section_count": 348,
   "section_source": "pdf-outline multi-part (5 PDF parts)",
   "section_sources": [
@@ -6316,6 +6317,7 @@
       "tokens": 447
     }
   ],
+  "source_document": "mango-lk-manual",
   "source_pdf": "multi-part",
   "source_pdfs": [
     "kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf",
@@ -6324,6 +6326,7 @@
     "kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf",
     "kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf"
   ],
+  "source_set": "mango-lk-manual",
   "source_sha256": "f2bef2d55f33d2c46dd0cd474d45b0e732ddc70c227c28da95bddc3d584a164d",
   "sources": [
     {

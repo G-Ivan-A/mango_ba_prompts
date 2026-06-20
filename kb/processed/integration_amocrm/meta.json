@@ -1,0 +1,369 @@
+{
+  "body_font_size": 12.0,
+  "body_font_sizes": [
+    12.0
+  ],
+  "doc_code": "INTEGRATIONA",
+  "doc_title": "Интеграция Виртуальной АТС и amoCRM. Инструкция по настройке",
+  "doc_version": "25.08.2025",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 230,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Подробная инструкция по настройке и использованию интеграции между ВАТС Mango Office и amoCRM. Содержит пошаговые руководства, описание параметров и типовые сценарии.",
+  "page_count": 153,
+  "part_count": 1,
+  "processing_mode": "single",
+  "section_count": 18,
+  "section_source": "layout-heuristic",
+  "section_sources": [
+    "layout-heuristic"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1-5",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-5",
+          "pages": "1-5",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 2209
+    },
+    {
+      "file": "sections/01-nachalo-raboty-s-integraciey.md",
+      "number": "1",
+      "order": "01",
+      "pages": "5-22",
+      "pdf_heading": "1 Начало работы с интеграцией",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "5-22",
+          "pages": "5-22",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Начало работы с интеграцией",
+      "tokens": 9384
+    },
+    {
+      "file": "sections/02-nastroyka-integracii.md",
+      "number": "2",
+      "order": "02",
+      "pages": "22-89",
+      "pdf_heading": "2 Настройка интеграции",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "22-89",
+          "pages": "22-89",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Настройка интеграции",
+      "tokens": 38288
+    },
+    {
+      "file": "sections/03-vhodyaschiy-zvonok.md",
+      "number": "3",
+      "order": "03",
+      "pages": "89-90",
+      "pdf_heading": "3 Входящий звонок",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "89-90",
+          "pages": "89-90",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Входящий звонок",
+      "tokens": 623
+    },
+    {
+      "file": "sections/04-ishodyaschiy-zvonok.md",
+      "number": "4",
+      "order": "04",
+      "pages": "90-91",
+      "pdf_heading": "4 Исходящий звонок",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "90-91",
+          "pages": "90-91",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Исходящий звонок",
+      "tokens": 273
+    },
+    {
+      "file": "sections/05-propuschennye-zvonki.md",
+      "number": "5",
+      "order": "05",
+      "pages": "91-92",
+      "pdf_heading": "5 Пропущенные звонки",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "91-92",
+          "pages": "91-92",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Пропущенные звонки",
+      "tokens": 547
+    },
+    {
+      "file": "sections/06-istoriya-vyzovov.md",
+      "number": "6",
+      "order": "06",
+      "pages": "92-93",
+      "pdf_heading": "6 История вызовов",
+      "pdf_section": "6",
+      "source_refs": [
+        {
+          "global_pages": "92-93",
+          "pages": "92-93",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "История вызовов",
+      "tokens": 289
+    },
+    {
+      "file": "sections/07-kartochka-zvonka.md",
+      "number": "7",
+      "order": "07",
+      "pages": "93-108",
+      "pdf_heading": "7 Карточка звонка",
+      "pdf_section": "7",
+      "source_refs": [
+        {
+          "global_pages": "93-108",
+          "pages": "93-108",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Карточка звонка",
+      "tokens": 8673
+    },
+    {
+      "file": "sections/08-spisok-obzvona.md",
+      "number": "8",
+      "order": "08",
+      "pages": "108-111",
+      "pdf_heading": "8 Список обзвона",
+      "pdf_section": "8",
+      "source_refs": [
+        {
+          "global_pages": "108-111",
+          "pages": "108-111",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Список обзвона",
+      "tokens": 1568
+    },
+    {
+      "file": "sections/09-analitika.md",
+      "number": "9",
+      "order": "09",
+      "pages": "111-112",
+      "pdf_heading": "9 Аналитика",
+      "pdf_section": "9",
+      "source_refs": [
+        {
+          "global_pages": "111-112",
+          "pages": "111-112",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Аналитика",
+      "tokens": 155
+    },
+    {
+      "file": "sections/10-zapis-razgovorov.md",
+      "number": "10",
+      "order": "10",
+      "pages": "112-113",
+      "pdf_heading": "10 Запись разговоров",
+      "pdf_section": "10",
+      "source_refs": [
+        {
+          "global_pages": "112-113",
+          "pages": "112-113",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Запись разговоров",
+      "tokens": 471
+    },
+    {
+      "file": "sections/11-integraciya-s-kolltrekingom-mango-office.md",
+      "number": "11",
+      "order": "11",
+      "pages": "113-116",
+      "pdf_heading": "11 Интеграция с Коллтрекингом MANGO OFFICE",
+      "pdf_section": "11",
+      "source_refs": [
+        {
+          "global_pages": "113-116",
+          "pages": "113-116",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Интеграция с Коллтрекингом MANGO OFFICE",
+      "tokens": 2429
+    },
+    {
+      "file": "sections/12-postzvonkovaya-ocenka-kachestva.md",
+      "number": "12",
+      "order": "12",
+      "pages": "116-122",
+      "pdf_heading": "12 Постзвонковая оценка качества",
+      "pdf_section": "12",
+      "source_refs": [
+        {
+          "global_pages": "116-122",
+          "pages": "116-122",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Постзвонковая оценка качества",
+      "tokens": 2922
+    },
+    {
+      "file": "sections/13-integraciya-s-adresnoy-knigoy-virtualnoy.md",
+      "number": "13",
+      "order": "13",
+      "pages": "122-124",
+      "pdf_heading": "13 Интеграция с адресной книгой Виртуальной АТС",
+      "pdf_section": "13",
+      "source_refs": [
+        {
+          "global_pages": "122-124",
+          "pages": "122-124",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Интеграция с адресной книгой Виртуальной АТС",
+      "tokens": 773
+    },
+    {
+      "file": "sections/14-integraciya-s-kontakt-centrom-mango-offi.md",
+      "number": "14",
+      "order": "14",
+      "pages": "124-139",
+      "pdf_heading": "14 Интеграция с Контакт Центром MANGO OFFICE",
+      "pdf_section": "14",
+      "source_refs": [
+        {
+          "global_pages": "124-139",
+          "pages": "124-139",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Интеграция с Контакт Центром MANGO OFFICE",
+      "tokens": 8602
+    },
+    {
+      "file": "sections/15-softfon-mango-connect.md",
+      "number": "15",
+      "order": "15",
+      "pages": "139-144",
+      "pdf_heading": "15 Софтфон MANGO CONNECT",
+      "pdf_section": "15",
+      "source_refs": [
+        {
+          "global_pages": "139-144",
+          "pages": "139-144",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Софтфон MANGO CONNECT",
+      "tokens": 1607
+    },
+    {
+      "file": "sections/16-osobennosti.md",
+      "number": "16",
+      "order": "16",
+      "pages": "144-145",
+      "pdf_heading": "16 Особенности",
+      "pdf_section": "16",
+      "source_refs": [
+        {
+          "global_pages": "144-145",
+          "pages": "144-145",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Особенности",
+      "tokens": 240
+    },
+    {
+      "file": "sections/17-vsplyvayuschie-soobscheniya-ob-oshibkah.md",
+      "number": "17",
+      "order": "17",
+      "pages": "145-153",
+      "pdf_heading": "17 Всплывающие сообщения об ошибках в интерфейсе",
+      "pdf_section": "17",
+      "source_refs": [
+        {
+          "global_pages": "145-153",
+          "pages": "145-153",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+        }
+      ],
+      "title": "Всплывающие сообщения об ошибках в интерфейсе",
+      "tokens": 6645
+    }
+  ],
+  "source_document": "integration_amocrm",
+  "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf",
+  "source_pdfs": [
+    "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
+  ],
+  "source_set": "integration_amocrm",
+  "source_sha256": "2627f38c2af94fab813e5d078f398153a3c239603bc0dd4bf4781abb7d70eb8e",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 153,
+      "source_pdf": "kb/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf",
+      "source_sha256": "2627f38c2af94fab813e5d078f398153a3c239603bc0dd4bf4781abb7d70eb8e"
+    }
+  ],
+  "table_count": 15,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 2234,
+  "tokens_total": 85698
+}

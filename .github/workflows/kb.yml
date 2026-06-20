@@ -1,11 +1,9 @@
 name: KB pipeline
 
-# База знаний (issue #111): на каждый PR/push — быстрая проверка деливераблов
-# (stdlib-only, без pip, детерминированно). Полный конвейер извлечения PDF
-# (pdfplumber/PyMuPDF/tiktoken) запускается ВРУЧНУЮ через workflow_dispatch:
-# он тяжелее и зависит от сети для pip, поэтому не должен блокировать обычный CI.
-# По умолчанию ручной запуск обрабатывает все source manifest из kb/sources/.
-# Это GitHub-native извлечение, которого требует ФТ-2.
+# База знаний (issue #111/#131): PR проверяет закоммиченные деливераблы,
+# а push в main с изменениями источников/конвейера автоматически запускает
+# полный manifest-driven extract и коммитит kb/processed обратно в ветку.
+# Ручной workflow_dispatch остаётся способом переизвлечь все или один source.
 
 on:
   pull_request:
@@ -14,6 +12,13 @@ on:
   push:
     branches:
       - main
+    paths:
+      - ".github/workflows/kb.yml"
+      - "Makefile"
+      - "kb/UPLOAD-GUIDE.md"
+      - "kb/sources/**"
+      - "scripts/kb/**"
+      - "scripts/validate_issue_*_kb*.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -49,9 +54,9 @@ on:
         required: true
         type: choice
         options:
-          - "false"
           - "true"
-        default: "false"
+          - "false"
+        default: "true"
 
 permissions:
   contents: write
@@ -82,13 +87,18 @@ jobs:
           python3 scripts/validate_issue_117_kb_traceability.py
           python3 scripts/validate_issue_121_kb_multi_file.py
           python3 scripts/validate_issue_129_kb_all_sources.py
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            python3 scripts/validate_issue_131_kb_processed_outputs.py
+          else
+            echo "Issue #131 processed-output validation runs after extraction for ${{ github.event_name }}."
+          fi
 
-  # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
-  # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):
-  # source → extract.py → kb/processed/<slug> → проверка. Результат всегда
-  # выкладывается артефактом; при commit_result=true также коммитится в ветку.
+  # Тяжёлый сквозной прогон извлечения.
+  # На workflow_dispatch выполняет выбранный source. На push в main всегда
+  # обрабатывает все kb/sources/*/meta.json и коммитит kb/processed.
   extract:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
+    needs: validate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -107,6 +117,9 @@ jobs:
       - name: Extract requested source
         run: |
           SOURCE_DIR="${{ inputs.source_dir }}"
+          if [ "${{ github.event_name }}" = "push" ]; then
+            SOURCE_DIR="all"
+          fi
           if [ "$SOURCE_DIR" = "all" ]; then
             python3 scripts/kb/process_sources.py --all
           elif [ -n "$SOURCE_DIR" ]; then
@@ -126,10 +139,11 @@ jobs:
 
       - name: Show token footprint (index vs sections)
         run: |
-          if [ -d "${{ inputs.out }}/sections" ]; then
-            make kb-tokens OUT="${{ inputs.out }}"
+          OUT_DIR="${{ inputs.out }}"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -d "$OUT_DIR/sections" ]; then
+            make kb-tokens OUT="$OUT_DIR"
           else
-            echo "Skipping token footprint: ${{ inputs.out }}/sections not found."
+            echo "Skipping token footprint: no single document output selected."
           fi
 
       - name: Upload extracted KB artifact
@@ -140,18 +154,20 @@ jobs:
           if-no-files-found: error
 
       - name: Commit extracted KB
-        if: ${{ inputs.commit_result == 'true' }}
+        if: ${{ github.event_name == 'push' || github.event.inputs.commit_result == 'true' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if [ -n "${{ inputs.source_dir }}" ]; then
-            git add kb/processed
-          else
-            git add "${{ inputs.out }}"
-          fi
+          git add kb/processed
           if git diff --cached --quiet; then
             echo "No generated KB changes to commit."
           else
-            git commit -m "chore(kb): extract ${{ inputs.out }}"
+            SOURCE_LABEL="${{ inputs.source_dir }}"
+            if [ "${{ github.event_name }}" = "push" ]; then
+              SOURCE_LABEL="all source manifests"
+            elif [ -z "$SOURCE_LABEL" ]; then
+              SOURCE_LABEL="${{ inputs.out }}"
+            fi
+            git commit -m "chore(kb): extract ${SOURCE_LABEL}"
             git push
           fi
