@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.2
-updated: 2026-06-19
+updated: 2026-06-20
 ai-generated: true
 ---
 
@@ -12,6 +12,17 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #137 миграция product docs в `kb/mango-product-docs/`
+
+- Product documentation KB перенесена из прежних корневых product-docs
+  каталогов источников/результатов и guide-файлов в нейтральный namespace
+  [`kb/mango-product-docs/`](kb/mango-product-docs/).
+- Makefile, KB workflow, scripts, validators, документация и generated trace
+  metadata переведены на новые стабильные пути.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_137_kb_product_docs_migration.py`](scripts/validate_issue_137_kb_product_docs_migration.py),
+  которая фиксирует новую раскладку и запрещает возврат старых path literals.
 
 ### Added — Issue #134 стандарт README для репозитория
 
