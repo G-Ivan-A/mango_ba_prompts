@@ -15,7 +15,7 @@ related_artifacts:
   - "governance/sync-matrix-2026-06-17.md"
   - "docs/analysis/experiment-1027-analysis.md"
   - "governance/audit-contracts-2026-06-17.md"
-  - "governance/analysis-bcreq-1025-2026-06-17.md"
+  - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "governance/rfc/prompt-improvement-multichannel-proposal.md"
 ---
@@ -99,7 +99,7 @@ PR #105 **не изменены** — сверка и правка идут то
 ## Открытые RFC по промптам (источник: эксперимент BCREQ-1025, issue #107)
 
 Правки ниже — **предложения** из разбора
-[`governance/analysis-bcreq-1025-2026-06-17.md`](analysis-bcreq-1025-2026-06-17.md).
+[`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
 Полный RFC: [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
 
@@ -114,7 +114,7 @@ PR #105 **не изменены** — сверка и правка идут то
 ## Открытые RFC по промптам (источник: эксперимент «Многоканальная нагрузка агента», issue #109)
 
 Правки ниже — **предложения** из разбора
-[`docs/ba-process/multichannel-agent-workload/experiment-log.md`](../docs/ba-process/multichannel-agent-workload/experiment-log.md).
+[`runs/2026/RUN-0011/logs/experiment-log.md`](../runs/2026/RUN-0011/logs/experiment-log.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
 Полный RFC: [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
 
@@ -133,7 +133,7 @@ PR #105 **не изменены** — сверка и правка идут то
   контрактов с Хабом). Реестр привязан к общему [`rfc-process.md`](rfc-process.md).
 - **2026-06-17** — добавлены RFC-1025-P1…P5 (промпты) в статусе `proposed` по
   итогам эксперимента BCREQ-1025 (issue #107). Полный анализ —
-  [`governance/analysis-bcreq-1025-2026-06-17.md`](analysis-bcreq-1025-2026-06-17.md);
+  [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md);
   RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
 - **2026-06-18** — добавлены RFC-MCH-P1…P3 (промпты) в статусе `proposed` по
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —

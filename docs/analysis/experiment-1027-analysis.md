@@ -14,7 +14,7 @@ related_artifacts:
   - "prompts/fr-documentation-oneshot.md"
   - "prompts/constraints-documentation-stepwise.md"
   - "prompts/constraints-documentation-oneshot.md"
-  - "prompts/experiments/fr-generation-1027-live_2026-06-16.md"
+  - "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md"
   - "standards/experiment-log-standard.md"
 ---
 
@@ -564,7 +564,7 @@ As-Is/документацией. Это и есть механизм, кото�
 Здесь — резюме и аргументация выбора формата.
 
 **Проблема, которую решаем.** Сейчас прогоны фиксируются богатыми Markdown-файлами
-в `prompts/experiments/` (YAML-frontmatter + структурированные секции). Это
+в `runs/` (YAML-frontmatter + структурированные секции). Это
 отлично для канонизации промпта, но **тяжело** для повседневной фиксации каждого
 реального кейса БА. Issue прямо запрещает стандарт «на 20 полей перед началом
 работы» и даёт право на отказ от бюрократии.
@@ -574,7 +574,7 @@ As-Is/документацией. Это и есть механизм, кото�
 - **Уровень 0 (по умолчанию, 30 секунд): GitHub Issue с лейблом `experiment`.**
   Создать issue, вставить туда чат и заполнить **5 минимальных метрик** (см.
   ниже). Подходит для большинства кейсов и для быстрого старта feedback loop.
-- **Уровень 1 (по запросу): лёгкий Markdown-шаблон** в `prompts/experiments/`
+- **Уровень 1 (по запросу): лёгкий Markdown-шаблон** в `runs/YYYY/RUN-XXXX/outputs/`
   (~10 строк метрик + цитаты). Нужен, только когда прогон станет доказательной
   базой для перевода промпта `draft → canonical` или для правки промпта.
 
@@ -594,8 +594,8 @@ As-Is/документацией. Это и есть механизм, кото�
 `ba_edits ≈ 12`, `quality = 4`, `verdict = works-with-edits`.
 
 **Почему так.** Уровень 0 = «право на отказ от бюрократии» в действии (Issue +
-чат, как и предлагал issue). Уровень 1 сохраняет совместимость с уже принятой в
-репозитории практикой `prompts/experiments/` и требованием README «минимум один
+чат, как и предлагал issue). Уровень 1 сохраняет совместимость с принятой в
+репозитории практикой `runs/` и требованием README «минимум один
 зафиксированный прогон перед `canonical`». Ядро из 6 метрик даёт сопоставимость
 между экспериментами без тяжёлых форм.
 
@@ -603,7 +603,7 @@ As-Is/документацией. Это и есть механизм, кото�
 экспериментах** (как требует issue). Открытые вопросы вынесены в стандарт и в
 `governance/BACKLOG.md`. Чтобы стандарт не остался теорией, к этому PR приложен
 **первый прогон по нему — «dogfood» на самой сессии 1027**:
-[`prompts/experiments/fr-generation-1027-live_2026-06-16.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/experiments/fr-generation-1027-live_2026-06-16.md).
+[`runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md).
 
 ---
 

@@ -71,7 +71,7 @@ Issue прямо предупреждает: **не закладывать те�
 **синтетическая фикстура**, структурно воспроизводящая реальное руководство КЦ.
 Источник структуры — уже зафиксированная в репозитории выжимка двух реальных
 руководств из issue #109
-([`inputs/kb-files.md`](ba-process/multichannel-agent-workload/inputs/kb-files.md)).
+([`runs/2026/RUN-0011/inputs/kb-files.md`](../runs/2026/RUN-0011/inputs/kb-files.md)).
 
 - Генератор фикстуры: [`scripts/kb/make_sample_pdf.py`](../scripts/kb/make_sample_pdf.py)
   (reportlab + Pillow; встроенный TTF-шрифт с кириллицей — см. §3 про ловушку).
@@ -356,7 +356,7 @@ governance-решения как ADR в `docs/adr/`. Здесь решение *
 - KB-стандарт (pre-RAG, R1–R4): [standards/kb-standard.md](../standards/kb-standard.md)
 - ADR-007 (носитель стандарта KB): [docs/adr/007-kb-standard.md](adr/007-kb-standard.md)
 - Выжимка реальных руководств (источник структуры фикстуры):
-  [docs/ba-process/multichannel-agent-workload/inputs/kb-files.md](ba-process/multichannel-agent-workload/inputs/kb-files.md)
+  [runs/2026/RUN-0011/inputs/kb-files.md](../runs/2026/RUN-0011/inputs/kb-files.md)
 - pdfplumber: <https://github.com/jsvine/pdfplumber>
 - PyMuPDF (fitz): <https://pymupdf.readthedocs.io/>
 - marker (marker-pdf): <https://github.com/VikParuchuri/marker>

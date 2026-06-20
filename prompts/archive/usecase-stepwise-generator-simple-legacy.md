@@ -14,9 +14,9 @@ glossary_ref: none
 research_dep: none
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
-based_on: prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md
+based_on: runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md
 migration_status: migrated
-selftest_ref: prompts/experiments/prompts-selftest-2026-05-26.md
+selftest_ref: runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md
 selftest_result: passed
 ---
 

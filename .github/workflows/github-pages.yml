@@ -31,6 +31,9 @@ jobs:
       - name: Generate static data
         run: node scripts/generate-pages-data.mjs
 
+      - name: Validate issue #123 runs contract
+        run: python3 scripts/validate_issue_123_runs_contract.py
+
       - name: Validate Pages artifact
         run: python3 scripts/validate_issue_74_github_pages.py
 
