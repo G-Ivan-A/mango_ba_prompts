@@ -11,6 +11,13 @@ source_of_truth: "hybrid-Intelligence-lab"
 sync_policy: "explicit spoke sync from pinned Hub commit"
 ---
 
+> **LLM Loading Contract — full layer.**
+> Start with [`governance/agent-onboarding-protocol.executable.md`](agent-onboarding-protocol.executable.md).
+> Load this full file only when an escalation trigger in the executable companion
+> is true: explicit request for full/rationale/history, missing required section
+> in executable, need for exact wording/table/reference, or editing/validating
+> this full file. Otherwise do not load this file into context.
+
 > 🔁 **Адаптированная копия из Хаба.** Source of truth — канонический протокол в
 > Хабе ([governance/agent-onboarding-protocol.md](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md),
 > v1.2). Здесь он адаптирован под HTOM-команду `mango_ba_prompts`: ссылки на

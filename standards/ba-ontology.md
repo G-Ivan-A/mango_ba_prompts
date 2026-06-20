@@ -15,6 +15,13 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
 ---
 
+> **LLM Loading Contract — full layer.**
+> Start with [`standards/ba-ontology.executable.md`](ba-ontology.executable.md).
+> Load this full file only when an escalation trigger in the executable companion is true:
+> explicit request for full/rationale/history, missing required section in
+> executable, need for exact wording/table/reference, or editing/validating this
+> full file. Otherwise do not load this file into context.
+
 # Стандарт онтологии бизнес-анализа
 
 > Контракт-носитель решения [ADR-003](../docs/adr/003-ba-ontology.md). Формат — по

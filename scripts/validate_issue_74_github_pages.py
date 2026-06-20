@@ -34,7 +34,7 @@ def active_prompt_paths() -> list[Path]:
     return sorted(
         path
         for path in (ROOT / "prompts").glob("*.md")
-        if path.name != "README.md"
+        if path.name != "README.md" and not path.name.endswith(".executable.md")
     )
 
 
