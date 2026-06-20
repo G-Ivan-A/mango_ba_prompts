@@ -17,6 +17,7 @@
 | Скрипт | Назначение |
 | --- | --- |
 | [`extract.py`](extract.py) | Главный конвейер: PDF → `sections/*.md` + `index.md` + `meta.json` (+ `images/`). |
+| [`process_sources.py`](process_sources.py) | Manifest-driven runner для `kb/sources/<slug>/meta.json`: `single`, `multi_part`, `multi-document`, обновления 1→N/N→1 и product collections. |
 | [`tokens.py`](tokens.py) | Подсчёт токенов (tiktoken `cl100k_base`, иначе эвристика). Числа в отчёте/`meta.json` — реальные. |
 | [`make_sample_pdf.py`](make_sample_pdf.py) | Генератор синтетической фикстуры КЦ (реальный PDF из issue не загрузился). |
 | [`requirements.txt`](requirements.txt) | Зависимости (только для извлечения/генерации; валидатору не нужны). |
@@ -42,6 +43,20 @@ make kb-validate
 Через Makefile то же самое: `make kb-sample`, `make kb-extract`, `make kb-validate`.
 Для split-руководства КЦ из issue #119: `make kb-mango`. Для split-руководства
 ЛК из issue #117: `make kb-lk`.
+
+Для source manifest из issue #121:
+
+```bash
+# Только проверить план: PDF не читаются, подходит для CI/ревью meta.json.
+python3 scripts/kb/process_sources.py kb/sources/mtalker --dry-run
+
+# Запустить извлечение по meta.json.
+python3 scripts/kb/process_sources.py kb/sources/mtalker
+```
+
+`process_sources.py` отделяет модель источников от низкоуровневого извлечения:
+`single` и `multi_part` дают одну БЗ, а `multi-document` создаёт product
+collection с вложенной БЗ на каждый независимый документ.
 
 ## `extract.py` — что делает (ФТ-1/ФТ-2/ФТ-3)
 

@@ -13,6 +13,27 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #121 KB pipeline: multi-file сценарии и обновление документов
+
+- Добавлен manifest-driven runner
+  [`scripts/kb/process_sources.py`](scripts/kb/process_sources.py): читает
+  `kb/sources/<slug>/meta.json`, различает `single`, `multi_part` и
+  `multi_document`, строит extraction jobs и защищает локальный запуск от LFS
+  pointer-файлов вместо PDF bytes.
+- В `meta.json` источников КЦ, ЛК и Mango Talker добавлены явные
+  `processing_mode`, `output_slug`, `doc_code` и/или `source_files`; для Mango
+  Talker выбран гибридный режим: общий product collection `kb/processed/mtalker/`
+  и отдельные вложенные БЗ для каждого независимого руководства.
+- Добавлены Make targets `kb-source-plan`, `kb-source-extract`, `kb-mtalker` и
+  workflow input `source_dir`, чтобы ручной KB pipeline мог запускаться по
+  source manifest, а не только по raw списку PDF-путей.
+- Добавлена stdlib-проверка
+  [`scripts/validate_issue_121_kb_multi_file.py`](scripts/validate_issue_121_kb_multi_file.py):
+  фиксирует реальные манифесты, synthetic сценарии `single`, `multi_part`,
+  `multi_document`, обновления 1→N, N→1, добавление и удаление документов.
+- Обновлена инструкция [`kb/sources/README.md`](kb/sources/README.md): примеры
+  `meta.json`, сценарии 1–6, правила обновления и troubleshooting для Git LFS.
+
 ### Fixed — Issue #119 KB pipeline: multi-part PDF и Git LFS
 
 - Workflow KB pipeline обновлён для LFS-aware checkout (`lfs: true`) и текущих
