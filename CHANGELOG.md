@@ -13,6 +13,14 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #139 ADR по Industry Taxonomy
+
+- Добавлен proposed ADR
+  [`standards/decisions/ADR-011-industry-taxonomy.md`](standards/decisions/ADR-011-industry-taxonomy.md):
+  выбран hybrid reference taxonomy на базе Hub classification и сверки с Cisco,
+  MTS Exolve, Twilio, RingCentral, Amazon Connect, Genesys, Microsoft Teams и
+  8x8; сам стандарт, Mango Taxonomy, KB-данные и `research/` не создавались.
+
 ### Changed — Issue #137 миграция product docs в `kb/mango-product-docs/`
 
 - Product documentation KB перенесена из прежних корневых product-docs
