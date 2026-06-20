@@ -1,7 +1,7 @@
 ---
 status: canonical
-version: 2.1
-updated: 2026-06-11
+version: 2.2
+updated: 2026-06-20
 ai-generated: true
 ---
 
@@ -28,6 +28,15 @@ ai-generated: true
   [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md), а
   граф связей, матрицы, классификации и сценарии запуска — в
   [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md).
+- **Онтология требований** — стандарт
+  [`standards/ba-ontology.md`](standards/ba-ontology.md) теперь содержит
+  ортогональную ось `requirement_level`, тип артефакта `business-rule` и
+  crosswalk [`docs/requirements-engineering-crosswalk.md`](docs/requirements-engineering-crosswalk.md)
+  для связи Вигерса, операций mango и BCREQ. Источники синхронизации:
+  Hub RFC
+  [`requirements-engineering-ai-era-2026.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md)
+  и
+  [`ai-classifications-formalization-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md).
 - **Стратегическое направление** — перенос лучших практик в Хаб; процесс и
   критерии зафиксированы в RFC
   [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md).
@@ -132,7 +141,8 @@ self-test evidence живёт в [`runs/`](runs/).
 | `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Atomic Function`. Это спецификация, **не** глоссарий. |
 | `standards/prompt-standard.md` | Контракт промпта: 4 обязательных поля frontmatter, именование, RAG-формат ссылок. |
 | `standards/pattern-standard.md` | Контракт паттерна: 8 обязательных полей, универсальный `prompt_template`. |
-| `standards/ba-ontology.md` *(+ `artifact-naming`, `team-directory`, `kb`, `industry-standards`, `bcreq-process`, `pages-ux`)* | Формализованная онтология БА и стандарты (issue #97); контракты-носители — [ADR-003…010](docs/adr/). |
+| `standards/ba-ontology.md` *(+ `artifact-naming`, `team-directory`, `kb`, `industry-standards`, `bcreq-process`, `pages-ux`)* | Формализованная онтология БА и стандарты (issues #97/#127): `requirement_level`, `business-rule`, граф артефактов; контракты-носители — [ADR-003…010](docs/adr/). |
+| `docs/requirements-engineering-crosswalk.md` | Справочный crosswalk Вигерс ↔ операции mango ↔ BCREQ (C3/С3). |
 
 > ℹ️ Каталог появляется **только** под реальный артефакт — спок не носит с
 > собой пустых «органелл» (Anti-Inflation principle).
@@ -153,6 +163,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | --- | --- |
 | Что за проект и зачем он существует | Этот `README.md` |
 | Таксономия операций и процессов БА | [`docs/taxonomy.md`](docs/taxonomy.md) |
+| Crosswalk Вигерс ↔ mango ↔ BCREQ | [`docs/requirements-engineering-crosswalk.md`](docs/requirements-engineering-crosswalk.md) |
 | Как связаны направления, шаблоны, процессы, операции и промпты | [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |

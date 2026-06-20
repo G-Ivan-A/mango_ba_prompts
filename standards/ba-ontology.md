@@ -1,18 +1,20 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-16
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: contract
 scope: ba-ontology
 related_artifacts:
   - "docs/adr/003-ba-ontology.md"
+  - "docs/requirements-engineering-crosswalk.md"
   - "docs/taxonomy.md"
   - "docs/ba-processes/00-index.md"
   - "standards/product-classification-contract.md"
   - "governance/artifact-map.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/127"
 ---
 
 > **LLM Loading Contract — full layer.**
@@ -28,7 +30,7 @@ related_issues:
 > практике Хаба: обязательства сверху, обоснование — в ADR. Нормативный словарь
 > [RFC 2119](https://www.rfc-editor.org/info/bcp14)
 > (**ДОЛЖНО** / **СЛЕДУЕТ** / **МОЖНО**). Версия `draft` до утверждения
-> Пользователем (issue #97).
+> Пользователем (issues #97, #127).
 
 ## Стороны и область
 
@@ -52,6 +54,7 @@ related_issues:
 | Направление разработки | `kebab-case` | 6 | [docs/ba-ecosystem.md](../docs/ba-ecosystem.md) |
 | Область знаний BABOK | KA-код | 6 | [ADR-004](../docs/adr/004-operations-taxonomy.md) |
 | Стандарт | имя+редакция | N | этот стандарт, [industry-standards-standard.md](industry-standards-standard.md) |
+| Уровень требования | `requirement_level` | 4 | этот стандарт + RFC Хаба С1 |
 | Состояние жизненного цикла | см. §5 | 8 | этот стандарт |
 
 **Правило С1.** Новая операция/процесс **ДОЛЖНА** сперва появиться в
@@ -77,10 +80,38 @@ related_issues:
 | R10 | `реализует` | Паттерн → Операция | N → M |
 | R11 | `исполняет` | Промпт → Паттерн | N → 1 |
 | R12 | `трассируется` | Артефакт → Артефакт | N → M |
+| R13 | `имеет уровень требования` | Артефакт-требование → `requirement_level` | 1 → 1 |
+| R14 | `порождает / ограничивает` | `business-rule` → Артефакт-требование | N → M |
 
 **Правило С2.** Ребро `трассируется` (R12) **ДОЛЖНО** связывать каждый
 производный артефакт минимум с одним источником (НФТ трассируемости). Пример:
 `Раздел 4 ФТ` ← `User Story` ← `Глоссарий задачи` ← `Очищенная расшифровка`.
+
+### 2.1. Ось уровней требований (`requirement_level`) — С1 RFC Хаба
+
+`requirement_level` — ортогональный тег для семантического уровня требования по
+Вигерсу: зачем бизнесу нужно изменение, кто/что получает ценность, какую функцию
+должна дать система или какое нефункциональное свойство ограничивает решение.
+Ось **не заменяет** существующую классификацию
+`Domain→Capability→Feature→Atomic Function`; она дополняет её. Поэтому один
+артефакт-требование **ДОЛЖЕН** иметь и продуктовую классификацию R8, и уровень
+R13, если его уровень можно определить без домысла.
+
+| Значение | RU | Когда использовать | Пример |
+| --- | --- | --- | --- |
+| `business` | бизнес-уровень | Цель, outcome, KPI, ограничение бизнеса или обоснование ценности. | «Сократить долю пропущенных callback на 15%». |
+| `user` | пользовательский уровень | Потребность роли, сценарий, Job/User Story, observable value для пользователя. | «Супервизор видит очередь callback по SLA». |
+| `functional` | функциональный уровень | Поведение системы, функция, обработка события, бизнес-сценарий. | «Система назначает callback оператору с подходящим skill». |
+| `non-functional` | нефункциональный уровень | Качество, ограничение, SLA, безопасность, производительность, соответствие норме. | «Время расчёта приоритета не превышает 2 секунд». |
+
+**Правило W1.** `requirement_level` **ДОЛЖЕН** храниться как отдельный тег
+артефакта-требования. Запрещено выводить уровень требования только из глубины
+`BCREQ-NNN.k.m` или из продуктовой классификации, потому что глубина дерева и
+Domain→Capability→Feature→Atomic Function отвечают на другие вопросы.
+
+**Правило W2.** Если уровень нельзя классифицировать уверенно, артефакт
+**СЛЕДУЕТ** оставить в `needs-clarification` или явно пометить вопросом в
+`customer-questions` (A08), а не подставлять вероятный уровень.
 
 ## 3. Классификация операций по исполнителю
 
@@ -146,9 +177,16 @@ related_issues:
 | A28 | `analysis-note` | выход | Аналитическая записка по research-вопросу. | `research` | `solution_design`,`governance` | BABOK Strategy Analysis |
 | A29 | `status-backlog` | выход | Чек-лист статусов / бэклог управления. | `governance` | все процессы | BABOK RLCM |
 | A30 | `bcreq` | композит | Многоуровневое требование BCREQ (см. ADR-009). | несколько процессов | `governance`,`release_readiness` | BABOK; ISO/IEC/IEEE 29148; ГОСТ 34.602-2020 |
+| A31 | `business-rule` | выход | Формализуемая норма, политика, факт, активатор, вывод или вычисление, которому система и требования должны соответствовать. Категории: Факты / Ограничения / Активаторы операций / Выводы / Вычисления. | `understanding`,`documentation` | `validation`,`modeling`,`solution_design`,`risk_analysis` | Wiegers/Beatty; RFC Хаба С2; ISO/IEC/IEEE 29148 (traceability/constraints) |
 
-> **Итого: 30 типов ≥ 20** (требование ФТ-1). Категории: вход (6), промежуточный
-> (3), выход (15), композит/документ (6).
+> **Итого: 31 тип ≥ 20** (требование ФТ-1). Категории: вход (6), промежуточный
+> (3), выход (16), композит/документ (6).
+
+**Правило W3.** `business-rule` **ДОЛЖЕН** иметь ровно одну категорию из набора
+`fact`, `constraint`, `operation-activator`, `inference`, `computation`
+(соответственно: Факты, Ограничения, Активаторы операций, Выводы, Вычисления).
+Правило **ДОЛЖНО** трассироваться к функции, ограничению, BCREQ или разделу ФТ,
+который оно порождает или ограничивает (R12/R14).
 
 **Правило С4.** Каждый артефакт §4 **ДОЛЖЕН** иметь ≥1 производящую операцию
 (кроме категории «вход») и ≥1 ребро `регулируется` со стандартом (кроме чисто
@@ -197,12 +235,17 @@ human gate (модель «молчание = согласие»,
 ## Критерии соответствия (DoD)
 
 - [ ] Каждая операция отнесена к исполнителю (§3) и имеет выходной gate.
-- [ ] Реестр §4 содержит ≥20 типов (сейчас 30), у каждого выхода есть операция
+- [ ] `requirement_level` задан как ортогональная ось для артефактов-требований
+      (§2.1) и не заменяет Domain→Capability→Feature→Atomic Function.
+- [ ] `business-rule` присутствует в реестре (§4, A31) и имеет одну из пяти
+      категорий Вигерса (W3).
+- [ ] Реестр §4 содержит ≥20 типов (сейчас 31), у каждого выхода есть операция
       и стандарт.
 - [ ] Машина состояний (§5) включает `needs-clarification` для незавершённых
       подпроцессов.
 - [ ] Все внешние источники приведены полными URL (см. ADR-003).
 - [ ] `python3 scripts/validate_issue_97_ontology_standards.py` проходит.
+- [ ] `python3 scripts/validate_issue_127_hub_rfc_sync.py` проходит.
 
 ## Источники
 
@@ -216,3 +259,8 @@ human gate (модель «молчание = согласие»,
 - ГОСТ 34.601-90: <https://docs.cntd.ru/document/1200006921>
 - TM Forum SID: <https://www.tmforum.org/open-digital-architecture/information-framework-sid/>
 - IREB CPRE Glossary: <https://cpre.ireb.org/en/downloads-and-resources/glossary>
+- Hub RFC `requirements-engineering-ai-era-2026.md` (С1/С2/С3, Вигерс ↔ mango):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md>
+- Hub RFC `ai-classifications-formalization-2026-06.md` (AI-классификации,
+  статус `Candidate`, подготовка синхронизации С1/С2/С3):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md>

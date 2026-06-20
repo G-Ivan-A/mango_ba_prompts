@@ -1,13 +1,14 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-13
+version: 0.3
+updated: 2026-06-20
 ai-generated: true
 type: research-dependency-registry
 scope: mango_ba_prompts
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 latest_smart_sync_sha: "b683341d22d4f518618917a02d9c7c394658b156"
+latest_issue_127_hub_sha: "73e94c6e69995ccf9e746c19d9c18359971285f2"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 ---
 
@@ -37,6 +38,10 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   строки регистрируются ниже как компактный срез.
 - **HTML-экспорты не регистрируются.** Файлы `*.html` — дубли соответствующих
   `*.md` (RFC §2.5) и якорей-потребителей не получают.
+- **Issue #127 sync.** RFC `requirements-engineering-ai-era-2026.md` и
+  `ai-classifications-formalization-2026-06.md` закреплены на SHA
+  `73e94c6e69995ccf9e746c19d9c18359971285f2` и используются reference-only для
+  C1/C2/C3 синхронизации онтологии.
 
 ## Сводная таблица
 
@@ -49,6 +54,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 | [`#requirements-lifecycle`](#requirements-lifecycle) | [`research/mango/requirements-lifecycle-uncertainty-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/requirements-lifecycle-uncertainty-2026-05.md) | 52.8 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
 | [`#capability-decomposition`](#capability-decomposition) | [`research/mango/capability-decomposition-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/capability-decomposition-2026-05.md) | 90.1 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
 | [`#rag-mapping`](#rag-mapping) | [`research/mango/rag-mapping-roadmap-2026-05.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/rag-mapping-roadmap-2026-05.md) | 44.8 KB | `docs/ba-ecosystem.md` | 🔵 reference-only @ `038868d` |
+| [`#requirements-engineering-ai-era`](#requirements-engineering-ai-era) | [`research/mango/requirements-engineering-ai-era-2026.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md) | 414 lines | `standards/ba-ontology.md`, `docs/adr/003-ba-ontology.md`, `docs/adr/004-operations-taxonomy.md`, `docs/requirements-engineering-crosswalk.md`, `docs/taxonomy.md`, `README.md` | 🔵 reference-only @ `73e94c6` |
+| [`#ai-classifications-formalization`](#ai-classifications-formalization) | [`research/mango/ai-classifications-formalization-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md) | 474 lines | `standards/ba-ontology.md`, `docs/adr/003-ba-ontology.md`, `docs/adr/004-operations-taxonomy.md`, `docs/requirements-engineering-crosswalk.md`, `docs/taxonomy.md`, `README.md` | 🔵 reference-only @ `73e94c6` |
 | [`#research-readme`](#research-readme) | [`research/mango/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/README.md) | 2.8 KB | — (точка входа по навигации) | 🔵 reference-only @ `038868d` |
 | [`#external-sources-registry`](#external-sources-registry) | [`research/external-knowledge/external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | 105 lines | `docs/ba-ecosystem.md`, future requirements-flow pilots | 🔵 reference-only @ `b683341` |
 | [`#external-spec-driven`](#external-spec-driven) | `ext-003` in [`external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | row | future spec-driven requirements experiments | 🔵 reference-only @ `b683341` |
@@ -138,6 +145,40 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 - **Потребители (`research_dep`):**
   - `docs/ba-ecosystem.md`
 - **Политика:** reference only; не копировать.
+
+<a id="requirements-engineering-ai-era"></a>
+
+### `#requirements-engineering-ai-era` — Вигерс ↔ mango, C1/C2/C3
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md>
+- **Описание:** RFC сравнивает модель Вигерса с ADR #003-#010 mango и выделяет
+  C1 (`requirement_level`), C2 (`business-rule`) и C3 (crosswalk Вигерс ↔ mango ↔
+  BCREQ) как синхронизацию issue #127.
+- **Потребители (`research_dep`):**
+  - `standards/ba-ontology.md`
+  - `docs/adr/003-ba-ontology.md`
+  - `docs/adr/004-operations-taxonomy.md`
+  - `docs/requirements-engineering-crosswalk.md`
+  - `docs/taxonomy.md`
+  - `README.md`
+- **Политика:** reference only; не копировать RFC в спок.
+
+<a id="ai-classifications-formalization"></a>
+
+### `#ai-classifications-formalization` — AI-классификации Mango
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md>
+- **Описание:** companion RFC формализует AI-классификации и подтверждает
+  подготовку C1/C2/C3 для `mango_ba_prompts`; AI-практики остаются `Candidate` и
+  не внедряются как стандарт в issue #127.
+- **Потребители (`research_dep`):**
+  - `standards/ba-ontology.md`
+  - `docs/adr/003-ba-ontology.md`
+  - `docs/adr/004-operations-taxonomy.md`
+  - `docs/requirements-engineering-crosswalk.md`
+  - `docs/taxonomy.md`
+  - `README.md`
+- **Политика:** reference only; не копировать RFC в спок.
 
 <a id="research-readme"></a>
 

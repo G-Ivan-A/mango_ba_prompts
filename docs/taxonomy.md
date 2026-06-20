@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-11
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: taxonomy
 scope: repo-wide
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/52"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/127"
 ---
 
 # Таксономия: когнитивные операции и процессы БА
@@ -28,6 +29,10 @@ related_issues:
 - **Маппинг процесс ↔ паттерн ↔ промпт** ведётся централизованно в
   [docs/ba-processes/00-index.md](ba-processes/00-index.md) — не во
   frontmatter файлов.
+- **Crosswalk Вигерс ↔ mango ↔ BCREQ** ведётся в
+  [docs/requirements-engineering-crosswalk.md](requirements-engineering-crosswalk.md)
+  как справочный C3/С3-мост к классической терминологии, без переименования
+  операций mango.
 
 ## 1. Когнитивные операции (13)
 
@@ -135,11 +140,27 @@ Complete, Singular, Feasible, Verifiable, Correct, Conforming. 5 характе�
 - ISO/IEC 25010:2011: <https://www.iso.org/standard/35733.html> · 2023: <https://www.iso.org/standard/78176.html>
 - ГОСТ 34.602-2020 (структура ТЗ): <https://docs.cntd.ru/document/1200181804>
 - ГОСТ 34.601-90 (стадии создания АС): <https://docs.cntd.ru/document/1200006921>
+- Hub RFC `requirements-engineering-ai-era-2026.md` (С1/С2/С3, Вигерс ↔ mango):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md>
+- Hub RFC `ai-classifications-formalization-2026-06.md` (AI-классификации,
+  статус `Candidate`, подготовка синхронизации С1/С2/С3):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md>
+
+### 4.4. C3/С3: crosswalk к Вигерсу
+
+Для чтения классической модели Вигерса «Выявление / Анализ / Спецификация /
+Проверка + Управление» используйте
+[docs/requirements-engineering-crosswalk.md](requirements-engineering-crosswalk.md).
+Этот файл сопоставляет процессы Вигерса с 13 операциями mango и подпроцессами
+BCREQ П1-П6. Он справочный: операции §1 и процессы §2 остаются нормативными для
+именования промптов, паттернов и process map.
 
 ## Связанные артефакты
 
 - [docs/ba-processes/00-index.md](ba-processes/00-index.md) — маппинг
   процесс ↔ операции ↔ промпты.
+- [docs/requirements-engineering-crosswalk.md](requirements-engineering-crosswalk.md) —
+  crosswalk Вигерс ↔ mango ↔ BCREQ (C3/С3 из issue #127).
 - [standards/prompt-standard.md](../standards/prompt-standard.md) — контракт
   промпта (именование, frontmatter).
 - [standards/pattern-standard.md](../standards/pattern-standard.md) — контракт
