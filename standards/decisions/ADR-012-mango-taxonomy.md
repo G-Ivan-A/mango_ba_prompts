@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.2
+version: 0.3
 updated: 2026-06-20
 ai-generated: true
 type: adr
@@ -8,6 +8,7 @@ scope: mango-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/142"
 validated_by:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/148"
 depends_on:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
@@ -17,6 +18,7 @@ site_sources:
   - "https://www.mango-office.ru/products/"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/143"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/149"
 related_artifacts:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/product-classification-contract.md"
@@ -281,7 +283,7 @@ function:
   id: select-wallboard-widget
   layer: internal
   parent_module: wallboard
-  function_type: setting
+  function_type: ui-action
   industry_alignment:
     - domain: analytics
       capability: product-analytics
@@ -291,6 +293,142 @@ function:
   kb_refs:
     - kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md
 ```
+
+### Атрибуты Function
+
+`Function` остаётся leaf-level единицей Mango Taxonomy: минимальным
+проверяемым поведением, настройкой, API-командой, UI-действием, параметром или
+правилом внутри Module. Для будущего стандарта каждая Function должна иметь
+следующий минимум:
+
+```yaml
+function:
+  id: configure-webhook-url
+  layer: internal
+  parent_module: webhooks
+  name_ru: Настроить URL webhook
+  function_type: configuration
+  interaction_surface: admin-ui
+  source_terms:
+    - operation
+    - setting
+  aliases:
+    - configure-callback-url
+  industry_alignment:
+    - industry_ref:
+        domain: platform
+        capability: open-api
+        feature: webhook-management
+        function: configure-webhook-endpoint
+      alignment_type: supporting
+  kb_refs:
+    - kb/mango-product-docs/processed/vpbx-api/index.md
+```
+
+`function_type` классифицирует смысл функции, а не канал реализации. API,
+экран или background job фиксируются отдельно в `interaction_surface`.
+
+| `function_type` | Когда использовать | Примеры | Использование в требованиях |
+| --- | --- | --- | --- |
+| `business` | Функция создаёт клиентский или операционный бизнес-результат. | `transfer-call`, `send-dialog-message`, `create-outbound-campaign`, `generate-ai-summary`. | Генерировать ФТ, acceptance criteria, бизнес-правила и gap analysis. |
+| `configuration` | Функция меняет настройку, политику, маршрутизацию, доступ или lifecycle параметр сервиса. | `configure-webhook-url`, `enable-call-recording`, `set-queue-schedule`, `assign-agent-role`. | Генерировать admin requirements, migration checklist, controls and rollback steps. |
+| `ui-action` | Функция описывает пользовательское действие в интерфейсе, нужное для сценария, но не является самостоятельной бизнес-возможностью. | `select-wallboard-widget`, `open-call-filter`, `switch-agent-tab`, `expand-report-section`. | Генерировать UX/UI acceptance criteria, сценарии обучения и e2e шаги, не раздувая product capability list. |
+
+Внешнее обоснование:
+
+| Источник | Сигнал | Решение для Mango Taxonomy |
+| --- | --- | --- |
+| TM Forum SID: <https://www.tmforum.org/open-digital-architecture/information-framework-sid/> | SID даёт общий словарь и data reference model для business entities, function, application, component и API development. | `Function` остаётся leaf-level, а Component не становится отдельным уровнем: source-specific Component нормализуется в Mango `Module`. |
+| TM Forum ODA Functional Framework: <https://www.tmforum.org/open-digital-architecture/functional-framework/> | Functional Framework описывает granular functions как базовые единицы, которые выполняют service and produce a complete result. | `business` фиксирует функции, которые дают завершённый результат, независимо от того, вызваны они UI или API. |
+| ITIL 4 Service Configuration Management: <https://www.axelos.com/certifications/itil-service-management/itil-practices-manager/itil-4-specialist-plan-implement-and-control/itil-4-practitioner-service-configuration-management> | ITIL 4 отделяет configuration information/support items от остального service management. | `configuration` отделяет настройки и управление конфигурацией от бизнес-функций и UI-шагов. |
+| ISO/IEC 25010:2023: <https://www.iso.org/standard/78176.html> | ISO/IEC 25010:2023 используется для requirements specification, evaluation, testing objectives and acceptance criteria of ICT products. | `business` и `ui-action` разделяют функциональный результат и interaction-oriented проверку, чтобы требования и acceptance criteria не смешивали capability с экранным шагом. |
+
+### Алиасы терминов
+
+Canonical taxonomy terms должны использоваться в ADR, standards, validators and
+future registry. Source terms из Mango docs сохраняются как aliases/source_terms,
+но не создают новые уровни.
+
+| Source term | Canonical term | Правило использования |
+| --- | --- | --- |
+| Component | Module | Component=Module. Если processed KB или внешний источник говорит Component, в registry пишем `module`, а исходный термин сохраняем в `aliases` или `source_terms`. |
+| Operation | Function | Operation=Function. API operation, user operation или operational step нормализуется в `Function`, если это проверяемое leaf-level действие, команда, настройка или правило. |
+
+Дополнительные слова вроде action, setting, endpoint, command и parameter
+являются evidence terms. Они помогают выбрать `function_type`, но не заменяют
+canonical уровни `Product -> Service -> Module -> Function`.
+
+### Формат маппинга
+
+Product-to-Industry mapping хранится как typed YAML/JSON object с массивом
+`industry_alignment`. Значения внутри `industry_ref` являются строгими ссылками
+на Industry Taxonomy, не свободные теги.
+
+```yaml
+taxonomy_mapping:
+  version: 1
+  mapping_scope: mango-to-industry
+  source_taxonomy: mango-taxonomy
+  target_taxonomy: industry-taxonomy
+  products:
+    - product_id: mango-contact-center
+      industry_alignment:
+        - industry_ref:
+            domain: contact-center
+            capability: omnichannel-contact-center
+          alignment_type: primary
+          evidence_refs:
+            - standards/decisions/ADR-012-mango-taxonomy.md
+            - kb/mango-product-docs/processed/mango-cc-manual/index.md
+        - industry_ref:
+            domain: digital-channels
+            capability: omnichannel-messaging
+          alignment_type: secondary
+          evidence_refs:
+            - kb/mango-product-docs/processed/mdialogi-api/index.md
+  services:
+    - service_id: open-api
+      supports_official_products:
+        - mango-virtual-pbx
+        - mango-contact-center
+      industry_alignment:
+        - industry_ref:
+            domain: platform
+            capability: open-api
+          alignment_type: supporting
+          evidence_refs:
+            - kb/mango-product-docs/processed/vpbx-api/index.md
+  functions:
+    - function_id: configure-webhook-url
+      function_type: configuration
+      industry_alignment:
+        - industry_ref:
+            domain: platform
+            capability: open-api
+            feature: webhook-management
+            function: configure-webhook-endpoint
+          alignment_type: supporting
+          evidence_refs:
+            - kb/mango-product-docs/processed/vpbx-api/index.md
+```
+
+Validation rules for future registry:
+
+- `taxonomy_mapping.version`, `source_taxonomy`, `target_taxonomy` and
+  `industry_alignment[]` are required.
+- `industry_ref.domain` is required for every alignment; deeper fields are
+  required by Mango level: Product may stop at Domain/Capability, Service at
+  Capability, Module at Feature, Function at Function.
+- `domain`, `capability`, `feature` and `function` values must resolve to
+  canonical Industry Taxonomy slugs from ADR-011 or the future registry.
+- `alignment_type` must be one of `primary`, `secondary`, `supporting`; every
+  mapped entity must have at least one `primary` or an explicit reason why it is
+  only `supporting`.
+- `evidence_refs[]` must point to ADR, official site, processed KB or future
+  registry evidence; free-text notes do not replace evidence refs.
+- Facets such as `industry`, `segment`, `region`, `commercial_package` and
+  `compliance` stay outside `industry_ref` so they cannot masquerade as
+  taxonomy nodes.
 
 ## Taxonomy Alignment с ADR-011
 

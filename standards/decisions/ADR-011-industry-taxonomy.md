@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.2
+version: 0.3
 updated: 2026-06-20
 ai-generated: true
 type: adr
@@ -8,10 +8,12 @@ scope: industry-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/139"
 validated_by:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/148"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
 hub_research_sha: "73e94c6e69995ccf9e746c19d9c18359971285f2"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/140"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/149"
 related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/hub-research-dependencies.md"
@@ -258,6 +260,47 @@ processed KB в issue #146.
 Этот ADR не утверждает финальный стандарт и не создаёт KB. Он фиксирует решение,
 которое должна проверить команда перед отдельными PR на стандарт, Mango Taxonomy
 и KB reference data.
+
+## Использование в маппинге
+
+Industry Taxonomy используется как reference layer для Mango Taxonomy и будущих
+KB-реестров. Связи с ним должны быть строгими ссылками на taxonomy nodes, а
+не свободными тегами. Свободные labels допустимы только в фасетах вроде
+`industry`, `segment`, `use_case` или `region`; они не заменяют
+`industry_ref`.
+
+Минимальная структура ссылки:
+
+```yaml
+industry_ref:
+  domain: contact-center
+  capability: omnichannel-contact-center
+  feature: agent-workspace
+  function: set-agent-status
+alignment_type: primary
+```
+
+Правила применения:
+
+- `industry_ref.domain` обязателен для любой связи и должен ссылаться на
+  canonical Domain из ADR-011 или будущего Industry Taxonomy registry.
+- `industry_ref.capability`, `industry_ref.feature` и `industry_ref.function`
+  добавляются по мере глубины Mango entity: Product может ссылаться на несколько Domain/Capability,
+  Service — на Capability, Module — на Feature, Mango `Function` — на Function.
+- `alignment_type` принимает только `primary`, `secondary` или `supporting`.
+  `primary` фиксирует главный отраслевой смысл; `secondary` — важную
+  дополнительную связь; `supporting` — platform, hardware, security или
+  operational support связь.
+- Каждая связь должна иметь evidence в ADR, processed KB или future registry.
+  Если canonical slug отсутствует, связь остаётся открытым вопросом, а не
+  добавляется как произвольный tag.
+- Many-to-many является нормой: один Mango Product может покрывать несколько
+  Domain/Capability, а один Industry Capability может поддерживаться несколькими
+  Mango Products, Services или Modules.
+
+Эти правила нужны, чтобы Product-to-Industry mapping был проверяемым,
+диффируемым и пригодным для генерации требований, а не зависел от локальных
+синонимов в документации.
 
 ## Rationale
 

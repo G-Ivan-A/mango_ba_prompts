@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.1
+status: canonical
+version: 1.0
 updated: 2026-06-20
 ai-generated: true
 type: audit
@@ -11,6 +11,8 @@ related_artifacts:
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "standards/product-classification-contract.md"
   - "kb/mango-product-docs/processed/"
+canonicalized_by:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/148"
 ---
 
 # Issue #146: Mango Taxonomy validation on processed product docs
@@ -30,6 +32,20 @@ Decision summary:
   documents.
 - Commercial packages, tariffs, procurement fields, industry segments and
   regional labels stay outside the hierarchy as facets.
+
+## Canonicalization note
+
+Issue #148 closes the three open questions from this audit and promotes the
+audit from draft to canonical:
+
+- `function_type` is fixed as the required Function attribute with the values
+  `business`, `configuration` and `ui-action`.
+- Term aliases are fixed as Component=Module and Operation=Function.
+- Mango-to-Industry mapping uses strict `industry_ref` links to ADR-011
+  Domain/Capability/Feature/Function nodes instead of free tags.
+
+Canonicalizing issue:
+<https://github.com/G-Ivan-A/mango_ba_prompts/issues/148>
 
 ## Sources
 
