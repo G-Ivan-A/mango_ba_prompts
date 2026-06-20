@@ -1,0 +1,70 @@
+{
+  "name": "Mango Talker - Комплект документации",
+  "product": "Mango Talker",
+  "type": "documentation_set",
+  "version": "23.08.2024",
+  "language": "ru",
+  "upload_date": "2026-06-20",
+  "description": "Полный комплект документации по софтфону Mango Talker от MANGO OFFICE. Включает руководства для Windows, Mac и Android: быстрый старт, руководство пользователя, настройка, администрирование ВАТС.",
+  "platforms": ["Windows", "MacOS", "Android"],
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "documents": [
+    {
+      "file_name": "mTalker_Quick_start.pdf",
+      "title": "Mango Talker для Windows/Mac - Быстрый старт",
+      "type": "quick_start_guide",
+      "platform": ["Windows", "MacOS"],
+      "pages_count": 4,
+      "file_size_kb": 332,
+      "description": "Руководство по быстрому старту для Mango Talker. Краткая инструкция по началу работы с приложением."
+    },
+    {
+      "file_name": "mTalker_User_Guide_ch1_Working.pdf",
+      "title": "Mango Talker для Windows/Mac - Руководство пользователя (Работа)",
+      "type": "user_manual",
+      "platform": ["Windows", "MacOS"],
+      "pages_count": 122,
+      "file_size_mb": 2.3,
+      "description": "Основное руководство пользователя. Подробное описание работы с софтфоном: звонки, чаты, контакты, история вызовов."
+    },
+    {
+      "file_name": "mTalker_User_Guide_ch2_Settings.pdf",
+      "title": "Mango Talker для Windows/Mac - Установка настроек",
+      "type": "settings_guide",
+      "platform": ["Windows", "MacOS"],
+      "pages_count": 19,
+      "file_size_kb": 645,
+      "description": "Руководство по настройке Mango Talker. Описание параметров конфигурации, настройки аудио/видео устройств, интеграция с ВАТС."
+    },
+    {
+      "file_name": "mTalker_User_Guide_ch3_Admin_Guide.pdf",
+      "title": "Mango Talker для Windows/Mac - Информация для администратора ВАТС",
+      "type": "admin_guide",
+      "platform": ["Windows", "MacOS"],
+      "pages_count": 9,
+      "file_size_kb": 586,
+      "description": "Руководство для администраторов ВАТС по настройке и управлению Mango Talker. Настройка учетных записей, политик безопасности, массовое развертывание."
+    },
+    {
+      "file_name": "UserGuide_mTalker_4Mobile.pdf",
+      "title": "Mango Talker для Android - Руководство пользователя",
+      "type": "user_manual",
+      "platform": ["Android"],
+      "pages_count": 52,
+      "file_size_mb": 1.24,
+      "description": "Руководство пользователя мобильного приложения Mango Talker для Android. Софтфон для смартфонов и планшетов."
+    }
+  ],
+  "total_files": 5,
+  "total_pages": 206,
+  "total_size_mb": 5.06,
+  "source_url": null
+}
