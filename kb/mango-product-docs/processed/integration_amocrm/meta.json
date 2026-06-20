@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 2209
+      "tokens": 2214
     },
     {
       "file": "sections/01-nachalo-raboty-s-integraciey.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Начало работы с интеграцией",
-      "tokens": 9384
+      "tokens": 9389
     },
     {
       "file": "sections/02-nastroyka-integracii.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Настройка интеграции",
-      "tokens": 38288
+      "tokens": 38293
     },
     {
       "file": "sections/03-vhodyaschiy-zvonok.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Входящий звонок",
-      "tokens": 623
+      "tokens": 628
     },
     {
       "file": "sections/04-ishodyaschiy-zvonok.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Исходящий звонок",
-      "tokens": 273
+      "tokens": 278
     },
     {
       "file": "sections/05-propuschennye-zvonki.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Пропущенные звонки",
-      "tokens": 547
+      "tokens": 552
     },
     {
       "file": "sections/06-istoriya-vyzovov.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "История вызовов",
-      "tokens": 289
+      "tokens": 294
     },
     {
       "file": "sections/07-kartochka-zvonka.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Карточка звонка",
-      "tokens": 8673
+      "tokens": 8678
     },
     {
       "file": "sections/08-spisok-obzvona.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Список обзвона",
-      "tokens": 1568
+      "tokens": 1573
     },
     {
       "file": "sections/09-analitika.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Аналитика",
-      "tokens": 155
+      "tokens": 160
     },
     {
       "file": "sections/10-zapis-razgovorov.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Запись разговоров",
-      "tokens": 471
+      "tokens": 476
     },
     {
       "file": "sections/11-integraciya-s-kolltrekingom-mango-office.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Интеграция с Коллтрекингом MANGO OFFICE",
-      "tokens": 2429
+      "tokens": 2434
     },
     {
       "file": "sections/12-postzvonkovaya-ocenka-kachestva.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Постзвонковая оценка качества",
-      "tokens": 2922
+      "tokens": 2927
     },
     {
       "file": "sections/13-integraciya-s-adresnoy-knigoy-virtualnoy.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Интеграция с адресной книгой Виртуальной АТС",
-      "tokens": 773
+      "tokens": 778
     },
     {
       "file": "sections/14-integraciya-s-kontakt-centrom-mango-offi.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Интеграция с Контакт Центром MANGO OFFICE",
-      "tokens": 8602
+      "tokens": 8607
     },
     {
       "file": "sections/15-softfon-mango-connect.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Софтфон MANGO CONNECT",
-      "tokens": 1607
+      "tokens": 1612
     },
     {
       "file": "sections/16-osobennosti.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Особенности",
-      "tokens": 240
+      "tokens": 245
     },
     {
       "file": "sections/17-vsplyvayuschie-soobscheniya-ob-oshibkah.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Всплывающие сообщения об ошибках в интерфейсе",
-      "tokens": 6645
+      "tokens": 6650
     }
   ],
   "source_document": "integration_amocrm",
@@ -364,6 +364,6 @@
   ],
   "table_count": 15,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 2234,
-  "tokens_total": 85698
+  "tokens_index": 2249,
+  "tokens_total": 85788
 }

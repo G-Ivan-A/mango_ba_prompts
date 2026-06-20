@@ -14,7 +14,7 @@ source_pages: "ч.1: 51"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf","part":1,"pages":"51","global_pages":"51"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 195
+tokens: 200
 status: extracted
 ai-generated: true
 ---

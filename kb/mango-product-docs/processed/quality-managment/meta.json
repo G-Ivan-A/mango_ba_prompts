@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1153
+      "tokens": 1158
     },
     {
       "file": "sections/01-bystryy-start.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Быстрый старт",
-      "tokens": 120
+      "tokens": 125
     },
     {
       "file": "sections/02-kak-podklyuchit-modul-kontrol-kachestva.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Как подключить модуль Контроль качества в Личном кабинете",
-      "tokens": 776
+      "tokens": 781
     },
     {
       "file": "sections/03-kak-dobavit-kontrolera.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Как добавить контролера",
-      "tokens": 341
+      "tokens": 346
     },
     {
       "file": "sections/04-roli-i-funkcii.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Роли и функции",
-      "tokens": 2458
+      "tokens": 2463
     },
     {
       "file": "sections/05-nastroyka-blankov-ocenki.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Настройка бланков оценки",
-      "tokens": 725
+      "tokens": 730
     },
     {
       "file": "sections/06-sozdanie-blanka-ocenki.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Создание бланка оценки",
-      "tokens": 1411
+      "tokens": 1416
     },
     {
       "file": "sections/07-prosmotr-i-redaktirovanie-blanka-ocenki.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Просмотр и редактирование бланка оценки",
-      "tokens": 493
+      "tokens": 498
     },
     {
       "file": "sections/08-nastroyka-shkaly-ocenok-i-vesa-kriteriev.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Настройка шкалы оценок и веса критериев",
-      "tokens": 548
+      "tokens": 553
     },
     {
       "file": "sections/09-nastroyka-apellyacii.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Настройка апелляции",
-      "tokens": 802
+      "tokens": 807
     },
     {
       "file": "sections/10-udalenie-blanka-ocenki.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Удаление бланка оценки",
-      "tokens": 189
+      "tokens": 194
     },
     {
       "file": "sections/11-blank-ocenki-bazovaya-ocenka-sotrudnika.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Бланк оценки \"Базовая оценка сотрудника\"",
-      "tokens": 493
+      "tokens": 498
     },
     {
       "file": "sections/12-ocenka-obrascheniy.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Оценка обращений",
-      "tokens": 137
+      "tokens": 142
     },
     {
       "file": "sections/13-ocenka-zvonkov.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Оценка звонков",
-      "tokens": 7839
+      "tokens": 7844
     },
     {
       "file": "sections/14-ocenka-chatov.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Оценка чатов",
-      "tokens": 3280
+      "tokens": 3285
     },
     {
       "file": "sections/15-randomayzer.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Рандомайзер",
-      "tokens": 1003
+      "tokens": 1008
     },
     {
       "file": "sections/16-nastroyka-postzvonkovoy-ocenki.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Настройка постзвонковой оценки",
-      "tokens": 181
+      "tokens": 186
     },
     {
       "file": "sections/17-nastroyka-pravil-postzvonkovoy-ocenki.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Настройка правил постзвонковой оценки",
-      "tokens": 2354
+      "tokens": 2359
     },
     {
       "file": "sections/18-nastroyka-uvedomleniy-o-postzvonkovyh-oc.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "Настройка уведомлений о постзвонковых оценках",
-      "tokens": 921
+      "tokens": 926
     },
     {
       "file": "sections/19-zapis-ekrana.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Запись экрана",
-      "tokens": 64
+      "tokens": 69
     },
     {
       "file": "sections/20-prosmotr-i-skachivanie-zapisey.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "Просмотр и скачивание записей",
-      "tokens": 2128
+      "tokens": 2133
     },
     {
       "file": "sections/21-prosmotr-nastroek-zapisi.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Просмотр настроек записи",
-      "tokens": 956
+      "tokens": 961
     },
     {
       "file": "sections/22-naznachenie-pravil-zapisi.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Назначение правил записи",
-      "tokens": 1601
+      "tokens": 1606
     },
     {
       "file": "sections/23-ocenka-kachestva-v-chatah.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Оценка качества в чатах",
-      "tokens": 458
+      "tokens": 463
     },
     {
       "file": "sections/24-sozdanie-redaktirovanie-i-udalenie-pravi.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "Создание, редактирование и удаление правила",
-      "tokens": 1145
+      "tokens": 1150
     },
     {
       "file": "sections/25-statistika.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Статистика",
-      "tokens": 87
+      "tokens": 92
     },
     {
       "file": "sections/26-dinamika-ocenok.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Динамика оценок",
-      "tokens": 2435
+      "tokens": 2440
     },
     {
       "file": "sections/27-svodnaya-statistika.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "Сводная статистика",
-      "tokens": 1032
+      "tokens": 1037
     },
     {
       "file": "sections/28-rabota-kontrolerov.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Работа контролеров",
-      "tokens": 1980
+      "tokens": 1985
     },
     {
       "file": "sections/29-apellyacii.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Апелляции",
-      "tokens": 428
+      "tokens": 433
     },
     {
       "file": "sections/30-kak-sotrudniku-podat-apellyaciyu.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "Как сотруднику подать апелляцию",
-      "tokens": 465
+      "tokens": 470
     },
     {
       "file": "sections/31-kak-kontroleru-obrabatyvat-apellyacii.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Как контролеру обрабатывать апелляции",
-      "tokens": 725
+      "tokens": 730
     },
     {
       "file": "sections/32-rechevaya-analitika.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "Речевая аналитика",
-      "tokens": 257
+      "tokens": 262
     },
     {
       "file": "sections/33-podklyuchenie-uslugi-rechevaya-analitika.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Подключение услуги Речевая аналитика",
-      "tokens": 912
+      "tokens": 917
     },
     {
       "file": "sections/34-vkladka-otchety.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Вкладка ОТЧЕТЫ",
-      "tokens": 395
+      "tokens": 400
     },
     {
       "file": "sections/35-vkladka-tegirovanie-razgovorov.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Вкладка ТЕГИРОВАНИЕ РАЗГОВОРОВ",
-      "tokens": 1264
+      "tokens": 1269
     },
     {
       "file": "sections/36-vkladka-nastroyki.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "Вкладка НАСТРОЙКИ",
-      "tokens": 1106
+      "tokens": 1111
     },
     {
       "file": "sections/37-shagi-onbordinga.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "Шаги онбординга",
-      "tokens": 1034
+      "tokens": 1039
     },
     {
       "file": "sections/38-nastroyki-raspoznavaniya-zapisey.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Настройки распознавания записей",
-      "tokens": 1409
+      "tokens": 1414
     },
     {
       "file": "sections/39-analitika-tekstovyh-kommunikaciy.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Аналитика текстовых коммуникаций",
-      "tokens": 708
+      "tokens": 713
     },
     {
       "file": "sections/40-ii-instrumenty.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "ИИ Инструменты",
-      "tokens": 73
+      "tokens": 78
     },
     {
       "file": "sections/41-ii-konspekty.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "ИИ Конспекты",
-      "tokens": 1453
+      "tokens": 1458
     },
     {
       "file": "sections/42-ii-tegirovanie.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "ИИ Тегирование",
-      "tokens": 693
+      "tokens": 698
     },
     {
       "file": "sections/43-ii-pomoschniki.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "ИИ Помощники",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/44-chto-eto-takoe-i-zachem-nuzhno.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Что это такое и зачем нужно",
-      "tokens": 406
+      "tokens": 411
     },
     {
       "file": "sections/45-kak-sozdat-ii-pomoschnika.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "Как создать ИИ Помощника",
-      "tokens": 230
+      "tokens": 235
     },
     {
       "file": "sections/46-nastroyka-ii-pomoschnika.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Настройка ИИ Помощника",
-      "tokens": 1648
+      "tokens": 1653
     },
     {
       "file": "sections/47-gde-smotret-rezultaty.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Где смотреть результаты",
-      "tokens": 1631
+      "tokens": 1636
     },
     {
       "file": "sections/48-dopolnitelnye-nastroyki.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Дополнительные настройки",
-      "tokens": 531
+      "tokens": 536
     },
     {
       "file": "sections/49-otklyuchenie-uslugi.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Отключение услуги",
-      "tokens": 347
+      "tokens": 352
     },
     {
       "file": "sections/50-vkladka-zayavki.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "Вкладка ЗАЯВКИ",
-      "tokens": 1105
+      "tokens": 1110
     },
     {
       "file": "sections/51-dopolnitelnye-vozmozhnosti.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "Дополнительные возможности",
-      "tokens": 424
+      "tokens": 429
     }
   ],
   "source_document": "quality-managment",
@@ -976,6 +976,6 @@
   ],
   "table_count": 41,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5458,
-  "tokens_total": 54430
+  "tokens_index": 5473,
+  "tokens_total": 54690
 }

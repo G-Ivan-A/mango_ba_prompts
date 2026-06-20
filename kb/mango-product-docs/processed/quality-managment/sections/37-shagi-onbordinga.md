@@ -14,7 +14,7 @@ source_pages: "ч.1: 73-75"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/quality-managment/QM_manual_v-1.26.18.pdf","part":1,"pages":"73-75","global_pages":"73-75"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1034
+tokens: 1039
 status: extracted
 ai-generated: true
 ---

@@ -21,6 +21,21 @@ ai-generated: true
   иерархией `Product -> Service -> Module`, many-to-many связями с processed
   KB и явным выравниванием на ADR-011 Industry Taxonomy; сам стандарт,
   KB-реестр, research-копия и дополнительные артефакты не создавались.
+### Fixed — Issue #144 целостность структуры `kb/` после миграции product docs
+
+- Обновлён [`kb/README.md`](kb/README.md): описаны `kb/mango-product-docs/`,
+  `kb/fragments/`, `kb/practices/` и будущие namespaces `kb/industry/`,
+  `kb/mango/`.
+- Добавлены README для продуктовой БЗ и ручных практик:
+  [`kb/mango-product-docs/README.md`](kb/mango-product-docs/README.md) и
+  [`kb/practices/README.md`](kb/practices/README.md).
+- Зафиксирован аудит истории
+  [`docs/audit/issue-144-kb-structure.md`](docs/audit/issue-144-kb-structure.md):
+  `fragments/` и `practices/` оставлены в `kb/` как независимые материалы, без
+  переносов.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_144_kb_structure_readmes.py`](scripts/validate_issue_144_kb_structure_readmes.py),
+  подключённая к `make kb-validate` и KB workflow.
 
 ### Added — Issue #139 ADR по Industry Taxonomy
 

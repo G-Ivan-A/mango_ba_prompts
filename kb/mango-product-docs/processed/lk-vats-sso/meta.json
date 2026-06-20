@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 188
+      "tokens": 193
     },
     {
       "file": "sections/01-soderzhanie-v2-13-03-2026.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Содержание                                                  v2 | 13.03.2026",
-      "tokens": 409
+      "tokens": 414
     },
     {
       "file": "sections/02-terminy-i-opredeleniya.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Термины и определения",
-      "tokens": 609
+      "tokens": 614
     },
     {
       "file": "sections/03-obschie-svedeniya.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 742
+      "tokens": 747
     },
     {
       "file": "sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Настройка IdP в ЛК ВАТС MANGO OFFICE",
-      "tokens": 383
+      "tokens": 388
     },
     {
       "file": "sections/05-dobavlenie-provaydera.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Добавление провайдера",
-      "tokens": 67
+      "tokens": 72
     },
     {
       "file": "sections/06-shag-1-nastroyka-identity-provaydera-idp.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Шаг 1. Настройка Identity-провайдера (IdP).",
-      "tokens": 1552
+      "tokens": 1557
     },
     {
       "file": "sections/07-shag-2-sopostavlenie-poley.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Шаг 2. Сопоставление полей",
-      "tokens": 2146
+      "tokens": 2151
     },
     {
       "file": "sections/08-vhod-sotrudnika-v-lichnyy-kabinet-vats.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Вход сотрудника в Личный кабинет ВАТС",
-      "tokens": 610
+      "tokens": 615
     },
     {
       "file": "sections/09-nastroyka-autentifikacii-i-avtorizacii-n.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Настройка аутентификации и авторизации на примере Keycloak",
-      "tokens": 3366
+      "tokens": 3371
     }
   ],
   "source_document": "lk-vats-sso",
@@ -220,6 +220,6 @@
   ],
   "table_count": 3,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1328,
-  "tokens_total": 10072
+  "tokens_index": 1343,
+  "tokens_total": 10122
 }

@@ -14,7 +14,7 @@ source_pages: "ч.1: 9"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/Rolevaya-model-vats/Rolevaya-model-VATS_1_26_08.pdf","part":1,"pages":"9","global_pages":"9"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 164
+tokens: 169
 status: extracted
 ai-generated: true
 ---

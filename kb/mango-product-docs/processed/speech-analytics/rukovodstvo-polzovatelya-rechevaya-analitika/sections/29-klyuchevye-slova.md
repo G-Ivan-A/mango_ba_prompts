@@ -14,7 +14,7 @@ source_pages: "ч.1: 44-46"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf","part":1,"pages":"44-46","global_pages":"44-46"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1069
+tokens: 1074
 status: extracted
 ai-generated: true
 ---

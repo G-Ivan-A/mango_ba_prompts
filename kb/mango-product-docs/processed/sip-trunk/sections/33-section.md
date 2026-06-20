@@ -14,7 +14,7 @@ source_pages: "ч.1: 30-34"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf","part":1,"pages":"30-34","global_pages":"30-34"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 256
+tokens: 261
 status: extracted
 ai-generated: true
 ---

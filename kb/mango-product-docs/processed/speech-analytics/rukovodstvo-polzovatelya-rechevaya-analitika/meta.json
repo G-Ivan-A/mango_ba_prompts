@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1798
+      "tokens": 1803
     },
     {
       "file": "sections/01-obschie-svedeniya.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 1115
+      "tokens": 1120
     },
     {
       "file": "sections/02-podklyuchenie-uslugi-rechevaya-analitika.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Подключение услуги «Речевая аналитика»",
-      "tokens": 128
+      "tokens": 133
     },
     {
       "file": "sections/03-podklyuchenie-v-demo-rezhime.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Подключение в демо-режиме",
-      "tokens": 2106
+      "tokens": 2111
     },
     {
       "file": "sections/04-podklyuchenie-uslugi-v-platnom-rezhime.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Подключение услуги в платном режиме",
-      "tokens": 1129
+      "tokens": 1134
     },
     {
       "file": "sections/05-nastroyki.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Настройки",
-      "tokens": 1080
+      "tokens": 1085
     },
     {
       "file": "sections/06-shagi-onbordinga.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Шаги онбординга",
-      "tokens": 1066
+      "tokens": 1071
     },
     {
       "file": "sections/07-nastroyki-raspoznavaniya-zapisey.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Настройки распознавания записей",
-      "tokens": 1486
+      "tokens": 1491
     },
     {
       "file": "sections/08-analitika-tekstovyh-kommunikaciy.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Аналитика текстовых коммуникаций",
-      "tokens": 808
+      "tokens": 813
     },
     {
       "file": "sections/09-ii-instrumenty.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "ИИ Инструменты",
-      "tokens": 123
+      "tokens": 128
     },
     {
       "file": "sections/10-ii-konspekty.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "ИИ Конспекты",
-      "tokens": 1653
+      "tokens": 1658
     },
     {
       "file": "sections/11-ii-tegirovanie.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "ИИ Тегирование",
-      "tokens": 697
+      "tokens": 702
     },
     {
       "file": "sections/12-ii-pomoschniki.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "ИИ Помощники",
-      "tokens": 79
+      "tokens": 84
     },
     {
       "file": "sections/13-chto-eto-takoe-i-zachem-nuzhno.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Что это такое и зачем нужно",
-      "tokens": 500
+      "tokens": 505
     },
     {
       "file": "sections/14-kak-sozdat-ii-pomoschnika.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Как создать ИИ Помощника",
-      "tokens": 285
+      "tokens": 290
     },
     {
       "file": "sections/15-nastroyka-ii-pomoschnika.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Настройка ИИ Помощника",
-      "tokens": 1810
+      "tokens": 1815
     },
     {
       "file": "sections/16-gde-smotret-rezultaty.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Где смотреть результаты",
-      "tokens": 1790
+      "tokens": 1795
     },
     {
       "file": "sections/17-dopolnitelnye-nastroyki.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Дополнительные настройки",
-      "tokens": 1080
+      "tokens": 1085
     },
     {
       "file": "sections/18-otklyuchenie-uslugi.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "Отключение услуги",
-      "tokens": 456
+      "tokens": 461
     },
     {
       "file": "sections/19-kak-rabotaet-poisk-po-razgovoram.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Как работает поиск по разговорам",
-      "tokens": 166
+      "tokens": 171
     },
     {
       "file": "sections/20-terminy-i-opredeleniya.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "Термины и определения",
-      "tokens": 1962
+      "tokens": 1967
     },
     {
       "file": "sections/21-pravila-obrabotki-poiskovyh-zaprosov.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Правила обработки поисковых запросов",
-      "tokens": 849
+      "tokens": 854
     },
     {
       "file": "sections/22-obschie-sovety-dlya-sostavleniya-poiskov.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Общие советы для составления поисковых запросов",
-      "tokens": 910
+      "tokens": 915
     },
     {
       "file": "sections/23-poisk-po-audiozapisyam-razgovorov.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Поиск по аудиозаписям разговоров",
-      "tokens": 87
+      "tokens": 92
     },
     {
       "file": "sections/24-polya-formy-modulya-poiska-v-zapisyah-ra.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "Поля формы модуля поиска в записях разговоров",
-      "tokens": 2500
+      "tokens": 2505
     },
     {
       "file": "sections/25-proslushivanie-zapisey.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Прослушивание записей",
-      "tokens": 3902
+      "tokens": 3907
     },
     {
       "file": "sections/26-tegirovanie-razgovorov.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Тегирование разговоров",
-      "tokens": 579
+      "tokens": 584
     },
     {
       "file": "sections/27-tematiki.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "Тематики",
-      "tokens": 925
+      "tokens": 930
     },
     {
       "file": "sections/28-sozdanie-i-redaktirovanie-tematik.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Создание и редактирование тематик",
-      "tokens": 628
+      "tokens": 633
     },
     {
       "file": "sections/29-klyuchevye-slova.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Ключевые слова",
-      "tokens": 1069
+      "tokens": 1074
     },
     {
       "file": "sections/30-rasshirennye-nastroyki.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "Расширенные настройки",
-      "tokens": 1032
+      "tokens": 1037
     },
     {
       "file": "sections/31-nastroyka-uvedomleniy.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Настройка уведомлений",
-      "tokens": 1290
+      "tokens": 1295
     },
     {
       "file": "sections/32-sovety-po-nastroyke-tematik.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "Советы по настройке тематик",
-      "tokens": 1112
+      "tokens": 1117
     },
     {
       "file": "sections/33-primery-ispolzovaniya-tematiki.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Примеры использования тематики",
-      "tokens": 514
+      "tokens": 519
     },
     {
       "file": "sections/34-predustanovlennye-tematiki.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Предустановленные тематики",
-      "tokens": 1540
+      "tokens": 1545
     },
     {
       "file": "sections/35-zayavki-na-uluchshenie-kachestva-raspozn.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Заявки на улучшение качества распознавания",
-      "tokens": 1334
+      "tokens": 1339
     },
     {
       "file": "sections/36-ii-tematiki.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "ИИ Тематики",
-      "tokens": 1371
+      "tokens": 1376
     },
     {
       "file": "sections/37-tekstovye-kommunikacii.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "Текстовые коммуникации",
-      "tokens": 74
+      "tokens": 79
     },
     {
       "file": "sections/38-spisok-tekstovyh-kommunikaciy.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Список текстовых коммуникаций",
-      "tokens": 1360
+      "tokens": 1365
     },
     {
       "file": "sections/39-metki-na-oscillogramme-dialoga.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Метки на осциллограмме диалога",
-      "tokens": 1238
+      "tokens": 1243
     },
     {
       "file": "sections/40-otchety.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "Отчеты",
-      "tokens": 500
+      "tokens": 505
     },
     {
       "file": "sections/41-rashody-rechevoy-analitiki.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "Расходы Речевой аналитики",
-      "tokens": 1202
+      "tokens": 1207
     },
     {
       "file": "sections/42-analiz-sotrudnikov.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "Анализ сотрудников",
-      "tokens": 157
+      "tokens": 162
     },
     {
       "file": "sections/43-blok-filtrov.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "Блок фильтров",
-      "tokens": 2069
+      "tokens": 2074
     },
     {
       "file": "sections/44-blok-vizualizacii-srabatyvaniya-tematik.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Блок визуализации срабатывания тематик",
-      "tokens": 1522
+      "tokens": 1527
     },
     {
       "file": "sections/45-blok-tablicy-razgovory-detalizaciya.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "Блок таблицы Разговоры, детализация",
-      "tokens": 2365
+      "tokens": 2370
     },
     {
       "file": "sections/46-detalizaciya-razgovorov.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Детализация разговоров",
-      "tokens": 903
+      "tokens": 908
     },
     {
       "file": "sections/47-analiz-razgovorov.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Анализ разговоров",
-      "tokens": 277
+      "tokens": 282
     },
     {
       "file": "sections/48-blok-filtrov.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Блок фильтров",
-      "tokens": 1657
+      "tokens": 1662
     },
     {
       "file": "sections/49-blok-vizualizaciy.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Блок визуализаций",
-      "tokens": 755
+      "tokens": 760
     },
     {
       "file": "sections/50-blok-tablicy.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "Блок таблицы",
-      "tokens": 885
+      "tokens": 890
     },
     {
       "file": "sections/51-detalizaciya.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "Детализация",
-      "tokens": 1027
+      "tokens": 1032
     },
     {
       "file": "sections/52-analiz-po-chek-listam.md",
@@ -974,7 +974,7 @@
         }
       ],
       "title": "Анализ по чек-листам",
-      "tokens": 1278
+      "tokens": 1283
     },
     {
       "file": "sections/53-konstruktor-chek-listov.md",
@@ -992,7 +992,7 @@
         }
       ],
       "title": "Конструктор чек-листов",
-      "tokens": 4816
+      "tokens": 4821
     },
     {
       "file": "sections/54-statistika.md",
@@ -1010,7 +1010,7 @@
         }
       ],
       "title": "Статистика",
-      "tokens": 2210
+      "tokens": 2215
     },
     {
       "file": "sections/55-pravila-podscheta-statistiki.md",
@@ -1028,7 +1028,7 @@
         }
       ],
       "title": "Правила подсчета статистики",
-      "tokens": 3808
+      "tokens": 3813
     },
     {
       "file": "sections/56-lovec-insaytov.md",
@@ -1046,7 +1046,7 @@
         }
       ],
       "title": "Ловец инсайтов",
-      "tokens": 223
+      "tokens": 228
     },
     {
       "file": "sections/57-blok-parametrov.md",
@@ -1064,7 +1064,7 @@
         }
       ],
       "title": "Блок параметров",
-      "tokens": 1280
+      "tokens": 1285
     },
     {
       "file": "sections/58-blok-rezultatov.md",
@@ -1082,7 +1082,7 @@
         }
       ],
       "title": "Блок результатов",
-      "tokens": 583
+      "tokens": 588
     },
     {
       "file": "sections/59-pokazateli-otchetov.md",
@@ -1100,7 +1100,7 @@
         }
       ],
       "title": "Показатели отчетов",
-      "tokens": 1542
+      "tokens": 1547
     },
     {
       "file": "sections/60-roli-i-prava-dostupa.md",
@@ -1118,7 +1118,7 @@
         }
       ],
       "title": "Роли и права доступа",
-      "tokens": 678
+      "tokens": 683
     },
     {
       "file": "sections/61-integraciya-rechevoy-analitiki-so-storon.md",
@@ -1136,7 +1136,7 @@
         }
       ],
       "title": "Интеграция Речевой аналитики со сторонними ВАТС",
-      "tokens": 2935
+      "tokens": 2940
     },
     {
       "file": "sections/62-tochka-vhoda-passivnyy-sip.md",
@@ -1154,7 +1154,7 @@
         }
       ],
       "title": "Точка входа «Пассивный SIP»",
-      "tokens": 159
+      "tokens": 164
     },
     {
       "file": "sections/63-podklyuchenie-passivnogo-sip.md",
@@ -1172,7 +1172,7 @@
         }
       ],
       "title": "Подключение пассивного SIP",
-      "tokens": 1283
+      "tokens": 1288
     },
     {
       "file": "sections/64-sozdanie-sotrudnika.md",
@@ -1190,7 +1190,7 @@
         }
       ],
       "title": "Создание сотрудника",
-      "tokens": 549
+      "tokens": 554
     },
     {
       "file": "sections/65-tochka-vhoda-aktivnyy-sip.md",
@@ -1208,7 +1208,7 @@
         }
       ],
       "title": "Точка входа «Активный SIP»",
-      "tokens": 160
+      "tokens": 165
     },
     {
       "file": "sections/66-sozdanie-sotrudnika.md",
@@ -1226,7 +1226,7 @@
         }
       ],
       "title": "Создание сотрудника",
-      "tokens": 456
+      "tokens": 461
     },
     {
       "file": "sections/67-podklyuchenie-aktivnogo-sip.md",
@@ -1244,7 +1244,7 @@
         }
       ],
       "title": "Подключение активного SIP",
-      "tokens": 2267
+      "tokens": 2272
     },
     {
       "file": "sections/68-tochka-vhoda-did-mango-office.md",
@@ -1262,7 +1262,7 @@
         }
       ],
       "title": "Точка входа «DID MANGO OFFICE»",
-      "tokens": 294
+      "tokens": 299
     },
     {
       "file": "sections/69-nastroyka-shemy-raspredeleniya-zvonkov-v.md",
@@ -1280,7 +1280,7 @@
         }
       ],
       "title": "Настройка схемы распределения звонков в Личном кабинете",
-      "tokens": 169
+      "tokens": 174
     },
     {
       "file": "sections/70-tochka-vhoda-sip-trunk.md",
@@ -1298,7 +1298,7 @@
         }
       ],
       "title": "Точка входа «SIP Trunk»",
-      "tokens": 427
+      "tokens": 432
     },
     {
       "file": "sections/71-vkladka-nastroyka.md",
@@ -1316,7 +1316,7 @@
         }
       ],
       "title": "Вкладка Настройка",
-      "tokens": 1892
+      "tokens": 1897
     },
     {
       "file": "sections/72-vkladka-nomera.md",
@@ -1334,7 +1334,7 @@
         }
       ],
       "title": "Вкладка Номера",
-      "tokens": 743
+      "tokens": 748
     },
     {
       "file": "sections/73-vkladka-telefoniya.md",
@@ -1352,7 +1352,7 @@
         }
       ],
       "title": "Вкладка Телефония",
-      "tokens": 529
+      "tokens": 534
     },
     {
       "file": "sections/74-aktivaciya-sip-trunk-v-kartochke-sotrudn.md",
@@ -1370,7 +1370,7 @@
         }
       ],
       "title": "Активация SIP Trunk в карточке сотрудника",
-      "tokens": 165
+      "tokens": 170
     },
     {
       "file": "sections/75-nastroyka-shemy-raspredeleniya-zvonkov-v.md",
@@ -1388,7 +1388,7 @@
         }
       ],
       "title": "Настройка схемы распределения звонков в Личном кабинете",
-      "tokens": 834
+      "tokens": 839
     }
   ],
   "source_document": "rukovodstvo-polzovatelya-rechevaya-analitika",
@@ -1408,6 +1408,6 @@
   ],
   "table_count": 169,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 7243,
-  "tokens_total": 86230
+  "tokens_index": 7260,
+  "tokens_total": 86610
 }

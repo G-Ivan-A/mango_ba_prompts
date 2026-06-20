@@ -132,6 +132,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_121_kb_multi_file.py
 	$(PYTHON) scripts/validate_issue_129_kb_all_sources.py
 	$(PYTHON) scripts/validate_issue_137_kb_product_docs_migration.py
+	$(PYTHON) scripts/validate_issue_144_kb_structure_readmes.py
 	$(PYTHON) scripts/validate_issue_131_kb_processed_outputs.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).

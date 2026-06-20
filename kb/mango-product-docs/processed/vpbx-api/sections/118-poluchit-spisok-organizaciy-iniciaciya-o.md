@@ -14,7 +14,7 @@ source_pages: "ч.1: 153-155"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf","part":1,"pages":"153-155","global_pages":"153-155"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1383
+tokens: 1388
 status: extracted
 ai-generated: true
 ---

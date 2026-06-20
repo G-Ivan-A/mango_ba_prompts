@@ -14,7 +14,7 @@ source_pages: "ч.1: 93-108"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf","part":1,"pages":"93-108","global_pages":"93-108"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 8673
+tokens: 8678
 status: extracted
 ai-generated: true
 ---

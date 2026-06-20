@@ -14,7 +14,7 @@ source_pages: "ч.1: 39-41"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf","part":1,"pages":"39-41","global_pages":"39-41"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 603
+tokens: 608
 status: extracted
 ai-generated: true
 ---
