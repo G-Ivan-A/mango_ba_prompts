@@ -1,11 +1,14 @@
 ---
 status: proposed
-version: 0.1
-updated: 2026-06-16
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: adr
 scope: operations-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/127"
 related_standard: "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/98"
@@ -13,6 +16,7 @@ related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/003-ba-ontology.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/ba-ontology.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/requirements-engineering-crosswalk.md"
 ---
 
 # ADR-004: Ревизия таксономии операций и маппинг на BABOK / ISO / ГОСТ
@@ -45,6 +49,10 @@ related_artifacts:
 Поэтому ревизия проводится **аддитивно**: существующие 13 операций и 9 процессов
 сохраняются; добавляется только §4 в таксономию (маппинг и критерии аудита),
 ничего не переименовывается и не удаляется.
+
+Issue #127 добавляет C3/С3: справочный crosswalk Вигерс ↔ операции mango ↔
+подпроцессы BCREQ. Это alias-слой для чтения классической литературы и Hub RFC,
+а не новая таксономия: 13 операций и 9 процессов остаются source of truth.
 
 ## Решение
 
@@ -142,6 +150,26 @@ Elicitation and Collaboration; **RLCM** — Requirements Life Cycle Management;
 Маппинг покрывает все 6 KA (НФТ трассируемости: операции → BABOK KA). Он
 переносится в [docs/taxonomy.md §4](../taxonomy.md) как нормативный.
 
+### 5. C3/С3: crosswalk Вигерс ↔ mango ↔ BCREQ
+
+RFC Хаба `requirements-engineering-ai-era-2026.md` показывает, что модель
+Вигерса «Выявление / Анализ / Спецификация / Проверка + Управление» покрывается
+существующими операциями mango, но без явного моста читателю приходится вручную
+сопоставлять терминологию. Поэтому crosswalk вынесен в отдельный reference-файл:
+[docs/requirements-engineering-crosswalk.md](../requirements-engineering-crosswalk.md).
+
+Ключевое решение: crosswalk **не переименовывает** операции и не добавляет новые
+операции. Он связывает классические процессы Вигерса с уже утверждёнными
+операциями ADR-004 и подпроцессами BCREQ из ADR-009:
+
+| Процесс Вигерса | Операции mango | BCREQ |
+| --- | --- | --- |
+| Выявление / Elicitation | `ingestion`, `understanding` | П1 |
+| Анализ / Analysis | `modeling`, `research`, `impact_analysis`, `reverse_requirements` | П2, П3 |
+| Спецификация / Specification | `documentation`, `solution_design` | П4 |
+| Проверка / Validation | `validation`, `quality` | П5 |
+| Управление / Management | `governance`, `release_readiness`, `risk_analysis` | П6 |
+
 ## Доказательная база
 
 - **BABOK Guide v3** (6 KA; различие Verify vs Validate; задача Assess Risks):
@@ -158,6 +186,12 @@ Elicitation and Collaboration; **RLCM** — Requirements Life Cycle Management;
   [ADR-003](003-ba-ontology.md)): <https://docs.cntd.ru/document/1200181804>
 - **ГОСТ 34.601-90** (стадии создания АС — каркас процессов 1-2):
   <https://docs.cntd.ru/document/1200006921>
+- **Hub RFC `requirements-engineering-ai-era-2026.md`** (C1/C2/C3,
+  Вигерс ↔ mango):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md>
+- **Hub RFC `ai-classifications-formalization-2026-06.md`** (AI-классификации,
+  статус `Candidate`, подготовка синхронизации С1/С2/С3):
+  <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md>
 
 ## Примеры
 
@@ -186,8 +220,14 @@ Elicitation and Collaboration; **RLCM** — Requirements Life Cycle Management;
    присутствует в §4-маппинге.
 3. **Дано:** все 13 операций. **Ожидаемо:** каждая имеет основную KA, покрыты все
    6 KA. **Acceptance:** таблица §4.
+4. **Дано:** читатель использует термин Вигерса «Specification». **Ожидаемо:**
+   crosswalk указывает на `documentation`, `solution_design` и BCREQ П4 без
+   переименования операций mango. **Acceptance:** см.
+   [docs/requirements-engineering-crosswalk.md](../requirements-engineering-crosswalk.md).
 
 Локально: `python3 scripts/validate_issue_97_ontology_standards.py`.
+Дополнительно для issue #127:
+`python3 scripts/validate_issue_127_hub_rfc_sync.py`.
 
 ## Последствия
 
@@ -227,6 +267,7 @@ Elicitation and Collaboration; **RLCM** — Requirements Life Cycle Management;
 - ADR-003 (онтология): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/003-ba-ontology.md>
 - Стандарт онтологии: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/ba-ontology.md>
 - Индекс процессов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>
+- Crosswalk Вигерс ↔ mango ↔ BCREQ: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/requirements-engineering-crosswalk.md>
 
 ### Международные стандарты (полные URL)
 

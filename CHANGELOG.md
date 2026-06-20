@@ -13,6 +13,26 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #127 синхронизация БА-онтологии с Hub RFC C1/C2/C3
+
+- В [`standards/ba-ontology.md`](standards/ba-ontology.md) и executable-слое
+  добавлена ортогональная ось `requirement_level` для C1: `business`, `user`,
+  `functional`, `non-functional`, без замены классификации
+  Domain→Capability→Feature→Atomic Function.
+- В реестр артефактов добавлен `business-rule` для C2 с категориями Wiegers:
+  Facts, Constraints, Operation activators, Inferences, Computations.
+- Создан crosswalk C3
+  [`docs/requirements-engineering-crosswalk.md`](docs/requirements-engineering-crosswalk.md):
+  процессы Вигерса ↔ операции mango ↔ подпроцессы BCREQ.
+- ADR-003, ADR-004, [`docs/taxonomy.md`](docs/taxonomy.md),
+  [`README.md`](README.md) и [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
+  синхронизированы с Hub RFC
+  `requirements-engineering-ai-era-2026.md` и
+  `ai-classifications-formalization-2026-06.md`.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_127_hub_rfc_sync.py`](scripts/validate_issue_127_hub_rfc_sync.py),
+  подключённая к GitHub Pages workflow.
+
 ### Added — Issue #125 cascading context loading
 
 - Добавлен стандарт

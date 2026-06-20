@@ -1,11 +1,14 @@
 ---
 status: proposed
-version: 0.1
-updated: 2026-06-16
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: adr
 scope: ba-ontology
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/127"
 related_standard: "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/ba-ontology.md"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/98"
@@ -14,6 +17,7 @@ related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/artifact-map.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/requirements-engineering-crosswalk.md"
 ---
 
 # ADR-003: Онтология бизнес-анализа (Артефакт ↔ Процесс ↔ Операция)
@@ -77,6 +81,14 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 [standards/ba-ontology.md](../../standards/ba-ontology.md); этот ADR объясняет
 контекст, модель, доказательную базу и последствия.
 
+Issue #127 синхронизирует онтологию с RFC Хаба
+`requirements-engineering-ai-era-2026.md` и
+`ai-classifications-formalization-2026-06.md`. RFC выявили два настоящих пробела
+в ADR-003: нет семантической оси уровня требования по Вигерсу
+(`requirement_level`) и нет явного типа `business-rule` с категориями
+бизнес-правил. Эти изменения добавляются аддитивно: существующая классификация
+функциональности, граф и BCREQ-процесс не переименовываются.
+
 ## Решение
 
 ### 1. Триада сохраняется как ядро, но расширяется в направленный граф
@@ -125,8 +137,24 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 | **Направление разработки** (Direction) | Контекст задачи (`client-order`, `tender-rfp`, …), задающий глубину артефакта. | [docs/ba-ecosystem.md](../ba-ecosystem.md), [00-index.md](ba-processes/00-index.md) |
 | **Область знаний BABOK** (Knowledge Area) | Одна из 6 KA BABOK Guide v3, к которой относится операция. | **новое (этот ADR, §«Доказательная база»)** |
 | **Класс функциональности** | Уровень `Domain → Capability → Feature → Atomic Function`, к которому относится артефакт-требование. | [standards/product-classification-contract.md](../../standards/product-classification-contract.md) |
+| **Уровень требования** | Ортогональный тег `requirement_level ∈ {business, user, functional, non-functional}` для семантической лестницы Вигерса. | **новое (issue #127, RFC Хаба С1)** |
 | **Стандарт** (Standard) | Внешний нормативный источник (BABOK, ISO/IEC/IEEE 29148, ISO/IEC 25010, ГОСТ 34.602/34.601), которому соответствует артефакт. | **новое (этот ADR + [standards/industry-standards-standard.md](../../standards/industry-standards-standard.md))** |
 | **Паттерн / Промпт** | Реализующий слой: паттерн — практика, промпт — исполняемый артефакт. | [ADR-002](002-pattern-standard.md), [ADR-001](001-prompt-standard.md) |
+
+### 2.1. С1: `requirement_level` как ортогональная ось Вигерса
+
+Вигерс различает уровни требований по смыслу: бизнес-уровень, пользовательский
+уровень, функциональный уровень и нефункциональные требования. В mango до issue
+#127 были две близкие, но не эквивалентные конструкции:
+`Domain→Capability→Feature→Atomic Function` описывает декомпозицию продукта, а
+`BCREQ-NNN.k.m` описывает глубину дерева требования. Ни одна из них не отвечает
+на вопрос «это бизнес-, пользовательское, функциональное или нефункциональное
+требование?».
+
+Решение: добавить `requirement_level` как отдельный тег артефакта-требования.
+Он не заменяет product classification и не выводится автоматически из глубины
+BCREQ. Это закрывает С1 из RFC Хаба и даёт трассировку вверх к бизнес-цели без
+ломки существующей модели.
 
 ### 3. Граф связей (множественные рёбра)
 
@@ -147,6 +175,8 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 | `реализует` | Паттерн | Операция | N → M |
 | `исполняет` | Промпт | Паттерн | N → 1 |
 | `трассируется` | Артефакт | Артефакт (вышестоящий/нижестоящий) | N → M |
+| `имеет уровень требования` | Артефакт-требование | `requirement_level` | 1 → 1 |
+| `порождает / ограничивает` | `business-rule` | Артефакт-требование | N → M |
 
 Ребро `трассируется` замыкает граф в сеть traceability (НФТ трассируемости):
 например, `Раздел 4 ФТ` трассируется вверх к `User Story` и `Use Case`, а вниз —
@@ -187,7 +217,7 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 операций, включая `risk_analysis`) и НФТ provability (каждая строка имеет
 обоснование и gate).
 
-### 5. Реестр типов артефактов (30 ≥ 20)
+### 5. Реестр типов артефактов (31 ≥ 20)
 
 Ниже — сводка; полный реестр с определениями, входными/выходными операциями и
 стандартами ведётся в [standards/ba-ontology.md](../../standards/ba-ontology.md).
@@ -226,6 +256,27 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 | 28 | Аналитическая записка | Выход | `research` | BABOK Strategy Analysis |
 | 29 | Чек-лист статусов / бэклог | Выход | `governance` | BABOK RLCM |
 | 30 | BCREQ (многоуровневое требование) | Композит | несколько процессов | см. [ADR-009](009-bcreq-formation-process.md) |
+| 31 | Business Rule (`business-rule`) | Выход | `understanding`/`documentation` | Wiegers/Beatty; RFC Хаба С2; ISO/IEC/IEEE 29148 |
+
+### 5.1. С2: бизнес-правило как явный тип артефакта
+
+`business-rule` добавляется как самостоятельный тип артефакта, а не как частный
+случай раздела ограничений. Бизнес-правило фиксирует норму, факт, политику,
+активатор операции, вывод или вычисление, которым требования и система должны
+соответствовать. Категории берутся из RFC Хаба по Вигерсу:
+
+| Категория | EN | Что фиксирует |
+| --- | --- | --- |
+| Факты | Facts | устойчивые бизнес-сущности и отношения между ними |
+| Ограничения | Constraints | запреты, разрешения, политики, регуляторные рамки |
+| Активаторы операций | Operation activators | условия запуска действия или процесса |
+| Выводы | Inferences | логические заключения из других фактов/условий |
+| Вычисления | Computations | формулы, расчёты, derived values |
+
+Бизнес-правило трассируется к функции, ограничению, BCREQ или разделу ФТ, который
+оно порождает или ограничивает. Это закрывает С2 и создаёт явную опору для
+будущей автоматической проверки согласованности, но сами AI-практики остаются
+`Candidate` по RFC `ai-classifications-formalization-2026-06.md`.
 
 ### 6. Жизненный цикл артефакта
 
@@ -356,6 +407,11 @@ LLM) оформляет ФТ; но шаг с `risk_analysis` остаётся з
 `⚠️ требует уточнения` → артефакт переходит в `needs-clarification`, а не в
 `validated`. Это легальное незавершённое состояние (вход для [ADR-009](009-bcreq-formation-process.md)).
 
+**Пример D. C1/C2 на одном требовании.** «Если клиент VIP, то скидка 10%»
+фиксируется как `business-rule` категории `inference`; связанное функциональное
+требование «Система применяет скидку при расчёте заказа» получает
+`requirement_level: functional` и трассируется к этому правилу через R12/R14.
+
 ## Self-test
 
 1. **Дано:** новый тип артефакта «Stakeholder map» из процесса «Помощь ПО/ПМ».
@@ -369,8 +425,16 @@ LLM) оформляет ФТ; но шаг с `risk_analysis` остаётся з
 3. **Дано:** ссылка «ГОСТ 34.602-2015». **Ожидаемо:** документ помечает её как
    несуществующую и подставляет 34.602-2020. **Acceptance:** см. предупреждение
    в «Доказательной базе».
+4. **Дано:** требование без явного уровня. **Ожидаемо:** оно не получает уровень
+   из глубины BCREQ автоматически; добавляется вопрос или `needs-clarification`.
+   **Acceptance:** `requirement_level` — отдельная ось.
+5. **Дано:** правило «Итог = сумма позиций × (1 − скидка)». **Ожидаемо:**
+   артефакт `business-rule` категории `computation`, трассируемый к функции
+   расчёта.
 
 Локальная проверка: `python3 scripts/validate_issue_97_ontology_standards.py`.
+Дополнительная проверка issue #127:
+`python3 scripts/validate_issue_127_hub_rfc_sync.py`.
 
 ## Последствия
 
@@ -391,7 +455,7 @@ LLM) оформляет ФТ; но шаг с `risk_analysis` остаётся з
 - Полный граф пока ведётся в Markdown ([стандарт](../../standards/ba-ontology.md)),
   без машиночитаемого экспорта (JSON/RDF). Это сознательно: до RAG достаточно
   reviewable-таблиц; экспорт — отдельная задача.
-- Реестр из 30 артефактов нужно поддерживать в синхронизации с таксономией и
+- Реестр из 31 артефакта нужно поддерживать в синхронизации с таксономией и
   картой процессов; за это отвечает правило ведения в стандарте.
 
 ## Альтернативы (отклонены)
@@ -412,12 +476,18 @@ LLM) оформляет ФТ; но шаг с `risk_analysis` остаётся з
 - PR #98: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/98>
 - Стандарт онтологии (контракт): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/ba-ontology.md>
 - Таксономия: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>
+- Crosswalk Вигерс ↔ mango ↔ BCREQ: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/requirements-engineering-crosswalk.md>
 - Индекс процессов БА: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>
 - Контракт классификации: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md>
 - Карта артефактов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/artifact-map.md>
 - ADR-001 (стандарт промптов): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>
 - ADR-002 (стандарт паттернов): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/002-pattern-standard.md>
 - ADR-0003 (Creative-mode governance): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/0003-creative-mode-governance.md>
+
+### Hub RFCs (issue #127)
+
+- Hub RFC `requirements-engineering-ai-era-2026.md`: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/requirements-engineering-ai-era-2026.md>
+- Hub RFC `ai-classifications-formalization-2026-06.md`: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/73e94c6e69995ccf9e746c19d9c18359971285f2/research/mango/ai-classifications-formalization-2026-06.md>
 
 ### Международные стандарты (полные URL)
 

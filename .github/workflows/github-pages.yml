@@ -37,6 +37,9 @@ jobs:
       - name: Validate issue #125 cascading context loading
         run: python3 scripts/validate_issue_125_cascading_context.py
 
+      - name: Validate issue #127 Hub RFC sync
+        run: python3 scripts/validate_issue_127_hub_rfc_sync.py
+
       - name: Validate Pages artifact
         run: python3 scripts/validate_issue_74_github_pages.py
 
