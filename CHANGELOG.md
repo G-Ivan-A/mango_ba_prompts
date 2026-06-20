@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #148 доработка taxonomy ADR
+
+- Обновлены ADR-011 и ADR-012: добавлены правила strict mapping на Industry
+  Taxonomy, `function_type` для Function (`business`, `configuration`,
+  `ui-action`), алиасы Component=Module и Operation=Function, а также YAML/JSON
+  формат `industry_ref` без свободных taxonomy tags.
+- Аудит
+  [`docs/audit/issue-146-mango-taxonomy-validation.md`](docs/audit/issue-146-mango-taxonomy-validation.md)
+  переведён в `canonical` и связан с issue #148.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_148_taxonomy_extensions.py`](scripts/validate_issue_148_taxonomy_extensions.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Changed — Issue #146 validation Mango Taxonomy on real processed docs
 
 - Валидирована Mango Taxonomy на 12 processed guides из
