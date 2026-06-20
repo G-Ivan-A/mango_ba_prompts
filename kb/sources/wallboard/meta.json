@@ -1,0 +1,33 @@
+{
+  "name": "Программа для ЭВМ «Wallboard Mango Office». Руководство пользователя",
+  "product": "Mango Wallboard",
+  "type": "documentation_set",
+  "version": "7.22.25",
+  "language": "ru",
+  "upload_date": "2026-06-20",
+  "description": "Руководство пользователя по программе Wallboard Mango Office. Описывает настройку и использование информационных панелей для визуализации показателей контакт-центра, мониторинга активности операторов и отображения KPI в реальном времени.",
+  "platforms": ["Web"],
+  "topics": [
+    "wallboard",
+    "дашборд",
+    "мониторинг",
+    "KPI",
+    "контакт-центр",
+    "визуализация"
+  ],
+  "documents": [
+    {
+      "file_name": "Programma-dlya-EVM-Wallboard-Mango-Office_v7.22.25.pdf",
+      "title": "Руководство пользователя. Wallboard Mango Office",
+      "type": "user_manual",
+      "platform": ["Web"],
+      "pages_count": 28,
+      "file_size_mb": 1.1,
+      "description": "Руководство по установке, настройке и работе с Wallboard Mango Office. Описание виджетов, дашбордов, источников данных и мониторинга."
+    }
+  ],
+  "total_files": 1,
+  "total_pages": 28,
+  "total_size_mb": 1.1,
+  "source_url": null
+}

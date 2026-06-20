@@ -1,0 +1,23 @@
+{
+  "name": "API Mango Office",
+  "version": "1.9",
+  "type": "api_reference",
+  "product": "Mango VPBX",
+  "platform": ["API"],
+  "language": "ru",
+  "upload_date": "2026-06-20",
+  "description": "Документация по API виртуальной АТС Mango Office. Содержит описание методов управления звонками, настройками, статистикой и интеграционными возможностями.",
+  "topics": [
+    "API",
+    "VPBX",
+    "интеграция",
+    "телефония",
+    "REST API",
+    "разработка"
+  ],
+  "file_name": "MangoOffice_VPBX_API_v1.9.pdf",
+  "total_files": 1,
+  "file_size_mb": 6.2,
+  "pages_count": 363,
+  "source_url": null
+}
