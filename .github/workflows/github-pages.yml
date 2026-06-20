@@ -40,6 +40,9 @@ jobs:
       - name: Validate issue #125 cascading context loading
         run: python3 scripts/validate_issue_125_cascading_context.py
 
+      - name: Validate issue #134 README standard
+        run: python3 scripts/validate_issue_134_readme_standard.py
+
       - name: Validate issue #127 Hub RFC sync
         run: python3 scripts/validate_issue_127_hub_rfc_sync.py
 
