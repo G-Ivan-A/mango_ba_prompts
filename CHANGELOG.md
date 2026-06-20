@@ -13,6 +13,14 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #142 ADR по Mango Taxonomy
+
+- Добавлен proposed ADR
+  [`standards/decisions/ADR-012-mango-taxonomy.md`](standards/decisions/ADR-012-mango-taxonomy.md):
+  выбрана двухслойная Mango Taxonomy с Official Layer и Internal Layer,
+  иерархией `Product -> Service -> Module`, many-to-many связями с processed
+  KB и явным выравниванием на ADR-011 Industry Taxonomy; сам стандарт,
+  KB-реестр, research-копия и дополнительные артефакты не создавались.
 ### Fixed — Issue #144 целостность структуры `kb/` после миграции product docs
 
 - Обновлён [`kb/README.md`](kb/README.md): описаны `kb/mango-product-docs/`,
