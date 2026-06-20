@@ -4,7 +4,7 @@ name: KB pipeline
 # (stdlib-only, без pip, детерминированно). Полный конвейер извлечения PDF
 # (pdfplumber/PyMuPDF/tiktoken) запускается ВРУЧНУЮ через workflow_dispatch:
 # он тяжелее и зависит от сети для pip, поэтому не должен блокировать обычный CI.
-# По умолчанию ручной запуск обрабатывает multi-part mango-cc-manual из issue #119.
+# По умолчанию ручной запуск обрабатывает source manifest mango-cc-manual.
 # Это GitHub-native извлечение, которого требует ФТ-2.
 
 on:
@@ -16,12 +16,16 @@ on:
       - main
   workflow_dispatch:
     inputs:
+      source_dir:
+        description: "Source manifest directory under kb/sources/; leave empty to use raw source/out inputs"
+        required: false
+        default: "kb/sources/mango-cc-manual"
       source:
         description: "PDF source path(s) under kb/sources/; use spaces for multi-part manuals"
-        required: true
+        required: false
         default: "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf"
       out:
-        description: "Output directory under kb/processed/"
+        description: "Artifact/output directory under kb/processed/ (set to collection dir for source_dir runs)"
         required: true
         default: "kb/processed/mango-cc-manual"
       doc_code:
@@ -76,6 +80,7 @@ jobs:
           python3 scripts/validate_issue_111_kb_pipeline.py
           python3 scripts/validate_issue_115_kb_mango_pipeline.py
           python3 scripts/validate_issue_117_kb_traceability.py
+          python3 scripts/validate_issue_121_kb_multi_file.py
 
   # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
   # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):
@@ -100,21 +105,28 @@ jobs:
 
       - name: Extract requested source
         run: |
-          make kb-extract \
-            SRCS="${{ inputs.source }}" \
-            OUT="${{ inputs.out }}" \
-            CODE="${{ inputs.doc_code }}" \
-            TITLE="${{ inputs.doc_title }}" \
-            VERSION="${{ inputs.doc_version }}" \
-            NOTE="${{ inputs.note }}"
+          if [ -n "${{ inputs.source_dir }}" ]; then
+            python3 scripts/kb/process_sources.py "${{ inputs.source_dir }}"
+          else
+            make kb-extract \
+              SRCS="${{ inputs.source }}" \
+              OUT="${{ inputs.out }}" \
+              CODE="${{ inputs.doc_code }}" \
+              TITLE="${{ inputs.doc_title }}" \
+              VERSION="${{ inputs.doc_version }}" \
+              NOTE="${{ inputs.note }}"
+          fi
 
       - name: Validate extracted KB
-        run: |
-          make kb-validate
-          python3 scripts/validate_issue_115_kb_mango_pipeline.py
+        run: make kb-validate
 
       - name: Show token footprint (index vs sections)
-        run: make kb-tokens OUT="${{ inputs.out }}"
+        run: |
+          if [ -d "${{ inputs.out }}/sections" ]; then
+            make kb-tokens OUT="${{ inputs.out }}"
+          else
+            echo "Skipping token footprint: ${{ inputs.out }}/sections not found."
+          fi
 
       - name: Upload extracted KB artifact
         uses: actions/upload-artifact@v7
@@ -128,7 +140,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "${{ inputs.out }}"
+          if [ -n "${{ inputs.source_dir }}" ]; then
+            git add kb/processed
+          else
+            git add "${{ inputs.out }}"
+          fi
           if git diff --cached --quiet; then
             echo "No generated KB changes to commit."
           else

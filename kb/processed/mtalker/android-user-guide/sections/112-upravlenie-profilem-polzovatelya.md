@@ -1,0 +1,23 @@
+---
+id: android-user-guide-112-upravlenie-profilem-polzovatelya
+doc_code: MTALKER-MOB
+doc_title: "Mango Talker для Android - Руководство пользователя"
+doc_version: "23.08.2024"
+section: "0"
+pdf_section: "—"
+title: "Управление профилем пользователя"
+pdf_heading: "Управление профилем пользователя"
+pages: "45"
+source: kb/sources/mtalker/UserGuide_mTalker_4Mobile.pdf
+source_part: "1"
+source_pages: "ч.1: 45"
+source_refs: '[{"source_pdf":"kb/sources/mtalker/UserGuide_mTalker_4Mobile.pdf","part":1,"pages":"45","global_pages":"45"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 54
+status: extracted
+ai-generated: true
+---
+# Управление профилем пользователя
+
+> Трассировка: PDF §— · сквозные стр. 45 · источники: ч.1 `kb/sources/mtalker/UserGuide_mTalker_4Mobile.pdf` с.45.

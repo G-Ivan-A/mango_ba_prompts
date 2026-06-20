@@ -2,8 +2,19 @@
   "name": "Контакт-центр MANGO OFFICE - Руководство пользователя",
   "version": "1.26.23",
   "type": "user_manual",
+  "processing_mode": "multi_part",
+  "output_slug": "mango-cc-manual",
+  "doc_code": "CC",
   "product": "MANGO OFFICE Contact Center",
   "language": "ru",
+  "source_files": [
+    "CC_manual_1.26.23-part-1.pdf",
+    "CC_manual_1.26.23-part-2.pdf",
+    "CC_manual_1.26.23-part-3.pdf",
+    "CC_manual_1.26.23-part-4.pdf",
+    "CC_manual_1.26.23-part-5.pdf",
+    "CC_manual_1.26.23-part-6.pdf"
+  ],
   "upload_date": "2026-06-19",
   "description": "Руководство пользователя для облачного контакт-центра MANGO OFFICE. Содержит описание клиентской части, настроек, управления пользователями, работы с обращениями, кампаниями и API.",
   "topics": [

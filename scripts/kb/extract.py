@@ -685,6 +685,9 @@ def main(argv=None):
     parser.add_argument("--doc-title", default="", help="название документа (иначе из титула)")
     parser.add_argument("--doc-version", default="", help="версия документа")
     parser.add_argument("--note", default="", help="примечание в meta.json")
+    parser.add_argument("--source-mode", default="", help="single / multi_part / multi_document child mode")
+    parser.add_argument("--source-set", default="", help="slug исходного набора документов")
+    parser.add_argument("--source-document", default="", help="slug документа внутри исходного набора")
     args = parser.parse_args(argv)
 
     import pdfplumber
@@ -811,6 +814,9 @@ def main(argv=None):
         "doc_code": meta["doc_code"],
         "doc_title": meta["doc_title"],
         "doc_version": meta["doc_version"],
+        "processing_mode": args.source_mode or ("multi_part" if len(source_infos) > 1 else "single"),
+        "source_set": args.source_set,
+        "source_document": args.source_document,
         "source_pdf": source_rels[0] if len(source_rels) == 1 else "multi-part",
         "source_pdfs": source_rels,
         "sources": source_infos,
