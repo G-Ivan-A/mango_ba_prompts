@@ -10,6 +10,13 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/83"
 ---
 
+> **LLM Loading Contract — full layer.**
+> Start with [`docs/ba-processes/00-index.executable.md`](00-index.executable.md).
+> Load this full file only when an escalation trigger in the executable companion is true:
+> explicit request for full/rationale/history, missing required section in
+> executable, need for exact wording/table/reference, or editing/validating this
+> full file. Otherwise do not load this file into context.
+
 # Процессы БА: карта маршрутов, операций и промптов
 
 Этот документ - практическая точка входа для БА Mango. Он отвечает на вопрос:

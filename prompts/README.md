@@ -9,6 +9,13 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/65"
 ---
 
+> **LLM Loading Contract — full layer.**
+> Start with [`prompts/README.executable.md`](README.executable.md). Load this full file
+> only when an escalation trigger in the executable companion is true: explicit
+> request for full/rationale/history, missing required section in executable,
+> need for exact wording/table/reference, or editing/validating this full file.
+> Otherwise do not load this file into context.
+
 # Prompts — навигация по библиотеке промптов
 
 Этот README — точка входа в `prompts/` для бизнес-аналитика Mango. Он помогает за

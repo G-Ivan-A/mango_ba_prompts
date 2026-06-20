@@ -2,8 +2,8 @@
 id: mango-session-debug-documentation-oneshot
 title: "Сессия LLM: Суммаризация"
 status: draft
-version: 0.1
-updated: 2026-06-13
+version: 0.2
+updated: 2026-06-20
 temperature: 0.1
 ---
 
@@ -101,8 +101,8 @@ Markdown, сканируемый глазами (заголовки, списк�
 # КОНТЕКСТ И СВЯЗАННЫЕ АРТЕФАКТЫ
 - Стандарт промптов (ADR-001):
   <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>
-- Навигация по библиотеке промптов:
-  <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/README.md>
+- Навигация по библиотеке промптов (сначала executable-слой):
+  <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/README.executable.md>
 - Механизм суммаризации сессий:
   <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/session-digests.md>
 - Таксономия (когнитивные операции и процессы):
