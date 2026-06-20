@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-18
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: kb-fragments-guide
 scope: kb/fragments
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/144"
 ---
 
 # `kb/fragments/` — атомарные фрагменты (задел под RAG)
@@ -15,6 +16,10 @@ related_issues:
 пуст намеренно: разделы из [`kb/mango-product-docs/processed/`](../mango-product-docs/processed/README.md) уже работают
 как чанки (раздел = файл = адрес), и дробить их мельче без реального RAG —
 преждевременная оптимизация (приоритет issue: **качество > экономия токенов**).
+
+Каталог создан в issue #111 как будущий слой атомарных фрагментов. Он не хранит продуктовую документацию,
+исходные PDF или generated output pipeline; это
+остаётся зоной ответственности `kb/mango-product-docs/`.
 
 ## Когда он понадобится
 
