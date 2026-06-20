@@ -14,7 +14,7 @@ source_pages: "ч.1: 5-6"
 source_refs: '[{"source_pdf":"kb/sources/mtalker/mTalker_User_Guide_ch3_Admin_Guide.pdf","part":1,"pages":"5-6","global_pages":"5-6"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 638
+tokens: 643
 status: extracted
 ai-generated: true
 ---

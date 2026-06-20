@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1162
+      "tokens": 1167
     },
     {
       "file": "sections/01-kak-otkryt-nastroyki-obobschenno.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Как открыть настройки. Обобщенно",
-      "tokens": 236
+      "tokens": 241
     },
     {
       "file": "sections/02-upravlenie-mtalker.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Управление MTalker",
-      "tokens": 55
+      "tokens": 60
     },
     {
       "file": "sections/03-avtomaticheskiy-zapusk-raboty.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Автоматический запуск работы",
-      "tokens": 312
+      "tokens": 317
     },
     {
       "file": "sections/04-avtomaticheskiy-vhod-polzovatelya.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Автоматический вход пользователя",
-      "tokens": 64
+      "tokens": 69
     },
     {
       "file": "sections/05-obschie-svedeniya.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 134
+      "tokens": 139
     },
     {
       "file": "sections/06-kak-vklyuchit-avtomaticheskiy-vhod.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Как включить автоматический вход",
-      "tokens": 526
+      "tokens": 531
     },
     {
       "file": "sections/07-kak-otklyuchit-avtomaticheskiy-vhod.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Как отключить автоматический вход",
-      "tokens": 533
+      "tokens": 538
     },
     {
       "file": "sections/08-kak-vklyuchit-avtomaticheskiy-perehod-v.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Как включить автоматический переход в фоновый режим при автозапуске",
-      "tokens": 298
+      "tokens": 303
     },
     {
       "file": "sections/09-fayly-i-zagruzki.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Файлы и загрузки",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/10-obschie-svedeniya.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 160
+      "tokens": 165
     },
     {
       "file": "sections/11-kak-nayti-i-otkryt-zagruzhennyy-fayl.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Как найти и открыть загруженный файл",
-      "tokens": 290
+      "tokens": 295
     },
     {
       "file": "sections/12-kak-izmenit-papku-sohraneniya-faylov.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Как изменить папку сохранения файлов",
-      "tokens": 317
+      "tokens": 322
     },
     {
       "file": "sections/13-kak-vklyuchit-zapros-mesta-sohraneniya-f.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Как включить запрос места сохранения файлов",
-      "tokens": 270
+      "tokens": 275
     },
     {
       "file": "sections/14-avtozagruzka-izobrazheniy.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Автозагрузка изображений",
-      "tokens": 277
+      "tokens": 282
     },
     {
       "file": "sections/15-kak-obnovit-mtalker.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Как обновить MTalker",
-      "tokens": 377
+      "tokens": 382
     },
     {
       "file": "sections/16-personalizaciya.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Персонализация",
-      "tokens": 57
+      "tokens": 62
     },
     {
       "file": "sections/17-vneshniy-vid.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Внешний вид",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/18-kak-vklyuchit-ili-vyklyuchit-podtverzhde.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "Как включить или выключить подтверждение действия пользователя",
-      "tokens": 441
+      "tokens": 446
     },
     {
       "file": "sections/19-vklyuchenie-i-vyklyuchenie-uvedomleniy-o.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Включение и выключение уведомлений о новых сообщениях",
-      "tokens": 433
+      "tokens": 438
     },
     {
       "file": "sections/20-obrabotka-klikov-po-ssylkam.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "Обработка кликов по ссылкам",
-      "tokens": 600
+      "tokens": 605
     },
     {
       "file": "sections/21-pereklyuchenie-fokusa-pri-vhodyaschem-zv.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Переключение фокуса при входящем звонке",
-      "tokens": 667
+      "tokens": 672
     },
     {
       "file": "sections/22-udalenie-lishnih-simvolov-pri-vvode-nome.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Удаление лишних символов при вводе номера",
-      "tokens": 69
+      "tokens": 74
     },
     {
       "file": "sections/23-obschie-svedeniya.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 260
+      "tokens": 265
     },
     {
       "file": "sections/24-vklyuchenie-proverki.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "Включение проверки",
-      "tokens": 249
+      "tokens": 254
     },
     {
       "file": "sections/25-uvedomleniya.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Уведомления",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/26-nastroyka-otpravki-na-e-mail.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Настройка отправки на e-mail",
-      "tokens": 428
+      "tokens": 433
     },
     {
       "file": "sections/27-zvukovye-uvedomleniya-kak-vybrat-rington.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "Звуковые уведомления. Как выбрать рингтон",
-      "tokens": 407
+      "tokens": 412
     },
     {
       "file": "sections/28-klavishi-otpravki-soobscheniy-v-chat.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Клавиши отправки сообщений в чат",
-      "tokens": 287
+      "tokens": 292
     },
     {
       "file": "sections/29-globalnye-goryachie-klavishi.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Глобальные горячие клавиши",
-      "tokens": 425
+      "tokens": 430
     },
     {
       "file": "sections/30-yazyk.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "Язык",
-      "tokens": 323
+      "tokens": 328
     },
     {
       "file": "sections/31-konfidencialnost-kak-udalit-lichnye-dann.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Конфиденциальность. Как удалить личные данные",
-      "tokens": 404
+      "tokens": 409
     },
     {
       "file": "sections/32-video.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "Видео",
-      "tokens": 54
+      "tokens": 59
     },
     {
       "file": "sections/33-otkryvat-video-zvonki-vo-vneshnem-brauze.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Открывать видео звонки во внешнем браузере",
-      "tokens": 470
+      "tokens": 475
     },
     {
       "file": "sections/34-zvuk.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Звук",
-      "tokens": 53
+      "tokens": 58
     },
     {
       "file": "sections/35-izmenenie-parametrov-zvukovyh-ustroystva.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Изменение параметров звуковых устройства",
-      "tokens": 449
+      "tokens": 454
     },
     {
       "file": "sections/36-kak-bystro-pereklyuchit-vyvod-zvuka-na-s.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "Как быстро переключить вывод звука на стороннюю гарнитуру",
-      "tokens": 372
+      "tokens": 377
     },
     {
       "file": "sections/37-sbros-nastroek-zvuka.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "Сброс настроек звука",
-      "tokens": 364
+      "tokens": 369
     },
     {
       "file": "sections/38-avtopodnyatie-trubki-dlya-ishodyaschih-z.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Автоподнятие трубки для исходящих звонков",
-      "tokens": 623
+      "tokens": 628
     },
     {
       "file": "sections/39-ispolzovat-vneshniy-telefon.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Использовать внешний телефон",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/40-obschie-svedeniya.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 328
+      "tokens": 333
     },
     {
       "file": "sections/41-vklyuchenie-funkcii-i-vvod-vneshnego-nom.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "Включение функции и ввод внешнего номера",
-      "tokens": 322
+      "tokens": 327
     },
     {
       "file": "sections/42-tehnicheskie-nastroyki.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "Технические настройки",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/43-podklyuchenie-k-seti.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "Подключение к сети",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/44-proksi-server.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Прокси-сервер",
-      "tokens": 366
+      "tokens": 371
     },
     {
       "file": "sections/45-nastroyki-sip.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "Настройки SIP",
-      "tokens": 291
+      "tokens": 296
     },
     {
       "file": "sections/46-vklyuchenie-vyklyuchenie-funkciy-cng-vad.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Включение/выключение функций CNG, VAD, анти-эхо",
-      "tokens": 525
+      "tokens": 530
     },
     {
       "file": "sections/47-kodeki.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Кодеки",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/48-perechen-podderzhivaemyh-kodekov.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Перечень поддерживаемых кодеков",
-      "tokens": 314
+      "tokens": 319
     },
     {
       "file": "sections/49-vklyuchenie-i-vyklyuchenie-kodekov.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Включение и выключение кодеков",
-      "tokens": 257
+      "tokens": 262
     },
     {
       "file": "sections/50-nastroyka-prioriteta-ispolzovaniya-kodek.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "Настройка приоритета использования кодека",
-      "tokens": 386
+      "tokens": 391
     },
     {
       "file": "sections/51-zagruzka-nastroek-kodekov-s-servera.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "Загрузка настроек кодеков с сервера",
-      "tokens": 225
+      "tokens": 230
     },
     {
       "file": "sections/52-sessii-polzovatelya.md",
@@ -974,7 +974,7 @@
         }
       ],
       "title": "Сессии пользователя",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/53-kak-uznat-na-kakih-ustroystvah-otkryty-s.md",
@@ -992,7 +992,7 @@
         }
       ],
       "title": "Как узнать, на каких устройствах открыты сессии пользователей",
-      "tokens": 268
+      "tokens": 273
     },
     {
       "file": "sections/54-udalennyy-vyhod-iz-mtalker.md",
@@ -1010,7 +1010,7 @@
         }
       ],
       "title": "Удаленный выход из MTalker",
-      "tokens": 232
+      "tokens": 237
     }
   ],
   "source_document": "windows-mac-settings",
@@ -1030,6 +1030,6 @@
   ],
   "table_count": 2,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5241,
-  "tokens_total": 16436
+  "tokens_index": 5251,
+  "tokens_total": 16711
 }

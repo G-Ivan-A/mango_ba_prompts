@@ -14,7 +14,7 @@ source_pages: "ч.1: 11-12"
 source_refs: '[{"source_pdf":"kb/sources/mtalker/UserGuide_mTalker_4Mobile.pdf","part":1,"pages":"11-12","global_pages":"11-12"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 320
+tokens: 325
 status: extracted
 ai-generated: true
 ---

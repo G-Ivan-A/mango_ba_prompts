@@ -22,9 +22,10 @@
     "pymupdf 1.27.2.3",
     "pymupdf 1.27.2.3"
   ],
-  "note": "Multi-part руководство КЦ из issue 119; 6 PDF частей обработаны как один документ со сквозной пагинацией.",
+  "note": "Руководство пользователя для облачного контакт-центра MANGO OFFICE. Содержит описание клиентской части, настроек, управления пользователями, работы с обращениями, кампаниями и API.",
   "page_count": 614,
   "part_count": 6,
+  "processing_mode": "multi_part",
   "section_count": 232,
   "section_source": "pdf-outline multi-part (6 PDF parts)",
   "section_sources": [
@@ -4243,6 +4244,7 @@
       "tokens": 1478
     }
   ],
+  "source_document": "mango-cc-manual",
   "source_pdf": "multi-part",
   "source_pdfs": [
     "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
@@ -4252,6 +4254,7 @@
     "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf",
     "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf"
   ],
+  "source_set": "mango-cc-manual",
   "source_sha256": "7ed22bf71391855e4561b723baeb0e458b492974159b4d42ec3b22bd9adc9a18",
   "sources": [
     {

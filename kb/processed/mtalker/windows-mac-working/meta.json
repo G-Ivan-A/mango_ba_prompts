@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 3345
+      "tokens": 3350
     },
     {
       "file": "sections/01-o-mtalker.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "О MTalker",
-      "tokens": 54
+      "tokens": 59
     },
     {
       "file": "sections/02-obzor.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 220
+      "tokens": 225
     },
     {
       "file": "sections/03-kak-ispolzovat-mtalker.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Как использовать MTalker",
-      "tokens": 652
+      "tokens": 657
     },
     {
       "file": "sections/04-navigaciya.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Навигация",
-      "tokens": 59
+      "tokens": 64
     },
     {
       "file": "sections/05-glavnoe-okno-i-dostup-k-razdelam-mtalker.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Главное окно и доступ к разделам MTalker",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/06-obschee.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 556
+      "tokens": 561
     },
     {
       "file": "sections/07-osnovnoe-menyu-i-profil-polzovatelya.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Основное меню и профиль пользователя",
-      "tokens": 928
+      "tokens": 933
     },
     {
       "file": "sections/08-profil-polzovatelya-avtorizovannogo-v-mt.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Профиль пользователя, авторизованного в MTalker",
-      "tokens": 297
+      "tokens": 302
     },
     {
       "file": "sections/09-nastroyki-telefonii.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Настройки телефонии",
-      "tokens": 261
+      "tokens": 266
     },
     {
       "file": "sections/10-osnovnye.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Основные",
-      "tokens": 717
+      "tokens": 722
     },
     {
       "file": "sections/11-upravlenie-dannymi.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Управление данными",
-      "tokens": 252
+      "tokens": 257
     },
     {
       "file": "sections/12-zvonki.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Звонки",
-      "tokens": 1052
+      "tokens": 1057
     },
     {
       "file": "sections/13-chaty.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Чаты",
-      "tokens": 404
+      "tokens": 409
     },
     {
       "file": "sections/14-uvedomleniya.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Уведомления",
-      "tokens": 348
+      "tokens": 353
     },
     {
       "file": "sections/15-video.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Видео",
-      "tokens": 230
+      "tokens": 235
     },
     {
       "file": "sections/16-zvuk.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Звук",
-      "tokens": 461
+      "tokens": 466
     },
     {
       "file": "sections/17-ustroystva.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Устройства",
-      "tokens": 163
+      "tokens": 168
     },
     {
       "file": "sections/18-setevoe-podklyuchenie.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "Сетевое подключение",
-      "tokens": 153
+      "tokens": 158
     },
     {
       "file": "sections/19-podderzhka.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Поддержка",
-      "tokens": 439
+      "tokens": 444
     },
     {
       "file": "sections/20-o-programme.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "О программе",
-      "tokens": 196
+      "tokens": 201
     },
     {
       "file": "sections/21-kontakty.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Контакты",
-      "tokens": 327
+      "tokens": 332
     },
     {
       "file": "sections/22-konferencii.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Конференции",
-      "tokens": 670
+      "tokens": 675
     },
     {
       "file": "sections/23-chaty.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Чаты",
-      "tokens": 462
+      "tokens": 467
     },
     {
       "file": "sections/24-istoriya-vyzovov.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "История вызовов",
-      "tokens": 632
+      "tokens": 637
     },
     {
       "file": "sections/25-klavishi-nomeronabiratel.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Клавиши (номеронабиратель)",
-      "tokens": 511
+      "tokens": 516
     },
     {
       "file": "sections/26-avtosekretar.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Автосекретарь",
-      "tokens": 403
+      "tokens": 408
     },
     {
       "file": "sections/27-sms-rassylki.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "SMS-рассылки",
-      "tokens": 376
+      "tokens": 381
     },
     {
       "file": "sections/28-videokonferencii.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Видеоконференции",
-      "tokens": 428
+      "tokens": 433
     },
     {
       "file": "sections/29-fonovyy-rezhim-raboty-mtalker.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Фоновый режим работы MTalker",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/30-obzor.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 721
+      "tokens": 726
     },
     {
       "file": "sections/31-kak-pereklyuchatsya-mezhdu-obychnym-i-fo.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Как переключаться между обычным и фоновым режимами работы",
-      "tokens": 288
+      "tokens": 293
     },
     {
       "file": "sections/32-ne-udaetsya-voyti-v-mtalker-ili-kak-izme.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "Не удаётся войти в MTalker или как изменить или сбросить пароль",
-      "tokens": 448
+      "tokens": 453
     },
     {
       "file": "sections/33-sozdat-novyy-parol.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Создать новый пароль",
-      "tokens": 416
+      "tokens": 421
     },
     {
       "file": "sections/34-prosmotr-versii-mtalker.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Просмотр версии MTalker",
-      "tokens": 181
+      "tokens": 186
     },
     {
       "file": "sections/35-vyzov-spravki-o-mtalker.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Вызов справки о MTalker",
-      "tokens": 209
+      "tokens": 214
     },
     {
       "file": "sections/36-nachalo-raboty.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "Начало работы",
-      "tokens": 56
+      "tokens": 61
     },
     {
       "file": "sections/37-ustanovka-mtalker-na-pk.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "Установка MTalker на ПК",
-      "tokens": 370
+      "tokens": 375
     },
     {
       "file": "sections/38-kak-sozdat-akkaunt.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Как создать аккаунт",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/39-poryadok-deystviy.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Порядок действий",
-      "tokens": 332
+      "tokens": 337
     },
     {
       "file": "sections/40-o-logine-i-parole-dlya-vhoda-v-mtalker.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "О логине и пароле для входа в MTalker",
-      "tokens": 341
+      "tokens": 346
     },
     {
       "file": "sections/41-kak-uznat-svoy-login-i-parol.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "Как узнать свой логин и пароль",
-      "tokens": 589
+      "tokens": 594
     },
     {
       "file": "sections/42-pervyy-zapusk-raboty-mtalker-proverka-na.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "Первый запуск работы MTalker. Проверка настроек",
-      "tokens": 585
+      "tokens": 590
     },
     {
       "file": "sections/43-udalenie-mtalker.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "Удаление MTalker",
-      "tokens": 356
+      "tokens": 361
     },
     {
       "file": "sections/44-vhod-i-vyhod.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Вход и выход",
-      "tokens": 56
+      "tokens": 61
     },
     {
       "file": "sections/45-vhod-po-loginu-i-parolyu.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "Вход по логину и паролю",
-      "tokens": 275
+      "tokens": 280
     },
     {
       "file": "sections/46-sozdat-novyy-parol.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Создать новый пароль",
-      "tokens": 353
+      "tokens": 358
     },
     {
       "file": "sections/47-vhod-pri-pomoschi-korotkogo-koda-bez-par.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Вход при помощи короткого кода (без пароля)",
-      "tokens": 396
+      "tokens": 401
     },
     {
       "file": "sections/48-vhod-po-dannym-kontakt-centra-mango-offi.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Вход по данным Контакт-Центра MANGO OFFICE",
-      "tokens": 445
+      "tokens": 450
     },
     {
       "file": "sections/49-kak-nachat-perepisku-s-odnim-ili-neskolk.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Как начать переписку с одним или несколькими собеседниками",
-      "tokens": 83
+      "tokens": 88
     },
     {
       "file": "sections/50-o-chatah-v-mtalker.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "О чатах в MTalker",
-      "tokens": 381
+      "tokens": 386
     },
     {
       "file": "sections/51-navigaciya-po-razdelu-chaty.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "Навигация по разделу “Чаты”",
-      "tokens": 452
+      "tokens": 457
     },
     {
       "file": "sections/52-kak-nachat-chat-odin-na-odin.md",
@@ -974,7 +974,7 @@
         }
       ],
       "title": "Как начать чат “один-на-один”",
-      "tokens": 316
+      "tokens": 321
     },
     {
       "file": "sections/53-ishodyaschie-soobscheniya.md",
@@ -992,7 +992,7 @@
         }
       ],
       "title": "Исходящие сообщения",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/54-kak-otpravit-soobschenie.md",
@@ -1010,7 +1010,7 @@
         }
       ],
       "title": "Как отправить сообщение",
-      "tokens": 274
+      "tokens": 279
     },
     {
       "file": "sections/55-proverka-statusa-dostavki-soobscheniya.md",
@@ -1028,7 +1028,7 @@
         }
       ],
       "title": "Проверка статуса доставки сообщения",
-      "tokens": 412
+      "tokens": 417
     },
     {
       "file": "sections/56-redaktirovanie-otpravlennogo-soobscheniy.md",
@@ -1046,7 +1046,7 @@
         }
       ],
       "title": "Редактирование отправленного сообщения",
-      "tokens": 338
+      "tokens": 343
     },
     {
       "file": "sections/57-kak-otmenit-otpravlennoe-soobschenie.md",
@@ -1064,7 +1064,7 @@
         }
       ],
       "title": "Как отменить отправленное сообщение",
-      "tokens": 527
+      "tokens": 532
     },
     {
       "file": "sections/58-kak-otpravit-fayl-ili-sms-ili-faks.md",
@@ -1082,7 +1082,7 @@
         }
       ],
       "title": "Как отправить файл или смс, или факс",
-      "tokens": 68
+      "tokens": 73
     },
     {
       "file": "sections/59-otpravka-faylov-i-izobrazheniy.md",
@@ -1100,7 +1100,7 @@
         }
       ],
       "title": "Отправка файлов и изображений",
-      "tokens": 188
+      "tokens": 193
     },
     {
       "file": "sections/60-otpravka-bez-soprovozhdayuschego-soobsch.md",
@@ -1118,7 +1118,7 @@
         }
       ],
       "title": "Отправка без сопровождающего сообщения",
-      "tokens": 311
+      "tokens": 316
     },
     {
       "file": "sections/61-otpravka-s-soprovozhdayuschim-soobscheni.md",
@@ -1136,7 +1136,7 @@
         }
       ],
       "title": "Отправка с сопровождающим сообщением",
-      "tokens": 356
+      "tokens": 361
     },
     {
       "file": "sections/62-otpravka-sms-i-faksa.md",
@@ -1154,7 +1154,7 @@
         }
       ],
       "title": "Отправка СМС и факса",
-      "tokens": 790
+      "tokens": 795
     },
     {
       "file": "sections/63-golosovoe-soobschenie.md",
@@ -1172,7 +1172,7 @@
         }
       ],
       "title": "Голосовое сообщение",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/64-otpravka-golosovogo-soobscheniya.md",
@@ -1190,7 +1190,7 @@
         }
       ],
       "title": "Отправка голосового сообщения",
-      "tokens": 425
+      "tokens": 430
     },
     {
       "file": "sections/65-kak-proslushat-poluchennoe-golosovoe-soo.md",
@@ -1208,7 +1208,7 @@
         }
       ],
       "title": "Как прослушать полученное голосовое сообщение",
-      "tokens": 609
+      "tokens": 614
     },
     {
       "file": "sections/66-vhodyaschie-soobscheniya.md",
@@ -1226,7 +1226,7 @@
         }
       ],
       "title": "Входящие сообщения",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/67-opovescheniya-o-novyh-soobscheniyah.md",
@@ -1244,7 +1244,7 @@
         }
       ],
       "title": "Оповещения о новых сообщениях",
-      "tokens": 499
+      "tokens": 504
     },
     {
       "file": "sections/68-chtenie-soobscheniy.md",
@@ -1262,7 +1262,7 @@
         }
       ],
       "title": "Чтение сообщений",
-      "tokens": 418
+      "tokens": 423
     },
     {
       "file": "sections/69-kak-vklyuchit-ili-vyklyuchit-pokaz-tekst.md",
@@ -1280,7 +1280,7 @@
         }
       ],
       "title": "Как включить или выключить показ текста сообщения в уведомлениях",
-      "tokens": 387
+      "tokens": 392
     },
     {
       "file": "sections/70-kak-otkryvat-vhodyaschie-fayly-i-skachiv.md",
@@ -1298,7 +1298,7 @@
         }
       ],
       "title": "Как открывать входящие файлы и скачивать их",
-      "tokens": 674
+      "tokens": 679
     },
     {
       "file": "sections/71-reakcii-emodzhi-na-soobschenie.md",
@@ -1316,7 +1316,7 @@
         }
       ],
       "title": "Реакции (эмоджи) на сообщение",
-      "tokens": 208
+      "tokens": 213
     },
     {
       "file": "sections/72-kak-formatirovat-soobscheniya.md",
@@ -1334,7 +1334,7 @@
         }
       ],
       "title": "Как форматировать сообщения",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/73-poisk-soobscheniy.md",
@@ -1352,7 +1352,7 @@
         }
       ],
       "title": "Поиск сообщений",
-      "tokens": 55
+      "tokens": 60
     },
     {
       "file": "sections/74-parametry-poiska.md",
@@ -1370,7 +1370,7 @@
         }
       ],
       "title": "Параметры поиска",
-      "tokens": 377
+      "tokens": 382
     },
     {
       "file": "sections/75-poisk-sredi-chatov-kanalov.md",
@@ -1388,7 +1388,7 @@
         }
       ],
       "title": "Поиск среди чатов / каналов",
-      "tokens": 368
+      "tokens": 373
     },
     {
       "file": "sections/76-poisk-po-istorii-chata.md",
@@ -1406,7 +1406,7 @@
         }
       ],
       "title": "Поиск по истории чата",
-      "tokens": 368
+      "tokens": 373
     },
     {
       "file": "sections/77-kopirovanie-peresylka-i-udalenie-soobsch.md",
@@ -1424,7 +1424,7 @@
         }
       ],
       "title": "Копирование, пересылка и удаление сообщений",
-      "tokens": 484
+      "tokens": 489
     },
     {
       "file": "sections/78-citirovanie-soobscheniy.md",
@@ -1442,7 +1442,7 @@
         }
       ],
       "title": "Цитирование сообщений",
-      "tokens": 270
+      "tokens": 275
     },
     {
       "file": "sections/79-posmotret-kontaktnye-dannye-sobesednika.md",
@@ -1460,7 +1460,7 @@
         }
       ],
       "title": "Посмотреть контактные данные собеседника",
-      "tokens": 267
+      "tokens": 272
     },
     {
       "file": "sections/80-posmotret-istoriyu-soobscheniy.md",
@@ -1478,7 +1478,7 @@
         }
       ],
       "title": "Посмотреть историю сообщений",
-      "tokens": 427
+      "tokens": 432
     },
     {
       "file": "sections/81-ochistit-vashu-istoriyu-soobscheniy.md",
@@ -1496,7 +1496,7 @@
         }
       ],
       "title": "Очистить вашу историю сообщений",
-      "tokens": 265
+      "tokens": 270
     },
     {
       "file": "sections/82-zakreplenie-i-otkreplenie-chata.md",
@@ -1514,7 +1514,7 @@
         }
       ],
       "title": "Закрепление и открепление чата",
-      "tokens": 486
+      "tokens": 491
     },
     {
       "file": "sections/83-poisk-soobscheniy.md",
@@ -1532,7 +1532,7 @@
         }
       ],
       "title": "Поиск сообщений",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/84-parametry-poiska.md",
@@ -1550,7 +1550,7 @@
         }
       ],
       "title": "Параметры поиска",
-      "tokens": 413
+      "tokens": 418
     },
     {
       "file": "sections/85-poisk-sredi-chatov-kanalov.md",
@@ -1568,7 +1568,7 @@
         }
       ],
       "title": "Поиск среди чатов / каналов",
-      "tokens": 331
+      "tokens": 336
     },
     {
       "file": "sections/86-poisk-po-istorii-chata.md",
@@ -1586,7 +1586,7 @@
         }
       ],
       "title": "Поиск по истории чата",
-      "tokens": 374
+      "tokens": 379
     },
     {
       "file": "sections/87-kopirovanie-peresylka-i-udalenie-soobsch.md",
@@ -1604,7 +1604,7 @@
         }
       ],
       "title": "Копирование, пересылка и удаление сообщений",
-      "tokens": 488
+      "tokens": 493
     },
     {
       "file": "sections/88-citirovanie-soobscheniy.md",
@@ -1622,7 +1622,7 @@
         }
       ],
       "title": "Цитирование сообщений",
-      "tokens": 275
+      "tokens": 280
     },
     {
       "file": "sections/89-posmotret-kontaktnye-dannye-sobesednika.md",
@@ -1640,7 +1640,7 @@
         }
       ],
       "title": "Посмотреть контактные данные собеседника",
-      "tokens": 309
+      "tokens": 314
     },
     {
       "file": "sections/90-posmotret-istoriyu-soobscheniy.md",
@@ -1658,7 +1658,7 @@
         }
       ],
       "title": "Посмотреть историю сообщений",
-      "tokens": 395
+      "tokens": 400
     },
     {
       "file": "sections/91-ochistit-vashu-istoriyu-soobscheniy.md",
@@ -1676,7 +1676,7 @@
         }
       ],
       "title": "Очистить вашу историю сообщений",
-      "tokens": 270
+      "tokens": 275
     },
     {
       "file": "sections/92-zakreplenie-i-otkreplenie-chata.md",
@@ -1694,7 +1694,7 @@
         }
       ],
       "title": "Закрепление и открепление чата",
-      "tokens": 527
+      "tokens": 532
     },
     {
       "file": "sections/93-kak-sozdat-obschiy-chat-ili-kanal-i-upra.md",
@@ -1712,7 +1712,7 @@
         }
       ],
       "title": "Как создать общий чат или канал и управлять им 4608",
-      "tokens": 73
+      "tokens": 78
     },
     {
       "file": "sections/94-ob-obschih-chatah-i-kanalah.md",
@@ -1730,7 +1730,7 @@
         }
       ],
       "title": "Об общих чатах и каналах",
-      "tokens": 389
+      "tokens": 394
     },
     {
       "file": "sections/95-opisanie-prav-uchastnikov.md",
@@ -1748,7 +1748,7 @@
         }
       ],
       "title": "Описание прав участников",
-      "tokens": 559
+      "tokens": 564
     },
     {
       "file": "sections/96-kak-sozdat-obschiy-chat-ili-kanal.md",
@@ -1766,7 +1766,7 @@
         }
       ],
       "title": "Как создать общий чат или канал",
-      "tokens": 68
+      "tokens": 73
     },
     {
       "file": "sections/97-obschiy-chat.md",
@@ -1784,7 +1784,7 @@
         }
       ],
       "title": "Общий чат",
-      "tokens": 402
+      "tokens": 407
     },
     {
       "file": "sections/98-kanal.md",
@@ -1802,7 +1802,7 @@
         }
       ],
       "title": "Канал",
-      "tokens": 352
+      "tokens": 357
     },
     {
       "file": "sections/99-dobavit-uchastnika.md",
@@ -1820,7 +1820,7 @@
         }
       ],
       "title": "Добавить участника",
-      "tokens": 363
+      "tokens": 368
     },
     {
       "file": "sections/100-priglasit-po-ssylke-novogo-uchastnika.md",
@@ -1838,7 +1838,7 @@
         }
       ],
       "title": "Пригласить по ссылке нового участника",
-      "tokens": 491
+      "tokens": 496
     },
     {
       "file": "sections/101-kak-prisoedinitsya-po-ssylke.md",
@@ -1856,7 +1856,7 @@
         }
       ],
       "title": "Как присоединиться по ссылке",
-      "tokens": 156
+      "tokens": 161
     },
     {
       "file": "sections/102-otobrazhenie-spiska-uchastnikov.md",
@@ -1874,7 +1874,7 @@
         }
       ],
       "title": "Отображение списка участников",
-      "tokens": 316
+      "tokens": 321
     },
     {
       "file": "sections/103-vydacha-snyatie-prav-administratora.md",
@@ -1892,7 +1892,7 @@
         }
       ],
       "title": "Выдача/снятие прав администратора",
-      "tokens": 751
+      "tokens": 756
     },
     {
       "file": "sections/104-bystryy-perehod-k-kartochke-kontakta.md",
@@ -1910,7 +1910,7 @@
         }
       ],
       "title": "Быстрый переход к карточке контакта",
-      "tokens": 71
+      "tokens": 76
     },
     {
       "file": "sections/105-obschie-svedeniya.md",
@@ -1928,7 +1928,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 179
+      "tokens": 184
     },
     {
       "file": "sections/106-perehod-iz-obschego-chata.md",
@@ -1946,7 +1946,7 @@
         }
       ],
       "title": "Переход из общего чата",
-      "tokens": 167
+      "tokens": 172
     },
     {
       "file": "sections/107-perehod-iz-kanala.md",
@@ -1964,7 +1964,7 @@
         }
       ],
       "title": "Переход из канала",
-      "tokens": 376
+      "tokens": 381
     },
     {
       "file": "sections/108-kak-pereimenovat-chat-kanal.md",
@@ -1982,7 +1982,7 @@
         }
       ],
       "title": "Как переименовать чат / канал",
-      "tokens": 387
+      "tokens": 392
     },
     {
       "file": "sections/109-nastroyka-vidimosti-istorii-chata-dlya-n.md",
@@ -2000,7 +2000,7 @@
         }
       ],
       "title": "Настройка видимости истории чата для новых участников",
-      "tokens": 418
+      "tokens": 423
     },
     {
       "file": "sections/110-nastroyka-uvedomleniy-vidimosti-istorii.md",
@@ -2018,7 +2018,7 @@
         }
       ],
       "title": "Настройка уведомлений видимости истории чата",
-      "tokens": 459
+      "tokens": 464
     },
     {
       "file": "sections/111-udalit-uchastnika.md",
@@ -2036,7 +2036,7 @@
         }
       ],
       "title": "Удалить участника",
-      "tokens": 375
+      "tokens": 380
     },
     {
       "file": "sections/112-vyhod-iz-obschego-chata.md",
@@ -2054,7 +2054,7 @@
         }
       ],
       "title": "Выход из общего чата",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/113-obschie-svedeniya.md",
@@ -2072,7 +2072,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 279
+      "tokens": 284
     },
     {
       "file": "sections/114-poryadok-deystviy.md",
@@ -2090,7 +2090,7 @@
         }
       ],
       "title": "Порядок действий",
-      "tokens": 291
+      "tokens": 296
     },
     {
       "file": "sections/115-vyhod-iz-kanala.md",
@@ -2108,7 +2108,7 @@
         }
       ],
       "title": "Выход из канала",
-      "tokens": 61
+      "tokens": 66
     },
     {
       "file": "sections/116-obschie-svedeniya.md",
@@ -2126,7 +2126,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 263
+      "tokens": 268
     },
     {
       "file": "sections/117-poryadok-deystviy.md",
@@ -2144,7 +2144,7 @@
         }
       ],
       "title": "Порядок действий",
-      "tokens": 427
+      "tokens": 432
     },
     {
       "file": "sections/118-kak-pozvonit-ili-prinyat-zvonok.md",
@@ -2162,7 +2162,7 @@
         }
       ],
       "title": "Как позвонить или принять звонок",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/119-kak-pozvonit.md",
@@ -2180,7 +2180,7 @@
         }
       ],
       "title": "Как позвонить?",
-      "tokens": 61
+      "tokens": 66
     },
     {
       "file": "sections/120-nomer-sohranennyy-v-kontaktah.md",
@@ -2198,7 +2198,7 @@
         }
       ],
       "title": "Номер, сохраненный в контактах",
-      "tokens": 642
+      "tokens": 647
     },
     {
       "file": "sections/121-nomer-ne-cohranennyy-v-kontakty-lyuboy-n.md",
@@ -2216,7 +2216,7 @@
         }
       ],
       "title": "Номер, не cохраненный в контакты (любой номер)",
-      "tokens": 329
+      "tokens": 334
     },
     {
       "file": "sections/122-zvonok-na-dobavochnyy-nomer.md",
@@ -2234,7 +2234,7 @@
         }
       ],
       "title": "Звонок на добавочный номер",
-      "tokens": 280
+      "tokens": 285
     },
     {
       "file": "sections/123-nomer-v-istorii-vyzovov.md",
@@ -2252,7 +2252,7 @@
         }
       ],
       "title": "Номер в истории вызовов",
-      "tokens": 250
+      "tokens": 255
     },
     {
       "file": "sections/124-v-komnatu-audio-konferencsvyazi.md",
@@ -2270,7 +2270,7 @@
         }
       ],
       "title": "В комнату аудио конференцсвязи",
-      "tokens": 498
+      "tokens": 503
     },
     {
       "file": "sections/125-kak-prinyat-vhodyaschiy-audio-zvonok.md",
@@ -2288,7 +2288,7 @@
         }
       ],
       "title": "Как принять входящий аудио звонок?",
-      "tokens": 265
+      "tokens": 270
     },
     {
       "file": "sections/126-zakaz-obratnogo-zvonka.md",
@@ -2306,7 +2306,7 @@
         }
       ],
       "title": "Заказ обратного звонка",
-      "tokens": 809
+      "tokens": 814
     },
     {
       "file": "sections/127-kak-dobavit-tretego-uchastnika-v-zvonok.md",
@@ -2324,7 +2324,7 @@
         }
       ],
       "title": "Как добавить третьего участника в звонок",
-      "tokens": 445
+      "tokens": 450
     },
     {
       "file": "sections/128-kak-pozvonit-po-vtoroy-linii.md",
@@ -2342,7 +2342,7 @@
         }
       ],
       "title": "Как позвонить по второй линии",
-      "tokens": 530
+      "tokens": 535
     },
     {
       "file": "sections/129-uderzhanie-vyzova.md",
@@ -2360,7 +2360,7 @@
         }
       ],
       "title": "Удержание вызова",
-      "tokens": 178
+      "tokens": 183
     },
     {
       "file": "sections/130-perevod-vyzova-na-drugogo-sotrudnika.md",
@@ -2378,7 +2378,7 @@
         }
       ],
       "title": "Перевод вызова на другого сотрудника",
-      "tokens": 294
+      "tokens": 299
     },
     {
       "file": "sections/131-kak-otpravit-soobschenie-v-chat-sms-ili.md",
@@ -2396,7 +2396,7 @@
         }
       ],
       "title": "Как отправить сообщение в чат, смс или факс участнику звонка",
-      "tokens": 1080
+      "tokens": 1085
     },
     {
       "file": "sections/132-regulirovka-gromkosti-dinamikov-i-mikrof.md",
@@ -2414,7 +2414,7 @@
         }
       ],
       "title": "Регулировка громкости динамиков и микрофона во время звонка",
-      "tokens": 437
+      "tokens": 442
     },
     {
       "file": "sections/133-kak-vyklyuchit-mikrofon.md",
@@ -2432,7 +2432,7 @@
         }
       ],
       "title": "Как выключить микрофон",
-      "tokens": 172
+      "tokens": 177
     },
     {
       "file": "sections/134-zapis-razgovora-obschie-svedeniya.md",
@@ -2450,7 +2450,7 @@
         }
       ],
       "title": "Запись разговора. Общие сведения",
-      "tokens": 322
+      "tokens": 327
     },
     {
       "file": "sections/135-soobschenie-vnimanie-zvonok-byl-otpravle.md",
@@ -2468,7 +2468,7 @@
         }
       ],
       "title": "Сообщение “Внимание! Звонок был отправлен на номер…”",
-      "tokens": 141
+      "tokens": 146
     },
     {
       "file": "sections/136-zavershenie-vyzova.md",
@@ -2486,7 +2486,7 @@
         }
       ],
       "title": "Завершение вызова",
-      "tokens": 274
+      "tokens": 279
     },
     {
       "file": "sections/137-vo-vremya-zvonka-obschee-opisanie-okna-p.md",
@@ -2504,7 +2504,7 @@
         }
       ],
       "title": "Во время звонка. Общее описание окна проведения сеанса связи",
-      "tokens": 1126
+      "tokens": 1131
     },
     {
       "file": "sections/138-kak-sdelat-videokonferenciyu.md",
@@ -2522,7 +2522,7 @@
         }
       ],
       "title": "Как сделать видеоконференцию",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/139-o-videokonferenciya-v-mtalker.md",
@@ -2540,7 +2540,7 @@
         }
       ],
       "title": "О видеоконференция в MTalker",
-      "tokens": 567
+      "tokens": 572
     },
     {
       "file": "sections/140-ogranichenie.md",
@@ -2558,7 +2558,7 @@
         }
       ],
       "title": "Ограничение",
-      "tokens": 263
+      "tokens": 268
     },
     {
       "file": "sections/141-o-roli-administratora-videokonferencii.md",
@@ -2576,7 +2576,7 @@
         }
       ],
       "title": "О роли администратора видеоконференции",
-      "tokens": 177
+      "tokens": 182
     },
     {
       "file": "sections/142-kak-posmotret-sostav-uchastnikov-videoko.md",
@@ -2594,7 +2594,7 @@
         }
       ],
       "title": "Как посмотреть состав участников видеоконференции",
-      "tokens": 323
+      "tokens": 328
     },
     {
       "file": "sections/143-kak-pozvonit-s-video-abonentu-ili-v-grup.md",
@@ -2612,7 +2612,7 @@
         }
       ],
       "title": "Как позвонить с видео абоненту или в групповой чат",
-      "tokens": 1598
+      "tokens": 1603
     },
     {
       "file": "sections/144-kak-prinyat-vhodyaschiy-video-zvonok.md",
@@ -2630,7 +2630,7 @@
         }
       ],
       "title": "Как принять входящий видео звонок",
-      "tokens": 1397
+      "tokens": 1402
     },
     {
       "file": "sections/145-kak-dobavit-ili-udalit-sotrudnikov-i-gos.md",
@@ -2648,7 +2648,7 @@
         }
       ],
       "title": "Как добавить или удалить сотрудников и гостей видеоконференции",
-      "tokens": 90
+      "tokens": 95
     },
     {
       "file": "sections/146-kak-dobavit-uchastnikov-v-videokonferenc.md",
@@ -2666,7 +2666,7 @@
         }
       ],
       "title": "Как добавить участников в видеоконференцию",
-      "tokens": 533
+      "tokens": 538
     },
     {
       "file": "sections/147-kak-udalit-uchastnika-iz-videokonferenci.md",
@@ -2684,7 +2684,7 @@
         }
       ],
       "title": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
-      "tokens": 577
+      "tokens": 582
     },
     {
       "file": "sections/148-kak-prisoedinitsya-po-ssylke-k-videokonf.md",
@@ -2702,7 +2702,7 @@
         }
       ],
       "title": "Как присоединиться по ссылке к видеоконференции",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/149-vazhnaya-informaciya.md",
@@ -2720,7 +2720,7 @@
         }
       ],
       "title": "Важная информация",
-      "tokens": 467
+      "tokens": 472
     },
     {
       "file": "sections/150-kak-prisoedinitsya-v-kachestve-gostya-be.md",
@@ -2738,7 +2738,7 @@
         }
       ],
       "title": "Как присоединиться в качестве гостя (без авторизации в MTalker)",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/151-esli-u-vas-net-akkaunta-mtalker.md",
@@ -2756,7 +2756,7 @@
         }
       ],
       "title": "Если у вас нет аккаунта MTalker",
-      "tokens": 586
+      "tokens": 591
     },
     {
       "file": "sections/152-esli-u-vas-est-akkaunt-mtalker.md",
@@ -2774,7 +2774,7 @@
         }
       ],
       "title": "Если у вас есть аккаунт MTalker",
-      "tokens": 737
+      "tokens": 742
     },
     {
       "file": "sections/153-prisoedinitsya-kak-sotrudnik-avtorizovav.md",
@@ -2792,7 +2792,7 @@
         }
       ],
       "title": "Присоединиться как сотрудник (авторизовавшись в MTalker)",
-      "tokens": 137
+      "tokens": 142
     },
     {
       "file": "sections/154-cherez-prilozhenie-mtalker.md",
@@ -2810,7 +2810,7 @@
         }
       ],
       "title": "Через приложение MTalker",
-      "tokens": 609
+      "tokens": 614
     },
     {
       "file": "sections/155-cherez-veb-versiyu-mtalker.md",
@@ -2828,7 +2828,7 @@
         }
       ],
       "title": "Через веб-версию MTalker",
-      "tokens": 497
+      "tokens": 502
     },
     {
       "file": "sections/156-kak-sozdat-videokonferenciyu-i-dobavit-s.md",
@@ -2846,7 +2846,7 @@
         }
       ],
       "title": "Как создать видеоконференцию и добавить сотрудников и гостей",
-      "tokens": 833
+      "tokens": 838
     },
     {
       "file": "sections/157-kak-vyyti-iz-videokonferencii.md",
@@ -2864,7 +2864,7 @@
         }
       ],
       "title": "Как выйти из видеоконференции",
-      "tokens": 276
+      "tokens": 281
     },
     {
       "file": "sections/158-kak-nastroit-sobstvennye-kameru-i-mikrof.md",
@@ -2882,7 +2882,7 @@
         }
       ],
       "title": "Как настроить собственные камеру и микрофон",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/159-kak-vklyuchit-ili-vyklyuchit.md",
@@ -2900,7 +2900,7 @@
         }
       ],
       "title": "Как включить или выключить",
-      "tokens": 251
+      "tokens": 256
     },
     {
       "file": "sections/160-kak-vybrat-kameru-ili-mikrofon-i-proveri.md",
@@ -2918,7 +2918,7 @@
         }
       ],
       "title": "Как выбрать камеру или микрофон и проверить их работу",
-      "tokens": 808
+      "tokens": 813
     },
     {
       "file": "sections/161-vklyuchenie-demonstracii-ekrana.md",
@@ -2936,7 +2936,7 @@
         }
       ],
       "title": "Включение демонстрации экрана",
-      "tokens": 67
+      "tokens": 72
     },
     {
       "file": "sections/162-kak-vklyuchit-ili-vyklyuchit.md",
@@ -2954,7 +2954,7 @@
         }
       ],
       "title": "Как включить или выключить",
-      "tokens": 386
+      "tokens": 391
     },
     {
       "file": "sections/163-kak-nastroit-kachestvo-translyacii.md",
@@ -2972,7 +2972,7 @@
         }
       ],
       "title": "Как настроить качество трансляции",
-      "tokens": 292
+      "tokens": 297
     },
     {
       "file": "sections/164-kak-izmenit-fonovye-effekty.md",
@@ -2990,7 +2990,7 @@
         }
       ],
       "title": "Как изменить фоновые эффекты",
-      "tokens": 497
+      "tokens": 502
     },
     {
       "file": "sections/165-podnyat-ruku.md",
@@ -3008,7 +3008,7 @@
         }
       ],
       "title": "Поднять руку",
-      "tokens": 368
+      "tokens": 373
     },
     {
       "file": "sections/166-izmenit-raskladku-otobrazheniya-okon-uch.md",
@@ -3026,7 +3026,7 @@
         }
       ],
       "title": "Изменить раскладку отображения окон участников",
-      "tokens": 231
+      "tokens": 236
     },
     {
       "file": "sections/167-konferencii-komnaty.md",
@@ -3044,7 +3044,7 @@
         }
       ],
       "title": "Конференции (комнаты)",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/168-obschee.md",
@@ -3062,7 +3062,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 393
+      "tokens": 398
     },
     {
       "file": "sections/169-rabota-s-komnatami.md",
@@ -3080,7 +3080,7 @@
         }
       ],
       "title": "Работа с комнатами",
-      "tokens": 64
+      "tokens": 69
     },
     {
       "file": "sections/170-kak-posmotret-informaciyu-o-komnate.md",
@@ -3098,7 +3098,7 @@
         }
       ],
       "title": "Как посмотреть информацию о комнате",
-      "tokens": 592
+      "tokens": 597
     },
     {
       "file": "sections/171-kak-sozdat-komnatu-obzor.md",
@@ -3116,7 +3116,7 @@
         }
       ],
       "title": "Как создать комнату. Обзор",
-      "tokens": 141
+      "tokens": 146
     },
     {
       "file": "sections/172-kak-pozvonit-v-komnatu.md",
@@ -3134,7 +3134,7 @@
         }
       ],
       "title": "Как позвонить в комнату",
-      "tokens": 217
+      "tokens": 222
     },
     {
       "file": "sections/173-kak-zakazat-obratnyy-zvonok-s-uchastnika.md",
@@ -3152,7 +3152,7 @@
         }
       ],
       "title": "Как заказать обратный звонок с участниками комнаты",
-      "tokens": 610
+      "tokens": 615
     },
     {
       "file": "sections/174-kak-nachat-audio-konferenciyu.md",
@@ -3170,7 +3170,7 @@
         }
       ],
       "title": "Как начать аудио конференцию",
-      "tokens": 276
+      "tokens": 281
     },
     {
       "file": "sections/175-rabota-s-videokonferenciey-vks.md",
@@ -3188,7 +3188,7 @@
         }
       ],
       "title": "Работа с видеоконференцией (ВКС)",
-      "tokens": 73
+      "tokens": 78
     },
     {
       "file": "sections/176-obschee.md",
@@ -3206,7 +3206,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 140
+      "tokens": 145
     },
     {
       "file": "sections/177-kak-sozdat-novuyu-videokonferenciyu-i-pr.md",
@@ -3224,7 +3224,7 @@
         }
       ],
       "title": "Как создать новую видеоконференцию и предоставить ссылку для присоединения",
-      "tokens": 1595
+      "tokens": 1600
     },
     {
       "file": "sections/178-kak-prisoedinitsya-po-ssylke-k-vks.md",
@@ -3242,7 +3242,7 @@
         }
       ],
       "title": "Как присоединиться по ссылке к ВКС",
-      "tokens": 1500
+      "tokens": 1505
     },
     {
       "file": "sections/179-kak-predostavit-dostup-k-videokonferenci.md",
@@ -3260,7 +3260,7 @@
         }
       ],
       "title": "Как предоставить доступ к видеоконференции по ссылке",
-      "tokens": 486
+      "tokens": 491
     },
     {
       "file": "sections/180-kontakty.md",
@@ -3278,7 +3278,7 @@
         }
       ],
       "title": "Контакты",
-      "tokens": 55
+      "tokens": 60
     },
     {
       "file": "sections/181-obschie-svedeniya.md",
@@ -3296,7 +3296,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 553
+      "tokens": 558
     },
     {
       "file": "sections/182-poisk-kontaktov-po-proizvolnomu-parametr.md",
@@ -3314,7 +3314,7 @@
         }
       ],
       "title": "Поиск контактов по произвольному параметру",
-      "tokens": 456
+      "tokens": 461
     },
     {
       "file": "sections/183-gruppy-kontaktov-filtry.md",
@@ -3332,7 +3332,7 @@
         }
       ],
       "title": "Группы контактов. Фильтры",
-      "tokens": 629
+      "tokens": 634
     },
     {
       "file": "sections/184-kak-posmotret-dannye-kontakta-i-istoriyu.md",
@@ -3350,7 +3350,7 @@
         }
       ],
       "title": "Как посмотреть данные контакта и историю вызовов",
-      "tokens": 502
+      "tokens": 507
     },
     {
       "file": "sections/185-lichnye-kontakty.md",
@@ -3368,7 +3368,7 @@
         }
       ],
       "title": "Личные контакты",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/186-dobavlenie-novogo-kontakta.md",
@@ -3386,7 +3386,7 @@
         }
       ],
       "title": "Добавление нового контакта",
-      "tokens": 280
+      "tokens": 285
     },
     {
       "file": "sections/187-redaktirovanie.md",
@@ -3404,7 +3404,7 @@
         }
       ],
       "title": "Редактирование",
-      "tokens": 474
+      "tokens": 479
     },
     {
       "file": "sections/188-udalenie-iz-adresnoy-knigi.md",
@@ -3422,7 +3422,7 @@
         }
       ],
       "title": "Удаление из адресной книги",
-      "tokens": 367
+      "tokens": 372
     },
     {
       "file": "sections/189-spisok-izbrannoe.md",
@@ -3440,7 +3440,7 @@
         }
       ],
       "title": "Список “Избранное”",
-      "tokens": 64
+      "tokens": 69
     },
     {
       "file": "sections/190-dobavlenie-v-gruppu-izbrannye.md",
@@ -3458,7 +3458,7 @@
         }
       ],
       "title": "Добавление в группу “Избранные”",
-      "tokens": 384
+      "tokens": 389
     },
     {
       "file": "sections/191-udalenie-iz-gruppy-izbrannye.md",
@@ -3476,7 +3476,7 @@
         }
       ],
       "title": "Удаление из группы “Избранные”",
-      "tokens": 411
+      "tokens": 416
     },
     {
       "file": "sections/192-istoriya-vyzovov.md",
@@ -3494,7 +3494,7 @@
         }
       ],
       "title": "История вызовов",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/193-obschie-svedeniya.md",
@@ -3512,7 +3512,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 572
+      "tokens": 577
     },
     {
       "file": "sections/194-poisk-zapisi-v-istorii-vyzovov.md",
@@ -3530,7 +3530,7 @@
         }
       ],
       "title": "Поиск записи в истории вызовов",
-      "tokens": 68
+      "tokens": 73
     },
     {
       "file": "sections/195-obschie-svedeniya.md",
@@ -3548,7 +3548,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 230
+      "tokens": 235
     },
     {
       "file": "sections/196-poisk-v-ruchnom-rezhime.md",
@@ -3566,7 +3566,7 @@
         }
       ],
       "title": "Поиск в ручном режиме",
-      "tokens": 408
+      "tokens": 413
     },
     {
       "file": "sections/197-avtomaticheskiy-poisk-po-parametram.md",
@@ -3584,7 +3584,7 @@
         }
       ],
       "title": "Автоматический поиск по параметрам",
-      "tokens": 308
+      "tokens": 313
     },
     {
       "file": "sections/198-vyvod-na-ekran-zapisi-o-zvonke.md",
@@ -3602,7 +3602,7 @@
         }
       ],
       "title": "Вывод на экран записи о звонке",
-      "tokens": 617
+      "tokens": 622
     },
     {
       "file": "sections/199-obratnaya-svyaz-kak-svyazatsya-s-abonent.md",
@@ -3620,7 +3620,7 @@
         }
       ],
       "title": "Обратная связь. Как связаться с абонентом, указанным в истории вызовов",
-      "tokens": 92
+      "tokens": 97
     },
     {
       "file": "sections/200-obschie-svedeniya.md",
@@ -3638,7 +3638,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 204
+      "tokens": 209
     },
     {
       "file": "sections/201-kak-perezvonit.md",
@@ -3656,7 +3656,7 @@
         }
       ],
       "title": "Как перезвонить?",
-      "tokens": 347
+      "tokens": 352
     },
     {
       "file": "sections/202-otpravka-tekstovogo-soobscheniya.md",
@@ -3674,7 +3674,7 @@
         }
       ],
       "title": "Отправка текстового сообщения",
-      "tokens": 398
+      "tokens": 403
     },
     {
       "file": "sections/203-otpravka-sms-faksa.md",
@@ -3692,7 +3692,7 @@
         }
       ],
       "title": "Отправка смс / факса",
-      "tokens": 1164
+      "tokens": 1169
     },
     {
       "file": "sections/204-sozdat-kontakt.md",
@@ -3710,7 +3710,7 @@
         }
       ],
       "title": "Создать контакт",
-      "tokens": 423
+      "tokens": 428
     },
     {
       "file": "sections/205-zapis-razgovora.md",
@@ -3728,7 +3728,7 @@
         }
       ],
       "title": "Запись разговора",
-      "tokens": 64
+      "tokens": 69
     },
     {
       "file": "sections/206-obschie-svedeniya.md",
@@ -3746,7 +3746,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 231
+      "tokens": 236
     },
     {
       "file": "sections/207-skachat-zapis-iz-istorii-vyzovov.md",
@@ -3764,7 +3764,7 @@
         }
       ],
       "title": "Скачать запись из истории вызовов",
-      "tokens": 338
+      "tokens": 343
     },
     {
       "file": "sections/208-skachat-zapis-iz-kartochki-kontakta.md",
@@ -3782,7 +3782,7 @@
         }
       ],
       "title": "Скачать запись из карточки контакта",
-      "tokens": 183
+      "tokens": 188
     },
     {
       "file": "sections/209-udalenie-zapisi-iz-istorii-vyzovov.md",
@@ -3800,7 +3800,7 @@
         }
       ],
       "title": "Удаление записи из истории вызовов",
-      "tokens": 250
+      "tokens": 255
     },
     {
       "file": "sections/210-avtosekretar.md",
@@ -3818,7 +3818,7 @@
         }
       ],
       "title": "Автосекретарь",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/211-obschee.md",
@@ -3836,7 +3836,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 124
+      "tokens": 129
     },
     {
       "file": "sections/212-kak-nastroit-pravilo.md",
@@ -3854,7 +3854,7 @@
         }
       ],
       "title": "Как настроить правило",
-      "tokens": 538
+      "tokens": 543
     },
     {
       "file": "sections/213-kak-vklyuchit-ili-vyklyuchit-pravilo.md",
@@ -3872,7 +3872,7 @@
         }
       ],
       "title": "Как включить или выключить правило",
-      "tokens": 239
+      "tokens": 244
     },
     {
       "file": "sections/214-kak-redaktirovat-ili-udalit-pravilo.md",
@@ -3890,7 +3890,7 @@
         }
       ],
       "title": "Как редактировать или удалить правило",
-      "tokens": 258
+      "tokens": 263
     },
     {
       "file": "sections/215-sms-rassylka.md",
@@ -3908,7 +3908,7 @@
         }
       ],
       "title": "СМС-рассылка",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/216-kak-sozdat-rassylku.md",
@@ -3926,7 +3926,7 @@
         }
       ],
       "title": "Как создать рассылку",
-      "tokens": 429
+      "tokens": 434
     },
     {
       "file": "sections/217-kak-redaktirovat-ili-udalit-rassylku.md",
@@ -3944,7 +3944,7 @@
         }
       ],
       "title": "Как редактировать или удалить рассылку",
-      "tokens": 544
+      "tokens": 549
     },
     {
       "file": "sections/218-razdel-obrascheniya-obschie-svedeniya.md",
@@ -3962,7 +3962,7 @@
         }
       ],
       "title": "Раздел “Обращения”. Общие сведения",
-      "tokens": 372
+      "tokens": 377
     },
     {
       "file": "sections/219-upravlenie-svoim-profilem-polzovatelya.md",
@@ -3980,7 +3980,7 @@
         }
       ],
       "title": "Управление своим профилем пользователя",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
@@ -3998,7 +3998,7 @@
         }
       ],
       "title": "Как изменить статус или отключить показ уведомлений из всех чатов и каналов",
-      "tokens": 92
+      "tokens": 97
     },
     {
       "file": "sections/221-obschee.md",
@@ -4016,7 +4016,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 527
+      "tokens": 532
     },
     {
       "file": "sections/222-kak-izmenit-status.md",
@@ -4034,7 +4034,7 @@
         }
       ],
       "title": "Как изменить статус",
-      "tokens": 412
+      "tokens": 417
     },
     {
       "file": "sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md",
@@ -4052,7 +4052,7 @@
         }
       ],
       "title": "Как отключить уведомления в MTalker",
-      "tokens": 387
+      "tokens": 392
     },
     {
       "file": "sections/224-kak-smenit-ili-udalit-avatar.md",
@@ -4070,7 +4070,7 @@
         }
       ],
       "title": "Как сменить или удалить аватар",
-      "tokens": 803
+      "tokens": 808
     },
     {
       "file": "sections/225-kak-otklyuchit-funkciyu-zapomnit-menya.md",
@@ -4088,7 +4088,7 @@
         }
       ],
       "title": "Как отключить функцию “Запомнить меня”?",
-      "tokens": 259
+      "tokens": 264
     },
     {
       "file": "sections/226-avtomaticheskiy-nabor-nomera-avtodozvon.md",
@@ -4106,7 +4106,7 @@
         }
       ],
       "title": "Автоматический набор номера. Автодозвон",
-      "tokens": 70
+      "tokens": 75
     },
     {
       "file": "sections/227-obschie-svedeniya.md",
@@ -4124,7 +4124,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 209
+      "tokens": 214
     },
     {
       "file": "sections/228-vklyuchenie.md",
@@ -4142,7 +4142,7 @@
         }
       ],
       "title": "Включение",
-      "tokens": 255
+      "tokens": 260
     },
     {
       "file": "sections/229-o-novoy-veb-versii-mtalker.md",
@@ -4160,7 +4160,7 @@
         }
       ],
       "title": "О новой веб-версии MTalker",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/230-obschee.md",
@@ -4178,7 +4178,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 268
+      "tokens": 273
     },
     {
       "file": "sections/231-kak-posmotret-versiyu-mtalker.md",
@@ -4196,7 +4196,7 @@
         }
       ],
       "title": "Как посмотреть версию MTalker",
-      "tokens": 221
+      "tokens": 226
     },
     {
       "file": "sections/232-kak-soobschit-o-probleme-v-rabote-s-mtal.md",
@@ -4214,7 +4214,7 @@
         }
       ],
       "title": "Как сообщить о проблеме в работе с MTalker",
-      "tokens": 225
+      "tokens": 230
     },
     {
       "file": "sections/233-kak-vyyti-iz-akkaunta-mtalker.md",
@@ -4232,7 +4232,7 @@
         }
       ],
       "title": "Как выйти из аккаунта MTalker",
-      "tokens": 180
+      "tokens": 185
     },
     {
       "file": "sections/234-kak-nachat-videokonferenciyu.md",
@@ -4250,7 +4250,7 @@
         }
       ],
       "title": "Как начать видеоконференцию",
-      "tokens": 909
+      "tokens": 914
     },
     {
       "file": "sections/235-kak-prisoedinitsya-po-ssylke-k-videokonf.md",
@@ -4268,7 +4268,7 @@
         }
       ],
       "title": "Как присоединиться по ссылке к видеоконференции",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/236-vazhnaya-informaciya.md",
@@ -4286,7 +4286,7 @@
         }
       ],
       "title": "Важная информация",
-      "tokens": 466
+      "tokens": 471
     },
     {
       "file": "sections/237-v-kachestve-gostya-bez-avtorizacii-v-mta.md",
@@ -4304,7 +4304,7 @@
         }
       ],
       "title": "В качестве гостя (без авторизации в MTalker)",
-      "tokens": 68
+      "tokens": 73
     },
     {
       "file": "sections/238-esli-u-vas-net-akkaunta-mtalker.md",
@@ -4322,7 +4322,7 @@
         }
       ],
       "title": "Если у вас нет аккаунта MTalker",
-      "tokens": 562
+      "tokens": 567
     },
     {
       "file": "sections/239-esli-u-vas-est-akkaunt-mtalker.md",
@@ -4340,7 +4340,7 @@
         }
       ],
       "title": "Если у вас есть аккаунт MTalker",
-      "tokens": 728
+      "tokens": 733
     },
     {
       "file": "sections/240-kak-sotrudnik-avtorizaciya-v-mtalker.md",
@@ -4358,7 +4358,7 @@
         }
       ],
       "title": "Как сотрудник (авторизация в MTalker)",
-      "tokens": 127
+      "tokens": 132
     },
     {
       "file": "sections/241-cherez-prilozhenie-mtalker.md",
@@ -4376,7 +4376,7 @@
         }
       ],
       "title": "Через приложение MTalker",
-      "tokens": 615
+      "tokens": 620
     },
     {
       "file": "sections/242-cherez-veb-versiyu-mtalker.md",
@@ -4394,7 +4394,7 @@
         }
       ],
       "title": "Через веб-версию MTalker",
-      "tokens": 580
+      "tokens": 585
     },
     {
       "file": "sections/243-kak-vyyti-iz-videokonferencii.md",
@@ -4412,7 +4412,7 @@
         }
       ],
       "title": "Как выйти из видеоконференции",
-      "tokens": 239
+      "tokens": 244
     },
     {
       "file": "sections/244-kak-upravlyat-sobstvennymi-kameroy-i-mik.md",
@@ -4430,7 +4430,7 @@
         }
       ],
       "title": "Как управлять собственными камерой и микрофоном",
-      "tokens": 79
+      "tokens": 84
     },
     {
       "file": "sections/245-kak-vklyuchit-ili-vyklyuchit.md",
@@ -4448,7 +4448,7 @@
         }
       ],
       "title": "Как включить или выключить",
-      "tokens": 251
+      "tokens": 256
     },
     {
       "file": "sections/246-kak-vybrat-kameru-ili-mikrofon-i-proveri.md",
@@ -4466,7 +4466,7 @@
         }
       ],
       "title": "Как выбрать камеру или микрофон и проверить их работу",
-      "tokens": 807
+      "tokens": 812
     },
     {
       "file": "sections/247-vklyuchenie-demonstracii-ekrana.md",
@@ -4484,7 +4484,7 @@
         }
       ],
       "title": "Включение демонстрации экрана",
-      "tokens": 67
+      "tokens": 72
     },
     {
       "file": "sections/248-kak-vklyuchit-ili-vyklyuchit.md",
@@ -4502,7 +4502,7 @@
         }
       ],
       "title": "Как включить или выключить",
-      "tokens": 386
+      "tokens": 391
     },
     {
       "file": "sections/249-kak-nastroit-kachestvo-translyacii.md",
@@ -4520,7 +4520,7 @@
         }
       ],
       "title": "Как настроить качество трансляции",
-      "tokens": 329
+      "tokens": 334
     },
     {
       "file": "sections/250-kak-personalizirovat-vash-fon.md",
@@ -4538,7 +4538,7 @@
         }
       ],
       "title": "Как персонализировать ваш фон",
-      "tokens": 454
+      "tokens": 459
     },
     {
       "file": "sections/251-kak-podnyat-ruku.md",
@@ -4556,7 +4556,7 @@
         }
       ],
       "title": "Как поднять руку",
-      "tokens": 373
+      "tokens": 378
     },
     {
       "file": "sections/252-izmenit-raskladku-otobrazheniya-okon-uch.md",
@@ -4574,7 +4574,7 @@
         }
       ],
       "title": "Изменить раскладку отображения окон участников",
-      "tokens": 231
+      "tokens": 236
     },
     {
       "file": "sections/253-kak-upravlyat-videokonferenciy.md",
@@ -4592,7 +4592,7 @@
         }
       ],
       "title": "Как управлять видеоконференций",
-      "tokens": 70
+      "tokens": 75
     },
     {
       "file": "sections/254-o-roli-administratora-videokonferencii.md",
@@ -4610,7 +4610,7 @@
         }
       ],
       "title": "О роли администратора видеоконференции",
-      "tokens": 178
+      "tokens": 183
     },
     {
       "file": "sections/255-kak-posmotret-sostav-uchastnikov.md",
@@ -4628,7 +4628,7 @@
         }
       ],
       "title": "Как посмотреть состав участников",
-      "tokens": 308
+      "tokens": 313
     },
     {
       "file": "sections/256-kak-dobavit-ili-udalit-sotrudnikov-i-gos.md",
@@ -4646,7 +4646,7 @@
         }
       ],
       "title": "Как добавить или удалить сотрудников и гостей видеоконференции",
-      "tokens": 75
+      "tokens": 80
     },
     {
       "file": "sections/257-kak-dobavit-uchastnikov-v-videokonferenc.md",
@@ -4664,7 +4664,7 @@
         }
       ],
       "title": "Как добавить участников в видеоконференцию",
-      "tokens": 540
+      "tokens": 545
     },
     {
       "file": "sections/258-kak-udalit-uchastnika-iz-videokonferenci.md",
@@ -4682,7 +4682,7 @@
         }
       ],
       "title": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
-      "tokens": 540
+      "tokens": 545
     },
     {
       "file": "sections/259-nastroyki-mtalker.md",
@@ -4700,7 +4700,7 @@
         }
       ],
       "title": "Настройки MTalker",
-      "tokens": 57
+      "tokens": 62
     },
     {
       "file": "sections/260-kak-otkryt-obobschenno.md",
@@ -4718,7 +4718,7 @@
         }
       ],
       "title": "Как открыть. Обобщенно",
-      "tokens": 234
+      "tokens": 239
     },
     {
       "file": "sections/261-upravlenie-mtalker.md",
@@ -4736,7 +4736,7 @@
         }
       ],
       "title": "Управление MTalker",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/262-avtomaticheskiy-zapusk-raboty.md",
@@ -4754,7 +4754,7 @@
         }
       ],
       "title": "Автоматический запуск работы",
-      "tokens": 348
+      "tokens": 353
     },
     {
       "file": "sections/263-avtomaticheskiy-vhod-polzovatelya.md",
@@ -4772,7 +4772,7 @@
         }
       ],
       "title": "Автоматический вход пользователя",
-      "tokens": 60
+      "tokens": 65
     },
     {
       "file": "sections/264-obschie-svedeniya.md",
@@ -4790,7 +4790,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 135
+      "tokens": 140
     },
     {
       "file": "sections/265-kak-vklyuchit-avtomaticheskiy-vhod.md",
@@ -4808,7 +4808,7 @@
         }
       ],
       "title": "Как включить автоматический вход",
-      "tokens": 521
+      "tokens": 526
     },
     {
       "file": "sections/266-kak-otklyuchit-avtomaticheskiy-vhod.md",
@@ -4826,7 +4826,7 @@
         }
       ],
       "title": "Как отключить автоматический вход",
-      "tokens": 513
+      "tokens": 518
     },
     {
       "file": "sections/267-kak-vklyuchit-avtomaticheskiy-perehod-v.md",
@@ -4844,7 +4844,7 @@
         }
       ],
       "title": "Как включить автоматический переход в фоновый режим при автозапуске",
-      "tokens": 290
+      "tokens": 295
     },
     {
       "file": "sections/268-fayly-i-zagruzki.md",
@@ -4862,7 +4862,7 @@
         }
       ],
       "title": "Файлы и загрузки",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/269-obschie-svedeniya.md",
@@ -4880,7 +4880,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 193
+      "tokens": 198
     },
     {
       "file": "sections/270-kak-nayti-i-otkryt-zagruzhennyy-fayl.md",
@@ -4898,7 +4898,7 @@
         }
       ],
       "title": "Как найти и открыть загруженный файл",
-      "tokens": 295
+      "tokens": 300
     },
     {
       "file": "sections/271-kak-izmenit-papku-sohraneniya-faylov.md",
@@ -4916,7 +4916,7 @@
         }
       ],
       "title": "Как изменить папку сохранения файлов",
-      "tokens": 276
+      "tokens": 281
     },
     {
       "file": "sections/272-kak-vklyuchit-zapros-mesta-sohraneniya-f.md",
@@ -4934,7 +4934,7 @@
         }
       ],
       "title": "Как включить запрос места сохранения файлов",
-      "tokens": 252
+      "tokens": 257
     },
     {
       "file": "sections/273-avtozagruzka-izobrazheniy.md",
@@ -4952,7 +4952,7 @@
         }
       ],
       "title": "Автозагрузка изображений",
-      "tokens": 308
+      "tokens": 313
     },
     {
       "file": "sections/274-kak-obnovit-mtalker.md",
@@ -4970,7 +4970,7 @@
         }
       ],
       "title": "Как обновить MTalker",
-      "tokens": 342
+      "tokens": 347
     },
     {
       "file": "sections/275-personalizaciya.md",
@@ -4988,7 +4988,7 @@
         }
       ],
       "title": "Персонализация",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/276-vneshniy-vid.md",
@@ -5006,7 +5006,7 @@
         }
       ],
       "title": "Внешний вид",
-      "tokens": 56
+      "tokens": 61
     },
     {
       "file": "sections/277-kak-vklyuchit-ili-vyklyuchit-podtverzhde.md",
@@ -5024,7 +5024,7 @@
         }
       ],
       "title": "Как включить или выключить подтверждение действия пользователя",
-      "tokens": 479
+      "tokens": 484
     },
     {
       "file": "sections/278-vklyuchenie-i-vyklyuchenie-uvedomleniy-o.md",
@@ -5042,7 +5042,7 @@
         }
       ],
       "title": "Включение и выключение уведомлений о новых сообщениях",
-      "tokens": 403
+      "tokens": 408
     },
     {
       "file": "sections/279-obrabotka-klikov-po-ssylkam.md",
@@ -5060,7 +5060,7 @@
         }
       ],
       "title": "Обработка кликов по ссылкам",
-      "tokens": 630
+      "tokens": 635
     },
     {
       "file": "sections/280-pereklyuchenie-fokusa-pri-vhodyaschem-zv.md",
@@ -5078,7 +5078,7 @@
         }
       ],
       "title": "Переключение фокуса при входящем звонке",
-      "tokens": 627
+      "tokens": 632
     },
     {
       "file": "sections/281-udalenie-lishnih-simvolov-pri-vvode-nome.md",
@@ -5096,7 +5096,7 @@
         }
       ],
       "title": "Удаление лишних символов при вводе номера",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/282-obschie-svedeniya.md",
@@ -5114,7 +5114,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 298
+      "tokens": 303
     },
     {
       "file": "sections/283-vklyuchenie-proverki.md",
@@ -5132,7 +5132,7 @@
         }
       ],
       "title": "Включение проверки",
-      "tokens": 208
+      "tokens": 213
     },
     {
       "file": "sections/284-uvedomleniya.md",
@@ -5150,7 +5150,7 @@
         }
       ],
       "title": "Уведомления",
-      "tokens": 54
+      "tokens": 59
     },
     {
       "file": "sections/285-nastroyka-otpravki-na-e-mail.md",
@@ -5168,7 +5168,7 @@
         }
       ],
       "title": "Настройка отправки на e-mail",
-      "tokens": 428
+      "tokens": 433
     },
     {
       "file": "sections/286-zvukovye-uvedomleniya-kak-vybrat-rington.md",
@@ -5186,7 +5186,7 @@
         }
       ],
       "title": "Звуковые уведомления. Как выбрать рингтон",
-      "tokens": 408
+      "tokens": 413
     },
     {
       "file": "sections/287-klavishi-otpravki-soobscheniy-v-chat.md",
@@ -5204,7 +5204,7 @@
         }
       ],
       "title": "Клавиши отправки сообщений в чат",
-      "tokens": 283
+      "tokens": 288
     },
     {
       "file": "sections/288-globalnye-goryachie-klavishi.md",
@@ -5222,7 +5222,7 @@
         }
       ],
       "title": "Глобальные горячие клавиши",
-      "tokens": 421
+      "tokens": 426
     },
     {
       "file": "sections/289-yazyk.md",
@@ -5240,7 +5240,7 @@
         }
       ],
       "title": "Язык",
-      "tokens": 319
+      "tokens": 324
     },
     {
       "file": "sections/290-konfidencialnost-kak-udalit-lichnye-dann.md",
@@ -5258,7 +5258,7 @@
         }
       ],
       "title": "Конфиденциальность. Как удалить личные данные",
-      "tokens": 394
+      "tokens": 399
     },
     {
       "file": "sections/291-video.md",
@@ -5276,7 +5276,7 @@
         }
       ],
       "title": "Видео",
-      "tokens": 59
+      "tokens": 64
     },
     {
       "file": "sections/292-otkryvat-video-zvonki-vo-vneshnem-brauze.md",
@@ -5294,7 +5294,7 @@
         }
       ],
       "title": "Открывать видео звонки во внешнем браузере",
-      "tokens": 474
+      "tokens": 479
     },
     {
       "file": "sections/293-zvuk.md",
@@ -5312,7 +5312,7 @@
         }
       ],
       "title": "Звук",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/294-izmenenie-parametrov-zvukovyh-ustroystva.md",
@@ -5330,7 +5330,7 @@
         }
       ],
       "title": "Изменение параметров звуковых устройства",
-      "tokens": 422
+      "tokens": 427
     },
     {
       "file": "sections/295-kak-bystro-pereklyuchit-vyvod-zvuka-na-s.md",
@@ -5348,7 +5348,7 @@
         }
       ],
       "title": "Как быстро переключить вывод звука на стороннюю гарнитуру",
-      "tokens": 368
+      "tokens": 373
     },
     {
       "file": "sections/296-sbros-nastroek-zvuka.md",
@@ -5366,7 +5366,7 @@
         }
       ],
       "title": "Сброс настроек звука",
-      "tokens": 360
+      "tokens": 365
     },
     {
       "file": "sections/297-avtopodnyatie-trubki-dlya-ishodyaschih-z.md",
@@ -5384,7 +5384,7 @@
         }
       ],
       "title": "Автоподнятие трубки для исходящих звонков",
-      "tokens": 619
+      "tokens": 624
     },
     {
       "file": "sections/298-ispolzovat-vneshniy-telefon.md",
@@ -5402,7 +5402,7 @@
         }
       ],
       "title": "Использовать внешний телефон",
-      "tokens": 67
+      "tokens": 72
     },
     {
       "file": "sections/299-obschie-svedeniya.md",
@@ -5420,7 +5420,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 324
+      "tokens": 329
     },
     {
       "file": "sections/300-vklyuchenie-funkcii-i-vvod-vneshnego-nom.md",
@@ -5438,7 +5438,7 @@
         }
       ],
       "title": "Включение функции и ввод внешнего номера",
-      "tokens": 281
+      "tokens": 286
     },
     {
       "file": "sections/301-tehnicheskie-nastroyki.md",
@@ -5456,7 +5456,7 @@
         }
       ],
       "title": "Технические настройки",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/302-podklyuchenie-k-seti.md",
@@ -5474,7 +5474,7 @@
         }
       ],
       "title": "Подключение к сети",
-      "tokens": 58
+      "tokens": 63
     },
     {
       "file": "sections/303-proksi-server.md",
@@ -5492,7 +5492,7 @@
         }
       ],
       "title": "Прокси-сервер",
-      "tokens": 411
+      "tokens": 416
     },
     {
       "file": "sections/304-nastroyki-sip.md",
@@ -5510,7 +5510,7 @@
         }
       ],
       "title": "Настройки SIP",
-      "tokens": 287
+      "tokens": 292
     },
     {
       "file": "sections/305-vklyuchenie-vyklyuchenie-funkciy-cng-vad.md",
@@ -5528,7 +5528,7 @@
         }
       ],
       "title": "Включение/выключение функций CNG, VAD, анти-эхо",
-      "tokens": 518
+      "tokens": 523
     },
     {
       "file": "sections/306-kodeki.md",
@@ -5546,7 +5546,7 @@
         }
       ],
       "title": "Кодеки",
-      "tokens": 59
+      "tokens": 64
     },
     {
       "file": "sections/307-perechen-podderzhivaemyh-kodekov.md",
@@ -5564,7 +5564,7 @@
         }
       ],
       "title": "Перечень поддерживаемых кодеков",
-      "tokens": 315
+      "tokens": 320
     },
     {
       "file": "sections/308-vklyuchenie-i-vyklyuchenie-kodekov.md",
@@ -5582,7 +5582,7 @@
         }
       ],
       "title": "Включение и выключение кодеков",
-      "tokens": 261
+      "tokens": 266
     },
     {
       "file": "sections/309-nastroyka-prioriteta-ispolzovaniya-kodek.md",
@@ -5600,7 +5600,7 @@
         }
       ],
       "title": "Настройка приоритета использования кодека",
-      "tokens": 377
+      "tokens": 382
     },
     {
       "file": "sections/310-zagruzka-nastroek-kodekov-s-servera.md",
@@ -5618,7 +5618,7 @@
         }
       ],
       "title": "Загрузка настроек кодеков с сервера",
-      "tokens": 228
+      "tokens": 233
     },
     {
       "file": "sections/311-sessii-polzovatelya.md",
@@ -5636,7 +5636,7 @@
         }
       ],
       "title": "Сессии пользователя",
-      "tokens": 59
+      "tokens": 64
     },
     {
       "file": "sections/312-kak-uznat-na-kakih-ustroystvah-otkryty-s.md",
@@ -5654,7 +5654,7 @@
         }
       ],
       "title": "Как узнать, на каких устройствах открыты сессии пользователей",
-      "tokens": 279
+      "tokens": 284
     },
     {
       "file": "sections/313-udalennyy-vyhod-iz-mtalker.md",
@@ -5672,7 +5672,7 @@
         }
       ],
       "title": "Удаленный выход из MTalker",
-      "tokens": 275
+      "tokens": 280
     },
     {
       "file": "sections/314-kak-posmotret-svoy-nomer-sip-id-akkaunt.md",
@@ -5690,7 +5690,7 @@
         }
       ],
       "title": "Как посмотреть свой номер  SIP-ID аккаунт",
-      "tokens": 289
+      "tokens": 294
     },
     {
       "file": "sections/315-kak-posmotret-svoy-ishodyaschiy-nomer.md",
@@ -5708,7 +5708,7 @@
         }
       ],
       "title": "Как посмотреть свой исходящий номер",
-      "tokens": 267
+      "tokens": 272
     },
     {
       "file": "sections/316-kak-posmotret-nastroyku-raspredeleniya-z.md",
@@ -5726,7 +5726,7 @@
         }
       ],
       "title": "Как посмотреть настройку распределения звонков на ваш аккаунт",
-      "tokens": 739
+      "tokens": 744
     }
   ],
   "source_document": "windows-mac-working",
@@ -5746,6 +5746,6 @@
   ],
   "table_count": 3,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 28942,
-  "tokens_total": 113432
+  "tokens_index": 28952,
+  "tokens_total": 115017
 }

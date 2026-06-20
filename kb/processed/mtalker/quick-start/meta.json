@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 167
+      "tokens": 172
     },
     {
       "file": "sections/01-obschie-svedeniya.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 247
+      "tokens": 252
     },
     {
       "file": "sections/02-dostup-k-kommunikatoru.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Доступ к коммуникатору",
-      "tokens": 582
+      "tokens": 587
     },
     {
       "file": "sections/03-vyzov-abonenta-iz-spiska-kontakty.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Вызов абонента из списка “Контакты”",
-      "tokens": 576
+      "tokens": 581
     },
     {
       "file": "sections/04-kak-na-vneshniy-nomer-telefona-pozvonit.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Как на внешний номер телефона позвонить или отправить СМС",
-      "tokens": 441
+      "tokens": 446
     },
     {
       "file": "sections/05-tekstovyy-chat.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Текстовый чат",
-      "tokens": 296
+      "tokens": 301
     },
     {
       "file": "sections/06-kak-otpravit-fayl-abonentu.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Как отправить файл абоненту",
-      "tokens": 236
+      "tokens": 241
     }
   ],
   "source_document": "quick-start",
@@ -166,6 +166,6 @@
   ],
   "table_count": 0,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1036,
-  "tokens_total": 2545
+  "tokens_index": 1046,
+  "tokens_total": 2580
 }
