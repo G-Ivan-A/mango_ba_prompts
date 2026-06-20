@@ -9,6 +9,13 @@ source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1
 source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 ---
 
+> **LLM Loading Contract — full layer.**
+> Start with [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md).
+> Load this full file only when an escalation trigger in the executable companion
+> is true: explicit request for full/rationale/history, missing required section
+> in executable, need for exact wording/table/reference, or editing/validating
+> this full file. Otherwise do not load this file into context.
+
 > ⚠️ **ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.**
 > Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
