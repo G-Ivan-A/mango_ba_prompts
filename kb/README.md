@@ -24,10 +24,10 @@ related_issues:
 | Слой | Что это | Где |
 | --- | --- | --- |
 | **Ручные записи** (этот файл) | Практики/примеры/справочники, написанные руками (правило R1) | таблица ниже, `practices/` · `examples/` · `references/` |
-| **Извлечённые документы** (issue #111) | Машиночитаемые чанки из PDF/веб-источников: индекс → раздел → цитата | [`sources/`](sources/README.md) (ручной ввод) → [`processed/`](processed/README.md) → [`fragments/`](fragments/README.md) |
+| **Извлечённые документы** (issue #111) | Машиночитаемые чанки из PDF/веб-источников: индекс → раздел → цитата | [`mango-product-docs/sources/`](mango-product-docs/sources/README.md) (ручной ввод) → [`mango-product-docs/processed/`](mango-product-docs/processed/README.md) → [`fragments/`](fragments/README.md) |
 
-Слой извлечения документов: как пополнять — [`sources/README.md`](sources/README.md)
-(**ФТ-7**); как промпт обращается к нему — [`USAGE.md`](USAGE.md) (**ФТ-6**);
+Слой извлечения документов: как пополнять — [`mango-product-docs/sources/README.md`](mango-product-docs/sources/README.md)
+(**ФТ-7**); как промпт обращается к нему — [`mango-product-docs/USAGE.md`](mango-product-docs/USAGE.md) (**ФТ-6**);
 методология и оценка качества — [`docs/kb-experiment-report.md`](../docs/kb-experiment-report.md).
 Оба слоя используют один формат цитат/адресации и готовятся к одному будущему RAG
 (правила R1–R4 [kb-standard](../standards/kb-standard.md)).

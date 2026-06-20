@@ -10,7 +10,7 @@ runner adds the source-folder contract on top:
 - ``multi_document``: one product/documentation set -> a collection with one
   nested KB per independent document.
 
-The manifest is ``kb/sources/<slug>/meta.json``. Existing source folders remain
+The manifest is ``kb/mango-product-docs/sources/<slug>/meta.json``. Existing source folders remain
 backward-compatible: if ``processing_mode`` is absent, the runner infers it from
 ``documents``/``parts``/PDF count, but new sources should set the mode explicitly.
 """
@@ -27,8 +27,9 @@ from dataclasses import dataclass
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCES_ROOT = ROOT / "kb" / "sources"
-PROCESSED_ROOT = ROOT / "kb" / "processed"
+PRODUCT_DOCS_ROOT = ROOT / "kb" / "mango-product-docs"
+SOURCES_ROOT = PRODUCT_DOCS_ROOT / "sources"
+PROCESSED_ROOT = PRODUCT_DOCS_ROOT / "processed"
 EXTRACTOR = ROOT / "scripts" / "kb" / "extract.py"
 
 VALID_MODES = {"single", "multi_part", "multi_document"}
@@ -431,9 +432,9 @@ def iter_source_dirs() -> list[Path]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(description="Process kb/sources/<slug>/meta.json manifests.")
+    parser = argparse.ArgumentParser(description="Process kb/mango-product-docs/sources/<slug>/meta.json manifests.")
     parser.add_argument("source_dir", nargs="?", help="source directory with meta.json")
-    parser.add_argument("--all", action="store_true", help="process every kb/sources/*/meta.json")
+    parser.add_argument("--all", action="store_true", help="process every kb/mango-product-docs/sources/*/meta.json")
     parser.add_argument("--dry-run", action="store_true", help="validate and print the extraction plan only")
     parser.add_argument("--json", action="store_true", help="print dry-run plan as JSON")
     parser.add_argument("--python", default=sys.executable, help="Python executable for extract.py")

@@ -1,0 +1,37 @@
+---
+id: windows-mac-working-92-zakreplenie-i-otkreplenie-chata
+doc_code: MTALKER-WORK
+doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
+doc_version: "23.08.2024"
+section: "4.16"
+pdf_section: "4.16"
+title: "Закрепление и открепление чата"
+pdf_heading: "4.16 Закрепление и открепление чата"
+pages: "40-41"
+source: kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf
+source_part: "1"
+source_pages: "ч.1: 40-41"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf","part":1,"pages":"40-41","global_pages":"40-41"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 532
+status: extracted
+ai-generated: true
+---
+# 4.16. Закрепление и открепление чата
+
+> Трассировка: PDF §4.16 · сквозные стр. 40-41 · источники: ч.1 `kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf` с.40-41.
+
+Вы можете закрепить тот или иной чат в верхней строчке списка ваших чатов. Это облегчит поиск этого чата среди всех чатов. Для того чтобы закрепить чат,
+
+![Изображение, стр. 40](../images/92-zakreplenie-i-otkreplenie-chata-1.png)
+
+в разделе”Чаты” следует: 1) найти чат, который нужно закрепить; 2) навести курсор на строку с названием чата и нажать правую кнопку мыши. Будет открыто контекстное меню; 3) выбрать пункт “Закрепить”. Будет закреплен выбранный вами чат, а в
+
+<!-- изображение на стр. 40: байты не извлечены (PyMuPDF недоступен) -->
+
+строке с названием чата показана пиктограмма . Mango Talker для сред ОС Windows и Mac. Руководство пользователя | Версия от 23.08.2024 Для того чтобы открепить чат, в разделе”Чаты” следует: 1) найти чат, который нужно открепить; 2) навести курсор на строку с названием чата и нажать правую кнопку мыши. Будет открыто контекстное меню; 3) выбрать пункт “Открепить”. Будет откреплен выбранный вами чат, а в
+
+<!-- изображение на стр. 41: байты не извлечены (PyMuPDF недоступен) -->
+
+строке с названием чата скрыта пиктограмма .

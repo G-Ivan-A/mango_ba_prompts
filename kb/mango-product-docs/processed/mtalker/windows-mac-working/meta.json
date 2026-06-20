@@ -1,0 +1,5751 @@
+{
+  "body_font_size": 12.0,
+  "body_font_sizes": [
+    12.0
+  ],
+  "doc_code": "MTALKER-WORK",
+  "doc_title": "Mango Talker для Windows/Mac - Руководство пользователя (Работа)",
+  "doc_version": "23.08.2024",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 396,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Основное руководство пользователя. Подробное описание работы с софтфоном: звонки, чаты, контакты, история вызовов.",
+  "page_count": 122,
+  "part_count": 1,
+  "processing_mode": "single",
+  "section_count": 317,
+  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_sources": [
+    "pdf-outline (pymupdf 1.27.2.3)"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1-6",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-6",
+          "pages": "1-6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 3350
+    },
+    {
+      "file": "sections/01-o-mtalker.md",
+      "number": "1",
+      "order": "01",
+      "pages": "6",
+      "pdf_heading": "1 О MTalker",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "6",
+          "pages": "6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О MTalker",
+      "tokens": 59
+    },
+    {
+      "file": "sections/02-obzor.md",
+      "number": "1.1",
+      "order": "02",
+      "pages": "6",
+      "pdf_heading": "1.1 Обзор",
+      "pdf_section": "1.1",
+      "source_refs": [
+        {
+          "global_pages": "6",
+          "pages": "6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Обзор",
+      "tokens": 225
+    },
+    {
+      "file": "sections/03-kak-ispolzovat-mtalker.md",
+      "number": "1.2",
+      "order": "03",
+      "pages": "6-7",
+      "pdf_heading": "1.2 Как использовать MTalker",
+      "pdf_section": "1.2",
+      "source_refs": [
+        {
+          "global_pages": "6-7",
+          "pages": "6-7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как использовать MTalker",
+      "tokens": 657
+    },
+    {
+      "file": "sections/04-navigaciya.md",
+      "number": "1.3",
+      "order": "04",
+      "pages": "7",
+      "pdf_heading": "1.3 Навигация",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "7",
+          "pages": "7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Навигация",
+      "tokens": 64
+    },
+    {
+      "file": "sections/05-glavnoe-okno-i-dostup-k-razdelam-mtalker.md",
+      "number": "1.3",
+      "order": "05",
+      "pages": "7",
+      "pdf_heading": "Главное окно и доступ к разделам MTalker",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "7",
+          "pages": "7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Главное окно и доступ к разделам MTalker",
+      "tokens": 68
+    },
+    {
+      "file": "sections/06-obschee.md",
+      "number": "1.3",
+      "order": "06",
+      "pages": "7-8",
+      "pdf_heading": "Общее",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "7-8",
+          "pages": "7-8",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 561
+    },
+    {
+      "file": "sections/07-osnovnoe-menyu-i-profil-polzovatelya.md",
+      "number": "1.3",
+      "order": "07",
+      "pages": "8-9",
+      "pdf_heading": "Основное меню и профиль пользователя",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "8-9",
+          "pages": "8-9",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Основное меню и профиль пользователя",
+      "tokens": 933
+    },
+    {
+      "file": "sections/08-profil-polzovatelya-avtorizovannogo-v-mt.md",
+      "number": "1.3",
+      "order": "08",
+      "pages": "9",
+      "pdf_heading": "Профиль пользователя, авторизованного в MTalker",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "9",
+          "pages": "9",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Профиль пользователя, авторизованного в MTalker",
+      "tokens": 302
+    },
+    {
+      "file": "sections/09-nastroyki-telefonii.md",
+      "number": "1.3",
+      "order": "09",
+      "pages": "9",
+      "pdf_heading": "Настройки телефонии",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "9",
+          "pages": "9",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройки телефонии",
+      "tokens": 266
+    },
+    {
+      "file": "sections/10-osnovnye.md",
+      "number": "1.3",
+      "order": "10",
+      "pages": "9-10",
+      "pdf_heading": "Основные",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "9-10",
+          "pages": "9-10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Основные",
+      "tokens": 722
+    },
+    {
+      "file": "sections/11-upravlenie-dannymi.md",
+      "number": "1.3",
+      "order": "11",
+      "pages": "10",
+      "pdf_heading": "Управление данными",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "10",
+          "pages": "10",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Управление данными",
+      "tokens": 257
+    },
+    {
+      "file": "sections/12-zvonki.md",
+      "number": "1.3",
+      "order": "12",
+      "pages": "10-11",
+      "pdf_heading": "Звонки",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "10-11",
+          "pages": "10-11",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Звонки",
+      "tokens": 1057
+    },
+    {
+      "file": "sections/13-chaty.md",
+      "number": "1.3",
+      "order": "13",
+      "pages": "11-12",
+      "pdf_heading": "Чаты",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "11-12",
+          "pages": "11-12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Чаты",
+      "tokens": 409
+    },
+    {
+      "file": "sections/14-uvedomleniya.md",
+      "number": "1.3",
+      "order": "14",
+      "pages": "12",
+      "pdf_heading": "Уведомления",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "12",
+          "pages": "12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Уведомления",
+      "tokens": 353
+    },
+    {
+      "file": "sections/15-video.md",
+      "number": "1.3",
+      "order": "15",
+      "pages": "12",
+      "pdf_heading": "Видео",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "12",
+          "pages": "12",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Видео",
+      "tokens": 235
+    },
+    {
+      "file": "sections/16-zvuk.md",
+      "number": "1.3",
+      "order": "16",
+      "pages": "12-13",
+      "pdf_heading": "Звук",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "12-13",
+          "pages": "12-13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Звук",
+      "tokens": 466
+    },
+    {
+      "file": "sections/17-ustroystva.md",
+      "number": "1.3",
+      "order": "17",
+      "pages": "13",
+      "pdf_heading": "Устройства",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "13",
+          "pages": "13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Устройства",
+      "tokens": 168
+    },
+    {
+      "file": "sections/18-setevoe-podklyuchenie.md",
+      "number": "1.3",
+      "order": "18",
+      "pages": "13",
+      "pdf_heading": "Сетевое подключение",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "13",
+          "pages": "13",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Сетевое подключение",
+      "tokens": 158
+    },
+    {
+      "file": "sections/19-podderzhka.md",
+      "number": "1.3",
+      "order": "19",
+      "pages": "13-14",
+      "pdf_heading": "Поддержка",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "13-14",
+          "pages": "13-14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поддержка",
+      "tokens": 444
+    },
+    {
+      "file": "sections/20-o-programme.md",
+      "number": "1.3",
+      "order": "20",
+      "pages": "14",
+      "pdf_heading": "О программе",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "14",
+          "pages": "14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О программе",
+      "tokens": 201
+    },
+    {
+      "file": "sections/21-kontakty.md",
+      "number": "1.3",
+      "order": "21",
+      "pages": "14",
+      "pdf_heading": "Контакты",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "14",
+          "pages": "14",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Контакты",
+      "tokens": 332
+    },
+    {
+      "file": "sections/22-konferencii.md",
+      "number": "1.3",
+      "order": "22",
+      "pages": "14-15",
+      "pdf_heading": "Конференции",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "14-15",
+          "pages": "14-15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Конференции",
+      "tokens": 675
+    },
+    {
+      "file": "sections/23-chaty.md",
+      "number": "1.3",
+      "order": "23",
+      "pages": "15",
+      "pdf_heading": "Чаты",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "15",
+          "pages": "15",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Чаты",
+      "tokens": 467
+    },
+    {
+      "file": "sections/24-istoriya-vyzovov.md",
+      "number": "1.3",
+      "order": "24",
+      "pages": "15-16",
+      "pdf_heading": "История вызовов",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "15-16",
+          "pages": "15-16",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "История вызовов",
+      "tokens": 637
+    },
+    {
+      "file": "sections/25-klavishi-nomeronabiratel.md",
+      "number": "1.3",
+      "order": "25",
+      "pages": "16",
+      "pdf_heading": "Клавиши (номеронабиратель)",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "16",
+          "pages": "16",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Клавиши (номеронабиратель)",
+      "tokens": 516
+    },
+    {
+      "file": "sections/26-avtosekretar.md",
+      "number": "1.3",
+      "order": "26",
+      "pages": "16-17",
+      "pdf_heading": "Автосекретарь",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "16-17",
+          "pages": "16-17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автосекретарь",
+      "tokens": 408
+    },
+    {
+      "file": "sections/27-sms-rassylki.md",
+      "number": "1.3",
+      "order": "27",
+      "pages": "17",
+      "pdf_heading": "SMS-рассылки",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "17",
+          "pages": "17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "SMS-рассылки",
+      "tokens": 381
+    },
+    {
+      "file": "sections/28-videokonferencii.md",
+      "number": "1.3",
+      "order": "28",
+      "pages": "17-18",
+      "pdf_heading": "Видеоконференции",
+      "pdf_section": "1.3",
+      "source_refs": [
+        {
+          "global_pages": "17-18",
+          "pages": "17-18",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Видеоконференции",
+      "tokens": 433
+    },
+    {
+      "file": "sections/29-fonovyy-rezhim-raboty-mtalker.md",
+      "number": "1.4",
+      "order": "29",
+      "pages": "18",
+      "pdf_heading": "1.4 Фоновый режим работы MTalker",
+      "pdf_section": "1.4",
+      "source_refs": [
+        {
+          "global_pages": "18",
+          "pages": "18",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Фоновый режим работы MTalker",
+      "tokens": 70
+    },
+    {
+      "file": "sections/30-obzor.md",
+      "number": "1.4",
+      "order": "30",
+      "pages": "18-19",
+      "pdf_heading": "Обзор",
+      "pdf_section": "1.4",
+      "source_refs": [
+        {
+          "global_pages": "18-19",
+          "pages": "18-19",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Обзор",
+      "tokens": 726
+    },
+    {
+      "file": "sections/31-kak-pereklyuchatsya-mezhdu-obychnym-i-fo.md",
+      "number": "1.4",
+      "order": "31",
+      "pages": "19",
+      "pdf_heading": "Как переключаться между обычным и фоновым режимами работы",
+      "pdf_section": "1.4",
+      "source_refs": [
+        {
+          "global_pages": "19",
+          "pages": "19",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как переключаться между обычным и фоновым режимами работы",
+      "tokens": 293
+    },
+    {
+      "file": "sections/32-ne-udaetsya-voyti-v-mtalker-ili-kak-izme.md",
+      "number": "1.5",
+      "order": "32",
+      "pages": "19",
+      "pdf_heading": "1.5 Не удаётся войти в MTalker или как изменить или сбросить пароль",
+      "pdf_section": "1.5",
+      "source_refs": [
+        {
+          "global_pages": "19",
+          "pages": "19",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Не удаётся войти в MTalker или как изменить или сбросить пароль",
+      "tokens": 453
+    },
+    {
+      "file": "sections/33-sozdat-novyy-parol.md",
+      "number": "1.6",
+      "order": "33",
+      "pages": "19-20",
+      "pdf_heading": "1.6 Создать новый пароль",
+      "pdf_section": "1.6",
+      "source_refs": [
+        {
+          "global_pages": "19-20",
+          "pages": "19-20",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Создать новый пароль",
+      "tokens": 421
+    },
+    {
+      "file": "sections/34-prosmotr-versii-mtalker.md",
+      "number": "1.7",
+      "order": "34",
+      "pages": "20",
+      "pdf_heading": "1.7 Просмотр версии MTalker",
+      "pdf_section": "1.7",
+      "source_refs": [
+        {
+          "global_pages": "20",
+          "pages": "20",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Просмотр версии MTalker",
+      "tokens": 186
+    },
+    {
+      "file": "sections/35-vyzov-spravki-o-mtalker.md",
+      "number": "1.8",
+      "order": "35",
+      "pages": "20-21",
+      "pdf_heading": "1.8 Вызов справки о MTalker",
+      "pdf_section": "1.8",
+      "source_refs": [
+        {
+          "global_pages": "20-21",
+          "pages": "20-21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вызов справки о MTalker",
+      "tokens": 214
+    },
+    {
+      "file": "sections/36-nachalo-raboty.md",
+      "number": "2",
+      "order": "36",
+      "pages": "21",
+      "pdf_heading": "2 Начало работы",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "21",
+          "pages": "21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Начало работы",
+      "tokens": 61
+    },
+    {
+      "file": "sections/37-ustanovka-mtalker-na-pk.md",
+      "number": "2.1",
+      "order": "37",
+      "pages": "21",
+      "pdf_heading": "2.1 Установка MTalker на ПК",
+      "pdf_section": "2.1",
+      "source_refs": [
+        {
+          "global_pages": "21",
+          "pages": "21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Установка MTalker на ПК",
+      "tokens": 375
+    },
+    {
+      "file": "sections/38-kak-sozdat-akkaunt.md",
+      "number": "2.2",
+      "order": "38",
+      "pages": "21",
+      "pdf_heading": "2.2 Как создать аккаунт",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "21",
+          "pages": "21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать аккаунт",
+      "tokens": 68
+    },
+    {
+      "file": "sections/39-poryadok-deystviy.md",
+      "number": "2.2",
+      "order": "39",
+      "pages": "21",
+      "pdf_heading": "Порядок действий",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "21",
+          "pages": "21",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Порядок действий",
+      "tokens": 337
+    },
+    {
+      "file": "sections/40-o-logine-i-parole-dlya-vhoda-v-mtalker.md",
+      "number": "2.2",
+      "order": "40",
+      "pages": "21-22",
+      "pdf_heading": "О логине и пароле для входа в MTalker",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "21-22",
+          "pages": "21-22",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О логине и пароле для входа в MTalker",
+      "tokens": 346
+    },
+    {
+      "file": "sections/41-kak-uznat-svoy-login-i-parol.md",
+      "number": "2.2",
+      "order": "41",
+      "pages": "22-23",
+      "pdf_heading": "Как узнать свой логин и пароль",
+      "pdf_section": "2.2",
+      "source_refs": [
+        {
+          "global_pages": "22-23",
+          "pages": "22-23",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как узнать свой логин и пароль",
+      "tokens": 594
+    },
+    {
+      "file": "sections/42-pervyy-zapusk-raboty-mtalker-proverka-na.md",
+      "number": "2.3",
+      "order": "42",
+      "pages": "23",
+      "pdf_heading": "2.3 Первый запуск работы MTalker. Проверка настроек",
+      "pdf_section": "2.3",
+      "source_refs": [
+        {
+          "global_pages": "23",
+          "pages": "23",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Первый запуск работы MTalker. Проверка настроек",
+      "tokens": 590
+    },
+    {
+      "file": "sections/43-udalenie-mtalker.md",
+      "number": "2.4",
+      "order": "43",
+      "pages": "23-24",
+      "pdf_heading": "2.4 Удаление MTalker",
+      "pdf_section": "2.4",
+      "source_refs": [
+        {
+          "global_pages": "23-24",
+          "pages": "23-24",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаление MTalker",
+      "tokens": 361
+    },
+    {
+      "file": "sections/44-vhod-i-vyhod.md",
+      "number": "3",
+      "order": "44",
+      "pages": "24",
+      "pdf_heading": "3 Вход и выход",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "24",
+          "pages": "24",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вход и выход",
+      "tokens": 61
+    },
+    {
+      "file": "sections/45-vhod-po-loginu-i-parolyu.md",
+      "number": "3.1",
+      "order": "45",
+      "pages": "24",
+      "pdf_heading": "3.1 Вход по логину и паролю",
+      "pdf_section": "3.1",
+      "source_refs": [
+        {
+          "global_pages": "24",
+          "pages": "24",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вход по логину и паролю",
+      "tokens": 280
+    },
+    {
+      "file": "sections/46-sozdat-novyy-parol.md",
+      "number": "3.2",
+      "order": "46",
+      "pages": "24",
+      "pdf_heading": "3.2 Создать новый пароль",
+      "pdf_section": "3.2",
+      "source_refs": [
+        {
+          "global_pages": "24",
+          "pages": "24",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Создать новый пароль",
+      "tokens": 358
+    },
+    {
+      "file": "sections/47-vhod-pri-pomoschi-korotkogo-koda-bez-par.md",
+      "number": "3.3",
+      "order": "47",
+      "pages": "24-25",
+      "pdf_heading": "3.3 Вход при помощи короткого кода (без пароля)",
+      "pdf_section": "3.3",
+      "source_refs": [
+        {
+          "global_pages": "24-25",
+          "pages": "24-25",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вход при помощи короткого кода (без пароля)",
+      "tokens": 401
+    },
+    {
+      "file": "sections/48-vhod-po-dannym-kontakt-centra-mango-offi.md",
+      "number": "3.4",
+      "order": "48",
+      "pages": "25-26",
+      "pdf_heading": "3.4 Вход по данным Контакт-Центра MANGO OFFICE",
+      "pdf_section": "3.4",
+      "source_refs": [
+        {
+          "global_pages": "25-26",
+          "pages": "25-26",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вход по данным Контакт-Центра MANGO OFFICE",
+      "tokens": 450
+    },
+    {
+      "file": "sections/49-kak-nachat-perepisku-s-odnim-ili-neskolk.md",
+      "number": "4",
+      "order": "49",
+      "pages": "26",
+      "pdf_heading": "4 Как начать переписку с одним или несколькими собеседниками",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "26",
+          "pages": "26",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как начать переписку с одним или несколькими собеседниками",
+      "tokens": 88
+    },
+    {
+      "file": "sections/50-o-chatah-v-mtalker.md",
+      "number": "4.1",
+      "order": "50",
+      "pages": "26",
+      "pdf_heading": "4.1 О чатах в MTalker",
+      "pdf_section": "4.1",
+      "source_refs": [
+        {
+          "global_pages": "26",
+          "pages": "26",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О чатах в MTalker",
+      "tokens": 386
+    },
+    {
+      "file": "sections/51-navigaciya-po-razdelu-chaty.md",
+      "number": "4.1",
+      "order": "51",
+      "pages": "26-27",
+      "pdf_heading": "Навигация по разделу “Чаты”",
+      "pdf_section": "4.1",
+      "source_refs": [
+        {
+          "global_pages": "26-27",
+          "pages": "26-27",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Навигация по разделу “Чаты”",
+      "tokens": 457
+    },
+    {
+      "file": "sections/52-kak-nachat-chat-odin-na-odin.md",
+      "number": "4.2",
+      "order": "52",
+      "pages": "27",
+      "pdf_heading": "4.2 Как начать чат “один-на-один”",
+      "pdf_section": "4.2",
+      "source_refs": [
+        {
+          "global_pages": "27",
+          "pages": "27",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как начать чат “один-на-один”",
+      "tokens": 321
+    },
+    {
+      "file": "sections/53-ishodyaschie-soobscheniya.md",
+      "number": "4.3",
+      "order": "53",
+      "pages": "27",
+      "pdf_heading": "4.3 Исходящие сообщения",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "27",
+          "pages": "27",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Исходящие сообщения",
+      "tokens": 68
+    },
+    {
+      "file": "sections/54-kak-otpravit-soobschenie.md",
+      "number": "4.3",
+      "order": "54",
+      "pages": "27",
+      "pdf_heading": "Как отправить сообщение",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "27",
+          "pages": "27",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отправить сообщение",
+      "tokens": 279
+    },
+    {
+      "file": "sections/55-proverka-statusa-dostavki-soobscheniya.md",
+      "number": "4.3",
+      "order": "55",
+      "pages": "27-28",
+      "pdf_heading": "Проверка статуса доставки сообщения",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "27-28",
+          "pages": "27-28",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Проверка статуса доставки сообщения",
+      "tokens": 417
+    },
+    {
+      "file": "sections/56-redaktirovanie-otpravlennogo-soobscheniy.md",
+      "number": "4.3",
+      "order": "56",
+      "pages": "28",
+      "pdf_heading": "Редактирование отправленного сообщения",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "28",
+          "pages": "28",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Редактирование отправленного сообщения",
+      "tokens": 343
+    },
+    {
+      "file": "sections/57-kak-otmenit-otpravlennoe-soobschenie.md",
+      "number": "4.3",
+      "order": "57",
+      "pages": "28-29",
+      "pdf_heading": "Как отменить отправленное сообщение",
+      "pdf_section": "4.3",
+      "source_refs": [
+        {
+          "global_pages": "28-29",
+          "pages": "28-29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отменить отправленное сообщение",
+      "tokens": 532
+    },
+    {
+      "file": "sections/58-kak-otpravit-fayl-ili-sms-ili-faks.md",
+      "number": "4.4",
+      "order": "58",
+      "pages": "29",
+      "pdf_heading": "4.4 Как отправить файл или смс, или факс",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "29",
+          "pages": "29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отправить файл или смс, или факс",
+      "tokens": 73
+    },
+    {
+      "file": "sections/59-otpravka-faylov-i-izobrazheniy.md",
+      "number": "4.4",
+      "order": "59",
+      "pages": "29",
+      "pdf_heading": "Отправка файлов и изображений",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "29",
+          "pages": "29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка файлов и изображений",
+      "tokens": 193
+    },
+    {
+      "file": "sections/60-otpravka-bez-soprovozhdayuschego-soobsch.md",
+      "number": "4.4",
+      "order": "60",
+      "pages": "29",
+      "pdf_heading": "Отправка без сопровождающего сообщения",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "29",
+          "pages": "29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка без сопровождающего сообщения",
+      "tokens": 316
+    },
+    {
+      "file": "sections/61-otpravka-s-soprovozhdayuschim-soobscheni.md",
+      "number": "4.4",
+      "order": "61",
+      "pages": "29-30",
+      "pdf_heading": "Отправка с сопровождающим сообщением",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "29-30",
+          "pages": "29-30",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка с сопровождающим сообщением",
+      "tokens": 361
+    },
+    {
+      "file": "sections/62-otpravka-sms-i-faksa.md",
+      "number": "4.4",
+      "order": "62",
+      "pages": "30-31",
+      "pdf_heading": "Отправка СМС и факса",
+      "pdf_section": "4.4",
+      "source_refs": [
+        {
+          "global_pages": "30-31",
+          "pages": "30-31",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка СМС и факса",
+      "tokens": 795
+    },
+    {
+      "file": "sections/63-golosovoe-soobschenie.md",
+      "number": "4.5",
+      "order": "63",
+      "pages": "31",
+      "pdf_heading": "4.5 Голосовое сообщение",
+      "pdf_section": "4.5",
+      "source_refs": [
+        {
+          "global_pages": "31",
+          "pages": "31",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Голосовое сообщение",
+      "tokens": 67
+    },
+    {
+      "file": "sections/64-otpravka-golosovogo-soobscheniya.md",
+      "number": "4.5",
+      "order": "64",
+      "pages": "31",
+      "pdf_heading": "Отправка голосового сообщения",
+      "pdf_section": "4.5",
+      "source_refs": [
+        {
+          "global_pages": "31",
+          "pages": "31",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка голосового сообщения",
+      "tokens": 430
+    },
+    {
+      "file": "sections/65-kak-proslushat-poluchennoe-golosovoe-soo.md",
+      "number": "4.5",
+      "order": "65",
+      "pages": "31-32",
+      "pdf_heading": "Как прослушать полученное голосовое сообщение",
+      "pdf_section": "4.5",
+      "source_refs": [
+        {
+          "global_pages": "31-32",
+          "pages": "31-32",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как прослушать полученное голосовое сообщение",
+      "tokens": 614
+    },
+    {
+      "file": "sections/66-vhodyaschie-soobscheniya.md",
+      "number": "4.6",
+      "order": "66",
+      "pages": "32",
+      "pdf_heading": "4.6 Входящие сообщения",
+      "pdf_section": "4.6",
+      "source_refs": [
+        {
+          "global_pages": "32",
+          "pages": "32",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Входящие сообщения",
+      "tokens": 67
+    },
+    {
+      "file": "sections/67-opovescheniya-o-novyh-soobscheniyah.md",
+      "number": "4.6",
+      "order": "67",
+      "pages": "32",
+      "pdf_heading": "Оповещения о новых сообщениях",
+      "pdf_section": "4.6",
+      "source_refs": [
+        {
+          "global_pages": "32",
+          "pages": "32",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Оповещения о новых сообщениях",
+      "tokens": 504
+    },
+    {
+      "file": "sections/68-chtenie-soobscheniy.md",
+      "number": "4.6",
+      "order": "68",
+      "pages": "32-33",
+      "pdf_heading": "Чтение сообщений",
+      "pdf_section": "4.6",
+      "source_refs": [
+        {
+          "global_pages": "32-33",
+          "pages": "32-33",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Чтение сообщений",
+      "tokens": 423
+    },
+    {
+      "file": "sections/69-kak-vklyuchit-ili-vyklyuchit-pokaz-tekst.md",
+      "number": "4.6",
+      "order": "69",
+      "pages": "33",
+      "pdf_heading": "Как включить или выключить показ текста сообщения в уведомлениях",
+      "pdf_section": "4.6",
+      "source_refs": [
+        {
+          "global_pages": "33",
+          "pages": "33",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить показ текста сообщения в уведомлениях",
+      "tokens": 392
+    },
+    {
+      "file": "sections/70-kak-otkryvat-vhodyaschie-fayly-i-skachiv.md",
+      "number": "4.7",
+      "order": "70",
+      "pages": "33-34",
+      "pdf_heading": "4.7 Как открывать входящие файлы и скачивать их",
+      "pdf_section": "4.7",
+      "source_refs": [
+        {
+          "global_pages": "33-34",
+          "pages": "33-34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как открывать входящие файлы и скачивать их",
+      "tokens": 679
+    },
+    {
+      "file": "sections/71-reakcii-emodzhi-na-soobschenie.md",
+      "number": "4.8",
+      "order": "71",
+      "pages": "34",
+      "pdf_heading": "4.8 Реакции (эмоджи) на сообщение",
+      "pdf_section": "4.8",
+      "source_refs": [
+        {
+          "global_pages": "34",
+          "pages": "34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Реакции (эмоджи) на сообщение",
+      "tokens": 213
+    },
+    {
+      "file": "sections/72-kak-formatirovat-soobscheniya.md",
+      "number": "4.9",
+      "order": "72",
+      "pages": "34",
+      "pdf_heading": "4.9 Как форматировать сообщения",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "34",
+          "pages": "34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как форматировать сообщения",
+      "tokens": 68
+    },
+    {
+      "file": "sections/73-poisk-soobscheniy.md",
+      "number": "4.9",
+      "order": "73",
+      "pages": "34",
+      "pdf_heading": "Поиск сообщений",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "34",
+          "pages": "34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск сообщений",
+      "tokens": 60
+    },
+    {
+      "file": "sections/74-parametry-poiska.md",
+      "number": "4.9",
+      "order": "74",
+      "pages": "34",
+      "pdf_heading": "Параметры поиска",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "34",
+          "pages": "34",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Параметры поиска",
+      "tokens": 382
+    },
+    {
+      "file": "sections/75-poisk-sredi-chatov-kanalov.md",
+      "number": "4.9",
+      "order": "75",
+      "pages": "34-35",
+      "pdf_heading": "Поиск среди чатов / каналов",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "34-35",
+          "pages": "34-35",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск среди чатов / каналов",
+      "tokens": 373
+    },
+    {
+      "file": "sections/76-poisk-po-istorii-chata.md",
+      "number": "4.9",
+      "order": "76",
+      "pages": "35",
+      "pdf_heading": "Поиск по истории чата",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "35",
+          "pages": "35",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск по истории чата",
+      "tokens": 373
+    },
+    {
+      "file": "sections/77-kopirovanie-peresylka-i-udalenie-soobsch.md",
+      "number": "4.9",
+      "order": "77",
+      "pages": "35-36",
+      "pdf_heading": "Копирование, пересылка и удаление сообщений",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "35-36",
+          "pages": "35-36",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Копирование, пересылка и удаление сообщений",
+      "tokens": 489
+    },
+    {
+      "file": "sections/78-citirovanie-soobscheniy.md",
+      "number": "4.9",
+      "order": "78",
+      "pages": "36",
+      "pdf_heading": "Цитирование сообщений",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "36",
+          "pages": "36",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Цитирование сообщений",
+      "tokens": 275
+    },
+    {
+      "file": "sections/79-posmotret-kontaktnye-dannye-sobesednika.md",
+      "number": "4.9",
+      "order": "79",
+      "pages": "36",
+      "pdf_heading": "Посмотреть контактные данные собеседника",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "36",
+          "pages": "36",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Посмотреть контактные данные собеседника",
+      "tokens": 272
+    },
+    {
+      "file": "sections/80-posmotret-istoriyu-soobscheniy.md",
+      "number": "4.9",
+      "order": "80",
+      "pages": "36-37",
+      "pdf_heading": "Посмотреть историю сообщений",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "36-37",
+          "pages": "36-37",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Посмотреть историю сообщений",
+      "tokens": 432
+    },
+    {
+      "file": "sections/81-ochistit-vashu-istoriyu-soobscheniy.md",
+      "number": "4.9",
+      "order": "81",
+      "pages": "37",
+      "pdf_heading": "Очистить вашу историю сообщений",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "37",
+          "pages": "37",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Очистить вашу историю сообщений",
+      "tokens": 270
+    },
+    {
+      "file": "sections/82-zakreplenie-i-otkreplenie-chata.md",
+      "number": "4.9",
+      "order": "82",
+      "pages": "37",
+      "pdf_heading": "Закрепление и открепление чата",
+      "pdf_section": "4.9",
+      "source_refs": [
+        {
+          "global_pages": "37",
+          "pages": "37",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Закрепление и открепление чата",
+      "tokens": 491
+    },
+    {
+      "file": "sections/83-poisk-soobscheniy.md",
+      "number": "4.10",
+      "order": "83",
+      "pages": "37",
+      "pdf_heading": "4.10 Поиск сообщений",
+      "pdf_section": "4.10",
+      "source_refs": [
+        {
+          "global_pages": "37",
+          "pages": "37",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск сообщений",
+      "tokens": 65
+    },
+    {
+      "file": "sections/84-parametry-poiska.md",
+      "number": "4.10",
+      "order": "84",
+      "pages": "37-38",
+      "pdf_heading": "Параметры поиска",
+      "pdf_section": "4.10",
+      "source_refs": [
+        {
+          "global_pages": "37-38",
+          "pages": "37-38",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Параметры поиска",
+      "tokens": 418
+    },
+    {
+      "file": "sections/85-poisk-sredi-chatov-kanalov.md",
+      "number": "4.10",
+      "order": "85",
+      "pages": "38",
+      "pdf_heading": "Поиск среди чатов / каналов",
+      "pdf_section": "4.10",
+      "source_refs": [
+        {
+          "global_pages": "38",
+          "pages": "38",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск среди чатов / каналов",
+      "tokens": 336
+    },
+    {
+      "file": "sections/86-poisk-po-istorii-chata.md",
+      "number": "4.10",
+      "order": "86",
+      "pages": "38",
+      "pdf_heading": "Поиск по истории чата",
+      "pdf_section": "4.10",
+      "source_refs": [
+        {
+          "global_pages": "38",
+          "pages": "38",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск по истории чата",
+      "tokens": 379
+    },
+    {
+      "file": "sections/87-kopirovanie-peresylka-i-udalenie-soobsch.md",
+      "number": "4.11",
+      "order": "87",
+      "pages": "38-39",
+      "pdf_heading": "4.11 Копирование, пересылка и удаление сообщений",
+      "pdf_section": "4.11",
+      "source_refs": [
+        {
+          "global_pages": "38-39",
+          "pages": "38-39",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Копирование, пересылка и удаление сообщений",
+      "tokens": 493
+    },
+    {
+      "file": "sections/88-citirovanie-soobscheniy.md",
+      "number": "4.12",
+      "order": "88",
+      "pages": "39",
+      "pdf_heading": "4.12 Цитирование сообщений",
+      "pdf_section": "4.12",
+      "source_refs": [
+        {
+          "global_pages": "39",
+          "pages": "39",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Цитирование сообщений",
+      "tokens": 280
+    },
+    {
+      "file": "sections/89-posmotret-kontaktnye-dannye-sobesednika.md",
+      "number": "4.13",
+      "order": "89",
+      "pages": "39-40",
+      "pdf_heading": "4.13 Посмотреть контактные данные собеседника",
+      "pdf_section": "4.13",
+      "source_refs": [
+        {
+          "global_pages": "39-40",
+          "pages": "39-40",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Посмотреть контактные данные собеседника",
+      "tokens": 314
+    },
+    {
+      "file": "sections/90-posmotret-istoriyu-soobscheniy.md",
+      "number": "4.14",
+      "order": "90",
+      "pages": "40",
+      "pdf_heading": "4.14 Посмотреть историю сообщений",
+      "pdf_section": "4.14",
+      "source_refs": [
+        {
+          "global_pages": "40",
+          "pages": "40",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Посмотреть историю сообщений",
+      "tokens": 400
+    },
+    {
+      "file": "sections/91-ochistit-vashu-istoriyu-soobscheniy.md",
+      "number": "4.15",
+      "order": "91",
+      "pages": "40",
+      "pdf_heading": "4.15 Очистить вашу историю сообщений",
+      "pdf_section": "4.15",
+      "source_refs": [
+        {
+          "global_pages": "40",
+          "pages": "40",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Очистить вашу историю сообщений",
+      "tokens": 275
+    },
+    {
+      "file": "sections/92-zakreplenie-i-otkreplenie-chata.md",
+      "number": "4.16",
+      "order": "92",
+      "pages": "40-41",
+      "pdf_heading": "4.16 Закрепление и открепление чата",
+      "pdf_section": "4.16",
+      "source_refs": [
+        {
+          "global_pages": "40-41",
+          "pages": "40-41",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Закрепление и открепление чата",
+      "tokens": 532
+    },
+    {
+      "file": "sections/93-kak-sozdat-obschiy-chat-ili-kanal-i-upra.md",
+      "number": "5",
+      "order": "93",
+      "pages": "41",
+      "pdf_heading": "5 Как создать общий чат или канал и управлять им 4608",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "41",
+          "pages": "41",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать общий чат или канал и управлять им 4608",
+      "tokens": 78
+    },
+    {
+      "file": "sections/94-ob-obschih-chatah-i-kanalah.md",
+      "number": "5.1",
+      "order": "94",
+      "pages": "41",
+      "pdf_heading": "5.1 Об общих чатах и каналах",
+      "pdf_section": "5.1",
+      "source_refs": [
+        {
+          "global_pages": "41",
+          "pages": "41",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Об общих чатах и каналах",
+      "tokens": 394
+    },
+    {
+      "file": "sections/95-opisanie-prav-uchastnikov.md",
+      "number": "5.1",
+      "order": "95",
+      "pages": "41-42",
+      "pdf_heading": "Описание прав участников",
+      "pdf_section": "5.1",
+      "source_refs": [
+        {
+          "global_pages": "41-42",
+          "pages": "41-42",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Описание прав участников",
+      "tokens": 564
+    },
+    {
+      "file": "sections/96-kak-sozdat-obschiy-chat-ili-kanal.md",
+      "number": "5.2",
+      "order": "96",
+      "pages": "42",
+      "pdf_heading": "5.2 Как создать общий чат или канал",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "42",
+          "pages": "42",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать общий чат или канал",
+      "tokens": 73
+    },
+    {
+      "file": "sections/97-obschiy-chat.md",
+      "number": "5.2",
+      "order": "97",
+      "pages": "42-43",
+      "pdf_heading": "Общий чат",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "42-43",
+          "pages": "42-43",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общий чат",
+      "tokens": 407
+    },
+    {
+      "file": "sections/98-kanal.md",
+      "number": "5.2",
+      "order": "98",
+      "pages": "43",
+      "pdf_heading": "Канал",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "43",
+          "pages": "43",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Канал",
+      "tokens": 357
+    },
+    {
+      "file": "sections/99-dobavit-uchastnika.md",
+      "number": "5.3",
+      "order": "99",
+      "pages": "43",
+      "pdf_heading": "5.3 Добавить участника",
+      "pdf_section": "5.3",
+      "source_refs": [
+        {
+          "global_pages": "43",
+          "pages": "43",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Добавить участника",
+      "tokens": 368
+    },
+    {
+      "file": "sections/100-priglasit-po-ssylke-novogo-uchastnika.md",
+      "number": "5.4",
+      "order": "100",
+      "pages": "43-44",
+      "pdf_heading": "5.4 Пригласить по ссылке нового участника",
+      "pdf_section": "5.4",
+      "source_refs": [
+        {
+          "global_pages": "43-44",
+          "pages": "43-44",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Пригласить по ссылке нового участника",
+      "tokens": 496
+    },
+    {
+      "file": "sections/101-kak-prisoedinitsya-po-ssylke.md",
+      "number": "5.5",
+      "order": "101",
+      "pages": "44",
+      "pdf_heading": "5.5 Как присоединиться по ссылке",
+      "pdf_section": "5.5",
+      "source_refs": [
+        {
+          "global_pages": "44",
+          "pages": "44",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как присоединиться по ссылке",
+      "tokens": 161
+    },
+    {
+      "file": "sections/102-otobrazhenie-spiska-uchastnikov.md",
+      "number": "5.6",
+      "order": "102",
+      "pages": "44",
+      "pdf_heading": "5.6 Отображение списка участников",
+      "pdf_section": "5.6",
+      "source_refs": [
+        {
+          "global_pages": "44",
+          "pages": "44",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отображение списка участников",
+      "tokens": 321
+    },
+    {
+      "file": "sections/103-vydacha-snyatie-prav-administratora.md",
+      "number": "5.7",
+      "order": "103",
+      "pages": "44-45",
+      "pdf_heading": "5.7 Выдача/снятие прав администратора",
+      "pdf_section": "5.7",
+      "source_refs": [
+        {
+          "global_pages": "44-45",
+          "pages": "44-45",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Выдача/снятие прав администратора",
+      "tokens": 756
+    },
+    {
+      "file": "sections/104-bystryy-perehod-k-kartochke-kontakta.md",
+      "number": "5.8",
+      "order": "104",
+      "pages": "45",
+      "pdf_heading": "5.8 Быстрый переход к карточке контакта",
+      "pdf_section": "5.8",
+      "source_refs": [
+        {
+          "global_pages": "45",
+          "pages": "45",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Быстрый переход к карточке контакта",
+      "tokens": 76
+    },
+    {
+      "file": "sections/105-obschie-svedeniya.md",
+      "number": "5.8",
+      "order": "105",
+      "pages": "45",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "5.8",
+      "source_refs": [
+        {
+          "global_pages": "45",
+          "pages": "45",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 184
+    },
+    {
+      "file": "sections/106-perehod-iz-obschego-chata.md",
+      "number": "5.8",
+      "order": "106",
+      "pages": "45",
+      "pdf_heading": "Переход из общего чата",
+      "pdf_section": "5.8",
+      "source_refs": [
+        {
+          "global_pages": "45",
+          "pages": "45",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Переход из общего чата",
+      "tokens": 172
+    },
+    {
+      "file": "sections/107-perehod-iz-kanala.md",
+      "number": "5.8",
+      "order": "107",
+      "pages": "45-46",
+      "pdf_heading": "Переход из канала",
+      "pdf_section": "5.8",
+      "source_refs": [
+        {
+          "global_pages": "45-46",
+          "pages": "45-46",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Переход из канала",
+      "tokens": 381
+    },
+    {
+      "file": "sections/108-kak-pereimenovat-chat-kanal.md",
+      "number": "5.9",
+      "order": "108",
+      "pages": "46",
+      "pdf_heading": "5.9 Как переименовать чат / канал",
+      "pdf_section": "5.9",
+      "source_refs": [
+        {
+          "global_pages": "46",
+          "pages": "46",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как переименовать чат / канал",
+      "tokens": 392
+    },
+    {
+      "file": "sections/109-nastroyka-vidimosti-istorii-chata-dlya-n.md",
+      "number": "5.10",
+      "order": "109",
+      "pages": "46",
+      "pdf_heading": "5.10 Настройка видимости истории чата для новых участников",
+      "pdf_section": "5.10",
+      "source_refs": [
+        {
+          "global_pages": "46",
+          "pages": "46",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройка видимости истории чата для новых участников",
+      "tokens": 423
+    },
+    {
+      "file": "sections/110-nastroyka-uvedomleniy-vidimosti-istorii.md",
+      "number": "5.11",
+      "order": "110",
+      "pages": "46-47",
+      "pdf_heading": "5.11 Настройка уведомлений видимости истории чата",
+      "pdf_section": "5.11",
+      "source_refs": [
+        {
+          "global_pages": "46-47",
+          "pages": "46-47",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройка уведомлений видимости истории чата",
+      "tokens": 464
+    },
+    {
+      "file": "sections/111-udalit-uchastnika.md",
+      "number": "5.12",
+      "order": "111",
+      "pages": "47",
+      "pdf_heading": "5.12 Удалить участника",
+      "pdf_section": "5.12",
+      "source_refs": [
+        {
+          "global_pages": "47",
+          "pages": "47",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удалить участника",
+      "tokens": 380
+    },
+    {
+      "file": "sections/112-vyhod-iz-obschego-chata.md",
+      "number": "5.13",
+      "order": "112",
+      "pages": "47",
+      "pdf_heading": "5.13 Выход из общего чата",
+      "pdf_section": "5.13",
+      "source_refs": [
+        {
+          "global_pages": "47",
+          "pages": "47",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Выход из общего чата",
+      "tokens": 68
+    },
+    {
+      "file": "sections/113-obschie-svedeniya.md",
+      "number": "5.13",
+      "order": "113",
+      "pages": "47-48",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "5.13",
+      "source_refs": [
+        {
+          "global_pages": "47-48",
+          "pages": "47-48",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 284
+    },
+    {
+      "file": "sections/114-poryadok-deystviy.md",
+      "number": "5.13",
+      "order": "114",
+      "pages": "48",
+      "pdf_heading": "Порядок действий",
+      "pdf_section": "5.13",
+      "source_refs": [
+        {
+          "global_pages": "48",
+          "pages": "48",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Порядок действий",
+      "tokens": 296
+    },
+    {
+      "file": "sections/115-vyhod-iz-kanala.md",
+      "number": "5.14",
+      "order": "115",
+      "pages": "48",
+      "pdf_heading": "5.14 Выход из канала",
+      "pdf_section": "5.14",
+      "source_refs": [
+        {
+          "global_pages": "48",
+          "pages": "48",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Выход из канала",
+      "tokens": 66
+    },
+    {
+      "file": "sections/116-obschie-svedeniya.md",
+      "number": "5.14",
+      "order": "116",
+      "pages": "48",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "5.14",
+      "source_refs": [
+        {
+          "global_pages": "48",
+          "pages": "48",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 268
+    },
+    {
+      "file": "sections/117-poryadok-deystviy.md",
+      "number": "5.14",
+      "order": "117",
+      "pages": "48-49",
+      "pdf_heading": "Порядок действий",
+      "pdf_section": "5.14",
+      "source_refs": [
+        {
+          "global_pages": "48-49",
+          "pages": "48-49",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Порядок действий",
+      "tokens": 432
+    },
+    {
+      "file": "sections/118-kak-pozvonit-ili-prinyat-zvonok.md",
+      "number": "6",
+      "order": "118",
+      "pages": "49",
+      "pdf_heading": "6 Как позвонить или принять звонок",
+      "pdf_section": "6",
+      "source_refs": [
+        {
+          "global_pages": "49",
+          "pages": "49",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как позвонить или принять звонок",
+      "tokens": 70
+    },
+    {
+      "file": "sections/119-kak-pozvonit.md",
+      "number": "6.1",
+      "order": "119",
+      "pages": "49",
+      "pdf_heading": "6.1 Как позвонить?",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "49",
+          "pages": "49",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как позвонить?",
+      "tokens": 66
+    },
+    {
+      "file": "sections/120-nomer-sohranennyy-v-kontaktah.md",
+      "number": "6.1",
+      "order": "120",
+      "pages": "49",
+      "pdf_heading": "Номер, сохраненный в контактах",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "49",
+          "pages": "49",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Номер, сохраненный в контактах",
+      "tokens": 647
+    },
+    {
+      "file": "sections/121-nomer-ne-cohranennyy-v-kontakty-lyuboy-n.md",
+      "number": "6.1",
+      "order": "121",
+      "pages": "49-50",
+      "pdf_heading": "Номер, не cохраненный в контакты (любой номер)",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "49-50",
+          "pages": "49-50",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Номер, не cохраненный в контакты (любой номер)",
+      "tokens": 334
+    },
+    {
+      "file": "sections/122-zvonok-na-dobavochnyy-nomer.md",
+      "number": "6.1",
+      "order": "122",
+      "pages": "50",
+      "pdf_heading": "Звонок на добавочный номер",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "50",
+          "pages": "50",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Звонок на добавочный номер",
+      "tokens": 285
+    },
+    {
+      "file": "sections/123-nomer-v-istorii-vyzovov.md",
+      "number": "6.1",
+      "order": "123",
+      "pages": "50",
+      "pdf_heading": "Номер в истории вызовов",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "50",
+          "pages": "50",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Номер в истории вызовов",
+      "tokens": 255
+    },
+    {
+      "file": "sections/124-v-komnatu-audio-konferencsvyazi.md",
+      "number": "6.1",
+      "order": "124",
+      "pages": "50-51",
+      "pdf_heading": "В комнату аудио конференцсвязи",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "50-51",
+          "pages": "50-51",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "В комнату аудио конференцсвязи",
+      "tokens": 503
+    },
+    {
+      "file": "sections/125-kak-prinyat-vhodyaschiy-audio-zvonok.md",
+      "number": "6.2",
+      "order": "125",
+      "pages": "51",
+      "pdf_heading": "6.2 Как принять входящий аудио звонок?",
+      "pdf_section": "6.2",
+      "source_refs": [
+        {
+          "global_pages": "51",
+          "pages": "51",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как принять входящий аудио звонок?",
+      "tokens": 270
+    },
+    {
+      "file": "sections/126-zakaz-obratnogo-zvonka.md",
+      "number": "6.3",
+      "order": "126",
+      "pages": "51-52",
+      "pdf_heading": "6.3 Заказ обратного звонка",
+      "pdf_section": "6.3",
+      "source_refs": [
+        {
+          "global_pages": "51-52",
+          "pages": "51-52",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Заказ обратного звонка",
+      "tokens": 814
+    },
+    {
+      "file": "sections/127-kak-dobavit-tretego-uchastnika-v-zvonok.md",
+      "number": "6.4",
+      "order": "127",
+      "pages": "52",
+      "pdf_heading": "6.4 Как добавить третьего участника в звонок",
+      "pdf_section": "6.4",
+      "source_refs": [
+        {
+          "global_pages": "52",
+          "pages": "52",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как добавить третьего участника в звонок",
+      "tokens": 450
+    },
+    {
+      "file": "sections/128-kak-pozvonit-po-vtoroy-linii.md",
+      "number": "6.5",
+      "order": "128",
+      "pages": "52-53",
+      "pdf_heading": "6.5 Как позвонить по второй линии",
+      "pdf_section": "6.5",
+      "source_refs": [
+        {
+          "global_pages": "52-53",
+          "pages": "52-53",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как позвонить по второй линии",
+      "tokens": 535
+    },
+    {
+      "file": "sections/129-uderzhanie-vyzova.md",
+      "number": "6.6",
+      "order": "129",
+      "pages": "53",
+      "pdf_heading": "6.6 Удержание вызова",
+      "pdf_section": "6.6",
+      "source_refs": [
+        {
+          "global_pages": "53",
+          "pages": "53",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удержание вызова",
+      "tokens": 183
+    },
+    {
+      "file": "sections/130-perevod-vyzova-na-drugogo-sotrudnika.md",
+      "number": "6.7",
+      "order": "130",
+      "pages": "53",
+      "pdf_heading": "6.7 Перевод вызова на другого сотрудника",
+      "pdf_section": "6.7",
+      "source_refs": [
+        {
+          "global_pages": "53",
+          "pages": "53",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Перевод вызова на другого сотрудника",
+      "tokens": 299
+    },
+    {
+      "file": "sections/131-kak-otpravit-soobschenie-v-chat-sms-ili.md",
+      "number": "6.8",
+      "order": "131",
+      "pages": "53-54",
+      "pdf_heading": "6.8 Как отправить сообщение в чат, смс или факс участнику звонка",
+      "pdf_section": "6.8",
+      "source_refs": [
+        {
+          "global_pages": "53-54",
+          "pages": "53-54",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отправить сообщение в чат, смс или факс участнику звонка",
+      "tokens": 1085
+    },
+    {
+      "file": "sections/132-regulirovka-gromkosti-dinamikov-i-mikrof.md",
+      "number": "6.9",
+      "order": "132",
+      "pages": "54-55",
+      "pdf_heading": "6.9 Регулировка громкости динамиков и микрофона во время звонка",
+      "pdf_section": "6.9",
+      "source_refs": [
+        {
+          "global_pages": "54-55",
+          "pages": "54-55",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Регулировка громкости динамиков и микрофона во время звонка",
+      "tokens": 442
+    },
+    {
+      "file": "sections/133-kak-vyklyuchit-mikrofon.md",
+      "number": "6.10",
+      "order": "133",
+      "pages": "55",
+      "pdf_heading": "6.10 Как выключить микрофон",
+      "pdf_section": "6.10",
+      "source_refs": [
+        {
+          "global_pages": "55",
+          "pages": "55",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выключить микрофон",
+      "tokens": 177
+    },
+    {
+      "file": "sections/134-zapis-razgovora-obschie-svedeniya.md",
+      "number": "6.11",
+      "order": "134",
+      "pages": "55",
+      "pdf_heading": "6.11 Запись разговора. Общие сведения",
+      "pdf_section": "6.11",
+      "source_refs": [
+        {
+          "global_pages": "55",
+          "pages": "55",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Запись разговора. Общие сведения",
+      "tokens": 327
+    },
+    {
+      "file": "sections/135-soobschenie-vnimanie-zvonok-byl-otpravle.md",
+      "number": "6.12",
+      "order": "135",
+      "pages": "55",
+      "pdf_heading": "6.12 Сообщение “Внимание! Звонок был отправлен на номер…”",
+      "pdf_section": "6.12",
+      "source_refs": [
+        {
+          "global_pages": "55",
+          "pages": "55",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Сообщение “Внимание! Звонок был отправлен на номер…”",
+      "tokens": 146
+    },
+    {
+      "file": "sections/136-zavershenie-vyzova.md",
+      "number": "6.13",
+      "order": "136",
+      "pages": "55-56",
+      "pdf_heading": "6.13 Завершение вызова",
+      "pdf_section": "6.13",
+      "source_refs": [
+        {
+          "global_pages": "55-56",
+          "pages": "55-56",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Завершение вызова",
+      "tokens": 279
+    },
+    {
+      "file": "sections/137-vo-vremya-zvonka-obschee-opisanie-okna-p.md",
+      "number": "6.14",
+      "order": "137",
+      "pages": "56-57",
+      "pdf_heading": "6.14 Во время звонка. Общее описание окна проведения сеанса связи",
+      "pdf_section": "6.14",
+      "source_refs": [
+        {
+          "global_pages": "56-57",
+          "pages": "56-57",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Во время звонка. Общее описание окна проведения сеанса связи",
+      "tokens": 1131
+    },
+    {
+      "file": "sections/138-kak-sdelat-videokonferenciyu.md",
+      "number": "7",
+      "order": "138",
+      "pages": "57",
+      "pdf_heading": "7 Как сделать видеоконференцию",
+      "pdf_section": "7",
+      "source_refs": [
+        {
+          "global_pages": "57",
+          "pages": "57",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как сделать видеоконференцию",
+      "tokens": 70
+    },
+    {
+      "file": "sections/139-o-videokonferenciya-v-mtalker.md",
+      "number": "7.1",
+      "order": "139",
+      "pages": "57",
+      "pdf_heading": "7.1 О видеоконференция в MTalker",
+      "pdf_section": "7.1",
+      "source_refs": [
+        {
+          "global_pages": "57",
+          "pages": "57",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О видеоконференция в MTalker",
+      "tokens": 572
+    },
+    {
+      "file": "sections/140-ogranichenie.md",
+      "number": "7.1",
+      "order": "140",
+      "pages": "57-58",
+      "pdf_heading": "Ограничение",
+      "pdf_section": "7.1",
+      "source_refs": [
+        {
+          "global_pages": "57-58",
+          "pages": "57-58",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Ограничение",
+      "tokens": 268
+    },
+    {
+      "file": "sections/141-o-roli-administratora-videokonferencii.md",
+      "number": "7.2",
+      "order": "141",
+      "pages": "58",
+      "pdf_heading": "7.2 О роли администратора видеоконференции",
+      "pdf_section": "7.2",
+      "source_refs": [
+        {
+          "global_pages": "58",
+          "pages": "58",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О роли администратора видеоконференции",
+      "tokens": 182
+    },
+    {
+      "file": "sections/142-kak-posmotret-sostav-uchastnikov-videoko.md",
+      "number": "7.3",
+      "order": "142",
+      "pages": "58",
+      "pdf_heading": "7.3 Как посмотреть состав участников видеоконференции",
+      "pdf_section": "7.3",
+      "source_refs": [
+        {
+          "global_pages": "58",
+          "pages": "58",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть состав участников видеоконференции",
+      "tokens": 328
+    },
+    {
+      "file": "sections/143-kak-pozvonit-s-video-abonentu-ili-v-grup.md",
+      "number": "7.4",
+      "order": "143",
+      "pages": "58-60",
+      "pdf_heading": "7.4 Как позвонить с видео абоненту или в групповой чат",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "58-60",
+          "pages": "58-60",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как позвонить с видео абоненту или в групповой чат",
+      "tokens": 1603
+    },
+    {
+      "file": "sections/144-kak-prinyat-vhodyaschiy-video-zvonok.md",
+      "number": "7.5",
+      "order": "144",
+      "pages": "60-61",
+      "pdf_heading": "7.5 Как принять входящий видео звонок",
+      "pdf_section": "7.5",
+      "source_refs": [
+        {
+          "global_pages": "60-61",
+          "pages": "60-61",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как принять входящий видео звонок",
+      "tokens": 1402
+    },
+    {
+      "file": "sections/145-kak-dobavit-ili-udalit-sotrudnikov-i-gos.md",
+      "number": "7.6",
+      "order": "145",
+      "pages": "61",
+      "pdf_heading": "7.6 Как добавить или удалить сотрудников и гостей видеоконференции",
+      "pdf_section": "7.6",
+      "source_refs": [
+        {
+          "global_pages": "61",
+          "pages": "61",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как добавить или удалить сотрудников и гостей видеоконференции",
+      "tokens": 95
+    },
+    {
+      "file": "sections/146-kak-dobavit-uchastnikov-v-videokonferenc.md",
+      "number": "7.6",
+      "order": "146",
+      "pages": "61-62",
+      "pdf_heading": "Как добавить участников в видеоконференцию",
+      "pdf_section": "7.6",
+      "source_refs": [
+        {
+          "global_pages": "61-62",
+          "pages": "61-62",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как добавить участников в видеоконференцию",
+      "tokens": 538
+    },
+    {
+      "file": "sections/147-kak-udalit-uchastnika-iz-videokonferenci.md",
+      "number": "7.6",
+      "order": "147",
+      "pages": "62-63",
+      "pdf_heading": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
+      "pdf_section": "7.6",
+      "source_refs": [
+        {
+          "global_pages": "62-63",
+          "pages": "62-63",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
+      "tokens": 582
+    },
+    {
+      "file": "sections/148-kak-prisoedinitsya-po-ssylke-k-videokonf.md",
+      "number": "7.7",
+      "order": "148",
+      "pages": "63",
+      "pdf_heading": "7.7 Как присоединиться по ссылке к видеоконференции",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "63",
+          "pages": "63",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как присоединиться по ссылке к видеоконференции",
+      "tokens": 81
+    },
+    {
+      "file": "sections/149-vazhnaya-informaciya.md",
+      "number": "7.7",
+      "order": "149",
+      "pages": "63-64",
+      "pdf_heading": "Важная информация",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "63-64",
+          "pages": "63-64",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Важная информация",
+      "tokens": 472
+    },
+    {
+      "file": "sections/150-kak-prisoedinitsya-v-kachestve-gostya-be.md",
+      "number": "7.7",
+      "order": "150",
+      "pages": "64",
+      "pdf_heading": "Как присоединиться в качестве гостя (без авторизации в MTalker)",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "64",
+          "pages": "64",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как присоединиться в качестве гостя (без авторизации в MTalker)",
+      "tokens": 82
+    },
+    {
+      "file": "sections/151-esli-u-vas-net-akkaunta-mtalker.md",
+      "number": "7.7",
+      "order": "151",
+      "pages": "64-65",
+      "pdf_heading": "Если у вас нет аккаунта MTalker",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "64-65",
+          "pages": "64-65",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Если у вас нет аккаунта MTalker",
+      "tokens": 591
+    },
+    {
+      "file": "sections/152-esli-u-vas-est-akkaunt-mtalker.md",
+      "number": "7.7",
+      "order": "152",
+      "pages": "65",
+      "pdf_heading": "Если у вас есть аккаунт MTalker",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "65",
+          "pages": "65",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Если у вас есть аккаунт MTalker",
+      "tokens": 742
+    },
+    {
+      "file": "sections/153-prisoedinitsya-kak-sotrudnik-avtorizovav.md",
+      "number": "7.7",
+      "order": "153",
+      "pages": "65",
+      "pdf_heading": "Присоединиться как сотрудник (авторизовавшись в MTalker)",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "65",
+          "pages": "65",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Присоединиться как сотрудник (авторизовавшись в MTalker)",
+      "tokens": 142
+    },
+    {
+      "file": "sections/154-cherez-prilozhenie-mtalker.md",
+      "number": "7.7",
+      "order": "154",
+      "pages": "65-66",
+      "pdf_heading": "Через приложение MTalker",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "65-66",
+          "pages": "65-66",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Через приложение MTalker",
+      "tokens": 614
+    },
+    {
+      "file": "sections/155-cherez-veb-versiyu-mtalker.md",
+      "number": "7.7",
+      "order": "155",
+      "pages": "66-67",
+      "pdf_heading": "Через веб-версию MTalker",
+      "pdf_section": "7.7",
+      "source_refs": [
+        {
+          "global_pages": "66-67",
+          "pages": "66-67",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Через веб-версию MTalker",
+      "tokens": 502
+    },
+    {
+      "file": "sections/156-kak-sozdat-videokonferenciyu-i-dobavit-s.md",
+      "number": "7.8",
+      "order": "156",
+      "pages": "67",
+      "pdf_heading": "7.8 Как создать видеоконференцию и добавить сотрудников и гостей",
+      "pdf_section": "7.8",
+      "source_refs": [
+        {
+          "global_pages": "67",
+          "pages": "67",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать видеоконференцию и добавить сотрудников и гостей",
+      "tokens": 838
+    },
+    {
+      "file": "sections/157-kak-vyyti-iz-videokonferencii.md",
+      "number": "7.9",
+      "order": "157",
+      "pages": "67-68",
+      "pdf_heading": "7.9 Как выйти из видеоконференции",
+      "pdf_section": "7.9",
+      "source_refs": [
+        {
+          "global_pages": "67-68",
+          "pages": "67-68",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выйти из видеоконференции",
+      "tokens": 281
+    },
+    {
+      "file": "sections/158-kak-nastroit-sobstvennye-kameru-i-mikrof.md",
+      "number": "7.10",
+      "order": "158",
+      "pages": "68",
+      "pdf_heading": "7.10 Как настроить собственные камеру и микрофон",
+      "pdf_section": "7.10",
+      "source_refs": [
+        {
+          "global_pages": "68",
+          "pages": "68",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как настроить собственные камеру и микрофон",
+      "tokens": 82
+    },
+    {
+      "file": "sections/159-kak-vklyuchit-ili-vyklyuchit.md",
+      "number": "7.10",
+      "order": "159",
+      "pages": "68",
+      "pdf_heading": "Как включить или выключить",
+      "pdf_section": "7.10",
+      "source_refs": [
+        {
+          "global_pages": "68",
+          "pages": "68",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить",
+      "tokens": 256
+    },
+    {
+      "file": "sections/160-kak-vybrat-kameru-ili-mikrofon-i-proveri.md",
+      "number": "7.10",
+      "order": "160",
+      "pages": "68-69",
+      "pdf_heading": "Как выбрать камеру или микрофон и проверить их работу",
+      "pdf_section": "7.10",
+      "source_refs": [
+        {
+          "global_pages": "68-69",
+          "pages": "68-69",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выбрать камеру или микрофон и проверить их работу",
+      "tokens": 813
+    },
+    {
+      "file": "sections/161-vklyuchenie-demonstracii-ekrana.md",
+      "number": "7.11",
+      "order": "161",
+      "pages": "69",
+      "pdf_heading": "7.11 Включение демонстрации экрана",
+      "pdf_section": "7.11",
+      "source_refs": [
+        {
+          "global_pages": "69",
+          "pages": "69",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение демонстрации экрана",
+      "tokens": 72
+    },
+    {
+      "file": "sections/162-kak-vklyuchit-ili-vyklyuchit.md",
+      "number": "7.11",
+      "order": "162",
+      "pages": "69",
+      "pdf_heading": "Как включить или выключить",
+      "pdf_section": "7.11",
+      "source_refs": [
+        {
+          "global_pages": "69",
+          "pages": "69",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить",
+      "tokens": 391
+    },
+    {
+      "file": "sections/163-kak-nastroit-kachestvo-translyacii.md",
+      "number": "7.11",
+      "order": "163",
+      "pages": "69",
+      "pdf_heading": "Как настроить качество трансляции",
+      "pdf_section": "7.11",
+      "source_refs": [
+        {
+          "global_pages": "69",
+          "pages": "69",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как настроить качество трансляции",
+      "tokens": 297
+    },
+    {
+      "file": "sections/164-kak-izmenit-fonovye-effekty.md",
+      "number": "7.12",
+      "order": "164",
+      "pages": "69-70",
+      "pdf_heading": "7.12 Как изменить фоновые эффекты",
+      "pdf_section": "7.12",
+      "source_refs": [
+        {
+          "global_pages": "69-70",
+          "pages": "69-70",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как изменить фоновые эффекты",
+      "tokens": 502
+    },
+    {
+      "file": "sections/165-podnyat-ruku.md",
+      "number": "7.13",
+      "order": "165",
+      "pages": "70",
+      "pdf_heading": "7.13 Поднять руку",
+      "pdf_section": "7.13",
+      "source_refs": [
+        {
+          "global_pages": "70",
+          "pages": "70",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поднять руку",
+      "tokens": 373
+    },
+    {
+      "file": "sections/166-izmenit-raskladku-otobrazheniya-okon-uch.md",
+      "number": "7.14",
+      "order": "166",
+      "pages": "70-71",
+      "pdf_heading": "7.14 Изменить раскладку отображения окон участников",
+      "pdf_section": "7.14",
+      "source_refs": [
+        {
+          "global_pages": "70-71",
+          "pages": "70-71",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Изменить раскладку отображения окон участников",
+      "tokens": 236
+    },
+    {
+      "file": "sections/167-konferencii-komnaty.md",
+      "number": "8",
+      "order": "167",
+      "pages": "71",
+      "pdf_heading": "8 Конференции (комнаты)",
+      "pdf_section": "8",
+      "source_refs": [
+        {
+          "global_pages": "71",
+          "pages": "71",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Конференции (комнаты)",
+      "tokens": 68
+    },
+    {
+      "file": "sections/168-obschee.md",
+      "number": "8.1",
+      "order": "168",
+      "pages": "71",
+      "pdf_heading": "8.1 Общее",
+      "pdf_section": "8.1",
+      "source_refs": [
+        {
+          "global_pages": "71",
+          "pages": "71",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 398
+    },
+    {
+      "file": "sections/169-rabota-s-komnatami.md",
+      "number": "8.2",
+      "order": "169",
+      "pages": "71",
+      "pdf_heading": "8.2 Работа с комнатами",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "71",
+          "pages": "71",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Работа с комнатами",
+      "tokens": 69
+    },
+    {
+      "file": "sections/170-kak-posmotret-informaciyu-o-komnate.md",
+      "number": "8.2",
+      "order": "170",
+      "pages": "71-72",
+      "pdf_heading": "Как посмотреть информацию о комнате",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "71-72",
+          "pages": "71-72",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть информацию о комнате",
+      "tokens": 597
+    },
+    {
+      "file": "sections/171-kak-sozdat-komnatu-obzor.md",
+      "number": "8.2",
+      "order": "171",
+      "pages": "72",
+      "pdf_heading": "Как создать комнату. Обзор",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "72",
+          "pages": "72",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать комнату. Обзор",
+      "tokens": 146
+    },
+    {
+      "file": "sections/172-kak-pozvonit-v-komnatu.md",
+      "number": "8.2",
+      "order": "172",
+      "pages": "72",
+      "pdf_heading": "Как позвонить в комнату",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "72",
+          "pages": "72",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как позвонить в комнату",
+      "tokens": 222
+    },
+    {
+      "file": "sections/173-kak-zakazat-obratnyy-zvonok-s-uchastnika.md",
+      "number": "8.2",
+      "order": "173",
+      "pages": "72-73",
+      "pdf_heading": "Как заказать обратный звонок с участниками комнаты",
+      "pdf_section": "8.2",
+      "source_refs": [
+        {
+          "global_pages": "72-73",
+          "pages": "72-73",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как заказать обратный звонок с участниками комнаты",
+      "tokens": 615
+    },
+    {
+      "file": "sections/174-kak-nachat-audio-konferenciyu.md",
+      "number": "8.3",
+      "order": "174",
+      "pages": "73",
+      "pdf_heading": "8.3 Как начать аудио конференцию",
+      "pdf_section": "8.3",
+      "source_refs": [
+        {
+          "global_pages": "73",
+          "pages": "73",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как начать аудио конференцию",
+      "tokens": 281
+    },
+    {
+      "file": "sections/175-rabota-s-videokonferenciey-vks.md",
+      "number": "8.4",
+      "order": "175",
+      "pages": "73",
+      "pdf_heading": "8.4 Работа с видеоконференцией (ВКС)",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "73",
+          "pages": "73",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Работа с видеоконференцией (ВКС)",
+      "tokens": 78
+    },
+    {
+      "file": "sections/176-obschee.md",
+      "number": "8.4",
+      "order": "176",
+      "pages": "73",
+      "pdf_heading": "Общее",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "73",
+          "pages": "73",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 145
+    },
+    {
+      "file": "sections/177-kak-sozdat-novuyu-videokonferenciyu-i-pr.md",
+      "number": "8.4",
+      "order": "177",
+      "pages": "73-75",
+      "pdf_heading": "Как создать новую видеоконференцию и предоставить ссылку для присоединения",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "73-75",
+          "pages": "73-75",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать новую видеоконференцию и предоставить ссылку для присоединения",
+      "tokens": 1600
+    },
+    {
+      "file": "sections/178-kak-prisoedinitsya-po-ssylke-k-vks.md",
+      "number": "8.4",
+      "order": "178",
+      "pages": "75-77",
+      "pdf_heading": "Как присоединиться по ссылке к ВКС",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "75-77",
+          "pages": "75-77",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как присоединиться по ссылке к ВКС",
+      "tokens": 1505
+    },
+    {
+      "file": "sections/179-kak-predostavit-dostup-k-videokonferenci.md",
+      "number": "8.4",
+      "order": "179",
+      "pages": "77-78",
+      "pdf_heading": "Как предоставить доступ к видеоконференции по ссылке",
+      "pdf_section": "8.4",
+      "source_refs": [
+        {
+          "global_pages": "77-78",
+          "pages": "77-78",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как предоставить доступ к видеоконференции по ссылке",
+      "tokens": 491
+    },
+    {
+      "file": "sections/180-kontakty.md",
+      "number": "9",
+      "order": "180",
+      "pages": "78",
+      "pdf_heading": "9 Контакты",
+      "pdf_section": "9",
+      "source_refs": [
+        {
+          "global_pages": "78",
+          "pages": "78",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Контакты",
+      "tokens": 60
+    },
+    {
+      "file": "sections/181-obschie-svedeniya.md",
+      "number": "9.1",
+      "order": "181",
+      "pages": "78",
+      "pdf_heading": "9.1 Общие сведения",
+      "pdf_section": "9.1",
+      "source_refs": [
+        {
+          "global_pages": "78",
+          "pages": "78",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 558
+    },
+    {
+      "file": "sections/182-poisk-kontaktov-po-proizvolnomu-parametr.md",
+      "number": "9.2",
+      "order": "182",
+      "pages": "78-79",
+      "pdf_heading": "9.2 Поиск контактов по произвольному параметру",
+      "pdf_section": "9.2",
+      "source_refs": [
+        {
+          "global_pages": "78-79",
+          "pages": "78-79",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск контактов по произвольному параметру",
+      "tokens": 461
+    },
+    {
+      "file": "sections/183-gruppy-kontaktov-filtry.md",
+      "number": "9.3",
+      "order": "183",
+      "pages": "79",
+      "pdf_heading": "9.3 Группы контактов. Фильтры",
+      "pdf_section": "9.3",
+      "source_refs": [
+        {
+          "global_pages": "79",
+          "pages": "79",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Группы контактов. Фильтры",
+      "tokens": 634
+    },
+    {
+      "file": "sections/184-kak-posmotret-dannye-kontakta-i-istoriyu.md",
+      "number": "9.4",
+      "order": "184",
+      "pages": "79-80",
+      "pdf_heading": "9.4 Как посмотреть данные контакта и историю вызовов",
+      "pdf_section": "9.4",
+      "source_refs": [
+        {
+          "global_pages": "79-80",
+          "pages": "79-80",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть данные контакта и историю вызовов",
+      "tokens": 507
+    },
+    {
+      "file": "sections/185-lichnye-kontakty.md",
+      "number": "9.5",
+      "order": "185",
+      "pages": "80",
+      "pdf_heading": "9.5 Личные контакты",
+      "pdf_section": "9.5",
+      "source_refs": [
+        {
+          "global_pages": "80",
+          "pages": "80",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Личные контакты",
+      "tokens": 67
+    },
+    {
+      "file": "sections/186-dobavlenie-novogo-kontakta.md",
+      "number": "9.5",
+      "order": "186",
+      "pages": "80",
+      "pdf_heading": "Добавление нового контакта",
+      "pdf_section": "9.5",
+      "source_refs": [
+        {
+          "global_pages": "80",
+          "pages": "80",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Добавление нового контакта",
+      "tokens": 285
+    },
+    {
+      "file": "sections/187-redaktirovanie.md",
+      "number": "9.5",
+      "order": "187",
+      "pages": "80-81",
+      "pdf_heading": "Редактирование",
+      "pdf_section": "9.5",
+      "source_refs": [
+        {
+          "global_pages": "80-81",
+          "pages": "80-81",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Редактирование",
+      "tokens": 479
+    },
+    {
+      "file": "sections/188-udalenie-iz-adresnoy-knigi.md",
+      "number": "9.5",
+      "order": "188",
+      "pages": "81",
+      "pdf_heading": "Удаление из адресной книги",
+      "pdf_section": "9.5",
+      "source_refs": [
+        {
+          "global_pages": "81",
+          "pages": "81",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаление из адресной книги",
+      "tokens": 372
+    },
+    {
+      "file": "sections/189-spisok-izbrannoe.md",
+      "number": "9.6",
+      "order": "189",
+      "pages": "81",
+      "pdf_heading": "9.6 Список “Избранное”",
+      "pdf_section": "9.6",
+      "source_refs": [
+        {
+          "global_pages": "81",
+          "pages": "81",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Список “Избранное”",
+      "tokens": 69
+    },
+    {
+      "file": "sections/190-dobavlenie-v-gruppu-izbrannye.md",
+      "number": "9.6",
+      "order": "190",
+      "pages": "81",
+      "pdf_heading": "Добавление в группу “Избранные”",
+      "pdf_section": "9.6",
+      "source_refs": [
+        {
+          "global_pages": "81",
+          "pages": "81",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Добавление в группу “Избранные”",
+      "tokens": 389
+    },
+    {
+      "file": "sections/191-udalenie-iz-gruppy-izbrannye.md",
+      "number": "9.6",
+      "order": "191",
+      "pages": "81-82",
+      "pdf_heading": "Удаление из группы “Избранные”",
+      "pdf_section": "9.6",
+      "source_refs": [
+        {
+          "global_pages": "81-82",
+          "pages": "81-82",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаление из группы “Избранные”",
+      "tokens": 416
+    },
+    {
+      "file": "sections/192-istoriya-vyzovov.md",
+      "number": "10",
+      "order": "192",
+      "pages": "82",
+      "pdf_heading": "10 История вызовов",
+      "pdf_section": "10",
+      "source_refs": [
+        {
+          "global_pages": "82",
+          "pages": "82",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "История вызовов",
+      "tokens": 63
+    },
+    {
+      "file": "sections/193-obschie-svedeniya.md",
+      "number": "10.1",
+      "order": "193",
+      "pages": "82",
+      "pdf_heading": "10.1 Общие сведения",
+      "pdf_section": "10.1",
+      "source_refs": [
+        {
+          "global_pages": "82",
+          "pages": "82",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 577
+    },
+    {
+      "file": "sections/194-poisk-zapisi-v-istorii-vyzovov.md",
+      "number": "10.2",
+      "order": "194",
+      "pages": "82",
+      "pdf_heading": "10.2 Поиск записи в истории вызовов",
+      "pdf_section": "10.2",
+      "source_refs": [
+        {
+          "global_pages": "82",
+          "pages": "82",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск записи в истории вызовов",
+      "tokens": 73
+    },
+    {
+      "file": "sections/195-obschie-svedeniya.md",
+      "number": "10.2",
+      "order": "195",
+      "pages": "82-83",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "10.2",
+      "source_refs": [
+        {
+          "global_pages": "82-83",
+          "pages": "82-83",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 235
+    },
+    {
+      "file": "sections/196-poisk-v-ruchnom-rezhime.md",
+      "number": "10.2",
+      "order": "196",
+      "pages": "83",
+      "pdf_heading": "Поиск в ручном режиме",
+      "pdf_section": "10.2",
+      "source_refs": [
+        {
+          "global_pages": "83",
+          "pages": "83",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Поиск в ручном режиме",
+      "tokens": 413
+    },
+    {
+      "file": "sections/197-avtomaticheskiy-poisk-po-parametram.md",
+      "number": "10.2",
+      "order": "197",
+      "pages": "83",
+      "pdf_heading": "Автоматический поиск по параметрам",
+      "pdf_section": "10.2",
+      "source_refs": [
+        {
+          "global_pages": "83",
+          "pages": "83",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автоматический поиск по параметрам",
+      "tokens": 313
+    },
+    {
+      "file": "sections/198-vyvod-na-ekran-zapisi-o-zvonke.md",
+      "number": "10.3",
+      "order": "198",
+      "pages": "83-84",
+      "pdf_heading": "10.3 Вывод на экран записи о звонке",
+      "pdf_section": "10.3",
+      "source_refs": [
+        {
+          "global_pages": "83-84",
+          "pages": "83-84",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Вывод на экран записи о звонке",
+      "tokens": 622
+    },
+    {
+      "file": "sections/199-obratnaya-svyaz-kak-svyazatsya-s-abonent.md",
+      "number": "10.4",
+      "order": "199",
+      "pages": "84",
+      "pdf_heading": "10.4 Обратная связь. Как связаться с абонентом, указанным в истории вызовов",
+      "pdf_section": "10.4",
+      "source_refs": [
+        {
+          "global_pages": "84",
+          "pages": "84",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Обратная связь. Как связаться с абонентом, указанным в истории вызовов",
+      "tokens": 97
+    },
+    {
+      "file": "sections/200-obschie-svedeniya.md",
+      "number": "10.4",
+      "order": "200",
+      "pages": "84",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "10.4",
+      "source_refs": [
+        {
+          "global_pages": "84",
+          "pages": "84",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 209
+    },
+    {
+      "file": "sections/201-kak-perezvonit.md",
+      "number": "10.4",
+      "order": "201",
+      "pages": "84-85",
+      "pdf_heading": "Как перезвонить?",
+      "pdf_section": "10.4",
+      "source_refs": [
+        {
+          "global_pages": "84-85",
+          "pages": "84-85",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как перезвонить?",
+      "tokens": 352
+    },
+    {
+      "file": "sections/202-otpravka-tekstovogo-soobscheniya.md",
+      "number": "10.4",
+      "order": "202",
+      "pages": "85",
+      "pdf_heading": "Отправка текстового сообщения",
+      "pdf_section": "10.4",
+      "source_refs": [
+        {
+          "global_pages": "85",
+          "pages": "85",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка текстового сообщения",
+      "tokens": 403
+    },
+    {
+      "file": "sections/203-otpravka-sms-faksa.md",
+      "number": "10.4",
+      "order": "203",
+      "pages": "85-86",
+      "pdf_heading": "Отправка смс / факса",
+      "pdf_section": "10.4",
+      "source_refs": [
+        {
+          "global_pages": "85-86",
+          "pages": "85-86",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Отправка смс / факса",
+      "tokens": 1169
+    },
+    {
+      "file": "sections/204-sozdat-kontakt.md",
+      "number": "10.5",
+      "order": "204",
+      "pages": "86-87",
+      "pdf_heading": "10.5 Создать контакт",
+      "pdf_section": "10.5",
+      "source_refs": [
+        {
+          "global_pages": "86-87",
+          "pages": "86-87",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Создать контакт",
+      "tokens": 428
+    },
+    {
+      "file": "sections/205-zapis-razgovora.md",
+      "number": "10.6",
+      "order": "205",
+      "pages": "87",
+      "pdf_heading": "10.6 Запись разговора",
+      "pdf_section": "10.6",
+      "source_refs": [
+        {
+          "global_pages": "87",
+          "pages": "87",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Запись разговора",
+      "tokens": 69
+    },
+    {
+      "file": "sections/206-obschie-svedeniya.md",
+      "number": "10.6",
+      "order": "206",
+      "pages": "87",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "10.6",
+      "source_refs": [
+        {
+          "global_pages": "87",
+          "pages": "87",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 236
+    },
+    {
+      "file": "sections/207-skachat-zapis-iz-istorii-vyzovov.md",
+      "number": "10.6",
+      "order": "207",
+      "pages": "87",
+      "pdf_heading": "Скачать запись из истории вызовов",
+      "pdf_section": "10.6",
+      "source_refs": [
+        {
+          "global_pages": "87",
+          "pages": "87",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Скачать запись из истории вызовов",
+      "tokens": 343
+    },
+    {
+      "file": "sections/208-skachat-zapis-iz-kartochki-kontakta.md",
+      "number": "10.6",
+      "order": "208",
+      "pages": "87",
+      "pdf_heading": "Скачать запись из карточки контакта",
+      "pdf_section": "10.6",
+      "source_refs": [
+        {
+          "global_pages": "87",
+          "pages": "87",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Скачать запись из карточки контакта",
+      "tokens": 188
+    },
+    {
+      "file": "sections/209-udalenie-zapisi-iz-istorii-vyzovov.md",
+      "number": "10.7",
+      "order": "209",
+      "pages": "87-88",
+      "pdf_heading": "10.7 Удаление записи из истории вызовов",
+      "pdf_section": "10.7",
+      "source_refs": [
+        {
+          "global_pages": "87-88",
+          "pages": "87-88",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаление записи из истории вызовов",
+      "tokens": 255
+    },
+    {
+      "file": "sections/210-avtosekretar.md",
+      "number": "11",
+      "order": "210",
+      "pages": "88",
+      "pdf_heading": "11 Автосекретарь",
+      "pdf_section": "11",
+      "source_refs": [
+        {
+          "global_pages": "88",
+          "pages": "88",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автосекретарь",
+      "tokens": 65
+    },
+    {
+      "file": "sections/211-obschee.md",
+      "number": "11.1",
+      "order": "211",
+      "pages": "88",
+      "pdf_heading": "11.1 Общее",
+      "pdf_section": "11.1",
+      "source_refs": [
+        {
+          "global_pages": "88",
+          "pages": "88",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 129
+    },
+    {
+      "file": "sections/212-kak-nastroit-pravilo.md",
+      "number": "11.2",
+      "order": "212",
+      "pages": "88",
+      "pdf_heading": "11.2 Как настроить правило",
+      "pdf_section": "11.2",
+      "source_refs": [
+        {
+          "global_pages": "88",
+          "pages": "88",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как настроить правило",
+      "tokens": 543
+    },
+    {
+      "file": "sections/213-kak-vklyuchit-ili-vyklyuchit-pravilo.md",
+      "number": "11.2",
+      "order": "213",
+      "pages": "88-89",
+      "pdf_heading": "Как включить или выключить правило",
+      "pdf_section": "11.2",
+      "source_refs": [
+        {
+          "global_pages": "88-89",
+          "pages": "88-89",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить правило",
+      "tokens": 244
+    },
+    {
+      "file": "sections/214-kak-redaktirovat-ili-udalit-pravilo.md",
+      "number": "11.2",
+      "order": "214",
+      "pages": "89",
+      "pdf_heading": "Как редактировать или удалить правило",
+      "pdf_section": "11.2",
+      "source_refs": [
+        {
+          "global_pages": "89",
+          "pages": "89",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как редактировать или удалить правило",
+      "tokens": 263
+    },
+    {
+      "file": "sections/215-sms-rassylka.md",
+      "number": "12",
+      "order": "215",
+      "pages": "89",
+      "pdf_heading": "12 СМС-рассылка",
+      "pdf_section": "12",
+      "source_refs": [
+        {
+          "global_pages": "89",
+          "pages": "89",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "СМС-рассылка",
+      "tokens": 65
+    },
+    {
+      "file": "sections/216-kak-sozdat-rassylku.md",
+      "number": "12.1",
+      "order": "216",
+      "pages": "89-90",
+      "pdf_heading": "12.1 Как создать рассылку",
+      "pdf_section": "12.1",
+      "source_refs": [
+        {
+          "global_pages": "89-90",
+          "pages": "89-90",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как создать рассылку",
+      "tokens": 434
+    },
+    {
+      "file": "sections/217-kak-redaktirovat-ili-udalit-rassylku.md",
+      "number": "12.2",
+      "order": "217",
+      "pages": "90",
+      "pdf_heading": "12.2 Как редактировать или удалить рассылку",
+      "pdf_section": "12.2",
+      "source_refs": [
+        {
+          "global_pages": "90",
+          "pages": "90",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как редактировать или удалить рассылку",
+      "tokens": 549
+    },
+    {
+      "file": "sections/218-razdel-obrascheniya-obschie-svedeniya.md",
+      "number": "13",
+      "order": "218",
+      "pages": "90-91",
+      "pdf_heading": "13 Раздел “Обращения”. Общие сведения",
+      "pdf_section": "13",
+      "source_refs": [
+        {
+          "global_pages": "90-91",
+          "pages": "90-91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Раздел “Обращения”. Общие сведения",
+      "tokens": 377
+    },
+    {
+      "file": "sections/219-upravlenie-svoim-profilem-polzovatelya.md",
+      "number": "14",
+      "order": "219",
+      "pages": "91",
+      "pdf_heading": "14 Управление своим профилем пользователя",
+      "pdf_section": "14",
+      "source_refs": [
+        {
+          "global_pages": "91",
+          "pages": "91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Управление своим профилем пользователя",
+      "tokens": 67
+    },
+    {
+      "file": "sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
+      "number": "14.1",
+      "order": "220",
+      "pages": "91",
+      "pdf_heading": "14.1 Как изменить статус или отключить показ уведомлений из всех чатов и каналов",
+      "pdf_section": "14.1",
+      "source_refs": [
+        {
+          "global_pages": "91",
+          "pages": "91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как изменить статус или отключить показ уведомлений из всех чатов и каналов",
+      "tokens": 97
+    },
+    {
+      "file": "sections/221-obschee.md",
+      "number": "14.1",
+      "order": "221",
+      "pages": "91",
+      "pdf_heading": "Общее",
+      "pdf_section": "14.1",
+      "source_refs": [
+        {
+          "global_pages": "91",
+          "pages": "91",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 532
+    },
+    {
+      "file": "sections/222-kak-izmenit-status.md",
+      "number": "14.1",
+      "order": "222",
+      "pages": "91-92",
+      "pdf_heading": "Как изменить статус",
+      "pdf_section": "14.1",
+      "source_refs": [
+        {
+          "global_pages": "91-92",
+          "pages": "91-92",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как изменить статус",
+      "tokens": 417
+    },
+    {
+      "file": "sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md",
+      "number": "14.1",
+      "order": "223",
+      "pages": "92",
+      "pdf_heading": "Как отключить уведомления в MTalker",
+      "pdf_section": "14.1",
+      "source_refs": [
+        {
+          "global_pages": "92",
+          "pages": "92",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отключить уведомления в MTalker",
+      "tokens": 392
+    },
+    {
+      "file": "sections/224-kak-smenit-ili-udalit-avatar.md",
+      "number": "14.2",
+      "order": "224",
+      "pages": "92-93",
+      "pdf_heading": "14.2 Как сменить или удалить аватар",
+      "pdf_section": "14.2",
+      "source_refs": [
+        {
+          "global_pages": "92-93",
+          "pages": "92-93",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как сменить или удалить аватар",
+      "tokens": 808
+    },
+    {
+      "file": "sections/225-kak-otklyuchit-funkciyu-zapomnit-menya.md",
+      "number": "14.3",
+      "order": "225",
+      "pages": "93",
+      "pdf_heading": "14.3 Как отключить функцию “Запомнить меня”?",
+      "pdf_section": "14.3",
+      "source_refs": [
+        {
+          "global_pages": "93",
+          "pages": "93",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отключить функцию “Запомнить меня”?",
+      "tokens": 264
+    },
+    {
+      "file": "sections/226-avtomaticheskiy-nabor-nomera-avtodozvon.md",
+      "number": "15",
+      "order": "226",
+      "pages": "93",
+      "pdf_heading": "15 Автоматический набор номера. Автодозвон",
+      "pdf_section": "15",
+      "source_refs": [
+        {
+          "global_pages": "93",
+          "pages": "93",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автоматический набор номера. Автодозвон",
+      "tokens": 75
+    },
+    {
+      "file": "sections/227-obschie-svedeniya.md",
+      "number": "15.1",
+      "order": "227",
+      "pages": "93-94",
+      "pdf_heading": "15.1 Общие сведения",
+      "pdf_section": "15.1",
+      "source_refs": [
+        {
+          "global_pages": "93-94",
+          "pages": "93-94",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 214
+    },
+    {
+      "file": "sections/228-vklyuchenie.md",
+      "number": "15.2",
+      "order": "228",
+      "pages": "94",
+      "pdf_heading": "15.2 Включение",
+      "pdf_section": "15.2",
+      "source_refs": [
+        {
+          "global_pages": "94",
+          "pages": "94",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение",
+      "tokens": 260
+    },
+    {
+      "file": "sections/229-o-novoy-veb-versii-mtalker.md",
+      "number": "16",
+      "order": "229",
+      "pages": "94",
+      "pdf_heading": "16 О новой веб-версии MTalker",
+      "pdf_section": "16",
+      "source_refs": [
+        {
+          "global_pages": "94",
+          "pages": "94",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О новой веб-версии MTalker",
+      "tokens": 67
+    },
+    {
+      "file": "sections/230-obschee.md",
+      "number": "16.1",
+      "order": "230",
+      "pages": "94",
+      "pdf_heading": "16.1 Общее",
+      "pdf_section": "16.1",
+      "source_refs": [
+        {
+          "global_pages": "94",
+          "pages": "94",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общее",
+      "tokens": 273
+    },
+    {
+      "file": "sections/231-kak-posmotret-versiyu-mtalker.md",
+      "number": "16.1",
+      "order": "231",
+      "pages": "94-95",
+      "pdf_heading": "Как посмотреть версию MTalker",
+      "pdf_section": "16.1",
+      "source_refs": [
+        {
+          "global_pages": "94-95",
+          "pages": "94-95",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть версию MTalker",
+      "tokens": 226
+    },
+    {
+      "file": "sections/232-kak-soobschit-o-probleme-v-rabote-s-mtal.md",
+      "number": "16.1",
+      "order": "232",
+      "pages": "95",
+      "pdf_heading": "Как сообщить о проблеме в работе с MTalker",
+      "pdf_section": "16.1",
+      "source_refs": [
+        {
+          "global_pages": "95",
+          "pages": "95",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как сообщить о проблеме в работе с MTalker",
+      "tokens": 230
+    },
+    {
+      "file": "sections/233-kak-vyyti-iz-akkaunta-mtalker.md",
+      "number": "16.1",
+      "order": "233",
+      "pages": "95",
+      "pdf_heading": "Как выйти из аккаунта MTalker",
+      "pdf_section": "16.1",
+      "source_refs": [
+        {
+          "global_pages": "95",
+          "pages": "95",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выйти из аккаунта MTalker",
+      "tokens": 185
+    },
+    {
+      "file": "sections/234-kak-nachat-videokonferenciyu.md",
+      "number": "16.2",
+      "order": "234",
+      "pages": "95-97",
+      "pdf_heading": "16.2 Как начать видеоконференцию",
+      "pdf_section": "16.2",
+      "source_refs": [
+        {
+          "global_pages": "95-97",
+          "pages": "95-97",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как начать видеоконференцию",
+      "tokens": 914
+    },
+    {
+      "file": "sections/235-kak-prisoedinitsya-po-ssylke-k-videokonf.md",
+      "number": "16.3",
+      "order": "235",
+      "pages": "97",
+      "pdf_heading": "16.3 Как присоединиться по ссылке к видеоконференции",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "97",
+          "pages": "97",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как присоединиться по ссылке к видеоконференции",
+      "tokens": 81
+    },
+    {
+      "file": "sections/236-vazhnaya-informaciya.md",
+      "number": "16.3",
+      "order": "236",
+      "pages": "97-98",
+      "pdf_heading": "Важная информация",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "97-98",
+          "pages": "97-98",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Важная информация",
+      "tokens": 471
+    },
+    {
+      "file": "sections/237-v-kachestve-gostya-bez-avtorizacii-v-mta.md",
+      "number": "16.3",
+      "order": "237",
+      "pages": "98",
+      "pdf_heading": "В качестве гостя (без авторизации в MTalker)",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "98",
+          "pages": "98",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "В качестве гостя (без авторизации в MTalker)",
+      "tokens": 73
+    },
+    {
+      "file": "sections/238-esli-u-vas-net-akkaunta-mtalker.md",
+      "number": "16.3",
+      "order": "238",
+      "pages": "98-99",
+      "pdf_heading": "Если у вас нет аккаунта MTalker",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "98-99",
+          "pages": "98-99",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Если у вас нет аккаунта MTalker",
+      "tokens": 567
+    },
+    {
+      "file": "sections/239-esli-u-vas-est-akkaunt-mtalker.md",
+      "number": "16.3",
+      "order": "239",
+      "pages": "99",
+      "pdf_heading": "Если у вас есть аккаунт MTalker",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "99",
+          "pages": "99",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Если у вас есть аккаунт MTalker",
+      "tokens": 733
+    },
+    {
+      "file": "sections/240-kak-sotrudnik-avtorizaciya-v-mtalker.md",
+      "number": "16.3",
+      "order": "240",
+      "pages": "99",
+      "pdf_heading": "Как сотрудник (авторизация в MTalker)",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "99",
+          "pages": "99",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как сотрудник (авторизация в MTalker)",
+      "tokens": 132
+    },
+    {
+      "file": "sections/241-cherez-prilozhenie-mtalker.md",
+      "number": "16.3",
+      "order": "241",
+      "pages": "99-100",
+      "pdf_heading": "Через приложение MTalker",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "99-100",
+          "pages": "99-100",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Через приложение MTalker",
+      "tokens": 620
+    },
+    {
+      "file": "sections/242-cherez-veb-versiyu-mtalker.md",
+      "number": "16.3",
+      "order": "242",
+      "pages": "100-101",
+      "pdf_heading": "Через веб-версию MTalker",
+      "pdf_section": "16.3",
+      "source_refs": [
+        {
+          "global_pages": "100-101",
+          "pages": "100-101",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Через веб-версию MTalker",
+      "tokens": 585
+    },
+    {
+      "file": "sections/243-kak-vyyti-iz-videokonferencii.md",
+      "number": "16.4",
+      "order": "243",
+      "pages": "101",
+      "pdf_heading": "16.4 Как выйти из видеоконференции",
+      "pdf_section": "16.4",
+      "source_refs": [
+        {
+          "global_pages": "101",
+          "pages": "101",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выйти из видеоконференции",
+      "tokens": 244
+    },
+    {
+      "file": "sections/244-kak-upravlyat-sobstvennymi-kameroy-i-mik.md",
+      "number": "16.5",
+      "order": "244",
+      "pages": "101",
+      "pdf_heading": "16.5 Как управлять собственными камерой и микрофоном",
+      "pdf_section": "16.5",
+      "source_refs": [
+        {
+          "global_pages": "101",
+          "pages": "101",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как управлять собственными камерой и микрофоном",
+      "tokens": 84
+    },
+    {
+      "file": "sections/245-kak-vklyuchit-ili-vyklyuchit.md",
+      "number": "16.5",
+      "order": "245",
+      "pages": "101",
+      "pdf_heading": "Как включить или выключить",
+      "pdf_section": "16.5",
+      "source_refs": [
+        {
+          "global_pages": "101",
+          "pages": "101",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить",
+      "tokens": 256
+    },
+    {
+      "file": "sections/246-kak-vybrat-kameru-ili-mikrofon-i-proveri.md",
+      "number": "16.5",
+      "order": "246",
+      "pages": "101-102",
+      "pdf_heading": "Как выбрать камеру или микрофон и проверить их работу",
+      "pdf_section": "16.5",
+      "source_refs": [
+        {
+          "global_pages": "101-102",
+          "pages": "101-102",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как выбрать камеру или микрофон и проверить их работу",
+      "tokens": 812
+    },
+    {
+      "file": "sections/247-vklyuchenie-demonstracii-ekrana.md",
+      "number": "16.6",
+      "order": "247",
+      "pages": "102",
+      "pdf_heading": "16.6 Включение демонстрации экрана",
+      "pdf_section": "16.6",
+      "source_refs": [
+        {
+          "global_pages": "102",
+          "pages": "102",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение демонстрации экрана",
+      "tokens": 72
+    },
+    {
+      "file": "sections/248-kak-vklyuchit-ili-vyklyuchit.md",
+      "number": "16.6",
+      "order": "248",
+      "pages": "102",
+      "pdf_heading": "Как включить или выключить",
+      "pdf_section": "16.6",
+      "source_refs": [
+        {
+          "global_pages": "102",
+          "pages": "102",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить",
+      "tokens": 391
+    },
+    {
+      "file": "sections/249-kak-nastroit-kachestvo-translyacii.md",
+      "number": "16.6",
+      "order": "249",
+      "pages": "102-103",
+      "pdf_heading": "Как настроить качество трансляции",
+      "pdf_section": "16.6",
+      "source_refs": [
+        {
+          "global_pages": "102-103",
+          "pages": "102-103",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как настроить качество трансляции",
+      "tokens": 334
+    },
+    {
+      "file": "sections/250-kak-personalizirovat-vash-fon.md",
+      "number": "16.7",
+      "order": "250",
+      "pages": "103",
+      "pdf_heading": "16.7 Как персонализировать ваш фон",
+      "pdf_section": "16.7",
+      "source_refs": [
+        {
+          "global_pages": "103",
+          "pages": "103",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как персонализировать ваш фон",
+      "tokens": 459
+    },
+    {
+      "file": "sections/251-kak-podnyat-ruku.md",
+      "number": "16.8",
+      "order": "251",
+      "pages": "103",
+      "pdf_heading": "16.8 Как поднять руку",
+      "pdf_section": "16.8",
+      "source_refs": [
+        {
+          "global_pages": "103",
+          "pages": "103",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как поднять руку",
+      "tokens": 378
+    },
+    {
+      "file": "sections/252-izmenit-raskladku-otobrazheniya-okon-uch.md",
+      "number": "16.9",
+      "order": "252",
+      "pages": "103-104",
+      "pdf_heading": "16.9 Изменить раскладку отображения окон участников",
+      "pdf_section": "16.9",
+      "source_refs": [
+        {
+          "global_pages": "103-104",
+          "pages": "103-104",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Изменить раскладку отображения окон участников",
+      "tokens": 236
+    },
+    {
+      "file": "sections/253-kak-upravlyat-videokonferenciy.md",
+      "number": "16.10",
+      "order": "253",
+      "pages": "104",
+      "pdf_heading": "16.10 Как управлять видеоконференций",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "104",
+          "pages": "104",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как управлять видеоконференций",
+      "tokens": 75
+    },
+    {
+      "file": "sections/254-o-roli-administratora-videokonferencii.md",
+      "number": "16.10",
+      "order": "254",
+      "pages": "104",
+      "pdf_heading": "О роли администратора видеоконференции",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "104",
+          "pages": "104",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "О роли администратора видеоконференции",
+      "tokens": 183
+    },
+    {
+      "file": "sections/255-kak-posmotret-sostav-uchastnikov.md",
+      "number": "16.10",
+      "order": "255",
+      "pages": "104",
+      "pdf_heading": "Как посмотреть состав участников",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "104",
+          "pages": "104",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть состав участников",
+      "tokens": 313
+    },
+    {
+      "file": "sections/256-kak-dobavit-ili-udalit-sotrudnikov-i-gos.md",
+      "number": "16.10",
+      "order": "256",
+      "pages": "104",
+      "pdf_heading": "Как добавить или удалить сотрудников и гостей видеоконференции",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "104",
+          "pages": "104",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как добавить или удалить сотрудников и гостей видеоконференции",
+      "tokens": 80
+    },
+    {
+      "file": "sections/257-kak-dobavit-uchastnikov-v-videokonferenc.md",
+      "number": "16.10",
+      "order": "257",
+      "pages": "104-105",
+      "pdf_heading": "Как добавить участников в видеоконференцию",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "104-105",
+          "pages": "104-105",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как добавить участников в видеоконференцию",
+      "tokens": 545
+    },
+    {
+      "file": "sections/258-kak-udalit-uchastnika-iz-videokonferenci.md",
+      "number": "16.10",
+      "order": "258",
+      "pages": "105",
+      "pdf_heading": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
+      "pdf_section": "16.10",
+      "source_refs": [
+        {
+          "global_pages": "105",
+          "pages": "105",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как удалить участника из видеоконференции или выключить его камеру или микрофон",
+      "tokens": 545
+    },
+    {
+      "file": "sections/259-nastroyki-mtalker.md",
+      "number": "17",
+      "order": "259",
+      "pages": "105",
+      "pdf_heading": "17 Настройки MTalker",
+      "pdf_section": "17",
+      "source_refs": [
+        {
+          "global_pages": "105",
+          "pages": "105",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройки MTalker",
+      "tokens": 62
+    },
+    {
+      "file": "sections/260-kak-otkryt-obobschenno.md",
+      "number": "17.1",
+      "order": "260",
+      "pages": "105",
+      "pdf_heading": "17.1 Как открыть. Обобщенно",
+      "pdf_section": "17.1",
+      "source_refs": [
+        {
+          "global_pages": "105",
+          "pages": "105",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как открыть. Обобщенно",
+      "tokens": 239
+    },
+    {
+      "file": "sections/261-upravlenie-mtalker.md",
+      "number": "17.2",
+      "order": "261",
+      "pages": "105",
+      "pdf_heading": "17.2 Управление MTalker",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "105",
+          "pages": "105",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Управление MTalker",
+      "tokens": 65
+    },
+    {
+      "file": "sections/262-avtomaticheskiy-zapusk-raboty.md",
+      "number": "17.2",
+      "order": "262",
+      "pages": "105-106",
+      "pdf_heading": "Автоматический запуск работы",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "105-106",
+          "pages": "105-106",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автоматический запуск работы",
+      "tokens": 353
+    },
+    {
+      "file": "sections/263-avtomaticheskiy-vhod-polzovatelya.md",
+      "number": "17.2",
+      "order": "263",
+      "pages": "106",
+      "pdf_heading": "Автоматический вход пользователя",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "106",
+          "pages": "106",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автоматический вход пользователя",
+      "tokens": 65
+    },
+    {
+      "file": "sections/264-obschie-svedeniya.md",
+      "number": "17.2",
+      "order": "264",
+      "pages": "106",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "106",
+          "pages": "106",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 140
+    },
+    {
+      "file": "sections/265-kak-vklyuchit-avtomaticheskiy-vhod.md",
+      "number": "17.2",
+      "order": "265",
+      "pages": "106-107",
+      "pdf_heading": "Как включить автоматический вход",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "106-107",
+          "pages": "106-107",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить автоматический вход",
+      "tokens": 526
+    },
+    {
+      "file": "sections/266-kak-otklyuchit-avtomaticheskiy-vhod.md",
+      "number": "17.2",
+      "order": "266",
+      "pages": "107",
+      "pdf_heading": "Как отключить автоматический вход",
+      "pdf_section": "17.2",
+      "source_refs": [
+        {
+          "global_pages": "107",
+          "pages": "107",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как отключить автоматический вход",
+      "tokens": 518
+    },
+    {
+      "file": "sections/267-kak-vklyuchit-avtomaticheskiy-perehod-v.md",
+      "number": "17.3",
+      "order": "267",
+      "pages": "107",
+      "pdf_heading": "17.3 Как включить автоматический переход в фоновый режим при автозапуске",
+      "pdf_section": "17.3",
+      "source_refs": [
+        {
+          "global_pages": "107",
+          "pages": "107",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить автоматический переход в фоновый режим при автозапуске",
+      "tokens": 295
+    },
+    {
+      "file": "sections/268-fayly-i-zagruzki.md",
+      "number": "17.4",
+      "order": "268",
+      "pages": "107",
+      "pdf_heading": "17.4 Файлы и загрузки",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "107",
+          "pages": "107",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Файлы и загрузки",
+      "tokens": 68
+    },
+    {
+      "file": "sections/269-obschie-svedeniya.md",
+      "number": "17.4",
+      "order": "269",
+      "pages": "107-108",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "107-108",
+          "pages": "107-108",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 198
+    },
+    {
+      "file": "sections/270-kak-nayti-i-otkryt-zagruzhennyy-fayl.md",
+      "number": "17.4",
+      "order": "270",
+      "pages": "108",
+      "pdf_heading": "Как найти и открыть загруженный файл",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "108",
+          "pages": "108",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как найти и открыть загруженный файл",
+      "tokens": 300
+    },
+    {
+      "file": "sections/271-kak-izmenit-papku-sohraneniya-faylov.md",
+      "number": "17.4",
+      "order": "271",
+      "pages": "108",
+      "pdf_heading": "Как изменить папку сохранения файлов",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "108",
+          "pages": "108",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как изменить папку сохранения файлов",
+      "tokens": 281
+    },
+    {
+      "file": "sections/272-kak-vklyuchit-zapros-mesta-sohraneniya-f.md",
+      "number": "17.4",
+      "order": "272",
+      "pages": "108",
+      "pdf_heading": "Как включить запрос места сохранения файлов",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "108",
+          "pages": "108",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить запрос места сохранения файлов",
+      "tokens": 257
+    },
+    {
+      "file": "sections/273-avtozagruzka-izobrazheniy.md",
+      "number": "17.4",
+      "order": "273",
+      "pages": "108-109",
+      "pdf_heading": "Автозагрузка изображений",
+      "pdf_section": "17.4",
+      "source_refs": [
+        {
+          "global_pages": "108-109",
+          "pages": "108-109",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автозагрузка изображений",
+      "tokens": 313
+    },
+    {
+      "file": "sections/274-kak-obnovit-mtalker.md",
+      "number": "17.5",
+      "order": "274",
+      "pages": "109",
+      "pdf_heading": "17.5 Как обновить MTalker",
+      "pdf_section": "17.5",
+      "source_refs": [
+        {
+          "global_pages": "109",
+          "pages": "109",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как обновить MTalker",
+      "tokens": 347
+    },
+    {
+      "file": "sections/275-personalizaciya.md",
+      "number": "17.6",
+      "order": "275",
+      "pages": "109",
+      "pdf_heading": "17.6 Персонализация",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "109",
+          "pages": "109",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Персонализация",
+      "tokens": 67
+    },
+    {
+      "file": "sections/276-vneshniy-vid.md",
+      "number": "17.6",
+      "order": "276",
+      "pages": "109",
+      "pdf_heading": "Внешний вид",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "109",
+          "pages": "109",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Внешний вид",
+      "tokens": 61
+    },
+    {
+      "file": "sections/277-kak-vklyuchit-ili-vyklyuchit-podtverzhde.md",
+      "number": "17.6",
+      "order": "277",
+      "pages": "109-110",
+      "pdf_heading": "Как включить или выключить подтверждение действия пользователя",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "109-110",
+          "pages": "109-110",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как включить или выключить подтверждение действия пользователя",
+      "tokens": 484
+    },
+    {
+      "file": "sections/278-vklyuchenie-i-vyklyuchenie-uvedomleniy-o.md",
+      "number": "17.6",
+      "order": "278",
+      "pages": "110",
+      "pdf_heading": "Включение и выключение уведомлений о новых сообщениях",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "110",
+          "pages": "110",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение и выключение уведомлений о новых сообщениях",
+      "tokens": 408
+    },
+    {
+      "file": "sections/279-obrabotka-klikov-po-ssylkam.md",
+      "number": "17.6",
+      "order": "279",
+      "pages": "110-111",
+      "pdf_heading": "Обработка кликов по ссылкам",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "110-111",
+          "pages": "110-111",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Обработка кликов по ссылкам",
+      "tokens": 635
+    },
+    {
+      "file": "sections/280-pereklyuchenie-fokusa-pri-vhodyaschem-zv.md",
+      "number": "17.6",
+      "order": "280",
+      "pages": "111",
+      "pdf_heading": "Переключение фокуса при входящем звонке",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "111",
+          "pages": "111",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Переключение фокуса при входящем звонке",
+      "tokens": 632
+    },
+    {
+      "file": "sections/281-udalenie-lishnih-simvolov-pri-vvode-nome.md",
+      "number": "17.6",
+      "order": "281",
+      "pages": "111",
+      "pdf_heading": "Удаление лишних символов при вводе номера",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "111",
+          "pages": "111",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаление лишних символов при вводе номера",
+      "tokens": 70
+    },
+    {
+      "file": "sections/282-obschie-svedeniya.md",
+      "number": "17.6",
+      "order": "282",
+      "pages": "111-112",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "111-112",
+          "pages": "111-112",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 303
+    },
+    {
+      "file": "sections/283-vklyuchenie-proverki.md",
+      "number": "17.6",
+      "order": "283",
+      "pages": "112",
+      "pdf_heading": "Включение проверки",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "112",
+          "pages": "112",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение проверки",
+      "tokens": 213
+    },
+    {
+      "file": "sections/284-uvedomleniya.md",
+      "number": "17.6",
+      "order": "284",
+      "pages": "112",
+      "pdf_heading": "Уведомления",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "112",
+          "pages": "112",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Уведомления",
+      "tokens": 59
+    },
+    {
+      "file": "sections/285-nastroyka-otpravki-na-e-mail.md",
+      "number": "17.6",
+      "order": "285",
+      "pages": "112",
+      "pdf_heading": "Настройка отправки на e-mail",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "112",
+          "pages": "112",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройка отправки на e-mail",
+      "tokens": 433
+    },
+    {
+      "file": "sections/286-zvukovye-uvedomleniya-kak-vybrat-rington.md",
+      "number": "17.6",
+      "order": "286",
+      "pages": "112-113",
+      "pdf_heading": "Звуковые уведомления. Как выбрать рингтон",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "112-113",
+          "pages": "112-113",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Звуковые уведомления. Как выбрать рингтон",
+      "tokens": 413
+    },
+    {
+      "file": "sections/287-klavishi-otpravki-soobscheniy-v-chat.md",
+      "number": "17.6",
+      "order": "287",
+      "pages": "113",
+      "pdf_heading": "Клавиши отправки сообщений в чат",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "113",
+          "pages": "113",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Клавиши отправки сообщений в чат",
+      "tokens": 288
+    },
+    {
+      "file": "sections/288-globalnye-goryachie-klavishi.md",
+      "number": "17.6",
+      "order": "288",
+      "pages": "113",
+      "pdf_heading": "Глобальные горячие клавиши",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "113",
+          "pages": "113",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Глобальные горячие клавиши",
+      "tokens": 426
+    },
+    {
+      "file": "sections/289-yazyk.md",
+      "number": "17.6",
+      "order": "289",
+      "pages": "113-114",
+      "pdf_heading": "Язык",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "113-114",
+          "pages": "113-114",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Язык",
+      "tokens": 324
+    },
+    {
+      "file": "sections/290-konfidencialnost-kak-udalit-lichnye-dann.md",
+      "number": "17.6",
+      "order": "290",
+      "pages": "114",
+      "pdf_heading": "Конфиденциальность. Как удалить личные данные",
+      "pdf_section": "17.6",
+      "source_refs": [
+        {
+          "global_pages": "114",
+          "pages": "114",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Конфиденциальность. Как удалить личные данные",
+      "tokens": 399
+    },
+    {
+      "file": "sections/291-video.md",
+      "number": "17.7",
+      "order": "291",
+      "pages": "114",
+      "pdf_heading": "17.7 Видео",
+      "pdf_section": "17.7",
+      "source_refs": [
+        {
+          "global_pages": "114",
+          "pages": "114",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Видео",
+      "tokens": 64
+    },
+    {
+      "file": "sections/292-otkryvat-video-zvonki-vo-vneshnem-brauze.md",
+      "number": "17.7",
+      "order": "292",
+      "pages": "114-115",
+      "pdf_heading": "Открывать видео звонки во внешнем браузере",
+      "pdf_section": "17.7",
+      "source_refs": [
+        {
+          "global_pages": "114-115",
+          "pages": "114-115",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Открывать видео звонки во внешнем браузере",
+      "tokens": 479
+    },
+    {
+      "file": "sections/293-zvuk.md",
+      "number": "17.8",
+      "order": "293",
+      "pages": "115",
+      "pdf_heading": "17.8 Звук",
+      "pdf_section": "17.8",
+      "source_refs": [
+        {
+          "global_pages": "115",
+          "pages": "115",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Звук",
+      "tokens": 63
+    },
+    {
+      "file": "sections/294-izmenenie-parametrov-zvukovyh-ustroystva.md",
+      "number": "17.8",
+      "order": "294",
+      "pages": "115",
+      "pdf_heading": "Изменение параметров звуковых устройства",
+      "pdf_section": "17.8",
+      "source_refs": [
+        {
+          "global_pages": "115",
+          "pages": "115",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Изменение параметров звуковых устройства",
+      "tokens": 427
+    },
+    {
+      "file": "sections/295-kak-bystro-pereklyuchit-vyvod-zvuka-na-s.md",
+      "number": "17.8",
+      "order": "295",
+      "pages": "115-116",
+      "pdf_heading": "Как быстро переключить вывод звука на стороннюю гарнитуру",
+      "pdf_section": "17.8",
+      "source_refs": [
+        {
+          "global_pages": "115-116",
+          "pages": "115-116",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как быстро переключить вывод звука на стороннюю гарнитуру",
+      "tokens": 373
+    },
+    {
+      "file": "sections/296-sbros-nastroek-zvuka.md",
+      "number": "17.8",
+      "order": "296",
+      "pages": "116",
+      "pdf_heading": "Сброс настроек звука",
+      "pdf_section": "17.8",
+      "source_refs": [
+        {
+          "global_pages": "116",
+          "pages": "116",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Сброс настроек звука",
+      "tokens": 365
+    },
+    {
+      "file": "sections/297-avtopodnyatie-trubki-dlya-ishodyaschih-z.md",
+      "number": "17.8",
+      "order": "297",
+      "pages": "116-117",
+      "pdf_heading": "Автоподнятие трубки для исходящих звонков",
+      "pdf_section": "17.8",
+      "source_refs": [
+        {
+          "global_pages": "116-117",
+          "pages": "116-117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Автоподнятие трубки для исходящих звонков",
+      "tokens": 624
+    },
+    {
+      "file": "sections/298-ispolzovat-vneshniy-telefon.md",
+      "number": "17.9",
+      "order": "298",
+      "pages": "117",
+      "pdf_heading": "17.9 Использовать внешний телефон",
+      "pdf_section": "17.9",
+      "source_refs": [
+        {
+          "global_pages": "117",
+          "pages": "117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Использовать внешний телефон",
+      "tokens": 72
+    },
+    {
+      "file": "sections/299-obschie-svedeniya.md",
+      "number": "17.9",
+      "order": "299",
+      "pages": "117",
+      "pdf_heading": "Общие сведения",
+      "pdf_section": "17.9",
+      "source_refs": [
+        {
+          "global_pages": "117",
+          "pages": "117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Общие сведения",
+      "tokens": 329
+    },
+    {
+      "file": "sections/300-vklyuchenie-funkcii-i-vvod-vneshnego-nom.md",
+      "number": "17.9",
+      "order": "300",
+      "pages": "117",
+      "pdf_heading": "Включение функции и ввод внешнего номера",
+      "pdf_section": "17.9",
+      "source_refs": [
+        {
+          "global_pages": "117",
+          "pages": "117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение функции и ввод внешнего номера",
+      "tokens": 286
+    },
+    {
+      "file": "sections/301-tehnicheskie-nastroyki.md",
+      "number": "17.10",
+      "order": "301",
+      "pages": "117",
+      "pdf_heading": "17.10 Технические настройки",
+      "pdf_section": "17.10",
+      "source_refs": [
+        {
+          "global_pages": "117",
+          "pages": "117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Технические настройки",
+      "tokens": 70
+    },
+    {
+      "file": "sections/302-podklyuchenie-k-seti.md",
+      "number": "17.10",
+      "order": "302",
+      "pages": "117",
+      "pdf_heading": "Подключение к сети",
+      "pdf_section": "17.10",
+      "source_refs": [
+        {
+          "global_pages": "117",
+          "pages": "117",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Подключение к сети",
+      "tokens": 63
+    },
+    {
+      "file": "sections/303-proksi-server.md",
+      "number": "17.10",
+      "order": "303",
+      "pages": "117-118",
+      "pdf_heading": "Прокси-сервер",
+      "pdf_section": "17.10",
+      "source_refs": [
+        {
+          "global_pages": "117-118",
+          "pages": "117-118",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Прокси-сервер",
+      "tokens": 416
+    },
+    {
+      "file": "sections/304-nastroyki-sip.md",
+      "number": "17.10",
+      "order": "304",
+      "pages": "118",
+      "pdf_heading": "Настройки SIP",
+      "pdf_section": "17.10",
+      "source_refs": [
+        {
+          "global_pages": "118",
+          "pages": "118",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройки SIP",
+      "tokens": 292
+    },
+    {
+      "file": "sections/305-vklyuchenie-vyklyuchenie-funkciy-cng-vad.md",
+      "number": "17.10",
+      "order": "305",
+      "pages": "118-119",
+      "pdf_heading": "Включение/выключение функций CNG, VAD, анти-эхо",
+      "pdf_section": "17.10",
+      "source_refs": [
+        {
+          "global_pages": "118-119",
+          "pages": "118-119",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение/выключение функций CNG, VAD, анти-эхо",
+      "tokens": 523
+    },
+    {
+      "file": "sections/306-kodeki.md",
+      "number": "17.11",
+      "order": "306",
+      "pages": "119",
+      "pdf_heading": "17.11 Кодеки",
+      "pdf_section": "17.11",
+      "source_refs": [
+        {
+          "global_pages": "119",
+          "pages": "119",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Кодеки",
+      "tokens": 64
+    },
+    {
+      "file": "sections/307-perechen-podderzhivaemyh-kodekov.md",
+      "number": "17.11",
+      "order": "307",
+      "pages": "119",
+      "pdf_heading": "Перечень поддерживаемых кодеков",
+      "pdf_section": "17.11",
+      "source_refs": [
+        {
+          "global_pages": "119",
+          "pages": "119",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Перечень поддерживаемых кодеков",
+      "tokens": 320
+    },
+    {
+      "file": "sections/308-vklyuchenie-i-vyklyuchenie-kodekov.md",
+      "number": "17.11",
+      "order": "308",
+      "pages": "119",
+      "pdf_heading": "Включение и выключение кодеков",
+      "pdf_section": "17.11",
+      "source_refs": [
+        {
+          "global_pages": "119",
+          "pages": "119",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Включение и выключение кодеков",
+      "tokens": 266
+    },
+    {
+      "file": "sections/309-nastroyka-prioriteta-ispolzovaniya-kodek.md",
+      "number": "17.11",
+      "order": "309",
+      "pages": "119-120",
+      "pdf_heading": "Настройка приоритета использования кодека",
+      "pdf_section": "17.11",
+      "source_refs": [
+        {
+          "global_pages": "119-120",
+          "pages": "119-120",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Настройка приоритета использования кодека",
+      "tokens": 382
+    },
+    {
+      "file": "sections/310-zagruzka-nastroek-kodekov-s-servera.md",
+      "number": "17.11",
+      "order": "310",
+      "pages": "120",
+      "pdf_heading": "Загрузка настроек кодеков с сервера",
+      "pdf_section": "17.11",
+      "source_refs": [
+        {
+          "global_pages": "120",
+          "pages": "120",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Загрузка настроек кодеков с сервера",
+      "tokens": 233
+    },
+    {
+      "file": "sections/311-sessii-polzovatelya.md",
+      "number": "17.12",
+      "order": "311",
+      "pages": "120",
+      "pdf_heading": "17.12 Сессии пользователя",
+      "pdf_section": "17.12",
+      "source_refs": [
+        {
+          "global_pages": "120",
+          "pages": "120",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Сессии пользователя",
+      "tokens": 64
+    },
+    {
+      "file": "sections/312-kak-uznat-na-kakih-ustroystvah-otkryty-s.md",
+      "number": "17.12",
+      "order": "312",
+      "pages": "120",
+      "pdf_heading": "Как узнать, на каких устройствах открыты сессии пользователей",
+      "pdf_section": "17.12",
+      "source_refs": [
+        {
+          "global_pages": "120",
+          "pages": "120",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как узнать, на каких устройствах открыты сессии пользователей",
+      "tokens": 284
+    },
+    {
+      "file": "sections/313-udalennyy-vyhod-iz-mtalker.md",
+      "number": "17.12",
+      "order": "313",
+      "pages": "120-121",
+      "pdf_heading": "Удаленный выход из MTalker",
+      "pdf_section": "17.12",
+      "source_refs": [
+        {
+          "global_pages": "120-121",
+          "pages": "120-121",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Удаленный выход из MTalker",
+      "tokens": 280
+    },
+    {
+      "file": "sections/314-kak-posmotret-svoy-nomer-sip-id-akkaunt.md",
+      "number": "17.13",
+      "order": "314",
+      "pages": "121",
+      "pdf_heading": "17.13 Как посмотреть свой номер  SIP-ID аккаунт",
+      "pdf_section": "17.13",
+      "source_refs": [
+        {
+          "global_pages": "121",
+          "pages": "121",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть свой номер  SIP-ID аккаунт",
+      "tokens": 294
+    },
+    {
+      "file": "sections/315-kak-posmotret-svoy-ishodyaschiy-nomer.md",
+      "number": "17.14",
+      "order": "315",
+      "pages": "121",
+      "pdf_heading": "17.14 Как посмотреть свой исходящий номер",
+      "pdf_section": "17.14",
+      "source_refs": [
+        {
+          "global_pages": "121",
+          "pages": "121",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть свой исходящий номер",
+      "tokens": 272
+    },
+    {
+      "file": "sections/316-kak-posmotret-nastroyku-raspredeleniya-z.md",
+      "number": "17.15",
+      "order": "316",
+      "pages": "121-122",
+      "pdf_heading": "17.15 Как посмотреть настройку распределения звонков на ваш аккаунт",
+      "pdf_section": "17.15",
+      "source_refs": [
+        {
+          "global_pages": "121-122",
+          "pages": "121-122",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+        }
+      ],
+      "title": "Как посмотреть настройку распределения звонков на ваш аккаунт",
+      "tokens": 744
+    }
+  ],
+  "source_document": "windows-mac-working",
+  "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf",
+  "source_pdfs": [
+    "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
+  ],
+  "source_set": "mtalker",
+  "source_sha256": "31ed058e2815d8fdae9bf75d61e4a40897024212fa9138a37755533f71e92871",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 122,
+      "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf",
+      "source_sha256": "31ed058e2815d8fdae9bf75d61e4a40897024212fa9138a37755533f71e92871"
+    }
+  ],
+  "table_count": 3,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 28952,
+  "tokens_total": 115017
+}

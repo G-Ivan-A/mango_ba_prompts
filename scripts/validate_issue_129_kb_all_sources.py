@@ -2,9 +2,9 @@
 """Regression check for issue #129 — KB pipeline processes every source.
 
 Issue #129 reported a successful KB workflow that still left 12 newly uploaded
-source folders absent from ``kb/processed``. The failure mode was orchestration:
+source folders absent from ``kb/mango-product-docs/processed``. The failure mode was orchestration:
 manual dispatch defaulted to one hardcoded source, while the repository already
-had enough manifest data to plan every ``kb/sources/*/meta.json``.
+had enough manifest data to plan every ``kb/mango-product-docs/sources/*/meta.json``.
 
 This check stays stdlib-only for CI and verifies:
 
@@ -55,7 +55,7 @@ def check_source_plans() -> list[str]:
     planned = {path.name: path for path in iter_source_dirs()}
     missing = sorted(set(ISSUE_129_SOURCES) - set(planned))
     for slug in missing:
-        errors.append(f"kb/sources/{slug}/meta.json: missing")
+        errors.append(f"kb/mango-product-docs/sources/{slug}/meta.json: missing")
 
     for slug, expected in sorted(ISSUE_129_SOURCES.items()):
         source_dir = planned.get(slug)
@@ -67,14 +67,14 @@ def check_source_plans() -> list[str]:
             errors.append(str(exc))
             continue
         if plan.mode != expected["mode"]:
-            errors.append(f"kb/sources/{slug}/meta.json: mode {plan.mode!r}, expected {expected['mode']!r}")
+            errors.append(f"kb/mango-product-docs/sources/{slug}/meta.json: mode {plan.mode!r}, expected {expected['mode']!r}")
         if len(plan.jobs) != expected["jobs"]:
-            errors.append(f"kb/sources/{slug}/meta.json: {len(plan.jobs)} jobs, expected {expected['jobs']}")
-        if plan.output_dir != ROOT / "kb" / "processed" / slug:
-            errors.append(f"kb/sources/{slug}/meta.json: output must be kb/processed/{slug}")
+            errors.append(f"kb/mango-product-docs/sources/{slug}/meta.json: {len(plan.jobs)} jobs, expected {expected['jobs']}")
+        if plan.output_dir != ROOT / "kb" / "mango-product-docs" / "processed" / slug:
+            errors.append(f"kb/mango-product-docs/sources/{slug}/meta.json: output must be kb/mango-product-docs/processed/{slug}")
         for job in plan.jobs:
             if not job.pdf_paths:
-                errors.append(f"kb/sources/{slug}/meta.json: job {job.source_document} has no PDFs")
+                errors.append(f"kb/mango-product-docs/sources/{slug}/meta.json: job {job.source_document} has no PDFs")
             for pdf_path in job.pdf_paths:
                 if pdf_path.suffix.lower() != ".pdf":
                     errors.append(f"{pdf_path.relative_to(ROOT)}: expected PDF source")
@@ -91,10 +91,10 @@ def check_workflow_all_dispatch() -> list[str]:
         'default: "all"',
         'if [ "$SOURCE_DIR" = "all" ]; then',
         "python3 scripts/kb/process_sources.py --all",
-        "path: kb/processed/",
+        "path: kb/mango-product-docs/processed/",
         "scripts/validate_issue_129_kb_all_sources.py",
     )
-    if 'default: "kb/sources/mango-cc-manual"' in text:
+    if 'default: "kb/mango-product-docs/sources/mango-cc-manual"' in text:
         errors.append(f"{WORKFLOW}: workflow_dispatch must not default to one hardcoded source")
     return errors
 

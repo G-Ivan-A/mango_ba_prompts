@@ -1,0 +1,37 @@
+---
+id: windows-mac-working-82-zakreplenie-i-otkreplenie-chata
+doc_code: MTALKER-WORK
+doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
+doc_version: "23.08.2024"
+section: "0"
+pdf_section: "4.9"
+title: "Закрепление и открепление чата"
+pdf_heading: "Закрепление и открепление чата"
+pages: "37"
+source: kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf
+source_part: "1"
+source_pages: "ч.1: 37"
+source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf","part":1,"pages":"37","global_pages":"37"}]'
+extracted_by: "pdfplumber 0.11.10"
+token_method: "tiktoken:cl100k_base"
+tokens: 491
+status: extracted
+ai-generated: true
+---
+# Закрепление и открепление чата
+
+> Трассировка: PDF §4.9 · сквозные стр. 37 · источники: ч.1 `kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf` с.37.
+
+Вы можете закрепить тот или иной чат в верхней строчке списка ваших чатов. Это облегчит поиск этого чата среди всех чатов. Для того чтобы закрепить чат,
+
+![Изображение, стр. 37](../images/82-zakreplenie-i-otkreplenie-chata-1.png)
+
+в разделе”Чаты” следует: 1) найти чат, который нужно закрепить; 2) навести курсор на строку с названием чата и нажать правую кнопку мыши. Будет открыто контекстное меню; 3) выбрать пункт “Закрепить”. Будет закреплен выбранный вами чат, а в
+
+<!-- изображение на стр. 37: байты не извлечены (PyMuPDF недоступен) -->
+
+строке с названием чата показана пиктограмма . Для того чтобы открепить чат, в разделе”Чаты” следует: 1) найти чат, который нужно открепить; 2) навести курсор на строку с названием чата и нажать правую кнопку мыши. Будет открыто контекстное меню; 3) выбрать пункт “Открепить”. Будет откреплен выбранный вами чат, а в
+
+<!-- изображение на стр. 37: байты не извлечены (PyMuPDF недоступен) -->
+
+строке с названием чата скрыта пиктограмма .

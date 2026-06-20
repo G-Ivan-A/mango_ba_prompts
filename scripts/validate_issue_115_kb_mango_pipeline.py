@@ -2,8 +2,8 @@
 """Regression check for issue #115/#119 — real mango-cc-manual KB extraction.
 
 The bug: KB Pipeline #11 succeeded but only extracted the sample fixture to an
-artifact. It did not process ``kb/sources/mango-cc-manual/`` and therefore did
-not create ``kb/processed/mango-cc-manual/`` in the repository.
+artifact. It did not process ``kb/mango-product-docs/sources/mango-cc-manual/`` and therefore did
+not create ``kb/mango-product-docs/processed/mango-cc-manual/`` in the repository.
 
 Issue #119 extended the regression: the CC manual is now six LFS-backed PDF
 parts, not one ``*_compressed.pdf`` file. The processed KB and workflow must
@@ -27,16 +27,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CC_SOURCES = [
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf",
+    "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf",
 ]
 CC_PAGE_COUNT = 614
-REMOVED_CC_SOURCE = "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
-PROCESSED = "kb/processed/mango-cc-manual"
+REMOVED_CC_SOURCE = "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+PROCESSED = "kb/mango-product-docs/processed/mango-cc-manual"
 WORKFLOW = ".github/workflows/kb.yml"
 MAKEFILE = "Makefile"
 

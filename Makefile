@@ -1,6 +1,6 @@
 # KB ingestion pipeline (issue #111) — PDF/источник → machine-readable БЗ.
 # Конвейер и оценка качества: docs/kb-experiment-report.md
-# Человеку: как пополнять БЗ — kb/sources/README.md
+# Человеку: как пополнять БЗ — kb/mango-product-docs/sources/README.md
 #
 # Быстрый старт (нужны зависимости из scripts/kb/requirements.txt):
 #   make kb-all       # фикстура → извлечение → проверка
@@ -8,31 +8,31 @@
 
 PYTHON ?= python3
 
-SAMPLE_PDF  := kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf
-SAMPLE_OUT  := kb/processed/contact-center-manual-sample
+SAMPLE_PDF  := kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf
+SAMPLE_OUT  := kb/mango-product-docs/processed/contact-center-manual-sample
 DOC_CODE    := CC
 DOC_TITLE   := Контакт-центр MANGO OFFICE
 DOC_VERSION := 1.26.23-sample
 NOTE        := Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue 111. Структура воспроизводит реальное руководство (issue 109). Замените PDF и перезапустите для реальных данных.
 
-MANGO_SRCS    := kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+MANGO_SRCS    := kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf \
+                 kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf \
+                 kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf \
+                 kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf \
+                 kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf \
+                 kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
 MANGO_SRC     := $(MANGO_SRCS)
-MANGO_OUT     := kb/processed/mango-cc-manual
+MANGO_OUT     := kb/mango-product-docs/processed/mango-cc-manual
 MANGO_TITLE   := Контакт-центр MANGO OFFICE - Руководство пользователя
 MANGO_VERSION := 1.26.23
 MANGO_NOTE    := Multi-part руководство КЦ из issue 119; 6 PDF частей обработаны как один документ со сквозной пагинацией.
 
-LK_SRCS     := kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf
-LK_OUT      := kb/processed/mango-lk-manual
+LK_SRCS     := kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf \
+               kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf \
+               kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf \
+               kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf \
+               kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf
+LK_OUT      := kb/mango-product-docs/processed/mango-lk-manual
 LK_TITLE    := Виртуальная АТС MANGO OFFICE - Справочник абонента
 LK_VERSION  := 1.21
 LK_NOTE     := Multi-part руководство ЛК из issue 117; 5 PDF частей обработаны как один документ со сквозной пагинацией.
@@ -43,7 +43,7 @@ OUT     ?= $(SAMPLE_OUT)
 CODE    ?= $(DOC_CODE)
 TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
-SOURCE_DIR ?= kb/sources/mango-cc-manual
+SOURCE_DIR ?= kb/mango-product-docs/sources/mango-cc-manual
 
 .PHONY: help kb-all kb-sample kb-extract kb-source-plan kb-source-plan-all kb-source-extract kb-source-extract-all kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
@@ -52,10 +52,10 @@ help:
 	@echo "  make kb-all       — kb-sample → kb-extract → kb-validate"
 	@echo "  make kb-sample    — собрать синтетическую фикстуру PDF (reportlab+Pillow)"
 	@echo "  make kb-extract   — извлечь SRC/SRCS в OUT (по умолчанию фикстура → $(SAMPLE_OUT))"
-	@echo "  make kb-source-plan SOURCE_DIR=kb/sources/<slug> — показать manifest-driven план"
-	@echo "  make kb-source-plan-all — показать manifest-driven план для всех kb/sources/*/meta.json"
-	@echo "  make kb-source-extract SOURCE_DIR=kb/sources/<slug> — извлечь по meta.json"
-	@echo "  make kb-source-extract-all — извлечь все kb/sources/*/meta.json"
+	@echo "  make kb-source-plan SOURCE_DIR=kb/mango-product-docs/sources/<slug> — показать manifest-driven план"
+	@echo "  make kb-source-plan-all — показать manifest-driven план для всех kb/mango-product-docs/sources/*/meta.json"
+	@echo "  make kb-source-extract SOURCE_DIR=kb/mango-product-docs/sources/<slug> — извлечь по meta.json"
+	@echo "  make kb-source-extract-all — извлечь все kb/mango-product-docs/sources/*/meta.json"
 	@echo "  make kb-mango     — извлечь multi-part mango-cc-manual из issue #119"
 	@echo "  make kb-lk        — извлечь multi-part mango-lk-manual из issue #117"
 	@echo "  make kb-mtalker   — извлечь multi-document Mango Talker из issue #121"
@@ -64,9 +64,9 @@ help:
 	@echo "  make kb-clean     — удалить временные файлы (pycache, _diagram.png)"
 	@echo ""
 	@echo "Зависимости извлечения: pip install -r scripts/kb/requirements.txt"
-	@echo "Свой PDF: make kb-extract SRC=kb/sources/<slug>/<file.pdf> OUT=kb/processed/<slug> CODE=XX TITLE='...' VERSION=..."
-	@echo "Multi-part PDF: make kb-extract SRCS='kb/sources/<slug>/part-1.pdf kb/sources/<slug>/part-2.pdf' OUT=kb/processed/<slug> CODE=XX"
-	@echo "Manifest-driven: make kb-source-extract SOURCE_DIR=kb/sources/<slug>"
+	@echo "Свой PDF: make kb-extract SRC=kb/mango-product-docs/sources/<slug>/<file.pdf> OUT=kb/mango-product-docs/processed/<slug> CODE=XX TITLE='...' VERSION=..."
+	@echo "Multi-part PDF: make kb-extract SRCS='kb/mango-product-docs/sources/<slug>/part-1.pdf kb/mango-product-docs/sources/<slug>/part-2.pdf' OUT=kb/mango-product-docs/processed/<slug> CODE=XX"
+	@echo "Manifest-driven: make kb-source-extract SOURCE_DIR=kb/mango-product-docs/sources/<slug>"
 
 # Полный прогон конвейера на синтетической фикстуре.
 kb-all: kb-sample kb-extract kb-validate
@@ -92,11 +92,11 @@ kb-source-plan:
 kb-source-plan-all:
 	$(PYTHON) scripts/kb/process_sources.py --all --dry-run
 
-# Извлечь один каталог kb/sources/<slug>/ по явному source manifest.
+# Извлечь один каталог kb/mango-product-docs/sources/<slug>/ по явному source manifest.
 kb-source-extract:
 	$(PYTHON) scripts/kb/process_sources.py "$(SOURCE_DIR)"
 
-# Извлечь все каталоги kb/sources/<slug>/ с meta.json.
+# Извлечь все каталоги kb/mango-product-docs/sources/<slug>/ с meta.json.
 kb-source-extract-all:
 	$(PYTHON) scripts/kb/process_sources.py --all
 
@@ -122,7 +122,7 @@ kb-lk:
 
 # Воспроизвести multi-document комплект Mango Talker из issue #121.
 kb-mtalker:
-	$(MAKE) kb-source-extract SOURCE_DIR="kb/sources/mtalker"
+	$(MAKE) kb-source-extract SOURCE_DIR="kb/mango-product-docs/sources/mtalker"
 
 # Проверка деливераблов БЗ — stdlib-only, идентична лёгкому шагу CI.
 kb-validate:
@@ -131,6 +131,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_117_kb_traceability.py
 	$(PYTHON) scripts/validate_issue_121_kb_multi_file.py
 	$(PYTHON) scripts/validate_issue_129_kb_all_sources.py
+	$(PYTHON) scripts/validate_issue_137_kb_product_docs_migration.py
 	$(PYTHON) scripts/validate_issue_131_kb_processed_outputs.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
@@ -140,8 +141,8 @@ kb-tokens:
 		printf '  %-58s ' "$$f"; $(PYTHON) scripts/kb/tokens.py "$$f"; \
 	done
 
-# Удалить только временные артефакты. Фикстура и kb/processed/ — закоммичены и
+# Удалить только временные артефакты. Фикстура и kb/mango-product-docs/processed/ — закоммичены и
 # воспроизводимы через `make kb-sample kb-extract` (см. отчёт, раздел 9).
 kb-clean:
 	rm -rf scripts/kb/__pycache__
-	rm -f kb/sources/contact-center-manual-sample/_diagram.png
+	rm -f kb/mango-product-docs/sources/contact-center-manual-sample/_diagram.png

@@ -8,11 +8,11 @@ cannot silently break them:
 - the **ingestion scripts** exist (``scripts/kb/{extract,tokens,make_sample_pdf}.py``,
   ``requirements.txt``, ``README.md``);
 - the **neutral KB layout** (ФТ-4) exists with the mandatory **manual-input
-  directory** and its human guide: ``kb/sources/README.md`` (ФТ-7),
-  ``kb/processed/README.md``, ``kb/fragments/README.md``, the document manifest
-  and ``kb/sources/web-links/README.md``; the forbidden name ``mango-kc`` is not
+  directory** and its human guide: ``kb/mango-product-docs/sources/README.md`` (ФТ-7),
+  ``kb/mango-product-docs/processed/README.md``, ``kb/fragments/README.md``, the document manifest
+  and ``kb/mango-product-docs/sources/web-links/README.md``; the forbidden name ``mango-kc`` is not
   used as a path;
-- the **extracted sample** is internally consistent: every ``kb/processed/*/``
+- the **extracted sample** is internally consistent: every ``kb/mango-product-docs/processed/*/``
   has ``index.md`` + ``meta.json``; ``section_count`` matches the section files;
   per-section token counts sum to ``tokens_total``; each section's frontmatter
   ``tokens`` matches ``meta.json``; the index links every section; referenced
@@ -37,7 +37,7 @@ ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR_REF = "scripts/validate_issue_111_kb_pipeline.py"
 KB_WORKFLOW = ".github/workflows/kb.yml"
 REPORT = "docs/kb-experiment-report.md"
-SAMPLE = "kb/processed/contact-center-manual-sample"
+SAMPLE = "kb/mango-product-docs/processed/contact-center-manual-sample"
 
 # Files that must exist (infrastructure + docs).
 REQUIRED_FILES = (
@@ -46,12 +46,12 @@ REQUIRED_FILES = (
     "scripts/kb/make_sample_pdf.py",
     "scripts/kb/requirements.txt",
     "scripts/kb/README.md",
-    "kb/sources/README.md",
-    "kb/sources/contact-center-manual/source.md",
-    "kb/sources/web-links/README.md",
-    "kb/processed/README.md",
+    "kb/mango-product-docs/sources/README.md",
+    "kb/mango-product-docs/sources/contact-center-manual/source.md",
+    "kb/mango-product-docs/sources/web-links/README.md",
+    "kb/mango-product-docs/processed/README.md",
     "kb/fragments/README.md",
-    "kb/USAGE.md",
+    "kb/mango-product-docs/USAGE.md",
     REPORT,
     KB_WORKFLOW,
     "Makefile",
@@ -118,13 +118,13 @@ def check_neutral_name() -> list:
 
 def check_manual_input_dir() -> list:
     """ФТ-4/ФТ-7: manual-input dir exists with a human replenishment guide."""
-    errors = require_file("kb/sources/README.md")
+    errors = require_file("kb/mango-product-docs/sources/README.md")
     if errors:
         return errors
-    text = read_text("kb/sources/README.md")
+    text = read_text("kb/mango-product-docs/sources/README.md")
     # The guide must cover the ФТ-7 steps (add file, run, verify, update, web link).
     errors += require(
-        text, "kb/sources/README.md",
+        text, "kb/mango-product-docs/sources/README.md",
         "Как добавить новый файл", "Как запустить обработку",
         "Как проверить результат", "Как обновить документ", "веб-ресурс",
     )
@@ -139,7 +139,7 @@ def _section_files(doc_dir: Path) -> list:
 
 
 def check_extracted_doc(doc_rel: str) -> list:
-    """Internal consistency of one kb/processed/<doc>/ artifact."""
+    """Internal consistency of one kb/mango-product-docs/processed/<doc>/ artifact."""
     errors = []
     doc_dir = ROOT / doc_rel
     index_path = doc_dir / "index.md"
@@ -237,21 +237,21 @@ def iter_processed_doc_dirs(processed: Path) -> list[Path]:
 
 
 def check_processed() -> list:
-    """The sample must exist; every kb/processed/<doc>/ must be consistent."""
+    """The sample must exist; every kb/mango-product-docs/processed/<doc>/ must be consistent."""
     errors = require_file(f"{SAMPLE}/index.md") + require_file(f"{SAMPLE}/meta.json")
-    processed = ROOT / "kb" / "processed"
+    processed = ROOT / "kb" / "mango-product-docs" / "processed"
     found_any = False
     for doc_dir in iter_processed_doc_dirs(processed):
         found_any = True
         errors += check_extracted_doc(str(doc_dir.relative_to(ROOT)))
     if not found_any:
-        errors.append("kb/processed/: no extracted document with meta.json found")
+        errors.append("kb/mango-product-docs/processed/: no extracted document with meta.json found")
     return errors
 
 
 def check_usage_examples() -> list:
     """ФТ-6: five concrete prompt examples + citation + token comparison."""
-    path = "kb/USAGE.md"
+    path = "kb/mango-product-docs/USAGE.md"
     errors = require_file(path)
     if errors:
         return errors

@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/115"
 related_artifacts:
   - "../../.github/workflows/kb.yml"
-  - "../../kb/processed/mango-cc-manual/index.md"
+  - "../../kb/mango-product-docs/processed/mango-cc-manual/index.md"
   - "../../scripts/validate_issue_115_kb_mango_pipeline.py"
 ---
 
@@ -17,9 +17,9 @@ related_artifacts:
 
 ## Симптом
 
-После загрузки `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` и
+После загрузки `kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf` и
 `meta.json` ручной запуск **KB Pipeline #11** завершился успешно, но каталог
-`kb/processed/mango-cc-manual/` в репозитории отсутствовал.
+`kb/mango-product-docs/processed/mango-cc-manual/` в репозитории отсутствовал.
 
 ## Найденная причина
 
@@ -33,7 +33,7 @@ make kb-extract
 То есть workflow всегда пересобирал синтетическую фикстуру
 `contact-center-manual-sample`, а не новый источник `mango-cc-manual`.
 Дополнительно workflow имел `permissions: contents: read` и только загружал
-`kb/processed/` как artifact; коммита результата в репозиторий не было.
+`kb/mango-product-docs/processed/` как artifact; коммита результата в репозиторий не было.
 
 ## Исправление
 
@@ -43,7 +43,7 @@ make kb-extract
   передает эти inputs в `make kb-extract`.
 - Результат всегда загружается artifact-ом, а при `commit_result=true` может быть
   закоммичен обратно в текущую ветку.
-- Реальная БЗ создана в `kb/processed/mango-cc-manual/`.
+- Реальная БЗ создана в `kb/mango-product-docs/processed/mango-cc-manual/`.
 - Добавлен validator `scripts/validate_issue_115_kb_mango_pipeline.py`, который
   проверяет наличие реальной БЗ и защиту от возврата к hardcoded sample workflow.
 

@@ -17,15 +17,15 @@
 нём один-в-один.
 
 Когда пользователь положит реальный ``CC_manual_1.26.23.pdf`` в
-``kb/sources/contact-center-manual/`` и запустит тот же ``scripts/kb/extract.py``,
-конвейер даст ``kb/processed/contact-center-manual/`` тем же способом.
+``kb/mango-product-docs/sources/contact-center-manual/`` и запустит тот же ``scripts/kb/extract.py``,
+конвейер даст ``kb/mango-product-docs/processed/contact-center-manual/`` тем же способом.
 
 Запуск::
 
     python3 scripts/kb/make_sample_pdf.py [output.pdf]
 
 По умолчанию пишет в
-``kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf``.
+``kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf``.
 Текстовое содержание фиксировано в коде → извлечение из фикстуры воспроизводимо.
 """
 
@@ -323,7 +323,7 @@ def build(out_path: Path) -> Path:
     doc.build(story)
 
     # Подчищаем временную картинку диаграммы (она уже встроена в PDF; реальная
-    # извлечённая версия появится в kb/processed/.../images/ при экстракции).
+    # извлечённая версия появится в kb/mango-product-docs/processed/.../images/ при экстракции).
     try:
         diagram_path.unlink()
     except OSError:

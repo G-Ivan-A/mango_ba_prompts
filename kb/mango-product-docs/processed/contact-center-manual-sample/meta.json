@@ -1,0 +1,168 @@
+{
+  "body_font_size": 10.5,
+  "body_font_sizes": [
+    10.5
+  ],
+  "doc_code": "CC",
+  "doc_title": "Контакт-центр MANGO OFFICE",
+  "doc_version": "1.26.23-sample",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 1,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue 111. Структура воспроизводит реальное руководство (issue 109). Замените PDF и перезапустите для реальных данных.",
+  "page_count": 7,
+  "part_count": 1,
+  "section_count": 7,
+  "section_source": "layout-heuristic",
+  "section_sources": [
+    "layout-heuristic"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1",
+          "pages": "1",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 110
+    },
+    {
+      "file": "sections/01-vvedenie.md",
+      "number": "1",
+      "order": "01",
+      "pages": "2",
+      "pdf_heading": "1 Введение",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "2",
+          "pages": "2",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Введение",
+      "tokens": 256
+    },
+    {
+      "file": "sections/02-rabochee-mesto-operatora.md",
+      "number": "2",
+      "order": "02",
+      "pages": "3",
+      "pdf_heading": "2 Рабочее место оператора",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "3",
+          "pages": "3",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Рабочее место оператора",
+      "tokens": 349
+    },
+    {
+      "file": "sections/03-kanaly-kommunikacii.md",
+      "number": "3",
+      "order": "03",
+      "pages": "4",
+      "pdf_heading": "3 Каналы коммуникации",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "4",
+          "pages": "4",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Каналы коммуникации",
+      "tokens": 342
+    },
+    {
+      "file": "sections/04-obrabotka-obrascheniy.md",
+      "number": "4",
+      "order": "04",
+      "pages": "5",
+      "pdf_heading": "4 Обработка обращений",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Обработка обращений",
+      "tokens": 426
+    },
+    {
+      "file": "sections/05-roli-i-prava-dostupa.md",
+      "number": "5",
+      "order": "05",
+      "pages": "6",
+      "pdf_heading": "5 Роли и права доступа",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "6",
+          "pages": "6",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Роли и права доступа",
+      "tokens": 301
+    },
+    {
+      "file": "sections/06-otchety-i-analitika.md",
+      "number": "6",
+      "order": "06",
+      "pages": "7",
+      "pdf_heading": "6 Отчёты и аналитика",
+      "pdf_section": "6",
+      "source_refs": [
+        {
+          "global_pages": "7",
+          "pages": "7",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+        }
+      ],
+      "title": "Отчёты и аналитика",
+      "tokens": 139
+    }
+  ],
+  "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf",
+  "source_pdfs": [
+    "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf"
+  ],
+  "source_sha256": "c4754a3407c4e523ac5b1d2915a981b942e0802f8f8d173682d71e34ec28fb55",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 7,
+      "source_pdf": "kb/mango-product-docs/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf",
+      "source_sha256": "c4754a3407c4e523ac5b1d2915a981b942e0802f8f8d173682d71e34ec28fb55"
+    }
+  ],
+  "table_count": 1,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 976,
+  "tokens_total": 1923
+}

@@ -19,14 +19,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-PROCESSED_ROOT = ROOT / "kb" / "processed"
-LK_DOC = "kb/processed/mango-lk-manual"
+PROCESSED_ROOT = ROOT / "kb" / "mango-product-docs" / "processed"
+LK_DOC = "kb/mango-product-docs/processed/mango-lk-manual"
 LK_SOURCES = [
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf",
+    "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf",
+    "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf",
+    "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf",
+    "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf",
+    "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf",
 ]
 LK_PAGE_COUNTS = [101, 101, 101, 101, 164]
 

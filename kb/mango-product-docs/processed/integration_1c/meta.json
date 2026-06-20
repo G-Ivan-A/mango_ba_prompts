@@ -1,0 +1,189 @@
+{
+  "body_font_size": 12.0,
+  "body_font_sizes": [
+    12.0
+  ],
+  "doc_code": "INTEGRATION1",
+  "doc_title": "Прямая интеграция с системой «1С: Управление торговлей». Интеграция Виртуальной АТС и системы «1С: Управление торговлей»",
+  "doc_version": "22.12.2025",
+  "extracted_by": "pdfplumber 0.11.10",
+  "image_count": 72,
+  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractors": [
+    "pymupdf 1.27.2.3"
+  ],
+  "note": "Подробная инструкция по прямой интеграции ВАТС Mango Office с 1С: Управление торговлей. Содержит описание настройки, параметров соединения, синхронизации справочников и звонков.",
+  "page_count": 46,
+  "part_count": 1,
+  "processing_mode": "single",
+  "section_count": 8,
+  "section_source": "layout-heuristic",
+  "section_sources": [
+    "layout-heuristic"
+  ],
+  "sections": [
+    {
+      "file": "sections/00-titulnaya-chast.md",
+      "number": "—",
+      "order": "00",
+      "pages": "1-4",
+      "pdf_heading": "Титульная часть",
+      "pdf_section": "—",
+      "source_refs": [
+        {
+          "global_pages": "1-4",
+          "pages": "1-4",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Титульная часть",
+      "tokens": 1399
+    },
+    {
+      "file": "sections/01-obzor.md",
+      "number": "1",
+      "order": "01",
+      "pages": "4-5",
+      "pdf_heading": "1 Обзор",
+      "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "4-5",
+          "pages": "4-5",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Обзор",
+      "tokens": 903
+    },
+    {
+      "file": "sections/02-nachalo-raboty-s-integraciey.md",
+      "number": "2",
+      "order": "02",
+      "pages": "5-17",
+      "pdf_heading": "2 Начало работы с интеграцией",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "5-17",
+          "pages": "5-17",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Начало работы с интеграцией",
+      "tokens": 5337
+    },
+    {
+      "file": "sections/03-dopolnitelnye-nastroyki-integracii.md",
+      "number": "3",
+      "order": "03",
+      "pages": "17-29",
+      "pdf_heading": "3 Дополнительные настройки интеграции",
+      "pdf_section": "3",
+      "source_refs": [
+        {
+          "global_pages": "17-29",
+          "pages": "17-29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Дополнительные настройки интеграции",
+      "tokens": 5765
+    },
+    {
+      "file": "sections/04-vhodyaschiy-zvonok.md",
+      "number": "4",
+      "order": "04",
+      "pages": "29",
+      "pdf_heading": "4 Входящий звонок",
+      "pdf_section": "4",
+      "source_refs": [
+        {
+          "global_pages": "29",
+          "pages": "29",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Входящий звонок",
+      "tokens": 569
+    },
+    {
+      "file": "sections/05-ishodyaschiy-zvonok.md",
+      "number": "5",
+      "order": "05",
+      "pages": "29-32",
+      "pdf_heading": "5 Исходящий звонок",
+      "pdf_section": "5",
+      "source_refs": [
+        {
+          "global_pages": "29-32",
+          "pages": "29-32",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Исходящий звонок",
+      "tokens": 1425
+    },
+    {
+      "file": "sections/06-otchety.md",
+      "number": "6",
+      "order": "06",
+      "pages": "32-40",
+      "pdf_heading": "6 Отчеты",
+      "pdf_section": "6",
+      "source_refs": [
+        {
+          "global_pages": "32-40",
+          "pages": "32-40",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Отчеты",
+      "tokens": 3640
+    },
+    {
+      "file": "sections/07-spravochnik-abonentov.md",
+      "number": "7",
+      "order": "07",
+      "pages": "40-46",
+      "pdf_heading": "7 Справочник абонентов",
+      "pdf_section": "7",
+      "source_refs": [
+        {
+          "global_pages": "40-46",
+          "pages": "40-46",
+          "part": 1,
+          "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Справочник абонентов",
+      "tokens": 3143
+    }
+  ],
+  "source_document": "integration_1c",
+  "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf",
+  "source_pdfs": [
+    "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+  ],
+  "source_set": "integration_1c",
+  "source_sha256": "f67ba95d3474dd653b4253727c0f4c0174d24d9a636317e6801c29ecc612bfb6",
+  "sources": [
+    {
+      "order": 1,
+      "page_count": 46,
+      "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf",
+      "source_sha256": "f67ba95d3474dd653b4253727c0f4c0174d24d9a636317e6801c29ecc612bfb6"
+    }
+  ],
+  "table_count": 8,
+  "token_method": "tiktoken:cl100k_base",
+  "tokens_index": 1251,
+  "tokens_total": 22181
+}

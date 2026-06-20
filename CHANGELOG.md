@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.2
-updated: 2026-06-19
+updated: 2026-06-20
 ai-generated: true
 ---
 
@@ -21,6 +21,17 @@ ai-generated: true
   MTS Exolve, Twilio, RingCentral, Amazon Connect, Genesys, Microsoft Teams и
   8x8; сам стандарт, Mango Taxonomy, KB-данные и `research/` не создавались.
 
+### Changed — Issue #137 миграция product docs в `kb/mango-product-docs/`
+
+- Product documentation KB перенесена из прежних корневых product-docs
+  каталогов источников/результатов и guide-файлов в нейтральный namespace
+  [`kb/mango-product-docs/`](kb/mango-product-docs/).
+- Makefile, KB workflow, scripts, validators, документация и generated trace
+  metadata переведены на новые стабильные пути.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_137_kb_product_docs_migration.py`](scripts/validate_issue_137_kb_product_docs_migration.py),
+  которая фиксирует новую раскладку и запрещает возврат старых path literals.
+
 ### Added — Issue #134 стандарт README для репозитория
 
 - Добавлен стандарт
@@ -34,22 +45,22 @@ ai-generated: true
   [`scripts/validate_issue_134_readme_standard.py`](scripts/validate_issue_134_readme_standard.py),
   подключённая к GitHub Pages workflow.
 
-### Fixed — Issue #131 KB pipeline: новые источники должны попадать в `kb/processed`
+### Fixed — Issue #131 KB pipeline: новые источники должны попадать в `kb/mango-product-docs/processed`
 
-- Добавлена короткая инструкция [`kb/UPLOAD-GUIDE.md`](kb/UPLOAD-GUIDE.md):
+- Добавлена короткая инструкция [`kb/mango-product-docs/UPLOAD-GUIDE.md`](kb/mango-product-docs/UPLOAD-GUIDE.md):
   загрузка нового документа, обновление существующего, сценарии `single`,
   `multi_part`, `multi_document`, запуск pipeline и проверка результата.
 - Добавлена регрессионная проверка
   [`scripts/validate_issue_131_kb_processed_outputs.py`](scripts/validate_issue_131_kb_processed_outputs.py):
-  фиксирует, что все processable `kb/sources/*/meta.json` имеют
-  закоммиченные `kb/processed`-деливераблы с трассировкой и реальными LFS PDF
+  фиксирует, что все processable `kb/mango-product-docs/sources/*/meta.json` имеют
+  закоммиченные `kb/mango-product-docs/processed`-деливераблы с трассировкой и реальными LFS PDF
   payloads.
 - Workflow KB pipeline теперь на push в `main` с изменениями источников или
   конвейера запускает `process_sources.py --all`, валидирует результат и
-  коммитит `kb/processed` обратно в ветку; PR по-прежнему проверяет, что
+  коммитит `kb/mango-product-docs/processed` обратно в ветку; PR по-прежнему проверяет, что
   результат уже включён в diff.
-- Новые источники из `kb/sources/` регенерируются в соответствующие каталоги
-  `kb/processed/` через manifest-driven runner.
+- Новые источники из `kb/mango-product-docs/sources/` регенерируются в соответствующие каталоги
+  `kb/mango-product-docs/processed/` через manifest-driven runner.
 
 ### Added — Issue #127 синхронизация БА-онтологии с Hub RFC C1/C2/C3
 
@@ -110,12 +121,12 @@ ai-generated: true
 
 - Добавлен manifest-driven runner
   [`scripts/kb/process_sources.py`](scripts/kb/process_sources.py): читает
-  `kb/sources/<slug>/meta.json`, различает `single`, `multi_part` и
+  `kb/mango-product-docs/sources/<slug>/meta.json`, различает `single`, `multi_part` и
   `multi_document`, строит extraction jobs и защищает локальный запуск от LFS
   pointer-файлов вместо PDF bytes.
 - В `meta.json` источников КЦ, ЛК и Mango Talker добавлены явные
   `processing_mode`, `output_slug`, `doc_code` и/или `source_files`; для Mango
-  Talker выбран гибридный режим: общий product collection `kb/processed/mtalker/`
+  Talker выбран гибридный режим: общий product collection `kb/mango-product-docs/processed/mtalker/`
   и отдельные вложенные БЗ для каждого независимого руководства.
 - Добавлены Make targets `kb-source-plan`, `kb-source-extract`, `kb-mtalker` и
   workflow input `source_dir`, чтобы ручной KB pipeline мог запускаться по
@@ -124,7 +135,7 @@ ai-generated: true
   [`scripts/validate_issue_121_kb_multi_file.py`](scripts/validate_issue_121_kb_multi_file.py):
   фиксирует реальные манифесты, synthetic сценарии `single`, `multi_part`,
   `multi_document`, обновления 1→N, N→1, добавление и удаление документов.
-- Обновлена инструкция [`kb/sources/README.md`](kb/sources/README.md): примеры
+- Обновлена инструкция [`kb/mango-product-docs/sources/README.md`](kb/mango-product-docs/sources/README.md): примеры
   `meta.json`, сценарии 1–6, правила обновления и troubleshooting для Git LFS.
 
 ### Fixed — Issue #119 KB pipeline: multi-part PDF и Git LFS
@@ -134,7 +145,7 @@ ai-generated: true
 - `make kb-mango`, workflow defaults и регрессионная проверка
   `validate_issue_115_kb_mango_pipeline.py` переведены с удалённого
   `CC_manual_1.26.23_compressed.pdf` на 6 PDF-частей руководства КЦ.
-- БЗ `kb/processed/mango-cc-manual/` регенерирована как multi-part документ со
+- БЗ `kb/mango-product-docs/processed/mango-cc-manual/` регенерирована как multi-part документ со
   сквозной пагинацией и `source_refs` на конкретные LFS-части.
 - Документация пополнения БЗ описывает обновление PDF через Git LFS, Codespace
   или локальный Git и обновление `meta.json` при замене одного файла частями.
@@ -149,21 +160,21 @@ ai-generated: true
   `source_refs`; в каждом разделе выводится человекочитаемая строка
   `Трассировка`.
 - Добавлена сформированная БЗ
-  [`kb/processed/mango-lk-manual/`](kb/processed/mango-lk-manual/) для 5 частей
+  [`kb/mango-product-docs/processed/mango-lk-manual/`](kb/mango-product-docs/processed/mango-lk-manual/) для 5 частей
   руководства ЛК ВАТС v1.21: 568 сквозных страниц, 348 разделов, 1545
   изображений.
 - Добавлен `make kb-lk` и регрессионная проверка
   [`scripts/validate_issue_117_kb_traceability.py`](scripts/validate_issue_117_kb_traceability.py),
   подключённая к workflow KB pipeline.
 
-### Fixed — Issue #115 KB pipeline: реальное руководство не попадало в `kb/processed/`
+### Fixed — Issue #115 KB pipeline: реальное руководство не попадало в `kb/mango-product-docs/processed/`
 
 - Диагностирован KB Pipeline #11: успешный `workflow_dispatch` запуск извлекал
   только синтетическую фикстуру `contact-center-manual-sample`, выгружал результат
   артефактом и не обрабатывал загруженный
-  `kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`.
+  `kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf`.
 - Добавлена сформированная БЗ
-  [`kb/processed/mango-cc-manual/`](kb/processed/mango-cc-manual/) для реального
+  [`kb/mango-product-docs/processed/mango-cc-manual/`](kb/mango-product-docs/processed/mango-cc-manual/) для реального
   руководства v1.26.23: `index.md`, `meta.json`, `sections/`, `images/`.
 - `Makefile` и workflow KB pipeline параметризованы (`SRC`, `OUT`, `doc_code`,
   `doc_title`, `doc_version`); ручной GitHub Actions запуск теперь по умолчанию
@@ -187,14 +198,14 @@ ai-generated: true
   [`make_sample_pdf.py`](scripts/kb/make_sample_pdf.py) (фикстура, т.к. реальный
   `CC_manual_1.26.23.pdf` не загрузился в issue).
 - Создана **нейтральная** структура БЗ [`kb/`](kb/README.md) (**не** `mango-kc`,
-  **ФТ-4**) с **обязательным каталогом ручного ввода** [`kb/sources/`](kb/sources/README.md):
+  **ФТ-4**) с **обязательным каталогом ручного ввода** [`kb/mango-product-docs/sources/`](kb/mango-product-docs/sources/README.md):
   `sources/` (вход человека) → `processed/` (генерируется) → `fragments/`
   (задел под RAG). Человекочитаемая инструкция пополнения (**ФТ-7**) —
-  [`kb/sources/README.md`](kb/sources/README.md); источники-ссылки —
-  [`kb/sources/web-links/`](kb/sources/web-links/README.md).
+  [`kb/mango-product-docs/sources/README.md`](kb/mango-product-docs/sources/README.md); источники-ссылки —
+  [`kb/mango-product-docs/sources/web-links/`](kb/mango-product-docs/sources/web-links/README.md).
 - Добавлены **5 конкретных примеров** обращения промпта к БЗ на реальных данных
   (индекс → выбор раздела → загрузка чанка → цитата `[CC, §4.2, с.5]` → сравнение
-  токенов 1587 vs 378) — [`kb/USAGE.md`](kb/USAGE.md) (**ФТ-6**).
+  токенов 1587 vs 378) — [`kb/mango-product-docs/USAGE.md`](kb/mango-product-docs/USAGE.md) (**ФТ-6**).
 - Зафиксирован **отчёт по эксперименту** (**ФТ-8**)
   [`docs/kb-experiment-report.md`](docs/kb-experiment-report.md): описание PDF и
   оговорка о незагрузившемся файле, результаты и оценка качества извлечения
