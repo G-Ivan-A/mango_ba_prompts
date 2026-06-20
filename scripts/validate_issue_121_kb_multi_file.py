@@ -244,9 +244,12 @@ def check_synthetic_update_scenarios() -> list[str]:
         if not keep.exists():
             errors.append("synthetic multi_document add/delete: expected child was removed")
 
-        # Inference remains backward-compatible for old manifests.
-        if infer_mode(multi_dir, {"documents": [{"file_name": "a.pdf"}]}) != "multi_document":
-            errors.append("mode inference: documents should imply multi_document")
+        # Inference remains backward-compatible for real product collections,
+        # while one-document manifests stay a single top-level KB.
+        if infer_mode(multi_dir, {"documents": [{"file_name": "a.pdf"}]}) != "single":
+            errors.append("mode inference: one document should imply single")
+        if infer_mode(multi_dir, {"documents": [{"file_name": "a.pdf"}, {"file_name": "b.pdf"}]}) != "multi_document":
+            errors.append("mode inference: multiple documents should imply multi_document")
         if infer_mode(single_dir, {"parts": 2}) != "multi_part":
             errors.append("mode inference: parts > 1 should imply multi_part")
 

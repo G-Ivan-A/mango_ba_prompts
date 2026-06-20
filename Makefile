@@ -45,7 +45,7 @@ TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
 SOURCE_DIR ?= kb/sources/mango-cc-manual
 
-.PHONY: help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
+.PHONY: help kb-all kb-sample kb-extract kb-source-plan kb-source-plan-all kb-source-extract kb-source-extract-all kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
@@ -53,7 +53,9 @@ help:
 	@echo "  make kb-sample    — собрать синтетическую фикстуру PDF (reportlab+Pillow)"
 	@echo "  make kb-extract   — извлечь SRC/SRCS в OUT (по умолчанию фикстура → $(SAMPLE_OUT))"
 	@echo "  make kb-source-plan SOURCE_DIR=kb/sources/<slug> — показать manifest-driven план"
+	@echo "  make kb-source-plan-all — показать manifest-driven план для всех kb/sources/*/meta.json"
 	@echo "  make kb-source-extract SOURCE_DIR=kb/sources/<slug> — извлечь по meta.json"
+	@echo "  make kb-source-extract-all — извлечь все kb/sources/*/meta.json"
 	@echo "  make kb-mango     — извлечь multi-part mango-cc-manual из issue #119"
 	@echo "  make kb-lk        — извлечь multi-part mango-lk-manual из issue #117"
 	@echo "  make kb-mtalker   — извлечь multi-document Mango Talker из issue #121"
@@ -86,9 +88,17 @@ kb-extract:
 kb-source-plan:
 	$(PYTHON) scripts/kb/process_sources.py "$(SOURCE_DIR)" --dry-run
 
+# Проверить планы для всех source manifest без чтения PDF.
+kb-source-plan-all:
+	$(PYTHON) scripts/kb/process_sources.py --all --dry-run
+
 # Извлечь один каталог kb/sources/<slug>/ по явному source manifest.
 kb-source-extract:
 	$(PYTHON) scripts/kb/process_sources.py "$(SOURCE_DIR)"
+
+# Извлечь все каталоги kb/sources/<slug>/ с meta.json.
+kb-source-extract-all:
+	$(PYTHON) scripts/kb/process_sources.py --all
 
 # Воспроизвести БЗ для split-руководства КЦ из issue #119.
 kb-mango:
@@ -120,6 +130,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_115_kb_mango_pipeline.py
 	$(PYTHON) scripts/validate_issue_117_kb_traceability.py
 	$(PYTHON) scripts/validate_issue_121_kb_multi_file.py
+	$(PYTHON) scripts/validate_issue_129_kb_all_sources.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
 kb-tokens:
