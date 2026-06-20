@@ -1,0 +1,23 @@
+{
+  "name": "Аутентификация и авторизация в рамках SSO",
+  "version": "1.0",
+  "type": "user_manual",
+  "product": "Mango Office",
+  "platform": ["Web"],
+  "language": "ru",
+  "upload_date": "2026-06-20",
+  "description": "Руководство пользователя по настройке и использованию единой системы аутентификации (SSO) в Mango Office. Описывает процесс входа, управление доступом и авторизацию через внешних провайдеров.",
+  "topics": [
+    "SSO",
+    "аутентификация",
+    "авторизация",
+    "единый вход",
+    "безопасность",
+    "управление доступом"
+  ],
+  "file_name": "MANGO_OFFICE_LK_VATS_Auth_SSO.pdf",
+  "total_files": 1,
+  "file_size_mb": 3.1,
+  "pages_count": 22,
+  "source_url": null
+}

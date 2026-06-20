@@ -1,0 +1,22 @@
+{
+  "name": "SIP TRUNK. Руководство пользователя",
+  "version": "1.23.43",
+  "type": "user_manual",
+  "product": "Mango Office",
+  "platform": ["Web"],
+  "language": "ru",
+  "upload_date": "2026-06-20",
+  "description": "Руководство пользователя по настройке и использованию SIP-транков в Mango Office. Описывает подключение внешних операторов, управление каналами, маршрутизацию и мониторинг.",
+  "topics": [
+    "SIP",
+    "транк",
+    "телефония",
+    "маршрутизация",
+    "операторы связи"
+  ],
+  "file_name": "MO_SIP_Trunk.pdf",
+  "total_files": 1,
+  "file_size_mb": 2.1,
+  "pages_count": 42,
+  "source_url": null
+}
