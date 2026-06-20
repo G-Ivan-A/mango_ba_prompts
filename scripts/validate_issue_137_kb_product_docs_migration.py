@@ -120,7 +120,8 @@ def check_wiring() -> list[str]:
     errors: list[str] = []
     workflow = ROOT / ".github" / "workflows" / "kb.yml"
     makefile = ROOT / "Makefile"
-    for path in (workflow, makefile):
+    changelog = ROOT / "CHANGELOG.md"
+    for path in (workflow, makefile, changelog):
         errors += require_path(path)
     if errors:
         return errors
@@ -138,6 +139,12 @@ def check_wiring() -> list[str]:
         "scripts/validate_issue_137_kb_product_docs_migration.py",
         f"SOURCE_DIR ?= {new_sources}/mango-cc-manual",
         "$(PYTHON) scripts/kb/process_sources.py --all",
+    )
+    errors += require_text(
+        changelog,
+        "Issue #137",
+        "kb/mango-product-docs/",
+        "validate_issue_137_kb_product_docs_migration.py",
     )
     return errors
 
