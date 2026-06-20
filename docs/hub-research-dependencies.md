@@ -72,8 +72,10 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 ### `#classification` — Классификация продуктов
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango/classification.md>
-- **Описание:** ключевое исследование классификации `Domain → Capability →
-  Feature → Atomic Function`; главная research-зависимость спока (RFC §2.5).
+- **Описание:** ключевое исследование классификации. Source Hub использует
+  термин `Domain → Capability → Feature → Atomic Function`; в споке после issue
+  #146 leaf-level нормализован до `Function`. Это главная research-зависимость
+  спока (RFC §2.5).
 - **Потребители (`research_dep`):**
   - `prompts/tz-stats-generator.md`
   - `prompts/user-story-generator.md`

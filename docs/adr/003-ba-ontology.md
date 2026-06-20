@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.2
+version: 0.3
 updated: 2026-06-20
 ai-generated: true
 type: adr
@@ -9,6 +9,7 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/127"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
 related_standard: "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/ba-ontology.md"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/98"
@@ -44,7 +45,7 @@ related_artifacts:
 2. **Процессы БА** — 9 повторяемых рабочих сценариев с пошаговыми workflow
    ([docs/ba-processes/00-index.md](ba-processes/00-index.md)).
 3. **Классификация функциональности** — иерархия
-   `Domain → Capability → Feature → Atomic Function`
+   `Domain → Capability → Feature → Function`
    ([standards/product-classification-contract.md](../../standards/product-classification-contract.md)).
 
 При этом **артефакт** (то, что операция потребляет на входе и производит на
@@ -136,7 +137,7 @@ Issue #127 синхронизирует онтологию с RFC Хаба
 | **Контрольная точка** (Gate) | Точка, где результат требует подтверждения человека до продолжения. | [docs/ba-processes/00-index.md](ba-processes/00-index.md) (колонка Gate/gap) |
 | **Направление разработки** (Direction) | Контекст задачи (`client-order`, `tender-rfp`, …), задающий глубину артефакта. | [docs/ba-ecosystem.md](../ba-ecosystem.md), [00-index.md](ba-processes/00-index.md) |
 | **Область знаний BABOK** (Knowledge Area) | Одна из 6 KA BABOK Guide v3, к которой относится операция. | **новое (этот ADR, §«Доказательная база»)** |
-| **Класс функциональности** | Уровень `Domain → Capability → Feature → Atomic Function`, к которому относится артефакт-требование. | [standards/product-classification-contract.md](../../standards/product-classification-contract.md) |
+| **Класс функциональности** | Уровень `Domain → Capability → Feature → Function`, к которому относится артефакт-требование. | [standards/product-classification-contract.md](../../standards/product-classification-contract.md) |
 | **Уровень требования** | Ортогональный тег `requirement_level ∈ {business, user, functional, non-functional}` для семантической лестницы Вигерса. | **новое (issue #127, RFC Хаба С1)** |
 | **Стандарт** (Standard) | Внешний нормативный источник (BABOK, ISO/IEC/IEEE 29148, ISO/IEC 25010, ГОСТ 34.602/34.601), которому соответствует артефакт. | **новое (этот ADR + [standards/industry-standards-standard.md](../../standards/industry-standards-standard.md))** |
 | **Паттерн / Промпт** | Реализующий слой: паттерн — практика, промпт — исполняемый артефакт. | [ADR-002](002-pattern-standard.md), [ADR-001](001-prompt-standard.md) |
@@ -146,7 +147,7 @@ Issue #127 синхронизирует онтологию с RFC Хаба
 Вигерс различает уровни требований по смыслу: бизнес-уровень, пользовательский
 уровень, функциональный уровень и нефункциональные требования. В mango до issue
 #127 были две близкие, но не эквивалентные конструкции:
-`Domain→Capability→Feature→Atomic Function` описывает декомпозицию продукта, а
+`Domain→Capability→Feature→Function` описывает декомпозицию продукта, а
 `BCREQ-NNN.k.m` описывает глубину дерева требования. Ни одна из них не отвечает
 на вопрос «это бизнес-, пользовательское, функциональное или нефункциональное
 требование?».
@@ -170,7 +171,7 @@ BCREQ. Это закрывает С1 из RFC Хаба и даёт трасси�
 | `производит` (выход) | Операция | Артефакт | N → M |
 | `соответствует` | Операция | Область знаний BABOK | N → M |
 | `регулируется` | Артефакт | Стандарт | N → M |
-| `классифицируется` | Артефакт-требование | Domain→Capability→Feature→Atomic Function | 1 → 1..N |
+| `классифицируется` | Артефакт-требование | Domain→Capability→Feature→Function | 1 → 1..N |
 | `имеет состояние` | Артефакт | Состояние жизненного цикла | 1 → 1 (в момент времени) |
 | `реализует` | Паттерн | Операция | N → M |
 | `исполняет` | Промпт | Паттерн | N → 1 |

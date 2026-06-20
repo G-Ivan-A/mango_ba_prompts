@@ -1,11 +1,13 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-06-20
 ai-generated: true
 type: adr
 scope: industry-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/139"
+validated_by:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
 hub_research_sha: "73e94c6e69995ccf9e746c19d9c18359971285f2"
 related_prs:
@@ -46,7 +48,7 @@ Mango Taxonomy и KB-классификацию. Жёсткие ограниче
 - проверенный на 2026-06-20 `main` SHA:
   `73e94c6e69995ccf9e746c19d9c18359971285f2`;
 - базовая модель:
-  `Domain -> Capability -> Feature -> Atomic Function`;
+  `Domain -> Capability -> Feature -> Function`;
 - пилотные домены:
   `voice-ucaas`, `contact-center`, `digital-channels`, `ai-automation`,
   `analytics`, `hardware`, `security`;
@@ -90,7 +92,7 @@ Hub research уже содержит сильную Mango-ориентирова
 
 ### 1. Четырёхуровневая модель Hub подтверждается
 
-Модель `Domain -> Capability -> Feature -> Atomic Function` остаётся пригодной
+Модель `Domain -> Capability -> Feature -> Function` остаётся пригодной
 для Industry Taxonomy. Вендоры различаются упаковкой продуктов, но повторяют
 одни и те же уровни:
 
@@ -99,7 +101,7 @@ Hub research уже содержит сильную Mango-ориентирова
   programmable messaging, verification, bots, reporting;
 - feature: queues, IVR, skills routing, conversation summaries, WhatsApp/SMS,
   call recording, CRM integration;
-- atomic function: send SMS, transfer call, assign agent, generate summary,
+- function: send SMS, transfer call, assign agent, generate summary,
   verify number, create campaign.
 
 ### 2. Hub домены покрывают рынок, но `platform` нужно сделать явным слоем
@@ -171,7 +173,7 @@ Cisco devices, Microsoft Teams Rooms/phones и UCaaS-поставщики под
 
 | Область | Hub classification | Вывод ADR |
 | --- | --- | --- |
-| Уровни | `Domain -> Capability -> Feature -> Atomic Function` | Принять без изменения. |
+| Уровни | `Domain -> Capability -> Feature -> Function` | Принять с терминологическим уточнением: leaf-level называется `Function`. |
 | Домены | 7 пилотных доменов + cross-domain `platform` | Принять, но явно описать `platform` как cross-domain/productizable layer. |
 | CPaaS/API | Есть в `platform` (`open-api`, `cpaas`) | Усилить как обязательную часть industry reference taxonomy, потому что Cisco, Twilio, Exolve и 8x8 дают сильный рыночный сигнал. |
 | CCaaS | `contact-center`, routing, analytics, WFM/QM в разных ветках | Явно зафиксировать WEM/WFM/QM, agent/supervisor assist и journey/conversation orchestration как будущие capability candidates. |
@@ -218,7 +220,7 @@ Cisco devices, Microsoft Teams Rooms/phones и UCaaS-поставщики под
 Суть:
 
 - оставить Hub v3.0 как базовый research-backed skeleton;
-- сохранить четыре уровня `Domain -> Capability -> Feature -> Atomic Function`;
+- сохранить четыре уровня `Domain -> Capability -> Feature -> Function`;
 - принять домены Hub как начальный доменный набор;
 - явно описать `platform` как cross-domain/productizable layer;
 - добавить source-backed candidates для WEM/WFM/QM, AI assist и
@@ -233,7 +235,7 @@ Cisco devices, Microsoft Teams Rooms/phones и UCaaS-поставщики под
 Industry Taxonomy для будущих артефактов Mango должна использовать следующую
 рамку:
 
-1. **Hierarchy:** `Domain -> Capability -> Feature -> Atomic Function`.
+1. **Hierarchy:** `Domain -> Capability -> Feature -> Function`.
 2. **Initial domains:** `voice-ucaas`, `contact-center`, `digital-channels`,
    `ai-automation`, `analytics`, `hardware`, `security`.
 3. **Cross-domain/platform layer:** `platform-integration`, `open-api`, `cpaas`,
@@ -246,6 +248,12 @@ Industry Taxonomy для будущих артефактов Mango должна 
 6. **Mango-specific extensions:** local numbering/branding, operator mobile app,
    Russian procurement/compliance fields and internal deal/product analytics must
    map to the reference taxonomy without changing the industry core.
+
+Термин leaf-level обновляется с прежнего research-термина `Atomic Function` до
+канонического `Function`. Это не меняет гранулярность уровня: `Function`
+остаётся минимальной проверяемой единицей поведения, настройки, API-действия или
+бизнес-правила. Уточнение нужно для симметрии с Mango Taxonomy после проверки
+processed KB в issue #146.
 
 Этот ADR не утверждает финальный стандарт и не создаёт KB. Он фиксирует решение,
 которое должна проверить команда перед отдельными PR на стандарт, Mango Taxonomy
