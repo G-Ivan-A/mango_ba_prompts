@@ -14,7 +14,7 @@ source_pages: "ч.1: 1-4"
 source_refs: '[{"source_pdf":"kb/sources/mtalker/mTalker_User_Guide_ch2_Settings.pdf","part":1,"pages":"1-4","global_pages":"1-4"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1162
+tokens: 1167
 status: extracted
 ai-generated: true
 ---

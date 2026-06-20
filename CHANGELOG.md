@@ -13,6 +13,23 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #131 KB pipeline: новые источники должны попадать в `kb/processed`
+
+- Добавлена короткая инструкция [`kb/UPLOAD-GUIDE.md`](kb/UPLOAD-GUIDE.md):
+  загрузка нового документа, обновление существующего, сценарии `single`,
+  `multi_part`, `multi_document`, запуск pipeline и проверка результата.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_131_kb_processed_outputs.py`](scripts/validate_issue_131_kb_processed_outputs.py):
+  фиксирует, что все processable `kb/sources/*/meta.json` имеют
+  закоммиченные `kb/processed`-деливераблы с трассировкой и реальными LFS PDF
+  payloads.
+- Workflow KB pipeline теперь на push в `main` с изменениями источников или
+  конвейера запускает `process_sources.py --all`, валидирует результат и
+  коммитит `kb/processed` обратно в ветку; PR по-прежнему проверяет, что
+  результат уже включён в diff.
+- Новые источники из `kb/sources/` регенерируются в соответствующие каталоги
+  `kb/processed/` через manifest-driven runner.
+
 ### Added — Issue #127 синхронизация БА-онтологии с Hub RFC C1/C2/C3
 
 - В [`standards/ba-ontology.md`](standards/ba-ontology.md) и executable-слое
