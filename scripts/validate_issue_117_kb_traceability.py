@@ -216,11 +216,24 @@ def check_lk_manual() -> list[str]:
     return errors
 
 
+def iter_processed_doc_dirs() -> list[Path]:
+    doc_dirs: list[Path] = []
+    for meta_path in sorted(PROCESSED_ROOT.rglob("meta.json")):
+        try:
+            meta = json.loads(read_text(meta_path))
+        except json.JSONDecodeError:
+            doc_dirs.append(meta_path.parent)
+            continue
+        if meta.get("collection_type") == "multi_document":
+            continue
+        doc_dirs.append(meta_path.parent)
+    return doc_dirs
+
+
 def main() -> int:
     errors: list[str] = []
-    for doc_dir in sorted(PROCESSED_ROOT.glob("*")):
-        if doc_dir.is_dir() and (doc_dir / "meta.json").exists():
-            errors += check_doc_traceability(doc_dir)
+    for doc_dir in iter_processed_doc_dirs():
+        errors += check_doc_traceability(doc_dir)
     errors += check_lk_manual()
 
     if errors:

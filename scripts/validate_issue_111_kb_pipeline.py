@@ -220,14 +220,28 @@ def check_extracted_doc(doc_rel: str) -> list:
     return errors
 
 
+def iter_processed_doc_dirs(processed: Path) -> list[Path]:
+    """Return extracted KB document dirs, skipping collection-level meta.json files."""
+    doc_dirs = []
+    for meta_path in sorted(processed.rglob("meta.json")):
+        doc_dir = meta_path.parent
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except json.JSONDecodeError:
+            doc_dirs.append(doc_dir)
+            continue
+        if meta.get("collection_type") == "multi_document":
+            continue
+        doc_dirs.append(doc_dir)
+    return doc_dirs
+
+
 def check_processed() -> list:
     """The sample must exist; every kb/processed/<doc>/ must be consistent."""
     errors = require_file(f"{SAMPLE}/index.md") + require_file(f"{SAMPLE}/meta.json")
     processed = ROOT / "kb" / "processed"
     found_any = False
-    for doc_dir in sorted(processed.glob("*")):
-        if not doc_dir.is_dir() or not (doc_dir / "meta.json").exists():
-            continue
+    for doc_dir in iter_processed_doc_dirs(processed):
         found_any = True
         errors += check_extracted_doc(str(doc_dir.relative_to(ROOT)))
     if not found_any:
