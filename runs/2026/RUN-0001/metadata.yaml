@@ -1,5 +1,6 @@
 run_id: RUN-0001
 process: prompt-experiment
+run_type: experiment
 version: "0.1"
 date: 2026-05-26
 author: "BA/AI"

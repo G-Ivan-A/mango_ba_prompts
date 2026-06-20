@@ -1,85 +1,55 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-20
 ai-generated: true
-type: registry
+type: index
 scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/133"
 related_artifacts:
-  - "standards/runs-contract-standard.md"
+  - "runs/CONTRACT.md"
+  - "runs/REGISTRY.md"
+  - "runs/stats/by-type.md"
 ---
 
 # Runs: результаты выполнения процессов
+
+## Что это
 
 `runs/` — единый каталог результатов выполнения процессов. Здесь хранятся
 зафиксированные прогоны промптов, BA-процессов, анализов и self-test сценариев.
 Маршруты и правила работы остаются в `docs/`, `prompts/`, `patterns/` и
 `standards/`; результат применения этих правил записывается сюда.
 
-## Контракт записи
+## Как использовать
 
-Каждая запись живёт по схеме `runs/YYYY/RUN-XXXX/`.
+- Найти существующий run: откройте [`REGISTRY.md`](REGISTRY.md) или статистику
+  по типам, датам и процессам.
+- Создать новый run: заведите каталог `runs/YYYY/RUN-XXXX/` с
+  `metadata.yaml`, `inputs/`, `outputs/`, `feedback/` и `logs/`.
+- Минимальные поля `metadata.yaml`: `run_id`, `process`, `run_type`,
+  `version`, `date`, `author`, `model`, `status`.
+- Проверить контракт: сверяйтесь с [`CONTRACT.md`](CONTRACT.md) и запускайте
+  локальную валидацию.
 
-```text
-runs/
-└── YYYY/
-    └── RUN-XXXX/
-        ├── metadata.yaml
-        ├── inputs/
-        ├── outputs/
-        ├── feedback/
-        └── logs/
-```
-
-`metadata.yaml` содержит минимальный набор полей:
-
-| Поле | Обязательное | Значение |
-| --- | --- | --- |
-| `run_id` | да | Идентификатор вида `RUN-XXXX`, совпадает с именем папки. |
-| `process` | да | Процесс или сценарий, который выполнялся. |
-| `version` | да | Версия записи или основного результата. |
-| `date` | да | Дата выполнения или фиксации результата в формате `YYYY-MM-DD`. |
-| `author` | да | Автор фиксации результата: БА, человек+LLM или агент. |
-| `model` | да | Использованная модель; если не записана, указывается `not-recorded`. |
-| `status` | да | Состояние результата: например `draft`, `experimental`, `success`, `partial-success`, `works-with-edits`. |
-
-Дополнительные поля разрешены: `source_paths`, `inputs`, `outputs`, `logs`,
-`related_issues`, `related_artifacts`, `related_runs`.
-
-## Назначение подкаталогов
-
-| Подкаталог | Что хранится |
-| --- | --- |
-| `inputs/` | Сырой вход, выдержки БЗ, исходные данные, которые можно хранить в репозитории. |
-| `outputs/` | Итоговые и промежуточные артефакты выполнения процесса. |
-| `feedback/` | Комментарии ревью, обратная связь, решения по результату. |
-| `logs/` | Логи эксперимента, метрики, трассировка выполнения, технические журналы. |
-
-Если подкаталог пока пустой, он сохраняется через `.gitkeep`, чтобы структура
-каждого run была одинаковой.
-
-## Реестр перенесённых записей Phase 0
-
-| Run | Дата | Процесс | Основной результат |
-| --- | --- | --- | --- |
-| [`RUN-0001`](2026/RUN-0001/metadata.yaml) | 2026-05-26 | prompt-experiment | [`tz-stats-prototype-2026-05.md`](2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md) |
-| [`RUN-0002`](2026/RUN-0002/metadata.yaml) | 2026-05-26 | user-story-generation | [`user-story_gen-from-raw-request_2026-05-26.md`](2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md) |
-| [`RUN-0003`](2026/RUN-0003/metadata.yaml) | 2026-05-26 | usecase-generation | [`usecase_gen-stepwise-alignment_2026-05-26.md`](2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md) |
-| [`RUN-0004`](2026/RUN-0004/metadata.yaml) | 2026-05-26 | prompt-audit | [`prompts-audit-2026-05-26.md`](2026/RUN-0004/outputs/prompts-audit-2026-05-26.md) |
-| [`RUN-0005`](2026/RUN-0005/metadata.yaml) | 2026-05-26 | prompt-selftest | [`prompts-selftest-2026-05-26.md`](2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md) |
-| [`RUN-0006`](2026/RUN-0006/metadata.yaml) | 2026-06-13 | session-debug-documentation | [`session-debug-summarizer-2026-06-13.md`](2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md) |
-| [`RUN-0007`](2026/RUN-0007/metadata.yaml) | 2026-06-16 | fr-generation | [`fr-generation-1027-live_2026-06-16.md`](2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md) |
-| [`RUN-0008`](2026/RUN-0008/metadata.yaml) | 2026-06-16 | kb-citation-check | [`kb-citation-check-2026-06-16.md`](2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md) |
-| [`RUN-0009`](2026/RUN-0009/metadata.yaml) | 2026-06-16 | industry-standards-ab-check | [`standards-applied-ab-2026-06-16.md`](2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md) |
-| [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
-| [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
-
-## Валидация
-
-Контракт проверяется локально и в CI:
+## Быстрый старт
 
 ```bash
+find runs/2026 -maxdepth 1 -type d -name 'RUN-*' | sort
+sed -n '1,80p' runs/REGISTRY.md
+sed -n '1,120p' runs/stats/by-type.md
 python3 scripts/validate_issue_123_runs_contract.py
+python3 scripts/validate_issue_133_runs_restructure.py
 ```
+
+## Навигация
+
+- [`CONTRACT.md`](CONTRACT.md) — контракт записи и обязательные поля
+  `metadata.yaml`.
+- [`REGISTRY.md`](REGISTRY.md) — полный реестр run'ов с типами и основными
+  результатами.
+- [`stats/by-type.md`](stats/by-type.md) — группировка по 5 типам run'ов.
+- [`stats/by-date.md`](stats/by-date.md) — хронология и месячные тренды.
+- [`stats/by-process.md`](stats/by-process.md) — статистика по процессам.

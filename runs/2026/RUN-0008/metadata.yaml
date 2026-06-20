@@ -1,5 +1,6 @@
 run_id: RUN-0008
 process: kb-citation-check
+run_type: validation
 version: "0.1"
 date: 2026-06-16
 author: "BA/AI"

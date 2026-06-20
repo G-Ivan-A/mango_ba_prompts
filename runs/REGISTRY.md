@@ -1,0 +1,27 @@
+---
+status: draft
+version: 0.2
+updated: 2026-06-20
+ai-generated: true
+type: registry
+scope: runs
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/133"
+---
+
+# Реестр runs/
+
+| Run | Дата | Тип | Процесс | Основной результат |
+| --- | --- | --- | --- | --- |
+| [`RUN-0001`](2026/RUN-0001/metadata.yaml) | 2026-05-26 | 🧪 `experiment` | prompt-experiment | [`tz-stats-prototype-2026-05.md`](2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md) |
+| [`RUN-0002`](2026/RUN-0002/metadata.yaml) | 2026-05-26 | 🏭 `generation` | user-story-generation | [`user-story_gen-from-raw-request_2026-05-26.md`](2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md) |
+| [`RUN-0003`](2026/RUN-0003/metadata.yaml) | 2026-05-26 | 🏭 `generation` | usecase-generation | [`usecase_gen-stepwise-alignment_2026-05-26.md`](2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md) |
+| [`RUN-0004`](2026/RUN-0004/metadata.yaml) | 2026-05-26 | 🔍 `validation` | prompt-audit | [`prompts-audit-2026-05-26.md`](2026/RUN-0004/outputs/prompts-audit-2026-05-26.md) |
+| [`RUN-0005`](2026/RUN-0005/metadata.yaml) | 2026-05-26 | 🔍 `validation` | prompt-selftest | [`prompts-selftest-2026-05-26.md`](2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md) |
+| [`RUN-0006`](2026/RUN-0006/metadata.yaml) | 2026-06-13 | 📝 `documentation` | session-debug-documentation | [`session-debug-summarizer-2026-06-13.md`](2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md) |
+| [`RUN-0007`](2026/RUN-0007/metadata.yaml) | 2026-06-16 | 🏭 `generation` | fr-generation | [`fr-generation-1027-live_2026-06-16.md`](2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md) |
+| [`RUN-0008`](2026/RUN-0008/metadata.yaml) | 2026-06-16 | 🔍 `validation` | kb-citation-check | [`kb-citation-check-2026-06-16.md`](2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md) |
+| [`RUN-0009`](2026/RUN-0009/metadata.yaml) | 2026-06-16 | 🧪 `experiment` | industry-standards-ab-check | [`standards-applied-ab-2026-06-16.md`](2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md) |
+| [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | 💼 `business-task` | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
+| [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | 💼 `business-task` | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |

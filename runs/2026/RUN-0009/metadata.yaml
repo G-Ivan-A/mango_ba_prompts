@@ -1,5 +1,6 @@
 run_id: RUN-0009
 process: industry-standards-ab-check
+run_type: experiment
 version: "0.1"
 date: 2026-06-16
 author: "BA/AI"

@@ -1,5 +1,6 @@
 run_id: RUN-0007
 process: fr-generation
+run_type: generation
 version: "0.1"
 date: 2026-06-16
 author: "BA/AI"
