@@ -14,7 +14,7 @@ source_pages: "ч.1: 18-22"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf","part":1,"pages":"18-22","global_pages":"18-22"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2296
+tokens: 2301
 status: extracted
 ai-generated: true
 ---

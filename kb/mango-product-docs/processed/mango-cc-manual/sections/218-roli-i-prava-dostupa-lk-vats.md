@@ -14,7 +14,7 @@ source_pages: "ч.6: 47-61"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf","part":6,"pages":"47-61","global_pages":"552-566"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 13066
+tokens: 13071
 status: extracted
 ai-generated: true
 ---

@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 125
+      "tokens": 130
     },
     {
       "file": "sections/01-g.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "г.",
-      "tokens": 588
+      "tokens": 593
     },
     {
       "file": "sections/02-nachalo-raboty.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Начало работы",
-      "tokens": 1243
+      "tokens": 1248
     },
     {
       "file": "sections/03-stranica-avtorizacii.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Страница авторизации",
-      "tokens": 292
+      "tokens": 297
     },
     {
       "file": "sections/04-nastroyka-wallboard.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Настройка Wallboard",
-      "tokens": 11525
+      "tokens": 11530
     },
     {
       "file": "sections/05-glavnoe-okno-modulya.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Главное окно модуля",
-      "tokens": 2247
+      "tokens": 2252
     }
   ],
   "source_document": "wallboard",
@@ -148,6 +148,6 @@
   ],
   "table_count": 24,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 954,
-  "tokens_total": 16020
+  "tokens_index": 969,
+  "tokens_total": 16050
 }

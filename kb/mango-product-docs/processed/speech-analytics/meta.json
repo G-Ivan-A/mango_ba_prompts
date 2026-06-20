@@ -14,7 +14,7 @@
         "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf"
       ],
       "title": "Руководство пользователя. Речевая аналитика",
-      "tokens_total": 86230,
+      "tokens_total": 86610,
       "version": "1.26"
     },
     {
@@ -29,7 +29,7 @@
         "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf"
       ],
       "title": "Руководство пользователя. Речевая аналитика & КАТС",
-      "tokens_total": 100207,
+      "tokens_total": 100667,
       "version": "1.26"
     },
     {
@@ -44,7 +44,7 @@
         "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf"
       ],
       "title": "Руководство пользователя. Речевая аналитика. Офлайн скоринг",
-      "tokens_total": 91583,
+      "tokens_total": 92018,
       "version": "1.26"
     },
     {
@@ -59,7 +59,7 @@
         "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf"
       ],
       "title": "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг",
-      "tokens_total": 97546,
+      "tokens_total": 97986,
       "version": "1.26"
     }
   ],
@@ -69,7 +69,7 @@
   "processing_mode": "multi_document",
   "product": "Mango Office",
   "source_dir": "kb/mango-product-docs/sources/speech-analytics",
-  "tokens_total": 375566,
+  "tokens_total": 377281,
   "total_pages": 548,
   "version": "1.26"
 }

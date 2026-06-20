@@ -14,7 +14,7 @@ source_pages: "ч.5: 77"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf","part":5,"pages":"77","global_pages":"481"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 309
+tokens: 314
 status: extracted
 ai-generated: true
 ---

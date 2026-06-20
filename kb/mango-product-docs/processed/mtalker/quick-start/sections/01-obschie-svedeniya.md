@@ -14,7 +14,7 @@ source_pages: "ч.1: 2"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/mTalker_Quick_start.pdf","part":1,"pages":"2","global_pages":"2"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 252
+tokens: 257
 status: extracted
 ai-generated: true
 ---

@@ -14,7 +14,7 @@ source_pages: "ч.1: 7-23"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/wallboard/Programma-dlya-EVM-Wallboard-Mango-Office_v7.22.25.pdf","part":1,"pages":"7-23","global_pages":"7-23"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 11525
+tokens: 11530
 status: extracted
 ai-generated: true
 ---

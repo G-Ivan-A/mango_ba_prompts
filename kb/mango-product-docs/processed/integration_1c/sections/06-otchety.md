@@ -14,7 +14,7 @@ source_pages: "ч.1: 32-40"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf","part":1,"pages":"32-40","global_pages":"32-40"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 3640
+tokens: 3645
 status: extracted
 ai-generated: true
 ---

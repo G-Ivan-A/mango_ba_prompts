@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1715
+      "tokens": 1720
     },
     {
       "file": "sections/01-obschie-svedeniya.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 517
+      "tokens": 522
     },
     {
       "file": "sections/02-standartnye-roli.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Стандартные роли",
-      "tokens": 974
+      "tokens": 979
     },
     {
       "file": "sections/03-upravlenie-rolyami.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Управление ролями",
-      "tokens": 454
+      "tokens": 459
     },
     {
       "file": "sections/04-prosmotr-spiska-roley.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Просмотр списка ролей",
-      "tokens": 259
+      "tokens": 264
     },
     {
       "file": "sections/05-sozdanie-roli.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Создание роли",
-      "tokens": 472
+      "tokens": 477
     },
     {
       "file": "sections/06-sozdanie-roli-putem-kopirovaniya.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Создание роли путем копирования",
-      "tokens": 164
+      "tokens": 169
     },
     {
       "file": "sections/07-kopirovat-rol-bez-zapretov-na-izmenenie.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Копировать роль без запретов на изменение настроек",
-      "tokens": 937
+      "tokens": 942
     },
     {
       "file": "sections/08-kopirovat-rol.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Копировать роль",
-      "tokens": 538
+      "tokens": 543
     },
     {
       "file": "sections/09-udalenie-roli.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Удаление роли",
-      "tokens": 216
+      "tokens": 221
     },
     {
       "file": "sections/10-sbrosit-nastroyki-roli.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Сбросить настройки роли",
-      "tokens": 480
+      "tokens": 485
     },
     {
       "file": "sections/11-nastroyka-prav-dostupa-roli.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Настройка прав доступа роли",
-      "tokens": 1531
+      "tokens": 1536
     },
     {
       "file": "sections/12-gibkaya-nastroyka-prav-dostupa-s-uchetom.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Гибкая настройка прав доступа с учетом ролей объекта",
-      "tokens": 1444
+      "tokens": 1449
     },
     {
       "file": "sections/13-matrica-roley-i-prav-dostupa.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Матрица ролей и прав доступа",
-      "tokens": 227
+      "tokens": 232
     },
     {
       "file": "sections/14-razdel-sotrudniki.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Раздел «Сотрудники»",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/15-vybor-podkontrolnyh-grupp.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Выбор подконтрольных групп",
-      "tokens": 350
+      "tokens": 355
     },
     {
       "file": "sections/16-sotrudniki-i-gruppy.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Сотрудники и группы",
-      "tokens": 5463
+      "tokens": 5468
     },
     {
       "file": "sections/17-razdel-instrumenty.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Раздел «Инструменты»",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/18-wfm.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "WFM",
-      "tokens": 1127
+      "tokens": 1132
     },
     {
       "file": "sections/19-adresnaya-kniga.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Адресная книга",
-      "tokens": 901
+      "tokens": 906
     },
     {
       "file": "sections/20-analitika.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "Аналитика",
-      "tokens": 293
+      "tokens": 298
     },
     {
       "file": "sections/21-analitika-calltouch.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Аналитика Calltouch",
-      "tokens": 215
+      "tokens": 220
     },
     {
       "file": "sections/22-golosovye-soobscheniya.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Голосовые сообщения",
-      "tokens": 749
+      "tokens": 754
     },
     {
       "file": "sections/23-dinamicheskiy-kolltreking.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Динамический коллтрекинг",
-      "tokens": 498
+      "tokens": 503
     },
     {
       "file": "sections/24-zadachi.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "Задачи",
-      "tokens": 340
+      "tokens": 345
     },
     {
       "file": "sections/25-zakaz-zvonka.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Заказ звонка",
-      "tokens": 221
+      "tokens": 226
     },
     {
       "file": "sections/26-zapis-razgovorov.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Запись разговоров",
-      "tokens": 2780
+      "tokens": 2785
     },
     {
       "file": "sections/27-istoriya-vyzovov.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "История вызовов",
-      "tokens": 753
+      "tokens": 758
     },
     {
       "file": "sections/28-ishodyaschiy-obzvon.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Исходящий обзвон",
-      "tokens": 774
+      "tokens": 779
     },
     {
       "file": "sections/29-kontrol-kachestva.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Контроль качества",
-      "tokens": 860
+      "tokens": 865
     },
     {
       "file": "sections/30-mangomobayl.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "МангоМобайл",
-      "tokens": 299
+      "tokens": 304
     },
     {
       "file": "sections/31-obrascheniya.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Обращения",
-      "tokens": 1276
+      "tokens": 1281
     },
     {
       "file": "sections/32-otpravka-sms.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "Отправка SMS",
-      "tokens": 340
+      "tokens": 345
     },
     {
       "file": "sections/33-otchety-kontakt-centra.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Отчеты Контакт-Центра",
-      "tokens": 2138
+      "tokens": 2143
     },
     {
       "file": "sections/34-panel-pokazateley.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Панель показателей",
-      "tokens": 262
+      "tokens": 267
     },
     {
       "file": "sections/35-razdel-upravlenie-dozvonom.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Раздел \"Управление дозвоном\"",
-      "tokens": 314
+      "tokens": 319
     },
     {
       "file": "sections/36-rechevaya-analitika.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "Речевая аналитика",
-      "tokens": 626
+      "tokens": 631
     },
     {
       "file": "sections/37-roboty.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "Роботы",
-      "tokens": 208
+      "tokens": 213
     },
     {
       "file": "sections/38-sdelki.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Сделки",
-      "tokens": 792
+      "tokens": 797
     },
     {
       "file": "sections/39-skripty.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Скрипты",
-      "tokens": 228
+      "tokens": 233
     },
     {
       "file": "sections/40-statistika-i-monitoring.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "Статистика и мониторинг",
-      "tokens": 310
+      "tokens": 315
     },
     {
       "file": "sections/41-staticheskiy-kolltreking.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "Статический коллтрекинг",
-      "tokens": 230
+      "tokens": 235
     },
     {
       "file": "sections/42-tekstovye-rassylki.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "Текстовые рассылки",
-      "tokens": 223
+      "tokens": 228
     },
     {
       "file": "sections/43-upravlenie-zvonkami.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "Управление звонками",
-      "tokens": 1007
+      "tokens": 1012
     },
     {
       "file": "sections/44-upravlenie-sotrudnikami.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Управление сотрудниками",
-      "tokens": 1303
+      "tokens": 1308
     },
     {
       "file": "sections/45-razdel-obrabotka-zvonkov.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "Раздел «Обработка звонков»",
-      "tokens": 78
+      "tokens": 83
     },
     {
       "file": "sections/46-golosovoe-menyu-i-raspredelenie-zvonkov.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Голосовое меню и распределение звонков",
-      "tokens": 1663
+      "tokens": 1668
     },
     {
       "file": "sections/47-nastroyki-dozvona-i-soobscheniy-po-umolc.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Настройки дозвона и сообщений по умолчанию",
-      "tokens": 226
+      "tokens": 231
     },
     {
       "file": "sections/48-nomera-podklyuchennye-k-ats.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Номера, подключенные к АТС",
-      "tokens": 778
+      "tokens": 783
     },
     {
       "file": "sections/49-pereadresaciya-po-nomeru-klienta.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Переадресация по номеру клиента",
-      "tokens": 216
+      "tokens": 221
     },
     {
       "file": "sections/50-chernyy-belyy-spisok.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "Черный/белый список",
-      "tokens": 298
+      "tokens": 303
     },
     {
       "file": "sections/51-razdel-nastroyki-ats.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "Раздел «Настройки АТС»",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/52-audiofayly.md",
@@ -974,7 +974,7 @@
         }
       ],
       "title": "Аудиофайлы",
-      "tokens": 270
+      "tokens": 275
     },
     {
       "file": "sections/53-bezopasnost-i-ogranicheniya.md",
@@ -992,7 +992,7 @@
         }
       ],
       "title": "Безопасность и ограничения",
-      "tokens": 990
+      "tokens": 995
     },
     {
       "file": "sections/54-dopolnitelnye-nastroyki.md",
@@ -1010,7 +1010,7 @@
         }
       ],
       "title": "Дополнительные настройки",
-      "tokens": 303
+      "tokens": 308
     },
     {
       "file": "sections/55-integracii.md",
@@ -1028,7 +1028,7 @@
         }
       ],
       "title": "Интеграции",
-      "tokens": 215
+      "tokens": 220
     },
     {
       "file": "sections/56-konferenc-svyaz.md",
@@ -1046,7 +1046,7 @@
         }
       ],
       "title": "Конференц-связь",
-      "tokens": 503
+      "tokens": 508
     },
     {
       "file": "sections/57-nastroyka-sip.md",
@@ -1064,7 +1064,7 @@
         }
       ],
       "title": "Настройка SIP",
-      "tokens": 918
+      "tokens": 923
     },
     {
       "file": "sections/58-upravlenie-uslugami.md",
@@ -1082,7 +1082,7 @@
         }
       ],
       "title": "Управление услугами",
-      "tokens": 215
+      "tokens": 220
     },
     {
       "file": "sections/59-razdel-finansy.md",
@@ -1100,7 +1100,7 @@
         }
       ],
       "title": "Раздел «Финансы»",
-      "tokens": 75
+      "tokens": 80
     },
     {
       "file": "sections/60-podklyuchenie-kontakt-centra.md",
@@ -1118,7 +1118,7 @@
         }
       ],
       "title": "Подключение Контакт-центра",
-      "tokens": 303
+      "tokens": 308
     },
     {
       "file": "sections/61-razdel-finansy-i-balans-licevogo-scheta.md",
@@ -1136,7 +1136,7 @@
         }
       ],
       "title": "Раздел \"Финансы\" и баланс Лицевого счета",
-      "tokens": 1080
+      "tokens": 1085
     },
     {
       "file": "sections/62-smena-tarifa-i-podklyuchenie-uslug.md",
@@ -1154,7 +1154,7 @@
         }
       ],
       "title": "Смена тарифа и подключение услуг",
-      "tokens": 430
+      "tokens": 435
     },
     {
       "file": "sections/63-razdel-podderzhka.md",
@@ -1172,7 +1172,7 @@
         }
       ],
       "title": "Раздел «Поддержка»",
-      "tokens": 260
+      "tokens": 265
     },
     {
       "file": "sections/64-razdel-funkcii-mango-talker.md",
@@ -1190,7 +1190,7 @@
         }
       ],
       "title": "Раздел «Функции Mango Talker»",
-      "tokens": 1523
+      "tokens": 1528
     }
   ],
   "source_document": "Rolevaya-model-vats",
@@ -1210,6 +1210,6 @@
   ],
   "table_count": 132,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5175,
-  "tokens_total": 45383
+  "tokens_index": 5190,
+  "tokens_total": 45708
 }

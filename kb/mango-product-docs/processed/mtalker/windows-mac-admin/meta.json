@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 487
+      "tokens": 492
     },
     {
       "file": "sections/01-obschie-svedeniya.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 169
+      "tokens": 174
     },
     {
       "file": "sections/02-kak-zaregistrirovat-novogo-sotrudnika-i.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Как зарегистрировать нового сотрудника и выдать ему логин и пароль для входа в MTalker",
-      "tokens": 722
+      "tokens": 727
     },
     {
       "file": "sections/03-shema-priema-zvonkov.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Схема приема звонков",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/04-obschie-svedeniya.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 348
+      "tokens": 353
     },
     {
       "file": "sections/05-kak-dobavit-nomer-v-shemu.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Как добавить номер в схему",
-      "tokens": 162
+      "tokens": 167
     },
     {
       "file": "sections/06-kak-isklyuchit-nomer-iz-shemy.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Как исключить номер из схемы",
-      "tokens": 228
+      "tokens": 233
     },
     {
       "file": "sections/07-shema-tolko-na-osnovnoy-nomer.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Схема “Только на основной номер”",
-      "tokens": 722
+      "tokens": 727
     },
     {
       "file": "sections/08-shema-na-vse-nomera-odnovremenno.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Схема “На все номера одновременно”",
-      "tokens": 643
+      "tokens": 648
     },
     {
       "file": "sections/09-shema-na-vse-nomera-po-ocheredi.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Схема “На все номера по очереди”",
-      "tokens": 693
+      "tokens": 698
     },
     {
       "file": "sections/10-raspisanie-priema-zvonkov.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Расписание приема звонков",
-      "tokens": 999
+      "tokens": 1004
     },
     {
       "file": "sections/11-vybor-ishodyaschego-nomera.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Выбор исходящего номера",
-      "tokens": 292
+      "tokens": 297
     },
     {
       "file": "sections/12-perehod-k-registracii-novogo-sotrudnika.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Переход к регистрации нового сотрудника в ВАТС",
-      "tokens": 364
+      "tokens": 369
     },
     {
       "file": "sections/13-pokupka-mnogokanalnyh-nomerov.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Покупка многоканальных номеров",
-      "tokens": 402
+      "tokens": 407
     },
     {
       "file": "sections/14-iniciaciya-ishodyaschego-vyzova-iz-koman.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Инициация исходящего вызова из командной строки",
-      "tokens": 219
+      "tokens": 224
     }
   ],
   "source_document": "windows-mac-admin",
@@ -310,6 +310,6 @@
   ],
   "table_count": 0,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1813,
-  "tokens_total": 6515
+  "tokens_index": 1831,
+  "tokens_total": 6590
 }

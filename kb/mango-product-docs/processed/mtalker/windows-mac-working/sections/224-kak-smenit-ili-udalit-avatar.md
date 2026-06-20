@@ -14,7 +14,7 @@ source_pages: "ч.1: 92-93"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf","part":1,"pages":"92-93","global_pages":"92-93"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 808
+tokens: 813
 status: extracted
 ai-generated: true
 ---

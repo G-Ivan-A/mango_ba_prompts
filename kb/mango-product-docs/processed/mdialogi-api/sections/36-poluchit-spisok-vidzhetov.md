@@ -14,7 +14,7 @@ source_pages: "ч.1: 29-33"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf","part":1,"pages":"29-33","global_pages":"29-33"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2265
+tokens: 2270
 status: extracted
 ai-generated: true
 ---

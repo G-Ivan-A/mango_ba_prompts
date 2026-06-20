@@ -14,7 +14,7 @@ source_pages: "ч.1: 12-13"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/lk-vats-sso/MANGO_OFFICE_LK_VATS_Auth_SSO.pdf","part":1,"pages":"12-13","global_pages":"12-13"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 610
+tokens: 615
 status: extracted
 ai-generated: true
 ---

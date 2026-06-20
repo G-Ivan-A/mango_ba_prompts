@@ -38,7 +38,7 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1476
+      "tokens": 1481
     },
     {
       "file": "sections/01-nachalo-raboty-s-integraciey.md",
@@ -56,7 +56,7 @@
         }
       ],
       "title": "Начало работы с интеграцией",
-      "tokens": 89
+      "tokens": 94
     },
     {
       "file": "sections/02-kak-nastroit-integraciyu.md",
@@ -74,7 +74,7 @@
         }
       ],
       "title": "Как настроить интеграцию",
-      "tokens": 72
+      "tokens": 77
     },
     {
       "file": "sections/03-podgotovka.md",
@@ -92,7 +92,7 @@
         }
       ],
       "title": "Подготовка",
-      "tokens": 485
+      "tokens": 490
     },
     {
       "file": "sections/04-poryadok-deystviy.md",
@@ -110,7 +110,7 @@
         }
       ],
       "title": "Порядок действий",
-      "tokens": 646
+      "tokens": 651
     },
     {
       "file": "sections/05-shag-1-podklyuchite-virtualnuyu-ats-mang.md",
@@ -128,7 +128,7 @@
         }
       ],
       "title": "Шаг 1. Подключите Виртуальную АТС MANGO OFFICE",
-      "tokens": 168
+      "tokens": 173
     },
     {
       "file": "sections/06-shag-2-ustanovka-softfona-mango-talker.md",
@@ -146,7 +146,7 @@
         }
       ],
       "title": "Шаг 2. Установка софтфона Mango Talker",
-      "tokens": 537
+      "tokens": 542
     },
     {
       "file": "sections/07-shag-3-nastroyka-virtualnoy-ats-vybor-pa.md",
@@ -164,7 +164,7 @@
         }
       ],
       "title": "Шаг 3. Настройка Виртуальной АТС. Выбор пакета интеграции",
-      "tokens": 744
+      "tokens": 749
     },
     {
       "file": "sections/08-shag-4-ustanovka-prilozheniya-integracii.md",
@@ -182,7 +182,7 @@
         }
       ],
       "title": "Шаг 4. Установка приложения интеграции в Битрикс24",
-      "tokens": 934
+      "tokens": 939
     },
     {
       "file": "sections/09-shag-5-sopostavlenie-sotrudnikov-virtual.md",
@@ -200,7 +200,7 @@
         }
       ],
       "title": "Шаг 5. Сопоставление сотрудников Виртуальной АТС и Битрикс24",
-      "tokens": 147
+      "tokens": 152
     },
     {
       "file": "sections/10-obschee.md",
@@ -218,7 +218,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 790
+      "tokens": 795
     },
     {
       "file": "sections/11-kak-nastroit-sopostavlenie-sotrudnikov.md",
@@ -236,7 +236,7 @@
         }
       ],
       "title": "Как настроить сопоставление сотрудников",
-      "tokens": 614
+      "tokens": 619
     },
     {
       "file": "sections/12-kak-sohranyat-vse-zvonki-v-bitriks24-obo.md",
@@ -254,7 +254,7 @@
         }
       ],
       "title": "Как сохранять все звонки в Битрикс24. Обобщенно",
-      "tokens": 399
+      "tokens": 404
     },
     {
       "file": "sections/13-kak-vklyuchit-peredachu-dannyh-po-ne-zvo.md",
@@ -272,7 +272,7 @@
         }
       ],
       "title": "Как включить передачу данных по “не звонковым” обращениям",
-      "tokens": 364
+      "tokens": 369
     },
     {
       "file": "sections/14-kak-posmotret-spiski-sotrudnikov-vats-i.md",
@@ -290,7 +290,7 @@
         }
       ],
       "title": "Как посмотреть списки сотрудников ВАТС и сотрудников Битрикс24",
-      "tokens": 361
+      "tokens": 366
     },
     {
       "file": "sections/15-shag-6-proverka-nastroyki-telefonii.md",
@@ -308,7 +308,7 @@
         }
       ],
       "title": "Шаг 6. Проверка настройки телефонии",
-      "tokens": 698
+      "tokens": 703
     },
     {
       "file": "sections/16-ustanovka-dopolnitelnyh-nastroek-integra.md",
@@ -326,7 +326,7 @@
         }
       ],
       "title": "Установка дополнительных настроек интеграции при подключении расширенного пакета",
-      "tokens": 219
+      "tokens": 224
     },
     {
       "file": "sections/17-raznye-vozmozhnosti-bazovogo-i-rasshiren.md",
@@ -344,7 +344,7 @@
         }
       ],
       "title": "Разные возможности базового и расширенного пакетов",
-      "tokens": 79
+      "tokens": 84
     },
     {
       "file": "sections/18-bazovyy-paket.md",
@@ -362,7 +362,7 @@
         }
       ],
       "title": "Базовый пакет",
-      "tokens": 1297
+      "tokens": 1302
     },
     {
       "file": "sections/19-rasshirennyy-paket.md",
@@ -380,7 +380,7 @@
         }
       ],
       "title": "Расширенный пакет",
-      "tokens": 1905
+      "tokens": 1910
     },
     {
       "file": "sections/20-kak-proverit-chto-dannye-o-zvonkah-pered.md",
@@ -398,7 +398,7 @@
         }
       ],
       "title": "Как проверить, что данные о звонках передаются в Битрикс24",
-      "tokens": 901
+      "tokens": 906
     },
     {
       "file": "sections/21-kak-otobrazhayutsya-dannye-o-zvonke-v-bi.md",
@@ -416,7 +416,7 @@
         }
       ],
       "title": "Как отображаются данные о звонке в Битрикс24. Обобщенно",
-      "tokens": 286
+      "tokens": 291
     },
     {
       "file": "sections/22-kak-pozvonit-ili-prinyat-zvonok.md",
@@ -434,7 +434,7 @@
         }
       ],
       "title": "Как позвонить или принять звонок",
-      "tokens": 487
+      "tokens": 492
     },
     {
       "file": "sections/23-nastroyki-prilozheniya-integracii-s-bitr.md",
@@ -452,7 +452,7 @@
         }
       ],
       "title": "Настройки приложения интеграции с Битрикс24",
-      "tokens": 124
+      "tokens": 129
     },
     {
       "file": "sections/24-kak-otkryt-formu-nastroyki-prilozheniya.md",
@@ -470,7 +470,7 @@
         }
       ],
       "title": "Как открыть форму настройки приложения",
-      "tokens": 383
+      "tokens": 388
     },
     {
       "file": "sections/25-nastroyka-sohranyat-vse-zvonki-ili-kak-s.md",
@@ -488,7 +488,7 @@
         }
       ],
       "title": "Настройка “Сохранять все звонки” или как сохраняются звонки сотрудников, не указанных в таблице сопоставления",
-      "tokens": 160
+      "tokens": 165
     },
     {
       "file": "sections/26-obschee.md",
@@ -506,7 +506,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 285
+      "tokens": 290
     },
     {
       "file": "sections/27-podrobno-ob-osobennostyah-raboty.md",
@@ -524,7 +524,7 @@
         }
       ],
       "title": "Подробно об особенностях работы",
-      "tokens": 1600
+      "tokens": 1605
     },
     {
       "file": "sections/28-kak-vklyuchit-nastroyku.md",
@@ -542,7 +542,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 306
+      "tokens": 311
     },
     {
       "file": "sections/29-obrabotka-vhodyaschih-zvonkov.md",
@@ -560,7 +560,7 @@
         }
       ],
       "title": "Обработка входящих звонков",
-      "tokens": 72
+      "tokens": 77
     },
     {
       "file": "sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md",
@@ -578,7 +578,7 @@
         }
       ],
       "title": "Автоматически создавать лид и дело при входящих звонках",
-      "tokens": 648
+      "tokens": 653
     },
     {
       "file": "sections/31-ukazyvat-istochnik-pri-vhodyaschih-zvonk.md",
@@ -596,7 +596,7 @@
         }
       ],
       "title": "Указывать источник при входящих звонках",
-      "tokens": 74
+      "tokens": 79
     },
     {
       "file": "sections/32-na-chto-vliyaet-eta-nastroyka.md",
@@ -614,7 +614,7 @@
         }
       ],
       "title": "На что влияет эта настройка",
-      "tokens": 475
+      "tokens": 480
     },
     {
       "file": "sections/33-trebovaniya.md",
@@ -632,7 +632,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 166
+      "tokens": 171
     },
     {
       "file": "sections/34-kak-nastroit-spravochnik-istochnikov.md",
@@ -650,7 +650,7 @@
         }
       ],
       "title": "Как настроить справочник источников",
-      "tokens": 853
+      "tokens": 858
     },
     {
       "file": "sections/35-kak-vklyuchit-nastroyku.md",
@@ -668,7 +668,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 432
+      "tokens": 437
     },
     {
       "file": "sections/36-obnovlyat-otvetstvennogo-pri-perevodah-v.md",
@@ -686,7 +686,7 @@
         }
       ],
       "title": "Обновлять ответственного при переводах входящих вызовов",
-      "tokens": 118
+      "tokens": 123
     },
     {
       "file": "sections/37-na-chto-vliyaet-eta-nastroyka.md",
@@ -704,7 +704,7 @@
         }
       ],
       "title": "На что влияет эта настройка",
-      "tokens": 314
+      "tokens": 319
     },
     {
       "file": "sections/38-kak-vklyuchit-nastroyku.md",
@@ -722,7 +722,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 285
+      "tokens": 290
     },
     {
       "file": "sections/39-ukazat-otvetstvennogo-pri-propuschennyh.md",
@@ -740,7 +740,7 @@
         }
       ],
       "title": "Указать ответственного при пропущенных звонках в группу",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/40-trebovaniya.md",
@@ -758,7 +758,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 125
+      "tokens": 130
     },
     {
       "file": "sections/41-na-chto-vliyaet-eta-nastroyka.md",
@@ -776,7 +776,7 @@
         }
       ],
       "title": "На что влияет эта настройка",
-      "tokens": 221
+      "tokens": 226
     },
     {
       "file": "sections/42-vot-kak-vklyuchit-nastroyku.md",
@@ -794,7 +794,7 @@
         }
       ],
       "title": "Вот как включить настройку",
-      "tokens": 329
+      "tokens": 334
     },
     {
       "file": "sections/43-ukazat-otvetstvennogo-pri-propuschennyh.md",
@@ -812,7 +812,7 @@
         }
       ],
       "title": "Указать ответственного при пропущенных звонках в IVR",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/44-trebovaniya.md",
@@ -830,7 +830,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 125
+      "tokens": 130
     },
     {
       "file": "sections/45-na-chto-vliyaet-eta-nastroyka.md",
@@ -848,7 +848,7 @@
         }
       ],
       "title": "На что влияет эта настройка",
-      "tokens": 196
+      "tokens": 201
     },
     {
       "file": "sections/46-kak-vklyuchit-nastroyku.md",
@@ -866,7 +866,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 325
+      "tokens": 330
     },
     {
       "file": "sections/47-integraciya-s-dinamicheskim-kolltrekingo.md",
@@ -884,7 +884,7 @@
         }
       ],
       "title": "Интеграция с Динамическим коллтрекингом",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/48-obschee.md",
@@ -902,7 +902,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 404
+      "tokens": 409
     },
     {
       "file": "sections/49-chto-eto-daet.md",
@@ -920,7 +920,7 @@
         }
       ],
       "title": "Что это дает?",
-      "tokens": 1053
+      "tokens": 1058
     },
     {
       "file": "sections/50-vo-vremya-zvonka.md",
@@ -938,7 +938,7 @@
         }
       ],
       "title": "Во время звонка",
-      "tokens": 504
+      "tokens": 509
     },
     {
       "file": "sections/51-v-otchetah-i-spiskah-bitriks24.md",
@@ -956,7 +956,7 @@
         }
       ],
       "title": "В отчетах и списках Битрикс24",
-      "tokens": 380
+      "tokens": 385
     },
     {
       "file": "sections/52-kak-vklyuchit-nastroyku.md",
@@ -974,7 +974,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 273
+      "tokens": 278
     },
     {
       "file": "sections/53-kak-zagruzit-v-bitriks24-dannye-kolltrek.md",
@@ -992,7 +992,7 @@
         }
       ],
       "title": "Как загрузить в Битрикс24 данные коллтрекинга о других типах обращений, кроме звонков",
-      "tokens": 247
+      "tokens": 252
     },
     {
       "file": "sections/54-dobavlyat-soobschenie-o-zvonke-sotrudnik.md",
@@ -1010,7 +1010,7 @@
         }
       ],
       "title": "Добавлять сообщение о звонке сотруднику Битрикс24 в чат",
-      "tokens": 629
+      "tokens": 634
     },
     {
       "file": "sections/55-umnye-algoritmy-raspredeleniya-vhodyasch.md",
@@ -1028,7 +1028,7 @@
         }
       ],
       "title": "Умные алгоритмы распределения входящих вызовов",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/56-obzor.md",
@@ -1046,7 +1046,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 825
+      "tokens": 830
     },
     {
       "file": "sections/57-predvaritelnye-deystviya-vklyuchenie-zvu.md",
@@ -1064,7 +1064,7 @@
         }
       ],
       "title": "Предварительные действия. Включение звукового приветствия",
-      "tokens": 335
+      "tokens": 340
     },
     {
       "file": "sections/58-kak-nastroit-raspredelenie-zvonkov-v-pri.md",
@@ -1082,7 +1082,7 @@
         }
       ],
       "title": "Как настроить распределение звонков в приложении интеграции",
-      "tokens": 1248
+      "tokens": 1253
     },
     {
       "file": "sections/59-chto-budet-esli-v-sheme-raspredeleniya-n.md",
@@ -1100,7 +1100,7 @@
         }
       ],
       "title": "Что будет, если в схеме распределения не включен параметр \"ожидать окончания\" или отсутствует звуковое приветствие",
-      "tokens": 683
+      "tokens": 688
     },
     {
       "file": "sections/60-znachenie-pereadresovyvat-na-otvetstvenn.md",
@@ -1118,7 +1118,7 @@
         }
       ],
       "title": "Значение \"Переадресовывать на ответственного и переадресовывать далее на номер, если нет ответа\"",
-      "tokens": 866
+      "tokens": 871
     },
     {
       "file": "sections/61-primery-nastroyki-pravil-umnogo-algoritm.md",
@@ -1136,7 +1136,7 @@
         }
       ],
       "title": "Примеры настройки правил умного алгоритма распределения",
-      "tokens": 1344
+      "tokens": 1349
     },
     {
       "file": "sections/62-nastroyka-raspisaniya-raboty-umnyh-pravi.md",
@@ -1154,7 +1154,7 @@
         }
       ],
       "title": "Настройка расписания работы умных правил",
-      "tokens": 352
+      "tokens": 357
     },
     {
       "file": "sections/63-filtrovat-vhodyaschie-zvonki-po-liniyam.md",
@@ -1172,7 +1172,7 @@
         }
       ],
       "title": "Фильтровать входящие звонки по линиям",
-      "tokens": 736
+      "tokens": 741
     },
     {
       "file": "sections/64-sovershenie-ishodyaschih-zvonkov.md",
@@ -1190,7 +1190,7 @@
         }
       ],
       "title": "Совершение исходящих звонков",
-      "tokens": 75
+      "tokens": 80
     },
     {
       "file": "sections/65-avtomaticheskiy-priem-pri-ishodyaschem-z.md",
@@ -1208,7 +1208,7 @@
         }
       ],
       "title": "Автоматический прием при исходящем звонке",
-      "tokens": 604
+      "tokens": 609
     },
     {
       "file": "sections/66-perezvanivat-s-nomera-na-kotoryy-zvonil.md",
@@ -1226,7 +1226,7 @@
         }
       ],
       "title": "Перезванивать с номера, на который звонил Клиент",
-      "tokens": 75
+      "tokens": 80
     },
     {
       "file": "sections/67-obzor.md",
@@ -1244,7 +1244,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 551
+      "tokens": 556
     },
     {
       "file": "sections/68-kak-vklyuchit-nastroyku.md",
@@ -1262,7 +1262,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 293
+      "tokens": 298
     },
     {
       "file": "sections/69-otpravka-sms.md",
@@ -1280,7 +1280,7 @@
         }
       ],
       "title": "Отправка SMS",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/70-sms-vizitka.md",
@@ -1298,7 +1298,7 @@
         }
       ],
       "title": "SMS-визитка",
-      "tokens": 61
+      "tokens": 66
     },
     {
       "file": "sections/71-obzor.md",
@@ -1316,7 +1316,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 550
+      "tokens": 555
     },
     {
       "file": "sections/72-kak-vklyuchit-i-nastroit.md",
@@ -1334,7 +1334,7 @@
         }
       ],
       "title": "Как включить и настроить",
-      "tokens": 1073
+      "tokens": 1078
     },
     {
       "file": "sections/73-otpravka-sms-vruchnuyu-iz-kartochki-lida.md",
@@ -1352,7 +1352,7 @@
         }
       ],
       "title": "Отправка SMS вручную из карточки лида/контакта/сделки",
-      "tokens": 81
+      "tokens": 86
     },
     {
       "file": "sections/74-obzor.md",
@@ -1370,7 +1370,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 578
+      "tokens": 583
     },
     {
       "file": "sections/75-kak-vklyuchit-vozmozhnost-otpravki-sms.md",
@@ -1388,7 +1388,7 @@
         }
       ],
       "title": "Как включить возможность отправки sms",
-      "tokens": 187
+      "tokens": 192
     },
     {
       "file": "sections/76-sms-rassylka.md",
@@ -1406,7 +1406,7 @@
         }
       ],
       "title": "SMS-рассылка",
-      "tokens": 67
+      "tokens": 72
     },
     {
       "file": "sections/77-obzor.md",
@@ -1424,7 +1424,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 171
+      "tokens": 176
     },
     {
       "file": "sections/78-trebovaniya.md",
@@ -1442,7 +1442,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 200
+      "tokens": 205
     },
     {
       "file": "sections/79-kak-vklyuchit-nastroyku.md",
@@ -1460,7 +1460,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 173
+      "tokens": 178
     },
     {
       "file": "sections/80-kak-otpravit-sms-rassylku.md",
@@ -1478,7 +1478,7 @@
         }
       ],
       "title": "Как отправить sms-рассылку",
-      "tokens": 508
+      "tokens": 513
     },
     {
       "file": "sections/81-sms-uvedomleniya-iz-robotov-prodazh-proc.md",
@@ -1496,7 +1496,7 @@
         }
       ],
       "title": "SMS уведомления из роботов продаж/процессов",
-      "tokens": 79
+      "tokens": 84
     },
     {
       "file": "sections/82-obzor.md",
@@ -1514,7 +1514,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 238
+      "tokens": 243
     },
     {
       "file": "sections/83-kak-vklyuchit-nastroyku.md",
@@ -1532,7 +1532,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 218
+      "tokens": 223
     },
     {
       "file": "sections/84-kak-nastroit-uvedomlenie-v-robotah-i-biz.md",
@@ -1550,7 +1550,7 @@
         }
       ],
       "title": "Как настроить уведомление в роботах и бизнес-процессах",
-      "tokens": 762
+      "tokens": 767
     },
     {
       "file": "sections/85-otobrazhat-sdelki-v-kartochke-zvonka.md",
@@ -1568,7 +1568,7 @@
         }
       ],
       "title": "Отображать сделки в карточке звонка",
-      "tokens": 368
+      "tokens": 373
     },
     {
       "file": "sections/86-podderzhivat-obratnye-zvonki-ot-bitriks2.md",
@@ -1586,7 +1586,7 @@
         }
       ],
       "title": "Поддерживать обратные звонки от Битрикс24",
-      "tokens": 80
+      "tokens": 85
     },
     {
       "file": "sections/87-kak-eto-rabotaet.md",
@@ -1604,7 +1604,7 @@
         }
       ],
       "title": "Как это работает",
-      "tokens": 495
+      "tokens": 500
     },
     {
       "file": "sections/88-ogranicheniya.md",
@@ -1622,7 +1622,7 @@
         }
       ],
       "title": "Ограничения",
-      "tokens": 271
+      "tokens": 276
     },
     {
       "file": "sections/89-kak-vklyuchit-ili-vyklyuchit-podderzhku.md",
@@ -1640,7 +1640,7 @@
         }
       ],
       "title": "Как включить или выключить поддержку обратных звонков",
-      "tokens": 324
+      "tokens": 329
     },
     {
       "file": "sections/90-integraciya-s-rechevoy-analitikoy.md",
@@ -1658,7 +1658,7 @@
         }
       ],
       "title": "Интеграция с речевой аналитикой",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/91-pered-nachalom-raboty.md",
@@ -1676,7 +1676,7 @@
         }
       ],
       "title": "Перед началом работы",
-      "tokens": 296
+      "tokens": 301
     },
     {
       "file": "sections/92-sohranenie-tematik-razgovorov.md",
@@ -1694,7 +1694,7 @@
         }
       ],
       "title": "Сохранение тематик разговоров",
-      "tokens": 68
+      "tokens": 73
     },
     {
       "file": "sections/93-obschie-svedeniya.md",
@@ -1712,7 +1712,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 761
+      "tokens": 766
     },
     {
       "file": "sections/94-kak-eto-rabotaet.md",
@@ -1730,7 +1730,7 @@
         }
       ],
       "title": "Как это работает",
-      "tokens": 509
+      "tokens": 514
     },
     {
       "file": "sections/95-kak-vklyuchit-sohranenie-tematik.md",
@@ -1748,7 +1748,7 @@
         }
       ],
       "title": "Как включить сохранение тематик",
-      "tokens": 375
+      "tokens": 380
     },
     {
       "file": "sections/96-kak-posmotret-tematiku-razgovora.md",
@@ -1766,7 +1766,7 @@
         }
       ],
       "title": "Как посмотреть тематику разговора",
-      "tokens": 196
+      "tokens": 201
     },
     {
       "file": "sections/97-sohranenie-tekstov-rechevoy-analitiki.md",
@@ -1784,7 +1784,7 @@
         }
       ],
       "title": "Сохранение текстов Речевой аналитики",
-      "tokens": 71
+      "tokens": 76
     },
     {
       "file": "sections/98-obschie-svedeniya.md",
@@ -1802,7 +1802,7 @@
         }
       ],
       "title": "Общие сведения",
-      "tokens": 506
+      "tokens": 511
     },
     {
       "file": "sections/99-kak-nastroit.md",
@@ -1820,7 +1820,7 @@
         }
       ],
       "title": "Как настроить",
-      "tokens": 278
+      "tokens": 283
     },
     {
       "file": "sections/100-kak-posmotret-raspoznannyy-tekst.md",
@@ -1838,7 +1838,7 @@
         }
       ],
       "title": "Как посмотреть распознанный текст",
-      "tokens": 267
+      "tokens": 272
     },
     {
       "file": "sections/101-peredacha-dannyh-v-rechevuyu-analitiku.md",
@@ -1856,7 +1856,7 @@
         }
       ],
       "title": "Передача данных в Речевую аналитику",
-      "tokens": 497
+      "tokens": 502
     },
     {
       "file": "sections/102-obrabotka-vhodyaschih-vebhukov.md",
@@ -1874,7 +1874,7 @@
         }
       ],
       "title": "Обработка входящих вебхуков",
-      "tokens": 73
+      "tokens": 78
     },
     {
       "file": "sections/103-tipy-vebhukov.md",
@@ -1892,7 +1892,7 @@
         }
       ],
       "title": "Типы вебхуков",
-      "tokens": 659
+      "tokens": 664
     },
     {
       "file": "sections/104-avtoperezvon-cherez-vebhuk.md",
@@ -1910,7 +1910,7 @@
         }
       ],
       "title": "Автоперезвон через вебхук",
-      "tokens": 69
+      "tokens": 74
     },
     {
       "file": "sections/105-obzor.md",
@@ -1928,7 +1928,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 456
+      "tokens": 461
     },
     {
       "file": "sections/106-kak-vklyuchit-avtoperezvon-cherez-vebhuk.md",
@@ -1946,7 +1946,7 @@
         }
       ],
       "title": "Как включить автоперезвон через вебхук",
-      "tokens": 442
+      "tokens": 447
     },
     {
       "file": "sections/107-peremeschenie-sdelok-v-bitriks24-cherez.md",
@@ -1964,7 +1964,7 @@
         }
       ],
       "title": "Перемещение сделок в Битрикс24 через вебхук",
-      "tokens": 76
+      "tokens": 81
     },
     {
       "file": "sections/108-obschee.md",
@@ -1982,7 +1982,7 @@
         }
       ],
       "title": "Общее",
-      "tokens": 652
+      "tokens": 657
     },
     {
       "file": "sections/109-nastroyka-vebhuka-v-prilozhenii-integrac.md",
@@ -2000,7 +2000,7 @@
         }
       ],
       "title": "Настройка вебхука в приложении интеграции Битрикс24",
-      "tokens": 1117
+      "tokens": 1122
     },
     {
       "file": "sections/110-dobavlenie-vo-vneshnyuyu-sistemu-url-adr.md",
@@ -2018,7 +2018,7 @@
         }
       ],
       "title": "Добавление во внешнюю систему URL-адреса вебхука перемещения сделок. Общие требования.",
-      "tokens": 775
+      "tokens": 780
     },
     {
       "file": "sections/111-opisanie-parametrov-vebhuka.md",
@@ -2036,7 +2036,7 @@
         }
       ],
       "title": "Описание параметров вебхука",
-      "tokens": 151
+      "tokens": 156
     },
     {
       "file": "sections/112-dealid.md",
@@ -2054,7 +2054,7 @@
         }
       ],
       "title": "DealID",
-      "tokens": 214
+      "tokens": 219
     },
     {
       "file": "sections/113-result.md",
@@ -2072,7 +2072,7 @@
         }
       ],
       "title": "Result",
-      "tokens": 150
+      "tokens": 155
     },
     {
       "file": "sections/114-opisanie-dopustimyh-znacheniy-parametra.md",
@@ -2090,7 +2090,7 @@
         }
       ],
       "title": "Описание допустимых значений параметра Result.",
-      "tokens": 1274
+      "tokens": 1279
     },
     {
       "file": "sections/115-zagruzhat-otsutstvuyuschie-zvonki-v-crm.md",
@@ -2108,7 +2108,7 @@
         }
       ],
       "title": "Загружать отсутствующие звонки в CRM",
-      "tokens": 463
+      "tokens": 468
     },
     {
       "file": "sections/116-vsplyvayuschie-soobscheniya-ob-oshibkah.md",
@@ -2126,7 +2126,7 @@
         }
       ],
       "title": "Всплывающие сообщения об ошибках в интерфейсе Битрикс24",
-      "tokens": 406
+      "tokens": 411
     },
     {
       "file": "sections/117-kak-vklyuchit-ili-vyklyuchit-pokaz-zvonk.md",
@@ -2144,7 +2144,7 @@
         }
       ],
       "title": "Как включить или выключить показ звонков в календаре",
-      "tokens": 600
+      "tokens": 605
     },
     {
       "file": "sections/118-poisk-po-nomeru-telefona-sredi-zapisey-b.md",
@@ -2162,7 +2162,7 @@
         }
       ],
       "title": "Поиск по номеру телефона среди записей Битрикс24 (в приложении)",
-      "tokens": 127
+      "tokens": 132
     },
     {
       "file": "sections/119-nomer-drugogo-operatora-podklyuchennyy-k.md",
@@ -2180,7 +2180,7 @@
         }
       ],
       "title": "Номер другого оператора, подключенный к Виртуальной АТС в Личном кабинете MANGO OFFICE",
-      "tokens": 224
+      "tokens": 229
     },
     {
       "file": "sections/120-ispolzovanie-sposobov-dozvona-do-sotrudn.md",
@@ -2198,7 +2198,7 @@
         }
       ],
       "title": "Использование способов дозвона до сотрудника и алгоритмов дозвона в ЛК",
-      "tokens": 221
+      "tokens": 226
     },
     {
       "file": "sections/121-ispolzovanie-algoritmov-raspredeleniya-v.md",
@@ -2216,7 +2216,7 @@
         }
       ],
       "title": "Использование алгоритмов распределения вызовов",
-      "tokens": 155
+      "tokens": 160
     },
     {
       "file": "sections/122-pereklyuchenie-mezhdu-rezhimami-raboty-b.md",
@@ -2234,7 +2234,7 @@
         }
       ],
       "title": "Переключение между режимами работы Битрикс24",
-      "tokens": 643
+      "tokens": 648
     },
     {
       "file": "sections/123-nastroyka-otobrazheniya-kartochki-zvonka.md",
@@ -2252,7 +2252,7 @@
         }
       ],
       "title": "Настройка отображения карточки звонка",
-      "tokens": 538
+      "tokens": 543
     },
     {
       "file": "sections/124-integraciya-s-kontakt-centrom-mango-offi.md",
@@ -2270,7 +2270,7 @@
         }
       ],
       "title": "Интеграция с Контакт-центром MANGO OFFICE",
-      "tokens": 80
+      "tokens": 85
     },
     {
       "file": "sections/125-obzor.md",
@@ -2288,7 +2288,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 344
+      "tokens": 349
     },
     {
       "file": "sections/126-trebovaniya.md",
@@ -2306,7 +2306,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 238
+      "tokens": 243
     },
     {
       "file": "sections/127-nastroyka-integracii-s-kontakt-centrom-m.md",
@@ -2324,7 +2324,7 @@
         }
       ],
       "title": "Настройка интеграции с Контакт-центром MANGO OFFICE. Общие инструкции",
-      "tokens": 706
+      "tokens": 711
     },
     {
       "file": "sections/128-otpravka-dannyh-o-lide-iz-kontakt-centra.md",
@@ -2342,7 +2342,7 @@
         }
       ],
       "title": "Отправка данных о лиде из Контакт-центра MANGO OFFICE",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/129-obzor.md",
@@ -2360,7 +2360,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 252
+      "tokens": 257
     },
     {
       "file": "sections/130-trebovaniya.md",
@@ -2378,7 +2378,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 177
+      "tokens": 182
     },
     {
       "file": "sections/131-ogranicheniya-importa-dannyh-obrascheniy.md",
@@ -2396,7 +2396,7 @@
         }
       ],
       "title": "Ограничения импорта данных обращений",
-      "tokens": 400
+      "tokens": 405
     },
     {
       "file": "sections/132-import-dannyh-iz-polzovatelskih-poley.md",
@@ -2414,7 +2414,7 @@
         }
       ],
       "title": "Импорт данных из \"пользовательских\" полей",
-      "tokens": 315
+      "tokens": 320
     },
     {
       "file": "sections/133-kak-nastroit.md",
@@ -2432,7 +2432,7 @@
         }
       ],
       "title": "Как настроить",
-      "tokens": 383
+      "tokens": 388
     },
     {
       "file": "sections/134-kak-vklyuchit-avtomaticheskoe-sozdanie-k.md",
@@ -2450,7 +2450,7 @@
         }
       ],
       "title": "Как включить автоматическое создание контактов и сделок в Битрикс24",
-      "tokens": 974
+      "tokens": 979
     },
     {
       "file": "sections/135-kak-otpravit-dannye-o-lidah-v-bitriks24.md",
@@ -2468,7 +2468,7 @@
         }
       ],
       "title": "Как отправить данные о лидах в Битрикс24",
-      "tokens": 408
+      "tokens": 413
     },
     {
       "file": "sections/136-kak-v-bitriks24-posmotret-kontakty-i-sde.md",
@@ -2486,7 +2486,7 @@
         }
       ],
       "title": "Как в Битрикс24 посмотреть контакты и сделки, созданные по входящему обращению Контакт-центра MANGO OFFICE",
-      "tokens": 554
+      "tokens": 559
     },
     {
       "file": "sections/137-peredavaemye-dannye.md",
@@ -2504,7 +2504,7 @@
         }
       ],
       "title": "Передаваемые данные",
-      "tokens": 62
+      "tokens": 67
     },
     {
       "file": "sections/138-sdelka.md",
@@ -2522,7 +2522,7 @@
         }
       ],
       "title": "Сделка",
-      "tokens": 536
+      "tokens": 541
     },
     {
       "file": "sections/139-kontakt.md",
@@ -2540,7 +2540,7 @@
         }
       ],
       "title": "Контакт",
-      "tokens": 401
+      "tokens": 406
     },
     {
       "file": "sections/140-kak-nastroit-peredachu-dialoga-s-kliento.md",
@@ -2558,7 +2558,7 @@
         }
       ],
       "title": "Как настроить передачу диалога с Клиентом (чата) из Контакт-Центра MANGO OFFICE в историю коммуникаций Битрикс24",
-      "tokens": 132
+      "tokens": 137
     },
     {
       "file": "sections/141-obzor.md",
@@ -2576,7 +2576,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 470
+      "tokens": 475
     },
     {
       "file": "sections/142-poryadok-deystviy.md",
@@ -2594,7 +2594,7 @@
         }
       ],
       "title": "Порядок действий",
-      "tokens": 294
+      "tokens": 299
     },
     {
       "file": "sections/143-sohranenie-tematik-kontakt-centra-mango.md",
@@ -2612,7 +2612,7 @@
         }
       ],
       "title": "Сохранение тематик Контакт-Центра MANGO OFFICE",
-      "tokens": 75
+      "tokens": 80
     },
     {
       "file": "sections/144-obzor.md",
@@ -2630,7 +2630,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 597
+      "tokens": 602
     },
     {
       "file": "sections/145-kak-vklyuchit-nastroyku.md",
@@ -2648,7 +2648,7 @@
         }
       ],
       "title": "Как включить настройку",
-      "tokens": 255
+      "tokens": 260
     },
     {
       "file": "sections/146-kak-posmotret-tematiku-kontakt-centra.md",
@@ -2666,7 +2666,7 @@
         }
       ],
       "title": "Как посмотреть тематику Контакт-Центра",
-      "tokens": 181
+      "tokens": 186
     },
     {
       "file": "sections/147-avtopostanovka-zadaniya-v-kampaniyu-isho.md",
@@ -2684,7 +2684,7 @@
         }
       ],
       "title": "Автопостановка задания в кампанию исходящего обзвона при изменении в воронке продаж. Интеграция с Контакт-центром MANGO OFFICE через вебхуки",
-      "tokens": 300
+      "tokens": 305
     },
     {
       "file": "sections/148-obzor.md",
@@ -2702,7 +2702,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 505
+      "tokens": 510
     },
     {
       "file": "sections/149-ponyatie-tehnicheskiy-task-v-kampanii-is.md",
@@ -2720,7 +2720,7 @@
         }
       ],
       "title": "Понятие \"Технический таск\" в кампании исходящего обзвона",
-      "tokens": 602
+      "tokens": 607
     },
     {
       "file": "sections/150-ogranicheniya.md",
@@ -2738,7 +2738,7 @@
         }
       ],
       "title": "Ограничения",
-      "tokens": 464
+      "tokens": 469
     },
     {
       "file": "sections/151-kak-nastroit-integraciyu-v-kontakt-centr.md",
@@ -2756,7 +2756,7 @@
         }
       ],
       "title": "Как настроить интеграцию в Контакт-центром MANGO OFFICE через вебхуки",
-      "tokens": 598
+      "tokens": 603
     },
     {
       "file": "sections/152-kak-dobavit-vebhuki-integracii-v-robota.md",
@@ -2774,7 +2774,7 @@
         }
       ],
       "title": "Как добавить вебхуки интеграции в робота в Битрик24",
-      "tokens": 528
+      "tokens": 533
     },
     {
       "file": "sections/153-skripty-razgovora-s-klientom-v-bitriks24.md",
@@ -2792,7 +2792,7 @@
         }
       ],
       "title": "Скрипты разговора с Клиентом в Битрикс24",
-      "tokens": 77
+      "tokens": 82
     },
     {
       "file": "sections/154-skripty.md",
@@ -2810,7 +2810,7 @@
         }
       ],
       "title": "Скрипты",
-      "tokens": 507
+      "tokens": 512
     },
     {
       "file": "sections/155-trebovaniya.md",
@@ -2828,7 +2828,7 @@
         }
       ],
       "title": "Требования",
-      "tokens": 410
+      "tokens": 415
     },
     {
       "file": "sections/156-kak-vydat-ili-snyat-prava-dostupa-k-pril.md",
@@ -2846,7 +2846,7 @@
         }
       ],
       "title": "Как выдать или снять права доступа к приложению интеграции",
-      "tokens": 581
+      "tokens": 586
     },
     {
       "file": "sections/157-kak-vklyuchit-ispolzovanie-skriptov-v-pr.md",
@@ -2864,7 +2864,7 @@
         }
       ],
       "title": "Как включить использование скриптов в приложении",
-      "tokens": 480
+      "tokens": 485
     },
     {
       "file": "sections/158-sohranyat-postzvonkovuyu-ocenku-kachestv.md",
@@ -2882,7 +2882,7 @@
         }
       ],
       "title": "Сохранять постзвонковую оценку качества",
-      "tokens": 437
+      "tokens": 442
     },
     {
       "file": "sections/159-sohranyat-dannye-kampaniy-ishodyaschih-o.md",
@@ -2900,7 +2900,7 @@
         }
       ],
       "title": "Сохранять данные кампаний исходящих обзвонов Контакт-центра",
-      "tokens": 520
+      "tokens": 525
     },
     {
       "file": "sections/160-otpravlyat-whatsapp-soobschenie-pri-prop.md",
@@ -2918,7 +2918,7 @@
         }
       ],
       "title": "Отправлять WhatsApp-сообщение при пропущенном звонке",
-      "tokens": 81
+      "tokens": 86
     },
     {
       "file": "sections/161-naznachenie.md",
@@ -2936,7 +2936,7 @@
         }
       ],
       "title": "Назначение",
-      "tokens": 243
+      "tokens": 248
     },
     {
       "file": "sections/162-princip-raboty.md",
@@ -2954,7 +2954,7 @@
         }
       ],
       "title": "Принцип работы",
-      "tokens": 673
+      "tokens": 678
     },
     {
       "file": "sections/163-kak-vklyuchit.md",
@@ -2972,7 +2972,7 @@
         }
       ],
       "title": "Как включить",
-      "tokens": 531
+      "tokens": 536
     },
     {
       "file": "sections/164-ispolzovanie-servisa-mango-dialogi-dlya.md",
@@ -2990,7 +2990,7 @@
         }
       ],
       "title": "Использование сервиса «Манго Диалоги» для обмена сообщениями",
-      "tokens": 91
+      "tokens": 96
     },
     {
       "file": "sections/165-naznachenie-integracii.md",
@@ -3008,7 +3008,7 @@
         }
       ],
       "title": "Назначение интеграции",
-      "tokens": 458
+      "tokens": 463
     },
     {
       "file": "sections/166-podklyuchenie-mango-dialogov-v-lk-vats.md",
@@ -3026,7 +3026,7 @@
         }
       ],
       "title": "Подключение Манго Диалогов в ЛК ВАТС",
-      "tokens": 238
+      "tokens": 243
     },
     {
       "file": "sections/167-podklyuchenie-kanalov-mango-dialogi-v-lk.md",
@@ -3044,7 +3044,7 @@
         }
       ],
       "title": "Подключение каналов «Манго Диалоги» в ЛК ВАТС",
-      "tokens": 777
+      "tokens": 782
     },
     {
       "file": "sections/168-aktiviruyte-ispolzovanie-mango-dialogov.md",
@@ -3062,7 +3062,7 @@
         }
       ],
       "title": "Активируйте использование Манго Диалогов для передачи текстовых сообщений",
-      "tokens": 405
+      "tokens": 410
     },
     {
       "file": "sections/169-proverte-podklyuchenie-vidzheta-mango-di.md",
@@ -3080,7 +3080,7 @@
         }
       ],
       "title": "Проверьте подключение виджета Манго Диалоги в Битрикс24",
-      "tokens": 452
+      "tokens": 457
     },
     {
       "file": "sections/170-nastroyte-otkrytuyu-liniyu-v-bitriks24.md",
@@ -3098,7 +3098,7 @@
         }
       ],
       "title": "Настройте «Открытую линию» в Битрикс24",
-      "tokens": 742
+      "tokens": 747
     },
     {
       "file": "sections/171-kak-obrabatyvat-chaty-v-kontakt-centre-b.md",
@@ -3116,7 +3116,7 @@
         }
       ],
       "title": "Как обрабатывать чаты в Контакт-центре Битрикс24",
-      "tokens": 871
+      "tokens": 876
     },
     {
       "file": "sections/172-obrabotka-zvonkov.md",
@@ -3134,7 +3134,7 @@
         }
       ],
       "title": "Обработка звонков",
-      "tokens": 63
+      "tokens": 68
     },
     {
       "file": "sections/173-vhodyaschiy-zvonok.md",
@@ -3152,7 +3152,7 @@
         }
       ],
       "title": "Входящий звонок",
-      "tokens": 704
+      "tokens": 709
     },
     {
       "file": "sections/174-ishodyaschiy-zvonok.md",
@@ -3170,7 +3170,7 @@
         }
       ],
       "title": "Исходящий звонок",
-      "tokens": 346
+      "tokens": 351
     },
     {
       "file": "sections/175-propuschennye-zvonki.md",
@@ -3188,7 +3188,7 @@
         }
       ],
       "title": "Пропущенные звонки",
-      "tokens": 766
+      "tokens": 771
     },
     {
       "file": "sections/176-kontrol-za-obrabotkoy-propuschennogo-zvo.md",
@@ -3206,7 +3206,7 @@
         }
       ],
       "title": "Контроль за обработкой пропущенного звонка",
-      "tokens": 78
+      "tokens": 83
     },
     {
       "file": "sections/177-obzor.md",
@@ -3224,7 +3224,7 @@
         }
       ],
       "title": "Обзор",
-      "tokens": 699
+      "tokens": 704
     },
     {
       "file": "sections/178-kak-obrabotat-propuschennyy-zvonok.md",
@@ -3242,7 +3242,7 @@
         }
       ],
       "title": "Как обработать пропущенный звонок",
-      "tokens": 1180
+      "tokens": 1185
     },
     {
       "file": "sections/179-istoriya-vyzovov.md",
@@ -3260,7 +3260,7 @@
         }
       ],
       "title": "История вызовов",
-      "tokens": 266
+      "tokens": 271
     },
     {
       "file": "sections/180-prosmotr-svedeniy-o-zvonkah-v-kalendare.md",
@@ -3278,7 +3278,7 @@
         }
       ],
       "title": "Просмотр сведений о звонках в календаре",
-      "tokens": 340
+      "tokens": 345
     },
     {
       "file": "sections/181-zapis-razgovorov.md",
@@ -3296,7 +3296,7 @@
         }
       ],
       "title": "Запись разговоров",
-      "tokens": 421
+      "tokens": 426
     },
     {
       "file": "sections/182-integraciya-s-adresnoy-knigoy-virtualnoy.md",
@@ -3314,7 +3314,7 @@
         }
       ],
       "title": "Интеграция с адресной книгой Виртуальной АТС",
-      "tokens": 881
+      "tokens": 886
     },
     {
       "file": "sections/183-softfon-mango-connect.md",
@@ -3332,7 +3332,7 @@
         }
       ],
       "title": "Софтфон MANGO CONNECT",
-      "tokens": 65
+      "tokens": 70
     },
     {
       "file": "sections/184-opisanie.md",
@@ -3350,7 +3350,7 @@
         }
       ],
       "title": "Описание",
-      "tokens": 1094
+      "tokens": 1099
     },
     {
       "file": "sections/185-dopolnitelno-kak-vklyuchit-i-vyklyuchit.md",
@@ -3368,7 +3368,7 @@
         }
       ],
       "title": "Дополнительно. Как включить и выключить режим \"Не беспокоить\" / DND",
-      "tokens": 472
+      "tokens": 477
     },
     {
       "file": "sections/186-korobochnaya-versiya-bitriks24.md",
@@ -3386,7 +3386,7 @@
         }
       ],
       "title": "Коробочная версия Битрикс24",
-      "tokens": 597
+      "tokens": 602
     },
     {
       "file": "sections/187-obnovlenie-prilozheniya.md",
@@ -3404,7 +3404,7 @@
         }
       ],
       "title": "Обновление приложения",
-      "tokens": 506
+      "tokens": 511
     },
     {
       "file": "sections/188-prilozheniya.md",
@@ -3422,7 +3422,7 @@
         }
       ],
       "title": "Приложения.",
-      "tokens": 57
+      "tokens": 62
     },
     {
       "file": "sections/189-a-kak-otkryt-otchet-detalizaciya-zvonkov.md",
@@ -3440,7 +3440,7 @@
         }
       ],
       "title": "А. Как открыть отчет \"Детализация звонков\" в Битрикс24",
-      "tokens": 515
+      "tokens": 520
     },
     {
       "file": "sections/190-b-nastroyka-otobrazheniya-kolonok-v-spis.md",
@@ -3458,7 +3458,7 @@
         }
       ],
       "title": "Б. Настройка отображения колонок в списке лидов, сделок, контактов",
-      "tokens": 573
+      "tokens": 578
     },
     {
       "file": "sections/191-spisok-izmeneniy-v-dokumente.md",
@@ -3476,7 +3476,7 @@
         }
       ],
       "title": "Список изменений в документе",
-      "tokens": 2700
+      "tokens": 2705
     }
   ],
   "source_document": "integration-bitrix24",
@@ -3496,6 +3496,6 @@
   ],
   "table_count": 9,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 18468,
-  "tokens_total": 84837
+  "tokens_index": 18483,
+  "tokens_total": 85797
 }

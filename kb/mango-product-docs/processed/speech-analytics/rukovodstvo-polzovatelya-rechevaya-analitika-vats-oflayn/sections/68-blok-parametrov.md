@@ -14,7 +14,7 @@ source_pages: "ч.1: 113-114"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf","part":1,"pages":"113-114","global_pages":"113-114"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1281
+tokens: 1286
 status: extracted
 ai-generated: true
 ---

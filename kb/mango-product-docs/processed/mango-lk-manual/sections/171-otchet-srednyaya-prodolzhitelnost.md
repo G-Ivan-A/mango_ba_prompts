@@ -14,7 +14,7 @@ source_pages: "ч.3: 62-63"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"62-63","global_pages":"264-265"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 572
+tokens: 577
 status: extracted
 ai-generated: true
 ---

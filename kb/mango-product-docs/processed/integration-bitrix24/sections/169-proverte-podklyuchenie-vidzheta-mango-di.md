@@ -14,7 +14,7 @@ source_pages: "ч.1: 140-141"
 source_refs: '[{"source_pdf":"kb/mango-product-docs/sources/integration-bitrix24/Mango_office_integration_Bitrix24.pdf","part":1,"pages":"140-141","global_pages":"140-141"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 452
+tokens: 457
 status: extracted
 ai-generated: true
 ---
