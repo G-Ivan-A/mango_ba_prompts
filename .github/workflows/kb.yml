@@ -14,7 +14,13 @@ on:
       - main
     paths:
       - ".github/workflows/kb.yml"
+      - "CHANGELOG.md"
       - "Makefile"
+      - "docs/audit/issue-144-kb-structure.md"
+      - "kb/README.md"
+      - "kb/fragments/README.md"
+      - "kb/practices/**"
+      - "kb/mango-product-docs/README.md"
       - "kb/mango-product-docs/UPLOAD-GUIDE.md"
       - "kb/mango-product-docs/sources/**"
       - "scripts/kb/**"
@@ -93,6 +99,9 @@ jobs:
           else
             echo "Issue #131 processed-output validation runs after extraction for ${{ github.event_name }}."
           fi
+
+      - name: Validate issue #144 KB structure README integrity
+        run: python3 scripts/validate_issue_144_kb_structure_readmes.py
 
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
