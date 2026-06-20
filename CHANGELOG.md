@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #146 validation Mango Taxonomy on real processed docs
+
+- Валидирована Mango Taxonomy на 12 processed guides из
+  [`kb/mango-product-docs/processed/`](kb/mango-product-docs/processed/):
+  Contact Center, LK/VATS, Mango Talker, Bitrix24, SIP Trunk, API, Dialogi API,
+  speech analytics, quality management и Wallboard.
+- Унифицирован leaf-level термин `Atomic Function → Function`: ADR-011 теперь
+  использует `Domain -> Capability -> Feature -> Function`, а ADR-012 —
+  `Product -> Service -> Module -> Function`.
+- Добавлен аудит evidence
+  [`docs/audit/issue-146-mango-taxonomy-validation.md`](docs/audit/issue-146-mango-taxonomy-validation.md)
+  и регрессионная проверка
+  [`scripts/validate_issue_146_mango_taxonomy.py`](scripts/validate_issue_146_mango_taxonomy.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Added — Issue #142 ADR по Mango Taxonomy
 
 - Добавлен proposed ADR

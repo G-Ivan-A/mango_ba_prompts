@@ -1,11 +1,13 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-06-20
 ai-generated: true
 type: adr
 scope: mango-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/142"
+validated_by:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
 depends_on:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
@@ -18,6 +20,7 @@ related_prs:
 related_artifacts:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/product-classification-contract.md"
+  - "docs/audit/issue-146-mango-taxonomy-validation.md"
   - "kb/mango-product-docs/processed/"
 ---
 
@@ -44,7 +47,7 @@ Issue #142 требует зафиксировать решение по **Mango
 ADR-011 уже зафиксировал опорную Industry Taxonomy:
 
 ```text
-Domain -> Capability -> Feature -> Atomic Function
+Domain -> Capability -> Feature -> Function
 ```
 
 Mango Taxonomy должна быть совместима с этой моделью, но решает другую задачу:
@@ -65,11 +68,12 @@ Mango Taxonomy должна быть совместима с этой модел
 
 | Источник | Что проверено | Роль в решении |
 | --- | --- | --- |
-| [`ADR-011`](ADR-011-industry-taxonomy.md) | Industry Taxonomy, домены, capability-уровень, cross-domain `platform` и отделение Product Layer от Commercial Layer. | Задаёт внешний слой выравнивания для Mango Taxonomy. |
+| [`ADR-011`](ADR-011-industry-taxonomy.md) | Industry Taxonomy, домены, capability-уровень, cross-domain `platform`, leaf-level `Function` и отделение Product Layer от Commercial Layer. | Задаёт внешний слой выравнивания для Mango Taxonomy. |
 | Hub classification: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md> | Mango-ориентированная модель v3.0; свежий blob SHA `3aa12727c9b87d5cf68301fa95d00a272408a97e`. | Даёт исходную гипотезу по доменам, capability и Product/Commercial separation. |
 | Официальный сайт: <https://www.mango-office.ru/> | Публичные продуктовые группы: бизнес-телефония, омниканальный контакт-центр, роботы и аналитика, маркетинговые технологии. | Показывает официальный внешний слой и маркетинговые группировки. |
 | Каталог продуктов: <https://www.mango-office.ru/products/> | Публичный каталог: ВАТС, гибридная АТС, номера, контакт-центр, calltracking, оборудование, Mango Talker, API, интеграции, отраслевые/размерные решения. | Уточняет, какие названия допустимо считать official-layer сигналом. |
 | `kb/mango-product-docs/processed/` | Обработанные markdown-документы по ВАТС, контакт-центру, API, интеграциям, Mango Talker, речевой аналитике, качеству, Wallboard, SIP Trunk, SSO и ролям. | Показывает внутренние сервисы, модули, операции и документационные границы. |
+| [`docs/audit/issue-146-mango-taxonomy-validation.md`](../../docs/audit/issue-146-mango-taxonomy-validation.md) | Проверка 12 processed guides: CC, LK/VATS, Mango Talker, Bitrix24, SIP Trunk, API, Dialogi API, speech analytics, quality management, Wallboard. | Подтверждает, что операции, API-команды, настройки и действия нужно хранить как Mango `Function`. |
 
 ## Research: официальный слой
 
@@ -117,28 +121,31 @@ evidence links. Исходные PDF из `kb/mango-product-docs/sources/` дл�
 
 Выводы по processed KB:
 
-- документация подтверждает внутренние границы сервисов и модулей, но не даёт
-  единого нормализованного product registry;
+- документация подтверждает внутренние границы сервисов, модулей и функций, но
+  не даёт единого нормализованного product registry;
 - публичные product names и внутренние document/module names часто не
   совпадают;
 - часть возможностей является cross-product: роли, SSO, API, speech analytics,
   digital channels, отчёты и интеграции;
+- повторяющийся leaf-level сигнал — конкретные настройки, действия,
+  API-команды, параметры и операции пользователя; их нужно фиксировать как
+  `Function`, а не прятать в описании модуля;
 - коммерческие тарифы, решения по отраслям и procurement-признаки не должны
-  попадать в иерархию Product -> Service -> Module.
+  попадать в иерархию Product -> Service -> Module -> Function.
 
 ## Рассмотренные альтернативы
 
 | Вариант | Описание | Плюсы | Минусы |
 | --- | --- | --- | --- |
 | A. Flat product list | Вести один список публичных продуктов с URL и коротким описанием. | Быстро, понятно для витрины и changelog. | Не отражает внутренние модули, cross-product функции и связь с ADR-011; плохо подходит для KB/RAG и трассировки требований. |
-| B. Two-layer taxonomy | Разделить Official Layer и Internal Layer, связав их many-to-many отношениями и выравниванием на ADR-011. | Сохраняет публичную семантику, объясняет внутренние границы, поддерживает трассировку и future KB registry. | Требует явного governance для ID, статусов, владельцев и source evidence. |
+| B. Two-layer taxonomy + Function | Разделить Official Layer и Internal Layer, связав их many-to-many отношениями и выравниванием на ADR-011; внутри Internal Layer использовать четыре уровня `Product -> Service -> Module -> Function`. | Сохраняет публичную семантику, объясняет внутренние границы, поддерживает трассировку, future KB registry и симметрию с ADR-011. | Требует явного governance для ID, статусов, владельцев, function-granularity и source evidence. |
 | C. Product -> Service -> Module без слоёв | Ввести только иерархию Product -> Service -> Module. | Даёт полезную структуру и похожа на будущий data model. | Смешивает публичные названия с внутренними границами; не объясняет, почему один модуль обслуживает несколько продуктов. |
 
 ## Решение
 
-Принять вариант **B: Two-layer taxonomy**. Иерархия
-`Product -> Service -> Module` используется внутри этой двухслойной модели, но
-не заменяет разделение Official/Internal.
+Принять вариант **B: Two-layer taxonomy + Function**. Иерархия
+`Product -> Service -> Module -> Function` используется внутри этой двухслойной
+модели, но не заменяет разделение Official/Internal.
 
 ### Слои
 
@@ -156,19 +163,20 @@ evidence links. Исходные PDF из `kb/mango-product-docs/sources/` дл�
 
 - service id;
 - module id;
+- function id;
 - internal aliases;
 - owning area/team, если известны;
 - lifecycle/status, если известен;
 - links на processed KB, API docs и integration docs;
-- alignment на ADR-011 Domain/Capability/Feature/Atomic Function;
+- alignment на ADR-011 Domain/Capability/Feature/Function;
 - confidence/evidence level.
 
 ### Иерархия
 
-Mango Taxonomy использует три основных уровня:
+Mango Taxonomy использует четыре основных уровня:
 
 ```text
-Product -> Service -> Module
+Product -> Service -> Module -> Function
 ```
 
 Границы уровней:
@@ -186,12 +194,17 @@ Product -> Service -> Module
   `ivr-rules`, `call-recording`, `sip-trunk`, `webhooks`, `sso`,
   `telegram-channel`, `wallboard`, `quality-scorecard`,
   `speech-analytics-checklist`.
+- **Function**: минимальная проверяемая функция, операция, API-команда,
+  настройка, параметр или правило внутри модуля. Примеры:
+  `transfer-call`, `set-agent-status`, `create-outbound-campaign`,
+  `configure-webhook-url`, `get-blacklist-mode`, `send-dialog-message`,
+  `select-wallboard-widget`, `enable-ai-summary`.
 
-Feature и Atomic Function не вводятся как отдельные Mango-уровни, потому что
-они уже принадлежат Industry Taxonomy ADR-011. Вместо этого Mango `Service`
-выравнивается на `Capability`, Mango `Module` выравнивается на `Feature`, а
-конкретные операции модуля, API-команды и настройки выравниваются на
-`Atomic Function`.
+Mango `Service` выравнивается на ADR-011 `Capability`, Mango `Module`
+выравнивается на ADR-011 `Feature`. Mango `Function` выравнивается на ADR-011 `Function`.
+Product может иметь более широкие many-to-many связи с Domain,
+Capability и cross-domain facets, потому что публичные продукты Mango часто
+объединяют несколько отраслевых доменов.
 
 ### Отношения
 
@@ -201,9 +214,12 @@ Feature и Atomic Function не вводятся как отдельные Mango
 | --- | --- | --- |
 | `official_product.internal_services[]` | many-to-many | Связать публичную витрину с внутренними сервисами. |
 | `internal_service.modules[]` | one-to-many или many-to-many | Показать, какие модули реализуют сервис. |
+| `module.functions[]` | one-to-many | Показать leaf-level действия, настройки, API-команды и правила модуля. |
 | `module.kb_refs[]` | one-to-many | Привязать модуль к processed KB evidence. |
+| `function.kb_refs[]` | one-to-many | Привязать функцию к конкретному processed KB evidence. |
 | `service.industry_alignment[]` | one-to-many | Связать сервис с ADR-011 Domain/Capability. |
-| `module.industry_alignment[]` | one-to-many | Связать модуль с ADR-011 Feature/Atomic Function. |
+| `module.industry_alignment[]` | one-to-many | Связать модуль с ADR-011 Feature. |
+| `function.industry_alignment[]` | one-to-many | Связать Mango function с ADR-011 Function. |
 | `entity.facets[]` | many-to-many | Хранить commercial, segment, industry, compliance и region overlays вне иерархии. |
 
 ### Атрибуты
@@ -260,6 +276,20 @@ module:
   kb_refs:
     - kb/mango-product-docs/processed/wallboard/index.md
   api_refs: []
+
+function:
+  id: select-wallboard-widget
+  layer: internal
+  parent_module: wallboard
+  function_type: setting
+  industry_alignment:
+    - domain: analytics
+      capability: product-analytics
+      feature: real-time-dashboard
+      function: configure-dashboard-widget
+      alignment_type: supporting
+  kb_refs:
+    - kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md
 ```
 
 ## Taxonomy Alignment с ADR-011
@@ -282,13 +312,13 @@ Alignment должен быть явным, а не выводиться из н
 | `mango-speech-analytics` | Product/Service | `ai-automation` / `speech-analytics`; secondary `analytics` | AI/analytics cross-domain сервис. |
 | `mango-robots` | Product family | `ai-automation` / `voice-bot`, `chatbot`, `process-robot` | Не должен смешиваться с human-agent contact-center modules. |
 | `mango-marketing-analytics` | Product family | `analytics` / `call-tracking`, `end-to-end-analytics`, `multichannel-analytics`, `email-tracking`, `competitor-analysis` | Маркетинговая витрина, но внутренне содержит voice/resource dependencies. |
-| `vpbx-api` | Internal service/module group | `platform` / `open-api`, `cpaas`; feature/atomic mappings by endpoint | API не является отдельной публичной продуктовой веткой, но поддерживает несколько products. |
+| `vpbx-api` | Internal service/module/function group | `platform` / `open-api`, `cpaas`; feature/function mappings by endpoint | API не является отдельной публичной продуктовой веткой, но поддерживает несколько products. |
 | `access-control` | Internal service | `security` / `information-security` | Роли, SSO и права доступа являются cross-cutting service. |
 | `sip-trunk` | Module/service | `voice-ucaas` / `sip-connectivity` | Может быть частью ВАТС и telecom resource layer. |
 
 Commercial Layer, procurement-коды, тарифы, отраслевые решения, размер бизнеса
 и региональные признаки остаются фасетами. Они не должны создавать отдельные
-ветки Product, Service или Module.
+ветки Product, Service, Module или Function.
 
 ## Последствия
 
@@ -300,14 +330,16 @@ Commercial Layer, procurement-коды, тарифы, отраслевые ре�
   сайта, processed KB и ADR-011;
 - cross-product возможности вроде API, ролей, SSO, speech analytics и digital
   channels не дублируются в каждой продуктовой ветке;
+- настройки, операции пользователя, API-команды и параметры получают явный
+  leaf-level `Function`, пригодный для acceptance criteria и KB evidence;
 - таксономия пригодна для RAG, анализа требований, gap analysis и future
   governance.
 
 Отрицательные последствия:
 
 - many-to-many mapping сложнее, чем flat list;
-- потребуется governance для стабильных ID, владельцев, lifecycle-статусов и
-  evidence policy;
+- потребуется governance для стабильных ID, владельцев, lifecycle-статусов,
+  границ function-granularity и evidence policy;
 - часть начальных полей останется `unknown`, потому что processed KB не
   является owner registry;
 - публичные страницы могут меняться быстрее, чем processed KB.
@@ -332,7 +364,8 @@ issues:
   services, modules and facets;
 - `kb/mango/product-mapping.md`: mapping Mango entities на ADR-011 и source
   evidence;
-- validators for required IDs, links, status values and alignment cardinality.
+- validators for required IDs, links, status values, function granularity and
+  alignment cardinality.
 
 ## Связанные документы
 
@@ -344,5 +377,7 @@ issues:
 - Каталог продуктов Mango Office: <https://www.mango-office.ru/products/>
 - Processed KB:
   [`kb/mango-product-docs/processed/`](../../kb/mango-product-docs/processed/)
+- Issue #146 audit:
+  [`docs/audit/issue-146-mango-taxonomy-validation.md`](../../docs/audit/issue-146-mango-taxonomy-validation.md)
 - Product classification contract:
   [`standards/product-classification-contract.md`](../product-classification-contract.md)

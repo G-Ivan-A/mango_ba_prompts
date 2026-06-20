@@ -64,7 +64,7 @@ Load this file first for ontology decisions. Do not load
 - R5 `производит`: Операция -> выходной Артефакт.
 - R6 `соответствует`: Операция -> BABOK knowledge area.
 - R7 `регулируется`: Артефакт -> Стандарт.
-- R8 `классифицируется`: Требование -> Domain -> Capability -> Feature -> Atomic Function.
+- R8 `классифицируется`: Требование -> Domain -> Capability -> Feature -> Function.
 - R9 `имеет состояние`: Артефакт -> lifecycle state.
 - R10 `реализует`: Паттерн -> Операция.
 - R11 `исполняет`: Промпт -> Паттерн.
@@ -83,7 +83,7 @@ Load this file first for ontology decisions. Do not load
 | `functional` | поведение системы, функция, обработка события |
 | `non-functional` | качество, SLA, безопасность, производительность, ограничение |
 
-Не заменяй Domain->Capability->Feature->Atomic Function и не выводи уровень
+Не заменяй Domain->Capability->Feature->Function и не выводи уровень
 только из глубины BCREQ-дерева.
 
 ### Executor classification

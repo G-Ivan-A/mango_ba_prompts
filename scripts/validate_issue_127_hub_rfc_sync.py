@@ -4,7 +4,7 @@
 The check locks the three requested sync points:
 
 - C1: requirement level is an orthogonal tag axis, not a replacement for the
-  existing Domain -> Capability -> Feature -> Atomic Function classification;
+  existing Domain -> Capability -> Feature -> Function classification;
 - C2: business-rule is an explicit artifact type with the five Wiegers
   categories;
 - C3: a crosswalk links Wiegers processes to mango operations and BCREQ
@@ -51,7 +51,7 @@ def check_ontology_standard() -> list[str]:
         "`user`",
         "`functional`",
         "`non-functional`",
-        "Domain→Capability→Feature→Atomic Function",
+        "Domain→Capability→Feature→Function",
         "R13",
         "| A31 | `business-rule`",
         "Факты",

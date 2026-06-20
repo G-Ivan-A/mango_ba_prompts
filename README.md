@@ -138,7 +138,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | Путь | Роль |
 | --- | --- |
 | `standards/GLOSSARY.md` | Словарь терминов (рабочая копия общего глоссария Хаба). |
-| `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Atomic Function`. Это спецификация, **не** глоссарий. |
+| `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Function`. Это спецификация, **не** глоссарий. |
 | `standards/prompt-standard.md` | Контракт промпта: 4 обязательных поля frontmatter, именование, RAG-формат ссылок. |
 | `standards/pattern-standard.md` | Контракт паттерна: 8 обязательных полей, универсальный `prompt_template`. |
 | `standards/ba-ontology.md` *(+ `artifact-naming`, `team-directory`, `kb`, `industry-standards`, `bcreq-process`, `pages-ux`)* | Формализованная онтология БА и стандарты (issues #97/#127): `requirement_level`, `business-rule`, граф артефактов; контракты-носители — [ADR-003…010](docs/adr/). |

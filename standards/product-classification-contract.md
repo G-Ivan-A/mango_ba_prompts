@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-04
+version: 0.2
+updated: 2026-06-20
 ai-generated: true
 type: contract
 scope: mango-only
@@ -11,6 +11,10 @@ research_dep:
   - "docs/hub-research-dependencies.md#taxonomy-concept"
 related_standards:
   - "standards/GLOSSARY.md"
+  - "standards/decisions/ADR-011-industry-taxonomy.md"
+  - "standards/decisions/ADR-012-mango-taxonomy.md"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/standards/classification-glossary.md"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 ---
@@ -29,8 +33,8 @@ taxonomy Mango. Он не является общим глоссарием ре�
 блокировать другие проекты `hybrid-Intelligence-lab`.
 
 Для значений общих терминов см. [`standards/GLOSSARY.md`](GLOSSARY.md). Этот
-контракт задает классификацию `Domain -> Capability -> Feature -> Atomic
-Function` и не смешивается с глоссарием терминов.
+контракт задает классификацию `Domain -> Capability -> Feature -> Function` и
+не смешивается с глоссарием терминов.
 
 ## Область применения
 
@@ -65,7 +69,7 @@ mapping без блокировки анализа.
 Domain (Семейство)
   -> Capability (Класс)
     -> Feature (Подкласс)
-      -> Atomic Function (Функция)
+      -> Function (Функция)
 ```
 
 | Уровень | Назначение | Основной вопрос |
@@ -73,7 +77,7 @@ Domain (Семейство)
 | Domain | Крупная бизнес-область Mango. | В какой продуктовой или сервисной зоне находится требование? |
 | Capability | Группа функций, решающая бизнес-задачу в домене. | Какую способность должен иметь продукт или команда? |
 | Feature | Настраиваемая возможность внутри capability. | Что именно пользователь или администратор включает, настраивает или использует? |
-| Atomic Function | Минимальная проверяемая единица функциональности. | Какую неделимую функцию, параметр или правило можно протестировать отдельно? |
+| Function | Минимальная проверяемая единица функциональности. | Какую неделимую функцию, параметр или правило можно протестировать отдельно? |
 
 ## 🔹 Domain (Семейство)
 
@@ -121,9 +125,9 @@ stakeholders.
 
 **Правило**: feature должна быть применима в пользовательском, админском или
 интеграционном сценарии. Если элемент является только техническим параметром,
-это обычно `Atomic Function`.
+это обычно `Function`.
 
-## 🔹 Atomic Function (Функция)
+## 🔹 Function (Функция)
 
 **Определение**: минимальная неделимая единица функциональности с
 бизнес-ценностью или проверяемым эффектом, которую можно независимо описать,
@@ -131,16 +135,16 @@ stakeholders.
 
 **Источники**: IREB requirement quality и `functional requirement`; IREB
 `user story` как atomic backlog item в agile context; TM Forum product/service
-modeling для atomic product/service specification. Термин `Atomic Function`
-является Mango-specific адаптацией, а не отдельным общим стандартом.
+modeling для atomic product/service specification. Термин `Function`
+унифицирован с ADR-011 и ADR-012 в issue #146.
 
 **Примеры Mango**: `dial_ratio parameter`, `abandon_rate_limit threshold`,
 `retry_interval configuration`, `recording_retention_days`,
 `webhook_retry_policy`.
 
-**Правило**: atomic function не делится дальше без потери смысла проверки. Если
+**Правило**: function не делится дальше без потери смысла проверки. Если
 параметр требует отдельной политики, SLA или compliance-review, это все равно
-atomic function плюс overlay, а не новый domain.
+function плюс overlay, а не новый domain.
 
 ## Маппинг терминов Mango
 
