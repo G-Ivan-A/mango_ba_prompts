@@ -13,6 +13,25 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #125 cascading context loading
+
+- Добавлен стандарт
+  [`standards/cascading-context-loading-standard.md`](standards/cascading-context-loading-standard.md):
+  naming `.executable.md`, LLM Loading Contract, deterministic escalation
+  triggers и правила замера экономии токенов.
+- Для критичных full-файлов созданы executable-companions:
+  [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md),
+  [`governance/agent-onboarding-protocol.executable.md`](governance/agent-onboarding-protocol.executable.md),
+  [`prompts/README.executable.md`](prompts/README.executable.md),
+  [`docs/ba-processes/00-index.executable.md`](docs/ba-processes/00-index.executable.md)
+  и [`standards/ba-ontology.executable.md`](standards/ba-ontology.executable.md).
+- В full-файлы добавлен `LLM Loading Contract`, а prompt
+  [`prompts/session-debug-documentation-oneshot.md`](prompts/session-debug-documentation-oneshot.md)
+  теперь ссылается на executable-слой `prompts/README`.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_125_cascading_context.py`](scripts/validate_issue_125_cascading_context.py),
+  подключённая к GitHub Pages workflow.
+
 ### Added — Issue #123 единый каталог `runs/`
 
 - Добавлен единый каталог результатов выполнения процессов `runs/YYYY/RUN-XXXX/`

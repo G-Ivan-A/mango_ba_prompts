@@ -17,6 +17,10 @@ const SOURCE_FILES = {
   patternsReadme: "patterns/README.md",
 };
 
+function isPromptAssetFile(name) {
+  return name.endsWith(".md") && name !== "README.md" && !name.endsWith(".executable.md");
+}
+
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
 const RUNS_DIR = "runs";
 const FEEDBACK_SOURCE = "governance/prompt-feedback.json";
@@ -590,7 +594,7 @@ async function listPromptFiles() {
   const activeNames = await fs.readdir(path.join(ROOT, "prompts"));
   const archiveNames = await fs.readdir(path.join(ROOT, "prompts", "archive"));
   const active = activeNames
-    .filter((name) => name.endsWith(".md") && name !== "README.md")
+    .filter(isPromptAssetFile)
     .map((name) => ({ relativePath: `prompts/${name}`, archived: false }));
   const archived = archiveNames
     .filter((name) => name.endsWith(".md"))
