@@ -145,10 +145,13 @@ kb/processed/mtalker/
 ## Как pipeline выбирает логику
 
 1. Если в `meta.json` задан `processing_mode`, используется он.
-2. Если режим не задан, но есть `documents`, режим считается `multi_document`.
-3. Если есть `parts > 1` или несколько `source_files`, режим считается
+2. Если режим не задан, но есть ровно один объект `documents`, режим считается
+   `single` и результат пишется в `kb/processed/<slug>/`.
+3. Если режим не задан, но есть несколько объектов `documents`, режим считается
+   `multi_document`.
+4. Если есть `parts > 1` или несколько `source_files`, режим считается
    `multi_part`.
-4. Иначе режим считается `single`.
+5. Иначе режим считается `single`.
 
 Для новых источников всегда задавайте `processing_mode` явно. Автоопределение
 оставлено только для обратной совместимости.
@@ -213,10 +216,22 @@ kb/processed/mtalker/
 make kb-source-plan SOURCE_DIR=kb/sources/mtalker
 ```
 
+Проверить план для всех `meta.json`:
+
+```bash
+make kb-source-plan-all
+```
+
 Запустить извлечение по `meta.json`:
 
 ```bash
 make kb-source-extract SOURCE_DIR=kb/sources/mtalker
+```
+
+Запустить извлечение всех источников:
+
+```bash
+make kb-source-extract-all
 ```
 
 Готовый target для текущего комплекта Mango Talker:

@@ -117,7 +117,10 @@ def infer_mode(source_dir: Path, manifest: dict) -> str:
                 f"{', '.join(sorted(VALID_MODES))}"
             )
         return explicit
-    if manifest.get("documents"):
+    documents = manifest.get("documents")
+    if isinstance(documents, list) and len(documents) == 1:
+        return "single"
+    if documents:
         return "multi_document"
     if int(manifest.get("parts") or 0) > 1:
         return "multi_part"
@@ -212,7 +215,20 @@ def build_plan(
     collection_dir = (processed_root / collection_slug).resolve()
 
     if mode in {"single", "multi_part"}:
-        files = resolve_files(source_dir, manifest.get("source_files"), rel_to_root(source_dir / "meta.json"))
+        files_value = manifest.get("source_files")
+        doc_meta = None
+        documents = manifest.get("documents")
+        if files_value is None and isinstance(documents, list) and len(documents) == 1:
+            only_doc = documents[0]
+            if not isinstance(only_doc, dict):
+                raise ManifestError(f"{rel_to_root(source_dir / 'meta.json')}: documents[1] must be an object")
+            files_value = only_doc.get("source_files")
+            if files_value is None and only_doc.get("file_name"):
+                files_value = [only_doc["file_name"]]
+            doc_meta = only_doc
+        elif files_value is None and manifest.get("file_name"):
+            files_value = [manifest["file_name"]]
+        files = resolve_files(source_dir, files_value, rel_to_root(source_dir / "meta.json"))
         if mode == "single" and len(files) != 1:
             raise ManifestError(f"{rel_to_root(source_dir / 'meta.json')}: single mode requires exactly one PDF")
         if mode == "multi_part" and len(files) < 2:
@@ -225,6 +241,7 @@ def build_plan(
             mode=mode,
             source_set=collection_slug,
             source_document=collection_slug,
+            doc_meta=doc_meta,
         )
         return SourcePlan(source_dir, mode, name, version, collection_dir, (job,), manifest)
 
