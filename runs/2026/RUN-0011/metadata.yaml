@@ -1,5 +1,6 @@
 run_id: RUN-0011
 process: multichannel-agent-workload
+run_type: business-task
 version: "0.1"
 date: 2026-06-18
 author: "BA-IH + LLM"
