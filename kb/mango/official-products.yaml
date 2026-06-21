@@ -1,0 +1,427 @@
+{
+  "taxonomy": {
+    "version": 1,
+    "scope": "mango-official-products",
+    "official_products": [
+      {
+        "id": "mango-virtual-pbx-official",
+        "level": "official-product",
+        "name_ru": "Виртуальная АТС",
+        "description": "Публичный продукт Mango Office для облачной офисной телефонии, маршрутизации звонков и управления номерами.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/",
+          "kb/mango-product-docs/processed/mango-lk-manual/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/virtualnaya_ats/",
+                "kb/mango-product-docs/processed/mango-lk-manual/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "ВАТС",
+          "Virtual PBX",
+          "Облачная АТС"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/"
+        ],
+        "supported_by_services": [
+          "vats-inbound-routing-service",
+          "vats-ivr-service",
+          "vats-number-management-service",
+          "vats-recording-history-service"
+        ]
+      },
+      {
+        "id": "mango-sip-trunk-official",
+        "level": "official-product",
+        "name_ru": "SIP Trunk и гибридная телефония",
+        "description": "Публичный набор возможностей подключения внешней телефонии и SIP-инфраструктуры к Виртуальной АТС.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/",
+          "kb/mango-product-docs/processed/sip-trunk/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "sip-connectivity"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/",
+                "kb/mango-product-docs/processed/sip-trunk/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "SIP Trunk",
+          "Гибридная АТС"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/"
+        ],
+        "supported_by_services": [
+          "vats-number-management-service",
+          "vpbx-open-api-service"
+        ]
+      },
+      {
+        "id": "mango-contact-center-official",
+        "level": "official-product",
+        "name_ru": "Контакт-центр",
+        "description": "Публичный продукт для обработки обращений, рабочих мест операторов, очередей и супервизорского контроля.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/contact-center/",
+          "kb/mango-product-docs/processed/mango-cc-manual/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "omnichannel-contact-center"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/contact-center/",
+                "kb/mango-product-docs/processed/mango-cc-manual/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "КЦ",
+          "Contact Center"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/contact-center/",
+          "https://www.mango-office.ru/products/contact-center/vozmozhnosti/"
+        ],
+        "supported_by_services": [
+          "cc-agent-workspace-service",
+          "cc-interaction-routing-service",
+          "cc-outbound-campaign-service",
+          "cc-supervisor-wfm-service",
+          "quality-checklist-service"
+        ]
+      },
+      {
+        "id": "mango-text-communications-official",
+        "level": "official-product",
+        "name_ru": "Текстовые коммуникации",
+        "description": "Публичный продуктовый слой для сайта, мессенджеров, шаблонов и цифровых диалогов.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Текстовые коммуникации",
+          "Digital channels"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/"
+        ],
+        "supported_by_services": [
+          "digital-channel-group-service",
+          "website-chat-service",
+          "messenger-channel-service",
+          "dialog-api-messaging-service"
+        ]
+      },
+      {
+        "id": "mango-calltracking-official",
+        "level": "official-product",
+        "name_ru": "Коллтрекинг и маркетинговая аналитика",
+        "description": "Публичный продукт для привязки звонков к рекламным источникам и оценки эффективности маркетинга.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/calltracking/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/calltracking/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Calltracking",
+          "Коллтрекинг",
+          "Сквозная аналитика"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/calltracking/"
+        ],
+        "supported_by_services": [
+          "calltracking-attribution-service",
+          "end-to-end-analytics-service",
+          "reporting-dashboard-service"
+        ]
+      },
+      {
+        "id": "mango-speech-analytics-official",
+        "level": "official-product",
+        "name_ru": "Речевая аналитика",
+        "description": "Публичный AI-продукт для распознавания и анализа разговоров.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/",
+          "kb/mango-product-docs/processed/speech-analytics/index.md",
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/",
+                "kb/mango-product-docs/processed/speech-analytics/index.md",
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Speech Analytics",
+          "Речевая аналитика"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/"
+        ],
+        "supported_by_services": [
+          "speech-analytics-service",
+          "conversation-summary-service",
+          "quality-checklist-service"
+        ]
+      },
+      {
+        "id": "mango-robots-official",
+        "level": "official-product",
+        "name_ru": "Роботы",
+        "description": "Публичный AI-продукт для автоматизированных голосовых сценариев и диалогов.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/contact-center/ai/voice-robot/",
+          "https://www.mango-office.ru/products/"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "voice-bot"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/contact-center/ai/voice-robot/",
+                "https://www.mango-office.ru/products/"
+              ],
+              "facets": {
+                "ai_assisted": true,
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Голосовые роботы",
+          "Voice Robot"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/contact-center/ai/voice-robot/"
+        ],
+        "supported_by_services": [
+          "voice-robot-service"
+        ]
+      },
+      {
+        "id": "mango-talker-official",
+        "level": "official-product",
+        "name_ru": "Mango Talker",
+        "description": "Публичный продукт корпоративных звонков, чатов, видеозвонков и контактной истории.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/mango-talker/",
+          "kb/mango-product-docs/processed/mtalker/android-user-guide/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/mango-talker/",
+                "kb/mango-product-docs/processed/mtalker/android-user-guide/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Mango Talker",
+          "MTalker"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/mango-talker/"
+        ],
+        "supported_by_services": [
+          "talker-softphone-service",
+          "talker-team-chat-service",
+          "talker-video-meeting-service",
+          "talker-contact-history-service"
+        ]
+      },
+      {
+        "id": "mango-integrations-official",
+        "level": "official-product",
+        "name_ru": "Интеграции",
+        "description": "Публичный продуктовый слой интеграций Mango Office с CRM, ERP, API и webhooks.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/integraciya/",
+          "kb/mango-product-docs/processed/integration-bitrix24/index.md",
+          "kb/mango-product-docs/processed/integration_1c/index.md",
+          "kb/mango-product-docs/processed/integration_amocrm/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/integraciya/",
+                "kb/mango-product-docs/processed/integration-bitrix24/index.md",
+                "kb/mango-product-docs/processed/integration_1c/index.md",
+                "kb/mango-product-docs/processed/integration_amocrm/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Интеграции",
+          "CRM integrations"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/integraciya/"
+        ],
+        "supported_by_services": [
+          "vpbx-open-api-service",
+          "contact-center-api-service",
+          "crm-erp-integration-service",
+          "webhook-event-service"
+        ]
+      },
+      {
+        "id": "mango-numbers-equipment-official",
+        "level": "official-product",
+        "name_ru": "Номера и оборудование",
+        "description": "Публичный продуктовый слой подключения номеров, устройств и телефонной инфраструктуры.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/shop/devices/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "hardware",
+                "capability": "device-management"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/shop/devices/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Оборудование",
+          "Номера",
+          "Devices"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/shop/devices/"
+        ],
+        "supported_by_services": [
+          "vats-number-management-service"
+        ]
+      }
+    ]
+  }
+}

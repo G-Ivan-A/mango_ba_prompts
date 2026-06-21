@@ -13,6 +13,27 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #160 Mango Taxonomy Registry
+
+- Добавлен machine-readable namespace [`kb/mango/`](kb/mango/README.md) с
+  реестром Mango Taxonomy: Official Layer
+  [`kb/mango/official-products.yaml`](kb/mango/official-products.yaml),
+  Internal Layer
+  [`kb/mango/internal-registry.yaml`](kb/mango/internal-registry.yaml) и
+  crosswalk
+  [`kb/mango/product-mapping.yaml`](kb/mango/product-mapping.yaml) к Industry
+  Taxonomy.
+- Реестр покрывает публичные продукты Mango Office, 8 внутренних кластеров,
+  иерархию `Product -> Service -> Module -> Function`, evidence refs из
+  `kb/mango-product-docs/processed/`, `function_type`, `interaction_surface`,
+  `maps_to.industry_alignment` и явные `mapping_gap` для отсутствующих
+  отраслевых Feature/Function.
+- Добавлена документация [`kb/mango/README.md`](kb/mango/README.md), helper
+  [`experiments/issue-160-generate-mango-registry.py`](experiments/issue-160-generate-mango-registry.py)
+  и регрессионная проверка
+  [`scripts/validate_issue_160_mango_registry.py`](scripts/validate_issue_160_mango_registry.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Added — Issue #158 независимый аудит стандартов таксономии
 
 - Добавлен независимый аудиторский отчёт

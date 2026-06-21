@@ -21,12 +21,14 @@ on:
       - "kb/industry/**"
       - "kb/fragments/README.md"
       - "kb/practices/**"
+      - "kb/mango/**"
       - "kb/mango-product-docs/README.md"
       - "kb/mango-product-docs/UPLOAD-GUIDE.md"
       - "kb/mango-product-docs/sources/**"
       - "scripts/kb/**"
       - "scripts/validate_issue_*_kb*.py"
       - "scripts/validate_issue_156_industry_taxonomy_registry.py"
+      - "scripts/validate_issue_160_mango_registry.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -119,6 +121,9 @@ jobs:
 
       - name: Validate issue #156 Industry Taxonomy registry
         run: python3 scripts/validate_issue_156_industry_taxonomy_registry.py
+
+      - name: Validate issue #160 Mango registry
+        run: python3 scripts/validate_issue_160_mango_registry.py
 
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
