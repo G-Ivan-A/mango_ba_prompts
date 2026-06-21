@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-06-21
 ai-generated: true
 ---
@@ -12,6 +12,22 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #158 независимый аудит стандартов таксономии
+
+- Добавлен независимый аудиторский отчёт
+  [`docs/audit/taxonomy-standards-independent-review.md`](docs/audit/taxonomy-standards-independent-review.md):
+  команда из пяти экспертных ролей (системный архитектор, бизнес-аналитик,
+  инженер знаний, эксперт по AI-governance, доменный эксперт) провела
+  независимый сквозной аудит [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md),
+  [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md)
+  и связанных ADR-011/ADR-012 по шести направлениям (внутренняя
+  согласованность, межстандартная согласованность, соответствие ADR,
+  машиночитаемость, готовность к использованию, качество контракта).
+  Зафиксировано 68 находок (9 критических), выполнена независимая
+  кросс-проверка с выводами команды Q (приняты 5 дополнительных схемных
+  находок), вынесен вердикт **NEEDS REVISION** с явными условиями перевода в
+  v1.0. Аудитируемые стандарты и ADR этим отчётом не изменялись.
 
 ### Added — Issue #154 стандарт Mango Taxonomy
 
