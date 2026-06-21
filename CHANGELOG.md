@@ -13,6 +13,25 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #164 исправления аудита Mango Taxonomy Standard
+
+- Обновлён
+  [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md)
+  по независимому аудиту: зафиксирован приоритет ADR-011 над ADR-012 для
+  `industry_ref`, добавлена граница Mango vs Industry, canonical registry
+  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json),
+  `confidence`, `secondary_clusters`, `module_extraction_status`,
+  `supported_by_services[]`, SemVer `taxonomy.version`, закрытые facets
+  `security_compliance` / `geography_region` и текущие registry-resolving
+  mapping examples.
+- Уточнён validator contract: текущие проверки issue #154/#160 отделены от
+  not yet implemented generic mapping-file validation, а отсутствие evidence в
+  draft registry теперь считается ошибкой.
+- Расширена регрессионная проверка
+  [`scripts/validate_issue_154_mango_taxonomy_standard.py`](scripts/validate_issue_154_mango_taxonomy_standard.py),
+  чтобы фиксировать issue #164 audit regressions и проверять примеры
+  `industry_ref` against Industry registry.
+
 ### Changed — Issue #162 исправления аудита Industry Taxonomy Standard
 
 - Обновлён
