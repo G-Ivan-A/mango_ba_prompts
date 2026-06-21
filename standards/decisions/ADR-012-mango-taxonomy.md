@@ -59,6 +59,35 @@ Standard: strict `industry_ref`, `alignment_type` (`primary`, `secondary`,
 resource mapping, а голосовое interaction mapping ДОЛЖНО использовать
 `voice-channel` and/or `channel`.
 
+### Приоритет источников и синхронизация с ADR-011
+
+Чтобы исключить инверсию приоритета между документами (issue #166), фиксируется
+единый, симметричный порядок источников:
+
+> **ADR-011 имеет приоритет над ADR-012.** Если ADR-012, Mango Taxonomy Standard
+> или старый Mango crosswalk противоречат ADR-011 либо каноничному реестру
+> `kb/industry/reference-taxonomy.json` по slug'у домена, capability, feature,
+> function или по форме `industry_ref` — применяется ADR-011. ADR-012 остаётся
+> источником истины только для Mango-specific слоя
+> `Product -> Service -> Module -> Function` там, где он не конфликтует с ADR-011.
+
+Этот порядок дословно совпадает с §1.3 обоих стандартов
+([`industry-taxonomy-standard.md`](../industry-taxonomy-standard.md) и
+[`mango-taxonomy-standard.md`](../mango-taxonomy-standard.md)) и с разделом
+«Приоритет источников и согласованность с ADR-012» в
+[`ADR-011`](ADR-011-industry-taxonomy.md). Все machine-readable примеры в этом ADR
+используют каноничные имена полей (`level`, `official_urls`,
+`supported_by_services`, `evidence_refs`, `maps_to.industry_alignment[]`) и
+каноничные slug'и из `kb/industry/reference-taxonomy.json`; устаревшие черновые
+имена (`layer`, `public_urls`, `internal_services`, `kb_refs`, `evidence_level`)
+больше не используются.
+
+> **Reference integrity.** Все slug'и `domain`/`capability`/`feature`/`function`
+> в примерах ниже резолвятся в каноничном реестре
+> [`kb/industry/reference-taxonomy.json`](../../kb/industry/reference-taxonomy.json);
+> Mango entity-имена и кластеры соответствуют
+> [`mango-taxonomy-standard.md`](../mango-taxonomy-standard.md).
+
 ## Контекст
 
 Issue #142 требует зафиксировать решение по **Mango Taxonomy**:
@@ -238,15 +267,20 @@ Capability и cross-domain facets, потому что публичные про
 
 | Relationship | Кардинальность | Назначение |
 | --- | --- | --- |
-| `official_product.internal_services[]` | many-to-many | Связать публичную витрину с внутренними сервисами. |
+| `official_product.supported_by_services[]` | many-to-many | Связать публичную витрину с внутренними сервисами. |
 | `internal_service.modules[]` | one-to-many или many-to-many | Показать, какие модули реализуют сервис. |
 | `module.functions[]` | one-to-many | Показать leaf-level действия, настройки, API-команды и правила модуля. |
-| `module.kb_refs[]` | one-to-many | Привязать модуль к processed KB evidence. |
-| `function.kb_refs[]` | one-to-many | Привязать функцию к конкретному processed KB evidence. |
-| `service.industry_alignment[]` | one-to-many | Связать сервис с ADR-011 Domain/Capability. |
-| `module.industry_alignment[]` | one-to-many | Связать модуль с ADR-011 Feature. |
-| `function.industry_alignment[]` | one-to-many | Связать Mango function с ADR-011 Function. |
+| `module.evidence_refs[]` | one-to-many | Привязать модуль к processed KB evidence. |
+| `function.evidence_refs[]` | one-to-many | Привязать функцию к конкретному processed KB evidence. |
+| `service.maps_to.industry_alignment[]` | one-to-many | Связать сервис с ADR-011 Domain/Capability. |
+| `module.maps_to.industry_alignment[]` | one-to-many | Связать модуль с ADR-011 Feature. |
+| `function.maps_to.industry_alignment[]` | one-to-many | Связать Mango function с ADR-011 Function. |
 | `entity.facets[]` | many-to-many | Хранить commercial, segment, industry, compliance и region overlays вне иерархии. |
+
+Каноничное имя связи official → internal — `supported_by_services[]`
+(см. §3.2 [`mango-taxonomy-standard.md`](../mango-taxonomy-standard.md)); черновое
+имя `internal_services[]` устарело. Industry-выравнивание всегда хранится внутри
+контейнера `maps_to.industry_alignment[]`, а evidence — в `evidence_refs[]`.
 
 ### Атрибуты
 
@@ -255,9 +289,9 @@ Capability и cross-domain facets, потому что публичные про
 ```yaml
 official_product:
   id: mango-contact-center
-  layer: official
+  level: official-product
   name_ru: Омниканальный контакт-центр
-  public_urls:
+  official_urls:
     - https://www.mango-office.ru/products/
   aliases: []
   official_family: contact-center
@@ -266,55 +300,71 @@ official_product:
     segment: []
     industry: []
     use_case: []
-  internal_services:
+  supported_by_services:
     - agent-workspace
     - omnichannel-queue-management
     - outbound-campaigns
-  source_refs:
-    - type: official_site
-      url: https://www.mango-office.ru/products/
+  evidence_refs:
+    - standards/decisions/ADR-012-mango-taxonomy.md
+    - https://www.mango-office.ru/products/
 
 internal_service:
   id: omnichannel-queue-management
-  layer: internal
+  level: service
   name_ru: Управление очередями обращений
-  supports_official_products:
+  parent_products:
     - mango-contact-center
-  industry_alignment:
-    - domain: contact-center
-      capability: omnichannel-contact-center
-      alignment_type: primary
-  kb_refs:
+  lifecycle_status: active
+  maps_to:
+    industry_alignment:
+      - industry_ref:
+          domain: contact-center
+          capability: omnichannel-contact-center
+        alignment_type: primary
+  evidence_refs:
     - kb/mango-product-docs/processed/mango-cc-manual/index.md
-  owner: unknown
-  evidence_level: processed_kb
 
 module:
   id: wallboard
-  layer: internal
+  level: module
   parent_services:
     - contact-center-monitoring
-  industry_alignment:
-    - domain: analytics
-      capability: product-analytics
-      feature: real-time-dashboard
-      alignment_type: supporting
-  kb_refs:
+  lifecycle_status: active
+  maps_to:
+    industry_alignment:
+      - industry_ref:
+          domain: contact-center
+          capability: supervisor-assist
+          feature: live-monitoring
+        alignment_type: primary
+      - industry_ref:
+          domain: analytics
+          capability: product-analytics
+          feature: demand-analysis
+        alignment_type: supporting
+  evidence_refs:
     - kb/mango-product-docs/processed/wallboard/index.md
-  api_refs: []
 
 function:
   id: select-wallboard-widget
-  layer: internal
+  level: function
   parent_module: wallboard
   function_type: ui-action
-  industry_alignment:
-    - domain: analytics
-      capability: product-analytics
-      feature: real-time-dashboard
-      function: configure-dashboard-widget
-      alignment_type: supporting
-  kb_refs:
+  maps_to:
+    industry_alignment:
+      - industry_ref:
+          domain: contact-center
+          capability: supervisor-assist
+          feature: live-monitoring
+          function: manage-live-monitoring
+        alignment_type: primary
+      - industry_ref:
+          domain: analytics
+          capability: product-analytics
+          feature: demand-analysis
+          function: demand-analysis
+        alignment_type: supporting
+  evidence_refs:
     - kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md
 ```
 
@@ -328,7 +378,7 @@ function:
 ```yaml
 function:
   id: configure-webhook-url
-  layer: internal
+  level: function
   parent_module: webhooks
   name_ru: Настроить URL webhook
   function_type: configuration
@@ -338,14 +388,15 @@ function:
     - setting
   aliases:
     - configure-callback-url
-  industry_alignment:
-    - industry_ref:
-        domain: platform
-        capability: open-api
-        feature: webhook-management
-        function: configure-webhook-endpoint
-      alignment_type: supporting
-  kb_refs:
+  maps_to:
+    industry_alignment:
+      - industry_ref:
+          domain: platform
+          capability: open-api
+          feature: webhooks
+          function: webhook-subscription
+        alignment_type: supporting
+  evidence_refs:
     - kb/mango-product-docs/processed/vpbx-api/index.md
 ```
 
@@ -429,8 +480,8 @@ taxonomy_mapping:
         - industry_ref:
             domain: platform
             capability: open-api
-            feature: webhook-management
-            function: configure-webhook-endpoint
+            feature: webhooks
+            function: webhook-subscription
           alignment_type: supporting
           evidence_refs:
             - kb/mango-product-docs/processed/vpbx-api/index.md
