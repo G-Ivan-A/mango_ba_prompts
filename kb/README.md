@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.2
-updated: 2026-06-20
+updated: 2026-06-21
 ai-generated: true
 type: kb-index
 scope: kb
@@ -9,11 +9,13 @@ related_artifacts:
   - "standards/kb-standard.md"
   - "docs/adr/007-kb-standard.md"
   - "kb/mango-product-docs/README.md"
+  - "kb/industry/README.md"
   - "docs/audit/issue-144-kb-structure.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/111"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/144"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/156"
 ---
 
 # База знаний (KB)
@@ -36,7 +38,7 @@ KB регулируется [kb-standard.md](../standards/kb-standard.md) и
 | [`kb/mango-product-docs/`](mango-product-docs/README.md) | База знаний продуктов Mango Office: PDF/веб-источники, обработанные Markdown-чанки и инструкции использования. | Рабочий product-docs namespace |
 | [`kb/fragments/`](fragments/README.md) | Задел под атомарные фрагменты будущего векторного RAG; сейчас product-docs чанки живут в `kb/mango-product-docs/processed/`. | Оставить в `kb/`, не переносить в product-docs |
 | [`kb/practices/`](practices/README.md) | Ручные практики и методики анализа, не привязанные к конкретному продукту Mango Office. | Оставить в `kb/`, не переносить в product-docs |
-| `kb/industry/ (будущий)` | Industry Taxonomy: отраслевая классификация и справочники после утверждения стандарта. | Планируемый namespace |
+| [`kb/industry/`](industry/README.md) | Industry Taxonomy: machine-readable реестр отраслевой классификации `Domain -> Capability -> Feature -> Function`. | Рабочий industry namespace |
 | `kb/mango/ (будущий)` | Mango Taxonomy: корпоративная классификация продуктов и mapping к taxonomy. | Планируемый namespace |
 
 ## Как использовать?
@@ -111,6 +113,8 @@ RAG, `practices/` — ручные практики. Их не нужно пер
   читает извлечённую БЗ.
 - [`kb/mango-product-docs/UPLOAD-GUIDE.md`](mango-product-docs/UPLOAD-GUIDE.md) —
   как добавлять и обновлять документы.
+- [`kb/industry/README.md`](industry/README.md) — machine-readable Industry
+  Taxonomy registry.
 - [`docs/audit/issue-144-kb-structure.md`](../docs/audit/issue-144-kb-structure.md) —
   проверка истории `fragments/` и `practices/`.
 - [`docs/kb-experiment-report.md`](../docs/kb-experiment-report.md) —

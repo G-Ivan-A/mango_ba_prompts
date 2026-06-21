@@ -31,6 +31,25 @@ ai-generated: true
   [`scripts/validate_issue_154_mango_taxonomy_standard.py`](scripts/validate_issue_154_mango_taxonomy_standard.py),
   подключённая к `make kb-validate` и KB workflow.
 
+### Added — Issue #156 реестр Industry Taxonomy
+
+- Добавлен machine-readable реестр
+  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json):
+  зафиксированы семь canonical domains ADR-011, cross-domain layer `platform`,
+  capabilities/features/functions, lifecycle статусы, `function_type`,
+  `evidence_refs` и cross-cutting facets включая `channel`.
+- Добавлены локальная schema
+  [`kb/industry/reference-taxonomy.schema.json`](kb/industry/reference-taxonomy.schema.json)
+  и README
+  [`kb/industry/README.md`](kb/industry/README.md) для namespace `kb/industry/`;
+  продуктовые Mango mappings в реестр не включались.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_156_industry_taxonomy_registry.py`](scripts/validate_issue_156_industry_taxonomy_registry.py),
+  подключённая к `make kb-validate` и KB workflow.
+- Обновлена проверка Issue #144, чтобы root KB README больше не требовал
+  помечать `kb/industry/` как будущий namespace после добавления рабочего
+  Industry Taxonomy registry.
+
 ### Added — Issue #152 стандарт Industry Taxonomy
 
 - Добавлен формальный стандарт
