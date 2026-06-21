@@ -13,6 +13,26 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #162 исправления аудита Industry Taxonomy Standard
+
+- Обновлён
+  [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
+  по находкам аудита: стандарт теперь явно ссылается на canonical registry
+  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json)
+  и schema
+  [`kb/industry/reference-taxonomy.schema.json`](kb/industry/reference-taxonomy.schema.json),
+  фиксирует boundary Industry vs Mango, статус `platform` как
+  `cross_domain_layers`, canonical facet names `security_compliance` /
+  `geography_region`, словарь `interaction_surface`, правило
+  `direction x synchronicity`, JSON Schema contract для `industry_ref` и
+  обязательное использование `mapping_gap` для неканонических source terms.
+- Уточнён validator contract: текущие проверки issue #152/#156 отделены от
+  not yet implemented generic mapping-file validation, чтобы зелёный CI не
+  трактовался как полная проверка всех mapping artifacts.
+- Расширена регрессионная проверка
+  [`scripts/validate_issue_152_industry_taxonomy_standard.py`](scripts/validate_issue_152_industry_taxonomy_standard.py),
+  чтобы фиксировать audit-regression tokens для Industry Taxonomy Standard.
+
 ### Added — Issue #160 Mango Taxonomy Registry
 
 - Добавлен machine-readable namespace [`kb/mango/`](kb/mango/README.md) с

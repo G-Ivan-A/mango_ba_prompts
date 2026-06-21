@@ -11,9 +11,12 @@ depends_on:
   - "standards/decisions/ADR-012-mango-taxonomy.md"
 related_artifacts:
   - "docs/analysis/voice-digital-channels-comparison.md"
+  - "kb/industry/reference-taxonomy.json"
+  - "kb/industry/reference-taxonomy.schema.json"
   - "standards/product-classification-contract.md"
 validated_by:
   - "scripts/validate_issue_152_industry_taxonomy_standard.py"
+  - "scripts/validate_issue_156_industry_taxonomy_registry.py"
 ---
 
 # Стандарт Industry Taxonomy
@@ -27,8 +30,12 @@ validated_by:
 
 Этот стандарт задаёт правила применения Industry Taxonomy как эталонной
 отраслевой классификации для коммуникационных продуктов, возможностей,
-требований, KB-источников и будущих валидаторов. ADR-011 объясняет, почему
-принята модель; этот стандарт объясняет, как её использовать.
+требований, KB-источников и валидаторов. ADR-011 объясняет, почему принята
+модель; этот стандарт объясняет, как её использовать. Machine-readable registry
+для canonical nodes находится в
+[`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json),
+а его структурный контракт - в
+[`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json).
 
 ## 1. Область применения
 
@@ -52,7 +59,7 @@ validated_by:
 - правила выбора `alignment_type`;
 - правила классификации граничных случаев;
 - процесс изменения таксономии;
-- минимальный контракт будущего CI-валидатора;
+- минимальный контракт CI-валидатора;
 - правила для AI-агентов, которые создают или изменяют taxonomy mapping.
 
 ### 1.2 Что стандарт НЕ регулирует
@@ -74,18 +81,41 @@ ADR-012. В этом стандарте допускаются только аб
 
 При конфликте источников применяется такой порядок:
 
-1. явное требование issue или комментария пользователя;
-2. этот стандарт;
-3. ADR-011 в статусе `canonical`;
-4. ADR-012 как связанный, но не финальный Mango-layer ADR;
-5. аналитика `docs/analysis/voice-digital-channels-comparison.md`;
-6. `standards/product-classification-contract.md`;
-7. source evidence из processed KB или внешних отраслевых источников.
+1. явное issue/ADR/PR-review решение, помеченное как taxonomy override and
+   accepted by maintainer/founder;
+2. этот стандарт для правил применения Industry Taxonomy;
+3. `kb/industry/reference-taxonomy.json` для canonical node ids below Domain;
+4. ADR-011 в статусе `canonical` как архитектурное решение;
+5. ADR-012 и `standards/mango-taxonomy-standard.md` только для Mango-specific
+   Product/Service/Module/Function layer;
+6. аналитика `docs/analysis/voice-digital-channels-comparison.md`;
+7. `standards/product-classification-contract.md`;
+8. source evidence из processed KB или внешних отраслевых источников.
 
-Если ADR-012 противоречит ADR-011, применяется ADR-011. Если будущий стандарт
-Mango Taxonomy противоречит этому стандарту, конфликт ДОЛЖЕН быть вынесен в PR
-с явным решением: изменить Industry Taxonomy, изменить Mango Taxonomy или
-зафиксировать vendor-specific extension.
+Обычный комментарий в issue не отменяет taxonomy contract сам по себе. Если
+ADR-012 противоречит ADR-011, применяется ADR-011. Если Mango Taxonomy
+противоречит этому стандарту, конфликт ДОЛЖЕН быть вынесен в PR с явным
+решением: изменить Industry Taxonomy, изменить Mango Taxonomy или зафиксировать
+vendor-specific extension.
+
+### 1.4 Industry vs Mango responsibility boundary
+
+Industry Taxonomy ДОЛЖНА отвечать на вопрос: "какой отраслевой node описывает
+возможность?" Mango Taxonomy ДОЛЖНА отвечать на вопрос: "какой публичный продукт,
+внутренний service/module/function or registry entry Mango реализует эту
+возможность?"
+
+Правила выбора стандарта:
+
+- использовать этот стандарт и `kb/industry/reference-taxonomy.json`, когда
+  артефакт создаёт, проверяет или выбирает `industry_ref`;
+- использовать Mango Taxonomy Standard, когда артефакт описывает Product,
+  Service, Module, Function, official URLs, clusters, internal services or
+  Mango-specific mappings;
+- не создавать Industry slug из Mango label; если canonical Industry node
+  отсутствует, использовать nearest canonical parent with `mapping_gap`;
+- не переносить Mango cluster/id в Industry hierarchy without source-backed
+  change request.
 
 ## 2. Нормативные термины
 
@@ -257,6 +287,17 @@ node или утверждённый facet value. Свободный tag НЕ Д
 например, в `aliases`, `source_terms`, `notes`, `industry`, `segment`,
 `region`, `use_case`.
 
+### 2.11 RFC 2119 / BCP 14 terms
+
+Нормативные слова используются в смысле RFC 2119 / BCP 14:
+
+| Термин | Значение для этого стандарта |
+| --- | --- |
+| `ДОЛЖЕН` / `MUST` | Обязательное требование. Нарушение делает mapping или registry entry invalid. |
+| `НЕ ДОЛЖЕН` / `MUST NOT` | Запрещённое поведение. Валидатор SHOULD report error unless explicitly marked legacy-exempt. |
+| `СЛЕДУЕТ` / `SHOULD` | Рекомендуемое поведение. Отклонение требует documented rationale. |
+| `МОЖЕТ` / `MAY` | Допустимое поведение, не обязательное для каждого артефакта. |
+
 ## 3. Каноническая модель
 
 Industry Taxonomy использует ровно четыре уровня:
@@ -279,11 +320,56 @@ Domain -> Capability -> Feature -> Function
 | `hardware` | Device/access edge: phones, headsets, rooms, physical access endpoints. | Поддерживает SaaS domains, но не заменяет их. |
 | `security` | Access control, information security, compliance-related product capabilities. | Compliance facets не становятся security node без product behavior. |
 
-`platform` фиксируется как cross-domain/productizable layer. В mapping оно
-используется как reference area for `platform-integration`, `open-api`, `cpaas`,
-communications APIs, integrations, service-desk/vendor-support extensions.
+`platform` is not an eighth Domain. It is fixed as a cross-domain/productizable
+layer in the `cross_domain_layers` section of
+`kb/industry/reference-taxonomy.json`. In `industry_ref`, the existing field
+`domain` is retained for compatibility and MAY contain `platform`; validators
+MUST resolve that value against `domains[]` plus `cross_domain_layers[]`.
 
-### 3.2 Правила parent-child
+| Cross-domain layer | Назначение | Обязательные границы |
+| --- | --- | --- |
+| `platform` | APIs, integrations, CPaaS, events, extension points, service-desk/vendor-support extensions. | Используется как primary только для productizable platform/API capability; иначе supporting. |
+
+### 3.2 Machine-readable registry coverage
+
+Canonical node ids below Domain ДОЛЖНЫ браться из
+[`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json).
+Schema registry contract ДОЛЖЕН соответствовать
+[`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json).
+
+Минимальная проверяемая структура registry:
+
+```text
+domains[]
+  capabilities[]
+    features[]
+      functions[]
+cross_domain_layers[]
+  capabilities[]
+    features[]
+      functions[]
+facets
+```
+
+Registry v1.0.0 закрывает audit blocker "ниже Domain нет canonical registry":
+
+| Area | Examples of canonical coverage |
+| --- | --- |
+| `voice-ucaas` | `voice-channel`, `cloud-pbx`, `number-management`, `call-recording`, `unified-communications` |
+| `contact-center` | `omnichannel-contact-center`, `agent-workspace`, `outbound-calling`, `quality-management`, `workforce-management`, `agent-assist`, `supervisor-assist` |
+| `digital-channels` | `sms-messaging`, `omnichannel-messaging`, `website-chat` |
+| `ai-automation` | `chatbot`, `voice-bot`, `process-robot`, `speech-analytics` |
+| `analytics` | `call-tracking`, `end-to-end-analytics`, `multichannel-analytics`, `product-analytics` |
+| `security` | `information-security` with `access-control` and `role-based-access-control` |
+| `platform` | `platform-integration`, `open-api`, `cpaas`, `service-desk`, `vendor-support-services` |
+
+Если Mango или KB source использует неканонический candidate вроде
+`team-messaging`, `conversation-analytics`, `supervisor-workspace` or
+`role-management`, Industry mapping НЕ ДОЛЖЕН invent that slug silently. Mapping
+ДОЛЖЕН выбрать nearest canonical parent from registry and add `mapping_gap`, or
+создать change request по §10.3.
+
+### 3.3 Правила parent-child
 
 Каждый non-Domain node ДОЛЖЕН иметь parent:
 
@@ -305,7 +391,7 @@ Parent-child связь НЕ ДОЛЖНА создаваться по таким
 Если связь важна, но не является containment, она ДОЛЖНА фиксироваться отдельным
 relationship или `alignment_type: supporting`, а не parent-child.
 
-### 3.3 Many-to-many mapping
+### 3.4 Many-to-many mapping
 
 Между Mango Taxonomy и Industry Taxonomy many-to-many является нормой.
 
@@ -369,7 +455,8 @@ Canonical slug ДОЛЖЕН:
 
 ### 4.2 Минимальная структура node
 
-Будущий registry ДОЛЖЕН хранить node в machine-readable форме. Минимальный
+Machine-readable registry ДОЛЖЕН хранить node в JSON форме, проверяемой
+`kb/industry/reference-taxonomy.schema.json`. Минимальный YAML-представимый
 контракт:
 
 ```yaml
@@ -409,7 +496,79 @@ parent:
   feature: queue-routing
 ```
 
-### 4.3 Lifecycle status
+### 4.3 JSON Schema contract
+
+Canonical registry structure ДОЛЖНА валидироваться схемой
+`kb/industry/reference-taxonomy.schema.json`. Mapping artifacts MAY use the
+following JSON Schema fragment for `industry_ref`; parent-chain existence is
+then checked by registry-aware validator logic.
+
+```json
+{
+  "$id": "industry-taxonomy-mapping.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "referenceArea": {
+      "enum": [
+        "voice-ucaas",
+        "contact-center",
+        "digital-channels",
+        "ai-automation",
+        "analytics",
+        "hardware",
+        "security",
+        "platform"
+      ]
+    },
+    "industryRef": {
+      "type": "object",
+      "required": ["domain"],
+      "additionalProperties": false,
+      "properties": {
+        "domain": { "$ref": "#/$defs/referenceArea" },
+        "capability": { "$ref": "#/$defs/slug" },
+        "feature": { "$ref": "#/$defs/slug" },
+        "function": { "$ref": "#/$defs/slug" }
+      }
+    },
+    "alignmentType": {
+      "enum": ["primary", "secondary", "supporting"]
+    },
+    "industryAlignment": {
+      "type": "object",
+      "required": ["industry_ref", "alignment_type"],
+      "additionalProperties": false,
+      "properties": {
+        "industry_ref": { "$ref": "#/$defs/industryRef" },
+        "alignment_type": { "$ref": "#/$defs/alignmentType" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "mapping_gap": {
+          "type": "object"
+        },
+        "facets": {
+          "type": "object"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "properties": {
+    "industry_alignment": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/industryAlignment" }
+    }
+  }
+}
+```
+
+### 4.4 Lifecycle status
 
 Node ДОЛЖЕН иметь один lifecycle status:
 
@@ -423,7 +582,7 @@ Node ДОЛЖЕН иметь один lifecycle status:
 Статус `active` НЕ ДОЛЖЕН назначаться без source evidence или ADR/standard
 decision.
 
-### 4.4 Alias and source terms
+### 4.5 Alias and source terms
 
 `aliases` и `source_terms` нужны для поиска и evidence, но не являются
 canonical identifiers.
@@ -452,7 +611,8 @@ source_terms:
 Классификатор ДОЛЖЕН использовать такой порядок:
 
 1. Определить observable behavior or business meaning source entity.
-2. Исключить commercial, region, procurement, vertical and packaging labels.
+2. Исключить commercial, geography_region, procurement, industry_vertical,
+   segment and packaging labels.
 3. Выбрать самый глубокий уровень, подтверждённый evidence.
 4. Проверить parent-chain на semantic containment.
 5. Выбрать `alignment_type`.
@@ -469,7 +629,8 @@ source_terms:
 | способность достигать повторяемого результата | Capability |
 | конкретную возможность, сценарий, экранный/интеграционный блок | Feature |
 | атомарное действие, параметр, команду, событие, настройку или правило | Function |
-| канал, регион, vertical, сегмент, AI-assisted, compliance property | Facet |
+| канал, регион, vertical, AI-assisted, security/compliance property | Facet |
+| segment, use_case, free source label | Metadata outside `industry_ref` |
 | тариф, SKU, procurement code, договорный пакет | Не Industry Taxonomy |
 
 ### 5.3 Проверка атомарности Function
@@ -558,8 +719,8 @@ authentication, authorization, access policy, audit, encryption, privacy control
 or compliance workflow.
 
 Compliance label, law, registry or certification alone НЕ ДОЛЖЕН становиться
-Industry Taxonomy node. Такие признаки СЛЕДУЕТ хранить facet/metadata outside
-`industry_ref`.
+Industry Taxonomy node. Такие признаки СЛЕДУЕТ хранить in
+`facets.security_compliance` or metadata outside `industry_ref`.
 
 ### 5.10 Правило analytics
 
@@ -585,9 +746,12 @@ facets:
     synchronicity: sync
     direction: inbound
   ai_assisted: true
-  compliance:
-    region: ru
+  security_compliance:
+    law:
+      - ru-152fz
     personal_data: true
+  geography_region:
+    - ru
 ```
 
 Каждый facet ДОЛЖЕН иметь:
@@ -620,6 +784,14 @@ Allowed values:
 | `channel_kind` | `voice`, `text`, `video` | ДОЛЖЕН быть указан для channel facet. |
 | `synchronicity` | `sync`, `async` | ДОЛЖЕН соответствовать interaction semantics. |
 | `direction` | `inbound`, `outbound`, `broadcast` | ДОЛЖЕН соответствовать инициатору или pattern of communication. |
+
+Allowed direction x synchronicity combinations:
+
+| `direction` | Allowed `synchronicity` | Rule |
+| --- | --- | --- |
+| `inbound` | `sync`, `async` | Voice/video/live chat are usually `sync`; email, SMS and delayed messenger replies are usually `async`. |
+| `outbound` | `sync`, `async` | Live calls are usually `sync`; campaigns, email and SMS dispatch are usually `async`. |
+| `broadcast` | `sync`, `async` | Live voice/video broadcast MAY be `sync`; SMS/push/email broadcast SHOULD be `async`. Evidence must explain the choice when ambiguous. |
 
 `channel_kind: voice`:
 
@@ -684,8 +856,8 @@ channel.
 
 ### 6.6 Other facets
 
-Следующие facets разрешены как концептуальные overlays, но их exact registry
-ДОЛЖЕН утверждаться отдельно:
+Следующие facets являются canonical conceptual overlays. Их registry contract
+ДОЛЖЕН быть синхронизирован с `kb/industry/reference-taxonomy.json`:
 
 | Facet | Типичные значения | Применение |
 | --- | --- | --- |
@@ -695,6 +867,10 @@ channel.
 | `procurement` | controlled object | Procurement code, registry, public-sector labels. |
 | `industry_vertical` | controlled list or external code | Customer industry/vertical. |
 | `geography_region` | ISO/country/market code | Region-specific availability or compliance. |
+
+`segment` is intentionally not a canonical Industry facet in this standard.
+Customer segment or market segment labels MAY be stored as source metadata
+outside `industry_ref` until a separate change request adds a controlled facet.
 
 Эти facets НЕ ДОЛЖНЫ использоваться как substitute for Domain/Capability.
 
@@ -738,6 +914,10 @@ Allowed values:
 
 ### 7.3 Рекомендуемые атрибуты Function
 
+Следующий YAML fragment показывает Function-specific fields. Full registry node
+also requires `name_ru`/`name_en`, `definition`, `lifecycle_status` and complete
+parent-chain metadata from §4.2.
+
 ```yaml
 id: configure-webhook-endpoint
 level: function
@@ -756,7 +936,35 @@ evidence_refs:
   - kb/mango-product-docs/processed/example/index.md
 ```
 
-### 7.4 Evidence refs
+### 7.4 `interaction_surface`
+
+`interaction_surface` describes where Function behavior is triggered or observed.
+It is required for Function-level mapping artifacts that classify a concrete
+source Function. Registry Function nodes SHOULD include it when source evidence
+has a single dominant surface; otherwise the registry MAY omit it.
+
+Allowed initial values:
+
+| Value | Meaning |
+| --- | --- |
+| `admin-ui` | Administrator UI or settings panel. |
+| `operator-ui` | Operator/agent/supervisor workspace. |
+| `end-user-ui` | End-user client or user-facing application. |
+| `api` | Public or integration API. |
+| `webhook` | Event callback or webhook surface. |
+| `background-job` | Scheduled or asynchronous internal process. |
+| `system-rule` | Rule applied by platform/runtime. |
+| `unknown` | Evidence is insufficient; allowed only for `proposed` entries and requires review before active status. |
+
+Rules:
+
+- `interaction_surface` is not a channel marker; channel belongs to
+  `facets.channel`.
+- `unknown` НЕ ДОЛЖЕН использоваться for `lifecycle_status: active`.
+- API/webhook/background values do not automatically make `platform` primary;
+  §5.8 still decides primary vs supporting.
+
+### 7.5 Evidence refs
 
 Каждый canonical node ДОЛЖЕН иметь evidence. Допустимые evidence refs:
 
@@ -764,7 +972,7 @@ evidence_refs:
 - processed KB path;
 - official vendor or standards URL;
 - audit/analysis document path;
-- future registry path.
+- registry path.
 
 Evidence refs НЕ ДОЛЖНЫ быть:
 
@@ -773,7 +981,7 @@ Evidence refs НЕ ДОЛЖНЫ быть:
 - screenshot без текстового пояснения;
 - URL without stable context.
 
-### 7.5 Confidence
+### 7.6 Confidence
 
 Если mapping создаётся до полного registry, source entity МОЖЕТ иметь
 `confidence`:
@@ -805,7 +1013,8 @@ industry_alignment:
 
 - `industry_alignment` ДОЛЖЕН быть array;
 - каждый item ДОЛЖЕН иметь `industry_ref` and `alignment_type`;
-- `industry_ref.domain` ДОЛЖЕН присутствовать всегда;
+- `industry_ref.domain` ДОЛЖЕН присутствовать всегда and resolve to a registry
+  `domains[].id` or `cross_domain_layers[].id`;
 - deeper fields ДОЛЖНЫ присутствовать, если source level and evidence allow;
 - `alignment_type` ДОЛЖЕН быть one of `primary`, `secondary`, `supporting`;
 - `evidence_refs` ДОЛЖНЫ быть present for registry-grade mapping.
@@ -824,6 +1033,11 @@ industry_alignment:
 
 Если source level unknown, mapping СЛЕДУЕТ начинать с closest observable
 behavior and evidence.
+
+Domain-only `industry_ref` is valid only when source level is Product, evidence
+really stops at Domain, or the mapping explicitly carries `mapping_gap`.
+Service, Module, Function, API endpoint and UI control mappings with known
+behavior НЕ ДОЛЖНЫ stop at Domain without `mapping_gap`.
 
 ### 8.3 Primary, secondary, supporting
 
@@ -871,6 +1085,17 @@ industry_alignment:
 - gap НЕ ДОЛЖЕН silently become free tag;
 - production validator ДОЛЖЕН fail or warn according to artifact status.
 
+Examples that require `mapping_gap` unless a change request adds canonical nodes:
+
+- Mango source term `team-messaging` under `digital-channels` without a
+  registry node;
+- source term `conversation-analytics` when the registry only has nearest
+  analytics or assist nodes;
+- source term `supervisor-workspace` when the registry has `agent-workspace` and
+  `supervisor-assist` but no canonical workspace node;
+- source term `role-management` when the registry has
+  `security/information-security/access-control/role-based-access-control`.
+
 ### 8.5 Запрещённые forms
 
 Свободный tag внутри `industry_ref` запрещён:
@@ -905,7 +1130,7 @@ industry_ref:
   capability: premium-plan
 ```
 
-### 8.6 Формат для будущего registry mapping file
+### 8.6 Формат для registry-backed mapping file
 
 ```yaml
 taxonomy_mapping:
@@ -1184,7 +1409,7 @@ PR, который меняет Industry Taxonomy, ДОЛЖЕН содержат
 
 ### 10.4 Versioning
 
-Стандарт и future registry ДОЛЖНЫ использовать semantic meaning:
+Стандарт и registry ДОЛЖНЫ использовать semantic meaning:
 
 - patch: editorial clarification without behavior change;
 - minor: additive node/facet/validator rule compatible with existing mappings;
@@ -1216,9 +1441,9 @@ validator_severity: warning
 
 ### 10.6 Ownership
 
-До появления dedicated owner registry owner считается `unknown`, но PR author
-ДОЛЖЕН указать review focus. Для canonical promotion owner SHOULD be assigned to
-standard/governance maintainers or domain SME.
+Если dedicated owner ещё не назначен, registry owner считается `unknown`, но PR
+author ДОЛЖЕН указать review focus. Для canonical promotion owner SHOULD be
+assigned to standard/governance maintainers or domain SME.
 
 ## 11. Контракт для валидатора
 
@@ -1237,14 +1462,27 @@ Validator ДОЛЖЕН проверять:
 - наличие mapping format with `industry_ref` and `alignment_type`;
 - наличие self-check section.
 
+Implemented CI coverage:
+
+| Validator | Implemented scope |
+| --- | --- |
+| `scripts/validate_issue_152_industry_taxonomy_standard.py` | Document structure, required normative sections, audit-regression tokens for this standard. |
+| `scripts/validate_issue_156_industry_taxonomy_registry.py` | Registry JSON shape, canonical domains, `cross_domain_layers`, required capabilities/features/functions, evidence refs and core facet lists. |
+
+Full generic validation of arbitrary mapping artifacts is not yet implemented
+because no canonical mapping-file location exists in this repository. Until that
+artifact exists, §11.2 is a normative contract for future mapping validators, not
+a claim that every mapping check runs in current CI.
+
 ### 11.2 Минимальные проверки mapping object
 
-Validator future registry ДОЛЖЕН проверять:
+Future mapping validator ДОЛЖЕН проверять:
 
 1. `industry_alignment` exists and is array.
 2. Each alignment has `industry_ref`.
 3. `industry_ref.domain` is required.
-4. `industry_ref.domain` exists in canonical registry.
+4. `industry_ref.domain` exists in canonical registry `domains[]` or
+   `cross_domain_layers[]`.
 5. `industry_ref.capability`, if present, belongs to domain.
 6. `industry_ref.feature`, if present, belongs to capability.
 7. `industry_ref.function`, if present, belongs to feature.
@@ -1256,11 +1494,17 @@ Validator future registry ДОЛЖЕН проверять:
 13. `facets.channel.direction` is one of `inbound`, `outbound`, `broadcast`.
 14. Function-level mappings include or inherit `function_type`.
 15. `function_type` is `business`, `configuration` or `ui-action`.
-16. `evidence_refs` resolve to existing repo path or full URL.
-17. No `industry_ref` value violates slug pattern.
-18. No free-text taxonomy tag appears inside `industry_ref`.
-19. Deprecated nodes produce warning with replacement.
-20. Removed nodes produce failure unless legacy exemption is explicit.
+16. Function-level mappings include or inherit allowed `interaction_surface`.
+17. `facets.channel.direction` follows the direction x synchronicity table.
+18. `evidence_refs` resolve to existing repo path or full URL.
+19. No `industry_ref` value violates slug pattern.
+20. No free-text taxonomy tag appears inside `industry_ref`.
+21. Deprecated nodes produce warning with replacement.
+22. Removed nodes produce failure unless legacy exemption is explicit.
+
+Checks 1-22 are not yet implemented as one generic mapping-file validator in
+current CI; registry-backed subsets are covered by issue #152/#156 validators as
+listed in §11.1.
 
 ### 11.3 Severity
 
@@ -1276,6 +1520,7 @@ Validator future registry ДОЛЖЕН проверять:
 | Deprecated node with replacement | warning |
 | Ambiguous alias | error |
 | Low confidence in production registry | error |
+| `interaction_surface: unknown` on active node | error |
 
 ### 11.4 Validator pseudo-code
 
@@ -1290,7 +1535,9 @@ for entity in mapping.entities:
     validate_parent_chain(ref)
     validate_alignment_type(alignment.alignment_type)
     validate_facets(alignment.facets)
-    validate_evidence(alignment.evidence_refs, entity.status)
+    if entity.level == "function":
+      validate_interaction_surface(entity.interaction_surface, entity.lifecycle_status)
+    validate_evidence(alignment.evidence_refs, entity.lifecycle_status)
     if alignment.alignment_type == "primary":
       primary_count += 1
   if primary_count == 0 and not entity.supporting_only_reason:
@@ -1345,6 +1592,7 @@ AI-агент НЕ ДОЛЖЕН:
 - атрибуты node and mapping;
 - `function_type`;
 - cross-cutting facets including `channel`;
+- canonical registry reference and JSON Schema contract;
 - mapping rules;
 - validation contract;
 - evolution process;
@@ -1368,13 +1616,15 @@ Enum values are closed for:
 - `channel_kind`;
 - `synchronicity`;
 - `direction`;
+- `interaction_surface`;
 - lifecycle status.
 
 ### 13.3 Отсутствие дублирования
 
-Стандарт does not repeat ADR-011 source research tables or ADR-012 Mango product
-crosswalk. It references them as source artifacts and defines application rules
-for future validators and mappings.
+Стандарт does not repeat ADR-011 source research tables, ADR-012 Mango product
+crosswalk or the full `kb/industry/reference-taxonomy.json` registry. It
+references them as source artifacts and defines application rules for validators
+and mappings.
 
 ### 13.4 Отсутствие противоречий
 
@@ -1382,6 +1632,8 @@ Standard decisions align with:
 
 - ADR-011 canonical v1.0: four-level hierarchy, domain set, `platform`,
   `voice-channel`, `channel` facet, strict mapping;
+- `kb/industry/reference-taxonomy.json`: canonical below-Domain node ids and
+  explicit `cross_domain_layers` for `platform`;
 - ADR-012: Mango `Product -> Service -> Module -> Function`, `function_type`,
   many-to-many mapping and alias rules;
 - voice/digital analysis: infrastructure asymmetry remains, channel naming
@@ -1396,7 +1648,9 @@ The validator contract is machine-actionable:
 - slug pattern is defined;
 - parent-chain validation is defined;
 - error/warning severity is defined;
-- examples use YAML structures that can be parsed.
+- examples use YAML structures that can be parsed, and fragments are labelled;
+- current CI validator scope is separated from not yet implemented generic
+  mapping-file validation.
 
 ## Источники
 
@@ -1406,6 +1660,10 @@ The validator contract is machine-actionable:
   [`standards/decisions/ADR-012-mango-taxonomy.md`](decisions/ADR-012-mango-taxonomy.md)
 - Voice/digital channels analysis:
   [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
+- Industry Taxonomy registry:
+  [`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json)
+- Industry Taxonomy registry schema:
+  [`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json)
 - Product Classification Contract:
   [`standards/product-classification-contract.md`](product-classification-contract.md)
 - RFC 2119 / BCP 14: <https://www.rfc-editor.org/info/bcp14>

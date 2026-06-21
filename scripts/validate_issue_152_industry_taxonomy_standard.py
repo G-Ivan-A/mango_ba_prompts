@@ -14,6 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 STANDARD = "standards/industry-taxonomy-standard.md"
+REGISTRY = "kb/industry/reference-taxonomy.json"
+REGISTRY_SCHEMA = "kb/industry/reference-taxonomy.schema.json"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
 KB_WORKFLOW = ".github/workflows/kb.yml"
@@ -115,12 +117,61 @@ def check_standard() -> list[str]:
     return errors
 
 
+def check_issue_162_audit_fixes() -> list[str]:
+    errors = require_text(
+        STANDARD,
+        REGISTRY,
+        REGISTRY_SCHEMA,
+        "Industry vs Mango responsibility boundary",
+        "cross_domain_layers",
+        "`platform` is not an eighth Domain",
+        "security_compliance:",
+        "geography_region:",
+        "`security_compliance`",
+        "`geography_region`",
+        "`interaction_surface`",
+        "`admin-ui`",
+        "`operator-ui`",
+        "`end-user-ui`",
+        "`api`",
+        "`webhook`",
+        "`background-job`",
+        "`system-rule`",
+        "`unknown`",
+        "direction x synchronicity",
+        "`broadcast`",
+        "JSON Schema contract",
+        "\"industryRef\"",
+        "\"additionalProperties\": false",
+        "mapping_gap",
+        "not yet implemented",
+        "scripts/validate_issue_156_industry_taxonomy_registry.py",
+    )
+    if errors:
+        return errors
+
+    text = read_text(STANDARD)
+    obsolete_facet_examples = (
+        "  compliance:\n    region:",
+        "`compliance` in §6.1",
+        "`geography_region`/`region`",
+    )
+    for obsolete in obsolete_facet_examples:
+        if obsolete in text:
+            errors.append(f"{STANDARD}: obsolete facet drift remains: {obsolete!r}")
+    if "| канал, регион, vertical, сегмент" in text:
+        errors.append(f"{STANDARD}: segment must not be classified as an Industry facet")
+    return errors
+
+
 def check_changelog_and_ci() -> list[str]:
     errors: list[str] = []
     errors += require_text(
         CHANGELOG,
         "Issue #152",
+        "Issue #162",
         STANDARD,
+        REGISTRY,
         "Industry Taxonomy",
         VALIDATOR,
     )
@@ -155,6 +206,7 @@ def main() -> int:
         ),
     )
     errors += check_changelog_and_ci()
+    errors += check_issue_162_audit_fixes()
 
     if errors:
         print("Issue #152 Industry Taxonomy standard validation failed:")
