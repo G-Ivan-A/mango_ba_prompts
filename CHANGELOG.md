@@ -13,6 +13,34 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #166 синхронизация ADR-011/ADR-012
+
+- Синхронизированы решения
+  [`standards/decisions/ADR-011-industry-taxonomy.md`](standards/decisions/ADR-011-industry-taxonomy.md)
+  и
+  [`standards/decisions/ADR-012-mango-taxonomy.md`](standards/decisions/ADR-012-mango-taxonomy.md):
+  оба ADR теперь симметрично фиксируют единый приоритет источников
+  «ADR-011 имеет приоритет над ADR-012», согласованный с §1.3 обоих стандартов,
+  и ссылаются на canonical registry
+  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json).
+- Унифицированы имена полей в machine-readable примерах ADR-012: черновые
+  `layer` / `public_urls` / `internal_services` / `kb_refs` / `evidence_level`
+  заменены на canonical `level` / `official_urls` / `supported_by_services` /
+  `evidence_refs`, а industry-выравнивание обёрнуто в
+  `maps_to.industry_alignment[]`.
+- Устранён cross-standard drift slug'ов и `alignment_type`: пример
+  `select-wallboard-widget` выровнен на canonical chain
+  `contact-center/supervisor-assist/live-monitoring/manage-live-monitoring`
+  (`primary`) с supporting `analytics/product-analytics/demand-analysis`, а
+  webhook-пример использует canonical `platform/open-api/webhooks/webhook-subscription`.
+  Исправлен невалидный пример chain в ADR-011 на
+  `contact-center/omnichannel-contact-center/omnichannel-desktop/unified-agent-desktop`.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_166_adr_sync.py`](scripts/validate_issue_166_adr_sync.py),
+  подключённая к `make kb-validate` и KB workflow: она проверяет симметрию
+  приоритета, canonical имена полей и резолвинг всех `industry_ref` примеров
+  обоих ADR против Industry registry.
+
 ### Changed — Issue #164 исправления аудита Mango Taxonomy Standard
 
 - Обновлён

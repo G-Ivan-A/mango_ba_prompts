@@ -125,6 +125,9 @@ jobs:
       - name: Validate issue #160 Mango registry
         run: python3 scripts/validate_issue_160_mango_registry.py
 
+      - name: Validate issue #166 ADR sync
+        run: python3 scripts/validate_issue_166_adr_sync.py
+
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
   # обрабатывает все kb/mango-product-docs/sources/*/meta.json и коммитит kb/mango-product-docs/processed.
