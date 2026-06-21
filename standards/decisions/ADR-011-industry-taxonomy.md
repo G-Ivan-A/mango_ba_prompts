@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.3
-updated: 2026-06-20
+status: canonical
+version: 1.0
+updated: 2026-06-21
 ai-generated: true
 type: adr
 scope: industry-taxonomy
@@ -9,21 +9,25 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/139"
 validated_by:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/148"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/150"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
 hub_research_sha: "73e94c6e69995ccf9e746c19d9c18359971285f2"
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/140"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/149"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/151"
 related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/hub-research-dependencies.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/008-industry-standards-standard.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/voice-digital-channels-comparison.md"
 ---
 
 # ADR-011: Industry Taxonomy для классификации продуктов Mango Office
 
-> **Статус:** Proposed · **Дата:** 2026-06-20 · **Issue:**
-> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/139> · **Hub research:**
+> **Статус:** Canonical · **Дата:** 2026-06-21 · **Issue:**
+> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/139> · **Доисследование:**
+> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/150> · **Hub research:**
 > <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md>
 
 > **Numbering note.** ADR-011 продолжает трёхзначную дорожку ADR стандартов
@@ -243,7 +247,8 @@ Industry Taxonomy для будущих артефактов Mango должна 
 3. **Cross-domain/platform layer:** `platform-integration`, `open-api`, `cpaas`,
    communications APIs, integrations, service-desk/vendor-support extensions.
 4. **Cross-cutting facets:** AI-assisted, security/compliance, commercial,
-   procurement, industry vertical, geography/region.
+   procurement, industry vertical, geography/region, **channel** (см. раздел
+   «Голосовой канал vs текстовые каналы»).
 5. **Candidate additions before standardization:** WEM/WFM/QM, agent assist,
    supervisor assist, conversation summaries, conversation orchestration, journey
    orchestration, verification/identity flows.
@@ -257,9 +262,68 @@ Industry Taxonomy для будущих артефактов Mango должна 
 бизнес-правила. Уточнение нужно для симметрии с Mango Taxonomy после проверки
 processed KB в issue #146.
 
-Этот ADR не утверждает финальный стандарт и не создаёт KB. Он фиксирует решение,
-которое должна проверить команда перед отдельными PR на стандарт, Mango Taxonomy
-и KB reference data.
+Команда проверила это решение (issue #146, #148, #150). После закрытия
+доисследования асимметрии каналов (issue #150) ADR переведён в `status: canonical`,
+`version: 1.0`. ADR фиксирует каноническое **решение**, но по-прежнему не создаёт
+сам стандарт Industry Taxonomy, Mango Taxonomy и KB reference data — это отдельные
+follow-up артефакты. Финальное решение по merge остаётся за человеком
+(AI_GOVERNANCE).
+
+## Голосовой канал vs текстовые каналы (доисследование, issue #150)
+
+**Проблема.** В модели текстовые каналы — first-class домен `digital-channels`
+(`omnichannel-messaging`, `website-chat`, `sms-messaging`), а голосовой канал
+неявно «зашит» в инфраструктурные capability `voice-ucaas` (`cloud-pbx`,
+`ivr-voice-menu`, `call-routing`). Отдельной capability «голосовой канал»,
+симметричной текстовым, нет. Полный анализ, отраслевые свидетельства и trade-offs:
+[docs/analysis/voice-digital-channels-comparison.md](../../docs/analysis/voice-digital-channels-comparison.md).
+
+**Две разные асимметрии.** Постановка смешивает два слоя:
+
+1. *Инфраструктурная* (Infrastructure / Resource): голос требует выделенного
+   телеком-ресурса (PSTN, SIP, номерная ёмкость, кодеки); текст идёт по generic IP
+   и API сторонних платформ. → **Асимметрия обоснована.**
+2. *Канальная* (Channel): голосовой канал и текстовые каналы — равноправные среды
+   обращения, но голосовой не назван. → **Артефакт модели.**
+
+**Отраслевые свидетельства (проверка 2026-06-21).**
+
+- CPaaS (Twilio, МТС Exolve) разделяют инфраструктуру (Phone Numbers, SIP,
+  Numbering API) и каналы (Programmable Voice / Voice API ↔ Programmable Messaging /
+  SMS API); голосовой канал **строится поверх** инфраструктуры.
+- UCaaS (RingCentral RingEX, Cisco Webex) упаковывают инфраструктуру + голос в
+  «Phone»/«Calling», текст — отдельно (= текущая `voice-ucaas` vs `digital-channels`).
+- CCaaS (Amazon Connect, Genesys) ведут голос как **канал** рядом с chat/email;
+  телефония — сменная инфра (BYOC).
+- TM Forum SID / TMF681: канал = измерение взаимодействия (email, SMS, push),
+  отделённое от Resource-слоя.
+
+Единого ответа «голос = отдельный домен» в отрасли нет; классификация зависит от
+слоя. Регуляторика РФ (СОРМ, 126-ФЗ, 152-ФЗ) применима и к голосу, и к тексту,
+поэтому **не** является дискриминатором — дискриминатор — наличие выделенного
+телеком-ресурса.
+
+**Решение: уточнённая (обоснованная) асимметрия.** Домены не делим (число доменов
+не меняется); затрагиваются только `voice-ucaas` и `digital-channels`.
+
+1. **Инфраструктурную асимметрию сохранить.** `voice-ucaas` — единый домен;
+   обоснование фактическое (выделенный телеком-ресурс у голоса есть, у текста нет).
+   Полная симметрия (split `voice-infrastructure` + `voice-channels`) отклонена:
+   по симметрии потребовался бы и `digital-infrastructure`, который у текста пуст,
+   → split внутренне противоречив и создаёт churn в других доменах (запрещено
+   issue #150).
+2. **Канальный артефакт устранить.** Ввести внутри `voice-ucaas` first-class
+   capability **`voice-channel` (Голосовой канал)**, симметричную текстовым
+   capability `digital-channels`. `voice-ucaas` явно описывается как
+   **«телеком-инфраструктура + голосовой канал»** (двойная природа — как
+   `ai-automation` = домен + AI-facet, `platform` = cross-domain layer).
+3. **Cross-cutting facet `channel`.** Размерности: `channel_kind`
+   (`voice` | `text` | `video`), `synchronicity` (`sync` | `async`), `direction`
+   (`inbound` | `outbound` | `broadcast`). Делает каналы единообразно
+   запрашиваемыми поверх доменов (TM Forum-совместимо); домены не меняет.
+4. **Оркестрацию не трогать.** `contact-center` уже маршрутизирует все каналы
+   (`interaction-routing` по `channel_type`, `channel-blending`) — симметрия на
+   этом слое уже есть.
 
 ## Использование в маппинге
 
@@ -302,6 +366,54 @@ alignment_type: primary
 диффируемым и пригодным для генерации требований, а не зависел от локальных
 синонимов в документации.
 
+### Пример: голосовой канал с facet `channel`
+
+Голосовой канал размечается симметрично текстовым: та же форма `industry_ref` +
+cross-cutting facet `channel`. Различается только `channel_kind`.
+
+Входящий голосовой звонок (например, `mango-virtual-pbx`):
+
+```yaml
+industry_ref:
+  domain: voice-ucaas
+  capability: voice-channel        # first-class голосовой канал
+  feature: inbound-voice-call
+alignment_type: primary
+facets:
+  channel:
+    channel_kind: voice
+    synchronicity: sync
+    direction: inbound
+```
+
+Текстовый канал — для контраста (например, `mango-text-communications`):
+
+```yaml
+industry_ref:
+  domain: digital-channels
+  capability: omnichannel-messaging
+  feature: messenger-integration
+alignment_type: primary
+facets:
+  channel:
+    channel_kind: text
+    synchronicity: async
+    direction: inbound
+```
+
+Чистая телеком-инфраструктура (например, `sip-trunk`) каналом **не** является и
+facet `channel` не получает:
+
+```yaml
+industry_ref:
+  domain: voice-ucaas
+  capability: sip-connectivity
+alignment_type: supporting
+```
+
+Дополнительные примеры и влияние на crosswalk ADR-012:
+[docs/analysis/voice-digital-channels-comparison.md](../../docs/analysis/voice-digital-channels-comparison.md), §7.
+
 ## Rationale
 
 Hybrid reference taxonomy лучше других вариантов, потому что:
@@ -325,10 +437,17 @@ Hybrid reference taxonomy лучше других вариантов, потом
 - Будущий стандарт сможет ссылаться на проверенные источники и на этот ADR как
   на зафиксированное решение.
 - CPaaS/API/platform и AI-assisted features не потеряются при классификации.
+- Голосовой и текстовые каналы маппятся симметрично через facet `channel`;
+  голосовой канал стал first-class capability, а инфраструктурная асимметрия
+  `voice-ucaas` обоснована фактами, а не неявна (issue #150).
 
 Отрицательные / технический долг:
 
-- Перед стандартом нужно описать точные canonical slugs и правила alias mapping.
+- Перед стандартом нужно описать точные canonical slugs и правила alias mapping,
+  включая `voice-channel`, feature-узлы голосового канала и значения facet
+  `channel` (`channel_kind`/`synchronicity`/`direction`).
+- Фактическое добавление facet `channel` в crosswalk ADR-012 — отдельный
+  follow-up PR (в этом issue ADR-012 не меняется).
 - Нужно решить, какие Mango-specific capabilities входят в Industry Taxonomy, а
   какие остаются Mango Taxonomy extensions.
 - Нужно отдельно проверить русскоязычные и российские отраслевые источники, если

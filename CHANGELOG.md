@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.2
-updated: 2026-06-20
+updated: 2026-06-21
 ai-generated: true
 ---
 
@@ -12,6 +12,22 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #150 доисследование асимметрии голосовых и текстовых каналов
+
+- ADR-011 переведён в `status: canonical`, `version: 1.0` после закрытия
+  доисследования асимметрии каналов: добавлены секция-решение «Голосовой канал vs
+  текстовые каналы», cross-cutting facet `channel`
+  (`channel_kind`/`synchronicity`/`direction`), first-class capability
+  `voice-channel` внутри `voice-ucaas` и пример маппинга голосового канала.
+- Принято решение «уточнённая (обоснованная) асимметрия»: домены не делятся
+  (число доменов не меняется), инфраструктурная асимметрия `voice-ucaas`
+  обоснована фактами, канальный артефакт устранён через `voice-channel` + facet.
+- Добавлена сравнительная аналитика
+  [`docs/analysis/voice-digital-channels-comparison.md`](docs/analysis/voice-digital-channels-comparison.md):
+  трёхслойная рамка (infrastructure/channel/orchestration), отраслевые
+  свидетельства (Twilio, МТС Exolve, RingCentral, Cisco, Amazon Connect, Genesys,
+  TM Forum), trade-offs симметрии vs практичности и влияние на маппинг Mango.
 
 ### Changed — Issue #148 доработка taxonomy ADR
 
