@@ -2,7 +2,7 @@
   "$schema": "reference-taxonomy.schema.json",
   "taxonomy_id": "industry-taxonomy",
   "schema_version": 1,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "last_updated": "2026-06-21",
   "status": "active",
   "description": "Canonical machine-readable Industry Taxonomy registry for communications and contact-center analysis.",
@@ -48,13 +48,19 @@
       "id": "hub-capability-decomposition-2026-05",
       "url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/capability-decomposition-2026-05.md",
       "role": "draft decomposition evidence for proposed nodes"
+    },
+    {
+      "id": "issue-168-industry-inventory",
+      "path": "docs/analysis/industry-inventory.md",
+      "role": "cascade-fill change request and per-entity industry justification"
     }
   ],
   "registry_notes": [
     "The seven canonical domains are exactly the ADR-011 v1.0 domains.",
     "The platform node is modeled as a cross-domain layer, not as an eighth domain.",
     "Functions marked source_status=derived-completion complete the machine-readable leaf layer when the reviewed source named a feature but not a separate function.",
-    "No Mango product mappings or product-specific industry_ref links are included in this registry."
+    "No Mango product mappings or product-specific industry_ref links are included in this registry.",
+    "Issue #168 cascade-fill nodes (source_status=issue-168-cascade-fill) complete every external Mango industry_ref to a resolvable parent-chain; communications-apis and webhook-management are modeled as aliases of cpaas and webhooks rather than as duplicate nodes."
   ],
   "facets": {
     "channel": {
@@ -182,6 +188,39 @@
                       "direction": "inbound"
                     }
                   }
+                },
+                {
+                  "id": "receive-inbound-call",
+                  "level": "function",
+                  "name_en": "Receive Inbound Call",
+                  "name_ru": "Принять входящий вызов",
+                  "definition": "Executes the Inbound Voice Call feature within the Voice Channel capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "voice-ucaas",
+                    "capability": "voice-channel",
+                    "feature": "inbound-voice-call"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "call_id",
+                      "description": "Canonical parameter `call_id` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "channel": {
+                      "channel_kind": "voice",
+                      "synchronicity": "sync",
+                      "direction": "inbound"
+                    }
+                  },
+                  "source_status": "issue-168-cascade-fill"
                 }
               ],
               "facets": {
@@ -2140,6 +2179,96 @@
             }
           ],
           "source_status": "candidate-or-market-specific"
+        },
+        {
+          "id": "call-routing",
+          "level": "capability",
+          "name_en": "Call Routing",
+          "name_ru": "Маршрутизация вызовов",
+          "definition": "Cloud-PBX routing of voice calls to extensions, groups, and external numbers.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "voice-ucaas"
+          },
+          "features": [
+            {
+              "id": "inbound-routing",
+              "level": "feature",
+              "name_en": "Inbound Routing",
+              "name_ru": "Маршрутизация входящих вызовов",
+              "definition": "Feature of the Call Routing capability covering inbound routing.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "voice-ucaas",
+                "capability": "call-routing"
+              },
+              "functions": [
+                {
+                  "id": "route-inbound-call",
+                  "level": "function",
+                  "name_en": "Route Inbound Call",
+                  "name_ru": "Маршрутизировать входящий вызов",
+                  "definition": "Executes the Inbound Routing feature within the Call Routing capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "voice-ucaas",
+                    "capability": "call-routing",
+                    "feature": "inbound-routing"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "call_id",
+                      "description": "Canonical parameter `call_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "destination",
+                      "description": "Canonical parameter `destination` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "channel": {
+                      "channel_kind": "voice",
+                      "synchronicity": "sync",
+                      "direction": "inbound"
+                    }
+                  },
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              },
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "facets": {
+            "channel": {
+              "channel_kind": "voice",
+              "synchronicity": "sync",
+              "direction": "inbound"
+            }
+          },
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -2703,6 +2832,40 @@
                       "description": "Canonical parameter `contact_list` for configuring or executing this function."
                     }
                   ]
+                },
+                {
+                  "id": "start-campaign",
+                  "level": "function",
+                  "name_en": "Start Campaign",
+                  "name_ru": "Запустить кампанию",
+                  "definition": "Executes the Campaign Management feature within the Outbound Calling capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "contact-center",
+                    "capability": "outbound-calling",
+                    "feature": "campaign-management"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "campaign_id",
+                      "description": "Canonical parameter `campaign_id` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "channel": {
+                      "channel_kind": "voice",
+                      "synchronicity": "sync",
+                      "direction": "outbound"
+                    },
+                    "commercial": true
+                  },
+                  "source_status": "issue-168-cascade-fill"
                 }
               ]
             },
@@ -4493,6 +4656,194 @@
             }
           },
           "source_status": "candidate-or-market-specific"
+        },
+        {
+          "id": "interaction-routing",
+          "level": "capability",
+          "name_en": "Interaction Routing",
+          "name_ru": "Маршрутизация обращений",
+          "definition": "Channel-agnostic routing of customer interactions across queues and agents.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "contact-center"
+          },
+          "features": [
+            {
+              "id": "queue-routing",
+              "level": "feature",
+              "name_en": "Queue Routing",
+              "name_ru": "Маршрутизация по очередям",
+              "definition": "Feature of the Interaction Routing capability covering queue routing.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "contact-center",
+                "capability": "interaction-routing"
+              },
+              "functions": [
+                {
+                  "id": "assign-interaction-to-agent",
+                  "level": "function",
+                  "name_en": "Assign Interaction To Agent",
+                  "name_ru": "Назначить обращение оператору",
+                  "definition": "Executes the Queue Routing feature within the Interaction Routing capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "contact-center",
+                    "capability": "interaction-routing",
+                    "feature": "queue-routing"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "interaction_id",
+                      "description": "Canonical parameter `interaction_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "agent_id",
+                      "description": "Canonical parameter `agent_id` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            },
+            {
+              "id": "routing-rules",
+              "level": "feature",
+              "name_en": "Routing Rules",
+              "name_ru": "Правила маршрутизации",
+              "definition": "Feature of the Interaction Routing capability covering routing rules.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "contact-center",
+                "capability": "interaction-routing"
+              },
+              "functions": [
+                {
+                  "id": "configure-routing-rule",
+                  "level": "function",
+                  "name_en": "Configure Routing Rule",
+                  "name_ru": "Настроить правило маршрутизации",
+                  "definition": "Executes the Routing Rules feature within the Interaction Routing capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "contact-center",
+                    "capability": "interaction-routing",
+                    "feature": "routing-rules"
+                  },
+                  "function_type": "configuration",
+                  "parameters": [
+                    {
+                      "name": "rule_id",
+                      "description": "Canonical parameter `rule_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "condition",
+                      "description": "Canonical parameter `condition` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "source_status": "issue-168-cascade-fill"
+        },
+        {
+          "id": "supervisor-workspace",
+          "level": "capability",
+          "name_en": "Supervisor Workspace",
+          "name_ru": "Рабочее место супервизора",
+          "definition": "Supervisor environment for live monitoring and agent coaching.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "contact-center"
+          },
+          "features": [
+            {
+              "id": "live-monitoring",
+              "level": "feature",
+              "name_en": "Live Monitoring",
+              "name_ru": "Мониторинг в реальном времени",
+              "definition": "Feature of the Supervisor Workspace capability covering live monitoring.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "contact-center",
+                "capability": "supervisor-workspace"
+              },
+              "functions": [
+                {
+                  "id": "monitor-live-interactions",
+                  "level": "function",
+                  "name_en": "Monitor Live Interactions",
+                  "name_ru": "Наблюдать за активными обращениями",
+                  "definition": "Executes the Live Monitoring feature within the Supervisor Workspace capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "contact-center",
+                    "capability": "supervisor-workspace",
+                    "feature": "live-monitoring"
+                  },
+                  "function_type": "ui-action",
+                  "parameters": [
+                    {
+                      "name": "queue_id",
+                      "description": "Canonical parameter `queue_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "refresh_interval",
+                      "description": "Canonical parameter `refresh_interval` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -4781,6 +5132,43 @@
                       "direction": "inbound"
                     }
                   }
+                },
+                {
+                  "id": "send-message",
+                  "level": "function",
+                  "name_en": "Send Message",
+                  "name_ru": "Отправить сообщение",
+                  "definition": "Executes the Messenger Integration feature within the Omnichannel Messaging capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "digital-channels",
+                    "capability": "omnichannel-messaging",
+                    "feature": "messenger-integration"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "conversation_id",
+                      "description": "Canonical parameter `conversation_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "message_body",
+                      "description": "Canonical parameter `message_body` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "channel": {
+                      "channel_kind": "text",
+                      "synchronicity": "async",
+                      "direction": "outbound"
+                    }
+                  },
+                  "source_status": "issue-168-cascade-fill"
                 }
               ],
               "facets": {
@@ -5335,6 +5723,82 @@
               "applicable": true
             }
           }
+        },
+        {
+          "id": "team-messaging",
+          "level": "capability",
+          "name_en": "Team Messaging",
+          "name_ru": "Командные сообщения",
+          "definition": "Internal team chat and collaboration alongside customer channels.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "digital-channels"
+          },
+          "features": [
+            {
+              "id": "team-chat",
+              "level": "feature",
+              "name_en": "Team Chat",
+              "name_ru": "Командный чат",
+              "definition": "Feature of the Team Messaging capability covering team chat.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "digital-channels",
+                "capability": "team-messaging"
+              },
+              "functions": [
+                {
+                  "id": "post-team-message",
+                  "level": "function",
+                  "name_en": "Post Team Message",
+                  "name_ru": "Отправить командное сообщение",
+                  "definition": "Executes the Team Chat feature within the Team Messaging capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "digital-channels",
+                    "capability": "team-messaging",
+                    "feature": "team-chat"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "channel_id",
+                      "description": "Canonical parameter `channel_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "message_body",
+                      "description": "Canonical parameter `message_body` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "channel": {
+                      "channel_kind": "text",
+                      "synchronicity": "async",
+                      "direction": "outbound"
+                    }
+                  },
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -6018,6 +6482,84 @@
               "applicable": true
             }
           }
+        },
+        {
+          "id": "conversation-summaries",
+          "level": "capability",
+          "name_en": "Conversation Summaries",
+          "name_ru": "Сводки разговоров",
+          "definition": "AI-generated summaries of voice and text conversations.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "ai-automation"
+          },
+          "features": [
+            {
+              "id": "ai-summary",
+              "level": "feature",
+              "name_en": "AI Summary",
+              "name_ru": "AI-сводка",
+              "definition": "Feature of the Conversation Summaries capability covering ai summary.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "ai-automation",
+                "capability": "conversation-summaries"
+              },
+              "functions": [
+                {
+                  "id": "generate-summary",
+                  "level": "function",
+                  "name_en": "Generate Summary",
+                  "name_ru": "Сформировать сводку",
+                  "definition": "Executes the AI Summary feature within the Conversation Summaries capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "ai-automation",
+                    "capability": "conversation-summaries",
+                    "feature": "ai-summary"
+                  },
+                  "function_type": "business",
+                  "parameters": [
+                    {
+                      "name": "conversation_id",
+                      "description": "Canonical parameter `conversation_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "summary_format",
+                      "description": "Canonical parameter `summary_format` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "ai_assisted": true
+                  },
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "facets": {
+                "ai_assisted": true
+              },
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "facets": {
+            "ai_assisted": true
+          },
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -6972,6 +7514,75 @@
               "applicable": true
             }
           }
+        },
+        {
+          "id": "real-time-reporting",
+          "level": "capability",
+          "name_en": "Real-Time Reporting",
+          "name_ru": "Отчётность в реальном времени",
+          "definition": "Operational dashboards and live key-performance reporting.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "analytics"
+          },
+          "features": [
+            {
+              "id": "dashboard-view",
+              "level": "feature",
+              "name_en": "Dashboard View",
+              "name_ru": "Представление дашборда",
+              "definition": "Feature of the Real-Time Reporting capability covering dashboard view.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "analytics",
+                "capability": "real-time-reporting"
+              },
+              "functions": [
+                {
+                  "id": "select-dashboard-widget",
+                  "level": "function",
+                  "name_en": "Select Dashboard Widget",
+                  "name_ru": "Выбрать виджет дашборда",
+                  "definition": "Executes the Dashboard View feature within the Real-Time Reporting capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "analytics",
+                    "capability": "real-time-reporting",
+                    "feature": "dashboard-view"
+                  },
+                  "function_type": "ui-action",
+                  "parameters": [
+                    {
+                      "name": "widget_id",
+                      "description": "Canonical parameter `widget_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "layout_position",
+                      "description": "Canonical parameter `layout_position` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -7149,6 +7760,75 @@
               ]
             }
           ]
+        },
+        {
+          "id": "device-management",
+          "level": "capability",
+          "name_en": "Device Management",
+          "name_ru": "Управление устройствами",
+          "definition": "Provisioning, configuration, and lifecycle management of communication devices.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "hardware"
+          },
+          "features": [
+            {
+              "id": "device-provisioning",
+              "level": "feature",
+              "name_en": "Device Provisioning",
+              "name_ru": "Подготовка устройств",
+              "definition": "Feature of the Device Management capability covering device provisioning.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "hardware",
+                "capability": "device-management"
+              },
+              "functions": [
+                {
+                  "id": "provision-device",
+                  "level": "function",
+                  "name_en": "Provision Device",
+                  "name_ru": "Подготовить устройство",
+                  "definition": "Executes the Device Provisioning feature within the Device Management capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "hardware",
+                    "capability": "device-management",
+                    "feature": "device-provisioning"
+                  },
+                  "function_type": "configuration",
+                  "parameters": [
+                    {
+                      "name": "device_id",
+                      "description": "Canonical parameter `device_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "configuration_profile",
+                      "description": "Canonical parameter `configuration_profile` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     },
@@ -7379,6 +8059,84 @@
               "applicable": true
             }
           }
+        },
+        {
+          "id": "access-control",
+          "level": "capability",
+          "name_en": "Access Control",
+          "name_ru": "Контроль доступа",
+          "definition": "Identity and access management: authentication, authorization, and role assignment.",
+          "lifecycle_status": "active",
+          "evidence_refs": [
+            "standards/decisions/ADR-011-industry-taxonomy.md",
+            "standards/industry-taxonomy-standard.md",
+            "docs/analysis/industry-inventory.md"
+          ],
+          "parent": {
+            "domain": "security"
+          },
+          "features": [
+            {
+              "id": "role-management",
+              "level": "feature",
+              "name_en": "Role Management",
+              "name_ru": "Управление ролями",
+              "definition": "Feature of the Access Control capability covering role management.",
+              "lifecycle_status": "active",
+              "evidence_refs": [
+                "standards/decisions/ADR-011-industry-taxonomy.md",
+                "standards/industry-taxonomy-standard.md",
+                "docs/analysis/industry-inventory.md"
+              ],
+              "parent": {
+                "domain": "security",
+                "capability": "access-control"
+              },
+              "functions": [
+                {
+                  "id": "assign-role",
+                  "level": "function",
+                  "name_en": "Assign Role",
+                  "name_ru": "Назначить роль",
+                  "definition": "Executes the Role Management feature within the Access Control capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "security",
+                    "capability": "access-control",
+                    "feature": "role-management"
+                  },
+                  "function_type": "configuration",
+                  "parameters": [
+                    {
+                      "name": "user_id",
+                      "description": "Canonical parameter `user_id` for configuring or executing this function."
+                    },
+                    {
+                      "name": "role_id",
+                      "description": "Canonical parameter `role_id` for configuring or executing this function."
+                    }
+                  ],
+                  "facets": {
+                    "security_compliance": true
+                  },
+                  "source_status": "issue-168-cascade-fill"
+                }
+              ],
+              "facets": {
+                "security_compliance": true
+              },
+              "source_status": "issue-168-cascade-fill"
+            }
+          ],
+          "facets": {
+            "security_compliance": true
+          },
+          "source_status": "issue-168-cascade-fill"
         }
       ]
     }
@@ -7684,6 +8442,9 @@
                 "standards/industry-taxonomy-standard.md",
                 "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/classification.md"
               ],
+              "aliases": [
+                "webhook-management"
+              ],
               "parent": {
                 "domain": "platform",
                 "capability": "open-api"
@@ -7717,6 +8478,40 @@
                       "description": "Canonical parameter `callback_url` for configuring or executing this function."
                     }
                   ]
+                },
+                {
+                  "id": "configure-webhook-endpoint",
+                  "level": "function",
+                  "name_en": "Configure Webhook Endpoint",
+                  "name_ru": "Настроить эндпоинт вебхука",
+                  "definition": "Executes the Webhooks feature within the Open API capability.",
+                  "lifecycle_status": "active",
+                  "evidence_refs": [
+                    "standards/decisions/ADR-011-industry-taxonomy.md",
+                    "standards/industry-taxonomy-standard.md",
+                    "docs/analysis/industry-inventory.md"
+                  ],
+                  "parent": {
+                    "domain": "platform",
+                    "capability": "open-api",
+                    "feature": "webhooks"
+                  },
+                  "function_type": "configuration",
+                  "parameters": [
+                    {
+                      "name": "endpoint_url",
+                      "description": "Canonical parameter `endpoint_url` for configuring or executing this function."
+                    },
+                    {
+                      "name": "event_type",
+                      "description": "Canonical parameter `event_type` for configuring or executing this function."
+                    },
+                    {
+                      "name": "secret",
+                      "description": "Canonical parameter `secret` for configuring or executing this function."
+                    }
+                  ],
+                  "source_status": "issue-168-cascade-fill"
                 }
               ]
             },
@@ -7781,6 +8576,9 @@
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
             "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/classification.md"
+          ],
+          "aliases": [
+            "communications-apis"
           ],
           "parent": {
             "domain": "platform"
