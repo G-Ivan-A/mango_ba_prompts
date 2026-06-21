@@ -766,7 +766,9 @@
           "mango-virtual-pbx"
         ],
         "modules": [
-          "vats-inbound-scenarios-module"
+          "vats-inbound-scenarios-module",
+          "vats-blacklist-whitelist-module",
+          "vats-time-based-routing-module"
         ]
       },
       {
@@ -879,7 +881,8 @@
           "mango-virtual-pbx"
         ],
         "modules": [
-          "vats-call-recording-module"
+          "vats-call-recording-module",
+          "vats-voicemail-management-module"
         ]
       },
       {
@@ -914,7 +917,11 @@
           "mango-contact-center"
         ],
         "modules": [
-          "cc-agent-call-handling-module"
+          "cc-agent-call-handling-module",
+          "cc-call-hold-module",
+          "cc-call-transfer-module",
+          "cc-agent-conferencing-module",
+          "cc-call-recording-module"
         ]
       },
       {
@@ -1028,7 +1035,8 @@
           "mango-contact-center"
         ],
         "modules": [
-          "cc-supervisor-wfm-module"
+          "cc-supervisor-wfm-module",
+          "cc-supervisor-monitoring-module"
         ]
       },
       {
@@ -1149,7 +1157,8 @@
           "mango-digital-communications"
         ],
         "modules": [
-          "messenger-channel-connector-module"
+          "messenger-channel-connector-module",
+          "social-messenger-channels-module"
         ]
       },
       {
@@ -1204,7 +1213,9 @@
           "mango-digital-communications"
         ],
         "modules": [
-          "dialog-api-message-module"
+          "dialog-api-message-module",
+          "dialog-api-session-management-module",
+          "dialog-api-webhook-module"
         ]
       },
       {
@@ -1244,7 +1255,8 @@
           "mango-talker"
         ],
         "modules": [
-          "talker-softphone-module"
+          "talker-softphone-module",
+          "talker-call-control-module"
         ]
       },
       {
@@ -1285,7 +1297,9 @@
           "mango-talker"
         ],
         "modules": [
-          "talker-team-chat-module"
+          "talker-team-chat-module",
+          "talker-message-operations-module",
+          "talker-file-sharing-module"
         ]
       },
       {
@@ -1325,7 +1339,8 @@
           "mango-talker"
         ],
         "modules": [
-          "talker-video-meeting-module"
+          "talker-video-meeting-module",
+          "talker-video-effects-module"
         ]
       },
       {
@@ -1358,7 +1373,8 @@
           "mango-talker"
         ],
         "modules": [
-          "talker-contact-history-module"
+          "talker-contact-history-module",
+          "talker-favorites-groups-module"
         ]
       },
       {
@@ -1394,7 +1410,9 @@
           "mango-ai-speech-quality"
         ],
         "modules": [
-          "speech-analytics-topic-module"
+          "speech-analytics-topic-module",
+          "speech-analytics-search-module",
+          "speech-analytics-tagging-module"
         ]
       },
       {
@@ -1431,7 +1449,8 @@
           "mango-ai-speech-quality"
         ],
         "modules": [
-          "conversation-summary-module"
+          "conversation-summary-module",
+          "ai-assistant-module"
         ]
       },
       {
@@ -1464,7 +1483,9 @@
           "mango-ai-speech-quality"
         ],
         "modules": [
-          "quality-checklist-module"
+          "quality-checklist-module",
+          "quality-appeal-module",
+          "quality-call-randomizer-module"
         ]
       },
       {
@@ -1538,7 +1559,8 @@
           "mango-marketing-analytics"
         ],
         "modules": [
-          "calltracking-attribution-module"
+          "calltracking-attribution-module",
+          "static-calltracking-module"
         ]
       },
       {
@@ -1571,7 +1593,8 @@
           "mango-marketing-analytics"
         ],
         "modules": [
-          "end-to-end-analytics-module"
+          "end-to-end-analytics-module",
+          "analytics-goals-integration-module"
         ]
       },
       {
@@ -1757,7 +1780,10 @@
           "mango-platform-integrations"
         ],
         "modules": [
-          "crm-erp-integration-module"
+          "crm-erp-integration-module",
+          "bitrix24-connector-module",
+          "amocrm-connector-module",
+          "onec-connector-module"
         ]
       },
       {
@@ -1827,7 +1853,8 @@
           "mango-security-access"
         ],
         "modules": [
-          "role-access-management-module"
+          "role-access-management-module",
+          "custom-role-management-module"
         ]
       },
       {
@@ -1859,7 +1886,8 @@
           "mango-security-access"
         ],
         "modules": [
-          "sso-identity-module"
+          "sso-identity-module",
+          "sso-idp-configuration-module"
         ]
       },
       {
@@ -1971,7 +1999,8 @@
         ],
         "functions": [
           "receive-inbound-call-through-scenario",
-          "configure-inbound-call-scenario"
+          "configure-inbound-call-scenario",
+          "configure-callback-forwarding"
         ]
       },
       {
@@ -2010,7 +2039,9 @@
         ],
         "functions": [
           "play-ivr-menu-to-caller",
-          "edit-ivr-menu-branch"
+          "edit-ivr-menu-branch",
+          "configure-ivr-menu-branches",
+          "enable-speech-recognition-menu"
         ]
       },
       {
@@ -2087,7 +2118,8 @@
         ],
         "functions": [
           "enable-call-recording-rule",
-          "play-call-recording"
+          "play-call-recording",
+          "configure-recording-rules"
         ]
       },
       {
@@ -2123,7 +2155,8 @@
         ],
         "functions": [
           "accept-queue-interaction",
-          "set-agent-status"
+          "set-agent-status",
+          "complete-after-call-work"
         ]
       },
       {
@@ -2157,7 +2190,8 @@
         ],
         "functions": [
           "route-interaction-to-queue",
-          "configure-queue-routing-rule"
+          "configure-queue-routing-rule",
+          "transfer-interaction-to-agent"
         ]
       },
       {
@@ -2192,7 +2226,8 @@
         ],
         "functions": [
           "start-outbound-campaign",
-          "configure-outbound-campaign"
+          "configure-outbound-campaign",
+          "configure-agent-assisted-dialing"
         ]
       },
       {
@@ -2240,7 +2275,9 @@
         ],
         "functions": [
           "monitor-agent-workload",
-          "configure-workforce-schedule"
+          "configure-workforce-schedule",
+          "configure-wfm-auto-actions",
+          "schedule-inbound-forecast"
         ]
       },
       {
@@ -2283,7 +2320,8 @@
         ],
         "functions": [
           "send-channel-message",
-          "configure-channel-group"
+          "configure-channel-group",
+          "enable-chatbot-for-channel-group"
         ]
       },
       {
@@ -2763,7 +2801,8 @@
         ],
         "functions": [
           "attribute-call-to-ad-source",
-          "configure-calltracking-number"
+          "configure-calltracking-number",
+          "setup-calltracking-widget"
         ]
       },
       {
@@ -2833,7 +2872,9 @@
         ],
         "functions": [
           "build-analytics-report",
-          "select-dashboard-widget"
+          "select-dashboard-widget",
+          "build-cc-report",
+          "view-cc-performance-panel"
         ]
       },
       {
@@ -2868,7 +2909,9 @@
         ],
         "functions": [
           "display-wallboard-widget",
-          "configure-wallboard-widget"
+          "configure-wallboard-widget",
+          "select-wallboard-template",
+          "set-wallboard-metric-threshold"
         ]
       },
       {
@@ -2904,7 +2947,9 @@
         ],
         "functions": [
           "initiate-vpbx-api-call",
-          "configure-vpbx-webhook"
+          "configure-vpbx-webhook",
+          "hangup-call-via-api",
+          "send-sms-via-api"
         ]
       },
       {
@@ -2952,7 +2997,8 @@
         ],
         "functions": [
           "create-contact-center-task-api",
-          "receive-contact-center-event-webhook"
+          "receive-contact-center-event-webhook",
+          "get-call-statistics-via-api"
         ]
       },
       {
@@ -3023,7 +3069,8 @@
         ],
         "functions": [
           "send-call-event-webhook",
-          "configure-webhook-endpoint"
+          "configure-webhook-endpoint",
+          "receive-call-notification-webhook"
         ]
       },
       {
@@ -3161,7 +3208,1073 @@
         ],
         "functions": [
           "view-security-audit-log",
-          "configure-security-policy"
+          "configure-security-policy",
+          "view-action-log",
+          "configure-ip-restriction"
+        ]
+      },
+      {
+        "id": "vats-blacklist-whitelist-module",
+        "level": "module",
+        "name_ru": "Чёрный и белый списки номеров",
+        "description": "Модуль сервиса «Входящая маршрутизация ВАТС» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "vats-core",
+        "parent_services": [
+          "vats-inbound-routing-service"
+        ],
+        "functions": [
+          "add-number-to-blacklist",
+          "add-number-to-whitelist"
+        ]
+      },
+      {
+        "id": "vats-time-based-routing-module",
+        "level": "module",
+        "name_ru": "Маршрутизация по расписанию",
+        "description": "Модуль сервиса «Входящая маршрутизация ВАТС» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "vats-core",
+        "parent_services": [
+          "vats-inbound-routing-service"
+        ],
+        "functions": [
+          "configure-time-based-routing",
+          "configure-holiday-schedule"
+        ]
+      },
+      {
+        "id": "vats-voicemail-management-module",
+        "level": "module",
+        "name_ru": "Управление голосовой почтой",
+        "description": "Модуль сервиса «Записи и история звонков ВАТС» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "call-recording"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "vats-core",
+        "parent_services": [
+          "vats-recording-history-service"
+        ],
+        "functions": [
+          "enable-voicemail-transcription",
+          "configure-voicemail-notification-actions"
+        ]
+      },
+      {
+        "id": "cc-call-hold-module",
+        "level": "module",
+        "name_ru": "Удержание вызовов",
+        "description": "Модуль сервиса «Рабочее место оператора КЦ» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "contact-center-core",
+        "parent_services": [
+          "cc-agent-workspace-service"
+        ],
+        "functions": [
+          "hold-call",
+          "resume-held-call"
+        ]
+      },
+      {
+        "id": "cc-call-transfer-module",
+        "level": "module",
+        "name_ru": "Перевод вызовов",
+        "description": "Модуль сервиса «Рабочее место оператора КЦ» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "contact-center-core",
+        "parent_services": [
+          "cc-agent-workspace-service"
+        ],
+        "functions": [
+          "transfer-call-with-consultation",
+          "transfer-call-without-consultation"
+        ]
+      },
+      {
+        "id": "cc-agent-conferencing-module",
+        "level": "module",
+        "name_ru": "Организация конференций",
+        "description": "Модуль сервиса «Рабочее место оператора КЦ» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "contact-center-core",
+        "parent_services": [
+          "cc-agent-workspace-service"
+        ],
+        "functions": [
+          "initiate-conference-call",
+          "add-participant-to-conference"
+        ]
+      },
+      {
+        "id": "cc-call-recording-module",
+        "level": "module",
+        "name_ru": "Запись разговоров КЦ",
+        "description": "Модуль сервиса «Рабочее место оператора КЦ» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "contact-center-core",
+        "parent_services": [
+          "cc-agent-workspace-service"
+        ],
+        "functions": [
+          "enable-cc-call-recording",
+          "access-cc-call-recording"
+        ]
+      },
+      {
+        "id": "cc-supervisor-monitoring-module",
+        "level": "module",
+        "name_ru": "Контроль и прослушивание операторов",
+        "description": "Модуль сервиса «Супервизорский контроль и WFM» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/88-kontrol-sotrudnikov.md",
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/111-proslushivanie-razgovorov-i-povtornye-vy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "workforce-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/88-kontrol-sotrudnikov.md",
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/111-proslushivanie-razgovorov-i-povtornye-vy.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "contact-center-core",
+        "parent_services": [
+          "cc-supervisor-wfm-service"
+        ],
+        "functions": [
+          "monitor-agents-realtime",
+          "listen-to-agent-conversation"
+        ]
+      },
+      {
+        "id": "social-messenger-channels-module",
+        "level": "module",
+        "name_ru": "Каналы соцсетей и мессенджеров",
+        "description": "Модуль сервиса «Мессенджер-каналы» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/190-vkontakte.md",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/209-avito.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging",
+                "feature": "messenger-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/190-vkontakte.md",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/209-avito.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "digital-channels",
+        "parent_services": [
+          "messenger-channel-service"
+        ],
+        "functions": [
+          "connect-whatsapp-channel",
+          "connect-vkontakte-channel",
+          "connect-avito-channel"
+        ]
+      },
+      {
+        "id": "dialog-api-session-management-module",
+        "level": "module",
+        "name_ru": "Управление сессиями Dialog API",
+        "description": "Модуль сервиса «Dialog API» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/40-vzyat-sessiyu-v-rabotu.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/42-zakryt-sessiyu.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/37-poluchit-spisok-aktivnyh-sessiy.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/44-zagruzka-istorii-chata.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/40-vzyat-sessiyu-v-rabotu.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/42-zakryt-sessiyu.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/37-poluchit-spisok-aktivnyh-sessiy.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/44-zagruzka-istorii-chata.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "digital-channels",
+        "parent_services": [
+          "dialog-api-messaging-service"
+        ],
+        "functions": [
+          "take-dialog-session",
+          "transfer-dialog-session",
+          "close-dialog-session",
+          "get-active-dialog-sessions",
+          "get-dialog-chat-history"
+        ]
+      },
+      {
+        "id": "dialog-api-webhook-module",
+        "level": "module",
+        "name_ru": "Вебхуки Dialog API",
+        "description": "Модуль сервиса «Dialog API» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/53-novoe-soobschenie-v-chate.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/47-sessiya-vzyata-v-rabotu.md",
+          "kb/mango-product-docs/processed/mdialogi-api/sections/46-sessiya-v-sostoyanii-ozhidaniya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/53-novoe-soobschenie-v-chate.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/47-sessiya-vzyata-v-rabotu.md",
+                "kb/mango-product-docs/processed/mdialogi-api/sections/46-sessiya-v-sostoyanii-ozhidaniya.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "digital-channels",
+        "parent_services": [
+          "dialog-api-messaging-service"
+        ],
+        "functions": [
+          "receive-new-message-webhook",
+          "receive-session-taken-webhook",
+          "receive-session-waiting-webhook"
+        ]
+      },
+      {
+        "id": "talker-call-control-module",
+        "level": "module",
+        "name_ru": "Управление вызовом в Mango Talker",
+        "description": "Модуль сервиса «Софтфон Mango Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/129-uderzhanie-vyzova.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/130-perevod-vyzova-na-drugogo-sotrudnika.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/133-kak-vyklyuchit-mikrofon.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/134-zapis-razgovora-obschie-svedeniya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/129-uderzhanie-vyzova.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/130-perevod-vyzova-na-drugogo-sotrudnika.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/133-kak-vyklyuchit-mikrofon.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/134-zapis-razgovora-obschie-svedeniya.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-softphone-service"
+        ],
+        "functions": [
+          "hold-talker-call",
+          "transfer-talker-call",
+          "mute-talker-microphone",
+          "record-talker-call"
+        ]
+      },
+      {
+        "id": "talker-message-operations-module",
+        "level": "module",
+        "name_ru": "Операции с сообщениями Mango Talker",
+        "description": "Модуль сервиса «Командные чаты Mango Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/56-redaktirovanie-otpravlennogo-soobscheniy.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/57-kak-otmenit-otpravlennoe-soobschenie.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/78-citirovanie-soobscheniy.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/76-poisk-po-istorii-chata.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/56-redaktirovanie-otpravlennogo-soobscheniy.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/57-kak-otmenit-otpravlennoe-soobschenie.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/78-citirovanie-soobscheniy.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/76-poisk-po-istorii-chata.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-team-chat-service"
+        ],
+        "functions": [
+          "edit-talker-message",
+          "cancel-talker-message",
+          "quote-talker-message",
+          "search-talker-chat-history"
+        ]
+      },
+      {
+        "id": "talker-file-sharing-module",
+        "level": "module",
+        "name_ru": "Обмен файлами в Mango Talker",
+        "description": "Модуль сервиса «Командные чаты Mango Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-team-chat-service"
+        ],
+        "functions": [
+          "send-talker-file",
+          "send-talker-image"
+        ]
+      },
+      {
+        "id": "talker-video-effects-module",
+        "level": "module",
+        "name_ru": "Видео-эффекты и демонстрация в Mango Talker",
+        "description": "Модуль сервиса «Видео и конференции Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/161-vklyuchenie-demonstracii-ekrana.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/164-kak-izmenit-fonovye-effekty.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/165-podnyat-ruku.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/161-vklyuchenie-demonstracii-ekrana.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/164-kak-izmenit-fonovye-effekty.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/165-podnyat-ruku.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "video",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-video-meeting-service"
+        ],
+        "functions": [
+          "share-talker-screen",
+          "change-talker-background",
+          "raise-hand-in-talker"
+        ]
+      },
+      {
+        "id": "talker-favorites-groups-module",
+        "level": "module",
+        "name_ru": "Избранное и группы контактов",
+        "description": "Модуль сервиса «Контакты и история Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/190-dobavlenie-v-gruppu-izbrannye.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/191-udalenie-iz-gruppy-izbrannye.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/189-spisok-izbrannoe.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/183-gruppy-kontaktov-filtry.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/190-dobavlenie-v-gruppu-izbrannye.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/191-udalenie-iz-gruppy-izbrannye.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/189-spisok-izbrannoe.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/183-gruppy-kontaktov-filtry.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-contact-history-service"
+        ],
+        "functions": [
+          "add-talker-favorite",
+          "remove-talker-favorite",
+          "view-talker-favorites",
+          "filter-talker-contact-groups"
+        ]
+      },
+      {
+        "id": "quality-appeal-module",
+        "level": "module",
+        "name_ru": "Апелляции по оценке качества",
+        "description": "Модуль сервиса «Контроль качества и чек-листы» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/30-kak-sotrudniku-podat-apellyaciyu.md",
+          "kb/mango-product-docs/processed/quality-managment/sections/31-kak-kontroleru-obrabatyvat-apellyacii.md",
+          "kb/mango-product-docs/processed/quality-managment/sections/09-nastroyka-apellyacii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/30-kak-sotrudniku-podat-apellyaciyu.md",
+                "kb/mango-product-docs/processed/quality-managment/sections/31-kak-kontroleru-obrabatyvat-apellyacii.md",
+                "kb/mango-product-docs/processed/quality-managment/sections/09-nastroyka-apellyacii.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "ai-speech-quality",
+        "parent_services": [
+          "quality-checklist-service"
+        ],
+        "functions": [
+          "submit-quality-appeal",
+          "review-quality-appeal",
+          "configure-appeal-settings"
+        ]
+      },
+      {
+        "id": "quality-call-randomizer-module",
+        "level": "module",
+        "name_ru": "Рандомайзер выборки звонков",
+        "description": "Модуль сервиса «Контроль качества и чек-листы» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "ai-speech-quality",
+        "parent_services": [
+          "quality-checklist-service"
+        ],
+        "functions": [
+          "configure-call-randomizer",
+          "select-random-calls-for-review"
+        ]
+      },
+      {
+        "id": "ai-assistant-module",
+        "level": "module",
+        "name_ru": "ИИ-помощник оператора",
+        "description": "Модуль сервиса «AI-конспекты разговоров» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/45-kak-sozdat-ii-pomoschnika.md",
+          "kb/mango-product-docs/processed/quality-managment/sections/46-nastroyka-ii-pomoschnika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/45-kak-sozdat-ii-pomoschnika.md",
+                "kb/mango-product-docs/processed/quality-managment/sections/46-nastroyka-ii-pomoschnika.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "cluster": "ai-speech-quality",
+        "parent_services": [
+          "conversation-summary-service"
+        ],
+        "functions": [
+          "create-ai-assistant",
+          "configure-ai-assistant"
+        ]
+      },
+      {
+        "id": "speech-analytics-search-module",
+        "level": "module",
+        "name_ru": "Поиск и прослушивание разговоров",
+        "description": "Модуль сервиса «Речевая аналитика» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/19-kak-rabotaet-poisk-po-razgovoram.md",
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/23-poisk-po-audiozapisyam-razgovorov.md",
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/25-proslushivanie-zapisey.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/19-kak-rabotaet-poisk-po-razgovoram.md",
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/23-poisk-po-audiozapisyam-razgovorov.md",
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/25-proslushivanie-zapisey.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "cluster": "ai-speech-quality",
+        "parent_services": [
+          "speech-analytics-service"
+        ],
+        "functions": [
+          "search-conversations-by-content",
+          "listen-to-found-recording"
+        ]
+      },
+      {
+        "id": "speech-analytics-tagging-module",
+        "level": "module",
+        "name_ru": "Тегирование разговоров",
+        "description": "Модуль сервиса «Речевая аналитика» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/26-tegirovanie-razgovorov.md",
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/11-ii-tegirovanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/26-tegirovanie-razgovorov.md",
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/11-ii-tegirovanie.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "cluster": "ai-speech-quality",
+        "parent_services": [
+          "speech-analytics-service"
+        ],
+        "functions": [
+          "tag-conversation",
+          "configure-ai-tagging"
+        ]
+      },
+      {
+        "id": "static-calltracking-module",
+        "level": "module",
+        "name_ru": "Статический коллтрекинг",
+        "description": "Модуль сервиса «Атрибуция коллтрекинга» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/146-staticheskiy-kolltreking.md",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/147-otchety-staticheskogo-kolltrekinga.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/146-staticheskiy-kolltreking.md",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/147-otchety-staticheskogo-kolltrekinga.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "analytics-marketing",
+        "parent_services": [
+          "calltracking-attribution-service"
+        ],
+        "functions": [
+          "setup-static-calltracking",
+          "view-static-calltracking-report"
+        ]
+      },
+      {
+        "id": "analytics-goals-integration-module",
+        "level": "module",
+        "name_ru": "Цели и интеграции веб-аналитики",
+        "description": "Модуль сервиса «Сквозная аналитика» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/230-google-analitika-i-yandeks-metrika-dlya.md",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/232-postanovka-celey-po-sobytiyam-tekstovye.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "end-to-end-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/230-google-analitika-i-yandeks-metrika-dlya.md",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/232-postanovka-celey-po-sobytiyam-tekstovye.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "analytics-marketing",
+        "parent_services": [
+          "end-to-end-analytics-service"
+        ],
+        "functions": [
+          "integrate-web-analytics",
+          "configure-event-goal"
+        ]
+      },
+      {
+        "id": "bitrix24-connector-module",
+        "level": "module",
+        "name_ru": "Коннектор Битрикс24",
+        "description": "Модуль сервиса «CRM и ERP-интеграции» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration-bitrix24/sections/02-kak-nastroit-integraciyu.md",
+          "kb/mango-product-docs/processed/integration-bitrix24/sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration-bitrix24/sections/02-kak-nastroit-integraciyu.md",
+                "kb/mango-product-docs/processed/integration-bitrix24/sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "platform-integrations",
+        "parent_services": [
+          "crm-erp-integration-service"
+        ],
+        "functions": [
+          "configure-bitrix24-integration",
+          "auto-create-bitrix24-lead"
+        ]
+      },
+      {
+        "id": "amocrm-connector-module",
+        "level": "module",
+        "name_ru": "Коннектор amoCRM",
+        "description": "Модуль сервиса «CRM и ERP-интеграции» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_amocrm/sections/02-nastroyka-integracii.md",
+          "kb/mango-product-docs/processed/integration_amocrm/sections/03-vhodyaschiy-zvonok.md",
+          "kb/mango-product-docs/processed/integration_amocrm/sections/04-ishodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_amocrm/sections/02-nastroyka-integracii.md",
+                "kb/mango-product-docs/processed/integration_amocrm/sections/03-vhodyaschiy-zvonok.md",
+                "kb/mango-product-docs/processed/integration_amocrm/sections/04-ishodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "platform-integrations",
+        "parent_services": [
+          "crm-erp-integration-service"
+        ],
+        "functions": [
+          "configure-amocrm-integration",
+          "pop-amocrm-card-on-incoming-call",
+          "click-to-call-from-amocrm"
+        ]
+      },
+      {
+        "id": "onec-connector-module",
+        "level": "module",
+        "name_ru": "Коннектор 1С",
+        "description": "Модуль сервиса «CRM и ERP-интеграции» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_1c/sections/02-nachalo-raboty-s-integraciey.md",
+          "kb/mango-product-docs/processed/integration_1c/sections/04-vhodyaschiy-zvonok.md",
+          "kb/mango-product-docs/processed/integration_1c/sections/05-ishodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_1c/sections/02-nachalo-raboty-s-integraciey.md",
+                "kb/mango-product-docs/processed/integration_1c/sections/04-vhodyaschiy-zvonok.md",
+                "kb/mango-product-docs/processed/integration_1c/sections/05-ishodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "platform-integrations",
+        "parent_services": [
+          "crm-erp-integration-service"
+        ],
+        "functions": [
+          "configure-onec-integration",
+          "pop-onec-card-on-incoming-call",
+          "click-to-call-from-onec"
+        ]
+      },
+      {
+        "id": "custom-role-management-module",
+        "level": "module",
+        "name_ru": "Управление пользовательскими ролями",
+        "description": "Модуль сервиса «Ролевое управление доступом» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/05-sozdanie-roli.md",
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/08-kopirovat-rol.md",
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/09-udalenie-roli.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/05-sozdanie-roli.md",
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/08-kopirovat-rol.md",
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/09-udalenie-roli.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "security-access",
+        "parent_services": [
+          "role-access-management-service"
+        ],
+        "functions": [
+          "create-custom-role",
+          "copy-custom-role",
+          "delete-custom-role"
+        ]
+      },
+      {
+        "id": "sso-idp-configuration-module",
+        "level": "module",
+        "name_ru": "Настройка провайдера SSO",
+        "description": "Модуль сервиса «SSO и идентификация» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/06-shag-1-nastroyka-identity-provaydera-idp.md",
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/05-dobavlenie-provaydera.md",
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/07-shag-2-sopostavlenie-poley.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/06-shag-1-nastroyka-identity-provaydera-idp.md",
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/05-dobavlenie-provaydera.md",
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/07-shag-2-sopostavlenie-poley.md"
+              ]
+            }
+          ]
+        },
+        "cluster": "security-access",
+        "parent_services": [
+          "sso-identity-service"
+        ],
+        "functions": [
+          "configure-sso-idp",
+          "add-identity-provider",
+          "map-sso-attributes"
         ]
       }
     ],
@@ -5422,6 +6535,2789 @@
                 "proposed_id": "configure-security-policy",
                 "reason": "Industry Taxonomy не содержит leaf-функцию настройки политики безопасности."
               }
+            }
+          ]
+        },
+        "parent_module": "security-audit-settings-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "add-number-to-blacklist",
+        "level": "function",
+        "name_ru": "Добавить номер в чёрный список",
+        "description": "Атомарная функция модуля «Чёрный и белый списки номеров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-blacklist-whitelist-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "add-number-to-whitelist",
+        "level": "function",
+        "name_ru": "Добавить номер в белый список",
+        "description": "Атомарная функция модуля «Чёрный и белый списки номеров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/110-chernyy-belyy-spisok.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-blacklist-whitelist-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-time-based-routing",
+        "level": "function",
+        "name_ru": "Настроить маршрутизацию по рабочему времени",
+        "description": "Атомарная функция модуля «Маршрутизация по расписанию».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-time-based-routing-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-holiday-schedule",
+        "level": "function",
+        "name_ru": "Настроить расписание праздничных дней",
+        "description": "Атомарная функция модуля «Маршрутизация по расписанию».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/84-vkladka-raspisanie.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-time-based-routing-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "enable-voicemail-transcription",
+        "level": "function",
+        "name_ru": "Включить расшифровку голосовой почты",
+        "description": "Атомарная функция модуля «Управление голосовой почтой».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "call-recording"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-voicemail-management-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-voicemail-notification-actions",
+        "level": "function",
+        "name_ru": "Настроить уведомления о голосовой почте",
+        "description": "Атомарная функция модуля «Управление голосовой почтой».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "call-recording"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/296-golosovaya-pochta.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-voicemail-management-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "hold-call",
+        "level": "function",
+        "name_ru": "Поставить вызов на удержание",
+        "description": "Атомарная функция модуля «Удержание вызовов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-hold-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "resume-held-call",
+        "level": "function",
+        "name_ru": "Снять вызов с удержания",
+        "description": "Атомарная функция модуля «Удержание вызовов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/49-postanovka-vyzovov-na-uderzhanie.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-hold-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "transfer-call-with-consultation",
+        "level": "function",
+        "name_ru": "Перевести вызов с консультацией",
+        "description": "Атомарная функция модуля «Перевод вызовов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-transfer-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "transfer-call-without-consultation",
+        "level": "function",
+        "name_ru": "Перевести вызов без консультации",
+        "description": "Атомарная функция модуля «Перевод вызовов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/48-perevod-vyzovov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-transfer-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "initiate-conference-call",
+        "level": "function",
+        "name_ru": "Организовать конференц-вызов",
+        "description": "Атомарная функция модуля «Организация конференций».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-agent-conferencing-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "add-participant-to-conference",
+        "level": "function",
+        "name_ru": "Добавить участника в конференцию",
+        "description": "Атомарная функция модуля «Организация конференций».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/50-organizaciya-konferenciy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-agent-conferencing-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "enable-cc-call-recording",
+        "level": "function",
+        "name_ru": "Включить запись разговоров",
+        "description": "Атомарная функция модуля «Запись разговоров КЦ».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-recording-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "access-cc-call-recording",
+        "level": "function",
+        "name_ru": "Получить доступ к записи разговора",
+        "description": "Атомарная функция модуля «Запись разговоров КЦ».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/54-zapis-razgovorov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-call-recording-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "monitor-agents-realtime",
+        "level": "function",
+        "name_ru": "Контролировать операторов в реальном времени",
+        "description": "Атомарная функция модуля «Контроль и прослушивание операторов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/88-kontrol-sotrudnikov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "workforce-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/88-kontrol-sotrudnikov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-supervisor-monitoring-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "listen-to-agent-conversation",
+        "level": "function",
+        "name_ru": "Прослушать разговор оператора",
+        "description": "Атомарная функция модуля «Контроль и прослушивание операторов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/111-proslushivanie-razgovorov-i-povtornye-vy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "workforce-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/111-proslushivanie-razgovorov-i-povtornye-vy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-supervisor-monitoring-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "connect-whatsapp-channel",
+        "level": "function",
+        "name_ru": "Подключить канал WhatsApp",
+        "description": "Атомарная функция модуля «Каналы соцсетей и мессенджеров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging",
+                "feature": "messenger-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "social-messenger-channels-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "connect-vkontakte-channel",
+        "level": "function",
+        "name_ru": "Подключить канал ВКонтакте",
+        "description": "Атомарная функция модуля «Каналы соцсетей и мессенджеров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/190-vkontakte.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging",
+                "feature": "messenger-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/190-vkontakte.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "social-messenger-channels-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "connect-avito-channel",
+        "level": "function",
+        "name_ru": "Подключить канал Avito",
+        "description": "Атомарная функция модуля «Каналы соцсетей и мессенджеров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/209-avito.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging",
+                "feature": "messenger-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/209-avito.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "social-messenger-channels-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "take-dialog-session",
+        "level": "function",
+        "name_ru": "Взять сессию диалога в работу",
+        "description": "Атомарная функция модуля «Управление сессиями Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/40-vzyat-sessiyu-v-rabotu.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/40-vzyat-sessiyu-v-rabotu.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-session-management-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "transfer-dialog-session",
+        "level": "function",
+        "name_ru": "Перевести сессию на другого сотрудника",
+        "description": "Атомарная функция модуля «Управление сессиями Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-session-management-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "close-dialog-session",
+        "level": "function",
+        "name_ru": "Закрыть сессию диалога",
+        "description": "Атомарная функция модуля «Управление сессиями Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/42-zakryt-sessiyu.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/42-zakryt-sessiyu.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-session-management-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "get-active-dialog-sessions",
+        "level": "function",
+        "name_ru": "Получить список активных сессий",
+        "description": "Атомарная функция модуля «Управление сессиями Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/37-poluchit-spisok-aktivnyh-sessiy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/37-poluchit-spisok-aktivnyh-sessiy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-session-management-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "get-dialog-chat-history",
+        "level": "function",
+        "name_ru": "Загрузить историю чата",
+        "description": "Атомарная функция модуля «Управление сессиями Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/44-zagruzka-istorii-chata.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/44-zagruzka-istorii-chata.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-session-management-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "receive-new-message-webhook",
+        "level": "function",
+        "name_ru": "Получить вебхук о новом сообщении",
+        "description": "Атомарная функция модуля «Вебхуки Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/53-novoe-soobschenie-v-chate.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/53-novoe-soobschenie-v-chate.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-webhook-module",
+        "function_type": "business",
+        "interaction_surface": "webhook"
+      },
+      {
+        "id": "receive-session-taken-webhook",
+        "level": "function",
+        "name_ru": "Получить вебхук о взятии сессии в работу",
+        "description": "Атомарная функция модуля «Вебхуки Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/47-sessiya-vzyata-v-rabotu.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/47-sessiya-vzyata-v-rabotu.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-webhook-module",
+        "function_type": "business",
+        "interaction_surface": "webhook"
+      },
+      {
+        "id": "receive-session-waiting-webhook",
+        "level": "function",
+        "name_ru": "Получить вебхук об ожидающей сессии",
+        "description": "Атомарная функция модуля «Вебхуки Dialog API».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mdialogi-api/sections/46-sessiya-v-sostoyanii-ozhidaniya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mdialogi-api/sections/46-sessiya-v-sostoyanii-ozhidaniya.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "dialog-api-webhook-module",
+        "function_type": "business",
+        "interaction_surface": "webhook"
+      },
+      {
+        "id": "hold-talker-call",
+        "level": "function",
+        "name_ru": "Поставить вызов на удержание",
+        "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/129-uderzhanie-vyzova.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/129-uderzhanie-vyzova.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-call-control-module",
+        "function_type": "business",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "transfer-talker-call",
+        "level": "function",
+        "name_ru": "Перевести вызов на другого сотрудника",
+        "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/130-perevod-vyzova-na-drugogo-sotrudnika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/130-perevod-vyzova-na-drugogo-sotrudnika.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-call-control-module",
+        "function_type": "business",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "mute-talker-microphone",
+        "level": "function",
+        "name_ru": "Выключить микрофон",
+        "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/133-kak-vyklyuchit-mikrofon.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/133-kak-vyklyuchit-mikrofon.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-call-control-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "record-talker-call",
+        "level": "function",
+        "name_ru": "Записать разговор",
+        "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/134-zapis-razgovora-obschie-svedeniya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/134-zapis-razgovora-obschie-svedeniya.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-call-control-module",
+        "function_type": "business",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "edit-talker-message",
+        "level": "function",
+        "name_ru": "Редактировать отправленное сообщение",
+        "description": "Атомарная функция модуля «Операции с сообщениями Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/56-redaktirovanie-otpravlennogo-soobscheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/56-redaktirovanie-otpravlennogo-soobscheniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-message-operations-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "cancel-talker-message",
+        "level": "function",
+        "name_ru": "Отменить отправленное сообщение",
+        "description": "Атомарная функция модуля «Операции с сообщениями Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/57-kak-otmenit-otpravlennoe-soobschenie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/57-kak-otmenit-otpravlennoe-soobschenie.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-message-operations-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "quote-talker-message",
+        "level": "function",
+        "name_ru": "Процитировать сообщение",
+        "description": "Атомарная функция модуля «Операции с сообщениями Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/78-citirovanie-soobscheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/78-citirovanie-soobscheniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-message-operations-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "search-talker-chat-history",
+        "level": "function",
+        "name_ru": "Найти сообщение в истории чата",
+        "description": "Атомарная функция модуля «Операции с сообщениями Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/76-poisk-po-istorii-chata.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/76-poisk-po-istorii-chata.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-message-operations-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "send-talker-file",
+        "level": "function",
+        "name_ru": "Отправить файл",
+        "description": "Атомарная функция модуля «Обмен файлами в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-file-sharing-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "send-talker-image",
+        "level": "function",
+        "name_ru": "Отправить изображение",
+        "description": "Атомарная функция модуля «Обмен файлами в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/59-otpravka-faylov-i-izobrazheniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-file-sharing-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "share-talker-screen",
+        "level": "function",
+        "name_ru": "Включить демонстрацию экрана",
+        "description": "Атомарная функция модуля «Видео-эффекты и демонстрация в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/161-vklyuchenie-demonstracii-ekrana.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/161-vklyuchenie-demonstracii-ekrana.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "video",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-video-effects-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "change-talker-background",
+        "level": "function",
+        "name_ru": "Изменить фоновые эффекты",
+        "description": "Атомарная функция модуля «Видео-эффекты и демонстрация в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/164-kak-izmenit-fonovye-effekty.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/164-kak-izmenit-fonovye-effekty.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "video",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-video-effects-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "raise-hand-in-talker",
+        "level": "function",
+        "name_ru": "Поднять руку",
+        "description": "Атомарная функция модуля «Видео-эффекты и демонстрация в Mango Talker».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/165-podnyat-ruku.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/165-podnyat-ruku.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "video",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-video-effects-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "add-talker-favorite",
+        "level": "function",
+        "name_ru": "Добавить контакт в избранное",
+        "description": "Атомарная функция модуля «Избранное и группы контактов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/190-dobavlenie-v-gruppu-izbrannye.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/190-dobavlenie-v-gruppu-izbrannye.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "talker-favorites-groups-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "remove-talker-favorite",
+        "level": "function",
+        "name_ru": "Удалить контакт из избранного",
+        "description": "Атомарная функция модуля «Избранное и группы контактов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/191-udalenie-iz-gruppy-izbrannye.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/191-udalenie-iz-gruppy-izbrannye.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "talker-favorites-groups-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "view-talker-favorites",
+        "level": "function",
+        "name_ru": "Открыть список избранного",
+        "description": "Атомарная функция модуля «Избранное и группы контактов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/189-spisok-izbrannoe.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/189-spisok-izbrannoe.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "talker-favorites-groups-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "filter-talker-contact-groups",
+        "level": "function",
+        "name_ru": "Фильтровать контакты по группам",
+        "description": "Атомарная функция модуля «Избранное и группы контактов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/183-gruppy-kontaktov-filtry.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/183-gruppy-kontaktov-filtry.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "talker-favorites-groups-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "submit-quality-appeal",
+        "level": "function",
+        "name_ru": "Подать апелляцию на оценку",
+        "description": "Атомарная функция модуля «Апелляции по оценке качества».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/30-kak-sotrudniku-podat-apellyaciyu.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/30-kak-sotrudniku-podat-apellyaciyu.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "quality-appeal-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "review-quality-appeal",
+        "level": "function",
+        "name_ru": "Обработать апелляцию контролёром",
+        "description": "Атомарная функция модуля «Апелляции по оценке качества».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/31-kak-kontroleru-obrabatyvat-apellyacii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/31-kak-kontroleru-obrabatyvat-apellyacii.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "quality-appeal-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "configure-appeal-settings",
+        "level": "function",
+        "name_ru": "Настроить правила апелляций",
+        "description": "Атомарная функция модуля «Апелляции по оценке качества».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/09-nastroyka-apellyacii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/09-nastroyka-apellyacii.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "quality-appeal-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-call-randomizer",
+        "level": "function",
+        "name_ru": "Настроить рандомайзер выборки",
+        "description": "Атомарная функция модуля «Рандомайзер выборки звонков».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "quality-call-randomizer-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "select-random-calls-for-review",
+        "level": "function",
+        "name_ru": "Сформировать случайную выборку для проверки",
+        "description": "Атомарная функция модуля «Рандомайзер выборки звонков».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "quality-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/15-randomayzer.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "quality-call-randomizer-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "create-ai-assistant",
+        "level": "function",
+        "name_ru": "Создать ИИ-помощника",
+        "description": "Атомарная функция модуля «ИИ-помощник оператора».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/45-kak-sozdat-ii-pomoschnika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/45-kak-sozdat-ii-pomoschnika.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "ai-assistant-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-ai-assistant",
+        "level": "function",
+        "name_ru": "Настроить ИИ-помощника",
+        "description": "Атомарная функция модуля «ИИ-помощник оператора».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/quality-managment/sections/46-nastroyka-ii-pomoschnika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/quality-managment/sections/46-nastroyka-ii-pomoschnika.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "ai-assistant-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "search-conversations-by-content",
+        "level": "function",
+        "name_ru": "Найти разговоры по содержанию",
+        "description": "Атомарная функция модуля «Поиск и прослушивание разговоров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/19-kak-rabotaet-poisk-po-razgovoram.md",
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/23-poisk-po-audiozapisyam-razgovorov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/19-kak-rabotaet-poisk-po-razgovoram.md",
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/23-poisk-po-audiozapisyam-razgovorov.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "speech-analytics-search-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "listen-to-found-recording",
+        "level": "function",
+        "name_ru": "Прослушать найденную запись разговора",
+        "description": "Атомарная функция модуля «Поиск и прослушивание разговоров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/25-proslushivanie-zapisey.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/25-proslushivanie-zapisey.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "speech-analytics-search-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "tag-conversation",
+        "level": "function",
+        "name_ru": "Проставить теги разговору",
+        "description": "Атомарная функция модуля «Тегирование разговоров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/26-tegirovanie-razgovorov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/26-tegirovanie-razgovorov.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "speech-analytics-tagging-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-ai-tagging",
+        "level": "function",
+        "name_ru": "Настроить ИИ-тегирование разговоров",
+        "description": "Атомарная функция модуля «Тегирование разговоров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/11-ii-tegirovanie.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/speech-analytics/rukovodstvo-polzovatelya-rechevaya-analitika/sections/11-ii-tegirovanie.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "parent_module": "speech-analytics-tagging-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "setup-static-calltracking",
+        "level": "function",
+        "name_ru": "Настроить статический коллтрекинг",
+        "description": "Атомарная функция модуля «Статический коллтрекинг».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/146-staticheskiy-kolltreking.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/146-staticheskiy-kolltreking.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "static-calltracking-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "view-static-calltracking-report",
+        "level": "function",
+        "name_ru": "Открыть отчёт статического коллтрекинга",
+        "description": "Атомарная функция модуля «Статический коллтрекинг».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/147-otchety-staticheskogo-kolltrekinga.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/147-otchety-staticheskogo-kolltrekinga.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "static-calltracking-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "integrate-web-analytics",
+        "level": "function",
+        "name_ru": "Интегрировать Google Analytics и Яндекс.Метрику",
+        "description": "Атомарная функция модуля «Цели и интеграции веб-аналитики».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/230-google-analitika-i-yandeks-metrika-dlya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "end-to-end-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/230-google-analitika-i-yandeks-metrika-dlya.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "analytics-goals-integration-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-event-goal",
+        "level": "function",
+        "name_ru": "Настроить цель по событию",
+        "description": "Атомарная функция модуля «Цели и интеграции веб-аналитики».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/232-postanovka-celey-po-sobytiyam-tekstovye.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "end-to-end-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/232-postanovka-celey-po-sobytiyam-tekstovye.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "analytics-goals-integration-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-bitrix24-integration",
+        "level": "function",
+        "name_ru": "Настроить интеграцию с Битрикс24",
+        "description": "Атомарная функция модуля «Коннектор Битрикс24».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration-bitrix24/sections/02-kak-nastroit-integraciyu.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration-bitrix24/sections/02-kak-nastroit-integraciyu.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "bitrix24-connector-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "auto-create-bitrix24-lead",
+        "level": "function",
+        "name_ru": "Автоматически создавать лид при звонке",
+        "description": "Атомарная функция модуля «Коннектор Битрикс24».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration-bitrix24/sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration-bitrix24/sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "bitrix24-connector-module",
+        "function_type": "business",
+        "interaction_surface": "system-rule"
+      },
+      {
+        "id": "configure-amocrm-integration",
+        "level": "function",
+        "name_ru": "Настроить интеграцию с amoCRM",
+        "description": "Атомарная функция модуля «Коннектор amoCRM».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_amocrm/sections/02-nastroyka-integracii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_amocrm/sections/02-nastroyka-integracii.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "amocrm-connector-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "pop-amocrm-card-on-incoming-call",
+        "level": "function",
+        "name_ru": "Показать карточку контакта при входящем звонке",
+        "description": "Атомарная функция модуля «Коннектор amoCRM».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_amocrm/sections/03-vhodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_amocrm/sections/03-vhodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "amocrm-connector-module",
+        "function_type": "business",
+        "interaction_surface": "system-rule"
+      },
+      {
+        "id": "click-to-call-from-amocrm",
+        "level": "function",
+        "name_ru": "Позвонить из карточки amoCRM",
+        "description": "Атомарная функция модуля «Коннектор amoCRM».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_amocrm/sections/04-ishodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_amocrm/sections/04-ishodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "amocrm-connector-module",
+        "function_type": "business",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "configure-onec-integration",
+        "level": "function",
+        "name_ru": "Настроить интеграцию с 1С",
+        "description": "Атомарная функция модуля «Коннектор 1С».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_1c/sections/02-nachalo-raboty-s-integraciey.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_1c/sections/02-nachalo-raboty-s-integraciey.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "onec-connector-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "pop-onec-card-on-incoming-call",
+        "level": "function",
+        "name_ru": "Показать карточку контакта 1С при входящем звонке",
+        "description": "Атомарная функция модуля «Коннектор 1С».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_1c/sections/04-vhodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_1c/sections/04-vhodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "onec-connector-module",
+        "function_type": "business",
+        "interaction_surface": "system-rule"
+      },
+      {
+        "id": "click-to-call-from-onec",
+        "level": "function",
+        "name_ru": "Позвонить из 1С",
+        "description": "Атомарная функция модуля «Коннектор 1С».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/integration_1c/sections/05-ishodyaschiy-zvonok.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/integration_1c/sections/05-ishodyaschiy-zvonok.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "onec-connector-module",
+        "function_type": "business",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "create-custom-role",
+        "level": "function",
+        "name_ru": "Создать пользовательскую роль",
+        "description": "Атомарная функция модуля «Управление пользовательскими ролями».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/05-sozdanie-roli.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/05-sozdanie-roli.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "custom-role-management-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "copy-custom-role",
+        "level": "function",
+        "name_ru": "Скопировать роль",
+        "description": "Атомарная функция модуля «Управление пользовательскими ролями».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/08-kopirovat-rol.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/08-kopirovat-rol.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "custom-role-management-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "delete-custom-role",
+        "level": "function",
+        "name_ru": "Удалить роль",
+        "description": "Атомарная функция модуля «Управление пользовательскими ролями».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/09-udalenie-roli.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/Rolevaya-model-vats/sections/09-udalenie-roli.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "custom-role-management-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-sso-idp",
+        "level": "function",
+        "name_ru": "Настроить Identity Provider (IdP)",
+        "description": "Атомарная функция модуля «Настройка провайдера SSO».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/06-shag-1-nastroyka-identity-provaydera-idp.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/06-shag-1-nastroyka-identity-provaydera-idp.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "sso-idp-configuration-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "add-identity-provider",
+        "level": "function",
+        "name_ru": "Добавить провайдера идентификации",
+        "description": "Атомарная функция модуля «Настройка провайдера SSO».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/05-dobavlenie-provaydera.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/05-dobavlenie-provaydera.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "sso-idp-configuration-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "map-sso-attributes",
+        "level": "function",
+        "name_ru": "Сопоставить поля SSO с атрибутами",
+        "description": "Атомарная функция модуля «Настройка провайдера SSO».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/lk-vats-sso/sections/07-shag-2-sopostavlenie-poley.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security",
+                "feature": "access-control"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/lk-vats-sso/sections/07-shag-2-sopostavlenie-poley.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "sso-idp-configuration-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-callback-forwarding",
+        "level": "function",
+        "name_ru": "Настроить переадресацию по номеру клиента",
+        "description": "Атомарная функция модуля «Сценарии входящих звонков».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/109-pereadresaciya-po-nomeru-klienta.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/109-pereadresaciya-po-nomeru-klienta.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-inbound-scenarios-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-ivr-menu-branches",
+        "level": "function",
+        "name_ru": "Настроить ветви голосового меню",
+        "description": "Атомарная функция модуля «Голосовое меню».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "ivr-voice-menu"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-ivr-menu-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "enable-speech-recognition-menu",
+        "level": "function",
+        "name_ru": "Включить распознавание речи в меню",
+        "description": "Атомарная функция модуля «Голосовое меню».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "ivr-voice-menu"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-ivr-menu-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-recording-rules",
+        "level": "function",
+        "name_ru": "Настроить режимы записи",
+        "description": "Атомарная функция модуля «Запись разговоров».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/137-rezhimy-zapisi.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "call-recording"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/137-rezhimy-zapisi.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "vats-call-recording-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "complete-after-call-work",
+        "level": "function",
+        "name_ru": "Завершить поствызывную обработку",
+        "description": "Атомарная функция модуля «Обработка обращений оператором».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/32-postvyzyvnaya-obrabotka.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "agent-workspace"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/32-postvyzyvnaya-obrabotka.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-agent-call-handling-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "transfer-interaction-to-agent",
+        "level": "function",
+        "name_ru": "Перевести обращение на оператора",
+        "description": "Атомарная функция модуля «Очереди и правила распределения».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/68-perevod-obrascheniy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "call-routing"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/68-perevod-obrascheniy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-queue-routing-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "configure-agent-assisted-dialing",
+        "level": "function",
+        "name_ru": "Настроить набор с участием сотрудника",
+        "description": "Атомарная функция модуля «Кампании исходящего обзвона».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/128-s-uchastiem-sotrudnika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "outbound-calling",
+                "feature": "campaign-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/128-s-uchastiem-sotrudnika.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-outbound-campaign-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-wfm-auto-actions",
+        "level": "function",
+        "name_ru": "Настроить автоматические действия WFM",
+        "description": "Атомарная функция модуля «Планирование и супервизорский мониторинг».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/105-avtomaticheskie-deystviya-wfm.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "workforce-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/105-avtomaticheskie-deystviya-wfm.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-supervisor-wfm-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "schedule-inbound-forecast",
+        "level": "function",
+        "name_ru": "Спланировать прогноз входящих",
+        "description": "Атомарная функция модуля «Планирование и супервизорский мониторинг».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/100-planirovanie-vhodyaschih.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "workforce-management"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/100-planirovanie-vhodyaschih.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "cc-supervisor-wfm-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "enable-chatbot-for-channel-group",
+        "level": "function",
+        "name_ru": "Включить чат-бота для группы каналов",
+        "description": "Атомарная функция модуля «Группы каналов коммуникации».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/212-chat-bot-dlya-grupp-kanalov-tekstovye-ko.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/212-chat-bot-dlya-grupp-kanalov-tekstovye-ko.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "digital-channel-group-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "setup-calltracking-widget",
+        "level": "function",
+        "name_ru": "Настроить виджет коллтрекинга",
+        "description": "Атомарная функция модуля «Атрибуция рекламных источников».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/68-vidzhet-kolltreking.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/68-vidzhet-kolltreking.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "calltracking-attribution-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "build-cc-report",
+        "level": "function",
+        "name_ru": "Построить отчёт контакт-центра",
+        "description": "Атомарная функция модуля «Конструктор и просмотр отчётов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/205-otchety.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "multichannel-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/205-otchety.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "reporting-dashboard-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "view-cc-performance-panel",
+        "level": "function",
+        "name_ru": "Открыть панель показателей",
+        "description": "Атомарная функция модуля «Конструктор и просмотр отчётов».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/11-panel-pokazateley.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "multichannel-analytics"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/11-panel-pokazateley.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "reporting-dashboard-module",
+        "function_type": "business",
+        "interaction_surface": "operator-ui"
+      },
+      {
+        "id": "select-wallboard-template",
+        "level": "function",
+        "name_ru": "Выбрать шаблон Wallboard",
+        "description": "Атомарная функция модуля «Wallboard-виджеты».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "wallboard-monitoring-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "set-wallboard-metric-threshold",
+        "level": "function",
+        "name_ru": "Задать пороги метрик Wallboard",
+        "description": "Атомарная функция модуля «Wallboard-виджеты».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/wallboard/sections/04-nastroyka-wallboard.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "wallboard-monitoring-module",
+        "function_type": "configuration",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "hangup-call-via-api",
+        "level": "function",
+        "name_ru": "Завершить вызов через API",
+        "description": "Атомарная функция модуля «API Виртуальной АТС».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/vpbx-api/sections/38-zavershenie-vyzova.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "open-api"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/vpbx-api/sections/38-zavershenie-vyzova.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "vpbx-open-api-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "send-sms-via-api",
+        "level": "function",
+        "name_ru": "Отправить SMS через API",
+        "description": "Атомарная функция модуля «API Виртуальной АТС».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/vpbx-api/sections/39-otpravka-sms.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "open-api"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/vpbx-api/sections/39-otpravka-sms.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "vpbx-open-api-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "get-call-statistics-via-api",
+        "level": "function",
+        "name_ru": "Получить статистику вызовов через API",
+        "description": "Атомарная функция модуля «API Контакт-центра».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "open-api"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "contact-center-api-module",
+        "function_type": "business",
+        "interaction_surface": "api"
+      },
+      {
+        "id": "receive-call-notification-webhook",
+        "level": "function",
+        "name_ru": "Получить вебхук-уведомление о вызове",
+        "description": "Атомарная функция модуля «Webhook endpoints».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/vpbx-api/sections/27-uvedomlenie-o-vyzove.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "open-api",
+                "feature": "webhooks"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/vpbx-api/sections/27-uvedomlenie-o-vyzove.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "webhook-event-module",
+        "function_type": "business",
+        "interaction_surface": "webhook"
+      },
+      {
+        "id": "view-action-log",
+        "level": "function",
+        "name_ru": "Просмотреть журнал действий",
+        "description": "Атомарная функция модуля «Журнал действий и политики безопасности».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/279-zhurnal-deystviy.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/279-zhurnal-deystviy.md"
+              ]
+            }
+          ]
+        },
+        "parent_module": "security-audit-settings-module",
+        "function_type": "business",
+        "interaction_surface": "admin-ui"
+      },
+      {
+        "id": "configure-ip-restriction",
+        "level": "function",
+        "name_ru": "Настроить ограничение доступа по IP",
+        "description": "Атомарная функция модуля «Журнал действий и политики безопасности».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/273-bezopasnost.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "security",
+                "capability": "information-security"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/273-bezopasnost.md"
+              ]
             }
           ]
         },
