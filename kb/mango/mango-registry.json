@@ -1,7 +1,427 @@
 {
   "taxonomy": {
-    "version": 1,
-    "scope": "mango-internal-registry",
+    "version": "1.0.0",
+    "official_products": [
+      {
+        "id": "mango-virtual-pbx-official",
+        "level": "official-product",
+        "name_ru": "Виртуальная АТС",
+        "description": "Публичный продукт Mango Office для облачной офисной телефонии, маршрутизации звонков и управления номерами.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/",
+          "kb/mango-product-docs/processed/mango-lk-manual/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "cloud-pbx"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/virtualnaya_ats/",
+                "kb/mango-product-docs/processed/mango-lk-manual/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "ВАТС",
+          "Virtual PBX",
+          "Облачная АТС"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/"
+        ],
+        "supported_by_services": [
+          "vats-inbound-routing-service",
+          "vats-ivr-service",
+          "vats-number-management-service",
+          "vats-recording-history-service"
+        ]
+      },
+      {
+        "id": "mango-sip-trunk-official",
+        "level": "official-product",
+        "name_ru": "SIP Trunk и гибридная телефония",
+        "description": "Публичный набор возможностей подключения внешней телефонии и SIP-инфраструктуры к Виртуальной АТС.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/",
+          "kb/mango-product-docs/processed/sip-trunk/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "sip-connectivity"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/",
+                "kb/mango-product-docs/processed/sip-trunk/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "SIP Trunk",
+          "Гибридная АТС"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/"
+        ],
+        "supported_by_services": [
+          "vats-number-management-service",
+          "vpbx-open-api-service"
+        ]
+      },
+      {
+        "id": "mango-contact-center-official",
+        "level": "official-product",
+        "name_ru": "Контакт-центр",
+        "description": "Публичный продукт для обработки обращений, рабочих мест операторов, очередей и супервизорского контроля.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/contact-center/",
+          "kb/mango-product-docs/processed/mango-cc-manual/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "contact-center",
+                "capability": "omnichannel-contact-center"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/contact-center/",
+                "kb/mango-product-docs/processed/mango-cc-manual/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "КЦ",
+          "Contact Center"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/contact-center/",
+          "https://www.mango-office.ru/products/contact-center/vozmozhnosti/"
+        ],
+        "supported_by_services": [
+          "cc-agent-workspace-service",
+          "cc-interaction-routing-service",
+          "cc-outbound-campaign-service",
+          "cc-supervisor-wfm-service",
+          "quality-checklist-service"
+        ]
+      },
+      {
+        "id": "mango-text-communications-official",
+        "level": "official-product",
+        "name_ru": "Текстовые коммуникации",
+        "description": "Публичный продуктовый слой для сайта, мессенджеров, шаблонов и цифровых диалогов.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "text",
+                  "synchronicity": "async",
+                  "direction": "inbound"
+                }
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Текстовые коммуникации",
+          "Digital channels"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/"
+        ],
+        "supported_by_services": [
+          "digital-channel-group-service",
+          "website-chat-service",
+          "messenger-channel-service",
+          "dialog-api-messaging-service"
+        ]
+      },
+      {
+        "id": "mango-calltracking-official",
+        "level": "official-product",
+        "name_ru": "Коллтрекинг и маркетинговая аналитика",
+        "description": "Публичный продукт для привязки звонков к рекламным источникам и оценки эффективности маркетинга.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/calltracking/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "analytics",
+                "capability": "call-tracking"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/calltracking/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Calltracking",
+          "Коллтрекинг",
+          "Сквозная аналитика"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/calltracking/"
+        ],
+        "supported_by_services": [
+          "calltracking-attribution-service",
+          "end-to-end-analytics-service",
+          "reporting-dashboard-service"
+        ]
+      },
+      {
+        "id": "mango-speech-analytics-official",
+        "level": "official-product",
+        "name_ru": "Речевая аналитика",
+        "description": "Публичный AI-продукт для распознавания и анализа разговоров.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/",
+          "kb/mango-product-docs/processed/speech-analytics/index.md",
+          "kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "speech-analytics"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/",
+                "kb/mango-product-docs/processed/speech-analytics/index.md",
+                "kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md"
+              ],
+              "facets": {
+                "ai_assisted": true
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Speech Analytics",
+          "Речевая аналитика"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech-analytics/"
+        ],
+        "supported_by_services": [
+          "speech-analytics-service",
+          "conversation-summary-service",
+          "quality-checklist-service"
+        ]
+      },
+      {
+        "id": "mango-robots-official",
+        "level": "official-product",
+        "name_ru": "Роботы",
+        "description": "Публичный AI-продукт для автоматизированных голосовых сценариев и диалогов.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/contact-center/ai/voice-robot/",
+          "https://www.mango-office.ru/products/"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "ai-automation",
+                "capability": "voice-bot"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/contact-center/ai/voice-robot/",
+                "https://www.mango-office.ru/products/"
+              ],
+              "facets": {
+                "ai_assisted": true,
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "aliases": [
+          "Голосовые роботы",
+          "Voice Robot"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/contact-center/ai/voice-robot/"
+        ],
+        "supported_by_services": [
+          "voice-robot-service"
+        ]
+      },
+      {
+        "id": "mango-talker-official",
+        "level": "official-product",
+        "name_ru": "Mango Talker",
+        "description": "Публичный продукт корпоративных звонков, чатов, видеозвонков и контактной истории.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/mango-talker/",
+          "kb/mango-product-docs/processed/mtalker/android-user-guide/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/mango-talker/",
+                "kb/mango-product-docs/processed/mtalker/android-user-guide/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Mango Talker",
+          "MTalker"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/mango-talker/"
+        ],
+        "supported_by_services": [
+          "talker-softphone-service",
+          "talker-team-chat-service",
+          "talker-video-meeting-service",
+          "talker-contact-history-service"
+        ]
+      },
+      {
+        "id": "mango-integrations-official",
+        "level": "official-product",
+        "name_ru": "Интеграции",
+        "description": "Публичный продуктовый слой интеграций Mango Office с CRM, ERP, API и webhooks.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/products/integraciya/",
+          "kb/mango-product-docs/processed/integration-bitrix24/index.md",
+          "kb/mango-product-docs/processed/integration_1c/index.md",
+          "kb/mango-product-docs/processed/integration_amocrm/index.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "platform",
+                "capability": "platform-integration"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/products/integraciya/",
+                "kb/mango-product-docs/processed/integration-bitrix24/index.md",
+                "kb/mango-product-docs/processed/integration_1c/index.md",
+                "kb/mango-product-docs/processed/integration_amocrm/index.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Интеграции",
+          "CRM integrations"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/products/integraciya/"
+        ],
+        "supported_by_services": [
+          "vpbx-open-api-service",
+          "contact-center-api-service",
+          "crm-erp-integration-service",
+          "webhook-event-service"
+        ]
+      },
+      {
+        "id": "mango-numbers-equipment-official",
+        "level": "official-product",
+        "name_ru": "Номера и оборудование",
+        "description": "Публичный продуктовый слой подключения номеров, устройств и телефонной инфраструктуры.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "https://www.mango-office.ru/shop/devices/",
+          "kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "hardware",
+                "capability": "telephony-equipment"
+              },
+              "evidence_refs": [
+                "https://www.mango-office.ru/shop/devices/",
+                "kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md"
+              ]
+            }
+          ]
+        },
+        "aliases": [
+          "Оборудование",
+          "Номера",
+          "Devices"
+        ],
+        "owner": "Mango Office",
+        "official_urls": [
+          "https://www.mango-office.ru/shop/devices/"
+        ],
+        "supported_by_services": [
+          "vats-number-management-service"
+        ]
+      }
+    ],
     "products": [
       {
         "id": "mango-virtual-pbx",
@@ -286,7 +706,7 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control"
+                "capability": "information-security"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/Rolevaya-model-vats/index.md",
@@ -323,7 +743,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "voice-ucaas",
-                "capability": "call-routing"
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md",
@@ -512,8 +933,7 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "interaction-routing",
-                "feature": "queue-routing"
+                "capability": "call-routing"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/07-ochered-obrascheniy.md",
@@ -593,7 +1013,7 @@
               "alignment_type": "secondary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "supervisor-workspace"
+                "capability": "supervisor-assist"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md",
@@ -749,7 +1169,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "platform",
-                "capability": "communications-apis"
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mdialogi-api/index.md",
@@ -841,8 +1262,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "digital-channels",
-                "capability": "team-messaging"
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/17-otpravka-soobscheniya-v-chat.md",
@@ -990,10 +1412,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "ai-automation",
-                "capability": "conversation-summaries",
-                "feature": "ai-summary",
-                "function": "generate-summary"
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/index.md",
@@ -1203,8 +1624,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "analytics",
-                "capability": "real-time-reporting"
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/wallboard/index.md",
@@ -1355,8 +1777,7 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md",
@@ -1390,9 +1811,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control",
-                "feature": "role-management",
-                "function": "assign-role"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/Rolevaya-model-vats/index.md",
@@ -1425,7 +1845,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/lk-vats-sso/index.md"
@@ -1526,7 +1947,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "voice-ucaas",
-                "capability": "call-routing"
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md",
@@ -1720,8 +2142,7 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "interaction-routing",
-                "feature": "queue-routing"
+                "capability": "call-routing"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/07-ochered-obrascheniy.md",
@@ -1803,7 +2224,7 @@
               "alignment_type": "secondary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "supervisor-workspace"
+                "capability": "supervisor-assist"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md",
@@ -1963,7 +2384,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "platform",
-                "capability": "communications-apis"
+                "capability": "cpaas",
+                "feature": "programmable-messaging"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mdialogi-api/index.md",
@@ -2057,8 +2479,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "digital-channels",
-                "capability": "team-messaging"
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/17-otpravka-soobscheniya-v-chat.md",
@@ -2210,10 +2633,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "ai-automation",
-                "capability": "conversation-summaries",
-                "feature": "ai-summary",
-                "function": "generate-summary"
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/index.md",
@@ -2429,8 +2851,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "analytics",
-                "capability": "real-time-reporting"
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/wallboard/index.md",
@@ -2585,8 +3008,7 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md",
@@ -2621,9 +3043,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control",
-                "feature": "role-management",
-                "function": "assign-role"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/Rolevaya-model-vats/index.md",
@@ -2657,7 +3078,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/lk-vats-sso/index.md"
@@ -2761,7 +3183,7 @@
                 "domain": "voice-ucaas",
                 "capability": "voice-channel",
                 "feature": "inbound-voice-call",
-                "function": "receive-inbound-call"
+                "function": "accept-inbound-voice-call"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md"
@@ -2795,7 +3217,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "voice-ucaas",
-                "capability": "call-routing"
+                "capability": "cloud-pbx",
+                "feature": "call-routing-rules"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md"
@@ -2808,9 +3231,9 @@
                 }
               },
               "mapping_gap": {
-                "missing_level": "feature",
-                "proposed_id": "inbound-call-scenario",
-                "reason": "Industry Taxonomy фиксирует capability call-routing, но не выделяет сценарии ВАТС как feature."
+                "missing_level": "function",
+                "proposed_id": "configure-inbound-call-scenario",
+                "reason": "Industry feature call-routing-rules models auto-attendant as its canonical function; configuring Mango VATS inbound scenarios is not separately modelled."
               }
             }
           ]
@@ -3118,17 +3541,13 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "interaction-routing",
-                "feature": "queue-routing"
+                "capability": "call-routing",
+                "feature": "queue-management",
+                "function": "queue-management"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/64-avtomaticheskoe-raspredelenie-obrascheni.md"
-              ],
-              "mapping_gap": {
-                "missing_level": "function",
-                "proposed_id": "route-interaction-to-queue",
-                "reason": "Industry Taxonomy фиксирует queue-routing, но не содержит leaf-функцию распределения обращения."
-              }
+              ]
             }
           ]
         },
@@ -3151,8 +3570,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "interaction-routing",
-                "feature": "routing-rules"
+                "capability": "call-routing",
+                "feature": "queue-management"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/64-avtomaticheskoe-raspredelenie-obrascheni.md"
@@ -3160,7 +3579,7 @@
               "mapping_gap": {
                 "missing_level": "function",
                 "proposed_id": "configure-queue-routing-rule",
-                "reason": "Industry Taxonomy фиксирует routing-rules, но не содержит leaf-функцию настройки правила."
+                "reason": "Industry feature queue-management models queue-management; configuring queue routing rules is a Mango admin action not separately modelled."
               }
             }
           ]
@@ -3185,8 +3604,7 @@
               "industry_ref": {
                 "domain": "contact-center",
                 "capability": "outbound-calling",
-                "feature": "campaign-management",
-                "function": "start-campaign"
+                "feature": "campaign-management"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/123-ishodyaschiy-obzvon.md"
@@ -3197,6 +3615,11 @@
                   "synchronicity": "sync",
                   "direction": "outbound"
                 }
+              },
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "start-outbound-campaign",
+                "reason": "Industry feature campaign-management models campaign-configuration; launching/starting a campaign run is not separately modelled."
               }
             }
           ]
@@ -3253,16 +3676,13 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "contact-center",
-                "capability": "supervisor-workspace"
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring",
+                "function": "manage-live-monitoring"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md"
-              ],
-              "mapping_gap": {
-                "missing_level": "function",
-                "proposed_id": "monitor-agent-workload",
-                "reason": "Industry Taxonomy не содержит UI leaf-функцию просмотра нагрузки операторов."
-              }
+              ]
             }
           ]
         },
@@ -3318,8 +3738,7 @@
               "industry_ref": {
                 "domain": "digital-channels",
                 "capability": "omnichannel-messaging",
-                "feature": "messenger-integration",
-                "function": "send-message"
+                "feature": "messenger-integration"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md"
@@ -3330,6 +3749,11 @@
                   "synchronicity": "async",
                   "direction": "outbound"
                 }
+              },
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "send-message",
+                "reason": "Industry feature messenger-integration models channel-ingestion (inbound); outbound message send is not separately modelled."
               }
             }
           ]
@@ -3504,8 +3928,7 @@
               "industry_ref": {
                 "domain": "digital-channels",
                 "capability": "omnichannel-messaging",
-                "feature": "messenger-integration",
-                "function": "send-message"
+                "feature": "messenger-integration"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md"
@@ -3516,6 +3939,11 @@
                   "synchronicity": "async",
                   "direction": "outbound"
                 }
+              },
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "send-message",
+                "reason": "Industry feature messenger-integration models channel-ingestion (inbound); outbound message send is not separately modelled."
               }
             }
           ]
@@ -3538,10 +3966,10 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "digital-channels",
-                "capability": "omnichannel-messaging",
-                "feature": "messenger-integration",
-                "function": "send-message"
+                "domain": "platform",
+                "capability": "cpaas",
+                "feature": "programmable-messaging",
+                "function": "programmable-message-send"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/238-otpravka-soobscheniya.md"
@@ -3557,8 +3985,9 @@
             {
               "alignment_type": "supporting",
               "industry_ref": {
-                "domain": "platform",
-                "capability": "communications-apis"
+                "domain": "digital-channels",
+                "capability": "omnichannel-messaging",
+                "feature": "messenger-integration"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/238-otpravka-soobscheniya.md"
@@ -3586,8 +4015,7 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/239-opoveschenie-o-tom-chto-polzovatel-nabir.md"
@@ -3598,6 +4026,11 @@
                   "synchronicity": "async",
                   "direction": "inbound"
                 }
+              },
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "webhook-event-delivery",
+                "reason": "Industry feature webhooks models webhook-subscription (configuration); inbound webhook event delivery is not separately modelled."
               }
             },
             {
@@ -3668,7 +4101,7 @@
                 "domain": "voice-ucaas",
                 "capability": "voice-channel",
                 "feature": "inbound-voice-call",
-                "function": "receive-inbound-call"
+                "function": "accept-inbound-voice-call"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/15-kak-prinyat-vhodyaschiy-zvonok.md"
@@ -3701,8 +4134,10 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "digital-channels",
-                "capability": "team-messaging"
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging",
+                "function": "corporate-chat"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/17-otpravka-soobscheniya-v-chat.md"
@@ -3713,11 +4148,6 @@
                   "synchronicity": "async",
                   "direction": "outbound"
                 }
-              },
-              "mapping_gap": {
-                "missing_level": "function",
-                "proposed_id": "send-team-chat-message",
-                "reason": "Industry Taxonomy не содержит leaf-функцию отправки командного сообщения."
               }
             }
           ]
@@ -3740,8 +4170,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "digital-channels",
-                "capability": "team-messaging"
+                "domain": "voice-ucaas",
+                "capability": "unified-communications",
+                "feature": "corporate-messaging"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/47-sozdanie-novogo-chata-ili-kanala.md"
@@ -3749,7 +4180,7 @@
               "mapping_gap": {
                 "missing_level": "function",
                 "proposed_id": "create-team-chat-channel",
-                "reason": "Industry Taxonomy не содержит leaf-функцию создания командного канала."
+                "reason": "Industry feature corporate-messaging models corporate-chat; creating a chat channel/room is not separately modelled."
               }
             }
           ]
@@ -3992,10 +4423,10 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "ai-automation",
-                "capability": "conversation-summaries",
-                "feature": "ai-summary",
-                "function": "generate-summary"
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries",
+                "function": "manage-conversation-summaries"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/index.md"
@@ -4024,9 +4455,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "ai-automation",
-                "capability": "conversation-summaries",
-                "feature": "ai-summary"
+                "domain": "contact-center",
+                "capability": "agent-assist",
+                "feature": "conversation-summaries"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/index.md"
@@ -4037,7 +4468,7 @@
               "mapping_gap": {
                 "missing_level": "function",
                 "proposed_id": "view-call-summary",
-                "reason": "Industry Taxonomy содержит generate-summary, но не содержит UI-функцию просмотра конспекта."
+                "reason": "Industry feature conversation-summaries models manage-conversation-summaries; viewing a generated summary is not separately modelled."
               }
             }
           ]
@@ -4360,13 +4791,16 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "analytics",
-                "capability": "real-time-reporting",
-                "feature": "dashboard-view",
-                "function": "select-dashboard-widget"
+                "capability": "multichannel-analytics"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-cc-manual/sections/58-sozdanie-i-nastroyka-vidzheta.md"
-              ]
+              ],
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "select-dashboard-widget",
+                "reason": "Industry capability multichannel-analytics does not model dashboard widget selection as a function."
+              }
             }
           ]
         },
@@ -4388,10 +4822,10 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "analytics",
-                "capability": "real-time-reporting",
-                "feature": "dashboard-view",
-                "function": "select-dashboard-widget"
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring",
+                "function": "manage-live-monitoring"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/wallboard/index.md"
@@ -4417,8 +4851,9 @@
             {
               "alignment_type": "primary",
               "industry_ref": {
-                "domain": "analytics",
-                "capability": "real-time-reporting"
+                "domain": "contact-center",
+                "capability": "supervisor-assist",
+                "feature": "live-monitoring"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/234-wallboard.md"
@@ -4426,7 +4861,7 @@
               "mapping_gap": {
                 "missing_level": "function",
                 "proposed_id": "configure-wallboard-widget",
-                "reason": "Industry Taxonomy не содержит leaf-функцию настройки Wallboard-виджета."
+                "reason": "Industry feature live-monitoring models manage-live-monitoring; configuring wallboard widgets is not separately modelled."
               }
             }
           ]
@@ -4496,8 +4931,8 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks",
+                "function": "webhook-subscription"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md"
@@ -4567,12 +5002,16 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/215-sobytiya.md"
-              ]
+              ],
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "webhook-event-delivery",
+                "reason": "Industry feature webhooks models webhook-subscription (configuration); inbound webhook event delivery is not separately modelled."
+              }
             },
             {
               "alignment_type": "secondary",
@@ -4670,12 +5109,16 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md"
-              ]
+              ],
+              "mapping_gap": {
+                "missing_level": "function",
+                "proposed_id": "webhook-event-delivery",
+                "reason": "Industry feature webhooks models webhook-subscription (configuration); outbound webhook event delivery is not separately modelled."
+              }
             },
             {
               "alignment_type": "secondary",
@@ -4717,8 +5160,8 @@
               "industry_ref": {
                 "domain": "platform",
                 "capability": "open-api",
-                "feature": "webhook-management",
-                "function": "configure-webhook-endpoint"
+                "feature": "webhooks",
+                "function": "webhook-subscription"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md"
@@ -4745,9 +5188,9 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control",
-                "feature": "role-management",
-                "function": "assign-role"
+                "capability": "information-security",
+                "feature": "access-control",
+                "function": "role-based-access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/mango-lk-manual/sections/286-nastroyka-prav-dostupa-roli.md"
@@ -4774,8 +5217,8 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control",
-                "feature": "role-management"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/Rolevaya-model-vats/index.md"
@@ -4783,7 +5226,7 @@
               "mapping_gap": {
                 "missing_level": "function",
                 "proposed_id": "view-role-permissions",
-                "reason": "Industry Taxonomy содержит assign-role, но не содержит UI-функцию просмотра прав роли."
+                "reason": "Industry feature access-control models role-based-access-control; viewing role permissions is not separately modelled."
               }
             }
           ]
@@ -4807,15 +5250,16 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/lk-vats-sso/index.md"
               ],
               "mapping_gap": {
                 "missing_level": "function",
-                "proposed_id": "authenticate-user-with-sso",
-                "reason": "Industry Taxonomy не содержит leaf-функцию SSO-аутентификации."
+                "proposed_id": "sso-authentication",
+                "reason": "Industry feature access-control models role-based-access-control; SSO end-user authentication is not separately modelled."
               }
             }
           ]
@@ -4839,15 +5283,16 @@
               "alignment_type": "primary",
               "industry_ref": {
                 "domain": "security",
-                "capability": "access-control"
+                "capability": "information-security",
+                "feature": "access-control"
               },
               "evidence_refs": [
                 "kb/mango-product-docs/processed/lk-vats-sso/index.md"
               ],
               "mapping_gap": {
                 "missing_level": "function",
-                "proposed_id": "configure-sso-connection",
-                "reason": "Industry Taxonomy не содержит leaf-функцию настройки SSO."
+                "proposed_id": "sso-configuration",
+                "reason": "Industry feature access-control models role-based-access-control; configuring an SSO connection is not separately modelled."
               }
             }
           ]

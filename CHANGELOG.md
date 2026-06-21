@@ -13,6 +13,39 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #170 единый JSON-реестр Mango Taxonomy
+
+- Три YAML-файла Mango-реестра (`official-products.yaml`,
+  `internal-registry.yaml` и crosswalk `product-mapping.yaml`) свёрнуты в единый
+  JSON-документ
+  [`kb/mango/mango-registry.json`](kb/mango/mango-registry.json) по §8.1
+  стандарта: корень — единственный ключ `taxonomy` с `version` (SemVer) и пятью
+  плоскими массивами `official_products` / `products` / `internal_services` /
+  `modules` / `functions`. Дублирующий crosswalk-файл удалён — каждая сущность
+  уже несёт `maps_to.industry_alignment`, поэтому отдельный mapping больше не
+  нужен и не может рассинхронизироваться с реестром.
+- Добавлена JSON Schema
+  [`kb/mango/mango-registry.schema.json`](kb/mango/mango-registry.schema.json)
+  (draft 2020-12), зеркалящая контракт §8.1 `MangoTaxonomyDocument`: закрытые
+  `additionalProperties` / `unevaluatedProperties`, lifecycle без `removed`,
+  восемь кластеров, `function_type`, `interaction_surface`, channel-facet и
+  `mapping_gap`.
+- Восстановлена ссылочная целостность с Industry Taxonomy: все `industry_ref`
+  (18 ранее битых уникальных цепочек в 49 alignment'ах) перевыровнены так, чтобы
+  резолвиться против живого
+  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json);
+  недостающие отраслевые узлы зафиксированы через `mapping_gap`, а не выдуманы.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_170_mango_registry.py`](scripts/validate_issue_170_mango_registry.py)
+  (stdlib-only): валидирует JSON Schema, 30 правил §11.2, резолвинг каждого
+  `industry_ref` и `evidence_refs`, согласованность ссылок родитель/ребёнок в обе
+  стороны и floors полноты иерархии. Подключена к `make kb-validate` и KB
+  workflow; ретирована
+  `scripts/validate_issue_160_mango_registry.py` (использовала замороженный
+  hardcoded-срез Industry-таксономии и потому не видела битые `industry_ref`).
+- Обновлён [`kb/mango/README.md`](kb/mango/README.md) под единый JSON-реестр и
+  новый валидатор.
+
 ### Changed — Issue #166 синхронизация ADR-011/ADR-012
 
 - Синхронизированы решения

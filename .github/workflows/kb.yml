@@ -28,7 +28,7 @@ on:
       - "scripts/kb/**"
       - "scripts/validate_issue_*_kb*.py"
       - "scripts/validate_issue_156_industry_taxonomy_registry.py"
-      - "scripts/validate_issue_160_mango_registry.py"
+      - "scripts/validate_issue_170_mango_registry.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -122,8 +122,8 @@ jobs:
       - name: Validate issue #156 Industry Taxonomy registry
         run: python3 scripts/validate_issue_156_industry_taxonomy_registry.py
 
-      - name: Validate issue #160 Mango registry
-        run: python3 scripts/validate_issue_160_mango_registry.py
+      - name: Validate issue #170 Mango registry
+        run: python3 scripts/validate_issue_170_mango_registry.py
 
       - name: Validate issue #166 ADR sync
         run: python3 scripts/validate_issue_166_adr_sync.py
