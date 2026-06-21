@@ -14,3 +14,4 @@ kb/mango-product-docs/sources/**/*.pdf
 # временные артефакты конвейера извлечения
 kb/mango-product-docs/sources/**/_diagram.png
 scripts/kb/__pycache__/
+scripts/__pycache__/
