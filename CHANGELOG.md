@@ -13,6 +13,24 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #154 стандарт Mango Taxonomy
+
+- ADR-012 переведён в `status: canonical`, `version: 1.0` и связан с
+  [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md),
+  ADR-011 canonical v1.0, Industry Taxonomy Standard и решением по
+  `voice-channel` / facet `channel`.
+- Добавлен machine-readable стандарт
+  [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md):
+  двухслойная архитектура Official Layer + Internal Layer, иерархия
+  `Product -> Service -> Module -> Function`, 8 внутренних кластеров,
+  атрибуты по уровням, `function_type`, нормализация Component -> Module и
+  Operation -> Function, `maps_to.industry_alignment`, JSON Schema, YAML
+  contract, граничные кейсы, validator contract, AI-agent contract и процесс
+  эволюции.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_154_mango_taxonomy_standard.py`](scripts/validate_issue_154_mango_taxonomy_standard.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Added — Issue #152 стандарт Industry Taxonomy
 
 - Добавлен формальный стандарт

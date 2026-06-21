@@ -1,7 +1,7 @@
 ---
-status: proposed
-version: 0.3
-updated: 2026-06-20
+status: canonical
+version: 1.0
+updated: 2026-06-21
 ai-generated: true
 type: adr
 scope: mango-taxonomy
@@ -9,8 +9,10 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/142"
 validated_by:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/146"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/148"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/154"
 depends_on:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
+  - "standards/industry-taxonomy-standard.md"
 hub_research: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md"
 hub_research_sha: "3aa12727c9b87d5cf68301fa95d00a272408a97e"
 site_sources:
@@ -19,24 +21,43 @@ site_sources:
 related_prs:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/143"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/149"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/155"
 related_artifacts:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
+  - "standards/industry-taxonomy-standard.md"
+  - "standards/mango-taxonomy-standard.md"
   - "standards/product-classification-contract.md"
   - "docs/audit/issue-146-mango-taxonomy-validation.md"
+  - "docs/analysis/voice-digital-channels-comparison.md"
   - "kb/mango-product-docs/processed/"
 ---
 
 # ADR-012: Mango Taxonomy для корпоративной таксономии продуктов Mango Office
 
-> **Статус:** Proposed · **Дата:** 2026-06-20 · **Issue:**
-> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/142> · **Depends on:**
+> **Статус:** Canonical · **Дата:** 2026-06-21 · **Issue:**
+> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/142> · **Canonicalized by:**
+> <https://github.com/G-Ivan-A/mango_ba_prompts/issues/154> · **Depends on:**
 > [`ADR-011`](ADR-011-industry-taxonomy.md)
 
 > **Numbering note.** ADR-012 продолжает дорожку `standards/decisions/`
 > вслед за ADR-011, потому что issue #142 явно требует путь
-> `standards/decisions/ADR-012-mango-taxonomy.md`. Этот ADR не создаёт
-> стандарт Mango Taxonomy, KB-данные, research-копию или дополнительные
-> артефакты.
+> `standards/decisions/ADR-012-mango-taxonomy.md`.
+
+## Canonicalization note
+
+Issue #154 завершает follow-up к issue #142: ADR-012 переведён в
+`status: canonical`, `version: 1.0`, а нормативные machine-readable правила
+вынесены в [`standards/mango-taxonomy-standard.md`](../mango-taxonomy-standard.md).
+Стандарт является обязательным operational companion к этому ADR для AI-агентов,
+валидаторов CI и будущих registry entries.
+
+Canonicalization наследует решения ADR-011 canonical v1.0 и Industry Taxonomy
+Standard: strict `industry_ref`, `alignment_type` (`primary`, `secondary`,
+`supporting`), cross-cutting facets, first-class `voice-channel` внутри
+`voice-ucaas` и facet `channel` (`channel_kind`, `synchronicity`, `direction`).
+Голосовая инфраструктура (`sip-connectivity`, numbering) остаётся supporting
+resource mapping, а голосовое interaction mapping ДОЛЖНО использовать
+`voice-channel` and/or `channel`.
 
 ## Контекст
 
@@ -56,15 +77,18 @@ Mango Taxonomy должна быть совместима с этой модел
 она нормализует продуктовый контур конкретного вендора Mango Office. Поэтому
 она не заменяет ADR-011, а добавляет вендорский слой поверх него.
 
-Жёсткие ограничения issue #142:
+Исходные ограничения issue #142 действовали только на первый proposed ADR:
 
 - создать только этот ADR;
 - обновить только `CHANGELOG.md`;
-- оставить статус `Proposed`;
-- не создавать стандарт, KB-реестр, research-файл или дополнительные
-  production-артефакты;
+- не создавать стандарт, KB-реестр или дополнительные production-артефакты;
 - использовать ADR-011, Hub classification, официальный сайт Mango Office и
   только обработанные markdown-документы в `kb/mango-product-docs/processed/`.
+
+Issue #154 явно снимает ограничение на стандарт и требует
+`standards/mango-taxonomy-standard.md`; это не меняет исходное решение ADR-012,
+а переводит его в canonical status и добавляет machine-readable операционный
+контракт.
 
 ## Research: источники
 
@@ -494,21 +518,27 @@ Commercial Layer, procurement-коды, тарифы, отраслевые ре�
 
 ## Follow-up work
 
-Этот ADR не создаёт follow-up артефакты, но задаёт направление для будущих
-issues:
+Issue #154 закрывает первый follow-up artifact: создан формальный стандарт
+[`standards/mango-taxonomy-standard.md`](../mango-taxonomy-standard.md). Открыты
+следующие future issues:
 
-- `standards/mango-taxonomy-standard.md`: формальный стандарт Mango Taxonomy;
 - `kb/mango/product-registry.md`: curated registry official products,
   services, modules and facets;
 - `kb/mango/product-mapping.md`: mapping Mango entities на ADR-011 и source
   evidence;
-- validators for required IDs, links, status values, function granularity and
-  alignment cardinality.
+- registry validators for required IDs, links, status values, function
+  granularity, `channel` facet and alignment cardinality;
+- migration checklist for concrete registry entries once processed KB evidence
+  is promoted from source material to curated registry.
 
 ## Связанные документы
 
 - ADR-011 Industry Taxonomy:
   [`standards/decisions/ADR-011-industry-taxonomy.md`](ADR-011-industry-taxonomy.md)
+- Mango Taxonomy Standard:
+  [`standards/mango-taxonomy-standard.md`](../mango-taxonomy-standard.md)
+- Industry Taxonomy Standard:
+  [`standards/industry-taxonomy-standard.md`](../industry-taxonomy-standard.md)
 - Hub Mango classification:
   <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/classification.md>
 - Официальный сайт Mango Office: <https://www.mango-office.ru/>
