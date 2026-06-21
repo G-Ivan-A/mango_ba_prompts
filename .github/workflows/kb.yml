@@ -109,6 +109,9 @@ jobs:
       - name: Validate issue #148 taxonomy extensions
         run: python3 scripts/validate_issue_148_taxonomy_extensions.py
 
+      - name: Validate issue #152 Industry Taxonomy standard
+        run: python3 scripts/validate_issue_152_industry_taxonomy_standard.py
+
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
   # обрабатывает все kb/mango-product-docs/sources/*/meta.json и коммитит kb/mango-product-docs/processed.
