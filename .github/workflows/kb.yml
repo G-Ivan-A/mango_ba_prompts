@@ -29,6 +29,7 @@ on:
       - "scripts/validate_issue_*_kb*.py"
       - "scripts/validate_issue_156_industry_taxonomy_registry.py"
       - "scripts/validate_issue_160_mango_registry.py"
+      - "scripts/validate_issue_168_industry_reference_integrity.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -124,6 +125,9 @@ jobs:
 
       - name: Validate issue #160 Mango registry
         run: python3 scripts/validate_issue_160_mango_registry.py
+
+      - name: Validate issue #168 Industry reference integrity
+        run: python3 scripts/validate_issue_168_industry_reference_integrity.py
 
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
