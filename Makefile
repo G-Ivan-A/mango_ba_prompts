@@ -139,6 +139,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_152_industry_taxonomy_standard.py
 	$(PYTHON) scripts/validate_issue_154_mango_taxonomy_standard.py
 	$(PYTHON) scripts/validate_issue_156_industry_taxonomy_registry.py
+	$(PYTHON) scripts/validate_issue_160_mango_registry.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
 kb-tokens:
