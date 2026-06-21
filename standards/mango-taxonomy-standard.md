@@ -1,18 +1,25 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-06-21
 ai-generated: true
 type: standard
 scope: mango-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/154"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/164"
 depends_on:
-  - "standards/decisions/ADR-012-mango-taxonomy.md"
-  - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/industry-taxonomy-standard.md"
+  - "standards/decisions/ADR-011-industry-taxonomy.md"
+  - "standards/decisions/ADR-012-mango-taxonomy.md"
+  - "kb/industry/reference-taxonomy.json"
 related_artifacts:
   - "docs/analysis/voice-digital-channels-comparison.md"
   - "docs/audit/issue-146-mango-taxonomy-validation.md"
+  - "docs/audit/taxonomy-standards-independent-review.md"
+  - "kb/mango/official-products.yaml"
+  - "kb/mango/internal-registry.yaml"
+  - "kb/mango/product-mapping.yaml"
 validated_by:
   - "scripts/validate_issue_154_mango_taxonomy_standard.py"
 ---
@@ -32,12 +39,22 @@ validated_by:
 объясняет принятое решение; этот стандарт определяет, как хранить, валидировать
 и использовать Mango-specific taxonomy entities без догадок.
 
+**Audit fix note (issue #164).** Версия 0.2 исправляет Mango-specific находки
+независимого аудита
+[`docs/audit/taxonomy-standards-independent-review.md`](../docs/audit/taxonomy-standards-independent-review.md).
+ADR-011 имеет приоритет над ADR-012 для Industry reference layer и `industry_ref`.
+Если ADR-012 или старый Mango crosswalk противоречит ADR-011, Industry Taxonomy
+Standard или [`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json),
+этот стандарт применяет ADR-011/Industry registry и фиксирует расхождение как
+материал для отдельной ADR-sync задачи.
+
 **Ограничение источников.** Issue #154 ссылается на прикреплённое резюме
 согласования ADR-012 как source of truth. В текущем checkout и через GitHub
 issue body/comments/timeline/code search отдельный attachment URL или файл не
 доступен. Нормативные решения ниже берутся из body issue #154, ADR-012,
-ADR-011 canonical v1.0, Industry Taxonomy Standard, issue #146 audit и
-аналитики voice/digital channels. Если attachment появится позже и будет
+ADR-011 canonical v1.0, Industry Taxonomy Standard, current Industry/Mango
+registries, issue #146 audit, issue #164 audit и аналитики voice/digital
+channels. Если attachment появится позже и будет
 противоречить этому стандарту, изменение ДОЛЖНО идти отдельным PR с явным
 diff of decisions.
 
@@ -50,6 +67,8 @@ diff of decisions.
 - описывает Mango Taxonomy entity;
 - создаёт или проверяет future registry для Mango products/services/modules/functions;
 - маппит Mango entity на Industry Taxonomy;
+- читает или обновляет текущие registry files `kb/mango/official-products.yaml`,
+  `kb/mango/internal-registry.yaml` and `kb/mango/product-mapping.yaml`;
 - использует Mango taxonomy labels в requirements, KB, prompt, audit или CI;
 - генерирует machine-readable YAML/JSON для AI-агентов или валидаторов.
 
@@ -77,28 +96,51 @@ diff of decisions.
 - место для загрузки processed KB данных;
 - каталог исследований в споке.
 
-Конкретные entries future registry ДОЛЖНЫ жить в `kb/mango/` или другом
-утверждённом registry path отдельной задачей. В этом стандарте допускаются
-только illustrative examples, нужные для проверки структуры, mapping и boundary
-rules.
+Конкретные registry entries живут в `kb/mango/official-products.yaml`,
+`kb/mango/internal-registry.yaml` and `kb/mango/product-mapping.yaml` или в
+другом утверждённом registry path. Этот стандарт задаёт контракт, примеры и
+boundary rules; он НЕ ДОЛЖЕН становиться полным продуктовым registry.
 
 ### 1.3 Приоритет источников
 
 При конфликте применяется такой порядок:
 
-1. явное требование issue #154 или более поздний комментарий пользователя;
-2. этот стандарт;
-3. ADR-012 в статусе `canonical`;
-4. ADR-011 canonical v1.0;
-5. `standards/industry-taxonomy-standard.md`;
-6. `docs/analysis/voice-digital-channels-comparison.md`;
-7. `docs/audit/issue-146-mango-taxonomy-validation.md`;
-8. processed KB evidence.
+1. явное issue/ADR/PR-review решение, помеченное as taxonomy override and
+   accepted by maintainer/founder;
+2. этот стандарт для Mango operational contract;
+3. `kb/industry/reference-taxonomy.json` для canonical Industry node ids;
+4. `standards/industry-taxonomy-standard.md`;
+5. ADR-011 canonical v1.0;
+6. `kb/mango/official-products.yaml`, `kb/mango/internal-registry.yaml` and
+   `kb/mango/product-mapping.yaml` для конкретных Mango entries, если они
+   соответствуют этому стандарту;
+7. ADR-012 canonical v1.0 только для Mango-specific architecture where it does
+   not conflict with ADR-011 or Industry registry;
+8. `docs/analysis/voice-digital-channels-comparison.md`;
+9. `docs/audit/issue-146-mango-taxonomy-validation.md` and
+   `docs/audit/taxonomy-standards-independent-review.md`;
+10. processed KB evidence.
 
-Если Mango-specific правило конфликтует с Industry Taxonomy Standard, PR ДОЛЖЕН
-явно указать один из вариантов: изменить Mango Taxonomy, предложить изменение
-Industry Taxonomy или зафиксировать vendor-specific extension outside
-`industry_ref`.
+ADR-011 имеет приоритет над ADR-012. Обычный issue comment не отменяет taxonomy
+contract сам по себе; override ДОЛЖЕН быть явным, reviewable and accepted by
+maintainer/founder. Если Mango-specific правило конфликтует с Industry Taxonomy
+Standard or Industry registry, PR ДОЛЖЕН явно указать один из вариантов:
+изменить Mango Taxonomy, предложить изменение Industry Taxonomy или зафиксировать
+vendor-specific extension outside `industry_ref`.
+
+### 1.4 Mango vs Industry responsibility boundary
+
+Mango vs Industry responsibility boundary:
+
+- Industry Taxonomy отвечает на вопрос: "какой canonical industry node описывает
+  возможность?" и владеет `industry_ref` ids.
+- Mango Taxonomy отвечает на вопрос: "какой Official Product, Product, Service,
+  Module or Function Mango реализует эту возможность?"
+- Mango Taxonomy НЕ ДОЛЖНА создавать Industry slug from Mango label. Если нужный
+  deeper node отсутствует в `kb/industry/reference-taxonomy.json`, mapping
+  ДОЛЖЕН ссылаться на nearest canonical parent and add `mapping_gap`.
+- Mango cluster ids are Mango namespace only. Они НЕ ДОЛЖНЫ подменять Industry
+  Domain/Capability ids, even when labels coincide, например `digital-channels`.
 
 ## 2. Нормативные термины
 
@@ -217,7 +259,13 @@ Domain. Cluster нужен для ownership, navigation, validation и AI routin
 ### 2.10 `industry_ref`
 
 `industry_ref` - строгая ссылка на Industry Taxonomy node. Она ДОЛЖНА
-соответствовать `standards/industry-taxonomy-standard.md`.
+соответствовать `standards/industry-taxonomy-standard.md` and
+`kb/industry/reference-taxonomy.json`. `domain` MAY reference canonical Industry
+Domain or canonical `cross_domain_layer` such as `platform`, because the current
+Industry registry exposes `platform` through the same `industry_ref` shape.
+Every deeper field MUST resolve under its parent in the registry. If the exact
+Industry node is absent, Mango mapping MUST stop at nearest canonical parent and
+use `mapping_gap`.
 
 Минимальная форма:
 
@@ -233,6 +281,13 @@ maps_to:
 
 **Evidence ref** - repo path или URL, подтверждающий existence, boundary,
 status, mapping or naming decision. Free-text note НЕ заменяет evidence ref.
+
+### 2.12 `confidence`
+
+`confidence` - numeric confidence for one Industry alignment, from `0.0` to
+`1.0`. It MAY be used together with `mapping_gap` or review notes when evidence
+is incomplete. `confidence` NEVER makes an invented Industry slug canonical and
+MUST NOT replace `evidence_refs`.
 
 ## 3. Архитектура таксономии
 
@@ -269,6 +324,11 @@ Industry Taxonomy остаётся external reference layer. Mango Taxonomy НЕ
 | `entity.maps_to.industry_alignment[]` | one-to-many | Product/Service/Module/Function | Strict Industry Taxonomy mapping. |
 | `entity.evidence_refs[]` | one-to-many | All registry entities | Source-backed traceability. |
 
+`supported_by_services[]` is the canonical relationship name for Official
+Product -> Internal Service. ADR-012 prose and older drafts may mention
+`internal_services[]`; those references are legacy wording and MUST be treated
+as an ADR-sync drift unless an explicit future ADR changes this standard.
+
 ### 3.3 Architectural invariants
 
 Mango Taxonomy artifacts ДОЛЖНЫ satisfy these invariants:
@@ -280,9 +340,15 @@ Mango Taxonomy artifacts ДОЛЖНЫ satisfy these invariants:
 5. Every registry-grade entity has stable slug id.
 6. Every registry-grade entity has `lifecycle_status`.
 7. Every mapping uses `maps_to.industry_alignment[]`.
-8. Every `industry_ref` value is an Industry Taxonomy slug, not a Mango id.
-9. Commercial, procurement, segment, industry vertical and region stay facets or metadata.
-10. `channel` facet follows ADR-011 and Industry Taxonomy Standard.
+8. Every `industry_ref` chain resolves in `kb/industry/reference-taxonomy.json`
+   or stops at nearest canonical parent with `mapping_gap`.
+9. Every `industry_ref` value is an Industry Taxonomy slug, not a Mango id.
+10. Commercial/procurement labels stay approved facets when needed; customer
+    segment stays metadata outside `industry_ref`; industry vertical and
+    geography use `industry_vertical` and `geography_region`.
+11. `channel` facet follows ADR-011 and Industry Taxonomy Standard.
+12. Current Mango registry files under `kb/mango/` are concrete registry
+    artifacts and SHOULD follow this contract when changed.
 
 ## 4. Internal Layer
 
@@ -298,6 +364,7 @@ Depth rules:
 
 | Mango level | Industry mapping depth | Example source signal |
 | --- | --- | --- |
+| Official Product | none or supporting metadata | Public storefront/catalog item. |
 | Product | Domain or Domain/Capability | Public product or product family. |
 | Service | Capability | Stable internal capability-zone. |
 | Module | Feature | Screen, API group, configuration block, report, dashboard or integration block. |
@@ -305,8 +372,10 @@ Depth rules:
 
 ### 4.2 Восемь внутренних кластеров
 
-Registry ДОЛЖЕН использовать один primary cluster для Service and Module.
-Secondary cluster references MAY be used only when a module is truly cross-product.
+Registry ДОЛЖЕН использовать один primary `cluster` for Service and Module.
+`secondary_clusters[]` MAY be used only when evidence shows a Service or Module
+is truly cross-product. Secondary clusters are Mango namespace metadata and MUST
+NOT be serialized inside `industry_ref`.
 
 | Cluster id | Label from issue #154 | Rule of assignment |
 | --- | --- | --- |
@@ -331,6 +400,27 @@ Assignment algorithm:
    add platform mapping as supporting.
 6. If AI assists a CC/VATS/digital function without becoming a sold AI feature,
    keep the business cluster primary and mark `facets.ai_assisted: true`.
+
+Boundary rules from the audit:
+
+- SMS used as bulk campaign/broadcast messaging belongs to
+  `mango-text-communications` / `digital-channels` with `facets.channel` usually
+  `channel_kind: text`, `synchronicity: async`, `direction: broadcast`. SMS used
+  only as PBX notification or telecom infrastructure remains under `vats-core`
+  or `voice-ucaas` supporting mapping.
+- Mango Talker chats and presence remain under `mango-talker` primary when the
+  UC client is the user-visible product. Use `digital-channels` only as
+  secondary/supporting when the same behavior is a standalone digital-channel
+  service.
+- AI summaries attached to contact-center conversations keep the business owner
+  primary, for example `contact-center/agent-assist/conversation-summaries`, and
+  add `facets.ai_assisted: true` or secondary AI mapping when the AI surface is
+  sold or governed separately.
+- Calltracking, end-to-end analytics, marketing reports, dashboards and
+  attribution belong to `analytics-marketing` primary unless the entity is only
+  a telephony input signal.
+- `voice-channel` is the Industry owner for actual voice interactions; SIP,
+  numbering and equipment remain infrastructure/supporting mappings.
 
 ### 4.3 Product rules
 
@@ -359,7 +449,7 @@ Required Service fields:
 - `level: service`;
 - `cluster`;
 - `parent_products[]`;
-- `modules[]`;
+- `modules[]` or `module_extraction_status`;
 - `maps_to.industry_alignment[]`;
 - `lifecycle_status`;
 - `evidence_refs[]`.
@@ -374,6 +464,7 @@ Required Module fields:
 - `id`;
 - `level: module`;
 - `cluster`;
+- `secondary_clusters[]` when the module is deliberately cross-product;
 - `parent_services[]`;
 - `functions[]` or `function_extraction_status`;
 - `maps_to.industry_alignment[]`;
@@ -402,6 +493,10 @@ Required Function fields:
 - `lifecycle_status`;
 - `evidence_refs[]`.
 
+Function `cluster` is inherited from the parent Module unless an explicit
+validator/reporting view computes it. Registry documents MUST NOT serialize
+`cluster: inherited`; the inherited value is a computed property.
+
 ## 5. Атрибуты и типы
 
 ### 5.1 Canonical slug
@@ -429,7 +524,10 @@ Allowed `lifecycle_status` values:
 | `proposed` | Candidate entity; not production-grade. | Allowed in draft/proposed registry. |
 | `active` | Canonical entity allowed for production mapping. | Accepted. |
 | `deprecated` | Entity replaced or being phased out. | Warning with replacement required. |
-| `removed` | Entity no longer allowed. | Error unless legacy exemption is explicit. |
+
+`removed` is a legacy tombstone or migration marker, not an accepted current
+registry value. Current registry schema MUST reject it unless a separate legacy
+exemption artifact is introduced and explicitly named by a future migration.
 
 ### 5.3 Common attributes
 
@@ -448,7 +546,11 @@ owner: unknown
 evidence_refs:
   - standards/decisions/ADR-012-mango-taxonomy.md
 maps_to:
-  industry_alignment: []
+  industry_alignment:
+    - industry_ref:
+        domain: voice-ucaas
+      alignment_type: primary
+      confidence: 0.6
 ```
 
 ### 5.4 Attribute matrix
@@ -460,13 +562,17 @@ maps_to:
 | `name_ru` or `name_en` | required | required | required | required | required |
 | `official_urls` | required | optional | forbidden | forbidden | forbidden |
 | `official_refs` | forbidden | required unless internal-only | optional | optional | optional |
-| `cluster` | forbidden | optional | required | required | inherited or optional |
+| `cluster` | forbidden | optional | required | required | computed from parent module |
+| `secondary_clusters` | forbidden | optional | optional | optional | forbidden |
 | `parent_products` | forbidden | forbidden | required | forbidden | forbidden |
 | `parent_services` | forbidden | forbidden | forbidden | required | forbidden |
 | `parent_module` | forbidden | forbidden | forbidden | forbidden | required |
 | `function_type` | forbidden | forbidden | forbidden | forbidden | required |
 | `interaction_surface` | optional | optional | optional | optional | required |
 | `maps_to.industry_alignment` | optional | required | required | required | required |
+| `module_extraction_status` | forbidden | forbidden | required only when `modules[]` absent | forbidden | forbidden |
+| `function_extraction_status` | forbidden | forbidden | forbidden | required only when `functions[]` absent | forbidden |
+| `confidence` | mapping-only | mapping-only | mapping-only | mapping-only | mapping-only |
 | `evidence_refs` | required | required | required | required | required |
 
 ### 5.5 `function_type`
@@ -501,6 +607,28 @@ Allowed initial values:
 | `background-job` | Scheduled or asynchronous internal process. |
 | `system-rule` | Rule applied by platform/runtime. |
 | `unknown` | Evidence is insufficient; requires review before active status. |
+
+`interaction_surface: unknown` MAY be used only while an entity is `proposed`.
+An `active` Function MUST have a concrete interaction surface.
+
+### 5.7 Facets
+
+Mango alignment facets MUST follow the canonical Industry facet names:
+
+- `channel`;
+- `ai_assisted`;
+- `security_compliance`;
+- `commercial`;
+- `procurement`;
+- `industry_vertical`;
+- `geography_region`.
+
+`segment` and `region` MUST NOT appear inside
+`maps_to.industry_alignment[].facets`; use `commercial` or source metadata for
+customer segment and `geography_region` for geography. Direction x
+synchronicity MUST follow the Industry table: `inbound`, `outbound` and
+`broadcast` MAY be `sync` or `async`, but SMS/push/email broadcast SHOULD be
+`async` unless evidence justifies otherwise.
 
 ## 6. Нормализация терминов
 
@@ -580,7 +708,7 @@ maps_to:
   industry_alignment:
     - industry_ref:
         domain: contact-center
-        capability: interaction-routing
+        capability: omnichannel-contact-center
       alignment_type: primary
       evidence_refs:
         - standards/decisions/ADR-011-industry-taxonomy.md
@@ -609,9 +737,10 @@ Rules:
 
 | Mango level | Minimum industry_ref | Recommended industry_ref |
 | --- | --- | --- |
+| Official Product | none or supporting metadata | no direct Industry mapping unless needed |
 | Product | `domain` | `domain` + `capability` |
 | Service | `domain` + `capability` | `domain` + `capability` |
-| Module | `domain` + `capability` | `domain` + `capability` + `feature` |
+| Module | `domain` + `capability` + `feature` | `domain` + `capability` + `feature` |
 | Function | nearest canonical parent | `domain` + `capability` + `feature` + `function` |
 
 If a deeper Industry node is not canonical, mapping ДОЛЖЕН stop at nearest
@@ -643,7 +772,7 @@ maps_to:
 Inbound voice interaction:
 
 ```yaml
-id: receive-inbound-call
+id: accept-inbound-voice-call
 level: function
 function_type: business
 maps_to:
@@ -652,7 +781,7 @@ maps_to:
         domain: voice-ucaas
         capability: voice-channel
         feature: inbound-voice-call
-        function: receive-inbound-call
+        function: accept-inbound-voice-call
       alignment_type: primary
       facets:
         channel:
@@ -704,7 +833,7 @@ maps_to:
         domain: contact-center
         capability: outbound-calling
         feature: campaign-management
-        function: start-campaign
+        function: campaign-configuration
       alignment_type: primary
       facets:
         channel:
@@ -725,7 +854,7 @@ maps_to:
         domain: digital-channels
         capability: omnichannel-messaging
         feature: messenger-integration
-        function: send-message
+        function: channel-ingestion
       alignment_type: primary
       facets:
         channel:
@@ -744,14 +873,18 @@ maps_to:
     - industry_ref:
         domain: voice-ucaas
         capability: unified-communications
+        feature: softphone
+        function: softphone-call
       alignment_type: primary
     - industry_ref:
-        domain: digital-channels
-        capability: team-messaging
+        domain: voice-ucaas
+        capability: unified-communications
+        feature: corporate-messaging
+        function: corporate-chat
       alignment_type: secondary
 ```
 
-Speech analytics:
+AI summary for contact center:
 
 ```yaml
 id: generate-ai-summary
@@ -760,14 +893,18 @@ function_type: business
 maps_to:
   industry_alignment:
     - industry_ref:
-        domain: ai-automation
-        capability: conversation-summaries
-        feature: ai-summary
-        function: generate-summary
+        domain: contact-center
+        capability: agent-assist
+        feature: conversation-summaries
+        function: manage-conversation-summaries
       alignment_type: primary
+      facets:
+        ai_assisted: true
     - industry_ref:
-        domain: analytics
-        capability: conversation-analytics
+        domain: ai-automation
+        capability: speech-analytics
+        feature: transcription
+        function: call-transcription
       alignment_type: secondary
 ```
 
@@ -780,14 +917,16 @@ function_type: ui-action
 maps_to:
   industry_alignment:
     - industry_ref:
-        domain: analytics
-        capability: real-time-reporting
-        feature: dashboard-view
-        function: select-dashboard-widget
+        domain: contact-center
+        capability: supervisor-assist
+        feature: live-monitoring
+        function: manage-live-monitoring
       alignment_type: primary
     - industry_ref:
-        domain: contact-center
-        capability: supervisor-workspace
+        domain: analytics
+        capability: product-analytics
+        feature: demand-analysis
+        function: demand-analysis
       alignment_type: supporting
 ```
 
@@ -802,13 +941,15 @@ maps_to:
   industry_alignment:
     - industry_ref:
         domain: voice-ucaas
-        capability: voice-channel
-        feature: callback
-        function: request-callback
+        capability: callback
+        feature: web-callback-widget
+        function: callback-request-intake
       alignment_type: primary
     - industry_ref:
         domain: platform
         capability: open-api
+        feature: rest-api
+        function: api-rate-limiting
       alignment_type: supporting
 ```
 
@@ -822,10 +963,118 @@ maps_to:
   industry_alignment:
     - industry_ref:
         domain: security
-        capability: access-control
-        feature: role-management
-        function: assign-role
+        capability: information-security
+        feature: access-control
+        function: role-based-access-control
       alignment_type: primary
+```
+
+Mango Robots:
+
+```yaml
+id: mango-robots
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: ai-automation
+        capability: process-robot
+        feature: process-automation
+        function: automated-action-execution
+      alignment_type: primary
+```
+
+Mango Speech Analytics:
+
+```yaml
+id: mango-speech-analytics
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: ai-automation
+        capability: speech-analytics
+        feature: transcription
+        function: call-transcription
+      alignment_type: primary
+```
+
+Mango Marketing Analytics:
+
+```yaml
+id: mango-marketing-analytics
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: analytics
+        capability: call-tracking
+        feature: call-analytics
+        function: call-analytics-reporting
+      alignment_type: primary
+```
+
+Mango Text Communications:
+
+```yaml
+id: mango-text-communications
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: digital-channels
+        capability: sms-messaging
+        feature: bulk-sms
+        function: bulk-sms-dispatch
+      alignment_type: primary
+      facets:
+        channel:
+          channel_kind: text
+          synchronicity: async
+          direction: broadcast
+```
+
+Mango Open Platform:
+
+```yaml
+id: mango-open-platform
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: platform
+        capability: open-api
+        feature: webhooks
+        function: webhook-subscription
+      alignment_type: primary
+```
+
+Mango Numbers and Equipment:
+
+```yaml
+id: mango-numbers-equipment
+level: product
+maps_to:
+  industry_alignment:
+    - industry_ref:
+        domain: voice-ucaas
+        capability: number-management
+      alignment_type: primary
+    - industry_ref:
+        domain: voice-ucaas
+        capability: cloud-pbx
+      alignment_type: supporting
+```
+
+Mango Solution Pack:
+
+```yaml
+id: mango-solution-pack
+level: official-product
+official_urls:
+  - https://www.mango-office.ru/products/
+evidence_refs:
+  - standards/decisions/ADR-012-mango-taxonomy.md
 ```
 
 ### 7.5 Mapping gaps
@@ -837,8 +1086,8 @@ maps_to:
   industry_alignment:
     - industry_ref:
         domain: contact-center
-        capability: interaction-routing
-        feature: routing-rules
+        capability: call-routing
+        feature: queue-management
       alignment_type: primary
       mapping_gap:
         missing_level: function
@@ -874,7 +1123,7 @@ schemas into files, but MUST preserve these required fields and enum values.
     },
     "lifecycleStatus": {
       "type": "string",
-      "enum": ["proposed", "active", "deprecated", "removed"]
+      "enum": ["proposed", "active", "deprecated"]
     },
     "cluster": {
       "type": "string",
@@ -933,13 +1182,30 @@ schemas into files, but MUST preserve these required fields and enum values.
     },
     "facets": {
       "type": "object",
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "channel": { "$ref": "#/$defs/channelFacet" },
         "ai_assisted": { "type": "boolean" },
+        "security_compliance": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
+        "commercial": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
+        "procurement": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
         "industry_vertical": { "type": "array", "items": { "$ref": "#/$defs/slug" } },
-        "segment": { "type": "array", "items": { "$ref": "#/$defs/slug" } },
-        "region": { "type": "array", "items": { "$ref": "#/$defs/slug" } }
+        "geography_region": { "type": "array", "items": { "$ref": "#/$defs/slug" } }
       }
     },
     "mappingGap": {
@@ -972,13 +1238,14 @@ schemas into files, but MUST preserve these required fields and enum values.
         },
         "facets": { "$ref": "#/$defs/facets" },
         "mapping_gap": { "$ref": "#/$defs/mappingGap" },
-        "supporting_only_reason": { "type": "string" }
+        "supporting_only_reason": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
       }
     },
     "mapsTo": {
       "type": "object",
       "required": ["industry_alignment"],
-      "additionalProperties": true,
+      "additionalProperties": false,
       "properties": {
         "industry_alignment": {
           "type": "array",
@@ -1013,11 +1280,12 @@ schemas into files, but MUST preserve these required fields and enum values.
       }
     },
     "officialProduct": {
+      "unevaluatedProperties": false,
       "allOf": [
         { "$ref": "#/$defs/commonEntity" },
         {
           "type": "object",
-          "required": ["official_urls"],
+          "required": ["official_urls", "supported_by_services"],
           "properties": {
             "level": { "const": "official-product" },
             "official_urls": {
@@ -1027,13 +1295,15 @@ schemas into files, but MUST preserve these required fields and enum values.
             },
             "supported_by_services": {
               "type": "array",
-              "items": { "$ref": "#/$defs/slug" }
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
             }
           }
         }
       ]
     },
     "product": {
+      "unevaluatedProperties": false,
       "allOf": [
         { "$ref": "#/$defs/commonEntity" },
         {
@@ -1054,17 +1324,27 @@ schemas into files, but MUST preserve these required fields and enum values.
               "type": "array",
               "items": { "$ref": "#/$defs/slug" },
               "minItems": 1
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
             }
           }
         }
       ]
     },
     "service": {
+      "unevaluatedProperties": false,
       "allOf": [
         { "$ref": "#/$defs/commonEntity" },
         {
           "type": "object",
-          "required": ["cluster", "parent_products", "modules", "maps_to"],
+          "required": ["cluster", "parent_products", "maps_to"],
+          "anyOf": [
+            { "required": ["modules"] },
+            { "required": ["module_extraction_status"] }
+          ],
           "properties": {
             "level": { "const": "service" },
             "cluster": { "$ref": "#/$defs/cluster" },
@@ -1077,17 +1357,31 @@ schemas into files, but MUST preserve these required fields and enum values.
               "type": "array",
               "items": { "$ref": "#/$defs/slug" },
               "minItems": 1
+            },
+            "module_extraction_status": {
+              "type": "string",
+              "enum": ["complete", "partial", "not-started"]
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
             }
           }
         }
       ]
     },
     "module": {
+      "unevaluatedProperties": false,
       "allOf": [
         { "$ref": "#/$defs/commonEntity" },
         {
           "type": "object",
           "required": ["cluster", "parent_services", "maps_to"],
+          "anyOf": [
+            { "required": ["functions"] },
+            { "required": ["function_extraction_status"] }
+          ],
           "properties": {
             "level": { "const": "module" },
             "cluster": { "$ref": "#/$defs/cluster" },
@@ -1098,22 +1392,36 @@ schemas into files, but MUST preserve these required fields and enum values.
             },
             "functions": {
               "type": "array",
-              "items": { "$ref": "#/$defs/slug" }
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
             },
             "function_extraction_status": {
               "type": "string",
               "enum": ["complete", "partial", "not-started"]
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
             }
           }
         }
       ]
     },
     "function": {
+      "unevaluatedProperties": false,
       "allOf": [
         { "$ref": "#/$defs/commonEntity" },
         {
           "type": "object",
           "required": ["parent_module", "function_type", "interaction_surface", "maps_to"],
+          "not": {
+            "required": ["lifecycle_status", "interaction_surface"],
+            "properties": {
+              "lifecycle_status": { "const": "active" },
+              "interaction_surface": { "const": "unknown" }
+            }
+          },
           "properties": {
             "level": { "const": "function" },
             "parent_module": { "$ref": "#/$defs/slug" },
@@ -1135,7 +1443,10 @@ schemas into files, but MUST preserve these required fields and enum values.
       ],
       "additionalProperties": false,
       "properties": {
-        "version": { "type": "integer", "minimum": 1 },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
         "official_products": {
           "type": "array",
           "items": { "$ref": "#/$defs/officialProduct" }
@@ -1169,10 +1480,15 @@ Validator ДОЛЖЕН additionally check:
 - referenced ids exist in the same taxonomy document or approved registry;
 - no entity references itself as parent;
 - each Service has exactly one primary `cluster`;
+- each Service has `modules[]` or `module_extraction_status`;
+- each Module has `functions[]` or `function_extraction_status`;
 - every non-supporting-only entity has at least one `primary` alignment;
 - `industry_ref` parent chain resolves in Industry Taxonomy registry when such
   registry exists;
+- `facets` uses canonical Industry facet names and rejects unknown facet keys;
 - `facets.channel` is absent for pure SIP/PSTN/numbering infrastructure mapping;
+- `facets.channel.direction` follows the Industry direction x synchronicity table;
+- `active` Functions do not use `interaction_surface: unknown`;
 - `function_type` exists on every Function and only on Function;
 - no source term creates extra level.
 
@@ -1182,7 +1498,7 @@ Validator ДОЛЖЕН additionally check:
 
 ```yaml
 taxonomy:
-  version: 1
+  version: "1.0.0"
   official_products:
     - id: mango-contact-center-official
       level: official-product
@@ -1264,7 +1580,7 @@ taxonomy:
               domain: contact-center
               capability: outbound-calling
               feature: campaign-management
-              function: start-campaign
+              function: campaign-configuration
             alignment_type: primary
             facets:
               channel:
@@ -1306,7 +1622,7 @@ Correct: create official product, Product and internal Service separately.
 Incorrect:
 
 ```yaml
-id: start-campaign-endpoint
+id: campaign-configuration-endpoint
 level: function
 maps_to:
   industry_alignment:
@@ -1357,7 +1673,9 @@ true`, unless the product is sold/described primarily as AI/bot/automation.
 ### 10.5 Commercial and segment labels
 
 Tariff, package, SKU, "small business", region and vertical labels MUST NOT
-become Product/Service/Module/Function. Store them as facets/metadata when needed.
+become Product/Service/Module/Function. Store customer segment as metadata
+outside `industry_ref`; use approved facets such as `commercial`,
+`procurement`, `industry_vertical` and `geography_region` when needed.
 
 ### 10.6 Component/Operation as levels
 
@@ -1410,7 +1728,16 @@ Validator ДОЛЖЕН verify:
 - JSON Schema includes `$schema`, `MangoTaxonomyDocument`, slug pattern and enums;
 - YAML contract includes arrays for official_products, internal_services,
   modules and functions;
+- issue #164 audit-regression checks verify stale Industry examples, facets,
+  lifecycle and schema contracts in this standard;
 - no `research` directory is created in the spoke.
+
+Current CI coverage is intentionally narrow:
+`scripts/validate_issue_154_mango_taxonomy_standard.py` validates this standard
+and selected issue #164 audit-regression tokens;
+`scripts/validate_issue_160_mango_registry.py` validates current `kb/mango/*`
+registry files. A generic validator that checks every future Mango mapping file
+against `kb/industry/reference-taxonomy.json` is not yet implemented.
 
 ### 11.2 Registry-level checks
 
@@ -1436,11 +1763,16 @@ Future registry validator ДОЛЖЕН verify:
 18. `evidence_refs` resolve to existing repo path or full URL.
 19. `facets.channel` uses allowed `channel_kind`, `synchronicity`, `direction`.
 20. Pure infrastructure mapping does not carry channel facet.
-21. Alias/source_terms do not create extra hierarchy levels.
-22. `Component` source term appears only with `level: module`.
-23. `Operation` source term appears only with `level: function`.
-24. Deprecated entity has replacement or deprecation reason.
-25. Removed entity fails unless explicit legacy exemption exists.
+21. `facets.channel.direction` follows the direction x synchronicity table.
+22. `facets` uses canonical Industry facet names.
+23. `confidence` is between `0.0` and `1.0`.
+24. Service has `modules[]` or `module_extraction_status`.
+25. Module has `functions[]` or `function_extraction_status`.
+26. Alias/source_terms do not create extra hierarchy levels.
+27. `Component` source term appears only with `level: module`.
+28. `Operation` source term appears only with `level: function`.
+29. Deprecated entity has replacement or deprecation reason.
+30. Legacy tombstone entity fails unless explicit legacy exemption exists.
 
 ### 11.3 Severity
 
@@ -1453,10 +1785,10 @@ Future registry validator ДОЛЖЕН verify:
 | Invalid `industry_ref` chain | error |
 | Missing primary alignment | error |
 | Missing evidence in active registry | error |
-| Missing evidence in draft registry | warning |
+| Missing evidence in draft registry | error |
 | Ambiguous alias | error |
 | Deprecated reference | warning |
-| Removed reference | error |
+| Legacy tombstone reference | error |
 | Attachment source unavailable but documented | warning |
 
 ## 12. Контракт AI-агента
@@ -1472,7 +1804,8 @@ AI-агент, который создаёт или изменяет Mango Taxon
 6. Select one primary internal cluster with evidence.
 7. Use `maps_to.industry_alignment[]`, not free tags.
 8. Add `alignment_type`, evidence refs and facets.
-9. Mark uncertainty with `mapping_gap`, `confidence` or open question.
+9. Mark uncertainty with `mapping_gap`, `confidence` in `[0.0, 1.0]` or open
+   question.
 10. Avoid concrete registry data unless the task explicitly asks for registry.
 11. Avoid commercial/procurement/vertical labels as hierarchy nodes.
 12. Run available validators before finalizing PR.
@@ -1547,6 +1880,7 @@ Version meaning:
 - minor: additive field, enum value, cluster clarification or compatible rule;
 - major: breaking hierarchy, required field, id or enum change.
 
+Registry `taxonomy.version` MUST be a SemVer string such as `"1.0.0"`.
 Canonical ids MUST NOT be renamed without deprecation period and replacement.
 
 ## 14. Самопроверка качества
@@ -1563,6 +1897,8 @@ Canonical ids MUST NOT be renamed without deprecation period and replacement.
 - normalization Component -> Module and Operation -> Function;
 - mapping to Industry Taxonomy with primary/secondary/supporting;
 - inherited ADR-011 `voice-channel` and `channel` facet;
+- inherited Industry canonical facets including `security_compliance` and
+  `geography_region`;
 - machine-readable JSON Schema and YAML contract;
 - validator and AI-agent contracts;
 - evolution process.
@@ -1585,19 +1921,26 @@ Each level has definition, positive rules, negative rules and required fields.
 The standard references Industry Taxonomy Standard for Industry rules and does
 not restate all Industry node semantics. Mango-specific content is limited to
 layers, internal hierarchy, clusters, source-term normalization and registry
-contract.
+contract. Imported Industry constructs remain references to ADR-011, Industry
+Taxonomy Standard and `kb/industry/reference-taxonomy.json`; Mango cluster ids
+and product ids are not treated as Industry ids.
 
 ### 14.4 Отсутствие противоречий
 
 The standard aligns with:
 
-- ADR-012 canonical: two-layer Mango Taxonomy and
+- ADR-012 canonical where it is Mango-specific: two-layer Mango Taxonomy and
   `Product -> Service -> Module -> Function`;
 - ADR-011 canonical v1.0: Industry Taxonomy, `voice-channel`, `channel` facet;
 - Industry Taxonomy Standard: strict `industry_ref`, `alignment_type`, facets;
 - issue #146 audit: processed KB evidence for Function and terminology;
 - issue #154 body: mandatory clusters, function types, mapping and
   machine-readable contracts.
+
+Known ADR-012 synchronization drift remains documented rather than silently
+absorbed: this standard uses `supported_by_services[]`, canonical Industry
+registry paths and current Industry facet names because ADR-011 has priority over
+ADR-012 for the Industry reference layer.
 
 ### 14.5 Машиночитаемость
 
@@ -1620,9 +1963,21 @@ Validator-ready elements are explicit:
   [`standards/decisions/ADR-011-industry-taxonomy.md`](decisions/ADR-011-industry-taxonomy.md)
 - Industry Taxonomy Standard:
   [`standards/industry-taxonomy-standard.md`](industry-taxonomy-standard.md)
+- Industry reference taxonomy registry:
+  [`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json)
 - Voice/digital channels analysis:
   [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
 - Issue #146 Mango Taxonomy audit:
   [`docs/audit/issue-146-mango-taxonomy-validation.md`](../docs/audit/issue-146-mango-taxonomy-validation.md)
+- Independent taxonomy standards audit:
+  [`docs/audit/taxonomy-standards-independent-review.md`](../docs/audit/taxonomy-standards-independent-review.md)
+- Mango official products registry:
+  [`kb/mango/official-products.yaml`](../kb/mango/official-products.yaml)
+- Mango internal registry:
+  [`kb/mango/internal-registry.yaml`](../kb/mango/internal-registry.yaml)
+- Mango product mapping registry:
+  [`kb/mango/product-mapping.yaml`](../kb/mango/product-mapping.yaml)
 - Issue #154:
   <https://github.com/G-Ivan-A/mango_ba_prompts/issues/154>
+- Issue #164:
+  <https://github.com/G-Ivan-A/mango_ba_prompts/issues/164>
