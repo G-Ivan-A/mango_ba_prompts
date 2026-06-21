@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #152 стандарт Industry Taxonomy
+
+- Добавлен формальный стандарт
+  [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md):
+  зафиксированы строгие правила применения модели
+  `Domain -> Capability -> Feature -> Function`, canonical slugs, lifecycle
+  статусы, `function_type`, cross-cutting facets включая `channel`, правила
+  маппинга через `industry_ref`, граничные кейсы, процесс эволюции и контракт
+  для будущего валидатора.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_152_industry_taxonomy_standard.py`](scripts/validate_issue_152_industry_taxonomy_standard.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Changed — Issue #150 доисследование асимметрии голосовых и текстовых каналов
 
 - ADR-011 переведён в `status: canonical`, `version: 1.0` после закрытия
