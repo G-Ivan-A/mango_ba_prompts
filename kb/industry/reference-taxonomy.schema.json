@@ -1,0 +1,482 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "reference-taxonomy.schema.json",
+  "title": "Industry Taxonomy Reference Registry",
+  "type": "object",
+  "required": [
+    "$schema",
+    "taxonomy_id",
+    "schema_version",
+    "version",
+    "last_updated",
+    "status",
+    "levels",
+    "lifecycle_statuses",
+    "function_types",
+    "sources",
+    "facets",
+    "domains",
+    "cross_domain_layers"
+  ],
+  "properties": {
+    "$schema": {
+      "const": "reference-taxonomy.schema.json"
+    },
+    "taxonomy_id": {
+      "const": "industry-taxonomy"
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "version": {
+      "type": "string"
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "levels": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "lifecycle_statuses": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lifecycle_status"
+      }
+    },
+    "function_types": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/function_type"
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "facets": {
+      "type": "object"
+    },
+    "registry_notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "domains": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/domain"
+      }
+    },
+    "cross_domain_layers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/domain"
+      }
+    }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "parameter_name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "lifecycle_status": {
+      "enum": [
+        "proposed",
+        "active",
+        "deprecated",
+        "removed"
+      ]
+    },
+    "function_type": {
+      "enum": [
+        "business",
+        "configuration",
+        "ui-action"
+      ]
+    },
+    "node_base": {
+      "type": "object",
+      "required": [
+        "id",
+        "level",
+        "name_en",
+        "name_ru",
+        "definition",
+        "lifecycle_status",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "level": {
+          "enum": [
+            "domain",
+            "capability",
+            "feature",
+            "function"
+          ]
+        },
+        "name_en": {
+          "type": "string"
+        },
+        "name_ru": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "lifecycle_status": {
+          "$ref": "#/$defs/lifecycle_status"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent": {
+          "type": "object"
+        },
+        "facets": {
+          "type": "object"
+        },
+        "source_status": {
+          "type": "string"
+        }
+      }
+    },
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "domain"
+            },
+            "taxonomy_role": {
+              "type": "string"
+            },
+            "capabilities": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/capability"
+              }
+            }
+          },
+          "required": [
+            "capabilities"
+          ]
+        }
+      ]
+    },
+    "capability": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "capability"
+            },
+            "features": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/feature"
+              }
+            }
+          },
+          "required": [
+            "features"
+          ]
+        }
+      ]
+    },
+    "feature": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "feature"
+            },
+            "functions": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/function"
+              }
+            }
+          },
+          "required": [
+            "functions"
+          ]
+        }
+      ]
+    },
+    "function": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "function"
+            },
+            "function_type": {
+              "$ref": "#/$defs/function_type"
+            },
+            "parameters": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "description"
+                ],
+                "properties": {
+                  "name": {
+                    "$ref": "#/$defs/parameter_name"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "function_type",
+            "parameters"
+          ]
+        }
+      ]
+    }
+  },
+  "definitions": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "parameter_name": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$"
+    },
+    "lifecycle_status": {
+      "enum": [
+        "proposed",
+        "active",
+        "deprecated",
+        "removed"
+      ]
+    },
+    "function_type": {
+      "enum": [
+        "business",
+        "configuration",
+        "ui-action"
+      ]
+    },
+    "node_base": {
+      "type": "object",
+      "required": [
+        "id",
+        "level",
+        "name_en",
+        "name_ru",
+        "definition",
+        "lifecycle_status",
+        "evidence_refs"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/slug"
+        },
+        "level": {
+          "enum": [
+            "domain",
+            "capability",
+            "feature",
+            "function"
+          ]
+        },
+        "name_en": {
+          "type": "string"
+        },
+        "name_ru": {
+          "type": "string"
+        },
+        "definition": {
+          "type": "string"
+        },
+        "lifecycle_status": {
+          "$ref": "#/$defs/lifecycle_status"
+        },
+        "evidence_refs": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "parent": {
+          "type": "object"
+        },
+        "facets": {
+          "type": "object"
+        },
+        "source_status": {
+          "type": "string"
+        }
+      }
+    },
+    "domain": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "domain"
+            },
+            "taxonomy_role": {
+              "type": "string"
+            },
+            "capabilities": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/capability"
+              }
+            }
+          },
+          "required": [
+            "capabilities"
+          ]
+        }
+      ]
+    },
+    "capability": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "capability"
+            },
+            "features": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/feature"
+              }
+            }
+          },
+          "required": [
+            "features"
+          ]
+        }
+      ]
+    },
+    "feature": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "feature"
+            },
+            "functions": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/function"
+              }
+            }
+          },
+          "required": [
+            "functions"
+          ]
+        }
+      ]
+    },
+    "function": {
+      "allOf": [
+        {
+          "$ref": "#/$defs/node_base"
+        },
+        {
+          "type": "object",
+          "properties": {
+            "level": {
+              "const": "function"
+            },
+            "function_type": {
+              "$ref": "#/$defs/function_type"
+            },
+            "parameters": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "name",
+                  "description"
+                ],
+                "properties": {
+                  "name": {
+                    "$ref": "#/$defs/parameter_name"
+                  },
+                  "description": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": [
+            "function_type",
+            "parameters"
+          ]
+        }
+      ]
+    }
+  }
+}

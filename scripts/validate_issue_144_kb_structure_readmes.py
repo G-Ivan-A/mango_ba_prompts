@@ -5,7 +5,7 @@ Issue #144 follows the product-docs migration from issue #137 and locks the
 documentation boundary for the generic ``kb/`` namespace:
 
 - the root KB README describes ``mango-product-docs/``, ``fragments/``,
-  ``practices/`` and planned taxonomy namespaces;
+  ``practices/`` and taxonomy namespaces;
 - ``kb/mango-product-docs/README.md`` exists and owns product-documentation
   sources, generated outputs, and human usage guides;
 - ``kb/fragments/`` and ``kb/practices/`` stay as independent KB material, not
@@ -64,7 +64,8 @@ def check_readmes() -> list[str]:
         "kb/mango-product-docs/",
         "kb/fragments/",
         "kb/practices/",
-        "kb/industry/ (будущий)",
+        "kb/industry/",
+        "Industry Taxonomy",
         "kb/mango/ (будущий)",
         "kb/mango-product-docs/README.md",
         "USAGE.md",

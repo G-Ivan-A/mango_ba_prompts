@@ -18,6 +18,7 @@ on:
       - "Makefile"
       - "docs/audit/issue-144-kb-structure.md"
       - "kb/README.md"
+      - "kb/industry/**"
       - "kb/fragments/README.md"
       - "kb/practices/**"
       - "kb/mango-product-docs/README.md"
@@ -25,6 +26,7 @@ on:
       - "kb/mango-product-docs/sources/**"
       - "scripts/kb/**"
       - "scripts/validate_issue_*_kb*.py"
+      - "scripts/validate_issue_156_industry_taxonomy_registry.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -114,6 +116,9 @@ jobs:
 
       - name: Validate issue #154 Mango Taxonomy standard
         run: python3 scripts/validate_issue_154_mango_taxonomy_standard.py
+
+      - name: Validate issue #156 Industry Taxonomy registry
+        run: python3 scripts/validate_issue_156_industry_taxonomy_registry.py
 
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда
