@@ -1,0 +1,42 @@
+[
+  {
+    "n": 2,
+    "id": "mango-contact-center-official",
+    "level": "official-product",
+    "name_ru": "Контакт-центр",
+    "description": "Публичный продукт для обработки обращений, рабочих мест операторов, очередей и супервизорского контроля."
+  },
+  {
+    "n": 8,
+    "id": "vats-ivr-service",
+    "level": "service",
+    "name_ru": "Голосовое меню ВАТС",
+    "description": "Сервис IVR-меню, приветствий и ветвления входящих звонков.",
+    "cluster": "vats-core"
+  },
+  {
+    "n": 14,
+    "id": "crm-erp-integration-service",
+    "level": "service",
+    "name_ru": "CRM и ERP-интеграции",
+    "description": "Сервис интеграций с Bitrix24, 1C, amoCRM и внешними бизнес-системами.",
+    "cluster": "platform-integrations"
+  },
+  {
+    "n": 20,
+    "id": "bitrix24-connector-module",
+    "level": "module",
+    "name_ru": "Коннектор Битрикс24",
+    "description": "Модуль сервиса «CRM и ERP-интеграции» в Mango Taxonomy.",
+    "cluster": "platform-integrations"
+  },
+  {
+    "n": 26,
+    "id": "attribute-call-to-ad-source",
+    "level": "function",
+    "name_ru": "Привязать звонок к рекламному источнику",
+    "description": "Атомарная функция модуля «Атрибуция рекламных источников».",
+    "function_type": "business",
+    "interaction_surface": "background-job"
+  }
+]

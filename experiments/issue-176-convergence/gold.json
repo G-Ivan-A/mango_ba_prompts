@@ -1,0 +1,527 @@
+[
+  {
+    "n": 1,
+    "id": "mango-virtual-pbx-official",
+    "level": "official-product",
+    "name_ru": "Виртуальная АТС",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "cloud-pbx"
+        }
+      }
+    ]
+  },
+  {
+    "n": 2,
+    "id": "mango-contact-center-official",
+    "level": "official-product",
+    "name_ru": "Контакт-центр",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "omnichannel-contact-center"
+        }
+      }
+    ]
+  },
+  {
+    "n": 3,
+    "id": "mango-speech-analytics-official",
+    "level": "official-product",
+    "name_ru": "Речевая аналитика",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "ai-automation",
+          "capability": "speech-analytics"
+        }
+      }
+    ]
+  },
+  {
+    "n": 4,
+    "id": "mango-talker-official",
+    "level": "official-product",
+    "name_ru": "Mango Talker",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "unified-communications"
+        }
+      }
+    ]
+  },
+  {
+    "n": 5,
+    "id": "mango-digital-communications",
+    "level": "product",
+    "name_ru": "Mango Digital Communications",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "digital-channels",
+          "capability": "omnichannel-messaging"
+        }
+      }
+    ]
+  },
+  {
+    "n": 6,
+    "id": "mango-marketing-analytics",
+    "level": "product",
+    "name_ru": "Mango Marketing Analytics",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "analytics",
+          "capability": "call-tracking"
+        }
+      }
+    ]
+  },
+  {
+    "n": 7,
+    "id": "mango-security-access",
+    "level": "product",
+    "name_ru": "Mango Security and Access",
+    "cluster": null,
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "security",
+          "capability": "information-security"
+        }
+      }
+    ]
+  },
+  {
+    "n": 8,
+    "id": "vats-ivr-service",
+    "level": "service",
+    "name_ru": "Голосовое меню ВАТС",
+    "cluster": "vats-core",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "ivr-voice-menu"
+        }
+      }
+    ]
+  },
+  {
+    "n": 9,
+    "id": "cc-supervisor-wfm-service",
+    "level": "service",
+    "name_ru": "Супервизорский контроль и WFM",
+    "cluster": "contact-center-core",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "workforce-management"
+        }
+      },
+      {
+        "alignment_type": "secondary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "supervisor-assist"
+        }
+      }
+    ]
+  },
+  {
+    "n": 10,
+    "id": "dialog-api-messaging-service",
+    "level": "service",
+    "name_ru": "Dialog API",
+    "cluster": "digital-channels",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "platform",
+          "capability": "cpaas",
+          "feature": "programmable-messaging"
+        }
+      },
+      {
+        "alignment_type": "secondary",
+        "industry_ref": {
+          "domain": "digital-channels",
+          "capability": "omnichannel-messaging"
+        }
+      }
+    ]
+  },
+  {
+    "n": 11,
+    "id": "talker-video-meeting-service",
+    "level": "service",
+    "name_ru": "Видео и конференции Talker",
+    "cluster": "mango-talker",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "unified-communications"
+        }
+      }
+    ]
+  },
+  {
+    "n": 12,
+    "id": "conversation-summary-service",
+    "level": "service",
+    "name_ru": "AI-конспекты разговоров",
+    "cluster": "ai-speech-quality",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "agent-assist",
+          "feature": "conversation-summaries"
+        }
+      }
+    ]
+  },
+  {
+    "n": 13,
+    "id": "end-to-end-analytics-service",
+    "level": "service",
+    "name_ru": "Сквозная аналитика",
+    "cluster": "analytics-marketing",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "analytics",
+          "capability": "end-to-end-analytics"
+        }
+      }
+    ]
+  },
+  {
+    "n": 14,
+    "id": "crm-erp-integration-service",
+    "level": "service",
+    "name_ru": "CRM и ERP-интеграции",
+    "cluster": "platform-integrations",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "platform",
+          "capability": "platform-integration"
+        }
+      }
+    ]
+  },
+  {
+    "n": 15,
+    "id": "sso-identity-service",
+    "level": "service",
+    "name_ru": "SSO и идентификация",
+    "cluster": "security-access",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "security",
+          "capability": "information-security",
+          "feature": "access-control"
+        }
+      }
+    ]
+  },
+  {
+    "n": 16,
+    "id": "vats-voicemail-management-module",
+    "level": "module",
+    "name_ru": "Управление голосовой почтой",
+    "cluster": "vats-core",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "call-recording"
+        }
+      }
+    ]
+  },
+  {
+    "n": 17,
+    "id": "cc-supervisor-monitoring-module",
+    "level": "module",
+    "name_ru": "Контроль и прослушивание операторов",
+    "cluster": "contact-center-core",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "workforce-management"
+        }
+      }
+    ]
+  },
+  {
+    "n": 18,
+    "id": "talker-file-sharing-module",
+    "level": "module",
+    "name_ru": "Обмен файлами в Mango Talker",
+    "cluster": "mango-talker",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "unified-communications",
+          "feature": "corporate-messaging"
+        }
+      }
+    ]
+  },
+  {
+    "n": 19,
+    "id": "ai-assistant-module",
+    "level": "module",
+    "name_ru": "ИИ-помощник оператора",
+    "cluster": "ai-speech-quality",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "agent-assist",
+          "feature": "conversation-summaries"
+        }
+      }
+    ]
+  },
+  {
+    "n": 20,
+    "id": "bitrix24-connector-module",
+    "level": "module",
+    "name_ru": "Коннектор Битрикс24",
+    "cluster": "platform-integrations",
+    "function_type": null,
+    "interaction_surface": null,
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "platform",
+          "capability": "platform-integration"
+        }
+      }
+    ]
+  },
+  {
+    "n": 21,
+    "id": "run-voice-robot-dialog",
+    "level": "function",
+    "name_ru": "Запустить голосовой диалог робота",
+    "cluster": null,
+    "function_type": "business",
+    "interaction_surface": "system-rule",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "ai-automation",
+          "capability": "voice-bot"
+        }
+      }
+    ]
+  },
+  {
+    "n": 22,
+    "id": "configure-sso-connection",
+    "level": "function",
+    "name_ru": "Настроить SSO-подключение",
+    "cluster": null,
+    "function_type": "configuration",
+    "interaction_surface": "admin-ui",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "security",
+          "capability": "information-security",
+          "feature": "access-control"
+        }
+      }
+    ]
+  },
+  {
+    "n": 23,
+    "id": "mute-talker-microphone",
+    "level": "function",
+    "name_ru": "Выключить микрофон",
+    "cluster": null,
+    "function_type": "ui-action",
+    "interaction_surface": "end-user-ui",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "unified-communications"
+        }
+      }
+    ]
+  },
+  {
+    "n": 24,
+    "id": "send-dialog-api-message",
+    "level": "function",
+    "name_ru": "Отправить сообщение через Dialog API",
+    "cluster": null,
+    "function_type": "business",
+    "interaction_surface": "api",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "platform",
+          "capability": "cpaas",
+          "feature": "programmable-messaging",
+          "function": "programmable-message-send"
+        }
+      },
+      {
+        "alignment_type": "supporting",
+        "industry_ref": {
+          "domain": "digital-channels",
+          "capability": "omnichannel-messaging",
+          "feature": "messenger-integration"
+        }
+      }
+    ]
+  },
+  {
+    "n": 25,
+    "id": "send-call-event-webhook",
+    "level": "function",
+    "name_ru": "Передать событие звонка во внешний webhook",
+    "cluster": null,
+    "function_type": "business",
+    "interaction_surface": "webhook",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "platform",
+          "capability": "open-api",
+          "feature": "webhooks"
+        }
+      },
+      {
+        "alignment_type": "secondary",
+        "industry_ref": {
+          "domain": "voice-ucaas",
+          "capability": "voice-channel",
+          "feature": "inbound-voice-call"
+        }
+      }
+    ]
+  },
+  {
+    "n": 26,
+    "id": "attribute-call-to-ad-source",
+    "level": "function",
+    "name_ru": "Привязать звонок к рекламному источнику",
+    "cluster": null,
+    "function_type": "business",
+    "interaction_surface": "background-job",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "analytics",
+          "capability": "call-tracking"
+        }
+      }
+    ]
+  },
+  {
+    "n": 27,
+    "id": "transfer-call-with-consultation",
+    "level": "function",
+    "name_ru": "Перевести вызов с консультацией",
+    "cluster": null,
+    "function_type": "business",
+    "interaction_surface": "operator-ui",
+    "gold_alignment": [
+      {
+        "alignment_type": "primary",
+        "industry_ref": {
+          "domain": "contact-center",
+          "capability": "agent-workspace"
+        }
+      }
+    ]
+  }
+]

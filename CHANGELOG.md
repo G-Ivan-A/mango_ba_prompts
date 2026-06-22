@@ -27,6 +27,52 @@ ai-generated: true
   [`scripts/validate_issue_172_taxonomy_path_refactor.py`](scripts/validate_issue_172_taxonomy_path_refactor.py),
   которая проверяет наличие новых каталогов, отсутствие retired exact-path
   references и подключение проверки к `make kb-validate`/KB workflow.
+### Added — Issue #174 тест на сходимость классификации (Industry Taxonomy)
+
+- Проведён тест на сходимость (inter-rater reliability) классификации 25
+  атомарных функций по [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
+  и [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json).
+  Дизайн: два независимых классификатора — эталон из документированного
+  `industry_ref` в [`kb/mango/mango-registry.json`](kb/mango/mango-registry.json)
+  (построен в #168/#170) и изолированный AI-агент, видевший **только** стандарт и
+  industry-реестр (без эталона и mango-реестра). Все 25 выданных агентом node-id —
+  канонические.
+- Добавлен отчёт
+  [`docs/analysis/taxonomy-convergence-test.md`](docs/analysis/taxonomy-convergence-test.md):
+  полная сходимость **68%** (17/25), по уровням — Domain **96%**, Capability **76%**,
+  Feature **60%**, Function **25%**, function_type **84%**. 8 расхождений разобраны
+  до первопричин: структурная избыточность узлов (5), пробелы покрытия (3),
+  неоднозначность `function_type` (4); побочно выявлен 1 дефект эталонного mapping
+  (#21). Поскольку **68% < 80%**, рекомендация — **не фиксировать v1.0**, сначала
+  доработать стандарт (дедупликация capability/feature, новые узлы blacklist/
+  call-transfer/conversation-tagging, уточнение §7.2) и повторить тест.
+- Добавлены воспроизводимые артефакты теста в
+  [`experiments/issue-174/`](experiments/issue-174/): вход слепой классификации,
+  эталон, выход AI-агента, пофункциональное сравнение и скрипт подсчёта
+  `score_convergence.py` (валидирует каноничность всех id). Стандарты и реестры
+  **не изменялись** (ограничение постановки).
+
+### Added — Issue #176 тест на сходимость маппинга Mango → Industry Taxonomy
+
+- Проведён inter-rater-reliability тест: 27 репрезентативных сущностей Mango
+  Taxonomy (все 5 уровней, 8 кластеров, 3 типа функций) слепо размаплены шестью
+  независимыми AI-агентами по стандартам и `reference-taxonomy.json`, без доступа
+  к эталону, затем сопоставлены с `maps_to.industry_alignment` из реестра.
+- Добавлен отчёт
+  [`docs/analysis/mango-taxonomy-convergence-test.md`](docs/analysis/mango-taxonomy-convergence-test.md):
+  корректность по формуле ДоД (точный полный путь) **37 %**, префиксная **63 %**,
+  Domain **81 %**, Capability **67 %**, резолвимость узлов **100 %** (ноль
+  галлюцинаций), `alignment_type` **100 %**. Расхождения сгруппированы в 4
+  воспроизводимые причины (дубли id-узлов Industry, отсутствие boundary-правил
+  CPaaS/UC↔digital-channels, гранулярность capability, недомаппленная глубина
+  реестра против §7.3).
+- **Рекомендация:** НЕ фиксировать Mango Taxonomy v1.0 (37 % < 80 %); выполнить
+  4 точечные доработки (R1–R4) и повторить тест. Стандарты и реестры этим тестом
+  не изменялись (по ограничению issue).
+- Добавлены воспроизводимые артефакты в
+  [`experiments/issue-176-convergence/`](experiments/issue-176-convergence/):
+  `gold.json`, `blind-inputs.json`, `chunk-A..F.json`, `ai-predictions.json`,
+  `score.py` (stdlib-only) и `scored.json`.
 
 ### Added — Issue #168 дозаполнение реестра Industry Taxonomy
 

@@ -1,0 +1,34 @@
+[
+  {
+    "n": 5,
+    "id": "mango-digital-communications",
+    "level": "product",
+    "name_ru": "Mango Digital Communications",
+    "description": "Внутренний продуктовый кластер текстовых каналов, чата на сайте, мессенджеров и Dialog API."
+  },
+  {
+    "n": 11,
+    "id": "talker-video-meeting-service",
+    "level": "service",
+    "name_ru": "Видео и конференции Talker",
+    "description": "Сервис видеозвонков, аудиоконференций и конференц-комнат.",
+    "cluster": "mango-talker"
+  },
+  {
+    "n": 17,
+    "id": "cc-supervisor-monitoring-module",
+    "level": "module",
+    "name_ru": "Контроль и прослушивание операторов",
+    "description": "Модуль сервиса «Супервизорский контроль и WFM» в Mango Taxonomy.",
+    "cluster": "contact-center-core"
+  },
+  {
+    "n": 23,
+    "id": "mute-talker-microphone",
+    "level": "function",
+    "name_ru": "Выключить микрофон",
+    "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+    "function_type": "ui-action",
+    "interaction_surface": "end-user-ui"
+  }
+]

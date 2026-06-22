@@ -1,0 +1,218 @@
+[
+  {
+    "n": 1,
+    "id": "mango-virtual-pbx-official",
+    "level": "official-product",
+    "name_ru": "Виртуальная АТС",
+    "description": "Публичный продукт Mango Office для облачной офисной телефонии, маршрутизации звонков и управления номерами."
+  },
+  {
+    "n": 2,
+    "id": "mango-contact-center-official",
+    "level": "official-product",
+    "name_ru": "Контакт-центр",
+    "description": "Публичный продукт для обработки обращений, рабочих мест операторов, очередей и супервизорского контроля."
+  },
+  {
+    "n": 3,
+    "id": "mango-speech-analytics-official",
+    "level": "official-product",
+    "name_ru": "Речевая аналитика",
+    "description": "Публичный AI-продукт для распознавания и анализа разговоров."
+  },
+  {
+    "n": 4,
+    "id": "mango-talker-official",
+    "level": "official-product",
+    "name_ru": "Mango Talker",
+    "description": "Публичный продукт корпоративных звонков, чатов, видеозвонков и контактной истории."
+  },
+  {
+    "n": 5,
+    "id": "mango-digital-communications",
+    "level": "product",
+    "name_ru": "Mango Digital Communications",
+    "description": "Внутренний продуктовый кластер текстовых каналов, чата на сайте, мессенджеров и Dialog API."
+  },
+  {
+    "n": 6,
+    "id": "mango-marketing-analytics",
+    "level": "product",
+    "name_ru": "Mango Marketing Analytics",
+    "description": "Внутренний продуктовый кластер коллтрекинга, сквозной аналитики, отчётов и real-time панелей."
+  },
+  {
+    "n": 7,
+    "id": "mango-security-access",
+    "level": "product",
+    "name_ru": "Mango Security and Access",
+    "description": "Внутренний cross-product кластер ролей, SSO, доступа к записям и аудита безопасности."
+  },
+  {
+    "n": 8,
+    "id": "vats-ivr-service",
+    "level": "service",
+    "name_ru": "Голосовое меню ВАТС",
+    "description": "Сервис IVR-меню, приветствий и ветвления входящих звонков.",
+    "cluster": "vats-core"
+  },
+  {
+    "n": 9,
+    "id": "cc-supervisor-wfm-service",
+    "level": "service",
+    "name_ru": "Супервизорский контроль и WFM",
+    "description": "Сервис супервизорских панелей, графиков и планирования нагрузки.",
+    "cluster": "contact-center-core"
+  },
+  {
+    "n": 10,
+    "id": "dialog-api-messaging-service",
+    "level": "service",
+    "name_ru": "Dialog API",
+    "description": "Сервис программного обмена сообщениями и событиями цифровых диалогов.",
+    "cluster": "digital-channels"
+  },
+  {
+    "n": 11,
+    "id": "talker-video-meeting-service",
+    "level": "service",
+    "name_ru": "Видео и конференции Talker",
+    "description": "Сервис видеозвонков, аудиоконференций и конференц-комнат.",
+    "cluster": "mango-talker"
+  },
+  {
+    "n": 12,
+    "id": "conversation-summary-service",
+    "level": "service",
+    "name_ru": "AI-конспекты разговоров",
+    "description": "Сервис генерации и просмотра конспектов разговоров по данным звонков.",
+    "cluster": "ai-speech-quality"
+  },
+  {
+    "n": 13,
+    "id": "end-to-end-analytics-service",
+    "level": "service",
+    "name_ru": "Сквозная аналитика",
+    "description": "Сервис связывания коммуникаций, сделок и маркетинговой воронки.",
+    "cluster": "analytics-marketing"
+  },
+  {
+    "n": 14,
+    "id": "crm-erp-integration-service",
+    "level": "service",
+    "name_ru": "CRM и ERP-интеграции",
+    "description": "Сервис интеграций с Bitrix24, 1C, amoCRM и внешними бизнес-системами.",
+    "cluster": "platform-integrations"
+  },
+  {
+    "n": 15,
+    "id": "sso-identity-service",
+    "level": "service",
+    "name_ru": "SSO и идентификация",
+    "description": "Сервис единого входа и federated authentication для ЛК ВАТС.",
+    "cluster": "security-access"
+  },
+  {
+    "n": 16,
+    "id": "vats-voicemail-management-module",
+    "level": "module",
+    "name_ru": "Управление голосовой почтой",
+    "description": "Модуль сервиса «Записи и история звонков ВАТС» в Mango Taxonomy.",
+    "cluster": "vats-core"
+  },
+  {
+    "n": 17,
+    "id": "cc-supervisor-monitoring-module",
+    "level": "module",
+    "name_ru": "Контроль и прослушивание операторов",
+    "description": "Модуль сервиса «Супервизорский контроль и WFM» в Mango Taxonomy.",
+    "cluster": "contact-center-core"
+  },
+  {
+    "n": 18,
+    "id": "talker-file-sharing-module",
+    "level": "module",
+    "name_ru": "Обмен файлами в Mango Talker",
+    "description": "Модуль сервиса «Командные чаты Mango Talker» в Mango Taxonomy.",
+    "cluster": "mango-talker"
+  },
+  {
+    "n": 19,
+    "id": "ai-assistant-module",
+    "level": "module",
+    "name_ru": "ИИ-помощник оператора",
+    "description": "Модуль сервиса «AI-конспекты разговоров» в Mango Taxonomy.",
+    "cluster": "ai-speech-quality"
+  },
+  {
+    "n": 20,
+    "id": "bitrix24-connector-module",
+    "level": "module",
+    "name_ru": "Коннектор Битрикс24",
+    "description": "Модуль сервиса «CRM и ERP-интеграции» в Mango Taxonomy.",
+    "cluster": "platform-integrations"
+  },
+  {
+    "n": 21,
+    "id": "run-voice-robot-dialog",
+    "level": "function",
+    "name_ru": "Запустить голосовой диалог робота",
+    "description": "Атомарная функция модуля «Сценарии голосового робота».",
+    "function_type": "business",
+    "interaction_surface": "system-rule"
+  },
+  {
+    "n": 22,
+    "id": "configure-sso-connection",
+    "level": "function",
+    "name_ru": "Настроить SSO-подключение",
+    "description": "Атомарная функция модуля «SSO-подключение».",
+    "function_type": "configuration",
+    "interaction_surface": "admin-ui"
+  },
+  {
+    "n": 23,
+    "id": "mute-talker-microphone",
+    "level": "function",
+    "name_ru": "Выключить микрофон",
+    "description": "Атомарная функция модуля «Управление вызовом в Mango Talker».",
+    "function_type": "ui-action",
+    "interaction_surface": "end-user-ui"
+  },
+  {
+    "n": 24,
+    "id": "send-dialog-api-message",
+    "level": "function",
+    "name_ru": "Отправить сообщение через Dialog API",
+    "description": "Атомарная функция модуля «API сообщений Dialogi».",
+    "function_type": "business",
+    "interaction_surface": "api"
+  },
+  {
+    "n": 25,
+    "id": "send-call-event-webhook",
+    "level": "function",
+    "name_ru": "Передать событие звонка во внешний webhook",
+    "description": "Атомарная функция модуля «Webhook endpoints».",
+    "function_type": "business",
+    "interaction_surface": "webhook"
+  },
+  {
+    "n": 26,
+    "id": "attribute-call-to-ad-source",
+    "level": "function",
+    "name_ru": "Привязать звонок к рекламному источнику",
+    "description": "Атомарная функция модуля «Атрибуция рекламных источников».",
+    "function_type": "business",
+    "interaction_surface": "background-job"
+  },
+  {
+    "n": 27,
+    "id": "transfer-call-with-consultation",
+    "level": "function",
+    "name_ru": "Перевести вызов с консультацией",
+    "description": "Атомарная функция модуля «Перевод вызовов».",
+    "function_type": "business",
+    "interaction_surface": "operator-ui"
+  }
+]
