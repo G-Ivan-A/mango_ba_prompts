@@ -13,6 +13,31 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #180 ФТ группового звонка Mango Talker (на основе ВКС)
+
+- Добавлен прогон [`runs/2026/RUN-0012/`](runs/2026/RUN-0012/) (тип
+  `business-task`, процесс `bcreq-180-mt-group-video-call`) с комплексным
+  документом функциональных требований на согласование заказчика
+  [`2026-06-22-bcreq-180-mt-group-video-call-ft.md`](runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md)
+  (разделы 1, 2, 4, 6). Документ переориентирует ранее согласованный ФТ по
+  аудиоконференциям на решение, основанное на видеоконференциях Mango Talker
+  (`talker-video-meeting-service`), с сохранением стиля и терминологии исходного
+  документа: быстрый старт группового звонка из раздела «Встречи», прозрачное
+  отображение и управление составом участников, личные группы в адресной книге,
+  инвертированные звуковые сигналы подключения/отключения, переподключение по
+  ссылке из истории.
+- Добавлены резюме с метаданными
+  [`summary-bcreq-180-2026-06-22.md`](runs/2026/RUN-0012/outputs/summary-bcreq-180-2026-06-22.md)
+  и лог эксперимента
+  [`logs/experiment-log.md`](runs/2026/RUN-0012/logs/experiment-log.md)
+  (ядро из 6 метрик); процесс прогона зафиксирован также в
+  [`experiments/issue-180/`](experiments/issue-180/).
+- Обновлены реестр и статистика runs/ (`REGISTRY.md`, `stats/by-type.md`,
+  `stats/by-date.md`, `stats/by-process.md`) и регрессионные проверки
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  и [`scripts/validate_issue_133_runs_restructure.py`](scripts/validate_issue_133_runs_restructure.py)
+  с учётом RUN-0012.
+
 ### Changed — Issue #172 переименование taxonomy namespaces
 
 - Два прежних дочерних taxonomy-каталога `industry` и `mango` внутри `kb/`
