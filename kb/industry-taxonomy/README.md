@@ -4,10 +4,10 @@ version: 1.0.0
 updated: 2026-06-21
 ai-generated: true
 type: kb-industry-taxonomy
-scope: kb/industry
+scope: kb/industry-taxonomy
 related_artifacts:
-  - "kb/industry/reference-taxonomy.json"
-  - "kb/industry/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/industry-taxonomy-standard.md"
 related_issues:
@@ -16,7 +16,7 @@ related_issues:
 
 # Industry Taxonomy
 
-`kb/industry/` хранит machine-readable Industry Taxonomy для отраслевой
+`kb/industry-taxonomy/` хранит machine-readable Industry Taxonomy для отраслевой
 классификации коммуникационных, контакт-центровых и смежных capabilities.
 Реестр следует модели `Domain -> Capability -> Feature -> Function` из
 ADR-011 и стандарта Industry Taxonomy.
@@ -25,8 +25,8 @@ ADR-011 и стандарта Industry Taxonomy.
 
 | Файл | Назначение |
 | --- | --- |
-| [`kb/industry/reference-taxonomy.json`](reference-taxonomy.json) | Канонический JSON-реестр Industry Taxonomy v1.0.0. |
-| [`kb/industry/reference-taxonomy.schema.json`](reference-taxonomy.schema.json) | Локальная JSON Schema для структуры реестра и базовых enum-контрактов. |
+| [`kb/industry-taxonomy/reference-taxonomy.json`](reference-taxonomy.json) | Канонический JSON-реестр Industry Taxonomy v1.0.0. |
+| [`kb/industry-taxonomy/reference-taxonomy.schema.json`](reference-taxonomy.schema.json) | Локальная JSON Schema для структуры реестра и базовых enum-контрактов. |
 
 ## Покрытие
 

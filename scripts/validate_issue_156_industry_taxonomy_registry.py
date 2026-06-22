@@ -2,7 +2,7 @@
 """Regression check for issue #156: Industry Taxonomy registry.
 
 Issue #156 requires a machine-readable Industry Taxonomy registry under
-``kb/industry/`` aligned with ADR-011 canonical v1.0 and the Industry Taxonomy
+``kb/industry-taxonomy/`` aligned with ADR-011 canonical v1.0 and the Industry Taxonomy
 standard. The validator intentionally uses only Python stdlib so it can run in
 the lightweight KB CI job.
 """
@@ -17,9 +17,9 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REGISTRY = "kb/industry/reference-taxonomy.json"
-SCHEMA = "kb/industry/reference-taxonomy.schema.json"
-README = "kb/industry/README.md"
+REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
+SCHEMA = "kb/industry-taxonomy/reference-taxonomy.schema.json"
+README = "kb/industry-taxonomy/README.md"
 KB_README = "kb/README.md"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
@@ -184,7 +184,7 @@ def check_registry_nodes(registry: dict[str, Any]) -> list[str]:
 
     domains = registry.get("domains")
     if not isinstance(domains, list):
-        return ["kb/industry/reference-taxonomy.json: domains must be a list"]
+        return ["kb/industry-taxonomy/reference-taxonomy.json: domains must be a list"]
 
     domain_ids = {domain.get("id") for domain in domains if isinstance(domain, dict)}
     if domain_ids != CANONICAL_DOMAINS:
@@ -359,7 +359,7 @@ def check_docs_and_ci() -> list[str]:
         "function_type",
         "evidence_refs",
     )
-    errors += require_text(KB_README, "kb/industry/", "Industry Taxonomy")
+    errors += require_text(KB_README, "kb/industry-taxonomy/", "Industry Taxonomy")
     errors += require_text(
         CHANGELOG,
         "Issue #156",

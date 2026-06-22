@@ -18,10 +18,10 @@ on:
       - "Makefile"
       - "docs/audit/issue-144-kb-structure.md"
       - "kb/README.md"
-      - "kb/industry/**"
+      - "kb/industry-taxonomy/**"
       - "kb/fragments/README.md"
       - "kb/practices/**"
-      - "kb/mango/**"
+      - "kb/mango-taxonomy/**"
       - "kb/mango-product-docs/README.md"
       - "kb/mango-product-docs/UPLOAD-GUIDE.md"
       - "kb/mango-product-docs/sources/**"
@@ -29,6 +29,7 @@ on:
       - "scripts/validate_issue_*_kb*.py"
       - "scripts/validate_issue_156_industry_taxonomy_registry.py"
       - "scripts/validate_issue_170_mango_registry.py"
+      - "scripts/validate_issue_172_taxonomy_path_refactor.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -124,6 +125,9 @@ jobs:
 
       - name: Validate issue #170 Mango registry
         run: python3 scripts/validate_issue_170_mango_registry.py
+
+      - name: Validate issue #172 taxonomy path refactor
+        run: python3 scripts/validate_issue_172_taxonomy_path_refactor.py
 
       - name: Validate issue #166 ADR sync
         run: python3 scripts/validate_issue_166_adr_sync.py

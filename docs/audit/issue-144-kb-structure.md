@@ -56,7 +56,7 @@ git log --follow -- kb/practices/
 ## Чек-лист целостности
 
 - [x] `kb/README.md` описывает `mango-product-docs/`, `fragments/`, `practices/`
-      и будущие namespaces `industry/`, `mango/`.
+      и taxonomy namespaces `industry-taxonomy/`, `mango-taxonomy/`.
 - [x] `kb/mango-product-docs/README.md` создан и описывает product-docs
       структуру.
 - [x] `kb/practices/README.md` создан для независимых ручных практик.

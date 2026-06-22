@@ -13,19 +13,34 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #172 переименование taxonomy namespaces
+
+- Два прежних дочерних taxonomy-каталога `industry` и `mango` внутри `kb/`
+  переименованы через `git mv` в
+  [`kb/industry-taxonomy/`](kb/industry-taxonomy/) и
+  [`kb/mango-taxonomy/`](kb/mango-taxonomy/), чтобы явно отделить
+  machine-readable taxonomy registries от остальных KB-материалов.
+- Обновлены ссылки в README, стандартах, ADR, аудитах, валидаторах, workflow и
+  экспериментах; `kb/mango-product-docs/` оставлен без переименования как
+  отдельный product-docs namespace.
+- Добавлена регрессионная проверка
+  [`scripts/validate_issue_172_taxonomy_path_refactor.py`](scripts/validate_issue_172_taxonomy_path_refactor.py),
+  которая проверяет наличие новых каталогов, отсутствие retired exact-path
+  references и подключение проверки к `make kb-validate`/KB workflow.
+
 ### Changed — Issue #170 единый JSON-реестр Mango Taxonomy
 
 - Три YAML-файла Mango-реестра (`official-products.yaml`,
   `internal-registry.yaml` и crosswalk `product-mapping.yaml`) свёрнуты в единый
   JSON-документ
-  [`kb/mango/mango-registry.json`](kb/mango/mango-registry.json) по §8.1
+  [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json) по §8.1
   стандарта: корень — единственный ключ `taxonomy` с `version` (SemVer) и пятью
   плоскими массивами `official_products` / `products` / `internal_services` /
   `modules` / `functions`. Дублирующий crosswalk-файл удалён — каждая сущность
   уже несёт `maps_to.industry_alignment`, поэтому отдельный mapping больше не
   нужен и не может рассинхронизироваться с реестром.
 - Добавлена JSON Schema
-  [`kb/mango/mango-registry.schema.json`](kb/mango/mango-registry.schema.json)
+  [`kb/mango-taxonomy/mango-registry.schema.json`](kb/mango-taxonomy/mango-registry.schema.json)
   (draft 2020-12), зеркалящая контракт §8.1 `MangoTaxonomyDocument`: закрытые
   `additionalProperties` / `unevaluatedProperties`, lifecycle без `removed`,
   восемь кластеров, `function_type`, `interaction_surface`, channel-facet и
@@ -33,7 +48,7 @@ ai-generated: true
 - Восстановлена ссылочная целостность с Industry Taxonomy: все `industry_ref`
   (18 ранее битых уникальных цепочек в 49 alignment'ах) перевыровнены так, чтобы
   резолвиться против живого
-  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json);
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json);
   недостающие отраслевые узлы зафиксированы через `mapping_gap`, а не выдуманы.
 - Добавлена регрессионная проверка
   [`scripts/validate_issue_170_mango_registry.py`](scripts/validate_issue_170_mango_registry.py)
@@ -43,7 +58,7 @@ ai-generated: true
   workflow; ретирована
   `scripts/validate_issue_160_mango_registry.py` (использовала замороженный
   hardcoded-срез Industry-таксономии и потому не видела битые `industry_ref`).
-- Обновлён [`kb/mango/README.md`](kb/mango/README.md) под единый JSON-реестр и
+- Обновлён [`kb/mango-taxonomy/README.md`](kb/mango-taxonomy/README.md) под единый JSON-реестр и
   новый валидатор.
 - Дозаполнена иерархия `Продукт → Сервис → Модуль → Функция` сверху вниз из
   реальной документации в
@@ -73,7 +88,7 @@ ai-generated: true
   оба ADR теперь симметрично фиксируют единый приоритет источников
   «ADR-011 имеет приоритет над ADR-012», согласованный с §1.3 обоих стандартов,
   и ссылаются на canonical registry
-  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json).
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json).
 - Унифицированы имена полей в machine-readable примерах ADR-012: черновые
   `layer` / `public_urls` / `internal_services` / `kb_refs` / `evidence_level`
   заменены на canonical `level` / `official_urls` / `supported_by_services` /
@@ -98,7 +113,7 @@ ai-generated: true
   [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md)
   по независимому аудиту: зафиксирован приоритет ADR-011 над ADR-012 для
   `industry_ref`, добавлена граница Mango vs Industry, canonical registry
-  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json),
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json),
   `confidence`, `secondary_clusters`, `module_extraction_status`,
   `supported_by_services[]`, SemVer `taxonomy.version`, закрытые facets
   `security_compliance` / `geography_region` и текущие registry-resolving
@@ -116,9 +131,9 @@ ai-generated: true
 - Обновлён
   [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
   по находкам аудита: стандарт теперь явно ссылается на canonical registry
-  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json)
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json)
   и schema
-  [`kb/industry/reference-taxonomy.schema.json`](kb/industry/reference-taxonomy.schema.json),
+  [`kb/industry-taxonomy/reference-taxonomy.schema.json`](kb/industry-taxonomy/reference-taxonomy.schema.json),
   фиксирует boundary Industry vs Mango, статус `platform` как
   `cross_domain_layers`, canonical facet names `security_compliance` /
   `geography_region`, словарь `interaction_surface`, правило
@@ -133,20 +148,20 @@ ai-generated: true
 
 ### Added — Issue #160 Mango Taxonomy Registry
 
-- Добавлен machine-readable namespace [`kb/mango/`](kb/mango/README.md) с
+- Добавлен machine-readable namespace [`kb/mango-taxonomy/`](kb/mango-taxonomy/README.md) с
   реестром Mango Taxonomy: Official Layer
-  [`kb/mango/official-products.yaml`](kb/mango/official-products.yaml),
+  [`kb/mango-taxonomy/official-products.yaml`](kb/mango-taxonomy/official-products.yaml),
   Internal Layer
-  [`kb/mango/internal-registry.yaml`](kb/mango/internal-registry.yaml) и
+  [`kb/mango-taxonomy/internal-registry.yaml`](kb/mango-taxonomy/internal-registry.yaml) и
   crosswalk
-  [`kb/mango/product-mapping.yaml`](kb/mango/product-mapping.yaml) к Industry
+  [`kb/mango-taxonomy/product-mapping.yaml`](kb/mango-taxonomy/product-mapping.yaml) к Industry
   Taxonomy.
 - Реестр покрывает публичные продукты Mango Office, 8 внутренних кластеров,
   иерархию `Product -> Service -> Module -> Function`, evidence refs из
   `kb/mango-product-docs/processed/`, `function_type`, `interaction_surface`,
   `maps_to.industry_alignment` и явные `mapping_gap` для отсутствующих
   отраслевых Feature/Function.
-- Добавлена документация [`kb/mango/README.md`](kb/mango/README.md), helper
+- Добавлена документация [`kb/mango-taxonomy/README.md`](kb/mango-taxonomy/README.md), helper
   [`experiments/issue-160-generate-mango-registry.py`](experiments/issue-160-generate-mango-registry.py)
   и регрессионная проверка
   [`scripts/validate_issue_160_mango_registry.py`](scripts/validate_issue_160_mango_registry.py),
@@ -189,21 +204,20 @@ ai-generated: true
 ### Added — Issue #156 реестр Industry Taxonomy
 
 - Добавлен machine-readable реестр
-  [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json):
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json):
   зафиксированы семь canonical domains ADR-011, cross-domain layer `platform`,
   capabilities/features/functions, lifecycle статусы, `function_type`,
   `evidence_refs` и cross-cutting facets включая `channel`.
 - Добавлены локальная schema
-  [`kb/industry/reference-taxonomy.schema.json`](kb/industry/reference-taxonomy.schema.json)
+  [`kb/industry-taxonomy/reference-taxonomy.schema.json`](kb/industry-taxonomy/reference-taxonomy.schema.json)
   и README
-  [`kb/industry/README.md`](kb/industry/README.md) для namespace `kb/industry/`;
+  [`kb/industry-taxonomy/README.md`](kb/industry-taxonomy/README.md) для namespace `kb/industry-taxonomy/`;
   продуктовые Mango mappings в реестр не включались.
 - Добавлена регрессионная проверка
   [`scripts/validate_issue_156_industry_taxonomy_registry.py`](scripts/validate_issue_156_industry_taxonomy_registry.py),
   подключённая к `make kb-validate` и KB workflow.
-- Обновлена проверка Issue #144, чтобы root KB README больше не требовал
-  помечать `kb/industry/` как будущий namespace после добавления рабочего
-  Industry Taxonomy registry.
+- Обновлена проверка Issue #144, чтобы root KB README описывал рабочий
+  `kb/industry-taxonomy/` namespace после добавления Industry Taxonomy registry.
 
 ### Added — Issue #152 стандарт Industry Taxonomy
 
@@ -273,8 +287,8 @@ ai-generated: true
 ### Fixed — Issue #144 целостность структуры `kb/` после миграции product docs
 
 - Обновлён [`kb/README.md`](kb/README.md): описаны `kb/mango-product-docs/`,
-  `kb/fragments/`, `kb/practices/` и будущие namespaces `kb/industry/`,
-  `kb/mango/`.
+  `kb/fragments/`, `kb/practices/` и taxonomy namespaces
+  `kb/industry-taxonomy/`, `kb/mango-taxonomy/`.
 - Добавлены README для продуктовой БЗ и ручных практик:
   [`kb/mango-product-docs/README.md`](kb/mango-product-docs/README.md) и
   [`kb/practices/README.md`](kb/practices/README.md).
