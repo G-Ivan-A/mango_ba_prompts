@@ -15,3 +15,10 @@ kb/mango-product-docs/sources/**/*.pdf
 kb/mango-product-docs/sources/**/_diagram.png
 scripts/kb/__pycache__/
 scripts/__pycache__/
+
+# Local CI run logs (issue/PR investigation; environment-specific)
+ci-logs/
+
+# Internal backup snapshots of generated registries (recoverable from git
+# history; used only by additive builders like experiments/cascade_fill.py).
+experiments/*.backup.json
