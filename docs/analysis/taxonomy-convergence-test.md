@@ -8,8 +8,8 @@ scope: industry-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/174"
 depends_on:
   - "standards/industry-taxonomy-standard.md"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
-  - "kb/mango-taxonomy/mango-registry.json"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/mango-taxonomy/registry.json"
 related_artifacts:
   - "experiments/issue-174/blind-test-input.json"
   - "experiments/issue-174/reference-classification.json"
@@ -35,8 +35,8 @@ related_artifacts:
 | Дата теста | 2026-06-22 |
 | Количество тестовых функций | **25** (целевой диапазон 20–30) |
 | Тестируемый стандарт | [`standards/industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md) (`version: 0.1`, `status: draft`) |
-| Тестируемый реестр | [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json) (`version: 1.1.0`, `status: active`) |
-| Источник функций | [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) (160 атомарных функций) + processed-документация |
+| Тестируемый реестр | [`kb/industry-taxonomy/registry.json`](../../kb/industry-taxonomy/registry.json) (`version: 1.1.0`, `status: active`) |
+| Источник функций | [`kb/mango-taxonomy/registry.json`](../../kb/mango-taxonomy/registry.json) (160 атомарных функций) + processed-документация |
 | AI-агент (классификатор) | Изолированный subagent (Claude), без доступа к эталону и mango-реестру |
 | Эталонный классификатор | Документированный mapping `maps_to.industry_alignment` из mango-реестра (построен независимо в задачах #168/#170) |
 
@@ -46,12 +46,12 @@ related_artifacts:
 шкале (Industry Taxonomy):
 
 - **Rater A (эталон):** для каждой функции взят документированный `industry_ref`
-  из `kb/mango-taxonomy/mango-registry.json`. Этот mapping строился ранее, в отдельных
+  из `kb/mango-taxonomy/registry.json`. Этот mapping строился ранее, в отдельных
   задачах (#168 дозаполнение реестра, #170 каскад mango-реестра), на основе
   evidence-ссылок на документацию — **до и независимо** от настоящего теста.
 - **Rater B (AI-агент под тестом):** изолированный subagent, которому выданы
   **только** два артефакта — `standards/industry-taxonomy-standard.md` и
-  `kb/industry-taxonomy/reference-taxonomy.json` — плюс список из 25 функций (русское имя,
+  `kb/industry-taxonomy/registry.json` — плюс список из 25 функций (русское имя,
   тонкое описание, имя продуктового модуля). Агенту **запрещено** открывать
   `kb/mango-taxonomy/`, `docs/`, `experiments/`, mango-taxonomy-standard и искать в вебе.
   Агент не видел ни эталонную классификацию, ни `industry_ref` из mango-реестра.
@@ -116,7 +116,7 @@ Capability, но только 10/25 — Feature и 4/25 — Function (на ос�
 ```
 
 Дополнительно: все node-id, выданные AI-агентом, прогнаны через валидатор —
-**100% (25/25) канонические**, т.е. реально существуют в `reference-taxonomy.json`
+**100% (25/25) канонические**, т.е. реально существуют в `registry.json`
 с корректной parent-цепочкой. Несуществующих/выдуманных узлов агент не породил.
 
 ---
@@ -249,7 +249,7 @@ UI-действие/настройку. **Определения §7.2 не да
 для «Выбрать виджет дашборда» в Industry-реестре есть точный одноимённый узел
 `analytics/real-time-reporting/dashboard-view/select-dashboard-widget`, а
 mango-реестр сослался на `analytics/multichannel-analytics`. Это **отдельный
-change request к `kb/mango-taxonomy/mango-registry.json`** (вне рамок данной задачи —
+change request к `kb/mango-taxonomy/registry.json`** (вне рамок данной задачи —
 менять реестры запрещено постановкой). Аналогично спорны (агент точнее или
 не хуже эталона) #3 и #24.
 
@@ -330,7 +330,7 @@ change request к `kb/mango-taxonomy/mango-registry.json`** (вне рамок �
 
 ### P4 — Отдельный CR на эталонный реестр (вне рамок #174)
 
-7. Исправить субоптимальные mapping'и в `kb/mango-taxonomy/mango-registry.json`,
+7. Исправить субоптимальные mapping'и в `kb/mango-taxonomy/registry.json`,
    выявленные тестом: #21 (→ `real-time-reporting/dashboard-view/select-dashboard-widget`),
    при ревью также #3 и #24.
 

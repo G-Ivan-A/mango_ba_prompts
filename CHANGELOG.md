@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #190 унификация имён файлов taxonomy registry
+
+- Файлы Industry Taxonomy и Mango Taxonomy переименованы к единому паттерну
+  `registry.json` / `registry.schema.json`:
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json),
+  [`kb/industry-taxonomy/registry.schema.json`](kb/industry-taxonomy/registry.schema.json),
+  [`kb/mango-taxonomy/registry.json`](kb/mango-taxonomy/registry.json) и
+  [`kb/mango-taxonomy/registry.schema.json`](kb/mango-taxonomy/registry.schema.json).
+- Обновлены ссылки в README, стандартах, ADR, аналитических документах,
+  валидаторах, workflow и экспериментах; добавлена регрессионная проверка
+  [`scripts/validate_issue_190_taxonomy_registry_filenames.py`](scripts/validate_issue_190_taxonomy_registry_filenames.py),
+  подключённая к `make kb-validate` и KB workflow.
+
 ### Changed — Issue #184 доработка ФТ RUN-0012 по ревью БА (чистка скоупа)
 
 - По итогам ревью БА (issue
@@ -81,9 +94,9 @@ ai-generated: true
 
 - Проведён тест на сходимость (inter-rater reliability) классификации 25
   атомарных функций по [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
-  и [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json).
+  и [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json).
   Дизайн: два независимых классификатора — эталон из документированного
-  `industry_ref` в [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json)
+  `industry_ref` в [`kb/mango-taxonomy/registry.json`](kb/mango-taxonomy/registry.json)
   (построен в #168/#170) и изолированный AI-агент, видевший **только** стандарт и
   industry-реестр (без эталона и mango-реестра). Все 25 выданных агентом node-id —
   канонические.
@@ -106,7 +119,7 @@ ai-generated: true
 
 - Проведён inter-rater-reliability тест: 27 репрезентативных сущностей Mango
   Taxonomy (все 5 уровней, 8 кластеров, 3 типа функций) слепо размаплены шестью
-  независимыми AI-агентами по стандартам и `reference-taxonomy.json`, без доступа
+  независимыми AI-агентами по стандартам и `registry.json`, без доступа
   к эталону, затем сопоставлены с `maps_to.industry_alignment` из реестра.
 - Добавлен отчёт
   [`docs/analysis/mango-taxonomy-convergence-test.md`](docs/analysis/mango-taxonomy-convergence-test.md):
@@ -127,7 +140,7 @@ ai-generated: true
 ### Added — Issue #168 дозаполнение реестра Industry Taxonomy
 
 - Дозаполнен machine-readable реестр
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json)
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json)
   (version `1.0.0` → `1.1.0`, additive MINOR по §10.4): добавлены 8 capabilities
   (`ai-automation/conversation-summaries`, `analytics/real-time-reporting`,
   `contact-center/interaction-routing`, `contact-center/supervisor-workspace`,
@@ -137,7 +150,7 @@ ai-generated: true
   каждого узла. Каждая сущность несёт явный `parent`, `evidence_refs`,
   `lifecycle_status` и (для functions) `function_type` + `parameters`.
 - Смоделированы два alias на существующие canonical nodes вместо дубликатов
-  (§10.2): `communications-apis` → [`platform/cpaas`](kb/industry-taxonomy/reference-taxonomy.json),
+  (§10.2): `communications-apis` → [`platform/cpaas`](kb/industry-taxonomy/registry.json),
   `webhook-management` → `platform/open-api/webhooks`. После дозаполнения все 316
   внешних `industry_ref` из [`kb/mango-taxonomy/`](kb/mango-taxonomy/README.md) резолвятся по
   parent-chain (было 98 неразрешённых).
@@ -149,7 +162,7 @@ ai-generated: true
   [`scripts/validate_issue_168_industry_reference_integrity.py`](scripts/validate_issue_168_industry_reference_integrity.py),
   подключённая к `make kb-validate` и KB workflow: она резолвит каждый
   `industry_ref` из
-  [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json)
+  [`kb/mango-taxonomy/registry.json`](kb/mango-taxonomy/registry.json)
   против реестра (alias-aware, §4.5) и
   проверяет §11.2-подмножество (parent-chain, `alignment_type`, channel-facet
   enums, slug pattern, free-text-key rejection, evidence resolution, lifecycle
@@ -162,14 +175,14 @@ ai-generated: true
 - Три YAML-файла Mango-реестра (`official-products.yaml`,
   `internal-registry.yaml` и crosswalk `product-mapping.yaml`) свёрнуты в единый
   JSON-документ
-  [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json) по §8.1
+  [`kb/mango-taxonomy/registry.json`](kb/mango-taxonomy/registry.json) по §8.1
   стандарта: корень — единственный ключ `taxonomy` с `version` (SemVer) и пятью
   плоскими массивами `official_products` / `products` / `internal_services` /
   `modules` / `functions`. Дублирующий crosswalk-файл удалён — каждая сущность
   уже несёт `maps_to.industry_alignment`, поэтому отдельный mapping больше не
   нужен и не может рассинхронизироваться с реестром.
 - Добавлена JSON Schema
-  [`kb/mango-taxonomy/mango-registry.schema.json`](kb/mango-taxonomy/mango-registry.schema.json)
+  [`kb/mango-taxonomy/registry.schema.json`](kb/mango-taxonomy/registry.schema.json)
   (draft 2020-12), зеркалящая контракт §8.1 `MangoTaxonomyDocument`: закрытые
   `additionalProperties` / `unevaluatedProperties`, lifecycle без `removed`,
   восемь кластеров, `function_type`, `interaction_surface`, channel-facet и
@@ -177,7 +190,7 @@ ai-generated: true
 - Восстановлена ссылочная целостность с Industry Taxonomy: все `industry_ref`
   (18 ранее битых уникальных цепочек в 49 alignment'ах) перевыровнены так, чтобы
   резолвиться против живого
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json);
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json);
   недостающие отраслевые узлы зафиксированы через `mapping_gap`, а не выдуманы.
 - Добавлена регрессионная проверка
   [`scripts/validate_issue_170_mango_registry.py`](scripts/validate_issue_170_mango_registry.py)
@@ -217,7 +230,7 @@ ai-generated: true
   оба ADR теперь симметрично фиксируют единый приоритет источников
   «ADR-011 имеет приоритет над ADR-012», согласованный с §1.3 обоих стандартов,
   и ссылаются на canonical registry
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json).
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json).
 - Унифицированы имена полей в machine-readable примерах ADR-012: черновые
   `layer` / `public_urls` / `internal_services` / `kb_refs` / `evidence_level`
   заменены на canonical `level` / `official_urls` / `supported_by_services` /
@@ -242,7 +255,7 @@ ai-generated: true
   [`standards/mango-taxonomy-standard.md`](standards/mango-taxonomy-standard.md)
   по независимому аудиту: зафиксирован приоритет ADR-011 над ADR-012 для
   `industry_ref`, добавлена граница Mango vs Industry, canonical registry
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json),
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json),
   `confidence`, `secondary_clusters`, `module_extraction_status`,
   `supported_by_services[]`, SemVer `taxonomy.version`, закрытые facets
   `security_compliance` / `geography_region` и текущие registry-resolving
@@ -260,9 +273,9 @@ ai-generated: true
 - Обновлён
   [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
   по находкам аудита: стандарт теперь явно ссылается на canonical registry
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json)
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json)
   и schema
-  [`kb/industry-taxonomy/reference-taxonomy.schema.json`](kb/industry-taxonomy/reference-taxonomy.schema.json),
+  [`kb/industry-taxonomy/registry.schema.json`](kb/industry-taxonomy/registry.schema.json),
   фиксирует boundary Industry vs Mango, статус `platform` как
   `cross_domain_layers`, canonical facet names `security_compliance` /
   `geography_region`, словарь `interaction_surface`, правило
@@ -333,12 +346,12 @@ ai-generated: true
 ### Added — Issue #156 реестр Industry Taxonomy
 
 - Добавлен machine-readable реестр
-  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json):
+  [`kb/industry-taxonomy/registry.json`](kb/industry-taxonomy/registry.json):
   зафиксированы семь canonical domains ADR-011, cross-domain layer `platform`,
   capabilities/features/functions, lifecycle статусы, `function_type`,
   `evidence_refs` и cross-cutting facets включая `channel`.
 - Добавлены локальная schema
-  [`kb/industry-taxonomy/reference-taxonomy.schema.json`](kb/industry-taxonomy/reference-taxonomy.schema.json)
+  [`kb/industry-taxonomy/registry.schema.json`](kb/industry-taxonomy/registry.schema.json)
   и README
   [`kb/industry-taxonomy/README.md`](kb/industry-taxonomy/README.md) для namespace `kb/industry-taxonomy/`;
   продуктовые Mango mappings в реестр не включались.

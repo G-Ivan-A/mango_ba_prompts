@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "reference-taxonomy.schema.json",
+  "$id": "registry.schema.json",
   "title": "Industry Taxonomy Reference Registry",
   "type": "object",
   "required": [
@@ -20,7 +20,7 @@
   ],
   "properties": {
     "$schema": {
-      "const": "reference-taxonomy.schema.json"
+      "const": "registry.schema.json"
     },
     "taxonomy_id": {
       "const": "industry-taxonomy"

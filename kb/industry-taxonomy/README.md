@@ -6,8 +6,8 @@ ai-generated: true
 type: kb-industry-taxonomy
 scope: kb/industry-taxonomy
 related_artifacts:
-  - "kb/industry-taxonomy/reference-taxonomy.json"
-  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.schema.json"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/industry-taxonomy-standard.md"
 related_issues:
@@ -25,8 +25,8 @@ ADR-011 и стандарта Industry Taxonomy.
 
 | Файл | Назначение |
 | --- | --- |
-| [`kb/industry-taxonomy/reference-taxonomy.json`](reference-taxonomy.json) | Канонический JSON-реестр Industry Taxonomy v1.0.0. |
-| [`kb/industry-taxonomy/reference-taxonomy.schema.json`](reference-taxonomy.schema.json) | Локальная JSON Schema для структуры реестра и базовых enum-контрактов. |
+| [`kb/industry-taxonomy/registry.json`](registry.json) | Канонический JSON-реестр Industry Taxonomy v1.0.0. |
+| [`kb/industry-taxonomy/registry.schema.json`](registry.schema.json) | Локальная JSON Schema для структуры реестра и базовых enum-контрактов. |
 
 ## Покрытие
 

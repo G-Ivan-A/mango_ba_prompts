@@ -7,8 +7,8 @@ type: analysis
 scope: mango-taxonomy-registry-inventory
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/170"
 related_artifacts:
-  - "kb/mango-taxonomy/mango-registry.json"
-  - "kb/mango-taxonomy/mango-registry.schema.json"
+  - "kb/mango-taxonomy/registry.json"
+  - "kb/mango-taxonomy/registry.schema.json"
   - "kb/mango-taxonomy/README.md"
   - "scripts/validate_issue_170_mango_registry.py"
   - "standards/mango-taxonomy-standard.md"
@@ -19,13 +19,13 @@ related_artifacts:
 
 # Инвентаризация Mango-реестра и перевод в JSON (issue #170)
 
-> Документ сгенерирован из живого реестра скриптом [`experiments/gen_inventory_doc.py`](../../experiments/gen_inventory_doc.py) и отражает [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) один-в-один. Перегенерируйте после изменения реестра.
+> Документ сгенерирован из живого реестра скриптом [`experiments/gen_inventory_doc.py`](../../experiments/gen_inventory_doc.py) и отражает [`kb/mango-taxonomy/registry.json`](../../kb/mango-taxonomy/registry.json) один-в-один. Перегенерируйте после изменения реестра.
 
 ## 1. Резюме
 
 Issue #170 требовал: (1) свести три YAML-файла Mango-реестра в единый JSON, (2) устранить дублирование (отдельный crosswalk `product-mapping.yaml`), (3) дозаполнить иерархию `Продукт → Сервис → Модуль → Функция` из реальной документации сверху вниз, (4) добавить JSON Schema, (5) обеспечить ссылочную целостность с Industry-реестром и (6) подготовить этот аналитический документ с полными списками сущностей, сравнением со старой структурой и фиксацией пробелов.
 
-Итог — единый файл [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) (версия `1.0.0`) со следующим наполнением:
+Итог — единый файл [`kb/mango-taxonomy/registry.json`](../../kb/mango-taxonomy/registry.json) (версия `1.0.0`) со следующим наполнением:
 
 | Массив | Уровень | Кол-во |
 | --- | --- | ---: |
@@ -43,7 +43,7 @@ Issue #170 требовал: (1) свести три YAML-файла Mango-ре�
 
 **Запрет на выдумку.** Evidence резолвится по паре «(каталог, номер секции)» глоб-ом `sections/NN-*.md`; номер, который не находит файл, не попадает в реестр, а фиксируется как пробел в этом документе. Поэтому неверный slug физически не может «протечь» в данные.
 
-**Наследование выравнивания.** Новая сущность копирует *primary* `industry_alignment` своего родителя (`industry_ref` и `facets` — дословно). Это гарантирует, что каждая ссылка резолвится против [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json) и что не выдумываются новые отраслевые узлы. Для функций уровень `function` из `industry_ref` отбрасывается (в текущих данных это no-op).
+**Наследование выравнивания.** Новая сущность копирует *primary* `industry_alignment` своего родителя (`industry_ref` и `facets` — дословно). Это гарантирует, что каждая ссылка резолвится против [`kb/industry-taxonomy/registry.json`](../../kb/industry-taxonomy/registry.json) и что не выдумываются новые отраслевые узлы. Для функций уровень `function` из `industry_ref` отбрасывается (в текущих данных это no-op).
 
 **Использованные корпуса** (число различных секций/файлов, на которые ссылается реестр):
 
@@ -495,7 +495,7 @@ _Сервисов: 4._
    python3 scripts/validate_issue_170_mango_registry.py
    ```
    Проверяет JSON Schema, резолвинг каждого `industry_ref` против живого Industry-реестра, целостность «родитель ↔ ребёнок» в обе стороны и полноту иерархии (пороги и минимумы).
-2. **JSON Schema, draft 2020-12** — [`kb/mango-taxonomy/mango-registry.schema.json`](../../kb/mango-taxonomy/mango-registry.schema.json).
+2. **JSON Schema, draft 2020-12** — [`kb/mango-taxonomy/registry.schema.json`](../../kb/mango-taxonomy/registry.schema.json).
 3. **Полный контур БЗ:**
    ```bash
    make kb-validate

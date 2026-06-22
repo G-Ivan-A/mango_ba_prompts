@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cascade-fill kb/mango-taxonomy/mango-registry.json with REAL documented modules/functions.
+"""Cascade-fill kb/mango-taxonomy/registry.json with REAL documented modules/functions.
 
 Additive only: loads the current registry and APPENDS new modules + functions, each
 grounded in a verified kb/mango-product-docs/processed/ section. New entities inherit
@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REGISTRY = ROOT / "kb/mango-taxonomy/mango-registry.json"
+REGISTRY = ROOT / "kb/mango-taxonomy/registry.json"
 PROCESSED = ROOT / "kb/mango-product-docs/processed"
 
 

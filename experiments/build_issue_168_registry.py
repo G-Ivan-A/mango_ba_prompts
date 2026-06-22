@@ -2,7 +2,7 @@
 """Issue #168 — deterministic cascade-fill builder for the Industry registry.
 
 Inserts the capabilities/features/functions and the two aliases decided in
-``docs/analysis/industry-inventory.md`` into ``kb/industry-taxonomy/reference-taxonomy.json``,
+``docs/analysis/industry-inventory.md`` into ``kb/industry-taxonomy/registry.json``,
 bumps the registry version 1.0.0 -> 1.1.0 (additive == MINOR, standard §10.4),
 adds a source entry and a registry note, and writes the file back with the same
 serialization the registry already uses (``json.dumps(indent=2,
@@ -16,7 +16,7 @@ import json
 import pathlib
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
-REGISTRY = REPO / "kb" / "industry-taxonomy" / "reference-taxonomy.json"
+REGISTRY = REPO / "kb" / "industry-taxonomy" / "registry.json"
 
 EV = [
     "standards/decisions/ADR-011-industry-taxonomy.md",

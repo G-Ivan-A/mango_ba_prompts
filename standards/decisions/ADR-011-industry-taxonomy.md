@@ -279,7 +279,7 @@ feature, function и cross-cutting facets). Чтобы исключить инв
 > reference layer и значений внутри `industry_ref`. Если ADR-012, Mango Taxonomy
 > Standard или старый Mango crosswalk противоречат ADR-011 по slug'у домена,
 > capability, feature, function или по форме `industry_ref` — применяется
-> ADR-011 и каноничный реестр `kb/industry-taxonomy/reference-taxonomy.json`.
+> ADR-011 и каноничный реестр `kb/industry-taxonomy/registry.json`.
 
 Этот порядок дословно совпадает с §1.3 обоих стандартов
 ([`industry-taxonomy-standard.md`](../industry-taxonomy-standard.md) и
@@ -365,7 +365,7 @@ alignment_type: primary
 
 > **Reference integrity.** Slug'и `domain -> capability -> feature -> function`
 > в примерах ADR-011 разрешаются в каноническом реестре
-> [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json).
+> [`kb/industry-taxonomy/registry.json`](../../kb/industry-taxonomy/registry.json).
 > Цепочка выше — `contact-center -> omnichannel-contact-center ->
 > omnichannel-desktop -> unified-agent-desktop` — существует как канонический
 > путь. ADR-011 не вводит slug'и в обход реестра.
@@ -374,7 +374,7 @@ alignment_type: primary
 
 - `industry_ref.domain` обязателен для любой связи и должен ссылаться на
   canonical Domain из ADR-011 или Industry Taxonomy registry
-  (`kb/industry-taxonomy/reference-taxonomy.json`).
+  (`kb/industry-taxonomy/registry.json`).
 - `industry_ref.capability`, `industry_ref.feature` и `industry_ref.function`
   добавляются по мере глубины Mango entity: Product может ссылаться на несколько Domain/Capability,
   Service — на Capability, Module — на Feature, Mango `Function` — на Function.

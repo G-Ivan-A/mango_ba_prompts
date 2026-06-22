@@ -12,7 +12,7 @@ depends_on:
   - "standards/industry-taxonomy-standard.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/industry-taxonomy/registry.json"
 related_artifacts:
   - "docs/analysis/voice-digital-channels-comparison.md"
   - "docs/audit/issue-146-mango-taxonomy-validation.md"
@@ -44,7 +44,7 @@ validated_by:
 [`docs/audit/taxonomy-standards-independent-review.md`](../docs/audit/taxonomy-standards-independent-review.md).
 ADR-011 имеет приоритет над ADR-012 для Industry reference layer и `industry_ref`.
 Если ADR-012 или старый Mango crosswalk противоречит ADR-011, Industry Taxonomy
-Standard или [`kb/industry-taxonomy/reference-taxonomy.json`](../kb/industry-taxonomy/reference-taxonomy.json),
+Standard или [`kb/industry-taxonomy/registry.json`](../kb/industry-taxonomy/registry.json),
 этот стандарт применяет ADR-011/Industry registry и фиксирует расхождение как
 материал для отдельной ADR-sync задачи.
 
@@ -108,7 +108,7 @@ boundary rules; он НЕ ДОЛЖЕН становиться полным пр�
 1. явное issue/ADR/PR-review решение, помеченное as taxonomy override and
    accepted by maintainer/founder;
 2. этот стандарт для Mango operational contract;
-3. `kb/industry-taxonomy/reference-taxonomy.json` для canonical Industry node ids;
+3. `kb/industry-taxonomy/registry.json` для canonical Industry node ids;
 4. `standards/industry-taxonomy-standard.md`;
 5. ADR-011 canonical v1.0;
 6. `kb/mango-taxonomy/official-products.yaml`, `kb/mango-taxonomy/internal-registry.yaml` and
@@ -137,7 +137,7 @@ Mango vs Industry responsibility boundary:
 - Mango Taxonomy отвечает на вопрос: "какой Official Product, Product, Service,
   Module or Function Mango реализует эту возможность?"
 - Mango Taxonomy НЕ ДОЛЖНА создавать Industry slug from Mango label. Если нужный
-  deeper node отсутствует в `kb/industry-taxonomy/reference-taxonomy.json`, mapping
+  deeper node отсутствует в `kb/industry-taxonomy/registry.json`, mapping
   ДОЛЖЕН ссылаться на nearest canonical parent and add `mapping_gap`.
 - Mango cluster ids are Mango namespace only. Они НЕ ДОЛЖНЫ подменять Industry
   Domain/Capability ids, even when labels coincide, например `digital-channels`.
@@ -260,7 +260,7 @@ Domain. Cluster нужен для ownership, navigation, validation и AI routin
 
 `industry_ref` - строгая ссылка на Industry Taxonomy node. Она ДОЛЖНА
 соответствовать `standards/industry-taxonomy-standard.md` and
-`kb/industry-taxonomy/reference-taxonomy.json`. `domain` MAY reference canonical Industry
+`kb/industry-taxonomy/registry.json`. `domain` MAY reference canonical Industry
 Domain or canonical `cross_domain_layer` such as `platform`, because the current
 Industry registry exposes `platform` through the same `industry_ref` shape.
 Every deeper field MUST resolve under its parent in the registry. If the exact
@@ -340,7 +340,7 @@ Mango Taxonomy artifacts ДОЛЖНЫ satisfy these invariants:
 5. Every registry-grade entity has stable slug id.
 6. Every registry-grade entity has `lifecycle_status`.
 7. Every mapping uses `maps_to.industry_alignment[]`.
-8. Every `industry_ref` chain resolves in `kb/industry-taxonomy/reference-taxonomy.json`
+8. Every `industry_ref` chain resolves in `kb/industry-taxonomy/registry.json`
    or stops at nearest canonical parent with `mapping_gap`.
 9. Every `industry_ref` value is an Industry Taxonomy slug, not a Mango id.
 10. Commercial/procurement labels stay approved facets when needed; customer
@@ -1737,7 +1737,7 @@ Current CI coverage is intentionally narrow:
 and selected issue #164 audit-regression tokens;
 `scripts/validate_issue_160_mango_registry.py` validates current `kb/mango-taxonomy/*`
 registry files. A generic validator that checks every future Mango mapping file
-against `kb/industry-taxonomy/reference-taxonomy.json` is not yet implemented.
+against `kb/industry-taxonomy/registry.json` is not yet implemented.
 
 ### 11.2 Registry-level checks
 
@@ -1922,7 +1922,7 @@ The standard references Industry Taxonomy Standard for Industry rules and does
 not restate all Industry node semantics. Mango-specific content is limited to
 layers, internal hierarchy, clusters, source-term normalization and registry
 contract. Imported Industry constructs remain references to ADR-011, Industry
-Taxonomy Standard and `kb/industry-taxonomy/reference-taxonomy.json`; Mango cluster ids
+Taxonomy Standard and `kb/industry-taxonomy/registry.json`; Mango cluster ids
 and product ids are not treated as Industry ids.
 
 ### 14.4 Отсутствие противоречий
@@ -1964,7 +1964,7 @@ Validator-ready elements are explicit:
 - Industry Taxonomy Standard:
   [`standards/industry-taxonomy-standard.md`](industry-taxonomy-standard.md)
 - Industry reference taxonomy registry:
-  [`kb/industry-taxonomy/reference-taxonomy.json`](../kb/industry-taxonomy/reference-taxonomy.json)
+  [`kb/industry-taxonomy/registry.json`](../kb/industry-taxonomy/registry.json)
 - Voice/digital channels analysis:
   [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
 - Issue #146 Mango Taxonomy audit:
