@@ -1,0 +1,41 @@
+[
+  {
+    "n": 1,
+    "id": "mango-virtual-pbx-official",
+    "level": "official-product",
+    "name_ru": "Виртуальная АТС",
+    "description": "Публичный продукт Mango Office для облачной офисной телефонии, маршрутизации звонков и управления номерами."
+  },
+  {
+    "n": 7,
+    "id": "mango-security-access",
+    "level": "product",
+    "name_ru": "Mango Security and Access",
+    "description": "Внутренний cross-product кластер ролей, SSO, доступа к записям и аудита безопасности."
+  },
+  {
+    "n": 13,
+    "id": "end-to-end-analytics-service",
+    "level": "service",
+    "name_ru": "Сквозная аналитика",
+    "description": "Сервис связывания коммуникаций, сделок и маркетинговой воронки.",
+    "cluster": "analytics-marketing"
+  },
+  {
+    "n": 19,
+    "id": "ai-assistant-module",
+    "level": "module",
+    "name_ru": "ИИ-помощник оператора",
+    "description": "Модуль сервиса «AI-конспекты разговоров» в Mango Taxonomy.",
+    "cluster": "ai-speech-quality"
+  },
+  {
+    "n": 25,
+    "id": "send-call-event-webhook",
+    "level": "function",
+    "name_ru": "Передать событие звонка во внешний webhook",
+    "description": "Атомарная функция модуля «Webhook endpoints».",
+    "function_type": "business",
+    "interaction_surface": "webhook"
+  }
+]

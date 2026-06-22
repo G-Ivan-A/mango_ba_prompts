@@ -1,0 +1,43 @@
+[
+  {
+    "n": 3,
+    "id": "mango-speech-analytics-official",
+    "level": "official-product",
+    "name_ru": "Речевая аналитика",
+    "description": "Публичный AI-продукт для распознавания и анализа разговоров."
+  },
+  {
+    "n": 9,
+    "id": "cc-supervisor-wfm-service",
+    "level": "service",
+    "name_ru": "Супервизорский контроль и WFM",
+    "description": "Сервис супервизорских панелей, графиков и планирования нагрузки.",
+    "cluster": "contact-center-core"
+  },
+  {
+    "n": 15,
+    "id": "sso-identity-service",
+    "level": "service",
+    "name_ru": "SSO и идентификация",
+    "description": "Сервис единого входа и federated authentication для ЛК ВАТС.",
+    "cluster": "security-access"
+  },
+  {
+    "n": 21,
+    "id": "run-voice-robot-dialog",
+    "level": "function",
+    "name_ru": "Запустить голосовой диалог робота",
+    "description": "Атомарная функция модуля «Сценарии голосового робота».",
+    "function_type": "business",
+    "interaction_surface": "system-rule"
+  },
+  {
+    "n": 27,
+    "id": "transfer-call-with-consultation",
+    "level": "function",
+    "name_ru": "Перевести вызов с консультацией",
+    "description": "Атомарная функция модуля «Перевод вызовов».",
+    "function_type": "business",
+    "interaction_surface": "operator-ui"
+  }
+]
