@@ -4,7 +4,7 @@
 Compares the blind AI-agent classification (blind-agent-output.json) against the
 independent reference classification (reference-classification.json) and reports
 per-level and full-path convergence. Validates that every node id the AI agent
-emitted is canonical (exists in kb/industry-taxonomy/reference-taxonomy.json).
+emitted is canonical (exists in kb/industry-taxonomy/registry.json).
 
 Run from repo root:
     python3 experiments/issue-174/score_convergence.py
@@ -39,7 +39,7 @@ def canonical_ids(tax):
 def main():
     ref = {r["n"]: r for r in load(os.path.join(HERE, "reference-classification.json"))}
     ai = {a["n"]: a for a in load(os.path.join(HERE, "blind-agent-output.json"))}
-    tax = load(os.path.join(ROOT, "kb", "industry-taxonomy", "reference-taxonomy.json"))
+    tax = load(os.path.join(ROOT, "kb", "industry-taxonomy", "registry.json"))
     valid = canonical_ids(tax)
 
     n_total = len(ref)
@@ -85,7 +85,7 @@ def main():
     if invalid:
         print("INVALID (non-canonical) ids emitted by AI agent:", invalid)
         return 1
-    print("All AI-agent node ids are canonical (present in reference-taxonomy.json).")
+    print("All AI-agent node ids are canonical (present in registry.json).")
     return 0
 
 

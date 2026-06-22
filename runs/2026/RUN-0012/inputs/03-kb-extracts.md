@@ -6,8 +6,8 @@ ai-generated: true
 type: input
 scope: mango-only
 related_artifacts:
-  - "kb/mango-taxonomy/mango-registry.json"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/mango-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.json"
   - "kb/mango-product-docs/processed/mtalker/android-user-guide/index.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/180"
@@ -21,7 +21,7 @@ related_issues:
 [`standards/mango-taxonomy-standard.md`](../../../../standards/mango-taxonomy-standard.md),
 [`standards/industry-taxonomy-standard.md`](../../../../standards/industry-taxonomy-standard.md).
 
-## 1. Industry Taxonomy (`kb/industry-taxonomy/reference-taxonomy.json`)
+## 1. Industry Taxonomy (`kb/industry-taxonomy/registry.json`)
 
 Модель: `Domain → Capability → Feature → Function`.
 
@@ -32,7 +32,7 @@ related_issues:
 | `voice-ucaas.video-conferencing` | capability | Видеоконференции: «Video meetings, recording, and screen sharing». Опорная capability для нового решения (групповой звонок на основе ВКС). |
 | `voice-ucaas.video-conferencing.video-meetings` | feature | Видеовстречи (групповой звонок). |
 
-## 2. Mango Taxonomy (`kb/mango-taxonomy/mango-registry.json`)
+## 2. Mango Taxonomy (`kb/mango-taxonomy/registry.json`)
 
 Кластер `mango-talker`.
 

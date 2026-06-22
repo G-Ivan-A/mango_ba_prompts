@@ -3,13 +3,13 @@
 
 Issue #170 converts the three legacy Mango YAML files (official-products.yaml,
 internal-registry.yaml, product-mapping.yaml) into a single JSON registry
-``kb/mango-taxonomy/mango-registry.json`` plus a JSON Schema ``mango-registry.schema.json``,
+``kb/mango-taxonomy/registry.json`` plus a JSON Schema ``registry.schema.json``,
 and demands real referential integrity against the Industry Taxonomy registry.
 
 Unlike the retired ``validate_issue_160_mango_registry.py`` (which only checked a
 frozen, hardcoded subset of the Industry taxonomy and therefore missed broken
 ``industry_ref`` chains), this validator resolves every ``industry_ref`` against
-the *live* ``kb/industry-taxonomy/reference-taxonomy.json`` and implements the registry
+the *live* ``kb/industry-taxonomy/registry.json`` and implements the registry
 contract from the Mango Taxonomy standard §8.2 and §11.2 (30 checks).
 
 Stdlib only — no PyYAML, no jsonschema. The legacy YAML files are JSON-compatible
@@ -26,9 +26,9 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REGISTRY = "kb/mango-taxonomy/mango-registry.json"
-SCHEMA = "kb/mango-taxonomy/mango-registry.schema.json"
-INDUSTRY_REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
+REGISTRY = "kb/mango-taxonomy/registry.json"
+SCHEMA = "kb/mango-taxonomy/registry.schema.json"
+INDUSTRY_REGISTRY = "kb/industry-taxonomy/registry.json"
 STANDARD = "standards/mango-taxonomy-standard.md"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
@@ -142,8 +142,8 @@ def check_schema_file() -> list[str]:
 
     if "$schema" not in schema:
         errors.append(f"{SCHEMA}: missing $schema")
-    if schema.get("$id") != "mango-registry.schema.json":
-        errors.append(f"{SCHEMA}: $id must be 'mango-registry.schema.json'")
+    if schema.get("$id") != "registry.schema.json":
+        errors.append(f"{SCHEMA}: $id must be 'registry.schema.json'")
     if schema.get("title") != "MangoTaxonomyDocument":
         errors.append(f"{SCHEMA}: title must be 'MangoTaxonomyDocument'")
     if schema.get("required") != ["taxonomy"] or schema.get("additionalProperties") is not False:

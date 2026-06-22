@@ -13,8 +13,8 @@ based_on:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 target_artifacts:
   - "standards/industry-taxonomy-standard.md"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
-  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.schema.json"
   - "scripts/validate_issue_156_industry_taxonomy_registry.py"
   - "scripts/validate_issue_168_industry_reference_integrity.py"
 ---
@@ -35,9 +35,9 @@ merged в `upstream/main`, а ветка PR #179 синхронизирован�
 
 | Artifact | Current path |
 | --- | --- |
-| Industry registry | `kb/industry-taxonomy/reference-taxonomy.json` |
-| Industry schema | `kb/industry-taxonomy/reference-taxonomy.schema.json` |
-| Mango registry | `kb/mango-taxonomy/mango-registry.json` |
+| Industry registry | `kb/industry-taxonomy/registry.json` |
+| Industry schema | `kb/industry-taxonomy/registry.schema.json` |
+| Mango registry | `kb/mango-taxonomy/registry.json` |
 | Industry convergence report | `docs/analysis/taxonomy-convergence-test.md` |
 | Industry convergence experiment | `experiments/issue-174/` |
 
@@ -144,7 +144,7 @@ standard, а недомаппленную или субоптимальную г
 - `select-dashboard-widget` должен указывать на
   `analytics/real-time-reporting/dashboard-view/select-dashboard-widget`, а не
   на `analytics/multichannel-analytics`;
-- ряд Module/Function mappings в `kb/mango-taxonomy/mango-registry.json`
+- ряд Module/Function mappings в `kb/mango-taxonomy/registry.json`
   остановлен на capability, хотя Industry registry уже содержит feature/function.
 
 Это не требует изменения Mango Taxonomy Standard, но изменение Mango registry
@@ -336,13 +336,13 @@ whether the gold statuses should remain `ui-action` or be corrected.
 | Artifact | Impact |
 | --- | --- |
 | `standards/industry-taxonomy-standard.md` | Add duplicate-node policy, disambiguation rules, boundary examples, `function_type` decision tree. Version should move from 0.1 to 0.2 because rules change behavior. |
-| `kb/industry-taxonomy/reference-taxonomy.json` | Add missing nodes; deprecate or narrow ambiguous duplicates; add aliases/source_terms/replacement metadata. Registry version should move from 1.1.0 to 1.2.0 if non-breaking deprecations are used. |
-| `kb/industry-taxonomy/reference-taxonomy.schema.json` | No required schema change if replacement metadata remains additional properties; optional schema extension can formalize `replacement`, `deprecation_reason`, `homonym_allowed`. |
+| `kb/industry-taxonomy/registry.json` | Add missing nodes; deprecate or narrow ambiguous duplicates; add aliases/source_terms/replacement metadata. Registry version should move from 1.1.0 to 1.2.0 if non-breaking deprecations are used. |
+| `kb/industry-taxonomy/registry.schema.json` | No required schema change if replacement metadata remains additional properties; optional schema extension can formalize `replacement`, `deprecation_reason`, `homonym_allowed`. |
 | `scripts/validate_issue_156_industry_taxonomy_registry.py` | Add duplicate active id / ambiguous alias checks and required new nodes. |
 | `scripts/validate_issue_168_industry_reference_integrity.py` | Make alias resolution ambiguity-safe; preserve deprecated warning behavior. |
 | `standards/decisions/ADR-011-industry-taxonomy.md` | No change required. The RFC is consistent with ADR-011 hierarchy, platform layer, channel facet and alias/deprecation mechanics. |
 | `standards/mango-taxonomy-standard.md` | No change proposed in this issue. Mango boundary lessons are documented but standard changes should be separate. |
-| `kb/mango-taxonomy/mango-registry.json` | Separate CR unless founder explicitly approves extending #178 scope to correct #21 and depth mappings. |
+| `kb/mango-taxonomy/registry.json` | Separate CR unless founder explicitly approves extending #178 scope to correct #21 and depth mappings. |
 | `CHANGELOG.md` | Add Issue #178 entry after approved implementation, not for RFC-only stage unless the team wants to track RFC creation separately. |
 
 ## 7. Implementation plan after approval
@@ -388,7 +388,7 @@ python3 experiments/issue-176-convergence/score.py
 Прошу фаундера явно согласовать:
 
 1. Можно ли считать R1-R7 approved scope for implementation in PR #179?
-2. Входит ли correction `kb/mango-taxonomy/mango-registry.json` for #21 and
+2. Входит ли correction `kb/mango-taxonomy/registry.json` for #21 and
    depth mappings в scope #178, или это отдельный PR?
 3. Как классифицировать status-changing functions в `function_type`: keep current
    gold as `ui-action`, or correct to `business`/`configuration` when they change

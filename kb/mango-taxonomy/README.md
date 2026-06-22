@@ -9,8 +9,8 @@ related_artifacts:
   - "../../standards/mango-taxonomy-standard.md"
   - "../../standards/decisions/ADR-012-mango-taxonomy.md"
   - "../../standards/industry-taxonomy-standard.md"
-  - "mango-registry.json"
-  - "mango-registry.schema.json"
+  - "registry.json"
+  - "registry.schema.json"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/160"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/170"
@@ -24,8 +24,8 @@ related_issues:
 [`standards/decisions/ADR-012-mango-taxonomy.md`](../../standards/decisions/ADR-012-mango-taxonomy.md).
 
 Начиная с issue #170 реестр — единый JSON-файл
-[`mango-registry.json`](mango-registry.json), валидируемый JSON Schema
-[`mango-registry.schema.json`](mango-registry.schema.json) (draft 2020-12).
+[`registry.json`](registry.json), валидируемый JSON Schema
+[`registry.schema.json`](registry.schema.json) (draft 2020-12).
 Прежние три YAML-файла (`official-products.yaml`, `internal-registry.yaml` и
 crosswalk `product-mapping.yaml`) свёрнуты в этот документ: crosswalk дублировал
 `maps_to.industry_alignment` из каждой сущности и удалён, чтобы устранить
@@ -86,7 +86,7 @@ Function-level записи используют `function_type` (`business`, `c
 [`standards/industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md)
 и использует только канонические `industry_ref`, которые резолвятся против
 canonical registry
-[`kb/industry-taxonomy/reference-taxonomy.json`](../industry-taxonomy/reference-taxonomy.json).
+[`kb/industry-taxonomy/registry.json`](../industry-taxonomy/registry.json).
 Если Industry Taxonomy не содержит нужный Feature или Function, alignment несёт
 `mapping_gap` с предлагаемым slug и причиной — отдельный crosswalk-файл больше не
 нужен.
@@ -95,7 +95,7 @@ canonical registry
 
 AI-agent должен:
 
-- читать [`mango-registry.json`](mango-registry.json), когда нужен продуктовый
+- читать [`registry.json`](registry.json), когда нужен продуктовый
   слой Mango или внутренняя декомпозиция `Product -> Service -> Module ->
   Function` и её crosswalk к Industry Taxonomy;
 - цитировать `evidence_refs` из записей, а не выводить продуктовые факты из

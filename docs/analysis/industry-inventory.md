@@ -9,8 +9,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/168"
 related_artifacts:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/industry-taxonomy-standard.md"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
-  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.schema.json"
   - "scripts/validate_issue_168_industry_reference_integrity.py"
 hub_research:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/classification.md"
@@ -21,7 +21,7 @@ hub_research:
 
 > **Назначение.** Обязательный первый шаг по issue #168 (Task 0): аналитическое
 > исследование industry-ландшафта по ADR-011 перед заполнением
-> `kb/industry-taxonomy/reference-taxonomy.json`. Документ фиксирует полные списки
+> `kb/industry-taxonomy/registry.json`. Документ фиксирует полные списки
 > Capabilities, Features и Functions, которые добавляются в реестр, с
 > **обоснованием каждой сущности** на основе отраслевой логики и стандартов, а
 > также описывает разрывы (gaps) и способ их закрытия.
@@ -50,14 +50,14 @@ hub_research:
 > (`kb/mango-taxonomy/internal-registry.yaml`, `official-products.yaml`,
 > `product-mapping.yaml`) и насчитывал 316 ссылок `industry_ref`. Issue #170
 > впоследствии свернул их в единый JSON-реестр
-> [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) и
+> [`kb/mango-taxonomy/registry.json`](../../kb/mango-taxonomy/registry.json) и
 > перевыровнял ссылки (часть зафиксирована через `mapping_gap`), после чего в
 > Mango-реестре стало **283** ссылки `industry_ref`. Аналитические выводы ниже
 > (какие Capabilities/Features/Functions добавить в Industry-реестр) от этого не
 > меняются: дозаполнение аддитивно, а валидатор
 > `scripts/validate_issue_168_industry_reference_integrity.py` теперь резолвит все
 > **283** ссылки нового реестра против дозаполненного
-> `kb/industry-taxonomy/reference-taxonomy.json` без ошибок. Числа «316» и пути
+> `kb/industry-taxonomy/registry.json` без ошибок. Числа «316» и пути
 > `kb/mango-taxonomy/*.yaml` ниже сохранены как снимок состояния на момент исследования.
 
 ## 0. Метод исследования
@@ -100,7 +100,7 @@ hub_research:
 
 ## 1. Problem statement (§10.3)
 
-Реестр `kb/industry-taxonomy/reference-taxonomy.json` v1.0.0 закрыл audit-blocker «ниже
+Реестр `kb/industry-taxonomy/registry.json` v1.0.0 закрыл audit-blocker «ниже
 Domain нет canonical registry», но оставался **неполным относительно
 фактических внешних ссылок Mango**: 98 ссылок `industry_ref` не разрешались по
 parent-chain. Это нарушает §11.3 («Unknown canonical node = error», «Invalid
@@ -283,7 +283,7 @@ feature, у feature ≥1 function» (`minItems:1`), но также отрасл
 
 ## 5. Affected nodes and mappings (§10.3)
 
-- **Реестр:** `kb/industry-taxonomy/reference-taxonomy.json` — добавлены 8 capabilities,
+- **Реестр:** `kb/industry-taxonomy/registry.json` — добавлены 8 capabilities,
   9 features, 13 functions, 2 alias-записи; `version` 1.0.0 → 1.1.0; добавлены
   source-запись `issue-168-industry-inventory` и registry-note. Существующие узлы
   **не изменялись и не удалялись**. Evidence новых узлов:

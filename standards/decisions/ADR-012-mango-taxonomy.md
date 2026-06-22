@@ -66,7 +66,7 @@ resource mapping, а голосовое interaction mapping ДОЛЖНО исп�
 
 > **ADR-011 имеет приоритет над ADR-012.** Если ADR-012, Mango Taxonomy Standard
 > или старый Mango crosswalk противоречат ADR-011 либо каноничному реестру
-> `kb/industry-taxonomy/reference-taxonomy.json` по slug'у домена, capability, feature,
+> `kb/industry-taxonomy/registry.json` по slug'у домена, capability, feature,
 > function или по форме `industry_ref` — применяется ADR-011. ADR-012 остаётся
 > источником истины только для Mango-specific слоя
 > `Product -> Service -> Module -> Function` там, где он не конфликтует с ADR-011.
@@ -78,13 +78,13 @@ resource mapping, а голосовое interaction mapping ДОЛЖНО исп�
 [`ADR-011`](ADR-011-industry-taxonomy.md). Все machine-readable примеры в этом ADR
 используют каноничные имена полей (`level`, `official_urls`,
 `supported_by_services`, `evidence_refs`, `maps_to.industry_alignment[]`) и
-каноничные slug'и из `kb/industry-taxonomy/reference-taxonomy.json`; устаревшие черновые
+каноничные slug'и из `kb/industry-taxonomy/registry.json`; устаревшие черновые
 имена (`layer`, `public_urls`, `internal_services`, `kb_refs`, `evidence_level`)
 больше не используются.
 
 > **Reference integrity.** Все slug'и `domain`/`capability`/`feature`/`function`
 > в примерах ниже резолвятся в каноничном реестре
-> [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json);
+> [`kb/industry-taxonomy/registry.json`](../../kb/industry-taxonomy/registry.json);
 > Mango entity-имена и кластеры соответствуют
 > [`mango-taxonomy-standard.md`](../mango-taxonomy-standard.md).
 

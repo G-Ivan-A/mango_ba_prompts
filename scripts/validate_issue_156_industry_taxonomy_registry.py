@@ -17,8 +17,8 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
-SCHEMA = "kb/industry-taxonomy/reference-taxonomy.schema.json"
+REGISTRY = "kb/industry-taxonomy/registry.json"
+SCHEMA = "kb/industry-taxonomy/registry.schema.json"
 README = "kb/industry-taxonomy/README.md"
 KB_README = "kb/README.md"
 CHANGELOG = "CHANGELOG.md"
@@ -184,7 +184,7 @@ def check_registry_nodes(registry: dict[str, Any]) -> list[str]:
 
     domains = registry.get("domains")
     if not isinstance(domains, list):
-        return ["kb/industry-taxonomy/reference-taxonomy.json: domains must be a list"]
+        return ["kb/industry-taxonomy/registry.json: domains must be a list"]
 
     domain_ids = {domain.get("id") for domain in domains if isinstance(domain, dict)}
     if domain_ids != CANONICAL_DOMAINS:
@@ -303,7 +303,7 @@ def check_registry_contract() -> list[str]:
     for field in ("taxonomy_id", "schema_version", "version", "last_updated", "status", "sources"):
         if field not in registry:
             errors.append(f"{REGISTRY}: missing top-level {field}")
-    if registry.get("$schema") != "reference-taxonomy.schema.json":
+    if registry.get("$schema") != "registry.schema.json":
         errors.append(f"{REGISTRY}: must reference local schema")
     if registry.get("taxonomy_id") != "industry-taxonomy":
         errors.append(f"{REGISTRY}: taxonomy_id must be industry-taxonomy")
@@ -330,7 +330,7 @@ def check_registry_contract() -> list[str]:
         if facet not in facets:
             errors.append(f"{REGISTRY}: missing facet {facet!r}")
 
-    if schema.get("$id") != "reference-taxonomy.schema.json":
+    if schema.get("$id") != "registry.schema.json":
         errors.append(f"{SCHEMA}: missing local $id")
     if "definitions" not in schema:
         errors.append(f"{SCHEMA}: missing definitions")

@@ -26,11 +26,11 @@ OLD_TEXT_REFERENCES = (
 
 EXPECTED_FILES = (
     INDUSTRY_DIR / "README.md",
-    INDUSTRY_DIR / "reference-taxonomy.json",
-    INDUSTRY_DIR / "reference-taxonomy.schema.json",
+    INDUSTRY_DIR / "registry.json",
+    INDUSTRY_DIR / "registry.schema.json",
     MANGO_DIR / "README.md",
-    MANGO_DIR / "mango-registry.json",
-    MANGO_DIR / "mango-registry.schema.json",
+    MANGO_DIR / "registry.json",
+    MANGO_DIR / "registry.schema.json",
 )
 
 REQUIRED_TEXT = {

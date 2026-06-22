@@ -11,13 +11,13 @@ based_on:
   - "standards/mango-taxonomy-standard.md"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
-  - "kb/mango-taxonomy/mango-registry.json"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/mango-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.json"
 related_rfc:
   - "docs/analysis/rfc-industry-taxonomy-improvement.md"
 target_artifacts:
   - "standards/mango-taxonomy-standard.md"
-  - "kb/mango-taxonomy/mango-registry.json"
+  - "kb/mango-taxonomy/registry.json"
   - "scripts/validate_issue_170_mango_registry.py"
   - "scripts/validate_issue_154_mango_taxonomy_standard.py"
 ---
@@ -36,8 +36,8 @@ Issue #181 требует использовать актуальные пути
 
 | Artifact | Старый каталог (до PR #173) | Актуальный путь |
 | --- | --- | --- |
-| Mango registry | `kb/mango` (без суффикса `-taxonomy`) | `kb/mango-taxonomy/mango-registry.json` |
-| Industry registry | `kb/industry` (без суффикса `-taxonomy`) | `kb/industry-taxonomy/reference-taxonomy.json` |
+| Mango registry | `kb/mango` (без суффикса `-taxonomy`) | `kb/mango-taxonomy/registry.json` |
+| Industry registry | `kb/industry` (без суффикса `-taxonomy`) | `kb/industry-taxonomy/registry.json` |
 | Mango convergence report | — | `docs/analysis/mango-taxonomy-convergence-test.md` |
 | Mango convergence experiment | — | `experiments/issue-176-convergence/` |
 
@@ -114,7 +114,7 @@ Issue #181 запрещает менять Industry Taxonomy Standard и Industr
   - валидаторы Mango.
 - **Вне scope #181 (Industry-сторона, issue #178 / PR #179):**
   - физический дедуп дублированных `id` (`conversation-summaries`,
-    `access-control`, `call-routing`, …) в `reference-taxonomy.json`;
+    `access-control`, `call-routing`, …) в `registry.json`;
   - правила homonym/deprecation в Industry standard.
 
 > **Важное следствие.** Полное закрытие причины A требует Industry-side дедупа,
@@ -132,7 +132,7 @@ Issue #181 запрещает менять Industry Taxonomy Standard и Industr
 **Адресует:** причину D (7 кейсов: #8, #20, #21, #23, #25, #26, #27) — самый
 крупный одиночный блок расхождений.
 
-Эталонные primary-маппинги Module/Function в `kb/mango-taxonomy/mango-registry.json`
+Эталонные primary-маппинги Module/Function в `kb/mango-taxonomy/registry.json`
 систематически мельче рекомендации §7.3. Во всех 7 случаях путь агента **содержит
 эталон как префикс** и резолвится в Industry registry — агент оказался
 дисциплинированнее эталона.
@@ -153,7 +153,7 @@ Issue #181 запрещает менять Industry Taxonomy Standard и Industr
 | 8 | service | `voice-ucaas/ivr-voice-menu` | для service §7.3 рекомендует только capability — здесь эталон **корректен**; углубление агента до `…/ivr-scenarios` допустимо, но не требуется. Возможный шаг: пометить как acceptable-deeper. |
 
 **Обязательное правило при реализации:** глубина проставляется только для реально
-существующих в `reference-taxonomy.json` узлов. Если узел отсутствует — `mapping_gap`,
+существующих в `registry.json` узлов. Если узел отсутствует — `mapping_gap`,
 а не выдуманный slug (§1.4 запрещает создавать Industry slug из Mango label).
 
 **Ожидаемый эффект:** при доуглублении эталона до пути, который выбирает
@@ -274,18 +274,18 @@ judgment-calls, требующие human review, ожидаемый резуль
 | Artifact | Impact |
 | --- | --- |
 | `standards/mango-taxonomy-standard.md` | Добавить disambiguation rule (R2), boundary rule (R3), roll-up rule (R4). Версия → 0.3 (правила меняют поведение маппинга). |
-| `kb/mango-taxonomy/mango-registry.json` | Доуглубить `maps_to` Module/Function до §7.3 (R1); ревизия эталона #17 (R4). `taxonomy.version` → 1.1.0 (non-breaking уточнения) или 2.0.0, если #17 меняет canonical mapping. |
+| `kb/mango-taxonomy/registry.json` | Доуглубить `maps_to` Module/Function до §7.3 (R1); ревизия эталона #17 (R4). `taxonomy.version` → 1.1.0 (non-breaking уточнения) или 2.0.0, если #17 меняет canonical mapping. |
 | `scripts/validate_issue_170_mango_registry.py` | Опционально: проверка глубины `maps_to` против §7.3 (warning, если мельче без `mapping_gap`). |
 | `scripts/validate_issue_154_mango_taxonomy_standard.py` | Без обязательных изменений; при добавлении новых normative-секций обновить контракт проверки. |
 | `standards/decisions/ADR-012-mango-taxonomy.md` | **Без изменений.** RFC не противоречит ADR-012 (см. §8). Приоритет ADR-011 над ADR-012 сохраняется. |
 | `standards/industry-taxonomy-standard.md` | **Без изменений** (отдельная задача #178). |
-| `kb/industry-taxonomy/reference-taxonomy.json` | **Без изменений** в рамках #181. Дедуп дублей — Industry scope. |
+| `kb/industry-taxonomy/registry.json` | **Без изменений** в рамках #181. Дедуп дублей — Industry scope. |
 | `CHANGELOG.md` | Запись по #181 добавляется после approved-реализации. |
 
 ## 7. Зависимость от Industry Reference Data (обязательно по ДоД п.10)
 
 Mango registry содержит `maps_to.industry_alignment[].industry_ref`, ссылающийся
-на `kb/industry-taxonomy/reference-taxonomy.json`. Параллельная задача #178
+на `kb/industry-taxonomy/registry.json`. Параллельная задача #178
 (PR #179) предлагает дедуплицировать дублированные Industry-узлы через
 `deprecated` + `replacement` + alias.
 

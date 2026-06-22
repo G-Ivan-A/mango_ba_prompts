@@ -10,7 +10,7 @@ discrepancies between ADR-011 and ADR-012:
   canonical ones from the Mango Taxonomy standard (`level`, `official_urls`,
   `supported_by_services`, `evidence_refs`, `maps_to.industry_alignment[]`);
 * every `industry_ref` slug used in ADR examples resolves in the canonical
-  Industry registry `kb/industry-taxonomy/reference-taxonomy.json`;
+  Industry registry `kb/industry-taxonomy/registry.json`;
 * the `select-wallboard-widget` alignment is realigned to the canonical chain.
 
 The check is intentionally substring/structure based and stdlib-only so it runs
@@ -30,7 +30,7 @@ ADR_011 = "standards/decisions/ADR-011-industry-taxonomy.md"
 ADR_012 = "standards/decisions/ADR-012-mango-taxonomy.md"
 INDUSTRY_STANDARD = "standards/industry-taxonomy-standard.md"
 MANGO_STANDARD = "standards/mango-taxonomy-standard.md"
-INDUSTRY_REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
+INDUSTRY_REGISTRY = "kb/industry-taxonomy/registry.json"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
 KB_WORKFLOW = ".github/workflows/kb.yml"

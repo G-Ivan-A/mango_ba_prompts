@@ -10,8 +10,8 @@ operating_mode: "Creative (Deep Dive)"
 related_artifacts:
   - "standards/mango-taxonomy-standard.md"
   - "standards/industry-taxonomy-standard.md"
-  - "kb/mango-taxonomy/mango-registry.json"
-  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/mango-taxonomy/registry.json"
+  - "kb/industry-taxonomy/registry.json"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 test_artifacts:
@@ -26,7 +26,7 @@ test_artifacts:
 
 > **TL;DR.** Независимый AI-агент сошёлся с эталоном на **уровне Domain — 81 %** и
 > на **точном полном пути — 37 %** (формула ДоД). Ноль галлюцинаций: 100 % выбранных
-> AI узлов реально существуют в `reference-taxonomy.json`. Все расхождения сводятся к
+> AI узлов реально существуют в `registry.json`. Все расхождения сводятся к
 > **четырём конкретным, воспроизводимым причинам**, две из которых — дефекты самих
 > артефактов (дублирующиеся id-узлы Industry Taxonomy и недомаппленная глубина в
 > Mango-реестре), а не ошибки агента. **Рекомендация: НЕ фиксировать v1.0
@@ -42,15 +42,15 @@ test_artifacts:
 | Тип теста | Inter-rater reliability (слепой маппинг независимым агентом против эталона) |
 | Количество тестовых сущностей | **27** |
 | AI-агент (rater) | Claude (Opus 4.x), 6 независимых сессий без общего контекста |
-| Источник сущностей | [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) `taxonomy.version 1.0.0` |
-| Целевая таксономия | [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json) `version 1.1.0` |
+| Источник сущностей | [`kb/mango-taxonomy/registry.json`](../../kb/mango-taxonomy/registry.json) `taxonomy.version 1.0.0` |
+| Целевая таксономия | [`kb/industry-taxonomy/registry.json`](../../kb/industry-taxonomy/registry.json) `version 1.1.0` |
 | Стандарты | [`mango-taxonomy-standard.md`](../../standards/mango-taxonomy-standard.md) `v0.2`, [`industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md) |
 | Эталонный маппинг | `maps_to.industry_alignment[]` из реестра (созданы независимо от rater, по аудиту #164/#170) |
 
 ### 1.1 Методология (как обеспечена независимость)
 
 1. **Эталон (gold).** Для каждой сущности взят `primary`-элемент
-   `maps_to.industry_alignment[]` из `mango-registry.json`. Эталон создавался
+   `maps_to.industry_alignment[]` из `registry.json`. Эталон создавался
    ранее и независимо от теста (см. историю аудита таксономии).
 2. **Слепой вход.** Из каждой записи реестра удалены поля `maps_to` и
    `evidence_refs`; агенту переданы только `id`, `level`, `name_ru`,
@@ -60,10 +60,10 @@ test_artifacts:
 3. **Изоляция.** 27 сущностей разбиты на 6 чанков; каждый чанк обработан
    **отдельной свежей сессией агента без общего контекста** (6 независимых
    «оценщиков»). Каждому агенту было **явно запрещено** открывать
-   `kb/mango-taxonomy/mango-registry.json` или любой файл из `kb/mango-taxonomy/` (там лежит
-   эталон). Разрешённые источники: два стандарта + `reference-taxonomy.json`.
+   `kb/mango-taxonomy/registry.json` или любой файл из `kb/mango-taxonomy/` (там лежит
+   эталон). Разрешённые источники: два стандарта + `registry.json`.
 4. **Задача агента.** Выбрать лучший путь `domain → capability → feature →
-   function` из `reference-taxonomy.json` (точные id) и `alignment_type`
+   function` из `registry.json` (точные id) и `alignment_type`
    согласно §7.2 Mango-стандарта.
 5. **Подсчёт.** Скрипт [`score.py`](../../experiments/issue-176-convergence/score.py)
    сравнивает предсказания агента
@@ -105,7 +105,7 @@ test_artifacts:
 | **Точный полный путь** (формула ДоД) | **10/27 = 37 %** | путь агента побайтово равен эталону |
 | **Префиксное совпадение** | **17/27 = 63 %** | агент совпал со всеми уровнями, которые задаёт эталон (агент мог уйти глубже, не противореча) |
 | **Согласие по Domain** | **22/27 = 81 %** | верхний уровень классификации |
-| **Резолвимость узлов агента** | **27/27 = 100 %** | агент не выдумал ни одного узла — все пути существуют в `reference-taxonomy.json` |
+| **Резолвимость узлов агента** | **27/27 = 100 %** | агент не выдумал ни одного узла — все пути существуют в `registry.json` |
 | **Совпадение `alignment_type`** | **27/27 = 100 %** | агент корректно определил primary как основной смысл |
 
 ### 2.2 Корректность по уровням
@@ -170,7 +170,7 @@ test_artifacts:
 
 ### Причина A — Дублирующиеся id-узлы в Industry Taxonomy (4 кейса: #12, #15, #19, #22)
 
-Это **дефект целевой таксономии**, а не агента. В `reference-taxonomy.json` один
+Это **дефект целевой таксономии**, а не агента. В `registry.json` один
 и тот же `id` существует под двумя разными родителями, без правила
 дизамбигуации в стандарте. Когда агент выбирает семантически идентичный узел —
 он попадает «не в ту ветку».
@@ -261,7 +261,7 @@ test_artifacts:
 в реестре. Формально это «несовпадение», по сути — агент оказался **дисциплинированнее
 реестра** по части глубины.
 
-> **Корень:** эталонные `maps_to` в `mango-registry.json` систематически мельче
+> **Корень:** эталонные `maps_to` в `registry.json` систематически мельче
 > рекомендации §7.3 для уровней Module/Function.
 
 ### 3.1 Сводка причин
@@ -310,8 +310,8 @@ test_artifacts:
 
 | # | Приоритет | Действие | Адресует | Артефакт |
 | --- | :---: | --- | --- | --- |
-| R1 | **P1** | Дедуплицировать кросс-веточные id-узлы Industry Taxonomy (`conversation-summaries`, `access-control`, `call-routing`, `live-monitoring`, …) — оставить один canonical, остальные оформить как alias (§10.2 industry-стандарта). Добавить в оба стандарта правило выбора канонической ветки при совпадении смысла. | Причина A | `kb/industry-taxonomy/reference-taxonomy.json`, оба стандарта |
-| R2 | **P1** | Доуглубить эталонные `maps_to` для Module/Function в `mango-registry.json` до рекомендации §7.3 (или явно проставить `mapping_gap`, если узла нет). | Причина D | `kb/mango-taxonomy/mango-registry.json` |
+| R1 | **P1** | Дедуплицировать кросс-веточные id-узлы Industry Taxonomy (`conversation-summaries`, `access-control`, `call-routing`, `live-monitoring`, …) — оставить один canonical, остальные оформить как alias (§10.2 industry-стандарта). Добавить в оба стандарта правило выбора канонической ветки при совпадении смысла. | Причина A | `kb/industry-taxonomy/registry.json`, оба стандарта |
+| R2 | **P1** | Доуглубить эталонные `maps_to` для Module/Function в `registry.json` до рекомендации §7.3 (или явно проставить `mapping_gap`, если узла нет). | Причина D | `kb/mango-taxonomy/registry.json` |
 | R3 | **P2** | Добавить в Mango-стандарт boundary-правило для Industry-маппинга: «API/CPaaS vs digital-channel» и «UC corporate-messaging vs team-messaging» — с однозначным критерием. | Причина B | `standards/mango-taxonomy-standard.md` |
 | R4 | **P2** | Добавить правило гранулярности (когда сворачивать в родительский capability) и **проверить эталон #17** (`cc-supervisor-monitoring-module`: `workforce-management` vs `supervisor-assist/live-monitoring`). | Причина C | стандарт + реестр |
 | R5 | **P3** | После R1–R4 повторно прогнать этот тест (тот же набор) и зафиксировать v1.0 при ≥ 80 %. | — | этот документ |
@@ -339,7 +339,7 @@ python3 experiments/issue-176-convergence/score.py
 - [`experiments/issue-176-convergence/scored.json`](../../experiments/issue-176-convergence/scored.json) — результат сравнения.
 - [`experiments/issue-176-convergence/score.py`](../../experiments/issue-176-convergence/score.py) — скрипт подсчёта.
 
-> ⚠️ Ограничение метода: эталон взят из `mango-registry.json`, который сам
+> ⚠️ Ограничение метода: эталон взят из `registry.json`, который сам
 > содержит дефекты (причины C/D). Поэтому строгая корректность (37 %)
 > **занижает** реальное качество понимания стандартов агентом; содержательная
 > сходимость отражена в метриках Domain (81 %) и резолвимости (100 %).
