@@ -1,0 +1,31 @@
+run_id: RUN-0012
+process: bcreq-180-mt-group-video-call
+run_type: business-task
+version: "0.1"
+date: 2026-06-22
+author: "BA + LLM (Claude Opus 4.8)"
+model: "claude-opus-4-8"
+status: draft
+source_paths:
+  - runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md
+  - runs/2026/RUN-0012/outputs/summary-bcreq-180-2026-06-22.md
+inputs:
+  - inputs/01-raw-task-and-change-decision.md
+  - inputs/02-previous-ft-audio-conference.md
+  - inputs/03-kb-extracts.md
+outputs:
+  - outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md
+  - outputs/summary-bcreq-180-2026-06-22.md
+logs:
+  - logs/experiment-log.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/180
+related_artifacts:
+  - prompts/glossary-context-understanding-stepwise.md
+  - prompts/fr-documentation-oneshot.md
+  - prompts/constraints-documentation-oneshot.md
+  - patterns/fr-generation/README.md
+  - standards/bcreq-process-standard.md
+related_runs:
+  - RUN-0007
+  - RUN-0010

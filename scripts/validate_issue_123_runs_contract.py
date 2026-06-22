@@ -109,6 +109,18 @@ EXPECTED_RUNS = {
             "docs/ba-process/multichannel-agent-workload/steps/step-5-options.md",
         ],
     },
+    "RUN-0012": {
+        "year": "2026",
+        "files": [
+            "inputs/01-raw-task-and-change-decision.md",
+            "inputs/02-previous-ft-audio-conference.md",
+            "inputs/03-kb-extracts.md",
+            "outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md",
+            "outputs/summary-bcreq-180-2026-06-22.md",
+            "logs/experiment-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 
