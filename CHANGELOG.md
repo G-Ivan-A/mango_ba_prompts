@@ -25,6 +25,14 @@ ai-generated: true
   валидаторах, workflow и экспериментах; добавлена регрессионная проверка
   [`scripts/validate_issue_190_taxonomy_registry_filenames.py`](scripts/validate_issue_190_taxonomy_registry_filenames.py),
   подключённая к `make kb-validate` и KB workflow.
+### Added — Issue #186 RFC Rules Registry System
+
+- Добавлен RFC
+  [`docs/analysis/rfc-rules-registry-system.md`](docs/analysis/rfc-rules-registry-system.md)
+  с анализом существующих rule-like источников, предложением atomic rule model,
+  process/operation bindings, AI-agent contract, lifecycle, validation approach
+  и вопросами на founder approval. Реестр правил, новые governance-контракты,
+  изменения промптов и validator не внедрялись до явного approval.
 
 ### Changed — Issue #184 доработка ФТ RUN-0012 по ревью БА (чистка скоупа)
 
