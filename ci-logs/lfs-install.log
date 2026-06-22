@@ -1,30 +1,0 @@
-Get:1 https://cli.github.com/packages stable InRelease [3917 B]
-Hit:2 https://download.docker.com/linux/ubuntu noble InRelease
-Get:3 https://dl.google.com/linux/chrome-stable/deb stable InRelease [1825 B]
-Hit:4 http://archive.ubuntu.com/ubuntu noble InRelease
-Hit:5 http://security.ubuntu.com/ubuntu noble-security InRelease
-Hit:6 http://archive.ubuntu.com/ubuntu noble-updates InRelease
-Hit:7 http://archive.ubuntu.com/ubuntu noble-backports InRelease
-Get:8 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1218 B]
-Hit:9 https://packages.microsoft.com/repos/edge stable InRelease
-Hit:10 https://packages.microsoft.com/repos/edge-stable stable InRelease
-Fetched 6960 B in 1s (6674 B/s)
-Reading package lists...
-Reading package lists...
-Building dependency tree...
-Reading state information...
-The following NEW packages will be installed:
-  git-lfs
-0 upgraded, 1 newly installed, 0 to remove and 0 not upgraded.
-Need to get 3908 kB of archives.
-After this operation, 11.7 MB of additional disk space will be used.
-Get:1 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 git-lfs amd64 3.4.1-1ubuntu0.4 [3908 kB]
-debconf: delaying package configuration, since apt-utils is not installed
-Fetched 3908 kB in 0s (25.3 MB/s)
-Selecting previously unselected package git-lfs.
-(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 71920 files and directories currently installed.)
-Preparing to unpack .../git-lfs_3.4.1-1ubuntu0.4_amd64.deb ...
-Unpacking git-lfs (3.4.1-1ubuntu0.4) ...
-Setting up git-lfs (3.4.1-1ubuntu0.4) ...
-Updated Git hooks.
-Git LFS initialized.
