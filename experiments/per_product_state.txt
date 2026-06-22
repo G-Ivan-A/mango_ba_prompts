@@ -1,0 +1,388 @@
+==========================================================================================
+PRODUCT mango-virtual-pbx  cluster?  official_refs=['mango-virtual-pbx-official', 'mango-sip-trunk-official', 'mango-numbers-equipment-official']  internal_only=False
+   P-align: voice-ucaas/cloud-pbx [primary]
+  SERVICE vats-inbound-routing-service  cluster=vats-core  sec=None
+      S-align: voice-ucaas/call-routing [primary][ch:voice/sync/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md', 'kb/mango-product-docs/processed/vpbx-api/sections/42-marshrutizaciya-vyzova.md']
+    MODULE vats-inbound-scenarios-module  cluster=vats-core
+        M-align: voice-ucaas/call-routing [primary][ch:voice/sync/inbound]
+      FUNC receive-inbound-call-through-scenario  type=business surface=system-rule
+          F-align: voice-ucaas/voice-channel/inbound-voice-call/receive-inbound-call [primary][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md']
+      FUNC configure-inbound-call-scenario  type=configuration surface=admin-ui
+          F-align: voice-ucaas/call-routing [primary][GAP:inbound-call-scenario][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md']
+  SERVICE vats-ivr-service  cluster=vats-core  sec=None
+      S-align: voice-ucaas/ivr-voice-menu [primary][ch:voice/sync/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md']
+    MODULE vats-ivr-menu-module  cluster=vats-core
+        M-align: voice-ucaas/ivr-voice-menu [primary][ch:voice/sync/inbound]
+      FUNC play-ivr-menu-to-caller  type=business surface=system-rule
+          F-align: voice-ucaas/ivr-voice-menu [primary][GAP:play-ivr-menu][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md']
+      FUNC edit-ivr-menu-branch  type=configuration surface=admin-ui
+          F-align: voice-ucaas/ivr-voice-menu [primary][GAP:edit-ivr-branch][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md']
+  SERVICE vats-number-management-service  cluster=vats-core  sec=None
+      S-align: voice-ucaas/number-management [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md', 'kb/mango-product-docs/processed/sip-trunk/index.md']
+    MODULE vats-connected-numbers-module  cluster=vats-core
+        M-align: voice-ucaas/number-management [primary]
+      FUNC assign-connected-number-route  type=configuration surface=admin-ui
+          F-align: voice-ucaas/number-management [primary][GAP:assign-number-route]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md']
+      FUNC view-connected-number-list  type=ui-action surface=admin-ui
+          F-align: voice-ucaas/number-management [primary][GAP:view-number-list]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/100-nomera-podklyuchennye-k-ats.md']
+  SERVICE vats-recording-history-service  cluster=vats-core  sec=None
+      S-align: voice-ucaas/call-recording [primary][ch:voice/sync/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/134-zapis-razgovorov.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md', 'kb/mango-product-docs/processed/vpbx-api/sections/40-vklyuchenie-zapisi-razgovora.md']
+    MODULE vats-call-recording-module  cluster=vats-core
+        M-align: voice-ucaas/call-recording [primary][ch:voice/sync/inbound]
+      FUNC enable-call-recording-rule  type=configuration surface=admin-ui
+          F-align: voice-ucaas/call-recording [primary][GAP:enable-call-recording-rule][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/134-zapis-razgovorov.md']
+      FUNC play-call-recording  type=ui-action surface=admin-ui
+          F-align: voice-ucaas/call-recording [primary][GAP:play-call-recording][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md']
+==========================================================================================
+PRODUCT mango-contact-center  cluster?  official_refs=['mango-contact-center-official']  internal_only=False
+   P-align: contact-center/omnichannel-contact-center [primary]
+  SERVICE cc-agent-workspace-service  cluster=contact-center-core  sec=None
+      S-align: contact-center/agent-workspace [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/05-upravlenie-statusom.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/07-ochered-obrascheniy.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/46-sovershenie-ishodyaschih-vyzovov.md']
+    MODULE cc-agent-call-handling-module  cluster=contact-center-core
+        M-align: contact-center/agent-workspace [primary]
+      FUNC accept-queue-interaction  type=business surface=operator-ui
+          F-align: contact-center/agent-workspace [primary][GAP:accept-queue-interaction]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/07-ochered-obrascheniy.md']
+      FUNC set-agent-status  type=ui-action surface=operator-ui
+          F-align: contact-center/agent-workspace [primary][GAP:set-agent-status]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/05-upravlenie-statusom.md']
+  SERVICE cc-interaction-routing-service  cluster=contact-center-core  sec=None
+      S-align: contact-center/interaction-routing/queue-routing [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/07-ochered-obrascheniy.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/64-avtomaticheskoe-raspredelenie-obrascheni.md']
+    MODULE cc-queue-routing-module  cluster=contact-center-core
+        M-align: contact-center/interaction-routing/queue-routing [primary]
+      FUNC route-interaction-to-queue  type=business surface=system-rule
+          F-align: contact-center/interaction-routing/queue-routing [primary][GAP:route-interaction-to-queue]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/64-avtomaticheskoe-raspredelenie-obrascheni.md']
+      FUNC configure-queue-routing-rule  type=configuration surface=admin-ui
+          F-align: contact-center/interaction-routing/routing-rules [primary][GAP:configure-queue-routing-rule]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/64-avtomaticheskoe-raspredelenie-obrascheni.md']
+  SERVICE cc-outbound-campaign-service  cluster=contact-center-core  sec=None
+      S-align: contact-center/outbound-calling/campaign-management [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/123-ishodyaschiy-obzvon.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/127-dobavlenie-kampanii.md']
+    MODULE cc-outbound-campaign-module  cluster=contact-center-core
+        M-align: contact-center/outbound-calling/campaign-management [primary]
+      FUNC start-outbound-campaign  type=business surface=operator-ui
+          F-align: contact-center/outbound-calling/campaign-management/start-campaign [primary][ch:voice/sync/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/123-ishodyaschiy-obzvon.md']
+      FUNC configure-outbound-campaign  type=configuration surface=admin-ui
+          F-align: contact-center/outbound-calling/campaign-management [primary][GAP:configure-outbound-campaign]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/127-dobavlenie-kampanii.md']
+  SERVICE cc-supervisor-wfm-service  cluster=contact-center-core  sec=None
+      S-align: contact-center/workforce-management [primary]
+      S-align: contact-center/supervisor-workspace [secondary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/100-planirovanie-vhodyaschih.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/58-sozdanie-i-nastroyka-vidzheta.md']
+    MODULE cc-supervisor-wfm-module  cluster=contact-center-core
+        M-align: contact-center/workforce-management [primary]
+        M-align: contact-center/supervisor-workspace [secondary]
+      FUNC monitor-agent-workload  type=ui-action surface=operator-ui
+          F-align: contact-center/supervisor-workspace [primary][GAP:monitor-agent-workload]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md']
+      FUNC configure-workforce-schedule  type=configuration surface=admin-ui
+          F-align: contact-center/workforce-management [primary][GAP:configure-workforce-schedule]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/100-planirovanie-vhodyaschih.md']
+==========================================================================================
+PRODUCT mango-digital-communications  cluster?  official_refs=['mango-text-communications-official']  internal_only=False
+   P-align: digital-channels/omnichannel-messaging [primary][ch:text/async/inbound]
+  SERVICE digital-channel-group-service  cluster=digital-channels  sec=None
+      S-align: digital-channels/omnichannel-messaging [primary][ch:text/async/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/192-telegram.md']
+    MODULE digital-channel-group-module  cluster=digital-channels
+        M-align: digital-channels/omnichannel-messaging [primary][ch:text/async/inbound]
+      FUNC send-channel-message  type=business surface=operator-ui
+          F-align: digital-channels/omnichannel-messaging/messenger-integration/send-message [primary][ch:text/async/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md']
+      FUNC configure-channel-group  type=configuration surface=admin-ui
+          F-align: digital-channels/omnichannel-messaging [primary][GAP:configure-channel-group][ch:text/async/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/179-tekstovye-kommunikacii.md']
+  SERVICE website-chat-service  cluster=digital-channels  sec=None
+      S-align: digital-channels/website-chat [primary][ch:text/async/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/189-chat-na-sayte.md']
+    MODULE website-chat-widget-module  cluster=digital-channels
+        M-align: digital-channels/website-chat [primary][ch:text/async/inbound]
+      FUNC receive-website-chat  type=business surface=operator-ui
+          F-align: digital-channels/website-chat [primary][GAP:receive-website-chat][ch:text/async/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/189-chat-na-sayte.md']
+      FUNC install-website-chat-widget  type=configuration surface=admin-ui
+          F-align: digital-channels/website-chat [primary][GAP:install-website-chat-widget]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/189-chat-na-sayte.md']
+  SERVICE messenger-channel-service  cluster=digital-channels  sec=None
+      S-align: digital-channels/omnichannel-messaging/messenger-integration [primary][ch:text/async/inbound]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/192-telegram.md']
+    MODULE messenger-channel-connector-module  cluster=digital-channels
+        M-align: digital-channels/omnichannel-messaging/messenger-integration [primary][ch:text/async/inbound]
+      FUNC connect-telegram-channel  type=configuration surface=admin-ui
+          F-align: digital-channels/omnichannel-messaging/messenger-integration [primary][GAP:connect-telegram-channel][ch:text/async/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/192-telegram.md']
+      FUNC reply-to-messenger-dialog  type=business surface=operator-ui
+          F-align: digital-channels/omnichannel-messaging/messenger-integration/send-message [primary][ch:text/async/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/191-whatsapp.md']
+  SERVICE dialog-api-messaging-service  cluster=digital-channels  sec=None
+      S-align: platform/communications-apis [primary]
+      S-align: digital-channels/omnichannel-messaging [secondary][ch:text/async/outbound]
+      S-evidence: ['kb/mango-product-docs/processed/mdialogi-api/index.md', 'kb/mango-product-docs/processed/vpbx-api/sections/238-otpravka-soobscheniya.md', 'kb/mango-product-docs/processed/vpbx-api/sections/239-opoveschenie-o-tom-chto-polzovatel-nabir.md']
+    MODULE dialog-api-message-module  cluster=digital-channels
+        M-align: platform/communications-apis [primary]
+        M-align: digital-channels/omnichannel-messaging [secondary][ch:text/async/outbound]
+      FUNC send-dialog-api-message  type=business surface=api
+          F-align: digital-channels/omnichannel-messaging/messenger-integration/send-message [primary][ch:text/async/outbound]
+          F-align: platform/communications-apis [supporting]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/238-otpravka-soobscheniya.md']
+      FUNC receive-dialog-api-event  type=business surface=webhook
+          F-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary][ch:text/async/inbound]
+          F-align: digital-channels/omnichannel-messaging [secondary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/239-opoveschenie-o-tom-chto-polzovatel-nabir.md']
+==========================================================================================
+PRODUCT mango-talker  cluster?  official_refs=['mango-talker-official']  internal_only=False
+   P-align: voice-ucaas/unified-communications [primary]
+  SERVICE talker-softphone-service  cluster=mango-talker  sec=None
+      S-align: voice-ucaas/unified-communications [primary][ch:voice/sync/outbound]
+      S-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/11-zvonok-sotrudniku.md', 'kb/mango-product-docs/processed/mtalker/android-user-guide/sections/15-kak-prinyat-vhodyaschiy-zvonok.md']
+    MODULE talker-softphone-module  cluster=mango-talker
+        M-align: voice-ucaas/unified-communications [primary][ch:voice/sync/outbound]
+      FUNC call-colleague-in-talker  type=business surface=end-user-ui
+          F-align: voice-ucaas/voice-channel/outbound-voice-call [primary][ch:voice/sync/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/11-zvonok-sotrudniku.md']
+      FUNC answer-talker-call  type=business surface=end-user-ui
+          F-align: voice-ucaas/voice-channel/inbound-voice-call/receive-inbound-call [primary][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/15-kak-prinyat-vhodyaschiy-zvonok.md']
+  SERVICE talker-team-chat-service  cluster=mango-talker  sec=None
+      S-align: digital-channels/team-messaging [primary][ch:text/async/outbound]
+      S-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/17-otpravka-soobscheniya-v-chat.md', 'kb/mango-product-docs/processed/mtalker/android-user-guide/sections/47-sozdanie-novogo-chata-ili-kanala.md']
+    MODULE talker-team-chat-module  cluster=mango-talker
+        M-align: digital-channels/team-messaging [primary][ch:text/async/outbound]
+      FUNC send-talker-chat-message  type=business surface=end-user-ui
+          F-align: digital-channels/team-messaging [primary][GAP:send-team-chat-message][ch:text/async/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/17-otpravka-soobscheniya-v-chat.md']
+      FUNC create-talker-chat-channel  type=configuration surface=end-user-ui
+          F-align: digital-channels/team-messaging [primary][GAP:create-team-chat-channel]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/47-sozdanie-novogo-chata-ili-kanala.md']
+  SERVICE talker-video-meeting-service  cluster=mango-talker  sec=None
+      S-align: voice-ucaas/unified-communications [primary][ch:video/sync/outbound]
+      S-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/14-kak-nachat-gruppovoy-videozvonok.md', 'kb/mango-product-docs/processed/mtalker/android-user-guide/sections/42-kak-prisoedinitsya-k-konferencii-po-ssyl.md']
+    MODULE talker-video-meeting-module  cluster=mango-talker
+        M-align: voice-ucaas/unified-communications [primary][ch:video/sync/outbound]
+      FUNC start-talker-video-call  type=business surface=end-user-ui
+          F-align: voice-ucaas/unified-communications [primary][GAP:start-video-call][ch:video/sync/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/14-kak-nachat-gruppovoy-videozvonok.md']
+      FUNC join-talker-conference-room  type=business surface=end-user-ui
+          F-align: voice-ucaas/unified-communications [primary][GAP:join-conference-room][ch:video/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/42-kak-prisoedinitsya-k-konferencii-po-ssyl.md']
+  SERVICE talker-contact-history-service  cluster=mango-talker  sec=None
+      S-align: voice-ucaas/unified-communications [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/97-opisanie-kartochki-kontakta.md', 'kb/mango-product-docs/processed/mtalker/android-user-guide/sections/78-opisanie-zhurnala-vyzovov.md']
+    MODULE talker-contact-history-module  cluster=mango-talker
+        M-align: voice-ucaas/unified-communications [primary]
+      FUNC open-talker-contact-card  type=ui-action surface=end-user-ui
+          F-align: voice-ucaas/unified-communications [primary][GAP:open-contact-card]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/97-opisanie-kartochki-kontakta.md']
+      FUNC call-contact-from-history  type=business surface=end-user-ui
+          F-align: voice-ucaas/voice-channel/outbound-voice-call [primary][ch:voice/sync/outbound]
+          F-evidence: ['kb/mango-product-docs/processed/mtalker/android-user-guide/sections/78-opisanie-zhurnala-vyzovov.md']
+==========================================================================================
+PRODUCT mango-ai-speech-quality  cluster?  official_refs=['mango-speech-analytics-official', 'mango-robots-official']  internal_only=False
+   P-align: ai-automation/speech-analytics [primary]
+  SERVICE speech-analytics-service  cluster=ai-speech-quality  sec=None
+      S-align: ai-automation/speech-analytics [primary]
+      S-evidence: ['kb/mango-product-docs/processed/speech-analytics/index.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md']
+    MODULE speech-analytics-topic-module  cluster=ai-speech-quality
+        M-align: ai-automation/speech-analytics [primary]
+      FUNC recognize-recorded-call-speech  type=business surface=background-job
+          F-align: ai-automation/speech-analytics [primary][GAP:recognize-call-speech][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/speech-analytics/index.md']
+      FUNC configure-speech-topic  type=configuration surface=admin-ui
+          F-align: ai-automation/speech-analytics [primary][GAP:configure-speech-topic]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/178-rechevaya-analitika.md']
+  SERVICE conversation-summary-service  cluster=ai-speech-quality  sec=None
+      S-align: ai-automation/conversation-summaries/ai-summary/generate-summary [primary]
+      S-evidence: ['kb/mango-product-docs/processed/vpbx-api/index.md', 'kb/mango-product-docs/processed/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md']
+    MODULE conversation-summary-module  cluster=ai-speech-quality
+        M-align: ai-automation/conversation-summaries/ai-summary/generate-summary [primary]
+      FUNC generate-call-summary  type=business surface=background-job
+          F-align: ai-automation/conversation-summaries/ai-summary/generate-summary [primary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/index.md']
+      FUNC view-call-summary  type=ui-action surface=admin-ui
+          F-align: ai-automation/conversation-summaries/ai-summary [primary][GAP:view-call-summary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/index.md']
+  SERVICE quality-checklist-service  cluster=ai-speech-quality  sec=None
+      S-align: contact-center/quality-management [primary]
+      S-evidence: ['kb/mango-product-docs/processed/quality-managment/index.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/184-konstruktor-chek-listov.md']
+    MODULE quality-checklist-module  cluster=ai-speech-quality
+        M-align: contact-center/quality-management [primary]
+      FUNC evaluate-call-by-checklist  type=business surface=admin-ui
+          F-align: contact-center/quality-management [primary][GAP:evaluate-call-by-checklist]
+          F-evidence: ['kb/mango-product-docs/processed/quality-managment/index.md']
+      FUNC configure-quality-checklist  type=configuration surface=admin-ui
+          F-align: contact-center/quality-management [primary][GAP:configure-quality-checklist]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/184-konstruktor-chek-listov.md']
+  SERVICE voice-robot-service  cluster=ai-speech-quality  sec=None
+      S-align: ai-automation/voice-bot [primary][ch:voice/sync/outbound]
+      S-evidence: ['https://www.mango-office.ru/products/contact-center/ai/voice-robot/', 'https://www.mango-office.ru/products/']
+    MODULE voice-robot-scenario-module  cluster=ai-speech-quality
+        M-align: ai-automation/voice-bot [primary][ch:voice/sync/outbound]
+      FUNC run-voice-robot-dialog  type=business surface=system-rule
+          F-align: ai-automation/voice-bot [primary][GAP:run-voice-robot-dialog][ch:voice/sync/outbound]
+          F-evidence: ['https://www.mango-office.ru/products/contact-center/ai/voice-robot/']
+      FUNC configure-voice-robot-scenario  type=configuration surface=admin-ui
+          F-align: ai-automation/voice-bot [primary][GAP:configure-voice-robot-scenario]
+          F-evidence: ['https://www.mango-office.ru/products/contact-center/ai/voice-robot/']
+==========================================================================================
+PRODUCT mango-marketing-analytics  cluster?  official_refs=['mango-calltracking-official']  internal_only=False
+   P-align: analytics/call-tracking [primary]
+  SERVICE calltracking-attribution-service  cluster=analytics-marketing  sec=None
+      S-align: analytics/call-tracking [primary]
+      S-evidence: ['https://www.mango-office.ru/products/calltracking/', 'kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md']
+    MODULE calltracking-attribution-module  cluster=analytics-marketing
+        M-align: analytics/call-tracking [primary]
+      FUNC attribute-call-to-ad-source  type=business surface=background-job
+          F-align: analytics/call-tracking [primary][GAP:attribute-call-to-ad-source]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md']
+      FUNC configure-calltracking-number  type=configuration surface=admin-ui
+          F-align: analytics/call-tracking [primary][GAP:configure-calltracking-number]
+          F-evidence: ['https://www.mango-office.ru/products/calltracking/']
+  SERVICE end-to-end-analytics-service  cluster=analytics-marketing  sec=None
+      S-align: analytics/end-to-end-analytics [primary]
+      S-evidence: ['https://www.mango-office.ru/products/calltracking/', 'kb/mango-product-docs/processed/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md']
+    MODULE end-to-end-analytics-module  cluster=analytics-marketing
+        M-align: analytics/end-to-end-analytics [primary]
+      FUNC join-call-and-sales-funnel  type=business surface=background-job
+          F-align: analytics/end-to-end-analytics [primary][GAP:join-call-and-sales-funnel]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md']
+      FUNC open-end-to-end-analytics-report  type=ui-action surface=admin-ui
+          F-align: analytics/end-to-end-analytics [primary][GAP:open-end-to-end-analytics-report]
+          F-evidence: ['https://www.mango-office.ru/products/calltracking/']
+  SERVICE reporting-dashboard-service  cluster=analytics-marketing  sec=None
+      S-align: analytics/multichannel-analytics [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/57-dashboard.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/58-sozdanie-i-nastroyka-vidzheta.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md']
+    MODULE reporting-dashboard-module  cluster=analytics-marketing
+        M-align: analytics/multichannel-analytics [primary]
+      FUNC build-analytics-report  type=business surface=background-job
+          F-align: analytics/multichannel-analytics [primary][GAP:build-analytics-report]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/148-analitika.md']
+      FUNC select-dashboard-widget  type=ui-action surface=admin-ui
+          F-align: analytics/real-time-reporting/dashboard-view/select-dashboard-widget [primary]
+          F-evidence: ['kb/mango-product-docs/processed/mango-cc-manual/sections/58-sozdanie-i-nastroyka-vidzheta.md']
+  SERVICE wallboard-monitoring-service  cluster=analytics-marketing  sec=None
+      S-align: analytics/real-time-reporting [primary]
+      S-evidence: ['kb/mango-product-docs/processed/wallboard/index.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/234-wallboard.md']
+    MODULE wallboard-monitoring-module  cluster=analytics-marketing
+        M-align: analytics/real-time-reporting [primary]
+      FUNC display-wallboard-widget  type=business surface=end-user-ui
+          F-align: analytics/real-time-reporting/dashboard-view/select-dashboard-widget [primary]
+          F-evidence: ['kb/mango-product-docs/processed/wallboard/index.md']
+      FUNC configure-wallboard-widget  type=configuration surface=admin-ui
+          F-align: analytics/real-time-reporting [primary][GAP:configure-wallboard-widget]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/234-wallboard.md']
+==========================================================================================
+PRODUCT mango-platform-integrations  cluster?  official_refs=['mango-integrations-official']  internal_only=False
+   P-align: platform/open-api [primary]
+  SERVICE vpbx-open-api-service  cluster=platform-integrations  sec=None
+      S-align: platform/open-api [primary]
+      S-evidence: ['kb/mango-product-docs/processed/vpbx-api/index.md', 'kb/mango-product-docs/processed/vpbx-api/sections/246-iniciirovanie-ishodyaschego-vyzova.md', 'kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md']
+    MODULE vpbx-open-api-module  cluster=platform-integrations
+        M-align: platform/open-api [primary]
+      FUNC initiate-vpbx-api-call  type=business surface=api
+          F-align: voice-ucaas/voice-channel/outbound-voice-call [primary][ch:voice/sync/outbound]
+          F-align: platform/open-api [supporting]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/246-iniciirovanie-ishodyaschego-vyzova.md']
+      FUNC configure-vpbx-webhook  type=configuration surface=api
+          F-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md']
+  SERVICE contact-center-api-service  cluster=platform-integrations  sec=None
+      S-align: platform/open-api [primary]
+      S-align: contact-center/conversation-orchestration [secondary]
+      S-evidence: ['kb/mango-product-docs/processed/vpbx-api/index.md', 'kb/mango-product-docs/processed/vpbx-api/sections/157-sozdanie-zadachi-na-avtoperezvon.md', 'kb/mango-product-docs/processed/vpbx-api/sections/215-sobytiya.md']
+    MODULE contact-center-api-module  cluster=platform-integrations
+        M-align: platform/open-api [primary]
+        M-align: contact-center/conversation-orchestration [secondary]
+      FUNC create-contact-center-task-api  type=business surface=api
+          F-align: platform/open-api [primary][GAP:create-contact-center-task]
+          F-align: contact-center/conversation-orchestration [secondary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/157-sozdanie-zadachi-na-avtoperezvon.md']
+      FUNC receive-contact-center-event-webhook  type=business surface=webhook
+          F-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+          F-align: contact-center/conversation-orchestration [secondary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/215-sobytiya.md']
+  SERVICE crm-erp-integration-service  cluster=platform-integrations  sec=None
+      S-align: platform/platform-integration [primary]
+      S-evidence: ['kb/mango-product-docs/processed/integration-bitrix24/index.md', 'kb/mango-product-docs/processed/integration_1c/index.md', 'kb/mango-product-docs/processed/integration_amocrm/index.md']
+    MODULE crm-erp-integration-module  cluster=platform-integrations
+        M-align: platform/platform-integration [primary]
+      FUNC sync-crm-call-card  type=business surface=background-job
+          F-align: platform/platform-integration [primary][GAP:sync-crm-call-card]
+          F-evidence: ['kb/mango-product-docs/processed/integration-bitrix24/index.md']
+      FUNC configure-crm-integration  type=configuration surface=admin-ui
+          F-align: platform/platform-integration [primary][GAP:configure-crm-integration]
+          F-evidence: ['kb/mango-product-docs/processed/integration_amocrm/index.md']
+  SERVICE webhook-event-service  cluster=platform-integrations  sec=None
+      S-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+      S-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md', 'kb/mango-product-docs/processed/vpbx-api/index.md']
+    MODULE webhook-event-module  cluster=platform-integrations
+        M-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+      FUNC send-call-event-webhook  type=business surface=webhook
+          F-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+          F-align: voice-ucaas/voice-channel/inbound-voice-call [secondary][ch:voice/sync/inbound]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md']
+      FUNC configure-webhook-endpoint  type=configuration surface=admin-ui
+          F-align: platform/open-api/webhook-management/configure-webhook-endpoint [primary]
+          F-evidence: ['kb/mango-product-docs/processed/vpbx-api/sections/245-uvedomlenie-o-vyzove.md']
+==========================================================================================
+PRODUCT mango-security-access  cluster?  official_refs=None  internal_only=True
+   P-align: security/access-control [primary]
+  SERVICE role-access-management-service  cluster=security-access  sec=None
+      S-align: security/access-control/role-management/assign-role [primary]
+      S-evidence: ['kb/mango-product-docs/processed/Rolevaya-model-vats/index.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/286-nastroyka-prav-dostupa-roli.md', 'kb/mango-product-docs/processed/mango-cc-manual/sections/217-prilozhenie-1-upravlenie-pravami-dostupa.md']
+    MODULE role-access-management-module  cluster=security-access
+        M-align: security/access-control/role-management/assign-role [primary]
+      FUNC assign-user-role  type=configuration surface=admin-ui
+          F-align: security/access-control/role-management/assign-role [primary]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/286-nastroyka-prav-dostupa-roli.md']
+      FUNC view-role-permissions  type=ui-action surface=admin-ui
+          F-align: security/access-control/role-management [primary][GAP:view-role-permissions]
+          F-evidence: ['kb/mango-product-docs/processed/Rolevaya-model-vats/index.md']
+  SERVICE sso-identity-service  cluster=security-access  sec=None
+      S-align: security/access-control [primary]
+      S-evidence: ['kb/mango-product-docs/processed/lk-vats-sso/index.md']
+    MODULE sso-identity-module  cluster=security-access
+        M-align: security/access-control [primary]
+      FUNC authenticate-user-with-sso  type=business surface=end-user-ui
+          F-align: security/access-control [primary][GAP:authenticate-user-with-sso]
+          F-evidence: ['kb/mango-product-docs/processed/lk-vats-sso/index.md']
+      FUNC configure-sso-connection  type=configuration surface=admin-ui
+          F-align: security/access-control [primary][GAP:configure-sso-connection]
+          F-evidence: ['kb/mango-product-docs/processed/lk-vats-sso/index.md']
+  SERVICE recording-access-security-service  cluster=security-access  sec=None
+      S-align: security/information-security [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/134-zapis-razgovorov.md', 'kb/mango-product-docs/processed/mango-lk-manual/sections/289-bezopasnost-pro.md']
+    MODULE recording-access-security-module  cluster=security-access
+        M-align: security/information-security [primary]
+      FUNC restrict-recording-access  type=configuration surface=admin-ui
+          F-align: security/information-security [primary][GAP:restrict-recording-access]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/289-bezopasnost-pro.md']
+      FUNC audit-recording-download  type=ui-action surface=admin-ui
+          F-align: security/information-security [primary][GAP:audit-recording-download]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/134-zapis-razgovorov.md']
+  SERVICE security-audit-settings-service  cluster=security-access  sec=None
+      S-align: security/information-security [primary]
+      S-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/289-bezopasnost-pro.md', 'kb/mango-product-docs/processed/mango-lk-manual/index.md']
+    MODULE security-audit-settings-module  cluster=security-access
+        M-align: security/information-security [primary]
+      FUNC view-security-audit-log  type=ui-action surface=admin-ui
+          F-align: security/information-security [primary][GAP:view-security-audit-log]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/289-bezopasnost-pro.md']
+      FUNC configure-security-policy  type=configuration surface=admin-ui
+          F-align: security/information-security [primary][GAP:configure-security-policy]
+          F-evidence: ['kb/mango-product-docs/processed/mango-lk-manual/sections/289-bezopasnost-pro.md']

@@ -1,0 +1,385 @@
+COUNTS: official=10 products=8 services=32 modules=32 functions=64 mapping_entities=146
+================================================================================
+OFFICIAL PRODUCTS
+- mango-virtual-pbx-official | Виртуальная АТС | active
+    supported_by_services: ['vats-inbound-routing-service', 'vats-ivr-service', 'vats-number-management-service', 'vats-recording-history-service']
+    maps_to: primary:voice-ucaas/cloud-pbx
+- mango-sip-trunk-official | SIP Trunk и гибридная телефония | active
+    supported_by_services: ['vats-number-management-service', 'vpbx-open-api-service']
+    maps_to: primary:voice-ucaas/sip-connectivity
+- mango-contact-center-official | Контакт-центр | active
+    supported_by_services: ['cc-agent-workspace-service', 'cc-interaction-routing-service', 'cc-outbound-campaign-service', 'cc-supervisor-wfm-service', 'quality-checklist-service']
+    maps_to: primary:contact-center/omnichannel-contact-center
+- mango-text-communications-official | Текстовые коммуникации | active
+    supported_by_services: ['digital-channel-group-service', 'website-chat-service', 'messenger-channel-service', 'dialog-api-messaging-service']
+    maps_to: primary:digital-channels/omnichannel-messaging
+- mango-calltracking-official | Коллтрекинг и маркетинговая аналитика | active
+    supported_by_services: ['calltracking-attribution-service', 'end-to-end-analytics-service', 'reporting-dashboard-service']
+    maps_to: primary:analytics/call-tracking
+- mango-speech-analytics-official | Речевая аналитика | active
+    supported_by_services: ['speech-analytics-service', 'conversation-summary-service', 'quality-checklist-service']
+    maps_to: primary:ai-automation/speech-analytics
+- mango-robots-official | Роботы | active
+    supported_by_services: ['voice-robot-service']
+    maps_to: primary:ai-automation/voice-bot
+- mango-talker-official | Mango Talker | active
+    supported_by_services: ['talker-softphone-service', 'talker-team-chat-service', 'talker-video-meeting-service', 'talker-contact-history-service']
+    maps_to: primary:voice-ucaas/unified-communications
+- mango-integrations-official | Интеграции | active
+    supported_by_services: ['vpbx-open-api-service', 'contact-center-api-service', 'crm-erp-integration-service', 'webhook-event-service']
+    maps_to: primary:platform/platform-integration
+- mango-numbers-equipment-official | Номера и оборудование | active
+    supported_by_services: ['vats-number-management-service']
+    maps_to: primary:hardware/device-management
+================================================================================
+PRODUCTS (internal)
+- mango-virtual-pbx | Mango Virtual PBX | official_refs=['mango-virtual-pbx-official', 'mango-sip-trunk-official', 'mango-numbers-equipment-official']
+    services: ['vats-inbound-routing-service', 'vats-ivr-service', 'vats-number-management-service', 'vats-recording-history-service']
+    maps_to: primary:voice-ucaas/cloud-pbx
+- mango-contact-center | Mango Contact Center | official_refs=['mango-contact-center-official']
+    services: ['cc-agent-workspace-service', 'cc-interaction-routing-service', 'cc-outbound-campaign-service', 'cc-supervisor-wfm-service']
+    maps_to: primary:contact-center/omnichannel-contact-center
+- mango-digital-communications | Mango Digital Communications | official_refs=['mango-text-communications-official']
+    services: ['digital-channel-group-service', 'website-chat-service', 'messenger-channel-service', 'dialog-api-messaging-service']
+    maps_to: primary:digital-channels/omnichannel-messaging
+- mango-talker | Mango Talker | official_refs=['mango-talker-official']
+    services: ['talker-softphone-service', 'talker-team-chat-service', 'talker-video-meeting-service', 'talker-contact-history-service']
+    maps_to: primary:voice-ucaas/unified-communications
+- mango-ai-speech-quality | Mango AI Speech and Quality | official_refs=['mango-speech-analytics-official', 'mango-robots-official']
+    services: ['speech-analytics-service', 'conversation-summary-service', 'quality-checklist-service', 'voice-robot-service']
+    maps_to: primary:ai-automation/speech-analytics
+- mango-marketing-analytics | Mango Marketing Analytics | official_refs=['mango-calltracking-official']
+    services: ['calltracking-attribution-service', 'end-to-end-analytics-service', 'reporting-dashboard-service', 'wallboard-monitoring-service']
+    maps_to: primary:analytics/call-tracking
+- mango-platform-integrations | Mango Platform Integrations | official_refs=['mango-integrations-official']
+    services: ['vpbx-open-api-service', 'contact-center-api-service', 'crm-erp-integration-service', 'webhook-event-service']
+    maps_to: primary:platform/open-api
+- mango-security-access | Mango Security and Access | official_refs=None
+    services: ['role-access-management-service', 'sso-identity-service', 'recording-access-security-service', 'security-audit-settings-service']
+    maps_to: primary:security/access-control
+================================================================================
+SERVICES
+- vats-inbound-routing-service | Входящая маршрутизация ВАТС | cluster=vats-core | parents=['mango-virtual-pbx']
+    modules: ['vats-inbound-scenarios-module'] | extraction=None
+    maps_to: primary:voice-ucaas/call-routing
+- vats-ivr-service | Голосовое меню ВАТС | cluster=vats-core | parents=['mango-virtual-pbx']
+    modules: ['vats-ivr-menu-module'] | extraction=None
+    maps_to: primary:voice-ucaas/ivr-voice-menu
+- vats-number-management-service | Управление номерами ВАТС | cluster=vats-core | parents=['mango-virtual-pbx']
+    modules: ['vats-connected-numbers-module'] | extraction=None
+    maps_to: primary:voice-ucaas/number-management
+- vats-recording-history-service | Записи и история звонков ВАТС | cluster=vats-core | parents=['mango-virtual-pbx']
+    modules: ['vats-call-recording-module'] | extraction=None
+    maps_to: primary:voice-ucaas/call-recording
+- cc-agent-workspace-service | Рабочее место оператора КЦ | cluster=contact-center-core | parents=['mango-contact-center']
+    modules: ['cc-agent-call-handling-module'] | extraction=None
+    maps_to: primary:contact-center/agent-workspace
+- cc-interaction-routing-service | Маршрутизация обращений КЦ | cluster=contact-center-core | parents=['mango-contact-center']
+    modules: ['cc-queue-routing-module'] | extraction=None
+    maps_to: primary:contact-center/interaction-routing/queue-routing
+- cc-outbound-campaign-service | Исходящие кампании КЦ | cluster=contact-center-core | parents=['mango-contact-center']
+    modules: ['cc-outbound-campaign-module'] | extraction=None
+    maps_to: primary:contact-center/outbound-calling/campaign-management
+- cc-supervisor-wfm-service | Супервизорский контроль и WFM | cluster=contact-center-core | parents=['mango-contact-center']
+    modules: ['cc-supervisor-wfm-module'] | extraction=None
+    maps_to: primary:contact-center/workforce-management; secondary:contact-center/supervisor-workspace
+- digital-channel-group-service | Группы текстовых каналов | cluster=digital-channels | parents=['mango-digital-communications']
+    modules: ['digital-channel-group-module'] | extraction=None
+    maps_to: primary:digital-channels/omnichannel-messaging
+- website-chat-service | Чат на сайте | cluster=digital-channels | parents=['mango-digital-communications']
+    modules: ['website-chat-widget-module'] | extraction=None
+    maps_to: primary:digital-channels/website-chat
+- messenger-channel-service | Мессенджер-каналы | cluster=digital-channels | parents=['mango-digital-communications']
+    modules: ['messenger-channel-connector-module'] | extraction=None
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration
+- dialog-api-messaging-service | Dialog API | cluster=digital-channels | parents=['mango-digital-communications']
+    modules: ['dialog-api-message-module'] | extraction=None
+    maps_to: primary:platform/communications-apis; secondary:digital-channels/omnichannel-messaging
+- talker-softphone-service | Софтфон Mango Talker | cluster=mango-talker | parents=['mango-talker']
+    modules: ['talker-softphone-module'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- talker-team-chat-service | Командные чаты Mango Talker | cluster=mango-talker | parents=['mango-talker']
+    modules: ['talker-team-chat-module'] | extraction=None
+    maps_to: primary:digital-channels/team-messaging
+- talker-video-meeting-service | Видео и конференции Talker | cluster=mango-talker | parents=['mango-talker']
+    modules: ['talker-video-meeting-module'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- talker-contact-history-service | Контакты и история Talker | cluster=mango-talker | parents=['mango-talker']
+    modules: ['talker-contact-history-module'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- speech-analytics-service | Речевая аналитика | cluster=ai-speech-quality | parents=['mango-ai-speech-quality']
+    modules: ['speech-analytics-topic-module'] | extraction=None
+    maps_to: primary:ai-automation/speech-analytics
+- conversation-summary-service | AI-конспекты разговоров | cluster=ai-speech-quality | parents=['mango-ai-speech-quality']
+    modules: ['conversation-summary-module'] | extraction=None
+    maps_to: primary:ai-automation/conversation-summaries/ai-summary/generate-summary
+- quality-checklist-service | Контроль качества и чек-листы | cluster=ai-speech-quality | parents=['mango-ai-speech-quality']
+    modules: ['quality-checklist-module'] | extraction=None
+    maps_to: primary:contact-center/quality-management
+- voice-robot-service | Голосовой робот | cluster=ai-speech-quality | parents=['mango-ai-speech-quality']
+    modules: ['voice-robot-scenario-module'] | extraction=None
+    maps_to: primary:ai-automation/voice-bot
+- calltracking-attribution-service | Атрибуция коллтрекинга | cluster=analytics-marketing | parents=['mango-marketing-analytics']
+    modules: ['calltracking-attribution-module'] | extraction=None
+    maps_to: primary:analytics/call-tracking
+- end-to-end-analytics-service | Сквозная аналитика | cluster=analytics-marketing | parents=['mango-marketing-analytics']
+    modules: ['end-to-end-analytics-module'] | extraction=None
+    maps_to: primary:analytics/end-to-end-analytics
+- reporting-dashboard-service | Отчёты и дашборды | cluster=analytics-marketing | parents=['mango-marketing-analytics']
+    modules: ['reporting-dashboard-module'] | extraction=None
+    maps_to: primary:analytics/multichannel-analytics
+- wallboard-monitoring-service | Wallboard-мониторинг | cluster=analytics-marketing | parents=['mango-marketing-analytics']
+    modules: ['wallboard-monitoring-module'] | extraction=None
+    maps_to: primary:analytics/real-time-reporting
+- vpbx-open-api-service | ВАТС Open API | cluster=platform-integrations | parents=['mango-platform-integrations']
+    modules: ['vpbx-open-api-module'] | extraction=None
+    maps_to: primary:platform/open-api
+- contact-center-api-service | Contact Center API | cluster=platform-integrations | parents=['mango-platform-integrations']
+    modules: ['contact-center-api-module'] | extraction=None
+    maps_to: primary:platform/open-api; secondary:contact-center/conversation-orchestration
+- crm-erp-integration-service | CRM и ERP-интеграции | cluster=platform-integrations | parents=['mango-platform-integrations']
+    modules: ['crm-erp-integration-module'] | extraction=None
+    maps_to: primary:platform/platform-integration
+- webhook-event-service | Webhook-события | cluster=platform-integrations | parents=['mango-platform-integrations']
+    modules: ['webhook-event-module'] | extraction=None
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint
+- role-access-management-service | Ролевое управление доступом | cluster=security-access | parents=['mango-security-access']
+    modules: ['role-access-management-module'] | extraction=None
+    maps_to: primary:security/access-control/role-management/assign-role
+- sso-identity-service | SSO и идентификация | cluster=security-access | parents=['mango-security-access']
+    modules: ['sso-identity-module'] | extraction=None
+    maps_to: primary:security/access-control
+- recording-access-security-service | Безопасность доступа к записям | cluster=security-access | parents=['mango-security-access']
+    modules: ['recording-access-security-module'] | extraction=None
+    maps_to: primary:security/information-security
+- security-audit-settings-service | Аудит и настройки безопасности | cluster=security-access | parents=['mango-security-access']
+    modules: ['security-audit-settings-module'] | extraction=None
+    maps_to: primary:security/information-security
+================================================================================
+MODULES
+- vats-inbound-scenarios-module | Сценарии входящих звонков | cluster=vats-core | parents=['vats-inbound-routing-service']
+    functions: ['receive-inbound-call-through-scenario', 'configure-inbound-call-scenario'] | extraction=None
+    maps_to: primary:voice-ucaas/call-routing
+- vats-ivr-menu-module | Голосовое меню | cluster=vats-core | parents=['vats-ivr-service']
+    functions: ['play-ivr-menu-to-caller', 'edit-ivr-menu-branch'] | extraction=None
+    maps_to: primary:voice-ucaas/ivr-voice-menu
+- vats-connected-numbers-module | Подключённые номера | cluster=vats-core | parents=['vats-number-management-service']
+    functions: ['assign-connected-number-route', 'view-connected-number-list'] | extraction=None
+    maps_to: primary:voice-ucaas/number-management
+- vats-call-recording-module | Запись разговоров | cluster=vats-core | parents=['vats-recording-history-service']
+    functions: ['enable-call-recording-rule', 'play-call-recording'] | extraction=None
+    maps_to: primary:voice-ucaas/call-recording
+- cc-agent-call-handling-module | Обработка обращений оператором | cluster=contact-center-core | parents=['cc-agent-workspace-service']
+    functions: ['accept-queue-interaction', 'set-agent-status'] | extraction=None
+    maps_to: primary:contact-center/agent-workspace
+- cc-queue-routing-module | Очереди и правила распределения | cluster=contact-center-core | parents=['cc-interaction-routing-service']
+    functions: ['route-interaction-to-queue', 'configure-queue-routing-rule'] | extraction=None
+    maps_to: primary:contact-center/interaction-routing/queue-routing
+- cc-outbound-campaign-module | Кампании исходящего обзвона | cluster=contact-center-core | parents=['cc-outbound-campaign-service']
+    functions: ['start-outbound-campaign', 'configure-outbound-campaign'] | extraction=None
+    maps_to: primary:contact-center/outbound-calling/campaign-management
+- cc-supervisor-wfm-module | Планирование и супервизорский мониторинг | cluster=contact-center-core | parents=['cc-supervisor-wfm-service']
+    functions: ['monitor-agent-workload', 'configure-workforce-schedule'] | extraction=None
+    maps_to: primary:contact-center/workforce-management; secondary:contact-center/supervisor-workspace
+- digital-channel-group-module | Группы каналов коммуникации | cluster=digital-channels | parents=['digital-channel-group-service']
+    functions: ['send-channel-message', 'configure-channel-group'] | extraction=None
+    maps_to: primary:digital-channels/omnichannel-messaging
+- website-chat-widget-module | Виджет чата на сайте | cluster=digital-channels | parents=['website-chat-service']
+    functions: ['receive-website-chat', 'install-website-chat-widget'] | extraction=None
+    maps_to: primary:digital-channels/website-chat
+- messenger-channel-connector-module | Подключение мессенджеров | cluster=digital-channels | parents=['messenger-channel-service']
+    functions: ['connect-telegram-channel', 'reply-to-messenger-dialog'] | extraction=None
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration
+- dialog-api-message-module | API сообщений Dialogi | cluster=digital-channels | parents=['dialog-api-messaging-service']
+    functions: ['send-dialog-api-message', 'receive-dialog-api-event'] | extraction=None
+    maps_to: primary:platform/communications-apis; secondary:digital-channels/omnichannel-messaging
+- talker-softphone-module | Звонки в Talker | cluster=mango-talker | parents=['talker-softphone-service']
+    functions: ['call-colleague-in-talker', 'answer-talker-call'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- talker-team-chat-module | Чаты и каналы Talker | cluster=mango-talker | parents=['talker-team-chat-service']
+    functions: ['send-talker-chat-message', 'create-talker-chat-channel'] | extraction=None
+    maps_to: primary:digital-channels/team-messaging
+- talker-video-meeting-module | Видео и конференции | cluster=mango-talker | parents=['talker-video-meeting-service']
+    functions: ['start-talker-video-call', 'join-talker-conference-room'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- talker-contact-history-module | Контакты и журнал Talker | cluster=mango-talker | parents=['talker-contact-history-service']
+    functions: ['open-talker-contact-card', 'call-contact-from-history'] | extraction=None
+    maps_to: primary:voice-ucaas/unified-communications
+- speech-analytics-topic-module | Тематики речевой аналитики | cluster=ai-speech-quality | parents=['speech-analytics-service']
+    functions: ['recognize-recorded-call-speech', 'configure-speech-topic'] | extraction=None
+    maps_to: primary:ai-automation/speech-analytics
+- conversation-summary-module | Конспекты разговоров | cluster=ai-speech-quality | parents=['conversation-summary-service']
+    functions: ['generate-call-summary', 'view-call-summary'] | extraction=None
+    maps_to: primary:ai-automation/conversation-summaries/ai-summary/generate-summary
+- quality-checklist-module | Чек-листы качества | cluster=ai-speech-quality | parents=['quality-checklist-service']
+    functions: ['evaluate-call-by-checklist', 'configure-quality-checklist'] | extraction=None
+    maps_to: primary:contact-center/quality-management
+- voice-robot-scenario-module | Сценарии голосового робота | cluster=ai-speech-quality | parents=['voice-robot-service']
+    functions: ['run-voice-robot-dialog', 'configure-voice-robot-scenario'] | extraction=None
+    maps_to: primary:ai-automation/voice-bot
+- calltracking-attribution-module | Атрибуция рекламных источников | cluster=analytics-marketing | parents=['calltracking-attribution-service']
+    functions: ['attribute-call-to-ad-source', 'configure-calltracking-number'] | extraction=None
+    maps_to: primary:analytics/call-tracking
+- end-to-end-analytics-module | Сквозные отчёты | cluster=analytics-marketing | parents=['end-to-end-analytics-service']
+    functions: ['join-call-and-sales-funnel', 'open-end-to-end-analytics-report'] | extraction=None
+    maps_to: primary:analytics/end-to-end-analytics
+- reporting-dashboard-module | Конструктор и просмотр отчётов | cluster=analytics-marketing | parents=['reporting-dashboard-service']
+    functions: ['build-analytics-report', 'select-dashboard-widget'] | extraction=None
+    maps_to: primary:analytics/multichannel-analytics
+- wallboard-monitoring-module | Wallboard-виджеты | cluster=analytics-marketing | parents=['wallboard-monitoring-service']
+    functions: ['display-wallboard-widget', 'configure-wallboard-widget'] | extraction=None
+    maps_to: primary:analytics/real-time-reporting
+- vpbx-open-api-module | API Виртуальной АТС | cluster=platform-integrations | parents=['vpbx-open-api-service']
+    functions: ['initiate-vpbx-api-call', 'configure-vpbx-webhook'] | extraction=None
+    maps_to: primary:platform/open-api
+- contact-center-api-module | API Контакт-центра | cluster=platform-integrations | parents=['contact-center-api-service']
+    functions: ['create-contact-center-task-api', 'receive-contact-center-event-webhook'] | extraction=None
+    maps_to: primary:platform/open-api; secondary:contact-center/conversation-orchestration
+- crm-erp-integration-module | Коннекторы CRM и ERP | cluster=platform-integrations | parents=['crm-erp-integration-service']
+    functions: ['sync-crm-call-card', 'configure-crm-integration'] | extraction=None
+    maps_to: primary:platform/platform-integration
+- webhook-event-module | Webhook endpoints | cluster=platform-integrations | parents=['webhook-event-service']
+    functions: ['send-call-event-webhook', 'configure-webhook-endpoint'] | extraction=None
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint
+- role-access-management-module | Роли и права доступа | cluster=security-access | parents=['role-access-management-service']
+    functions: ['assign-user-role', 'view-role-permissions'] | extraction=None
+    maps_to: primary:security/access-control/role-management/assign-role
+- sso-identity-module | SSO-подключение | cluster=security-access | parents=['sso-identity-service']
+    functions: ['authenticate-user-with-sso', 'configure-sso-connection'] | extraction=None
+    maps_to: primary:security/access-control
+- recording-access-security-module | Ограничения доступа к записям | cluster=security-access | parents=['recording-access-security-service']
+    functions: ['restrict-recording-access', 'audit-recording-download'] | extraction=None
+    maps_to: primary:security/information-security
+- security-audit-settings-module | Журнал действий и политики безопасности | cluster=security-access | parents=['security-audit-settings-service']
+    functions: ['view-security-audit-log', 'configure-security-policy'] | extraction=None
+    maps_to: primary:security/information-security
+================================================================================
+FUNCTIONS
+- receive-inbound-call-through-scenario | Принять входящий звонок по сценарию | parent=vats-inbound-scenarios-module | type=business | surface=system-rule
+    maps_to: primary:voice-ucaas/voice-channel/inbound-voice-call/receive-inbound-call
+- configure-inbound-call-scenario | Настроить сценарий входящего звонка | parent=vats-inbound-scenarios-module | type=configuration | surface=admin-ui
+    maps_to: primary:voice-ucaas/call-routing GAP:inbound-call-scenario
+- play-ivr-menu-to-caller | Проиграть голосовое меню звонящему | parent=vats-ivr-menu-module | type=business | surface=system-rule
+    maps_to: primary:voice-ucaas/ivr-voice-menu GAP:play-ivr-menu
+- edit-ivr-menu-branch | Изменить ветку голосового меню | parent=vats-ivr-menu-module | type=configuration | surface=admin-ui
+    maps_to: primary:voice-ucaas/ivr-voice-menu GAP:edit-ivr-branch
+- assign-connected-number-route | Назначить маршрут подключённому номеру | parent=vats-connected-numbers-module | type=configuration | surface=admin-ui
+    maps_to: primary:voice-ucaas/number-management GAP:assign-number-route
+- view-connected-number-list | Открыть список подключённых номеров | parent=vats-connected-numbers-module | type=ui-action | surface=admin-ui
+    maps_to: primary:voice-ucaas/number-management GAP:view-number-list
+- enable-call-recording-rule | Включить правило записи разговора | parent=vats-call-recording-module | type=configuration | surface=admin-ui
+    maps_to: primary:voice-ucaas/call-recording GAP:enable-call-recording-rule
+- play-call-recording | Прослушать запись разговора | parent=vats-call-recording-module | type=ui-action | surface=admin-ui
+    maps_to: primary:voice-ucaas/call-recording GAP:play-call-recording
+- accept-queue-interaction | Принять обращение из очереди | parent=cc-agent-call-handling-module | type=business | surface=operator-ui
+    maps_to: primary:contact-center/agent-workspace GAP:accept-queue-interaction
+- set-agent-status | Изменить статус оператора | parent=cc-agent-call-handling-module | type=ui-action | surface=operator-ui
+    maps_to: primary:contact-center/agent-workspace GAP:set-agent-status
+- route-interaction-to-queue | Распределить обращение в очередь | parent=cc-queue-routing-module | type=business | surface=system-rule
+    maps_to: primary:contact-center/interaction-routing/queue-routing GAP:route-interaction-to-queue
+- configure-queue-routing-rule | Настроить правило очереди | parent=cc-queue-routing-module | type=configuration | surface=admin-ui
+    maps_to: primary:contact-center/interaction-routing/routing-rules GAP:configure-queue-routing-rule
+- start-outbound-campaign | Запустить исходящую кампанию | parent=cc-outbound-campaign-module | type=business | surface=operator-ui
+    maps_to: primary:contact-center/outbound-calling/campaign-management/start-campaign
+- configure-outbound-campaign | Настроить исходящую кампанию | parent=cc-outbound-campaign-module | type=configuration | surface=admin-ui
+    maps_to: primary:contact-center/outbound-calling/campaign-management GAP:configure-outbound-campaign
+- monitor-agent-workload | Просмотреть нагрузку операторов | parent=cc-supervisor-wfm-module | type=ui-action | surface=operator-ui
+    maps_to: primary:contact-center/supervisor-workspace GAP:monitor-agent-workload
+- configure-workforce-schedule | Настроить график входящих обращений | parent=cc-supervisor-wfm-module | type=configuration | surface=admin-ui
+    maps_to: primary:contact-center/workforce-management GAP:configure-workforce-schedule
+- send-channel-message | Отправить сообщение в цифровом канале | parent=digital-channel-group-module | type=business | surface=operator-ui
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration/send-message
+- configure-channel-group | Настроить группу каналов | parent=digital-channel-group-module | type=configuration | surface=admin-ui
+    maps_to: primary:digital-channels/omnichannel-messaging GAP:configure-channel-group
+- receive-website-chat | Принять обращение из чата сайта | parent=website-chat-widget-module | type=business | surface=operator-ui
+    maps_to: primary:digital-channels/website-chat GAP:receive-website-chat
+- install-website-chat-widget | Установить код виджета чата | parent=website-chat-widget-module | type=configuration | surface=admin-ui
+    maps_to: primary:digital-channels/website-chat GAP:install-website-chat-widget
+- connect-telegram-channel | Подключить Telegram-канал | parent=messenger-channel-connector-module | type=configuration | surface=admin-ui
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration GAP:connect-telegram-channel
+- reply-to-messenger-dialog | Ответить в диалоге мессенджера | parent=messenger-channel-connector-module | type=business | surface=operator-ui
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration/send-message
+- send-dialog-api-message | Отправить сообщение через Dialog API | parent=dialog-api-message-module | type=business | surface=api
+    maps_to: primary:digital-channels/omnichannel-messaging/messenger-integration/send-message; supporting:platform/communications-apis
+- receive-dialog-api-event | Получить событие Dialog API | parent=dialog-api-message-module | type=business | surface=webhook
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint; secondary:digital-channels/omnichannel-messaging
+- call-colleague-in-talker | Позвонить сотруднику из Talker | parent=talker-softphone-module | type=business | surface=end-user-ui
+    maps_to: primary:voice-ucaas/voice-channel/outbound-voice-call
+- answer-talker-call | Ответить на входящий звонок в Talker | parent=talker-softphone-module | type=business | surface=end-user-ui
+    maps_to: primary:voice-ucaas/voice-channel/inbound-voice-call/receive-inbound-call
+- send-talker-chat-message | Отправить сообщение в Talker | parent=talker-team-chat-module | type=business | surface=end-user-ui
+    maps_to: primary:digital-channels/team-messaging GAP:send-team-chat-message
+- create-talker-chat-channel | Создать чат или канал Talker | parent=talker-team-chat-module | type=configuration | surface=end-user-ui
+    maps_to: primary:digital-channels/team-messaging GAP:create-team-chat-channel
+- start-talker-video-call | Начать групповой видеозвонок | parent=talker-video-meeting-module | type=business | surface=end-user-ui
+    maps_to: primary:voice-ucaas/unified-communications GAP:start-video-call
+- join-talker-conference-room | Присоединиться к конференции Talker | parent=talker-video-meeting-module | type=business | surface=end-user-ui
+    maps_to: primary:voice-ucaas/unified-communications GAP:join-conference-room
+- open-talker-contact-card | Открыть карточку контакта Talker | parent=talker-contact-history-module | type=ui-action | surface=end-user-ui
+    maps_to: primary:voice-ucaas/unified-communications GAP:open-contact-card
+- call-contact-from-history | Позвонить контакту из истории | parent=talker-contact-history-module | type=business | surface=end-user-ui
+    maps_to: primary:voice-ucaas/voice-channel/outbound-voice-call
+- recognize-recorded-call-speech | Распознать речь в записи разговора | parent=speech-analytics-topic-module | type=business | surface=background-job
+    maps_to: primary:ai-automation/speech-analytics GAP:recognize-call-speech
+- configure-speech-topic | Настроить тематику речевой аналитики | parent=speech-analytics-topic-module | type=configuration | surface=admin-ui
+    maps_to: primary:ai-automation/speech-analytics GAP:configure-speech-topic
+- generate-call-summary | Сформировать конспект разговора | parent=conversation-summary-module | type=business | surface=background-job
+    maps_to: primary:ai-automation/conversation-summaries/ai-summary/generate-summary
+- view-call-summary | Открыть конспект разговора | parent=conversation-summary-module | type=ui-action | surface=admin-ui
+    maps_to: primary:ai-automation/conversation-summaries/ai-summary GAP:view-call-summary
+- evaluate-call-by-checklist | Оценить разговор по чек-листу | parent=quality-checklist-module | type=business | surface=admin-ui
+    maps_to: primary:contact-center/quality-management GAP:evaluate-call-by-checklist
+- configure-quality-checklist | Настроить чек-лист качества | parent=quality-checklist-module | type=configuration | surface=admin-ui
+    maps_to: primary:contact-center/quality-management GAP:configure-quality-checklist
+- run-voice-robot-dialog | Запустить голосовой диалог робота | parent=voice-robot-scenario-module | type=business | surface=system-rule
+    maps_to: primary:ai-automation/voice-bot GAP:run-voice-robot-dialog
+- configure-voice-robot-scenario | Настроить сценарий голосового робота | parent=voice-robot-scenario-module | type=configuration | surface=admin-ui
+    maps_to: primary:ai-automation/voice-bot GAP:configure-voice-robot-scenario
+- attribute-call-to-ad-source | Привязать звонок к рекламному источнику | parent=calltracking-attribution-module | type=business | surface=background-job
+    maps_to: primary:analytics/call-tracking GAP:attribute-call-to-ad-source
+- configure-calltracking-number | Настроить номер коллтрекинга | parent=calltracking-attribution-module | type=configuration | surface=admin-ui
+    maps_to: primary:analytics/call-tracking GAP:configure-calltracking-number
+- join-call-and-sales-funnel | Связать звонок с воронкой продаж | parent=end-to-end-analytics-module | type=business | surface=background-job
+    maps_to: primary:analytics/end-to-end-analytics GAP:join-call-and-sales-funnel
+- open-end-to-end-analytics-report | Открыть отчёт сквозной аналитики | parent=end-to-end-analytics-module | type=ui-action | surface=admin-ui
+    maps_to: primary:analytics/end-to-end-analytics GAP:open-end-to-end-analytics-report
+- build-analytics-report | Сформировать аналитический отчёт | parent=reporting-dashboard-module | type=business | surface=background-job
+    maps_to: primary:analytics/multichannel-analytics GAP:build-analytics-report
+- select-dashboard-widget | Выбрать виджет дашборда | parent=reporting-dashboard-module | type=ui-action | surface=admin-ui
+    maps_to: primary:analytics/real-time-reporting/dashboard-view/select-dashboard-widget
+- display-wallboard-widget | Показать виджет Wallboard | parent=wallboard-monitoring-module | type=business | surface=end-user-ui
+    maps_to: primary:analytics/real-time-reporting/dashboard-view/select-dashboard-widget
+- configure-wallboard-widget | Настроить виджет Wallboard | parent=wallboard-monitoring-module | type=configuration | surface=admin-ui
+    maps_to: primary:analytics/real-time-reporting GAP:configure-wallboard-widget
+- initiate-vpbx-api-call | Инициировать звонок через API ВАТС | parent=vpbx-open-api-module | type=business | surface=api
+    maps_to: primary:voice-ucaas/voice-channel/outbound-voice-call; supporting:platform/open-api
+- configure-vpbx-webhook | Настроить webhook ВАТС | parent=vpbx-open-api-module | type=configuration | surface=api
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint
+- create-contact-center-task-api | Создать задачу Контакт-центра через API | parent=contact-center-api-module | type=business | surface=api
+    maps_to: primary:platform/open-api GAP:create-contact-center-task; secondary:contact-center/conversation-orchestration
+- receive-contact-center-event-webhook | Получить событие Контакт-центра через webhook | parent=contact-center-api-module | type=business | surface=webhook
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint; secondary:contact-center/conversation-orchestration
+- sync-crm-call-card | Синхронизировать карточку звонка с CRM | parent=crm-erp-integration-module | type=business | surface=background-job
+    maps_to: primary:platform/platform-integration GAP:sync-crm-call-card
+- configure-crm-integration | Настроить CRM-интеграцию | parent=crm-erp-integration-module | type=configuration | surface=admin-ui
+    maps_to: primary:platform/platform-integration GAP:configure-crm-integration
+- send-call-event-webhook | Передать событие звонка во внешний webhook | parent=webhook-event-module | type=business | surface=webhook
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint; secondary:voice-ucaas/voice-channel/inbound-voice-call
+- configure-webhook-endpoint | Настроить endpoint webhook | parent=webhook-event-module | type=configuration | surface=admin-ui
+    maps_to: primary:platform/open-api/webhook-management/configure-webhook-endpoint
+- assign-user-role | Назначить роль пользователю | parent=role-access-management-module | type=configuration | surface=admin-ui
+    maps_to: primary:security/access-control/role-management/assign-role
+- view-role-permissions | Просмотреть права роли | parent=role-access-management-module | type=ui-action | surface=admin-ui
+    maps_to: primary:security/access-control/role-management GAP:view-role-permissions
+- authenticate-user-with-sso | Аутентифицировать пользователя через SSO | parent=sso-identity-module | type=business | surface=end-user-ui
+    maps_to: primary:security/access-control GAP:authenticate-user-with-sso
+- configure-sso-connection | Настроить SSO-подключение | parent=sso-identity-module | type=configuration | surface=admin-ui
+    maps_to: primary:security/access-control GAP:configure-sso-connection
+- restrict-recording-access | Ограничить доступ к записям разговоров | parent=recording-access-security-module | type=configuration | surface=admin-ui
+    maps_to: primary:security/information-security GAP:restrict-recording-access
+- audit-recording-download | Проверить доступ к скачиванию записи | parent=recording-access-security-module | type=ui-action | surface=admin-ui
+    maps_to: primary:security/information-security GAP:audit-recording-download
+- view-security-audit-log | Просмотреть журнал действий | parent=security-audit-settings-module | type=ui-action | surface=admin-ui
+    maps_to: primary:security/information-security GAP:view-security-audit-log
+- configure-security-policy | Настроить политику безопасности | parent=security-audit-settings-module | type=configuration | surface=admin-ui
+    maps_to: primary:security/information-security GAP:configure-security-policy

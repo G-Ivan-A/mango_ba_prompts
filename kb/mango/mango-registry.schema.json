@@ -1,0 +1,365 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "mango-registry.schema.json",
+  "title": "MangoTaxonomyDocument",
+  "type": "object",
+  "required": ["taxonomy"],
+  "additionalProperties": false,
+  "properties": {
+    "taxonomy": { "$ref": "#/$defs/taxonomy" }
+  },
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$"
+    },
+    "lifecycleStatus": {
+      "type": "string",
+      "enum": ["proposed", "active", "deprecated"]
+    },
+    "cluster": {
+      "type": "string",
+      "enum": [
+        "vats-core",
+        "contact-center-core",
+        "digital-channels",
+        "mango-talker",
+        "ai-speech-quality",
+        "analytics-marketing",
+        "platform-integrations",
+        "security-access"
+      ]
+    },
+    "functionType": {
+      "type": "string",
+      "enum": ["business", "configuration", "ui-action"]
+    },
+    "interactionSurface": {
+      "type": "string",
+      "enum": [
+        "admin-ui",
+        "operator-ui",
+        "end-user-ui",
+        "api",
+        "webhook",
+        "background-job",
+        "system-rule",
+        "unknown"
+      ]
+    },
+    "evidenceRef": {
+      "type": "string",
+      "minLength": 1
+    },
+    "industryRef": {
+      "type": "object",
+      "required": ["domain"],
+      "additionalProperties": false,
+      "properties": {
+        "domain": { "$ref": "#/$defs/slug" },
+        "capability": { "$ref": "#/$defs/slug" },
+        "feature": { "$ref": "#/$defs/slug" },
+        "function": { "$ref": "#/$defs/slug" }
+      }
+    },
+    "channelFacet": {
+      "type": "object",
+      "required": ["channel_kind", "synchronicity", "direction"],
+      "additionalProperties": false,
+      "properties": {
+        "channel_kind": { "type": "string", "enum": ["voice", "text", "video"] },
+        "synchronicity": { "type": "string", "enum": ["sync", "async"] },
+        "direction": { "type": "string", "enum": ["inbound", "outbound", "broadcast"] }
+      }
+    },
+    "facets": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "channel": { "$ref": "#/$defs/channelFacet" },
+        "ai_assisted": { "type": "boolean" },
+        "security_compliance": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
+        "commercial": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
+        "procurement": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["string", "number", "boolean", "array", "object"]
+          }
+        },
+        "industry_vertical": { "type": "array", "items": { "$ref": "#/$defs/slug" } },
+        "geography_region": { "type": "array", "items": { "$ref": "#/$defs/slug" } }
+      }
+    },
+    "mappingGap": {
+      "type": "object",
+      "required": ["missing_level", "proposed_id", "reason"],
+      "additionalProperties": false,
+      "properties": {
+        "missing_level": {
+          "type": "string",
+          "enum": ["domain", "capability", "feature", "function"]
+        },
+        "proposed_id": { "$ref": "#/$defs/slug" },
+        "reason": { "type": "string", "minLength": 1 }
+      }
+    },
+    "industryAlignment": {
+      "type": "object",
+      "required": ["industry_ref", "alignment_type"],
+      "additionalProperties": false,
+      "properties": {
+        "industry_ref": { "$ref": "#/$defs/industryRef" },
+        "alignment_type": {
+          "type": "string",
+          "enum": ["primary", "secondary", "supporting"]
+        },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceRef" },
+          "minItems": 1
+        },
+        "facets": { "$ref": "#/$defs/facets" },
+        "mapping_gap": { "$ref": "#/$defs/mappingGap" },
+        "supporting_only_reason": { "type": "string" },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+    "mapsTo": {
+      "type": "object",
+      "required": ["industry_alignment"],
+      "additionalProperties": false,
+      "properties": {
+        "industry_alignment": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/industryAlignment" },
+          "minItems": 1
+        }
+      }
+    },
+    "commonEntity": {
+      "type": "object",
+      "required": ["id", "level", "lifecycle_status", "evidence_refs"],
+      "anyOf": [
+        { "required": ["name_ru"] },
+        { "required": ["name_en"] }
+      ],
+      "properties": {
+        "id": { "$ref": "#/$defs/slug" },
+        "level": { "type": "string" },
+        "name_ru": { "type": "string", "minLength": 1 },
+        "name_en": { "type": "string" },
+        "description": { "type": "string" },
+        "aliases": { "type": "array", "items": { "type": "string" } },
+        "source_terms": { "type": "array", "items": { "type": "string" } },
+        "lifecycle_status": { "$ref": "#/$defs/lifecycleStatus" },
+        "owner": { "type": "string" },
+        "evidence_refs": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/evidenceRef" },
+          "minItems": 1
+        },
+        "maps_to": { "$ref": "#/$defs/mapsTo" }
+      }
+    },
+    "officialProduct": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/commonEntity" },
+        {
+          "type": "object",
+          "required": ["official_urls", "supported_by_services"],
+          "properties": {
+            "level": { "const": "official-product" },
+            "official_urls": {
+              "type": "array",
+              "items": { "type": "string", "format": "uri" },
+              "minItems": 1
+            },
+            "supported_by_services": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "product": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/commonEntity" },
+        {
+          "type": "object",
+          "required": ["services", "maps_to"],
+          "anyOf": [
+            { "required": ["official_refs"] },
+            { "required": ["internal_only_reason"] }
+          ],
+          "properties": {
+            "level": { "const": "product" },
+            "official_refs": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" }
+            },
+            "internal_only_reason": { "type": "string", "minLength": 1 },
+            "services": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "service": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/commonEntity" },
+        {
+          "type": "object",
+          "required": ["cluster", "parent_products", "maps_to"],
+          "anyOf": [
+            { "required": ["modules"] },
+            { "required": ["module_extraction_status"] }
+          ],
+          "properties": {
+            "level": { "const": "service" },
+            "cluster": { "$ref": "#/$defs/cluster" },
+            "parent_products": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            },
+            "modules": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            },
+            "module_extraction_status": {
+              "type": "string",
+              "enum": ["complete", "partial", "not-started"]
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "module": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/commonEntity" },
+        {
+          "type": "object",
+          "required": ["cluster", "parent_services", "maps_to"],
+          "anyOf": [
+            { "required": ["functions"] },
+            { "required": ["function_extraction_status"] }
+          ],
+          "properties": {
+            "level": { "const": "module" },
+            "cluster": { "$ref": "#/$defs/cluster" },
+            "parent_services": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            },
+            "functions": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/slug" },
+              "minItems": 1
+            },
+            "function_extraction_status": {
+              "type": "string",
+              "enum": ["complete", "partial", "not-started"]
+            },
+            "secondary_clusters": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/cluster" },
+              "uniqueItems": true
+            }
+          }
+        }
+      ]
+    },
+    "function": {
+      "unevaluatedProperties": false,
+      "allOf": [
+        { "$ref": "#/$defs/commonEntity" },
+        {
+          "type": "object",
+          "required": ["parent_module", "function_type", "interaction_surface", "maps_to"],
+          "not": {
+            "required": ["lifecycle_status", "interaction_surface"],
+            "properties": {
+              "lifecycle_status": { "const": "active" },
+              "interaction_surface": { "const": "unknown" }
+            }
+          },
+          "properties": {
+            "level": { "const": "function" },
+            "parent_module": { "$ref": "#/$defs/slug" },
+            "function_type": { "$ref": "#/$defs/functionType" },
+            "interaction_surface": { "$ref": "#/$defs/interactionSurface" }
+          }
+        }
+      ]
+    },
+    "taxonomy": {
+      "type": "object",
+      "required": [
+        "version",
+        "official_products",
+        "products",
+        "internal_services",
+        "modules",
+        "functions"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+        },
+        "official_products": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/officialProduct" }
+        },
+        "products": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/product" }
+        },
+        "internal_services": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/service" }
+        },
+        "modules": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/module" }
+        },
+        "functions": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/function" }
+        }
+      }
+    }
+  }
+}
