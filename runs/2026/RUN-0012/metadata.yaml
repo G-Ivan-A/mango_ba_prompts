@@ -1,7 +1,7 @@
 run_id: RUN-0012
 process: bcreq-180-mt-group-video-call
 run_type: business-task
-version: "0.1"
+version: "0.2"
 date: 2026-06-22
 author: "BA + LLM (Claude Opus 4.8)"
 model: "claude-opus-4-8"
@@ -20,12 +20,14 @@ logs:
   - logs/experiment-log.md
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/180
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/184
 related_artifacts:
   - prompts/glossary-context-understanding-stepwise.md
   - prompts/fr-documentation-oneshot.md
   - prompts/constraints-documentation-oneshot.md
   - patterns/fr-generation/README.md
   - standards/bcreq-process-standard.md
+  - governance/rfc/bcreq-ft-scope-formation-rules-proposal.md
 related_runs:
   - RUN-0007
   - RUN-0010
