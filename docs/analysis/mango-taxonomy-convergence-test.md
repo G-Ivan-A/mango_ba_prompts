@@ -10,8 +10,8 @@ operating_mode: "Creative (Deep Dive)"
 related_artifacts:
   - "standards/mango-taxonomy-standard.md"
   - "standards/industry-taxonomy-standard.md"
-  - "kb/mango/mango-registry.json"
-  - "kb/industry/reference-taxonomy.json"
+  - "kb/mango-taxonomy/mango-registry.json"
+  - "kb/industry-taxonomy/reference-taxonomy.json"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 test_artifacts:
@@ -42,8 +42,8 @@ test_artifacts:
 | Тип теста | Inter-rater reliability (слепой маппинг независимым агентом против эталона) |
 | Количество тестовых сущностей | **27** |
 | AI-агент (rater) | Claude (Opus 4.x), 6 независимых сессий без общего контекста |
-| Источник сущностей | [`kb/mango/mango-registry.json`](../../kb/mango/mango-registry.json) `taxonomy.version 1.0.0` |
-| Целевая таксономия | [`kb/industry/reference-taxonomy.json`](../../kb/industry/reference-taxonomy.json) `version 1.1.0` |
+| Источник сущностей | [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) `taxonomy.version 1.0.0` |
+| Целевая таксономия | [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json) `version 1.1.0` |
 | Стандарты | [`mango-taxonomy-standard.md`](../../standards/mango-taxonomy-standard.md) `v0.2`, [`industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md) |
 | Эталонный маппинг | `maps_to.industry_alignment[]` из реестра (созданы независимо от rater, по аудиту #164/#170) |
 
@@ -60,7 +60,7 @@ test_artifacts:
 3. **Изоляция.** 27 сущностей разбиты на 6 чанков; каждый чанк обработан
    **отдельной свежей сессией агента без общего контекста** (6 независимых
    «оценщиков»). Каждому агенту было **явно запрещено** открывать
-   `kb/mango/mango-registry.json` или любой файл из `kb/mango/` (там лежит
+   `kb/mango-taxonomy/mango-registry.json` или любой файл из `kb/mango-taxonomy/` (там лежит
    эталон). Разрешённые источники: два стандарта + `reference-taxonomy.json`.
 4. **Задача агента.** Выбрать лучший путь `domain → capability → feature →
    function` из `reference-taxonomy.json` (точные id) и `alignment_type`
@@ -310,8 +310,8 @@ test_artifacts:
 
 | # | Приоритет | Действие | Адресует | Артефакт |
 | --- | :---: | --- | --- | --- |
-| R1 | **P1** | Дедуплицировать кросс-веточные id-узлы Industry Taxonomy (`conversation-summaries`, `access-control`, `call-routing`, `live-monitoring`, …) — оставить один canonical, остальные оформить как alias (§10.2 industry-стандарта). Добавить в оба стандарта правило выбора канонической ветки при совпадении смысла. | Причина A | `kb/industry/reference-taxonomy.json`, оба стандарта |
-| R2 | **P1** | Доуглубить эталонные `maps_to` для Module/Function в `mango-registry.json` до рекомендации §7.3 (или явно проставить `mapping_gap`, если узла нет). | Причина D | `kb/mango/mango-registry.json` |
+| R1 | **P1** | Дедуплицировать кросс-веточные id-узлы Industry Taxonomy (`conversation-summaries`, `access-control`, `call-routing`, `live-monitoring`, …) — оставить один canonical, остальные оформить как alias (§10.2 industry-стандарта). Добавить в оба стандарта правило выбора канонической ветки при совпадении смысла. | Причина A | `kb/industry-taxonomy/reference-taxonomy.json`, оба стандарта |
+| R2 | **P1** | Доуглубить эталонные `maps_to` для Module/Function в `mango-registry.json` до рекомендации §7.3 (или явно проставить `mapping_gap`, если узла нет). | Причина D | `kb/mango-taxonomy/mango-registry.json` |
 | R3 | **P2** | Добавить в Mango-стандарт boundary-правило для Industry-маппинга: «API/CPaaS vs digital-channel» и «UC corporate-messaging vs team-messaging» — с однозначным критерием. | Причина B | `standards/mango-taxonomy-standard.md` |
 | R4 | **P2** | Добавить правило гранулярности (когда сворачивать в родительский capability) и **проверить эталон #17** (`cc-supervisor-monitoring-module`: `workforce-management` vs `supervisor-assist/live-monitoring`). | Причина C | стандарт + реестр |
 | R5 | **P3** | После R1–R4 повторно прогнать этот тест (тот же набор) и зафиксировать v1.0 при ≥ 80 %. | — | этот документ |

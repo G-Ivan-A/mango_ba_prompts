@@ -31,9 +31,9 @@ ai-generated: true
 
 - Проведён тест на сходимость (inter-rater reliability) классификации 25
   атомарных функций по [`standards/industry-taxonomy-standard.md`](standards/industry-taxonomy-standard.md)
-  и [`kb/industry/reference-taxonomy.json`](kb/industry/reference-taxonomy.json).
+  и [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json).
   Дизайн: два независимых классификатора — эталон из документированного
-  `industry_ref` в [`kb/mango/mango-registry.json`](kb/mango/mango-registry.json)
+  `industry_ref` в [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json)
   (построен в #168/#170) и изолированный AI-агент, видевший **только** стандарт и
   industry-реестр (без эталона и mango-реестра). Все 25 выданных агентом node-id —
   канонические.
