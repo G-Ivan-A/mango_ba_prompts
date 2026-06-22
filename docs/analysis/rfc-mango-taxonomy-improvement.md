@@ -34,17 +34,18 @@ target_artifacts:
 Issue #181 требует использовать актуальные пути после переименования каталогов
 (PR #173, уже merged в `upstream/main`):
 
-| Artifact | Старый путь (в отчёте теста встречается) | Актуальный путь |
+| Artifact | Старый каталог (до PR #173) | Актуальный путь |
 | --- | --- | --- |
-| Mango registry | `kb/mango/...` | `kb/mango-taxonomy/mango-registry.json` |
-| Industry registry | `kb/industry/...` | `kb/industry-taxonomy/reference-taxonomy.json` |
+| Mango registry | `kb/mango` (без суффикса `-taxonomy`) | `kb/mango-taxonomy/mango-registry.json` |
+| Industry registry | `kb/industry` (без суффикса `-taxonomy`) | `kb/industry-taxonomy/reference-taxonomy.json` |
 | Mango convergence report | — | `docs/analysis/mango-taxonomy-convergence-test.md` |
 | Mango convergence experiment | — | `experiments/issue-176-convergence/` |
 
 Отчёт теста (`docs/analysis/mango-taxonomy-convergence-test.md`) и его артефакты
-уже используют актуальные пути; устаревшие `kb/mango/` / `kb/industry/` в текущей
-ветке не встречаются. Этот RFC не предлагает переименование каталогов и не
-требует stacking поверх другой ветки.
+уже используют актуальные пути с суффиксом `-taxonomy`; устаревшие каталоги без
+этого суффикса в текущей ветке не встречаются (это проверяет
+`scripts/validate_issue_172_taxonomy_path_refactor.py`). Этот RFC не предлагает
+переименование каталогов и не требует stacking поверх другой ветки.
 
 ## 2. Входные факты
 
