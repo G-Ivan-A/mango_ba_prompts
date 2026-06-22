@@ -25,32 +25,25 @@ target_artifacts:
 > не меняются `standards/industry-taxonomy-standard.md`, Industry registry,
 > валидаторы, ADR-011 или Mango Taxonomy artifacts.
 
-## 1. Статус путей и зависимость от PR #173
+## 1. Статус путей после PR #173
 
 Issue #178 требует использовать актуальные пути после переименования:
-`kb/industry-taxonomy/` и `kb/mango-taxonomy/`. При этом на базе текущего PR #179
-и `upstream/main` на 2026-06-22 PR #173 ещё открыт, а файлы физически остаются
-по старым путям:
+`kb/industry-taxonomy/` и `kb/mango-taxonomy/`. На 2026-06-22 PR #173 уже
+merged в `upstream/main`, а ветка PR #179 синхронизирована с этим состоянием.
 
-| Целевой путь issue #178 | Текущий путь в этой ветке до merge PR #173 |
+Для реализации после approval используются только текущие taxonomy directories:
+
+| Artifact | Current path |
 | --- | --- |
-| `kb/industry-taxonomy/reference-taxonomy.json` | `kb/industry/reference-taxonomy.json` |
-| `kb/industry-taxonomy/reference-taxonomy.schema.json` | `kb/industry/reference-taxonomy.schema.json` |
-| `kb/mango-taxonomy/mango-registry.json` | `kb/mango/mango-registry.json` |
-| `docs/analysis/industry-taxonomy-convergence-test.md` | `docs/analysis/taxonomy-convergence-test.md` |
-| `experiments/issue-174-convergence/` | `experiments/issue-174/` |
+| Industry registry | `kb/industry-taxonomy/reference-taxonomy.json` |
+| Industry schema | `kb/industry-taxonomy/reference-taxonomy.schema.json` |
+| Mango registry | `kb/mango-taxonomy/mango-registry.json` |
+| Industry convergence report | `docs/analysis/taxonomy-convergence-test.md` |
+| Industry convergence experiment | `experiments/issue-174/` |
 
-RFC ниже использует target-пути issue #178 для будущей реализации и явно
-фиксирует текущие старые пути только как состояние base branch. Реализация после
-согласования должна сначала выбрать один из вариантов:
-
-1. дождаться merge PR #173 и работать только с `kb/industry-taxonomy/`;
-2. явно согласовать stacking PR #179 поверх ветки PR #173;
-3. если PR #173 не входит в scope, временно применять правки к текущим путям
-   `kb/industry/` и `kb/mango/`, но не переименовывать каталоги в рамках #178.
-
-Без этого решения нельзя одновременно выполнить запрет на изменение структуры
-каталогов и требование использовать новые пути.
+RFC ниже не предлагает переименование каталогов и не требует stacking поверх
+другой ветки. Path refactor считается завершённой зависимостью; дальнейшие
+изменения должны оставаться внутри утверждённого scope #178.
 
 ## 2. Входные факты
 
@@ -354,8 +347,7 @@ whether the gold statuses should remain `ui-action` or be corrected.
 
 ## 7. Implementation plan after approval
 
-1. Resolve path dependency: merge/rebase after PR #173 or explicitly approve
-   stacking on PR #173.
+1. Work on the branch synced with `upstream/main` after PR #173.
 2. Update Industry standard with R1-R6.
 3. Update Industry reference registry with R2-R4/R7 using deprecation instead of
    removal.
@@ -384,7 +376,7 @@ python3 experiments/issue-176-convergence/score.py
 
 | Risk | Mitigation |
 | --- | --- |
-| PR #173 path refactor remains open | Do not rename directories in #178 without explicit approval; target new paths in RFC and implementation after path decision. |
+| Path refactor regression | Do not reintroduce retired taxonomy paths; keep #178 changes inside the current `kb/industry-taxonomy/` and `kb/mango-taxonomy/` directories. |
 | Existing Mango registry references point to deprecated nodes | Deprecate with replacement first; update Mango registry only if approved or in a separate CR. |
 | Validator becomes too strict for legitimate homonyms | Require `homonym_allowed: true` and explicit rationale, not global hard uniqueness for every slug. |
 | Overfitting to the 25-case test | Rules are based on recurring patterns also seen in Mango convergence test (#176), not only individual examples. |
@@ -396,12 +388,9 @@ python3 experiments/issue-176-convergence/score.py
 Прошу фаундера явно согласовать:
 
 1. Можно ли считать R1-R7 approved scope for implementation in PR #179?
-2. Какой path strategy выбрать, пока PR #173 открыт: wait for merge, stack on
-   PR #173, or implement on current `kb/industry/` paths without directory
-   rename?
-3. Входит ли correction `kb/mango-taxonomy/mango-registry.json` for #21 and
+2. Входит ли correction `kb/mango-taxonomy/mango-registry.json` for #21 and
    depth mappings в scope #178, или это отдельный PR?
-4. Как классифицировать status-changing functions в `function_type`: keep current
+3. Как классифицировать status-changing functions в `function_type`: keep current
    gold as `ui-action`, or correct to `business`/`configuration` when they change
    operational state?
 
