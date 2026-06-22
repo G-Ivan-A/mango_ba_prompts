@@ -1,0 +1,34 @@
+[
+  {
+    "n": 4,
+    "id": "mango-talker-official",
+    "level": "official-product",
+    "name_ru": "Mango Talker",
+    "description": "Публичный продукт корпоративных звонков, чатов, видеозвонков и контактной истории."
+  },
+  {
+    "n": 10,
+    "id": "dialog-api-messaging-service",
+    "level": "service",
+    "name_ru": "Dialog API",
+    "description": "Сервис программного обмена сообщениями и событиями цифровых диалогов.",
+    "cluster": "digital-channels"
+  },
+  {
+    "n": 16,
+    "id": "vats-voicemail-management-module",
+    "level": "module",
+    "name_ru": "Управление голосовой почтой",
+    "description": "Модуль сервиса «Записи и история звонков ВАТС» в Mango Taxonomy.",
+    "cluster": "vats-core"
+  },
+  {
+    "n": 22,
+    "id": "configure-sso-connection",
+    "level": "function",
+    "name_ru": "Настроить SSO-подключение",
+    "description": "Атомарная функция модуля «SSO-подключение».",
+    "function_type": "configuration",
+    "interaction_surface": "admin-ui"
+  }
+]

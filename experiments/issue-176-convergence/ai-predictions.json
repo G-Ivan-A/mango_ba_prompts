@@ -1,0 +1,34 @@
+[
+  {"n":1,"id":"mango-virtual-pbx-official","domain":"voice-ucaas","capability":"cloud-pbx","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":7,"id":"mango-security-access","domain":"security","capability":"information-security","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":13,"id":"end-to-end-analytics-service","domain":"analytics","capability":"end-to-end-analytics","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":19,"id":"ai-assistant-module","domain":"ai-automation","capability":"conversation-summaries","feature":"ai-summary","function":null,"alignment_type":"primary"},
+  {"n":25,"id":"send-call-event-webhook","domain":"platform","capability":"open-api","feature":"webhooks","function":"webhook-subscription","alignment_type":"primary"},
+
+  {"n":2,"id":"mango-contact-center-official","domain":"contact-center","capability":"omnichannel-contact-center","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":8,"id":"vats-ivr-service","domain":"voice-ucaas","capability":"ivr-voice-menu","feature":"ivr-scenarios","function":null,"alignment_type":"primary"},
+  {"n":14,"id":"crm-erp-integration-service","domain":"platform","capability":"platform-integration","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":20,"id":"bitrix24-connector-module","domain":"platform","capability":"platform-integration","feature":"crm-connectors","function":null,"alignment_type":"primary"},
+  {"n":26,"id":"attribute-call-to-ad-source","domain":"analytics","capability":"call-tracking","feature":"source-attribution","function":"source-attribution","alignment_type":"primary"},
+
+  {"n":3,"id":"mango-speech-analytics-official","domain":"ai-automation","capability":"speech-analytics","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":9,"id":"cc-supervisor-wfm-service","domain":"contact-center","capability":"workforce-management","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":15,"id":"sso-identity-service","domain":"security","capability":"information-security","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":21,"id":"run-voice-robot-dialog","domain":"ai-automation","capability":"voice-bot","feature":"voice-dialog-orchestration","function":"voice-dialog-flow","alignment_type":"primary"},
+  {"n":27,"id":"transfer-call-with-consultation","domain":"contact-center","capability":"agent-workspace","feature":"agent-desktop","function":"interaction-handling","alignment_type":"primary"},
+
+  {"n":4,"id":"mango-talker-official","domain":"voice-ucaas","capability":"unified-communications","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":10,"id":"dialog-api-messaging-service","domain":"digital-channels","capability":"omnichannel-messaging","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":16,"id":"vats-voicemail-management-module","domain":"voice-ucaas","capability":"cloud-pbx","feature":"voicemail","function":null,"alignment_type":"primary"},
+  {"n":22,"id":"configure-sso-connection","domain":"security","capability":"access-control","feature":null,"function":null,"alignment_type":"primary"},
+
+  {"n":5,"id":"mango-digital-communications","domain":"digital-channels","capability":"omnichannel-messaging","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":11,"id":"talker-video-meeting-service","domain":"voice-ucaas","capability":"video-conferencing","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":17,"id":"cc-supervisor-monitoring-module","domain":"contact-center","capability":"supervisor-assist","feature":"live-monitoring","function":null,"alignment_type":"primary"},
+  {"n":23,"id":"mute-talker-microphone","domain":"voice-ucaas","capability":"unified-communications","feature":"softphone","function":null,"alignment_type":"primary"},
+
+  {"n":6,"id":"mango-marketing-analytics","domain":"analytics","capability":"call-tracking","feature":null,"function":null,"alignment_type":"primary"},
+  {"n":12,"id":"conversation-summary-service","domain":"ai-automation","capability":"conversation-summaries","feature":"ai-summary","function":null,"alignment_type":"primary"},
+  {"n":18,"id":"talker-file-sharing-module","domain":"digital-channels","capability":"team-messaging","feature":"team-chat","function":null,"alignment_type":"primary"},
+  {"n":24,"id":"send-dialog-api-message","domain":"digital-channels","capability":"omnichannel-messaging","feature":"messenger-integration","function":"send-message","alignment_type":"primary"}
+]
