@@ -46,6 +46,21 @@ hub_research:
 > ссылается как на evidence). Слово «например» в постановке задачи прямо даёт
 > такую свободу выбора пути.
 
+> **Обновление после merge `origin/main` (issue #170).** Это исследование
+> проводилось, когда «спрос» на Industry-узлы жил в трёх YAML-файлах
+> (`kb/mango/internal-registry.yaml`, `official-products.yaml`,
+> `product-mapping.yaml`) и насчитывал 316 ссылок `industry_ref`. Issue #170
+> впоследствии свернул их в единый JSON-реестр
+> [`kb/mango/mango-registry.json`](../../kb/mango/mango-registry.json) и
+> перевыровнял ссылки (часть зафиксирована через `mapping_gap`), после чего в
+> Mango-реестре стало **283** ссылки `industry_ref`. Аналитические выводы ниже
+> (какие Capabilities/Features/Functions добавить в Industry-реестр) от этого не
+> меняются: дозаполнение аддитивно, а валидатор
+> `scripts/validate_issue_168_industry_reference_integrity.py` теперь резолвит все
+> **283** ссылки нового реестра против дозаполненного
+> `kb/industry/reference-taxonomy.json` без ошибок. Числа «316» и пути
+> `kb/mango/*.yaml` ниже сохранены как снимок состояния на момент исследования.
+
 ## 0. Метод исследования
 
 1. Источник истины по верхнему уровню — **ADR-011** (семь канонических доменов и

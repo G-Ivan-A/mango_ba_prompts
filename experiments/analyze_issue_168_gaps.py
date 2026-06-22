@@ -3,10 +3,10 @@
 
 Loads the Industry reference registry, builds the set of valid parent-chains
 (Domain -> Capability -> Feature -> Function) including ``aliases``, then scans
-every ``industry_ref`` in ``kb/mango/*.yaml`` and reports which entities do not
+every ``industry_ref`` in the Mango registry and reports which entities do not
 resolve. Output is grouped by level so the registry gap is explicit.
 
-stdlib-only. Mango YAML files are JSON-compatible, so ``json`` parses them.
+stdlib-only. The Mango registry is JSON, so ``json`` parses it directly.
 """
 from __future__ import annotations
 
@@ -17,9 +17,7 @@ from collections import OrderedDict
 REPO = pathlib.Path(__file__).resolve().parents[1]
 REGISTRY = REPO / "kb" / "industry" / "reference-taxonomy.json"
 MANGO_FILES = [
-    REPO / "kb" / "mango" / "internal-registry.yaml",
-    REPO / "kb" / "mango" / "official-products.yaml",
-    REPO / "kb" / "mango" / "product-mapping.yaml",
+    REPO / "kb" / "mango" / "mango-registry.json",
 ]
 
 
