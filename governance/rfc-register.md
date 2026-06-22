@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-18
+version: 0.4
+updated: 2026-06-22
 ai-generated: true
 type: register
 scope: governance
@@ -9,6 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/184"
 related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
@@ -18,6 +19,7 @@ related_artifacts:
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "governance/rfc/prompt-improvement-multichannel-proposal.md"
+  - "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -124,6 +126,18 @@ PR #105 **не изменены** — сверка и правка идут то
 | RFC-MCH-P2 | цепочка `understanding` (glossary↔questions) | Под-шаг/промпт «нормализация требования» (атомы + боль/решение + первичный gap) | эксперимент #109 §М2 | Minor | `proposed` | — |
 | RFC-MCH-P3 | `technical-details-solution-design-stepwise.md` (+ новый `options-*`) | Отдельный промпт «early-options» (варианты доработки, Раздел 3) отдельно от Раздела 7 | эксперимент #109 §М3 | Major | `proposed` | — |
 
+## Открытые RFC по промптам (источник: доработка ФТ RUN-0012, issue #184)
+
+Правки ниже — **предложения** из ревью БА артефакта прогона RUN-0012 (доработка
+ФТ группового звонка на основе ВКС). Промпты **не изменены** (остаются v0.1);
+записи ждут инициативы пользователя. Полный RFC:
+[`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`](rfc/bcreq-ft-scope-formation-rules-proposal.md).
+
+| RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- | --- |
+| RFC-184-S1 | `fr-documentation-stepwise.md`, `…-oneshot.md`, `constraints-documentation-*.md` | Скоуп-фильтр «доработка ≠ текущая функциональность»: не включать в ФТ требования, закрытые текущей функциональностью; исключение — расширенная трактовка (настройки / gross-layer классы) | ревью issue #184 §S1 | Minor | `proposed` | — |
+| RFC-184-S2 | `fr-documentation-stepwise.md`, `glossary-context-understanding-stepwise.md` | Принцип масштаба (>100 тыс. пользователей): запрос одного пользователя не основание менять закрытую (явно/альтернативно) функциональность; исключённые требования и исторический контекст — в лог/анализ, не в ФТ | ревью issue #184 §S2 | Minor | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -139,3 +153,9 @@ PR #105 **не изменены** — сверка и правка идут то
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
   [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
+- **2026-06-22** — добавлены RFC-184-S1/S2 (промпты) в статусе `proposed` по
+  итогам ревью БА доработки ФТ прогона RUN-0012 (issue #184): правила
+  формирования скоупа ФТ (доработка ≠ текущая функциональность; принцип
+  масштаба). RFC-документ —
+  [`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`](rfc/bcreq-ft-scope-formation-rules-proposal.md).
+  Расширяет RFC-1027-P4 (фильтр текущего поведения) с Раздела 6 на Разделы 2 и 4.

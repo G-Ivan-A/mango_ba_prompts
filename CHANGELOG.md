@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-21
+version: 0.4
+updated: 2026-06-22
 ai-generated: true
 ---
 
@@ -12,6 +12,31 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #184 доработка ФТ RUN-0012 по ревью БА (чистка скоупа)
+
+- По итогам ревью БА (issue
+  [#184](https://github.com/G-Ivan-A/mango_ba_prompts/issues/184)) доработан ФТ
+  [`2026-06-22-bcreq-180-mt-group-video-call-ft.md`](runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md):
+  из Раздела 2.1 удалён исторический контекст про аудиоконференции; из ФТ
+  исключены все требования по вертикальной прокрутке списка участников (закрыты
+  альтернативно — постраничным переключением ВКС), пункты перенумерованы,
+  перекрёстные ссылки выверены. Артефакт приведён к чистому виду: только предмет
+  доработки, без исторических данных и без требований, закрытых текущей
+  функциональностью.
+- Добавлен RFC
+  [`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`](governance/rfc/bcreq-ft-scope-formation-rules-proposal.md)
+  с правилами формирования скоупа bcreq-ФТ — **RFC-184-S1** (ФТ описывает
+  доработку, а не текущую функциональность; исключение — зависимость от настроек /
+  gross-layer классов и функций) и **RFC-184-S2** (принцип масштаба: запрос
+  одного пользователя не основание менять закрытую функциональность; отделение
+  исторического контекста). RFC зарегистрирован в
+  [`governance/rfc-register.md`](governance/rfc-register.md) (статус `proposed`,
+  промпты не изменялись).
+- Все комментарии ревью и обоснования исключений сведены в резюме прогона
+  [`summary-bcreq-180-2026-06-22.md`](runs/2026/RUN-0012/outputs/summary-bcreq-180-2026-06-22.md)
+  (раздел «Доработка по обратной связи issue #184») и лог
+  [`logs/experiment-log.md`](runs/2026/RUN-0012/logs/experiment-log.md).
 
 ### Added — Issue #180 ФТ группового звонка Mango Talker (на основе ВКС)
 
