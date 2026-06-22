@@ -30,6 +30,7 @@ on:
       - "scripts/validate_issue_156_industry_taxonomy_registry.py"
       - "scripts/validate_issue_170_mango_registry.py"
       - "scripts/validate_issue_172_taxonomy_path_refactor.py"
+      - "scripts/validate_issue_168_industry_reference_integrity.py"
   workflow_dispatch:
     inputs:
       source_dir:
@@ -131,6 +132,9 @@ jobs:
 
       - name: Validate issue #166 ADR sync
         run: python3 scripts/validate_issue_166_adr_sync.py
+
+      - name: Validate issue #168 Industry reference integrity
+        run: python3 scripts/validate_issue_168_industry_reference_integrity.py
 
   # Тяжёлый сквозной прогон извлечения.
   # На workflow_dispatch выполняет выбранный source. На push в main всегда

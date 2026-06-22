@@ -28,6 +28,39 @@ ai-generated: true
   которая проверяет наличие новых каталогов, отсутствие retired exact-path
   references и подключение проверки к `make kb-validate`/KB workflow.
 
+### Added — Issue #168 дозаполнение реестра Industry Taxonomy
+
+- Дозаполнен machine-readable реестр
+  [`kb/industry-taxonomy/reference-taxonomy.json`](kb/industry-taxonomy/reference-taxonomy.json)
+  (version `1.0.0` → `1.1.0`, additive MINOR по §10.4): добавлены 8 capabilities
+  (`ai-automation/conversation-summaries`, `analytics/real-time-reporting`,
+  `contact-center/interaction-routing`, `contact-center/supervisor-workspace`,
+  `digital-channels/team-messaging`, `hardware/device-management`,
+  `security/access-control`, `voice-ucaas/call-routing`), 9 features и 13
+  functions, завершающие каскад `Domain → Capability → Feature → Function` для
+  каждого узла. Каждая сущность несёт явный `parent`, `evidence_refs`,
+  `lifecycle_status` и (для functions) `function_type` + `parameters`.
+- Смоделированы два alias на существующие canonical nodes вместо дубликатов
+  (§10.2): `communications-apis` → [`platform/cpaas`](kb/industry-taxonomy/reference-taxonomy.json),
+  `webhook-management` → `platform/open-api/webhooks`. После дозаполнения все 316
+  внешних `industry_ref` из [`kb/mango-taxonomy/`](kb/mango-taxonomy/README.md) резолвятся по
+  parent-chain (было 98 неразрешённых).
+- Добавлен аналитический change request
+  [`docs/analysis/industry-inventory.md`](docs/analysis/industry-inventory.md) с
+  industry-landscape research и per-entity обоснованием каждой добавленной
+  сущности (Task 0).
+- Добавлена registry-backed регрессионная проверка
+  [`scripts/validate_issue_168_industry_reference_integrity.py`](scripts/validate_issue_168_industry_reference_integrity.py),
+  подключённая к `make kb-validate` и KB workflow: она резолвит каждый
+  `industry_ref` из
+  [`kb/mango-taxonomy/mango-registry.json`](kb/mango-taxonomy/mango-registry.json)
+  против реестра (alias-aware, §4.5) и
+  проверяет §11.2-подмножество (parent-chain, `alignment_type`, channel-facet
+  enums, slug pattern, free-text-key rejection, evidence resolution, lifecycle
+  severity). Неразрешённая ссылка — ошибка, кроме случая документированного
+  `mapping_gap` (§8.4), который понижается до warning. JSON Schema реестра
+  изменений не потребовала.
+
 ### Changed — Issue #170 единый JSON-реестр Mango Taxonomy
 
 - Три YAML-файла Mango-реестра (`official-products.yaml`,
