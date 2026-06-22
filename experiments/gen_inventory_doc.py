@@ -12,7 +12,7 @@ from collections import Counter, defaultdict
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-NEW = json.loads((ROOT / "kb/mango/mango-registry.json").read_text(encoding="utf-8"))["taxonomy"]
+NEW = json.loads((ROOT / "kb/mango-taxonomy/mango-registry.json").read_text(encoding="utf-8"))["taxonomy"]
 OLDDIR = Path("/tmp/oldyaml")
 OUT = ROOT / "docs/analysis/issue-170-mango-inventory.md"
 
@@ -47,8 +47,8 @@ w("type: analysis")
 w("scope: mango-taxonomy-registry-inventory")
 w('issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/170"')
 w("related_artifacts:")
-for a in ("kb/mango/mango-registry.json", "kb/mango/mango-registry.schema.json",
-          "kb/mango/README.md", "scripts/validate_issue_170_mango_registry.py",
+for a in ("kb/mango-taxonomy/mango-registry.json", "kb/mango-taxonomy/mango-registry.schema.json",
+          "kb/mango-taxonomy/README.md", "scripts/validate_issue_170_mango_registry.py",
           "standards/mango-taxonomy-standard.md",
           "standards/decisions/ADR-012-mango-taxonomy.md",
           "experiments/cascade_fill.py", "experiments/gen_inventory_doc.py"):
@@ -59,7 +59,7 @@ w("# Инвентаризация Mango-реестра и перевод в JSON
 w()
 w("> Документ сгенерирован из живого реестра скриптом "
   "[`experiments/gen_inventory_doc.py`](../../experiments/gen_inventory_doc.py) и "
-  "отражает [`kb/mango/mango-registry.json`](../../kb/mango/mango-registry.json) "
+  "отражает [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) "
   "один-в-один. Перегенерируйте после изменения реестра.")
 w()
 
@@ -73,7 +73,7 @@ w("Issue #170 требовал: (1) свести три YAML-файла Mango-р
   "целостность с Industry-реестром и (6) подготовить этот аналитический документ "
   "с полными списками сущностей, сравнением со старой структурой и фиксацией пробелов.")
 w()
-w("Итог — единый файл [`kb/mango/mango-registry.json`](../../kb/mango/mango-registry.json) "
+w("Итог — единый файл [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) "
   f"(версия `{NEW['version']}`) со следующим наполнением:")
 w()
 w("| Массив | Уровень | Кол-во |")
@@ -104,7 +104,7 @@ w()
 w("**Наследование выравнивания.** Новая сущность копирует *primary* "
   "`industry_alignment` своего родителя (`industry_ref` и `facets` — дословно). "
   "Это гарантирует, что каждая ссылка резолвится против "
-  "[`kb/industry/reference-taxonomy.json`](../../kb/industry/reference-taxonomy.json) "
+  "[`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json) "
   "и что не выдумываются новые отраслевые узлы. Для функций уровень `function` из "
   "`industry_ref` отбрасывается (в текущих данных это no-op).")
 w()
@@ -321,7 +321,7 @@ w("   Проверяет JSON Schema, резолвинг каждого `industr
   "Industry-реестра, целостность «родитель ↔ ребёнок» в обе стороны и полноту "
   "иерархии (пороги и минимумы).")
 w("2. **JSON Schema, draft 2020-12** — "
-  "[`kb/mango/mango-registry.schema.json`](../../kb/mango/mango-registry.schema.json).")
+  "[`kb/mango-taxonomy/mango-registry.schema.json`](../../kb/mango-taxonomy/mango-registry.schema.json).")
 w("3. **Полный контур БЗ:**")
 w("   ```bash")
 w("   make kb-validate")

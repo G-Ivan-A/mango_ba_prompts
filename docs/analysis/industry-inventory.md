@@ -9,8 +9,8 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/168"
 related_artifacts:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/industry-taxonomy-standard.md"
-  - "kb/industry/reference-taxonomy.json"
-  - "kb/industry/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
   - "scripts/validate_issue_168_industry_reference_integrity.py"
 hub_research:
   - "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/classification.md"
@@ -21,7 +21,7 @@ hub_research:
 
 > **Назначение.** Обязательный первый шаг по issue #168 (Task 0): аналитическое
 > исследование industry-ландшафта по ADR-011 перед заполнением
-> `kb/industry/reference-taxonomy.json`. Документ фиксирует полные списки
+> `kb/industry-taxonomy/reference-taxonomy.json`. Документ фиксирует полные списки
 > Capabilities, Features и Functions, которые добавляются в реестр, с
 > **обоснованием каждой сущности** на основе отраслевой логики и стандартов, а
 > также описывает разрывы (gaps) и способ их закрытия.
@@ -47,18 +47,18 @@ hub_research:
 
 > **Обновление после merge `origin/main` (issue #170).** Это исследование
 > проводилось, когда «спрос» на Industry-узлы жил в трёх YAML-файлах
-> (`kb/mango/internal-registry.yaml`, `official-products.yaml`,
+> (`kb/mango-taxonomy/internal-registry.yaml`, `official-products.yaml`,
 > `product-mapping.yaml`) и насчитывал 316 ссылок `industry_ref`. Issue #170
 > впоследствии свернул их в единый JSON-реестр
-> [`kb/mango/mango-registry.json`](../../kb/mango/mango-registry.json) и
+> [`kb/mango-taxonomy/mango-registry.json`](../../kb/mango-taxonomy/mango-registry.json) и
 > перевыровнял ссылки (часть зафиксирована через `mapping_gap`), после чего в
 > Mango-реестре стало **283** ссылки `industry_ref`. Аналитические выводы ниже
 > (какие Capabilities/Features/Functions добавить в Industry-реестр) от этого не
 > меняются: дозаполнение аддитивно, а валидатор
 > `scripts/validate_issue_168_industry_reference_integrity.py` теперь резолвит все
 > **283** ссылки нового реестра против дозаполненного
-> `kb/industry/reference-taxonomy.json` без ошибок. Числа «316» и пути
-> `kb/mango/*.yaml` ниже сохранены как снимок состояния на момент исследования.
+> `kb/industry-taxonomy/reference-taxonomy.json` без ошибок. Числа «316» и пути
+> `kb/mango-taxonomy/*.yaml` ниже сохранены как снимок состояния на момент исследования.
 
 ## 0. Метод исследования
 
@@ -66,7 +66,7 @@ hub_research:
    `platform` как cross-domain layer) и нормативный стандарт
    `standards/industry-taxonomy-standard.md`.
 2. Источник «спроса» на узлы — фактические внешние ссылки `industry_ref` в
-   `kb/mango/*.yaml`. Эти ссылки **не меняются** (запрет issue): если ссылка не
+   `kb/mango-taxonomy/*.yaml`. Эти ссылки **не меняются** (запрет issue): если ссылка не
    разрешается, это сигнал **пробела в Industry-реестре**, который нужно закрыть
    (issue #168, §1.4 / §11.3 стандарта: *Unknown canonical node = error*).
 3. Каждая `industry_ref` была разобрана по цепочке
@@ -85,7 +85,7 @@ hub_research:
 
 | Метрика | Значение |
 | --- | --- |
-| Всего `industry_ref` в `kb/mango/*.yaml` | 316 |
+| Всего `industry_ref` в `kb/mango-taxonomy/*.yaml` | 316 |
 | Не разрешалось до дозаполнения | 98 |
 | Различных отсутствующих **capability** | 9 (одна из них — алиас) |
 | Различных отсутствующих **feature** (parent существует) | 1 (алиас) |
@@ -100,7 +100,7 @@ hub_research:
 
 ## 1. Problem statement (§10.3)
 
-Реестр `kb/industry/reference-taxonomy.json` v1.0.0 закрыл audit-blocker «ниже
+Реестр `kb/industry-taxonomy/reference-taxonomy.json` v1.0.0 закрыл audit-blocker «ниже
 Domain нет canonical registry», но оставался **неполным относительно
 фактических внешних ссылок Mango**: 98 ссылок `industry_ref` не разрешались по
 parent-chain. Это нарушает §11.3 («Unknown canonical node = error», «Invalid
@@ -260,7 +260,7 @@ feature, у feature ≥1 function» (`minItems:1`), но также отрасл
 Все 14 полных цепочек, востребованных Mango под отсутствующими подграфами,
 после дозаполнения разрешаются полностью:
 
-| Цепочка из `kb/mango/*.yaml` | Чем закрыта |
+| Цепочка из `kb/mango-taxonomy/*.yaml` | Чем закрыта |
 | --- | --- |
 | `ai-automation/conversation-summaries/ai-summary` | C1+F1 |
 | `ai-automation/conversation-summaries/ai-summary/generate-summary` | C1+F1+Fn1 |
@@ -283,7 +283,7 @@ feature, у feature ≥1 function» (`minItems:1`), но также отрасл
 
 ## 5. Affected nodes and mappings (§10.3)
 
-- **Реестр:** `kb/industry/reference-taxonomy.json` — добавлены 8 capabilities,
+- **Реестр:** `kb/industry-taxonomy/reference-taxonomy.json` — добавлены 8 capabilities,
   9 features, 13 functions, 2 alias-записи; `version` 1.0.0 → 1.1.0; добавлены
   source-запись `issue-168-industry-inventory` и registry-note. Существующие узлы
   **не изменялись и не удалялись**. Evidence новых узлов:
@@ -292,7 +292,7 @@ feature, у feature ≥1 function» (`minItems:1`), но также отрасл
   `docs/analysis/industry-inventory.md` (этот документ).
 - **JSON Schema:** изменения **не требуются** (вложенная модель уже поддерживает
   все уровни; `aliases` допустимы — у node_base нет `additionalProperties:false`).
-- **Mango (`kb/mango/*.yaml`):** **не изменяются** (запрет issue). После
+- **Mango (`kb/mango-taxonomy/*.yaml`):** **не изменяются** (запрет issue). После
   дозаполнения все 316 ссылок `industry_ref` разрешаются по parent-chain (включая
   alias-резолвинг).
 - **Стандарт, ADR-011 и Mango-валидатор:** **не изменяются** (запрет issue).
@@ -333,7 +333,7 @@ required-наборы; #160 не затронут, т.к. он Mango-side и н�
 **Before** (ссылка не разрешалась → §11.3 error):
 
 ```jsonc
-// kb/mango/internal-registry.yaml (industry_ref)
+// kb/mango-taxonomy/internal-registry.yaml (industry_ref)
 { "domain": "contact-center", "capability": "interaction-routing", "feature": "queue-routing" }
 // registry v1.0.0: contact-center.capabilities[] не содержит interaction-routing → UNRESOLVED
 ```
@@ -371,7 +371,7 @@ required-наборы; #160 не затронут, т.к. он Mango-side и н�
 - [x] §10.4 версия реестра поднята minor (1.0.0 → 1.1.0).
 - [x] §11.3 после дозаполнения нет «Unknown canonical node» / «Invalid
   parent-chain» среди ссылок Mango (0 из 316).
-- [x] Стандарт, ADR-011, `kb/mango/*` и Mango-валидатор не изменялись;
+- [x] Стандарт, ADR-011, `kb/mango-taxonomy/*` и Mango-валидатор не изменялись;
   структура каталогов не менялась (документ размещён в существующем
   `docs/analysis/`).
 

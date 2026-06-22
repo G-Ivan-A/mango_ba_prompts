@@ -1,5 +1,5 @@
 import json
-ref=json.load(open('kb/industry/reference-taxonomy.json'))
+ref=json.load(open('kb/industry-taxonomy/reference-taxonomy.json'))
 gold={g['n']:g for g in json.load(open('experiments/issue-176-convergence/gold.json'))}
 pred={p['n']:p for p in json.load(open('experiments/issue-176-convergence/ai-predictions.json'))}
 

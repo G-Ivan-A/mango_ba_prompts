@@ -3,13 +3,13 @@
 
 Issue #170 converts the three legacy Mango YAML files (official-products.yaml,
 internal-registry.yaml, product-mapping.yaml) into a single JSON registry
-``kb/mango/mango-registry.json`` plus a JSON Schema ``mango-registry.schema.json``,
+``kb/mango-taxonomy/mango-registry.json`` plus a JSON Schema ``mango-registry.schema.json``,
 and demands real referential integrity against the Industry Taxonomy registry.
 
 Unlike the retired ``validate_issue_160_mango_registry.py`` (which only checked a
 frozen, hardcoded subset of the Industry taxonomy and therefore missed broken
 ``industry_ref`` chains), this validator resolves every ``industry_ref`` against
-the *live* ``kb/industry/reference-taxonomy.json`` and implements the registry
+the *live* ``kb/industry-taxonomy/reference-taxonomy.json`` and implements the registry
 contract from the Mango Taxonomy standard §8.2 and §11.2 (30 checks).
 
 Stdlib only — no PyYAML, no jsonschema. The legacy YAML files are JSON-compatible
@@ -26,20 +26,20 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REGISTRY = "kb/mango/mango-registry.json"
-SCHEMA = "kb/mango/mango-registry.schema.json"
-INDUSTRY_REGISTRY = "kb/industry/reference-taxonomy.json"
+REGISTRY = "kb/mango-taxonomy/mango-registry.json"
+SCHEMA = "kb/mango-taxonomy/mango-registry.schema.json"
+INDUSTRY_REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
 STANDARD = "standards/mango-taxonomy-standard.md"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
 KB_WORKFLOW = ".github/workflows/kb.yml"
-README = "kb/mango/README.md"
+README = "kb/mango-taxonomy/README.md"
 VALIDATOR = "scripts/validate_issue_170_mango_registry.py"
 
 LEGACY_YAML = (
-    "kb/mango/official-products.yaml",
-    "kb/mango/internal-registry.yaml",
-    "kb/mango/product-mapping.yaml",
+    "kb/mango-taxonomy/official-products.yaml",
+    "kb/mango-taxonomy/internal-registry.yaml",
+    "kb/mango-taxonomy/product-mapping.yaml",
 )
 
 SLUG_RE = re.compile(r"^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$")

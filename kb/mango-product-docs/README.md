@@ -90,8 +90,8 @@ make kb-validate
   является хранилищем product-docs источников.
 - [`kb/practices/`](../practices/README.md) — ручные практики и методики; это не
   продуктовая документация.
-- `kb/industry/` — будущая Industry Taxonomy.
-- `kb/mango/` — будущая Mango Taxonomy.
+- [`kb/industry-taxonomy/`](../industry-taxonomy/README.md) — Industry Taxonomy.
+- [`kb/mango-taxonomy/`](../mango-taxonomy/README.md) — Mango Taxonomy.
 
 ## Как помочь?
 

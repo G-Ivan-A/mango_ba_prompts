@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Issue #170 — build unified Mango registry JSON from the three legacy YAML files.
 
-Combines kb/mango/official-products.yaml + internal-registry.yaml into a single
+Combines kb/mango-taxonomy/official-products.yaml + internal-registry.yaml into a single
 flat registry, drops the redundant product-mapping.yaml crosswalk, and RE-ALIGNS
-every industry_ref so it resolves against the *real* kb/industry/reference-taxonomy.json
+every industry_ref so it resolves against the *real* kb/industry-taxonomy/reference-taxonomy.json
 (the legacy validator only checked a frozen hardcoded subset, hiding 49 broken refs).
 
 The script is idempotent and fails loudly if any expected remap target is missing
@@ -17,9 +17,9 @@ def load(p):
     with open(os.path.join(ROOT, p), encoding="utf-8") as f:
         return json.load(f)
 
-industry = load("kb/industry/reference-taxonomy.json")
-official = load("kb/mango/official-products.yaml")["taxonomy"]
-internal = load("kb/mango/internal-registry.yaml")["taxonomy"]
+industry = load("kb/industry-taxonomy/reference-taxonomy.json")
+official = load("kb/mango-taxonomy/official-products.yaml")["taxonomy"]
+internal = load("kb/mango-taxonomy/internal-registry.yaml")["taxonomy"]
 
 # ---- industry resolution set -------------------------------------------------
 def _slug(n): return n.get("id") or n.get("slug")
@@ -275,14 +275,14 @@ if errors:
     for e in errors: print("   ", e, file=sys.stderr)
     sys.exit(1)
 
-out = os.path.join(ROOT, "kb/mango/mango-registry.json")
+out = os.path.join(ROOT, "kb/mango-taxonomy/mango-registry.json")
 with open(out, "w", encoding="utf-8") as f:
     json.dump(registry, f, ensure_ascii=False, indent=2)
     f.write("\n")
 
 t = registry["taxonomy"]
-print("OK  wrote kb/mango/mango-registry.json")
+print("OK  wrote kb/mango-taxonomy/mango-registry.json")
 print(f"    remaps applied: {len(applied)}/{len(REMAP)}")
 print(f"    official_products={len(t['official_products'])} products={len(t['products'])} "
       f"services={len(t['internal_services'])} modules={len(t['modules'])} functions={len(t['functions'])}")
-print("    all industry_refs resolve against kb/industry/reference-taxonomy.json")
+print("    all industry_refs resolve against kb/industry-taxonomy/reference-taxonomy.json")

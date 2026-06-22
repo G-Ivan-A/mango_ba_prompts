@@ -13,7 +13,7 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "kb" / "mango"
+OUT = ROOT / "kb" / "mango-taxonomy"
 
 PRODUCTS_URL = "https://www.mango-office.ru/products/"
 VATS_URL = "https://www.mango-office.ru/products/virtualnaya_ats/"

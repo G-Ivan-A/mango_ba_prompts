@@ -14,8 +14,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 STANDARD = "standards/industry-taxonomy-standard.md"
-REGISTRY = "kb/industry/reference-taxonomy.json"
-REGISTRY_SCHEMA = "kb/industry/reference-taxonomy.schema.json"
+REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
+REGISTRY_SCHEMA = "kb/industry-taxonomy/reference-taxonomy.schema.json"
 CHANGELOG = "CHANGELOG.md"
 MAKEFILE = "Makefile"
 KB_WORKFLOW = ".github/workflows/kb.yml"

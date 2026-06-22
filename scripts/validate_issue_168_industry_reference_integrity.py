@@ -3,8 +3,8 @@
 
 Where ``validate_issue_170`` validates the Mango registry against its own JSON
 Schema, this check resolves every ``industry_ref`` in the Mango registry
-(``kb/mango/mango-registry.json``) against the *actual* Industry reference registry
-(``kb/industry/reference-taxonomy.json``) so the two artifacts cannot silently
+(``kb/mango-taxonomy/mango-registry.json``) against the *actual* Industry reference registry
+(``kb/industry-taxonomy/reference-taxonomy.json``) so the two artifacts cannot silently
 drift apart. It implements the registry-resolvable subset of the standard's
 §11.2 mapping-validator contract:
 
@@ -39,12 +39,12 @@ from typing import Any, Iterator
 
 ROOT = Path(__file__).resolve().parents[1]
 
-REGISTRY = "kb/industry/reference-taxonomy.json"
+REGISTRY = "kb/industry-taxonomy/reference-taxonomy.json"
 # Issue #170 collapsed the three Mango YAML files into one JSON registry; this
 # check now reads that single document. Its `industry_ref` objects keep the same
 # shape (domain/capability/feature/function), so resolution is unchanged.
 MANGO_FILES = [
-    "kb/mango/mango-registry.json",
+    "kb/mango-taxonomy/mango-registry.json",
 ]
 MAKEFILE = "Makefile"
 KB_WORKFLOW = ".github/workflows/kb.yml"

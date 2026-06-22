@@ -140,6 +140,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_154_mango_taxonomy_standard.py
 	$(PYTHON) scripts/validate_issue_156_industry_taxonomy_registry.py
 	$(PYTHON) scripts/validate_issue_170_mango_registry.py
+	$(PYTHON) scripts/validate_issue_172_taxonomy_path_refactor.py
 	$(PYTHON) scripts/validate_issue_166_adr_sync.py
 	$(PYTHON) scripts/validate_issue_168_industry_reference_integrity.py
 

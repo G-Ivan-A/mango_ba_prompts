@@ -66,7 +66,7 @@ resource mapping, а голосовое interaction mapping ДОЛЖНО исп�
 
 > **ADR-011 имеет приоритет над ADR-012.** Если ADR-012, Mango Taxonomy Standard
 > или старый Mango crosswalk противоречат ADR-011 либо каноничному реестру
-> `kb/industry/reference-taxonomy.json` по slug'у домена, capability, feature,
+> `kb/industry-taxonomy/reference-taxonomy.json` по slug'у домена, capability, feature,
 > function или по форме `industry_ref` — применяется ADR-011. ADR-012 остаётся
 > источником истины только для Mango-specific слоя
 > `Product -> Service -> Module -> Function` там, где он не конфликтует с ADR-011.
@@ -78,13 +78,13 @@ resource mapping, а голосовое interaction mapping ДОЛЖНО исп�
 [`ADR-011`](ADR-011-industry-taxonomy.md). Все machine-readable примеры в этом ADR
 используют каноничные имена полей (`level`, `official_urls`,
 `supported_by_services`, `evidence_refs`, `maps_to.industry_alignment[]`) и
-каноничные slug'и из `kb/industry/reference-taxonomy.json`; устаревшие черновые
+каноничные slug'и из `kb/industry-taxonomy/reference-taxonomy.json`; устаревшие черновые
 имена (`layer`, `public_urls`, `internal_services`, `kb_refs`, `evidence_level`)
 больше не используются.
 
 > **Reference integrity.** Все slug'и `domain`/`capability`/`feature`/`function`
 > в примерах ниже резолвятся в каноничном реестре
-> [`kb/industry/reference-taxonomy.json`](../../kb/industry/reference-taxonomy.json);
+> [`kb/industry-taxonomy/reference-taxonomy.json`](../../kb/industry-taxonomy/reference-taxonomy.json);
 > Mango entity-имена и кластеры соответствуют
 > [`mango-taxonomy-standard.md`](../mango-taxonomy-standard.md).
 
@@ -573,9 +573,9 @@ Issue #154 закрывает первый follow-up artifact: создан фо
 [`standards/mango-taxonomy-standard.md`](../mango-taxonomy-standard.md). Открыты
 следующие future issues:
 
-- `kb/mango/product-registry.md`: curated registry official products,
+- `kb/mango-taxonomy/product-registry.md`: curated registry official products,
   services, modules and facets;
-- `kb/mango/product-mapping.md`: mapping Mango entities на ADR-011 и source
+- `kb/mango-taxonomy/product-mapping.md`: mapping Mango entities на ADR-011 и source
   evidence;
 - registry validators for required IDs, links, status values, function
   granularity, `channel` facet and alignment cardinality;

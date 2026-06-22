@@ -11,8 +11,8 @@ depends_on:
   - "standards/decisions/ADR-012-mango-taxonomy.md"
 related_artifacts:
   - "docs/analysis/voice-digital-channels-comparison.md"
-  - "kb/industry/reference-taxonomy.json"
-  - "kb/industry/reference-taxonomy.schema.json"
+  - "kb/industry-taxonomy/reference-taxonomy.json"
+  - "kb/industry-taxonomy/reference-taxonomy.schema.json"
   - "standards/product-classification-contract.md"
 validated_by:
   - "scripts/validate_issue_152_industry_taxonomy_standard.py"
@@ -33,9 +33,9 @@ validated_by:
 требований, KB-источников и валидаторов. ADR-011 объясняет, почему принята
 модель; этот стандарт объясняет, как её использовать. Machine-readable registry
 для canonical nodes находится в
-[`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json),
+[`kb/industry-taxonomy/reference-taxonomy.json`](../kb/industry-taxonomy/reference-taxonomy.json),
 а его структурный контракт - в
-[`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json).
+[`kb/industry-taxonomy/reference-taxonomy.schema.json`](../kb/industry-taxonomy/reference-taxonomy.schema.json).
 
 ## 1. Область применения
 
@@ -84,7 +84,7 @@ ADR-012. В этом стандарте допускаются только аб
 1. явное issue/ADR/PR-review решение, помеченное как taxonomy override and
    accepted by maintainer/founder;
 2. этот стандарт для правил применения Industry Taxonomy;
-3. `kb/industry/reference-taxonomy.json` для canonical node ids below Domain;
+3. `kb/industry-taxonomy/reference-taxonomy.json` для canonical node ids below Domain;
 4. ADR-011 в статусе `canonical` как архитектурное решение;
 5. ADR-012 и `standards/mango-taxonomy-standard.md` только для Mango-specific
    Product/Service/Module/Function layer;
@@ -107,7 +107,7 @@ Industry Taxonomy ДОЛЖНА отвечать на вопрос: "какой �
 
 Правила выбора стандарта:
 
-- использовать этот стандарт и `kb/industry/reference-taxonomy.json`, когда
+- использовать этот стандарт и `kb/industry-taxonomy/reference-taxonomy.json`, когда
   артефакт создаёт, проверяет или выбирает `industry_ref`;
 - использовать Mango Taxonomy Standard, когда артефакт описывает Product,
   Service, Module, Function, official URLs, clusters, internal services or
@@ -322,7 +322,7 @@ Domain -> Capability -> Feature -> Function
 
 `platform` is not an eighth Domain. It is fixed as a cross-domain/productizable
 layer in the `cross_domain_layers` section of
-`kb/industry/reference-taxonomy.json`. In `industry_ref`, the existing field
+`kb/industry-taxonomy/reference-taxonomy.json`. In `industry_ref`, the existing field
 `domain` is retained for compatibility and MAY contain `platform`; validators
 MUST resolve that value against `domains[]` plus `cross_domain_layers[]`.
 
@@ -333,9 +333,9 @@ MUST resolve that value against `domains[]` plus `cross_domain_layers[]`.
 ### 3.2 Machine-readable registry coverage
 
 Canonical node ids below Domain ДОЛЖНЫ браться из
-[`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json).
+[`kb/industry-taxonomy/reference-taxonomy.json`](../kb/industry-taxonomy/reference-taxonomy.json).
 Schema registry contract ДОЛЖЕН соответствовать
-[`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json).
+[`kb/industry-taxonomy/reference-taxonomy.schema.json`](../kb/industry-taxonomy/reference-taxonomy.schema.json).
 
 Минимальная проверяемая структура registry:
 
@@ -456,7 +456,7 @@ Canonical slug ДОЛЖЕН:
 ### 4.2 Минимальная структура node
 
 Machine-readable registry ДОЛЖЕН хранить node в JSON форме, проверяемой
-`kb/industry/reference-taxonomy.schema.json`. Минимальный YAML-представимый
+`kb/industry-taxonomy/reference-taxonomy.schema.json`. Минимальный YAML-представимый
 контракт:
 
 ```yaml
@@ -499,7 +499,7 @@ parent:
 ### 4.3 JSON Schema contract
 
 Canonical registry structure ДОЛЖНА валидироваться схемой
-`kb/industry/reference-taxonomy.schema.json`. Mapping artifacts MAY use the
+`kb/industry-taxonomy/reference-taxonomy.schema.json`. Mapping artifacts MAY use the
 following JSON Schema fragment for `industry_ref`; parent-chain existence is
 then checked by registry-aware validator logic.
 
@@ -857,7 +857,7 @@ channel.
 ### 6.6 Other facets
 
 Следующие facets являются canonical conceptual overlays. Их registry contract
-ДОЛЖЕН быть синхронизирован с `kb/industry/reference-taxonomy.json`:
+ДОЛЖЕН быть синхронизирован с `kb/industry-taxonomy/reference-taxonomy.json`:
 
 | Facet | Типичные значения | Применение |
 | --- | --- | --- |
@@ -1622,7 +1622,7 @@ Enum values are closed for:
 ### 13.3 Отсутствие дублирования
 
 Стандарт does not repeat ADR-011 source research tables, ADR-012 Mango product
-crosswalk or the full `kb/industry/reference-taxonomy.json` registry. It
+crosswalk or the full `kb/industry-taxonomy/reference-taxonomy.json` registry. It
 references them as source artifacts and defines application rules for validators
 and mappings.
 
@@ -1632,7 +1632,7 @@ Standard decisions align with:
 
 - ADR-011 canonical v1.0: four-level hierarchy, domain set, `platform`,
   `voice-channel`, `channel` facet, strict mapping;
-- `kb/industry/reference-taxonomy.json`: canonical below-Domain node ids and
+- `kb/industry-taxonomy/reference-taxonomy.json`: canonical below-Domain node ids and
   explicit `cross_domain_layers` for `platform`;
 - ADR-012: Mango `Product -> Service -> Module -> Function`, `function_type`,
   many-to-many mapping and alias rules;
@@ -1661,9 +1661,9 @@ The validator contract is machine-actionable:
 - Voice/digital channels analysis:
   [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
 - Industry Taxonomy registry:
-  [`kb/industry/reference-taxonomy.json`](../kb/industry/reference-taxonomy.json)
+  [`kb/industry-taxonomy/reference-taxonomy.json`](../kb/industry-taxonomy/reference-taxonomy.json)
 - Industry Taxonomy registry schema:
-  [`kb/industry/reference-taxonomy.schema.json`](../kb/industry/reference-taxonomy.schema.json)
+  [`kb/industry-taxonomy/reference-taxonomy.schema.json`](../kb/industry-taxonomy/reference-taxonomy.schema.json)
 - Product Classification Contract:
   [`standards/product-classification-contract.md`](product-classification-contract.md)
 - RFC 2119 / BCP 14: <https://www.rfc-editor.org/info/bcp14>
