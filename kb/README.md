@@ -9,8 +9,8 @@ related_artifacts:
   - "standards/kb-standard.md"
   - "docs/adr/007-kb-standard.md"
   - "kb/mango-product-docs/README.md"
-  - "kb/industry/README.md"
-  - "kb/mango/README.md"
+  - "kb/industry-taxonomy/README.md"
+  - "kb/mango-taxonomy/README.md"
   - "docs/audit/issue-144-kb-structure.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
@@ -40,8 +40,8 @@ KB регулируется [kb-standard.md](../standards/kb-standard.md) и
 | [`kb/mango-product-docs/`](mango-product-docs/README.md) | База знаний продуктов Mango Office: PDF/веб-источники, обработанные Markdown-чанки и инструкции использования. | Рабочий product-docs namespace |
 | [`kb/fragments/`](fragments/README.md) | Задел под атомарные фрагменты будущего векторного RAG; сейчас product-docs чанки живут в `kb/mango-product-docs/processed/`. | Оставить в `kb/`, не переносить в product-docs |
 | [`kb/practices/`](practices/README.md) | Ручные практики и методики анализа, не привязанные к конкретному продукту Mango Office. | Оставить в `kb/`, не переносить в product-docs |
-| [`kb/industry/`](industry/README.md) | Industry Taxonomy: machine-readable реестр отраслевой классификации `Domain -> Capability -> Feature -> Function`. | Рабочий industry namespace |
-| [`kb/mango/`](mango/README.md) | Mango Taxonomy Registry: Official Layer, Internal Layer и mapping к Industry Taxonomy. Историческая метка `kb/mango/ (будущий)` сохранена для совместимости с issue #144. | Рабочий taxonomy namespace |
+| [`kb/industry-taxonomy/`](industry-taxonomy/README.md) | Industry Taxonomy: machine-readable реестр отраслевой классификации `Domain -> Capability -> Feature -> Function`. | Рабочий industry taxonomy namespace |
+| [`kb/mango-taxonomy/`](mango-taxonomy/README.md) | Mango Taxonomy Registry: Official Layer, Internal Layer и mapping к Industry Taxonomy. | Рабочий mango taxonomy namespace |
 
 ## Как использовать?
 
@@ -51,12 +51,12 @@ KB регулируется [kb-standard.md](../standards/kb-standard.md) и
 [`UPLOAD-GUIDE.md`](mango-product-docs/UPLOAD-GUIDE.md).
 
 Для классификации продуктов Mango Office используйте
-[`kb/mango/README.md`](mango/README.md): там описаны публичный Official Layer,
+[`kb/mango-taxonomy/README.md`](mango-taxonomy/README.md): там описаны публичный Official Layer,
 внутренний Internal Layer `Product -> Service -> Module -> Function` и mapping к
 Industry Taxonomy.
 
 Для отраслевой классификации используйте
-[`kb/industry/README.md`](industry/README.md): там описан machine-readable
+[`kb/industry-taxonomy/README.md`](industry-taxonomy/README.md): там описан machine-readable
 реестр `Domain -> Capability -> Feature -> Function`, на который ссылается
 Mango mapping.
 
@@ -125,9 +125,9 @@ RAG, `practices/` — ручные практики. Их не нужно пер
   читает извлечённую БЗ.
 - [`kb/mango-product-docs/UPLOAD-GUIDE.md`](mango-product-docs/UPLOAD-GUIDE.md) —
   как добавлять и обновлять документы.
-- [`kb/industry/README.md`](industry/README.md) — machine-readable Industry
+- [`kb/industry-taxonomy/README.md`](industry-taxonomy/README.md) — machine-readable Industry
   Taxonomy registry.
-- [`kb/mango/README.md`](mango/README.md) — machine-readable Mango Taxonomy
+- [`kb/mango-taxonomy/README.md`](mango-taxonomy/README.md) — machine-readable Mango Taxonomy
   Registry и crosswalk к Industry Taxonomy.
 - [`docs/audit/issue-144-kb-structure.md`](../docs/audit/issue-144-kb-structure.md) —
   проверка истории `fragments/` и `practices/`.

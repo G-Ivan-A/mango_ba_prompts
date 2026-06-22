@@ -18,7 +18,7 @@ related_issues:
 
 # Mango Taxonomy Registry
 
-`kb/mango/` хранит machine-readable реестр Mango Taxonomy по стандарту
+`kb/mango-taxonomy/` хранит machine-readable реестр Mango Taxonomy по стандарту
 [`standards/mango-taxonomy-standard.md`](../../standards/mango-taxonomy-standard.md)
 и ADR
 [`standards/decisions/ADR-012-mango-taxonomy.md`](../../standards/decisions/ADR-012-mango-taxonomy.md).
@@ -86,7 +86,7 @@ Function-level записи используют `function_type` (`business`, `c
 [`standards/industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md)
 и использует только канонические `industry_ref`, которые резолвятся против
 canonical registry
-[`kb/industry/reference-taxonomy.json`](../industry/reference-taxonomy.json).
+[`kb/industry-taxonomy/reference-taxonomy.json`](../industry-taxonomy/reference-taxonomy.json).
 Если Industry Taxonomy не содержит нужный Feature или Function, alignment несёт
 `mapping_gap` с предлагаемым slug и причиной — отдельный crosswalk-файл больше не
 нужен.

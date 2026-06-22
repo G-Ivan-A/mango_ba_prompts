@@ -15,9 +15,9 @@ import pathlib
 from collections import OrderedDict
 
 REPO = pathlib.Path(__file__).resolve().parents[1]
-REGISTRY = REPO / "kb" / "industry" / "reference-taxonomy.json"
+REGISTRY = REPO / "kb" / "industry-taxonomy" / "reference-taxonomy.json"
 MANGO_FILES = [
-    REPO / "kb" / "mango" / "mango-registry.json",
+    REPO / "kb" / "mango-taxonomy" / "mango-registry.json",
 ]
 
 
