@@ -148,6 +148,11 @@ NEW_MODULES = [
         ("view-talker-favorites", "Открыть список избранного", "ui-action", "end-user-ui", [("mtalker/windows-mac-working", 189)]),
         ("filter-talker-contact-groups", "Фильтровать контакты по группам", "ui-action", "end-user-ui", [("mtalker/windows-mac-working", 183)]),
      ]},
+    {"id": "talker-presence-status-module", "name_ru": "Статус присутствия и уведомления",
+     "parent_service": "talker-softphone-service", "functions": [
+        ("change-talker-presence-status", "Сменить статус присутствия пользователя", "ui-action", "end-user-ui", [("mtalker/windows-mac-working", 222), ("mtalker/android-user-guide", 115)]),
+        ("disable-talker-notifications", "Отключить показ уведомлений из всех чатов и каналов", "ui-action", "end-user-ui", [("mtalker/windows-mac-working", 220), ("mtalker/windows-mac-working", 223)]),
+     ]},
     # ===================== ai-speech-quality (mango-ai-speech-quality) =====================
     {"id": "quality-appeal-module", "name_ru": "Апелляции по оценке качества",
      "parent_service": "quality-checklist-service", "functions": [
@@ -280,7 +285,7 @@ def main():
     used_ids = {e["id"] for key in ("products", "internal_services", "modules", "functions",
                                     "official_products") for e in tax[key]}
 
-    log, skipped = [], []
+    log, skipped, already = [], [], []
     added_modules = added_functions = 0
 
     # ---- new modules ----
@@ -290,7 +295,7 @@ def main():
             skipped.append(f"module {spec['id']}: parent service {spec['parent_service']} missing")
             continue
         if spec["id"] in used_ids:
-            skipped.append(f"module {spec['id']}: id collision")
+            already.append(f"module {spec['id']}: already present")
             continue
         svc_align = primary_alignment(svc)
         mod_ref = copy.deepcopy(svc_align["industry_ref"])
@@ -302,7 +307,7 @@ def main():
                 skipped.append(f"function {fid}: no evidence resolved ({miss})")
                 continue
             if fid in used_ids:
-                skipped.append(f"function {fid}: id collision")
+                already.append(f"function {fid}: already present")
                 continue
             used_ids.add(fid)
             all_ev.extend(res)
@@ -356,7 +361,7 @@ def main():
             skipped.append(f"function {fid}: parent module {parent_module} missing")
             continue
         if fid in used_ids:
-            skipped.append(f"function {fid}: id collision")
+            already.append(f"function {fid}: already present")
             continue
         res, miss = ev_paths(ev)
         if not res:
@@ -379,10 +384,15 @@ def main():
     REGISTRY.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print("\n".join(log))
+    if already:
+        print(f"\n=== ALREADY PRESENT (no-op, {len(already)}) ===")
+        print("\n".join(already))
     print("\n=== SKIPPED ===")
     print("\n".join(skipped) if skipped else "(none)")
     print(f"\nadded_modules={added_modules} added_functions={added_functions}")
     print(f"totals: services={len(tax['internal_services'])} modules={len(tax['modules'])} functions={len(tax['functions'])}")
+    # Only real problems (missing evidence/parent) are failures; re-running on an
+    # already-filled registry is a clean no-op.
     return 1 if skipped else 0
 
 

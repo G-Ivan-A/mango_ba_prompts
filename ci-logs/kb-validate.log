@@ -1,0 +1,47 @@
+python3 scripts/validate_issue_111_kb_pipeline.py
+issue-111 KB pipeline validation: PASS
+python3 scripts/validate_issue_115_kb_mango_pipeline.py
+issue-115 KB mango pipeline validation: PASS
+python3 scripts/validate_issue_117_kb_traceability.py
+issue-117 KB traceability validation: PASS
+python3 scripts/validate_issue_121_kb_multi_file.py
+issue-121 KB multi-file validation: PASS
+python3 scripts/validate_issue_129_kb_all_sources.py
+Issue #129 validation passed.
+python3 scripts/validate_issue_137_kb_product_docs_migration.py
+Issue #137 KB product-docs migration validation passed.
+python3 scripts/validate_issue_144_kb_structure_readmes.py
+Issue #144 KB structure README validation passed.
+python3 scripts/validate_issue_131_kb_processed_outputs.py
+Issue #131 validation failed:
+- kb/mango-product-docs/sources/Rolevaya-model-vats/Rolevaya-model-VATS_1_26_08.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/integration-bitrix24/Mango_office_integration_Bitrix24.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/lk-vats-sso/MANGO_OFFICE_LK_VATS_Auth_SSO.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mtalker/mTalker_Quick_start.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch2_Settings.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch3_Admin_Guide.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/quality-managment/QM_manual_v-1.26.18.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf: Git LFS pointer checked out instead of PDF bytes
+- kb/mango-product-docs/sources/wallboard/Programma-dlya-EVM-Wallboard-Mango-Office_v7.22.25.pdf: Git LFS pointer checked out instead of PDF bytes
+make: *** [Makefile:136: kb-validate] Error 1

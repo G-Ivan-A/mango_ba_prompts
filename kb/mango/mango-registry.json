@@ -1256,7 +1256,8 @@
         ],
         "modules": [
           "talker-softphone-module",
-          "talker-call-control-module"
+          "talker-call-control-module",
+          "talker-presence-status-module"
         ]
       },
       {
@@ -3838,6 +3839,51 @@
           "remove-talker-favorite",
           "view-talker-favorites",
           "filter-talker-contact-groups"
+        ]
+      },
+      {
+        "id": "talker-presence-status-module",
+        "level": "module",
+        "name_ru": "Статус присутствия и уведомления",
+        "description": "Модуль сервиса «Софтфон Mango Talker» в Mango Taxonomy.",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/222-kak-izmenit-status.md",
+          "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/115-smena-statusa-polzovatelya.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/222-kak-izmenit-status.md",
+                "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/115-smena-statusa-polzovatelya.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "cluster": "mango-talker",
+        "parent_services": [
+          "talker-softphone-service"
+        ],
+        "functions": [
+          "change-talker-presence-status",
+          "disable-talker-notifications"
         ]
       },
       {
@@ -7902,6 +7948,78 @@
           ]
         },
         "parent_module": "talker-favorites-groups-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "change-talker-presence-status",
+        "level": "function",
+        "name_ru": "Сменить статус присутствия пользователя",
+        "description": "Атомарная функция модуля «Статус присутствия и уведомления».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/222-kak-izmenit-status.md",
+          "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/115-smena-statusa-polzovatelya.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/222-kak-izmenit-status.md",
+                "kb/mango-product-docs/processed/mtalker/android-user-guide/sections/115-smena-statusa-polzovatelya.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-presence-status-module",
+        "function_type": "ui-action",
+        "interaction_surface": "end-user-ui"
+      },
+      {
+        "id": "disable-talker-notifications",
+        "level": "function",
+        "name_ru": "Отключить показ уведомлений из всех чатов и каналов",
+        "description": "Атомарная функция модуля «Статус присутствия и уведомления».",
+        "lifecycle_status": "active",
+        "evidence_refs": [
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
+          "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md"
+        ],
+        "maps_to": {
+          "industry_alignment": [
+            {
+              "alignment_type": "primary",
+              "industry_ref": {
+                "domain": "voice-ucaas",
+                "capability": "unified-communications"
+              },
+              "evidence_refs": [
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/220-kak-izmenit-status-ili-otklyuchit-pokaz.md",
+                "kb/mango-product-docs/processed/mtalker/windows-mac-working/sections/223-kak-otklyuchit-uvedomleniya-v-mtalker.md"
+              ],
+              "facets": {
+                "channel": {
+                  "channel_kind": "voice",
+                  "synchronicity": "sync",
+                  "direction": "outbound"
+                }
+              }
+            }
+          ]
+        },
+        "parent_module": "talker-presence-status-module",
         "function_type": "ui-action",
         "interaction_surface": "end-user-ui"
       },
