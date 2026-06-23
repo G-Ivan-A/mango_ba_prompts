@@ -8,13 +8,20 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-OUTPUT = "outputs/bcreq-1027-section-4-3.md"
+OUTPUT = "runs/bcreq-1027/artifacts/section-4-3-api.md"
 VALIDATOR = "scripts/validate_issue_199_bcreq_1027_section_4_3.py"
+TEMPORARY_ATTACHMENT_URLS = tuple(
+    "https://github.com/" + f"user-attachments/files/{file_id}/{filename}"
+    for file_id, filename in (
+        ("29252399", "default.txt"),
+        ("29252400", "1027.txt"),
+    )
+)
 
 REQUIRED_OUTPUT_TEXT = (
     "https://github.com/G-Ivan-A/mango_ba_prompts/issues/199",
-    "https://github.com/user-attachments/files/29252399/default.txt",
-    "https://github.com/user-attachments/files/29252400/1027.txt",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202",
+    "TODO: заменить на permalink после задачи Golden Examples",
     "## 4.3. API-методы",
     "POST /events/md/onAppealClose",
     "POST /vpbx/cc/appeals/create-closed-appeals",
@@ -35,6 +42,7 @@ REQUIRED_OUTPUT_TEXT = (
 )
 
 FORBIDDEN_OUTPUT_TEXT = (
+    *TEMPORARY_ATTACHMENT_URLS,
     "… доработать",
     "POST /vpbx/stats/calls/result",
     "post_call_processing_campaing_time",
