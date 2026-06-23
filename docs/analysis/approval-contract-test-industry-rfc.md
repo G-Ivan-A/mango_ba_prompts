@@ -6,14 +6,14 @@ ai-generated: true
 type: validation-note
 scope: governance
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/193"
-contract: "governance/contracts/approval-contract.md"
+contract: "governance/approval-contract.md"
 tested_document: "docs/analysis/rfc-industry-taxonomy-improvement.md"
 ---
 
 # Тест контракта согласования: RFC Industry Taxonomy
 
 Этот документ фиксирует сухой прогон
-[`governance/contracts/approval-contract.md`](../../governance/contracts/approval-contract.md)
+[`governance/approval-contract.md`](../../governance/approval-contract.md)
 на текущем RFC
 [`docs/analysis/rfc-industry-taxonomy-improvement.md`](rfc-industry-taxonomy-improvement.md).
 Цель теста — проверить, что AI-агент читает реальный документ, строит карту
@@ -27,7 +27,7 @@ tested_document: "docs/analysis/rfc-industry-taxonomy-improvement.md"
 Триггер, эквивалентный пользовательскому запросу:
 
 > Проведи атомарное согласование RFC Industry по контракту
-> `governance/contracts/approval-contract.md`.
+> `governance/approval-contract.md`.
 
 Вход:
 
@@ -38,11 +38,16 @@ tested_document: "docs/analysis/rfc-industry-taxonomy-improvement.md"
 | `related_context` | `docs/analysis/taxonomy-convergence-test.md`, `docs/analysis/mango-taxonomy-convergence-test.md`, `standards/industry-taxonomy-standard.md`, `standards/decisions/ADR-011-industry-taxonomy.md` |
 
 Источник чтения: локальный файл репозитория
-`docs/analysis/rfc-industry-taxonomy-improvement.md`.
+`docs/analysis/rfc-industry-taxonomy-improvement.md`. Читаемый документ
+загружен в рабочий контекст перед построением карты разделов; согласование не
+использует память о документе или догадки о его структуре.
 
 ## 2. Проверка структуры документа
 
-В документе найдено 9 верхнеуровневых разделов:
+В документе найдено 9 верхнеуровневых разделов. Для этого RFC выбран размер
+блока согласования на уровне H1/H2: заголовок H1 задаёт весь RFC, а разделы H2
+являются логическими блоками, достаточно крупными для контекста и достаточно
+малыми для явного атомарного решения.
 
 | Раздел | Название | Роль в RFC |
 | --- | --- | --- |
@@ -111,6 +116,23 @@ tested_document: "docs/analysis/rfc-industry-taxonomy-improvement.md"
 - Связь с разделом 4 RFC: предложения R1-R8 должны использовать paths,
   зафиксированные в разделе 1.
 
+### E. Критическая оценка раздела
+
+Раздел полезно закрывает риск устаревших путей и явно запрещает новый path
+refactor внутри RFC. Слабое место: раздел ссылается на PR #173 и issue #178 как
+на процессные зависимости, но не приводит ссылки на них внутри текста раздела;
+для полной прослеживаемости можно добавить ссылки перед реализацией.
+Противоречий с содержимым текущего раздела не найдено.
+
+### F. Рекомендация по согласованию
+
+Рекомендация: согласовать.
+
+Обоснование: раздел содержит проверяемую конкретику по текущим путям,
+ограничивает scope и не требует изменения артефактов до approval. Замечание по
+ссылкам на PR #173 и issue #178 не блокирует согласование раздела, но его стоит
+вынести в follow-up для улучшения traceability.
+
 ### Статус
 
 Ожидается решение фаундера по разделу 1: approve / rework / blocked.
@@ -123,8 +145,12 @@ tested_document: "docs/analysis/rfc-industry-taxonomy-improvement.md"
 Контракт прошёл тестовую проверку на RFC Industry Taxonomy:
 
 - полное содержимое документа прочитано из локального файла;
-- структура RFC выделена до начала согласования;
-- первый пакет содержит резюме, конкретные предложения, вопросы и зависимости;
+- читаемый документ загружен в рабочий контекст до анализа, чтобы не выдумывать
+  разделы;
+- структура RFC выделена до начала согласования, а блок согласования выбран на
+  уровне H1/H2;
+- первый пакет содержит резюме, конкретные предложения, вопросы, зависимости,
+  критическую оценку и рекомендацию;
 - статус раздела отделён от статуса всего RFC;
 - атомарность соблюдена: тест остановлен после раздела 1.
 

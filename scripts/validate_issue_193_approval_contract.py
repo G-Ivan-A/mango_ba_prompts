@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-CONTRACT = "governance/contracts/approval-contract.md"
+CONTRACT = "governance/approval-contract.md"
 TEST_EVIDENCE = "docs/analysis/approval-contract-test-industry-rfc.md"
 VALIDATOR = "scripts/validate_issue_193_approval_contract.py"
 
@@ -27,7 +27,13 @@ REQUIRED_CONTRACT_TEXT = (
     "Запусти процесс согласования для файла",
     "Согласуй документ по контракту",
     "Проведи атомарное согласование",
+    "уровня H1 и/или H2",
+    "загрузить читаемые документы в рабочий контекст",
+    "галлюцинации запрещены",
     "В разделе конкретных предложений НЕТ",
+    "Критическая оценка",
+    "Рекомендация по согласованию",
+    "согласовать / не согласовать",
     "НЕ переходить к следующему разделу",
     "AI не принимает решения",
     "RFC",
@@ -44,6 +50,10 @@ REQUIRED_TEST_TEXT = (
     "## 2. Проверка структуры документа",
     "## 3. Пакет согласования для раздела 1",
     "## 4. Результат проверки контракта",
+    "H1/H2",
+    "### E. Критическая оценка раздела",
+    "### F. Рекомендация по согласованию",
+    "Рекомендация: согласовать",
     "Стоп-условие атомарности",
     "В разделе конкретных предложений НЕТ",
     "standards/industry-taxonomy-standard.md",
@@ -54,7 +64,7 @@ REQUIRED_TEST_TEXT = (
 REQUIRED_PROJECT_TEXT = {
     "CHANGELOG.md": ("Issue #193", CONTRACT, TEST_EVIDENCE, VALIDATOR),
     "README.md": (CONTRACT,),
-    "governance/artifact-map.md": ("`/governance/contracts/`", CONTRACT),
+    "governance/artifact-map.md": (CONTRACT,),
     ".github/workflows/github-pages.yml": (
         "Validate issue #193 approval contract",
         VALIDATOR,
