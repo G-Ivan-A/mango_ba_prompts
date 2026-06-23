@@ -121,6 +121,21 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0013": {
+        "year": "2026",
+        "files": [
+            "inputs/issue-1027.md",
+            "outputs/section-4-3-api.md",
+            "feedback/corrections.md",
+            "feedback/contract-issues.md",
+            "logs/generation.log",
+        ],
+        "old_paths": [
+            "runs/bcreq-1027/README.md",
+            "runs/bcreq-1027/metadata.yaml",
+            "runs/bcreq-1027/artifacts/section-4-3-api.md",
+        ],
+    },
 }
 
 

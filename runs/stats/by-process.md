@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-22
+updated: 2026-06-24
 ai-generated: true
 type: statistics
 scope: runs
@@ -9,7 +9,7 @@ scope: runs
 
 # Статистика runs/ по процессам
 
-Уникальных процессов: 12.
+Уникальных процессов: 13.
 
 | Процесс | Количество | Run'ы | Связанные определения |
 | --- | ---: | --- | --- |
@@ -25,3 +25,4 @@ scope: runs
 | bcreq-1025-email-routing | 1 | [`RUN-0010`](../2026/RUN-0010/) | [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md) |
 | multichannel-agent-workload | 1 | [`RUN-0011`](../2026/RUN-0011/) | [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md) |
 | bcreq-180-mt-group-video-call | 1 | [`RUN-0012`](../2026/RUN-0012/) | [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md) |
+| bcreq-1027 | 1 | [`RUN-0013`](../2026/RUN-0013/) | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) |

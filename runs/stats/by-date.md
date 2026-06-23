@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-22
+updated: 2026-06-24
 ai-generated: true
 type: statistics
 scope: runs
@@ -14,7 +14,7 @@ scope: runs
 | Месяц | Количество run'ов |
 | --- | ---: |
 | 2026-05 | 5 |
-| 2026-06 | 7 |
+| 2026-06 | 8 |
 
 ## 2026-05
 
@@ -37,3 +37,4 @@ scope: runs
 | 2026-06-17 | [`RUN-0010`](../2026/RUN-0010/) | 💼 `business-task` | bcreq-1025-email-routing |
 | 2026-06-18 | [`RUN-0011`](../2026/RUN-0011/) | 💼 `business-task` | multichannel-agent-workload |
 | 2026-06-22 | [`RUN-0012`](../2026/RUN-0012/) | 💼 `business-task` | bcreq-180-mt-group-video-call |
+| 2026-06-24 | [`RUN-0013`](../2026/RUN-0013/) | 💼 `business-task` | bcreq-1027 |

@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.4
-updated: 2026-06-22
+updated: 2026-06-24
 ai-generated: true
 ---
 
@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #207 структура RUN-0013 и API VPBX для BCREQ-1027
+
+- BCREQ-1027 перенесён в канонический run
+  [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/) с `metadata.yaml`, входом,
+  логом, feedback и артефактом
+  [`runs/2026/RUN-0013/outputs/section-4-3-api.md`](runs/2026/RUN-0013/outputs/section-4-3-api.md).
+- Раздел 4.3 скорректирован на основе API ВАТС
+  `POST /vpbx/stats/calls/result`: прежняя привязка к другому API удалена из
+  артефакта, а структура запроса/ответа описана по
+  `kb/mango-product-docs/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md`.
+- `runs/REGISTRY.md`, `runs/stats/`, валидаторы issue #199/#205 и новый
+  [`scripts/validate_issue_207_bcreq_1027_vpbx_run.py`](scripts/validate_issue_207_bcreq_1027_vpbx_run.py)
+  обновлены и подключены к GitHub Pages workflow.
 ### Fixed — Issue #208 L3-утечки в контракте BCREQ-FR
 
 - Контракт
@@ -44,23 +57,17 @@ ai-generated: true
 
 ### Fixed — Issue #205 структура runs для BCREQ-1027
 
-- BCREQ-1027: перенесён из `outputs/` в `runs/bcreq-1027/` с правильной
-  структурой метаданных: [`README.md`](runs/bcreq-1027/README.md),
-  [`metadata.yaml`](runs/bcreq-1027/metadata.yaml) и
-  [`artifacts/section-4-3-api.md`](runs/bcreq-1027/artifacts/section-4-3-api.md).
-- BCREQ-1027: обновлены ссылки на источники. Временные `github.com/user-attachments`
-  заменены на TODO: заменить на permalink после задачи Golden Examples.
-- Обновлены валидаторы issue #199/#205 и GitHub Pages workflow для новой
-  канонической структуры артефакта.
+- Предыдущая промежуточная структура BCREQ-1027 заменена канонической записью
+  [`RUN-0013`](runs/2026/RUN-0013/metadata.yaml) согласно `runs/CONTRACT.md`.
+- Проверки issue #205 сохранены как регрессионные проверки отсутствия старого
+  размещения и корректной регистрации артефакта в `runs/REGISTRY.md`.
 
 ### Added — Issue #199 раздел 4.3 API-методов BCREQ-1027
 
-- Добавлен артефакт
-  [`runs/bcreq-1027/artifacts/section-4-3-api.md`](runs/bcreq-1027/artifacts/section-4-3-api.md)
-  с доработанным текстом только для раздела 4.3: расширение события
-  `POST /events/md/onAppealClose` и метода
-  `POST /vpbx/cc/appeals/create-closed-appeals` полем `completion_method` без
-  изменения существующего `result`.
+- Актуальный артефакт раздела 4.3 расположен в
+  [`runs/2026/RUN-0013/outputs/section-4-3-api.md`](runs/2026/RUN-0013/outputs/section-4-3-api.md)
+  и после исправления issue #207 описывает метод API ВАТС
+  `POST /vpbx/stats/calls/result`.
 - В артефакте зафиксированы delta-резюме, источники, taxonomy traceability и
   проверка соблюдения `RFC-184-S1`/`RFC-184-S2`: раздел 3 не формируется,
   As-Is и исторический контекст не переносятся в результат.

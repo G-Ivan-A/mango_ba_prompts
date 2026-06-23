@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.2
-updated: 2026-06-22
+updated: 2026-06-24
 ai-generated: true
 type: registry
 scope: runs
@@ -26,3 +26,4 @@ related_issues:
 | [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | 💼 `business-task` | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
 | [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | 💼 `business-task` | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-06-22 | 💼 `business-task` | bcreq-180-mt-group-video-call | [`2026-06-22-bcreq-180-mt-group-video-call-ft.md`](2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md), [`summary-bcreq-180-2026-06-22.md`](2026/RUN-0012/outputs/summary-bcreq-180-2026-06-22.md) |
+| [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-06-24 | 💼 `business-task` | bcreq-1027 | [`section-4-3-api.md`](2026/RUN-0013/outputs/section-4-3-api.md) |

@@ -61,6 +61,9 @@ jobs:
       - name: Validate issue #205 BCREQ-1027 runs structure
         run: python3 scripts/validate_issue_205_bcreq_1027_runs_structure.py
 
+      - name: Validate issue #207 BCREQ-1027 VPBX run
+        run: python3 scripts/validate_issue_207_bcreq_1027_vpbx_run.py
+
       - name: Validate Pages artifact
         run: python3 scripts/validate_issue_74_github_pages.py
 
