@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #199 раздел 4.3 API-методов BCREQ-1027
+
+- Добавлен артефакт
+  [`outputs/bcreq-1027-section-4-3.md`](outputs/bcreq-1027-section-4-3.md)
+  с доработанным текстом только для раздела 4.3: расширение события
+  `POST /events/md/onAppealClose` и метода
+  `POST /vpbx/cc/appeals/create-closed-appeals` полем `completion_method` без
+  изменения существующего `result`.
+- В артефакте зафиксированы delta-резюме, источники, taxonomy traceability и
+  проверка соблюдения `RFC-184-S1`/`RFC-184-S2`: раздел 3 не формируется,
+  As-Is и исторический контекст не переносятся в результат.
+- Добавлен валидатор
+  [`scripts/validate_issue_199_bcreq_1027_section_4_3.py`](scripts/validate_issue_199_bcreq_1027_section_4_3.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #196 контракт генерации BCREQ-FR
 
 - Добавлен исполнимый контракт AI-агента
