@@ -26,10 +26,21 @@ ai-generated: true
   `scripts/validate_issue_203_vpbx_api_retrieval.py`, подключённый к
   `make kb-validate` и KB workflow.
 
+### Fixed — Issue #205 структура runs для BCREQ-1027
+
+- BCREQ-1027: перенесён из `outputs/` в `runs/bcreq-1027/` с правильной
+  структурой метаданных: [`README.md`](runs/bcreq-1027/README.md),
+  [`metadata.yaml`](runs/bcreq-1027/metadata.yaml) и
+  [`artifacts/section-4-3-api.md`](runs/bcreq-1027/artifacts/section-4-3-api.md).
+- BCREQ-1027: обновлены ссылки на источники. Временные `github.com/user-attachments`
+  заменены на TODO: заменить на permalink после задачи Golden Examples.
+- Обновлены валидаторы issue #199/#205 и GitHub Pages workflow для новой
+  канонической структуры артефакта.
+
 ### Added — Issue #199 раздел 4.3 API-методов BCREQ-1027
 
 - Добавлен артефакт
-  [`outputs/bcreq-1027-section-4-3.md`](outputs/bcreq-1027-section-4-3.md)
+  [`runs/bcreq-1027/artifacts/section-4-3-api.md`](runs/bcreq-1027/artifacts/section-4-3-api.md)
   с доработанным текстом только для раздела 4.3: расширение события
   `POST /events/md/onAppealClose` и метода
   `POST /vpbx/cc/appeals/create-closed-appeals` полем `completion_method` без

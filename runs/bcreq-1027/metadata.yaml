@@ -1,0 +1,16 @@
+run_id: bcreq-1027
+issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/1027"
+title: "BCREQ-1027: Раздел 4.3 API методов"
+created: "2026-06-23"
+status: draft
+contract_used: "governance/bcreq-fr-generation-contract.md"
+artifacts:
+  - path: "artifacts/section-4-3-api.md"
+    type: "bcreq-fr-section"
+    section: "4.3"
+source_attachments:
+  - "Заменить на permalink после исправления K-P2.1"
+validation:
+  - "Проверить структуру runs/"
+  - "Проверить наличие metadata.yaml"
+  - "Проверить обновление ссылок"
