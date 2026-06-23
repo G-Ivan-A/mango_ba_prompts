@@ -12,6 +12,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 
 STANDARD = "standards/executable-contract-standard.md"
+CONTRACTS_REGISTRY = "governance/contracts-registry.md"
 CHANGELOG = "CHANGELOG.md"
 README = "README.md"
 WORKFLOW = ".github/workflows/github-pages.yml"
@@ -21,7 +22,7 @@ REQUIRED_HEADINGS = (
     "# Стандарт создания исполнимых контрактов",
     "## 1. Введение",
     "## 2. Самостоятельная классификация артефактов",
-    "## 3. Нормативный YAML-индекс стандарта",
+    "## 3. Нормативный формат по уровням и YAML-шаблон L1",
     "## 4. Применение шаблона к существующим контрактам",
     "## 5. Экспертная проверка",
     "## 6. DoD стандарта",
@@ -35,10 +36,13 @@ REQUIRED_TEXT = (
     "governance/rfc-process.md",
     "governance/bcreq-fr-generation-contract.md",
     "kb/golden-examples/CONTRACT.md",
+    "governance/contracts-registry.md",
     "classification_criteria",
     "classification_inventory",
+    "layer_format_matrix",
     "format_rules",
     "contract_template",
+    "provenance_rules",
     "placement_rules",
     "input_invariant",
     "validation_examples",
@@ -46,6 +50,11 @@ REQUIRED_TEXT = (
     "L1-only input test",
     "layer: L1|L2|L3",
     "loading_layer: executable",
+    "100% YAML",
+    "Markdown-проза запрещена",
+    "Markdown with YAML frontmatter",
+    "contract_registry_id",
+    "source/provenance",
     "rationale",
     "CONTRACT-GEN-SCOPE-01",
     "RUN-REC-META-01",
@@ -73,6 +82,7 @@ REQUIRED_INVENTORY_PATHS = (
     "standards/team-directory.md",
     "governance/approval-contract.md",
     "governance/bcreq-fr-generation-contract.md",
+    "governance/contracts-registry.md",
     "governance/rfc-process.md",
     "governance/rfc-register.md",
     "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md",
@@ -90,9 +100,15 @@ REQUIRED_INVENTORY_PATHS = (
 )
 
 REQUIRED_PROJECT_TEXT = {
-    CHANGELOG: ("Issue #212", STANDARD, VALIDATOR),
-    README: (STANDARD, "Стандарт создания исполнимых контрактов"),
+    CHANGELOG: ("Issue #212", STANDARD, CONTRACTS_REGISTRY, VALIDATOR),
+    README: (STANDARD, CONTRACTS_REGISTRY, "Стандарт создания исполнимых контрактов"),
     WORKFLOW: ("Validate issue #212 executable contract standard", VALIDATOR),
+    CONTRACTS_REGISTRY: (
+        "contracts_registry",
+        "CONTRACT-BCREQ-FR-GEN",
+        "governance/bcreq-fr-generation-contract.md",
+        "source/provenance",
+    ),
 }
 
 RULE_ID_RE = re.compile(r"^[A-Z]+(?:-[A-Z0-9]+)*-[0-9]{2}$")
@@ -200,20 +216,80 @@ def check_machine_readable_payload() -> list[str]:
         if path not in inventory_paths:
             errors.append(f"{STANDARD}: classification_inventory missing {path}")
 
-    for required in ("format_rules", "contract_template", "placement_rules", "input_invariant"):
+    for required in (
+        "layer_format_matrix",
+        "format_rules",
+        "contract_template",
+        "provenance_rules",
+        "placement_rules",
+        "input_invariant",
+    ):
         if required not in payload:
             errors.append(f"{STANDARD}: payload missing {required}")
 
-    if len(payload.get("format_rules", [])) < 3:
-        errors.append(f"{STANDARD}: expected at least 3 format_rules")
+    matrix = payload.get("layer_format_matrix", {})
+    expected_layer_formats = {
+        "L1": "100% YAML",
+        "L2": "YAML/JSON for structured data; Markdown for textual knowledge",
+        "L3": "Markdown with YAML frontmatter",
+    }
+    for layer, expected in expected_layer_formats.items():
+        actual = matrix.get(layer, {}).get("format")
+        if actual != expected:
+            errors.append(
+                f"{STANDARD}: layer_format_matrix.{layer}.format must be {expected!r}"
+            )
+
+    format_rules = payload.get("format_rules", [])
+    if len(format_rules) < 5:
+        errors.append(f"{STANDARD}: expected at least 5 format_rules")
+    format_values = {
+        row.get("format") for row in format_rules if isinstance(row, dict)
+    }
+    for expected in expected_layer_formats.values():
+        if expected not in format_values:
+            errors.append(f"{STANDARD}: format_rules missing format {expected!r}")
+
+    provenance = payload.get("provenance_rules", {})
+    if provenance.get("registry_path") != CONTRACTS_REGISTRY:
+        errors.append(f"{STANDARD}: provenance_rules.registry_path must be {CONTRACTS_REGISTRY}")
+    if provenance.get("l1_contract_field") != "contract_registry_id":
+        errors.append(f"{STANDARD}: provenance_rules.l1_contract_field must be contract_registry_id")
+    forbidden_l1_fields = set(provenance.get("forbidden_l1_fields", []))
+    for field in ("source_hub", "source_sha", "source_attachments", "governance_sources", "related_artifacts"):
+        if field not in forbidden_l1_fields:
+            errors.append(f"{STANDARD}: provenance_rules.forbidden_l1_fields missing {field}")
 
     template = payload.get("contract_template", {})
-    frontmatter = template.get("frontmatter", {})
-    for key in ("status", "version", "type", "executable", "layer", "rule_class", "created", "updated"):
-        if key not in frontmatter:
-            errors.append(f"{STANDARD}: contract_template.frontmatter missing {key}")
+    if template.get("format") != "100% YAML":
+        errors.append(f"{STANDARD}: contract_template.format must be 100% YAML")
+    if template.get("markdown_prose") != "forbidden":
+        errors.append(f"{STANDARD}: contract_template.markdown_prose must be forbidden")
+    for forbidden in ("frontmatter", "markdown_sections", "machine_readable_index", "governance_sources"):
+        if forbidden in template:
+            errors.append(f"{STANDARD}: contract_template must not contain {forbidden}")
 
-    example_rules = template.get("machine_readable_index", {}).get("rules", [])
+    fields = template.get("top_level_fields", {})
+    for key in (
+        "status",
+        "version",
+        "type",
+        "executable",
+        "layer",
+        "rule_class",
+        "contract_registry_id",
+        "created",
+        "updated",
+        "owner",
+        "runtime_inputs",
+        "outputs",
+        "rules",
+        "validation",
+    ):
+        if key not in fields:
+            errors.append(f"{STANDARD}: contract_template.top_level_fields missing {key}")
+
+    example_rules = fields.get("rules", {}).get("example", [])
     for rule in example_rules:
         rule_id = rule.get("id", "")
         if not RULE_ID_RE.match(rule_id):

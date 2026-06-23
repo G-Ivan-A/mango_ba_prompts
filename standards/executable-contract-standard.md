@@ -15,6 +15,7 @@ related_artifacts:
   - "standards/cascading-context-loading-standard.md"
   - "governance/rfc-process.md"
   - "governance/bcreq-fr-generation-contract.md"
+  - "governance/contracts-registry.md"
   - "kb/golden-examples/CONTRACT.md"
 validated_by:
   - "scripts/validate_issue_212_executable_contract_standard.py"
@@ -36,6 +37,8 @@ runtime-входы L1 не зависели от управленческих м
 [`standards/cascading-context-loading-standard.md`](cascading-context-loading-standard.md),
 [`governance/rfc-process.md`](../governance/rfc-process.md) и
 [`governance/bcreq-fr-generation-contract.md`](../governance/bcreq-fr-generation-contract.md).
+Если предложения отчёта расходятся с согласованными решениями Фаундера, этот
+стандарт применяет согласованные решения Фаундера.
 
 Нормативная классификация использует два независимых признака:
 
@@ -50,6 +53,8 @@ runtime-входы L1 не зависели от управленческих м
 Ключевой инвариант: L1-контракт должен быть самодостаточным для выполнения
 задачи. Если правило L3 нужно агенту во время выполнения, оно переносится в L1
 как локальное правило или в L2 как данные, а не подключается как runtime-вход L3.
+Формат L1-контракта — 100% YAML: Markdown-проза запрещена, обоснования живут
+только в `rationale:` или YAML-комментариях `#`.
 
 ## 2. Самостоятельная классификация артефактов
 
@@ -77,7 +82,8 @@ runtime-входы L1 не зависели от управленческих м
 | `standards/GLOSSARY.md` | L2 | data | Справочник терминов; текущее размещение в `standards/` допустимо как legacy, но требует осознанного использования. |
 | `standards/team-directory.md` | L2 | data | Справочник ролей и участников, а не нормативный стандарт. |
 | `governance/approval-contract.md` | L1 | combat | Даёт агенту исполнимую процедуру согласования документов. |
-| `governance/bcreq-fr-generation-contract.md` | L1 | combat | Исполнимый контракт генерации BCREQ-FR с локальным machine-readable index. |
+| `governance/bcreq-fr-generation-contract.md` | L1 | combat | Исполнимый контракт генерации BCREQ-FR с локальными scope-правилами. |
+| `governance/contracts-registry.md` | L2 | data | Реестр source/provenance контрактов; L1-контракт хранит только `contract_registry_id`. |
 | `governance/rfc-process.md` | L3 | management | Описывает lifecycle RFC и статусы управленческих решений. |
 | `governance/rfc-register.md` | L2 | data | Реестр RFC и их статусов. |
 | `governance/rfc/bcreq-ft-scope-formation-rules-proposal.md` | L3 | management | RFC с proposed-правилами, которые нельзя подключать как runtime-вход L1 без локального переноса. |
@@ -93,13 +99,18 @@ runtime-входы L1 не зависели от управленческих м
 | `runs/REGISTRY.md` | L2 | data | Реестр run-записей. |
 | `runs/stats/by-type.md` | L2 | data | Агрегированная статистика по run-типам. |
 
-## 3. Нормативный YAML-индекс стандарта
+## 3. Нормативный формат по уровням и YAML-шаблон L1
 
-Новый исполнимый контракт MUST иметь Markdown-тело для человека и
-машинно-читаемый YAML-индекс для стабильных правил. YAML используется, когда
-нужно проверять ID, входы, инварианты, frontmatter или traceability. Чистый
-Markdown допустим только для пояснений, rationale, примеров и разделов, которые
-не участвуют в автоматической проверке.
+Новый или мигрируемый L1-контракт MUST быть 100% YAML-документом.
+Markdown-проза запрещена. Пояснения и обоснования допустимы только в полях
+`rationale:` или YAML-комментариях `#`. L1-контракт не хранит source/provenance
+и не содержит гиперссылок на L3-артефакты; вместо этого он содержит только
+`contract_registry_id`, а источники и решения фиксируются в
+[`governance/contracts-registry.md`](../governance/contracts-registry.md).
+
+L3-стандарты, включая этот документ, остаются Markdown-документами с YAML
+frontmatter. L2-данные используют YAML/JSON для структур и Markdown для
+текстовых знаний.
 
 ```yaml
 # JSON-compatible YAML 1.2 payload for deterministic validation.
@@ -304,6 +315,12 @@ Markdown допустим только для пояснений, rationale, п�
         "rationale": "The contract drives BCREQ-FR generation at runtime."
       },
       {
+        "path": "governance/contracts-registry.md",
+        "layer": "L2",
+        "rule_class": "data",
+        "rationale": "The registry stores source/provenance for contracts so L1 contracts can carry only contract_registry_id."
+      },
+      {
         "path": "governance/rfc-process.md",
         "layer": "L3",
         "rule_class": "management",
@@ -389,94 +406,235 @@ Markdown допустим только для пояснений, rationale, п�
         "rationale": "The file stores aggregated run statistics."
       }
     ],
+    "layer_format_matrix": {
+      "L1": {
+        "format": "100% YAML",
+        "prose_policy": "Markdown prose is forbidden; use rationale fields or YAML comments only.",
+        "rationale": "Runtime contracts must be parseable by agents and CI without a Markdown interpretation step."
+      },
+      "L2": {
+        "format": "YAML/JSON for structured data; Markdown for textual knowledge",
+        "prose_policy": "Markdown is allowed only when the artifact is knowledge text rather than a schema, registry, or validation fixture.",
+        "rationale": "L2 can be consumed as data or reference knowledge; the format follows the data shape."
+      },
+      "L3": {
+        "format": "Markdown with YAML frontmatter",
+        "prose_policy": "Governance explanation, analysis, RFC, and standards prose belongs in L3.",
+        "rationale": "L3 exists for human governance and design rationale, not direct runtime execution."
+      }
+    },
     "format_rules": [
       {
         "id": "EXEC-CONTRACT-FORMAT-01",
-        "content_type": "normative_rules",
-        "format": "YAML index plus Markdown explanation",
-        "criterion": "Use YAML when rule IDs, inputs, outputs, validation, or traceability must be machine checked.",
-        "rationale": "Stable rule identifiers prevent prose-only contracts from drifting."
+        "content_type": "L1 executable contracts",
+        "format": "100% YAML",
+        "criterion": "Use a single parseable YAML document for runtime rules, task scope, inputs, outputs, validation, and stop conditions.",
+        "rationale": "Stable structured fields prevent hybrid Markdown/YAML contracts from drifting or requiring prose parsing."
       },
       {
         "id": "EXEC-CONTRACT-FORMAT-02",
-        "content_type": "human_rationale",
-        "format": "Markdown",
-        "criterion": "Use Markdown for context, rationale, examples, and review notes.",
-        "rationale": "Human reviewers need readable explanations that do not overload the machine index."
+        "content_type": "L1 rationale and explanations",
+        "format": "YAML rationale fields or YAML comments",
+        "criterion": "Put explanation only in rationale fields or comments beginning with #; do not add Markdown sections to L1.",
+        "rationale": "Reviewers still get context while the runtime contract remains machine-readable."
       },
       {
         "id": "EXEC-CONTRACT-FORMAT-03",
-        "content_type": "reference_data",
-        "format": "YAML or JSON schema/registry",
-        "criterion": "Use structured data for registries, taxonomies, enumerations, and validation fixtures.",
-        "rationale": "L2 data should be consumed without inferring semantics from prose tables."
+        "content_type": "L1 source/provenance",
+        "format": "contract_registry_id only",
+        "criterion": "Store sources, approvals, L3 decisions, and historical links in governance/contracts-registry.md, not in the L1 contract.",
+        "rationale": "Runtime inputs stay clean while traceability remains auditable in an L2 registry."
       },
       {
         "id": "EXEC-CONTRACT-FORMAT-04",
-        "content_type": "mixed_contract",
-        "format": "Markdown document with a fenced YAML rule index",
-        "criterion": "Use this format for new L1 executable contracts and L3 standards that define reusable contract templates.",
-        "rationale": "The repository already uses Markdown as source of truth and YAML for precise checks."
+        "content_type": "L2 structured data",
+        "format": "YAML/JSON for structured data; Markdown for textual knowledge",
+        "criterion": "Use YAML/JSON for registries, taxonomies, enumerations, schemas, and fixtures; use Markdown only for narrative knowledge.",
+        "rationale": "Structured L2 data should be consumed without inferring semantics from prose tables."
+      },
+      {
+        "id": "EXEC-CONTRACT-FORMAT-05",
+        "content_type": "L3 governance artifacts",
+        "format": "Markdown with YAML frontmatter",
+        "criterion": "Use Markdown with frontmatter for standards, RFC, ADR, analysis, and process documents.",
+        "rationale": "L3 documents optimize for human review, not direct task execution."
       }
     ],
-    "contract_template": {
-      "frontmatter": {
-        "status": "draft|active|canonical|archived",
-        "version": "semver-or-local-version",
-        "type": "contract",
-        "executable": true,
-        "layer": "L1|L2|L3",
-        "rule_class": "combat|management|data",
-        "created": "YYYY-MM-DD",
-        "updated": "YYYY-MM-DD",
-        "owner": "role-or-team",
-        "runtime_inputs": [
-          "L1-or-L2-paths-only"
-        ],
-        "governance_sources": [
-          "optional-L3-design-sources-not-runtime-inputs"
-        ]
-      },
-      "markdown_sections": [
-        "Purpose",
-        "Scope",
-        "Inputs",
-        "Outputs",
-        "Rules",
-        "Validation",
-        "Rationale",
-        "Change control"
+    "provenance_rules": {
+      "registry_path": "governance/contracts-registry.md",
+      "registry_layer": "L2",
+      "l1_contract_field": "contract_registry_id",
+      "l1_allowed_provenance_shape": "single opaque registry id only",
+      "forbidden_l1_fields": [
+        "source_hub",
+        "source_sha",
+        "source_attachments",
+        "governance_sources",
+        "related_artifacts",
+        "depends_on",
+        "L3 hyperlinks"
       ],
-      "machine_readable_index": {
-        "rules": [
-          {
-            "id": "CONTRACT-GEN-SCOPE-01",
-            "statement": "An executable generation contract MUST declare concrete task scope, runtime inputs, expected outputs, and stop conditions.",
-            "applies_to": [
-              "governance/*-generation-contract.md"
-            ],
-            "validation": "Check frontmatter and rule index for scope, inputs, outputs, and stop conditions.",
-            "rationale": "Generation contracts are L1 combat artifacts and must not force the agent to reconstruct task boundaries from L3 prose."
+      "registry_records": [
+        "contract_registry_id",
+        "contract_path",
+        "contract_layer",
+        "source_artifacts",
+        "approved_decisions",
+        "change_history",
+        "rationale"
+      ],
+      "rationale": "Provenance is governance data, not runtime instruction. Keeping it in one registry avoids direct L3 hyperlinks in L1 contracts."
+    },
+    "contract_template": {
+      "format": "100% YAML",
+      "markdown_prose": "forbidden",
+      "top_level_fields": {
+        "status": {
+          "required": true,
+          "allowed": [
+            "draft",
+            "active",
+            "canonical",
+            "archived"
+          ],
+          "rationale": "The lifecycle state must be machine-checkable."
+        },
+        "version": {
+          "required": true,
+          "example": "0.1",
+          "rationale": "Versioned contracts can be reviewed and migrated deterministically."
+        },
+        "type": {
+          "required": true,
+          "value": "contract",
+          "rationale": "The artifact declares its role without relying on filename heuristics."
+        },
+        "executable": {
+          "required": true,
+          "value": true,
+          "rationale": "L1 contracts are direct runtime inputs."
+        },
+        "layer": {
+          "required": true,
+          "value": "L1",
+          "rationale": "The L1 layer marks direct task execution."
+        },
+        "rule_class": {
+          "required": true,
+          "value": "combat",
+          "rationale": "L1 executable contracts contain combat rules."
+        },
+        "contract_registry_id": {
+          "required": true,
+          "example": "CONTRACT-BCREQ-FR-GEN",
+          "rationale": "The contract points to source/provenance in governance/contracts-registry.md without embedding L3 links."
+        },
+        "created": {
+          "required": true,
+          "example": "YYYY-MM-DD",
+          "rationale": "Creation date supports lifecycle review."
+        },
+        "updated": {
+          "required": true,
+          "example": "YYYY-MM-DD",
+          "rationale": "Update date supports drift detection."
+        },
+        "owner": {
+          "required": true,
+          "example": "role-or-team",
+          "rationale": "Ownership is needed for escalation and review."
+        },
+        "runtime_inputs": {
+          "required": true,
+          "allowed_layers": [
+            "L1",
+            "L2"
+          ],
+          "forbidden_layers": [
+            "L3"
+          ],
+          "example": [
+            {
+              "id": "taxonomy_registry",
+              "path": "kb/mango-taxonomy/registry.json",
+              "layer": "L2",
+              "required": true,
+              "rationale": "Taxonomy registries are data inputs, not governance instructions."
+            }
+          ],
+          "rationale": "Runtime dependencies must be explicit and must not require L3 interpretation."
+        },
+        "outputs": {
+          "required": true,
+          "example": [
+            {
+              "id": "target_artifact",
+              "path_pattern": "runs/YYYY/RUN-XXXX/outputs/*.md",
+              "rationale": "Outputs are part of the executable task boundary."
+            }
+          ],
+          "rationale": "A contract must declare what task evidence it creates."
+        },
+        "rules": {
+          "required": true,
+          "example": [
+            {
+              "id": "CONTRACT-GEN-SCOPE-01",
+              "statement": "An executable generation contract MUST declare concrete task scope, runtime inputs, expected outputs, and stop conditions.",
+              "applies_to": [
+                "generation_contract"
+              ],
+              "validation": "Check top-level fields for scope, runtime_inputs, outputs, and stop_conditions.",
+              "rationale": "Generation contracts are L1 combat artifacts and must not force the agent to reconstruct task boundaries from L3 prose."
+            },
+            {
+              "id": "RUN-REC-META-01",
+              "statement": "A run recording contract MUST define required metadata, registry update rules, and evidence placement.",
+              "applies_to": [
+                "runs_contract"
+              ],
+              "validation": "Check metadata requirements, registry update rules, and output/log placement.",
+              "rationale": "Run records are audit evidence and need stable data-near execution rules."
+            },
+            {
+              "id": "PROMPT-STD-FM-01",
+              "statement": "A prompt standard MUST distinguish prompt metadata rules from runtime prompt instructions.",
+              "applies_to": [
+                "prompt_standard"
+              ],
+              "validation": "Check that standard rules stay in L3 and runtime prompt instructions are embedded in prompt assets.",
+              "rationale": "Prompt authors need governance, while prompt users need self-contained L1 execution."
+            }
+          ],
+          "rationale": "Stable rule IDs make validation and review deterministic."
+        },
+        "validation": {
+          "required": true,
+          "example": [
+            {
+              "id": "L1-ONLY-INPUTS",
+              "check": "Every runtime_inputs row has layer L1 or L2.",
+              "rationale": "L1 must not require L3 artifacts at runtime."
+            }
+          ],
+          "rationale": "Each contract must declare how its own invariants can be checked."
+        },
+        "stop_conditions": {
+          "required": false,
+          "example": [
+            "required_input_missing",
+            "L3_runtime_input_detected"
+          ],
+          "rationale": "Stop conditions prevent silent fallback to governance interpretation."
+        },
+        "change_control": {
+          "required": false,
+          "example": {
+            "requires_review": true,
+            "registry_update_required": true
           },
-          {
-            "id": "RUN-REC-META-01",
-            "statement": "A run recording contract MUST define required metadata, registry update rules, and evidence placement.",
-            "applies_to": [
-              "runs/CONTRACT.md"
-            ],
-            "validation": "Check metadata.yaml requirements, runs/REGISTRY.md update rules, and output/log placement.",
-            "rationale": "Run records are audit evidence and need stable data-near execution rules."
-          },
-          {
-            "id": "PROMPT-STD-FM-01",
-            "statement": "A prompt standard MUST distinguish prompt frontmatter rules from runtime prompt instructions.",
-            "applies_to": [
-              "standards/prompt-standard.md"
-            ],
-            "validation": "Check that standard rules stay in L3 and runtime prompt instructions are embedded in prompt assets.",
-            "rationale": "Prompt authors need governance, while prompt users need self-contained L1 execution."
-          }
-        ]
+          "rationale": "Change governance belongs in structured fields, not Markdown prose."
+        }
       }
     },
     "placement_rules": [
@@ -509,6 +667,12 @@ Markdown допустим только для пояснений, rationale, п�
         "target": "governance/rfc/ or docs/adr/",
         "criterion": "Place proposals and architectural decisions in RFC/ADR locations, then copy accepted runtime rules into L1.",
         "rationale": "Proposal status must not silently become runtime behavior."
+      },
+      {
+        "id": "EXEC-CONTRACT-PLACE-06",
+        "target": "governance/contracts-registry.md",
+        "criterion": "Place contract source/provenance, approved L3 decisions, and historical links in the L2 contracts registry.",
+        "rationale": "L1 contracts must carry only contract_registry_id, not direct L3 provenance links."
       }
     ],
     "input_invariant": {
@@ -516,14 +680,16 @@ Markdown допустим только для пояснений, rationale, п�
       "allowed": [
         "L1 contract references another L1 contract as an explicit companion",
         "L1 contract references L2 registry or taxonomy data",
-        "L1 contract embeds accepted L3 rule text as a local rule with provenance"
+        "L1 contract embeds accepted L3 rule text as a local rule and points to registry provenance only through contract_registry_id"
       ],
       "forbidden": [
         "L1 contract requires reading standards/* at runtime",
         "L1 contract requires reading governance/rfc/* at runtime",
+        "L1 contract contains direct hyperlinks to L3 artifacts",
+        "L1 contract contains source/provenance fields other than contract_registry_id",
         "Prompt instructions depend on unstated RFC or ADR interpretation"
       ],
-      "validation": "Run an L1-only input test: collect runtime_inputs from the contract and fail if any path is classified as L3 unless the contract marks it as governance_source only.",
+      "validation": "Run an L1-only input test: parse the YAML contract, collect runtime_inputs, and fail if any row is classified as L3 or if the contract contains source/provenance fields other than contract_registry_id.",
       "rationale": "Runtime behavior must be reproducible from executable instructions and data, not from live interpretation of governance documents."
     },
     "validation_examples": [
@@ -531,21 +697,21 @@ Markdown допустим только для пояснений, rationale, п�
         "artifact": "governance/bcreq-fr-generation-contract.md",
         "expected_layer": "L1",
         "expected_rule_class": "combat",
-        "template_result": "Already follows the model: it has local scope rules in a machine-readable index and uses L2 taxonomy registries as runtime inputs.",
-        "rationale": "This is the canonical generation contract example and demonstrates how accepted RFC rules become local L1 rules."
+        "template_result": "Target migration keeps local scope rules and L2 taxonomy registries, converts the contract to 100% YAML, and replaces embedded source/provenance with contract_registry_id.",
+        "rationale": "This is the canonical generation contract example; accepted RFC rules become local L1 rules while provenance moves to governance/contracts-registry.md."
       },
       {
         "artifact": "runs/CONTRACT.md",
         "expected_layer": "L1",
         "expected_rule_class": "combat",
-        "template_result": "The template would add explicit frontmatter layer and rule_class fields plus RUN-REC-META-01 in the YAML rule index.",
+        "template_result": "Target migration converts the contract to 100% YAML with explicit layer, rule_class, contract_registry_id, runtime_inputs, outputs, and RUN-REC-META-01 in rules.",
         "rationale": "The file is data-near and executable because it controls how run records are created and validated."
       },
       {
         "artifact": "standards/prompt-standard.md",
         "expected_layer": "L3",
         "expected_rule_class": "management",
-        "template_result": "The template would keep the standard out of runtime inputs and model PROMPT-STD-FM-01 as a management rule for prompt authors.",
+        "template_result": "The L1 template does not apply directly: the artifact remains Markdown with YAML frontmatter because it is L3. PROMPT-STD-FM-01 stays a management rule for prompt authors.",
         "rationale": "The prompt standard governs prompt construction; active prompts must carry the runtime instructions themselves."
       }
     ],
@@ -572,13 +738,15 @@ Markdown допустим только для пояснений, rationale, п�
 
 ## 4. Применение шаблона к существующим контрактам
 
-1. `governance/bcreq-fr-generation-contract.md` уже близок к целевому виду:
-   это L1/combat-контракт с локальными правилами `BCREQ-FR-GEN-SCOPE-01/02` и
-   L2 runtime-входами таксономий. Шаблон подтверждает, что ссылка на RFC
-   допустима как provenance, но не как runtime-вход.
+1. `governance/bcreq-fr-generation-contract.md` семантически является
+   L1/combat-контрактом с локальными правилами `BCREQ-FR-GEN-SCOPE-01/02` и L2
+   runtime-входами таксономий. Целевая миграция по этому стандарту переводит
+   файл в 100% YAML и оставляет в нём только `contract_registry_id` для
+   source/provenance.
 2. `runs/CONTRACT.md` является L1/combat-контрактом рядом с данными. При
-   следующем изменении его стоит дополнить frontmatter `layer: L1`,
-   `rule_class: combat` и YAML-правилом `RUN-REC-META-01`.
+   следующем изменении его стоит перевести в YAML-структуру с `layer: L1`,
+   `rule_class: combat`, `contract_registry_id`, `runtime_inputs`, `outputs` и
+   правилом `RUN-REC-META-01`.
 3. `standards/prompt-standard.md` является L3/management-стандартом. Для него
    правило `PROMPT-STD-FM-01` описывает frontmatter и структуру prompt assets,
    но активный prompt не должен требовать чтения этого стандарта во время
@@ -592,23 +760,29 @@ Markdown допустим только для пояснений, rationale, п�
 Последовательная экспертная проверка:
 
 1. Архитектор контрактов проверяет, что L1/L2/L3 отделены, `loading_layer:
-   executable` не подменяет бизнес-слой, а L1 runtime-входы не требуют L3.
+   executable` не подменяет бизнес-слой, а L1 runtime-входы не требуют L3 и не
+   содержат прямых L3-гиперссылок.
 2. BA-эксперт проверяет, что шаблон понятен авторам BA-промптов, BCREQ-FR
    контрактов и run evidence, а примеры отражают реальные рабочие сценарии.
-3. AI-инженер проверяет машинную читаемость YAML-индекса, стабильность rule ID,
-   возможность L1-only input test и подключение валидатора к CI.
+3. AI-инженер проверяет машинную читаемость 100% YAML L1-контракта,
+   стабильность rule ID, наличие `contract_registry_id`, возможность L1-only
+   input test и подключение валидатора к CI.
 
 ## 6. DoD стандарта
 
 - Создан L3-стандарт `standards/executable-contract-standard.md`, а не новый
   L1-контракт.
 - Определены критерии L1/L2/L3 и combat/management/data с rationale.
-- Зафиксирован выбор YAML vs Markdown и шаблон контракта с YAML rule index,
-  `rationale` и комментариями.
+- Зафиксировано разделение форматов: L1 = 100% YAML, L2 = JSON/YAML для
+  структур и Markdown для текстовых знаний, L3 = Markdown with YAML frontmatter.
+- Зафиксирован YAML-шаблон L1-контракта с `contract_registry_id`, `rationale` и
+  комментариями; Markdown-проза запрещена.
+- Зафиксировано правило provenance: source/provenance контрактов хранится в
+  `governance/contracts-registry.md`, а не в L1-контракте.
 - Определены правила размещения для `governance/`, `prompts/`, `runs/`, `kb/`,
   `standards/`, RFC и ADR.
 - Зафиксирован жёсткий инвариант: L1 runtime inputs MUST NOT require L3
-  artifacts.
+  artifacts; прямые гиперссылки на L3-артефакты в L1 запрещены.
 - Выполнена самостоятельная классификация артефактов из `standards/`,
   `governance/`, `prompts/`, `runs/` и data-near контрактов `kb/`.
 - Шаблон проверен на трёх существующих артефактах:

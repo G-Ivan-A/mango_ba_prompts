@@ -17,9 +17,14 @@ ai-generated: true
 
 - Добавлен L3-стандарт
   [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md):
-  критерии L1/L2/L3, combat/management/data, выбор YAML vs Markdown, шаблон
-  исполнимого контракта, placement rules и жёсткий инвариант L1 runtime inputs
-  без L3-зависимостей.
+  критерии L1/L2/L3, combat/management/data, разделение форматов
+  L1=100% YAML / L2=JSON/YAML или Markdown / L3=Markdown with YAML frontmatter,
+  YAML-шаблон L1-контракта, placement rules и жёсткий инвариант L1 runtime
+  inputs без L3-зависимостей.
+- Добавлен L2-реестр source/provenance контрактов
+  [`governance/contracts-registry.md`](governance/contracts-registry.md);
+  L1-контракт хранит только `contract_registry_id`, без direct L3 hyperlinks и
+  embedded provenance.
 - В стандарте выполнена самостоятельная классификация артефактов из
   `standards/`, `governance/`, `prompts/`, `runs/` и data-near контрактов
   `kb/`; шаблон проверен на `governance/bcreq-fr-generation-contract.md`,
