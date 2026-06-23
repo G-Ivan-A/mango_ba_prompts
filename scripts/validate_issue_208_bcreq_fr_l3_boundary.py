@@ -9,6 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CONTRACT = "governance/bcreq-fr-generation-contract.md"
+REGISTRY = "governance/contracts-registry.md"
 VALIDATOR = "scripts/validate_issue_208_bcreq_fr_l3_boundary.py"
 DRY_RUN = "experiments/issue-208/bcreq-1027-l3-boundary-dry-run.md"
 
@@ -22,7 +23,7 @@ REQUIRED_CONTRACT_TEXT = (
     "status: active",
     "version: 0.4",
     "updated: 2026-06-23",
-    "Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)",
+    "contract_registry_id: bcreq-fr-generation-contract",
     'status: "no-golden-standard"',
     "kb/golden-examples/CONTRACT.md",
     "kb/industry-taxonomy/registry.json",
@@ -31,6 +32,7 @@ REQUIRED_CONTRACT_TEXT = (
     "BCREQ-FR-GEN-SCOPE-02",
     "BCREQ-FR-GEN-SCOPE-01/02",
     "scripts/validate_issue_208_bcreq_fr_l3_boundary.py",
+    "scripts/validate_issue_215_bcreq_fr_yaml_contract.py",
 )
 
 REQUIRED_DRY_RUN_TEXT = (
@@ -51,6 +53,7 @@ REQUIRED_PROJECT_TEXT = {
     "CHANGELOG.md": (
         "Issue #208",
         CONTRACT,
+        REGISTRY,
         VALIDATOR,
         DRY_RUN,
     ),
@@ -118,21 +121,14 @@ def check_frontmatter() -> list[str]:
     text = read_text(CONTRACT)
     fm = frontmatter(text)
     if not fm:
-        return [f"{CONTRACT}: missing YAML frontmatter"]
+        return [f"{CONTRACT}: missing YAML metadata document"]
 
     for forbidden in FORBIDDEN_RUNTIME_TEXT:
         if forbidden in fm:
-            errors.append(f"{CONTRACT}: frontmatter must not include L3 input {forbidden!r}")
+            errors.append(f"{CONTRACT}: metadata must not include L3 input {forbidden!r}")
 
-    source_attachments = section_between(fm, "source_attachments:", "integrates:")
-    if "github.com/user-attachments" in source_attachments:
-        errors.append(f"{CONTRACT}: source_attachments must not use raw GitHub attachment URLs")
-    if '- status: "no-golden-standard"' not in source_attachments:
-        errors.append(f"{CONTRACT}: source_attachments must use no-golden-standard placeholder")
-    if "comment:" in source_attachments:
-        errors.append(f"{CONTRACT}: source_attachments must use YAML comments, not comment: data fields")
-    if "path:" in source_attachments or "sha:" in source_attachments:
-        errors.append(f"{CONTRACT}: path+sha requires approved Golden Example")
+    if "issue:" in fm or "source_attachments:" in fm:
+        errors.append(f"{CONTRACT}: provenance/source attachments must not live in metadata")
 
     integrates = section_between(fm, "integrates:", "validated_by:")
     for forbidden in FORBIDDEN_RUNTIME_TEXT:
@@ -151,23 +147,23 @@ def check_runtime_inputs() -> list[str]:
         return errors
 
     text = read_text(CONTRACT)
-    inputs = section_between(text, "## 2. Входные данные", "## 3. Machine-readable index")
+    inputs = section_between(text, "inputs:", "source_priority:")
     if not inputs:
-        return [f"{CONTRACT}: missing runtime input section"]
+        return [f"{CONTRACT}: missing runtime inputs mapping"]
 
-    if "`rfc_184`" in inputs:
-        errors.append(f"{CONTRACT}: §2 must not require rfc_184 as an input")
+    if "`rfc_184`" in inputs or "rfc_184" in inputs:
+        errors.append(f"{CONTRACT}: inputs must not require rfc_184")
 
     for forbidden in FORBIDDEN_RUNTIME_TEXT:
         if forbidden in inputs:
-            errors.append(f"{CONTRACT}: §2 must not include L3 runtime input {forbidden!r}")
+            errors.append(f"{CONTRACT}: inputs must not include L3 runtime input {forbidden!r}")
 
-    taxonomy_row = "| `taxonomy_sources` | Да | `kb/industry-taxonomy/registry.json`, `kb/mango-taxonomy/registry.json`. |"
-    if taxonomy_row not in inputs:
-        errors.append(f"{CONTRACT}: §2 taxonomy_sources row must list only L2 registries")
+    for required in ("kb/industry-taxonomy/registry.json", "kb/mango-taxonomy/registry.json"):
+        if required not in inputs:
+            errors.append(f"{CONTRACT}: taxonomy_sources must list L2 registry {required!r}")
 
     if "BCREQ-FR-GEN-SCOPE-01/02" not in inputs:
-        errors.append(f"{CONTRACT}: §2 must point agents to embedded local scope rules")
+        errors.append(f"{CONTRACT}: inputs must point agents to embedded local scope rules")
 
     return errors
 
@@ -178,9 +174,9 @@ def check_embedded_scope_rules() -> list[str]:
         return errors
 
     text = read_text(CONTRACT)
-    machine_index = section_between(text, "## 3. Machine-readable index", "## 4. Процесс генерации")
-    if not machine_index:
-        return [f"{CONTRACT}: missing machine-readable index"]
+    scope_rules = section_between(text, "scope_rules:", "purpose:")
+    if not scope_rules:
+        return [f"{CONTRACT}: missing embedded scope rules"]
 
     for required in (
         "id: BCREQ-FR-GEN-SCOPE-01",
@@ -190,12 +186,12 @@ def check_embedded_scope_rules() -> list[str]:
         "source_rule: RFC-184-S2",
         'statement: "A single-user request does not justify changing functionality already closed explicitly or alternatively."',
     ):
-        if required not in machine_index:
+        if required not in scope_rules:
             errors.append(f"{CONTRACT}: embedded scope rule missing {required!r}")
 
     for forbidden in FORBIDDEN_RUNTIME_TEXT:
-        if forbidden in machine_index:
-            errors.append(f"{CONTRACT}: machine-readable index must not include L3 path {forbidden!r}")
+        if forbidden in scope_rules:
+            errors.append(f"{CONTRACT}: embedded scope rules must not include L3 path {forbidden!r}")
 
     return errors
 
@@ -216,6 +212,7 @@ def main() -> int:
         'comment: "Вложения из PR #202"',
         'status: "temporary"',
         'trace: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"',
+        *FORBIDDEN_RUNTIME_TEXT,
     )
     errors += check_frontmatter()
     errors += check_runtime_inputs()

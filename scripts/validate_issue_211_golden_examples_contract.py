@@ -174,13 +174,9 @@ def check_bcreq_source_placeholder() -> list[str]:
         return errors
 
     text = read_text(BCREQ_CONTRACT)
-    fm = frontmatter(text)
-    if not fm:
-        return [f"{BCREQ_CONTRACT}: missing YAML frontmatter"]
-
-    source_attachments = section_between(fm, "source_attachments:", "integrates:")
+    source_attachments = section_between(text, "source_attachments:", "scope_rules:")
     if not source_attachments:
-        errors.append(f"{BCREQ_CONTRACT}: missing source_attachments frontmatter block")
+        errors.append(f"{BCREQ_CONTRACT}: missing source_attachments placeholder block")
     if '- status: "no-golden-standard"' not in source_attachments:
         errors.append(f"{BCREQ_CONTRACT}: source_attachments must use no-golden-standard placeholder")
     if "comment:" in source_attachments:
