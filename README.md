@@ -113,7 +113,8 @@ self-test evidence живёт в [`runs/`](runs/).
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
 | `governance/approval-contract.md` | Исполнимый контракт AI-агента для атомарного согласования RFC, ADR, standards, research и analysis documents. |
 | `governance/bcreq-fr-generation-contract.md` | Исполнимый контракт AI-агента для генерации комплексного BCREQ-FR с правилами разделов 1-7, локальными scope rules `BCREQ-FR-GEN-SCOPE-01/02` и итоговой валидацией. |
-| `governance/contracts-registry.md` | YAML-реестр provenance исполнимых контрактов; runtime-контракты ссылаются на него только через `contract_registry_id`. |
+| `governance/contracts-registry.md` | L2 YAML-реестр source/provenance исполнимых контрактов; runtime/L1-контракты ссылаются на него только через `contract_registry_id`. |
+| `standards/executable-contract-standard.md` | Стандарт создания исполнимых контрактов: L1/L2/L3, combat/management, L1=100% YAML, L3=Markdown with YAML frontmatter, placement rules и запрет L3 runtime-входов для L1. |
 | `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
@@ -145,6 +146,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `standards/product-classification-contract.md` | Контракт классификации Mango: `Domain → Capability → Feature → Function`. Это спецификация, **не** глоссарий. |
 | `standards/prompt-standard.md` | Контракт промпта: 4 обязательных поля frontmatter, именование, RAG-формат ссылок. |
 | `standards/pattern-standard.md` | Контракт паттерна: 8 обязательных полей, универсальный `prompt_template`. |
+| `standards/executable-contract-standard.md` | Стандарт создания исполнимых контрактов: классификация L1/L2/L3, combat/management, L1=100% YAML, `contract_registry_id`, `governance/contracts-registry.md` и L1-only input invariant. |
 | `standards/ba-ontology.md` *(+ `artifact-naming`, `team-directory`, `kb`, `industry-standards`, `bcreq-process`, `pages-ux`)* | Формализованная онтология БА и стандарты (issues #97/#127): `requirement_level`, `business-rule`, граф артефактов; контракты-носители — [ADR-003…010](docs/adr/). |
 | `docs/requirements-engineering-crosswalk.md` | Справочный crosswalk Вигерс ↔ операции mango ↔ BCREQ (C3/С3). |
 
@@ -172,6 +174,8 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
+| Стандарт создания исполнимых контрактов | [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md) |
+| Реестр source/provenance контрактов | [`governance/contracts-registry.md`](governance/contracts-registry.md) |
 | Онтология БА, операции, нейминг, KB, процессы, UX Pages | [`standards/ba-ontology.md`](standards/ba-ontology.md), [`docs/adr/`](docs/adr/) |
 | Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |

@@ -29,6 +29,26 @@ ai-generated: true
   подключённый к GitHub Pages workflow; валидаторы issue #196/#208/#211
   обновлены под новую YAML-структуру.
 
+### Added — Issue #212 стандарт создания исполнимых контрактов
+
+- Добавлен L3-стандарт
+  [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md):
+  критерии L1/L2/L3, combat/management/data, разделение форматов
+  L1=100% YAML / L2=JSON/YAML или Markdown / L3=Markdown with YAML frontmatter,
+  YAML-шаблон L1-контракта, placement rules и жёсткий инвариант L1 runtime
+  inputs без L3-зависимостей.
+- Добавлен L2-реестр source/provenance контрактов
+  [`governance/contracts-registry.md`](governance/contracts-registry.md);
+  L1-контракт хранит только `contract_registry_id`, без direct L3 hyperlinks и
+  embedded provenance.
+- В стандарте выполнена самостоятельная классификация артефактов из
+  `standards/`, `governance/`, `prompts/`, `runs/` и data-near контрактов
+  `kb/`; шаблон проверен на `governance/bcreq-fr-generation-contract.md`,
+  `runs/CONTRACT.md` и `standards/prompt-standard.md`.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_212_executable_contract_standard.py`](scripts/validate_issue_212_executable_contract_standard.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #211 контракт Golden Examples
 
 - Создан каталог [`kb/golden-examples/`](kb/golden-examples/) с
