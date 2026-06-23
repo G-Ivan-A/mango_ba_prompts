@@ -113,6 +113,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
 | `governance/approval-contract.md` | Исполнимый контракт AI-агента для атомарного согласования RFC, ADR, standards, research и analysis documents. |
 | `governance/bcreq-fr-generation-contract.md` | Исполнимый контракт AI-агента для генерации комплексного BCREQ-FR с правилами разделов 1-7, локальными scope rules `BCREQ-FR-GEN-SCOPE-01/02` и итоговой валидацией. |
+| `governance/contracts-registry.md` | YAML-реестр provenance исполнимых контрактов; runtime-контракты ссылаются на него только через `contract_registry_id`. |
 | `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
@@ -182,6 +183,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как согласовывать документы по разделам | [`governance/approval-contract.md`](governance/approval-contract.md) |
 | Как генерировать комплексный BCREQ-FR | [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md) |
+| Где хранится provenance исполнимых контрактов | [`governance/contracts-registry.md`](governance/contracts-registry.md) |
 | Как устроен lifecycle Golden Examples | [`kb/golden-examples/CONTRACT.md`](kb/golden-examples/CONTRACT.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |

@@ -55,6 +55,9 @@ jobs:
       - name: Validate issue #208 BCREQ-FR L3 boundary
         run: python3 scripts/validate_issue_208_bcreq_fr_l3_boundary.py
 
+      - name: Validate issue #215 BCREQ-FR YAML contract
+        run: python3 scripts/validate_issue_215_bcreq_fr_yaml_contract.py
+
       - name: Validate issue #211 Golden Examples contract
         run: python3 scripts/validate_issue_211_golden_examples_contract.py
 
