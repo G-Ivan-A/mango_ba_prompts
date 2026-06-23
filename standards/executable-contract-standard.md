@@ -468,19 +468,23 @@ frontmatter. L2-данные используют YAML/JSON для структ�
       "forbidden_l1_fields": [
         "source_hub",
         "source_sha",
-        "source_attachments",
         "governance_sources",
         "related_artifacts",
         "depends_on",
         "L3 hyperlinks"
       ],
       "registry_records": [
-        "contract_registry_id",
-        "contract_path",
-        "contract_layer",
-        "source_artifacts",
+        "id",
+        "path",
+        "version",
+        "status",
+        "layer",
+        "rule_class",
+        "provenance",
+        "integrates",
+        "related_artifacts",
+        "validated_by",
         "approved_decisions",
-        "change_history",
         "rationale"
       ],
       "rationale": "Provenance is governance data, not runtime instruction. Keeping it in one registry avoids direct L3 hyperlinks in L1 contracts."
@@ -526,7 +530,7 @@ frontmatter. L2-данные используют YAML/JSON для структ�
         },
         "contract_registry_id": {
           "required": true,
-          "example": "CONTRACT-BCREQ-FR-GEN",
+          "example": "bcreq-fr-generation-contract",
           "rationale": "The contract points to source/provenance in governance/contracts-registry.md without embedding L3 links."
         },
         "created": {
@@ -686,10 +690,10 @@ frontmatter. L2-данные используют YAML/JSON для структ�
         "L1 contract requires reading standards/* at runtime",
         "L1 contract requires reading governance/rfc/* at runtime",
         "L1 contract contains direct hyperlinks to L3 artifacts",
-        "L1 contract contains source/provenance fields other than contract_registry_id",
+        "L1 contract contains contract source/provenance fields other than contract_registry_id",
         "Prompt instructions depend on unstated RFC or ADR interpretation"
       ],
-      "validation": "Run an L1-only input test: parse the YAML contract, collect runtime_inputs, and fail if any row is classified as L3 or if the contract contains source/provenance fields other than contract_registry_id.",
+      "validation": "Run an L1-only input test: parse the YAML contract, collect runtime_inputs, and fail if any row is classified as L3 or if the contract contains contract source/provenance fields other than contract_registry_id.",
       "rationale": "Runtime behavior must be reproducible from executable instructions and data, not from live interpretation of governance documents."
     },
     "validation_examples": [
@@ -697,7 +701,7 @@ frontmatter. L2-данные используют YAML/JSON для структ�
         "artifact": "governance/bcreq-fr-generation-contract.md",
         "expected_layer": "L1",
         "expected_rule_class": "combat",
-        "template_result": "Target migration keeps local scope rules and L2 taxonomy registries, converts the contract to 100% YAML, and replaces embedded source/provenance with contract_registry_id.",
+        "template_result": "The active contract keeps local scope rules and L2 taxonomy registries, uses 100% YAML, and replaces embedded contract source/provenance with contract_registry_id.",
         "rationale": "This is the canonical generation contract example; accepted RFC rules become local L1 rules while provenance moves to governance/contracts-registry.md."
       },
       {
@@ -738,11 +742,10 @@ frontmatter. L2-данные используют YAML/JSON для структ�
 
 ## 4. Применение шаблона к существующим контрактам
 
-1. `governance/bcreq-fr-generation-contract.md` семантически является
-   L1/combat-контрактом с локальными правилами `BCREQ-FR-GEN-SCOPE-01/02` и L2
-   runtime-входами таксономий. Целевая миграция по этому стандарту переводит
-   файл в 100% YAML и оставляет в нём только `contract_registry_id` для
-   source/provenance.
+1. `governance/bcreq-fr-generation-contract.md` является L1/combat-контрактом
+   с локальными правилами `BCREQ-FR-GEN-SCOPE-01/02`, L2 runtime-входами
+   таксономий и 100% YAML-структурой. Для contract source/provenance он
+   оставляет только `contract_registry_id`.
 2. `runs/CONTRACT.md` является L1/combat-контрактом рядом с данными. При
    следующем изменении его стоит перевести в YAML-структуру с `layer: L1`,
    `rule_class: combat`, `contract_registry_id`, `runtime_inputs`, `outputs` и

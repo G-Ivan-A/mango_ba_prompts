@@ -13,6 +13,22 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #215 контракт BCREQ-FR в 100% YAML
+
+- Контракт
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  переписан как валидный YAML stream: metadata document + machine-readable
+  rule index первым блоком body; Markdown-проза, таблицы и fenced blocks
+  удалены.
+- Provenance issues/PR вынесен в новый YAML-реестр
+  [`governance/contracts-registry.md`](governance/contracts-registry.md);
+  в runtime-контракте оставлен только `contract_registry_id` без гиперссылок
+  на issue/PR.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_215_bcreq_fr_yaml_contract.py`](scripts/validate_issue_215_bcreq_fr_yaml_contract.py),
+  подключённый к GitHub Pages workflow; валидаторы issue #196/#208/#211
+  обновлены под новую YAML-структуру.
+
 ### Added — Issue #212 стандарт создания исполнимых контрактов
 
 - Добавлен L3-стандарт

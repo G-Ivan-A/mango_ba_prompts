@@ -104,8 +104,10 @@ REQUIRED_PROJECT_TEXT = {
     README: (STANDARD, CONTRACTS_REGISTRY, "Стандарт создания исполнимых контрактов"),
     WORKFLOW: ("Validate issue #212 executable contract standard", VALIDATOR),
     CONTRACTS_REGISTRY: (
-        "contracts_registry",
-        "CONTRACT-BCREQ-FR-GEN",
+        "# Реестр исполнимых контрактов",
+        "contracts:",
+        "id: bcreq-fr-generation-contract",
+        "path: \"governance/bcreq-fr-generation-contract.md\"",
         "governance/bcreq-fr-generation-contract.md",
         "source/provenance",
     ),
@@ -256,7 +258,7 @@ def check_machine_readable_payload() -> list[str]:
     if provenance.get("l1_contract_field") != "contract_registry_id":
         errors.append(f"{STANDARD}: provenance_rules.l1_contract_field must be contract_registry_id")
     forbidden_l1_fields = set(provenance.get("forbidden_l1_fields", []))
-    for field in ("source_hub", "source_sha", "source_attachments", "governance_sources", "related_artifacts"):
+    for field in ("source_hub", "source_sha", "governance_sources", "related_artifacts", "depends_on", "L3 hyperlinks"):
         if field not in forbidden_l1_fields:
             errors.append(f"{STANDARD}: provenance_rules.forbidden_l1_fields missing {field}")
 

@@ -9,8 +9,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CONTRACT = "governance/bcreq-fr-generation-contract.md"
+REGISTRY = "governance/contracts-registry.md"
 VALIDATOR = "scripts/validate_issue_196_bcreq_fr_contract.py"
 ISSUE_208_VALIDATOR = "scripts/validate_issue_208_bcreq_fr_l3_boundary.py"
+ISSUE_211_VALIDATOR = "scripts/validate_issue_211_golden_examples_contract.py"
+ISSUE_215_VALIDATOR = "scripts/validate_issue_215_bcreq_fr_yaml_contract.py"
 
 REQUIRED_CONTRACT_TEXT = (
     "id: bcreq-fr-generation-contract",
@@ -19,15 +22,12 @@ REQUIRED_CONTRACT_TEXT = (
     "type: contract",
     "executable: true",
     "machine_readable: true",
-    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196",
-    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/208",
-    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/211",
+    "contract_registry_id: bcreq-fr-generation-contract",
+    "kb/industry-taxonomy/registry.json",
+    "kb/mango-taxonomy/registry.json",
     'status: "no-golden-standard"',
     "kb/golden-examples/CONTRACT.md",
     "2-факторное подтверждение",
-    "Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)",
-    "kb/industry-taxonomy/registry.json",
-    "kb/mango-taxonomy/registry.json",
     "RFC-184-S1",
     "RFC-184-S2",
     "BCREQ-FR-GEN-SCOPE-01",
@@ -41,17 +41,20 @@ REQUIRED_CONTRACT_TEXT = (
     "BCREQ-FR-SECTION-07-STUB",
     "BCREQ-FR-VALIDATION-SUMMARY",
     "generation_enabled: false",
-    "Раздел 5",
-    "Раздел 7",
+    "section_5_nonfunctional_requirements:",
+    "section_7_development_materials:",
     "FR-01",
     "4.x.x",
     "4.x.x.x",
-    '"Система должна предоставлять"',
+    "Система должна предоставлять",
     '"Комментарии: резюме тестирования и валидации"',
     ISSUE_208_VALIDATOR,
+    ISSUE_211_VALIDATOR,
+    ISSUE_215_VALIDATOR,
 )
 
 FORBIDDEN_CONTRACT_TEXT = (
+    "```",
     "github.com/user-attachments",
     'comment: "Вложения из PR #202"',
     'status: "temporary"',
@@ -60,22 +63,49 @@ FORBIDDEN_CONTRACT_TEXT = (
     "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md",
     "standards/industry-taxonomy-standard.md",
     "standards/mango-taxonomy-standard.md",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/208",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/211",
 )
 
-REQUIRED_SECTION_MARKERS = (
-    "## 1. Назначение",
-    "## 2. Входные данные",
-    "## 3. Machine-readable index",
-    "## 4. Процесс генерации",
-    "## 5. Правила разделов результата",
-    "## 6. Правила стиля и трассируемости",
-    "## 7. Валидация",
-    "## 8. Формат результата",
-    "## Источники",
+REQUIRED_CONTRACT_ORDER = (
+    "contract_id: bcreq-fr-generation-contract",
+    "artifact_type: bcreq-fr",
+    "output_language: ru",
+    "normative_keywords:",
+    "scope_rules:",
+    "purpose:",
+    "inputs:",
+    "source_priority:",
+    "sections:",
+    "generation_process:",
+    "section_rules:",
+    "style_rules:",
+    "traceability:",
+    "golden_examples_policy:",
+    "validation:",
+    "output_format:",
+    "self_review:",
+)
+
+REQUIRED_REGISTRY_TEXT = (
+    "id: bcreq-fr-generation-contract",
+    "version: 0.4",
+    "status: active",
+    "provenance:",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/208",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/211",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/215",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202",
+    VALIDATOR,
+    ISSUE_208_VALIDATOR,
+    ISSUE_211_VALIDATOR,
+    ISSUE_215_VALIDATOR,
 )
 
 REQUIRED_PROJECT_TEXT = {
-    "CHANGELOG.md": ("Issue #196", CONTRACT, VALIDATOR),
+    "CHANGELOG.md": ("Issue #196", CONTRACT, REGISTRY, VALIDATOR),
     "README.md": (CONTRACT,),
     "governance/artifact-map.md": (CONTRACT,),
     ".github/workflows/github-pages.yml": (
@@ -116,15 +146,15 @@ def check_contract_order() -> list[str]:
 
     text = read_text(CONTRACT)
     positions = []
-    for marker in REQUIRED_SECTION_MARKERS:
+    for marker in REQUIRED_CONTRACT_ORDER:
         position = text.find(marker)
         if position == -1:
-            errors.append(f"{CONTRACT}: missing section marker {marker!r}")
+            errors.append(f"{CONTRACT}: missing contract key marker {marker!r}")
         else:
             positions.append(position)
 
     if positions != sorted(positions):
-        errors.append(f"{CONTRACT}: sections must preserve contract order")
+        errors.append(f"{CONTRACT}: contract keys must preserve YAML rule order")
     return errors
 
 
@@ -139,6 +169,7 @@ def main() -> int:
     errors: list[str] = []
     errors += require_text(CONTRACT, *REQUIRED_CONTRACT_TEXT)
     errors += reject_text(CONTRACT, *FORBIDDEN_CONTRACT_TEXT)
+    errors += require_text(REGISTRY, *REQUIRED_REGISTRY_TEXT)
     errors += check_contract_order()
     errors += check_project_wiring()
 
