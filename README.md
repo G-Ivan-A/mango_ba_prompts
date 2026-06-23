@@ -111,6 +111,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
+| `governance/contracts/approval-contract.md` | Исполнимый контракт AI-агента для атомарного согласования RFC, ADR, standards, research и analysis documents. |
 | `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
@@ -177,6 +178,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как вносить вклад (временный workflow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
+| Как согласовывать документы по разделам | [`governance/contracts/approval-contract.md`](governance/contracts/approval-contract.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |
 | Карта активных артефактов и связей | [`governance/artifact-map.md`](governance/artifact-map.md) |

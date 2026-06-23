@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #193 контракт AI-агента для согласования документов
+
+- Добавлен исполнимый governance-контракт
+  [`governance/contracts/approval-contract.md`](governance/contracts/approval-contract.md):
+  подготовка к согласованию, атомарное ревью по разделам, обработка отсутствующей
+  конкретики, завершение, особые случаи, роль AI и применимость к RFC/ADR/
+  standards/research/analysis documents.
+- Контракт протестирован сухим прогоном на RFC Industry Taxonomy:
+  [`docs/analysis/approval-contract-test-industry-rfc.md`](docs/analysis/approval-contract-test-industry-rfc.md).
+  Тест формирует первый пакет согласования и останавливается до раздела 2, чтобы
+  сохранить атомарность процесса.
+- Добавлен валидатор
+  [`scripts/validate_issue_193_approval_contract.py`](scripts/validate_issue_193_approval_contract.py),
+  подключённый к GitHub Pages workflow.
+
 ### Changed — Issue #190 унификация имён файлов taxonomy registry
 
 - Файлы Industry Taxonomy и Mango Taxonomy переименованы к единому паттерну

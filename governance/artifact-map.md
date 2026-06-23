@@ -43,6 +43,7 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 | `/governance/agent-onboarding-protocol.md` | протокол | Локальная адаптация протокола онбординга агента. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
 | `/governance/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
 | `/governance/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
+| `/governance/contracts/` | контракты процесса | Исполнимые governance-контракты AI-агента, включая [`governance/contracts/approval-contract.md`](contracts/approval-contract.md) для атомарного согласования документов. | По необходимости | `AI_GOVERNANCE.md`, `CONTRIBUTING.md`, `governance/rfc-process.md` |
 | `/governance/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
 | `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам Хаба, включая reference-only срез external sources registry из Hub PR #229; research не копируется в спок. | Да | `prompts/`, `standards/product-classification-contract.md` |
 | `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, графы связей и сценарии запуска. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
