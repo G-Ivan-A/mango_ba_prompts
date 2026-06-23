@@ -1,6 +1,7 @@
 {
   "name": "API Mango Office",
   "version": "1.9",
+  "processing_mode": "single",
   "type": "api_reference",
   "product": "Mango VPBX",
   "platform": ["API"],
@@ -15,6 +16,29 @@
     "REST API",
     "разработка"
   ],
+  "aliases": [
+    "API VPBX",
+    "VPBX API",
+    "API ВАТС",
+    "API виртуальной АТС",
+    "Open API Mango Office"
+  ],
+  "mango_taxonomy": {
+    "primary_cluster": "vats-core",
+    "secondary_clusters": [
+      "contact-center-core",
+      "platform-integrations"
+    ],
+    "product_refs": [
+      "mango-virtual-pbx-official",
+      "mango-contact-center-official"
+    ],
+    "evidence_refs": [
+      "kb/mango-taxonomy/registry.json",
+      "standards/mango-taxonomy-standard.md",
+      "kb/mango-product-docs/processed/vpbx-api/index.md"
+    ]
+  },
   "file_name": "MangoOffice_VPBX_API_v1.9.pdf",
   "total_files": 1,
   "file_size_mb": 6.2,

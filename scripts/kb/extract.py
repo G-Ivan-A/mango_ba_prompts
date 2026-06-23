@@ -527,6 +527,10 @@ def yaml_string(value) -> str:
     return json.dumps(str(value), ensure_ascii=False)
 
 
+def yaml_value(value) -> str:
+    return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
+
+
 def source_refs_json(section: dict) -> str:
     return json.dumps(section.get("source_refs", []), ensure_ascii=False, separators=(",", ":"))
 
@@ -593,6 +597,114 @@ def annotate_source_trace(sections: list[dict], source: dict, page_offset: int) 
         }]
 
 
+def parse_source_metadata(raw: str, parser: argparse.ArgumentParser) -> dict:
+    if not raw:
+        return {}
+    try:
+        metadata = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        parser.error(f"--source-metadata должен быть JSON-объектом: {exc}")
+    if not isinstance(metadata, dict):
+        parser.error("--source-metadata должен быть JSON-объектом")
+    return metadata
+
+
+def non_empty(value) -> bool:
+    return value not in (None, "", [], {})
+
+
+def frontmatter_metadata_lines(meta: dict, *, flatten_taxonomy: bool = False) -> list[str]:
+    lines = []
+    for key in ("type", "product", "platform", "language", "topics", "aliases"):
+        value = meta.get(key)
+        if non_empty(value):
+            lines.append(f"{key}: {yaml_value(value)}")
+
+    taxonomy = meta.get("mango_taxonomy")
+    if not isinstance(taxonomy, dict) or not taxonomy:
+        return lines
+
+    if not flatten_taxonomy:
+        lines.append(f"mango_taxonomy: {yaml_value(taxonomy)}")
+        return lines
+
+    taxonomy_fields = (
+        ("primary_cluster", "mango_taxonomy_primary_cluster"),
+        ("secondary_clusters", "mango_taxonomy_secondary_clusters"),
+        ("product_refs", "mango_taxonomy_product_refs"),
+        ("evidence_refs", "mango_taxonomy_evidence_refs"),
+    )
+    for source_key, output_key in taxonomy_fields:
+        value = taxonomy.get(source_key)
+        if non_empty(value):
+            lines.append(f"{output_key}: {yaml_value(value)}")
+    return lines
+
+
+def metadata_json_fields(meta: dict) -> dict:
+    fields = {}
+    for key in (
+        "type",
+        "product",
+        "platform",
+        "language",
+        "topics",
+        "aliases",
+        "mango_taxonomy",
+        "source_metadata",
+    ):
+        value = meta.get(key)
+        if non_empty(value):
+            fields[key] = value
+    return fields
+
+
+_ENDPOINT_RE = re.compile(
+    r"(?:(?:GET|POST|PUT|PATCH|DELETE)\s+(?:https?://[^/\s|`]+)?"
+    r"(?P<method_path>/[A-Za-z0-9_./{}-]+))"
+    r"|(?<![\w/])(?P<plain_path>/(?:vpbx|cc|events|s2t|commands|result)[A-Za-z0-9_./{}-]+)"
+)
+
+
+def extract_endpoints(section: dict) -> list[str]:
+    endpoints = []
+    for block in section.get("blocks", []):
+        if block[0] == "subheading":
+            text = f"{block[1]} {block[2]}"
+        elif block[0] in {"text", "table"}:
+            text = block[1]
+        else:
+            continue
+        for match in _ENDPOINT_RE.finditer(text):
+            endpoint = match.group("method_path") or match.group("plain_path")
+            if endpoint:
+                endpoints.append(endpoint.rstrip(".,;:)"))
+    return list(dict.fromkeys(endpoints))
+
+
+def markdown_cell(value) -> str:
+    return str(value).replace("\n", " ").replace("|", "\\|").strip()
+
+
+def index_search_terms(meta: dict) -> list[str]:
+    terms = []
+    product = meta.get("product")
+    if isinstance(product, str) and product:
+        terms.append(product)
+    aliases = meta.get("aliases")
+    if isinstance(aliases, list):
+        terms.extend(str(alias) for alias in aliases if alias)
+    taxonomy = meta.get("mango_taxonomy")
+    if isinstance(taxonomy, dict):
+        primary = taxonomy.get("primary_cluster")
+        if primary:
+            terms.append(str(primary))
+        secondary = taxonomy.get("secondary_clusters")
+        if isinstance(secondary, list):
+            terms.extend(str(cluster) for cluster in secondary if cluster)
+    return list(dict.fromkeys(terms))
+
+
 # --- Рендер раздела в Markdown ---------------------------------------------
 def render_section_markdown(section, meta, image_paths):
     fm_title = f'{section["number"]}. {section["title"]}' if section["number"] else section["title"]
@@ -649,6 +761,7 @@ def render_section_markdown(section, meta, image_paths):
         f'doc_code: {meta["doc_code"]}',
         f'doc_title: {yaml_string(meta["doc_title"])}',
         f'doc_version: {yaml_string(meta["doc_version"])}',
+        *frontmatter_metadata_lines(meta, flatten_taxonomy=True),
         f'section: {yaml_string(section["number"] or "0")}',
         f'pdf_section: {yaml_string(trace_number(section))}',
         f'title: {yaml_string(section["title"])}',
@@ -670,15 +783,30 @@ def render_section_markdown(section, meta, image_paths):
 
 
 def section_summary(section) -> str:
-    """Короткое «когда обращаться» для индекса — из подзаголовков/первой фразы."""
+    """Короткое «когда обращаться» для индекса — API terms + context."""
+    terms = []
+    endpoints = extract_endpoints(section)
+    for endpoint in endpoints[:4]:
+        leaf = endpoint.rstrip("/").rsplit("/", 1)[-1]
+        if "/events/" in endpoint and leaf:
+            terms.append(f"event {leaf}")
+            terms.append(f"событие {leaf}")
+        elif leaf:
+            terms.append(f"method {leaf}")
+            terms.append(f"метод {leaf}")
+        terms.append(f"endpoint {endpoint}")
+
     if section["subheadings"]:
         titles = [t for _, t in section["subheadings"]]
-        return "; ".join(titles[:4])
-    for block in section["blocks"]:
-        if block[0] == "text":
-            sentence = re.split(r"(?<=[.!?])\s", block[1])[0]
-            return sentence[:120]
-    return "—"
+        terms.extend(titles[:4])
+    else:
+        for block in section["blocks"]:
+            if block[0] == "text":
+                sentence = re.split(r"(?<=[.!?])\s", block[1])[0]
+                terms.append(sentence[:120])
+                break
+
+    return "; ".join(list(dict.fromkeys(term for term in terms if term))) or "—"
 
 
 # --- main -------------------------------------------------------------------
@@ -693,6 +821,7 @@ def main(argv=None):
     parser.add_argument("--source-mode", default="", help="single / multi_part / multi_document child mode")
     parser.add_argument("--source-set", default="", help="slug исходного набора документов")
     parser.add_argument("--source-document", default="", help="slug документа внутри исходного набора")
+    parser.add_argument("--source-metadata", default="", help="JSON metadata from source manifest")
     args = parser.parse_args(argv)
 
     import pdfplumber
@@ -757,6 +886,7 @@ def main(argv=None):
     doc_version = args.doc_version or "unknown"
     source_rels = [source["source_pdf"] for source in source_infos]
     source_rel = source_rels[0] if len(source_rels) == 1 else "; ".join(source_rels)
+    source_metadata = parse_source_metadata(args.source_metadata, parser)
 
     meta = {
         "doc_code": args.doc_code,
@@ -767,7 +897,12 @@ def main(argv=None):
         "token_method": token_util.method(),
         "kb_standard_link": rel_link(ROOT / "standards" / "kb-standard.md", out_dir),
         "kb_adr_link": rel_link(ROOT / "docs" / "adr" / "007-kb-standard.md", out_dir),
+        "source_metadata": source_metadata,
     }
+    for key in ("type", "product", "platform", "language", "topics", "aliases", "mango_taxonomy"):
+        value = source_metadata.get(key)
+        if non_empty(value):
+            meta[key] = value
 
     # Присваиваем стабильные id и сохраняем секции/изображения.
     index_rows = []
@@ -860,6 +995,7 @@ def main(argv=None):
         ],
         "note": args.note,
     }
+    meta_json.update(metadata_json_fields(meta))
     (out_dir / "meta.json").write_text(
         json.dumps(meta_json, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8"
     )
@@ -873,8 +1009,9 @@ def build_index(meta, rows, tokens_total) -> str:
         "---",
         "type: kb-source-index",
         f'doc_code: {meta["doc_code"]}',
-        f'doc_title: "{meta["doc_title"]}"',
-        f'doc_version: "{meta["doc_version"]}"',
+        f'doc_title: {yaml_string(meta["doc_title"])}',
+        f'doc_version: {yaml_string(meta["doc_version"])}',
+        *frontmatter_metadata_lines(meta),
         "status: extracted",
         "ai-generated: true",
         "---",
@@ -891,15 +1028,26 @@ def build_index(meta, rows, tokens_total) -> str:
         f'`[{meta["doc_code"]}, §<номер>, с.<страница>]` — формат проекта (issue #109);',
         "плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).",
         "",
+    ]
+    terms = index_search_terms(meta)
+    if terms:
+        lines.extend([
+            "## Поисковые ключи",
+            "",
+            ", ".join(f"`{term}`" for term in terms),
+            "",
+        ])
+    lines.extend([
         "## Разделы",
         "",
         "| № PDF | Раздел | Файл | Стр. | Источник | Токены | Когда обращаться |",
         "| --- | --- | --- | --- | --- | ---: | --- |",
-    ]
+    ])
     for r in rows:
         lines.append(
-            f'| {r["number"]} | {r["title"]} | [{r["file"]}]({r["file"]}) | '
-            f'{r["pages"]} | {r["source_summary"]} | {r["tokens"]} | {r["summary"]} |'
+            f'| {markdown_cell(r["number"])} | {markdown_cell(r["title"])} | '
+            f'[{markdown_cell(r["file"])}]({r["file"]}) | {markdown_cell(r["pages"])} | '
+            f'{markdown_cell(r["source_summary"])} | {r["tokens"]} | {markdown_cell(r["summary"])} |'
         )
     lines.append(f"| | **ИТОГО** | | | | **{tokens_total}** | весь документ |")
     lines.append("")

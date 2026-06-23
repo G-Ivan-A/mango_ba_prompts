@@ -1,4 +1,11 @@
 {
+  "aliases": [
+    "API VPBX",
+    "VPBX API",
+    "API ВАТС",
+    "API виртуальной АТС",
+    "Open API Mango Office"
+  ],
   "body_font_size": 12.0,
   "body_font_sizes": [
     12.0
@@ -12,10 +19,31 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
+  "mango_taxonomy": {
+    "evidence_refs": [
+      "kb/mango-taxonomy/registry.json",
+      "standards/mango-taxonomy-standard.md",
+      "kb/mango-product-docs/processed/vpbx-api/index.md"
+    ],
+    "primary_cluster": "vats-core",
+    "product_refs": [
+      "mango-virtual-pbx-official",
+      "mango-contact-center-official"
+    ],
+    "secondary_clusters": [
+      "contact-center-core",
+      "platform-integrations"
+    ]
+  },
   "note": "Документация по API виртуальной АТС Mango Office. Содержит описание методов управления звонками, настройками, статистикой и интеграционными возможностями.",
   "page_count": 363,
   "part_count": 1,
+  "platform": [
+    "API"
+  ],
   "processing_mode": "single",
+  "product": "Mango VPBX",
   "section_count": 253,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -4578,6 +4606,47 @@
     }
   ],
   "source_document": "vpbx-api",
+  "source_metadata": {
+    "aliases": [
+      "API VPBX",
+      "VPBX API",
+      "API ВАТС",
+      "API виртуальной АТС",
+      "Open API Mango Office"
+    ],
+    "language": "ru",
+    "mango_taxonomy": {
+      "evidence_refs": [
+        "kb/mango-taxonomy/registry.json",
+        "standards/mango-taxonomy-standard.md",
+        "kb/mango-product-docs/processed/vpbx-api/index.md"
+      ],
+      "primary_cluster": "vats-core",
+      "product_refs": [
+        "mango-virtual-pbx-official",
+        "mango-contact-center-official"
+      ],
+      "secondary_clusters": [
+        "contact-center-core",
+        "platform-integrations"
+      ]
+    },
+    "platform": [
+      "API"
+    ],
+    "product": "Mango VPBX",
+    "source_manifest": "kb/mango-product-docs/sources/vpbx-api/meta.json",
+    "source_slug": "vpbx-api",
+    "topics": [
+      "API",
+      "VPBX",
+      "интеграция",
+      "телефония",
+      "REST API",
+      "разработка"
+    ],
+    "type": "api_reference"
+  },
   "source_pdf": "kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/vpbx-api/MangoOffice_VPBX_API_v1.9.pdf"
@@ -4594,6 +4663,15 @@
   ],
   "table_count": 451,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 21468,
-  "tokens_total": 259937
+  "tokens_index": 24822,
+  "tokens_total": 259937,
+  "topics": [
+    "API",
+    "VPBX",
+    "интеграция",
+    "телефония",
+    "REST API",
+    "разработка"
+  ],
+  "type": "api_reference"
 }

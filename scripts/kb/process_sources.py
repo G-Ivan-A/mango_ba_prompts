@@ -52,6 +52,7 @@ class ExtractJob:
     source_mode: str
     source_set: str
     source_document: str
+    source_metadata: dict
 
     @property
     def output_slug(self) -> str:
@@ -188,6 +189,7 @@ def make_job(
     version = str(doc_meta.get("version") or manifest.get("version") or "unknown")
     code = str(doc_meta.get("doc_code") or manifest.get("doc_code") or doc_code_default(output_dir.name))
     note = str(doc_meta.get("description") or manifest.get("description") or "")
+    source_metadata = build_source_metadata(source_dir, manifest, doc_meta)
     return ExtractJob(
         source_dir=source_dir,
         output_dir=output_dir,
@@ -199,7 +201,30 @@ def make_job(
         source_mode=mode,
         source_set=source_set,
         source_document=source_document,
+        source_metadata=source_metadata,
     )
+
+
+def build_source_metadata(source_dir: Path, manifest: dict, doc_meta: dict) -> dict:
+    """Return manifest metadata that should survive into generated KB artifacts."""
+    metadata: dict = {
+        "source_manifest": rel_to_root(source_dir / "meta.json"),
+        "source_slug": source_dir.name,
+    }
+    for key in (
+        "type",
+        "product",
+        "platform",
+        "language",
+        "topics",
+        "aliases",
+        "mango_taxonomy",
+        "source_url",
+    ):
+        value = doc_meta.get(key) if key in doc_meta else manifest.get(key)
+        if value not in (None, "", [], {}):
+            metadata[key] = value
+    return metadata
 
 
 def build_plan(
@@ -301,6 +326,8 @@ def job_command(job: ExtractJob, python_bin: str, extractor: Path) -> list[str]:
         job.source_set,
         "--source-document",
         job.source_document,
+        "--source-metadata",
+        json.dumps(job.source_metadata, ensure_ascii=False, separators=(",", ":")),
     ]
 
 
@@ -319,6 +346,7 @@ def print_plan(plan: SourcePlan, as_json: bool = False) -> None:
                 "doc_version": job.doc_version,
                 "source_mode": job.source_mode,
                 "source_document": job.source_document,
+                "source_metadata": job.source_metadata,
                 "source_files": [rel_to_root(path) for path in job.pdf_paths],
             }
             for job in plan.jobs

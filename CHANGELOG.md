@@ -13,6 +13,19 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #203 поиск и трассировка API VPBX
+
+- Улучшен конвейер генерации `kb/mango-product-docs/processed/vpbx-api`:
+  metadata из source manifest теперь сохраняет aliases `API VPBX`/`VPBX API`
+  и Mango Taxonomy traceability к `vats-core` в `meta.json`, `index.md` и
+  frontmatter каждого section chunk.
+- Индекс `vpbx-api` теперь явно сопоставляет запрос `event onAppealClose` с
+  событием `/events/md/onAppealClose` и сохраняет endpoint-ключи для методов
+  API VPBX, включая `/cc/appeals/create-closed-appeals`.
+- Добавлен регрессионный валидатор
+  `scripts/validate_issue_203_vpbx_api_retrieval.py`, подключённый к
+  `make kb-validate` и KB workflow.
+
 ### Fixed — Issue #205 структура runs для BCREQ-1027
 
 - BCREQ-1027: перенесён из `outputs/` в `runs/bcreq-1027/` с правильной
