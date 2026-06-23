@@ -22,3 +22,8 @@ ci-logs/
 # Internal backup snapshots of generated registries (recoverable from git
 # history; used only by additive builders like experiments/cascade_fill.py).
 experiments/*.backup.json
+
+# Source dialogue export provided as analysis input for issue #192. Задача требует
+# «только аналитический отчёт» в репозитории (docs/analysis/), поэтому исходный
+# диалог хранится локально как вход для анализа и в репозиторий не коммитится.
+experiments/Q.txt
