@@ -26,6 +26,21 @@ ai-generated: true
 - `runs/REGISTRY.md`, `runs/stats/`, валидаторы issue #199/#205 и новый
   [`scripts/validate_issue_207_bcreq_1027_vpbx_run.py`](scripts/validate_issue_207_bcreq_1027_vpbx_run.py)
   обновлены и подключены к GitHub Pages workflow.
+### Fixed — Issue #208 L3-утечки в контракте BCREQ-FR
+
+- Контракт
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  переведён в `active` v0.3: `integrates:` и §2 теперь используют только L2
+  registry inputs `kb/industry-taxonomy/registry.json` и
+  `kb/mango-taxonomy/registry.json`; правила RFC-184 оставлены как локальные
+  `BCREQ-FR-GEN-SCOPE-01/02` в machine-readable index.
+- Нестабильные `github.com/user-attachments` в `source_attachments:` заменены
+  временной трассировкой PR #202 с TODO на будущий permalink / Golden Examples.
+- Добавлены регрессионный валидатор
+  [`scripts/validate_issue_208_bcreq_fr_l3_boundary.py`](scripts/validate_issue_208_bcreq_fr_l3_boundary.py)
+  и dry-run evidence
+  [`experiments/issue-208/bcreq-1027-l3-boundary-dry-run.md`](experiments/issue-208/bcreq-1027-l3-boundary-dry-run.md);
+  проверка подключена к GitHub Pages workflow.
 
 ### Added — Issue #203 поиск и трассировка API VPBX
 

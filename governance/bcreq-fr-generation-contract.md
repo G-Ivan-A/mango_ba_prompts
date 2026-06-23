@@ -1,7 +1,7 @@
 ---
 id: bcreq-fr-generation-contract
-status: draft
-version: 0.1
+status: active
+version: 0.3
 updated: 2026-06-23
 ai-generated: true
 executable: true
@@ -10,17 +10,18 @@ type: contract
 scope: bcreq-fr
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196"
 source_attachments:
-  - "https://github.com/user-attachments/files/29245513/bcreq.txt"
-  - "https://github.com/user-attachments/files/29245511/bcreq.Q.txt"
-  - "https://github.com/user-attachments/files/29245512/bcreq-fr.txt"
+  # TODO: заменить на permalink после задачи #XXX (Golden Examples)
+  # Временно: ссылки на вложения из PR #202
+  - comment: "Вложения из PR #202"
+    status: "temporary"
+    trace: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"
 integrates:
-  - "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md"
-  - "standards/industry-taxonomy-standard.md"
-  - "standards/mango-taxonomy-standard.md"
+  # Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)
   - "kb/industry-taxonomy/registry.json"
   - "kb/mango-taxonomy/registry.json"
 validated_by:
   - "scripts/validate_issue_196_bcreq_fr_contract.py"
+  - "scripts/validate_issue_208_bcreq_fr_l3_boundary.py"
 ---
 
 # Контракт AI-агента: генерация комплексного BCREQ-FR
@@ -41,8 +42,8 @@ validated_by:
   заглушкой;
 - отделить бизнес-смысл, ожидаемое решение, функциональные требования,
   ограничения и материалы для разработки;
-- встроить правила RFC-184 по чистому scope BCREQ-ФТ без выноса этих правил в
-  отдельный реестр;
+- встроить правила чистого scope BCREQ-ФТ в локальные правила
+  `BCREQ-FR-GEN-SCOPE-01/02` без runtime-чтения RFC;
 - обеспечить атомарность, однозначность, краткость и проверяемую трассируемость
   на источники, taxonomy nodes, product docs и golden examples.
 
@@ -59,10 +60,10 @@ business scope, выборе варианта решения, принятии �
 | Вход | Обязательность | Правило чтения |
 | --- | --- | --- |
 | `business_request` | Да | Сырой запрос заказчика, change decision, issue или transcript. |
-| `discussion_sources` | Да | Диалоги команд C/Q из вложений issue #196 или их репозиторный эквивалент. |
-| `golden_example` | Да | Пример BCREQ-FR из вложения `bcreq-fr.txt` и/или близкий run-артефакт. |
-| `rfc_184` | Да | `governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`; правила `RFC-184-S1` и `RFC-184-S2` применяются как scope-filter. |
-| `taxonomy_sources` | Да | `standards/industry-taxonomy-standard.md`, `standards/mango-taxonomy-standard.md`, `kb/industry-taxonomy/registry.json`, `kb/mango-taxonomy/registry.json`. |
+| `discussion_sources` | Да | Диалоги команд C/Q через репозиторный эквивалент, permalink или временную трассировку PR #202. |
+| `golden_example` | Да | Пример BCREQ-FR через репозиторный эквивалент, permalink или близкий run-артефакт. |
+| `scope_rules` | Да | Локальные правила `BCREQ-FR-GEN-SCOPE-01/02` из §3 этого контракта. |
+| `taxonomy_sources` | Да | `kb/industry-taxonomy/registry.json`, `kb/mango-taxonomy/registry.json`. |
 | `product_docs` | Да, если требование описывает поведение продукта | Официальные Mango docs, processed KB или другой проверяемый источник. |
 | `research_practices` | Желательно | Практики и исследования для best-practice вариантов; если источника нет, best practice не выдумывается. |
 
@@ -72,9 +73,10 @@ business scope, выборе варианта решения, принятии �
 Приоритет источников:
 
 1. Явное решение issue/PR/review по текущей задаче.
-2. Вложения issue #196: диалоги команд C/Q и golden example.
-3. `RFC-184-S1` / `RFC-184-S2`.
-4. Industry/Mango Taxonomy standards and registries.
+2. Диалоги команд C/Q и golden example через permalink, репозиторный эквивалент
+   или временную трассировку PR #202.
+3. Локальные scope rules `BCREQ-FR-GEN-SCOPE-01/02`.
+4. Industry/Mango Taxonomy registries.
 5. Product docs / processed KB.
 6. Ранее созданные run-артефакты и patterns.
 
@@ -137,8 +139,9 @@ validation:
 
 The YAML block is the extraction boundary for future scaling: a later rules
 registry can import the stable `BCREQ-FR-*` rule ids without rewriting this
-contract. Until that separate backlog task is approved, RFC-184 remains embedded
-by reference here and is not moved to a new registry.
+contract. Until that separate backlog task is approved, the RFC-184 business
+rules remain embedded here as local `BCREQ-FR-GEN-SCOPE-01/02` rules; an agent
+does not need to read the RFC document at runtime.
 
 ## 4. Процесс генерации
 
@@ -146,7 +149,7 @@ by reference here and is not moved to a new registry.
 
 Агент должен:
 
-- прочитать issue, вложения, RFC-184, taxonomy standards, taxonomy registries и
+- прочитать issue, discussion/golden-example sources, taxonomy registries и
   применимые product docs;
 - извлечь из источников только подтверждённые проблемы, цели, задачи, роли,
   продукты, каналы, системы, функции и ограничения;
@@ -214,9 +217,9 @@ machine-readable index. Качество повышается за счёт кр
 | 2.3 Задачи | Дать только достаточные и необходимые бизнес-задачи. Не плодить детальные задачи, технические шаги и требования, закрытые As-Is. |
 | 2.4 Ожидаемые результаты и эффект | Указать эффект, если он подтверждён: время, ошибки, качество данных, нормативы, снижение ручного труда, прозрачность процесса. Если метрик нет, не раздувать раздел. |
 
-Каждая задача 2.3 должна проходить `RFC-184-S1` и `RFC-184-S2`. Если задача
-описывает текущую функциональность, она исключается из BCREQ-FR и фиксируется
-только вне результирующего документа.
+Каждая задача 2.3 должна проходить локальные правила
+`BCREQ-FR-GEN-SCOPE-01/02`. Если задача описывает текущую функциональность, она
+исключается из BCREQ-FR и фиксируется только вне результирующего документа.
 
 ### 5.3. Раздел 3: Ожидаемое решение
 
@@ -293,8 +296,9 @@ run-log/analysis как candidates, но не включать в BCREQ-FR бе�
 | 6.1 Ограничения | Зафиксировать ограничения, влияющие на требования: продуктовые, клиентские, правовые, организационные, релизные. Не дублировать текущее поведение и не превращать ограничения в НФТ. |
 | 6.2 Используемые технологии | Указать технологические опоры, платформы, сервисы или зависимости на уровне, достаточном для понимания решения. Не раскрывать API/data model/architecture details. |
 
-Ограничения 6.1 должны проходить scope-filter RFC-184. Если ограничение
-пересказывает As-Is без влияния на доработку, оно исключается.
+Ограничения 6.1 должны проходить локальный scope-filter
+`BCREQ-FR-GEN-SCOPE-01/02`. Если ограничение пересказывает As-Is без влияния на
+доработку, оно исключается.
 
 ### 5.7. Раздел 7: Материалы для разработки
 
@@ -346,7 +350,7 @@ Known structure:
 - Industry Taxonomy node;
 - Mango Taxonomy entity;
 - product doc / processed KB;
-- RFC-184 rule;
+- локальное scope rule `BCREQ-FR-GEN-SCOPE-01/02`;
 - accepted issue/PR/review decision.
 
 Минимальная traceability table в конце раздела 4:
@@ -369,8 +373,8 @@ BCREQ-FR.
 Run-артефакт
 `runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md`
 можно использовать как близкий пример структуры и traceability, но с учётом
-замечаний RFC-184: исторический контекст и закрытая текущей функциональностью
-потребность исключаются.
+локальных правил `BCREQ-FR-GEN-SCOPE-01/02`: исторический контекст и закрытая
+текущей функциональностью потребность исключаются.
 
 ## 7. Валидация
 
@@ -382,7 +386,7 @@ Run-артефакт
 | ID | Проверка | Условие pass |
 | --- | --- | --- |
 | BCREQ-FR-VAL-01 | Полнота источников | Все обязательные источники прочитаны или явно отмечены `needs-clarification`. |
-| BCREQ-FR-VAL-02 | Scope RFC-184 | `RFC-184-S1` и `RFC-184-S2` применены к разделам 2, 3, 4, 6. |
+| BCREQ-FR-VAL-02 | Scope rules | `BCREQ-FR-GEN-SCOPE-01/02` применены к разделам 2, 3, 4, 6. |
 | BCREQ-FR-VAL-03 | Структура | Разделы 1, 2, 3, 4, 6 сгенерированы; разделы 5 и 7 выведены stub. |
 | BCREQ-FR-VAL-04 | Раздел 3 как мост | 3.6 содержит только `FR-01` ... `FR-N` без подуровней и детализации. |
 | BCREQ-FR-VAL-05 | Атомарность раздела 4 | Каждое 4.x/4.x.x/4.x.x.x описывает одно проверяемое поведение. |
@@ -438,29 +442,20 @@ Run-артефакт
 | --- | --- | --- |
 ```
 
-## Источники
+## Источники и происхождение контракта
+
+Этот раздел фиксирует provenance контракта. Runtime-входы агента перечислены
+только в §2.
 
 - Issue #196:
   <https://github.com/G-Ivan-A/mango_ba_prompts/issues/196>
-- Диалог команды C:
-  <https://github.com/user-attachments/files/29245513/bcreq.txt>
-- Диалог команды Q:
-  <https://github.com/user-attachments/files/29245511/bcreq.Q.txt>
-- Golden example BCREQ-FR:
-  <https://github.com/user-attachments/files/29245512/bcreq-fr.txt>
-- RFC-184:
-  [governance/rfc/bcreq-ft-scope-formation-rules-proposal.md](rfc/bcreq-ft-scope-formation-rules-proposal.md)
-- Industry Taxonomy Standard:
-  [standards/industry-taxonomy-standard.md](../standards/industry-taxonomy-standard.md)
-- Mango Taxonomy Standard:
-  [standards/mango-taxonomy-standard.md](../standards/mango-taxonomy-standard.md)
+- Issue #208:
+  <https://github.com/G-Ivan-A/mango_ba_prompts/issues/208>
+- Временная трассировка вложений PR #202:
+  <https://github.com/G-Ivan-A/mango_ba_prompts/pull/202>
 - Industry Taxonomy registry:
   [kb/industry-taxonomy/registry.json](../kb/industry-taxonomy/registry.json)
 - Mango Taxonomy registry:
   [kb/mango-taxonomy/registry.json](../kb/mango-taxonomy/registry.json)
-- BCREQ process standard:
-  [standards/bcreq-process-standard.md](../standards/bcreq-process-standard.md)
-- FR generation pattern:
-  [patterns/fr-generation/README.md](../patterns/fr-generation/README.md)
 - RUN-0012 BCREQ-FR example:
   [runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md](../runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md)
