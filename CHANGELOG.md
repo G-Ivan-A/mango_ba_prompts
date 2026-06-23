@@ -13,6 +13,22 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #196 контракт генерации BCREQ-FR
+
+- Добавлен исполнимый контракт AI-агента
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  для генерации комплексного BCREQ-FR: правила разделов 1-7, машинно-читаемый
+  индекс, заглушки разделов 5 и 7, стиль кратких 4.x.x/4.x.x.x формулировок,
+  taxonomy/product-doc traceability и финальный блок валидации.
+- В контракт встроены ссылки на `RFC-184-S1` и `RFC-184-S2` из
+  [`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`](governance/rfc/bcreq-ft-scope-formation-rules-proposal.md):
+  BCREQ-FR описывает доработку, не текущую функциональность; закрытые явно или
+  альтернативно потребности исключаются из результирующего документа.
+- Добавлен валидатор
+  [`scripts/validate_issue_196_bcreq_fr_contract.py`](scripts/validate_issue_196_bcreq_fr_contract.py),
+  подключённый к GitHub Pages workflow; README и artifact map дополнены новой
+  точкой входа.
+
 ### Added — Issue #193 контракт AI-агента для согласования документов
 
 - Добавлен исполнимый governance-контракт

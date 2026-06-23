@@ -49,6 +49,9 @@ jobs:
       - name: Validate issue #193 approval contract
         run: python3 scripts/validate_issue_193_approval_contract.py
 
+      - name: Validate issue #196 BCREQ-FR generation contract
+        run: python3 scripts/validate_issue_196_bcreq_fr_contract.py
+
       - name: Validate Pages artifact
         run: python3 scripts/validate_issue_74_github_pages.py
 
