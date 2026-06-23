@@ -1,7 +1,7 @@
 ---
 id: bcreq-fr-generation-contract
 status: active
-version: 0.3
+version: 0.4
 updated: 2026-06-23
 ai-generated: true
 executable: true
@@ -10,11 +10,9 @@ type: contract
 scope: bcreq-fr
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196"
 source_attachments:
-  # TODO: заменить на permalink после задачи #XXX (Golden Examples)
-  # Временно: ссылки на вложения из PR #202
-  - comment: "Вложения из PR #202"
-    status: "temporary"
-    trace: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"
+  - status: "no-golden-standard"
+  # ПОЯСНЕНИЕ: Ссылка на эталонный пример BCREQ-FR.
+  # Будет заменена на path + sha после согласования эталона отдельной задачей.
 integrates:
   # Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)
   - "kb/industry-taxonomy/registry.json"
@@ -22,6 +20,7 @@ integrates:
 validated_by:
   - "scripts/validate_issue_196_bcreq_fr_contract.py"
   - "scripts/validate_issue_208_bcreq_fr_l3_boundary.py"
+  - "scripts/validate_issue_211_golden_examples_contract.py"
 ---
 
 # Контракт AI-агента: генерация комплексного BCREQ-FR
@@ -60,8 +59,8 @@ business scope, выборе варианта решения, принятии �
 | Вход | Обязательность | Правило чтения |
 | --- | --- | --- |
 | `business_request` | Да | Сырой запрос заказчика, change decision, issue или transcript. |
-| `discussion_sources` | Да | Диалоги команд C/Q через репозиторный эквивалент, permalink или временную трассировку PR #202. |
-| `golden_example` | Да | Пример BCREQ-FR через репозиторный эквивалент, permalink или близкий run-артефакт. |
+| `discussion_sources` | Да | Диалоги команд C/Q через репозиторный эквивалент, permalink или другой stable ref. |
+| `golden_example` | Нет, пока `source_attachments` содержит `status: "no-golden-standard"` | Approved Golden Example через `path + sha` по `kb/golden-examples/CONTRACT.md`; внешние вложения и восстановление по памяти запрещены. |
 | `scope_rules` | Да | Локальные правила `BCREQ-FR-GEN-SCOPE-01/02` из §3 этого контракта. |
 | `taxonomy_sources` | Да | `kb/industry-taxonomy/registry.json`, `kb/mango-taxonomy/registry.json`. |
 | `product_docs` | Да, если требование описывает поведение продукта | Официальные Mango docs, processed KB или другой проверяемый источник. |
@@ -73,8 +72,8 @@ business scope, выборе варианта решения, принятии �
 Приоритет источников:
 
 1. Явное решение issue/PR/review по текущей задаче.
-2. Диалоги команд C/Q и golden example через permalink, репозиторный эквивалент
-   или временную трассировку PR #202.
+2. Диалоги команд C/Q через permalink или репозиторный эквивалент; approved
+   Golden Example только при наличии `path + sha`.
 3. Локальные scope rules `BCREQ-FR-GEN-SCOPE-01/02`.
 4. Industry/Mango Taxonomy registries.
 5. Product docs / processed KB.
@@ -149,7 +148,8 @@ does not need to read the RFC document at runtime.
 
 Агент должен:
 
-- прочитать issue, discussion/golden-example sources, taxonomy registries и
+- прочитать issue, discussion sources, approved golden-example при наличии,
+  taxonomy registries и
   применимые product docs;
 - извлечь из источников только подтверждённые проблемы, цели, задачи, роли,
   продукты, каналы, системы, функции и ограничения;
@@ -253,8 +253,10 @@ machine-readable index. Качество повышается за счёт кр
 - уровень 4.x.x.x: атомарные значения, параметры, статусы, варианты, условия;
 - четвёртый уровень иерархии запрещён;
 - одна строка требования описывает одно проверяемое поведение;
-- для 4.x.x и 4.x.x.x использовать краткий стиль golden example: без повторения
-  очевидного субъекта, если субъект однозначен, и без объясняющей "воды".
+- для 4.x.x и 4.x.x.x использовать краткий стиль локальных правил контракта и
+  approved golden example, если он уже закреплён через `path + sha`: без
+  повторения очевидного субъекта, если субъект однозначен, и без объясняющей
+  "воды".
 
 Каждый блок 4.x должен иметь source trace:
 
@@ -365,16 +367,27 @@ Known structure:
 
 ### 6.3. Golden examples
 
-Golden example из вложения `bcreq-fr.txt` используется как эталон краткости для
-2.1-2.3 и для уровней 4.x.x / 4.x.x.x. Он не является источником нового scope:
-пример показывает стиль и формат, но не добавляет функциональность в другой
-BCREQ-FR.
+Пока `source_attachments` содержит `status: "no-golden-standard"`, у контракта
+нет утверждённого Golden Example. Агент не должен читать внешние вложения,
+использовать bare filename или восстанавливать пример по памяти.
+
+После появления approved Golden Example ссылка фиксируется только как `path +
+sha` по правилам [`kb/golden-examples/CONTRACT.md`](../kb/golden-examples/CONTRACT.md).
+Замена заглушки требует 2-факторное подтверждение:
+
+1. пользователь явно утверждает сам Golden Example через
+   [`governance/approval-contract.md`](approval-contract.md);
+2. пользователь отдельным решением утверждает замену `status:
+   "no-golden-standard"` в этом BCREQ-FR контракте на `path + sha`.
+
+Автоматическая замена заглушки запрещена. Approved example показывает стиль и
+формат, но не добавляет функциональность в другой BCREQ-FR.
 
 Run-артефакт
 `runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md`
-можно использовать как близкий пример структуры и traceability, но с учётом
-локальных правил `BCREQ-FR-GEN-SCOPE-01/02`: исторический контекст и закрытая
-текущей функциональностью потребность исключаются.
+можно использовать как близкий неэталонный пример структуры и traceability, но
+с учётом локальных правил `BCREQ-FR-GEN-SCOPE-01/02`: исторический контекст и
+закрытая текущей функциональностью потребность исключаются.
 
 ## 7. Валидация
 
@@ -451,8 +464,12 @@ Run-артефакт
   <https://github.com/G-Ivan-A/mango_ba_prompts/issues/196>
 - Issue #208:
   <https://github.com/G-Ivan-A/mango_ba_prompts/issues/208>
-- Временная трассировка вложений PR #202:
-  <https://github.com/G-Ivan-A/mango_ba_prompts/pull/202>
+- Issue #211:
+  <https://github.com/G-Ivan-A/mango_ba_prompts/issues/211>
+- Golden Examples lifecycle contract:
+  [kb/golden-examples/CONTRACT.md](../kb/golden-examples/CONTRACT.md)
+- Approval contract:
+  [governance/approval-contract.md](approval-contract.md)
 - Industry Taxonomy registry:
   [kb/industry-taxonomy/registry.json](../kb/industry-taxonomy/registry.json)
 - Mango Taxonomy registry:
