@@ -10,17 +10,21 @@ ROOT = Path(__file__).resolve().parents[1]
 
 CONTRACT = "governance/bcreq-fr-generation-contract.md"
 VALIDATOR = "scripts/validate_issue_196_bcreq_fr_contract.py"
+ISSUE_208_VALIDATOR = "scripts/validate_issue_208_bcreq_fr_l3_boundary.py"
 
 REQUIRED_CONTRACT_TEXT = (
     "id: bcreq-fr-generation-contract",
+    "status: active",
+    "version: 0.3",
     "type: contract",
     "executable: true",
     "machine_readable: true",
     "https://github.com/G-Ivan-A/mango_ba_prompts/issues/196",
-    "https://github.com/user-attachments/files/29245513/bcreq.txt",
-    "https://github.com/user-attachments/files/29245511/bcreq.Q.txt",
-    "https://github.com/user-attachments/files/29245512/bcreq-fr.txt",
-    "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md",
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/208",
+    'comment: "Вложения из PR #202"',
+    'status: "temporary"',
+    'trace: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"',
+    "Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)",
     "kb/industry-taxonomy/registry.json",
     "kb/mango-taxonomy/registry.json",
     "RFC-184-S1",
@@ -43,6 +47,15 @@ REQUIRED_CONTRACT_TEXT = (
     "4.x.x.x",
     '"Система должна предоставлять"',
     '"Комментарии: резюме тестирования и валидации"',
+    ISSUE_208_VALIDATOR,
+)
+
+FORBIDDEN_CONTRACT_TEXT = (
+    "github.com/user-attachments",
+    "`rfc_184`",
+    "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md",
+    "standards/industry-taxonomy-standard.md",
+    "standards/mango-taxonomy-standard.md",
 )
 
 REQUIRED_SECTION_MARKERS = (
@@ -84,6 +97,14 @@ def require_text(path: str, *needles: str) -> list[str]:
     return [f"{path}: missing {needle!r}" for needle in needles if needle not in text]
 
 
+def reject_text(path: str, *needles: str) -> list[str]:
+    errors = require_path(path)
+    if errors:
+        return errors
+    text = read_text(path)
+    return [f"{path}: forbidden text {needle!r}" for needle in needles if needle in text]
+
+
 def check_contract_order() -> list[str]:
     errors = require_path(CONTRACT)
     if errors:
@@ -113,6 +134,7 @@ def check_project_wiring() -> list[str]:
 def main() -> int:
     errors: list[str] = []
     errors += require_text(CONTRACT, *REQUIRED_CONTRACT_TEXT)
+    errors += reject_text(CONTRACT, *FORBIDDEN_CONTRACT_TEXT)
     errors += check_contract_order()
     errors += check_project_wiring()
 

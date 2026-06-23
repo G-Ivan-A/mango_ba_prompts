@@ -52,6 +52,9 @@ jobs:
       - name: Validate issue #196 BCREQ-FR generation contract
         run: python3 scripts/validate_issue_196_bcreq_fr_contract.py
 
+      - name: Validate issue #208 BCREQ-FR L3 boundary
+        run: python3 scripts/validate_issue_208_bcreq_fr_l3_boundary.py
+
       - name: Validate issue #199 BCREQ-1027 section 4.3 API methods
         run: python3 scripts/validate_issue_199_bcreq_1027_section_4_3.py
 

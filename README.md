@@ -112,7 +112,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `LICENSE` | Лицензия проекта (MIT). |
 | `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
 | `governance/approval-contract.md` | Исполнимый контракт AI-агента для атомарного согласования RFC, ADR, standards, research и analysis documents. |
-| `governance/bcreq-fr-generation-contract.md` | Исполнимый контракт AI-агента для генерации комплексного BCREQ-FR с правилами разделов 1-7, RFC-184 scope-filter и итоговой валидацией. |
+| `governance/bcreq-fr-generation-contract.md` | Исполнимый контракт AI-агента для генерации комплексного BCREQ-FR с правилами разделов 1-7, локальными scope rules `BCREQ-FR-GEN-SCOPE-01/02` и итоговой валидацией. |
 | `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
