@@ -3,6 +3,11 @@ id: integration-amocrm-13-integraciya-s-adresnoy-knigoy-virtualnoy
 doc_code: INTEGRATIONA
 doc_title: "Интеграция Виртуальной АТС и amoCRM. Инструкция по настройке"
 doc_version: "25.08.2025"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","amoCRM","CRM","ВАТС","настройка","синхронизация"]
 section: "13"
 pdf_section: "13"
 title: "Интеграция с адресной книгой Виртуальной АТС"

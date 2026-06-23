@@ -3,6 +3,11 @@ id: integration-bitrix24-12-kak-sohranyat-vse-zvonki-v-bitriks24-obo
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "0"
 pdf_section: "1.1"
 title: "Как сохранять все звонки в Битрикс24. Обобщенно"

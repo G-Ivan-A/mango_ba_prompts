@@ -3,6 +3,11 @@ id: windows-mac-settings-37-sbros-nastroek-zvuka
 doc_code: MTALKER-SET
 doc_title: "Mango Talker для Windows/Mac - Установка настроек"
 doc_version: "23.08.2024"
+type: "settings_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "8.3"
 pdf_section: "8.3"
 title: "Сброс настроек звука"

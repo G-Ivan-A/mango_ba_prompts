@@ -3,6 +3,11 @@ id: integration-bitrix24-170-nastroyte-otkrytuyu-liniyu-v-bitriks24
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "2.24.6"
 pdf_section: "2.24.6"
 title: "Настройте «Открытую линию» в Битрикс24"

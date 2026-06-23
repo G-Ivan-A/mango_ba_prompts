@@ -3,6 +3,11 @@ id: windows-mac-working-131-kak-otpravit-soobschenie-v-chat-sms-ili
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "6.8"
 pdf_section: "6.8"
 title: "Как отправить сообщение в чат, смс или факс участнику звонка"

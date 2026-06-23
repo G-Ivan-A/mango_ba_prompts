@@ -3,6 +3,10 @@ id: mango-lk-manual-25-blok-8-poluchennye-vozmozhnosti
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "1.8.2.8"
 pdf_section: "1.8.2.8"
 title: "Блок 8. Полученные возможности"

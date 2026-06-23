@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-10-ii-konspekty
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "3.4.1"
 pdf_section: "3.4.1"
 title: "ИИ Конспекты"

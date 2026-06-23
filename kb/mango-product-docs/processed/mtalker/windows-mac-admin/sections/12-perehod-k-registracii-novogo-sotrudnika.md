@@ -3,6 +3,11 @@ id: windows-mac-admin-12-perehod-k-registracii-novogo-sotrudnika
 doc_code: MTALKER-ADM
 doc_title: "Mango Talker для Windows/Mac - Информация для администратора ВАТС"
 doc_version: "23.08.2024"
+type: "admin_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "—"
 title: "Переход к регистрации нового сотрудника в ВАТС"

@@ -3,6 +3,11 @@ id: windows-mac-working-244-kak-upravlyat-sobstvennymi-kameroy-i-mik
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "16.5"
 pdf_section: "16.5"
 title: "Как управлять собственными камерой и микрофоном"

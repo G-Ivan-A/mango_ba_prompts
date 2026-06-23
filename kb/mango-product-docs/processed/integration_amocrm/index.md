@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: INTEGRATIONA
 doc_title: "Интеграция Виртуальной АТС и amoCRM. Инструкция по настройке"
 doc_version: "25.08.2025"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","amoCRM","CRM","ВАТС","настройка","синхронизация"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[INTEGRATIONA, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Office`
 
 ## Разделы
 

@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-04-podklyuchenie-v-demo-rezhime
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "2.1"
 pdf_section: "2.1"
 title: "Подключение в демо-режиме"

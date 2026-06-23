@@ -3,6 +3,11 @@ id: mdialogi-api-22-kak-uznat-svoy-unikalnyy-kod-vats-vpbx-a
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "0"
 pdf_section: "2.3.7"
 title: "Как узнать свой уникальный код ВАТС (vpbx_api_key) и ключ создания подписи (vpbx_api_salt)?"

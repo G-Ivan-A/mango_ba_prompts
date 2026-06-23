@@ -3,6 +3,11 @@ id: wallboard-05-glavnoe-okno-modulya
 doc_code: WALLBOARD
 doc_title: "Руководство пользователя. Wallboard Mango Office"
 doc_version: "7.22.25"
+type: "user_manual"
+product: "Mango Wallboard"
+platform: ["Web"]
+language: "ru"
+topics: ["wallboard","дашборд","мониторинг","KPI","контакт-центр","визуализация"]
 section: "4"
 pdf_section: "4"
 title: "Главное окно модуля"

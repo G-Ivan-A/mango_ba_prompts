@@ -3,6 +3,11 @@ id: mdialogi-api-04-princip-tekstovyh-kommunikaciy-s-kliento
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "1.3"
 pdf_section: "1.3"
 title: "Принцип текстовых коммуникаций с Клиентом при помощи Манго Диалогов"

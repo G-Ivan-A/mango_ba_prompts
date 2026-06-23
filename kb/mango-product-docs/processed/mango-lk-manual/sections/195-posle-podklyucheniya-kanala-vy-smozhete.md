@@ -3,6 +3,10 @@ id: mango-lk-manual-195-posle-podklyucheniya-kanala-vy-smozhete
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "0"
 pdf_section: "4.5.11.2.2"
 title: "После подключения канала вы сможете получать обращения клиентов из виджета Max на вашем сайте, а также передавать диалоги в Контакт-центр, Mango Talker и внешние системы, включая Bitrix24, через открытый API."

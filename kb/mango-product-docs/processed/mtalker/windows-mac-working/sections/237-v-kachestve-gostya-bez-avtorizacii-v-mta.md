@@ -3,6 +3,11 @@ id: windows-mac-working-237-v-kachestve-gostya-bez-avtorizacii-v-mta
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "16.3"
 title: "В качестве гостя (без авторизации в MTalker)"

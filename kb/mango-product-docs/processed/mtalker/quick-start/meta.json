@@ -12,10 +12,16 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по быстрому старту для Mango Talker. Краткая инструкция по началу работы с приложением.",
   "page_count": 4,
   "part_count": 1,
+  "platform": [
+    "Windows",
+    "MacOS"
+  ],
   "processing_mode": "single",
+  "product": "Mango Talker",
   "section_count": 7,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -150,6 +156,26 @@
     }
   ],
   "source_document": "quick-start",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Windows",
+      "MacOS"
+    ],
+    "product": "Mango Talker",
+    "source_manifest": "kb/mango-product-docs/sources/mtalker/meta.json",
+    "source_slug": "mtalker",
+    "topics": [
+      "софтфон",
+      "звонки",
+      "чат",
+      "настройка",
+      "администрирование",
+      "интеграция с ВАТС",
+      "мобильное приложение"
+    ],
+    "type": "quick_start_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_Quick_start.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mtalker/mTalker_Quick_start.pdf"
@@ -166,6 +192,16 @@
   ],
   "table_count": 0,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1063,
-  "tokens_total": 2615
+  "tokens_index": 1155,
+  "tokens_total": 2615,
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "type": "quick_start_guide"
 }

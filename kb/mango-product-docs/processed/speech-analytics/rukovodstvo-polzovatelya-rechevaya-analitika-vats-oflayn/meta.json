@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Комплексное руководство по речевой аналитике с поддержкой ВАТС и офлайн скоринга. Описание всех аспектов аналитики и скоринга в едином продукте.",
   "page_count": 143,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 88,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1608,6 +1613,24 @@
     }
   ],
   "source_document": "rukovodstvo-polzovatelya-rechevaya-analitika-vats-oflayn",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/speech-analytics/meta.json",
+    "source_slug": "speech-analytics",
+    "topics": [
+      "речевая аналитика",
+      "аналитика звонков",
+      "КАТС",
+      "скоринг",
+      "оценка качества",
+      "отчетность"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf"
@@ -1624,6 +1647,15 @@
   ],
   "table_count": 188,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 8301,
-  "tokens_total": 97986
+  "tokens_index": 8383,
+  "tokens_total": 97986,
+  "topics": [
+    "речевая аналитика",
+    "аналитика звонков",
+    "КАТС",
+    "скоринг",
+    "оценка качества",
+    "отчетность"
+  ],
+  "type": "user_manual"
 }

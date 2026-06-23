@@ -3,6 +3,11 @@ id: windows-mac-working-137-vo-vremya-zvonka-obschee-opisanie-okna-p
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "6.14"
 pdf_section: "6.14"
 title: "Во время звонка. Общее описание окна проведения сеанса связи"

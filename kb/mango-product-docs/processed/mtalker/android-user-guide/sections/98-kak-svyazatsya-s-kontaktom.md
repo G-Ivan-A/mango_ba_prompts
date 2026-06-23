@@ -3,6 +3,11 @@ id: android-user-guide-98-kak-svyazatsya-s-kontaktom
 doc_code: MTALKER-MOB
 doc_title: "Mango Talker для Android - Руководство пользователя"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Android"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "—"
 title: "Как связаться с контактом"

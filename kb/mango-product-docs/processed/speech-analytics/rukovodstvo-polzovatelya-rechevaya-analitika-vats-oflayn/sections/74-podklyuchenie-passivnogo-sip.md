@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-74-podklyuchenie-passivnogo-sip
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "11.1.1"
 pdf_section: "11.1.1"
 title: "Подключение пассивного SIP"

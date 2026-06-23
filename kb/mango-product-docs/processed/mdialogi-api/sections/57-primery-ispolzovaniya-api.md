@@ -3,6 +3,11 @@ id: mdialogi-api-57-primery-ispolzovaniya-api
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "5"
 pdf_section: "5"
 title: "Примеры использования API"

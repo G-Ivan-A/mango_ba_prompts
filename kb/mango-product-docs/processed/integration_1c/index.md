@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: INTEGRATION1
 doc_title: "Прямая интеграция с системой «1С: Управление торговлей». Интеграция Виртуальной АТС и системы «1С: Управление торговлей»"
 doc_version: "22.12.2025"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","1С","Управление торговлей","ВАТС","настройка","синхронизация","CRM"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[INTEGRATION1, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Office`
 
 ## Разделы
 

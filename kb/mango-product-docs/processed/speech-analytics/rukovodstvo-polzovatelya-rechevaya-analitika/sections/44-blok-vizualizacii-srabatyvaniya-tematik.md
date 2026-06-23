@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-44-blok-vizualizacii-srabatyvaniya-
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "8.2.2"
 pdf_section: "8.2.2"
 title: "Блок визуализации срабатывания тематик"

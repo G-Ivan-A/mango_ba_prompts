@@ -3,6 +3,11 @@ id: rolevaya-model-vats-07-kopirovat-rol-bez-zapretov-na-izmenenie
 doc_code: ROLEVAYAMODE
 doc_title: "Руководство пользователя. Роли и права доступа"
 doc_version: "1.26.08"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["роли","права доступа","администрирование","безопасность","пользователи","ВАТС"]
 section: "3.3.1"
 pdf_section: "3.3.1"
 title: "Копировать роль без запретов на изменение настроек"

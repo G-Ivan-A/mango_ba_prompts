@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика & КАТС"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[RUKOVODSTVOP, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Office`
 
 ## Разделы
 
@@ -81,7 +90,7 @@ ai-generated: true
 | 6.5.3 | Оплата через QR-код | [sections/55-oplata-cherez-qr-kod.md](sections/55-oplata-cherez-qr-kod.md) | 98 | ч.1 с.98 | 302 | Пополнение счета через QR-код производится с помощью сервиса PayMaster, без взимания |
 | 6.6 | Автоплатеж | [sections/56-avtoplatezh.md](sections/56-avtoplatezh.md) | 98-100 | ч.1 с.98-100 | 1180 | Внимание |
 | 6.7 | Реквизиты | [sections/57-rekvizity.md](sections/57-rekvizity.md) | 100 | ч.1 с.100 | 733 | Во вкладке «Реквизиты» можно просматривать и изменять контактные данные, отслеживать |
-| 6.8 | Уведомления | [sections/58-uvedomleniya.md](sections/58-uvedomleniya.md) | 100-103 | ч.1 с.100-103 | 1283 | Речевая аналитика & КАТС | v.1.26.18 100 |
+| 6.8 | Уведомления | [sections/58-uvedomleniya.md](sections/58-uvedomleniya.md) | 100-103 | ч.1 с.100-103 | 1283 | Речевая аналитика & КАТС \| v.1.26.18 100 |
 | 7 | Общие настройки | [sections/59-obschie-nastroyki.md](sections/59-obschie-nastroyki.md) | 103 | ч.1 с.103 | 79 | — |
 | 7.1 | Речевая аналитика | [sections/60-rechevaya-analitika.md](sections/60-rechevaya-analitika.md) | 103-104 | ч.1 с.103-104 | 880 | Вкладка Речевая аналитика содержит следующие блоки: |
 | 7.1.1 | Распознавание разговоров | [sections/61-raspoznavanie-razgovorov.md](sections/61-raspoznavanie-razgovorov.md) | 104-105 | ч.1 с.104-105 | 1250 | Блок Настройка распознавания позволяет настроить функции распознавания и пересылки |
@@ -103,7 +112,7 @@ ai-generated: true
 | 7.3.4 | Вкладка «Настройки доступа» | [sections/77-vkladka-nastroyki-dostupa.md](sections/77-vkladka-nastroyki-dostupa.md) | 127-129 | ч.1 с.127-129 | 1508 | Данный раздел предназначен для создания и редактирования ролей пользователей. |
 | 7.3.5 | Вкладка «Ограничения» | [sections/78-vkladka-ogranicheniya.md](sections/78-vkladka-ogranicheniya.md) | 129 | ч.1 с.129 | 300 | Вкладка Ограничения предназначена для управления параметрами времени жизни |
 | 7.3.6 | SSO (Single Sign-On) | [sections/79-sso-single-sign-on.md](sections/79-sso-single-sign-on.md) | 129-130 | ч.1 с.129-130 | 747 | Вкладка SSO предназначена для настройки единого входа (Single Sign-On) в Личный кабинет |
-| 7.4 | Облачное хранилище | [sections/80-oblachnoe-hranilische.md](sections/80-oblachnoe-hranilische.md) | 130-131 | ч.1 с.130-131 | 705 | Речевая аналитика & КАТС | v.1.26.18 130 |
+| 7.4 | Облачное хранилище | [sections/80-oblachnoe-hranilische.md](sections/80-oblachnoe-hranilische.md) | 130-131 | ч.1 с.130-131 | 705 | Речевая аналитика & КАТС \| v.1.26.18 130 |
 | 7.5 | Подключение по LDAP | [sections/81-podklyuchenie-po-ldap.md](sections/81-podklyuchenie-po-ldap.md) | 131-132 | ч.1 с.131-132 | 630 | Данный инструмент предназначен для интеграции со сторонними сервисами по протоколу |
 | 7.5 | Шаг 1. Подключение к LDAP-серверу | [sections/82-shag-1-podklyuchenie-k-ldap-serveru.md](sections/82-shag-1-podklyuchenie-k-ldap-serveru.md) | 132-133 | ч.1 с.132-133 | 508 | На данной вкладке осуществляется настройка подключения. |
 | 7.5 | Шаг 2. Сопоставление атрибутов | [sections/83-shag-2-sopostavlenie-atributov.md](sections/83-shag-2-sopostavlenie-atributov.md) | 133-135 | ч.1 с.133-135 | 621 | На данном шаге выполняется сопоставление полей карточки сотрудника в Личном кабинете |

@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-25-polya-formy-modulya-poiska-v-zap
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "5.1"
 pdf_section: "5.1"
 title: "Поля формы модуля поиска в записях разговоров"

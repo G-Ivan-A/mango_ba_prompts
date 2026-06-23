@@ -3,6 +3,11 @@ id: mdialogi-api-58-priem-i-obrabotka-obrascheniy-klienta
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "5.1"
 pdf_section: "5.1"
 title: "Прием и обработка обращений Клиента"

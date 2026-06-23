@@ -3,6 +3,11 @@ id: integration-1c-00-titulnaya-chast
 doc_code: INTEGRATION1
 doc_title: "Прямая интеграция с системой «1С: Управление торговлей». Интеграция Виртуальной АТС и системы «1С: Управление торговлей»"
 doc_version: "22.12.2025"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","1С","Управление торговлей","ВАТС","настройка","синхронизация","CRM"]
 section: "0"
 pdf_section: "—"
 title: "Титульная часть"

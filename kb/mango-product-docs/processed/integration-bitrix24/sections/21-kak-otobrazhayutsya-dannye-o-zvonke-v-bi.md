@@ -3,6 +3,11 @@ id: integration-bitrix24-21-kak-otobrazhayutsya-dannye-o-zvonke-v-bi
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "1.4"
 pdf_section: "1.4"
 title: "Как отображаются данные о звонке в Битрикс24. Обобщенно"

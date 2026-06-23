@@ -3,6 +3,11 @@ id: lk-vats-sso-03-obschie-svedeniya
 doc_code: LKVATSSSO
 doc_title: "Аутентификация и авторизация в рамках SSO"
 doc_version: "1.0"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["SSO","аутентификация","авторизация","единый вход","безопасность","управление доступом"]
 section: "2"
 pdf_section: "2"
 title: "Общие сведения"

@@ -3,6 +3,11 @@ id: wallboard-00-titulnaya-chast
 doc_code: WALLBOARD
 doc_title: "Руководство пользователя. Wallboard Mango Office"
 doc_version: "7.22.25"
+type: "user_manual"
+product: "Mango Wallboard"
+platform: ["Web"]
+language: "ru"
+topics: ["wallboard","дашборд","мониторинг","KPI","контакт-центр","визуализация"]
 section: "0"
 pdf_section: "—"
 title: "Титульная часть"

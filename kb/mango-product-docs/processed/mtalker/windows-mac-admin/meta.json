@@ -12,10 +12,16 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство для администраторов ВАТС по настройке и управлению Mango Talker. Настройка учетных записей, политик безопасности, массовое развертывание.",
   "page_count": 9,
   "part_count": 1,
+  "platform": [
+    "Windows",
+    "MacOS"
+  ],
   "processing_mode": "single",
+  "product": "Mango Talker",
   "section_count": 15,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -294,6 +300,26 @@
     }
   ],
   "source_document": "windows-mac-admin",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Windows",
+      "MacOS"
+    ],
+    "product": "Mango Talker",
+    "source_manifest": "kb/mango-product-docs/sources/mtalker/meta.json",
+    "source_slug": "mtalker",
+    "topics": [
+      "софтфон",
+      "звонки",
+      "чат",
+      "настройка",
+      "администрирование",
+      "интеграция с ВАТС",
+      "мобильное приложение"
+    ],
+    "type": "admin_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch3_Admin_Guide.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch3_Admin_Guide.pdf"
@@ -310,6 +336,16 @@
   ],
   "table_count": 0,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1831,
-  "tokens_total": 6590
+  "tokens_index": 1922,
+  "tokens_total": 6590,
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "type": "admin_guide"
 }

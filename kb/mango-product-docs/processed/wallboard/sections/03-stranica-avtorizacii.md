@@ -3,6 +3,11 @@ id: wallboard-03-stranica-avtorizacii
 doc_code: WALLBOARD
 doc_title: "Руководство пользователя. Wallboard Mango Office"
 doc_version: "7.22.25"
+type: "user_manual"
+product: "Mango Wallboard"
+platform: ["Web"]
+language: "ru"
+topics: ["wallboard","дашборд","мониторинг","KPI","контакт-центр","визуализация"]
 section: "2"
 pdf_section: "2"
 title: "Страница авторизации"

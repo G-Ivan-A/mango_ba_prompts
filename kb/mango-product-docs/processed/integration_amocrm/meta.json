@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Подробная инструкция по настройке и использованию интеграции между ВАТС Mango Office и amoCRM. Содержит пошаговые руководства, описание параметров и типовые сценарии.",
   "page_count": 153,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 18,
   "section_source": "layout-heuristic",
   "section_sources": [
@@ -348,6 +353,24 @@
     }
   ],
   "source_document": "integration_amocrm",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/integration_amocrm/meta.json",
+    "source_slug": "integration_amocrm",
+    "topics": [
+      "интеграция",
+      "amoCRM",
+      "CRM",
+      "ВАТС",
+      "настройка",
+      "синхронизация"
+    ],
+    "type": "integration_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/integration_amocrm/Mango_office_integration_amoCRM.pdf"
@@ -364,6 +387,15 @@
   ],
   "table_count": 15,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 2249,
-  "tokens_total": 85788
+  "tokens_index": 2317,
+  "tokens_total": 85788,
+  "topics": [
+    "интеграция",
+    "amoCRM",
+    "CRM",
+    "ВАТС",
+    "настройка",
+    "синхронизация"
+  ],
+  "type": "integration_guide"
 }

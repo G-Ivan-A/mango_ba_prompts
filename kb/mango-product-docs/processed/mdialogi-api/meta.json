@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Справочник по API для продукта Манго Диалоги. Содержит описание методов управления диалогами, интеграционными возможностями и настройками.",
   "page_count": 91,
   "part_count": 1,
+  "platform": [
+    "API"
+  ],
   "processing_mode": "single",
+  "product": "Mango Dialogi",
   "section_count": 62,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1140,6 +1145,23 @@
     }
   ],
   "source_document": "mdialogi-api",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "API"
+    ],
+    "product": "Mango Dialogi",
+    "source_manifest": "kb/mango-product-docs/sources/mdialogi-api/meta.json",
+    "source_slug": "mdialogi-api",
+    "topics": [
+      "API",
+      "диалоги",
+      "чат-боты",
+      "интеграция",
+      "REST API"
+    ],
+    "type": "api_reference"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mdialogi-api/Manual_API_Mango_Dialogi.pdf"
@@ -1156,6 +1178,14 @@
   ],
   "table_count": 132,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5897,
-  "tokens_total": 51607
+  "tokens_index": 6564,
+  "tokens_total": 51607,
+  "topics": [
+    "API",
+    "диалоги",
+    "чат-боты",
+    "интеграция",
+    "REST API"
+  ],
+  "type": "api_reference"
 }

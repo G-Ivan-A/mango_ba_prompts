@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство пользователя по настройке и использованию единой системы аутентификации (SSO) в Mango Office. Описывает процесс входа, управление доступом и авторизацию через внешних провайдеров.",
   "page_count": 22,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 10,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -204,6 +209,24 @@
     }
   ],
   "source_document": "lk-vats-sso",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/lk-vats-sso/meta.json",
+    "source_slug": "lk-vats-sso",
+    "topics": [
+      "SSO",
+      "аутентификация",
+      "авторизация",
+      "единый вход",
+      "безопасность",
+      "управление доступом"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/lk-vats-sso/MANGO_OFFICE_LK_VATS_Auth_SSO.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/lk-vats-sso/MANGO_OFFICE_LK_VATS_Auth_SSO.pdf"
@@ -220,6 +243,15 @@
   ],
   "table_count": 3,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1343,
-  "tokens_total": 10122
+  "tokens_index": 1416,
+  "tokens_total": 10122,
+  "topics": [
+    "SSO",
+    "аутентификация",
+    "авторизация",
+    "единый вход",
+    "безопасность",
+    "управление доступом"
+  ],
+  "type": "user_manual"
 }

@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-81-tochka-vhoda-sip-trunk
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "11.4"
 pdf_section: "11.4"
 title: "Точка входа «SIP Trunk»"

@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: MTALKER-QS
 doc_title: "Mango Talker для Windows/Mac - Быстрый старт"
 doc_version: "23.08.2024"
+type: "quick_start_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[MTALKER-QS, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Talker`
 
 ## Разделы
 

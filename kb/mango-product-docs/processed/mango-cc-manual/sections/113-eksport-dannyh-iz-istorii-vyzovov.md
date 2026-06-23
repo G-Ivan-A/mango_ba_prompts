@@ -3,6 +3,10 @@ id: mango-cc-manual-113-eksport-dannyh-iz-istorii-vyzovov
 doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
+type: "user_manual"
+product: "MANGO OFFICE Contact Center"
+language: "ru"
+topics: ["начало работы","регистрация пользователей","настройки контакт-центра","обработка обращений","исходящие обращения","кампании","API интеграция","требования к оборудованию"]
 section: "9.1.4"
 pdf_section: "9.1.4"
 title: "Экспорт данных из истории вызовов"

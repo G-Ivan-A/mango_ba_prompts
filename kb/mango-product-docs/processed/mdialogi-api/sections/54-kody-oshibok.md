@@ -3,6 +3,11 @@ id: mdialogi-api-54-kody-oshibok
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "4"
 pdf_section: "4"
 title: "Коды ошибок"

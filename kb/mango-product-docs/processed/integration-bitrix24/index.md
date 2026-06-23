@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[INTEGRATIONB, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Office`
 
 ## Разделы
 

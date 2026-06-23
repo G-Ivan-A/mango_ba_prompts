@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-91-roli-i-prava-dostupa
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика & КАТС"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "8"
 pdf_section: "8"
 title: "Роли и права доступа"

@@ -12,10 +12,16 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Основное руководство пользователя. Подробное описание работы с софтфоном: звонки, чаты, контакты, история вызовов.",
   "page_count": 122,
   "part_count": 1,
+  "platform": [
+    "Windows",
+    "MacOS"
+  ],
   "processing_mode": "single",
+  "product": "Mango Talker",
   "section_count": 317,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -5730,6 +5736,26 @@
     }
   ],
   "source_document": "windows-mac-working",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Windows",
+      "MacOS"
+    ],
+    "product": "Mango Talker",
+    "source_manifest": "kb/mango-product-docs/sources/mtalker/meta.json",
+    "source_slug": "mtalker",
+    "topics": [
+      "софтфон",
+      "звонки",
+      "чат",
+      "настройка",
+      "администрирование",
+      "интеграция с ВАТС",
+      "мобильное приложение"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch1_Working.pdf"
@@ -5746,6 +5772,16 @@
   ],
   "table_count": 3,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 28969,
-  "tokens_total": 116602
+  "tokens_index": 29060,
+  "tokens_total": 116602,
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "type": "user_manual"
 }

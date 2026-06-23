@@ -3,6 +3,11 @@ id: integration-bitrix24-187-obnovlenie-prilozheniya
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "7"
 pdf_section: "7"
 title: "Обновление приложения"

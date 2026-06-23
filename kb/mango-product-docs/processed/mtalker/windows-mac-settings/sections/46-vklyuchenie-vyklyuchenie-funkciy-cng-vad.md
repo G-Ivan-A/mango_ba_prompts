@@ -3,6 +3,11 @@ id: windows-mac-settings-46-vklyuchenie-vyklyuchenie-funkciy-cng-vad
 doc_code: MTALKER-SET
 doc_title: "Mango Talker для Windows/Mac - Установка настроек"
 doc_version: "23.08.2024"
+type: "settings_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "10.1"
 title: "Включение/выключение функций CNG, VAD, анти-эхо"

@@ -20,10 +20,12 @@
     "pymupdf 1.27.2.3",
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Справочник абонента виртуальной АТС MANGO OFFICE. Руководство пользователя по настройке и использованию облачной телефонии.",
   "page_count": 568,
   "part_count": 5,
   "processing_mode": "multi_part",
+  "product": "MANGO OFFICE Virtual PBX",
   "section_count": 348,
   "section_source": "pdf-outline multi-part (5 PDF parts)",
   "section_sources": [
@@ -6318,6 +6320,22 @@
     }
   ],
   "source_document": "mango-lk-manual",
+  "source_metadata": {
+    "language": "ru",
+    "product": "MANGO OFFICE Virtual PBX",
+    "source_manifest": "kb/mango-product-docs/sources/mango-lk-manual/meta.json",
+    "source_slug": "mango-lk-manual",
+    "topics": [
+      "настройка АТС",
+      "управление номерами",
+      "маршрутизация звонков",
+      "голосовая почта",
+      "конференц-связь",
+      "статистика звонков",
+      "интеграция с CRM"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "multi-part",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf",
@@ -6362,6 +6380,16 @@
   ],
   "table_count": 53,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 33117,
-  "tokens_total": 313080
+  "tokens_index": 33223,
+  "tokens_total": 313080,
+  "topics": [
+    "настройка АТС",
+    "управление номерами",
+    "маршрутизация звонков",
+    "голосовая почта",
+    "конференц-связь",
+    "статистика звонков",
+    "интеграция с CRM"
+  ],
+  "type": "user_manual"
 }

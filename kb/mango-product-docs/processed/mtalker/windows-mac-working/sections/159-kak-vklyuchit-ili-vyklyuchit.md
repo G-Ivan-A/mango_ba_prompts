@@ -3,6 +3,11 @@ id: windows-mac-working-159-kak-vklyuchit-ili-vyklyuchit
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "7.10"
 title: "Как включить или выключить"

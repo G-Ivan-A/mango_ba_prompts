@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 status: extracted
 ai-generated: true
 ---
@@ -19,6 +24,10 @@ ai-generated: true
 `[MDIALOGIAPI, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
 
+## Поисковые ключи
+
+`Mango Dialogi`
+
 ## Разделы
 
 | № PDF | Раздел | Файл | Стр. | Источник | Токены | Когда обращаться |
@@ -34,10 +43,10 @@ ai-generated: true
 | 2.2 | Несколько шагов и можно приступать к работе | [sections/08-neskolko-shagov-i-mozhno-pristupat-k-rab.md](sections/08-neskolko-shagov-i-mozhno-pristupat-k-rab.md) | 10 | ч.1 с.10 | 306 | 1) Прочитайте общие положения о взаимодействии систем. |
 | 2.3 | Общие положения о взаимодействии систем | [sections/09-obschie-polozheniya-o-vzaimodeystvii-sis.md](sections/09-obschie-polozheniya-o-vzaimodeystvii-sis.md) | 10 | ч.1 с.10 | 306 | В этом разделе рассказывается о модели взаимодействия вашей внешней |
 | 2.3.1 | Модель авторизации | [sections/10-model-avtorizacii.md](sections/10-model-avtorizacii.md) | 10-11 | ч.1 с.10-11 | 472 | API предоставляет внешней системе доступ к своим функциям без |
-| 2.3.2 | Модель взаимодействия | [sections/11-model-vzaimodeystviya.md](sections/11-model-vzaimodeystviya.md) | 11-12 | ч.1 с.11-12 | 787 | Внешняя система и API взаимодействуют по протоколу HTTPS. |
+| 2.3.2 | Модель взаимодействия | [sections/11-model-vzaimodeystviya.md](sections/11-model-vzaimodeystviya.md) | 11-12 | ч.1 с.11-12 | 787 | method create; метод create; endpoint /cc/md/session/create; event on_pending; событие on_pending; endpoint /events/cc/md/session/on_pending; Внешняя система и API взаимодействуют по протоколу HTTPS. |
 | 2.3.3 | Виды запросов | [sections/12-vidy-zaprosov.md](sections/12-vidy-zaprosov.md) | 12-13 | ч.1 с.12-13 | 359 | Запросы между системами условимся разделять на асинхронные и |
 | 2.3.4 | Ограничения | [sections/13-ogranicheniya.md](sections/13-ogranicheniya.md) | 13 | ч.1 с.13 | 180 | 1) Не поддерживается протокол TLS версий 1.0, 1.1, 1.3. |
-| 2.3.5 | Лимиты количества запросов к API | [sections/14-limity-kolichestva-zaprosov-k-api.md](sections/14-limity-kolichestva-zaprosov-k-api.md) | 13-14 | ч.1 с.13-14 | 606 | В API существуют ограничения на максимальное число запросов в секунду. |
+| 2.3.5 | Лимиты количества запросов к API | [sections/14-limity-kolichestva-zaprosov-k-api.md](sections/14-limity-kolichestva-zaprosov-k-api.md) | 13-14 | ч.1 с.13-14 | 606 | method history; метод history; endpoint /cc/md/session/chat/history; method send_message; метод send_message; endpoint /cc/md/session/chat/send_message; В API существуют ограничения на максимальное число запросов в секунду. |
 | 2.3.6 | Разрешенные IP-адреса | [sections/15-razreshennye-ip-adresa.md](sections/15-razreshennye-ip-adresa.md) | 14 | ч.1 с.14 | 274 | При подключении API коннектора в настройках Личного кабинета MANGO |
 | 2.3.7 | Об электронной подписи запросов | [sections/16-ob-elektronnoy-podpisi-zaprosov.md](sections/16-ob-elektronnoy-podpisi-zaprosov.md) | 14 | ч.1 с.14 | 80 | — |
 | 2.3.7 | Общее | [sections/17-obschee.md](sections/17-obschee.md) | 14-15 | ч.1 с.14-15 | 225 | Данные, которыми обмениваются системы, как правило, будут передаваться в |
@@ -50,40 +59,40 @@ ai-generated: true
 | 3.1 | Обмен сообщениями в WhatsApp | [sections/24-obmen-soobscheniyami-v-whatsapp.md](sections/24-obmen-soobscheniyami-v-whatsapp.md) | 17 | ч.1 с.17 | 71 | — |
 | 3.1.1 | Общее | [sections/25-obschee.md](sections/25-obschee.md) | 17 | ч.1 с.17 | 357 | Если к Вашей Виртуальной АТС подключена услуга "WhatsApp Business API |
 | 3.1.2 | Доступ к методам | [sections/26-dostup-k-metodam.md](sections/26-dostup-k-metodam.md) | 17-18 | ч.1 с.17-18 | 333 | Вы можете использовать методы, описанные в данном разделе, если |
-| 3.1.3 | Получение списка HSM-шаблонов | [sections/27-poluchenie-spiska-hsm-shablonov.md](sections/27-poluchenie-spiska-hsm-shablonov.md) | 18-21 | ч.1 с.18-21 | 1633 | Метод позволяет получить список HSM-шаблонов, имеющих статус "APPROVED" |
-| 3.1.4 | Отправление HSM | [sections/28-otpravlenie-hsm.md](sections/28-otpravlenie-hsm.md) | 21-23 | ч.1 с.21-23 | 1378 | Метод позволяет отправить Клиенту сообщение в соответствии с тем или иным |
-| 3.1.5 | Получение статусов отправленных HSM-сообщений | [sections/29-poluchenie-statusov-otpravlennyh-hsm-soo.md](sections/29-poluchenie-statusov-otpravlennyh-hsm-soo.md) | 23-25 | ч.1 с.23-25 | 773 | Метод позволяет получить статус ранее отправленного HSM-сообщения. |
-| 3.2 | Отправление каскада сообщений через WhatsApp и SMS | [sections/30-otpravlenie-kaskada-soobscheniy-cherez-w.md](sections/30-otpravlenie-kaskada-soobscheniy-cherez-w.md) | 25 | ч.1 с.25 | 87 | POST /cc/send_text_message |
+| 3.1.3 | Получение списка HSM-шаблонов | [sections/27-poluchenie-spiska-hsm-shablonov.md](sections/27-poluchenie-spiska-hsm-shablonov.md) | 18-21 | ч.1 с.18-21 | 1633 | method templates; метод templates; endpoint /cc/md/hsm/templates; Метод позволяет получить список HSM-шаблонов, имеющих статус "APPROVED" |
+| 3.1.4 | Отправление HSM | [sections/28-otpravlenie-hsm.md](sections/28-otpravlenie-hsm.md) | 21-23 | ч.1 с.21-23 | 1378 | method send_message; метод send_message; endpoint /cc/md/hsm/send_message; method send_hsm; метод send_hsm; endpoint /cc/send_hsm; Метод позволяет отправить Клиенту сообщение в соответствии с тем или иным |
+| 3.1.5 | Получение статусов отправленных HSM-сообщений | [sections/29-poluchenie-statusov-otpravlennyh-hsm-soo.md](sections/29-poluchenie-statusov-otpravlennyh-hsm-soo.md) | 23-25 | ч.1 с.23-25 | 773 | method get_mcw_message_status; метод get_mcw_message_status; endpoint /cc/get_mcw_message_status; Метод позволяет получить статус ранее отправленного HSM-сообщения. |
+| 3.2 | Отправление каскада сообщений через WhatsApp и SMS | [sections/30-otpravlenie-kaskada-soobscheniy-cherez-w.md](sections/30-otpravlenie-kaskada-soobscheniy-cherez-w.md) | 25 | ч.1 с.25 | 87 | method send_text_message; метод send_text_message; endpoint /cc/send_text_message; POST /cc/send_text_message |
 | 3.2.1 | Основные сведения | [sections/31-osnovnye-svedeniya.md](sections/31-osnovnye-svedeniya.md) | 25 | ч.1 с.25 | 149 | Метод позволяет выполнять массовую рассылку текстовых сообщений |
 | 3.2.2 | Правила работы | [sections/32-pravila-raboty.md](sections/32-pravila-raboty.md) | 25-26 | ч.1 с.25-26 | 964 | Чтобы выполнить массовую рассылку, необходимо комплексно применять |
 | 3.2.3 | Ограничения | [sections/33-ogranicheniya.md](sections/33-ogranicheniya.md) | 26-27 | ч.1 с.26-27 | 371 | 1) Текст сообщения (параметр "text") должен быть заключен в кавычки и |
-| 3.2.4 | Описание запроса | [sections/34-opisanie-zaprosa.md](sections/34-opisanie-zaprosa.md) | 27-29 | ч.1 с.27-29 | 1243 | Параметры запроса: |
+| 3.2.4 | Описание запроса | [sections/34-opisanie-zaprosa.md](sections/34-opisanie-zaprosa.md) | 27-29 | ч.1 с.27-29 | 1243 | method send_text_message; метод send_text_message; endpoint /cc/send_text_message; Параметры запроса: |
 | 3.3 | API работы с виджетами | [sections/35-api-raboty-s-vidzhetami.md](sections/35-api-raboty-s-vidzhetami.md) | 29 | ч.1 с.29 | 71 | — |
-| 3.3.1 | Получить список виджетов | [sections/36-poluchit-spisok-vidzhetov.md](sections/36-poluchit-spisok-vidzhetov.md) | 29-33 | ч.1 с.29-33 | 2270 | Метод возвращает список виджетов МД, с подробной информацией о каждом |
-| 3.3.2 | Получить список активных сессий | [sections/37-poluchit-spisok-aktivnyh-sessiy.md](sections/37-poluchit-spisok-aktivnyh-sessiy.md) | 33-38 | ч.1 с.33-38 | 3126 | Метод возвращает список сессий, находящихся в статуе "pending" (ожидает |
+| 3.3.1 | Получить список виджетов | [sections/36-poluchit-spisok-vidzhetov.md](sections/36-poluchit-spisok-vidzhetov.md) | 29-33 | ч.1 с.29-33 | 2270 | method widgets; метод widgets; endpoint /cc/md/widgets; Метод возвращает список виджетов МД, с подробной информацией о каждом |
+| 3.3.2 | Получить список активных сессий | [sections/37-poluchit-spisok-aktivnyh-sessiy.md](sections/37-poluchit-spisok-aktivnyh-sessiy.md) | 33-38 | ч.1 с.33-38 | 3126 | method sessions; метод sessions; endpoint /cc/md/sessions; Метод возвращает список сессий, находящихся в статуе "pending" (ожидает |
 | 3.4 | API управления сессиями | [sections/38-api-upravleniya-sessiyami.md](sections/38-api-upravleniya-sessiyami.md) | 38 | ч.1 с.38 | 72 | — |
-| 3.4.1 | Создать новую сессию | [sections/39-sozdat-novuyu-sessiyu.md](sections/39-sozdat-novuyu-sessiyu.md) | 38-40 | ч.1 с.38-40 | 1153 | Если Клиент ранее уже обращался в вашу компанию и у вас есть уникальный |
-| 3.4.2 | Взять сессию в работу | [sections/40-vzyat-sessiyu-v-rabotu.md](sections/40-vzyat-sessiyu-v-rabotu.md) | 40-42 | ч.1 с.40-42 | 844 | Метод позволяет перевести сессию из статуса "pending" в статус "dialog", то есть |
-| 3.4.3 | Перевод сессии на другого сотрудника или группу | [sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md](sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md) | 42-44 | ч.1 с.42-44 | 1548 | Этот метод позволяет передать диалог с Клиентом от одного оператора к |
-| 3.4.4 | Закрыть сессию | [sections/42-zakryt-sessiyu.md](sections/42-zakryt-sessiyu.md) | 44-45 | ч.1 с.44-45 | 691 | Метод позволяет принудительно закрыть сессию в статусе "dialog". |
-| 3.4.5 | Отправить сообщение оператора к Клиенту | [sections/43-otpravit-soobschenie-operatora-k-klientu.md](sections/43-otpravit-soobschenie-operatora-k-klientu.md) | 45-48 | ч.1 с.45-48 | 1575 | Метод позволяет отправить Клиенту сообщение от имени оператора. |
-| 3.4.6 | Загрузка истории чата | [sections/44-zagruzka-istorii-chata.md](sections/44-zagruzka-istorii-chata.md) | 48-53 | ч.1 с.48-53 | 2623 | Метод возвращает массив сообщений, которыми обменивались Клиент и |
+| 3.4.1 | Создать новую сессию | [sections/39-sozdat-novuyu-sessiyu.md](sections/39-sozdat-novuyu-sessiyu.md) | 38-40 | ч.1 с.38-40 | 1153 | method create; метод create; endpoint /cc/md/session/create; Если Клиент ранее уже обращался в вашу компанию и у вас есть уникальный |
+| 3.4.2 | Взять сессию в работу | [sections/40-vzyat-sessiyu-v-rabotu.md](sections/40-vzyat-sessiyu-v-rabotu.md) | 40-42 | ч.1 с.40-42 | 844 | method take; метод take; endpoint /cc/md/session/take; Метод позволяет перевести сессию из статуса "pending" в статус "dialog", то есть |
+| 3.4.3 | Перевод сессии на другого сотрудника или группу | [sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md](sections/41-perevod-sessii-na-drugogo-sotrudnika-ili.md) | 42-44 | ч.1 с.42-44 | 1548 | method transfer; метод transfer; endpoint /cc/md/session/transfer; Этот метод позволяет передать диалог с Клиентом от одного оператора к |
+| 3.4.4 | Закрыть сессию | [sections/42-zakryt-sessiyu.md](sections/42-zakryt-sessiyu.md) | 44-45 | ч.1 с.44-45 | 691 | method close; метод close; endpoint /cc/md/session/close; Метод позволяет принудительно закрыть сессию в статусе "dialog". |
+| 3.4.5 | Отправить сообщение оператора к Клиенту | [sections/43-otpravit-soobschenie-operatora-k-klientu.md](sections/43-otpravit-soobschenie-operatora-k-klientu.md) | 45-48 | ч.1 с.45-48 | 1575 | method send_message; метод send_message; endpoint /cc/md/session/chat/send_message; Метод позволяет отправить Клиенту сообщение от имени оператора. |
+| 3.4.6 | Загрузка истории чата | [sections/44-zagruzka-istorii-chata.md](sections/44-zagruzka-istorii-chata.md) | 48-53 | ч.1 с.48-53 | 2623 | method history; метод history; endpoint /cc/md/session/chat/history; Метод возвращает массив сообщений, которыми обменивались Клиент и |
 | 3.5 | API Realtime (вебхуки) | [sections/45-api-realtime-vebhuki.md](sections/45-api-realtime-vebhuki.md) | 53 | ч.1 с.53 | 73 | — |
-| 3.5.1 | Сессия в состоянии ожидания | [sections/46-sessiya-v-sostoyanii-ozhidaniya.md](sections/46-sessiya-v-sostoyanii-ozhidaniya.md) | 53-57 | ч.1 с.53-57 | 2850 | Данный вебхук отправляется во внешнюю систему после того, как в МД будет |
-| 3.5.2 | Сессия взята в работу | [sections/47-sessiya-vzyata-v-rabotu.md](sections/47-sessiya-vzyata-v-rabotu.md) | 57-62 | ч.1 с.57-62 | 2787 | Данный вебхук отправляется во внешнюю систему после того, как сессия будет |
-| 3.5.3 | Сессия закрыта | [sections/48-sessiya-zakryta.md](sections/48-sessiya-zakryta.md) | 62-67 | ч.1 с.62-67 | 2865 | Данный вебхук отправляется во внешнюю систему после того, как сессия будет |
-| 3.5.4 | HSM-сообщение оператора прочитано клиентом | [sections/49-hsm-soobschenie-operatora-prochitano-kli.md](sections/49-hsm-soobschenie-operatora-prochitano-kli.md) | 67-68 | ч.1 с.67-68 | 571 | В МД существует возможность отправлять Клиентам HSM-сообщения через |
-| 3.5.5 | Сообщение оператора не доставлено клиенту | [sections/50-soobschenie-operatora-ne-dostavleno-klie.md](sections/50-soobschenie-operatora-ne-dostavleno-klie.md) | 68-69 | ч.1 с.68-69 | 483 | Данный вебхук отправляется во внешнюю систему в том случае, если |
-| 3.5.6 | Сообщение оператора доставлено клиенту | [sections/51-soobschenie-operatora-dostavleno-klientu.md](sections/51-soobschenie-operatora-dostavleno-klientu.md) | 69-70 | ч.1 с.69-70 | 531 | Данный вебхук отправляется во внешнюю систему в том случае, если |
-| 3.5.7 | Сообщение оператора прочитано клиентом | [sections/52-soobschenie-operatora-prochitano-kliento.md](sections/52-soobschenie-operatora-prochitano-kliento.md) | 70-71 | ч.1 с.70-71 | 539 | Данный вебхук отправляется во внешнюю систему в том случае, если |
-| 3.5.8 | Новое сообщение в чате | [sections/53-novoe-soobschenie-v-chate.md](sections/53-novoe-soobschenie-v-chate.md) | 71-74 | ч.1 с.71-74 | 1509 | Данный вебхук отправляется во внешнюю систему, когда Клиент либо |
+| 3.5.1 | Сессия в состоянии ожидания | [sections/46-sessiya-v-sostoyanii-ozhidaniya.md](sections/46-sessiya-v-sostoyanii-ozhidaniya.md) | 53-57 | ч.1 с.53-57 | 2850 | event on_pending; событие on_pending; endpoint /events/cc/md/session/on_pending; Данный вебхук отправляется во внешнюю систему после того, как в МД будет |
+| 3.5.2 | Сессия взята в работу | [sections/47-sessiya-vzyata-v-rabotu.md](sections/47-sessiya-vzyata-v-rabotu.md) | 57-62 | ч.1 с.57-62 | 2787 | event on_dialog; событие on_dialog; endpoint /events/cc/md/session/on_dialog; Данный вебхук отправляется во внешнюю систему после того, как сессия будет |
+| 3.5.3 | Сессия закрыта | [sections/48-sessiya-zakryta.md](sections/48-sessiya-zakryta.md) | 62-67 | ч.1 с.62-67 | 2865 | event on_closed; событие on_closed; endpoint /events/cc/md/session/on_closed; Данный вебхук отправляется во внешнюю систему после того, как сессия будет |
+| 3.5.4 | HSM-сообщение оператора прочитано клиентом | [sections/49-hsm-soobschenie-operatora-prochitano-kli.md](sections/49-hsm-soobschenie-operatora-prochitano-kli.md) | 67-68 | ч.1 с.67-68 | 571 | event on_read_message; событие on_read_message; endpoint /events/cc/md/session/on_read_message; В МД существует возможность отправлять Клиентам HSM-сообщения через |
+| 3.5.5 | Сообщение оператора не доставлено клиенту | [sections/50-soobschenie-operatora-ne-dostavleno-klie.md](sections/50-soobschenie-operatora-ne-dostavleno-klie.md) | 68-69 | ч.1 с.68-69 | 483 | event on_error_message; событие on_error_message; endpoint /events/cc/md/session/on_error_message; Данный вебхук отправляется во внешнюю систему в том случае, если |
+| 3.5.6 | Сообщение оператора доставлено клиенту | [sections/51-soobschenie-operatora-dostavleno-klientu.md](sections/51-soobschenie-operatora-dostavleno-klientu.md) | 69-70 | ч.1 с.69-70 | 531 | event on_recv_message; событие on_recv_message; endpoint /events/cc/md/session/chat/on_recv_message; Данный вебхук отправляется во внешнюю систему в том случае, если |
+| 3.5.7 | Сообщение оператора прочитано клиентом | [sections/52-soobschenie-operatora-prochitano-kliento.md](sections/52-soobschenie-operatora-prochitano-kliento.md) | 70-71 | ч.1 с.70-71 | 539 | event on_read_message; событие on_read_message; endpoint /events/cc/md/session/chat/on_read_message; Данный вебхук отправляется во внешнюю систему в том случае, если |
+| 3.5.8 | Новое сообщение в чате | [sections/53-novoe-soobschenie-v-chate.md](sections/53-novoe-soobschenie-v-chate.md) | 71-74 | ч.1 с.71-74 | 1509 | event on_message; событие on_message; endpoint /events/cc/md/session/chat/on_message; Данный вебхук отправляется во внешнюю систему, когда Клиент либо |
 | 4 | Коды ошибок | [sections/54-kody-oshibok.md](sections/54-kody-oshibok.md) | 74 | ч.1 с.74 | 65 | — |
 | 4.1 | Важная информация | [sections/55-vazhnaya-informaciya.md](sections/55-vazhnaya-informaciya.md) | 74 | ч.1 с.74 | 385 | 1) Если ваш запрос к API неверный, то вы получите ошибку в коде 3ХХХ. |
 | 4.2 | Возможные коды ошибок API | [sections/56-vozmozhnye-kody-oshibok-api.md](sections/56-vozmozhnye-kody-oshibok-api.md) | 74-76 | ч.1 с.74-76 | 656 | Манго Диалоги. |
 | 5 | Примеры использования API | [sections/57-primery-ispolzovaniya-api.md](sections/57-primery-ispolzovaniya-api.md) | 76 | ч.1 с.76 | 66 | — |
-| 5.1 | Прием и обработка обращений Клиента | [sections/58-priem-i-obrabotka-obrascheniy-klienta.md](sections/58-priem-i-obrabotka-obrascheniy-klienta.md) | 76-83 | ч.1 с.76-83 | 2609 | После настройки каналов коммуникации в МД, вы сможете получать |
-| 5.2 | Оператор обращается к Клиенту | [sections/59-operator-obraschaetsya-k-klientu.md](sections/59-operator-obraschaetsya-k-klientu.md) | 83-88 | ч.1 с.83-88 | 1907 | Если Клиент ранее уже обращался в вашу компанию по тому или иному |
-| 5.3 | Перевод обращения на другого оператора | [sections/60-perevod-obrascheniya-na-drugogo-operator.md](sections/60-perevod-obrascheniya-na-drugogo-operator.md) | 88-91 | ч.1 с.88-91 | 728 | В этом параграфе рассказывается о том, как перевести обработку обращения с |
+| 5.1 | Прием и обработка обращений Клиента | [sections/58-priem-i-obrabotka-obrascheniy-klienta.md](sections/58-priem-i-obrabotka-obrascheniy-klienta.md) | 76-83 | ч.1 с.76-83 | 2609 | method sessions; метод sessions; endpoint /cc/md/sessions; event on_message; событие on_message; endpoint /events/cc/md/session/chat/on_message/; event on_pending; событие on_pending; endpoint /events/cc/md/session/on_pending; method take; метод take; endpoint /cc/md/session/take; После настройки каналов коммуникации в МД, вы сможете получать |
+| 5.2 | Оператор обращается к Клиенту | [sections/59-operator-obraschaetsya-k-klientu.md](sections/59-operator-obraschaetsya-k-klientu.md) | 83-88 | ч.1 с.83-88 | 1907 | method create; метод create; endpoint /cc/md/session/create; event on_dialog; событие on_dialog; endpoint /events/cc/md/session/on_dialog; event on_message; событие on_message; endpoint /events/cc/md/session/chat/on_message/; event on_recv_message; событие on_recv_message; endpoint /events/cc/md/session/on_recv_message; Если Клиент ранее уже обращался в вашу компанию по тому или иному |
+| 5.3 | Перевод обращения на другого оператора | [sections/60-perevod-obrascheniya-na-drugogo-operator.md](sections/60-perevod-obrascheniya-na-drugogo-operator.md) | 88-91 | ч.1 с.88-91 | 728 | method transfer; метод transfer; endpoint /cc/md/session/transfer; В этом параграфе рассказывается о том, как перевести обработку обращения с |
 | — | История документа | [sections/61-istoriya-dokumenta.md](sections/61-istoriya-dokumenta.md) | 91 | ч.1 с.91 | 409 | 27.02.2026 |
 | | **ИТОГО** | | | | **51607** | весь документ |
 

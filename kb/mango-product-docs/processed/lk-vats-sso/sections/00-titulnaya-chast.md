@@ -3,6 +3,11 @@ id: lk-vats-sso-00-titulnaya-chast
 doc_code: LKVATSSSO
 doc_title: "Аутентификация и авторизация в рамках SSO"
 doc_version: "1.0"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["SSO","аутентификация","авторизация","единый вход","безопасность","управление доступом"]
 section: "0"
 pdf_section: "—"
 title: "Титульная часть"

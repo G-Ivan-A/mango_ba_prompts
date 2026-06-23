@@ -3,6 +3,11 @@ id: integration-bitrix24-55-umnye-algoritmy-raspredeleniya-vhodyasch
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "0"
 pdf_section: "2.3"
 title: "Умные алгоритмы распределения входящих вызовов"

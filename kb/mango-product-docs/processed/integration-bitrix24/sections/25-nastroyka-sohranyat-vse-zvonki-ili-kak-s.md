@@ -3,6 +3,11 @@ id: integration-bitrix24-25-nastroyka-sohranyat-vse-zvonki-ili-kak-s
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "2.2"
 pdf_section: "2.2"
 title: "Настройка “Сохранять все звонки” или как сохраняются звонки сотрудников, не указанных в таблице сопоставления"

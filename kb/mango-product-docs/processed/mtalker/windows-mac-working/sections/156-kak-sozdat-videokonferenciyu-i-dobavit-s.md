@@ -3,6 +3,11 @@ id: windows-mac-working-156-kak-sozdat-videokonferenciyu-i-dobavit-s
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "7.8"
 pdf_section: "7.8"
 title: "Как создать видеоконференцию и добавить сотрудников и гостей"

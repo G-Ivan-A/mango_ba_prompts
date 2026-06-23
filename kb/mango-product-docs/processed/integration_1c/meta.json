@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Подробная инструкция по прямой интеграции ВАТС Mango Office с 1С: Управление торговлей. Содержит описание настройки, параметров соединения, синхронизации справочников и звонков.",
   "page_count": 46,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 8,
   "section_source": "layout-heuristic",
   "section_sources": [
@@ -168,6 +173,25 @@
     }
   ],
   "source_document": "integration_1c",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/integration_1c/meta.json",
+    "source_slug": "integration_1c",
+    "topics": [
+      "интеграция",
+      "1С",
+      "Управление торговлей",
+      "ВАТС",
+      "настройка",
+      "синхронизация",
+      "CRM"
+    ],
+    "type": "integration_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
@@ -184,6 +208,16 @@
   ],
   "table_count": 8,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1266,
-  "tokens_total": 22221
+  "tokens_index": 1344,
+  "tokens_total": 22221,
+  "topics": [
+    "интеграция",
+    "1С",
+    "Управление торговлей",
+    "ВАТС",
+    "настройка",
+    "синхронизация",
+    "CRM"
+  ],
+  "type": "integration_guide"
 }

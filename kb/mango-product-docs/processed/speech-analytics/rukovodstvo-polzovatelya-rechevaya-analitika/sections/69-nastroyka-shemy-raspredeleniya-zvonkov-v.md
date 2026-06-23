@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-69-nastroyka-shemy-raspredeleniya-z
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "0"
 pdf_section: "10.3"
 title: "Настройка схемы распределения звонков в Личном кабинете"

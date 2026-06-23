@@ -3,6 +3,11 @@ id: windows-mac-working-145-kak-dobavit-ili-udalit-sotrudnikov-i-gos
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "7.6"
 pdf_section: "7.6"
 title: "Как добавить или удалить сотрудников и гостей видеоконференции"

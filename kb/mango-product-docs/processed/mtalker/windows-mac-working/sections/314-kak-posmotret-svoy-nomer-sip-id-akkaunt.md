@@ -3,6 +3,11 @@ id: windows-mac-working-314-kak-posmotret-svoy-nomer-sip-id-akkaunt
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "17.13"
 pdf_section: "17.13"
 title: "Как посмотреть свой номер  SIP-ID аккаунт"

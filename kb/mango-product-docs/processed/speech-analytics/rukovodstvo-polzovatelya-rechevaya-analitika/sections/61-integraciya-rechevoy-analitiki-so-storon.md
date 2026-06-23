@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-61-integraciya-rechevoy-analitiki-s
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "10"
 pdf_section: "10"
 title: "Интеграция Речевой аналитики со сторонними ВАТС"

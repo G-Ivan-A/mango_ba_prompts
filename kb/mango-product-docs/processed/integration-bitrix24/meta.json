@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Подробная инструкция по настройке и использованию интеграции между ВАТС Mango Office и Битрикс24. Содержит пошаговые руководства, описание параметров и типовые сценарии.",
   "page_count": 178,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 192,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -3480,6 +3485,24 @@
     }
   ],
   "source_document": "integration-bitrix24",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/integration-bitrix24/meta.json",
+    "source_slug": "integration-bitrix24",
+    "topics": [
+      "интеграция",
+      "Битрикс24",
+      "CRM",
+      "ВАТС",
+      "настройка",
+      "синхронизация"
+    ],
+    "type": "integration_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/integration-bitrix24/Mango_office_integration_Bitrix24.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/integration-bitrix24/Mango_office_integration_Bitrix24.pdf"
@@ -3496,6 +3519,15 @@
   ],
   "table_count": 9,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 18483,
-  "tokens_total": 85797
+  "tokens_index": 18555,
+  "tokens_total": 85797,
+  "topics": [
+    "интеграция",
+    "Битрикс24",
+    "CRM",
+    "ВАТС",
+    "настройка",
+    "синхронизация"
+  ],
+  "type": "integration_guide"
 }

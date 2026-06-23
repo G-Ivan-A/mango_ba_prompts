@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство пользователя мобильного приложения Mango Talker для Android. Софтфон для смартфонов и планшетов.",
   "page_count": 52,
   "part_count": 1,
+  "platform": [
+    "Android"
+  ],
   "processing_mode": "single",
+  "product": "Mango Talker",
   "section_count": 135,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -2454,6 +2459,25 @@
     }
   ],
   "source_document": "android-user-guide",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Android"
+    ],
+    "product": "Mango Talker",
+    "source_manifest": "kb/mango-product-docs/sources/mtalker/meta.json",
+    "source_slug": "mtalker",
+    "topics": [
+      "софтфон",
+      "звонки",
+      "чат",
+      "настройка",
+      "администрирование",
+      "интеграция с ВАТС",
+      "мобильное приложение"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mtalker/UserGuide_mTalker_4Mobile.pdf"
@@ -2470,6 +2494,16 @@
   ],
   "table_count": 5,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 11975,
-  "tokens_total": 44093
+  "tokens_index": 12063,
+  "tokens_total": 44093,
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "type": "user_manual"
 }

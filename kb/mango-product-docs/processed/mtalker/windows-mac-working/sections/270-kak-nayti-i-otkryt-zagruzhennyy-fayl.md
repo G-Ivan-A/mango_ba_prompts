@@ -3,6 +3,11 @@ id: windows-mac-working-270-kak-nayti-i-otkryt-zagruzhennyy-fayl
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "17.4"
 title: "Как найти и открыть загруженный файл"

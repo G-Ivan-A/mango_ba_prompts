@@ -3,6 +3,11 @@ id: mdialogi-api-41-perevod-sessii-na-drugogo-sotrudnika-ili
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "3.4.3"
 pdf_section: "3.4.3"
 title: "Перевод сессии на другого сотрудника или группу"

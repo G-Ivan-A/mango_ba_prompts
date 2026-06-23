@@ -3,6 +3,11 @@ id: windows-mac-working-220-kak-izmenit-status-ili-otklyuchit-pokaz
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "14.1"
 pdf_section: "14.1"
 title: "Как изменить статус или отключить показ уведомлений из всех чатов и каналов"

@@ -3,6 +3,10 @@ id: mango-lk-manual-206-zavershenie-podklyucheniya
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "10"
 pdf_section: "10"
 title: "Завершение подключения"

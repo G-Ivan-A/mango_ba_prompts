@@ -3,6 +3,10 @@ id: mango-cc-manual-32-postvyzyvnaya-obrabotka
 doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
+type: "user_manual"
+product: "MANGO OFFICE Contact Center"
+language: "ru"
+topics: ["начало работы","регистрация пользователей","настройки контакт-центра","обработка обращений","исходящие обращения","кампании","API интеграция","требования к оборудованию"]
 section: "2.5.1.3.13.1"
 pdf_section: "2.5.1.3.13.1"
 title: "Поствызывная обработка"

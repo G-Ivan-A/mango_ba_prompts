@@ -3,6 +3,11 @@ id: windows-mac-settings-12-kak-izmenit-papku-sohraneniya-faylov
 doc_code: MTALKER-SET
 doc_title: "Mango Talker для Windows/Mac - Установка настроек"
 doc_version: "23.08.2024"
+type: "settings_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "4.3"
 pdf_section: "4.3"
 title: "Как изменить папку сохранения файлов"

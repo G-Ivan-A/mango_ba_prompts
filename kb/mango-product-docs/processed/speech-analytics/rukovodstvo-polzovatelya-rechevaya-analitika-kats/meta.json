@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по речевой аналитике с интеграцией с КАТС (комплексная автоматическая телефонная станция). Описание совместной работы, расширенная аналитика.",
   "page_count": 146,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 92,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1680,6 +1685,24 @@
     }
   ],
   "source_document": "rukovodstvo-polzovatelya-rechevaya-analitika-kats",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/speech-analytics/meta.json",
+    "source_slug": "speech-analytics",
+    "topics": [
+      "речевая аналитика",
+      "аналитика звонков",
+      "КАТС",
+      "скоринг",
+      "оценка качества",
+      "отчетность"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf"
@@ -1696,6 +1719,15 @@
   ],
   "table_count": 167,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 8754,
-  "tokens_total": 100667
+  "tokens_index": 8836,
+  "tokens_total": 100667,
+  "topics": [
+    "речевая аналитика",
+    "аналитика звонков",
+    "КАТС",
+    "скоринг",
+    "оценка качества",
+    "отчетность"
+  ],
+  "type": "user_manual"
 }

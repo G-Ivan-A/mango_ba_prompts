@@ -3,6 +3,11 @@ id: windows-mac-settings-40-obschie-svedeniya
 doc_code: MTALKER-SET
 doc_title: "Mango Talker для Windows/Mac - Установка настроек"
 doc_version: "23.08.2024"
+type: "settings_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "9.1"
 pdf_section: "9.1"
 title: "Общие сведения"

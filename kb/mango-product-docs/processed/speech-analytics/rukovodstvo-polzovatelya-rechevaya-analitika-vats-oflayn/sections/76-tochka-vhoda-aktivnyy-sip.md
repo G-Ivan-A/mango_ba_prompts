@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-76-tochka-vhoda-aktivnyy-sip
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "11.2"
 pdf_section: "11.2"
 title: "Точка входа «Активный SIP»"

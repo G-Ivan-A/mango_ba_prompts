@@ -3,6 +3,11 @@ id: windows-mac-admin-02-kak-zaregistrirovat-novogo-sotrudnika-i
 doc_code: MTALKER-ADM
 doc_title: "Mango Talker для Windows/Mac - Информация для администратора ВАТС"
 doc_version: "23.08.2024"
+type: "admin_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "—"
 title: "Как зарегистрировать нового сотрудника и выдать ему логин и пароль для входа в MTalker"

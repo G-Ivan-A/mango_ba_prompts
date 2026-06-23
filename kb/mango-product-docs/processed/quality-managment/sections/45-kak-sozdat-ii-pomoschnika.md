@@ -3,6 +3,11 @@ id: quality-managment-45-kak-sozdat-ii-pomoschnika
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "9.4.4.3.2"
 pdf_section: "9.4.4.3.2"
 title: "Как создать ИИ Помощника"

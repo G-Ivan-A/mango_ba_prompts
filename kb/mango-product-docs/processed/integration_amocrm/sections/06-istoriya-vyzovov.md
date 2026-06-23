@@ -3,6 +3,11 @@ id: integration-amocrm-06-istoriya-vyzovov
 doc_code: INTEGRATIONA
 doc_title: "Интеграция Виртуальной АТС и amoCRM. Инструкция по настройке"
 doc_version: "25.08.2025"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","amoCRM","CRM","ВАТС","настройка","синхронизация"]
 section: "6"
 pdf_section: "6"
 title: "История вызовов"

@@ -3,6 +3,10 @@ id: mango-lk-manual-212-chat-bot-dlya-grupp-kanalov-tekstovye-ko
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "4.5.11.2.4"
 pdf_section: "4.5.11.2.4"
 title: "Чат-бот для групп каналов «Текстовые коммуникации»"

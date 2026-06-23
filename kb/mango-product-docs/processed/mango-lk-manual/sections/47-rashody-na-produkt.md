@@ -3,6 +3,10 @@ id: mango-lk-manual-47-rashody-na-produkt
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "2.9"
 pdf_section: "2.9"
 title: "Расходы на продукт"

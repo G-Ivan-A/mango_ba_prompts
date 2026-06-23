@@ -3,6 +3,10 @@ id: mango-cc-manual-121-sozdanie-redaktirovanie-i-udalenie-organ
 doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE - Руководство пользователя"
 doc_version: "1.26.23"
+type: "user_manual"
+product: "MANGO OFFICE Contact Center"
+language: "ru"
+topics: ["начало работы","регистрация пользователей","настройки контакт-центра","обработка обращений","исходящие обращения","кампании","API интеграция","требования к оборудованию"]
 section: "10.2.1"
 pdf_section: "10.2.1"
 title: "Создание, редактирование и удаление организаций"

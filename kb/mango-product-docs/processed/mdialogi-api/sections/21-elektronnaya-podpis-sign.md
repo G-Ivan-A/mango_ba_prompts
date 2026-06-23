@@ -3,6 +3,11 @@ id: mdialogi-api-21-elektronnaya-podpis-sign
 doc_code: MDIALOGIAPI
 doc_title: "Манго Диалоги. Справочник по API"
 doc_version: "27.02.2026"
+type: "api_reference"
+product: "Mango Dialogi"
+platform: ["API"]
+language: "ru"
+topics: ["API","диалоги","чат-боты","интеграция","REST API"]
 section: "0"
 pdf_section: "2.3.7"
 title: "Электронная подпись (sign)"

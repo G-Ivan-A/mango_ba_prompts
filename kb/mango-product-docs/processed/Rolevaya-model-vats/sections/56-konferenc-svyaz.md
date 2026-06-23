@@ -3,6 +3,11 @@ id: rolevaya-model-vats-56-konferenc-svyaz
 doc_code: ROLEVAYAMODE
 doc_title: "Руководство пользователя. Роли и права доступа"
 doc_version: "1.26.08"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["роли","права доступа","администрирование","безопасность","пользователи","ВАТС"]
 section: "5.4.5"
 pdf_section: "5.4.5"
 title: "Конференц-связь"

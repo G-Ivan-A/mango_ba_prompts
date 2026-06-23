@@ -3,6 +3,10 @@ type: kb-source-index
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 status: extracted
 ai-generated: true
 ---
@@ -19,11 +23,15 @@ ai-generated: true
 `[LK, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
 
+## Поисковые ключи
+
+`MANGO OFFICE Virtual PBX`
+
 ## Разделы
 
 | № PDF | Раздел | Файл | Стр. | Источник | Токены | Когда обращаться |
 | --- | --- | --- | --- | --- | ---: | --- |
-| — | Титульная часть | [sections/00-titulnaya-chast.md](sections/00-titulnaya-chast.md) | 1-6 | ч.1 с.1-6 | 2508 | Оглавление v 26.23 | 03.06.2026 |
+| — | Титульная часть | [sections/00-titulnaya-chast.md](sections/00-titulnaya-chast.md) | 1-6 | ч.1 с.1-6 | 2508 | Оглавление v 26.23 \| 03.06.2026 |
 | 1 | Добро пожаловать в Личный кабинет! | [sections/01-dobro-pozhalovat-v-lichnyy-kabinet.md](sections/01-dobro-pozhalovat-v-lichnyy-kabinet.md) | 6 | ч.1 с.6 | 83 | — |
 | 1.1 | Вход в Личный кабинет | [sections/02-vhod-v-lichnyy-kabinet.md](sections/02-vhod-v-lichnyy-kabinet.md) | 6-8 | ч.1 с.6-8 | 720 | 1.1 ВХОД В ЛИЧНЫЙ КАБИНЕТ |
 | 1.2 | Восстановление пароля | [sections/03-vosstanovlenie-parolya.md](sections/03-vosstanovlenie-parolya.md) | 8-10 | ч.1 с.8-10 | 1120 | ВАЖНО |

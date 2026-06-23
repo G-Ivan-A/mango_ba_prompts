@@ -22,10 +22,12 @@
     "pymupdf 1.27.2.3",
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство пользователя для облачного контакт-центра MANGO OFFICE. Содержит описание клиентской части, настроек, управления пользователями, работы с обращениями, кампаниями и API.",
   "page_count": 614,
   "part_count": 6,
   "processing_mode": "multi_part",
+  "product": "MANGO OFFICE Contact Center",
   "section_count": 232,
   "section_source": "pdf-outline multi-part (6 PDF parts)",
   "section_sources": [
@@ -4245,6 +4247,23 @@
     }
   ],
   "source_document": "mango-cc-manual",
+  "source_metadata": {
+    "language": "ru",
+    "product": "MANGO OFFICE Contact Center",
+    "source_manifest": "kb/mango-product-docs/sources/mango-cc-manual/meta.json",
+    "source_slug": "mango-cc-manual",
+    "topics": [
+      "начало работы",
+      "регистрация пользователей",
+      "настройки контакт-центра",
+      "обработка обращений",
+      "исходящие обращения",
+      "кампании",
+      "API интеграция",
+      "требования к оборудованию"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "multi-part",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
@@ -4296,6 +4315,17 @@
   ],
   "table_count": 524,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 23048,
-  "tokens_total": 431136
+  "tokens_index": 23154,
+  "tokens_total": 431136,
+  "topics": [
+    "начало работы",
+    "регистрация пользователей",
+    "настройки контакт-центра",
+    "обработка обращений",
+    "исходящие обращения",
+    "кампании",
+    "API интеграция",
+    "требования к оборудованию"
+  ],
+  "type": "user_manual"
 }

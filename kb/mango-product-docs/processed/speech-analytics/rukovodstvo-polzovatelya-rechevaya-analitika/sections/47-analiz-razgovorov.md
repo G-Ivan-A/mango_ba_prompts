@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-47-analiz-razgovorov
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "8.3"
 pdf_section: "8.3"
 title: "Анализ разговоров"

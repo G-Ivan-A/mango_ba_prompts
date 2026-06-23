@@ -3,6 +3,11 @@ id: sip-trunk-13-section
 doc_code: SIPTRUNK
 doc_title: "SIP TRUNK. Руководство пользователя"
 doc_version: "1.23.43"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["SIP","транк","телефония","маршрутизация","операторы связи"]
 section: "0"
 pdf_section: "—"
 title: "��"

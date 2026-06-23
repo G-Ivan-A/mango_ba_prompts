@@ -3,6 +3,11 @@ id: quality-managment-44-chto-eto-takoe-i-zachem-nuzhno
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "9.4.4.3.1"
 pdf_section: "9.4.4.3.1"
 title: "Что это такое и зачем нужно"

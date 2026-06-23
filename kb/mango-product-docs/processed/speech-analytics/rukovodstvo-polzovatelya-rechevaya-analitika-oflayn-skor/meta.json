@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по речевой аналитике с фокусом на офлайн скоринг. Описание методов оценки качества и построения скоринговых моделей.",
   "page_count": 133,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 87,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1590,6 +1595,24 @@
     }
   ],
   "source_document": "rukovodstvo-polzovatelya-rechevaya-analitika-oflayn-skor",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/speech-analytics/meta.json",
+    "source_slug": "speech-analytics",
+    "topics": [
+      "речевая аналитика",
+      "аналитика звонков",
+      "КАТС",
+      "скоринг",
+      "оценка качества",
+      "отчетность"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf"
@@ -1606,6 +1629,15 @@
   ],
   "table_count": 161,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 8415,
-  "tokens_total": 92018
+  "tokens_index": 8497,
+  "tokens_total": 92018,
+  "topics": [
+    "речевая аналитика",
+    "аналитика звонков",
+    "КАТС",
+    "скоринг",
+    "оценка качества",
+    "отчетность"
+  ],
+  "type": "user_manual"
 }

@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[QUALITYMANAG, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango QM`
 
 ## Разделы
 

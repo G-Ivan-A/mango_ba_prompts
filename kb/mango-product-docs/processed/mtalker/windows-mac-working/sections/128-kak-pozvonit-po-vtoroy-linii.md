@@ -3,6 +3,11 @@ id: windows-mac-working-128-kak-pozvonit-po-vtoroy-linii
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "6.5"
 pdf_section: "6.5"
 title: "Как позвонить по второй линии"

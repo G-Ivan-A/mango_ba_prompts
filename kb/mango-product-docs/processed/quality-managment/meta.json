@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство пользователя по модулю контроля качества в Mango Office. Описывает процессы оценки качества звонков, мониторинга операторов, аудита и управления качеством обслуживания.",
   "page_count": 97,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango QM",
   "section_count": 52,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -960,6 +965,24 @@
     }
   ],
   "source_document": "quality-managment",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango QM",
+    "source_manifest": "kb/mango-product-docs/sources/quality-managment/meta.json",
+    "source_slug": "quality-managment",
+    "topics": [
+      "контроль качества",
+      "оценка звонков",
+      "мониторинг",
+      "аудит",
+      "качество обслуживания",
+      "отчетность"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/quality-managment/QM_manual_v-1.26.18.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/quality-managment/QM_manual_v-1.26.18.pdf"
@@ -976,6 +999,15 @@
   ],
   "table_count": 41,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5473,
-  "tokens_total": 54690
+  "tokens_index": 5557,
+  "tokens_total": 54690,
+  "topics": [
+    "контроль качества",
+    "оценка звонков",
+    "мониторинг",
+    "аудит",
+    "качество обслуживания",
+    "отчетность"
+  ],
+  "type": "user_manual"
 }

@@ -12,10 +12,16 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по настройке Mango Talker. Описание параметров конфигурации, настройки аудио/видео устройств, интеграция с ВАТС.",
   "page_count": 19,
   "part_count": 1,
+  "platform": [
+    "Windows",
+    "MacOS"
+  ],
   "processing_mode": "single",
+  "product": "Mango Talker",
   "section_count": 55,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1014,6 +1020,26 @@
     }
   ],
   "source_document": "windows-mac-settings",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Windows",
+      "MacOS"
+    ],
+    "product": "Mango Talker",
+    "source_manifest": "kb/mango-product-docs/sources/mtalker/meta.json",
+    "source_slug": "mtalker",
+    "topics": [
+      "софтфон",
+      "звонки",
+      "чат",
+      "настройка",
+      "администрирование",
+      "интеграция с ВАТС",
+      "мобильное приложение"
+    ],
+    "type": "settings_guide"
+  },
   "source_pdf": "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch2_Settings.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/mtalker/mTalker_User_Guide_ch2_Settings.pdf"
@@ -1030,6 +1056,16 @@
   ],
   "table_count": 2,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5268,
-  "tokens_total": 16986
+  "tokens_index": 5359,
+  "tokens_total": 16986,
+  "topics": [
+    "софтфон",
+    "звонки",
+    "чат",
+    "настройка",
+    "администрирование",
+    "интеграция с ВАТС",
+    "мобильное приложение"
+  ],
+  "type": "settings_guide"
 }

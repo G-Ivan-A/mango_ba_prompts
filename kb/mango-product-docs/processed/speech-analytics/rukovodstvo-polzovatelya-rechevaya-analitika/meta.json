@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Базовое руководство по речевой аналитике. Описание функционала, настройка, анализ звонков, формирование отчетности.",
   "page_count": 126,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 76,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1392,6 +1397,24 @@
     }
   ],
   "source_document": "rukovodstvo-polzovatelya-rechevaya-analitika",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/speech-analytics/meta.json",
+    "source_slug": "speech-analytics",
+    "topics": [
+      "речевая аналитика",
+      "аналитика звонков",
+      "КАТС",
+      "скоринг",
+      "оценка качества",
+      "отчетность"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/speech-analytics/RECHEVAYA-ANALITIKA_1.26.18.pdf"
@@ -1408,6 +1431,15 @@
   ],
   "table_count": 169,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 7260,
-  "tokens_total": 86610
+  "tokens_index": 7342,
+  "tokens_total": 86610,
+  "topics": [
+    "речевая аналитика",
+    "аналитика звонков",
+    "КАТС",
+    "скоринг",
+    "оценка качества",
+    "отчетность"
+  ],
+  "type": "user_manual"
 }

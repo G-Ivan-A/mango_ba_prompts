@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство пользователя по настройке и использованию SIP-транков в Mango Office. Описывает подключение внешних операторов, управление каналами, маршрутизацию и мониторинг.",
   "page_count": 42,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 39,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -726,6 +731,23 @@
     }
   ],
   "source_document": "sip-trunk",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/sip-trunk/meta.json",
+    "source_slug": "sip-trunk",
+    "topics": [
+      "SIP",
+      "транк",
+      "телефония",
+      "маршрутизация",
+      "операторы связи"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/sip-trunk/MO_SIP_Trunk.pdf"
@@ -742,6 +764,14 @@
   ],
   "table_count": 0,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 3436,
-  "tokens_total": 6332
+  "tokens_index": 3504,
+  "tokens_total": 6332,
+  "topics": [
+    "SIP",
+    "транк",
+    "телефония",
+    "маршрутизация",
+    "операторы связи"
+  ],
+  "type": "user_manual"
 }

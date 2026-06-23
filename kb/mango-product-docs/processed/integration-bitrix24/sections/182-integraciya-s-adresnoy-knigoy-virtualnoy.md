@@ -3,6 +3,11 @@ id: integration-bitrix24-182-integraciya-s-adresnoy-knigoy-virtualnoy
 doc_code: INTEGRATIONB
 doc_title: "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке"
 doc_version: "03.03.2026"
+type: "integration_guide"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["интеграция","Битрикс24","CRM","ВАТС","настройка","синхронизация"]
 section: "4"
 pdf_section: "4"
 title: "Интеграция с адресной книгой Виртуальной АТС"

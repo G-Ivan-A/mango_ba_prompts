@@ -3,6 +3,11 @@ id: lk-vats-sso-02-terminy-i-opredeleniya
 doc_code: LKVATSSSO
 doc_title: "Аутентификация и авторизация в рамках SSO"
 doc_version: "1.0"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["SSO","аутентификация","авторизация","единый вход","безопасность","управление доступом"]
 section: "1"
 pdf_section: "1"
 title: "Термины и определения"

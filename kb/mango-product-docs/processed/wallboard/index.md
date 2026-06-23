@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: WALLBOARD
 doc_title: "Руководство пользователя. Wallboard Mango Office"
 doc_version: "7.22.25"
+type: "user_manual"
+product: "Mango Wallboard"
+platform: ["Web"]
+language: "ru"
+topics: ["wallboard","дашборд","мониторинг","KPI","контакт-центр","визуализация"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[WALLBOARD, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Wallboard`
 
 ## Разделы
 

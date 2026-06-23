@@ -3,6 +3,11 @@ id: rolevaya-model-vats-46-golosovoe-menyu-i-raspredelenie-zvonkov
 doc_code: ROLEVAYAMODE
 doc_title: "Руководство пользователя. Роли и права доступа"
 doc_version: "1.26.08"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["роли","права доступа","администрирование","безопасность","пользователи","ВАТС"]
 section: "5.3.1"
 pdf_section: "5.3.1"
 title: "Голосовое меню и распределение звонков"

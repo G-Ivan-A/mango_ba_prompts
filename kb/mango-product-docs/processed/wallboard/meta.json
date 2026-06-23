@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по установке, настройке и работе с Wallboard Mango Office. Описание виджетов, дашбордов, источников данных и мониторинга.",
   "page_count": 28,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Wallboard",
   "section_count": 6,
   "section_source": "layout-heuristic",
   "section_sources": [
@@ -132,6 +137,24 @@
     }
   ],
   "source_document": "wallboard",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Wallboard",
+    "source_manifest": "kb/mango-product-docs/sources/wallboard/meta.json",
+    "source_slug": "wallboard",
+    "topics": [
+      "wallboard",
+      "дашборд",
+      "мониторинг",
+      "KPI",
+      "контакт-центр",
+      "визуализация"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/wallboard/Programma-dlya-EVM-Wallboard-Mango-Office_v7.22.25.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/wallboard/Programma-dlya-EVM-Wallboard-Mango-Office_v7.22.25.pdf"
@@ -148,6 +171,15 @@
   ],
   "table_count": 24,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 969,
-  "tokens_total": 16050
+  "tokens_index": 1045,
+  "tokens_total": 16050,
+  "topics": [
+    "wallboard",
+    "дашборд",
+    "мониторинг",
+    "KPI",
+    "контакт-центр",
+    "визуализация"
+  ],
+  "type": "user_manual"
 }

@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-14-statistika
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика & КАТС"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "2.4.2"
 pdf_section: "2.4.2"
 title: "Статистика"

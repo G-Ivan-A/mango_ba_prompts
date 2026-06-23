@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-39-nastroyki-oflayn-skoringa
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "5.3"
 pdf_section: "5.3"
 title: "Настройки (офлайн скоринга)"

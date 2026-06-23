@@ -3,6 +3,11 @@ id: quality-managment-23-ocenka-kachestva-v-chatah
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "6"
 pdf_section: "6"
 title: "Оценка качества в чатах"

@@ -12,10 +12,15 @@
   "image_extractors": [
     "pymupdf 1.27.2.3"
   ],
+  "language": "ru",
   "note": "Руководство по ролевой модели и управлению правами доступа в виртуальной АТС Mango Office. Описывает назначение ролей, настройку прав, разграничение доступа и администрирование пользователей.",
   "page_count": 59,
   "part_count": 1,
+  "platform": [
+    "Web"
+  ],
   "processing_mode": "single",
+  "product": "Mango Office",
   "section_count": 65,
   "section_source": "pdf-outline (pymupdf 1.27.2.3)",
   "section_sources": [
@@ -1194,6 +1199,24 @@
     }
   ],
   "source_document": "Rolevaya-model-vats",
+  "source_metadata": {
+    "language": "ru",
+    "platform": [
+      "Web"
+    ],
+    "product": "Mango Office",
+    "source_manifest": "kb/mango-product-docs/sources/Rolevaya-model-vats/meta.json",
+    "source_slug": "Rolevaya-model-vats",
+    "topics": [
+      "роли",
+      "права доступа",
+      "администрирование",
+      "безопасность",
+      "пользователи",
+      "ВАТС"
+    ],
+    "type": "user_manual"
+  },
   "source_pdf": "kb/mango-product-docs/sources/Rolevaya-model-vats/Rolevaya-model-VATS_1_26_08.pdf",
   "source_pdfs": [
     "kb/mango-product-docs/sources/Rolevaya-model-vats/Rolevaya-model-VATS_1_26_08.pdf"
@@ -1210,6 +1233,15 @@
   ],
   "table_count": 132,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 5190,
-  "tokens_total": 45708
+  "tokens_index": 5262,
+  "tokens_total": 45708,
+  "topics": [
+    "роли",
+    "права доступа",
+    "администрирование",
+    "безопасность",
+    "пользователи",
+    "ВАТС"
+  ],
+  "type": "user_manual"
 }

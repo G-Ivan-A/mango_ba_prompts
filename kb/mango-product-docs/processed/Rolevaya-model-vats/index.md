@@ -3,6 +3,11 @@ type: kb-source-index
 doc_code: ROLEVAYAMODE
 doc_title: "Руководство пользователя. Роли и права доступа"
 doc_version: "1.26.08"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["роли","права доступа","администрирование","безопасность","пользователи","ВАТС"]
 status: extracted
 ai-generated: true
 ---
@@ -18,6 +23,10 @@ ai-generated: true
 
 `[ROLEVAYAMODE, §<номер>, с.<страница>]` — формат проекта (issue #109);
 плюс адрес чанка `kb/mango-product-docs/processed/<doc>/sections/<file>#<якорь>` (ADR-007 R3).
+
+## Поисковые ключи
+
+`Mango Office`
 
 ## Разделы
 
@@ -39,55 +48,55 @@ ai-generated: true
 | 5 | Матрица ролей и прав доступа | [sections/13-matrica-roley-i-prav-dostupa.md](sections/13-matrica-roley-i-prav-dostupa.md) | 19 | ч.1 с.19 | 232 | В разделе описаны возможности подключения/отключения прав доступа, установленные по умолчанию для системных ролей. |
 | 5.1 | Раздел «Сотрудники» | [sections/14-razdel-sotrudniki.md](sections/14-razdel-sotrudniki.md) | 19 | ч.1 с.19 | 82 | — |
 | 5.1.1 | Выбор подконтрольных групп | [sections/15-vybor-podkontrolnyh-grupp.md](sections/15-vybor-podkontrolnyh-grupp.md) | 19 | ч.1 с.19 | 355 | — |
-| 5.1.2 | Сотрудники и группы | [sections/16-sotrudniki-i-gruppy.md](sections/16-sotrudniki-i-gruppy.md) | 19-24 | ч.1 с.19-24 | 5468 | Роли и права доступа | v. |
+| 5.1.2 | Сотрудники и группы | [sections/16-sotrudniki-i-gruppy.md](sections/16-sotrudniki-i-gruppy.md) | 19-24 | ч.1 с.19-24 | 5468 | Роли и права доступа \| v. |
 | 5.2 | Раздел «Инструменты» | [sections/17-razdel-instrumenty.md](sections/17-razdel-instrumenty.md) | 24 | ч.1 с.24 | 82 | — |
-| 5.2.1 | WFM | [sections/18-wfm.md](sections/18-wfm.md) | 24-25 | ч.1 с.24-25 | 1132 | Роли и права доступа | v. |
-| 5.2.2 | Адресная книга | [sections/19-adresnaya-kniga.md](sections/19-adresnaya-kniga.md) | 25-26 | ч.1 с.25-26 | 906 | Роли и права доступа | v. |
-| 5.2.3 | Аналитика | [sections/20-analitika.md](sections/20-analitika.md) | 26-27 | ч.1 с.26-27 | 298 | Роли и права доступа | v. |
+| 5.2.1 | WFM | [sections/18-wfm.md](sections/18-wfm.md) | 24-25 | ч.1 с.24-25 | 1132 | Роли и права доступа \| v. |
+| 5.2.2 | Адресная книга | [sections/19-adresnaya-kniga.md](sections/19-adresnaya-kniga.md) | 25-26 | ч.1 с.25-26 | 906 | Роли и права доступа \| v. |
+| 5.2.3 | Аналитика | [sections/20-analitika.md](sections/20-analitika.md) | 26-27 | ч.1 с.26-27 | 298 | Роли и права доступа \| v. |
 | 5.2.4 | Аналитика Calltouch | [sections/21-analitika-calltouch.md](sections/21-analitika-calltouch.md) | 27 | ч.1 с.27 | 220 | — |
-| 5.2.5 | Голосовые сообщения | [sections/22-golosovye-soobscheniya.md](sections/22-golosovye-soobscheniya.md) | 27-28 | ч.1 с.27-28 | 754 | Роли и права доступа | v. |
+| 5.2.5 | Голосовые сообщения | [sections/22-golosovye-soobscheniya.md](sections/22-golosovye-soobscheniya.md) | 27-28 | ч.1 с.27-28 | 754 | Роли и права доступа \| v. |
 | 5.2.6 | Динамический коллтрекинг | [sections/23-dinamicheskiy-kolltreking.md](sections/23-dinamicheskiy-kolltreking.md) | 28 | ч.1 с.28 | 503 | — |
-| 5.2.7 | Задачи | [sections/24-zadachi.md](sections/24-zadachi.md) | 28-29 | ч.1 с.28-29 | 345 | Роли и права доступа | v. |
+| 5.2.7 | Задачи | [sections/24-zadachi.md](sections/24-zadachi.md) | 28-29 | ч.1 с.28-29 | 345 | Роли и права доступа \| v. |
 | 5.2.8 | Заказ звонка | [sections/25-zakaz-zvonka.md](sections/25-zakaz-zvonka.md) | 29 | ч.1 с.29 | 226 | — |
-| 5.2.9 | Запись разговоров | [sections/26-zapis-razgovorov.md](sections/26-zapis-razgovorov.md) | 29-32 | ч.1 с.29-32 | 2785 | Роли и права доступа | v. |
+| 5.2.9 | Запись разговоров | [sections/26-zapis-razgovorov.md](sections/26-zapis-razgovorov.md) | 29-32 | ч.1 с.29-32 | 2785 | Роли и права доступа \| v. |
 | 5.2.10 | История вызовов | [sections/27-istoriya-vyzovov.md](sections/27-istoriya-vyzovov.md) | 32 | ч.1 с.32 | 758 | — |
-| 5.2.11 | Исходящий обзвон | [sections/28-ishodyaschiy-obzvon.md](sections/28-ishodyaschiy-obzvon.md) | 32-33 | ч.1 с.32-33 | 779 | Роли и права доступа | v. |
-| 5.2.12 | Контроль качества | [sections/29-kontrol-kachestva.md](sections/29-kontrol-kachestva.md) | 33-34 | ч.1 с.33-34 | 865 | Роли и права доступа | v. |
-| 5.2.13 | МангоМобайл | [sections/30-mangomobayl.md](sections/30-mangomobayl.md) | 34-35 | ч.1 с.34-35 | 304 | Роли и права доступа | v. |
-| 5.2.14 | Обращения | [sections/31-obrascheniya.md](sections/31-obrascheniya.md) | 35-36 | ч.1 с.35-36 | 1281 | Роли и права доступа | v. |
-| 5.2.15 | Отправка SMS | [sections/32-otpravka-sms.md](sections/32-otpravka-sms.md) | 36-37 | ч.1 с.36-37 | 345 | Роли и права доступа | v. |
-| 5.2.16 | Отчеты Контакт-Центра | [sections/33-otchety-kontakt-centra.md](sections/33-otchety-kontakt-centra.md) | 37-39 | ч.1 с.37-39 | 2143 | Роли и права доступа | v. |
+| 5.2.11 | Исходящий обзвон | [sections/28-ishodyaschiy-obzvon.md](sections/28-ishodyaschiy-obzvon.md) | 32-33 | ч.1 с.32-33 | 779 | Роли и права доступа \| v. |
+| 5.2.12 | Контроль качества | [sections/29-kontrol-kachestva.md](sections/29-kontrol-kachestva.md) | 33-34 | ч.1 с.33-34 | 865 | Роли и права доступа \| v. |
+| 5.2.13 | МангоМобайл | [sections/30-mangomobayl.md](sections/30-mangomobayl.md) | 34-35 | ч.1 с.34-35 | 304 | Роли и права доступа \| v. |
+| 5.2.14 | Обращения | [sections/31-obrascheniya.md](sections/31-obrascheniya.md) | 35-36 | ч.1 с.35-36 | 1281 | Роли и права доступа \| v. |
+| 5.2.15 | Отправка SMS | [sections/32-otpravka-sms.md](sections/32-otpravka-sms.md) | 36-37 | ч.1 с.36-37 | 345 | Роли и права доступа \| v. |
+| 5.2.16 | Отчеты Контакт-Центра | [sections/33-otchety-kontakt-centra.md](sections/33-otchety-kontakt-centra.md) | 37-39 | ч.1 с.37-39 | 2143 | Роли и права доступа \| v. |
 | 5.2.17 | Панель показателей | [sections/34-panel-pokazateley.md](sections/34-panel-pokazateley.md) | 39 | ч.1 с.39 | 267 | — |
-| 5.2.18 | Раздел "Управление дозвоном" | [sections/35-razdel-upravlenie-dozvonom.md](sections/35-razdel-upravlenie-dozvonom.md) | 39-40 | ч.1 с.39-40 | 319 | Роли и права доступа | v. |
-| 5.2.19 | Речевая аналитика | [sections/36-rechevaya-analitika.md](sections/36-rechevaya-analitika.md) | 40-41 | ч.1 с.40-41 | 631 | Роли и права доступа | v. |
+| 5.2.18 | Раздел "Управление дозвоном" | [sections/35-razdel-upravlenie-dozvonom.md](sections/35-razdel-upravlenie-dozvonom.md) | 39-40 | ч.1 с.39-40 | 319 | Роли и права доступа \| v. |
+| 5.2.19 | Речевая аналитика | [sections/36-rechevaya-analitika.md](sections/36-rechevaya-analitika.md) | 40-41 | ч.1 с.40-41 | 631 | Роли и права доступа \| v. |
 | 5.2.20 | Роботы | [sections/37-roboty.md](sections/37-roboty.md) | 41 | ч.1 с.41 | 213 | — |
-| 5.2.21 | Сделки | [sections/38-sdelki.md](sections/38-sdelki.md) | 41-42 | ч.1 с.41-42 | 797 | Роли и права доступа | v. |
+| 5.2.21 | Сделки | [sections/38-sdelki.md](sections/38-sdelki.md) | 41-42 | ч.1 с.41-42 | 797 | Роли и права доступа \| v. |
 | 5.2.22 | Скрипты | [sections/39-skripty.md](sections/39-skripty.md) | 42 | ч.1 с.42 | 233 | — |
-| 5.2.23 | Статистика и мониторинг | [sections/40-statistika-i-monitoring.md](sections/40-statistika-i-monitoring.md) | 42-43 | ч.1 с.42-43 | 315 | Роли и права доступа | v. |
+| 5.2.23 | Статистика и мониторинг | [sections/40-statistika-i-monitoring.md](sections/40-statistika-i-monitoring.md) | 42-43 | ч.1 с.42-43 | 315 | Роли и права доступа \| v. |
 | 5.2.24 | Статический коллтрекинг | [sections/41-staticheskiy-kolltreking.md](sections/41-staticheskiy-kolltreking.md) | 43 | ч.1 с.43 | 235 | — |
 | 5.2.25 | Текстовые рассылки | [sections/42-tekstovye-rassylki.md](sections/42-tekstovye-rassylki.md) | 43 | ч.1 с.43 | 228 | — |
-| 5.2.26 | Управление звонками | [sections/43-upravlenie-zvonkami.md](sections/43-upravlenie-zvonkami.md) | 43-45 | ч.1 с.43-45 | 1012 | Роли и права доступа | v. |
-| 5.2.27 | Управление сотрудниками | [sections/44-upravlenie-sotrudnikami.md](sections/44-upravlenie-sotrudnikami.md) | 45-46 | ч.1 с.45-46 | 1308 | Роли и права доступа | v. |
+| 5.2.26 | Управление звонками | [sections/43-upravlenie-zvonkami.md](sections/43-upravlenie-zvonkami.md) | 43-45 | ч.1 с.43-45 | 1012 | Роли и права доступа \| v. |
+| 5.2.27 | Управление сотрудниками | [sections/44-upravlenie-sotrudnikami.md](sections/44-upravlenie-sotrudnikami.md) | 45-46 | ч.1 с.45-46 | 1308 | Роли и права доступа \| v. |
 | 5.3 | Раздел «Обработка звонков» | [sections/45-razdel-obrabotka-zvonkov.md](sections/45-razdel-obrabotka-zvonkov.md) | 46 | ч.1 с.46 | 83 | — |
-| 5.3.1 | Голосовое меню и распределение звонков | [sections/46-golosovoe-menyu-i-raspredelenie-zvonkov.md](sections/46-golosovoe-menyu-i-raspredelenie-zvonkov.md) | 46-48 | ч.1 с.46-48 | 1668 | Роли и права доступа | v. |
+| 5.3.1 | Голосовое меню и распределение звонков | [sections/46-golosovoe-menyu-i-raspredelenie-zvonkov.md](sections/46-golosovoe-menyu-i-raspredelenie-zvonkov.md) | 46-48 | ч.1 с.46-48 | 1668 | Роли и права доступа \| v. |
 | 5.3.2 | Настройки дозвона и сообщений по умолчанию | [sections/47-nastroyki-dozvona-i-soobscheniy-po-umolc.md](sections/47-nastroyki-dozvona-i-soobscheniy-po-umolc.md) | 48 | ч.1 с.48 | 231 | — |
-| 5.3.3 | Номера, подключенные к АТС | [sections/48-nomera-podklyuchennye-k-ats.md](sections/48-nomera-podklyuchennye-k-ats.md) | 48-49 | ч.1 с.48-49 | 783 | Роли и права доступа | v. |
+| 5.3.3 | Номера, подключенные к АТС | [sections/48-nomera-podklyuchennye-k-ats.md](sections/48-nomera-podklyuchennye-k-ats.md) | 48-49 | ч.1 с.48-49 | 783 | Роли и права доступа \| v. |
 | 5.3.4 | Переадресация по номеру клиента | [sections/49-pereadresaciya-po-nomeru-klienta.md](sections/49-pereadresaciya-po-nomeru-klienta.md) | 49 | ч.1 с.49 | 221 | — |
-| 5.3.5 | Черный/белый список | [sections/50-chernyy-belyy-spisok.md](sections/50-chernyy-belyy-spisok.md) | 49-50 | ч.1 с.49-50 | 303 | Роли и права доступа | v. |
+| 5.3.5 | Черный/белый список | [sections/50-chernyy-belyy-spisok.md](sections/50-chernyy-belyy-spisok.md) | 49-50 | ч.1 с.49-50 | 303 | Роли и права доступа \| v. |
 | 5.4 | Раздел «Настройки АТС» | [sections/51-razdel-nastroyki-ats.md](sections/51-razdel-nastroyki-ats.md) | 50 | ч.1 с.50 | 82 | — |
 | 5.4.1 | Аудиофайлы | [sections/52-audiofayly.md](sections/52-audiofayly.md) | 50 | ч.1 с.50 | 275 | — |
-| 5.4.2 | Безопасность и ограничения | [sections/53-bezopasnost-i-ogranicheniya.md](sections/53-bezopasnost-i-ogranicheniya.md) | 50-51 | ч.1 с.50-51 | 995 | Роли и права доступа | v. |
-| 5.4.3 | Дополнительные настройки | [sections/54-dopolnitelnye-nastroyki.md](sections/54-dopolnitelnye-nastroyki.md) | 51-52 | ч.1 с.51-52 | 308 | Роли и права доступа | v. |
+| 5.4.2 | Безопасность и ограничения | [sections/53-bezopasnost-i-ogranicheniya.md](sections/53-bezopasnost-i-ogranicheniya.md) | 50-51 | ч.1 с.50-51 | 995 | Роли и права доступа \| v. |
+| 5.4.3 | Дополнительные настройки | [sections/54-dopolnitelnye-nastroyki.md](sections/54-dopolnitelnye-nastroyki.md) | 51-52 | ч.1 с.51-52 | 308 | Роли и права доступа \| v. |
 | 5.4.4 | Интеграции | [sections/55-integracii.md](sections/55-integracii.md) | 52 | ч.1 с.52 | 220 | — |
-| 5.4.5 | Конференц-связь | [sections/56-konferenc-svyaz.md](sections/56-konferenc-svyaz.md) | 52-53 | ч.1 с.52-53 | 508 | Роли и права доступа | v. |
-| 5.4.6 | Настройка SIP | [sections/57-nastroyka-sip.md](sections/57-nastroyka-sip.md) | 53-54 | ч.1 с.53-54 | 923 | Роли и права доступа | v. |
+| 5.4.5 | Конференц-связь | [sections/56-konferenc-svyaz.md](sections/56-konferenc-svyaz.md) | 52-53 | ч.1 с.52-53 | 508 | Роли и права доступа \| v. |
+| 5.4.6 | Настройка SIP | [sections/57-nastroyka-sip.md](sections/57-nastroyka-sip.md) | 53-54 | ч.1 с.53-54 | 923 | Роли и права доступа \| v. |
 | 5.4.7 | Управление услугами | [sections/58-upravlenie-uslugami.md](sections/58-upravlenie-uslugami.md) | 54 | ч.1 с.54 | 220 | — |
 | 5.5 | Раздел «Финансы» | [sections/59-razdel-finansy.md](sections/59-razdel-finansy.md) | 54 | ч.1 с.54 | 80 | — |
-| 5.5.1 | Подключение Контакт-центра | [sections/60-podklyuchenie-kontakt-centra.md](sections/60-podklyuchenie-kontakt-centra.md) | 54-55 | ч.1 с.54-55 | 308 | Роли и права доступа | v. |
-| 5.5.2 | Раздел "Финансы" и баланс Лицевого счета | [sections/61-razdel-finansy-i-balans-licevogo-scheta.md](sections/61-razdel-finansy-i-balans-licevogo-scheta.md) | 55-56 | ч.1 с.55-56 | 1085 | Роли и права доступа | v. |
-| 5.5.3 | Смена тарифа и подключение услуг | [sections/62-smena-tarifa-i-podklyuchenie-uslug.md](sections/62-smena-tarifa-i-podklyuchenie-uslug.md) | 56-57 | ч.1 с.56-57 | 435 | Роли и права доступа | v. |
+| 5.5.1 | Подключение Контакт-центра | [sections/60-podklyuchenie-kontakt-centra.md](sections/60-podklyuchenie-kontakt-centra.md) | 54-55 | ч.1 с.54-55 | 308 | Роли и права доступа \| v. |
+| 5.5.2 | Раздел "Финансы" и баланс Лицевого счета | [sections/61-razdel-finansy-i-balans-licevogo-scheta.md](sections/61-razdel-finansy-i-balans-licevogo-scheta.md) | 55-56 | ч.1 с.55-56 | 1085 | Роли и права доступа \| v. |
+| 5.5.3 | Смена тарифа и подключение услуг | [sections/62-smena-tarifa-i-podklyuchenie-uslug.md](sections/62-smena-tarifa-i-podklyuchenie-uslug.md) | 56-57 | ч.1 с.56-57 | 435 | Роли и права доступа \| v. |
 | 5.6 | Раздел «Поддержка» | [sections/63-razdel-podderzhka.md](sections/63-razdel-podderzhka.md) | 57 | ч.1 с.57 | 265 | — |
-| 5.7 | Раздел «Функции Mango Talker» | [sections/64-razdel-funkcii-mango-talker.md](sections/64-razdel-funkcii-mango-talker.md) | 57-59 | ч.1 с.57-59 | 1528 | Роли и права доступа | v. |
+| 5.7 | Раздел «Функции Mango Talker» | [sections/64-razdel-funkcii-mango-talker.md](sections/64-razdel-funkcii-mango-talker.md) | 57-59 | ч.1 с.57-59 | 1528 | Роли и права доступа \| v. |
 | | **ИТОГО** | | | | **45708** | весь документ |
 
 ## Источники

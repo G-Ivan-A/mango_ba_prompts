@@ -3,6 +3,11 @@ id: windows-mac-working-143-kak-pozvonit-s-video-abonentu-ili-v-grup
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "7.4"
 pdf_section: "7.4"
 title: "Как позвонить с видео абоненту или в групповой чат"

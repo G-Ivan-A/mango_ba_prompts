@@ -3,6 +3,11 @@ id: windows-mac-working-87-kopirovanie-peresylka-i-udalenie-soobsch
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "4.11"
 pdf_section: "4.11"
 title: "Копирование, пересылка и удаление сообщений"

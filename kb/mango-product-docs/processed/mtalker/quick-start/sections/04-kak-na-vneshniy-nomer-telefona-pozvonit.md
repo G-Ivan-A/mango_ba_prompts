@@ -3,6 +3,11 @@ id: quick-start-04-kak-na-vneshniy-nomer-telefona-pozvonit
 doc_code: MTALKER-QS
 doc_title: "Mango Talker для Windows/Mac - Быстрый старт"
 doc_version: "23.08.2024"
+type: "quick_start_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "—"
 title: "Как на внешний номер телефона позвонить или отправить СМС"

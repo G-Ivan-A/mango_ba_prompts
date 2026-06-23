@@ -3,6 +3,10 @@ id: mango-lk-manual-152-otchet-prichiny-propuschennyh-zvonkov
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "0"
 pdf_section: "4.5.9.1.1"
 title: "Отчет «Причины пропущенных звонков»"

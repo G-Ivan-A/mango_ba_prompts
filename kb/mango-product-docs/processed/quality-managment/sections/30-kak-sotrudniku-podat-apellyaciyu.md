@@ -3,6 +3,11 @@ id: quality-managment-30-kak-sotrudniku-podat-apellyaciyu
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "8.1"
 pdf_section: "8.1"
 title: "Как сотруднику подать апелляцию"

@@ -3,6 +3,11 @@ id: quality-managment-28-rabota-kontrolerov
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "7.3"
 pdf_section: "7.3"
 title: "Работа контролеров"

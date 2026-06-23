@@ -3,6 +3,11 @@ id: lk-vats-sso-09-nastroyka-autentifikacii-i-avtorizacii-n
 doc_code: LKVATSSSO
 doc_title: "Аутентификация и авторизация в рамках SSO"
 doc_version: "1.0"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["SSO","аутентификация","авторизация","единый вход","безопасность","управление доступом"]
 section: "6"
 pdf_section: "6"
 title: "Настройка аутентификации и авторизации на примере Keycloak"

@@ -3,6 +3,11 @@ id: windows-mac-settings-11-kak-nayti-i-otkryt-zagruzhennyy-fayl
 doc_code: MTALKER-SET
 doc_title: "Mango Talker для Windows/Mac - Установка настроек"
 doc_version: "23.08.2024"
+type: "settings_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "4.2"
 pdf_section: "4.2"
 title: "Как найти и открыть загруженный файл"

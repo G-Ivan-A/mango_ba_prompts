@@ -3,6 +3,11 @@ id: quick-start-03-vyzov-abonenta-iz-spiska-kontakty
 doc_code: MTALKER-QS
 doc_title: "Mango Talker для Windows/Mac - Быстрый старт"
 doc_version: "23.08.2024"
+type: "quick_start_guide"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "0"
 pdf_section: "—"
 title: "Вызов абонента из списка “Контакты”"

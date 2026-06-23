@@ -3,6 +3,10 @@ id: mango-lk-manual-338-nastroyka-shemy-raspredeleniya-zvonkov-v
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "5.5"
 pdf_section: "5.5"
 title: "Настройка схемы распределения звонков в Личном кабинете"

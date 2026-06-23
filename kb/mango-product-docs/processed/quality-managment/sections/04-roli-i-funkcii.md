@@ -3,6 +3,11 @@ id: quality-managment-04-roli-i-funkcii
 doc_code: QUALITYMANAG
 doc_title: "Руководство по контролю качества"
 doc_version: "1.26.18"
+type: "user_manual"
+product: "Mango QM"
+platform: ["Web"]
+language: "ru"
+topics: ["контроль качества","оценка звонков","мониторинг","аудит","качество обслуживания","отчетность"]
 section: "1.3"
 pdf_section: "1.3"
 title: "Роли и функции"

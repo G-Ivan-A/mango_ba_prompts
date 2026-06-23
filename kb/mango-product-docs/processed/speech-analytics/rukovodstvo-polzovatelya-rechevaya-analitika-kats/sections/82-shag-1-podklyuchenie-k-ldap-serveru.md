@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-82-shag-1-podklyuchenie-k-ldap-serv
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика & КАТС"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "0"
 pdf_section: "7.5"
 title: "Шаг 1. Подключение к LDAP-серверу"

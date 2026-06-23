@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-28-zayavki-na-uluchshenie-kachestva
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "3.7"
 pdf_section: "3.7"
 title: "Заявки на улучшение качества распознавания"

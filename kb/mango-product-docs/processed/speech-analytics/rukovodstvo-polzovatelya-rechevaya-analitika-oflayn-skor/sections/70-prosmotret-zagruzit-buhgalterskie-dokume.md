@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-70-prosmotret-zagruzit-buhgalterski
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "9.1.2"
 pdf_section: "9.1.2"
 title: "Просмотреть/загрузить бухгалтерские документы"

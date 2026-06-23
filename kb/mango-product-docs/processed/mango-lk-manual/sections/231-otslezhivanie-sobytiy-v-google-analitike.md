@@ -3,6 +3,10 @@ id: mango-lk-manual-231-otslezhivanie-sobytiy-v-google-analitike
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
 doc_version: "1.21"
+type: "user_manual"
+product: "MANGO OFFICE Virtual PBX"
+language: "ru"
+topics: ["настройка АТС","управление номерами","маршрутизация звонков","голосовая почта","конференц-связь","статистика звонков","интеграция с CRM"]
 section: "4.5.11.5.1"
 pdf_section: "4.5.11.5.1"
 title: "Отслеживание событий в Google Аналитике"

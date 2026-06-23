@@ -3,6 +3,11 @@ id: rukovodstvo-polzovatelya-rechevaya-anali-42-pravila-obrabotki-poiskovyh-zapr
 doc_code: RUKOVODSTVOP
 doc_title: "Руководство пользователя. Речевая аналитика. Офлайн скоринг"
 doc_version: "1.26"
+type: "user_manual"
+product: "Mango Office"
+platform: ["Web"]
+language: "ru"
+topics: ["речевая аналитика","аналитика звонков","КАТС","скоринг","оценка качества","отчетность"]
 section: "6.2"
 pdf_section: "6.2"
 title: "Правила обработки поисковых запросов"

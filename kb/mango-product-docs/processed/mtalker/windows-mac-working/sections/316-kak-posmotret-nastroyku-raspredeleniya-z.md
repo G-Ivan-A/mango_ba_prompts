@@ -3,6 +3,11 @@ id: windows-mac-working-316-kak-posmotret-nastroyku-raspredeleniya-z
 doc_code: MTALKER-WORK
 doc_title: "Mango Talker для Windows/Mac - Руководство пользователя (Работа)"
 doc_version: "23.08.2024"
+type: "user_manual"
+product: "Mango Talker"
+platform: ["Windows","MacOS"]
+language: "ru"
+topics: ["софтфон","звонки","чат","настройка","администрирование","интеграция с ВАТС","мобильное приложение"]
 section: "17.15"
 pdf_section: "17.15"
 title: "Как посмотреть настройку распределения звонков на ваш аккаунт"
