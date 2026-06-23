@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #212 стандарт создания исполнимых контрактов
+
+- Добавлен L3-стандарт
+  [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md):
+  критерии L1/L2/L3, combat/management/data, выбор YAML vs Markdown, шаблон
+  исполнимого контракта, placement rules и жёсткий инвариант L1 runtime inputs
+  без L3-зависимостей.
+- В стандарте выполнена самостоятельная классификация артефактов из
+  `standards/`, `governance/`, `prompts/` и `runs/`, а шаблон проверен на
+  `governance/bcreq-fr-generation-contract.md`, `runs/CONTRACT.md` и
+  `standards/prompt-standard.md`.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_212_executable_contract_standard.py`](scripts/validate_issue_212_executable_contract_standard.py),
+  подключённый к GitHub Pages workflow.
+
 ### Fixed — Issue #207 структура RUN-0013 и API VPBX для BCREQ-1027
 
 - BCREQ-1027 перенесён в канонический run
