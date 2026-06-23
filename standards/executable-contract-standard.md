@@ -15,6 +15,7 @@ related_artifacts:
   - "standards/cascading-context-loading-standard.md"
   - "governance/rfc-process.md"
   - "governance/bcreq-fr-generation-contract.md"
+  - "kb/golden-examples/CONTRACT.md"
 validated_by:
   - "scripts/validate_issue_212_executable_contract_standard.py"
 ---
@@ -53,9 +54,10 @@ runtime-входы L1 не зависели от управленческих м
 ## 2. Самостоятельная классификация артефактов
 
 Классификация ниже выполнена по текущей структуре `standards/`, `governance/`,
-`prompts/` и `runs/`, а не по заранее заданному списку. Для каждого класса
-использовались роль артефакта, место применения, наличие исполнимых MUST/SHOULD
-правил и то, должен ли AI-агент читать файл при выполнении конкретной задачи.
+`prompts/`, `runs/` и data-near контрактам `kb/`, а не по заранее заданному
+списку. Для каждого класса использовались роль артефакта, место применения,
+наличие исполнимых MUST/SHOULD правил и то, должен ли AI-агент читать файл при
+выполнении конкретной задачи.
 
 | Путь | Слой | Класс | rationale |
 | --- | --- | --- | --- |
@@ -86,6 +88,7 @@ runtime-входы L1 не зависели от управленческих м
 | `prompts/session-debug-documentation-oneshot.md` | L1 | combat | Prompt asset для разового runtime-действия. |
 | `prompts/archive/tz-stats-generator-legacy.md` | L1 | combat | Архивный, но по природе исполнимый prompt asset. |
 | `runs/CONTRACT.md` | L1 | combat | Data-near контракт, который задаёт правила записи run. |
+| `kb/golden-examples/CONTRACT.md` | L1 | combat | Data-near lifecycle-контракт для создания и проверки будущих Golden Examples; сами утверждённые examples остаются L2-данными. |
 | `runs/README.md` | L2 | data | Навигация по run-хранилищу. |
 | `runs/REGISTRY.md` | L2 | data | Реестр run-записей. |
 | `runs/stats/by-type.md` | L2 | data | Агрегированная статистика по run-типам. |
@@ -120,6 +123,7 @@ Markdown допустим только для пояснений, rationale, п�
             "governance/bcreq-fr-generation-contract.md",
             "governance/approval-contract.md",
             "runs/CONTRACT.md",
+            "kb/golden-examples/CONTRACT.md",
             "prompts/fr-documentation-stepwise.md"
           ],
           "rationale": "L1 artifacts are combat-facing: they guide a task and therefore must be complete at runtime."
@@ -361,6 +365,12 @@ Markdown допустим только для пояснений, rationale, п�
         "rationale": "The contract is used to create and validate run records."
       },
       {
+        "path": "kb/golden-examples/CONTRACT.md",
+        "layer": "L1",
+        "rule_class": "combat",
+        "rationale": "The data-near lifecycle contract is used to create and validate future Golden Example records while approved examples remain L2 data."
+      },
+      {
         "path": "runs/README.md",
         "layer": "L2",
         "rule_class": "data",
@@ -479,7 +489,7 @@ Markdown допустим только для пояснений, rationale, п�
       {
         "id": "EXEC-CONTRACT-PLACE-02",
         "target": "<data-domain>/CONTRACT.md",
-        "criterion": "Place data-near L1 contracts beside the data they validate, such as runs/CONTRACT.md.",
+        "criterion": "Place data-near L1 contracts beside the data they validate, such as runs/CONTRACT.md or kb/golden-examples/CONTRACT.md.",
         "rationale": "Data-near contracts reduce lookup distance and clarify ownership."
       },
       {
@@ -595,12 +605,12 @@ Markdown допустим только для пояснений, rationale, п�
 - Определены критерии L1/L2/L3 и combat/management/data с rationale.
 - Зафиксирован выбор YAML vs Markdown и шаблон контракта с YAML rule index,
   `rationale` и комментариями.
-- Определены правила размещения для `governance/`, `prompts/`, `runs/`,
+- Определены правила размещения для `governance/`, `prompts/`, `runs/`, `kb/`,
   `standards/`, RFC и ADR.
 - Зафиксирован жёсткий инвариант: L1 runtime inputs MUST NOT require L3
   artifacts.
 - Выполнена самостоятельная классификация артефактов из `standards/`,
-  `governance/`, `prompts/` и `runs/`.
+  `governance/`, `prompts/`, `runs/` и data-near контрактов `kb/`.
 - Шаблон проверен на трёх существующих артефактах:
   `governance/bcreq-fr-generation-contract.md`, `runs/CONTRACT.md` и
   `standards/prompt-standard.md`.

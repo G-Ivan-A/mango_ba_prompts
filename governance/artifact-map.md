@@ -54,6 +54,7 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 | `/patterns/` | каталог | Паттерны БА как reusable способы решения классов задач. | Да | `standards/pattern-standard.md`, `docs/taxonomy.md` |
 | `/prompts/` | каталог | Активные prompt assets для бизнес-аналитиков Mango. | Да | `prompts/README.md`, `standards/prompt-standard.md` |
 | `/prompts/archive/` | каталог | Архивные legacy-промпты, выведенные из активного использования. | По необходимости | `prompts/README.md` |
+| `/kb/golden-examples/` | контракт и каталог | Lifecycle Golden Examples: хранение будущих approved examples, `path + sha`, `no-golden-standard` placeholders и 2-факторное подтверждение для BCREQ-FR. | По необходимости | `governance/bcreq-fr-generation-contract.md`, `governance/approval-contract.md` |
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
 | `/standards/` | каталог | Локальные рабочие копии стандартов и контрактов. | Да | `README.md`, `docs/adr/` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |

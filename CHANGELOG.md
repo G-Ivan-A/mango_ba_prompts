@@ -21,11 +21,27 @@ ai-generated: true
   исполнимого контракта, placement rules и жёсткий инвариант L1 runtime inputs
   без L3-зависимостей.
 - В стандарте выполнена самостоятельная классификация артефактов из
-  `standards/`, `governance/`, `prompts/` и `runs/`, а шаблон проверен на
-  `governance/bcreq-fr-generation-contract.md`, `runs/CONTRACT.md` и
-  `standards/prompt-standard.md`.
+  `standards/`, `governance/`, `prompts/`, `runs/` и data-near контрактов
+  `kb/`; шаблон проверен на `governance/bcreq-fr-generation-contract.md`,
+  `runs/CONTRACT.md` и `standards/prompt-standard.md`.
 - Добавлен регрессионный валидатор
   [`scripts/validate_issue_212_executable_contract_standard.py`](scripts/validate_issue_212_executable_contract_standard.py),
+  подключённый к GitHub Pages workflow.
+
+### Added — Issue #211 контракт Golden Examples
+
+- Создан каталог [`kb/golden-examples/`](kb/golden-examples/) с
+  [`kb/golden-examples/README.md`](kb/golden-examples/README.md),
+  подкаталогами `bcreq-fr/`, `rfc/`, `adr/` и YAML-контрактом
+  [`kb/golden-examples/CONTRACT.md`](kb/golden-examples/CONTRACT.md) для
+  lifecycle будущих Golden Examples.
+- В
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  временная трассировка вложений заменена на `source_attachments` со
+  `status: "no-golden-standard"`; замена на `path + sha` требует
+  2-факторное подтверждение через approval process.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_211_golden_examples_contract.py`](scripts/validate_issue_211_golden_examples_contract.py),
   подключённый к GitHub Pages workflow.
 
 ### Fixed — Issue #207 структура RUN-0013 и API VPBX для BCREQ-1027
@@ -49,8 +65,8 @@ ai-generated: true
   registry inputs `kb/industry-taxonomy/registry.json` и
   `kb/mango-taxonomy/registry.json`; правила RFC-184 оставлены как локальные
   `BCREQ-FR-GEN-SCOPE-01/02` в machine-readable index.
-- Нестабильные `github.com/user-attachments` в `source_attachments:` заменены
-  временной трассировкой PR #202 с TODO на будущий permalink / Golden Examples.
+- Нестабильные `github.com/user-attachments` в `source_attachments:` удалены;
+  lifecycle placeholder/permalink для Golden Examples закреплён в issue #211.
 - Добавлены регрессионный валидатор
   [`scripts/validate_issue_208_bcreq_fr_l3_boundary.py`](scripts/validate_issue_208_bcreq_fr_l3_boundary.py)
   и dry-run evidence

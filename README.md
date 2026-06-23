@@ -126,6 +126,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `runs/` | Единый каталог результатов выполнения процессов: `runs/YYYY/RUN-XXXX/` с `metadata.yaml`, `inputs/`, `outputs/`, `feedback/`, `logs/`. |
 | `standards/` | Стандарты проекта: глоссарий, контракт классификации, стандарты промпта и паттерна. |
 | `kb/` | Практики, примеры и справочники, не являющиеся стандартами. |
+| `kb/golden-examples/` | Контракт и будущие утверждённые Golden Examples с `path + sha`; пока используется `status: "no-golden-standard"`. |
 | `docs/taxonomy.md` | Таксономия: 13 когнитивных операций и 9 процессов БА. |
 | `docs/ba-ecosystem.md` | Экосистема работы БА: граф связей, матрицы, процессная карта, классификации, примеры запуска и стратегия перехода к агентам. |
 | `docs/rfc-hub-integration.md` | RFC: процесс и критерии переноса практик в Хаб. |
@@ -184,6 +185,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как согласовывать документы по разделам | [`governance/approval-contract.md`](governance/approval-contract.md) |
 | Как генерировать комплексный BCREQ-FR | [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md) |
+| Как устроен lifecycle Golden Examples | [`kb/golden-examples/CONTRACT.md`](kb/golden-examples/CONTRACT.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |
 | Карта активных артефактов и связей | [`governance/artifact-map.md`](governance/artifact-map.md) |
