@@ -20,11 +20,11 @@ FORBIDDEN_RUNTIME_TEXT = (
 
 REQUIRED_CONTRACT_TEXT = (
     "status: active",
-    "version: 0.3",
+    "version: 0.4",
     "updated: 2026-06-23",
     "Правила RFC-184 встроены в §3 (BCREQ-FR-GEN-SCOPE-01/02)",
-    'comment: "Вложения из PR #202"',
-    'status: "temporary"',
+    'status: "no-golden-standard"',
+    "kb/golden-examples/CONTRACT.md",
     "kb/industry-taxonomy/registry.json",
     "kb/mango-taxonomy/registry.json",
     "BCREQ-FR-GEN-SCOPE-01",
@@ -127,8 +127,12 @@ def check_frontmatter() -> list[str]:
     source_attachments = section_between(fm, "source_attachments:", "integrates:")
     if "github.com/user-attachments" in source_attachments:
         errors.append(f"{CONTRACT}: source_attachments must not use raw GitHub attachment URLs")
-    if 'comment: "Вложения из PR #202"' not in source_attachments:
-        errors.append(f"{CONTRACT}: source_attachments must keep PR #202 temporary trace placeholder")
+    if '- status: "no-golden-standard"' not in source_attachments:
+        errors.append(f"{CONTRACT}: source_attachments must use no-golden-standard placeholder")
+    if "comment:" in source_attachments:
+        errors.append(f"{CONTRACT}: source_attachments must use YAML comments, not comment: data fields")
+    if "path:" in source_attachments or "sha:" in source_attachments:
+        errors.append(f"{CONTRACT}: path+sha requires approved Golden Example")
 
     integrates = section_between(fm, "integrates:", "validated_by:")
     for forbidden in FORBIDDEN_RUNTIME_TEXT:
@@ -206,7 +210,13 @@ def check_project_wiring() -> list[str]:
 def main() -> int:
     errors: list[str] = []
     errors += require_text(CONTRACT, *REQUIRED_CONTRACT_TEXT)
-    errors += reject_text(CONTRACT, "github.com/user-attachments")
+    errors += reject_text(
+        CONTRACT,
+        "github.com/user-attachments",
+        'comment: "Вложения из PR #202"',
+        'status: "temporary"',
+        'trace: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"',
+    )
     errors += check_frontmatter()
     errors += check_runtime_inputs()
     errors += check_embedded_scope_rules()
