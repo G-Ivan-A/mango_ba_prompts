@@ -4,8 +4,9 @@ version: 0.1
 updated: 2026-06-23
 issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/199
 source_artifacts:
-  - https://github.com/user-attachments/files/29252399/default.txt
-  - https://github.com/user-attachments/files/29252400/1027.txt
+  # TODO: заменить на permalink после задачи Golden Examples.
+  # Временно: вложения default.txt и 1027.txt из PR #202.
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202 (см. вложения default.txt и 1027.txt)"
 scope: bcreq-1027-section-4-3
 ai-generated: true
 ---
