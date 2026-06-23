@@ -1,0 +1,33 @@
+run_id: RUN-0013
+process: bcreq-1027
+run_type: business-task
+version: "0.1"
+date: "2026-06-24"
+author: human+LLM
+model: gpt-4
+status: draft
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/207"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/199"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/1027"
+related_artifacts:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"
+  - "docs/analysis/executable-contracts-and-rfc-problems.md"
+contract_used: "governance/bcreq-fr-generation-contract.md"
+api_reference:
+  - "POST /vpbx/stats/calls/result"
+source_paths:
+  - runs/2026/RUN-0013/outputs/section-4-3-api.md
+  - kb/mango-product-docs/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md
+inputs:
+  - inputs/issue-1027.md
+outputs:
+  - "outputs/section-4-3-api.md"
+logs:
+  - logs/generation.log
+feedback:
+  - feedback/corrections.md
+  - feedback/contract-issues.md
+corrections_applied:
+  - "API изменён с MD на VPBX (POST /vpbx/stats/calls/result)"
+  - "Структура runs исправлена согласно CONTRACT.md"

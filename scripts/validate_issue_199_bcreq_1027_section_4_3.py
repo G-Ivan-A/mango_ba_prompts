@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression check for issue #199: BCREQ-1027 section 4.3 API methods."""
+"""Regression check for issue #199/#207: BCREQ-1027 section 4.3 API methods."""
 
 from __future__ import annotations
 
@@ -8,7 +8,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-OUTPUT = "runs/bcreq-1027/artifacts/section-4-3-api.md"
+OUTPUT = "runs/2026/RUN-0013/outputs/section-4-3-api.md"
 VALIDATOR = "scripts/validate_issue_199_bcreq_1027_section_4_3.py"
 TEMPORARY_ATTACHMENT_URLS = tuple(
     "https://github.com/" + f"user-attachments/files/{file_id}/{filename}"
@@ -19,24 +19,22 @@ TEMPORARY_ATTACHMENT_URLS = tuple(
 )
 
 REQUIRED_OUTPUT_TEXT = (
+    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/207",
     "https://github.com/G-Ivan-A/mango_ba_prompts/issues/199",
     "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202",
-    "TODO: заменить на permalink после задачи Golden Examples",
     "## 4.3. API-методы",
-    "POST /events/md/onAppealClose",
-    "POST /vpbx/cc/appeals/create-closed-appeals",
-    "`completion_method`",
-    "`with_response`",
-    "`without_response`",
+    "POST /vpbx/stats/calls/result",
+    "`key`",
     "`result`",
-    "`Обработано`",
-    "`null`",
+    "`status`",
+    "`data`",
+    "`context_status`",
+    "`talk_duration`",
+    "`call_answer_time`",
+    "`call_end_time`",
     "RFC-184-S1",
     "RFC-184-S2",
-    "contact-center.agent-workspace",
-    "digital-channels.omnichannel-messaging",
-    "cc-agent-call-handling-module",
-    "dialog-api-messaging-service",
+    "vats-core",
     "Резюме изменений",
     "Раздел 3 не формируется",
 )
@@ -44,16 +42,20 @@ REQUIRED_OUTPUT_TEXT = (
 FORBIDDEN_OUTPUT_TEXT = (
     *TEMPORARY_ATTACHMENT_URLS,
     "… доработать",
-    "POST /vpbx/stats/calls/result",
+    "POST /events/md/onAppealClose",
+    "POST /vpbx/cc/appeals/create-closed-appeals",
     "post_call_processing_campaing_time",
     "cc/qm/mark-stats/result",
+    "`completion_method`",
+    "`with_response`",
+    "`without_response`",
     "## 3.",
     "# 3.",
     "3. Описание разрабатываемого решения",
 )
 
 REQUIRED_PROJECT_TEXT = {
-    "CHANGELOG.md": ("Issue #199", OUTPUT, VALIDATOR),
+    "CHANGELOG.md": ("Issue #199", "Issue #207", OUTPUT, VALIDATOR),
     ".github/workflows/github-pages.yml": (
         "Validate issue #199 BCREQ-1027 section 4.3 API methods",
         VALIDATOR,

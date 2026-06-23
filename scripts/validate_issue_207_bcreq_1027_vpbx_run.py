@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression check for issue #205/#207: BCREQ-1027 runs/ artifact structure."""
+"""Regression check for issue #207: BCREQ-1027 canonical run and VPBX API."""
 
 from __future__ import annotations
 
@@ -11,28 +11,27 @@ ROOT = Path(__file__).resolve().parents[1]
 RUN_DIR = "runs/2026/RUN-0013"
 METADATA = f"{RUN_DIR}/metadata.yaml"
 INPUT = f"{RUN_DIR}/inputs/issue-1027.md"
-ARTIFACT = f"{RUN_DIR}/outputs/section-4-3-api.md"
+OUTPUT = f"{RUN_DIR}/outputs/section-4-3-api.md"
 GENERATION_LOG = f"{RUN_DIR}/logs/generation.log"
 CORRECTIONS = f"{RUN_DIR}/feedback/corrections.md"
 CONTRACT_ISSUES = f"{RUN_DIR}/feedback/contract-issues.md"
-OLD_ARTIFACT = "outputs/" + "bcreq-1027-section-4-3.md"
 OLD_RUN_DIR = "runs/bcreq-1027"
-ISSUE_205_VALIDATOR = "scripts/validate_issue_205_bcreq_1027_runs_structure.py"
-ISSUE_199_VALIDATOR = "scripts/validate_issue_199_bcreq_1027_section_4_3.py"
-ISSUE_207_VALIDATOR = "scripts/validate_issue_207_bcreq_1027_vpbx_run.py"
+VALIDATOR = "scripts/validate_issue_207_bcreq_1027_vpbx_run.py"
 
-TEMPORARY_ATTACHMENT_URLS = tuple(
-    "https://github.com/" + f"user-attachments/files/{file_id}/{filename}"
-    for file_id, filename in (
-        ("29252399", "default.txt"),
-        ("29252400", "1027.txt"),
-    )
+FORBIDDEN_ARTIFACT_TEXT = (
+    "POST /events/md/onAppealClose",
+    "POST /vpbx/cc/appeals/create-closed-appeals",
+    "`completion_method`",
+    "`with_response`",
+    "`without_response`",
+    "API MD",
 )
 
 REQUIRED_METADATA_TEXT = (
     "run_id: RUN-0013",
     "process: bcreq-1027",
     "run_type: business-task",
+    'version: "0.1"',
     'date: "2026-06-24"',
     "author: human+LLM",
     "model: gpt-4",
@@ -45,34 +44,46 @@ REQUIRED_METADATA_TEXT = (
 )
 
 REQUIRED_ARTIFACT_TEXT = (
-    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/207",
-    "https://github.com/G-Ivan-A/mango_ba_prompts/issues/199",
-    "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202",
+    "# BCREQ-1027. Раздел 4.3: API-методы",
     "## 4.3. API-методы",
+    "4.3.1.",
+    "4.3.2.",
+    "4.3.3.",
+    "4.3.4.",
+    "4.3.5.",
+    "4.3.6.",
+    "4.3.7.",
     "POST /vpbx/stats/calls/result",
     "`key`",
+    "`result`",
     "`status`",
     "`data`",
     "`context_status`",
+    "`talk_duration`",
     "`call_answer_time`",
-    "RFC-184-S1",
-    "RFC-184-S2",
+    "`call_end_time`",
+    "kb/mango-product-docs/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md",
 )
 
 REQUIRED_PROJECT_TEXT = {
+    "runs/REGISTRY.md": (
+        "RUN-0013",
+        "2026-06-24",
+        "bcreq-1027",
+        "2026/RUN-0013/outputs/section-4-3-api.md",
+    ),
     "CHANGELOG.md": (
         "Issue #207",
-        ARTIFACT,
+        OUTPUT,
         "POST /vpbx/stats/calls/result",
     ),
     ".github/workflows/github-pages.yml": (
-        "Validate issue #205 BCREQ-1027 runs structure",
-        ISSUE_205_VALIDATOR,
         "Validate issue #207 BCREQ-1027 VPBX run",
-        ISSUE_207_VALIDATOR,
+        VALIDATOR,
     ),
-    ISSUE_199_VALIDATOR: (ARTIFACT, "POST /vpbx/stats/calls/result"),
-    "runs/REGISTRY.md": ("RUN-0013", "bcreq-1027", "outputs/section-4-3-api.md"),
+    "runs/stats/by-type.md": ("Всего: 13", "RUN-0013", "bcreq-1027"),
+    "runs/stats/by-date.md": ("2026-06 | 8", "RUN-0013", "2026-06-24"),
+    "runs/stats/by-process.md": ("Уникальных процессов: 13", "bcreq-1027", "RUN-0013"),
 }
 
 
@@ -85,14 +96,13 @@ def require_path(path: str) -> list[str]:
 
 
 def reject_path(path: str) -> list[str]:
-    return [f"{path}: old path must be removed"] if (ROOT / path).exists() else []
+    return [f"{path}: obsolete path must be removed"] if (ROOT / path).exists() else []
 
 
 def require_text(path: str, *needles: str) -> list[str]:
     errors = require_path(path)
     if errors:
         return errors
-
     text = read_text(path)
     return [f"{path}: missing {needle!r}" for needle in needles if needle not in text]
 
@@ -101,54 +111,30 @@ def reject_text(path: str, *needles: str) -> list[str]:
     errors = require_path(path)
     if errors:
         return errors
-
     text = read_text(path)
     return [f"{path}: forbidden text {needle!r}" for needle in needles if needle in text]
 
 
-def check_paths() -> list[str]:
-    errors: list[str] = []
-    errors += require_path(RUN_DIR)
-    errors += require_path(METADATA)
-    errors += require_path(INPUT)
-    errors += require_path(ARTIFACT)
-    errors += require_path(GENERATION_LOG)
-    errors += require_path(CORRECTIONS)
-    errors += require_path(CONTRACT_ISSUES)
-    errors += reject_path(OLD_ARTIFACT)
-    errors += reject_path(OLD_RUN_DIR)
-    return errors
-
-
-def check_project_references() -> list[str]:
-    errors: list[str] = []
-    for path, needles in REQUIRED_PROJECT_TEXT.items():
-        errors += require_text(path, *needles)
-        errors += reject_text(path, OLD_ARTIFACT)
-    return errors
-
-
 def main() -> int:
     errors: list[str] = []
-    errors += check_paths()
+    for path in (RUN_DIR, METADATA, INPUT, OUTPUT, GENERATION_LOG, CORRECTIONS, CONTRACT_ISSUES):
+        errors += require_path(path)
+    errors += reject_path(OLD_RUN_DIR)
     errors += require_text(METADATA, *REQUIRED_METADATA_TEXT)
-    errors += require_text(ARTIFACT, *REQUIRED_ARTIFACT_TEXT)
-    errors += reject_text(
-        ARTIFACT,
-        "POST /events/md/onAppealClose",
-        "POST /vpbx/cc/appeals/create-closed-appeals",
-        "`completion_method`",
-    )
-    errors += reject_text(ARTIFACT, *TEMPORARY_ATTACHMENT_URLS)
-    errors += check_project_references()
+    errors += require_text(OUTPUT, *REQUIRED_ARTIFACT_TEXT)
+    errors += reject_text(OUTPUT, *FORBIDDEN_ARTIFACT_TEXT)
+    errors += require_text(CORRECTIONS, "API VPBX", "POST /vpbx/stats/calls/result")
+    errors += require_text(CONTRACT_ISSUES, "runs/CONTRACT.md", "2-фактор")
+    for path, needles in REQUIRED_PROJECT_TEXT.items():
+        errors += require_text(path, *needles)
 
     if errors:
-        print("Issue #205 BCREQ-1027 runs structure validation failed:")
+        print("Issue #207 BCREQ-1027 VPBX run validation failed:")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("Issue #205 BCREQ-1027 runs structure validation passed.")
+    print("Issue #207 BCREQ-1027 VPBX run validation passed.")
     return 0
 
 

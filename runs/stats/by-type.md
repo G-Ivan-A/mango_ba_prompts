@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-22
+updated: 2026-06-24
 ai-generated: true
 type: statistics
 scope: runs
@@ -9,7 +9,7 @@ scope: runs
 
 # Статистика runs/ по типам
 
-Всего: 12 run'ов.
+Всего: 13 run'ов.
 
 ## 🧪 `experiment` — эксперимент
 
@@ -50,10 +50,11 @@ scope: runs
 
 ## 💼 `business-task` — бизнес-задача
 
-Решение конкретных BCREQ-задач. Всего: 3.
+Решение конкретных BCREQ-задач. Всего: 4.
 
 | Run | Дата | Процесс | Краткое описание |
 | --- | --- | --- | --- |
 | [`RUN-0010`](../2026/RUN-0010/) | 2026-06-17 | bcreq-1025-email-routing | Анализ и артефакты по email routing. |
 | [`RUN-0011`](../2026/RUN-0011/) | 2026-06-18 | multichannel-agent-workload | Решение задачи по workload мультиканального агента. |
 | [`RUN-0012`](../2026/RUN-0012/) | 2026-06-22 | bcreq-180-mt-group-video-call | ФТ группового звонка Mango Talker на основе видеоконференций. |
+| [`RUN-0013`](../2026/RUN-0013/) | 2026-06-24 | bcreq-1027 | Раздел 4.3 API-методов на основе VPBX статистики звонков. |
