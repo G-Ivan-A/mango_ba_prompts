@@ -16,10 +16,14 @@ ai-generated: true
 ### Added — Issue #193 контракт AI-агента для согласования документов
 
 - Добавлен исполнимый governance-контракт
-  [`governance/contracts/approval-contract.md`](governance/contracts/approval-contract.md):
+  [`governance/approval-contract.md`](governance/approval-contract.md):
   подготовка к согласованию, атомарное ревью по разделам, обработка отсутствующей
   конкретики, завершение, особые случаи, роль AI и применимость к RFC/ADR/
   standards/research/analysis documents.
+- Контракт уточнён по обратной связи из PR #194: размещён в корне
+  `governance/`, выбирает блок согласования на уровне H1/H2, требует загрузки
+  читаемых документов в рабочий контекст, запрещает галлюцинации разделов и
+  добавляет критическую оценку с рекомендацией согласовать / не согласовать.
 - Контракт протестирован сухим прогоном на RFC Industry Taxonomy:
   [`docs/analysis/approval-contract-test-industry-rfc.md`](docs/analysis/approval-contract-test-industry-rfc.md).
   Тест формирует первый пакет согласования и останавливается до раздела 2, чтобы
