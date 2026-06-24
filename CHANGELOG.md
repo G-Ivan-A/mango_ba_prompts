@@ -13,6 +13,18 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #221 аудит naming convention
+
+- Добавлен аудит
+  [`docs/analysis/naming-convention-audit.md`](docs/analysis/naming-convention-audit.md)
+  по uppercase, camelCase/PascalCase, snake_case и special-character случаям в
+  tracked paths репозитория; отчёт сопоставляет каждый случай с регулирующим
+  контрактом и гипотезой причины.
+- Добавлен воспроизводимый scan helper
+  [`experiments/issue-221/naming-audit-scan.py`](experiments/issue-221/naming-audit-scan.py)
+  для повторной проверки инвентаря без переименования файлов и без изменения
+  стандартов.
+
 ### Fixed — Issue #217 контракт logs для runs
 
 - `runs/CONTRACT.md` получил kebab-case идентификатор `runs-contract`, явный
