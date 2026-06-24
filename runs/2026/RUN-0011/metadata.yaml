@@ -22,6 +22,7 @@ outputs:
   - outputs/steps/step-4-story.md
   - outputs/steps/step-5-options.md
 logs:
+  - logs/business-task-log.md
   - logs/experiment-log.md
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/109

@@ -1,14 +1,16 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-06-24
 ai-generated: true
 type: standard
 scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/217"
 related_artifacts:
   - "runs/README.md"
+  - "runs/CONTRACT.md"
 ---
 
 # Стандарт контракта Run
@@ -27,6 +29,7 @@ runs/YYYY/RUN-XXXX/
   outputs/
   feedback/
   logs/
+    <run-type>-log.md
 ```
 
 Каталог `runs/YYYY/RUN-XXXX/` MUST содержать все четыре подкаталога, даже если
@@ -49,6 +52,7 @@ MUST совпадать с именем каталога.
 | --- | --- |
 | `run_id` | MUST быть вида `RUN-XXXX` и совпадать с каталогом. |
 | `process` | MUST называть процесс, сценарий или эксперимент. |
+| `run_type` | MUST быть одним из `experiment`, `generation`, `validation`, `documentation`, `business-task`. |
 | `version` | MUST фиксировать версию записи или основного результата. |
 | `date` | MUST быть датой `YYYY-MM-DD`. |
 | `author` | MUST указывать автора фиксации. |
@@ -61,6 +65,24 @@ MUST совпадать с именем каталога.
 - `inputs`, `outputs`, `logs` — ключевые файлы внутри run.
 - `related_issues`, `related_artifacts`, `related_runs` — трассировка.
 
+## Типы и обязательные Markdown-логи
+
+Каждый факт прохода MUST иметь основной Markdown-лог в `logs/`, независимо от
+того, завершился проход успешно, неуспешно или частично успешно. `.gitkeep` не
+считается логом. Технические журналы других форматов разрешены только как
+дополнительные файлы.
+
+| `run_type` | Основной Markdown-лог |
+| --- | --- |
+| `experiment` | `logs/experiment-log.md` |
+| `generation` | `logs/generation-log.md` |
+| `validation` | `logs/validation-log.md` |
+| `documentation` | `logs/documentation-log.md` |
+| `business-task` | `logs/business-task-log.md` |
+
+`metadata.yaml` MUST содержать `logs:` и ссылку на основной Markdown-лог. Лог
+MUST фиксировать ход выполнения, ключевые действия, блокеры и итоговый статус.
+
 ## Назначение подкаталогов
 
 | Подкаталог | Правило |
@@ -68,7 +90,7 @@ MUST совпадать с именем каталога.
 | `inputs/` | SHOULD содержать входные данные, доступные для хранения в репозитории. |
 | `outputs/` | SHOULD содержать результаты и промежуточные артефакты выполнения. |
 | `feedback/` | SHOULD содержать обратную связь, review notes и решения по результату. |
-| `logs/` | SHOULD содержать экспериментальные логи, метрики и трассировку. |
+| `logs/` | MUST содержать основной Markdown-лог; MAY содержать метрики и трассировку. |
 
 ## Миграция существующих результатов
 
@@ -85,6 +107,7 @@ MUST совпадать с именем каталога.
 - `runs/README.md` описывает контракт и индекс текущих записей.
 - Каждый Run содержит `metadata.yaml`, `inputs/`, `outputs/`, `feedback/`, `logs/`.
 - Все обязательные поля `metadata.yaml` заполнены.
+- Каждый Run содержит основной Markdown-лог, соответствующий `run_type`.
 - Перенесённые результаты отсутствуют по старым путям.
 - `scripts/generate-pages-data.mjs` читает evidence из `runs/`.
 - CI вызывает `scripts/validate_issue_123_runs_contract.py`.
@@ -93,4 +116,5 @@ MUST совпадать с именем каталога.
 
 ```bash
 python3 scripts/validate_issue_123_runs_contract.py
+python3 scripts/validate_issue_217_runs_log_contract.py
 ```

@@ -10,6 +10,8 @@ source_paths:
   - runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md
 outputs:
   - outputs/prompts-audit-2026-05-26.md
+logs:
+  - logs/validation-log.md
 related_runs:
   - RUN-0001
   - RUN-0002

@@ -10,5 +10,7 @@ source_paths:
   - runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md
 outputs:
   - outputs/session-debug-summarizer-2026-06-13.md
+logs:
+  - logs/documentation-log.md
 related_artifacts:
   - prompts/session-debug-documentation-oneshot.md

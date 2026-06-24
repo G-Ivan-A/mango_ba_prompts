@@ -94,7 +94,7 @@ def check_docs() -> list[str]:
         "stats/by-type.md",
     )
     errors += require_text("runs/CONTRACT.md", "run_type", "runs/YYYY/RUN-XXXX/", "metadata.yaml")
-    errors += require_text("runs/REGISTRY.md", "| Run | Дата | Тип | Процесс | Основной результат |")
+    errors += require_text("runs/REGISTRY.md", "| Run | Дата | Тип | Процесс | Основной результат | Лог |")
     for run_id, run_type in RUN_TYPES.items():
         errors += require_text("runs/REGISTRY.md", run_id, run_type)
     for run_type, label in TYPE_LABELS.items():

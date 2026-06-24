@@ -12,6 +12,8 @@ source_paths:
 outputs:
   - outputs/2026-06-17-bcreq-1025-email-routing.md
   - outputs/analysis-bcreq-1025-2026-06-17.md
+logs:
+  - logs/business-task-log.md
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/107
 related_artifacts:

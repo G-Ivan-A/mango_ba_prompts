@@ -10,6 +10,8 @@ source_paths:
   - runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md
 outputs:
   - outputs/tz-stats-prototype-2026-05.md
+logs:
+  - logs/experiment-log.md
 related_artifacts:
   - prompts/archive/tz-stats-generator-legacy.md
   - prompts/archive/tz-stats-generator-simple-legacy.md
