@@ -10,6 +10,8 @@ source_paths:
   - runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md
 outputs:
   - outputs/kb-citation-check-2026-06-16.md
+logs:
+  - logs/validation-log.md
 related_artifacts:
   - standards/kb-standard.md
   - docs/adr/007-kb-standard.md

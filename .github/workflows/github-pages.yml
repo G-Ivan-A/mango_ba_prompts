@@ -37,6 +37,9 @@ jobs:
       - name: Validate issue #133 runs restructure
         run: python3 scripts/validate_issue_133_runs_restructure.py
 
+      - name: Validate issue #217 runs log contract
+        run: python3 scripts/validate_issue_217_runs_log_contract.py
+
       - name: Validate issue #125 cascading context loading
         run: python3 scripts/validate_issue_125_cascading_context.py
 

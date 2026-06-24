@@ -24,6 +24,7 @@ inputs:
 outputs:
   - "outputs/section-4-3-api.md"
 logs:
+  - logs/business-task-log.md
   - logs/generation.log
 feedback:
   - feedback/corrections.md

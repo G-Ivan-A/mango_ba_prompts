@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #217 контракт logs для runs
+
+- `runs/CONTRACT.md` получил kebab-case идентификатор `runs-contract`, явный
+  заголовок таблицы `Типы run'ов (run_type)` и MUST-правило: каждый факт
+  прохода создаёт основной Markdown-лог в `logs/`, а `.gitkeep` не считается
+  логом.
+- Все существующие `RUN-0001`..`RUN-0013` получили канонический Markdown-лог по
+  `run_type`, а `metadata.yaml` теперь содержит `logs:` со ссылкой на основной
+  лог; `runs/REGISTRY.md` показывает отдельную колонку `Лог`.
+- Исследование контрактов записано в
+  [`docs/analysis/runs-contract-log-policy-audit.md`](docs/analysis/runs-contract-log-policy-audit.md);
+  добавлен регрессионный валидатор
+  [`scripts/validate_issue_217_runs_log_contract.py`](scripts/validate_issue_217_runs_log_contract.py),
+  подключённый к GitHub Pages workflow.
+
 ### Fixed — Issue #215 контракт BCREQ-FR в 100% YAML
 
 - Контракт

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T08:03:39.925Z",
+  "generatedAt": "2026-06-24T07:43:25.175Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 6
   },
   "tests": {
-    "logs": 24,
-    "total": 136,
+    "logs": 37,
+    "total": 147,
     "coveredPrompts": 27
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 136,
+  "totalChecked": 147,
   "testsPassed": {
     "covered": 27,
     "total": 30,
@@ -35,13 +35,13 @@
     {
       "label": "Формирование ФТ/ТЗ",
       "emoji": "📋",
-      "checks": 97,
+      "checks": 101,
       "coveredPrompts": 18
     },
     {
       "label": "Формирование UC/US",
       "emoji": "🎯",
-      "checks": 80,
+      "checks": 88,
       "coveredPrompts": 10
     },
     {
@@ -53,20 +53,20 @@
     {
       "label": "Помощь ПО/ПМ",
       "emoji": "🤝",
-      "checks": 9,
+      "checks": 10,
       "coveredPrompts": 5
+    },
+    {
+      "label": "Статистика",
+      "emoji": "📈",
+      "checks": 8,
+      "coveredPrompts": 2
     },
     {
       "label": "Валидация ФТ/ТЗ",
       "emoji": "✅",
       "checks": 6,
       "coveredPrompts": 3
-    },
-    {
-      "label": "Статистика",
-      "emoji": "📈",
-      "checks": 6,
-      "coveredPrompts": 2
     },
     {
       "label": "Визуализация UML/BPMN",
@@ -96,16 +96,16 @@
         {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         },
         {
           "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         },
         {
           "id": "mango-glossary-context-understanding-oneshot",
@@ -194,30 +194,30 @@
         {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         },
         {
           "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         },
         {
           "id": "mango-user-story-generator-legacy",
           "file": "user-story-generator-legacy.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         },
         {
           "id": "mango-user-story-generator-simple-legacy",
           "file": "user-story-generator-simple-legacy.md",
-          "tests": 11,
+          "tests": 12,
           "feedback": 0,
-          "usage": 11
+          "usage": 12
         }
       ]
     },
@@ -241,15 +241,15 @@
           "usage": 3
         },
         {
-          "id": "mango-asr-ingestion-legacy",
-          "file": "asr-ingestion-legacy.md",
-          "tests": 1,
+          "id": "mango-session-debug-documentation-oneshot",
+          "file": "session-debug-documentation-oneshot.md",
+          "tests": 2,
           "feedback": 0,
-          "usage": 1
+          "usage": 2
         },
         {
-          "id": "mango-asr-ingestion-oneshot",
-          "file": "asr-ingestion-oneshot.md",
+          "id": "mango-asr-ingestion-legacy",
+          "file": "asr-ingestion-legacy.md",
           "tests": 1,
           "feedback": 0,
           "usage": 1
@@ -264,16 +264,16 @@
         {
           "id": "mango-tz-stats-generator-legacy",
           "file": "tz-stats-generator-legacy.md",
-          "tests": 3,
+          "tests": 4,
           "feedback": 0,
-          "usage": 3
+          "usage": 4
         },
         {
           "id": "mango-tz-stats-generator-simple-legacy",
           "file": "tz-stats-generator-simple-legacy.md",
-          "tests": 3,
+          "tests": 4,
           "feedback": 0,
-          "usage": 3
+          "usage": 4
         }
       ]
     }
@@ -288,8 +288,9 @@
         "Формирование UC/US",
         "Формирование ФТ/ТЗ"
       ],
-      "tests": 11,
+      "tests": 12,
       "testFiles": [
+        "runs/2026/RUN-0002/logs/generation-log.md",
         "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
         "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
@@ -304,7 +305,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 11
+      "usage": 12
     },
     {
       "id": "mango-us-modeling-stepwise",
@@ -315,8 +316,9 @@
         "Формирование UC/US",
         "Формирование ФТ/ТЗ"
       ],
-      "tests": 11,
+      "tests": 12,
       "testFiles": [
+        "runs/2026/RUN-0002/logs/generation-log.md",
         "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
         "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
@@ -331,7 +333,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 11
+      "usage": 12
     },
     {
       "id": "mango-user-story-generator-legacy",
@@ -341,8 +343,9 @@
       "processes": [
         "Формирование UC/US"
       ],
-      "tests": 11,
+      "tests": 12,
       "testFiles": [
+        "runs/2026/RUN-0002/logs/generation-log.md",
         "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
         "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
@@ -357,7 +360,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 11
+      "usage": 12
     },
     {
       "id": "mango-user-story-generator-simple-legacy",
@@ -367,8 +370,9 @@
       "processes": [
         "Формирование UC/US"
       ],
-      "tests": 11,
+      "tests": 12,
       "testFiles": [
+        "runs/2026/RUN-0002/logs/generation-log.md",
         "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
         "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
@@ -383,7 +387,7 @@
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 11
+      "usage": 12
     },
     {
       "id": "mango-glossary-context-understanding-oneshot",
@@ -482,6 +486,52 @@
       "usage": 7
     },
     {
+      "id": "mango-uc-modeling-oneshot",
+      "file": "uc-modeling-oneshot.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 7,
+      "testFiles": [
+        "runs/2026/RUN-0003/logs/generation-log.md",
+        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-4-story.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 7
+    },
+    {
+      "id": "mango-uc-modeling-stepwise",
+      "file": "uc-modeling-stepwise.md",
+      "status": "draft",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US",
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 7,
+      "testFiles": [
+        "runs/2026/RUN-0003/logs/generation-log.md",
+        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-4-story.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 7
+    },
+    {
       "id": "mango-constraints-documentation-oneshot",
       "file": "constraints-documentation-oneshot.md",
       "status": "draft",
@@ -524,48 +574,80 @@
       "usage": 6
     },
     {
-      "id": "mango-uc-modeling-oneshot",
-      "file": "uc-modeling-oneshot.md",
-      "status": "draft",
-      "operation": "modeling",
+      "id": "mango-tz-stats-generator-legacy",
+      "file": "tz-stats-generator-legacy.md",
+      "status": "archived",
+      "operation": "quality",
       "processes": [
-        "Формирование UC/US",
-        "Формирование ФТ/ТЗ"
+        "Статистика"
       ],
-      "tests": 6,
+      "tests": 4,
       "testFiles": [
-        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0001/logs/experiment-log.md",
+        "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-4-story.md"
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 6
+      "usage": 4
     },
     {
-      "id": "mango-uc-modeling-stepwise",
-      "file": "uc-modeling-stepwise.md",
-      "status": "draft",
-      "operation": "modeling",
+      "id": "mango-tz-stats-generator-simple-legacy",
+      "file": "tz-stats-generator-simple-legacy.md",
+      "status": "archived",
+      "operation": "quality",
       "processes": [
-        "Формирование UC/US",
-        "Формирование ФТ/ТЗ"
+        "Статистика"
       ],
-      "tests": 6,
+      "tests": 4,
       "testFiles": [
-        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0001/logs/experiment-log.md",
+        "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
         "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-4-story.md"
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 6
+      "usage": 4
+    },
+    {
+      "id": "mango-usecase-stepwise-generator-legacy",
+      "file": "usecase-stepwise-generator-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 4,
+      "testFiles": [
+        "runs/2026/RUN-0003/logs/generation-log.md",
+        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 4
+    },
+    {
+      "id": "mango-usecase-stepwise-generator-simple-legacy",
+      "file": "usecase-stepwise-generator-simple-legacy.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Формирование UC/US"
+      ],
+      "tests": 4,
+      "testFiles": [
+        "runs/2026/RUN-0003/logs/generation-log.md",
+        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
+        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 4
     },
     {
       "id": "mango-questions-customer-understanding-legacy",
@@ -662,78 +744,6 @@
       "usage": 3
     },
     {
-      "id": "mango-tz-stats-generator-legacy",
-      "file": "tz-stats-generator-legacy.md",
-      "status": "archived",
-      "operation": "quality",
-      "processes": [
-        "Статистика"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
-        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
-    },
-    {
-      "id": "mango-tz-stats-generator-simple-legacy",
-      "file": "tz-stats-generator-simple-legacy.md",
-      "status": "archived",
-      "operation": "quality",
-      "processes": [
-        "Статистика"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
-        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
-    },
-    {
-      "id": "mango-usecase-stepwise-generator-legacy",
-      "file": "usecase-stepwise-generator-legacy.md",
-      "status": "archived",
-      "operation": "modeling",
-      "processes": [
-        "Формирование UC/US"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
-        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
-    },
-    {
-      "id": "mango-usecase-stepwise-generator-simple-legacy",
-      "file": "usecase-stepwise-generator-simple-legacy.md",
-      "status": "archived",
-      "operation": "modeling",
-      "processes": [
-        "Формирование UC/US"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
-        "runs/2026/RUN-0004/outputs/prompts-audit-2026-05-26.md",
-        "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
-    },
-    {
       "id": "mango-fr-validation-legacy",
       "file": "fr-validation-legacy.md",
       "status": "draft",
@@ -789,6 +799,23 @@
       "usage": 2
     },
     {
+      "id": "mango-session-debug-documentation-oneshot",
+      "file": "session-debug-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0006/logs/documentation-log.md",
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
       "id": "mango-asr-ingestion-legacy",
       "file": "asr-ingestion-legacy.md",
       "status": "draft",
@@ -817,22 +844,6 @@
       "tests": 1,
       "testFiles": [
         "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 1
-    },
-    {
-      "id": "mango-session-debug-documentation-oneshot",
-      "file": "session-debug-documentation-oneshot.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Помощь ПО/ПМ"
-      ],
-      "tests": 1,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],

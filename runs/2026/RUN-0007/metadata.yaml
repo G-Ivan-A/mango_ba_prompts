@@ -10,6 +10,8 @@ source_paths:
   - runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md
 outputs:
   - outputs/fr-generation-1027-live_2026-06-16.md
+logs:
+  - logs/generation-log.md
 related_artifacts:
   - docs/analysis/experiment-1027-analysis.md
   - prompts/fr-documentation-stepwise.md

@@ -28,9 +28,11 @@ related_artifacts:
 - Найти существующий run: откройте [`REGISTRY.md`](REGISTRY.md) или статистику
   по типам, датам и процессам.
 - Создать новый run: заведите каталог `runs/YYYY/RUN-XXXX/` с
-  `metadata.yaml`, `inputs/`, `outputs/`, `feedback/` и `logs/`.
+  `metadata.yaml`, `inputs/`, `outputs/`, `feedback/` и `logs/`; в `logs/`
+  сразу создайте основной Markdown-лог по `run_type`.
 - Минимальные поля `metadata.yaml`: `run_id`, `process`, `run_type`,
   `version`, `date`, `author`, `model`, `status`.
+- В `metadata.yaml` поле `logs:` должно ссылаться на основной Markdown-лог.
 - Проверить контракт: сверяйтесь с [`CONTRACT.md`](CONTRACT.md) и запускайте
   локальную валидацию.
 
@@ -42,6 +44,7 @@ sed -n '1,80p' runs/REGISTRY.md
 sed -n '1,120p' runs/stats/by-type.md
 python3 scripts/validate_issue_123_runs_contract.py
 python3 scripts/validate_issue_133_runs_restructure.py
+python3 scripts/validate_issue_217_runs_log_contract.py
 ```
 
 ## Навигация
