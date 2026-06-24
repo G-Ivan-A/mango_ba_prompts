@@ -136,6 +136,16 @@ EXPECTED_RUNS = {
             "runs/bcreq-1027/artifacts/section-4-3-api.md",
         ],
     },
+    "RUN-0014": {
+        "year": "2026",
+        "files": [
+            "inputs/issue-226.md",
+            "inputs/research-sources.md",
+            "outputs/rfc-generation-contract-test-report.md",
+            "logs/validation-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

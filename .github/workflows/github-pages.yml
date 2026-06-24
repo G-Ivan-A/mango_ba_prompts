@@ -61,6 +61,9 @@ jobs:
       - name: Validate issue #215 BCREQ-FR YAML contract
         run: python3 scripts/validate_issue_215_bcreq_fr_yaml_contract.py
 
+      - name: Validate issue #226 RFC generation contract
+        run: python3 scripts/validate_issue_226_rfc_generation_contract.py
+
       - name: Validate issue #211 Golden Examples contract
         run: python3 scripts/validate_issue_211_golden_examples_contract.py
 

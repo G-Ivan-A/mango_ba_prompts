@@ -1,0 +1,25 @@
+run_id: RUN-0014
+process: rfc-generation-contract-validation
+run_type: validation
+version: "0.1"
+date: "2026-06-24"
+author: OpenAI Codex
+model: gpt-5-codex
+status: success
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/226"
+related_artifacts:
+  - "governance/rfc-generation-contract.md"
+  - "governance/contracts-registry.md"
+  - "docs/analysis/executable-contracts-and-rfc-problems.md"
+source_paths:
+  - governance/rfc-generation-contract.md
+  - runs/2026/RUN-0014/outputs/rfc-generation-contract-test-report.md
+inputs:
+  - inputs/issue-226.md
+  - inputs/research-sources.md
+outputs:
+  - outputs/rfc-generation-contract-test-report.md
+logs:
+  - logs/validation-log.md
+
