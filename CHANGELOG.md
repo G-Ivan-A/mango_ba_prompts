@@ -13,6 +13,20 @@ ai-generated: true
 
 ## Unreleased
 
+### Fixed — Issue #219 область ФТ RUN-0012
+
+- ФТ
+  [`runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md`](runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md)
+  актуализировано по вложениям issue #219: из раздела 4 исключены требования,
+  описывающие текущую функциональность ВКС, включая список участников,
+  администрирование участников и подключение по ссылке.
+- В scope оставлена дельта: быстрый старт группового звонка без общего чата и
+  ручной рассылки ссылки, личные группы и звуковые сигналы подключения/
+  отключения; обоснование исключений записано в `RUN-0012` business-task log.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_219_bcreq_fr_scope.py`](scripts/validate_issue_219_bcreq_fr_scope.py),
+  подключённый к GitHub Pages workflow.
+
 ### Fixed — Issue #217 контракт logs для runs
 
 - `runs/CONTRACT.md` получил kebab-case идентификатор `runs-contract`, явный
