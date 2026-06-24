@@ -13,6 +13,22 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #225 исследование цепочки артефактов
+
+- Добавлен исследовательский отчёт
+  [`docs/analysis/artifact-chain-hypothesis-research.md`](docs/analysis/artifact-chain-hypothesis-research.md)
+  по гипотезе `research → analytics → report → rfc/adr → standard → artifact`.
+- Отчёт сопоставляет видение Фаундера с международными практиками ADR, RFC,
+  стандартов и design documents, фиксирует роли экспертов, риски `R-1`..`R-7`,
+  возможности `O-1`..`O-7`, анализ текущего RFC-процесса и ответы на вопросы
+  issue #225.
+- Добавлены четыре BPMN-like Mermaid-диаграммы: основная цепочка артефактов,
+  процесс RFC, процесс ADR и процесс согласования; RFC, ADR, стандарты,
+  контракты и процессы не изменялись.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_225_artifact_chain_research.py`](scripts/validate_issue_225_artifact_chain_research.py),
+  подключённый к GitHub Pages workflow.
+
 ### Fixed — Issue #219 область ФТ RUN-0012
 
 - ФТ
