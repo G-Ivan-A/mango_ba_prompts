@@ -147,6 +147,16 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0015": {
+        "year": "2026",
+        "files": [
+            "inputs/issue-226.md",
+            "inputs/research-sources.md",
+            "outputs/rfc-generation-contract-test-report.md",
+            "logs/validation-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

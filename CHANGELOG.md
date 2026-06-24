@@ -13,6 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #226 контракт генерации RFC
+
+- Добавлен L1-контракт
+  [`governance/rfc-generation-contract.md`](governance/rfc-generation-contract.md)
+  в 100% YAML для генерации L3 RFC-документов: полный набор входов,
+  frontmatter, разделы 1-8, YAML problem list с `RFC-NNN-Pn`, proposal index
+  с `RFC-NNN-Rn`, traceability, style rules и validation checks.
+- Provenance и исследовательская база зарегистрированы в
+  [`governance/contracts-registry.md`](governance/contracts-registry.md), а
+  проверка реального сценария и edge cases записана в
+  [`runs/2026/RUN-0015/outputs/rfc-generation-contract-test-report.md`](runs/2026/RUN-0015/outputs/rfc-generation-contract-test-report.md).
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_226_rfc_generation_contract.py`](scripts/validate_issue_226_rfc_generation_contract.py),
+  подключённый к GitHub Pages workflow.
+
 ### Fixed — Issue #219 область ФТ RUN-0012
 
 - ФТ
