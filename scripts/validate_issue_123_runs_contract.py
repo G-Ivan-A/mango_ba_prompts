@@ -139,6 +139,17 @@ EXPECTED_RUNS = {
     "RUN-0014": {
         "year": "2026",
         "files": [
+            "inputs/01-raw-request-and-qa.md",
+            "inputs/02-kb-extracts.md",
+            "outputs/2026-06-24-bcreq-1040-speech-analytics-direction-grouping-fr.md",
+            "outputs/analysis-bcreq-1040-scope-2026-06-24.md",
+            "logs/business-task-log.md",
+        ],
+        "old_paths": [],
+    },
+    "RUN-0015": {
+        "year": "2026",
+        "files": [
             "inputs/issue-226.md",
             "inputs/research-sources.md",
             "outputs/rfc-generation-contract-test-report.md",

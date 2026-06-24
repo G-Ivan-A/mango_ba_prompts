@@ -23,10 +23,52 @@ ai-generated: true
 - Provenance и исследовательская база зарегистрированы в
   [`governance/contracts-registry.md`](governance/contracts-registry.md), а
   проверка реального сценария и edge cases записана в
-  [`runs/2026/RUN-0014/outputs/rfc-generation-contract-test-report.md`](runs/2026/RUN-0014/outputs/rfc-generation-contract-test-report.md).
+  [`runs/2026/RUN-0015/outputs/rfc-generation-contract-test-report.md`](runs/2026/RUN-0015/outputs/rfc-generation-contract-test-report.md).
 - Добавлен регрессионный валидатор
   [`scripts/validate_issue_226_rfc_generation_contract.py`](scripts/validate_issue_226_rfc_generation_contract.py),
   подключённый к GitHub Pages workflow.
+
+### Fixed — Issue #219 область ФТ RUN-0012
+
+- ФТ
+  [`runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md`](runs/2026/RUN-0012/outputs/2026-06-22-bcreq-180-mt-group-video-call-ft.md)
+  актуализировано по вложениям issue #219: из раздела 4 исключены требования,
+  описывающие текущую функциональность ВКС, включая список участников,
+  администрирование участников и подключение по ссылке.
+- В scope оставлена дельта: быстрый старт группового звонка без общего чата и
+  ручной рассылки ссылки, личные группы и звуковые сигналы подключения/
+  отключения; обоснование исключений записано в `RUN-0012` business-task log.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_219_bcreq_fr_scope.py`](scripts/validate_issue_219_bcreq_fr_scope.py),
+  подключённый к GitHub Pages workflow.
+### Added — Issue #221 аудит naming convention
+
+- Добавлен аудит
+  [`docs/analysis/naming-convention-audit.md`](docs/analysis/naming-convention-audit.md)
+  по uppercase, camelCase/PascalCase, snake_case и special-character случаям в
+  tracked paths репозитория; отчёт сопоставляет каждый случай с регулирующим
+  контрактом и гипотезой причины.
+- Добавлен воспроизводимый scan helper
+  [`experiments/issue-221/naming-audit-scan.py`](experiments/issue-221/naming-audit-scan.py)
+  для повторной проверки инвентаря без переименования файлов и без изменения
+  стандартов.
+### Added — Issue #220 BCREQ-FR группировки номеров ВАТС по направлениям (BCREQ-1040)
+
+- Добавлен прогон
+  [`runs/2026/RUN-0014/`](runs/2026/RUN-0014/) (`run_type: business-task`,
+  `process: bcreq-1040`): по контракту
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  сгенерирован BCREQ-FR
+  [`outputs/2026-06-24-bcreq-1040-speech-analytics-direction-grouping-fr.md`](runs/2026/RUN-0014/outputs/2026-06-24-bcreq-1040-speech-analytics-direction-grouping-fr.md)
+  для речевой аналитики: группировка номеров ВАТС по 3 направлениям
+  (мини-брус, ПРЕКАТ, ПРЕФАБ), фильтрация «Анализа по чек-листам» и «Ловца
+  инсайтов» по направлению и единый дашборд с фильтром по категории.
+- Обоснование границ scope (правила `BCREQ-FR-GEN-SCOPE-01/02`) вынесено в
+  [`outputs/analysis-bcreq-1040-scope-2026-06-24.md`](runs/2026/RUN-0014/outputs/analysis-bcreq-1040-scope-2026-06-24.md);
+  входные данные и извлечения из базы знаний — в `inputs/`.
+- Обновлены реестр `runs/REGISTRY.md` и статистика `runs/stats/*`;
+  регрессионные валидаторы issue #123/#133/#207 синхронизированы с новым
+  прогоном.
 
 ### Fixed — Issue #217 контракт logs для runs
 

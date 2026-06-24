@@ -9,7 +9,7 @@ scope: runs
 
 # Статистика runs/ по процессам
 
-Уникальных процессов: 14.
+Уникальных процессов: 15.
 
 | Процесс | Количество | Run'ы | Связанные определения |
 | --- | ---: | --- | --- |
@@ -26,4 +26,5 @@ scope: runs
 | multichannel-agent-workload | 1 | [`RUN-0011`](../2026/RUN-0011/) | [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md) |
 | bcreq-180-mt-group-video-call | 1 | [`RUN-0012`](../2026/RUN-0012/) | [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md) |
 | bcreq-1027 | 1 | [`RUN-0013`](../2026/RUN-0013/) | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) |
-| rfc-generation-contract-validation | 1 | [`RUN-0014`](../2026/RUN-0014/) | [`governance/rfc-generation-contract.md`](../../governance/rfc-generation-contract.md) |
+| bcreq-1040 | 1 | [`RUN-0014`](../2026/RUN-0014/) | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) |
+| rfc-generation-contract-validation | 1 | [`RUN-0015`](../2026/RUN-0015/) | [`governance/rfc-generation-contract.md`](../../governance/rfc-generation-contract.md) |

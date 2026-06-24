@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 CONTRACT = "governance/rfc-generation-contract.md"
 REGISTRY = "governance/contracts-registry.md"
-RUN_DIR = "runs/2026/RUN-0014"
+RUN_DIR = "runs/2026/RUN-0015"
 RUN_METADATA = f"{RUN_DIR}/metadata.yaml"
 RUN_REPORT = f"{RUN_DIR}/outputs/rfc-generation-contract-test-report.md"
 RUN_LOG = f"{RUN_DIR}/logs/validation-log.md"
@@ -373,7 +373,7 @@ def check_run_artifacts() -> list[str]:
 
     errors += require_text(
         RUN_METADATA,
-        "run_id: RUN-0014",
+        "run_id: RUN-0015",
         "process: rfc-generation-contract-validation",
         "run_type: validation",
         "status: success",
@@ -383,7 +383,7 @@ def check_run_artifacts() -> list[str]:
     )
     errors += require_text(
         RUN_LOG,
-        "RUN-0014",
+        "RUN-0015",
         "validation",
         "Ход выполнения",
         "Итог",
@@ -408,27 +408,27 @@ def check_project_wiring() -> list[str]:
         errors += require_text(path, *needles)
     errors += require_text(
         "runs/REGISTRY.md",
-        "RUN-0014",
+        "RUN-0015",
         "rfc-generation-contract-validation",
         "rfc-generation-contract-test-report.md",
         "logs/validation-log.md",
     )
     errors += require_text(
         "runs/stats/by-date.md",
-        "2026-06 | 9",
-        "RUN-0014",
+        "2026-06 | 10",
+        "RUN-0015",
         "rfc-generation-contract-validation",
     )
     errors += require_text(
         "runs/stats/by-type.md",
-        "Всего: 14 run'ов.",
+        "Всего: 15 run'ов.",
         "validation` — валидация",
         "Всего: 4.",
-        "RUN-0014",
+        "RUN-0015",
     )
     errors += require_text(
         "runs/stats/by-process.md",
-        "Уникальных процессов: 14.",
+        "Уникальных процессов: 15.",
         "rfc-generation-contract-validation",
         CONTRACT,
     )

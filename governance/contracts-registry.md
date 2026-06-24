@@ -84,7 +84,7 @@ contracts:
       - "Generated RFC documents remain L3 Markdown with YAML frontmatter."
       - "The contract records impact fields requires_adr, requires_standard and target_artifacts without defining transition processes."
     related_artifacts:
-      - "runs/2026/RUN-0014/outputs/rfc-generation-contract-test-report.md"
+      - "runs/2026/RUN-0015/outputs/rfc-generation-contract-test-report.md"
     validated_by:
       - "scripts/validate_issue_226_rfc_generation_contract.py"
   - id: approval-contract
