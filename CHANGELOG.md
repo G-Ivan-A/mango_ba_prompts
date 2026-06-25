@@ -13,6 +13,30 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #235 переработка результирующего артефакта RUN-0014 по ревью
+
+- Переработан BCREQ-FR
+  [`runs/2026/RUN-0014/outputs/2026-06-24-bcreq-1040-speech-analytics-direction-grouping-fr.md`](runs/2026/RUN-0014/outputs/2026-06-24-bcreq-1040-speech-analytics-direction-grouping-fr.md)
+  до версии `0.2` по ревью issue
+  [#235](https://github.com/G-Ivan-A/mango_ba_prompts/issues/235): из предмета
+  доработки исключены инсайты («Ловец инсайтов») и единый дашборд по согласованию
+  с Заказчиком; раздел 1 (термины) и раздел 3.6 (ФТ верхнего уровня) приведены к
+  исправленному Заказчиком виду; `FR-01…FR-04` сведены к `FR-01…FR-03`.
+- Раздел 4 детализирован по принципу приёмки: явное состояние по умолчанию,
+  атомарные CRUD-операции групп-направлений, правила целостности данных (номер
+  ВАТС только в одной группе; сохранение номеров при удалении группы); список
+  направлений «мини-брус»/«ПРЕКАТ»/«ПРЕФАБ» зафиксирован как пример Заказчика, а
+  не как правило валидации.
+- `FR-01` уточнён по ролевой модели ВАТС
+  ([`kb/mango-product-docs/processed/Rolevaya-model-vats`](kb/mango-product-docs/processed/Rolevaya-model-vats/index.md)):
+  настройка групп-направлений доступна роли «Администратор» или пользовательской
+  роли на её базе в Личном кабинете ВАТС.
+- Зафиксировано ревью и список исправлений:
+  [`runs/2026/RUN-0014/feedback/feedback-runs-0014.md`](runs/2026/RUN-0014/feedback/feedback-runs-0014.md),
+  [`runs/2026/RUN-0014/feedback/corrections.md`](runs/2026/RUN-0014/feedback/corrections.md);
+  обновлены `analysis-bcreq-1040-scope`, `business-task-log`, `metadata.yaml` и
+  `runs/stats/by-type.md`.
+
 ### Added — Issue #231 структурный анализ применения контракта BCREQ-FR
 
 - Добавлен аналитический документ
