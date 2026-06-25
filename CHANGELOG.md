@@ -13,6 +13,25 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #229 исследование трассируемости промптов в runs
+
+- Добавлен исследовательский отчёт
+  [`docs/analysis/runs-observability-research.md`](docs/analysis/runs-observability-research.md)
+  по проблемам трассируемости промптов в `runs/` и внешним практикам контроля
+  проходов (триггер — лог `runs/2026/RUN-0014/logs/business-task-log.md`).
+- Отчёт фиксирует проблемы `P1`–`P5` с доказательствами, сопоставляет пять
+  внешних практик (LLM observability, experiment tracking, distributed tracing,
+  prompt engineering, contract testing) с источниками, разбирает восемь
+  граничных кейсов, восемь областей дополнительного анализа (четыре волны) и
+  формулирует рекомендации `R-LOG-*`, `R-TRACE-*`, `R-VER-*`, `R-NAME-*`,
+  `R-MAP-*` с обоснованием и приоритетами.
+- Документ остаётся research-задачей: контракт `runs/CONTRACT.md` не изменён,
+  существующие run-артефакты не тронуты, решения не приняты — только анализ и
+  рекомендации.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_229_runs_observability_research.py`](scripts/validate_issue_229_runs_observability_research.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #225 исследование цепочки артефактов
 
 - Добавлен исследовательский отчёт
