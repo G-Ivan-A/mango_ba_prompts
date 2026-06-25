@@ -68,7 +68,7 @@ def validate_rfc() -> None:
     frontmatter_needles = (
         "id: RFC-243",
         "status: draft",
-        'title: "RFC-243: BA process and observability implementation proposal"',
+        'title: "RFC-243: предложение по БА-процессам и observability"',
         'author: "OpenAI Codex"',
         "created: 2026-06-25",
         "updated: 2026-06-25",
@@ -88,21 +88,23 @@ def validate_rfc() -> None:
 
     require_ordered_sections(RFC, body)
 
-    required_yaml_keys = (
-        "context:",
-        "problems:",
-        "proposal:",
-        "alternatives:",
-        "rationale:",
+    required_machine_readable_inserts = (
+        "proposal_traceability:",
         "impact:",
         "implementation_plan:",
         "canonical_criteria:",
     )
-    for key in required_yaml_keys:
-        require(re.search(rf"(^|\n){re.escape(key)}", body), f"{RFC}: missing YAML key {key}")
+    for key in required_machine_readable_inserts:
+        require(
+            re.search(rf"(^|\n){re.escape(key)}", body),
+            f"{RFC}: missing machine-readable insert {key}",
+        )
 
     required_fragments = (
         "Почему RFC, а не ADR",
+        "Причина нарушения формата",
+        "machine_readable_shape",
+        "Markdown-документом с YAML frontmatter",
         "requires_adr: false",
         "requires_standard: true",
         "docs/analysis/2026-06-25-runs-observability-research.md",
@@ -139,7 +141,7 @@ def validate_rfc() -> None:
         "applied_operations",
         "applied_prompts",
         "research -> rfc/adr -> standard -> artifact",
-        "does not implement",
+        "не меняет стандарты",
     )
     for fragment in required_fragments:
         require(fragment in text, f"{RFC}: missing required fragment {fragment!r}")

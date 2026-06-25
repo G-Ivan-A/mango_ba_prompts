@@ -13,6 +13,25 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #245 формат RFC-243
+
+- Переписан
+  [`governance/rfc/ba-processes-observability-implementation-proposal.md`](governance/rfc/ba-processes-observability-implementation-proposal.md)
+  из YAML-heavy тела в читаемый L3 RFC: Markdown + YAML frontmatter, с compact
+  machine-readable вставками только для traceability, impact, implementation
+  plan и canonical criteria.
+- Зафиксирована Причина нарушения формата: первичная версия RFC ошибочно
+  интерпретировала `machine_readable_shape`/`yaml_blocks_required` из L1
+  [`governance/rfc-generation-contract.md`](governance/rfc-generation-contract.md)
+  как требование писать каждый раздел L3 RFC в YAML.
+- Обновлён регрессионный валидатор
+  [`scripts/validate_issue_243_ba_processes_observability_rfc.py`](scripts/validate_issue_243_ba_processes_observability_rfc.py),
+  чтобы он проверял сохранение согласованных решений 1-5 без закрепления
+  ошибочного YAML-heavy формата.
+- Добавлен валидатор
+  [`scripts/validate_issue_245_rfc_243_markdown_format.py`](scripts/validate_issue_245_rfc_243_markdown_format.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #243 RFC по БА-процессам и observability
 
 - Добавлен L3 RFC proposal
