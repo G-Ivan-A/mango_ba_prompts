@@ -316,6 +316,72 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       заказчику). Источник:
       [`docs/analysis/2026-06-16-experiment-1027-analysis.md`](../docs/analysis/2026-06-16-experiment-1027-analysis.md).
 
+## Спринт RFC-243: BA-процессы и observability
+
+Этот раздел формирует implementation sprint по Issue #243 и RFC-243:
+[`governance/rfc/ba-processes-observability-implementation-proposal.md`](rfc/ba-processes-observability-implementation-proposal.md).
+Спринт не реализует стандарты и артефакты сам по себе: он фиксирует порядок
+работ после review/canonical решения по RFC.
+
+> Ограничение доступа: текущий токен имеет `READ` на upstream
+> `G-Ivan-A/mango_ba_prompts`, поэтому labels/issues созданы в fork
+> `konard/G-Ivan-A-mango_ba_prompts`. При переносе в upstream требуется
+> воспроизвести labels `priority:P1`, `priority:P2`, `priority:P3`,
+> `type:decision`, `type:implementation`, `type:research`, `sprint-3`.
+
+### Метки спринта
+
+- Priority labels: `priority:P1`, `priority:P2`, `priority:P3`.
+- Type labels: `type:decision`, `type:implementation`, `type:research`.
+- Sprint label: `sprint-3`.
+- Domain labels: `governance`, `ba-processes`, `observability`.
+
+### Волны
+
+- **Волна 0** — decision gate: принять RFC/ADR-формат и статус RFC-243.
+- **Волна 1** — процессная и онтологическая сверка: сначала `00-index.md`,
+  затем BA-онтология.
+- **Волна 2** — execution mapping: L2 registry, `applied_operations`,
+  `applied_prompts`.
+- **Волна 3** — enforcement и доменные уточнения: validators/stats и eTOM/SID.
+
+| № | Title | Type | Priority | Dependencies | Issue in repo |
+| --- | --- | --- | --- | --- | --- |
+| 1 | decision: зафиксировать RFC-243 governance proposal | decision | P1 | independent: upstream Issue #243 and PR #244 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/1> |
+| 2 | implementation: сверить 00-index.md с BABOK-операциями | implementation | P1 | dependent: #1 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/3> |
+| 3 | implementation: обновить БА-онтологию для atomic-composite taxonomy | implementation | P1 | dependent: #1, #3 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/4> |
+| 4 | implementation: создать L2-реестр operation-prompt mapping | implementation | P1 | dependent: #1 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/2> |
+| 5 | implementation: добавить applied_operations в generation contracts | implementation | P1 | dependent: #2, #3 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/5> |
+| 6 | implementation: добавить applied_prompts и lineage в runs contract | implementation | P1 | dependent: #2 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/6> |
+| 7 | implementation: обновить валидаторы и статистику под трассируемость | implementation | P2 | dependent: #5, #6 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/7> |
+| 8 | research: оценить eTOM/SID как доменные БА-артефакты | research | P3 | dependent: #4 | <https://github.com/konard/G-Ivan-A-mango_ba_prompts/issues/8> |
+
+### Dependency map
+
+```mermaid
+graph TD
+    T1[decision RFC-243] --> T2[00-index.md BABOK reconciliation]
+    T1 --> T4[L2 operation-prompt mapping]
+    T1 --> T3[BA ontology taxonomy]
+    T2 --> T3
+    T2 --> T5[applied_operations in contracts]
+    T4 --> T5
+    T4 --> T6[applied_prompts in runs]
+    T5 --> T7[validators and stats]
+    T6 --> T7
+    T3 --> T8[eTOM/SID research]
+```
+
+### DoD спринта
+
+- Каждая задача имеет тип `decision` / `implementation` / `research`, priority
+  `P1` / `P2` / `P3`, sprint label `sprint-3` и явные dependencies.
+- Волна 1 не стартует до review решения по RFC-243.
+- Волна 2 не стартует до сверки `docs/ba-processes/00-index.md` и фиксации
+  operation IDs.
+- Ни одна задача из спринта не изменяется в этом PR; этот раздел только
+  формирует backlog и issue links.
+
 ---
 
 ## Связанные артефакты
