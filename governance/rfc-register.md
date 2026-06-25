@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-06-22
+version: 0.5
+updated: 2026-06-25
 ai-generated: true
 type: register
 scope: governance
@@ -10,6 +10,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/184"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/243"
 related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
@@ -20,6 +21,7 @@ related_artifacts:
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "governance/rfc/prompt-improvement-multichannel-proposal.md"
   - "governance/rfc/bcreq-ft-scope-formation-rules-proposal.md"
+  - "governance/rfc/ba-processes-observability-implementation-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -44,6 +46,19 @@ proposed → in-review → accepted  → implemented
 | `accepted` | принят к реализации | **только пользователь** |
 | `rejected` | отклонён (с причиной) | **только пользователь** |
 | `implemented` | внесён, связан с PR | исполнитель после merge |
+
+## Открытые RFC по БА-процессам и observability (источник: issue #243)
+
+RFC-243 фиксирует согласованные решения из research chain:
+[`docs/analysis/2026-06-25-runs-observability-research.md`](../docs/analysis/2026-06-25-runs-observability-research.md),
+[`docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md`](../docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md),
+[`docs/analysis/2026-06-25-ba-processes-industry-analysis.md`](../docs/analysis/2026-06-25-ba-processes-industry-analysis.md).
+Документ является proposal: он не меняет стандарты, контракты, runs или
+существующие BA-артефакты.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| RFC-243 | [`governance/rfc/ba-processes-observability-implementation-proposal.md`](rfc/ba-processes-observability-implementation-proposal.md) | Зафиксировать RFC-vs-ADR choice, atomic/composite BA taxonomy, BABOK operation layer, `operation_id -> prompt_id@version`, `applied_operations`, `applied_prompts` и issue-backed sprint | issue #243; A3 observability; A4 BCREQ-FR process; PR #234 BA-processes industry analysis | `draft` | PR #244 |
 
 ## Открытые RFC по промптам (источник: эксперимент 1027, issue #101)
 
@@ -159,3 +174,7 @@ PR #105 **не изменены** — сверка и правка идут то
   масштаба). RFC-документ —
   [`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`](rfc/bcreq-ft-scope-formation-rules-proposal.md).
   Расширяет RFC-1027-P4 (фильтр текущего поведения) с Раздела 6 на Разделы 2 и 4.
+- **2026-06-25** — добавлен RFC-243 в статусе `draft` по issue #243: governance
+  proposal для сверки BA-процессов, atomic/composite артефактов, observability
+  runs и sprint backlog после исследований A3/A4/PR #234. RFC-документ —
+  [`governance/rfc/ba-processes-observability-implementation-proposal.md`](rfc/ba-processes-observability-implementation-proposal.md).

@@ -13,6 +13,28 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #243 RFC по БА-процессам и observability
+
+- Добавлен L3 RFC proposal
+  [`governance/rfc/ba-processes-observability-implementation-proposal.md`](governance/rfc/ba-processes-observability-implementation-proposal.md),
+  фиксирующий согласованные решения из исследований A3/A4 и PR #234: RFC как
+  артефакт решения вместо ADR на этом этапе, atomic/composite BA taxonomy,
+  классификацию BCREQ-FR как `type: frd` и BCREQ-SR как `type: srs`, шесть
+  BABOK-операций поверх существующей декомпозиции, будущий
+  `operation_id -> prompt_id@version` registry, `applied_operations` для
+  contracts и `applied_prompts` для runs.
+- Обновлены [`governance/rfc-register.md`](governance/rfc-register.md) и
+  [`governance/BACKLOG.md`](governance/BACKLOG.md): добавлен RFC-243 и sprint
+  backlog с волнами, dependencies, priorities и fork issue links. Из-за
+  `READ`-доступа токена к upstream issues/labels созданы в fork
+  `konard/G-Ivan-A-mango_ba_prompts` как переносимый tracking set.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_243_ba_processes_observability_rfc.py`](scripts/validate_issue_243_ba_processes_observability_rfc.py),
+  подключённый к GitHub Pages workflow.
+- Изменение является только proposal: стандарты, контракты, runs, prompts,
+  `kb/operation-prompt-mapping/registry.json` и существующие BA-артефакты не
+  реализуются в рамках issue #243.
+
 ### Changed — Issue #241 формат имён аналитических артефактов
 
 - Переименованы все 21 Markdown-файла в `docs/analysis/` в формат
