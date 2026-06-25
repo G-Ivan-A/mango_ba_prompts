@@ -13,6 +13,43 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #233 структурный анализ БА-процессов и артефактов с опорой на индустрию
+
+- Добавлен аналитический документ
+  [`docs/analysis/ba-processes-industry-analysis.md`](docs/analysis/ba-processes-industry-analysis.md),
+  выполняющий структурный анализ БА-процессов и артефактов репозитория с опорой
+  на индустриальные практики телекома и фреймворки бизнес-анализа.
+- Документ проходит обязательную последовательность (Этапы 1-10) тремя ролями
+  (Архитектор БА-методологий, AI-инженер, BA-эксперт) и содержит все 12
+  разделов: введение, текущее состояние БА-процессов, индустриальные практики
+  телекома (16 компаний с источниками), фреймворки БА (BABOK, IREB, BCS, PMI-PBA,
+  Agile BA/SAFe + ISO/IEC/IEEE 29148), таксономию артефактов (комплексные vs
+  атомарные, маппинг на онтологию `A01`-`A31`), сравнительный анализ
+  (процесс→индустрия, артефакт→индустрия, пробелы `G1`-`G5`, излишества
+  `E1`-`E4`), SWOT и рекомендации `R1`-`R7`, проверку стандартов проекта
+  (L1-L3, контракты vs стандарты, неправильно отнесённые документы), полный
+  список артефактов по уровням и типам, вход для RFC (`RFC-IN-1`..`RFC-IN-8`),
+  дополнительные исследования и заключение.
+- Ключевые находки: гипотезы `H1`-`H6` с уровнями доказательности
+  (`[CONFIRMED]`/`[INFERRED]`/`[HYPOTHESIS]`/`NOT FOUND`); граница
+  composite/atomic совпадает с индустриальной парой Requirements Document vs
+  Singular/atomic requirement; универсальный де-факто «контракт» телекома —
+  OpenAPI/TM Forum Open API; полоса $400-600M публично почти не населена;
+  фокус-компания «Манго Телеком» сама ниже полосы и проходит переход «длинные
+  ТЗ → User Stories». Эмпирическая база с источниками по каждой компании — в
+  [`docs/analysis/telecom-vendors-ba-practices-research.md`](docs/analysis/telecom-vendors-ba-practices-research.md).
+- Добавлены две Mermaid-диаграммы (таксономия артефактов и проверка
+  классификации L1-L3).
+- Документ носит характер «только анализ»: процессы, артефакты и стандарты
+  ([`standards/ba-ontology.md`](standards/ba-ontology.md),
+  [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md),
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md),
+  [`runs/CONTRACT.md`](runs/CONTRACT.md)) процитированы по функции, но не
+  изменены; решения не принимаются.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_233_ba_processes_industry_analysis.py`](scripts/validate_issue_233_ba_processes_industry_analysis.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #231 структурный анализ применения контракта BCREQ-FR
 
 - Добавлен аналитический документ
