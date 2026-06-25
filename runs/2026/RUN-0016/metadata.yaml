@@ -1,0 +1,36 @@
+run_id: RUN-0016
+process: bcreq-765
+run_type: business-task
+version: "0.1"
+date: "2026-06-25"
+updated: "2026-06-25"
+author: "BA + LLM (Claude Opus 4.8)"
+model: "claude-opus-4-8"
+status: draft
+contract_used: "governance/bcreq-fr-generation-contract.md"
+source_paths:
+  - runs/2026/RUN-0016/outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md
+  - runs/2026/RUN-0016/outputs/analysis-bcreq-765-scope-2026-06-25.md
+inputs:
+  - inputs/01-raw-request-and-qa.md
+  - inputs/02-kb-extracts.md
+outputs:
+  - outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md
+  - outputs/analysis-bcreq-765-scope-2026-06-25.md
+logs:
+  - logs/business-task-log.md
+feedback:
+  - feedback/.gitkeep
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/237"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/235"
+related_artifacts:
+  - "governance/bcreq-fr-generation-contract.md"
+  - "kb/mango-product-docs/processed/mango-cc-manual/sections/09-tekst.md"
+  - "kb/mango-product-docs/processed/mango-cc-manual/sections/117-kontakty-adresnaya-kniga.md"
+  - "kb/mango-product-docs/processed/mdialogi-api/index.md"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/mango-taxonomy/registry.json"
+related_runs:
+  - RUN-0012
+  - RUN-0014

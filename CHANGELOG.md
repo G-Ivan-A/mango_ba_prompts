@@ -13,6 +13,34 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #237 BCREQ-765 ФТ интеграции чатов HeadHunter с Контакт-центром
+
+- Добавлен проход `RUN-0016` (`business-task`, процесс `bcreq-765`) по issue
+  [#237](https://github.com/G-Ivan-A/mango_ba_prompts/issues/237): сформирован
+  BCREQ-FR
+  [`runs/2026/RUN-0016/outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md`](runs/2026/RUN-0016/outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md)
+  по контракту `governance/bcreq-fr-generation-contract.md`: интеграция чатов
+  HeadHunter с Контакт-центром Mango Office, маршрутизация обращений на группу
+  «Чатеры», двусторонняя синхронизация переписки и сохранение данных кандидата в
+  адресную книгу КЦ.
+- Документ очищен от UI-детализации (макеты, иконки, метки времени, статусы
+  прочтения, формат вывода в очереди, разделы отчётности) по прецеденту issue
+  [#235](https://github.com/G-Ivan-A/mango_ba_prompts/issues/235): оставлены
+  только функции для явного согласования с Заказчиком; обоснование исключений — в
+  [`runs/2026/RUN-0016/outputs/analysis-bcreq-765-scope-2026-06-25.md`](runs/2026/RUN-0016/outputs/analysis-bcreq-765-scope-2026-06-25.md).
+- Добавлено новое требование Заказчика об учёте нескольких акторов чата
+  HeadHunter (раздел 4.4 `FR-04`), перепроверенное по документации API HeadHunter
+  (<https://api.hh.ru/openapi/redoc#tag/Chaty>): чат автоматически создаётся
+  только у ответственного за вакансию менеджера, иные пользователи становятся
+  участниками при отправке сообщения; источники сообщений — событие
+  `CHAT_MESSAGE_CREATED` и список чатов авторизованного аккаунта.
+- Обновлены реестр и статистика runs (`runs/REGISTRY.md`, `runs/stats/by-type.md`,
+  `runs/stats/by-date.md`, `runs/stats/by-process.md`) и регрессионные валидаторы
+  (`scripts/validate_issue_123_runs_contract.py`,
+  `scripts/validate_issue_133_runs_restructure.py`,
+  `scripts/validate_issue_207_bcreq_1027_vpbx_run.py`,
+  `scripts/validate_issue_226_rfc_generation_contract.py`) под `RUN-0016`.
+
 ### Changed — Issue #235 переработка результирующего артефакта RUN-0014 по ревью
 
 - Переработан BCREQ-FR
