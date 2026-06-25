@@ -66,6 +66,7 @@ def creation_date_for(path: Path) -> str | None:
     if match:
         candidates.append(path.with_name(path.name[len(match.group("date")) + 1 :]))
 
+    dates: set[str] = set()
     for candidate in candidates:
         output = run_git(
             "log",
@@ -77,8 +78,8 @@ def creation_date_for(path: Path) -> str | None:
             candidate.as_posix(),
         ).strip()
         if output:
-            return output.splitlines()[-1]
-    return None
+            dates.update(line for line in output.splitlines() if line)
+    return min(dates) if dates else None
 
 
 def check_analysis_filenames() -> list[str]:
