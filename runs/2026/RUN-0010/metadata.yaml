@@ -1,20 +1,32 @@
 run_id: RUN-0010
 process: bcreq-1025-email-routing
 run_type: business-task
-version: "0.2"
+version: "0.3"
 date: 2026-06-17
-author: "BA-IH + LLM"
-model: "qwen3.7 plus"
+updated: 2026-06-25
+author: "BA-IH + LLM (Claude Opus 4.8)"
+model: "claude-opus-4-8"
 status: works-with-edits
+contract_used: "governance/bcreq-fr-generation-contract.md"
 source_paths:
+  - runs/2026/RUN-0010/outputs/2026-06-25-bcreq-1025-email-routing-fr.md
+  - runs/2026/RUN-0010/outputs/analysis-bcreq-1025-fr-correctness-2026-06-25.md
   - runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md
   - runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md
 outputs:
+  - outputs/2026-06-25-bcreq-1025-email-routing-fr.md
+  - outputs/analysis-bcreq-1025-fr-correctness-2026-06-25.md
   - outputs/2026-06-17-bcreq-1025-email-routing.md
   - outputs/analysis-bcreq-1025-2026-06-17.md
 logs:
   - logs/business-task-log.md
+feedback:
+  - feedback/feedback-issue-239.md
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/107
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/239
 related_artifacts:
   - governance/rfc/prompt-improvement-bcreq-1025-proposal.md
+  - governance/bcreq-fr-generation-contract.md
+  - kb/mango-product-docs/processed/mango-cc-manual/index.md
+  - kb/mango-product-docs/processed/Rolevaya-model-vats/index.md
