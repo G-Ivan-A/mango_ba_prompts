@@ -1,8 +1,9 @@
 run_id: RUN-0014
 process: bcreq-1040
 run_type: business-task
-version: "0.1"
+version: "0.2"
 date: "2026-06-24"
+updated: "2026-06-25"
 author: "BA + LLM (Claude Opus 4.8)"
 model: "claude-opus-4-8"
 status: draft
@@ -19,12 +20,15 @@ outputs:
 logs:
   - logs/business-task-log.md
 feedback:
-  - feedback/.gitkeep
+  - feedback/feedback-runs-0014.md
+  - feedback/corrections.md
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/220"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/235"
 related_artifacts:
   - "governance/bcreq-fr-generation-contract.md"
   - "kb/mango-product-docs/processed/speech-analytics/index.md"
+  - "kb/mango-product-docs/processed/Rolevaya-model-vats/index.md"
   - "kb/industry-taxonomy/registry.json"
   - "kb/mango-taxonomy/registry.json"
 related_runs:
