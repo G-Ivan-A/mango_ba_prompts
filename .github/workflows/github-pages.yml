@@ -76,6 +76,9 @@ jobs:
       - name: Validate issue #225 artifact chain research
         run: python3 scripts/validate_issue_225_artifact_chain_research.py
 
+      - name: Validate issue #231 BCREQ-FR contract process analysis
+        run: python3 scripts/validate_issue_231_bcreq_fr_contract_process_analysis.py
+
       - name: Validate issue #199 BCREQ-1027 section 4.3 API methods
         run: python3 scripts/validate_issue_199_bcreq_1027_section_4_3.py
 

@@ -13,6 +13,27 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #231 структурный анализ применения контракта BCREQ-FR
+
+- Добавлен аналитический документ
+  [`docs/analysis/bcreq-fr-contract-process-analysis.md`](docs/analysis/bcreq-fr-contract-process-analysis.md),
+  отвечающий на вопрос, применяется ли контракт
+  [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
+  как единый монолитный промпт или как последовательность специализированных
+  промптов, и фиксирующий максимальный набор проблем процессов генерации.
+- Документ проходит обязательный 7-этапный разбор тремя ролями (Архитектор
+  процессов, AI-инженер, BA-эксперт): гипотезы `H1`..`H7`, структурный анализ
+  трёх режимов применения, причинно-следственный анализ (`5 почему`), тесты
+  «контракт-как-промпт против последовательности» на естественном эксперименте
+  `RUN-0014` против `RUN-0010`/`RUN-0011`, каталог проблем `PA-1`..`PA-6`,
+  `AIE-1`..`AIE-6`, `BA-1`..`BA-5`, `VER-1`..`VER-3` и восемь граничных кейсов
+  `EC-1`..`EC-8`.
+- Документ носит характер «только анализ»: контракт BCREQ-FR и
+  [`runs/CONTRACT.md`](runs/CONTRACT.md) не изменялись, решения не принимаются.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_231_bcreq_fr_contract_process_analysis.py`](scripts/validate_issue_231_bcreq_fr_contract_process_analysis.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #225 исследование цепочки артефактов
 
 - Добавлен исследовательский отчёт
