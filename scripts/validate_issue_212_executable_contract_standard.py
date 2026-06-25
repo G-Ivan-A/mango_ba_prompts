@@ -30,7 +30,7 @@ REQUIRED_HEADINGS = (
 
 REQUIRED_TEXT = (
     "Issue #212",
-    "docs/analysis/executable-contracts-and-rfc-problems.md",
+    "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md",
     "standards/prompt-standard.md",
     "standards/cascading-context-loading-standard.md",
     "governance/rfc-process.md",

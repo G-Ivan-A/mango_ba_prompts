@@ -13,6 +13,20 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #241 формат имён аналитических артефактов
+
+- Переименованы все 21 Markdown-файла в `docs/analysis/` в формат
+  `YYYY-MM-DD-<kebab-slug>.md`; дата каждого имени взята из git history создания
+  файла.
+- Обновлены ссылки и repository-relative references на переименованные
+  аналитические артефакты в документации, governance-файлах, KB-реестрах,
+  run-артефактах и валидаторах.
+- Расширен контракт нейминга
+  [`standards/artifact-naming-standard.md`](standards/artifact-naming-standard.md)
+  правилом для `docs/analysis/` и добавлен регрессионный валидатор
+  [`scripts/validate_issue_241_analysis_naming.py`](scripts/validate_issue_241_analysis_naming.py),
+  подключённый к GitHub Pages workflow.
+
 ### Added — Issue #237 BCREQ-765 ФТ интеграции чатов HeadHunter с Контакт-центром
 
 - Добавлен проход `RUN-0016` (`business-task`, процесс `bcreq-765`) по issue
@@ -44,7 +58,7 @@ ai-generated: true
 ### Added — Issue #233 структурный анализ БА-процессов и артефактов с опорой на индустрию
 
 - Добавлен аналитический документ
-  [`docs/analysis/ba-processes-industry-analysis.md`](docs/analysis/ba-processes-industry-analysis.md),
+  [`docs/analysis/2026-06-25-ba-processes-industry-analysis.md`](docs/analysis/2026-06-25-ba-processes-industry-analysis.md),
   выполняющий структурный анализ БА-процессов и артефактов репозитория с опорой
   на индустриальные практики телекома и фреймворки бизнес-анализа.
 - Документ проходит обязательную последовательность (Этапы 1-10) тремя ролями
@@ -65,7 +79,7 @@ ai-generated: true
   OpenAPI/TM Forum Open API; полоса $400-600M публично почти не населена;
   фокус-компания «Манго Телеком» сама ниже полосы и проходит переход «длинные
   ТЗ → User Stories». Эмпирическая база с источниками по каждой компании — в
-  [`docs/analysis/telecom-vendors-ba-practices-research.md`](docs/analysis/telecom-vendors-ba-practices-research.md).
+  [`docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md`](docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md).
 - Добавлены две Mermaid-диаграммы (таксономия артефактов и проверка
   классификации L1-L3).
 - Документ носит характер «только анализ»: процессы, артефакты и стандарты
@@ -105,7 +119,7 @@ ai-generated: true
 ### Added — Issue #231 структурный анализ применения контракта BCREQ-FR
 
 - Добавлен аналитический документ
-  [`docs/analysis/bcreq-fr-contract-process-analysis.md`](docs/analysis/bcreq-fr-contract-process-analysis.md),
+  [`docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md`](docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md),
   отвечающий на вопрос, применяется ли контракт
   [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md)
   как единый монолитный промпт или как последовательность специализированных
@@ -126,7 +140,7 @@ ai-generated: true
 ### Added — Issue #229 исследование трассируемости промптов в runs
 
 - Добавлен исследовательский отчёт
-  [`docs/analysis/runs-observability-research.md`](docs/analysis/runs-observability-research.md)
+  [`docs/analysis/2026-06-25-runs-observability-research.md`](docs/analysis/2026-06-25-runs-observability-research.md)
   по проблемам трассируемости промптов в `runs/` и внешним практикам контроля
   проходов (триггер — лог `runs/2026/RUN-0014/logs/business-task-log.md`).
 - Отчёт фиксирует проблемы `P1`–`P5` с доказательствами, сопоставляет пять
@@ -145,7 +159,7 @@ ai-generated: true
 ### Added — Issue #225 исследование цепочки артефактов
 
 - Добавлен исследовательский отчёт
-  [`docs/analysis/artifact-chain-hypothesis-research.md`](docs/analysis/artifact-chain-hypothesis-research.md)
+  [`docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md`](docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md)
   по гипотезе `research → analytics → report → rfc/adr → standard → artifact`.
 - Отчёт сопоставляет видение Фаундера с международными практиками ADR, RFC,
   стандартов и design documents, фиксирует роли экспертов, риски `R-1`..`R-7`,
@@ -187,7 +201,7 @@ ai-generated: true
 ### Added — Issue #221 аудит naming convention
 
 - Добавлен аудит
-  [`docs/analysis/naming-convention-audit.md`](docs/analysis/naming-convention-audit.md)
+  [`docs/analysis/2026-06-24-naming-convention-audit.md`](docs/analysis/2026-06-24-naming-convention-audit.md)
   по uppercase, camelCase/PascalCase, snake_case и special-character случаям в
   tracked paths репозитория; отчёт сопоставляет каждый случай с регулирующим
   контрактом и гипотезой причины.
@@ -223,7 +237,7 @@ ai-generated: true
   `run_type`, а `metadata.yaml` теперь содержит `logs:` со ссылкой на основной
   лог; `runs/REGISTRY.md` показывает отдельную колонку `Лог`.
 - Исследование контрактов записано в
-  [`docs/analysis/runs-contract-log-policy-audit.md`](docs/analysis/runs-contract-log-policy-audit.md);
+  [`docs/analysis/2026-06-24-runs-contract-log-policy-audit.md`](docs/analysis/2026-06-24-runs-contract-log-policy-audit.md);
   добавлен регрессионный валидатор
   [`scripts/validate_issue_217_runs_log_contract.py`](scripts/validate_issue_217_runs_log_contract.py),
   подключённый к GitHub Pages workflow.
@@ -344,7 +358,7 @@ ai-generated: true
 ### Added — Issue #198 систематизация проблем исполнимых контрактов и RFC
 
 - Добавлен аналитический отчёт
-  [`docs/analysis/executable-contracts-and-rfc-problems.md`](docs/analysis/executable-contracts-and-rfc-problems.md):
+  [`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`](docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md):
   сквозная инвентаризация дефектов исполнимых контрактов (P1-P5) и RFC (P6) по
   всему проекту с привязкой каждой проблемы к `file:line` и подробным планом
   исправления (25 действий). Отчёт формализует трёхуровневую модель L1/L2/L3,
@@ -355,7 +369,7 @@ ai-generated: true
 ### Added — Issue #192 аналитическое исследование структуры каталогов
 
 - Добавлен аналитический отчёт
-  [`docs/analysis/repository-structure-analysis.md`](docs/analysis/repository-structure-analysis.md):
+  [`docs/analysis/2026-06-23-repository-structure-analysis.md`](docs/analysis/2026-06-23-repository-structure-analysis.md):
   обоснование архитектуры каталогов проекта на эмпирике 15+ международных
   проектов (структуры проверены через `gh api` git-trees на закреплённых SHA) и
   международных стандартах (COBIT 2019, ISO/IEC 38500, TOGAF, ISO/IEC/IEEE
@@ -397,7 +411,7 @@ ai-generated: true
   читаемых документов в рабочий контекст, запрещает галлюцинации разделов и
   добавляет критическую оценку с рекомендацией согласовать / не согласовать.
 - Контракт протестирован сухим прогоном на RFC Industry Taxonomy:
-  [`docs/analysis/approval-contract-test-industry-rfc.md`](docs/analysis/approval-contract-test-industry-rfc.md).
+  [`docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md`](docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md).
   Тест формирует первый пакет согласования и останавливается до раздела 2, чтобы
   сохранить атомарность процесса.
 - Добавлен валидатор
@@ -419,7 +433,7 @@ ai-generated: true
 ### Added — Issue #186 RFC Rules Registry System
 
 - Добавлен RFC
-  [`docs/analysis/rfc-rules-registry-system.md`](docs/analysis/rfc-rules-registry-system.md)
+  [`docs/analysis/2026-06-22-rfc-rules-registry-system.md`](docs/analysis/2026-06-22-rfc-rules-registry-system.md)
   с анализом существующих rule-like источников, предложением atomic rule model,
   process/operation bindings, AI-agent contract, lifecycle, validation approach
   и вопросами на founder approval. Реестр правил, новые governance-контракты,
@@ -500,7 +514,7 @@ ai-generated: true
   industry-реестр (без эталона и mango-реестра). Все 25 выданных агентом node-id —
   канонические.
 - Добавлен отчёт
-  [`docs/analysis/taxonomy-convergence-test.md`](docs/analysis/taxonomy-convergence-test.md):
+  [`docs/analysis/2026-06-22-taxonomy-convergence-test.md`](docs/analysis/2026-06-22-taxonomy-convergence-test.md):
   полная сходимость **68%** (17/25), по уровням — Domain **96%**, Capability **76%**,
   Feature **60%**, Function **25%**, function_type **84%**. 8 расхождений разобраны
   до первопричин: структурная избыточность узлов (5), пробелы покрытия (3),
@@ -521,7 +535,7 @@ ai-generated: true
   независимыми AI-агентами по стандартам и `registry.json`, без доступа
   к эталону, затем сопоставлены с `maps_to.industry_alignment` из реестра.
 - Добавлен отчёт
-  [`docs/analysis/mango-taxonomy-convergence-test.md`](docs/analysis/mango-taxonomy-convergence-test.md):
+  [`docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md`](docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md):
   корректность по формуле ДоД (точный полный путь) **37 %**, префиксная **63 %**,
   Domain **81 %**, Capability **67 %**, резолвимость узлов **100 %** (ноль
   галлюцинаций), `alignment_type` **100 %**. Расхождения сгруппированы в 4
@@ -554,7 +568,7 @@ ai-generated: true
   внешних `industry_ref` из [`kb/mango-taxonomy/`](kb/mango-taxonomy/README.md) резолвятся по
   parent-chain (было 98 неразрешённых).
 - Добавлен аналитический change request
-  [`docs/analysis/industry-inventory.md`](docs/analysis/industry-inventory.md) с
+  [`docs/analysis/2026-06-21-industry-inventory.md`](docs/analysis/2026-06-21-industry-inventory.md) с
   industry-landscape research и per-entity обоснованием каждой добавленной
   сущности (Task 0).
 - Добавлена registry-backed регрессионная проверка
@@ -612,7 +626,7 @@ ai-generated: true
   [`experiments/cascade_fill.py`](experiments/cascade_fill.py) (идемпотентен:
   повторный запуск на уже заполненном реестре — no-op).
 - Добавлен аналитический документ
-  [`docs/analysis/issue-170-mango-inventory.md`](docs/analysis/issue-170-mango-inventory.md)
+  [`docs/analysis/2026-06-22-issue-170-mango-inventory.md`](docs/analysis/2026-06-22-issue-170-mango-inventory.md)
   с полным деревом `Продукт → Сервис → Модуль → Функция`, сравнением со старой
   YAML-структурой, разбивкой дозаполнения по кластерам и фиксацией пробелов
   (качество извлечения `sip-trunk`, 14 сервисов с одним модулем, недоиспользованные
@@ -784,7 +798,7 @@ ai-generated: true
   (число доменов не меняется), инфраструктурная асимметрия `voice-ucaas`
   обоснована фактами, канальный артефакт устранён через `voice-channel` + facet.
 - Добавлена сравнительная аналитика
-  [`docs/analysis/voice-digital-channels-comparison.md`](docs/analysis/voice-digital-channels-comparison.md):
+  [`docs/analysis/2026-06-21-voice-digital-channels-comparison.md`](docs/analysis/2026-06-21-voice-digital-channels-comparison.md):
   трёхслойная рамка (infrastructure/channel/orchestration), отраслевые
   свидетельства (Twilio, МТС Exolve, RingCentral, Cisco, Amazon Connect, Genesys,
   TM Forum), trade-offs симметрии vs практичности и влияние на маппинг Mango.
@@ -1105,7 +1119,7 @@ ai-generated: true
 ### Added — Issue #101 разбор эксперимента «Задача 1027» и стандарт фиксации экспериментов
 
 - Добавлен анализ первой реальной сессии БА
-  [`docs/analysis/experiment-1027-analysis.md`](docs/analysis/experiment-1027-analysis.md):
+  [`docs/analysis/2026-06-16-experiment-1027-analysis.md`](docs/analysis/2026-06-16-experiment-1027-analysis.md):
   вердикты по 4 гипотезам БА с цитатами из стенограммы, **предложения** правок
   промптов (P1–P5) как кандидаты в RFC и рекомендации по онтологии (без её
   изменения). Сами промпты в этом PR **не меняются** — правки выносятся через
@@ -1718,7 +1732,7 @@ ai-generated: true
   fail-closed semantics в `AI_QUICK_RULES.md` и capability taxonomy в
   `AI_GOVERNANCE.md`.
 - RFC стратегии миграции проекта Mango из Хаба в спок
-  (`docs/analysis/migration-strategy-rfc.md`, issue #8): аудит 23 артефактов
+  (`docs/analysis/2026-06-02-migration-strategy-rfc.md`, issue #8): аудит 23 артефактов
   Хаба по полным URL, фазовая стратегия (Mermaid), edge cases, креативные
   улучшения и триггеры эволюции. Стоп-фактор: физический перенос — после
   Human Review.
@@ -1736,17 +1750,17 @@ ai-generated: true
   `prompts/` и `standards/`, навигация на `CONTRIBUTING.md` и контакты/роли.
   Удалены унаследованные из «ДНК-шаблона» Хаба прямые и hub-относительные
   ссылки; единственный мост в Хаб — через `docs/hub-research-dependencies.md`.
-- Уточнён RFC стратегии миграции (`docs/analysis/migration-strategy-rfc.md`,
+- Уточнён RFC стратегии миграции (`docs/analysis/2026-06-02-migration-strategy-rfc.md`,
   issue #10): добавлена таблица файлов Фазы 1, чек-лист нормализации промптов,
   единый реестр research-зависимостей, корректное разделение
   `standards/GLOSSARY.md` и `standards/product-classification-contract.md`,
   а также правила переноса продуктовых экспериментов.
 - Зафиксированы решения Пользователя по Q1–Q4 в RFC миграции
-  (`docs/analysis/migration-strategy-rfc.md`, issue #21): таблица Фазы 1
+  (`docs/analysis/2026-06-02-migration-strategy-rfc.md`, issue #21): таблица Фазы 1
   утверждена, Hub-ссылки должны быть permalink на SHA, self-test стал
   обязательным gate для статуса `migrated`, а стандарты, промпты, эксперименты и
   `hub-research-dependencies.md` идут одним PR Фазы 1.
-- Завершена доработка RFC (`docs/analysis/migration-strategy-rfc.md`,
+- Завершена доработка RFC (`docs/analysis/2026-06-02-migration-strategy-rfc.md`,
   issue #12, v0.3, блоки 3–8): реестр зависимостей от исследований Хаба (§3.5),
   переписка README.md как обязательная задача Фазы 1, согласованные формулировки
   edge cases E5 (все эксперименты — часть продукта) и E6 (разделение

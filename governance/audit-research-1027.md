@@ -8,7 +8,7 @@ scope: research
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
-  - "docs/analysis/experiment-1027-analysis.md"
+  - "docs/analysis/2026-06-16-experiment-1027-analysis.md"
   - "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md"
   - "standards/experiment-log-standard.md"
 ---
@@ -22,7 +22,7 @@ related_artifacts:
 > онтологию БА», ADR #003–#008); (4) полны ли выводы и дополнительные находки.
 >
 > Источник истины разбора —
-> [`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+> [`docs/analysis/2026-06-16-experiment-1027-analysis.md`](../docs/analysis/2026-06-16-experiment-1027-analysis.md).
 
 ## 1. Проверенные гипотезы (статус каждой)
 
@@ -101,6 +101,6 @@ O1: *«Операция documentation требует разделения на �
 цитатами, O1–O3 опираются на данные сессии, онтологический трек получает
 оформленные кандидаты без вторжения в него. Единственная содержательная правка
 по итогам аудита — **переквалификация P1–P5 из «внесённых правок» в
-«предложения»** (сделана в `docs/analysis/experiment-1027-analysis.md` и
+«предложения»** (сделана в `docs/analysis/2026-06-16-experiment-1027-analysis.md` и
 зафиксирована в `governance/audit-contracts-2026-06-17.md`). Открытые вопросы
 корректно перенесены в стандарт и BACKLOG.

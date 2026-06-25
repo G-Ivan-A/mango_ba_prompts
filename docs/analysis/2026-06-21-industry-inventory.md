@@ -32,7 +32,7 @@ hub_research:
 > self-check).
 
 > **Примечание о размещении файла.** DoD issue #168 называет путь
-> `research/industry-inventory.md` со словом «**например**» (то есть путь —
+> `research/2026-06-21-industry-inventory.md` со словом «**например**» (то есть путь —
 > рекомендация, а не жёсткое требование). Репозиторий при этом:
 > (a) ограничивает задачу констрейнтом «**не изменять структуру каталогов**» —
 > новый top-level каталог `research/` создавать нельзя;
@@ -41,7 +41,7 @@ hub_research:
 > валидатор). Единственная трактовка, совместимая со **всеми** этими
 > ограничениями одновременно, — разместить документ в **существующем** каталоге
 > `docs/analysis/`, который уже служит домом для Industry-аналитики (ср.
-> `docs/analysis/voice-digital-channels-comparison.md`, на который реестр
+> `docs/analysis/2026-06-21-voice-digital-channels-comparison.md`, на который реестр
 > ссылается как на evidence). Слово «например» в постановке задачи прямо даёт
 > такую свободу выбора пути.
 
@@ -199,7 +199,7 @@ ADR-011 относит `call-routing` к инфраструктуре `voice-uca
 feature, у feature ≥1 function» (`minItems:1`), но также отраслево осмысленна.
 `function_type` ∈ {business, configuration, ui-action}. Evidence для всех новых
 узлов: ADR-011 + стандарт + этот документ
-(`docs/analysis/industry-inventory.md`).
+(`docs/analysis/2026-06-21-industry-inventory.md`).
 
 ### 4.1 Capabilities (parent → Domain)
 
@@ -289,7 +289,7 @@ feature, у feature ≥1 function» (`minItems:1`), но также отрасл
   **не изменялись и не удалялись**. Evidence новых узлов:
   `standards/decisions/ADR-011-industry-taxonomy.md`,
   `standards/industry-taxonomy-standard.md`,
-  `docs/analysis/industry-inventory.md` (этот документ).
+  `docs/analysis/2026-06-21-industry-inventory.md` (этот документ).
 - **JSON Schema:** изменения **не требуются** (вложенная модель уже поддерживает
   все уровни; `aliases` допустимы — у node_base нет `additionalProperties:false`).
 - **Mango (`kb/mango-taxonomy/*.yaml`):** **не изменяются** (запрет issue). После
@@ -377,7 +377,7 @@ required-наборы; #160 не затронут, т.к. он Mango-side и н�
 
 > **Замечание о §12.8.** Стандарт §12.8 советует AI-агенту «не создавать
 > `research/` in this spoke», и CI это проверяет. Issue #168 называет
-> `research/industry-inventory.md` через «например». Конфликт разрешён
+> `research/2026-06-21-industry-inventory.md` через «например». Конфликт разрешён
 > размещением документа в существующем `docs/analysis/` (см. примечание в шапке)
 > — это сохраняет зелёный CI (DoD #9) и не нарушает ни одного жёсткого
 > ограничения.

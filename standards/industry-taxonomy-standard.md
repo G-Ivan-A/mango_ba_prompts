@@ -10,7 +10,7 @@ depends_on:
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
 related_artifacts:
-  - "docs/analysis/voice-digital-channels-comparison.md"
+  - "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
   - "kb/industry-taxonomy/registry.json"
   - "kb/industry-taxonomy/registry.schema.json"
   - "standards/product-classification-contract.md"
@@ -88,7 +88,7 @@ ADR-012. В этом стандарте допускаются только аб
 4. ADR-011 в статусе `canonical` как архитектурное решение;
 5. ADR-012 и `standards/mango-taxonomy-standard.md` только для Mango-specific
    Product/Service/Module/Function layer;
-6. аналитика `docs/analysis/voice-digital-channels-comparison.md`;
+6. аналитика `docs/analysis/2026-06-21-voice-digital-channels-comparison.md`;
 7. `standards/product-classification-contract.md`;
 8. source evidence из processed KB или внешних отраслевых источников.
 
@@ -1659,7 +1659,7 @@ The validator contract is machine-actionable:
 - ADR-012 Mango Taxonomy:
   [`standards/decisions/ADR-012-mango-taxonomy.md`](decisions/ADR-012-mango-taxonomy.md)
 - Voice/digital channels analysis:
-  [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
+  [`docs/analysis/2026-06-21-voice-digital-channels-comparison.md`](../docs/analysis/2026-06-21-voice-digital-channels-comparison.md)
 - Industry Taxonomy registry:
   [`kb/industry-taxonomy/registry.json`](../kb/industry-taxonomy/registry.json)
 - Industry Taxonomy registry schema:
@@ -1671,4 +1671,4 @@ The validator contract is machine-actionable:
   вложение. В текущем checkout, issue API body, issue timeline, rendered issue
   HTML and GitHub code search attachment URL or file content were not available;
   substantive decisions from that dialog are represented in ADR-011 and
-  `docs/analysis/voice-digital-channels-comparison.md`.
+  `docs/analysis/2026-06-21-voice-digital-channels-comparison.md`.

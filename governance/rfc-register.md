@@ -14,7 +14,7 @@ related_artifacts:
   - "governance/rfc-process.md"
   - "governance/prompt-debugging-process.md"
   - "governance/sync-matrix-2026-06-17.md"
-  - "docs/analysis/experiment-1027-analysis.md"
+  - "docs/analysis/2026-06-16-experiment-1027-analysis.md"
   - "governance/audit-contracts-2026-06-17.md"
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
@@ -48,7 +48,7 @@ proposed → in-review → accepted  → implemented
 ## Открытые RFC по промптам (источник: эксперимент 1027, issue #101)
 
 Все правки ниже — **предложения** из разбора
-[`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+[`docs/analysis/2026-06-16-experiment-1027-analysis.md`](../docs/analysis/2026-06-16-experiment-1027-analysis.md).
 Промпты в PR #102 **не изменены** (остаются v0.1); записи ждут инициативы
 пользователя (часть 3 процесса).
 

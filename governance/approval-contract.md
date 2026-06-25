@@ -16,7 +16,7 @@ applies_to:
   - Research documents
   - Analysis documents
 validated_by:
-  - "docs/analysis/approval-contract-test-industry-rfc.md"
+  - "docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md"
   - "scripts/validate_issue_193_approval_contract.py"
 ---
 

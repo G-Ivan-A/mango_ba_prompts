@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate docs/analysis/issue-170-mango-inventory.md from the live registry.
+"""Generate docs/analysis/2026-06-22-issue-170-mango-inventory.md from the live registry.
 
 The inventory/analysis document (issue #170 DoD #1/#13) must reflect the registry
 byte-for-byte, so it is generated rather than hand-written: full Product -> Service
@@ -14,7 +14,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 NEW = json.loads((ROOT / "kb/mango-taxonomy/registry.json").read_text(encoding="utf-8"))["taxonomy"]
 OLDDIR = Path("/tmp/oldyaml")
-OUT = ROOT / "docs/analysis/issue-170-mango-inventory.md"
+OUT = ROOT / "docs/analysis/2026-06-22-issue-170-mango-inventory.md"
 
 op = yaml.safe_load((OLDDIR / "official-products.yaml").read_text(encoding="utf-8"))["taxonomy"]
 ir = yaml.safe_load((OLDDIR / "internal-registry.yaml").read_text(encoding="utf-8"))["taxonomy"]

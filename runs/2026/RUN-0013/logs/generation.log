@@ -1,6 +1,6 @@
 # Generation Log
 
-- 2026-06-23 UTC: изучены `runs/CONTRACT.md`, `runs/REGISTRY.md`, пример `runs/2026/RUN-0012/`, issue #207, issue #199, PR #202 и отчет `docs/analysis/executable-contracts-and-rfc-problems.md`.
+- 2026-06-23 UTC: изучены `runs/CONTRACT.md`, `runs/REGISTRY.md`, пример `runs/2026/RUN-0012/`, issue #207, issue #199, PR #202 и отчет `docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`.
 - 2026-06-23 UTC: подтвержден следующий номер `RUN-0013`; текущий последний зарегистрированный run до исправления — `RUN-0012`.
 - 2026-06-23 UTC: проверена доступность заявленной исходной задачи #1027; GitHub CLI не нашел issue/PR с номером 1027 в репозитории.
 - 2026-06-23 UTC: найден целевой источник API ВАТС: `kb/mango-product-docs/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md`.

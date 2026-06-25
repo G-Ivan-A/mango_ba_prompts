@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-16
+version: 0.2
+updated: 2026-06-25
 ai-generated: true
 type: contract
 scope: artifact-naming
@@ -11,6 +11,7 @@ related_artifacts:
   - "standards/ba-ontology.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/241"
 ---
 
 # Стандарт нейминга артефактов
@@ -102,7 +103,23 @@ related_issues:
 - **Правило N7.** `<scope>` **ДОЛЖЕН** совпадать с полем `scope` во frontmatter
   документа.
 
-## 4. Нейминг BCREQ (многоуровневый)
+## 4. Нейминг аналитических документов
+
+| Вид | Каталог | Схема | Пример |
+| --- | --- | --- | --- |
+| Аналитический отчёт / RFC / research note | `docs/analysis/` | `YYYY-MM-DD-<kebab-slug>.md` | `2026-06-24-naming-convention-audit.md` |
+
+- **Правило N8.** Все Markdown-файлы в `docs/analysis/` и его подкаталогах
+  **ДОЛЖНЫ** начинаться с календарной даты в формате `YYYY-MM-DD`.
+- **Правило N9.** Дата в имени **ДОЛЖНА** соответствовать дате создания файла по
+  git history. Если известен только месяц, **СЛЕДУЕТ** использовать день `01`;
+  для нового файла используется текущая дата создания.
+
+Обоснование: Нативная сортировка по имени сохраняет хронологию при частоте
+больше одного файла в месяц; Уникальность имён снижается до уровня дня; схема
+соответствует практике экосистемы date-prefixed research/report artifacts.
+
+## 5. Нейминг BCREQ (многоуровневый)
 
 ```text
 BCREQ-<NNN>            ← корень (уровень 0)
@@ -110,7 +127,7 @@ BCREQ-<NNN>.<k>        ← уровень 1
 BCREQ-<NNN>.<k>.<m>    ← уровень 2 …
 ```
 
-- **Правило N8.** Под-уровень **ДОЛЖЕН** ссылаться на существующий родитель;
+- **Правило N10.** Под-уровень **ДОЛЖЕН** ссылаться на существующий родитель;
   незавершённый под-уровень помечается состоянием `needs-clarification`
   ([ba-ontology.md §5](ba-ontology.md), ФТ-7).
 
@@ -120,7 +137,10 @@ BCREQ-<NNN>.<k>.<m>    ← уровень 2 …
 - [ ] `<TYPE>` есть в каталоге §2; `<TEAM>` (если есть) — в team-directory.
 - [ ] Все 30 типов реестра имеют код и пример (§2).
 - [ ] Имя не перегружено (N5).
+- [ ] Аналитические документы в `docs/analysis/` используют
+  `YYYY-MM-DD-<kebab-slug>.md`, а дата совпадает с git creation date.
 - [ ] `python3 scripts/validate_issue_97_ontology_standards.py` проходит.
+- [ ] `python3 scripts/validate_issue_241_analysis_naming.py` проходит.
 
 ## Источники
 

@@ -5,23 +5,23 @@ updated: 2026-06-03
 ai-generated: true
 type: human-review-report
 scope: mango_ba_prompts-migration-strategy
-reviews: "docs/analysis/migration-strategy-rfc.md"
+reviews: "docs/analysis/2026-06-02-migration-strategy-rfc.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/13"
 depends_on:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/10"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/12"
 ---
 
-# Human Review: `migration-strategy-rfc.md` (issue #13)
+# Human Review: `2026-06-02-migration-strategy-rfc.md` (issue #13)
 
 > 📋 **Это отчёт-сверка перед физической миграцией.** Документ фиксирует
 > результат финальной проверки доработанного
-> [`docs/analysis/migration-strategy-rfc.md`](../analysis/migration-strategy-rfc.md)
+> [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../analysis/2026-06-02-migration-strategy-rfc.md)
 > (v0.3) против согласованного чек-листа issue #13. Цель — подтвердить, что все
 > архитектурные уточнения из refinement part 1 (issue #10) и part 2 (issue #12)
 > внесены корректно и стратегия готова к реализации.
 
-**Проверяемый артефакт**: `docs/analysis/migration-strategy-rfc.md` (v0.3,
+**Проверяемый артефакт**: `docs/analysis/2026-06-02-migration-strategy-rfc.md` (v0.3,
 `status: draft`, `updated: 2026-06-03`).
 
 **Критерии**: чек-лист Human Review из issue #13 + согласованные принципы из

@@ -6,7 +6,7 @@ ai-generated: true
 type: issue-set
 scope: mango_ba_prompts-migration-execution
 based_on: "governance/BACKLOG.md"
-rfc: "docs/analysis/migration-strategy-rfc.md"
+rfc: "docs/analysis/2026-06-02-migration-strategy-rfc.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/23"
 hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 ---
@@ -478,7 +478,7 @@ M-009. Размещение: `docs/migration-manifest.md`.
 
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/23>
 - Бэклог: [`governance/BACKLOG.md`](BACKLOG.md)
-- Утверждённый RFC: [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
+- Утверждённый RFC: [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md)
 - Human Review: [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md)
 - Стандарт Issue (Хаб): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/standards/ISSUE_WORKFLOW.md>
 - Шаблон задачи (Хаб): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/.github/ISSUE_TEMPLATE/task.yml>

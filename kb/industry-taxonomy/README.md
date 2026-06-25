@@ -82,7 +82,7 @@ facet, потому что SIP trunking не является пользоват
 
 1. [`standards/decisions/ADR-011-industry-taxonomy.md`](../../standards/decisions/ADR-011-industry-taxonomy.md)
 2. [`standards/industry-taxonomy-standard.md`](../../standards/industry-taxonomy-standard.md)
-3. [`docs/analysis/voice-digital-channels-comparison.md`](../../docs/analysis/voice-digital-channels-comparison.md)
+3. [`docs/analysis/2026-06-21-voice-digital-channels-comparison.md`](../../docs/analysis/2026-06-21-voice-digital-channels-comparison.md)
 4. Reviewed Hub classification v3.0 и draft capability decomposition, указанные
    в `sources` внутри JSON-реестра.
 

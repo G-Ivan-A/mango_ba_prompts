@@ -12,7 +12,7 @@ related_artifacts:
   - "prompts/fr-documentation-stepwise.md"
   - "prompts/constraints-documentation-oneshot.md"
   - "standards/experiment-log-standard.md"
-  - "docs/analysis/experiment-1027-analysis.md"
+  - "docs/analysis/2026-06-16-experiment-1027-analysis.md"
 ---
 
 # Эксперимент: «Задача 1027» — генерация разделов 1, 2, 4, 6 ТЗ для Контакт-центра
@@ -21,7 +21,7 @@ related_artifacts:
 > [`standards/experiment-log-standard.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/experiment-log-standard.md)
 > (Уровень 1) — «dogfood» на реальной сессии БА. Полный разбор гипотез и правок
 > промптов — в
-> [`docs/analysis/experiment-1027-analysis.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/experiment-1027-analysis.md).
+> [`docs/analysis/2026-06-16-experiment-1027-analysis.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-06-16-experiment-1027-analysis.md).
 
 ## Метрики
 
@@ -84,7 +84,7 @@ related_artifacts:
 - `fr-documentation-stepwise.md` → P5 (сверка ФТ с As-Is в Шаге 4).
 
 Полные диффы — в
-[`docs/analysis/experiment-1027-analysis.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/experiment-1027-analysis.md).
+[`docs/analysis/2026-06-16-experiment-1027-analysis.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-06-16-experiment-1027-analysis.md).
 
 ## Вопросы для согласования
 

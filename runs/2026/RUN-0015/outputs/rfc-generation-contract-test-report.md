@@ -17,7 +17,7 @@ edit existing RFC files or `governance/rfc-process.md`.
 
 The validation used 11 existing RFC-like documents, the BCREQ-FR contract,
 `standards/executable-contract-standard.md`, `governance/rfc-process.md`,
-`docs/analysis/executable-contracts-and-rfc-problems.md` and external
+`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md` and external
 RFC/design-document practices.
 
 ## Local corpus observations

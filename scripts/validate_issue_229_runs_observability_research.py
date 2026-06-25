@@ -9,7 +9,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT = ROOT / "docs/analysis/runs-observability-research.md"
+REPORT = ROOT / "docs/analysis/2026-06-25-runs-observability-research.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 
 
@@ -85,7 +85,7 @@ def main() -> None:
     changelog = CHANGELOG.read_text(encoding="utf-8")
     require("Issue #229" in changelog, "CHANGELOG.md missing Issue #229 entry")
     require(
-        "docs/analysis/runs-observability-research.md" in changelog,
+        "docs/analysis/2026-06-25-runs-observability-research.md" in changelog,
         "CHANGELOG.md missing report path",
     )
 

@@ -9,8 +9,8 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-REPORT = ROOT / "docs/analysis/ba-processes-industry-analysis.md"
-RESEARCH = ROOT / "docs/analysis/telecom-vendors-ba-practices-research.md"
+REPORT = ROOT / "docs/analysis/2026-06-25-ba-processes-industry-analysis.md"
+RESEARCH = ROOT / "docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 
 
@@ -64,7 +64,7 @@ def main() -> None:
         "runs/CONTRACT.md",
         "docs/ba-processes/00-index.md",
         # Companion empirical research deliverable.
-        "docs/analysis/telecom-vendors-ba-practices-research.md",
+        "docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md",
         # Composite vs atomic taxonomy (industry terms).
         "Singular",
         "atomic",
@@ -154,7 +154,7 @@ def main() -> None:
     changelog = CHANGELOG.read_text(encoding="utf-8")
     require("Issue #233" in changelog, "CHANGELOG.md missing Issue #233 entry")
     require(
-        "docs/analysis/ba-processes-industry-analysis.md" in changelog,
+        "docs/analysis/2026-06-25-ba-processes-industry-analysis.md" in changelog,
         "CHANGELOG.md missing report path",
     )
     require(

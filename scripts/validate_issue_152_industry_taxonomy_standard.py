@@ -100,7 +100,7 @@ def check_standard() -> list[str]:
         "## Источники",
         "standards/decisions/ADR-011-industry-taxonomy.md",
         "standards/decisions/ADR-012-mango-taxonomy.md",
-        "docs/analysis/voice-digital-channels-comparison.md",
+        "docs/analysis/2026-06-21-voice-digital-channels-comparison.md",
     )
     if errors:
         return errors

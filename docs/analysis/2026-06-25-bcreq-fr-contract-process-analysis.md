@@ -19,8 +19,8 @@ related_artifacts:
   - "runs/2026/RUN-0014/metadata.yaml"
   - "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
   - "runs/2026/RUN-0011/outputs/prompts-chain.md"
-  - "docs/analysis/executable-contracts-and-rfc-problems.md"
-  - "docs/analysis/artifact-chain-hypothesis-research.md"
+  - "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md"
+  - "docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md"
 ---
 
 # Структурный анализ применения контракта BCREQ-FR: монолитный промпт против последовательности операций
@@ -431,10 +431,10 @@ grep -rhoE "^[a-z_]+:" runs/2026/*/metadata.yaml | sort | uniq -c | sort -rn
 
 Чтобы не плодить дубли, отмечаю пересечения с уже принятыми анализами:
 
-- [`docs/analysis/executable-contracts-and-rfc-problems.md`](executable-contracts-and-rfc-problems.md)
+- [`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`](2026-06-23-executable-contracts-and-rfc-problems.md)
   фиксирует разрыв «знание процесса в L3 — исполнение в L1»; настоящий документ
   даёт **конкретный кейс** этого разрыва для BCREQ-FR (PA-1, PA-2, PA-6).
-- [`docs/analysis/artifact-chain-hypothesis-research.md`](artifact-chain-hypothesis-research.md)
+- [`docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md`](2026-06-24-artifact-chain-hypothesis-research.md)
   ставит вопрос наблюдаемости и переиспользования на уровне governance; здесь —
   **операционный уровень** того же вопроса (AIE-2, AIE-5, AIE-6).
 
@@ -526,11 +526,11 @@ grep -rhoE "^[a-z_]+:" runs/2026/*/metadata.yaml | sort | uniq -c | sort -rn
   собираются из адресуемых компонентов с per-step трассировкой (вход/выход,
   токены, латентность). Режим 2 репозитория уже близок к этому (`prompts-chain.md`,
   файлы `step-N`); Режим 1 — нет. Это согласуется с измерением «observability» в
-  [`artifact-chain-hypothesis-research.md`](artifact-chain-hypothesis-research.md).
+  [`2026-06-24-artifact-chain-hypothesis-research.md`](2026-06-24-artifact-chain-hypothesis-research.md).
 - **Реестр промптов как источник правды.** Карта `00-index.md` уже играет роль
   реестра операций/промптов. Разрыв в том, что combat-контракт его не использует.
   Это операционная проекция вывода
-  [`executable-contracts-and-rfc-problems.md`](executable-contracts-and-rfc-problems.md)
+  [`2026-06-23-executable-contracts-and-rfc-problems.md`](2026-06-23-executable-contracts-and-rfc-problems.md)
   о разрыве L3-знания и L1-исполнения.
 - **Гибридные исполняемые контракты.** Существование Режима 3 (контракт-оркестратор)
   технически не противоречит «боевой чистоте» L1: ссылки на операции можно держать
@@ -594,6 +594,6 @@ grep -rhoE "^[a-z_]+:" runs/2026/*/metadata.yaml | sort | uniq -c | sort -rn
 - [`runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md`](../../runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md)
 - [`runs/2026/RUN-0011/outputs/prompts-chain.md`](../../runs/2026/RUN-0011/outputs/prompts-chain.md)
 - [`runs/stats/by-process.md`](../../runs/stats/by-process.md)
-- [`docs/analysis/executable-contracts-and-rfc-problems.md`](executable-contracts-and-rfc-problems.md),
-  [`docs/analysis/artifact-chain-hypothesis-research.md`](artifact-chain-hypothesis-research.md)
+- [`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`](2026-06-23-executable-contracts-and-rfc-problems.md),
+  [`docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md`](2026-06-24-artifact-chain-hypothesis-research.md)
 - issue [#231](https://github.com/G-Ivan-A/mango_ba_prompts/issues/231)

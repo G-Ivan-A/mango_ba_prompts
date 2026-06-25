@@ -36,7 +36,7 @@
     },
     {
       "id": "voice-channel-analysis",
-      "path": "docs/analysis/voice-digital-channels-comparison.md",
+      "path": "docs/analysis/2026-06-21-voice-digital-channels-comparison.md",
       "role": "channel asymmetry evidence"
     },
     {
@@ -51,7 +51,7 @@
     },
     {
       "id": "issue-168-industry-inventory",
-      "path": "docs/analysis/industry-inventory.md",
+      "path": "docs/analysis/2026-06-21-industry-inventory.md",
       "role": "cascade-fill change request and per-entity industry justification"
     }
   ],
@@ -113,7 +113,7 @@
         "standards/decisions/ADR-011-industry-taxonomy.md",
         "standards/industry-taxonomy-standard.md",
         "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868ddde36e1409ee32d43c0421e59c72eb9f3/classification.md",
-        "docs/analysis/voice-digital-channels-comparison.md"
+        "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
       ],
       "capabilities": [
         {
@@ -126,7 +126,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/voice-digital-channels-comparison.md"
+            "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
           ],
           "parent": {
             "domain": "voice-ucaas"
@@ -142,7 +142,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/voice-digital-channels-comparison.md"
+                "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
               ],
               "parent": {
                 "domain": "voice-ucaas",
@@ -159,7 +159,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/voice-digital-channels-comparison.md"
+                    "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
                   ],
                   "parent": {
                     "domain": "voice-ucaas",
@@ -199,7 +199,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "voice-ucaas",
@@ -241,7 +241,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/voice-digital-channels-comparison.md"
+                "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
               ],
               "parent": {
                 "domain": "voice-ucaas",
@@ -258,7 +258,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/voice-digital-channels-comparison.md"
+                    "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
                   ],
                   "parent": {
                     "domain": "voice-ucaas",
@@ -307,7 +307,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/voice-digital-channels-comparison.md"
+                "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
               ],
               "parent": {
                 "domain": "voice-ucaas",
@@ -324,7 +324,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/voice-digital-channels-comparison.md"
+                    "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
                   ],
                   "parent": {
                     "domain": "voice-ucaas",
@@ -2190,7 +2190,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "voice-ucaas"
@@ -2206,7 +2206,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "voice-ucaas",
@@ -2223,7 +2223,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "voice-ucaas",
@@ -2843,7 +2843,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "contact-center",
@@ -4667,7 +4667,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "contact-center"
@@ -4683,7 +4683,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "contact-center",
@@ -4700,7 +4700,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "contact-center",
@@ -4733,7 +4733,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "contact-center",
@@ -4750,7 +4750,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "contact-center",
@@ -4786,7 +4786,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "contact-center"
@@ -4802,7 +4802,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "contact-center",
@@ -4819,7 +4819,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "contact-center",
@@ -5143,7 +5143,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "digital-channels",
@@ -5734,7 +5734,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "digital-channels"
@@ -5750,7 +5750,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "digital-channels",
@@ -5767,7 +5767,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "digital-channels",
@@ -6493,7 +6493,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "ai-automation"
@@ -6509,7 +6509,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "ai-automation",
@@ -6526,7 +6526,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "ai-automation",
@@ -7525,7 +7525,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "analytics"
@@ -7541,7 +7541,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "analytics",
@@ -7558,7 +7558,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "analytics",
@@ -7771,7 +7771,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "hardware"
@@ -7787,7 +7787,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "hardware",
@@ -7804,7 +7804,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "hardware",
@@ -8070,7 +8070,7 @@
           "evidence_refs": [
             "standards/decisions/ADR-011-industry-taxonomy.md",
             "standards/industry-taxonomy-standard.md",
-            "docs/analysis/industry-inventory.md"
+            "docs/analysis/2026-06-21-industry-inventory.md"
           ],
           "parent": {
             "domain": "security"
@@ -8086,7 +8086,7 @@
               "evidence_refs": [
                 "standards/decisions/ADR-011-industry-taxonomy.md",
                 "standards/industry-taxonomy-standard.md",
-                "docs/analysis/industry-inventory.md"
+                "docs/analysis/2026-06-21-industry-inventory.md"
               ],
               "parent": {
                 "domain": "security",
@@ -8103,7 +8103,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "security",
@@ -8489,7 +8489,7 @@
                   "evidence_refs": [
                     "standards/decisions/ADR-011-industry-taxonomy.md",
                     "standards/industry-taxonomy-standard.md",
-                    "docs/analysis/industry-inventory.md"
+                    "docs/analysis/2026-06-21-industry-inventory.md"
                   ],
                   "parent": {
                     "domain": "platform",
