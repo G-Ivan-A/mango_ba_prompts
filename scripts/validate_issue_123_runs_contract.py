@@ -157,6 +157,17 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0016": {
+        "year": "2026",
+        "files": [
+            "inputs/01-raw-request-and-qa.md",
+            "inputs/02-kb-extracts.md",
+            "outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md",
+            "outputs/analysis-bcreq-765-scope-2026-06-25.md",
+            "logs/business-task-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

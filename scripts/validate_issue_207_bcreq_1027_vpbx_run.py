@@ -81,9 +81,9 @@ REQUIRED_PROJECT_TEXT = {
         "Validate issue #207 BCREQ-1027 VPBX run",
         VALIDATOR,
     ),
-    "runs/stats/by-type.md": ("Всего: 15", "RUN-0013", "bcreq-1027"),
-    "runs/stats/by-date.md": ("2026-06 | 10", "RUN-0013", "2026-06-24"),
-    "runs/stats/by-process.md": ("Уникальных процессов: 15", "bcreq-1027", "RUN-0013"),
+    "runs/stats/by-type.md": ("Всего: 16", "RUN-0013", "bcreq-1027"),
+    "runs/stats/by-date.md": ("2026-06 | 11", "RUN-0013", "2026-06-24"),
+    "runs/stats/by-process.md": ("Уникальных процессов: 16", "bcreq-1027", "RUN-0013"),
 }
 
 

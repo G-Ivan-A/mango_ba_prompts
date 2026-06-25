@@ -25,6 +25,7 @@ RUN_TYPES = {
     "RUN-0013": "business-task",
     "RUN-0014": "business-task",
     "RUN-0015": "validation",
+    "RUN-0016": "business-task",
 }
 
 TYPE_LABELS = {
@@ -105,9 +106,9 @@ def check_docs() -> list[str]:
         errors += require_text("runs/stats/by-type.md", run_id)
         errors += require_text("runs/stats/by-date.md", run_id)
         errors += require_text("runs/stats/by-process.md", run_id)
-    errors += require_text("runs/stats/by-type.md", "Всего: 15")
+    errors += require_text("runs/stats/by-type.md", "Всего: 16")
     errors += require_text("runs/stats/by-date.md", "2026-05", "2026-06", "Тренд")
-    errors += require_text("runs/stats/by-process.md", "Уникальных процессов: 15")
+    errors += require_text("runs/stats/by-process.md", "Уникальных процессов: 16")
     errors += require_text(".github/workflows/github-pages.yml", "Validate issue #133 runs restructure")
     return errors
 
