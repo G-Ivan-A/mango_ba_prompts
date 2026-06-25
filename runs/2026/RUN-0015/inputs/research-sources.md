@@ -18,19 +18,19 @@ The contract was checked against 11 existing RFC-like documents:
 3. `governance/rfc/prompt-improvement-multichannel-proposal.md`
 4. `governance/rfc-to-hub-001-knowledge-transfer.md`
 5. `governance/rfc-to-hub-002-prompt-debugging-process.md`
-6. `docs/analysis/approval-contract-test-industry-rfc.md`
-7. `docs/analysis/migration-strategy-rfc.md`
-8. `docs/analysis/rfc-industry-taxonomy-improvement.md`
-9. `docs/analysis/rfc-mango-taxonomy-improvement.md`
-10. `docs/analysis/rfc-rules-registry-system.md`
-11. `docs/analysis/rfc-taxonomy-extension-mechanism.md`
+6. `docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md`
+7. `docs/analysis/2026-06-02-migration-strategy-rfc.md`
+8. `docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md`
+9. `docs/analysis/2026-06-22-rfc-mango-taxonomy-improvement.md`
+10. `docs/analysis/2026-06-22-rfc-rules-registry-system.md`
+11. `docs/analysis/2026-06-22-rfc-taxonomy-extension-mechanism.md`
 
 Supporting local sources:
 
 - `governance/bcreq-fr-generation-contract.md`
 - `standards/executable-contract-standard.md`
 - `governance/rfc-process.md`
-- `docs/analysis/executable-contracts-and-rfc-problems.md`
+- `docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`
 - `runs/CONTRACT.md`
 
 ## External practices

@@ -7,8 +7,8 @@ type: rfc
 scope: industry-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/178"
 based_on:
-  - "docs/analysis/taxonomy-convergence-test.md"
-  - "docs/analysis/mango-taxonomy-convergence-test.md"
+  - "docs/analysis/2026-06-22-taxonomy-convergence-test.md"
+  - "docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md"
   - "standards/industry-taxonomy-standard.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
 target_artifacts:
@@ -38,7 +38,7 @@ merged в `upstream/main`, а ветка PR #179 синхронизирован�
 | Industry registry | `kb/industry-taxonomy/registry.json` |
 | Industry schema | `kb/industry-taxonomy/registry.schema.json` |
 | Mango registry | `kb/mango-taxonomy/registry.json` |
-| Industry convergence report | `docs/analysis/taxonomy-convergence-test.md` |
+| Industry convergence report | `docs/analysis/2026-06-22-taxonomy-convergence-test.md` |
 | Industry convergence experiment | `experiments/issue-174/` |
 
 RFC ниже не предлагает переименование каталогов и не требует stacking поверх

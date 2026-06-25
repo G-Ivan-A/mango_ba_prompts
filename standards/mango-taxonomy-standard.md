@@ -14,7 +14,7 @@ depends_on:
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "kb/industry-taxonomy/registry.json"
 related_artifacts:
-  - "docs/analysis/voice-digital-channels-comparison.md"
+  - "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
   - "docs/audit/issue-146-mango-taxonomy-validation.md"
   - "docs/audit/taxonomy-standards-independent-review.md"
   - "kb/mango-taxonomy/official-products.yaml"
@@ -116,7 +116,7 @@ boundary rules; он НЕ ДОЛЖЕН становиться полным пр�
    соответствуют этому стандарту;
 7. ADR-012 canonical v1.0 только для Mango-specific architecture where it does
    not conflict with ADR-011 or Industry registry;
-8. `docs/analysis/voice-digital-channels-comparison.md`;
+8. `docs/analysis/2026-06-21-voice-digital-channels-comparison.md`;
 9. `docs/audit/issue-146-mango-taxonomy-validation.md` and
    `docs/audit/taxonomy-standards-independent-review.md`;
 10. processed KB evidence.
@@ -1966,7 +1966,7 @@ Validator-ready elements are explicit:
 - Industry reference taxonomy registry:
   [`kb/industry-taxonomy/registry.json`](../kb/industry-taxonomy/registry.json)
 - Voice/digital channels analysis:
-  [`docs/analysis/voice-digital-channels-comparison.md`](../docs/analysis/voice-digital-channels-comparison.md)
+  [`docs/analysis/2026-06-21-voice-digital-channels-comparison.md`](../docs/analysis/2026-06-21-voice-digital-channels-comparison.md)
 - Issue #146 Mango Taxonomy audit:
   [`docs/audit/issue-146-mango-taxonomy-validation.md`](../docs/audit/issue-146-mango-taxonomy-validation.md)
 - Independent taxonomy standards audit:

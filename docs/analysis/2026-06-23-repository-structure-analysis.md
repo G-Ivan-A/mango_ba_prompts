@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/192"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/186"
 related_artifacts:
-  - "docs/analysis/rfc-rules-registry-system.md"
+  - "docs/analysis/2026-06-22-rfc-rules-registry-system.md"
   - "governance/artifact-map.md"
   - "AI_GOVERNANCE.md"
   - "standards/kb-standard.md"
@@ -577,7 +577,7 @@ tooling).
 
 | Опция | За | Против |
 | --- | --- | --- |
-| **`governance/rules/`** (позиция RFC [#186](../analysis/rfc-rules-registry-system.md)) | Правила регулируют поведение AI-агента и создание артефактов = надзор (EDM); рядом с другими governance-контрактами; машинно-читаемый контракт поведения | Усиливает «болото governance», если туда же тянуть execution-правила; governance в норме = роли, не реестр |
+| **`governance/rules/`** (позиция RFC [#186](../analysis/2026-06-22-rfc-rules-registry-system.md)) | Правила регулируют поведение AI-агента и создание артефактов = надзор (EDM); рядом с другими governance-контрактами; машинно-читаемый контракт поведения | Усиливает «болото governance», если туда же тянуть execution-правила; governance в норме = роли, не реестр |
 | **`kb/rules/`** (позиция подготовительного диалога) | Правила как машинно-читаемое знание (SSOT, RAG-готовность); kb уже pre-RAG store | Нарушает kb-standard S1: kb не дублирует нормы, а ссылается; kb — справочно (Reference Library), правила — нормативно (SIB) |
 | **Рядом с процессом** (встроить в контракт) | Execution-правила трассируются к процессу; минимум новых каталогов (Anti-Inflation) | Нет единой точки для кросс-процессных правил; дублирование между контрактами |
 | **`artifact/rules/`** | — | Отвергается вместе с идеей artifact/ (Q5): нет такого каталога нигде |
@@ -1015,7 +1015,7 @@ flowchart LR
 - [AI_GOVERNANCE.md](../../AI_GOVERNANCE.md) — роли, режимы, границы, DoD
 - [governance/artifact-map.md](../../governance/artifact-map.md) — карта артефактов
 - [standards/kb-standard.md](../../standards/kb-standard.md) — правило S1 (kb не дублирует стандарт)
-- [docs/analysis/rfc-rules-registry-system.md](rfc-rules-registry-system.md) — RFC реестра правил (#186)
+- [docs/analysis/2026-06-22-rfc-rules-registry-system.md](2026-06-22-rfc-rules-registry-system.md) — RFC реестра правил (#186)
 - [docs/hub-research-dependencies.md](../hub-research-dependencies.md) — единственный мост к research Хаба
 - [CONTRIBUTING.md](../../CONTRIBUTING.md) — workflow и правила Creative-режима
 

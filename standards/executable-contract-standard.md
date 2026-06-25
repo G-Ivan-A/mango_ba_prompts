@@ -9,7 +9,7 @@ rule_class: management
 scope: executable-contracts
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/212"
 depends_on:
-  - "docs/analysis/executable-contracts-and-rfc-problems.md"
+  - "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md"
 related_artifacts:
   - "standards/prompt-standard.md"
   - "standards/cascading-context-loading-standard.md"
@@ -31,7 +31,7 @@ validated_by:
 runtime-входы L1 не зависели от управленческих материалов L3.
 
 Основание стандарта — отчёт
-[`docs/analysis/executable-contracts-and-rfc-problems.md`](../docs/analysis/executable-contracts-and-rfc-problems.md),
+[`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`](../docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md),
 а также существующие базовые артефакты:
 [`standards/prompt-standard.md`](prompt-standard.md),
 [`standards/cascading-context-loading-standard.md`](cascading-context-loading-standard.md),

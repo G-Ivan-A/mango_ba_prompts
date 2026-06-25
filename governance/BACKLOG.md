@@ -5,7 +5,7 @@ updated: 2026-06-03
 ai-generated: true
 type: backlog
 scope: mango_ba_prompts-migration-execution
-based_on: "docs/analysis/migration-strategy-rfc.md"
+based_on: "docs/analysis/2026-06-02-migration-strategy-rfc.md"
 human_review: "docs/reviews/migration-rfc-human-review-2026-06.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/14"
 ---
@@ -13,7 +13,7 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/14"
 # BACKLOG: физическая миграция Mango из Хаба — Фаза 1
 
 > 📋 **Это операционный план, а не реализация.** Документ разбивает утверждённую
-> стратегию [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
+> стратегию [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md)
 > (v0.3, прошедшую Human Review —
 > [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md))
 > на атомарные задачи для физического переноса Фазы 1. Сам перенос **не
@@ -31,7 +31,7 @@ assets и продуктовых экспериментов, нормализа�
 реестра зависимостей от исследований Хаба.
 
 **Источник истины** — утверждённый
-[`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md).
+[`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md).
 Бэклог не вводит новых решений: каждая задача трассируется на конкретный раздел
 RFC. Открытые вопросы Q1–Q4 (RFC §7) остаются на решение Пользователя и не
 переопределяются здесь.
@@ -314,14 +314,14 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       источника» как первоклассная семантика; O3 типизация промежуточных
       артефактов (As-Is-выжимка, сценарная матрица, отчёт валидации, вопросы
       заказчику). Источник:
-      [`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+      [`docs/analysis/2026-06-16-experiment-1027-analysis.md`](../docs/analysis/2026-06-16-experiment-1027-analysis.md).
 
 ---
 
 ## Связанные артефакты
 
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/14>
-- Утверждённый RFC: [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
+- Утверждённый RFC: [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md)
 - Human Review: [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md)
 - Контракт и правила: [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../AI_QUICK_RULES.md)
 - Вклад и workflow: [`CONTRIBUTING.md`](../CONTRIBUTING.md)

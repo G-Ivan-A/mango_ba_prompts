@@ -12,7 +12,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/1027"
 related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/202"
-  - "docs/analysis/executable-contracts-and-rfc-problems.md"
+  - "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md"
 contract_used: "governance/bcreq-fr-generation-contract.md"
 api_reference:
   - "POST /vpbx/stats/calls/result"

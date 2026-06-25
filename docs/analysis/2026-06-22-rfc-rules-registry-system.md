@@ -129,8 +129,8 @@ cross-standard registry, где видно, какие правила приме
 ### 3.5. Convergence reports
 
 Отчёты
-[`docs/analysis/taxonomy-convergence-test.md`](taxonomy-convergence-test.md) и
-[`docs/analysis/mango-taxonomy-convergence-test.md`](mango-taxonomy-convergence-test.md)
+[`docs/analysis/2026-06-22-taxonomy-convergence-test.md`](2026-06-22-taxonomy-convergence-test.md) и
+[`docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md`](2026-06-22-mango-taxonomy-convergence-test.md)
 показывают повторяемую проблему: AI-агент не галлюцинирует, но расходится в
 классификации из-за missing boundary rules, неоднозначных узлов, разной
 гранулярности и неполного decision tree.

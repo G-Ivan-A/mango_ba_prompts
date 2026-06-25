@@ -13,6 +13,6 @@ outputs:
 logs:
   - logs/generation-log.md
 related_artifacts:
-  - docs/analysis/experiment-1027-analysis.md
+  - docs/analysis/2026-06-16-experiment-1027-analysis.md
   - prompts/fr-documentation-stepwise.md
   - prompts/constraints-documentation-oneshot.md

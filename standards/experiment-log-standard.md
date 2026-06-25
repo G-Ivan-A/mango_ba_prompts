@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
   - "runs/"
-  - "docs/analysis/experiment-1027-analysis.md"
+  - "docs/analysis/2026-06-16-experiment-1027-analysis.md"
 ---
 
 # Стандарт фиксации экспериментов (Draft v0.1)

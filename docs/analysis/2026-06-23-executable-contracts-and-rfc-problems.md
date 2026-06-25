@@ -92,7 +92,7 @@ related_artifacts:
 | K-P5.2 | P5/P3 | температура задаётся 3 несогласованными способами | ⚪ | [→](#k-p5-нет-правила-выбора-формата) |
 | K-P5.3 | P5 | `prompts/archive/fr-validation-*-legacy.md` «без разметки Markdown» vs остальные | ⚪ | [→](#k-p5-нет-правила-выбора-формата) |
 | R-1 | P6 | RFC живут в 3 «домах»; нет единого реестра-источника истины | 🟠 | [→](#4-проблемы-rfc-p6) |
-| R-2 | P6 | два расходящихся шаблона; `docs/analysis/rfc-rules-registry-system.md` без `type:` | 🟠 | [→](#4-проблемы-rfc-p6) |
+| R-2 | P6 | два расходящихся шаблона; `docs/analysis/2026-06-22-rfc-rules-registry-system.md` без `type:` | 🟠 | [→](#4-проблемы-rfc-p6) |
 | R-3 | P6 | анализ перемешан с предложениями (`…/bcreq-ft-scope-formation-rules-proposal.md` стр. 101-167) | 🟠 | [→](#4-проблемы-rfc-p6) |
 | R-4 | P6 | примеры вместо инструкций (там же, `Пример:` стр. 142-144) | 🟡 | [→](#4-проблемы-rfc-p6) |
 | R-5 | P6 | структурная вода (Альтернативы/Приоритизация/Риски как обязательные блоки) | 🟡 | [→](#4-проблемы-rfc-p6) |
@@ -200,19 +200,19 @@ YAML/JSON. Следствие: §3 BCREQ-FR — YAML-индекс; те же п�
 
 **R-1 — несколько «домов», нет реестра-источника истины.** RFC-семейство
 разбросано: `governance/rfc/` (3 файла), `governance/rfc-to-hub-*` (2),
-`docs/analysis/` (6: `rfc-industry-taxonomy-improvement.md`,
-`rfc-mango-taxonomy-improvement.md`, `rfc-rules-registry-system.md`,
-`rfc-taxonomy-extension-mechanism.md`, `migration-strategy-rfc.md`,
-`approval-contract-test-industry-rfc.md`), плюс реестр `governance/rfc-register.md`
+`docs/analysis/` (6: `2026-06-22-rfc-industry-taxonomy-improvement.md`,
+`2026-06-22-rfc-mango-taxonomy-improvement.md`, `2026-06-22-rfc-rules-registry-system.md`,
+`2026-06-22-rfc-taxonomy-extension-mechanism.md`, `2026-06-02-migration-strategy-rfc.md`,
+`2026-06-23-approval-contract-test-industry-rfc.md`), плюс реестр `governance/rfc-register.md`
 и процесс `governance/rfc-process.md`. Где «настоящий» RFC, а где анализ — по
 расположению не определить.
 
 **R-2 — два расходящихся шаблона.** «Тяжёлый» с блоком `## Статус: proposed` +
 предупреждением «это предложение, не изменение»
 (`governance/rfc/bcreq-ft-scope-formation-rules-proposal.md`) против «лёгкого» с
-тонким frontmatter. `docs/analysis/rfc-rules-registry-system.md` вовсе без поля
+тонким frontmatter. `docs/analysis/2026-06-22-rfc-rules-registry-system.md` вовсе без поля
 `type:` и с `issue: 186` (голое число), тогда как
-`docs/analysis/rfc-industry-taxonomy-improvement.md` имеет `type: rfc` и
+`docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md` имеет `type: rfc` и
 `issue: "<url>"`. Единого нормативного шаблона нет.
 
 **R-3 — анализ перемешан с предложениями.** В
@@ -426,7 +426,7 @@ Frontmatter: type: rfc · id: RFC-NNN · status · единственная сс
 
 | Требование DoD | Раздел |
 | --- | --- |
-| Отчёт `docs/analysis/executable-contracts-and-rfc-problems.md` | этот файл |
+| Отчёт `docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md` | этот файл |
 | Полный список проблем контрактов | §3 (K-P1…K-P5) |
 | Полный список проблем RFC | §4 (R-1…R-8) |
 | Предложения по исправлению (полный список действий) | §7 (1…25) |

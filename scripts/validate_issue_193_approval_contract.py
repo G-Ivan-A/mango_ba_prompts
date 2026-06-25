@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 CONTRACT = "governance/approval-contract.md"
-TEST_EVIDENCE = "docs/analysis/approval-contract-test-industry-rfc.md"
+TEST_EVIDENCE = "docs/analysis/2026-06-23-approval-contract-test-industry-rfc.md"
 VALIDATOR = "scripts/validate_issue_193_approval_contract.py"
 
 REQUIRED_CONTRACT_TEXT = (
@@ -45,7 +45,7 @@ REQUIRED_CONTRACT_TEXT = (
 
 REQUIRED_TEST_TEXT = (
     CONTRACT,
-    "docs/analysis/rfc-industry-taxonomy-improvement.md",
+    "docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md",
     "## 1. Тестовый запуск",
     "## 2. Проверка структуры документа",
     "## 3. Пакет согласования для раздела 1",
@@ -57,8 +57,8 @@ REQUIRED_TEST_TEXT = (
     "Стоп-условие атомарности",
     "В разделе конкретных предложений НЕТ",
     "standards/industry-taxonomy-standard.md",
-    "docs/analysis/taxonomy-convergence-test.md",
-    "docs/analysis/mango-taxonomy-convergence-test.md",
+    "docs/analysis/2026-06-22-taxonomy-convergence-test.md",
+    "docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md",
 )
 
 REQUIRED_PROJECT_TEXT = {

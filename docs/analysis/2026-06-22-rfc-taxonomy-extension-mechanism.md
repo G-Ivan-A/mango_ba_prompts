@@ -7,17 +7,17 @@ type: rfc
 scope: taxonomy-extension-mechanism
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/187"
 based_on:
-  - "docs/analysis/taxonomy-convergence-test.md"
-  - "docs/analysis/mango-taxonomy-convergence-test.md"
-  - "docs/analysis/rfc-industry-taxonomy-improvement.md"
-  - "docs/analysis/rfc-mango-taxonomy-improvement.md"
+  - "docs/analysis/2026-06-22-taxonomy-convergence-test.md"
+  - "docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md"
+  - "docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md"
+  - "docs/analysis/2026-06-22-rfc-mango-taxonomy-improvement.md"
   - "standards/industry-taxonomy-standard.md"
   - "standards/mango-taxonomy-standard.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
 related_rfc:
-  - "docs/analysis/rfc-industry-taxonomy-improvement.md"
-  - "docs/analysis/rfc-mango-taxonomy-improvement.md"
+  - "docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md"
+  - "docs/analysis/2026-06-22-rfc-mango-taxonomy-improvement.md"
 target_artifacts:
   - "docs/analysis/README.md"
   - "standards/taxonomy-extension-contract.md (proposed, not created yet)"
@@ -42,15 +42,15 @@ target_artifacts:
 стратегического RFC и согласования, и как этот механизм по-разному работает для
 Industry и Mango из-за разницы в источниках данных.
 
-RFC сознательно следует прецеденту PR #179 (`rfc-industry-taxonomy-improvement.md`)
-и PR #181 (`rfc-mango-taxonomy-improvement.md`): на стадии RFC PR содержит **только
+RFC сознательно следует прецеденту PR #179 (`2026-06-22-rfc-industry-taxonomy-improvement.md`)
+и PR #181 (`2026-06-22-rfc-mango-taxonomy-improvement.md`): на стадии RFC PR содержит **только
 сам RFC-документ**, реализация артефактов идёт отдельной веткой после approval.
 
 ## 2. Входные факты
 
 ### 2.1 Industry test на сходимость (PR #175)
 
-Источник: `docs/analysis/taxonomy-convergence-test.md`, скоринг
+Источник: `docs/analysis/2026-06-22-taxonomy-convergence-test.md`, скоринг
 `experiments/issue-174/score_convergence.py`.
 
 | Метрика | Результат |
@@ -62,7 +62,7 @@ RFC сознательно следует прецеденту PR #179 (`rfc-ind
 | function_type | 21/25 = 84% |
 | Full path | 17/25 = 68% |
 
-Из разбора (см. `rfc-industry-taxonomy-improvement.md`, §3.2) **три** расхождения —
+Из разбора (см. `2026-06-22-rfc-industry-taxonomy-improvement.md`, §3.2) **три** расхождения —
 это «пробелы покрытия»: в реестре нет нужного canonical node.
 
 | Кейс | Чего нет в реестре |
@@ -76,7 +76,7 @@ RFC сознательно следует прецеденту PR #179 (`rfc-ind
 
 ### 2.2 Mango test на сходимость (PR #177)
 
-Источник: `docs/analysis/mango-taxonomy-convergence-test.md`.
+Источник: `docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md`.
 
 | Метрика | Результат |
 | --- | --- |
@@ -124,7 +124,7 @@ Function**. Стратегические уровни (Domain, Capability) ра�
 **Правило.** Новый Domain или Capability, переименование/слияние/удаление
 существующего, изменение границы между двумя Capability — **ТОЛЬКО через RFC** с
 явным approval фаундера. Это совместимо с уже существующей практикой
-(`rfc-industry-taxonomy-improvement.md`, `rfc-mango-taxonomy-improvement.md`).
+(`2026-06-22-rfc-industry-taxonomy-improvement.md`, `2026-06-22-rfc-mango-taxonomy-improvement.md`).
 
 ### 3.2 Тактические уровни (контролируемая автоматизация): Feature, Function
 
@@ -250,7 +250,7 @@ Feature/Function-узлов (id, level, parent, definition, evidence_refs), пр
 2. **Canonical parent.** parent существует, approved, не deprecated.
 3. **Уникальность id.** нет другого active узла с тем же `id` без
    `homonym_allowed: true` (как в `validate_issue_156_*` и
-   `rfc-industry-taxonomy-improvement.md` R1).
+   `2026-06-22-rfc-industry-taxonomy-improvement.md` R1).
 4. **Alias safety.** alias/source term не резолвится в несколько canonical nodes
    (как в `validate_issue_168_*`).
 5. **Source contract.** `evidence_refs[]` не пуст; для scope `mango` каждый ref —
@@ -269,9 +269,9 @@ RFC. Это и есть «контролируемое качество» из �
 
 | # | RFC | Приоритет | Статус | Дата создания | Связанная проблема |
 |---|-----|-----------|--------|---------------|-------------------|
-| 1 | rfc-industry-taxonomy-improvement.md | P1 | на согласовании | 2026-06-22 | Industry test 68% |
-| 2 | rfc-mango-taxonomy-improvement.md | P1 | на согласовании | 2026-06-22 | Mango test 37% |
-| 3 | rfc-taxonomy-extension-mechanism.md | P1 | на согласовании | 2026-06-22 | Системное расширение |
+| 1 | 2026-06-22-rfc-industry-taxonomy-improvement.md | P1 | на согласовании | 2026-06-22 | Industry test 68% |
+| 2 | 2026-06-22-rfc-mango-taxonomy-improvement.md | P1 | на согласовании | 2026-06-22 | Mango test 37% |
+| 3 | 2026-06-22-rfc-taxonomy-extension-mechanism.md | P1 | на согласовании | 2026-06-22 | Системное расширение |
 
 Цель — нативно видеть, какие RFC согласовывать первыми.
 

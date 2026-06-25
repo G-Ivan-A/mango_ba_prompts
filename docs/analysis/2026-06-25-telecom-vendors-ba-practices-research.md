@@ -9,7 +9,7 @@ operating_mode: creative
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/233"
 related_artifacts:
   - "kb/practices/source-backed-analysis.md"
-  - "docs/analysis/industry-inventory.md"
+  - "docs/analysis/2026-06-21-industry-inventory.md"
   - "standards/industry-standards-standard.md"
 ---
 

@@ -13,7 +13,7 @@ related_artifacts:
   - "prompts/constraints-documentation-stepwise.md"
   - "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
   - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
-  - "docs/analysis/experiment-1027-analysis.md"
+  - "docs/analysis/2026-06-16-experiment-1027-analysis.md"
 ---
 
 # Анализ эксперимента BCREQ-1025 (Email-маршрутизация по Точке входа)
@@ -95,7 +95,7 @@ related_artifacts:
 функциональности, где нужно явно отличать обязательное поведение системы от
 предоставляемой пользователю возможности.
 
-**Причина-гипотеза:** Правка P2 из [анализа 1027](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/experiment-1027-analysis.md)
+**Причина-гипотеза:** Правка P2 из [анализа 1027](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-06-16-experiment-1027-analysis.md)
 ещё не применена к промпту (RFC-1027-P2 в статусе `proposed`). Повторение той же
 ошибки в эксперименте 1025 **подтверждает** необходимость RFC-1027-P2 и усиливает
 приоритет реализации. Промпт не предписывает явно использование слова «ВОЗМОЖНОСТЬ»

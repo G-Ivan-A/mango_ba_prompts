@@ -5,7 +5,7 @@ updated: 2026-06-05
 ai-generated: true
 type: migration-manifest
 scope: mango_ba_prompts-migration-execution
-based_on: "docs/analysis/migration-strategy-rfc.md"
+based_on: "docs/analysis/2026-06-02-migration-strategy-rfc.md"
 backlog_ref: "governance/BACKLOG.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/36"
 hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
@@ -26,7 +26,7 @@ closed_in_phase: 3
 > миграции для будущего аудита.
 >
 > **Источник истины** — утверждённый
-> [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
+> [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md)
 > (v0.3, Human Review 2026-06-04). Манифест не вводит новых решений: каждая
 > строка трассируется на аудит RFC §2 и таблицу файлов Фазы 1 (§3.2).
 
@@ -205,7 +205,7 @@ review и migration-era ссылки, чтобы текущий репозито
 ## Связанные артефакты
 
 - Issue (M-009): <https://github.com/G-Ivan-A/mango_ba_prompts/issues/36>
-- Утверждённый RFC (источник истины): [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
+- Утверждённый RFC (источник истины): [`docs/analysis/2026-06-02-migration-strategy-rfc.md`](../docs/analysis/2026-06-02-migration-strategy-rfc.md)
 - Операционный бэклог Фазы 1: [`governance/BACKLOG.md`](BACKLOG.md)
 - Реестр issues Фазы 1: [`governance/migration-issues-registry.md`](migration-issues-registry.md)
 - Реестр research-зависимостей (M-007): [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md) *(создаётся)*

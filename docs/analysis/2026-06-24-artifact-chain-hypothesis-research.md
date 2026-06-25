@@ -11,7 +11,7 @@ related_artifacts:
   - "governance/rfc-process.md"
   - "standards/artifact-naming-standard.md"
   - "standards/executable-contract-standard.md"
-  - "docs/analysis/executable-contracts-and-rfc-problems.md"
+  - "docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md"
 ---
 
 # Исследование гипотезы цепочки артефактов
@@ -463,7 +463,7 @@ Pattern/Standard`. Он хорошо фиксирует статус RFC и huma
 - RFC-процесс Mango: [`governance/rfc-process.md`](../../governance/rfc-process.md)
 - Стандарт нейминга артефактов: [`standards/artifact-naming-standard.md`](../../standards/artifact-naming-standard.md)
 - Стандарт исполнимых контрактов: [`standards/executable-contract-standard.md`](../../standards/executable-contract-standard.md)
-- Анализ проблем контрактов и RFC: [`docs/analysis/executable-contracts-and-rfc-problems.md`](executable-contracts-and-rfc-problems.md)
+- Анализ проблем контрактов и RFC: [`docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md`](2026-06-23-executable-contracts-and-rfc-problems.md)
 - Contributing: [`CONTRIBUTING.md`](../../CONTRIBUTING.md)
 
 Внешние:

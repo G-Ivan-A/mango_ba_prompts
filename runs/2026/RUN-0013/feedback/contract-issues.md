@@ -8,7 +8,7 @@
 
 ## Зафиксированные проблемы без изменения контрактов
 
-- `runs/CONTRACT.md` дублирует `standards/runs-contract-standard.md`; эта проблема уже описана в `docs/analysis/executable-contracts-and-rfc-problems.md` как K-P4.2.
+- `runs/CONTRACT.md` дублирует `standards/runs-contract-standard.md`; эта проблема уже описана в `docs/analysis/2026-06-23-executable-contracts-and-rfc-problems.md` как K-P4.2.
 - `runs/CONTRACT.md` не формализует отдельным машинно-проверяемым правилом автоматическое исправление ошибочного пути постановки задачи.
 - `runs/CONTRACT.md` не содержит явного правила, что изменение контрактов runs требует 2-факторного подтверждения human+LLM.
 

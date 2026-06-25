@@ -16,10 +16,10 @@ related_artifacts:
   - "governance/bcreq-fr-generation-contract.md"
   - "governance/contracts-registry.md"
   - "docs/requirements-engineering-crosswalk.md"
-  - "docs/analysis/telecom-vendors-ba-practices-research.md"
-  - "docs/analysis/artifact-chain-hypothesis-research.md"
-  - "docs/analysis/runs-observability-research.md"
-  - "docs/analysis/bcreq-fr-contract-process-analysis.md"
+  - "docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md"
+  - "docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md"
+  - "docs/analysis/2026-06-25-runs-observability-research.md"
+  - "docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md"
 validated_by:
   - "scripts/validate_issue_233_ba_processes_industry_analysis.py"
 ---
@@ -64,11 +64,11 @@ validated_by:
 | **NOT FOUND** | источник не найден — утверждение **не выпускается** как факт |
 
 **Эмпирическая база** собрана в отдельном companion-документе
-[`docs/analysis/telecom-vendors-ba-practices-research.md`](telecom-vendors-ba-practices-research.md)
+[`docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md`](2026-06-25-telecom-vendors-ba-practices-research.md)
 (16 компаний с источниками по каждому факту выручки и BA-практики); этот документ
 синтезирует её, не дублируя сырьё. Разделение research-сырья и аналитического
 синтеза соответствует цепочке артефактов из
-[`docs/analysis/artifact-chain-hypothesis-research.md`](artifact-chain-hypothesis-research.md).
+[`docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md`](2026-06-24-artifact-chain-hypothesis-research.md).
 
 **Метод-оговорка (честно).** Домены `tmforum.org`, официальные домены операторов
 (att.com, verizon.com, gsma.com), ATS-страницы вакансий и SEC EDGAR
@@ -104,12 +104,12 @@ validated_by:
 
 Issue опирается на два завершённых исследования, чьи выводы задают рамку:
 
-- **A3 — runs-observability** ([`runs-observability-research.md`](runs-observability-research.md)):
+- **A3 — runs-observability** ([`2026-06-25-runs-observability-research.md`](2026-06-25-runs-observability-research.md)):
   индустриальные практики (LLM observability, experiment tracking, distributed
   tracing, prompt engineering, contract testing) **полностью покрывают**
   выявленные проблемы. Вывод: *«изобретать новую модель не требуется — всё уже
   есть в индустрии»*. Этот тезис проверяется здесь и для БА-артефактов.
-- **A4 — bcreq-fr-contract-process-analysis** ([`bcreq-fr-contract-process-analysis.md`](bcreq-fr-contract-process-analysis.md)):
+- **A4 — bcreq-fr-contract-process-analysis** ([`2026-06-25-bcreq-fr-contract-process-analysis.md`](2026-06-25-bcreq-fr-contract-process-analysis.md)):
   контракт BCREQ-FR применяется как **монолитный промпт**, хотя в репозитории есть
   карта процессов и библиотека промптов, способных собрать тот же артефакт по
   шагам. Корневая причина — **разрыв между L1-исполнением и L3-знанием о
@@ -210,7 +210,7 @@ non-blocking механизмом `needs-clarification` (ADR-009; зафикси
 ## 3. Индустриальные практики телекома
 
 > Роль: **Архитектор БА-методологий** (Этап 2). Полный per-company разбор с
-> источниками — в [`telecom-vendors-ba-practices-research.md`](telecom-vendors-ba-practices-research.md);
+> источниками — в [`2026-06-25-telecom-vendors-ba-practices-research.md`](2026-06-25-telecom-vendors-ba-practices-research.md);
 > здесь — синтез по 16 компаниям (требование issue — минимум 10).
 
 ### 3.1. Полоса $400-600M почти не населена (проверка H4)
@@ -636,7 +636,7 @@ runtime-зависимостью L1** (иначе переносится в L1 �
 
 ### 8.5. Применение L1-исполнения vs L3-знания (связь с A4)
 
-Из [`bcreq-fr-contract-process-analysis.md`](bcreq-fr-contract-process-analysis.md):
+Из [`2026-06-25-bcreq-fr-contract-process-analysis.md`](2026-06-25-bcreq-fr-contract-process-analysis.md):
 контракт BCREQ-FR (L1) исполняется как монолит, хотя процессно-операционная
 модель (L3-знание: карта 9 процессов, библиотека промптов) могла бы собрать тот
 же композит по шагам. **Находка №3:** инвариант «L1 самодостаточен» соблюдён, но
@@ -839,7 +839,7 @@ Issue даёт «зелёный свет» на дополнительную и�
 
 > Все источники — URL; уровень доказательности указан в тексте разделов. Полный
 > per-company разбор с источниками — в
-> [`docs/analysis/telecom-vendors-ba-practices-research.md`](telecom-vendors-ba-practices-research.md).
+> [`docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md`](2026-06-25-telecom-vendors-ba-practices-research.md).
 
 ### Фреймворки БА
 
@@ -893,8 +893,8 @@ Issue даёт «зелёный свет» на дополнительную и�
 - [`runs/CONTRACT.md`](../../runs/CONTRACT.md)
 - [`docs/requirements-engineering-crosswalk.md`](../requirements-engineering-crosswalk.md)
 - [`kb/practices/source-backed-analysis.md`](../../kb/practices/source-backed-analysis.md)
-- [`docs/analysis/telecom-vendors-ba-practices-research.md`](telecom-vendors-ba-practices-research.md)
-- [`docs/analysis/artifact-chain-hypothesis-research.md`](artifact-chain-hypothesis-research.md)
-- [`docs/analysis/runs-observability-research.md`](runs-observability-research.md)
-- [`docs/analysis/bcreq-fr-contract-process-analysis.md`](bcreq-fr-contract-process-analysis.md)
+- [`docs/analysis/2026-06-25-telecom-vendors-ba-practices-research.md`](2026-06-25-telecom-vendors-ba-practices-research.md)
+- [`docs/analysis/2026-06-24-artifact-chain-hypothesis-research.md`](2026-06-24-artifact-chain-hypothesis-research.md)
+- [`docs/analysis/2026-06-25-runs-observability-research.md`](2026-06-25-runs-observability-research.md)
+- [`docs/analysis/2026-06-25-bcreq-fr-contract-process-analysis.md`](2026-06-25-bcreq-fr-contract-process-analysis.md)
 

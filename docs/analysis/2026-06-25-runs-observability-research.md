@@ -13,7 +13,7 @@ related_artifacts:
   - "governance/bcreq-fr-generation-contract.md"
   - "governance/contracts-registry.md"
   - "runs/2026/RUN-0014/logs/business-task-log.md"
-  - "docs/analysis/runs-contract-log-policy-audit.md"
+  - "docs/analysis/2026-06-24-runs-contract-log-policy-audit.md"
   - "scripts/validate_issue_229_runs_observability_research.py"
 ---
 
@@ -66,7 +66,7 @@ tracing, разобрать граничные кейсы, очертить об
 | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) | Эталонный L1-контракт, применённый в RUN-0014. |
 | [`runs/2026/RUN-0014/logs/business-task-log.md`](../../runs/2026/RUN-0014/logs/business-task-log.md) | Пример проблемы (отсутствие трассируемости промптов). |
 | [`governance/contracts-registry.md`](../../governance/contracts-registry.md) | Реестр контрактов (контекст governance). |
-| [`docs/analysis/runs-contract-log-policy-audit.md`](runs-contract-log-policy-audit.md) | Предыдущий аудит контракта runs (issue #217). |
+| [`docs/analysis/2026-06-24-runs-contract-log-policy-audit.md`](2026-06-24-runs-contract-log-policy-audit.md) | Предыдущий аудит контракта runs (issue #217). |
 
 ### 1.4. Терминология
 
@@ -723,4 +723,4 @@ graph TD
 - runs-контракт: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/CONTRACT.md
 - Эталонный L1-контракт BCREQ-FR: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/bcreq-fr-generation-contract.md
 - Лог RUN-0014: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0014/logs/business-task-log.md
-- Предыдущий аудит контракта runs (issue #217): https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/runs-contract-log-policy-audit.md
+- Предыдущий аудит контракта runs (issue #217): https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-06-24-runs-contract-log-policy-audit.md

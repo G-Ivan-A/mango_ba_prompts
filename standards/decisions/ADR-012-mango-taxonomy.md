@@ -28,7 +28,7 @@ related_artifacts:
   - "standards/mango-taxonomy-standard.md"
   - "standards/product-classification-contract.md"
   - "docs/audit/issue-146-mango-taxonomy-validation.md"
-  - "docs/analysis/voice-digital-channels-comparison.md"
+  - "docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
   - "kb/mango-product-docs/processed/"
 ---
 

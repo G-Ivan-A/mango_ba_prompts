@@ -20,7 +20,7 @@ related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/hub-research-dependencies.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/008-industry-standards-standard.md"
-  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/voice-digital-channels-comparison.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-06-21-voice-digital-channels-comparison.md"
 ---
 
 # ADR-011: Industry Taxonomy для классификации продуктов Mango Office
@@ -295,7 +295,7 @@ ADR-012 остаётся источником истины только для M
 неявно «зашит» в инфраструктурные capability `voice-ucaas` (`cloud-pbx`,
 `ivr-voice-menu`, `call-routing`). Отдельной capability «голосовой канал»,
 симметричной текстовым, нет. Полный анализ, отраслевые свидетельства и trade-offs:
-[docs/analysis/voice-digital-channels-comparison.md](../../docs/analysis/voice-digital-channels-comparison.md).
+[docs/analysis/2026-06-21-voice-digital-channels-comparison.md](../../docs/analysis/2026-06-21-voice-digital-channels-comparison.md).
 
 **Две разные асимметрии.** Постановка смешивает два слоя:
 
@@ -439,7 +439,7 @@ alignment_type: supporting
 ```
 
 Дополнительные примеры и влияние на crosswalk ADR-012:
-[docs/analysis/voice-digital-channels-comparison.md](../../docs/analysis/voice-digital-channels-comparison.md), §7.
+[docs/analysis/2026-06-21-voice-digital-channels-comparison.md](../../docs/analysis/2026-06-21-voice-digital-channels-comparison.md), §7.
 
 ## Rationale
 

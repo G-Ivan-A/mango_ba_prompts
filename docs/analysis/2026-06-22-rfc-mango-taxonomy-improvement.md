@@ -7,14 +7,14 @@ type: rfc
 scope: mango-taxonomy
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/181"
 based_on:
-  - "docs/analysis/mango-taxonomy-convergence-test.md"
+  - "docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md"
   - "standards/mango-taxonomy-standard.md"
   - "standards/decisions/ADR-012-mango-taxonomy.md"
   - "standards/decisions/ADR-011-industry-taxonomy.md"
   - "kb/mango-taxonomy/registry.json"
   - "kb/industry-taxonomy/registry.json"
 related_rfc:
-  - "docs/analysis/rfc-industry-taxonomy-improvement.md"
+  - "docs/analysis/2026-06-22-rfc-industry-taxonomy-improvement.md"
 target_artifacts:
   - "standards/mango-taxonomy-standard.md"
   - "kb/mango-taxonomy/registry.json"
@@ -38,10 +38,10 @@ Issue #181 требует использовать актуальные пути
 | --- | --- | --- |
 | Mango registry | `kb/mango` (без суффикса `-taxonomy`) | `kb/mango-taxonomy/registry.json` |
 | Industry registry | `kb/industry` (без суффикса `-taxonomy`) | `kb/industry-taxonomy/registry.json` |
-| Mango convergence report | — | `docs/analysis/mango-taxonomy-convergence-test.md` |
+| Mango convergence report | — | `docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md` |
 | Mango convergence experiment | — | `experiments/issue-176-convergence/` |
 
-Отчёт теста (`docs/analysis/mango-taxonomy-convergence-test.md`) и его артефакты
+Отчёт теста (`docs/analysis/2026-06-22-mango-taxonomy-convergence-test.md`) и его артефакты
 уже используют актуальные пути с суффиксом `-taxonomy`; устаревшие каталоги без
 этого суффикса в текущей ветке не встречаются (это проверяет
 `scripts/validate_issue_172_taxonomy_path_refactor.py`). Этот RFC не предлагает
