@@ -13,6 +13,22 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #248 валидатор формата RFC
+
+- Добавлен reusable валидатор
+  [`scripts/validate_rfc_format.py`](scripts/validate_rfc_format.py), который
+  проверяет contract-style RFC по
+  [`governance/rfc-generation-contract.md`](governance/rfc-generation-contract.md):
+  YAML frontmatter, порядок обязательных секций, читаемый Markdown body,
+  traceability problem/proposal/criteria и explicit impact fields.
+- Добавлен regression check
+  [`scripts/validate_issue_248_rfc_format.py`](scripts/validate_issue_248_rfc_format.py):
+  текущий RFC-243 проходит проверку, а историческая YAML-heavy версия из
+  `cc3b3996` отклоняется как нарушение формата.
+- Добавлена инструкция
+  [`docs/rfc-format-validator.md`](docs/rfc-format-validator.md), README-ссылка
+  и CI steps в GitHub Pages workflow для автоматической проверки RFC в PR.
+
 ### Changed — Issue #250 структура и формат BACKLOG.md
 
 - Перестроен [`governance/BACKLOG.md`](governance/BACKLOG.md) под русское
