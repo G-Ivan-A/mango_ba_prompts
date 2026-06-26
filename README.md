@@ -114,6 +114,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `governance/approval-contract.md` | Исполнимый контракт AI-агента для атомарного согласования RFC, ADR, standards, research и analysis documents. |
 | `governance/bcreq-fr-generation-contract.md` | Исполнимый контракт AI-агента для генерации комплексного BCREQ-FR с правилами разделов 1-7, локальными scope rules `BCREQ-FR-GEN-SCOPE-01/02` и итоговой валидацией. |
 | `governance/rfc-generation-contract.md` | Исполнимый L1-контракт генерации RFC: L3 Markdown с YAML frontmatter, полные входы, machine-readable problems/proposals, traceability и impact fields. |
+| `docs/rfc-format-validator.md` | Инструкция по запуску [`scripts/validate_rfc_format.py`](scripts/validate_rfc_format.py): проверка RFC на Markdown + YAML frontmatter и защита от YAML-heavy тела. |
 | `governance/contracts-registry.md` | L2 YAML-реестр source/provenance исполнимых контрактов; runtime/L1-контракты ссылаются на него только через `contract_registry_id`. |
 | `standards/executable-contract-standard.md` | Стандарт создания исполнимых контрактов: L1/L2/L3, combat/management, L1=100% YAML, L3=Markdown with YAML frontmatter, placement rules и запрет L3 runtime-входов для L1. |
 | `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
@@ -189,6 +190,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как согласовывать документы по разделам | [`governance/approval-contract.md`](governance/approval-contract.md) |
 | Как генерировать комплексный BCREQ-FR | [`governance/bcreq-fr-generation-contract.md`](governance/bcreq-fr-generation-contract.md) |
 | Как генерировать RFC-документы | [`governance/rfc-generation-contract.md`](governance/rfc-generation-contract.md) |
+| Как валидировать формат RFC | [`docs/rfc-format-validator.md`](docs/rfc-format-validator.md), [`scripts/validate_rfc_format.py`](scripts/validate_rfc_format.py) |
 | Где хранится provenance исполнимых контрактов | [`governance/contracts-registry.md`](governance/contracts-registry.md) |
 | Как устроен lifecycle Golden Examples | [`kb/golden-examples/CONTRACT.md`](kb/golden-examples/CONTRACT.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
