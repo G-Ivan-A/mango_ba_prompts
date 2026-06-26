@@ -159,13 +159,13 @@ def validate_rfc() -> None:
 
 def validate_backlog() -> None:
     text = read_text(BACKLOG)
-    marker = "## Sprint RFC-243"
+    marker = "### Приоритетный спринт: RFC-243"
     require(marker in text, f"{BACKLOG}: missing sprint section {marker!r}")
     sprint = text[text.index(marker) :]
 
     required_fragments = (
         "Issue #243",
-        "| ID | Title | Type | Priority | Status | Blocked by | Blocks | Evidence |",
+        "| ID | Название | Тип | Приоритет | Статус | Блокируется | Блокирует | Подтверждение |",
         "Волна 0",
         "Волна 1",
         "Волна 2",
@@ -177,14 +177,14 @@ def validate_backlog() -> None:
         "type:decision",
         "type:research",
         "sprint-3",
-        "decision: зафиксировать RFC-243",
-        "implementation: создать L2-реестр operation-prompt mapping",
-        "implementation: сверить 00-index.md",
-        "implementation: обновить БА-онтологию",
-        "implementation: добавить applied_operations",
-        "implementation: добавить applied_prompts",
-        "implementation: обновить валидаторы",
-        "research: оценить eTOM/SID",
+        "Зафиксировать RFC-243 governance proposal",
+        "Создать L2-реестр operation-prompt mapping",
+        "Сверить `00-index.md`",
+        "Обновить БА-онтологию",
+        "Добавить `applied_operations`",
+        "Добавить `applied_prompts`",
+        "Обновить валидаторы",
+        "Оценить eTOM/SID",
     )
     for fragment in required_fragments:
         require(fragment in sprint, f"{BACKLOG}: sprint section missing {fragment!r}")

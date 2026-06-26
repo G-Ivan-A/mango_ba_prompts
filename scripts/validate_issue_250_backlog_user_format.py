@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression check for issue #247 backlog contract and normalized backlog."""
+"""Regression check for issue #250 backlog structure and Russian UX."""
 
 from __future__ import annotations
 
@@ -11,17 +11,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 
 BACKLOG = Path("governance/BACKLOG.md")
-MIGRATION_REGISTRY = Path("governance/migration-issues-registry.md")
 CHANGELOG = Path("CHANGELOG.md")
 WORKFLOW = Path(".github/workflows/github-pages.yml")
-VALIDATOR = Path("scripts/validate_issue_247_backlog_contract.py")
+VALIDATOR = Path("scripts/validate_issue_250_backlog_user_format.py")
 
-TABLE_HEADER = (
+TABLE_HEADER_RU = (
     "| ID | Название | Тип | Приоритет | Статус | Блокируется | Блокирует | Подтверждение |"
 )
-
-ALLOWED_PRIORITIES = {"P1", "P2", "P3"}
-ALLOWED_STATUSES = {"TODO", "IN PROGRESS", "REVIEW", "DONE", "BLOCKED", "DEFERRED"}
 
 REQUIRED_ITEM_IDS = {
     "M-001",
@@ -50,6 +46,10 @@ REQUIRED_ITEM_IDS = {
     "BKL-247-03",
     "BKL-247-04",
     "BKL-247-05",
+    "BKL-250-01",
+    "BKL-250-02",
+    "BKL-250-03",
+    "BKL-250-04",
 }
 
 
@@ -69,9 +69,18 @@ def read_text(path: Path) -> str:
     return full_path.read_text(encoding="utf-8")
 
 
+def require_order(text: str, path: Path, fragments: tuple[str, ...]) -> None:
+    previous = -1
+    for fragment in fragments:
+        current = text.find(fragment)
+        require(current != -1, f"{path}: missing {fragment!r}")
+        require(current > previous, f"{path}: wrong order at {fragment!r}")
+        previous = current
+
+
 def parse_backlog_rows(text: str) -> dict[str, list[str]]:
     rows: dict[str, list[str]] = {}
-    item_id_re = re.compile(r"^(?:M|OQ|RFC-243|BKL-247)-[0-9]+$")
+    item_id_re = re.compile(r"^(?:M|OQ|RFC-243|BKL-(?:247|250))-[0-9]+$")
 
     for line in text.splitlines():
         if not line.startswith("| "):
@@ -87,37 +96,55 @@ def validate_backlog() -> None:
     text = read_text(BACKLOG)
 
     required_fragments = (
-        "title: \"Бэклог Mango BA Prompts\"",
         "updated: 2026-06-26",
+        'primary_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/250"',
         "# Бэклог Mango BA Prompts",
         "## Содержание",
         "## Рабочие спринты",
         "### Приоритетный спринт: RFC-243",
         "### Запланированный спринт: Открытые вопросы",
+        "### Служебный спринт: управление бэклогом",
         "## Инструкции по управлению бэклогом",
-        "### Правила чтения и ведения",
         "### Зависимости и контракты",
-        "### Почему формат изменён",
+        "### Промпты для создания issue по спринту",
         "## Исторические спринты",
         "### Завершённый спринт: Backlog governance #247",
         "### Завершённый спринт: Migration Phase 1",
-        "GitHub Projects",
-        "Jira Scrum backlog",
-        "Linear cycles",
-        "Notion roadmap database",
-        "https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects",
-        "https://support.atlassian.com/jira-software-cloud/docs/use-your-scrum-backlog/",
-        "https://linear.app/docs/use-cycles",
-        "https://www.notion.com/use-case/project-management/ai-product-roadmap",
-        "Причина неконсистентности",
-        "Индустриальная норма",
-        "Issue #247",
-        "CHANGELOG.md",
+        "## Связанные артефакты",
+        "Сначала показаны рабочие и запланированные спринты",
+        "Исторические данные вынесены ниже инструкций",
+        "Создай GitHub issue",
+        "G-Ivan-A/mango_ba_prompts",
+        "priority:P1",
+        "type:implementation",
+        "governance/rfc-generation-contract.md",
+        "governance/bcreq-fr-generation-contract.md",
+        "runs/CONTRACT.md",
+        "standards/executable-contract-standard.md",
     )
     for fragment in required_fragments:
         require(fragment in text, f"{BACKLOG}: missing {fragment!r}")
 
-    require(text.count(TABLE_HEADER) >= 4, f"{BACKLOG}: expected normalized backlog tables")
+    require_order(
+        text,
+        BACKLOG,
+        (
+            "# Бэклог Mango BA Prompts",
+            "## Содержание",
+            "## Рабочие спринты",
+            "### Приоритетный спринт: RFC-243",
+            "### Запланированный спринт: Открытые вопросы",
+            "### Служебный спринт: управление бэклогом",
+            "## Инструкции по управлению бэклогом",
+            "## Исторические спринты",
+            "### Завершённый спринт: Backlog governance #247",
+            "### Завершённый спринт: Migration Phase 1",
+            "## Связанные артефакты",
+        ),
+    )
+
+    require(TABLE_HEADER_RU in text, f"{BACKLOG}: missing Russian backlog table header")
+    require(text.count(TABLE_HEADER_RU) >= 5, f"{BACKLOG}: expected Russian tables for all sprints")
 
     rows = parse_backlog_rows(text)
     missing = sorted(REQUIRED_ITEM_IDS - set(rows))
@@ -127,43 +154,39 @@ def validate_backlog() -> None:
         _, title, item_type, priority, status, blocked_by, blocks, evidence = cells
         require(title, f"{BACKLOG}: {item_id} has empty title")
         require(item_type, f"{BACKLOG}: {item_id} has empty type")
-        require(priority in ALLOWED_PRIORITIES, f"{BACKLOG}: {item_id} invalid priority {priority!r}")
-        require(status in ALLOWED_STATUSES, f"{BACKLOG}: {item_id} invalid status {status!r}")
+        require(priority in {"P1", "P2", "P3"}, f"{BACKLOG}: {item_id} invalid priority")
+        require(
+            status in {"TODO", "IN PROGRESS", "REVIEW", "DONE", "BLOCKED", "DEFERRED"},
+            f"{BACKLOG}: {item_id} invalid status",
+        )
         require(blocked_by, f"{BACKLOG}: {item_id} has empty Blocked by")
         require(blocks, f"{BACKLOG}: {item_id} has empty Blocks")
         require(evidence, f"{BACKLOG}: {item_id} has empty evidence")
 
     for item_id in [f"M-{number:03d}" for number in range(1, 10)]:
-        require(rows[item_id][4] == "DONE", f"{BACKLOG}: {item_id} must reflect closed migration issue")
-
-    for item_id in [f"RFC-243-{number:02d}" for number in range(1, 9)]:
-        require(rows[item_id][3] in ALLOWED_PRIORITIES, f"{BACKLOG}: {item_id} missing priority")
-        require(rows[item_id][4] in {"TODO", "BLOCKED"}, f"{BACKLOG}: {item_id} must remain not done")
+        require(rows[item_id][4] == "DONE", f"{BACKLOG}: {item_id} must remain historical DONE")
 
     for item_id in [f"BKL-247-{number:02d}" for number in range(1, 6)]:
         require(rows[item_id][4] == "DONE", f"{BACKLOG}: {item_id} must reflect merged PR #249")
 
+    for item_id in [f"BKL-250-{number:02d}" for number in range(1, 5)]:
+        require(rows[item_id][4] == "REVIEW", f"{BACKLOG}: {item_id} should be in PR review")
+
 
 def validate_project_hooks() -> None:
-    registry = read_text(MIGRATION_REGISTRY)
-    require("Open" not in registry, f"{MIGRATION_REGISTRY}: must not retain stale Open statuses")
-    for number in range(1, 10):
-        require(f"M-{number:03d}" in registry, f"{MIGRATION_REGISTRY}: missing M-{number:03d}")
-        require("Closed 2026-06-" in registry, f"{MIGRATION_REGISTRY}: missing closed dates")
-
     changelog = read_text(CHANGELOG)
     for fragment in (
-        "Issue #247",
+        "Issue #250",
         BACKLOG.as_posix(),
-        MIGRATION_REGISTRY.as_posix(),
         VALIDATOR.as_posix(),
-        "Индустриальная норма",
+        "Содержание",
+        "Промпты для создания issue по спринту",
     ):
         require(fragment in changelog, f"{CHANGELOG}: missing {fragment!r}")
 
     workflow = read_text(WORKFLOW)
     require(
-        "Validate issue #247 backlog contract" in workflow,
+        "Validate issue #250 backlog user format" in workflow,
         f"{WORKFLOW}: missing validation step name",
     )
     require(VALIDATOR.as_posix() in workflow, f"{WORKFLOW}: missing validator path")
@@ -172,7 +195,7 @@ def validate_project_hooks() -> None:
 def main() -> None:
     validate_backlog()
     validate_project_hooks()
-    print("OK: issue #247 backlog contract validated")
+    print("OK: issue #250 backlog user format validated")
 
 
 if __name__ == "__main__":

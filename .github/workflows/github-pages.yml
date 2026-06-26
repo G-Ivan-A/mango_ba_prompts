@@ -99,6 +99,9 @@ jobs:
       - name: Validate issue #247 backlog contract
         run: python3 scripts/validate_issue_247_backlog_contract.py
 
+      - name: Validate issue #250 backlog user format
+        run: python3 scripts/validate_issue_250_backlog_user_format.py
+
       - name: Validate issue #199 BCREQ-1027 section 4.3 API methods
         run: python3 scripts/validate_issue_199_bcreq_1027_section_4_3.py
 
