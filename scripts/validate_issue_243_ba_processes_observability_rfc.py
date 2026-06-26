@@ -159,13 +159,13 @@ def validate_rfc() -> None:
 
 def validate_backlog() -> None:
     text = read_text(BACKLOG)
-    marker = "## Спринт RFC-243"
+    marker = "## Sprint RFC-243"
     require(marker in text, f"{BACKLOG}: missing sprint section {marker!r}")
     sprint = text[text.index(marker) :]
 
     required_fragments = (
         "Issue #243",
-        "| № | Title | Type | Priority | Dependencies | Issue in repo |",
+        "| ID | Title | Type | Priority | Status | Blocked by | Blocks | Evidence |",
         "Волна 0",
         "Волна 1",
         "Волна 2",

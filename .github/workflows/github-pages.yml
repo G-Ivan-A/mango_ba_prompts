@@ -96,6 +96,9 @@ jobs:
       - name: Validate issue #245 RFC-243 Markdown format
         run: python3 scripts/validate_issue_245_rfc_243_markdown_format.py
 
+      - name: Validate issue #247 backlog contract
+        run: python3 scripts/validate_issue_247_backlog_contract.py
+
       - name: Validate issue #199 BCREQ-1027 section 4.3 API methods
         run: python3 scripts/validate_issue_199_bcreq_1027_section_4_3.py
 
