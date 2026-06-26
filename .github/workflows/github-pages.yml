@@ -93,6 +93,9 @@ jobs:
       - name: Validate issue #243 BA-processes observability RFC
         run: python3 scripts/validate_issue_243_ba_processes_observability_rfc.py
 
+      - name: Validate issue #247 backlog contract
+        run: python3 scripts/validate_issue_247_backlog_contract.py
+
       - name: Validate issue #199 BCREQ-1027 section 4.3 API methods
         run: python3 scripts/validate_issue_199_bcreq_1027_section_4_3.py
 

@@ -13,6 +13,23 @@ ai-generated: true
 
 ## Unreleased
 
+### Changed — Issue #247 нормализация BACKLOG.md
+
+- Переписан [`governance/BACKLOG.md`](governance/BACKLOG.md) как единый
+  sprint backlog с явным контрактом: причина неконсистентности, **Индустриальная норма**
+  по GitHub Projects / Jira / Linear / Notion, формат строк, правила заполнения
+  и чтения.
+- Актуализированы статусы, зависимости и приоритеты `P1/P2/P3` для задач
+  миграции Фазы 1, открытых вопросов, RFC-243 implementation sprint и текущей
+  задачи обновления backlog; связанный
+  [`governance/migration-issues-registry.md`](governance/migration-issues-registry.md)
+  синхронизирован с закрытыми GitHub issues #28–#36.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_247_backlog_contract.py`](scripts/validate_issue_247_backlog_contract.py)
+  и обновлена проверка
+  [`scripts/validate_issue_243_ba_processes_observability_rfc.py`](scripts/validate_issue_243_ba_processes_observability_rfc.py)
+  под нормализованный формат backlog.
+
 ### Added — Issue #243 RFC по БА-процессам и observability
 
 - Добавлен L3 RFC proposal
