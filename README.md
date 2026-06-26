@@ -178,7 +178,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Стандарт создания исполнимых контрактов | [`standards/executable-contract-standard.md`](standards/executable-contract-standard.md) |
 | Реестр source/provenance контрактов | [`governance/contracts-registry.md`](governance/contracts-registry.md) |
 | Онтология БА, операции, нейминг, KB, процессы, UX Pages | [`standards/ba-ontology.md`](standards/ba-ontology.md), [`docs/adr/`](docs/adr/) |
-| Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы) |
+| Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#запланированный-спринт-открытые-вопросы) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Где появятся стандарты и глоссарий | `standards/` |

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-06-24
+version: 0.5
+updated: 2026-06-26
 ai-generated: true
 ---
 
@@ -12,6 +12,20 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #250 структура и формат BACKLOG.md
+
+- Перестроен [`governance/BACKLOG.md`](governance/BACKLOG.md) под русское
+  чтение и оперативное управление: добавлено `Содержание`, рабочие и
+  запланированные спринты подняты в начало, исторические данные перенесены ниже
+  инструкций.
+- В раздел инструкций добавлены зависимости на governance/contract артефакты и
+  `Промпты для создания issue по спринту`, чтобы новые GitHub issues можно было
+  готовить из строк backlog без расширения scope.
+- Добавлен регрессионный валидатор
+  [`scripts/validate_issue_250_backlog_user_format.py`](scripts/validate_issue_250_backlog_user_format.py)
+  и обновлены проверки issue #243/#247 под новый пользовательский формат
+  backlog.
 
 ### Changed — Issue #247 нормализация BACKLOG.md
 
@@ -1592,7 +1606,7 @@ ai-generated: true
 - Создан шаблон таблицы открытых вопросов (дата | автор | суть | статус |
   решение) с правилом автоматической очистки решённых строк Конардом при
   закрытии связанного issue. В issue #80 механизм заменён единым трекером в
-  [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы).
+  [`governance/BACKLOG.md`](governance/BACKLOG.md#запланированный-спринт-открытые-вопросы).
 - Созданы контракты [`standards/prompt-standard.md`](standards/prompt-standard.md)
   (ровно 4 обязательных поля frontmatter: `status` со значениями
   `draft`/`canonical`/`archived`, `version`, `updated`, `temperature`;
