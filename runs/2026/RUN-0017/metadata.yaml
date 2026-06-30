@@ -1,0 +1,34 @@
+run_id: RUN-0017
+process: bcreq-765-readable-ft
+run_type: business-task
+version: "0.1"
+date: "2026-06-30"
+updated: "2026-06-30"
+author: "BA + LLM (Claude Opus 4.8)"
+model: "claude-opus-4-8"
+status: draft
+contract_used: "runs/CONTRACT.md"
+source_paths:
+  - runs/2026/RUN-0017/outputs/variant-1-customer-request-2026-06-30.md
+  - runs/2026/RUN-0017/outputs/variant-2-product-vision-simplified-2026-06-30.md
+  - runs/2026/RUN-0017/outputs/focus-group-experiment-2026-06-30.md
+inputs:
+  - inputs/01-source-ft-and-qa.md
+outputs:
+  - outputs/variant-1-customer-request-2026-06-30.md
+  - outputs/variant-2-product-vision-simplified-2026-06-30.md
+  - outputs/focus-group-experiment-2026-06-30.md
+logs:
+  - logs/business-task-log.md
+feedback:
+  - feedback/.gitkeep
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/253"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/237"
+related_artifacts:
+  - "runs/2026/RUN-0016/outputs/2026-06-25-bcreq-765-headhunter-chat-cc-integration-fr.md"
+  - "runs/2026/RUN-0016/outputs/analysis-bcreq-765-scope-2026-06-25.md"
+  - "standards/experiment-log-standard.md"
+related_runs:
+  - RUN-0016
+  - RUN-0011

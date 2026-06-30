@@ -168,6 +168,17 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0017": {
+        "year": "2026",
+        "files": [
+            "inputs/01-source-ft-and-qa.md",
+            "outputs/variant-1-customer-request-2026-06-30.md",
+            "outputs/variant-2-product-vision-simplified-2026-06-30.md",
+            "outputs/focus-group-experiment-2026-06-30.md",
+            "logs/business-task-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 
