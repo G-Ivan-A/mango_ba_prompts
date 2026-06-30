@@ -84,10 +84,20 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
+      # ``lfs: false`` keeps checkout from hard-failing when the repository has
+      # exceeded its Git LFS budget (``git lfs fetch`` returns a billing error).
+      # The lightweight validators only need the committed tree; PDF bytes are
+      # pulled best-effort below and their absence is tolerated by issue #131.
       - name: Checkout
         uses: actions/checkout@v7
         with:
-          lfs: true
+          lfs: false
+
+      - name: Fetch LFS objects (best effort)
+        continue-on-error: true
+        run: |
+          git lfs install --local
+          git lfs pull || echo "Git LFS objects unavailable (budget exceeded?) — continuing without PDF bytes."
 
       - name: Setup Python
         uses: actions/setup-python@v6

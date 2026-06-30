@@ -13,6 +13,27 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #253 читаемые версии ФТ BCREQ-765 (RUN-0017)
+
+- Добавлен прогон [`runs/2026/RUN-0017/`](runs/2026/RUN-0017/) (`business-task`,
+  процесс `bcreq-765-readable-ft`): по обратной связи руководителя подготовлены
+  две читаемые версии ФТ интеграции чатов HeadHunter с Контакт-центром для
+  синхронизации с Заказчиком.
+- [`Вариант 1`](runs/2026/RUN-0017/outputs/variant-1-customer-request-2026-06-30.md) —
+  без продуктового видения, только запрос Заказчика и ответы на вопросы, без
+  кодов `ФТ-ХХ` и без трассировки.
+- [`Вариант 2`](runs/2026/RUN-0017/outputs/variant-2-product-vision-simplified-2026-06-30.md) —
+  упрощённое продуктовое видение с сохранением трассировки ко всем требованиям
+  `ФТ-01…ФТ-10` (таблица в разделе 5) и явным статусом «под уточнение» для
+  неподтверждённых деталей.
+- Добавлен эксперимент-фокус-группа
+  [`focus-group-experiment-2026-06-30.md`](runs/2026/RUN-0017/outputs/focus-group-experiment-2026-06-30.md)
+  по [`standards/experiment-log-standard.md`](standards/experiment-log-standard.md):
+  понятность исходной ФТ 2.2/5 против 4.2/5 (Вариант 1) и 4.4/5 (Вариант 2).
+- Run зарегистрирован в [`runs/REGISTRY.md`](runs/REGISTRY.md) и статистике
+  (`by-type`, `by-date`, `by-process`); `RUN-0017` добавлен в
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+
 ### Added — Issue #248 валидатор формата RFC
 
 - Добавлен reusable валидатор

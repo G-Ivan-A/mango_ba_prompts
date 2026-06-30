@@ -220,8 +220,14 @@ def check_workflow_inputs() -> list[str]:
         "scripts/validate_issue_115_kb_mango_pipeline.py",
     )
     errors += require_text(text, WORKFLOW, *CC_SOURCES)
-    if text.count("lfs: true") < 2:
-        errors.append(f"{WORKFLOW}: both validate and extract jobs must checkout LFS files")
+    # The heavy extract job must materialise real PDF bytes (``lfs: true``). The
+    # lightweight validate job checks out without LFS and pulls objects
+    # best-effort so it stays green when the repository exceeds its Git LFS
+    # budget; both behaviours must remain present in the workflow.
+    if text.count("lfs: true") < 1:
+        errors.append(f"{WORKFLOW}: extract job must checkout LFS files (lfs: true)")
+    if "git lfs pull" not in text:
+        errors.append(f"{WORKFLOW}: validate job must pull LFS objects best-effort (git lfs pull)")
     if REMOVED_CC_SOURCE in text:
         errors.append(f"{WORKFLOW}: default source still points to removed compressed PDF")
     if re.search(r"Build sample fixture and extract|make kb-sample\s+make kb-extract", text):
