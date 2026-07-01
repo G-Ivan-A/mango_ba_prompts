@@ -8,9 +8,9 @@
   "doc_version": "23.08.2024",
   "extracted_by": "pdfplumber 0.11.10",
   "image_count": 396,
-  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractor": "pymupdf 1.28.0",
   "image_extractors": [
-    "pymupdf 1.27.2.3"
+    "pymupdf 1.28.0"
   ],
   "language": "ru",
   "note": "Основное руководство пользователя. Подробное описание работы с софтфоном: звонки, чаты, контакты, история вызовов.",
@@ -23,9 +23,9 @@
   "processing_mode": "single",
   "product": "Mango Talker",
   "section_count": 317,
-  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_source": "pdf-outline (pymupdf 1.28.0)",
   "section_sources": [
-    "pdf-outline (pymupdf 1.27.2.3)"
+    "pdf-outline (pymupdf 1.28.0)"
   ],
   "sections": [
     {
