@@ -7,6 +7,7 @@ author: human+LLM
 model: gpt-4
 status: draft
 related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/257"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/207"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/199"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/1027"
@@ -16,19 +17,34 @@ related_artifacts:
 contract_used: "governance/bcreq-fr-generation-contract.md"
 api_reference:
   - "POST /vpbx/stats/calls/result"
+  - "POST /vpbx/cc/appeals/create-closed-appeals"
+  - "POST /events/md/onAppealClose"
+  - "POST /cc/md/session/close"
 source_paths:
+  - runs/2026/RUN-0013/outputs/2026-07-01-bcreq-1027-processed-without-response-ft-v2.md
   - runs/2026/RUN-0013/outputs/section-4-3-api.md
+  - kb/mango-product-docs/processed/mango-cc-manual/sections/65-moi-obrascheniya.md
+  - kb/mango-product-docs/processed/mango-cc-manual/sections/67-obrabotka-obrascheniy.md
+  - kb/mango-product-docs/processed/mango-cc-manual/sections/70-zavershenie-obrabotki.md
+  - kb/mango-product-docs/processed/mango-cc-manual/sections/72-istoriya-obrascheniy.md
+  - kb/mango-product-docs/processed/mango-lk-manual/sections/181-moi-gruppy-kanalov.md
+  - kb/mango-product-docs/processed/mango-lk-manual/sections/182-nastroyki-gruppy-kanalov.md
+  - kb/mango-product-docs/processed/vpbx-api/sections/214-sozdanie-zakrytogo-obrascheniya.md
+  - kb/mango-product-docs/processed/vpbx-api/sections/216-obschenie-zakryto.md
   - kb/mango-product-docs/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md
 inputs:
   - inputs/issue-1027.md
 outputs:
   - "outputs/section-4-3-api.md"
+  - "outputs/2026-07-01-bcreq-1027-processed-without-response-ft-v2.md"
 logs:
   - logs/business-task-log.md
   - logs/generation.log
 feedback:
   - feedback/corrections.md
   - feedback/contract-issues.md
+  - feedback/issue-257-expert-review.md
 corrections_applied:
   - "API изменён с MD на VPBX (POST /vpbx/stats/calls/result)"
   - "Структура runs исправлена согласно CONTRACT.md"
+  - "Вариант 2 ФТ по issue #257: настройка виджета/канала, существующее завершение обращения, result=8"

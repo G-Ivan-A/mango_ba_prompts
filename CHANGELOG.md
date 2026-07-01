@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-06-26
+version: 0.6
+updated: 2026-07-01
 ai-generated: true
 ---
 
@@ -12,6 +12,23 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #257 BCREQ-1027 ФТ v2: обработано без ответа
+
+- Добавлен второй вариант ФТ
+  [`runs/2026/RUN-0013/outputs/2026-07-01-bcreq-1027-processed-without-response-ft-v2.md`](runs/2026/RUN-0013/outputs/2026-07-01-bcreq-1027-processed-without-response-ft-v2.md):
+  настройка в `ЛК-Диалоги -> Виджет канала`, существующее действие
+  `Завершить обращение`, результат `Обработано без ответа` и API enum
+  `result = 8 / Завершено без ответа`.
+- Зафиксированы границы решения: без новой кнопки в карточке обработки,
+  без новой колонки в `Истории обращений`, без пересчета исторических обращений
+  и без изменения результатов `Переведено`, `Спам`, `Запрещена отправка`,
+  таймаутов и внешних закрытий.
+- Добавлена экспертная сводка шести ролей ВАТС/КЦ
+  [`runs/2026/RUN-0013/feedback/issue-257-expert-review.md`](runs/2026/RUN-0013/feedback/issue-257-expert-review.md)
+  и регрессионная проверка
+  [`scripts/validate_issue_257_bcreq_1027_ft_v2.py`](scripts/validate_issue_257_bcreq_1027_ft_v2.py),
+  подключенная к GitHub Pages workflow.
 
 ### Added — Issue #253 читаемые версии ФТ BCREQ-765 (RUN-0017)
 
