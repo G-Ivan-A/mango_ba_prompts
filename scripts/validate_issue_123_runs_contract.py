@@ -179,6 +179,16 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0018": {
+        "year": "2026",
+        "files": [
+            "inputs/01-alternative-solution-request.md",
+            "outputs/solution-description-customer-2026-07-01.md",
+            "outputs/variant-2-fr-vats-number-comment-filter-2026-07-01.md",
+            "logs/business-task-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

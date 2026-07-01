@@ -9,7 +9,7 @@ scope: runs
 
 # Статистика runs/ по процессам
 
-Уникальных процессов: 17.
+Уникальных процессов: 18.
 
 | Процесс | Количество | Run'ы | Связанные определения |
 | --- | ---: | --- | --- |
@@ -30,3 +30,4 @@ scope: runs
 | rfc-generation-contract-validation | 1 | [`RUN-0015`](../2026/RUN-0015/) | [`governance/rfc-generation-contract.md`](../../governance/rfc-generation-contract.md) |
 | bcreq-765 | 1 | [`RUN-0016`](../2026/RUN-0016/) | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) |
 | bcreq-765-readable-ft | 1 | [`RUN-0017`](../2026/RUN-0017/) | [`runs/2026/RUN-0016/`](../2026/RUN-0016/) |
+| bcreq-1040-alternative | 1 | [`RUN-0018`](../2026/RUN-0018/) | [`governance/bcreq-fr-generation-contract.md`](../../governance/bcreq-fr-generation-contract.md) |

@@ -15,6 +15,7 @@ scope: runs
 | --- | ---: |
 | 2026-05 | 5 |
 | 2026-06 | 12 |
+| 2026-07 | 1 |
 
 ## 2026-05
 
@@ -42,3 +43,9 @@ scope: runs
 | 2026-06-24 | [`RUN-0015`](../2026/RUN-0015/) | 🔍 `validation` | rfc-generation-contract-validation |
 | 2026-06-25 | [`RUN-0016`](../2026/RUN-0016/) | 💼 `business-task` | bcreq-765 |
 | 2026-06-30 | [`RUN-0017`](../2026/RUN-0017/) | 💼 `business-task` | bcreq-765-readable-ft |
+
+## 2026-07
+
+| Дата | Run | Тип | Процесс |
+| --- | --- | --- | --- |
+| 2026-07-01 | [`RUN-0018`](../2026/RUN-0018/) | 💼 `business-task` | bcreq-1040-alternative |
