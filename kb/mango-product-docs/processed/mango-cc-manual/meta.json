@@ -13,14 +13,14 @@
   "doc_version": "1.26.23",
   "extracted_by": "pdfplumber 0.11.10",
   "image_count": 1771,
-  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractor": "pymupdf 1.28.0",
   "image_extractors": [
-    "pymupdf 1.27.2.3",
-    "pymupdf 1.27.2.3",
-    "pymupdf 1.27.2.3",
-    "pymupdf 1.27.2.3",
-    "pymupdf 1.27.2.3",
-    "pymupdf 1.27.2.3"
+    "pymupdf 1.28.0",
+    "pymupdf 1.28.0",
+    "pymupdf 1.28.0",
+    "pymupdf 1.28.0",
+    "pymupdf 1.28.0",
+    "pymupdf 1.28.0"
   ],
   "language": "ru",
   "note": "Руководство пользователя для облачного контакт-центра MANGO OFFICE. Содержит описание клиентской части, настроек, управления пользователями, работы с обращениями, кампаниями и API.",
@@ -31,12 +31,12 @@
   "section_count": 232,
   "section_source": "pdf-outline multi-part (6 PDF parts)",
   "section_sources": [
-    "pdf-outline (pymupdf 1.27.2.3)",
-    "pdf-outline (pymupdf 1.27.2.3)",
-    "pdf-outline (pymupdf 1.27.2.3)",
-    "pdf-outline (pymupdf 1.27.2.3)",
-    "pdf-outline (pymupdf 1.27.2.3)",
-    "pdf-outline (pymupdf 1.27.2.3)"
+    "pdf-outline (pymupdf 1.28.0)",
+    "pdf-outline (pymupdf 1.28.0)",
+    "pdf-outline (pymupdf 1.28.0)",
+    "pdf-outline (pymupdf 1.28.0)",
+    "pdf-outline (pymupdf 1.28.0)",
+    "pdf-outline (pymupdf 1.28.0)"
   ],
   "sections": [
     {

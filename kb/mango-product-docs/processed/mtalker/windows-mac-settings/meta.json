@@ -8,9 +8,9 @@
   "doc_version": "23.08.2024",
   "extracted_by": "pdfplumber 0.11.10",
   "image_count": 42,
-  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractor": "pymupdf 1.28.0",
   "image_extractors": [
-    "pymupdf 1.27.2.3"
+    "pymupdf 1.28.0"
   ],
   "language": "ru",
   "note": "Руководство по настройке Mango Talker. Описание параметров конфигурации, настройки аудио/видео устройств, интеграция с ВАТС.",
@@ -23,9 +23,9 @@
   "processing_mode": "single",
   "product": "Mango Talker",
   "section_count": 55,
-  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_source": "pdf-outline (pymupdf 1.28.0)",
   "section_sources": [
-    "pdf-outline (pymupdf 1.27.2.3)"
+    "pdf-outline (pymupdf 1.28.0)"
   ],
   "sections": [
     {
