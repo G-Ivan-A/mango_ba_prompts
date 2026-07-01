@@ -421,14 +421,14 @@ def check_project_wiring() -> list[str]:
     )
     errors += require_text(
         "runs/stats/by-type.md",
-        "Всего: 17 run'ов.",
+        "Всего: 18 run'ов.",
         "validation` — валидация",
         "Всего: 4.",
         "RUN-0015",
     )
     errors += require_text(
         "runs/stats/by-process.md",
-        "Уникальных процессов: 17.",
+        "Уникальных процессов: 18.",
         "rfc-generation-contract-validation",
         CONTRACT,
     )

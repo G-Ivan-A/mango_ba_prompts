@@ -8,9 +8,9 @@
   "doc_version": "1.26",
   "extracted_by": "pdfplumber 0.11.10",
   "image_count": 351,
-  "image_extractor": "pymupdf 1.27.2.3",
+  "image_extractor": "pymupdf 1.28.0",
   "image_extractors": [
-    "pymupdf 1.27.2.3"
+    "pymupdf 1.28.0"
   ],
   "language": "ru",
   "note": "Руководство по речевой аналитике с фокусом на офлайн скоринг. Описание методов оценки качества и построения скоринговых моделей.",
@@ -22,9 +22,9 @@
   "processing_mode": "single",
   "product": "Mango Office",
   "section_count": 87,
-  "section_source": "pdf-outline (pymupdf 1.27.2.3)",
+  "section_source": "pdf-outline (pymupdf 1.28.0)",
   "section_sources": [
-    "pdf-outline (pymupdf 1.27.2.3)"
+    "pdf-outline (pymupdf 1.28.0)"
   ],
   "sections": [
     {

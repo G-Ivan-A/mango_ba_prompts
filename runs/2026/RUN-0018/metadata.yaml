@@ -1,0 +1,32 @@
+run_id: RUN-0018
+process: bcreq-1040-alternative
+run_type: business-task
+version: "0.1"
+date: "2026-07-01"
+updated: "2026-07-01"
+author: "BA + LLM (Claude Opus 4.8)"
+model: "claude-opus-4-8"
+status: draft
+contract_used: "governance/bcreq-fr-generation-contract.md"
+source_paths:
+  - runs/2026/RUN-0018/outputs/solution-description-customer-2026-07-01.md
+  - runs/2026/RUN-0018/outputs/variant-2-fr-vats-number-comment-filter-2026-07-01.md
+inputs:
+  - inputs/01-alternative-solution-request.md
+outputs:
+  - outputs/solution-description-customer-2026-07-01.md
+  - outputs/variant-2-fr-vats-number-comment-filter-2026-07-01.md
+logs:
+  - logs/business-task-log.md
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/255"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/220"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/235"
+related_artifacts:
+  - "governance/bcreq-fr-generation-contract.md"
+  - "kb/mango-product-docs/processed/speech-analytics/index.md"
+  - "kb/mango-product-docs/processed/mango-lk-manual/index.md"
+  - "kb/industry-taxonomy/registry.json"
+  - "kb/mango-taxonomy/registry.json"
+related_runs:
+  - RUN-0014
