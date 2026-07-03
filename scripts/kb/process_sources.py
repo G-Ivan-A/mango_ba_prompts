@@ -127,7 +127,12 @@ def infer_mode(source_dir: Path, manifest: dict) -> str:
     return "single"
 
 
-def resolve_files(source_dir: Path, files: object, context: str) -> tuple[Path, ...]:
+def resolve_files(
+    source_dir: Path,
+    files: object,
+    context: str,
+    require_sources: bool = True,
+) -> tuple[Path, ...]:
     if files is None:
         discovered = sorted(source_dir.glob("*.pdf"), key=natural_key)
         if not discovered:
@@ -145,7 +150,7 @@ def resolve_files(source_dir: Path, files: object, context: str) -> tuple[Path, 
             path.relative_to(source_dir.resolve())
         except ValueError as exc:
             raise ManifestError(f"{context}: source file {item!r} escapes source directory") from exc
-        if not path.exists():
+        if require_sources and not path.exists():
             raise ManifestError(f"{context}: source file {item!r} does not exist")
         resolved.append(path)
     return tuple(resolved)
@@ -201,6 +206,7 @@ def make_job(
 def build_plan(
     source_dir: Path,
     processed_root: Path = PROCESSED_ROOT,
+    require_sources: bool = True,
 ) -> SourcePlan:
     source_dir = source_dir.resolve()
     manifest = load_manifest(source_dir)
@@ -212,7 +218,12 @@ def build_plan(
     collection_dir = (processed_root / collection_slug).resolve()
 
     if mode in {"single", "multi_part"}:
-        files = resolve_files(source_dir, manifest.get("source_files"), rel_to_root(source_dir / "meta.json"))
+        files = resolve_files(
+            source_dir,
+            manifest.get("source_files"),
+            rel_to_root(source_dir / "meta.json"),
+            require_sources=require_sources,
+        )
         if mode == "single" and len(files) != 1:
             raise ManifestError(f"{rel_to_root(source_dir / 'meta.json')}: single mode requires exactly one PDF")
         if mode == "multi_part" and len(files) < 2:
@@ -241,7 +252,7 @@ def build_plan(
         if files is None and doc.get("file_name"):
             files = [doc["file_name"]]
         context = f"{rel_to_root(source_dir / 'meta.json')}: documents[{index}]"
-        pdf_paths = resolve_files(source_dir, files, context)
+        pdf_paths = resolve_files(source_dir, files, context, require_sources=require_sources)
         doc_slug = str(doc.get("output_slug") or slugify(doc.get("title") or pdf_paths[0].stem))
         if doc_slug in seen_slugs:
             raise ManifestError(f"{context}: duplicate output_slug {doc_slug!r}")
@@ -417,7 +428,11 @@ def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Process kb/sources/<slug>/meta.json manifests.")
     parser.add_argument("source_dir", nargs="?", help="source directory with meta.json")
     parser.add_argument("--all", action="store_true", help="process every kb/sources/*/meta.json")
-    parser.add_argument("--dry-run", action="store_true", help="validate and print the extraction plan only")
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="validate the manifest and print the extraction plan without reading PDF payloads",
+    )
     parser.add_argument("--json", action="store_true", help="print dry-run plan as JSON")
     parser.add_argument("--python", default=sys.executable, help="Python executable for extract.py")
     parser.add_argument("--extractor", default=str(EXTRACTOR), help="path to scripts/kb/extract.py")
@@ -430,7 +445,10 @@ def main(argv: list[str] | None = None) -> int:
     source_dirs = iter_source_dirs() if args.all else [Path(args.source_dir)]
     try:
         processed_root = Path(args.processed_root).resolve()
-        plans = [build_plan(path, processed_root) for path in source_dirs]
+        plans = [
+            build_plan(path, processed_root, require_sources=not args.dry_run)
+            for path in source_dirs
+        ]
         for plan in plans:
             if args.json:
                 print_plan(plan, as_json=True)
