@@ -11,11 +11,16 @@ handle those parts as one document with continuous page numbering.
 
 This stdlib-only check locks the fix:
 
-- the real processed KB exists and points to all uploaded PDF parts;
+- the real processed KB exists and points to all expected PDF parts;
 - it contains index/meta/sections/images with real-manual scale;
 - section boundaries come from the PDF outline, not bold numbered list items;
 - the GitHub workflow checks out LFS files and passes multi-part inputs to
   ``make kb-extract``.
+
+After the LFS cleanup in issue #259, the lightweight CI validator must not
+require the PDF payload bytes to be present in the repository. Extraction still
+requires real PDF files; this check validates the generated KB snapshot and its
+source provenance.
 """
 
 from __future__ import annotations
@@ -83,8 +88,6 @@ def all_source_refs(sections: list[dict]) -> list[dict]:
 
 def check_processed_mango() -> list[str]:
     errors: list[str] = []
-    for source in CC_SOURCES:
-        errors += require_path(source)
     errors += require_path(f"{PROCESSED}/index.md")
     errors += require_path(f"{PROCESSED}/sections")
     errors += require_path(f"{PROCESSED}/images")

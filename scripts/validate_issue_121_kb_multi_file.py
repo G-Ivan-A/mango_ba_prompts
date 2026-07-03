@@ -134,7 +134,7 @@ def check_real_manifests() -> list[str]:
         ROOT / "kb/sources/mtalker",
     ):
         try:
-            plan = build_plan(source_dir)
+            plan = build_plan(source_dir, require_sources=False)
         except ManifestError as exc:
             errors.append(str(exc))
             continue
@@ -172,6 +172,28 @@ def check_synthetic_update_scenarios() -> list[str]:
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
         processed_root = tmp_path / "processed"
+
+        # Post-LFS-cleanup planning: CI can validate explicit manifest intent
+        # without local PDF payloads, while real extraction remains strict.
+        missing_dir = tmp_path / "sources" / "missing-doc"
+        write_manifest(missing_dir, {
+            "name": "Missing Doc",
+            "version": "1",
+            "processing_mode": "multi_part",
+            "output_slug": "missing-doc",
+            "source_files": ["part-1.pdf", "part-2.pdf"],
+        })
+        try:
+            missing_plan = build_plan(missing_dir, processed_root, require_sources=False)
+            if rel_paths(missing_plan.jobs[0].pdf_paths, missing_dir) != ["part-1.pdf", "part-2.pdf"]:
+                errors.append("synthetic missing sources: expected explicit manifest file order")
+        except ManifestError as exc:
+            errors.append(f"synthetic missing sources: planning without payloads failed ({exc})")
+        try:
+            build_plan(missing_dir, processed_root)
+            errors.append("synthetic missing sources: extraction planning must require payload files")
+        except ManifestError:
+            pass
 
         # Single-file baseline: one file -> one stable output.
         single_dir = tmp_path / "sources" / "single-doc"
@@ -267,6 +289,7 @@ def check_docs_and_wiring() -> list[str]:
         "processing_mode",
         "multi_part",
         "multi_document",
+        "require_sources",
         "Git LFS pointer checked out instead of PDF bytes",
         "clean_stale_collection_docs",
     )

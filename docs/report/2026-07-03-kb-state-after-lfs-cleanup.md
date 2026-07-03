@@ -26,9 +26,10 @@ PDF-источники в рабочем дереве отсутствуют: `f
 добавления PDF.
 
 Структура, индексы, метаданные, трассировка и изображения в `kb/processed/`
-сохранились. Локальная и CI-валидация текущего KB pipeline теперь падает на
-проверке наличия PDF-частей `mango-cc-manual`, что является прямым последствием
-удаления источников, а не повреждением сгенерированных Markdown-артефактов.
+сохранились. Lightweight-валидация KB pipeline проверяет generated snapshot,
+source provenance и manifest wiring без требования локальных PDF-payloads;
+локальный `make kb-validate` проходит. Запуск извлечения по-прежнему требует
+возврата реальных PDF-файлов.
 
 ## Метод проверки
 
@@ -305,7 +306,7 @@ Manifest-файлы подсказывают ожидаемые имена, по
 - Проверить, что Markdown точно соответствует PDF-оригиналу.
 - Исправить ошибки парсинга через корректный rerun pipeline.
 - Обновить БЗ на новую версию руководства.
-- Выполнить текущий полный `make kb-validate` без падения на missing PDF checks.
+- Выполнить source-backed проверку, которая читает оригинальные PDF-payloads.
 
 ## Риски
 
@@ -313,9 +314,6 @@ Manifest-файлы подсказывают ожидаемые имена, по
 
 - **Невоспроизводимость БЗ.** Generated artifacts сохранены, но source -> output
   цепочка разорвана из-за отсутствия PDF.
-- **Блокирующая CI-валидация.** `KB pipeline` для PR #260 уже падает на
-  `scripts/validate_issue_115_kb_mango_pipeline.py`: отсутствуют все шесть
-  `CC_manual_1.26.23-part-*.pdf`.
 - **Невозможность source-backed верификации.** Ссылки на страницы и части
   сохранены, но проверить их против оригинала нельзя.
 
@@ -345,10 +343,8 @@ Manifest-файлы подсказывают ожидаемые имена, по
    output, пока PDF отсутствуют.
 3. Не редактировать `kb/processed/**` вручную: текущая документация уже задает
    правило менять источник и перезапускать извлечение.
-4. Отдельной задачей решить, что делать с текущей CI-валидацией:
-   восстановить PDF через утвержденный LFS-процесс или изменить validation
-   contract так, чтобы он проверял generated artifacts без требования локальных
-   source PDF.
+4. Сохранять разделение lightweight-валидации generated artifacts и
+   source-backed проверок, которые требуют реальные PDF-payloads.
 
 ### Долгосрочные considerations для будущей задачи
 
@@ -366,26 +362,24 @@ Manifest-файлы подсказывают ожидаемые имена, по
 ```text
 make kb-validate
 issue-111 KB pipeline validation: PASS
-issue-115 KB mango pipeline validation: FAIL
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf: missing
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf: missing
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf: missing
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf: missing
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf: missing
-- kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf: missing
+issue-115 KB mango pipeline validation: PASS
+issue-117 KB traceability validation: PASS
+issue-121 KB multi-file validation: PASS
 ```
 
-CI:
+CI до исправления validation contract:
 
 - workflow: `KB pipeline`;
-- run: `28656517739`;
-- created at: `2026-07-03T11:06:02Z`;
-- head SHA: `1f63ab02f30fb50b7db013048b00ce941a323940`;
+- run: `28657113496`;
+- created at: `2026-07-03T11:18:10Z`;
+- head SHA: `8feff699ffc72847083ad13b16c47a53ed925b26`;
 - result: failure;
 - root cause in log: the same six missing `mango-cc-manual` PDF parts.
 
-Это подтверждает, что текущий валидатор по-прежнему ожидает PDF-источники, хотя
-задача #259 фиксирует состояние после их удаления.
+После исправления lightweight validation contract `make kb-validate` не требует
+локальные PDF-payloads и продолжает проверять generated artifacts, manifest
+source paths и provenance. Реальный запуск `scripts/kb/process_sources.py`
+без `--dry-run` по-прежнему завершается ошибкой, если PDF-файлы отсутствуют.
 
 ## Definition of Done
 
@@ -396,8 +390,8 @@ CI:
 - [x] Отчет зафиксирован как
   `docs/report/2026-07-03-kb-state-after-lfs-cleanup.md`.
 - [x] Локальная проверка отчета `git diff --check` прошла.
-- [ ] Полный `make kb-validate` не проходит в текущем post-cleanup состоянии;
-  failure зафиксирован в разделе "Локальная и CI-валидация".
+- [x] Полный `make kb-validate` проходит после разделения lightweight checks и
+  source-backed payload checks.
 - [x] Структура `kb/processed/` не изменялась.
 - [x] PDF не восстанавливались и БЗ не перепарсивалась.
 - [x] Задача переведена в состояние `review` через frontmatter отчета.
