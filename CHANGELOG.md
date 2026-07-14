@@ -13,6 +13,20 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #261 ФТ по BCREQ-1069 (ограниченный API-ключ)
+
+- Добавлен прогон [`runs/2026/RUN-0012`](runs/2026/RUN-0012/metadata.yaml)
+  (`bcreq-1069-restricted-api-key`): цепочка промптов формирует финальное ФТ
+  (Разделы 1, 2, 4, 6) по сырому требованию из
+  [issue #261](https://github.com/G-Ivan-A/mango_ba_prompts/issues/261) —
+  дополнительный ограниченный API-ключ для передачи записей разговоров стороннему
+  сервису с фильтрацией по сотрудникам/группам.
+- Итоговое ФТ, пошаговые артефакты (глоссарий → контекст → вопросы → сценарии →
+  ФТ → ограничения), лог эксперимента и вход зафиксированы в контракте `runs/`.
+- Реестр `runs/README.md` и регрессионная проверка
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  расширены записью RUN-0012.
+
 ### Added — Issue #125 cascading context loading
 
 - Добавлен стандарт

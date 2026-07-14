@@ -109,6 +109,23 @@ EXPECTED_RUNS = {
             "docs/ba-process/multichannel-agent-workload/steps/step-5-options.md",
         ],
     },
+    "RUN-0012": {
+        "year": "2026",
+        "files": [
+            "inputs/raw-requirement.md",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-1-glossary.md",
+            "outputs/steps/step-2-normalization.md",
+            "outputs/steps/step-3-questions.md",
+            "outputs/steps/step-4-scenarios.md",
+            "outputs/steps/step-5-fr.md",
+            "outputs/steps/step-6-constraints.md",
+            "logs/experiment-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 
