@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T08:27:09.107Z",
+  "generatedAt": "2026-07-14T14:04:09.125Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 6
   },
   "tests": {
-    "logs": 20,
-    "total": 124,
+    "logs": 30,
+    "total": 152,
     "coveredPrompts": 27
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 124,
+  "totalChecked": 152,
   "testsPassed": {
     "covered": 27,
     "total": 30,
@@ -35,25 +35,25 @@
     {
       "label": "Формирование ФТ/ТЗ",
       "emoji": "📋",
-      "checks": 85,
+      "checks": 113,
       "coveredPrompts": 18
     },
     {
       "label": "Формирование UC/US",
       "emoji": "🎯",
-      "checks": 76,
+      "checks": 84,
       "coveredPrompts": 10
     },
     {
       "label": "Анализ тендерных ТЗ",
       "emoji": "📑",
-      "checks": 26,
+      "checks": 40,
       "coveredPrompts": 7
     },
     {
       "label": "Помощь ПО/ПМ",
       "emoji": "🤝",
-      "checks": 9,
+      "checks": 15,
       "coveredPrompts": 5
     },
     {
@@ -94,6 +94,20 @@
       "icon": "1",
       "prompts": [
         {
+          "id": "mango-glossary-context-understanding-oneshot",
+          "file": "glossary-context-understanding-oneshot.md",
+          "tests": 11,
+          "feedback": 0,
+          "usage": 11
+        },
+        {
+          "id": "mango-glossary-context-understanding-stepwise",
+          "file": "glossary-context-understanding-stepwise.md",
+          "tests": 11,
+          "feedback": 0,
+          "usage": 11
+        },
+        {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
           "tests": 11,
@@ -106,20 +120,6 @@
           "tests": 11,
           "feedback": 0,
           "usage": 11
-        },
-        {
-          "id": "mango-glossary-context-understanding-oneshot",
-          "file": "glossary-context-understanding-oneshot.md",
-          "tests": 7,
-          "feedback": 0,
-          "usage": 7
-        },
-        {
-          "id": "mango-glossary-context-understanding-stepwise",
-          "file": "glossary-context-understanding-stepwise.md",
-          "tests": 7,
-          "feedback": 0,
-          "usage": 7
         }
       ]
     },
@@ -159,30 +159,30 @@
         {
           "id": "mango-glossary-context-understanding-oneshot",
           "file": "glossary-context-understanding-oneshot.md",
-          "tests": 7,
+          "tests": 11,
           "feedback": 0,
-          "usage": 7
+          "usage": 11
         },
         {
           "id": "mango-glossary-context-understanding-stepwise",
           "file": "glossary-context-understanding-stepwise.md",
-          "tests": 7,
+          "tests": 11,
           "feedback": 0,
-          "usage": 7
+          "usage": 11
         },
         {
           "id": "mango-questions-customer-understanding-legacy",
           "file": "questions-customer-understanding-legacy.md",
-          "tests": 3,
+          "tests": 6,
           "feedback": 0,
-          "usage": 3
+          "usage": 6
         },
         {
           "id": "mango-questions-customer-understanding-stepwise",
           "file": "questions-customer-understanding-stepwise.md",
-          "tests": 3,
+          "tests": 6,
           "feedback": 0,
-          "usage": 3
+          "usage": 6
         }
       ]
     },
@@ -191,6 +191,20 @@
       "label": "Формирование UC/US",
       "icon": "4",
       "prompts": [
+        {
+          "id": "mango-glossary-context-understanding-oneshot",
+          "file": "glossary-context-understanding-oneshot.md",
+          "tests": 11,
+          "feedback": 0,
+          "usage": 11
+        },
+        {
+          "id": "mango-glossary-context-understanding-stepwise",
+          "file": "glossary-context-understanding-stepwise.md",
+          "tests": 11,
+          "feedback": 0,
+          "usage": 11
+        },
         {
           "id": "mango-us-modeling-oneshot",
           "file": "us-modeling-oneshot.md",
@@ -201,20 +215,6 @@
         {
           "id": "mango-us-modeling-stepwise",
           "file": "us-modeling-stepwise.md",
-          "tests": 11,
-          "feedback": 0,
-          "usage": 11
-        },
-        {
-          "id": "mango-user-story-generator-legacy",
-          "file": "user-story-generator-legacy.md",
-          "tests": 11,
-          "feedback": 0,
-          "usage": 11
-        },
-        {
-          "id": "mango-user-story-generator-simple-legacy",
-          "file": "user-story-generator-simple-legacy.md",
           "tests": 11,
           "feedback": 0,
           "usage": 11
@@ -229,16 +229,16 @@
         {
           "id": "mango-questions-customer-understanding-legacy",
           "file": "questions-customer-understanding-legacy.md",
-          "tests": 3,
+          "tests": 6,
           "feedback": 0,
-          "usage": 3
+          "usage": 6
         },
         {
           "id": "mango-questions-customer-understanding-stepwise",
           "file": "questions-customer-understanding-stepwise.md",
-          "tests": 3,
+          "tests": 6,
           "feedback": 0,
-          "usage": 3
+          "usage": 6
         },
         {
           "id": "mango-asr-ingestion-legacy",
@@ -279,6 +279,62 @@
     }
   ],
   "prompts": [
+    {
+      "id": "mango-glossary-context-understanding-oneshot",
+      "file": "glossary-context-understanding-oneshot.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 11,
+      "testFiles": [
+        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
+        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-1-glossary.md",
+        "runs/2026/RUN-0011/outputs/steps/step-2-normalization.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-1-glossary.md",
+        "runs/2026/RUN-0012/outputs/steps/step-2-normalization.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 11
+    },
+    {
+      "id": "mango-glossary-context-understanding-stepwise",
+      "file": "glossary-context-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Формирование UC/US"
+      ],
+      "tests": 11,
+      "testFiles": [
+        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
+        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-1-glossary.md",
+        "runs/2026/RUN-0011/outputs/steps/step-2-normalization.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-1-glossary.md",
+        "runs/2026/RUN-0012/outputs/steps/step-2-normalization.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 11
+    },
     {
       "id": "mango-us-modeling-oneshot",
       "file": "us-modeling-oneshot.md",
@@ -386,52 +442,142 @@
       "usage": 11
     },
     {
-      "id": "mango-glossary-context-understanding-oneshot",
-      "file": "glossary-context-understanding-oneshot.md",
+      "id": "mango-fr-documentation-oneshot",
+      "file": "fr-documentation-oneshot.md",
       "status": "draft",
-      "operation": "understanding",
+      "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Формирование UC/US"
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 9,
+      "testFiles": [
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
+        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-4-scenarios.md",
+        "runs/2026/RUN-0012/outputs/steps/step-5-fr.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 9
+    },
+    {
+      "id": "mango-fr-documentation-stepwise",
+      "file": "fr-documentation-stepwise.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
+      ],
+      "tests": 9,
+      "testFiles": [
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
+        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-4-scenarios.md",
+        "runs/2026/RUN-0012/outputs/steps/step-5-fr.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 9
+    },
+    {
+      "id": "mango-constraints-documentation-oneshot",
+      "file": "constraints-documentation-oneshot.md",
+      "status": "draft",
+      "operation": "documentation",
+      "processes": [
+        "Формирование ФТ/ТЗ"
       ],
       "tests": 7,
       "testFiles": [
         "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
         "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
         "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/logs/experiment-log.md",
         "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-1-glossary.md",
-        "runs/2026/RUN-0011/outputs/steps/step-2-normalization.md"
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-6-constraints.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 7
     },
     {
-      "id": "mango-glossary-context-understanding-stepwise",
-      "file": "glossary-context-understanding-stepwise.md",
+      "id": "mango-constraints-documentation-stepwise",
+      "file": "constraints-documentation-stepwise.md",
       "status": "draft",
-      "operation": "understanding",
+      "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Формирование UC/US"
+        "Формирование ФТ/ТЗ"
       ],
       "tests": 7,
       "testFiles": [
         "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
         "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
         "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/logs/experiment-log.md",
         "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-1-glossary.md",
-        "runs/2026/RUN-0011/outputs/steps/step-2-normalization.md"
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-6-constraints.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 7
+    },
+    {
+      "id": "mango-questions-customer-understanding-legacy",
+      "file": "questions-customer-understanding-legacy.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 6,
+      "testFiles": [
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 6
+    },
+    {
+      "id": "mango-questions-customer-understanding-stepwise",
+      "file": "questions-customer-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 6,
+      "testFiles": [
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 6
     },
     {
       "id": "mango-uc-modeling-oneshot",
@@ -476,124 +622,6 @@
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 6
-    },
-    {
-      "id": "mango-fr-documentation-oneshot",
-      "file": "fr-documentation-oneshot.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 5,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
-        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
-        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
-        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 5
-    },
-    {
-      "id": "mango-fr-documentation-stepwise",
-      "file": "fr-documentation-stepwise.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 5,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
-        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
-        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
-        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 5
-    },
-    {
-      "id": "mango-constraints-documentation-oneshot",
-      "file": "constraints-documentation-oneshot.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 4,
-      "testFiles": [
-        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
-        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
-        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 4
-    },
-    {
-      "id": "mango-constraints-documentation-stepwise",
-      "file": "constraints-documentation-stepwise.md",
-      "status": "draft",
-      "operation": "documentation",
-      "processes": [
-        "Формирование ФТ/ТЗ"
-      ],
-      "tests": 4,
-      "testFiles": [
-        "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md",
-        "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
-        "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 4
-    },
-    {
-      "id": "mango-questions-customer-understanding-legacy",
-      "file": "questions-customer-understanding-legacy.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Помощь ПО/ПМ"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
-    },
-    {
-      "id": "mango-questions-customer-understanding-stepwise",
-      "file": "questions-customer-understanding-stepwise.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Помощь ПО/ПМ"
-      ],
-      "tests": 3,
-      "testFiles": [
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 3
     },
     {
       "id": "mango-technical-details-solution-design-legacy",

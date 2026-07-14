@@ -1,0 +1,34 @@
+run_id: RUN-0012
+process: bcreq-1069-restricted-api-key
+version: "0.1"
+date: 2026-07-14
+author: "BA-IH + LLM"
+model: "claude-opus-4-8"
+status: works-with-edits
+source_paths:
+  - runs/2026/RUN-0012/outputs/final-artifact.md
+  - runs/2026/RUN-0012/outputs/README.md
+inputs:
+  - inputs/raw-requirement.md
+outputs:
+  - outputs/README.md
+  - outputs/final-artifact.md
+  - outputs/prompts-chain.md
+  - outputs/steps/step-1-glossary.md
+  - outputs/steps/step-2-normalization.md
+  - outputs/steps/step-3-questions.md
+  - outputs/steps/step-4-scenarios.md
+  - outputs/steps/step-5-fr.md
+  - outputs/steps/step-6-constraints.md
+logs:
+  - logs/experiment-log.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/261
+related_artifacts:
+  - docs/adr/009-bcreq-formation-process.md
+  - prompts/glossary-context-understanding-stepwise.md
+  - prompts/fr-documentation-stepwise.md
+  - prompts/constraints-documentation-stepwise.md
+related_runs:
+  - RUN-0010
+  - RUN-0011
