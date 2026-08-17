@@ -1,12 +1,17 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-11
+version: 0.2
+updated: 2026-08-17
+owner: G-Ivan-A
 ai-generated: true
 type: ecosystem-map
 scope: mango-ba-processes
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/66"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/263"
 research_deps:
+  - "docs/hub-research-dependencies.md#adr-009-repo-split"
+  - "docs/hub-research-dependencies.md#ba-process-ontology"
   - "docs/hub-research-dependencies.md#classification"
   - "docs/hub-research-dependencies.md#classification-tz"
   - "docs/hub-research-dependencies.md#taxonomy-concept"
@@ -46,6 +51,33 @@ enterprise-framework. Решения опираются на research Хаба, 
 и утверждает gates, AI/агент предлагает уточнение маршрута по направлению
 разработки и уровню зрелости. БА не должен проектировать операции с нуля при
 каждом запуске процесса.
+
+### 1.1 ДОД операции: процесс проверки обязателен
+
+Экосистема подчиняется принципу «качество системы исполнения > стоимость»
+([AI_GOVERNANCE.md](../AI_GOVERNANCE.md#принцип-качество-системы-исполнения--стоимость)).
+Для экосистемы это означает: **выходной артефакт операции — не весь ДОД**.
+Операция считается завершённой, только когда у неё назван механизм проверки
+результата.
+
+| Механизм проверки | Форма в этом репозитории | Типовые операции |
+| --- | --- | --- |
+| Чек-лист | Раздел «Проверка» в паттерне или блок quality gates в промпте. | `documentation`, `solution_design`, `release_readiness` |
+| Evals-метрика | Прогон в [`runs/`](../runs/) с зафиксированным входом и ожидаемым выходом. | `validation`, `quality`, `research` |
+| Human-in-the-loop gate | Подтверждение человеком перед сменой статуса (`covered / validated / approved / released`). | `governance`, `risk_analysis`, `impact_analysis`, `reverse_requirements` |
+
+Практические следствия для матриц §4 и карты процессов §5:
+
+1. Строка «Промпты» в карте процесса читается вместе со строкой «Правило»:
+   правило и есть объявленный механизм проверки этого процесса.
+2. Отсутствие проверки помечается честно («требуется разработка проверки») и
+   попадает в §8 как gap, а не маскируется формулировкой выхода.
+3. Промпт не переводится `draft → canonical`, пока нет зафиксированного прогона
+   и названного механизма проверки.
+
+Источник требований к ДОД — чек-лист D1–D10 из онтологии процессов БА Хаба
+([`#ba-process-ontology`](hub-research-dependencies.md#ba-process-ontology));
+здесь он не дублируется.
 
 ## 2. Граф связей экосистемы
 
@@ -359,7 +391,20 @@ flowchart LR
 | Промпты | Частично: `glossary-context-understanding-*`, `questions-customer-understanding-*`, `fr-validation-*`; dedicated tender prompts отсутствуют. |
 | Правило | Для статуса `Покрывается` или `Частично покрывается` нужен evidence; при низкой уверенности статус становится `Требует уточнения`. |
 
-## 7. Переход от промптов к агентам
+## 7. Границы автоматизации: где заканчивается спок
+
+**Область этого репозитория — уровни 1–2.** `mango_ba_prompts` — операционка на
+GitHub с AI-исполнителем (Конардом): промпты, паттерны, реестры, прогоны и
+локальные валидаторы. Инструментальный слой — агенты, оркестрация и
+инфраструктура их запуска — предмет отдельного проекта
+([`ai-ba-playbooks`](https://github.com/G-Ivan-A/ai-ba-playbooks), ADR-009 v0.3
+через [`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-split)),
+а не этой экосистемы.
+
+Шкала ниже — **справочная модель зрелости**, чтобы понимать, чем сегодняшние
+промпты станут в руках инструментального проекта. Уровни 3–4 не являются планом
+работ `mango_ba_prompts`: спок отвечает за *содержание, онтологию и стандарты
+качества* операций, а не за исполняющие их инструменты.
 
 ```mermaid
 stateDiagram-v2
@@ -385,7 +430,10 @@ stateDiagram-v2
 Плавность перехода обеспечивается тем, что сегодняшние промпты становятся
 компонентами будущего агента: каждый промпт закрывает одну когнитивную операцию,
 процессная карта задает порядок, registry задает источники, gates сохраняют
-human ownership.
+human ownership. Вклад спока в эту плавность — качество и верифицируемость
+операций (§1.1), а не построение исполняющей системы: уровни 3–4 достигаются
+инструментальным проектом, который забирает готовые операции отсюда через
+односторонний ручной отбор ([docs/rfc-hub-integration.md](rfc-hub-integration.md)).
 
 ## 8. Roadmap known gaps
 
@@ -397,6 +445,7 @@ human ownership.
 | UML/BPMN/Mermaid prompt | Визуализация - отдельный процесс БА, но инструмента нет. | Prompt для выбора диаграммы и генерации Mermaid/BPMN source. |
 | Product/RAG navigator | Hub roadmap предлагает `kb/product-matrix.md`; в споке его пока нет. | Отдельный пилот после согласования owner и sanitized sources. |
 | Orchestrator prompt | Сейчас БА сам связывает промпты в цепочку. | Системный prompt уровня 2 для выбора процесса, операций и gates. |
+| Механизм проверки не объявлен у части операций | По §1.1 такая операция считается незавершённой; пробел должен быть виден, а не замаскирован. | Явный раздел «Проверка» в паттернах и quality gates в промптах; сверка с чек-листом D1–D10 ([`#ba-process-ontology`](hub-research-dependencies.md#ba-process-ontology)). |
 
 ## 9. Связанные репозитории и PR
 
@@ -409,7 +458,9 @@ human ownership.
 | PR 60 | https://github.com/G-Ivan-A/mango_ba_prompts/pull/60 |
 | PR 57 | https://github.com/G-Ivan-A/mango_ba_prompts/pull/57 |
 | PR 59 | https://github.com/G-Ivan-A/mango_ba_prompts/pull/59 |
+| Issue 263 (видение и концепция) | https://github.com/G-Ivan-A/mango_ba_prompts/issues/263 |
 | Хаб | https://github.com/G-Ivan-A/hybrid-Intelligence-lab |
+| ai-ba-playbooks (публичная витрина методологии) | https://github.com/G-Ivan-A/ai-ba-playbooks |
 | clarify-engine-ai | https://github.com/G-Ivan-A/clarify-engine-ai |
 | open-ai.ru | https://github.com/G-Ivan-A/open-ai.ru |
 | mango_ba_prompts | https://github.com/G-Ivan-A/mango_ba_prompts |
