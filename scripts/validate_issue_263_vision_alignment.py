@@ -13,6 +13,12 @@
 - решения Хаба (ADR-009 v0.3, онтология процессов БА, анализ готовности)
   зарегистрированы якорями в едином мосте, а не скопированы;
 - в концептуальных документах нет прямых hub-относительных ссылок;
+- в концептуальных документах нет внутренних терминов («фаундер», имя
+  AI-исполнителя) и концептов проекта БИЛД (Proof of Execution, Learning loop,
+  S1–S5);
+- статус механизмов проверки зафиксирован честно: evals и golden-set в
+  репозитории отсутствуют, и это отражено в документах и в бэклоге;
+- зафиксированы варианты инструментария веб-ресурса после приватизации;
 - frontmatter концептуальных документов содержит status/version/updated/owner.
 """
 
@@ -43,6 +49,36 @@ NEW_HUB_ANCHORS = (
 # Прямые hub-относительные ссылки запрещены: мост один — реестр зависимостей.
 FORBIDDEN_LINK = re.compile(r"\]\(\.\./\.\./(standards|research|docs)/")
 
+# Внутренний жаргон и концепты проекта БИЛД в концептуальных документах спока.
+FORBIDDEN_TERMS = (
+    "фаундер",
+    "Фаундер",
+    "Конард",
+    "Proof of Execution",
+    "Learning loop",
+    "S1-S5",
+    "S1–S5",
+)
+
+# Варианты инструментария веб-ресурса после приватизации (блокер Q1).
+WEB_RESOURCE_VARIANTS = (
+    "open-ai.ru",
+    "Поэтапная миграция",
+    "Кастомное решение через `ai-ba-playbooks`",
+)
+
+# Пробел evals фиксируется честно, а не маскируется.
+EVALS_GAP_MARKERS = {
+    "AI_GOVERNANCE.md": (
+        "Статус механизмов проверки на сегодня",
+        "нет каталога `evals/` и нет golden-set",
+    ),
+    "governance/BACKLOG.md": (
+        "evals и golden-set отсутствуют",
+        "инструментарий веб-ресурса (app)",
+    ),
+}
+
 REQUIRED_TEXT = {
     "AI_GOVERNANCE.md": (
         "качество системы исполнения > стоимость",
@@ -51,8 +87,10 @@ REQUIRED_TEXT = {
         "evals-метрика",
         "human-in-the-loop gate",
         "GitHub — единственная платформа",
-        "AI-исполнитель (Конард)",
+        "AI-исполнитель",
         "Подготовка к приватизации",
+        "Статус механизмов проверки на сегодня",
+        "Веб-ресурс (app) после приватизации",
         "ai-ba-playbooks",
     ),
     "README.md": (
@@ -61,6 +99,7 @@ REQUIRED_TEXT = {
         "Private",
         "ai-ba-playbooks",
         "телеком",
+        "evals и golden-set отсутствуют",
     ),
     "docs/ba-ecosystem.md": (
         "ДОД операции: процесс проверки обязателен",
@@ -71,6 +110,9 @@ REQUIRED_TEXT = {
         "строго односторонний",
         "неавтоматическая",
         "ai-ba-playbooks",
+        "Универсальные и специализированные плейбуки",
+        "Отбор Пользователем",
+        "конструктору",
     ),
     "governance/artifact-map.md": (
         "ADR-009",
@@ -138,6 +180,52 @@ def check_hub_bridge() -> list[str]:
     return errors
 
 
+def check_forbidden_terms() -> list[str]:
+    """Концептуальные документы должны читаться независимым читателем."""
+    errors: list[str] = []
+    for path in CONCEPT_DOCS:
+        for number, line in enumerate(read_text(path).splitlines(), start=1):
+            for term in FORBIDDEN_TERMS:
+                if term in line:
+                    errors.append(
+                        f"{path}:{number}: запрещённый термин {term!r} "
+                        "в концептуальном документе"
+                    )
+    return errors
+
+
+def check_evals_status() -> list[str]:
+    """Отсутствие evals фиксируется честно, а не подразумевается."""
+    errors: list[str] = []
+    if (ROOT / "evals").exists():
+        errors.append(
+            "evals/: каталог появился — обнови «Статус механизмов проверки "
+            "на сегодня» в AI_GOVERNANCE.md и запись в governance/BACKLOG.md"
+        )
+    for path, needles in EVALS_GAP_MARKERS.items():
+        text = read_text(path)
+        for needle in needles:
+            if needle not in text:
+                errors.append(f"{path}: отсутствует фиксация пробела {needle!r}")
+    return errors
+
+
+def check_web_resource_variants() -> list[str]:
+    """Блокер Q1: канал публикации веб-ресурса после перевода в Private."""
+    text = read_text("AI_GOVERNANCE.md")
+    errors = [
+        f"AI_GOVERNANCE.md: не зафиксирован вариант веб-ресурса {variant!r}"
+        for variant in WEB_RESOURCE_VARIANTS
+        if variant not in text
+    ]
+    if "GitHub Pages не работает для приватных репозиториев" not in text:
+        errors.append(
+            "AI_GOVERNANCE.md: не зафиксировано ограничение GitHub Pages "
+            "для приватных репозиториев"
+        )
+    return errors
+
+
 def check_no_direct_hub_links() -> list[str]:
     errors: list[str] = []
     for path in CONCEPT_DOCS:
@@ -168,6 +256,9 @@ def main() -> int:
     errors = (
         check_frontmatter()
         + check_required_text()
+        + check_forbidden_terms()
+        + check_evals_status()
+        + check_web_resource_variants()
         + check_hub_bridge()
         + check_no_direct_hub_links()
         + check_ci_wiring()

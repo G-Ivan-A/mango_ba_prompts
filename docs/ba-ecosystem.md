@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-08-17
 owner: G-Ivan-A
 ai-generated: true
@@ -63,7 +63,7 @@ enterprise-framework. Решения опираются на research Хаба, 
 | Механизм проверки | Форма в этом репозитории | Типовые операции |
 | --- | --- | --- |
 | Чек-лист | Раздел «Проверка» в паттерне или блок quality gates в промпте. | `documentation`, `solution_design`, `release_readiness` |
-| Evals-метрика | Прогон в [`runs/`](../runs/) с зафиксированным входом и ожидаемым выходом. | `validation`, `quality`, `research` |
+| Evals-метрика | Прогон в [`runs/`](../runs/) с зафиксированным входом и ожидаемым выходом. **Пока недоступен:** `evals/` и golden-set в репозитории отсутствуют ([статус механизмов](../AI_GOVERNANCE.md#статус-механизмов-проверки-на-сегодня)). | `validation`, `quality`, `research` |
 | Human-in-the-loop gate | Подтверждение человеком перед сменой статуса (`covered / validated / approved / released`). | `governance`, `risk_analysis`, `impact_analysis`, `reverse_requirements` |
 
 Практические следствия для матриц §4 и карты процессов §5:
@@ -393,8 +393,8 @@ flowchart LR
 
 ## 7. Границы автоматизации: где заканчивается спок
 
-**Область этого репозитория — уровни 1–2.** `mango_ba_prompts` — операционка на
-GitHub с AI-исполнителем (Конардом): промпты, паттерны, реестры, прогоны и
+**Область этого репозитория — уровни 1–2.** `mango_ba_prompts` работает на
+GitHub с AI-исполнителем: промпты, паттерны, реестры, прогоны и
 локальные валидаторы. Инструментальный слой — агенты, оркестрация и
 инфраструктура их запуска — предмет отдельного проекта
 ([`ai-ba-playbooks`](https://github.com/G-Ivan-A/ai-ba-playbooks), ADR-009 v0.3

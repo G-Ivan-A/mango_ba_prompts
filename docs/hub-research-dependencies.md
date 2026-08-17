@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-08-17
 owner: G-Ivan-A
 ai-generated: true
@@ -202,12 +202,13 @@ related_issues:
 ### `#adr-009-repo-split` — ADR-009 v0.3: модель 2-х репозиториев
 
 - **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/adr/2026-07-adr-009-mango-repo-split.md>
-- **Описание:** решение фаундера о разделении на два репозитория.
-  `mango_ba_prompts` сохраняет имя и переводится в **Private** (операционка);
-  публичным создаётся **`ai-ba-playbooks`** (витрина методологии);
+- **Описание:** решение Пользователя о разделении на два репозитория.
+  `mango_ba_prompts` сохраняет имя и переводится в **Private** (рабочий
+  репозиторий проекта); публичным создаётся **`ai-ba-playbooks`**
+  (витрина методологии);
   третий репозиторий `mango-ba-prompt-library` **не создаётся**.
   Синхронизация строго односторонняя `приватный → публичный`, на старте —
-  ручной отбор фаундером. Приватный репозиторий работает **без GitHub-hosted
+  ручной отбор Пользователем. Приватный репозиторий работает **без GitHub-hosted
   runners**; допустимая альтернатива — self-hosted runner в Docker.
 - **Потребители (`research_dep`):**
   - `README.md`
@@ -245,5 +246,5 @@ related_issues:
 - **Потребители (`research_dep`):**
   - `README.md`
   - `AI_GOVERNANCE.md` (раздел «Подготовка к приватизации»)
-- **Политика:** reference only; сам перевод в Private — действие фаундера, а не
+- **Политика:** reference only; сам перевод в Private — решение Пользователя, а не
   спока.
