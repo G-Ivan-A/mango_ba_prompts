@@ -315,6 +315,12 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       артефактов (As-Is-выжимка, сценарная матрица, отчёт валидации, вопросы
       заказчику). Источник:
       [`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+- [ ] [2026-08-17] [issue #263] Статус хабового RFC «Принципы БА-автоматизации»:
+      в `docs/rfc/` Хаба на SHA `56db375` такого документа нет, поэтому в
+      [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md)
+      он не зарегистрирован. Нужен ли якорь и по какому пути — решение
+      Пользователя. Источник:
+      [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
 
 ---
 
