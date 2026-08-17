@@ -13,4 +13,4 @@ kb/sources/**/*.pdf
 !kb/sources/**/*.fixture.pdf
 # временные артефакты конвейера извлечения
 kb/sources/**/_diagram.png
-scripts/kb/__pycache__/
+__pycache__/
