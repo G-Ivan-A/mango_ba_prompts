@@ -38,7 +38,7 @@ related_artifacts:
 1. **Когнитивные операции** — 13 атомарных типов мыслительной работы БА
    ([docs/taxonomy.md](../taxonomy.md), §1).
 2. **Процессы БА** — 9 повторяемых рабочих сценариев с пошаговыми workflow
-   ([docs/ba-processes/00-index.md](ba-processes/00-index.md)).
+   ([docs/ba-processes/00-index.md](../ba-processes/00-index.md)).
 3. **Классификация функциональности** — иерархия
    `Domain → Capability → Feature → Atomic Function`
    ([standards/product-classification-contract.md](../../standards/product-classification-contract.md)).
@@ -118,11 +118,11 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 | --- | --- | --- |
 | **Операция** (Operation) | Атомарный тип когнитивной работы БА, который можно поручить промпту. 13 штук. | [docs/taxonomy.md §1](../taxonomy.md) |
 | **Процесс** (Process) | Повторяемый рабочий сценарий БА. 9 штук. | [docs/taxonomy.md §2](../taxonomy.md) |
-| **Подпроцесс** (Subprocess) | Шаг процесса: одна строка в детальной карте процесса (операция + цель + промпты + gate). | [docs/ba-processes/00-index.md](ba-processes/00-index.md) |
+| **Подпроцесс** (Subprocess) | Шаг процесса: одна строка в детальной карте процесса (операция + цель + промпты + gate). | [docs/ba-processes/00-index.md](../ba-processes/00-index.md) |
 | **Артефакт** (Artifact) | Информационный объект, который операция потребляет на входе или производит на выходе. ≥20 типов — см. §5 и стандарт. | **новое (этот ADR)** |
 | **Исполнитель** (Performer) | Кто выполняет операцию: человек, LLM-агент или гибрид. | [governance/artifact-map.md](../../governance/artifact-map.md) (роли) + §4 |
-| **Контрольная точка** (Gate) | Точка, где результат требует подтверждения человека до продолжения. | [docs/ba-processes/00-index.md](ba-processes/00-index.md) (колонка Gate/gap) |
-| **Направление разработки** (Direction) | Контекст задачи (`client-order`, `tender-rfp`, …), задающий глубину артефакта. | [docs/ba-ecosystem.md](../ba-ecosystem.md), [00-index.md](ba-processes/00-index.md) |
+| **Контрольная точка** (Gate) | Точка, где результат требует подтверждения человека до продолжения. | [docs/ba-processes/00-index.md](../ba-processes/00-index.md) (колонка Gate/gap) |
+| **Направление разработки** (Direction) | Контекст задачи (`client-order`, `tender-rfp`, …), задающий глубину артефакта. | [docs/ba-ecosystem.md](../ba-ecosystem.md), [00-index.md](../ba-processes/00-index.md) |
 | **Область знаний BABOK** (Knowledge Area) | Одна из 6 KA BABOK Guide v3, к которой относится операция. | **новое (этот ADR, §«Доказательная база»)** |
 | **Класс функциональности** | Уровень `Domain → Capability → Feature → Atomic Function`, к которому относится артефакт-требование. | [standards/product-classification-contract.md](../../standards/product-classification-contract.md) |
 | **Стандарт** (Standard) | Внешний нормативный источник (BABOK, ISO/IEC/IEEE 29148, ISO/IEC 25010, ГОСТ 34.602/34.601), которому соответствует артефакт. | **новое (этот ADR + [standards/industry-standards-standard.md](../../standards/industry-standards-standard.md))** |

@@ -13,7 +13,7 @@ related_issues:
 
 > Текст приведён дословно из [issue #109](https://github.com/G-Ivan-A/mango_ba_prompts/issues/109),
 > раздел «Входные данные». Это **необработанный** вход; нормализация — в
-> [`../steps/step-2-normalization.md`](../steps/step-2-normalization.md).
+> [`../outputs/steps/step-2-normalization.md`](../outputs/steps/step-2-normalization.md).
 
 ## Дословный текст заказчика
 
@@ -35,7 +35,7 @@ E-mail — асинхронный канал, обрабатывается в ф
 
 Ниже — только выделение лексических единиц требования для последующей
 нормализации. Интерпретация и устранение неоднозначностей выполняются на
-[Шаге 2](../steps/step-2-normalization.md).
+[Шаге 2](../outputs/steps/step-2-normalization.md).
 
 | Маркер | Цитата из требования | Где разбирается |
 | --- | --- | --- |

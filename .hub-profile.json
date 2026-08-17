@@ -1,41 +1,65 @@
 {
-  "_comment": "Профиль проекта для Smart Sync (tools/sync-from-hub.sh Хаба, PR #208). Ключи соответствуют тому, что фактически читает клиент Smart Sync: target_type / stack / phase / hub_url / last_sync. Issue #46 предлагал project_type/current_phase — переименованы в target_type/phase ради работоспособности Smart Sync (см. docs/adr/0001-hub-sync-pr208.md). last_sync фиксирует последний применённый snapshot Хаба.",
+  "_comment": "Профиль проекта для Smart Sync (tools/sync-from-hub.sh Хаба, PR #208). Ключи соответствуют тому, что фактически читает клиент Smart Sync: target_type / stack / phase / hub_url / last_sync. Issue #46 предлагал project_type/current_phase — переименованы в target_type/phase ради работоспособности Smart Sync (см. docs/adr/0001-hub-sync-pr208.md). last_sync фиксирует последний применённый snapshot Хаба; sync_history хранит предыдущие точки синка, чтобы регрессионные проверки прошлых issue не ломались при следующем синке (issue #265).",
   "project_name": "mango_ba_prompts",
   "target_type": "HTOM",
   "stack": "python",
   "phase": 1,
   "hub_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
   "last_sync": {
-    "date": "2026-06-13",
-    "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72",
+    "date": "2026-08-17",
+    "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/265",
     "hub_repo": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
-    "hub_prs": [
-      224,
-      226,
-      229,
-      230
-    ],
-    "hub_sha": "b683341d22d4f518618917a02d9c7c394658b156",
-    "mode": "Structured Smart Sync",
+    "hub_prs": [],
+    "hub_sha": "3bfa4103c9efbbd59bc951814884920e406982e2",
+    "mode": "Creative re-sync (scripts/sync_from_hub.py)",
     "synced_paths": [
-      "AI_SESSION_HANDOVER_PROMPT.md",
-      "AI_GOVERNANCE.md",
-      "CONTRIBUTING.md",
-      "governance/agent-onboarding-protocol.md",
-      "governance/session-digests.md",
-      "governance/artifact-map.md",
-      "governance/migration-manifest.md",
-      "docs/hub-research-dependencies.md",
-      "docs/task-for-konard-template.md",
-      "docs/adr/0002-issue48-handover-local-enrichment.md",
-      "docs/adr/0003-creative-mode-governance.md",
-      "docs/analysis/migration-strategy-rfc.md",
-      "docs/reviews/migration-rfc-human-review-2026-06.md",
-      "governance/BACKLOG.md",
-      "governance/migration-phase1-issues.md",
-      "README.md",
-      "CHANGELOG.md"
+      "ai-governance/README.md",
+      "ai-governance/agent-security-checklist.md",
+      "ai-governance/ai-governance.md",
+      "ai-rules/README.md",
+      "ai-rules/adversarial-stress-testing.md",
+      "ai-rules/agent-onboarding-protocol.md",
+      "ai-rules/agent-work-rules.md",
+      "standards/GLOSSARY.md",
+      "standards/analysis-standard.md",
+      "standards/evals-contract-standard.md",
+      "standards/research-standard.md"
     ],
-    "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance, task templates, related ADR references, and migration-era references; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
-  }
+    "notes": "Ре-синк выполнен воспроизводимо скриптом scripts/sync_from_hub.py по манифесту: переносится методология исполнения прогона (ai-rules/, ai-governance/) и стандарты, на которые опираются артефакты спицы. Общерепозиторные контракты Хаба (standards/README.md, frontmatter-*, file-naming, *-structure-standard, tools/) сознательно не переносились — у спицы есть собственная норма, обоснование в docs/adr/0004-hub-resync-2026-08.md. Все hub-относительные ссылки переписаны: на локальный путь, если цель тоже перенесена, иначе на permalink Хаба с закреплённым SHA."
+  },
+  "sync_history": [
+    {
+      "date": "2026-06-13",
+      "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72",
+      "hub_repo": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+      "hub_prs": [
+        224,
+        226,
+        229,
+        230
+      ],
+      "hub_sha": "b683341d22d4f518618917a02d9c7c394658b156",
+      "mode": "Structured Smart Sync",
+      "synced_paths": [
+        "AI_SESSION_HANDOVER_PROMPT.md",
+        "AI_GOVERNANCE.md",
+        "CONTRIBUTING.md",
+        "governance/agent-onboarding-protocol.md",
+        "governance/session-digests.md",
+        "governance/artifact-map.md",
+        "governance/migration-manifest.md",
+        "docs/hub-research-dependencies.md",
+        "docs/task-for-konard-template.md",
+        "docs/adr/0002-issue48-handover-local-enrichment.md",
+        "docs/adr/0003-creative-mode-governance.md",
+        "docs/analysis/migration-strategy-rfc.md",
+        "docs/reviews/migration-rfc-human-review-2026-06.md",
+        "governance/BACKLOG.md",
+        "governance/migration-phase1-issues.md",
+        "README.md",
+        "CHANGELOG.md"
+      ],
+      "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance, task templates, related ADR references, and migration-era references; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
+    }
+  ]
 }

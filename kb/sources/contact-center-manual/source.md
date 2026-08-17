@@ -25,7 +25,7 @@ related_issues:
 > задачи стоит маркер `<!-- Failed to upload "CC_manual_1.26.23.pdf" -->`,
 > вложения в комментариях нет). Поэтому эксперимент проведён на **синтетической
 > фикстуре** того же класса документа —
-> [`../contact-center-manual-sample/`](../contact-center-manual-sample/), —
+> [`../contact-center-manual-sample/`](../../processed/contact-center-manual-sample/), —
 > структурно воспроизводящей реальное руководство (нумерация разделов, таблица
 > ролей, диаграмма маршрутизации) по уже зафиксированной выжимке из issue #109:
 > [`runs/2026/RUN-0011/inputs/kb-files.md`](../../../runs/2026/RUN-0011/inputs/kb-files.md).

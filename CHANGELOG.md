@@ -386,7 +386,8 @@ ai-generated: true
   сокращаются (ФТ-3).
 - Добавлен модуль **«Проверки»** вместо карточки «Мультиагенты»: статус отладки
   (`draft` / `canonical` / `archived`), число зафиксированных тестов в
-  [`prompts/experiments/`](prompts/experiments), обратная связь по лейблу
+  `prompts/experiments/` (каталог позже перенесён в [`runs/`](runs), issue #123),
+  обратная связь по лейблу
   `prompt:feedback` и активность использования промптов по процессам БА (ФТ-4).
 - [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs) генерирует
   новый артефакт [`site/data/checks.json`](site/data/checks.json) на основе
@@ -688,7 +689,8 @@ ai-generated: true
 
 ### Added — Issue #54 миграция прикреплённого файла промптов в `prompts/drafts/`
 
-- Создан [`prompts/drafts/Промпт+для+БА (1).md`](prompts/drafts/) — миграция
+- Создан `prompts/drafts/Промпт+для+БА (1).md` (каталог `prompts/drafts/` позже
+  расформирован) — миграция
   единственного файла, прикреплённого к issue #54 (`Промпт+для+БА (1).pdf`, СПИСОК
   ПРОМПТОВ для бизнес-анализа в Телеком SaaS). По правилу issue «один прикреплённый
   файл = один файл в репозитории» PDF перенесён как один draft без разбиения на

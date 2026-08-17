@@ -43,4 +43,4 @@ ai-generated: true
 ## Источники
 
 - Источник БЗ, часть 1: `kb/sources/mtalker/mTalker_User_Guide_ch3_Admin_Guide.pdf`
-- Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), [ADR-007](../../../docs/adr/007-kb-standard.md)
+- Стандарт цитирования: [`standards/kb-standard.md`](../../../../standards/kb-standard.md), [ADR-007](../../../../docs/adr/007-kb-standard.md)

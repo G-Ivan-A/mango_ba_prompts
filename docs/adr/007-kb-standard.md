@@ -142,8 +142,8 @@ issue. Без обязательной проверки источника пр�
 **A. Инлайн-цитаты в выводе:**
 
 > Структура ТЗ опирается на [ГОСТ 34.602-2020](https://docs.cntd.ru/document/1200181804)
-> и практику [KB: source-backed-analysis](kb/practices/source-backed-analysis.md#правило).
-> Термин см. [Глоссарий: Artifact](standards/GLOSSARY.md#термины).
+> и практику [KB: source-backed-analysis](../../kb/practices/source-backed-analysis.md#правило).
+> Термин см. [Глоссарий: Artifact](../../standards/GLOSSARY.md#термины).
 
 **B. Блок «Источники» в конце артефакта:** перечисляет те же три ссылки с
 полными URL.

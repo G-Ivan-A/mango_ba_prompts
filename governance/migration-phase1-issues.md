@@ -97,7 +97,7 @@ M-001 и M-008 независимы и идут параллельно.
 
 Подчеркни: `prompts/` = **инструменты для БА**, `kb/` = практики/справочники, а
 **не** стандарт; единственный мост в Хаб — через
-[`docs/hub-research-dependencies.md`](hub-research-dependencies.md) (M-007).
+[`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md) (M-007).
 
 ### 📄 Артефакты для создания/изменения
 
@@ -216,7 +216,7 @@ RFC принцип P4 (§1.2), §2.3, edge cases E2 и E6 / §4.1; бэклог 
 - [ ] Перенести файл-источник в `standards/product-classification-contract.md`
       (переименование, kebab-case; **не** в `kb/`, **не** `glossary`).
 - [ ] Внутренние ссылки на research заменить на `research_dep`/якоря реестра
-      [`docs/hub-research-dependencies.md`](hub-research-dependencies.md)
+      [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md)
       (см. M-007; E1, E8) — без относительных путей.
 - [ ] Добавить взаимную ссылку на `standards/GLOSSARY.md` («Для значений
       терминов см. …», E6).

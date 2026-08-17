@@ -163,4 +163,4 @@ ai-generated: true
 ## Источники
 
 - Источник БЗ, часть 1: `kb/sources/mtalker/UserGuide_mTalker_4Mobile.pdf`
-- Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), [ADR-007](../../../docs/adr/007-kb-standard.md)
+- Стандарт цитирования: [`standards/kb-standard.md`](../../../../standards/kb-standard.md), [ADR-007](../../../../docs/adr/007-kb-standard.md)

@@ -142,12 +142,24 @@ def main() -> int:
         )
         errors += reject("CONTRIBUTING.md", "Фаундер", "Иосполнитель")
 
+        # Точку синка issue #72 хранит sync_history: last_sync принадлежит
+        # последнему синку (issue #265) и обязан двигаться вперёд, иначе эта
+        # проверка запрещала бы любой следующий синк из Хаба.
         profile = json.loads(read(".hub-profile.json"))
-        last_sync = profile.get("last_sync", {})
-        if last_sync.get("issue") != "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72":
-            errors.append(".hub-profile.json: last_sync.issue is not issue #72")
+        history = profile.get("sync_history", [])
+        last_sync = next(
+            (
+                entry
+                for entry in [profile.get("last_sync", {})] + history
+                if entry.get("issue") == "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72"
+            ),
+            None,
+        )
+        if last_sync is None:
+            errors.append(".hub-profile.json: sync_history has no record for issue #72")
+            last_sync = {}
         if last_sync.get("hub_sha") != HUB_SHA:
-            errors.append(".hub-profile.json: last_sync.hub_sha is not latest Hub main SHA after PR #229/#230")
+            errors.append(".hub-profile.json: issue #72 record hub_sha is not Hub main SHA after PR #229/#230")
         hub_prs = set(last_sync.get("hub_prs", []))
         for hub_pr in (224, 226, 229, 230):
             if hub_pr not in hub_prs:
