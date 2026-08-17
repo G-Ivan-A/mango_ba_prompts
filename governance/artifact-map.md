@@ -1,24 +1,27 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-13
+version: 0.2
+updated: 2026-08-17
 temperature: 0.1
 ai-generated: true
 executable: false
-source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/governance/artifact-map.md"
-source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
+source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3bfa4103c9efbbd59bc951814884920e406982e2/pr-ops/artifact-map.md"
+source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 ---
 
 # Artifact Map — mango_ba_prompts
 
 Локальная карта активных артефактов `mango_ba_prompts`. Она адаптирует хабовую
-`governance/artifact-map.md` под HTOM-команду Mango BA Prompts: показывает, где
+карту артефактов (в Хабе она переехала в `pr-ops/artifact-map.md`) под HTOM-команду Mango BA Prompts: показывает, где
 лежит рабочий контекст, какие файлы являются входными точками и какие артефакты
 нужно обновлять при Smart Sync.
 
-> **Источник синхронизации:** Hub PR #224 + PR #226 + PR #229 + PR #230, latest
-> Hub SHA `b683341d22d4f518618917a02d9c7c394658b156`. Хабовая карта остаётся источником
-> общих правил, а эта карта отражает фактическое состояние локального репозитория.
+> **Источник синхронизации:** ре-синк issue #265, Hub SHA
+> `3bfa4103c9efbbd59bc951814884920e406982e2` (предыдущая точка —
+> `b683341d22d4f518618917a02d9c7c394658b156`, issue #72; история точек синка —
+> `sync_history` в [`.hub-profile.json`](../.hub-profile.json)). Хабовая карта
+> остаётся источником общих правил, а эта карта отражает фактическое состояние
+> локального репозитория.
 
 ## Терминология ролей
 
@@ -53,7 +56,11 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 | `/prompts/` | каталог | Активные prompt assets для бизнес-аналитиков Mango. | Да | `prompts/README.md`, `standards/prompt-standard.md` |
 | `/prompts/archive/` | каталог | Архивные legacy-промпты, выведенные из активного использования. | По необходимости | `prompts/README.md` |
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
-| `/standards/` | каталог | Локальные рабочие копии стандартов и контрактов. | Да | `README.md`, `docs/adr/` |
+| `/standards/` | каталог | Стандарты спицы и рабочие копии стандартов Хаба; разграничение — в `standards/README.md`. | Да | `standards/README.md`, `docs/adr/` |
+| `/standards/README.md` | навигация | Реестр стандартов: что принадлежит спице, что рабочая копия Хаба, и правило «сужать можно, противоречить нельзя». | Да | `standards/GLOSSARY.md`, `docs/adr/0004-hub-resync-2026-08.md` |
+| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `governance/agent-onboarding-protocol.md`, `AI_GOVERNANCE.md` |
+| `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `AI_GOVERNANCE.md`, `docs/adr/0004-hub-resync-2026-08.md` |
+| `/scripts/sync_from_hub.py` | инструмент | Воспроизводимый ре-синк по манифесту с переписыванием ссылок; `--check` сверяет копии с Хабом. | Да | `.hub-profile.json`, `scripts/validate_issue_265_hub_sync.py` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
 
 ## Smart Sync decisions: Hub PR #229/#230
@@ -68,6 +75,20 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
   Scope Resolver-а остаются Hub-governance контрактами и не создают новых
   локальных артефактов в `mango_ba_prompts`.
 
+## Ре-синк issue #265 (2026-08-17)
+
+- **Перенесено:** `ai-rules/` (4 файла), `ai-governance/` (3 файла),
+  `standards/GLOSSARY.md`, `standards/evals-contract-standard.md`,
+  `standards/analysis-standard.md`, `standards/research-standard.md` — все на
+  одном `source_sha`.
+- **Сознательно не перенесено:** реестр стандартов Хаба, контракты frontmatter и
+  именования, `*-structure-standard.md`, клиент Smart Sync `tools/`. Обоснование
+  по каждому пункту — [ADR-0004](../docs/adr/0004-hub-resync-2026-08.md).
+- **Приоритет норм:** рабочая копия Хаба — базовая норма; локальный артефакт
+  спицы может её сужать, но не противоречить. Копии не редактируются локально.
+- **Проверка:** `python3 scripts/validate_issue_265_hub_sync.py` (0 битых
+  относительных ссылок, единый `source_sha`, нет путей за корень репозитория).
+
 ## Как обновлять карту
 
 - При создании нового активного артефакта добавь строку в таблицу и обнови
@@ -81,7 +102,7 @@ source_sha: "b683341d22d4f518618917a02d9c7c394658b156"
 
 ## См. также
 
-- Хаб [`governance/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/governance/artifact-map.md)
+- Хаб [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3bfa4103c9efbbd59bc951814884920e406982e2/pr-ops/artifact-map.md)
   — источник общей карты артефактов.
 - [`governance/session-digests.md`](session-digests.md) — новый sync-артефакт
   issue #72.

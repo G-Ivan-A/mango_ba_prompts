@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-19
+version: 0.3
+updated: 2026-08-17
 ai-generated: true
 ---
 
@@ -12,6 +12,63 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
+
+- Дрейф в 610 коммитов устранён: рабочие копии методологии Хаба перенесены с
+  `b683341` (2026-06-13) на
+  [`3bfa410`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/3bfa4103c9efbbd59bc951814884920e406982e2)
+  (2026-08-17). Перенесены [`ai-rules/`](ai-rules/README.md) (4 файла),
+  [`ai-governance/`](ai-governance/README.md) (3 файла),
+  [`standards/GLOSSARY.md`](standards/GLOSSARY.md) (v2.1 — появился словарь
+  ADR-010: Operating Mode, Экспертное исполнение, Абсолютные границы, Легальный
+  выход, Task Type, Method),
+  [`standards/evals-contract-standard.md`](standards/evals-contract-standard.md),
+  [`standards/analysis-standard.md`](standards/analysis-standard.md),
+  [`standards/research-standard.md`](standards/research-standard.md).
+- Битые относительные ссылки устранены полностью (было 62 в 19 файлах, включая 23
+  в глоссарии). Корневые причины: hub-относительные ссылки в скопированном из
+  Хаба глоссарии (`../CONCEPT.md`, `../governance/REPO_MODEL.md`,
+  `../governance/proposals/rfc-*.md` — Хаб с тех пор переструктурировался),
+  захардкоженная глубина `../../../` в генераторе
+  [`scripts/kb/extract.py`](scripts/kb/extract.py) (ломала `index.md` вложенных
+  документов БЗ) и устаревшие пути после миграций `prompts/` → `prompts/archive/`
+  и `prompts/experiments/` → `runs/`.
+- Добавлен воспроизводимый синк
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py): перенос по
+  декларативному манифесту с переписыванием каждой ссылки (локальный путь, если
+  цель тоже перенесена, иначе permalink Хаба на закреплённом SHA); режим
+  `--check` сверяет копии с Хабом. Ручное копирование воспроизводило дефект
+  «некритично скопированный контекст» при каждом синке.
+- Добавлена проверка
+  [`scripts/validate_issue_265_hub_sync.py`](scripts/validate_issue_265_hub_sync.py)
+  (в CI): ноль битых относительных ссылок, единый `source_sha` у всех рабочих
+  копий, отсутствие путей за корень репозитория. Инлайн-код и fenced-блоки не
+  проверяются — там ссылка является синтаксическим примером.
+- Решение зафиксировано в
+  [ADR-0004](docs/adr/0004-hub-resync-2026-08.md): что перенесено, что
+  сознательно **не** перенесено (реестр стандартов Хаба, контракты frontmatter и
+  именования, `*-structure-standard.md`, клиент Smart Sync `tools/`) и почему;
+  политика «рабочие копии локально не редактируются» и запрет прямых
+  hub-относительных ссылок в споке.
+- Добавлен реестр [`standards/README.md`](standards/README.md), разграничивающий
+  рабочие копии Хаба и стандарты спицы с правилом «сужать можно, противоречить
+  нельзя». Приоритет норм продублирован в
+  [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) и
+  [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+  (там же — разделение ролей двух копий onboarding-протокола).
+- Обновлены [`governance/artifact-map.md`](governance/artifact-map.md) (новые
+  строки `ai-rules/`, `ai-governance/`, `standards/README.md`,
+  `scripts/sync_from_hub.py`; раздел решений по ре-синку) и
+  [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
+  (`latest_smart_sync_sha`; точка синка методологии и точка research движутся
+  независимо).
+- В [`.hub-profile.json`](.hub-profile.json) появился `sync_history`: точка синка
+  issue #72 сохранена как исторический факт, `last_sync` принадлежит текущему
+  синку. Проверка
+  [`scripts/validate_issue_72_hub_sync.py`](scripts/validate_issue_72_hub_sync.py)
+  читает историческую запись — раньше она пинила «последний» SHA и тем самым
+  запрещала любой следующий синк.
 
 ### Added — Issue #261 ФТ по BCREQ-1069 (ограниченный API-ключ)
 
