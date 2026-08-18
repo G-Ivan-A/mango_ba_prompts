@@ -1,14 +1,18 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-08-17
+version: 0.5
+updated: 2026-08-18
+owner: G-Ivan-A
 ai-generated: true
 type: research-dependency-registry
 scope: mango_ba_prompts
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 latest_smart_sync_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
+latest_reference_sha: "56db375465a694ed39f8fcf3e3f8b12c902ab10d"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
+related_issues:
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/263"
 ---
 
 # Реестр зависимостей от исследований Хаба
@@ -25,9 +29,17 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   [`research/mango/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango)
   не переносится в спок (RFC §2.5, инвентарь — всё 🔵). Спок регистрирует только
   ссылки.
-- **Permalink на SHA (C3).** Все ссылки закреплены за коммитом Хаба
-  `038868dd125b4e2d849ff73604890f1d2787ac0f`, чтобы аудит не «поплыл» при
-  обновлении ветки `main` источника.
+- **Permalink на SHA (C3).** Ссылки первой волны (issue #34) закреплены за
+  коммитом Хаба `038868dd125b4e2d849ff73604890f1d2787ac0f`, ссылки волны
+  «видение и концепция» (issue #263) — за коммитом
+  `56db375465a694ed39f8fcf3e3f8b12c902ab10d`, чтобы аудит не «поплыл» при
+  обновлении ветки `main` источника. Разные SHA у разных якорей — норма:
+  каждый якорь фиксирует тот коммит, на котором он был зарегистрирован.
+- **Решения Хаба живут в Хабе.** ADR-009 (модель 2-х репозиториев), онтология
+  процессов БА и анализ готовности к разделению не копируются в спок: они
+  регистрируются якорями ниже, а концептуальные документы спока
+  (`README.md`, `AI_GOVERNANCE.md`, `docs/ba-ecosystem.md`,
+  `docs/rfc-hub-integration.md`) ссылаются на них **только** через этот реестр.
 - **Reference only.** Содержимое research не копируется в спок ни целиком, ни
   фрагментами; используется только как доказательная база по ссылке.
 - **External knowledge registry — reference-only.** Hub PR #229 добавил Base
@@ -59,6 +71,9 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 | [`#external-sources-registry`](#external-sources-registry) | [`research/external-knowledge/external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | 105 lines | `docs/ba-ecosystem.md`, future requirements-flow pilots | 🔵 reference-only @ `b683341` |
 | [`#external-spec-driven`](#external-spec-driven) | `ext-003` in [`external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | row | future spec-driven requirements experiments | 🔵 reference-only @ `b683341` |
 | [`#external-context-engineering`](#external-context-engineering) | `ext-007` in [`external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md) | row | context engineering for long BA prompt sessions | 🔵 reference-only @ `b683341` |
+| [`#adr-009-repo-split`](#adr-009-repo-split) | [`docs/adr/2026-07-adr-009-mango-repo-split.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/adr/2026-07-adr-009-mango-repo-split.md) | 248 lines | `README.md`, `AI_GOVERNANCE.md`, `docs/ba-ecosystem.md`, `docs/rfc-hub-integration.md` | 🔵 reference-only @ `56db375` |
+| [`#ba-process-ontology`](#ba-process-ontology) | [`research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md) | 277 lines | `AI_GOVERNANCE.md`, `docs/ba-ecosystem.md`, `docs/taxonomy.md` | 🔵 reference-only @ `56db375` |
+| [`#separation-readiness`](#separation-readiness) | [`docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md) | 649 lines | `README.md`, `AI_GOVERNANCE.md` | 🔵 reference-only @ `56db375` |
 
 > HTML-экспорты `classification.html`, `classification-tz.html`,
 > `requirements-flow.html` присутствуют в Хабе, но **не регистрируются** как
@@ -187,3 +202,55 @@ issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
   длинных диалогов, prompt assets и handover/session-digest workflow.
 - **Политика:** reference-only; не копировать первоисточник и не создавать
   локальный `research/` без отдельного решения Пользователя.
+
+<a id="adr-009-repo-split"></a>
+
+### `#adr-009-repo-split` — ADR-009 v0.3: модель 2-х репозиториев
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/adr/2026-07-adr-009-mango-repo-split.md>
+- **Описание:** решение Пользователя о разделении на два репозитория.
+  `mango_ba_prompts` сохраняет имя и переводится в **Private** (рабочий
+  репозиторий проекта); публичным создаётся **`ai-ba-playbooks`**
+  (витрина методологии);
+  третий репозиторий `mango-ba-prompt-library` **не создаётся**.
+  Синхронизация строго односторонняя `приватный → публичный`, на старте —
+  ручной отбор Пользователем. Приватный репозиторий работает **без GitHub-hosted
+  runners**; допустимая альтернатива — self-hosted runner в Docker.
+- **Потребители (`research_dep`):**
+  - `README.md`
+  - `AI_GOVERNANCE.md`
+  - `docs/ba-ecosystem.md`
+  - `docs/rfc-hub-integration.md`
+- **Политика:** reference only; спок применяет решение, но не хранит его копию.
+
+<a id="ba-process-ontology"></a>
+
+### `#ba-process-ontology` — Онтология процессов БА и требования к ДОД
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md>
+- **Описание:** инвентаризация трёх слоёв онтологии спока (13 когнитивных
+  операций × 9 процессов БА, цепочка «операция → паттерн → промпт → прогон»)
+  и сводный **чек-лист ДОД D1–D10** с типами ворот (`авто`, `review`,
+  `human gate`). Фиксирует пробелы G1–G6 — они закрываются не здесь, а в
+  проекте БИЛД и по мере реализации.
+- **Потребители (`research_dep`):**
+  - `AI_GOVERNANCE.md` (принцип «ДОД с процессом проверки»)
+  - `docs/ba-ecosystem.md`
+  - `docs/taxonomy.md`
+- **Политика:** reference only; чек-лист D1–D10 не копируется в спок целиком —
+  спок фиксирует **правило** («операция без процесса проверки не завершена») и
+  ссылается на источник.
+
+<a id="separation-readiness"></a>
+
+### `#separation-readiness` — Анализ готовности к разделению
+
+- **Hub URL:** <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md>
+- **Описание:** дрейф спока от Хаба, 57 битых относительных ссылок, карта
+  «что публично / что приватно» по каталогам (`kb/`, `runs/`, `prompts/`,
+  `governance/` — приватные) и незакрытый блокер: репозиторий всё ещё Public.
+- **Потребители (`research_dep`):**
+  - `README.md`
+  - `AI_GOVERNANCE.md` (раздел «Подготовка к приватизации»)
+- **Политика:** reference only; сам перевод в Private — решение Пользователя, а не
+  спока.

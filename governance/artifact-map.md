@@ -1,7 +1,8 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-08-17
+version: 0.4
+updated: 2026-08-18
+owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
 executable: false
@@ -30,16 +31,16 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | **Пользователь** | Человек, который ставит задачу, утверждает решения и передаёт контекст между чатами. |
 | **Исполнитель** | Агент или человек, который выполняет задачу через issue → PR → review. |
 | **Внешний агент** | LLM-чат, которому Пользователь передаёт контекст для анализа, планирования или подготовки задачи. |
-| **Агент-исполнитель** | Исполнитель автоматизированной задачи, например Конард; он не использует session digests во время исполнения. |
+| **Агент-исполнитель** | AI-исполнитель автоматизированной задачи; он не использует session digests во время исполнения. |
 
 ## Карта артефактов
 
 | Путь | Тип | Назначение | Обязательный? | Связанные артефакты |
 | --- | --- | --- | --- | --- |
-| `/README.md` | навигация | Визитка проекта, стратегия, структура и быстрые ссылки. | Да | `CHANGELOG.md`, `docs/ba-ecosystem.md`, `prompts/README.md` |
+| `/README.md` | навигация | Визитка проекта: роль (автоматизация процессов БА в проекте Манго), границы (GitHub + AI-исполнитель, без инфраструктуры), стратегия, структура и быстрые ссылки. | Да | `CHANGELOG.md`, `docs/ba-ecosystem.md`, `prompts/README.md` |
 | `/CHANGELOG.md` | журнал | История значимых изменений, включая Smart Sync из Хаба. | Да | `README.md`, `.hub-profile.json` |
 | `/.hub-profile.json` | профиль синхронизации | Локальный профиль Smart Sync: тип проекта, Хаб и последний sync snapshot. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `governance/artifact-map.md` |
-| `/AI_GOVERNANCE.md` | контракт | Роли, operating modes, границы AI-assisted work и Definition of Done. | Да | `AI_QUICK_RULES.md`, `CONTRIBUTING.md` |
+| `/AI_GOVERNANCE.md` | контракт | Конституция проекта: принцип «качество системы исполнения > стоимость», ДОД с процессом проверки, роль проекта и инфраструктурная модель, подготовка к приватизации, роли, operating modes, границы AI-assisted work. | Да | `AI_QUICK_RULES.md`, `CONTRIBUTING.md`, `docs/hub-research-dependencies.md` |
 | `/AI_QUICK_RULES.md` | исполнимые правила | Короткая инструкция для агента: куда смотреть, чего не делать, когда звать человека. | Да | `AI_GOVERNANCE.md`, `README.md` |
 | `/CONTRIBUTING.md` | workflow | Процесс issue → PR → review и чек-лист вклада. | Да | `AI_GOVERNANCE.md`, `CHANGELOG.md` |
 | `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `governance/session-digests.md`, `governance/agent-onboarding-protocol.md` |
@@ -47,8 +48,9 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/governance/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
 | `/governance/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/governance/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
-| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам Хаба, включая reference-only срез external sources registry из Hub PR #229; research не копируется в спок. | Да | `prompts/`, `standards/product-classification-contract.md` |
-| `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, графы связей и сценарии запуска. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
+| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам и решениям Хаба: research PR #229, ADR-009 v0.3, онтология процессов БА (D1–D10), анализ готовности к разделению. Источники не копируются в спок. | Да | `prompts/`, `standards/product-classification-contract.md`, `AI_GOVERNANCE.md` |
+| `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, ДОД операции с обязательным процессом проверки, графы связей, сценарии запуска и границы автоматизации спока. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
+| `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
 | `/docs/taxonomy.md` | стандарт / модель | Таксономия когнитивных операций и процессов БА. | Да | `patterns/`, `prompts/` |
 | `/docs/ba-processes/00-index.md` | индекс | Маппинг процесс ↔ операция ↔ паттерн ↔ промпт. | Да | `patterns/`, `prompts/README.md` |
 | `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `AI_GOVERNANCE.md` |
@@ -88,6 +90,19 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
   спицы может её сужать, но не противоречить. Копии не редактируются локально.
 - **Проверка:** `python3 scripts/validate_issue_265_hub_sync.py` (0 битых
   относительных ссылок, единый `source_sha`, нет путей за корень репозитория).
+## Решения ADR-009 v0.3: место спока в модели 2-х репозиториев
+
+- **`mango_ba_prompts` остаётся собой** и меняет видимость на Private; новый
+  приватный репозиторий не создаётся, `mango-ba-prompt-library` — тоже.
+- **`ai-ba-playbooks`** создаётся отдельно как публичная витрина методологии;
+  его артефакты не регистрируются в этой карте — она отражает только локальный
+  репозиторий.
+- **Синхронизация односторонняя и ручная:** артефакты уходят наружу через
+  [`docs/rfc-hub-integration.md`](../docs/rfc-hub-integration.md); входящих
+  потоков из `ai-ba-playbooks` нет.
+- **Инфраструктурных артефактов не добавляется:** серверная инфраструктура,
+  оркестраторы и мультиагентные контуры в карту не попадают — их здесь нет.
+- Источник решения — [`#adr-009-repo-split`](../docs/hub-research-dependencies.md#adr-009-repo-split).
 
 ## Как обновлять карту
 
