@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: 2026-08-18
 owner: G-Ivan-A
 temperature: 0.1
@@ -48,6 +48,10 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
 | `/pr-ops/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/pr-ops/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
+| `/docs/rfc/` | каталог | RFC спицы и пакеты передачи знаний в Хаб: процесс RFC, реестр, предложения по промптам, `knowledge-transfer-to-hub/`. | По необходимости | `docs/rfc-hub-integration.md`, `CHANGELOG.md` |
+| `/docs/audit/` | каталог | Исторические аудиты контрактов, Хаба и research (2026-06-17, #1027). Не действующая норма — фактура для решений. | По необходимости | `docs/adr/`, `pr-ops/migration-manifest.md` |
+| `/pr-ops/BACKLOG.md` | журнал | Бэклог задач и открытых вопросов проекта. | Да | `CONTRIBUTING.md`, `docs/adr/` |
+| `/pr-ops/prompt-feedback.json` | данные | Фидбек по промптам; источник для веб-каталога (`scripts/generate-pages-data.mjs`). | По необходимости | `prompts/README.md`, `site/data/` |
 | `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам и решениям Хаба: research PR #229, ADR-009 v0.3, онтология процессов БА (D1–D10), анализ готовности к разделению. Источники не копируются в спок. | Да | `prompts/`, `standards/product-classification-contract.md`, `AI_GOVERNANCE.md` |
 | `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, ДОД операции с обязательным процессом проверки, графы связей, сценарии запуска и границы автоматизации спока. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
 | `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
@@ -90,6 +94,32 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
   спицы может её сужать, но не противоречить. Копии не редактируются локально.
 - **Проверка:** `python3 scripts/validate_issue_265_hub_sync.py` (0 битых
   относительных ссылок, единый `source_sha`, нет путей за корень репозитория).
+## Реструктуризация каталогов (issue #265, 2026-08-18)
+
+Каталог `governance/` расформирован; структура репозитория приведена к базовой
+структуре Хаба (`ai-governance/`, `ai-rules/`, `pr-ops/`, `docs/adr/`,
+`docs/rfc/`, `standards/`):
+
+| Было | Стало |
+| --- | --- |
+| `governance/artifact-map.md`, `BACKLOG.md`, `session-digests.md`, `migration-*.md`, `sync-matrix-2026-06-17.md`, `prompt-feedback.json` | `pr-ops/` |
+| `governance/agent-onboarding-protocol.md` (+ `.executable.md`), v1.2 | `ai-rules/agent-onboarding-protocol_old.md` (+ `.executable.md`) |
+| `governance/rfc-*.md`, `governance/rfc/`, `governance/knowledge-transfer-to-hub/` | `docs/rfc/` |
+| `governance/audit-*.md` | `docs/audit/` |
+| `governance/prompt-debugging-process.md` | `standards/` |
+
+- `research/` **не создаётся**: каталог специфичен для Хаба; research остаётся
+  reference-only через [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md).
+- Протокол v1.2 сохранён под суффиксом `_old` рядом с рабочей копией Хаба v1.5
+  ([`ai-rules/agent-onboarding-protocol.md`](../ai-rules/agent-onboarding-protocol.md));
+  актуализация до v1.5 — отдельная задача.
+- Перенос воспроизводим:
+  [`experiments/restructure_governance_dirs.py`](../experiments/restructure_governance_dirs.py)
+  (22 пути, 63 файла с переписанными путями, 123 пересчитанные относительные
+  ссылки). Permalink'и Хаба на `governance/` старых SHA сохранены как есть.
+- Обоснование и сверка манифеста синка с итоговым T-00 —
+  [ADR-0004](../docs/adr/0004-hub-resync-2026-08.md).
+
 ## Решения ADR-009 v0.3: место спока в модели 2-х репозиториев
 
 - **`mango_ba_prompts` остаётся собой** и меняет видимость на Private; новый

@@ -63,6 +63,23 @@ ai-generated: true
   [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
   (`latest_smart_sync_sha`; точка синка методологии и точка research движутся
   независимо).
+- Структура репозитория приведена к базовой структуре Хаба: каталог
+  `governance/` расформирован, его содержимое разнесено по
+  [`pr-ops/`](pr-ops/artifact-map.md) (операционные записи),
+  [`ai-rules/`](ai-rules/agent-onboarding-protocol_old.md) (старый протокол
+  онбординга v1.2 под суффиксом `_old`), `docs/rfc/`, `docs/audit/` и
+  [`standards/prompt-debugging-process.md`](standards/prompt-debugging-process.md).
+  Каталог `research/` не создавался: он специфичен для Хаба, research остаётся
+  reference-only. Перенос воспроизводим
+  ([`experiments/restructure_governance_dirs.py`](experiments/restructure_governance_dirs.py)):
+  22 пути, 63 файла с переписанными путями, 123 пересчитанные относительные
+  ссылки; permalink'и Хаба на `governance/` старых SHA не переписаны, чтобы не
+  потерять traceability.
+- Состав манифеста
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py) сверен с итоговым
+  (замерженным) видением T-00 (issue #263 / PR #264): расхождений не найдено,
+  манифест не изменялся. Таблица сверки — в
+  [ADR-0004](docs/adr/0004-hub-resync-2026-08.md).
 - В [`.hub-profile.json`](.hub-profile.json) появился `sync_history`: точка синка
   issue #72 сохранена как исторический факт, `last_sync` принадлежит текущему
   синку. Проверка
