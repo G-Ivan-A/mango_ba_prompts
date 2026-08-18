@@ -10,9 +10,9 @@ source_sha: "6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
-  - "governance/rfc-register.md"
-  - "governance/prompt-debugging-process.md"
-  - "governance/sync-matrix-2026-06-17.md"
+  - "docs/rfc/rfc-register.md"
+  - "standards/prompt-debugging-process.md"
+  - "pr-ops/sync-matrix-2026-06-17.md"
   - "AI_GOVERNANCE.md"
 ---
 
@@ -60,21 +60,21 @@ Pattern — на RFC, RFC — на Research/Observation. RFC — обязате�
 
 | Стадия Хаба | Артефакт спока | Где живёт |
 | --- | --- | --- |
-| Observation | сигнал из прогона БА, issue `prompt:feedback` | issues, `governance/prompt-feedback.json` |
+| Observation | сигнал из прогона БА, issue `prompt:feedback` | issues, `pr-ops/prompt-feedback.json` |
 | Research / Hypothesis | анализ эксперимента, гипотеза правки | `docs/analysis/*`, `runs/*` |
-| **RFC** | запись в реестре RFC | [`governance/rfc-register.md`](rfc-register.md) |
-| Pattern | паттерн | `patterns/` ([`pattern-standard.md`](../standards/pattern-standard.md)) |
+| **RFC** | запись в реестре RFC | [`docs/rfc/rfc-register.md`](rfc-register.md) |
+| Pattern | паттерн | `patterns/` ([`pattern-standard.md`](../../standards/pattern-standard.md)) |
 | Standard | стандарт / ADR | `standards/`, `docs/adr/` |
 | Deprecation/Archive | архив | `prompts/archive/`, `superseded` в frontmatter |
 
 **Два класса RFC в споке:**
 
 1. **RFC по промптам** — предложение изменить существующий промпт. Детальный
-   порядок — в [`prompt-debugging-process.md`](prompt-debugging-process.md)
+   порядок — в [`prompt-debugging-process.md`](../../standards/prompt-debugging-process.md)
    (эксперимент → RFC → согласование → изменение). Этот документ — общий слой над ним.
 2. **RFC по контрактам/стандартам/синхронизации** — предложение изменить
    governance-контракт, стандарт или согласовать расхождение с Хабом
-   (см. [`sync-matrix-2026-06-17.md`](sync-matrix-2026-06-17.md)).
+   (см. [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md)).
 
 Оба класса ведутся в **одном реестре** [`rfc-register.md`](rfc-register.md).
 
@@ -139,11 +139,11 @@ proposed → in-review → accepted  → implemented
 ## 7. Связь с реестром и существующими контрактами
 
 - **Реестр**: [`rfc-register.md`](rfc-register.md) — живой список всех RFC спока.
-- **Промпты**: [`prompt-debugging-process.md`](prompt-debugging-process.md) —
+- **Промпты**: [`prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) —
   детализация для промптов.
-- **Синхронизация**: [`sync-matrix-2026-06-17.md`](sync-matrix-2026-06-17.md) —
+- **Синхронизация**: [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md) —
   откуда берутся RFC-SYNC-*.
-- **Governance**: [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md) — финальные решения за
+- **Governance**: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) — финальные решения за
   человеком; Creative Override оформляется как RFC/ADR.
 
 ## 8. Открытые вопросы
@@ -152,4 +152,4 @@ proposed → in-review → accepted  → implemented
    (наследуется как открытый вопрос из `prompt-debugging-process.md`).
 2. Принимать ли frontmatter-контракт трассируемости Хаба (`based_on`,
    `supersedes`, `used_by`) для ADR/стандартов спока? — кандидат на RFC-SYNC.
-3. Ведутся в [`governance/BACKLOG.md`](BACKLOG.md).
+3. Ведутся в [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md).

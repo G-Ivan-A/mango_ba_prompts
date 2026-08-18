@@ -12,7 +12,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/010-pages-ux.md"
   - "standards/pages-ux-standard.md"
-  - "governance/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: UX дерева процессов на GitHub Pages
@@ -27,8 +27,8 @@ related_artifacts:
 
 - **Что.** UX-паттерн для навигации по графу знаний: данные (структура +
   метаданные покрытия) отделены от представления (что и как показывать).
-- **Как.** [ADR #010](../../docs/adr/010-pages-ux.md) и стандарт
-  [`standards/pages-ux-standard.md`](../../standards/pages-ux-standard.md):
+- **Как.** [ADR #010](../../adr/010-pages-ux.md) и стандарт
+  [`standards/pages-ux-standard.md`](../../../standards/pages-ux-standard.md):
   - **слой данных** — `process-tree.json`: каждый узел несёт `hasPrompts` и
     `coverage.kind` ∈ {`direct`, `support`, `gap`, `archive`, `manual`};
   - **слой отображения** — показывает только узлы с промптами; порог дерева
@@ -63,7 +63,7 @@ related_artifacts:
 
 ## Ссылки
 
-- ADR-носитель: [`docs/adr/010-pages-ux.md`](../../docs/adr/010-pages-ux.md)
-- Стандарт: [`standards/pages-ux-standard.md`](../../standards/pages-ux-standard.md)
+- ADR-носитель: [`docs/adr/010-pages-ux.md`](../../adr/010-pages-ux.md)
+- Стандарт: [`standards/pages-ux-standard.md`](../../../standards/pages-ux-standard.md)
 - Онтология (источник данных): [`ba-ontology.md`](ba-ontology.md)
 - Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)

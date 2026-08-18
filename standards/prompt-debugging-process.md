@@ -8,8 +8,8 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
-  - "governance/rfc-register.md"
-  - "governance/audit-contracts-2026-06-17.md"
+  - "docs/rfc/rfc-register.md"
+  - "docs/audit/audit-contracts-2026-06-17.md"
   - "standards/experiment-log-standard.md"
   - "AI_GOVERNANCE.md"
   - "CONTRIBUTING.md"
@@ -18,7 +18,7 @@ related_artifacts:
 # Процесс отладки промптов (Draft)
 
 > **Статус: Draft.** Документ закрывает процессный зазор, выявленный в
-> [`governance/audit-contracts-2026-06-17.md`](audit-contracts-2026-06-17.md):
+> [`docs/audit/audit-contracts-2026-06-17.md`](../docs/audit/audit-contracts-2026-06-17.md):
 > контракты описывают **создание** промптов и границу «требует human review», но
 > не описывают, **как отлаживать и изменять** уже существующие. Сам документ —
 > предложение; он валидируется на 2–3 ближайших отладках и правится по факту, а
@@ -63,7 +63,7 @@ related_artifacts:
 | Источник | Что это | Как попадает |
 | --- | --- | --- |
 | `runs/YYYY/RUN-XXXX/outputs/*.md` | Зафиксированные прогоны по [стандарту фиксации](../standards/experiment-log-standard.md) (Уровень 1): метрики, цитаты, секция «Предложения по промптам» | Создаётся БА при прогоне; секция «Предложения» = вход для RFC |
-| `governance/prompt-feedback.json` | Статический срез обратной связи (поле `prompt` = id промпта) | Заполняется вручную или скриптом по issues с лейблом `prompt:feedback` |
+| `pr-ops/prompt-feedback.json` | Статический срез обратной связи (поле `prompt` = id промпта) | Заполняется вручную или скриптом по issues с лейблом `prompt:feedback` |
 | Issues с лейблом `prompt:feedback` | Точечные жалобы/наблюдения по конкретному промпту | Заводятся БА/контрибьютором; агрегируются в JSON и в дашборд «Проверки» |
 
 **Правило сбора.** Сигнал фиксируется *как наблюдение с цитатой* (что именно
@@ -73,7 +73,7 @@ related_artifacts:
 ## Часть 2. RFC-реестр как живой документ
 
 RFC (Request for Comments) — предложение изменить промпт. Все RFC живут в одном
-реестре [`governance/rfc-register.md`](rfc-register.md) и проходят статусы:
+реестре [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md) и проходят статусы:
 
 ```
 proposed → in-review → accepted  → implemented

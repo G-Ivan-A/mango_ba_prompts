@@ -82,7 +82,7 @@ related_artifacts:
 
 - ШАГ 0 промпта просит контекст As-Is, **но не просит явно зафиксировать
   архитектурный слой** (ЛК ВАТС vs КЦ). Слой Ф10 пришлось добавлять вручную —
-  повтор паттерна Б1/Б5 из BCREQ-1025. → [RFC](../../../../../governance/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P1.
+  повтор паттерна Б1/Б5 из BCREQ-1025. → [RFC](../../../../../docs/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P1.
 
 ## Источники
 

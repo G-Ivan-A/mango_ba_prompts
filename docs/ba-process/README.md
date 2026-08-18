@@ -45,5 +45,5 @@ runs/YYYY/RUN-XXXX/
 - Реестр runs: [`runs/README.md`](../../runs/README.md)
 - Стандарт Run: [`standards/runs-contract-standard.md`](../../standards/runs-contract-standard.md)
 - Стандарт фиксации экспериментов: [`standards/experiment-log-standard.md`](../../standards/experiment-log-standard.md)
-- Реестр RFC: [`governance/rfc-register.md`](../../governance/rfc-register.md)
+- Реестр RFC: [`docs/rfc/rfc-register.md`](../../docs/rfc/rfc-register.md)
 - Стандарт работы с БЗ: [`standards/kb-standard.md`](../../standards/kb-standard.md) ([ADR-007](../adr/007-kb-standard.md))

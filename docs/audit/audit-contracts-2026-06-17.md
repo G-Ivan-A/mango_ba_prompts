@@ -11,8 +11,8 @@ related_artifacts:
   - "AI_GOVERNANCE.md"
   - "CONTRIBUTING.md"
   - "standards/experiment-log-standard.md"
-  - "governance/prompt-debugging-process.md"
-  - "governance/rfc-register.md"
+  - "standards/prompt-debugging-process.md"
+  - "docs/rfc/rfc-register.md"
 ---
 
 # Аудит контрактов — отладка и изменение промптов (2026-06-17)
@@ -27,9 +27,9 @@ related_artifacts:
 
 ## Что проверялось
 
-- [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md) (v0.4) — операционный контракт.
-- [`CONTRIBUTING.md`](../CONTRIBUTING.md) (v0.2) — правила входа и workflow.
-- [`standards/experiment-log-standard.md`](../standards/experiment-log-standard.md)
+- [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) (v0.4) — операционный контракт.
+- [`CONTRIBUTING.md`](../../CONTRIBUTING.md) (v0.2) — правила входа и workflow.
+- [`standards/experiment-log-standard.md`](../../standards/experiment-log-standard.md)
   (Draft v0.1) — стандарт фиксации экспериментов.
 - Согласованность между этими тремя документами.
 
@@ -46,7 +46,7 @@ related_artifacts:
 3. **Контур приёмки.** `AI_GOVERNANCE.md` → «Acceptance и итерации с Конардом» и
    `CONTRIBUTING.md` → «Review loop с Конардом»: молчание+merge = согласие;
    комментарий+перезапуск = доработка в той же ветке; close = отказ.
-4. **Сбор обратной связи (частично).** `governance/prompt-feedback.json` +
+4. **Сбор обратной связи (частично).** `pr-ops/prompt-feedback.json` +
    лейбл `prompt:feedback` как статический срез для модуля «Проверки»; стандарт
    фиксации экспериментов как источник метрик (`iterations`, `ba_edits`, …).
 5. **Operating Modes и обоснованный обход.** Creative-режим (`AI_GOVERNANCE.md`
@@ -101,8 +101,8 @@ related_artifacts:
 
 | # | Действие | Где | Статус в этом PR |
 | --- | --- | --- | --- |
-| Д1 | Ввести процесс отладки промптов (4 части: сбор обратной связи → RFC-реестр → инициатива пользователя → изменение после согласования) | `governance/prompt-debugging-process.md` | **Создано** (Draft) |
-| Д2 | Завести живой реестр RFC со статусами proposed → in-review → accepted/rejected → implemented | `governance/rfc-register.md` | **Создано** (Draft) |
+| Д1 | Ввести процесс отладки промптов (4 части: сбор обратной связи → RFC-реестр → инициатива пользователя → изменение после согласования) | `standards/prompt-debugging-process.md` | **Создано** (Draft) |
+| Д2 | Завести живой реестр RFC со статусами proposed → in-review → accepted/rejected → implemented | `docs/rfc/rfc-register.md` | **Создано** (Draft) |
 | Д3 | Связать правку промпта с версией (Minor/Major/Breaking) и CHANGELOG | в процессе отладки, часть 4 | **Описано** в Д1 |
 | Д4 | Уточнить в Capability Boundaries, что изменение существующего промпта идёт через процесс отладки (ссылка) | `AI_GOVERNANCE.md` | **Предложение** (через RFC, не правится в этом PR) |
 | Д5 | Дополнить «Временный workflow промптов» разделом про изменение существующих (не только создание) | `CONTRIBUTING.md` | **Предложение** (через RFC, не правится в этом PR) |
@@ -133,5 +133,5 @@ governance-контракты и сами должны пройти через R
 Контракты были полны в части **создания** промптов и **кто одобряет**, но не
 описывали **как отлаживать и изменять** существующие — этот пробел и сделал
 возможным прямое изменение версий. Пробел закрывается процессом отладки
-(`governance/prompt-debugging-process.md`) и реестром RFC
-(`governance/rfc-register.md`); правки в сами контракты вынесены в RFC.
+(`standards/prompt-debugging-process.md`) и реестром RFC
+(`docs/rfc/rfc-register.md`); правки в сами контракты вынесены в RFC.

@@ -12,7 +12,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/003-ba-ontology.md"
   - "standards/ba-ontology.md"
-  - "governance/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: онтология бизнес-анализа (граф Артефакт↔Процесс↔Операция)
@@ -30,8 +30,8 @@ related_artifacts:
   когнитивных операций, процессы, связывающие операции с артефактами. Связи
   направленные: процесс *производит* артефакт, процесс *состоит из* операций,
   артефакт *является входом* операции.
-- **Как.** Онтология зафиксирована в [ADR #003](../../docs/adr/003-ba-ontology.md)
-  и стандарте [`standards/ba-ontology.md`](../../standards/ba-ontology.md);
+- **Как.** Онтология зафиксирована в [ADR #003](../../adr/003-ba-ontology.md)
+  и стандарте [`standards/ba-ontology.md`](../../../standards/ba-ontology.md);
   машиночитаемое представление — в данных дерева процессов
   (`process-tree.json`), что позволяет навигацию и проверку покрытия промптами.
 - **Зачем.** Даёт общий словарь и навигацию «от результата к способу его
@@ -64,7 +64,7 @@ related_artifacts:
 
 ## Ссылки
 
-- ADR-носитель: [`docs/adr/003-ba-ontology.md`](../../docs/adr/003-ba-ontology.md)
-- Стандарт: [`standards/ba-ontology.md`](../../standards/ba-ontology.md)
+- ADR-носитель: [`docs/adr/003-ba-ontology.md`](../../adr/003-ba-ontology.md)
+- Стандарт: [`standards/ba-ontology.md`](../../../standards/ba-ontology.md)
 - Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
 - Контракт Хаба (родственный): [`executable-documentation-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/standards/executable-documentation-standard.md)

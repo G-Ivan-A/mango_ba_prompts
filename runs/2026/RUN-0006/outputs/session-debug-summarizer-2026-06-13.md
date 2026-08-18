@@ -9,7 +9,7 @@ timestamp: 2026-06-13T00:00:00Z
 scope: mango-only
 related_artifacts:
   - "prompts/session-debug-documentation-oneshot.md"
-  - "governance/session-digests.md"
+  - "pr-ops/session-digests.md"
 ---
 
 # Эксперимент: суммаризация сессии работы с LLM
@@ -24,7 +24,7 @@ related_artifacts:
 [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md)
 за один запуск превратить сырой лог сессии работы БА с LLM в структурированное
 резюме, совместимое с шаблоном блока суммарии в
-[`governance/session-digests.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/session-digests.md).
+[`pr-ops/session-digests.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/session-digests.md).
 
 Критерий успеха (НФТ-4 из issue #78): БА получает структурированное резюме за
 1 запуск, без заполнения сложных форм и без ссылок на закрытые документы.
@@ -121,7 +121,7 @@ checks:
 ```
 
 Ожидаемый результат выполнен: за один запуск получено структурированное резюме,
-совместимое с `governance/session-digests.md`; незафиксированный лимит корректно
+совместимое с `pr-ops/session-digests.md`; незафиксированный лимит корректно
 ушёл в открытые вопросы, обоснования решений сохранены, ответственные не
 выдуманы.
 
@@ -137,4 +137,4 @@ checks:
 1. Делать ли блоки «Проблемы и обходные пути» и «Применённые промпты»
    обязательными или оставить опциональными при отсутствии данных?
 2. Какой минимальный набор блоков считать стабильным контрактом для вставки в
-   `governance/session-digests.md`?
+   `pr-ops/session-digests.md`?

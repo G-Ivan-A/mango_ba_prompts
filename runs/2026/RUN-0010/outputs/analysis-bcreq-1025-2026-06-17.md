@@ -12,7 +12,7 @@ related_artifacts:
   - "prompts/fr-documentation-stepwise.md"
   - "prompts/constraints-documentation-stepwise.md"
   - "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
-  - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
+  - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "docs/analysis/experiment-1027-analysis.md"
 ---
 
@@ -395,7 +395,7 @@ ADR-004. Новых операций не требуется.
 | RFC-1025-P5 | `constraints-documentation-stepwise` | Б5 (архитектурные связки) | Явный запрос архитектурных связок на Шаге 1 | P2 |
 
 **Полные детали предложений** — в RFC-файле:
-[`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/rfc/prompt-improvement-bcreq-1025-proposal.md).
+[`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/prompt-improvement-bcreq-1025-proposal.md).
 
 ---
 

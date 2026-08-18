@@ -72,7 +72,7 @@ related_issues:
 
 ## Предложения по промптам (RFC)
 
-См. [`governance/rfc/prompt-improvement-multichannel-proposal.md`](../../../../governance/rfc/prompt-improvement-multichannel-proposal.md):
+См. [`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md):
 
 - **RFC-MCH-P1** → `glossary-context-understanding-stepwise`: добавить в ШАГ 0 явный
   под-шаг «зафиксировать архитектурный слой (ЛК ВАТС vs КЦ)».

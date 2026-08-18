@@ -13,7 +13,7 @@ related_artifacts:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md"
-  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/artifact-map.md"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/artifact-map.md"
 ---
 
 # ADR-003: Онтология бизнес-анализа (Артефакт ↔ Процесс ↔ Операция)
@@ -120,7 +120,7 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 | **Процесс** (Process) | Повторяемый рабочий сценарий БА. 9 штук. | [docs/taxonomy.md §2](../taxonomy.md) |
 | **Подпроцесс** (Subprocess) | Шаг процесса: одна строка в детальной карте процесса (операция + цель + промпты + gate). | [docs/ba-processes/00-index.md](../ba-processes/00-index.md) |
 | **Артефакт** (Artifact) | Информационный объект, который операция потребляет на входе или производит на выходе. ≥20 типов — см. §5 и стандарт. | **новое (этот ADR)** |
-| **Исполнитель** (Performer) | Кто выполняет операцию: человек, LLM-агент или гибрид. | [governance/artifact-map.md](../../governance/artifact-map.md) (роли) + §4 |
+| **Исполнитель** (Performer) | Кто выполняет операцию: человек, LLM-агент или гибрид. | [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md) (роли) + §4 |
 | **Контрольная точка** (Gate) | Точка, где результат требует подтверждения человека до продолжения. | [docs/ba-processes/00-index.md](../ba-processes/00-index.md) (колонка Gate/gap) |
 | **Направление разработки** (Direction) | Контекст задачи (`client-order`, `tender-rfp`, …), задающий глубину артефакта. | [docs/ba-ecosystem.md](../ba-ecosystem.md), [00-index.md](../ba-processes/00-index.md) |
 | **Область знаний BABOK** (Knowledge Area) | Одна из 6 KA BABOK Guide v3, к которой относится операция. | **новое (этот ADR, §«Доказательная база»)** |
@@ -156,7 +156,7 @@ GitHub Pages и будущий retrieval. Issue #97 (ФТ-1) требует фо
 ### 4. Классификация операций по исполнителю
 
 Каждая из 13 операций классифицируется по типичному исполнителю. Классификация
-опирается на роли из [governance/artifact-map.md](../../governance/artifact-map.md)
+опирается на роли из [pr-ops/artifact-map.md](../../pr-ops/artifact-map.md)
 (**Пользователь**, **Исполнитель**, **Внешний агент**, **Агент-исполнитель**) и
 на модель human-gate из [ADR-0003](0003-creative-mode-governance.md).
 
@@ -414,7 +414,7 @@ LLM) оформляет ФТ; но шаг с `risk_analysis` остаётся з
 - Таксономия: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>
 - Индекс процессов БА: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>
 - Контракт классификации: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md>
-- Карта артефактов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/artifact-map.md>
+- Карта артефактов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/artifact-map.md>
 - ADR-001 (стандарт промптов): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>
 - ADR-002 (стандарт паттернов): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/002-pattern-standard.md>
 - ADR-0003 (Creative-mode governance): <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/0003-creative-mode-governance.md>

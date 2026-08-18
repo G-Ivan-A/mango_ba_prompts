@@ -11,7 +11,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
   - "docs/adr/004-operations-taxonomy.md"
-  - "governance/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: таксономия когнитивных операций БА
@@ -28,7 +28,7 @@ related_artifacts:
   классификация, моделирование, верификация, формализация требований и т.д.),
   каждое из которых — узел онтологии ([`ba-ontology.md`](ba-ontology.md)) и точка
   привязки промптов.
-- **Как.** Зафиксировано в [ADR #004](../../docs/adr/004-operations-taxonomy.md):
+- **Как.** Зафиксировано в [ADR #004](../../adr/004-operations-taxonomy.md):
   каждая операция сопоставлена с областями знаний BABOK и пунктами ISO 29148,
   снабжена профилем аудита (как проверять качество результата операции).
 - **Зачем.** Превращает «промпт для БА» в «промпт для конкретной операции с
@@ -51,7 +51,7 @@ Registry, а споки — расширять (паттерн Base Registry / L
   группировка и поиск «чем закрыть операцию X».
 - **Аудит качества:** профиль аудита операции = чек-лист приёмки её результата.
 - **Сверка с Хабом:** RFC-SYNC-004 предлагает согласовать 13 операций ↔ Knowledge
-  Areas BABOK Хаба (см. [`sync-matrix-2026-06-17.md`](../sync-matrix-2026-06-17.md)).
+  Areas BABOK Хаба (см. [`sync-matrix-2026-06-17.md`](../../../pr-ops/sync-matrix-2026-06-17.md)).
 
 ## Что обобщить перед переносом (критерий C2)
 
@@ -62,7 +62,7 @@ Registry, а споки — расширять (паттерн Base Registry / L
 
 ## Ссылки
 
-- ADR-носитель: [`docs/adr/004-operations-taxonomy.md`](../../docs/adr/004-operations-taxonomy.md)
+- ADR-носитель: [`docs/adr/004-operations-taxonomy.md`](../../adr/004-operations-taxonomy.md)
 - Онтология (контекст): [`ba-ontology.md`](ba-ontology.md)
 - Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
 - Связанный RFC сверки: RFC-SYNC-004 в [`rfc-register.md`](../rfc-register.md)

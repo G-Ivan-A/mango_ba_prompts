@@ -63,5 +63,5 @@ related_issues:
 2. Стандарт создаётся под носителем-решением — ADR в
    [`docs/adr/`](../docs/adr/), — если решение архитектурно значимо.
 3. Добавьте строку в таблицу «Собственные стандарты спицы» и в
-   [`governance/artifact-map.md`](../governance/artifact-map.md).
+   [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md).
 4. Стандарт живёт в статусе `draft` до утверждения Пользователем.

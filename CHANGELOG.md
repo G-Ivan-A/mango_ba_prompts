@@ -55,9 +55,9 @@ ai-generated: true
   рабочие копии Хаба и стандарты спицы с правилом «сужать можно, противоречить
   нельзя». Приоритет норм продублирован в
   [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) и
-  [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
   (там же — разделение ролей двух копий onboarding-протокола).
-- Обновлены [`governance/artifact-map.md`](governance/artifact-map.md) (новые
+- Обновлены [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) (новые
   строки `ai-rules/`, `ai-governance/`, `standards/README.md`,
   `scripts/sync_from_hub.py`; раздел решений по ре-синку) и
   [`docs/hub-research-dependencies.md`](docs/hub-research-dependencies.md)
@@ -83,7 +83,7 @@ ai-generated: true
 - Зафиксирован фактический **статус механизмов проверки**: чек-листы и
   human-in-the-loop gate есть, **`evals/` и golden-set отсутствуют**. Пока
   пробел не закрыт, ссылка на evals-метрику не закрывает ДОД; пробел внесён в
-  [`governance/BACKLOG.md`](governance/BACKLOG.md).
+  [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md).
 - Добавлен раздел «Веб-ресурс (app) после приватизации»: GitHub Pages не
   работает для приватных репозиториев на бесплатном плане, поэтому зафиксированы
   варианты A (внешний портал `open-ai.ru`), B (поэтапная миграция с внешним
@@ -111,7 +111,7 @@ ai-generated: true
   дополнен якорями `#adr-009-repo-split`, `#ba-process-ontology`,
   `#separation-readiness`: решения Хаба остаются в Хабе и ссылаются через
   единый мост, а не копируются.
-- [`governance/artifact-map.md`](governance/artifact-map.md) обновлён под новые
+- [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) обновлён под новые
   назначения документов и решения ADR-009 v0.3.
 - Добавлена регрессионная проверка
   [`scripts/validate_issue_263_vision_alignment.py`](scripts/validate_issue_263_vision_alignment.py)
@@ -139,7 +139,7 @@ ai-generated: true
   triggers и правила замера экономии токенов.
 - Для критичных full-файлов созданы executable-companions:
   [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md),
-  [`governance/agent-onboarding-protocol.executable.md`](governance/agent-onboarding-protocol.executable.md),
+  [`ai-rules/agent-onboarding-protocol_old.executable.md`](ai-rules/agent-onboarding-protocol_old.executable.md),
   [`prompts/README.executable.md`](prompts/README.executable.md),
   [`docs/ba-processes/00-index.executable.md`](docs/ba-processes/00-index.executable.md)
   и [`standards/ba-ontology.executable.md`](standards/ba-ontology.executable.md).
@@ -292,33 +292,33 @@ ai-generated: true
 - Добавлен индекс каталога прогонов BA-процесса
   [`docs/ba-process/README.md`](docs/ba-process/README.md) (**ФТ-6**).
 - Подготовлен RFC по улучшению промптов (**ФТ-5**, промпты **не изменены**):
-  [`governance/rfc/prompt-improvement-multichannel-proposal.md`](governance/rfc/prompt-improvement-multichannel-proposal.md)
-  (RFC-MCH-P1…P3); реестр [`governance/rfc-register.md`](governance/rfc-register.md)
+  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](docs/rfc/prompt-improvement-multichannel-proposal.md)
+  (RFC-MCH-P1…P3); реестр [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md)
   дополнен записями RFC-MCH-*. RFC-MCH-P1 — повтор паттернов Б1/Б5 из BCREQ-1025.
 
 ### Added — Issue #105 синхронизация контрактов с Хабом (Research + Structured)
 
 - Добавлен аудит контрактов спока
-  [`governance/audit-contracts-mango-2026-06-17.md`](governance/audit-contracts-mango-2026-06-17.md)
+  [`docs/audit/audit-contracts-mango-2026-06-17.md`](docs/audit/audit-contracts-mango-2026-06-17.md)
   (**ФТ-1**): ревизия ADR #003–#010, 12 стандартов и governance-/root-контрактов с
   классификацией (локальный / Smart Sync ← / сверить → RFC / передача знаний →).
 - Добавлен аудит ключевых документов Хаба
-  [`governance/audit-hub-2026-06-17.md`](governance/audit-hub-2026-06-17.md)
+  [`docs/audit/audit-hub-2026-06-17.md`](docs/audit/audit-hub-2026-06-17.md)
   (**ФТ-2**): RFC, стандарты и governance Хаба с **полными permalink-URL** на снимок
   `6ddffdf`, применимостью к Mango и пробелами.
 - Добавлена матрица синхронизации
-  [`governance/sync-matrix-2026-06-17.md`](governance/sync-matrix-2026-06-17.md)
+  [`pr-ops/sync-matrix-2026-06-17.md`](pr-ops/sync-matrix-2026-06-17.md)
   (**ФТ-3**): соответствие контрактов спок ↔ Хаб, реестр RFC-сверки и передачи знаний.
 - Интегрирован RFC-процесс Хаба (**ФТ-4**):
-  [`governance/rfc-process.md`](governance/rfc-process.md) **ссылается** на
+  [`docs/rfc/rfc-process.md`](docs/rfc/rfc-process.md) **ссылается** на
   `knowledge-lifecycle-proposal.md` Хаба (не дублирует), отображает жизненный цикл
-  знаний на артефакты спока; реестр [`governance/rfc-register.md`](governance/rfc-register.md)
+  знаний на артефакты спока; реестр [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md)
   дополнен RFC-SYNC-* и RFC-HUB-*. Подготовлен RFC в Хаб о процессе отладки промптов
-  [`governance/rfc-to-hub-002-prompt-debugging-process.md`](governance/rfc-to-hub-002-prompt-debugging-process.md).
+  [`docs/rfc/rfc-to-hub-002-prompt-debugging-process.md`](docs/rfc/rfc-to-hub-002-prompt-debugging-process.md).
 - Подготовлена передача знаний в Хаб (**ФТ-5**):
-  каталог [`governance/knowledge-transfer-to-hub/`](governance/knowledge-transfer-to-hub/)
+  каталог [`docs/rfc/knowledge-transfer-to-hub/`](docs/rfc/knowledge-transfer-to-hub/)
   (онтология БА #003, таксономия операций #004, процесс BCREQ #009, UX Pages #010) и
-  umbrella-RFC [`governance/rfc-to-hub-001-knowledge-transfer.md`](governance/rfc-to-hub-001-knowledge-transfer.md).
+  umbrella-RFC [`docs/rfc/rfc-to-hub-001-knowledge-transfer.md`](docs/rfc/rfc-to-hub-001-knowledge-transfer.md).
 - Контракты спока в этом PR **не изменены**: расхождения с Хабом оформлены как RFC
   `proposed`, уникальные практики — как документы передачи знаний (правило «не менять
   сразу, а создать RFC»).
@@ -337,16 +337,16 @@ ai-generated: true
 - Добавлен первый прогон по стандарту (dogfood на сессии 1027)
   [`runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md`](runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md).
 - Добавлен аудит контрактов
-  [`governance/audit-contracts-2026-06-17.md`](governance/audit-contracts-2026-06-17.md):
+  [`docs/audit/audit-contracts-2026-06-17.md`](docs/audit/audit-contracts-2026-06-17.md):
   ревизия `AI_GOVERNANCE.md`, `CONTRIBUTING.md` и стандарта логирования,
   выявленные пробелы (нет процесса отладки/RFC/критериев приёмки правок промптов).
 - Добавлен аудит исследования
-  [`governance/audit-research-1027.md`](governance/audit-research-1027.md):
+  [`docs/audit/audit-research-1027.md`](docs/audit/audit-research-1027.md):
   проверка полноты разбора гипотез H1–H4, обоснованности рекомендаций O1–O3 и
   передачи онтологии (ADR #3–#8).
 - Добавлен черновик процесса отладки промптов
-  [`governance/prompt-debugging-process.md`](governance/prompt-debugging-process.md)
-  и реестр RFC [`governance/rfc-register.md`](governance/rfc-register.md):
+  [`standards/prompt-debugging-process.md`](standards/prompt-debugging-process.md)
+  и реестр RFC [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md):
   порядок «эксперимент → RFC → согласование с пользователем → изменение».
 
 ### Added — Issue #97 формализация онтологии БА и стандартов (Creative + Research)
@@ -496,7 +496,7 @@ ai-generated: true
 - [`scripts/generate-pages-data.mjs`](scripts/generate-pages-data.mjs) генерирует
   новый артефакт [`site/data/checks.json`](site/data/checks.json) на основе
   тестовых логов и статического среза
-  [`governance/prompt-feedback.json`](governance/prompt-feedback.json) (ФТ-6).
+  [`pr-ops/prompt-feedback.json`](pr-ops/prompt-feedback.json) (ФТ-6).
 - Решение по `experiments/` vs `scripts/`: корневой `experiments/` отсутствует
   (Python-валидаторы уже консолидированы в `scripts/`), `prompts/experiments/`
   сохранён как каноничное место тестовых логов промптов. Назначение директорий
@@ -560,7 +560,7 @@ ai-generated: true
   (контекст, ключевые решения с обоснованием, проблемы и обходные пути,
   применённые промпты, открытые вопросы, следующие шаги). Формат совместим с
   шаблоном блока суммарии в
-  [`governance/session-digests.md`](governance/session-digests.md).
+  [`pr-ops/session-digests.md`](pr-ops/session-digests.md).
 - Имя файла приведено к схеме ADR-001 `[домен]-[операция]-[режим].md`
   (`session-debug` / `documentation` / `oneshot`) вместо запрошенного в issue
   рабочего названия `session-debug-summarizer.md`, не соответствующего схеме.
@@ -602,7 +602,7 @@ ai-generated: true
 ### Added — Issue #76 суммария синхронизации сессий Хаба
 
 - structured: зафиксировать суммарию синхронизации сессий Хаба в
-  [`governance/session-digests.md`](governance/session-digests.md): добавлены
+  [`pr-ops/session-digests.md`](pr-ops/session-digests.md): добавлены
   индексная запись `2026-06-14` и блок `#2026-06-14` для передачи контекста
   между Чатом Хаба и Чатом БА Манго.
 - Локальная проверка [`scripts/validate_issue_72_hub_sync.py`](scripts/validate_issue_72_hub_sync.py)
@@ -614,18 +614,18 @@ ai-generated: true
 - [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) синхронизирован
   с Hub PR #226 (`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, SHA
   `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`): добавлен механизм периодической
-  суммаризации сессий через `governance/session-digests.md`, сохранены локальные
+  суммаризации сессий через `pr-ops/session-digests.md`, сохранены локальные
   правила issue #48/#61 про канал работы через Конарда и task template.
-- [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+- [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
   обновлён по source SHA `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`: встроенный
   копируемый prompt теперь соответствует handover v0.5 и указывает на
-  `governance/session-digests.md`.
-- Созданы [`governance/session-digests.md`](governance/session-digests.md) как
+  `pr-ops/session-digests.md`.
+- Созданы [`pr-ops/session-digests.md`](pr-ops/session-digests.md) как
   пустой локальный индекс суммарий для `mango_ba_prompts` и
-  [`governance/artifact-map.md`](governance/artifact-map.md) как локальная карта
+  [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) как локальная карта
   активных артефактов, адаптированная из хабовой карты PR #224/#226.
 - Обновлены [`README.md`](README.md), [`.hub-profile.json`](.hub-profile.json) и
-  [`governance/migration-manifest.md`](governance/migration-manifest.md), чтобы
+  [`pr-ops/migration-manifest.md`](pr-ops/migration-manifest.md), чтобы
   зафиксировать Smart Sync snapshot, source SHA и терминологию
   Пользователь / Исполнитель.
 - Добавлена локальная проверка
@@ -742,7 +742,7 @@ ai-generated: true
 - Создан шаблон таблицы открытых вопросов (дата | автор | суть | статус |
   решение) с правилом автоматической очистки решённых строк Конардом при
   закрытии связанного issue. В issue #80 механизм заменён единым трекером в
-  [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы).
+  [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md#5-открытые-вопросы).
 - Созданы контракты [`standards/prompt-standard.md`](standards/prompt-standard.md)
   (ровно 4 обязательных поля frontmatter: `status` со значениями
   `draft`/`canonical`/`archived`, `version`, `updated`, `temperature`;
@@ -838,7 +838,7 @@ ai-generated: true
   читает реально присутствующие локальные контракты команды, фундаментальные
   governance-контракты Хаба — по permalink-ам.
 - Создан протокол онбординга
-  [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
   (kebab-case, адаптированная копия канонического протокола Хаба v1.2): семантическое
   разделение «артефакт ↔ протокол» из PR #208. Раздел Design Rationale сжат,
   полная история вынесена ссылкой на Хаб.
@@ -871,7 +871,7 @@ ai-generated: true
 
 ### Added — M-009 migration manifest
 
-- Создан живой снимок миграции `governance/migration-manifest.md` (творческое
+- Создан живой снимок миграции `pr-ops/migration-manifest.md` (творческое
   улучшение C6 RFC). Содержит таблицу «артефакт → категория → действие → статус →
   назначение в споке» (RFC §5.1) и чек-лист-трекер «Перенесено / Осталось в
   Хабе / Требует уточнения» (RFC §5.3). Зафиксированы 6 промптов, 2 стандарта и
@@ -981,12 +981,12 @@ ai-generated: true
   готовность, трассируемость) — все пункты пройдены; зафиксированы открытые
   вопросы Q1–Q4 на решение Пользователя перед стартом Фазы 0.
 - Сформирован операционный бэклог Фазы 1 миграции
-  (`governance/BACKLOG.md`, issue #14): 9 атомарных задач (M-001…M-009) с
+  (`pr-ops/BACKLOG.md`, issue #14): 9 атомарных задач (M-001…M-009) с
   приоритетами, зависимостями, DoD и трассировкой на разделы утверждённого RFC,
   плюс Mermaid-диаграмма критического пути. Бэклог = один файл (Anti-Inflation);
   выполнение задач не начато.
 - Материализован бэклог Фазы 1 в 9 готовых к созданию GitHub Issues
-  (`governance/migration-phase1-issues.md`, issue #23): каждый пункт M-001…M-009
+  (`pr-ops/migration-phase1-issues.md`, issue #23): каждый пункт M-001…M-009
   оформлен по стандарту Хаба `ISSUE_WORKFLOW.md` (шаблон `task.yml`) с явным
   Operating Mode (`Creative`/`Structured`), приоритетом, зависимостями, DoD,
   трассировкой на RFC/бэклог и полными permalink-ссылками на Хаб (SHA

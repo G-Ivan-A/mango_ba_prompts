@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 related_artifacts:
   - "AI_SESSION_HANDOVER_PROMPT.executable.md"
-  - "governance/agent-onboarding-protocol.executable.md"
+  - "ai-rules/agent-onboarding-protocol_old.executable.md"
   - "prompts/README.executable.md"
   - "docs/ba-processes/00-index.executable.md"
   - "standards/ba-ontology.executable.md"

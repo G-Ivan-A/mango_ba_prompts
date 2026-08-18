@@ -25,4 +25,4 @@ logs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/109
 related_artifacts:
-  - governance/rfc/prompt-improvement-multichannel-proposal.md
+  - docs/rfc/prompt-improvement-multichannel-proposal.md

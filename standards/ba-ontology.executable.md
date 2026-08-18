@@ -121,7 +121,7 @@ baselined/released -> superseded/archived
 - Новая операция или процесс сначала появляется в `docs/taxonomy.md`, затем в
   онтологии.
 - Новый тип артефакта добавляется в registry A01-A30+ и при необходимости в
-  `governance/artifact-map.md`.
+  `pr-ops/artifact-map.md`.
 - Типы артефактов не удаляются молча: для устаревших используй
   `superseded/archived`.
 - Архитектурные/governance изменения онтологии фиксируются ADR.

@@ -49,7 +49,7 @@ research_deps:
 Фактический статус: чек-листы и human-in-the-loop gate в репозитории есть,
 **evals и golden-set отсутствуют** — пробел зафиксирован честно в
 [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#статус-механизмов-проверки-на-сегодня) и
-[`governance/BACKLOG.md`](governance/BACKLOG.md).
+[`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md).
 
 Норма и допустимые механизмы проверки — в
 [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#принцип-качество-системы-исполнения--стоимость);
@@ -142,9 +142,9 @@ self-test evidence живёт в [`runs/`](runs/).
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
-| `governance/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
-| `governance/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
-| `governance/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
+| `pr-ops/artifact-map.md` | Локальная карта активных артефактов, связей и Smart Sync snapshot. |
+| `pr-ops/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
+| `pr-ops/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
 | `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
@@ -201,7 +201,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Почему операция без проверки не завершена | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#принцип-качество-системы-исполнения--стоимость), [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
 | Онтология БА, операции, нейминг, KB, процессы, UX Pages | [`standards/ba-ontology.md`](standards/ba-ontology.md), [`docs/adr/`](docs/adr/) |
-| Куда записать открытый вопрос | [`governance/BACKLOG.md`](governance/BACKLOG.md#5-открытые-вопросы) |
+| Куда записать открытый вопрос | [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md#5-открытые-вопросы) |
 | Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Где появятся стандарты и глоссарий | `standards/` |
@@ -210,11 +210,11 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
-| Протокол онбординга агента (чек-лист перед стартом) | [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md) |
-| Карта активных артефактов и связей | [`governance/artifact-map.md`](governance/artifact-map.md) |
-| Суммарии длинных сессий для передачи контекста | [`governance/session-digests.md`](governance/session-digests.md) |
+| Протокол онбординга агента (чек-лист перед стартом) | [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md) |
+| Карта активных артефактов и связей | [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) |
+| Суммарии длинных сессий для передачи контекста | [`pr-ops/session-digests.md`](pr-ops/session-digests.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |
-| Снимок миграции из Хаба (что перенесено / осталось / архивировано) | [`governance/migration-manifest.md`](governance/migration-manifest.md) |
+| Снимок миграции из Хаба (что перенесено / осталось / архивировано) | [`pr-ops/migration-manifest.md`](pr-ops/migration-manifest.md) |
 
 ## 👥 Контакты и ответственные
 

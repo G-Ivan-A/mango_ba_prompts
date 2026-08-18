@@ -10,23 +10,23 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "governance/rfc-process.md"
-  - "governance/prompt-debugging-process.md"
-  - "governance/sync-matrix-2026-06-17.md"
+  - "docs/rfc/rfc-process.md"
+  - "standards/prompt-debugging-process.md"
+  - "pr-ops/sync-matrix-2026-06-17.md"
   - "docs/analysis/experiment-1027-analysis.md"
-  - "governance/audit-contracts-2026-06-17.md"
+  - "docs/audit/audit-contracts-2026-06-17.md"
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
-  - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
-  - "governance/rfc/prompt-improvement-multichannel-proposal.md"
+  - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
+  - "docs/rfc/prompt-improvement-multichannel-proposal.md"
 ---
 
 # Реестр RFC (живой документ)
 
 > **Что это.** Единый список предложений изменить промпты или governance-контракты.
 > Каждый RFC движется по статусам и **не удаляется** из реестра (rejected остаётся
-> с причиной). Общий процесс — в [`governance/rfc-process.md`](rfc-process.md)
+> с причиной). Общий процесс — в [`docs/rfc/rfc-process.md`](rfc-process.md)
 > (интеграция жизненного цикла знаний Хаба); детализация для промптов — в
-> [`governance/prompt-debugging-process.md`](prompt-debugging-process.md).
+> [`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md).
 
 ## Статусы
 
@@ -46,7 +46,7 @@ proposed → in-review → accepted  → implemented
 ## Открытые RFC по промптам (источник: эксперимент 1027, issue #101)
 
 Все правки ниже — **предложения** из разбора
-[`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+[`docs/analysis/experiment-1027-analysis.md`](../analysis/experiment-1027-analysis.md).
 Промпты в PR #102 **не изменены** (остаются v0.1); записи ждут инициативы
 пользователя (часть 3 процесса).
 
@@ -72,7 +72,7 @@ proposed → in-review → accepted  → implemented
 ## Открытые RFC синхронизации с Хабом (источник: issue #105, sync-matrix 2026-06-17)
 
 Предложения сверить контракты спока с Хабом
-([`sync-matrix-2026-06-17.md`](sync-matrix-2026-06-17.md)). Контракты спока в
+([`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md)). Контракты спока в
 PR #105 **не изменены** — сверка и правка идут только после решения пользователя.
 
 | RFC | Контракт Mango | С чем сверять (Хаб, snapshot 6ddffdf) | Суть предложения | Статус | PR реализации |
@@ -99,9 +99,9 @@ PR #105 **не изменены** — сверка и правка идут то
 ## Открытые RFC по промптам (источник: эксперимент BCREQ-1025, issue #107)
 
 Правки ниже — **предложения** из разбора
-[`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md).
+[`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
-Полный RFC: [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
+Полный RFC: [`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](prompt-improvement-bcreq-1025-proposal.md).
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -114,9 +114,9 @@ PR #105 **не изменены** — сверка и правка идут то
 ## Открытые RFC по промптам (источник: эксперимент «Многоканальная нагрузка агента», issue #109)
 
 Правки ниже — **предложения** из разбора
-[`runs/2026/RUN-0011/logs/experiment-log.md`](../runs/2026/RUN-0011/logs/experiment-log.md).
+[`runs/2026/RUN-0011/logs/experiment-log.md`](../../runs/2026/RUN-0011/logs/experiment-log.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
-Полный RFC: [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
+Полный RFC: [`docs/rfc/prompt-improvement-multichannel-proposal.md`](prompt-improvement-multichannel-proposal.md).
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -133,9 +133,9 @@ PR #105 **не изменены** — сверка и правка идут то
   контрактов с Хабом). Реестр привязан к общему [`rfc-process.md`](rfc-process.md).
 - **2026-06-17** — добавлены RFC-1025-P1…P5 (промпты) в статусе `proposed` по
   итогам эксперимента BCREQ-1025 (issue #107). Полный анализ —
-  [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md);
-  RFC-документ — [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](rfc/prompt-improvement-bcreq-1025-proposal.md).
+  [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md);
+  RFC-документ — [`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](prompt-improvement-bcreq-1025-proposal.md).
 - **2026-06-18** — добавлены RFC-MCH-P1…P3 (промпты) в статусе `proposed` по
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
-  [`governance/rfc/prompt-improvement-multichannel-proposal.md`](rfc/prompt-improvement-multichannel-proposal.md).
+  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](prompt-improvement-multichannel-proposal.md).
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).

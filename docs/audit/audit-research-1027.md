@@ -22,7 +22,7 @@ related_artifacts:
 > онтологию БА», ADR #003–#008); (4) полны ли выводы и дополнительные находки.
 >
 > Источник истины разбора —
-> [`docs/analysis/experiment-1027-analysis.md`](../docs/analysis/experiment-1027-analysis.md).
+> [`docs/analysis/experiment-1027-analysis.md`](../analysis/experiment-1027-analysis.md).
 
 ## 1. Проверенные гипотезы (статус каждой)
 
@@ -44,7 +44,7 @@ related_artifacts:
 > ⚠️ **Важная оговорка аудита.** Вердикты «подтвердить» относятся к **диагнозу**
 > (проблема реальна), а не к **праву внести правку**. Сами правки P1–P5 — это
 > **предложения (кандидаты в RFC)**; они проходят через
-> [`governance/prompt-debugging-process.md`](prompt-debugging-process.md) и
+> [`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) и
 > согласование с пользователем. В этом PR промпты не меняются.
 
 ## 2. Обоснованность рекомендаций по онтологии (O1–O3)
@@ -102,5 +102,5 @@ O1: *«Операция documentation требует разделения на �
 оформленные кандидаты без вторжения в него. Единственная содержательная правка
 по итогам аудита — **переквалификация P1–P5 из «внесённых правок» в
 «предложения»** (сделана в `docs/analysis/experiment-1027-analysis.md` и
-зафиксирована в `governance/audit-contracts-2026-06-17.md`). Открытые вопросы
+зафиксирована в `docs/audit/audit-contracts-2026-06-17.md`). Открытые вопросы
 корректно перенесены в стандарт и BACKLOG.

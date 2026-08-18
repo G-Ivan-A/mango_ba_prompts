@@ -10,23 +10,23 @@ source_sha: "6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
-  - "governance/audit-contracts-mango-2026-06-17.md"
-  - "governance/audit-hub-2026-06-17.md"
-  - "governance/rfc-process.md"
-  - "governance/rfc-register.md"
+  - "docs/audit/audit-contracts-mango-2026-06-17.md"
+  - "docs/audit/audit-hub-2026-06-17.md"
+  - "docs/rfc/rfc-process.md"
+  - "docs/rfc/rfc-register.md"
 ---
 
 # Матрица синхронизации mango_ba_prompts ↔ Хаб (2026-06-17)
 
 > **Повод.** Задача [#105](https://github.com/G-Ivan-A/mango_ba_prompts/issues/105),
-> **ФТ-3**: свести контракты спока ([аудит mango](audit-contracts-mango-2026-06-17.md))
-> и Хаба ([аудит Хаба](audit-hub-2026-06-17.md)) в единую матрицу соответствия —
+> **ФТ-3**: свести контракты спока ([аудит mango](../docs/audit/audit-contracts-mango-2026-06-17.md))
+> и Хаба ([аудит Хаба](../docs/audit/audit-hub-2026-06-17.md)) в единую матрицу соответствия —
 > что синхронизировать, что оставить локальным, где требуется RFC.
 >
 > **Правило синхронизации (критическое).** Если в Хабе есть аналог, но у нас иначе —
-> **не менять сразу**, а создать RFC ([`rfc-process.md`](rfc-process.md)). Если у
+> **не менять сразу**, а создать RFC ([`rfc-process.md`](../docs/rfc/rfc-process.md)). Если у
 > нас уникальная практика — подготовить **передачу знаний** в Хаб
-> ([`knowledge-transfer-to-hub/`](knowledge-transfer-to-hub/)). Все ссылки на Хаб —
+> ([`knowledge-transfer-to-hub/`](../docs/rfc/knowledge-transfer-to-hub/)). Все ссылки на Хаб —
 > permalink на снимок [`6ddffdf`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf).
 
 ## Легенда действий
@@ -62,13 +62,13 @@ related_artifacts:
 | `AI_GOVERNANCE.md` | `AI_GOVERNANCE.md` (canonical) | да (локальная адаптация) | **Smart Sync ←** (геном) | — |
 | `CONTRIBUTING.md` | `CONTRIBUTING.md` | да | **Smart Sync ←** | — |
 | `AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md` | HTOM-геном (`templates/htom/`, `session-handover-standard.md`) | да | **Smart Sync ←** | — |
-| `governance/artifact-map.md` | `governance/artifact-map.md` | да (уже синхронизирован) | **Smart Sync ←** | — |
-| `governance/agent-onboarding-protocol.md` | `governance/agent-onboarding-protocol.md` | да | **Smart Sync ←** | — |
-| `governance/BACKLOG.md` | `governance/backlog.md` | да | **Smart Sync ←** | — |
-| `governance/session-digests.md` | `governance/session-digests.md` | да | **Smart Sync ←** | — |
+| `pr-ops/artifact-map.md` | `pr-ops/artifact-map.md` | да (уже синхронизирован) | **Smart Sync ←** | — |
+| `ai-rules/agent-onboarding-protocol_old.md` | `ai-rules/agent-onboarding-protocol_old.md` | да | **Smart Sync ←** | — |
+| `pr-ops/BACKLOG.md` | `governance/backlog.md` | да | **Smart Sync ←** | — |
+| `pr-ops/session-digests.md` | `pr-ops/session-digests.md` | да | **Smart Sync ←** | — |
 | `.hub-profile.json` | формат Smart Sync (Хаб PR #208) | да | **Smart Sync ←** | — |
-| `governance/prompt-debugging-process.md` | — нет в Хабе | — | **Передача знаний →** | RFC-HUB-002 |
-| RFC-процесс (`governance/rfc-register.md`) | `knowledge-lifecycle-proposal.md` (lifecycle) | да (нужна привязка) | **Интегрировать** | см. `rfc-process.md` |
+| `standards/prompt-debugging-process.md` | — нет в Хабе | — | **Передача знаний →** | RFC-HUB-002 |
+| RFC-процесс (`docs/rfc/rfc-register.md`) | `knowledge-lifecycle-proposal.md` (lifecycle) | да (нужна привязка) | **Интегрировать** | см. `rfc-process.md` |
 | (нет) — архетип/структура | `htom-vs-spoke-clarification` (canonical), `repo-model.md`, `repository-archetypes` (PR #243) | — | **Следовать** (структура — PR #244) | — |
 | (нет) — issue lifecycle | `standards/issue-workflow.md` (7 статусов) | — | **Сверить → RFC** (опционально принять статусы) | RFC-SYNC-IW |
 
@@ -76,7 +76,7 @@ related_artifacts:
 
 ## 2. Реестр RFC синхронизации (открыт этой задачей)
 
-Эти RFC — **предложения сверки**, заведены в [`rfc-register.md`](rfc-register.md)
+Эти RFC — **предложения сверки**, заведены в [`rfc-register.md`](../docs/rfc/rfc-register.md)
 в статусе `proposed`. Контракты Mango в этой задаче **не меняются**; решение о
 правке — за пользователем (правило синхронизации).
 
@@ -94,12 +94,12 @@ related_artifacts:
 
 Уникальные практики Mango (нет аналогов в Хабе) — кандидаты на перенос в Хаб по
 обратному потоку (см. [`docs/rfc-hub-integration.md`](../docs/rfc-hub-integration.md)
-и [`knowledge-transfer-to-hub/`](knowledge-transfer-to-hub/)).
+и [`knowledge-transfer-to-hub/`](../docs/rfc/knowledge-transfer-to-hub/)).
 
 | RFC в Хаб | Практика Mango | Документ передачи |
 | --- | --- | --- |
-| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`rfc-to-hub-001-knowledge-transfer.md`](rfc-to-hub-001-knowledge-transfer.md) + `knowledge-transfer-to-hub/` |
-| RFC-HUB-002 | Процесс отладки промптов | [`rfc-to-hub-002-prompt-debugging-process.md`](rfc-to-hub-002-prompt-debugging-process.md) |
+| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`rfc-to-hub-001-knowledge-transfer.md`](../docs/rfc/rfc-to-hub-001-knowledge-transfer.md) + `knowledge-transfer-to-hub/` |
+| RFC-HUB-002 | Процесс отладки промптов | [`rfc-to-hub-002-prompt-debugging-process.md`](../docs/rfc/rfc-to-hub-002-prompt-debugging-process.md) |
 
 ## 4. Что НЕ синхронизируется (осознанно локальное)
 

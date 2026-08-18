@@ -81,7 +81,7 @@ issue #46 / PR #47. Это активирует маршрут эскалаци�
 
 - **Не стирали** YAML-провенанс и разделение `EXECUTION/EXPLANATION`.
 - **Не меняли** другие файлы (`AI_GOVERNANCE.md`, `AI_QUICK_RULES.md`,
-  `governance/agent-onboarding-protocol.md`, README и пр.) — кроме обязательного
+  `ai-rules/agent-onboarding-protocol_old.md`, README и пр.) — кроме обязательного
   `CHANGELOG.md`.
 - **Не создавали** `.github/`, `templates/` и иных новых каталогов.
 - **Не меняли** `status` файла (остался `draft`).

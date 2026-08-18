@@ -24,8 +24,8 @@ from scripts.kb.tokens import count_tokens, method  # noqa: E402
 EXPECTED_PAIRS = (
     ("AI_SESSION_HANDOVER_PROMPT.md", "AI_SESSION_HANDOVER_PROMPT.executable.md"),
     (
-        "governance/agent-onboarding-protocol.md",
-        "governance/agent-onboarding-protocol.executable.md",
+        "ai-rules/agent-onboarding-protocol_old.md",
+        "ai-rules/agent-onboarding-protocol_old.executable.md",
     ),
     ("prompts/README.md", "prompts/README.executable.md"),
     ("docs/ba-processes/00-index.md", "docs/ba-processes/00-index.executable.md"),

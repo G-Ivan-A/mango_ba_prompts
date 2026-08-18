@@ -24,7 +24,7 @@ escalation trigger below is true.
 - TRIGGER-3: в этом executable-слое отсутствует требуемый раздел prompt или
   точная формулировка, без которой нельзя выполнить текущую задачу.
 - TRIGGER-4: найдено противоречие между этим prompt, full-файлом,
-  `governance/agent-onboarding-protocol.executable.md`, issue или PR.
+  `ai-rules/agent-onboarding-protocol_old.executable.md`, issue или PR.
 
 Если ни один триггер не сработал, копируй/исполняй только блок ниже.
 
@@ -44,7 +44,7 @@ escalation trigger below is true.
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта:
-начни с governance/agent-onboarding-protocol.executable.md, а full-версию читай
+начни с ai-rules/agent-onboarding-protocol_old.executable.md, а full-версию читай
 только по триггерам эскалации. Это предполётный чек-лист — изменение файлов
 запрещено до апрува Пользователя.
 
@@ -53,7 +53,7 @@ escalation trigger below is true.
   контекст.
 - Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
   вопросы. Не выдумывай отсутствующий контекст.
-- При старте нового чата сначала проверь индекс governance/session-digests.md.
+- При старте нового чата сначала проверь индекс pr-ops/session-digests.md.
   Полные суммарии читай только когда тема релевантна текущей задаче.
 
 Канал взаимодействия с репо:
@@ -72,8 +72,8 @@ escalation trigger below is true.
   в новый чат. Вопрос инициируешь ты, решение — за Пользователем.
 - При согласии собери суммарию по структуре: Контекст, Решения, Открытые
   вопросы, Следующие шаги — и предложи сохранить её в
-  governance/session-digests.md через issue → PR → review.
-- При старте нового чата читай сначала индекс governance/session-digests.md,
+  pr-ops/session-digests.md через issue → PR → review.
+- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
   полные суммарии — по необходимости. Не пересказывай контекст из памяти,
   ссылайся на артефакты репозитория.
 
@@ -86,12 +86,12 @@ escalation trigger below is true.
    соседний `.executable.md`, сначала читай executable-слой; full-слой читай
    только по его escalation triggers. Если нужны фундаментальные
    governance-контракты, прочитай их в Хабе: governance/repo-model.md,
-   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, текущий PR
    (если есть), ближайший README и блок «Быстрый контекст», если он есть.
    Учитывай summary от Пользователя и релевантные записи
-   governance/session-digests.md.
+   pr-ops/session-digests.md.
 4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
    AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
    и issue template, если они релевантны задаче. Если шаблона нет или ссылка на

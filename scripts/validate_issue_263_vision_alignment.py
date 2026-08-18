@@ -35,7 +35,7 @@ CONCEPT_DOCS = (
     "docs/ba-ecosystem.md",
     "docs/rfc-hub-integration.md",
     "docs/hub-research-dependencies.md",
-    "governance/artifact-map.md",
+    "pr-ops/artifact-map.md",
 )
 
 REQUIRED_FRONTMATTER = ("status:", "version:", "updated:", "owner:")
@@ -73,7 +73,7 @@ EVALS_GAP_MARKERS = {
         "Статус механизмов проверки на сегодня",
         "нет каталога `evals/` и нет golden-set",
     ),
-    "governance/BACKLOG.md": (
+    "pr-ops/BACKLOG.md": (
         "evals и golden-set отсутствуют",
         "инструментарий веб-ресурса (app)",
     ),
@@ -114,7 +114,7 @@ REQUIRED_TEXT = {
         "Отбор Пользователем",
         "конструктору",
     ),
-    "governance/artifact-map.md": (
+    "pr-ops/artifact-map.md": (
         "ADR-009",
         "ai-ba-playbooks",
     ),
@@ -200,7 +200,7 @@ def check_evals_status() -> list[str]:
     if (ROOT / "evals").exists():
         errors.append(
             "evals/: каталог появился — обнови «Статус механизмов проверки "
-            "на сегодня» в AI_GOVERNANCE.md и запись в governance/BACKLOG.md"
+            "на сегодня» в AI_GOVERNANCE.md и запись в pr-ops/BACKLOG.md"
         )
     for path, needles in EVALS_GAP_MARKERS.items():
         text = read_text(path)

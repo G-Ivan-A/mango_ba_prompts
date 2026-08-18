@@ -14,4 +14,4 @@ outputs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/107
 related_artifacts:
-  - governance/rfc/prompt-improvement-bcreq-1025-proposal.md
+  - docs/rfc/prompt-improvement-bcreq-1025-proposal.md

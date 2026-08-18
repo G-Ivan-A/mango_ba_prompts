@@ -5,14 +5,14 @@ updated: 2026-06-20
 ai-generated: true
 type: protocol
 layer: executable
-full_version: "governance/agent-onboarding-protocol.md"
+full_version: "ai-rules/agent-onboarding-protocol_old.md"
 related_standard: "../standards/cascading-context-loading-standard.md"
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 ---
 
 # Agent Onboarding Protocol — executable layer
 
-Load this file first. Do not load `governance/agent-onboarding-protocol.md`
+Load this file first. Do not load `ai-rules/agent-onboarding-protocol_old.md`
 unless one escalation trigger below is true.
 
 ## Escalation triggers
@@ -20,7 +20,7 @@ unless one escalation trigger below is true.
 - TRIGGER-1: пользователь явно просит полную версию протокола, rationale,
   threat-awareness, историю решений или ссылки на Хаб.
 - TRIGGER-2: нужно редактировать, синхронизировать или валидировать
-  `governance/agent-onboarding-protocol.md`.
+  `ai-rules/agent-onboarding-protocol_old.md`.
 - TRIGGER-3: текущая задача требует точной формулировки из full-разделов
   `EXPLANATION`, `Design Rationale & History` или таблиц cross-reference.
 - TRIGGER-4: есть конфликт между этим executable-слоем, full-протоколом,

@@ -12,7 +12,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/009-bcreq-formation-process.md"
   - "standards/bcreq-process-standard.md"
-  - "governance/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: процесс формирования BCREQ (бизнес- и системных требований)
@@ -28,8 +28,8 @@ related_artifacts:
 - **Что.** Процесс из 6 последовательных подпроцессов (П1–П6), разворачивающих
   бизнес-контекст в проверенные требования, с тремя обязательными точками решения
   человека (G1/G2/G3) между этапами.
-- **Как.** [ADR #009](../../docs/adr/009-bcreq-formation-process.md) и стандарт
-  [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md)
+- **Как.** [ADR #009](../../adr/009-bcreq-formation-process.md) и стандарт
+  [`standards/bcreq-process-standard.md`](../../../standards/bcreq-process-standard.md)
   задают: вертикаль (нотация с точками — иерархия детализации требований) и
   горизонталь (П1→П6). На воротах G1/G2/G3 человек подтверждает переход; неполнота
   явно помечается состоянием `needs-clarification` (связь с онтологией,
@@ -66,7 +66,7 @@ related_artifacts:
 
 ## Ссылки
 
-- ADR-носитель: [`docs/adr/009-bcreq-formation-process.md`](../../docs/adr/009-bcreq-formation-process.md)
-- Стандарт: [`standards/bcreq-process-standard.md`](../../standards/bcreq-process-standard.md)
+- ADR-носитель: [`docs/adr/009-bcreq-formation-process.md`](../../adr/009-bcreq-formation-process.md)
+- Стандарт: [`standards/bcreq-process-standard.md`](../../../standards/bcreq-process-standard.md)
 - Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
 - Контракт Хаба (родственный): [`AI_GOVERNANCE.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/AI_GOVERNANCE.md)

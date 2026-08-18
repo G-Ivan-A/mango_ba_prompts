@@ -23,7 +23,7 @@ function isPromptAssetFile(name) {
 
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
 const RUNS_DIR = "runs";
-const FEEDBACK_SOURCE = "governance/prompt-feedback.json";
+const FEEDBACK_SOURCE = "pr-ops/prompt-feedback.json";
 
 const OPERATION_ICONS = {
   ingestion: "↓",

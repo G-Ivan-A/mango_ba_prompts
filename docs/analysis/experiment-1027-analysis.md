@@ -331,7 +331,7 @@ As-Is/документацией. Это и есть механизм, кото�
 > **Статус правок: предложения, НЕ применены.** Прямое изменение промптов в этом
 > PR нарушило бы контракт отладки (правильный порядок: *эксперимент → RFC →
 > согласование с пользователем → изменение*, см.
-> [`governance/prompt-debugging-process.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/prompt-debugging-process.md)).
+> [`standards/prompt-debugging-process.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-debugging-process.md)).
 > Поэтому ни один из файлов `prompts/*.md` и колонка «Версия» в
 > `prompts/README.md` в этом PR **не меняются** — все шесть промптов остаются на
 > `v0.1`. Диффы ниже — это **черновики правок** (входные данные для RFC), а не
@@ -601,7 +601,7 @@ As-Is/документацией. Это и есть механизм, кото�
 
 **Статус — Draft v0.1.** Стандарт **подлежит валидации на 2–3 следующих
 экспериментах** (как требует issue). Открытые вопросы вынесены в стандарт и в
-`governance/BACKLOG.md`. Чтобы стандарт не остался теорией, к этому PR приложен
+`pr-ops/BACKLOG.md`. Чтобы стандарт не остался теорией, к этому PR приложен
 **первый прогон по нему — «dogfood» на самой сессии 1027**:
 [`runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md).
 

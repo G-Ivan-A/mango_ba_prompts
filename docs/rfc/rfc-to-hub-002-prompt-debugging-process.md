@@ -9,9 +9,9 @@ target_repo: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
-  - "governance/prompt-debugging-process.md"
-  - "governance/rfc-process.md"
-  - "governance/audit-hub-2026-06-17.md"
+  - "standards/prompt-debugging-process.md"
+  - "docs/rfc/rfc-process.md"
+  - "docs/audit/audit-hub-2026-06-17.md"
   - "docs/rfc-hub-integration.md"
 ---
 
@@ -19,13 +19,13 @@ related_artifacts:
 
 > **Адресат: `hybrid-Intelligence-lab` (Хаб).** Это **предложение** спока
 > `mango_ba_prompts` к Хабу, оформленное по обратному потоку «спок → Хаб»
-> ([`docs/rfc-hub-integration.md`](../docs/rfc-hub-integration.md)). Финальное
+> ([`docs/rfc-hub-integration.md`](../rfc-hub-integration.md)). Финальное
 > решение — за пользователем по правилам Хаба (`AI_GOVERNANCE.md`, правило
 > «финальные решения за человеком»). До утверждения практика остаётся локальной.
 
 ## 1. Проблема (зачем Хабу это)
 
-Аудит Хаба ([`audit-hub-2026-06-17.md`](audit-hub-2026-06-17.md)) показал: Хаб
+Аудит Хаба ([`audit-hub-2026-06-17.md`](../audit/audit-hub-2026-06-17.md)) показал: Хаб
 имеет жизненный цикл знаний
 ([`knowledge-lifecycle-proposal.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/governance/rfc/knowledge-lifecycle-proposal.md))
 и Research Memory
@@ -47,7 +47,7 @@ Library и любой HTOM-команды, эксплуатирующей про
 > **эксперимент → RFC → согласование с человеком → изменение**
 
 Полная локальная реализация — в
-[`governance/prompt-debugging-process.md`](prompt-debugging-process.md). Ключевые
+[`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md). Ключевые
 элементы, предлагаемые к обобщению:
 
 1. **Принцип «диагноз ≠ право на правку».** Зафиксированный эксперимент даёт
@@ -78,7 +78,7 @@ Library и любой HTOM-команды, эксплуатирующей про
 - **Вариант B:** раздел в `standards/` как стандарт отладки исполнимых артефактов.
 
 Источник (provenance): permalink на
-[`governance/prompt-debugging-process.md`](prompt-debugging-process.md) спока с
+[`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) спока с
 полями `source_spoke` + `source_sha` (по практике обратного потока).
 
 ## 5. Что этот RFC не делает
@@ -89,7 +89,7 @@ Library и любой HTOM-команды, эксплуатирующей про
 
 ## 6. Критерии готовности к переносу (C1–C5 обратного потока)
 
-См. [`docs/rfc-hub-integration.md`](../docs/rfc-hub-integration.md): практика
+См. [`docs/rfc-hub-integration.md`](../rfc-hub-integration.md): практика
 применена в ≥2 отладках (C1 — после валидации на 2–3 ближайших), обобщаема (C2),
 зрелость после human review (C3), чистота данных (C4), документированность (C5).
 На 2026-06-17 процесс — Draft v0.1; перенос предлагается **после** валидации C1.
@@ -98,4 +98,4 @@ Library и любой HTOM-команды, эксплуатирующей про
 
 1. Где разместить в Хабе — `practices/` (node) или `standards/`?
 2. Объединить ли с моделью Knowledge Object (статусы отладки = статусы объекта)?
-3. Ведутся в [`governance/BACKLOG.md`](BACKLOG.md).
+3. Ведутся в [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md).

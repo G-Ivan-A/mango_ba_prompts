@@ -73,8 +73,8 @@ class StripCodeTest(unittest.TestCase):
         self.assertEqual(len(out.splitlines()), 5)
 
     def test_real_link_survives(self):
-        text = "см. [карту](governance/artifact-map.md)"
-        self.assertIn("governance/artifact-map.md", strip_code(text))
+        text = "см. [карту](pr-ops/artifact-map.md)"
+        self.assertIn("pr-ops/artifact-map.md", strip_code(text))
 
 
 if __name__ == "__main__":

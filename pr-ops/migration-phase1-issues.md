@@ -5,7 +5,7 @@ updated: 2026-06-04
 ai-generated: true
 type: issue-set
 scope: mango_ba_prompts-migration-execution
-based_on: "governance/BACKLOG.md"
+based_on: "pr-ops/BACKLOG.md"
 rfc: "docs/analysis/migration-strategy-rfc.md"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/23"
 hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
@@ -14,7 +14,7 @@ hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 # Migration Phase 1 — 9 executable issues (M-001 … M-009)
 
 > 📋 **Это «материализация» бэклога, а не его выполнение.** Файл превращает
-> 9 пунктов [`governance/BACKLOG.md`](BACKLOG.md) в готовые к созданию GitHub
+> 9 пунктов [`pr-ops/BACKLOG.md`](BACKLOG.md) в готовые к созданию GitHub
 > Issues по стандарту Хаба
 > [`standards/ISSUE_WORKFLOW.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/standards/ISSUE_WORKFLOW.md)
 > (шаблон
@@ -74,7 +74,7 @@ M-001 и M-008 независимы и идут параллельно.
 **Labels:** `migration` | `creative` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-001](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-001](BACKLOG.md)
 **Depends On:** —
 **Operating Mode:** `Creative`
 
@@ -122,7 +122,7 @@ M-001 и M-008 независимы и идут параллельно.
 **Labels:** `migration` | `structured` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-002](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-002](BACKLOG.md)
 **Depends On:** —
 **Operating Mode:** `Structured`
 
@@ -162,7 +162,7 @@ M-001 и M-008 независимы и идут параллельно.
 **Labels:** `migration` | `structured` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-003](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-003](BACKLOG.md)
 **Depends On:** M-002
 **Operating Mode:** `Structured`
 
@@ -198,7 +198,7 @@ E6 / §4.1; бэклог M-003).
 **Labels:** `migration` | `structured` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-004](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-004](BACKLOG.md)
 **Depends On:** M-002
 **Operating Mode:** `Structured`
 
@@ -241,7 +241,7 @@ RFC принцип P4 (§1.2), §2.3, edge cases E2 и E6 / §4.1; бэклог 
 **Labels:** `migration` | `structured` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-005](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-005](BACKLOG.md)
 **Depends On:** M-002
 **Operating Mode:** `Structured`
 
@@ -290,7 +290,7 @@ RFC §4.1; §2.3, §2.6; бэклог M-005). Поэтому переносят�
 **Labels:** `migration` | `creative` | `priority:P1`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-006](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-006](BACKLOG.md)
 **Depends On:** M-002, M-003, M-004, M-005
 **Operating Mode:** `Creative`
 
@@ -345,7 +345,7 @@ gate перед статусом `migrated` (Q3).
 **Labels:** `migration` | `structured` | `priority:P1`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-007](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-007](BACKLOG.md)
 **Depends On:** M-006
 **Operating Mode:** `Structured`
 
@@ -393,7 +393,7 @@ consumers):
 **Labels:** `migration` | `creative` | `priority:P0`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-008](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-008](BACKLOG.md)
 **Depends On:** —
 **Operating Mode:** `Creative`
 
@@ -440,7 +440,7 @@ ADR». Добавь пример файла с корректным frontmatter 
 **Labels:** `migration` | `creative` | `priority:P2`
 **Milestone:** `Sprint 3 — Hybrid Minimum Bootstrap`
 **User Story / ФТ:** `project:mango_ba_prompts-migration-execution`
-**Linked Backlog:** [`governance/BACKLOG.md` → M-009](BACKLOG.md)
+**Linked Backlog:** [`pr-ops/BACKLOG.md` → M-009](BACKLOG.md)
 **Depends On:** M-006
 **Operating Mode:** `Creative`
 
@@ -477,7 +477,7 @@ M-009. Размещение: `docs/migration-manifest.md`.
 ## Связанные артефакты
 
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/23>
-- Бэклог: [`governance/BACKLOG.md`](BACKLOG.md)
+- Бэклог: [`pr-ops/BACKLOG.md`](BACKLOG.md)
 - Утверждённый RFC: [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
 - Human Review: [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md)
 - Стандарт Issue (Хаб): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/standards/ISSUE_WORKFLOW.md>

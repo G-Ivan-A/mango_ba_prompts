@@ -39,15 +39,15 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | --- | --- | --- | --- | --- |
 | `/README.md` | навигация | Визитка проекта: роль (автоматизация процессов БА в проекте Манго), границы (GitHub + AI-исполнитель, без инфраструктуры), стратегия, структура и быстрые ссылки. | Да | `CHANGELOG.md`, `docs/ba-ecosystem.md`, `prompts/README.md` |
 | `/CHANGELOG.md` | журнал | История значимых изменений, включая Smart Sync из Хаба. | Да | `README.md`, `.hub-profile.json` |
-| `/.hub-profile.json` | профиль синхронизации | Локальный профиль Smart Sync: тип проекта, Хаб и последний sync snapshot. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `governance/artifact-map.md` |
+| `/.hub-profile.json` | профиль синхронизации | Локальный профиль Smart Sync: тип проекта, Хаб и последний sync snapshot. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `pr-ops/artifact-map.md` |
 | `/AI_GOVERNANCE.md` | контракт | Конституция проекта: принцип «качество системы исполнения > стоимость», ДОД с процессом проверки, роль проекта и инфраструктурная модель, подготовка к приватизации, роли, operating modes, границы AI-assisted work. | Да | `AI_QUICK_RULES.md`, `CONTRIBUTING.md`, `docs/hub-research-dependencies.md` |
 | `/AI_QUICK_RULES.md` | исполнимые правила | Короткая инструкция для агента: куда смотреть, чего не делать, когда звать человека. | Да | `AI_GOVERNANCE.md`, `README.md` |
 | `/CONTRIBUTING.md` | workflow | Процесс issue → PR → review и чек-лист вклада. | Да | `AI_GOVERNANCE.md`, `CHANGELOG.md` |
-| `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `governance/session-digests.md`, `governance/agent-onboarding-protocol.md` |
-| `/governance/agent-onboarding-protocol.md` | протокол | Локальная адаптация протокола онбординга агента. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
-| `/governance/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
-| `/governance/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
-| `/governance/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
+| `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `pr-ops/session-digests.md`, `ai-rules/agent-onboarding-protocol_old.md` |
+| `/ai-rules/agent-onboarding-protocol_old.md` | протокол | Локальная адаптация протокола онбординга агента. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
+| `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
+| `/pr-ops/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
+| `/pr-ops/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
 | `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам и решениям Хаба: research PR #229, ADR-009 v0.3, онтология процессов БА (D1–D10), анализ готовности к разделению. Источники не копируются в спок. | Да | `prompts/`, `standards/product-classification-contract.md`, `AI_GOVERNANCE.md` |
 | `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, ДОД операции с обязательным процессом проверки, графы связей, сценарии запуска и границы автоматизации спока. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
 | `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
@@ -60,7 +60,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
 | `/standards/` | каталог | Стандарты спицы и рабочие копии стандартов Хаба; разграничение — в `standards/README.md`. | Да | `standards/README.md`, `docs/adr/` |
 | `/standards/README.md` | навигация | Реестр стандартов: что принадлежит спице, что рабочая копия Хаба, и правило «сужать можно, противоречить нельзя». | Да | `standards/GLOSSARY.md`, `docs/adr/0004-hub-resync-2026-08.md` |
-| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `governance/agent-onboarding-protocol.md`, `AI_GOVERNANCE.md` |
+| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol_old.md`, `AI_GOVERNANCE.md` |
 | `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `AI_GOVERNANCE.md`, `docs/adr/0004-hub-resync-2026-08.md` |
 | `/scripts/sync_from_hub.py` | инструмент | Воспроизводимый ре-синк по манифесту с переписыванием ссылок; `--check` сверяет копии с Хабом. | Да | `.hub-profile.json`, `scripts/validate_issue_265_hub_sync.py` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
@@ -119,7 +119,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 
 - Хаб [`pr-ops/artifact-map.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3bfa4103c9efbbd59bc951814884920e406982e2/pr-ops/artifact-map.md)
   — источник общей карты артефактов.
-- [`governance/session-digests.md`](session-digests.md) — новый sync-артефакт
+- [`pr-ops/session-digests.md`](session-digests.md) — новый sync-артефакт
   issue #72.
-- [`governance/migration-manifest.md`](migration-manifest.md) — исторический
+- [`pr-ops/migration-manifest.md`](migration-manifest.md) — исторический
   снимок миграции Mango и запись sync snapshots.

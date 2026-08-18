@@ -12,7 +12,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 ---
 
 > **LLM Loading Contract — full layer.**
-> Start with [`governance/agent-onboarding-protocol.executable.md`](agent-onboarding-protocol.executable.md).
+> Start with [`ai-rules/agent-onboarding-protocol_old.executable.md`](agent-onboarding-protocol_old.executable.md).
 > Load this full file only when an escalation trigger in the executable companion
 > is true: explicit request for full/rationale/history, missing required section
 > in executable, need for exact wording/table/reference, or editing/validating
@@ -32,7 +32,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 > (v1.5 на `source_sha` Хаба). Разделение ролей:
 > - **Входная точка команды `mango_ba_prompts` — этот файл.** Он адаптирован под
 >   пути команды и имеет исполнимого компаньона
->   [`agent-onboarding-protocol.executable.md`](agent-onboarding-protocol.executable.md),
+>   [`agent-onboarding-protocol.executable.md`](agent-onboarding-protocol_old.executable.md),
 >   которого требует [стандарт каскадной загрузки контекста](../standards/cascading-context-loading-standard.md).
 > - **Базовая норма — копия в `ai-rules/`.** Она показывает, что Хаб требует
 >   *сейчас*; локальная адаптация **МОЖЕТ** сужать её под контекст Mango, но
@@ -93,7 +93,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+(ai-rules/agent-onboarding-protocol_old.md). Это предполётный чек-лист — изменение
 файлов запрещено до апрува Пользователя.
 
 Контекст чата диалога:
@@ -101,7 +101,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
   контекст.
 - Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
   вопросы. Не выдумывай отсутствующий контекст.
-- При старте нового чата сначала проверь индекс governance/session-digests.md.
+- При старте нового чата сначала проверь индекс pr-ops/session-digests.md.
   Полные суммарии читай только когда тема релевантна текущей задаче.
 
 Канал взаимодействия с репо:
@@ -120,8 +120,8 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
   в новый чат. Вопрос инициируешь ты, решение — за Пользователем.
 - При согласии собери суммарию по структуре: Контекст, Решения, Открытые
   вопросы, Следующие шаги — и предложи сохранить её в
-  governance/session-digests.md через issue → PR → review.
-- При старте нового чата читай сначала индекс governance/session-digests.md,
+  pr-ops/session-digests.md через issue → PR → review.
+- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
   полные суммарии — по необходимости. Не пересказывай контекст из памяти,
   ссылайся на артефакты репозитория.
 
@@ -132,12 +132,12 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md,
    AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Если нужны фундаментальные
    governance-контракты, прочитай их в Хабе: governance/repo-model.md,
-   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, текущий PR
    (если есть), ближайший README и блок «Быстрый контекст», если он есть.
    Учитывай summary от Пользователя и релевантные записи
-   governance/session-digests.md.
+   pr-ops/session-digests.md.
 4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
    AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
    и issue template, если они релевантны задаче. Если шаблона нет или ссылка на
@@ -312,7 +312,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 | --- | --- |
 | Форма протокола | 4 шага: governance → контекст → readback → стоп до апрува |
 | Handover Prompt | Один копируемый блок; в Хабе параметризован `{{REPO_NAME}}`, в команде инстанцирован под `mango_ba_prompts` |
-| Место canonical-файла | `governance/agent-onboarding-protocol.md`, рядом с repo governance |
+| Место canonical-файла | `ai-rules/agent-onboarding-protocol_old.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
 | Наследование HTOM-командами | Копия prompt живёт в корневом `AI_SESSION_HANDOVER_PROMPT.md` команды |
 

@@ -12,7 +12,7 @@ temperature: 0.1
 LLM-сессиями. Твоя задача: за один ответ суммаризировать длинную сессию работы с
 LLM (диалог по задаче, отладка промптов, итерации над ФТ/ТЗ/UC/US) в
 структурированное резюме, пригодное для человеческого анализа и для сохранения
-в `governance/session-digests.md`.
+в `pr-ops/session-digests.md`.
 
 Промпт — рабочий инструмент БА, а не только средство отладки. Он восстанавливает
 контекст спустя время и помогает новому участнику команды понять историю решений.
@@ -50,12 +50,12 @@ LLM (диалог по задаче, отладка промптов, итера
 6. Извлеки открытые вопросы и следующие шаги.
 7. Выведи результат строго по блоку из раздела ФОРМАТ ВЫВОДА — так, чтобы его
    можно было вставить в Issue или скопировать как блок в
-   `governance/session-digests.md` без ручной переработки.
+   `pr-ops/session-digests.md` без ручной переработки.
 
 # ФОРМАТ ВЫВОДА
 Markdown, сканируемый глазами (заголовки, списки, выделения). Структура
 совместима с шаблоном блока суммарии в
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/session-digests.md>
+<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/session-digests.md>
 (блоки **Контекст / Решения / Открытые вопросы / Следующие шаги** обязательны;
 блоки **Проблемы и обходные пути** и **Применённые промпты** добавлены под
 задачу отладки сессий).
@@ -104,7 +104,7 @@ Markdown, сканируемый глазами (заголовки, списк�
 - Навигация по библиотеке промптов (сначала executable-слой):
   <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/README.executable.md>
 - Механизм суммаризации сессий:
-  <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/session-digests.md>
+  <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/session-digests.md>
 - Таксономия (когнитивные операции и процессы):
   <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>
 - Экосистема БА:
