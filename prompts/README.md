@@ -104,7 +104,7 @@ related_issues:
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Сессия LLM: Суммаризация | `mango-session-debug-documentation-oneshot` | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `governance/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Сессия LLM: Суммаризация | `mango-session-debug-documentation-oneshot` | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `pr-ops/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
 
 ### 6. Архив: статистика и исторические генераторы
 
@@ -260,7 +260,7 @@ workflow формирования ФТ/ТЗ.
 процессам БА агрегируются в модуле **«Проверки»** на
 [GitHub Pages](https://g-ivan-a.github.io/mango_ba_prompts/). Данные формируются
 скриптом `scripts/generate-pages-data.mjs` в `site/data/checks.json`. Статический
-срез обратной связи живёт в `governance/prompt-feedback.json` (поле `prompt` — id
+срез обратной связи живёт в `pr-ops/prompt-feedback.json` (поле `prompt` — id
 промпта, т.е. имя файла без `.md`); его можно наполнять вручную или скриптом
 синхронизации с GitHub Issues.
 

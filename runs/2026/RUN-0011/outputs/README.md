@@ -22,7 +22,7 @@ related_issues:
 ## Принципы прогона
 
 - Промпты **не изменялись**; предложения по их улучшению — отдельным
-  [RFC](../../../../governance/rfc/prompt-improvement-multichannel-proposal.md).
+  [RFC](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md).
 - Факты о продукте — только из 2 PDF-руководств через выжимку, с цитатами
   `[Документ, §Раздел, с.Страница]`; чего нет — помечено «не найдено в документации».
 - Каждый шаг — отдельный файл с промежуточным результатом (FT-2).
@@ -41,7 +41,7 @@ related_issues:
 | Шаг 5 — варианты доработки (Раздел 3) | [`steps/step-5-options.md`](./steps/step-5-options.md) |
 | Итоговый артефакт + рекомендация | [`final-artifact.md`](../outputs/final-artifact.md) |
 | Лог эксперимента (6 метрик) | [`experiment-log.md`](../logs/experiment-log.md) |
-| RFC по промптам (proposed) | [`../../../governance/rfc/prompt-improvement-multichannel-proposal.md`](../../../../governance/rfc/prompt-improvement-multichannel-proposal.md) |
+| RFC по промптам (proposed) | [`../../../docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md) |
 
 ## Ключевой вывод (TL;DR)
 

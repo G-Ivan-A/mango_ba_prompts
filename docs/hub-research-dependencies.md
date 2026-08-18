@@ -1,14 +1,14 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-08-17
+version: 0.5
+updated: 2026-08-18
 owner: G-Ivan-A
 ai-generated: true
 type: research-dependency-registry
 scope: mango_ba_prompts
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango"
 source_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
-latest_smart_sync_sha: "b683341d22d4f518618917a02d9c7c394658b156"
+latest_smart_sync_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 latest_reference_sha: "56db375465a694ed39f8fcf3e3f8b12c902ab10d"
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/34"
 related_issues:
@@ -47,6 +47,12 @@ related_issues:
   [`research/external-knowledge/external-sources-registry.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/b683341d22d4f518618917a02d9c7c394658b156/research/external-knowledge/external-sources-registry.md).
   Для `mango_ba_prompts` он не копируется в локальный `research/`: релевантные
   строки регистрируются ниже как компактный срез.
+- **Точка синка ≠ точка research (issue #265).** `latest_smart_sync_sha`
+  указывает на последний перенос методологии из Хаба
+  (`3bfa4103c9efbbd59bc951814884920e406982e2`, 2026-08-17,
+  [ADR-0004](adr/0004-hub-resync-2026-08.md)), а `source_sha` — на снимок Хаба,
+  за который закреплены research-permalink'и ниже. Эти два SHA двигаются
+  независимо: обновление методологии не переоткрывает доказательную базу.
 - **HTML-экспорты не регистрируются.** Файлы `*.html` — дубли соответствующих
   `*.md` (RFC §2.5) и якорей-потребителей не получают.
 

@@ -20,7 +20,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 > Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
 > Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
-> отдельно: локально — [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md),
+> отдельно: локально — [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md),
 > канонически — в Хабе ([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md)).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
@@ -50,7 +50,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(governance/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+(ai-rules/agent-onboarding-protocol_old.md). Это предполётный чек-лист — изменение
 файлов запрещено до апрува Пользователя.
 
 Контекст чата диалога:
@@ -58,7 +58,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   контекст.
 - Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
   вопросы. Не выдумывай отсутствующий контекст.
-- При старте нового чата сначала проверь индекс governance/session-digests.md.
+- При старте нового чата сначала проверь индекс pr-ops/session-digests.md.
   Полные суммарии читай только когда тема релевантна текущей задаче.
 
 Канал взаимодействия с репо:
@@ -77,8 +77,8 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   в новый чат. Вопрос инициируешь ты, решение — за Пользователем.
 - При согласии собери суммарию по структуре: Контекст, Решения, Открытые
   вопросы, Следующие шаги — и предложи сохранить её в
-  governance/session-digests.md через issue → PR → review.
-- При старте нового чата читай сначала индекс governance/session-digests.md,
+  pr-ops/session-digests.md через issue → PR → review.
+- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
   полные суммарии — по необходимости. Не пересказывай контекст из памяти,
   ссылайся на артефакты репозитория.
 
@@ -89,12 +89,12 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md,
    AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Если нужны фундаментальные
    governance-контракты, прочитай их в Хабе: governance/repo-model.md,
-   governance/artifact-map.md, standards/project-structure-inheritance.md и
+   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
    standards/session-handover-standard.md.
 3. Чек-лист контекста. Прочитай текст issue и последние комментарии, текущий PR
    (если есть), ближайший README и блок «Быстрый контекст», если он есть.
    Учитывай summary от Пользователя и релевантные записи
-   governance/session-digests.md.
+   pr-ops/session-digests.md.
 4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
    AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
    и issue template, если они релевантны задаче. Если шаблона нет или ссылка на
@@ -147,11 +147,11 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 | Периодическая суммаризация сессии | Отдельный блок перед шагами EXECUTION; не влияет на агента-исполнителя. |
 | Проверка шаблонов | Шаг 4. |
 | Формат постановки задач | Шаг 5. |
-| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `governance/agent-onboarding-protocol.md`. |
+| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `ai-rules/agent-onboarding-protocol_old.md`. |
 
 ## 💬 Суммарии сессий
 
-Новый механизм v0.5 добавляет `governance/session-digests.md`: локальный индекс
+Новый механизм v0.5 добавляет `pr-ops/session-digests.md`: локальный индекс
 суммарий длинных диалогов с внешними агентами. Это не журнал работы Конарда и не
 обязательная нагрузка для Исполнителя. Назначение файла — помочь Пользователю
 переносить контекст между чатами без пересказа по памяти и без чтения всего
@@ -179,11 +179,11 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   выживанию» агента в этой HTOM-команде.
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- [`governance/agent-onboarding-protocol.md`](governance/agent-onboarding-protocol.md)
+- [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
   — локальная адаптированная копия полного протокола онбординга.
-- [`governance/session-digests.md`](governance/session-digests.md) — локальный
+- [`pr-ops/session-digests.md`](pr-ops/session-digests.md) — локальный
   индекс суммарий сессий для передачи контекста между чатами.
-- [`governance/artifact-map.md`](governance/artifact-map.md) — локальная карта
+- [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) — локальная карта
   активных артефактов `mango_ba_prompts`.
 - Хаб [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
   — источник синхронизации v0.5.

@@ -806,7 +806,7 @@ def main(argv=None):
         })
 
     # index.md — карта разделов (замена retrieval-шага, ADR-007 R2).
-    index_md = build_index(meta, index_rows, tokens_total)
+    index_md = build_index(meta, index_rows, tokens_total, root_prefix(out_dir))
     index_tokens = token_util.count_tokens(index_md)
     (out_dir / "index.md").write_text(index_md, encoding="utf-8")
 
@@ -861,7 +861,21 @@ def main(argv=None):
     return 0
 
 
-def build_index(meta, rows, tokens_total) -> str:
+def root_prefix(out_dir: Path) -> str:
+    """Префикс `../`-ов от каталога документа до корня репозитория.
+
+    Глубина каталога не фиксирована: `kb/processed/<doc>/` даёт три уровня, а
+    `kb/processed/mtalker/<guide>/` — четыре. Захардкоженный `../../../` давал
+    битые ссылки на стандарты в index.md вложенных документов.
+    """
+    try:
+        depth = len(out_dir.resolve().relative_to(ROOT).parts)
+    except ValueError:  # каталог вне репозитория — ссылаться относительно нечего
+        depth = 3
+    return "../" * depth
+
+
+def build_index(meta, rows, tokens_total, root: str = "../../../") -> str:
     lines = [
         "---",
         "type: kb-source-index",
@@ -900,8 +914,8 @@ def build_index(meta, rows, tokens_total) -> str:
     lines.append("")
     for idx, source in enumerate(str(meta["source_rel"]).split("; "), start=1):
         lines.append(f"- Источник БЗ, часть {idx}: `{source}`")
-    lines.append("- Стандарт цитирования: [`standards/kb-standard.md`](../../../standards/kb-standard.md), "
-                 "[ADR-007](../../../docs/adr/007-kb-standard.md)")
+    lines.append(f"- Стандарт цитирования: [`standards/kb-standard.md`]({root}standards/kb-standard.md), "
+                 f"[ADR-007]({root}docs/adr/007-kb-standard.md)")
     return "\n".join(lines) + "\n"
 
 

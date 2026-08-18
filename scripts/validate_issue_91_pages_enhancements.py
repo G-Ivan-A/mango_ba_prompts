@@ -55,7 +55,7 @@ def main() -> int:
 
     required_files = (
         "site/data/checks.json",
-        "governance/prompt-feedback.json",
+        "pr-ops/prompt-feedback.json",
     )
     for path in required_files:
         errors += require_file(path)
@@ -123,9 +123,9 @@ def main() -> int:
     if feedback.get("label") != "prompt:feedback":
         errors.append("site/data/checks.json: feedback.label must be 'prompt:feedback'")
 
-    feedback_source = read_json("governance/prompt-feedback.json")
+    feedback_source = read_json("pr-ops/prompt-feedback.json")
     if not isinstance(feedback_source.get("entries"), list):
-        errors.append("governance/prompt-feedback.json: 'entries' must be a list")
+        errors.append("pr-ops/prompt-feedback.json: 'entries' must be a list")
 
     changelog = read_text("CHANGELOG.md")
     errors += require(changelog, "CHANGELOG.md", "Issue #91")

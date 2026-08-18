@@ -88,7 +88,7 @@ related_artifacts:
 - То, чего нет в документации, явно помечено «не найдено в документации» и вынесено в
   вопросы (В5).
 - Промпты в ходе разбора **не изменялись**; предложения по их улучшению оформлены
-  отдельным [RFC](../../../../governance/rfc/prompt-improvement-multichannel-proposal.md).
+  отдельным [RFC](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md).
 
 ## Источники
 

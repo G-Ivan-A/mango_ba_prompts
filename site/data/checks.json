@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-08-17T20:49:22.286Z",
+  "generatedAt": "2026-08-18T06:28:16.310Z",
   "sourceFiles": [
     {
       "path": "runs/",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/"
     },
     {
-      "path": "governance/prompt-feedback.json",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/prompt-feedback.json"
+      "path": "pr-ops/prompt-feedback.json",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/prompt-feedback.json"
     }
   ],
   "statuses": {

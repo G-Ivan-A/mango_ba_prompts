@@ -10,7 +10,7 @@ related_artifacts:
   - "docs/taxonomy.md"
   - "docs/ba-processes/00-index.md"
   - "standards/product-classification-contract.md"
-  - "governance/artifact-map.md"
+  - "pr-ops/artifact-map.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
 ---
@@ -47,7 +47,7 @@ related_issues:
 | Процесс | номер 1-9 | 9 | [docs/taxonomy.md §2](../docs/taxonomy.md) |
 | Подпроцесс | `<процесс>.<шаг>` | N (строки карт процессов) | [docs/ba-processes/00-index.md](../docs/ba-processes/00-index.md) |
 | Артефакт | `kebab-case` тип | ≥20 (см. §4) | этот стандарт |
-| Исполнитель | `человек` \| `llm` \| `гибрид` | 3 | этот стандарт + [governance/artifact-map.md](../governance/artifact-map.md) |
+| Исполнитель | `человек` \| `llm` \| `гибрид` | 3 | этот стандарт + [pr-ops/artifact-map.md](../pr-ops/artifact-map.md) |
 | Контрольная точка (gate) | привязана к подпроцессу | N | [docs/ba-processes/00-index.md](../docs/ba-processes/00-index.md) |
 | Направление разработки | `kebab-case` | 6 | [docs/ba-ecosystem.md](../docs/ba-ecosystem.md) |
 | Область знаний BABOK | KA-код | 6 | [ADR-004](../docs/adr/004-operations-taxonomy.md) |
@@ -187,7 +187,7 @@ human gate (модель «молчание = согласие»,
 ## 6. Ведение реестра
 
 - **Правило С7.** Добавление артефакта = новая строка §4 + (при необходимости)
-  строка в [governance/artifact-map.md](../governance/artifact-map.md). Удалять
+  строка в [pr-ops/artifact-map.md](../pr-ops/artifact-map.md). Удалять
   типы **НЕ СЛЕДУЕТ** — для устаревших использовать состояние
   `superseded/archived`.
 - **Правило С8.** Изменения онтологии, меняющие архитектуру/governance,

@@ -11,7 +11,7 @@ related_artifacts:
   - "prompts/fr-documentation-stepwise.md"
   - "prompts/constraints-documentation-stepwise.md"
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
-  - "governance/rfc/prompt-improvement-bcreq-1025-proposal.md"
+  - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
 ---
@@ -152,7 +152,7 @@ LLM генерировал ФТ, не учитывая, что маршрути�
 
 ## RFC на улучшение промптов
 
-Ссылка: [`governance/rfc/prompt-improvement-bcreq-1025-proposal.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/governance/rfc/prompt-improvement-bcreq-1025-proposal.md)
+Ссылка: [`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/prompt-improvement-bcreq-1025-proposal.md)
 
 | RFC | Промпт | Суть | Статус |
 | --- | --- | --- | --- |

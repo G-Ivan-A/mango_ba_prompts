@@ -9,7 +9,7 @@ scope: strategic
 related_artifacts:
   - "docs/taxonomy.md"
   - "docs/hub-research-dependencies.md"
-  - "governance/migration-manifest.md"
+  - "pr-ops/migration-manifest.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/52"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/263"
@@ -23,7 +23,7 @@ research_deps:
 > ([AI_GOVERNANCE.md](../AI_GOVERNANCE.md)). До утверждения — предложение,
 > не обязательное правило. Формат сознательно выбран **RFC, а не ADR**:
 > перенос практик в Хаб — стратегическое governance-направление
-> (по практике Хаба такие решения живут в `governance/rfc/`), а ADR в
+> (по практике Хаба такие решения живут в `docs/rfc/`), а ADR в
 > `docs/adr/` фиксируют локальные архитектурные решения спока.
 >
 > **Рамка применения.** Хаб — источник лучших практик и обмена опытом, не ограничитель
@@ -65,7 +65,7 @@ ADR-009 v0.3 ([`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-
    публикация в `ai-ba-playbooks` — ручной отбор Пользователем. Автоматизация
    (Smart Sync с фильтрацией) вводится только под доказанную операционную боль.
 3. **Обезличивание обязательно.** Критерий C4 (чистота данных) — жёсткий шлюз:
-   `kb/`, `runs/`, боевые промпты и внутренние записи `governance/` наружу не
+   `kb/`, `runs/`, боевые промпты и внутренние записи `pr-ops/` наружу не
    уходят в исходном виде.
 4. **Проверяемость сохраняется.** Практика передаётся вместе с объявленным
    механизмом проверки (чек-лист, evals-метрика или human-in-the-loop gate);
@@ -111,7 +111,7 @@ ADR-009 v0.3 ([`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-
    `hub-candidate`: что переносим, какие критерии C1–C5 уже выполнены.
 2. **Подготовка.** AI-агент или contributor готовит обобщённую версию
    артефакта (без Mango-специфики) в PR спока; review подтверждает C1–C5.
-3. **RFC в Хабе.** В Хабе предлагается RFC в `governance/rfc/`
+3. **RFC в Хабе.** В Хабе предлагается RFC в `docs/rfc/`
    (для governance-практик) или issue по `issue-workflow` Хаба
    (для прикладных артефактов) со ссылкой на исходник в споке.
 4. **Решение Пользователя.** Принять / отклонить / доработать — финальное
@@ -145,14 +145,14 @@ ADR-009 v0.3 ([`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-
 ## 7. Открытые вопросы
 
 Открытые вопросы по этому RFC ведутся в едином трекере:
-[`governance/BACKLOG.md`](../governance/BACKLOG.md#5-открытые-вопросы).
+[`pr-ops/BACKLOG.md`](../pr-ops/BACKLOG.md#5-открытые-вопросы).
 
 ## Связанные артефакты
 
 - [docs/taxonomy.md](taxonomy.md) — система координат паттернов и промптов.
 - [docs/hub-research-dependencies.md](hub-research-dependencies.md) — поток
   Хаб → спок (research-зависимости).
-- [governance/migration-manifest.md](../governance/migration-manifest.md) —
+- [pr-ops/migration-manifest.md](../pr-ops/migration-manifest.md) —
   снимок миграции из Хаба (исторический контекст).
 - [standards/pattern-standard.md](../standards/pattern-standard.md),
   [standards/prompt-standard.md](../standards/prompt-standard.md) — контракты

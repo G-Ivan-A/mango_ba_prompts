@@ -91,7 +91,7 @@ related_artifacts:
 - `technical-details-solution-design-stepwise` ориентирован на **Раздел 7 (детальный
   тех-дизайн)**; для **раннего «Раздела 3» (продуктовые варианты)** пришлось его
   адаптировать вручную (убрать детализацию ФТ/интеграций). → выделенного промпта
-  «early-options / варианты доработки» в библиотеке нет. → [RFC](../../../../../governance/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P3.
+  «early-options / варианты доработки» в библиотеке нет. → [RFC](../../../../../docs/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P3.
 
 ## Источники
 

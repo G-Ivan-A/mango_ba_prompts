@@ -36,9 +36,9 @@ def main() -> int:
 
     for path in (
         "AI_SESSION_HANDOVER_PROMPT.md",
-        "governance/agent-onboarding-protocol.md",
-        "governance/session-digests.md",
-        "governance/artifact-map.md",
+        "ai-rules/agent-onboarding-protocol_old.md",
+        "pr-ops/session-digests.md",
+        "pr-ops/artifact-map.md",
         ".hub-profile.json",
         "AI_GOVERNANCE.md",
         "CONTRIBUTING.md",
@@ -48,8 +48,8 @@ def main() -> int:
         "docs/adr/0003-creative-mode-governance.md",
         "docs/analysis/migration-strategy-rfc.md",
         "docs/reviews/migration-rfc-human-review-2026-06.md",
-        "governance/BACKLOG.md",
-        "governance/migration-phase1-issues.md",
+        "pr-ops/BACKLOG.md",
+        "pr-ops/migration-phase1-issues.md",
         "README.md",
         "CHANGELOG.md",
     ):
@@ -61,7 +61,7 @@ def main() -> int:
             "version: 0.5",
             SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
-            "governance/session-digests.md",
+            "pr-ops/session-digests.md",
             "агент-исполнитель",
             "Пользователь",
             "Исполнитель",
@@ -69,17 +69,17 @@ def main() -> int:
         errors += reject("AI_SESSION_HANDOVER_PROMPT.md", OLD_SHA, "Иосполнитель")
 
         errors += require(
-            "governance/agent-onboarding-protocol.md",
+            "ai-rules/agent-onboarding-protocol_old.md",
             SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
-            "governance/session-digests.md",
+            "pr-ops/session-digests.md",
             "Пользователь",
             "Исполнитель",
         )
-        errors += reject("governance/agent-onboarding-protocol.md", OLD_SHA, "Иосполнитель")
+        errors += reject("ai-rules/agent-onboarding-protocol_old.md", OLD_SHA, "Иосполнитель")
 
         errors += require(
-            "governance/session-digests.md",
+            "pr-ops/session-digests.md",
             "# Session Digests — Mango BA Prompts",
             "Индекс",
             "Шаблон блока суммарии",
@@ -89,17 +89,17 @@ def main() -> int:
             "issue #72",
         )
         errors += reject(
-            "governance/session-digests.md",
+            "pr-ops/session-digests.md",
             "Архитектура документации и баланс Anti-Inflation vs атомарность",
             "Иосполнитель",
         )
 
         errors += require(
-            "governance/artifact-map.md",
+            "pr-ops/artifact-map.md",
             "# Artifact Map — mango_ba_prompts",
             "/AI_SESSION_HANDOVER_PROMPT.md",
-            "/governance/session-digests.md",
-            "/governance/migration-manifest.md",
+            "/pr-ops/session-digests.md",
+            "/pr-ops/migration-manifest.md",
             "/prompts/",
             "Пользователь",
             "Исполнитель",
@@ -107,7 +107,7 @@ def main() -> int:
             "Hub PR #229",
             "Hub PR #230",
         )
-        errors += reject("governance/artifact-map.md", "Иосполнитель")
+        errors += reject("pr-ops/artifact-map.md", "Иосполнитель")
 
         errors += require(
             "docs/hub-research-dependencies.md",
@@ -142,12 +142,24 @@ def main() -> int:
         )
         errors += reject("CONTRIBUTING.md", "Фаундер", "Иосполнитель")
 
+        # Точку синка issue #72 хранит sync_history: last_sync принадлежит
+        # последнему синку (issue #265) и обязан двигаться вперёд, иначе эта
+        # проверка запрещала бы любой следующий синк из Хаба.
         profile = json.loads(read(".hub-profile.json"))
-        last_sync = profile.get("last_sync", {})
-        if last_sync.get("issue") != "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72":
-            errors.append(".hub-profile.json: last_sync.issue is not issue #72")
+        history = profile.get("sync_history", [])
+        last_sync = next(
+            (
+                entry
+                for entry in [profile.get("last_sync", {})] + history
+                if entry.get("issue") == "https://github.com/G-Ivan-A/mango_ba_prompts/issues/72"
+            ),
+            None,
+        )
+        if last_sync is None:
+            errors.append(".hub-profile.json: sync_history has no record for issue #72")
+            last_sync = {}
         if last_sync.get("hub_sha") != HUB_SHA:
-            errors.append(".hub-profile.json: last_sync.hub_sha is not latest Hub main SHA after PR #229/#230")
+            errors.append(".hub-profile.json: issue #72 record hub_sha is not Hub main SHA after PR #229/#230")
         hub_prs = set(last_sync.get("hub_prs", []))
         for hub_pr in (224, 226, 229, 230):
             if hub_pr not in hub_prs:
@@ -155,17 +167,17 @@ def main() -> int:
         synced_paths = set(last_sync.get("synced_paths", []))
         for path in (
             "AI_SESSION_HANDOVER_PROMPT.md",
-            "governance/agent-onboarding-protocol.md",
-            "governance/session-digests.md",
-            "governance/artifact-map.md",
+            "ai-rules/agent-onboarding-protocol_old.md",
+            "pr-ops/session-digests.md",
+            "pr-ops/artifact-map.md",
             "docs/hub-research-dependencies.md",
             "docs/task-for-konard-template.md",
             "docs/adr/0002-issue48-handover-local-enrichment.md",
             "docs/adr/0003-creative-mode-governance.md",
             "docs/analysis/migration-strategy-rfc.md",
             "docs/reviews/migration-rfc-human-review-2026-06.md",
-            "governance/BACKLOG.md",
-            "governance/migration-phase1-issues.md",
+            "pr-ops/BACKLOG.md",
+            "pr-ops/migration-phase1-issues.md",
             "AI_GOVERNANCE.md",
             "CONTRIBUTING.md",
         ):
@@ -187,16 +199,16 @@ def main() -> int:
             "docs/adr/0003-creative-mode-governance.md",
             "docs/analysis/migration-strategy-rfc.md",
             "docs/reviews/migration-rfc-human-review-2026-06.md",
-            "governance/BACKLOG.md",
-            "governance/migration-phase1-issues.md",
+            "pr-ops/BACKLOG.md",
+            "pr-ops/migration-phase1-issues.md",
         ):
             errors += require(path, "Пользовател")
             errors += reject(path, "Фаундер", "фаундер", "Иосполнитель")
 
         errors += require(
             "README.md",
-            "governance/artifact-map.md",
-            "governance/session-digests.md",
+            "pr-ops/artifact-map.md",
+            "pr-ops/session-digests.md",
             "Пользователь",
         )
         errors += reject("README.md", "Founder & PO", "Иосполнитель")
@@ -204,8 +216,8 @@ def main() -> int:
         errors += require(
             "CHANGELOG.md",
             "Issue #72",
-            "governance/session-digests.md",
-            "governance/artifact-map.md",
+            "pr-ops/session-digests.md",
+            "pr-ops/artifact-map.md",
             "Hub PR #229",
             "Hub PR #230",
             "reference-only",
@@ -214,7 +226,7 @@ def main() -> int:
         errors += reject("CHANGELOG.md", "Фаундер", "Иосполнитель")
 
         errors += require(
-            "governance/migration-manifest.md",
+            "pr-ops/migration-manifest.md",
             "PR [#229]",
             "PR [#230]",
             "external-sources-registry.md",

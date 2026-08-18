@@ -87,7 +87,7 @@ related_artifacts:
 
 - **Шага «нормализация требования» в библиотеке нет.** Декомпозиция (2.1), разведение
   боль/решение (2.2) и gap-анализ (2.5) выполнены вручную. Это устойчивый разрыв
-  цепочки между «контекст» и «вопросы». → [RFC](../../../../../governance/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P2.
+  цепочки между «контекст» и «вопросы». → [RFC](../../../../../docs/rfc/prompt-improvement-multichannel-proposal.md), RFC-MCH-P2.
 
 ## Источники
 
