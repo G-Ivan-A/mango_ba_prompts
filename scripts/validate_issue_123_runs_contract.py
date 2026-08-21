@@ -9,6 +9,17 @@ The check locks the Phase 0 contract from issue #123:
 - existing execution results were moved out of ``docs/ba-process/...``,
   ``prompts/experiments/`` and ``governance/analysis-*`` into run records;
 - canonical docs, data generation and CI point at ``runs/``.
+
+Issue #293 extends the contract with explicit run types:
+
+- ``metadata.yaml`` MAY declare ``run_type``; allowed values are ``execution``,
+  ``statistics`` and ``legacy``. A missing field is read as ``execution``
+  (backward compatibility with runs recorded before issue #293);
+- a run MUST NOT reach outside its own directory: every path in ``inputs``,
+  ``outputs``, ``logs``, ``feedback`` and ``source_paths`` stays inside
+  ``runs/YYYY/RUN-XXXX/`` and never points at ``prompts/``, ``kb/``,
+  ``site/data/`` or ``patterns/``;
+- the standard and the registry document both rules.
 """
 
 from __future__ import annotations
@@ -23,54 +34,74 @@ REQUIRED_METADATA_FIELDS = ("run_id", "process", "version", "date", "author", "m
 RUN_ID_PATTERN = re.compile(r"^RUN-\d{4}$")
 DATE_PATTERN = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
+# issue #293: explicit run types.
+ALLOWED_RUN_TYPES = ("execution", "statistics", "legacy")
+DEFAULT_RUN_TYPE = "execution"
+# Path fields whose values are artifacts of the run itself and therefore
+# MUST stay inside runs/YYYY/RUN-XXXX/. ``related_artifacts`` is traceability,
+# not an artifact of the run, so it is deliberately excluded.
+RUN_PATH_FIELDS = ("inputs", "outputs", "logs", "feedback", "source_paths")
+# Working artifacts a run is never allowed to touch.
+PROTECTED_DIRS = ("prompts/", "kb/", "site/data/", "patterns/")
+
 EXPECTED_RUNS = {
     "RUN-0001": {
         "year": "2026",
+        "run_type": "execution",
         "files": ["outputs/tz-stats-prototype-2026-05.md"],
         "old_paths": ["prompts/experiments/tz-stats-prototype-2026-05.md"],
     },
     "RUN-0002": {
         "year": "2026",
+        "run_type": "execution",
         "files": ["outputs/user-story_gen-from-raw-request_2026-05-26.md"],
         "old_paths": ["prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md"],
     },
     "RUN-0003": {
         "year": "2026",
+        "run_type": "execution",
         "files": ["outputs/usecase_gen-stepwise-alignment_2026-05-26.md"],
         "old_paths": ["prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md"],
     },
     "RUN-0004": {
         "year": "2026",
+        "run_type": "statistics",
         "files": ["outputs/prompts-audit-2026-05-26.md"],
         "old_paths": ["prompts/experiments/prompts-audit-2026-05-26.md"],
     },
     "RUN-0005": {
         "year": "2026",
+        "run_type": "statistics",
         "files": ["outputs/prompts-selftest-2026-05-26.md"],
         "old_paths": ["prompts/experiments/prompts-selftest-2026-05-26.md"],
     },
     "RUN-0006": {
         "year": "2026",
+        "run_type": "execution",
         "files": ["outputs/session-debug-summarizer-2026-06-13.md"],
         "old_paths": ["prompts/experiments/session-debug-summarizer-2026-06-13.md"],
     },
     "RUN-0007": {
         "year": "2026",
+        "run_type": "execution",
         "files": ["outputs/fr-generation-1027-live_2026-06-16.md"],
         "old_paths": ["prompts/experiments/fr-generation-1027-live_2026-06-16.md"],
     },
     "RUN-0008": {
         "year": "2026",
+        "run_type": "statistics",
         "files": ["outputs/kb-citation-check-2026-06-16.md"],
         "old_paths": ["prompts/experiments/kb-citation-check-2026-06-16.md"],
     },
     "RUN-0009": {
         "year": "2026",
+        "run_type": "statistics",
         "files": ["outputs/standards-applied-ab-2026-06-16.md"],
         "old_paths": ["prompts/experiments/standards-applied-ab-2026-06-16.md"],
     },
     "RUN-0010": {
         "year": "2026",
+        "run_type": "statistics",
         "files": [
             "outputs/2026-06-17-bcreq-1025-email-routing.md",
             "outputs/analysis-bcreq-1025-2026-06-17.md",
@@ -82,6 +113,7 @@ EXPECTED_RUNS = {
     },
     "RUN-0011": {
         "year": "2026",
+        "run_type": "execution",
         "files": [
             "inputs/kb-files.md",
             "inputs/raw-requirement.md",
@@ -111,6 +143,7 @@ EXPECTED_RUNS = {
     },
     "RUN-0012": {
         "year": "2026",
+        "run_type": "execution",
         "files": [
             "inputs/raw-requirement.md",
             "outputs/README.md",
@@ -126,8 +159,79 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0013": {
+        "year": "2026",
+        "run_type": "statistics",
+        "files": [
+            "inputs/chat-export.md",
+            "inputs/raw-requirement.md",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-1-research-and-questions.md",
+            "outputs/steps/step-2-state-matrix.md",
+            "outputs/steps/step-3-customer-answers.md",
+            "outputs/steps/step-4-glossary-and-context.md",
+            "outputs/steps/step-5-top-level-fr.md",
+            "outputs/steps/step-6-fr-detail-and-constraints.md",
+            "outputs/steps/step-7-rework-after-meeting.md",
+            "outputs/steps/step-8-usecase-matrix.md",
+            "feedback/review-notes.md",
+            "logs/experiment-log.md",
+        ],
+        "old_paths": [],
+    },
+    "RUN-0014": {
+        "year": "2026",
+        "run_type": "statistics",
+        "files": [
+            "inputs/raw-requirement.md",
+            "inputs/kb-files.md",
+            "inputs/chat-export-1075.json",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-0-as-is.md",
+            "outputs/steps/step-1-fact-check-and-uncertainty.md",
+            "outputs/steps/step-2-contradictions.md",
+            "feedback/ba-review.md",
+            "logs/experiment-log.md",
+            "logs/metrics.md",
+            "logs/chat-transcript.md",
+        ],
+        "old_paths": [],
+    },
+    "RUN-0017": {
+        "run_type": "statistics",
+        "year": "2026",
+        "files": [
+            "inputs/README.md",
+            "inputs/transcript.md",
+            "inputs/1076-chat-export-1787301046512.json",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/quality-findings.md",
+            "outputs/steps/step-1-as-is-and-glossary.md",
+            "outputs/steps/step-2-object-model.md",
+            "outputs/steps/step-3-section-2-agreed.md",
+            "outputs/steps/step-4-scenarios.md",
+            "outputs/steps/step-5-mtalker-facts.md",
+            "outputs/steps/step-6-fr-v1-and-rework.md",
+            "outputs/steps/step-7-fr-detailed.md",
+            "outputs/steps/step-8-constraints-and-matrix.md",
+            "outputs/steps/step-9-responsibility-boundary.md",
+            "outputs/steps/step-10-doc-verification.md",
+            "outputs/steps/step-11-manager-comment.md",
+            "feedback/ba-review-notes.md",
+            "logs/experiment-log.md",
+            "logs/turn-metrics.md",
+        ],
+        "old_paths": [],
+    },
     "RUN-0018": {
         "year": "2026",
+        "run_type": "statistics",
         "files": [
             "inputs/README.md",
             "inputs/chat-export.md",
@@ -164,6 +268,66 @@ def require_path(path: str) -> list[str]:
 def require_text(path: str, *needles: str) -> list[str]:
     text = read_text(path)
     return [f"{path}: missing {needle!r}" for needle in needles if needle not in text]
+
+
+def parse_yaml_lists(path: Path) -> dict[str, list[str]]:
+    """Collect ``key:`` blocks followed by ``  - value`` items.
+
+    Deliberately minimal: run metadata uses flat scalars and flat lists only.
+    """
+
+    data: dict[str, list[str]] = {}
+    current: str | None = None
+    for line in path.read_text(encoding="utf-8").splitlines():
+        key_match = re.match(r"^([A-Za-z0-9_-]+):\s*$", line)
+        if key_match:
+            current = key_match.group(1)
+            data.setdefault(current, [])
+            continue
+        item_match = re.match(r"^\s+-\s+(.+?)\s*$", line)
+        if item_match and current:
+            data[current].append(item_match.group(1).strip().strip('"'))
+            continue
+        if re.match(r"^([A-Za-z0-9_-]+):\s*\S", line):
+            current = None
+    return data
+
+
+def effective_run_type(metadata: dict[str, str]) -> str:
+    """``run_type`` of a run; runs recorded before issue #293 default to execution."""
+
+    return metadata.get("run_type") or DEFAULT_RUN_TYPE
+
+
+def check_run_type(location: str, metadata: dict[str, str]) -> list[str]:
+    declared = metadata.get("run_type")
+    if declared is None:
+        return []
+    if declared not in ALLOWED_RUN_TYPES:
+        return [
+            f"{location}: run_type {declared!r} not in {list(ALLOWED_RUN_TYPES)}"
+        ]
+    return []
+
+
+def check_run_boundaries(location: str, run_prefix: str, path: Path) -> list[str]:
+    """Issue #293: run artifacts MUST stay inside runs/YYYY/RUN-XXXX/."""
+
+    errors: list[str] = []
+    lists = parse_yaml_lists(path)
+    for field in RUN_PATH_FIELDS:
+        for value in lists.get(field, []):
+            if value.startswith(PROTECTED_DIRS):
+                errors.append(
+                    f"{location}: {field} points at protected working artifact {value!r}"
+                )
+                continue
+            normalized = value if value.startswith("runs/") else f"{run_prefix}/{value}"
+            if not normalized.startswith(f"{run_prefix}/"):
+                errors.append(
+                    f"{location}: {field} path {value!r} escapes {run_prefix}/"
+                )
+    return errors
 
 
 def parse_simple_yaml(path: Path) -> dict[str, str]:
@@ -204,6 +368,16 @@ def check_run(run_id: str, spec: dict[str, object]) -> list[str]:
         if metadata.get("date") and not DATE_PATTERN.match(metadata["date"]):
             errors.append(f"runs/{year}/{run_id}/metadata.yaml: invalid date format")
 
+        location = f"runs/{year}/{run_id}/metadata.yaml"
+        errors += check_run_type(location, metadata)
+        errors += check_run_boundaries(location, f"runs/{year}/{run_id}", metadata_path)
+
+        expected_type = spec.get("run_type")
+        if expected_type and effective_run_type(metadata) != expected_type:
+            errors.append(
+                f"{location}: run_type {effective_run_type(metadata)!r} != registry {expected_type!r}"
+            )
+
     for relative in spec["files"]:  # type: ignore[index]
         target = run_dir / str(relative)
         if not target.exists():
@@ -228,6 +402,21 @@ def check_expected_runs() -> list[str]:
             if (ROOT / str(old_path)).exists():
                 errors.append(f"{old_path}: moved execution result still exists at old path")
 
+    return errors
+
+
+def check_registry_run_types() -> list[str]:
+    """Every run in the registry table carries its run_type column."""
+
+    errors: list[str] = []
+    text = read_text("runs/README.md")
+    for run_id, spec in EXPECTED_RUNS.items():
+        expected = str(spec["run_type"])  # type: ignore[index]
+        row = [line for line in text.splitlines() if line.startswith(f"| [`{run_id}`]")]
+        if not row:
+            errors.append(f"runs/README.md: no registry row for {run_id}")
+        elif f"`{expected}`" not in row[0]:
+            errors.append(f"runs/README.md: {run_id} row missing run_type `{expected}`")
     return errors
 
 
@@ -257,17 +446,27 @@ def check_docs_and_ci() -> list[str]:
         "model",
         "status",
         "RUN-XXXX",
+        "run_type",
+        "execution",
+        "statistics",
+        "## Типы прогонов",
+        "## Границы прогона",
     )
     errors += require_text(
         "standards/runs-contract-standard.md",
         "runs/YYYY/RUN-XXXX/",
         "metadata.yaml",
         "scripts/validate_issue_123_runs_contract.py",
+        "run_type",
+        "## Типы прогонов",
+        "## Границы прогона",
+        "`prompts/`, `kb/`, `site/data/`, `patterns/`",
     )
     errors += require_text("README.md", "runs/", "Единый каталог результатов")
     errors += require_text("docs/ba-process/README.md", "runs/")
     errors += require_text("docs/ba-processes/README.md", "runs/")
-    errors += require_text("CHANGELOG.md", "Issue #123", "runs/")
+    errors += require_text("CHANGELOG.md", "Issue #123", "runs/", "Issue #293", "run_type")
+    errors += require_path("docs/analysis/2026-08-21-runs-type-gap-analysis.md")
     errors += require_text(
         ".github/workflows/github-pages.yml",
         "Validate issue #123 runs contract",
@@ -281,6 +480,7 @@ def main() -> int:
     errors = []
     errors += check_expected_runs()
     errors += check_docs_and_ci()
+    errors += check_registry_run_types()
 
     if errors:
         print("issue-123 runs contract validation: FAIL")

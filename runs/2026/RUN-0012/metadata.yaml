@@ -5,6 +5,7 @@ date: 2026-07-14
 author: "BA-IH + LLM"
 model: "claude-opus-4-8"
 status: works-with-edits
+run_type: execution
 source_paths:
   - runs/2026/RUN-0012/outputs/final-artifact.md
   - runs/2026/RUN-0012/outputs/README.md

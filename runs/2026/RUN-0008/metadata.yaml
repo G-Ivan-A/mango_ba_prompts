@@ -5,6 +5,7 @@ date: 2026-06-16
 author: "BA/AI"
 model: "not-recorded"
 status: draft
+run_type: statistics
 source_paths:
   - runs/2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md
 outputs:

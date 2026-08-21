@@ -1,8 +1,8 @@
 ---
 status: draft
-version: 0.3
+version: 0.6
 updated: 2026-08-21
-ai-generated: true
+temperature: 0.1
 ---
 
 # Changelog — mango_ba_prompts
@@ -45,11 +45,220 @@ ai-generated: true
 ### Changed — Issue #271 расширение контракта runs полем `metrics`
 
 - В [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
-  (v0.1 → v0.2) и [`runs/README.md`](runs/README.md) добавлено разрешённое поле
-  `metrics` с правилами: `token_method` обязателен при указании токенов,
-  `success_rate_basis` — при `success_rate`.
+  (v0.3 → v0.4) и [`runs/README.md`](runs/README.md) (v0.3 → v0.4) для уже
+  разрешённого поля `metrics` зафиксированы правила ключей: `token_method`
+  обязателен при указании токенов, `success_rate_basis` — при `success_rate`,
+  `verdict` согласован с `logs/experiment-log.md`.
 - [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py):
-  в `EXPECTED_RUNS` добавлен `RUN-0018`.
+  в `EXPECTED_RUNS` добавлен `RUN-0018`; регрессия разметки типов дополнена в
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py).
+- По итогам ревью PR #289: номер прогона изменён `RUN-0013 → RUN-0018` (номер
+  `RUN-0013` занят в `main` задачей #268, `RUN-0014` — задачей #269, `RUN-0017` —
+  задачей #270); перегенерированные файлы `site/data/*.json` откачены к состоянию
+  `main` — веб-представление не входит в границы прогона
+  (см. раздел «Границы прогона» в [`runs/README.md`](runs/README.md)) и собирается
+  в CI (`.github/workflows/github-pages.yml`).
+- Прогону присвоен `run_type: statistics`: цель задачи #271 — «собрать
+  эмпирические данные для анализа кейсов и формирования Quality Baseline», а не
+  получение артефакта.
+
+### Changed — Issue #293 контракт прогонов: явное разделение типов (исполнение vs фиксация статистики)
+
+- Гипотеза о пробеле контракта **подтверждена** и обоснована в
+  [`docs/analysis/2026-08-21-runs-type-gap-analysis.md`](docs/analysis/2026-08-21-runs-type-gap-analysis.md):
+  в `standards/runs-contract-standard.md` v0.1 нет ни типа прогона, ни разделения
+  метрик успеха, ни правил границ; при этом `RUN-0013` смешивает шкалу артефакта
+  (`status: works-with-edits`) со статистикой коммуникации (`success_rate` по
+  репликам БА), а `RUN-0014` зафиксирован «для статистики», но оценён по шкале
+  артефакта.
+- [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  расширен до v0.3: разделы «Типы прогонов», «Критерий выбора типа прогона»,
+  «Термин «Прогон»» и «Границы прогона», обязательное
+  поле `run_type` со словарём `execution` | `statistics` | `legacy`, запрет
+  смешивать метрики двух типов в одной выборке.
+- Зафиксирован запрет на изменение рабочих артефактов прогонами: прогон создаёт
+  файлы только внутри `runs/YYYY/RUN-XXXX/` и не изменяет `prompts/`, `kb/`,
+  `site/data/`, `patterns/`; изменения этих каталогов инициирует Пользователь
+  отдельными задачами.
+- По итогам ревью PR #294 зафиксирован **критерий выбора типа**: тип берётся из
+  формулировки цели в постановке задачи («зафиксировать прогон / собрать
+  эмпирические данные» → `statistics`; «выполнить процесс / получить артефакт» →
+  `execution`), а не из состава файлов в `outputs/`. Наличие ФТ или матрицы UC в
+  статистическом прогоне — следствие успешной коммуникации, а не цель задачи.
+- Разметка пересмотрена по этому критерию (обоснование по каждому прогону — Ф-5
+  анализа): `statistics` — `RUN-0004`, `RUN-0005`, `RUN-0008`, `RUN-0009`,
+  `RUN-0010` (issue #107 — сохранить и разобрать лог эксперимента), `RUN-0013`
+  (issue #268), `RUN-0014` (issue #269), `RUN-0017` (issue #270 — все три
+  «Зафиксировать прогон… собрать эмпирические данные»); `execution` — `RUN-0001`,
+  `RUN-0002`, `RUN-0003`, `RUN-0006`, `RUN-0007`, `RUN-0011` (issue #109),
+  `RUN-0012` (issue #261).
+- Термин «Прогон» **сохранён**: это устоявшийся русскоязычный эквивалент *run*
+  (прогон тестов/эксперимента); «запуск» означает инициацию, «проход» — итерацию
+  внутри процесса. Обоснование — раздел «Термин «Прогон»» стандарта.
+- Обратная совместимость: `metadata.yaml` без `run_type` валиден и читается как
+  `execution`; записи Phase 0 без исходной постановки размечаются по
+  зафиксированному назначению, при неразрешимой неоднозначности — `legacy`.
+- [`runs/README.md`](runs/README.md) v0.2: таблица типов, раздел границ и колонка
+  `run_type` в реестре прогонов.
+- [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  проверяет словарь `run_type`, совпадение типа в `metadata.yaml` и в реестре, а
+  также правило границ (пути `inputs`/`outputs`/`logs`/`feedback`/`source_paths`
+  не выходят за каталог прогона). Регрессия дефолта, границ и согласованной
+  разметки типов покрыта
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py).
+- В [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md) заведён техдолг `S-006` —
+  восстановление цепочки анализ → RFC → стандарт для контракта прогонов.
+
+### Added — Issue #269 фиксация прогона RUN-0014 (задача 1075, создание сделки в amoCRM при звонке)
+
+- Добавлена запись [`runs/2026/RUN-0014/`](runs/2026/RUN-0014/metadata.yaml) —
+  реальный прогон промпта
+  [`glossary-context-understanding-stepwise`](prompts/glossary-context-understanding-stepwise.md)
+  по задаче 1075. Прогон **частичный**: целевой артефакт (Разделы 1 и 2 ТЗ) не
+  получен, завершён 1 шаг из 4 (`success_rate` 0.25). Данные — промежуточные, не
+  golden case; запись сделана для статистики и анализа результативности промптов
+  и галлюцинаций.
+- Метрики в [`metadata.yaml`](runs/2026/RUN-0014/metadata.yaml) **измерены**, а не
+  оценены: 207 499 токенов (вход 195 948 / выход 11 551), 2 114 с ≈ 35,2 мин,
+  модель `qwen3.7-plus`. Источник цифр — служебные поля `usage` выгрузки чата;
+  воспроизведение — [`experiments/run-0014-chat-export/`](experiments/run-0014-chat-export/README.md).
+- Зафиксированы пять дефектов Д-1…Д-5
+  ([`feedback/ba-review.md`](runs/2026/RUN-0014/feedback/ba-review.md)), в том
+  числе одно проверенное фактическое искажение (утверждение «"Неразобранное" —
+  не сделка и не этап воронки» опровергается документацией amoCRM) и переход к
+  следующему шагу без подтверждения человека. Отдельно описан конфликт правил 2
+  и 5 самого промпта.
+- В [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  разрешённые дополнительные поля `metadata.yaml` расширены полями `feedback` и
+  `metrics` (токены, длительность, `success_rate`, `eval`) — требование issue #269
+  фиксировать метрики прогона.
+- Реестры обновлены: [`runs/README.md`](runs/README.md) и
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+
+### Added — Issue #268 прогон RUN-0013 (BCREQ-1059, лимиты и приоритеты распределения обращений)
+
+- Зафиксирован реальный прогон БА с LLM по задаче 1059 на основе экспорта
+  истории чата, приложенного к
+  [issue #268](https://github.com/G-Ivan-A/mango_ba_prompts/issues/268):
+  [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/metadata.yaml). Оформлен как один
+  комплексный прогон с разделением на 8 эпизодов и отдельным вердиктом по
+  каждому (вариант, разрешённый постановкой): эпизоды — стадии одного
+  непрерывного диалога с общим глоссарием и сквозной нумерацией ФТ, а не
+  независимые кейсы.
+- Метрики прогона: 242 сообщения активной ветки (121 итерация БА ↔ модель),
+  2026-06-18 — 2026-07-31 (10 рабочих дней), модели `qwen3.7-plus` и
+  `qwen3.8-max-preview`, 79 405 522 входных / 543 180 выходных токенов,
+  вердикт `works-with-edits`, success_rate ≈ 0.62 (75 из 121 ответов приняты
+  БА без явной правки). Подсчёт воспроизводится скриптом
+  [`experiments/analyze_chat_metrics.py`](experiments/analyze_chat_metrics.py).
+- [`feedback/review-notes.md`](runs/2026/RUN-0013/feedback/review-notes.md)
+  заполнен не заглушкой, а разбором с привязкой к номерам реплик: 6 паттернов
+  успеха (генерация матриц, сверка терминологии с руководствами ЛК/КЦ,
+  критический анализ) и 12 зафиксированных дефектов (придуманные названия
+  настроек интерфейса, использование данных устаревшей встречи, перегенерация
+  согласованных формулировок, смешение уровней 4.x / 4.x.x).
+- Вход сохранён ссылкой на вложение issue с разбором структуры экспорта
+  ([`inputs/chat-export.md`](runs/2026/RUN-0013/inputs/chat-export.md)) —
+  файл 4,6 МБ в репозиторий не копируется; расширенное ТЗ Заказчика приведено
+  дословно в [`inputs/raw-requirement.md`](runs/2026/RUN-0013/inputs/raw-requirement.md).
+- Обновлены реестр [`runs/README.md`](runs/README.md) и проверка контракта
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  (RUN-0013 добавлен в ожидаемый состав `runs/2026/`).
+### Changed — Issue #267 актуализация onboarding-протокола до v1.5 и проверка корневых файлов
+
+- Навигация переведена на актуальный протокол
+  [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
+  (v1.5, рабочая копия Хаба на
+  [`3bfa410`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/3bfa4103c9efbbd59bc951814884920e406982e2)):
+  обновлены [`README.md`](README.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  (+ `.executable.md`), [`standards/cascading-context-loading-standard.md`](standards/cascading-context-loading-standard.md)
+  и [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md). Раньше все точки входа
+  вели на архивную v1.2.
+- Архив v1.2 сохранён (traceability, файл не удаляется), но переведён в
+  `status: superseded`, лишён `entrypoint` и снабжён баннером «АРХИВ»:
+  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  (+ `.executable.md`). В README он остаётся отдельной строкой как архив.
+- В протокол v1.5 добавлена единственная локальная дельта — `owner: G-Ivan-A`:
+  `frontmatter-docs-standard.md` Хаба требует `owner` для governance-артефактов,
+  а в хабовом оригинале поля нет. Возврат дельты в Хаб — задача S-005 бэклога.
+
+### Added — Issue #267 локальные валидаторы Хаба
+
+- Добавлен каталог [`tools/`](tools/README.md) с рабочими копиями валидаторов
+  Хаба на [`6c57eae`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/6c57eae8a2713566878be715856884b660dd2a16):
+  [`validate-frontmatter.sh`](tools/validate-frontmatter.sh) и
+  [`validate-file-naming.sh`](tools/validate-file-naming.sh) (spoke-вариант из
+  `templates/spoke/`). Запуск — `make validate`; в CI —
+  [`.github/workflows/validate.yml`](.github/workflows/validate.yml) на каждый
+  PR и push в `main`.
+- Локальные дельты валидаторов ограничены и задокументированы в
+  [`tools/README.md`](tools/README.md): расширен список допустимых полей класса
+  `default` (провенанс-поля спицы, которые потребляет
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py) и
+  `standards/cascading-context-loading-standard.md`) и заморожен
+  [`tools/file-naming-legacy-allowlist.txt`](tools/file-naming-legacy-allowlist.txt)
+  на 26 легаси-файлов. Ни одна проверка канонического валидатора не ослаблена:
+  любой новый файл проверяется в полную силу (проверено контрольным прогоном на
+  файле-нарушителе).
+
+### Fixed — Issue #267 frontmatter корневых файлов
+
+- Из корневых файлов удалено поле `ai-generated`, прямо запрещённое
+  `frontmatter-docs-standard.md` Хаба, и добавлено обязательное `temperature`:
+  [`README.md`](README.md), [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
+  [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md), [`CONTRIBUTING.md`](CONTRIBUTING.md),
+  [`CHANGELOG.md`](CHANGELOG.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  (+ `.executable.md`). Область `make validate` (корень, `ai-rules/`, `tools/`)
+  проходит без ошибок.
+- Некритические находки не исправлялись «по пути», а зафиксированы задачами
+  S-001…S-005 в [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md): легаси-именование 26
+  хронологических файлов, frontmatter-долг вне области (23 062 ошибки в 1 287
+  файлах, преимущественно генерируемые `kb/` и `runs/`), поле `ai-generated` в
+  1 243 файлах, расхождение стандарта и валидатора Хаба по классу `ai-rules/`.
+### Added — Issue #270 фиксация прогона RUN-0017 (задача 1076)
+
+- Добавлен прогон [`runs/2026/RUN-0017/`](runs/2026/RUN-0017/metadata.yaml) —
+  Proof of Execution реальной сессии BA по задаче 1076 (передача Артефактов ВКС
+  во Внешнюю систему BPMSoft / конфигурация «Эстейт»), 56 реплик, 11 эпизодов,
+  2 536 400 токенов, ~3 ч.
+- Состав: [`inputs/`](runs/2026/RUN-0017/inputs/README.md) (исходный экспорт чата
+  и воспроизводимый транскрипт), [`outputs/`](runs/2026/RUN-0017/outputs/README.md)
+  (разбор по 11 шагам, цепочка промптов, BA-анализ качества, промежуточный
+  артефакт), [`logs/`](runs/2026/RUN-0017/logs/experiment-log.md) (лог
+  эксперимента и метрики по репликам),
+  [`feedback/`](runs/2026/RUN-0017/feedback/ba-review-notes.md) (реальная
+  обратная связь BA из диалога).
+- Добавлен переиспользуемый конвертер экспорта чата
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py)
+  (только stdlib) — транскрипт и метрики по репликам воспроизводятся из
+  исходного JSON.
+- Прогон зарегистрирован в реестре [`runs/README.md`](runs/README.md) и в
+  `EXPECTED_RUNS` валидатора
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+- Оговорка: результат прогона — **промежуточный**, это не эталонный шаблон и не
+  golden case; фиксация выполнена для сбора статистики и BA-анализа процессов,
+  эффективности промптов, успешных результатов и галлюцинаций.
+- По итогам ревью PR #288: номер прогона изменён `RUN-0013 → RUN-0017` (номер
+  `RUN-0013` занят в `main` задачей #268, `RUN-0014` — задачей #269, на
+  `RUN-0013` также претендуют открытые PR #289 и #290); перегенерированные
+  файлы `site/data/*.json` откачены к состоянию `main` — веб-представление не
+  входит в границы задачи на прогон и собирается в CI
+  (`.github/workflows/github-pages.yml`).
+- Добавлен аудит
+  [`docs/audit/audit-run-scope-boundary-2026-08-21.md`](docs/audit/audit-run-scope-boundary-2026-08-21.md)
+  — пошаговый разбор, почему исполнитель счёл регенерацию `site/data/` частью
+  задачи на прогон, и предложения Р-1…Р-6 по ужесточению контрактов Run и
+  правил онбординга (правки самих стандартов вынесены в отдельную задачу).
+- По итогам ревью PR #288 (решение по файлам вне `runs/`): в
+  [`runs/README.md`](runs/README.md) добавлен раздел «Локальные инструменты
+  воспроизводимости», а в
+  [`runs/2026/RUN-0017/inputs/README.md`](runs/2026/RUN-0017/inputs/README.md) —
+  явная оговорка о статусе скриптов
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py) и
+  [`experiments/chat_export_probe.py`](experiments/chat_export_probe.py): это
+  локальные инструменты, запускаемые вручную
+  (`python3 scripts/chat_export_to_markdown.py <export.json> ...`), не входящие в
+  CI и не зависящие от GitHub Actions.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 

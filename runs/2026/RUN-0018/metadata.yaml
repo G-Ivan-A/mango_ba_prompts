@@ -5,6 +5,7 @@ date: 2026-07-21
 author: "BA-IH + LLM"
 model: "qwen3.7-plus"
 status: works-with-edits
+run_type: statistics
 source_paths:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/271
 inputs:

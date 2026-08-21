@@ -5,6 +5,7 @@ date: 2026-05-26
 author: "BA/AI"
 model: "not-recorded"
 status: draft
+run_type: statistics
 source_paths:
   - runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md
 outputs:
