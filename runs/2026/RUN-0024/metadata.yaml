@@ -1,0 +1,77 @@
+run_id: RUN-0024
+process: fr-drafting-58093-amocrm-deal-card-new-tab
+version: "0.1"
+date: 2026-08-21
+author: "BA-IH + LLM"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+result_type: intermediate
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/281
+inputs:
+  - inputs/README.md
+  - inputs/58093-chat-export-1787301612928.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-section-2-review.md
+  - outputs/steps/step-2-etom-oda-prompt-fr-v1.md
+  - outputs/steps/step-3-mockup-lk-setting.md
+  - outputs/steps/step-4-integration-settings-audit.md
+  - outputs/steps/step-5-consolidated-list.md
+  - outputs/steps/step-6-hierarchy-restructure.md
+  - outputs/steps/step-7-drop-current-behaviour.md
+  - outputs/steps/step-8-redundant-4-2-2.md
+  - outputs/steps/step-9-edition-without-4-2-2.md
+  - outputs/steps/step-10-deal-card-term.md
+  - outputs/steps/step-11-four-questions-priority-restored.md
+  - outputs/steps/step-12-constraints-split.md
+  - outputs/steps/step-13-new-vs-repeat-client.md
+  - outputs/steps/step-14-settings-outcome-wording.md
+  - outputs/steps/step-15-confirmation-4-3.md
+  - outputs/steps/step-16-section-4-render.md
+  - outputs/steps/step-17-section-6-constraints.md
+  - outputs/steps/step-18-ba-final-section-4.md
+  - outputs/steps/step-19-stop-and-summary.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+metrics:
+  turns: 38
+  episodes: 19
+  iterations: 19
+  ba_edits: 7
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.89
+  success_rate_basis: "17 из 19 эпизодов приняты БА с правками или без; отклонены эпизод 1 (реплика 2: «оставим исходные формулироваки проблематики») и эпизод 6 (реплика 12: «это не основное требование, это поведение системы текущее»)"
+  hallucinations: 4
+  hallucinations_shipped: 3
+  tokens_output: 37341
+  tokens_thinking: 22202
+  tokens_context_in_max: 72352
+  tokens_context_refeed_sum: 1216743
+  token_method: "provider-usage:content_list[*].usage"
+  duration_wall_clock_s: 6976
+  duration_active_s: 4252
+  duration_generation_s: 914
+  eval: "Диалог удержал формат требований и дошёл до зафиксированного БА раздела 4, но достоверность не обеспечена: наименования элементов интерфейса, заданные БА с пометкой «явно указывать», были молча заменены моделью и в подменённом виде попали в финальный текст БА; раздел 6 собран из непроверяемых ограничений без ссылки на источник; итоговое резюме перечисляет как утверждённые разделы, снятые БА. Все содержательные дефекты требований нашёл человек. Результат промежуточный: разделы 4 и 6 не сведены, критерии приёмки не запрошены."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/281
+related_artifacts:
+  - prompts/fr-documentation-stepwise.md
+  - prompts/constraints-documentation-stepwise.md
+  - standards/experiment-log-standard.md
+  - standards/runs-contract-standard.md
+  - scripts/chat_export_to_markdown.py
+  - experiments/parse_58093_chat_export.py
+related_runs:
+  - RUN-0014
+  - RUN-0022

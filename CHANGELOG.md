@@ -13,6 +13,40 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #281 реальный прогон 58093 (RUN-0024) как эмпирические данные
+
+- Добавлен [`runs/2026/RUN-0024/`](runs/2026/RUN-0024/metadata.yaml) —
+  `run_type: statistics`, `result_type: intermediate`: фиксация реально
+  состоявшегося диалога БА с LLM (Proof of Execution) по задаче 58093
+  (доработка интеграции amoCRM ↔ MANGO OFFICE: автооткрытие Карточки сделки в
+  новой вкладке браузера при входящем звонке).
+- Прогон оформлен как **один комплексный run с разметкой на 19 эпизодов** и
+  отдельным вердиктом по каждому:
+  [`outputs/README.md`](runs/2026/RUN-0024/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0024/outputs/steps).
+- Вердикт прогона — `works-with-edits`, `success_rate = 17/19 ≈ 0.89`.
+  Зафиксированы 4 дефекта достоверности (3 дошли до финального текста БА):
+  молчаливая подмена наименований UI вопреки «явно указывать», непроверяемые
+  ссылки на инструкцию, придуманные ограничения раздела 6, искажение объёма в
+  итоговом резюме
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0024/outputs/quality-findings.md)).
+- Использован ad-hoc-промпт (eTOM/ODA), а не промпт библиотеки; раздел 6 выдан
+  без обязательного основания ограничений
+  ([`outputs/prompts-chain.md`](runs/2026/RUN-0024/outputs/prompts-chain.md)).
+- Транскрипт и метрики по репликам получены детерминированно из приложенного к
+  issue #281 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py);
+  метрики по эпизодам — скриптом
+  [`experiments/parse_58093_chat_export.py`](experiments/parse_58093_chat_export.py)
+  (локальные инструменты воспроизводимости, не входят в CI).
+- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0024 и
+  раздел «Локальные инструменты воспроизводимости»), `EXPECTED_RUNS` в
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  и `EXPECTED_CLASSIFICATION` в
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py).
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
+
 ### Added — Issue #273 прогон RUN-0020: фиксация диалога БА с LLM по задаче 1065
 
 - Добавлен [`runs/2026/RUN-0020/`](runs/2026/RUN-0020/metadata.yaml) —
