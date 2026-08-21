@@ -45,7 +45,7 @@ TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
 SOURCE_DIR ?= kb/sources/mango-cc-manual
 
-.PHONY: validate validate-frontmatter validate-file-naming validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
+.PHONY: validate validate-frontmatter validate-file-naming validate-structure validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
@@ -60,7 +60,7 @@ help:
 	@echo "  make kb-validate  — проверить конвейер БЗ (stdlib-only, как в CI)"
 	@echo ""
 	@echo "Валидаторы Хаба (tools/README.md):"
-	@echo "  make validate     — frontmatter + именование файлов + протокол онбординга"
+	@echo "  make validate     — frontmatter + именование файлов + структура репозитория + протокол онбординга"
 	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
 	@echo "  make kb-clean     — удалить временные файлы (pycache, _diagram.png)"
 	@echo ""
@@ -142,13 +142,19 @@ kb-clean:
 # остальной корпус — технический долг в pr-ops/BACKLOG.md.
 FRONTMATTER_SCOPE := $(wildcard *.md) ai-rules tools
 
-validate: validate-frontmatter validate-file-naming validate-onboarding
+validate: validate-frontmatter validate-file-naming validate-structure validate-onboarding
 
 validate-frontmatter:
 	./tools/validate-frontmatter.sh $(FRONTMATTER_SCOPE)
 
 validate-file-naming:
 	./tools/validate-file-naming.sh
+
+# Замок на базовую структуру HTOM-команды: канонический корень, архив только
+# в .archive/, неприкосновенные runs/ и kb/ (issue #291).
+validate-structure:
+	./tools/validate-repository-structure.sh
+	$(PYTHON) scripts/validate_issue_291_root_structure.py
 
 # Регрессионный тест issue #267: навигация ведёт на v1.5, архив не потерян.
 validate-onboarding:
