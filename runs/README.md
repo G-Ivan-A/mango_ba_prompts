@@ -78,6 +78,31 @@ runs/
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-07-14 | bcreq-1069-restricted-api-key | [`outputs/final-artifact.md`](2026/RUN-0012/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0012/outputs/README.md) |
 | [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-31 | bcreq-1059-multichannel-slots-limits | [`outputs/final-artifact.md`](2026/RUN-0013/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0013/outputs/README.md) |
 | [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
+| [`RUN-0017`](2026/RUN-0017/metadata.yaml) | 2026-07-24 | task-1076-vks-artifacts-bpmsoft | [`outputs/README.md`](2026/RUN-0017/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0017/outputs/final-artifact.md) |
+
+## Локальные инструменты воспроизводимости
+
+Часть входов прогона (например, экспорт истории чата в JSON) не читается глазами
+и разворачивается в markdown скриптом. Такие конвертеры — **локальные
+инструменты воспроизводимости, а не рабочие артефакты прогона**:
+
+| Инструмент | Назначение |
+| --- | --- |
+| [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md). |
+| [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
+
+Правила обращения с ними:
+
+- запускаются **вручную**, локально, командой вида
+  `python3 scripts/chat_export_to_markdown.py <export.json> ...`;
+- **не** вызываются из GitHub Actions и не входят в CI, поэтому остаются
+  работоспособными при отключённых Actions (в том числе в приватном репозитории);
+- требуют только стандартной библиотеки Python 3 — внешних зависимостей нет;
+- по статусу аналогичны [`scripts/sync_from_hub.py`](../scripts/sync_from_hub.py)
+  и [`scripts/generate-pages-data.mjs`](../scripts/generate-pages-data.mjs):
+  инструменты для работы с репозиторием, а не содержимое прогона;
+- границы прогона не нарушают: ничего не пишут в `prompts/`, `kb/`, `patterns/`
+  и `site/data/`, вывод кладут только внутрь `runs/YYYY/RUN-XXXX/`.
 
 ## Валидация
 
