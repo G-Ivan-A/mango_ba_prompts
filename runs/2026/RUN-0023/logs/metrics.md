@@ -34,7 +34,7 @@ Issue #271 и [`standards/runs-contract-standard.md`](../../../../standards/runs
 
 ```bash
 python3 experiments/chat_export_usage_metrics.py \
-  runs/2026/RUN-0022/inputs/1040-chat-export-1787301483841.json
+  runs/2026/RUN-0023/inputs/1040-chat-export-1787301483841.json
 ```
 
 ## Токены и латентность по эпизодам
