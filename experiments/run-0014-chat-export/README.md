@@ -8,12 +8,12 @@ scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
 related_artifacts:
-  - "runs/2026/RUN-0013/metadata.yaml"
+  - "runs/2026/RUN-0014/metadata.yaml"
 ---
 
-# Рендер экспорта чата в артефакты прогона (RUN-0013)
+# Рендер экспорта чата в артефакты прогона (RUN-0014)
 
-> **Зачем.** Прогон [`RUN-0013`](../../runs/2026/RUN-0013/metadata.yaml) зафиксирован
+> **Зачем.** Прогон [`RUN-0014`](../../runs/2026/RUN-0014/metadata.yaml) зафиксирован
 > не в репозитории, а во внешнем веб-интерфейсе LLM. Единственный Proof of Execution —
 > JSON-экспорт чата, приложенный к
 > [issue #269](https://github.com/G-Ivan-A/mango_ba_prompts/issues/269).
@@ -33,14 +33,14 @@ related_artifacts:
 ## Воспроизведение
 
 ```bash
-python3 experiments/run-0013-chat-export/render_chat_export.py \
-    runs/2026/RUN-0013/inputs/chat-export-1075.json \
-    --transcript runs/2026/RUN-0013/logs/chat-transcript.md \
-    --front-matter experiments/run-0013-chat-export/transcript-front-matter.yaml \
+python3 experiments/run-0014-chat-export/render_chat_export.py \
+    runs/2026/RUN-0014/inputs/chat-export-1075.json \
+    --transcript runs/2026/RUN-0014/logs/chat-transcript.md \
+    --front-matter experiments/run-0014-chat-export/transcript-front-matter.yaml \
     --metrics-json -
 ```
 
 Скрипт stdlib-only, сети не требует. Стенограмма собирается по активной ветке
 диалога (от `currentId` вверх по `parentId`); альтернативная ветка регенерации
 первого ответа в неё не входит и учтена отдельно в
-[`../../runs/2026/RUN-0013/logs/metrics.md`](../../runs/2026/RUN-0013/logs/metrics.md).
+[`../../runs/2026/RUN-0014/logs/metrics.md`](../../runs/2026/RUN-0014/logs/metrics.md).

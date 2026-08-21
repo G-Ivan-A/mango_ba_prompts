@@ -9,12 +9,12 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
 ---
 
-# Метрики прогона RUN-0013 (задача 1075)
+# Метрики прогона RUN-0014 (задача 1075)
 
 > **Источник цифр — измерение, не оценка.** Все значения извлечены из
 > служебных полей `usage` выгрузки чата
 > ([`../inputs/chat-export-1075.json`](../inputs/chat-export-1075.json))
-> скриптом [`render_chat_export.py`](../../../../experiments/run-0013-chat-export/README.md).
+> скриптом [`render_chat_export.py`](../../../../experiments/run-0014-chat-export/README.md).
 > Команда воспроизведения приведена в README скрипта.
 
 ## Общие показатели

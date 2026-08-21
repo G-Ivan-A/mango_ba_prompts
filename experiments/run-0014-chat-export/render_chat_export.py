@@ -7,9 +7,9 @@
 
 Запуск:
 
-    python3 experiments/run-0013-chat-export/render_chat_export.py \
-        runs/2026/RUN-0013/inputs/chat-export-1075.json \
-        --transcript runs/2026/RUN-0013/logs/chat-transcript.md \
+    python3 experiments/run-0014-chat-export/render_chat_export.py \
+        runs/2026/RUN-0014/inputs/chat-export-1075.json \
+        --transcript runs/2026/RUN-0014/logs/chat-transcript.md \
         --metrics-json -
 """
 

@@ -13,5 +13,5 @@ related_issues:
 > [issue #269](https://github.com/G-Ivan-A/mango_ba_prompts/issues/269) экспорта
 > чата (`../inputs/chat-export-1075.json`), активная ветка диалога.
 > Воспроизводится командой из
-> [`experiments/run-0013-chat-export/README.md`](../../../../experiments/run-0013-chat-export/README.md).
+> [`experiments/run-0014-chat-export/README.md`](../../../../experiments/run-0014-chat-export/README.md).
 > Правки текста не вносились: это сырой Proof of Execution, а не отредактированный артефакт.
