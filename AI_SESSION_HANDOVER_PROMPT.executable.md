@@ -1,8 +1,8 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
-ai-generated: true
+version: 0.2
+updated: 2026-08-21
+temperature: 0.1
 type: prompt
 layer: executable
 full_version: "AI_SESSION_HANDOVER_PROMPT.md"
@@ -24,7 +24,7 @@ escalation trigger below is true.
 - TRIGGER-3: в этом executable-слое отсутствует требуемый раздел prompt или
   точная формулировка, без которой нельзя выполнить текущую задачу.
 - TRIGGER-4: найдено противоречие между этим prompt, full-файлом,
-  `ai-rules/agent-onboarding-protocol_old.executable.md`, issue или PR.
+  `ai-rules/agent-onboarding-protocol.md`, issue или PR.
 
 Если ни один триггер не сработал, копируй/исполняй только блок ниже.
 
@@ -44,8 +44,8 @@ escalation trigger below is true.
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта:
-начни с ai-rules/agent-onboarding-protocol_old.executable.md, а full-версию читай
-только по триггерам эскалации. Это предполётный чек-лист — изменение файлов
+выполни ai-rules/agent-onboarding-protocol.md (v1.5, EXECUTION, Часть B, Шаги
+1-4). Это предполётный чек-лист — изменение файлов
 запрещено до апрува Пользователя.
 
 Контекст чата диалога:

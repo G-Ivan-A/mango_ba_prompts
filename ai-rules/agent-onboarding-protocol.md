@@ -3,12 +3,13 @@ status: canonical
 version: 1.5
 updated: 2026-08-11
 temperature: 0.1
+owner: G-Ivan-A
 executable: true
 entrypoint: true
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3bfa4103c9efbbd59bc951814884920e406982e2/ai-rules/agent-onboarding-protocol.md"
 source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 source_of_truth: "hybrid-Intelligence-lab"
-sync_policy: "explicit spoke sync from pinned Hub commit; no local edits"
+sync_policy: "explicit spoke sync from pinned Hub commit; локально допустима только governance-метадата (owner), тело не редактируется"
 scope: mango_ba_prompts
 ---
 

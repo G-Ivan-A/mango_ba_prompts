@@ -28,9 +28,9 @@ related_issues:
 
 ```bash
 python3 scripts/chat_export_to_markdown.py \
-  runs/2026/RUN-0013/inputs/1076-chat-export-1787301046512.json \
-  --transcript runs/2026/RUN-0013/inputs/transcript.md \
-  --metrics runs/2026/RUN-0013/logs/turn-metrics.md
+  runs/2026/RUN-0017/inputs/1076-chat-export-1787301046512.json \
+  --transcript runs/2026/RUN-0017/inputs/transcript.md \
+  --metrics runs/2026/RUN-0017/logs/turn-metrics.md
 ```
 
 Особенности формата экспорта, из-за которых нужен скрипт, а не «просто открыть

@@ -1,9 +1,9 @@
 ---
 status: draft
-version: 0.6
-updated: 2026-08-17
+version: 0.7
+updated: 2026-08-21
+temperature: 0.1
 owner: G-Ivan-A
-ai-generated: true
 research_deps:
   - "docs/hub-research-dependencies.md#adr-009-repo-split"
   - "docs/hub-research-dependencies.md#ba-process-ontology"

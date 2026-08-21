@@ -1,67 +1,50 @@
 run_id: RUN-0013
-process: task-1076-vks-artifacts-bpmsoft
+process: bcreq-1059-multichannel-slots-limits
 version: "0.1"
-date: 2026-07-24
-author: "BA-IH (фиксация: AI issue solver)"
+date: 2026-07-31
+author: "BA-IH + LLM"
 model: "qwen3.7-plus + qwen3.8-max-preview"
 status: works-with-edits
-result_type: intermediate
-metrics:
-  turns: 56
-  user_turns: 28
-  assistant_turns: 28
-  episodes: 11
-  duration_s: 10960
-  duration_h: 3.04
-  window_utc: "2026-07-24T08:38:55Z — 2026-07-24T11:41:35Z"
-  input_tokens: 2431466
-  output_tokens: 104934
-  reasoning_tokens: 72891
-  total_tokens: 2536400
-  max_context_tokens: 197064
-eval:
-  verdict: works-with-edits
-  success_rate: 0.82
-  episodes_works: 5
-  episodes_works_with_edits: 4
-  episodes_needs_rework: 2
-  hallucinations_found: 0
-  hallucinations_prevented: 1
-  defects_found: 6
-  defects_found_by_human: 3
-  defects_found_by_model: 2
+duration: "2026-06-18 → 2026-07-31 (10 рабочих дней сессий, 44 календарных дня)"
+tokens_input: 79405522
+tokens_output: 543180
+turns: 242
+verdict: works-with-edits
+success_rate: "0.62 (75 из 121 ответов приняты БА без явной правки/критики; оценка по маркерам в репликах БА, см. logs/experiment-log.md)"
 source_paths:
-  - runs/2026/RUN-0013/inputs/1076-chat-export-1787301046512.json
+  - runs/2026/RUN-0013/outputs/final-artifact.md
+  - runs/2026/RUN-0013/outputs/README.md
 inputs:
-  - inputs/README.md
-  - inputs/1076-chat-export-1787301046512.json
-  - inputs/transcript.md
+  - inputs/raw-requirement.md
+  - inputs/chat-export.md
 outputs:
   - outputs/README.md
-  - outputs/prompts-chain.md
-  - outputs/quality-findings.md
   - outputs/final-artifact.md
-  - outputs/steps/step-1-as-is-and-glossary.md
-  - outputs/steps/step-2-object-model.md
-  - outputs/steps/step-3-section-2-agreed.md
-  - outputs/steps/step-4-scenarios.md
-  - outputs/steps/step-5-mtalker-facts.md
-  - outputs/steps/step-6-fr-v1-and-rework.md
-  - outputs/steps/step-7-fr-detailed.md
-  - outputs/steps/step-8-constraints-and-matrix.md
-  - outputs/steps/step-9-responsibility-boundary.md
-  - outputs/steps/step-10-doc-verification.md
-  - outputs/steps/step-11-manager-comment.md
+  - outputs/prompts-chain.md
+  - outputs/steps/step-1-research-and-questions.md
+  - outputs/steps/step-2-state-matrix.md
+  - outputs/steps/step-3-customer-answers.md
+  - outputs/steps/step-4-glossary-and-context.md
+  - outputs/steps/step-5-top-level-fr.md
+  - outputs/steps/step-6-fr-detail-and-constraints.md
+  - outputs/steps/step-7-rework-after-meeting.md
+  - outputs/steps/step-8-usecase-matrix.md
 feedback:
-  - feedback/ba-review-notes.md
+  - feedback/review-notes.md
 logs:
   - logs/experiment-log.md
-  - logs/turn-metrics.md
 related_issues:
-  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/270
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/268
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/109
 related_artifacts:
+  - docs/rfc/prompt-improvement-multichannel-proposal.md
   - prompts/glossary-context-understanding-stepwise.md
+  - prompts/questions-customer-understanding-stepwise.md
   - prompts/fr-documentation-stepwise.md
-  - scripts/chat_export_to_markdown.py
+  - prompts/constraints-documentation-stepwise.md
+  - prompts/uc-modeling-stepwise.md
+  - prompts/us-modeling-stepwise.md
+  - prompts/meeting-customer-documentation-stepwise.md
 related_runs:
+  - RUN-0011
   - RUN-0012
