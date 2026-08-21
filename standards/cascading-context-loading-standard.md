@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-08-21
 ai-generated: true
 type: contract
 scope: context-loading
@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 related_artifacts:
   - "AI_SESSION_HANDOVER_PROMPT.executable.md"
-  - "ai-rules/agent-onboarding-protocol_old.executable.md"
+  - "ai-rules/agent-onboarding-protocol.md"
   - "prompts/README.executable.md"
   - "docs/ba-processes/00-index.executable.md"
   - "standards/ba-ontology.executable.md"

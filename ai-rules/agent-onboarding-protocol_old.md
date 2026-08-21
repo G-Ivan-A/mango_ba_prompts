@@ -1,15 +1,19 @@
 ---
-status: canonical
+status: superseded
 version: 1.2
-updated: 2026-06-13
-ai-generated: true
+updated: 2026-08-21
+temperature: 0.1
 executable: true
-entrypoint: true
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md"
 source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 source_of_truth: "hybrid-Intelligence-lab"
 sync_policy: "explicit spoke sync from pinned Hub commit"
 ---
+
+> 🗄️ **АРХИВ (superseded, issue #267).** Актуальный протокол онбординга —
+> [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5).
+> Этот файл сохранён только для traceability: он фиксирует локальную адаптацию
+> v1.2 и не должен использоваться агентами как точка входа.
 
 > **LLM Loading Contract — full layer.**
 > Start with [`ai-rules/agent-onboarding-protocol_old.executable.md`](agent-onboarding-protocol_old.executable.md).
