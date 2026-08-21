@@ -7,7 +7,7 @@
 измеренные значения провайдера — `input_tokens`, `output_tokens`,
 `output_tokens_details.reasoning_tokens`.
 
-Использован для RUN-0024 (issue #275).
+Использован для RUN-0025 (issue #275).
 
     python3 experiments/chat_export_usage_metrics.py <export.json>
 

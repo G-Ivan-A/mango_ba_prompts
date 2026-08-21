@@ -32,7 +32,7 @@ frontmatter и маркера. Дрейфа формулировок нет — 
 ```bash
 python3 - <<'PY'
 import json, re
-d = json.load(open('runs/2026/RUN-0024/inputs/1040-chat-export-1787301483841.json'))[0]
+d = json.load(open('runs/2026/RUN-0025/inputs/1040-chat-export-1787301483841.json'))[0]
 m = d['chat']['history']['messages']
 ch = []; mid = d['currentId']
 while mid: ch.append(m[mid]); mid = m[mid].get('parentId')
