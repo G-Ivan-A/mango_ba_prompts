@@ -13,6 +13,31 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #280 реальный прогон 997 (RUN-0022) как эмпирические данные
+
+- Добавлен [`runs/2026/RUN-0022/`](runs/2026/RUN-0022/metadata.yaml) —
+  `run_type: statistics`: фиксация реально состоявшегося диалога БА↔LLM
+  (`qwen3.6-plus`) по валидации ФТ (схема IVR, правила обработки входящего
+  вызова). Данные промежуточные (не эталон), фиксируются для статистики и
+  анализа эффективности промптов, успехов и галлюцинаций.
+- Прогон размечен на **10 эпизодов** с отдельным вердиктом по каждому:
+  [`outputs/README.md`](runs/2026/RUN-0022/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0022/outputs/steps).
+- Вердикт прогона — `works-with-edits`, `success_rate = 5/10 = 0.5`.
+  Зафиксированы 4 галлюцинации (1 — в итоговом артефакте) и дефекты Г1–Г4,
+  все найдены человеком
+  ([`feedback/review-notes.md`](runs/2026/RUN-0022/feedback/review-notes.md)).
+- Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
+  issue #280 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py);
+  токены и латентность — из поля `usage` платформы
+  ([`logs/metrics.md`](runs/2026/RUN-0022/logs/metrics.md)).
+- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0022 и
+  ссылка в разделе «Локальные инструменты воспроизводимости») и `EXPECTED_RUNS`
+  в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
+
 ### Added — Issue #273 прогон RUN-0020: фиксация диалога БА с LLM по задаче 1065
 
 - Добавлен [`runs/2026/RUN-0020/`](runs/2026/RUN-0020/metadata.yaml) —
