@@ -1,0 +1,65 @@
+run_id: RUN-0021
+process: task-59295-fr-validation-email-forward
+version: "0.1"
+date: 2026-05-25
+author: "BA-IH (фиксация: AI issue solver)"
+model: "qwen3.6-plus"
+status: partial-success
+run_type: statistics
+result_type: intermediate
+metrics:
+  turns: 6
+  user_turns: 3
+  assistant_turns: 3
+  episodes: 3
+  duration_s: 573
+  duration_h: 0.16
+  window_utc: "2026-05-25T10:25:26Z — 2026-05-25T10:34:59Z"
+  input_tokens: 15304
+  output_tokens: 4355
+  reasoning_tokens: 1977
+  total_tokens: 19659
+  token_method: "provider-reported: content_list[*].usage из экспорта чата (input_tokens, output_tokens, output_tokens_details.reasoning_tokens)"
+eval:
+  verdict: works-with-edits
+  summary: "Прогон доказал, что процессная часть fr-validation-legacy v1.0 удерживается на короткой сессии (3 из 3 эпизодов без самовольных правок), и не доказал доказательность выводов: все 3 галлюцинации — ссылки на непроверенный источник, финальная версия ФТ не сгенерирована."
+  success_rate: 0.33
+  success_rate_basis: "1 из 3 эпизодов без выявленных галлюцинаций и недоказанных утверждений (E1). Шкала «принято человеком» неприменима: явных оценок результата в диалоге нет, 7 вопросов согласования остались без ответа — прямое сравнение с success_rate прогонов, считанных по принятию человеком (например RUN-0020), некорректно"
+  episodes_works: 1
+  episodes_works_with_edits: 2
+  episodes_needs_rework: 0
+  hallucinations_found: 3
+  hallucinations_prevented: 2
+  defects_found: 7
+  defects_found_by_human: 0
+  defects_found_by_model: 0
+  defects_found_in_review: 7
+  human_feedback_turns: 0
+  open_approval_questions: 7
+source_paths:
+  - runs/2026/RUN-0021/inputs/59295-chat-export-1787301537378.json
+inputs:
+  - inputs/README.md
+  - inputs/59295-chat-export-1787301537378.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-prompt-and-role-ack.md
+  - outputs/steps/step-2-source-fr-audit.md
+  - outputs/steps/step-3-constraint-6-1-8.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/turn-metrics.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/278
+related_artifacts:
+  - prompts/fr-validation-legacy.md
+  - scripts/chat_export_to_markdown.py
+related_runs:
+  - RUN-0018
+  - RUN-0020
