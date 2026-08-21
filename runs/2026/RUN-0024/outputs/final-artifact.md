@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/275"
 related_artifacts:
-  - "runs/2026/RUN-0023/outputs/quality-findings.md"
+  - "runs/2026/RUN-0024/outputs/quality-findings.md"
 ---
 
 # Финальный артефакт прогона 1040 — редакция раздела 4 (Вариант 2)
