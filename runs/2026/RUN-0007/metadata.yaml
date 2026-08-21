@@ -5,6 +5,7 @@ date: 2026-06-16
 author: "BA/AI"
 model: "not-recorded"
 status: works-with-edits
+run_type: execution
 source_paths:
   - runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md
 outputs:

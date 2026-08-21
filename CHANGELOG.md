@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: 2026-08-21
 temperature: 0.1
 ---
@@ -12,6 +12,37 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #293 контракт прогонов: явное разделение типов (исполнение vs фиксация статистики)
+
+- Гипотеза о пробеле контракта **подтверждена** и обоснована в
+  [`docs/analysis/2026-08-21-runs-type-gap-analysis.md`](docs/analysis/2026-08-21-runs-type-gap-analysis.md):
+  в `standards/runs-contract-standard.md` v0.1 нет ни типа прогона, ни разделения
+  метрик успеха, ни правил границ; при этом `RUN-0013` смешивает шкалу артефакта
+  (`status: works-with-edits`) со статистикой коммуникации (`success_rate` по
+  репликам БА), а `RUN-0014` зафиксирован «для статистики», но оценён по шкале
+  артефакта.
+- [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  расширен до v0.2: разделы «Типы прогонов» и «Границы прогона», обязательное
+  поле `run_type` со словарём `execution` | `statistics` | `legacy`, запрет
+  смешивать метрики двух типов в одной выборке.
+- Зафиксирован запрет на изменение рабочих артефактов прогонами: прогон создаёт
+  файлы только внутри `runs/YYYY/RUN-XXXX/` и не изменяет `prompts/`, `kb/`,
+  `site/data/`, `patterns/`; изменения этих каталогов инициирует Пользователь
+  отдельными задачами.
+- Обратная совместимость: `metadata.yaml` без `run_type` валиден и читается как
+  `execution`. Все 14 существующих прогонов размечены явно: `statistics` —
+  `RUN-0004`, `RUN-0005`, `RUN-0008`, `RUN-0009` (аудит корпуса, self-test, два
+  A/B-сравнения), остальные — `execution`.
+- [`runs/README.md`](runs/README.md) v0.2: таблица типов, раздел границ и колонка
+  `run_type` в реестре прогонов.
+- [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  проверяет словарь `run_type`, совпадение типа в `metadata.yaml` и в реестре, а
+  также правило границ (пути `inputs`/`outputs`/`logs`/`feedback`/`source_paths`
+  не выходят за каталог прогона). Регрессия дефолта и границ покрыта
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py).
+- В [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md) заведён техдолг `S-006` —
+  восстановление цепочки анализ → RFC → стандарт для контракта прогонов.
 
 ### Added — Issue #269 фиксация прогона RUN-0014 (задача 1075, создание сделки в amoCRM при звонке)
 

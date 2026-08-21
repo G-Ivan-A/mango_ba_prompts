@@ -5,6 +5,7 @@ date: 2026-06-17
 author: "BA-IH + LLM"
 model: "qwen3.7 plus"
 status: works-with-edits
+run_type: execution
 source_paths:
   - runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md
   - runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md
