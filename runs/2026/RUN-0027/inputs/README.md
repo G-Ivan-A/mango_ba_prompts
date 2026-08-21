@@ -34,24 +34,27 @@ sha256sum 978-chat.json  # fe82438cfe5141738d73d9dde0d6499253ce3e380b7d85be56e53
 
 | Файл | Что это | Как получен |
 | --- | --- | --- |
-| [`chat-transcript.md`](./chat-transcript.md) | Дословная стенограмма активной ветки диалога, 10 сообщений | `python3 scripts/chat_export_to_markdown.py 978-chat.json --transcript …` |
+| [`978-chat-export-1787301801668.json`](./978-chat-export-1787301801668.json) | Дословный экспорт истории чата (392 360 Б), как приложен к issue #284. Не редактировался. | `curl -sL` по ссылке вложения |
+| [`chat-transcript.md`](./chat-transcript.md) | Дословная стенограмма активной ветки диалога, 10 сообщений | `python3 scripts/chat_export_to_markdown.py <экспорт> --transcript …` |
 | [`../logs/turn-metrics.md`](../logs/turn-metrics.md) | Пореплико́вая таблица usage платформы (in/out/reasoning, UTC, вложения) | тот же скрипт, ключ `--metrics` |
-| [`../logs/grounding-check.md`](../logs/grounding-check.md) | Проверка заземления сносок реплики 5 на реально полученную выдачу веб-инструмента | `python3 experiments/signature_citation_grounding_probe.py 978-chat.json` |
+| [`../logs/grounding-check.md`](../logs/grounding-check.md) | Проверка заземления сносок реплики 5 на реально полученную выдачу веб-инструмента | `python3 experiments/signature_citation_grounding_probe.py <экспорт>` |
 
 Полная команда воспроизведения из корня репозитория:
 
 ```bash
-python3 scripts/chat_export_to_markdown.py 978-chat.json \
+python3 scripts/chat_export_to_markdown.py \
+  runs/2026/RUN-0027/inputs/978-chat-export-1787301801668.json \
   --transcript runs/2026/RUN-0027/inputs/chat-transcript.md \
   --metrics    runs/2026/RUN-0027/logs/turn-metrics.md
-python3 experiments/signature_citation_grounding_probe.py 978-chat.json
+python3 experiments/signature_citation_grounding_probe.py \
+  runs/2026/RUN-0027/inputs/978-chat-export-1787301801668.json
 ```
 
-Исходный JSON в репозиторий не копируется: бо́льшую часть объёма занимают
-служебные поля платформы (`user_id`, `chat_id`, `content_list[phase=
-thinking_summary]`, `usage`, выдача веб-инструмента). Прямая ссылка на вложение
-issue сохранена выше — контракт `runs/` это допускает («входные данные корректно
-сохранены **или** на них есть прямая ссылка»).
+Исходный JSON сохранён в репозитории без изменений —
+[`978-chat-export-1787301801668.json`](./978-chat-export-1787301801668.json),
+как в RUN-0017, RUN-0020 и RUN-0022. Контрольные суммы файла в репозитории
+совпадают с приведёнными выше, поэтому команды воспроизведения можно запускать
+прямо на нём, без обращения к вложению issue.
 
 ## Внешние источники, переданные внутри диалога
 

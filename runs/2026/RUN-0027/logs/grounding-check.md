@@ -20,7 +20,8 @@ related_issues:
 ## Метод
 
 ```bash
-python3 experiments/signature_citation_grounding_probe.py 978-chat.json
+python3 experiments/signature_citation_grounding_probe.py \
+  runs/2026/RUN-0027/inputs/978-chat-export-1787301801668.json
 ```
 
 Скрипт [`experiments/signature_citation_grounding_probe.py`](../../../../experiments/signature_citation_grounding_probe.py)
