@@ -1,0 +1,67 @@
+run_id: RUN-0021
+process: fr-drafting-975-ineffective-call-parameters
+version: "0.1"
+date: 2026-07-10
+author: "BA-IH + LLM"
+model: "qwen3.7-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/274
+inputs:
+  - inputs/README.md
+  - inputs/chat-transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-glossary-init.md
+  - outputs/steps/step-2-fr-strategy-and-source-access.md
+  - outputs/steps/step-3-manual-audit-report.md
+  - outputs/steps/step-4-fr-v1.1.md
+  - outputs/steps/step-5-entity-hierarchy-fix.md
+  - outputs/steps/step-6-section-3-restructure.md
+  - outputs/steps/step-7-ui-vs-business-terms.md
+  - outputs/steps/step-8-kpi-item-rollback.md
+  - outputs/steps/step-9-variants-and-dialing-modes.md
+  - outputs/steps/step-10-defaults-and-atomicity.md
+  - outputs/steps/step-11-rule-term-and-audit.md
+  - outputs/steps/step-12-v1.5-and-call-vs-attempt.md
+  - outputs/steps/step-13-goal-2.3-cleanup.md
+  - outputs/steps/step-14-final-proofreading-rounds.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 38
+  iterations: 38
+  ba_edits: 11
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.71
+  success_rate_basis: "27 из 38 эпизодов приняты БА без содержательной переработки; 11 эпизодов потребовали отката, исправления или повторной постановки (эпизоды 5, 7, 8, 9, 10, 14, 18, 21, 28, 35, 36)"
+  hallucinations: 6
+  hallucinations_shipped: 2
+  tokens_input: 22225
+  tokens_output: 60124
+  tokens_thinking: 25931
+  tokens_dialog_total: 82349
+  tokens_context_refeed_estimate: 8744881
+  token_method: "tiktoken:cl100k_base"
+  duration_wall_clock_s: 65860
+  duration_active_s: 11554
+  duration_generation_s: 2200
+  eval: "Прогон доказал, что связка двух пошаговых промптов доводит ФТ от глоссария до согласованного документа v1.5 за 38 эпизодов и что модель корректно принимает фактические поправки БА. Прогон не доказал достоверности фактических утверждений о руководстве КЦ: из шести дефектов достоверности два дошли до финального документа, а три финальные вычитки подряд дали противоречивые результаты (4 -> 2 -> 1 критическое замечание по почти идентичному тексту)."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/274
+related_artifacts:
+  - prompts/glossary-context-understanding-stepwise.md
+  - prompts/fr-validation-stepwise.md
+  - standards/experiment-log-standard.md
+  - standards/runs-contract-standard.md
+related_runs:
+  - RUN-0017
+  - RUN-0018
