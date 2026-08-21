@@ -121,6 +121,7 @@ runs/
 | [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-31 | `statistics` | bcreq-1059-multichannel-slots-limits | [`outputs/final-artifact.md`](2026/RUN-0013/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0013/outputs/README.md) |
 | [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | `statistics` | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
 | [`RUN-0017`](2026/RUN-0017/metadata.yaml) | 2026-07-24 | `statistics` | task-1076-vks-artifacts-bpmsoft | [`outputs/README.md`](2026/RUN-0017/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0017/outputs/final-artifact.md) |
+| [`RUN-0020`](2026/RUN-0020/metadata.yaml) | 2026-07-10 | `statistics` | task-1065-context-and-questions-a7a | [`outputs/README.md`](2026/RUN-0020/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0020/outputs/quality-findings.md), [`outputs/final-artifact.md`](2026/RUN-0020/outputs/final-artifact.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -130,7 +131,7 @@ runs/
 
 | Инструмент | Назначение |
 | --- | --- |
-| [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md). |
+| [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md) и [`RUN-0020`](2026/RUN-0020/inputs/README.md). |
 | [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
 
 Правила обращения с ними:
