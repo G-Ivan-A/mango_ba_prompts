@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T16:22:54.821Z",
+  "generatedAt": "2026-08-21T18:41:49.103Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
@@ -264,7 +264,7 @@
           "nextArtifact": "prompts/ft-tz-orchestration-stepwise.md или отдельный issue на workflow prompt."
         }
       ],
-      "checks": 131,
+      "checks": 171,
       "coveredPrompts": 18
     },
     {
@@ -323,7 +323,7 @@
           "nextArtifact": "Новый active statistics prompt вместо reliance on archive."
         }
       ],
-      "checks": 6,
+      "checks": 12,
       "coveredPrompts": 3
     },
     {
@@ -434,7 +434,7 @@
           "nextArtifact": "prompts/tender-validation-stepwise.md или tender-fit chain."
         }
       ],
-      "checks": 56,
+      "checks": 72,
       "coveredPrompts": 7
     },
     {
@@ -542,7 +542,7 @@
         }
       ],
       "gaps": [],
-      "checks": 98,
+      "checks": 124,
       "coveredPrompts": 10
     },
     {
@@ -700,8 +700,8 @@
           "nextArtifact": "Коммуникационный governance prompt."
         }
       ],
-      "checks": 17,
-      "coveredPrompts": 5
+      "checks": 24,
+      "coveredPrompts": 6
     },
     {
       "id": 7,

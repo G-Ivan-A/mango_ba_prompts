@@ -1,8 +1,8 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-11
-ai-generated: true
+version: 0.4
+updated: 2026-08-21
+temperature: 0.1
 executable: true
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom/AI_QUICK_RULES.md"
 source_sha: "117e4a553815af9b05d841c81dd725dd4a4c4d44"

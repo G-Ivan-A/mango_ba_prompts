@@ -1,0 +1,31 @@
+name: Validate governance
+
+# Валидаторы Хаба (issue #267): frontmatter и именование хронологических
+# артефактов. Оба скрипта — рабочие копии из hybrid-Intelligence-lab, локальные
+# дельты описаны в tools/README.md. Проверка лёгкая (bash + coreutils), поэтому
+# запускается на каждый PR и push в main.
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Frontmatter and file naming
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate frontmatter (root, ai-rules/, tools/)
+        run: make validate-frontmatter
+      - name: Validate file naming
+        run: make validate-file-naming
+      - name: Validate onboarding protocol navigation (issue #267)
+        run: make validate-onboarding

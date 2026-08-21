@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-03
+version: 0.2
+updated: 2026-08-21
 ai-generated: true
 type: backlog
 scope: mango_ba_prompts-migration-execution
@@ -339,6 +339,23 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md#веб-ресурс-app-после-приватизации);
       выбор — решение Пользователя до смены видимости. Источник:
       [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
+
+## 6. Технический долг соответствия стандартам Хаба (issue #267)
+
+Раздел заведён при подключении валидаторов Хаба
+([`tools/README.md`](../tools/README.md)) в issue
+[#267](https://github.com/G-Ivan-A/mango_ba_prompts/issues/267). Критические
+несоответствия корневых файлов исправлены в том же PR; ниже — некритические
+находки, которые требуют отдельных reviewable задач, потому что затрагивают
+массовые переименования, генерируемые артефакты или сам Хаб.
+
+| ID | Находка | Масштаб | Почему не в issue #267 | Приоритет |
+| --- | --- | --- | --- | --- |
+| S-001 | Легаси-именование хронологических артефактов: `docs/adr/` (14 файлов), `docs/rfc/` (10), `docs/analysis/` (2) не соответствуют `standards/file-naming.md` (`YYYY-MM-adr-NNN-name.md`, `YYYY-MM-name.md`, `YYYY-MM-DD-name.md`). Заморожены в [`tools/file-naming-legacy-allowlist.txt`](../tools/file-naming-legacy-allowlist.txt). | 26 файлов | Переименование ломает внутренние ссылки (README, CHANGELOG, artifact-map, ADR-перекрёстные ссылки) и внешние permalink'и; нужна миграция ссылок одним PR. | P1 |
+| S-002 | Frontmatter-долг вне области issue #267: `./tools/validate-frontmatter.sh .` даёт 23 062 ошибки в 1 287 файлах (`kb/` — 22 413, `docs/` — 304, `prompts/` — 118, `standards/` — 101, `runs/` — 85, `pr-ops/` — 24, `patterns/` — 16). | 1 287 файлов | Основная масса — генерируемые артефакты `kb/processed/` и `runs/`: их чинит генератор (`scripts/kb/extract.py`), а не ручная правка. Требуется решение, какие каталоги вообще попадают под governance-frontmatter. | P1 |
+| S-003 | Поле `ai-generated` (запрещено `frontmatter-docs-standard.md`) остаётся в 1 243 файлах вне корня. | 1 243 файла | Массовая правка; для генерируемых файлов — правка шаблонов генератора. Часть S-002. | P2 |
+| S-004 | `standards/frontmatter-docs-standard.md` Хаба относит `ai-rules/` к governance-классу (словарь `draft/proposed/accepted/...`), а хабовый валидатор — к классу `default` (где допустим `canonical`). Спица следует валидатору. | Расхождение в Хабе | Правится в Хабе, не в спице (source of truth). Нужен issue/RFC в `hybrid-Intelligence-lab`. | P1 |
+| S-005 | `ai-rules/agent-onboarding-protocol.md` (v1.5) в Хабе не имеет `owner`, хотя стандарт требует его для governance-артефактов. В спице `owner: G-Ivan-A` добавлен локально — это единственная локальная дельта к синкнутому файлу. | 1 файл | Устраняется добавлением `owner` в Хабе, после чего локальная дельта снимается следующим синком. | P2 |
 
 ---
 

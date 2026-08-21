@@ -1,0 +1,50 @@
+run_id: RUN-0013
+process: bcreq-1059-multichannel-slots-limits
+version: "0.1"
+date: 2026-07-31
+author: "BA-IH + LLM"
+model: "qwen3.7-plus + qwen3.8-max-preview"
+status: works-with-edits
+duration: "2026-06-18 → 2026-07-31 (10 рабочих дней сессий, 44 календарных дня)"
+tokens_input: 79405522
+tokens_output: 543180
+turns: 242
+verdict: works-with-edits
+success_rate: "0.62 (75 из 121 ответов приняты БА без явной правки/критики; оценка по маркерам в репликах БА, см. logs/experiment-log.md)"
+source_paths:
+  - runs/2026/RUN-0013/outputs/final-artifact.md
+  - runs/2026/RUN-0013/outputs/README.md
+inputs:
+  - inputs/raw-requirement.md
+  - inputs/chat-export.md
+outputs:
+  - outputs/README.md
+  - outputs/final-artifact.md
+  - outputs/prompts-chain.md
+  - outputs/steps/step-1-research-and-questions.md
+  - outputs/steps/step-2-state-matrix.md
+  - outputs/steps/step-3-customer-answers.md
+  - outputs/steps/step-4-glossary-and-context.md
+  - outputs/steps/step-5-top-level-fr.md
+  - outputs/steps/step-6-fr-detail-and-constraints.md
+  - outputs/steps/step-7-rework-after-meeting.md
+  - outputs/steps/step-8-usecase-matrix.md
+feedback:
+  - feedback/review-notes.md
+logs:
+  - logs/experiment-log.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/268
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/109
+related_artifacts:
+  - docs/rfc/prompt-improvement-multichannel-proposal.md
+  - prompts/glossary-context-understanding-stepwise.md
+  - prompts/questions-customer-understanding-stepwise.md
+  - prompts/fr-documentation-stepwise.md
+  - prompts/constraints-documentation-stepwise.md
+  - prompts/uc-modeling-stepwise.md
+  - prompts/us-modeling-stepwise.md
+  - prompts/meeting-customer-documentation-stepwise.md
+related_runs:
+  - RUN-0011
+  - RUN-0012
