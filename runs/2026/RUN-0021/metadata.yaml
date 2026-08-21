@@ -1,0 +1,68 @@
+run_id: RUN-0021
+process: task-1020-okdesk-mango-integration-questions
+version: "0.1"
+date: 2026-05-25
+author: "BA-IH (фиксация: AI issue solver)"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+result_type: intermediate
+metrics:
+  turns: 8
+  user_turns: 4
+  assistant_turns: 4
+  episodes: 4
+  episodes_works: 0
+  episodes_works_with_edits: 3
+  episodes_fails: 1
+  verdict: works-with-edits
+  success_rate: 0.75
+  success_rate_basis: "3 из 4 эпизодов дали пригодный к использованию результат (E1-E3, все — с правками БА); E4 завершился пустым ответом модели"
+  ba_corrections: 2
+  hallucinations: 3
+  hallucinations_shipped: 1
+  false_citations: 3
+  web_tool_calls: 3
+  tokens_input: 53886
+  tokens_output: 6088
+  tokens_reasoning: 637
+  tokens_total: 59974
+  max_context_tokens: 40674
+  token_method: "chat-export:content_list[*].usage (поля провайдера, не пересчёт)"
+  measured: true
+  duration_wall_clock_s: 14525
+  duration_h: 4.03
+  window_utc: "2026-05-25T10:05:20Z — 2026-05-25T14:07:25Z"
+  eval: "Прогон доказал, что цепочка «анализ заявки -> вопросы заказчику -> перевод вопросов на бизнес-язык» доводится до пригодного черновика за 3 реплики и устойчива к опечаткам в постановке. Прогон НЕ доказал достоверность фактов: 3 утверждения о предметной области снабжены сносками на веб-источники, которые их не содержат, и 1 из них (двухзначное направление звонка в OkDesk) дошло до финального бизнес-текста. Основанием для перевода промпта в canonical не является."
+source_paths:
+  - runs/2026/RUN-0021/inputs/1020-chat-export-1787301522802.json
+inputs:
+  - inputs/README.md
+  - inputs/1020-chat-export-1787301522802.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-problem-understanding-and-questions.md
+  - outputs/steps/step-2-correction-and-okdesk-constraint.md
+  - outputs/steps/step-3-stakeholder-questions.md
+  - outputs/steps/step-4-empty-answer.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/turn-metrics.md
+  - logs/grounding-check.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/277
+related_artifacts:
+  - prompts/questions-customer-understanding-stepwise.md
+  - prompts/questions-customer-understanding-legacy.md
+  - standards/experiment-log-standard.md
+  - scripts/chat_export_to_markdown.py
+  - experiments/okdesk_citation_grounding_probe.py
+related_runs:
+  - RUN-0017
+  - RUN-0018
