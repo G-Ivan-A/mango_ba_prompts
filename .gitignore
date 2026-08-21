@@ -14,3 +14,6 @@ kb/sources/**/*.pdf
 # временные артефакты конвейера извлечения
 kb/sources/**/_diagram.png
 __pycache__/
+
+# логи CI, скачанные для отладки
+ci-logs/
