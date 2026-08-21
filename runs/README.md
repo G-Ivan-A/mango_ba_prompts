@@ -134,7 +134,7 @@ runs/
 | [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | `statistics` | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
 | [`RUN-0017`](2026/RUN-0017/metadata.yaml) | 2026-07-24 | `statistics` | task-1076-vks-artifacts-bpmsoft | [`outputs/README.md`](2026/RUN-0017/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0017/outputs/final-artifact.md) |
 | [`RUN-0018`](2026/RUN-0018/metadata.yaml) | 2026-07-21 | `statistics` | fr-validation-1079-messenger-id-search | [`outputs/README.md`](2026/RUN-0018/outputs/README.md), [`feedback/review-notes.md`](2026/RUN-0018/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0018/logs/metrics.md) |
-| [`RUN-0021`](2026/RUN-0021/metadata.yaml) | 2026-05-25 | `statistics` | task-1020-okdesk-mango-integration-questions | [`outputs/README.md`](2026/RUN-0021/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0021/outputs/quality-findings.md), [`logs/grounding-check.md`](2026/RUN-0021/logs/grounding-check.md) |
+| [`RUN-0023`](2026/RUN-0023/metadata.yaml) | 2026-05-25 | `statistics` | task-1020-okdesk-mango-integration-questions | [`outputs/README.md`](2026/RUN-0023/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0023/outputs/quality-findings.md), [`logs/grounding-check.md`](2026/RUN-0023/logs/grounding-check.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -147,7 +147,7 @@ runs/
 | [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md). |
 | [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
 | [`experiments/parse_qwen_chat_export.py`](../experiments/parse_qwen_chat_export.py) | Считает токены (`tiktoken:cl100k_base`), длительности и метрики по эпизодам из выгрузки чата Qwen. Используется в [`RUN-0018`](2026/RUN-0018/logs/metrics.md). |
-| [`experiments/okdesk_citation_grounding_probe.py`](../experiments/okdesk_citation_grounding_probe.py) | Извлекает результаты веб-инструмента (`content_list[*].extra.tool_result`) из экспорта чата и считает вхождения контрольных терминов — проверка заземления сносок. Используется в [`RUN-0021`](2026/RUN-0021/logs/grounding-check.md). |
+| [`experiments/okdesk_citation_grounding_probe.py`](../experiments/okdesk_citation_grounding_probe.py) | Извлекает результаты веб-инструмента (`content_list[*].extra.tool_result`) из экспорта чата и считает вхождения контрольных терминов — проверка заземления сносок. Используется в [`RUN-0023`](2026/RUN-0023/logs/grounding-check.md). |
 
 Правила обращения с ними:
 
