@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.4
+version: 0.5
 updated: 2026-08-21
 temperature: 0.1
 ---
@@ -12,6 +12,50 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #291 структурная миграция: канонический корень и скрытый архив
+
+- Проведён аудит причин структурного дрейфа корня:
+  [`docs/audit/2026-08-21-root-structure-audit.md`](docs/audit/2026-08-21-root-structure-audit.md).
+  Главная находка: `AI_GOVERNANCE.md`, `AI_QUICK_RULES.md` и
+  `AI_SESSION_HANDOVER_PROMPT.md` **обязаны** лежать в корне — это жёсткое
+  ограничение генома [`templates/htom/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/templates/htom)
+  Хаба, а `.hub-profile.json` объявляет `target_type: HTOM`. Они оставлены на
+  месте; перенесено то, что действительно выросло в корне вне генома.
+- Executable-слой handover prompt перенесён из корня в дом промптов:
+  `AI_SESSION_HANDOVER_PROMPT.executable.md` →
+  [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
+- `superseded`-архив протокола онбординга v1.2 выведен из `ai-rules/`, где он
+  соседствовал с активной v1.5, в скрытый каталог
+  [`.archive/`](.archive/README.md): `agent-onboarding-protocol_old.md` и
+  `agent-onboarding-protocol_old.executable.md`. Файлы не удалены — traceability
+  контракта issue #267.
+- Все внутренние ссылки обновлены (README, `AI_SESSION_HANDOVER_PROMPT.md`,
+  `standards/cascading-context-loading-standard.md`, `pr-ops/*`, `docs/adr/*`,
+  валидаторы `scripts/validate_issue_{72,125,267}_*.py`). Записи `sync_history`
+  в [`.hub-profile.json`](.hub-profile.json) сознательно не переписаны — журнал
+  фиксирует пути на момент синка; вместо правки добавлен раздел
+  `path_migrations`.
+- Каталоги `runs/` и `kb/` не затронуты (контракт 2 issue #291): исключены из
+  обхода миграционного скрипта на уровне кода.
+
+### Added — Issue #291 замок на базовую структуру репозитория
+
+- Добавлен [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh) —
+  адаптация валидатора генома HTOM Хаба. Проверяет обязательные артефакты ДНК,
+  **закрывает корень** каноническим списком, запрещает `*_old*.md` вне
+  `.archive/` и требует наличия `runs/` и `kb/`. Именно отсутствия этой проверки
+  хватило, чтобы дрейф прожил четыре PR.
+- Добавлен регрессионный тест
+  [`scripts/validate_issue_291_root_structure.py`](scripts/validate_issue_291_root_structure.py):
+  фиксирует итог миграции как контракт — канонический корень, архив в `.archive/`
+  с баннером и ссылкой на актуальную версию, связность слоёв handover, наличие
+  `runs/` и `kb/`, подключённость замка к CI и полноту отчёта аудита.
+- Новая цель `make validate-structure` (bash-замок + регрессионный тест),
+  включена в `make validate` и в CI
+  [`.github/workflows/validate.yml`](.github/workflows/validate.yml).
+- Миграция воспроизводима скриптом
+  [`experiments/restructure_root_and_archive.py`](experiments/restructure_root_and_archive.py).
 
 ### Changed — Issue #267 актуализация onboarding-протокола до v1.5 и проверка корневых файлов
 
@@ -25,7 +69,7 @@ temperature: 0.1
   вели на архивную v1.2.
 - Архив v1.2 сохранён (traceability, файл не удаляется), но переведён в
   `status: superseded`, лишён `entrypoint` и снабжён баннером «АРХИВ»:
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (+ `.executable.md`). В README он остаётся отдельной строкой как архив.
 - В протокол v1.5 добавлена единственная локальная дельта — `owner: G-Ivan-A`:
   `frontmatter-docs-standard.md` Хаба требует `owner` для governance-артефактов,
@@ -107,7 +151,7 @@ temperature: 0.1
   рабочие копии Хаба и стандарты спицы с правилом «сужать можно, противоречить
   нельзя». Приоритет норм продублирован в
   [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) и
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (там же — разделение ролей двух копий onboarding-протокола).
 - Обновлены [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) (новые
   строки `ai-rules/`, `ai-governance/`, `standards/README.md`,
@@ -118,7 +162,7 @@ temperature: 0.1
 - Структура репозитория приведена к базовой структуре Хаба: каталог
   `governance/` расформирован, его содержимое разнесено по
   [`pr-ops/`](pr-ops/artifact-map.md) (операционные записи),
-  [`ai-rules/`](ai-rules/agent-onboarding-protocol_old.md) (старый протокол
+  [`ai-rules/`](.archive/ai-rules/agent-onboarding-protocol_old.md) (старый протокол
   онбординга v1.2 под суффиксом `_old`), `docs/rfc/`, `docs/audit/` и
   [`standards/prompt-debugging-process.md`](standards/prompt-debugging-process.md).
   Каталог `research/` не создавался: он специфичен для Хаба, research остаётся
@@ -207,8 +251,8 @@ temperature: 0.1
   naming `.executable.md`, LLM Loading Contract, deterministic escalation
   triggers и правила замера экономии токенов.
 - Для критичных full-файлов созданы executable-companions:
-  [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md),
-  [`ai-rules/agent-onboarding-protocol_old.executable.md`](ai-rules/agent-onboarding-protocol_old.executable.md),
+  [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md),
+  [`.archive/ai-rules/agent-onboarding-protocol_old.executable.md`](.archive/ai-rules/agent-onboarding-protocol_old.executable.md),
   [`prompts/README.executable.md`](prompts/README.executable.md),
   [`docs/ba-processes/00-index.executable.md`](docs/ba-processes/00-index.executable.md)
   и [`standards/ba-ontology.executable.md`](standards/ba-ontology.executable.md).
@@ -685,7 +729,7 @@ temperature: 0.1
   `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`): добавлен механизм периодической
   суммаризации сессий через `pr-ops/session-digests.md`, сохранены локальные
   правила issue #48/#61 про канал работы через Конарда и task template.
-- [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+- [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   обновлён по source SHA `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`: встроенный
   копируемый prompt теперь соответствует handover v0.5 и указывает на
   `pr-ops/session-digests.md`.
@@ -907,7 +951,7 @@ temperature: 0.1
   читает реально присутствующие локальные контракты команды, фундаментальные
   governance-контракты Хаба — по permalink-ам.
 - Создан протокол онбординга
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (kebab-case, адаптированная копия канонического протокола Хаба v1.2): семантическое
   разделение «артефакт ↔ протокол» из PR #208. Раздел Design Rationale сжат,
   полная история вынесена ссылкой на Хаб.
