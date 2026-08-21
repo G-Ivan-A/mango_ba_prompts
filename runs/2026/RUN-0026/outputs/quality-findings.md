@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
 ---
 
-# Находки по качеству — RUN-0024
+# Находки по качеству — RUN-0026
 
 Все находки проверяемы по [`../inputs/transcript.md`](../inputs/transcript.md).
 Пометка **SHIPPED** = дефект дошёл до текста, который БА принял в финале

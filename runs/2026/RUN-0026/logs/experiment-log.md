@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
 ---
 
-# Журнал эксперимента RUN-0024
+# Журнал эксперимента RUN-0026
 
 По стандарту [`standards/experiment-log-standard.md`](../../../../standards/experiment-log-standard.md).
 

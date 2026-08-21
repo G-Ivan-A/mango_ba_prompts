@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
 ---
 
-# Заметки БА по прогону RUN-0024
+# Заметки БА по прогону RUN-0026
 
 Дословные решения БА и то, что остаётся сделать вручную. Извлечено из
 [`../inputs/transcript.md`](../inputs/transcript.md).

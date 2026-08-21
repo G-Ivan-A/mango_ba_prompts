@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
 ---
 
-# Цепочка промптов прогона RUN-0024
+# Цепочка промптов прогона RUN-0026
 
 ## Что использовалось на самом деле
 
