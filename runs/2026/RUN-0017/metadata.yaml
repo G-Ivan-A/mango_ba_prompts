@@ -5,6 +5,7 @@ date: 2026-07-24
 author: "BA-IH (фиксация: AI issue solver)"
 model: "qwen3.7-plus + qwen3.8-max-preview"
 status: works-with-edits
+run_type: statistics
 result_type: intermediate
 metrics:
   turns: 56

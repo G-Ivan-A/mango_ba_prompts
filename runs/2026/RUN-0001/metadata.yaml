@@ -5,6 +5,7 @@ date: 2026-05-26
 author: "BA/AI"
 model: "not-recorded"
 status: experimental
+run_type: execution
 source_paths:
   - runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md
 outputs:
