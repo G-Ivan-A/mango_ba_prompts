@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-08-21
 ai-generated: true
 type: standard
 scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
   - "runs/README.md"
 ---
@@ -60,6 +61,27 @@ MUST совпадать с именем каталога.
 - `source_paths` — откуда результат перенесён или чем порождён.
 - `inputs`, `outputs`, `logs` — ключевые файлы внутри run.
 - `related_issues`, `related_artifacts`, `related_runs` — трассировка.
+- `metrics` — измеримые показатели прогона (расширение контракта по
+  [issue #271](https://github.com/G-Ivan-A/mango_ba_prompts/issues/271)).
+
+### metrics
+
+Блок `metrics` SHOULD заполняться, когда прогон фиксируется как эмпирические данные
+для анализа БА, а не только как артефакт. Issue #271 требует токены, длительность,
+`eval`/вердикт и `success_rate`.
+
+| Ключ | Правило |
+| --- | --- |
+| `verdict` | SHOULD совпадать со значением `verdict` в `logs/experiment-log.md` (`works` / `works-with-edits` / `fails`). |
+| `success_rate` | Число `0..1`. Если указано, `success_rate_basis` MUST объяснять, что считалось долей. |
+| `tokens_*` | Если указаны токены, `token_method` MUST называть способ подсчёта (например `tiktoken:cl100k_base`). |
+| `duration_*` | Длительность в секундах; календарное и активное время SHOULD различаться явно. |
+| `eval` | Одно-два предложения: что прогон доказал и чего не доказал. |
+
+Прочие ключи внутри `metrics` свободны — блок описывает конкретный прогон.
+Развёрнутое обоснование чисел SHOULD жить в `logs/`, а не в `metadata.yaml`.
+Пример: [`runs/2026/RUN-0013/metadata.yaml`](../runs/2026/RUN-0013/metadata.yaml) +
+[`runs/2026/RUN-0013/logs/metrics.md`](../runs/2026/RUN-0013/logs/metrics.md).
 
 ## Назначение подкаталогов
 

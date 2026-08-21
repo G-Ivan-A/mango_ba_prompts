@@ -20,7 +20,7 @@ related_artifacts:
 >
 > Текст приведён **дословно**, включая опечатки и дефекты нумерации: именно они
 > служат эталоном для оценки полноты «Отчёта аудитора»
-> ([`../outputs/steps/step-2-audit.md`](../outputs/steps/step-2-audit.md)).
+> ([`../outputs/steps/step-2-audit-report.md`](../outputs/steps/step-2-audit-report.md)).
 > Известные дефекты входа сведены в таблицу в конце файла.
 
 ## Черновик ФТ v1.0 (дословно)

@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.3
-updated: 2026-08-17
+updated: 2026-08-21
 ai-generated: true
 ---
 
@@ -12,6 +12,44 @@ ai-generated: true
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #271 реальный прогон 1079 (RUN-0013) как Proof of Execution
+
+- Добавлена запись [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/outputs/README.md) —
+  первый прогон, зафиксированный на **живых данных чата** (8 эпизодов сессии
+  2026-07-21, модель `qwen3.7-plus`) вместо формальной пустой записи: дословная
+  стенограмма ([`inputs/chat-export.md`](runs/2026/RUN-0013/inputs/chat-export.md)),
+  вход ФТ v1.0, разбор по каждому эпизоду
+  ([`outputs/steps/`](runs/2026/RUN-0013/outputs/steps/)) и итоговый документ v1.3.
+- Прогон **не является** golden case: итоговый артефакт помечен как свидетельство с
+  реестром известных дефектов
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0013/outputs/final-artifact.md)).
+- Зафиксирован реестр галлюцинаций Г1–Г8
+  ([`feedback/review-notes.md`](runs/2026/RUN-0013/feedback/review-notes.md)),
+  сверенный с БЗ репозитория в формате `[CC, §N, с.NNN]`
+  ([`inputs/kb-facts.md`](runs/2026/RUN-0013/inputs/kb-facts.md)). Ключевая находка:
+  модель заявила, что термина «Конфиденциальность контактных данных» в документации
+  КЦ «не существует», и подменила его голосовой политикой «Скрытие номера клиента» —
+  ошибка дошла до финального документа. Корневая причина — прогон без подключённой
+  БЗ и отсутствие гейта заземления в промпте
+  [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md); предложены правки
+  П1–П5 (в этом PR не применяются).
+- Измеренные метрики вместо оценочных:
+  [`logs/metrics.md`](runs/2026/RUN-0013/logs/metrics.md) — 24 953 диалоговых токена
+  + 7 327 «мышления» (`tiktoken:cl100k_base`), 763.6 с генерации, 41 мин активной
+  работы. Скрипт разбора выгрузки —
+  [`experiments/parse_qwen_chat_export.py`](experiments/parse_qwen_chat_export.py).
+- Лог по [стандарту фиксации экспериментов](standards/experiment-log-standard.md):
+  `verdict = works-with-edits`, `quality = 3`, `iterations = 8`, `ba_edits = 6`.
+
+### Changed — Issue #271 расширение контракта runs полем `metrics`
+
+- В [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  (v0.1 → v0.2) и [`runs/README.md`](runs/README.md) добавлено разрешённое поле
+  `metrics` с правилами: `token_method` обязателен при указании токенов,
+  `success_rate_basis` — при `success_rate`.
+- [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py):
+  в `EXPECTED_RUNS` добавлен `RUN-0013`.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 

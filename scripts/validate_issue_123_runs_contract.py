@@ -126,6 +126,30 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0013": {
+        "year": "2026",
+        "files": [
+            "inputs/README.md",
+            "inputs/chat-export.md",
+            "inputs/raw-requirement.md",
+            "inputs/kb-facts.md",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-1-init-strategy.md",
+            "outputs/steps/step-2-audit-report.md",
+            "outputs/steps/step-3-fr-v1.1.md",
+            "outputs/steps/step-4-check-multiple-ids.md",
+            "outputs/steps/step-5-contradiction-check.md",
+            "outputs/steps/step-6-terminology-check.md",
+            "outputs/steps/step-7-proofreading-v1.2.md",
+            "outputs/steps/step-8-constraint-v1.3.md",
+            "feedback/review-notes.md",
+            "logs/experiment-log.md",
+            "logs/metrics.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

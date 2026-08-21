@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T06:28:16.310Z",
+  "generatedAt": "2026-08-21T16:44:40.752Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 6
   },
   "tests": {
-    "logs": 30,
-    "total": 152,
+    "logs": 43,
+    "total": 170,
     "coveredPrompts": 27
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 152,
+  "totalChecked": 170,
   "testsPassed": {
     "covered": 27,
     "total": 30,
@@ -35,7 +35,7 @@
     {
       "label": "Формирование ФТ/ТЗ",
       "emoji": "📋",
-      "checks": 113,
+      "checks": 119,
       "coveredPrompts": 18
     },
     {
@@ -47,20 +47,20 @@
     {
       "label": "Анализ тендерных ТЗ",
       "emoji": "📑",
-      "checks": 40,
+      "checks": 58,
       "coveredPrompts": 7
+    },
+    {
+      "label": "Валидация ФТ/ТЗ",
+      "emoji": "✅",
+      "checks": 24,
+      "coveredPrompts": 3
     },
     {
       "label": "Помощь ПО/ПМ",
       "emoji": "🤝",
       "checks": 15,
       "coveredPrompts": 5
-    },
-    {
-      "label": "Валидация ФТ/ТЗ",
-      "emoji": "✅",
-      "checks": 6,
-      "coveredPrompts": 3
     },
     {
       "label": "Статистика",
@@ -131,23 +131,23 @@
         {
           "id": "mango-fr-validation-legacy",
           "file": "fr-validation-legacy.md",
-          "tests": 2,
+          "tests": 8,
           "feedback": 0,
-          "usage": 2
+          "usage": 8
         },
         {
           "id": "mango-fr-validation-oneshot",
           "file": "fr-validation-oneshot.md",
-          "tests": 2,
+          "tests": 8,
           "feedback": 0,
-          "usage": 2
+          "usage": 8
         },
         {
           "id": "mango-fr-validation-stepwise",
           "file": "fr-validation-stepwise.md",
-          "tests": 2,
+          "tests": 8,
           "feedback": 0,
-          "usage": 2
+          "usage": 8
         }
       ]
     },
@@ -171,18 +171,18 @@
           "usage": 11
         },
         {
-          "id": "mango-questions-customer-understanding-legacy",
-          "file": "questions-customer-understanding-legacy.md",
-          "tests": 6,
+          "id": "mango-fr-validation-legacy",
+          "file": "fr-validation-legacy.md",
+          "tests": 8,
           "feedback": 0,
-          "usage": 6
+          "usage": 8
         },
         {
-          "id": "mango-questions-customer-understanding-stepwise",
-          "file": "questions-customer-understanding-stepwise.md",
-          "tests": 6,
+          "id": "mango-fr-validation-oneshot",
+          "file": "fr-validation-oneshot.md",
+          "tests": 8,
           "feedback": 0,
-          "usage": 6
+          "usage": 8
         }
       ]
     },
@@ -490,6 +490,79 @@
       "usage": 9
     },
     {
+      "id": "mango-fr-validation-legacy",
+      "file": "fr-validation-legacy.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 8,
+      "testFiles": [
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/outputs/steps/step-1-init-strategy.md",
+        "runs/2026/RUN-0013/outputs/steps/step-6-terminology-check.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 8
+    },
+    {
+      "id": "mango-fr-validation-oneshot",
+      "file": "fr-validation-oneshot.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 8,
+      "testFiles": [
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/outputs/steps/step-1-init-strategy.md",
+        "runs/2026/RUN-0013/outputs/steps/step-6-terminology-check.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 8
+    },
+    {
+      "id": "mango-fr-validation-stepwise",
+      "file": "fr-validation-stepwise.md",
+      "status": "draft",
+      "operation": "validation",
+      "processes": [
+        "Валидация ФТ/ТЗ",
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ"
+      ],
+      "tests": 8,
+      "testFiles": [
+        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md",
+        "runs/2026/RUN-0013/outputs/steps/step-1-init-strategy.md",
+        "runs/2026/RUN-0013/outputs/steps/step-6-terminology-check.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 8
+    },
+    {
       "id": "mango-constraints-documentation-oneshot",
       "file": "constraints-documentation-oneshot.md",
       "status": "draft",
@@ -748,61 +821,6 @@
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 3
-    },
-    {
-      "id": "mango-fr-validation-legacy",
-      "file": "fr-validation-legacy.md",
-      "status": "draft",
-      "operation": "validation",
-      "processes": [
-        "Валидация ФТ/ТЗ",
-        "Анализ тендерных ТЗ"
-      ],
-      "tests": 2,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 2
-    },
-    {
-      "id": "mango-fr-validation-oneshot",
-      "file": "fr-validation-oneshot.md",
-      "status": "draft",
-      "operation": "validation",
-      "processes": [
-        "Валидация ФТ/ТЗ",
-        "Анализ тендерных ТЗ"
-      ],
-      "tests": 2,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 2
-    },
-    {
-      "id": "mango-fr-validation-stepwise",
-      "file": "fr-validation-stepwise.md",
-      "status": "draft",
-      "operation": "validation",
-      "processes": [
-        "Валидация ФТ/ТЗ",
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ"
-      ],
-      "tests": 2,
-      "testFiles": [
-        "runs/2026/RUN-0006/outputs/session-debug-summarizer-2026-06-13.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 2
     },
     {
       "id": "mango-asr-ingestion-legacy",

@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.2
+updated: 2026-08-21
 ai-generated: true
 type: registry
 scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
   - "standards/runs-contract-standard.md"
 ---
@@ -46,7 +47,15 @@ runs/
 | `status` | да | Состояние результата: например `draft`, `experimental`, `success`, `partial-success`, `works-with-edits`. |
 
 Дополнительные поля разрешены: `source_paths`, `inputs`, `outputs`, `logs`,
-`related_issues`, `related_artifacts`, `related_runs`.
+`related_issues`, `related_artifacts`, `related_runs`, `metrics`.
+
+`metrics` — блок измеримых показателей прогона (введён
+[issue #271](https://github.com/G-Ivan-A/mango_ba_prompts/issues/271), который
+требует фиксировать токены, длительность, `eval`/вердикт и `success_rate`).
+Заполняется, когда прогон фиксируется как эмпирические данные; при указании
+токенов MUST указываться `token_method`, а при `success_rate` —
+`success_rate_basis` (на чём посчитана доля). Пример —
+[`2026/RUN-0013/metadata.yaml`](2026/RUN-0013/metadata.yaml).
 
 ## Назначение подкаталогов
 
@@ -60,7 +69,10 @@ runs/
 Если подкаталог пока пустой, он сохраняется через `.gitkeep`, чтобы структура
 каждого run была одинаковой.
 
-## Реестр перенесённых записей Phase 0
+## Реестр записей
+
+`RUN-0001`–`RUN-0012` перенесены в рамках Phase 0 (issue #123); последующие записи
+создаются сразу по контракту.
 
 | Run | Дата | Процесс | Основной результат |
 | --- | --- | --- | --- |
@@ -76,6 +88,7 @@ runs/
 | [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
 | [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-07-14 | bcreq-1069-restricted-api-key | [`outputs/final-artifact.md`](2026/RUN-0012/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0012/outputs/README.md) |
+| [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-21 | fr-validation-1079-messenger-id-search | [`outputs/README.md`](2026/RUN-0013/outputs/README.md), [`feedback/review-notes.md`](2026/RUN-0013/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0013/logs/metrics.md) |
 
 ## Валидация
 
