@@ -13,6 +13,38 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #284 реальный прогон 978 (RUN-0027) как эмпирические данные
+
+- Добавлен [`runs/2026/RUN-0027/`](runs/2026/RUN-0027/metadata.yaml) —
+  `run_type: statistics`: фиксация реально состоявшегося диалога БА↔LLM
+  (`qwen3.6-plus`, 2026-04-10) по анализу и уточнению ФТ задачи 978 «Настройка
+  подписей email в ЛК». Данные промежуточные (не эталон и не golden case),
+  фиксируются для статистики и анализа эффективности промптов, успехов и
+  галлюцинаций.
+- Прогон размечен на **5 эпизодов** с отдельным вердиктом по каждому:
+  [`outputs/README.md`](runs/2026/RUN-0027/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0027/outputs/steps).
+- Вердикт прогона — `works-with-edits`, `success_rate = 2/5 = 0.4`.
+  Зафиксированы дефекты достоверности Г1–Г5 (3 вынесены в `hallucinations`,
+  1 остался неопровергнутым на момент обрыва диалога) и отдельный эффект
+  коммуникации: не запрошенное предложение модели вошло в постановку задачи
+  ([`feedback/review-notes.md`](runs/2026/RUN-0027/feedback/review-notes.md)).
+- Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
+  issue #284 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py);
+  токены и латентность — из поля `usage` платформы
+  ([`logs/metrics.md`](runs/2026/RUN-0027/logs/metrics.md)).
+- Добавлен воспроизводимый инструмент
+  [`experiments/signature_citation_grounding_probe.py`](experiments/signature_citation_grounding_probe.py):
+  проверяет заземление сносок валидации НФТ на реально полученную выдачу
+  `web_search`/`web_extractor`
+  ([`logs/grounding-check.md`](runs/2026/RUN-0027/logs/grounding-check.md)).
+- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0027 и
+  раздел «Локальные инструменты воспроизводимости») и `EXPECTED_RUNS`
+  в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
+
 ### Added — Issue #280 реальный прогон 997 (RUN-0025) как эмпирические данные
 
 - Добавлен [`runs/2026/RUN-0025/`](runs/2026/RUN-0025/metadata.yaml) —
