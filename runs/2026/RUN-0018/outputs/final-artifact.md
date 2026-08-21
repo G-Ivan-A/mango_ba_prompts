@@ -8,9 +8,9 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
-  - "runs/2026/RUN-0013/inputs/raw-requirement.md"
-  - "runs/2026/RUN-0013/feedback/review-notes.md"
-  - "runs/2026/RUN-0013/inputs/kb-facts.md"
+  - "runs/2026/RUN-0018/inputs/raw-requirement.md"
+  - "runs/2026/RUN-0018/feedback/review-notes.md"
+  - "runs/2026/RUN-0018/inputs/kb-facts.md"
 ---
 
 # Итог прогона — ФТ v1.3 «Поиск Контактов по Идентификаторам мессенджеров» (задача 1079)

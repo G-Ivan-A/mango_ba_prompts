@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
-  - "runs/2026/RUN-0013/inputs/chat-export.md"
+  - "runs/2026/RUN-0018/inputs/chat-export.md"
 ---
 
 # Вход: черновик ФТ по задаче 1079 (поиск Контактов по Идентификаторам мессенджеров)

@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 ---
 
-# Вход прогона RUN-0013 — провенанс
+# Вход прогона RUN-0018 — провенанс
 
 ## Файлы, приложенные к issue #271
 

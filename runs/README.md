@@ -55,7 +55,7 @@ runs/
 Заполняется, когда прогон фиксируется как эмпирические данные; при указании
 токенов MUST указываться `token_method`, а при `success_rate` —
 `success_rate_basis` (на чём посчитана доля). Пример —
-[`2026/RUN-0013/metadata.yaml`](2026/RUN-0013/metadata.yaml).
+[`2026/RUN-0018/metadata.yaml`](2026/RUN-0018/metadata.yaml).
 
 ## Назначение подкаталогов
 
@@ -88,7 +88,7 @@ runs/
 | [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
 | [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-07-14 | bcreq-1069-restricted-api-key | [`outputs/final-artifact.md`](2026/RUN-0012/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0012/outputs/README.md) |
-| [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-21 | fr-validation-1079-messenger-id-search | [`outputs/README.md`](2026/RUN-0013/outputs/README.md), [`feedback/review-notes.md`](2026/RUN-0013/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0013/logs/metrics.md) |
+| [`RUN-0018`](2026/RUN-0018/metadata.yaml) | 2026-07-21 | fr-validation-1079-messenger-id-search | [`outputs/README.md`](2026/RUN-0018/outputs/README.md), [`feedback/review-notes.md`](2026/RUN-0018/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0018/logs/metrics.md) |
 
 ## Валидация
 

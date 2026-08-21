@@ -80,8 +80,8 @@ MUST совпадать с именем каталога.
 
 Прочие ключи внутри `metrics` свободны — блок описывает конкретный прогон.
 Развёрнутое обоснование чисел SHOULD жить в `logs/`, а не в `metadata.yaml`.
-Пример: [`runs/2026/RUN-0013/metadata.yaml`](../runs/2026/RUN-0013/metadata.yaml) +
-[`runs/2026/RUN-0013/logs/metrics.md`](../runs/2026/RUN-0013/logs/metrics.md).
+Пример: [`runs/2026/RUN-0018/metadata.yaml`](../runs/2026/RUN-0018/metadata.yaml) +
+[`runs/2026/RUN-0018/logs/metrics.md`](../runs/2026/RUN-0018/logs/metrics.md).
 
 ## Назначение подкаталогов
 

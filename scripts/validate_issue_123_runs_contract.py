@@ -126,7 +126,7 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
-    "RUN-0013": {
+    "RUN-0018": {
         "year": "2026",
         "files": [
             "inputs/README.md",

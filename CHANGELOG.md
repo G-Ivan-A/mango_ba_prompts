@@ -13,21 +13,21 @@ ai-generated: true
 
 ## Unreleased
 
-### Added — Issue #271 реальный прогон 1079 (RUN-0013) как Proof of Execution
+### Added — Issue #271 реальный прогон 1079 (RUN-0018) как Proof of Execution
 
-- Добавлена запись [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/outputs/README.md) —
+- Добавлена запись [`runs/2026/RUN-0018/`](runs/2026/RUN-0018/outputs/README.md) —
   первый прогон, зафиксированный на **живых данных чата** (8 эпизодов сессии
   2026-07-21, модель `qwen3.7-plus`) вместо формальной пустой записи: дословная
-  стенограмма ([`inputs/chat-export.md`](runs/2026/RUN-0013/inputs/chat-export.md)),
+  стенограмма ([`inputs/chat-export.md`](runs/2026/RUN-0018/inputs/chat-export.md)),
   вход ФТ v1.0, разбор по каждому эпизоду
-  ([`outputs/steps/`](runs/2026/RUN-0013/outputs/steps/)) и итоговый документ v1.3.
+  ([`outputs/steps/`](runs/2026/RUN-0018/outputs/steps/)) и итоговый документ v1.3.
 - Прогон **не является** golden case: итоговый артефакт помечен как свидетельство с
   реестром известных дефектов
-  ([`outputs/final-artifact.md`](runs/2026/RUN-0013/outputs/final-artifact.md)).
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0018/outputs/final-artifact.md)).
 - Зафиксирован реестр галлюцинаций Г1–Г8
-  ([`feedback/review-notes.md`](runs/2026/RUN-0013/feedback/review-notes.md)),
+  ([`feedback/review-notes.md`](runs/2026/RUN-0018/feedback/review-notes.md)),
   сверенный с БЗ репозитория в формате `[CC, §N, с.NNN]`
-  ([`inputs/kb-facts.md`](runs/2026/RUN-0013/inputs/kb-facts.md)). Ключевая находка:
+  ([`inputs/kb-facts.md`](runs/2026/RUN-0018/inputs/kb-facts.md)). Ключевая находка:
   модель заявила, что термина «Конфиденциальность контактных данных» в документации
   КЦ «не существует», и подменила его голосовой политикой «Скрытие номера клиента» —
   ошибка дошла до финального документа. Корневая причина — прогон без подключённой
@@ -35,7 +35,7 @@ ai-generated: true
   [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md); предложены правки
   П1–П5 (в этом PR не применяются).
 - Измеренные метрики вместо оценочных:
-  [`logs/metrics.md`](runs/2026/RUN-0013/logs/metrics.md) — 24 953 диалоговых токена
+  [`logs/metrics.md`](runs/2026/RUN-0018/logs/metrics.md) — 24 953 диалоговых токена
   + 7 327 «мышления» (`tiktoken:cl100k_base`), 763.6 с генерации, 41 мин активной
   работы. Скрипт разбора выгрузки —
   [`experiments/parse_qwen_chat_export.py`](experiments/parse_qwen_chat_export.py).
@@ -49,7 +49,7 @@ ai-generated: true
   `metrics` с правилами: `token_method` обязателен при указании токенов,
   `success_rate_basis` — при `success_rate`.
 - [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py):
-  в `EXPECTED_RUNS` добавлен `RUN-0013`.
+  в `EXPECTED_RUNS` добавлен `RUN-0018`.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 
