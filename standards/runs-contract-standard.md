@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-08-21
 ai-generated: true
 type: standard
 scope: runs
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/123"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/293"
 related_artifacts:
   - "runs/README.md"
@@ -153,8 +154,28 @@ MUST совпадать с именем каталога.
 - `inputs`, `outputs`, `logs`, `feedback` — ключевые файлы внутри run.
 - `metrics` — измеримые показатели прогона: токены, длительность, число итераций,
   `success_rate`, оценка результата (`eval`). Значения SHOULD быть измерены; если
-  они оценочные, это MUST быть отмечено (`measured: false`).
+  они оценочные, это MUST быть отмечено (`measured: false`). Правила ключей —
+  раздел [metrics](#metrics).
 - `related_issues`, `related_artifacts`, `related_runs` — трассировка.
+
+### metrics
+
+Блок `metrics` SHOULD заполняться, когда прогон фиксируется как эмпирические данные
+для анализа БА, а не только как артефакт. Issue #271 требует токены, длительность,
+`eval`/вердикт и `success_rate`.
+
+| Ключ | Правило |
+| --- | --- |
+| `verdict` | SHOULD совпадать со значением `verdict` в `logs/experiment-log.md` (`works` / `works-with-edits` / `fails`). |
+| `success_rate` | Число `0..1`. Если указано, `success_rate_basis` MUST объяснять, что считалось долей. |
+| `tokens_*` | Если указаны токены, `token_method` MUST называть способ подсчёта (например `tiktoken:cl100k_base`). |
+| `duration_*` | Длительность в секундах; календарное и активное время SHOULD различаться явно. |
+| `eval` | Одно-два предложения: что прогон доказал и чего не доказал. |
+
+Прочие ключи внутри `metrics` свободны — блок описывает конкретный прогон.
+Развёрнутое обоснование чисел SHOULD жить в `logs/`, а не в `metadata.yaml`.
+Пример: [`runs/2026/RUN-0018/metadata.yaml`](../runs/2026/RUN-0018/metadata.yaml) +
+[`runs/2026/RUN-0018/logs/metrics.md`](../runs/2026/RUN-0018/logs/metrics.md).
 
 ## Назначение подкаталогов
 
