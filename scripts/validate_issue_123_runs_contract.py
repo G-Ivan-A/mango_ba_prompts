@@ -126,6 +126,27 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0013": {
+        "year": "2026",
+        "files": [
+            "inputs/chat-export.md",
+            "inputs/raw-requirement.md",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-1-research-and-questions.md",
+            "outputs/steps/step-2-state-matrix.md",
+            "outputs/steps/step-3-customer-answers.md",
+            "outputs/steps/step-4-glossary-and-context.md",
+            "outputs/steps/step-5-top-level-fr.md",
+            "outputs/steps/step-6-fr-detail-and-constraints.md",
+            "outputs/steps/step-7-rework-after-meeting.md",
+            "outputs/steps/step-8-usecase-matrix.md",
+            "feedback/review-notes.md",
+            "logs/experiment-log.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 
