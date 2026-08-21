@@ -243,6 +243,9 @@ EXPECTED_RUNS = {
             "logs/experiment-log.md",
             "logs/metrics.md",
             "feedback/README.md",
+        ],
+        "old_paths": [],
+    },
     "RUN-0018": {
         "year": "2026",
         "run_type": "statistics",

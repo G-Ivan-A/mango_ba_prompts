@@ -1,0 +1,177 @@
+build	UNKNOWN STEP	﻿2026-08-21T22:30:11.7938023Z Current runner version: '2.336.0'
+build	UNKNOWN STEP	2026-08-21T22:30:11.7992095Z ##[group]Runner Image Provisioner
+build	UNKNOWN STEP	2026-08-21T22:30:11.7993073Z Hosted Compute Agent
+build	UNKNOWN STEP	2026-08-21T22:30:11.7993728Z Version: 20260729.566
+build	UNKNOWN STEP	2026-08-21T22:30:11.7994359Z Commit: cf7153fe6e25b664e8693c24944bf2b00355d109
+build	UNKNOWN STEP	2026-08-21T22:30:11.7995180Z Build Date: 2026-07-29T19:17:02Z
+build	UNKNOWN STEP	2026-08-21T22:30:11.7996357Z Worker ID: {c5f5c3e4-560c-4a3a-a459-e23d879771da}
+build	UNKNOWN STEP	2026-08-21T22:30:11.7997155Z Azure Region: westus2
+build	UNKNOWN STEP	2026-08-21T22:30:11.7997781Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:11.7999351Z ##[group]Operating System
+build	UNKNOWN STEP	2026-08-21T22:30:11.8000111Z Ubuntu
+build	UNKNOWN STEP	2026-08-21T22:30:11.8000631Z 24.04.4
+build	UNKNOWN STEP	2026-08-21T22:30:11.8001128Z LTS
+build	UNKNOWN STEP	2026-08-21T22:30:11.8001741Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:11.8002288Z ##[group]Runner Image
+build	UNKNOWN STEP	2026-08-21T22:30:11.8002999Z Image: ubuntu-24.04
+build	UNKNOWN STEP	2026-08-21T22:30:11.8003565Z Version: 20260816.277.1
+build	UNKNOWN STEP	2026-08-21T22:30:11.8004949Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260816.277/images/ubuntu/Ubuntu2404-Readme.md
+build	UNKNOWN STEP	2026-08-21T22:30:11.8006752Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260816.277
+build	UNKNOWN STEP	2026-08-21T22:30:11.8007882Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:11.8009016Z ##[group]GITHUB_TOKEN Permissions
+build	UNKNOWN STEP	2026-08-21T22:30:11.8011426Z Contents: read
+build	UNKNOWN STEP	2026-08-21T22:30:11.8012053Z Metadata: read
+build	UNKNOWN STEP	2026-08-21T22:30:11.8012591Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:11.8014844Z Secret source: None
+build	UNKNOWN STEP	2026-08-21T22:30:11.8016194Z Prepare workflow directory
+build	UNKNOWN STEP	2026-08-21T22:30:11.8372223Z Prepare all required actions
+build	UNKNOWN STEP	2026-08-21T22:30:11.8423335Z Getting action download info
+build	UNKNOWN STEP	2026-08-21T22:30:12.1923850Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+build	UNKNOWN STEP	2026-08-21T22:30:12.3336459Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+build	UNKNOWN STEP	2026-08-21T22:30:12.5284141Z Complete job name: build
+build	UNKNOWN STEP	2026-08-21T22:30:12.6215484Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+build	UNKNOWN STEP	2026-08-21T22:30:12.6224848Z ##[group]Run actions/checkout@v4
+build	UNKNOWN STEP	2026-08-21T22:30:12.6225874Z with:
+build	UNKNOWN STEP	2026-08-21T22:30:12.6226351Z   repository: G-Ivan-A/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:12.6230170Z   token: ***
+build	UNKNOWN STEP	2026-08-21T22:30:12.6230605Z   ssh-strict: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6231038Z   ssh-user: git
+build	UNKNOWN STEP	2026-08-21T22:30:12.6231484Z   persist-credentials: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6231976Z   clean: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6232417Z   sparse-checkout-cone-mode: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6232938Z   fetch-depth: 1
+build	UNKNOWN STEP	2026-08-21T22:30:12.6233365Z   fetch-tags: false
+build	UNKNOWN STEP	2026-08-21T22:30:12.6233803Z   show-progress: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6234253Z   lfs: false
+build	UNKNOWN STEP	2026-08-21T22:30:12.6234708Z   submodules: false
+build	UNKNOWN STEP	2026-08-21T22:30:12.6235154Z   set-safe-directory: true
+build	UNKNOWN STEP	2026-08-21T22:30:12.6235801Z   allow-unsafe-pr-checkout: false
+build	UNKNOWN STEP	2026-08-21T22:30:12.6236632Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:12.7257767Z Syncing repository: G-Ivan-A/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:12.7259693Z ##[group]Getting Git version info
+build	UNKNOWN STEP	2026-08-21T22:30:12.7260524Z Working directory is '/home/runner/work/mango_ba_prompts/mango_ba_prompts'
+build	UNKNOWN STEP	2026-08-21T22:30:12.7261601Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-08-21T22:30:12.7384737Z git version 2.55.0
+build	UNKNOWN STEP	2026-08-21T22:30:12.7441369Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:12.7457434Z Temporarily overriding HOME='/home/runner/work/_temp/ad9e66d3-9365-4b31-b7fa-04566f2bde86' before making global git config changes
+build	UNKNOWN STEP	2026-08-21T22:30:12.7459764Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-08-21T22:30:12.7464457Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mango_ba_prompts/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:12.7521644Z Deleting the contents of '/home/runner/work/mango_ba_prompts/mango_ba_prompts'
+build	UNKNOWN STEP	2026-08-21T22:30:12.7526305Z ##[group]Initializing the repository
+build	UNKNOWN STEP	2026-08-21T22:30:12.7533144Z [command]/usr/bin/git init /home/runner/work/mango_ba_prompts/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:12.7691148Z hint: Using 'master' as the name for the initial branch. This default branch name
+build	UNKNOWN STEP	2026-08-21T22:30:12.7693071Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+build	UNKNOWN STEP	2026-08-21T22:30:12.7694698Z hint: to use in all of your new repositories, which will suppress this warning,
+build	UNKNOWN STEP	2026-08-21T22:30:12.7696288Z hint: call:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7697104Z hint:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7698052Z hint: 	git config --global init.defaultBranch <name>
+build	UNKNOWN STEP	2026-08-21T22:30:12.7699133Z hint:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7700121Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+build	UNKNOWN STEP	2026-08-21T22:30:12.7701723Z hint: 'development'. The just-created branch can be renamed via this command:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7703104Z hint:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7703870Z hint: 	git branch -m <name>
+build	UNKNOWN STEP	2026-08-21T22:30:12.7704699Z hint:
+build	UNKNOWN STEP	2026-08-21T22:30:12.7705944Z hint: Disable this message with "git config set advice.defaultBranchName false"
+build	UNKNOWN STEP	2026-08-21T22:30:12.7707826Z Initialized empty Git repository in /home/runner/work/mango_ba_prompts/mango_ba_prompts/.git/
+build	UNKNOWN STEP	2026-08-21T22:30:12.7722977Z [command]/usr/bin/git remote add origin https://github.com/G-Ivan-A/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:12.7774898Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:12.7776321Z ##[group]Disabling automatic garbage collection
+build	UNKNOWN STEP	2026-08-21T22:30:12.7778858Z [command]/usr/bin/git config --local gc.auto 0
+build	UNKNOWN STEP	2026-08-21T22:30:12.7818065Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:12.7819296Z ##[group]Setting up auth
+build	UNKNOWN STEP	2026-08-21T22:30:12.7825157Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-08-21T22:30:12.7863959Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-08-21T22:30:12.8276245Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-08-21T22:30:12.8316115Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-08-21T22:30:12.8554088Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-08-21T22:30:12.8600393Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-08-21T22:30:12.8858529Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+build	UNKNOWN STEP	2026-08-21T22:30:12.8905934Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:12.8906978Z ##[group]Fetching the repository
+build	UNKNOWN STEP	2026-08-21T22:30:12.8921347Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +24ba00985a06980cfe0ad58e6e8404151b442cc8:refs/remotes/pull/290/merge
+build	UNKNOWN STEP	2026-08-21T22:30:14.3446859Z From https://github.com/G-Ivan-A/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:14.3449074Z  * [new ref]         24ba00985a06980cfe0ad58e6e8404151b442cc8 -> pull/290/merge
+build	UNKNOWN STEP	2026-08-21T22:30:14.3531709Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:14.3533397Z ##[group]Determining the checkout info
+build	UNKNOWN STEP	2026-08-21T22:30:14.3535127Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:14.3539761Z [command]/usr/bin/git sparse-checkout disable
+build	UNKNOWN STEP	2026-08-21T22:30:14.3542330Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+build	UNKNOWN STEP	2026-08-21T22:30:14.3559602Z ##[group]Checking out the ref
+build	UNKNOWN STEP	2026-08-21T22:30:14.3564144Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/290/merge
+build	UNKNOWN STEP	2026-08-21T22:30:15.0348068Z Note: switching to 'refs/remotes/pull/290/merge'.
+build	UNKNOWN STEP	2026-08-21T22:30:15.0349050Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0349728Z You are in 'detached HEAD' state. You can look around, make experimental
+build	UNKNOWN STEP	2026-08-21T22:30:15.0351211Z changes and commit them, and you can discard any commits you make in this
+build	UNKNOWN STEP	2026-08-21T22:30:15.0352663Z state without impacting any branches by switching back to a branch.
+build	UNKNOWN STEP	2026-08-21T22:30:15.0353788Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0354408Z If you want to create a new branch to retain commits you create, you may
+build	UNKNOWN STEP	2026-08-21T22:30:15.0356037Z do so (now or later) by using -c with the switch command. Example:
+build	UNKNOWN STEP	2026-08-21T22:30:15.0356873Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0357252Z   git switch -c <new-branch-name>
+build	UNKNOWN STEP	2026-08-21T22:30:15.0357879Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0358250Z Or undo this operation with:
+build	UNKNOWN STEP	2026-08-21T22:30:15.0358797Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0359116Z   git switch -
+build	UNKNOWN STEP	2026-08-21T22:30:15.0359563Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0360302Z Turn off this advice by setting config variable advice.detachedHead to false
+build	UNKNOWN STEP	2026-08-21T22:30:15.0361353Z 
+build	UNKNOWN STEP	2026-08-21T22:30:15.0362559Z HEAD is now at 24ba009 Merge 309feca75b03a07710f4b34f04ff5dbb6932a021 into 0bd3aaf52834d9d991a2543a10f6bb72ec047f76
+build	UNKNOWN STEP	2026-08-21T22:30:15.0367956Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:15.0416258Z [command]/usr/bin/git log -1 --format=%H
+build	UNKNOWN STEP	2026-08-21T22:30:15.0444177Z 24ba00985a06980cfe0ad58e6e8404151b442cc8
+build	UNKNOWN STEP	2026-08-21T22:30:15.0862387Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+build	UNKNOWN STEP	2026-08-21T22:30:15.0868689Z ##[group]Run actions/setup-node@v4
+build	UNKNOWN STEP	2026-08-21T22:30:15.0869884Z with:
+build	UNKNOWN STEP	2026-08-21T22:30:15.0870756Z   node-version: 20
+build	UNKNOWN STEP	2026-08-21T22:30:15.0871722Z   always-auth: false
+build	UNKNOWN STEP	2026-08-21T22:30:15.0872726Z   check-latest: false
+build	UNKNOWN STEP	2026-08-21T22:30:15.0882693Z   token: ***
+build	UNKNOWN STEP	2026-08-21T22:30:15.0883639Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:15.2410312Z Attempting to download 20...
+build	UNKNOWN STEP	2026-08-21T22:30:15.2540782Z (node:2200) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+build	UNKNOWN STEP	2026-08-21T22:30:15.8867803Z (Use `node --trace-deprecation ...` to show where the warning was created)
+build	UNKNOWN STEP	2026-08-21T22:30:15.8949931Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+build	UNKNOWN STEP	2026-08-21T22:30:16.3116707Z Extracting ...
+build	UNKNOWN STEP	2026-08-21T22:30:16.3235115Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/cad7217a-7087-4ee7-8260-dff7eed0125c -f /home/runner/work/_temp/4ea12ed5-0acb-44a8-9158-01b62dbe251d
+build	UNKNOWN STEP	2026-08-21T22:30:17.3395213Z Adding to the cache ...
+build	UNKNOWN STEP	2026-08-21T22:30:19.2865018Z ##[group]Environment details
+build	UNKNOWN STEP	2026-08-21T22:30:19.5214822Z node: v20.20.2
+build	UNKNOWN STEP	2026-08-21T22:30:19.5215321Z npm: 10.8.2
+build	UNKNOWN STEP	2026-08-21T22:30:19.5215931Z yarn: 1.22.22
+build	UNKNOWN STEP	2026-08-21T22:30:19.5216690Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:19.5431824Z ##[group]Run node scripts/generate-pages-data.mjs
+build	UNKNOWN STEP	2026-08-21T22:30:19.5432340Z ^[[36;1mnode scripts/generate-pages-data.mjs^[[0m
+build	UNKNOWN STEP	2026-08-21T22:30:19.5477336Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-08-21T22:30:19.5477635Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:19.6918622Z Generated 30 prompts
+build	UNKNOWN STEP	2026-08-21T22:30:19.6919233Z Generated 9 process cards and 7 patterns
+build	UNKNOWN STEP	2026-08-21T22:30:19.6919797Z Generated 13 operations and 9 processes
+build	UNKNOWN STEP	2026-08-21T22:30:19.6920277Z Generated 4 roadmap levels and 7 gaps
+build	UNKNOWN STEP	2026-08-21T22:30:19.6921024Z Generated process tree: 25/38 subprocesses with prompts in 8/9 processes (useTree=true)
+build	UNKNOWN STEP	2026-08-21T22:30:19.6921850Z Generated checks: 271 prompt tests in 87 logs, 0 feedback items
+build	UNKNOWN STEP	2026-08-21T22:30:19.7059646Z ##[group]Run python3 scripts/validate_issue_123_runs_contract.py
+build	UNKNOWN STEP	2026-08-21T22:30:19.7060190Z ^[[36;1mpython3 scripts/validate_issue_123_runs_contract.py^[[0m
+build	UNKNOWN STEP	2026-08-21T22:30:19.7100087Z shell: /usr/bin/bash -e {0}
+build	UNKNOWN STEP	2026-08-21T22:30:19.7100374Z ##[endgroup]
+build	UNKNOWN STEP	2026-08-21T22:30:19.8198112Z   File "/home/runner/work/mango_ba_prompts/mango_ba_prompts/scripts/validate_issue_123_runs_contract.py", line 271
+build	UNKNOWN STEP	2026-08-21T22:30:19.8199341Z     }
+build	UNKNOWN STEP	2026-08-21T22:30:19.8199723Z     ^
+build	UNKNOWN STEP	2026-08-21T22:30:19.8200723Z SyntaxError: closing parenthesis '}' does not match opening parenthesis '[' on line 235
+build	UNKNOWN STEP	2026-08-21T22:30:19.8349235Z ##[error]Process completed with exit code 1.
+build	UNKNOWN STEP	2026-08-21T22:30:19.8599353Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+build	UNKNOWN STEP	2026-08-21T22:30:19.8600700Z Post job cleanup.
+build	UNKNOWN STEP	2026-08-21T22:30:19.9486724Z [command]/usr/bin/git version
+build	UNKNOWN STEP	2026-08-21T22:30:19.9527613Z git version 2.55.0
+build	UNKNOWN STEP	2026-08-21T22:30:19.9573388Z Temporarily overriding HOME='/home/runner/work/_temp/d94e3401-fe21-4043-a8cf-d86d30058587' before making global git config changes
+build	UNKNOWN STEP	2026-08-21T22:30:19.9579833Z Adding repository directory to the temporary git global config as a safe directory
+build	UNKNOWN STEP	2026-08-21T22:30:19.9580865Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/mango_ba_prompts/mango_ba_prompts
+build	UNKNOWN STEP	2026-08-21T22:30:19.9624086Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+build	UNKNOWN STEP	2026-08-21T22:30:19.9662027Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+build	UNKNOWN STEP	2026-08-21T22:30:19.9945379Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+build	UNKNOWN STEP	2026-08-21T22:30:19.9978149Z http.https://github.com/.extraheader
+build	UNKNOWN STEP	2026-08-21T22:30:19.9991043Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+build	UNKNOWN STEP	2026-08-21T22:30:20.0029287Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+build	UNKNOWN STEP	2026-08-21T22:30:20.0318012Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+build	UNKNOWN STEP	2026-08-21T22:30:20.0367844Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+build	UNKNOWN STEP	2026-08-21T22:30:20.0780347Z Cleaning up orphan processes
+build	UNKNOWN STEP	2026-08-21T22:30:20.1098688Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
