@@ -136,7 +136,7 @@ runs/
 | [`RUN-0018`](2026/RUN-0018/metadata.yaml) | 2026-07-21 | `statistics` | fr-validation-1079-messenger-id-search | [`outputs/README.md`](2026/RUN-0018/outputs/README.md), [`feedback/review-notes.md`](2026/RUN-0018/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0018/logs/metrics.md) |
 | [`RUN-0020`](2026/RUN-0020/metadata.yaml) | 2026-07-10 | `statistics` | task-1065-context-and-questions-a7a | [`outputs/README.md`](2026/RUN-0020/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0020/outputs/quality-findings.md), [`outputs/final-artifact.md`](2026/RUN-0020/outputs/final-artifact.md) |
 | [`RUN-0021`](2026/RUN-0021/metadata.yaml) | 2026-07-10 | `statistics` | fr-drafting-975-ineffective-call-parameters | [`outputs/README.md`](2026/RUN-0021/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0021/outputs/final-artifact.md), [`feedback/review-notes.md`](2026/RUN-0021/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0021/logs/metrics.md) |
-| [`RUN-0022`](2026/RUN-0022/metadata.yaml) | 2026-05-12 | `statistics` | fr-validation-997-ivr-scheme-incoming-call-rules | [`outputs/README.md`](2026/RUN-0022/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0022/outputs/final-artifact.md), [`feedback/review-notes.md`](2026/RUN-0022/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0022/logs/metrics.md) |
+| [`RUN-0025`](2026/RUN-0025/metadata.yaml) | 2026-05-12 | `statistics` | fr-validation-997-ivr-scheme-incoming-call-rules | [`outputs/README.md`](2026/RUN-0025/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0025/outputs/final-artifact.md), [`feedback/review-notes.md`](2026/RUN-0025/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0025/logs/metrics.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -146,7 +146,7 @@ runs/
 
 | Инструмент | Назначение |
 | --- | --- |
-| [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md), [`RUN-0020`](2026/RUN-0020/inputs/README.md), [`RUN-0021`](2026/RUN-0021/inputs/README.md) и [`RUN-0022`](2026/RUN-0022/inputs/README.md). |
+| [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0017`](2026/RUN-0017/inputs/README.md), [`RUN-0020`](2026/RUN-0020/inputs/README.md), [`RUN-0021`](2026/RUN-0021/inputs/README.md) и [`RUN-0025`](2026/RUN-0025/inputs/README.md). |
 | [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
 | [`experiments/parse_qwen_chat_export.py`](../experiments/parse_qwen_chat_export.py) | Считает токены (`tiktoken:cl100k_base`), длительности и метрики по эпизодам из выгрузки чата Qwen. Используется в [`RUN-0018`](2026/RUN-0018/logs/metrics.md) и [`RUN-0021`](2026/RUN-0021/logs/metrics.md). |
 
