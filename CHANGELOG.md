@@ -13,6 +13,28 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #273 прогон RUN-0020: фиксация диалога БА с LLM по задаче 1065
+
+- Добавлен [`runs/2026/RUN-0020/`](runs/2026/RUN-0020/metadata.yaml) —
+  `run_type: statistics`, `result_type: intermediate`: фиксация реально
+  состоявшегося диалога БА с LLM (Proof of Execution) по запросу ООО «А7-А»
+  (формирование Блока 1 «Контекст» и Блока 2 «Вопросы Заказчику»).
+- Прогон оформлен как **один комплексный run с разметкой на 14 эпизодов** и
+  отдельным вердиктом по каждому:
+  [`outputs/README.md`](runs/2026/RUN-0020/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0020/outputs/steps).
+- Вердикт прогона — `needs-rework`, `success_rate = 8/14 ≈ 0.57`. Зафиксированы
+  5 галлюцинаций (2 предотвращены) и 8 дефектов, **все найдены человеком**;
+  доминирующий отказ — самовольная перегенерация согласованного текста
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0020/outputs/quality-findings.md)).
+- Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
+  issue #273 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py).
+- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0020 и
+  ссылка в разделе «Локальные инструменты воспроизводимости») и `EXPECTED_RUNS`
+  в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
 ### Added — Issue #271 реальный прогон 1079 (RUN-0018) как Proof of Execution
 
 - Добавлена запись [`runs/2026/RUN-0018/`](runs/2026/RUN-0018/outputs/README.md) —
