@@ -201,6 +201,33 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0017": {
+        "year": "2026",
+        "files": [
+            "inputs/README.md",
+            "inputs/transcript.md",
+            "inputs/1076-chat-export-1787301046512.json",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/quality-findings.md",
+            "outputs/steps/step-1-as-is-and-glossary.md",
+            "outputs/steps/step-2-object-model.md",
+            "outputs/steps/step-3-section-2-agreed.md",
+            "outputs/steps/step-4-scenarios.md",
+            "outputs/steps/step-5-mtalker-facts.md",
+            "outputs/steps/step-6-fr-v1-and-rework.md",
+            "outputs/steps/step-7-fr-detailed.md",
+            "outputs/steps/step-8-constraints-and-matrix.md",
+            "outputs/steps/step-9-responsibility-boundary.md",
+            "outputs/steps/step-10-doc-verification.md",
+            "outputs/steps/step-11-manager-comment.md",
+            "feedback/ba-review-notes.md",
+            "logs/experiment-log.md",
+            "logs/turn-metrics.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 
