@@ -1,0 +1,60 @@
+run_id: RUN-0026
+process: task-994-bitrix24-lead-title-elicitation
+version: "0.1"
+date: 2026-05-13
+author: "BA-IH + LLM"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/279
+inputs:
+  - inputs/README.md
+  - inputs/chat-transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-vision-and-first-question-list.md
+  - outputs/steps/step-2-requirement-necessity-challenge.md
+  - outputs/steps/step-3-back-to-elicitation.md
+  - outputs/steps/step-4-queue-behaviour-scenario.md
+  - outputs/steps/step-5-questions-in-ba-style.md
+  - outputs/steps/step-6-plain-list-first-attempt.md
+  - outputs/steps/step-7-added-question-8.md
+  - outputs/steps/step-8-consistency-check.md
+  - outputs/steps/step-9-plain-list-second-attempt.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 9
+  iterations: 9
+  ba_edits: 4
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.56
+  success_rate_basis: "5 из 9 эпизодов приняты БА без корректирующей реплики; 4 эпизода (1, 2, 5, 8) потребовали правки: фактическая поправка, смена режима работы и два возврата к формату списка"
+  hallucinations: 3
+  hallucinations_shipped: 0
+  tokens_input: 2157
+  tokens_output: 9475
+  tokens_thinking: 2169
+  tokens_dialog_total: 11632
+  tokens_context_refeed_estimate: 1381083
+  token_method: "tiktoken:cl100k_base"
+  duration_wall_clock_s: 7037
+  duration_active_s: 1738
+  duration_generation_s: 369
+  eval: "Прогон доказал, что свободная (беспромптовая) постановка задачи доводит кейс 994 от сырой проблематики Заказчика до списка из 8 вопросов на выявление потребностей за 9 эпизодов, и что модель корректно принимает смену режима работы «предлагать решение» -> «выявлять потребность». Прогон не доказал управляемости формата ответа: требование «просто список вопросов без заголовков» пришлось повторять дважды (эпизоды 6 и 9), между ними модель самостоятельно вернула заголовки и комментарии. Три ссылки на разделы продуктовой документации даны без проверяемых цитат, но ни одна не дошла до финального артефакта, так как финальный артефакт фактических утверждений не содержит."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/279
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/experiment-log-standard.md
+related_runs:
+  - RUN-0020
+  - RUN-0021
