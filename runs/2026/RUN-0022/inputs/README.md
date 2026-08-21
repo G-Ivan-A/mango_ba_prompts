@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/275"
 ---
 
-# Вход прогона RUN-0021 — провенанс
+# Вход прогона RUN-0022 — провенанс
 
 > **Источник.** Файл, приложенный к
 > [issue #275](https://github.com/G-Ivan-A/mango_ba_prompts/issues/275):
@@ -44,8 +44,8 @@ stat -c %s 1040.json  # 189542
 
 ```bash
 python3 scripts/chat_export_to_markdown.py \
-  runs/2026/RUN-0021/inputs/1040-chat-export-1787301483841.json \
-  --transcript runs/2026/RUN-0021/inputs/transcript.md
+  runs/2026/RUN-0022/inputs/1040-chat-export-1787301483841.json \
+  --transcript runs/2026/RUN-0022/inputs/transcript.md
 ```
 
 ## Структура диалога
