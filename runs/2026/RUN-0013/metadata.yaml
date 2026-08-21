@@ -5,7 +5,7 @@ date: 2026-07-31
 author: "BA-IH + LLM"
 model: "qwen3.7-plus + qwen3.8-max-preview"
 status: works-with-edits
-run_type: execution
+run_type: statistics
 duration: "2026-06-18 → 2026-07-31 (10 рабочих дней сессий, 44 календарных дня)"
 tokens_input: 79405522
 tokens_output: 543180

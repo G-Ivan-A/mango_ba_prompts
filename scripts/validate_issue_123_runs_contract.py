@@ -101,7 +101,7 @@ EXPECTED_RUNS = {
     },
     "RUN-0010": {
         "year": "2026",
-        "run_type": "execution",
+        "run_type": "statistics",
         "files": [
             "outputs/2026-06-17-bcreq-1025-email-routing.md",
             "outputs/analysis-bcreq-1025-2026-06-17.md",
@@ -161,7 +161,7 @@ EXPECTED_RUNS = {
     },
     "RUN-0013": {
         "year": "2026",
-        "run_type": "execution",
+        "run_type": "statistics",
         "files": [
             "inputs/chat-export.md",
             "inputs/raw-requirement.md",
@@ -183,7 +183,7 @@ EXPECTED_RUNS = {
     },
     "RUN-0014": {
         "year": "2026",
-        "run_type": "execution",
+        "run_type": "statistics",
         "files": [
             "inputs/raw-requirement.md",
             "inputs/kb-files.md",
@@ -202,6 +202,7 @@ EXPECTED_RUNS = {
         "old_paths": [],
     },
     "RUN-0017": {
+        "run_type": "statistics",
         "year": "2026",
         "files": [
             "inputs/README.md",

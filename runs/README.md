@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-08-21
 ai-generated: true
 type: registry
@@ -55,9 +55,24 @@ runs/
 
 | `run_type` | Зачем прогон | Что кладём в `outputs/` | По чему судим об успехе | Пример |
 | --- | --- | --- | --- | --- |
-| `execution` | Получить рабочий артефакт. | ФТ, ТЗ, User Story, матрица UC, документ. | Качество артефакта и acceptance criteria. | [`RUN-0013`](2026/RUN-0013/metadata.yaml) — ФТ по BCREQ-1059. |
+| `execution` | Получить рабочий артефакт. | ФТ, ТЗ, User Story, матрица UC, документ. | Качество артефакта и acceptance criteria. | [`RUN-0012`](2026/RUN-0012/metadata.yaml) — ФТ по BCREQ-1069. |
 | `statistics` | Накопить данные о применении промптов и о коммуникации «пользователь ↔ ИИ». | Замеры, классификации, A/B-сравнения, таксономии. | Значимость выборки, покрытие типов запросов, выявленные паттерны. | [`RUN-0009`](2026/RUN-0009/metadata.yaml) — A/B применения отраслевых стандартов. |
 | `legacy` | Запись, тип которой не восстанавливается. | — | Не участвует в статистической выборке. | — |
+
+### Как выбрать тип
+
+Тип берётся из **формулировки цели в постановке задачи** (issue), а не из состава
+файлов прогона:
+
+| Формулировка цели | Тип |
+| --- | --- |
+| «Зафиксировать прогон», «собрать эмпирические данные», «накопить статистику для анализа» | `statistics` |
+| «Выполнить процесс», «сформировать ФТ/ТЗ/документ», «получить артефакт» | `execution` |
+
+Наличие ФТ или матрицы UC в `outputs/` не делает прогон `execution` — в
+статистическом прогоне артефакт является следствием успешной коммуникации, а не
+целью задачи. Полный критерий и разбор пограничных случаев —
+[`standards/runs-contract-standard.md`](../standards/runs-contract-standard.md#критерий-выбора-типа-прогона).
 
 Метрики двух типов не смешиваются: выборка для решения о промптах собирается из
 прогонов одного `run_type`. Если из прогона-исполнения извлекаются данные для
@@ -100,11 +115,11 @@ runs/
 | [`RUN-0007`](2026/RUN-0007/metadata.yaml) | 2026-06-16 | `execution` | fr-generation | [`fr-generation-1027-live_2026-06-16.md`](2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md) |
 | [`RUN-0008`](2026/RUN-0008/metadata.yaml) | 2026-06-16 | `statistics` | kb-citation-check | [`kb-citation-check-2026-06-16.md`](2026/RUN-0008/outputs/kb-citation-check-2026-06-16.md) |
 | [`RUN-0009`](2026/RUN-0009/metadata.yaml) | 2026-06-16 | `statistics` | industry-standards-ab-check | [`standards-applied-ab-2026-06-16.md`](2026/RUN-0009/outputs/standards-applied-ab-2026-06-16.md) |
-| [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | `execution` | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
+| [`RUN-0010`](2026/RUN-0010/metadata.yaml) | 2026-06-17 | `statistics` | bcreq-1025-email-routing | [`2026-06-17-bcreq-1025-email-routing.md`](2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md), [`analysis-bcreq-1025-2026-06-17.md`](2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md) |
 | [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | `execution` | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-07-14 | `execution` | bcreq-1069-restricted-api-key | [`outputs/final-artifact.md`](2026/RUN-0012/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0012/outputs/README.md) |
-| [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-31 | `execution` | bcreq-1059-multichannel-slots-limits | [`outputs/final-artifact.md`](2026/RUN-0013/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0013/outputs/README.md) |
-| [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | `execution` | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
+| [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-31 | `statistics` | bcreq-1059-multichannel-slots-limits | [`outputs/final-artifact.md`](2026/RUN-0013/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0013/outputs/README.md) |
+| [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | `statistics` | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
 | [`RUN-0017`](2026/RUN-0017/metadata.yaml) | 2026-07-24 | `statistics` | task-1076-vks-artifacts-bpmsoft | [`outputs/README.md`](2026/RUN-0017/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0017/outputs/final-artifact.md) |
 
 ## Локальные инструменты воспроизводимости

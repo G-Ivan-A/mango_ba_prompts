@@ -7,6 +7,9 @@ guarantees of issue #293 stay covered even when every real run is well-formed:
 
 - backward compatibility: ``metadata.yaml`` without ``run_type`` is valid and
   reads as ``execution``;
+- classification: runs recorded by a "зафиксировать прогон" issue are
+  ``statistics``, runs recorded by a "получить артефакт" issue are ``execution``
+  (issue #293 review criterion);
 - boundaries: a run that points at ``prompts/``, ``kb/``, ``site/data/`` or
   ``patterns/``, or otherwise escapes its own directory, fails.
 
@@ -23,6 +26,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from validate_issue_123_runs_contract import (  # noqa: E402
+    EXPECTED_RUNS,
+    ROOT,
     check_run_boundaries,
     check_run_type,
     effective_run_type,
@@ -94,6 +99,48 @@ class BoundariesTest(unittest.TestCase):
         lists = parse_yaml_lists(path)
         self.assertEqual(lists["outputs"], ["outputs/a.md"])
         self.assertEqual(lists["logs"], ["logs/b.md"])
+
+
+class ClassificationTest(unittest.TestCase):
+    """Run type follows the goal stated in the issue, not the artifacts produced.
+
+    Criterion agreed in the review of PR #294: «зафиксировать прогон / собрать
+    эмпирические данные» → ``statistics``; «выполнить процесс / получить
+    артефакт» → ``execution``.
+    """
+
+    #: run_id -> run_type, justified in
+    #: docs/analysis/2026-08-21-runs-type-gap-analysis.md (Ф-5).
+    EXPECTED_CLASSIFICATION = {
+        "RUN-0001": "execution",
+        "RUN-0002": "execution",
+        "RUN-0003": "execution",
+        "RUN-0004": "statistics",
+        "RUN-0005": "statistics",
+        "RUN-0006": "execution",
+        "RUN-0007": "execution",
+        "RUN-0008": "statistics",
+        "RUN-0009": "statistics",
+        "RUN-0010": "statistics",
+        "RUN-0011": "execution",
+        "RUN-0012": "execution",
+        "RUN-0013": "statistics",
+        "RUN-0014": "statistics",
+        "RUN-0017": "statistics",
+    }
+
+    def test_metadata_matches_agreed_classification(self) -> None:
+        for run_id, expected in self.EXPECTED_CLASSIFICATION.items():
+            spec = EXPECTED_RUNS[run_id]
+            path = ROOT / "runs" / str(spec["year"]) / run_id / "metadata.yaml"
+            metadata = parse_simple_yaml(path)
+            self.assertEqual(effective_run_type(metadata), expected, run_id)
+
+    def test_validator_registry_matches_agreed_classification(self) -> None:
+        self.assertEqual(
+            {run_id: spec["run_type"] for run_id, spec in EXPECTED_RUNS.items()},
+            self.EXPECTED_CLASSIFICATION,
+        )
 
 
 if __name__ == "__main__":
