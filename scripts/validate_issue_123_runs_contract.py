@@ -254,6 +254,27 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0021": {
+        "year": "2026",
+        "run_type": "statistics",
+        "files": [
+            "inputs/README.md",
+            "inputs/transcript.md",
+            "inputs/raw-requirement.md",
+            "inputs/1040-chat-export-1787301483841.json",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/quality-findings.md",
+            "outputs/steps/step-1-init-handshake.md",
+            "outputs/steps/step-2-fr-proposal-variant-1.md",
+            "outputs/steps/step-3-revalidation-variant-2.md",
+            "feedback/review-notes.md",
+            "logs/experiment-log.md",
+            "logs/metrics.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

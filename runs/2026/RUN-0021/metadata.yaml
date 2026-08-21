@@ -1,0 +1,59 @@
+run_id: RUN-0021
+process: fr-validation-1040-speech-analytics-direction-filter
+version: "0.1"
+date: 2026-07-01
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3.7-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/275
+  - inputs/1040-chat-export-1787301483841.json
+inputs:
+  - inputs/README.md
+  - inputs/1040-chat-export-1787301483841.json
+  - inputs/transcript.md
+  - inputs/raw-requirement.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/final-artifact.md
+  - outputs/quality-findings.md
+  - outputs/steps/step-1-init-handshake.md
+  - outputs/steps/step-2-fr-proposal-variant-1.md
+  - outputs/steps/step-3-revalidation-variant-2.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 3
+  iterations: 3
+  ba_edits: 0
+  quality: 2
+  verdict: works-with-edits
+  success_rate: 0.33
+  success_rate_basis: "1 из 3 эпизодов с наблюдаемым положительным исходом (E1 принят); E2 не применён — БА сменил концепцию решения, по E3 данных о приёмке нет"
+  hallucinations: 2
+  hallucinations_shipped: 1
+  tokens_input: 12251
+  tokens_output: 15731
+  tokens_thinking: 12462
+  tokens_dialog_total: 27982
+  token_method: "provider-usage:qwen3.7-plus"
+  duration_wall_clock_s: 522867
+  duration_active_s: 347
+  duration_generation_s: 301
+  eval: "Промпт удерживает сценарий диалога и находит реальные пробелы однозначности, но не сохраняет состав требований между итерациями: в E2 потерян верхний уровень 4.1—4.4, в E3 удалено требование 4.4.3 и оборвано последнее требование. Прогон фиксируется как статистика, приёмка БА отсутствует, эталоном не является."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/275
+related_artifacts:
+  - prompts/fr-validation-legacy.md
+  - standards/runs-contract-standard.md
+  - standards/experiment-log-standard.md
+  - scripts/chat_export_to_markdown.py
+  - experiments/chat_export_usage_metrics.py
+related_runs:
+  - RUN-0017
+  - RUN-0018
