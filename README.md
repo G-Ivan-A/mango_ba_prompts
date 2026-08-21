@@ -138,7 +138,8 @@ self-test evidence живёт в [`runs/`](runs/).
 | --- | --- |
 | `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, capability taxonomy, DoD. |
 | `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента (включая fail-closed semantics). |
-| `AI_SESSION_HANDOVER_PROMPT.md` | Готовый prompt для Runtime-онбординга и передачи контекста между чатами. |
+| `AI_SESSION_HANDOVER_PROMPT.md` | Готовый prompt для Runtime-онбординга и передачи контекста между чатами (full-слой). |
+| `prompts/AI_SESSION_HANDOVER_PROMPT.executable.md` | Executable-слой того же prompt: грузится первым, full — только по escalation triggers. |
 | `ai-rules/agent-onboarding-protocol.md` | Актуальный протокол онбординга агента (v1.5, рабочая копия Хаба). |
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
@@ -149,7 +150,8 @@ self-test evidence живёт в [`runs/`](runs/).
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
 | `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
-| `tools/` | Рабочие копии валидаторов Хаба (`make validate`): frontmatter и именование файлов. Дельты — [`tools/README.md`](tools/README.md). |
+| `tools/` | Рабочие копии валидаторов Хаба (`make validate`): frontmatter, именование файлов и базовая структура репозитория. Дельты — [`tools/README.md`](tools/README.md). |
+| `.archive/` | Скрытый архив `superseded`-артефактов: сохраняются ради traceability, точками входа не являются ([`.archive/README.md`](.archive/README.md)). |
 | `.github/workflows/validate.yml` | CI: прогон валидаторов Хаба на каждый PR и push в `main`. |
 | `site/` | Статический SPA-интерфейс: Каталог, Дашборд, Roadmap, Процессы и Паттерны. |
 | `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
@@ -214,7 +216,8 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом), v1.5 | [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md) |
-| Архив протокола онбординга v1.2 (superseded, для traceability) | [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md) |
+| Архив протокола онбординга v1.2 (superseded, для traceability) | [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md) |
+| Почему корневые `AI_*.md` остаются в корне, а архив ушёл в `.archive/` | [`docs/audit/2026-08-21-root-structure-audit.md`](docs/audit/2026-08-21-root-structure-audit.md) |
 | Карта активных артефактов и связей | [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) |
 | Суммарии длинных сессий для передачи контекста | [`pr-ops/session-digests.md`](pr-ops/session-digests.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |

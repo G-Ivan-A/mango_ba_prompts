@@ -61,5 +61,17 @@
       ],
       "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance, task templates, related ADR references, and migration-era references; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
     }
+  ],
+  "path_migrations": [
+    {
+      "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/291",
+      "date": "2026-08-21",
+      "reason": "Исправление структуры корня и вынос superseded-артефактов в скрытый .archive/. Записи sync_history сознательно не переписаны: журнал фиксирует пути на момент синка.",
+      "moves": {
+        "AI_SESSION_HANDOVER_PROMPT.executable.md": "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+        "ai-rules/agent-onboarding-protocol_old.md": ".archive/ai-rules/agent-onboarding-protocol_old.md",
+        "ai-rules/agent-onboarding-protocol_old.executable.md": ".archive/ai-rules/agent-onboarding-protocol_old.executable.md"
+      }
+    }
   ]
 }

@@ -9,7 +9,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 ---
 
 > **LLM Loading Contract — full layer.**
-> Start with [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md).
+> Start with [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
 > Load this full file only when an escalation trigger in the executable companion
 > is true: explicit request for full/rationale/history, missing required section
 > in executable, need for exact wording/table/reference, or editing/validating
@@ -180,7 +180,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   эскалация, DoD.
 - [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
   — актуальный протокол онбординга (v1.5, рабочая копия Хаба).
-- Архив v1.2: [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+- Архив v1.2: [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   — `status: superseded`, хранится для traceability, точкой входа не является.
 - [`pr-ops/session-digests.md`](pr-ops/session-digests.md) — локальный
   индекс суммарий сессий для передачи контекста между чатами.

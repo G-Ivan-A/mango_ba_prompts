@@ -105,7 +105,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | Было | Стало |
 | --- | --- |
 | `governance/artifact-map.md`, `BACKLOG.md`, `session-digests.md`, `migration-*.md`, `sync-matrix-2026-06-17.md`, `prompt-feedback.json` | `pr-ops/` |
-| `governance/agent-onboarding-protocol.md` (+ `.executable.md`), v1.2 | `ai-rules/agent-onboarding-protocol_old.md` (+ `.executable.md`), архив (issue #267) |
+| `governance/agent-onboarding-protocol.md` (+ `.executable.md`), v1.2 | `.archive/ai-rules/agent-onboarding-protocol_old.md` (+ `.executable.md`), архив (issue #267) |
 | `governance/rfc-*.md`, `governance/rfc/`, `governance/knowledge-transfer-to-hub/` | `docs/rfc/` |
 | `governance/audit-*.md` | `docs/audit/` |
 | `governance/prompt-debugging-process.md` | `standards/` |

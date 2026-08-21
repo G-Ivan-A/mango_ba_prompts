@@ -22,10 +22,10 @@ sys.path.insert(0, str(ROOT))
 from scripts.kb.tokens import count_tokens, method  # noqa: E402
 
 EXPECTED_PAIRS = (
-    ("AI_SESSION_HANDOVER_PROMPT.md", "AI_SESSION_HANDOVER_PROMPT.executable.md"),
+    ("AI_SESSION_HANDOVER_PROMPT.md", "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md"),
     (
-        "ai-rules/agent-onboarding-protocol_old.md",
-        "ai-rules/agent-onboarding-protocol_old.executable.md",
+        ".archive/ai-rules/agent-onboarding-protocol_old.md",
+        ".archive/ai-rules/agent-onboarding-protocol_old.executable.md",
     ),
     ("prompts/README.md", "prompts/README.executable.md"),
     ("docs/ba-processes/00-index.md", "docs/ba-processes/00-index.executable.md"),
