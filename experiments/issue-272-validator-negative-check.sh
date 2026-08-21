@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Негативная проверка scripts/validate_issue_272_run_0019.py: валидатор должен
-# падать на ручной правке порождаемого файла, на разъехавшихся метриках и на
-# несогласованном вердикте эпизода. Изменения откатываются в конце.
+# падать на ручной правке порождаемого файла, на разъехавшихся метриках, на
+# несогласованном вердикте эпизода и на подмене run_type (issue #293).
+# Изменения откатываются в конце.
 set -u
 cd "$(dirname "$0")/.."
 RUN=runs/2026/RUN-0019
@@ -25,6 +26,9 @@ expect_fail "метрика metadata.yaml разошлась с экспорто
 
 sed -i 's/^| E2 | Критическая переоценка и проверка API | `\[4\]`–`\[9\]` | works |/| E2 | Критическая переоценка и проверка API | `[4]`–`[9]` | fails |/' "$RUN/outputs/episodes.md"
 expect_fail "вердикт эпизода разошёлся между файлами"
+
+sed -i 's/^run_type: statistics$/run_type: execution/' "$RUN/metadata.yaml"
+expect_fail "run_type не соответствует цели постановки"
 
 python3 scripts/validate_issue_272_run_0019.py && echo "baseline PASS restored" || { echo "BASELINE BROKEN"; fail=1; }
 exit $fail

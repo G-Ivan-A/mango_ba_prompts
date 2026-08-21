@@ -1,8 +1,8 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-19
-ai-generated: true
+version: 0.4
+updated: 2026-08-21
+temperature: 0.1
 ---
 
 # Contributing — mango_ba_prompts

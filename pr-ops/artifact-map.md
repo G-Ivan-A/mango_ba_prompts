@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-18
+version: 0.6
+updated: 2026-08-21
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -43,8 +43,9 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/AI_GOVERNANCE.md` | контракт | Конституция проекта: принцип «качество системы исполнения > стоимость», ДОД с процессом проверки, роль проекта и инфраструктурная модель, подготовка к приватизации, роли, operating modes, границы AI-assisted work. | Да | `AI_QUICK_RULES.md`, `CONTRIBUTING.md`, `docs/hub-research-dependencies.md` |
 | `/AI_QUICK_RULES.md` | исполнимые правила | Короткая инструкция для агента: куда смотреть, чего не делать, когда звать человека. | Да | `AI_GOVERNANCE.md`, `README.md` |
 | `/CONTRIBUTING.md` | workflow | Процесс issue → PR → review и чек-лист вклада. | Да | `AI_GOVERNANCE.md`, `CHANGELOG.md` |
-| `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `pr-ops/session-digests.md`, `ai-rules/agent-onboarding-protocol_old.md` |
-| `/ai-rules/agent-onboarding-protocol_old.md` | протокол | Локальная адаптация протокола онбординга агента. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
+| `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `pr-ops/session-digests.md`, `ai-rules/agent-onboarding-protocol.md` |
+| `/ai-rules/agent-onboarding-protocol.md` | протокол | Актуальный протокол онбординга агента (v1.5, рабочая копия Хаба). Точка входа для агентов. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
+| `/ai-rules/agent-onboarding-protocol_old.md` | протокол (архив) | Локальная адаптация v1.2, `status: superseded`. Хранится только для traceability, точкой входа не является. | Нет (архив) | `ai-rules/agent-onboarding-protocol.md` |
 | `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
 | `/pr-ops/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/pr-ops/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
@@ -64,8 +65,9 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
 | `/standards/` | каталог | Стандарты спицы и рабочие копии стандартов Хаба; разграничение — в `standards/README.md`. | Да | `standards/README.md`, `docs/adr/` |
 | `/standards/README.md` | навигация | Реестр стандартов: что принадлежит спице, что рабочая копия Хаба, и правило «сужать можно, противоречить нельзя». | Да | `standards/GLOSSARY.md`, `docs/adr/0004-hub-resync-2026-08.md` |
-| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol_old.md`, `AI_GOVERNANCE.md` |
+| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `AI_GOVERNANCE.md` |
 | `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `AI_GOVERNANCE.md`, `docs/adr/0004-hub-resync-2026-08.md` |
+| `/tools/` | инструмент | Рабочие копии валидаторов Хаба: `validate-frontmatter.sh`, `validate-file-naming.sh`; локальные дельты описаны в `tools/README.md`. Запуск — `make validate`. | Да | `tools/README.md`, `pr-ops/BACKLOG.md` |
 | `/scripts/sync_from_hub.py` | инструмент | Воспроизводимый ре-синк по манифесту с переписыванием ссылок; `--check` сверяет копии с Хабом. | Да | `.hub-profile.json`, `scripts/validate_issue_265_hub_sync.py` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
 
@@ -103,7 +105,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | Было | Стало |
 | --- | --- |
 | `governance/artifact-map.md`, `BACKLOG.md`, `session-digests.md`, `migration-*.md`, `sync-matrix-2026-06-17.md`, `prompt-feedback.json` | `pr-ops/` |
-| `governance/agent-onboarding-protocol.md` (+ `.executable.md`), v1.2 | `ai-rules/agent-onboarding-protocol_old.md` (+ `.executable.md`) |
+| `governance/agent-onboarding-protocol.md` (+ `.executable.md`), v1.2 | `ai-rules/agent-onboarding-protocol_old.md` (+ `.executable.md`), архив (issue #267) |
 | `governance/rfc-*.md`, `governance/rfc/`, `governance/knowledge-transfer-to-hub/` | `docs/rfc/` |
 | `governance/audit-*.md` | `docs/audit/` |
 | `governance/prompt-debugging-process.md` | `standards/` |
@@ -111,8 +113,9 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 - `research/` **не создаётся**: каталог специфичен для Хаба; research остаётся
   reference-only через [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md).
 - Протокол v1.2 сохранён под суффиксом `_old` рядом с рабочей копией Хаба v1.5
-  ([`ai-rules/agent-onboarding-protocol.md`](../ai-rules/agent-onboarding-protocol.md));
-  актуализация до v1.5 — отдельная задача.
+  ([`ai-rules/agent-onboarding-protocol.md`](../ai-rules/agent-onboarding-protocol.md)).
+  Актуализация выполнена в issue [#267](https://github.com/G-Ivan-A/mango_ba_prompts/issues/267):
+  вся навигация ведёт на v1.5, `_old` переведён в `status: superseded`.
 - Перенос воспроизводим:
   [`experiments/restructure_governance_dirs.py`](../experiments/restructure_governance_dirs.py)
   (22 пути, 63 файла с переписанными путями, 123 пересчитанные относительные

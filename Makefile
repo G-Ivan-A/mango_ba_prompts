@@ -45,7 +45,7 @@ TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
 SOURCE_DIR ?= kb/sources/mango-cc-manual
 
-.PHONY: help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
+.PHONY: validate validate-frontmatter validate-file-naming validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
@@ -58,6 +58,9 @@ help:
 	@echo "  make kb-lk        — извлечь multi-part mango-lk-manual из issue #117"
 	@echo "  make kb-mtalker   — извлечь multi-document Mango Talker из issue #121"
 	@echo "  make kb-validate  — проверить конвейер БЗ (stdlib-only, как в CI)"
+	@echo ""
+	@echo "Валидаторы Хаба (tools/README.md):"
+	@echo "  make validate     — frontmatter + именование файлов + протокол онбординга"
 	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
 	@echo "  make kb-clean     — удалить временные файлы (pycache, _diagram.png)"
 	@echo ""
@@ -133,3 +136,20 @@ kb-tokens:
 kb-clean:
 	rm -rf scripts/kb/__pycache__
 	rm -f kb/sources/contact-center-manual-sample/_diagram.png
+
+# Валидаторы Хаба (рабочие копии, см. tools/README.md). Область frontmatter —
+# корневые файлы, ai-rules/ и tools/: она приведена в соответствие в issue #267,
+# остальной корпус — технический долг в pr-ops/BACKLOG.md.
+FRONTMATTER_SCOPE := $(wildcard *.md) ai-rules tools
+
+validate: validate-frontmatter validate-file-naming validate-onboarding
+
+validate-frontmatter:
+	./tools/validate-frontmatter.sh $(FRONTMATTER_SCOPE)
+
+validate-file-naming:
+	./tools/validate-file-naming.sh
+
+# Регрессионный тест issue #267: навигация ведёт на v1.5, архив не потерян.
+validate-onboarding:
+	$(PYTHON) scripts/validate_issue_267_onboarding_v15.py

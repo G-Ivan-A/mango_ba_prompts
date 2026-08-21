@@ -1,14 +1,19 @@
 ---
-status: draft
-version: 0.1
-updated: 2026-06-20
-ai-generated: true
+status: superseded
+version: 0.2
+updated: 2026-08-21
+temperature: 0.1
 type: protocol
 layer: executable
 full_version: "ai-rules/agent-onboarding-protocol_old.md"
 related_standard: "../standards/cascading-context-loading-standard.md"
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 ---
+
+> 🗄️ **АРХИВ (superseded, issue #267).** Актуальный протокол онбординга —
+> [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5).
+> Этот файл сохранён только для traceability: он фиксирует локальную адаптацию
+> v1.2 и не должен использоваться агентами как точка входа.
 
 # Agent Onboarding Protocol — executable layer
 

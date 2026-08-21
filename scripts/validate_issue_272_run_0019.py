@@ -48,7 +48,13 @@ REQUIRED_METADATA_FIELDS = (
     "author",
     "model",
     "status",
+    "run_type",
 )
+
+# Тип прогона берётся из формулировки цели issue #272 («зафиксировать прогон»,
+# «собрать эмпирические данные»), а не из состава outputs/ —
+# см. standards/runs-contract-standard.md, «Критерий выбора типа прогона».
+RUN_TYPE = "statistics"
 
 EPISODES = ("E1", "E2", "E3", "E4", "E5", "E6", "E7")
 VERDICTS = ("works", "works-with-edits", "fails")
@@ -104,6 +110,11 @@ def main() -> int:
     for field in REQUIRED_METADATA_FIELDS:
         if field not in metadata:
             errors.append(f"metadata.yaml: missing required field `{field}`")
+    if metadata.get("run_type") != RUN_TYPE:
+        errors.append(
+            f"metadata.yaml: run_type must be `{RUN_TYPE}` for this run "
+            f"(see standards/runs-contract-standard.md)"
+        )
     if metadata.get("run_id") != "RUN-0019":
         errors.append("metadata.yaml: run_id must be RUN-0019 and match the directory name")
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", metadata.get("date", "")):
@@ -196,6 +207,25 @@ def main() -> int:
     ):
         if marker not in (ROOT / relative).read_text(encoding="utf-8"):
             errors.append(f"{relative}: RUN-0019 is not registered")
+
+    # Тип прогона в реестре обязан совпадать с metadata.yaml.
+    registry = (ROOT / "runs" / "README.md").read_text(encoding="utf-8")
+    registry_rows = re.findall(r"^\| \[`RUN-0019`\].*$", registry, re.M)
+    if not registry_rows:
+        errors.append("runs/README.md: no registry row for RUN-0019")
+    elif f"`{RUN_TYPE}`" not in registry_rows[0]:
+        errors.append(f"runs/README.md: RUN-0019 row must declare run_type `{RUN_TYPE}`")
+
+    # Границы прогона: запись не изменяет рабочие артефакты и веб-представление.
+    for field in ("source_paths", "inputs", "outputs", "logs", "feedback"):
+        for path in re.findall(rf"^{field}:\n((?:  - .*\n)+)", metadata_text, re.M):
+            for item in re.findall(r"^  - (.+)$", path, re.M):
+                item = item.strip()
+                normalized = item if item.startswith("runs/") else f"runs/2026/RUN-0019/{item}"
+                if not normalized.startswith("runs/2026/RUN-0019/"):
+                    errors.append(
+                        f"metadata.yaml: `{field}` path `{item}` points outside the run directory"
+                    )
 
     if errors:
         print("issue-272 RUN-0019 validation: FAIL")
