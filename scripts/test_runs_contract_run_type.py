@@ -131,6 +131,7 @@ class ClassificationTest(unittest.TestCase):
         "RUN-0020": "statistics",
         "RUN-0021": "statistics",
         "RUN-0022": "statistics",
+        "RUN-0023": "statistics",
         "RUN-0024": "statistics",
     }
 
