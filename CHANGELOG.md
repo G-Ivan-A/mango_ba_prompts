@@ -13,6 +13,32 @@ ai-generated: true
 
 ## Unreleased
 
+### Added — Issue #269 фиксация прогона RUN-0013 (задача 1075, создание сделки в amoCRM при звонке)
+
+- Добавлена запись [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/metadata.yaml) —
+  реальный прогон промпта
+  [`glossary-context-understanding-stepwise`](prompts/glossary-context-understanding-stepwise.md)
+  по задаче 1075. Прогон **частичный**: целевой артефакт (Разделы 1 и 2 ТЗ) не
+  получен, завершён 1 шаг из 4 (`success_rate` 0.25). Данные — промежуточные, не
+  golden case; запись сделана для статистики и анализа результативности промптов
+  и галлюцинаций.
+- Метрики в [`metadata.yaml`](runs/2026/RUN-0013/metadata.yaml) **измерены**, а не
+  оценены: 207 499 токенов (вход 195 948 / выход 11 551), 2 114 с ≈ 35,2 мин,
+  модель `qwen3.7-plus`. Источник цифр — служебные поля `usage` выгрузки чата;
+  воспроизведение — [`experiments/run-0013-chat-export/`](experiments/run-0013-chat-export/README.md).
+- Зафиксированы пять дефектов Д-1…Д-5
+  ([`feedback/ba-review.md`](runs/2026/RUN-0013/feedback/ba-review.md)), в том
+  числе одно проверенное фактическое искажение (утверждение «"Неразобранное" —
+  не сделка и не этап воронки» опровергается документацией amoCRM) и переход к
+  следующему шагу без подтверждения человека. Отдельно описан конфликт правил 2
+  и 5 самого промпта.
+- В [`standards/runs-contract-standard.md`](standards/runs-contract-standard.md)
+  разрешённые дополнительные поля `metadata.yaml` расширены полями `feedback` и
+  `metrics` (токены, длительность, `success_rate`, `eval`) — требование issue #269
+  фиксировать метрики прогона.
+- Реестры обновлены: [`runs/README.md`](runs/README.md) и
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 
 - Дрейф в 610 коммитов устранён: рабочие копии методологии Хаба перенесены с
