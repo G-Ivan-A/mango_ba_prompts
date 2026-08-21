@@ -20,7 +20,7 @@ related_issues:
 
 ```bash
 python3 experiments/parse_765_chat_export.py \
-  runs/2026/RUN-0021/inputs/765-chat-export-1787301501556.json
+  runs/2026/RUN-0022/inputs/765-chat-export-1787301501556.json
 ```
 
 ## Таблица
