@@ -72,6 +72,7 @@ temperature: 0.1
 - Границы прогона (issue #293) соблюдены: изменения только внутри
   `runs/2026/RUN-0021/`, реестров и валидатора; `prompts/`, `kb/`, `patterns/`
   и `site/data/` не затронуты.
+
 ### Added — Issue #276 реальный прогон 765 (RUN-0022) как Proof of Execution
 
 - Добавлена запись [`runs/2026/RUN-0022/`](runs/2026/RUN-0022/outputs/README.md) —
