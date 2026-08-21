@@ -127,8 +127,8 @@ class ClassificationTest(unittest.TestCase):
         "RUN-0013": "statistics",
         "RUN-0014": "statistics",
         "RUN-0017": "statistics",
-        # issue #272: «зафиксировать прогон», «собрать эмпирические данные».
         "RUN-0019": "statistics",
+        "RUN-0018": "statistics",
     }
 
     def test_metadata_matches_agreed_classification(self) -> None:
