@@ -36,7 +36,7 @@ related_issues:
 
 ```bash
 python3 experiments/okdesk_citation_grounding_probe.py \
-  runs/2026/RUN-0023/inputs/1020-chat-export-1787301522802.json
+  runs/2026/RUN-0024/inputs/1020-chat-export-1787301522802.json
 ```
 
 Скрипт — локальный инструмент воспроизводимости, не артефакт прогона:

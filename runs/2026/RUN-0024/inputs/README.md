@@ -31,9 +31,9 @@ related_issues:
 
 ```bash
 python3 scripts/chat_export_to_markdown.py \
-  runs/2026/RUN-0023/inputs/1020-chat-export-1787301522802.json \
-  --transcript runs/2026/RUN-0023/inputs/transcript.md \
-  --metrics runs/2026/RUN-0023/logs/turn-metrics.md
+  runs/2026/RUN-0024/inputs/1020-chat-export-1787301522802.json \
+  --transcript runs/2026/RUN-0024/inputs/transcript.md \
+  --metrics runs/2026/RUN-0024/logs/turn-metrics.md
 ```
 
 > **Статус скрипта.** `scripts/chat_export_to_markdown.py` —

@@ -13,29 +13,29 @@ temperature: 0.1
 
 ## Unreleased
 
-### Added — Issue #277 реальный прогон 1020 (RUN-0023): вопросы стейкхолдеру по интеграции OkDesk ↔ MANGO OFFICE
+### Added — Issue #277 реальный прогон 1020 (RUN-0024): вопросы стейкхолдеру по интеграции OkDesk ↔ MANGO OFFICE
 
-- Добавлена запись [`runs/2026/RUN-0023/`](runs/2026/RUN-0023/outputs/README.md) —
+- Добавлена запись [`runs/2026/RUN-0024/`](runs/2026/RUN-0024/outputs/README.md) —
   прогон-фиксация (`run_type: statistics`) на **живых данных чата** (сессия
   2026-05-25, модель `qwen3.6-plus`, 4 эпизода): дословный транскрипт
-  ([`inputs/transcript.md`](runs/2026/RUN-0023/inputs/transcript.md)), вход —
+  ([`inputs/transcript.md`](runs/2026/RUN-0024/inputs/transcript.md)), вход —
   ad-hoc постановка БА без библиотечного промпта, разбор по эпизодам
-  ([`outputs/steps/`](runs/2026/RUN-0023/outputs/steps/)) и итоговое состояние
+  ([`outputs/steps/`](runs/2026/RUN-0024/outputs/steps/)) и итоговое состояние
   10 вопросов стейкхолдеру.
 - Прогон **не является** golden case: итог помечен как промежуточное свидетельство
   с реестром незакрытых дефектов Р1–Р6
-  ([`outputs/final-artifact.md`](runs/2026/RUN-0023/outputs/final-artifact.md)).
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0024/outputs/final-artifact.md)).
 - Зафиксированы три галлюцинации: Г1 (выдуманный механизм с «Лидом», опровергнут
   БА через 1 ч 42 мин), Г2 (вымышленные значения `direction` «входящий/исходящий»,
   дошли до итога), Г3 (ложная атрибуция факта БА документации OkDesk) —
-  [`outputs/quality-findings.md`](runs/2026/RUN-0023/outputs/quality-findings.md).
+  [`outputs/quality-findings.md`](runs/2026/RUN-0024/outputs/quality-findings.md).
   Корневая причина Г2/Г3 доказана воспроизводимо: URL постановки адресуют раздел
   документации фрагментом (`#!...`), который не разыменовывается веб-инструментом,
   поэтому извлечён не тот раздел; термины `incoming`/`outgoing`/`call_record`
   встречаются в источниках прогона 0 раз
-  ([`logs/grounding-check.md`](runs/2026/RUN-0023/logs/grounding-check.md)).
+  ([`logs/grounding-check.md`](runs/2026/RUN-0024/logs/grounding-check.md)).
 - Измеренные метрики из полей провайдера
-  ([`logs/turn-metrics.md`](runs/2026/RUN-0023/logs/turn-metrics.md)): 59 974 токена
+  ([`logs/turn-metrics.md`](runs/2026/RUN-0024/logs/turn-metrics.md)): 59 974 токена
   суммарно (in 53 886 / out 6 088 / reasoning 637), окно ≈4.03 ч. Скрипт проверки
   заземления сносок — [`experiments/okdesk_citation_grounding_probe.py`](experiments/okdesk_citation_grounding_probe.py).
 - Правки промптов по гипотезам Г-A…Г-D **не применяются** в этом PR (границы
