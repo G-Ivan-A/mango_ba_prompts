@@ -147,6 +147,25 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0014": {
+        "year": "2026",
+        "files": [
+            "inputs/raw-requirement.md",
+            "inputs/kb-files.md",
+            "inputs/chat-export-1075.json",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/steps/step-0-as-is.md",
+            "outputs/steps/step-1-fact-check-and-uncertainty.md",
+            "outputs/steps/step-2-contradictions.md",
+            "feedback/ba-review.md",
+            "logs/experiment-log.md",
+            "logs/metrics.md",
+            "logs/chat-transcript.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

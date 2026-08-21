@@ -77,6 +77,7 @@ runs/
 | [`RUN-0011`](2026/RUN-0011/metadata.yaml) | 2026-06-18 | multichannel-agent-workload | [`outputs/README.md`](2026/RUN-0011/outputs/README.md), [`logs/experiment-log.md`](2026/RUN-0011/logs/experiment-log.md) |
 | [`RUN-0012`](2026/RUN-0012/metadata.yaml) | 2026-07-14 | bcreq-1069-restricted-api-key | [`outputs/final-artifact.md`](2026/RUN-0012/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0012/outputs/README.md) |
 | [`RUN-0013`](2026/RUN-0013/metadata.yaml) | 2026-07-31 | bcreq-1059-multichannel-slots-limits | [`outputs/final-artifact.md`](2026/RUN-0013/outputs/final-artifact.md), [`outputs/README.md`](2026/RUN-0013/outputs/README.md) |
+| [`RUN-0014`](2026/RUN-0014/metadata.yaml) | 2026-07-24 | task-1075-amocrm-deal-on-call | [`outputs/README.md`](2026/RUN-0014/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0014/outputs/final-artifact.md), [`feedback/ba-review.md`](2026/RUN-0014/feedback/ba-review.md) |
 
 ## Валидация
 

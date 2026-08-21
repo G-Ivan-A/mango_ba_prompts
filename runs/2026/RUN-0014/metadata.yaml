@@ -1,0 +1,55 @@
+run_id: RUN-0014
+process: task-1075-amocrm-deal-on-call
+version: "0.1"
+date: 2026-07-24
+author: "BA-IH + LLM"
+model: "qwen3.7-plus"
+status: partial-success
+source_paths:
+  - runs/2026/RUN-0014/inputs/chat-export-1075.json
+inputs:
+  - inputs/raw-requirement.md
+  - inputs/kb-files.md
+  - inputs/chat-export-1075.json
+outputs:
+  - outputs/README.md
+  - outputs/final-artifact.md
+  - outputs/prompts-chain.md
+  - outputs/steps/step-0-as-is.md
+  - outputs/steps/step-1-fact-check-and-uncertainty.md
+  - outputs/steps/step-2-contradictions.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/chat-transcript.md
+feedback:
+  - feedback/ba-review.md
+metrics:
+  measured: true
+  source: runs/2026/RUN-0014/inputs/chat-export-1075.json
+  started_at: "2026-07-24T07:31:06Z"
+  finished_at: "2026-07-24T08:06:20Z"
+  duration_seconds: 2114
+  tokens:
+    input: 195948
+    output: 11551
+    total: 207499
+    reasoning: 8860
+    cached: 59136
+  iterations: 4
+  steps_planned: 4
+  steps_completed: 1
+  success_rate: 0.25
+  eval:
+    verdict: works-with-edits
+    quality: 2
+    target_artifact: not-produced
+    defects: 5
+    factual_distortions: 1
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/269
+related_artifacts:
+  - prompts/glossary-context-understanding-stepwise.md
+  - standards/experiment-log-standard.md
+related_runs:
+  - RUN-0012
