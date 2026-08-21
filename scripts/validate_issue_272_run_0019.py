@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regression check for issue #272 — фиксация реального прогона RUN-0013.
+"""Regression check for issue #272 — фиксация реального прогона RUN-0019.
 
 Проверяется то, что легко сломать незаметно:
 
@@ -22,7 +22,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN_DIR = ROOT / "runs" / "2026" / "RUN-0013"
+RUN_DIR = ROOT / "runs" / "2026" / "RUN-0019"
 EXPORT = RUN_DIR / "inputs" / "chat-export-1064.json"
 GENERATOR = ROOT / "scripts" / "chat_export_to_transcript.py"
 
@@ -86,14 +86,14 @@ def main() -> int:
 
     for relative in REQUIRED_FILES:
         if not (RUN_DIR / relative).is_file():
-            errors.append(f"missing file: runs/2026/RUN-0013/{relative}")
+            errors.append(f"missing file: runs/2026/RUN-0019/{relative}")
     for subdir in ("inputs", "outputs", "feedback", "logs"):
         if not (RUN_DIR / subdir).is_dir():
-            errors.append(f"missing dir: runs/2026/RUN-0013/{subdir}/")
+            errors.append(f"missing dir: runs/2026/RUN-0019/{subdir}/")
 
     if errors:
         # Дальнейшие проверки читают эти файлы — без них они бессмысленны.
-        print("issue-272 RUN-0013 validation: FAIL")
+        print("issue-272 RUN-0019 validation: FAIL")
         for error in errors:
             print(f"- {error}")
         return 1
@@ -104,8 +104,8 @@ def main() -> int:
     for field in REQUIRED_METADATA_FIELDS:
         if field not in metadata:
             errors.append(f"metadata.yaml: missing required field `{field}`")
-    if metadata.get("run_id") != "RUN-0013":
-        errors.append("metadata.yaml: run_id must be RUN-0013 and match the directory name")
+    if metadata.get("run_id") != "RUN-0019":
+        errors.append("metadata.yaml: run_id must be RUN-0019 and match the directory name")
     if not re.match(r"^\d{4}-\d{2}-\d{2}$", metadata.get("date", "")):
         errors.append("metadata.yaml: date must be YYYY-MM-DD")
     if metadata.get("verdict") not in VERDICTS:
@@ -151,7 +151,7 @@ def main() -> int:
     for relative, expected_text in generated.items():
         if (RUN_DIR / relative).read_text(encoding="utf-8") != expected_text:
             errors.append(
-                f"runs/2026/RUN-0013/{relative} is out of sync with the raw export; "
+                f"runs/2026/RUN-0019/{relative} is out of sync with the raw export; "
                 f"regenerate it with scripts/chat_export_to_transcript.py instead of editing by hand"
             )
 
@@ -186,24 +186,24 @@ def main() -> int:
     for relative in ("outputs/README.md", "outputs/final-artifact.md"):
         if "golden case" not in (RUN_DIR / relative).read_text(encoding="utf-8"):
             errors.append(
-                f"runs/2026/RUN-0013/{relative}: missing the disclaimer that the run "
+                f"runs/2026/RUN-0019/{relative}: missing the disclaimer that the run "
                 f"is not an approved template / golden case"
             )
 
     for relative, marker in (
-        ("runs/README.md", "2026/RUN-0013/metadata.yaml"),
-        ("CHANGELOG.md", "RUN-0013"),
+        ("runs/README.md", "2026/RUN-0019/metadata.yaml"),
+        ("CHANGELOG.md", "RUN-0019"),
     ):
         if marker not in (ROOT / relative).read_text(encoding="utf-8"):
-            errors.append(f"{relative}: RUN-0013 is not registered")
+            errors.append(f"{relative}: RUN-0019 is not registered")
 
     if errors:
-        print("issue-272 RUN-0013 validation: FAIL")
+        print("issue-272 RUN-0019 validation: FAIL")
         for error in errors:
             print(f"- {error}")
         return 1
 
-    print("issue-272 RUN-0013 validation: PASS")
+    print("issue-272 RUN-0019 validation: PASS")
     return 0
 
 

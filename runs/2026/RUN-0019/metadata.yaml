@@ -1,4 +1,4 @@
-run_id: RUN-0013
+run_id: RUN-0019
 process: bcreq-1064-browser-softphone-in-mis
 version: "0.1"
 date: 2026-07-15
@@ -10,8 +10,8 @@ status: works-with-edits
 # часть данных промежуточная, вердикты выставлены для накопления статистики
 # по эффективности промптов, ошибкам и галлюцинациям.
 source_paths:
-  - runs/2026/RUN-0013/outputs/final-artifact.md
-  - runs/2026/RUN-0013/outputs/README.md
+  - runs/2026/RUN-0019/outputs/final-artifact.md
+  - runs/2026/RUN-0019/outputs/README.md
 inputs:
   - inputs/README.md
   - inputs/chat-export-1064.json

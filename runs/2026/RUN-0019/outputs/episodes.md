@@ -4,12 +4,12 @@ version: 0.1
 updated: 2026-07-15
 ai-generated: true
 type: output
-scope: runs/2026/RUN-0013
+scope: runs/2026/RUN-0019
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
 ---
 
-# Эпизоды прогона RUN-0013 и вердикты
+# Эпизоды прогона RUN-0019 и вердикты
 
 Прогон записан **одним комплексным run** с разделением на эпизоды, как
 рекомендовано в issue #272. Нумерация в квадратных скобках — индексы сообщений

@@ -4,12 +4,12 @@ version: 0.1
 updated: 2026-07-15
 ai-generated: true
 type: output
-scope: runs/2026/RUN-0013
+scope: runs/2026/RUN-0019
 related_artifacts:
   - "prompts/questions-customer-understanding-stepwise.md"
 ---
 
-# Цепочка промптов RUN-0013
+# Цепочка промптов RUN-0019
 
 ## Использованный промпт
 

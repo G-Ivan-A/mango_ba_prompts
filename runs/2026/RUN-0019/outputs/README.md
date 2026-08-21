@@ -4,12 +4,12 @@ version: 0.1
 updated: 2026-07-15
 ai-generated: true
 type: output
-scope: runs/2026/RUN-0013
+scope: runs/2026/RUN-0019
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
 ---
 
-# RUN-0013 — прогон промпта «вопросы на понимание Заказчика» по кейсу 1064
+# RUN-0019 — прогон промпта «вопросы на понимание Заказчика» по кейсу 1064
 
 ## TL;DR
 

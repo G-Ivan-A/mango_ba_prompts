@@ -4,7 +4,7 @@ version: 0.1
 ai-generated: true
 type: log
 generator: scripts/chat_export_to_transcript.py
-source: runs/2026/RUN-0013/inputs/chat-export-1064.json
+source: runs/2026/RUN-0019/inputs/chat-export-1064.json
 ---
 
 # Метрики прогона по экспорту чата «1064»

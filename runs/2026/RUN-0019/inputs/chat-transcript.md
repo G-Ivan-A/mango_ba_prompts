@@ -4,13 +4,13 @@ version: 0.1
 ai-generated: true
 type: input
 generator: scripts/chat_export_to_transcript.py
-source: runs/2026/RUN-0013/inputs/chat-export-1064.json
+source: runs/2026/RUN-0019/inputs/chat-export-1064.json
 ---
 
 # Стенограмма чата «1064»
 
 > Файл **порождён** из сырого экспорта — не редактируйте вручную.
-> Воспроизведение: `python3 scripts/chat_export_to_transcript.py runs/2026/RUN-0013/inputs/chat-export-1064.json --transcript <этот файл>`.
+> Воспроизведение: `python3 scripts/chat_export_to_transcript.py runs/2026/RUN-0019/inputs/chat-export-1064.json --transcript <этот файл>`.
 > Время — UTC, как в экспорте. Реплики ассистента приведены без блоков размышлений (`thinking_summary`): в экспорте они пусты, кроме служебных заголовков.
 
 - Сообщений в ветке диалога: **34**

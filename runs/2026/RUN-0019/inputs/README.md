@@ -4,12 +4,12 @@ version: 0.1
 updated: 2026-07-15
 ai-generated: true
 type: input
-scope: runs/2026/RUN-0013
+scope: runs/2026/RUN-0019
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
 ---
 
-# Вход прогона RUN-0013
+# Вход прогона RUN-0019
 
 | Файл | Что это |
 | --- | --- |
@@ -23,13 +23,13 @@ related_issues:
 
 ```bash
 python3 scripts/chat_export_to_transcript.py \
-    runs/2026/RUN-0013/inputs/chat-export-1064.json \
-    --transcript runs/2026/RUN-0013/inputs/chat-transcript.md \
-    --metrics runs/2026/RUN-0013/logs/metrics.md
+    runs/2026/RUN-0019/inputs/chat-export-1064.json \
+    --transcript runs/2026/RUN-0019/inputs/chat-transcript.md \
+    --metrics runs/2026/RUN-0019/logs/metrics.md
 ```
 
 Скрипт детерминирован: повторный запуск даёт побайтово те же файлы. Это
-проверяется валидатором `scripts/validate_issue_272_run_0013.py`, поэтому
+проверяется валидатором `scripts/validate_issue_272_run_0019.py`, поэтому
 стенограмму и метрики нельзя править вручную — правится генератор.
 
 ## Особенности формата экспорта

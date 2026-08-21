@@ -4,12 +4,12 @@ version: 0.1
 updated: 2026-07-15
 ai-generated: true
 type: feedback
-scope: runs/2026/RUN-0013
+scope: runs/2026/RUN-0019
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
 ---
 
-# Обратная связь по RUN-0013
+# Обратная связь по RUN-0019
 
 ## Статус
 

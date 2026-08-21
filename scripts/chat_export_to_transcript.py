@@ -13,9 +13,9 @@
 Пример:
 
     python3 scripts/chat_export_to_transcript.py \\
-        runs/2026/RUN-0013/inputs/chat-export-1064.json \\
-        --transcript runs/2026/RUN-0013/inputs/chat-transcript.md \\
-        --metrics runs/2026/RUN-0013/logs/metrics.md
+        runs/2026/RUN-0019/inputs/chat-export-1064.json \\
+        --transcript runs/2026/RUN-0019/inputs/chat-transcript.md \\
+        --metrics runs/2026/RUN-0019/logs/metrics.md
 """
 
 from __future__ import annotations

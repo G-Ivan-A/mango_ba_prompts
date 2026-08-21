@@ -13,35 +13,35 @@ ai-generated: true
 
 ## Unreleased
 
-### Added — Issue #272 фиксация реального прогона RUN-0013 (кейс 1064)
+### Added — Issue #272 фиксация реального прогона RUN-0019 (кейс 1064)
 
 - Зафиксирован реальный прогон промпта
   [`questions-customer-understanding-stepwise`](prompts/questions-customer-understanding-stepwise.md)
   v0.1 на кейсе 1064 (браузерная телефония внутри МИС Заказчика):
-  [`runs/2026/RUN-0013/`](runs/2026/RUN-0013/outputs/README.md) по контракту
+  [`runs/2026/RUN-0019/`](runs/2026/RUN-0019/outputs/README.md) по контракту
   `runs/` — `metadata.yaml`, `inputs/`, `outputs/`, `logs/`, `feedback/`.
   Вердикт `works-with-edits`: 17 ответов модели, 10 правок БА, без правок
   принято 2 эпизода из 7.
 - Прогон записан **одним комплексным run с разбором по 7 эпизодам**
-  ([`outputs/episodes.md`](runs/2026/RUN-0013/outputs/episodes.md)), у каждого
+  ([`outputs/episodes.md`](runs/2026/RUN-0019/outputs/episodes.md)), у каждого
   свой вердикт и цитаты из стенограммы. Материалы прогона не являются
   согласованным шаблоном или golden case — фиксация сделана для накопления
   статистики по эффективности промптов, ошибкам и галлюцинациям.
 - Метрики взяты из полей `usage` самого экспорта, а не оценены: 27 219 выходных
   токенов (10 941 reasoning), до 385 343 входных токенов за вызов, 5 рабочих
   сессий и ≈54 минуты активного времени на 12,8 календарных дня
-  ([`logs/metrics.md`](runs/2026/RUN-0013/logs/metrics.md)).
+  ([`logs/metrics.md`](runs/2026/RUN-0019/logs/metrics.md)).
 - Добавлен генератор
   [`scripts/chat_export_to_transcript.py`](scripts/chat_export_to_transcript.py):
   сырой экспорт чата → читаемая стенограмма и метрики. Стенограмма и метрики
   порождаются детерминированно, поэтому фиксация прогона проверяема, а не
   пересказана вручную.
 - Добавлена проверка
-  [`scripts/validate_issue_272_run_0013.py`](scripts/validate_issue_272_run_0013.py)
+  [`scripts/validate_issue_272_run_0019.py`](scripts/validate_issue_272_run_0019.py)
   (в CI): структура прогона, совпадение метрик `metadata.yaml` с фактами
   экспорта, побайтовая воспроизводимость порождаемых файлов, согласованность
   вердиктов по эпизодам и регистрация прогона в реестрах.
-- RUN-0013 внесён в реестр [`runs/README.md`](runs/README.md) и в
+- RUN-0019 внесён в реестр [`runs/README.md`](runs/README.md) и в
   `EXPECTED_RUNS` проверки `scripts/validate_issue_123_runs_contract.py`.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
