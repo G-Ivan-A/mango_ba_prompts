@@ -13,23 +13,23 @@ temperature: 0.1
 
 ## Unreleased
 
-### Added — Issue #274 реальный прогон 975 (RUN-0020) как эмпирические данные
+### Added — Issue #274 реальный прогон 975 (RUN-0021) как эмпирические данные
 
-- Добавлена запись [`runs/2026/RUN-0020/`](runs/2026/RUN-0020/outputs/README.md) —
+- Добавлена запись [`runs/2026/RUN-0021/`](runs/2026/RUN-0021/outputs/README.md) —
   прогон на живых данных чата «975» (76 реплик, **38 эпизодов**, сессии
   2026-07-09 и 2026-07-10, модель `qwen3.7-plus`): дословная стенограмма
-  ([`inputs/chat-transcript.md`](runs/2026/RUN-0020/inputs/chat-transcript.md)),
+  ([`inputs/chat-transcript.md`](runs/2026/RUN-0021/inputs/chat-transcript.md)),
   разбор по 14 шагам
-  ([`outputs/steps/`](runs/2026/RUN-0020/outputs/steps/)) и итоговый документ
+  ([`outputs/steps/`](runs/2026/RUN-0021/outputs/steps/)) и итоговый документ
   ФТ v1.5 по задаче 975 («Неэффективный звонок» в Кампании исходящего обзвона).
 - `run_type: statistics` — по формулировке цели issue #274 («зафиксировать
   прогон… собрать эмпирические данные»), а не по составу артефактов.
 - Прогон **не является** golden case и утверждённым шаблоном: итоговый документ
-  ([`outputs/final-artifact.md`](runs/2026/RUN-0020/outputs/final-artifact.md))
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0021/outputs/final-artifact.md))
   помечен как свидетельство исполнения с перечнем известных дефектов.
 - Зафиксирован каталог дефектов Г1–Г6 (достоверность) и R1–R2
   (воспроизводимость) с привязкой к репликам
-  ([`feedback/review-notes.md`](runs/2026/RUN-0020/feedback/review-notes.md)).
+  ([`feedback/review-notes.md`](runs/2026/RUN-0021/feedback/review-notes.md)).
   Ключевые находки: два недостоверных обоснования дошли до финального документа
   (перечень режимов дозвона в п. 4.1 и значение по умолчанию «не задано»);
   три подряд «финальные» вычитки почти идентичного текста дали 4 → 2 → 1
@@ -37,17 +37,17 @@ temperature: 0.1
   причина та же: отсутствие гейта заземления в
   [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md). Предложения
   П1–П5 в этом PR **не применяются**.
-- Измеренные метрики: [`logs/metrics.md`](runs/2026/RUN-0020/logs/metrics.md) —
+- Измеренные метрики: [`logs/metrics.md`](runs/2026/RUN-0021/logs/metrics.md) —
   82 349 диалоговых токенов + 25 931 «мышления» (`tiktoken:cl100k_base`),
   8 744 881 входных токенов по данным платформы (переотправка контекста с
   приложенным PDF руководства КЦ), 2 200 с генерации, ≈3 ч 12 мин активной
   работы при 18 ч 18 мин календарных. Пореплико́вая таблица usage —
-  [`logs/turn-metrics.md`](runs/2026/RUN-0020/logs/turn-metrics.md).
+  [`logs/turn-metrics.md`](runs/2026/RUN-0021/logs/turn-metrics.md).
 - Реестры и валидатор обновлены: строка в
-  [`runs/README.md`](runs/README.md), запись `RUN-0020` в `EXPECTED_RUNS`
+  [`runs/README.md`](runs/README.md), запись `RUN-0021` в `EXPECTED_RUNS`
   ([`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)).
 - Границы прогона (issue #293) соблюдены: изменения только внутри
-  `runs/2026/RUN-0020/`, реестров и валидатора; `prompts/`, `kb/`, `patterns/`
+  `runs/2026/RUN-0021/`, реестров и валидатора; `prompts/`, `kb/`, `patterns/`
   и `site/data/` не затронуты.
 
 ### Added — Issue #271 реальный прогон 1079 (RUN-0018) как Proof of Execution
