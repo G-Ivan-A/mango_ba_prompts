@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Probe an OpenWebUI-style chat export: linear chain, token usage, attachments."""
+"""Probe an OpenWebUI-style chat export: linear chain, token usage, attachments.
+
+Статус: локальный разведочный инструмент, запускается вручную
+(`python3 experiments/chat_export_probe.py <export.json>`); из CI/GitHub Actions
+не вызывается (см. `runs/README.md`, раздел «Локальные инструменты
+воспроизводимости»). Зависимостей, кроме стандартной библиотеки, нет.
+"""
 import json, sys, datetime
 
 path = sys.argv[1]

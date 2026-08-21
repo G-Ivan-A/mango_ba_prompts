@@ -153,6 +153,16 @@ temperature: 0.1
   — пошаговый разбор, почему исполнитель счёл регенерацию `site/data/` частью
   задачи на прогон, и предложения Р-1…Р-6 по ужесточению контрактов Run и
   правил онбординга (правки самих стандартов вынесены в отдельную задачу).
+- По итогам ревью PR #288 (решение по файлам вне `runs/`): в
+  [`runs/README.md`](runs/README.md) добавлен раздел «Локальные инструменты
+  воспроизводимости», а в
+  [`runs/2026/RUN-0017/inputs/README.md`](runs/2026/RUN-0017/inputs/README.md) —
+  явная оговорка о статусе скриптов
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py) и
+  [`experiments/chat_export_probe.py`](experiments/chat_export_probe.py): это
+  локальные инструменты, запускаемые вручную
+  (`python3 scripts/chat_export_to_markdown.py <export.json> ...`), не входящие в
+  CI и не зависящие от GitHub Actions.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 

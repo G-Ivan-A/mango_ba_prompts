@@ -33,6 +33,15 @@ python3 scripts/chat_export_to_markdown.py \
   --metrics runs/2026/RUN-0017/logs/turn-metrics.md
 ```
 
+> **Статус скрипта.** `scripts/chat_export_to_markdown.py` (и разведочный
+> `experiments/chat_export_probe.py`) — **локальные инструменты
+> воспроизводимости, а не артефакты прогона**. Они запускаются вручную командой
+> `python3 scripts/chat_export_to_markdown.py <export.json> ...`, не вызываются
+> из GitHub Actions и не входят в CI, поэтому остаются работоспособными при
+> отключённых Actions. Зависимостей, кроме стандартной библиотеки Python 3, нет.
+> Общее правило — в [`runs/README.md` → «Локальные инструменты
+> воспроизводимости»](../../../README.md#локальные-инструменты-воспроизводимости).
+
 Особенности формата экспорта, из-за которых нужен скрипт, а не «просто открыть
 JSON»:
 

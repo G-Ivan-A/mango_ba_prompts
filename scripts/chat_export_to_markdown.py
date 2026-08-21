@@ -12,6 +12,10 @@ markdown детерминированным скриптом (только stdli
   с `phase == "answer"` (есть также `thinking_summary`);
 - метрики токенов — в `content_list[*].usage`.
 
+Статус: локальный инструмент воспроизводимости, а не артефакт прогона. Запускается
+вручную, из CI/GitHub Actions не вызывается (см. `runs/README.md`, раздел
+«Локальные инструменты воспроизводимости»).
+
 Использование:
     python3 scripts/chat_export_to_markdown.py <export.json> \
         [--transcript transcript.md] [--metrics turn-metrics.md]
