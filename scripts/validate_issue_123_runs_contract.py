@@ -285,7 +285,7 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
-    "RUN-0021": {
+    "RUN-0023": {
         "run_type": "statistics",
         "year": "2026",
         "files": [

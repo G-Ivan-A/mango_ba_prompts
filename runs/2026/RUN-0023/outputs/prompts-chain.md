@@ -36,7 +36,7 @@ related_artifacts:
 python3 - <<'PY'
 import json, re, difflib
 export = json.load(open(
-    "runs/2026/RUN-0021/inputs/59295-chat-export-1787301537378.json"))
+    "runs/2026/RUN-0023/inputs/59295-chat-export-1787301537378.json"))
 messages = export[0]["chat"]["history"]["messages"].values()
 pasted = next(m["content"] for m in messages
               if m["role"] == "user" and "Задача" in m["content"])

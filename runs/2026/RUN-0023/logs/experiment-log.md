@@ -21,7 +21,7 @@ related_issues:
 | № | Действие | Результат |
 | --- | --- | --- |
 | 1 | Скачан файл, приложенный к issue #278: `59295-chat-export-1787301537378.json` | 86 887 байт; валидность проверена разбором JSON средствами Python (утилита `file` в среде недоступна) |
-| 2 | Выбран номер прогона | `RUN-0021`: в `runs/2026/` ветки `main` заняты RUN-0001…RUN-0014, RUN-0017, RUN-0018, RUN-0020; в открытых PR — RUN-0019 (#290) и RUN-0020 (#296). Ближайший свободный — 0021 |
+| 2 | Выбран номер прогона | `RUN-0023`: в `runs/2026/` ветки `main` заняты RUN-0001…RUN-0014, RUN-0017, RUN-0018, RUN-0020, RUN-0021; в открытых PR — RUN-0019 (#290), RUN-0021 (#297) и RUN-0022 (#298). Ближайший свободный — 0023 |
 | 3 | Определён тип прогона | `statistics` — по критерию из [`standards/runs-contract-standard.md`](../../../../standards/runs-contract-standard.md): цель issue #278 — «зафиксировать прогон … для сбора статистики и анализа БА» |
 | 4 | Собран транскрипт и пореплико́вые метрики | `python3 scripts/chat_export_to_markdown.py …` → `inputs/transcript.md` (6 сообщений), `logs/turn-metrics.md` |
 | 5 | Промпт из реплики [0] сверен с библиотекой | Совпал с [`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md) v1.0: `difflib.SequenceMatcher.ratio() == 1.0` после нормализации пробелов (команда сверки — в [`../outputs/prompts-chain.md`](../outputs/prompts-chain.md)) |

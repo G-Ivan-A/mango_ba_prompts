@@ -28,9 +28,9 @@ related_issues:
 
 ```bash
 python3 scripts/chat_export_to_markdown.py \
-  runs/2026/RUN-0021/inputs/59295-chat-export-1787301537378.json \
-  --transcript runs/2026/RUN-0021/inputs/transcript.md \
-  --metrics runs/2026/RUN-0021/logs/turn-metrics.md
+  runs/2026/RUN-0023/inputs/59295-chat-export-1787301537378.json \
+  --transcript runs/2026/RUN-0023/inputs/transcript.md \
+  --metrics runs/2026/RUN-0023/logs/turn-metrics.md
 ```
 
 > **Статус скрипта.** `scripts/chat_export_to_markdown.py` — **локальный
