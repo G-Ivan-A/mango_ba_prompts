@@ -1,0 +1,73 @@
+run_id: RUN-0020
+process: task-1065-context-and-questions-a7a
+version: "0.1"
+date: 2026-07-10
+author: "BA-IH (фиксация: AI issue solver)"
+model: "qwen3.7-plus"
+status: needs-rework
+run_type: statistics
+result_type: intermediate
+metrics:
+  turns: 78
+  user_turns: 39
+  assistant_turns: 39
+  episodes: 14
+  duration_s: 334006
+  duration_h: 92.78
+  window_utc: "2026-07-10T13:21:21Z — 2026-07-14T10:08:07Z"
+  input_tokens: 15519645
+  output_tokens: 130426
+  reasoning_tokens: 72079
+  total_tokens: 15650071
+  max_context_tokens: 523249
+  token_method: "provider-reported: content_list[*].usage из экспорта чата (input_tokens, output_tokens, output_tokens_details.reasoning_tokens)"
+eval:
+  verdict: needs-rework
+  summary: "Прогон доказал, что модель даёт проверяемый результат при явном требовании фактчека со ссылками на страницы, и не доказал способность удерживать согласованное состояние текста: 5 галлюцинаций и 8 дефектов, все найдены человеком."
+  success_rate: 0.57
+  success_rate_basis: "8 из 14 эпизодов приняты человеком с правками или без (E1, E2, E4, E5, E6, E8, E10, E11); отклонённые редакции не засчитаны"
+  episodes_works: 3
+  episodes_works_with_edits: 5
+  episodes_needs_rework: 6
+  hallucinations_found: 5
+  hallucinations_prevented: 2
+  defects_found: 8
+  defects_found_by_human: 8
+  defects_found_by_model: 0
+source_paths:
+  - runs/2026/RUN-0020/inputs/1065-chat-export-1787301452625.json
+inputs:
+  - inputs/README.md
+  - inputs/1065-chat-export-1787301452625.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-prompt-and-glossary.md
+  - outputs/steps/step-2-business-logic-shift.md
+  - outputs/steps/step-3-factcheck-failure.md
+  - outputs/steps/step-4-customer-docs-are-claims.md
+  - outputs/steps/step-5-pdn-role-model.md
+  - outputs/steps/step-6-block1-structure.md
+  - outputs/steps/step-7-numbering-and-regression.md
+  - outputs/steps/step-8-doc-errors-and-rule.md
+  - outputs/steps/step-9-invented-structure.md
+  - outputs/steps/step-10-block1-template-and-markers.md
+  - outputs/steps/step-11-factcheck-bitrix-fcr-fte.md
+  - outputs/steps/step-12-block2-fabrication.md
+  - outputs/steps/step-13-realtime-and-memory-rule.md
+  - outputs/steps/step-14-regeneration-loop.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/turn-metrics.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/273
+related_artifacts:
+  - prompts/glossary-context-understanding-stepwise.md
+  - scripts/chat_export_to_markdown.py
+related_runs:
+  - RUN-0017
