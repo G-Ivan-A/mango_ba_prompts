@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T06:28:16.334Z",
+  "generatedAt": "2026-08-21T16:39:11.234Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
@@ -264,7 +264,7 @@
           "nextArtifact": "prompts/ft-tz-orchestration-stepwise.md или отдельный issue на workflow prompt."
         }
       ],
-      "checks": 113,
+      "checks": 123,
       "coveredPrompts": 18
     },
     {
@@ -434,7 +434,7 @@
           "nextArtifact": "prompts/tender-validation-stepwise.md или tender-fit chain."
         }
       ],
-      "checks": 40,
+      "checks": 50,
       "coveredPrompts": 7
     },
     {
@@ -700,7 +700,7 @@
           "nextArtifact": "Коммуникационный governance prompt."
         }
       ],
-      "checks": 15,
+      "checks": 25,
       "coveredPrompts": 5
     },
     {

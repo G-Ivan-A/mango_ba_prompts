@@ -126,6 +126,22 @@ EXPECTED_RUNS = {
         ],
         "old_paths": [],
     },
+    "RUN-0013": {
+        "year": "2026",
+        "files": [
+            "inputs/README.md",
+            "inputs/chat-export-1064.json",
+            "inputs/chat-transcript.md",
+            "outputs/README.md",
+            "outputs/final-artifact.md",
+            "outputs/prompts-chain.md",
+            "outputs/episodes.md",
+            "logs/experiment-log.md",
+            "logs/metrics.md",
+            "feedback/README.md",
+        ],
+        "old_paths": [],
+    },
 }
 
 

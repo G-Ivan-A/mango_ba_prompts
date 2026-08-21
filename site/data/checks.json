@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T06:28:16.310Z",
+  "generatedAt": "2026-08-21T16:39:11.205Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 6
   },
   "tests": {
-    "logs": 30,
-    "total": 152,
+    "logs": 36,
+    "total": 162,
     "coveredPrompts": 27
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 152,
+  "totalChecked": 162,
   "testsPassed": {
     "covered": 27,
     "total": 30,
@@ -35,7 +35,7 @@
     {
       "label": "Формирование ФТ/ТЗ",
       "emoji": "📋",
-      "checks": 113,
+      "checks": 123,
       "coveredPrompts": 18
     },
     {
@@ -47,13 +47,13 @@
     {
       "label": "Анализ тендерных ТЗ",
       "emoji": "📑",
-      "checks": 40,
+      "checks": 50,
       "coveredPrompts": 7
     },
     {
       "label": "Помощь ПО/ПМ",
       "emoji": "🤝",
-      "checks": 15,
+      "checks": 25,
       "coveredPrompts": 5
     },
     {
@@ -108,15 +108,15 @@
           "usage": 11
         },
         {
-          "id": "mango-us-modeling-oneshot",
-          "file": "us-modeling-oneshot.md",
+          "id": "mango-questions-customer-understanding-legacy",
+          "file": "questions-customer-understanding-legacy.md",
           "tests": 11,
           "feedback": 0,
           "usage": 11
         },
         {
-          "id": "mango-us-modeling-stepwise",
-          "file": "us-modeling-stepwise.md",
+          "id": "mango-questions-customer-understanding-stepwise",
+          "file": "questions-customer-understanding-stepwise.md",
           "tests": 11,
           "feedback": 0,
           "usage": 11
@@ -173,16 +173,16 @@
         {
           "id": "mango-questions-customer-understanding-legacy",
           "file": "questions-customer-understanding-legacy.md",
-          "tests": 6,
+          "tests": 11,
           "feedback": 0,
-          "usage": 6
+          "usage": 11
         },
         {
           "id": "mango-questions-customer-understanding-stepwise",
           "file": "questions-customer-understanding-stepwise.md",
-          "tests": 6,
+          "tests": 11,
           "feedback": 0,
-          "usage": 6
+          "usage": 11
         }
       ]
     },
@@ -229,16 +229,16 @@
         {
           "id": "mango-questions-customer-understanding-legacy",
           "file": "questions-customer-understanding-legacy.md",
-          "tests": 6,
+          "tests": 11,
           "feedback": 0,
-          "usage": 6
+          "usage": 11
         },
         {
           "id": "mango-questions-customer-understanding-stepwise",
           "file": "questions-customer-understanding-stepwise.md",
-          "tests": 6,
+          "tests": 11,
           "feedback": 0,
-          "usage": 6
+          "usage": 11
         },
         {
           "id": "mango-asr-ingestion-legacy",
@@ -330,6 +330,62 @@
         "runs/2026/RUN-0012/outputs/prompts-chain.md",
         "runs/2026/RUN-0012/outputs/steps/step-1-glossary.md",
         "runs/2026/RUN-0012/outputs/steps/step-2-normalization.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 11
+    },
+    {
+      "id": "mango-questions-customer-understanding-legacy",
+      "file": "questions-customer-understanding-legacy.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 11,
+      "testFiles": [
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/episodes.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 11
+    },
+    {
+      "id": "mango-questions-customer-understanding-stepwise",
+      "file": "questions-customer-understanding-stepwise.md",
+      "status": "draft",
+      "operation": "understanding",
+      "processes": [
+        "Формирование ФТ/ТЗ",
+        "Анализ тендерных ТЗ",
+        "Помощь ПО/ПМ"
+      ],
+      "tests": 11,
+      "testFiles": [
+        "runs/2026/RUN-0011/logs/experiment-log.md",
+        "runs/2026/RUN-0011/outputs/prompts-chain.md",
+        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0012/logs/experiment-log.md",
+        "runs/2026/RUN-0012/outputs/prompts-chain.md",
+        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/episodes.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
@@ -532,52 +588,6 @@
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 7
-    },
-    {
-      "id": "mango-questions-customer-understanding-legacy",
-      "file": "questions-customer-understanding-legacy.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Помощь ПО/ПМ"
-      ],
-      "tests": 6,
-      "testFiles": [
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
-        "runs/2026/RUN-0012/logs/experiment-log.md",
-        "runs/2026/RUN-0012/outputs/prompts-chain.md",
-        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 6
-    },
-    {
-      "id": "mango-questions-customer-understanding-stepwise",
-      "file": "questions-customer-understanding-stepwise.md",
-      "status": "draft",
-      "operation": "understanding",
-      "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Помощь ПО/ПМ"
-      ],
-      "tests": 6,
-      "testFiles": [
-        "runs/2026/RUN-0011/logs/experiment-log.md",
-        "runs/2026/RUN-0011/outputs/prompts-chain.md",
-        "runs/2026/RUN-0011/outputs/steps/step-3-questions.md",
-        "runs/2026/RUN-0012/logs/experiment-log.md",
-        "runs/2026/RUN-0012/outputs/prompts-chain.md",
-        "runs/2026/RUN-0012/outputs/steps/step-3-questions.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 6
     },
     {
       "id": "mango-uc-modeling-oneshot",
