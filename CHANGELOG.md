@@ -13,6 +13,31 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #282 реальный прогон 57204 (RUN-0015): валидация ФТ на выбор IVR-схемы в Правиле интеграции AMO CRM
+
+- Добавлена запись [`runs/2026/RUN-0015/`](runs/2026/RUN-0015/outputs/README.md) —
+  прогон-фиксация (`run_type: statistics`) на **живых данных чата** (сессия
+  2026-05-12/13, модель `qwen3.6-plus`, 20 реплик / 10 эпизодов): дословный
+  транскрипт ([`inputs/transcript.md`](runs/2026/RUN-0015/inputs/transcript.md)),
+  вход — авторский пользовательский промпт «сертифицированные БА (Frameworx/ITIL)»,
+  разбор по эпизодам и итоговое состояние ФТ v1.1.
+- Прогон **не является** golden case: результат промежуточный, диалог оборван на
+  выборе формулировки (эпизод 10), реестр незакрытых вопросов —
+  [`outputs/final-artifact.md`](runs/2026/RUN-0015/outputs/final-artifact.md).
+- Зафиксированы два дефекта достоверности: неподтверждённые числовые НФТ и
+  API-требования (кэш «не более 5 минут», «100 мс», «2 секунды», 24/7 — отклонены
+  БА, до итога не дошли) и непроверяемые постраничные ссылки на руководство (PDF
+  отсутствует в экспорте). Один положительный кейс заземления — принятая БА цитата
+  «Для любого номера не может быть более одной активной схемы»
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0015/outputs/quality-findings.md)).
+- Измеренные метрики из полей провайдера
+  ([`logs/turn-metrics.md`](runs/2026/RUN-0015/logs/turn-metrics.md)): output 15 262 /
+  reasoning 6 614 токенов, context_in_max 168 045, окно ≈12.69 ч
+  ([`logs/metrics.md`](runs/2026/RUN-0015/logs/metrics.md)).
+- Обновлены реестр [`runs/README.md`](runs/README.md) и контрактный валидатор
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  (добавлен `RUN-0015` в `EXPECTED_RUNS`).
+
 ### Added — Issue #277 реальный прогон 1020 (RUN-0024): вопросы стейкхолдеру по интеграции OkDesk ↔ MANGO OFFICE
 
 - Добавлена запись [`runs/2026/RUN-0024/`](runs/2026/RUN-0024/outputs/README.md) —
