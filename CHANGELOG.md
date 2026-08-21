@@ -40,6 +40,37 @@ temperature: 0.1
   заземления сносок — [`experiments/okdesk_citation_grounding_probe.py`](experiments/okdesk_citation_grounding_probe.py).
 - Правки промптов по гипотезам Г-A…Г-D **не применяются** в этом PR (границы
   прогона): решения по `prompts/` за Пользователем.
+### Added — Issue #278 прогон RUN-0023: фиксация диалога БА с LLM по задаче 59295
+
+- Добавлен [`runs/2026/RUN-0023/`](runs/2026/RUN-0023/metadata.yaml) —
+  `run_type: statistics`, `result_type: intermediate`: фиксация реально
+  состоявшегося диалога БА с LLM (Proof of Execution) по валидации ФТ для
+  функционала «Переслать» в карточке e-mail-обращения КЦ.
+- Прогон оформлен как **один run с разметкой на 3 эпизода** и отдельным
+  вердиктом по каждому: [`outputs/README.md`](runs/2026/RUN-0023/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0023/outputs/steps).
+- Вердикт прогона — `works-with-edits`, `success_rate = 1/3 ≈ 0.33` по базе
+  «эпизоды без галлюцинаций и недоказанных утверждений». Зафиксированы
+  3 галлюцинации (2 предотвращены) и 7 дефектов; **обратной связи человека в
+  диалоге нет**, поэтому шкала «принято человеком» не применялась
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0023/outputs/quality-findings.md),
+  [`feedback/ba-review-notes.md`](runs/2026/RUN-0023/feedback/ba-review-notes.md)).
+- Промпт из диалога сверен с библиотекой программно: реплика [0] совпадает с
+  [`prompts/fr-validation-legacy.md`](prompts/fr-validation-legacy.md) v1.0
+  (`difflib` ratio 1.0) — прогон является свидетельством именно для этой версии
+  ([`outputs/prompts-chain.md`](runs/2026/RUN-0023/outputs/prompts-chain.md)).
+- Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
+  issue #278 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py).
+- Обновлены реестры и валидаторы: [`runs/README.md`](runs/README.md) (строка
+  RUN-0023 и ссылка в разделе «Локальные инструменты воспроизводимости»),
+  `EXPECTED_RUNS` в
+  [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
+  и `EXPECTED_CLASSIFICATION` в
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py).
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
+
 ### Added — Issue #273 прогон RUN-0020: фиксация диалога БА с LLM по задаче 1065
 
 - Добавлен [`runs/2026/RUN-0020/`](runs/2026/RUN-0020/metadata.yaml) —
