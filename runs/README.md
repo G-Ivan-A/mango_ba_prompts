@@ -138,6 +138,7 @@ runs/
 | [`RUN-0021`](2026/RUN-0021/metadata.yaml) | 2026-07-10 | `statistics` | fr-drafting-975-ineffective-call-parameters | [`outputs/README.md`](2026/RUN-0021/outputs/README.md), [`outputs/final-artifact.md`](2026/RUN-0021/outputs/final-artifact.md), [`feedback/review-notes.md`](2026/RUN-0021/feedback/review-notes.md), [`logs/metrics.md`](2026/RUN-0021/logs/metrics.md) |
 | [`RUN-0022`](2026/RUN-0022/metadata.yaml) | 2026-08-21 | `statistics` | fr-validation-765-headhunter-channel | [`outputs/README.md`](2026/RUN-0022/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0022/outputs/quality-findings.md), [`logs/metrics.md`](2026/RUN-0022/logs/metrics.md) |
 | [`RUN-0023`](2026/RUN-0023/metadata.yaml) | 2026-05-25 | `statistics` | task-59295-fr-validation-email-forward | [`outputs/README.md`](2026/RUN-0023/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0023/outputs/quality-findings.md), [`outputs/final-artifact.md`](2026/RUN-0023/outputs/final-artifact.md) |
+| [`RUN-0024`](2026/RUN-0024/metadata.yaml) | 2026-05-25 | `statistics` | task-1020-okdesk-mango-integration-questions | [`outputs/README.md`](2026/RUN-0024/outputs/README.md), [`outputs/quality-findings.md`](2026/RUN-0024/outputs/quality-findings.md), [`logs/grounding-check.md`](2026/RUN-0024/logs/grounding-check.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -151,6 +152,7 @@ runs/
 | [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
 | [`experiments/parse_qwen_chat_export.py`](../experiments/parse_qwen_chat_export.py) | Считает токены (`tiktoken:cl100k_base`), длительности и метрики по эпизодам из выгрузки чата Qwen. Используется в [`RUN-0018`](2026/RUN-0018/logs/metrics.md) и [`RUN-0021`](2026/RUN-0021/logs/metrics.md). |
 | [`experiments/parse_765_chat_export.py`](../experiments/parse_765_chat_export.py) | Считает метрики по эпизодам (токены провайдера, время генерации, активное время) из выгрузки чата задачи 765. Используется в [`RUN-0022`](2026/RUN-0022/logs/metrics.md). |
+| [`experiments/okdesk_citation_grounding_probe.py`](../experiments/okdesk_citation_grounding_probe.py) | Извлекает результаты веб-инструмента (`content_list[*].extra.tool_result`) из экспорта чата и считает вхождения контрольных терминов — проверка заземления сносок. Используется в [`RUN-0024`](2026/RUN-0024/logs/grounding-check.md). |
 
 Правила обращения с ними:
 
