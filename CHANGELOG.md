@@ -1,8 +1,8 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-08-17
-ai-generated: true
+version: 0.4
+updated: 2026-08-21
+temperature: 0.1
 ---
 
 # Changelog — mango_ba_prompts
@@ -42,6 +42,57 @@ ai-generated: true
 - Обновлены реестр [`runs/README.md`](runs/README.md) и проверка контракта
   [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py)
   (RUN-0013 добавлен в ожидаемый состав `runs/2026/`).
+### Changed — Issue #267 актуализация onboarding-протокола до v1.5 и проверка корневых файлов
+
+- Навигация переведена на актуальный протокол
+  [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
+  (v1.5, рабочая копия Хаба на
+  [`3bfa410`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/3bfa4103c9efbbd59bc951814884920e406982e2)):
+  обновлены [`README.md`](README.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  (+ `.executable.md`), [`standards/cascading-context-loading-standard.md`](standards/cascading-context-loading-standard.md)
+  и [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md). Раньше все точки входа
+  вели на архивную v1.2.
+- Архив v1.2 сохранён (traceability, файл не удаляется), но переведён в
+  `status: superseded`, лишён `entrypoint` и снабжён баннером «АРХИВ»:
+  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  (+ `.executable.md`). В README он остаётся отдельной строкой как архив.
+- В протокол v1.5 добавлена единственная локальная дельта — `owner: G-Ivan-A`:
+  `frontmatter-docs-standard.md` Хаба требует `owner` для governance-артефактов,
+  а в хабовом оригинале поля нет. Возврат дельты в Хаб — задача S-005 бэклога.
+
+### Added — Issue #267 локальные валидаторы Хаба
+
+- Добавлен каталог [`tools/`](tools/README.md) с рабочими копиями валидаторов
+  Хаба на [`6c57eae`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/6c57eae8a2713566878be715856884b660dd2a16):
+  [`validate-frontmatter.sh`](tools/validate-frontmatter.sh) и
+  [`validate-file-naming.sh`](tools/validate-file-naming.sh) (spoke-вариант из
+  `templates/spoke/`). Запуск — `make validate`; в CI —
+  [`.github/workflows/validate.yml`](.github/workflows/validate.yml) на каждый
+  PR и push в `main`.
+- Локальные дельты валидаторов ограничены и задокументированы в
+  [`tools/README.md`](tools/README.md): расширен список допустимых полей класса
+  `default` (провенанс-поля спицы, которые потребляет
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py) и
+  `standards/cascading-context-loading-standard.md`) и заморожен
+  [`tools/file-naming-legacy-allowlist.txt`](tools/file-naming-legacy-allowlist.txt)
+  на 26 легаси-файлов. Ни одна проверка канонического валидатора не ослаблена:
+  любой новый файл проверяется в полную силу (проверено контрольным прогоном на
+  файле-нарушителе).
+
+### Fixed — Issue #267 frontmatter корневых файлов
+
+- Из корневых файлов удалено поле `ai-generated`, прямо запрещённое
+  `frontmatter-docs-standard.md` Хаба, и добавлено обязательное `temperature`:
+  [`README.md`](README.md), [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
+  [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md), [`CONTRIBUTING.md`](CONTRIBUTING.md),
+  [`CHANGELOG.md`](CHANGELOG.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  (+ `.executable.md`). Область `make validate` (корень, `ai-rules/`, `tools/`)
+  проходит без ошибок.
+- Некритические находки не исправлялись «по пути», а зафиксированы задачами
+  S-001…S-005 в [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md): легаси-именование 26
+  хронологических файлов, frontmatter-долг вне области (23 062 ошибки в 1 287
+  файлах, преимущественно генерируемые `kb/` и `runs/`), поле `ai-generated` в
+  1 243 файлах, расхождение стандарта и валидатора Хаба по классу `ai-rules/`.
 
 ### Changed — Issue #265 ре-синк базовых стандартов Хаба (T-01)
 

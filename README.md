@@ -1,9 +1,9 @@
 ---
 status: canonical
-version: 2.3
-updated: 2026-08-17
+version: 2.4
+updated: 2026-08-21
+temperature: 0.1
 owner: G-Ivan-A
-ai-generated: true
 research_deps:
   - "docs/hub-research-dependencies.md#adr-009-repo-split"
   - "docs/hub-research-dependencies.md#separation-readiness"
@@ -139,6 +139,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `AI_GOVERNANCE.md` | Конституция проекта: роли, правила, эскалация, capability taxonomy, DoD. |
 | `AI_QUICK_RULES.md` | Одностраничная инструкция для AI-агента (включая fail-closed semantics). |
 | `AI_SESSION_HANDOVER_PROMPT.md` | Готовый prompt для Runtime-онбординга и передачи контекста между чатами. |
+| `ai-rules/agent-onboarding-protocol.md` | Актуальный протокол онбординга агента (v1.5, рабочая копия Хаба). |
 | `CONTRIBUTING.md` | Workflow вклада: issue → PR → review. |
 | `CHANGELOG.md` | Память проекта: журнал значимых изменений. |
 | `LICENSE` | Лицензия проекта (MIT). |
@@ -148,6 +149,8 @@ self-test evidence живёт в [`runs/`](runs/).
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
 | `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
 | `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
+| `tools/` | Рабочие копии валидаторов Хаба (`make validate`): frontmatter и именование файлов. Дельты — [`tools/README.md`](tools/README.md). |
+| `.github/workflows/validate.yml` | CI: прогон валидаторов Хаба на каждый PR и push в `main`. |
 | `site/` | Статический SPA-интерфейс: Каталог, Дашборд, Roadmap, Процессы и Паттерны. |
 | `patterns/` | Паттерны БА: воспроизводимые способы решения классов задач (8 полей, [`standards/pattern-standard.md`](standards/pattern-standard.md)). |
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
@@ -210,7 +213,8 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
 | Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
 | Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
-| Протокол онбординга агента (чек-лист перед стартом) | [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md) |
+| Протокол онбординга агента (чек-лист перед стартом), v1.5 | [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md) |
+| Архив протокола онбординга v1.2 (superseded, для traceability) | [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md) |
 | Карта активных артефактов и связей | [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) |
 | Суммарии длинных сессий для передачи контекста | [`pr-ops/session-digests.md`](pr-ops/session-digests.md) |
 | Журнал значимых изменений | [`CHANGELOG.md`](CHANGELOG.md) |

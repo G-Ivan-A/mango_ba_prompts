@@ -1,9 +1,8 @@
 ---
 status: draft
 version: 0.5
-updated: 2026-06-13
+updated: 2026-08-21
 temperature: 0.1
-ai-generated: true
 executable: true
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
 source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
@@ -20,7 +19,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 > Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
 > Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
-> отдельно: локально — [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md),
+> отдельно: локально — [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md) (v1.5),
 > канонически — в Хабе ([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md)).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
@@ -50,7 +49,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(ai-rules/agent-onboarding-protocol_old.md). Это предполётный чек-лист — изменение
+(ai-rules/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
 файлов запрещено до апрува Пользователя.
 
 Контекст чата диалога:
@@ -147,7 +146,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 | Периодическая суммаризация сессии | Отдельный блок перед шагами EXECUTION; не влияет на агента-исполнителя. |
 | Проверка шаблонов | Шаг 4. |
 | Формат постановки задач | Шаг 5. |
-| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `ai-rules/agent-onboarding-protocol_old.md`. |
+| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `ai-rules/agent-onboarding-protocol.md`. |
 
 ## 💬 Суммарии сессий
 
@@ -179,8 +178,10 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
   выживанию» агента в этой HTOM-команде.
 - [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
-  — локальная адаптированная копия полного протокола онбординга.
+- [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
+  — актуальный протокол онбординга (v1.5, рабочая копия Хаба).
+- Архив v1.2: [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  — `status: superseded`, хранится для traceability, точкой входа не является.
 - [`pr-ops/session-digests.md`](pr-ops/session-digests.md) — локальный
   индекс суммарий сессий для передачи контекста между чатами.
 - [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) — локальная карта
