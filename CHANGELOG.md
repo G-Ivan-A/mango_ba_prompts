@@ -13,6 +13,36 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #276 реальный прогон 765 (RUN-0021) как Proof of Execution
+
+- Добавлена запись [`runs/2026/RUN-0021/`](runs/2026/RUN-0021/outputs/README.md) —
+  фиксация реально состоявшегося диалога БА с LLM по задаче 765 (ФТ на новый канал
+  HeadHunter в МД/КЦ/ЛК): 26 реплик, 13 эпизодов, модель `qwen3.7-plus`, промпт
+  [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md). `run_type: statistics`
+  — цель issue «зафиксировать прогон и результаты», а не выполнить процесс.
+- Вход сохранён дословно
+  ([`inputs/765-chat-export-1787301501556.json`](runs/2026/RUN-0021/inputs/765-chat-export-1787301501556.json))
+  и развёрнут в транскрипт детерминированным скриптом
+  ([`inputs/README.md`](runs/2026/RUN-0021/inputs/README.md)).
+- Результат помечен как **промежуточный, не golden case**: финальный рендер ФТ v1.4
+  не получен, часть замечаний сверки вынесена БА в отложенные
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0021/outputs/final-artifact.md)).
+- Ключевая находка анализа
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0021/outputs/quality-findings.md)):
+  модель заявила «Базы знаний КЦ и ЛК изучены» при том, что переданные ссылки
+  (`kb/mango-product-docs/processed/…`) не существуют (реальные пути — `kb/processed/…`),
+  а в отчёте аудитора нет ни одной ссылки на источник. Дефект дошёл до результата
+  (на нём построен Блок А отчёта) и не был замечен ни одной стороной диалога.
+- Метрики измерены по `usage` провайдера без оценок: `output_tokens` 43 425,
+  `reasoning_tokens` 26 920, максимальный входной контекст 32 707, время генерации
+  927 с, активное время 4 636 с
+  ([`logs/metrics.md`](runs/2026/RUN-0021/logs/metrics.md)).
+- Добавлен локальный инструмент воспроизводимости
+  [`experiments/parse_765_chat_export.py`](experiments/parse_765_chat_export.py)
+  (только stdlib, из CI не вызывается).
+- Обновлены реестры: [`runs/README.md`](runs/README.md) и `EXPECTED_RUNS`
+  в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
+
 ### Added — Issue #271 реальный прогон 1079 (RUN-0018) как Proof of Execution
 
 - Добавлена запись [`runs/2026/RUN-0018/`](runs/2026/RUN-0018/outputs/README.md) —

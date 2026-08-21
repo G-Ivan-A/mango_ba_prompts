@@ -1,0 +1,68 @@
+run_id: RUN-0021
+process: fr-validation-765-headhunter-channel
+version: "0.1"
+date: 2026-08-21
+author: "BA-IH + LLM"
+model: "qwen3.7-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/276
+inputs:
+  - inputs/README.md
+  - inputs/765-chat-export-1787301501556.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-init-strategy.md
+  - outputs/steps/step-2-inputs-glossary-draft.md
+  - outputs/steps/step-3-hybrid-strategy-audit.md
+  - outputs/steps/step-4-decisions-and-v1.1.md
+  - outputs/steps/step-5-fr02-fr03-fr09-v1.2.md
+  - outputs/steps/step-6-fr-resort.md
+  - outputs/steps/step-7-modality-and-actor.md
+  - outputs/steps/step-8-unambiguity-audit-v1.3.md
+  - outputs/steps/step-9-authorization-fr01-v1.4.md
+  - outputs/steps/step-10-session-term.md
+  - outputs/steps/step-11-section-4-render.md
+  - outputs/steps/step-12-cross-check-2025.md
+  - outputs/steps/step-13-wording-4-5-7.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+metrics:
+  turns: 26
+  episodes: 13
+  iterations: 13
+  ba_edits: 6
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.92
+  success_rate_basis: "12 из 13 эпизодов приняты БА с правками или без; отклонён Блок А отчёта аудитора в эпизоде 3 (реплика 6: «нет, не согласую, проведите доп проверку»)"
+  hallucinations: 2
+  hallucinations_shipped: 1
+  tokens_output: 43425
+  tokens_thinking: 26920
+  tokens_context_in_max: 32707
+  tokens_context_refeed_sum: 202536
+  token_method: "provider-usage:content_list[*].usage"
+  duration_wall_clock_s: 274629
+  duration_active_s: 4636
+  duration_generation_s: 927
+  eval: "Механика промпта (пошаговость, human gate, ключевой вопрос о стратегии) соблюдена; достоверность не обеспечена: заявление «базы знаний КЦ и ЛК изучены» сделано по несуществующим ссылкам и без единой ссылки на источник, отчёт Блока А на нём построен. Основания для перевода промпта draft -> canonical прогон не даёт. Результат промежуточный: финальный рендер v1.4 не получен."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/276
+related_artifacts:
+  - prompts/fr-validation-stepwise.md
+  - standards/experiment-log-standard.md
+  - standards/runs-contract-standard.md
+  - scripts/chat_export_to_markdown.py
+related_runs:
+  - RUN-0017
+  - RUN-0018
