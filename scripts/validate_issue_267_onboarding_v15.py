@@ -36,14 +36,14 @@ REPO_ROOT = Path(__file__).resolve().parent.parent
 
 CURRENT = "ai-rules/agent-onboarding-protocol.md"
 ARCHIVE = [
-    "ai-rules/agent-onboarding-protocol_old.md",
-    "ai-rules/agent-onboarding-protocol_old.executable.md",
+    ".archive/ai-rules/agent-onboarding-protocol_old.md",
+    ".archive/ai-rules/agent-onboarding-protocol_old.executable.md",
 ]
 # Активная навигация: файлы, по которым агент или человек находит протокол.
 NAVIGATION = [
     "README.md",
-    "AI_SESSION_HANDOVER_PROMPT.md",
-    "AI_SESSION_HANDOVER_PROMPT.executable.md",
+    "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+    "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
     "pr-ops/artifact-map.md",
     "standards/cascading-context-loading-standard.md",
 ]

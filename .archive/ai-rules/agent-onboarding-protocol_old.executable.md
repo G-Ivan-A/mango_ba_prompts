@@ -5,19 +5,19 @@ updated: 2026-08-21
 temperature: 0.1
 type: protocol
 layer: executable
-full_version: "ai-rules/agent-onboarding-protocol_old.md"
-related_standard: "../standards/cascading-context-loading-standard.md"
+full_version: ".archive/ai-rules/agent-onboarding-protocol_old.md"
+related_standard: "standards/cascading-context-loading-standard.md"
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 ---
 
 > 🗄️ **АРХИВ (superseded, issue #267).** Актуальный протокол онбординга —
-> [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5).
+> [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) (v1.5).
 > Этот файл сохранён только для traceability: он фиксирует локальную адаптацию
 > v1.2 и не должен использоваться агентами как точка входа.
 
 # Agent Onboarding Protocol — executable layer
 
-Load this file first. Do not load `ai-rules/agent-onboarding-protocol_old.md`
+Load this file first. Do not load `.archive/ai-rules/agent-onboarding-protocol_old.md`
 unless one escalation trigger below is true.
 
 ## Escalation triggers
@@ -25,11 +25,11 @@ unless one escalation trigger below is true.
 - TRIGGER-1: пользователь явно просит полную версию протокола, rationale,
   threat-awareness, историю решений или ссылки на Хаб.
 - TRIGGER-2: нужно редактировать, синхронизировать или валидировать
-  `ai-rules/agent-onboarding-protocol_old.md`.
+  `.archive/ai-rules/agent-onboarding-protocol_old.md`.
 - TRIGGER-3: текущая задача требует точной формулировки из full-разделов
   `EXPLANATION`, `Design Rationale & History` или таблиц cross-reference.
 - TRIGGER-4: есть конфликт между этим executable-слоем, full-протоколом,
-  `AI_SESSION_HANDOVER_PROMPT.executable.md`, issue/PR или правилами Хаба.
+  `prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`, issue/PR или правилами Хаба.
 
 Если ни один триггер не сработал, выполняй только алгоритм ниже.
 

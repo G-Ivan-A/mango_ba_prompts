@@ -522,7 +522,7 @@ snapshot отличаются — заменить на подтверждённ
 - Целевой глоссарий спока: `standards/GLOSSARY.md` (M-003)
 - Целевые стандарты Фазы 1: `standards/GLOSSARY.md`,
   `standards/product-classification-contract.md`
-- Контракт и правила: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md)
+- Контракт и правила: [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md), [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md)
 - Хаб, проект Mango (аудит): <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango>
 - Хаб, исследования Mango: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango>
 - Хаб, шаблон спока: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/templates/spoke>

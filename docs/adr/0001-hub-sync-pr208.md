@@ -35,7 +35,7 @@ downstream-репозитории:
    `templates/manifest.json` Хаба и локальный профиль `.hub-profile.json` команды.
 3. **Семантическое разделение онбординга.** *Артефакт* (готовый к копированию
    `AI_SESSION_HANDOVER_PROMPT.md`) отделён от *протокола*
-   (`ai-rules/agent-onboarding-protocol_old.md` — процесс и чек-лист).
+   (`.archive/ai-rules/agent-onboarding-protocol_old.md` — процесс и чек-лист).
 
 Issue #46 поставил 6 задач: создать `AI_SESSION_HANDOVER_PROMPT.md`,
 онбординг-протокол и `.hub-profile.json`; синхронизировать `AI_GOVERNANCE.md` и
@@ -69,7 +69,7 @@ mango (permalink-pinning, отсутствие валидатора структ
 | # | Сказано в issue / шаблоне Хаба | Что сделано | Почему |
 | :--- | :--- | :--- | :--- |
 | D1 | `.hub-profile.json` с ключами `project_type` / `current_phase` | Ключи `target_type` / `phase` (+ `project_name`, `stack`, `hub_url`, `last_sync`) | `tools/sync-from-hub.sh` Хаба фактически читает `target_type` / `phase`. Ключи из issue молча игнорировались бы — Smart Sync не заработал бы. Имена приведены к контракту инструмента. |
-| D2 | Файл `AGENT_ONBOARDING_PROTOCOL.md` (UPPER_SNAKE, корень) | [`ai-rules/agent-onboarding-protocol_old.md`](../../ai-rules/agent-onboarding-protocol_old.md) (kebab-case, в `governance/`) | Само же требование issue: «все новые файлы в kebab-case». Канонический путь в Хабе — тоже `ai-rules/agent-onboarding-protocol_old.md`. UPPER-имя в корне нарушило бы и kebab-правило, и трассируемость к Хабу. |
+| D2 | Файл `AGENT_ONBOARDING_PROTOCOL.md` (UPPER_SNAKE, корень) | [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md) (kebab-case, в `governance/`) | Само же требование issue: «все новые файлы в kebab-case». Канонический путь в Хабе — тоже `.archive/ai-rules/agent-onboarding-protocol_old.md`. UPPER-имя в корне нарушило бы и kebab-правило, и трассируемость к Хабу. |
 | D3 | (Унаследованная терминология «спок») | Терминология **«HTOM-команда»** в 4 синхронизированных файлах | PR #208 переклассифицировал mango как HTOM-команду (RFC выше). Источник шаблона — `templates/htom/`, где терминология уже HTOM. Миграция терминологии в `README.md` / `CONTRIBUTING.md` **отложена** (они вне sync-списка issue; полный rewrite — отдельная задача, см. «Последствия»). |
 | D4 | Заменить `{{REPO_NAME}}` → `mango_ba_prompts` | Подставлено | Шаблон Хаба намеренно **не** трогает `{{REPO_NAME}}` через `init.sh` (это забота валидатора/инициализатора Хаба). У mango такого валидатора нет, поэтому полная подстановка безопасна и соответствует задаче issue. |
 | D5 | `templates/htom/` Хаба содержит `tools/`, `.github/ISSUE_TEMPLATE/`, `init.sh` | **Не** переносим их | Anti-Inflation + прямой запрет issue «не создавать новых папок без необходимости». Операционной боли нет; mango никогда не заводил `tools/`. |
@@ -81,9 +81,9 @@ mango (permalink-pinning, отсутствие валидатора структ
 
 | Файл | Что сохранено поверх шаблона |
 | :--- | :--- |
-| [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | Конкретная taxonomy **«Capability Boundaries»** (с реальными путями репозитория и ссылкой на fail-closed) вместо общей прозы «Границы действий» из шаблона Хаба. Добавлена связка-примечание: это «конкретная инстанциация хабовой рубрики под mango». |
-| [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md) | Явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её свернул). Нужна и как mango-правило, и чтобы оставалась резолвимой перекрёстная ссылка `AI_GOVERNANCE.md#fail-closed-semantics-критично`. |
-| [`agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol_old.md) | Раздел «Design Rationale & History» **сжат** до операционно важной выжимки (авиа-аналогия + таблица зафиксированных решений); полная история вынесена ссылкой на канонический протокол Хаба, чтобы локальная копия оставалась лёгкой. |
+| [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) | Конкретная taxonomy **«Capability Boundaries»** (с реальными путями репозитория и ссылкой на fail-closed) вместо общей прозы «Границы действий» из шаблона Хаба. Добавлена связка-примечание: это «конкретная инстанциация хабовой рубрики под mango». |
+| [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md) | Явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её свернул). Нужна и как mango-правило, и чтобы оставалась резолвимой перекрёстная ссылка `AI_GOVERNANCE.md#fail-closed-semantics-критично`. |
+| [`agent-onboarding-protocol.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md) | Раздел «Design Rationale & History» **сжат** до операционно важной выжимки (авиа-аналогия + таблица зафиксированных решений); полная история вынесена ссылкой на канонический протокол Хаба, чтобы локальная копия оставалась лёгкой. |
 
 ## Что НЕ делали (negative checks)
 
@@ -134,10 +134,10 @@ mango (permalink-pinning, отсутствие валидатора структ
 - Хаб, PR #208: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/208>
 - Хаб, RFC HTOM↔spoke: [`governance/rfc/htom-vs-spoke-clarification-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/rfc/htom-vs-spoke-clarification-2026-06.md)
 - Хаб, шаблоны HTOM-команды: [`templates/htom/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom)
-- Синхронизированные файлы: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md),
-  [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md),
-  [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md),
-  [`ai-rules/agent-onboarding-protocol_old.md`](../../ai-rules/agent-onboarding-protocol_old.md),
+- Синхронизированные файлы: [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md),
+  [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md),
+  [`AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md),
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md),
   [`.hub-profile.json`](../../.hub-profile.json)
 - Целевая структура (negative check): [`docs/audit/initial-state-2026-06.md`](../audit/initial-state-2026-06.md)
 - Снимок предыдущей миграции: [`pr-ops/migration-manifest.md`](../../pr-ops/migration-manifest.md)

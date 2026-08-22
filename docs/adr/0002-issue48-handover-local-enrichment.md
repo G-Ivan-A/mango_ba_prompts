@@ -81,7 +81,7 @@ issue #46 / PR #47. Это активирует маршрут эскалаци�
 
 - **Не стирали** YAML-провенанс и разделение `EXECUTION/EXPLANATION`.
 - **Не меняли** другие файлы (`AI_GOVERNANCE.md`, `AI_QUICK_RULES.md`,
-  `ai-rules/agent-onboarding-protocol_old.md`, README и пр.) — кроме обязательного
+  `.archive/ai-rules/agent-onboarding-protocol_old.md`, README и пр.) — кроме обязательного
   `CHANGELOG.md`.
 - **Не создавали** `.github/`, `templates/` и иных новых каталогов.
 - **Не меняли** `status` файла (остался `draft`).
@@ -125,5 +125,5 @@ issue #46 / PR #47. Это активирует маршрут эскалаци�
 - PR: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/49>
 - Предыдущий ADR (sync-провенанс): [`0001-hub-sync-pr208.md`](0001-hub-sync-pr208.md)
 - Базовый шаблон Хаба: [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
-- Обогащённый артефакт: [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md)
+- Обогащённый артефакт: [`AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
 - Журнал изменений: [`CHANGELOG.md`](../../CHANGELOG.md)

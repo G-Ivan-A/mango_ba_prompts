@@ -27,7 +27,7 @@ related_artifacts:
 
 ## Что проверялось
 
-- [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) (v0.4) — операционный контракт.
+- [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) (v0.4) — операционный контракт.
 - [`CONTRIBUTING.md`](../../CONTRIBUTING.md) (v0.2) — правила входа и workflow.
 - [`standards/experiment-log-standard.md`](../../standards/experiment-log-standard.md)
   (Draft v0.1) — стандарт фиксации экспериментов.

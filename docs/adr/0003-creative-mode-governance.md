@@ -26,7 +26,7 @@ PR #57 решал issue #56 в режиме `Creative`: Конард иссле�
 - [`CONTRIBUTING.md`](../../CONTRIBUTING.md) требовал фиксировать отклонение от
   правила Хаба как ADR в `docs/adr/`;
 - issue #56 ограничивал изменения только `prompts/` и `prompts/archive/`;
-- [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md) применял fail-closed ко всем
+- [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md) применял fail-closed ко всем
   неописанным действиям без различения `Structured` и `Creative`.
 
 В результате архитектурное решение осталось только в PR-описании. Это создало
@@ -135,7 +135,7 @@ PR #57 решал issue #56 в режиме `Creative`: Конард иссле�
 - Issue #61: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/61>
 - PR #57: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/57>
 - PR #60: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/60>
-- AI governance: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md)
-- Quick rules: [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md)
+- AI governance: [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md)
+- Quick rules: [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md)
 - Contributing: [`CONTRIBUTING.md`](../../CONTRIBUTING.md)
 - Task template: [`docs/task-for-konard-template.md`](../task-for-konard-template.md)
