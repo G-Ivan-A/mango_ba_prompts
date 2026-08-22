@@ -109,6 +109,41 @@ temperature: 0.1
   в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
 - Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
   `site/data/` нет.
+### Added — Issue #283 реальный прогон 1007 (RUN-0026): ФТ на перевод Сделки в АМО CRM по успешному дозвону
+
+- Добавлена запись [`runs/2026/RUN-0026/`](runs/2026/RUN-0026/outputs/README.md) —
+  прогон-фиксация (`run_type: statistics`) на **живых данных чата** (сессия
+  2026-04-30 — 2026-05-04, модель `qwen3.6-plus`, 20 реплик, 10 эпизодов):
+  дословный транскрипт
+  ([`inputs/transcript.md`](runs/2026/RUN-0026/inputs/transcript.md)), вход —
+  ad-hoc-рамка БА без библиотечного промпта, разбор по эпизодам
+  ([`outputs/steps/`](runs/2026/RUN-0026/outputs/steps/)) и итоговое состояние
+  документа ФТ версии 1.1.
+- Прогон **не является** golden case: итог помечен как промежуточный, с реестром
+  незакрытых замечаний З1–З7
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0026/outputs/final-artifact.md)).
+- Зафиксированы четыре галлюцинации: Г1 (заявленная «проверка документации»,
+  которой не было), Г2 (ссылка на стр. 127 руководства, взятая из реплики самого
+  БА), Г3 (метка поля интерфейса, поданная как дословная цитата с макета, —
+  дошла до итогового требования 4.1.1), Г4 (идемпотентность на стороне API
+  amoCRM без источника) —
+  [`outputs/quality-findings.md`](runs/2026/RUN-0026/outputs/quality-findings.md).
+  Корневая причина Г1 доказана воспроизводимо: провайдер вернул
+  `extract_page_success: [0, 0, 0]` — ни одна страница не была прочитана, вывод
+  сделан по сниппетам поиска
+  ([`logs/grounding-check.md`](runs/2026/RUN-0026/logs/grounding-check.md)).
+- Зафиксирован дефект Д1: буквальное исполнение указания БА «используем
+  формулировки „система должна предоставить пользователю возможность… по
+  классике“» превратило три требования к автоматическому поведению Системы в
+  требования к возможностям Пользователя и лишило их тестируемости.
+- Измеренные метрики из полей провайдера
+  ([`logs/turn-metrics.md`](runs/2026/RUN-0026/logs/turn-metrics.md)): 101 957
+  токенов суммарно (in 81 349 / out 20 608 / reasoning 8 835), окно ≈91.3 ч
+  (два захода, активное время ≈54 мин). Скрипт проверки заземления сносок —
+  [`experiments/amocrm_widget_grounding_probe.py`](experiments/amocrm_widget_grounding_probe.py).
+- Обновлены реестры [`runs/README.md`](runs/README.md) и валидаторы
+  ([`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py),
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py)).
 
 ### Added — Issue #277 реальный прогон 1020 (RUN-0024): вопросы стейкхолдеру по интеграции OkDesk ↔ MANGO OFFICE
 
