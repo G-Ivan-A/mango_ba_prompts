@@ -34,6 +34,12 @@ jobs:
       - name: Validate issue #123 runs contract
         run: python3 scripts/validate_issue_123_runs_contract.py
 
+      - name: Test issue #293 run types and boundaries
+        run: python3 scripts/test_runs_contract_run_type.py
+
+      - name: Validate issue #272 RUN-0019 record
+        run: python3 scripts/validate_issue_272_run_0019.py
+
       - name: Validate issue #125 cascading context loading
         run: python3 scripts/validate_issue_125_cascading_context.py
 

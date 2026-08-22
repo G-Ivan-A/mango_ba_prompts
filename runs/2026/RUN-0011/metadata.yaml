@@ -5,6 +5,7 @@ date: 2026-06-18
 author: "BA-IH + LLM"
 model: "not-recorded"
 status: works-with-edits
+run_type: execution
 source_paths:
   - outputs/README.md
   - logs/experiment-log.md

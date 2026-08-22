@@ -5,6 +5,7 @@ date: 2026-07-24
 author: "BA-IH + LLM"
 model: "qwen3.7-plus"
 status: partial-success
+run_type: statistics
 source_paths:
   - runs/2026/RUN-0014/inputs/chat-export-1075.json
 inputs:

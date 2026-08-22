@@ -26,8 +26,10 @@ D. **Валидаторы.** `tools/validate-frontmatter.sh` (в области 
 from __future__ import annotations
 
 import re
+import shutil
 import subprocess
 import sys
+import tempfile
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
@@ -134,19 +136,26 @@ def check_validators() -> list[str]:
     if code != 0:
         errors.append(f"tools/validate-file-naming.sh завершился с кодом {code}:\n{output}")
 
-    # Allowlist не должен маскировать новые нарушения: временный файл с
-    # неверным именем обязан быть отклонён.
-    probe = REPO_ROOT / "docs/adr/validator-self-check.md"
-    probe.write_text("---\nstatus: draft\n---\n", encoding="utf-8")
+    # Allowlist не должен маскировать новые нарушения: файл с неверным именем
+    # обязан быть отклонён. Проба ставится в изолированной песочнице, а не в
+    # рабочем дереве (issue #299): валидаторы запускаются параллельно, и запись
+    # во время чужого прогона делала результат соседа недетерминированным.
+    sandbox = Path(tempfile.mkdtemp(prefix="onboarding-selfcheck-"))
     try:
-        code, _ = run(["./tools/validate-file-naming.sh"])
+        shutil.copytree(REPO_ROOT / "tools", sandbox / "tools")
+        probe_dir = sandbox / "docs/adr"
+        probe_dir.mkdir(parents=True)
+        (probe_dir / "validator-self-check.md").write_text(
+            "---\nstatus: draft\n---\n", encoding="utf-8"
+        )
+        code, _ = run([str(sandbox / "tools/validate-file-naming.sh")])
         if code == 0:
             errors.append(
                 "tools/validate-file-naming.sh пропустил файл с некорректным именем: "
                 "allowlist маскирует новые нарушения"
             )
     finally:
-        probe.unlink()
+        shutil.rmtree(sandbox, ignore_errors=True)
     print("[D] валидаторы Хаба проходят, allowlist не маскирует новые нарушения")
     return errors
 

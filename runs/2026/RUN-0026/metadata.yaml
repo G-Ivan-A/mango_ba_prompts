@@ -1,0 +1,75 @@
+run_id: RUN-0026
+process: task-1007-amocrm-outbound-campaign-funnel-stage-fr
+version: "0.1"
+date: 2026-05-04
+author: "BA-IH (фиксация: AI issue solver)"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+result_type: intermediate
+metrics:
+  turns: 20
+  user_turns: 10
+  assistant_turns: 10
+  episodes: 10
+  episodes_works: 5
+  episodes_works_with_edits: 4
+  episodes_fails: 1
+  verdict: works-with-edits
+  success_rate: 0.5
+  success_rate_basis: "доля эпизодов, принятых БА без содержательных правок в следующей реплике (E1, E2, E4, E6, E7 = 5 из 10); E10 засчитан как непринятый: приёмки нет, формулировки требований деградировали"
+  ba_corrections: 4
+  hallucinations: 4
+  hallucinations_shipped: 1
+  false_citations: 2
+  web_tool_calls: 3
+  pages_extracted_ok: 0
+  tokens_input: 81349
+  tokens_output: 20608
+  tokens_reasoning: 8835
+  tokens_total: 101957
+  max_context_tokens: 13925
+  token_method: "chat-export:content_list[*].usage (поля провайдера, не пересчёт)"
+  measured: true
+  duration_wall_clock_s: 328681
+  duration_h: 91.3
+  duration_active_s: 3254
+  window_utc: "2026-04-30T14:06:29Z — 2026-05-04T09:24:30Z"
+  eval: "Прогон доказал, что цепочка «рамка -> контекст -> черновик ФТ -> ревью -> сборка -> детализация под интерфейс» доводится до цельного документа (разделы 2, 4, 6 + приложения) за 10 итераций и переживает смену уровня задачи и перерыв в 3.7 суток; наибольшую пользу дала критика собственного текста БА (найдены расширение скоупа и дублирование задачи 2.3.3). Прогон НЕ доказал достоверность фактов: заявленная «проверка документации» опирается на 3 вызова веб-инструментов, где extract_page_success = [0,0,0], ссылка на стр. 127 руководства и метка поля интерфейса источниками не подтверждены, а метка дошла до итогового требования 4.1.1. Прогон также показал риск буквального исполнения указания по форме: шаблон «Система должна предоставить Пользователю возможность...» применён к автоматическим действиям Системы и лишил три требования тестируемости. Основанием для перевода промпта в canonical не является."
+source_paths:
+  - runs/2026/RUN-0026/inputs/1007-chat-export-1787301730570.json
+inputs:
+  - inputs/README.md
+  - inputs/1007-chat-export-1787301730570.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-frame-and-context-request.md
+  - outputs/steps/step-2-context-and-glossary.md
+  - outputs/steps/step-3-first-fr-draft.md
+  - outputs/steps/step-4-settings-location-check.md
+  - outputs/steps/step-5-section-2-review.md
+  - outputs/steps/step-6-redundancy-check.md
+  - outputs/steps/step-7-final-assembly-v1.md
+  - outputs/steps/step-8-dev-level-detailing.md
+  - outputs/steps/step-9-api-removal.md
+  - outputs/steps/step-10-classic-wording-v1-1.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/turn-metrics.md
+  - logs/grounding-check.md
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/283
+related_artifacts:
+  - prompts/fr-documentation-stepwise.md
+  - prompts/fr-documentation-oneshot.md
+  - standards/experiment-log-standard.md
+  - scripts/chat_export_to_markdown.py
+  - experiments/amocrm_widget_grounding_probe.py
+related_runs:
+  - RUN-0024

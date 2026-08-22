@@ -1,0 +1,60 @@
+run_id: RUN-0018
+process: fr-validation-1079-messenger-id-search
+version: "0.1"
+date: 2026-07-21
+author: "BA-IH + LLM"
+model: "qwen3.7-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/271
+inputs:
+  - inputs/README.md
+  - inputs/chat-export.md
+  - inputs/raw-requirement.md
+  - inputs/kb-facts.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-init-strategy.md
+  - outputs/steps/step-2-audit-report.md
+  - outputs/steps/step-3-fr-v1.1.md
+  - outputs/steps/step-4-check-multiple-ids.md
+  - outputs/steps/step-5-contradiction-check.md
+  - outputs/steps/step-6-terminology-check.md
+  - outputs/steps/step-7-proofreading-v1.2.md
+  - outputs/steps/step-8-constraint-v1.3.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+metrics:
+  episodes: 8
+  iterations: 8
+  ba_edits: 6
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.63
+  success_rate_basis: "5 из 8 эпизодов приняты без содержательной переработки (E1, E2, E3, E5, E8)"
+  hallucinations: 8
+  hallucinations_shipped: 1
+  tokens_input: 9374
+  tokens_output: 15579
+  tokens_thinking: 7327
+  tokens_dialog_total: 24953
+  tokens_context_refeed_estimate: 126202
+  token_method: "tiktoken:cl100k_base"
+  duration_wall_clock_s: 16342
+  duration_active_s: 2481
+  duration_generation_s: 764
+  eval: "Механика промпта соблюдена, достоверность фактов не обеспечена: 1 из 8 дефектов достоверности дошёл до финального документа. Основание для перевода промпта draft -> canonical не даёт."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/271
+related_artifacts:
+  - prompts/fr-validation-stepwise.md
+  - standards/experiment-log-standard.md
+  - standards/kb-standard.md
+  - kb/processed/mango-cc-manual/sections/229-prilozhenie-6-dopolnitelnye-vozmozhnosti.md
+related_runs:
+  - RUN-0011
+  - RUN-0012
