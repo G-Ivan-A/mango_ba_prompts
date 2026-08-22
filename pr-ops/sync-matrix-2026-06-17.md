@@ -63,7 +63,7 @@ related_artifacts:
 | `CONTRIBUTING.md` | `CONTRIBUTING.md` | да | **Smart Sync ←** | — |
 | `AI_QUICK_RULES.md`, `AI_SESSION_HANDOVER_PROMPT.md` | HTOM-геном (`templates/htom/`, `session-handover-standard.md`) | да | **Smart Sync ←** | — |
 | `pr-ops/artifact-map.md` | `pr-ops/artifact-map.md` | да (уже синхронизирован) | **Smart Sync ←** | — |
-| `ai-rules/agent-onboarding-protocol_old.md` | `ai-rules/agent-onboarding-protocol_old.md` | да | **Smart Sync ←** | — |
+| `.archive/ai-rules/agent-onboarding-protocol_old.md` | `.archive/ai-rules/agent-onboarding-protocol_old.md` | да | **Smart Sync ←** | — |
 | `pr-ops/BACKLOG.md` | `governance/backlog.md` | да | **Smart Sync ←** | — |
 | `pr-ops/session-digests.md` | `pr-ops/session-digests.md` | да | **Smart Sync ←** | — |
 | `.hub-profile.json` | формат Smart Sync (Хаб PR #208) | да | **Smart Sync ←** | — |

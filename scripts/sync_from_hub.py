@@ -53,7 +53,10 @@ MANIFEST: dict[str, str] = {
     "ai-rules/adversarial-stress-testing.md": "ai-rules/adversarial-stress-testing.md",
     # Периметр безопасности при работе с приватными данными Mango.
     "ai-governance/README.md": "ai-governance/README.md",
-    "ai-governance/ai-governance.md": "ai-governance/ai-governance.md",
+    # Слот ai-governance/ai-governance.md занят операционным контрактом самой
+    # спицы (геном HTOM в редакции RFC #532), поэтому рабочая копия стандарта
+    # Хаба живёт рядом под именем hub-*: два SSOT в одном файле невозможны.
+    "ai-governance/ai-governance.md": "ai-governance/hub-ai-governance.md",
     "ai-governance/agent-security-checklist.md": "ai-governance/agent-security-checklist.md",
     # Стандарты. GLOSSARY.md сохраняет историческое имя файла спицы: на него
     # ссылаются prompts/ и standards/ спицы (в Хабе файл переименован в glossary.md).

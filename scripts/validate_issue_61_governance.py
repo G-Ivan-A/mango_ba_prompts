@@ -28,7 +28,7 @@ def main() -> int:
     errors: list[str] = []
 
     errors += require(
-        "AI_GOVERNANCE.md",
+        "ai-governance/ai-governance.md",
         "Creative",
         "Structured",
         "обоснованный обход",
@@ -36,7 +36,7 @@ def main() -> int:
         "комментарий + ручной перезапуск",
     )
     errors += require(
-        "AI_QUICK_RULES.md",
+        "ai-rules/ai-quick-rules.md",
         "Structured",
         "Creative",
         "fail-closed",

@@ -5,14 +5,14 @@ updated: 2026-08-21
 temperature: 0.1
 type: prompt
 layer: executable
-full_version: "AI_SESSION_HANDOVER_PROMPT.md"
+full_version: "ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
 related_standard: "standards/cascading-context-loading-standard.md"
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 ---
 
 # Handover Prompt — executable layer
 
-Load this file first. Do not load `AI_SESSION_HANDOVER_PROMPT.md` unless one
+Load this file first. Do not load `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` unless one
 escalation trigger below is true.
 
 ## Escalation triggers
@@ -20,7 +20,7 @@ escalation trigger below is true.
 - TRIGGER-1: пользователь явно просит полную версию, историю, rationale,
   provenance, source_hub/source_sha или обязательные разделы handover prompt.
 - TRIGGER-2: нужно редактировать, синхронизировать или валидировать
-  `AI_SESSION_HANDOVER_PROMPT.md` как full-файл.
+  `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` как full-файл.
 - TRIGGER-3: в этом executable-слое отсутствует требуемый раздел prompt или
   точная формулировка, без которой нельзя выполнить текущую задачу.
 - TRIGGER-4: найдено противоречие между этим prompt, full-файлом,
@@ -78,11 +78,11 @@ escalation trigger below is true.
   ссылайся на артефакты репозитория.
 
 Сделай ровно по шагам:
-1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+1. Контекст проекта. Определи тип проекта по README/ai-governance: HTOM-команда,
    Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
    явного основания.
-2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md,
-   AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Если документ имеет
+2. Чек-лист governance. Прочитай локальные ai-governance/ai-governance.md,
+   ai-rules/ai-quick-rules.md, CONTRIBUTING.md и README.md. Если документ имеет
    соседний `.executable.md`, сначала читай executable-слой; full-слой читай
    только по его escalation triggers. Если нужны фундаментальные
    governance-контракты, прочитай их в Хабе: governance/repo-model.md,
@@ -92,8 +92,8 @@ escalation trigger below is true.
    (если есть), ближайший README и блок «Быстрый контекст», если он есть.
    Учитывай summary от Пользователя и релевантные записи
    pr-ops/session-digests.md.
-4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
-   AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
+4. Проверка шаблонов. Проверь наличие локальных ai-rules/AI_SESSION_HANDOVER_PROMPT.md,
+   ai-rules/ai-quick-rules.md, ai-governance/ai-governance.md, CONTRIBUTING.md, docs/task-for-konard-template.md
    и issue template, если они релевантны задаче. Если шаблона нет или ссылка на
    Хаб сломана — зафиксируй это в Readback как риск.
 5. Формат постановки задач. Не меняй структуру issue и не заполняй пустые поля

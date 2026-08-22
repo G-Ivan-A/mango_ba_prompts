@@ -31,7 +31,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 CONCEPT_DOCS = (
     "README.md",
-    "AI_GOVERNANCE.md",
+    "ai-governance/ai-governance.md",
     "docs/ba-ecosystem.md",
     "docs/rfc-hub-integration.md",
     "docs/hub-research-dependencies.md",
@@ -69,7 +69,7 @@ WEB_RESOURCE_VARIANTS = (
 
 # Пробел evals фиксируется честно, а не маскируется.
 EVALS_GAP_MARKERS = {
-    "AI_GOVERNANCE.md": (
+    "ai-governance/ai-governance.md": (
         "Статус механизмов проверки на сегодня",
         "нет каталога `evals/` и нет golden-set",
     ),
@@ -80,7 +80,7 @@ EVALS_GAP_MARKERS = {
 }
 
 REQUIRED_TEXT = {
-    "AI_GOVERNANCE.md": (
+    "ai-governance/ai-governance.md": (
         "качество системы исполнения > стоимость",
         "Операция без процесса проверки считается незавершённой",
         "чек-лист",
@@ -169,9 +169,9 @@ def check_hub_bridge() -> list[str]:
             )
 
     consumers = {
-        "adr-009-repo-split": ("README.md", "AI_GOVERNANCE.md"),
-        "ba-process-ontology": ("AI_GOVERNANCE.md", "docs/ba-ecosystem.md"),
-        "separation-readiness": ("AI_GOVERNANCE.md",),
+        "adr-009-repo-split": ("README.md", "ai-governance/ai-governance.md"),
+        "ba-process-ontology": ("ai-governance/ai-governance.md", "docs/ba-ecosystem.md"),
+        "separation-readiness": ("ai-governance/ai-governance.md",),
     }
     for anchor, paths in consumers.items():
         for path in paths:
@@ -200,7 +200,7 @@ def check_evals_status() -> list[str]:
     if (ROOT / "evals").exists():
         errors.append(
             "evals/: каталог появился — обнови «Статус механизмов проверки "
-            "на сегодня» в AI_GOVERNANCE.md и запись в pr-ops/BACKLOG.md"
+            "на сегодня» в ai-governance/ai-governance.md и запись в pr-ops/BACKLOG.md"
         )
     for path, needles in EVALS_GAP_MARKERS.items():
         text = read_text(path)
@@ -212,15 +212,15 @@ def check_evals_status() -> list[str]:
 
 def check_web_resource_variants() -> list[str]:
     """Блокер Q1: канал публикации веб-ресурса после перевода в Private."""
-    text = read_text("AI_GOVERNANCE.md")
+    text = read_text("ai-governance/ai-governance.md")
     errors = [
-        f"AI_GOVERNANCE.md: не зафиксирован вариант веб-ресурса {variant!r}"
+        f"ai-governance/ai-governance.md: не зафиксирован вариант веб-ресурса {variant!r}"
         for variant in WEB_RESOURCE_VARIANTS
         if variant not in text
     ]
     if "GitHub Pages не работает для приватных репозиториев" not in text:
         errors.append(
-            "AI_GOVERNANCE.md: не зафиксировано ограничение GitHub Pages "
+            "ai-governance/ai-governance.md: не зафиксировано ограничение GitHub Pages "
             "для приватных репозиториев"
         )
     return errors

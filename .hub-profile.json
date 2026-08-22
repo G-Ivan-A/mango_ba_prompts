@@ -15,7 +15,7 @@
     "synced_paths": [
       "ai-governance/README.md",
       "ai-governance/agent-security-checklist.md",
-      "ai-governance/ai-governance.md",
+      "ai-governance/hub-ai-governance.md",
       "ai-rules/README.md",
       "ai-rules/adversarial-stress-testing.md",
       "ai-rules/agent-onboarding-protocol.md",
@@ -60,6 +60,67 @@
         "CHANGELOG.md"
       ],
       "notes": "Session-digest mechanism and artifact-map baseline synced from Hub, adapted to local mango_ba_prompts paths and existing issue #48/#61 handover rules. Hub PR #229 was applied as a reference-only external-knowledge slice in docs/hub-research-dependencies.md; the Base Registry was not copied into local research/. Hub PR #230 terminology was applied to active guidance, task templates, related ADR references, and migration-era references; Hub-only traceability, resolver-scope, and Framework-vs-Template contracts were reviewed and left in the Hub."
+    }
+  ],
+  "path_migrations": [
+    {
+      "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/291",
+      "date": "2026-08-21",
+      "reason": "Исправление структуры корня и вынос superseded-артефактов в скрытый .archive/. Записи sync_history сознательно не переписаны: журнал фиксирует пути на момент синка.",
+      "moves": {
+        "AI_SESSION_HANDOVER_PROMPT.executable.md": "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+        "ai-rules/agent-onboarding-protocol_old.md": ".archive/ai-rules/agent-onboarding-protocol_old.md",
+        "ai-rules/agent-onboarding-protocol_old.executable.md": ".archive/ai-rules/agent-onboarding-protocol_old.executable.md"
+      }
+    },
+    {
+      "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/291",
+      "date": "2026-08-22",
+      "reason": "Второй шаг миграции: после принятия RFC #532 в Хабе (PR #538) управляющий контракт нормируется по наличию, а не по размещению, каноническая раскладка — ai-governance/ + ai-rules/, а контракт в двух домах = ошибка. Слот генома ai-governance/ai-governance.md занимала рабочая копия стандарта Хаба (синк issue #265) — другой артефакт с другим source of truth; она переехала в ai-governance/hub-ai-governance.md, слот отдан контракту спицы. Handover-промпт размещён в ai-rules/, а не в prompts/: канонический перечень домов генома для этого контракта — ai-rules/, и prompts/ его не разрешает (executable-слой промпта при этом остаётся в prompts/).",
+      "moves": {
+        "ai-governance/ai-governance.md": "ai-governance/hub-ai-governance.md",
+        "AI_GOVERNANCE.md": "ai-governance/ai-governance.md",
+        "AI_QUICK_RULES.md": "ai-rules/ai-quick-rules.md",
+        "AI_SESSION_HANDOVER_PROMPT.md": "ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
+      }
+    }
+  ],
+  "project_specific_directories": [
+    {
+      "path": "runs",
+      "reason": "Дом прогонов промптов (эмпирические данные HTOM-команды): runs/<год>/RUN-NNNN/. Контракт зафиксирован в standards/runs-contract-standard.md; целостность каталога защищена контрактом 2 issue #291."
+    },
+    {
+      "path": "kb",
+      "reason": "База знаний: kb/sources/ (исходные документы) и kb/processed/ (machine-readable извлечение конвейером scripts/kb/). Контракт — standards/kb-standard.md."
+    },
+    {
+      "path": "prompts",
+      "reason": "Продуктовый дом проекта: библиотека промптов БА (полный и executable слои). Ради него репозиторий и существует; в геноме HTOM аналога нет."
+    },
+    {
+      "path": "patterns",
+      "reason": "Библиотека переиспользуемых паттернов промптинга, выделенных из prompts/ (issue #85). Отдельный дом, потому что паттерн — не исполняемый промпт."
+    },
+    {
+      "path": "standards",
+      "reason": "Локальные нормы спицы: контракты промптов, прогонов, БЗ, именования и frontmatter. Стандарты, синкнутые из Хаба, помечены source_of_truth."
+    },
+    {
+      "path": "pr-ops",
+      "reason": "Операционные реестры процесса: BACKLOG.md, artifact-map.md, session-digests.md, миграционные манифесты. Дом наследован от модели репозитория Хаба (pr-ops/repo-model.md)."
+    },
+    {
+      "path": "scripts",
+      "reason": "Исполняемый код спицы: валидаторы scripts/validate_issue_*.py, общий раннер validate_all.py, конвейер БЗ scripts/kb/ и синк scripts/sync_from_hub.py."
+    },
+    {
+      "path": "experiments",
+      "reason": "Воспроизводимые эксперименты и миграционные скрипты (в т.ч. миграции issue #291). Отделены от scripts/, потому что запускаются разово, а не в CI."
+    },
+    {
+      "path": "site",
+      "reason": "Сгенерированный статический каталог промптов для GitHub Pages (issue #74). Артефакт публикации, не исходник."
     }
   ]
 }

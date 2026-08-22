@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: 2026-08-22
 temperature: 0.1
 ---
@@ -13,6 +13,86 @@ temperature: 0.1
 
 ## Unreleased
 
+### Changed — Issue #291 шаг 2: управляющие контракты в канонических домах
+
+RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538))
+заменил требование «контракт лежит в корне» на «контракт существует ровно в
+одном разрешённом доме», сняв блокер шага 1.
+
+- Управляющие контракты перенесены из корня в канонические дома:
+  `AI_GOVERNANCE.md` → [`ai-governance/ai-governance.md`](ai-governance/ai-governance.md),
+  `AI_QUICK_RULES.md` → [`ai-rules/ai-quick-rules.md`](ai-rules/ai-quick-rules.md),
+  `AI_SESSION_HANDOVER_PROMPT.md` → [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md).
+  В корне остались только `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`.
+- Рабочая копия стандарта Хаба переименована, чтобы освободить канонический
+  слот: `ai-governance/ai-governance.md` →
+  [`ai-governance/hub-ai-governance.md`](ai-governance/hub-ai-governance.md).
+  Два SSOT в одном файле невозможны; `MANIFEST` в
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py) перенаправлен на новое
+  имя, в файл добавлен баннер с причиной.
+- `.hub-profile.json`: добавлен раздел `project_specific_directories` — все 9
+  неканонических каталогов верхнего уровня (`runs`, `kb`, `prompts`, `patterns`,
+  `standards`, `pr-ops`, `scripts`, `experiments`, `site`) задекларированы с
+  причиной; добавлена запись `path_migrations` о переносе; `sync_history`
+  намеренно не переписан (журнал фиксирует пути на момент события).
+- [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh)
+  переведён на модель RFC #532: разрешение дома контракта, запрет двух домов,
+  классификация каталогов верхнего уровня, требование `README.md` в `.archive/`.
+  Локальные дельты D1–D6 документированы в самом файле.
+- [`scripts/validate_issue_291_root_structure.py`](scripts/validate_issue_291_root_structure.py)
+  закрывает новую раскладку: дом контракта ровно один и канонический,
+  `governance/` (переходный дом) отсутствует, недекларированных каталогов нет.
+- Аудит дополнен разделом 7 (шаг 2) без переписывания разделов 0–6: они
+  фиксируют состояние знания на момент решения.
+- `runs/` и `kb/` не затронуты (контракт 2 issue #291): исключены из обхода
+  миграционного скрипта на уровне кода, ссылок на перенесённые файлы не содержат.
+- Воспроизводимость:
+  [`experiments/restructure_governance_to_canonical_homes.py`](experiments/restructure_governance_to_canonical_homes.py).
+
+### Changed — Issue #291 структурная миграция: канонический корень и скрытый архив
+
+- Проведён аудит причин структурного дрейфа корня:
+  [`docs/audit/2026-08-21-root-structure-audit.md`](docs/audit/2026-08-21-root-structure-audit.md).
+  Находка шага 1: `AI_GOVERNANCE.md`, `AI_QUICK_RULES.md` и
+  `AI_SESSION_HANDOVER_PROMPT.md` были **обязаны** лежать в корне — жёсткое
+  ограничение генома [`templates/htom/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/templates/htom)
+  Хаба той редакции, а `.hub-profile.json` объявляет `target_type: HTOM`.
+  Ограничение снято RFC #532 Хаба (PR #538) — см. блок ниже; на шаге 1
+  перенесено то, что выросло в корне вне генома.
+- Executable-слой handover prompt перенесён из корня в дом промптов:
+  `AI_SESSION_HANDOVER_PROMPT.executable.md` →
+  [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
+- `superseded`-архив протокола онбординга v1.2 выведен из `ai-rules/`, где он
+  соседствовал с активной v1.5, в скрытый каталог
+  [`.archive/`](.archive/README.md): `agent-onboarding-protocol_old.md` и
+  `agent-onboarding-protocol_old.executable.md`. Файлы не удалены — traceability
+  контракта issue #267.
+- Все внутренние ссылки обновлены (README, `AI_SESSION_HANDOVER_PROMPT.md`,
+  `standards/cascading-context-loading-standard.md`, `pr-ops/*`, `docs/adr/*`,
+  валидаторы `scripts/validate_issue_{72,125,267}_*.py`). Записи `sync_history`
+  в [`.hub-profile.json`](.hub-profile.json) сознательно не переписаны — журнал
+  фиксирует пути на момент синка; вместо правки добавлен раздел
+  `path_migrations`.
+- Каталоги `runs/` и `kb/` не затронуты (контракт 2 issue #291): исключены из
+  обхода миграционного скрипта на уровне кода.
+
+### Added — Issue #291 замок на базовую структуру репозитория
+
+- Добавлен [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh) —
+  адаптация валидатора генома HTOM Хаба. Проверяет обязательные артефакты ДНК,
+  **закрывает корень** каноническим списком, запрещает `*_old*.md` вне
+  `.archive/` и требует наличия `runs/` и `kb/`. Именно отсутствия этой проверки
+  хватило, чтобы дрейф прожил четыре PR.
+- Добавлен регрессионный тест
+  [`scripts/validate_issue_291_root_structure.py`](scripts/validate_issue_291_root_structure.py):
+  фиксирует итог миграции как контракт — канонический корень, архив в `.archive/`
+  с баннером и ссылкой на актуальную версию, связность слоёв handover, наличие
+  `runs/` и `kb/`, подключённость замка к CI и полноту отчёта аудита.
+- Новая цель `make validate-structure` (bash-замок + регрессионный тест),
+  включена в `make validate` и в CI
+  [`.github/workflows/validate.yml`](.github/workflows/validate.yml).
+- Миграция воспроизводима скриптом
+  [`experiments/restructure_root_and_archive.py`](experiments/restructure_root_and_archive.py).
 ### Added — Issue #281 реальный прогон 58093 (RUN-0016) как эмпирические данные
 
 - Добавлен [`runs/2026/RUN-0016/`](runs/2026/RUN-0016/metadata.yaml) —
@@ -612,13 +692,13 @@ temperature: 0.1
   [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
   (v1.5, рабочая копия Хаба на
   [`3bfa410`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/3bfa4103c9efbbd59bc951814884920e406982e2)):
-  обновлены [`README.md`](README.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  обновлены [`README.md`](README.md), [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
   (+ `.executable.md`), [`standards/cascading-context-loading-standard.md`](standards/cascading-context-loading-standard.md)
   и [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md). Раньше все точки входа
   вели на архивную v1.2.
 - Архив v1.2 сохранён (traceability, файл не удаляется), но переведён в
   `status: superseded`, лишён `entrypoint` и снабжён баннером «АРХИВ»:
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (+ `.executable.md`). В README он остаётся отдельной строкой как архив.
 - В протокол v1.5 добавлена единственная локальная дельта — `owner: G-Ivan-A`:
   `frontmatter-docs-standard.md` Хаба требует `owner` для governance-артефактов,
@@ -647,9 +727,9 @@ temperature: 0.1
 
 - Из корневых файлов удалено поле `ai-generated`, прямо запрещённое
   `frontmatter-docs-standard.md` Хаба, и добавлено обязательное `temperature`:
-  [`README.md`](README.md), [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
-  [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md), [`CONTRIBUTING.md`](CONTRIBUTING.md),
-  [`CHANGELOG.md`](CHANGELOG.md), [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md)
+  [`README.md`](README.md), [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md),
+  [`AI_QUICK_RULES.md`](ai-rules/ai-quick-rules.md), [`CONTRIBUTING.md`](CONTRIBUTING.md),
+  [`CHANGELOG.md`](CHANGELOG.md), [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
   (+ `.executable.md`). Область `make validate` (корень, `ai-rules/`, `tools/`)
   проходит без ошибок.
 - Некритические находки не исправлялись «по пути», а зафиксированы задачами
@@ -743,8 +823,8 @@ temperature: 0.1
 - Добавлен реестр [`standards/README.md`](standards/README.md), разграничивающий
   рабочие копии Хаба и стандарты спицы с правилом «сужать можно, противоречить
   нельзя». Приоритет норм продублирован в
-  [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) и
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) и
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (там же — разделение ролей двух копий onboarding-протокола).
 - Обновлены [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) (новые
   строки `ai-rules/`, `ai-governance/`, `standards/README.md`,
@@ -755,7 +835,7 @@ temperature: 0.1
 - Структура репозитория приведена к базовой структуре Хаба: каталог
   `governance/` расформирован, его содержимое разнесено по
   [`pr-ops/`](pr-ops/artifact-map.md) (операционные записи),
-  [`ai-rules/`](ai-rules/agent-onboarding-protocol_old.md) (старый протокол
+  [`ai-rules/`](.archive/ai-rules/agent-onboarding-protocol_old.md) (старый протокол
   онбординга v1.2 под суффиксом `_old`), `docs/rfc/`, `docs/audit/` и
   [`standards/prompt-debugging-process.md`](standards/prompt-debugging-process.md).
   Каталог `research/` не создавался: он специфичен для Хаба, research остаётся
@@ -777,7 +857,7 @@ temperature: 0.1
   запрещала любой следующий синк.
 ### Changed — Issue #263 корректировка видения и концепции проекта
 
-- В [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) зафиксирован принцип
+- В [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) зафиксирован принцип
   «качество системы исполнения > стоимость»: каждая операция БА обязана иметь
   механизм проверки (чек-лист, evals-метрика или human-in-the-loop gate), а
   **операция без процесса проверки считается незавершённой**; норма добавлена в
@@ -844,8 +924,8 @@ temperature: 0.1
   naming `.executable.md`, LLM Loading Contract, deterministic escalation
   triggers и правила замера экономии токенов.
 - Для критичных full-файлов созданы executable-companions:
-  [`AI_SESSION_HANDOVER_PROMPT.executable.md`](AI_SESSION_HANDOVER_PROMPT.executable.md),
-  [`ai-rules/agent-onboarding-protocol_old.executable.md`](ai-rules/agent-onboarding-protocol_old.executable.md),
+  [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md),
+  [`.archive/ai-rules/agent-onboarding-protocol_old.executable.md`](.archive/ai-rules/agent-onboarding-protocol_old.executable.md),
   [`prompts/README.executable.md`](prompts/README.executable.md),
   [`docs/ba-processes/00-index.executable.md`](docs/ba-processes/00-index.executable.md)
   и [`standards/ba-ontology.executable.md`](standards/ba-ontology.executable.md).
@@ -1317,12 +1397,12 @@ temperature: 0.1
 
 ### Changed — Issue #72 Smart Sync последних обновлений Хаба
 
-- [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) синхронизирован
+- [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) синхронизирован
   с Hub PR #226 (`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, SHA
   `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`): добавлен механизм периодической
   суммаризации сессий через `pr-ops/session-digests.md`, сохранены локальные
   правила issue #48/#61 про канал работы через Конарда и task template.
-- [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+- [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   обновлён по source SHA `f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b`: встроенный
   копируемый prompt теперь соответствует handover v0.5 и указывает на
   `pr-ops/session-digests.md`.
@@ -1346,7 +1426,7 @@ temperature: 0.1
   зарегистрированы строки `ext-003` (Spec-Driven Development) и `ext-007`
   (Контекст-инжиниринг), без создания локального `research/`.
 - Hub PR #230: терминология активных guidance-файлов выровнена на
-  `Пользователь / Исполнитель` в [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md),
+  `Пользователь / Исполнитель` в [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md),
   [`CONTRIBUTING.md`](CONTRIBUTING.md), [`README.md`](README.md),
   [`docs/task-for-konard-template.md`](docs/task-for-konard-template.md) и
   связанных ADR/исторических ссылках; traceability contracts, Framework vs
@@ -1411,7 +1491,7 @@ temperature: 0.1
 
 ### Changed — Issue #61 Creative-mode governance без архитектурного долга
 
-- [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md)
+- [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md), [`AI_QUICK_RULES.md`](ai-rules/ai-quick-rules.md)
   и [`CONTRIBUTING.md`](CONTRIBUTING.md) обновлены: `Structured` сохраняет
   fail-closed semantics, а `Creative` допускает обоснованный обход scope или
   локального правила, если обход нужен для цели задачи и явно описан в PR.
@@ -1425,7 +1505,7 @@ temperature: 0.1
   и [`docs/adr/0003-creative-mode-governance.md`](docs/adr/0003-creative-mode-governance.md):
   шаблон задачи фиксирует WHAT/WHY без пошагового HOW, ADR описывает практику,
   примеры было/стало, обоснованные обходы и self-test на кейсе PR #57.
-- [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) обновлён до
+- [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) обновлён до
   локального шаблона постановки задач для Конарда.
 
 ### Added — Issue #52 фундамент: концепция, таксономия, RFC Хаба и базовая структура
@@ -1513,7 +1593,7 @@ temperature: 0.1
 
 ### Changed — Issue #48 обогащение `AI_SESSION_HANDOVER_PROMPT.md` (роль члена команды и проверка шаблонов)
 
-- [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) дополнен командной
+- [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) дополнен командной
   рамкой (issue #48), `version` 0.3 → 0.4. Готовый prompt теперь открывается рамкой
   «ИИ в чате — **член команды** (C, Q, G, D, O), а не «исполнитель без доступа»;
   прямые изменения в репо — через Конарда». В Шаг 2 (ЧЕК-ЛИСТ КОНТЕКСТА) добавлена
@@ -1536,7 +1616,7 @@ temperature: 0.1
 ### Added — Issue #46 governance sync with Hub (PR #208)
 
 - Создан корневой артефакт онбординга
-  [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) — готовый к
+  [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) — готовый к
   копированию *Handover Prompt* для запуска ИИ-агента в новой сессии. Источник —
   Хаб `templates/htom/AI_SESSION_HANDOVER_PROMPT.md`, закреплён permalink-ом на
   merge-SHA PR #208 `117e4a553815af9b05d841c81dd725dd4a4c4d44`. Плейсхолдеры
@@ -1544,7 +1624,7 @@ temperature: 0.1
   читает реально присутствующие локальные контракты команды, фундаментальные
   governance-контракты Хаба — по permalink-ам.
 - Создан протокол онбординга
-  [`ai-rules/agent-onboarding-protocol_old.md`](ai-rules/agent-onboarding-protocol_old.md)
+  [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
   (kebab-case, адаптированная копия канонического протокола Хаба v1.2): семантическое
   разделение «артефакт ↔ протокол» из PR #208. Раздел Design Rationale сжат,
   полная история вынесена ссылкой на Хаб.
@@ -1561,7 +1641,7 @@ temperature: 0.1
 
 ### Changed — sync `AI_GOVERNANCE.md` / `AI_QUICK_RULES.md` from `templates/htom/`
 
-- [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) синхронизирован с Хабом
+- [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) синхронизирован с Хабом
   `templates/htom/AI_GOVERNANCE.md` (SHA `117e4a55`): принята терминология
   **«HTOM-команда»**, добавлен provenance (`source_hub`/`source_sha`). Сохранена
   mango-специфичная taxonomy **«Capability Boundaries»** (с реальными путями и
@@ -1569,7 +1649,7 @@ temperature: 0.1
   `kb/glossary.md` → `standards/GLOSSARY.md`. Строка DoD про
   `./tools/validate-repository-structure.sh` заменена на ориентир
   `docs/audit/initial-state-2026-06.md` (валидатора в mango нет — Anti-Inflation).
-- [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) синхронизирован с Хабом
+- [`AI_QUICK_RULES.md`](ai-rules/ai-quick-rules.md) синхронизирован с Хабом
   `templates/htom/AI_QUICK_RULES.md` (SHA `117e4a55`): терминология
   **«HTOM-команда»**, provenance, различение HTOM-команда ↔ spoke-репозиторий.
   Сохранена явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её

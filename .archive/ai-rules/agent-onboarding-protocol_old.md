@@ -11,12 +11,12 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 ---
 
 > 🗄️ **АРХИВ (superseded, issue #267).** Актуальный протокол онбординга —
-> [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5).
+> [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) (v1.5).
 > Этот файл сохранён только для traceability: он фиксирует локальную адаптацию
 > v1.2 и не должен использоваться агентами как точка входа.
 
 > **LLM Loading Contract — full layer.**
-> Start with [`ai-rules/agent-onboarding-protocol_old.executable.md`](agent-onboarding-protocol_old.executable.md).
+> Start with [`.archive/ai-rules/agent-onboarding-protocol_old.executable.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.executable.md).
 > Load this full file only when an escalation trigger in the executable companion
 > is true: explicit request for full/rationale/history, missing required section
 > in executable, need for exact wording/table/reference, or editing/validating
@@ -27,22 +27,22 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 > v1.2). Здесь он адаптирован под HTOM-команду `mango_ba_prompts`: ссылки на
 > файлы, которых нет в команде (живут только в Хабе), заменены на permalink'и на
 > `source_sha`; ссылки на глоссарий указывают на локальную рабочую копию
-> [`standards/GLOSSARY.md`](../standards/GLOSSARY.md). При расхождении приоритет —
+> [`standards/GLOSSARY.md`](../../standards/GLOSSARY.md). При расхождении приоритет —
 > у хабовой версии; правки вносятся сначала в Хаб, затем переносятся сюда.
 
 > 🧭 **Две копии протокола — какая когда (issue #265).** Синк 2026-08-17 принёс
 > неадаптированную рабочую копию Хаба
-> [`ai-rules/agent-onboarding-protocol.md`](../ai-rules/agent-onboarding-protocol.md)
+> [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md)
 > (v1.5 на `source_sha` Хаба). Разделение ролей:
 > - **Входная точка команды `mango_ba_prompts` — этот файл.** Он адаптирован под
 >   пути команды и имеет исполнимого компаньона
->   [`agent-onboarding-protocol.executable.md`](agent-onboarding-protocol_old.executable.md),
->   которого требует [стандарт каскадной загрузки контекста](../standards/cascading-context-loading-standard.md).
+>   [`agent-onboarding-protocol.executable.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.executable.md),
+>   которого требует [стандарт каскадной загрузки контекста](../../standards/cascading-context-loading-standard.md).
 > - **Базовая норма — копия в `ai-rules/`.** Она показывает, что Хаб требует
 >   *сейчас*; локальная адаптация **МОЖЕТ** сужать её под контекст Mango, но
 >   **НЕ ДОЛЖНА** ей противоречить. При противоречии выигрывает копия Хаба, а
 >   расхождение оформляется issue в Хаб (см.
->   [ADR-0004](../docs/adr/0004-hub-resync-2026-08.md)).
+>   [ADR-0004](../../docs/adr/0004-hub-resync-2026-08.md)).
 > - Актуализация этого файла до v1.5 — отдельная задача: она затрагивает
 >   исполнимого компаньона и контракт загрузки контекста, а не только текст.
 
@@ -50,9 +50,9 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 > Этот файл — *процесс* (чек-лист и ссылки), который агент **исполняет**,
 > получив ссылку на него. Не вставляйте этот документ целиком в диалог с LLM.
 > Чтобы запустить агента, скопируйте **артефакт** — готовый *Handover Prompt*
-> (Часть A ниже или [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md)
+> (Часть A ниже или [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
 > в корне команды).
-> О разнице протокол↔артефакт см. [`standards/GLOSSARY.md`](../standards/GLOSSARY.md).
+> О разнице протокол↔артефакт см. [`standards/GLOSSARY.md`](../../standards/GLOSSARY.md).
 
 > 🚦 **ИСПОЛНИМЫЙ ДОКУМЕНТ — НЕ АНАЛИЗИРУЙ, ВЫПОЛНЯЙ.**
 > Я как ИИ-агент, получивший ссылку на этот файл, должен немедленно выполнить
@@ -78,7 +78,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 Чтобы соблюдение протокола было *самым простым путём*, человеку не нужно ничего
 формулировать — он копирует один блок в начало диалога с ИИ. Ниже — версия,
 инстанцированная под эту HTOM-команду (`mango_ba_prompts`); она же лежит готовым
-артефактом в [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md).
+артефактом в [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md).
 Канонический параметризованный шаблон (с плейсхолдером `{{REPO_NAME}}`, по
 умолчанию `hybrid-Intelligence-lab`) остаётся в Хабе:
 [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
@@ -97,7 +97,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
   память между задачами и не использует суммаризацию сессии во время исполнения.
 
 Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
-(ai-rules/agent-onboarding-protocol_old.md). Это предполётный чек-лист — изменение
+(.archive/ai-rules/agent-onboarding-protocol_old.md). Это предполётный чек-лист — изменение
 файлов запрещено до апрува Пользователя.
 
 Контекст чата диалога:
@@ -162,7 +162,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 ```
 
 > Тот же промпт дублируется в геном команды (корневой
-> [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md)), чтобы каждый
+> [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md)), чтобы каждый
 > клон Хаба наследовал протокол «из коробки». Один источник (Хаб) — два места
 > применения: сам Хаб и его HTOM-команды. О разнице между HTOM-командой и
 > spoke-репозиторием см. Хаб
@@ -178,12 +178,12 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 
 Агент читает контракты команды **до** контекста задачи:
 
-- [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md) — роли, правила, operating modes,
+- [`ai-governance/ai-governance.md`](../../ai-governance/ai-governance.md) — роли, правила, operating modes,
   эскалация, Definition of Done.
-- [`AI_QUICK_RULES.md`](../AI_QUICK_RULES.md) — одностраничные правила и
+- [`ai-rules/ai-quick-rules.md`](../../ai-rules/ai-quick-rules.md) — одностраничные правила и
   fail-closed semantics.
-- [`CONTRIBUTING.md`](../CONTRIBUTING.md) — workflow вклада и локальные проверки.
-- [`README.md`](../README.md) — что это за команда, цель, актуальная структура,
+- [`CONTRIBUTING.md`](../../CONTRIBUTING.md) — workflow вклада и локальные проверки.
+- [`README.md`](../../README.md) — что это за команда, цель, актуальная структура,
   единственный мост к Хабу.
 - Фундаментальные governance-контракты живут в Хабе (команда их не дублирует, а
   ссылается — см. `AI_GOVERNANCE.md`): Хаб
@@ -193,7 +193,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
   (навигация по артефактам),
   [`standards/project-structure-inheritance.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/standards/project-structure-inheritance.md)
   (что можно, а что нельзя создавать).
-- Для задач по промптам — [`docs/hub-research-dependencies.md`](../docs/hub-research-dependencies.md)
+- Для задач по промптам — [`docs/hub-research-dependencies.md`](../../docs/hub-research-dependencies.md)
   (единственный реестр research-зависимостей от Хаба).
 
 **Выход:** агент знает границы *раньше*, чем узнал цель, — поэтому цель не
@@ -201,7 +201,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 
 #### Шаг 2 — Чек-лист контекста проекта (читаем местность)
 
-Агент читает текст issue и последние комментарии, корневой [`README.md`](../README.md)
+Агент читает текст issue и последние комментарии, корневой [`README.md`](../../README.md)
 и блок «Быстрый контекст», если он есть. Если контекст распределён или неполон —
 это фиксируется как риск, а не достраивается домыслом.
 
@@ -242,18 +242,18 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 
 ### 🧭 Модель процесса (одна строка)
 
-Агент работает в [Среде работы агента](../standards/GLOSSARY.md) (чат диалога) и
-обращается к [Источнику контекста](../standards/GLOSSARY.md) (репозиторий) по
+Агент работает в [Среде работы агента](../../standards/GLOSSARY.md) (чат диалога) и
+обращается к [Источнику контекста](../../standards/GLOSSARY.md) (репозиторий) по
 алгоритму из EXECUTION-блока выше. Агент **не «живёт» в репозитории** — он *читает*
 его в оперативную память диалога.
 
 > Термины используются по локальной рабочей копии глоссария
-> [`standards/GLOSSARY.md`](../standards/GLOSSARY.md): [Runtime-онбординг](../standards/GLOSSARY.md),
-> [Handover Prompt](../standards/GLOSSARY.md), [Readback](../standards/GLOSSARY.md),
-> [Среда работы агента](../standards/GLOSSARY.md), [Источник контекста](../standards/GLOSSARY.md).
+> [`standards/GLOSSARY.md`](../../standards/GLOSSARY.md): [Runtime-онбординг](../../standards/GLOSSARY.md),
+> [Handover Prompt](../../standards/GLOSSARY.md), [Readback](../../standards/GLOSSARY.md),
+> [Среда работы агента](../../standards/GLOSSARY.md), [Источник контекста](../../standards/GLOSSARY.md).
 > Здесь они только **используются**; определения — в глоссарии (source of truth —
 > в Хабе, локально лежит синхронизированная копия). Разделение Кейса 1 (этот файл)
-> и [Bootstrap-клонирования](../standards/GLOSSARY.md) (Кейс 2) — в манифесте двух
+> и [Bootstrap-клонирования](../../standards/GLOSSARY.md) (Кейс 2) — в манифесте двух
 > кейсов Хаба:
 > [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/rfc/rfc-two-cases-of-project-initialization.md).
 
@@ -267,7 +267,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 | 1 | **Холодный старт / галлюцинация контекста** | Агент пишет код, угадывая недостающее знание | Шаги 1–2 (обязательное чтение) + Шаг 3 (*Readback* ловит расхождение до кода). Если контекста нет — спрашивай, НЕ выдумывай. |
 | 2 | **Непредсказуемое создание папок** | Агент материализует дерево «на вырост» без спроса | Шаг 1 (repo-model, project-structure-inheritance) + Шаг 4 (стоп до апрува) |
 | 3 | **Тихое нарушение Anti-Inflation** | Локальное решение начинает выглядеть как repo-wide standard без согласования | Шаг 1 (границы раньше цели) + Шаг 3 (агент *предлагает*, а не создаёт) |
-| 4 | **Подмена ролей / преждевременное решение** | Агент принимает governance-/publication-решение за человека | Шаг 4 (clearance человека) + [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md): финальные решения — за людьми |
+| 4 | **Подмена ролей / преждевременное решение** | Агент принимает governance-/publication-решение за человека | Шаг 4 (clearance человека) + [`ai-governance/ai-governance.md`](../../ai-governance/ai-governance.md): финальные решения — за людьми |
 | 5 | **Рекомендация «в никуда» / потеря traceability** | Хорошая идея не доходит до задачи; не видно, что прочитано | Шаг 3 (открытые вопросы и рекомендации) + Шаг 4 (явный handoff «идея → задача», след в issue/PR) |
 
 > Если сработал любой из рисков 1–5 и ты не уверен — **вернись на Шаг 3**: задай
@@ -280,7 +280,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 | Хаб [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md) | Канонический протокол (source of truth) и его полный design-rationale. |
 | Хаб [`governance/rfc/rfc-two-cases-of-project-initialization.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/rfc/rfc-two-cases-of-project-initialization.md) | Манифест двух кейсов: чем Кейс 1 (этот файл) отличается от Кейса 2. |
 | Хаб [`templates/htom/README.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/README.md) | Кейс 2 (*Bootstrap-клонирование*): как родить HTOM-команду из «ДНК-шаблона» Хаба. |
-| [`standards/GLOSSARY.md`](../standards/GLOSSARY.md) | Локальная рабочая копия определений терминов протокола (source of truth — в Хабе). |
+| [`standards/GLOSSARY.md`](../../standards/GLOSSARY.md) | Локальная рабочая копия определений терминов протокола (source of truth — в Хабе). |
 
 ## Design Rationale & History
 
@@ -316,7 +316,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 | --- | --- |
 | Форма протокола | 4 шага: governance → контекст → readback → стоп до апрува |
 | Handover Prompt | Один копируемый блок; в Хабе параметризован `{{REPO_NAME}}`, в команде инстанцирован под `mango_ba_prompts` |
-| Место canonical-файла | `ai-rules/agent-onboarding-protocol_old.md`, рядом с repo governance |
+| Место canonical-файла | `.archive/ai-rules/agent-onboarding-protocol_old.md`, рядом с repo governance |
 | Исполнимость | `executable: true`, `entrypoint: true`, EXECUTION сверху |
 | Наследование HTOM-командами | Копия prompt живёт в корневом `AI_SESSION_HANDOVER_PROMPT.md` команды |
 

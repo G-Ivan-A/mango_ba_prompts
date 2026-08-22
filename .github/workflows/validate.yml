@@ -1,8 +1,9 @@
 name: Validate governance
 
 # Валидаторы Хаба (issue #267): frontmatter и именование хронологических
-# артефактов. Оба скрипта — рабочие копии из hybrid-Intelligence-lab, локальные
-# дельты описаны в tools/README.md. Проверка лёгкая (bash + coreutils), поэтому
+# артефактов; замок на базовую структуру HTOM-команды (issue #291). Скрипты —
+# рабочие копии/адаптации из hybrid-Intelligence-lab, локальные дельты описаны
+# в tools/README.md. Проверка лёгкая (bash + coreutils), поэтому
 # запускается на каждый PR и push в main.
 
 on:
@@ -19,7 +20,7 @@ permissions:
 
 jobs:
   validate:
-    name: Frontmatter and file naming
+    name: Frontmatter, file naming and repository structure
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -27,6 +28,8 @@ jobs:
         run: make validate-frontmatter
       - name: Validate file naming
         run: make validate-file-naming
+      - name: Validate repository structure
+        run: make validate-structure
       - name: Validate onboarding protocol navigation (issue #267)
         run: make validate-onboarding
 

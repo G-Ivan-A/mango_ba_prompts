@@ -326,7 +326,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       каталога `evals/` нет, `runs/*/metadata.yaml` не содержит эталона для
       сравнения. Пока пробел не закрыт, «evals-метрика» не может объявляться
       механизмом проверки операции (см.
-      [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md#статус-механизмов-проверки-на-сегодня)).
+      [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md#статус-механизмов-проверки-на-сегодня)).
       Нужна отдельная задача: формат golden-set, место хранения и связь с
       `runs/`. Источник:
       [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
@@ -336,7 +336,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       публикации каталога. Варианты A (внешний портал `open-ai.ru`),
       B (поэтапная миграция с внешним билдом) и C (вывод через
       `ai-ba-playbooks`) зафиксированы в
-      [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md#веб-ресурс-app-после-приватизации);
+      [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md#веб-ресурс-app-после-приватизации);
       выбор — решение Пользователя до смены видимости. Источник:
       [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
 
@@ -357,6 +357,8 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
 | S-004 | `standards/frontmatter-docs-standard.md` Хаба относит `ai-rules/` к governance-классу (словарь `draft/proposed/accepted/...`), а хабовый валидатор — к классу `default` (где допустим `canonical`). Спица следует валидатору. | Расхождение в Хабе | Правится в Хабе, не в спице (source of truth). Нужен issue/RFC в `hybrid-Intelligence-lab`. | P1 |
 | S-005 | `ai-rules/agent-onboarding-protocol.md` (v1.5) в Хабе не имеет `owner`, хотя стандарт требует его для governance-артефактов. В спице `owner: G-Ivan-A` добавлен локально — это единственная локальная дельта к синкнутому файлу. | 1 файл | Устраняется добавлением `owner` в Хабе, после чего локальная дельта снимается следующим синком. | P2 |
 | S-006 | Расширение контракта прогонов (issue [#293](https://github.com/G-Ivan-A/mango_ba_prompts/issues/293): `run_type`, правила границ) выполнено по цепочке анализ → стандарт, без RFC: [`docs/analysis/2026-08-21-runs-type-gap-analysis.md`](../docs/analysis/2026-08-21-runs-type-gap-analysis.md) есть, RFC в `docs/rfc/` — нет. Нужно восстановить цепочку анализ → RFC → стандарт постфактум и провести решение через RFC-регистр. | 1 стандарт + 1 RFC | Приоритет по времени: 30+ прогонов требовалось зафиксировать с правильной таксономией до оформления RFC (обоснование в постановке issue #293). Обратная совместимость сохранена, поэтому восстановление цепочки не блокирует фиксацию прогонов. | P1 |
+| S-007 | Валидатор генома Хаба [`templates/htom/tools/validate-repository-structure.sh`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/templates/htom/tools/validate-repository-structure.sh) проверяет **наличие** обязательных корневых файлов, но не **закрытость** корня: лишний `*.md` в корне проходит проверку. Именно этот зазор дал дрейф issue #291 (причина 2 [аудита](../docs/audit/2026-08-21-root-structure-audit.md)). | Дефект контракта в Хабе | Локальная дельта в [`tools/validate-repository-structure.sh`](../tools/validate-repository-structure.sh) закрывает корень allowlist'ом и лечит симптом в одной спице. Системное решение — RFC в `hybrid-Intelligence-lab`. | P1 |
+| S-008 | `standards/cascading-context-loading-standard.md` требует «соседний `.executable.md`», что механически порождает файлы в каталоге full-слоя — в т.ч. в корне. Формулировку стоит заменить на «связанный ссылкой» (связь и так держится на `full_version`/`related_standard`). | 1 стандарт | Правка нормы, а не файлов; нужен отдельный issue, чтобы не смешивать с миграцией #291. | P2 |
 
 ---
 
@@ -365,7 +367,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/14>
 - Утверждённый RFC: [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
 - Human Review: [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md)
-- Контракт и правила: [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](../AI_QUICK_RULES.md)
+- Контракт и правила: [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md), [`ai-rules/ai-quick-rules.md`](../ai-rules/ai-quick-rules.md)
 - Вклад и workflow: [`CONTRIBUTING.md`](../CONTRIBUTING.md)
 </content>
 </invoke>
