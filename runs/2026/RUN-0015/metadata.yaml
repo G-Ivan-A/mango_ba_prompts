@@ -1,0 +1,55 @@
+run_id: RUN-0015
+process: fr-validation-57204-ivr-scheme-amocrm-rule
+version: "0.1"
+date: 2026-08-21
+author: "BA-IH + LLM"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/282
+inputs:
+  - inputs/README.md
+  - inputs/57204-chat-export-1787301664041.json
+  - inputs/transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/quality-findings.md
+  - outputs/final-artifact.md
+feedback:
+  - feedback/ba-review-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+metrics:
+  turns: 20
+  episodes: 10
+  iterations: 10
+  ba_edits: 6
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.80
+  success_rate_basis: "8 из 10 эпизодов приняты БА с правками или без; в эпизоде 2 отклонён блок предложенных НФТ и API-требований (реплика 4: «раздел 3 - игнорировать», «5 игнорировать»), в эпизоде 7 БА отклонил основную рекомендацию модели заменить термин «Правило» на «Конфигурация интеграции» (реплика 12: «Правило ... оставим»)"
+  hallucinations: 2
+  hallucinations_shipped: 0
+  tokens_output: 15262
+  tokens_thinking: 6614
+  tokens_context_in_max: 168045
+  tokens_context_refeed_sum: 1322626
+  token_method: "provider-usage:content_list[*].usage"
+  duration_wall_clock_s: 45675
+  duration_active_s: null
+  duration_generation_s: null
+  eval: "Механика промпта (human gate, «сначала предлагаю — меняю после согласования», пошаговый анализ) в основном соблюдена. Заземление частичное: ключевая проверка руководства в эпизоде 3 (цитата «Для любого номера не может быть более одной активной схемы») подтверждена и принята БА, но ссылки на страницы руководства (стр. 105–115, 114–115) не проверяемы, а в эпизоде 2 модель сгенерировала неподтверждённые количественные НФТ (кэш «не более 5 минут», «100 мс», «2 секунды», доступность 24/7) и API-требования, не запрошенные и не обоснованные источником. Все они отклонены БА и до результата не дошли. Финальная версия ФТ v1.1 получена, но диалог оборван на выборе формулировки (эпизод 10, реплика 19 — 3 варианта без ответа пользователя). Результат промежуточный: не golden case и не согласованный шаблон."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/282
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/experiment-log-standard.md
+  - scripts/chat_export_to_markdown.py
+related_runs:
+  - RUN-0022
+  - RUN-0023
+  - RUN-0024
