@@ -131,34 +131,34 @@ temperature: 0.1
   `runs/2026/RUN-0021/`, реестров и валидатора; `prompts/`, `kb/`, `patterns/`
   и `site/data/` не затронуты.
 
-### Added — Issue #275 реальный прогон 1040 (RUN-0025) как Proof of Execution
+### Added — Issue #275 реальный прогон 1040 (RUN-0028) как Proof of Execution
 
-- Добавлена запись [`runs/2026/RUN-0025/`](runs/2026/RUN-0025/outputs/README.md) —
+- Добавлена запись [`runs/2026/RUN-0028/`](runs/2026/RUN-0028/outputs/README.md) —
   прогон валидации ФТ задачи 1040 (разрез отчётов «Речевой аналитики» по
   продуктовым направлениям), зафиксированный по выгрузке чата из issue #275:
   3 эпизода, модель `qwen3.7-plus`, промпт
   [`fr-validation-legacy`](prompts/fr-validation-legacy.md), `run_type: statistics`.
 - Вход сохранён вместе с происхождением: исходный JSON вложения, его SHA-256/MD5 и
-  команды воспроизведения — [`inputs/README.md`](runs/2026/RUN-0025/inputs/README.md),
-  дословный транскрипт — [`inputs/transcript.md`](runs/2026/RUN-0025/inputs/transcript.md),
+  команды воспроизведения — [`inputs/README.md`](runs/2026/RUN-0028/inputs/README.md),
+  дословный транскрипт — [`inputs/transcript.md`](runs/2026/RUN-0028/inputs/transcript.md),
   черновики БА обеих версий решения и реестр дефектов входа В1–В5 —
-  [`inputs/raw-requirement.md`](runs/2026/RUN-0025/inputs/raw-requirement.md).
+  [`inputs/raw-requirement.md`](runs/2026/RUN-0028/inputs/raw-requirement.md).
 - Прогон **не является** согласованным документом и не является эталонным кейсом:
-  [`outputs/final-artifact.md`](runs/2026/RUN-0025/outputs/final-artifact.md) помечен
+  [`outputs/final-artifact.md`](runs/2026/RUN-0028/outputs/final-artifact.md) помечен
   предупреждением и снабжён реестром дефектов М1–М8 с воспроизводимыми проверками
-  ([`outputs/quality-findings.md`](runs/2026/RUN-0025/outputs/quality-findings.md)).
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0028/outputs/quality-findings.md)).
   Ключевые находки: потеря требований верхнего уровня 4.1–4.4 в эпизоде 2, удаление
   требования 4.4.3 (поведение As-Is) под видом дубля в эпизоде 3 и обрыв последнего
   требования на полуслове.
 - Обратной связи БА в выгрузке нет; вердикты восстановлены по наблюдаемому поведению,
   `success_rate = 0.33` с явным основанием расчёта —
-  [`feedback/review-notes.md`](runs/2026/RUN-0025/feedback/review-notes.md).
+  [`feedback/review-notes.md`](runs/2026/RUN-0028/feedback/review-notes.md).
 - Метрики измерены по нативным полям `usage` провайдера, а не оценкой токенизатором
-  ([`logs/metrics.md`](runs/2026/RUN-0025/logs/metrics.md)): 27 982 диалоговых токена
+  ([`logs/metrics.md`](runs/2026/RUN-0028/logs/metrics.md)): 27 982 диалоговых токена
   + 12 462 «мышления», 301 с генерации, 347 с активной работы, окно 145.2 ч.
   Скрипт разбора — [`experiments/chat_export_usage_metrics.py`](experiments/chat_export_usage_metrics.py)
   (stdlib, без внешних зависимостей).
-- Реестры обновлены: строка `RUN-0025` в [`runs/README.md`](runs/README.md) и запись
+- Реестры обновлены: строка `RUN-0028` в [`runs/README.md`](runs/README.md) и запись
   в `EXPECTED_RUNS` валидатора
   [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
 
