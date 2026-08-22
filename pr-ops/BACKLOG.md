@@ -326,7 +326,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       каталога `evals/` нет, `runs/*/metadata.yaml` не содержит эталона для
       сравнения. Пока пробел не закрыт, «evals-метрика» не может объявляться
       механизмом проверки операции (см.
-      [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md#статус-механизмов-проверки-на-сегодня)).
+      [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md#статус-механизмов-проверки-на-сегодня)).
       Нужна отдельная задача: формат golden-set, место хранения и связь с
       `runs/`. Источник:
       [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
@@ -336,7 +336,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
       публикации каталога. Варианты A (внешний портал `open-ai.ru`),
       B (поэтапная миграция с внешним билдом) и C (вывод через
       `ai-ba-playbooks`) зафиксированы в
-      [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md#веб-ресурс-app-после-приватизации);
+      [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md#веб-ресурс-app-после-приватизации);
       выбор — решение Пользователя до смены видимости. Источник:
       [issue #263](https://github.com/G-Ivan-A/mango_ba_prompts/issues/263).
 
@@ -367,7 +367,7 @@ M-009)`. Задачи M-001 (README) и M-008 (workflow) независимы и
 - Issue: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/14>
 - Утверждённый RFC: [`docs/analysis/migration-strategy-rfc.md`](../docs/analysis/migration-strategy-rfc.md)
 - Human Review: [`docs/reviews/migration-rfc-human-review-2026-06.md`](../docs/reviews/migration-rfc-human-review-2026-06.md)
-- Контракт и правила: [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md), [`AI_QUICK_RULES.md`](../ai-rules/ai-quick-rules.md)
+- Контракт и правила: [`ai-governance/ai-governance.md`](../ai-governance/ai-governance.md), [`ai-rules/ai-quick-rules.md`](../ai-rules/ai-quick-rules.md)
 - Вклад и workflow: [`CONTRIBUTING.md`](../CONTRIBUTING.md)
 </content>
 </invoke>

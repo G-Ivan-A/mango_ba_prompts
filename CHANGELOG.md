@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: 2026-08-22
 temperature: 0.1
 ---
@@ -13,15 +13,52 @@ temperature: 0.1
 
 ## Unreleased
 
+### Changed — Issue #291 шаг 2: управляющие контракты в канонических домах
+
+RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538))
+заменил требование «контракт лежит в корне» на «контракт существует ровно в
+одном разрешённом доме», сняв блокер шага 1.
+
+- Управляющие контракты перенесены из корня в канонические дома:
+  `AI_GOVERNANCE.md` → [`ai-governance/ai-governance.md`](ai-governance/ai-governance.md),
+  `AI_QUICK_RULES.md` → [`ai-rules/ai-quick-rules.md`](ai-rules/ai-quick-rules.md),
+  `AI_SESSION_HANDOVER_PROMPT.md` → [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md).
+  В корне остались только `README.md`, `CONTRIBUTING.md`, `CHANGELOG.md`.
+- Рабочая копия стандарта Хаба переименована, чтобы освободить канонический
+  слот: `ai-governance/ai-governance.md` →
+  [`ai-governance/hub-ai-governance.md`](ai-governance/hub-ai-governance.md).
+  Два SSOT в одном файле невозможны; `MANIFEST` в
+  [`scripts/sync_from_hub.py`](scripts/sync_from_hub.py) перенаправлен на новое
+  имя, в файл добавлен баннер с причиной.
+- `.hub-profile.json`: добавлен раздел `project_specific_directories` — все 9
+  неканонических каталогов верхнего уровня (`runs`, `kb`, `prompts`, `patterns`,
+  `standards`, `pr-ops`, `scripts`, `experiments`, `site`) задекларированы с
+  причиной; добавлена запись `path_migrations` о переносе; `sync_history`
+  намеренно не переписан (журнал фиксирует пути на момент события).
+- [`tools/validate-repository-structure.sh`](tools/validate-repository-structure.sh)
+  переведён на модель RFC #532: разрешение дома контракта, запрет двух домов,
+  классификация каталогов верхнего уровня, требование `README.md` в `.archive/`.
+  Локальные дельты D1–D6 документированы в самом файле.
+- [`scripts/validate_issue_291_root_structure.py`](scripts/validate_issue_291_root_structure.py)
+  закрывает новую раскладку: дом контракта ровно один и канонический,
+  `governance/` (переходный дом) отсутствует, недекларированных каталогов нет.
+- Аудит дополнен разделом 7 (шаг 2) без переписывания разделов 0–6: они
+  фиксируют состояние знания на момент решения.
+- `runs/` и `kb/` не затронуты (контракт 2 issue #291): исключены из обхода
+  миграционного скрипта на уровне кода, ссылок на перенесённые файлы не содержат.
+- Воспроизводимость:
+  [`experiments/restructure_governance_to_canonical_homes.py`](experiments/restructure_governance_to_canonical_homes.py).
+
 ### Changed — Issue #291 структурная миграция: канонический корень и скрытый архив
 
 - Проведён аудит причин структурного дрейфа корня:
   [`docs/audit/2026-08-21-root-structure-audit.md`](docs/audit/2026-08-21-root-structure-audit.md).
-  Главная находка: `AI_GOVERNANCE.md`, `AI_QUICK_RULES.md` и
-  `AI_SESSION_HANDOVER_PROMPT.md` **обязаны** лежать в корне — это жёсткое
+  Находка шага 1: `AI_GOVERNANCE.md`, `AI_QUICK_RULES.md` и
+  `AI_SESSION_HANDOVER_PROMPT.md` были **обязаны** лежать в корне — жёсткое
   ограничение генома [`templates/htom/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/main/templates/htom)
-  Хаба, а `.hub-profile.json` объявляет `target_type: HTOM`. Они оставлены на
-  месте; перенесено то, что действительно выросло в корне вне генома.
+  Хаба той редакции, а `.hub-profile.json` объявляет `target_type: HTOM`.
+  Ограничение снято RFC #532 Хаба (PR #538) — см. блок ниже; на шаге 1
+  перенесено то, что выросло в корне вне генома.
 - Executable-слой handover prompt перенесён из корня в дом промптов:
   `AI_SESSION_HANDOVER_PROMPT.executable.md` →
   [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).

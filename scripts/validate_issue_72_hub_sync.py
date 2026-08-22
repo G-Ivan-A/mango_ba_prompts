@@ -170,7 +170,7 @@ def main() -> int:
         # (issue #291).
         synced_paths = set(last_sync.get("synced_paths", []))
         for path in (
-            "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+            "AI_SESSION_HANDOVER_PROMPT.md",
             "ai-rules/agent-onboarding-protocol_old.md",
             "pr-ops/session-digests.md",
             "pr-ops/artifact-map.md",
@@ -182,7 +182,7 @@ def main() -> int:
             "docs/reviews/migration-rfc-human-review-2026-06.md",
             "pr-ops/BACKLOG.md",
             "pr-ops/migration-phase1-issues.md",
-            "ai-governance/ai-governance.md",
+            "AI_GOVERNANCE.md",
             "CONTRIBUTING.md",
         ):
             if path not in synced_paths:

@@ -13,6 +13,13 @@ scope: mango_ba_prompts
 
 # AI Governance
 
+> **Имя файла — `hub-ai-governance.md`, а не `ai-governance.md`.** Слот
+> `ai-governance/ai-governance.md` — канонический дом операционного контракта
+> самой HTOM-команды (геном в редакции [RFC #532](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/538)),
+> и держать в нём чужой source of truth значило бы завести два контракта под
+> одним путём. Синк переносит файл Хаба сюда (`scripts/sync_from_hub.py`,
+> `MANIFEST`), см. issue [#291](https://github.com/G-Ivan-A/mango_ba_prompts/issues/291).
+
 > **Рабочая копия стандарта Хаба.** Source of truth — [`hybrid-Intelligence-lab`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3bfa4103c9efbbd59bc951814884920e406982e2/ai-governance/ai-governance.md) на `source_sha`.
 > Локально файл не редактируется: расхождение устраняется следующим синком
 > (`python3 scripts/sync_from_hub.py --hub-dir <клон Хаба>`), а не правкой копии.

@@ -50,7 +50,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 > Этот файл — *процесс* (чек-лист и ссылки), который агент **исполняет**,
 > получив ссылку на него. Не вставляйте этот документ целиком в диалог с LLM.
 > Чтобы запустить агента, скопируйте **артефакт** — готовый *Handover Prompt*
-> (Часть A ниже или [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md)
+> (Часть A ниже или [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md)
 > в корне команды).
 > О разнице протокол↔артефакт см. [`standards/GLOSSARY.md`](../../standards/GLOSSARY.md).
 
@@ -78,7 +78,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 Чтобы соблюдение протокола было *самым простым путём*, человеку не нужно ничего
 формулировать — он копирует один блок в начало диалога с ИИ. Ниже — версия,
 инстанцированная под эту HTOM-команду (`mango_ba_prompts`); она же лежит готовым
-артефактом в [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md).
+артефактом в [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md).
 Канонический параметризованный шаблон (с плейсхолдером `{{REPO_NAME}}`, по
 умолчанию `hybrid-Intelligence-lab`) остаётся в Хабе:
 [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
@@ -162,7 +162,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 ```
 
 > Тот же промпт дублируется в геном команды (корневой
-> [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md)), чтобы каждый
+> [`ai-rules/AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md)), чтобы каждый
 > клон Хаба наследовал протокол «из коробки». Один источник (Хаб) — два места
 > применения: сам Хаб и его HTOM-команды. О разнице между HTOM-командой и
 > spoke-репозиторием см. Хаб
@@ -178,9 +178,9 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 
 Агент читает контракты команды **до** контекста задачи:
 
-- [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) — роли, правила, operating modes,
+- [`ai-governance/ai-governance.md`](../../ai-governance/ai-governance.md) — роли, правила, operating modes,
   эскалация, Definition of Done.
-- [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md) — одностраничные правила и
+- [`ai-rules/ai-quick-rules.md`](../../ai-rules/ai-quick-rules.md) — одностраничные правила и
   fail-closed semantics.
 - [`CONTRIBUTING.md`](../../CONTRIBUTING.md) — workflow вклада и локальные проверки.
 - [`README.md`](../../README.md) — что это за команда, цель, актуальная структура,
@@ -267,7 +267,7 @@ sync_policy: "explicit spoke sync from pinned Hub commit"
 | 1 | **Холодный старт / галлюцинация контекста** | Агент пишет код, угадывая недостающее знание | Шаги 1–2 (обязательное чтение) + Шаг 3 (*Readback* ловит расхождение до кода). Если контекста нет — спрашивай, НЕ выдумывай. |
 | 2 | **Непредсказуемое создание папок** | Агент материализует дерево «на вырост» без спроса | Шаг 1 (repo-model, project-structure-inheritance) + Шаг 4 (стоп до апрува) |
 | 3 | **Тихое нарушение Anti-Inflation** | Локальное решение начинает выглядеть как repo-wide standard без согласования | Шаг 1 (границы раньше цели) + Шаг 3 (агент *предлагает*, а не создаёт) |
-| 4 | **Подмена ролей / преждевременное решение** | Агент принимает governance-/publication-решение за человека | Шаг 4 (clearance человека) + [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md): финальные решения — за людьми |
+| 4 | **Подмена ролей / преждевременное решение** | Агент принимает governance-/publication-решение за человека | Шаг 4 (clearance человека) + [`ai-governance/ai-governance.md`](../../ai-governance/ai-governance.md): финальные решения — за людьми |
 | 5 | **Рекомендация «в никуда» / потеря traceability** | Хорошая идея не доходит до задачи; не видно, что прочитано | Шаг 3 (открытые вопросы и рекомендации) + Шаг 4 (явный handoff «идея → задача», след в issue/PR) |
 
 > Если сработал любой из рисков 1–5 и ты не уверен — **вернись на Шаг 3**: задай

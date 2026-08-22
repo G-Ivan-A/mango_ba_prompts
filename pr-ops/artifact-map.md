@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.6
-updated: 2026-08-21
+version: 0.7
+updated: 2026-08-22
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -39,34 +39,34 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | --- | --- | --- | --- | --- |
 | `/README.md` | навигация | Визитка проекта: роль (автоматизация процессов БА в проекте Манго), границы (GitHub + AI-исполнитель, без инфраструктуры), стратегия, структура и быстрые ссылки. | Да | `CHANGELOG.md`, `docs/ba-ecosystem.md`, `prompts/README.md` |
 | `/CHANGELOG.md` | журнал | История значимых изменений, включая Smart Sync из Хаба. | Да | `README.md`, `.hub-profile.json` |
-| `/.hub-profile.json` | профиль синхронизации | Локальный профиль Smart Sync: тип проекта, Хаб и последний sync snapshot. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `pr-ops/artifact-map.md` |
-| `/AI_GOVERNANCE.md` | контракт | Конституция проекта: принцип «качество системы исполнения > стоимость», ДОД с процессом проверки, роль проекта и инфраструктурная модель, подготовка к приватизации, роли, operating modes, границы AI-assisted work. | Да | `AI_QUICK_RULES.md`, `CONTRIBUTING.md`, `docs/hub-research-dependencies.md` |
-| `/AI_QUICK_RULES.md` | исполнимые правила | Короткая инструкция для агента: куда смотреть, чего не делать, когда звать человека. | Да | `AI_GOVERNANCE.md`, `README.md` |
-| `/CONTRIBUTING.md` | workflow | Процесс issue → PR → review и чек-лист вклада. | Да | `AI_GOVERNANCE.md`, `CHANGELOG.md` |
-| `/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `pr-ops/session-digests.md`, `ai-rules/agent-onboarding-protocol.md` |
-| `/ai-rules/agent-onboarding-protocol.md` | протокол | Актуальный протокол онбординга агента (v1.5, рабочая копия Хаба). Точка входа для агентов. | Да | `AI_SESSION_HANDOVER_PROMPT.md`, `AI_GOVERNANCE.md` |
-| `/ai-rules/agent-onboarding-protocol_old.md` | протокол (архив) | Локальная адаптация v1.2, `status: superseded`. Хранится только для traceability, точкой входа не является. | Нет (архив) | `ai-rules/agent-onboarding-protocol.md` |
-| `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `AI_SESSION_HANDOVER_PROMPT.md` |
+| `/.hub-profile.json` | профиль синхронизации | Локальный профиль Smart Sync: тип проекта, Хаб и последний sync snapshot. | Да | `ai-rules/AI_SESSION_HANDOVER_PROMPT.md`, `pr-ops/artifact-map.md` |
+| `/ai-governance/ai-governance.md` | контракт | Конституция проекта: принцип «качество системы исполнения > стоимость», ДОД с процессом проверки, роль проекта и инфраструктурная модель, подготовка к приватизации, роли, operating modes, границы AI-assisted work. | Да | `ai-rules/ai-quick-rules.md`, `CONTRIBUTING.md`, `docs/hub-research-dependencies.md` |
+| `/ai-rules/ai-quick-rules.md` | исполнимые правила | Короткая инструкция для агента: куда смотреть, чего не делать, когда звать человека. | Да | `ai-governance/ai-governance.md`, `README.md` |
+| `/CONTRIBUTING.md` | workflow | Процесс issue → PR → review и чек-лист вклада. | Да | `ai-governance/ai-governance.md`, `CHANGELOG.md` |
+| `/ai-rules/AI_SESSION_HANDOVER_PROMPT.md` | исполнимый prompt | Готовый prompt для Runtime-онбординга и передачи контекста между чатами; синхронизирован с Hub v0.5. | Да | `pr-ops/session-digests.md`, `ai-rules/agent-onboarding-protocol.md` |
+| `/ai-rules/agent-onboarding-protocol.md` | протокол | Актуальный протокол онбординга агента (v1.5, рабочая копия Хаба). Точка входа для агентов. | Да | `ai-rules/AI_SESSION_HANDOVER_PROMPT.md`, `ai-governance/ai-governance.md` |
+| `/.archive/ai-rules/agent-onboarding-protocol_old.md` | протокол (архив) | Локальная адаптация v1.2, `status: superseded`. Хранится только для traceability, точкой входа не является. | Нет (архив) | `ai-rules/agent-onboarding-protocol.md` |
+| `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
 | `/pr-ops/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/pr-ops/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
 | `/docs/rfc/` | каталог | RFC спицы и пакеты передачи знаний в Хаб: процесс RFC, реестр, предложения по промптам, `knowledge-transfer-to-hub/`. | По необходимости | `docs/rfc-hub-integration.md`, `CHANGELOG.md` |
 | `/docs/audit/` | каталог | Исторические аудиты контрактов, Хаба и research (2026-06-17, #1027). Не действующая норма — фактура для решений. | По необходимости | `docs/adr/`, `pr-ops/migration-manifest.md` |
 | `/pr-ops/BACKLOG.md` | журнал | Бэклог задач и открытых вопросов проекта. | Да | `CONTRIBUTING.md`, `docs/adr/` |
 | `/pr-ops/prompt-feedback.json` | данные | Фидбек по промптам; источник для веб-каталога (`scripts/generate-pages-data.mjs`). | По необходимости | `prompts/README.md`, `site/data/` |
-| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам и решениям Хаба: research PR #229, ADR-009 v0.3, онтология процессов БА (D1–D10), анализ готовности к разделению. Источники не копируются в спок. | Да | `prompts/`, `standards/product-classification-contract.md`, `AI_GOVERNANCE.md` |
+| `/docs/hub-research-dependencies.md` | реестр ссылок | Единый мост к research-материалам и решениям Хаба: research PR #229, ADR-009 v0.3, онтология процессов БА (D1–D10), анализ готовности к разделению. Источники не копируются в спок. | Да | `prompts/`, `standards/product-classification-contract.md`, `ai-governance/ai-governance.md` |
 | `/docs/ba-ecosystem.md` | методология | Карта экосистемы работы БА Mango, ДОД операции с обязательным процессом проверки, графы связей, сценарии запуска и границы автоматизации спока. | Да | `docs/taxonomy.md`, `docs/ba-processes/00-index.md` |
 | `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
 | `/docs/taxonomy.md` | стандарт / модель | Таксономия когнитивных операций и процессов БА. | Да | `patterns/`, `prompts/` |
 | `/docs/ba-processes/00-index.md` | индекс | Маппинг процесс ↔ операция ↔ паттерн ↔ промпт. | Да | `patterns/`, `prompts/README.md` |
-| `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `AI_GOVERNANCE.md` |
+| `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `ai-governance/ai-governance.md` |
 | `/patterns/` | каталог | Паттерны БА как reusable способы решения классов задач. | Да | `standards/pattern-standard.md`, `docs/taxonomy.md` |
 | `/prompts/` | каталог | Активные prompt assets для бизнес-аналитиков Mango. | Да | `prompts/README.md`, `standards/prompt-standard.md` |
 | `/prompts/archive/` | каталог | Архивные legacy-промпты, выведенные из активного использования. | По необходимости | `prompts/README.md` |
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
 | `/standards/` | каталог | Стандарты спицы и рабочие копии стандартов Хаба; разграничение — в `standards/README.md`. | Да | `standards/README.md`, `docs/adr/` |
 | `/standards/README.md` | навигация | Реестр стандартов: что принадлежит спице, что рабочая копия Хаба, и правило «сужать можно, противоречить нельзя». | Да | `standards/GLOSSARY.md`, `docs/adr/0004-hub-resync-2026-08.md` |
-| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `AI_GOVERNANCE.md` |
-| `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `AI_GOVERNANCE.md`, `docs/adr/0004-hub-resync-2026-08.md` |
+| `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `ai-governance/ai-governance.md` |
+| `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `ai-governance/ai-governance.md`, `docs/adr/0004-hub-resync-2026-08.md` |
 | `/tools/` | инструмент | Рабочие копии валидаторов Хаба: `validate-frontmatter.sh`, `validate-file-naming.sh`; локальные дельты описаны в `tools/README.md`. Запуск — `make validate`. | Да | `tools/README.md`, `pr-ops/BACKLOG.md` |
 | `/scripts/sync_from_hub.py` | инструмент | Воспроизводимый ре-синк по манифесту с переписыванием ссылок; `--check` сверяет копии с Хабом. | Да | `.hub-profile.json`, `scripts/validate_issue_265_hub_sync.py` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
