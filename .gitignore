@@ -11,6 +11,8 @@
 # синтетические фикстуры (*.fixture.pdf) и сгенерированный kb/processed/ — коммитим.
 kb/sources/**/*.pdf
 !kb/sources/**/*.fixture.pdf
+# стенд конвейера на синтетической фикстуре (issue #310) — не часть БЗ
+.kb-sample/
 # временные артефакты конвейера извлечения
 kb/sources/**/_diagram.png
 __pycache__/

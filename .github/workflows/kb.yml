@@ -67,8 +67,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          lfs: true
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -81,6 +79,7 @@ jobs:
           python3 scripts/validate_issue_115_kb_mango_pipeline.py
           python3 scripts/validate_issue_117_kb_traceability.py
           python3 scripts/validate_issue_121_kb_multi_file.py
+          python3 scripts/validate_issue_310_kb_pdf_ingestion.py
 
   # Тяжёлый сквозной прогон извлечения — только по ручному запуску.
   # Доказывает воспроизводимость конвейера в GitHub-native среде (ФТ-2):
@@ -92,8 +91,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v7
-        with:
-          lfs: true
 
       - name: Setup Python
         uses: actions/setup-python@v6

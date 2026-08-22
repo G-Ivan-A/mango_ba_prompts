@@ -14,13 +14,13 @@ This stdlib-only check locks the fix:
 - the real processed KB exists and points to all expected PDF parts;
 - it contains index/meta/sections/images with real-manual scale;
 - section boundaries come from the PDF outline, not bold numbered list items;
-- the GitHub workflow checks out LFS files and passes multi-part inputs to
-  ``make kb-extract``.
+- the GitHub workflow passes multi-part inputs to ``make kb-extract``.
 
 After the LFS cleanup in issue #259, the lightweight CI validator must not
 require the PDF payload bytes to be present in the repository. Extraction still
 requires real PDF files; this check validates the generated KB snapshot and its
-source provenance.
+source provenance. Issue #310 went further and forbade Git LFS for PDFs
+altogether, so the workflow must no longer request an LFS checkout.
 """
 
 from __future__ import annotations
@@ -215,7 +215,6 @@ def check_workflow_inputs() -> list[str]:
         "actions/checkout@v7",
         "actions/setup-python@v6",
         "actions/upload-artifact@v7",
-        "lfs: true",
         PROCESSED,
         "make kb-extract \\",
         'SRCS="${{ inputs.source }}"',
@@ -223,8 +222,8 @@ def check_workflow_inputs() -> list[str]:
         "scripts/validate_issue_115_kb_mango_pipeline.py",
     )
     errors += require_text(text, WORKFLOW, *CC_SOURCES)
-    if text.count("lfs: true") < 2:
-        errors.append(f"{WORKFLOW}: both validate and extract jobs must checkout LFS files")
+    if "lfs" in text:
+        errors.append(f"{WORKFLOW}: Git LFS is not used for PDFs anymore (issue #310)")
     if REMOVED_CC_SOURCE in text:
         errors.append(f"{WORKFLOW}: default source still points to removed compressed PDF")
     if re.search(r"Build sample fixture and extract|make kb-sample\s+make kb-extract", text):

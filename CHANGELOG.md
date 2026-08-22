@@ -13,6 +13,56 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #310 четыре документа в БЗ и защита от галлюцинаций
+
+- Каждый исходный PDF задачи извлечён в **свой** раздел БЗ (один файл = одна
+  логическая секция), существующим конвейером `scripts/kb/process_sources.py`:
+  | Раздел БЗ | Код | Стр. | Разделов | Токенов | Доверие |
+  | --- | --- | ---: | ---: | ---: | --- |
+  | [`kb/processed/vpbx-api/`](kb/processed/vpbx-api/index.md) | VPBXAPI | 367 | 255 | 261672 | requires_review |
+  | [`kb/processed/rolevaya-model-vats/`](kb/processed/rolevaya-model-vats/index.md) | ROLES | 59 | 65 | 45383 | high |
+  | [`kb/processed/integration-1c/`](kb/processed/integration-1c/index.md) | INT1C | 46 | 8 | 22181 | high |
+  | [`kb/processed/lk-vats-sso/`](kb/processed/lk-vats-sso/index.md) | LKSSO | 22 | 10 | 10072 | high |
+- Добавлен механизм **перекрёстной проверки критических данных**
+  [`scripts/kb/verify_extraction.py`](scripts/kb/verify_extraction.py): те же
+  страницы перечитываются вторым движком (PyMuPDF) и критические токены
+  (URL, параметры, константы, числовые значения, термины) сверяются с
+  извлечением pdfplumber. Проверено 9531 критический токен, неподтверждённых —
+  0. Итог по каждому документу — в `kb/processed/<doc>/verification.md` и в
+  блоке `verification` файла `meta.json`.
+- Неоднозначные места **не додумываются**, а размечаются маркером с точной
+  ссылкой «имя PDF + страница»:
+  `> ⚠️ **ПРОБЕЛ ИЗВЛЕЧЕНИЯ**: … (Источник: \`<файл>.pdf\`, стр. N)`.
+  В VPBX API так помечены 4 страницы без текстового слоя (35, 47, 52, 54) —
+  поэтому уровень доверия документа `requires_review`.
+- `index.md` каждого раздела несёт frontmatter прослеживаемости:
+  `source_document`, `extraction_date`, `model_used`, `confidence_level`,
+  `pages_covered`.
+- Negative-тест
+  [`experiments/kb-verify-detects-hallucination.py`](experiments/kb-verify-detects-hallucination.py)
+  доказывает, что «0 находок» — не молчание детектора: в копию раздела
+  подставляются вымышленные параметр, URL, лимит и имя сущности, и все четыре
+  помечаются, а подлинные значения — нет.
+
+### Removed — Issue #310 устаревший каталог `contact-center-manual-sample`
+
+- Удалён `kb/processed/contact-center-manual-sample` — извлечение синтетической
+  фикстуры, а не реального документа; в БЗ ему не место. Стенд конвейера
+  сохранён: `make kb-sample` пишет результат в незакоммиченный `.kb-sample/`
+  (Makefile, `.gitignore`).
+- Ссылки на удалённый каталог переведены на реальные документы:
+  [`kb/USAGE.md`](kb/USAGE.md) (v0.2 — все примеры на `mango-cc-manual` с
+  реальными числами токенов), [`kb/processed/README.md`](kb/processed/README.md),
+  [`kb/sources/contact-center-manual/source.md`](kb/sources/contact-center-manual/source.md),
+  [`docs/kb-experiment-report.md`](docs/kb-experiment-report.md),
+  [`scripts/kb/README.md`](scripts/kb/README.md).
+- Исходные PDF в репозитории не хранятся (уже под `.gitignore`), Git LFS не
+  используется — удалён `.gitattributes` с правилом `*.pdf filter=lfs` и
+  `lfs: true` из checkout в [`.github/workflows/kb.yml`](.github/workflows/kb.yml).
+- Деливераблы зафиксированы регрессионной проверкой
+  [`scripts/validate_issue_310_kb_pdf_ingestion.py`](scripts/validate_issue_310_kb_pdf_ingestion.py)
+  в `make kb-validate` и в лёгком шаге CI.
+
 ### Added — Issue #309 фиксация 25 экспортов чатов как прогонов статистики (RUN-0030—RUN-0054)
 
 - Каждый из 25 JSON-экспортов чата, приложенных к [issue #309](https://github.com/G-Ivan-A/mango_ba_prompts/issues/309), зафиксирован **отдельной** записью прогона [`runs/2026/RUN-0030`](runs/2026/RUN-0030/metadata.yaml) — [`runs/2026/RUN-0054`](runs/2026/RUN-0054/metadata.yaml). Файлы с общим номером задачи (`804`/`804_2`, `908`/`908_2`, два экспорта `854`) разведены по разным прогонам: один файл — один прогон.
