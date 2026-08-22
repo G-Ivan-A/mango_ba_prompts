@@ -17,3 +17,4 @@ __pycache__/
 
 # логи CI, скачанные для отладки
 ci-logs/
+.validate-cache/

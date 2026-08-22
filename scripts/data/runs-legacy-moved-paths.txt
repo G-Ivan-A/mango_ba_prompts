@@ -1,0 +1,26 @@
+# Закрытый список путей, откуда результаты выполнения были перенесены в runs/
+# при миграции issue #123. Проверка одна: файл не должен вернуться на старое
+# место. Список закрыт — новые прогоны сразу создаются в runs/YYYY/RUN-XXXX/,
+# поэтому он не растёт и не конфликтует при параллельной работе.
+docs/ba-process/multichannel-agent-workload/README.md
+docs/ba-process/multichannel-agent-workload/experiment-log.md
+docs/ba-process/multichannel-agent-workload/final-artifact.md
+docs/ba-process/multichannel-agent-workload/inputs/kb-files.md
+docs/ba-process/multichannel-agent-workload/inputs/raw-requirement.md
+docs/ba-process/multichannel-agent-workload/prompts-chain.md
+docs/ba-process/multichannel-agent-workload/steps/step-1-glossary.md
+docs/ba-process/multichannel-agent-workload/steps/step-2-normalization.md
+docs/ba-process/multichannel-agent-workload/steps/step-3-questions.md
+docs/ba-process/multichannel-agent-workload/steps/step-4-story.md
+docs/ba-process/multichannel-agent-workload/steps/step-5-options.md
+governance/analysis-bcreq-1025-2026-06-17.md
+prompts/experiments/2026-06-17-bcreq-1025-email-routing.md
+prompts/experiments/fr-generation-1027-live_2026-06-16.md
+prompts/experiments/kb-citation-check-2026-06-16.md
+prompts/experiments/prompts-audit-2026-05-26.md
+prompts/experiments/prompts-selftest-2026-05-26.md
+prompts/experiments/session-debug-summarizer-2026-06-13.md
+prompts/experiments/standards-applied-ab-2026-06-16.md
+prompts/experiments/tz-stats-prototype-2026-05.md
+prompts/experiments/usecase_gen-stepwise-alignment_2026-05-26.md
+prompts/experiments/user-story_gen-from-raw-request_2026-05-26.md
