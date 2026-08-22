@@ -72,9 +72,17 @@ multi-part документов `pages` остаётся сквозной паг
 
 | Документ | Статус |
 | --- | --- |
-| [`contact-center-manual-sample/`](contact-center-manual-sample/index.md) | извлечён из синтетической фикстуры (эксперимент issue #111) |
 | [`mango-cc-manual/`](mango-cc-manual/index.md) | извлечён из 6 PDF-частей руководства КЦ v1.26.23 |
 | [`mango-lk-manual/`](mango-lk-manual/index.md) | извлечён из 5 PDF-частей руководства ЛК ВАТС v1.21 |
+| [`mtalker/`](mtalker/index.md) | комплект из 5 документов Mango Talker (issue #121) |
+| [`vpbx-api/`](vpbx-api/index.md) | API ВАТС MANGO OFFICE v1.9 (issue #310) |
+| [`rolevaya-model-vats/`](rolevaya-model-vats/index.md) | роли и права доступа ВАТС v1.26.08 (issue #310) |
+| [`integration-1c/`](integration-1c/index.md) | прямая интеграция ВАТС с «1С: Управление торговлей» (issue #310) |
+| [`lk-vats-sso/`](lk-vats-sso/index.md) | аутентификация и авторизация в рамках SSO (issue #310) |
+
+Синтетическая фикстура `contact-center-manual-sample/` удалена в issue #310:
+БЗ содержит только извлечения реальных документов. Стенд конвейера
+(`make kb-sample kb-extract`) пишет результат в некоммитируемый `.kb-sample/`.
 
 ## Источники
 

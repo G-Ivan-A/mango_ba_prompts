@@ -51,8 +51,9 @@ kb/sources/                      ← ВЫ кладёте файлы сюда (р
 Файл `meta.json` является управляющим манифестом. `source.md` остаётся допустимым
 человекочитаемым описанием для старых/простых источников, но автоматический
 конвейер `scripts/kb/process_sources.py` читает именно `meta.json`.
-PDF-файлы в репозитории ведутся через Git LFS (`.gitattributes`:
-`*.pdf filter=lfs ...`).
+Сами PDF в репозитории не хранятся: они исключены `.gitignore`
+(`kb/sources/**/*.pdf`) и лежат только локально у исполнителя. Git LFS для них
+не используется (issue #310) — коммитится результат извлечения, а не источник.
 
 ---
 
@@ -225,9 +226,9 @@ make kb-source-extract SOURCE_DIR=kb/sources/mtalker
 make kb-mtalker
 ```
 
-Если локально PDF отображаются как текст `version https://git-lfs.github.com/...`,
-это LFS pointer, а не PDF. Выполните `git lfs pull` или запускайте workflow
-**KB pipeline** с checkout `lfs: true`.
+Если нужного PDF нет в `kb/sources/<slug>/`, извлечение не запустится: файлы
+не версионируются, их держит у себя тот, кто пополняет БЗ. Возьмите исходник у
+владельца документа и положите по пути из `meta.json.source_files`.
 
 ---
 
@@ -252,33 +253,21 @@ make kb-mtalker
 
 ---
 
-## Как обновлять PDF через Git LFS
+## Как обновлять PDF
 
-Большие PDF нельзя загружать через веб-интерфейс GitHub: так легко получить
-обычный blob или сломать LFS-указатель. Используйте Codespace или локальный Git
-с установленным Git LFS.
-
-```bash
-git lfs install
-git lfs pull
-git lfs ls-files
-```
-
-Если LFS ещё не был включён для PDF, выполните один раз:
-
-```bash
-git lfs track "*.pdf"
-git add .gitattributes
-```
+PDF не коммитятся (`.gitignore`: `kb/sources/**/*.pdf`) и не ведутся через Git
+LFS — в репозиторий попадает только извлечение. Поэтому обновление источника —
+локальная операция, а в PR уходит регенерированный `kb/processed/<slug>/`.
 
 При замене руководства:
 
-1. Скопируйте новый PDF или все PDF-части в `kb/sources/<slug>/`.
+1. Скопируйте новый PDF или все PDF-части в `kb/sources/<slug>/` локально.
 2. Обновите `meta.json` или `source.md`: `version`, `upload_date`, `parts`,
    `total_pages`, `file_size_mb`, `split_method`.
-3. Проверьте, что PDF попали в LFS: `git lfs ls-files kb/sources/<slug>`.
+3. Проверьте, что PDF не попал под версионный контроль:
+   `git status --porcelain kb/sources/<slug>` не должен показывать `*.pdf`.
 4. Перезапустите извлечение в тот же `kb/processed/<slug>/`.
-5. Закоммитьте источник, метаданные и регенерированный `kb/processed/<slug>/`.
+5. Закоммитьте метаданные источника и регенерированный `kb/processed/<slug>/`.
 
 Если один PDF заменён несколькими частями, перечисляйте части в порядке страниц:
 `part-1.pdf part-2.pdf ...`. Сквозная пагинация появится в `meta.json.sections`
@@ -328,7 +317,7 @@ Actions → **KB pipeline** → *Run workflow* → укажите `source`, `out
 - `source`: `kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf ... part-6.pdf`
 - `out`: `kb/processed/mango-cc-manual`
 
-Workflow делает checkout с `lfs: true`, поставит зависимости, выполнит извлечение
+Workflow поставит зависимости, выполнит извлечение
 и приложит результат артефактом запуска. Если нужно сразу закоммитить результат в
 текущую ветку, установите `commit_result=true`; иначе скачайте артефакт и
 закоммитьте его отдельным PR либо запустите извлечение локально. Детали —
@@ -390,9 +379,9 @@ Workflow делает checkout с `lfs: true`, поставит зависимо
 
 ## Troubleshooting
 
-- `Git LFS pointer checked out instead of PDF bytes`: локально нет реального PDF,
-  только LFS pointer. Установите Git LFS и выполните `git lfs pull` или запустите
-  workflow **KB pipeline**, где checkout настроен с `lfs: true`.
+- `source PDF not found`: PDF не версионируются (`.gitignore`), поэтому после
+  клонирования их нет. Положите исходник в `kb/sources/<slug>/` по пути из
+  `meta.json.source_files` и повторите запуск.
 - `single mode requires exactly one PDF`: в `processing_mode: "single"` должен
   быть ровно один путь в `source_files`.
 - `multi_part mode requires 2+ PDFs`: для физически разделённого руководства

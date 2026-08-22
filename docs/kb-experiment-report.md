@@ -11,7 +11,7 @@ related_artifacts:
   - "scripts/kb/extract.py"
   - "kb/USAGE.md"
   - "kb/sources/README.md"
-  - "kb/processed/contact-center-manual-sample/index.md"
+  - "kb/processed/mango-cc-manual/index.md"
   - "docs/adr/007-kb-standard.md"
   - "standards/kb-standard.md"
 ---
@@ -43,7 +43,7 @@ related_artifacts:
 | --- | --- |
 | Конвейер | [`scripts/kb/extract.py`](../scripts/kb/extract.py) (pdfplumber + опц. PyMuPDF + tiktoken) |
 | Каталог ручного ввода (ФТ-4, обязательно) | [`kb/sources/`](../kb/sources/README.md) — **нейтральное имя**, не `mango-kc` |
-| Результат извлечения | [`kb/processed/contact-center-manual-sample/`](../kb/processed/contact-center-manual-sample/index.md) |
+| Результат извлечения (на момент issue #111) | `kb/processed/contact-center-manual-sample/` — каталог удалён в issue #310 (см. врезку ниже); действующие извлечения: [`kb/processed/`](../kb/processed/README.md) |
 | Примеры для промптов (ФТ-6) | [`kb/USAGE.md`](../kb/USAGE.md) — 5 примеров с реальными данными |
 | Инструкция человеку (ФТ-7) | [`kb/sources/README.md`](../kb/sources/README.md) |
 | Проверка в CI | [`scripts/validate_issue_111_kb_pipeline.py`](../scripts/validate_issue_111_kb_pipeline.py) + [`.github/workflows/kb.yml`](../.github/workflows/kb.yml) |
@@ -89,8 +89,14 @@ Issue прямо предупреждает: **не закладывать те�
 
 ## 3. Результаты извлечения и оценка качества (обязательно)
 
-Прогон `extract.py` на фикстуре (числа — из
-[`meta.json`](../kb/processed/contact-center-manual-sample/meta.json), метод
+> **Историческая справка (issue #310).** Каталог
+> `kb/processed/contact-center-manual-sample/` удалён: БЗ содержит только
+> извлечения реальных документов. Числа ниже — историческая запись
+> эксперимента #111 и не пересчитываются. Стенд конвейера на фикстуре
+> воспроизводится командой `make kb-sample kb-extract` и пишет результат в
+> некоммитируемый `.kb-sample/`.
+
+Прогон `extract.py` на фикстуре (числа — историческая запись, метод
 токенов `tiktoken:cl100k_base`):
 
 | Метрика | Значение |

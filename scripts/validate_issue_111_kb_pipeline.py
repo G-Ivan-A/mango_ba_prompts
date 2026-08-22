@@ -12,7 +12,7 @@ cannot silently break them:
   ``kb/processed/README.md``, ``kb/fragments/README.md``, the document manifest
   and ``kb/sources/web-links/README.md``; the forbidden name ``mango-kc`` is not
   used as a path;
-- the **extracted sample** is internally consistent: every ``kb/processed/*/``
+- the **extracted documents** are internally consistent: every ``kb/processed/*/``
   has ``index.md`` + ``meta.json``; ``section_count`` matches the section files;
   per-section token counts sum to ``tokens_total``; each section's frontmatter
   ``tokens`` matches ``meta.json``; the index links every section; referenced
@@ -37,7 +37,6 @@ ROOT = Path(__file__).resolve().parents[1]
 VALIDATOR_REF = "scripts/validate_issue_111_kb_pipeline.py"
 KB_WORKFLOW = ".github/workflows/kb.yml"
 REPORT = "docs/kb-experiment-report.md"
-SAMPLE = "kb/processed/contact-center-manual-sample"
 
 # Files that must exist (infrastructure + docs).
 REQUIRED_FILES = (
@@ -237,8 +236,13 @@ def iter_processed_doc_dirs(processed: Path) -> list[Path]:
 
 
 def check_processed() -> list:
-    """The sample must exist; every kb/processed/<doc>/ must be consistent."""
-    errors = require_file(f"{SAMPLE}/index.md") + require_file(f"{SAMPLE}/meta.json")
+    """Every kb/processed/<doc>/ must be internally consistent.
+
+    Issue #310 removed the synthetic ``contact-center-manual-sample`` KB, so the
+    check is no longer anchored to it: the invariant is "at least one extracted
+    document, and every extracted document is consistent".
+    """
+    errors: list = []
     processed = ROOT / "kb" / "processed"
     found_any = False
     for doc_dir in iter_processed_doc_dirs(processed):
@@ -261,7 +265,7 @@ def check_usage_examples() -> list:
     # Concrete citation in project format and a token comparison.
     if not re.search(r"\[CC,\s*§[\d.]+,\s*с\.\d+\]", text):
         errors.append(f"{path}: missing concrete citation like '[CC, §4.2, с.5]' (ФТ-6 пример 4)")
-    errors += require(text, path, "Весь документ", "1587")
+    errors += require(text, path, "Весь документ", "429951")
     return errors
 
 

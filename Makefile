@@ -9,7 +9,9 @@
 PYTHON ?= python3
 
 SAMPLE_PDF  := kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf
-SAMPLE_OUT  := kb/processed/contact-center-manual-sample
+# Стенд фикстуры пишется вне kb/processed/ (issue #310): БЗ содержит только
+# извлечения реальных документов, синтетика туда не коммитится.
+SAMPLE_OUT  := .kb-sample/contact-center-manual-sample
 DOC_CODE    := CC
 DOC_TITLE   := Контакт-центр MANGO OFFICE
 DOC_VERSION := 1.26.23-sample
@@ -127,6 +129,7 @@ kb-validate:
 	$(PYTHON) scripts/validate_issue_115_kb_mango_pipeline.py
 	$(PYTHON) scripts/validate_issue_117_kb_traceability.py
 	$(PYTHON) scripts/validate_issue_121_kb_multi_file.py
+	$(PYTHON) scripts/validate_issue_310_kb_pdf_ingestion.py
 
 # Наглядно: токены индекса vs отдельных разделов (метод — см. token_method).
 kb-tokens:
@@ -139,6 +142,7 @@ kb-tokens:
 # воспроизводимы через `make kb-sample kb-extract` (см. отчёт, раздел 9).
 kb-clean:
 	rm -rf scripts/kb/__pycache__
+	rm -rf .kb-sample
 	rm -f kb/sources/contact-center-manual-sample/_diagram.png
 
 # Валидаторы Хаба (рабочие копии, см. tools/README.md). Область frontmatter —

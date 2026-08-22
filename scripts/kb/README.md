@@ -33,7 +33,7 @@ python3 scripts/kb/make_sample_pdf.py
 # 2) извлечь PDF в структуру БЗ
 python3 scripts/kb/extract.py \
     kb/sources/contact-center-manual-sample/CC_manual_sample.fixture.pdf \
-    --out kb/processed/contact-center-manual-sample \
+    --out .kb-sample/contact-center-manual-sample \
     --doc-code CC --doc-title "Контакт-центр MANGO OFFICE" --doc-version 1.26.23-sample
 
 # 3) проверить результат (только stdlib, как в CI)

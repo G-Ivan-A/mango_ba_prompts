@@ -101,17 +101,18 @@ make validate-full   # перед пушем: весь набор без кэш�
 падение. Устройство и управление кэшем — [`tools/README.md`](tools/README.md);
 разбор решения — [`docs/analysis/2026-08-22-validator-optimization.md`](docs/analysis/2026-08-22-validator-optimization.md).
 
-## KB PDF and Git LFS
+## KB PDF (в репозитории не хранятся)
 
-PDF-источники БЗ хранятся только в `kb/sources/<slug>/` и отслеживаются через
-Git LFS (`*.pdf` в `.gitattributes`). Загружайте и заменяйте такие файлы через
-Codespace или локальный Git с `git lfs`, не через веб-интерфейс GitHub.
+PDF-источники БЗ **не коммитятся**: они лежат локально в `kb/sources/<slug>/` и
+исключены `.gitignore` (`kb/sources/**/*.pdf`). Git LFS для них не используется
+(issue #310) — в репозиторий попадает только результат извлечения
+`kb/processed/<slug>/` и манифест источника `meta.json`/`source.md`.
 
 При замене одного PDF на несколько частей обновите `meta.json`/`source.md`,
 перечислите все части в порядке страниц при запуске `make kb-extract` или
 workflow **KB pipeline**, затем закоммитьте регенерированный
 `kb/processed/<slug>/`. Подробная инструкция и команды:
-[`kb/sources/README.md`](kb/sources/README.md#как-обновлять-pdf-через-git-lfs).
+[`kb/sources/README.md`](kb/sources/README.md#как-обновлять-pdf).
 
 ## Pull Request Checklist
 
