@@ -45,7 +45,7 @@ TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
 SOURCE_DIR ?= kb/sources/mango-cc-manual
 
-.PHONY: validate validate-frontmatter validate-file-naming validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
+.PHONY: validate validate-fast validate-full validate-list validate-cache-clear validate-frontmatter validate-file-naming validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
@@ -59,8 +59,12 @@ help:
 	@echo "  make kb-mtalker   — извлечь multi-document Mango Talker из issue #121"
 	@echo "  make kb-validate  — проверить конвейер БЗ (stdlib-only, как в CI)"
 	@echo ""
-	@echo "Валидаторы Хаба (tools/README.md):"
-	@echo "  make validate     — frontmatter + именование файлов + протокол онбординга"
+	@echo "Валидаторы (tools/README.md):"
+	@echo "  make validate-fast  — быстрый уровень: только валидаторы, чьи зависимости изменились"
+	@echo "  make validate-full  — полный уровень: все валидаторы без кэша (как в CI)"
+	@echo "  make validate-list  — перечень обнаруженных валидаторов"
+	@echo "  make validate-cache-clear — удалить .validate-cache/"
+	@echo "  make validate       — frontmatter + именование файлов + протокол онбординга"
 	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
 	@echo "  make kb-clean     — удалить временные файлы (pycache, _diagram.png)"
 	@echo ""
@@ -143,6 +147,22 @@ kb-clean:
 FRONTMATTER_SCOPE := $(wildcard *.md) ai-rules tools
 
 validate: validate-frontmatter validate-file-naming validate-onboarding
+
+# Два уровня проверки (issue #299). Быстрый — для каждой правки перед коммитом:
+# раннер обнаруживает валидаторы по маске, трассирует их зависимости и
+# перезапускает только те, у которых изменилось содержимое зависимостей.
+# Полный — перед пушем и в CI: кэш игнорируется, выполняется всё.
+validate-fast:
+	$(PYTHON) scripts/validate_all.py
+
+validate-full:
+	$(PYTHON) scripts/validate_all.py --full
+
+validate-list:
+	$(PYTHON) scripts/validate_all.py --list
+
+validate-cache-clear:
+	$(PYTHON) scripts/validate_all.py --clear-cache
 
 validate-frontmatter:
 	./tools/validate-frontmatter.sh $(FRONTMATTER_SCOPE)
