@@ -1,0 +1,59 @@
+run_id: RUN-0027
+process: fr-analysis-978-email-signature-in-lk
+version: "0.1"
+date: 2026-04-10
+author: "BA-IH + LLM"
+model: "qwen3.6-plus"
+status: works-with-edits
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/284
+inputs:
+  - inputs/README.md
+  - inputs/chat-transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/prompts-chain.md
+  - outputs/final-artifact.md
+  - outputs/steps/step-1-fr-analysis-no-edits.md
+  - outputs/steps/step-2-research-traceability.md
+  - outputs/steps/step-3-nfr-validation-with-web-sources.md
+  - outputs/steps/step-4-manual-research-signature-in-cc.md
+  - outputs/steps/step-5-screenshot-and-page-reference.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/turn-metrics.md
+  - logs/grounding-check.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 5
+  iterations: 5
+  ba_edits: 1
+  quality: 3
+  verdict: works-with-edits
+  success_rate: 0.4
+  success_rate_basis: "2 из 5 эпизодов приняты БА без оспаривания и без переработки (эпизоды 1 и 3); эпизод 2 вышел за рамки запроса (вместо трассировки выданы новые требования и числа без источника), эпизод 4 оспорен самим БА следующей репликой (скриншот: описанной функции в интерфейсе нет), эпизод 5 закрыл диалог ссылкой на страницу руководства, непроверяемой из выгрузки"
+  hallucinations: 3
+  hallucinations_shipped: 1
+  tokens_input: 441414
+  tokens_output: 8666
+  tokens_thinking: 1920
+  tokens_dialog_total: 450080
+  token_method: "platform-usage:qwen3.6-plus (поле usage каждой реплики; вход включает переотправку контекста и приложенный PDF руководства КЦ на репликах 7 и 9)"
+  duration_wall_clock_s: 2762
+  duration_active_s: 2762
+  duration_generation_s: 372
+  web_sources_returned: 38
+  web_tool_calls: 2
+  eval: "Прогон показал, что при доступном веб-инструменте модель заземляет числовые НФТ на реально полученные источники: все три проверяемых лимита (Gmail 102 КБ, Outlook 30 000 символов для подписи, 20–35 МБ на письмо) подтверждаются вхождениями в выдаче инструмента, НФТ-003 честно помечена как «частично подтверждена», а собственное предложение «30 КБ» из предыдущего такта модель сама признала некорректным. Прогон не доказал достоверности работы с приложенным PDF и скриншотом: в эпизодах 4–5 ссылки на разделы и страницу 56 руководства КЦ даны без проверяемой из выгрузки цитаты, а описанная моделью функция подписи не подтвердилась на скриншоте БА. Отдельно зафиксирован эффект: не запрошенное БА предложение модели («роль Администратор задаёт шаблон подписи для всей организации») на следующем такте вошло в постановку задачи как требование."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/284
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/experiment-log-standard.md
+related_runs:
+  - RUN-0021
+  - RUN-0024
+  - RUN-0025

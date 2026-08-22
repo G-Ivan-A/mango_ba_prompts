@@ -76,6 +76,37 @@ temperature: 0.1
   ([`logs/metrics.md`](runs/2026/RUN-0015/logs/metrics.md)).
 - Обновлён реестр [`runs/README.md`](runs/README.md); правки валидаторов не
   требуются — после issue #299 прогоны обнаруживаются на диске.
+### Added — Issue #284 реальный прогон 978 (RUN-0027) как эмпирические данные
+
+- Добавлен [`runs/2026/RUN-0027/`](runs/2026/RUN-0027/metadata.yaml) —
+  `run_type: statistics`: фиксация реально состоявшегося диалога БА↔LLM
+  (`qwen3.6-plus`, 2026-04-10) по анализу и уточнению ФТ задачи 978 «Настройка
+  подписей email в ЛК». Данные промежуточные (не эталон и не golden case),
+  фиксируются для статистики и анализа эффективности промптов, успехов и
+  галлюцинаций.
+- Прогон размечен на **5 эпизодов** с отдельным вердиктом по каждому:
+  [`outputs/README.md`](runs/2026/RUN-0027/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0027/outputs/steps).
+- Вердикт прогона — `works-with-edits`, `success_rate = 2/5 = 0.4`.
+  Зафиксированы дефекты достоверности Г1–Г5 (3 вынесены в `hallucinations`,
+  1 остался неопровергнутым на момент обрыва диалога) и отдельный эффект
+  коммуникации: не запрошенное предложение модели вошло в постановку задачи
+  ([`feedback/review-notes.md`](runs/2026/RUN-0027/feedback/review-notes.md)).
+- Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
+  issue #284 экспорта чата скриптом
+  [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py);
+  токены и латентность — из поля `usage` платформы
+  ([`logs/metrics.md`](runs/2026/RUN-0027/logs/metrics.md)).
+- Добавлен воспроизводимый инструмент
+  [`experiments/signature_citation_grounding_probe.py`](experiments/signature_citation_grounding_probe.py):
+  проверяет заземление сносок валидации НФТ на реально полученную выдачу
+  `web_search`/`web_extractor`
+  ([`logs/grounding-check.md`](runs/2026/RUN-0027/logs/grounding-check.md)).
+- Обновлён реестр [`runs/README.md`](runs/README.md): строка RUN-0027 и
+  раздел «Локальные инструменты воспроизводимости». Файлы валидаторов не
+  затронуты — после issue #299 прогоны обнаруживаются на диске.
+- Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
+  `site/data/` нет.
 
 ### Added — Issue #280 реальный прогон 997 (RUN-0025) как эмпирические данные
 
@@ -101,6 +132,41 @@ temperature: 0.1
   в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py).
 - Границы прогона соблюдены: изменений в `prompts/`, `kb/`, `patterns/`,
   `site/data/` нет.
+### Added — Issue #283 реальный прогон 1007 (RUN-0026): ФТ на перевод Сделки в АМО CRM по успешному дозвону
+
+- Добавлена запись [`runs/2026/RUN-0026/`](runs/2026/RUN-0026/outputs/README.md) —
+  прогон-фиксация (`run_type: statistics`) на **живых данных чата** (сессия
+  2026-04-30 — 2026-05-04, модель `qwen3.6-plus`, 20 реплик, 10 эпизодов):
+  дословный транскрипт
+  ([`inputs/transcript.md`](runs/2026/RUN-0026/inputs/transcript.md)), вход —
+  ad-hoc-рамка БА без библиотечного промпта, разбор по эпизодам
+  ([`outputs/steps/`](runs/2026/RUN-0026/outputs/steps/)) и итоговое состояние
+  документа ФТ версии 1.1.
+- Прогон **не является** golden case: итог помечен как промежуточный, с реестром
+  незакрытых замечаний З1–З7
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0026/outputs/final-artifact.md)).
+- Зафиксированы четыре галлюцинации: Г1 (заявленная «проверка документации»,
+  которой не было), Г2 (ссылка на стр. 127 руководства, взятая из реплики самого
+  БА), Г3 (метка поля интерфейса, поданная как дословная цитата с макета, —
+  дошла до итогового требования 4.1.1), Г4 (идемпотентность на стороне API
+  amoCRM без источника) —
+  [`outputs/quality-findings.md`](runs/2026/RUN-0026/outputs/quality-findings.md).
+  Корневая причина Г1 доказана воспроизводимо: провайдер вернул
+  `extract_page_success: [0, 0, 0]` — ни одна страница не была прочитана, вывод
+  сделан по сниппетам поиска
+  ([`logs/grounding-check.md`](runs/2026/RUN-0026/logs/grounding-check.md)).
+- Зафиксирован дефект Д1: буквальное исполнение указания БА «используем
+  формулировки „система должна предоставить пользователю возможность… по
+  классике“» превратило три требования к автоматическому поведению Системы в
+  требования к возможностям Пользователя и лишило их тестируемости.
+- Измеренные метрики из полей провайдера
+  ([`logs/turn-metrics.md`](runs/2026/RUN-0026/logs/turn-metrics.md)): 101 957
+  токенов суммарно (in 81 349 / out 20 608 / reasoning 8 835), окно ≈91.3 ч
+  (два захода, активное время ≈54 мин). Скрипт проверки заземления сносок —
+  [`experiments/amocrm_widget_grounding_probe.py`](experiments/amocrm_widget_grounding_probe.py).
+- Обновлены реестры [`runs/README.md`](runs/README.md) и валидаторы
+  ([`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py),
+  [`scripts/test_runs_contract_run_type.py`](scripts/test_runs_contract_run_type.py)).
 
 ### Added — Issue #277 реальный прогон 1020 (RUN-0024): вопросы стейкхолдеру по интеграции OkDesk ↔ MANGO OFFICE
 
