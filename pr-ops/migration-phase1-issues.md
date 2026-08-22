@@ -31,7 +31,7 @@ hub_snapshot_sha: "038868dd125b4e2d849ff73604890f1d2787ac0f"
 3. AI-агент намеренно **не создаёт** живые Issues автоматически: у среды
    исполнения только `pull`-доступ к `G-Ivan-A/mango_ba_prompts`, а создание
    Issues/меток — outward-facing действие, которое по
-   [`AI_GOVERNANCE.md`](../AI_GOVERNANCE.md) (fail-closed) подтверждается
+   [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md) (fail-closed) подтверждается
    человеком.
 
 ## Соглашения для всех 9 задач

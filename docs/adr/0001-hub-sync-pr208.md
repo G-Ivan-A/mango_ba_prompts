@@ -81,8 +81,8 @@ mango (permalink-pinning, отсутствие валидатора структ
 
 | Файл | Что сохранено поверх шаблона |
 | :--- | :--- |
-| [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | Конкретная taxonomy **«Capability Boundaries»** (с реальными путями репозитория и ссылкой на fail-closed) вместо общей прозы «Границы действий» из шаблона Хаба. Добавлена связка-примечание: это «конкретная инстанциация хабовой рубрики под mango». |
-| [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md) | Явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её свернул). Нужна и как mango-правило, и чтобы оставалась резолвимой перекрёстная ссылка `AI_GOVERNANCE.md#fail-closed-semantics-критично`. |
+| [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) | Конкретная taxonomy **«Capability Boundaries»** (с реальными путями репозитория и ссылкой на fail-closed) вместо общей прозы «Границы действий» из шаблона Хаба. Добавлена связка-примечание: это «конкретная инстанциация хабовой рубрики под mango». |
+| [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md) | Явная секция **«Fail-Closed Semantics (КРИТИЧНО)»** (шаблон Хаба её свернул). Нужна и как mango-правило, и чтобы оставалась резолвимой перекрёстная ссылка `AI_GOVERNANCE.md#fail-closed-semantics-критично`. |
 | [`agent-onboarding-protocol.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md) | Раздел «Design Rationale & History» **сжат** до операционно важной выжимки (авиа-аналогия + таблица зафиксированных решений); полная история вынесена ссылкой на канонический протокол Хаба, чтобы локальная копия оставалась лёгкой. |
 
 ## Что НЕ делали (negative checks)
@@ -134,9 +134,9 @@ mango (permalink-pinning, отсутствие валидатора структ
 - Хаб, PR #208: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/208>
 - Хаб, RFC HTOM↔spoke: [`governance/rfc/htom-vs-spoke-clarification-2026-06.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/117e4a553815af9b05d841c81dd725dd4a4c4d44/governance/rfc/htom-vs-spoke-clarification-2026-06.md)
 - Хаб, шаблоны HTOM-команды: [`templates/htom/`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/117e4a553815af9b05d841c81dd725dd4a4c4d44/templates/htom)
-- Синхронизированные файлы: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md),
-  [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md),
-  [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md),
+- Синхронизированные файлы: [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md),
+  [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md),
+  [`AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md),
   [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md),
   [`.hub-profile.json`](../../.hub-profile.json)
 - Целевая структура (negative check): [`docs/audit/initial-state-2026-06.md`](../audit/initial-state-2026-06.md)

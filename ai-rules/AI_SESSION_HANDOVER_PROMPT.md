@@ -9,7 +9,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 ---
 
 > **LLM Loading Contract — full layer.**
-> Start with [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
+> Start with [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](../prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
 > Load this full file only when an escalation trigger in the executable companion
 > is true: explicit request for full/rationale/history, missing required section
 > in executable, need for exact wording/table/reference, or editing/validating
@@ -19,7 +19,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 > Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
 > EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
 > Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
-> отдельно: локально — [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md) (v1.5),
+> отдельно: локально — [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5),
 > канонически — в Хабе ([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md)).
 
 > 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
@@ -167,24 +167,24 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 - ИИ в чате описан как член HTOM-команды, а не как «исполнитель без доступа».
 - Прямые изменения в репозитории выполняются через Конарда/Исполнителя.
 - Для постановки задач Конарду используется
-  [`docs/task-for-konard-template.md`](docs/task-for-konard-template.md).
+  [`docs/task-for-konard-template.md`](../docs/task-for-konard-template.md).
 - Creative-mode и review-loop правила остаются в
-  [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md), [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md)
-  и [`CONTRIBUTING.md`](CONTRIBUTING.md).
+  [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md), [`AI_QUICK_RULES.md`](ai-quick-rules.md)
+  и [`CONTRIBUTING.md`](../CONTRIBUTING.md).
 
 ## 🧭 См. также
 
-- [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) — одностраничная «инструкция по
+- [`AI_QUICK_RULES.md`](ai-quick-rules.md) — одностраничная «инструкция по
   выживанию» агента в этой HTOM-команде.
-- [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) — конституция проекта: роли, правила,
+- [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md) — конституция проекта: роли, правила,
   эскалация, DoD.
-- [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md)
+- [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md)
   — актуальный протокол онбординга (v1.5, рабочая копия Хаба).
-- Архив v1.2: [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md)
+- Архив v1.2: [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../.archive/ai-rules/agent-onboarding-protocol_old.md)
   — `status: superseded`, хранится для traceability, точкой входа не является.
-- [`pr-ops/session-digests.md`](pr-ops/session-digests.md) — локальный
+- [`pr-ops/session-digests.md`](../pr-ops/session-digests.md) — локальный
   индекс суммарий сессий для передачи контекста между чатами.
-- [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) — локальная карта
+- [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md) — локальная карта
   активных артефактов `mango_ba_prompts`.
 - Хаб [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
   — источник синхронизации v0.5.

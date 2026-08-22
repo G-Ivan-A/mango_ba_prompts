@@ -31,10 +31,10 @@ research_deps:
 | Чего здесь нет? | Серверной инфраструктуры (serverless/VPS), мультиагентной системы и внешних сервисов исполнения. Инструментальный слой — не предмет этого репозитория. |
 | Где публичная методология? | В отдельном репозитории [`ai-ba-playbooks`](https://github.com/G-Ivan-A/ai-ba-playbooks): универсальные и специализированные плейбуки для БА. |
 | Как практики попадают туда? | **Односторонний неавтоматический** поток `приватный → публичный` с отбором Пользователем; обратный поток запрещён. Процесс — в [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md). |
-| Что будет с веб-каталогом после Private? | GitHub Pages на бесплатном плане для приватных репозиториев не работает — это блокер Q1. Варианты решения (внешний портал, поэтапная миграция, вывод через `ai-ba-playbooks`) зафиксированы в [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#веб-ресурс-app-после-приватизации); выбор — решение Пользователя. |
+| Что будет с веб-каталогом после Private? | GitHub Pages на бесплатном плане для приватных репозиториев не работает — это блокер Q1. Варианты решения (внешний портал, поэтапная миграция, вывод через `ai-ba-playbooks`) зафиксированы в [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md#веб-ресурс-app-после-приватизации); выбор — решение Пользователя. |
 
 Полные нормы и карта «что публично / что приватно» — в
-[`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) (разделы «Роль проекта и инфраструктурная
+[`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) (разделы «Роль проекта и инфраструктурная
 модель» и «Подготовка к приватизации»).
 
 ## ⚖️ Принцип «качество системы исполнения > стоимость»
@@ -48,11 +48,11 @@ research_deps:
 
 Фактический статус: чек-листы и human-in-the-loop gate в репозитории есть,
 **evals и golden-set отсутствуют** — пробел зафиксирован честно в
-[`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#статус-механизмов-проверки-на-сегодня) и
+[`AI_GOVERNANCE.md`](ai-governance/ai-governance.md#статус-механизмов-проверки-на-сегодня) и
 [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md).
 
 Норма и допустимые механизмы проверки — в
-[`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#принцип-качество-системы-исполнения--стоимость);
+[`AI_GOVERNANCE.md`](ai-governance/ai-governance.md#принцип-качество-системы-исполнения--стоимость);
 источник требований к ДОД (чек-лист D1–D10) — онтология процессов БА Хаба через
 [`docs/hub-research-dependencies.md#ba-process-ontology`](docs/hub-research-dependencies.md#ba-process-ontology).
 
@@ -118,7 +118,7 @@ research_deps:
    следуй разделу **«ФОРМАТ ВЫВОДА»** внутри промпта.
 4. **Нужен черновик?** Экспериментальные и ещё не утверждённые промпты —
    в `prompts/drafts/`. Их можно создавать без human review
-   (см. capability boundaries в [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md)).
+   (см. capability boundaries в [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md)).
    Перевод в `prompts/` (canonical) — через issue → PR → review.
 
 ## 🗂️ Структура `prompts/`
@@ -202,19 +202,19 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 | Как связаны направления, шаблоны, процессы, операции и промпты | [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
 | Какой промпт брать под мой процесс | [`docs/ba-processes/00-index.md`](docs/ba-processes/00-index.md) |
 | Как практики попадают в Хаб и в `ai-ba-playbooks` | [`docs/rfc-hub-integration.md`](docs/rfc-hub-integration.md) |
-| Роль проекта, инфраструктурная модель и приватизация | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
-| Почему операция без проверки не завершена | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md#принцип-качество-системы-исполнения--стоимость), [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
+| Роль проекта, инфраструктурная модель и приватизация | [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) |
+| Почему операция без проверки не завершена | [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md#принцип-качество-системы-исполнения--стоимость), [`docs/ba-ecosystem.md`](docs/ba-ecosystem.md) |
 | Требования к промпту / паттерну | [`standards/prompt-standard.md`](standards/prompt-standard.md), [`standards/pattern-standard.md`](standards/pattern-standard.md) |
 | Онтология БА, операции, нейминг, KB, процессы, UX Pages | [`standards/ba-ontology.md`](standards/ba-ontology.md), [`docs/adr/`](docs/adr/) |
 | Куда записать открытый вопрос | [`pr-ops/BACKLOG.md`](pr-ops/BACKLOG.md#5-открытые-вопросы) |
-| Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](AI_GOVERNANCE.md) |
+| Как ИИ может помогать и где границы | [AI_GOVERNANCE.md](ai-governance/ai-governance.md) |
 | Как вносить изменения | [CONTRIBUTING.md](CONTRIBUTING.md) |
 | Где появятся стандарты и глоссарий | `standards/` |
 | Почему проект связан с лабораторией | Раздел [«Связь с Хабом»](#-связь-с-хабом) |
 | Как вносить вклад (временный workflow) | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
-| Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](AI_GOVERNANCE.md) |
-| Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](AI_QUICK_RULES.md) |
-| Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](AI_SESSION_HANDOVER_PROMPT.md) |
+| Как ИИ может помогать и где границы | [`AI_GOVERNANCE.md`](ai-governance/ai-governance.md) |
+| Правила выживания агента (fail-closed) | [`AI_QUICK_RULES.md`](ai-rules/ai-quick-rules.md) |
+| Как запустить ИИ-агента в новой сессии (готовый промпт) | [`AI_SESSION_HANDOVER_PROMPT.md`](ai-rules/AI_SESSION_HANDOVER_PROMPT.md) |
 | Протокол онбординга агента (чек-лист перед стартом), v1.5 | [`ai-rules/agent-onboarding-protocol.md`](ai-rules/agent-onboarding-protocol.md) |
 | Архив протокола онбординга v1.2 (superseded, для traceability) | [`.archive/ai-rules/agent-onboarding-protocol_old.md`](.archive/ai-rules/agent-onboarding-protocol_old.md) |
 | Почему корневые `AI_*.md` остаются в корне, а архив ушёл в `.archive/` | [`docs/audit/2026-08-21-root-structure-audit.md`](docs/audit/2026-08-21-root-structure-audit.md) |
@@ -226,7 +226,7 @@ hub-относительных ссылок (`../../standards/...`, `../../resea
 ## 👥 Контакты и ответственные
 
 Распределение ролей и право финального решения — в
-[`AI_GOVERNANCE.md`](AI_GOVERNANCE.md).
+[`AI_GOVERNANCE.md`](ai-governance/ai-governance.md).
 
 | Роль | Кто | Ответственность |
 | --- | --- | --- |

@@ -97,10 +97,10 @@ related_artifacts:
 
 | Документ | Тип | Область | Отличается от Хаба | Синхронизация | Обоснование |
 | --- | --- | --- | --- | --- | --- |
-| [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) | контракт/политика | Локальный (наследует Хаб) | Да — Хаб `AI_GOVERNANCE.md` canonical, локальная адаптация под Mango | **Частично** (осознанная адаптация) | Локализует роли/границы под структуру Mango; синхронизируется как HTOM-контракт через Smart Sync. |
+| [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) | контракт/политика | Локальный (наследует Хаб) | Да — Хаб `AI_GOVERNANCE.md` canonical, локальная адаптация под Mango | **Частично** (осознанная адаптация) | Локализует роли/границы под структуру Mango; синхронизируется как HTOM-контракт через Smart Sync. |
 | [`CONTRIBUTING.md`](../../CONTRIBUTING.md) | политика/guideline | Локальный | Да — Хаб `CONTRIBUTING.md` | **Частично** | Workflow вклада адаптирован; «Временный workflow промптов» — локальный. |
-| [`AI_QUICK_RULES.md`](../../AI_QUICK_RULES.md) | исполнимые правила | Локальный | Да — HTOM-геном Хаба | **Частично** (Smart Sync) | Короткая инструкция агента; часть HTOM-генома. |
-| [`AI_SESSION_HANDOVER_PROMPT.md`](../../AI_SESSION_HANDOVER_PROMPT.md) | исполнимый контракт | Локальный | Да — Хаб `session-handover-standard.md` + геном | **Частично** (Smart Sync) | Передача контекста; синхронизирован в issue #72. |
+| [`AI_QUICK_RULES.md`](../../ai-rules/ai-quick-rules.md) | исполнимые правила | Локальный | Да — HTOM-геном Хаба | **Частично** (Smart Sync) | Короткая инструкция агента; часть HTOM-генома. |
+| [`AI_SESSION_HANDOVER_PROMPT.md`](../../ai-rules/AI_SESSION_HANDOVER_PROMPT.md) | исполнимый контракт | Локальный | Да — Хаб `session-handover-standard.md` + геном | **Частично** (Smart Sync) | Передача контекста; синхронизирован в issue #72. |
 | [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) | навигация | Локальный (адаптация Хаба) | Да — Хаб `pr-ops/artifact-map.md` | **Частично** (Smart Sync) | Уже синхронизирован (см. `source_hub` в frontmatter). |
 | [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md) | исполнимый контракт | Локальный | Да — Хаб одноимённый эталон | **Частично** (Smart Sync) | Эталон исполнимого контракта Хаба, адаптирован. |
 | [`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) | процесс | **Локальный** | Нет аналога | **Передача знаний** | Создан в issue #101; уникальный — кандидат на RFC в Хаб (ФТ-4/ФТ-5). |

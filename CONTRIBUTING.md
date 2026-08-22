@@ -21,7 +21,7 @@ traceability и практическую полезность для hybrid huma
    содержать файлы вне исходного scope, если они нужны для цели задачи и
    обоснованный обход описан в PR.
 3. **Review.** Финальные решения по vision, publication и merge остаются за
-   человеком согласно [AI_GOVERNANCE.md](AI_GOVERNANCE.md).
+   человеком согласно [AI_GOVERNANCE.md](ai-governance/ai-governance.md).
 
 ## Review loop с Конардом
 
@@ -64,8 +64,8 @@ temperature: 0.1
 
 ## AI-Assisted Work
 
-AI agents следуют [AI_GOVERNANCE.md](AI_GOVERNANCE.md) и
-[AI_QUICK_RULES.md](AI_QUICK_RULES.md): читают issue и последние комментарии,
+AI agents следуют [AI_GOVERNANCE.md](ai-governance/ai-governance.md) и
+[AI_QUICK_RULES.md](ai-rules/ai-quick-rules.md): читают issue и последние комментарии,
 сохраняют права решения за Пользователем и не публикуют sensitive data.
 Отдельное hard rule: AI agents не создают `research/` в споке.
 

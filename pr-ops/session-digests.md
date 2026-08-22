@@ -96,7 +96,7 @@ source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
 
 ## См. также
 
-- [`AI_SESSION_HANDOVER_PROMPT.md`](../AI_SESSION_HANDOVER_PROMPT.md) — готовый
+- [`AI_SESSION_HANDOVER_PROMPT.md`](../ai-rules/AI_SESSION_HANDOVER_PROMPT.md) — готовый
   prompt с разделом «Периодическая суммаризация сессии».
 - [`pr-ops/BACKLOG.md`](BACKLOG.md#5-открытые-вопросы) — единый трекер
   открытых вопросов проекта.

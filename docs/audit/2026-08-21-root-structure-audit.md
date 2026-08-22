@@ -48,7 +48,7 @@ require_file "AI_GOVERNANCE.md"
 ```
 
 То же зафиксировано в самом артефакте спицы,
-[`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md): «Этот файл — **ядро генома**
+[`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md): «Этот файл — **ядро генома**
 HTOM-команды: обязателен в корне (жёсткое ограничение)».
 
 `standards/project-structure-inheritance.md`, названный в SSOT задачи, к этому

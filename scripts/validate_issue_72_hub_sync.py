@@ -35,12 +35,12 @@ def main() -> int:
     errors: list[str] = []
 
     for path in (
-        "AI_SESSION_HANDOVER_PROMPT.md",
+        "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
         ".archive/ai-rules/agent-onboarding-protocol_old.md",
         "pr-ops/session-digests.md",
         "pr-ops/artifact-map.md",
         ".hub-profile.json",
-        "AI_GOVERNANCE.md",
+        "ai-governance/ai-governance.md",
         "CONTRIBUTING.md",
         "docs/hub-research-dependencies.md",
         "docs/task-for-konard-template.md",
@@ -57,7 +57,7 @@ def main() -> int:
 
     if not errors:
         errors += require(
-            "AI_SESSION_HANDOVER_PROMPT.md",
+            "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
             "version: 0.5",
             SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
@@ -66,7 +66,7 @@ def main() -> int:
             "Пользователь",
             "Исполнитель",
         )
-        errors += reject("AI_SESSION_HANDOVER_PROMPT.md", OLD_SHA, "Иосполнитель")
+        errors += reject("ai-rules/AI_SESSION_HANDOVER_PROMPT.md", OLD_SHA, "Иосполнитель")
 
         errors += require(
             ".archive/ai-rules/agent-onboarding-protocol_old.md",
@@ -124,14 +124,14 @@ def main() -> int:
             errors.append("research/external-knowledge/external-sources-registry.md: Base Registry must stay reference-only in mango")
 
         errors += require(
-            "AI_GOVERNANCE.md",
+            "ai-governance/ai-governance.md",
             HUB_SHA,
             "Пользователь",
             "молчание = согласие",
             "комментарий + ручной перезапуск",
             "`research/` Хаба, а не в команду",
         )
-        errors += reject("AI_GOVERNANCE.md", "Founder & PO", "Фаундер", "Иосполнитель")
+        errors += reject("ai-governance/ai-governance.md", "Founder & PO", "Фаундер", "Иосполнитель")
 
         errors += require(
             "CONTRIBUTING.md",
@@ -170,7 +170,7 @@ def main() -> int:
         # (issue #291).
         synced_paths = set(last_sync.get("synced_paths", []))
         for path in (
-            "AI_SESSION_HANDOVER_PROMPT.md",
+            "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
             "ai-rules/agent-onboarding-protocol_old.md",
             "pr-ops/session-digests.md",
             "pr-ops/artifact-map.md",
@@ -182,7 +182,7 @@ def main() -> int:
             "docs/reviews/migration-rfc-human-review-2026-06.md",
             "pr-ops/BACKLOG.md",
             "pr-ops/migration-phase1-issues.md",
-            "AI_GOVERNANCE.md",
+            "ai-governance/ai-governance.md",
             "CONTRIBUTING.md",
         ):
             if path not in synced_paths:

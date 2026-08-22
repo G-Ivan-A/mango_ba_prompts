@@ -42,7 +42,7 @@ ARCHIVE = [
 # Активная навигация: файлы, по которым агент или человек находит протокол.
 NAVIGATION = [
     "README.md",
-    "AI_SESSION_HANDOVER_PROMPT.md",
+    "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
     "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
     "pr-ops/artifact-map.md",
     "standards/cascading-context-loading-standard.md",

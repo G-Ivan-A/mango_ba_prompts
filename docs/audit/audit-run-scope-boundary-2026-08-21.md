@@ -27,7 +27,7 @@ related_artifacts:
 
 - [`standards/runs-contract-standard.md`](../../standards/runs-contract-standard.md) (Draft v0.1) — контракт Run.
 - [`runs/README.md`](../../runs/README.md) — реестр и описание контракта.
-- [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) — Capability Boundaries.
+- [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) — Capability Boundaries.
 - [`ai-rules/agent-onboarding-protocol.md`](../../ai-rules/agent-onboarding-protocol.md) — протокол входа исполнителя.
 - [`scripts/validate_issue_123_runs_contract.py`](../../scripts/validate_issue_123_runs_contract.py), [`scripts/validate_issue_74_github_pages.py`](../../scripts/validate_issue_74_github_pages.py) — что именно проверяется автоматически.
 - [`.github/workflows/github-pages.yml`](../../.github/workflows/github-pages.yml) — как `site/data/` попадает на Pages.
