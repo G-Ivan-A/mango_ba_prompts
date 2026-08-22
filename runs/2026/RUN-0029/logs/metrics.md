@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
 ---
 
-# Метрики RUN-0026 по эпизодам
+# Метрики RUN-0029 по эпизодам
 
 Источник — `content_list[*].usage` экспорта, пересчёт скриптом
 `experiments/parse_58093_chat_export.py`. Порепличные значения —
