@@ -13,32 +13,32 @@ temperature: 0.1
 
 ## Unreleased
 
-### Added — Issue #279 реальный прогон 994 (RUN-0026) как эмпирические данные
+### Added — Issue #279 реальный прогон 994 (RUN-0029) как эмпирические данные
 
-- Добавлена запись [`runs/2026/RUN-0026/`](runs/2026/RUN-0026/outputs/README.md) —
+- Добавлена запись [`runs/2026/RUN-0029/`](runs/2026/RUN-0029/outputs/README.md) —
   прогон на живых данных чата «994» (18 реплик, **9 эпизодов**, две сессии
   2026-05-13, модель `qwen3.6-plus`): дословная стенограмма
-  ([`inputs/chat-transcript.md`](runs/2026/RUN-0026/inputs/chat-transcript.md)),
-  разбор по 9 шагам ([`outputs/steps/`](runs/2026/RUN-0026/outputs/steps/)) и
+  ([`inputs/chat-transcript.md`](runs/2026/RUN-0029/inputs/chat-transcript.md)),
+  разбор по 9 шагам ([`outputs/steps/`](runs/2026/RUN-0029/outputs/steps/)) и
   итоговый список из 8 вопросов Заказчику по задаче 994 (вывод направления
   звонка и причины пропуска в заголовок лида Битрикс24).
 - `run_type: statistics` — по формулировке цели issue #279 («зафиксировать
   прогон… собрать эмпирические данные»), а не по составу артефактов.
 - Прогон **не является** golden case и согласованным шаблоном: итоговый список
-  ([`outputs/final-artifact.md`](runs/2026/RUN-0026/outputs/final-artifact.md))
+  ([`outputs/final-artifact.md`](runs/2026/RUN-0029/outputs/final-artifact.md))
   помечен как свидетельство исполнения; Заказчику он в рамках диалога не
   отправлялся.
 - Вердикт прогона — `works-with-edits`, `success_rate = 5/9 ≈ 0.56`.
   Зафиксированы 3 дефекта достоверности (Г1–Г3, ни один не дошёл до артефакта),
   дефект повторяемости R1 и дефект режима M1
-  ([`feedback/review-notes.md`](runs/2026/RUN-0026/feedback/review-notes.md)).
+  ([`feedback/review-notes.md`](runs/2026/RUN-0029/feedback/review-notes.md)).
   Ключевая находка: заданный формат вывода теряется после нейтральной реплики —
   требование «просто список вопросов без заголовков» выполнено на реплике 11,
   самовольно отменено при самопроверке на реплике 15 и восстановлено только
   повтором инструкции на реплике 17; 12 % выхода прогона ушло на повтор уже
   выполненного указания.
 - Отдельно зафиксировано, что промпты репозитория в диалоге **не применялись**
-  ([`outputs/prompts-chain.md`](runs/2026/RUN-0026/outputs/prompts-chain.md)):
+  ([`outputs/prompts-chain.md`](runs/2026/RUN-0029/outputs/prompts-chain.md)):
   прогон измеряет базовую линию свободной постановки и сопоставим с RUN-0018 и
   RUN-0021 как «без промпта» против «с пошаговым промптом».
 - Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
@@ -47,7 +47,7 @@ temperature: 0.1
   токены и латентность по эпизодам — скриптом
   [`experiments/parse_qwen_chat_export.py`](experiments/parse_qwen_chat_export.py)
   (`token_method: tiktoken:cl100k_base`).
-- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0026 и
+- Обновлены реестры: [`runs/README.md`](runs/README.md) (строка RUN-0029 и
   ссылки в разделе «Локальные инструменты воспроизводимости») и `EXPECTED_RUNS`
   в [`scripts/validate_issue_123_runs_contract.py`](scripts/validate_issue_123_runs_contract.py),
   `EXPECTED_CLASSIFICATION` в

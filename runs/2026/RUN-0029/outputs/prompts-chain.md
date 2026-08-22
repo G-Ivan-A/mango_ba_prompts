@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/279"
 ---
 
-# Цепочка промптов прогона RUN-0026
+# Цепочка промптов прогона RUN-0029
 
 ## Промпты репозитория не применялись
 
@@ -19,7 +19,7 @@ related_issues:
 маркеры есть на репликах 0 и 6):
 
 ```bash
-grep -c '<!-- mango-' runs/2026/RUN-0026/inputs/chat-transcript.md   # 0
+grep -c '<!-- mango-' runs/2026/RUN-0029/inputs/chat-transcript.md   # 0
 ```
 
 Также в репликах БА нет ролевой преамбулы («Ты — ведущий бизнес-аналитик…»),

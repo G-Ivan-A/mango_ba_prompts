@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/279"
 ---
 
-# Вход прогона RUN-0026 — провенанс
+# Вход прогона RUN-0029 — провенанс
 
 ## Файл, приложенный к issue #279
 
@@ -41,8 +41,8 @@ sha256sum 994-chat.json  # 13ee745db4598d5c168b37a26a7ae756ee80e18a116c6a1a833a5
 
 ```bash
 python3 scripts/chat_export_to_markdown.py 994-chat.json \
-  --transcript runs/2026/RUN-0026/inputs/chat-transcript.md \
-  --metrics    runs/2026/RUN-0026/logs/turn-metrics.md
+  --transcript runs/2026/RUN-0029/inputs/chat-transcript.md \
+  --metrics    runs/2026/RUN-0029/logs/turn-metrics.md
 ```
 
 Исходный JSON в репозиторий не копируется: 167 КБ на бо́льшую часть состоят из

@@ -134,7 +134,7 @@ class ClassificationTest(unittest.TestCase):
         "RUN-0023": "statistics",
         "RUN-0024": "statistics",
         "RUN-0025": "statistics",
-        "RUN-0026": "statistics",
+        "RUN-0029": "statistics",
     }
 
     def test_metadata_matches_agreed_classification(self) -> None:
