@@ -1,0 +1,43 @@
+run_id: RUN-0049
+process: task-935-speech-analytics-api-parameters
+version: "0.1"
+date: 2026-08-22
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3-max-2026-01-23"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+  - https://github.com/user-attachments/files/31336084/935-chat-export-1787302221867.json
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 39
+  iterations: 39
+  turns: 78
+  sessions: 9
+  tokens_input: 2894481
+  tokens_output: 30018
+  tokens_thinking: 5712
+  tokens_dialog_total: 2924499
+  token_method: "provider-usage:qwen3-max-2026-01-23"
+  duration_active_s: 8100
+  dialog_start_utc: "2026-01-28 07:38:26"
+  dialog_end_utc: "2026-02-11 12:11:43"
+  calendar_days: 14.2
+  attachments_distinct: 6
+  eval: "Прогон зафиксирован ради статистики: приёмка БА в экспорте не выражена, оценка качества артефакта не выставляется. Считываются объём диалога, распределение операций БА и расход токенов."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_309_fixate_runs.py

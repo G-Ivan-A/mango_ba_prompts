@@ -1,0 +1,43 @@
+run_id: RUN-0035
+process: task-806-elma-knowledge-base-recommendations
+version: "0.1"
+date: 2026-08-22
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3-235b-a22b"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+  - https://github.com/user-attachments/files/31336068/806-chat-export-1787302469723.json
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 1
+  iterations: 1
+  turns: 2
+  sessions: 1
+  tokens_input: 2461
+  tokens_output: 926
+  tokens_thinking: 0
+  tokens_dialog_total: 3387
+  token_method: "provider-usage:qwen3-235b-a22b"
+  duration_active_s: 0
+  dialog_start_utc: "2025-08-11 14:20:51"
+  dialog_end_utc: "2025-08-11 14:20:51"
+  calendar_days: 0.0
+  attachments_distinct: 0
+  eval: "Прогон зафиксирован ради статистики: приёмка БА в экспорте не выражена, оценка качества артефакта не выставляется. Считываются объём диалога, распределение операций БА и расход токенов."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_309_fixate_runs.py

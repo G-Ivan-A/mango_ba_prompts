@@ -1,0 +1,252 @@
+[
+  {
+    "run_id": "RUN-0030",
+    "source_file": "599-chat-export-1787302166886.json",
+    "sha256": "5fc1909b7adfb51c9643fd8a489037063c4c79f06fb28e6c45bd4861f384ba2f",
+    "size_bytes": 1319632,
+    "url": "https://github.com/user-attachments/files/31336086/599-chat-export-1787302166886.json",
+    "process": "task-599-1c-subscriber-selection-on-call",
+    "theme": "Выбор абонента 1С при входящем звонке",
+    "focus": "Очистка ASR-расшифровки встречи, суммаризация договорённостей и разработка ФТ на выбор абонента/партнёра в связке ВАТС ↔ 1С."
+  },
+  {
+    "run_id": "RUN-0031",
+    "source_file": "791-chat-export-1787302391232.json",
+    "sha256": "00ac99aaa4c4240e940f2df970a10b28cd0495021bce8bc5f2184ac293d15814",
+    "size_bytes": 3270910,
+    "url": "https://github.com/user-attachments/files/31336088/791-chat-export-1787302391232.json",
+    "process": "task-791-unified-request-entity-deal-ticket",
+    "theme": "Единая сущность обращения (сделка/тикет)",
+    "focus": "Проработка промптов и ФТ для унифицированной сущности обращения с опорой на отраслевые модели (TM Forum) и разбор границ сделки и тикета."
+  },
+  {
+    "run_id": "RUN-0032",
+    "source_file": "792_2-chat-export-1787302348708.json",
+    "sha256": "8434dd608a09d67e421f211b333053da85c344f87207c03a7ba7cd4a69277842",
+    "size_bytes": 810022,
+    "url": "https://github.com/user-attachments/files/31336073/792_2-chat-export-1787302348708.json",
+    "process": "task-792-post-call-processing-outbound",
+    "theme": "Постобработка звонка в исходящих кампаниях",
+    "focus": "Очистка расшифровки встречи и подготовка варианта ФТ на постобработку звонка оператором."
+  },
+  {
+    "run_id": "RUN-0033",
+    "source_file": "804-chat-export-1787302424624.json",
+    "sha256": "5ab4fcbaea0efb45f2c59c37b9bb268566b8efbc50c5f13be425170bd1fe9f94",
+    "size_bytes": 1951602,
+    "url": "https://github.com/user-attachments/files/31336067/804-chat-export-1787302424624.json",
+    "process": "task-804-speech-analytics-export-to-external-system",
+    "theme": "Выгрузка данных речевой аналитики во внешнюю систему",
+    "focus": "Разработка и валидация ФТ на передачу результатов речевой аналитики во внешнюю систему (кейс E-Staff)."
+  },
+  {
+    "run_id": "RUN-0034",
+    "source_file": "804_2-chat-export-1787302436487.json",
+    "sha256": "b523ab973656a02df3bd2cec0e5977c5a0ea7f241ab730853ee13ad0028c0b90",
+    "size_bytes": 1939259,
+    "url": "https://github.com/user-attachments/files/31336070/804_2-chat-export-1787302436487.json",
+    "process": "task-804-speech-analytics-export-final",
+    "theme": "Выгрузка данных речевой аналитики — финальная итерация",
+    "focus": "Продолжение задачи 804: доведение ФТ до финальной редакции, настройки отправки и разбор замечаний."
+  },
+  {
+    "run_id": "RUN-0035",
+    "source_file": "806-chat-export-1787302469723.json",
+    "sha256": "bda19e898af61287d1b90532ea569de993b188c62cbc2558b25f48333d3ba62a",
+    "size_bytes": 40489,
+    "url": "https://github.com/user-attachments/files/31336068/806-chat-export-1787302469723.json",
+    "process": "task-806-elma-knowledge-base-recommendations",
+    "theme": "Рекомендации по базе знаний ELMA",
+    "focus": "Одноэпизодный прогон: генерация раздела ФТ по работе с базой знаний."
+  },
+  {
+    "run_id": "RUN-0036",
+    "source_file": "817-chat-export-1787302455834.json",
+    "sha256": "76db5d52bca4372a73c9bc3c99bdd24558190cf446b5db04bae654a4346ca13d",
+    "size_bytes": 463786,
+    "url": "https://github.com/user-attachments/files/31336069/817-chat-export-1787302455834.json",
+    "process": "task-817-personal-data-consent-text",
+    "theme": "Текст согласия на обработку персональных данных",
+    "focus": "Проработка и валидация ФТ на настраиваемый текст согласия."
+  },
+  {
+    "run_id": "RUN-0037",
+    "source_file": "838-chat-export-1787302378596.json",
+    "sha256": "40f49ef7b3d0687e70056ab64df6a355e6885863dd43e19fa589fbdc068b2a0e",
+    "size_bytes": 2578912,
+    "url": "https://github.com/user-attachments/files/31336076/838-chat-export-1787302378596.json",
+    "process": "task-838-preset-call-block-status",
+    "theme": "Новый статус пресета блокировки звонков",
+    "focus": "Разбор постановки и ФТ на новый статус пресета; в диалоге переданы объёмные документы-приложения."
+  },
+  {
+    "run_id": "RUN-0038",
+    "source_file": "854-chat-export-1787302403660.json",
+    "sha256": "3b1b1b742cf86e31f3024cddf85b2d9441e2ce5e7d494e78de3b43b02bed694a",
+    "size_bytes": 306644,
+    "url": "https://github.com/user-attachments/files/31336081/854-chat-export-1787302403660.json",
+    "process": "task-854-mtalker-conference-participants-section",
+    "theme": "Участники конференции в Mango Talker — раздел ФТ",
+    "focus": "Ранняя сессия по задаче 854: раздел ФТ по участникам конференции."
+  },
+  {
+    "run_id": "RUN-0039",
+    "source_file": "854-chat-export-1787302334691.json",
+    "sha256": "678bb9063d28e5ad03508b4d68e67b236f18ae394a8d26c3dae1d8440f927506",
+    "size_bytes": 455553,
+    "url": "https://github.com/user-attachments/files/31336087/854-chat-export-1787302334691.json",
+    "process": "task-854-mtalker-conference-participants-fr",
+    "theme": "Участники конференции в Mango Talker — ФТ",
+    "focus": "Поздняя сессия по задаче 854: доработка ФТ по участникам конференции."
+  },
+  {
+    "run_id": "RUN-0040",
+    "source_file": "872-chat-export-1787302366667.json",
+    "sha256": "dd69b62776ee6a6178d77aa71cfcb9bb2afb0dc7ea09ff4ece5aaabd6c488ef4",
+    "size_bytes": 2229079,
+    "url": "https://github.com/user-attachments/files/31336075/872-chat-export-1787302366667.json",
+    "process": "task-872-proactive-chat-retrigger",
+    "theme": "Повторный запуск проактивного чата",
+    "focus": "Длинная проработка правил повторного срабатывания проактивного приглашения в чат."
+  },
+  {
+    "run_id": "RUN-0041",
+    "source_file": "890-chat-export-1787302270135.json",
+    "sha256": "22a338948e032c9c9018124461d638d81bc87098df03d86733d3dca0150f806f",
+    "size_bytes": 1848364,
+    "url": "https://github.com/user-attachments/files/31336074/890-chat-export-1787302270135.json",
+    "process": "task-890-bitrix24-call-routing",
+    "theme": "Маршрутизация звонков в связке с Битрикс24",
+    "focus": "Проработка ФТ на маршрутизацию звонков по данным Битрикс24; в диалог переданы материалы интеграции."
+  },
+  {
+    "run_id": "RUN-0042",
+    "source_file": "892-chat-export-1787302153813.json",
+    "sha256": "0d780de8ec68739974fbd258c7b992efe14a73d2a91e1aff2a7464ac7768cb96",
+    "size_bytes": 922832,
+    "url": "https://github.com/user-attachments/files/31336080/892-chat-export-1787302153813.json",
+    "process": "task-892-knowledge-base-page-restore",
+    "theme": "Восстановление страниц базы знаний",
+    "focus": "Разбор сценариев восстановления удалённых страниц базы знаний (Wiki.js/Git) и подготовка требований."
+  },
+  {
+    "run_id": "RUN-0043",
+    "source_file": "908-chat-export-1787302322682.json",
+    "sha256": "cb4b7c284bfb187b41c3e7dc6a896e2d534f2d24f72175024f705e6461ac5121",
+    "size_bytes": 313668,
+    "url": "https://github.com/user-attachments/files/31336090/908-chat-export-1787302322682.json",
+    "process": "task-908-open-url-on-call-answer",
+    "theme": "Открытие URL при ответе на звонок",
+    "focus": "Проработка ФТ на открытие внешней ссылки в момент ответа на звонок."
+  },
+  {
+    "run_id": "RUN-0044",
+    "source_file": "908_2-chat-export-1787302303728.json",
+    "sha256": "c05adc89d622658ce3e122fe567c6a6f045c628fe6a8d35b344b8bb465697e04",
+    "size_bytes": 162853,
+    "url": "https://github.com/user-attachments/files/31336072/908_2-chat-export-1787302303728.json",
+    "process": "task-908-open-url-on-call-answer-validation",
+    "theme": "Открытие URL при ответе на звонок — валидация",
+    "focus": "Короткая сессия валидации ФТ по задаче 908."
+  },
+  {
+    "run_id": "RUN-0045",
+    "source_file": "915-chat-export-1787302233588.json",
+    "sha256": "c8751e6b4741e488e81489321038de6dd23b29e119c08ed7f8a356166c720228",
+    "size_bytes": 418450,
+    "url": "https://github.com/user-attachments/files/31336083/915-chat-export-1787302233588.json",
+    "process": "task-915-call-connection-sound-signal",
+    "theme": "Звуковой сигнал соединения",
+    "focus": "Проработка требований к звуковому уведомлению при соединении."
+  },
+  {
+    "run_id": "RUN-0046",
+    "source_file": "918-chat-export-1787302206030.json",
+    "sha256": "8160af678d10cb3be02ee49f0e191fb222b4d87eaa7ac4b37739d91d7963e0c4",
+    "size_bytes": 1586933,
+    "url": "https://github.com/user-attachments/files/31336077/918-chat-export-1787302206030.json",
+    "process": "task-918-mandatory-call-topics",
+    "theme": "Обязательные теги тематик звонка",
+    "focus": "Длинная проработка правил обязательного проставления тематик и их выгрузки в отчёты."
+  },
+  {
+    "run_id": "RUN-0047",
+    "source_file": "920-chat-export-1787302244983.json",
+    "sha256": "b43cb033b1421e7b64d398175f7787fa8133b0ee156cc73c672e5aae1ff9aea8",
+    "size_bytes": 210115,
+    "url": "https://github.com/user-attachments/files/31336071/920-chat-export-1787302244983.json",
+    "process": "task-920-meeting-transcript-analysis",
+    "theme": "Анализ расшифровки встречи",
+    "focus": "Короткий прогон анализа расшифровки встречи по переданному документу."
+  },
+  {
+    "run_id": "RUN-0048",
+    "source_file": "930-chat-export-1787301829163.json",
+    "sha256": "55bd03ec6980cef1fba8fa7770c6a549297247b83e5a5386b22eb85af435718d",
+    "size_bytes": 751227,
+    "url": "https://github.com/user-attachments/files/31336085/930-chat-export-1787301829163.json",
+    "process": "task-930-amocrm-comment-and-tag-fields",
+    "theme": "Два поля комментария и тегов в amoCRM",
+    "focus": "Проработка ФТ на раздельные поля комментария и тегов при записи звонка в amoCRM."
+  },
+  {
+    "run_id": "RUN-0049",
+    "source_file": "935-chat-export-1787302221867.json",
+    "sha256": "c126129dd49ae949ae6a73da3dbcff8de800917d65250d389facd8c14c00777f",
+    "size_bytes": 519948,
+    "url": "https://github.com/user-attachments/files/31336084/935-chat-export-1787302221867.json",
+    "process": "task-935-speech-analytics-api-parameters",
+    "theme": "Сопоставление параметров API речевой аналитики",
+    "focus": "Сверка параметров API речевой аналитики с описанием и подготовка требований."
+  },
+  {
+    "run_id": "RUN-0050",
+    "source_file": "942-chat-export-1787302178299.json",
+    "sha256": "8a4bc8506daf2db987117118324a0b895f6a78089bfe10df6652ea28c90725ae",
+    "size_bytes": 918795,
+    "url": "https://github.com/user-attachments/files/31336079/942-chat-export-1787302178299.json",
+    "process": "task-942-email-format-painter",
+    "theme": "Формат по образцу в редакторе письма",
+    "focus": "Проработка ФТ на инструмент «формат по образцу» в почтовом редакторе."
+  },
+  {
+    "run_id": "RUN-0051",
+    "source_file": "960-chat-export-1787301855482.json",
+    "sha256": "78e27b0641c25f59ba8bf6b963dbff948d034786cf259594374ba023dff46b92",
+    "size_bytes": 1493530,
+    "url": "https://github.com/user-attachments/files/31336091/960-chat-export-1787301855482.json",
+    "process": "task-960-call-records-multiselect-filter",
+    "theme": "Мультивыбор в фильтре записей звонков",
+    "focus": "Проработка ФТ на множественный выбор номеров и CRM-сущностей в фильтре записей разговоров."
+  },
+  {
+    "run_id": "RUN-0052",
+    "source_file": "964-chat-export-1787302194872.json",
+    "sha256": "19da73498a54cf872d36e186bbedf08366434c8d443316e34b9ad3c55505f904",
+    "size_bytes": 1247917,
+    "url": "https://github.com/user-attachments/files/31336082/964-chat-export-1787302194872.json",
+    "process": "task-964-ai-robot-on-line",
+    "theme": "AI-робот на линии",
+    "focus": "Консультационный прогон по архитектуре AI-робота (RAG/MCP) и применимости к задаче линии поддержки."
+  },
+  {
+    "run_id": "RUN-0053",
+    "source_file": "977-chat-export-1787301867394.json",
+    "sha256": "a359530f43551f3bd80227d1310dc6f14a22c2767c08422f086d6eb7b4f0d820",
+    "size_bytes": 2523963,
+    "url": "https://github.com/user-attachments/files/31336078/977-chat-export-1787301867394.json",
+    "process": "task-977-bitrix24-call-attribution",
+    "theme": "Привязка звонков к сделкам и чек-листам Битрикс24",
+    "focus": "Длинная проработка ФТ на привязку звонков к сущностям Битрикс24 и чек-листам."
+  },
+  {
+    "run_id": "RUN-0054",
+    "source_file": "980-chat-export-1787301841993.json",
+    "sha256": "fd1d6d7b8c1cb6f479de61ccc0058ea1f80a45483fdd9ef836ccd58869653ee4",
+    "size_bytes": 196619,
+    "url": "https://github.com/user-attachments/files/31336089/980-chat-export-1787301841993.json",
+    "process": "task-980-number-replacement-questions",
+    "theme": "Подмена номера — уточняющие вопросы",
+    "focus": "Короткий прогон элицитации: формулирование уточняющих вопросов по задаче подмены номера."
+  }
+]
