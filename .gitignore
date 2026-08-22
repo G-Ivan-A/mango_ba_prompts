@@ -14,3 +14,4 @@ kb/sources/**/*.pdf
 # временные артефакты конвейера извлечения
 kb/sources/**/_diagram.png
 __pycache__/
+.validate-cache/

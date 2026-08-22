@@ -26,13 +26,14 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from validate_issue_123_runs_contract import (  # noqa: E402
-    EXPECTED_RUNS,
     ROOT,
     check_run_boundaries,
     check_run_type,
+    discover_runs,
     effective_run_type,
     parse_simple_yaml,
     parse_yaml_lists,
+    registry_rows,
 )
 
 RUN_PREFIX = "runs/2026/RUN-9999"
@@ -102,53 +103,49 @@ class BoundariesTest(unittest.TestCase):
 
 
 class ClassificationTest(unittest.TestCase):
-    """Run type follows the goal stated in the issue, not the artifacts produced.
+    """Тип прогона следует цели, заявленной в задаче, а не составу артефактов.
 
-    Criterion agreed in the review of PR #294: «зафиксировать прогон / собрать
+    Критерий согласован в ревью PR #294: «зафиксировать прогон / собрать
     эмпирические данные» → ``statistics``; «выполнить процесс / получить
     артефакт» → ``execution``.
+
+    Согласованная классификация больше не дублируется в коде (issue #299): её
+    держит реестр ``runs/README.md``, а тест проверяет, что реестр и
+    ``metadata.yaml`` каждого обнаруженного прогона говорят одно и то же.
+    Раньше здесь был словарь ``EXPECTED_RUNS``, требовавший правки в каждом PR
+    с новым прогоном.
     """
 
-    #: run_id -> run_type, justified in
-    #: docs/analysis/2026-08-21-runs-type-gap-analysis.md (Ф-5).
-    EXPECTED_CLASSIFICATION = {
-        "RUN-0001": "execution",
-        "RUN-0002": "execution",
-        "RUN-0003": "execution",
-        "RUN-0004": "statistics",
-        "RUN-0005": "statistics",
-        "RUN-0006": "execution",
-        "RUN-0007": "execution",
-        "RUN-0008": "statistics",
-        "RUN-0009": "statistics",
-        "RUN-0010": "statistics",
-        "RUN-0011": "execution",
-        "RUN-0012": "execution",
-        "RUN-0013": "statistics",
-        "RUN-0014": "statistics",
-        "RUN-0017": "statistics",
-        "RUN-0018": "statistics",
-        "RUN-0020": "statistics",
-        "RUN-0021": "statistics",
-        "RUN-0022": "statistics",
-        "RUN-0023": "statistics",
-        "RUN-0024": "statistics",
-        "RUN-0025": "statistics",
-        "RUN-0027": "statistics",
-    }
+    def test_every_run_declares_a_known_type(self) -> None:
+        runs = discover_runs()
+        self.assertTrue(runs, "прогоны не обнаружены")
+        for year, run_id in runs:
+            metadata = parse_simple_yaml(ROOT / "runs" / year / run_id / "metadata.yaml")
+            self.assertEqual(check_run_type(run_id, metadata), [], run_id)
 
-    def test_metadata_matches_agreed_classification(self) -> None:
-        for run_id, expected in self.EXPECTED_CLASSIFICATION.items():
-            spec = EXPECTED_RUNS[run_id]
-            path = ROOT / "runs" / str(spec["year"]) / run_id / "metadata.yaml"
-            metadata = parse_simple_yaml(path)
-            self.assertEqual(effective_run_type(metadata), expected, run_id)
+    def test_registry_and_metadata_agree(self) -> None:
+        rows = registry_rows()
+        for year, run_id in discover_runs():
+            metadata = parse_simple_yaml(ROOT / "runs" / year / run_id / "metadata.yaml")
+            self.assertIn(run_id, rows, f"{run_id}: нет строки в runs/README.md")
+            self.assertIn(f"`{effective_run_type(metadata)}`", rows[run_id], run_id)
 
-    def test_validator_registry_matches_agreed_classification(self) -> None:
-        self.assertEqual(
-            {run_id: spec["run_type"] for run_id, spec in EXPECTED_RUNS.items()},
-            self.EXPECTED_CLASSIFICATION,
-        )
+
+class DiscoveryTest(unittest.TestCase):
+    """Обнаружение прогонов на диске — замена хардкодного реестра."""
+
+    def test_discovered_runs_match_directory_listing(self) -> None:
+        discovered = {run_id for _, run_id in discover_runs()}
+        on_disk = {
+            path.name
+            for path in (ROOT / "runs").glob("*/RUN-*")
+            if path.is_dir()
+        }
+        self.assertEqual(discovered, on_disk)
+
+    def test_run_ids_are_unique_across_years(self) -> None:
+        run_ids = [run_id for _, run_id in discover_runs()]
+        self.assertEqual(len(run_ids), len(set(run_ids)))
 
 
 if __name__ == "__main__":
