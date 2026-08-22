@@ -66,6 +66,11 @@ SH_PATTERNS = ("validate-*.sh",)
 
 ABSENT = "\0absent"
 
+#: Имена, невидимые для проверки зависимостей: они меняются от самого запуска
+#: валидаторов, и учёт их в перечне каталога дал бы вечный промах кэша.
+#: Список синхронизирован с scripts/_validator_trace.py.
+IGNORED_NAMES = {".git", ".validate-cache", "__pycache__", "node_modules"}
+
 
 # --------------------------------------------------------------------------
 # Обнаружение валидаторов
@@ -233,7 +238,7 @@ class Hasher:
     def _dir_hash(self, rel: str) -> str:
         target = ROOT if rel == "." else ROOT / rel
         try:
-            names = sorted(os.listdir(target))
+            names = sorted(name for name in os.listdir(target) if name not in IGNORED_NAMES)
         except OSError:
             return ABSENT
         return hashlib.sha256("\n".join(names).encode("utf-8")).hexdigest()

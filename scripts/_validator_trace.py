@@ -40,8 +40,8 @@ _ROOT_STR = str(ROOT)
 #: Волатильные каталоги, которые не являются зависимостями: их содержимое
 #: меняется от самого запуска валидаторов (кэш раннера, __pycache__) и учёт
 #: привёл бы к вечному промаху кэша.
-IGNORED_PREFIXES = (".git/", ".validate-cache/", "node_modules/")
-IGNORED_PARTS = ("__pycache__",)
+#: Список синхронизирован с scripts/validate_all.py (IGNORED_NAMES).
+IGNORED_NAMES = {".git", ".validate-cache", "node_modules", "__pycache__"}
 
 FILES: set[str] = set()
 STATS: set[str] = set()
@@ -98,7 +98,7 @@ def _compute_rel(path: str) -> str | None:
     if not absolute.startswith(prefix):
         return None  # вне репозитория (stdlib, /tmp) — не зависимость
     rel = absolute[len(prefix):].replace(os.sep, "/")
-    if rel.startswith(IGNORED_PREFIXES) or any(part in IGNORED_PARTS for part in rel.split("/")):
+    if any(part in IGNORED_NAMES for part in rel.split("/")):
         return None
     return rel
 
