@@ -29,3 +29,17 @@ jobs:
         run: make validate-file-naming
       - name: Validate onboarding protocol navigation (issue #267)
         run: make validate-onboarding
+
+  validate-all:
+    name: All validators (full level)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      # Единая точка входа (issue #299): раннер сам обнаруживает валидаторы по
+      # маске, поэтому новый валидатор попадает в CI без правки workflow.
+      # `--full` игнорирует кэш: в CI дерево всегда холодное.
+      - name: Run every discovered validator
+        run: make validate-full

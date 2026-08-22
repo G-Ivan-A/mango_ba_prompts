@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.6
-updated: 2026-08-21
+version: 0.7
+updated: 2026-08-22
 temperature: 0.1
 ---
 
@@ -12,6 +12,46 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #299 оптимизация валидаторов для локального выполнения
+
+- Добавлен общий раннер [`scripts/validate_all.py`](scripts/validate_all.py):
+  обнаруживает все валидаторы по маске (`scripts/validate_issue_*.py`,
+  `scripts/test_*.py`, `tools/validate-*.sh`) — реестра больше нет, новый
+  валидатор подхватывается локально и в CI без правки списков.
+- **Два уровня проверки:** `make validate-fast` (инкрементально, 0.4 с без
+  правок) и `make validate-full` (весь набор без кэша, как в CI). Добавлены
+  `make validate-list` и `make validate-cache-clear`.
+- **Инкрементальность без деклараций:** валидатор выполняется под
+  трассировщиком [`scripts/_validator_trace.py`](scripts/_validator_trace.py),
+  который записывает фактически прочитанные файлы, проверенные пути и
+  перечисленные каталоги; кэш ключуется по sha256 содержимого (устойчив к
+  `touch` и `git checkout`), кэшируются только успехи.
+- **Устранён источник конфликтов слияния:** хардкодный реестр `EXPECTED_RUNS`
+  (~450 строк) в `scripts/validate_issue_123_runs_contract.py` и
+  `EXPECTED_CLASSIFICATION` в `scripts/test_runs_contract_run_type.py` заменены
+  на обнаружение прогонов на диске и сверку `metadata.yaml` с реестром
+  `runs/README.md`. PR с новым прогоном больше не трогает файлы валидаторов.
+- **Исправлена гонка при параллельном прогоне:**
+  `scripts/validate_issue_267_onboarding_v15.py` создавал пробный файл в
+  рабочем дереве, из-за чего одновременно работавший `validate-file-naming.sh`
+  падал; проба перенесена в изолированную песочницу.
+- **Ускорена проверка ссылок** `scripts/validate_issue_265_hub_sync.py`:
+  2.73 с → 1.45 с (строковая нормализация путей вместо `Path.resolve()`,
+  мемоизация существования цели). Поведение не изменено.
+- Добавлены [`scripts/test_validate_all.py`](scripts/test_validate_all.py)
+  (15 тестов: кэш, порча кэша, параллельные раннеры) и стенд
+  [`experiments/bench_validators.py`](experiments/bench_validators.py).
+- Измерено: полная проверка при **997 прогонах — 10.4 с** (цель ≤ 15 с),
+  инкрементальная — 0.4–1.7 с (цель ≤ 1 с выполняется для всего, кроме правки
+  Markdown; ограничение разобрано в анализе).
+- Ни одна проверка не удалена и не ослаблена; прежние цели `make validate`,
+  `make validate-frontmatter`, `make validate-file-naming`,
+  `make validate-onboarding`, `make kb-validate` работают как раньше.
+- Анализ, обоснование выбора подхода и отчёт по граничным гипотезам:
+  [`docs/analysis/2026-08-22-validator-optimization.md`](docs/analysis/2026-08-22-validator-optimization.md).
+  Документация: [`tools/README.md`](tools/README.md),
+  [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ### Added — Issue #280 реальный прогон 997 (RUN-0025) как эмпирические данные
 
