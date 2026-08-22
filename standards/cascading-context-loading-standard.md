@@ -8,7 +8,7 @@ scope: context-loading
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
 related_artifacts:
-  - "AI_SESSION_HANDOVER_PROMPT.executable.md"
+  - "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md"
   - "ai-rules/agent-onboarding-protocol.md"
   - "prompts/README.executable.md"
   - "docs/ba-processes/00-index.executable.md"

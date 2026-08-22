@@ -21,7 +21,6 @@ is_exception() {
     CODE_OF_CONDUCT.md | \
     LICENSE | \
     LICENSE.md | \
-    AI_GOVERNANCE.md | \
     *-registry.md | \
     *-index.md | \
     *-Index.md)

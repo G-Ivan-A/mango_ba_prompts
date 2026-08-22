@@ -1,0 +1,43 @@
+run_id: RUN-0036
+process: task-817-personal-data-consent-text
+version: "0.1"
+date: 2026-08-22
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3-235b-a22b, qwen3-max-preview"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+  - https://github.com/user-attachments/files/31336069/817-chat-export-1787302455834.json
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 21
+  iterations: 21
+  turns: 42
+  sessions: 2
+  tokens_input: 464506
+  tokens_output: 22877
+  tokens_thinking: 848
+  tokens_dialog_total: 487383
+  token_method: "provider-usage:qwen3-235b-a22b, qwen3-max-preview"
+  duration_active_s: 6840
+  dialog_start_utc: "2025-09-09 07:41:17"
+  dialog_end_utc: "2025-09-09 13:29:05"
+  calendar_days: 0.2
+  attachments_distinct: 0
+  eval: "Прогон зафиксирован ради статистики: приёмка БА в экспорте не выражена, оценка качества артефакта не выставляется. Считываются объём диалога, распределение операций БА и расход токенов."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/309
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_309_fixate_runs.py

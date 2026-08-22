@@ -35,12 +35,12 @@ def main() -> int:
     errors: list[str] = []
 
     for path in (
-        "AI_SESSION_HANDOVER_PROMPT.md",
-        "ai-rules/agent-onboarding-protocol_old.md",
+        "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+        ".archive/ai-rules/agent-onboarding-protocol_old.md",
         "pr-ops/session-digests.md",
         "pr-ops/artifact-map.md",
         ".hub-profile.json",
-        "AI_GOVERNANCE.md",
+        "ai-governance/ai-governance.md",
         "CONTRIBUTING.md",
         "docs/hub-research-dependencies.md",
         "docs/task-for-konard-template.md",
@@ -57,7 +57,7 @@ def main() -> int:
 
     if not errors:
         errors += require(
-            "AI_SESSION_HANDOVER_PROMPT.md",
+            "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
             "version: 0.5",
             SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
@@ -66,17 +66,17 @@ def main() -> int:
             "Пользователь",
             "Исполнитель",
         )
-        errors += reject("AI_SESSION_HANDOVER_PROMPT.md", OLD_SHA, "Иосполнитель")
+        errors += reject("ai-rules/AI_SESSION_HANDOVER_PROMPT.md", OLD_SHA, "Иосполнитель")
 
         errors += require(
-            "ai-rules/agent-onboarding-protocol_old.md",
+            ".archive/ai-rules/agent-onboarding-protocol_old.md",
             SESSION_HANDOVER_SHA,
             "Периодическая суммаризация сессии",
             "pr-ops/session-digests.md",
             "Пользователь",
             "Исполнитель",
         )
-        errors += reject("ai-rules/agent-onboarding-protocol_old.md", OLD_SHA, "Иосполнитель")
+        errors += reject(".archive/ai-rules/agent-onboarding-protocol_old.md", OLD_SHA, "Иосполнитель")
 
         errors += require(
             "pr-ops/session-digests.md",
@@ -124,14 +124,14 @@ def main() -> int:
             errors.append("research/external-knowledge/external-sources-registry.md: Base Registry must stay reference-only in mango")
 
         errors += require(
-            "AI_GOVERNANCE.md",
+            "ai-governance/ai-governance.md",
             HUB_SHA,
             "Пользователь",
             "молчание = согласие",
             "комментарий + ручной перезапуск",
             "`research/` Хаба, а не в команду",
         )
-        errors += reject("AI_GOVERNANCE.md", "Founder & PO", "Фаундер", "Иосполнитель")
+        errors += reject("ai-governance/ai-governance.md", "Founder & PO", "Фаундер", "Иосполнитель")
 
         errors += require(
             "CONTRIBUTING.md",
@@ -164,6 +164,10 @@ def main() -> int:
         for hub_pr in (224, 226, 229, 230):
             if hub_pr not in hub_prs:
                 errors.append(f".hub-profile.json: hub_prs missing {hub_pr}")
+        # Журнал синка фиксирует пути на момент события: здесь проверяется
+        # содержание записи, а не текущее размещение файлов. Актуальные пути
+        # перенесённых артефактов — в .hub-profile.json > path_migrations
+        # (issue #291).
         synced_paths = set(last_sync.get("synced_paths", []))
         for path in (
             "AI_SESSION_HANDOVER_PROMPT.md",

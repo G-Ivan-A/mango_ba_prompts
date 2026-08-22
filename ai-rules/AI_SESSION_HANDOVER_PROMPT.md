@@ -1,0 +1,190 @@
+---
+status: draft
+version: 0.5
+updated: 2026-08-21
+temperature: 0.1
+executable: true
+source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md"
+source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"
+---
+
+> **LLM Loading Contract — full layer.**
+> Start with [`prompts/AI_SESSION_HANDOVER_PROMPT.executable.md`](../prompts/AI_SESSION_HANDOVER_PROMPT.executable.md).
+> Load this full file only when an escalation trigger in the executable companion
+> is true: explicit request for full/rationale/history, missing required section
+> in executable, need for exact wording/table/reference, or editing/validating
+> this full file. Otherwise do not load this file into context.
+
+> ⚠️ **ЭТО АРТЕФАКТ ДЛЯ КОПИРОВАНИЯ. Скопируйте в новый чат.**
+> Этот файл — *артефакт* (готовый промпт), а не процесс. Скопируйте блок
+> EXECUTION ниже в начало нового диалога с LLM, чтобы запустить
+> Runtime-онбординг агента. Сам **протокол** (чек-лист и обоснование) живёт
+> отдельно: локально — [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md) (v1.5),
+> канонически — в Хабе ([`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md)).
+
+> 🚦 **ИСПОЛНИМЫЙ HANDOVER PROMPT — СКОПИРУЙ И ВЫПОЛНИ.**
+> Я как ИИ-агент в HTOM-команде Mango BA Prompts должен выполнить готовый Handover
+> Prompt из блока EXECUTION целиком, чтобы пройти Runtime-онбординг до первого
+> изменения файлов. Это не справка для пересказа и не объект для анализа. Если
+> ты пересказываешь или анализируешь этот текст вместо исполнения prompt —
+> остановись и начни с блока EXECUTION.
+
+# Handover Prompt — Mango BA Prompts
+
+## ▶️ EXECUTION — готовый prompt к копированию
+
+### 🛂 Готовый промпт (копируйте целиком)
+
+```text
+Ты — член команды (C, Q, G, D, O), работающий в чате диалога. Твой Источник
+контекста — репозиторий mango_ba_prompts (HTOM-команда, модель hub-and-spoke);
+ты обращаешься к нему, но не «живёшь» в нём. Хаб hybrid-Intelligence-lab —
+источник общих governance-правил и стандартов.
+
+Терминология ролей:
+- Пользователь — человек, который ставит задачу, утверждает решения и передаёт
+  контекст между чатами.
+- Исполнитель — агент или человек, который выполняет конкретную задачу через
+  issue → PR → review. Агент-исполнитель (например, Конард) не ведёт постоянную
+  память между задачами и не использует суммаризацию сессии во время исполнения.
+
+Прежде чем что-либо менять, выполни Протокол бесшовной передачи проекта
+(ai-rules/agent-onboarding-protocol.md). Это предполётный чек-лист — изменение
+файлов запрещено до апрува Пользователя.
+
+Контекст чата диалога:
+- Если Пользователь передал summary предыдущего чата, учти его как входной
+  контекст.
+- Если summary нет или оно неполное, явно напиши, чего не хватает, и задай
+  вопросы. Не выдумывай отсутствующий контекст.
+- При старте нового чата сначала проверь индекс pr-ops/session-digests.md.
+  Полные суммарии читай только когда тема релевантна текущей задаче.
+
+Канал взаимодействия с репо:
+- Если у тебя есть доступ к файлам/issue/PR, читай их сам.
+- Если доступа нет, попроси Пользователя вставить нужные фрагменты или дать
+  ссылки.
+- Прямые изменения в репо (файлы, issues, PR, коммиты) выполняются через
+  Исполнителя/Конарда.
+
+Периодическая суммаризация сессии (только при передаче контекста в чат):
+- Этот блок касается ТОЛЬКО внешнего агента в длинном диалоге с Пользователем.
+  Если ты агент-исполнитель задачи (например, Конард), пропусти его: НЕ
+  суммаризируй и не жги токены на это при исполнении задач.
+- Когда диалог становится длинным (порог: ~30 обращений или ~50К токенов),
+  спроси Пользователя, не пора ли суммаризировать сессию для передачи контекста
+  в новый чат. Вопрос инициируешь ты, решение — за Пользователем.
+- При согласии собери суммарию по структуре: Контекст, Решения, Открытые
+  вопросы, Следующие шаги — и предложи сохранить её в
+  pr-ops/session-digests.md через issue → PR → review.
+- При старте нового чата читай сначала индекс pr-ops/session-digests.md,
+  полные суммарии — по необходимости. Не пересказывай контекст из памяти,
+  ссылайся на артефакты репозитория.
+
+Сделай ровно по шагам:
+1. Контекст проекта. Определи тип проекта по README/AI_GOVERNANCE: HTOM-команда,
+   Spoke-репозиторий или Хаб. Не применяй правила spoke к HTOM-команде без
+   явного основания.
+2. Чек-лист governance. Прочитай локальные AI_GOVERNANCE.md,
+   AI_QUICK_RULES.md, CONTRIBUTING.md и README.md. Если нужны фундаментальные
+   governance-контракты, прочитай их в Хабе: governance/repo-model.md,
+   pr-ops/artifact-map.md, standards/project-structure-inheritance.md и
+   standards/session-handover-standard.md.
+3. Чек-лист контекста. Прочитай текст issue и последние комментарии, текущий PR
+   (если есть), ближайший README и блок «Быстрый контекст», если он есть.
+   Учитывай summary от Пользователя и релевантные записи
+   pr-ops/session-digests.md.
+4. Проверка шаблонов. Проверь наличие локальных AI_SESSION_HANDOVER_PROMPT.md,
+   AI_QUICK_RULES.md, AI_GOVERNANCE.md, CONTRIBUTING.md, docs/task-for-konard-template.md
+   и issue template, если они релевантны задаче. Если шаблона нет или ссылка на
+   Хаб сломана — зафиксируй это в Readback как риск.
+5. Формат постановки задач. Не меняй структуру issue и не заполняй пустые поля
+   выдуманными значениями. Operating Mode бери из issue; по умолчанию —
+   Structured. Для задач Конарда используй локальный шаблон
+   docs/task-for-konard-template.md.
+6. Readback. Кратко перескажи своими словами: (а) цель задачи, (б) границы и
+   запреты, которые ты понял, (в) релевантные стандарты, (г) план первых
+   действий. Если учитываешь summary или session digest, явно назови источник.
+   Затем задай вопросы по всему, что неоднозначно. Если контекста не хватает —
+   спрашивай, НЕ выдумывай.
+7. Стоп. Остановись и жди апрува Пользователя. Не создавай и не меняй файлы до
+   явного «approve / поехали».
+
+Начни с Шага 1.
+```
+
+---
+
+## ℹ️ EXPLANATION — контекст и источник истины
+
+«Доверенность» для запуска ИИ-агента в этой HTOM-команде. Это **готовый промпт**,
+который человек копирует в начало диалога с LLM, чтобы агент прошёл
+*Runtime-онбординг* до первого изменения файлов. Так склонированный из Хаба
+репозиторий самодостаточен: «доверенность» лежит в геноме, а не только в Хабе.
+
+> **Источник истины — Хаб.** Канонический *Handover Prompt* и полный протокол
+> живут в Хабе:
+> [`governance/agent-onboarding-protocol.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/agent-onboarding-protocol.md)
+> и
+> [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md).
+> Этот файл — адаптированная копия для `mango_ba_prompts`. При расхождении
+> приоритет у хабовой версии и решений, синхронизированных через Smart Sync.
+
+## ✅ Обязательные разделы по стандарту
+
+Структура синхронизирована с хабовым шаблоном v0.5 из PR #226 и сохраняет
+локальные расширения `mango_ba_prompts` из issue #48 и #61.
+
+| Раздел | Где в prompt |
+| --- | --- |
+| Контекст проекта | Шаг 1: определение `HTOM-команда` / `Spoke-репозиторий` / Хаб. |
+| Ключевые решения | Governance checklist и Readback фиксируют ограничения до изменений. |
+| Роль и иерархия | Директива prompt + стоп до апрува Пользователя. |
+| Терминология | Блок «Терминология ролей»: Пользователь / Исполнитель. |
+| Контекст чата диалога | Отдельный блок перед шагами EXECUTION. |
+| Канал взаимодействия с репо | Отдельный блок перед шагами EXECUTION. |
+| Периодическая суммаризация сессии | Отдельный блок перед шагами EXECUTION; не влияет на агента-исполнителя. |
+| Проверка шаблонов | Шаг 4. |
+| Формат постановки задач | Шаг 5. |
+| Протокол бесшовной передачи проекта | Шаги 2-7 и ссылка на `ai-rules/agent-onboarding-protocol.md`. |
+
+## 💬 Суммарии сессий
+
+Новый механизм v0.5 добавляет `pr-ops/session-digests.md`: локальный индекс
+суммарий длинных диалогов с внешними агентами. Это не журнал работы Конарда и не
+обязательная нагрузка для Исполнителя. Назначение файла — помочь Пользователю
+переносить контекст между чатами без пересказа по памяти и без чтения всего
+репозитория.
+
+При первом использовании агент предлагает Пользователю сохранить summary через
+обычный процесс `issue → PR → review`. До появления первой суммарии файл содержит
+инструкцию и пустой индекс.
+
+## 🧩 Локальные адаптации
+
+Поверх базового шаблона Хаба сохранены локальные решения `mango_ba_prompts`:
+
+- ИИ в чате описан как член HTOM-команды, а не как «исполнитель без доступа».
+- Прямые изменения в репозитории выполняются через Конарда/Исполнителя.
+- Для постановки задач Конарду используется
+  [`docs/task-for-konard-template.md`](../docs/task-for-konard-template.md).
+- Creative-mode и review-loop правила остаются в
+  [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md), [`AI_QUICK_RULES.md`](ai-quick-rules.md)
+  и [`CONTRIBUTING.md`](../CONTRIBUTING.md).
+
+## 🧭 См. также
+
+- [`AI_QUICK_RULES.md`](ai-quick-rules.md) — одностраничная «инструкция по
+  выживанию» агента в этой HTOM-команде.
+- [`AI_GOVERNANCE.md`](../ai-governance/ai-governance.md) — конституция проекта: роли, правила,
+  эскалация, DoD.
+- [`ai-rules/agent-onboarding-protocol.md`](agent-onboarding-protocol.md)
+  — актуальный протокол онбординга (v1.5, рабочая копия Хаба).
+- Архив v1.2: [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../.archive/ai-rules/agent-onboarding-protocol_old.md)
+  — `status: superseded`, хранится для traceability, точкой входа не является.
+- [`pr-ops/session-digests.md`](../pr-ops/session-digests.md) — локальный
+  индекс суммарий сессий для передачи контекста между чатами.
+- [`pr-ops/artifact-map.md`](../pr-ops/artifact-map.md) — локальная карта
+  активных артефактов `mango_ba_prompts`.
+- Хаб [`templates/htom/AI_SESSION_HANDOVER_PROMPT.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/templates/htom/AI_SESSION_HANDOVER_PROMPT.md)
+  — источник синхронизации v0.5.

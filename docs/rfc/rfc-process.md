@@ -143,7 +143,7 @@ proposed → in-review → accepted  → implemented
   детализация для промптов.
 - **Синхронизация**: [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md) —
   откуда берутся RFC-SYNC-*.
-- **Governance**: [`AI_GOVERNANCE.md`](../../AI_GOVERNANCE.md) — финальные решения за
+- **Governance**: [`AI_GOVERNANCE.md`](../../ai-governance/ai-governance.md) — финальные решения за
   человеком; Creative Override оформляется как RFC/ADR.
 
 ## 8. Открытые вопросы
