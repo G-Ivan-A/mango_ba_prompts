@@ -1,0 +1,59 @@
+run_id: RUN-0019
+process: bcreq-1064-browser-softphone-in-mis
+version: "0.1"
+date: 2026-07-15
+author: "BA-IH + LLM"
+model: "qwen3.7-plus"
+status: works-with-edits
+# Тип определён по формулировке цели issue #272 («зафиксировать прогон»,
+# «собрать эмпирические данные», «прогоны фиксируются для сбора статистики»),
+# а не по составу outputs/ — см. standards/runs-contract-standard.md.
+run_type: statistics
+# Прогон зафиксирован пост-фактум по экспорту рабочего чата «1064».
+# Содержимое НЕ является согласованным шаблоном и НЕ является golden case:
+# часть данных промежуточная, вердикты выставлены для накопления статистики
+# по эффективности промптов, ошибкам и галлюцинациям.
+source_paths:
+  - runs/2026/RUN-0019/outputs/final-artifact.md
+  - runs/2026/RUN-0019/outputs/README.md
+inputs:
+  - inputs/README.md
+  - inputs/chat-export-1064.json
+  - inputs/chat-transcript.md
+outputs:
+  - outputs/README.md
+  - outputs/final-artifact.md
+  - outputs/prompts-chain.md
+  - outputs/episodes.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+feedback:
+  - feedback/README.md
+metrics:
+  episodes: 7
+  # Эпизоды, принятые БА без правок и без возврата на доработку.
+  episodes_accepted_as_is: 2
+  success_rate: 0.29
+  iterations: 17
+  ba_edits: 10
+  quality: 3
+  verdict: works-with-edits
+  # Ниже — фактические значения из logs/metrics.md (поля usage экспорта).
+  output_tokens: 27219
+  reasoning_tokens: 10941
+  input_tokens_max_per_call: 385343
+  input_tokens_sum: 4318518
+  duration_active_minutes: 54
+  duration_calendar_days: 12.8
+  sessions: 5
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/272
+related_artifacts:
+  - prompts/questions-customer-understanding-stepwise.md
+  - standards/runs-contract-standard.md
+  - standards/experiment-log-standard.md
+  - scripts/chat_export_to_transcript.py
+related_runs:
+  - RUN-0011
+  - RUN-0012
