@@ -13,33 +13,33 @@ temperature: 0.1
 
 ## Unreleased
 
-### Added — Issue #281 реальный прогон 58093 (RUN-0029) как эмпирические данные
+### Added — Issue #281 реальный прогон 58093 (RUN-0016) как эмпирические данные
 
-- Добавлен [`runs/2026/RUN-0029/`](runs/2026/RUN-0029/metadata.yaml) —
+- Добавлен [`runs/2026/RUN-0016/`](runs/2026/RUN-0016/metadata.yaml) —
   `run_type: statistics`, `result_type: intermediate`: фиксация реально
   состоявшегося диалога БА с LLM (Proof of Execution) по задаче 58093
   (доработка интеграции amoCRM ↔ MANGO OFFICE: автооткрытие Карточки сделки в
   новой вкладке браузера при входящем звонке).
 - Прогон оформлен как **один комплексный run с разметкой на 19 эпизодов** и
   отдельным вердиктом по каждому:
-  [`outputs/README.md`](runs/2026/RUN-0029/outputs/README.md),
-  [`outputs/steps/`](runs/2026/RUN-0029/outputs/steps).
+  [`outputs/README.md`](runs/2026/RUN-0016/outputs/README.md),
+  [`outputs/steps/`](runs/2026/RUN-0016/outputs/steps).
 - Вердикт прогона — `works-with-edits`, `success_rate = 17/19 ≈ 0.89`.
   Зафиксированы 4 дефекта достоверности (3 дошли до финального текста БА):
   молчаливая подмена наименований UI вопреки «явно указывать», непроверяемые
   ссылки на инструкцию, придуманные ограничения раздела 6, искажение объёма в
   итоговом резюме
-  ([`outputs/quality-findings.md`](runs/2026/RUN-0029/outputs/quality-findings.md)).
+  ([`outputs/quality-findings.md`](runs/2026/RUN-0016/outputs/quality-findings.md)).
 - Использован ad-hoc-промпт (eTOM/ODA), а не промпт библиотеки; раздел 6 выдан
   без обязательного основания ограничений
-  ([`outputs/prompts-chain.md`](runs/2026/RUN-0029/outputs/prompts-chain.md)).
+  ([`outputs/prompts-chain.md`](runs/2026/RUN-0016/outputs/prompts-chain.md)).
 - Транскрипт и метрики по репликам получены детерминированно из приложенного к
   issue #281 экспорта чата скриптом
   [`scripts/chat_export_to_markdown.py`](scripts/chat_export_to_markdown.py);
   метрики по эпизодам — скриптом
   [`experiments/parse_58093_chat_export.py`](experiments/parse_58093_chat_export.py)
   (локальные инструменты воспроизводимости, не входят в CI).
-- Обновлён реестр [`runs/README.md`](runs/README.md): строка RUN-0029 и
+- Обновлён реестр [`runs/README.md`](runs/README.md): строка RUN-0016 и
   раздел «Локальные инструменты воспроизводимости». Файлы валидаторов не
   затронуты — после issue #299 прогоны обнаруживаются на диске.
 

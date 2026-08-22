@@ -28,12 +28,12 @@ related_issues:
 
 ```bash
 python3 scripts/chat_export_to_markdown.py \
-  runs/2026/RUN-0029/inputs/58093-chat-export-1787301612928.json \
-  --transcript runs/2026/RUN-0029/inputs/transcript.md \
-  --metrics runs/2026/RUN-0029/logs/turn-metrics.md
+  runs/2026/RUN-0016/inputs/58093-chat-export-1787301612928.json \
+  --transcript runs/2026/RUN-0016/inputs/transcript.md \
+  --metrics runs/2026/RUN-0016/logs/turn-metrics.md
 
 python3 experiments/parse_58093_chat_export.py \
-  runs/2026/RUN-0029/inputs/58093-chat-export-1787301612928.json
+  runs/2026/RUN-0016/inputs/58093-chat-export-1787301612928.json
 ```
 
 > **Статус скриптов.** `scripts/chat_export_to_markdown.py` и
