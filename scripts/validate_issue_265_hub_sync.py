@@ -24,6 +24,7 @@ C. **Нет hub-относительных путей.** В споке запр�
 from __future__ import annotations
 
 import json
+import os
 import re
 import sys
 from pathlib import Path
@@ -40,6 +41,9 @@ EXTERNAL_RE = re.compile(r"^(https?:|mailto:|tel:|#|data:)")
 
 # Плейсхолдеры-шаблоны: цель содержит метапеременную и не является адресом.
 PLACEHOLDER_RE = re.compile(r"[<>]")
+
+FENCE_RE = re.compile(r"(`{3,}|~{3,})")
+INLINE_CODE_RE = re.compile(r"`[^`]*`")
 
 
 def iter_markdown() -> list[Path]:
@@ -67,19 +71,35 @@ def strip_code(text: str) -> str:
                 in_fence = False
             out.append("")
             continue
-        match = re.match(r"(`{3,}|~{3,})", stripped)
+        match = FENCE_RE.match(stripped)
         if match:
             in_fence = True
             fence = match.group(1)[:3]
             out.append("")
             continue
-        out.append(re.sub(r"`[^`]*`", lambda m: " " * len(m.group(0)), line))
+        out.append(INLINE_CODE_RE.sub(lambda m: " " * len(m.group(0)), line))
     return "\n".join(out)
+
+
+#: Ссылки многократно указывают на одни и те же цели (навигация, оглавления),
+#: поэтому существование пути мемоизируется: без этого проверка 7000+ ссылок
+#: делает столько же системных вызовов (issue #299).
+_EXISTS_CACHE: dict[str, bool] = {}
+
+
+def _exists(path: str) -> bool:
+    cached = _EXISTS_CACHE.get(path)
+    if cached is None:
+        cached = os.path.exists(path)
+        _EXISTS_CACHE[path] = cached
+    return cached
 
 
 def check_links() -> list[str]:
     errors: list[str] = []
     checked = 0
+    root = str(REPO_ROOT)
+    root_prefix = root + os.sep
     for path in iter_markdown():
         rel_file = path.relative_to(REPO_ROOT).as_posix()
         body = strip_code(path.read_text(encoding="utf-8"))
@@ -93,16 +113,16 @@ def check_links() -> list[str]:
                 if not clean:
                     continue
                 checked += 1
-                resolved = (path.parent / clean).resolve()
-                try:
-                    resolved.relative_to(REPO_ROOT)
-                except ValueError:
+                # Строковая нормализация вместо Path.resolve()/relative_to():
+                # на корпусе в 7000+ ссылок разница — секунды (issue #299).
+                resolved = os.path.normpath(os.path.join(str(path.parent), clean))
+                if resolved != root and not resolved.startswith(root_prefix):
                     errors.append(
                         f"{rel_file}:{lineno}: ссылка `{target}` выходит за корень "
                         "репозитория; цель в Хабе адресуется полным URL с SHA"
                     )
                     continue
-                if not resolved.exists():
+                if not _exists(resolved):
                     errors.append(f"{rel_file}:{lineno}: битая ссылка `{target}`")
     print(f"[A/C] проверено относительных ссылок: {checked}")
     return errors
