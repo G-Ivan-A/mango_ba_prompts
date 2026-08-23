@@ -1,0 +1,48 @@
+run_id: RUN-0055
+process: tz-feasibility-assessment-utair-chat-mango-office
+version: "0.1"
+date: 2026-08-23
+author: "BA-IH + LLM (перепрогон и верификация: AI issue solver)"
+model: "qwen3.7-plus (первичный исполнитель) + claude-opus-5 (верификация по БЗ)"
+status: works-with-edits
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/313
+  - https://github.com/user-attachments/files/31348460/1091-chat-export-1787489772264.json
+  - https://github.com/user-attachments/files/31348468/Uta-Chat_MangoOffice.pdf
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/feasibility-assessment.md
+  - outputs/tender-feasibility-brief.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/verification-log.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  verdict: works-with-edits
+  success_rate: 0.8
+  success_rate_basis: "Доля утверждений первичного исполнителя об API Mango Office, подтверждённых по kb/processed/vpbx-api: 40 из 50 проверенных утверждений подтверждены, 10 исправлены (см. logs/verification-log.md)."
+  episodes: 16
+  iterations: 16
+  turns: 32
+  sessions: 4
+  tokens_input: 1229203
+  tokens_output: 53929
+  tokens_thinking: 36695
+  tokens_dialog_total: 1283132
+  token_method: "provider-usage:qwen3.7-plus"
+  duration_active_s: 7020
+  dialog_start_utc: "2026-08-21 07:02:27"
+  dialog_end_utc: "2026-08-21 15:31:49"
+  calendar_days: 0.4
+  attachments_distinct: 2
+  eval: "Прогон доказал, что покрытие требований ТЗ методами публичного API ВАТС Mango Office оценивается по документации без домысливания и что параметры Заказчика (dialog_id и др.) сопоставимы с реальными параметрами API. Прогон не доказал корректность первичного вывода целиком: 10 утверждений исполнителя о семантике параметров и кодов не подтвердились документацией и исправлены."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/313
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - kb/processed/vpbx-api/index.md
