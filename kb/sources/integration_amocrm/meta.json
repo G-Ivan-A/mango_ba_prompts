@@ -4,9 +4,11 @@
   "type": "documentation_set",
   "version": "25.08.2025",
   "language": "ru",
-  "upload_date": "2026-06-20",
+  "upload_date": "2026-08-25",
   "description": "Инструкция по настройке интеграции виртуальной АТС Mango Office с CRM amoCRM. Описывает подключение, настройку синхронизации данных, управление звонками и использование телефонных функций внутри amoCRM.",
-  "platforms": ["Web"],
+  "platforms": [
+    "Web"
+  ],
   "topics": [
     "интеграция",
     "amoCRM",
@@ -20,7 +22,9 @@
       "file_name": "Mango_office_integration_amoCRM.pdf",
       "title": "Интеграция Виртуальной АТС и amoCRM. Инструкция по настройке",
       "type": "integration_guide",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 153,
       "file_size_mb": 8.5,
       "description": "Подробная инструкция по настройке и использованию интеграции между ВАТС Mango Office и amoCRM. Содержит пошаговые руководства, описание параметров и типовые сценарии."
@@ -29,5 +33,11 @@
   "total_files": 1,
   "total_pages": 153,
   "total_size_mb": 8.5,
-  "source_url": null
+  "source_url": null,
+  "source_files": [
+    "Mango_office_integration_amoCRM.pdf"
+  ],
+  "processing_mode": "single",
+  "doc_code": "INTAMO",
+  "output_slug": "integration-amocrm"
 }
