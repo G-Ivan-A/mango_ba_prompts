@@ -58,7 +58,7 @@ related_issues:
 | [`kb/processed/mango-lk-manual/sections/210-avito-rabota.md`](../../../../kb/processed/mango-lk-manual/sections/210-avito-rabota.md) | Паттерн канала «Авито Работа»: подключение через OAuth-авторизацию, обработчики, переключатель «Отклик кандидата — только отклики с сообщениями», автоответы, «Закрывать неактивный диалог через». |
 | [`kb/processed/mango-lk-manual/sections/209-avito.md`](../../../../kb/processed/mango-lk-manual/sections/209-avito.md) | Ограничения канала «Авито»: нельзя инициировать обращение к клиенту; один аккаунт — один виджет. |
 | [`kb/processed/mango-lk-manual/sections/207-klientskoe-prilozhenie.md`](../../../../kb/processed/mango-lk-manual/sections/207-klientskoe-prilozhenie.md) | Канал «Клиентское приложение (по API)»: услуги «API-Коннектор» + «Открытое API», передача файлов, автозавершение диалогов. |
-| [`kb/processed/mango-cc-manual/sections/72-istoriya-obrascheniy.md`](../../../../kb/processed/mango-cc-manual/sections/72-istoriya-obrascheniy.md) | Отчёт «История обращений» и его фильтр по каналу — вход для ФТ-10. |
+| [`kb/processed/mango-cc-manual/sections/26-istoriya-obrascheniy.md`](../../../../kb/processed/mango-cc-manual/sections/26-istoriya-obrascheniy.md) | Отчёт «История обращений» и его фильтр по каналу — вход для ФТ-10. |
 
 ## Воспроизведение
 
