@@ -16,10 +16,10 @@
   "page_count": 46,
   "part_count": 1,
   "processing_mode": "single",
-  "section_count": 8,
-  "section_source": "layout-heuristic",
+  "section_count": 33,
+  "section_source": "typography-heuristic",
   "section_sources": [
-    "layout-heuristic"
+    "typography-heuristic"
   ],
   "sections": [
     {
@@ -38,15 +38,69 @@
         }
       ],
       "title": "Титульная часть",
-      "tokens": 1399
+      "tokens": 1395
     },
     {
       "file": "sections/01-obzor.md",
       "number": "1",
       "order": "01",
-      "pages": "4-5",
+      "pages": "4",
       "pdf_heading": "1 Обзор",
       "pdf_section": "1",
+      "source_refs": [
+        {
+          "global_pages": "4",
+          "pages": "4",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Обзор",
+      "tokens": 73
+    },
+    {
+      "file": "sections/02-naznachenie.md",
+      "number": "1.1",
+      "order": "02",
+      "pages": "4",
+      "pdf_heading": "1.1 Назначение",
+      "pdf_section": "1.1",
+      "source_refs": [
+        {
+          "global_pages": "4",
+          "pages": "4",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Назначение",
+      "tokens": 233
+    },
+    {
+      "file": "sections/03-vazhnye-ogranicheniya.md",
+      "number": "1.2",
+      "order": "03",
+      "pages": "4",
+      "pdf_heading": "1.2 Важные ограничения",
+      "pdf_section": "1.2",
+      "source_refs": [
+        {
+          "global_pages": "4",
+          "pages": "4",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Важные ограничения",
+      "tokens": 140
+    },
+    {
+      "file": "sections/04-kak-nastroit-integraciyu.md",
+      "number": "1.3",
+      "order": "04",
+      "pages": "4-5",
+      "pdf_heading": "1.3 Как настроить интеграцию",
+      "pdf_section": "1.3",
       "source_refs": [
         {
           "global_pages": "4-5",
@@ -55,49 +109,193 @@
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
-      "title": "Обзор",
-      "tokens": 903
+      "title": "Как настроить интеграцию",
+      "tokens": 659
     },
     {
-      "file": "sections/02-nachalo-raboty-s-integraciey.md",
+      "file": "sections/05-nachalo-raboty-s-integraciey.md",
       "number": "2",
-      "order": "02",
-      "pages": "5-17",
+      "order": "05",
+      "pages": "5",
       "pdf_heading": "2 Начало работы с интеграцией",
       "pdf_section": "2",
       "source_refs": [
         {
-          "global_pages": "5-17",
-          "pages": "5-17",
+          "global_pages": "5",
+          "pages": "5",
           "part": 1,
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
       "title": "Начало работы с интеграцией",
-      "tokens": 5337
+      "tokens": 82
     },
     {
-      "file": "sections/03-dopolnitelnye-nastroyki-integracii.md",
+      "file": "sections/06-shag-1-podklyuchenie-virtualnoy-ats-mang.md",
+      "number": "2",
+      "order": "06",
+      "pages": "5",
+      "pdf_heading": "Шаг 1. Подключение Виртуальной АТС MANGO OFFICE",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Шаг 1. Подключение Виртуальной АТС MANGO OFFICE",
+      "tokens": 182
+    },
+    {
+      "file": "sections/07-shag-2-ustanovka-softfona-mango-talker.md",
+      "number": "2",
+      "order": "07",
+      "pages": "5",
+      "pdf_heading": "Шаг 2. Установка софтфона Mango Talker",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "5",
+          "pages": "5",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Шаг 2. Установка софтфона Mango Talker",
+      "tokens": 405
+    },
+    {
+      "file": "sections/08-shag-3-podklyuchenie-vidzheta-integracii.md",
+      "number": "2",
+      "order": "08",
+      "pages": "5-7",
+      "pdf_heading": "Шаг 3. Подключение виджета интеграции в Личном кабинете MANGO OFFICE",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "5-7",
+          "pages": "5-7",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Шаг 3. Подключение виджета интеграции в Личном кабинете MANGO OFFICE",
+      "tokens": 669
+    },
+    {
+      "file": "sections/09-shag-4-nastroyka-integracii-v-1s.md",
+      "number": "2",
+      "order": "09",
+      "pages": "7-17",
+      "pdf_heading": "Шаг 4. Настройка интеграции в 1С",
+      "pdf_section": "2",
+      "source_refs": [
+        {
+          "global_pages": "7-17",
+          "pages": "7-17",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Шаг 4. Настройка интеграции в 1С",
+      "tokens": 4360
+    },
+    {
+      "file": "sections/10-dopolnitelnye-nastroyki-integracii.md",
       "number": "3",
-      "order": "03",
-      "pages": "17-29",
+      "order": "10",
+      "pages": "17",
       "pdf_heading": "3 Дополнительные настройки интеграции",
       "pdf_section": "3",
       "source_refs": [
         {
-          "global_pages": "17-29",
-          "pages": "17-29",
+          "global_pages": "17",
+          "pages": "17",
           "part": 1,
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
       "title": "Дополнительные настройки интеграции",
-      "tokens": 5765
+      "tokens": 131
     },
     {
-      "file": "sections/04-vhodyaschiy-zvonok.md",
+      "file": "sections/11-obrabotka-zvonkov.md",
+      "number": "3.1",
+      "order": "11",
+      "pages": "17-22",
+      "pdf_heading": "3.1 Обработка звонков",
+      "pdf_section": "3.1",
+      "source_refs": [
+        {
+          "global_pages": "17-22",
+          "pages": "17-22",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Обработка звонков",
+      "tokens": 2841
+    },
+    {
+      "file": "sections/12-avtomaticheskoe-sozdanie-klientov.md",
+      "number": "3.2",
+      "order": "12",
+      "pages": "22-23",
+      "pdf_heading": "3.2 Автоматическое создание Клиентов",
+      "pdf_section": "3.2",
+      "source_refs": [
+        {
+          "global_pages": "22-23",
+          "pages": "22-23",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Автоматическое создание Клиентов",
+      "tokens": 825
+    },
+    {
+      "file": "sections/13-obrabotka-zvonkov-pri-sohranenii.md",
+      "number": "3.3",
+      "order": "13",
+      "pages": "23-25",
+      "pdf_heading": "3.3 Обработка звонков при сохранении",
+      "pdf_section": "3.3",
+      "source_refs": [
+        {
+          "global_pages": "23-25",
+          "pages": "23-25",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Обработка звонков при сохранении",
+      "tokens": 764
+    },
+    {
+      "file": "sections/14-upravlenie-polzovatelyami-integracii-1s.md",
+      "number": "3.4",
+      "order": "14",
+      "pages": "25-29",
+      "pdf_heading": "3.4 Управление пользователями интеграции 1С",
+      "pdf_section": "3.4",
+      "source_refs": [
+        {
+          "global_pages": "25-29",
+          "pages": "25-29",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Управление пользователями интеграции 1С",
+      "tokens": 1438
+    },
+    {
+      "file": "sections/15-vhodyaschiy-zvonok.md",
       "number": "4",
-      "order": "04",
+      "order": "15",
       "pages": "29",
       "pdf_heading": "4 Входящий звонок",
       "pdf_section": "4",
@@ -113,58 +311,310 @@
       "tokens": 569
     },
     {
-      "file": "sections/05-ishodyaschiy-zvonok.md",
+      "file": "sections/16-ishodyaschiy-zvonok.md",
       "number": "5",
-      "order": "05",
-      "pages": "29-32",
+      "order": "16",
+      "pages": "29-30",
       "pdf_heading": "5 Исходящий звонок",
       "pdf_section": "5",
       "source_refs": [
         {
-          "global_pages": "29-32",
-          "pages": "29-32",
+          "global_pages": "29-30",
+          "pages": "29-30",
           "part": 1,
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
       "title": "Исходящий звонок",
-      "tokens": 1425
+      "tokens": 322
     },
     {
-      "file": "sections/06-otchety.md",
+      "file": "sections/17-zvonok-po-kliku.md",
+      "number": "5.1",
+      "order": "17",
+      "pages": "30-31",
+      "pdf_heading": "5.1 Звонок по клику",
+      "pdf_section": "5.1",
+      "source_refs": [
+        {
+          "global_pages": "30-31",
+          "pages": "30-31",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Звонок по клику",
+      "tokens": 693
+    },
+    {
+      "file": "sections/18-softfon.md",
+      "number": "5.2",
+      "order": "18",
+      "pages": "31-32",
+      "pdf_heading": "5.2 Софтфон",
+      "pdf_section": "5.2",
+      "source_refs": [
+        {
+          "global_pages": "31-32",
+          "pages": "31-32",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Софтфон",
+      "tokens": 533
+    },
+    {
+      "file": "sections/19-otchety.md",
       "number": "6",
-      "order": "06",
-      "pages": "32-40",
+      "order": "19",
+      "pages": "32",
       "pdf_heading": "6 Отчеты",
       "pdf_section": "6",
       "source_refs": [
         {
-          "global_pages": "32-40",
-          "pages": "32-40",
+          "global_pages": "32",
+          "pages": "32",
           "part": 1,
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
       "title": "Отчеты",
-      "tokens": 3640
+      "tokens": 74
     },
     {
-      "file": "sections/07-spravochnik-abonentov.md",
+      "file": "sections/20-otchet-po-telefonnym-zvonkam-vats.md",
+      "number": "6.1",
+      "order": "20",
+      "pages": "32-36",
+      "pdf_heading": "6.1 Отчет по телефонным звонкам ВАТС",
+      "pdf_section": "6.1",
+      "source_refs": [
+        {
+          "global_pages": "32-36",
+          "pages": "32-36",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Отчет по телефонным звонкам ВАТС",
+      "tokens": 2263
+    },
+    {
+      "file": "sections/21-kartochka-zvonka.md",
+      "number": "6.2",
+      "order": "21",
+      "pages": "36-38",
+      "pdf_heading": "6.2 Карточка звонка",
+      "pdf_section": "6.2",
+      "source_refs": [
+        {
+          "global_pages": "36-38",
+          "pages": "36-38",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Карточка звонка",
+      "tokens": 932
+    },
+    {
+      "file": "sections/22-otchet-telefonnye-zvonki.md",
+      "number": "6.3",
+      "order": "22",
+      "pages": "38-40",
+      "pdf_heading": "6.3 Отчет «Телефонные звонки»",
+      "pdf_section": "6.3",
+      "source_refs": [
+        {
+          "global_pages": "38-40",
+          "pages": "38-40",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Отчет «Телефонные звонки»",
+      "tokens": 681
+    },
+    {
+      "file": "sections/23-spravochnik-abonentov.md",
       "number": "7",
-      "order": "07",
-      "pages": "40-46",
+      "order": "23",
+      "pages": "40",
       "pdf_heading": "7 Справочник абонентов",
       "pdf_section": "7",
       "source_refs": [
         {
-          "global_pages": "40-46",
-          "pages": "40-46",
+          "global_pages": "40",
+          "pages": "40",
           "part": 1,
           "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
         }
       ],
       "title": "Справочник абонентов",
-      "tokens": 3143
+      "tokens": 133
+    },
+    {
+      "file": "sections/24-kak-otkryt-spravochnik.md",
+      "number": "7.1",
+      "order": "24",
+      "pages": "40",
+      "pdf_heading": "7.1 Как открыть справочник",
+      "pdf_section": "7.1",
+      "source_refs": [
+        {
+          "global_pages": "40",
+          "pages": "40",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Как открыть справочник",
+      "tokens": 217
+    },
+    {
+      "file": "sections/25-poisk-po-nomeru-telefona.md",
+      "number": "7.2",
+      "order": "25",
+      "pages": "40-41",
+      "pdf_heading": "7.2 Поиск по номеру телефона",
+      "pdf_section": "7.2",
+      "source_refs": [
+        {
+          "global_pages": "40-41",
+          "pages": "40-41",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Поиск по номеру телефона",
+      "tokens": 407
+    },
+    {
+      "file": "sections/26-poisk-po-parametram-abonenta.md",
+      "number": "7.3",
+      "order": "26",
+      "pages": "41",
+      "pdf_heading": "7.3 Поиск по параметрам абонента",
+      "pdf_section": "7.3",
+      "source_refs": [
+        {
+          "global_pages": "41",
+          "pages": "41",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Поиск по параметрам абонента",
+      "tokens": 338
+    },
+    {
+      "file": "sections/27-filtraciya-zapisey-v-spravochnike.md",
+      "number": "7.4",
+      "order": "27",
+      "pages": "41-43",
+      "pdf_heading": "7.4 Фильтрация записей в справочнике",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "41-43",
+          "pages": "41-43",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Фильтрация записей в справочнике",
+      "tokens": 424
+    },
+    {
+      "file": "sections/28-prilozhenie-kak-nastroit-standartnuyu-kn.md",
+      "number": "7.4",
+      "order": "28",
+      "pages": "43",
+      "pdf_heading": "Приложение. Как настроить стандартную кнопку вызова",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "43",
+          "pages": "43",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Приложение. Как настроить стандартную кнопку вызова",
+      "tokens": 101
+    },
+    {
+      "file": "sections/29-upravleniekontaktnoyinformacieyklient.md",
+      "number": "7.4",
+      "order": "29",
+      "pages": "43",
+      "pdf_heading": "\"УправлениеКонтактнойИнформациейКлиент\"",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "43",
+          "pages": "43",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "\"УправлениеКонтактнойИнформациейКлиент\"",
+      "tokens": 88
+    },
+    {
+      "file": "sections/30-osnovnye-svedeniya.md",
+      "number": "7.4",
+      "order": "30",
+      "pages": "43",
+      "pdf_heading": "Основные сведения",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "43",
+          "pages": "43",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Основные сведения",
+      "tokens": 282
+    },
+    {
+      "file": "sections/31-kak-nastroit-konfiguraciyu-modulya.md",
+      "number": "7.4",
+      "order": "31",
+      "pages": "43-45",
+      "pdf_heading": "Как настроить конфигурацию модуля",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "43-45",
+          "pages": "43-45",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Как настроить конфигурацию модуля",
+      "tokens": 1078
+    },
+    {
+      "file": "sections/32-spisok-izmeneniy-v-dokumente.md",
+      "number": "7.4",
+      "order": "32",
+      "pages": "45-46",
+      "pdf_heading": "Список изменений в документе",
+      "pdf_section": "7.4",
+      "source_refs": [
+        {
+          "global_pages": "45-46",
+          "pages": "45-46",
+          "part": 1,
+          "source_pdf": "kb/sources/integration_1c/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
+        }
+      ],
+      "title": "Список изменений в документе",
+      "tokens": 703
     }
   ],
   "source_document": "integration-1c",
@@ -184,82 +634,6 @@
   ],
   "table_count": 8,
   "token_method": "tiktoken:cl100k_base",
-  "tokens_index": 1249,
-  "tokens_total": 22181,
-  "verification": {
-    "confidence_level": "high",
-    "confirmed_ratio": 1.0,
-    "critical_tokens_checked": 164,
-    "critical_tokens_unconfirmed": 0,
-    "extraction_date": "2026-08-22",
-    "method": "cross-engine (pdfplumber -> PyMuPDF re-read of the same pages)",
-    "pages_without_text_layer": 0,
-    "sections": [
-      {
-        "critical_tokens": 27,
-        "file": "sections/00-titulnaya-chast.md",
-        "gap_pages": [],
-        "pages": "1-4",
-        "title": "Титульная часть",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 13,
-        "file": "sections/01-obzor.md",
-        "gap_pages": [],
-        "pages": "4-5",
-        "title": "Обзор",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 38,
-        "file": "sections/02-nachalo-raboty-s-integraciey.md",
-        "gap_pages": [],
-        "pages": "5-17",
-        "title": "Начало работы с интеграцией",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 29,
-        "file": "sections/03-dopolnitelnye-nastroyki-integracii.md",
-        "gap_pages": [],
-        "pages": "17-29",
-        "title": "Дополнительные настройки интеграции",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 2,
-        "file": "sections/04-vhodyaschiy-zvonok.md",
-        "gap_pages": [],
-        "pages": "29",
-        "title": "Входящий звонок",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 13,
-        "file": "sections/05-ishodyaschiy-zvonok.md",
-        "gap_pages": [],
-        "pages": "29-32",
-        "title": "Исходящий звонок",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 14,
-        "file": "sections/06-otchety.md",
-        "gap_pages": [],
-        "pages": "32-40",
-        "title": "Отчеты",
-        "unconfirmed": []
-      },
-      {
-        "critical_tokens": 28,
-        "file": "sections/07-spravochnik-abonentov.md",
-        "gap_pages": [],
-        "pages": "40-46",
-        "title": "Справочник абонентов",
-        "unconfirmed": []
-      }
-    ],
-    "verifier_engine": "PyMuPDF 1.28.2"
-  }
+  "tokens_index": 3550,
+  "tokens_total": 24035
 }
