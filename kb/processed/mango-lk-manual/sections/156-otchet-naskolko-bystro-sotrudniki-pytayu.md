@@ -2,31 +2,31 @@
 id: mango-lk-manual-156-otchet-naskolko-bystro-sotrudniki-pytayu
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "0"
 pdf_section: "4.5.9.1.1"
 title: "Отчет «Насколько быстро сотрудники пытаются перезвонить»"
 pdf_heading: "Отчет «Насколько быстро сотрудники пытаются перезвонить»"
 pages: "242-244"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 40-42"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"40-42","global_pages":"242-244"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 242-244"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"242-244","global_pages":"242-244"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 920
+tokens: 915
 status: extracted
 ai-generated: true
 ---
 # Отчет «Насколько быстро сотрудники пытаются перезвонить»
 
-> Трассировка: PDF §4.5.9.1.1 · сквозные стр. 242-244 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.40-42.
+> Трассировка: PDF §4.5.9.1.1 · сквозные стр. 242-244 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.242-244.
 
 Отчет «Насколько быстро сотрудники пытаются перезвонить» отображает информацию о количестве перезвонов на пропущенные звонки с уникальных номеров в зависимости от времени. Отчет помогает установить, укладываются ли ваши сотрудники в требуемое время, отведенное на перезвон по пропущенному звонку. Пример сформированного отчета приведен на рисунке ниже.
 
 ![Изображение, стр. 243](../images/156-otchet-naskolko-bystro-sotrudniki-pytayu-1.jpeg)
 
-![Изображение, стр. 243](../images/156-otchet-naskolko-bystro-sotrudniki-pytayu-2.png)
+![Изображение, стр. 243](../images/156-otchet-naskolko-bystro-sotrudniki-pytayu-2.jpeg)
 
 Линейная диаграмма представляет собой визуализацию динамики изменения количества первых попыток перезвонов на уникальные номера клиентов, с которых в течение выбранного промежутка времени при выбранных значениях фильтров поступали и были пропущены звонки. Чтобы установить время (в часах), в течение которого с момента пропуска звонка ваши сотрудники должны ему перезвонить, щелкните по соответствующему полю и введите нужное количество часов.
 

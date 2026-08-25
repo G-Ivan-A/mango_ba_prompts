@@ -1,0 +1,5 @@
+python3 scripts/kb/process_sources.py "kb/sources/cov-robot-fil"
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+OK: 75 разделов, 455 изобр., 41 табл., 96376 токенов → kb/processed/cov-robot-fil
+kb/sources/cov-robot-fil: single -> kb/processed/cov-robot-fil
+- cov-robot-fil: kb/sources/cov-robot-fil/Модуль ЦОВ Робот Фил 2,0_manual_v7.26.28.pdf -> kb/processed/cov-robot-fil

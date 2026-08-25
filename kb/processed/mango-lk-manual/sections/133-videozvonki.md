@@ -2,25 +2,25 @@
 id: mango-lk-manual-133-videozvonki
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.2.4"
 pdf_section: "4.5.2.4"
 title: "Видеозвонки"
 pdf_heading: "4.5.2.4 Видеозвонки"
 pages: "191-193"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 90-92"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"90-92","global_pages":"191-193"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 191-193"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"191-193","global_pages":"191-193"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 589
+tokens: 584
 status: extracted
 ai-generated: true
 ---
 # 4.5.2.4. Видеозвонки
 
-> Трассировка: PDF §4.5.2.4 · сквозные стр. 191-193 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.90-92.
+> Трассировка: PDF §4.5.2.4 · сквозные стр. 191-193 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.191-193.
 
 Данный отчет содержит информацию обо всех видеозвонках. Отчет позволяет отследить видеозвонки, совершенные: • любым сотрудником определенной группы; • определенным сотрудником; • успешные или неуспешные видеозвонки; • с участием определенного сотрудника или любого сотрудника группы. Порядок действий для создания и сохранения отчета аналогичен процедуре при работе с предыдущими отчетами.
 

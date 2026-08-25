@@ -2,29 +2,29 @@
 id: mango-lk-manual-91-vkladka-raspisanie
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.2.3.3.2"
 pdf_section: "4.2.3.3.2"
 title: "Вкладка «Расписание»"
 pdf_heading: "4.2.3.3.2 Вкладка «Расписание»"
 pages: "89-90"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 89-90"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"89-90","global_pages":"89-90"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"89-90","global_pages":"89-90"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 717
+tokens: 712
 status: extracted
 ai-generated: true
 ---
 # 4.2.3.3.2. Вкладка «Расписание»
 
-> Трассировка: PDF §4.2.3.3.2 · сквозные стр. 89-90 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.89-90.
+> Трассировка: PDF §4.2.3.3.2 · сквозные стр. 89-90 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.89-90.
 
 В зависимости от того, в какое время – рабочее или нерабочее – звонит посетитель сайта, вид и функционал виджета различаются. Данная вкладка предназначена для гибкой настройки расписания.
 
-![Изображение, стр. 89](../images/91-vkladka-raspisanie-1.png)
+![Изображение, стр. 89](../images/91-vkladka-raspisanie-1.jpeg)
 
 Часовой пояс Из выпадающего списка следует выбрать часовой пояс, соответствующий часовому поясу сотрудника ВАТС. По умолчанию часовой пояс указывается согласно системному времени, установленному на устройстве пользователя. В дальнейшем правильная настройка часового пояса необходима для синхронизации времени между сотрудниками ВАТС и посетителями сайта, которые находятся в других часовых поясах.
 

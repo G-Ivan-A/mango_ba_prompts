@@ -378,7 +378,10 @@ def append_plain_element(section: dict, el: dict, page_no: int):
 
 
 def build_sections_from_outline(pdf, outline_entries, image_map):
-    markers = resolve_outline_positions(pdf, outline_entries)
+    return build_sections_from_markers(pdf, resolve_outline_positions(pdf, outline_entries), image_map)
+
+
+def build_sections_from_markers(pdf, markers, image_map):
     if not markers:
         return []
 
@@ -448,6 +451,125 @@ def build_sections_from_outline(pdf, outline_entries, image_map):
     return sections
 
 
+# --- Типографский детект заголовков (fallback без outline и нумерации) ------
+_DOT_LEADER_RE = re.compile(r"\.{4,}")
+
+# Сколько разделов на страницу считаем достаточным: если нумерованный проход
+# дал меньше, документ почти наверняка потерял структуру (см. issue #317).
+SPARSE_SECTIONS_PER_PAGE = 0.25
+# Размер шрифта считается «заголовочным», только если он встречается на
+# нескольких строках: единичные кегли — это обложка, а не уровень заголовков.
+MIN_LINES_PER_HEADING_SIZE = 3
+# Порог доверия к типографике: несколько заголовков и хотя бы один на ~33 страницы.
+MIN_TYPOGRAPHIC_SECTIONS = 5
+MIN_SECTIONS_PER_PAGE = 0.03
+
+
+def _is_toc_page(lines: list[dict]) -> bool:
+    """Страница оглавления: несколько строк с точечными выносками."""
+    return sum(1 for line in lines if _DOT_LEADER_RE.search(line.get("text") or "")) >= 3
+
+
+# Строки-приманки: элементы списков и «хвосты» абзацев, набранные крупнее
+# основного текста, заголовками не являются — иначе в оглавление попадают
+# куски предложений (регрессия issue #115 «пункт списка стал разделом»).
+_BULLET_PREFIX_RE = re.compile(r"^[•▪●◦\-–—*→>]\s")
+_SENTENCE_TAIL_RE = re.compile(r"[;,]$")
+_HEADING_START_RE = re.compile(r"^[\dA-ZА-ЯЁ«\"(]")
+
+
+def _heading_candidate(text: str) -> bool:
+    return (
+        2 <= len(text) <= 100
+        and not text.isdigit()
+        and not _DOT_LEADER_RE.search(text)
+        and not _BULLET_PREFIX_RE.match(text)
+        and not _SENTENCE_TAIL_RE.search(text)
+        and bool(_HEADING_START_RE.match(text))
+    )
+
+
+def detect_typographic_headings(pdf, body_size: float) -> list[dict]:
+    """Границы разделов по кеглю шрифта, когда нет ни outline, ни нумерации.
+
+    Руководства Mango Talker от 11.06.2026 (issue #317) поставляются без
+    PDF-bookmarks, а заголовки в них не нумерованы — нумерованная эвристика
+    собирает весь документ в 2-3 гигантских раздела и ломает контракт
+    «раздел = чанк». Здесь уровни заголовков берутся из ранжирования кеглей:
+    самый крупный «заголовочный» кегль = уровень 1, следующие — вложенные.
+    Ничего не додумывается: заголовком становится только реально существующая
+    в PDF строка.
+    """
+    candidates: list[dict] = []
+    size_counts: dict[float, int] = {}
+    text_pages: dict[str, set[int]] = {}
+
+    for page_index, page in enumerate(pdf.pages):
+        lines = page.extract_text_lines(layout=False)
+        if _is_toc_page(lines):
+            continue
+        for line in lines:
+            text = (line.get("text") or "").strip()
+            if not text or not _heading_candidate(text):
+                continue
+            size = line_size(line)
+            if size < body_size + 1.0:
+                continue
+            text_pages.setdefault(normalize_heading(text), set()).add(page_index)
+            size_counts[size] = size_counts.get(size, 0) + 1
+            candidates.append({"page_index": page_index, "top": line["top"], "size": size, "text": text})
+
+    heading_sizes = sorted(
+        (size for size, count in size_counts.items() if count >= MIN_LINES_PER_HEADING_SIZE),
+        reverse=True,
+    )
+    if not heading_sizes:
+        return []
+    level_by_size = {size: level for level, size in enumerate(heading_sizes, start=1)}
+
+    # Колонтитулы: одинаковый текст на многих страницах — не заголовок.
+    repeated_limit = max(3, len(pdf.pages) // 5)
+    markers: list[dict] = []
+    last_number: str | None = None
+    for candidate in candidates:
+        level = level_by_size.get(candidate["size"])
+        if level is None:
+            continue
+        text = candidate["text"]
+        if len(text_pages.get(normalize_heading(text), ())) > repeated_limit:
+            continue
+        number, title = parse_numbered_title(text)
+        # Перенос заголовка на вторую строку: тот же кегль, та же страница,
+        # соседняя строка без собственного номера — это хвост предыдущего
+        # заголовка, а не новый раздел.
+        if markers and not number:
+            previous = markers[-1]
+            same_block = (
+                previous["page_index"] == candidate["page_index"]
+                and previous["size"] == candidate["size"]
+                and 0 <= candidate["top"] - previous["top"] <= candidate["size"] * 2.0
+            )
+            if same_block:
+                joiner = "" if previous["raw_title"].endswith("-") else " "
+                previous["raw_title"] += joiner + text
+                previous["title"] += joiner + text
+                continue
+        if number:
+            last_number = number
+        markers.append({
+            "level": level,
+            "raw_title": text,
+            "number": number,
+            "trace_number": number or last_number,
+            "title": title,
+            "page": candidate["page_index"] + 1,
+            "page_index": candidate["page_index"],
+            "top": candidate["top"],
+            "size": candidate["size"],
+        })
+    return markers
+
+
 # --- Сборка разделов --------------------------------------------------------
 def build_sections(pdf, pdf_path):
     body_size = body_font_size(pdf.pages)
@@ -457,6 +579,15 @@ def build_sections(pdf, pdf_path):
         sections = build_sections_from_outline(pdf, outline, image_map)
         if sections:
             return sections, body_size, image_tool, f"pdf-outline ({outline_tool})"
+
+    # Нет outline — сначала пробуем границы по кеглю: типографика это авторская
+    # разметка документа, тогда как нумерованная эвристика принимает за заголовок
+    # любой жирный нумерованный пункт списка (регрессия issue #115).
+    typographic = build_sections_from_markers(
+        pdf, detect_typographic_headings(pdf, body_size), image_map
+    )
+    if len(typographic) >= max(MIN_TYPOGRAPHIC_SECTIONS, len(pdf.pages) * MIN_SECTIONS_PER_PAGE):
+        return typographic, body_size, image_tool, "typography-heuristic"
 
     sections = []
     front = {
@@ -504,6 +635,13 @@ def build_sections(pdf, pdf_path):
             sections.append(front)
     else:
         sections.append(current)
+
+    # Типографика не дала внятной иерархии — остаётся нумерованная эвристика,
+    # но если она собрала документ в считаные гигантские чанки, разделы по кеглю
+    # всё равно ближе к контракту «раздел = чанк» (issue #317).
+    if len(sections) < len(pdf.pages) * SPARSE_SECTIONS_PER_PAGE and len(typographic) > len(sections):
+        return typographic, body_size, image_tool, "typography-heuristic"
+
     return sections, body_size, image_tool, "layout-heuristic"
 
 

@@ -1,0 +1,4 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+OK: 143 разделов, 362 изобр., 5 табл., 102173 токенов → kb/processed/mtalker/windows-mac-working
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+OK: 99 разделов, 146 изобр., 5 табл., 47293 токенов → kb/processed/mtalker/android-user-guide

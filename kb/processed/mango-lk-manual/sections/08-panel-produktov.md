@@ -2,29 +2,29 @@
 id: mango-lk-manual-08-panel-produktov
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "1.7"
 pdf_section: "1.7"
 title: "Панель продуктов"
 pdf_heading: "1.7 Панель продуктов"
 pages: "12-13"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 12-13"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"12-13","global_pages":"12-13"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"12-13","global_pages":"12-13"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 693
+tokens: 688
 status: extracted
 ai-generated: true
 ---
 # 1.7. Панель продуктов
 
-> Трассировка: PDF §1.7 · сквозные стр. 12-13 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.12-13.
+> Трассировка: PDF §1.7 · сквозные стр. 12-13 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.12-13.
 
 внимание При недостаточном количестве средств все продукты будут заблокированы. Вы не сможете пользоваться ими до тех пор, пока счет не будет пополнен. 1.6 ПАНЕЛЬ НАВИГАЦИИ Данная панель содержит название продукта, название его версии и тарифа на связь. А также служит для навигации по основным разделам Личного кабинета.
 
-![Изображение, стр. 12](../images/08-panel-produktov-1.png)
+![Изображение, стр. 12](../images/08-panel-produktov-1.jpeg)
 
 ![Изображение, стр. 12](../images/08-panel-produktov-2.png)
 

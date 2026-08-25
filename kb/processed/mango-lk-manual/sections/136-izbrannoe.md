@@ -2,31 +2,31 @@
 id: mango-lk-manual-136-izbrannoe
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.3.2"
 pdf_section: "4.5.3.2"
 title: "Избранное"
 pdf_heading: "4.5.3.2 Избранное"
 pages: "203"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 1"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"1","global_pages":"203"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 203"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"203","global_pages":"203"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 465
+tokens: 460
 status: extracted
 ai-generated: true
 ---
 # 4.5.3.2. Избранное
 
-> Трассировка: PDF §4.5.3.2 · сквозные стр. 203 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.1.
+> Трассировка: PDF §4.5.3.2 · сквозные стр. 203 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.203.
 
 Вкладка “Избранное” содержит список записей разговоров, отмеченных метками. Все помеченные записи приводятся в порядке, который соответствует времени определенной записи. Таким образом, последняя по времени запись отображается в верхней части списка. И наоборот – самая ранняя запись отображается последней в списке.
 
 ![Изображение, стр. 203](../images/136-izbrannoe-1.png)
 
-![Изображение, стр. 203](../images/136-izbrannoe-2.png)
+![Изображение, стр. 203](../images/136-izbrannoe-2.jpeg)
 
 Предусмотрена фильтрация записей по меткам. Для этого следует выбрать соответствующую метку в области фильтров (1). Предусмотрена сортировка по убыванию/возрастанию записей в столбцах: Дата и время, Длительность, Размер. Для сортировки необходимо нажать на
 

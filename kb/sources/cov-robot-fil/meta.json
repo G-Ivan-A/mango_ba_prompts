@@ -1,0 +1,31 @@
+{
+  "name": "Модуль ЦОВ «Робот Фил 2,0». Руководство пользователя",
+  "version": "1.26.28",
+  "type": "user_manual",
+  "product": "Mango Office ЦОВ",
+  "platform": [
+    "Web"
+  ],
+  "language": "ru",
+  "upload_date": "2026-08-25",
+  "description": "Руководство пользователя модуля ЦОВ «Робот Фил 2,0» (v 1.26.28 по титульному листу; имя файла — manual_v7.26.28). Описывает голосового робота: сценарии обзвона, распознавание речи, настройку диалогов и отчётность.",
+  "topics": [
+    "ЦОВ",
+    "робот",
+    "голосовой робот",
+    "обзвон",
+    "сценарии",
+    "распознавание речи"
+  ],
+  "file_name": "Модуль ЦОВ Робот Фил 2,0_manual_v7.26.28.pdf",
+  "total_files": 1,
+  "file_size_mb": 10.5,
+  "pages_count": 195,
+  "source_url": null,
+  "source_files": [
+    "Модуль ЦОВ Робот Фил 2,0_manual_v7.26.28.pdf"
+  ],
+  "processing_mode": "single",
+  "doc_code": "ROBOTFIL",
+  "output_slug": "cov-robot-fil"
+}

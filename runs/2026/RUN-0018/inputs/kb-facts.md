@@ -9,8 +9,8 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
   - "standards/kb-standard.md"
-  - "kb/processed/mango-cc-manual/sections/229-prilozhenie-6-dopolnitelnye-vozmozhnosti.md"
-  - "kb/processed/mango-cc-manual/sections/118-sozdanie-i-redaktirovanie-klientov.md"
+  - "kb/processed/mango-cc-manual/sections/136-prilozhenie-6-dopolnitelnye-vozmozhnosti.md"
+  - "kb/processed/mango-cc-manual/sections/68-kontakty-adresnaya-kniga.md"
 ---
 
 # Выжимка фактов БЗ — сверка утверждений модели (постфактум)
@@ -34,7 +34,7 @@ related_artifacts:
 ## Ф1. Две разные политики защиты данных — обе официальные
 
 `[CC, §23 «Приложение 6: Дополнительные возможности», с.602–608]`
-([секция](../../../../kb/processed/mango-cc-manual/sections/229-prilozhenie-6-dopolnitelnye-vozmozhnosti.md))
+([секция](../../../../kb/processed/mango-cc-manual/sections/136-prilozhenie-6-dopolnitelnye-vozmozhnosti.md))
 
 Документация описывает **две различные** функции:
 
@@ -75,7 +75,7 @@ related_artifacts:
 ## Ф4. Модель данных Карточки контакта: где живут Идентификаторы мессенджеров
 
 `[CC, §10.1.1 «Создание и редактирование клиентов», с.306–316]`
-([секция](../../../../kb/processed/mango-cc-manual/sections/118-sozdanie-i-redaktirovanie-klientov.md))
+([секция](../../../../kb/processed/mango-cc-manual/sections/68-kontakty-adresnaya-kniga.md))
 
 > «Вкладка "Контакты" содержит следующие атрибуты и поля: 1. **Доступны для
 > связи внутри Контакт-центра** — сотрудник может добавить номер телефона,

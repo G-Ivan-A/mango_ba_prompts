@@ -11,16 +11,22 @@ handle those parts as one document with continuous page numbering.
 
 This stdlib-only check locks the fix:
 
-- the real processed KB exists and points to all expected PDF parts;
+- the real processed KB exists and points to its expected PDF source(s);
 - it contains index/meta/sections/images with real-manual scale;
-- section boundaries come from the PDF outline, not bold numbered list items;
-- the GitHub workflow passes multi-part inputs to ``make kb-extract``.
+- section boundaries follow the document structure, not bold numbered list items;
+- the GitHub workflow passes the source input(s) to ``make kb-extract``.
 
 After the LFS cleanup in issue #259, the lightweight CI validator must not
 require the PDF payload bytes to be present in the repository. Extraction still
 requires real PDF files; this check validates the generated KB snapshot and its
 source provenance. Issue #310 went further and forbade Git LFS for PDFs
 altogether, so the workflow must no longer request an LFS checkout.
+
+Issue #317 delivered CC 1.26.28.1 as a single PDF, so the six-part expectations
+of issue #119 are gone: ``source_pdfs`` now lists one file. What must not
+regress is the section quality — this edition ships without PDF bookmarks, so
+boundaries come from the typographic heuristic, and the numbered-list false
+positive of issue #115 must stay out of the section list.
 """
 
 from __future__ import annotations
@@ -31,16 +37,18 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-CC_SOURCES = [
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf",
-    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf",
-]
+CC_SOURCES = ["kb/sources/mango-cc-manual/CC_manual_1.26.28.1.pdf"]
 CC_PAGE_COUNT = 614
-REMOVED_CC_SOURCE = "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf"
+CC_VERSION = "1.26.28.1"
+# Издания, которые больше не являются источником: ссылки на них — регрессия.
+REMOVED_CC_SOURCES = [
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23_compressed.pdf",
+    "kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf",
+]
+# Границы разделов: outline, если он есть в PDF, иначе — типографика.
+# Нумерованная эвристика (``layout-heuristic``) для этого документа даёт
+# ложные заголовки из пунктов списков — она здесь недопустима.
+ALLOWED_SECTION_SOURCES = ("pdf-outline", "typography-heuristic")
 PROCESSED = "kb/processed/mango-cc-manual"
 WORKFLOW = ".github/workflows/kb.yml"
 MAKEFILE = "Makefile"
@@ -102,20 +110,24 @@ def check_processed_mango() -> list[str]:
 
     expected = {
         "doc_code": "CC",
-        "doc_version": "1.26.23",
+        "doc_version": CC_VERSION,
     }
     for key, value in expected.items():
         if meta.get(key) != value:
             errors.append(f"{PROCESSED}/meta.json: {key}={meta.get(key)!r}, expected {value!r}")
 
-    if meta.get("source_pdf") != "multi-part":
-        errors.append(f"{PROCESSED}/meta.json: source_pdf must be 'multi-part'")
+    expected_source_pdf = "multi-part" if len(CC_SOURCES) > 1 else CC_SOURCES[0]
+    if meta.get("source_pdf") != expected_source_pdf:
+        errors.append(f"{PROCESSED}/meta.json: source_pdf must be {expected_source_pdf!r}")
     if meta.get("source_pdfs") != CC_SOURCES:
-        errors.append(f"{PROCESSED}/meta.json: source_pdfs must list all six CC parts in order")
+        errors.append(f"{PROCESSED}/meta.json: source_pdfs must list the CC {CC_VERSION} source(s)")
     if meta.get("part_count") != len(CC_SOURCES):
         errors.append(f"{PROCESSED}/meta.json: part_count must be {len(CC_SOURCES)}")
-    if meta.get("section_source", "").startswith("pdf-outline multi-part") is False:
-        errors.append(f"{PROCESSED}/meta.json: section_source must use pdf-outline multi-part")
+    if not meta.get("section_source", "").startswith(ALLOWED_SECTION_SOURCES):
+        errors.append(
+            f"{PROCESSED}/meta.json: section_source={meta.get('section_source')!r}; "
+            f"expected one of {ALLOWED_SECTION_SOURCES}"
+        )
     if meta.get("page_count") != CC_PAGE_COUNT:
         errors.append(f"{PROCESSED}/meta.json: page_count must be {CC_PAGE_COUNT}")
     if meta.get("section_count") != len(section_files):
@@ -125,8 +137,8 @@ def check_processed_mango() -> list[str]:
         )
     if len(meta.get("sections", [])) != len(section_files):
         errors.append(f"{PROCESSED}/meta.json: sections list does not match files on disk")
-    if len(section_files) < 200:
-        errors.append(f"{PROCESSED}/sections: expected 200+ real-manual sections")
+    if len(section_files) < 100:
+        errors.append(f"{PROCESSED}/sections: expected 100+ real-manual sections")
     if not image_files or meta.get("image_count", 0) <= 0:
         errors.append(f"{PROCESSED}/images: expected extracted images")
     if meta.get("table_count", 0) < 100:
@@ -136,11 +148,11 @@ def check_processed_mango() -> list[str]:
 
     sources = meta.get("sources", [])
     if not isinstance(sources, list) or len(sources) != len(CC_SOURCES):
-        errors.append(f"{PROCESSED}/meta.json: sources must contain all six source parts")
+        errors.append(f"{PROCESSED}/meta.json: sources must contain every source file")
     else:
         source_paths = [source.get("source_pdf") for source in sources]
         if source_paths != CC_SOURCES:
-            errors.append(f"{PROCESSED}/meta.json: sources are not in CC part order")
+            errors.append(f"{PROCESSED}/meta.json: sources are not in CC source order")
         source_pages = [source.get("page_count") for source in sources]
         if not all(isinstance(page_count, int) and page_count > 0 for page_count in source_pages):
             errors.append(f"{PROCESSED}/meta.json: every source must have positive page_count")
@@ -155,9 +167,12 @@ def check_processed_mango() -> list[str]:
     refs = all_source_refs(meta.get("sections", []))
     parts_seen = sorted({ref.get("part") for ref in refs})
     if parts_seen != list(range(1, len(CC_SOURCES) + 1)):
-        errors.append(f"{PROCESSED}/meta.json: source_refs must cover CC parts 1-6")
-    if any(ref.get("source_pdf") == REMOVED_CC_SOURCE for ref in refs):
-        errors.append(f"{PROCESSED}/meta.json: source_refs still point to removed compressed PDF")
+        errors.append(
+            f"{PROCESSED}/meta.json: source_refs must cover CC parts "
+            f"1-{len(CC_SOURCES)}"
+        )
+    if any(ref.get("source_pdf") in REMOVED_CC_SOURCES for ref in refs):
+        errors.append(f"{PROCESSED}/meta.json: source_refs still point to a superseded CC edition")
     max_global_page = max(
         (end for end in (page_range_end(ref.get("global_pages", "")) for ref in refs) if end),
         default=0,
@@ -191,8 +206,9 @@ def check_processed_mango() -> list[str]:
         *CC_SOURCES,
         "Регистрация нового пользователя",
     )
-    if REMOVED_CC_SOURCE in index:
-        errors.append(f"{PROCESSED}/index.md: still points to removed compressed PDF")
+    for removed in REMOVED_CC_SOURCES:
+        if removed in index:
+            errors.append(f"{PROCESSED}/index.md: still points to superseded {removed}")
     return errors
 
 
@@ -224,8 +240,9 @@ def check_workflow_inputs() -> list[str]:
     errors += require_text(text, WORKFLOW, *CC_SOURCES)
     if "lfs" in text:
         errors.append(f"{WORKFLOW}: Git LFS is not used for PDFs anymore (issue #310)")
-    if REMOVED_CC_SOURCE in text:
-        errors.append(f"{WORKFLOW}: default source still points to removed compressed PDF")
+    for removed in REMOVED_CC_SOURCES:
+        if removed in text:
+            errors.append(f"{WORKFLOW}: default source still points to superseded {removed}")
     if re.search(r"Build sample fixture and extract|make kb-sample\s+make kb-extract", text):
         errors.append(f"{WORKFLOW}: workflow_dispatch extract job must not hardcode the sample fixture")
     return errors
@@ -248,8 +265,9 @@ def check_makefile_parameters() -> list[str]:
         'OUT="$(MANGO_OUT)"',
     )
     errors += require_text(text, MAKEFILE, *CC_SOURCES)
-    if REMOVED_CC_SOURCE in text:
-        errors.append(f"{MAKEFILE}: MANGO source still points to removed compressed PDF")
+    for removed in REMOVED_CC_SOURCES:
+        if removed in text:
+            errors.append(f"{MAKEFILE}: MANGO source still points to superseded {removed}")
     return errors
 
 

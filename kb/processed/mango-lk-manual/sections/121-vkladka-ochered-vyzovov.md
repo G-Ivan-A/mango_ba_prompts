@@ -2,31 +2,31 @@
 id: mango-lk-manual-121-vkladka-ochered-vyzovov
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.6.2.3"
 pdf_section: "4.4.6.2.3"
 title: "Вкладка «Очередь вызовов»"
 pdf_heading: "4.4.6.2.3 Вкладка «Очередь вызовов»"
 pages: "172-174"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 71-73"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"71-73","global_pages":"172-174"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 172-174"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"172-174","global_pages":"172-174"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1295
+tokens: 1290
 status: extracted
 ai-generated: true
 ---
 # 4.4.6.2.3. Вкладка «Очередь вызовов»
 
-> Трассировка: PDF §4.4.6.2.3 · сквозные стр. 172-174 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.71-73.
+> Трассировка: PDF §4.4.6.2.3 · сквозные стр. 172-174 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.172-174.
 
 Вид вкладки представлен на рисунке ниже.
 
 ![Изображение, стр. 172](../images/121-vkladka-ochered-vyzovov-1.png)
 
-![Изображение, стр. 172](../images/121-vkladka-ochered-vyzovov-2.png)
+![Изображение, стр. 172](../images/121-vkladka-ochered-vyzovov-2.jpeg)
 
 Удержание вызовов Общие для всех групп настройки удержания вызовов устанавливаются в разделе «Настройки дозвона по умолчанию». Если необходимо задать иные параметры, установите переключатель в положение «Использовать специальные настройки удержания вызовов для этой группы». Станут активными следующие блоки этой вкладки:
 

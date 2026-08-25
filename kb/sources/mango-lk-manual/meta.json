@@ -1,20 +1,16 @@
 {
   "name": "Виртуальная АТС MANGO OFFICE - Справочник абонента",
-  "version": "1.21",
+  "version": "1.23",
   "type": "user_manual",
-  "processing_mode": "multi_part",
+  "processing_mode": "single",
   "output_slug": "mango-lk-manual",
   "doc_code": "LK",
   "product": "MANGO OFFICE Virtual PBX",
   "language": "ru",
   "source_files": [
-    "LK_manual_v-121часть-1.pdf",
-    "LK_manual_v-121часть-2.pdf",
-    "LK_manual_v-121часть-3.pdf",
-    "LK_manual_v-121часть-4.pdf",
-    "LK_manual_v-121часть-5.pdf"
+    "LK_manual_v-123.pdf"
   ],
-  "upload_date": "2026-06-19",
+  "upload_date": "2026-08-25",
   "description": "Справочник абонента виртуальной АТС MANGO OFFICE. Руководство пользователя по настройке и использованию облачной телефонии.",
   "topics": [
     "настройка АТС",
@@ -25,9 +21,10 @@
     "статистика звонков",
     "интеграция с CRM"
   ],
-  "total_pages": 568,
-  "parts": 5,
-  "split_method": "logical_chapters",
-  "file_size_mb": 29,
-  "source_url": null
+  "total_pages": 565,
+  "file_size_mb": 12.0,
+  "source_url": null,
+  "previous_versions": [
+    "1.21"
+  ]
 }

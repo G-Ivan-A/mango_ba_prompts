@@ -2,31 +2,31 @@
 id: mango-lk-manual-176-otchet-raspredelenie-zvonkov-po-punktam
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "0"
 pdf_section: "4.5.9.2.2"
 title: "Отчет «Распределение звонков по пунктам голосового меню»"
 pdf_heading: "Отчет «Распределение звонков по пунктам голосового меню»"
 pages: "272-275"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 70-73"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"70-73","global_pages":"272-275"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 272-275"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"272-275","global_pages":"272-275"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2347
+tokens: 2342
 status: extracted
 ai-generated: true
 ---
 # Отчет «Распределение звонков по пунктам голосового меню»
 
-> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 272-275 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.70-73.
+> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 272-275 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.272-275.
 
 Отчет показывает информацию о пути внешнего входящего вызова на номера АТС, участвующие в схеме распределения звонка.
 
 ![Изображение, стр. 272](../images/176-otchet-raspredelenie-zvonkov-po-punktam-1.png)
 
-![Изображение, стр. 272](../images/176-otchet-raspredelenie-zvonkov-po-punktam-2.png)
+![Изображение, стр. 272](../images/176-otchet-raspredelenie-zvonkov-po-punktam-2.jpeg)
 
 ![Изображение, стр. 273](../images/176-otchet-raspredelenie-zvonkov-po-punktam-3.jpeg)
 
@@ -48,7 +48,7 @@ ai-generated: true
 
 ![Изображение, стр. 274](../images/176-otchet-raspredelenie-zvonkov-po-punktam-8.png)
 
-![Изображение, стр. 274](../images/176-otchet-raspredelenie-zvonkov-po-punktam-9.png)
+![Изображение, стр. 274](../images/176-otchet-raspredelenie-zvonkov-po-punktam-9.jpeg)
 
 Сотрудники – список сотрудников, на которых распределился звонок и разговор состоялся. На этом этапе отображаются только зеленые ветки, т.к. если звонок был пропущен всеми сотрудниками группы, то звонок считается пропущенным на группе. В отличие от групп, если были переводы вызова от сотрудника к сотруднику, отображается только последний сотрудник, принявший звонок. На путях звонков отображается количество звонков для каждого из этапов обработки выбранного типа звонка. При наведении на этап обработки звонка отображается окно количества пропущенных, принятых и возвратных звонков. При клике на любую часть ветки, отображается окно пропущенных или принятых звонков, в зависимости от типа звонка, на которой кликнул пользователь. Блок Технические звонки Блок «Технические звонки», ветки только красного цвета. статус «отбой» - абонент вернулся в главное меню; статус «Голосовая почта» - абонент попал на голосовую почту; статус «Черный список» - номер абонента содержится в «черном списке» ВАТС; статус «Ошибочный ввод» - ошибочный набор номера; Блок SIP Trunk Отображает список транков, на которые производился перевод, в рамках выбранной схемы распределения звонка. Ветки звонка синего цвета.
 

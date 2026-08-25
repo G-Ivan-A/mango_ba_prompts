@@ -2,25 +2,25 @@
 id: mango-lk-manual-232-postanovka-celey-po-sobytiyam-tekstovye
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.11.5.2"
 pdf_section: "4.5.11.5.2"
 title: "Постановка целей по событиям «Текстовые коммуникации» в Яндекс.Метрике"
 pdf_heading: "4.5.11.5.2 Постановка целей по событиям «Текстовые коммуникации» в Яндекс.Метрике"
-pages: "374-375"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf
-source_part: "4"
-source_pages: "ч.4: 71-72"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf","part":4,"pages":"71-72","global_pages":"374-375"}]'
+pages: "367-368"
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 367-368"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"367-368","global_pages":"367-368"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1154
+tokens: 1149
 status: extracted
 ai-generated: true
 ---
 # 4.5.11.5.2. Постановка целей по событиям «Текстовые коммуникации» в Яндекс.Метрике
 
-> Трассировка: PDF §4.5.11.5.2 · сквозные стр. 374-375 · источники: ч.4 `kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf` с.71-72.
+> Трассировка: PDF §4.5.11.5.2 · сквозные стр. 367-368 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.367-368.
 
 в Яндекс.Метрике 1. Зарегистрируйтесь в Яндекс.Метрике и установите счетчик на сайт, на котором размещен виджет «Текстовые коммуникации» , по инструкции 2. Для анализа событий Мультиканального виджета создайте Цель «JavaScript- событие» по инструкции 3. В идентификаторе цели укажите события, которые нужно отслеживать, из следующего списка:
 
@@ -30,7 +30,7 @@ ai-generated: true
 | Чат установлен | Чат взят в работу<br>оператором | mch_chat | mch_chat_established |
 | Запрос чата в<br>нерабочее<br>время | Клиент ввел и отправил<br>данные в форме чата в<br>нерабочее время | mch_chat | mch_chat_propose |
 
-![Изображение, стр. 375](../images/232-postanovka-celey-po-sobytiyam-tekstovye-1.jpeg)
+![Изображение, стр. 368](../images/232-postanovka-celey-po-sobytiyam-tekstovye-1.jpeg)
 
 | Заказ<br>обратного<br>звонка | Клиент ввел номер<br>телефон, нажал<br>заказать звонок | mch_callback | mch_callback_created |
 | --- | --- | --- | --- |

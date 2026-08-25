@@ -2,25 +2,25 @@
 id: mango-lk-manual-124-statistika-i-monitoring
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.1"
 pdf_section: "4.5.1"
 title: "Статистика и мониторинг"
 pdf_heading: "4.5.1 Статистика и мониторинг"
 pages: "176-177"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 75-76"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"75-76","global_pages":"176-177"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 176-177"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"176-177","global_pages":"176-177"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 578
+tokens: 573
 status: extracted
 ai-generated: true
 ---
 # 4.5.1. Статистика и мониторинг
 
-> Трассировка: PDF §4.5.1 · сквозные стр. 176-177 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.75-76.
+> Трассировка: PDF §4.5.1 · сквозные стр. 176-177 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.176-177.
 
 C помощью этого инструмента можно следить за использованием Виртуальной АТС.
 

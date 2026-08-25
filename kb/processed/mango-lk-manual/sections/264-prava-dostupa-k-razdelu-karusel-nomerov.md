@@ -2,28 +2,28 @@
 id: mango-lk-manual-264-prava-dostupa-k-razdelu-karusel-nomerov
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.19.7"
 pdf_section: "4.5.19.7"
 title: "Права доступа к разделу «Карусель номеров»"
 pdf_heading: "4.5.19.7 Права доступа к разделу «Карусель номеров»"
-pages: "434-435"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf
-source_part: "5"
-source_pages: "ч.5: 30-31"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf","part":5,"pages":"30-31","global_pages":"434-435"}]'
+pages: "427-428"
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 427-428"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"427-428","global_pages":"427-428"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 443
+tokens: 438
 status: extracted
 ai-generated: true
 ---
 # 4.5.19.7. Права доступа к разделу «Карусель номеров»
 
-> Трассировка: PDF §4.5.19.7 · сквозные стр. 434-435 · источники: ч.5 `kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf` с.30-31.
+> Трассировка: PDF §4.5.19.7 · сквозные стр. 427-428 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.427-428.
 
 Для полноценной работы с разделом Карусель номеров необходимо назначить права в ролевой модели. Если права не установлены, пользователь сможет только просматривать список каруселей, без возможности их создания, редактирования и удаления. Необходимые права: ● В разделе Обработка звонков → Номера, подключенные к АТС установите чекбокс «Редактировать карусель номеров» ● В разделе Финансы → Смена тарифа и подключение услуг установите чекбокс «Подключать и отключать услуги». После включения всех прав пользователю будут доступны:
 
-![Изображение, стр. 435](../images/264-prava-dostupa-k-razdelu-karusel-nomerov-1.jpeg)
+![Изображение, стр. 428](../images/264-prava-dostupa-k-razdelu-karusel-nomerov-1.jpeg)
 
 ● просмотр и управление списком каруселей; ● создание, редактирование и удаление каруселей; ● добавление и удаление номеров и сотрудников; ● активация и деактивация каруселей; ● подключение и отключение услуги «Карусель номеров». внимание Если хотя бы одно из прав отсутствует, кнопки действий в интерфейсе будут неактивны.

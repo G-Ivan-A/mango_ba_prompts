@@ -13,6 +13,36 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #317: загрузка и обновление разделов БЗ + ревизия структуры `kb/`
+
+- Обработаны шесть PDF из постановки [#317](https://github.com/G-Ivan-A/mango_ba_prompts/issues/317):
+  пять обновлений и один новый раздел. Итог — 877 разделов, 1664 страницы,
+  1 031 737 токенов (`tiktoken:cl100k_base`).
+  | Раздел БЗ | Кластер | Версия | Разделов | `confidence_level` |
+  | --- | --- | --- | ---: | --- |
+  | [`kb/processed/mango-cc-manual`](kb/processed/mango-cc-manual/index.md) | обновление | 1.26.28.1 | 139 | requires_review |
+  | [`kb/processed/mango-lk-manual`](kb/processed/mango-lk-manual/index.md) | обновление | 1.23 | 351 | requires_review |
+  | [`kb/processed/cov-robot-fil`](kb/processed/cov-robot-fil/index.md) | обновление | 1.26.28 | 75 | high |
+  | [`kb/processed/mtalker/windows-mac-working`](kb/processed/mtalker/windows-mac-working/index.md) | обновление | 11.06.2026 | 143 | high |
+  | [`kb/processed/mtalker/android-user-guide`](kb/processed/mtalker/android-user-guide/index.md) | обновление | 11.06.2026 | 99 | high |
+  | [`kb/processed/mdialogi-api`](kb/processed/mdialogi-api/index.md) | новый | 10.06.2026 | 70 | high |
+- Кросс-движковая сверка (pdfplumber → PyMuPDF) прошла по 5820 критическим
+  токенам: 2 не подтверждены и размечены `❓ ТРЕБУЕТСЯ ПРОВЕРКА`, 2 страницы без
+  текстового слоя — `⚠️ ПРОБЕЛ ИЗВЛЕЧЕНИЯ`; затронутые документы автоматически
+  понижены до `requires_review`.
+- Добавлена ревизия структуры хранения [`kb/STRUCTURE_REVIEW.md`](kb/STRUCTURE_REVIEW.md):
+  плоский каталог `kb/processed/<slug>/` подтверждён как целевой, вложенность —
+  только для наборов `multi_document`.
+
+### Fixed — границы разделов для PDF без оглавления
+
+- `scripts/kb/extract.py`: при отсутствии outline границы разделов теперь
+  строятся прежде всего по кеглю (`typography-heuristic`), фильтр кандидатов в
+  заголовки отсекает буллиты и хвосты предложений, перенесённый на вторую
+  строку заголовок склеивается. Без этого новое издание руководства КЦ (0 записей
+  outline) давало регрессию issue #115: 223 «раздела» из пунктов списков.
+- Исходные PDF из постановки удалены из рабочего каталога и не попали в Git;
+  правил для `*.pdf` в `.gitattributes` и `lfs: true` в `.github/workflows/kb.yml` нет.
 ### Added — Issue #315 прогон RUN-0056: gap-анализ интеграции чатов HH.ru с КЦ Mango Office
 
 - Зафиксирован прогон [`runs/2026/RUN-0056`](runs/2026/RUN-0056/metadata.yaml)

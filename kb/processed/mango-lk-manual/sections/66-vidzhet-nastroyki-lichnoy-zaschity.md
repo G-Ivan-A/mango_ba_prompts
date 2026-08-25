@@ -2,25 +2,25 @@
 id: mango-lk-manual-66-vidzhet-nastroyki-lichnoy-zaschity
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "0"
 pdf_section: "4"
 title: "Виджет «Настройки личной защиты»"
 pdf_heading: "Виджет «Настройки личной защиты»"
 pages: "63-64"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 63-64"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"63-64","global_pages":"63-64"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"63-64","global_pages":"63-64"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 907
+tokens: 902
 status: extracted
 ai-generated: true
 ---
 # Виджет «Настройки личной защиты»
 
-> Трассировка: PDF §4 · сквозные стр. 63-64 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.63-64.
+> Трассировка: PDF §4 · сквозные стр. 63-64 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.63-64.
 
 Виджет доступен только для пользователей с ролью «Руководитель компании», а также ролей, созданных на её основе. Виджет позволяет ограничить доступ остальных пользователей к прослушиванию, скачиванию и отправке записей разговоров руководителя, паролю его SIP-учетной записи и т.д. При выключенных настройках личной защиты виджет отображается в виде:
 
@@ -44,4 +44,4 @@ ai-generated: true
 
 «Руководитель компании», защищенные записи отмечаются иконкой и недоступны для прослушивания, скачивания и отправки. При попытке скачивания либо отправке на экране будет отображено соответствующее сообщение:
 
-![Изображение, стр. 64](../images/66-vidzhet-nastroyki-lichnoy-zaschity-7.png)
+![Изображение, стр. 64](../images/66-vidzhet-nastroyki-lichnoy-zaschity-7.jpeg)

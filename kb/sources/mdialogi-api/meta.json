@@ -1,11 +1,13 @@
 {
   "name": "Манго Диалоги. Справочник по API",
-  "version": "27.02.2026",
+  "version": "10.06.2026",
   "type": "api_reference",
   "product": "Mango Dialogi",
-  "platform": ["API"],
+  "platform": [
+    "API"
+  ],
   "language": "ru",
-  "upload_date": "2026-06-20",
+  "upload_date": "2026-08-25",
   "description": "Справочник по API для продукта Манго Диалоги. Содержит описание методов управления диалогами, интеграционными возможностями и настройками.",
   "topics": [
     "API",
@@ -17,6 +19,12 @@
   "file_name": "Manual_API_Mango_Dialogi.pdf",
   "total_files": 1,
   "file_size_mb": 1.7,
-  "pages_count": 91,
-  "source_url": null
+  "pages_count": 96,
+  "source_url": null,
+  "processing_mode": "single",
+  "output_slug": "mdialogi-api",
+  "doc_code": "MDAPI",
+  "source_files": [
+    "Manual_API_Mango_Dialogi.pdf"
+  ]
 }

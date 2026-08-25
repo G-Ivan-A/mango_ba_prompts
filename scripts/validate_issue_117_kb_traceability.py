@@ -6,9 +6,14 @@ It locks the issue-#117 requirements:
 
 - generated sections carry machine-readable trace metadata;
 - section files include a human-readable trace line;
-- the split LK manual is processed as one document from five PDF parts;
-- global page numbers remain continuous across parts while each source reference
-  still points back to the exact PDF part and local pages.
+- the LK manual is processed as one document with continuous global pages while
+  each source reference still points back to the exact PDF part and local pages;
+- the multi-part machinery itself stays in the pipeline.
+
+Issue #317 replaced the five split PDFs of LK 1.21 with a single ``LK_manual_v-123.pdf``
+(version 1.23), so the part-specific expectations are now stated for one part.
+The multi-part contract is still checked: ``source_refs`` keep ``part``/``pages``/
+``global_pages`` and ``scripts/kb/process_sources.py`` keeps the ``multi_part`` mode.
 """
 
 from __future__ import annotations
@@ -21,14 +26,14 @@ ROOT = Path(__file__).resolve().parents[1]
 
 PROCESSED_ROOT = ROOT / "kb" / "processed"
 LK_DOC = "kb/processed/mango-lk-manual"
-LK_SOURCES = [
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf",
-    "kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf",
-]
-LK_PAGE_COUNTS = [101, 101, 101, 101, 164]
+LK_SOURCES = ["kb/sources/mango-lk-manual/LK_manual_v-123.pdf"]
+LK_PAGE_COUNTS = [565]
+LK_VERSION = "1.23"
+LK_LAST_PAGE = 565
+PIPELINE_FILES = {
+    "scripts/kb/process_sources.py": "multi_part",
+    "scripts/kb/extract.py": "page_offset",
+}
 
 REQUIRED_SECTION_META = (
     "file",
@@ -170,12 +175,14 @@ def check_lk_manual() -> list[str]:
 
     if meta.get("doc_code") != "LK":
         errors.append(f"{LK_DOC}/meta.json: doc_code must be LK")
+    if meta.get("doc_version") != LK_VERSION:
+        errors.append(f"{LK_DOC}/meta.json: doc_version must be {LK_VERSION} (issue #317)")
     if meta.get("page_count") != sum(LK_PAGE_COUNTS):
-        errors.append(f"{LK_DOC}/meta.json: page_count must be 568")
-    if meta.get("part_count") != 5:
-        errors.append(f"{LK_DOC}/meta.json: part_count must be 5")
+        errors.append(f"{LK_DOC}/meta.json: page_count must be {sum(LK_PAGE_COUNTS)}")
+    if meta.get("part_count") != len(LK_SOURCES):
+        errors.append(f"{LK_DOC}/meta.json: part_count must be {len(LK_SOURCES)}")
     if meta.get("source_pdfs") != LK_SOURCES:
-        errors.append(f"{LK_DOC}/meta.json: source_pdfs must list all five LK parts in order")
+        errors.append(f"{LK_DOC}/meta.json: source_pdfs must list the LK 1.23 source")
 
     sources = meta.get("sources", [])
     if [s.get("page_count") for s in sources] != LK_PAGE_COUNTS:
@@ -183,19 +190,19 @@ def check_lk_manual() -> list[str]:
 
     sections = meta.get("sections", [])
     if len(sections) < 300:
-        errors.append(f"{LK_DOC}/meta.json: expected 300+ LK sections from the five parts")
+        errors.append(f"{LK_DOC}/meta.json: expected 300+ LK sections")
     if sum(1 for s in sections if s.get("title") == "Титульная часть") > 1:
         errors.append(f"{LK_DOC}/meta.json: continuation pages created extra title sections")
 
-    part2_section = next((s for s in sections if s.get("pdf_section") == "4.4.1.3"), None)
-    if not part2_section:
-        errors.append(f"{LK_DOC}/meta.json: missing section 4.4.1.3 from part 2")
+    deep_section = next((s for s in sections if s.get("pdf_section") == "4.4.1.3"), None)
+    if not deep_section:
+        errors.append(f"{LK_DOC}/meta.json: missing section 4.4.1.3")
     else:
-        if page_start(part2_section.get("pages", "")) != 102:
+        if page_start(deep_section.get("pages", "")) != 102:
             errors.append(f"{LK_DOC}/meta.json: section 4.4.1.3 must start on global page 102")
-        refs = parse_source_refs(part2_section.get("source_refs"), "LK section 4.4.1.3", errors)
-        if refs and refs[0].get("part") != 2:
-            errors.append(f"{LK_DOC}/meta.json: section 4.4.1.3 must point to source part 2")
+        refs = parse_source_refs(deep_section.get("source_refs"), "LK section 4.4.1.3", errors)
+        if refs and refs[0].get("source_pdf") != LK_SOURCES[0]:
+            errors.append(f"{LK_DOC}/meta.json: section 4.4.1.3 must point to the LK 1.23 source")
 
     final_section = next(
         (
@@ -207,11 +214,17 @@ def check_lk_manual() -> list[str]:
     if not final_section:
         errors.append(f"{LK_DOC}/meta.json: missing final section 6")
     else:
-        if final_section.get("pages") != "568":
-            errors.append(f"{LK_DOC}/meta.json: section 6 must point to global page 568")
+        if final_section.get("pages") != str(LK_LAST_PAGE):
+            errors.append(f"{LK_DOC}/meta.json: section 6 must point to global page {LK_LAST_PAGE}")
         refs = parse_source_refs(final_section.get("source_refs"), "LK section 6", errors)
-        if refs and refs[0].get("part") != 5:
-            errors.append(f"{LK_DOC}/meta.json: section 6 must point to source part 5")
+        if refs and refs[0].get("part") != 1:
+            errors.append(f"{LK_DOC}/meta.json: section 6 must point to source part 1")
+
+    # Источники стали односоставными, но конвейер обязан сохранять умение
+    # склеивать split-документы со сквозной пагинацией (issue #117).
+    for rel, needle in PIPELINE_FILES.items():
+        if needle not in (ROOT / rel).read_text(encoding="utf-8"):
+            errors.append(f"{rel}: multi-part support ({needle!r}) must stay in the pipeline")
 
     return errors
 

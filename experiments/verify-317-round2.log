@@ -1,0 +1,5 @@
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+kb/processed/mango-cc-manual: проверено 1088 токенов, не подтверждено 2, страниц без текста 1, доверие requires_review
+kb/processed/cov-robot-fil: проверено 515 токенов, не подтверждено 0, страниц без текста 0, доверие high
+kb/processed/mtalker/windows-mac-working: проверено 808 токенов, не подтверждено 0, страниц без текста 0, доверие high
+kb/processed/mtalker/android-user-guide: проверено 313 токенов, не подтверждено 0, страниц без текста 0, доверие high
