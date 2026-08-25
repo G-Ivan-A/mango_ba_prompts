@@ -13,7 +13,7 @@ temperature: 0.1
 
 ## Unreleased
 
-### Added — Issue #317 прогон RUN-0056: загрузка и обновление разделов БЗ + ревизия структуры `kb/`
+### Added — Issue #317: загрузка и обновление разделов БЗ + ревизия структуры `kb/`
 
 - Обработаны шесть PDF из постановки [#317](https://github.com/G-Ivan-A/mango_ba_prompts/issues/317):
   пять обновлений и один новый раздел. Итог — 877 разделов, 1664 страницы,
@@ -33,9 +33,6 @@ temperature: 0.1
 - Добавлена ревизия структуры хранения [`kb/STRUCTURE_REVIEW.md`](kb/STRUCTURE_REVIEW.md):
   плоский каталог `kb/processed/<slug>/` подтверждён как целевой, вложенность —
   только для наборов `multi_document`.
-- Зафиксирован прогон [`runs/2026/RUN-0056`](runs/2026/RUN-0056/metadata.yaml)
-  (`run_type: execution`, `status: works`).
-
 ### Fixed — границы разделов для PDF без оглавления
 
 - `scripts/kb/extract.py`: при отсутствии outline границы разделов теперь
