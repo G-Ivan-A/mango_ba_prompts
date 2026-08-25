@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.9
+version: 0.10
 updated: 2026-08-25
 temperature: 0.1
 ---
@@ -12,6 +12,51 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #320: загрузка и обновление разделов БЗ + анализ структуры `kb/`
+
+- Обработаны десять PDF из постановки [#320](https://github.com/G-Ivan-A/mango_ba_prompts/issues/320):
+  один кластер «обновление» и шесть новых разделов БЗ (из них один — комплект
+  `multi_document` из четырёх руководств). Итог по затронутым разделам —
+  872 раздела, 1160 страниц, 698 137 токенов (`tiktoken:cl100k_base`).
+  | Раздел БЗ | Кластер | Версия | Разделов | `confidence_level` |
+  | --- | --- | --- | ---: | --- |
+  | [`kb/processed/integration-1c`](kb/processed/integration-1c/index.md) | обновление | 22.12.2025 | 33 | high |
+  | [`kb/processed/integration-amocrm`](kb/processed/integration-amocrm/index.md) | новый | 25.08.2025 | 86 | high |
+  | [`kb/processed/integration-bitrix24`](kb/processed/integration-bitrix24/index.md) | новый | 03.03.2026 | 192 | high |
+  | [`kb/processed/integration-bpmsoft`](kb/processed/integration-bpmsoft/index.md) | новый | 22.06.2026 | 127 | high |
+  | [`kb/processed/sip-trunk`](kb/processed/sip-trunk/index.md) | новый | 1.23.43 | 39 | high |
+  | [`kb/processed/quality-management`](kb/processed/quality-management/index.md) | новый | 1.26.18 | 52 | high |
+  | [`kb/processed/speech-analytics/user-guide`](kb/processed/speech-analytics/user-guide/index.md) | новый | 1.26.18 | 76 | high |
+  | [`kb/processed/speech-analytics/kats`](kb/processed/speech-analytics/kats/index.md) | новый | 1.26.18 | 92 | high |
+  | [`kb/processed/speech-analytics/offline-scoring`](kb/processed/speech-analytics/offline-scoring/index.md) | новый | 1.26.15 | 87 | high |
+  | [`kb/processed/speech-analytics/vats-offline-scoring`](kb/processed/speech-analytics/vats-offline-scoring/index.md) | новый | 1.26.18 | 88 | high |
+- Раздел «Речевая аналитика» оформлен как набор `multi_document`: четыре
+  руководства — не части одного документа, а редакции продукта под разные
+  конфигурации, поэтому у каждого свой `doc_code`, своя версия и своя
+  пагинация, а `kb/processed/speech-analytics/index.md` служит оглавлением
+  комплекта.
+- `kb/processed/integration-1c` перегенерирован тем же PDF (sha256 не изменился)
+  на конвейере после issue #317: типографская эвристика границ разделов дала
+  33 раздела вместо 8, адрес каталога и `doc_code` (`INT1C`) сохранены.
+- Добавлены управляющие поля манифестов (`processing_mode`, `output_slug`,
+  `doc_code`, `source_files`) в `kb/sources/{integration_amocrm,
+  integration-bitrix24,sip-trunk,quality-managment,speech-analytics}/meta.json`
+  и новый источник `kb/sources/integration-bpmsoft/`. Опечатка в имени
+  каталога-источника `quality-managment` изолирована через
+  `output_slug: quality-management`, чтобы она не попала в адреса чанков.
+- Кросс-движковая сверка (pdfplumber → PyMuPDF) прошла по 5577 критическим
+  токенам: 2 не подтверждены и размечены `❓ ТРЕБУЕТСЯ ПРОВЕРКА`
+  (`kb/processed/sip-trunk`, стр. 17), страниц без текстового слоя нет.
+- Реестр [`kb/processed/README.md`](kb/processed/README.md) приведён в
+  соответствие с фактическим составом БЗ (15 каталогов, включая разделы из
+  issues #310 и #317, ранее не попавшие в таблицу).
+- [`kb/STRUCTURE_REVIEW.md`](kb/STRUCTURE_REVIEW.md) дополнен разделом 4:
+  плоский `kb/processed/<slug>/` подтверждён после роста БЗ в полтора раза,
+  `multi_document` признан оправданным для «Речевой аналитики», открытая
+  рекомендация по унификации имён каталогов-источников сохранена.
+- Исходные PDF из постановки удалены из рабочего каталога и не попали в Git;
+  правил для `*.pdf` в `.gitattributes` и `lfs: true` в workflow нет.
 
 ### Added — Issue #317: загрузка и обновление разделов БЗ + ревизия структуры `kb/`
 
