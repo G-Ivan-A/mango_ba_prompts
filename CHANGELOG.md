@@ -16,15 +16,21 @@ temperature: 0.1
 ### Added — Issue #319: RUN-0057, оценка исполнимости ТЗ (Приложения № 1–4)
 
 - Добавлен прогон [`runs/2026/RUN-0057`](runs/2026/RUN-0057/metadata.yaml)
-  (`run_type: execution`) — оценка исполнимости 102 требований тендерного ТЗ
-  из четырёх приложений (STT — 19, TTS — 21, NLU — 19, Dialogue Manager — 43)
+  (`run_type: execution`) — оценка исполнимости 101 требования тендерного ТЗ
+  из четырёх приложений (STT — 19, TTS — 21, NLU — 18, Dialogue Manager — 43;
+  форма Заказчика содержит 106 строк, 5 из них — заголовки групп)
   по постановке [#319](https://github.com/G-Ivan-A/mango_ba_prompts/issues/319).
-- Артефакты оформлены тремя уровнями под разные аудитории:
+- Артефакты оформлены пятью уровнями под разные аудитории:
+  [`L0-customer-form-with-assessment.md`](runs/2026/RUN-0057/outputs/L0-customer-form-with-assessment.md)
+  (Заказчик — дословное воспроизведение формы: шапки листов, порядок и названия колонок,
+  нумерация и текст посимвольно, добавлена одна колонка с результатом анализа),
   [`L1-executive-summary.md`](runs/2026/RUN-0057/outputs/L1-executive-summary.md) (бизнес),
   [`L2-feasibility-matrix.md`](runs/2026/RUN-0057/outputs/L2-feasibility-matrix.md) (БА/архитектор,
   построчно по структуре заказчика без изменения формулировок и структуры таблиц),
-  [`L3-technical-notes.md`](runs/2026/RUN-0057/outputs/L3-technical-notes.md) (разработка).
-- Итог оценки: У1 — 31, У1ч — 29, У3 (Речевая аналитика) — 4, без подтверждения — 38.
+  [`L3-technical-notes.md`](runs/2026/RUN-0057/outputs/L3-technical-notes.md) (разработка),
+  [`L4-requirements-statistics.md`](runs/2026/RUN-0057/outputs/L4-requirements-statistics.md)
+  (БА-методолог — статистика по требованиям со статусом «практика»).
+- Итог оценки: У1 — 31, У1ч — 29, У3 (Речевая аналитика) — 4, без подтверждения — 37.
   Уровень 2 (twin24.ai) не применён: техническая документация платформы и подтверждение
   её интеграции с Mango Office публично недоступны — зафиксировано в
   [`logs/source-availability.md`](runs/2026/RUN-0057/logs/source-availability.md).
@@ -34,9 +40,19 @@ temperature: 0.1
 - Сформирована гипотеза нового процесса таксономии БА
   [`logs/taxonomy-hypothesis.md`](runs/2026/RUN-0057/logs/taxonomy-hypothesis.md) —
   «Оценка исполнимости требований заказчика по документации продукта».
-- Добавлен локальный инструмент воспроизводимости
+- L0 и L4 добавлены по дополнению к постановке в
+  [комментарии к PR #322](https://github.com/G-Ivan-A/mango_ba_prompts/pull/322#issuecomment-5416675011)
+  от 2026-08-25. Статистика по требованиям зафиксирована как практика, а не методология:
+  детерминированная часть (объём, модальность, ответы участника, кросс-таблица покрытия)
+  отделена от эвристической (тематические классы R01–R10), погрешность эвристики измерена
+  (56 строк из 101 совпадают более чем с одним правилом классификации).
+- Добавлены локальные инструменты воспроизводимости
   [`experiments/issue_319_extract_xls_requirements.py`](experiments/issue_319_extract_xls_requirements.py)
-  (разбор таблиц требований в формате BIFF `.xls` через `xlrd`).
+  (разбор таблиц требований в формате BIFF `.xls` через `xlrd`),
+  [`experiments/issue_319_build_source_mirror.py`](experiments/issue_319_build_source_mirror.py)
+  (генерация L0 из `.xls` с подстановкой вердиктов соединением по дословному тексту требования)
+  и [`experiments/issue_319_requirements_statistics.py`](experiments/issue_319_requirements_statistics.py)
+  (расчёт L4 из L0).
 
 ### Added — Issue #320: загрузка и обновление разделов БЗ + анализ структуры `kb/`
 
