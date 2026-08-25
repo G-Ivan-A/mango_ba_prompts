@@ -1,0 +1,47 @@
+run_id: RUN-0056
+process: gap-analysis-hh-chats-mango-cc-integration-feasibility
+version: "0.1"
+date: 2026-08-25
+author: "AI issue solver (claude-opus-5) по постановке БА"
+model: "claude-opus-5"
+status: partial-success
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/315
+  - https://github.com/user-attachments/files/31380601/765.HH.ru.pdf
+  - https://github.com/hhru/api
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L1-executive-summary.md
+  - outputs/L2-gap-matrix.md
+  - outputs/L3-technical-spike-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/source-availability.md
+  - logs/metrics.md
+  - logs/taxonomy-hypothesis.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  verdict: works-with-edits
+  success_rate: 0.7
+  success_rate_basis: "Доля требований ФТ (ФТ-01…ФТ-10), для которых удалось вынести обоснованный вердикт покрытия с опорой на доступную документацию hh.ru и БЗ Mango: 7 из 10 оценены полностью, 3 (ФТ-04, ФТ-06, ФТ-10) оценены частично из-за недоступности OpenAPI-спецификации hh.ru и раздела «Чаты» базы знаний hh.ru."
+  sources_studied: 15
+  hh_api_docs_read: 12
+  kb_sections_read: 6
+  requirements_assessed: 10
+  critical_gaps: 7
+  token_method: "not-recorded"
+  duration_active_s: 10800
+  measured: false
+  eval: "Прогон доказал, что gap-анализ интеграции чатов HH.ru с КЦ Mango Office выполним по открытой части документации hh.ru и БЗ Mango без домысливания и что ключевые требования ФТ-05…ФТ-08 упираются в отсутствие публичного Chats API. Прогон не доказал полноту перечня событий Webhook API и точный состав полей чатов: OpenAPI-спецификация hh.ru из среды выполнения недоступна (см. logs/source-availability.md)."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/315
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/ba-ontology.md
+  - docs/taxonomy.md
+  - kb/processed/mango-lk-manual/sections/210-avito-rabota.md
+  - kb/processed/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md
