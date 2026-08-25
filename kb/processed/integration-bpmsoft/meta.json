@@ -2327,5 +2327,1033 @@
   "table_count": 7,
   "token_method": "tiktoken:cl100k_base",
   "tokens_index": 11803,
-  "tokens_total": 49903
+  "tokens_total": 49903,
+  "verification": {
+    "confidence_level": "high",
+    "confirmed_ratio": 1.0,
+    "critical_tokens_checked": 463,
+    "critical_tokens_unconfirmed": 0,
+    "extraction_date": "2026-08-25",
+    "method": "cross-engine (pdfplumber -> PyMuPDF re-read of the same pages)",
+    "pages_without_text_layer": 0,
+    "sections": [
+      {
+        "critical_tokens": 24,
+        "file": "sections/00-titulnaya-chast.md",
+        "gap_pages": [],
+        "pages": "1-5",
+        "title": "Титульная часть",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/01-nachalo-raboty-s-integraciey.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Начало работы с интеграцией",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/02-obzor.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/03-vazhnaya-informaciya.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Важная информация",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 12,
+        "file": "sections/04-podgotovka.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Подготовка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/05-poryadok-deystviy.md",
+        "gap_pages": [],
+        "pages": "5-6",
+        "title": "Порядок действий",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/06-shag-1-podklyuchenie-virtualnoy-ats-mang.md",
+        "gap_pages": [],
+        "pages": "6",
+        "title": "Шаг 1. Подключение Виртуальной АТС MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/07-shag-2-ustanovka-softfona-mango-talker.md",
+        "gap_pages": [],
+        "pages": "6-7",
+        "title": "Шаг 2. Установка софтфона Mango Talker",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/08-shag-3-ustanovka-prilozheniya-integracii.md",
+        "gap_pages": [],
+        "pages": "7",
+        "title": "Шаг 3. Установка приложения интеграции в BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/09-ustanovka-prilozheniya.md",
+        "gap_pages": [],
+        "pages": "7-9",
+        "title": "Установка приложения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/10-ustanovka-sistemnyh-nastroek.md",
+        "gap_pages": [],
+        "pages": "9-13",
+        "title": "Установка системных настроек",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/11-shag-4-nastroyka-integracii-v-lichnom-ka.md",
+        "gap_pages": [],
+        "pages": "13",
+        "title": "Шаг 4. Настройка интеграции в Личном кабинете MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/12-ustanovka-i-bazovye-nastroyki.md",
+        "gap_pages": [],
+        "pages": "13-14",
+        "title": "Установка и базовые настройки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 34,
+        "file": "sections/13-nastoyka-podklyucheniya-k-bpmsoft.md",
+        "gap_pages": [],
+        "pages": "14-17",
+        "title": "Настойка подключения к BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/14-nastroyka-sootvetstviya-vnutrennih-nomer.md",
+        "gap_pages": [],
+        "pages": "17",
+        "title": "Настройка соответствия внутренних номеров сотрудников",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/15-obschee.md",
+        "gap_pages": [],
+        "pages": "17-18",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/16-kak-nastroit-sopostavlenie-sotrudnikov.md",
+        "gap_pages": [],
+        "pages": "18-20",
+        "title": "Как настроить сопоставление сотрудников",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/17-dopolnitelnye-nastroyki-integracii.md",
+        "gap_pages": [],
+        "pages": "20",
+        "title": "Дополнительные настройки интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/18-obrabotka-zvonkov.md",
+        "gap_pages": [],
+        "pages": "20",
+        "title": "Обработка звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/19-kak-nastroit-dlitelnost-uspeshno-prinyat.md",
+        "gap_pages": [],
+        "pages": "20-22",
+        "title": "Как настроить длительность успешно принятых и дозвонившихся",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/20-sozdavat-kontakt-kontragenta-lid-pri-zvo.md",
+        "gap_pages": [],
+        "pages": "22-24",
+        "title": "Создавать контакт / контрагента / лид при звонках с новых номеров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/21-otvetstvennyy-pri-propuschennyh-zvonkah.md",
+        "gap_pages": [],
+        "pages": "24-25",
+        "title": "Ответственный при пропущенных звонках в группу",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/22-flag-fiksirovat-propuschennye-v-ivr.md",
+        "gap_pages": [],
+        "pages": "25-26",
+        "title": "Флаг “Фиксировать пропущенные в IVR”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/23-zagruzhat-postzvonkovuyu-ocenku.md",
+        "gap_pages": [],
+        "pages": "26",
+        "title": "Загружать постзвонковую оценку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/24-obzor.md",
+        "gap_pages": [],
+        "pages": "26",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/25-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "26",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/26-kak-podklyuchit.md",
+        "gap_pages": [],
+        "pages": "26-27",
+        "title": "Как подключить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/27-obrabotka-povtornyh-vhodyaschih-vyzovov.md",
+        "gap_pages": [],
+        "pages": "27",
+        "title": "Обработка повторных входящих вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/28-sozdat-lid.md",
+        "gap_pages": [],
+        "pages": "27-28",
+        "title": "Создать лид",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/29-sohranenie-dannyh-kolltrekinga-mango-off.md",
+        "gap_pages": [],
+        "pages": "28",
+        "title": "Сохранение данных Коллтрекинга MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 20,
+        "file": "sections/30-obzor.md",
+        "gap_pages": [],
+        "pages": "28-30",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/31-kak-vklyuchit-ili-vyklyuchit-sohranenie.md",
+        "gap_pages": [],
+        "pages": "30-31",
+        "title": "Как включить или выключить сохранение данных коллтрекинга",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/32-kak-posmotret-dannye-kolltrekinga-v-bpms.md",
+        "gap_pages": [],
+        "pages": "31-32",
+        "title": "Как посмотреть данные коллтрекинга в BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/33-umnye-pravila-raspredeleniya-vhodyaschih.md",
+        "gap_pages": [],
+        "pages": "32",
+        "title": "Умные правила распределения входящих звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/34-obzor.md",
+        "gap_pages": [],
+        "pages": "32",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/35-kak-sozdat-i-nastroit-umnye-pravila.md",
+        "gap_pages": [],
+        "pages": "32-35",
+        "title": "Как создать и настроить умные правила",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/36-primery-nastroyki-umnogo-algoritma-raspr.md",
+        "gap_pages": [],
+        "pages": "35-36",
+        "title": "Примеры настройки умного алгоритма распределения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/37-obrabotka-ishodyaschih-zvonkov.md",
+        "gap_pages": [],
+        "pages": "36",
+        "title": "Обработка исходящих звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/38-ishodyaschiy-zvonok-po-kliku-iz-bpmsoft.md",
+        "gap_pages": [],
+        "pages": "36-37",
+        "title": "Исходящий звонок по клику из BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/39-dopolnitelnye-nastroyki-integracii.md",
+        "gap_pages": [],
+        "pages": "37",
+        "title": "Дополнительные настройки интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/40-sohranenie-dannyh-rechevoy-analitiki.md",
+        "gap_pages": [],
+        "pages": "37",
+        "title": "Сохранение данных речевой аналитики",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/41-pered-nachalom-raboty.md",
+        "gap_pages": [],
+        "pages": "37",
+        "title": "Перед началом работы",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/42-sohranenie-tematik-razgovorov.md",
+        "gap_pages": [],
+        "pages": "37-40",
+        "title": "Сохранение тематик разговоров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/43-sohranenie-tekstov-rechevoy-analitiki.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "Сохранение текстов Речевой аналитики",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/44-obschie-svedeniya.md",
+        "gap_pages": [],
+        "pages": "40-41",
+        "title": "Общие сведения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/45-kak-nastroit.md",
+        "gap_pages": [],
+        "pages": "41-42",
+        "title": "Как настроить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/46-kak-posmotret-raspoznannyy-tekst.md",
+        "gap_pages": [],
+        "pages": "42",
+        "title": "Как посмотреть распознанный текст",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/47-obschie-svedeniya.md",
+        "gap_pages": [],
+        "pages": "42-43",
+        "title": "Общие сведения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/48-kak-vklyuchit-sohranenie-rezyume-razgovo.md",
+        "gap_pages": [],
+        "pages": "43-44",
+        "title": "Как включить сохранение резюме разговора",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/49-kak-rabotaet-formirovanie-rezyume.md",
+        "gap_pages": [],
+        "pages": "44",
+        "title": "Как работает формирование резюме",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/50-kak-posmotret-rezyume-razgovora.md",
+        "gap_pages": [],
+        "pages": "44-45",
+        "title": "Как посмотреть резюме разговора",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/51-ispolzovanie-vks-mango-talker.md",
+        "gap_pages": [],
+        "pages": "45",
+        "title": "Использование ВКС MANGO TALKER",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/52-kak-vklyuchit-ispolzovanie-vks.md",
+        "gap_pages": [],
+        "pages": "45-46",
+        "title": "Как включить использование ВКС",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/53-kak-rabotat-s-videokonferenciey-v-kartoc.md",
+        "gap_pages": [],
+        "pages": "46-47",
+        "title": "Как работать с видеоконференцией в карточке контакта",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/54-rezultaty-video-vstrechi.md",
+        "gap_pages": [],
+        "pages": "47-48",
+        "title": "Результаты видео-встречи",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/55-zagruzka-otsutstvuyuschih-v-crm-zvonkov.md",
+        "gap_pages": [],
+        "pages": "48",
+        "title": "Загрузка отсутствующих в CRM звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/56-obzor.md",
+        "gap_pages": [],
+        "pages": "48-49",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/57-kak-vklyuchit.md",
+        "gap_pages": [],
+        "pages": "49",
+        "title": "Как включить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/58-otklyuchit-rabotu-s-lidami.md",
+        "gap_pages": [],
+        "pages": "49",
+        "title": "Отключить работу с лидами",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/59-obzor.md",
+        "gap_pages": [],
+        "pages": "49",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/60-kak-vklyuchit.md",
+        "gap_pages": [],
+        "pages": "49-50",
+        "title": "Как включить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/61-ispolzovat-statusy-kontakt-centra.md",
+        "gap_pages": [],
+        "pages": "50",
+        "title": "Использовать статусы Контакт-Центра",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/62-obzor.md",
+        "gap_pages": [],
+        "pages": "50",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/63-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "50-51",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/64-statusy-kontakt-centra-v-interfeyse-bpms.md",
+        "gap_pages": [],
+        "pages": "51",
+        "title": "Статусы Контакт-центра в интерфейсе BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/65-kak-vklyuchit-nastroyku-ispolzovat-statu.md",
+        "gap_pages": [],
+        "pages": "51-52",
+        "title": "Как включить настройку “Использовать статусы Контакт-Центра”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/66-ruchnaya-privyazka-zvonka-k-suschnostyam.md",
+        "gap_pages": [],
+        "pages": "52",
+        "title": "Ручная привязка звонка к сущностям",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/67-obzor.md",
+        "gap_pages": [],
+        "pages": "52",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/68-kak-vklyuchit.md",
+        "gap_pages": [],
+        "pages": "52-53",
+        "title": "Как включить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/69-privyazka-zvonka-k-suschnosti-vruchnuyu.md",
+        "gap_pages": [],
+        "pages": "53",
+        "title": "Привязка звонка к сущности вручную",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/70-nastroyka-deystviy-v-zavisimosti-ot-roli.md",
+        "gap_pages": [],
+        "pages": "53",
+        "title": "Настройка действий в зависимости от роли",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/71-obschee.md",
+        "gap_pages": [],
+        "pages": "53",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/72-naznachenie.md",
+        "gap_pages": [],
+        "pages": "53-54",
+        "title": "Назначение",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/73-prosmotr-primenennyh-pravil-v-kartochke.md",
+        "gap_pages": [],
+        "pages": "54",
+        "title": "Просмотр примененных правил в карточке звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/74-ogranicheniya.md",
+        "gap_pages": [],
+        "pages": "54",
+        "title": "Ограничения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/75-testovye-pravila.md",
+        "gap_pages": [],
+        "pages": "54",
+        "title": "Тестовые правила",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/76-kak-otkryt-nastroyku.md",
+        "gap_pages": [],
+        "pages": "54-55",
+        "title": "Как открыть настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/77-kak-ustroena-tablica-pravil.md",
+        "gap_pages": [],
+        "pages": "55",
+        "title": "Как устроена таблица правил",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/78-opisanie-interfeysa.md",
+        "gap_pages": [],
+        "pages": "55-58",
+        "title": "Описание интерфейса",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/79-o-vidah-deystviy.md",
+        "gap_pages": [],
+        "pages": "58-60",
+        "title": "О видах действий",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/80-trebovanie-k-zapolneniyu-grafy-znachenie.md",
+        "gap_pages": [],
+        "pages": "60",
+        "title": "Требование к заполнению графы “Значение”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/81-kak-interpretiruyutsya-pravila-ukazannye.md",
+        "gap_pages": [],
+        "pages": "60-61",
+        "title": "Как интерпретируются правила, указанные в таблице",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/82-kak-aktivirovat-nastroyku.md",
+        "gap_pages": [],
+        "pages": "61",
+        "title": "Как активировать настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/83-vazhnaya-informaciya.md",
+        "gap_pages": [],
+        "pages": "61",
+        "title": "Важная информация",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/84-kak-aktivirovat-ili-deaktivirovat-nastro.md",
+        "gap_pages": [],
+        "pages": "61-62",
+        "title": "Как активировать или деактивировать настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/85-upravlenie-pravilami-vypolneniya-deystvi.md",
+        "gap_pages": [],
+        "pages": "62",
+        "title": "Управление правилами выполнения действий",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/86-kak-vklyuchit-ili-priostanovit-deystvie.md",
+        "gap_pages": [],
+        "pages": "62-64",
+        "title": "Как включить или приостановить действие правила",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/87-kak-nastroit-kolonki-v-tablice.md",
+        "gap_pages": [],
+        "pages": "64-65",
+        "title": "Как настроить колонки в таблице",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/88-dobavlenie.md",
+        "gap_pages": [],
+        "pages": "65-66",
+        "title": "Добавление",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/89-redaktirovanie-ili-udalenie-pravila.md",
+        "gap_pages": [],
+        "pages": "66-68",
+        "title": "Редактирование или удаление правила",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/90-nastroyka-sohranyat-istoriyu-deystviy-po.md",
+        "gap_pages": [],
+        "pages": "68",
+        "title": "Настройка “Сохранять историю действий по звонкам”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/91-obschee.md",
+        "gap_pages": [],
+        "pages": "68",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/92-kak-vklyuchit-ili-vyklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "68-69",
+        "title": "Как включить или выключить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/93-dalneyshie-deystviya.md",
+        "gap_pages": [],
+        "pages": "69-70",
+        "title": "Дальнейшие действия",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/94-kak-proverit-vklyuchena-li-nastroyka-nas.md",
+        "gap_pages": [],
+        "pages": "70-71",
+        "title": "Как проверить, включена ли настройка ”Настройки действий в зависимости от роли”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/95-otchet-deystviya-zvonka.md",
+        "gap_pages": [],
+        "pages": "71",
+        "title": "Отчет “Действия звонка”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/96-obschee.md",
+        "gap_pages": [],
+        "pages": "71",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/97-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "71-72",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/98-kak-otkryt-otchet.md",
+        "gap_pages": [],
+        "pages": "72-73",
+        "title": "Как открыть отчет",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/99-struktura-otcheta.md",
+        "gap_pages": [],
+        "pages": "73",
+        "title": "Структура отчета",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/100-dannye-o-pravilah-primenennyh-k-zvonku.md",
+        "gap_pages": [],
+        "pages": "73",
+        "title": "Данные о правилах, применённых к звонку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/101-soobschenie-net-dannyh.md",
+        "gap_pages": [],
+        "pages": "73",
+        "title": "Сообщение “Нет данных”",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/102-soobschenie-1-nepolnaya-nastroyka-sohran.md",
+        "gap_pages": [],
+        "pages": "73-74",
+        "title": "Сообщение “1”. Неполная настройка сохранения истории действий по звонкам",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/103-otpravka-soobscheniy-whatsapp.md",
+        "gap_pages": [],
+        "pages": "74",
+        "title": "Отправка сообщений WhatsApp",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/104-obschee.md",
+        "gap_pages": [],
+        "pages": "74",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/105-obschee-o-mango-dialogah.md",
+        "gap_pages": [],
+        "pages": "74",
+        "title": "Общее о Манго Диалогах",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/106-kak-vklyuchit-otpravku-soobscheniy-whats.md",
+        "gap_pages": [],
+        "pages": "74-75",
+        "title": "Как включить отправку сообщений WhatsApp",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/107-kak-otpravit-klientu-soobschenie-whatsap.md",
+        "gap_pages": [],
+        "pages": "75-77",
+        "title": "Как отправить Клиенту сообщение WhatsApp",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/108-dobavlenie-zadaniya-na-ishodyaschiy-obzv.md",
+        "gap_pages": [],
+        "pages": "77",
+        "title": "Добавление задания на исходящий обзвон в Контакт-центр MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/109-obzor.md",
+        "gap_pages": [],
+        "pages": "77-78",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/110-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "78",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/111-kak-dobavit-zadanie-v-kampaniyu-ishodyas.md",
+        "gap_pages": [],
+        "pages": "78-81",
+        "title": "Как добавить задание в кампанию исходящего обзвона Контакт-центра MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/112-kak-sovershat-i-prinimat-vyzovy.md",
+        "gap_pages": [],
+        "pages": "81",
+        "title": "Как совершать и принимать вызовы",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/113-vhodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "81-82",
+        "title": "Входящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/114-ishodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "82-83",
+        "title": "Исходящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/115-kak-perevesti-zvonok-na-drugogo-sotrudni.md",
+        "gap_pages": [],
+        "pages": "83",
+        "title": "Как перевести звонок на другого сотрудника или произвольный номер",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/116-obschee.md",
+        "gap_pages": [],
+        "pages": "83",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/117-ogranicheniya.md",
+        "gap_pages": [],
+        "pages": "83",
+        "title": "Ограничения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/118-kak-perevesti-zvonok-s-konsultaciey.md",
+        "gap_pages": [],
+        "pages": "83-86",
+        "title": "Как перевести звонок с консультацией",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/119-slepoy-perevod-ili-kak-perevesti-zvonok.md",
+        "gap_pages": [],
+        "pages": "86-88",
+        "title": "Слепой перевод или как перевести звонок без консультации",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/120-propuschennye-zvonki.md",
+        "gap_pages": [],
+        "pages": "88",
+        "title": "Пропущенные звонки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/121-nastroyka-vneshnego-vida-tablicy-zvonkov.md",
+        "gap_pages": [],
+        "pages": "88-91",
+        "title": "Настройка внешнего вида таблицы звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/122-istoriya-vyzovov.md",
+        "gap_pages": [],
+        "pages": "91-92",
+        "title": "История вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/123-zapis-razgovorov.md",
+        "gap_pages": [],
+        "pages": "92-93",
+        "title": "Запись разговоров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/124-prilozhenie-informaciya-dlya-administrat.md",
+        "gap_pages": [],
+        "pages": "93",
+        "title": "Приложение. Информация для администраторов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/125-kak-izmenit-login-i-parol-api-bpmsoft.md",
+        "gap_pages": [],
+        "pages": "93-95",
+        "title": "Как изменить логин и пароль API BPMSoft",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 30,
+        "file": "sections/126-spisok-izmeneniy-v-dokumente.md",
+        "gap_pages": [],
+        "pages": "95-96",
+        "title": "Список изменений в документе",
+        "unconfirmed": []
+      }
+    ],
+    "verifier_engine": "PyMuPDF 1.28.2"
+  }
 }

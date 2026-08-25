@@ -635,5 +635,281 @@
   "table_count": 8,
   "token_method": "tiktoken:cl100k_base",
   "tokens_index": 3550,
-  "tokens_total": 24035
+  "tokens_total": 24035,
+  "verification": {
+    "confidence_level": "high",
+    "confirmed_ratio": 1.0,
+    "critical_tokens_checked": 246,
+    "critical_tokens_unconfirmed": 0,
+    "extraction_date": "2026-08-25",
+    "method": "cross-engine (pdfplumber -> PyMuPDF re-read of the same pages)",
+    "pages_without_text_layer": 0,
+    "sections": [
+      {
+        "critical_tokens": 27,
+        "file": "sections/00-titulnaya-chast.md",
+        "gap_pages": [],
+        "pages": "1-4",
+        "title": "Титульная часть",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/01-obzor.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/02-naznachenie.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Назначение",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/03-vazhnye-ogranicheniya.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Важные ограничения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 11,
+        "file": "sections/04-kak-nastroit-integraciyu.md",
+        "gap_pages": [],
+        "pages": "4-5",
+        "title": "Как настроить интеграцию",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/05-nachalo-raboty-s-integraciey.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Начало работы с интеграцией",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/06-shag-1-podklyuchenie-virtualnoy-ats-mang.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Шаг 1. Подключение Виртуальной АТС MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/07-shag-2-ustanovka-softfona-mango-talker.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Шаг 2. Установка софтфона Mango Talker",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/08-shag-3-podklyuchenie-vidzheta-integracii.md",
+        "gap_pages": [],
+        "pages": "5-7",
+        "title": "Шаг 3. Подключение виджета интеграции в Личном кабинете MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 36,
+        "file": "sections/09-shag-4-nastroyka-integracii-v-1s.md",
+        "gap_pages": [],
+        "pages": "7-17",
+        "title": "Шаг 4. Настройка интеграции в 1С",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/10-dopolnitelnye-nastroyki-integracii.md",
+        "gap_pages": [],
+        "pages": "17",
+        "title": "Дополнительные настройки интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 23,
+        "file": "sections/11-obrabotka-zvonkov.md",
+        "gap_pages": [],
+        "pages": "17-22",
+        "title": "Обработка звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 9,
+        "file": "sections/12-avtomaticheskoe-sozdanie-klientov.md",
+        "gap_pages": [],
+        "pages": "22-23",
+        "title": "Автоматическое создание Клиентов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 9,
+        "file": "sections/13-obrabotka-zvonkov-pri-sohranenii.md",
+        "gap_pages": [],
+        "pages": "23-25",
+        "title": "Обработка звонков при сохранении",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/14-upravlenie-polzovatelyami-integracii-1s.md",
+        "gap_pages": [],
+        "pages": "25-29",
+        "title": "Управление пользователями интеграции 1С",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/15-vhodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "29",
+        "title": "Входящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 8,
+        "file": "sections/16-ishodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "29-30",
+        "title": "Исходящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/17-zvonok-po-kliku.md",
+        "gap_pages": [],
+        "pages": "30-31",
+        "title": "Звонок по клику",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 11,
+        "file": "sections/18-softfon.md",
+        "gap_pages": [],
+        "pages": "31-32",
+        "title": "Софтфон",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/19-otchety.md",
+        "gap_pages": [],
+        "pages": "32",
+        "title": "Отчеты",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/20-otchet-po-telefonnym-zvonkam-vats.md",
+        "gap_pages": [],
+        "pages": "32-36",
+        "title": "Отчет по телефонным звонкам ВАТС",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 8,
+        "file": "sections/21-kartochka-zvonka.md",
+        "gap_pages": [],
+        "pages": "36-38",
+        "title": "Карточка звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/22-otchet-telefonnye-zvonki.md",
+        "gap_pages": [],
+        "pages": "38-40",
+        "title": "Отчет «Телефонные звонки»",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/23-spravochnik-abonentov.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "Справочник абонентов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/24-kak-otkryt-spravochnik.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "Как открыть справочник",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/25-poisk-po-nomeru-telefona.md",
+        "gap_pages": [],
+        "pages": "40-41",
+        "title": "Поиск по номеру телефона",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/26-poisk-po-parametram-abonenta.md",
+        "gap_pages": [],
+        "pages": "41",
+        "title": "Поиск по параметрам абонента",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/27-filtraciya-zapisey-v-spravochnike.md",
+        "gap_pages": [],
+        "pages": "41-43",
+        "title": "Фильтрация записей в справочнике",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/28-prilozhenie-kak-nastroit-standartnuyu-kn.md",
+        "gap_pages": [],
+        "pages": "43",
+        "title": "Приложение. Как настроить стандартную кнопку вызова",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/29-upravleniekontaktnoyinformacieyklient.md",
+        "gap_pages": [],
+        "pages": "43",
+        "title": "\"УправлениеКонтактнойИнформациейКлиент\"",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/30-osnovnye-svedeniya.md",
+        "gap_pages": [],
+        "pages": "43",
+        "title": "Основные сведения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 9,
+        "file": "sections/31-kak-nastroit-konfiguraciyu-modulya.md",
+        "gap_pages": [],
+        "pages": "43-45",
+        "title": "Как настроить конфигурацию модуля",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 21,
+        "file": "sections/32-spisok-izmeneniy-v-dokumente.md",
+        "gap_pages": [],
+        "pages": "45-46",
+        "title": "Список изменений в документе",
+        "unconfirmed": []
+      }
+    ],
+    "verifier_engine": "PyMuPDF 1.28.2"
+  }
 }

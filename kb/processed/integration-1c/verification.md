@@ -2,7 +2,7 @@
 type: kb-verification-report
 doc_code: INT1C
 source_document: "Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf"
-extraction_date: "2026-08-22"
+extraction_date: "2026-08-25"
 model_used: "pdfplumber 0.11.10 + PyMuPDF 1.28.2"
 confidence_level: "high"
 pages_covered: "1-46"
@@ -20,7 +20,7 @@ ai-generated: true
 
 | Метрика | Значение |
 | --- | ---: |
-| Проверено критических токенов | 164 |
+| Проверено критических токенов | 246 |
 | Не подтверждено вторым движком | 0 |
 | Доля подтверждённых | 100.00 % |
 | Страниц без текстового слоя | 0 |

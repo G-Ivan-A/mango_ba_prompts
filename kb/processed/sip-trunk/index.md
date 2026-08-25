@@ -5,6 +5,11 @@ doc_title: "SIP TRUNK. Руководство пользователя"
 doc_version: "1.23.43"
 status: extracted
 ai-generated: true
+source_document: "MO_SIP_Trunk.pdf"
+extraction_date: "2026-08-25"
+model_used: "pdfplumber 0.11.10 + PyMuPDF 1.28.2"
+confidence_level: "high"
+pages_covered: "1-42"
 ---
 
 # SIP TRUNK. Руководство пользователя — индекс БЗ (карта разделов)
@@ -13,6 +18,8 @@ ai-generated: true
 > токены: tiktoken:cl100k_base. Это **карта поиска** для агента (замена
 > retrieval-шага до RAG, ADR-007 R2): найди раздел по колонке «Когда
 > обращаться», открой только его файл, процитируй стабильным адресом.
+
+> Перекрёстная проверка критических данных: [`verification.md`](verification.md) — уровень доверия **high**. Неоднозначности помечены в разделах маркерами `❓ ТРЕБУЕТСЯ ПРОВЕРКА` / `⚠️ ПРОБЕЛ ИЗВЛЕЧЕНИЯ` с точной ссылкой «PDF + страница».
 
 ## Как цитировать
 

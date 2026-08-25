@@ -977,5 +977,433 @@
   "table_count": 41,
   "token_method": "tiktoken:cl100k_base",
   "tokens_index": 5453,
-  "tokens_total": 54430
+  "tokens_total": 54430,
+  "verification": {
+    "confidence_level": "high",
+    "confirmed_ratio": 1.0,
+    "critical_tokens_checked": 167,
+    "critical_tokens_unconfirmed": 0,
+    "extraction_date": "2026-08-25",
+    "method": "cross-engine (pdfplumber -> PyMuPDF re-read of the same pages)",
+    "pages_without_text_layer": 0,
+    "sections": [
+      {
+        "critical_tokens": 36,
+        "file": "sections/00-titulnaya-chast.md",
+        "gap_pages": [],
+        "pages": "1-4",
+        "title": "Титульная часть",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/01-bystryy-start.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Быстрый старт",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/02-kak-podklyuchit-modul-kontrol-kachestva.md",
+        "gap_pages": [],
+        "pages": "4-5",
+        "title": "Как подключить модуль Контроль качества в Личном кабинете",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/03-kak-dobavit-kontrolera.md",
+        "gap_pages": [],
+        "pages": "5-6",
+        "title": "Как добавить контролера",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/04-roli-i-funkcii.md",
+        "gap_pages": [],
+        "pages": "6-9",
+        "title": "Роли и функции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/05-nastroyka-blankov-ocenki.md",
+        "gap_pages": [],
+        "pages": "9",
+        "title": "Настройка бланков оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/06-sozdanie-blanka-ocenki.md",
+        "gap_pages": [],
+        "pages": "9-11",
+        "title": "Создание бланка оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/07-prosmotr-i-redaktirovanie-blanka-ocenki.md",
+        "gap_pages": [],
+        "pages": "11-12",
+        "title": "Просмотр и редактирование бланка оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/08-nastroyka-shkaly-ocenok-i-vesa-kriteriev.md",
+        "gap_pages": [],
+        "pages": "12-13",
+        "title": "Настройка шкалы оценок и веса критериев",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/09-nastroyka-apellyacii.md",
+        "gap_pages": [],
+        "pages": "13-15",
+        "title": "Настройка апелляции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/10-udalenie-blanka-ocenki.md",
+        "gap_pages": [],
+        "pages": "15",
+        "title": "Удаление бланка оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/11-blank-ocenki-bazovaya-ocenka-sotrudnika.md",
+        "gap_pages": [],
+        "pages": "15-17",
+        "title": "Бланк оценки \"Базовая оценка сотрудника\"",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/12-ocenka-obrascheniy.md",
+        "gap_pages": [],
+        "pages": "17",
+        "title": "Оценка обращений",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 14,
+        "file": "sections/13-ocenka-zvonkov.md",
+        "gap_pages": [],
+        "pages": "17-27",
+        "title": "Оценка звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/14-ocenka-chatov.md",
+        "gap_pages": [],
+        "pages": "27-32",
+        "title": "Оценка чатов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/15-randomayzer.md",
+        "gap_pages": [],
+        "pages": "32-34",
+        "title": "Рандомайзер",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/16-nastroyka-postzvonkovoy-ocenki.md",
+        "gap_pages": [],
+        "pages": "34",
+        "title": "Настройка постзвонковой оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/17-nastroyka-pravil-postzvonkovoy-ocenki.md",
+        "gap_pages": [],
+        "pages": "34-38",
+        "title": "Настройка правил постзвонковой оценки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/18-nastroyka-uvedomleniy-o-postzvonkovyh-oc.md",
+        "gap_pages": [],
+        "pages": "38-41",
+        "title": "Настройка уведомлений о постзвонковых оценках",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/19-zapis-ekrana.md",
+        "gap_pages": [],
+        "pages": "41",
+        "title": "Запись экрана",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 11,
+        "file": "sections/20-prosmotr-i-skachivanie-zapisey.md",
+        "gap_pages": [],
+        "pages": "41-43",
+        "title": "Просмотр и скачивание записей",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/21-prosmotr-nastroek-zapisi.md",
+        "gap_pages": [],
+        "pages": "43-45",
+        "title": "Просмотр настроек записи",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 24,
+        "file": "sections/22-naznachenie-pravil-zapisi.md",
+        "gap_pages": [],
+        "pages": "45-48",
+        "title": "Назначение правил записи",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/23-ocenka-kachestva-v-chatah.md",
+        "gap_pages": [],
+        "pages": "48",
+        "title": "Оценка качества в чатах",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/24-sozdanie-redaktirovanie-i-udalenie-pravi.md",
+        "gap_pages": [],
+        "pages": "48-51",
+        "title": "Создание, редактирование и удаление правила",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/25-statistika.md",
+        "gap_pages": [],
+        "pages": "51",
+        "title": "Статистика",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/26-dinamika-ocenok.md",
+        "gap_pages": [],
+        "pages": "51-56",
+        "title": "Динамика оценок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/27-svodnaya-statistika.md",
+        "gap_pages": [],
+        "pages": "56-59",
+        "title": "Сводная статистика",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/28-rabota-kontrolerov.md",
+        "gap_pages": [],
+        "pages": "59-64",
+        "title": "Работа контролеров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/29-apellyacii.md",
+        "gap_pages": [],
+        "pages": "64",
+        "title": "Апелляции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/30-kak-sotrudniku-podat-apellyaciyu.md",
+        "gap_pages": [],
+        "pages": "64-65",
+        "title": "Как сотруднику подать апелляцию",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/31-kak-kontroleru-obrabatyvat-apellyacii.md",
+        "gap_pages": [],
+        "pages": "65-67",
+        "title": "Как контролеру обрабатывать апелляции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/32-rechevaya-analitika.md",
+        "gap_pages": [],
+        "pages": "67",
+        "title": "Речевая аналитика",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/33-podklyuchenie-uslugi-rechevaya-analitika.md",
+        "gap_pages": [],
+        "pages": "67-69",
+        "title": "Подключение услуги Речевая аналитика",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/34-vkladka-otchety.md",
+        "gap_pages": [],
+        "pages": "69",
+        "title": "Вкладка ОТЧЕТЫ",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/35-vkladka-tegirovanie-razgovorov.md",
+        "gap_pages": [],
+        "pages": "69-72",
+        "title": "Вкладка ТЕГИРОВАНИЕ РАЗГОВОРОВ",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/36-vkladka-nastroyki.md",
+        "gap_pages": [],
+        "pages": "72-73",
+        "title": "Вкладка НАСТРОЙКИ",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/37-shagi-onbordinga.md",
+        "gap_pages": [],
+        "pages": "73-75",
+        "title": "Шаги онбординга",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/38-nastroyki-raspoznavaniya-zapisey.md",
+        "gap_pages": [],
+        "pages": "75-77",
+        "title": "Настройки распознавания записей",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/39-analitika-tekstovyh-kommunikaciy.md",
+        "gap_pages": [],
+        "pages": "77-78",
+        "title": "Аналитика текстовых коммуникаций",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/40-ii-instrumenty.md",
+        "gap_pages": [],
+        "pages": "78",
+        "title": "ИИ Инструменты",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/41-ii-konspekty.md",
+        "gap_pages": [],
+        "pages": "78-81",
+        "title": "ИИ Конспекты",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/42-ii-tegirovanie.md",
+        "gap_pages": [],
+        "pages": "81-83",
+        "title": "ИИ Тегирование",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/43-ii-pomoschniki.md",
+        "gap_pages": [],
+        "pages": "83",
+        "title": "ИИ Помощники",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/44-chto-eto-takoe-i-zachem-nuzhno.md",
+        "gap_pages": [],
+        "pages": "83",
+        "title": "Что это такое и зачем нужно",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/45-kak-sozdat-ii-pomoschnika.md",
+        "gap_pages": [],
+        "pages": "83-84",
+        "title": "Как создать ИИ Помощника",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/46-nastroyka-ii-pomoschnika.md",
+        "gap_pages": [],
+        "pages": "84-87",
+        "title": "Настройка ИИ Помощника",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/47-gde-smotret-rezultaty.md",
+        "gap_pages": [],
+        "pages": "87-90",
+        "title": "Где смотреть результаты",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/48-dopolnitelnye-nastroyki.md",
+        "gap_pages": [],
+        "pages": "90-91",
+        "title": "Дополнительные настройки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/49-otklyuchenie-uslugi.md",
+        "gap_pages": [],
+        "pages": "91-93",
+        "title": "Отключение услуги",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/50-vkladka-zayavki.md",
+        "gap_pages": [],
+        "pages": "93-97",
+        "title": "Вкладка ЗАЯВКИ",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/51-dopolnitelnye-vozmozhnosti.md",
+        "gap_pages": [],
+        "pages": "97",
+        "title": "Дополнительные возможности",
+        "unconfirmed": []
+      }
+    ],
+    "verifier_engine": "PyMuPDF 1.28.2"
+  }
 }

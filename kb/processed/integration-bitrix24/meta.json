@@ -3497,5 +3497,1553 @@
   "table_count": 9,
   "token_method": "tiktoken:cl100k_base",
   "tokens_index": 18466,
-  "tokens_total": 84837
+  "tokens_total": 84837,
+  "verification": {
+    "confidence_level": "high",
+    "confirmed_ratio": 1.0,
+    "critical_tokens_checked": 785,
+    "critical_tokens_unconfirmed": 0,
+    "extraction_date": "2026-08-25",
+    "method": "cross-engine (pdfplumber -> PyMuPDF re-read of the same pages)",
+    "pages_without_text_layer": 0,
+    "sections": [
+      {
+        "critical_tokens": 66,
+        "file": "sections/00-titulnaya-chast.md",
+        "gap_pages": [],
+        "pages": "1-4",
+        "title": "Титульная часть",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/01-nachalo-raboty-s-integraciey.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Начало работы с интеграцией",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/02-kak-nastroit-integraciyu.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Как настроить интеграцию",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/03-podgotovka.md",
+        "gap_pages": [],
+        "pages": "4",
+        "title": "Подготовка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/04-poryadok-deystviy.md",
+        "gap_pages": [],
+        "pages": "4-5",
+        "title": "Порядок действий",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/05-shag-1-podklyuchite-virtualnuyu-ats-mang.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Шаг 1. Подключите Виртуальную АТС MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 8,
+        "file": "sections/06-shag-2-ustanovka-softfona-mango-talker.md",
+        "gap_pages": [],
+        "pages": "5",
+        "title": "Шаг 2. Установка софтфона Mango Talker",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/07-shag-3-nastroyka-virtualnoy-ats-vybor-pa.md",
+        "gap_pages": [],
+        "pages": "5-7",
+        "title": "Шаг 3. Настройка Виртуальной АТС. Выбор пакета интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/08-shag-4-ustanovka-prilozheniya-integracii.md",
+        "gap_pages": [],
+        "pages": "7-10",
+        "title": "Шаг 4. Установка приложения интеграции в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/09-shag-5-sopostavlenie-sotrudnikov-virtual.md",
+        "gap_pages": [],
+        "pages": "10",
+        "title": "Шаг 5. Сопоставление сотрудников Виртуальной АТС и Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/10-obschee.md",
+        "gap_pages": [],
+        "pages": "10-11",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/11-kak-nastroit-sopostavlenie-sotrudnikov.md",
+        "gap_pages": [],
+        "pages": "11-13",
+        "title": "Как настроить сопоставление сотрудников",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/12-kak-sohranyat-vse-zvonki-v-bitriks24-obo.md",
+        "gap_pages": [],
+        "pages": "13-14",
+        "title": "Как сохранять все звонки в Битрикс24. Обобщенно",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/13-kak-vklyuchit-peredachu-dannyh-po-ne-zvo.md",
+        "gap_pages": [],
+        "pages": "14",
+        "title": "Как включить передачу данных по “не звонковым” обращениям",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/14-kak-posmotret-spiski-sotrudnikov-vats-i.md",
+        "gap_pages": [],
+        "pages": "14-15",
+        "title": "Как посмотреть списки сотрудников ВАТС и сотрудников Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/15-shag-6-proverka-nastroyki-telefonii.md",
+        "gap_pages": [],
+        "pages": "15-18",
+        "title": "Шаг 6. Проверка настройки телефонии",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/16-ustanovka-dopolnitelnyh-nastroek-integra.md",
+        "gap_pages": [],
+        "pages": "18-19",
+        "title": "Установка дополнительных настроек интеграции при подключении расширенного пакета",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/17-raznye-vozmozhnosti-bazovogo-i-rasshiren.md",
+        "gap_pages": [],
+        "pages": "19",
+        "title": "Разные возможности базового и расширенного пакетов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/18-bazovyy-paket.md",
+        "gap_pages": [],
+        "pages": "19-20",
+        "title": "Базовый пакет",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 8,
+        "file": "sections/19-rasshirennyy-paket.md",
+        "gap_pages": [],
+        "pages": "20-22",
+        "title": "Расширенный пакет",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/20-kak-proverit-chto-dannye-o-zvonkah-pered.md",
+        "gap_pages": [],
+        "pages": "22-23",
+        "title": "Как проверить, что данные о звонках передаются в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/21-kak-otobrazhayutsya-dannye-o-zvonke-v-bi.md",
+        "gap_pages": [],
+        "pages": "23",
+        "title": "Как отображаются данные о звонке в Битрикс24. Обобщенно",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/22-kak-pozvonit-ili-prinyat-zvonok.md",
+        "gap_pages": [],
+        "pages": "23-25",
+        "title": "Как позвонить или принять звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/23-nastroyki-prilozheniya-integracii-s-bitr.md",
+        "gap_pages": [],
+        "pages": "25",
+        "title": "Настройки приложения интеграции с Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/24-kak-otkryt-formu-nastroyki-prilozheniya.md",
+        "gap_pages": [],
+        "pages": "25-27",
+        "title": "Как открыть форму настройки приложения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/25-nastroyka-sohranyat-vse-zvonki-ili-kak-s.md",
+        "gap_pages": [],
+        "pages": "27",
+        "title": "Настройка “Сохранять все звонки” или как сохраняются звонки сотрудников, не указанных в таблице сопоставления",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/26-obschee.md",
+        "gap_pages": [],
+        "pages": "27",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/27-podrobno-ob-osobennostyah-raboty.md",
+        "gap_pages": [],
+        "pages": "27-29",
+        "title": "Подробно об особенностях работы",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/28-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "29-30",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/29-obrabotka-vhodyaschih-zvonkov.md",
+        "gap_pages": [],
+        "pages": "30",
+        "title": "Обработка входящих звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/30-avtomaticheski-sozdavat-lid-i-delo-pri-v.md",
+        "gap_pages": [],
+        "pages": "30-32",
+        "title": "Автоматически создавать лид и дело при входящих звонках",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/31-ukazyvat-istochnik-pri-vhodyaschih-zvonk.md",
+        "gap_pages": [],
+        "pages": "32",
+        "title": "Указывать источник при входящих звонках",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/32-na-chto-vliyaet-eta-nastroyka.md",
+        "gap_pages": [],
+        "pages": "32-33",
+        "title": "На что влияет эта настройка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/33-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "33-34",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/34-kak-nastroit-spravochnik-istochnikov.md",
+        "gap_pages": [],
+        "pages": "34-38",
+        "title": "Как настроить справочник источников",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/35-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "38-39",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/36-obnovlyat-otvetstvennogo-pri-perevodah-v.md",
+        "gap_pages": [],
+        "pages": "39",
+        "title": "Обновлять ответственного при переводах входящих вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/37-na-chto-vliyaet-eta-nastroyka.md",
+        "gap_pages": [],
+        "pages": "39",
+        "title": "На что влияет эта настройка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/38-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "39-40",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/39-ukazat-otvetstvennogo-pri-propuschennyh.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "Указать ответственного при пропущенных звонках в группу",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/40-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/41-na-chto-vliyaet-eta-nastroyka.md",
+        "gap_pages": [],
+        "pages": "40",
+        "title": "На что влияет эта настройка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/42-vot-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "40-41",
+        "title": "Вот как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/43-ukazat-otvetstvennogo-pri-propuschennyh.md",
+        "gap_pages": [],
+        "pages": "41",
+        "title": "Указать ответственного при пропущенных звонках в IVR",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/44-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "41",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/45-na-chto-vliyaet-eta-nastroyka.md",
+        "gap_pages": [],
+        "pages": "41",
+        "title": "На что влияет эта настройка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/46-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "41-42",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/47-integraciya-s-dinamicheskim-kolltrekingo.md",
+        "gap_pages": [],
+        "pages": "42",
+        "title": "Интеграция с Динамическим коллтрекингом",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/48-obschee.md",
+        "gap_pages": [],
+        "pages": "42",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 16,
+        "file": "sections/49-chto-eto-daet.md",
+        "gap_pages": [],
+        "pages": "42-43",
+        "title": "Что это дает?",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/50-vo-vremya-zvonka.md",
+        "gap_pages": [],
+        "pages": "43-45",
+        "title": "Во время звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/51-v-otchetah-i-spiskah-bitriks24.md",
+        "gap_pages": [],
+        "pages": "45-46",
+        "title": "В отчетах и списках Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/52-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "46-47",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/53-kak-zagruzit-v-bitriks24-dannye-kolltrek.md",
+        "gap_pages": [],
+        "pages": "47",
+        "title": "Как загрузить в Битрикс24 данные коллтрекинга о других типах обращений, кроме звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/54-dobavlyat-soobschenie-o-zvonke-sotrudnik.md",
+        "gap_pages": [],
+        "pages": "47-48",
+        "title": "Добавлять сообщение о звонке сотруднику Битрикс24 в чат",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/55-umnye-algoritmy-raspredeleniya-vhodyasch.md",
+        "gap_pages": [],
+        "pages": "48",
+        "title": "Умные алгоритмы распределения входящих вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/56-obzor.md",
+        "gap_pages": [],
+        "pages": "48-49",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/57-predvaritelnye-deystviya-vklyuchenie-zvu.md",
+        "gap_pages": [],
+        "pages": "49-50",
+        "title": "Предварительные действия. Включение звукового приветствия",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/58-kak-nastroit-raspredelenie-zvonkov-v-pri.md",
+        "gap_pages": [],
+        "pages": "50-53",
+        "title": "Как настроить распределение звонков в приложении интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/59-chto-budet-esli-v-sheme-raspredeleniya-n.md",
+        "gap_pages": [],
+        "pages": "53-54",
+        "title": "Что будет, если в схеме распределения не включен параметр \"ожидать окончания\" или отсутствует звуковое приветствие",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/60-znachenie-pereadresovyvat-na-otvetstvenn.md",
+        "gap_pages": [],
+        "pages": "54-56",
+        "title": "Значение \"Переадресовывать на ответственного и переадресовывать далее на номер, если нет ответа\"",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/61-primery-nastroyki-pravil-umnogo-algoritm.md",
+        "gap_pages": [],
+        "pages": "56-61",
+        "title": "Примеры настройки правил умного алгоритма распределения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/62-nastroyka-raspisaniya-raboty-umnyh-pravi.md",
+        "gap_pages": [],
+        "pages": "61",
+        "title": "Настройка расписания работы умных правил",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/63-filtrovat-vhodyaschie-zvonki-po-liniyam.md",
+        "gap_pages": [],
+        "pages": "61-63",
+        "title": "Фильтровать входящие звонки по линиям",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/64-sovershenie-ishodyaschih-zvonkov.md",
+        "gap_pages": [],
+        "pages": "63",
+        "title": "Совершение исходящих звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/65-avtomaticheskiy-priem-pri-ishodyaschem-z.md",
+        "gap_pages": [],
+        "pages": "63-64",
+        "title": "Автоматический прием при исходящем звонке",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/66-perezvanivat-s-nomera-na-kotoryy-zvonil.md",
+        "gap_pages": [],
+        "pages": "64",
+        "title": "Перезванивать с номера, на который звонил Клиент",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/67-obzor.md",
+        "gap_pages": [],
+        "pages": "64",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/68-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "64-65",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/69-otpravka-sms.md",
+        "gap_pages": [],
+        "pages": "65",
+        "title": "Отправка SMS",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/70-sms-vizitka.md",
+        "gap_pages": [],
+        "pages": "65",
+        "title": "SMS-визитка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/71-obzor.md",
+        "gap_pages": [],
+        "pages": "65-66",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/72-kak-vklyuchit-i-nastroit.md",
+        "gap_pages": [],
+        "pages": "66-68",
+        "title": "Как включить и настроить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/73-otpravka-sms-vruchnuyu-iz-kartochki-lida.md",
+        "gap_pages": [],
+        "pages": "68",
+        "title": "Отправка SMS вручную из карточки лида/контакта/сделки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/74-obzor.md",
+        "gap_pages": [],
+        "pages": "68-70",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/75-kak-vklyuchit-vozmozhnost-otpravki-sms.md",
+        "gap_pages": [],
+        "pages": "70",
+        "title": "Как включить возможность отправки sms",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/76-sms-rassylka.md",
+        "gap_pages": [],
+        "pages": "70",
+        "title": "SMS-рассылка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/77-obzor.md",
+        "gap_pages": [],
+        "pages": "70",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/78-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "70-71",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/79-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "71",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/80-kak-otpravit-sms-rassylku.md",
+        "gap_pages": [],
+        "pages": "71-74",
+        "title": "Как отправить sms-рассылку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/81-sms-uvedomleniya-iz-robotov-prodazh-proc.md",
+        "gap_pages": [],
+        "pages": "74",
+        "title": "SMS уведомления из роботов продаж/процессов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/82-obzor.md",
+        "gap_pages": [],
+        "pages": "74",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/83-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "74-75",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/84-kak-nastroit-uvedomlenie-v-robotah-i-biz.md",
+        "gap_pages": [],
+        "pages": "75-78",
+        "title": "Как настроить уведомление в роботах и бизнес-процессах",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/85-otobrazhat-sdelki-v-kartochke-zvonka.md",
+        "gap_pages": [],
+        "pages": "78-79",
+        "title": "Отображать сделки в карточке звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/86-podderzhivat-obratnye-zvonki-ot-bitriks2.md",
+        "gap_pages": [],
+        "pages": "79",
+        "title": "Поддерживать обратные звонки от Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/87-kak-eto-rabotaet.md",
+        "gap_pages": [],
+        "pages": "79",
+        "title": "Как это работает",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/88-ogranicheniya.md",
+        "gap_pages": [],
+        "pages": "79-80",
+        "title": "Ограничения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/89-kak-vklyuchit-ili-vyklyuchit-podderzhku.md",
+        "gap_pages": [],
+        "pages": "80-81",
+        "title": "Как включить или выключить поддержку обратных звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/90-integraciya-s-rechevoy-analitikoy.md",
+        "gap_pages": [],
+        "pages": "81",
+        "title": "Интеграция с речевой аналитикой",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/91-pered-nachalom-raboty.md",
+        "gap_pages": [],
+        "pages": "81",
+        "title": "Перед началом работы",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/92-sohranenie-tematik-razgovorov.md",
+        "gap_pages": [],
+        "pages": "81",
+        "title": "Сохранение тематик разговоров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/93-obschie-svedeniya.md",
+        "gap_pages": [],
+        "pages": "81-82",
+        "title": "Общие сведения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/94-kak-eto-rabotaet.md",
+        "gap_pages": [],
+        "pages": "82",
+        "title": "Как это работает",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/95-kak-vklyuchit-sohranenie-tematik.md",
+        "gap_pages": [],
+        "pages": "82-84",
+        "title": "Как включить сохранение тематик",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/96-kak-posmotret-tematiku-razgovora.md",
+        "gap_pages": [],
+        "pages": "84",
+        "title": "Как посмотреть тематику разговора",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/97-sohranenie-tekstov-rechevoy-analitiki.md",
+        "gap_pages": [],
+        "pages": "84",
+        "title": "Сохранение текстов Речевой аналитики",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/98-obschie-svedeniya.md",
+        "gap_pages": [],
+        "pages": "84-85",
+        "title": "Общие сведения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/99-kak-nastroit.md",
+        "gap_pages": [],
+        "pages": "85-86",
+        "title": "Как настроить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/100-kak-posmotret-raspoznannyy-tekst.md",
+        "gap_pages": [],
+        "pages": "86-87",
+        "title": "Как посмотреть распознанный текст",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/101-peredacha-dannyh-v-rechevuyu-analitiku.md",
+        "gap_pages": [],
+        "pages": "87-88",
+        "title": "Передача данных в Речевую аналитику",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/102-obrabotka-vhodyaschih-vebhukov.md",
+        "gap_pages": [],
+        "pages": "88",
+        "title": "Обработка входящих вебхуков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/103-tipy-vebhukov.md",
+        "gap_pages": [],
+        "pages": "88",
+        "title": "Типы вебхуков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/104-avtoperezvon-cherez-vebhuk.md",
+        "gap_pages": [],
+        "pages": "88",
+        "title": "Автоперезвон через вебхук",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/105-obzor.md",
+        "gap_pages": [],
+        "pages": "88-89",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/106-kak-vklyuchit-avtoperezvon-cherez-vebhuk.md",
+        "gap_pages": [],
+        "pages": "89-90",
+        "title": "Как включить автоперезвон через вебхук",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/107-peremeschenie-sdelok-v-bitriks24-cherez.md",
+        "gap_pages": [],
+        "pages": "90",
+        "title": "Перемещение сделок в Битрикс24 через вебхук",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/108-obschee.md",
+        "gap_pages": [],
+        "pages": "90-91",
+        "title": "Общее",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/109-nastroyka-vebhuka-v-prilozhenii-integrac.md",
+        "gap_pages": [],
+        "pages": "91-94",
+        "title": "Настройка вебхука в приложении интеграции Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 27,
+        "file": "sections/110-dobavlenie-vo-vneshnyuyu-sistemu-url-adr.md",
+        "gap_pages": [],
+        "pages": "94-95",
+        "title": "Добавление во внешнюю систему URL-адреса вебхука перемещения сделок. Общие требования.",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/111-opisanie-parametrov-vebhuka.md",
+        "gap_pages": [],
+        "pages": "95",
+        "title": "Описание параметров вебхука",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 22,
+        "file": "sections/112-dealid.md",
+        "gap_pages": [],
+        "pages": "95-96",
+        "title": "DealID",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/113-result.md",
+        "gap_pages": [],
+        "pages": "96",
+        "title": "Result",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 25,
+        "file": "sections/114-opisanie-dopustimyh-znacheniy-parametra.md",
+        "gap_pages": [],
+        "pages": "96-98",
+        "title": "Описание допустимых значений параметра Result.",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/115-zagruzhat-otsutstvuyuschie-zvonki-v-crm.md",
+        "gap_pages": [],
+        "pages": "98-99",
+        "title": "Загружать отсутствующие звонки в CRM",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/116-vsplyvayuschie-soobscheniya-ob-oshibkah.md",
+        "gap_pages": [],
+        "pages": "99",
+        "title": "Всплывающие сообщения об ошибках в интерфейсе Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/117-kak-vklyuchit-ili-vyklyuchit-pokaz-zvonk.md",
+        "gap_pages": [],
+        "pages": "99-101",
+        "title": "Как включить или выключить показ звонков в календаре",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/118-poisk-po-nomeru-telefona-sredi-zapisey-b.md",
+        "gap_pages": [],
+        "pages": "101",
+        "title": "Поиск по номеру телефона среди записей Битрикс24 (в приложении)",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/119-nomer-drugogo-operatora-podklyuchennyy-k.md",
+        "gap_pages": [],
+        "pages": "101",
+        "title": "Номер другого оператора, подключенный к Виртуальной АТС в Личном кабинете MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/120-ispolzovanie-sposobov-dozvona-do-sotrudn.md",
+        "gap_pages": [],
+        "pages": "101-102",
+        "title": "Использование способов дозвона до сотрудника и алгоритмов дозвона в ЛК",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/121-ispolzovanie-algoritmov-raspredeleniya-v.md",
+        "gap_pages": [],
+        "pages": "102",
+        "title": "Использование алгоритмов распределения вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/122-pereklyuchenie-mezhdu-rezhimami-raboty-b.md",
+        "gap_pages": [],
+        "pages": "102-104",
+        "title": "Переключение между режимами работы Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/123-nastroyka-otobrazheniya-kartochki-zvonka.md",
+        "gap_pages": [],
+        "pages": "104-105",
+        "title": "Настройка отображения карточки звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/124-integraciya-s-kontakt-centrom-mango-offi.md",
+        "gap_pages": [],
+        "pages": "105",
+        "title": "Интеграция с Контакт-центром MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/125-obzor.md",
+        "gap_pages": [],
+        "pages": "105-106",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/126-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "106",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/127-nastroyka-integracii-s-kontakt-centrom-m.md",
+        "gap_pages": [],
+        "pages": "106-108",
+        "title": "Настройка интеграции с Контакт-центром MANGO OFFICE. Общие инструкции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/128-otpravka-dannyh-o-lide-iz-kontakt-centra.md",
+        "gap_pages": [],
+        "pages": "108",
+        "title": "Отправка данных о лиде из Контакт-центра MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/129-obzor.md",
+        "gap_pages": [],
+        "pages": "108",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/130-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "108",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/131-ogranicheniya-importa-dannyh-obrascheniy.md",
+        "gap_pages": [],
+        "pages": "108-109",
+        "title": "Ограничения импорта данных обращений",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/132-import-dannyh-iz-polzovatelskih-poley.md",
+        "gap_pages": [],
+        "pages": "109-110",
+        "title": "Импорт данных из \"пользовательских\" полей",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/133-kak-nastroit.md",
+        "gap_pages": [],
+        "pages": "110-111",
+        "title": "Как настроить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/134-kak-vklyuchit-avtomaticheskoe-sozdanie-k.md",
+        "gap_pages": [],
+        "pages": "111-113",
+        "title": "Как включить автоматическое создание контактов и сделок в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/135-kak-otpravit-dannye-o-lidah-v-bitriks24.md",
+        "gap_pages": [],
+        "pages": "113-115",
+        "title": "Как отправить данные о лидах в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/136-kak-v-bitriks24-posmotret-kontakty-i-sde.md",
+        "gap_pages": [],
+        "pages": "115-116",
+        "title": "Как в Битрикс24 посмотреть контакты и сделки, созданные по входящему обращению Контакт-центра MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/137-peredavaemye-dannye.md",
+        "gap_pages": [],
+        "pages": "116",
+        "title": "Передаваемые данные",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/138-sdelka.md",
+        "gap_pages": [],
+        "pages": "116",
+        "title": "Сделка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/139-kontakt.md",
+        "gap_pages": [],
+        "pages": "116-117",
+        "title": "Контакт",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/140-kak-nastroit-peredachu-dialoga-s-kliento.md",
+        "gap_pages": [],
+        "pages": "117",
+        "title": "Как настроить передачу диалога с Клиентом (чата) из Контакт-Центра MANGO OFFICE в историю коммуникаций Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/141-obzor.md",
+        "gap_pages": [],
+        "pages": "117",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/142-poryadok-deystviy.md",
+        "gap_pages": [],
+        "pages": "117-118",
+        "title": "Порядок действий",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/143-sohranenie-tematik-kontakt-centra-mango.md",
+        "gap_pages": [],
+        "pages": "118",
+        "title": "Сохранение тематик Контакт-Центра MANGO OFFICE",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/144-obzor.md",
+        "gap_pages": [],
+        "pages": "118-119",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/145-kak-vklyuchit-nastroyku.md",
+        "gap_pages": [],
+        "pages": "119-120",
+        "title": "Как включить настройку",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/146-kak-posmotret-tematiku-kontakt-centra.md",
+        "gap_pages": [],
+        "pages": "120",
+        "title": "Как посмотреть тематику Контакт-Центра",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/147-avtopostanovka-zadaniya-v-kampaniyu-isho.md",
+        "gap_pages": [],
+        "pages": "120",
+        "title": "Автопостановка задания в кампанию исходящего обзвона при изменении в воронке продаж. Интеграция с Контакт-центром MANGO OFFICE через вебхуки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/148-obzor.md",
+        "gap_pages": [],
+        "pages": "120-121",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/149-ponyatie-tehnicheskiy-task-v-kampanii-is.md",
+        "gap_pages": [],
+        "pages": "121-122",
+        "title": "Понятие \"Технический таск\" в кампании исходящего обзвона",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/150-ogranicheniya.md",
+        "gap_pages": [],
+        "pages": "122",
+        "title": "Ограничения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/151-kak-nastroit-integraciyu-v-kontakt-centr.md",
+        "gap_pages": [],
+        "pages": "122-124",
+        "title": "Как настроить интеграцию в Контакт-центром MANGO OFFICE через вебхуки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/152-kak-dobavit-vebhuki-integracii-v-robota.md",
+        "gap_pages": [],
+        "pages": "124-126",
+        "title": "Как добавить вебхуки интеграции в робота в Битрик24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/153-skripty-razgovora-s-klientom-v-bitriks24.md",
+        "gap_pages": [],
+        "pages": "126",
+        "title": "Скрипты разговора с Клиентом в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/154-skripty.md",
+        "gap_pages": [],
+        "pages": "126-127",
+        "title": "Скрипты",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/155-trebovaniya.md",
+        "gap_pages": [],
+        "pages": "127-128",
+        "title": "Требования",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/156-kak-vydat-ili-snyat-prava-dostupa-k-pril.md",
+        "gap_pages": [],
+        "pages": "128-130",
+        "title": "Как выдать или снять права доступа к приложению интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/157-kak-vklyuchit-ispolzovanie-skriptov-v-pr.md",
+        "gap_pages": [],
+        "pages": "130-132",
+        "title": "Как включить использование скриптов в приложении",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/158-sohranyat-postzvonkovuyu-ocenku-kachestv.md",
+        "gap_pages": [],
+        "pages": "132-133",
+        "title": "Сохранять постзвонковую оценку качества",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/159-sohranyat-dannye-kampaniy-ishodyaschih-o.md",
+        "gap_pages": [],
+        "pages": "133-134",
+        "title": "Сохранять данные кампаний исходящих обзвонов Контакт-центра",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/160-otpravlyat-whatsapp-soobschenie-pri-prop.md",
+        "gap_pages": [],
+        "pages": "134",
+        "title": "Отправлять WhatsApp-сообщение при пропущенном звонке",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/161-naznachenie.md",
+        "gap_pages": [],
+        "pages": "134",
+        "title": "Назначение",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/162-princip-raboty.md",
+        "gap_pages": [],
+        "pages": "134-135",
+        "title": "Принцип работы",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/163-kak-vklyuchit.md",
+        "gap_pages": [],
+        "pages": "135-137",
+        "title": "Как включить",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/164-ispolzovanie-servisa-mango-dialogi-dlya.md",
+        "gap_pages": [],
+        "pages": "137",
+        "title": "Использование сервиса «Манго Диалоги» для обмена сообщениями",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/165-naznachenie-integracii.md",
+        "gap_pages": [],
+        "pages": "137",
+        "title": "Назначение интеграции",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/166-podklyuchenie-mango-dialogov-v-lk-vats.md",
+        "gap_pages": [],
+        "pages": "137",
+        "title": "Подключение Манго Диалогов в ЛК ВАТС",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/167-podklyuchenie-kanalov-mango-dialogi-v-lk.md",
+        "gap_pages": [],
+        "pages": "137-139",
+        "title": "Подключение каналов «Манго Диалоги» в ЛК ВАТС",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/168-aktiviruyte-ispolzovanie-mango-dialogov.md",
+        "gap_pages": [],
+        "pages": "139-140",
+        "title": "Активируйте использование Манго Диалогов для передачи текстовых сообщений",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/169-proverte-podklyuchenie-vidzheta-mango-di.md",
+        "gap_pages": [],
+        "pages": "140-141",
+        "title": "Проверьте подключение виджета Манго Диалоги в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 10,
+        "file": "sections/170-nastroyte-otkrytuyu-liniyu-v-bitriks24.md",
+        "gap_pages": [],
+        "pages": "141-143",
+        "title": "Настройте «Открытую линию» в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/171-kak-obrabatyvat-chaty-v-kontakt-centre-b.md",
+        "gap_pages": [],
+        "pages": "143-146",
+        "title": "Как обрабатывать чаты в Контакт-центре Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/172-obrabotka-zvonkov.md",
+        "gap_pages": [],
+        "pages": "146",
+        "title": "Обработка звонков",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/173-vhodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "146-149",
+        "title": "Входящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/174-ishodyaschiy-zvonok.md",
+        "gap_pages": [],
+        "pages": "149-150",
+        "title": "Исходящий звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/175-propuschennye-zvonki.md",
+        "gap_pages": [],
+        "pages": "150-152",
+        "title": "Пропущенные звонки",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 1,
+        "file": "sections/176-kontrol-za-obrabotkoy-propuschennogo-zvo.md",
+        "gap_pages": [],
+        "pages": "152",
+        "title": "Контроль за обработкой пропущенного звонка",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/177-obzor.md",
+        "gap_pages": [],
+        "pages": "152-154",
+        "title": "Обзор",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/178-kak-obrabotat-propuschennyy-zvonok.md",
+        "gap_pages": [],
+        "pages": "154-157",
+        "title": "Как обработать пропущенный звонок",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 4,
+        "file": "sections/179-istoriya-vyzovov.md",
+        "gap_pages": [],
+        "pages": "157-158",
+        "title": "История вызовов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/180-prosmotr-svedeniy-o-zvonkah-v-kalendare.md",
+        "gap_pages": [],
+        "pages": "158-159",
+        "title": "Просмотр сведений о звонках в календаре",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 5,
+        "file": "sections/181-zapis-razgovorov.md",
+        "gap_pages": [],
+        "pages": "159-160",
+        "title": "Запись разговоров",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 6,
+        "file": "sections/182-integraciya-s-adresnoy-knigoy-virtualnoy.md",
+        "gap_pages": [],
+        "pages": "160-163",
+        "title": "Интеграция с адресной книгой Виртуальной АТС",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 2,
+        "file": "sections/183-softfon-mango-connect.md",
+        "gap_pages": [],
+        "pages": "163",
+        "title": "Софтфон MANGO CONNECT",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 12,
+        "file": "sections/184-opisanie.md",
+        "gap_pages": [],
+        "pages": "163-167",
+        "title": "Описание",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 7,
+        "file": "sections/185-dopolnitelno-kak-vklyuchit-i-vyklyuchit.md",
+        "gap_pages": [],
+        "pages": "167-168",
+        "title": "Дополнительно. Как включить и выключить режим \"Не беспокоить\" / DND",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 29,
+        "file": "sections/186-korobochnaya-versiya-bitriks24.md",
+        "gap_pages": [],
+        "pages": "168-169",
+        "title": "Коробочная версия Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/187-obnovlenie-prilozheniya.md",
+        "gap_pages": [],
+        "pages": "169-170",
+        "title": "Обновление приложения",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 0,
+        "file": "sections/188-prilozheniya.md",
+        "gap_pages": [],
+        "pages": "170",
+        "title": "Приложения.",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/189-a-kak-otkryt-otchet-detalizaciya-zvonkov.md",
+        "gap_pages": [],
+        "pages": "170-172",
+        "title": "А. Как открыть отчет \"Детализация звонков\" в Битрикс24",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 3,
+        "file": "sections/190-b-nastroyka-otobrazheniya-kolonok-v-spis.md",
+        "gap_pages": [],
+        "pages": "172-174",
+        "title": "Б. Настройка отображения колонок в списке лидов, сделок, контактов",
+        "unconfirmed": []
+      },
+      {
+        "critical_tokens": 36,
+        "file": "sections/191-spisok-izmeneniy-v-dokumente.md",
+        "gap_pages": [],
+        "pages": "174-178",
+        "title": "Список изменений в документе",
+        "unconfirmed": []
+      }
+    ],
+    "verifier_engine": "PyMuPDF 1.28.2"
+  }
 }
