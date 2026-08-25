@@ -13,6 +13,31 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #319: RUN-0057, оценка исполнимости ТЗ (Приложения № 1–4)
+
+- Добавлен прогон [`runs/2026/RUN-0057`](runs/2026/RUN-0057/metadata.yaml)
+  (`run_type: execution`) — оценка исполнимости 102 требований тендерного ТЗ
+  из четырёх приложений (STT — 19, TTS — 21, NLU — 19, Dialogue Manager — 43)
+  по постановке [#319](https://github.com/G-Ivan-A/mango_ba_prompts/issues/319).
+- Артефакты оформлены тремя уровнями под разные аудитории:
+  [`L1-executive-summary.md`](runs/2026/RUN-0057/outputs/L1-executive-summary.md) (бизнес),
+  [`L2-feasibility-matrix.md`](runs/2026/RUN-0057/outputs/L2-feasibility-matrix.md) (БА/архитектор,
+  построчно по структуре заказчика без изменения формулировок и структуры таблиц),
+  [`L3-technical-notes.md`](runs/2026/RUN-0057/outputs/L3-technical-notes.md) (разработка).
+- Итог оценки: У1 — 31, У1ч — 29, У3 (Речевая аналитика) — 4, без подтверждения — 38.
+  Уровень 2 (twin24.ai) не применён: техническая документация платформы и подтверждение
+  её интеграции с Mango Office публично недоступны — зафиксировано в
+  [`logs/source-availability.md`](runs/2026/RUN-0057/logs/source-availability.md).
+- Выявлено 11 расхождений с уже заполненной колонкой «Комментарий участника»,
+  включая противоречие лимита «не более 40 категорий в Справочнике NLU» требованию
+  об отсутствии ограничений на число интентов.
+- Сформирована гипотеза нового процесса таксономии БА
+  [`logs/taxonomy-hypothesis.md`](runs/2026/RUN-0057/logs/taxonomy-hypothesis.md) —
+  «Оценка исполнимости требований заказчика по документации продукта».
+- Добавлен локальный инструмент воспроизводимости
+  [`experiments/issue_319_extract_xls_requirements.py`](experiments/issue_319_extract_xls_requirements.py)
+  (разбор таблиц требований в формате BIFF `.xls` через `xlrd`).
+
 ### Added — Issue #320: загрузка и обновление разделов БЗ + анализ структуры `kb/`
 
 - Обработаны десять PDF из постановки [#320](https://github.com/G-Ivan-A/mango_ba_prompts/issues/320):
