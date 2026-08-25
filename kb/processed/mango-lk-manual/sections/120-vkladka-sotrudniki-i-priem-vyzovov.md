@@ -2,31 +2,31 @@
 id: mango-lk-manual-120-vkladka-sotrudniki-i-priem-vyzovov
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.6.2.2"
 pdf_section: "4.4.6.2.2"
 title: "Вкладка «Сотрудники и прием вызовов»"
 pdf_heading: "4.4.6.2.2 Вкладка «Сотрудники и прием вызовов»"
 pages: "170-172"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 69-71"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"69-71","global_pages":"170-172"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 170-172"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"170-172","global_pages":"170-172"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1491
+tokens: 1486
 status: extracted
 ai-generated: true
 ---
 # 4.4.6.2.2. Вкладка «Сотрудники и прием вызовов»
 
-> Трассировка: PDF §4.4.6.2.2 · сквозные стр. 170-172 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.69-71.
+> Трассировка: PDF §4.4.6.2.2 · сквозные стр. 170-172 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.170-172.
 
 Вид вкладки представлен на рисунке ниже.
 
 ![Изображение, стр. 170](../images/120-vkladka-sotrudniki-i-priem-vyzovov-1.png)
 
-![Изображение, стр. 170](../images/120-vkladka-sotrudniki-i-priem-vyzovov-2.png)
+![Изображение, стр. 170](../images/120-vkladka-sotrudniki-i-priem-vyzovov-2.jpeg)
 
 Кнопка «Добавить сотрудника». Нажатие на кнопку открывает окно выбора сотрудников для добавления их в группу. В случаях, когда права доступа пользователя не предусматривают просмотр карточек некоторых членов группы, их карточки в карточке группы недоступны для активации. Если права доступа пользователя позволяют исключение сотрудников из группы, рядом с именем сотрудника размещается пиктограмма «корзина». Клик по пиктограмме открывает окно согласия на исключение сотрудника. После получения согласия сотрудник будет исключен из группы. Пиктограмма «воронка» рядом с наименованием столбца «Роль в группе» открывает выпадающий список фильтров по ролям сотрудников группы. Отметка на фильтре оставляет в списке сотрудников группы только тех сотрудников, чью роли соответствуют выбранному фильтру.
 

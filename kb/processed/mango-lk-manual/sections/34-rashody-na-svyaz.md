@@ -2,25 +2,25 @@
 id: mango-lk-manual-34-rashody-na-svyaz
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "2.3"
 pdf_section: "2.3"
 title: "Расходы на связь"
 pdf_heading: "2.3 Расходы на связь"
 pages: "30-32"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 30-32"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"30-32","global_pages":"30-32"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"30-32","global_pages":"30-32"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1322
+tokens: 1317
 status: extracted
 ai-generated: true
 ---
 # 2.3. Расходы на связь
 
-> Трассировка: PDF §2.3 · сквозные стр. 30-32 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.30-32.
+> Трассировка: PDF §2.3 · сквозные стр. 30-32 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.30-32.
 
 Таблица договоров содержит следующие поля:
 
@@ -38,7 +38,7 @@ ai-generated: true
 
 ![Изображение, стр. 30](../images/34-rashody-na-svyaz-5.png)
 
-![Изображение, стр. 30](../images/34-rashody-na-svyaz-6.png)
+![Изображение, стр. 30](../images/34-rashody-na-svyaz-6.jpeg)
 
 2.3 РАСХОДЫ НА СВЯЗЬ Этот раздел поможет составить полную картину расходов на телефонную связь: • сколько было звонков;
 
@@ -46,7 +46,7 @@ ai-generated: true
 
 • куда звонили; • каковая общая длительность звонков; • какая сумма потрачена на звонки. Гибкие настройки позволят выбрать любые необходимые данные для отчета: использование услуг (например, длительность и стоимость разговоров), продукт, период, направления звонков, линии АТС и сотрудники. А также указать желаемый вариант группировки данных.
 
-![Изображение, стр. 31](../images/34-rashody-na-svyaz-8.png)
+![Изображение, стр. 31](../images/34-rashody-na-svyaz-8.jpeg)
 
 внимание
 

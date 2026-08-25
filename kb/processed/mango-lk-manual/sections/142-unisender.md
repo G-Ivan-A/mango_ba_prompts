@@ -2,25 +2,25 @@
 id: mango-lk-manual-142-unisender
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.4.2"
 pdf_section: "4.5.4.2"
 title: "Unisender"
 pdf_heading: "4.5.4.2 Unisender"
 pages: "219-221"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 17-19"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"17-19","global_pages":"219-221"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 219-221"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"219-221","global_pages":"219-221"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 966
+tokens: 961
 status: extracted
 ai-generated: true
 ---
 # 4.5.4.2. Unisender
 
-> Трассировка: PDF §4.5.4.2 · сквозные стр. 219-221 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.17-19.
+> Трассировка: PDF §4.5.4.2 · сквозные стр. 219-221 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.219-221.
 
 Интеграция Контакт-центра Mango OFFICE с сервисом рассылок Unisender позволяет настроить синхронизацию списков рассылок в Unisender и списков клиентов в Адресной книге, вносить изменения в списки рассылок на стороне Unisender из Контакт-центра. внимание Для настройки интеграции необходимо иметь аккаунт в Unisender, а также роль в Контакт-центре, с правом настраивать интеграции. Кликните по кнопке Подключить в блоке Unisender.
 
@@ -34,11 +34,11 @@ ai-generated: true
 
 ![Изображение, стр. 220](../images/142-unisender-3.jpeg)
 
-![Изображение, стр. 220](../images/142-unisender-4.png)
+![Изображение, стр. 220](../images/142-unisender-4.jpeg)
 
 Откроется окно основных настроек интеграции:
 
-![Изображение, стр. 220](../images/142-unisender-5.png)
+![Изображение, стр. 220](../images/142-unisender-5.jpeg)
 
 Окно настроек содержит следующие элементы: 1. Поле для ввода ключа доступа – ключ предоставляется на стороне Unisender. Чтобы получить ключ, пройдите по ссылке API-ключ UniSender и выполните указанные в инструкции действия. 2. Информационный блок обязательных связей – связь между указанными полями Контакт-центра и Unisender будет создана автоматически.
 

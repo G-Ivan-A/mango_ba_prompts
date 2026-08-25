@@ -2,25 +2,25 @@
 id: mango-lk-manual-117-vkladka-avtosekretar
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.6.1.5"
 pdf_section: "4.4.6.1.5"
 title: "Вкладка «Автосекретарь»"
 pdf_heading: "4.4.6.1.5 Вкладка «Автосекретарь»"
 pages: "157-162"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 56-61"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"56-61","global_pages":"157-162"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 157-162"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"157-162","global_pages":"157-162"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2786
+tokens: 2781
 status: extracted
 ai-generated: true
 ---
 # 4.4.6.1.5. Вкладка «Автосекретарь»
 
-> Трассировка: PDF §4.4.6.1.5 · сквозные стр. 157-162 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.56-61.
+> Трассировка: PDF §4.4.6.1.5 · сквозные стр. 157-162 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.157-162.
 
 Для работы модуля на продукте должна быть подключена услуга "Личный автосекретарь". Для подключения перейдите в раздел Общие настройки/Управление услугами. Выберите из списка дополнительных услуг "Личный автосекретарь" и ознакомьтесь с условиями подключения.
 
@@ -38,7 +38,7 @@ ai-generated: true
 
 ![Изображение, стр. 159](../images/117-vkladka-avtosekretar-5.png)
 
-![Изображение, стр. 159](../images/117-vkladka-avtosekretar-6.png)
+![Изображение, стр. 159](../images/117-vkladka-avtosekretar-6.jpeg)
 
 На вкладке пользователю доступны следующие настройки:
 
@@ -52,7 +52,7 @@ ai-generated: true
 
 ![Изображение, стр. 160](../images/117-vkladka-avtosekretar-9.png)
 
-![Изображение, стр. 160](../images/117-vkladka-avtosekretar-10.png)
+![Изображение, стр. 160](../images/117-vkladka-avtosekretar-10.jpeg)
 
 4. Проигрывать голосовое сообщение - выберите из выпадающего списка голосовое сообщение, которое будет проигрываться, если в течение установленного в п.2 времени ответа от сотрудника не поступило. Выбранное голосовое сообщение можно прослушать при помощи встроенного плеера,
 

@@ -1,0 +1,32 @@
+python3 scripts/validate_all.py --full
+PASS   validate_issue_103_ui_fixes                 0.13s
+PASS   validate_issue_111_kb_pipeline              1.02s
+PASS   validate_issue_115_kb_mango_pipeline        0.22s
+PASS   validate_issue_117_kb_traceability          0.56s
+PASS   validate_issue_121_kb_multi_file            0.18s
+PASS   validate_issue_123_runs_contract            0.23s
+PASS   validate_issue_125_cascading_context        0.81s
+PASS   validate_issue_263_vision_alignment         0.12s
+PASS   validate_issue_265_hub_sync                 1.81s
+PASS   validate_issue_267_onboarding_v15           0.63s
+PASS   validate_issue_272_run_0019                 0.15s
+PASS   validate_issue_291_root_structure           0.42s
+PASS   validate_issue_310_kb_pdf_ingestion         0.47s
+PASS   validate_issue_61_governance                0.10s
+PASS   validate_issue_64_pattern_adr               0.09s
+PASS   validate_issue_72_hub_sync                  0.12s
+PASS   validate_issue_74_github_pages              0.13s
+PASS   validate_issue_83_ba_process_map            0.14s
+PASS   validate_issue_85_patterns_library          0.14s
+PASS   validate_issue_86_mango_widget              0.09s
+PASS   validate_issue_91_pages_enhancements        0.10s
+PASS   validate_issue_95_prompt_id_in_copy         0.09s
+PASS   validate_issue_97_ontology_standards        0.10s
+PASS   validate_issue_99_pages_optimization        0.10s
+PASS   test_runs_contract_run_type                 0.23s
+PASS   test_validate_all                           8.25s
+PASS   validate-file-naming                        0.13s
+PASS   validate-frontmatter                        0.47s
+PASS   validate-repository-structure               0.19s
+
+full: 29 валидаторов, 0 из кэша, 0 провалов, 9.98s

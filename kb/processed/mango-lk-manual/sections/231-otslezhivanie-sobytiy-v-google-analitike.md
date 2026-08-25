@@ -2,29 +2,29 @@
 id: mango-lk-manual-231-otslezhivanie-sobytiy-v-google-analitike
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.11.5.1"
 pdf_section: "4.5.11.5.1"
 title: "Отслеживание событий в Google Аналитике"
 pdf_heading: "4.5.11.5.1 Отслеживание событий в Google Аналитике"
-pages: "373-374"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf
-source_part: "4"
-source_pages: "ч.4: 70-71"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf","part":4,"pages":"70-71","global_pages":"373-374"}]'
+pages: "366-367"
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 366-367"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"366-367","global_pages":"366-367"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 824
+tokens: 819
 status: extracted
 ai-generated: true
 ---
 # 4.5.11.5.1. Отслеживание событий в Google Аналитике
 
-> Трассировка: PDF §4.5.11.5.1 · сквозные стр. 373-374 · источники: ч.4 `kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf` с.70-71.
+> Трассировка: PDF §4.5.11.5.1 · сквозные стр. 366-367 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.366-367.
 
 Внимание С 1 июля 2023 года Google Аналитика переведена с Uviversal Analytics на Google Аналитику 4. Больше информации здесь. Мы настоятельно рекомендуем вам как можно скорее перейти на Google Аналитику 4. Инструкция по переходу здесь. Как отслеживать события «Текстовые коммуникации» в GA: 1. Зарегистрируйтесь в Google Аналитике и установите код отслеживания на сайт, на котором размещен модуль «Текстовые коммуникации» , по инструкции 2. Никакой дополнительной настройки для просмотра событий не требуется. Анализируйте следующие события «Текстовые коммуникации» в Google Аналитике по инструкции:
 
-![Изображение, стр. 374](../images/231-otslezhivanie-sobytiy-v-google-analitike-1.jpeg)
+![Изображение, стр. 367](../images/231-otslezhivanie-sobytiy-v-google-analitike-1.jpeg)
 
 | Наименование | Правило передачи события | Категория | Действие |
 | --- | --- | --- | --- |

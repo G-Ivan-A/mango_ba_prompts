@@ -2,25 +2,25 @@
 id: mango-lk-manual-128-ocenka-effektivnosti-reklamy
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.1.4"
 pdf_section: "4.5.1.4"
 title: "Оценка эффективности рекламы"
 pdf_heading: "4.5.1.4 Оценка эффективности рекламы"
 pages: "182-184"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 81-83"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"81-83","global_pages":"182-184"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 182-184"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"182-184","global_pages":"182-184"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 766
+tokens: 761
 status: extracted
 ai-generated: true
 ---
 # 4.5.1.4. Оценка эффективности рекламы
 
-> Трассировка: PDF §4.5.1.4 · сквозные стр. 182-184 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.81-83.
+> Трассировка: PDF §4.5.1.4 · сквозные стр. 182-184 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.182-184.
 
 Выберите тип группировки, используя одноименный переключатель. Ограничения по периодам действуют следующим образом: • с группировкой по дням: не более одного месяца; • с группировкой по месяцам: не более одного года. При необходимости укажите период (по умолчанию предлагается «Произвольный»), или даты, нажимая на значок календаря или вводя их в формате дд.мм.гггг в соответствующие поля.
 

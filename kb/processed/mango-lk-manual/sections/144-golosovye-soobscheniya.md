@@ -2,29 +2,29 @@
 id: mango-lk-manual-144-golosovye-soobscheniya
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.6"
 pdf_section: "4.5.6"
 title: "Голосовые сообщения"
 pdf_heading: "4.5.6 Голосовые сообщения"
 pages: "222-223"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 20-21"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"20-21","global_pages":"222-223"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 222-223"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"222-223","global_pages":"222-223"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 785
+tokens: 780
 status: extracted
 ai-generated: true
 ---
 # 4.5.6. Голосовые сообщения
 
-> Трассировка: PDF §4.5.6 · сквозные стр. 222-223 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.20-21.
+> Трассировка: PDF §4.5.6 · сквозные стр. 222-223 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.222-223.
 
 Инструмент предоставляет доступ к управлению содержимым облачного хранилища.
 
-![Изображение, стр. 222](../images/144-golosovye-soobscheniya-1.png)
+![Изображение, стр. 222](../images/144-golosovye-soobscheniya-1.jpeg)
 
 При необходимости можно указать даты (по умолчанию предлагается период «Текущий день»), нажав значок календаря, или ввести их в формате дд.мм.гггг в соответствующие поля. Кнопка «Очистить» позволяет вернуться к значению по умолчанию. В специальных полях можно указать, сообщения с какого и на какой номер вы хотите просмотреть. Нажмите кнопку «Показать», и в таблице будут отображены сообщения, которые удовлетворяют условиям выборки. Можно задать отображение 25, 50 или 100 элементов на 1 странице.
 

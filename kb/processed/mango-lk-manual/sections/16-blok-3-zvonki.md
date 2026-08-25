@@ -2,25 +2,25 @@
 id: mango-lk-manual-16-blok-3-zvonki
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "1.8.1.3.3"
 pdf_section: "1.8.1.3.3"
 title: "Блок 3. Звонки"
 pdf_heading: "1.8.1.3.3 Блок 3. Звонки"
 pages: "20-21"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 20-21"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"20-21","global_pages":"20-21"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"20-21","global_pages":"20-21"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 711
+tokens: 706
 status: extracted
 ai-generated: true
 ---
 # 1.8.1.3.3. Блок 3. Звонки
 
-> Трассировка: PDF §1.8.1.3.3 · сквозные стр. 20-21 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.20-21.
+> Трассировка: PDF §1.8.1.3.3 · сквозные стр. 20-21 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.20-21.
 
 Блок «Звонки» содержит следующие элементы: • Время - дата и время (Московское) звонка;
 
@@ -40,7 +40,7 @@ ai-generated: true
 
 пропущенный , не дозвонились ), длительность вызова; • Пользователь – пользователи или список пользователей, которые совершили/приняли вызов; • Все звонки – переход в раздел История вызовов; • Фильтр Пропущенные – по клику на кнопку отображаются звонки с типом
 
-![Изображение, стр. 20](../images/16-blok-3-zvonki-6.png)
+![Изображение, стр. 20](../images/16-blok-3-zvonki-6.jpeg)
 
 Пропущенный , пропущенные с момента последнего просмотра данной страницы администратором. • Тумблер Запись разговоров – отвечает за включение/отключение записи разговоров.
 

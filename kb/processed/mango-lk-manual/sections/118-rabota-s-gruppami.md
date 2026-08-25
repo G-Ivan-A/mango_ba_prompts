@@ -2,29 +2,29 @@
 id: mango-lk-manual-118-rabota-s-gruppami
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.6.2"
 pdf_section: "4.4.6.2"
 title: "Работа с группами"
 pdf_heading: "4.4.6.2 Работа с группами"
 pages: "162-164"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 61-63"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"61-63","global_pages":"162-164"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 162-164"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"162-164","global_pages":"162-164"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 843
+tokens: 838
 status: extracted
 ai-generated: true
 ---
 # 4.4.6.2. Работа с группами
 
-> Трассировка: PDF §4.4.6.2 · сквозные стр. 162-164 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.61-63.
+> Трассировка: PDF §4.4.6.2 · сквозные стр. 162-164 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.162-164.
 
 Для добавления группы воспользуйтесь одноименной ссылкой. Откроется карточка группы, содержащая три вкладки. внимание Чтобы сотрудник с пользовательской ролью мог создавать, изменять или удалять группы, помимо прав в разделе Группы, необходимо в разделе Финансы включить разрешение «Смена тарифа и подключение услуг». Без этого действия с группами будут недоступны.
 
-![Изображение, стр. 162](../images/118-rabota-s-gruppami-1.png)
+![Изображение, стр. 162](../images/118-rabota-s-gruppami-1.jpeg)
 
 ![Изображение, стр. 163](../images/118-rabota-s-gruppami-2.jpeg)
 

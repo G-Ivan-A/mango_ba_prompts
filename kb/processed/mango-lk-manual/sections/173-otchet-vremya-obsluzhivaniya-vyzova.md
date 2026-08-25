@@ -2,35 +2,35 @@
 id: mango-lk-manual-173-otchet-vremya-obsluzhivaniya-vyzova
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "0"
 pdf_section: "4.5.9.2.2"
 title: "Отчет «Время обслуживания вызова»"
 pdf_heading: "Отчет «Время обслуживания вызова»"
 pages: "267-269"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 65-67"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"65-67","global_pages":"267-269"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 267-269"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"267-269","global_pages":"267-269"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 865
+tokens: 860
 status: extracted
 ai-generated: true
 ---
 # Отчет «Время обслуживания вызова»
 
-> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 267-269 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.65-67.
+> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 267-269 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.267-269.
 
 Отчет «Время обслуживания вызова» содержит информацию о количестве входящих вызовов, обслуженных за определенный период. По умолчанию оптимальной длительностью обслуживания вызова считается период от 30 секунд до 2 минут. При необходимости измените этот период самостоятельно, установив другое значение в поле «С оптимальной длительностью от… до» после формирования отчета. В верхней части отчета приведены данные о принятых звонках в виде инфографики.
 
-![Изображение, стр. 267](../images/173-otchet-vremya-obsluzhivaniya-vyzova-1.png)
+![Изображение, стр. 267](../images/173-otchet-vremya-obsluzhivaniya-vyzova-1.jpeg)
 
 ![Изображение, стр. 268](../images/173-otchet-vremya-obsluzhivaniya-vyzova-2.jpeg)
 
 В нижней части окна отображается детальная информация о количестве вызовов, относящихся к определенному периоду.
 
-![Изображение, стр. 268](../images/173-otchet-vremya-obsluzhivaniya-vyzova-3.png)
+![Изображение, стр. 268](../images/173-otchet-vremya-obsluzhivaniya-vyzova-3.jpeg)
 
 Щелкните по кнопкам Слишком короткие, С оптимальной длительностью и Слишком долгие для того, чтобы скрыть/отобразить соответствующие показатели на графике. Для получения детальной информации о вызовах предусмотрена дополнительная форма, содержащая данные из отчета «Истории вызовов» согласно установленным значениям фильтра. Чтобы открыть форму, следует щелкнуть по определенному элементу отчета. Содержание данных зависит от того, по какому элементу было совершено нажатие:
 
@@ -48,4 +48,4 @@ ai-generated: true
 
 ![Изображение, стр. 269](../images/173-otchet-vremya-obsluzhivaniya-vyzova-4.jpeg)
 
-![Изображение, стр. 269](../images/173-otchet-vremya-obsluzhivaniya-vyzova-5.png)
+![Изображение, стр. 269](../images/173-otchet-vremya-obsluzhivaniya-vyzova-5.jpeg)

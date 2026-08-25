@@ -17,27 +17,21 @@ DOC_TITLE   := Контакт-центр MANGO OFFICE
 DOC_VERSION := 1.26.23-sample
 NOTE        := Синтетическая фикстура: реальный CC_manual_1.26.23.pdf не загрузился в issue 111. Структура воспроизводит реальное руководство (issue 109). Замените PDF и перезапустите для реальных данных.
 
-MANGO_SRCS    := kb/sources/mango-cc-manual/CC_manual_1.26.23-part-1.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-2.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-3.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-4.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-5.pdf \
-                 kb/sources/mango-cc-manual/CC_manual_1.26.23-part-6.pdf
+# Издание 1.26.28.1 (issue #317) поставляется одним PDF: шесть частей версии
+# 1.26.23 больше не источник. Multi-part режим сохранён в конвейере.
+MANGO_SRCS    := kb/sources/mango-cc-manual/CC_manual_1.26.28.1.pdf
 MANGO_SRC     := $(MANGO_SRCS)
 MANGO_OUT     := kb/processed/mango-cc-manual
 MANGO_TITLE   := Контакт-центр MANGO OFFICE - Руководство пользователя
-MANGO_VERSION := 1.26.23
-MANGO_NOTE    := Multi-part руководство КЦ из issue 119; 6 PDF частей обработаны как один документ со сквозной пагинацией.
+MANGO_VERSION := 1.26.28.1
+MANGO_NOTE    := Руководство КЦ версии 1.26.28.1 из issue 317; один PDF, границы разделов по типографике (в PDF нет outline).
 
-LK_SRCS     := kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-4.pdf \
-               kb/sources/mango-lk-manual/LK_manual_v-121часть-5.pdf
+# Издание 1.23 (issue #317) — один PDF вместо пяти частей версии 1.21.
+LK_SRCS     := kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 LK_OUT      := kb/processed/mango-lk-manual
 LK_TITLE    := Виртуальная АТС MANGO OFFICE - Справочник абонента
-LK_VERSION  := 1.21
-LK_NOTE     := Multi-part руководство ЛК из issue 117; 5 PDF частей обработаны как один документ со сквозной пагинацией.
+LK_VERSION  := 1.23
+LK_NOTE     := Справочник абонента ЛК ВАТС версии 1.23 из issue 317; один PDF, границы разделов по PDF outline.
 
 SRC     ?= $(SAMPLE_PDF)
 SRCS    ?= $(SRC)
@@ -99,7 +93,7 @@ kb-source-plan:
 kb-source-extract:
 	$(PYTHON) scripts/kb/process_sources.py "$(SOURCE_DIR)"
 
-# Воспроизвести БЗ для split-руководства КЦ из issue #119.
+# Воспроизвести БЗ для руководства КЦ (issue #119, обновление #317).
 kb-mango:
 	$(MAKE) kb-extract \
 		SRCS="$(MANGO_SRCS)" \
@@ -109,7 +103,7 @@ kb-mango:
 		VERSION="$(MANGO_VERSION)" \
 		NOTE="$(MANGO_NOTE)"
 
-# Воспроизвести БЗ для split-руководства ЛК из issue #117.
+# Воспроизвести БЗ для справочника ЛК (issue #117, обновление #317).
 kb-lk:
 	$(MAKE) kb-extract \
 		SRCS="$(LK_SRCS)" \

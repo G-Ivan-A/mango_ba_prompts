@@ -2,27 +2,27 @@
 id: mango-lk-manual-14-blok-1-raspisanie-i-shema-raspredelenie
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "1.8.1.3.1"
 pdf_section: "1.8.1.3.1"
 title: "Блок 1. Расписание и схема распределение звонков"
 pdf_heading: "1.8.1.3.1 Блок 1. Расписание и схема распределение звонков"
 pages: "18-19"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 18-19"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"18-19","global_pages":"18-19"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"18-19","global_pages":"18-19"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 869
+tokens: 864
 status: extracted
 ai-generated: true
 ---
 # 1.8.1.3.1. Блок 1. Расписание и схема распределение звонков
 
-> Трассировка: PDF §1.8.1.3.1 · сквозные стр. 18-19 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.18-19.
+> Трассировка: PDF §1.8.1.3.1 · сквозные стр. 18-19 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.18-19.
 
-![Изображение, стр. 18](../images/14-blok-1-raspisanie-i-shema-raspredelenie-1.png)
+![Изображение, стр. 18](../images/14-blok-1-raspisanie-i-shema-raspredelenie-1.jpeg)
 
 Рис.1 Схема распределения звонков "Простая настройка". 1. Изменить информацию о времени работы сотрудников; 2. Изменить мелодию ожидания, которую слышит клиент. В схеме «Простая настройка» пользователю доступны: выбор дня и времени приема звонков (без выбора периода), одно звуковое приветствие, переадресаций на сотрудников не более трех. Переадресация на внешний номер недоступна.
 

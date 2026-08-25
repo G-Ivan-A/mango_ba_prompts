@@ -2,31 +2,31 @@
 id: mango-lk-manual-113-vkladka-kartochka
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.6.1.1"
 pdf_section: "4.4.6.1.1"
 title: "Вкладка «Карточка»"
 pdf_heading: "4.4.6.1.1 Вкладка «Карточка»"
 pages: "146-151"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf
-source_part: "2"
-source_pages: "ч.2: 45-50"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf","part":2,"pages":"45-50","global_pages":"146-151"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 146-151"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"146-151","global_pages":"146-151"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 2802
+tokens: 2797
 status: extracted
 ai-generated: true
 ---
 # 4.4.6.1.1. Вкладка «Карточка»
 
-> Трассировка: PDF §4.4.6.1.1 · сквозные стр. 146-151 · источники: ч.2 `kb/sources/mango-lk-manual/LK_manual_v-121часть-2.pdf` с.45-50.
+> Трассировка: PDF §4.4.6.1.1 · сквозные стр. 146-151 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.146-151.
 
 Вид карточки представлен на рисунке ниже.
 
 ![Изображение, стр. 146](../images/113-vkladka-kartochka-1.png)
 
-![Изображение, стр. 146](../images/113-vkladka-kartochka-2.png)
+![Изображение, стр. 146](../images/113-vkladka-kartochka-2.jpeg)
 
 Карточка может содержать информационные пиктограммы:
 
@@ -50,7 +50,7 @@ ai-generated: true
 
 ![Изображение, стр. 148](../images/113-vkladka-kartochka-8.png)
 
-![Изображение, стр. 148](../images/113-vkladka-kartochka-9.png)
+![Изображение, стр. 148](../images/113-vkladka-kartochka-9.jpeg)
 
 Список доступных виджетов. Для некоторых сотрудников, например, менеджеров рекламных агентств, имеющих доступ к различным проектам своих клиентов, предусмотрена возможность задать список групп каналов (виджетов) «Текстовые комункации» , по которым им доступна статистика и настройки. В случае, если у сотрудника есть доступ на задание списка подконтрольных (привязанных) виджетов, то в карточке сотрудника отображается поле «Список доступных виджетов» и ссылка на количество виджетов. Нажатие на ссылку открывает выпадающий список всех ЛК ВАТС. Доступен выбор одного или нескольких виджетов (групп каналов «Текстовые коммуникации» ).
 

@@ -2,25 +2,25 @@
 id: mango-lk-manual-172-otchet-vremya-ozhidaniya-otveta
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "0"
 pdf_section: "4.5.9.2.2"
 title: "Отчет «Время ожидания ответа»"
 pdf_heading: "Отчет «Время ожидания ответа»"
 pages: "265-267"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 63-65"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"63-65","global_pages":"265-267"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 265-267"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"265-267","global_pages":"265-267"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 719
+tokens: 714
 status: extracted
 ai-generated: true
 ---
 # Отчет «Время ожидания ответа»
 
-> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 265-267 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.63-65.
+> Трассировка: PDF §4.5.9.2.2 · сквозные стр. 265-267 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.265-267.
 
 Отчет «Время ожидания ответа» отображает информацию о времени ожидания обслуживания вызова на разных стадиях: голосовое меню, дозвон на группу и дозвон на оператора.
 
@@ -28,7 +28,7 @@ ai-generated: true
 
 По умолчанию оптимальным временем ожидания в голосовом меню считается время не более 25 секунд, ожидание в очереди на группу — от 0 до 60 секунд, ожидание ответа оператора не должно превышать 5 секунд.
 
-![Изображение, стр. 266](../images/172-otchet-vremya-ozhidaniya-otveta-2.png)
+![Изображение, стр. 266](../images/172-otchet-vremya-ozhidaniya-otveta-2.jpeg)
 
 ![Изображение, стр. 266](../images/172-otchet-vremya-ozhidaniya-otveta-3.png)
 
@@ -36,4 +36,4 @@ ai-generated: true
 
 ![Изображение, стр. 267](../images/172-otchet-vremya-ozhidaniya-otveta-4.jpeg)
 
-![Изображение, стр. 267](../images/172-otchet-vremya-ozhidaniya-otveta-5.png)
+![Изображение, стр. 267](../images/172-otchet-vremya-ozhidaniya-otveta-5.jpeg)

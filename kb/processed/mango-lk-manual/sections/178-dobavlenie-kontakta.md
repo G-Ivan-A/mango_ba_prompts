@@ -2,31 +2,31 @@
 id: mango-lk-manual-178-dobavlenie-kontakta
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.10.1"
 pdf_section: "4.5.10.1"
 title: "Добавление контакта"
 pdf_heading: "4.5.10.1 Добавление контакта"
 pages: "276-277"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 74-75"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"74-75","global_pages":"276-277"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 276-277"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"276-277","global_pages":"276-277"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 493
+tokens: 488
 status: extracted
 ai-generated: true
 ---
 # 4.5.10.1. Добавление контакта
 
-> Трассировка: PDF §4.5.10.1 · сквозные стр. 276-277 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.74-75.
+> Трассировка: PDF §4.5.10.1 · сквозные стр. 276-277 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.276-277.
 
 Для того, чтобы добавить нового контрагента, следует щелкнуть по кнопке Добавить контакт.
 
 ![Изображение, стр. 277](../images/178-dobavlenie-kontakta-1.jpeg)
 
-![Изображение, стр. 277](../images/178-dobavlenie-kontakta-2.png)
+![Изображение, стр. 277](../images/178-dobavlenie-kontakta-2.jpeg)
 
 Обязательным для заполнения является только поле ФИО. Для того, чтобы добавить дополнительное поле для ввода телефона и/или E-mail,
 

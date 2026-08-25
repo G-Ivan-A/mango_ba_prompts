@@ -37,27 +37,20 @@ MAKEFILE = "Makefile"
 SOURCES_README = "kb/sources/README.md"
 KB_README = "scripts/kb/README.md"
 
-CC_SOURCES = [
-    "CC_manual_1.26.23-part-1.pdf",
-    "CC_manual_1.26.23-part-2.pdf",
-    "CC_manual_1.26.23-part-3.pdf",
-    "CC_manual_1.26.23-part-4.pdf",
-    "CC_manual_1.26.23-part-5.pdf",
-    "CC_manual_1.26.23-part-6.pdf",
-]
-LK_SOURCES = [
-    "LK_manual_v-121часть-1.pdf",
-    "LK_manual_v-121часть-2.pdf",
-    "LK_manual_v-121часть-3.pdf",
-    "LK_manual_v-121часть-4.pdf",
-    "LK_manual_v-121часть-5.pdf",
-]
+# Issue #317: обновлённые издания КЦ (1.26.28.1) и ЛК (1.23) поставляются одним
+# PDF, поэтому реальные манифесты теперь в режиме ``single``. Режим
+# ``multi_part`` остаётся частью контракта и проверяется на синтетических
+# манифестах ниже (``check_mode_matrix``).
+CC_SOURCES = ["CC_manual_1.26.28.1.pdf"]
+CC_MODE = "single"
+LK_SOURCES = ["LK_manual_v-123.pdf"]
+LK_MODE = "single"
 MTALKER_DOCS = {
     "quick-start": "mTalker_Quick_start.pdf",
-    "windows-mac-working": "mTalker_User_Guide_ch1_Working.pdf",
+    "windows-mac-working": "UserGuide_Windows_mTalker_ch1_Working.11.06.26.pdf",
     "windows-mac-settings": "mTalker_User_Guide_ch2_Settings.pdf",
     "windows-mac-admin": "mTalker_User_Guide_ch3_Admin_Guide.pdf",
-    "android-user-guide": "UserGuide_mTalker_4Mobile.pdf",
+    "android-user-guide": "UserGuide_mTalker_4Mobile 11.06.26.pdf",
 }
 
 
@@ -98,17 +91,17 @@ def check_real_manifests() -> list[str]:
     if errors:
         return errors
 
-    if cc.get("processing_mode") != "multi_part":
-        errors.append("kb/sources/mango-cc-manual/meta.json: processing_mode must be multi_part")
+    if cc.get("processing_mode") != CC_MODE:
+        errors.append(f"kb/sources/mango-cc-manual/meta.json: processing_mode must be {CC_MODE}")
     if cc.get("source_files") != CC_SOURCES:
-        errors.append("kb/sources/mango-cc-manual/meta.json: source_files must list six CC parts")
+        errors.append(f"kb/sources/mango-cc-manual/meta.json: source_files must be {CC_SOURCES}")
     if cc.get("output_slug") != "mango-cc-manual" or cc.get("doc_code") != "CC":
         errors.append("kb/sources/mango-cc-manual/meta.json: output_slug/doc_code mismatch")
 
-    if lk.get("processing_mode") != "multi_part":
-        errors.append("kb/sources/mango-lk-manual/meta.json: processing_mode must be multi_part")
+    if lk.get("processing_mode") != LK_MODE:
+        errors.append(f"kb/sources/mango-lk-manual/meta.json: processing_mode must be {LK_MODE}")
     if lk.get("source_files") != LK_SOURCES:
-        errors.append("kb/sources/mango-lk-manual/meta.json: source_files must list five LK parts")
+        errors.append(f"kb/sources/mango-lk-manual/meta.json: source_files must be {LK_SOURCES}")
     if lk.get("output_slug") != "mango-lk-manual" or lk.get("doc_code") != "LK":
         errors.append("kb/sources/mango-lk-manual/meta.json: output_slug/doc_code mismatch")
 
@@ -140,12 +133,12 @@ def check_real_manifests() -> list[str]:
             continue
         if source_dir.name == "mango-cc-manual":
             job = plan.jobs[0]
-            if plan.mode != "multi_part" or rel_paths(job.pdf_paths, source_dir) != CC_SOURCES:
-                errors.append("mango-cc-manual plan: expected one multi_part job with six files")
+            if plan.mode != CC_MODE or rel_paths(job.pdf_paths, source_dir) != CC_SOURCES:
+                errors.append(f"mango-cc-manual plan: expected one {CC_MODE} job with {CC_SOURCES}")
         elif source_dir.name == "mango-lk-manual":
             job = plan.jobs[0]
-            if plan.mode != "multi_part" or rel_paths(job.pdf_paths, source_dir) != LK_SOURCES:
-                errors.append("mango-lk-manual plan: expected one multi_part job with five files")
+            if plan.mode != LK_MODE or rel_paths(job.pdf_paths, source_dir) != LK_SOURCES:
+                errors.append(f"mango-lk-manual plan: expected one {LK_MODE} job with {LK_SOURCES}")
         elif source_dir.name == "mtalker":
             slugs = [job.output_dir.name for job in plan.jobs]
             if plan.mode != "multi_document" or slugs != list(MTALKER_DOCS):

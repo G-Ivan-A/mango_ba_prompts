@@ -1,0 +1,49 @@
+run_id: RUN-0056
+process: kb-ingestion-refresh-2026-08-issue-317
+version: "0.1"
+date: 2026-08-25
+author: "AI issue solver"
+model: "claude-opus-5 (оркестрация) + детерминированный конвейер pdfplumber 0.11.10 / PyMuPDF 1.28.2"
+status: works
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/317
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/structure-proposal.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/verification-log.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  verdict: works
+  success_rate: 1.0
+  success_rate_basis: "Доля PDF из постановки, доведённых до раздела БЗ с фронтматтером, verification.md и прохождением валидаторов: 6 из 6."
+  documents_processed: 6
+  documents_updated: 5
+  documents_created: 1
+  sections_total: 877
+  pages_total: 1664
+  images_total: 4290
+  tables_total: 793
+  tokens_kb_total: 1031737
+  token_method: "tiktoken:cl100k_base"
+  critical_tokens_checked: 5820
+  critical_tokens_unconfirmed: 2
+  pages_without_text_layer: 2
+  eval: "Прогон доказал, что детерминированный конвейер извлекает шесть PDF без ручного домысливания и что кросс-движковая сверка (pdfplumber → PyMuPDF) находит расхождения в критических токенах: 2 из 5820 не подтверждены и размечены маркерами, 2 страницы без текстового слоя зафиксированы как ПРОБЕЛ ИЗВЛЕЧЕНИЯ. Прогон не доказал полноту семантической разметки разделов для PDF без outline: границы там восстановлены по кеглю (typography-heuristic), а не по авторскому оглавлению."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/317
+related_artifacts:
+  - standards/kb-standard.md
+  - standards/runs-contract-standard.md
+  - kb/STRUCTURE_REVIEW.md
+  - kb/processed/mango-cc-manual/index.md
+  - kb/processed/mango-lk-manual/index.md
+  - kb/processed/mdialogi-api/index.md
+  - kb/processed/cov-robot-fil/index.md
+  - kb/processed/mtalker/index.md

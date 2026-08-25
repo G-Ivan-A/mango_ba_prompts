@@ -2,25 +2,25 @@
 id: mango-lk-manual-101-zakladka-nomera
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.4.1.1"
 pdf_section: "4.4.1.1"
 title: "Закладка «Номера»"
 pdf_heading: "4.4.1.1 Закладка «Номера»"
 pages: "99-101"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 99-101"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"99-101","global_pages":"99-101"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"99-101","global_pages":"99-101"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 1405
+tokens: 1400
 status: extracted
 ai-generated: true
 ---
 # 4.4.1.1. Закладка «Номера»
 
-> Трассировка: PDF §4.4.1.1 · сквозные стр. 99-101 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.99-101.
+> Трассировка: PDF §4.4.1.1 · сквозные стр. 99-101 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.99-101.
 
 Номера MANGO OFFICE В этом блоке можно получить информацию об используемых с текущей Виртуальной АТС многоканальных номерах (телефонных линиях) MANGO OFFICE.
 
@@ -36,13 +36,13 @@ ai-generated: true
 
 ![Изображение, стр. 100](../images/101-zakladka-nomera-4.png)
 
-![Изображение, стр. 100](../images/101-zakladka-nomera-5.png)
+![Изображение, стр. 100](../images/101-zakladka-nomera-5.jpeg)
 
 Клик по пиктограмме «воронка» открывает всплывающее окно фильтрации данных по типу номеров: активный SIP, пассивный SIP, SIP Trunk. Для подключения номера другого оператора нажмите на кнопку Добавить.
 
 ![Изображение, стр. 100](../images/101-zakladka-nomera-6.png)
 
-![Изображение, стр. 100](../images/101-zakladka-nomera-7.png)
+![Изображение, стр. 100](../images/101-zakladka-nomera-7.jpeg)
 
 Выберите один из вариантов подключения: • Пассивный SIP • Активный SIP
 

@@ -2,25 +2,25 @@
 id: mango-lk-manual-52-napisat-v-tehpodderzhku
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "3.1.3"
 pdf_section: "3.1.3"
 title: "Написать в техподдержку"
 pdf_heading: "3.1.3 Написать в техподдержку"
 pages: "50-52"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
 source_part: "1"
 source_pages: "ч.1: 50-52"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf","part":1,"pages":"50-52","global_pages":"50-52"}]'
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"50-52","global_pages":"50-52"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 815
+tokens: 810
 status: extracted
 ai-generated: true
 ---
 # 3.1.3. Написать в техподдержку
 
-> Трассировка: PDF §3.1.3 · сквозные стр. 50-52 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-121часть-1.pdf` с.50-52.
+> Трассировка: PDF §3.1.3 · сквозные стр. 50-52 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.50-52.
 
 Кнопка Создать обращение открывает форму, в которой пользователь может указать: • Тему обращения • Категорию и подкатегорию обращения • Описание проблемы • Прикрепить файлы (до 10 штук) • Контактную информацию
 
@@ -28,7 +28,7 @@ ai-generated: true
 
 ![Изображение, стр. 51](../images/52-napisat-v-tehpodderzhku-2.png)
 
-![Изображение, стр. 51](../images/52-napisat-v-tehpodderzhku-3.png)
+![Изображение, стр. 51](../images/52-napisat-v-tehpodderzhku-3.jpeg)
 
 По умолчанию в качестве контактного лица указывается пользователь, осуществивший вход в Личный кабинет под своей учетной записью. Поля для ввода контактных данных заполняются автоматически на основании данных, указанных в карточке сотрудника (при их наличии).
 

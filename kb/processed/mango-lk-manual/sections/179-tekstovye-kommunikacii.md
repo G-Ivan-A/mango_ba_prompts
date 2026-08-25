@@ -2,25 +2,25 @@
 id: mango-lk-manual-179-tekstovye-kommunikacii
 doc_code: LK
 doc_title: "Виртуальная АТС MANGO OFFICE - Справочник абонента"
-doc_version: "1.21"
+doc_version: "1.23"
 section: "4.5.11"
 pdf_section: "4.5.11"
 title: "Текстовые коммуникации"
 pdf_heading: "4.5.11 Текстовые коммуникации"
 pages: "277-278"
-source: kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf
-source_part: "3"
-source_pages: "ч.3: 75-76"
-source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf","part":3,"pages":"75-76","global_pages":"277-278"}]'
+source: kb/sources/mango-lk-manual/LK_manual_v-123.pdf
+source_part: "1"
+source_pages: "ч.1: 277-278"
+source_refs: '[{"source_pdf":"kb/sources/mango-lk-manual/LK_manual_v-123.pdf","part":1,"pages":"277-278","global_pages":"277-278"}]'
 extracted_by: "pdfplumber 0.11.10"
 token_method: "tiktoken:cl100k_base"
-tokens: 426
+tokens: 421
 status: extracted
 ai-generated: true
 ---
 # 4.5.11. Текстовые коммуникации
 
-> Трассировка: PDF §4.5.11 · сквозные стр. 277-278 · источники: ч.3 `kb/sources/mango-lk-manual/LK_manual_v-121часть-3.pdf` с.75-76.
+> Трассировка: PDF §4.5.11 · сквозные стр. 277-278 · источники: ч.1 `kb/sources/mango-lk-manual/LK_manual_v-123.pdf` с.277-278.
 
 Текстовые коммуникации – это модуль для коммуникаций с клиентами. Он объединяет в себе социальные сети, мессенджеры и чат-боты в единое пространство связи клиентов и сотрудников через сайт. Возможности модуля «Текстовые коммуникации»: • Общаться с клиентами и партнерами онлайн;
 

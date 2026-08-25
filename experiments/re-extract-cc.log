@@ -1,0 +1,5 @@
+python3 scripts/kb/process_sources.py "kb/sources/mango-cc-manual"
+warning: The `fitz` API is deprecated and will be removed in future. Use `import pymupdf` instead.
+OK: 140 разделов, 1774 изобр., 527 табл., 424990 токенов → kb/processed/mango-cc-manual
+kb/sources/mango-cc-manual: single -> kb/processed/mango-cc-manual
+- mango-cc-manual: kb/sources/mango-cc-manual/CC_manual_1.26.28.1.pdf -> kb/processed/mango-cc-manual

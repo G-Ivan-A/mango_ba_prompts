@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-22
+version: 0.6
+updated: 2026-08-25
 ai-generated: true
 type: registry
 scope: runs
@@ -174,6 +174,7 @@ runs/
 | [`RUN-0053`](2026/RUN-0053/metadata.yaml) | 2026-08-22 | `statistics` | task-977-bitrix24-call-attribution | [`outputs/README.md`](2026/RUN-0053/outputs/README.md), [`outputs/prompt-usage.md`](2026/RUN-0053/outputs/prompt-usage.md), [`logs/metrics.md`](2026/RUN-0053/logs/metrics.md), [`feedback/review-notes.md`](2026/RUN-0053/feedback/review-notes.md) |
 | [`RUN-0054`](2026/RUN-0054/metadata.yaml) | 2026-08-22 | `statistics` | task-980-number-replacement-questions | [`outputs/README.md`](2026/RUN-0054/outputs/README.md), [`outputs/prompt-usage.md`](2026/RUN-0054/outputs/prompt-usage.md), [`logs/metrics.md`](2026/RUN-0054/logs/metrics.md), [`feedback/review-notes.md`](2026/RUN-0054/feedback/review-notes.md) |
 | [`RUN-0055`](2026/RUN-0055/metadata.yaml) | 2026-08-23 | `execution` | tz-feasibility-assessment-utair-chat-mango-office | [`outputs/README.md`](2026/RUN-0055/outputs/README.md), [`outputs/feasibility-assessment.md`](2026/RUN-0055/outputs/feasibility-assessment.md), [`outputs/tender-feasibility-brief.md`](2026/RUN-0055/outputs/tender-feasibility-brief.md), [`logs/verification-log.md`](2026/RUN-0055/logs/verification-log.md), [`feedback/review-notes.md`](2026/RUN-0055/feedback/review-notes.md) |
+| [`RUN-0056`](2026/RUN-0056/metadata.yaml) | 2026-08-25 | `execution` | kb-ingestion-refresh-2026-08-issue-317 | [`outputs/README.md`](2026/RUN-0056/outputs/README.md), [`outputs/structure-proposal.md`](2026/RUN-0056/outputs/structure-proposal.md), [`logs/verification-log.md`](2026/RUN-0056/logs/verification-log.md), [`logs/metrics.md`](2026/RUN-0056/logs/metrics.md), [`feedback/review-notes.md`](2026/RUN-0056/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
