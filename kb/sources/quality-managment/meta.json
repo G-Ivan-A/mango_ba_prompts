@@ -3,9 +3,11 @@
   "version": "1.26.18",
   "type": "user_manual",
   "product": "Mango QM",
-  "platform": ["Web"],
+  "platform": [
+    "Web"
+  ],
   "language": "ru",
-  "upload_date": "2026-06-20",
+  "upload_date": "2026-08-25",
   "description": "Руководство пользователя по модулю контроля качества в Mango Office. Описывает процессы оценки качества звонков, мониторинга операторов, аудита и управления качеством обслуживания.",
   "topics": [
     "контроль качества",
@@ -17,7 +19,13 @@
   ],
   "file_name": "QM_manual_v-1.26.18.pdf",
   "total_files": 1,
-  "file_size_mb": 6.6,
+  "file_size_mb": 6.5,
   "pages_count": 97,
-  "source_url": null
+  "source_url": null,
+  "source_files": [
+    "QM_manual_v-1.26.18.pdf"
+  ],
+  "processing_mode": "single",
+  "doc_code": "QM",
+  "output_slug": "quality-management"
 }

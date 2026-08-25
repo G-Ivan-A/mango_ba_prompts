@@ -4,9 +4,11 @@
   "type": "documentation_set",
   "version": "03.03.2026",
   "language": "ru",
-  "upload_date": "2026-06-20",
+  "upload_date": "2026-08-25",
   "description": "Инструкция по настройке интеграции виртуальной АТС Mango Office с CRM Битрикс24. Описывает подключение, настройку синхронизации данных, управление звонками и использование телефонных функций внутри Битрикс24.",
-  "platforms": ["Web"],
+  "platforms": [
+    "Web"
+  ],
   "topics": [
     "интеграция",
     "Битрикс24",
@@ -20,7 +22,9 @@
       "file_name": "Mango_office_integration_Bitrix24.pdf",
       "title": "Интеграция Виртуальной АТС и Битрикс24. Инструкция по настройке",
       "type": "integration_guide",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 178,
       "file_size_mb": 16.5,
       "description": "Подробная инструкция по настройке и использованию интеграции между ВАТС Mango Office и Битрикс24. Содержит пошаговые руководства, описание параметров и типовые сценарии."
@@ -29,5 +33,11 @@
   "total_files": 1,
   "total_pages": 178,
   "total_size_mb": 16.5,
-  "source_url": null
+  "source_url": null,
+  "source_files": [
+    "Mango_office_integration_Bitrix24.pdf"
+  ],
+  "processing_mode": "single",
+  "doc_code": "INTB24",
+  "output_slug": "integration-bitrix24"
 }

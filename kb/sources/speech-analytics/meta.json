@@ -4,9 +4,11 @@
   "type": "documentation_set",
   "version": "1.26",
   "language": "ru",
-  "upload_date": "2026-06-20",
+  "upload_date": "2026-08-25",
   "description": "Комплект руководств пользователя по продукту «Речевая аналитика» от MANGO OFFICE. Включает базовое руководство, а также специализированные версии с интеграцией КАТС, офлайн скорингом и совместным использованием ВАТС и скоринга.",
-  "platforms": ["Web"],
+  "platforms": [
+    "Web"
+  ],
   "topics": [
     "речевая аналитика",
     "аналитика звонков",
@@ -20,41 +22,75 @@
       "file_name": "RECHEVAYA-ANALITIKA_1.26.18.pdf",
       "title": "Руководство пользователя. Речевая аналитика",
       "type": "user_manual",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 126,
       "file_size_mb": 8.5,
-      "description": "Базовое руководство по речевой аналитике. Описание функционала, настройка, анализ звонков, формирование отчетности."
+      "description": "Базовое руководство по речевой аналитике. Описание функционала, настройка, анализ звонков, формирование отчетности.",
+      "output_slug": "user-guide",
+      "doc_code": "SA",
+      "version": "1.26.18",
+      "source_files": [
+        "RECHEVAYA-ANALITIKA_1.26.18.pdf"
+      ]
     },
     {
       "file_name": "RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf",
       "title": "Руководство пользователя. Речевая аналитика & КАТС",
       "type": "user_manual",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 146,
       "file_size_mb": 9.2,
-      "description": "Руководство по речевой аналитике с интеграцией с КАТС (комплексная автоматическая телефонная станция). Описание совместной работы, расширенная аналитика."
+      "description": "Руководство по речевой аналитике с интеграцией с КАТС (комплексная автоматическая телефонная станция). Описание совместной работы, расширенная аналитика.",
+      "output_slug": "kats",
+      "doc_code": "SA-KATS",
+      "version": "1.26.18",
+      "source_files": [
+        "RECHEVAYA-ANALITIKA_c-KATS_v.1.26.18.pdf"
+      ]
     },
     {
       "file_name": "RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf",
       "title": "Руководство пользователя. Речевая аналитика. Офлайн скоринг",
       "type": "user_manual",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 133,
       "file_size_mb": 8.2,
-      "description": "Руководство по речевой аналитике с фокусом на офлайн скоринг. Описание методов оценки качества и построения скоринговых моделей."
+      "description": "Руководство по речевой аналитике с фокусом на офлайн скоринг. Описание методов оценки качества и построения скоринговых моделей.",
+      "output_slug": "offline-scoring",
+      "doc_code": "SA-SCORE",
+      "version": "1.26.15",
+      "source_files": [
+        "RECHEVAYA-ANALITIKA_Skoring_Rukovodstvo-polzovatelya_v.1.26.15.pdf"
+      ]
     },
     {
       "file_name": "RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf",
       "title": "Руководство пользователя. Речевая аналитика. ВАТС & Офлайн скоринг",
       "type": "user_manual",
-      "platform": ["Web"],
+      "platform": [
+        "Web"
+      ],
       "pages_count": 143,
       "file_size_mb": 9.3,
-      "description": "Комплексное руководство по речевой аналитике с поддержкой ВАТС и офлайн скоринга. Описание всех аспектов аналитики и скоринга в едином продукте."
+      "description": "Комплексное руководство по речевой аналитике с поддержкой ВАТС и офлайн скоринга. Описание всех аспектов аналитики и скоринга в едином продукте.",
+      "output_slug": "vats-offline-scoring",
+      "doc_code": "SA-VATS-SCORE",
+      "version": "1.26.18",
+      "source_files": [
+        "RECHEVAYA-ANALITIKA_VATS-_-Skoring-1.26.18.pdf"
+      ]
     }
   ],
   "total_files": 4,
   "total_pages": 548,
   "total_size_mb": 35.2,
-  "source_url": null
+  "source_url": null,
+  "processing_mode": "multi_document",
+  "output_slug": "speech-analytics"
 }

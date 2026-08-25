@@ -1,0 +1,43 @@
+{
+  "name": "Интеграция Виртуальной АТС и BPMSoft. Руководство по интеграции",
+  "product": "Mango Office",
+  "type": "integration_guide",
+  "version": "22.06.2026",
+  "language": "ru",
+  "upload_date": "2026-08-25",
+  "description": "Руководство по интеграции виртуальной АТС Mango Office с BPMSoft. Описывает подключение, настройку синхронизации данных, управление звонками и использование телефонных функций внутри BPMSoft.",
+  "platforms": [
+    "Web"
+  ],
+  "topics": [
+    "интеграция",
+    "BPMSoft",
+    "CRM",
+    "ВАТС",
+    "настройка",
+    "синхронизация"
+  ],
+  "documents": [
+    {
+      "file_name": "Mango_office_integration_BPMSoft.pdf",
+      "title": "Интеграция Виртуальной АТС и BPMSoft. Руководство по интеграции",
+      "type": "integration_guide",
+      "platform": [
+        "Web"
+      ],
+      "pages_count": 96,
+      "file_size_mb": 6.8,
+      "description": "Подробное руководство по настройке и использованию интеграции между ВАТС Mango Office и BPMSoft."
+    }
+  ],
+  "total_files": 1,
+  "total_pages": 96,
+  "total_size_mb": 6.8,
+  "source_url": null,
+  "source_files": [
+    "Mango_office_integration_BPMSoft.pdf"
+  ],
+  "processing_mode": "single",
+  "doc_code": "INTBPM",
+  "output_slug": "integration-bpmsoft"
+}
