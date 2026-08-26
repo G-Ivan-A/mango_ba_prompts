@@ -1,6 +1,6 @@
 run_id: RUN-0057
 process: feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager
-version: "0.1"
+version: "0.2"
 date: 2026-08-25
 author: "AI issue solver (claude-opus-5) по постановке БА"
 model: "claude-opus-5"
@@ -13,6 +13,7 @@ source_paths:
   - https://github.com/user-attachments/files/31420030/3._NLU.xls
   - https://github.com/user-attachments/files/31420032/4._Dialogue.Manager.xls
   - https://twin24.ai/
+  - https://wiki.twin24.ai/ru/home
 inputs:
   - inputs/README.md
 outputs:
@@ -46,9 +47,10 @@ metrics:
   token_method: "not-recorded"
   duration_active_s: 14400
   measured: false
-  eval: "Прогон доказал, что оценка исполнимости 101 требования тендерного ТЗ выполнима по КБ модулей «Роботы» (v1.26.28) и «Речевая аналитика» (v1.26.18) без домысливания, и выявил 11 расхождений с уже заполненной колонкой «Комментарий участника», включая противоречие лимита в 40 категорий Справочника NLU требованию об отсутствии ограничений. Прогон не доказал применимость уровня 2 (twin24.ai): техническая документация платформы и подтверждение её интеграции с Mango Office публично недоступны (см. logs/source-availability.md), а файл коммуникации с критериями оценки к задаче не приложен."
+  eval: "Прогон доказал, что оценка исполнимости 101 требования тендерного ТЗ выполнима по КБ модулей «Роботы» (v1.26.28) и «Речевая аналитика» (v1.26.18) без домысливания, и выявил 11 расхождений с уже заполненной колонкой «Комментарий участника», включая противоречие лимита в 40 категорий Справочника NLU требованию об отсутствии ограничений. Прогон не доказал применимость уровня 2 (twin24.ai): техническая документация платформы и подтверждение её интеграции с Mango Office публично недоступны (см. logs/source-availability.md), а файл коммуникации с критериями оценки к задаче не приложен. Уточнение от 2026-08-26 (issue #325): вывод о недоступности технической документации twin24.ai опровергнут — открытая база знаний https://wiki.twin24.ai/ru/home (452 страницы) найдена и использована как SSOT новой колонки «Оценка по публичной док. TWIN» в outputs/L0-customer-form-with-assessment.md; уровни покрытия в L2-матрице и метрика coverage_l2_twin при этом намеренно не пересматривались — это отдельная задача (см. logs/source-availability.md)."
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/319
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/325
 related_artifacts:
   - standards/runs-contract-standard.md
   - standards/ba-ontology.md
