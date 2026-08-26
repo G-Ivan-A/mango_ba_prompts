@@ -13,6 +13,35 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #323: шаблоны задач (Issue Forms) для категории `runs`
+
+- Добавлены два шаблона GitHub Issue Forms:
+  [`.github/ISSUE_TEMPLATE/run-execution.yml`](.github/ISSUE_TEMPLATE/run-execution.yml)
+  («🚀 Прогон задачи: Исполнение процесса», метки `runs`, `execution`) и
+  [`.github/ISSUE_TEMPLATE/run-statistics.yml`](.github/ISSUE_TEMPLATE/run-statistics.yml)
+  («📊 Прогон статистики: Анализ диалогов и использования промптов», метки
+  `runs`, `statistics`). Разделение по `run_type` из
+  [`runs/README.md`](runs/README.md#типы-прогонов): тип берётся из формулировки
+  цели в issue, поэтому шаблон выбирается там же, где формулируется цель.
+- Исполняемый процесс (`process_description`) и цель анализа (`analysis_goal`)
+  оставлены свободным текстом с направляющими `placeholder`: таксономия
+  процессов БА не формализована, жёсткие `dropdown` со списками процессов
+  внесли бы в данные прогонов классификацию, которой ещё нет.
+- Расширение файлов — `.yml`, а не `.md` из постановки: GitHub распознаёт Issue
+  Forms только в `.yml`/`.yaml`, а `.md` в этом каталоге трактуется как легаси
+  шаблон Markdown без полей формы. Именование совпадает с уже существующим
+  [`prompt-feedback.yml`](.github/ISSUE_TEMPLATE/prompt-feedback.yml).
+- Добавлен валидатор
+  [`scripts/validate_issue_323_issue_forms.py`](scripts/validate_issue_323_issue_forms.py)
+  и тесты правил на синтетике
+  [`scripts/test_issue_323_issue_forms.py`](scripts/test_issue_323_issue_forms.py)
+  (оба подхватываются `scripts/validate_all.py` по маске): проверяются валидность
+  YAML, обязательные ключи Issue Forms, уникальность `id`, наличие `placeholder`
+  у каждой `textarea`, состав предвыбранных меток и то, что поля свободного
+  описания не превратились в `dropdown`. Разбор YAML встроенный — в CI стоит
+  голый `setup-python` без PyYAML; когда PyYAML доступен, результаты
+  сверяются с ним.
+
 ### Fixed — Issue #273: расхождение в реестре прогонов `runs/README.md`
 
 - Удалена дублирующая строка таблицы «Локальные инструменты воспроизводимости»
