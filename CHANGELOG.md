@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.11
+version: 0.12
 updated: 2026-08-26
 temperature: 0.1
 ---
@@ -12,6 +12,39 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #331: прогон RUN-0059, архитектурный спайк и маппинг данных HH.ru ↔ КЦ Mango
+
+- Добавлен прогон
+  [`runs/2026/RUN-0059/`](runs/2026/RUN-0059/metadata.yaml)
+  (`process: "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping"`,
+  `run_type: execution`, `related_runs: [RUN-0058, RUN-0056]`). Прогон переходит
+  от вопроса «выполнимо ли требование» к вопросу «как данные соединяются
+  технически»: методы, поля, порядок вызовов.
+- Основной артефакт —
+  [`outputs/architecture-spike.md`](runs/2026/RUN-0059/outputs/architecture-spike.md):
+  три диаграммы последовательности Mermaid по критическому пути (входящее
+  сообщение, ответ оператора, сверка), четыре таблицы маппинга
+  `Сущность → Поле HH.ru API → Логика преобразования → Поле Mango API`,
+  восемь примеров JSON, сравнение трёх вариантов решения и многоуровневая
+  митигация **GAP-R1**.
+- Артефакт размещён в `runs/`, а **не** в `docs/adr/`: это исследование,
+  снижающее неопределённость, а не принятое решение. Обоснование жанра по
+  индустриальным источникам (SAFe Spikes, ADR/RFC, BABOK «Interface Analysis») —
+  [`docs/analysis/2026-08-26-architecture-spike-format-research.md`](docs/analysis/2026-08-26-architecture-spike-format-research.md).
+- Выполнен circuit breaker по постановке: наличие документации Mango в
+  `kb/processed/mdialogi-api` (70 разделов, версия 10.06.2026) проверено до
+  анализа, протокол — [`logs/source-availability.md`](runs/2026/RUN-0059/logs/source-availability.md).
+  Ни один эндпоинт, метод или JSON-объект Mango не выдуман; семь мест, где
+  публичный контракт молчит, помечены маркером
+  «⚠️ ТРЕБУЕТСЯ УТОЧНЕНИЕ ВНУТРЕННЕГО КОНТРАКТА MANGO» и вынесены вопросами
+  внутренней команде.
+- Зафиксирована смена роли исполнителя БА → системный аналитик и предложение по
+  развитию таксономии прогонов (необязательное поле `analysis_role`,
+  ортогональное `run_type`) —
+  [`logs/role-change-ba-to-sa.md`](runs/2026/RUN-0059/logs/role-change-ba-to-sa.md).
+  Сам стандарт `standards/runs-contract-standard.md` в этом прогоне не меняется.
+- Реестр [`runs/README.md`](runs/README.md) дополнен записью `RUN-0059`.
 
 ### Added — Issue #329: прогон RUN-0058, переоценка выполнимости интеграции чатов HH.ru
 
