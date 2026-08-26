@@ -1,0 +1,91 @@
+name: "🚀 Прогон задачи: Исполнение процесса (получение артефакта)"
+description: "Запуск бизнес-процесса БА ради конкретного артефакта: ФТ, ТЗ, User Story, матрица UC, анализ."
+title: "[run] "
+labels:
+  - "runs"
+  - "execution"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Шаблон для прогона с `run_type: execution` — цель задачи сформулирована как
+        «выполнить процесс», «сформировать ФТ/ТЗ/документ», «получить артефакт»
+        (критерий выбора типа — [`runs/README.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/README.md#как-выбрать-тип)).
+        Если цель — накопить эмпирические данные о диалогах с ИИ, возьмите шаблон
+        «📊 Прогон статистики».
+
+        ⚠️ **Не вставляйте ссылки на закрытые корпоративные документы** (Confluence, Jira, диски).
+        Входные данные прикладывайте **обезличенными** файлами прямо к задаче.
+
+  - type: input
+    id: run_title
+    attributes:
+      label: "Краткое название прогона"
+      description: "Одна строка: что и для чего запускаем."
+      placeholder: "ФТ по BCREQ-1069: голосовой сценарий подтверждения заказа"
+    validations:
+      required: true
+
+  - type: textarea
+    id: process_description
+    attributes:
+      label: "Исполняемый процесс и целевой артефакт"
+      description: "Опишите словами, какой процесс БА исполняется и какой артефакт должен получиться."
+      placeholder: |
+        Процесс указывается вручную: таксономия процессов БА ещё не формализована,
+        поэтому жёсткого списка (dropdown) в шаблоне намеренно нет.
+
+        Процесс: разработка функциональных требований по входному бизнес-требованию.
+        Целевой артефакт: документ ФТ с матрицей UC, в outputs/ прогона.
+    validations:
+      required: true
+
+  - type: textarea
+    id: inputs
+    attributes:
+      label: "Входные данные"
+      description: "Что подаётся на вход: ТЗ, данные, экспорт чата с инструкцией."
+      placeholder: |
+        Перечислите файлы и **приложите их к этой задаче** (перетащите в поле комментария).
+
+        - tz-prilozhenie-2.pdf — исходное ТЗ, разделы 4.1–4.6;
+        - chat-export.json — экспорт диалога с инструкцией модели;
+        - ссылка на промпт: prompts/fr-validation-stepwise.md.
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: "Ограничения, правила и контекст прогона"
+      description: "Специфика именно этого прогона: модель, формат вывода, отраслевые стандарты, запреты."
+      placeholder: |
+        - модель и режим: укажите вручную (например, Claude Opus, temperature 0.1);
+        - формат вывода: таблица требований, идентификаторы вида FR-XXX;
+        - отраслевой контекст: телеком, требования ЦБ РФ не применять;
+        - границы: прогон пишет только в runs/YYYY/RUN-XXXX/, prompts/ и kb/ не трогает.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: labels
+    attributes:
+      label: "Категория прогона (для навигации)"
+      description: "Метки `runs` и `execution` проставляются автоматически; здесь уточните подкатегорию."
+      options:
+        - "runs / execution — получение артефакта"
+        - "runs / execution — повтор прогона с изменёнными вводными"
+        - "runs / execution — другое (поясню в описании процесса)"
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Перед отправкой"
+      options:
+        - label: "Входные файлы приложены к задаче или явно описаны выше"
+          required: true
+        - label: "В тексте нет ссылок на закрытые корпоративные документы"
+          required: true

@@ -1,0 +1,88 @@
+name: "📊 Прогон статистики: Анализ диалогов и использования промптов"
+description: "Фиксация истории коммуникации «пользователь ↔ ИИ» по задаче ради накопления эмпирических данных."
+title: "[run:stats] "
+labels:
+  - "runs"
+  - "statistics"
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Шаблон для прогона с `run_type: statistics` — цель задачи сформулирована как
+        «зафиксировать прогон», «собрать эмпирические данные», «накопить статистику»
+        (критерий выбора типа — [`runs/README.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/README.md#как-выбрать-тип)).
+        Наличие ФТ в результатах не делает прогон `execution`: тип берётся из цели задачи.
+
+        ⚠️ **Не вставляйте ссылки на закрытые корпоративные документы** (Confluence, Jira, диски).
+        Экспорты чатов прикладывайте **обезличенными**.
+
+  - type: input
+    id: run_title
+    attributes:
+      label: "Краткое название"
+      description: "Одна строка."
+      placeholder: "Статистика по задаче #319: качество уточняющих вопросов модели"
+    validations:
+      required: true
+
+  - type: input
+    id: task_reference
+    attributes:
+      label: "Исходная задача"
+      description: "Номер или ссылка на задачу/прогон, к которому относится диалог."
+      placeholder: "#319 или runs/2026/RUN-0057"
+    validations:
+      required: true
+
+  - type: textarea
+    id: chat_exports
+    attributes:
+      label: "Экспорты чата"
+      description: "Какие файлы экспорта приложены и что в них."
+      placeholder: |
+        **Приложите файлы к этой задаче** (перетащите в поле комментария), затем опишите:
+
+        - chat-export.json — полный экспорт диалога, 42 сообщения, 2026-08-20;
+        - chat-export.md — тот же диалог после scripts/chat_export_to_markdown.py;
+        - модель и режим: укажите вручную.
+    validations:
+      required: true
+
+  - type: textarea
+    id: analysis_goal
+    attributes:
+      label: "Цель статистического анализа"
+      description: "Что именно измеряем и на какой вопрос отвечаем."
+      placeholder: |
+        Цель указывается вручную: таксономия видов анализа ещё не формализована,
+        поэтому жёсткого списка (dropdown) в шаблоне намеренно нет.
+
+        Например: оценка качества уточняющих вопросов; выявление галлюцинаций;
+        замеры токенов и длительности (token_method обязателен); A/B-сравнение
+        двух формулировок промпта; success_rate с указанием success_rate_basis.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: labels
+    attributes:
+      label: "Категория прогона (для навигации)"
+      description: "Метки `runs` и `statistics` проставляются автоматически; здесь уточните подкатегорию."
+      options:
+        - "runs / statistics — анализ диалогов и качества коммуникации"
+        - "runs / statistics — замеры токенов, длительности, success_rate"
+        - "runs / statistics — A/B-сравнение промптов"
+        - "runs / statistics — другое (поясню в цели анализа)"
+      default: 0
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: "Перед отправкой"
+      options:
+        - label: "Экспорты чата приложены к задаче или явно описаны выше"
+          required: true
+        - label: "Данные обезличены, ссылок на закрытые документы нет"
+          required: true
