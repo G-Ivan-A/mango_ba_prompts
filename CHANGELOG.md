@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.10
-updated: 2026-08-25
+version: 0.11
+updated: 2026-08-26
 temperature: 0.1
 ---
 
@@ -12,6 +12,34 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #329: прогон RUN-0058, переоценка выполнимости интеграции чатов HH.ru
+
+- Добавлен прогон-переоценка
+  [`runs/2026/RUN-0058/`](runs/2026/RUN-0058/metadata.yaml)
+  (`process: "Re-evaluation: HH.ru Chat API Feasibility"`, `run_type: execution`,
+  `related_runs: [RUN-0056]`). Прогон [`RUN-0056`](runs/2026/RUN-0056/metadata.yaml)
+  **не изменяется**: он сохраняется как зафиксированная оценка, сделанная при
+  недоступном источнике, и представляет ценность как статистика.
+- Переоценены все 10 требований ФТ по действующей OpenAPI-спецификации hh.ru
+  (`openapi: 3.0.3`, SHA-256 `4349900b…6383d`): вердикт изменился с «начинать
+  разработку не рекомендуется» на «осуществимо при выполнении одного
+  архитектурного условия». Разрывы GAP-1 и GAP-2 закрыты, GAP-3 и GAP-7 понижены.
+- В [`outputs/L2-gap-matrix.md`](runs/2026/RUN-0058/outputs/L2-gap-matrix.md)
+  сопоставлены четыре пути получения сообщений (три из постановки плюс гибридный
+  через вебхуки откликов) и назван предпочтительный для КЦ Mango; ограничение
+  «чат виден только менеджерам-участникам» вынесено отдельным разрывом
+  **GAP-R1 (High Risk)** с четырьмя митигациями и разбором влияния на сценарии
+  КЦ (групповая обработка, передача чата между операторами, skill-based
+  маршрутизация).
+- Автоматический обход GAP-R1 через `put-participant-list` оформлен как
+  **непроверенная гипотеза Г1** в
+  [`outputs/L3-integration-architecture-notes.md`](runs/2026/RUN-0058/outputs/L3-integration-architecture-notes.md),
+  а не как вывод: доступа работодателя к hh.ru у прогона не было.
+- В [`logs/source-availability.md`](runs/2026/RUN-0058/logs/source-availability.md)
+  зафиксирована причина расхождения с RUN-0056: страница Redoc — SPA-оболочка,
+  адрес спецификации извлекается из bootstrap-вызова `Redoc.init(...)`.
+- Реестр [`runs/README.md`](runs/README.md) дополнен записью `RUN-0058`.
 
 ### Added — Issue #323: шаблоны задач (Issue Forms) для категории `runs`
 

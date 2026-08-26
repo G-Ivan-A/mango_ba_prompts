@@ -1,0 +1,54 @@
+run_id: RUN-0058
+process: "Re-evaluation: HH.ru Chat API Feasibility"
+version: "0.1"
+date: 2026-08-26
+author: "AI issue solver (claude-opus-5) по постановке БА"
+model: "claude-opus-5"
+status: partial-success
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/329
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/315
+  - https://api.hh.ru/openapi/specification/public
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L1-executive-summary.md
+  - outputs/L2-gap-matrix.md
+  - outputs/L3-integration-architecture-notes.md
+logs:
+  - logs/experiment-log.md
+  - logs/source-availability.md
+  - logs/delta-vs-RUN-0056.md
+  - logs/metrics.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  verdict: works-with-edits
+  success_rate: 1.0
+  success_rate_basis: "Доля требований ФТ (ФТ-01…ФТ-10), для которых вынесен обоснованный вердикт покрытия с опорой на действующую OpenAPI-спецификацию hh.ru: 10 из 10. В отличие от RUN-0056 ни одно требование не осталось с пометкой «источник недоступен»: спецификация прочитана целиком по разделам «Чаты», «Отклики/приглашения работодателя» и «Webhook API»."
+  sources_studied: 4
+  hh_api_operations_read: 14
+  hh_api_schemas_read: 23
+  requirements_reassessed: 10
+  gaps_closed: 3
+  gaps_remaining: 4
+  new_gaps: 6
+  high_risk_gaps: 1
+  paths_compared: 4
+  token_method: "not-recorded"
+  duration_active_s: 9000
+  measured: false
+  eval: "Прогон доказал, что публичный API чатов hh.ru существует и документирован (14 операций раздела «Чаты», события CHAT_CREATED и CHAT_MESSAGE_CREATED), поэтому вердикт RUN-0056 по ФТ-06 «Нет» пересматривается на «Частично», а GAP-1 и GAP-2 закрываются. Прогон не доказал выполнимость обхода ограничения «чат создаётся только у ответственного за вакансию менеджера»: возможность добавить интеграционного менеджера в чужой чат методом put-participant-list документацией не подтверждается и проверяется только spike на боевом доступе работодателя."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/329
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/315
+related_runs:
+  - RUN-0056
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - runs/2026/RUN-0056/outputs/L2-gap-matrix.md
+  - kb/processed/mango-lk-manual/sections/210-avito-rabota.md
+  - kb/processed/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md
+  - kb/processed/mango-cc-manual/sections/26-istoriya-obrascheniy.md
