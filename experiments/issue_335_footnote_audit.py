@@ -44,6 +44,10 @@ import sys
 import urllib.request
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
+from issue_333_hh_api_source_index import slugify as index_module_slugify  # noqa: E402
+
 SPEC_URL = "https://api.hh.ru/openapi/specification/public"
 PINNED_SHA256 = "8ea1380bf87d7351cf2f977f9918bbdd03a26a6b9c9e95eb50f3d4ae080a7576"
 REPORT = Path("runs/2026/RUN-0060/outputs/L4-combined-gap-report.md")
@@ -336,10 +340,13 @@ def resolve(row: dict, spec: dict) -> dict:
     anchor = _ANCHOR.search(row["url"])
     anchor_tag = anchor.group(1) if anchor else None
     anchor_op = anchor.group(2) if anchor else None
+    anchor_tail = row["url"].split("#tag/", 1)[1].split("/", 1)[-1] if "#tag/" in row["url"] else ""
+    anchor_heading = spec["headings"].get(anchor_tail.rstrip(">"))
 
-    # 1. Ссылка ведёт на существующую операцию?
+    # 1. Ссылка ведёт на существующую операцию или на секцию описания тега?
     if anchor_op is None:
-        problems.append("anchor-not-operation")
+        if anchor_heading is None:
+            problems.append("anchor-not-operation")
     elif anchor_op not in operations:
         problems.append("anchor-unknown-operation")
 
@@ -405,8 +412,22 @@ def resolve(row: dict, spec: dict) -> dict:
         "schema_titles": schema_titles,
         "anchor_tag": anchor_tag,
         "anchor_operation": anchor_op,
+        "anchor_heading": anchor_heading,
         "problems": problems,
     }
+
+
+def index_description_headings(spec_text: str) -> dict[str, str]:
+    """Заголовки markdown внутри описаний тегов -> их slug в Redoc.
+
+    Redoc публикует такие заголовки как самостоятельные секции тега с якорем
+    ``#tag/<tag>/<slug>``, поэтому ссылка на них не является дефектом.
+    """
+    headings: dict[str, str] = {}
+    for match in re.finditer(r"^\s*#{1,4}\s+(.+?)\s*$", spec_text, re.MULTILINE):
+        title = match.group(1)
+        headings[index_module_slugify(title)] = title
+    return headings
 
 
 def build_index(spec_text: str) -> dict:
@@ -418,6 +439,7 @@ def build_index(spec_text: str) -> dict:
         "parameters": index_parameters(spec_text),
     }
     spec["enum_values"] = index_all_enum_values(spec_text)
+    spec["headings"] = index_description_headings(spec_text)
     spec["text"] = spec_text
     return spec
 
