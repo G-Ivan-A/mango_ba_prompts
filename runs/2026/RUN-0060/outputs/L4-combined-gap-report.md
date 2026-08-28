@@ -1,18 +1,21 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-08-27
+version: 0.2
+updated: 2026-08-28
 ai-generated: true
 type: artifact
 scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/333"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/329"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/335"
 related_artifacts:
   - "runs/2026/RUN-0058/outputs/L2-gap-matrix.md"
   - "runs/2026/RUN-0059/outputs/architecture-spike.md"
   - "runs/2026/RUN-0060/outputs/hh-api-source-index.md"
   - "runs/2026/RUN-0060/logs/l2-validity-recheck.md"
+  - "runs/2026/RUN-0060/outputs/human-review-checklist.md"
+  - "docs/analysis/2026-08-28-human-review-accessibility.md"
 ---
 
 # L4 — Комбинированный gap-отчёт со сносками для human review
@@ -201,11 +204,11 @@ grant_type=authorization_code&client_id=ETVQdMs2n9VKw7SMXkh9nX5H&client_secret=9
 
 ### 2.3. Источники
 
-| Сноска | Раздел документации | Метод | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Авторизация приложения / Авторизация работодателя | `POST /token` (`authorize`) | <https://api.hh.ru/openapi/redoc#tag/Avtorizaciya-prilozheniya/operation/authorize> |
-| `^2` | Авторизация работодателя | `DELETE /token` (`invalidate-token`) | <https://api.hh.ru/openapi/redoc#tag/Avtorizaciya-rabotodatelya/operation/invalidate-token> |
-| `^3` | Менеджеры работодателя | `GET /manager_accounts/mine` (`get-manager-accounts`) | <https://api.hh.ru/openapi/redoc#tag/Menedzhery-rabotodatelya/operation/get-manager-accounts> |
+| Сноска | Раздел документации | Метод | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Авторизация приложения / Авторизация работодателя | `POST /token` (`authorize`) | <https://api.hh.ru/openapi/redoc#tag/Avtorizaciya-prilozheniya/operation/authorize> | раздел «Авторизация приложения» → операция `authorize` | `paths./token.post` (стр. 20067) |
+| `^2` | Авторизация работодателя | `DELETE /token` (`invalidate-token`) | <https://api.hh.ru/openapi/redoc#tag/Avtorizaciya-rabotodatelya/operation/invalidate-token> | раздел «Авторизация работодателя» → операция `invalidate-token` | `paths./token.delete` (стр. 20147) |
+| `^3` | Менеджеры работодателя | `GET /manager_accounts/mine` (`get-manager-accounts`) | <https://api.hh.ru/openapi/redoc#tag/Menedzhery-rabotodatelya/operation/get-manager-accounts> | раздел «Менеджеры работодателя» → операция `get-manager-accounts` | `paths./manager_accounts/mine.get` (стр. 20033) |
 
 ## 3. ФТ-02 — Подключение канала
 
@@ -280,11 +283,11 @@ POST /webhook/subscriptions
 
 ### 3.3. Источники
 
-| Сноска | Раздел документации | Метод | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Webhook API | `DELETE /webhook/subscriptions/{subscription_id}` (`cancel-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/cancel-webhook-subscription> |
-| `^2` | Webhook API | `GET /webhook/subscriptions` (`get-webhook-subscriptions`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/get-webhook-subscriptions> |
-| `^3` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
+| Сноска | Раздел документации | Метод | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Webhook API | `DELETE /webhook/subscriptions/{subscription_id}` (`cancel-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/cancel-webhook-subscription> | раздел «Webhook API» → операция `cancel-webhook-subscription` | `paths./webhook/subscriptions/{subscription_id}.delete` (стр. 21142) |
+| `^2` | Webhook API | `GET /webhook/subscriptions` (`get-webhook-subscriptions`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/get-webhook-subscriptions> | раздел «Webhook API» → операция `get-webhook-subscriptions` | `paths./webhook/subscriptions.get` (стр. 21249) |
+| `^3` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` | `paths./webhook/subscriptions.post` (стр. 21176) |
 
 ## 4. ФТ-03 — Маршрутизация обращений
 
@@ -343,9 +346,9 @@ hh.ru, — автоответ (§4.3.2): он материализуется к�
 
 ### 4.3. Источники
 
-| Сноска | Раздел документации | Метод | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> |
+| Сноска | Раздел документации | Метод | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> | раздел «Чаты» → операция `chat-message-post` | `paths./common/chats/{chat_id}/messages.post` (стр. 27060) |
 
 ## 5. ФТ-04 — Фильтрация по признаку вакансии
 
@@ -487,11 +490,11 @@ X-Manager-Account-Id: 12345678
 
 ### 5.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`): параметры `page`, `per_page`, `filter_unread`, `filter_has_text_message`, `vacancy_status`, `filter_with_vacancy_ids`; схемы ответа `ChatsCommonChatItems`, `ChatsCommonChatBasic` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^2` | Webhook API | Callback `onData`, схемы `WebhookSendObjectBaseUser`, `WebhookPayloadChatMessageCreated` (раздел Callbacks метода `post-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^3` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`): параметры `page`, `per_page`, `filter_unread`, `filter_has_text_message`, `vacancy_status`, `filter_with_vacancy_ids`; схемы ответа `ChatsCommonChatItems`, `ChatsCommonChatBasic` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` → блок «Базовая информация о чате», «Список чатов» | `components.schemas.ChatsCommonChatBasic` (стр. 5610); `components.schemas.ChatsCommonChatItems` (стр. 5588) |
+| `^2` | Webhook API | Callback `onData`, схемы `WebhookSendObjectBaseUser`, `WebhookPayloadChatMessageCreated` (раздел Callbacks метода `post-webhook-subscription`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок «CHAT_MESSAGE_CREATED», «Сообщение о событии на уровне менеджера» | `components.schemas.WebhookPayloadChatMessageCreated` (стр. 18813); `components.schemas.WebhookSendObjectBaseUser` (стр. 18750) |
+| `^3` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` | `paths./common/chats/{chat_id}/messages.get` (стр. 26992) |
 
 ## 6. ФТ-05 — Создание обращения и контекст сессии
 
@@ -618,14 +621,14 @@ payload» `^2`.
 
 ### 6.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Webhook API | Callback `onData` → `WebhookPayloadChatMessageCreated` (поля `role`, `message_type`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^2` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схемы `ChatsCommonMessage`, `ChatsCommonSenderDisplayInfo`, `chat_states.write_message_state` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
-| `^3` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), перечень `actions`: `NEW_NEGOTIATION_VACANCY`, `NEW_RESPONSE_OR_INVITATION_VACANCY`, `CHAT_CREATED`, `CHAT_MESSAGE_CREATED` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^4` | Чаты | `GET /common/chats` (`get-common-chat-list`), схема `ChatsCommonChatBasic`: поля `type` (`NEGOTIATION`…), `block_reason` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^5` | Чаты | `GET /common/chats` (`get-common-chat-list`), параметр `filter_has_text_message` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^6` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), параметры `start_message_id`, `limit`, `order`, поле `has_more` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Webhook API | Callback `onData` → `WebhookPayloadChatMessageCreated` (поля `role`, `message_type`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «CHAT_MESSAGE_CREATED» | `components.schemas.WebhookPayloadChatMessageCreated` (стр. 18813) |
+| `^2` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схемы `ChatsCommonMessage`, `ChatsCommonSenderDisplayInfo`, `chat_states.write_message_state` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` → блок «Информация о сообщении», «Отображаемая информация об отправителе сообщения» | `components.schemas.ChatsCommonMessage` (стр. 5954); `components.schemas.ChatsCommonSenderDisplayInfo` (стр. 5753) |
+| `^3` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), перечень `actions`: `NEW_NEGOTIATION_VACANCY`, `NEW_RESPONSE_OR_INVITATION_VACANCY`, `CHAT_CREATED`, `CHAT_MESSAGE_CREATED` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` | `paths./webhook/subscriptions.post` (стр. 21176) |
+| `^4` | Чаты | `GET /common/chats` (`get-common-chat-list`), схема `ChatsCommonChatBasic`: поля `type` (`NEGOTIATION`…), `block_reason` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` → блок «Базовая информация о чате» | `components.schemas.ChatsCommonChatBasic` (стр. 5610) |
+| `^5` | Чаты | `GET /common/chats` (`get-common-chat-list`), параметр `filter_has_text_message` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` | `paths./common/chats.get` (стр. 27471) |
+| `^6` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), параметры `start_message_id`, `limit`, `order`, поле `has_more` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` | `paths./common/chats/{chat_id}/messages.get` (стр. 26992) |
 
 ## 7. ФТ-06 — Двусторонняя синхронизация в реальном времени
 
@@ -791,19 +794,19 @@ POST /common/chats/10267/messages
 
 ### 7.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`), схемы `ChatsCommonMessagePostText` (`text`, `idempotency_key`, `is_automated`), `ChatsCommonMessagePostFileUploadIds` (`file_upload_ids`, `maxItems: 1`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> |
-| `^2` | Чаты | `POST /common/chats/files/upload_links` (`get-common-chat-files-upload-links`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-files-upload-links> |
-| `^3` | Чаты | `GET /common/chats/files/conditions` (`get-common-chat-files-conditions`), пример `ChatsCommonFilesConditions` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-files-conditions> |
-| `^4` | Отклики/приглашения работодателя | `PUT /negotiations/{collection_name}/{nid}` (`change-negotiation-action`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/change-negotiation-action> |
-| `^5` | Отклики/приглашения работодателя | `PUT /negotiations/{id}` (`put-negotiations-collection-to-next-state`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/put-negotiations-collection-to-next-state> |
-| `^6` | Webhook API | Схема `WebhookActionChatMessageCreated` (описание условия доставки) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^7` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`): описание метода (5 секунд, повторы, блокировка, «не являются средствами гарантированной доставки») и раздел `callbacks` (`security: null`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^8` | Чаты | `GET /common/chats` (`get-common-chat-list`), параметры `page` (0…50), `per_page` (1…20) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^9` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схемы `ChatsCommonChatState`, `ChatsCommonMessage` (поле `type`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
-| `^10` | Webhook API | Схема `WebhookPayloadChatMessageCreated` (поле `message_type`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^11` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`), поля `actions[].url`, `actions[].arguments` | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`), схемы `ChatsCommonMessagePostText` (`text`, `idempotency_key`, `is_automated`), `ChatsCommonMessagePostFileUploadIds` (`file_upload_ids`, `maxItems: 1`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> | раздел «Чаты» → операция `chat-message-post` → блок «Идентификаторы загруженных файлов», «Текст сообщения» | `components.schemas.ChatsCommonMessagePostFileUploadIds` (стр. 5830); `components.schemas.ChatsCommonMessagePostText` (стр. 5851) |
+| `^2` | Чаты | `POST /common/chats/files/upload_links` (`get-common-chat-files-upload-links`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-files-upload-links> | раздел «Чаты» → операция `get-common-chat-files-upload-links` | `paths./common/chats/files/upload_links.post` (стр. 27193) |
+| `^3` | Чаты | `GET /common/chats/files/conditions` (`get-common-chat-files-conditions`), пример `ChatsCommonFilesConditions` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-files-conditions> | раздел «Чаты» → операция `get-common-chat-files-conditions` | `paths./common/chats/files/conditions.get` (стр. 27313) |
+| `^4` | Отклики/приглашения работодателя | `PUT /negotiations/{collection_name}/{nid}` (`change-negotiation-action`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/change-negotiation-action> | раздел «Отклики/приглашения работодателя» → операция `change-negotiation-action` | `paths./negotiations/{collection_name}/{nid}.put` (стр. 23612) |
+| `^5` | Отклики/приглашения работодателя | `PUT /negotiations/{id}` (`put-negotiations-collection-to-next-state`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/put-negotiations-collection-to-next-state> | раздел «Отклики/приглашения работодателя» → операция `put-negotiations-collection-to-next-state` | `paths./negotiations/{id}.put` (стр. 24043) |
+| `^6` | Webhook API | Схема `WebhookActionChatMessageCreated` (описание условия доставки) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «Подписка на CHAT_MESSAGE_CREATED» | `components.schemas.WebhookActionChatMessageCreated` (стр. 19088) |
+| `^7` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`): описание метода (5 секунд, повторы, блокировка, «не являются средствами гарантированной доставки») и раздел `callbacks` (`security: null`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` | `paths./webhook/subscriptions.post` (стр. 21176) |
+| `^8` | Чаты | `GET /common/chats` (`get-common-chat-list`), параметры `page` (0…50), `per_page` (1…20) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` | `paths./common/chats.get` (стр. 27471) |
+| `^9` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схемы `ChatsCommonChatState`, `ChatsCommonMessage` (поле `type`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` → блок «Информация о сообщении», «Состояние чата» | `components.schemas.ChatsCommonChatState` (стр. 5895); `components.schemas.ChatsCommonMessage` (стр. 5954) |
+| `^10` | Webhook API | Схема `WebhookPayloadChatMessageCreated` (поле `message_type`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «CHAT_MESSAGE_CREATED» | `components.schemas.WebhookPayloadChatMessageCreated` (стр. 18813) |
+| `^11` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`), поля `actions[].url`, `actions[].arguments` | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> | раздел «Отклики/приглашения работодателя» → операция `get-collection-negotiations-list` | `paths./negotiations/response.get` (стр. 23261) |
 
 ## 8. ФТ-07 — Учёт нескольких Акторов в чате
 
@@ -889,13 +892,13 @@ flowchart TD
 
 ### 8.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`), поле `type` = `NEGOTIATION` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^2` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), схема `ChatsCommonParticipant` (`role`, `resume_id`, `last_viewed_message_id`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> |
-| `^3` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схема `ChatsCommonSenderDisplayInfo` (`name`, `icon`, `role`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
-| `^4` | Webhook API | Схемы `WebhookActionChatCreated` («является участником»), `WebhookActionChatMessageCreated` («является активным участником») | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^5` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`), поле `is_automated` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`), поле `type` = `NEGOTIATION` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` | `paths./common/chats.get` (стр. 27471) |
+| `^2` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), схема `ChatsCommonParticipant` (`role`, `resume_id`, `last_viewed_message_id`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> | раздел «Чаты» → операция `get-participant-list` → блок «Участник чата» | `components.schemas.ChatsCommonParticipant` (стр. 6086) |
+| `^3` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схема `ChatsCommonSenderDisplayInfo` (`name`, `icon`, `role`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` → блок «Отображаемая информация об отправителе сообщения» | `components.schemas.ChatsCommonSenderDisplayInfo` (стр. 5753) |
+| `^4` | Webhook API | Схемы `WebhookActionChatCreated` («является участником»), `WebhookActionChatMessageCreated` («является активным участником») | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «Подписка на CHAT_CREATED», «Подписка на CHAT_MESSAGE_CREATED» | `components.schemas.WebhookActionChatCreated` (стр. 19075); `components.schemas.WebhookActionChatMessageCreated` (стр. 19088) |
+| `^5` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`), поле `is_automated` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> | раздел «Чаты» → операция `chat-message-post` | `paths./common/chats/{chat_id}/messages.post` (стр. 27060) |
 
 ## 9. ФТ-08 — Передача контекста при создании обращения
 
@@ -988,16 +991,16 @@ GET /common/chats/10267/messages?limit=50&order=prev&start_message_id=6403
 
 ### 9.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`): `start_message_id`, `limit` (1…50), `order` (`prev`/`next`), `has_more`, `creation_time`, `sender_display_info` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
-| `^2` | Вакансии | `GET /vacancies/{vacancy_id}` (`get-vacancy`), поля `name`, `alternate_url` | <https://api.hh.ru/openapi/redoc#tag/Vakansii/operation/get-vacancy> |
-| `^3` | Webhook API | Схема `WebhookPayloadNewResponseOrInvitationVacancy` (`chat_id`, `vacancy_id`, `resume_id`, `topic_id`, `employer_id`, `response_date`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^4` | Чаты | `GET /common/chats` (`get-common-chat-list`), связка `id` (string) ↔ `vacancy_id` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^5` | Просмотр резюме | `GET /resumes/{resume_id}` (`get-resume`): описание метода (платный доступ, `can_view_full_info`, `contact_view_status`), поле `alternate_url` | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/operation/get-resume> |
-| `^6` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), поле `resume_id` у роли `APPLICANT` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> |
-| `^7` | Просмотр резюме | Раздел «Просмотр резюме с контактами» (ссылка из описания `get-resume`) | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/Prosmotr-rezyume-s-kontaktami> |
-| `^8` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`), схема `NegotiationsObjectsTopicItemCommon` (`chat_id` как `number`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`): `start_message_id`, `limit` (1…50), `order` (`prev`/`next`), `has_more`, `creation_time`, `sender_display_info` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` | `paths./common/chats/{chat_id}/messages.get` (стр. 26992) |
+| `^2` | Вакансии | `GET /vacancies/{vacancy_id}` (`get-vacancy`), поля `name`, `alternate_url` | <https://api.hh.ru/openapi/redoc#tag/Vakansii/operation/get-vacancy> | раздел «Вакансии» → операция `get-vacancy` | `paths./vacancies/{vacancy_id}.get` (стр. 26461) |
+| `^3` | Webhook API | Схема `WebhookPayloadNewResponseOrInvitationVacancy` (`chat_id`, `vacancy_id`, `resume_id`, `topic_id`, `employer_id`, `response_date`) | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «NEW_RESPONSE_OR_INVITATION_VACANCY» | `components.schemas.WebhookPayloadNewResponseOrInvitationVacancy` (стр. 18934) |
+| `^4` | Чаты | `GET /common/chats` (`get-common-chat-list`), связка `id` (string) ↔ `vacancy_id` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` | `paths./common/chats.get` (стр. 27471) |
+| `^5` | Просмотр резюме | `GET /resumes/{resume_id}` (`get-resume`): описание метода (платный доступ, `can_view_full_info`, `contact_view_status`), поле `alternate_url` | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/operation/get-resume> | раздел «Просмотр резюме» → операция `get-resume` | `paths./resumes/{resume_id}.get` (стр. 22178) |
+| `^6` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), поле `resume_id` у роли `APPLICANT` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> | раздел «Чаты» → операция `get-participant-list` | `paths./common/chats/{chat_id}/participants.get` (стр. 27570) |
+| `^7` | Просмотр резюме | Раздел «Просмотр резюме с контактами» (ссылка из описания `get-resume`) | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/Prosmotr-rezyume-s-kontaktami> | раздел «Просмотр резюме» → секция «Просмотр резюме с контактами» | `paths./resumes/{resume_id}.get` (стр. 22178) |
+| `^8` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`), схема `NegotiationsObjectsTopicItemCommon` (`chat_id` как `number`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> | раздел «Отклики/приглашения работодателя» → операция `get-collection-negotiations-list` → блок «Общая информация об отклике/приглашении» | `components.schemas.NegotiationsObjectsTopicItemCommon` (стр. 11476) |
 
 ## 10. ФТ-09 — Автосопоставление кандидата с Адресной книгой
 
@@ -1058,11 +1061,11 @@ flowchart TD
 
 ### 10.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), поле `resume_id`, роль `APPLICANT` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> |
-| `^2` | Просмотр резюме | `GET /resumes/{resume_id}` (`get-resume`): `can_view_full_info`, `contact_view_status` | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/operation/get-resume> |
-| `^3` | Webhook API | Схема `WebhookPayloadNewResponseOrInvitationVacancy`, поле `resume_id` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), поле `resume_id`, роль `APPLICANT` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> | раздел «Чаты» → операция `get-participant-list` | `paths./common/chats/{chat_id}/participants.get` (стр. 27570) |
+| `^2` | Просмотр резюме | `GET /resumes/{resume_id}` (`get-resume`): `can_view_full_info`, `contact_view_status` | <https://api.hh.ru/openapi/redoc#tag/Prosmotr-rezyume/operation/get-resume> | раздел «Просмотр резюме» → операция `get-resume` | `paths./resumes/{resume_id}.get` (стр. 22178) |
+| `^3` | Webhook API | Схема `WebhookPayloadNewResponseOrInvitationVacancy`, поле `resume_id` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок **Callbacks** → `onData` → блок «NEW_RESPONSE_OR_INVITATION_VACANCY» | `components.schemas.WebhookPayloadNewResponseOrInvitationVacancy` (стр. 18934) |
 
 ## 11. ФТ-10 — Отчётность и выгрузка
 
@@ -1132,10 +1135,10 @@ flowchart TD
 
 ### 11.3. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`), схемы `ChatsCommonChatBasic` / `ChatsCommonChatItems` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> |
-| `^2` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схема `ChatsCommonMessage` (`payload.text`, `payload.attachments`, `viewed_by_opponent`, `type`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Чаты | `GET /common/chats` (`get-common-chat-list`), схемы `ChatsCommonChatBasic` / `ChatsCommonChatItems` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-common-chat-list> | раздел «Чаты» → операция `get-common-chat-list` → блок «Базовая информация о чате», «Список чатов» | `components.schemas.ChatsCommonChatBasic` (стр. 5610); `components.schemas.ChatsCommonChatItems` (стр. 5588) |
+| `^2` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`), схема `ChatsCommonMessage` (`payload.text`, `payload.attachments`, `viewed_by_opponent`, `type`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` → блок «Информация о сообщении» | `components.schemas.ChatsCommonMessage` (стр. 5954) |
 
 ## 12. GAP-R1 — сквозное ограничение видимости чатов
 
@@ -1258,16 +1261,16 @@ PUT /common/chats/10267/participants
 
 ### 12.5. Источники
 
-| Сноска | Раздел документации | Метод / схема | Ссылка для проверки |
-| --- | --- | --- | --- |
-| `^1` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), схемы `WebhookActionChatCreated`, `WebhookActionChatMessageCreated`, `WebhookActionVacancyOnlyMineSettings.vacancies_only_mine` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^2` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), ответ `404` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> |
-| `^3` | Чаты | `PUT /common/chats/{chat_id}/participants` (`put-participant-list`), тело `{"id": …}`, ответы `204` / `404` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/put-participant-list> |
-| `^4` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`): `404`, типы `PARTICIPANT_JOINED` / `PARTICIPANT_LEFT`, `write_message_state` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> |
-| `^5` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> |
-| `^6` | Менеджеры работодателя | `GET /manager_accounts/mine` (`get-manager-accounts`), заголовок `X-Manager-Account-Id` | <https://api.hh.ru/openapi/redoc#tag/Menedzhery-rabotodatelya/operation/get-manager-accounts> |
-| `^7` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), описание: удаление подписок при отзыве доступа, очередь на блокировку | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> |
-| `^8` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> |
+| Сноска | Раздел документации | Метод / схема | Ссылка для проверки | Где смотреть | Цитата из спецификации |
+| --- | --- | --- | --- | --- | --- |
+| `^1` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), схемы `WebhookActionChatCreated`, `WebhookActionChatMessageCreated`, `WebhookActionVacancyOnlyMineSettings.vacancies_only_mine` | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` → блок «Настройка на подписку только на мои вакансии», «Подписка на CHAT_CREATED», «Подписка на CHAT_MESSAGE_CREATED» | `components.schemas.WebhookActionChatCreated` (стр. 19075); `components.schemas.WebhookActionChatMessageCreated` (стр. 19088); `components.schemas.WebhookActionVacancyOnlyMineSettings` (стр. 19126) |
+| `^2` | Чаты | `GET /common/chats/{chat_id}/participants` (`get-participant-list`), ответ `404` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-participant-list> | раздел «Чаты» → операция `get-participant-list` | `paths./common/chats/{chat_id}/participants.get` (стр. 27570) |
+| `^3` | Чаты | `PUT /common/chats/{chat_id}/participants` (`put-participant-list`), тело `{"id": …}`, ответы `204` / `404` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/put-participant-list> | раздел «Чаты» → операция `put-participant-list` | `paths./common/chats/{chat_id}/participants.put` (стр. 27603) |
+| `^4` | Чаты | `GET /common/chats/{chat_id}/messages` (`get-chat-messages`): `404`, типы `PARTICIPANT_JOINED` / `PARTICIPANT_LEFT`, `write_message_state` | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/get-chat-messages> | раздел «Чаты» → операция `get-chat-messages` | `paths./common/chats/{chat_id}/messages.get` (стр. 26992) |
+| `^5` | Чаты | `POST /common/chats/{chat_id}/messages` (`chat-message-post`) | <https://api.hh.ru/openapi/redoc#tag/Chaty/operation/chat-message-post> | раздел «Чаты» → операция `chat-message-post` | `paths./common/chats/{chat_id}/messages.post` (стр. 27060) |
+| `^6` | Менеджеры работодателя | `GET /manager_accounts/mine` (`get-manager-accounts`), заголовок `X-Manager-Account-Id` | <https://api.hh.ru/openapi/redoc#tag/Menedzhery-rabotodatelya/operation/get-manager-accounts> | раздел «Менеджеры работодателя» → операция `get-manager-accounts` | `paths./manager_accounts/mine.get` (стр. 20033) |
+| `^7` | Webhook API | `POST /webhook/subscriptions` (`post-webhook-subscription`), описание: удаление подписок при отзыве доступа, очередь на блокировку | <https://api.hh.ru/openapi/redoc#tag/Webhook-API/operation/post-webhook-subscription> | раздел «Webhook API» → операция `post-webhook-subscription` | `paths./webhook/subscriptions.post` (стр. 21176) |
+| `^8` | Отклики/приглашения работодателя | `GET /negotiations/response` (`get-collection-negotiations-list`) | <https://api.hh.ru/openapi/redoc#tag/Otklikipriglasheniya-rabotodatelya/operation/get-collection-negotiations-list> | раздел «Отклики/приглашения работодателя» → операция `get-collection-negotiations-list` | `paths./negotiations/response.get` (стр. 23261) |
 
 ## 13. Пути получения сообщений и выбор для КЦ
 
@@ -1392,9 +1395,21 @@ hh.ru в матрице маппинга не совпадают со специ
    же раздела ФТ и ведёт на конкретную операцию в документации hh.ru.
 2. Ссылки построены по схеме
    `https://api.hh.ru/openapi/redoc#tag/<slug(раздел)>/operation/<operationId>`
+   (или `#tag/<slug(раздел)>/<slug(заголовок секции)>` для секций описания тега)
    и открывают нужный метод сразу, без поиска по странице.
-3. Полный перечень операций с готовыми ссылками —
+3. Колонка **«Где смотреть»** ведёт от якоря до описанного объекта. Она нужна
+   потому, что Redoc печатает в заголовке блока значение `title` схемы, а не её
+   имя (`WebhookPayloadChatMessageCreated` отображается как
+   «CHAT_MESSAGE_CREATED»), а раздел Schemas в этом рендере отсутствует —
+   спецификация объявляет `x-tagGroups`, поэтому якорей на схемы не существует.
+4. Колонка **«Цитата из спецификации»** даёт машинно-проверяемый адрес объекта
+   (`components.schemas.<Имя>` или `paths.<путь>.<метод>`) и номер строки в
+   спецификации с закреплённой ниже контрольной суммой.
+5. Результат сплошной проверки всех 53 сносок —
+   [`human-review-checklist.md`](./human-review-checklist.md); методика и правила
+   оформления — [`docs/analysis/2026-08-28-human-review-accessibility.md`](../../../../docs/analysis/2026-08-28-human-review-accessibility.md).
+6. Полный перечень операций с готовыми ссылками —
    [`hh-api-source-index.md`](./hh-api-source-index.md); он воспроизводится
    командой из самого файла.
-4. Версия источника зафиксирована контрольной суммой в шапке отчёта: если
+7. Версия источника зафиксирована контрольной суммой в шапке отчёта: если
    SHA-256 спецификации отличается от указанной, выводы требуют перепроверки.
