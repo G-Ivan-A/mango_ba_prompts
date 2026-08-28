@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.13
-updated: 2026-08-27
+version: 0.14
+updated: 2026-08-28
 temperature: 0.1
 ---
 
@@ -12,6 +12,40 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #335: стандарт артефактов интеграционной задачи и веб-отчёт RUN-0060
+
+- Добавлен
+  [`docs/adr/2026-08-adr-011-integration-task-artifacts.md`](docs/adr/2026-08-adr-011-integration-task-artifacts.md)
+  — стандарт артефактов интеграционной задачи: уровни детализации L1 и L2/L4,
+  обязательная структура разделов L4 (БА → СА → Источники), правила
+  инкрементальности и трассируемости, требование читаемости ссылок для Human
+  Review, процесс запуска прогона и quality gates.
+- Добавлен [`docs/rfc/2026-08-task-taxonomy.md`](docs/rfc/2026-08-task-taxonomy.md)
+  — таксономия типов задач T1…T5 с профилем входных артефактов, процесса,
+  quality gates, результата и SSOT для каждого типа.
+- Добавлен
+  [`docs/analysis/2026-08-28-human-review-accessibility.md`](docs/analysis/2026-08-28-human-review-accessibility.md)
+  — методика проверки сносок на читаемость человеком, классификация проблем
+  A/B/C/D и правила оформления ссылок.
+- Добавлен
+  [`runs/2026/RUN-0060/outputs/human-review-checklist.md`](runs/2026/RUN-0060/outputs/human-review-checklist.md)
+  — результат проверки всех 53 сносок отчёта L4.
+- Добавлено веб-представление отчёта задачи 765: раздел
+  [`site/reports/`](site/reports/index.html), страница входа по паролю
+  (SHA-256 от соли и пароля в `site/password-hashes.json`, без бэкенда) и
+  самодостаточный отчёт с инлайновыми SVG-диаграммами и кнопкой
+  «Скопировать для Конфы».
+- Добавлен генератор `experiments/issue_335_build_report_site.py` и
+  регрессионная проверка `scripts/validate_issue_335_report_site.py`.
+
+### Changed — Issue #335
+
+- В таблицы «Источники» отчёта
+  [`runs/2026/RUN-0060/outputs/L4-combined-gap-report.md`](runs/2026/RUN-0060/outputs/L4-combined-gap-report.md)
+  добавлены колонки «Где смотреть» и «Цитата из спецификации»: по сноске
+  видно путь навигации и объект спецификации, а не только якорь Redoc.
+- В верхнюю навигацию `site/index.html` добавлен раздел «Отчёты».
 
 ### Added — Issue #333: прогон RUN-0060, комбинированный отчёт gap-анализа уровня L4
 
