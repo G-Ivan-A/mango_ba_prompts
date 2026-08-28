@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.12
-updated: 2026-08-26
+version: 0.13
+updated: 2026-08-27
 temperature: 0.1
 ---
 
@@ -12,6 +12,30 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #333: прогон RUN-0060, комбинированный отчёт gap-анализа уровня L4
+
+- Добавлен прогон
+  [`runs/2026/RUN-0060/`](runs/2026/RUN-0060/metadata.yaml)
+  (`process: "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources"`,
+  `run_type: execution`, `status: success`) с комбинированным отчётом
+  [`outputs/L4-combined-gap-report.md`](runs/2026/RUN-0060/outputs/L4-combined-gap-report.md):
+  каждый раздел ФТ-01…ФТ-10 содержит три подраздела — вывод БА с дословными
+  цитатами и вердиктами по каждому подпункту §4.х.х и сносками, модель СА
+  (JSON запроса/ответа к API hh.ru и диаграмма деятельности) и таблицу
+  источников с прямыми ссылками в документацию hh.ru.
+- Добавлен индекс источников
+  [`outputs/hh-api-source-index.md`](runs/2026/RUN-0060/outputs/hh-api-source-index.md)
+  — 68 операций спецификации с готовыми якорями Redoc, генерируется скриптом.
+- Добавлен локальный инструмент воспроизводимости
+  [`experiments/issue_333_hh_api_source_index.py`](experiments/issue_333_hh_api_source_index.py)
+  (стандартная библиотека Python 3, в CI не выполняется).
+- Выводы L2 из [RUN-0058](runs/2026/RUN-0058/outputs/L2-gap-matrix.md)
+  перепроверены по спецификации от 2026-08-27: подтверждено большинство,
+  исправлено шесть расхождений, вердикт ФТ-05 понижен с «Да» до «Частично»
+  (новый разрыв GAP-R11); протокол —
+  [`logs/l2-validity-recheck.md`](runs/2026/RUN-0060/logs/l2-validity-recheck.md).
+- Прогон зарегистрирован в индексе [`runs/README.md`](runs/README.md).
 
 ### Added — Issue #331: прогон RUN-0059, архитектурный спайк и маппинг данных HH.ru ↔ КЦ Mango
 

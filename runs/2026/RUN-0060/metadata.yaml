@@ -1,0 +1,51 @@
+run_id: RUN-0060
+process: "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources"
+version: "0.1"
+date: 2026-08-27
+author: "AI issue solver (claude-opus-5) по постановке БА"
+model: "claude-opus-5"
+status: success
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/333
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/329
+  - https://api.hh.ru/openapi/specification/public
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L4-combined-gap-report.md
+  - outputs/hh-api-source-index.md
+logs:
+  - logs/experiment-log.md
+  - logs/source-availability.md
+  - logs/l2-validity-recheck.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  verdict: works
+  success_rate: 1.0
+  success_rate_basis: "Доля разделов ФТ-хх, в которых присутствуют все три обязательных подраздела DoD постановки (БА со сносками, СА с моделью, источники со ссылками): 10 из 10."
+  ft_sections: 10
+  ft_subclauses_assessed: 27
+  footnote_sources: 53
+  activity_diagrams: 11
+  gaps_confirmed: 10
+  gaps_new: 2
+  l2_corrections: 6
+  spec_operations_indexed: 68
+  spec_sha256: "8ea1380bf87d7351cf2f977f9918bbdd03a26a6b9c9e95eb50f3d4ae080a7576"
+  token_method: "not-recorded"
+  duration_active_s: 14400
+  measured: false
+  eval: "Формат L4 определён на лету и реализован: структура L2 (RUN-0058) сохранена, каждый раздел ФТ-хх расширен до трёх подразделов — БА с оценкой каждого подпункта §4.х.х и сносками, СА с диаграммой деятельности и JSON запроса/ответа, таблица источников с прямыми ссылками в Redoc hh.ru. Выводы L2 перепроверены: подтверждено большинство, исправлено 6 расхождений, вердикт ФТ-05 понижен с «Да» до «Частично» (новый GAP-R11). Ссылки на источники генерируются воспроизводимо скриптом experiments/issue_333_hh_api_source_index.py."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/333
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/329
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/331
+related_runs:
+  - RUN-0058
+  - RUN-0059
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - experiments/issue_333_hh_api_source_index.py
