@@ -1,0 +1,56 @@
+run_id: RUN-0061
+process: task-1090-human-review-of-twin-links
+version: "0.1"
+date: 2026-08-28
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3.7-plus"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/336
+  - https://github.com/user-attachments/files/31558980/chat-export-1787928921525.json
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/link-review-statistics.md
+  - outputs/link-reference-contract-draft.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/link-verification.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 15
+  iterations: 15
+  turns: 30
+  sessions: 2
+  tokens_input: 723648
+  tokens_output: 35847
+  tokens_thinking: 18098
+  tokens_dialog_total: 759495
+  token_method: "provider-usage:qwen3.7-plus"
+  duration_active_s: 5460
+  dialog_start_utc: "2026-08-26 07:52:49"
+  dialog_end_utc: "2026-08-28 11:27:09"
+  calendar_days: 2.1
+  attachments_distinct: 2
+  links_checked_dialog: 21
+  links_with_anchor: 0
+  links_section_resolved: 1
+  wiki_pages_checked: 79
+  wiki_pages_available: 79
+  wiki_pages_with_anchors: 71
+  eval: "Прогон зафиксирован ради статистики процесса human review: измеряется адресность ссылок на twin в отчёте RUN-0057 и в диалоге проверки. Оценка качества требований не выставляется, success_rate не задан — оснований в данных нет."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/336
+related_runs:
+  - RUN-0057
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - runs/2026/RUN-0057/outputs/L0-customer-form-with-assessment.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_336_link_audit.py
+  - experiments/issue_336_fixate_run.py
