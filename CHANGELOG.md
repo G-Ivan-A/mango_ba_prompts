@@ -13,6 +13,18 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #347: RUN-0065, L0-аудит ТЗ «Телефония»
+
+- Добавлен [`RUN-0065`](runs/2026/RUN-0065/metadata.yaml) с L0-оценкой 409
+  непустых строк XLSX: исходные значения сохраняются посимвольно, а оценка
+  отделяет вердикт, уверенность, technical gap и human-review gate.
+- Технический аудит фиксирует блок-факторы, отдельный контракт SLA, ограничения
+  доступных SSOT и обязательные product/architecture/security/performance gates.
+- Добавлены детерминированный генератор
+  [`experiments/issue_347/generate_run.py`](experiments/issue_347/generate_run.py)
+  и регрессионный валидатор
+  [`scripts/validate_issue_347_run.py`](scripts/validate_issue_347_run.py).
+
 ### Added — Issue #345: RUN-0064, RCA и настройка вида отчета BCREQ-1074
 
 - Добавлен [`RUN-0064`](runs/2026/RUN-0064/metadata.yaml): полный RCA ошибок

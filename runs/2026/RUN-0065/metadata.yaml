@@ -1,0 +1,32 @@
+run_id: RUN-0065
+process: feasibility-assessment-telephony-requirements-task-1099
+version: "0.1"
+date: 2026-08-31
+author: "AI issue solver"
+model: "gpt-5.6-sol"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/347
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-customer-form-with-assessment.md
+logs:
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_workbooks: 1
+  source_rows: 409
+  worksheet_extent: 414
+  sla_rows: 41
+  eval: "409 непустых строк листа требований перенесены из XLSX и дополнены L0-оценкой с явными human-review gates."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/347
+related_runs:
+  - RUN-0062
+related_artifacts:
+  - experiments/issue_347/generate_run.py
+  - scripts/validate_issue_347_run.py
