@@ -1,0 +1,34 @@
+run_id: RUN-0064
+process: error-analysis-and-feature-specification-bcreq-1074-report-view
+version: "0.1"
+date: 2026-08-31
+author: "OpenAI Codex"
+model: "gpt-5.6-sol"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/345
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/functional-requirements.md
+reports:
+  - reports/error-analysis.md
+logs:
+  - logs/traceability-and-gates.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  classified_errors: 8
+  functional_requirements: 3
+  acceptance_scenarios: 12
+  eval: "Проанализирован полный диалог и два скриншота; сформированы трассируемые ФТ для параметров отчета, настройки колонок и обратной совместимости. Артефакт остается draft до human review открытых продуктовых решений."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/345
+related_runs:
+  - RUN-0063
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - runs/2026/RUN-0063/outputs/functional-requirements-bcreq-1074.md
+  - kb/processed/mango-lk-manual/sections/34-rashody-na-svyaz.md
