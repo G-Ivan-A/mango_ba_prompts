@@ -1,0 +1,31 @@
+run_id: RUN-0062
+process: feasibility-assessment-tender-appendices-5-7
+version: "0.1"
+date: 2026-08-31
+author: "AI issue solver"
+model: "gpt-5.6-sol"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/339
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-customer-form-with-assessment.md
+logs:
+  - logs/experiment-log.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_workbooks: 3
+  source_rows: 87
+  eval: "Все 87 строк формы Приложений № 5–7 (включая заголовки разделов) перенесены непосредственно из XLS в шестиколоночный L0; неподтверждённые возможности явно помечены «Нет данных»."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/339
+related_runs:
+  - RUN-0057
+related_artifacts:
+  - runs/2026/RUN-0057/outputs/L0-customer-form-with-assessment.md
+  - experiments/issue_339/generate_run.py
+  - scripts/validate_issue_339_run.py
