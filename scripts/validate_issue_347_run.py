@@ -83,31 +83,29 @@ def main() -> int:
 
     require_markers(metadata, ("run_id: RUN-0065", "run_type: execution", "issues/347", "source_rows: 409", "worksheet_extent: 414"), "metadata", errors)
     require_markers(inputs, ("requirements.xlsx", EXPECTED_SHA256, "Требования к системе", "SLA поддержки", "Лист1", "hidden"), "input manifest", errors)
-    require_markers(output_index, ("L0-customer-form-with-assessment.md", "409", "CBAP"), "output index", errors)
-    require_markers(audit, ("CBAP", "трассируем", "Блок-фактор", "SLA", "human review"), "technical audit", errors)
+    require_markers(output_index, ("L0-customer-form-with-assessment.md", "409", "шесть колонок", "Да / Частично / Нет / пусто"), "output index", errors)
+    require_markers(audit, ("трассируем", "Блок-фактор", "SLA", "технический критик-аудит"), "technical audit", errors)
     require_markers(review, ("Фокус human review", "Открытые решения", "Механизм проверки"), "review notes", errors)
 
     table_lines = [line for line in report.splitlines() if line.startswith("|")]
     widths = {len(split_row(line)) for line in table_lines}
-    if widths != {8}:
-        errors.append(f"table widths must be {{8}}, got {widths}")
+    if widths != {6}:
+        errors.append(f"table widths must be {{6}}, got {widths}")
     rendered: list[tuple[str, str, str, str]] = []
     verdicts: set[str] = set()
-    for line in table_lines:
+    for line in table_lines[2:]:
         cells = split_row(line)
-        if len(cells) != 8 or cells[0] in {"Строка XLSX", "---"}:
+        if len(cells) != 6:
             continue
-        rendered.append(tuple(cells[:4]))
-        verdict = re.match(r"^\*\*(Реализовано|Доработка|Реализация невозможна|Нет данных|Не оценивается)\.\*\*", cells[4])
-        if not verdict:
-            errors.append(f"invalid verdict at source row {cells[0]}: {cells[4][:80]}")
-        else:
+        rendered.append(tuple(cells[:3]))
+        verdict = re.match(r"^\*\*(Да|Частично|Нет)\.\*\*", cells[3]) if cells[3] else None
+        if cells[3] and not verdict:
+            errors.append(f"invalid verdict near requirement {cells[0][:40]}: {cells[3][:80]}")
+        elif verdict:
             verdicts.add(verdict.group(1))
-        if cells[7] not in {"Да", "Нет"}:
-            errors.append(f"invalid human-review flag at source row {cells[0]}: {cells[7]}")
 
     try:
-        expected = [(str(index), *(markdown_cell(cell).strip() for cell in row)) for index, row in enumerate(source_rows(), 1)]
+        expected = [tuple(markdown_cell(cell).strip() for cell in row) for row in source_rows()]
     except (AssertionError, KeyError, OSError, zipfile.BadZipFile) as exc:
         errors.append(f"cannot parse source workbook: {exc}")
         expected = []
@@ -119,10 +117,10 @@ def main() -> int:
                 break
     if len(rendered) != 409:
         errors.append(f"expected 409 source rows, got {len(rendered)}")
-    if not {"Реализовано", "Доработка", "Нет данных", "Не оценивается"}.issubset(verdicts):
+    if not {"Да", "Частично", "Нет"}.issubset(verdicts):
         errors.append(f"assessment must exercise controlled verdicts, got {sorted(verdicts)}")
 
-    require_markers(report, ("CBAP", "Блок-фактор", "Уверенность", "Основание / технический комментарий", "Фокус human review"), "report", errors)
+    require_markers(report, ("Блок-фактор", "Технический критик-аудит", "атомарная ссылка"), "report", errors)
     if "RUN-0065" not in registry or "RUN-0065" not in changelog or "Issue #347" not in changelog:
         errors.append("RUN-0065 must be registered in runs/README.md and CHANGELOG.md")
 
@@ -130,7 +128,7 @@ def main() -> int:
         print("FAIL: issue #347 validation")
         print("\n".join(f"- {error}" for error in errors))
         return 1
-    print("OK: issue #347 — 409 source rows, eight columns, source cells exact")
+    print("OK: issue #347 — 409 source rows, six columns, source cells exact")
     return 0
 
 

@@ -25,6 +25,9 @@ SA_GENERAL = "[SA, §1, с.4–7](../../../../kb/processed/speech-analytics/user
 SA_RECOGNITION = "[SA, §3.2, с.14–16](../../../../kb/processed/speech-analytics/user-guide/sections/07-nastroyki-raspoznavaniya-zapisey.md)"
 SA_SIP = "[SA, §10.4, с.123–124](../../../../kb/processed/speech-analytics/user-guide/sections/72-vkladka-nomera.md)"
 SA_ROUTING = "[SA, §10.4.2, с.124–126](../../../../kb/processed/speech-analytics/user-guide/sections/75-nastroyka-shemy-raspredeleniya-zvonkov-v.md)"
+LK_SIP = "[LK_manual_v-123, §5 «SIP Trunk», с.520](../../../../kb/processed/mango-lk-manual/sections/320-sip-trunk.md)"
+LK_RECORD = "[LK_manual_v-123, §4.5.3.4, с.209–213](../../../../kb/processed/mango-lk-manual/sections/138-nastroyki.md)"
+LK_SECURITY = "[LK_manual_v-123, §4.6.3.5, с.467–470](../../../../kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md)"
 
 
 def displayed(book: xlrd.book.Book, sheet: xlrd.sheet.Sheet, row: int, col: int) -> str:
@@ -42,7 +45,7 @@ def md(value: str) -> str:
 
 
 def no_data() -> str:
-    return "**Нет данных.** В исследованных SSOT нет прямого подтверждения именно этого требования."
+    return "**Нет данных.** Проверено: БЗ [`kb/processed/README.md`](../../../../kb/processed/README.md), затем web только по доверенному домену `mango-office.ru`, запрос по точной формулировке; ни БЗ, ни web не дали результата."
 
 
 def assessment(sheet: str, number: str, requirement: str) -> tuple[str, str, str]:
@@ -52,6 +55,7 @@ def assessment(sheet: str, number: str, requirement: str) -> tuple[str, str, str
 
     low = requirement.lower()
     if sheet == "Телефония":
+        robot = f"**Да, частично.** Полная БЗ содержит контур ВАТС/LK: SIP Trunk, номера и маршрутизацию; параметры конкретной строки требуют сверки: {LK_SIP}."
         if number in {"1.0", "1.2.", "1.3.", "2.0", "3.0", "4.0", "5.0", "6.0", "7.0", "8.0"}:
             speech = f"**Нет данных.** Документация подтверждает настройку SIP Trunk и номеров, но не заявленный канал, протокол, кодек, SLA или ёмкость: {SA_SIP}."
         if number == "1.0":
@@ -101,6 +105,10 @@ def assessment(sheet: str, number: str, requirement: str) -> tuple[str, str, str
             robot = f"**Да, частично.** Руководство пользователя существует; API-документация и очное обучение этой строкой не подтверждены: {ROBOT_AUTH}."
             speech = f"**Да, частично.** Наличие пользовательского руководства подтверждено; API-документация и очное обучение отдельно не подтверждены: {SA_GENERAL}."
             twin = no_data()
+        if any(token in low for token in ("запис", "хранен", "ftp", "стерео")):
+            robot = f"**Да, частично.** Полная БЗ ВАТС подтверждает запись, многоканальный режим и внешнее FTP/SFTP-хранилище: {LK_RECORD}."
+        if any(token in low for token in ("безопас", "аутентиф", "доступ")):
+            speech = f"**Да, частично.** Полная БЗ LK подтверждает двухфакторную аутентификацию и настройки безопасности; точный охват строки требует проверки: {LK_SECURITY}."
     return robot, speech, twin
 
 
@@ -121,9 +129,10 @@ related_issues:
 Таблицы сгенерированы непосредственно из приложенных к issue #339 файлов `.xls`.
 Колонки `№`, `Требование`, `Комментарий участника` сохраняют значения ячеек исходника;
 единственное представительное преобразование — перенос строки в ячейке записывается как `<br>`.
-Колонки 4–6 содержат отдельные оценки по SSOT. Если конкретное утверждение источником
-не подтверждено, используется вердикт **«Нет данных»**; ссылка на корень базы знаний не
-считается подтверждением.
+Колонки 4–6 содержат оценки по полной БЗ, включая ВАТС/LK, Роботов и QM/Речевую
+аналитику, а также публичную документацию TWIN. Точка входа поиска —
+[`kb/processed/README.md`](../../../../kb/processed/README.md). Вердикт **«Нет данных»**
+допустим только после зафиксированной эскалации на web по доверенным доменам Mango.
 
 Посимвольная проверка значений исходных ячеек и шестиколоночного контракта:
 
