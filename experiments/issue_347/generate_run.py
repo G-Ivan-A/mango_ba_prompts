@@ -15,7 +15,7 @@ EXPECTED_SHA256 = "4806288a13f03b4e972b726e92e267c4c627cab42ad4ade3929607c0fd428
 EVIDENCE = {
  "sip": ("[LK_manual_v-123, §5 «SIP Trunk», с.520](../../../../kb/processed/mango-lk-manual/sections/320-sip-trunk.md)", "БЗ подтверждает SIP Trunk; количественные и операторские параметры следует сверить с договором."),
  "carousel": ("[LK_manual_v-123, §4.5.19 «Карусель номеров», с.414–416](../../../../kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md)", "БЗ подтверждает ротацию номеров и несколько одновременных каруселей."),
- "record": ("[LK_manual_v-123, §4.5.3.4 «Настройки записи», с.226–231](../../../../kb/processed/mango-lk-manual/sections/138-nastroyki.md)", "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище."),
+ "record": ("[LK_manual_v-123, §4.5.3.4 «Настройки записи», с.209–213](../../../../kb/processed/mango-lk-manual/sections/138-nastroyki.md)", "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище."),
  "2fa": ("[LK_manual_v-123, §4.6.3.5 «Безопасность PRO», с.467–470](../../../../kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md)", "БЗ подтверждает двухфакторную аутентификацию; способ и охват сверяются с формулировкой строки."),
  "mobile": ("[LK_manual_v-123, §4 «Приложение Личный кабинет», с.69–70](../../../../kb/processed/mango-lk-manual/sections/70-prilozhenie-lichnyy-kabinet.md)", "БЗ подтверждает ссылки на приложения в Google Play и App Store."),
  "address": ("[LK_manual_v-123, §4.5.10 «Адресная книга контрагентов», с.275–276](../../../../kb/processed/mango-lk-manual/sections/177-adresnaya-kniga-kontragentov.md)", "БЗ подтверждает адресную книгу и операции с контактами."),

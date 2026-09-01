@@ -26,7 +26,7 @@ SA_RECOGNITION = "[SA, §3.2, с.14–16](../../../../kb/processed/speech-analyt
 SA_SIP = "[SA, §10.4, с.123–124](../../../../kb/processed/speech-analytics/user-guide/sections/72-vkladka-nomera.md)"
 SA_ROUTING = "[SA, §10.4.2, с.124–126](../../../../kb/processed/speech-analytics/user-guide/sections/75-nastroyka-shemy-raspredeleniya-zvonkov-v.md)"
 LK_SIP = "[LK_manual_v-123, §5 «SIP Trunk», с.520](../../../../kb/processed/mango-lk-manual/sections/320-sip-trunk.md)"
-LK_RECORD = "[LK_manual_v-123, §4.5.3.4, с.226–231](../../../../kb/processed/mango-lk-manual/sections/138-nastroyki.md)"
+LK_RECORD = "[LK_manual_v-123, §4.5.3.4, с.209–213](../../../../kb/processed/mango-lk-manual/sections/138-nastroyki.md)"
 LK_SECURITY = "[LK_manual_v-123, §4.6.3.5, с.467–470](../../../../kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md)"
 
 

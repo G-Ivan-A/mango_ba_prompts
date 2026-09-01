@@ -60,6 +60,21 @@ def validate_run62(text: str, errors: list[str]) -> None:
             break
 
 
+def validate_lk_reference_truth(texts: dict[str, str], errors: list[str]) -> None:
+    """Pin reviewed LK section/page pairs, not merely their citation syntax."""
+    expected = {
+        "RUN-0062": ("§4.5.3.4", "с.209–213"),
+        "RUN-0065": ("§4.5.3.4", "с.209–213"),
+        "report": ("§4.5.3.4", "с.209–213", "§4.5.11.2.2", "с.339–345"),
+    }
+    stale = ("с.226–231", "§4.5.11.8", "с.348–354")
+    for label, needles in expected.items():
+        require(texts[label], needles, f"{label} reviewed LK references", errors)
+        for needle in stale:
+            if needle in texts[label]:
+                errors.append(f"{label} contains stale LK reference: {needle}")
+
+
 def main() -> int:
     errors: list[str] = []
     texts = {}
@@ -71,6 +86,7 @@ def main() -> int:
             texts[label] = path.read_text(encoding="utf-8")
     validate_run62(texts["RUN-0062"], errors)
     validate_run65(texts["RUN-0065"], errors)
+    validate_lk_reference_truth(texts, errors)
     require(
         texts["report"],
         ("RUN-0062", "RUN-0065", "kb/processed/README.md", "доверенным доменам", "ни БЗ, ни web", "Корневые причины", "Ресимуляция"),
