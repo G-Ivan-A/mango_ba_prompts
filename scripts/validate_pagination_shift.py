@@ -18,7 +18,7 @@ from urllib.parse import unquote
 LINK = re.compile(r"\[([^\[\]]+)\]\(([^()\s]+)\)")
 CITATION = re.compile(
     r"^(?P<doc>[^,]+),\s*§(?P<section>[^,\s«]+)"
-    r"(?:\s+«(?P<title>[^»]*)»)?"
+    r"(?:\s+«(?P<title>.*)»)?"
     r"(?:,\s*с\.(?P<pages>.+))?$"
 )
 

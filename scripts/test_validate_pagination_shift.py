@@ -41,6 +41,32 @@ def run_case(citation: str) -> subprocess.CompletedProcess[str]:
         )
 
 
+def run_nested_title_case() -> subprocess.CompletedProcess[str]:
+    nested_section = SECTION.replace(
+        'title: "Настройки"', 'title: "Настройка виджета «Карусель»"'
+    )
+    with tempfile.TemporaryDirectory() as tmp:
+        root = Path(tmp)
+        report = root / "reports/result.md"
+        section = root / "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+        report.parent.mkdir(parents=True)
+        section.parent.mkdir(parents=True)
+        report.write_text(
+            "Evidence: "
+            "[LK_manual_v-123, §4.5.3.4 «Настройка виджета «Карусель»», с.209–213]"
+            "(../kb/processed/mango-lk-manual/sections/138-nastroyki.md)\n",
+            encoding="utf-8",
+        )
+        section.write_text(nested_section, encoding="utf-8")
+        return subprocess.run(
+            [sys.executable, str(VALIDATOR), "--root", str(root), str(report)],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+
+
 def main() -> int:
     errors: list[str] = []
     target = "../kb/processed/mango-lk-manual/sections/138-nastroyki.md"
@@ -61,6 +87,10 @@ def main() -> int:
     pageless = run_case(f"[LK_manual_v-123, §4.5.3.4]({target})")
     if pageless.returncode != 0:
         errors.append(f"page-less verified fallback rejected: {pageless.stderr or pageless.stdout}")
+
+    nested = run_nested_title_case()
+    if nested.returncode != 0:
+        errors.append(f"nested guillemet title rejected: {nested.stderr or nested.stdout}")
 
     if errors:
         print("FAIL: test_validate_pagination_shift")
