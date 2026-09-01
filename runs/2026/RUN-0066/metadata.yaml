@@ -1,0 +1,44 @@
+run_id: RUN-0066
+process: feasibility-assessment-telephony-requirements-task-1099
+version: "1.0"
+date: 2026-09-01
+author: "AI issue solver"
+model: "claude-opus-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/351
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1099-2.md
+logs:
+  - logs/technical-audit.md
+  - logs/ab-comparison.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_workbooks: 1
+  source_rows: 409
+  worksheet_extent: 414
+  assessed_requirements: 386
+  verdicts_yes: 338
+  verdicts_partial: 34
+  verdicts_no: 14
+  verdicts_empty: 0
+  atomic_citations: 702
+  eval: "Повторный прогон ТЗ task-1099 альтернативной моделью для A/B-сравнения с RUN-0065. Номера страниц в атомарных ссылках вычисляются из frontmatter kb/processed в момент генерации, а не задаются в коде."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/351
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/349
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/347
+related_runs:
+  - RUN-0065
+related_artifacts:
+  - experiments/issue_351/generate_run.py
+  - experiments/issue_351/cite.py
+  - experiments/issue_351/verify_source_fidelity.py
+  - experiments/issue_351/ab_compare.py
+  - experiments/issue_351/pagination_audit.py
+  - scripts/validate_issue_351_run.py
