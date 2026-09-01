@@ -25,3 +25,10 @@ ci-logs/
 # кэш страниц вики и JSON-замеры — в репозитории остаются только провенанс
 # (runs/2026/RUN-0061/inputs/README.md) и порождённые артефакты прогона
 experiments/issue_336/
+# кэши и промежуточные дампы прогона RUN-0066 (issue #351): восстанавливаются
+# скриптами extract.py и kb_index.py
+experiments/issue_351/sheet1.json
+experiments/issue_351/rows.txt
+experiments/issue_351/kb_index.json
+experiments/issue_351/kb_full.txt
+experiments/issue_351/*.log
