@@ -1,0 +1,2 @@
+# Preserve whitespace in raw evidence streams; it is part of the captured output.
+docs/report/evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt whitespace=-trailing-space
