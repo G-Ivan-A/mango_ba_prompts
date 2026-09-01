@@ -3,8 +3,9 @@
 
 Page-bearing citations are accepted only when document, section, title, and
 pages match the linked ``kb/processed/**/sections/*.md`` file.  A citation may
-omit pages as an explicit fallback, but it must still resolve to the declared
-document and section.
+omit pages only when the linked frontmatter has no pages.  With no report
+arguments, the validator discovers all RUN-0066 and later Markdown outputs
+that contain processed-KB links.
 """
 
 from __future__ import annotations
@@ -17,7 +18,7 @@ from urllib.parse import unquote
 
 LINK = re.compile(r"\[([^\[\]]+)\]\(([^()\s]+)\)")
 CITATION = re.compile(
-    r"^(?P<doc>[^,]+),\s*§(?P<section>[^,\s«]+)"
+    r"^(?P<doc>[^,]+),\s*(?:§(?P<section>[^,\s«]+)\s*)?"
     r"(?:\s+«(?P<title>.*)»)?"
     r"(?:,\s*с\.(?P<pages>.+))?$"
 )
@@ -60,8 +61,7 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
     processed = (root / "kb/processed").resolve()
 
     for label, href in LINK.findall(text):
-        match = CITATION.match(label.strip())
-        if not match or href.startswith(("http://", "https://", "mailto:")):
+        if href.startswith(("http://", "https://", "mailto:")):
             continue
         target = (report.parent / unquote(href.split("#", 1)[0])).resolve()
         try:
@@ -71,6 +71,12 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
         if "sections" not in target.parts:
             continue
         checked += 1
+        match = CITATION.match(label.strip())
+        if not match:
+            errors.append(
+                f"{report}: invalid atomic citation label {label!r} for {target}"
+            )
+            continue
         try:
             meta = frontmatter(target)
         except OSError as exc:
@@ -88,7 +94,7 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
         actual_section = meta.get("pdf_section", "") or meta.get("section", "")
         if actual_section in {"0", "-", "—"}:
             actual_section = ""
-        cited_section = match.group("section").strip()
+        cited_section = (match.group("section") or "").strip()
         if cited_section != actual_section:
             errors.append(f"{target}: section {cited_section!r}, frontmatter {actual_section!r}")
 
@@ -97,27 +103,60 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
             errors.append(f"{target}: title {cited_title.strip()!r}, frontmatter {meta.get('title', '')!r}")
 
         cited_pages = match.group("pages")
-        if cited_pages is not None:
+        if cited_pages is None:
+            if meta.get("pages", "").strip():
+                errors.append(
+                    f"{target}: pages omitted although frontmatter pages are available"
+                )
+        else:
+            if cited_title is None:
+                errors.append(f"{target}: title is required when citation includes pages")
             expected_pages = normalize(meta.get("pages", ""))
             actual_pages = normalize(cited_pages)
             if actual_pages != expected_pages:
-                errors.append(f"{target}: pages {actual_pages!r}, frontmatter {expected_pages!r}")
+                errors.append(
+                    f"{report}: {target}: pages {actual_pages!r}, "
+                    f"frontmatter {expected_pages!r}"
+                )
 
     if checked == 0:
         errors.append(f"{report}: no local atomic KB citations found")
     return checked, errors
 
 
+def discover_reports(root: Path, minimum_run: int = 66) -> list[Path]:
+    reports: list[Path] = []
+    for candidate in root.glob("runs/*/RUN-*/outputs/*.md"):
+        match = re.fullmatch(r"RUN-(\d+)", candidate.parent.parent.name)
+        if match is None or int(match.group(1)) < minimum_run:
+            continue
+        try:
+            if "kb/processed/" not in candidate.read_text(encoding="utf-8"):
+                continue
+        except OSError:
+            continue
+        reports.append(candidate.resolve())
+    return sorted(reports)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("reports", nargs="+", type=Path, help="Markdown report(s) to validate")
+    parser.add_argument(
+        "reports",
+        nargs="*",
+        type=Path,
+        help="Markdown report(s); default: discover RUN-0066+ outputs",
+    )
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     args = parser.parse_args()
 
     root = args.root.resolve()
     total = 0
     errors: list[str] = []
-    for report_arg in args.reports:
+    reports = args.reports or discover_reports(root)
+    if not reports:
+        errors.append(f"{root}: no RUN-0066+ reports with processed-KB links found")
+    for report_arg in reports:
         report = report_arg if report_arg.is_absolute() else root / report_arg
         try:
             checked, report_errors = validate_report(report.resolve(), root)

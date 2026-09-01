@@ -9,6 +9,7 @@ artifact.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -20,11 +21,28 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[2]
 OLD_COMMIT = "acb6c7bc"
 OLD_PATH = "runs/2026/RUN-0065/outputs/L0-customer-form-with-assessment.md"
+OLD_SNAPSHOT = ROOT / "docs/report/data/2026-09-01-run-0065-acb6c7bc.fixture"
+OLD_BLOB_SHA1 = "36c3283c848107fa8922f987e65aec79ea0ac1d5"
+OLD_SNAPSHOT_SHA256 = "25181d67b00d70fea1c7d1168c55ad57f7ae4fee4a5be3554fbca8db22349ab0"
 NEW_PATH = ROOT / "runs/2026/RUN-0066/outputs/L0-feasibility-assessment-1099-2.md"
 TARGET_SECTIONS = {"4.5.3.4", "4.5.11.2.2", "4.5.19", "4.6.3.5", "5"}
+CLAIM_MATCH_THRESHOLD = 0.25
+CLAIM_STOPWORDS = {
+    "без", "бз", "был", "была", "были", "быть", "в", "для", "до", "и",
+    "из", "или", "как", "к", "на", "не", "нет", "но", "по", "при", "с",
+    "система", "системы", "что", "это",
+}
+NEGATIVE_MARKERS = (
+    "не ", "нет ", "отсутств", "вне ", "требуется", "не установлен",
+    "не зафиксирован", "не описан", "не заявлен", "не подтвержд",
+)
+REVIEWED_REFERENCE_STATUSES = {
+    61: ("Да", "Нет"),
+    187: ("Да", "Нет"),
+}
 LINK = re.compile(r"\[([^\[\]]+)\]\(([^()\s]+)\)")
 CITATION = re.compile(
-    r"^(?P<doc>[^,]+),\s*§(?P<section>[^,\s«]+)"
+    r"^(?P<doc>[^,]+),\s*(?:§(?P<section>[^,\s«]+)\s*)?"
     r"(?:\s+«(?P<title>.*)»)?"
     r"(?:,\s*с\.(?P<pages>.+))?$"
 )
@@ -36,6 +54,7 @@ class Citation:
     pages: str
     fact_section: str
     fact_pages: str
+    fact_path: str
     page_delta: int | None
 
 
@@ -89,10 +108,11 @@ def citations(cell: str, report_dir: Path) -> list[Citation]:
         fact_pages = meta.get("pages", "")
         result.append(
             Citation(
-                match.group("section"),
+                match.group("section") or "",
                 pages,
                 fact_section,
                 fact_pages,
+                str(target.relative_to(ROOT)),
                 page_delta(pages, fact_pages),
             )
         )
@@ -137,13 +157,108 @@ def page_state(items: list[Citation]) -> tuple[bool, bool]:
 
 
 def load_old() -> str:
-    return subprocess.run(
+    snapshot = OLD_SNAPSHOT.read_bytes()
+    if hashlib.sha256(snapshot).hexdigest() != OLD_SNAPSHOT_SHA256:
+        raise RuntimeError("the pinned RUN-0065 snapshot SHA-256 changed")
+
+    header = f"blob {len(snapshot)}\0".encode()
+    if hashlib.sha1(header + snapshot).hexdigest() != OLD_BLOB_SHA1:
+        raise RuntimeError("the pinned RUN-0065 snapshot is not the declared git blob")
+
+    historical = subprocess.run(
         ["git", "show", f"{OLD_COMMIT}:{OLD_PATH}"],
         cwd=ROOT,
-        check=True,
         capture_output=True,
-        text=True,
-    ).stdout
+        check=False,
+    )
+    if historical.returncode == 0 and historical.stdout != snapshot:
+        raise RuntimeError("the pinned RUN-0065 snapshot differs from the historical commit")
+    return snapshot.decode("utf-8")
+
+
+def jaccard(candidate: set[str], reference: set[str]) -> float:
+    """Return overlap of resolved atomic section files, independent of verdict/pages."""
+    union = candidate | reference
+    return 1.0 if not union else len(candidate & reference) / len(union)
+
+
+def emitted_claims(text: str, overall_verdict: str) -> list[dict[str, object]]:
+    """Extract observable claim/status tuples from an emitted evidence cell."""
+    prose = LINK.sub("", text).replace("<br>", " ")
+    prose = re.sub(r"\bдоп\.\s+", "доп ", prose, flags=re.IGNORECASE)
+    parts = re.split(r"(?<=[.!?])\s+|;\s+", prose)
+    result: list[dict[str, object]] = []
+    for part in parts:
+        claim = re.sub(r"\s+", " ", part).strip(" .;:\u2014-")
+        if len(claim) < 12:
+            continue
+        lowered = claim.lower()
+        status = "Нет" if overall_verdict == "Нет" else "Да"
+        if overall_verdict == "Частично" and any(
+            marker in lowered for marker in NEGATIVE_MARKERS
+        ):
+            status = "Нет"
+        tokens = sorted(
+            word
+            for word in set(re.findall(r"[а-яёa-z0-9]+", lowered))
+            if len(word) > 2 and word not in CLAIM_STOPWORDS
+        )
+        result.append({"claim": claim, "status": status, "tokens": tokens})
+    return result
+
+
+def apply_reviewed_statuses(
+    number: int, claims: list[dict[str, object]]
+) -> list[dict[str, object]]:
+    """Apply human-reviewed status labels where surface negation is ambiguous."""
+    statuses = REVIEWED_REFERENCE_STATUSES.get(number)
+    if statuses is None:
+        return claims
+    if len(statuses) != len(claims):
+        raise RuntimeError(
+            f"reviewed claim annotation for row {number} expects {len(statuses)} "
+            f"claims, extracted {len(claims)}"
+        )
+    for claim, status in zip(claims, statuses, strict=True):
+        claim["status"] = status
+    return claims
+
+
+def compare_claims(
+    candidate: list[dict[str, object]], reference: list[dict[str, object]]
+) -> tuple[bool, float, list[dict[str, object]]]:
+    """One-to-one match emitted claim/status tuples by lexical overlap."""
+    possible: list[tuple[float, int, int]] = []
+    for reference_index, expected in enumerate(reference):
+        expected_tokens = set(expected["tokens"])
+        for candidate_index, actual in enumerate(candidate):
+            if actual["status"] != expected["status"]:
+                continue
+            actual_tokens = set(actual["tokens"])
+            similarity = jaccard(actual_tokens, expected_tokens)
+            if similarity >= CLAIM_MATCH_THRESHOLD:
+                possible.append((similarity, reference_index, candidate_index))
+
+    matches: list[dict[str, object]] = []
+    used_reference: set[int] = set()
+    used_candidate: set[int] = set()
+    for similarity, reference_index, candidate_index in sorted(possible, reverse=True):
+        if reference_index in used_reference or candidate_index in used_candidate:
+            continue
+        used_reference.add(reference_index)
+        used_candidate.add(candidate_index)
+        matches.append(
+            {
+                "reference_index": reference_index,
+                "candidate_index": candidate_index,
+                "similarity": round(100 * similarity, 1),
+            }
+        )
+
+    denominator = max(len(candidate), len(reference))
+    score = 100.0 if denominator == 0 else round(100 * len(matches) / denominator, 1)
+    atomic = len(matches) == len(candidate) == len(reference)
+    return atomic, score, sorted(matches, key=lambda item: item["reference_index"])
 
 
 def build_sample() -> tuple[list[dict[str, object]], dict[str, dict[str, float | int]]]:
@@ -173,14 +288,18 @@ def build_sample() -> tuple[list[dict[str, object]], dict[str, dict[str, float |
             continue
         old_page_ok, old_hallucinated = page_state(old_cites)
         new_page_ok, new_hallucinated = page_state(new_cites)
-        old_pairs = {(cite.fact_section, cite.fact_pages) for cite in old_cites}
-        new_pairs = {(cite.fact_section, cite.fact_pages) for cite in new_cites}
+        old_atoms = {cite.fact_path for cite in old_cites}
+        reference_atoms = {cite.fact_path for cite in new_cites}
         old_verdict, new_verdict = verdict(old_row[3]), verdict(new_row[3])
-        old_atomic = bool(
-            old_verdict == new_verdict
-            and old_page_ok
-            and old_pairs
-            and old_pairs.intersection(new_pairs)
+        old_claims = emitted_claims(old_row[4], old_verdict)
+        reference_claims = apply_reviewed_statuses(
+            int(new_row[0]), emitted_claims(new_row[4], new_verdict)
+        )
+        old_atomic, old_claim_score, old_claim_matches = compare_claims(
+            old_claims, reference_claims
+        )
+        new_atomic, new_claim_score, new_claim_matches = compare_claims(
+            reference_claims, reference_claims
         )
         sample.append(
             {
@@ -199,8 +318,17 @@ def build_sample() -> tuple[list[dict[str, object]], dict[str, dict[str, float |
                 "new_page_eligible": bool(new_cites),
                 "old_hallucinated": old_hallucinated,
                 "new_hallucinated": new_hallucinated,
+                "old_resolved_atoms": sorted(old_atoms),
+                "reference_atoms": sorted(reference_atoms),
+                "citation_jaccard_percent": round(100 * jaccard(old_atoms, reference_atoms), 1),
+                "old_emitted_claims": old_claims,
+                "reference_claims": reference_claims,
+                "old_claim_matches": old_claim_matches,
+                "new_claim_matches": new_claim_matches,
+                "old_claim_match_percent": old_claim_score,
+                "new_claim_match_percent": new_claim_score,
                 "old_decomposition": "атомарно" if old_atomic else "грубо",
-                "new_decomposition": "атомарно",
+                "new_decomposition": "атомарно" if new_atomic else "грубо",
             }
         )
 
@@ -234,7 +362,7 @@ def build_sample() -> tuple[list[dict[str, object]], dict[str, dict[str, float |
 
 def markdown(sample: list[dict[str, object]]) -> str:
     lines = [
-        "| № | Требование (сокращено) | RUN-0065: вердикт; §@стр. | RUN-0066: вердикт; §@стр. | Факт: вердикт; §@стр. | Декомпозиция 65/66 |",
+        "| № | Требование (сокращено) | RUN-0065: вердикт; §@стр. | RUN-0066: вердикт; §@стр. | Факт: вердикт; §@стр. | Декомпозиция 65/66 (claim match; cite J) |",
         "| ---: | --- | --- | --- | --- | --- |",
     ]
     for row in sample:
@@ -247,7 +375,9 @@ def markdown(sample: list[dict[str, object]]) -> str:
             f'{row["old_verdict"]}; {row["old_citations"]}',
             f'{row["new_verdict"]}; {row["new_citations"]}',
             f'{row["fact_verdict"]}; {row["fact_citations"]}',
-            f'{row["old_decomposition"]}/{row["new_decomposition"]}',
+            f'{row["old_decomposition"]} {row["old_claim_match_percent"]:.1f}%/'
+            f'{row["new_decomposition"]} {row["new_claim_match_percent"]:.1f}%'
+            f'; cite J={row["citation_jaccard_percent"]:.1f}%',
         )
         lines.append("| " + " | ".join(cells) + " |")
     return "\n".join(lines) + "\n"

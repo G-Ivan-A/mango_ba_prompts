@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Replay three RUN-0065 citation decisions from commit acb6c7bc."""
+"""Replay three deterministic post-generation rules from commit acb6c7bc.
+
+This does not replay the original LLM request: the complete system prompt and
+model-call parameters are unavailable.  It executes the committed generator
+code to reproduce rule propagation and precedence after generation.
+"""
 
 from __future__ import annotations
 

@@ -52,14 +52,21 @@ related_runs:
 
 - RUN-0065 зафиксирован именно из commit `acb6c7bc`; blob отчёта:
   `36c3283c848107fa8922f987e65aec79ea0ac1d5`.
+  Для shallow CI его точная копия закреплена как
+  [`data/2026-09-01-run-0065-acb6c7bc.fixture`](data/2026-09-01-run-0065-acb6c7bc.fixture)
+  (SHA-256 `25181d67b00d70fea1c7d1168c55ad57f7ae4fee4a5be3554fbca8db22349ab0`);
+  анализатор проверяет и SHA-256, и git blob SHA-1.
 - RUN-0066 взят из commit `e0f4ba55`; blob отчёта:
   `845fd2887b99ef2ddf0e6a44d99921d62f96306a`.
 - Полная структурированная выборка и признаки находятся в
   [`data/2026-09-01-run-0065-vs-0066-sample.json`](data/2026-09-01-run-0065-vs-0066-sample.json).
 - Выборка и метрики повторяются командой
   `python3 experiments/issue_353/analyze_runs.py`.
-- Три решения генератора commit `acb6c7bc` повторяются без нового LLM-вызова
-  командой `python3 experiments/issue_353/replay_acb_generator.py`.
+- Три решения post-generation генератора commit `acb6c7bc` детерминированно
+  повторяются без нового LLM-вызова командой
+  `python3 experiments/issue_353/replay_acb_generator.py`. Точный replay
+  исходного LLM-вызова недоступен: в артефактах нет полного system prompt и
+  параметров модели; скрипт проверяет только уже закоммиченную логику правил.
 - Полный дополнительно обезличенный trace и его provenance описаны в
   [`evidence/README.md`](evidence/README.md).
 
@@ -68,10 +75,18 @@ RUN-0066 используется как эталон по прямому тре
 `Accuracy_verdict` — совпадение с его вердиктом. `Accuracy_page` считается среди
 строк, где модель эмитировала локальную нумерованную ссылку: все ссылки строки
 должны совпасть с frontmatter с допуском ≤2. `Hallucination_rate` — доля всех 65
-строк, где хотя бы одна ссылка имеет Δ >2. `Decomposition_quality` — бинарный
-операционный proxy: для RUN-0065 нужны одновременно совпавший вердикт, валидная
-пагинация и пересечение с эталонным атомарным разделом; RUN-0066 — эталонный
-класс. Этот proxy измеряет трассируемую декомпозицию, а не стиль текста.
+строк, где хотя бы одна ссылка имеет Δ >2. `Decomposition_quality` сохраняет
+требуемую бинарную шкалу и измеряет **эмитированные утверждения**, а не ссылки.
+Из evidence-ячейки выделяются предложения/clauses; каждому присваивается статус
+`Да/Нет` из вердикта и явных отрицательных маркеров. Строка «атомарно», только
+если все reference claim/status tuples получили взаимно-однозначную пару того же
+статуса с token-Jaccard ≥0.25 и лишних claims нет; иначе «грубо». Полные тексты,
+статусы, токены и пары сохранены в JSON. Две семантически неоднозначные строки
+(№61: «требует сверки»; №187: положительное «не зависит от окна») имеют явные
+reviewed status annotations, закреплённые тестом. Citation-target Jaccard показан
+отдельно как диагностический `cite J` и не влияет на метрику. RUN-0066 равен
+100% по определению выбранного reference, а не как независимое доказательство
+качества.
 
 ## Метрики
 
@@ -80,7 +95,7 @@ RUN-0066 используется как эталон по прямому тре
 | `Accuracy_verdict` | {old['accuracy_verdict_count']}/{old['rows']} = {percent(old['accuracy_verdict_percent'])} | {new['accuracy_verdict_count']}/{new['rows']} = {percent(new['accuracy_verdict_percent'])} |
 | `Accuracy_page` (eligible rows, допуск ≤2) | {old['accuracy_page_count']}/{old['accuracy_page_eligible_rows']} = {percent(old['accuracy_page_percent'])} | {new['accuracy_page_count']}/{new['accuracy_page_eligible_rows']} = {percent(new['accuracy_page_percent'])} |
 | `Hallucination_rate` (Δ >2 / все строки) | {old['hallucination_count']}/{old['rows']} = {percent(old['hallucination_rate_percent'])} | {new['hallucination_count']}/{new['rows']} = {percent(new['hallucination_rate_percent'])} |
-| `Decomposition_quality` (атомарно) | {old['atomic_decomposition_count']}/{old['rows']} = {percent(old['decomposition_quality_percent'])} | {new['atomic_decomposition_count']}/{new['rows']} = {percent(new['decomposition_quality_percent'])} |
+| `Decomposition_quality` (атомарно: exact claim/status matching) | {old['atomic_decomposition_count']}/{old['rows']} = {percent(old['decomposition_quality_percent'])} | {new['atomic_decomposition_count']}/{new['rows']} = {percent(new['decomposition_quality_percent'])} |
 
 RUN-0066 не содержит ссылки в строке №173, где документированный численный порог
 85% отсутствует; поэтому знаменатель `Accuracy_page` для него равен 64, а не 65.
@@ -107,22 +122,22 @@ RUN-0066 не содержит ссылки в строке №173, где до�
 ### Общая последовательность
 
 1. Контекст был настроен на 200 000 токенов
-   ([trace L391](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L391)).
+   ([trace L389](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L389)).
 2. Широкий поиск БЗ вернул 301 244 символа и был усечён инструментом
    (`output_truncated=true`), то есть retrieval был неограниченным и шумным
-   ([trace L5712](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5712)).
+   ([trace L5710](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5710)).
 3. Следующий ответ при `input_token_count=84571` создал ручной словарь страниц
-   ([trace L5795](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5795)).
+   ([trace L5793](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5793)).
 4. Только примерно через шесть минут агент напрямую прочитал frontmatter
    `252-karusel-nomerov.md` и `138-nastroyki.md`
-   ([trace L8421](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8421)).
+   ([trace L8419](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8419)).
 5. Последующий патч исправил несколько ключей словаря, но не `record`
-   ([trace L8711-L8722](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8711)).
+   ([trace L8709](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8709)).
 
 ### §4.5.3.4 «Настройки»
 
 Первичная эмиссия записала `с.226–231` в `EVIDENCE["record"]`
-([trace L5823](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5823)).
+([trace L5821](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5821)).
 Frontmatter связанного `138-nastroyki.md` содержит `pages: 209-213`. Поздний патч
 не изменил ключ `record`, поэтому commit `acb6c7bc` и повтор
 `replay_acb_generator.py` стабильно выдают `226–231`: Δ начала 17, конца 18.
@@ -132,9 +147,9 @@ Frontmatter связанного `138-nastroyki.md` содержит `pages: 209
 
 В первичном патче действительно наблюдается указанная в issue ошибка:
 `§4.5.11.8, с.348–354`
-([trace L5828](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5828)); факт
+([trace L5826](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5826)); факт
 frontmatter — `§4.5.11.2.2, с.339-345`. Перед commit словарный литерал исправлен
-на факт ([trace L8722](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8722)).
+на факт ([trace L8720](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8720)).
 Однако итоговый отчёт всё равно не использовал его: строка содержит слово
 «контакт», а правило `address` расположено раньше правила `avito`; генератор
 берёт `matches[0]`. Точный replay commit поэтому выдаёт §4.5.10, с.275–276.
@@ -144,20 +159,39 @@ frontmatter — `§4.5.11.2.2, с.339-345`. Перед commit словарный
 ### §4.5.19 «Карусель номеров»
 
 Первичная эмиссия была `с.406–414` вместо `414-416`
-([trace L5822](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5822)). После
+([trace L5820](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L5820)). После
 прямого чтения frontmatter литерал исправлен
-([trace L8640](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8640)), и replay
+([trace L8638](evidence/2026-09-01-run-0065-acb6c7bc-redacted.txt#L8638)), и replay
 commit выдаёт корректные `414–416`. Финальная галлюцинация здесь **не
 воспроизводится**; согласно circuit breaker issue это evidence в пользу H3/H4:
 правильность зависела от необязательной ручной сверки и не была защищена gate.
 
 ## Проверка H1–H5
 
+### Количественное наблюдение для H1
+
+Ошибочные первичные литералы распределены по всему 565-страничному руководству,
+но доступный trace не содержит сопоставимой контрольной совокупности корректных
+первичных литералов. Поэтому по этим пяти наблюдениям нельзя оценить error rate
+как функцию позиции или длины раздела:
+
+| Обязательный раздел | Факт, страницы | Позиция начала | Токены файла | Первичная эмиссия |
+| --- | ---: | ---: | ---: | --- |
+| §4.5.3.4 | 209–213 | 37.0% | 2 822 | 226–231 |
+| §4.5.11.2.2 | 339–345 | 60.0% | 1 885 | §4.5.11.8, 348–354 |
+| §4.5.19 | 414–416 | 73.3% | 1 238 | 406–414 |
+| §4.6.3.5 | 467–470 | 82.7% | 1 585 | 498–501 |
+| §5 | 520 | 92.0% | 58 | 523–551 |
+
+Все **28/28** строк RUN-0065 с Δ >2 в 65-строчной выборке тиражируют один и тот
+же hardcoded атом `138-nastroyki.md` (`226–231`). Это надёжно измеряет downstream
+replication rule, но не объясняет происхождение первичного литерала.
+
 | ID | Итог | Evidence и механистическое объяснение |
 | --- | --- | --- |
-| H1 | **Опровергнута как причина** | Ошибки не локализованы в середине одной большой главы: первичный словарь ошибался также в §5, §4.6.3.5, мобильном приложении и адресной книге. В commit страницы являются литералами кода, а не вычисленной «семантической памятью». Психологический механизм по trace установить нельзя. |
+| H1 | **Не верифицирована; доступные evidence не поддерживают** | Пять ошибок покрывают позиции 37.0–92.0% и файлы 58–2 822 токена, но без контрольной совокупности корректных первичных эмиссий причинную зависимость от позиции/плотности оценить нельзя. Commit доказывает лишь hardcoded propagation 28 строк; происхождение литерала и «семантическую память» trace не раскрывает. |
 | H2 | **Опровергнута** | Ошибочные литералы появились при 84 571/200 000 входных токенов; автокомпактация была настроена на 150 000 и не происходила до этой точки. Было усечение одного 301 244-символьного tool output, но это retrieval-дефект, не переполнение контекстного окна. |
-| H3 | **Подтверждена** | Prompt #349 требовал формат атомарной ссылки, но не требовал перечитывать frontmatter непосредственно перед эмиссией. RUN-0065 хардкодил страницы; RUN-0066 `cite.py` хранит только путь и извлекает `doc_code/pdf_section/title/pages` из frontmatter. |
+| H3 | **Не верифицируема в формулировке; архитектурный фактор подтверждён** | Полные system prompts обоих запусков отсутствуют. Наблюдаемые task prompts [#349](https://github.com/G-Ivan-A/mango_ba_prompts/issues/349) и [#351](https://github.com/G-Ivan-A/mango_ba_prompts/issues/351) оба требуют строгие атомарные ссылки, но ни один не требует reread frontmatter непосредственно перед эмиссией, поэтому prompt-различие не объясняет результат. Наблюдаемая реализация объясняет: RUN-0065 хардкодил страницы, RUN-0066 `cite.py` хранит путь и извлекает `doc_code/pdf_section/title/pages` из frontmatter. |
 | H4 | **Подтверждена** | `validate_issue_349_critical_fix.py` в commit проверял regex `[файл, §, с.]`, ширину таблицы и маркеры, но не открывал linked section и не сравнивал факты. Поэтому `226–231` прошло CI. Новый `validate_pagination_shift.py` делает именно такое разрешение и сравнение. |
 | H5 | **Опровергнута для доступной БЗ; PDF-слой непроверяем** | Git tree `kb/processed` в обоих commits одинаков: `d3bc053cfc5102ff1868167631e4bedaccf3081f`; blob `mango-lk-manual/meta.json` одинаков: `b23eff3ae192e44b7c9e9fc4258a21efa3b49730` (SHA-256 содержимого `179c9f44…5487`). Сам `LK_manual_v-123.pdf` отсутствует в обоих деревьях по policy `.gitignore`, поэтому честно вычислить его SHA-256 нельзя. Доступные артефакты не поддерживают версию о разных БЗ. |
 
@@ -179,8 +213,9 @@ commit выдаёт корректные `414–416`. Финальная гал�
 
 Gate сравнивает linked path с document alias, разделом, заголовком и страницами.
 Он допускает page-less fallback, но не позволяет замаскировать ошибку `n/a`.
-`scripts/validate_issue_353_ab_rca.py` запускает его на RUN-0066 через
-автообнаружение `make validate-full`.
+Без аргументов gate автоматически сканирует все Markdown outputs RUN-0066 и
+новее, содержащие ссылки на `kb/processed`; `scripts/validate_issue_353_ab_rca.py`
+проверяет тот же набор через автообнаружение `make validate-full`.
 
 ## Рекомендация модели
 

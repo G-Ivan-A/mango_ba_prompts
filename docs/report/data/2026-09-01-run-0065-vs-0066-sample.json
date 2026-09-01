@@ -10,8 +10,8 @@
       "accuracy_page_percent": 37.8,
       "hallucination_count": 28,
       "hallucination_rate_percent": 43.1,
-      "atomic_decomposition_count": 4,
-      "decomposition_quality_percent": 6.2
+      "atomic_decomposition_count": 0,
+      "decomposition_quality_percent": 0.0
     },
     "RUN-0066": {
       "rows": 65,
@@ -45,7 +45,83 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
-      "old_decomposition": "атомарно",
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md",
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "citation_jaccard_percent": 50.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "ВАТС поддерживает подключение внешних линий: DID-номера, SIP Trunk, номера сторонних операторов",
+          "status": "Да",
+          "tokens": [
+            "did",
+            "sip",
+            "trunk",
+            "ватс",
+            "внешних",
+            "линий",
+            "номера",
+            "операторов",
+            "поддерживает",
+            "подключение",
+            "сторонних"
+          ]
+        },
+        {
+          "claim": "ограничение по количеству линий в документации не установлено",
+          "status": "Да",
+          "tokens": [
+            "документации",
+            "количеству",
+            "линий",
+            "ограничение",
+            "установлено"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
+      "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
     {
@@ -66,6 +142,94 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md",
+        "kb/processed/mango-lk-manual/sections/307-upravlenie-uslugami.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Оператор располагает собственным пулом номерной ёмкости",
+          "status": "Да",
+          "tokens": [
+            "номерной",
+            "оператор",
+            "пулом",
+            "располагает",
+            "собственным",
+            "ёмкости"
+          ]
+        },
+        {
+          "claim": "номера заказываются и подключаются в ЛК, доступен перебор номеров (карусель)",
+          "status": "Да",
+          "tokens": [
+            "доступен",
+            "заказываются",
+            "карусель",
+            "номера",
+            "номеров",
+            "перебор",
+            "подключаются"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -87,6 +251,81 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/324-vneshniy-sip-trunk.md",
+        "kb/processed/sip-trunk/sections/31-primery-nastroyki-zvonkov-cherez-sip-tru.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Подключение сторонней номерной ёмкости выполняется через внешний SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "внешний",
+            "выполняется",
+            "номерной",
+            "подключение",
+            "сторонней",
+            "через",
+            "ёмкости"
+          ]
+        },
+        {
+          "claim": "описаны сценарии настройки со сторонними АТС и операторами",
+          "status": "Да",
+          "tokens": [
+            "атс",
+            "настройки",
+            "операторами",
+            "описаны",
+            "сторонними",
+            "сценарии"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -109,7 +348,68 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
-      "old_decomposition": "атомарно",
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md",
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "citation_jaccard_percent": 50.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Карусель номеров перебирает исходящие номера из заданного пула, включая номера, подключённые через SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "включая",
+            "заданного",
+            "исходящие",
+            "карусель",
+            "номера",
+            "номеров",
+            "перебирает",
+            "подключённые",
+            "пула",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
+      "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
     {
@@ -122,14 +422,93 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "—",
-      "new_citations": "§4.5.19@414-416",
-      "fact_citations": "§4.5.19@414-416",
+      "new_citations": "§4.5.19@414-416; §4.5.19.7@427-428",
+      "fact_citations": "§4.5.19@414-416; §4.5.19.7@427-428",
       "old_page_ok": false,
       "new_page_ok": true,
       "old_page_eligible": false,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md",
+        "kb/processed/mango-lk-manual/sections/264-prava-dostupa-k-razdelu-karusel-nomerov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Смена исходящего номера при каждом вызове из пула реализована механизмом карусели номеров и снижает риск попадания номера в спам-листы",
+          "status": "Да",
+          "tokens": [
+            "вызове",
+            "исходящего",
+            "каждом",
+            "карусели",
+            "листы",
+            "механизмом",
+            "номера",
+            "номеров",
+            "попадания",
+            "пула",
+            "реализована",
+            "риск",
+            "смена",
+            "снижает",
+            "спам"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -151,6 +530,58 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "citation_jaccard_percent": 100.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Настройки записи разговоров включают стереофоническую запись (раздельные каналы оператора и абонента)",
+          "status": "Да",
+          "tokens": [
+            "абонента",
+            "включают",
+            "записи",
+            "запись",
+            "каналы",
+            "настройки",
+            "оператора",
+            "разговоров",
+            "раздельные",
+            "стереофоническую"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -172,6 +603,84 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md",
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md",
+        "kb/processed/mango-lk-manual/sections/300-oblachnoe-hranilische.md"
+      ],
+      "citation_jaccard_percent": 33.3,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Хранение и доступ к записям обеспечиваются разделом «Записанные разговоры» с настраиваемым сроком хранения и выгрузкой во внешнее хранилище",
+          "status": "Да",
+          "tokens": [
+            "внешнее",
+            "выгрузкой",
+            "доступ",
+            "записанные",
+            "записям",
+            "настраиваемым",
+            "обеспечиваются",
+            "разговоры",
+            "разделом",
+            "сроком",
+            "хранение",
+            "хранения",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Автоматическая очистка дискового пространства на стороне заказчика вне контура облачного сервиса",
+          "status": "Нет",
+          "tokens": [
+            "автоматическая",
+            "вне",
+            "дискового",
+            "заказчика",
+            "контура",
+            "облачного",
+            "очистка",
+            "пространства",
+            "сервиса",
+            "стороне"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -193,6 +702,111 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/77-dobavlenie-kampanii.md",
+        "kb/processed/vpbx-api/sections/192-obnovlenie-kampanii.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает ротацию номеров и несколько одновременных каруселей",
+          "status": "Да",
+          "tokens": [
+            "каруселей",
+            "несколько",
+            "номеров",
+            "одновременных",
+            "подтверждает",
+            "ротацию"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Изменение настроек созданной кампании доступно вручную в интерфейсе и методом обновления кампании в API: режим обзвона, попытки и интервалы, карусель номеров, приоритет, мелодия ожидания, расписание, автоопределитель автоответчиков, поствызывная обработка, коэффициент доп вызовов, отображаемый номер",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "автоопределитель",
+            "автоответчиков",
+            "вручную",
+            "вызовов",
+            "доп",
+            "доступно",
+            "изменение",
+            "интервалы",
+            "интерфейсе",
+            "кампании",
+            "карусель",
+            "коэффициент",
+            "мелодия",
+            "методом",
+            "настроек",
+            "номер",
+            "номеров",
+            "обзвона",
+            "обновления",
+            "обработка",
+            "ожидания",
+            "отображаемый",
+            "попытки",
+            "поствызывная",
+            "приоритет",
+            "расписание",
+            "режим",
+            "созданной"
+          ]
+        },
+        {
+          "claim": "Полнота покрытия всех перечисленных параметров именно через API требует сверки с описанием метода",
+          "status": "Нет",
+          "tokens": [
+            "api",
+            "всех",
+            "именно",
+            "метода",
+            "описанием",
+            "параметров",
+            "перечисленных",
+            "покрытия",
+            "полнота",
+            "сверки",
+            "требует",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -214,6 +828,84 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md",
+        "kb/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Ссылки на записи разговоров передаются во внешние системы",
+          "status": "Да",
+          "tokens": [
+            "внешние",
+            "записи",
+            "передаются",
+            "разговоров",
+            "ссылки"
+          ]
+        },
+        {
+          "claim": "в интеграции со Skillaz ссылки на записи передаются автоматически",
+          "status": "Да",
+          "tokens": [
+            "skillaz",
+            "автоматически",
+            "записи",
+            "интеграции",
+            "передаются",
+            "ссылки"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -235,6 +927,99 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/300-oblachnoe-hranilische.md",
+        "kb/processed/speech-analytics/offline-scoring/sections/32-nastroyki-ftp.md",
+        "kb/processed/speech-analytics/vats-offline-scoring/sections/45-nastroyki-ftp.md",
+        "kb/processed/vpbx-api/sections/62-poluchenie-statistiki-vyzovov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Выгрузка записей во внешнюю среду реализована по FTP (в том числе для загрузки/выгрузки записей речевой аналитики), во внешнее облачное хранилище и через API по ссылке на запись",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "ftp",
+            "аналитики",
+            "внешнее",
+            "внешнюю",
+            "выгрузка",
+            "выгрузки",
+            "загрузки",
+            "записей",
+            "запись",
+            "облачное",
+            "реализована",
+            "речевой",
+            "среду",
+            "ссылке",
+            "том",
+            "хранилище",
+            "через",
+            "числе"
+          ]
+        },
+        {
+          "claim": "Протокол SFTP в документации явно не заявлен",
+          "status": "Нет",
+          "tokens": [
+            "sftp",
+            "документации",
+            "заявлен",
+            "протокол",
+            "явно"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -256,6 +1041,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/111-sotrudniki-i-gruppy.md",
+        "kb/processed/mango-lk-manual/sections/282-prosmotr-spiska-roley.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Роль назначается сотруднику при создании учётной записи и изменяется при её редактировании",
+          "status": "Да",
+          "tokens": [
+            "записи",
+            "изменяется",
+            "назначается",
+            "редактировании",
+            "роль",
+            "создании",
+            "сотруднику",
+            "учётной"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -277,6 +1113,47 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+        "kb/processed/mango-lk-manual/sections/279-nastroyka.md",
+        "kb/processed/mango-lk-manual/sections/292-sso-single-sign-on.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [],
+      "reference_claims": [
+        {
+          "claim": "Настраиваются логин/пароль, политика сложности и срока действия пароля, а также корпоративная авторизация через SSO (внешний IdP)",
+          "status": "Да",
+          "tokens": [
+            "idp",
+            "sso",
+            "авторизация",
+            "внешний",
+            "действия",
+            "корпоративная",
+            "логин",
+            "настраиваются",
+            "пароль",
+            "пароля",
+            "политика",
+            "сложности",
+            "срока",
+            "также",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -298,6 +1175,54 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/09-kartochka-robota.md",
+        "kb/processed/cov-robot-fil/sections/11-nastroyki-robota.md",
+        "kb/processed/cov-robot-fil/sections/18-konstruktor-skriptov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [],
+      "reference_claims": [
+        {
+          "claim": "Роботизированный обзвон включается и отключается в карточке робота",
+          "status": "Да",
+          "tokens": [
+            "включается",
+            "карточке",
+            "обзвон",
+            "отключается",
+            "робота",
+            "роботизированный"
+          ]
+        },
+        {
+          "claim": "сценарии диалогов создаются в конструкторе скриптов",
+          "status": "Да",
+          "tokens": [
+            "диалогов",
+            "конструкторе",
+            "скриптов",
+            "создаются",
+            "сценарии"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -311,15 +1236,62 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "§4.5.19@414-416",
-      "new_citations": "§4.5.19@414-416",
-      "fact_citations": "§4.5.19@414-416",
+      "new_citations": "§4.5.19@414-416; §4.5.19.7@427-428",
+      "fact_citations": "§4.5.19@414-416; §4.5.19.7@427-428",
       "old_page_ok": true,
       "new_page_ok": true,
       "old_page_eligible": true,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
-      "old_decomposition": "атомарно",
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md",
+        "kb/processed/mango-lk-manual/sections/264-prava-dostupa-k-razdelu-karusel-nomerov.md"
+      ],
+      "citation_jaccard_percent": 50.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает ротацию номеров и несколько одновременных каруселей",
+          "status": "Да",
+          "tokens": [
+            "каруселей",
+            "несколько",
+            "номеров",
+            "одновременных",
+            "подтверждает",
+            "ротацию"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Карусель номеров настраивается и может использоваться в нескольких кампаниях",
+          "status": "Да",
+          "tokens": [
+            "использоваться",
+            "кампаниях",
+            "карусель",
+            "может",
+            "настраивается",
+            "нескольких",
+            "номеров"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
+      "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
     {
@@ -340,6 +1312,58 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/97-otchety-rechevoy-analitiki.md",
+        "kb/processed/speech-analytics/kats/sections/12-analiz-po-chek-listam.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Оценка работы оператора средствами анализа речи в записях разговоров реализована",
+          "status": "Да",
+          "tokens": [
+            "анализа",
+            "записях",
+            "оператора",
+            "оценка",
+            "работы",
+            "разговоров",
+            "реализована",
+            "речи",
+            "средствами"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -361,6 +1385,56 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/105-nastroyki-rechevoy-analitiki.md",
+        "kb/processed/speech-analytics/kats/sections/61-raspoznavanie-razgovorov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Речевая аналитика анализирует записи разговоров на русском языке",
+          "status": "Да",
+          "tokens": [
+            "анализирует",
+            "аналитика",
+            "записи",
+            "разговоров",
+            "речевая",
+            "русском",
+            "языке"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -382,6 +1456,83 @@
       "new_page_eligible": false,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Численный порог точности распознавания (не менее 85%) в документации не зафиксирован",
+          "status": "Нет",
+          "tokens": [
+            "документации",
+            "зафиксирован",
+            "менее",
+            "порог",
+            "распознавания",
+            "точности",
+            "численный"
+          ]
+        },
+        {
+          "claim": "Нет данных — требуется подтверждение поставщика речевого движка",
+          "status": "Нет",
+          "tokens": [
+            "данных",
+            "движка",
+            "подтверждение",
+            "поставщика",
+            "речевого",
+            "требуется"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -403,6 +1554,74 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/speech-analytics/kats/sections/61-raspoznavanie-razgovorov.md",
+        "kb/processed/speech-analytics/user-guide/sections/07-nastroyki-raspoznavaniya-zapisey.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Приём моноканальных записей с распознаванием и разделением на каналы сотрудника и клиента (диаризация) поддерживается настройками распознавания",
+          "status": "Да",
+          "tokens": [
+            "диаризация",
+            "записей",
+            "каналы",
+            "клиента",
+            "моноканальных",
+            "настройками",
+            "поддерживается",
+            "приём",
+            "разделением",
+            "распознаванием",
+            "распознавания",
+            "сотрудника"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -424,6 +1643,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md",
+        "kb/processed/speech-analytics/kats/sections/32-zapisannye-razgovory.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Навигация по записи звонка доступна во встроенном плеере записанных разговоров",
+          "status": "Да",
+          "tokens": [
+            "встроенном",
+            "доступна",
+            "записанных",
+            "записи",
+            "звонка",
+            "навигация",
+            "плеере",
+            "разговоров"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -445,6 +1715,67 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/speech-analytics/kats/sections/32-zapisannye-razgovory.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Прослушивание записи выполняется одновременно с просмотром транскрибации",
+          "status": "Да",
+          "tokens": [
+            "выполняется",
+            "записи",
+            "одновременно",
+            "прослушивание",
+            "просмотром",
+            "транскрибации"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -466,6 +1797,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/speech-analytics/kats/sections/32-zapisannye-razgovory.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Расшифровка отображается в виде диалога (чата) с синхронной подсветкой произносимого фрагмента",
+          "status": "Да",
+          "tokens": [
+            "виде",
+            "диалога",
+            "отображается",
+            "подсветкой",
+            "произносимого",
+            "расшифровка",
+            "синхронной",
+            "фрагмента",
+            "чата"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -487,6 +1869,62 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/speech-analytics/offline-scoring/sections/32-nastroyki-ftp.md",
+        "kb/processed/speech-analytics/user-guide/sections/61-integraciya-rechevoy-analitiki-so-storon.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Загрузка аудиофайлов сторонних записей и их обработка сервисом анализа речи поддержаны, включая работу со сторонними ВАТС",
+          "status": "Да",
+          "tokens": [
+            "анализа",
+            "аудиофайлов",
+            "ватс",
+            "включая",
+            "загрузка",
+            "записей",
+            "обработка",
+            "поддержаны",
+            "работу",
+            "речи",
+            "сервисом",
+            "сторонними",
+            "сторонних"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -508,6 +1946,79 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/quality-management/sections/41-ii-konspekty.md",
+        "kb/processed/speech-analytics/kats/sections/62-ii-konspekty.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Автоматическое формирование конспектов диалогов реализовано (ИИ Конспекты) и выполняется на стороне сервиса, то есть не зависит от открытого окна",
+          "status": "Да",
+          "tokens": [
+            "автоматическое",
+            "выполняется",
+            "диалогов",
+            "есть",
+            "зависит",
+            "конспектов",
+            "конспекты",
+            "окна",
+            "открытого",
+            "реализовано",
+            "сервиса",
+            "стороне",
+            "формирование"
+          ]
+        },
+        {
+          "claim": "Ограничение по длительности записи до 2 часов в документации не зафиксировано",
+          "status": "Нет",
+          "tokens": [
+            "длительности",
+            "документации",
+            "записи",
+            "зафиксировано",
+            "ограничение",
+            "часов"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -529,6 +2040,76 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md",
+        "kb/processed/speech-analytics/kats/sections/32-zapisannye-razgovory.md"
+      ],
+      "citation_jaccard_percent": 50.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Записи удаляются вручную и автоматически по настроенному сроку хранения",
+          "status": "Да",
+          "tokens": [
+            "автоматически",
+            "вручную",
+            "записи",
+            "настроенному",
+            "сроку",
+            "удаляются",
+            "хранения"
+          ]
+        },
+        {
+          "claim": "Сохранение текстовой расшифровки после удаления аудио в документации явно не описано",
+          "status": "Нет",
+          "tokens": [
+            "аудио",
+            "документации",
+            "описано",
+            "после",
+            "расшифровки",
+            "сохранение",
+            "текстовой",
+            "удаления",
+            "явно"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -550,6 +2131,61 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/103-tegirovanie-razgovorov-v-rechevoy-analit.md",
+        "kb/processed/mango-cc-manual/sections/109-ii-pomoschniki.md",
+        "kb/processed/quality-management/sections/42-ii-tegirovanie.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "ИИ-тегирование оценивает и размечает разговоры с учётом контекста диалога, дополняя поиск по ключевым словам",
+          "status": "Да",
+          "tokens": [
+            "диалога",
+            "дополняя",
+            "ключевым",
+            "контекста",
+            "оценивает",
+            "поиск",
+            "разговоры",
+            "размечает",
+            "словам",
+            "тегирование",
+            "учётом"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -571,6 +2207,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/13-analitika-po-golosovym-robotam.md",
+        "kb/processed/mango-lk-manual/sections/135-zapisannye-razgovory.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Работа голосового робота анализируется по записям звонков и аналитике по роботам",
+          "status": "Да",
+          "tokens": [
+            "анализируется",
+            "аналитике",
+            "голосового",
+            "записям",
+            "звонков",
+            "работа",
+            "робота",
+            "роботам"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -584,14 +2271,96 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "§4@69-70",
-      "new_citations": "§4@39-41; §4.5.11.2.2@319-324; §4.5.11.2.2@309-315; §4.5.11.2.2@324; §1.2@7-8",
-      "fact_citations": "§4@39-41; §4.5.11.2.2@319-324; §4.5.11.2.2@309-315; §4.5.11.2.2@324; §1.2@7-8",
+      "new_citations": "§4@39-41; §4.5.11.2.2@319-324; §4.5.11.2.2@309-315; §4.5.11.2.2@324; §4.5.11.2.4@345-346; §1.2@7-8",
+      "fact_citations": "§4@39-41; §4.5.11.2.2@319-324; §4.5.11.2.2@309-315; §4.5.11.2.2@324; §4.5.11.2.4@345-346; §1.2@7-8",
       "old_page_ok": true,
       "new_page_ok": true,
       "old_page_eligible": true,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/70-prilozhenie-lichnyy-kabinet.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/14-chat-boty.md",
+        "kb/processed/mango-lk-manual/sections/190-vkontakte.md",
+        "kb/processed/mango-lk-manual/sections/192-telegram.md",
+        "kb/processed/mango-lk-manual/sections/193-max.md",
+        "kb/processed/mango-lk-manual/sections/212-chat-bot-dlya-grupp-kanalov-tekstovye-ko.md",
+        "kb/processed/mdialogi-api/sections/04-podderzhivaemye-kanaly-kommunikacii.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает ссылки на приложения в Google Play и App Store",
+          "status": "Да",
+          "tokens": [
+            "app",
+            "google",
+            "play",
+            "store",
+            "подтверждает",
+            "приложения",
+            "ссылки"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Чат-боты подключаются к группе каналов «Текстовые коммуникации» и работают во всех подключённых каналах: Telegram, ВКонтакте, WhatsApp, Max, чат на сайте, Авито, а также во внешних приложениях через API Манго Диалогов",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "max",
+            "telegram",
+            "whatsapp",
+            "авито",
+            "боты",
+            "вконтакте",
+            "внешних",
+            "всех",
+            "группе",
+            "диалогов",
+            "каналах",
+            "каналов",
+            "коммуникации",
+            "манго",
+            "подключаются",
+            "подключённых",
+            "приложениях",
+            "работают",
+            "сайте",
+            "также",
+            "текстовые",
+            "чат",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -613,7 +2382,64 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
-      "old_decomposition": "атомарно",
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/10-skripty-dlya-robotov.md",
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "citation_jaccard_percent": 50.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Голосовые коммуникации робота работают через ВАТС по SIP и ТфОП",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "ватс",
+            "голосовые",
+            "коммуникации",
+            "работают",
+            "робота",
+            "тфоп",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
+      "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
     {
@@ -634,6 +2460,76 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/10-skripty-dlya-robotov.md",
+        "kb/processed/cov-robot-fil/sections/18-konstruktor-skriptov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Тип скрипта (входящий или исходящий) выбирается при создании скрипта",
+          "status": "Да",
+          "tokens": [
+            "входящий",
+            "выбирается",
+            "исходящий",
+            "скрипта",
+            "создании",
+            "тип"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -655,6 +2551,94 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/18-konstruktor-skriptov.md",
+        "kb/processed/cov-robot-fil/sections/44-blok-ai-assistent-dlya-golosovyh-robotov.md",
+        "kb/processed/cov-robot-fil/sections/64-yandexgpt.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Скрипт настраивается визуальным конструктором блок-схем",
+          "status": "Да",
+          "tokens": [
+            "блок",
+            "визуальным",
+            "конструктором",
+            "настраивается",
+            "скрипт",
+            "схем"
+          ]
+        },
+        {
+          "claim": "альтернативно задаётся промпт для генеративной модели в AI-блоках",
+          "status": "Да",
+          "tokens": [
+            "альтернативно",
+            "блоках",
+            "генеративной",
+            "задаётся",
+            "модели",
+            "промпт"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -676,6 +2660,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/19-blok-fraza-robota.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Фраза робота озвучивается синтезом речи либо заранее загруженной аудиозаписью",
+          "status": "Да",
+          "tokens": [
+            "аудиозаписью",
+            "загруженной",
+            "заранее",
+            "либо",
+            "озвучивается",
+            "речи",
+            "робота",
+            "синтезом",
+            "фраза"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -697,6 +2732,64 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/27-blok-perevesti-zvonok.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Блок перевода звонка направляет вызов на внутренние и внешние номера по SIP и ТфОП",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "блок",
+            "внешние",
+            "внутренние",
+            "вызов",
+            "звонка",
+            "направляет",
+            "номера",
+            "перевода",
+            "тфоп"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -718,6 +2811,73 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/18-konstruktor-skriptov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Блоки скрипта переименовываются в конструкторе",
+          "status": "Да",
+          "tokens": [
+            "блоки",
+            "конструкторе",
+            "переименовываются",
+            "скрипта"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -739,6 +2899,78 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/cov-robot-fil/sections/10-skripty-dlya-robotov.md",
+        "kb/processed/cov-robot-fil/sections/18-konstruktor-skriptov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Скрипт робота проверяется тестовым звонком из карточки скрипта до публикации",
+          "status": "Да",
+          "tokens": [
+            "звонком",
+            "карточки",
+            "проверяется",
+            "публикации",
+            "робота",
+            "скрипт",
+            "скрипта",
+            "тестовым"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -760,6 +2992,117 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/70-prilozhenie-lichnyy-kabinet.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/22-kontrol-obrascheniy.md",
+        "kb/processed/mango-lk-manual/sections/181-moi-gruppy-kanalov.md",
+        "kb/processed/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md",
+        "kb/processed/mango-lk-manual/sections/190-vkontakte.md",
+        "kb/processed/mango-lk-manual/sections/192-telegram.md",
+        "kb/processed/mango-lk-manual/sections/193-max.md",
+        "kb/processed/mdialogi-api/sections/04-podderzhivaemye-kanaly-kommunikacii.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает ссылки на приложения в Google Play и App Store",
+          "status": "Да",
+          "tokens": [
+            "app",
+            "google",
+            "play",
+            "store",
+            "подтверждает",
+            "приложения",
+            "ссылки"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Группа каналов «Текстовые коммуникации» объединяет Telegram, Max, ВКонтакте, WhatsApp, чат на сайте, Авито и внешние приложения по API Манго Диалогов",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "max",
+            "telegram",
+            "whatsapp",
+            "авито",
+            "вконтакте",
+            "внешние",
+            "группа",
+            "диалогов",
+            "каналов",
+            "коммуникации",
+            "манго",
+            "объединяет",
+            "приложения",
+            "сайте",
+            "текстовые",
+            "чат"
+          ]
+        },
+        {
+          "claim": "обработка ведётся в едином окне обращений Контакт-центра",
+          "status": "Да",
+          "tokens": [
+            "ведётся",
+            "едином",
+            "контакт",
+            "обработка",
+            "обращений",
+            "окне",
+            "центра"
+          ]
+        },
+        {
+          "claim": "СМС и e-mail подключаются как отдельные каналы взаимодействия",
+          "status": "Да",
+          "tokens": [
+            "mail",
+            "взаимодействия",
+            "каналы",
+            "отдельные",
+            "подключаются",
+            "смс"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 2,
+          "candidate_index": 2,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -781,6 +3124,73 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/70-prilozhenie-lichnyy-kabinet.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md",
+        "kb/processed/mango-lk-manual/sections/302-otpravka-sms.md",
+        "kb/processed/mdialogi-api/sections/04-podderzhivaemye-kanaly-kommunikacii.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает ссылки на приложения в Google Play и App Store",
+          "status": "Да",
+          "tokens": [
+            "app",
+            "google",
+            "play",
+            "store",
+            "подтверждает",
+            "приложения",
+            "ссылки"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Отправка сообщений поддерживается во всех подключённых каналах группы, в СМС и через API Манго Диалогов",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "всех",
+            "группы",
+            "диалогов",
+            "каналах",
+            "манго",
+            "отправка",
+            "поддерживается",
+            "подключённых",
+            "смс",
+            "сообщений",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -802,6 +3212,82 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/188-lidogeneraciya.md",
+        "kb/processed/mango-lk-manual/sections/192-telegram.md",
+        "kb/processed/mango-lk-manual/sections/80-vidzhety-dlya-sayta.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Канал Telegram работает совместно с коллтрекингом и виджетами: события обращения связываются с рекламным источником",
+          "status": "Да",
+          "tokens": [
+            "telegram",
+            "виджетами",
+            "источником",
+            "канал",
+            "коллтрекингом",
+            "обращения",
+            "работает",
+            "рекламным",
+            "связываются",
+            "события",
+            "совместно"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -823,6 +3309,96 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/189-chat-na-sayte.md",
+        "kb/processed/mango-lk-manual/sections/192-telegram.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Редактирование сообщений оператора поддерживается в чате на сайте и Telegram",
+          "status": "Да",
+          "tokens": [
+            "telegram",
+            "оператора",
+            "поддерживается",
+            "редактирование",
+            "сайте",
+            "сообщений",
+            "чате"
+          ]
+        },
+        {
+          "claim": "настраиваемое время, в течение которого разрешено редактирование, в документации не описано",
+          "status": "Нет",
+          "tokens": [
+            "время",
+            "документации",
+            "которого",
+            "настраиваемое",
+            "описано",
+            "разрешено",
+            "редактирование",
+            "течение"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -836,14 +3412,88 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "—",
-      "new_citations": "§4.5.11.2.2@297-309; §4.2.3.1@79-80",
-      "fact_citations": "§4.5.11.2.2@297-309; §4.2.3.1@79-80",
+      "new_citations": "§4.2.3.4@97; §4.5.11.2.2@297-309; §4.2.3.1@79-80",
+      "fact_citations": "§4.2.3.4@97; §4.5.11.2.2@297-309; §4.2.3.1@79-80",
       "old_page_ok": false,
       "new_page_ok": true,
       "old_page_eligible": false,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/189-chat-na-sayte.md",
+        "kb/processed/mango-lk-manual/sections/81-dobavlenie-vidzheta.md",
+        "kb/processed/mango-lk-manual/sections/97-nastroyka-vidzheta-tekstovye-kommunikaci.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Настройки виджета чата на сайте включают стилевую тему, фон и заголовки",
+          "status": "Да",
+          "tokens": [
+            "виджета",
+            "включают",
+            "заголовки",
+            "настройки",
+            "сайте",
+            "стилевую",
+            "тему",
+            "фон",
+            "чата"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -865,6 +3515,81 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/23-avtomaticheskoe-raspredelenie-obrascheni.md",
+        "kb/processed/mango-lk-manual/sections/189-chat-na-sayte.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Чат на сайте поддерживает предварительные вопросы и маршрутизацию на разные группы операторов по заданным правилам",
+          "status": "Да",
+          "tokens": [
+            "вопросы",
+            "группы",
+            "заданным",
+            "маршрутизацию",
+            "операторов",
+            "поддерживает",
+            "правилам",
+            "предварительные",
+            "разные",
+            "сайте",
+            "чат"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -886,6 +3611,86 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/177-adresnaya-kniga-kontragentov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/190-vkontakte.md",
+        "kb/processed/mango-lk-manual/sections/192-telegram.md",
+        "kb/processed/mango-lk-manual/sections/193-max.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает адресную книгу и операции с контактами",
+          "status": "Да",
+          "tokens": [
+            "адресную",
+            "книгу",
+            "контактами",
+            "операции",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Приём контактных данных абонента (имя, ник) из мессенджеров поддерживается",
+          "status": "Да",
+          "tokens": [
+            "абонента",
+            "данных",
+            "имя",
+            "контактных",
+            "мессенджеров",
+            "ник",
+            "поддерживается",
+            "приём"
+          ]
+        },
+        {
+          "claim": "приём геопозиции с формированием ссылки на Яндекс Карты в документации ЛК не описан",
+          "status": "Нет",
+          "tokens": [
+            "геопозиции",
+            "документации",
+            "карты",
+            "описан",
+            "приём",
+            "ссылки",
+            "формированием",
+            "яндекс"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -899,14 +3704,88 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "—",
-      "new_citations": "§4.5.11.2.2@297-309; §4.2.3.1@79-80",
-      "fact_citations": "§4.5.11.2.2@297-309; §4.2.3.1@79-80",
+      "new_citations": "§4.5.11.2.2@297-309; §4.2.3.4@97; §4.2.3.1@79-80",
+      "fact_citations": "§4.5.11.2.2@297-309; §4.2.3.4@97; §4.2.3.1@79-80",
       "old_page_ok": false,
       "new_page_ok": true,
       "old_page_eligible": false,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/189-chat-na-sayte.md",
+        "kb/processed/mango-lk-manual/sections/81-dobavlenie-vidzheta.md",
+        "kb/processed/mango-lk-manual/sections/97-nastroyka-vidzheta-tekstovye-kommunikaci.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Чат на сайте подключается готовым кодом виджета, выдаваемым в Личном кабинете",
+          "status": "Да",
+          "tokens": [
+            "виджета",
+            "выдаваемым",
+            "готовым",
+            "кабинете",
+            "кодом",
+            "личном",
+            "подключается",
+            "сайте",
+            "чат"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -920,14 +3799,88 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "—",
-      "new_citations": "§4.5.11.2.2@289-293; §4.2.3.1@79-80",
-      "fact_citations": "§4.5.11.2.2@289-293; §4.2.3.1@79-80",
+      "new_citations": "§4.5.11.2.2@289-293; §4.2.3.3@87; §4.2.3.1@79-80",
+      "fact_citations": "§4.5.11.2.2@289-293; §4.2.3.3@87; §4.2.3.1@79-80",
       "old_page_ok": false,
       "new_page_ok": true,
       "old_page_eligible": false,
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/187-obratnyy-zvonok.md",
+        "kb/processed/mango-lk-manual/sections/81-dobavlenie-vidzheta.md",
+        "kb/processed/mango-lk-manual/sections/89-nastroyka-vidzheta-obratnyy-zvonok.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Форма обратного звонка подключается готовым кодом виджета из Личного кабинета",
+          "status": "Да",
+          "tokens": [
+            "виджета",
+            "готовым",
+            "звонка",
+            "кабинета",
+            "кодом",
+            "личного",
+            "обратного",
+            "подключается",
+            "форма"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -949,6 +3902,72 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/177-adresnaya-kniga-kontragentov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/188-lidogeneraciya.md",
+        "kb/processed/mango-lk-manual/sections/81-dobavlenie-vidzheta.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает адресную книгу и операции с контактами",
+          "status": "Да",
+          "tokens": [
+            "адресную",
+            "книгу",
+            "контактами",
+            "операции",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Форма лидогенерации настраивается по событиям показа (уход с сайта, прокрутка страницы, время на сайте) и подключается кодом виджета",
+          "status": "Да",
+          "tokens": [
+            "виджета",
+            "время",
+            "кодом",
+            "лидогенерации",
+            "настраивается",
+            "подключается",
+            "показа",
+            "прокрутка",
+            "сайта",
+            "сайте",
+            "событиям",
+            "страницы",
+            "уход",
+            "форма"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -970,6 +3989,77 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/177-adresnaya-kniga-kontragentov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/68-kontakty-adresnaya-kniga.md",
+        "kb/processed/mango-cc-manual/sections/95-gruppa-otchetov-obsluzhivanie.md",
+        "kb/processed/mango-lk-manual/sections/210-avito-rabota.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает адресную книгу и операции с контактами",
+          "status": "Да",
+          "tokens": [
+            "адресную",
+            "книгу",
+            "контактами",
+            "операции",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Интеграция с «Авито Работа» подключается как канал: данные соискателей и вакансий попадают в карточку контакта, переписка ведётся в едином окне, обращения учитываются в отчётах",
+          "status": "Да",
+          "tokens": [
+            "авито",
+            "вакансий",
+            "ведётся",
+            "данные",
+            "едином",
+            "интеграция",
+            "канал",
+            "карточку",
+            "контакта",
+            "обращения",
+            "окне",
+            "отчётах",
+            "переписка",
+            "подключается",
+            "попадают",
+            "работа",
+            "соискателей",
+            "учитываются"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -991,6 +4081,53 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mtalker/windows-mac-working/sections/108-zapis-razgovora.md",
+        "kb/processed/mtalker/windows-mac-working/sections/67-zapis-razgovora-obschie-svedeniya.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Запись разговора включается из приложения",
+          "status": "Да",
+          "tokens": [
+            "включается",
+            "запись",
+            "приложения",
+            "разговора"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1004,14 +4141,63 @@
       "new_verdict": "Да",
       "fact_verdict": "Да",
       "old_citations": "§4.5.3.4@226-231",
-      "new_citations": "§10@100",
-      "fact_citations": "§10@100",
+      "new_citations": "§—@52; §10@100",
+      "fact_citations": "§—@52; §10@100",
       "old_page_ok": false,
       "new_page_ok": true,
       "old_page_eligible": true,
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mtalker/android-user-guide/sections/71-proslushat-zapis-razgovora.md",
+        "kb/processed/mtalker/windows-mac-working/sections/102-istoriya-vyzovov.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Записи разговоров прослушиваются из истории вызовов приложения",
+          "status": "Да",
+          "tokens": [
+            "вызовов",
+            "записи",
+            "истории",
+            "приложения",
+            "прослушиваются",
+            "разговоров"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1033,6 +4219,94 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/252-karusel-nomerov.md",
+        "kb/processed/mtalker/windows-mac-working/sections/57-kak-pozvonit.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Номер для исходящего вызова выбирается из номерной ёмкости ВАТС",
+          "status": "Да",
+          "tokens": [
+            "ватс",
+            "выбирается",
+            "вызова",
+            "исходящего",
+            "номер",
+            "номерной",
+            "ёмкости"
+          ]
+        },
+        {
+          "claim": "региональная привязка номера и комментарий отображаются при выборе",
+          "status": "Да",
+          "tokens": [
+            "выборе",
+            "комментарий",
+            "номера",
+            "отображаются",
+            "привязка",
+            "региональная"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1054,6 +4328,66 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/272-uchetnye-zapisi-sip.md",
+        "kb/processed/mtalker/windows-mac-working/sections/02-obzor.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Приложение работает с SIP-учётной записью ВАТС и служит цифровым интерфейсом к линии сотрудника",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "ватс",
+            "записью",
+            "интерфейсом",
+            "линии",
+            "приложение",
+            "работает",
+            "служит",
+            "сотрудника",
+            "учётной",
+            "цифровым"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1075,6 +4409,70 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/177-adresnaya-kniga-kontragentov.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-cc-manual/sections/22-kontrol-obrascheniy.md",
+        "kb/processed/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md",
+        "kb/processed/mtalker/windows-mac-working/sections/02-obzor.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает адресную книгу и операции с контактами",
+          "status": "Да",
+          "tokens": [
+            "адресную",
+            "книгу",
+            "контактами",
+            "операции",
+            "подтверждает"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Внешние текстовые каналы обрабатываются в едином интерфейсе рабочего места",
+          "status": "Да",
+          "tokens": [
+            "внешние",
+            "едином",
+            "интерфейсе",
+            "каналы",
+            "места",
+            "обрабатываются",
+            "рабочего",
+            "текстовые"
+          ]
+        },
+        {
+          "claim": "состав каналов задаётся группой каналов ВАТС",
+          "status": "Да",
+          "tokens": [
+            "ватс",
+            "группой",
+            "задаётся",
+            "каналов",
+            "состав"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1096,6 +4494,57 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mtalker/windows-mac-working/sections/74-rasshifrovka-i-konspektirovanie-zapisey.md",
+        "kb/processed/mtalker/windows-mac-working/sections/75-o-roli-administratora-videokonferencii.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Запись встречи ведётся администратором конференции, доступны расшифровка и конспект",
+          "status": "Да",
+          "tokens": [
+            "администратором",
+            "ведётся",
+            "встречи",
+            "доступны",
+            "запись",
+            "конспект",
+            "конференции",
+            "расшифровка"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1117,6 +4566,87 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md",
+        "kb/processed/mtalker/windows-mac-working/sections/16-vhod-po-loginu-i-parolyu.md",
+        "kb/processed/mtalker/windows-mac-working/sections/18-vhod-pri-pomoschi-korotkogo-koda-bez-par.md"
+      ],
+      "citation_jaccard_percent": 33.3,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает двухфакторную аутентификацию",
+          "status": "Да",
+          "tokens": [
+            "аутентификацию",
+            "двухфакторную",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "способ и охват сверяются с формулировкой строки",
+          "status": "Да",
+          "tokens": [
+            "охват",
+            "сверяются",
+            "способ",
+            "строки",
+            "формулировкой"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Вход в приложение возможен по короткому одноразовому коду и по данным ВАТС",
+          "status": "Да",
+          "tokens": [
+            "ватс",
+            "возможен",
+            "вход",
+            "данным",
+            "коду",
+            "короткому",
+            "одноразовому",
+            "приложение"
+          ]
+        },
+        {
+          "claim": "двухфакторная аутентификация как обязательный второй фактор описана для Личного кабинета (Безопасность PRO), для приложения отдельно не документирована",
+          "status": "Нет",
+          "tokens": [
+            "pro",
+            "аутентификация",
+            "безопасность",
+            "второй",
+            "двухфакторная",
+            "документирована",
+            "кабинета",
+            "личного",
+            "обязательный",
+            "описана",
+            "отдельно",
+            "приложения",
+            "фактор"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1138,6 +4668,54 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mtalker/windows-mac-working/sections/122-kak-smenit-ili-udalit-avatar.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Аватар учётной записи меняется и удаляется пользователем",
+          "status": "Да",
+          "tokens": [
+            "аватар",
+            "записи",
+            "меняется",
+            "пользователем",
+            "удаляется",
+            "учётной"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1159,6 +4737,77 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/279-nastroyka.md",
+        "kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Двухфакторная аутентификация настраивается с получением кода по e-mail или SMS",
+          "status": "Да",
+          "tokens": [
+            "mail",
+            "sms",
+            "аутентификация",
+            "двухфакторная",
+            "кода",
+            "настраивается",
+            "получением"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1180,6 +4829,84 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/lk-vats-sso/sections/03-obschie-svedeniya.md",
+        "kb/processed/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md",
+        "kb/processed/mango-lk-manual/sections/292-sso-single-sign-on.md",
+        "kb/processed/mango-lk-manual/sections/313-podklyuchenie-po-ldap.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Корпоративная авторизация реализуется через SSO с настройкой внешнего поставщика идентификации (IdP) и подключение по LDAP",
+          "status": "Да",
+          "tokens": [
+            "idp",
+            "ldap",
+            "sso",
+            "авторизация",
+            "внешнего",
+            "идентификации",
+            "корпоративная",
+            "настройкой",
+            "подключение",
+            "поставщика",
+            "реализуется",
+            "через"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1201,6 +4928,58 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/281-nastroyka-dostupa.md",
+        "kb/processed/mango-lk-manual/sections/283-sozdanie-roli.md",
+        "kb/processed/rolevaya-model-vats/sections/02-standartnye-roli.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Каждому сотруднику соответствует индивидуальная учётная запись с назначенной ролью",
+          "status": "Да",
+          "tokens": [
+            "запись",
+            "индивидуальная",
+            "каждому",
+            "назначенной",
+            "ролью",
+            "соответствует",
+            "сотруднику",
+            "учётная"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1222,6 +5001,59 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/03-vosstanovlenie-parolya.md",
+        "kb/processed/mango-lk-manual/sections/281-nastroyka-dostupa.md",
+        "kb/processed/mtalker/windows-mac-working/sections/16-vhod-po-loginu-i-parolyu.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Доступ к функциям предоставляется только после успешной аутентификации учётной записи",
+          "status": "Да",
+          "tokens": [
+            "аутентификации",
+            "доступ",
+            "записи",
+            "после",
+            "предоставляется",
+            "только",
+            "успешной",
+            "учётной",
+            "функциям"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1243,6 +5075,62 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/278-bezopasnost-i-ogranicheniya.md",
+        "kb/processed/mango-lk-manual/sections/280-zhurnal-deystviy.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Журнал действий фиксирует действия пользователей в Личном кабинете, включая вход, администрирование сотрудников и изменение настроек",
+          "status": "Да",
+          "tokens": [
+            "администрирование",
+            "включая",
+            "вход",
+            "действий",
+            "действия",
+            "журнал",
+            "изменение",
+            "кабинете",
+            "личном",
+            "настроек",
+            "пользователей",
+            "сотрудников",
+            "фиксирует"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1264,6 +5152,80 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/287-nastroyka-prav-dostupa-roli.md",
+        "kb/processed/rolevaya-model-vats/sections/11-nastroyka-prav-dostupa-roli.md",
+        "kb/processed/rolevaya-model-vats/sections/13-matrica-roley-i-prav-dostupa.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Права роли настраиваются детально по объектам и операциям (просмотр, изменение, управление)",
+          "status": "Да",
+          "tokens": [
+            "детально",
+            "изменение",
+            "настраиваются",
+            "объектам",
+            "операциям",
+            "права",
+            "просмотр",
+            "роли",
+            "управление"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1285,6 +5247,63 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/280-zhurnal-deystviy.md",
+        "kb/processed/mango-lk-manual/sections/282-prosmotr-spiska-roley.md",
+        "kb/processed/mango-lk-manual/sections/287-nastroyka-prav-dostupa-roli.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Отдельная роль позволяет предоставить сотруднику ИБ Заказчика просмотр учётных записей и их полномочий, а также отзыв полномочий централизованно",
+          "status": "Да",
+          "tokens": [
+            "заказчика",
+            "записей",
+            "отдельная",
+            "отзыв",
+            "позволяет",
+            "полномочий",
+            "предоставить",
+            "просмотр",
+            "роль",
+            "сотруднику",
+            "также",
+            "учётных",
+            "централизованно"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1306,6 +5325,81 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md",
+        "kb/processed/mdialogi-api/sections/16-razreshennye-ip-adresa.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Ограничение доступа по IP-адресам настраивается в пакете Безопасность PRO, а для API — списком разрешённых IP-адресов",
+          "status": "Да",
+          "tokens": [
+            "api",
+            "pro",
+            "адресам",
+            "адресов",
+            "безопасность",
+            "доступа",
+            "настраивается",
+            "ограничение",
+            "пакете",
+            "разрешённых",
+            "списком"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1327,6 +5421,83 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/291-bezopasnost-pro.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "Полная БЗ проверена, но однозначного подтверждения составного или договорного требования нет",
+          "status": "Нет",
+          "tokens": [
+            "договорного",
+            "однозначного",
+            "подтверждения",
+            "полная",
+            "проверена",
+            "составного",
+            "требования"
+          ]
+        },
+        {
+          "claim": "требуется владелец продукта, договор/SLA либо нагрузочное испытание",
+          "status": "Нет",
+          "tokens": [
+            "sla",
+            "владелец",
+            "договор",
+            "испытание",
+            "либо",
+            "нагрузочное",
+            "продукта",
+            "требуется"
+          ]
+        },
+        {
+          "claim": "До подтверждения обязательство считается требующим доработки",
+          "status": "Нет",
+          "tokens": [
+            "доработки",
+            "обязательство",
+            "подтверждения",
+            "считается",
+            "требующим"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Политика паролей настраивается: длина, запрещённые символы, срок действия, минимальный срок действия, журнал ранее использованных паролей и запрет популярных паролей",
+          "status": "Да",
+          "tokens": [
+            "действия",
+            "длина",
+            "журнал",
+            "запрет",
+            "запрещённые",
+            "использованных",
+            "минимальный",
+            "настраивается",
+            "паролей",
+            "политика",
+            "популярных",
+            "ранее",
+            "символы",
+            "срок"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1348,6 +5519,78 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/280-zhurnal-deystviy.md",
+        "kb/processed/mango-lk-manual/sections/287-nastroyka-prav-dostupa-roli.md",
+        "kb/processed/rolevaya-model-vats/sections/53-bezopasnost-i-ogranicheniya.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Доступ к журналу действий разграничивается ролевой моделью",
+          "status": "Да",
+          "tokens": [
+            "действий",
+            "доступ",
+            "журналу",
+            "моделью",
+            "разграничивается",
+            "ролевой"
+          ]
+        },
+        {
+          "claim": "журнал доступен только на просмотр и выгрузку, функции удаления или изменения записей в интерфейсе не предусмотрены",
+          "status": "Да",
+          "tokens": [
+            "выгрузку",
+            "доступен",
+            "журнал",
+            "записей",
+            "изменения",
+            "интерфейсе",
+            "предусмотрены",
+            "просмотр",
+            "только",
+            "удаления",
+            "функции"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        },
+        {
+          "reference_index": 1,
+          "candidate_index": 1,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1369,6 +5612,72 @@
       "new_page_eligible": true,
       "old_hallucinated": false,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/320-sip-trunk.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/274-bezopasnost.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает SIP Trunk",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "trunk",
+            "подтверждает"
+          ]
+        },
+        {
+          "claim": "количественные и операторские параметры следует сверить с договором",
+          "status": "Да",
+          "tokens": [
+            "договором",
+            "количественные",
+            "операторские",
+            "параметры",
+            "сверить",
+            "следует"
+          ]
+        },
+        {
+          "claim": "Подтвержденная атомарная часть отделена от неподтвержденных ограничений строки",
+          "status": "Да",
+          "tokens": [
+            "атомарная",
+            "неподтвержденных",
+            "ограничений",
+            "отделена",
+            "подтвержденная",
+            "строки",
+            "часть"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Шифрование SIP-сигнализации по TLS поддерживается",
+          "status": "Да",
+          "tokens": [
+            "sip",
+            "tls",
+            "поддерживается",
+            "сигнализации",
+            "шифрование"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     },
@@ -1390,6 +5699,60 @@
       "new_page_eligible": true,
       "old_hallucinated": true,
       "new_hallucinated": false,
+      "old_resolved_atoms": [
+        "kb/processed/mango-lk-manual/sections/138-nastroyki.md"
+      ],
+      "reference_atoms": [
+        "kb/processed/mango-lk-manual/sections/300-oblachnoe-hranilische.md",
+        "kb/processed/speech-analytics/offline-scoring/sections/32-nastroyki-ftp.md",
+        "kb/processed/speech-analytics/vats-offline-scoring/sections/45-nastroyki-ftp.md"
+      ],
+      "citation_jaccard_percent": 0.0,
+      "old_emitted_claims": [
+        {
+          "claim": "БЗ подтверждает многоканальную стереозапись, запись ВКС и внешнее FTP/SFTP-хранилище",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "sftp",
+            "вкс",
+            "внешнее",
+            "запись",
+            "многоканальную",
+            "подтверждает",
+            "стереозапись",
+            "хранилище"
+          ]
+        }
+      ],
+      "reference_claims": [
+        {
+          "claim": "Выгрузка и хранение записей разговоров на внешнем FTP-сервере настраивается штатными настройками FTP",
+          "status": "Да",
+          "tokens": [
+            "ftp",
+            "внешнем",
+            "выгрузка",
+            "записей",
+            "настраивается",
+            "настройками",
+            "разговоров",
+            "сервере",
+            "хранение",
+            "штатными"
+          ]
+        }
+      ],
+      "old_claim_matches": [],
+      "new_claim_matches": [
+        {
+          "reference_index": 0,
+          "candidate_index": 0,
+          "similarity": 100.0
+        }
+      ],
+      "old_claim_match_percent": 0.0,
+      "new_claim_match_percent": 100.0,
       "old_decomposition": "грубо",
       "new_decomposition": "атомарно"
     }
