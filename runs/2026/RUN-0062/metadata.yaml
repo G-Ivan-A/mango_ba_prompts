@@ -1,7 +1,7 @@
 run_id: RUN-0062
 process: feasibility-assessment-tender-appendices-5-7
-version: "0.1"
-date: 2026-08-31
+version: "0.2"
+date: 2026-09-01
 author: "AI issue solver"
 model: "gpt-5.6-sol"
 status: draft
@@ -20,9 +20,10 @@ feedback:
 metrics:
   source_workbooks: 3
   source_rows: 87
-  eval: "Все 87 строк формы Приложений № 5–7 (включая заголовки разделов) перенесены непосредственно из XLS в шестиколоночный L0; неподтверждённые возможности явно помечены «Нет данных»."
+  eval: "Все 87 строк перенесены из XLS в шестиколоночный L0; оценка повторена по полной БЗ, а каждый «Нет данных» содержит БЗ→web audit trail."
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/339
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/349
 related_runs:
   - RUN-0057
 related_artifacts:
