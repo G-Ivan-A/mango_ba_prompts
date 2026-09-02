@@ -13,6 +13,17 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #353: A/B-RCA пагинации RUN-0065 и RUN-0066
+
+- Добавлен воспроизводимый построчный A/B-анализ 65 требований с метриками
+  точности вердиктов, пагинации, галлюцинаций и качества декомпозиции.
+- Зафиксирован обезличенный raw trace RUN-0065 с provenance и детерминированными
+  скриптами анализа, redaction и replay генератора commit `acb6c7bc`.
+- Введён контракт атомарных ссылок на БЗ и общий post-processing gate, который
+  сверяет документ, раздел, заголовок и страницы с frontmatter linked section во
+  всех RUN-0066+; issue-specific validator закрепляет исторический input,
+  reviewed claim/status-разметку, метрики и checksum evidence в CI.
+
 ### Added — Issue #351: RUN-0066, повторный прогон ТЗ task-1099 альтернативной LLM
 
 - Добавлен прогон `runs/2026/RUN-0066/` — переоценка ТЗ task-1099 моделью
