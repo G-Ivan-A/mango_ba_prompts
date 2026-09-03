@@ -4,7 +4,8 @@ version: "0.1"
 date: 2026-08-31
 author: "AI issue solver"
 model: "gpt-5.6-sol"
-status: draft
+status: invalid
+superseded_by: RUN-0067
 run_type: execution
 source_paths:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/343
