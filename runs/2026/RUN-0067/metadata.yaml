@@ -1,0 +1,41 @@
+run_id: RUN-0067
+process: feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit)
+version: "0.2"
+date: 2026-09-03
+author: "AI issue solver (Claude Code)"
+model: "claude-opus-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/355
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/functional-requirements-bcreq-1074.md
+logs:
+  - logs/audit-traceability-and-gates.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  audit_findings_applied: 9
+  functional_requirements: 2
+  removed_current_functionality_requirements: 5
+  acceptance_criteria: 14
+  open_questions: 9
+  eval: "ФТ переработаны по аудиту прогона RUN-0063: из документа удалены пять требований, описывавших текущую функциональность ЛК, дельта сведена к детализированной выгрузке (8 полей) и обработке пустого результата, аналитические комментарии вынесены в раздел вопросов. RUN-0063 помечен невалидным."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/355
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/343
+related_runs:
+  - RUN-0063
+  - RUN-0064
+related_artifacts:
+  - runs/2026/RUN-0063/outputs/functional-requirements-bcreq-1074.md
+  - runs/2026/RUN-0064/reports/error-analysis.md
+  - docs/contracts/kb-citations.md
+  - standards/runs-contract-standard.md
+  - kb/processed/mango-lk-manual/sections/34-rashody-na-svyaz.md
+  - kb/processed/mango-lk-manual/sections/28-dokumenty.md
+  - kb/processed/mango-lk-manual/sections/29-prosmotret-zagruzit-buhgalterskie-dokume.md
+  - kb/processed/rolevaya-model-vats/sections/61-razdel-finansy-i-balans-licevogo-scheta.md

@@ -25,7 +25,10 @@ CITATION = re.compile(
 
 
 def normalize(value: str) -> str:
-    return re.sub(r"\s+", "", value.replace("–", "-").replace("—", "-")).strip()
+    # Экранирование кавычки — деталь записи YAML-скаляра, а не часть заголовка:
+    # цитата принимается и как «параметр "sign"», и как «параметр \"sign\"».
+    value = value.replace("–", "-").replace("—", "-").replace('\\"', '"')
+    return re.sub(r"\s+", "", value).strip()
 
 
 def frontmatter(path: Path) -> dict[str, str]:
@@ -41,7 +44,12 @@ def frontmatter(path: Path) -> dict[str, str]:
         key, _, value = line.partition(":")
         value = value.strip()
         if len(value) > 1 and value[0] == value[-1] and value[0] in "\"'":
+            quote = value[0]
             value = value[1:-1]
+            # YAML-экранированная кавычка внутри скаляра ("Раздел \"Финансы\"")
+            # разворачивается, иначе цитата не может совпасть с заголовком.
+            if quote == '"':
+                value = value.replace('\\"', '"')
         data[key.strip()] = value
     return data
 
@@ -99,7 +107,7 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
             errors.append(f"{target}: section {cited_section!r}, frontmatter {actual_section!r}")
 
         cited_title = match.group("title")
-        if cited_title is not None and cited_title.strip() != meta.get("title", ""):
+        if cited_title is not None and normalize(cited_title) != normalize(meta.get("title", "")):
             errors.append(f"{target}: title {cited_title.strip()!r}, frontmatter {meta.get('title', '')!r}")
 
         cited_pages = match.group("pages")
