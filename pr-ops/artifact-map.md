@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.7
-updated: 2026-08-22
+version: 0.8
+updated: 2026-09-03
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -58,6 +58,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
 | `/docs/taxonomy.md` | стандарт / модель | Таксономия когнитивных операций и процессов БА. | Да | `patterns/`, `prompts/` |
 | `/docs/ba-processes/00-index.md` | индекс | Маппинг процесс ↔ операция ↔ паттерн ↔ промпт. | Да | `patterns/`, `prompts/README.md` |
+| `/docs/analysis/2026-09-03-hub-backlog-sprint-validation.md` | анализ | Протокол сплошной валидации активных спринтов бэклога Хаба (issue #357): фактическое состояние задач, доказательства абсолютными ссылками, дельта правок для `pr-ops/backlog.md` Хаба. | По необходимости | `docs/hub-research-dependencies.md`, `CHANGELOG.md` |
 | `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `ai-governance/ai-governance.md` |
 | `/patterns/` | каталог | Паттерны БА как reusable способы решения классов задач. | Да | `standards/pattern-standard.md`, `docs/taxonomy.md` |
 | `/prompts/` | каталог | Активные prompt assets для бизнес-аналитиков Mango. | Да | `prompts/README.md`, `standards/prompt-standard.md` |
