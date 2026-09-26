@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+from kb.runtime_snapshot import processed_root
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "runs/2026/RUN-0066/outputs/L0-feasibility-assessment-1099-2.md"
@@ -94,6 +95,8 @@ def main() -> int:
         except ValueError:
             errors.append("ссылка ведёт за пределы репозитория: %s" % href)
             continue
+        if not target.exists() and str(rel).startswith("kb/processed/"):
+            target = processed_root() / rel.relative_to("kb/processed")
         if not target.exists():
             errors.append("ссылка на несуществующий раздел: %s" % rel)
             continue

@@ -21,10 +21,11 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
+from kb.runtime_snapshot import processed_root
 
 ROOT = Path(__file__).resolve().parents[1]
 
-PROCESSED_ROOT = ROOT / "kb" / "processed"
+PROCESSED_ROOT = processed_root()
 LK_DOC = "kb/processed/mango-lk-manual"
 LK_SOURCES = ["kb/sources/mango-lk-manual/LK_manual_v-123.pdf"]
 LK_PAGE_COUNTS = [565]
@@ -116,7 +117,7 @@ def page_start(pages: str) -> int | None:
 
 def check_doc_traceability(doc_dir: Path) -> list[str]:
     errors: list[str] = []
-    rel_doc = str(doc_dir.relative_to(ROOT))
+    rel_doc = "kb/processed/" + str(doc_dir.relative_to(PROCESSED_ROOT))
     meta = load_json(doc_dir / "meta.json", errors)
     if not meta:
         return errors
@@ -155,17 +156,17 @@ def check_doc_traceability(doc_dir: Path) -> list[str]:
         fm = parse_frontmatter(text)
         for key in REQUIRED_FM_KEYS:
             if key not in fm:
-                errors.append(f"{section_path.relative_to(ROOT)}: frontmatter missing {key!r}")
-        parse_source_refs(fm.get("source_refs"), str(section_path.relative_to(ROOT)), errors)
+                errors.append(f"{rel_doc}/{section_path.name}: frontmatter missing {key!r}")
+        parse_source_refs(fm.get("source_refs"), str(section_path), errors)
         if "> Трассировка:" not in text:
-            errors.append(f"{section_path.relative_to(ROOT)}: missing human trace line")
+            errors.append(f"{rel_doc}/{section_path.name}: missing human trace line")
 
     return errors
 
 
 def check_lk_manual() -> list[str]:
     errors: list[str] = []
-    doc_dir = ROOT / LK_DOC
+    doc_dir = PROCESSED_ROOT / Path(LK_DOC).relative_to("kb/processed")
     if not doc_dir.exists():
         return [f"{LK_DOC}: missing processed multi-part LK manual"]
 

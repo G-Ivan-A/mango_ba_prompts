@@ -34,6 +34,7 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
+from kb.runtime_snapshot import processed_root
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -55,11 +56,13 @@ MAKEFILE = "Makefile"
 
 
 def read_text(path: str) -> str:
-    return (ROOT / path).read_text(encoding="utf-8")
+    location = processed_root() / Path(path).relative_to("kb/processed") if path.startswith("kb/processed/") else ROOT / path
+    return location.read_text(encoding="utf-8")
 
 
 def require_path(path: str) -> list[str]:
-    return [] if (ROOT / path).exists() else [f"{path}: missing"]
+    location = processed_root() / Path(path).relative_to("kb/processed") if path.startswith("kb/processed/") else ROOT / path
+    return [] if location.exists() else [f"{path}: missing"]
 
 
 def require_text(text: str, path: str, *needles: str) -> list[str]:
@@ -67,7 +70,7 @@ def require_text(text: str, path: str, *needles: str) -> list[str]:
 
 
 def load_meta(errors: list[str]) -> dict:
-    meta_path = ROOT / PROCESSED / "meta.json"
+    meta_path = processed_root() / Path(PROCESSED).relative_to("kb/processed") / "meta.json"
     if not meta_path.exists():
         errors.append(f"{PROCESSED}/meta.json: missing")
         return {}
@@ -103,8 +106,8 @@ def check_processed_mango() -> list[str]:
     if errors:
         return errors
 
-    sections_dir = ROOT / PROCESSED / "sections"
-    images_dir = ROOT / PROCESSED / "images"
+    sections_dir = processed_root() / Path(PROCESSED).relative_to("kb/processed") / "sections"
+    images_dir = processed_root() / Path(PROCESSED).relative_to("kb/processed") / "images"
     section_files = sorted(sections_dir.glob("*.md"))
     image_files = sorted(p for p in images_dir.iterdir() if p.is_file())
 

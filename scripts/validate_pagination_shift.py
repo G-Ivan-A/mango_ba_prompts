@@ -14,6 +14,7 @@ import argparse
 import re
 from pathlib import Path
 from urllib.parse import unquote
+from kb.runtime_snapshot import processed_root
 
 
 LINK = re.compile(r"\[([^\[\]]+)\]\(([^()\s]+)\)")
@@ -78,6 +79,8 @@ def validate_report(report: Path, root: Path) -> tuple[int, list[str]]:
             continue
         if "sections" not in target.parts:
             continue
+        if not target.exists() and root.resolve() == Path(__file__).resolve().parents[1]:
+            target = processed_root() / target.relative_to(processed)
         checked += 1
         match = CITATION.match(label.strip())
         if not match:

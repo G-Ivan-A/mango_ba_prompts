@@ -31,6 +31,7 @@ Run: ``python3 scripts/validate_issue_111_kb_pipeline.py`` (exit 0 = PASS).
 import json
 import re
 from pathlib import Path
+from kb.runtime_snapshot import processed_root
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -140,7 +141,7 @@ def _section_files(doc_dir: Path) -> list:
 def check_extracted_doc(doc_rel: str) -> list:
     """Internal consistency of one kb/processed/<doc>/ artifact."""
     errors = []
-    doc_dir = ROOT / doc_rel
+    doc_dir = processed_root() / Path(doc_rel).relative_to("kb/processed")
     index_path = doc_dir / "index.md"
     meta_path = doc_dir / "meta.json"
     if not index_path.exists():
@@ -243,11 +244,11 @@ def check_processed() -> list:
     document, and every extracted document is consistent".
     """
     errors: list = []
-    processed = ROOT / "kb" / "processed"
+    processed = processed_root()
     found_any = False
     for doc_dir in iter_processed_doc_dirs(processed):
         found_any = True
-        errors += check_extracted_doc(str(doc_dir.relative_to(ROOT)))
+        errors += check_extracted_doc("kb/processed/" + str(doc_dir.relative_to(processed)))
     if not found_any:
         errors.append("kb/processed/: no extracted document with meta.json found")
     return errors
