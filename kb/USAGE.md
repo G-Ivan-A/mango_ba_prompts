@@ -15,6 +15,12 @@ related_issues:
 
 # Как промпт/агент обращается к БЗ — конкретные примеры (ФТ-6)
 
+Актуальные файлы извлечённой БЗ находятся в
+[`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+Ниже сохранены исходные пути `kb/processed/` и примеры, чтобы исторические
+цитаты оставались проверяемыми. Заменяйте префикс на `docs/kb/` в runtime;
+точный commit указан в [`processed/README.md`](processed/README.md).
+
 Здесь — **реальные сниппеты с реальными данными** из извлечённой БЗ
 [`kb/processed/mango-cc-manual/`](processed/mango-cc-manual/index.md)
 (руководство пользователя КЦ v1.26.23, 614 страниц, 232 раздела; не абстракции).

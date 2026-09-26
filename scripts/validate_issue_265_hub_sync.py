@@ -31,6 +31,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from sync_from_hub import MANIFEST  # noqa: E402  (локальный модуль рядом)
+from kb.runtime_snapshot import processed_root
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SKIP_DIRS = {".git", "node_modules", "site/data"}
@@ -123,6 +124,11 @@ def check_links() -> list[str]:
                     )
                     continue
                 if not _exists(resolved):
+                    migrated = os.path.join(root, "kb", "processed")
+                    if resolved.startswith(migrated + os.sep):
+                        suffix = os.path.relpath(resolved, migrated)
+                        if _exists(os.path.join(str(processed_root()), suffix)):
+                            continue
                     errors.append(f"{rel_file}:{lineno}: битая ссылка `{target}`")
     print(f"[A/C] проверено относительных ссылок: {checked}")
     return errors

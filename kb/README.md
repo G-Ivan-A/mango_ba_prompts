@@ -14,6 +14,11 @@ related_issues:
 
 # База знаний (KB) — индекс-карта
 
+Извлечённая БЗ перемещена в
+[`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+Прежние адреса `kb/processed/` сохранены ниже как исторические указатели;
+каталог [`processed/`](processed/README.md) содержит точный commit переноса.
+
 > Регулируется [kb-standard.md](../standards/kb-standard.md) /
 > [ADR-007](../docs/adr/007-kb-standard.md). KB хранит **практики, примеры и
 > справочники, не являющиеся стандартами** (см. границы в ADR-007 §4). Термины —

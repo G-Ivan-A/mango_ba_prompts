@@ -30,6 +30,7 @@ import json
 import re
 import subprocess
 from pathlib import Path
+from kb.runtime_snapshot import processed_root
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -70,7 +71,8 @@ STALE_MENTION_ALLOWED = {
 
 
 def read_text(path: str) -> str:
-    return (ROOT / path).read_text(encoding="utf-8")
+    location = processed_root() / Path(path).relative_to("kb/processed") if path.startswith("kb/processed/") and path != "kb/processed/README.md" else ROOT / path
+    return location.read_text(encoding="utf-8")
 
 
 def parse_frontmatter(text: str) -> dict:
@@ -113,7 +115,7 @@ def check_stale_removed() -> list:
 def check_documents() -> list:
     errors = []
     for doc, pdf_name in DOCS.items():
-        doc_dir = ROOT / doc
+        doc_dir = processed_root() / Path(doc).relative_to("kb/processed")
         for name in ("index.md", "meta.json", "verification.md"):
             if not (doc_dir / name).exists():
                 errors.append(f"{doc}/{name}: missing (issue #310 deliverable)")
@@ -158,8 +160,8 @@ def check_markers_traceable() -> list:
     errors = []
     page_ref = re.compile(r"стр\.\s*\d")
     for doc in DOCS:
-        for path in sorted((ROOT / doc).rglob("*.md")):
-            rel = str(path.relative_to(ROOT))
+        for path in sorted((processed_root() / Path(doc).relative_to("kb/processed")).rglob("*.md")):
+            rel = str(path)
             for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
                 if not MARKER_RE.search(line):
                     continue

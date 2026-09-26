@@ -16,9 +16,12 @@ import subprocess
 from dataclasses import dataclass
 from pathlib import Path
 from urllib.parse import unquote
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "scripts"))
+from kb.runtime_snapshot import processed_root  # noqa: E402
 OLD_COMMIT = "acb6c7bc"
 OLD_PATH = "runs/2026/RUN-0065/outputs/L0-customer-form-with-assessment.md"
 OLD_SNAPSHOT = ROOT / "docs/report/data/2026-09-01-run-0065-acb6c7bc.fixture"
@@ -95,10 +98,14 @@ def citations(cell: str, report_dir: Path) -> list[Citation]:
             continue
         target = (report_dir / unquote(href)).resolve()
         try:
-            target.relative_to((ROOT / "kb/processed").resolve())
+            relative = target.relative_to((ROOT / "kb/processed").resolve())
         except ValueError:
             continue
-        if "sections" not in target.parts or not target.is_file():
+        if "sections" not in target.parts:
+            continue
+        if not target.is_file():
+            target = processed_root() / relative
+        if not target.is_file():
             continue
         meta = frontmatter(target)
         fact_section = meta.get("pdf_section", "") or meta.get("section", "")
@@ -112,7 +119,7 @@ def citations(cell: str, report_dir: Path) -> list[Citation]:
                 pages,
                 fact_section,
                 fact_pages,
-                str(target.relative_to(ROOT)),
+                "kb/processed/" + str(relative),
                 page_delta(pages, fact_pages),
             )
         )

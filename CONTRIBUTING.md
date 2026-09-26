@@ -103,6 +103,11 @@ make validate-full   # перед пушем: весь набор без кэш�
 
 ## KB PDF (в репозитории не хранятся)
 
+Опубликованная извлечённая БЗ находится в
+[`mango-ba-ai-runtime/docs/kb`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb).
+Упоминания `kb/processed/` ниже описывают прежний процесс извлечения;
+см. [`kb/processed/README.md`](kb/processed/README.md) для commit переноса.
+
 PDF-источники БЗ **не коммитятся**: они лежат локально в `kb/sources/<slug>/` и
 исключены `.gitignore` (`kb/sources/**/*.pdf`). Git LFS для них не используется
 (issue #310) — в репозиторий попадает только результат извлечения
