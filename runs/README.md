@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-22
+version: 0.6
+updated: 2026-09-28
 ai-generated: true
 type: registry
 scope: runs
@@ -186,6 +186,7 @@ runs/
 | [`RUN-0065`](2026/RUN-0065/metadata.yaml) | 2026-09-01 | `execution` | feasibility-assessment-telephony-requirements-task-1099 (six-column corrective rewrite) | [`outputs/README.md`](2026/RUN-0065/outputs/README.md), [`outputs/L0-customer-form-with-assessment.md`](2026/RUN-0065/outputs/L0-customer-form-with-assessment.md), [`logs/technical-audit.md`](2026/RUN-0065/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0065/feedback/review-notes.md) |
 | [`RUN-0066`](2026/RUN-0066/metadata.yaml) | 2026-09-01 | `execution` | feasibility-assessment-telephony-requirements-task-1099 (rerun by claude-opus-5, A/B vs RUN-0065) | [`outputs/README.md`](2026/RUN-0066/outputs/README.md), [`outputs/L0-feasibility-assessment-1099-2.md`](2026/RUN-0066/outputs/L0-feasibility-assessment-1099-2.md), [`logs/technical-audit.md`](2026/RUN-0066/logs/technical-audit.md), [`logs/ab-comparison.md`](2026/RUN-0066/logs/ab-comparison.md), [`feedback/review-notes.md`](2026/RUN-0066/feedback/review-notes.md) |
 | [`RUN-0067`](2026/RUN-0067/metadata.yaml) | 2026-09-03 | `execution` | feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit) | [`outputs/README.md`](2026/RUN-0067/outputs/README.md), [`outputs/functional-requirements-bcreq-1074.md`](2026/RUN-0067/outputs/functional-requirements-bcreq-1074.md), [`logs/audit-traceability-and-gates.md`](2026/RUN-0067/logs/audit-traceability-and-gates.md), [`feedback/review-notes.md`](2026/RUN-0067/feedback/review-notes.md) |
+| [`RUN-0068`](2026/RUN-0068/metadata.yaml) | 2026-09-28 | `execution` | feasibility-assessment-tender-bcreq-1114-pstn-mobile-access | [`outputs/README.md`](2026/RUN-0068/outputs/README.md), [`outputs/L0-feasibility-assessment-1114.md`](2026/RUN-0068/outputs/L0-feasibility-assessment-1114.md), [`logs/experiment-log.md`](2026/RUN-0068/logs/experiment-log.md), [`feedback/review-notes.md`](2026/RUN-0068/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
