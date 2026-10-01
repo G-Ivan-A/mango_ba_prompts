@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.7
-updated: 2026-09-28
+version: 0.8
+updated: 2026-10-01
 ai-generated: true
 type: registry
 scope: runs
@@ -188,6 +188,7 @@ runs/
 | [`RUN-0067`](2026/RUN-0067/metadata.yaml) | 2026-09-03 | `execution` | feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit) | [`outputs/README.md`](2026/RUN-0067/outputs/README.md), [`outputs/functional-requirements-bcreq-1074.md`](2026/RUN-0067/outputs/functional-requirements-bcreq-1074.md), [`logs/audit-traceability-and-gates.md`](2026/RUN-0067/logs/audit-traceability-and-gates.md), [`feedback/review-notes.md`](2026/RUN-0067/feedback/review-notes.md) |
 | [`RUN-0068`](2026/RUN-0068/metadata.yaml) | 2026-09-28 | `execution` | feasibility-assessment-tender-bcreq-1114-pstn-mobile-access | [`outputs/README.md`](2026/RUN-0068/outputs/README.md), [`outputs/L0-feasibility-assessment-1114.md`](2026/RUN-0068/outputs/L0-feasibility-assessment-1114.md), [`logs/experiment-log.md`](2026/RUN-0068/logs/experiment-log.md), [`feedback/review-notes.md`](2026/RUN-0068/feedback/review-notes.md) |
 | [`RUN-0069`](2026/RUN-0069/metadata.yaml) | 2026-09-28 | `execution` | feasibility-assessment-tz-bcreq-1114v2-speech-analytics-ai | [`outputs/README.md`](2026/RUN-0069/outputs/README.md), [`outputs/L0-feasibility-assessment-1114-2.md`](2026/RUN-0069/outputs/L0-feasibility-assessment-1114-2.md), [`logs/experiment-log.md`](2026/RUN-0069/logs/experiment-log.md), [`feedback/review-notes.md`](2026/RUN-0069/feedback/review-notes.md) |
+| [`RUN-0070`](2026/RUN-0070/metadata.yaml) | 2026-10-01 | `execution` | feasibility-assessment-tz-bcreq-1115-vats-robot-chatbot | [`outputs/README.md`](2026/RUN-0070/outputs/README.md), [`outputs/L0-feasibility-assessment-1115.md`](2026/RUN-0070/outputs/L0-feasibility-assessment-1115.md), [`logs/experiment-log.md`](2026/RUN-0070/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0070/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0070/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
