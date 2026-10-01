@@ -169,6 +169,10 @@ def main() -> int:
             errors.append("строка %d (№%s): в колонке 5 нет технического аудита" % (offset, num))
         if cells[5]:
             errors.append("строка %d (№%s): колонка 6 (комментарий БА) должна быть пустой" % (offset, num))
+        if verdict == "Нет" and "Нет данных" in cells[3] and not cells[4].startswith("Нет данных"):
+            errors.append("строка %d (№%s): «Нет данных» в обосновании, но не в колонке 5" % (offset, num))
+        if not verdict and not cells[4].lower().startswith("вне функционального контура"):
+            errors.append("строка %d (№%s): пустая оценка без «вне функционального контура»" % (offset, num))
         if cells[4].startswith("Нет данных") and verdict != "Нет":
             errors.append("строка %d (№%s): «Нет данных» при оценке %r" % (offset, num, verdict))
         if cells[4].lower().startswith("вне функционального контура") and verdict:

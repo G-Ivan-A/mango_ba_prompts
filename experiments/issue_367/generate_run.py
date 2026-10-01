@@ -145,12 +145,11 @@ def cells(entry: dict) -> tuple[str, str, str]:
         marker = f"[{i}]"
         assert why.count(marker) == 1, (marker, why)
         why = why.replace(marker, f"{marker} {link(ref)}")
-    if quotes:
-        quote = " ".join(f"[{i}] «{q}»" for i, q in enumerate(quotes, start=1))
-    elif verdict == "":
-        quote = OUT[0].upper() + OUT[1:] + "."
-    else:
-        quote = NO_DATA + "."
+    quote = " ".join(f"[{i}] «{q}»" for i, q in enumerate(quotes, start=1))
+    if verdict == "":
+        quote = " ".join(filter(None, [OUT[0].upper() + OUT[1:] + ".", quote]))
+    elif verdict == "Нет" and (NO_DATA in why or not quotes):
+        quote = " ".join(filter(None, [NO_DATA + ".", quote]))
     audit = entry["audit"].strip()
     audit = OK if audit == "OK" else audit
     return esc(why), esc(f"{quote}<br>Аудит: {audit}"), verdict
