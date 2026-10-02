@@ -1,0 +1,57 @@
+run_id: RUN-0070
+process: feasibility-assessment-tz-bcreq-1115-vats-robot-chatbot
+version: "1.0"
+date: 2026-10-01
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/367
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/91406e430aeb70dabf20548eee0ea95127f42690/docs/kb
+  - https://github.com/user-attachments/files/32929383/-.-v4.pdf
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1115.md
+logs:
+  - logs/experiment-log.md
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_paragraphs: 201
+  source_rows: 172
+  assessed_requirements: 172
+  verdicts_yes: 128
+  verdicts_partial: 8
+  verdicts_no: 1
+  verdicts_empty: 35
+  atomic_citations: 370
+  kb_citations: 275
+  template_v4_citations: 95  # 93 п/п + 2 ссылки на разд. «2. Общие требования…» (с.5)
+  quote_mismatches: 0
+  template_v4_matches_over_90: 1
+  template_v4_max_similarity: 0.933
+  eval: "L0-оценка ТЗ BCREQ-1115 (DOCX: ВАТС, голосовой робот, чат-бот, речевая аналитика). Колонки 1–2 сверяются с транскрипцией исходника check_source.py и валидатором; § и страницы ссылок БЗ берутся из frontmatter runtime-БЗ, п/п и страницы шаблона v4 — из tender_index.json; цитаты проверены verify_quotes.py. Совпадение >90% с шаблоном v4 — одна строка (п/п 6.7, Dice 0,933)."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/367
+related_runs:
+  - RUN-0069
+related_artifacts:
+  - experiments/issue_367/source_transcription.json
+  - experiments/issue_367/make_transcription.py
+  - experiments/issue_367/check_source.py
+  - experiments/issue_367/tender_index.py
+  - experiments/issue_367/tender_index.json
+  - experiments/issue_367/tender_similarity.py
+  - experiments/issue_367/tender_similarity.json
+  - experiments/issue_367/research/BRIEF.md
+  - experiments/issue_367/research/A_robot.json
+  - experiments/issue_367/research/B_chatbot.json
+  - experiments/issue_367/research/C_sa.json
+  - experiments/issue_367/research/D_vats.json
+  - experiments/issue_367/generate_run.py
+  - experiments/issue_367/verify_quotes.py
+  - scripts/validate_issue_367_run.py
