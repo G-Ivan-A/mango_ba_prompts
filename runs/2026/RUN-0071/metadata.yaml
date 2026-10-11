@@ -1,0 +1,62 @@
+run_id: RUN-0071
+process: feasibility-assessment-tz-bcreq-1116-contact-center
+version: "1.0"
+date: 2026-10-11
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/369
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/91406e430aeb70dabf20548eee0ea95127f42690/docs/kb
+  - https://github.com/user-attachments/files/33303264/-.-v4.pdf
+  - https://github.com/user-attachments/files/33303294/default.doc
+  - https://github.com/user-attachments/files/33303295/4.xlsx
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1116.md
+logs:
+  - logs/experiment-log.md
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_documents: 2
+  source_rows_doc: 125
+  source_rows_xlsx: 74
+  assessed_requirements: 199
+  verdicts_yes: 99
+  verdicts_partial: 18
+  verdicts_no: 18
+  verdicts_empty: 64
+  atomic_citations: 341
+  kb_citations: 217
+  template_v4_citations: 124  # 117 п/п + 7 ссылок на разд. «2. Общие требования…» (с.5)
+  portal_citations: 0
+  quote_mismatches: 0
+  template_v4_matches_over_90: 0
+  template_v4_max_similarity: 0.667
+  eval: "L0-оценка ТЗ BCREQ-1116 (контакт-центр аптечной сети): два исходника — «ТЕХНИЧЕСКОЕ ЗАДАНИЕ.doc» (125 строк) и «Требования к ПО КЦ (4).xlsx» (74 строки) — в одном отчёте двумя блоками с явным разделителем. Колонки 1–2 сверяются с исходниками check_source.py (поток WordDocument и XML листа, без конвертации) и валидатором; § и страницы ссылок БЗ — из frontmatter runtime-БЗ, п/п и страницы шаблона v4 — из tender_index.json RUN-0070 (тот же PDF); цитаты проверены verify_quotes.py. Совпадений >90% с шаблоном v4 нет (максимум Dice 0,667)."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/369
+related_runs:
+  - RUN-0070
+related_artifacts:
+  - experiments/issue_369/doc_text.py
+  - experiments/issue_369/make_transcription.py
+  - experiments/issue_369/check_source.py
+  - experiments/issue_369/source_transcription.json
+  - experiments/issue_369/tender_similarity.py
+  - experiments/issue_369/tender_similarity.json
+  - experiments/issue_369/research/BRIEF.md
+  - experiments/issue_369/research/A_doc_func.json
+  - experiments/issue_369/research/B_doc_integr.json
+  - experiments/issue_369/research/C_doc_sla.json
+  - experiments/issue_369/research/D_xlsx_1.json
+  - experiments/issue_369/research/E_xlsx_2.json
+  - experiments/issue_369/generate_run.py
+  - experiments/issue_369/verify_quotes.py
+  - experiments/issue_367/tender_index.json
+  - scripts/validate_issue_369_run.py
