@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.9
-updated: 2026-10-11
+version: 1.0
+updated: 2026-10-12
 ai-generated: true
 type: registry
 scope: runs
@@ -190,6 +190,7 @@ runs/
 | [`RUN-0069`](2026/RUN-0069/metadata.yaml) | 2026-09-28 | `execution` | feasibility-assessment-tz-bcreq-1114v2-speech-analytics-ai | [`outputs/README.md`](2026/RUN-0069/outputs/README.md), [`outputs/L0-feasibility-assessment-1114-2.md`](2026/RUN-0069/outputs/L0-feasibility-assessment-1114-2.md), [`logs/experiment-log.md`](2026/RUN-0069/logs/experiment-log.md), [`feedback/review-notes.md`](2026/RUN-0069/feedback/review-notes.md) |
 | [`RUN-0070`](2026/RUN-0070/metadata.yaml) | 2026-10-01 | `execution` | feasibility-assessment-tz-bcreq-1115-vats-robot-chatbot | [`outputs/README.md`](2026/RUN-0070/outputs/README.md), [`outputs/L0-feasibility-assessment-1115.md`](2026/RUN-0070/outputs/L0-feasibility-assessment-1115.md), [`logs/experiment-log.md`](2026/RUN-0070/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0070/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0070/feedback/review-notes.md) |
 | [`RUN-0071`](2026/RUN-0071/metadata.yaml) | 2026-10-11 | `execution` | feasibility-assessment-tz-bcreq-1116-contact-center | [`outputs/README.md`](2026/RUN-0071/outputs/README.md), [`outputs/L0-feasibility-assessment-1116.md`](2026/RUN-0071/outputs/L0-feasibility-assessment-1116.md), [`logs/experiment-log.md`](2026/RUN-0071/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0071/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0071/feedback/review-notes.md) |
+| [`RUN-0072`](2026/RUN-0072/metadata.yaml) | 2026-10-12 | `execution` | feasibility-assessment-tz-bcreq-1116-task-1117-telephony | [`outputs/README.md`](2026/RUN-0072/outputs/README.md), [`outputs/L0-feasibility-assessment-1117.md`](2026/RUN-0072/outputs/L0-feasibility-assessment-1117.md), [`logs/experiment-log.md`](2026/RUN-0072/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0072/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0072/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
