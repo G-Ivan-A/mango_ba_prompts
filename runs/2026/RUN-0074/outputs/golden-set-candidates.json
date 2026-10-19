@@ -1,0 +1,1444 @@
+{
+  "golden_set": "run-0074-bcreq-fr-sections",
+  "version": "0.1",
+  "status": "draft",
+  "source": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378",
+  "runtime_compat": "golden/cases.yaml @ 91406e430aeb70dabf20548eee0ea95127f42690",
+  "sets": [
+    {
+      "id": "GS-378-ASIS",
+      "title": "Шаг 0: анализ текущего функционала (As-Is) по документации",
+      "sections": [
+        "asis",
+        "open"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-ASIS-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "Клиент завершил вызов после проигрывания сообщения о перезвоне",
+          "source": {
+            "incident": "I-006",
+            "turn": 5,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.18",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "текущий функционал — только то, что прямо написано в документации; цитата в кавычках — дословный фрагмент по локатору; если явного нет — так и пишется «в документации не описано»"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "связывает их по `call_id` / номеру телефона в рамках окна 24 часа",
+          "source": {
+            "incident": "I-069",
+            "turn": 47,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "в BCREQ — что делает система; механизмы реализации не домысливаются, их выбирает команда разработки"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "противоречит индустриальной практике использования SaaS-платформ",
+          "source": {
+            "incident": "I-009",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.6",
+            "3.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "процесс Заказчика принимается как данность; аналитик описывает требуемое изменение продукта, а не исправляет Заказчика"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "рассчитываются исключительно на основе исходящих звонков, совершенных в течение **24 часов**",
+          "source": {
+            "incident": "I-045",
+            "turn": 37,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.18"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "факт применяется только к объекту, о котором он написан в документации; перенос на другой объект — открытый вопрос"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "Доступен фильтр «Скрыть попытки автоперезвона» (п. 9.1.1)",
+          "source": {
+            "incident": "I-016",
+            "turn": 17,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "10.18"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "локатор = руководство + пункт + страница + дословная цитата; перед выводом проверяется, что цитата есть по локатору"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "модуль **«Задачи»**",
+          "source": {
+            "incident": "I-029",
+            "turn": 25,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "решения БА ведутся списком «отклонено» и сверяются перед каждой новой версией раздела"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "### 1. КРИТИЧЕСКАЯ ОШИБКА: Связка статуса «Пропущенный» и очереди ЗОЗ",
+          "source": {
+            "incident": "I-067",
+            "turn": 47,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "структура и стиль копируются с эталона БА; каждая формулировка проверяется на однозначность"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Обращаем ваше внимание, что в индустриальной практике перезвон должен быть своевременным.",
+          "source": {
+            "incident": "I-030",
+            "turn": 25,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.1",
+            "3.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C14",
+            "reason": "вопрос открывает недостающий факт о требовании, а не оценивает Заказчика или БА"
+          }
+        },
+        {
+          "id": "GS-378-ASIS-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "напигите с =о ссылками на цитаты и источник",
+          "source": {
+            "ref": "SC-03",
+            "turn": 42
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C11"
+            ]
+          }
+        },
+        {
+          "id": "GS-378-ASIS-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "явно давать ссылку на название руководства/раздела/страницу/цитату",
+          "source": {
+            "ref": "SC-04",
+            "turn": 46
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C11"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-378-PRB",
+      "title": "Разделы 1–3: глоссарий, проблема, цель, задачи, состав работ",
+      "sections": [
+        "1",
+        "2",
+        "3"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-PRB-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "2.3.5. Адаптация метрик Дашборда",
+          "source": {
+            "incident": "I-093",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "решения БА ведутся списком «отклонено» и сверяются перед каждой новой версией раздела"
+          }
+        },
+        {
+          "id": "GS-378-PRB-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "1",
+          "slot": "S-GLOSSARY",
+          "input": "Обработка запросов на обратный звонок (нажатие «1» в IVR)",
+          "source": {
+            "incident": "I-090",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.18",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "текущий функционал — только то, что прямо написано в документации; цитата в кавычках — дословный фрагмент по локатору; если явного нет — так и пишется «в документации не описано»"
+          }
+        },
+        {
+          "id": "GS-378-PRB-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "2.3.3. Интеграция сценариев IVR",
+          "source": {
+            "incident": "I-092",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "10.41"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C07",
+            "reason": "раздел 4 — только доработка; штатное поведение — ссылкой «в соответствии с текущим функционалом системы»"
+          }
+        },
+        {
+          "id": "GS-378-PRB-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "1",
+          "slot": "S-GLOSSARY",
+          "input": "Глоссарий сформирован",
+          "source": {
+            "incident": "I-012",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.5",
+            "7.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "статус «согласовано» ставит только БА; модель сообщает, что проверено и что осталось открытым"
+          }
+        },
+        {
+          "id": "GS-378-PRB-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "**2.4. Ограничения и бизнес-риски**",
+          "source": {
+            "incident": "I-094",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "10.38"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C08",
+            "reason": "ограничения — только в разделе 6; разделы 2 и 4 их не содержат"
+          }
+        },
+        {
+          "id": "GS-378-PRB-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "снижает качество обслуживания.",
+          "source": {
+            "incident": "I-100",
+            "turn": 57,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.6",
+            "3.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "процесс Заказчика принимается как данность; аналитик описывает требуемое изменение продукта, а не исправляет Заказчика"
+          }
+        },
+        {
+          "id": "GS-378-PRB-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "Настройка автоматических действий (или API-коннектора)",
+          "source": {
+            "incident": "I-106",
+            "turn": 59,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "в BCREQ — что делает система; механизмы реализации не домысливаются, их выбирает команда разработки"
+          }
+        },
+        {
+          "id": "GS-378-PRB-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "(п. 4.5.9.1.5 Руководства КЦ)",
+          "source": {
+            "incident": "I-095",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "10.18"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "локатор = руководство + пункт + страница + дословная цитата; перед выводом проверяется, что цитата есть по локатору"
+          }
+        },
+        {
+          "id": "GS-378-PRB-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "предлагаю отчетность не строить",
+          "source": {
+            "ref": "SC-09",
+            "turn": 58
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C09"
+            ]
+          }
+        },
+        {
+          "id": "GS-378-PRB-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "Остальное 0 лишнее",
+          "source": {
+            "ref": "SC-10",
+            "turn": 64
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C07",
+              "C09"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-378-FR",
+      "title": "Раздел 4: функциональные требования (только доработка)",
+      "sections": [
+        "4"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-FR-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Система проигрывает аудиофайл, клиент нажимает «1».",
+          "source": {
+            "incident": "I-119",
+            "turn": 71,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.18",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "текущий функционал — только то, что прямо написано в документации; цитата в кавычках — дословный фрагмент по локатору; если явного нет — так и пишется «в документации не описано»"
+          }
+        },
+        {
+          "id": "GS-378-FR-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "определяют условие генерации действия",
+          "source": {
+            "incident": "I-135",
+            "turn": 79,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "структура и стиль копируются с эталона БА; каждая формулировка проверяется на однозначность"
+          }
+        },
+        {
+          "id": "GS-378-FR-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "**4.3. Воспроизведение аудиоприветствия и завершение вызова в Ручном режиме**",
+          "source": {
+            "incident": "I-126",
+            "turn": 75,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "10.41"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C07",
+            "reason": "раздел 4 — только доработка; штатное поведение — ссылкой «в соответствии с текущим функционалом системы»"
+          }
+        },
+        {
+          "id": "GS-378-FR-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "готов к передаче в работу команде разработки и архитекторам",
+          "source": {
+            "incident": "I-133",
+            "turn": 77,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.5",
+            "7.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "статус «согласовано» ставит только БА; модель сообщает, что проверено и что осталось открытым"
+          }
+        },
+        {
+          "id": "GS-378-FR-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "через внутреннее API",
+          "source": {
+            "incident": "I-120",
+            "turn": 71,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "в BCREQ — что делает система; механизмы реализации не домысливаются, их выбирает команда разработки"
+          }
+        },
+        {
+          "id": "GS-378-FR-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Система проигрывает аудиофайл, клиент нажимает «1».",
+          "source": {
+            "incident": "I-124",
+            "turn": 73,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "решения БА ведутся списком «отклонено» и сверяются перед каждой новой версией раздела"
+          }
+        },
+        {
+          "id": "GS-378-FR-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Искл. 3.2. Превышение срока жизни задачи ЗОЗ",
+          "source": {
+            "incident": "I-121",
+            "turn": 71,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "10.38"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C08",
+            "reason": "ограничения — только в разделе 6; разделы 2 и 4 их не содержат"
+          }
+        },
+        {
+          "id": "GS-378-FR-08",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Из ЗОЗ заказ должен забираться только при успешном дозвоне",
+          "source": {
+            "ref": "SC-12",
+            "turn": 72
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01"
+            ]
+          }
+        },
+        {
+          "id": "GS-378-FR-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "МЫ НЕ ПИШЕМ ЧТО ДОЛЖН ОРАБОТАТЬ ПО ОПРЕДЕЛЕНИю, только дорадотку",
+          "source": {
+            "ref": "SC-13",
+            "turn": 76
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C07"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-378-LIM",
+      "title": "Раздел 6: ограничения",
+      "sections": [
+        "6"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-LIM-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "**6.3. Рассинхронизация статусов при ручном обзвоне из ЗОЗ**",
+          "source": {
+            "incident": "I-148",
+            "turn": 93,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "решения БА ведутся списком «отклонено» и сверяются перед каждой новой версией раздела"
+          }
+        },
+        {
+          "id": "GS-378-LIM-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "Штатные отчеты «Пропущенные вызовы» и виджеты Дашборда",
+          "source": {
+            "incident": "I-147",
+            "turn": 93,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.18"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "факт применяется только к объекту, о котором он написан в документации; перенос на другой объект — открытый вопрос"
+          }
+        },
+        {
+          "id": "GS-378-LIM-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "КЦ → Очередь обращений → Заказы ЗОЗ",
+          "source": {
+            "incident": "I-159",
+            "turn": 107,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.18",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "текущий функционал — только то, что прямо написано в документации; цитата в кавычках — дословный фрагмент по локатору; если явного нет — так и пишется «в документации не описано»"
+          }
+        },
+        {
+          "id": "GS-378-LIM-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "Разделы 1, 2, 4 и 6 сформированы и проверены",
+          "source": {
+            "incident": "I-150",
+            "turn": 93,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.5",
+            "7.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "статус «согласовано» ставит только БА; модель сообщает, что проверено и что осталось открытым"
+          }
+        },
+        {
+          "id": "GS-378-LIM-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "при срабатывании триггера",
+          "source": {
+            "incident": "I-153",
+            "turn": 101,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "10.41"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C07",
+            "reason": "раздел 4 — только доработка; штатное поведение — ссылкой «в соответствии с текущим функционалом системы»"
+          }
+        },
+        {
+          "id": "GS-378-LIM-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "из единого централизованного хранилища",
+          "source": {
+            "incident": "I-154",
+            "turn": 103,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.1",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "структура и стиль копируются с эталона БА; каждая формулировка проверяется на однозначность"
+          }
+        },
+        {
+          "id": "GS-378-LIM-07",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "Скорость перезвона",
+          "source": {
+            "ref": "N-06",
+            "turn": 97
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01"
+            ]
+          }
+        },
+        {
+          "id": "GS-378-LIM-08",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "6",
+          "slot": "S-LIMITS",
+          "input": "Вкладка отображается, если в разделе «Управление услугами» Личного кабинета подключена услуга Автоперезвон по пропущенным звонкам",
+          "source": {
+            "ref": "N-08",
+            "turn": 107
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C11"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-378-DLG",
+      "title": "Ход диалога: статусы, самопроверка, сравнение вариантов",
+      "sections": [
+        "dialog"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-DLG-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "**Вы абсолютно правы.**",
+          "source": {
+            "incident": "I-017",
+            "turn": 19,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.37",
+            "7.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C04",
+            "reason": "ответ на замечание — «проверено: <локатор>, вывод: …»; согласие или несогласие следует из источника"
+          }
+        },
+        {
+          "id": "GS-378-DLG-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "Ограничение зафиксировано в разделе ограничений ТЗ.",
+          "source": {
+            "incident": "I-108",
+            "turn": 61,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.4",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "каждое «исправлено/зафиксировано» указывает пункт текущего вывода, где это видно"
+          }
+        },
+        {
+          "id": "GS-378-DLG-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "У ЗОЗ нет триггеров из телефонии.",
+          "source": {
+            "incident": "I-103",
+            "turn": 59,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "10.18",
+            "7.2"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "текущий функционал — только то, что прямо написано в документации; цитата в кавычках — дословный фрагмент по локатору; если явного нет — так и пишется «в документации не описано»"
+          }
+        },
+        {
+          "id": "GS-378-DLG-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "Создайте заявку в техническую поддержку MANGO OFFICE",
+          "source": {
+            "incident": "I-037",
+            "turn": 29,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.1",
+            "10.18"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C03",
+            "reason": "БА — внутренний аналитик продукта: неясное по КБ становится записью реестра открытых вопросов с адресатом внутри команды"
+          }
+        },
+        {
+          "id": "GS-378-DLG-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx-api",
+          "product_profile": "P-API",
+          "section": "dialog",
+          "slot": "—",
+          "input": "шину событий",
+          "source": {
+            "incident": "I-161",
+            "turn": 111,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "в BCREQ — что делает система; механизмы реализации не домысливаются, их выбирает команда разработки"
+          }
+        },
+        {
+          "id": "GS-378-DLG-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "управленческую ошибку",
+          "source": {
+            "incident": "I-102",
+            "turn": 59,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.6",
+            "3.2"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "процесс Заказчика принимается как данность; аналитик описывает требуемое изменение продукта, а не исправляет Заказчика"
+          }
+        },
+        {
+          "id": "GS-378-DLG-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "используются фиксированные схемы",
+          "source": {
+            "incident": "I-157",
+            "turn": 105,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.18"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "факт применяется только к объекту, о котором он написан в документации; перенос на другой объект — открытый вопрос"
+          }
+        },
+        {
+          "id": "GS-378-DLG-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cc",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "Согласно разделу 4.5.7 \"Заказ звонка\"",
+          "source": {
+            "incident": "I-156",
+            "turn": 105,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "10.18"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "локатор = руководство + пункт + страница + дословная цитата; перед выводом проверяется, что цитата есть по локатору"
+          }
+        },
+        {
+          "id": "GS-378-DLG-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "В Техническое задание придуманные примеры текстов не включаем.",
+          "source": {
+            "ref": "N-01",
+            "turn": 9
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C13"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-378-PRM",
+      "title": "Шаблон-промпт генерации раздела",
+      "sections": [
+        "prompt"
+      ],
+      "cases": [
+        {
+          "id": "GS-378-PRM-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Безопасная работа с документацией (PDF/ссылки)",
+          "source": {
+            "incident": "I-005",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "шаблон задаёт роль внутреннего БА продукта, запрет додумывания, формат ссылок на КБ и не содержит фраз «готово/валидно»"
+          }
+        },
+        {
+          "id": "GS-378-PRM-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Ты — ведущий бизнес-аналитик (CBAP) с глубокой экспертизой в Телеком SaaS и",
+          "source": {
+            "incident": "I-001",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "шаблон задаёт роль внутреннего БА продукта, запрет додумывания, формат ссылок на КБ и не содержит фраз «готово/валидно»"
+          }
+        },
+        {
+          "id": "GS-378-PRM-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "методологиях TM Forum (eTOM/ODA).",
+          "source": {
+            "incident": "I-002",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "шаблон задаёт роль внутреннего БА продукта, запрет додумывания, формат ссылок на КБ и не содержит фраз «готово/валидно»"
+          }
+        },
+        {
+          "id": "GS-378-PRM-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Это уровень Раздела 4.",
+          "source": {
+            "incident": "I-003",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "шаблон задаёт роль внутреннего БА продукта, запрет додумывания, формат ссылок на КБ и не содержит фраз «готово/валидно»"
+          }
+        },
+        {
+          "id": "GS-378-PRM-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Контекст валиден и готов к формированию Раздела 4",
+          "source": {
+            "incident": "I-004",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "шаблон задаёт роль внутреннего БА продукта, запрет додумывания, формат ссылок на КБ и не содержит фраз «готово/валидно»"
+          }
+        },
+        {
+          "id": "GS-378-PRM-06",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "текущий функционал - только строго по документации",
+          "source": {
+            "ref": "SC-01",
+            "turn": 8
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01"
+            ]
+          }
+        },
+        {
+          "id": "GS-378-PRM-07",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "asis",
+          "slot": "S-ASIS",
+          "input": "Писать если явно прописано в документации",
+          "source": {
+            "ref": "SC-02",
+            "turn": 42
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01",
+              "C10"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
