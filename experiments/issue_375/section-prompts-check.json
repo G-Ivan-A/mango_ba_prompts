@@ -1,0 +1,92 @@
+{
+  "export_sha256": "5eddd393276aa3e6e95088d2cf5bacb7464aee22da2cf5b3ce6b4f5da87f54b7",
+  "quotes": 17,
+  "missing": 0,
+  "rows": [
+    {
+      "turn": 156,
+      "found": true,
+      "sha256": "e72b9dbe4fec81c7fda9129890963e3831e7448c470d5f8735f4d7c6104f9cd9"
+    },
+    {
+      "turn": 42,
+      "found": true,
+      "sha256": "526483ac3f4177837d1a741b08e22c091617c66b526a8bef08372827af349eac"
+    },
+    {
+      "turn": 16,
+      "found": true,
+      "sha256": "207a5c9aa6462ed50d288645d243683d80ea349d55accb74a8172d01385cabe6"
+    },
+    {
+      "turn": 202,
+      "found": true,
+      "sha256": "f863489f4b5b0a798654eff9da235f9fb9a94a6727d0d6e1ea5aa67b797c2ad8"
+    },
+    {
+      "turn": 202,
+      "found": true,
+      "sha256": "5dfda6c3cab80d1750dea169f600c78b0779b75e61b521e7e110e3883228d97b"
+    },
+    {
+      "turn": 52,
+      "found": true,
+      "sha256": "5e834741b82143e09c186d4a44f9ab6206f70acdd963c24b5efb49bdd3dd69ed"
+    },
+    {
+      "turn": 52,
+      "found": true,
+      "sha256": "d8b8fafb33912048db45203f344ebf5c37145fea110b2b4c116ce667c5a99687"
+    },
+    {
+      "turn": 70,
+      "found": true,
+      "sha256": "2e82a70b245003fb1acef46d9cddff50883379e4159f2f656725e709bc6c41de"
+    },
+    {
+      "turn": 62,
+      "found": true,
+      "sha256": "4e9b29c97c3ee30816db8939fd8a669501060ed5acba2a6eb69aba84babf9255"
+    },
+    {
+      "turn": 80,
+      "found": true,
+      "sha256": "f988b2bde8e38cd26616f52342ab99f020b02d297a1c92f3f5e1d3bd1792a294"
+    },
+    {
+      "turn": 62,
+      "found": true,
+      "sha256": "0bb307ba3f206f5a673d30caa1e4049636499f4b75d0a2d401520bafdc49a715"
+    },
+    {
+      "turn": 202,
+      "found": true,
+      "sha256": "1e86015fb5a24133744f2fdc4a705cfbcda4839990f568ba7d9b1b7b0bbd4ee8"
+    },
+    {
+      "turn": 64,
+      "found": true,
+      "sha256": "ca85009deca851e471080ad72973c7a464934fbd412692970d889d0b8fa4d1a1"
+    },
+    {
+      "turn": 84,
+      "found": true,
+      "sha256": "9d3f0ecd17d2288acc1f25e22fbcdc5c7d3e0daf91ec2aac0094fcd454287742"
+    },
+    {
+      "turn": 202,
+      "found": true,
+      "sha256": "b01e9c57b8db902f92556ee3fa8ef51f6573b20a4d29646d74d3ff7088b73668"
+    },
+    {
+      "turn": 204,
+      "found": true,
+      "sha256": "dcfe56b9ea1e1867c673ddce2785cb74c9afab49334ce9fda2f896c74bd03edd"
+    },
+    {
+      "turn": 200,
+      "found": true,
+      "sha256": "608dc3ea4c657e86612f983e7b34c768fa9c8b55da7695464994526add4fad86"
+    }
+  ]
+}
