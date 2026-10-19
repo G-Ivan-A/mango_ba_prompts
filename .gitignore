@@ -39,3 +39,4 @@ experiments/issue_351/*.log
 experiments/issue_373/*
 !experiments/issue_373/stats.json
 !experiments/issue_373/quote-check.json
+!experiments/issue_373/section-prompts-check.json

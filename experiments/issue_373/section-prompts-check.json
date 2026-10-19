@@ -1,0 +1,47 @@
+{
+  "export_sha256": "318212fec8f2c3c4078bea71d32bb4607d74766961e64722e3c82cf875b01c27",
+  "quotes": 8,
+  "missing": 0,
+  "rows": [
+    {
+      "turn": 76,
+      "found": true,
+      "sha256": "dc7dbb30d84eab6294e864ef38f9ba867a91040184e32c102d22096bcf88abe3"
+    },
+    {
+      "turn": 60,
+      "found": true,
+      "sha256": "5eac20ddd807a3fcf064f139380b69bba1a6f55a753c9d7dcd1045aa63166752"
+    },
+    {
+      "turn": 16,
+      "found": true,
+      "sha256": "ea0da8a6ac49a88677467a2fa09cfaf495261ad2fcf0572b2e98233f2e6c77a9"
+    },
+    {
+      "turn": 70,
+      "found": true,
+      "sha256": "ae0af2d27cead8a01a80a06e95c6c3b34331849b8f34454f4046257f50455266"
+    },
+    {
+      "turn": 84,
+      "found": true,
+      "sha256": "c13fd5054f089d87470aa329b3e8ead5cef3eb79797adf93ff669dbc56ad8a07"
+    },
+    {
+      "turn": 6,
+      "found": true,
+      "sha256": "822ccf9886ad5a242ab3e1c2368025363d2c0efe7c8d409659b8470a7e774675"
+    },
+    {
+      "turn": 26,
+      "found": true,
+      "sha256": "3a34306e8a3d35c025e44fc18deb8a0835b4378b497dfc4f044b6151819b0d0a"
+    },
+    {
+      "turn": 16,
+      "found": true,
+      "sha256": "96195c43569e08db2e419229c261ff832129381aaf5eb5653bacecf30e928895"
+    }
+  ]
+}

@@ -22,6 +22,7 @@ outputs:
   - outputs/rubric-candidates.md
   - outputs/success-criteria.md
   - outputs/runtime-improvements.md
+  - outputs/section-prompts.md
   - outputs/prompt-usage.md
 logs:
   - logs/experiment-log.md

@@ -46,6 +46,7 @@ related_issues:
 | [`rubric-candidates.md`](rubric-candidates.md) | бинарная рубрика: базовые критерии и стражи по категориям |
 | [`success-criteria.md`](success-criteria.md) | золотой набор критериев успеха и позитивных кейсов |
 | [`runtime-improvements.md`](runtime-improvements.md) | предложения для runtime и шаблона-промпта |
+| [`section-prompts.md`](section-prompts.md) | структура разделов BCREQ-ФТ, требования к разделам, три промпта посекционной генерации и критерии приёмки (гибридный режим, без runtime и продуктовой принадлежности; написан вручную) |
 | [`prompt-usage.md`](prompt-usage.md) | распределение операций БА, сессии, вложения |
 | [`../logs/metrics.md`](../logs/metrics.md) | метрики по каждой реплике |
 | [`../logs/quote-verification.md`](../logs/quote-verification.md) | сверка каждой цитаты с экспортом |
