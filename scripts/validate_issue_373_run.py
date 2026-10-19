@@ -24,6 +24,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import importlib.util
 import json
 import re
@@ -213,6 +214,36 @@ def check_registry(errors: list[str]) -> None:
         errors.append("CHANGELOG.md: нет записи Issue #373")
 
 
+def check_section_prompts(errors: list[str]) -> None:
+    """``outputs/section-prompts.md`` — запрос БА в PR #374: структура, три промпта, критерии приёмки."""
+    path = RUN / "outputs/section-prompts.md"
+    if not path.exists():
+        errors.append("outputs/section-prompts.md: файл отсутствует")
+        return
+    text = path.read_text(encoding="utf-8")
+    for heading in (
+        "## 1. Структура разделов BCREQ-ФТ",
+        "### 2.1. Промпт 1 — разделы 1",
+        "### 2.2. Промпт 2 — разделы 3",
+        "### 2.3. Промпт 3 — разделы 4",
+        "## 3. Необходимые и достаточные требования",
+        "### 3.3. Критерии приёмки для каждого пункта",
+    ):
+        if heading not in text:
+            errors.append("section-prompts.md: нет заголовка «%s»" % heading)
+    for item in ["ФТ-%d" % n for n in range(1, 9)]:
+        if not re.search(r"^\| %s " % item, text, re.M):
+            errors.append("section-prompts.md: нет критерия приёмки для %s" % item)
+    sys.path.insert(0, str(ROOT / "experiments"))
+    from issue_373_section_prompts_check import normalize, quotes  # noqa: E402
+
+    check = json.loads((DATA / "section-prompts-check.json").read_text(encoding="utf-8"))
+    expected = [(turn, hashlib.sha256(normalize(quote).encode("utf-8")).hexdigest()) for turn, quote in quotes(text)]
+    recorded = [(row["turn"], row["sha256"]) for row in check["rows"]]
+    if expected != recorded or check["missing"]:
+        errors.append("section-prompts-check.json устарел или есть несверенные цитаты (перезапустите сверку)")
+
+
 def main() -> int:
     errors: list[str] = []
     sys.path.insert(0, str(ROOT / "experiments"))
@@ -231,6 +262,7 @@ def main() -> int:
     cases = check_sets(rendered, errors)
     check_metadata(gd, rows, check, errors)
     check_secrets(errors)
+    check_section_prompts(errors)
     check_registry(errors)
 
     if errors:
