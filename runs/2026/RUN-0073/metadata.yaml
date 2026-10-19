@@ -1,0 +1,103 @@
+run_id: RUN-0073
+process: task-1123-bcreq-fr-mango-callmentor-connector-error-golden-set
+version: "0.1"
+date: 2026-10-19
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3.7-plus, qwen3.8-max"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/373
+  - https://github.com/user-attachments/files/33662573/chat-export-1123.json
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/91406e430aeb70dabf20548eee0ea95127f42690
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/incident-register.md
+  - outputs/error-statistics.md
+  - outputs/how-not-to-do-by-product.md
+  - outputs/golden-set-candidates.md
+  - outputs/golden-set-candidates.json
+  - outputs/rubric-candidates.md
+  - outputs/success-criteria.md
+  - outputs/runtime-improvements.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/quote-verification.md
+  - logs/kb-verification.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 53
+  iterations: 53
+  turns: 106
+  sessions: 7
+  tokens_input: 2566716
+  tokens_output: 120519
+  tokens_thinking: 70512
+  tokens_dialog_total: 2687235
+  token_method: "provider-usage:qwen3.7-plus,qwen3.8-max"
+  duration_active_s: 14820
+  dialog_start_utc: "2026-10-16 09:10:17"
+  dialog_end_utc: "2026-10-19 10:56:30"
+  calendar_days: 3.1
+  attachments_distinct: 2
+  incidents_total: 149
+  incidents_prompt: 18
+  incidents_confirmed: 97
+  incidents_plausible: 52
+  incidents_detected_by_ba: 92
+  incidents_detected_next_turn: 29
+  incidents_detected_at_fixation: 57
+  incidents_after_first_ba_remark: 82
+  answers_with_incidents: 38
+  categories_observed: 18
+  incidents_by_category:
+    C01: 21
+    C02: 4
+    C03: 1
+    C04: 0
+    C05: 3
+    C06: 4
+    C07: 8
+    C08: 6
+    C09: 23
+    C10: 15
+    C11: 4
+    C12: 14
+    C13: 12
+    C14: 3
+    C15: 7
+    C16: 1
+    C17: 1
+    C18: 4
+    C19: 18
+  incidents_by_product:
+    connector: 71
+    vpbx: 24
+    robot-fil: 8
+    callmentor: 7
+    cross: 39
+  golden_sets: 6
+  golden_cases: 51
+  success_criteria: 22
+  positive_cases: 12
+  quotes_checked: 279
+  quote_mismatches: 0
+  eval: "Прогон зафиксирован ради статистики ошибок ИИ при генерации BCREQ-ФТ по разделам: вхождения размечены по категориям, продуктам, BABOK / ODA и слотам runtime, каждая цитата сверена с экспортом. Приёмки документа в экспорте нет (реплика 104 — промежуточная редакция БА), success_rate не задан — оснований в данных нет."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/373
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/345
+related_runs:
+  - RUN-0064
+  - RUN-0072
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/evals-contract-standard.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_373_golden_data.py
+  - experiments/issue_373_verify_quotes.py
+  - experiments/issue_373_golden_set.py
