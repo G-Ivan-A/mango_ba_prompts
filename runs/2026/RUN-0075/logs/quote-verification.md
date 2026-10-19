@@ -11,7 +11,7 @@ related_artifacts:
   - "experiments/issue_378_verify_quotes.py"
 ---
 
-# Журнал сверки цитат прогона RUN-0074
+# Журнал сверки цитат прогона RUN-0075
 
 > Файл **порождён** скриптом [`experiments/issue_378_golden_set.py`](../../../../experiments/issue_378_golden_set.py) из вывода [`experiments/issue_378_verify_quotes.py`](../../../../experiments/issue_378_verify_quotes.py) — не редактируйте вручную.
 

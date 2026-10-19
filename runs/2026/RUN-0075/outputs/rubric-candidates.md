@@ -9,10 +9,10 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378"
 related_artifacts:
   - "standards/evals-contract-standard.md"
-  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"
+  - "runs/2026/RUN-0075/outputs/golden-set-candidates.md"
 ---
 
-# Кандидат в рубрику приёмки — RUN-0074
+# Кандидат в рубрику приёмки — RUN-0075
 
 > Файл **порождён** скриптом [`experiments/issue_378_golden_set.py`](../../../../experiments/issue_378_golden_set.py) из разметки [`experiments/issue_378_golden_data.py`](../../../../experiments/issue_378_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Порождение записи RUN-0074 (issue #378): статистика задачи 1104 и золотой набор ошибок ИИ.
+"""Порождение записи RUN-0075 (issue #378): статистика задачи 1104 и золотой набор ошибок ИИ.
 
 Скрипт детерминированно строит из трёх входов:
 
@@ -43,8 +43,8 @@ sys.path.insert(0, str(ROOT / "experiments"))
 import issue_378_golden_data as gd  # noqa: E402
 
 DATA = ROOT / "experiments" / "issue_378"
-RUN = ROOT / "runs" / "2026" / "RUN-0074"
-RUN_ID = "RUN-0074"
+RUN = ROOT / "runs" / "2026" / "RUN-0075"
+RUN_ID = "RUN-0075"
 ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378"
 ATTACHMENT = "https://github.com/user-attachments/files/33669481/chat-export-1104.json"
 RUNTIME_SHA = "91406e430aeb70dabf20548eee0ea95127f42690"
@@ -366,7 +366,7 @@ def error_statistics(rows: list[dict], stats: dict) -> str:
     out = [
         front_matter("artifact", "mango-only", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/incident-register.md"',
+            '  - "runs/2026/RUN-0075/outputs/incident-register.md"',
         ]),
         f"# Статистика ошибок ИИ — {RUN_ID}, задача 1104\n\n",
         generated_banner(),
@@ -536,7 +536,7 @@ def how_not_to_do(rows: list[dict]) -> str:
     out = [
         front_matter("artifact", "prompts", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/incident-register.md"',
+            '  - "runs/2026/RUN-0075/outputs/incident-register.md"',
             f'  - "{RUNTIME}/taxonomy/products.yaml"',
         ]),
         f"# Как не надо делать — по продуктам ({RUN_ID}, задача 1104)\n\n",
@@ -579,8 +579,8 @@ def golden_candidates(sets: list[dict]) -> str:
         front_matter("artifact", "prompts", [
             "related_artifacts:",
             '  - "standards/evals-contract-standard.md"',
-            '  - "runs/2026/RUN-0074/outputs/rubric-candidates.md"',
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.json"',
+            '  - "runs/2026/RUN-0075/outputs/rubric-candidates.md"',
+            '  - "runs/2026/RUN-0075/outputs/golden-set-candidates.json"',
         ]),
         f"# Кандидаты в золотые наборы генерации BCREQ-ФТ — {RUN_ID}\n\n",
         generated_banner(),
@@ -714,7 +714,7 @@ def rubric(rows: list[dict]) -> str:
         front_matter("artifact", "prompts", [
             "related_artifacts:",
             '  - "standards/evals-contract-standard.md"',
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"',
+            '  - "runs/2026/RUN-0075/outputs/golden-set-candidates.md"',
         ]),
         f"# Кандидат в рубрику приёмки — {RUN_ID}\n\n",
         generated_banner(),
@@ -748,7 +748,7 @@ def success_criteria(rows: list[dict]) -> str:
     out = [
         front_matter("artifact", "prompts", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"',
+            '  - "runs/2026/RUN-0075/outputs/golden-set-candidates.md"',
         ]),
         f"# Золотой набор критериев успеха — {RUN_ID}, задача 1104\n\n",
         generated_banner(),

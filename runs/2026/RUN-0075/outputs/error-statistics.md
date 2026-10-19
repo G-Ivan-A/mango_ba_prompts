@@ -8,10 +8,10 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/incident-register.md"
+  - "runs/2026/RUN-0075/outputs/incident-register.md"
 ---
 
-# Статистика ошибок ИИ — RUN-0074, задача 1104
+# Статистика ошибок ИИ — RUN-0075, задача 1104
 
 > Файл **порождён** скриптом [`experiments/issue_378_golden_set.py`](../../../../experiments/issue_378_golden_set.py) из разметки [`experiments/issue_378_golden_data.py`](../../../../experiments/issue_378_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

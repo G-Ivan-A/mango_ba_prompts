@@ -8,12 +8,12 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/incident-register.md"
-  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"
+  - "runs/2026/RUN-0075/outputs/incident-register.md"
+  - "runs/2026/RUN-0075/outputs/golden-set-candidates.md"
   - "standards/evals-contract-standard.md"
 ---
 
-# Ограничения чтения прогона RUN-0074
+# Ограничения чтения прогона RUN-0075
 
 - **Шкала.** Прогон `statistics`: результат — размеченный реестр ошибок ИИ и кандидаты в эталоны, а не артефакт требований. Явной приёмки документа в экспорте нет (реплика 116 — итоговая редакция БА без отметки о приёмке), поэтому `status: draft`, `success_rate` не выставлен.
 - **Разметка — работа одного разметчика** (AI issue solver), человеком не перепроверена. Достоверность разделена: `confirmed` (68) — реакция БА, локатор КБ или прямое правило указывают на этот дефект; `plausible` (100) — прямого подтверждения нет. Частоты надёжнее читать по столбцу `confirmed` [`../outputs/error-statistics.md`](../outputs/error-statistics.md).
@@ -33,7 +33,7 @@ related_artifacts:
 
 | # | Вопрос | Кому адресован |
 | --- | --- | --- |
-| Q1 | Контейнер golden-set генерации BCREQ-ФТ: `evals/` спока, `patterns/fr-generation` или `golden/cases.yaml` runtime? До решения кандидаты остаются в `runs/2026/RUN-0074/outputs/`. | Человек; пробел #263 |
+| Q1 | Контейнер golden-set генерации BCREQ-ФТ: `evals/` спока, `patterns/fr-generation` или `golden/cases.yaml` runtime? До решения кандидаты остаются в `runs/2026/RUN-0075/outputs/`. | Человек; пробел #263 |
 | Q2 | Включать ли `voice-ucaas` (ВАТС, VPBX API) в срез runtime? | Владелец runtime |
 | Q3 | Принимать ли вхождения `plausible` в золотые наборы до ревью человеком? | Человек (ревью эталона `draft → reviewed`) |
 | Q4 | Считать ли редакцию реплики 116 принятой версией BCREQ-ФТ задачи 1104? | БА задачи 1104 |

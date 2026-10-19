@@ -13,7 +13,7 @@ related_artifacts:
   - "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/91406e430aeb70dabf20548eee0ea95127f42690/golden/cases.yaml"
 ---
 
-# Предложения для mango-ba-ai-runtime и промптов — RUN-0074
+# Предложения для mango-ba-ai-runtime и промптов — RUN-0075
 
 > Файл **порождён** скриптом [`experiments/issue_378_golden_set.py`](../../../../experiments/issue_378_golden_set.py) из разметки [`experiments/issue_378_golden_data.py`](../../../../experiments/issue_378_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

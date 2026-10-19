@@ -16,7 +16,7 @@ related_artifacts:
   - "scripts/validate_issue_378_run.py"
 ---
 
-# Журнал фиксации прогона RUN-0074
+# Журнал фиксации прогона RUN-0075
 
 ## Цель
 
