@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.0
-updated: 2026-10-12
+version: 1.1
+updated: 2026-10-19
 ai-generated: true
 type: registry
 scope: runs
@@ -10,6 +10,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/293"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/279"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/373"
 related_artifacts:
   - "standards/runs-contract-standard.md"
   - "docs/analysis/2026-08-21-runs-type-gap-analysis.md"
@@ -191,6 +192,7 @@ runs/
 | [`RUN-0070`](2026/RUN-0070/metadata.yaml) | 2026-10-01 | `execution` | feasibility-assessment-tz-bcreq-1115-vats-robot-chatbot | [`outputs/README.md`](2026/RUN-0070/outputs/README.md), [`outputs/L0-feasibility-assessment-1115.md`](2026/RUN-0070/outputs/L0-feasibility-assessment-1115.md), [`logs/experiment-log.md`](2026/RUN-0070/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0070/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0070/feedback/review-notes.md) |
 | [`RUN-0071`](2026/RUN-0071/metadata.yaml) | 2026-10-11 | `execution` | feasibility-assessment-tz-bcreq-1116-contact-center | [`outputs/README.md`](2026/RUN-0071/outputs/README.md), [`outputs/L0-feasibility-assessment-1116.md`](2026/RUN-0071/outputs/L0-feasibility-assessment-1116.md), [`logs/experiment-log.md`](2026/RUN-0071/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0071/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0071/feedback/review-notes.md) |
 | [`RUN-0072`](2026/RUN-0072/metadata.yaml) | 2026-10-12 | `execution` | feasibility-assessment-tz-bcreq-1116-task-1117-telephony | [`outputs/README.md`](2026/RUN-0072/outputs/README.md), [`outputs/L0-feasibility-assessment-1117.md`](2026/RUN-0072/outputs/L0-feasibility-assessment-1117.md), [`logs/experiment-log.md`](2026/RUN-0072/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0072/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0072/feedback/review-notes.md) |
+| [`RUN-0073`](2026/RUN-0073/metadata.yaml) | 2026-10-19 | `statistics` | ai-error-golden-set-bcreq-fr-generation-task-1123 | [`outputs/README.md`](2026/RUN-0073/outputs/README.md), [`outputs/incident-register.md`](2026/RUN-0073/outputs/incident-register.md), [`outputs/error-statistics.md`](2026/RUN-0073/outputs/error-statistics.md), [`outputs/how-not-to-do-by-product.md`](2026/RUN-0073/outputs/how-not-to-do-by-product.md), [`outputs/golden-set-candidates.md`](2026/RUN-0073/outputs/golden-set-candidates.md), [`outputs/success-criteria.md`](2026/RUN-0073/outputs/success-criteria.md), [`logs/quote-verification.md`](2026/RUN-0073/logs/quote-verification.md), [`feedback/review-notes.md`](2026/RUN-0073/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -215,6 +217,9 @@ runs/
 | [`experiments/issue_336_link_audit.py`](../experiments/issue_336_link_audit.py) | Измеряет адресность ссылок на вики twin: считает токены `[twin: …]` и `[ROBOTFIL …]`/`[SA …]` в отчёте, загружает страницы вики (с кэшем), извлекает заголовки с якорями и сопоставляет с разделами, заявленными в ответах модели. Используется в [`RUN-0061`](2026/RUN-0061/logs/link-verification.md). |
 | [`experiments/issue_336_fixate_run.py`](../experiments/issue_336_fixate_run.py) | Порождает механические артефакты записи [`RUN-0061`](2026/RUN-0061/outputs/README.md) (`outputs/prompt-usage.md`, `logs/metrics.md`, `logs/link-verification.md`) из замеров статистики диалога и аудита ссылок. |
 | [`experiments/issue_339/generate_run.py`](../experiments/issue_339/generate_run.py) | Читает три BIFF-вложения issue #339 и детерминированно формирует шестиколоночный L0 [`RUN-0062`](2026/RUN-0062/outputs/L0-customer-form-with-assessment.md), не перепечатывая колонки Заказчика вручную. |
+| [`experiments/issue_373_golden_data.py`](../experiments/issue_373_golden_data.py) | Разметка ошибок ИИ задачи 1123: каждое вхождение с дословной цитатой, категорией C01–C19, происхождением, разделом шаблона, продуктом, реакцией БА и локатором КБ; словари категорий с привязкой к BABOK v3 и TM Forum ODA, позитивные кейсы и критерии успеха. Используется в [`RUN-0073`](2026/RUN-0073/outputs/incident-register.md). |
+| [`experiments/issue_373_verify_quotes.py`](../experiments/issue_373_verify_quotes.py) | Сверяет каждую цитату разметки с текстом заявленной реплики экспорта чата (нормализация пробелов и markdown-выделения) и пишет `experiments/issue_373/quote-check.json`. Используется в [`RUN-0073`](2026/RUN-0073/logs/quote-verification.md). |
+| [`experiments/issue_373_golden_set.py`](../experiments/issue_373_golden_set.py) | Порождает записи [`RUN-0073`](2026/RUN-0073/outputs/README.md) из статистики диалога, сверки цитат и разметки: реестр вхождений, статистику ошибок, «как не надо» по продуктам, кандидаты в золотые наборы и рубрики, критерии успеха, предложения для runtime. |
 | [`experiments/parse_765_chat_export.py`](../experiments/parse_765_chat_export.py) | Считает метрики по эпизодам (токены провайдера, время генерации, активное время) из выгрузки чата задачи 765. Используется в [`RUN-0022`](2026/RUN-0022/logs/metrics.md). |
 | [`experiments/parse_58093_chat_export.py`](../experiments/parse_58093_chat_export.py) | Считает метрики по эпизодам (токены провайдера, время генерации, активное время) из выгрузки чата задачи 58093. Используется в [`RUN-0016`](2026/RUN-0016/logs/metrics.md). |
 | [`experiments/okdesk_citation_grounding_probe.py`](../experiments/okdesk_citation_grounding_probe.py) | Извлекает результаты веб-инструмента (`content_list[*].extra.tool_result`) из экспорта чата и считает вхождения контрольных терминов — проверка заземления сносок. Используется в [`RUN-0024`](2026/RUN-0024/logs/grounding-check.md). |

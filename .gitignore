@@ -32,3 +32,10 @@ experiments/issue_351/rows.txt
 experiments/issue_351/kb_index.json
 experiments/issue_351/kb_full.txt
 experiments/issue_351/*.log
+# рабочие данные прогона RUN-0073 (issue #373): стенограмма и реплики экспорта
+# чата задачи 1123 в репозиторий не попадают (правило #309); остаются только
+# замеры без текста переписки и ссылок на вложения, по которым валидатор
+# перепорождает запись прогона
+experiments/issue_373/*
+!experiments/issue_373/stats.json
+!experiments/issue_373/quote-check.json

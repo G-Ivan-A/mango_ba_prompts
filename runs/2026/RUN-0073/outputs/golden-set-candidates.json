@@ -1,0 +1,1389 @@
+{
+  "golden_set": "run-0073-bcreq-fr-sections",
+  "version": "0.1",
+  "status": "draft",
+  "source": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/373",
+  "runtime_compat": "golden/cases.yaml @ 91406e430aeb70dabf20548eee0ea95127f42690",
+  "sets": [
+    {
+      "id": "GS-373-PRB",
+      "title": "Разделы 1–2: глоссарий, проблема, цель, границы",
+      "sections": [
+        "1",
+        "2"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-PRB-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "ограничения передачи данных только для тех Операторов",
+          "source": {
+            "incident": "I-031",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; объект и адресат действия названы явно; термины — на русском и из глоссария"
+          }
+        },
+        {
+          "id": "GS-373-PRB-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "в конфигурационном файле по короткому номеру группы",
+          "source": {
+            "incident": "I-030",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "3.2",
+            "4.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C08",
+            "reason": "вопрос и формулировка выбираются по адресату: Заказчику — бизнес, разработке — техника, внешней системе — контракт интеграции"
+          }
+        },
+        {
+          "id": "GS-373-PRB-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "Согласно индустриальной практике интеграции с внешними AI/аналитическими сервисами",
+          "source": {
+            "incident": "I-041",
+            "turn": 23,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "каждое утверждение о продукте — с локатором и цитатой; число без источника помечается гипотезой и уходит в S-OPEN"
+          }
+        },
+        {
+          "id": "GS-373-PRB-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "Хранит API-ключи Mango в защищенном хранилище",
+          "source": {
+            "incident": "I-020",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обещаниями и решениями в диалоге и с чек-листом полноты слота"
+          }
+        },
+        {
+          "id": "GS-373-PRB-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "интеграции с REST API/Webhook Mango Office",
+          "source": {
+            "incident": "I-038",
+            "turn": 19,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "механизм внешней системы описывается только по её документации в КБ с локатором раздела"
+          }
+        },
+        {
+          "id": "GS-373-PRB-06",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "АПЕЛЛЯЦИЯ (Требует вашего решения перед генерацией Раздела 3)",
+          "source": {
+            "ref": "N-04",
+            "turn": 23
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C14"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-PRB-07",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "1",
+          "slot": "S-GLOSSARY",
+          "input": "Внешняя система (Источник) - Виртуальная АТС (ВАТС) MANGO OFFICE.",
+          "source": {
+            "ref": "SC-13",
+            "turn": 104
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C12"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-373-FR",
+      "title": "Раздел 3: функциональные требования",
+      "sections": [
+        "3"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-FR-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "Группа: API интеграции",
+          "source": {
+            "incident": "I-051",
+            "turn": 29,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "5.4"
+          ],
+          "oda": "ODA-MGT",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "без явной команды согласованный текст не удаляется и не переименовывается; меняется только запрошенный пункт, нумерация может сдвигаться"
+          }
+        },
+        {
+          "id": "GS-373-FR-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "формирования пакета метаданных звонка и получения временно",
+          "source": {
+            "incident": "I-053",
+            "turn": 29,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; объект и адресат действия названы явно; термины — на русском и из глоссария"
+          }
+        },
+        {
+          "id": "GS-373-FR-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "игнорирования невалидных, дублирующихся или не подпадающих",
+          "source": {
+            "incident": "I-043",
+            "turn": 25,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "перед выдачей раздела сверять его с журналом согласованных решений сессии"
+          }
+        },
+        {
+          "id": "GS-373-FR-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "3. Функциональные требования (ФТ)",
+          "source": {
+            "incident": "I-032",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обещаниями и решениями в диалоге и с чек-листом полноты слота"
+          }
+        },
+        {
+          "id": "GS-373-FR-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "всегда лежит на стороне Приемника (CallMentor)",
+          "source": {
+            "incident": "I-055",
+            "turn": 33,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "каждое утверждение о продукте — с локатором и цитатой; число без источника помечается гипотезой и уходит в S-OPEN"
+          }
+        },
+        {
+          "id": "GS-373-FR-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "Апелляция (Критическое несоответствие индустриальной практике)",
+          "source": {
+            "incident": "I-057",
+            "turn": 43,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "7.3"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C14",
+            "reason": "апелляция допустима, только если противоречие подтверждено локатором и не снято историей согласований"
+          }
+        },
+        {
+          "id": "GS-373-FR-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "3",
+          "slot": "S-FR",
+          "input": "Группировка: API интеграции, Исполнение и доставка сервиса (Логика).",
+          "source": {
+            "incident": "I-013",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-FR-08",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "Группа: Управление и API интеграции",
+          "source": {
+            "ref": "SC-15",
+            "turn": 104
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C05"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-FR-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "3",
+          "slot": "S-FR",
+          "input": "ФТ-2: Система должна обеспечивать возможность активации и деактивации процесса передачи данных",
+          "source": {
+            "ref": "SC-16",
+            "turn": 104
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C13"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-373-SOL",
+      "title": "Разделы 4–7: функциональный дизайн, интерфейсы, НФТ, ограничения, спецификация",
+      "sections": [
+        "4",
+        "4.1",
+        "5",
+        "6",
+        "7"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-SOL-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Map<group_extension, List<operator_extension>>",
+          "source": {
+            "incident": "I-034",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.1",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "раздел 3 и функциональный дизайн раздела 4 описывают что делает система и по каким бизнес-правилам; как это реализуется — только в спецификации для разработки (раздел 7)"
+          }
+        },
+        {
+          "id": "GS-373-SOL-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Webhook `events/recording` содержит только `extension`.",
+          "source": {
+            "incident": "I-036",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "каждое утверждение о продукте — с локатором и цитатой; число без источника помечается гипотезой и уходит в S-OPEN"
+          }
+        },
+        {
+          "id": "GS-373-SOL-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4.1",
+          "slot": "S-INTEGRATION",
+          "input": "4.1. Дельта API контракта (Входящий Webhook от Mango Office)",
+          "source": {
+            "incident": "I-033",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; объект и адресат действия названы явно; термины — на русском и из глоссария"
+          }
+        },
+        {
+          "id": "GS-373-SOL-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Описание ведется в соответствии с принципами TM Forum ODA и OpenAPI 3.0.",
+          "source": {
+            "incident": "I-003",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-SOL-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Повторные попытки доставки",
+          "source": {
+            "incident": "I-108",
+            "turn": 77,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-MGT",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обещаниями и решениями в диалоге и с чек-листом полноты слота"
+          }
+        },
+        {
+          "id": "GS-373-SOL-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Дизайн должен явно декларировать соответствие принципам TM Forum ODA и спецификации OpenAPI 3.0.",
+          "source": {
+            "incident": "I-019",
+            "turn": 5,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "3.1",
+            "7.1"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "методология — инструмент аналитика, а не содержание документа: в BCREQ её названия не вносятся, если контракт этого прямо не требует"
+          }
+        },
+        {
+          "id": "GS-373-SOL-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Логика ядра и совместимость",
+          "source": {
+            "incident": "I-072",
+            "turn": 57,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "7.1"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "в функциональном дизайне: интерфейсы → настройки → правила валидации → процесс; каждое правило определено до использования"
+          }
+        },
+        {
+          "id": "GS-373-SOL-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Валидация HMAC-подписи",
+          "source": {
+            "incident": "I-092",
+            "turn": 73,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-SEC",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "механизм внешней системы описывается только по её документации в КБ с локатором раздела"
+          }
+        },
+        {
+          "id": "GS-373-SOL-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "Остановка сервиса означает, что Mango Office будет получать ошибки сети",
+          "source": {
+            "ref": "N-07",
+            "turn": 85
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C14"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-SOL-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "договоренность об идемпотентности на стороне CallMentor касается **другой границы** и остается в силе без изменений",
+          "source": {
+            "ref": "N-08",
+            "turn": 89
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C06"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-373-OPEN",
+      "title": "Реестр открытых вопросов",
+      "sections": [
+        "open"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-OPEN-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Готов ли Заказчик предоставить выделенный виртуальный или физический сервер",
+          "source": {
+            "incident": "I-029",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "3.2",
+            "4.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C08",
+            "reason": "вопрос и формулировка выбираются по адресату: Заказчику — бизнес, разработке — техника, внешней системе — контракт интеграции"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Идентификация групп сотрудников:",
+          "source": {
+            "incident": "I-021",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.1",
+            "10.18"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C07",
+            "reason": "до вопроса — поиск ответа в черновике, вложениях и КБ; вопрос о факте, извлекаемом из корпуса, — дефект маршрутизации"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Требования к БД (SQLite, PostgreSQL, иное)?",
+          "source": {
+            "incident": "I-023",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.1",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "раздел 3 и функциональный дизайн раздела 4 описывают что делает система и по каким бизнес-правилам; как это реализуется — только в спецификации для разработки (раздел 7)"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "3.8. Срок скачивания записи",
+          "source": {
+            "incident": "I-136",
+            "turn": 99,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "10.18",
+            "10.24"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C18",
+            "reason": "для каждого используемого метода внешнего API выписываются его ограничения из КБ в S-LIMITS / S-INTEGRATION"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Формат даты/времени звонка:",
+          "source": {
+            "incident": "I-130",
+            "turn": 93,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "перед выдачей раздела сверять его с журналом согласованных решений сессии"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "возвращает `group_id` и `group_name`",
+          "source": {
+            "incident": "I-026",
+            "turn": 9,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "каждое утверждение о продукте — с локатором и цитатой; число без источника помечается гипотезой и уходит в S-OPEN"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Реестр открытых вопросов для внешних сторон",
+          "source": {
+            "incident": "I-135",
+            "turn": 93,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обещаниями и решениями в диалоге и с чек-листом полноты слота"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Поддержка идемпотентности:",
+          "source": {
+            "incident": "I-132",
+            "turn": 93,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "5.2",
+            "7.3"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C14",
+            "reason": "апелляция допустима, только если противоречие подтверждено локатором и не снято историей согласований"
+          }
+        },
+        {
+          "id": "GS-373-OPEN-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "callmentor",
+          "product_profile": "P-API",
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Состав передаваемых данных (Блоки А и Б)",
+          "source": {
+            "ref": "N-11",
+            "turn": 101
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C13"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-OPEN-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "open",
+          "slot": "S-OPEN",
+          "input": "Вопросы к Заказчику (бизнес-язык, без технических деталей)",
+          "source": {
+            "ref": "N-12",
+            "turn": 101
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C08"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-373-DLG",
+      "title": "Ход диалога: статусы, самопроверка, сравнение вариантов",
+      "sections": [
+        "dialog"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-DLG-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "Статус документа: Готов к согласованию.",
+          "source": {
+            "incident": "I-048",
+            "turn": 25,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "5.5",
+            "10.37"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "статус согласования ставит только человек; модель сообщает, что именно проверено и чем, без оценок «абсолютно верно»"
+          }
+        },
+        {
+          "id": "GS-373-DLG-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "Технические детали (механизмы retry, DLQ, HMAC) в вопросы Заказчику не включены",
+          "source": {
+            "incident": "I-138",
+            "turn": 101,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "каждое утверждение о продукте — с локатором и цитатой; число без источника помечается гипотезой и уходит в S-OPEN"
+          }
+        },
+        {
+          "id": "GS-373-DLG-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "но файл отсутствует.",
+          "source": {
+            "incident": "I-025",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.1",
+            "10.18"
+          ],
+          "oda": "ODA-DEP",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C07",
+            "reason": "до вопроса — поиск ответа в черновике, вложениях и КБ; вопрос о факте, извлекаемом из корпуса, — дефект маршрутизации"
+          }
+        },
+        {
+          "id": "GS-373-DLG-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "vpbx",
+          "product_profile": "P-API",
+          "section": "dialog",
+          "slot": "—",
+          "input": "вычисляет HMAC-подпись",
+          "source": {
+            "incident": "I-064",
+            "turn": 51,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-SEC",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "механизм внешней системы описывается только по её документации в КБ с локатором раздела"
+          }
+        },
+        {
+          "id": "GS-373-DLG-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "robot-fil",
+          "product_profile": "P-SETTINGS",
+          "section": "dialog",
+          "slot": "—",
+          "input": "«убийственные» вопросы, которые покажут несостоятельность варианта с Роботом",
+          "source": {
+            "incident": "I-149",
+            "turn": 103,
+            "model": "qwen3.8-max"
+          },
+          "babok": [
+            "7.6",
+            "10.38"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C16",
+            "reason": "сравнение вариантов — по общему списку критериев, каждый риск с источником, решение за человеком"
+          }
+        },
+        {
+          "id": "GS-373-DLG-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "Ниже представлен полный текст Технического Задания (Разделы 1–7)",
+          "source": {
+            "incident": "I-042",
+            "turn": 25,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C17",
+            "reason": "один ответ — один запрошенный раздел"
+          }
+        },
+        {
+          "id": "GS-373-DLG-07",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "2",
+          "slot": "S-PROBLEM / S-SCOPE",
+          "input": "Противоречие по поддержке.",
+          "source": {
+            "ref": "N-10",
+            "turn": 99
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C10"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-DLG-08",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "dialog",
+          "slot": "—",
+          "input": "Конкретизацию форматов (YAML для настроек + ENV для секретов) оставьте исключительно в **Разделе 7**",
+          "source": {
+            "ref": "N-02",
+            "turn": 13
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-373-PRM",
+      "title": "Шаблон-промпт генерации раздела",
+      "sections": [
+        "prompt"
+      ],
+      "cases": [
+        {
+          "id": "GS-373-PRM-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Принцип «Только Дельта»",
+          "source": {
+            "incident": "I-008",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-PRM-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Принцип Graceful Degradation",
+          "source": {
+            "incident": "I-010",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-PRM-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "ведущий бизнес-аналитик (CBAP) и API-архитектор",
+          "source": {
+            "incident": "I-001",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-PRM-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "методологиях TM Forum (ODA) и спецификации OpenAPI 3.0",
+          "source": {
+            "incident": "I-002",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-PRM-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "prompt",
+          "slot": "—",
+          "input": "Индустриальная практика или штатная архитектура Mango Office делает запрошенный путь материально хуже",
+          "source": {
+            "incident": "I-014",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт генерации раздела не содержит деклараций методик, реализационных требований к функциональному дизайну и шаблонных чисел"
+          }
+        },
+        {
+          "id": "GS-373-PRM-06",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "connector",
+          "product_profile": "P-API",
+          "section": "4",
+          "slot": "S-SOLUTION",
+          "input": "по правилам промпта в разделе 4 нельзя публиковать арх решения",
+          "source": {
+            "ref": "SC-01",
+            "turn": 6
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C01"
+            ]
+          }
+        },
+        {
+          "id": "GS-373-PRM-07",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "product": "cross",
+          "product_profile": null,
+          "section": "dialog",
+          "slot": "—",
+          "input": "без галлюцинаций и додумываний работать с базой знаний",
+          "source": {
+            "ref": "SC-02",
+            "turn": 6
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C09",
+              "C15",
+              "C18"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
