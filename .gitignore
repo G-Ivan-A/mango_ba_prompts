@@ -40,3 +40,7 @@ experiments/issue_373/*
 !experiments/issue_373/stats.json
 !experiments/issue_373/quote-check.json
 !experiments/issue_373/section-prompts-check.json
+experiments/issue_375/*
+!experiments/issue_375/stats.json
+!experiments/issue_375/quote-check.json
+!experiments/issue_375/section-prompts-check.json
