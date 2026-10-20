@@ -13,6 +13,27 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #377 (комментарий к PR #380): итоговые промпты разделов BCREQ-ФТ по RUN-0073…RUN-0076
+
+- Аналитический файл [`docs/analysis/2026-10-20-bcreq-fr-section-prompts.md`](docs/analysis/2026-10-20-bcreq-fr-section-prompts.md)
+  (`analysis-subtype: options`): сводная статистика четырёх прогонов в едином словаре
+  категорий U01–U26 — 843 вхождения, 137 критериев успеха, разбивка по разделам, группам
+  промптов и категориям, Парето по группам.
+- Три самодостаточных промпта генерации разделов — а) 1, 2; б) 3, 5; в) 4, 6 — с общей
+  частью (О1–О14), правилами разделов (36) и конструкции промпта (П1–П7); промпт
+  проверки второй ролью отдельным вызовом; разрешение расхождений между прогонами.
+  Каждое правило ссылается на критерии успеха, правила прошлых промптов или дефекты
+  шаблонов; каждая категория ошибок группы покрыта правилом её промпта.
+- Промпт GitHub issue на сбор статистики и цитат для golden set запретов и необходимых
+  и достаточных критериев приёмки промптов а)–в).
+- Скрипт [`experiments/issue_377_cross_run_stats.py`](experiments/issue_377_cross_run_stats.py)
+  (таблицы файла и `experiments/issue_377/cross-run-stats.json`), валидатор
+  [`scripts/validate_issue_377_section_prompts.py`](scripts/validate_issue_377_section_prompts.py)
+  и его мутационная проверка `experiments/issue_377_section_prompts_mutations.py`.
+- `docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md` приведён к
+  `standards/analysis-standard.md` (подтип `options`, секции Summary / BLUF … Related
+  Artifacts); golden set RUN-0076 переименован в `run-0076-bcreq-fr-sections`.
+
 ### Added — Issue #377 (комментарий к PR #380): автоматическое разрешение конфликтов параллельных PR
 
 - Разобрана причина `This branch has conflicts that must be resolved`: каждый PR с прогоном
