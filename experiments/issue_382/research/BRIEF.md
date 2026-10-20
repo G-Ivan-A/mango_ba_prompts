@@ -1,4 +1,4 @@
-# Research brief — RUN-0076 (issue #382, задача BCREQ-1125), L0 feasibility of five CSV requirement lists
+# Research brief — RUN-0077 (issue #382, задача BCREQ-1125), L0 feasibility of five CSV requirement lists
 
 Joint view of System analyst + BA + Tech Lead. Verdicts ONLY from SSOT facts; general LLM
 knowledge and invented architecture are forbidden.

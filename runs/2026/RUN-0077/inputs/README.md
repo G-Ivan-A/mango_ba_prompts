@@ -5,7 +5,7 @@ ai-generated: true
 type: evidence
 ---
 
-# Входы RUN-0076
+# Входы RUN-0077
 
 Исходники — пять CSV-файлов с требованиями Заказчика по BCREQ-1125, вложенные в issue
 [#382](https://github.com/G-Ivan-A/mango_ba_prompts/issues/382). Оцениваются все пять:

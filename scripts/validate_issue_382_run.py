@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Валидация артефакта прогона RUN-0076 (issue #382, ТЗ BCREQ-1125).
+"""Валидация артефакта прогона RUN-0077 (issue #382, ТЗ BCREQ-1125).
 
-Проверяет отчёт `runs/2026/RUN-0076/outputs/L0-feasibility-assessment-1125.md`:
+Проверяет отчёт `runs/2026/RUN-0077/outputs/L0-feasibility-assessment-1125.md`:
 
 0. отчёт логически разделён на `## Отчёт 1: «Требования к КЦ»` (файлы «КЦ …») и
    `## Отчёт 2: «Функциональные требования»` (файлы «ФТ …»); внутри — пять блоков,
@@ -36,7 +36,7 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN = ROOT / "runs/2026/RUN-0076"
+RUN = ROOT / "runs/2026/RUN-0077"
 REPORT = RUN / "outputs/L0-feasibility-assessment-1125.md"
 SOURCE = ROOT / "experiments/issue_382/source_transcription.json"
 TENDER = ROOT / "experiments/issue_367/tender_index.json"

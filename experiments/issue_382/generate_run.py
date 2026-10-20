@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Генератор отчёта RUN-0076 (issue #382): L0-оценка исполнимости ТЗ BCREQ-1125.
+"""Генератор отчёта RUN-0077 (issue #382): L0-оценка исполнимости ТЗ BCREQ-1125.
 
 Пять CSV-исходников Заказчика — пять блоков одного отчёта, сгруппированных в два отчёта:
 «Отчёт 1: «Требования к КЦ»» (файлы «КЦ …») и «Отчёт 2: «Функциональные требования»»
@@ -31,7 +31,7 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
-RUN = ROOT / "runs/2026/RUN-0076"
+RUN = ROOT / "runs/2026/RUN-0077"
 REPORT = RUN / "outputs/L0-feasibility-assessment-1125.md"
 RUNTIME = Path(os.environ.get("MANGO_BA_RUNTIME_MAIN", "/tmp/rt-main"))
 COMMIT = subprocess.check_output(["git", "-C", str(RUNTIME), "rev-parse", "HEAD"], text=True).strip()

@@ -5,7 +5,7 @@ ai-generated: true
 type: evidence
 ---
 
-# Выходы RUN-0076
+# Выходы RUN-0077
 
 | Файл | Назначение |
 | --- | --- |
