@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Валидация записи прогона RUN-0074 (issue #377, задача 1110, золотые наборы ошибок ИИ и критериев успеха).
+"""Валидация записи прогона RUN-0076 (issue #377, задача 1110, золотые наборы ошибок ИИ и критериев успеха).
 
 Проверяет:
 
@@ -32,7 +32,7 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RUN = ROOT / "runs/2026/RUN-0074"
+RUN = ROOT / "runs/2026/RUN-0076"
 DATA = ROOT / "experiments/issue_377"
 GENERATOR = ROOT / "experiments/issue_377_golden_set.py"
 EXPORT_SHA = "f903e8f3991750d1ccc9cc442b66968b8637655c84613f85641db5b9e761b09a"
@@ -201,7 +201,7 @@ def check_metadata(gd, rows: list[dict], check: dict, errors: list[str]) -> None
     for key, value in expected.items():
         if not re.search(r"^\s+%s: %d$" % (re.escape(key), value), text, re.M):
             errors.append("metadata.yaml: %s ≠ %d" % (key, value))
-    for key in ("run_type: statistics", "run_id: RUN-0074", "status: draft"):
+    for key in ("run_type: statistics", "run_id: RUN-0076", "status: draft"):
         if key not in text:
             errors.append("metadata.yaml: нет «%s»" % key)
 
@@ -216,10 +216,10 @@ def check_secrets(errors: list[str]) -> None:
 
 def check_registry(errors: list[str]) -> None:
     registry = (ROOT / "runs/README.md").read_text(encoding="utf-8")
-    if "[`RUN-0074`](2026/RUN-0074/metadata.yaml)" not in registry:
-        errors.append("runs/README.md: RUN-0074 не зарегистрирован")
+    if "[`RUN-0076`](2026/RUN-0076/metadata.yaml)" not in registry:
+        errors.append("runs/README.md: RUN-0076 не зарегистрирован")
     if "experiments/issue_377_golden_set.py" not in registry:
-        errors.append("runs/README.md: генератор RUN-0074 не описан в инструментах")
+        errors.append("runs/README.md: генератор RUN-0076 не описан в инструментах")
     if "Issue #377" not in (ROOT / "CHANGELOG.md").read_text(encoding="utf-8"):
         errors.append("CHANGELOG.md: нет записи Issue #377")
 

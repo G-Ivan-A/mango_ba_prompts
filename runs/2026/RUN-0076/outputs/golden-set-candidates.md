@@ -9,11 +9,11 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 related_artifacts:
   - "standards/evals-contract-standard.md"
-  - "runs/2026/RUN-0074/outputs/rubric-candidates.md"
-  - "runs/2026/RUN-0074/outputs/golden-set-candidates.json"
+  - "runs/2026/RUN-0076/outputs/rubric-candidates.md"
+  - "runs/2026/RUN-0076/outputs/golden-set-candidates.json"
 ---
 
-# Кандидаты в золотые наборы инцидентов генерации BCREQ-ФТ — RUN-0074
+# Кандидаты в золотые наборы инцидентов генерации BCREQ-ФТ — RUN-0076
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

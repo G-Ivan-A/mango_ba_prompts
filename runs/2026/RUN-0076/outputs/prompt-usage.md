@@ -11,7 +11,7 @@ related_artifacts:
   - "experiments/issue_377_golden_set.py"
 ---
 
-# Операции процесса БА в прогоне RUN-0074
+# Операции процесса БА в прогоне RUN-0076
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) — не редактируйте вручную.
 

@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 ---
 
-# Результаты прогона RUN-0074 — задача 1110, золотые наборы ошибок ИИ и критериев успеха
+# Результаты прогона RUN-0076 — задача 1110, золотые наборы ошибок ИИ и критериев успеха
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

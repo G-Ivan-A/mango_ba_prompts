@@ -8,10 +8,10 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/incident-register.md"
+  - "runs/2026/RUN-0076/outputs/incident-register.md"
 ---
 
-# Статистика ошибок ИИ — RUN-0074, задача 1110
+# Статистика ошибок ИИ — RUN-0076, задача 1110
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 
@@ -312,7 +312,7 @@ related_artifacts:
 
 Обе записи размечены одним словарём категорий C01–C19, поэтому доли сопоставимы; абсолютные числа — нет (разная длина диалогов). Новые категории этой записи в RUN-0073 не размечались.
 
-| Код | Категория | RUN-0074, вхождений | RUN-0074, доля | RUN-0073, вхождений | RUN-0073, доля |
+| Код | Категория | RUN-0076, вхождений | RUN-0076, доля | RUN-0073, вхождений | RUN-0073, доля |
 | --- | --- | --- | --- | --- | --- |
 | C01 | Архитектура и реализация в ФТ / функциональном дизайне | 18 | 5% | 21 | 14% |
 | C02 | Декларация методологии (TM Forum, eTOM/ODA, OpenAPI) в тексте документа | 12 | 4% | 4 | 3% |

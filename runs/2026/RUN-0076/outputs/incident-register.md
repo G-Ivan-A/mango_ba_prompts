@@ -12,7 +12,7 @@ related_artifacts:
   - "experiments/issue_377_verify_quotes.py"
 ---
 
-# Реестр вхождений ошибок ИИ — RUN-0074, задача 1110
+# Реестр вхождений ошибок ИИ — RUN-0076, задача 1110
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

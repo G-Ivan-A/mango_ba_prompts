@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Порождение записи RUN-0074 (issue #377): статистика задачи 1110 и золотые наборы.
+"""Порождение записи RUN-0076 (issue #377): статистика задачи 1110 и золотые наборы.
 
 Скрипт детерминированно строит из трёх входов:
 
@@ -47,9 +47,9 @@ sys.path.insert(0, str(ROOT / "experiments"))
 import issue_377_golden_data as gd  # noqa: E402
 
 DATA = ROOT / "experiments" / "issue_377"
-RUN = ROOT / "runs" / "2026" / "RUN-0074"
+RUN = ROOT / "runs" / "2026" / "RUN-0076"
 PREVIOUS = ROOT / "runs" / "2026" / "RUN-0073" / "metadata.yaml"
-RUN_ID = "RUN-0074"
+RUN_ID = "RUN-0076"
 TASK = "1110"
 ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 ATTACHMENT = "https://github.com/user-attachments/files/33669255/chat-export-1110.json"
@@ -386,7 +386,7 @@ def error_statistics(rows: list[dict], stats: dict) -> str:
     out = [
         front_matter("artifact", "mango-only", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/incident-register.md"',
+            '  - "runs/2026/RUN-0076/outputs/incident-register.md"',
         ]),
         f"# Статистика ошибок ИИ — {RUN_ID}, задача {TASK}\n\n",
         generated_banner(),
@@ -565,7 +565,7 @@ def how_not_to_do(rows: list[dict]) -> str:
     out = [
         front_matter("artifact", "prompts", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/incident-register.md"',
+            '  - "runs/2026/RUN-0076/outputs/incident-register.md"',
         ]),
         f"# Как не надо делать — общий список ({RUN_ID}, задача {TASK})\n\n",
         generated_banner(),
@@ -609,8 +609,8 @@ def golden_candidates(sets: list[dict]) -> str:
         front_matter("artifact", "prompts", [
             "related_artifacts:",
             '  - "standards/evals-contract-standard.md"',
-            '  - "runs/2026/RUN-0074/outputs/rubric-candidates.md"',
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.json"',
+            '  - "runs/2026/RUN-0076/outputs/rubric-candidates.md"',
+            '  - "runs/2026/RUN-0076/outputs/golden-set-candidates.json"',
         ]),
         f"# Кандидаты в золотые наборы инцидентов генерации BCREQ-ФТ — {RUN_ID}\n\n",
         generated_banner(),
@@ -721,7 +721,7 @@ def rubric(rows: list[dict]) -> str:
         front_matter("artifact", "prompts", [
             "related_artifacts:",
             '  - "standards/evals-contract-standard.md"',
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"',
+            '  - "runs/2026/RUN-0076/outputs/golden-set-candidates.md"',
         ]),
         f"# Кандидат в рубрику приёмки — {RUN_ID}\n\n",
         generated_banner(),
@@ -756,7 +756,7 @@ def success_criteria(rows: list[dict]) -> str:
     out = [
         front_matter("artifact", "prompts", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"',
+            '  - "runs/2026/RUN-0076/outputs/golden-set-candidates.md"',
         ]),
         f"# Золотой набор критериев успешного формирования требований — {RUN_ID}, задача {TASK}\n\n",
         generated_banner(),
@@ -807,8 +807,8 @@ def prompt_improvements(rows: list[dict]) -> str:
     out = [
         front_matter("artifact", "prompts", [
             "related_artifacts:",
-            '  - "runs/2026/RUN-0074/outputs/how-not-to-do.md"',
-            '  - "runs/2026/RUN-0074/outputs/success-criteria.md"',
+            '  - "runs/2026/RUN-0076/outputs/how-not-to-do.md"',
+            '  - "runs/2026/RUN-0076/outputs/success-criteria.md"',
         ]),
         f"# Предложения для промптов и стандарта BCREQ — {RUN_ID}\n\n",
         generated_banner(),

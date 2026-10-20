@@ -8,10 +8,10 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/incident-register.md"
+  - "runs/2026/RUN-0076/outputs/incident-register.md"
 ---
 
-# Как не надо делать — общий список (RUN-0074, задача 1110)
+# Как не надо делать — общий список (RUN-0076, задача 1110)
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

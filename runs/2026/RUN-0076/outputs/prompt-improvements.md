@@ -8,11 +8,11 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/how-not-to-do.md"
-  - "runs/2026/RUN-0074/outputs/success-criteria.md"
+  - "runs/2026/RUN-0076/outputs/how-not-to-do.md"
+  - "runs/2026/RUN-0076/outputs/success-criteria.md"
 ---
 
-# Предложения для промптов и стандарта BCREQ — RUN-0074
+# Предложения для промптов и стандарта BCREQ — RUN-0076
 
 > Файл **порождён** скриптом [`experiments/issue_377_golden_set.py`](../../../../experiments/issue_377_golden_set.py) из разметки [`experiments/issue_377_golden_data.py`](../../../../experiments/issue_377_golden_data.py) — не редактируйте вручную. Каждая цитата сверена с экспортом чата ([`../logs/quote-verification.md`](../logs/quote-verification.md)).
 

@@ -8,12 +8,12 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377"
 related_artifacts:
-  - "runs/2026/RUN-0074/outputs/incident-register.md"
-  - "runs/2026/RUN-0074/outputs/golden-set-candidates.md"
+  - "runs/2026/RUN-0076/outputs/incident-register.md"
+  - "runs/2026/RUN-0076/outputs/golden-set-candidates.md"
   - "standards/evals-contract-standard.md"
 ---
 
-# Ограничения чтения прогона RUN-0074
+# Ограничения чтения прогона RUN-0076
 
 - **Шкала.** Прогон `statistics`: результат — размеченный реестр ошибок и кандидаты в эталоны, а не артефакт требований. Приёмки документа в экспорте нет, поэтому `status: draft`, `success_rate` не выставлен.
 - **Разметка не перепроверена человеком.** Пять диапазонов реплик размечены отдельными проходами AI по одной спецификации и сведены без ревью человеком. `confirmed` (119) — реакция или правило БА прямо указывают на дефект; `plausible` (214) — связь выведена разметчиком. Частоты надёжнее читать по столбцу `confirmed`.
