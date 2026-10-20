@@ -40,13 +40,14 @@ experiments/issue_373/*
 !experiments/issue_373/stats.json
 !experiments/issue_373/quote-check.json
 !experiments/issue_373/section-prompts-check.json
-<<<<<<< HEAD
-experiments/issue_377/*
-!experiments/issue_377/stats.json
-!experiments/issue_377/quote-check.json
-=======
 experiments/issue_375/*
 !experiments/issue_375/stats.json
 !experiments/issue_375/quote-check.json
 !experiments/issue_375/section-prompts-check.json
->>>>>>> upstream/main
+# рабочие данные прогона RUN-0076 (issue #377): экспорт и стенограмма задачи 1110
+# не коммитятся; остаются замеры, сверка цитат и реплей merge-конфликтов
+experiments/issue_377/*
+!experiments/issue_377/stats.json
+!experiments/issue_377/quote-check.json
+!experiments/issue_377/simulate_registry_merges.py
+!experiments/issue_377/registry-merge-replay.json

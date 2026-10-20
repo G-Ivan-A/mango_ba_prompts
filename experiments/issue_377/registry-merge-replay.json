@@ -1,0 +1,885 @@
+{
+  "ref": "upstream/main",
+  "merge_commits": 183,
+  "merges_with_conflicts": 60,
+  "conflicts_by_file": {
+    "CHANGELOG.md": 49,
+    "runs/README.md": 35,
+    "scripts/validate_issue_123_runs_contract.py": 27,
+    "scripts/test_runs_contract_run_type.py": 26,
+    ".gitkeep": 22,
+    "site/data/checks.json": 7,
+    "site/data/prompts.json": 7,
+    "site/data/roadmap.json": 7,
+    "site/data/stats.json": 7,
+    "site/data/patterns.json": 5,
+    "site/data/processes.json": 5,
+    ".github/workflows/github-pages.yml": 3,
+    "site/data/process-tree.json": 2,
+    "README.md": 1,
+    "scripts/generate-pages-data.mjs": 1,
+    "site/app.js": 1,
+    "site/index.html": 1,
+    "AI_GOVERNANCE.md": 1,
+    "docs/hub-research-dependencies.md": 1,
+    "governance/artifact-map.md": 1,
+    "runs/2026/RUN-0013/logs/experiment-log.md": 1,
+    "runs/2026/RUN-0013/metadata.yaml": 1,
+    "runs/2026/RUN-0013/outputs/README.md": 1,
+    "runs/2026/RUN-0013/outputs/final-artifact.md": 1,
+    "runs/2026/RUN-0013/outputs/prompts-chain.md": 1,
+    "standards/runs-contract-standard.md": 1,
+    ".gitignore": 1,
+    "Makefile": 1,
+    "pr-ops/BACKLOG.md": 1,
+    "tools/README.md": 1
+  },
+  "registry_replay": {
+    "resolved": 77,
+    "same_non_blank_lines_as_committed": 65,
+    "refused": 8
+  },
+  "merges": [
+    {
+      "merge": "616b00bd",
+      "date": "2026-06-05",
+      "subject": "Merge branch 'main' into issue-29-4abfb6da2f62",
+      "conflicted_files": [
+        "README.md"
+      ],
+      "registry_replay": {}
+    },
+    {
+      "merge": "5c3c2a84",
+      "date": "2026-06-05",
+      "subject": "Merge branch 'main' into issue-36-2ee8424dea7f",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "4ac27360",
+      "date": "2026-06-11",
+      "subject": "Merge branch 'main' into issue-63-40b0efd6853e",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "07c9c51c",
+      "date": "2026-06-11",
+      "subject": "Merge branch 'main' into issue-66-0019436e8f3b",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "e4230532",
+      "date": "2026-06-11",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-64-1a3d87b473a3",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "d3318570",
+      "date": "2026-06-13",
+      "subject": "Merge branch 'main' into issue-74-67990547dc6b",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "c073b52f",
+      "date": "2026-06-15",
+      "subject": "Merge branch 'main' into issue-86-56a745c34a17",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "c1073455",
+      "date": "2026-06-16",
+      "subject": "Merge branch 'main' into issue-92-2b53ccb907b3",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "411798f1",
+      "date": "2026-06-16",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-101-22e4fd8802a4",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "site/data/checks.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "bd8e42e3",
+      "date": "2026-06-16",
+      "subject": "Merge upstream/main (#99 SPA) into issue-97 and integrate ФТ-8 process tree",
+      "conflicted_files": [
+        ".github/workflows/github-pages.yml",
+        "CHANGELOG.md",
+        "scripts/generate-pages-data.mjs",
+        "site/app.js",
+        "site/data/checks.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json",
+        "site/index.html"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "929154e1",
+      "date": "2026-06-16",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-101-22e4fd8802a4",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "site/data/checks.json",
+        "site/data/patterns.json",
+        "site/data/processes.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "397c90f9",
+      "date": "2026-06-16",
+      "subject": "fix: resolve merge conflicts with main (PR #104 UI fixes)",
+      "conflicted_files": [
+        ".github/workflows/github-pages.yml",
+        "CHANGELOG.md",
+        "site/data/checks.json",
+        "site/data/patterns.json",
+        "site/data/processes.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "82666030",
+      "date": "2026-06-16",
+      "subject": "fix: resolve merge conflicts with main (PR #102 experiment analysis)",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "site/data/checks.json",
+        "site/data/patterns.json",
+        "site/data/processes.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "c36210f3",
+      "date": "2026-08-18",
+      "subject": "merge: влить main в ветку issue #265 (разрешены конфликты видения #263 и ре-синка #265)",
+      "conflicted_files": [
+        "AI_GOVERNANCE.md",
+        "CHANGELOG.md",
+        "docs/hub-research-dependencies.md",
+        "governance/artifact-map.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "f8cb0345",
+      "date": "2026-08-21",
+      "subject": "Merge branch 'main' into issue-268-e740b0cd0c89",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "53f79677",
+      "date": "2026-08-21",
+      "subject": "merge: влить main в ветку issue-269; RUN-0013 из main и RUN-0014 сосуществуют",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/validate_issue_123_runs_contract.py",
+        "site/data/checks.json",
+        "site/data/patterns.json",
+        "site/data/process-tree.json",
+        "site/data/processes.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "9504e7f8",
+      "date": "2026-08-21",
+      "subject": "Merge branch 'main' into issue-291-61af374f9774",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "0dceb9af",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main; RUN-0013 → RUN-0017 (номер занят), site/data откачены к main",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/2026/RUN-0013/logs/experiment-log.md",
+        "runs/2026/RUN-0013/metadata.yaml",
+        "runs/2026/RUN-0013/outputs/README.md",
+        "runs/2026/RUN-0013/outputs/final-artifact.md",
+        "runs/2026/RUN-0013/outputs/prompts-chain.md",
+        "runs/README.md",
+        "scripts/validate_issue_123_runs_contract.py",
+        "site/data/checks.json",
+        "site/data/patterns.json",
+        "site/data/process-tree.json",
+        "site/data/processes.json",
+        "site/data/prompts.json",
+        "site/data/roadmap.json",
+        "site/data/stats.json"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed",
+        "runs/README.md": "refused: коллизия номера прогона RUN-0013: обе стороны регистрируют разные прогоны; перенумеруйте свой прогон (--next-run-id, --renumber)"
+      }
+    },
+    {
+      "merge": "1ea6693c",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'origin/main' into issue-291-61af374f9774",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "b38850ed",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'origin/main' into issue-293-a857a9894f66",
+      "conflicted_files": [
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "runs/README.md": "refused: обе стороны изменили одни и те же строки: | Run | Дата | `run_type` | Процесс | Основной результат |"
+      }
+    },
+    {
+      "merge": "8c675b33",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #271",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/validate_issue_123_runs_contract.py",
+        "standards/runs-contract-standard.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "refused: обе стороны изменили одни и те же строки: version: 0.3",
+        "runs/README.md": "refused: обе стороны изменили одни и те же строки: `related_issues`, `related_artifacts`, `related_runs`, `metrics`."
+      }
+    },
+    {
+      "merge": "b3b3f5fd",
+      "date": "2026-08-21",
+      "subject": "merge: main в issue-272 — RUN-0019, run_type: statistics, границы прогона",
+      "conflicted_files": [
+        ".github/workflows/github-pages.yml",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed",
+        "runs/README.md": "refused: обе стороны изменили одни и те же строки: | Run | Дата | Процесс | Основной результат |"
+      }
+    },
+    {
+      "merge": "309feca7",
+      "date": "2026-08-22",
+      "subject": "Merge branch 'main' into issue-272-41c222e69f17",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "81de63be",
+      "date": "2026-08-21",
+      "subject": "runs: merge main, RUN-0020 metrics по контракту v0.4 (token_method, success_rate_basis)",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "01a85142",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #274 (RUN-0021 рядом с RUN-0020)",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "4a31908e",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #276 (RUN-0020 занят, прогон 765 перенумерован в RUN-0021)",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "dacb2b8b",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #275 (RUN-0022 после RUN-0020/RUN-0021 из main)",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "293fe711",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #276 (прогон 765 перенумерован RUN-0021 → RUN-0022)",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "e9f4d997",
+      "date": "2026-08-21",
+      "subject": "merge: upstream/main в issue-278 (RUN-0023), сохранены обе записи реестров",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "1b5d568f",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-277-7282cf68aeca",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "fee0580a",
+      "date": "2026-08-21",
+      "subject": "merge: upstream/main (RUN-0022) в issue-278, сохранены обе записи реестров",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "1bf108eb",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #275 (RUN-0022 занят в main, прогон 1040 перенумерован в RUN-0023)",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "7c96fb63",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-277-7282cf68aeca",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "e4077500",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-277-7282cf68aeca",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "9642aa60",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #275 (RUN-0023 занят в main, прогон 1040 перенумерован в RUN-0024)",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "aef4eee7",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #275 (RUN-0024 занят в main, прогон 1040 перенумерован в RUN-0025)",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "4a22985d",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main в ветку issue #279",
+      "conflicted_files": [
+        ".gitkeep"
+      ],
+      "registry_replay": {}
+    },
+    {
+      "merge": "3527380f",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'origin/main' into issue-280-8e9cafac86d1",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "2fde3d30",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-281-019cd054cd2e",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "3d39dbc1",
+      "date": "2026-08-21",
+      "subject": "merge: влить upstream/main (RUN-0025) в ветку issue #279",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "7196df07",
+      "date": "2026-08-21",
+      "subject": "Merge upstream/main into issue-281-019cd054cd2e",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "f2245d80",
+      "date": "2026-08-21",
+      "subject": "Merge origin/main into issue-282-b19bb5be7d0b",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "be223ee2",
+      "date": "2026-08-21",
+      "subject": "merge: main в issue-272 — конфликты CHANGELOG.md и runs/README.md",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "ff6f8cd3",
+      "date": "2026-08-21",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-283-a05b70d033cc",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "5d21fc7d",
+      "date": "2026-08-22",
+      "subject": "Merge origin/main into issue-282-b19bb5be7d0b",
+      "conflicted_files": [
+        ".gitignore",
+        "CHANGELOG.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        ".gitignore": "same non-blank lines as committed",
+        "CHANGELOG.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "4080070d",
+      "date": "2026-08-22",
+      "subject": "Merge upstream/main: адаптация под issue #299 (валидатор прогонов без хардкодного реестра)",
+      "conflicted_files": [
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {}
+    },
+    {
+      "merge": "f9bb7793",
+      "date": "2026-08-22",
+      "subject": "Merge upstream/main into issue-284-5274b49b3e23",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "7f3a3906",
+      "date": "2026-08-22",
+      "subject": "Merge branch 'main' into issue-283-a05b70d033cc",
+      "conflicted_files": [
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "runs/README.md": "refused: обе стороны по-разному изменили строку: | [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) "
+      }
+    },
+    {
+      "merge": "28a73011",
+      "date": "2026-08-22",
+      "subject": "Merge branch 'main' into issue-282-b19bb5be7d0b",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "refused: обе стороны по-разному изменили строку: | [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) "
+      }
+    },
+    {
+      "merge": "65975d7c",
+      "date": "2026-08-22",
+      "subject": "merge: влить upstream/main в ветку issue #275",
+      "conflicted_files": [
+        ".gitkeep",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "runs/README.md": "refused: обе стороны по-разному изменили строку: | [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) "
+      }
+    },
+    {
+      "merge": "1d2c086b",
+      "date": "2026-08-22",
+      "subject": "Merge remote-tracking branch 'upstream/main' into issue-279-7446ebf1c84d",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "5a9b56b7",
+      "date": "2026-08-22",
+      "subject": "Merge upstream/main into issue-281-019cd054cd2e",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "differs from committed",
+        "runs/README.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "6a5debe9",
+      "date": "2026-08-22",
+      "subject": "Merge upstream/main into issue-281-019cd054cd2e",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "048b7540",
+      "date": "2026-08-22",
+      "subject": "merge: main в issue-272 — конфликты CHANGELOG.md, runs/README.md и валидаторов (issue #272)",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md",
+        "scripts/test_runs_contract_run_type.py",
+        "scripts/validate_issue_123_runs_contract.py"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "cedafec3",
+      "date": "2026-08-22",
+      "subject": "Merge branch 'main' into issue-281-019cd054cd2e",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "differs from committed"
+      }
+    },
+    {
+      "merge": "187823a3",
+      "date": "2026-08-22",
+      "subject": "merge: влить origin/main в ветку issue #291 — CHANGELOG, Makefile, BACKLOG, tools/README, .gitkeep",
+      "conflicted_files": [
+        ".gitkeep",
+        "CHANGELOG.md",
+        "Makefile",
+        "pr-ops/BACKLOG.md",
+        "tools/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "c6b84e5c",
+      "date": "2026-08-22",
+      "subject": "Merge branch 'main' into issue-309-1b1923ecd10b",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "4433540b",
+      "date": "2026-08-22",
+      "subject": "merge: влить origin/main в ветку issue #310",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "a5b47440",
+      "date": "2026-08-25",
+      "subject": "Merge remote-tracking branch 'origin/main' into issue-317-0a4c073dfaaf",
+      "conflicted_files": [
+        "CHANGELOG.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed"
+      }
+    },
+    {
+      "merge": "97be87eb",
+      "date": "2026-10-19",
+      "subject": "Merge main into issue-378-b8fd554ad082",
+      "conflicted_files": [
+        "CHANGELOG.md",
+        "runs/README.md"
+      ],
+      "registry_replay": {
+        "CHANGELOG.md": "same non-blank lines as committed",
+        "runs/README.md": "same non-blank lines as committed"
+      }
+    }
+  ]
+}

@@ -13,6 +13,23 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #377 (комментарий к PR #380): автоматическое разрешение конфликтов параллельных PR
+
+- Разобрана причина `This branch has conflicts that must be resolved`: каждый PR с прогоном
+  дописывает строки в одни и те же места `CHANGELOG.md` и `runs/README.md`, а номер
+  `RUN-NNNN` выбирается от `main` без учёта открытых PR. Реплей 183 merge-коммитов `main`:
+  60 с конфликтами, 85 конфликтов реестров, 24 перенумерации прогонов
+  ([`docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md`](docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md)).
+- Резолвер [`scripts/resolve_registry_conflicts.py`](scripts/resolve_registry_conflicts.py)
+  (`make resolve-conflicts`): объединяет обе стороны append-only конфликтов реестров
+  (77 из 85 исторических конфликтов), отказывает на настоящих конфликтах; `--next-run-id`
+  с учётом открытых PR, `--renumber` для своего прогона. Тесты —
+  [`scripts/test_resolve_registry_conflicts.py`](scripts/test_resolve_registry_conflicts.py).
+- Валидатор [`scripts/validate_issue_377_merge_hygiene.py`](scripts/validate_issue_377_merge_hygiene.py):
+  маркеры конфликта, дубли и порядок номеров реестра, `run_id` = каталог, `.gitkeep` в корне.
+  Исправлены маркеры конфликта в `.gitignore` и порядок строк RUN-0018/RUN-0019 в реестре.
+- Порядок действий — раздел «Параллельные PR» в [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
 ### Added — Issue #377: золотые наборы ошибок ИИ и критериев успеха задачи 1110 (RUN-0076)
 
 - Добавлена запись прогона `runs/2026/RUN-0076` (`run_type: statistics`) по экспорту чата

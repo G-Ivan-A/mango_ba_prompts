@@ -41,7 +41,7 @@ TITLE   ?= $(DOC_TITLE)
 VERSION ?= $(DOC_VERSION)
 SOURCE_DIR ?= kb/sources/mango-cc-manual
 
-.PHONY: validate validate-fast validate-full validate-list validate-cache-clear validate-frontmatter validate-file-naming validate-structure validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
+.PHONY: resolve-conflicts validate validate-fast validate-full validate-list validate-cache-clear validate-frontmatter validate-file-naming validate-structure validate-onboarding help kb-all kb-sample kb-extract kb-source-plan kb-source-extract kb-mango kb-lk kb-mtalker kb-validate kb-tokens kb-clean
 
 help:
 	@echo "KB pipeline (issue #111):"
@@ -59,6 +59,7 @@ help:
 	@echo "  make validate-fast  — быстрый уровень: только валидаторы, чьи зависимости изменились"
 	@echo "  make validate-full  — полный уровень: все валидаторы без кэша (как в CI)"
 	@echo "  make validate-list  — перечень обнаруженных валидаторов"
+	@echo "  make resolve-conflicts — разрешить append-only конфликты реестров после git merge (issue #377)"
 	@echo "  make validate-cache-clear — удалить .validate-cache/"
 	@echo "  make validate       — frontmatter + именование файлов + структура репозитория + протокол онбординга"
 	@echo "  make kb-tokens    — показать расход токенов по OUT/index.md и OUT/sections/*.md"
@@ -177,3 +178,8 @@ validate-structure:
 # Регрессионный тест issue #267: навигация ведёт на v1.5, архив не потерян.
 validate-onboarding:
 	$(PYTHON) scripts/validate_issue_267_onboarding_v15.py
+
+# Конфликты параллельных PR в CHANGELOG.md / runs/README.md / .gitignore (issue #377):
+# объединяет обе стороны и добавляет файлы в индекс; прочее оставляет человеку.
+resolve-conflicts:
+	$(PYTHON) scripts/resolve_registry_conflicts.py
