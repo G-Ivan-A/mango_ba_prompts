@@ -672,7 +672,7 @@ def golden_candidates(sets: list[dict]) -> str:
 
 def golden_json(sets: list[dict]) -> str:
     payload = {
-        "golden_set": "run-0074-bcreq-fr-sections",
+        "golden_set": "run-0076-bcreq-fr-sections",
         "version": "0.1",
         "status": "draft",
         "source": ISSUE,
