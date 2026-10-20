@@ -1,0 +1,66 @@
+run_id: RUN-0077
+process: feasibility-assessment-tz-bcreq-1125-cc-connector-ft
+version: "1.0"
+date: 2026-10-20
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/382
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/91406e430aeb70dabf20548eee0ea95127f42690/docs/kb
+  - https://github.com/user-attachments/files/33326885/-.-v4.pdf  # шаблон v4 из issue #371 (загрузка в #382 не удалась)
+  - https://github.com/user-attachments/files/33717835/default.csv
+  - https://github.com/user-attachments/files/33717836/default.csv
+  - https://github.com/user-attachments/files/33717837/-.csv
+  - https://github.com/user-attachments/files/33717838/-.csv
+  - https://github.com/user-attachments/files/33717839/-.csv
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1125.md
+logs:
+  - logs/experiment-log.md
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_documents: 5
+  source_rows_csv: 198  # КЦ: 65 + 75; ФТ: 10 + 11 + 37 (строки-шапки CSV не считаются)
+  assessed_requirements: 198
+  verdicts_yes: 127
+  verdicts_partial: 21
+  verdicts_no: 48
+  verdicts_empty: 2
+  atomic_citations: 435
+  kb_citations: 344
+  template_v4_citations: 91
+  portal_citations: 0
+  quote_mismatches: 0
+  template_v4_matches_over_90: 0
+  template_v4_max_similarity: 0.716
+  eval: "L0-оценка пяти CSV-списков требований BCREQ-1125 (BPMsoft + контакт-центр): Отчёт 1 «Требования к КЦ» — «КЦ Требования к коннектору» (65 строк: Да 19, Частично 6, Нет 40) и «КЦ Требования КЦ» (75: Да 62, Частично 6, Нет 7); Отчёт 2 «Функциональные требования» — «ФТ - Расшифровка отчетность» (10: Да 8, Частично 1, Нет 1), «ФТ - Расшифровки оценка звонков» (11: Да 10, Частично 1), «ФТ - Функциональные критерии» (37: Да 28, Частично 7, пусто 2 — заголовки разделов). Колонки 1–2 сверены check_source.py (разбор без модуля csv) и валидатором с транскрипцией. Совпадений с шаблоном v4 > 90 % нет (максимум 0,716). Коннектор подтверждается только по БЗ integration-bpmsoft: чаты, e-mail и MAX в SSOT интеграции не описаны — Нет данных."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/382
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/371
+related_runs:
+  - RUN-0072
+  - RUN-0071
+related_artifacts:
+  - experiments/issue_382/make_transcription.py
+  - experiments/issue_382/check_source.py
+  - experiments/issue_382/source_transcription.json
+  - experiments/issue_382/tender_similarity.py
+  - experiments/issue_382/tender_similarity.json
+  - experiments/issue_382/research/BRIEF.md
+  - experiments/issue_382/research/A1_kc1_voice.json
+  - experiments/issue_382/research/A2_kc1_chat_email.json
+  - experiments/issue_382/research/B_kc2_admin_voice.json
+  - experiments/issue_382/research/C_kc2_chat_email.json
+  - experiments/issue_382/research/D_ft1_ft2.json
+  - experiments/issue_382/research/E_ft3.json
+  - experiments/issue_382/generate_run.py
+  - experiments/issue_382/verify_quotes.py
+  - experiments/issue_367/tender_index.json
+  - scripts/validate_issue_382_run.py
