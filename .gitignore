@@ -40,6 +40,13 @@ experiments/issue_373/*
 !experiments/issue_373/stats.json
 !experiments/issue_373/quote-check.json
 !experiments/issue_373/section-prompts-check.json
+<<<<<<< HEAD
 experiments/issue_377/*
 !experiments/issue_377/stats.json
 !experiments/issue_377/quote-check.json
+=======
+experiments/issue_375/*
+!experiments/issue_375/stats.json
+!experiments/issue_375/quote-check.json
+!experiments/issue_375/section-prompts-check.json
+>>>>>>> upstream/main
