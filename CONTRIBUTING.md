@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-22
+version: 0.6
+updated: 2026-10-20
 temperature: 0.1
 ---
 
@@ -101,6 +101,33 @@ make validate-full   # перед пушем: весь набор без кэш�
 падение. Устройство и управление кэшем — [`tools/README.md`](tools/README.md);
 разбор решения — [`docs/analysis/2026-08-22-validator-optimization.md`](docs/analysis/2026-08-22-validator-optimization.md).
 
+## Параллельные PR: конфликты merge и номера прогонов
+
+PR с прогоном дописывает строки в общие реестры — `CHANGELOG.md` (`## Unreleased`),
+`runs/README.md` (реестр записей и таблица инструментов), иногда `.gitignore`. Когда
+параллельный PR смержен первым, оставшийся получает `This branch has conflicts that
+must be resolved`, хотя обе правки нужно сохранить. Реплей истории (issue #377):
+60 из 183 merge-коммитов имели конфликты, 85 из них — в реестрах; скрипт ниже
+разрешает 77 из 85, остальные 8 — настоящие правки одной строки
+([`docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md`](docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md)).
+
+Порядок для агента и человека (без согласования, ничего не ломает):
+
+1. Номер прогона — следующий свободный с учётом `main` **и открытых PR**:
+   `python3 scripts/resolve_registry_conflicts.py --next-run-id --base upstream/main`.
+2. Перед финализацией PR влить `main` (`git merge upstream/main`) и при конфликте
+   выполнить `make resolve-conflicts`: append-only конфликты реестров разрешаются
+   объединением сторон (строки прогонов — по номеру, ссылки «Используется в» —
+   объединяются, `version`/`updated` — большее значение), файлы добавляются в индекс.
+3. Если скрипт сообщает о коллизии номера (каталог `runs/<год>/RUN-NNNN/` есть в
+   обеих ветках): `git merge --abort`, затем
+   `python3 scripts/resolve_registry_conflicts.py --renumber RUN-OLD RUN-NEW --base upstream/main`
+   (переименует каталог и номер только в файлах и строках, добавленных веткой),
+   закоммитить и повторить шаг 2.
+4. Остальные конфликты скрипт не трогает — их разбирают вручную; после этого
+   `make validate-full`. Валидатор [`scripts/validate_issue_377_merge_hygiene.py`](scripts/validate_issue_377_merge_hygiene.py)
+   не пропустит маркеры конфликта, дубли номеров и служебный `.gitkeep` в корне.
+
 ## KB PDF (в репозитории не хранятся)
 
 Опубликованная извлечённая БЗ находится в
@@ -122,6 +149,7 @@ workflow **KB pipeline**, затем закоммитьте регенериро
 ## Pull Request Checklist
 
 - [ ] PR связан с issue.
+- [ ] `main` влит в ветку, конфликты реестров разрешены `make resolve-conflicts`.
 - [ ] `make validate-full` проходит локально.
 - [ ] Изменённые файлы соответствуют целевой структуре спока.
 - [ ] Значимое изменение отражено в [CHANGELOG.md](CHANGELOG.md) (`## Unreleased`).

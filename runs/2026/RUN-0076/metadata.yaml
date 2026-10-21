@@ -1,0 +1,106 @@
+run_id: RUN-0076
+process: task-1110-bcreq-fr-cc-operator-distribution-error-golden-set
+version: "0.1"
+date: 2026-10-19
+author: "BA-IH + LLM (фиксация прогона: AI issue solver)"
+model: "qwen3.7-plus"
+status: draft
+run_type: statistics
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/377
+  - https://github.com/user-attachments/files/33669255/chat-export-1110.json
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/incident-register.md
+  - outputs/error-statistics.md
+  - outputs/how-not-to-do.md
+  - outputs/golden-set-candidates.md
+  - outputs/golden-set-candidates.json
+  - outputs/rubric-candidates.md
+  - outputs/success-criteria.md
+  - outputs/prompt-improvements.md
+  - outputs/prompt-usage.md
+logs:
+  - logs/experiment-log.md
+  - logs/metrics.md
+  - logs/quote-verification.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  episodes: 78
+  iterations: 78
+  turns: 156
+  sessions: 19
+  tokens_input: 27749748
+  tokens_output: 212729
+  tokens_thinking: 134273
+  tokens_dialog_total: 27962477
+  token_method: "provider-usage:qwen3.7-plus"
+  duration_active_s: 26820
+  dialog_start_utc: "2026-10-01 10:36:53"
+  dialog_end_utc: "2026-10-13 14:18:08"
+  calendar_days: 12.2
+  attachments_distinct: 5
+  incidents_total: 333
+  incidents_prompt: 8
+  incidents_confirmed: 119
+  incidents_plausible: 214
+  incidents_detected_by_ba: 115
+  incidents_detected_next_turn: 79
+  incidents_detected_at_fixation: 218
+  incidents_after_first_ba_remark: 265
+  answers_with_incidents: 73
+  categories_observed: 20
+  incidents_by_category:
+    C01: 18
+    C02: 12
+    C03: 10
+    C04: 12
+    C05: 9
+    C06: 18
+    C07: 4
+    C08: 2
+    C09: 48
+    C10: 57
+    C11: 18
+    C12: 41
+    C13: 14
+    C14: 11
+    C15: 14
+    C16: 12
+    C17: 4
+    C18: 4
+    C19: 23
+    C20: 2
+  incidents_by_section:
+    "1": 8
+    "2": 29
+    "3": 49
+    "4": 74
+    "5": 1
+    "6": 5
+    "dialog": 128
+    "prompt": 39
+  golden_sets: 5
+  golden_cases: 50
+  success_criteria: 65
+  positive_cases: 27
+  quotes_checked: 559
+  quote_mismatches: 0
+  eval: "Прогон зафиксирован ради статистики ошибок ИИ при генерации BCREQ-ФТ по разделам (гибридный режим, без продуктовой принадлежности): вхождения размечены по категориям, разделам, BABOK / ODA и правилам стандарта BCREQ из диалога, каждая цитата сверена с экспортом. success_rate не задан — оснований в данных нет."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/377
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/373
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/345
+related_runs:
+  - RUN-0064
+  - RUN-0073
+related_artifacts:
+  - standards/runs-contract-standard.md
+  - standards/evals-contract-standard.md
+  - experiments/issue_309_run_stats.py
+  - experiments/issue_377_golden_data.py
+  - experiments/issue_377_verify_quotes.py
+  - experiments/issue_377_golden_set.py

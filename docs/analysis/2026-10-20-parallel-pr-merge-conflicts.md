@@ -1,0 +1,136 @@
+---
+status: draft
+version: 0.1
+updated: 2026-10-20
+temperature: 0.1
+analysis-subtype: options
+source: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/380#issuecomment-6291689206"
+scope: repo
+based_on: "git history of upstream/main (183 merge commits), PR #380 / #381 / #383"
+related_artifacts:
+  - "scripts/resolve_registry_conflicts.py"
+  - "scripts/test_resolve_registry_conflicts.py"
+  - "scripts/validate_issue_377_merge_hygiene.py"
+  - "experiments/issue_377/simulate_registry_merges.py"
+  - "experiments/issue_377/registry-merge-replay.json"
+  - "CONTRIBUTING.md"
+---
+
+# Анализ: конфликты merge параллельных PR
+
+## Summary / BLUF
+
+Конфликт `This branch has conflicts that must be resolved` у параллельных PR с
+прогонами — позиционный, а не смысловой: каждый PR дописывает строки в одни и те же
+места `CHANGELOG.md` и `runs/README.md` и выбирает номер `RUN-NNNN` от `main` без
+учёта открытых PR. Реплей 183 merge-коммитов `main`: 60 с конфликтами, 85 конфликтов
+реестров, из них резолвер `scripts/resolve_registry_conflicts.py` разрешает
+автоматически 77 (8 — настоящие конфликты, нужен человек); номер прогона теперь
+выбирается с учётом открытых PR. Это внесено без согласования (§4). Полностью
+убрать конфликты можно только сменой контракта репозитория — четыре варианта в §5
+ждут решения владельца.
+
+## 1. Context / Scope: запрос и состояние PR #380
+
+Запрос (комментарий Пользователя к PR #380, 2026-10-20): «если одновременно две
+задачи выведены в PR и мержим одну задачу, другая выдаёт конфликт — проверить
+текущее состояние PR, разобрать причину `This branch has conflicts that must be
+resolved`, предложить решение для автоматического решения конфликтов; если
+решается без нарушения логики репозитория и агента — внести изменения без
+согласования, иначе — согласовать вопросом в PR». Охват — репозиторий
+`mango_ba_prompts`: история `upstream/main` и PR #380, #381, #383.
+
+| Момент | Что смержено в `main` | Конфликт в PR #380 |
+| --- | --- | --- |
+| 2026-10-19 | #375 (`RUN-0074`), #381 (`RUN-0075`) | add/add каталога `runs/2026/RUN-0074/` (номер занят) + `CHANGELOG.md`, `runs/README.md`; прогон перенумерован в `RUN-0076` |
+| 2026-10-20 | #383 (`RUN-0077`; номер выбран с учётом открытого PR #380) | только `CHANGELOG.md` и `runs/README.md` — обе стороны дописали запись в одно место |
+
+При разборе первого конфликта в merge-коммит `e38eb414` попали маркеры конфликта
+в `.gitignore` (строки 43–52): ни один валидатор этого не ловил.
+
+## 2. Findings: причина
+
+Конфликт не смысловой, а позиционный: каждый PR с прогоном дописывает строки в
+**одни и те же места** общих файлов.
+
+1. `CHANGELOG.md` — новая запись сверху `## Unreleased`;
+2. `runs/README.md` — строка в конец «Реестра записей», строки в таблицу
+   «Локальные инструменты воспроизводимости», дописывание `RUN-NNNN` в хвост
+   «Используется в …» общей строки инструмента, `version`/`updated`;
+3. номер прогона `RUN-NNNN` выбирается как «следующий за последним в `main`» —
+   два параллельных PR берут один номер (add/add каталога).
+
+Git видит две вставки в одну точку и не знает, в каком порядке их склеить, поэтому
+останавливается, хотя правильный ответ — «оставить обе».
+
+## 3. Findings: реплей истории
+
+[`experiments/issue_377/simulate_registry_merges.py`](../../experiments/issue_377/simulate_registry_merges.py)
+повторяет все merge-коммиты `upstream/main` через `git merge-tree` и для реестров
+прогоняет новый резолвер, сравнивая результат с тем, что закоммитил человек/агент
+(результат — [`registry-merge-replay.json`](../../experiments/issue_377/registry-merge-replay.json)).
+
+| Метрика | Значение |
+| --- | --- |
+| merge-коммитов | 183 |
+| из них с конфликтами | 60 |
+| конфликтов в `CHANGELOG.md` | 49 |
+| конфликтов в `runs/README.md` | 35 |
+| конфликтов в `.gitignore` | 1 |
+| конфликтов в `.gitkeep` (служебный файл агента) | 22 |
+| конфликтов в валидаторах с хардкод-реестром (до issue #299) | 27 + 26 |
+| конфликтов в сгенерированных `site/data/*.json` (июнь 2026) | 7 |
+| коммитов «перенумеровать прогон» в истории `main` | 24 |
+
+Резолвер на 85 конфликтах реестров:
+
+| Исход | Кол-во | Комментарий |
+| --- | ---: | --- |
+| разрешено автоматически | 77 | |
+| — совпало с ручным разбором (непустые строки) | 65 | |
+| — отличается от ручного разбора | 12 | 8 (`CHANGELOG.md`) — агент в том же merge переписал свою запись (перенумерация `RUN-0013` → `RUN-0017`, «валидаторы не затронуты после #299», правка текста); 3 — агент в том же merge вручную правил список прогонов строки `chat_export_to_markdown.py`; 1 — ручной разбор оставил **две расходящиеся копии строки** инструмента (`cedafec3`, ошибка, описанная в `test_runs_registry_tools_table.py`), резолвер — одну корректную |
+| отказ (нужен человек) | 8 | обе стороны по-разному изменили одну строку: заголовок таблицы, описание контракта, `version` CHANGELOG, коллизия `RUN-0013` |
+
+## 4. Recommendations: принятое решение (без согласования — логику не меняет)
+
+| Что | Где |
+| --- | --- |
+| Резолвер append-only конфликтов: объединяет обе стороны в `CHANGELOG.md` (своя запись сверху), `runs/README.md` (строки прогонов по номеру, ссылки «Используется в» объединяются, `version`/`updated` — максимум), `.gitignore`; настоящие конфликты не трогает | [`scripts/resolve_registry_conflicts.py`](../../scripts/resolve_registry_conflicts.py), `make resolve-conflicts` |
+| Выбор номера с учётом `main` и открытых PR (`gh pr list`) | `--next-run-id` |
+| Перенумерация своего прогона: каталог + номер только в файлах и строках, добавленных веткой | `--renumber RUN-OLD RUN-NEW` |
+| Регрессионные тесты (8, включая интеграционные во временном git-репозитории) | [`scripts/test_resolve_registry_conflicts.py`](../../scripts/test_resolve_registry_conflicts.py) |
+| Валидатор гигиены merge: маркеры конфликта, дубли и порядок номеров в реестре, `run_id` = каталог, нет `.gitkeep` в корне | [`scripts/validate_issue_377_merge_hygiene.py`](../../scripts/validate_issue_377_merge_hygiene.py) |
+| Порядок действий агента и человека | [`CONTRIBUTING.md`](../../CONTRIBUTING.md#параллельные-pr-конфликты-merge-и-номера-прогонов) |
+
+Почему не `.gitattributes merge=union`: встроенный union склеивает стороны без
+правил — дублирует `version:` во frontmatter (ломает YAML), не сортирует реестр и
+не объединяет ссылки в одной строке. Кроме того, кнопка merge GitHub custom/union
+драйверы не применяет, так что статус `DIRTY` у PR это не убирает; проверить
+поведение GitHub без доступа к настройкам репозитория нельзя — это допущение.
+
+## 5. Options: требует согласования (меняет контракт репозитория)
+
+Полностью убрать конфликты (а не разрешать их) можно только изменением правил:
+
+1. **Фрагменты CHANGELOG** — каждый PR пишет `changelog.d/<issue>.md`, сборка в
+   `CHANGELOG.md` при релизе. Меняет пункт чек-листа PR.
+2. **Генерируемый реестр прогонов** — таблица `runs/README.md` строится скриптом
+   из `metadata.yaml`; при конфликте достаточно перегенерировать.
+3. **Номер прогона без гонки** — например, резерв номера комментарием в issue при
+   старте или номер от issue (`RUN-2026-0377`). Меняет схему имён `RUN-NNNN`.
+4. **Action в `main`** — после каждого merge обновляет конфликтующие PR
+   резолвером. Для веток в форке нужен токен с правом записи в форк или
+   «Allow edits by maintainers» — секреты и права настраивает владелец.
+
+Вопрос по этим пунктам задан в PR #380.
+
+## 6. Related Artifacts
+
+- Резолвер [`scripts/resolve_registry_conflicts.py`](../../scripts/resolve_registry_conflicts.py)
+  и тесты [`scripts/test_resolve_registry_conflicts.py`](../../scripts/test_resolve_registry_conflicts.py).
+- Валидатор [`scripts/validate_issue_377_merge_hygiene.py`](../../scripts/validate_issue_377_merge_hygiene.py).
+- Реплей [`experiments/issue_377/simulate_registry_merges.py`](../../experiments/issue_377/simulate_registry_merges.py),
+  результат [`registry-merge-replay.json`](../../experiments/issue_377/registry-merge-replay.json).
+- Порядок действий — [`CONTRIBUTING.md`](../../CONTRIBUTING.md#параллельные-pr-конфликты-merge-и-номера-прогонов).
+- Issue [#377](https://github.com/G-Ivan-A/mango_ba_prompts/issues/377), PR
+  [#380](https://github.com/G-Ivan-A/mango_ba_prompts/pull/380).

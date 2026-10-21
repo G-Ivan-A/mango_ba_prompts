@@ -1,0 +1,1313 @@
+{
+  "golden_set": "run-0076-bcreq-fr-sections",
+  "version": "0.1",
+  "status": "draft",
+  "source": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377",
+  "sets": [
+    {
+      "id": "GS-377-PRB",
+      "title": "Разделы 1–2: глоссарий, проблема, цель, границы",
+      "sections": [
+        "1",
+        "2"
+      ],
+      "cases": [
+        {
+          "id": "GS-377-PRB-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "1",
+          "input": "Приоритетный порядок распределения — заданная внешним источником последовательность ролей",
+          "source": {
+            "incident": "I-012",
+            "turn": 5,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.3",
+            "10.41"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C04",
+            "reason": "каждый пункт разделов 3–4 трассируется в согласованные границы раздела 2.3"
+          }
+        },
+        {
+          "id": "GS-377-PRB-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Обеспечение возможности персонализированной маршрутизации звонков в рамках кампаний ИО на уровне отдельной таски",
+          "source": {
+            "incident": "I-019",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M3",
+            "F4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; термины — русские и из глоссария"
+          }
+        },
+        {
+          "id": "GS-377-PRB-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Маршрутизация входящих вызовов или вызовов вне контекста кампаний ИО.",
+          "source": {
+            "incident": "I-032",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обязательным содержанием стандарта и решениями БА"
+          }
+        },
+        {
+          "id": "GS-377-PRB-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Рекомендую Вариант А (строгий скоуп), и вот почему",
+          "source": {
+            "incident": "I-288",
+            "turn": 127,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.6",
+            "10.38"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C16",
+            "reason": "варианты сравниваются по общим критериям, решение — за человеком"
+          }
+        },
+        {
+          "id": "GS-377-PRB-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Доработка бэкенд-логики движка Исходящего Обзвона для реализации алгоритма «На ответственных»: последовательный перебор переданного массива ID",
+          "source": {
+            "incident": "I-028",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.1",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "standard": [
+            "S3",
+            "S6"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "ФТ и дизайн описывают, что делает Система и по каким правилам; внутренняя реализация — на усмотрение Исполнителя"
+          }
+        },
+        {
+          "id": "GS-377-PRB-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "что снижает конверсию и увеличивает время на идентификацию и обработку лида.",
+          "source": {
+            "incident": "I-018",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [
+            "V"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "утверждение о продукте — с цитатой источника; число без источника — открытый вопрос, а не требование"
+          }
+        },
+        {
+          "id": "GS-377-PRB-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "1",
+          "input": "Рекрутер – Сотрудник Заказчика, выполняющий бизнес-роль во Внешней системе (Skillaz).",
+          "source": {
+            "incident": "I-228",
+            "turn": 95,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "F3"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "меняется только запрошенный пункт; удаление — только по команде и зачёркиванием"
+          }
+        },
+        {
+          "id": "GS-377-PRB-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Задачи сформулированы через отглагольные существительные («Расширение API-контракта...», «Адаптация алгоритма...»",
+          "source": {
+            "incident": "I-048",
+            "turn": 17,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "5.5",
+            "10.37"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "статус согласования ставит человек; модель перечисляет, что и чем проверено"
+          }
+        },
+        {
+          "id": "GS-377-PRB-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Модификация логики распределения для сценариев Заказа обратного звонка (ЗОЗ).",
+          "source": {
+            "ref": "N-05",
+            "turn": 13
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C12"
+            ]
+          }
+        },
+        {
+          "id": "GS-377-PRB-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "2",
+          "input": "Существующие режимы дозвона кампаний ИО не модифицируются",
+          "source": {
+            "ref": "N-03",
+            "turn": 5
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C04"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-377-FR",
+      "title": "Раздел 3: функциональные требования",
+      "sections": [
+        "3"
+      ],
+      "cases": [
+        {
+          "id": "GS-377-FR-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Система должна обеспечивать прием и валидацию нового параметра (массива идентификаторов приоритетных операторов)",
+          "source": {
+            "incident": "I-060",
+            "turn": 21,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M3",
+            "F4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; термины — русские и из глоссария"
+          }
+        },
+        {
+          "id": "GS-377-FR-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "3.4. Управление ресурсами и артефактами (Logging)",
+          "source": {
+            "incident": "I-069",
+            "turn": 23,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "перед выдачей сверять раздел с журналом решений БА в сессии"
+          }
+        },
+        {
+          "id": "GS-377-FR-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Группировка по блокам, например: Конфигурация сервиса, Исполнение и доставка, Управление ресурсами",
+          "source": {
+            "incident": "I-023",
+            "turn": 9,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "7.1"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M5",
+            "F2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "порядок разделов и блоков — по стандарту и указаниям БА; нумерация строгая"
+          }
+        },
+        {
+          "id": "GS-377-FR-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Выбор алгоритма в ФТ-01 должен осуществляться через выпадающий список, содержащий строго два фиксированных значения",
+          "source": {
+            "incident": "I-064",
+            "turn": 23,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.1",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "standard": [
+            "S3",
+            "S6"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "ФТ и дизайн описывают, что делает Система и по каким правилам; внутренняя реализация — на усмотрение Исполнителя"
+          }
+        },
+        {
+          "id": "GS-377-FR-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Система должна обеспечивать фиксацию факта попытки дозвона до каждого оператора из переданного массива приоритетных операторов в статистике",
+          "source": {
+            "incident": "I-053",
+            "turn": 19,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.3",
+            "4.3"
+          ],
+          "oda": "ODA-MGT",
+          "standard": [
+            "M2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C03",
+            "reason": "новая функция — только из запроса Заказчика или решения БА; иначе вопрос БА"
+          }
+        },
+        {
+          "id": "GS-377-FR-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Система должна предоставлять Пользоват良елю возможность выбора алгоритма распределения вызовов в настройках Кампании ИО, включающего фиксированное значение",
+          "source": {
+            "incident": "I-080",
+            "turn": 27,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "F3"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "меняется только запрошенный пункт; удаление — только по команде и зачёркиванием"
+          }
+        },
+        {
+          "id": "GS-377-FR-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Система должна обеспечивать прием и валидацию массива идентификаторов приоритетных операторов (Рекрутеров), передаваемого Внешней системой",
+          "source": {
+            "incident": "I-054",
+            "turn": 19,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обязательным содержанием стандарта и решениями БА"
+          }
+        },
+        {
+          "id": "GS-377-FR-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "добавляя к существующим параметрам фиксированное значение «На ответственных»",
+          "source": {
+            "incident": "I-111",
+            "turn": 35,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "доменное поведение описывается по документации и уточнениям БА"
+          }
+        },
+        {
+          "id": "GS-377-FR-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Везде должно быть «Кампании ИО» полностью.",
+          "source": {
+            "ref": "N-08",
+            "turn": 37
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C12"
+            ]
+          }
+        },
+        {
+          "id": "GS-377-FR-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "3",
+          "input": "Сужение ФТ-01 до одного синхронного метода не является противоречием",
+          "source": {
+            "ref": "N-27",
+            "turn": 149
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C06"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-377-SOL",
+      "title": "Разделы 4–6: описание решения, НФТ, ограничения",
+      "sections": [
+        "4",
+        "5",
+        "6"
+      ],
+      "cases": [
+        {
+          "id": "GS-377-SOL-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "Тайминги, коэффициенты дополнительных вызовов (add_calls_coef) и предиктивная логика Режимов обзвона сохраняются без модификаций.",
+          "source": {
+            "incident": "I-139",
+            "turn": 51,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [
+            "V"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "утверждение о продукте — с цитатой источника; число без источника — открытый вопрос, а не требование"
+          }
+        },
+        {
+          "id": "GS-377-SOL-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "В методы POST /cc/task/add и POST /cc/tasks/push добавляется новый необязательный параметр",
+          "source": {
+            "incident": "I-091",
+            "turn": 29,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C06",
+            "reason": "перед выдачей сверять раздел с журналом решений БА в сессии"
+          }
+        },
+        {
+          "id": "GS-377-SOL-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "Поступление Задания в движок Исходящего Обзвона (ИО) для инициации вызова.",
+          "source": {
+            "incident": "I-120",
+            "turn": 39,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "2.5",
+            "7.1",
+            "7.5"
+          ],
+          "oda": "ODA-IMPL",
+          "standard": [
+            "S3",
+            "S6"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C01",
+            "reason": "ФТ и дизайн описывают, что делает Система и по каким правилам; внутренняя реализация — на усмотрение Исполнителя"
+          }
+        },
+        {
+          "id": "GS-377-SOL-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "При передаче массива priority_operators Система модифицирует этот этап:",
+          "source": {
+            "incident": "I-239",
+            "turn": 101,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M3",
+            "F4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; термины — русские и из глоссария"
+          }
+        },
+        {
+          "id": "GS-377-SOL-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "json.tasks[*].priority_operators",
+          "source": {
+            "incident": "I-144",
+            "turn": 53,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "доменное поведение описывается по документации и уточнениям БА"
+          }
+        },
+        {
+          "id": "GS-377-SOL-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "4.1. Расширение API контракта (Покрывает ФТ-01)",
+          "source": {
+            "incident": "I-140",
+            "turn": 51,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "7.1"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M5",
+            "F2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "порядок разделов и блоков — по стандарту и указаниям БА; нумерация строгая"
+          }
+        },
+        {
+          "id": "GS-377-SOL-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "При наведении на элемент управления отображается подсказка: «При выборе \"На ответственных\" система будет",
+          "source": {
+            "incident": "I-093",
+            "turn": 29,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.3",
+            "4.3"
+          ],
+          "oda": "ODA-MGT",
+          "standard": [
+            "M2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C03",
+            "reason": "новая функция — только из запроса Заказчика или решения БА; иначе вопрос БА"
+          }
+        },
+        {
+          "id": "GS-377-SOL-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "Защита от сбоев: Сценарии А и Б в п. 4.1.4 и Edge Cases в п. 4.3 полностью закрывают вопросы невалидных ID",
+          "source": {
+            "incident": "I-185",
+            "turn": 71,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обязательным содержанием стандарта и решениями БА"
+          }
+        },
+        {
+          "id": "GS-377-SOL-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Раздел: 11.4. Добавление кампании (подраздел «Ограничения кампаний Исходящего обзвона»).",
+          "source": {
+            "ref": "N-15",
+            "turn": 89
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C09"
+            ]
+          }
+        },
+        {
+          "id": "GS-377-SOL-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "4",
+          "input": "Дозвон до одного Оператора из основной группы Кампании ИО по штатному алгоритму осуществляется только после исчерпания массива приоритетных Операторов.",
+          "source": {
+            "ref": "N-18",
+            "turn": 105
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C12"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-377-DLG",
+      "title": "Ход диалога: статусы, самопроверка, вопросы",
+      "sections": [
+        "dialog"
+      ],
+      "cases": [
+        {
+          "id": "GS-377-DLG-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Разделы 1 и 2 сформированы в строгом соответствии со стандартом BCREQ.",
+          "source": {
+            "incident": "I-033",
+            "turn": 11,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "5.5",
+            "10.37"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C10",
+            "reason": "статус согласования ставит человек; модель перечисляет, что и чем проверено"
+          }
+        },
+        {
+          "id": "GS-377-DLG-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "интеграционный контракт предполагает использование поля custom_fields (передача JSON-массива ID сотрудников)",
+          "source": {
+            "incident": "I-016",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "7.2"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [
+            "V"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C09",
+            "reason": "утверждение о продукте — с цитатой источника; число без источника — открытый вопрос, а не требование"
+          }
+        },
+        {
+          "id": "GS-377-DLG-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Факт: Skillaz является источником правды (Source of Truth) для заданий.",
+          "source": {
+            "incident": "I-020",
+            "turn": 7,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M3",
+            "F4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; термины — русские и из глоссария"
+          }
+        },
+        {
+          "id": "GS-377-DLG-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Префикс vpbx/ относится исключительно к API Виртуальной АТС.",
+          "source": {
+            "incident": "I-042",
+            "turn": 15,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.2",
+            "7.3"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C14",
+            "reason": "противоречие заявляется только с цитатами обеих сторон"
+          }
+        },
+        {
+          "id": "GS-377-DLG-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Противоречия НЕТ.",
+          "source": {
+            "incident": "I-311",
+            "turn": 143,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.6",
+            "10.38"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C16",
+            "reason": "варианты сравниваются по общим критериям, решение — за человеком"
+          }
+        },
+        {
+          "id": "GS-377-DLG-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "архитектурными практиками SaaS",
+          "source": {
+            "incident": "I-047",
+            "turn": 15,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "3.1",
+            "7.1"
+          ],
+          "oda": "ODA-IMPL",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "методология — инструмент аналитика; её названия в документ не вносятся"
+          }
+        },
+        {
+          "id": "GS-377-DLG-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Требуется поддержка настраиваемых параметров (включая предиктив и его Fallback), что исключает хардкод.",
+          "source": {
+            "incident": "I-009",
+            "turn": 3,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.3",
+            "10.24"
+          ],
+          "oda": "ODA-DEP",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C15",
+            "reason": "доменное поведение описывается по документации и уточнениям БА"
+          }
+        },
+        {
+          "id": "GS-377-DLG-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Ниже представлен скорректированный Раздел 4 и добавлен Раздел 6 (Ограничения), включающий примечание для разработчиков.",
+          "source": {
+            "incident": "I-173",
+            "turn": 67,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "4.4"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C17",
+            "reason": "один ответ — один запрошенный раздел или правка"
+          }
+        },
+        {
+          "id": "GS-377-DLG-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "Подтвердите, что факты извлечены верно",
+          "source": {
+            "ref": "N-02",
+            "turn": 3
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C07"
+            ]
+          }
+        },
+        {
+          "id": "GS-377-DLG-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "dialog",
+          "input": "переписываю только тот фрагмент, который вы указали, остальной текст Раздела 4 оставляю без изменений",
+          "source": {
+            "ref": "N-13",
+            "turn": 69
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C17"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "GS-377-PRM",
+      "title": "Шаблон-промпт генерации раздела",
+      "sections": [
+        "prompt"
+      ],
+      "cases": [
+        {
+          "id": "GS-377-PRM-01",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "Категорический запрет на формулировки «Система должна», «необходимо",
+          "source": {
+            "incident": "I-002",
+            "turn": 0,
+            "model": "—"
+          },
+          "babok": [
+            "3.1",
+            "3.4"
+          ],
+          "oda": "—",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C19",
+            "reason": "промпт раздела универсален, непротиворечив и согласован со стандартом BCREQ"
+          }
+        },
+        {
+          "id": "GS-377-PRM-02",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "API-архитектор с глубокой экспертизой в стандартах REST, OpenAPI 3.0 и методологиях телеком-индустрии (TM Forum ODA)",
+          "source": {
+            "incident": "I-202",
+            "turn": 81,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "3.1",
+            "7.1"
+          ],
+          "oda": "ODA-IMPL",
+          "standard": [],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C02",
+            "reason": "методология — инструмент аналитика; её названия в документ не вносятся"
+          }
+        },
+        {
+          "id": "GS-377-PRM-03",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "поведение Системы в этих случаях (Graceful Degradation)",
+          "source": {
+            "incident": "I-204",
+            "turn": 81,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.23"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M3",
+            "F4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C12",
+            "reason": "одно требование — одно проверяемое действие; термины — русские и из глоссария"
+          }
+        },
+        {
+          "id": "GS-377-PRM-04",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "Сформировать разделы \"Функциональные требования (API интеграции)\" и \"Описание разрабатываемого решения (Дизайн API)\"",
+          "source": {
+            "incident": "I-203",
+            "turn": 81,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.2",
+            "10.22"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S4"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C13",
+            "reason": "перед выдачей сверять раздел с обязательным содержанием стандарта и решениями БА"
+          }
+        },
+        {
+          "id": "GS-377-PRM-05",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "если задача противоречит индустриальной практике или REST-архитектуре, ты не молчишь, а предлагаешь оптимальное обоснованное решение",
+          "source": {
+            "incident": "I-212",
+            "turn": 87,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.3",
+            "4.3"
+          ],
+          "oda": "ODA-MGT",
+          "standard": [
+            "M2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C03",
+            "reason": "новая функция — только из запроса Заказчика или решения БА; иначе вопрос БА"
+          }
+        },
+        {
+          "id": "GS-377-PRM-06",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "Превышение лимитов (обрезка массива).",
+          "source": {
+            "incident": "I-205",
+            "turn": 81,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.3",
+            "10.41"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "S2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C04",
+            "reason": "каждый пункт разделов 3–4 трассируется в согласованные границы раздела 2.3"
+          }
+        },
+        {
+          "id": "GS-377-PRM-07",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "none",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "Категорически запрещено описывать внутренние механизмы Системы в Разделе 3",
+          "source": {
+            "incident": "I-275",
+            "turn": 123,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "5.1",
+            "5.4"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "F3"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C05",
+            "reason": "меняется только запрошенный пункт; удаление — только по команде и зачёркиванием"
+          }
+        },
+        {
+          "id": "GS-377-PRM-08",
+          "kind": "negative",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "5. Ограничения (Функциональные, интеграционные, процессные).",
+          "source": {
+            "incident": "I-022",
+            "turn": 9,
+            "model": "qwen3.7-plus"
+          },
+          "babok": [
+            "7.4",
+            "7.1"
+          ],
+          "oda": "ODA-CORE",
+          "standard": [
+            "M5",
+            "F2"
+          ],
+          "expect": {
+            "outcome": "refused",
+            "defect_class": "C11",
+            "reason": "порядок разделов и блоков — по стандарту и указаниям БА; нумерация строгая"
+          }
+        },
+        {
+          "id": "GS-377-PRM-09",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "Однако предоставленный шаблон в Разделе 3 (ФТ) и Разделе 4 (Описание решения) напрямую и массово использует",
+          "source": {
+            "ref": "N-04",
+            "turn": 9
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C19"
+            ]
+          }
+        },
+        {
+          "id": "GS-377-PRM-10",
+          "kind": "positive",
+          "origin": "run-observed",
+          "confirmed_by": "user",
+          "artifact_class": "A-BCREQ",
+          "section": "prompt",
+          "input": "ЗАПРЕЩЕНО генерировать весь документ целиком за один ответ. Процесс строго итеративный:",
+          "source": {
+            "ref": "N-21",
+            "turn": 123
+          },
+          "expect": {
+            "outcome": "completed",
+            "no_defect_of": [
+              "C17"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

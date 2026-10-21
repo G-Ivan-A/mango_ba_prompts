@@ -13,6 +13,59 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #377 (комментарий к PR #380): итоговые промпты разделов BCREQ-ФТ по RUN-0073…RUN-0076
+
+- Аналитический файл [`docs/analysis/2026-10-20-bcreq-fr-section-prompts.md`](docs/analysis/2026-10-20-bcreq-fr-section-prompts.md)
+  (`analysis-subtype: options`): сводная статистика четырёх прогонов в едином словаре
+  категорий U01–U26 — 843 вхождения, 137 критериев успеха, разбивка по разделам, группам
+  промптов и категориям, Парето по группам.
+- Три самодостаточных промпта генерации разделов — а) 1, 2; б) 3, 5; в) 4, 6 — с общей
+  частью (О1–О14), правилами разделов (36) и конструкции промпта (П1–П7); промпт
+  проверки второй ролью отдельным вызовом; разрешение расхождений между прогонами.
+  Каждое правило ссылается на критерии успеха, правила прошлых промптов или дефекты
+  шаблонов; каждая категория ошибок группы покрыта правилом её промпта.
+- Промпт GitHub issue на сбор статистики и цитат для golden set запретов и необходимых
+  и достаточных критериев приёмки промптов а)–в).
+- Скрипт [`experiments/issue_377_cross_run_stats.py`](experiments/issue_377_cross_run_stats.py)
+  (таблицы файла и `experiments/issue_377/cross-run-stats.json`), валидатор
+  [`scripts/validate_issue_377_section_prompts.py`](scripts/validate_issue_377_section_prompts.py)
+  и его мутационная проверка `experiments/issue_377_section_prompts_mutations.py`.
+- `docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md` приведён к
+  `standards/analysis-standard.md` (подтип `options`, секции Summary / BLUF … Related
+  Artifacts); golden set RUN-0076 переименован в `run-0076-bcreq-fr-sections`.
+
+### Added — Issue #377 (комментарий к PR #380): автоматическое разрешение конфликтов параллельных PR
+
+- Разобрана причина `This branch has conflicts that must be resolved`: каждый PR с прогоном
+  дописывает строки в одни и те же места `CHANGELOG.md` и `runs/README.md`, а номер
+  `RUN-NNNN` выбирается от `main` без учёта открытых PR. Реплей 183 merge-коммитов `main`:
+  60 с конфликтами, 85 конфликтов реестров, 24 перенумерации прогонов
+  ([`docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md`](docs/analysis/2026-10-20-parallel-pr-merge-conflicts.md)).
+- Резолвер [`scripts/resolve_registry_conflicts.py`](scripts/resolve_registry_conflicts.py)
+  (`make resolve-conflicts`): объединяет обе стороны append-only конфликтов реестров
+  (77 из 85 исторических конфликтов), отказывает на настоящих конфликтах; `--next-run-id`
+  с учётом открытых PR, `--renumber` для своего прогона. Тесты —
+  [`scripts/test_resolve_registry_conflicts.py`](scripts/test_resolve_registry_conflicts.py).
+- Валидатор [`scripts/validate_issue_377_merge_hygiene.py`](scripts/validate_issue_377_merge_hygiene.py):
+  маркеры конфликта, дубли и порядок номеров реестра, `run_id` = каталог, `.gitkeep` в корне.
+  Исправлены маркеры конфликта в `.gitignore` и порядок строк RUN-0018/RUN-0019 в реестре.
+- Порядок действий — раздел «Параллельные PR» в [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+### Added — Issue #377: золотые наборы ошибок ИИ и критериев успеха задачи 1110 (RUN-0076)
+
+- Добавлена запись прогона `runs/2026/RUN-0076` (`run_type: statistics`) по экспорту чата
+  задачи 1110 в гибридном режиме (без mango-ba-ai-runtime и продуктовой принадлежности):
+  333 вхождения ошибок ИИ без схлопывания повторов, каждая из 559 цитат сверена с экспортом.
+- Золотой набор инцидентов «как не надо» (`outputs/how-not-to-do.md`) — правила по категориям
+  и все вхождения по разделам документа; кандидаты в золотые наборы (5 наборов по 10 кейсов)
+  и рубрика.
+- Золотой набор критериев успеха (`outputs/success-criteria.md`, 65 критериев и 27 позитивных
+  кейсов) и предложения для промптов и стандарта BCREQ (`outputs/prompt-improvements.md`).
+- Улучшения отчёта: цепочки повторов после замечания БА, привязка к правилам стандарта BCREQ
+  из диалога, сравнение с RUN-0073, новая категория C20 «розовый слон».
+- Генератор `experiments/issue_377_golden_set.py`, разметка `experiments/issue_377_golden_data.py`,
+  сверка цитат `experiments/issue_377_verify_quotes.py`, валидатор `scripts/validate_issue_377_run.py`.
+
 ### Added — Issue #382: L0-оценка исполнимости ТЗ BCREQ-1125 (RUN-0077)
 
 - Добавлен прогон `runs/2026/RUN-0077` с оценкой пяти CSV-списков требований Заказчика
