@@ -53,3 +53,7 @@ experiments/issue_377/*
 !experiments/issue_377/simulate_registry_merges.py
 !experiments/issue_377/registry-merge-replay.json
 !experiments/issue_377/cross-run-stats.json
+# рабочие данные issue #384: реплики экспорта чата «Проект: СПЛИТ (БА)» за
+# 22–23.10.2026 в репозиторий не попадают (правило #309); остаются реестр
+# дословных цитат и сверка цитат без текста переписки
+experiments/issue_384/turns/

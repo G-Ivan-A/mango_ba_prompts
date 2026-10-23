@@ -13,6 +13,27 @@ temperature: 0.1
 
 ## Unreleased
 
+### Changed — Issue #384 (комментарий к PR #385): аудит `prompts/` v0.2 с учётом чата 21–23.10.2026
+
+- [`docs/analysis/2026-10-23-prompts-catalog-audit.md`](docs/analysis/2026-10-23-prompts-catalog-audit.md)
+  обновлён до версии 0.2 по экспорту чата «Проект: СПЛИТ (БА)» (р. 744–779,
+  22–23.10.2026; 21.10 реплик нет). Статус BLOCKED снят: §3.7 сопоставляет пункты
+  «Промпт 0» и 2.1–2.14 с каталогом информационно (структура — предложение, а не
+  стандарт) и даёт 12 наблюдений для Задачи 2. Покрытие пересчитано на восемь
+  разделов BCREQ. Обоснование статусов опирается на критерии БА из чата; статусы
+  файлов (9/11/12/2) не изменились. Добавлен вектор для Задачи 2 (§3.8).
+- Реестр дословных цитат
+  [`experiments/issue_384/chat-2026-10-22-23-register.md`](experiments/issue_384/chat-2026-10-22-23-register.md)
+  (Ч-01…Ч-70) и сверка с экспортом
+  [`experiments/issue_384_verify_chat_quotes.py`](experiments/issue_384_verify_chat_quotes.py)
+  → `experiments/issue_384/chat-quote-check.json`. Экспорт чата в репозиторий не
+  коммитится.
+- Валидатор [`scripts/validate_issue_384_prompts_audit.py`](scripts/validate_issue_384_prompts_audit.py)
+  проверяет ссылки «[р. N, Ч-NN]» по реестру, сверку цитат, матрицу 2.1–2.14,
+  нумерацию наблюдений и отсутствие BLOCKED; негативные проверки —
+  [`experiments/issue_384_validator_negative.py`](experiments/issue_384_validator_negative.py).
+- Файлы `prompts/` не изменены.
+
 ### Added — Issue #384: аудит каталога `prompts/` относительно целевой структуры BCREQ
 
 - Аналитический файл [`docs/analysis/2026-10-23-prompts-catalog-audit.md`](docs/analysis/2026-10-23-prompts-catalog-audit.md)

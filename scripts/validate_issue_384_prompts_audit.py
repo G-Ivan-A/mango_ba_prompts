@@ -22,7 +22,14 @@
 5. все ссылки — полные абсолютные URL (требование issue): нет относительных
    Markdown-ссылок;
 6. якоря `?plain=1#L<n>` на файлы снимка указывают на существующие строки
-   (если коммит снимка есть в локальном клоне; в shallow-клоне CI — пропуск).
+   (если коммит снимка есть в локальном клоне; в shallow-клоне CI — пропуск);
+7. контекст чата 21–23.10.2026 (версия 0.2): каждая ссылка
+   «[р. N, Ч-NN](…chat-2026-10-22-23-register.md?plain=1#L<n>)» ведёт на строку
+   Ч-NN реестра цитат, и номер реплики совпадает с реестром; незаменённых
+   `{Ч-NN}` нет; `chat-quote-check.json` — `ok`, тот же SHA-256 экспорта и те же
+   ID, что в реестре; матрица §3.7.1 содержит «Промпт 0» и пункты 2.1–2.14;
+   число наблюдений Н1…Нn в §3.7.3 совпадает с числом в Summary; следов
+   «BLOCKED» версии 0.1 нет.
 
 Запуск: ``python3 scripts/validate_issue_384_prompts_audit.py``
 """
@@ -39,6 +46,12 @@ ROOT = Path(__file__).resolve().parents[1]
 DOC = ROOT / "docs" / "analysis" / "2026-10-23-prompts-catalog-audit.md"
 INVENTORY = ROOT / "experiments" / "issue_384" / "inventory.json"
 PROVENANCE = ROOT / "experiments" / "issue_384" / "prompt-provenance.json"
+REGISTER = ROOT / "experiments" / "issue_384" / "chat-2026-10-22-23-register.md"
+QUOTE_CHECK = ROOT / "experiments" / "issue_384" / "chat-quote-check.json"
+REGISTER_URL = (
+    "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
+    "experiments/issue_384/chat-2026-10-22-23-register.md?plain=1#L"
+)
 SHA = "dbf1d3c58ca5a4c145929e644b2b31803b0ea11d"
 SUBTYPES = ("inventory", "matrix", "options", "recommendation")
 SECTIONS = ("Summary / BLUF", "Context / Scope", "Findings", "Recommendations", "Related Artifacts")
@@ -170,6 +183,62 @@ def check_links(text: str) -> list[str]:
     return [f"относительная ссылка {t!r}: нужны полные абсолютные URL" for t in rel]
 
 
+def register_rows(register: str) -> dict[str, tuple[int, int]]:
+    """ID строки реестра → (номер реплики, номер строки файла)."""
+    rows = {}
+    for number, line in enumerate(register.splitlines(), 1):
+        m = re.match(r"^\| (Ч-\d{2}) \| (\d+) \|", line)
+        if m:
+            rows[m.group(1)] = (int(m.group(2)), number)
+    return rows
+
+
+def check_chat_context(text: str, register: str, quote_check: dict) -> list[str]:
+    errors = []
+    rows = register_rows(register)
+    if not rows:
+        return ["реестр цитат: нет строк Ч-NN"]
+    links = re.findall(rf"\[р\. (\d+), (Ч-\d{{2}})\]\({re.escape(REGISTER_URL)}(\d+)\)", text)
+    if not links:
+        errors.append("нет ссылок на реестр цитат чата 21–23.10.2026")
+    for turn, rid, line in links:
+        if rid not in rows:
+            errors.append(f"ссылка на {rid}: такой строки в реестре нет")
+        elif rows[rid] != (int(turn), int(line)):
+            errors.append(f"ссылка «р. {turn}, {rid}» → L{line}; в реестре р. {rows[rid][0]}, L{rows[rid][1]}")
+    loose = len(re.findall(r"chat-2026-10-22-23-register\.md\?plain=1#L", text)) - len(links)
+    if loose:
+        errors.append(f"{loose} ссылок на строки реестра не в форме «[р. N, Ч-NN](…#Ln)»")
+    if "{Ч-" in text:
+        errors.append("остались незаменённые плейсхолдеры {Ч-NN}")
+    if "BLOCKED" in text:
+        errors.append("в отчёте остался статус BLOCKED версии 0.1")
+
+    sha = re.search(r"^\| SHA-256 \| `([0-9a-f]{64})` \|$", register, re.M)
+    if not quote_check.get("ok"):
+        errors.append("chat-quote-check.json: ok=false — цитаты не сверены с экспортом")
+    if sha is None or quote_check.get("export_sha256") != sha.group(1):
+        errors.append("chat-quote-check.json: SHA-256 экспорта не совпадает с провенансом реестра")
+    checked = [r["id"] for r in quote_check.get("results", [])]
+    if sorted(checked) != sorted(rows):
+        errors.append(f"chat-quote-check.json: сверено {len(checked)} строк, в реестре {len(rows)}")
+
+    matrix = re.search(r"^#### 3\.7\.1\..*?(?=^#### )", text, re.M | re.S)
+    if matrix is None:
+        errors.append("нет матрицы §3.7.1 «Пункты структуры и каталог»")
+    else:
+        for item in ["Промпт 0", *(f"2.{n}" for n in range(1, 15))]:
+            if not re.search(rf"^\| {re.escape(item)} \|", matrix.group(0), re.M):
+                errors.append(f"§3.7.1: нет строки пункта «{item}»")
+    observations = re.findall(r"^\| Н(\d+) \|", text, re.M)
+    if observations != [str(n) for n in range(1, len(observations) + 1)]:
+        errors.append(f"§3.7.3: наблюдения не идут подряд Н1…Нn: {observations}")
+    claimed = re.search(r"(\d+) наблюдени", text)
+    if claimed is None or int(claimed.group(1)) != len(observations):
+        errors.append(f"Summary: число наблюдений не совпадает с §3.7.3 ({len(observations)})")
+    return errors
+
+
 def check_anchors(text: str) -> tuple[list[str], str]:
     probe = subprocess.run(["git", "cat-file", "-e", f"{SHA}^{{commit}}"], cwd=ROOT,
                            capture_output=True, check=False)
@@ -193,7 +262,7 @@ def check_anchors(text: str) -> tuple[list[str], str]:
 
 
 def main() -> int:
-    for path in (DOC, INVENTORY, PROVENANCE):
+    for path in (DOC, INVENTORY, PROVENANCE, REGISTER, QUOTE_CHECK):
         if not path.exists():
             print(f"FAIL: нет {path.relative_to(ROOT)}")
             return 1
@@ -204,6 +273,8 @@ def main() -> int:
     errors += check_table(text, inventory)
     errors += check_provenance(text, prov)
     errors += check_links(text)
+    errors += check_chat_context(text, REGISTER.read_text(encoding="utf-8"),
+                                 json.loads(QUOTE_CHECK.read_text(encoding="utf-8")))
     anchor_errors, anchor_note = check_anchors(text)
     errors += anchor_errors
     if errors:
@@ -211,7 +282,7 @@ def main() -> int:
             print(f"FAIL: {e}")
         return 1
     print(f"OK: {DOC.relative_to(ROOT)} — {len(inventory)} файлов снимка классифицированы, "
-          f"маркеры, прогоны и provenance согласованы; {anchor_note}")
+          f"маркеры, прогоны, provenance и цитаты чата согласованы; {anchor_note}")
     return 0
 
 
