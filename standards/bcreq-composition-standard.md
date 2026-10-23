@@ -225,3 +225,4 @@ ODA — стандарт содержания, а не роль.
 - RFC 9110: <https://www.rfc-editor.org/rfc/rfc9110>
 - UML 2.5.1: <https://www.omg.org/spec/UML/2.5.1/> · ISTQB Glossary: <https://glossary.istqb.org/>
 - ISO 31000:2018: <https://www.iso.org/standard/65694.html>
+- WCAG 2.2: <https://www.w3.org/TR/WCAG22/>
