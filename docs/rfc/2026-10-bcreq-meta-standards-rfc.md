@@ -25,11 +25,11 @@ related_artifacts:
 
 > **Что это.** Раздел «Инициированы обоснованные изменения» issue #387 в форме
 > RFC. Каждое изменение уже применено в новых draft-артефактах PR #389, где это
-> нужно для цели задачи (карт-бланш Creative-режима {{Ч-49}}).
+> нужно для цели задачи (карт-бланш Creative-режима [р. 796, Ч-49](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L83)).
 > Существующие стандарты и контракты в PR **не изменены**: правки к ним
 > предложены ниже и ждут решения пользователя
 > ([rfc-process §6](rfc-process.md#6-когда-нужен-rfc-а-когда-нет)).
-> Каждый RFC можно откатить отдельной задачей {{Ч-50}}: путь отката указан
+> Каждый RFC можно откатить отдельной задачей [р. 796, Ч-50](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L84): путь отката указан
 > в его карточке.
 
 ## Сводка
@@ -44,7 +44,7 @@ related_artifacts:
 | [RFC-387-06](#rfc-387-06) | Стиль раздела 4: бюрократический, короткий — 2, 5 L1, 6 | расхождение чата и issue | README §2 | фиксация канона |
 | [RFC-387-07](#rfc-387-07) | Ограничения платформы и версий — в 2.4.2 для новых задач | правило А2.4 анализа 2026-10-20 | 02, 06 | уточнение правила |
 
-Все семь изменений — в пределах правила 20 % {{Ч-33}}: разделы 1–8
+Все семь изменений — в пределах правила 20 % [р. 766, Ч-33](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L67): разделы 1–8
 и их порядок сохранены, предложения БА развиваются. Альтернатив вне 20 % в
 PR нет.
 
@@ -55,9 +55,9 @@ PR нет.
 - **Конфликт.** [prompt-standard](../../standards/prompt-standard.md) задаёт
   режим только как сегмент имени (`stepwise | oneshot | legacy`) без
   семантики. Issue #387 принимает гипотезу БА: stepwise — ручной прогон,
-  oneshot — ИИ-агент {{Ч-44}} {{Ч-45}}; число файлов в режимах может
-  различаться {{Ч-46}}; каждый промпт кроме нулевого напоминает
-  конституцию {{Ч-47}}. Промпт 0, валидация Ш-В и сценарии Ш-С не зависят
+  oneshot — ИИ-агент [р. 796, Ч-44](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L78) [р. 796, Ч-45](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L79); число файлов в режимах может
+  различаться [р. 796, Ч-46](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L80); каждый промпт кроме нулевого напоминает
+  конституцию [р. 796, Ч-47](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L81). Промпт 0, валидация Ш-В и сценарии Ш-С не зависят
   от режима, но имя файла требует режим.
 - **Что сделано в PR.** [Архитектура промптов §4](../../standards/bcreq-prompt-architecture.md#4-stepwise-и-oneshot):
   единица вызова stepwise — шаг, oneshot — стадия; три общих файла помечены
@@ -83,7 +83,7 @@ PR нет.
 - **Конфликт.** Пункты структуры БА 2.1–2.14 совпадают по форме с номерами
   подразделов документа 2.1–2.4 (наблюдение Н7 аудита Задачи 1). Порядок
   выполнения отличается от порядка номеров: 2.5 (НФТ) выполняется до 2.4 (UC).
-  Структура — предложение БА, не жёсткий стандарт {{Ч-35}}.
+  Структура — предложение БА, не жёсткий стандарт [р. 778, Ч-35](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L69).
 - **Что сделано в PR.** [Архитектура §3](../../standards/bcreq-prompt-architecture.md#3-шаблон-шага):
   шаги `Ш-0…Ш-9` по порядку выполнения с таблицей соответствия 2.x;
   [§5](../../standards/bcreq-prompt-architecture.md#5-слияния-шагов) — слияния
@@ -109,8 +109,8 @@ PR нет.
   «Функции, процессы и требования „по индустриальной практике“ не
   добавляются». Правило О10: «Названия методологий и стандартов … в текст
   документа не вносятся». Issue #387 требует: подсвечивать расхождение
-  термина с индустриальной практикой и рекомендовать {{Ч-38}}; раздел 8
-  дополнять по индустриальной практике {{Ч-08}}; раздел 5 L2 описывает
+  термина с индустриальной практикой и рекомендовать [р. 796, Ч-38](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L72); раздел 8
+  дополнять по индустриальной практике [р. 748, Ч-08](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L42); раздел 5 L2 описывает
   дельту API в формате OpenAPI.
 - **Что сделано в PR.** [README Р4](../../standards/bcreq-sections/README.md#3-общие-правила-для-всех-разделов):
   индустриальная практика выводится отдельным блоком «Рекомендация — на
@@ -136,8 +136,8 @@ PR нет.
 
 - **Конфликт.** [bcreq-process-standard](../../standards/bcreq-process-standard.md)
   задаёт конвейер П1–П6 и гейты G1–G3, но не стадии БА мета-модели A-IN /
-  A-CORE / A-WORK {{Ч-01}} {{Ч-02}} {{Ч-03}} и не решающие роли
-  на их выходе {{Ч-51}} {{Ч-52}} {{Ч-53}}. Без связи два стандарта
+  A-CORE / A-WORK [р. 746, Ч-01](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L35) [р. 746, Ч-02](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L36) [р. 746, Ч-03](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L37) и не решающие роли
+  на их выходе [р. 746, Ч-51](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L85) [р. 746, Ч-52](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L86) [р. 746, Ч-53](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L87). Без связи два стандарта
   описывают один процесс разными единицами.
 - **Что сделано в PR.** Новый [контракт стадий и гейтов](../contracts/bcreq-stage-gates.md):
   §5 размещает П1–П6 на стадиях; G1 ↔ Г-IN, G2 ↔ Г-W, G3 — A-RELEASE (вне
@@ -158,11 +158,11 @@ PR нет.
   Запрет смягчён: разделы 1–8 не удаляются и не меняются, дополнения с
   индустриальным обоснованием допустимы.
 - **Что сделано в PR.** [02-business-context](../../standards/bcreq-sections/02-business-context.md):
-  ＋2.5 «Продукты и стейкхолдеры» — выход шага 2.2 и гейта Г-IN {{Ч-55}};
+  ＋2.5 «Продукты и стейкхолдеры» — выход шага 2.2 и гейта Г-IN [р. 746, Ч-55](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L89);
   основа — arc42 §1.3, BABOK 10.43.
   [08-supplementary](../../standards/bcreq-sections/08-supplementary.md):
   ＋8.4 «Реестр вопросов Заказчику», ＋8.5 «Журнал решений» — БА просил
-  раздел 8 по индустриальной практике {{Ч-08}}; журнал фиксирует возвраты
+  раздел 8 по индустриальной практике [р. 748, Ч-08](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L42); журнал фиксирует возвраты
   (правило Г3 контракта) и решения по сверке глоссария.
 - **Предложение.** Принять три подраздела как часть каркаса BCREQ (Промпт 0
   выводит их со статусом `пусто`).
@@ -177,8 +177,8 @@ PR нет.
 
 ## RFC-387-06. Стиль раздела 4
 
-- **Конфликт.** Чат: короткий стиль — «для разделов 2, 4, 6» {{Ч-29}};
-  бюрократический — «разделы 1, 3, 4» {{Ч-30}}. Раздел 4 попал в оба
+- **Конфликт.** Чат: короткий стиль — «для разделов 2, 4, 6» [р. 764, Ч-29](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L63);
+  бюрократический — «разделы 1, 3, 4» [р. 764, Ч-30](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L64). Раздел 4 попал в оба
   списка. Issue #387: короткий — 2, 5, 6; бюрократический — 1, 3, 4.
 - **Что сделано в PR.** Канон — текст issue
   ([README §2](../../standards/bcreq-sections/README.md#2-стили)). Раздел 4
@@ -200,7 +200,7 @@ PR нет.
   [анализа 2026-10-20](../analysis/2026-10-20-bcreq-fr-section-prompts.md#4-recommendations):
   «В разделе 2 нет ограничений (они — только в разделе 6)». БА: «это по
   хорошему в границы надо вносить, но для старой верссии задач сейачс надо
-  встравить» {{Ч-27}}.
+  встравить» [р. 760, Ч-27](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L61).
 - **Что сделано в PR.** Для новых задач ограничение платформы и версии —
   пункт 2.4.2 «Не включено»
   ([02](../../standards/bcreq-sections/02-business-context.md),

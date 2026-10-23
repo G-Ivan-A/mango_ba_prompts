@@ -28,7 +28,7 @@ related_issues:
 Состав 8.1–8.3 — по issue #387. Подразделы 8.4 и 8.5 — дополнение
 ([RFC-387-05](../../docs/rfc/2026-10-bcreq-meta-standards-rfc.md#rfc-387-05)):
 БА просил формировать раздел 8 по индустриальной практике
-{{Ч-08}} {{Ч-16}}, а вопросы Заказчику и журнал решений уже
+[р. 748, Ч-08](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L42) [р. 752, Ч-16](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L50), а вопросы Заказчику и журнал решений уже
 используются в процессе (выход A-IN «вопросы зарегистрированы», правило О3).
 
 | Подраздел | Необходимо (колонки) | Основа |

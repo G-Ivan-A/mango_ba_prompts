@@ -49,8 +49,8 @@ related_issues:
 ## Классификация UC и прогоны
 
 БА: UC делятся на влияющие, не влияющие и «что ещё предусмотреть»
-{{Ч-07}}; метка «не влияет» сохраняется, чтобы было видно,
-что сценарий проверен {{Ч-06}}.
+[р. 748, Ч-07](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L41); метка «не влияет» сохраняется, чтобы было видно,
+что сценарий проверен [р. 748, Ч-06](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L40).
 
 | Класс | Смысл | Действие |
 | --- | --- | --- |

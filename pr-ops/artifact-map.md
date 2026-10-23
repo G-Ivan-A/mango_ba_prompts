@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.8
-updated: 2026-09-03
+version: 0.9
+updated: 2026-10-23
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -66,6 +66,12 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/runs/` | каталог | Единый каталог результатов выполнения процессов, экспериментов и self-test прогонов по `runs/YYYY/RUN-XXXX/`. | По необходимости | `standards/runs-contract-standard.md`, `docs/ba-processes/` |
 | `/standards/` | каталог | Стандарты спицы и рабочие копии стандартов Хаба; разграничение — в `standards/README.md`. | Да | `standards/README.md`, `docs/adr/` |
 | `/standards/README.md` | навигация | Реестр стандартов: что принадлежит спице, что рабочая копия Хаба, и правило «сужать можно, противоречить нельзя». | Да | `standards/GLOSSARY.md`, `docs/adr/0004-hub-resync-2026-08.md` |
+| `/standards/bcreq-sections/` | стандарт | Мета-стандарты восьми разделов BCREQ (issue #387): README со стилями и общими правилами, файлы 01–08. | Да | `standards/bcreq-composition-standard.md`, `docs/contracts/bcreq-stage-gates.md`, `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` |
+| `/standards/bcreq-composition-standard.md` | стандарт | Композиция стандартов для кросс-продуктовых доработок: К1–К7, ODA-1…ODA-3, профили продуктов, примеры комбинаций. | Да | `standards/bcreq-sections/README.md`, `standards/industry-standards-standard.md` |
+| `/standards/bcreq-prompt-architecture.md` | стандарт | Архитектура промптов BCREQ для Задачи 3: Промпт 0, шаблон шага, stepwise / oneshot, 14 файлов набора. | Да | `standards/prompt-standard.md`, `docs/contracts/bcreq-stage-gates.md` |
+| `/docs/contracts/bcreq-stage-gates.md` | контракт | Стадии A-IN / A-CORE / A-WORK, гейты Г-IN, Г-С1, Г-W с решающими ролями, правила возврата, связь с П1–П6. | Да | `standards/bcreq-process-standard.md`, `standards/bcreq-prompt-architecture.md` |
+| `/docs/analysis/2026-10-23-bcreq-standards-third-opinion.md` | анализ | Третье мнение по достаточности стека стандартов BCREQ (issue #387). | По необходимости | `standards/bcreq-composition-standard.md`, `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` |
+| `/docs/rfc/2026-10-bcreq-meta-standards-rfc.md` | RFC | RFC-387-01…07 — инициированные изменения с путями отката. | По необходимости | `docs/rfc/rfc-register.md`, `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` |
 | `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `ai-governance/ai-governance.md` |
 | `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `ai-governance/ai-governance.md`, `docs/adr/0004-hub-resync-2026-08.md` |
 | `/tools/` | инструмент | Рабочие копии валидаторов Хаба: `validate-frontmatter.sh`, `validate-file-naming.sh`; локальные дельты описаны в `tools/README.md`. Запуск — `make validate`. | Да | `tools/README.md`, `pr-ops/BACKLOG.md` |

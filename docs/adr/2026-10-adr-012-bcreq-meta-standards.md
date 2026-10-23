@@ -83,6 +83,19 @@ related_artifacts:
    объединены по М1–М4. Добавлен один шаг Ш-В (валидация второй ролью).
    Отклонение от предложения БА — около 7 %, в пределах правила 20 %.
 
+## Примеры
+
+- **Доработка в двух продуктах.** «ЛК + ВАТС: передача текста разговора в
+  CRM» — раздел 3 остаётся одним списком ФТ, доменный стандарт применяется к
+  подпункту 5.2.x, стыковое ФТ описано по К4:
+  [композиция §5.1](../../standards/bcreq-composition-standard.md#51-лк--ватс-передача-текста-разговора-в-crm).
+- **Гейт.** Г-С1 не пройден при покрытии ФТ сценариями UC ниже 100 %; модель
+  выдаёт отчёт по критериям, решение принимает Заказчик:
+  [контракт гейтов §2](../contracts/bcreq-stage-gates.md#2-гейты).
+- **Шаг промпта.** Ш-3 (`вариант: delta`) читает мета-стандарт раздела 3 и
+  блок «Состояние BCREQ»:
+  [архитектура промптов §3](../../standards/bcreq-prompt-architecture.md#3-шаблон-шага).
+
 ## Последствия
 
 - Задача 3 (сборка промптов) получает проверяемую спецификацию: каждый промпт
@@ -96,7 +109,7 @@ related_artifacts:
 - Существующие промпты не меняются в этом решении. Их статусы определены
   аудитом Задачи 1.
 
-## Рассмотренные альтернативы
+## Альтернативы (отклонены)
 
 | Альтернатива | Почему не выбрана |
 | --- | --- |
@@ -105,7 +118,23 @@ related_artifacts:
 | TM Forum ODA основным стандартом раздела 5 | Mango — не оператор связи в большинстве задач; SID/eTOM закрыты для не-членов. Issue #387 требует ODA альтернативой. |
 | Стандарты разделов в `docs/contracts/` | Мета-стандарт — норма формы артефакта, как `prompt-standard`; место — `standards/`. Контракт — только стадии и гейты, где есть роли и обязательства. |
 
-## Связанные RFC
+## Связанные артефакты
 
-RFC-387-01…07 — в [RFC-документе](../rfc/2026-10-bcreq-meta-standards-rfc.md)
-и в [реестре RFC](../rfc/rfc-register.md).
+- RFC-387-01…07 — в [RFC-документе](../rfc/2026-10-bcreq-meta-standards-rfc.md)
+  и в [реестре RFC](../rfc/rfc-register.md).
+- Процесс П1–П6 и гейты G1–G3 —
+  [bcreq-process-standard](../../standards/bcreq-process-standard.md),
+  носитель [ADR-009](009-bcreq-formation-process.md).
+- Аудит каталога промптов (Задача 1) —
+  [2026-10-23-prompts-catalog-audit.md](../analysis/2026-10-23-prompts-catalog-audit.md).
+- Реестр источников —
+  [industry-standards-standard §3](../../standards/industry-standards-standard.md#3-сверенный-реестр-источников).
+
+### Внешние источники
+
+- BABOK Guide v3: <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>
+- ISO/IEC/IEEE 29148:2018: <https://www.iso.org/standard/72089.html>
+- arc42: <https://arc42.org/overview>
+- TM Forum ODA: <https://www.tmforum.org/oda/>
+- Anthropic, Building effective agents: <https://www.anthropic.com/engineering/building-effective-agents>
+- Liu N. F. et al. Lost in the Middle, 2023: <https://arxiv.org/abs/2307.03172>

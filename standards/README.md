@@ -1,12 +1,13 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-08-17
+version: 0.2
+updated: 2026-10-23
 ai-generated: true
 type: index
 scope: standards
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/265"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"
 ---
 
 # `standards/` — реестр стандартов спицы
@@ -49,6 +50,9 @@ related_issues:
 | [`kb-standard.md`](kb-standard.md) | Формат цитирования, синхронизация глоссарий ↔ БЗ, pre-RAG механизм. | [ADR-007](../docs/adr/007-kb-standard.md) |
 | [`industry-standards-standard.md`](industry-standards-standard.md) | Работа с отраслевыми стандартами и best practices. | [ADR-008](../docs/adr/008-industry-standards-standard.md) |
 | [`bcreq-process-standard.md`](bcreq-process-standard.md) | Многоуровневый процесс формирования BCREQ. | [ADR-009](../docs/adr/009-bcreq-formation-process.md) |
+| [`bcreq-sections/`](bcreq-sections/README.md) | Мета-стандарты восьми разделов BCREQ: «необходимо и достаточно», стиль (короткий КС1–КС7, бюрократический БС1–БС5), паттерны, circuit breakers, чек-листы; словари D1–D11 для сверки глоссария. | [ADR-012](../docs/adr/2026-10-adr-012-bcreq-meta-standards.md) |
+| [`bcreq-composition-standard.md`](bcreq-composition-standard.md) | Стек стандартов по разделам BCREQ, правила композиции К1–К7 для кросс-продуктовых доработок, TM Forum ODA как альтернатива (ODA-1…ODA-3), профили продуктов. | [ADR-012](../docs/adr/2026-10-adr-012-bcreq-meta-standards.md) |
+| [`bcreq-prompt-architecture.md`](bcreq-prompt-architecture.md) | Архитектура промптов BCREQ: Промпт 0, шаблон шага, stepwise / oneshot, слияния М1–М4, состав набора. | [ADR-012](../docs/adr/2026-10-adr-012-bcreq-meta-standards.md) |
 | [`pages-ux-standard.md`](pages-ux-standard.md) | UX витрины GitHub Pages. | [ADR-010](../docs/adr/010-pages-ux.md) |
 | [`runs-contract-standard.md`](runs-contract-standard.md) | Контракт прогона `runs/<год>/RUN-NNNN/`. | — |
 | [`cascading-context-loading-standard.md`](cascading-context-loading-standard.md) | Каскадная загрузка контекста и `.executable.md`-компаньоны. | — |
