@@ -1,0 +1,1688 @@
+[
+  {
+    "path": "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+    "lines": 112,
+    "archive": false,
+    "name": {
+      "domain": "AI_SESSION_HANDOVER_PROMPT.executable",
+      "operation": null,
+      "mode": null
+    },
+    "frontmatter": {
+      "status": "draft",
+      "version": "0.2",
+      "updated": "2026-08-21",
+      "temperature": "0.1",
+      "type": "prompt",
+      "layer": "executable",
+      "full_version": "ai-rules/AI_SESSION_HANDOVER_PROMPT.md",
+      "related_standard": "standards/cascading-context-loading-standard.md",
+      "related_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
+    },
+    "fm_keys": [
+      "full_version",
+      "layer",
+      "related_issue",
+      "related_standard",
+      "status",
+      "temperature",
+      "type",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# Handover Prompt — executable layer",
+      "## Escalation triggers",
+      "## Execute"
+    ],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": false,
+    "readme": false,
+    "site": false,
+    "run_ids": [],
+    "flags": [
+      "no_invention_rule"
+    ]
+  },
+  {
+    "path": "prompts/README.executable.md",
+    "lines": 72,
+    "archive": false,
+    "name": {
+      "domain": "README.executable",
+      "operation": null,
+      "mode": null
+    },
+    "frontmatter": {
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-20",
+      "ai-generated": "true",
+      "type": "navigation",
+      "layer": "executable",
+      "full_version": "prompts/README.md",
+      "related_standard": "../standards/cascading-context-loading-standard.md",
+      "related_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "full_version",
+      "layer",
+      "related_issue",
+      "related_standard",
+      "status",
+      "type",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# Prompts README — executable layer",
+      "## Escalation triggers",
+      "## Execute"
+    ],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": false,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "old_section_model"
+    ]
+  },
+  {
+    "path": "prompts/README.md",
+    "lines": 313,
+    "archive": false,
+    "name": {
+      "domain": "README",
+      "operation": null,
+      "mode": null
+    },
+    "frontmatter": {
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-12",
+      "ai-generated": "true",
+      "type": "navigation",
+      "scope": "prompts",
+      "related_issues": ""
+    },
+    "fm_keys": [
+      "ai-generated",
+      "related_issues",
+      "scope",
+      "status",
+      "type",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# Prompts — навигация по библиотеке промптов",
+      "## Как быстро выбрать промпт",
+      "## Матрица промптов",
+      "## Две структуры промптов",
+      "## Режимы: `stepwise`, `oneshot`, `legacy`",
+      "## Как тестировать и давать фидбек",
+      "## Связь с таксономией и процессами БА",
+      "## Связанные документы"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": false,
+    "site": true,
+    "run_ids": [],
+    "flags": []
+  },
+  {
+    "path": "prompts/archive/.gitkeep",
+    "lines": 1,
+    "archive": true,
+    "name": {
+      "domain": ".gitkeep",
+      "operation": null,
+      "mode": null
+    },
+    "frontmatter": {},
+    "fm_keys": [],
+    "headings": [
+      "# Оставьте этот файл для фиксации папки в Git. Здесь будут архивные версии промптов и устаревшие варианты."
+    ],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": false,
+    "readme": false,
+    "site": false,
+    "run_ids": [],
+    "flags": []
+  },
+  {
+    "path": "prompts/archive/tz-stats-generator-legacy.md",
+    "lines": 52,
+    "archive": true,
+    "name": {
+      "domain": "tz-stats-generator",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-tz-stats-generator-legacy",
+      "title": "ТЗ: Статистика, расширенный (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "tz-stats-generator",
+      "variant": "exp",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "standards/GLOSSARY.md",
+      "research_dep": "",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/tz-stats-generator_exp-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0001"
+    ],
+    "flags": [
+      "no_invention_rule"
+    ]
+  },
+  {
+    "path": "prompts/archive/tz-stats-generator-simple-legacy.md",
+    "lines": 60,
+    "archive": true,
+    "name": {
+      "domain": "tz-stats-generator-simple",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-tz-stats-generator-simple-legacy",
+      "title": "ТЗ: Статистика, простой (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "tz-stats-generator",
+      "variant": "simple",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "none",
+      "research_dep": "none",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/tz-stats-generator_simple-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0001/outputs/tz-stats-prototype-2026-05.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0001"
+    ],
+    "flags": []
+  },
+  {
+    "path": "prompts/archive/usecase-stepwise-generator-legacy.md",
+    "lines": 48,
+    "archive": true,
+    "name": {
+      "domain": "usecase-stepwise-generator",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-usecase-stepwise-generator-legacy",
+      "title": "Use Case: Генератор (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "usecase-stepwise",
+      "variant": "exp",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "standards/GLOSSARY.md",
+      "research_dep": "docs/hub-research-dependencies.md#classification",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/usecase-stepwise-generator_exp-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0003"
+    ],
+    "flags": []
+  },
+  {
+    "path": "prompts/archive/usecase-stepwise-generator-simple-legacy.md",
+    "lines": 67,
+    "archive": true,
+    "name": {
+      "domain": "usecase-stepwise-generator-simple",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-usecase-stepwise-generator-simple-legacy",
+      "title": "Use Case: Генератор, простой (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "usecase-stepwise",
+      "variant": "simple",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "none",
+      "research_dep": "none",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/usecase-stepwise-generator_simple-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0003/outputs/usecase_gen-stepwise-alignment_2026-05-26.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0003"
+    ],
+    "flags": []
+  },
+  {
+    "path": "prompts/archive/user-story-generator-legacy.md",
+    "lines": 49,
+    "archive": true,
+    "name": {
+      "domain": "user-story-generator",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-user-story-generator-legacy",
+      "title": "User Story: Генератор (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "user-story-generator",
+      "variant": "exp",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "standards/GLOSSARY.md",
+      "research_dep": "docs/hub-research-dependencies.md#classification",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/user-story-generator_exp-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0002"
+    ],
+    "flags": [
+      "english_labels"
+    ]
+  },
+  {
+    "path": "prompts/archive/user-story-generator-simple-legacy.md",
+    "lines": 60,
+    "archive": true,
+    "name": {
+      "domain": "user-story-generator-simple",
+      "operation": null,
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-user-story-generator-simple-legacy",
+      "title": "User Story: Генератор, простой (архив)",
+      "status": "archived",
+      "version": "1.0",
+      "updated": "2026-06-04",
+      "ai-generated": "true",
+      "type": "user-story-generator",
+      "variant": "simple",
+      "scope": "mango-only",
+      "temperature": "0.1",
+      "output_format": "markdown",
+      "glossary_ref": "none",
+      "research_dep": "none",
+      "source_hub": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/038868dd125b4e2d849ff73604890f1d2787ac0f/projects/mango/prompts/user-story-generator_simple-2026-05.md",
+      "source_sha": "038868dd125b4e2d849ff73604890f1d2787ac0f",
+      "based_on": "runs/2026/RUN-0002/outputs/user-story_gen-from-raw-request_2026-05-26.md",
+      "migration_status": "migrated",
+      "selftest_ref": "runs/2026/RUN-0005/outputs/prompts-selftest-2026-05-26.md",
+      "selftest_result": "passed"
+    },
+    "fm_keys": [
+      "ai-generated",
+      "based_on",
+      "glossary_ref",
+      "id",
+      "migration_status",
+      "output_format",
+      "research_dep",
+      "scope",
+      "selftest_ref",
+      "selftest_result",
+      "source_hub",
+      "source_sha",
+      "status",
+      "temperature",
+      "title",
+      "type",
+      "updated",
+      "variant",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КАК РАБОТАЕМ",
+      "# ПРАВИЛА",
+      "# ФОРМАТ ВЫВОДА",
+      "# НАЧНЕМ?"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0002"
+    ],
+    "flags": [
+      "english_labels",
+      "no_invention_rule"
+    ]
+  },
+  {
+    "path": "prompts/asr-ingestion-legacy.md",
+    "lines": 192,
+    "archive": false,
+    "name": {
+      "domain": "asr",
+      "operation": "ingestion",
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-asr-ingestion-legacy",
+      "title": "ASR: Обработка транскрипции (устаревший)",
+      "status": "draft",
+      "version": "1.0",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": []
+  },
+  {
+    "path": "prompts/asr-ingestion-oneshot.md",
+    "lines": 70,
+    "archive": false,
+    "name": {
+      "domain": "asr",
+      "operation": "ingestion",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-asr-ingestion-oneshot",
+      "title": "ASR: Нормализация транскрипции",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ ВЫПОЛНЕНИЯ (весь вывод в одном ответе)",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ",
+      "# ВХОДНЫЕ ДАННЫЕ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "status_field"
+    ]
+  },
+  {
+    "path": "prompts/constraints-documentation-oneshot.md",
+    "lines": 35,
+    "archive": false,
+    "name": {
+      "domain": "constraints",
+      "operation": "documentation",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-constraints-documentation-oneshot",
+      "title": "Ограничения: За один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0007"
+    ],
+    "flags": [
+      "role_methodology"
+    ]
+  },
+  {
+    "path": "prompts/constraints-documentation-stepwise.md",
+    "lines": 56,
+    "archive": false,
+    "name": {
+      "domain": "constraints",
+      "operation": "documentation",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-constraints-documentation-stepwise",
+      "title": "Ограничения: Документирование",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0007",
+      "RUN-0010",
+      "RUN-0012",
+      "RUN-0013",
+      "RUN-0016"
+    ],
+    "flags": [
+      "creative_generation",
+      "old_section_model",
+      "role_methodology",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/fr-documentation-oneshot.md",
+    "lines": 36,
+    "archive": false,
+    "name": {
+      "domain": "fr",
+      "operation": "documentation",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-fr-documentation-oneshot",
+      "title": "ФТ: Генерация за один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0026"
+    ],
+    "flags": [
+      "old_section_model",
+      "role_methodology",
+      "self_certification"
+    ]
+  },
+  {
+    "path": "prompts/fr-documentation-stepwise.md",
+    "lines": 63,
+    "archive": false,
+    "name": {
+      "domain": "fr",
+      "operation": "documentation",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-fr-documentation-stepwise",
+      "title": "ФТ: Генерация требований",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0006",
+      "RUN-0007",
+      "RUN-0010",
+      "RUN-0012",
+      "RUN-0013",
+      "RUN-0016",
+      "RUN-0017",
+      "RUN-0026"
+    ],
+    "flags": [
+      "creative_generation",
+      "old_section_model",
+      "role_methodology",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/fr-validation-legacy.md",
+    "lines": 78,
+    "archive": false,
+    "name": {
+      "domain": "fr",
+      "operation": "validation",
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-fr-validation-legacy",
+      "title": "ФТ: Валидация (устаревший)",
+      "status": "draft",
+      "version": "1.0",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0023",
+      "RUN-0028"
+    ],
+    "flags": [
+      "role_methodology"
+    ]
+  },
+  {
+    "path": "prompts/fr-validation-oneshot.md",
+    "lines": 38,
+    "archive": false,
+    "name": {
+      "domain": "fr",
+      "operation": "validation",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-fr-validation-oneshot",
+      "title": "ФТ: Экспресс-валидация",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0006"
+    ],
+    "flags": [
+      "old_section_model",
+      "role_methodology"
+    ]
+  },
+  {
+    "path": "prompts/fr-validation-stepwise.md",
+    "lines": 60,
+    "archive": false,
+    "name": {
+      "domain": "fr",
+      "operation": "validation",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-fr-validation-stepwise",
+      "title": "ФТ: Валидация и аудит",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0013",
+      "RUN-0015",
+      "RUN-0018",
+      "RUN-0021",
+      "RUN-0022",
+      "RUN-0023",
+      "RUN-0025",
+      "RUN-0027"
+    ],
+    "flags": [
+      "old_section_model",
+      "role_methodology",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/glossary-context-understanding-oneshot.md",
+    "lines": 37,
+    "archive": false,
+    "name": {
+      "domain": "glossary-context",
+      "operation": "understanding",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-glossary-context-understanding-oneshot",
+      "title": "Контекст: Терминология за один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "ban_system_must",
+      "no_invention_rule",
+      "old_section_model"
+    ]
+  },
+  {
+    "path": "prompts/glossary-context-understanding-stepwise.md",
+    "lines": 66,
+    "archive": false,
+    "name": {
+      "domain": "glossary-context",
+      "operation": "understanding",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-glossary-context-understanding-stepwise",
+      "title": "Контекст: Терминология и цели",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0007",
+      "RUN-0010",
+      "RUN-0011",
+      "RUN-0012",
+      "RUN-0013",
+      "RUN-0014",
+      "RUN-0017",
+      "RUN-0020",
+      "RUN-0021",
+      "RUN-0025",
+      "RUN-0027"
+    ],
+    "flags": [
+      "ban_system_must",
+      "creative_generation",
+      "old_section_model",
+      "role_methodology",
+      "self_certification",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/letter-customer-documentation-legacy.md",
+    "lines": 36,
+    "archive": false,
+    "name": {
+      "domain": "letter-customer",
+      "operation": "documentation",
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-letter-customer-documentation-legacy",
+      "title": "Письмо клиенту: Сопровождение (устаревший)",
+      "status": "draft",
+      "version": "1.0",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": []
+  },
+  {
+    "path": "prompts/meeting-customer-documentation-stepwise.md",
+    "lines": 58,
+    "archive": false,
+    "name": {
+      "domain": "meeting-customer",
+      "operation": "documentation",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-meeting-customer-documentation-stepwise",
+      "title": "Встреча с клиентом: Резюме",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ РАБОТЫ",
+      "## ШАГ 1: Запрос расшифровки",
+      "## ШАГ 2: Запрос контекста задачи",
+      "## ШАГ 3: Предложение структуры",
+      "## ШАГ 4: Генерация резюме",
+      "# ФОРМАТ ВЫВОДА (на Шаге 4)",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0013"
+    ],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "status_field",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/meeting-team-documentation-stepwise.md",
+    "lines": 68,
+    "archive": false,
+    "name": {
+      "domain": "meeting-team",
+      "operation": "documentation",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-meeting-team-documentation-stepwise",
+      "title": "Встреча команды: Резюме",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ РАБОТЫ",
+      "## ШАГ 1: Запрос расшифровки",
+      "## ШАГ 2: Запрос контекста встречи",
+      "## ШАГ 3: Предложение структуры",
+      "## ШАГ 4: Генерация резюме",
+      "# ФОРМАТ ВЫВОДА (на Шаге 4)",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "status_field",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/questions-customer-understanding-legacy.md",
+    "lines": 77,
+    "archive": false,
+    "name": {
+      "domain": "questions-customer",
+      "operation": "understanding",
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-questions-customer-understanding-legacy",
+      "title": "Вопросы: Подготовка заказчику (устаревший)",
+      "status": "draft",
+      "version": "1.0",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КОНТЕКСТ",
+      "# ЗАДАЧА",
+      "# КАК РАБОТАЕМ (пошаговый диалог)",
+      "# ПРАВИЛА",
+      "# ✅ ЧЕК-ЛИСТ КАЧЕСТВА ВОПРОСОВ (перед выводом)",
+      "# ФОРМАТ ВЫВОДА: Список вопросов Заказчику",
+      "# ПРИМЕР"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0024"
+    ],
+    "flags": [
+      "no_invention_rule",
+      "role_methodology",
+      "self_certification"
+    ]
+  },
+  {
+    "path": "prompts/questions-customer-understanding-stepwise.md",
+    "lines": 106,
+    "archive": false,
+    "name": {
+      "domain": "questions-customer",
+      "operation": "understanding",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-questions-customer-understanding-stepwise",
+      "title": "Вопросы: Выявление потребностей",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# ЖЕСТКИЕ ПРАВИЛА (НЕ НАРУШАТЬ):",
+      "# РЕЖИМ РАБОТЫ: Строго пошаговый.",
+      "## ШАГ 1. Запрос сырых данных",
+      "## ШАГ 2. Декомпозиция запроса",
+      "## ШАГ 3. Анализ 5 Whys (поиск корневой проблемы)",
+      "## ШАГ 4. Проверка существующих решений",
+      "## ШАГ 5. Формирование уточняющих вопросов",
+      "# ФОРМАТ ВЫВОДА (на Шаге 5)",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0011",
+      "RUN-0012",
+      "RUN-0013",
+      "RUN-0019",
+      "RUN-0024"
+    ],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "status_field",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/session-debug-documentation-oneshot.md",
+    "lines": 113,
+    "archive": false,
+    "name": {
+      "domain": "session-debug",
+      "operation": "documentation",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-session-debug-documentation-oneshot",
+      "title": "Сессия LLM: Суммаризация",
+      "status": "draft",
+      "version": "0.2",
+      "updated": "2026-06-20",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# ВХОДНЫЕ ДАННЫЕ",
+      "# ЖЕСТКИЕ ПРАВИЛА",
+      "# АЛГОРИТМ ВЫПОЛНЕНИЯ (весь вывод в одном ответе)",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ",
+      "# КОНТЕКСТ И СВЯЗАННЫЕ АРТЕФАКТЫ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0006"
+    ],
+    "flags": [
+      "no_invention_rule",
+      "role_methodology",
+      "status_field"
+    ]
+  },
+  {
+    "path": "prompts/technical-details-solution-design-legacy.md",
+    "lines": 59,
+    "archive": false,
+    "name": {
+      "domain": "technical-details",
+      "operation": "solution-design",
+      "mode": "legacy"
+    },
+    "frontmatter": {
+      "id": "mango-technical-details-solution-design-legacy",
+      "title": "Технические детали: Доработки (устаревший)",
+      "status": "draft",
+      "version": "1.0",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": true,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "old_section_model",
+      "role_methodology"
+    ]
+  },
+  {
+    "path": "prompts/technical-details-solution-design-oneshot.md",
+    "lines": 37,
+    "archive": false,
+    "name": {
+      "domain": "technical-details",
+      "operation": "solution-design",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-technical-details-solution-design-oneshot",
+      "title": "Технические детали: За один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "no_invention_rule",
+      "old_section_model",
+      "role_methodology"
+    ]
+  },
+  {
+    "path": "prompts/technical-details-solution-design-stepwise.md",
+    "lines": 67,
+    "archive": false,
+    "name": {
+      "domain": "technical-details",
+      "operation": "solution-design",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-technical-details-solution-design-stepwise",
+      "title": "Технические детали: Проектирование",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [],
+    "has_output_format": false,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0011"
+    ],
+    "flags": [
+      "no_invention_rule",
+      "old_section_model",
+      "role_methodology",
+      "self_certification",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/uc-modeling-oneshot.md",
+    "lines": 62,
+    "archive": false,
+    "name": {
+      "domain": "uc",
+      "operation": "modeling",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-uc-modeling-oneshot",
+      "title": "Use Case: Моделирование за один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# ВХОДНЫЕ ДАННЫЕ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ ВЫПОЛНЕНИЯ (весь вывод в одном ответе)",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "self_certification",
+      "status_field"
+    ]
+  },
+  {
+    "path": "prompts/uc-modeling-stepwise.md",
+    "lines": 81,
+    "archive": false,
+    "name": {
+      "domain": "uc",
+      "operation": "modeling",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-uc-modeling-stepwise",
+      "title": "Use Case: Моделирование",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КОНТЕКСТ",
+      "# ВХОДНЫЕ ДАННЫЕ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ РАБОТЫ",
+      "## ШАГ 1: Контекст и акторы",
+      "## ШАГ 2: Основной поток",
+      "## ШАГ 3: Альтернативы и исключения",
+      "## ШАГ 4: Трассировка и качество",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0011",
+      "RUN-0013"
+    ],
+    "flags": [
+      "no_invention_rule",
+      "role_methodology",
+      "self_certification",
+      "status_field",
+      "stop_gates"
+    ]
+  },
+  {
+    "path": "prompts/us-modeling-oneshot.md",
+    "lines": 74,
+    "archive": false,
+    "name": {
+      "domain": "us",
+      "operation": "modeling",
+      "mode": "oneshot"
+    },
+    "frontmatter": {
+      "id": "mango-us-modeling-oneshot",
+      "title": "User Story: Формирование за один ответ",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# ВХОДНЫЕ ДАННЫЕ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ ВЫПОЛНЕНИЯ (весь вывод в одном ответе)",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "self_certification",
+      "status_field"
+    ]
+  },
+  {
+    "path": "prompts/us-modeling-stepwise.md",
+    "lines": 99,
+    "archive": false,
+    "name": {
+      "domain": "us",
+      "operation": "modeling",
+      "mode": "stepwise"
+    },
+    "frontmatter": {
+      "id": "mango-us-modeling-stepwise",
+      "title": "User Story: Формирование",
+      "status": "draft",
+      "version": "0.1",
+      "updated": "2026-06-11",
+      "temperature": "0.1"
+    },
+    "fm_keys": [
+      "id",
+      "status",
+      "temperature",
+      "title",
+      "updated",
+      "version"
+    ],
+    "headings": [
+      "# РОЛЬ",
+      "# КОНТЕКСТ",
+      "# ВХОДНЫЕ ДАННЫЕ",
+      "# СТИЛИСТИКА",
+      "# АЛГОРИТМ РАБОТЫ",
+      "## ШАГ 1: Анализ и декомпозиция",
+      "## ШАГ 2: Формирование Job Story",
+      "## ШАГ 3: Acceptance Criteria (BDD)",
+      "## ШАГ 4: Трассировка",
+      "# ФОРМАТ ВЫВОДА",
+      "# ОГРАНИЧЕНИЯ"
+    ],
+    "has_output_format": true,
+    "mentions_bcreq": 0,
+    "mentions_section4": false,
+    "process_map": true,
+    "readme": true,
+    "site": true,
+    "run_ids": [
+      "RUN-0011",
+      "RUN-0013"
+    ],
+    "flags": [
+      "english_labels",
+      "no_invention_rule",
+      "role_methodology",
+      "self_certification",
+      "status_field",
+      "stop_gates"
+    ]
+  }
+]
