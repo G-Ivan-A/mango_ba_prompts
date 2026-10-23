@@ -7,7 +7,7 @@
     779
   ],
   "window_count": 36,
-  "rows": 69,
+  "rows": 70,
   "ok": true,
   "results": [
     {
@@ -917,6 +917,20 @@
         754
       ],
       "sha256": "c161b9719e67d33b0f5d8265e450eb8069fd05d37d7a50d563525cf9b6d9bb7c"
+    },
+    {
+      "id": "Ч-70",
+      "line": 103,
+      "turn": 776,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        775,
+        776
+      ],
+      "sha256": "ad41d7422410456a0dba819991f736b930e745ee7a3edcc82b401a8f4203b38a"
     }
   ]
 }
