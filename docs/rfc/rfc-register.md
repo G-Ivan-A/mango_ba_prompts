@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-18
+version: 0.4
+updated: 2026-10-23
 ai-generated: true
 type: register
 scope: governance
@@ -9,6 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -18,6 +19,7 @@ related_artifacts:
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
   - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "docs/rfc/prompt-improvement-multichannel-proposal.md"
+  - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -124,6 +126,23 @@ PR #105 **не изменены** — сверка и правка идут то
 | RFC-MCH-P2 | цепочка `understanding` (glossary↔questions) | Под-шаг/промпт «нормализация требования» (атомы + боль/решение + первичный gap) | эксперимент #109 §М2 | Minor | `proposed` | — |
 | RFC-MCH-P3 | `technical-details-solution-design-stepwise.md` (+ новый `options-*`) | Отдельный промпт «early-options» (варианты доработки, Раздел 3) отдельно от Раздела 7 | эксперимент #109 §М3 | Major | `proposed` | — |
 
+## Инициированные изменения мета-стандартов BCREQ (источник: issue #387)
+
+Изменения применены в новых draft-артефактах PR #389 (карт-бланш Creative-режима
+issue #387). Существующие стандарты и контракты **не изменены**: правки к ним ждут
+решения пользователя. Путь отката каждого RFC — в RFC-документе
+[`2026-10-bcreq-meta-standards-rfc.md`](2026-10-bcreq-meta-standards-rfc.md).
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-387-01](2026-10-bcreq-meta-standards-rfc.md#rfc-387-01) | `standards/prompt-standard.md` | Семантика режимов stepwise / oneshot; режимонезависимый промпт помечается `oneshot`; напоминание конституции в каждом промпте кроме Промпта 0 | issue #387, чат р. 796 (Ч-44…Ч-47) | `proposed` | — |
+| [RFC-387-02](2026-10-bcreq-meta-standards-rfc.md#rfc-387-02) | структура 2.1–2.14 (предложение БА) | Пространство шагов `Ш-`, слияния файлов М1–М4, шаг Ш-В «валидация второй ролью» | аудит Задачи 1 Н7, Н8; чат р. 778 (Ч-35) | `proposed` | — |
+| [RFC-387-03](2026-10-bcreq-meta-standards-rfc.md#rfc-387-03) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (О8, О10) | Индустриальная практика — отдельным блоком «Рекомендация — на решение БА»; исключение О10 для 5 L2 | issue #387; чат р. 748, 796 (Ч-08, Ч-38) | `proposed` | — |
+| [RFC-387-04](2026-10-bcreq-meta-standards-rfc.md#rfc-387-04) | `standards/bcreq-process-standard.md` | Ссылка на контракт стадий и гейтов; таблица «П1–П6 ↔ стадия» | чат р. 746 (Ч-01…Ч-03, Ч-51…Ч-53) | `proposed` | — |
+| [RFC-387-05](2026-10-bcreq-meta-standards-rfc.md#rfc-387-05) | состав разделов 2 и 8 (issue #387) | Подразделы ＋2.5 «Продукты и стейкхолдеры», ＋8.4 «Реестр вопросов Заказчику», ＋8.5 «Журнал решений» | чат р. 746, 748 (Ч-08, Ч-55) | `proposed` | — |
+| [RFC-387-06](2026-10-bcreq-meta-standards-rfc.md#rfc-387-06) | стили разделов (issue #387) | Раздел 4 — бюрократический стиль; короткий — 2, 5 L1, 6 (канон issue, расхождение с чатом) | чат р. 764 (Ч-29, Ч-30) | `proposed` | — |
+| [RFC-387-07](2026-10-bcreq-meta-standards-rfc.md#rfc-387-07) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (А2.4) | Ограничения платформы и версий — в 2.4.2 для новых задач; 6.2 — внешние ограничения решения | чат р. 760 (Ч-27) | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -139,3 +158,7 @@ PR #105 **не изменены** — сверка и правка идут то
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
   [`docs/rfc/prompt-improvement-multichannel-proposal.md`](prompt-improvement-multichannel-proposal.md).
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
+- **2026-10-23** — добавлены RFC-387-01…07 в статусе `proposed` по итогам issue #387
+  (мета-стандарты разделов BCREQ, PR #389). RFC-документ —
+  [`docs/rfc/2026-10-bcreq-meta-standards-rfc.md`](2026-10-bcreq-meta-standards-rfc.md);
+  решение — [ADR-012](../adr/2026-10-adr-012-bcreq-meta-standards.md).

@@ -13,6 +13,46 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #387: мета-стандарты разделов BCREQ, правила композиции и архитектура промптов
+
+- Мета-стандарты восьми разделов BCREQ —
+  [`standards/bcreq-sections/`](standards/bcreq-sections/README.md) (README и
+  01–08). Каждый файл задаёт назначение, «необходимо и достаточно», стиль,
+  паттерны формулировок, circuit breakers и чек-лист из 3–7 пунктов. README
+  определяет короткий стиль КС1–КС7 для разделов 2, 5 L1 и 6 по практикам
+  читаемости (ISO 24495-1, ASD-STE100, GOV.UK, NN/g) и бюрократический БС1–БС5
+  для разделов 1, 3, 4. Раздел 1 восстанавливает индустриальные словари D1–D11
+  и механизм сверки терминов С0–С4. Раздел 5 — уровни L1 ФДР и L2 ТС.
+- [`standards/bcreq-composition-standard.md`](standards/bcreq-composition-standard.md):
+  стек стандартов по разделам, правила композиции К1–К7, TM Forum ODA как
+  альтернатива с условиями ODA-1…ODA-3, профили продуктов, пять примеров
+  комбинаций продуктов, решение по гипотезе отдельных промптов для API и КЦ/ЛК.
+- [`docs/contracts/bcreq-stage-gates.md`](docs/contracts/bcreq-stage-gates.md):
+  стадии A-IN / A-CORE / A-WORK, гейты Г-IN (БА), Г-С1 (Заказчик), Г-W (ПО
+  продукта, архитектор, руководитель КК), правила возврата Г1–Г3, маппинг
+  стандартов на стадии и связь с П1–П6.
+- [`standards/bcreq-prompt-architecture.md`](standards/bcreq-prompt-architecture.md):
+  Промпт 0 (конституция), шаблон шага с блоком «Состояние BCREQ», семантика
+  stepwise / oneshot, слияния М1–М4, 14 файлов набора для Задачи 3,
+  подтверждение структуры 2.1–2.14.
+- Третье мнение по достаточности стека —
+  [`docs/analysis/2026-10-23-bcreq-standards-third-opinion.md`](docs/analysis/2026-10-23-bcreq-standards-third-opinion.md);
+  решение — [ADR-012](docs/adr/2026-10-adr-012-bcreq-meta-standards.md).
+- Инициированы обоснованные изменения: RFC-387-01…07 с путями отката —
+  [`docs/rfc/2026-10-bcreq-meta-standards-rfc.md`](docs/rfc/2026-10-bcreq-meta-standards-rfc.md),
+  строки в [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md) (v0.4).
+- [`standards/industry-standards-standard.md`](standards/industry-standards-standard.md)
+  v0.2: §3.1 регистрирует источники issue #387 (правило И6).
+  [`standards/README.md`](standards/README.md) и
+  [`pr-ops/artifact-map.md`](pr-ops/artifact-map.md) дополнены новыми файлами.
+- Реестр дословных цитат чата 21–23.10.2026 (Ч-01…Ч-55) —
+  [`experiments/issue_387/chat-2026-10-22-23-register.md`](experiments/issue_387/chat-2026-10-22-23-register.md),
+  сверка — `experiments/issue_387/chat-quote-check.json`. Экспорт чата в
+  репозиторий не коммитится.
+- Валидатор [`scripts/validate_issue_387_bcreq_meta_standards.py`](scripts/validate_issue_387_bcreq_meta_standards.py)
+  подключён к `make validate-full`.
+- Файлы `prompts/` и существующие стандарты процесса не изменены.
+
 ### Changed — Issue #384 (комментарий к PR #385): аудит `prompts/` v0.2 с учётом чата 21–23.10.2026
 
 - [`docs/analysis/2026-10-23-prompts-catalog-audit.md`](docs/analysis/2026-10-23-prompts-catalog-audit.md)
