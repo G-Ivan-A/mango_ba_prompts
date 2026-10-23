@@ -13,6 +13,29 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #384: аудит каталога `prompts/` относительно целевой структуры BCREQ
+
+- Аналитический файл [`docs/analysis/2026-10-23-prompts-catalog-audit.md`](docs/analysis/2026-10-23-prompts-catalog-audit.md)
+  (`analysis-subtype: inventory`). Все 34 файла `prompts/` на снимке `dbf1d3c5`
+  классифицированы по статусу (оставить 9, доработать 11, удалить 12, промпт для
+  расшифровки 2) и по 8 темам.
+- Матрицы покрытия: разделы 1–7 BCREQ-ФТ, конвейер П1–П6 с гейтами G1–G3 и известные
+  пробелы карты процессов. Происхождение дефектов шаблонов: 18 из 36 инцидентов
+  RUN-0073…RUN-0076 дословно совпадают с двумя файлами каталога.
+- Раздел «Архитектурные наблюдения»: 9 антипаттернов и 10 удачных решений со ссылками
+  на строки промптов и реплики чатов. Списки рекомендаций не обязательны к применению.
+- Сравнение со структурой 2.1–2.14 помечено как BLOCKED: экспорт чата за 21–23.10.2026
+  не приложен к задаче. Матрица оставлена пустой; альтернативный вектор описан для
+  Задачи 2.
+- Read-only скрипты [`experiments/issue_384_prompts_inventory.py`](experiments/issue_384_prompts_inventory.py),
+  [`experiments/issue_384_prompt_provenance.py`](experiments/issue_384_prompt_provenance.py)
+  и [`experiments/issue_384_check_anchors.py`](experiments/issue_384_check_anchors.py)
+  (выход: `experiments/issue_384/*.json`). Валидатор
+  [`scripts/validate_issue_384_prompts_audit.py`](scripts/validate_issue_384_prompts_audit.py)
+  сверяет таблицу, маркеры, прогоны и provenance с данными, проверяет контракт Analysis,
+  абсолютные URL и якоря строк снимка.
+- Файлы `prompts/` не изменены.
+
 ### Added — Issue #377 (комментарий к PR #380): итоговые промпты разделов BCREQ-ФТ по RUN-0073…RUN-0076
 
 - Аналитический файл [`docs/analysis/2026-10-20-bcreq-fr-section-prompts.md`](docs/analysis/2026-10-20-bcreq-fr-section-prompts.md)
