@@ -40,6 +40,15 @@ A-WORK [р. 746, Ч-03](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/e
 | A-WORK | документация для внутренних согласований и итоговой оценки | Ш-6 (2.6 + 2.7) · Ш-7 (2.8) · Ш-8 (2.9) · Ш-9 (2.14) · Ш-В | 5, 6, 7 (прогон 2), 8 | ОРР L1/L2, ограничения, граничные кейсы, риски, зависимости, план приёмки |
 | вне стадий | независимые промпты | Ш-3 с флагом `вариант: new` (2.10) · Ш-С сценарии: US (2.12), UC (2.13) | 3, 7 | ФТ «с нуля», US, UC по контексту |
 
+Строка A-IN сверена с черновиком процесса БА
+([PDF в комментарии к issue #387](https://github.com/G-Ivan-A/mango_ba_prompts/issues/387#issuecomment-6373608019),
+дан как контекст). Вход — сырой запрос Jira (Ш-1). Действия: матчинг
+продуктовой принадлежности (Ш-2), проверка дельты и нормализация запроса
+(Ш-1), вопросы Заказчику (8.4). Выход — термины, контекст со scope,
+зависимости по модулям и продуктовым командам, стейкхолдеры. Всё это есть в
+строке A-IN; модули и команды — в ＋2.5. В черновике нумерация разделов
+AS-IS (4 — ТС, 5 — НФТ); контракт использует нумерацию issue #387.
+
 Шаг 2.11 не выполняется по решению БА [р. 752, Ч-22](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L56). Промпты
 расшифровки встреч остаются вне стадий [р. 752, Ч-23](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L57) [р. 796, Ч-43](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L77).
 A-RELEASE — следующая стадия после гейта Г-W [р. 746, Ч-54](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L88); её
@@ -126,4 +135,5 @@ A-RELEASE — следующая стадия после гейта Г-W [р. 74
 
 - BABOK Guide v3 (5.1 Trace Requirements, 5.5 Approve Requirements, 7.2 Verify Requirements): <https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/>
 - ISO/IEC/IEEE 29148:2018: <https://www.iso.org/standard/72089.html>
+- Черновик процесса БА «БА КК -> модель процессы 10.2026» (PDF, контекст): <https://github.com/G-Ivan-A/mango_ba_prompts/issues/387#issuecomment-6373608019>
 - Реестр цитат чата 21–23.10.2026: [chat-2026-10-22-23-register.md](../../experiments/issue_387/chat-2026-10-22-23-register.md)
