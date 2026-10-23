@@ -1,0 +1,843 @@
+{
+  "export_sha256": "a6a75cfead27cc45781a446e1f51719038071e15a9714cd17b69baba8c75fbe4",
+  "export_bytes": 16062986,
+  "chain_turns": 780,
+  "window_turns": [
+    744,
+    779
+  ],
+  "window_count": 36,
+  "rows": 63,
+  "ok": true,
+  "results": [
+    {
+      "id": "Ч-01",
+      "line": 34,
+      "turn": 744,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        744
+      ],
+      "sha256": "40d67902dcc02996524f26443b737c3624eb55d31c2aff06f0812649b1a087e3"
+    },
+    {
+      "id": "Ч-02",
+      "line": 35,
+      "turn": 746,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        746
+      ],
+      "sha256": "b226508f3d4fa0f4a2bc6e5dea5cec5ce7aa1f16c36ae87f04ad39337f8f1fe3"
+    },
+    {
+      "id": "Ч-03",
+      "line": 36,
+      "turn": 748,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        748
+      ],
+      "sha256": "54cbdea7d31c7591dfd8e9fde6e96f2e5a9d60f3cc60a09bbd637bcd7bd12ad1"
+    },
+    {
+      "id": "Ч-04",
+      "line": 37,
+      "turn": 748,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        748
+      ],
+      "sha256": "a3f527017eadde91769449e9e52a125dea6c7208b51f110d061a714e2779ce0a"
+    },
+    {
+      "id": "Ч-05",
+      "line": 38,
+      "turn": 748,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        748
+      ],
+      "sha256": "739efdc988f05be73c2fd2eb68bf6e69fd71b581384b4b2208345448425ccbe7"
+    },
+    {
+      "id": "Ч-06",
+      "line": 39,
+      "turn": 749,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        750
+      ],
+      "sha256": "6215e990826e1dc33e938d1cc5ae206f492c50276e9b0fc5cb1f237b75426112"
+    },
+    {
+      "id": "Ч-07",
+      "line": 40,
+      "turn": 749,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749
+      ],
+      "sha256": "4f6b816bcd2976f205ce763fbe0ce380ad98c6de63f339712313835fcb4b17c2"
+    },
+    {
+      "id": "Ч-08",
+      "line": 41,
+      "turn": 750,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        750
+      ],
+      "sha256": "c77379421145f35f4b73d67b82268f2a518b5e9ead23e706743d1a4b897b890e"
+    },
+    {
+      "id": "Ч-09",
+      "line": 42,
+      "turn": 750,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        750
+      ],
+      "sha256": "acad5b90a038d4e3366edc1e7b5754d04a3d1ded68c577a5b9905695f394b022"
+    },
+    {
+      "id": "Ч-10",
+      "line": 43,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "1ad9cb7e3b061c96484ab0fc7ff39cdf31c620107f46df45b45b16ad1a7aa5e4"
+    },
+    {
+      "id": "Ч-11",
+      "line": 44,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "137099b888d3e535ee47e943bd1e2310bf5821f9ac78fe0c1e5b0276e3fd41f6"
+    },
+    {
+      "id": "Ч-12",
+      "line": 45,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752,
+        755
+      ],
+      "sha256": "4328664b0f7044ec1e564fe3177c497ebacee606cc56524fe6a545bb3a0eaea4"
+    },
+    {
+      "id": "Ч-13",
+      "line": 46,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "a3f7f0f94a18112f8c998f1daad6dabfc747d1f9100dfcf8487b96d37d251d02"
+    },
+    {
+      "id": "Ч-14",
+      "line": 47,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "fcd2ab081fb6ad494dea8a1aa99820780a843958b14d60f122a20d9da9ff8984"
+    },
+    {
+      "id": "Ч-15",
+      "line": 48,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "248ca440353689ee7618c2a26135cfdf90185d49849f2d550d647cff355c8516"
+    },
+    {
+      "id": "Ч-16",
+      "line": 49,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "80cf8e94aece26f6b4f7a3d3e3b4b7723a9bd723e49dfeef3ef608fe749013f6"
+    },
+    {
+      "id": "Ч-17",
+      "line": 50,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "06de54c05130254654777269811ab73de1b593b1dca07c2b3cda6c3bd6d64e19"
+    },
+    {
+      "id": "Ч-18",
+      "line": 51,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        749,
+        752
+      ],
+      "sha256": "2e7b5245efe6d90845a1da8ffafe17075b8480bfb771c7e2cd4b64738fa12265"
+    },
+    {
+      "id": "Ч-19",
+      "line": 52,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "776dcdc4d13a8ce529260a6d895e51435e501a229cdf730bfcb6fb0c0aa2e9ab"
+    },
+    {
+      "id": "Ч-20",
+      "line": 53,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "b7704716e299648465346a0eec694e3c06beb4852bca6dc8a66fb76262041b69"
+    },
+    {
+      "id": "Ч-21",
+      "line": 54,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "743a79976f715c2e29dec8c59e79ada5c8c3d523de07afd92e5e7f49ae8830a5"
+    },
+    {
+      "id": "Ч-22",
+      "line": 55,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "84b867d227a77615f435c22df88da9f37bf847da22c9c3e035d478c551e01995"
+    },
+    {
+      "id": "Ч-23",
+      "line": 56,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "65d6599326bd5bcf929772eaef0caacf0dba7f8fc6b0c0b6fd550b71eec8bd12"
+    },
+    {
+      "id": "Ч-24",
+      "line": 57,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "b325a446c5d122dce75a6133d2f3fbba1f48343f42af44ed915134ca8293f2ad"
+    },
+    {
+      "id": "Ч-25",
+      "line": 58,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "686e721485b941daab3c66149e0ee37458715f9c499d154db5fae644b055bc9d"
+    },
+    {
+      "id": "Ч-26",
+      "line": 59,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "4ec232e7a1f06f8d74fe1d518b72a9286ce31762386ed5b2ac9568e3e1edabad"
+    },
+    {
+      "id": "Ч-27",
+      "line": 60,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "7d98201ab2ebbc6a37b1de4642ad94515b6397304c52cb96ccf8e52a51a7f8a8"
+    },
+    {
+      "id": "Ч-28",
+      "line": 61,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "e20db6cbc20c7df91806e14328977999769fac633c51cc857dbc0200e452f83a"
+    },
+    {
+      "id": "Ч-29",
+      "line": 62,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "11da134b162cb75c4b8fb657a6a5a89149ce367773a5e067f5f716dd98f1df60"
+    },
+    {
+      "id": "Ч-30",
+      "line": 63,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "00878a9c698ae2891a08855639fee08c370ad3282557ebfb8b98aa47b1bfd575"
+    },
+    {
+      "id": "Ч-31",
+      "line": 64,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "c8b25149567b0f1e3cca0550c24bf68a55ed98ce34d0e728b7ee6f93e53e8ec5"
+    },
+    {
+      "id": "Ч-32",
+      "line": 65,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "2ccb6f55c0814d05d93312c1819f53149c3079fca45d1d1942723c9a78807e9d"
+    },
+    {
+      "id": "Ч-33",
+      "line": 66,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "4fb872d88165d40247b730513d7e33157b6ca08112c0a3235c3143dea4b3cf41"
+    },
+    {
+      "id": "Ч-34",
+      "line": 67,
+      "turn": 752,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        752
+      ],
+      "sha256": "44a05e961fd0108f9ef254dc89232f87d4352770741a55b0594c39156149db82"
+    },
+    {
+      "id": "Ч-35",
+      "line": 68,
+      "turn": 753,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        753
+      ],
+      "sha256": "035a5b7554f32a73cf5113b4d10984eaadbc605b452e2107e19692efb5841c1a"
+    },
+    {
+      "id": "Ч-36",
+      "line": 69,
+      "turn": 753,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        753
+      ],
+      "sha256": "ad942a5218d77ffb34922d872247412a84ab2eff5edbb6ba1fcb7946c65fc087"
+    },
+    {
+      "id": "Ч-37",
+      "line": 70,
+      "turn": 753,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        753
+      ],
+      "sha256": "aa8d3a5ba58b31bf976719d6981f398c444079c8f3e219c1b498a0bb290f89e0"
+    },
+    {
+      "id": "Ч-38",
+      "line": 71,
+      "turn": 753,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        753
+      ],
+      "sha256": "e3240109a6b39cc4cb2bdc43b75b6bf7b1c13936894c69937ce5c8f230df0f55"
+    },
+    {
+      "id": "Ч-39",
+      "line": 72,
+      "turn": 754,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        754
+      ],
+      "sha256": "07cb48e4965af48f23123c121c14f4d54055ac317bab3491d0c9bcfad664fb13"
+    },
+    {
+      "id": "Ч-40",
+      "line": 73,
+      "turn": 755,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        755
+      ],
+      "sha256": "bab49666e8897843a6feb9bb1e0a74a1467431a88945782ead577665e5e18f35"
+    },
+    {
+      "id": "Ч-41",
+      "line": 74,
+      "turn": 757,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        757,
+        759
+      ],
+      "sha256": "93bceef19050ba62044068978c10449a9226e69cb179b55e5492348e6f37f448"
+    },
+    {
+      "id": "Ч-42",
+      "line": 75,
+      "turn": 757,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        757
+      ],
+      "sha256": "03f88108822f882b6bc84dc442417ebd2a570b2c7ff0d2c707a6d57c2cdf8a32"
+    },
+    {
+      "id": "Ч-43",
+      "line": 76,
+      "turn": 757,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        757
+      ],
+      "sha256": "dc8889156e83e7bdfe1e1d4f2fba7bef41f78391113376a979883c5168f7d1c3"
+    },
+    {
+      "id": "Ч-44",
+      "line": 77,
+      "turn": 759,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        759
+      ],
+      "sha256": "9891c2656c9e47a54dfba4ebc14d3214510dd77fe255fde5c5ee57cb0e8bfd2e"
+    },
+    {
+      "id": "Ч-45",
+      "line": 78,
+      "turn": 761,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        761
+      ],
+      "sha256": "db08ba1282021ce176fed88f41dcc01a168654dc55392074f98708645d017aa4"
+    },
+    {
+      "id": "Ч-46",
+      "line": 79,
+      "turn": 763,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        763
+      ],
+      "sha256": "e42de1ea1236e1237101a0a1cdfb9ca3de1ffb017e82637acf6380761c3c9469"
+    },
+    {
+      "id": "Ч-47",
+      "line": 80,
+      "turn": 763,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        763
+      ],
+      "sha256": "e442223adcd83d83c12c86e3c087374de059198cc84990cfb7dcd05b993cad07"
+    },
+    {
+      "id": "Ч-48",
+      "line": 81,
+      "turn": 763,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        763
+      ],
+      "sha256": "71ba242a2bcefd8a77519574b580b0afc13bdfe09116654ba66b0dc5f748d359"
+    },
+    {
+      "id": "Ч-49",
+      "line": 82,
+      "turn": 764,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        764
+      ],
+      "sha256": "8583072c7b2c124f1eccabcbaffb96be6454b18e29994f7795d6a74d781321b8"
+    },
+    {
+      "id": "Ч-50",
+      "line": 83,
+      "turn": 764,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        764
+      ],
+      "sha256": "d141cbe24d7f8eadc017edbe914383fd43b8e5acccb4431fd6f0f219ad6c36af"
+    },
+    {
+      "id": "Ч-51",
+      "line": 84,
+      "turn": 764,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        764
+      ],
+      "sha256": "e5273eb09bd1be4c5aacd6f7ec306ed3c9b807e8a33015b24a2d3ea4cb3de2b9"
+    },
+    {
+      "id": "Ч-52",
+      "line": 85,
+      "turn": 765,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        765
+      ],
+      "sha256": "95e8ce4475f23bac352863088e302fc9f21cdd0bddee189d47bd1ac3cab1b360"
+    },
+    {
+      "id": "Ч-53",
+      "line": 86,
+      "turn": 765,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        765
+      ],
+      "sha256": "3006c6e98140b8a9a6fefe73f334b32d21ae22c756bcb26608baa0d058a86693"
+    },
+    {
+      "id": "Ч-54",
+      "line": 87,
+      "turn": 766,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        766
+      ],
+      "sha256": "47c915f84aa94fc3f0197531fa0e0f739fa7e58fa99104c8a604594d78779c23"
+    },
+    {
+      "id": "Ч-55",
+      "line": 88,
+      "turn": 766,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        766
+      ],
+      "sha256": "7b26caad7f5c44a4d2c7457b8a9397c3e73ca7f6544fae3f2cef9de8926b195e"
+    },
+    {
+      "id": "Ч-56",
+      "line": 89,
+      "turn": 766,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        766
+      ],
+      "sha256": "219b8d5d730146b5a1f6fe5b15060e905a1891201a56a91d7ac296631f3df9ad"
+    },
+    {
+      "id": "Ч-57",
+      "line": 90,
+      "turn": 767,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        767
+      ],
+      "sha256": "c52b81c198704abf5a6c490806c0af89c645570c649c4c5bac1f4680976ac527"
+    },
+    {
+      "id": "Ч-58",
+      "line": 91,
+      "turn": 776,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        776
+      ],
+      "sha256": "cfa73a3e3d46280c9b2c10f92d2a9d4d5dc5ce07e54606af6c1067a1935a864c"
+    },
+    {
+      "id": "Ч-59",
+      "line": 92,
+      "turn": 778,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        778
+      ],
+      "sha256": "6b45d0f65ad9aff57ac715127f5957f8d3ee6a15f064e93fa0eefd7f19566cec"
+    },
+    {
+      "id": "Ч-60",
+      "line": 93,
+      "turn": 778,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        778
+      ],
+      "sha256": "fc269085561533a81a13cf77e4e80c231d2c61b3ccdcf278484c15a9c9f2887a"
+    },
+    {
+      "id": "Ч-61",
+      "line": 94,
+      "turn": 779,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        779
+      ],
+      "sha256": "fbdd4303809ad3277470756d45d1dc9f1cf572c69fd0d6ae59ca82a41479487b"
+    },
+    {
+      "id": "Ч-62",
+      "line": 95,
+      "turn": 779,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        779
+      ],
+      "sha256": "6632fbfaec423e65c42e36098e8f56b141b9cf7f108c702351b87afb1f6ee500"
+    },
+    {
+      "id": "Ч-63",
+      "line": 96,
+      "turn": 779,
+      "in_window": true,
+      "role": true,
+      "utc": true,
+      "quote": true,
+      "found_turns": [
+        779
+      ],
+      "sha256": "7fc9f855dd1e41ae350fc08bc70d20ea4d3018a84aef8eb1ec85cf4900478e78"
+    }
+  ]
+}
