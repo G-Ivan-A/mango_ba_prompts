@@ -13,6 +13,47 @@ temperature: 0.1
 
 ## Unreleased
 
+### Added — Issue #388: промпты BCREQ, legacy-каталог, процессы на сайте и парольный вход
+
+- Набор BCREQ в `prompts/` (без подкаталогов, 14 файлов, префикс `bcreq-`):
+  [Промпт 0 — конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md)
+  с защитами АД-1…АД-7 (§4.4, решение по ревью PR #381), восемь
+  stepwise-промптов для шагов Ш-1…Ш-9 (UC — Ш-5 и Ш-8 параметром `прогон`),
+  стадийные oneshot-промпты A-IN, A-CORE, A-WORK, валидация Ш-В второй ролью
+  и US/UC вне документа (Ш-С). Каждый промпт начинается
+  блоком «пройдено / текущий / рекомендуемый следующий» и заканчивается
+  блоком «Состояние BCREQ». Маршрутизация —
+  [`prompts/README.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/README.md#bcreq-маршрутизация).
+- Ручной процесс БА и согласование с командой и Заказчиком —
+  [`docs/ba-processes/bcreq-manual-process.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md):
+  11 шагов с инструкциями и правила П-1…П-7; пять этапов согласования с
+  гейтами Г-IN, Г-С1, Г-W; возвраты; усовершенствования У-1…У-9 относительно
+  описания KK-289887877-231026-2259-652.pdf.
+- Сайт, вкладка «Процессы»: разделы «Создание спецификации бизнес-требований
+  и дизайна решения (BCREQ)» (иконка копирования промпта на каждом шаге) и
+  «Согласование BCREQ с командой и Заказчиком». Данные —
+  `site/data/bcreq-flow.json`, генерируются из документа процесса.
+- Сайт, каталог: метка «★ BCREQ · новый», фильтр «Набор» (BCREQ / Прочие /
+  Архив), иконка копирования «⧉» в шапке карточки.
+- Парольный вход на сайт — [`site/gate.js`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/site/gate.js): один системный
+  пароль на все страницы (каталог, отчёты), в репозитории хранится только
+  SHA-256 с солью. Смена пароля —
+  [`scripts/set-site-password.mjs`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/scripts/set-site-password.mjs), порядок —
+  [`docs/site-access.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/site-access.md).
+- Валидатор
+  [`scripts/validate_issue_388_bcreq_site.py`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/scripts/validate_issue_388_bcreq_site.py).
+
+### Changed — Issue #388
+
+- 18 промптов, заменённых набором BCREQ, перенесены в
+  [`prompts/archive/`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/) со `status: archived` и баннером со
+  ссылкой на замену. Ссылки из прогонов и отчётов переведены на новый путь;
+  записанные evidence прогонов не менялись.
+- Карта процессов и паттерны сайта ссылаются на промпты BCREQ.
+- Валидатор issue #335 проверяет отсутствие внешних скриптов в
+  `detailed-gap-report.html` без учёта подключения `gate.js`: офлайн-копия
+  отчёта открывается без него.
+
 ### Added — Issue #387: мета-стандарты разделов BCREQ, правила композиции и архитектура промптов
 
 - Мета-стандарты восьми разделов BCREQ —
