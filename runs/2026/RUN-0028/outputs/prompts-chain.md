@@ -8,7 +8,7 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/275"
 related_artifacts:
-  - "prompts/fr-validation-legacy.md"
+  - "prompts/archive/fr-validation-legacy.md"
 ---
 
 # Цепочка промптов прогона 1040
@@ -17,7 +17,7 @@ related_artifacts:
 
 | Промпт | id | Версия в репозитории | Где применён |
 | --- | --- | --- | --- |
-| [`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md) | `mango-fr-validation-legacy` | v1.0, `status: draft`, `temperature: 0.1` | Эпизод 1 (системная реплика), действует на эпизоды 2 и 3 |
+| [`prompts/archive/fr-validation-legacy.md`](../../../../prompts/archive/fr-validation-legacy.md) | `mango-fr-validation-legacy` | v1.0, `status: draft`, `temperature: 0.1` | Эпизод 1 (системная реплика), действует на эпизоды 2 и 3 |
 
 Идентификация однозначна: первая реплика БА начинается с маркера
 `<!-- mango-fr-validation-legacy -->`, который проставляется веб-каталогом при
@@ -38,7 +38,7 @@ ch = []; mid = d['currentId']
 while mid: ch.append(m[mid]); mid = m[mid].get('parentId')
 sent = ch[-1]['content'].replace('\r\n', '\n').strip()
 sent = re.sub(r'^<!-- mango-fr-validation-legacy -->\s*', '', sent)
-repo = open('prompts/fr-validation-legacy.md').read().split('---', 2)[2].strip()
+repo = open('prompts/archive/fr-validation-legacy.md').read().split('---', 2)[2].strip()
 print('identical:', sent == repo)   # True
 PY
 ```

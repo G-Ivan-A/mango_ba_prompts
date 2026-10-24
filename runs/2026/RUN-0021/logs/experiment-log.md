@@ -6,8 +6,8 @@ ai-generated: true
 experiment: fr-drafting-975-ineffective-call-parameters
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 

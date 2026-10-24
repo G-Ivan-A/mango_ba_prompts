@@ -6,8 +6,8 @@ ai-generated: true
 type: analysis
 scope: mango-only
 related_artifacts:
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-legacy.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-legacy.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/277"
 ---
@@ -33,7 +33,7 @@ related_issues:
 | [6] | «Страт сесси яДРП» — команда без контекста | Управляющая реплика |
 
 Ближайший библиотечный аналог по назначению —
-[`prompts/questions-customer-understanding-stepwise.md`](../../../../prompts/questions-customer-understanding-stepwise.md)
+[`prompts/archive/questions-customer-understanding-stepwise.md`](../../../../prompts/archive/questions-customer-understanding-stepwise.md)
 (`mango-questions-customer-understanding-stepwise`, «Вопросы: Выявление
 потребностей», v0.1, status `draft`).
 

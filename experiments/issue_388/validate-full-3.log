@@ -1,0 +1,66 @@
+python3 scripts/validate_all.py --full
+PASS   validate_issue_103_ui_fixes                 0.51s
+PASS   validate_issue_111_kb_pipeline              5.74s
+PASS   validate_issue_115_kb_mango_pipeline        0.85s
+PASS   validate_issue_117_kb_traceability          2.24s
+PASS   validate_issue_121_kb_multi_file            0.65s
+PASS   validate_issue_123_runs_contract            0.92s
+PASS   validate_issue_125_cascading_context        0.35s
+PASS   validate_issue_263_vision_alignment         0.47s
+PASS   validate_issue_265_hub_sync                37.76s
+PASS   validate_issue_267_onboarding_v15           2.70s
+PASS   validate_issue_272_run_0019                 0.39s
+PASS   validate_issue_291_root_structure           1.03s
+PASS   validate_issue_310_kb_pdf_ingestion         1.15s
+PASS   validate_issue_323_issue_forms              0.26s
+PASS   validate_issue_335_report_site              0.29s
+PASS   validate_issue_339_run                      0.64s
+PASS   validate_issue_343_run                      0.21s
+PASS   validate_issue_345_run                      0.24s
+PASS   validate_issue_347_run                      0.53s
+PASS   validate_issue_349_critical_fix             0.29s
+PASS   validate_issue_351_run                     29.72s
+PASS   validate_issue_353_ab_rca                  44.80s
+PASS   validate_issue_355_run                      0.26s
+PASS   validate_issue_357_hub_backlog_validation   0.38s
+PASS   validate_issue_363_run                      0.49s
+PASS   validate_issue_365_run                      0.63s
+PASS   validate_issue_367_run                      0.41s
+PASS   validate_issue_369_run                      0.46s
+PASS   validate_issue_371_run                      0.29s
+PASS   validate_issue_373_run                      0.81s
+PASS   validate_issue_375_run                      2.68s
+PASS   validate_issue_377_merge_hygiene            1.84s
+PASS   validate_issue_377_run                      2.36s
+PASS   validate_issue_377_section_prompts          0.42s
+PASS   validate_issue_378_run                      1.48s
+PASS   validate_issue_382_run                      0.27s
+PASS   validate_issue_384_prompts_audit            1.36s
+PASS   validate_issue_387_bcreq_meta_standards     0.59s
+PASS   validate_issue_61_governance                0.22s
+PASS   validate_issue_64_pattern_adr               0.26s
+PASS   validate_issue_72_hub_sync                  0.35s
+PASS   validate_issue_74_github_pages              0.40s
+PASS   validate_issue_83_ba_process_map            0.55s
+PASS   validate_issue_85_patterns_library          0.53s
+PASS   validate_issue_86_mango_widget              0.39s
+FAIL   validate_issue_91_pages_enhancements        0.32s
+       | issue-91 pages enhancements validation: FAIL
+       | - site/data/checks.json: statuses must cover all 30 prompts, found 44
+PASS   validate_issue_95_prompt_id_in_copy         0.32s
+PASS   validate_issue_97_ontology_standards        0.36s
+PASS   validate_issue_99_pages_optimization        0.39s
+PASS   test_issue_323_issue_forms                  0.86s
+PASS   test_issue_353_redact_trace                 0.35s
+PASS   test_issue_361_kb_migration                 0.29s
+PASS   test_resolve_registry_conflicts             2.52s
+PASS   test_runs_contract_run_type                 0.97s
+PASS   test_runs_registry_tools_table             11.91s
+PASS   test_validate_all                          17.02s
+PASS   test_validate_pagination_shift              6.20s
+PASS   validate-file-naming                        0.51s
+PASS   validate-frontmatter                        1.02s
+PASS   validate-repository-structure               0.42s
+
+full: 60 валидаторов, 0 из кэша, 1 провалов, 48.11s
+make: *** [Makefile:158: validate-full] Error 1

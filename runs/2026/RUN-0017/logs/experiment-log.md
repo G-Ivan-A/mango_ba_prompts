@@ -6,8 +6,8 @@ ai-generated: true
 experiment: task-1076-vks-artifacts-bpmsoft-2026-07-24
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/270"
 ---

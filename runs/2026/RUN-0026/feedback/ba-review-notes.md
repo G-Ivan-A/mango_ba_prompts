@@ -78,4 +78,4 @@ related_issues:
    PDF отсутствует)? Без него ссылки вида «стр. 127» непроверяемы.
 3. Требуется ли добавить в библиотечные промпты гейт достоверности (Г-A) —
    его нет ни в ad-hoc-рамке этого прогона, ни в
-   [`prompts/fr-documentation-stepwise.md`](../../../../prompts/fr-documentation-stepwise.md).
+   [`prompts/archive/fr-documentation-stepwise.md`](../../../../prompts/archive/fr-documentation-stepwise.md).

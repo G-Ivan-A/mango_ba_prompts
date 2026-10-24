@@ -20,24 +20,24 @@ type: navigation
 
 | Паттерн | Путь | Когда начинать отсюда |
 | --- | --- | --- |
-| [`glossary-context-generation`](glossary-context-generation/) | `patterns/glossary-context-generation/` | Нужно собрать термины, проблему, цель, задачи, Product Layer, Commercial Layer и вопросы. |
+| [`glossary-context-generation`](glossary-context-generation/) | `patterns/glossary-context-generation/` | [`bcreq-context-understanding-stepwise.md`](../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../prompts/bcreq-in-understanding-oneshot.md); архив:  |
 | [`asr-ingestion`](asr-ingestion/) | `patterns/asr-ingestion/` | Входом является сырая ASR-расшифровка, встреча или голосовая заметка. |
-| [`user-story-generation`](user-story-generation/) | `patterns/user-story-generation/` | Нужно сформулировать роль, ценность и acceptance criteria до сценариев и ФТ. |
-| [`usecase-generation`](usecase-generation/) | `patterns/usecase-generation/` | Нужно описать actor/system flow, альтернативы, исключения и postconditions. |
-| [`fr-generation`](fr-generation/) | `patterns/fr-generation/` | Контекст уже собран, нужно оформить раздел 4 ФТ/ТЗ. |
-| [`fr-validation`](fr-validation/) | `patterns/fr-validation/` | Нужно проверить ФТ/ТЗ на полноту, непротиворечивость, тестируемость и риски. |
+| [`user-story-generation`](user-story-generation/) | `patterns/user-story-generation/` | [`bcreq-scenarios-modeling-oneshot.md`](../prompts/bcreq-scenarios-modeling-oneshot.md); архив:  |
+| [`usecase-generation`](usecase-generation/) | `patterns/usecase-generation/` | [`bcreq-uc-modeling-stepwise.md`](../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-scenarios-modeling-oneshot.md`](../prompts/bcreq-scenarios-modeling-oneshot.md); архив:  |
+| [`fr-generation`](fr-generation/) | `patterns/fr-generation/` | [`bcreq-fr-documentation-stepwise.md`](../prompts/bcreq-fr-documentation-stepwise.md), [`bcreq-core-documentation-oneshot.md`](../prompts/bcreq-core-documentation-oneshot.md); архив:  |
+| [`fr-validation`](fr-validation/) | `patterns/fr-validation/` | [`bcreq-review-validation-oneshot.md`](../prompts/bcreq-review-validation-oneshot.md); архив:  |
 | [`meeting-summary-generation`](meeting-summary-generation/) | `patterns/meeting-summary-generation/` | Нужно оформить meeting summary с decisions, questions, owners and next steps. |
 
 ## Матрица: паттерн ↔ процесс ↔ операция ↔ промпты
 
 | Паттерн | Процесс БА | Операция | Связанные промпты |
 | --- | --- | --- | --- |
-| [`glossary-context-generation`](glossary-context-generation/) | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US | `understanding` | [`glossary-context-understanding-stepwise.md`](../prompts/glossary-context-understanding-stepwise.md), [`glossary-context-understanding-oneshot.md`](../prompts/glossary-context-understanding-oneshot.md) |
+| [`glossary-context-generation`](glossary-context-generation/) | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US | `understanding` | [`bcreq-context-understanding-stepwise.md`](../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../prompts/bcreq-in-understanding-oneshot.md); архив: [`glossary-context-understanding-stepwise.md`](../prompts/archive/glossary-context-understanding-stepwise.md), [`glossary-context-understanding-oneshot.md`](../prompts/archive/glossary-context-understanding-oneshot.md) |
 | [`asr-ingestion`](asr-ingestion/) | Формирование ФТ/ТЗ; Помощь ПО/ПМ | `ingestion` | [`asr-ingestion-oneshot.md`](../prompts/asr-ingestion-oneshot.md), [`asr-ingestion-legacy.md`](../prompts/asr-ingestion-legacy.md) |
-| [`user-story-generation`](user-story-generation/) | Формирование UC/US; Формирование ФТ/ТЗ | `modeling` | [`us-modeling-stepwise.md`](../prompts/us-modeling-stepwise.md), [`us-modeling-oneshot.md`](../prompts/us-modeling-oneshot.md) |
-| [`usecase-generation`](usecase-generation/) | Формирование UC/US; Формирование ФТ/ТЗ | `modeling` | [`uc-modeling-stepwise.md`](../prompts/uc-modeling-stepwise.md), [`uc-modeling-oneshot.md`](../prompts/uc-modeling-oneshot.md) |
-| [`fr-generation`](fr-generation/) | Формирование ФТ/ТЗ | `documentation` | [`fr-documentation-stepwise.md`](../prompts/fr-documentation-stepwise.md), [`fr-documentation-oneshot.md`](../prompts/fr-documentation-oneshot.md) |
-| [`fr-validation`](fr-validation/) | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ | `validation` + quality overlay | [`fr-validation-stepwise.md`](../prompts/fr-validation-stepwise.md), [`fr-validation-oneshot.md`](../prompts/fr-validation-oneshot.md), [`fr-validation-legacy.md`](../prompts/fr-validation-legacy.md) |
+| [`user-story-generation`](user-story-generation/) | Формирование UC/US; Формирование ФТ/ТЗ | `modeling` | [`bcreq-scenarios-modeling-oneshot.md`](../prompts/bcreq-scenarios-modeling-oneshot.md); архив: [`us-modeling-stepwise.md`](../prompts/archive/us-modeling-stepwise.md), [`us-modeling-oneshot.md`](../prompts/archive/us-modeling-oneshot.md) |
+| [`usecase-generation`](usecase-generation/) | Формирование UC/US; Формирование ФТ/ТЗ | `modeling` | [`bcreq-uc-modeling-stepwise.md`](../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-scenarios-modeling-oneshot.md`](../prompts/bcreq-scenarios-modeling-oneshot.md); архив: [`uc-modeling-stepwise.md`](../prompts/archive/uc-modeling-stepwise.md), [`uc-modeling-oneshot.md`](../prompts/archive/uc-modeling-oneshot.md) |
+| [`fr-generation`](fr-generation/) | Формирование ФТ/ТЗ | `documentation` | [`bcreq-fr-documentation-stepwise.md`](../prompts/bcreq-fr-documentation-stepwise.md), [`bcreq-core-documentation-oneshot.md`](../prompts/bcreq-core-documentation-oneshot.md); архив: [`fr-documentation-stepwise.md`](../prompts/archive/fr-documentation-stepwise.md), [`fr-documentation-oneshot.md`](../prompts/archive/fr-documentation-oneshot.md) |
+| [`fr-validation`](fr-validation/) | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ | `validation` + quality overlay | [`bcreq-review-validation-oneshot.md`](../prompts/bcreq-review-validation-oneshot.md); архив: [`fr-validation-stepwise.md`](../prompts/archive/fr-validation-stepwise.md), [`fr-validation-oneshot.md`](../prompts/archive/fr-validation-oneshot.md), [`fr-validation-legacy.md`](../prompts/archive/fr-validation-legacy.md) |
 | [`meeting-summary-generation`](meeting-summary-generation/) | Помощь ПО/ПМ; Формирование ФТ/ТЗ | `documentation` | [`meeting-customer-documentation-stepwise.md`](../prompts/meeting-customer-documentation-stepwise.md), [`meeting-team-documentation-stepwise.md`](../prompts/meeting-team-documentation-stepwise.md) |
 
 Связь процесс -> паттерн -> prompt ведётся как source of truth в

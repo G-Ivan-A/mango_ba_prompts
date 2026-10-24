@@ -6,11 +6,11 @@ ai-generated: true
 experiment: multichannel-agent-workload-2026-06-18
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/us-modeling-stepwise.md"
-  - "prompts/uc-modeling-stepwise.md"
-  - "prompts/technical-details-solution-design-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/us-modeling-stepwise.md"
+  - "prompts/archive/uc-modeling-stepwise.md"
+  - "prompts/archive/technical-details-solution-design-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 ---

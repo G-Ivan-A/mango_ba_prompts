@@ -50,7 +50,7 @@ metrics:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/269
 related_artifacts:
-  - prompts/glossary-context-understanding-stepwise.md
+  - prompts/archive/glossary-context-understanding-stepwise.md
   - standards/experiment-log-standard.md
 related_runs:
   - RUN-0012

@@ -203,9 +203,9 @@ related_prs:
 
 | Пример | Назначение |
 | --- | --- |
-| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md> | Пошаговое формирование терминологии и бизнес-контекста для разделов 1-2 ТЗ. |
-| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md> | Пошаговое формирование раздела 4 ФТ на основе контекста, US и UC. |
-| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md> | One-shot валидация и перегенерация ФТ в одном ответе. |
+| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md> | Пошаговое формирование терминологии и бизнес-контекста для разделов 1-2 ТЗ. |
+| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md> | Пошаговое формирование раздела 4 ФТ на основе контекста, US и UC. |
+| <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-oneshot.md> | One-shot валидация и перегенерация ФТ в одном ответе. |
 
 ## Режимы
 
@@ -236,8 +236,8 @@ related_prs:
 `status: archived`. PR #59 сознательно оставил часть PDF-derived legacy-промптов
 активными в `prompts/` со `status: draft`, например:
 
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md>
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-legacy.md>
+- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-legacy.md>
+- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-legacy.md>
 
 Архивный файл, наоборот, должен иметь `status: archived` и жить в
 `prompts/archive/`.

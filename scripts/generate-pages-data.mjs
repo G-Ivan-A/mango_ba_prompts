@@ -15,6 +15,7 @@ const SOURCE_FILES = {
   processIndex: "docs/ba-processes/00-index.md",
   ecosystem: "docs/ba-ecosystem.md",
   patternsReadme: "patterns/README.md",
+  bcreqFlow: "docs/ba-processes/bcreq-manual-process.md",
 };
 
 function isPromptAssetFile(name) {
@@ -987,6 +988,126 @@ function makePatterns(patternsList, prompts, operationsById) {
   };
 }
 
+// Набор промпта (issue #388): новые промпты BCREQ выделяются на сайте и
+// фильтруются отдельной группой «Набор».
+const PROMPT_FAMILIES = [
+  { id: "bcreq", label: "BCREQ (новые)", icon: "★", description: "Набор BCREQ: Промпт 0 и промпты шагов и стадий (issue #388)." },
+  { id: "other", label: "Прочие", icon: "•", description: "Действующие промпты вне набора BCREQ." },
+  { id: "archive", label: "Архив", icon: "⌛", description: "Промпты, заменённые набором BCREQ; сохранены для ссылок из прогонов." },
+];
+
+function promptFamily(basename, archived) {
+  if (archived) {
+    return "archive";
+  }
+  return basename.startsWith("bcreq-") ? "bcreq" : "other";
+}
+
+// Процесс BCREQ для раздела «Процессы» (issue #388): ручные шаги БА и
+// согласование с командой и Заказчиком. Источник — таблицы
+// docs/ba-processes/bcreq-manual-process.md; таблица ищется по заголовкам.
+function tableByHeaders(tables, required, label) {
+  const table = tables.find((item) => required.every((header) => item.headers.includes(header)));
+  if (!table) {
+    throw new Error(`${SOURCE_FILES.bcreqFlow}: нет таблицы «${label}» (${required.join(", ")})`);
+  }
+  return table.rows.map((row) =>
+    Object.fromEntries(table.headers.map((header, index) => [header, row[index]])),
+  );
+}
+
+function splitList(value) {
+  return stripMarkdownInline(value)
+    .split(/;\s+/)
+    .map((item) => item.trim())
+    .filter(Boolean)
+    .map((item) => item[0].toUpperCase() + item.slice(1));
+}
+
+function makeBcreqFlow(markdown, prompts) {
+  const tables = parseTables(markdown);
+  const title = markdown.match(/^# (.+)$/m)?.[1]?.trim() || "BCREQ";
+  const promptsByFile = new Map(prompts.map((prompt) => [prompt.file, prompt]));
+
+  const rules = tableByHeaders(tables, ["№", "Правило"], "Общие правила").map((row) => ({
+    id: stripMarkdownInline(row["№"]),
+    text: stripMarkdownInline(row["Правило"]),
+  }));
+
+  const steps = tableByHeaders(tables, ["Шаг", "Промпт", "Что делает БА"], "Шаги").map((row) => {
+    const file = `${stripMarkdownInline(row["Промпт"])}.md`;
+    const prompt = promptsByFile.get(file);
+    if (!prompt || prompt.archived) {
+      throw new Error(`${SOURCE_FILES.bcreqFlow}: шаг ${row["Шаг"]} ссылается на неизвестный промпт ${file}`);
+    }
+    return {
+      number: Number(stripMarkdownInline(row["№"])),
+      step: stripMarkdownInline(row["Шаг"]),
+      stage: stripMarkdownInline(row["Стадия"]),
+      prompt: { id: prompt.id, file: prompt.file, title: prompt.title, url: prompt.url },
+      params: stripMarkdownInline(row["Параметры"]),
+      prepare: stripMarkdownInline(row["Что подготовить"]),
+      actions: splitList(row["Что делает БА"]),
+      result: stripMarkdownInline(row["Результат"]),
+      gate: stripMarkdownInline(row["Гейт после шага"]),
+    };
+  });
+
+  const approval = tableByHeaders(tables, ["Этап", "Гейт", "Кто согласует", "Исходы"], "Этапы согласования").map(
+    (row) => ({
+      stage: stripMarkdownInline(row["Этап"]),
+      phase: stripMarkdownInline(row["Стадия"]),
+      gate: stripMarkdownInline(row["Гейт"]),
+      goal: stripMarkdownInline(row["Цель"]),
+      input: stripMarkdownInline(row["Вход"]),
+      actions: splitList(row["Действия"]),
+      output: stripMarkdownInline(row["Выход"]),
+      approver: stripMarkdownInline(row["Кто согласует"]),
+      outcomes: splitList(row["Исходы"]),
+    }),
+  );
+
+  const returns = tableByHeaders(tables, ["Причина уточнения", "Стадия возврата"], "Возвраты").map((row) => ({
+    reason: stripMarkdownInline(row["Причина уточнения"]),
+    stage: stripMarkdownInline(row["Стадия возврата"]),
+    entry: stripMarkdownInline(row["Шаг-точка входа"]),
+    action: stripMarkdownInline(row["Что делает БА"]),
+  }));
+
+  const improvements = tableByHeaders(tables, ["В PDF", "Стало"], "Что улучшено").map((row) => ({
+    id: stripMarkdownInline(row["№"]),
+    before: stripMarkdownInline(row["В PDF"]),
+    after: stripMarkdownInline(row["Стало"]),
+    why: stripMarkdownInline(row["Зачем"]),
+  }));
+
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [{ path: SOURCE_FILES.bcreqFlow, url: repoUrl(SOURCE_FILES.bcreqFlow) }],
+    title,
+    manual: {
+      title,
+      route: "stepwise",
+      rules,
+      steps,
+    },
+    approval: {
+      title: "Согласование BCREQ с командой и Заказчиком",
+      basis: {
+        label: "KK-289887877-231026-2259-652.pdf",
+        url: "https://github.com/user-attachments/files/33892143/KK-289887877-231026-2259-652.pdf",
+      },
+      contract: {
+        label: "Контракт стадий и гейтов BCREQ",
+        url: repoUrl("docs/contracts/bcreq-stage-gates.md"),
+      },
+      stages: approval,
+      returns,
+      improvements,
+    },
+  };
+}
+
 async function main() {
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
@@ -1029,6 +1150,7 @@ async function main() {
     const contentHash = crypto.createHash("sha256").update(content).digest("hex");
 
     const slug = basename.replace(/\.md$/, "");
+    const family = promptFamily(basename, file.archived);
     prompts.push({
       id: frontmatter.id || `mango-${slug}`,
       file: basename,
@@ -1036,6 +1158,8 @@ async function main() {
       sourcePath: file.relativePath,
       url: repoUrl(file.relativePath),
       archived: file.archived,
+      family,
+      isNew: family === "bcreq",
       description: metadata?.description || "Описание отсутствует в prompts/README.md.",
       descriptionLong: buildLongDescription(
         metadata?.description || "Описание отсутствует в prompts/README.md.",
@@ -1073,6 +1197,10 @@ async function main() {
     operations: taxonomy.operations,
     processes: taxonomy.processes,
     modes: ["stepwise", "oneshot", "legacy"],
+    families: PROMPT_FAMILIES.map((item) => ({
+      ...item,
+      count: prompts.filter((prompt) => prompt.family === item.id).length,
+    })),
     statuses: [...new Set(prompts.map((prompt) => prompt.status))].sort(),
   };
 
@@ -1123,8 +1251,13 @@ async function main() {
   const patternsData = makePatterns(patternsList, prompts, operationsById);
   await writeJson("site/data/processes.json", processesData);
   await writeJson("site/data/patterns.json", patternsData);
+  const bcreqFlow = makeBcreqFlow(await read(SOURCE_FILES.bcreqFlow), prompts);
+  await writeJson("site/data/bcreq-flow.json", bcreqFlow);
 
   console.log(`Generated ${prompts.length} prompts`);
+  console.log(
+    `Generated BCREQ flow: ${bcreqFlow.manual.steps.length} manual steps, ${bcreqFlow.approval.stages.length} approval stages`,
+  );
   console.log(
     `Generated ${processesData.processes.length} process cards and ${patternsData.patterns.length} patterns`,
   );

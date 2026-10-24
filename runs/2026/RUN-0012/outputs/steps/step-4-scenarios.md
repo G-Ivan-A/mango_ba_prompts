@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 4 — Сценарная декомпозиция (перед генерацией ФТ)
 
-> **Промпт:** [`fr-documentation-stepwise`](../../../../../prompts/fr-documentation-stepwise.md),
+> **Промпт:** [`fr-documentation-stepwise`](../../../../../prompts/archive/fr-documentation-stepwise.md),
 > Шаг 2. Матрица сценариев строится до Раздела 4, чтобы ФТ покрывали не только
 > Happy Path, но и альтернативы и исключения (правило 4 промпта — креативность
 > направлена на выявление граничных случаев).

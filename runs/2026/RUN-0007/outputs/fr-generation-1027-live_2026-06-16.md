@@ -8,9 +8,9 @@ input_hash: "sha256:41455c007b37c59b6b2517697a0a1029c0914e80257d99e2adf988caad6a
 timestamp: 2026-06-16T00:00:00Z
 scope: mango-only
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-oneshot.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-oneshot.md"
   - "standards/experiment-log-standard.md"
   - "docs/analysis/experiment-1027-analysis.md"
 ---

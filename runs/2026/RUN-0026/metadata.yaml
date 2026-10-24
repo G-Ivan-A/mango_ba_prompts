@@ -66,8 +66,8 @@ logs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/283
 related_artifacts:
-  - prompts/fr-documentation-stepwise.md
-  - prompts/fr-documentation-oneshot.md
+  - prompts/archive/fr-documentation-stepwise.md
+  - prompts/archive/fr-documentation-oneshot.md
   - standards/experiment-log-standard.md
   - scripts/chat_export_to_markdown.py
   - experiments/amocrm_widget_grounding_probe.py

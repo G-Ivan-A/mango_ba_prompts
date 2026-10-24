@@ -36,8 +36,9 @@ Story, Use Case, ФТ или tender-fit анализом.
 - **Prompt matrix**: [prompts/README.md](../../prompts/README.md).
 - **Ecosystem map**: [docs/ba-ecosystem.md](../../docs/ba-ecosystem.md).
 - **Related prompt implementations**:
-  [`glossary-context-understanding-stepwise.md`](../../prompts/glossary-context-understanding-stepwise.md),
-  [`glossary-context-understanding-oneshot.md`](../../prompts/glossary-context-understanding-oneshot.md).
+  [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md),
+  [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md).
+- **Архивные предшественники (issue #388)**: [`glossary-context-understanding-stepwise.md`](../../prompts/archive/glossary-context-understanding-stepwise.md), [`glossary-context-understanding-oneshot.md`](../../prompts/archive/glossary-context-understanding-oneshot.md).
 
 ## context_requirements
 

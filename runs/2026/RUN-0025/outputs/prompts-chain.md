@@ -18,13 +18,13 @@ related_issues:
 `prompts/`. По составу правил (роль сертифицированного БА, пошаговый режим
 «сначала предлагаю — вношу после согласования», нумерация 4.x/4.x.x, кавычки
 «», путь «Путь → Путь», версионность v1.0 → v1.1, вывод без Markdown) промпт
-близок по замыслу к [`prompts/fr-validation-stepwise.md`](../../../../prompts/fr-validation-stepwise.md),
+близок по замыслу к [`prompts/archive/fr-validation-stepwise.md`](../../../../prompts/archive/fr-validation-stepwise.md),
 но не тождественен ему (например, задаёт «температуру стилистики > 0.85»,
 которой в репозиторном промпте нет).
 
 | # | Реплика | Идентификация | Ближайший файл репозитория | Роль в прогоне |
 | --- | --- | --- | --- | --- |
-| 1 | 0 | Пользовательский промпт, маркера нет | [`prompts/fr-validation-stepwise.md`](../../../../prompts/fr-validation-stepwise.md) (по замыслу, не дословно); частично — [`prompts/glossary-context-understanding-stepwise.md`](../../../../prompts/glossary-context-understanding-stepwise.md) в части терминов | Валидация и перегенерация раздела «Термины», раздела 4 (ФТ) и раздела 6 (Ограничения) для задачи 997/57204 |
+| 1 | 0 | Пользовательский промпт, маркера нет | [`prompts/archive/fr-validation-stepwise.md`](../../../../prompts/archive/fr-validation-stepwise.md) (по замыслу, не дословно); частично — [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) в части терминов | Валидация и перегенерация раздела «Термины», раздела 4 (ФТ) и раздела 6 (Ограничения) для задачи 997/57204 |
 
 ## Что из механики промпта сработало
 

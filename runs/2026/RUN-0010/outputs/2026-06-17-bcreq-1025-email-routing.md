@@ -7,9 +7,9 @@ experiment: bcreq-1025-email-routing
 timestamp: 2026-06-17T00:00:00Z
 scope: mango-only
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
   - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
 related_issues:
@@ -45,9 +45,9 @@ related_issues:
 
 | № | Промпт | Версия | Что генерировалось |
 | --- | --- | --- | --- |
-| 1 | [`mango-glossary-context-understanding-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md) | v0.1 | Раздел 1 (Терминология) + Раздел 2 (Проблема, Цель, Задачи) |
-| 2 | [`mango-fr-documentation-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md) | v0.1 | Раздел 4 (Функциональные требования) |
-| 3 | [`mango-constraints-documentation-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md) | v0.1 | Раздел 6 (Ограничения) |
+| 1 | [`mango-glossary-context-understanding-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md) | v0.1 | Раздел 1 (Терминология) + Раздел 2 (Проблема, Цель, Задачи) |
+| 2 | [`mango-fr-documentation-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md) | v0.1 | Раздел 4 (Функциональные требования) |
+| 3 | [`mango-constraints-documentation-stepwise`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-stepwise.md) | v0.1 | Раздел 6 (Ограничения) |
 
 **Ключевое отличие от эксперимента 1027:** для раздела 6 использован `stepwise`
 (а не `oneshot` как в 1027), что дало более детальный интерактивный анализ границ.

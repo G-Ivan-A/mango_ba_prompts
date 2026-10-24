@@ -6,8 +6,8 @@ ai-generated: true
 type: analysis
 scope: mango-only
 related_artifacts:
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/fr-documentation-oneshot.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/fr-documentation-oneshot.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/283"
 ---
@@ -44,7 +44,7 @@ related_issues:
 ## Сопоставление с библиотечным промптом
 
 Ближайший по назначению библиотечный промпт —
-[`prompts/fr-documentation-stepwise.md`](../../../../prompts/fr-documentation-stepwise.md)
+[`prompts/archive/fr-documentation-stepwise.md`](../../../../prompts/archive/fr-documentation-stepwise.md)
 («ФТ: Генерация требований», пошаговый). Совпадения велики, и это само по себе
 наблюдение: ad-hoc-рамка БА независимо воспроизвела структуру библиотечного
 промпта.

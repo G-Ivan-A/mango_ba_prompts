@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 ---
 
 # Шаг 2 — Нормализация требования
@@ -92,4 +92,4 @@ related_artifacts:
 ## Источники
 
 - [`inputs/raw-requirement.md`](../../inputs/raw-requirement.md), [`inputs/kb-files.md`](../../inputs/kb-files.md)
-- [`prompts/glossary-context-understanding-stepwise.md`](../../../../../prompts/glossary-context-understanding-stepwise.md)
+- [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md)

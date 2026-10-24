@@ -6,13 +6,13 @@ ai-generated: true
 experiment: bcreq-1059-multichannel-slots-limits-2026-06-18--2026-07-31
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/fr-validation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
-  - "prompts/uc-modeling-stepwise.md"
-  - "prompts/us-modeling-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
+  - "prompts/archive/uc-modeling-stepwise.md"
+  - "prompts/archive/us-modeling-stepwise.md"
   - "prompts/meeting-customer-documentation-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/268"

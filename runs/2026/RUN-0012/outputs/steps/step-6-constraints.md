@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 6 — Раздел 6. Особенности реализации / Ограничения
 
-> **Промпт:** [`constraints-documentation-stepwise`](../../../../../prompts/constraints-documentation-stepwise.md).
+> **Промпт:** [`constraints-documentation-stepwise`](../../../../../prompts/archive/constraints-documentation-stepwise.md).
 > Раздел начинается с неизменного базиса 6.1.1–6.1.3; далее — ограничения,
 > защищающие скоуп. Стиль декларативный, ограничительный.
 

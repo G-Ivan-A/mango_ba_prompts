@@ -35,9 +35,8 @@ updated: 2026-06-15
 - **Prompt matrix**: [prompts/README.md](../../prompts/README.md).
 - **Ecosystem map**: [docs/ba-ecosystem.md](../../docs/ba-ecosystem.md).
 - **Related prompt implementations**:
-  [`fr-validation-stepwise.md`](../../prompts/fr-validation-stepwise.md),
-  [`fr-validation-oneshot.md`](../../prompts/fr-validation-oneshot.md),
-  [`fr-validation-legacy.md`](../../prompts/fr-validation-legacy.md).
+  [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md).
+- **Архивные предшественники (issue #388)**: [`fr-validation-stepwise.md`](../../prompts/archive/fr-validation-stepwise.md), [`fr-validation-oneshot.md`](../../prompts/archive/fr-validation-oneshot.md), [`fr-validation-legacy.md`](../../prompts/archive/fr-validation-legacy.md).
 
 ## context_requirements
 

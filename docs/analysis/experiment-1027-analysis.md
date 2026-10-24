@@ -8,12 +8,12 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/glossary-context-understanding-oneshot.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/fr-documentation-oneshot.md"
-  - "prompts/constraints-documentation-stepwise.md"
-  - "prompts/constraints-documentation-oneshot.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-oneshot.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/fr-documentation-oneshot.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-oneshot.md"
   - "runs/2026/RUN-0007/outputs/fr-generation-1027-live_2026-06-16.md"
   - "standards/experiment-log-standard.md"
 ---
@@ -62,9 +62,9 @@ related_artifacts:
 
 | Раздел сессии | Запущенный промпт | Что генерировалось |
 | --- | --- | --- |
-| 1.1 | [`glossary-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md) | Разделы 1 (Терминология) и 2 (Проблема, цель, задачи) |
-| 1.2 | [`fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md) | Раздел 4 (Функциональные требования) |
-| 1.3 | [`constraints-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md) | Раздел 6 (Ограничения) — «экспресс-режим» |
+| 1.1 | [`glossary-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md) | Разделы 1 (Терминология) и 2 (Проблема, цель, задачи) |
+| 1.2 | [`fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md) | Раздел 4 (Функциональные требования) |
+| 1.3 | [`constraints-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-oneshot.md) | Раздел 6 (Ограничения) — «экспресс-режим» |
 
 > Важно для трактовки: текст промпта раздела 6 в стенограмме (раздел 1.3)
 > дословно совпадает с `constraints-documentation-oneshot.md` (oneshot —

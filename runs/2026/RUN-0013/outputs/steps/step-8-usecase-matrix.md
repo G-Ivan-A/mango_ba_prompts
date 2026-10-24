@@ -12,7 +12,7 @@ related_issues:
 # Шаг 8 — Матрица сценариев обработки очередей (32 UC), выжимка и вопрос Заказчику
 
 > **Эпизод 8, 2026-07-31 (реплики БА 226–241, 8 итераций).** Промпт-маршрут:
-> [`uc-modeling-stepwise`](../../../../../prompts/uc-modeling-stepwise.md) на
+> [`uc-modeling-stepwise`](../../../../../prompts/archive/uc-modeling-stepwise.md) на
 > зафиксированных ФТ ([`../final-artifact.md`](../final-artifact.md)) при
 > лимитах Заказчика Голос = 1 / Чат = 2 / E-mail = 1.
 >

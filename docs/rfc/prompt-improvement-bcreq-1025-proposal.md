@@ -10,9 +10,9 @@ source_analysis: "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
 ---
 
 # RFC: Улучшение промптов на основе эксперимента BCREQ-1025
@@ -65,7 +65,7 @@ RFC-1027-P2), часть — новые для данной экосистемы
 
 ### RFC-1025-P1: Явная фиксация архитектурных связок в промпте glossary
 
-**Промпт:** `prompts/glossary-context-understanding-stepwise.md`
+**Промпт:** `prompts/archive/glossary-context-understanding-stepwise.md`
 
 **Что изменить:**
 Добавить в Шаг 0 (Сбор контекста и As-Is) явный запрос архитектурных компонентов:
@@ -105,7 +105,7 @@ RFC-1027-P2), часть — новые для данной экосистемы
 > переносится на **фиксацию архитектурных настроек и компонентов** и **механизм
 > долгосрочной памяти согласованных решений** внутри сессии.
 
-**Промпт:** `prompts/fr-documentation-stepwise.md`
+**Промпт:** `prompts/archive/fr-documentation-stepwise.md`
 
 **Что изменить:**
 Дополнить Шаг 1 (Синхронизация контекста) явным требованием:
@@ -153,7 +153,7 @@ RFC-1027-P2), часть — новые для данной экосистемы
 > **Обновление (v0.2):** Расширен скоуп — добавлен уровень `4.x.x.x` и явное
 > правило использования слова «ВОЗМОЖНОСТЬ» при доработке существующей функциональности.
 
-**Промпт:** `prompts/fr-documentation-stepwise.md`
+**Промпт:** `prompts/archive/fr-documentation-stepwise.md`
 
 **Что изменить:**
 В Правиле 1 (Иерархия ФТ) добавить конкретный пример-эталон и явное правило
@@ -205,7 +205,7 @@ RFC-1027-P2), часть — новые для данной экосистемы
 
 ### RFC-1025-P4: Явный запрет на 4-й уровень иерархии и правило раскладки условий
 
-**Промпт:** `prompts/fr-documentation-stepwise.md`
+**Промпт:** `prompts/archive/fr-documentation-stepwise.md`
 
 **Что изменить:**
 Добавить в Правило 1 (Иерархия ФТ) явный запрет на 4-й уровень и правило
@@ -239,7 +239,7 @@ RFC-1027-P2), часть — новые для данной экосистемы
 
 ### RFC-1025-P5: Явный запрос архитектурных связок на Шаге 1 промпта constraints
 
-**Промпт:** `prompts/constraints-documentation-stepwise.md`
+**Промпт:** `prompts/archive/constraints-documentation-stepwise.md`
 
 **Что изменить:**
 Добавить в Шаг 1 (Инициализация и анализ контекста) явный запрос и фиксацию

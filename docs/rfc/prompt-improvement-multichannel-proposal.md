@@ -9,9 +9,9 @@ source_experiment: "runs/2026/RUN-0011/logs/experiment-log.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/technical-details-solution-design-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/technical-details-solution-design-stepwise.md"
 ---
 
 # RFC: Улучшение промптов на основе эксперимента «Многоканальная нагрузка агента»
@@ -58,7 +58,7 @@ related_artifacts:
 
 ### RFC-MCH-P1: Явная фиксация архитектурного слоя в ШАГ 0 промпта glossary
 
-**Промпт:** `prompts/glossary-context-understanding-stepwise.md`
+**Промпт:** `prompts/archive/glossary-context-understanding-stepwise.md`
 
 **Что изменить:**
 Добавить в ШАГ 0 (Сбор контекста и As-Is) под-шаг фиксации архитектурного слоя

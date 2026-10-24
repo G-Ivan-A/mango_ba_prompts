@@ -8,8 +8,8 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/280"
 related_artifacts:
-  - "prompts/fr-validation-stepwise.md"
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 ---
 
 # Review notes прогона RUN-0025

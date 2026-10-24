@@ -12,7 +12,7 @@ related_issues:
 # Кейс 1079: валидация ФТ «поиск Контактов по Идентификаторам мессенджеров»
 
 > **Что это.** Реальный прогон промпта
-> [`fr-validation-stepwise`](../../../../prompts/fr-validation-stepwise.md) v0.1 на
+> [`fr-validation-stepwise`](../../../../prompts/archive/fr-validation-stepwise.md) v0.1 на
 > живой задаче 1079, зафиксированный как **Proof of Execution** по
 > [issue #271](https://github.com/G-Ivan-A/mango_ba_prompts/issues/271). Восемь
 > эпизодов диалога БА с моделью `qwen3.7-plus`, 2026-07-21.

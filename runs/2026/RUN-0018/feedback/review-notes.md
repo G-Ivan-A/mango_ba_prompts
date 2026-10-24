@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
   - "runs/2026/RUN-0018/inputs/kb-facts.md"
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
 ---
 
 # Review notes: вердикты БА, реестр галлюцинаций, открытые вопросы
@@ -68,7 +68,7 @@ related_artifacts:
 
 Прогон выполнялся во внешнем чате (Qwen, `auto_search: true`) **без подключённой БЗ
 репозитория**. Промпт
-[`fr-validation-stepwise`](../../../../prompts/fr-validation-stepwise.md) v0.1:
+[`fr-validation-stepwise`](../../../../prompts/archive/fr-validation-stepwise.md) v0.1:
 
 - не содержит гейта заземления (порядок из
   [`standards/kb-standard.md`](../../../../standards/kb-standard.md): извлечь факты →

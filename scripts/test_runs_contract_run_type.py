@@ -71,13 +71,13 @@ class BoundariesTest(unittest.TestCase):
             "outputs:\n"
             "  - outputs/final-artifact.md\n"
             f"source_paths:\n  - {RUN_PREFIX}/outputs/final-artifact.md\n"
-            "related_artifacts:\n  - prompts/fr-documentation-stepwise.md\n"
+            "related_artifacts:\n  - prompts/archive/fr-documentation-stepwise.md\n"
         )
         self.assertEqual(check_run_boundaries(RUN_PREFIX, RUN_PREFIX, path), [])
 
     def test_protected_directories_rejected(self) -> None:
         for protected in (
-            "prompts/fr-documentation-stepwise.md",
+            "prompts/archive/fr-documentation-stepwise.md",
             "kb/processed/mango-cc-manual/index.json",
             "site/data/runs.json",
             "patterns/agent-workload.md",

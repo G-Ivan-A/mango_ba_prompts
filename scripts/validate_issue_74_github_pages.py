@@ -74,10 +74,10 @@ def main() -> int:
     roadmap_data = read_json("site/data/roadmap.json")
     prompts = prompts_data.get("prompts", [])
 
-    if len(active_paths) != 24:
-        errors.append(f"prompts/: expected 24 active prompt files, found {len(active_paths)}")
-    if len(archived_paths) != 6:
-        errors.append(f"prompts/archive/: expected 6 archived prompt files, found {len(archived_paths)}")
+    if len(active_paths) != 20:
+        errors.append(f"prompts/: expected 20 active prompt files, found {len(active_paths)}")
+    if len(archived_paths) != 24:
+        errors.append(f"prompts/archive/: expected 24 archived prompt files, found {len(archived_paths)}")
     if len(prompts) != len(prompt_paths):
         errors.append(f"site/data/prompts.json: expected {len(prompt_paths)} prompts, found {len(prompts)}")
 
@@ -103,10 +103,10 @@ def main() -> int:
 
     active_generated = [prompt for prompt in prompts if not prompt.get("archived")]
     archived_generated = [prompt for prompt in prompts if prompt.get("archived")]
-    if len(active_generated) != 24:
-        errors.append(f"site/data/prompts.json: expected 24 active prompts, found {len(active_generated)}")
-    if len(archived_generated) != 6:
-        errors.append(f"site/data/prompts.json: expected 6 archived prompts, found {len(archived_generated)}")
+    if len(active_generated) != 20:
+        errors.append(f"site/data/prompts.json: expected 20 active prompts, found {len(active_generated)}")
+    if len(archived_generated) != 24:
+        errors.append(f"site/data/prompts.json: expected 24 archived prompts, found {len(archived_generated)}")
 
     filters = prompts_data.get("filters", {})
     if len(filters.get("operations", [])) != 13:
@@ -119,12 +119,12 @@ def main() -> int:
 
     totals = stats_data.get("totals", {})
     expected_totals = {
-        "allPrompts": 30,
-        "activePrompts": 24,
-        "archivedPrompts": 6,
+        "allPrompts": 44,
+        "activePrompts": 20,
+        "archivedPrompts": 24,
         "testsPassed": 0,
-        "inWork": 24,
-        "deferred": 6,
+        "inWork": 20,
+        "deferred": 24,
     }
     for key, expected in expected_totals.items():
         if totals.get(key) != expected:

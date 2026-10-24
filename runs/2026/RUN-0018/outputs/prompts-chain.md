@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
 related_artifacts:
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 
@@ -21,7 +21,7 @@ related_artifacts:
 
 | Поле | Значение |
 | --- | --- |
-| Файл | [`prompts/fr-validation-stepwise.md`](../../../../prompts/fr-validation-stepwise.md) |
+| Файл | [`prompts/archive/fr-validation-stepwise.md`](../../../../prompts/archive/fr-validation-stepwise.md) |
 | `id` | `mango-fr-validation-stepwise` |
 | `version` / `status` | 0.1 / draft |
 | `temperature` | 0.1 |

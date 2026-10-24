@@ -6,7 +6,7 @@ ai-generated: true
 experiment: fr-validation-1079-messenger-id-search
 scope: prompts
 related_artifacts:
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 
@@ -88,7 +88,7 @@ Mango Office.
 
 ## Предложения по промптам
 
-- [`prompts/fr-validation-stepwise.md`](../../../../prompts/fr-validation-stepwise.md)
+- [`prompts/archive/fr-validation-stepwise.md`](../../../../prompts/archive/fr-validation-stepwise.md)
   → П1 гейт заземления на БЗ, П2 запрет непроверяемых ссылок, П3 дифф-отчёт при
   перегенерации, П4 запрет оценочного вступления, П5 обязательная проверка пустых
   разделов. Формулировки — в

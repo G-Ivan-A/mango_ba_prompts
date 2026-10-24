@@ -58,7 +58,7 @@ JSON в любой момент, frontmatter в них намеренно не �
 БА подал в диалог:
 
 - реплика [0] — промпт `mango-fr-validation-legacy` **дословно**
-  ([`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md),
+  ([`prompts/archive/fr-validation-legacy.md`](../../../../prompts/archive/fr-validation-legacy.md),
   v1.0); совпадение с файлом репозитория проверено программно, см.
   [`../outputs/prompts-chain.md`](../outputs/prompts-chain.md);
 - реплика [2] — глоссарий (Система, КЦ, Клиент, Менеджер), разделы 1–6 исходного

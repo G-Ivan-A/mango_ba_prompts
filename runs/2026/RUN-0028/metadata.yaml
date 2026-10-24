@@ -49,7 +49,7 @@ metrics:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/275
 related_artifacts:
-  - prompts/fr-validation-legacy.md
+  - prompts/archive/fr-validation-legacy.md
   - standards/runs-contract-standard.md
   - standards/experiment-log-standard.md
   - scripts/chat_export_to_markdown.py

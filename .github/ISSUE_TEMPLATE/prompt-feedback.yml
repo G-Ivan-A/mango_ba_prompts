@@ -17,7 +17,7 @@ body:
     attributes:
       label: "Какой промпт"
       description: "Имя файла из prompts/ — как помните, можно неточно."
-      placeholder: "fr-validation-stepwise"
+      placeholder: "bcreq-fr-documentation-stepwise"
     validations:
       required: true
 

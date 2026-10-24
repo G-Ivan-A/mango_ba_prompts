@@ -18,10 +18,10 @@ related_issues:
 
 | Эпизод | Реплики | Промпт / режим | Артефакт эпизода | Gate |
 | --- | --- | --- | --- | --- |
-| 1 | 0–7 | [`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md), Шаги 0–2 | [`steps/step-1-as-is-and-glossary.md`](steps/step-1-as-is-and-glossary.md) | human (реплики 4, 6) |
+| 1 | 0–7 | [`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md), Шаги 0–2 | [`steps/step-1-as-is-and-glossary.md`](steps/step-1-as-is-and-glossary.md) | human (реплики 4, 6) |
 | 2 | 8–13 | тот же промпт, возврат к Шагу 2 | [`steps/step-2-object-model.md`](steps/step-2-object-model.md) | human |
 | 3 | 14–17 | тот же промпт, Раздел 2 | [`steps/step-3-section-2-agreed.md`](steps/step-3-section-2-agreed.md) | **human G1** (структура задач) |
-| 4 | 18–23 | [`fr-documentation-stepwise`](../../../../prompts/fr-documentation-stepwise.md), Шаги 1–2 | [`steps/step-4-scenarios.md`](steps/step-4-scenarios.md) | human |
+| 4 | 18–23 | [`fr-documentation-stepwise`](../../../../prompts/archive/fr-documentation-stepwise.md), Шаги 1–2 | [`steps/step-4-scenarios.md`](steps/step-4-scenarios.md) | human |
 | 5 | 24–28 | ad-hoc запрос на верификацию по документации | [`steps/step-5-mtalker-facts.md`](steps/step-5-mtalker-facts.md) | human |
 | 6 | 29–33 | тот же промпт, Шаг 3 + ad-hoc ролевая проверка (аналитик/архитектор/техлид) | [`steps/step-6-fr-v1-and-rework.md`](steps/step-6-fr-v1-and-rework.md) | **human, отклонение** |
 | 7 | 34–43 | тот же промпт, Шаг 3 (детализация и оформление) | [`steps/step-7-fr-detailed.md`](steps/step-7-fr-detailed.md) | human (фиксация 4.1–4.4) |

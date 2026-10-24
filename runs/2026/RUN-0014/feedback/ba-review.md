@@ -6,7 +6,7 @@ ai-generated: true
 type: feedback
 scope: mango-only
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
 ---
@@ -22,7 +22,7 @@ related_issues:
 
 | Поле | Значение |
 | --- | --- |
-| Промпт | [`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md) v0.1 (draft) |
+| Промпт | [`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) v0.1 (draft) |
 | Целевой артефакт | Разделы 1 и 2 ТЗ — **не получен** |
 | Завершено шагов | 1 из 4 (`success_rate` 0.25) |
 | Вердикт | **works-with-edits** — промпт даёт полезную выжимку As-Is и хороший стресс-тест противоречий, но без правок не доводит до целевого артефакта и пропускает обязательное подтверждение человека |

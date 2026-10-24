@@ -39,7 +39,7 @@ related_artifacts:
 
 ## Как получен
 
-Один промпт [`fr-validation-stepwise`](../../../../prompts/fr-validation-stepwise.md)
+Один промпт [`fr-validation-stepwise`](../../../../prompts/archive/fr-validation-stepwise.md)
 v0.1, 8 эпизодов диалога, вход — ФТ v1.0 из
 [`../inputs/raw-requirement.md`](../inputs/raw-requirement.md). Маршрут —
 [`prompts-chain.md`](./prompts-chain.md). Дословная стенограмма —

@@ -220,25 +220,25 @@ https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md
 Полные URL существующих prompt-файлов:
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-legacy.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/uc-modeling-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/uc-modeling-oneshot.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/us-modeling-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/us-modeling-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md
-- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/questions-customer-understanding-stepwise.md
+- https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/questions-customer-understanding-legacy.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md
 
 ### 6. Связать паттерны с промптами через реестр

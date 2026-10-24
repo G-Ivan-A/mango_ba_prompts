@@ -35,15 +35,16 @@ below is true.
 
 | Если задача | Процесс | Prompt / шаг |
 | --- | --- | --- |
-| Сформировать ФТ/ТЗ по встрече, письму или сырому запросу | 1. Формирование ФТ/ТЗ | `asr-ingestion-oneshot.md` при ASR -> `glossary-context-understanding-stepwise.md` -> `questions-customer-understanding-stepwise.md` -> `fr-documentation-stepwise.md` |
-| Проверить готовый черновик ФТ/ТЗ | 2. Валидация ФТ/ТЗ | `fr-validation-stepwise.md` |
-| Разобрать внешнее тендерное ТЗ | 3. Анализ тендерных ТЗ | `glossary-context-understanding-stepwise.md` -> `questions-customer-understanding-stepwise.md` -> `fr-validation-stepwise.md`; coverage/risk вручную |
-| Получить User Story или Use Case | 4. Формирование UC/US | `us-modeling-stepwise.md` или `uc-modeling-stepwise.md` |
-| Нарисовать UML/BPMN/Mermaid | 5. Визуализация UML/BPMN | dedicated prompt отсутствует; вход можно взять из `uc-modeling-stepwise.md` |
-| Подготовить резюме встречи, письмо, вопросы или handover | 6. Помощь ПО/ПМ | `meeting-customer-documentation-stepwise.md`, `meeting-team-documentation-stepwise.md`, `questions-customer-understanding-stepwise.md`, `session-debug-documentation-oneshot.md` |
+| Создать спецификацию бизнес-требований и дизайна решения (BCREQ) | 1. Формирование ФТ/ТЗ | `bcreq-constitution-governance-oneshot.md` (Промпт 0) -> шаги Ш-1…Ш-9 и Ш-В по разделу «BCREQ: маршрутизация» в `prompts/README.md`; гейты Г-IN, Г-С1, Г-W решают люди |
+| Сформировать ФТ/ТЗ по встрече, письму или сырому запросу | 1. Формирование ФТ/ТЗ | `asr-ingestion-oneshot.md` при ASR -> `bcreq-context-understanding-stepwise.md` -> `bcreq-products-impact-analysis-stepwise.md` -> `bcreq-fr-documentation-stepwise.md` |
+| Проверить готовый черновик ФТ/ТЗ | 2. Валидация ФТ/ТЗ | `bcreq-review-validation-oneshot.md` |
+| Разобрать внешнее тендерное ТЗ | 3. Анализ тендерных ТЗ | `bcreq-context-understanding-stepwise.md` -> `bcreq-review-validation-oneshot.md`; coverage/risk вручную |
+| Получить User Story или Use Case | 4. Формирование UC/US | `bcreq-scenarios-modeling-oneshot.md` (`тип: US \| UC`) или `bcreq-uc-modeling-stepwise.md` |
+| Нарисовать UML/BPMN/Mermaid | 5. Визуализация UML/BPMN | dedicated prompt отсутствует; вход можно взять из `bcreq-uc-modeling-stepwise.md` |
+| Подготовить резюме встречи, письмо, вопросы или handover | 6. Помощь ПО/ПМ | `meeting-customer-documentation-stepwise.md`, `meeting-team-documentation-stepwise.md`, `bcreq-context-understanding-stepwise.md`, `session-debug-documentation-oneshot.md` |
 | Посчитать статистику по корпусу ТЗ или дефектам | 7. Статистика | active prompt отсутствует; legacy только для сравнения |
-| Оценить влияние изменения | 8. Impact Analysis | dedicated prompt отсутствует; опирайся на `technical-details-solution-design-stepwise.md` и `fr-validation-stepwise.md` |
-| Собрать риски и readiness перед релизом | 9. Risk Analysis | dedicated prompt отсутствует; опирайся на `constraints-documentation-stepwise.md` и `fr-validation-stepwise.md`; owner review обязателен |
+| Оценить влияние изменения | 8. Impact Analysis | опирайся на `bcreq-products-impact-analysis-stepwise.md`, `bcreq-orr-solution-design-stepwise.md` и `bcreq-review-validation-oneshot.md` |
+| Собрать риски и readiness перед релизом | 9. Risk Analysis | опирайся на `bcreq-extra-risk-analysis-stepwise.md`, `bcreq-constraints-documentation-stepwise.md` и `bcreq-review-validation-oneshot.md`; owner review обязателен |
 
 ### Operation map
 

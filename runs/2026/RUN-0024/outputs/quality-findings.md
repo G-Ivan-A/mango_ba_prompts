@@ -84,7 +84,7 @@ related_issues:
 
 **Гейта заземления в ad-hoc-промпте не было** — правило «Запрет на домыслы» и
 маркер `⚠️ Требует проверки`, которые есть в библиотечном
-[`questions-customer-understanding-stepwise`](../../../../prompts/questions-customer-understanding-stepwise.md),
+[`questions-customer-understanding-stepwise`](../../../../prompts/archive/questions-customer-understanding-stepwise.md),
 в реплику [0] не подавались (см. [`prompts-chain.md`](prompts-chain.md)).
 
 ## 2. Дефекты процесса (не галлюцинации)

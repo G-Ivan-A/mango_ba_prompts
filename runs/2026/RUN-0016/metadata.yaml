@@ -66,8 +66,8 @@ metrics:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/281
 related_artifacts:
-  - prompts/fr-documentation-stepwise.md
-  - prompts/constraints-documentation-stepwise.md
+  - prompts/archive/fr-documentation-stepwise.md
+  - prompts/archive/constraints-documentation-stepwise.md
   - standards/experiment-log-standard.md
   - standards/runs-contract-standard.md
   - scripts/chat_export_to_markdown.py

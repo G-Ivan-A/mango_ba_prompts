@@ -8,9 +8,9 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
   - "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
   - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "docs/analysis/experiment-1027-analysis.md"

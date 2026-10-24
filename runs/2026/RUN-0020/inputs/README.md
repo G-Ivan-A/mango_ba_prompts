@@ -58,7 +58,7 @@ JSON в любой момент, frontmatter в них намеренно не �
 
 - промпт `mango-glossary-context-understanding-stepwise` дословно, с маркером
   `<!-- mango-glossary-context-understanding-stepwise -->`
-  ([`prompts/glossary-context-understanding-stepwise.md`](../../../../prompts/glossary-context-understanding-stepwise.md));
+  ([`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../prompts/archive/glossary-context-understanding-stepwise.md));
 - собственный глоссарий (Система, КЦ, ЛК, Клиент КЦ, Wallboard и др.) — по
   правилу «защита глоссария» из промпта;
 - документацию продукта: `CC_manual_1.26.23_compressed.pdf` (Руководство КЦ),
