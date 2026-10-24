@@ -35,8 +35,8 @@ preconditions, main flow и alternative flows, используйте
 - **Prompt matrix**: [prompts/README.md](../../prompts/README.md).
 - **Ecosystem map**: [docs/ba-ecosystem.md](../../docs/ba-ecosystem.md).
 - **Related prompt implementations**:
-  [`us-modeling-stepwise.md`](../../prompts/us-modeling-stepwise.md),
-  [`us-modeling-oneshot.md`](../../prompts/us-modeling-oneshot.md).
+  [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md).
+- **Архивные предшественники (issue #388)**: [`us-modeling-stepwise.md`](../../prompts/archive/us-modeling-stepwise.md), [`us-modeling-oneshot.md`](../../prompts/archive/us-modeling-oneshot.md).
 
 ## context_requirements
 

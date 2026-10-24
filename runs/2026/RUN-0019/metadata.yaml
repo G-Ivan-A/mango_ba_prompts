@@ -50,7 +50,7 @@ metrics:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/272
 related_artifacts:
-  - prompts/questions-customer-understanding-stepwise.md
+  - prompts/archive/questions-customer-understanding-stepwise.md
   - standards/runs-contract-standard.md
   - standards/experiment-log-standard.md
   - scripts/chat_export_to_transcript.py

@@ -61,8 +61,8 @@ logs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/270
 related_artifacts:
-  - prompts/glossary-context-understanding-stepwise.md
-  - prompts/fr-documentation-stepwise.md
+  - prompts/archive/glossary-context-understanding-stepwise.md
+  - prompts/archive/fr-documentation-stepwise.md
   - scripts/chat_export_to_markdown.py
 related_runs:
   - RUN-0012

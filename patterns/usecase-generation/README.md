@@ -34,8 +34,9 @@ updated: 2026-06-15
 - **Prompt matrix**: [prompts/README.md](../../prompts/README.md).
 - **Ecosystem map**: [docs/ba-ecosystem.md](../../docs/ba-ecosystem.md).
 - **Related prompt implementations**:
-  [`uc-modeling-stepwise.md`](../../prompts/uc-modeling-stepwise.md),
-  [`uc-modeling-oneshot.md`](../../prompts/uc-modeling-oneshot.md).
+  [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md),
+  [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md).
+- **Архивные предшественники (issue #388)**: [`uc-modeling-stepwise.md`](../../prompts/archive/uc-modeling-stepwise.md), [`uc-modeling-oneshot.md`](../../prompts/archive/uc-modeling-oneshot.md).
 
 ## context_requirements
 

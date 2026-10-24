@@ -1,11 +1,13 @@
 ---
 id: mango-technical-details-solution-design-legacy
 title: "Технические детали: Доработки (устаревший)"
-status: draft
+status: archived
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-orr-solution-design-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md), [bcreq-work-solution-design-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 1. Роль:
 Ты — команда сертифицированных бизнес-аналитиков и системных архитекторов в

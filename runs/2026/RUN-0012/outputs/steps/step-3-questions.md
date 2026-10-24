@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 3 — Открытые вопросы Заказчику
 
-> **Промпт:** [`questions-customer-understanding-stepwise`](../../../../../prompts/questions-customer-understanding-stepwise.md).
+> **Промпт:** [`questions-customer-understanding-stepwise`](../../../../../prompts/archive/questions-customer-understanding-stepwise.md).
 > Здесь фиксируются границы, которые **нельзя домысливать**: ответ на них меняет
 > Раздел 4. Уже закрытые Заказчиком вопросы (В2–В4) в список не включены — они
 > учтены как вводные в [`../../inputs/raw-requirement.md`](../../inputs/raw-requirement.md).

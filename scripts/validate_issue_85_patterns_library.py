@@ -22,34 +22,27 @@ PATTERNS = {
     "glossary-context-generation": {
         "operation": "understanding",
         "processes": ["Формирование ФТ/ТЗ", "Анализ тендерных ТЗ"],
-        "prompts": [
-            "glossary-context-understanding-stepwise.md",
-            "glossary-context-understanding-oneshot.md",
-        ],
+        "prompts": ["bcreq-context-understanding-stepwise.md", "bcreq-in-understanding-oneshot.md"],
     },
     "fr-generation": {
         "operation": "documentation",
         "processes": ["Формирование ФТ/ТЗ"],
-        "prompts": ["fr-documentation-stepwise.md", "fr-documentation-oneshot.md"],
+        "prompts": ["bcreq-fr-documentation-stepwise.md", "bcreq-core-documentation-oneshot.md"],
     },
     "fr-validation": {
         "operation": "validation",
         "processes": ["Валидация ФТ/ТЗ"],
-        "prompts": [
-            "fr-validation-stepwise.md",
-            "fr-validation-oneshot.md",
-            "fr-validation-legacy.md",
-        ],
+        "prompts": ["bcreq-review-validation-oneshot.md"],
     },
     "user-story-generation": {
         "operation": "modeling",
         "processes": ["Формирование UC/US"],
-        "prompts": ["us-modeling-stepwise.md", "us-modeling-oneshot.md"],
+        "prompts": ["bcreq-scenarios-modeling-oneshot.md"],
     },
     "usecase-generation": {
         "operation": "modeling",
         "processes": ["Формирование UC/US"],
-        "prompts": ["uc-modeling-stepwise.md", "uc-modeling-oneshot.md"],
+        "prompts": ["bcreq-uc-modeling-stepwise.md", "bcreq-scenarios-modeling-oneshot.md"],
     },
     "asr-ingestion": {
         "operation": "ingestion",

@@ -12,7 +12,7 @@ related_issues:
 # Эпизод 1 (реплики 0–7) — Шаг 0 As-Is, Шаг 1 глоссарий, первый Раздел 2
 
 > **Промпт:** `mango-glossary-context-understanding-stepwise`
-> ([`prompts/glossary-context-understanding-stepwise.md`](../../../../../prompts/glossary-context-understanding-stepwise.md)),
+> ([`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md)),
 > подан дословно с маркером `<!-- mango-glossary-context-understanding-stepwise -->`.
 > Модель: `qwen3.7-plus`.
 

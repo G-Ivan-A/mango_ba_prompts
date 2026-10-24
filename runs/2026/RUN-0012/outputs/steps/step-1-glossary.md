@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 1 — Раздел 1. Терминология (глоссарий)
 
-> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md),
+> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md),
 > Шаг 1. Базовые термины взяты из сырого запроса Заказчика как эталон; добавлены
 > только критически важные для однозначного прочтения Раздела 4 (правило 4
 > промпта — не плодить сущности).

@@ -20,7 +20,7 @@ related_issues:
 
 ## Что зафиксировано
 
-- Использован ad-hoc-промпт, а не `prompts/fr-documentation-stepwise.md`
+- Использован ad-hoc-промпт, а не `prompts/archive/fr-documentation-stepwise.md`
   (см. [`../prompts-chain.md`](../prompts-chain.md)).
 - Шаг «уточняющие вопросы» из собственного контракта промпта пропущен.
 

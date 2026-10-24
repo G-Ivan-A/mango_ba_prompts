@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T18:41:49.103Z",
+  "generatedAt": "2026-10-24T01:14:08.913Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
@@ -77,182 +77,102 @@
           "archived": false
         },
         {
-          "id": "mango-glossary-context-understanding-stepwise",
-          "file": "glossary-context-understanding-stepwise.md",
-          "title": "Контекст: Терминология и цели",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md",
+          "id": "mango-bcreq-context-understanding-stepwise",
+          "file": "bcreq-context-understanding-stepwise.md",
+          "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-glossary-context-understanding-oneshot",
-          "file": "glossary-context-understanding-oneshot.md",
-          "title": "Контекст: Терминология за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md",
+          "id": "mango-bcreq-in-understanding-oneshot",
+          "file": "bcreq-in-understanding-oneshot.md",
+          "title": "BCREQ A-IN: контекст, продукты",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-questions-customer-understanding-stepwise",
-          "file": "questions-customer-understanding-stepwise.md",
-          "title": "Вопросы: Выявление потребностей",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-questions-customer-understanding-legacy",
-          "file": "questions-customer-understanding-legacy.md",
-          "title": "Вопросы: Подготовка заказчику (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-us-modeling-stepwise",
-          "file": "us-modeling-stepwise.md",
-          "title": "User Story: Формирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-us-modeling-oneshot",
-          "file": "us-modeling-oneshot.md",
-          "title": "User Story: Формирование за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md",
+          "id": "mango-bcreq-scenarios-modeling-oneshot",
+          "file": "bcreq-scenarios-modeling-oneshot.md",
+          "title": "BCREQ Ш-С (2.12/2.13): US, UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-uc-modeling-stepwise",
-          "file": "uc-modeling-stepwise.md",
-          "title": "Use Case: Моделирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md",
+          "id": "mango-bcreq-uc-modeling-stepwise",
+          "file": "bcreq-uc-modeling-stepwise.md",
+          "title": "BCREQ Ш-5/Ш-8 (2.4/2.9): UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-uc-modeling-oneshot",
-          "file": "uc-modeling-oneshot.md",
-          "title": "Use Case: Моделирование за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md",
-          "mode": "oneshot",
-          "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-documentation-stepwise",
-          "file": "fr-documentation-stepwise.md",
-          "title": "ФТ: Генерация требований",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-stepwise.md",
+          "id": "mango-bcreq-fr-documentation-stepwise",
+          "file": "bcreq-fr-documentation-stepwise.md",
+          "title": "BCREQ Ш-3 (2.3/2.10): ФТ",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-fr-documentation-oneshot",
-          "file": "fr-documentation-oneshot.md",
-          "title": "ФТ: Генерация за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-documentation-oneshot.md",
+          "id": "mango-bcreq-core-documentation-oneshot",
+          "file": "bcreq-core-documentation-oneshot.md",
+          "title": "BCREQ A-CORE: ФТ, НФТ, UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-constraints-documentation-stepwise",
-          "file": "constraints-documentation-stepwise.md",
-          "title": "Ограничения: Документирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md",
+          "id": "mango-bcreq-constraints-documentation-stepwise",
+          "file": "bcreq-constraints-documentation-stepwise.md",
+          "title": "BCREQ Ш-7 (2.8): ограничения",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-constraints-documentation-oneshot",
-          "file": "constraints-documentation-oneshot.md",
-          "title": "Ограничения: За один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md",
+          "id": "mango-bcreq-work-solution-design-oneshot",
+          "file": "bcreq-work-solution-design-oneshot.md",
+          "title": "BCREQ A-WORK: решение, риски",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-technical-details-solution-design-stepwise",
-          "file": "technical-details-solution-design-stepwise.md",
-          "title": "Технические детали: Проектирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md",
+          "id": "mango-bcreq-orr-solution-design-stepwise",
+          "file": "bcreq-orr-solution-design-stepwise.md",
+          "title": "BCREQ Ш-6 (2.6+2.7): ОРР",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-technical-details-solution-design-oneshot",
-          "file": "technical-details-solution-design-oneshot.md",
-          "title": "Технические детали: За один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-technical-details-solution-design-legacy",
-          "file": "technical-details-solution-design-legacy.md",
-          "title": "Технические детали: Доработки (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-oneshot",
-          "file": "fr-validation-oneshot.md",
-          "title": "ФТ: Экспресс-валидация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
-          "mode": "oneshot",
-          "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-legacy",
-          "file": "fr-validation-legacy.md",
-          "title": "ФТ: Валидация (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
           "status": "draft",
           "archived": false
         }
@@ -264,7 +184,7 @@
           "nextArtifact": "prompts/ft-tz-orchestration-stepwise.md или отдельный issue на workflow prompt."
         }
       ],
-      "checks": 171,
+      "checks": 273,
       "coveredPrompts": 18
     },
     {
@@ -286,32 +206,12 @@
       ],
       "prompts": [
         {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-oneshot",
-          "file": "fr-validation-oneshot.md",
-          "title": "ФТ: Экспресс-валидация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-legacy",
-          "file": "fr-validation-legacy.md",
-          "title": "ФТ: Валидация (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
           "status": "draft",
           "archived": false
         }
@@ -323,7 +223,7 @@
           "nextArtifact": "Новый active statistics prompt вместо reliance on archive."
         }
       ],
-      "checks": 12,
+      "checks": 108,
       "coveredPrompts": 3
     },
     {
@@ -352,72 +252,32 @@
       ],
       "prompts": [
         {
-          "id": "mango-glossary-context-understanding-stepwise",
-          "file": "glossary-context-understanding-stepwise.md",
-          "title": "Контекст: Терминология и цели",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md",
+          "id": "mango-bcreq-context-understanding-stepwise",
+          "file": "bcreq-context-understanding-stepwise.md",
+          "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-glossary-context-understanding-oneshot",
-          "file": "glossary-context-understanding-oneshot.md",
-          "title": "Контекст: Терминология за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md",
+          "id": "mango-bcreq-in-understanding-oneshot",
+          "file": "bcreq-in-understanding-oneshot.md",
+          "title": "BCREQ A-IN: контекст, продукты",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-questions-customer-understanding-stepwise",
-          "file": "questions-customer-understanding-stepwise.md",
-          "title": "Вопросы: Выявление потребностей",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-questions-customer-understanding-legacy",
-          "file": "questions-customer-understanding-legacy.md",
-          "title": "Вопросы: Подготовка заказчику (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-oneshot",
-          "file": "fr-validation-oneshot.md",
-          "title": "ФТ: Экспресс-валидация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-legacy",
-          "file": "fr-validation-legacy.md",
-          "title": "ФТ: Валидация (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
           "status": "draft",
           "archived": false
         }
@@ -434,7 +294,7 @@
           "nextArtifact": "prompts/tender-validation-stepwise.md или tender-fit chain."
         }
       ],
-      "checks": 72,
+      "checks": 214,
       "coveredPrompts": 7
     },
     {
@@ -471,78 +331,58 @@
       ],
       "prompts": [
         {
-          "id": "mango-glossary-context-understanding-stepwise",
-          "file": "glossary-context-understanding-stepwise.md",
-          "title": "Контекст: Терминология и цели",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-stepwise.md",
+          "id": "mango-bcreq-context-understanding-stepwise",
+          "file": "bcreq-context-understanding-stepwise.md",
+          "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-glossary-context-understanding-oneshot",
-          "file": "glossary-context-understanding-oneshot.md",
-          "title": "Контекст: Терминология за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/glossary-context-understanding-oneshot.md",
+          "id": "mango-bcreq-in-understanding-oneshot",
+          "file": "bcreq-in-understanding-oneshot.md",
+          "title": "BCREQ A-IN: контекст, продукты",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-us-modeling-stepwise",
-          "file": "us-modeling-stepwise.md",
-          "title": "User Story: Формирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-us-modeling-oneshot",
-          "file": "us-modeling-oneshot.md",
-          "title": "User Story: Формирование за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/us-modeling-oneshot.md",
+          "id": "mango-bcreq-scenarios-modeling-oneshot",
+          "file": "bcreq-scenarios-modeling-oneshot.md",
+          "title": "BCREQ Ш-С (2.12/2.13): US, UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-uc-modeling-stepwise",
-          "file": "uc-modeling-stepwise.md",
-          "title": "Use Case: Моделирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md",
+          "id": "mango-bcreq-uc-modeling-stepwise",
+          "file": "bcreq-uc-modeling-stepwise.md",
+          "title": "BCREQ Ш-5/Ш-8 (2.4/2.9): UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-uc-modeling-oneshot",
-          "file": "uc-modeling-oneshot.md",
-          "title": "Use Case: Моделирование за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
           "status": "draft",
           "archived": false
         }
       ],
       "gaps": [],
-      "checks": 124,
+      "checks": 152,
       "coveredPrompts": 10
     },
     {
@@ -564,20 +404,20 @@
       ],
       "prompts": [
         {
-          "id": "mango-uc-modeling-stepwise",
-          "file": "uc-modeling-stepwise.md",
-          "title": "Use Case: Моделирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-stepwise.md",
+          "id": "mango-bcreq-uc-modeling-stepwise",
+          "file": "bcreq-uc-modeling-stepwise.md",
+          "title": "BCREQ Ш-5/Ш-8 (2.4/2.9): UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-uc-modeling-oneshot",
-          "file": "uc-modeling-oneshot.md",
-          "title": "Use Case: Моделирование за один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/uc-modeling-oneshot.md",
+          "id": "mango-bcreq-scenarios-modeling-oneshot",
+          "file": "bcreq-scenarios-modeling-oneshot.md",
+          "title": "BCREQ Ш-С (2.12/2.13): US, UC",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
@@ -653,22 +493,22 @@
           "archived": false
         },
         {
-          "id": "mango-questions-customer-understanding-stepwise",
-          "file": "questions-customer-understanding-stepwise.md",
-          "title": "Вопросы: Выявление потребностей",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-stepwise.md",
+          "id": "mango-bcreq-context-understanding-stepwise",
+          "file": "bcreq-context-understanding-stepwise.md",
+          "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-questions-customer-understanding-legacy",
-          "file": "questions-customer-understanding-legacy.md",
-          "title": "Вопросы: Подготовка заказчику (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/questions-customer-understanding-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
+          "id": "mango-bcreq-in-understanding-oneshot",
+          "file": "bcreq-in-understanding-oneshot.md",
+          "title": "BCREQ A-IN: контекст, продукты",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
+          "mode": "oneshot",
+          "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
@@ -700,7 +540,7 @@
           "nextArtifact": "Коммуникационный governance prompt."
         }
       ],
-      "checks": 24,
+      "checks": 42,
       "coveredPrompts": 6
     },
     {
@@ -759,40 +599,30 @@
       "patterns": [],
       "prompts": [
         {
-          "id": "mango-technical-details-solution-design-stepwise",
-          "file": "technical-details-solution-design-stepwise.md",
-          "title": "Технические детали: Проектирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-stepwise.md",
+          "id": "mango-bcreq-orr-solution-design-stepwise",
+          "file": "bcreq-orr-solution-design-stepwise.md",
+          "title": "BCREQ Ш-6 (2.6+2.7): ОРР",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-technical-details-solution-design-oneshot",
-          "file": "technical-details-solution-design-oneshot.md",
-          "title": "Технические детали: За один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/technical-details-solution-design-oneshot.md",
+          "id": "mango-bcreq-work-solution-design-oneshot",
+          "file": "bcreq-work-solution-design-oneshot.md",
+          "title": "BCREQ A-WORK: решение, риски",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-oneshot",
-          "file": "fr-validation-oneshot.md",
-          "title": "ФТ: Экспресс-валидация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
@@ -823,40 +653,30 @@
       "patterns": [],
       "prompts": [
         {
-          "id": "mango-constraints-documentation-stepwise",
-          "file": "constraints-documentation-stepwise.md",
-          "title": "Ограничения: Документирование",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-stepwise.md",
+          "id": "mango-bcreq-constraints-documentation-stepwise",
+          "file": "bcreq-constraints-documentation-stepwise.md",
+          "title": "BCREQ Ш-7 (2.8): ограничения",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-constraints-documentation-oneshot",
-          "file": "constraints-documentation-oneshot.md",
-          "title": "Ограничения: За один ответ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/constraints-documentation-oneshot.md",
+          "id": "mango-bcreq-work-solution-design-oneshot",
+          "file": "bcreq-work-solution-design-oneshot.md",
+          "title": "BCREQ A-WORK: решение, риски",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",
           "archived": false
         },
         {
-          "id": "mango-fr-validation-stepwise",
-          "file": "fr-validation-stepwise.md",
-          "title": "ФТ: Валидация и аудит",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-fr-validation-oneshot",
-          "file": "fr-validation-oneshot.md",
-          "title": "ФТ: Экспресс-валидация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/fr-validation-oneshot.md",
+          "id": "mango-bcreq-review-validation-oneshot",
+          "file": "bcreq-review-validation-oneshot.md",
+          "title": "BCREQ Ш-В: валидация документа",
+          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "status": "draft",

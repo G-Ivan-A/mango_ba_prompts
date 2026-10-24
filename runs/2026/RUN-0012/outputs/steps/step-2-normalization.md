@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 2 — Раздел 2. Проблема, Цель, Задачи
 
-> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md),
+> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md),
 > Шаг 2. Стиль формальный, безличный; формулировки «Система должна…» запрещены на
 > этом уровне (правило 1 промпта) — они появятся только в Разделе 4.
 

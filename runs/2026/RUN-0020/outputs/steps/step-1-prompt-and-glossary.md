@@ -12,7 +12,7 @@ related_issues:
 # Эпизод 1 (реплики 0–5) — Подача промпта, глоссарий, запрос Заказчика
 
 > **Промпт:** `mango-glossary-context-understanding-stepwise`
-> ([`prompts/glossary-context-understanding-stepwise.md`](../../../../../prompts/glossary-context-understanding-stepwise.md)),
+> ([`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md)),
 > подан дословно с маркером `<!-- mango-glossary-context-understanding-stepwise -->`.
 > Модель: `qwen3.7-plus`.
 

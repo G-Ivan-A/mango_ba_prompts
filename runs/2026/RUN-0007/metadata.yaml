@@ -12,5 +12,5 @@ outputs:
   - outputs/fr-generation-1027-live_2026-06-16.md
 related_artifacts:
   - docs/analysis/experiment-1027-analysis.md
-  - prompts/fr-documentation-stepwise.md
-  - prompts/constraints-documentation-oneshot.md
+  - prompts/archive/fr-documentation-stepwise.md
+  - prompts/archive/constraints-documentation-oneshot.md

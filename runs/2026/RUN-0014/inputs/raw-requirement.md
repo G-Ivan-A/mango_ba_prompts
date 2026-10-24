@@ -93,6 +93,6 @@ related_issues:
 ## Тип запрошенного результата
 
 Разделы **1 (Терминология)** и **2 (Проблема, Цель, Задачи)** ТЗ по промпту
-[`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md).
+[`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md).
 Фактически прогон остановлен до их формирования — см.
 [`../outputs/final-artifact.md`](../outputs/final-artifact.md).

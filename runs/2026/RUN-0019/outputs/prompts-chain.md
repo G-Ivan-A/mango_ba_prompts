@@ -6,7 +6,7 @@ ai-generated: true
 type: output
 scope: runs/2026/RUN-0019
 related_artifacts:
-  - "prompts/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
 ---
 
 # Цепочка промптов RUN-0019
@@ -15,7 +15,7 @@ related_artifacts:
 
 | Параметр | Значение |
 | --- | --- |
-| Промпт | [`prompts/questions-customer-understanding-stepwise.md`](../../../../prompts/questions-customer-understanding-stepwise.md) |
+| Промпт | [`prompts/archive/questions-customer-understanding-stepwise.md`](../../../../prompts/archive/questions-customer-understanding-stepwise.md) |
 | ID в тексте | `mango-questions-customer-understanding-stepwise` |
 | Версия на момент прогона | 0.1 (`status: draft`) |
 | Модификации | нет — текст, вставленный в чат, побайтово совпадает с файлом промпта |

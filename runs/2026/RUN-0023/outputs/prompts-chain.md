@@ -8,8 +8,8 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/278"
 related_artifacts:
-  - "prompts/fr-validation-legacy.md"
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/fr-validation-legacy.md"
+  - "prompts/archive/fr-validation-stepwise.md"
 ---
 
 # Маршрут промптов прогона 59295
@@ -18,7 +18,7 @@ related_artifacts:
 
 | Поле | Значение |
 | --- | --- |
-| Файл | [`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md) |
+| Файл | [`prompts/archive/fr-validation-legacy.md`](../../../../prompts/archive/fr-validation-legacy.md) |
 | `id` | `mango-fr-validation-legacy` |
 | `version` / `status` | 1.0 / draft (заголовок промпта — «ФТ: Валидация (устаревший)») |
 | `temperature` во frontmatter | 0.1 |
@@ -40,7 +40,7 @@ export = json.load(open(
 messages = export[0]["chat"]["history"]["messages"].values()
 pasted = next(m["content"] for m in messages
               if m["role"] == "user" and "Задача" in m["content"])
-repo = open("prompts/fr-validation-legacy.md", encoding="utf-8").read().split("---", 2)[2]
+repo = open("prompts/archive/fr-validation-legacy.md", encoding="utf-8").read().split("---", 2)[2]
 norm = lambda t: re.sub(r"\s+", " ", t.replace("\r\n", "\n")).strip()
 print(difflib.SequenceMatcher(None, norm(pasted), norm(repo)).ratio())
 PY

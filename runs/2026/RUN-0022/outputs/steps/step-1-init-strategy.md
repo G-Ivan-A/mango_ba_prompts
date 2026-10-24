@@ -12,7 +12,7 @@ related_issues:
 # Эпизод 1 (реплики 0–1) — инициализация промпта, Шаг 1
 
 > **Промпт:** `mango-fr-validation-stepwise`
-> ([`prompts/fr-validation-stepwise.md`](../../../../../prompts/fr-validation-stepwise.md)),
+> ([`prompts/archive/fr-validation-stepwise.md`](../../../../../prompts/archive/fr-validation-stepwise.md)),
 > подан **дословно** с маркером `<!-- mango-fr-validation-stepwise -->`.
 > Модель: `qwen3.7-plus`.
 

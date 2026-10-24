@@ -1,11 +1,13 @@
 ---
 id: mango-questions-customer-understanding-legacy
 title: "Вопросы: Подготовка заказчику (устаревший)"
-status: draft
+status: archived
 version: 1.0
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-context-understanding-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md), [bcreq-in-understanding-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 # РОЛЬ
 Ты — команда сертифицированных бизнес-аналитиков с экспертизой в

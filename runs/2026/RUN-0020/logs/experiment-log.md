@@ -6,7 +6,7 @@ ai-generated: true
 experiment: task-1065-context-and-questions-a7a-2026-07-10
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/273"
 ---

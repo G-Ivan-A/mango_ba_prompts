@@ -27,9 +27,9 @@ related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/261
 related_artifacts:
   - docs/adr/009-bcreq-formation-process.md
-  - prompts/glossary-context-understanding-stepwise.md
-  - prompts/fr-documentation-stepwise.md
-  - prompts/constraints-documentation-stepwise.md
+  - prompts/archive/glossary-context-understanding-stepwise.md
+  - prompts/archive/fr-documentation-stepwise.md
+  - prompts/archive/constraints-documentation-stepwise.md
 related_runs:
   - RUN-0010
   - RUN-0011

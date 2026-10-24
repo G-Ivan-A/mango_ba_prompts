@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.1
-updated: 2026-06-20
+updated: 2026-10-24
 ai-generated: true
 type: navigation
 layer: executable
@@ -34,17 +34,19 @@ Load this file first when you need to choose or route a prompt. Do not load
 
 | Задача | Начни с |
 | --- | --- |
-| Сырой запрос, встреча, письмо, ASR -> контекст для ФТ/ТЗ | `glossary-context-understanding-stepwise.md`; для ASR сначала `asr-ingestion-oneshot.md` |
-| Уточняющие вопросы заказчику | `questions-customer-understanding-stepwise.md` |
-| User Story | `us-modeling-stepwise.md`; если вход полный, можно `us-modeling-oneshot.md` |
-| Use Case | `uc-modeling-stepwise.md`; если вход полный, можно `uc-modeling-oneshot.md` |
-| Раздел 4 ФТ | `fr-documentation-stepwise.md`; если контекст уже полный, `fr-documentation-oneshot.md` |
-| Проверка или регенерация ФТ | `fr-validation-stepwise.md`; для экспресс-аудита `fr-validation-oneshot.md` |
-| Ограничения / раздел 6 | `constraints-documentation-stepwise.md`; для полного входа `constraints-documentation-oneshot.md` |
-| Технические детали / раздел 7 | `technical-details-solution-design-stepwise.md`; для полного входа `technical-details-solution-design-oneshot.md` |
+| Спецификация бизнес-требований и дизайна решения (BCREQ) | `bcreq-constitution-governance-oneshot.md` (Промпт 0), затем шаги по разделу «BCREQ: маршрутизация» в `prompts/README.md` |
+| Сырой запрос, встреча, письмо, ASR -> контекст для ФТ/ТЗ | `bcreq-context-understanding-stepwise.md`; агентом — `bcreq-in-understanding-oneshot.md`; для ASR сначала `asr-ingestion-oneshot.md` |
+| Затронутые продукты, команды, согласующие | `bcreq-products-impact-analysis-stepwise.md` |
+| User Story или Use Case | `bcreq-scenarios-modeling-oneshot.md` (`тип: US \| UC`); UC раздела 7 — `bcreq-uc-modeling-stepwise.md` |
+| Функциональные требования | `bcreq-fr-documentation-stepwise.md`; агентом — `bcreq-core-documentation-oneshot.md` |
+| Нефункциональные требования | `bcreq-nfr-documentation-stepwise.md` |
+| Проверка черновика требований | `bcreq-review-validation-oneshot.md` |
+| Ограничения / раздел 6 | `bcreq-constraints-documentation-stepwise.md` |
+| Описание решения (ОРР) / раздел 5 | `bcreq-orr-solution-design-stepwise.md`; агентом — `bcreq-work-solution-design-oneshot.md` |
+| Риски, зависимости, план приёмки / раздел 8 | `bcreq-extra-risk-analysis-stepwise.md` |
 | Резюме встречи | `meeting-customer-documentation-stepwise.md` или `meeting-team-documentation-stepwise.md` |
 | Суммаризация длинной LLM-сессии | `session-debug-documentation-oneshot.md` |
-| Статистика, impact, risk, release readiness | active prompt отсутствует; см. process gaps в `docs/ba-processes/00-index.executable.md` |
+| Статистика, release readiness | active prompt отсутствует; см. process gaps в `docs/ba-processes/00-index.executable.md` |
 
 ### Mode decision
 

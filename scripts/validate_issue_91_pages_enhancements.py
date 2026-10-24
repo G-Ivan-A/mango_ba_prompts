@@ -107,9 +107,9 @@ def main() -> int:
 
     statuses = checks.get("statuses", {})
     status_total = sum(statuses.get(name, 0) for name in ("draft", "canonical", "archived"))
-    if status_total != 30:
+    if status_total != 44:
         errors.append(
-            f"site/data/checks.json: statuses must cover all 30 prompts, found {status_total}"
+            f"site/data/checks.json: statuses must cover all 44 prompts, found {status_total}"
         )
 
     tests = checks.get("tests", {})

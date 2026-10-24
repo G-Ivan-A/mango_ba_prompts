@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 2 — разбор противоречий требования и возможностей интеграции
 
-> **Промпт:** тот же, [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md);
+> **Промпт:** тот же, [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md);
 > шаг промптом **не предусмотрен** — это стресс-тест, инициированный вопросом БА
 > «требование заказчика противоречит тех возможностям интеграции с АМО из-за
 > ограничений амо?» (сообщение 7, вместе с шестью правилами создания сделок).

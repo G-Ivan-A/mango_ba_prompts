@@ -58,7 +58,7 @@ logs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/278
 related_artifacts:
-  - prompts/fr-validation-legacy.md
+  - prompts/archive/fr-validation-legacy.md
   - scripts/chat_export_to_markdown.py
 related_runs:
   - RUN-0018

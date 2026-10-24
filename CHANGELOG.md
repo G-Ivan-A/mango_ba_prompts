@@ -962,7 +962,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
 ### Added — Issue #272 фиксация реального прогона RUN-0019 (кейс 1064)
 
 - Зафиксирован реальный прогон промпта
-  [`questions-customer-understanding-stepwise`](prompts/questions-customer-understanding-stepwise.md)
+  [`questions-customer-understanding-stepwise`](prompts/archive/questions-customer-understanding-stepwise.md)
   v0.1 на кейсе 1064 (браузерная телефония внутри МИС Заказчика):
   [`runs/2026/RUN-0019/`](runs/2026/RUN-0019/outputs/README.md) по контракту
   `runs/` — `metadata.yaml`, `inputs/`, `outputs/`, `logs/`, `feedback/`.
@@ -1235,7 +1235,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   ([`outputs/quality-findings.md`](runs/2026/RUN-0023/outputs/quality-findings.md),
   [`feedback/ba-review-notes.md`](runs/2026/RUN-0023/feedback/ba-review-notes.md)).
 - Промпт из диалога сверен с библиотекой программно: реплика [0] совпадает с
-  [`prompts/fr-validation-legacy.md`](prompts/fr-validation-legacy.md) v1.0
+  [`prompts/archive/fr-validation-legacy.md`](prompts/archive/fr-validation-legacy.md) v1.0
   (`difflib` ratio 1.0) — прогон является свидетельством именно для этой версии
   ([`outputs/prompts-chain.md`](runs/2026/RUN-0023/outputs/prompts-chain.md)).
 - Транскрипт и пореплико́вые метрики получены детерминированно из приложенного к
@@ -1295,7 +1295,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   три подряд «финальные» вычитки почти идентичного текста дали 4 → 2 → 1
   критическое замечание. Профиль дефектов совпадает с RUN-0018 — корневая
   причина та же: отсутствие гейта заземления в
-  [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md). Предложения
+  [`fr-validation-stepwise`](prompts/archive/fr-validation-stepwise.md). Предложения
   П1–П5 в этом PR **не применяются**.
 - Измеренные метрики: [`logs/metrics.md`](runs/2026/RUN-0021/logs/metrics.md) —
   82 349 диалоговых токенов + 25 931 «мышления» (`tiktoken:cl100k_base`),
@@ -1316,7 +1316,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   прогон валидации ФТ задачи 1040 (разрез отчётов «Речевой аналитики» по
   продуктовым направлениям), зафиксированный по выгрузке чата из issue #275:
   3 эпизода, модель `qwen3.7-plus`, промпт
-  [`fr-validation-legacy`](prompts/fr-validation-legacy.md), `run_type: statistics`.
+  [`fr-validation-legacy`](prompts/archive/fr-validation-legacy.md), `run_type: statistics`.
 - Вход сохранён вместе с происхождением: исходный JSON вложения, его SHA-256/MD5 и
   команды воспроизведения — [`inputs/README.md`](runs/2026/RUN-0028/inputs/README.md),
   дословный транскрипт — [`inputs/transcript.md`](runs/2026/RUN-0028/inputs/transcript.md),
@@ -1346,7 +1346,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
 - Добавлена запись [`runs/2026/RUN-0022/`](runs/2026/RUN-0022/outputs/README.md) —
   фиксация реально состоявшегося диалога БА с LLM по задаче 765 (ФТ на новый канал
   HeadHunter в МД/КЦ/ЛК): 26 реплик, 13 эпизодов, модель `qwen3.7-plus`, промпт
-  [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md). `run_type: statistics`
+  [`fr-validation-stepwise`](prompts/archive/fr-validation-stepwise.md). `run_type: statistics`
   — цель issue «зафиксировать прогон и результаты», а не выполнить процесс.
 - Вход сохранён дословно
   ([`inputs/765-chat-export-1787301501556.json`](runs/2026/RUN-0022/inputs/765-chat-export-1787301501556.json))
@@ -1390,7 +1390,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   КЦ «не существует», и подменила его голосовой политикой «Скрытие номера клиента» —
   ошибка дошла до финального документа. Корневая причина — прогон без подключённой
   БЗ и отсутствие гейта заземления в промпте
-  [`fr-validation-stepwise`](prompts/fr-validation-stepwise.md); предложены правки
+  [`fr-validation-stepwise`](prompts/archive/fr-validation-stepwise.md); предложены правки
   П1–П5 (в этом PR не применяются).
 - Измеренные метрики вместо оценочных:
   [`logs/metrics.md`](runs/2026/RUN-0018/logs/metrics.md) — 24 953 диалоговых токена
@@ -1471,7 +1471,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
 
 - Добавлена запись [`runs/2026/RUN-0014/`](runs/2026/RUN-0014/metadata.yaml) —
   реальный прогон промпта
-  [`glossary-context-understanding-stepwise`](prompts/glossary-context-understanding-stepwise.md)
+  [`glossary-context-understanding-stepwise`](prompts/archive/glossary-context-understanding-stepwise.md)
   по задаче 1075. Прогон **частичный**: целевой артефакт (Разделы 1 и 2 ТЗ) не
   получен, завершён 1 шаг из 4 (`success_rate` 0.25). Данные — промежуточные, не
   golden case; запись сделана для статистики и анализа результативности промптов

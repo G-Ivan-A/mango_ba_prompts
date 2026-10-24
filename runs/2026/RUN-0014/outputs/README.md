@@ -12,7 +12,7 @@ related_issues:
 # Кейс: задача 1075 — создание сделки в amoCRM при звонке (прогон промпта контекста)
 
 > **Что это.** Фиксация реального прогона промпта
-> [`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md)
+> [`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md)
 > по задаче 1075: Заказчик хочет, чтобы при входящем звонке в amoCRM создавалась
 > сделка в «неразобранном», без дублей по открытым сделкам и без создания сделок по
 > звонкам КЦ-постпродаж. Вход — выгрузка чата, приложенная к

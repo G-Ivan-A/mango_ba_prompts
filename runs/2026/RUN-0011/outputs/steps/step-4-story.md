@@ -8,8 +8,8 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "prompts/us-modeling-stepwise.md"
-  - "prompts/uc-modeling-stepwise.md"
+  - "prompts/archive/us-modeling-stepwise.md"
+  - "prompts/archive/uc-modeling-stepwise.md"
 ---
 
 # Шаг 4 — User Story и Use Case
@@ -122,6 +122,6 @@ related_artifacts:
 
 ## Источники
 
-- [`prompts/us-modeling-stepwise.md`](../../../../../prompts/us-modeling-stepwise.md),
-  [`prompts/uc-modeling-stepwise.md`](../../../../../prompts/uc-modeling-stepwise.md)
+- [`prompts/archive/us-modeling-stepwise.md`](../../../../../prompts/archive/us-modeling-stepwise.md),
+  [`prompts/archive/uc-modeling-stepwise.md`](../../../../../prompts/archive/uc-modeling-stepwise.md)
 - [`steps/step-2-normalization.md`](./step-2-normalization.md), [`steps/step-3-questions.md`](./step-3-questions.md)

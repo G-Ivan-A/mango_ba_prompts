@@ -11,7 +11,7 @@ related_issues:
 
 # Эпизод 1 — ШАГ 1 промпта: инициализация и выбор стратегии
 
-> **Промпт:** [`fr-validation-stepwise`](../../../../../prompts/fr-validation-stepwise.md), ШАГ 1.
+> **Промпт:** [`fr-validation-stepwise`](../../../../../prompts/archive/fr-validation-stepwise.md), ШАГ 1.
 > **Вход:** только текст промпта, без данных. **Время:** 2026-07-21 09:12:04 UTC,
 > латентность генерации 39.2 с. Дословно — в
 > [`../../inputs/chat-export.md`](../../inputs/chat-export.md), Эпизод 1.

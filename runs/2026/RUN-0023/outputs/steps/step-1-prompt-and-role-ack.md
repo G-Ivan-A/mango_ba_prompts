@@ -11,7 +11,7 @@ related_issues:
 
 # Эпизод 1 (реплики 0–1) — Подача промпта и принятие роли
 
-> **Промпт:** [`prompts/fr-validation-legacy.md`](../../../../../prompts/fr-validation-legacy.md)
+> **Промпт:** [`prompts/archive/fr-validation-legacy.md`](../../../../../prompts/archive/fr-validation-legacy.md)
 > (`mango-fr-validation-legacy`, v1.0), подан дословно.
 > Модель: `qwen3.6-plus`.
 

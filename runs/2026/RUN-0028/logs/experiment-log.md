@@ -6,7 +6,7 @@ ai-generated: true
 experiment: fr-validation-1040-speech-analytics-direction-filter
 scope: prompts
 related_artifacts:
-  - "prompts/fr-validation-legacy.md"
+  - "prompts/archive/fr-validation-legacy.md"
   - "standards/experiment-log-standard.md"
 ---
 

@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 ---
 
 # Шаг 1 — Глоссарий и контекст As-Is
@@ -87,4 +87,4 @@ related_artifacts:
 ## Источники
 
 - [`inputs/kb-files.md`](../../inputs/kb-files.md) (выжимка Ф1–Ф10)
-- [`prompts/glossary-context-understanding-stepwise.md`](../../../../../prompts/glossary-context-understanding-stepwise.md)
+- [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md)

@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/275"
 related_artifacts:
-  - "prompts/fr-validation-legacy.md"
+  - "prompts/archive/fr-validation-legacy.md"
   - "runs/2026/RUN-0028/inputs/raw-requirement.md"
 ---
 
@@ -18,7 +18,7 @@ related_artifacts:
 
 1. **Текст входа** ([`../inputs/raw-requirement.md`](../inputs/raw-requirement.md)) —
    потери и искажения требований проверяются построчно.
-2. **Текст промпта** ([`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md)) —
+2. **Текст промпта** ([`prompts/archive/fr-validation-legacy.md`](../../../../prompts/archive/fr-validation-legacy.md)) —
    правила промпта проверяются на исполнение; промпт передан в чат дословно
    (см. [`prompts-chain.md`](./prompts-chain.md)).
 

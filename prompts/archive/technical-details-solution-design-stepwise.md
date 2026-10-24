@@ -1,11 +1,13 @@
 ---
 id: mango-technical-details-solution-design-stepwise
 title: "Технические детали: Проектирование"
-status: draft
+status: archived
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-orr-solution-design-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md), [bcreq-work-solution-design-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 Ты — ведущий системный аналитик (CBAP) с экспертизой в Телеком SaaS и TM Forum
 (ODA).

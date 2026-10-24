@@ -51,7 +51,7 @@ metrics:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/271
 related_artifacts:
-  - prompts/fr-validation-stepwise.md
+  - prompts/archive/fr-validation-stepwise.md
   - standards/experiment-log-standard.md
   - standards/kb-standard.md
   - kb/processed/mango-cc-manual/sections/136-prilozhenie-6-dopolnitelnye-vozmozhnosti.md

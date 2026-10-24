@@ -8,7 +8,7 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
 related_artifacts:
-  - "prompts/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 
@@ -99,18 +99,18 @@ WebRTC-инфраструктуре (SIP через WSS + WebRTC)» `[2]`. Пр�
 
 ## Предложения по промптам
 
-- `prompts/questions-customer-understanding-stepwise.md` → добавить лимит
+- `prompts/archive/questions-customer-understanding-stepwise.md` → добавить лимит
   объёма выдачи (не более N вопросов верхнего уровня; только открытые вопросы).
   Основание: двукратный возврат на сокращение `[12]`, `[18]`.
-- `prompts/questions-customer-understanding-stepwise.md` → в шаге 5 Whys
+- `prompts/archive/questions-customer-understanding-stepwise.md` → в шаге 5 Whys
   требовать формулировать **две конкурирующие гипотезы** и явно помечать, какая
   из них опирается на факты входа. Основание: эпизод E3, где единственная
   гипотеза модели оказалась неверной.
-- `prompts/questions-customer-understanding-stepwise.md` → запретить
+- `prompts/archive/questions-customer-understanding-stepwise.md` → запретить
   подтверждать гипотезу пользователя без цитаты из источника; ответы вида «да,
   вы правы» без ссылки считать нарушением правила 4. Основание: `[29]` против
   `[31]`.
-- `prompts/questions-customer-understanding-stepwise.md` → добавить шаг
+- `prompts/archive/questions-customer-understanding-stepwise.md` → добавить шаг
   «фактические данные о клиенте»: куда девать уже известные цифры, чтобы они не
   подменяли собой список вопросов. Основание: `[21]`.
 

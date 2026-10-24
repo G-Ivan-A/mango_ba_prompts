@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 ---
 
 # Цепочка промптов — задача 1075 (создание сделок в amoCRM по входящим звонкам)
@@ -16,7 +16,7 @@ related_artifacts:
 > **Что это.** Фактический маршрут прогона: какой промпт запускался, где реальные шаги
 > разошлись с заявленными в промпте и где прогон остановился. Промпт в ходе прогона
 > **не изменялся** (сообщение 1 совпадает с
-> [`prompts/glossary-context-understanding-stepwise.md`](../../../../prompts/glossary-context-understanding-stepwise.md)
+> [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../prompts/archive/glossary-context-understanding-stepwise.md)
 > дословно, включая маркер `<!-- mango-glossary-context-understanding-stepwise -->`).
 
 ## Цепочка из одного промпта

@@ -54,7 +54,7 @@ related_artifacts:
 ## Корневая причина
 
 Прогон шёл во внешнем чате с веб-поиском и **без БЗ репозитория**; промпт
-[`fr-validation-stepwise`](../../../../../prompts/fr-validation-stepwise.md) не
+[`fr-validation-stepwise`](../../../../../prompts/archive/fr-validation-stepwise.md) не
 содержит гейта заземления на БЗ (в отличие от порядка в
 [`standards/kb-standard.md`](../../../../../standards/kb-standard.md)) и не запрещает
 непроверяемые ссылки. Предложение по правке промпта — в

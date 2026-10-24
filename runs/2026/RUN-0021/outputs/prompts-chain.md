@@ -17,8 +17,8 @@ related_issues:
 
 | # | Реплика | Маркер в диалоге | Файл репозитория | Роль в прогоне |
 | --- | --- | --- | --- | --- |
-| 1 | 0 | `<!-- mango-glossary-context-understanding-stepwise -->` | [`prompts/glossary-context-understanding-stepwise.md`](../../../../prompts/glossary-context-understanding-stepwise.md) | Разделы 1 (Терминология) и 2 (Проблема, цель, задачи) |
-| 2 | 6 | `<!-- mango-fr-validation-stepwise -->` | [`prompts/fr-validation-stepwise.md`](../../../../prompts/fr-validation-stepwise.md) | Аудит и перегенерация Раздела 3 (ФТ) и Раздела 4 (Ограничения) |
+| 1 | 0 | `<!-- mango-glossary-context-understanding-stepwise -->` | [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) | Разделы 1 (Терминология) и 2 (Проблема, цель, задачи) |
+| 2 | 6 | `<!-- mango-fr-validation-stepwise -->` | [`prompts/archive/fr-validation-stepwise.md`](../../../../prompts/archive/fr-validation-stepwise.md) | Аудит и перегенерация Раздела 3 (ФТ) и Раздела 4 (Ограничения) |
 
 ## Что из механики промптов сработало
 

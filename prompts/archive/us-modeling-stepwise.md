@@ -1,11 +1,13 @@
 ---
 id: mango-us-modeling-stepwise
 title: "User Story: Формирование"
-status: draft
+status: archived
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-scenarios-modeling-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 # РОЛЬ
 Ты — команда экспертов: бизнес-аналитик (CBAP), Product Owner и UX-исследователь с

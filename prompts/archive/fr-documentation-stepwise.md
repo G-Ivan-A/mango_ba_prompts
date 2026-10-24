@@ -1,11 +1,13 @@
 ---
 id: mango-fr-documentation-stepwise
 title: "ФТ: Генерация требований"
-status: draft
+status: archived
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md), [bcreq-core-documentation-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 Ты — ведущий бизнес-аналитик (CBAP) с экспертизой в Телеком SaaS и методологиях
 TM Forum (eTOM/ODA).

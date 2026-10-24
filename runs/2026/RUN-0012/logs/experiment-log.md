@@ -6,10 +6,10 @@ ai-generated: true
 experiment: bcreq-1069-restricted-api-key-2026-07-14
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/261"
 ---

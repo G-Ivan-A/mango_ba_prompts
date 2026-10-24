@@ -50,7 +50,7 @@ body:
 
         - tz-prilozhenie-2.pdf — исходное ТЗ, разделы 4.1–4.6;
         - chat-export.json — экспорт диалога с инструкцией модели;
-        - ссылка на промпт: prompts/fr-validation-stepwise.md.
+        - ссылка на промпт: prompts/bcreq-fr-documentation-stepwise.md.
     validations:
       required: true
 

@@ -13,9 +13,9 @@ related_issues:
 
 > **Эпизод 6, 2026-07-17 12:11 — 2026-07-20 14:33 (реплики БА 120–151,
 > 16 итераций).** Промпты:
-> [`fr-documentation-stepwise`](../../../../../prompts/fr-documentation-stepwise.md)
+> [`fr-documentation-stepwise`](../../../../../prompts/archive/fr-documentation-stepwise.md)
 > (БА вставил дословно, реплика 124),
-> [`constraints-documentation-stepwise`](../../../../../prompts/constraints-documentation-stepwise.md).
+> [`constraints-documentation-stepwise`](../../../../../prompts/archive/constraints-documentation-stepwise.md).
 
 ## Что делали
 

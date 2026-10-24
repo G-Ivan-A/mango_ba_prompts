@@ -58,8 +58,8 @@ logs:
 related_issues:
   - https://github.com/G-Ivan-A/mango_ba_prompts/issues/277
 related_artifacts:
-  - prompts/questions-customer-understanding-stepwise.md
-  - prompts/questions-customer-understanding-legacy.md
+  - prompts/archive/questions-customer-understanding-stepwise.md
+  - prompts/archive/questions-customer-understanding-legacy.md
   - standards/experiment-log-standard.md
   - scripts/chat_export_to_markdown.py
   - experiments/okdesk_citation_grounding_probe.py

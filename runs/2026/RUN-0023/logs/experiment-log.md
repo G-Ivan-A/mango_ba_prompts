@@ -6,7 +6,7 @@ ai-generated: true
 experiment: task-59295-fr-validation-email-forward-2026-05-25
 scope: prompts
 related_artifacts:
-  - "prompts/fr-validation-legacy.md"
+  - "prompts/archive/fr-validation-legacy.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/278"
 ---
@@ -24,7 +24,7 @@ related_issues:
 | 2 | Выбран номер прогона | `RUN-0023`: в `runs/2026/` ветки `main` заняты RUN-0001…RUN-0014, RUN-0017, RUN-0018, RUN-0020, RUN-0021; в открытых PR — RUN-0019 (#290), RUN-0021 (#297) и RUN-0022 (#298). Ближайший свободный — 0023 |
 | 3 | Определён тип прогона | `statistics` — по критерию из [`standards/runs-contract-standard.md`](../../../../standards/runs-contract-standard.md): цель issue #278 — «зафиксировать прогон … для сбора статистики и анализа БА» |
 | 4 | Собран транскрипт и пореплико́вые метрики | `python3 scripts/chat_export_to_markdown.py …` → `inputs/transcript.md` (6 сообщений), `logs/turn-metrics.md` |
-| 5 | Промпт из реплики [0] сверен с библиотекой | Совпал с [`prompts/fr-validation-legacy.md`](../../../../prompts/fr-validation-legacy.md) v1.0: `difflib.SequenceMatcher.ratio() == 1.0` после нормализации пробелов (команда сверки — в [`../outputs/prompts-chain.md`](../outputs/prompts-chain.md)) |
+| 5 | Промпт из реплики [0] сверен с библиотекой | Совпал с [`prompts/archive/fr-validation-legacy.md`](../../../../prompts/archive/fr-validation-legacy.md) v1.0: `difflib.SequenceMatcher.ratio() == 1.0` после нормализации пробелов (команда сверки — в [`../outputs/prompts-chain.md`](../outputs/prompts-chain.md)) |
 | 6 | Транскрипт прочитан целиком, размечен на 3 эпизода | `outputs/steps/step-1…step-3` |
 | 7 | Проведён БА-анализ качества | `outputs/quality-findings.md`: 3 галлюцинации, 2 предотвращённые, 7 дефектов |
 | 8 | Зафиксировано состояние артефакта и обратная связь | `outputs/final-artifact.md`, `feedback/ba-review-notes.md` |

@@ -9,7 +9,7 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/276"
 related_artifacts:
-  - "prompts/fr-validation-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 
@@ -102,7 +102,7 @@ related_artifacts:
 
 ## Предложения по промптам
 
-- `prompts/fr-validation-stepwise.md` → см. таблицу приоритетов P1–P4 в
+- `prompts/archive/fr-validation-stepwise.md` → см. таблицу приоритетов P1–P4 в
   [`../feedback/ba-review-notes.md`](../feedback/ba-review-notes.md).
 
 ## Вопросы для согласования

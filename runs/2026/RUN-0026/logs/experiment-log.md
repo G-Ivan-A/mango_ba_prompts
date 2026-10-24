@@ -6,8 +6,8 @@ ai-generated: true
 experiment: task-1007-amocrm-outbound-campaign-funnel-stage-fr
 scope: prompts
 related_artifacts:
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/fr-documentation-oneshot.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/fr-documentation-oneshot.md"
   - "standards/experiment-log-standard.md"
   - "experiments/amocrm_widget_grounding_probe.py"
 ---
@@ -27,7 +27,7 @@ related_artifacts:
   4, 6 + приложения) за 10 итераций, но две ссылки на документацию не заземлены,
   а финальная переформулировка исказила смысл части требований
 - prompts_used: **[]** — библиотечный промпт не применялся; ad-hoc-рамка в
-  реплике [0], близкая по назначению к `prompts/fr-documentation-stepwise.md`
+  реплике [0], близкая по назначению к `prompts/archive/fr-documentation-stepwise.md`
 - verdict: **works-with-edits**
 - outcome: модель хорошо держит формат и протокол согласования (шаги, вопросы,
   запрос подтверждения на каждой итерации) и корректно разделяет уровни

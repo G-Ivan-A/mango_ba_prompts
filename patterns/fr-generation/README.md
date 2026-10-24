@@ -35,8 +35,9 @@ Case, ограничения и решения в раздел 4 ФТ/ТЗ: ат
 - **Prompt matrix**: [prompts/README.md](../../prompts/README.md).
 - **Ecosystem map**: [docs/ba-ecosystem.md](../../docs/ba-ecosystem.md).
 - **Related prompt implementations**:
-  [`fr-documentation-stepwise.md`](../../prompts/fr-documentation-stepwise.md),
-  [`fr-documentation-oneshot.md`](../../prompts/fr-documentation-oneshot.md).
+  [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md),
+  [`bcreq-core-documentation-oneshot.md`](../../prompts/bcreq-core-documentation-oneshot.md).
+- **Архивные предшественники (issue #388)**: [`fr-documentation-stepwise.md`](../../prompts/archive/fr-documentation-stepwise.md), [`fr-documentation-oneshot.md`](../../prompts/archive/fr-documentation-oneshot.md).
 
 ## context_requirements
 

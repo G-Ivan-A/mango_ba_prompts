@@ -74,6 +74,6 @@ related_issues:
    работы, стоит ли заводить под него отдельный промпт — сейчас запрос не
    распознаётся и даёт пустой ответ.
 3. **Нужен ли A/B-прогон** того же кейса 1020 через библиотечный
-   [`questions-customer-understanding-stepwise`](../../../../prompts/questions-customer-understanding-stepwise.md)?
+   [`questions-customer-understanding-stepwise`](../../../../prompts/archive/questions-customer-understanding-stepwise.md)?
    Это единственный способ проверить гипотезу, что гейты «Запрет на домыслы» и
    «⚠️ Требует проверки» предотвратили бы Г1–Г3.

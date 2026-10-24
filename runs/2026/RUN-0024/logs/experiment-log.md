@@ -6,7 +6,7 @@ ai-generated: true
 experiment: task-1020-okdesk-mango-integration-questions
 scope: prompts
 related_artifacts:
-  - "prompts/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
   - "standards/experiment-log-standard.md"
   - "experiments/okdesk_citation_grounding_probe.py"
 ---

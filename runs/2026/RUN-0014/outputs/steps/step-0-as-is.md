@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 0 — выжимка фактов As-Is
 
-> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md),
+> **Промпт:** [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md),
 > ШАГ 0 (жёсткое правило 5 — «безопасная работа с документацией»).
 > **Вход:** сырой запрос + комментарии специалистов + PDF интеграции (153 стр.).
 > **Выход модели** приводится дословно (сообщение 4 стенограммы).

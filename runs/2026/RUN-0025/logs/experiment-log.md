@@ -6,8 +6,8 @@ ai-generated: true
 experiment: fr-validation-997-ivr-scheme-incoming-call-rules
 scope: prompts
 related_artifacts:
-  - "prompts/fr-validation-stepwise.md"
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/fr-validation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
   - "standards/experiment-log-standard.md"
 ---
 

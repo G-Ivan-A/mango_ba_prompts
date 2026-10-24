@@ -22,11 +22,11 @@ related_issues:
 > взаимодействия в три шага (уточняющие вопросы → перечень ФТ → детализация).
 
 Это осознанный выбор БА: инлайн-промпт под конкретную задачу вместо готового
-`prompts/fr-documentation-stepwise.md`. Фиксируем как факт, а не как нарушение.
+`prompts/archive/fr-documentation-stepwise.md`. Фиксируем как факт, а не как нарушение.
 
 ## Сопоставление с библиотекой
 
-| Аспект | Ad-hoc-промпт прогона | `prompts/fr-documentation-stepwise.md` (`mango-fr-documentation-stepwise`) |
+| Аспект | Ad-hoc-промпт прогона | `prompts/archive/fr-documentation-stepwise.md` (`mango-fr-documentation-stepwise`) |
 | --- | --- | --- |
 | Роль | «команда сертифицированных БА», eTOM/ODA | БА MANGO OFFICE, пошаговая документация ФТ |
 | Формат ФТ | нумерация 4.x, «на языке результата», без реализации | пошаговое согласование ФТ по одному, явные критерии приёмки |
@@ -41,7 +41,7 @@ related_issues:
 ## Раздел 6 «Ограничения»
 
 Раздел 6 сгенерирован в эпизоде 17 **ad-hoc**, без опоры на
-`prompts/constraints-documentation-stepwise.md`
+`prompts/archive/constraints-documentation-stepwise.md`
 (`mango-constraints-documentation-stepwise`). Библиотечный промпт требует
 обязательного основания ограничения (блок 6.1.1–6.1.3: источник, тип, следствие).
 В прогоне ограничения выданы без такого основания, часть из них — без
@@ -51,5 +51,5 @@ related_issues:
 
 - Перенести в библиотеку удачный ход прогона — правило «формулировать поведение
   через **результат применения настроек**, а не через перечисление значений
-  настроек» (эпизод 14) — как приём в `prompts/fr-documentation-stepwise.md`.
+  настроек» (эпизод 14) — как приём в `prompts/archive/fr-documentation-stepwise.md`.
 - Разобрано подробно в [`../feedback/ba-review-notes.md`](../feedback/ba-review-notes.md).

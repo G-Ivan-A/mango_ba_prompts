@@ -8,10 +8,10 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/261"
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
-  - "prompts/questions-customer-understanding-stepwise.md"
-  - "prompts/fr-documentation-stepwise.md"
-  - "prompts/constraints-documentation-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/fr-documentation-stepwise.md"
+  - "prompts/archive/constraints-documentation-stepwise.md"
   - "docs/adr/009-bcreq-formation-process.md"
 ---
 
@@ -26,12 +26,12 @@ related_artifacts:
 
 | Подпроцесс ADR-009 | Шаг прогона | Промпт | Артефакт | Gate |
 | --- | --- | --- | --- | --- |
-| П1 приём и нормализация | Шаг 1 | [`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md) | [`step-1-glossary.md`](steps/step-1-glossary.md) | operation |
+| П1 приём и нормализация | Шаг 1 | [`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) | [`step-1-glossary.md`](steps/step-1-glossary.md) | operation |
 | П1/П2 нормализация контекста | Шаг 2 | тот же промпт (Раздел 2) | [`step-2-normalization.md`](steps/step-2-normalization.md) | **human G1** (структура задач) |
-| П2 доопределение | Шаг 3 | [`questions-customer-understanding-stepwise`](../../../../prompts/questions-customer-understanding-stepwise.md) | [`step-3-questions.md`](steps/step-3-questions.md) | operation |
-| П3 моделирование сценариев | Шаг 4 | [`fr-documentation-stepwise`](../../../../prompts/fr-documentation-stepwise.md) (Шаг 2 промпта) | [`step-4-scenarios.md`](steps/step-4-scenarios.md) | operation |
-| П4 документирование (ФТ) | Шаг 5 | [`fr-documentation-stepwise`](../../../../prompts/fr-documentation-stepwise.md) (Шаг 3 промпта) | [`step-5-fr.md`](steps/step-5-fr.md) | operation |
-| П4 документирование (ограничения) | Шаг 6 | [`constraints-documentation-stepwise`](../../../../prompts/constraints-documentation-stepwise.md) | [`step-6-constraints.md`](steps/step-6-constraints.md) | operation |
+| П2 доопределение | Шаг 3 | [`questions-customer-understanding-stepwise`](../../../../prompts/archive/questions-customer-understanding-stepwise.md) | [`step-3-questions.md`](steps/step-3-questions.md) | operation |
+| П3 моделирование сценариев | Шаг 4 | [`fr-documentation-stepwise`](../../../../prompts/archive/fr-documentation-stepwise.md) (Шаг 2 промпта) | [`step-4-scenarios.md`](steps/step-4-scenarios.md) | operation |
+| П4 документирование (ФТ) | Шаг 5 | [`fr-documentation-stepwise`](../../../../prompts/archive/fr-documentation-stepwise.md) (Шаг 3 промпта) | [`step-5-fr.md`](steps/step-5-fr.md) | operation |
+| П4 документирование (ограничения) | Шаг 6 | [`constraints-documentation-stepwise`](../../../../prompts/archive/constraints-documentation-stepwise.md) | [`step-6-constraints.md`](steps/step-6-constraints.md) | operation |
 | П5 консолидация | Итог | — (сборка БА) | [`final-artifact.md`](final-artifact.md) | **human G2** (валидация/риски) |
 
 ## Порядок и обоснование

@@ -1,11 +1,13 @@
 ---
 id: mango-fr-validation-stepwise
 title: "ФТ: Валидация и аудит"
-status: draft
+status: archived
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-review-validation-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 Ты — ведущий бизнес-аналитик (CBAP) с экспертизой в Телеком SaaS. Ты обладаешь
 двойной компетенцией: проводить жесткий независимый аудит требований и

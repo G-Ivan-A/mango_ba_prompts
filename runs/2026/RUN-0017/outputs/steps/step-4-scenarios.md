@@ -12,7 +12,7 @@ related_issues:
 # Эпизод 4 (реплики 18–23) — переход к ФТ и сценарная декомпозиция
 
 > **Промпт:** `mango-fr-documentation-stepwise`
-> ([`prompts/fr-documentation-stepwise.md`](../../../../../prompts/fr-documentation-stepwise.md)),
+> ([`prompts/archive/fr-documentation-stepwise.md`](../../../../../prompts/archive/fr-documentation-stepwise.md)),
 > Шаг 1 (синхронизация контекста) и Шаг 2 (сценарная декомпозиция).
 
 ## Что происходило

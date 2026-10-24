@@ -14,8 +14,8 @@ related_issues:
 > **Эпизод 4, 2026-07-15 11:37 — 16:06 (реплики БА 46–95, 25 итераций — самый
 > длинный эпизод прогона).** Промпты:
 > [`meeting-customer-documentation-stepwise`](../../../../../prompts/meeting-customer-documentation-stepwise.md),
-> [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md),
-> [`us-modeling-stepwise`](../../../../../prompts/us-modeling-stepwise.md)
+> [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md),
+> [`us-modeling-stepwise`](../../../../../prompts/archive/us-modeling-stepwise.md)
 > (последний БА вставил в чат дословно, реплика 64).
 
 ## Что делали

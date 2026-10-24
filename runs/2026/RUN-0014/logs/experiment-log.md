@@ -6,7 +6,7 @@ ai-generated: true
 experiment: task-1075-amocrm-deal-on-call-2026-07-24
 scope: prompts
 related_artifacts:
-  - "prompts/glossary-context-understanding-stepwise.md"
+  - "prompts/archive/glossary-context-understanding-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
 ---

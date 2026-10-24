@@ -11,7 +11,7 @@ related_issues:
 
 # Шаг 1 — проверка факта по документации amoCRM и зоны неопределённости
 
-> **Промпт:** тот же, [`glossary-context-understanding-stepwise`](../../../../../prompts/glossary-context-understanding-stepwise.md).
+> **Промпт:** тот же, [`glossary-context-understanding-stepwise`](../../../../../prompts/archive/glossary-context-understanding-stepwise.md).
 > **Важно:** заголовки «ШАГ 1» и «ШАГ 2» в ответе модели — **её собственная
 > перенумерация**, не совпадающая с промптом (там ШАГ 1 = Глоссарий, ШАГ 2 = Проблема/
 > Цель/Задачи). Дефект Д-2 в [`../../feedback/ba-review.md`](../../feedback/ba-review.md).

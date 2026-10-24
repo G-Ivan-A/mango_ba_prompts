@@ -13,7 +13,7 @@ related_issues:
 
 ## TL;DR
 
-Промпт [`questions-customer-understanding-stepwise`](../../../../prompts/questions-customer-understanding-stepwise.md)
+Промпт [`questions-customer-understanding-stepwise`](../../../../prompts/archive/questions-customer-understanding-stepwise.md)
 v0.1 применён без модификаций на реальном кейсе 1064 (браузерная телефония
 внутри медицинской системы Заказчика). За 17 ответов модели и 10 корректировок
 БА получен пригодный список из 10 открытых вопросов Заказчику.

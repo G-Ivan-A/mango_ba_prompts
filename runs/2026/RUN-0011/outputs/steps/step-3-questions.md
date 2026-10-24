@@ -8,7 +8,7 @@ scope: mango-only
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
 related_artifacts:
-  - "prompts/questions-customer-understanding-stepwise.md"
+  - "prompts/archive/questions-customer-understanding-stepwise.md"
 ---
 
 # Шаг 3 — Вопросы заказчику
@@ -80,5 +80,5 @@ related_artifacts:
 
 ## Источники
 
-- [`prompts/questions-customer-understanding-stepwise.md`](../../../../../prompts/questions-customer-understanding-stepwise.md)
+- [`prompts/archive/questions-customer-understanding-stepwise.md`](../../../../../prompts/archive/questions-customer-understanding-stepwise.md)
 - [`inputs/kb-files.md`](../../inputs/kb-files.md), [`steps/step-2-normalization.md`](./step-2-normalization.md)

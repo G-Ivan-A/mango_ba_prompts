@@ -1,11 +1,13 @@
 ---
 id: mango-constraints-documentation-oneshot
 title: "Ограничения: За один ответ"
-status: draft
+status: archived
 version: 0.1
 updated: 2026-06-11
 temperature: 0.1
 ---
+
+> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md), [bcreq-work-solution-design-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
 
 Ты — ведущий бизнес-аналитик (CBAP) в Телеком SaaS. Твоя задача: сгенерировать
 Раздел 6 (Особенности реализации / Ограничения) на основе предоставленного контекста.

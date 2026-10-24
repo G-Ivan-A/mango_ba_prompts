@@ -15,7 +15,7 @@ related_issues:
 
 | Реплика | Источник | Что подано |
 | --- | --- | --- |
-| [0] | Библиотека репозитория | [`prompts/glossary-context-understanding-stepwise.md`](../../../../prompts/glossary-context-understanding-stepwise.md) — дословно, с маркером `<!-- mango-glossary-context-understanding-stepwise -->` |
+| [0] | Библиотека репозитория | [`prompts/archive/glossary-context-understanding-stepwise.md`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) — дословно, с маркером `<!-- mango-glossary-context-understanding-stepwise -->` |
 | [2]–[4] | Вход БА | Глоссарий Заказчика, документация продукта (КЦ, Wallboard), три PDF Заказчика, формулировка запроса от менеджера |
 | [6]–[77] | Ad-hoc | 36 запросов БА вне библиотеки промптов |
 

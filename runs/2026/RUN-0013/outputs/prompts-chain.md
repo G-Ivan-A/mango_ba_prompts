@@ -20,16 +20,16 @@ related_issues:
 | Эпизод | Дата | Промпт / режим | Подтверждение в истории |
 | --- | --- | --- | --- |
 | 1 | 2026-06-18 | свободный диалог + изучение GitHub Pages репозитория как веб-ресурса | реплика 0: «изучи как веб-ресурс включая навигацию по артефактам» |
-| 1–2 | 2026-06-18…19 | [`questions-customer-understanding-stepwise`](../../../../prompts/questions-customer-understanding-stepwise.md) — формирование вопросов Заказчику | реплика 22: возврат к структуре «переспрос интерпретации → причина и цели → уточнения» |
+| 1–2 | 2026-06-18…19 | [`questions-customer-understanding-stepwise`](../../../../prompts/archive/questions-customer-understanding-stepwise.md) — формирование вопросов Заказчику | реплика 22: возврат к структуре «переспрос интерпретации → причина и цели → уточнения» |
 | 2 | 2026-06-19 | режим расширенного рассуждения (`think max`) | реплика 36 |
 | 4 | 2026-07-15 | [`meeting-customer-documentation-stepwise`](../../../../prompts/meeting-customer-documentation-stepwise.md) — суммаризация встречи + дельта к гипотезе | реплика 48 |
-| 4 | 2026-07-15 | [`glossary-context-understanding-stepwise`](../../../../prompts/glossary-context-understanding-stepwise.md) — Раздел 1 и Раздел 2 | реплика 74: «Проверьте себя, в промпте: ШАГ 2. Формирование бизнес-контекста (Раздел 2)» |
-| 4 | 2026-07-15 | [`us-modeling-stepwise`](../../../../prompts/us-modeling-stepwise.md) — вставлен в чат дословно | реплика 64: `<!-- mango-us-modeling-stepwise -->` |
-| 5–6 | 2026-07-16…17 | [`fr-documentation-stepwise`](../../../../prompts/fr-documentation-stepwise.md) — вставлен в чат дословно | реплика 124 |
-| 6 | 2026-07-19…20 | [`fr-validation-stepwise`](../../../../prompts/fr-validation-stepwise.md) — независимая критическая оценка документации | реплика 132 |
-| 6 | 2026-07-20 | [`constraints-documentation-stepwise`](../../../../prompts/constraints-documentation-stepwise.md) — Раздел 6 | реплики 148–151 |
+| 4 | 2026-07-15 | [`glossary-context-understanding-stepwise`](../../../../prompts/archive/glossary-context-understanding-stepwise.md) — Раздел 1 и Раздел 2 | реплика 74: «Проверьте себя, в промпте: ШАГ 2. Формирование бизнес-контекста (Раздел 2)» |
+| 4 | 2026-07-15 | [`us-modeling-stepwise`](../../../../prompts/archive/us-modeling-stepwise.md) — вставлен в чат дословно | реплика 64: `<!-- mango-us-modeling-stepwise -->` |
+| 5–6 | 2026-07-16…17 | [`fr-documentation-stepwise`](../../../../prompts/archive/fr-documentation-stepwise.md) — вставлен в чат дословно | реплика 124 |
+| 6 | 2026-07-19…20 | [`fr-validation-stepwise`](../../../../prompts/archive/fr-validation-stepwise.md) — независимая критическая оценка документации | реплика 132 |
+| 6 | 2026-07-20 | [`constraints-documentation-stepwise`](../../../../prompts/archive/constraints-documentation-stepwise.md) — Раздел 6 | реплики 148–151 |
 | 7 | 2026-07-30 | свободный диалог по согласованному черновику + `think max` | реплики 152, 220 |
-| 8 | 2026-07-31 | [`uc-modeling-stepwise`](../../../../prompts/uc-modeling-stepwise.md) — матрица сценариев | реплики 226–236 |
+| 8 | 2026-07-31 | [`uc-modeling-stepwise`](../../../../prompts/archive/uc-modeling-stepwise.md) — матрица сценариев | реплики 226–236 |
 
 ## Наблюдения по маршруту
 
