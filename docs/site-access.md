@@ -2,8 +2,16 @@
 status: draft
 version: 0.2
 updated: 2026-10-24
-type: documentation
-scope: site
+ai-generated: true
+type: guide
+scope: site-access
+related_artifacts:
+  - "site/gate.js"
+  - "site/password-hashes.json"
+  - "scripts/set-site-password.mjs"
+related_issues:
+  - 388
+  - 391
 ---
 
 # Доступ к сайту и ручная публикация
