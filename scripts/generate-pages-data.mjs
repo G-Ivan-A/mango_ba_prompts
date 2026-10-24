@@ -987,6 +987,21 @@ function makePatterns(patternsList, prompts, operationsById) {
   };
 }
 
+// Набор промпта (issue #388): новые промпты BCREQ выделяются на сайте и
+// фильтруются отдельной группой «Набор».
+const PROMPT_FAMILIES = [
+  { id: "bcreq", label: "BCREQ (новые)", icon: "★", description: "Набор BCREQ: Промпт 0 и промпты шагов и стадий (issue #388)." },
+  { id: "other", label: "Прочие", icon: "•", description: "Действующие промпты вне набора BCREQ." },
+  { id: "archive", label: "Архив", icon: "⌛", description: "Промпты, заменённые набором BCREQ; сохранены для ссылок из прогонов." },
+];
+
+function promptFamily(basename, archived) {
+  if (archived) {
+    return "archive";
+  }
+  return basename.startsWith("bcreq-") ? "bcreq" : "other";
+}
+
 async function main() {
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
@@ -1029,6 +1044,7 @@ async function main() {
     const contentHash = crypto.createHash("sha256").update(content).digest("hex");
 
     const slug = basename.replace(/\.md$/, "");
+    const family = promptFamily(basename, file.archived);
     prompts.push({
       id: frontmatter.id || `mango-${slug}`,
       file: basename,
@@ -1036,6 +1052,8 @@ async function main() {
       sourcePath: file.relativePath,
       url: repoUrl(file.relativePath),
       archived: file.archived,
+      family,
+      isNew: family === "bcreq",
       description: metadata?.description || "Описание отсутствует в prompts/README.md.",
       descriptionLong: buildLongDescription(
         metadata?.description || "Описание отсутствует в prompts/README.md.",
@@ -1073,6 +1091,10 @@ async function main() {
     operations: taxonomy.operations,
     processes: taxonomy.processes,
     modes: ["stepwise", "oneshot", "legacy"],
+    families: PROMPT_FAMILIES.map((item) => ({
+      ...item,
+      count: prompts.filter((prompt) => prompt.family === item.id).length,
+    })),
     statuses: [...new Set(prompts.map((prompt) => prompt.status))].sort(),
   };
 

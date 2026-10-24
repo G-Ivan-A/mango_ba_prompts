@@ -485,6 +485,11 @@ h3 {
   background: #f9fafb;
 }
 
+.filter-group--families {
+  background: #fffbeb;
+  border-color: #fde68a;
+}
+
 .filter-group--processes {
   background: #f0f9ff;
   border-color: #bae6fd;
@@ -622,8 +627,58 @@ h3 {
 }
 
 .prompt-head {
-  display: block;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  align-items: start;
   margin-bottom: 10px;
+}
+
+/* Новые промпты BCREQ (issue #388): бейдж и акцентная рамка. */
+.prompt-card[data-family="bcreq"] {
+  border-color: var(--amber);
+  box-shadow: inset 4px 0 0 var(--amber);
+}
+
+.new-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  background: rgba(180, 83, 9, 0.08);
+  color: var(--amber);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Иконка «скопировать промпт» в шапке карточки и в шагах процесса. */
+.copy-icon {
+  display: inline-grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  flex: 0 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 1.05rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.copy-icon:hover,
+.copy-icon:focus-visible {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.copy-icon[data-copied="true"] {
+  border-color: var(--teal);
+  background: rgba(15, 118, 110, 0.1);
+  color: var(--teal);
 }
 
 .prompt-title {

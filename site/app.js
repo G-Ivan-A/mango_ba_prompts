@@ -40,6 +40,7 @@ const nodes = {
   patternGrid: document.querySelector("#pattern-grid"),
   topnav: document.querySelector("#topnav"),
   themeToggle: document.querySelector("#theme-toggle"),
+  logout: document.querySelector("#site-logout"),
   modal: document.querySelector("#process-modal"),
   modalBody: document.querySelector("#modal-body"),
   modalClose: document.querySelector("#modal-close"),
@@ -158,6 +159,7 @@ function visiblePrompts() {
   const selectedProcesses = selectedValues("process");
   const selectedOperations = selectedValues("operation");
   const selectedModes = selectedValues("mode");
+  const selectedFamilies = selectedValues("family");
 
   const filtered = state.prompts.filter((prompt) => {
     if (query && !promptSearchText(prompt).includes(query)) {
@@ -173,6 +175,9 @@ function visiblePrompts() {
       return false;
     }
     if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
+      return false;
+    }
+    if (selectedFamilies.length > 0 && !selectedFamilies.includes(prompt.family)) {
       return false;
     }
     return true;
@@ -367,24 +372,51 @@ function renderFilters() {
     title: mode,
   }));
 
+  // Набор (issue #388): новые промпты BCREQ, прочие действующие, архив.
+  const families = (state.promptsData.filters.families || []).map((family) => ({
+    token: `family:${family.id}`,
+    icon: family.icon,
+    label: family.label,
+    count: family.count,
+    title: family.description,
+  }));
+
   nodes.filters.replaceChildren(
+    renderFilterGroup("Набор", families, "filter-group--families"),
     renderFilterGroup("Процессы БА", processes, "filter-group--processes"),
     renderFilterGroup("Операции", operations, "filter-group--operations"),
     renderFilterGroup("Режимы", modes, "filter-group--modes"),
   );
 }
 
+// Иконка «скопировать промпт» (issue #388): тот же формат копирования, что у
+// кнопки «Копировать» — обработчик ищет промпт по data-copy-id.
+function copyIconButton(prompt) {
+  const button = el("button", "copy-icon", "⧉");
+  button.type = "button";
+  button.dataset.copyId = prompt.id;
+  button.title = `Скопировать промпт ${prompt.file}`;
+  button.setAttribute("aria-label", `Скопировать промпт ${prompt.file}`);
+  return button;
+}
+
 function promptCard(prompt) {
   const card = el("article", "prompt-card");
   card.dataset.archived = String(prompt.archived);
+  card.dataset.family = prompt.family || "other";
 
   const head = el("div", "prompt-head");
   const titleWrap = el("div");
+  if (prompt.isNew) {
+    const badge = el("span", "new-badge", "★ BCREQ · новый");
+    badge.title = "Новый промпт набора BCREQ (issue #388)";
+    titleWrap.append(badge);
+  }
   titleWrap.append(el("h3", "prompt-title", prompt.title));
   const idLabel = el("span", "prompt-id", prompt.id);
   idLabel.title = "Уникальный токен промпта";
   titleWrap.append(idLabel);
-  head.append(titleWrap);
+  head.append(titleWrap, copyIconButton(prompt));
 
   const description = el("p", "prompt-description", prompt.descriptionLong || prompt.description);
 
@@ -899,6 +931,8 @@ function rerenderInteractive() {
 async function init() {
   initTheme();
   try {
+    // Данные каталога загружаются только после ввода пароля (site/gate.js).
+    await (window.siteGate?.ready ?? Promise.resolve());
     const [promptsData, stats, roadmap, checks, processes, patterns, processTree] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
@@ -1003,11 +1037,15 @@ nodes.promptGrid.addEventListener("click", async (event) => {
   }
 
   const button = event.target.closest("[data-copy-id]");
-  if (!button) {
-    return;
+  if (button) {
+    await copyPrompt(button);
   }
+});
+
+async function copyPrompt(button) {
   const prompt = state.prompts.find((item) => item.id === button.dataset.copyId);
   if (!prompt) {
+    showToast(`Промпт ${button.dataset.copyId} не найден в каталоге`);
     return;
   }
   try {
@@ -1021,7 +1059,7 @@ nodes.promptGrid.addEventListener("click", async (event) => {
   } catch (error) {
     showToast("Не удалось скопировать");
   }
-});
+}
 
 nodes.processGrid.addEventListener("click", (event) => {
   const card = event.target.closest("[data-process-id]");
@@ -1053,6 +1091,8 @@ nodes.themeToggle.addEventListener("click", () => {
     /* localStorage может быть недоступен */
   }
 });
+
+nodes.logout?.addEventListener("click", () => window.siteGate?.lock());
 
 window.addEventListener("hashchange", applyRoute);
 

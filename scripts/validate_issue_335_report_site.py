@@ -81,8 +81,12 @@ def main() -> int:
         errors.append(f"{REPORT}: диаграммы должны быть отрисованы в SVG, а не в виде кода")
     if report.count("<svg") < 11:
         errors.append(f"{REPORT}: инлайновых SVG {report.count('<svg')}, ожидалось не менее 11")
+    # Парольный вход сайта (issue #388) — единственный допустимый внешний
+    # скрипт: при офлайн-копировании gate.js не загрузится и отчёт откроется
+    # без входа, копирование не ломается.
+    report_without_gate = report.replace('<script src="../../gate.js" data-base="../../"></script>', "")
     for external in ("<script src=", "<link ", "cdn.jsdelivr", "unpkg.com"):
-        if external in report:
+        if external in report_without_gate:
             errors.append(f"{REPORT}: внешняя загрузка {external!r} ломает офлайн-копирование")
 
     errors += require(gate, GATE, "SHA-256", "localStorage", "detailed-gap-report.html")
