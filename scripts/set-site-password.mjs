@@ -17,10 +17,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const HASHES = path.join(ROOT, "site", "password-hashes.json");
 const KEY = "site";
 
-// Та же нормализация, что в site/gate.js: пробелы по краям не важны, регистр
-// не важен.
+// Exact characters, matching site/gate.js; case and whitespace are significant.
 export function normalizePassword(value) {
-  return String(value || "").trim().toUpperCase();
+  return String(value || "");
 }
 
 export function hashPassword(salt, password) {
@@ -47,7 +46,7 @@ async function main() {
   const hashes = JSON.parse(await fs.readFile(HASHES, "utf8"));
   const salt = crypto.randomBytes(8).toString("hex");
   hashes[KEY] = {
-    algorithm: "SHA-256(salt + UPPERCASE(trim(password)))",
+    algorithm: "SHA-256(salt + password)",
     salt,
     hash: hashPassword(salt, password),
   };

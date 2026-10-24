@@ -1812,13 +1812,14 @@ h3 {
 
   .topnav {
     width: 100%;
+    flex-wrap: wrap;
     justify-content: stretch;
   }
 
   .topnav a {
-    flex: 1 1 0;
+    flex: 1 1 auto;
     justify-content: center;
-    min-width: 0;
+    min-width: max-content;
   }
 
   .section-head {
@@ -1856,10 +1857,6 @@ h3 {
 @media (max-width: 440px) {
   .brand-title {
     white-space: normal;
-  }
-
-  .topnav {
-    flex-wrap: wrap;
   }
 
   .phase-metrics {

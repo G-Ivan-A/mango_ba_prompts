@@ -303,7 +303,7 @@ def check_wiring() -> list[str]:
         return errors
 
     errors += require(read_text("site/index.html"), "site/index.html",
-                      'id="processes"', "process-tree")
+                      'id="bcreq-manual"', 'id="bcreq-approval"')
     errors += require(read_text("site/app.js"), "site/app.js",
                       "renderProcessTree", "process-tree.json")
     errors += require(read_text("CHANGELOG.md"), "CHANGELOG.md", "Issue #97")

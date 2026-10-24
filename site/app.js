@@ -787,7 +787,7 @@ function renderBcreqFlow() {
 }
 
 function renderProcesses() {
-  if (!state.processes) {
+  if (!state.processes || !nodes.processGrid) {
     return;
   }
   nodes.processGrid.replaceChildren(
@@ -998,7 +998,7 @@ function processNode(process, useTree) {
 }
 
 function renderProcessTree() {
-  if (!state.processTree) {
+  if (!state.processTree || !nodes.processTree) {
     return;
   }
   const tree = state.processTree;
@@ -1226,7 +1226,7 @@ nodes.bcreqSteps?.addEventListener("click", async (event) => {
   }
 });
 
-nodes.processGrid.addEventListener("click", (event) => {
+nodes.processGrid?.addEventListener("click", (event) => {
   const card = event.target.closest("[data-process-id]");
   if (card) {
     openProcessModal(card.dataset.processId);

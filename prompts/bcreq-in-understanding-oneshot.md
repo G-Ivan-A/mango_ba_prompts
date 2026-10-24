@@ -77,6 +77,14 @@ temperature: 0.1
 - АД-1: каждый факт контекста — с источником; АД-6: поведение продукта —
   по документации.
 
+### Общие проверки с ручными шагами
+
+Выполни также «Проверку релевантности As-Is» из
+[Ш-1](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md#проверка-релевантности-as-is)
+и «Проверку принадлежности доказательства» из
+[Ш-2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md#проверка-принадлежности-доказательства).
+Режим остаётся oneshot: не добавляй ожидание между подшагами.
+
 ## 5. Формат вывода
 
 ```text

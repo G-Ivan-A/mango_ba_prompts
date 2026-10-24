@@ -18,10 +18,6 @@ const SOURCE_FILES = {
   bcreqFlow: "docs/ba-processes/bcreq-manual-process.md",
 };
 
-function isPromptAssetFile(name) {
-  return name.endsWith(".md") && name !== "README.md" && !name.endsWith(".executable.md");
-}
-
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
 const RUNS_DIR = "runs";
 const FEEDBACK_SOURCE = "pr-ops/prompt-feedback.json";
@@ -395,7 +391,7 @@ function parseActivePromptLinks(cell) {
   const seen = new Set();
   for (const match of cell.matchAll(/\((?:\.\.\/)+prompts\/([^)/]+\.md)\)/g)) {
     const file = match[1];
-    if (!seen.has(file)) {
+    if (file.startsWith("bcreq-") && !seen.has(file)) {
       seen.add(file);
       files.push(file);
     }
@@ -498,7 +494,7 @@ function parseProcessTree(markdown, processIndex) {
       label,
       icon: String(id),
       operations: indexed?.operations || [],
-      recommendedPrompts: indexed?.recommendedPrompts || [],
+      recommendedPrompts: (indexed?.recommendedPrompts || []).filter((file) => file.startsWith("bcreq-")),
       subprocessTotal: subprocesses.length,
       subprocessShown: shown,
       subprocesses,
@@ -593,19 +589,12 @@ function parseRoadmap(markdown) {
 
 async function listPromptFiles() {
   const activeNames = await fs.readdir(path.join(ROOT, "prompts"));
-  const archiveNames = await fs.readdir(path.join(ROOT, "prompts", "archive"));
-  const active = activeNames
-    .filter(isPromptAssetFile)
-    .map((name) => ({ relativePath: `prompts/${name}`, archived: false }));
-  const archived = archiveNames
-    .filter((name) => name.endsWith(".md"))
-    .map((name) => ({ relativePath: `prompts/archive/${name}`, archived: true }));
-  return [...active, ...archived].sort((left, right) => {
-    if (left.archived !== right.archived) {
-      return left.archived ? 1 : -1;
-    }
-    return left.relativePath.localeCompare(right.relativePath, "ru");
-  });
+  // Publication boundary (issue #391). Repository tools and archives remain
+  // intact; every generated catalog, statistic and prompt link uses this set.
+  return activeNames
+    .filter((name) => name.startsWith("bcreq-") && name.endsWith(".md"))
+    .map((name) => ({ relativePath: `prompts/${name}`, archived: false }))
+    .sort((left, right) => left.relativePath.localeCompare(right.relativePath, "ru"));
 }
 
 function countBy(items, selector) {
@@ -1196,11 +1185,11 @@ async function main() {
   const filters = {
     operations: taxonomy.operations,
     processes: taxonomy.processes,
-    modes: ["stepwise", "oneshot", "legacy"],
+    modes: [...new Set(prompts.map((prompt) => prompt.mode))].sort(),
     families: PROMPT_FAMILIES.map((item) => ({
       ...item,
       count: prompts.filter((prompt) => prompt.family === item.id).length,
-    })),
+    })).filter((item) => item.count > 0),
     statuses: [...new Set(prompts.map((prompt) => prompt.status))].sort(),
   };
 

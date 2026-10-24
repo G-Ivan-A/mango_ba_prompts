@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T01:28:04.542Z",
+  "generatedAt": "2026-10-24T13:10:02.444Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
@@ -10,7 +10,7 @@
   "totalProcesses": 9,
   "shownProcesses": 8,
   "totalSubprocesses": 38,
-  "shownSubprocesses": 25,
+  "shownSubprocesses": 22,
   "useTree": true,
   "processes": [
     {
@@ -25,40 +25,18 @@
         "solution_design",
         "validation"
       ],
-      "recommendedPrompts": [
-        "asr_ingestion_oneshot.md",
-        "asr_ingestion_legacy.md",
-        "bcreq_context_understanding_stepwise.md",
-        "bcreq_in_understanding_oneshot.md",
-        "bcreq_scenarios_modeling_oneshot.md",
-        "bcreq_uc_modeling_stepwise.md",
-        "bcreq_fr_documentation_stepwise.md",
-        "bcreq_core_documentation_oneshot.md",
-        "bcreq_constraints_documentation_stepwise.md",
-        "bcreq_work_solution_design_oneshot.md",
-        "bcreq_orr_solution_design_stepwise.md",
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 6,
-      "subprocessShown": 6,
+      "subprocessShown": 5,
       "subprocesses": [
         {
           "order": 1,
           "step": "1. Нормализовать сырой вход",
           "operation": "ingestion",
           "operationIcon": "↓",
-          "kind": "direct",
-          "hasPrompts": true,
-          "prompts": [
-            {
-              "file": "asr-ingestion-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md"
-            },
-            {
-              "file": "asr-ingestion-legacy.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md"
-            }
-          ]
+          "kind": "manual",
+          "hasPrompts": false,
+          "prompts": []
         },
         {
           "order": 2,
@@ -181,9 +159,7 @@
         "quality",
         "risk_analysis"
       ],
-      "recommendedPrompts": [
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 4,
       "subprocessShown": 3,
       "subprocesses": [
@@ -251,11 +227,7 @@
         "risk_analysis",
         "quality"
       ],
-      "recommendedPrompts": [
-        "bcreq_context_understanding_stepwise.md",
-        "bcreq_in_understanding_oneshot.md",
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 5,
       "subprocessShown": 2,
       "subprocesses": [
@@ -330,13 +302,7 @@
         "validation",
         "documentation"
       ],
-      "recommendedPrompts": [
-        "bcreq_context_understanding_stepwise.md",
-        "bcreq_in_understanding_oneshot.md",
-        "bcreq_scenarios_modeling_oneshot.md",
-        "bcreq_uc_modeling_stepwise.md",
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 5,
       "subprocessShown": 5,
       "subprocesses": [
@@ -429,10 +395,7 @@
         "documentation",
         "quality"
       ],
-      "recommendedPrompts": [
-        "bcreq_uc_modeling_stepwise.md",
-        "bcreq_scenarios_modeling_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 3,
       "subprocessShown": 1,
       "subprocesses": [
@@ -484,31 +447,18 @@
         "documentation",
         "governance"
       ],
-      "recommendedPrompts": [
-        "asr_ingestion_oneshot.md",
-        "meeting_customer_documentation_stepwise.md",
-        "meeting_team_documentation_stepwise.md",
-        "bcreq_context_understanding_stepwise.md",
-        "bcreq_in_understanding_oneshot.md",
-        "letter_customer_documentation_legacy.md",
-        "session_debug_documentation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 4,
-      "subprocessShown": 3,
+      "subprocessShown": 1,
       "subprocesses": [
         {
           "order": 1,
           "step": "1. Очистить ASR или длинный вход",
           "operation": "ingestion",
           "operationIcon": "↓",
-          "kind": "direct",
-          "hasPrompts": true,
-          "prompts": [
-            {
-              "file": "asr-ingestion-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md"
-            }
-          ]
+          "kind": "manual",
+          "hasPrompts": false,
+          "prompts": []
         },
         {
           "order": 2,
@@ -533,26 +483,9 @@
           "step": "3. Оформить коммуникацию",
           "operation": "documentation",
           "operationIcon": "¶",
-          "kind": "direct",
-          "hasPrompts": true,
-          "prompts": [
-            {
-              "file": "meeting-customer-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md"
-            },
-            {
-              "file": "meeting-team-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md"
-            },
-            {
-              "file": "letter-customer-documentation-legacy.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md"
-            },
-            {
-              "file": "session-debug-documentation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md"
-            }
-          ]
+          "kind": "manual",
+          "hasPrompts": false,
+          "prompts": []
         },
         {
           "order": 4,
@@ -574,10 +507,7 @@
         "quality",
         "research"
       ],
-      "recommendedPrompts": [
-        "archive/tz_stats_generator_legacy.md",
-        "archive/tz_stats_generator_simple_legacy.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 3,
       "subprocessShown": 0,
       "subprocesses": [
@@ -620,11 +550,7 @@
         "validation",
         "governance"
       ],
-      "recommendedPrompts": [
-        "bcreq_orr_solution_design_stepwise.md",
-        "bcreq_work_solution_design_oneshot.md",
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 4,
       "subprocessShown": 3,
       "subprocesses": [
@@ -699,11 +625,7 @@
         "validation",
         "quality"
       ],
-      "recommendedPrompts": [
-        "bcreq_constraints_documentation_stepwise.md",
-        "bcreq_work_solution_design_oneshot.md",
-        "bcreq_review_validation_oneshot.md"
-      ],
+      "recommendedPrompts": [],
       "subprocessTotal": 4,
       "subprocessShown": 2,
       "subprocesses": [

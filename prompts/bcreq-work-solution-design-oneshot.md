@@ -85,6 +85,14 @@ temperature: 0.1
 - Агент не пересекает гейт Г-W и не выполняет Ш-В сам: Ш-В — отдельный вызов
   второй ролью.
 
+### Общие проверки с ручными шагами
+
+Выполни также «Проверку последовательности и контракта» из
+[Ш-6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md#проверка-последовательности-и-контракта)
+и «Проверку покрытия условий контракта» из
+[Ш-8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md#проверка-покрытия-условий-контракта).
+Режим остаётся oneshot; остановки и гейты сохраняются.
+
 ## 5. Формат вывода
 
 ```text
