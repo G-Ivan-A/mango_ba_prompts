@@ -8,9 +8,9 @@
 
 Проверки:
 
-1. ``prompts/``: 14 файлов ``bcreq-*.md`` с frontmatter (``id`` =
+1. ``prompts/``: исходные 14 файлов и новые ``bcreq-*.md`` с frontmatter (``id`` =
    ``mango-<имя>``, ``status: draft``); Промпт 0 содержит защиты АД-1…АД-7;
-   остальные 13 начинаются блоком «Пройдено / Текущий / Рекомендуемый
+   остальные начинаются блоком «Пройдено / Текущий / Рекомендуемый
    следующий» и содержат «Состояние BCREQ»; ссылки — абсолютные URL.
 2. Подкаталогов в ``prompts/`` нет, кроме ``archive/``; 18 заменённых
    промптов лежат в архиве со ``status: archived`` и баннером «Архив
@@ -110,9 +110,9 @@ def frontmatter(text: str) -> dict[str, str]:
 def check_prompts() -> list[str]:
     errors = []
     actual = sorted(p.stem for p in PROMPTS.glob("bcreq-*.md"))
-    if actual != sorted(BCREQ_PROMPTS):
+    if not set(BCREQ_PROMPTS) <= set(actual):
         errors.append(f"prompts/bcreq-*.md: ожидалось {len(BCREQ_PROMPTS)} файлов набора, найдено {actual}")
-    for name in BCREQ_PROMPTS:
+    for name in actual:
         path = PROMPTS / f"{name}.md"
         if not path.exists():
             continue
@@ -211,7 +211,7 @@ def check_gate() -> list[str]:
         return errors
     password = os.environ.get("SITE_PASSWORD")
     if password:
-        digest = hashlib.sha256((entry["salt"] + password.strip().upper()).encode("utf-8")).hexdigest()
+        digest = hashlib.sha256((entry["salt"] + password).encode("utf-8")).hexdigest()
         if digest != entry["hash"]:
             errors.append('site/password-hashes.json: хэш "site" не совпадает с SITE_PASSWORD')
     for rel in plaintext_hits(entry):
@@ -231,8 +231,8 @@ def check_site_data() -> list[str]:
         elif prompt.get("family") != "bcreq" or prompt.get("isNew") is not True:
             errors.append(f"site/data/prompts.json: {name} — нужны family=bcreq и isNew=true")
     families = {f.get("id") for f in data.get("filters", {}).get("families", [])}
-    if not {"bcreq", "archive"} <= families:
-        errors.append(f"site/data/prompts.json: фильтр «Набор» без bcreq/archive: {sorted(families)}")
+    if families != {"bcreq"}:
+        errors.append(f"site/data/prompts.json: фильтр «Набор» должен содержать только bcreq: {sorted(families)}")
 
     flow = json.loads((SITE / "data" / "bcreq-flow.json").read_text(encoding="utf-8"))
     steps = flow["manual"]["steps"]

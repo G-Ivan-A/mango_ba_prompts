@@ -107,9 +107,10 @@ def main() -> int:
 
     statuses = checks.get("statuses", {})
     status_total = sum(statuses.get(name, 0) for name in ("draft", "canonical", "archived"))
-    if status_total != 44:
+    expected_total = len(read_json("site/data/prompts.json")["prompts"])
+    if status_total != expected_total:
         errors.append(
-            f"site/data/checks.json: statuses must cover all 44 prompts, found {status_total}"
+            f"site/data/checks.json: statuses must cover all {expected_total} published prompts, found {status_total}"
         )
 
     tests = checks.get("tests", {})

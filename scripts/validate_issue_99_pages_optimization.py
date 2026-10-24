@@ -64,13 +64,13 @@ def main() -> int:
 
     # Section id order must stay catalog -> dashboard -> checks -> roadmap
     # (locked by issue #91; the new pages are appended afterwards).
-    ids_order = re.findall(r'<section[^>]*\sid="([a-z]+)"', index_html)
+    ids_order = re.findall(r'<section[^>]*\sid="([a-z-]+)"', index_html)
     expected_prefix = ["catalog", "dashboard", "checks", "roadmap"]
     if ids_order[: len(expected_prefix)] != expected_prefix:
         errors.append(
             f"site/index.html: section id order {ids_order} must start with {expected_prefix}"
         )
-    for required_id in ("processes", "patterns"):
+    for required_id in ("bcreq-manual", "bcreq-approval", "patterns"):
         if required_id not in ids_order:
             errors.append(f"site/index.html: missing <section id={required_id!r}>")
 

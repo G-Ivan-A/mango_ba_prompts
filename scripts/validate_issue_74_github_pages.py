@@ -31,15 +31,8 @@ def reject(text: str, path: str, *needles: str) -> list[str]:
 
 
 def active_prompt_paths() -> list[Path]:
-    return sorted(
-        path
-        for path in (ROOT / "prompts").glob("*.md")
-        if path.name != "README.md" and not path.name.endswith(".executable.md")
-    )
-
-
-def archived_prompt_paths() -> list[Path]:
-    return sorted((ROOT / "prompts" / "archive").glob("*.md"))
+    # Issue #391 narrows publication without removing repository tooling/archive.
+    return sorted((ROOT / "prompts").glob("bcreq-*.md"))
 
 
 def main() -> int:
@@ -65,8 +58,7 @@ def main() -> int:
         return 1
 
     active_paths = active_prompt_paths()
-    archived_paths = archived_prompt_paths()
-    prompt_paths = active_paths + archived_paths
+    prompt_paths = active_paths
     prompt_path_names = {str(path.relative_to(ROOT)) for path in prompt_paths}
 
     prompts_data = read_json("site/data/prompts.json")
@@ -74,10 +66,6 @@ def main() -> int:
     roadmap_data = read_json("site/data/roadmap.json")
     prompts = prompts_data.get("prompts", [])
 
-    if len(active_paths) != 20:
-        errors.append(f"prompts/: expected 20 active prompt files, found {len(active_paths)}")
-    if len(archived_paths) != 24:
-        errors.append(f"prompts/archive/: expected 24 archived prompt files, found {len(archived_paths)}")
     if len(prompts) != len(prompt_paths):
         errors.append(f"site/data/prompts.json: expected {len(prompt_paths)} prompts, found {len(prompts)}")
 
@@ -103,28 +91,28 @@ def main() -> int:
 
     active_generated = [prompt for prompt in prompts if not prompt.get("archived")]
     archived_generated = [prompt for prompt in prompts if prompt.get("archived")]
-    if len(active_generated) != 20:
-        errors.append(f"site/data/prompts.json: expected 20 active prompts, found {len(active_generated)}")
-    if len(archived_generated) != 24:
-        errors.append(f"site/data/prompts.json: expected 24 archived prompts, found {len(archived_generated)}")
+    if len(active_generated) != len(active_paths):
+        errors.append(f"site/data/prompts.json: expected {len(active_paths)} active prompts, found {len(active_generated)}")
+    if archived_generated:
+        errors.append(f"site/data/prompts.json: expected no archived prompts, found {len(archived_generated)}")
 
     filters = prompts_data.get("filters", {})
     if len(filters.get("operations", [])) != 13:
         errors.append("site/data/prompts.json: expected 13 cognitive operations in filters")
     if len(filters.get("processes", [])) != 9:
         errors.append("site/data/prompts.json: expected 9 BA processes in filters")
-    for mode in ("stepwise", "oneshot", "legacy"):
+    for mode in {prompt["mode"] for prompt in prompts}:
         if mode not in filters.get("modes", []):
             errors.append(f"site/data/prompts.json: filters.modes missing {mode}")
 
     totals = stats_data.get("totals", {})
     expected_totals = {
-        "allPrompts": 44,
-        "activePrompts": 20,
-        "archivedPrompts": 24,
-        "testsPassed": 0,
-        "inWork": 20,
-        "deferred": 24,
+        "allPrompts": len(prompts),
+        "activePrompts": len(active_paths),
+        "archivedPrompts": 0,
+        "testsPassed": sum(p["status"] == "canonical" for p in prompts),
+        "inWork": sum(p["status"] == "draft" for p in prompts),
+        "deferred": 0,
     }
     for key, expected in expected_totals.items():
         if totals.get(key) != expected:

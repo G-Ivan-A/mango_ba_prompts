@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T01:28:05.954Z",
+  "generatedAt": "2026-10-24T13:17:45.328Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
@@ -56,26 +56,6 @@
         }
       ],
       "prompts": [
-        {
-          "id": "mango-asr-ingestion-oneshot",
-          "file": "asr-ingestion-oneshot.md",
-          "title": "ASR: Нормализация транскрипции",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md",
-          "mode": "oneshot",
-          "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-asr-ingestion-legacy",
-          "file": "asr-ingestion-legacy.md",
-          "title": "ASR: Обработка транскрипции (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "draft",
-          "archived": false
-        },
         {
           "id": "mango-bcreq-context-understanding-stepwise",
           "file": "bcreq-context-understanding-stepwise.md",
@@ -184,8 +164,8 @@
           "nextArtifact": "prompts/ft-tz-orchestration-stepwise.md или отдельный issue на workflow prompt."
         }
       ],
-      "checks": 273,
-      "coveredPrompts": 18
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 2,
@@ -223,8 +203,8 @@
           "nextArtifact": "Новый active statistics prompt вместо reliance on archive."
         }
       ],
-      "checks": 108,
-      "coveredPrompts": 3
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 3,
@@ -294,8 +274,8 @@
           "nextArtifact": "prompts/tender-validation-stepwise.md или tender-fit chain."
         }
       ],
-      "checks": 214,
-      "coveredPrompts": 7
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 4,
@@ -382,8 +362,8 @@
         }
       ],
       "gaps": [],
-      "checks": 152,
-      "coveredPrompts": 10
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 5,
@@ -463,36 +443,6 @@
       ],
       "prompts": [
         {
-          "id": "mango-asr-ingestion-oneshot",
-          "file": "asr-ingestion-oneshot.md",
-          "title": "ASR: Нормализация транскрипции",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md",
-          "mode": "oneshot",
-          "modeIcon": "●",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-meeting-customer-documentation-stepwise",
-          "file": "meeting-customer-documentation-stepwise.md",
-          "title": "Встреча с клиентом: Резюме",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-meeting-team-documentation-stepwise",
-          "file": "meeting-team-documentation-stepwise.md",
-          "title": "Встреча команды: Резюме",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md",
-          "mode": "stepwise",
-          "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
-        },
-        {
           "id": "mango-bcreq-context-understanding-stepwise",
           "file": "bcreq-context-understanding-stepwise.md",
           "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
@@ -511,26 +461,6 @@
           "modeIcon": "●",
           "status": "draft",
           "archived": false
-        },
-        {
-          "id": "mango-letter-customer-documentation-legacy",
-          "file": "letter-customer-documentation-legacy.md",
-          "title": "Письмо клиенту: Сопровождение (устаревший)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "draft",
-          "archived": false
-        },
-        {
-          "id": "mango-session-debug-documentation-oneshot",
-          "file": "session-debug-documentation-oneshot.md",
-          "title": "Сессия LLM: Суммаризация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md",
-          "mode": "oneshot",
-          "modeIcon": "●",
-          "status": "draft",
-          "archived": false
         }
       ],
       "gaps": [
@@ -540,8 +470,8 @@
           "nextArtifact": "Коммуникационный governance prompt."
         }
       ],
-      "checks": 42,
-      "coveredPrompts": 6
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 7,
@@ -554,28 +484,7 @@
       ],
       "pattern": "— (workflow map)",
       "patterns": [],
-      "prompts": [
-        {
-          "id": "mango-tz-stats-generator-legacy",
-          "file": "tz-stats-generator-legacy.md",
-          "title": "ТЗ: Статистика, расширенный (архив)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "archived",
-          "archived": true
-        },
-        {
-          "id": "mango-tz-stats-generator-simple-legacy",
-          "file": "tz-stats-generator-simple-legacy.md",
-          "title": "ТЗ: Статистика, простой (архив)",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-simple-legacy.md",
-          "mode": "legacy",
-          "modeIcon": "⌁",
-          "status": "archived",
-          "archived": true
-        }
-      ],
+      "prompts": [],
       "gaps": [
         {
           "gap": "Quality/statistics prompt для дефектов ФТ/ТЗ",
@@ -583,8 +492,8 @@
           "nextArtifact": "Новый active statistics prompt вместо reliance on archive."
         }
       ],
-      "checks": 6,
-      "coveredPrompts": 2
+      "checks": 0,
+      "coveredPrompts": 0
     },
     {
       "id": 8,

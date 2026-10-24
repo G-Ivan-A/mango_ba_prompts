@@ -5,7 +5,7 @@ Locks the requirements:
 - copyText call prepends <!-- {prompt.id} --> HTML comment (ФТ-1);
 - format matches <!-- {prompt.id} -->\n\n{body} (ФТ-1);
 - HTML comment is only added on copy, not in the rendered card (ФТ-1);
-- five target prompts have valid IDs in prompts.json (ФТ-3);
+- every published prompt has a valid ID in prompts.json (ФТ-3, scope #391);
 - CHANGELOG.md mentions Issue #95 (ФТ-4).
 """
 
@@ -16,13 +16,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-TARGET_PROMPT_IDS = [
-    "mango-fr-documentation-stepwise",
-    "mango-asr-ingestion-oneshot",
-    "mango-uc-modeling-oneshot",
-    "mango-questions-customer-understanding-stepwise",
-    "mango-meeting-customer-documentation-stepwise",
-]
+# Copy semantics apply to every published prompt; membership is checked against
+# the dynamic BCREQ source set by the issue #391 publication regression.
 
 
 def read_text(path: str) -> str:
@@ -80,9 +75,8 @@ def main() -> int:
     else:
         prompts_data = read_json(prompts_json_path)
         prompt_ids = {p["id"] for p in prompts_data.get("prompts", [])}
-        for target_id in TARGET_PROMPT_IDS:
-            if target_id not in prompt_ids:
-                errors.append(f"{prompts_json_path}: missing target prompt id {target_id!r}")
+        if not prompt_ids:
+            errors.append(f"{prompts_json_path}: catalog must contain prompts")
 
         # Verify IDs follow mango-[operation]-[mode] pattern.
         id_pattern = re.compile(r"^mango-[a-z][a-z0-9]*(?:-[a-z][a-z0-9]*)*$")
