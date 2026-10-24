@@ -755,8 +755,6 @@ function renderBcreqFlow() {
       head.append(tags);
       const actions = el("ul", "bcreq-actions");
       actions.append(...stage.actions.map((action) => el("li", "", action)));
-      const outcomes = el("ul", "bcreq-outcomes");
-      outcomes.append(...stage.outcomes.map((outcome) => el("li", "", outcome)));
       card.append(
         head,
         bcreqField("Цель", stage.goal),
@@ -765,9 +763,13 @@ function renderBcreqFlow() {
         actions,
         bcreqField("Выход", stage.output),
         bcreqField("Кто согласует", stage.approver),
-        el("div", "bcreq-field-label", "Исходы"),
-        outcomes,
       );
+      const outcomes = stage.outcomes.filter((outcome) => outcome && outcome !== "—");
+      if (outcomes.length) {
+        const list = el("ul", "bcreq-outcomes");
+        list.append(...outcomes.map((outcome) => el("li", "", outcome)));
+        card.append(el("div", "bcreq-field-label", "Исходы"), list);
+      }
       return card;
     }),
   );
