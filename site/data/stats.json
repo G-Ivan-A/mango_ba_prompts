@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T01:21:48.837Z",
+  "generatedAt": "2026-10-24T01:28:05.939Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -20,6 +20,10 @@
     {
       "path": "patterns/README.md",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md"
+    },
+    {
+      "path": "docs/ba-processes/bcreq-manual-process.md",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
     }
   ],
   "totals": {

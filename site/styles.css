@@ -830,6 +830,191 @@ h3 {
     var(--bg);
 }
 
+/* Процесс BCREQ (issue #388): ручные шаги БА и согласование. */
+.bcreq-band {
+  background:
+    linear-gradient(90deg, rgba(180, 83, 9, 0.07), transparent 34%),
+    var(--bg);
+}
+
+.bcreq-lead,
+.bcreq-rules,
+.bcreq-steps,
+.bcreq-stages,
+.bcreq-subtitle,
+.bcreq-table-wrap {
+  width: min(1240px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.bcreq-lead {
+  margin-top: 0;
+  margin-bottom: 18px;
+  color: var(--muted);
+}
+
+.bcreq-rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 8px 18px;
+  padding: 14px 18px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.bcreq-rule strong {
+  color: var(--amber);
+}
+
+.bcreq-steps,
+.bcreq-stages {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+  padding: 0;
+  list-style: none;
+}
+
+.bcreq-step,
+.bcreq-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.bcreq-step-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: start;
+}
+
+.bcreq-step-number {
+  display: inline-grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--amber);
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.bcreq-step-title-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.bcreq-step-title,
+.bcreq-stage-title {
+  margin: 0;
+  font-size: 1.02rem;
+}
+
+.bcreq-stage-head {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bcreq-step-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.bcreq-params {
+  padding: 1px 6px;
+  border-radius: 4px;
+  background: var(--surface-strong);
+  font-size: 0.82rem;
+}
+
+.bcreq-field {
+  display: grid;
+  gap: 2px;
+  font-size: 0.9rem;
+}
+
+.bcreq-field-label {
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.bcreq-actions,
+.bcreq-outcomes {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.9rem;
+}
+
+.bcreq-gate {
+  margin: 4px 0 0;
+  padding: 6px 10px;
+  border-left: 3px solid var(--amber);
+  background: rgba(180, 83, 9, 0.08);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.tag[data-kind="stage"] {
+  border-color: rgba(180, 83, 9, 0.32);
+  background: rgba(180, 83, 9, 0.08);
+  color: var(--amber);
+}
+
+.tag[data-kind="gate"] {
+  border-color: rgba(15, 118, 110, 0.32);
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--teal);
+}
+
+.bcreq-subtitle {
+  margin-top: 28px;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.bcreq-table-wrap {
+  overflow-x: auto;
+}
+
+.bcreq-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  font-size: 0.88rem;
+}
+
+.bcreq-table th,
+.bcreq-table td {
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.bcreq-table th {
+  background: var(--surface-strong);
+}
+
 .process-note,
 .process-actions,
 .process-tree {
