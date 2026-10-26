@@ -26,14 +26,14 @@ https://github.com/G-Ivan-A/mango_ba_prompts/pull/394.
   search/reset, clipboard, two process blocks, report deep-link gate, logout/theme.
   Save before/after screenshots; close browser and wait for all commands.
   Both standalone Chromium and Playwright MCP on localhost passed.
-- [ ] Update CHANGELOG and PR with operation audit, reproduction/test evidence,
+- [x] Update CHANGELOG and PR with operation audit, reproduction/test evidence,
   screenshots, assumptions and the owner's manual gh-pages deployment checklist.
-- [ ] Commit useful atomic changes after local checks; push only the prepared
+- [x] Commit useful atomic changes after local checks; push only the prepared
   issue branch, preserve history, inspect gh pr diff and confirm clean worktree.
-- [ ] Recheck upstream main, latest issue/PR feedback and CI timestamps/SHA.
+- [x] Recheck upstream main, latest issue/PR feedback and CI timestamps/SHA.
   Download any failed run logs to ci-logs and resolve failures if present.
   Do not enable Actions, edit workflow files, dispatch workflows or push gh-pages.
-- [ ] Hand off for review using the ready PR. The issue has no project status
+- [x] Hand off for review using the ready PR. The issue has no project status
   field or review label; no issue-level status change will be claimed. Do not merge.
 
 Implementation choices: `processes` is a JSON-compatible YAML inline array;
