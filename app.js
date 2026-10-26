@@ -6,6 +6,7 @@ const state = {
   processes: null,
   patterns: null,
   processTree: null,
+  bcreqFlow: null,
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -37,9 +38,16 @@ const nodes = {
   processCollapse: document.querySelector("#process-collapse"),
   processTree: document.querySelector("#process-tree"),
   processGrid: document.querySelector("#process-grid"),
+  bcreqRules: document.querySelector("#bcreq-rules"),
+  bcreqSteps: document.querySelector("#bcreq-steps"),
+  bcreqApprovalLead: document.querySelector("#bcreq-approval-lead"),
+  bcreqStages: document.querySelector("#bcreq-stages"),
+  bcreqReturns: document.querySelector("#bcreq-returns"),
+  bcreqImprovements: document.querySelector("#bcreq-improvements"),
   patternGrid: document.querySelector("#pattern-grid"),
   topnav: document.querySelector("#topnav"),
   themeToggle: document.querySelector("#theme-toggle"),
+  logout: document.querySelector("#site-logout"),
   modal: document.querySelector("#process-modal"),
   modalBody: document.querySelector("#modal-body"),
   modalClose: document.querySelector("#modal-close"),
@@ -158,6 +166,7 @@ function visiblePrompts() {
   const selectedProcesses = selectedValues("process");
   const selectedOperations = selectedValues("operation");
   const selectedModes = selectedValues("mode");
+  const selectedFamilies = selectedValues("family");
 
   const filtered = state.prompts.filter((prompt) => {
     if (query && !promptSearchText(prompt).includes(query)) {
@@ -173,6 +182,9 @@ function visiblePrompts() {
       return false;
     }
     if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
+      return false;
+    }
+    if (selectedFamilies.length > 0 && !selectedFamilies.includes(prompt.family)) {
       return false;
     }
     return true;
@@ -367,24 +379,51 @@ function renderFilters() {
     title: mode,
   }));
 
+  // Набор (issue #388): новые промпты BCREQ, прочие действующие, архив.
+  const families = (state.promptsData.filters.families || []).map((family) => ({
+    token: `family:${family.id}`,
+    icon: family.icon,
+    label: family.label,
+    count: family.count,
+    title: family.description,
+  }));
+
   nodes.filters.replaceChildren(
+    renderFilterGroup("Набор", families, "filter-group--families"),
     renderFilterGroup("Процессы БА", processes, "filter-group--processes"),
     renderFilterGroup("Операции", operations, "filter-group--operations"),
     renderFilterGroup("Режимы", modes, "filter-group--modes"),
   );
 }
 
+// Иконка «скопировать промпт» (issue #388): тот же формат копирования, что у
+// кнопки «Копировать» — обработчик ищет промпт по data-copy-id.
+function copyIconButton(prompt) {
+  const button = el("button", "copy-icon", "⧉");
+  button.type = "button";
+  button.dataset.copyId = prompt.id;
+  button.title = `Скопировать промпт ${prompt.file}`;
+  button.setAttribute("aria-label", `Скопировать промпт ${prompt.file}`);
+  return button;
+}
+
 function promptCard(prompt) {
   const card = el("article", "prompt-card");
   card.dataset.archived = String(prompt.archived);
+  card.dataset.family = prompt.family || "other";
 
   const head = el("div", "prompt-head");
   const titleWrap = el("div");
+  if (prompt.isNew) {
+    const badge = el("span", "new-badge", "★ BCREQ · новый");
+    badge.title = "Новый промпт набора BCREQ (issue #388)";
+    titleWrap.append(badge);
+  }
   titleWrap.append(el("h3", "prompt-title", prompt.title));
   const idLabel = el("span", "prompt-id", prompt.id);
   idLabel.title = "Уникальный токен промпта";
   titleWrap.append(idLabel);
-  head.append(titleWrap);
+  head.append(titleWrap, copyIconButton(prompt));
 
   const description = el("p", "prompt-description", prompt.descriptionLong || prompt.description);
 
@@ -599,8 +638,156 @@ function renderRoadmap() {
   );
 }
 
+// Процесс BCREQ (issue #388): ручные шаги БА с копированием промпта и
+// согласование с командой и Заказчиком. Данные — data/bcreq-flow.json.
+function bcreqField(label, value) {
+  const row = el("div", "bcreq-field");
+  row.append(el("span", "bcreq-field-label", label), el("span", "bcreq-field-value", value));
+  return row;
+}
+
+function bcreqStep(step) {
+  const item = el("li", "bcreq-step");
+  item.dataset.stage = step.stage;
+
+  const head = el("div", "bcreq-step-head");
+  const number = el("span", "bcreq-step-number", String(step.number));
+  number.setAttribute("aria-hidden", "true");
+  const titleWrap = el("div", "bcreq-step-title-wrap");
+  titleWrap.append(el("h3", "bcreq-step-title", step.step));
+  const stage = el("span", "tag", step.stage);
+  stage.dataset.kind = "stage";
+  titleWrap.append(stage);
+
+  const copy = el("button", "copy-icon", "⧉");
+  copy.type = "button";
+  copy.dataset.copyId = step.prompt.id;
+  copy.title = `Скопировать промпт ${step.prompt.file}`;
+  copy.setAttribute("aria-label", `Скопировать промпт шага ${step.step}`);
+  head.append(number, titleWrap, copy);
+
+  const prompt = el("p", "bcreq-step-prompt");
+  const link = el("a", "", step.prompt.file);
+  link.href = step.prompt.url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  prompt.append(el("span", "bcreq-field-label", "Промпт"), link);
+  if (step.params && step.params !== "—") {
+    prompt.append(el("code", "bcreq-params", step.params));
+  }
+
+  const actions = el("ol", "bcreq-actions");
+  actions.append(...step.actions.map((action) => el("li", "", action)));
+
+  item.append(
+    head,
+    prompt,
+    bcreqField("Что подготовить", step.prepare),
+    el("div", "bcreq-field-label", "Что делает БА"),
+    actions,
+    bcreqField("Результат", step.result),
+  );
+  if (step.gate && step.gate !== "—") {
+    item.append(el("p", "bcreq-gate", `⛳ ${step.gate}`));
+  }
+  return item;
+}
+
+function bcreqTable(table, headers, rows) {
+  const thead = el("thead");
+  const headRow = el("tr");
+  headRow.append(...headers.map((header) => el("th", "", header)));
+  thead.append(headRow);
+  const tbody = el("tbody");
+  for (const cells of rows) {
+    const row = el("tr");
+    row.append(...cells.map((cell) => el("td", "", cell)));
+    tbody.append(row);
+  }
+  table.replaceChildren(thead, tbody);
+}
+
+function renderBcreqFlow() {
+  const flow = state.bcreqFlow;
+  if (!flow || !nodes.bcreqSteps) {
+    return;
+  }
+  nodes.bcreqRules.replaceChildren(
+    ...flow.manual.rules.map((rule) => {
+      const item = el("li", "bcreq-rule");
+      item.append(el("strong", "", rule.id), document.createTextNode(` ${rule.text}`));
+      return item;
+    }),
+  );
+  nodes.bcreqSteps.replaceChildren(...flow.manual.steps.map(bcreqStep));
+
+  const lead = nodes.bcreqApprovalLead;
+  const basis = el("a", "", flow.approval.basis.label);
+  basis.href = flow.approval.basis.url;
+  basis.target = "_blank";
+  basis.rel = "noreferrer";
+  const contract = el("a", "", flow.approval.contract.label);
+  contract.href = flow.approval.contract.url;
+  contract.target = "_blank";
+  contract.rel = "noreferrer";
+  lead.replaceChildren(
+    document.createTextNode("Усовершенствованная версия описания процесса "),
+    basis,
+    document.createTextNode(". Стадии, гейты и возвраты — по документу «"),
+    contract,
+    document.createTextNode("». Каждый гейт проходит человек; модель готовит только отчёт по критериям."),
+  );
+
+  nodes.bcreqStages.replaceChildren(
+    ...flow.approval.stages.map((stage) => {
+      const card = el("article", "bcreq-stage");
+      const head = el("div", "bcreq-stage-head");
+      head.append(el("h3", "bcreq-stage-title", stage.stage));
+      const tags = el("div", "tag-row");
+      const phase = el("span", "tag", stage.phase);
+      phase.dataset.kind = "stage";
+      tags.append(phase);
+      if (stage.gate && stage.gate !== "—") {
+        const gate = el("span", "tag", `⛳ ${stage.gate}`);
+        gate.dataset.kind = "gate";
+        tags.append(gate);
+      }
+      head.append(tags);
+      const actions = el("ul", "bcreq-actions");
+      actions.append(...stage.actions.map((action) => el("li", "", action)));
+      card.append(
+        head,
+        bcreqField("Цель", stage.goal),
+        bcreqField("Вход", stage.input),
+        el("div", "bcreq-field-label", "Действия"),
+        actions,
+        bcreqField("Выход", stage.output),
+        bcreqField("Кто согласует", stage.approver),
+      );
+      const outcomes = stage.outcomes.filter((outcome) => outcome && outcome !== "—");
+      if (outcomes.length) {
+        const list = el("ul", "bcreq-outcomes");
+        list.append(...outcomes.map((outcome) => el("li", "", outcome)));
+        card.append(el("div", "bcreq-field-label", "Исходы"), list);
+      }
+      return card;
+    }),
+  );
+
+  bcreqTable(
+    nodes.bcreqReturns,
+    ["Причина уточнения", "Стадия возврата", "Шаг-точка входа", "Что делает БА"],
+    flow.approval.returns.map((item) => [item.reason, item.stage, item.entry, item.action]),
+  );
+  bcreqTable(
+    nodes.bcreqImprovements,
+    ["№", "В исходном описании", "Стало", "Зачем"],
+    flow.approval.improvements.map((item) => [item.id, item.before, item.after, item.why]),
+  );
+}
+
 function renderProcesses() {
-  if (!state.processes) {
+  if (!state.processes || !nodes.processGrid) {
     return;
   }
   nodes.processGrid.replaceChildren(
@@ -811,7 +998,7 @@ function processNode(process, useTree) {
 }
 
 function renderProcessTree() {
-  if (!state.processTree) {
+  if (!state.processTree || !nodes.processTree) {
     return;
   }
   const tree = state.processTree;
@@ -899,7 +1086,9 @@ function rerenderInteractive() {
 async function init() {
   initTheme();
   try {
-    const [promptsData, stats, roadmap, checks, processes, patterns, processTree] = await Promise.all([
+    // Данные каталога загружаются только после ввода пароля (site/gate.js).
+    await (window.siteGate?.ready ?? Promise.resolve());
+    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
@@ -907,6 +1096,7 @@ async function init() {
       fetch("data/processes.json").then((response) => response.json()),
       fetch("data/patterns.json").then((response) => response.json()),
       fetch("data/process-tree.json").then((response) => response.json()),
+      fetch("data/bcreq-flow.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
@@ -917,6 +1107,7 @@ async function init() {
     state.processes = processes;
     state.patterns = patterns;
     state.processTree = processTree;
+    state.bcreqFlow = bcreqFlow;
 
     renderSuggestions();
     renderMetrics();
@@ -926,6 +1117,7 @@ async function init() {
     renderChecks();
     renderRoadmap();
     renderProcesses();
+    renderBcreqFlow();
     renderProcessTree();
     renderPatterns();
     applyRoute();
@@ -1003,11 +1195,15 @@ nodes.promptGrid.addEventListener("click", async (event) => {
   }
 
   const button = event.target.closest("[data-copy-id]");
-  if (!button) {
-    return;
+  if (button) {
+    await copyPrompt(button);
   }
+});
+
+async function copyPrompt(button) {
   const prompt = state.prompts.find((item) => item.id === button.dataset.copyId);
   if (!prompt) {
+    showToast(`Промпт ${button.dataset.copyId} не найден в каталоге`);
     return;
   }
   try {
@@ -1021,9 +1217,16 @@ nodes.promptGrid.addEventListener("click", async (event) => {
   } catch (error) {
     showToast("Не удалось скопировать");
   }
+}
+
+nodes.bcreqSteps?.addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-copy-id]");
+  if (button) {
+    await copyPrompt(button);
+  }
 });
 
-nodes.processGrid.addEventListener("click", (event) => {
+nodes.processGrid?.addEventListener("click", (event) => {
   const card = event.target.closest("[data-process-id]");
   if (card) {
     openProcessModal(card.dataset.processId);
@@ -1053,6 +1256,8 @@ nodes.themeToggle.addEventListener("click", () => {
     /* localStorage может быть недоступен */
   }
 });
+
+nodes.logout?.addEventListener("click", () => window.siteGate?.lock());
 
 window.addEventListener("hashchange", applyRoute);
 
