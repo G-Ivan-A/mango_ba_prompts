@@ -25,12 +25,12 @@ https://github.com/G-Ivan-A/mango_ba_prompts/pull/396, without merging or deploy
 - [x] Record manual prompt scenario walkthroughs and trace every acceptance criterion.
 - [x] Generate site data, run make validate-fast/full, inspect all failures, then
   commit atomic steps; remove only the generated root PR placeholder.
-- [ ] Fetch/merge upstream main, inspect gh pr diff, check no accidental removals.
-- [ ] Update CHANGELOG and PR title/body, reproduction, tests, screenshots, deviations,
+- [x] Fetch/merge upstream main, inspect gh pr diff, check no accidental removals.
+- [x] Update CHANGELOG and PR title/body, reproduction, tests, screenshots, deviations,
   source findings and positive closing reference. Push only the prepared branch.
-- [ ] Check latest feedback, CI timestamps and head SHA on upstream and fork;
+- [x] Check latest feedback, CI timestamps and head SHA on upstream and fork;
   download/analyze non-passing logs if present; do not enable/dispatch Actions or deploy.
-- [ ] Mark PR ready for review; verify clean worktree and no background work remains.
+- [x] Mark PR ready for review; verify clean worktree and no background work remains.
 
 Scope interpretation: the two task-specific restrictions apply sequentially:
 Task 1 changes only BCREQ prompt additions; Task 2 changes only site implementation.
@@ -38,3 +38,9 @@ CHANGELOG is explicitly required. Minimal regression scripts and preservation-te
 updates are necessary to satisfy the requested automated/byte-level verification;
 this narrow scope adjustment is documented in the PR. No standards or existing
 site sections, password configuration, deployment workflows or external repos change.
+
+Final handoff: both implementation commits are pushed; PR 396 is ready for review.
+Upstream main is already included. Latest issue/PR conversations, inline comments
+and reviews are empty. Upstream/fork branch run lists and PR status checks are
+empty, so no remote CI success is claimed. All 66 local validators and the final
+Chromium scenario pass; all browser sessions are closed.

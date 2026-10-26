@@ -102,3 +102,19 @@ repeated. 5±2 and L1/L2 are explained as project conventions with industry cont
 The issue has no project status field or `review` label. The deliverable's review
 state is represented by PR 396 being marked ready for review. Actions/publication
 remain under the repository's existing controls; no deployment is part of this work.
+
+## Final self-review
+
+Code verified at `04ccf122`: 66 validators passed without cache; the final
+Chromium scenario passed. Snapshot hashes were independently checked against
+upstream main `7640b782`. Generated catalog differences are limited to exact
+prompt content/body, content hashes, line counts and generation time. The PR diff
+was downloaded and reviewed; repeated prompt additions were checked against the
+original-byte baselines. No existing section or feature was removed.
+
+Upstream main is already included. PR 396 is ready for review; all issue/PR
+conversation comments, inline comments and reviews were reread and remain empty.
+The branch has no Actions runs on either upstream or fork and the PR reports no
+status checks. There are no failed-run logs to download; local success is not
+represented as remote CI success. Browser processes are closed and publication
+was not performed.
