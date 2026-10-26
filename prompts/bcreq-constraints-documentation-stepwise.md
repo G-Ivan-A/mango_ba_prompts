@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: documentation
+processes: ["Дизайн решения и оценка"]
 ---
 
 # BCREQ Ш-7 (пункт 2.8). Раздел 6 «Особенности реализации и ограничения»

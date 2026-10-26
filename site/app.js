@@ -106,24 +106,6 @@ function selectedValues(kind) {
     .map((token) => token.slice(prefix.length));
 }
 
-// Каскад: при выборе процессов фильтр «Операции» сужается до операций
-// выбранных процессов. Возвращает null, если процессы не выбраны (доступны все).
-function availableOperationIds() {
-  const selectedProcesses = selectedValues("process");
-  if (selectedProcesses.length === 0) {
-    return null;
-  }
-  const ids = new Set();
-  for (const process of state.promptsData.filters.processes) {
-    if (selectedProcesses.includes(process.label)) {
-      for (const operation of process.operations) {
-        ids.add(operation);
-      }
-    }
-  }
-  return ids;
-}
-
 function promptSearchText(prompt) {
   return normalize([
     prompt.id,
@@ -161,14 +143,14 @@ function sortPrompts(prompts) {
 }
 
 // Внутри одного фильтра — ИЛИ (несколько значений), между фильтрами — И.
-function visiblePrompts() {
+function matchingPrompts(excludedKind = "") {
   const query = normalize(state.query);
-  const selectedProcesses = selectedValues("process");
-  const selectedOperations = selectedValues("operation");
+  const selectedProcesses = excludedKind === "process" ? [] : selectedValues("process");
+  const selectedOperations = excludedKind === "operation" ? [] : selectedValues("operation");
   const selectedModes = selectedValues("mode");
   const selectedFamilies = selectedValues("family");
 
-  const filtered = state.prompts.filter((prompt) => {
+  return state.prompts.filter((prompt) => {
     if (query && !promptSearchText(prompt).includes(query)) {
       return false;
     }
@@ -189,8 +171,23 @@ function visiblePrompts() {
     }
     return true;
   });
+}
 
-  return sortPrompts(filtered);
+function visiblePrompts() {
+  return sortPrompts(matchingPrompts());
+}
+
+// Ignore only this facet's selection: alternatives within it remain OR choices.
+// Query, modes, family and the opposite facet still constrain each count.
+function facetCounts(kind) {
+  const counts = {};
+  for (const prompt of matchingPrompts(kind)) {
+    const values = kind === "process" ? prompt.processes : [prompt.operation.id];
+    for (const value of values) {
+      counts[value] = (counts[value] || 0) + 1;
+    }
+  }
+  return counts;
 }
 
 function showToast(message) {
@@ -323,7 +320,8 @@ function filterButton({ token, icon, label, count, title, unavailable }) {
   button.type = "button";
   button.dataset.filterToken = token;
   button.setAttribute("aria-pressed", String(state.selectedFilters.has(token)));
-  if (unavailable) {
+  if (unavailable && !state.selectedFilters.has(token)) {
+    button.disabled = true;
     button.dataset.unavailable = "true";
     button.setAttribute("aria-disabled", "true");
   }
@@ -345,25 +343,27 @@ function renderFilterGroup(title, items, groupClass) {
 
 function renderFilters() {
   const totals = state.stats.totals;
+  const processCounts = facetCounts("process");
+  const operationCounts = facetCounts("operation");
   const processes = state.promptsData.filters.processes.map((process) => ({
     token: `process:${process.label}`,
     icon: process.emoji || process.icon,
     label: process.label,
-    count: totals.processes[process.label] || 0,
+    count: processCounts[process.label] || 0,
     title: `${process.label}: ${process.description}`,
+    unavailable: !processCounts[process.label],
   }));
 
-  const available = availableOperationIds();
   const operations = state.promptsData.filters.operations.map((operation) => ({
     token: `operation:${operation.id}`,
     icon: operation.icon,
     label: operation.label,
-    count: totals.operations[operation.id] || 0,
+    count: operationCounts[operation.id] || 0,
     title:
-      available && !available.has(operation.id)
-        ? `${operation.label}: недоступна для выбранных процессов`
+      !operationCounts[operation.id]
+        ? `${operation.label}: нет промптов при текущих фильтрах`
         : `${operation.label}: ${operation.description}`,
-    unavailable: Boolean(available) && !available.has(operation.id),
+    unavailable: !operationCounts[operation.id],
   }));
 
   const modeLabels = {
@@ -1081,6 +1081,15 @@ function initTheme() {
 function rerenderInteractive() {
   renderFilters();
   renderPrompts();
+  if (window.MANGO_DEBUG_FILTERS === true) {
+    console.debug("Catalog filters", {
+      selected: [...state.selectedFilters],
+      query: state.query,
+      processes: facetCounts("process"),
+      operations: facetCounts("operation"),
+      results: visiblePrompts().length,
+    });
+  }
 }
 
 async function init() {
@@ -1134,7 +1143,7 @@ function updateClearButtonVisibility() {
 
 nodes.search.addEventListener("input", (event) => {
   state.query = event.target.value;
-  renderPrompts();
+  rerenderInteractive();
   updateClearButtonVisibility();
 });
 
@@ -1148,7 +1157,7 @@ nodes.exportButton.addEventListener("click", exportCatalog);
 nodes.clearSearch.addEventListener("click", () => {
   state.query = "";
   nodes.search.value = "";
-  renderPrompts();
+  rerenderInteractive();
   updateClearButtonVisibility();
 });
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-24T13:17:45.306Z",
+  "generatedAt": "2026-10-26T07:04:18.703Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -33,56 +33,38 @@
   },
   "byProcess": [
     {
-      "label": "Анализ тендерных ТЗ",
-      "emoji": "📑",
-      "checks": 0,
-      "coveredPrompts": 0
-    },
-    {
-      "label": "Валидация ФТ/ТЗ",
+      "label": "Валидация второй ролью",
       "emoji": "✅",
       "checks": 0,
       "coveredPrompts": 0
     },
     {
-      "label": "Визуализация UML/BPMN",
-      "emoji": "📊",
+      "label": "Дизайн решения и оценка",
+      "emoji": "⚙️",
       "checks": 0,
       "coveredPrompts": 0
     },
     {
-      "label": "Помощь ПО/ПМ",
-      "emoji": "🤝",
+      "label": "Конституция и управление",
+      "emoji": "📜",
       "checks": 0,
       "coveredPrompts": 0
     },
     {
-      "label": "Статистика",
-      "emoji": "📈",
+      "label": "Приём и контекст",
+      "emoji": "📥",
       "checks": 0,
       "coveredPrompts": 0
     },
     {
-      "label": "Формирование ФТ/ТЗ",
+      "label": "Сценарии вне документа",
+      "emoji": "🎬",
+      "checks": 0,
+      "coveredPrompts": 0
+    },
+    {
+      "label": "Требования и предварительное согласование",
       "emoji": "📋",
-      "checks": 0,
-      "coveredPrompts": 0
-    },
-    {
-      "label": "Формирование UC/US",
-      "emoji": "🎯",
-      "checks": 0,
-      "coveredPrompts": 0
-    },
-    {
-      "label": "Impact Analysis",
-      "emoji": "🧭",
-      "checks": 0,
-      "coveredPrompts": 0
-    },
-    {
-      "label": "Risk Analysis",
-      "emoji": "🛡️",
       "checks": 0,
       "coveredPrompts": 0
     }
@@ -95,7 +77,7 @@
       "status": "draft",
       "operation": "governance",
       "processes": [
-        "Формирование ФТ/ТЗ"
+        "Конституция и управление"
       ],
       "tests": 0,
       "testFiles": [],
@@ -109,8 +91,7 @@
       "status": "draft",
       "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Risk Analysis"
+        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],
@@ -124,10 +105,7 @@
       "status": "draft",
       "operation": "understanding",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Формирование UC/US",
-        "Помощь ПО/ПМ"
+        "Приём и контекст"
       ],
       "tests": 0,
       "testFiles": [],
@@ -141,7 +119,7 @@
       "status": "draft",
       "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ"
+        "Требования и предварительное согласование"
       ],
       "tests": 0,
       "testFiles": [],
@@ -155,8 +133,7 @@
       "status": "draft",
       "operation": "risk_analysis",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Risk Analysis"
+        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],
@@ -170,7 +147,7 @@
       "status": "draft",
       "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ"
+        "Требования и предварительное согласование"
       ],
       "tests": 0,
       "testFiles": [],
@@ -184,9 +161,7 @@
       "status": "draft",
       "operation": "understanding",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Помощь ПО/ПМ"
+        "Приём и контекст"
       ],
       "tests": 0,
       "testFiles": [],
@@ -200,7 +175,7 @@
       "status": "draft",
       "operation": "documentation",
       "processes": [
-        "Формирование ФТ/ТЗ"
+        "Требования и предварительное согласование"
       ],
       "tests": 0,
       "testFiles": [],
@@ -214,8 +189,7 @@
       "status": "draft",
       "operation": "solution_design",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Impact Analysis"
+        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],
@@ -229,8 +203,7 @@
       "status": "draft",
       "operation": "impact_analysis",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Impact Analysis"
+        "Приём и контекст"
       ],
       "tests": 0,
       "testFiles": [],
@@ -244,11 +217,7 @@
       "status": "draft",
       "operation": "validation",
       "processes": [
-        "Валидация ФТ/ТЗ",
-        "Формирование ФТ/ТЗ",
-        "Анализ тендерных ТЗ",
-        "Impact Analysis",
-        "Risk Analysis"
+        "Валидация второй ролью"
       ],
       "tests": 0,
       "testFiles": [],
@@ -262,8 +231,7 @@
       "status": "draft",
       "operation": "modeling",
       "processes": [
-        "Формирование UC/US",
-        "Формирование ФТ/ТЗ"
+        "Сценарии вне документа"
       ],
       "tests": 0,
       "testFiles": [],
@@ -277,8 +245,8 @@
       "status": "draft",
       "operation": "modeling",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Формирование UC/US"
+        "Требования и предварительное согласование",
+        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],
@@ -292,9 +260,7 @@
       "status": "draft",
       "operation": "solution_design",
       "processes": [
-        "Формирование ФТ/ТЗ",
-        "Impact Analysis",
-        "Risk Analysis"
+        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],

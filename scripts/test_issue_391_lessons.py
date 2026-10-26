@@ -3,6 +3,7 @@ from pathlib import Path
 import hashlib
 import importlib.util
 import json
+import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -22,6 +23,12 @@ class LessonTests(unittest.TestCase):
                     encoded = addition[1].encode()
                     self.assertEqual(data.count(encoded), 1, 'source-traced addition must occur exactly once')
                     data = data.replace(encoded, b'', 1)
+                # Issue 393 adds catalog metadata only; keep verifying all
+                # original fields and the entire approved body byte for byte.
+                if Path(filename).name.startswith('bcreq-'):
+                    opening, metadata, body = data.split(b'---', 2)
+                    metadata = re.sub(rb'^(?:operation|processes):[^\n]*\n', b'', metadata, flags=re.M)
+                    data = b'---'.join([opening, metadata, body])
                 self.assertEqual(hashlib.sha256(data).hexdigest(), expected_hash)
 
 

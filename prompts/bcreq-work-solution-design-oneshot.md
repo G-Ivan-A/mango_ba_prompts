@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: solution_design
+processes: ["Дизайн решения и оценка"]
 ---
 
 # BCREQ стадия A-WORK (Ш-6…Ш-9). Разделы 5, 6, 7 (прогон 2) и 8 для ИИ-агента

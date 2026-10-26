@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: solution_design
+processes: ["Дизайн решения и оценка"]
 ---
 
 # BCREQ Ш-6 (пункты 2.6 + 2.7). Раздел 5 «Описание решения»: 5.1 L1 ФДР, 5.2 L2 ТС

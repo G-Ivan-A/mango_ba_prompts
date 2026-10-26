@@ -2,7 +2,7 @@
 """Local regression check for issue #99: GitHub Pages optimization.
 
 Locks the requirements of the multi-page redesign so future edits keep working:
-- ФТ-1 multi-page: top nav with five sections + client-side hash router;
+- ФТ-1 multi-page: three nav sections (issue #393) + all direct hash routes;
 - ФТ-2 card optimization: file path / hash removed, version + tests + share added;
 - ФТ-3 dashboard: per-process checks, tests coverage and activity (top-5);
 - ФТ-4 UX: search suggestions, sort, status filter, export, process modal, theme;
@@ -19,8 +19,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 
-NAV_LABELS = ["Каталог", "Дашборд", "Roadmap", "Процессы", "Паттерны"]
-NAV_PAGES = ["catalog", "dashboard", "roadmap", "processes", "patterns"]
+NAV_LABELS = ["Каталог", "Дашборд", "Процессы"]
+NAV_PAGES = ["catalog", "dashboard", "processes"]
+ROUTE_PAGES = ["catalog", "dashboard", "roadmap", "processes", "patterns"]
 
 SECRET_MARKERS = [
     "api.github.com",
@@ -56,6 +57,7 @@ def main() -> int:
     for page in NAV_PAGES:
         if f'data-nav="{page}"' not in index_html:
             errors.append(f"site/index.html: missing nav link data-nav={page!r}")
+    for page in ROUTE_PAGES:
         if f'data-page="{page}"' not in index_html and page not in {"dashboard"}:
             # dashboard page groups several sections via data-page="dashboard"
             errors.append(f"site/index.html: missing section data-page={page!r}")
@@ -134,7 +136,8 @@ def main() -> int:
         "testsPassed",
         "selectedFilters",
         "selectedValues",
-        "availableOperationIds",
+        "facetCounts",
+        "matchingPrompts",
         "sortPrompts",
         "exportCatalog",
         "search-suggestions",
@@ -208,15 +211,16 @@ def main() -> int:
                 errors.append(f"patterns.json: pattern {pattern.get('slug')} missing {field!r}")
                 break
 
-    # NFT: no hardcoded process list — the dashboard breakdown is derived from
-    # the same taxonomy that drives processes.json, so counts must align.
+    # Dashboard breakdown follows the current BCREQ catalog stages (issue 393).
+    # The legacy processes.json map remains available independently.
     if proc_list and checks.get("byProcess"):
-        process_labels = {p["label"] for p in proc_list}
+        catalog = read_json("site/data/prompts.json")
+        process_labels = {p["label"] for p in catalog["filters"]["processes"]}
         check_labels = {entry["label"] for entry in checks["byProcess"]}
-        # Every taxonomy process must appear in the per-process checks block.
+        # Every catalog stage must appear in the per-process checks block.
         missing = process_labels - check_labels
         if missing:
-            errors.append(f"checks.json: byProcess missing taxonomy processes {sorted(missing)}")
+            errors.append(f"checks.json: byProcess missing catalog stages {sorted(missing)}")
 
     # NFT: client bundle must not leak secrets / tokens.
     for marker in SECRET_MARKERS:

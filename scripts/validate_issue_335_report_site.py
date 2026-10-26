@@ -91,7 +91,8 @@ def main() -> int:
 
     errors += require(gate, GATE, "SHA-256", "localStorage", "detailed-gap-report.html")
     errors += require(index, INDEX, "run-0060/", "Отчёты")
-    errors += require(read("site/index.html"), "site/index.html", "reports/index.html")
+    # Issue 393 removes menu access; the direct report route retains its gate.
+    errors += require(index, INDEX, '<script src="../gate.js" data-base="../"></script>')
 
     entry = hashes.get("run-0060", {})
     if not re.fullmatch(r"[0-9a-f]{64}", entry.get("hash", "")):

@@ -99,8 +99,8 @@ def main() -> int:
     filters = prompts_data.get("filters", {})
     if len(filters.get("operations", [])) != 13:
         errors.append("site/data/prompts.json: expected 13 cognitive operations in filters")
-    if len(filters.get("processes", [])) != 9:
-        errors.append("site/data/prompts.json: expected 9 BA processes in filters")
+    if len(filters.get("processes", [])) != 6:
+        errors.append("site/data/prompts.json: expected 6 BCREQ stages in filters (issue #393)")
     for mode in {prompt["mode"] for prompt in prompts}:
         if mode not in filters.get("modes", []):
             errors.append(f"site/data/prompts.json: filters.modes missing {mode}")

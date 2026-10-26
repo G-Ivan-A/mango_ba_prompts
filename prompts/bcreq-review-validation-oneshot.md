@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: validation
+processes: ["Валидация второй ролью"]
 ---
 
 # BCREQ Ш-В. Валидация документа второй ролью перед гейтом Г-W

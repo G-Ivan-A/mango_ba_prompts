@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: governance
+processes: ["Конституция и управление"]
 ---
 
 # BCREQ Ш-0. Промпт 0 — конституция процесса

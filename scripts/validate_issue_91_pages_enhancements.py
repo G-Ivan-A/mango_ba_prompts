@@ -93,7 +93,8 @@ def main() -> int:
     errors += require(
         app_js,
         "site/app.js",
-        "availableOperationIds",
+        "facetCounts",
+        "matchingPrompts",
         "selectedValues",
         "renderChecks",
         "data/checks.json",
