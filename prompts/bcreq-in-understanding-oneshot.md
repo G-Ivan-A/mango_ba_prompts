@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: understanding
+processes: ["Приём и контекст"]
 ---
 
 # BCREQ стадия A-IN (Ш-1 + Ш-2). Разделы 1, 2 и ＋2.5 для ИИ-агента

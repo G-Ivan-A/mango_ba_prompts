@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: understanding
+processes: ["Приём и контекст"]
 ---
 
 # BCREQ Ш-1 (пункт 2.1). Разделы 1 «Глоссарий» и 2 «Бизнес-контекст»

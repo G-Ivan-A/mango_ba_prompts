@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: modeling
+processes: ["Сценарии вне документа"]
 ---
 
 # BCREQ Ш-С (пункты 2.12 / 2.13). Сценарии US или UC вне документа BCREQ

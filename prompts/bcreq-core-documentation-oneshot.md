@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: documentation
+processes: ["Требования и предварительное согласование"]
 ---
 
 # BCREQ стадия A-CORE (Ш-3…Ш-5). Разделы 3, 4 и 7 (прогон 1) для ИИ-агента

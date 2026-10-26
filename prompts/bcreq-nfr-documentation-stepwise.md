@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: documentation
+processes: ["Требования и предварительное согласование"]
 ---
 
 # BCREQ Ш-4 (пункт 2.5). Раздел 4 «Нефункциональные требования»

@@ -5,6 +5,8 @@ status: draft
 version: 0.1
 updated: 2026-10-24
 temperature: 0.1
+operation: risk_analysis
+processes: ["Дизайн решения и оценка"]
 ---
 
 # BCREQ Ш-9 (пункт 2.14). Раздел 8 «Дополнительные разделы»

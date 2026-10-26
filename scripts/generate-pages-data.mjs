@@ -44,6 +44,17 @@ const MODE_ICONS = {
   legacy: "⌁",
 };
 
+// Catalog stages follow the BCREQ contract, independently of the legacy
+// process taxonomy. Prompt frontmatter is the source of membership/operations.
+const BCREQ_STAGES = [
+  { id: "bcreq-in", label: "Приём и контекст", emoji: "📥", description: "Контекст, термины, границы, продукты и стейкхолдеры." },
+  { id: "bcreq-core", label: "Требования и предварительное согласование", emoji: "📋", description: "ФТ, НФТ и первый прогон UC для предварительного согласования." },
+  { id: "bcreq-work", label: "Дизайн решения и оценка", emoji: "⚙️", description: "ОРР, ограничения, второй прогон UC, риски и план приёмки." },
+  { id: "bcreq-governance", label: "Конституция и управление", emoji: "📜", description: "Правила процесса и управление состоянием документа." },
+  { id: "bcreq-review", label: "Валидация второй ролью", emoji: "✅", description: "Независимая проверка разделов документа по чек-листам." },
+  { id: "bcreq-scenarios", label: "Сценарии вне документа", emoji: "🎬", description: "Независимые US и UC по предоставленному контексту." },
+];
+
 // Палитра эмодзи для процессов БА. Назначается по позиции процесса, поэтому
 // дашборд и каталог остаются гибкими: при добавлении новых процессов (после
 // задачи «Формализовать онтологию БА») иконка подбирается автоматически.
@@ -185,7 +196,9 @@ function parseFrontmatter(content) {
     const key = match[1];
     let value = match[2].trim();
     value = value.replace(/^["']|["']$/g, "");
-    if (value === "true") {
+    if (value.startsWith("[")) {
+      frontmatter[key] = JSON.parse(value);
+    } else if (value === "true") {
       frontmatter[key] = true;
     } else if (value === "false") {
       frontmatter[key] = false;
@@ -1115,9 +1128,8 @@ async function main() {
   const patternsList = parsePatterns(patternsReadme);
   const roadmap = parseRoadmap(ecosystemMarkdown);
   const promptFiles = await listPromptFiles();
-  const operationIds = taxonomy.operations.map((operation) => operation.id);
   const operationsById = new Map(taxonomy.operations.map((operation) => [operation.id, operation]));
-  const processesByLabel = new Map(taxonomy.processes.map((process) => [process.label, process]));
+  const processesByLabel = new Map(BCREQ_STAGES.map((process) => [process.label, process]));
 
   const prompts = [];
   for (const file of promptFiles) {
@@ -1125,16 +1137,17 @@ async function main() {
     const frontmatter = parseFrontmatter(content);
     const basename = path.basename(file.relativePath);
     const metadata = promptMetadata.get(basename);
-    const operationId =
-      metadata?.operationId || operationFromFilename(basename, operationIds);
-    const operation = operationsById.get(operationId) || {
-      id: operationId,
-      label: operationId,
-      description: "",
-      icon: "•",
-    };
-    const processes = metadata?.processes || [];
-    const processDetails = processes.map((label) => processesByLabel.get(label)).filter(Boolean);
+    const operation = operationsById.get(frontmatter.operation);
+    if (!operation) {
+      throw new Error(`${file.relativePath}: frontmatter.operation must name one of the 13 taxonomy operations`);
+    }
+    const processes = frontmatter.processes;
+    if (!Array.isArray(processes) || processes.length === 0 ||
+        new Set(processes).size !== processes.length ||
+        processes.some((label) => !processesByLabel.has(label))) {
+      throw new Error(`${file.relativePath}: frontmatter.processes must list valid BCREQ stage labels`);
+    }
+    const processDetails = processes.map((label) => processesByLabel.get(label));
     const mode = metadata?.mode || modeFromFilename(basename);
     const contentHash = crypto.createHash("sha256").update(content).digest("hex");
 
@@ -1171,7 +1184,7 @@ async function main() {
       processDetails: processDetails.map((process) => ({
         id: process.id,
         label: process.label,
-        icon: process.icon,
+        icon: process.emoji,
         emoji: process.emoji,
       })),
       frontmatter,
@@ -1182,9 +1195,16 @@ async function main() {
     });
   }
 
+  const catalogProcesses = BCREQ_STAGES.map((stage) => ({
+    ...stage,
+    icon: stage.emoji,
+    operations: taxonomy.operations
+      .filter((operation) => prompts.some((prompt) => prompt.processes.includes(stage.label) && prompt.operation.id === operation.id))
+      .map((operation) => operation.id),
+  }));
   const filters = {
     operations: taxonomy.operations,
-    processes: taxonomy.processes,
+    processes: catalogProcesses,
     modes: [...new Set(prompts.map((prompt) => prompt.mode))].sort(),
     families: PROMPT_FAMILIES.map((item) => ({
       ...item,
@@ -1198,6 +1218,7 @@ async function main() {
     sourceFiles: [
       { path: SOURCE_FILES.promptsReadme, url: repoUrl(SOURCE_FILES.promptsReadme) },
       { path: SOURCE_FILES.taxonomy, url: repoUrl(SOURCE_FILES.taxonomy) },
+      { path: "docs/contracts/bcreq-stage-gates.md", url: repoUrl("docs/contracts/bcreq-stage-gates.md") },
       { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
       ...promptFiles.map((file) => ({ path: file.relativePath, url: repoUrl(file.relativePath) })),
     ],
@@ -1222,11 +1243,11 @@ async function main() {
 
   const experiments = await loadExperiments();
   const feedbackEntries = await loadFeedback();
-  const checksData = makeChecks(prompts, taxonomy.processes, experiments, feedbackEntries);
+  const checksData = makeChecks(prompts, catalogProcesses, experiments, feedbackEntries);
 
   await fs.mkdir(SITE_DATA_DIR, { recursive: true });
   await writeJson("site/data/prompts.json", promptsData);
-  await writeJson("site/data/stats.json", makeStats(prompts, taxonomy, processIndex, roadmap));
+  await writeJson("site/data/stats.json", makeStats(prompts, { ...taxonomy, processes: catalogProcesses }, processIndex, roadmap));
   await writeJson("site/data/roadmap.json", roadmapData);
   await writeJson("site/data/checks.json", checksData);
   await writeJson("site/data/process-tree.json", processTreeData);
@@ -1250,7 +1271,7 @@ async function main() {
   console.log(
     `Generated ${processesData.processes.length} process cards and ${patternsData.patterns.length} patterns`,
   );
-  console.log(`Generated ${taxonomy.operations.length} operations and ${taxonomy.processes.length} processes`);
+  console.log(`Generated ${taxonomy.operations.length} operations and ${catalogProcesses.length} BCREQ catalog stages`);
   console.log(`Generated ${roadmap.levels.length} roadmap levels and ${roadmap.gaps.length} gaps`);
   console.log(
     `Generated process tree: ${processTree.shownSubprocesses}/${processTree.totalSubprocesses} subprocesses with prompts in ${processTree.shownProcesses}/${processTree.totalProcesses} processes (useTree=${processTree.useTree})`,
