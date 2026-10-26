@@ -12,7 +12,7 @@ const state = {
   sort: "updated",
 };
 
-const PAGES = ["catalog", "dashboard", "roadmap", "processes", "patterns"];
+const PAGES = ["catalog", "standards", "dashboard", "roadmap", "processes", "patterns"];
 const THEME_KEY = "mango-theme";
 
 const nodes = {
@@ -1027,7 +1027,7 @@ function setAllProcessNodes(open) {
   }
 }
 
-// Клиентский роутер на hash: одна из пяти страниц (по умолчанию каталог).
+// Клиентский роутер на hash (по умолчанию каталог).
 function currentPage() {
   const raw = (window.location.hash || "").replace(/^#/, "");
   if (raw.startsWith("prompt=")) {
@@ -1059,6 +1059,14 @@ function applyRoute() {
     }
   }
   window.scrollTo({ top: 0, behavior: "auto" });
+  if (page === "standards") {
+    const section = new URLSearchParams(raw.split("?")[1] || "").get("section");
+    if (/^[1-8]$/.test(section || "")) {
+      const target = document.getElementById(`standard-${section}`);
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+    }
+  }
 }
 
 function applyTheme(theme) {
@@ -1269,5 +1277,15 @@ nodes.themeToggle.addEventListener("click", () => {
 nodes.logout?.addEventListener("click", () => window.siteGate?.lock());
 
 window.addEventListener("hashchange", applyRoute);
+
+// Полные канонические ссылки работают и в локальном предпросмотре без перезагрузки.
+document.addEventListener("click", (event) => {
+  const link = event.target.closest('a[data-standard-target], a[data-nav="standards"]');
+  if (!link || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+  event.preventDefault();
+  const hash = new URL(link.href).hash;
+  if (window.location.hash === hash) applyRoute();
+  else window.location.hash = hash;
+});
 
 init();
