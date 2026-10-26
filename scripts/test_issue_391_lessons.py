@@ -18,6 +18,9 @@ class LessonTests(unittest.TestCase):
         for filename, expected_hash in baseline.items():
             with self.subTest(filename=filename):
                 data = (ROOT / filename).read_bytes()
+                # Issue 395 adds a bounded retrieval/fallback block. Its own
+                # regression compares the remaining bytes against a new baseline.
+                data = re.sub(rb'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', b'', data, flags=re.S)
                 addition = changes.ADDITIONS.get(Path(filename).name)
                 if addition:
                     encoded = addition[1].encode()

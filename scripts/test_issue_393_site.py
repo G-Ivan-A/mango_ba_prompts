@@ -32,6 +32,9 @@ class StageTests(unittest.TestCase):
         self.assertEqual(set(baseline), {p.name for p in (ROOT / "prompts").glob("bcreq-*.md")})
         for filename, expected in baseline.items():
             text = (ROOT / "prompts" / filename).read_text()
+            # Preserve the original metadata/body assertion across the additive
+            # issue 395 retrieval contract, verified independently byte for byte.
+            text = re.sub(r'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', '', text, flags=re.S)
             opening, meta, body = text.split("---", 2)
             original_meta = re.sub(r"^(?:operation|processes):[^\n]*\n", "", meta, flags=re.M)
             original = "---".join([opening, original_meta, body])

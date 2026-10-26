@@ -1,0 +1,16 @@
+{
+  "prompts/bcreq-constitution-governance-oneshot.md": "f00a8ef84557f682056a8c27a2ef3cf2c384e1c5e3fcda357706c96746230e28",
+  "prompts/bcreq-constraints-documentation-stepwise.md": "6d1462df2e26b12e3ce5b1ca66c0af28302b57fd4e949c0ca983ea49bd6939ee",
+  "prompts/bcreq-context-understanding-stepwise.md": "0c6d94951f6342bd308bd63f52225cc0f7cbf74fc2ead693c344be41aeabb198",
+  "prompts/bcreq-core-documentation-oneshot.md": "e39ac7ca1dc525616ece7a152f186e31512bae451fa9a3946929785b4524f5f2",
+  "prompts/bcreq-extra-risk-analysis-stepwise.md": "5a0e7434131399349831742c8adb2dd9ce04f6fab014f00a5577c7f83c4c7ce5",
+  "prompts/bcreq-fr-documentation-stepwise.md": "075c27fa9b2b50d0a0b9253aacf16affda97274f56d661aecd2791799a805d01",
+  "prompts/bcreq-in-understanding-oneshot.md": "781eccb136082d2dfa0f2828a78e4e76c81eb06896504d9a9510ec45d204a9d8",
+  "prompts/bcreq-nfr-documentation-stepwise.md": "39d92980cc918de7805025613136ce96cb135d722b10988dc133567b28e6f8d8",
+  "prompts/bcreq-orr-solution-design-stepwise.md": "a6c0bc49ff3b530915f4c49845abaa85884a8c082bc58acd5b7ac3dbbe22ff51",
+  "prompts/bcreq-products-impact-analysis-stepwise.md": "a3a13c857117c2b6a95c60c4a9c1a2fcfe67587275ba2026c53a50dd6eb9deb2",
+  "prompts/bcreq-review-validation-oneshot.md": "725e00d7c237ac915a7dd9ee7b4a26eb0ac6191a3970f4934fc35dc7f30a7f1b",
+  "prompts/bcreq-scenarios-modeling-oneshot.md": "72441b30dc540b68adec799cde7007045505983e40750bfe4d455274788e41b6",
+  "prompts/bcreq-uc-modeling-stepwise.md": "fbb15114594b3610d2361d1d1cbd57445bb981d2bdf94a382bebd46039fff888",
+  "prompts/bcreq-work-solution-design-oneshot.md": "2afc2724e18390ab75fe061fb9a3824d319f8634bb80e975ed2a5d3ebe274de6"
+}
