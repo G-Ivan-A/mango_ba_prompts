@@ -1,0 +1,145 @@
+{
+  "method": "structural extraction plus manually specified semantic cell probes; no LLM accuracy evaluation",
+  "areas": [
+    {
+      "area": "products-applications",
+      "source_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/12_konstruktor-otchetov/1_otchety/dobavlenie_otcheta/",
+      "title": "Добавление отчета",
+      "source_sha256": "a5c042e0233221270c2b181484d559c92bca9b1e029ad052e209ba846b82ad9c",
+      "observed_at": "2026-10-28T17:02:06.190306+00:00",
+      "branch_pages": 1946,
+      "branch_http_status": {
+        "200": 1946
+      },
+      "article_text_chars": 3942,
+      "table_count": 0,
+      "image_count": 3,
+      "inline_svg_canvas_or_mermaid": 0,
+      "readability": "visual-review-required",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    },
+    {
+      "area": "integrations",
+      "source_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/statusy_kontakt_tsentra_v_interfeyse_bpmsoft/",
+      "title": "Статусы Контакт-центра в интерфейсе BPMSoft",
+      "source_sha256": "36eaf32a1a22ff104a0ea30185987405effeeb64ca142190a3f9e345f098a09e",
+      "observed_at": "2026-10-28T17:19:11.875488+00:00",
+      "branch_pages": 1503,
+      "branch_http_status": {
+        "200": 1502,
+        "301": 1
+      },
+      "article_text_chars": 333,
+      "table_count": 0,
+      "image_count": 1,
+      "inline_svg_canvas_or_mermaid": 0,
+      "readability": "visual-review-required",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    },
+    {
+      "area": "api-development",
+      "source_url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya/",
+      "title": "4.4.1.2 Смена статуса пользователя",
+      "source_sha256": "080a6126e131afd905d9f77d78e4ec44b04463a08c64a6988b28c7772ae3525d",
+      "observed_at": "2026-10-28T17:26:40.119323+00:00",
+      "branch_pages": 351,
+      "branch_http_status": {
+        "200": 351
+      },
+      "article_text_chars": 1228,
+      "table_count": 2,
+      "image_count": 0,
+      "inline_svg_canvas_or_mermaid": 9,
+      "readability": "visual-review-required",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    },
+    {
+      "area": "administration",
+      "source_url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/4_nastroyka_prav_dostupa_roli/",
+      "title": "Настройка прав доступа роли",
+      "source_sha256": "1a1ff7c0f91d1931c538eec13a1f445507afe0b8fe95dfa4120742adad0cd4cf",
+      "observed_at": "2026-10-28T17:27:47.974386+00:00",
+      "branch_pages": 80,
+      "branch_http_status": {
+        "200": 80
+      },
+      "article_text_chars": 2456,
+      "table_count": 0,
+      "image_count": 13,
+      "inline_svg_canvas_or_mermaid": 0,
+      "readability": "visual-review-required",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    },
+    {
+      "area": "contact-center",
+      "source_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety/",
+      "title": "Как контролировать пунктуальность сотрудников в отчетах WFM",
+      "source_sha256": "8007e53eabb5179cec0d33c7692cc42226fe81dae578ede01bb2a8c3813094d4",
+      "observed_at": "2026-10-28T17:03:37.317458+00:00",
+      "branch_pages": 176,
+      "branch_http_status": {
+        "200": 176
+      },
+      "article_text_chars": 3727,
+      "table_count": 0,
+      "image_count": 7,
+      "inline_svg_canvas_or_mermaid": 0,
+      "readability": "visual-review-required",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    },
+    {
+      "area": "speech-analytics",
+      "source_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/4_integratsiya_i_nastroiki/",
+      "title": "Интеграция и настройки",
+      "source_sha256": "d84c70f911db9dd8d97ae6a7bdda0edcdb55406f4aecbe79c230c1fbe22c7cac",
+      "observed_at": "2026-10-28T17:09:45.646386+00:00",
+      "branch_pages": 222,
+      "branch_http_status": {
+        "200": 222
+      },
+      "article_text_chars": 4417,
+      "table_count": 6,
+      "image_count": 0,
+      "inline_svg_canvas_or_mermaid": 0,
+      "readability": "text-and-tables",
+      "static_article_extracted": true,
+      "visual_semantics": "not-inspected; only HTML metadata; do not infer UI/diagram behavior"
+    }
+  ],
+  "probes": [
+    {
+      "source_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/4_integratsiya_i_nastroiki/",
+      "question": "Does the SIP Trunk column distinguish transcription from employee attribution?",
+      "row_column_result": {
+        "transcription": true,
+        "employee_attribution": false
+      },
+      "result": "pass: separate row/column values preserved; not an assertion about all routing paths"
+    },
+    {
+      "source_url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya/",
+      "question": "Can required=Да for status be interpreted without the description cell?",
+      "row_column_result": {
+        "required_cell": "Да",
+        "condition": "required if status_alias is absent"
+      },
+      "result": "pass: conditional description retained; required cell alone is insufficient"
+    },
+    {
+      "source_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety/",
+      "question": "Can all WFM report image semantics be recovered from HTML metadata?",
+      "result": "not-established: no visual content downloaded; targeted fallback/verified description required"
+    }
+  ],
+  "inline_visual_caveat": "SVG/canvas/mermaid presence is conservative; may include decorative controls",
+  "connector_comparison": {
+    "bpmsoft_source": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/statusy_kontakt_tsentra_v_interfeyse_bpmsoft/",
+    "amocrm_source": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/3_amocrm/14_integratsiya_s_kontakt_tsentrom_mango_office/14_1_uchet_kampaniy_ishodyaschego_obzvona_v_amocrm/",
+    "conclusion": "different connector and documented operation; no transfer of BPMSoft status claims and no negative amoCRM capability inference"
+  }
+}

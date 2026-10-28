@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.15
-updated: 2026-09-03
+version: 0.16
+updated: 2026-10-28
 temperature: 0.1
 ---
 
@@ -12,6 +12,18 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #399: продуктовая таксономия и карта портала
+
+- [Полный Product Layer и метод аудита](https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-399-c3c0e96510d8/docs/taxonomy/README.md):
+  сохранены все исторические ключи; каталог расширен до 7 Domain, 43 Capability,
+  151 Feature и 152 Atomic Function с источниками добавлений и явным changelog.
+- HTML-аудит 3918 достижимых URL, many-to-many JSON-карта с пятью метриками,
+  глубокие проверки шести областей и двух таблиц, адресный план web/runtime
+  чтения с независимостью коннекторов и явными пробелами. Медиа и PDF портала
+  не скачиваются; извлечение HTML не выдаётся за LLM-eval.
+- Обезличенная forensic-трассировка, ADR-013 и offline-регрессии. Статус issue
+  review блокирован правами GitHub; действующие промпты и runtime не изменены.
 
 ### Added — Issue #397: эволюция BCREQ и причины потерь требований
 

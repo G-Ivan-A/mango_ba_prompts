@@ -1,0 +1,1559 @@
+{
+  "source_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/cd5d6e4b72700e43ccca6c96119308ab5a6d7379/research/mango/2026-05-22-classification.md",
+  "sha256": "3c31583ef06c6279738004a60cccbaff33ab139d232503fe00c4baf27da3c616",
+  "domains": [
+    {
+      "id": "voice-ucaas",
+      "name": "Телефония и унифицированные коммуникации"
+    },
+    {
+      "id": "contact-center",
+      "name": "Контакт-центр и CCaaS"
+    },
+    {
+      "id": "digital-channels",
+      "name": "Цифровые каналы и коммуникации"
+    },
+    {
+      "id": "ai-automation",
+      "name": "AI и автоматизация"
+    },
+    {
+      "id": "analytics",
+      "name": "Маркетинговая и бизнес-аналитика"
+    },
+    {
+      "id": "hardware",
+      "name": "Оборудование"
+    },
+    {
+      "id": "security",
+      "name": "Безопасность и доверие"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "cloud-pbx",
+      "name": "Виртуальная / облачная АТС",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "extension-management",
+        "call-routing-rules",
+        "working-hours-schedule",
+        "voicemail"
+      ],
+      "atomic_functions": [
+        {
+          "id": "extension-provisioning",
+          "params": [
+            "extension_range",
+            "sip_profile"
+          ]
+        },
+        {
+          "id": "auto-attendant",
+          "params": [
+            "greeting_set",
+            "routing_tree"
+          ]
+        },
+        {
+          "id": "working-hours-routing",
+          "params": [
+            "schedule_id",
+            "holiday_calendar"
+          ]
+        },
+        {
+          "id": "voicemail-to-email",
+          "params": [
+            "mailbox_id",
+            "delivery_format"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model",
+        "procurement-format"
+      ],
+      "mango_status": "Есть",
+      "row": 1
+    },
+    {
+      "id": "sip-connectivity",
+      "name": "IP-телефония и SIP trunk",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "sip-trunking",
+        "codec-negotiation",
+        "failover-routing"
+      ],
+      "atomic_functions": [
+        {
+          "id": "sip-trunk-registration",
+          "params": [
+            "trunk_id",
+            "auth_credentials"
+          ]
+        },
+        {
+          "id": "codec-selection",
+          "params": [
+            "codec_priority",
+            "dtmf_mode"
+          ]
+        },
+        {
+          "id": "trunk-failover",
+          "params": [
+            "backup_trunk_id",
+            "retry_interval"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "contract-duration"
+      ],
+      "mango_status": "Есть",
+      "row": 2
+    },
+    {
+      "id": "number-management",
+      "name": "Номерная ёмкость",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "virtual-numbers",
+        "toll-free-8800",
+        "mobile-numbers",
+        "number-porting"
+      ],
+      "atomic_functions": [
+        {
+          "id": "number-assignment",
+          "params": [
+            "number_type",
+            "region_code"
+          ]
+        },
+        {
+          "id": "number-porting",
+          "params": [
+            "donor_operator",
+            "port_window"
+          ]
+        },
+        {
+          "id": "tollfree-routing",
+          "params": [
+            "number_8800",
+            "destination_map"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "certification-registry"
+      ],
+      "mango_status": "Есть",
+      "row": 3
+    },
+    {
+      "id": "ivr-voice-menu",
+      "name": "Голосовое меню IVR и автоинформирование",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "ivr-scenarios",
+        "auto-secretary",
+        "voice-announcement"
+      ],
+      "atomic_functions": [
+        {
+          "id": "ivr-menu-navigation",
+          "params": [
+            "menu_tree",
+            "timeout_action"
+          ]
+        },
+        {
+          "id": "auto-secretary-greeting",
+          "params": [
+            "greeting_id",
+            "dtmf_map"
+          ]
+        },
+        {
+          "id": "service-availability-routing",
+          "params": [
+            "queue_id",
+            "overflow_target"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 4
+    },
+    {
+      "id": "call-recording",
+      "name": "Запись разговоров и журналирование",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "call-recording",
+        "call-log",
+        "usage-statistics"
+      ],
+      "atomic_functions": [
+        {
+          "id": "call-recording-capture",
+          "params": [
+            "retention_period",
+            "storage_target"
+          ]
+        },
+        {
+          "id": "call-log-export",
+          "params": [
+            "date_range",
+            "export_format"
+          ]
+        },
+        {
+          "id": "recording-access-control",
+          "params": [
+            "role_id",
+            "masking_policy"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "confidentiality-terms",
+        "certification-registry"
+      ],
+      "mango_status": "Есть",
+      "row": 6
+    },
+    {
+      "id": "callback",
+      "name": "Обратный звонок с сайта",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "web-callback-widget",
+        "consent-capture",
+        "callback-scheduling"
+      ],
+      "atomic_functions": [
+        {
+          "id": "callback-request-intake",
+          "params": [
+            "widget_id",
+            "consent_flag"
+          ]
+        },
+        {
+          "id": "callback-scheduling",
+          "params": [
+            "max_attempts",
+            "time_window"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 7
+    },
+    {
+      "id": "unified-communications",
+      "name": "Корпоративный мессенджер и softphone — Mango Talker",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "softphone",
+        "corporate-messaging",
+        "presence-status"
+      ],
+      "atomic_functions": [
+        {
+          "id": "softphone-call",
+          "params": [
+            "device_id",
+            "sip_account"
+          ]
+        },
+        {
+          "id": "corporate-chat",
+          "params": [
+            "channel_id",
+            "retention_period"
+          ]
+        },
+        {
+          "id": "presence-update",
+          "params": [
+            "status_code",
+            "visibility_scope"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "tariff-model"
+      ],
+      "mango_status": "Есть",
+      "row": 8
+    },
+    {
+      "id": "video-conferencing",
+      "name": "Видеоконференции",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "video-meetings",
+        "meeting-recording",
+        "screen-sharing"
+      ],
+      "atomic_functions": [
+        {
+          "id": "meeting-host",
+          "params": [
+            "max_participants",
+            "meeting_id"
+          ]
+        },
+        {
+          "id": "meeting-recording",
+          "params": [
+            "retention_period",
+            "consent_flag"
+          ]
+        },
+        {
+          "id": "screen-share",
+          "params": [
+            "session_id",
+            "quality_profile"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "tariff-model"
+      ],
+      "mango_status": "Есть",
+      "row": 9
+    },
+    {
+      "id": "number-branding",
+      "name": "Маркировка номера, «карусельные номера», защита дозваниваемости",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "number-labeling",
+        "carousel-numbers",
+        "reachability-protection",
+        "anti-spam-marking"
+      ],
+      "atomic_functions": [
+        {
+          "id": "caller-id-labeling",
+          "params": [
+            "brand_label",
+            "aggregator_id"
+          ]
+        },
+        {
+          "id": "carousel-number-rotation",
+          "params": [
+            "number_pool",
+            "rotation_policy"
+          ]
+        },
+        {
+          "id": "reachability-monitoring",
+          "params": [
+            "spam_score_threshold",
+            "alert_channel"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "certification-registry",
+        "procurement-format"
+      ],
+      "mango_status": "Не выявлено",
+      "row": 38
+    },
+    {
+      "id": "voice-sms-broadcast",
+      "name": "Голосовые SMS / автоинформирование через голосовой канал",
+      "domain_ids": [
+        "voice-ucaas"
+      ],
+      "features": [
+        "voice-broadcast",
+        "auto-notification",
+        "delivery-confirmation"
+      ],
+      "atomic_functions": [
+        {
+          "id": "voice-message-broadcast",
+          "params": [
+            "contact_list",
+            "voice_template"
+          ]
+        },
+        {
+          "id": "delivery-confirmation",
+          "params": [
+            "dtmf_confirm",
+            "retry_policy"
+          ]
+        },
+        {
+          "id": "consent-filter",
+          "params": [
+            "opt_in_list",
+            "advertising_flag"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Частично",
+      "row": 39
+    },
+    {
+      "id": "call-routing",
+      "name": "Распределение звонков, очереди, маршрутизация",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "skill-based-routing",
+        "queue-management",
+        "overflow-rules"
+      ],
+      "atomic_functions": [
+        {
+          "id": "skill-based-routing",
+          "params": [
+            "skill_group",
+            "priority_weight"
+          ]
+        },
+        {
+          "id": "queue-management",
+          "params": [
+            "max_wait_time",
+            "sla_threshold"
+          ]
+        },
+        {
+          "id": "overflow-routing",
+          "params": [
+            "overflow_target",
+            "abandon_threshold"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 5
+    },
+    {
+      "id": "omnichannel-contact-center",
+      "name": "Омниканальный контакт-центр / CCaaS",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "inbound-handling",
+        "omnichannel-desktop",
+        "channel-blending"
+      ],
+      "atomic_functions": [
+        {
+          "id": "interaction-routing",
+          "params": [
+            "channel_type",
+            "routing_profile"
+          ]
+        },
+        {
+          "id": "unified-agent-desktop",
+          "params": [
+            "layout_id",
+            "channel_set"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model",
+        "procurement-format"
+      ],
+      "mango_status": "Есть",
+      "row": 11
+    },
+    {
+      "id": "agent-workspace",
+      "name": "Входящие обращения и рабочее место оператора",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "agent-desktop",
+        "customer-card",
+        "interaction-history"
+      ],
+      "atomic_functions": [
+        {
+          "id": "interaction-handling",
+          "params": [
+            "interaction_id",
+            "disposition_code"
+          ]
+        },
+        {
+          "id": "customer-card-popup",
+          "params": [
+            "crm_lookup_key",
+            "screen_pop_layout"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 12
+    },
+    {
+      "id": "outbound-calling",
+      "name": "Исходящий обзвон и кампании",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "campaign-management",
+        "dialing-modes",
+        "realtime-analytics",
+        "historical-reports"
+      ],
+      "atomic_functions": [
+        {
+          "id": "predictive-dialing",
+          "params": [
+            "dial_ratio",
+            "abandon_rate_limit"
+          ]
+        },
+        {
+          "id": "callback-scheduling",
+          "params": [
+            "max_attempts",
+            "time_window"
+          ]
+        },
+        {
+          "id": "disposition-code-assignment",
+          "params": [
+            "code_list",
+            "auto_tagging"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "procurement-format"
+      ],
+      "mango_status": "Есть",
+      "row": 13
+    },
+    {
+      "id": "quality-management",
+      "name": "Управление качеством операторов / QM",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "scorecards",
+        "call-sampling",
+        "evaluation-workflow"
+      ],
+      "atomic_functions": [
+        {
+          "id": "scorecard-evaluation",
+          "params": [
+            "checklist_id",
+            "sampling_rate"
+          ]
+        },
+        {
+          "id": "evaluation-appeal",
+          "params": [
+            "case_id",
+            "reviewer_role"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 20
+    },
+    {
+      "id": "workforce-management",
+      "name": "WFM / управление рабочими ресурсами",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "shift-scheduling",
+        "load-forecasting",
+        "adherence-tracking"
+      ],
+      "atomic_functions": [
+        {
+          "id": "load-forecasting",
+          "params": [
+            "history_window",
+            "forecast_horizon"
+          ]
+        },
+        {
+          "id": "shift-scheduling",
+          "params": [
+            "agent_pool",
+            "coverage_target"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 21
+    },
+    {
+      "id": "knowledge-base",
+      "name": "База знаний и скрипты операторов",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "knowledge-articles",
+        "agent-scripts",
+        "version-control"
+      ],
+      "atomic_functions": [
+        {
+          "id": "article-lifecycle",
+          "params": [
+            "article_id",
+            "review_status"
+          ]
+        },
+        {
+          "id": "script-guidance",
+          "params": [
+            "scenario_id",
+            "branching_rules"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 22
+    },
+    {
+      "id": "deal-management",
+      "name": "Управление сделками / лёгкий CRM-сценарий",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "deal-pipeline",
+        "contact-management",
+        "communication-history"
+      ],
+      "atomic_functions": [
+        {
+          "id": "deal-pipeline-tracking",
+          "params": [
+            "pipeline_id",
+            "stage_map"
+          ]
+        },
+        {
+          "id": "communication-logging",
+          "params": [
+            "contact_id",
+            "channel_type"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 23
+    },
+    {
+      "id": "crm-platform",
+      "name": "Полноценная CRM как самостоятельная платформа",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "crm-core",
+        "sales-automation"
+      ],
+      "atomic_functions": [
+        {
+          "id": "crm-record-management",
+          "params": [
+            "entity_type",
+            "field_schema"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "contract-duration"
+      ],
+      "mango_status": "Частично",
+      "row": 24
+    },
+    {
+      "id": "self-service-portal",
+      "name": "Self-Service портал клиента / личный кабинет заказчика",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "customer-portal",
+        "self-onboarding",
+        "recording-access",
+        "service-catalog-selection"
+      ],
+      "atomic_functions": [
+        {
+          "id": "self-service-login",
+          "params": [
+            "account_id",
+            "auth_method"
+          ]
+        },
+        {
+          "id": "service-self-provisioning",
+          "params": [
+            "catalog_item",
+            "approval_flow"
+          ]
+        },
+        {
+          "id": "self-service-recording-access",
+          "params": [
+            "masking_policy",
+            "retention_period"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms",
+        "certification-registry"
+      ],
+      "mango_status": "Частично",
+      "row": 40
+    },
+    {
+      "id": "operator-mobile-app",
+      "name": "Мобильное приложение оператора CCaaS",
+      "domain_ids": [
+        "contact-center"
+      ],
+      "features": [
+        "mobile-agent-desktop",
+        "push-notifications",
+        "offline-mode"
+      ],
+      "atomic_functions": [
+        {
+          "id": "mobile-interaction-handling",
+          "params": [
+            "device_id",
+            "channel_set"
+          ]
+        },
+        {
+          "id": "push-notification-delivery",
+          "params": [
+            "notification_type",
+            "priority"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "tariff-model"
+      ],
+      "mango_status": "Частично",
+      "row": 41
+    },
+    {
+      "id": "sms-messaging",
+      "name": "SMS-рассылки",
+      "domain_ids": [
+        "digital-channels"
+      ],
+      "features": [
+        "bulk-sms",
+        "transactional-sms",
+        "opt-out-management"
+      ],
+      "atomic_functions": [
+        {
+          "id": "bulk-sms-dispatch",
+          "params": [
+            "contact_list",
+            "message_template"
+          ]
+        },
+        {
+          "id": "opt-out-handling",
+          "params": [
+            "stop_keyword",
+            "suppression_list"
+          ]
+        },
+        {
+          "id": "advertising-consent-check",
+          "params": [
+            "consent_source",
+            "advertising_flag"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 10
+    },
+    {
+      "id": "omnichannel-messaging",
+      "name": "Омниканальные коммуникации: чат, мессенджеры, соцсети, email",
+      "domain_ids": [
+        "digital-channels"
+      ],
+      "features": [
+        "messenger-integration",
+        "social-channels",
+        "email-channel",
+        "unified-inbox"
+      ],
+      "atomic_functions": [
+        {
+          "id": "channel-ingestion",
+          "params": [
+            "channel_type",
+            "account_credentials"
+          ]
+        },
+        {
+          "id": "unified-inbox-routing",
+          "params": [
+            "inbox_id",
+            "routing_rules"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 14
+    },
+    {
+      "id": "website-chat",
+      "name": "Чат для сайта",
+      "domain_ids": [
+        "digital-channels"
+      ],
+      "features": [
+        "chat-widget",
+        "proactive-invitations",
+        "visitor-tracking"
+      ],
+      "atomic_functions": [
+        {
+          "id": "chat-widget-embed",
+          "params": [
+            "widget_id",
+            "trigger_rules"
+          ]
+        },
+        {
+          "id": "visitor-data-capture",
+          "params": [
+            "consent_flag",
+            "field_set"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 15
+    },
+    {
+      "id": "messenger-marketing",
+      "name": "Мессенджер-маркетинг",
+      "domain_ids": [
+        "digital-channels"
+      ],
+      "features": [
+        "campaign-templates",
+        "broadcast-lists",
+        "opt-in-management"
+      ],
+      "atomic_functions": [
+        {
+          "id": "messenger-campaign-dispatch",
+          "params": [
+            "template_id",
+            "audience_segment"
+          ]
+        },
+        {
+          "id": "messenger-optin-management",
+          "params": [
+            "optin_source",
+            "suppression_list"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 33
+    },
+    {
+      "id": "chatbot",
+      "name": "Чат-бот",
+      "domain_ids": [
+        "ai-automation"
+      ],
+      "features": [
+        "dialog-scenarios",
+        "intent-recognition",
+        "agent-handoff"
+      ],
+      "atomic_functions": [
+        {
+          "id": "intent-classification",
+          "params": [
+            "model_id",
+            "confidence_threshold"
+          ]
+        },
+        {
+          "id": "agent-handoff",
+          "params": [
+            "fallback_queue",
+            "context_payload"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "certification-registry"
+      ],
+      "mango_status": "Есть",
+      "row": 16
+    },
+    {
+      "id": "voice-bot",
+      "name": "Голосовой робот / voice bot",
+      "domain_ids": [
+        "ai-automation"
+      ],
+      "features": [
+        "speech-recognition",
+        "dialog-orchestration",
+        "tts-synthesis"
+      ],
+      "atomic_functions": [
+        {
+          "id": "speech-to-text",
+          "params": [
+            "language_model",
+            "confidence_threshold"
+          ]
+        },
+        {
+          "id": "voice-dialog-flow",
+          "params": [
+            "scenario_id",
+            "fallback_action"
+          ]
+        },
+        {
+          "id": "text-to-speech",
+          "params": [
+            "voice_profile",
+            "prosody_settings"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "certification-registry"
+      ],
+      "mango_status": "Есть",
+      "row": 17
+    },
+    {
+      "id": "process-robot",
+      "name": "Робот-администратор",
+      "domain_ids": [
+        "ai-automation"
+      ],
+      "features": [
+        "process-automation",
+        "action-orchestration",
+        "audit-logging"
+      ],
+      "atomic_functions": [
+        {
+          "id": "automated-action-execution",
+          "params": [
+            "process_id",
+            "permission_scope"
+          ]
+        },
+        {
+          "id": "action-audit-logging",
+          "params": [
+            "log_target",
+            "event_filter"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 18
+    },
+    {
+      "id": "speech-analytics",
+      "name": "Речевая аналитика / conversation intelligence",
+      "domain_ids": [
+        "ai-automation"
+      ],
+      "features": [
+        "transcription",
+        "sentiment-analysis",
+        "keyword-detection"
+      ],
+      "atomic_functions": [
+        {
+          "id": "call-transcription",
+          "params": [
+            "language_model",
+            "diarization_flag"
+          ]
+        },
+        {
+          "id": "keyword-spotting",
+          "params": [
+            "keyword_set",
+            "alert_rule"
+          ]
+        },
+        {
+          "id": "sentiment-scoring",
+          "params": [
+            "model_id",
+            "score_scale"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 19
+    },
+    {
+      "id": "call-tracking",
+      "name": "Коллтрекинг",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "dynamic-number-pool",
+        "source-attribution",
+        "call-analytics"
+      ],
+      "atomic_functions": [
+        {
+          "id": "dynamic-number-substitution",
+          "params": [
+            "number_pool",
+            "session_ttl"
+          ]
+        },
+        {
+          "id": "source-attribution",
+          "params": [
+            "utm_map",
+            "attribution_window"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 27
+    },
+    {
+      "id": "end-to-end-analytics",
+      "name": "Сквозная аналитика и ROMI",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "revenue-attribution",
+        "romi-calculation",
+        "funnel-analysis"
+      ],
+      "atomic_functions": [
+        {
+          "id": "romi-calculation",
+          "params": [
+            "cost_source",
+            "revenue_source"
+          ]
+        },
+        {
+          "id": "funnel-tracking",
+          "params": [
+            "stage_map",
+            "conversion_window"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 28
+    },
+    {
+      "id": "multichannel-analytics",
+      "name": "Мультиканальная аналитика и атрибуция",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "channel-attribution",
+        "deduplication",
+        "conversion-tracking"
+      ],
+      "atomic_functions": [
+        {
+          "id": "attribution-modeling",
+          "params": [
+            "model_type",
+            "lookback_window"
+          ]
+        },
+        {
+          "id": "lead-deduplication",
+          "params": [
+            "match_keys",
+            "merge_policy"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 29
+    },
+    {
+      "id": "email-tracking",
+      "name": "Email-трекинг",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "open-tracking",
+        "click-tracking",
+        "unsubscribe-management"
+      ],
+      "atomic_functions": [
+        {
+          "id": "email-event-tracking",
+          "params": [
+            "tracking_pixel",
+            "event_type"
+          ]
+        },
+        {
+          "id": "unsubscribe-handling",
+          "params": [
+            "list_id",
+            "suppression_policy"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 30
+    },
+    {
+      "id": "product-analytics",
+      "name": "Товарная аналитика / ecommerce analytics",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "demand-analysis",
+        "sku-performance",
+        "data-quality"
+      ],
+      "atomic_functions": [
+        {
+          "id": "sku-performance-analysis",
+          "params": [
+            "catalog_source",
+            "metric_set"
+          ]
+        },
+        {
+          "id": "data-quality-check",
+          "params": [
+            "quality_rules",
+            "threshold"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 31
+    },
+    {
+      "id": "competitor-analysis",
+      "name": "Анализ конкурентов",
+      "domain_ids": [
+        "analytics"
+      ],
+      "features": [
+        "market-monitoring",
+        "benchmark-reports"
+      ],
+      "atomic_functions": [
+        {
+          "id": "competitor-data-collection",
+          "params": [
+            "source_list",
+            "refresh_interval"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model"
+      ],
+      "mango_status": "Есть",
+      "row": 32
+    },
+    {
+      "id": "telephony-equipment",
+      "name": "SIP-телефоны, гарнитуры и устройства",
+      "domain_ids": [
+        "hardware"
+      ],
+      "features": [
+        "sip-phones",
+        "headsets",
+        "accessories"
+      ],
+      "atomic_functions": [
+        {
+          "id": "device-provisioning",
+          "params": [
+            "device_model",
+            "firmware_version"
+          ]
+        },
+        {
+          "id": "device-compatibility-check",
+          "params": [
+            "sip_profile",
+            "certification_id"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "procurement-format",
+        "certification-registry",
+        "contract-duration"
+      ],
+      "mango_status": "Вне SaaS-ядра",
+      "row": 37
+    },
+    {
+      "id": "information-security",
+      "name": "Информационная безопасность",
+      "domain_ids": [
+        "security"
+      ],
+      "features": [
+        "access-control",
+        "audit-logging",
+        "data-classification",
+        "incident-management"
+      ],
+      "atomic_functions": [
+        {
+          "id": "role-based-access-control",
+          "params": [
+            "role_id",
+            "permission_scope"
+          ]
+        },
+        {
+          "id": "security-audit-logging",
+          "params": [
+            "log_target",
+            "retention_period"
+          ]
+        },
+        {
+          "id": "data-classification",
+          "params": [
+            "sensitivity_label",
+            "handling_policy"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "certification-registry",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть (сквозной слой)",
+      "row": 36
+    },
+    {
+      "id": "platform-integration",
+      "name": "Интеграции с CRM, 1C, LDAP, marketplace",
+      "domain_ids": [],
+      "features": [
+        "crm-connectors",
+        "erp-connectors",
+        "directory-sync",
+        "marketplace-apps"
+      ],
+      "atomic_functions": [
+        {
+          "id": "crm-bidirectional-sync",
+          "params": [
+            "connector_id",
+            "sync_interval"
+          ]
+        },
+        {
+          "id": "directory-sync",
+          "params": [
+            "ldap_endpoint",
+            "attribute_map"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "confidentiality-terms"
+      ],
+      "mango_status": "Есть",
+      "row": 25
+    },
+    {
+      "id": "open-api",
+      "name": "Open API, webhook, API для УВК/CRM",
+      "domain_ids": [],
+      "features": [
+        "rest-api",
+        "webhooks",
+        "event-streaming"
+      ],
+      "atomic_functions": [
+        {
+          "id": "webhook-subscription",
+          "params": [
+            "event_type",
+            "callback_url"
+          ]
+        },
+        {
+          "id": "api-rate-limiting",
+          "params": [
+            "rate_limit",
+            "quota_window"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "certification-registry"
+      ],
+      "mango_status": "Есть",
+      "row": 26
+    },
+    {
+      "id": "cpaas",
+      "name": "CPaaS / программируемые голосовые и messaging API",
+      "domain_ids": [],
+      "features": [
+        "programmable-voice",
+        "programmable-messaging",
+        "number-api"
+      ],
+      "atomic_functions": [
+        {
+          "id": "programmable-voice-call",
+          "params": [
+            "from_number",
+            "callflow_id"
+          ]
+        },
+        {
+          "id": "programmable-message-send",
+          "params": [
+            "channel_type",
+            "message_payload"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "tariff-model",
+        "license-model"
+      ],
+      "mango_status": "Частично",
+      "row": 34
+    },
+    {
+      "id": "service-desk",
+      "name": "Service desk / ITSM helpdesk",
+      "domain_ids": [],
+      "features": [
+        "ticketing",
+        "incident-management",
+        "request-fulfilment"
+      ],
+      "atomic_functions": [
+        {
+          "id": "ticket-lifecycle",
+          "params": [
+            "ticket_type",
+            "sla_policy"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "license-model",
+        "contract-duration"
+      ],
+      "mango_status": "Частично",
+      "row": 35
+    },
+    {
+      "id": "vendor-support-services",
+      "name": "Услуги поддержки и развития CRM/SaaS как vendor-service",
+      "domain_ids": [],
+      "features": [
+        "application-maintenance",
+        "crm-development",
+        "professional-services"
+      ],
+      "atomic_functions": [
+        {
+          "id": "application-maintenance",
+          "params": [
+            "sla_tier",
+            "support_window"
+          ]
+        },
+        {
+          "id": "crm-customization",
+          "params": [
+            "scope_spec",
+            "change_request_id"
+          ]
+        }
+      ],
+      "related_commercial_fields": [
+        "contract-duration",
+        "license-model",
+        "procurement-format",
+        "certification-registry"
+      ],
+      "mango_status": "Не выявлено",
+      "row": 42
+    }
+  ]
+}

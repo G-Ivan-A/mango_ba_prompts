@@ -1,0 +1,14 @@
+{
+  "nodes_by_level": {"Domain": 7, "Capability": 43, "Feature": 151, "Atomic Function": 152},
+  "pages": 3918,
+  "curated_functions": 54,
+  "candidate_pages": 3433,
+  "unmapped_pages": 485,
+  "audit_sha256": "96a367092f892c0f8ba76053a1b99dfdb8650ab8693eef3bb2f32aacd6f0272f",
+  "http_status": {"200": 3913, "301": 5},
+  "readability": {"unreadable-or-unrecognized-template": 41, "text": 1401, "visual-review-required": 2320, "text-and-tables": 156},
+  "pages_with_tables": 552,
+  "pages_with_images": 2079,
+  "table_count": 813,
+  "image_count": 8998
+}
