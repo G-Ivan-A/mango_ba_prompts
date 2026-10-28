@@ -1,0 +1,56 @@
+{
+  "method": "Strip copy marker/frontmatter/outer whitespace; normalize CRLF only. Compare full bodies at four revisions; not a deployment reconstruction.",
+  "sampled_revisions": [
+    "f27dbd4052883f5a8a2599a2c8442035ff9079f8",
+    "29390d5efecea01867a8572b5ee0b0ec3d031b26",
+    "7d92ec41b85938bd55ed9276c25ff7f382362db1",
+    "1148a6907579d32ff39f8bf4b4e20bf17858af17"
+  ],
+  "pasted_prompts": [
+    {
+      "turn": 1,
+      "message_id": "e734ecec-8ffd-4f47-b846-3e965a47edc1",
+      "file": "bcreq-constitution-governance-oneshot.md",
+      "normalized_chars": 22010,
+      "normalized_sha256": "7a501bdaf812014f7de98f9ce8fdd1afec25a8535ddcc0e7349a13be2dd0a0a7",
+      "has_issue_395_fallback": true,
+      "exact_body_matches": [
+        "1148a6907579d32ff39f8bf4b4e20bf17858af17"
+      ]
+    },
+    {
+      "turn": 5,
+      "message_id": "cf55cf85-dc2c-49c8-ad0a-f74730a50c52",
+      "file": "bcreq-context-understanding-stepwise.md",
+      "normalized_chars": 5234,
+      "normalized_sha256": "5cd8b68ee9f232837c9e1cbe28c8aa4ec2aed54047bba05e7cd4b142ea23e377",
+      "has_issue_395_fallback": false,
+      "exact_body_matches": [
+        "29390d5efecea01867a8572b5ee0b0ec3d031b26",
+        "7d92ec41b85938bd55ed9276c25ff7f382362db1"
+      ]
+    },
+    {
+      "turn": 15,
+      "message_id": "b22956cb-0bfc-483d-bbfd-fea1fc7f2e3a",
+      "file": "bcreq-products-impact-analysis-stepwise.md",
+      "normalized_chars": 5648,
+      "normalized_sha256": "03f7dd1f9e642d0d06a63c6919f1ab2e4cbb8e29b580d155ae91ed47bb19337b",
+      "has_issue_395_fallback": false,
+      "exact_body_matches": []
+    },
+    {
+      "turn": 77,
+      "message_id": "2d37fcb0-e8e5-47de-ae7a-b960983f4c5c",
+      "file": "bcreq-fr-documentation-stepwise.md",
+      "normalized_chars": 4360,
+      "normalized_sha256": "e621ae9195cfde12ac80121d76a3678534fc0ed0e9897db951b79069eda13d1f",
+      "has_issue_395_fallback": false,
+      "exact_body_matches": [
+        "f27dbd4052883f5a8a2599a2c8442035ff9079f8",
+        "29390d5efecea01867a8572b5ee0b0ec3d031b26",
+        "7d92ec41b85938bd55ed9276c25ff7f382362db1"
+      ]
+    }
+  ]
+}
