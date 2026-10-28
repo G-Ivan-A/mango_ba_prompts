@@ -116,6 +116,12 @@ class RoutingTests(unittest.TestCase):
         self.assertIn('cc-desktop', result['coverage_gaps'])
         self.assertIn('connector:amocrm', result['coverage_gaps'])
 
+    def test_unknown_query_requires_fallback_instead_of_silent_success(self):
+        result = load_route().select_pages(self.pages(), 'undocumented-product-xyz')
+        self.assertEqual(result['pages'], [])
+        self.assertTrue(result['fallback_required'])
+        self.assertIn('no-locators-found', result['coverage_gaps'])
+
     def test_status_entity_and_multiple_explicit_products_survive_ranking(self):
         rows = self.pages()
         rows += [dict(rows[0], url='https://www.mango-office.ru/support/api-wrong/',

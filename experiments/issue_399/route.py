@@ -101,6 +101,8 @@ def select_pages(records, query, limit=12, capabilities=(), connector=None):
               'reading_reason': 'requested-product-coverage-or-metadata-match',
               'next_action': 'read-article' if row.get('is_llm_readable') else 'targeted-runtime-or-visual-review'}
              for score, _, row, terms in chosen]
+    if not pages:
+        gaps.append('no-locators-found')
     return {'query': query, 'evidence_status': 'locators-only', 'pages': pages, 'coverage_gaps': gaps,
             'requested_limit': limit, 'coverage_minimum': minimum,
             'scope_gate': 'BA selects adjacent runtime classes before reading; no automatic requirement expansion',
