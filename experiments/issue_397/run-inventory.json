@@ -1,0 +1,67 @@
+{
+  "runs": [
+    {
+      "run": "RUN-0073",
+      "status": "draft",
+      "sets": 6,
+      "cases": 51,
+      "success_criteria": 22,
+      "confirmed_by": {
+        "user": 35,
+        "none": 16
+      },
+      "kinds": {
+        "negative": 39,
+        "positive": 12
+      }
+    },
+    {
+      "run": "RUN-0074",
+      "status": "draft",
+      "sets": 5,
+      "cases": 46,
+      "success_criteria": 28,
+      "confirmed_by": {
+        "user": 30,
+        "none": 16
+      },
+      "kinds": {
+        "negative": 37,
+        "positive": 9
+      }
+    },
+    {
+      "run": "RUN-0075",
+      "status": "draft",
+      "sets": 6,
+      "cases": 53,
+      "success_criteria": 22,
+      "confirmed_by": {
+        "user": 31,
+        "none": 22
+      },
+      "kinds": {
+        "negative": 42,
+        "positive": 11
+      }
+    },
+    {
+      "run": "RUN-0076",
+      "status": "draft",
+      "sets": 5,
+      "cases": 50,
+      "success_criteria": 65,
+      "confirmed_by": {
+        "user": 36,
+        "none": 14
+      },
+      "kinds": {
+        "negative": 40,
+        "positive": 10
+      }
+    }
+  ],
+  "total_cases": 200,
+  "total_success_criteria": 137,
+  "meaning": "confirmed_by records source-case confirmation, not approval of the entire draft golden set."
+}

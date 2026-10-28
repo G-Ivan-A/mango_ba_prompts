@@ -1,0 +1,297 @@
+{
+  "scope": "Annotated deterministic counterfactuals; no LLM run, no product fact verification, no active policy changed.",
+  "cases": [
+    {
+      "id": "constitution-omitted",
+      "basis": [
+        "X004",
+        "S861"
+      ],
+      "hypotheses": [
+        "H1",
+        "H2"
+      ],
+      "expected": "block_release",
+      "actual": "block_release"
+    },
+    {
+      "id": "full-bundle-control",
+      "basis": [
+        "synthetic-positive"
+      ],
+      "hypotheses": [
+        "H1",
+        "H2",
+        "H5"
+      ],
+      "expected": "continue",
+      "actual": "continue"
+    },
+    {
+      "id": "mixed-bundle",
+      "basis": [
+        "prompt-probe:turns-1-5-77",
+        "S943"
+      ],
+      "hypotheses": [
+        "H5"
+      ],
+      "expected": "block_release",
+      "actual": "block_release"
+    },
+    {
+      "id": "missing-required-behavior-check",
+      "basis": [
+        "S829",
+        "S951",
+        "synthetic-negative"
+      ],
+      "hypotheses": [
+        "H2"
+      ],
+      "expected": "block_release",
+      "actual": "block_release"
+    },
+    {
+      "id": "local-rule-promoted",
+      "basis": [
+        "S649",
+        "S743"
+      ],
+      "hypotheses": [
+        "H4"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "task-sequence-replaced",
+      "basis": [
+        "S951",
+        "S955",
+        "S965"
+      ],
+      "hypotheses": [
+        "H4"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "questions-merged",
+      "basis": [
+        "X095",
+        "X096",
+        "X097"
+      ],
+      "hypotheses": [
+        "H2",
+        "H4"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "seconds-changed-to-minutes",
+      "basis": [
+        "X096",
+        "X099"
+      ],
+      "hypotheses": [
+        "H2",
+        "H4"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "explicit-boundary-exception",
+      "basis": [
+        "X107"
+      ],
+      "hypotheses": [
+        "H2",
+        "H4"
+      ],
+      "expected": "continue",
+      "actual": "continue"
+    },
+    {
+      "id": "ordinary-clarification",
+      "basis": [
+        "S767",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "continue",
+      "actual": "continue"
+    },
+    {
+      "id": "api-only-and-wrong-owner",
+      "basis": [
+        "X055",
+        "X056",
+        "X057",
+        "X058",
+        "S647",
+        "S871",
+        "S941"
+      ],
+      "hypotheses": [
+        "H3"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "url-without-reading",
+      "basis": [
+        "X004",
+        "S937"
+      ],
+      "hypotheses": [
+        "H3"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "read-source-does-not-entail-claim",
+      "basis": [
+        "X070",
+        "X071",
+        "synthetic-negative"
+      ],
+      "hypotheses": [
+        "H2",
+        "H3"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "covered-products-wrong-question-owner",
+      "basis": [
+        "X056",
+        "X057",
+        "synthetic-negative"
+      ],
+      "hypotheses": [
+        "H3"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "irrelevant-extra-products-not-required",
+      "basis": [
+        "S787",
+        "S941"
+      ],
+      "hypotheses": [
+        "H3"
+      ],
+      "expected": "continue",
+      "actual": "continue"
+    },
+    {
+      "id": "sycophantic-no-appeal",
+      "basis": [
+        "X103",
+        "X104",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "one-confirmation",
+      "basis": [
+        "synthetic-control",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "two-actions-one-message",
+      "basis": [
+        "synthetic-control",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "confirmations-before-appeal",
+      "basis": [
+        "synthetic-control",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "two-explicit-confirmations",
+      "basis": [
+        "synthetic-control",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "execute_override",
+      "actual": "execute_override"
+    },
+    {
+      "id": "stale-revision",
+      "basis": [
+        "synthetic-control",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "hard-ban-not-overridable",
+      "basis": [
+        "synthetic-negative",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    },
+    {
+      "id": "new-revision-resets-confirmations",
+      "basis": [
+        "synthetic-negative",
+        "S967"
+      ],
+      "hypotheses": [
+        "H1"
+      ],
+      "expected": "block_disputed",
+      "actual": "block_disputed"
+    }
+  ]
+}
