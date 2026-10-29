@@ -1,6 +1,6 @@
 ---
-status: draft
-version: 0.1
+status: review
+version: 1.0
 updated: 2026-10-29
 temperature: 0.1
 ---
@@ -28,15 +28,15 @@ https://github.com/G-Ivan-A/mango_ba_prompts/pull/402.
    version-related and unverifiable evidence. Apply the issue's 5% decision rule.
 9. [x] Publish JSON/JSONL and Markdown artifacts, extraction-tool assessment,
    combined-source principles and an explicit acceptance/evidence matrix.
-10. [ ] Run focused tests and make validate-fast; run make validate-full before
+10. [x] Run focused tests and make validate-fast; run make validate-full before
     commits/pushes. Commit useful atomic steps; keep history forward-moving.
-11. [ ] Fetch and merge upstream main; review full PR diff and absolute links,
+11. [x] Fetch and merge upstream main; review full PR diff and absolute links,
     check prior features remain and generated outputs reproduce.
-12. [ ] Push only issue-401-be292b53210f; update existing PR title/body, retain
+12. [x] Push only issue-401-be292b53210f; update existing PR title/body, retain
     Fixes G-Ivan-A/mango_ba_prompts#401, include reproduction and verification.
-13. [ ] List upstream/fork CI runs with timestamps and head SHA; download failures
+13. [x] List upstream/fork CI runs with timestamps and head SHA; download failures
     into ignored ci-logs, diagnose actual log lines, fix and verify fresh runs.
-14. [ ] Mark PR 402 ready; verify clean working tree, final requirements matrix
+14. [x] Mark PR 402 ready; verify clean working tree, final requirements matrix
     and review state. Never present blocked acceptance criteria as complete.
 
 Interpretation: the ban on downloading files from websites governs the audited
@@ -50,6 +50,14 @@ exceed 5% (25.310734% / 25.087658% lexical difference); image-only semantics
 and role-matrix equivalence remain explicitly unverified findings of the audit.
 All seven derived comparison/provenance artifacts reproduce byte-for-byte from
 recorded inputs. Sixteen offline tests check extraction and published evidence.
+
+Local fast/full validation passes all 69 validators. The complete PR diff was
+downloaded and reviewed; code/protocol changes were read separately from the
+generated JSON/JSONL ledger, whose hashes, scope and operation balances are
+checked by regressions. No existing product features or prompt text were removed.
+Upstream main is included. Governance and Pages workflow runs passed on the
+review commit; both workflows are rerun against the final head before handoff.
+Final run links and exact head SHA are recorded in the PR description.
 
 Report and full acceptance matrix:
 https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-401-be292b53210f/docs/taxonomy/documentation-audit.md

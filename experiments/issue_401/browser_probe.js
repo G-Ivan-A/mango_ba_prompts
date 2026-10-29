@@ -22,6 +22,9 @@ async (page) => {
   } finally {
     await context.close();
   }
+  // Apply the same asset boundary to the origin page used for the CORS probe.
+  await page.route('**/*', route => ['image', 'media', 'font', 'stylesheet', 'script']
+    .includes(route.request().resourceType()) ? route.abort() : route.continue());
   await page.goto('https://www.mango-office.ru/support/1_nachat-zdes/', {waitUntil: 'domcontentloaded'});
   const cross_origin_fetch = await page.evaluate(async () => {
     try {
