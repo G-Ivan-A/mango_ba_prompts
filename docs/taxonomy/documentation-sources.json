@@ -1,0 +1,20 @@
+{
+  "issue_url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/401",
+  "parent_issue_url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/399",
+  "pdf": {
+    "source_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf",
+    "version": "1.26.42",
+    "sha256": "733dfe8b98e46599076ef5ee71b0d6131eda3ed3528bd73f1488bde1335e6ba7",
+    "bytes": 14043212,
+    "pages": 590,
+    "extractor": "PyMuPDF 1.28.2"
+  },
+  "historical_context": {
+    "source_url": "https://github.com/user-attachments/files/34130447/4.txt",
+    "sha256": "ce5d4db9e36c85937943060f11dd8ff28589a859b1cb9088cb81dd4372ff2152",
+    "use": "Context only; not a product fact source; text is not republished."
+  },
+  "baseline": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/7feb9be2/docs/taxonomy/portal-map.jsonl",
+  "download_boundary": "Only the explicit GitHub reference inputs are downloaded. Mango-hosted PDF, images, downloads, support, archives and obsolete versions are excluded before body reads.",
+  "public_text_policy": "Publish hashes, metadata, locators and token operations. Extracted full article/PDF text and inputs remain in ignored local cache/raw directories."
+}

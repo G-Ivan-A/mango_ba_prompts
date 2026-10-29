@@ -1,0 +1,192 @@
+{
+  "method": "Static article extraction, table structure and image metadata; browser evidence is separate. No LLM accuracy evaluation or image download.",
+  "areas": [
+    {
+      "area": "products-applications",
+      "source_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/12_konstruktor-otchetov/1_otchety/dobavlenie_otcheta.html",
+      "title": "Добавление отчета",
+      "observed_at": "2026-10-29T12:26:12.883940+00:00",
+      "source_sha256": "a02bcff5cf6f27f4797174c8089e5dc37ae7800070b4a1de92eee26e67199282",
+      "http_status": 200,
+      "article_text_chars": 3942,
+      "headings": [
+        {
+          "text": "Настройка доступа сотрудников к отчетам Настройка доступа сотрудников к отчетам",
+          "anchor": "nastrojka-dostupa-sotrudnikov-k-otchetam"
+        }
+      ],
+      "tables": [],
+      "image_count": 3,
+      "readability": "visual-review-required"
+    },
+    {
+      "area": "integrations",
+      "source_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/statusy_kontakt_tsentra_v_interfeyse_bpmsoft.html",
+      "title": "Статусы Контакт-центра в интерфейсе BPMSoft",
+      "observed_at": "2026-10-29T12:33:52.095688+00:00",
+      "source_sha256": "45de5ff238cdfdaaba614d2f4f745a8a1e4519508ddeb05de2c45e548c58ef57",
+      "http_status": 200,
+      "article_text_chars": 333,
+      "headings": [],
+      "tables": [],
+      "image_count": 1,
+      "readability": "visual-review-required"
+    },
+    {
+      "area": "api-development",
+      "source_url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya.html",
+      "title": "4.4.1.2 Смена статуса пользователя",
+      "observed_at": "2026-10-29T12:35:06.964905+00:00",
+      "source_sha256": "f80fdc5d15f9a428f5edfb3305ef22201c78478c596674a3d10268bbb8702f1b",
+      "http_status": 200,
+      "article_text_chars": 1228,
+      "headings": [],
+      "tables": [
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 4
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 2
+        }
+      ],
+      "image_count": 0,
+      "readability": "visual-review-required"
+    },
+    {
+      "area": "administration",
+      "source_url": "https://docs.mango-office.ru/ru/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/4_nastroyka_prav_dostupa_roli/index.html",
+      "title": "Настройка прав доступа роли",
+      "observed_at": "2026-10-29T12:35:24.401182+00:00",
+      "source_sha256": "aafa479c6e5377244ac27b2887cbabdbcc9b263be72e6456442c4540e818b8dd",
+      "http_status": 200,
+      "article_text_chars": 2456,
+      "headings": [],
+      "tables": [],
+      "image_count": 13,
+      "readability": "visual-review-required"
+    },
+    {
+      "area": "contact-center",
+      "source_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety.html",
+      "title": "Как контролировать пунктуальность сотрудников в отчетах WFM",
+      "observed_at": "2026-10-29T12:26:59.455262+00:00",
+      "source_sha256": "72e1a604866e785aee2f40b871ac88c450f028b5123dd9ddb88e36f090be2923",
+      "http_status": 200,
+      "article_text_chars": 3727,
+      "headings": [
+        {
+          "text": "Настройки критериев пунктуальности Настройки критериев пунктуальности",
+          "anchor": "nastrojki-kriteriev-punktualnosti"
+        },
+        {
+          "text": "Настройка штрафов за нарушение пунктуальности Настройка штрафов за нарушение пунктуальности",
+          "anchor": "nastrojka-shtrafov-za-narushenie-punktualnosti"
+        }
+      ],
+      "tables": [],
+      "image_count": 7,
+      "readability": "visual-review-required"
+    },
+    {
+      "area": "speech-analytics",
+      "source_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/4_integratsiya_i_nastroiki/index.html",
+      "title": "Интеграция и настройки",
+      "observed_at": "2026-10-29T12:30:32.096449+00:00",
+      "source_sha256": "e19b2fe0cf7878508c4f1d05c28b0964d7078c9e4a3066ac9877ef827d2c1dd8",
+      "http_status": 200,
+      "article_text_chars": 4417,
+      "headings": [
+        {
+          "text": "1. Пассивный SIP 1. Пассивный SIP",
+          "anchor": "1-passivnyj-sip"
+        },
+        {
+          "text": "2. Активный SIP 2. Активный SIP",
+          "anchor": "2-aktivnyj-sip"
+        },
+        {
+          "text": "3. DID MANGO 3. DID MANGO",
+          "anchor": "3-did-mango"
+        },
+        {
+          "text": "4. SIP-UAC 4. SIP-UAC",
+          "anchor": "4-sip-uac"
+        },
+        {
+          "text": "5. SIP Trunk 5. SIP Trunk",
+          "anchor": "5-sip-trunk"
+        }
+      ],
+      "tables": [
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        },
+        {
+          "has_headers": true,
+          "merged_cells": false,
+          "row_count": 3
+        }
+      ],
+      "image_count": 0,
+      "readability": "text-and-tables"
+    }
+  ],
+  "start_work": {
+    "source_url": "https://docs.mango-office.ru/ru/1_nachat-zdes/index.html#nachat-rabotu",
+    "headings": [
+      {
+        "text": "Скачать и установить Скачать и установить",
+        "anchor": "skachat-i-ustanovit"
+      },
+      {
+        "text": "Начать работу Начать работу",
+        "anchor": "nachat-rabotu"
+      }
+    ],
+    "http_status": 200,
+    "finding": "Start work is an in-page heading, not a separately reachable page."
+  },
+  "totals": {
+    "pages": 3533,
+    "readability": {
+      "text": 1280,
+      "visual-review-required": 2105,
+      "text-and-tables": 148
+    },
+    "llm_readable": 1428,
+    "visual_context": 2253,
+    "tables": 781,
+    "images": 7983
+  },
+  "observation_range": {
+    "first": "2026-10-29T12:26:05.493224+00:00",
+    "last": "2026-10-29T12:35:42.066181+00:00"
+  },
+  "visual_limit": "Image/SVG/canvas metadata may include decorative controls. Screenshot, diagram and image-only semantics remain unverified."
+}

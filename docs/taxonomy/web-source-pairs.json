@@ -1,0 +1,214 @@
+{
+  "route_pairs": 3526,
+  "identical_extracted_text": 3504,
+  "text_mismatches": [
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/3_kontakt-tsentr/1_bystrui_start/razdel14.html",
+      "portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/1_bystrui_start/razdel14/",
+      "docs_text_sha256": "99415dbd1dc5a032e946d432fbe42242dadf6a4bb698cfb2cf814427b20a8ec0",
+      "portal_text_sha256": "be10275b6c24d80a3951409396d039edd5d2e7df676c03588c7f1e86f0ad48d3",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/2_podklyuchenie_dinamicheskogo_kolltrekinga/5_nastroyka_roley_kolltrekinga/index.html",
+      "portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/2_podklyuchenie_dinamicheskogo_kolltrekinga/5_nastroyka_roley_kolltrekinga/",
+      "docs_text_sha256": "13927461a80f140dd4959d8f44339d324e34112dab67e934242fc7d2d76ca922",
+      "portal_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/5_skvoznaya_analitika/6_nastroykaystrukturyyotcheta/3_dobavlenieyvytablitsuyskvoznoyyanalitikiypolzovatelskogoypokazatelya/index.html",
+      "portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/5_skvoznaya_analitika/6_nastroykaystrukturyyotcheta/3_dobavlenieyvytablitsuyskvoznoyyanalitikiypolzovatelskogoypokazatelya/",
+      "docs_text_sha256": "bdfebdce04ab47581535e6ab5c5d69dd0a188925233c2903cabbfb66c2ea6cde",
+      "portal_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/7_mango-talker/5_userguide_windows_mtalker_ch1_working/7_kak_sdelat_videokonferentsiyu/3_7_kak_prisoedinitsya_po_ssylke_k_videokonferentsii/1_kak_prisoedinitsya_v_kachestve_gostya_bez_avtorizatsii_v_mtalker/esli_u_vas_net_akkaunta_mtalker.html",
+      "portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/7_mango-talker/5_userguide_windows_mtalker_ch1_working/7_kak_sdelat_videokonferentsiyu/3_7_kak_prisoedinitsya_po_ssylke_k_videokonferentsii/1_kak_prisoedinitsya_v_kachestve_gostya_bez_avtorizatsii_v_mtalker/esli_u_vas_net_akkaunta_mtalker/",
+      "docs_text_sha256": "c8b98f8a365dd77f7e577a411ab5f6bd8324921a565fd8bc5544414de344e607",
+      "portal_text_sha256": "d969a90a020c716e591077f5db1d5e52137619c26be6fbd2b6783ff32bfa51c7",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/chto_budet_esli_v_sheme_raspredeleniya_ne_vklyuchen_parametr_ozhidat_okonchaniya_ili_otsutstvuet_zvukovoe_privetstvie.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/chto_budet_esli_v_sheme_raspredeleniya_ne_vklyuchen_parametr_ozhidat_okonchaniya_ili_otsutstvuet_zvukovoe_privetstvie/",
+      "docs_text_sha256": "aa97d9de58bd4ceef8f6f7e7ba5312071932650928958f7c2d60d384cd100f8f",
+      "portal_text_sha256": "992081906862967b35c336998be33a9413d226f83a75caffeaa6256519eae839",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/primery_nastroyki_pravil_umnogo_algoritma_raspredeleniya.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/primery_nastroyki_pravil_umnogo_algoritma_raspredeleniya/",
+      "docs_text_sha256": "eef0d0a813d3bd8c17a2c4665d07ee1a6d677df3c3ce121d199795e4ebc3c5bb",
+      "portal_text_sha256": "992081906862967b35c336998be33a9413d226f83a75caffeaa6256519eae839",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/znachenie_pereadresovyvat_na_otvetstvennogo_i_pereadresovyvat_dalee_na_nomer_esli_net_otveta.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/03_2_3_obrabotka_vhodyaschih_zvonkov/6_umnye_algoritmy_raspredeleniya_vhodyaschih_vyzovov/1_kak_nastroit_raspredelenie_zvonkov_v_prilozhenii_integratsii/znachenie_pereadresovyvat_na_otvetstvennogo_i_pereadresovyvat_dalee_na_nomer_esli_net_otveta/",
+      "docs_text_sha256": "be498cc6ddfca8e97b5ac0583e23e1c93c14476fb3db416368fa9845b19b0ff8",
+      "portal_text_sha256": "992081906862967b35c336998be33a9413d226f83a75caffeaa6256519eae839",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/1_otpravka_dannyh_o_lide_iz_kontakt_tsentra_mango_office/2_peredavaemye_dannye/kontakt.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/1_otpravka_dannyh_o_lide_iz_kontakt_tsentra_mango_office/2_peredavaemye_dannye/kontakt/",
+      "docs_text_sha256": "99b7680c42e0eb6fb1302c6d0d4eb074b823307fee0b297928cdf2eb76d5a7c9",
+      "portal_text_sha256": "fc52a74012a92b1440477e1783f456c8335486a744b7aeef80964115bfa81797",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/1_otpravka_dannyh_o_lide_iz_kontakt_tsentra_mango_office/2_peredavaemye_dannye/sdelka.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/1_otpravka_dannyh_o_lide_iz_kontakt_tsentra_mango_office/2_peredavaemye_dannye/sdelka/",
+      "docs_text_sha256": "de49b188220484e2d991d4cd971210f315abe5360c01ab0017133ecb87c1a93e",
+      "portal_text_sha256": "fc52a74012a92b1440477e1783f456c8335486a744b7aeef80964115bfa81797",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/2_kak_nastroit_peredachu_dialoga_s_klientom_chata_iz_kontakt_tsentra_mango_office_v_istoriyu_kommunikatsiy_bitriks24/index.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/2_kak_nastroit_peredachu_dialoga_s_klientom_chata_iz_kontakt_tsentra_mango_office_v_istoriyu_kommunikatsiy_bitriks24/",
+      "docs_text_sha256": "c32459b900b666e9723e0af17be235a81a14bee921fbae5cf7c1e1d1e151d5a6",
+      "portal_text_sha256": "6a455c2dc8cc5ae5c3e8f551d0668912fc354bca0f7341f78bb507a9237e91f7",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/2_kak_nastroit_peredachu_dialoga_s_klientom_chata_iz_kontakt_tsentra_mango_office_v_istoriyu_kommunikatsiy_bitriks24/poryadok_deystviy.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/2_kak_nastroit_peredachu_dialoga_s_klientom_chata_iz_kontakt_tsentra_mango_office_v_istoriyu_kommunikatsiy_bitriks24/poryadok_deystviy/",
+      "docs_text_sha256": "7632a177fbccd9939b00115184ffacc65d2069bbb58be0fca01e7431d9abdc70",
+      "portal_text_sha256": "6a455c2dc8cc5ae5c3e8f551d0668912fc354bca0f7341f78bb507a9237e91f7",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/index.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/",
+      "docs_text_sha256": "8ea6f80eb52321416e6ac05b3ea26fd23fe039d281ae241057fe556444cf5d49",
+      "portal_text_sha256": "e8edb30fdf43a524f65a22b1f3303bd3738d6b68527d52b824261e42d2fc7639",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/kak_dobavit_vebhuki_integratsii_v_robota_v_bitrik24.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/kak_dobavit_vebhuki_integratsii_v_robota_v_bitrik24/",
+      "docs_text_sha256": "f05781be42a09e899a7e34c8552d0f4f081c462bb4d3201265d71195494934c2",
+      "portal_text_sha256": "e8edb30fdf43a524f65a22b1f3303bd3738d6b68527d52b824261e42d2fc7639",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/kak_nastroit_integratsiyu_v_kontakt_tsentrom_mango_office_cherez_vebhuki.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/kak_nastroit_integratsiyu_v_kontakt_tsentrom_mango_office_cherez_vebhuki/",
+      "docs_text_sha256": "2afd4676e5182ec258ef626fff21ab26f1febaaecaf70d2beb5b8fcb4b34bbc5",
+      "portal_text_sha256": "e8edb30fdf43a524f65a22b1f3303bd3738d6b68527d52b824261e42d2fc7639",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/ogranicheniya.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/ogranicheniya/",
+      "docs_text_sha256": "afbbbab1dbddfac7b46ac81904b1f64248036f674a8c4ec8e3b7790d8790c63d",
+      "portal_text_sha256": "e8edb30fdf43a524f65a22b1f3303bd3738d6b68527d52b824261e42d2fc7639",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/ponyatie_tehnicheskiy_task_v_kampanii_ishodyaschego_obzvona.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/16_bitrix24/2_nastroyki_prilozheniya_integratsii_s_bitriks24/10_22_integratsiya_s_kontakt_tsentrom_mango_office/4_avtopostanovka_zadaniya_v_kampaniyu_ishodyaschego_obzvona_pri_izmenenii_v_voronke_prodazh_integratsiya_s_kontakt_tsentrom_mango_office_cherez_vebhuki/ponyatie_tehnicheskiy_task_v_kampanii_ishodyaschego_obzvona/",
+      "docs_text_sha256": "be3f4eea9622d98b13c70f27558919f1c87e852c1a746dabc140dec9cbd9b998",
+      "portal_text_sha256": "e8edb30fdf43a524f65a22b1f3303bd3738d6b68527d52b824261e42d2fc7639",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/obrabotka_polzovatelskih_poley_custom.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/obrabotka_polzovatelskih_poley_custom/",
+      "docs_text_sha256": "d40ba07e3883f017b788c33d291408f19ebc945f062feec6daedc91cbc222778",
+      "portal_text_sha256": "c4f268d6270159b61eced530d1b6f57fce74be628a8405747ab75d61703c0547",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/ogranicheniya.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/ogranicheniya/",
+      "docs_text_sha256": "4a3e4df2428c37410966d3bcedb9cbc22f99a08852fb98804f2fbb9eb6d025d9",
+      "portal_text_sha256": "2c4cbb9f929fc1a8692ad663a501fcbf43c3b5b456f1b55f57a812bba1a7ad00",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/primery_vebhuka.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/17_vebhuki-mango-office/6_integratsiya_s_kontakt_tsentrom_mango_office_dobavlenie_zadaniya_v_kampaniyu_ishodyaschego_obzvona/03_1_3_kak_peredavat_vebhuk_na_dobavlenie_zadaniya_v_kampaniyu_io/primery_vebhuka/",
+      "docs_text_sha256": "6b3b29721f00776068b03609cc9016f8eb59b5f01b95eeee5420183c9867190d",
+      "portal_text_sha256": "2c4cbb9f929fc1a8692ad663a501fcbf43c3b5b456f1b55f57a812bba1a7ad00",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/2_albato/2_kak_nastroit_integratsiyu_virtualnoy_ats_s_drugimi_biznes_sistemami_cherez_albato/07_shag_5_kak_sozdat_podklyuchenie_albato_k_virtualnoy_ats_i_k_drugim_biznes_sistemam/podklyuchenie_k_virtualnoy_ats.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/2_albato/2_kak_nastroit_integratsiyu_virtualnoy_ats_s_drugimi_biznes_sistemami_cherez_albato/07_shag_5_kak_sozdat_podklyuchenie_albato_k_virtualnoy_ats_i_k_drugim_biznes_sistemam/podklyuchenie_k_virtualnoy_ats/",
+      "docs_text_sha256": "ed2a087dbf2ff4cd194b252bb9963cfae23d9984365387faecbdcc731e74234d",
+      "portal_text_sha256": "de0437b0c4ec6e61aa8477341d750c79f4ed7bfdea9c14da7b64069e1faaabeb",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/3_amocrm/2_nastroyka_integratsii/10_21_integratsiya_virtualnoy_ats_odnovremenno_s_neskolkimi_domenami_amocrm/1_kak_nastroit_integratsiyu_virtualnoy_ats_s_neskolkimi_domenami_amocrm/variant_1_vruchnuyu.html",
+      "portal_url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/3_amocrm/2_nastroyka_integratsii/10_21_integratsiya_virtualnoy_ats_odnovremenno_s_neskolkimi_domenami_amocrm/1_kak_nastroit_integratsiyu_virtualnoy_ats_s_neskolkimi_domenami_amocrm/variant_1_vruchnuyu/",
+      "docs_text_sha256": "0cc7037f439042cc8d8dd397da6c4c7f668c0fe66b530192e67f3d0cfd10f6b0",
+      "portal_text_sha256": "7528bb7b96310b6771a8a56102e2431d929b9c4a0689f76265fd7af57610d132",
+      "docs_status": 200,
+      "portal_status": 200
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/index.html",
+      "portal_url": "https://www.mango-office.ru/support/",
+      "docs_text_sha256": "55e41766cf3c9e909e4d53d6926311fc4063514074d0720870424d410720559b",
+      "portal_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "docs_status": 200,
+      "portal_status": 200
+    }
+  ],
+  "not_in_permitted_portal399_map": [
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_5_tegirovanie_razgovorov.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_5_tegirovanie_razgovorov/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_6_tekstovye_kommunikatsii.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_6_tekstovye_kommunikatsii/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_8_zayavki.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_8_zayavki/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/52_vkhodyashchiy_vebkhuk/index.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/52_vkhodyashchiy_vebkhuk/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/9_roboty-i-ai-roboty/0_stranica_avtorizacii.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/9_roboty-i-ai-roboty/0_stranica_avtorizacii/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/1_api-mango-office/5_opisanie_metodov_api_virtualnoy_ats_mango/5_5_api_zapisi_razgovorov_rechevaya_analitika/3_5_10_poluchenie_statusa_fayla_zapisi_razgovora.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/5_opisanie_metodov_api_virtualnoy_ats_mango/5_5_api_zapisi_razgovorov_rechevaya_analitika/3_5_10_poluchenie_statusa_fayla_zapisi_razgovora/"
+    },
+    {
+      "docs_url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/1_api-mango-office/5_opisanie_metodov_api_virtualnoy_ats_mango/5_5_api_zapisi_razgovorov_rechevaya_analitika/3_5_11_poluchenie_zapisi_razgovora_s_proverkoy_prav.html",
+      "expected_portal_url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/5_opisanie_metodov_api_virtualnoy_ats_mango/5_5_api_zapisi_razgovorov_rechevaya_analitika/3_5_11_poluchenie_zapisi_razgovora_s_proverkoy_prav/"
+    }
+  ],
+  "method": "Transform /ru/path/index.html to /support/path/ and /ru/path/page.html to /support/path/page/; compare extracted text SHA-256. Unpaired legacy URLs are not equated.",
+  "limit": "Single-time observation, not evidence of independent publishing pipelines or long-term uptime."
+}

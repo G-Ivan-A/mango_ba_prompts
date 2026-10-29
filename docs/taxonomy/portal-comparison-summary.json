@@ -1,0 +1,1480 @@
+{
+  "baseline_map_url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/7feb9be2/docs/taxonomy/portal-map.jsonl",
+  "baseline_map_sha256": "5acd9315bbdcd6a850848041c568b3d7365afed248cb14417e2e97061d28314b",
+  "baseline_rows": 3918,
+  "refreshed_rows": 3562,
+  "baseline_html_hash_matches": 2,
+  "errors": [
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/1C/integratsiya_virtualnoy_ats_i_1C/",
+      "http_status": 301,
+      "error": "<urlopen error excluded redirect: https://www.mango-office.ru/upload/medialibrary/718/Integratsiya_virtualnoy_ats_Pryamaya_integraciya_s_1C.pdf>",
+      "observed_at": "2026-10-29T12:44:03.965449+00:00",
+      "source_sha256": null,
+      "baseline_sha256": null,
+      "matches_baseline_html": false,
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/monitoring/",
+      "http_status": 301,
+      "error": "<urlopen error excluded redirect: https://www.mango-office.ru/monitoring-dostupnosti-servisov/>",
+      "observed_at": "2026-10-29T12:44:06.625200+00:00",
+      "source_sha256": null,
+      "baseline_sha256": null,
+      "matches_baseline_html": false,
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/",
+      "http_status": 301,
+      "error": "<urlopen error excluded redirect: https://www.mango-office.ru/support/7_podderzhka/7_softfony-i-mango-talker/2_mango-talker/>",
+      "observed_at": "2026-10-29T12:44:06.833310+00:00",
+      "source_sha256": null,
+      "baseline_sha256": null,
+      "matches_baseline_html": false,
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/mt_windows/",
+      "http_status": 301,
+      "error": "<urlopen error excluded redirect: https://www.mango-office.ru/support/7_podderzhka/7_softfony-i-mango-talker/2_mango-talker/>",
+      "observed_at": "2026-10-29T12:44:07.167524+00:00",
+      "source_sha256": null,
+      "baseline_sha256": null,
+      "matches_baseline_html": false,
+      "text_chars": 0,
+      "text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/7_creatio/1_nachalo_raboty_s_integratsiey/2_shag_3_podklyuchenie_prilozheniya_integratsii_v_crm_creatio/2_sposob_2_ustanovka_prilozheniya_iz_fayla/poryadok_ustanovki_prilozheniya_iz_arhiva/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/1_pryamaya_integratsiya_s_1s_upravlenie_torgovley/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/1_pryamaya_integratsiya_s_1s_upravlenie_torgovley/1_oor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/1_pryamaya_integratsiya_s_1s_upravlenie_torgovley/2_nacsiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/1_pryamaya_integratsiya_s_1s_upravlenie_torgovley/3_obrabotkayzvonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/10_1C/1_pryamaya_integratsiya_s_1s_upravlenie_torgovley/4_otchety/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/1_oa/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/1_podgotovkay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/2_shagy4yypalbato/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/3_shagy1yyyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/4_shagy5yykesysistemam/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/5_shagy2yykektor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/6_shagy6yymoy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/7_shagy3yyusalker/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/2_kakyezyalbato/8_shagy7yykiy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/3_kakysvymami/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/4_sluzherteratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/4_sluzherteratsii/1_uprawsedalbato/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/4_sluzherteratsii/2_izmewert/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/11_albato/4_sluzherteratsii/3_izmeneeniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/10_zapis_razgovorov_amo/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/11_dopolnitelnyeynastroykiyintegratsiiyyobzor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/1_nasiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/1_nasiey/1_kavyamocrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/1_nasiey/2_kakhchenno/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/1_nasiey/3_kakypnok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/1_nasiey/4_kakynatsiyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/2_kakyok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/3_integratsiya_kolltrekinga_s_amo_crm_1/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/4_integratsiyaysyadr/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/5_integratsiyaysykontakty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/6_integratsiyasrechevoianalitikoi/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/7_postzvonkovayayotsenkaykachestva/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/8_spisokyobzvona/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/12_amocrm/9_analitika_amo/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/1_obshchee_itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/2_shag1_itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/3_shagy2itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/4_shagy3itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/5_shagy4itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/6_raznye4itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/1_nactsiey/7_kakyproverit4itg_creatio/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/2_kakzovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/3_prki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/4_istov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/13_creatio/5_zaov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/1_obshchee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/2_2ynastroykayintegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/3_kakyproveritystatusyintegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/4_dalneyshieydeystviya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/5_5ykakyizmenitynastroykiyintegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/14_integratsiyayvirtualnoyyatsyiygoogleykontaktyyygsuiteyyworkspacey/6_6ykakyotklyuchityintegratsiyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/1_ngratsiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/2_doatsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/3_kakyzovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/4_propushchennyeyzvonki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/5_istoriyayvyzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/15_elma365/6_zapisyrazgovorovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/16_ident/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/16_ident/1_obzor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/16_ident/2_kakyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/16_ident/3_kasii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/17_ldap_content/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/17_ldap_content/1_nastroyka_podklyucheniya_ldap/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/17_ldap_content/2_ustanovkayskriptaydomennoyyavtorizatsiiyldap/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/17_ldap_content/3_voprosy_ldap/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/1_integratsiya_virtualnoy_ats_mango_office_i_retailcrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/1_integratsiya_virtualnoy_ats_mango_office_i_retailcrm/1_nachaloyrabotyysyintegratsieyyretailcrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/1_integratsiya_virtualnoy_ats_mango_office_i_retailcrm/2_kakynastroityintegratsiyuysyretailcrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/2_vkhodyashchiy_zvonok_retail/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/3_iskhodyashchiy_zvonok_retail/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/4_propushchennye_zvonki_retail/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/5_datsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/18_retailcrm/6_istoriya_vyzovov_retail/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/1_obyintegratsiiysyyclients/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/1_podgotovka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/2_kiyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/3_shalker/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/4_shagy3yypodklyuchenieyyclients/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/5_shafice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/6_shagyients/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/7_shnts/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/7_shnts/1_obshchee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/7_shnts/2_soz234rshruta/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/2_naey/7_shnts/3_nastr4567atsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/1_kakyo23456ykiyintegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/2_kakyotyuatsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/3_sposona/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/4_avto23456klientov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/5_integr23456rekingom/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/3_dopolnitelno/6_kakdfghyzova/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/4_vnok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/5_iszovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/19_yclients/6_zapfghjrov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/1_obzorder/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/2_step1wert/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/3_shagysdoytalker/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/4_shagsoft/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/1_naiey/5_shagy4yynoyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/1_nastroychee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/2_nastroykstroyku/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/3_kakaypravily/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/4_kakyakoyku/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/10_nastroykeftyroli/5_updeystviy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/11_nastrowoyzvonkamy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/12_otchwerzvonkay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/13_otpravkayvywhatsapp/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/14_dobavlenieyzadaniyaynayioyvykts/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/1_waerty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/2_sozdmerov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/3_otvetstveygruppu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/4_flagyyry/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/1_obrwerov/5_zagruztsenku/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/2_obrabwevov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/2_obrabwevov/1_sozdqweatylid/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/2_obrabwevov/2_sokhweroyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/2_obrabwevov/3_umnyonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/3_obraonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/3_obraonkov/1_iskhsoft/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/4_sokhlitiki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/5_sokhryanalitiki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/6_zagruzyzvonkovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/7_ruchnayam/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/8_otkllidami/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/2_dopoldfatsii/9_ispsentray/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/3_vyzovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/3_vyzovy/1_obshchee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/3_vyzovy/2_vkonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/3_vyzovy/3_iskhoonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/3_vyzovy/4_kamer/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/4_proki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/4_proki/1_nzvonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/4_proki/2_sweonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/5_isov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/6_zapv/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/1_bpmysoft/7_prilostratorov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/10_nevernyy_api_klyuch/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/1_ne_vsplyvaet_kartochka_pri_zvonke/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/2_pri_zvonke_ne_sozdaetsya_kontakt_sdelka_v_kontakt_sdelku_ne_sokhranyaetsya_informatsiya_po_zvonku/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/3_net_zapisi_razgovora/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/4_kak_otklyuchit_integratsiyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/5_ne_srabatyvayut_umnye_pravila_ili_perekhvatyvaetsya_ne_na_togo_sotrudnika/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/6_napr_zabl_2300/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/7_oshibka_avtorizatsii_401/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/8_oshibka_dostupa_403/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/1_amocrm/9_fayl_otsutstvuet/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/1_ne_vsplyvaet_kartochka_pri_zvonke/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/2_ne_sovershaetsya_iskhodyashchiy_zvonok_iz_crm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/3_trebovaniya_k_korobochnoy_versii_bitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/4_sozdayutsya_dubli_2/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/5_ne_srabatyvayut_umnye_pravila_ili_perekhvatyvaetsya_ne_na_togo_sotrudnika/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/2_bitrix24/6_ne_sozdalsya_lid_ili_kontakt/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/3_retailcrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/3_retailcrm/1_ne_fiksiruyutsya_zvonki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/3_retailcrm/2_oshibka_pri_registratsii_telefonii_pri_sokhranenii_nastroek_vidzheta/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/4_obshchieyvoprosy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/4_obshchieyvoprosy/1_otsutstvuyutyzapisiyrazgovorov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/20_chasto_zadavaemye_voprosy/4_obshchieyvoprosy/2_nastroit_sotrudnika_dlya_integratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/21_spisok_integratsiy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/21_spisok_integratsiy/1_integratsiya_s_1s/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/21_spisok_integratsiy/2_integratsiya_s_yandeks_disk_i_vneshniy_ftp_server/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/21_spisok_integratsiy/3_spisok_nashikh_integratsiy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/21_spisok_integratsiy/4_istoriyayzaprosovyapi/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/22_ogranicheniya_tarifa/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/23_zhurnalyizmeneniy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/2_nastroykayintegratsiiyccciunisender/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/1_obshchie_voprosy_po_api_vats_mango_office/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/2_integratsiya_crm_api/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/3_sha256_generator/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/4_emulyator_api_virtualnoy_ats/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/4_api_servisa_integratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/4_api_servisa_integratsii/1_opisanie_api_servisa_integratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/1_nachaloyatsiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/1_nachaloyatsiey/1_kakynastroityiznesyruy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/1_nachaloyatsiey/2_kakyproyrabotaet/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/1_kakyoteniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/2_obrabnkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/2_obrabnkov/1_avtoientov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/2_obrabnkov/2_ukazavygruppu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/2_obrabnkov/3_ukazatyotmenyuy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/2_obrabnkov/4_integkingom/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/3_sokhrayanalitikay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/2_nastgratsii/3_sokhrayanalitikay/1_sokhraanalitikay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/3_kakyonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/3_kakyonok/1_kakypozvonite/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/3_kakyonok/2_kakynta/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/3_kakyonok/3_kartochaetsyay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/4_sluzperatsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/5_businessru/4_sluzperatsii/1_prra/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/1_zachem_vnutrennie_nomera_v_vidzhete_i_gde_ikh_vzyat_bt/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/10_kakypozvonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/1_osnovnoe/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/2_shagiy1yiy2/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/3_shagy3/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/4_shagy4/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/5_shagy5/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/6_shagy6/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/7_raznyeyvozmozhnostiybazovogoyiyrasshirennogoypaketov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/8_kakypks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/2_naeyy/9_kaky4yyobobshchenno/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/10_inteanalitikoy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/10_inteanalitikoy/1_pereboty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/10_inteanalitikoy/2_sokhraneovorov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/10_inteanalitikoy/3_sokhralitiki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/10_inteanalitikoy/4_sokhranenieyiyperedachayrezyumeyrazgovora/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/11_integratsiya_s_mango_dialogi/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/1_avtopebkhuk/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/2_perembkhuk/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/2_perembkhuk/1_obshchee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/2_perembkhuk/2_nasratsiiybitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/2_perembkhuk/3_dobeytrebovaniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/12_obrabkhukov/3_tipyyvebkhukov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/13_zagruzvycrm/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/14_vspyseybitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/15_kakyvklyndare/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/16_poizheniiy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/17_nomabineteymangoyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/18_ispvonayvylk/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/19_ispolzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/1_kakyotkrykiyprilozheniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/20_perebitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/21_nastrnka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/10_trebovaniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/1_obzor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/2_ogranicheniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/3_ponyzvona/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/4_kakynaebkhuki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/1_avtopostanovycherezyvebkhuki/5_kakydyvybitrik24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/2_kakynasttsiyybitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/3_nastktsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/4_obzor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/1_obzor/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/2_kakyvitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/3_kakyotpriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/4_kakyvyymangoyoffice/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/5_otproyoffice/5_peredavaemyeydannye/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/6_skribitriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/6_skribitriks24/1_skripty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/6_skribitriks24/2_trebovaniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/6_skribitriks24/3_kakyvilozhenii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/6_skribitriks24/4_kakyvegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/7_sokhktytsentra/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/8_sokhrane/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/22_inteymangoyoffice/9_sokkachestva/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/23_otprayzvonke/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/24_kakypodklyuchityemailytracking/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/2_nastrotavleniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/1_avtomatkakh/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/2_ukazzvonkakh/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/3_obnozovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/4_kazatyotruppu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/5_ukazatyvyivr/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/6_integrakingom/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/7_dobaychat/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/8_umnyevyzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/3_obrabonkov/9_filtrovatyvam/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/4_sovershvonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/4_sovershvonkov/1_avtoyzvonke/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/4_sovershvonkov/2_perezvaniyzvonilyklient/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/5_otpravkaysms/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/5_otpravkaysms/1_otprasdelki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/5_otpravkaysms/2_smsyvizitka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/6_smsyrassylka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/7_smssessov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/8_otobrzvonka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/3_2ynastroyki/9_poddetriks24/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/1_vkhodyashchiyyzvonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/2_iskhodyashchiyyzvonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/3_kooyzvonka/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/4_istoriyayvyzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/5_prosmoendare/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/4_obrav/6_zapgovorov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/5_integyyats/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/6_softfonymangoyconnect/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/7_obnovlenieyprilozheniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/8_prilozheniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/7_vebkhuki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/7_vebkhuki/1_odeniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/7_vebkhuki/2_vebkhukyotpravkiysms/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/7_vebkhuki/3_integratsiyayskc/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/7_vebkhuki/4_iskhodyashchieyzvonkiycherezyvebkhuk/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/1_1ynachaloyrabotyysyintegratsiey/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/1_avtomogoyklienta/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/2_avtoogoyklienta/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/3_deystviyaypriypovtornykhyzvonkakhyotyklientov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/4_avtomaticheskoeysozdanieyprotsessovyysdeloky/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/5_rasprnikam/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/6_ukazyvatyshchikhyzvonkakh/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/7_obnovlyatyovyzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/8_ukakhyzvonkakhyvyivr/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/1_2y1yobrabotkayvkhodyashchikhyzvonkovy/9_kazatyotvetygruppu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/2_2y2yobrabotkayiskhodyashchikhyzvonkov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/3_2y3yzapolnyatypolzovatelskieypolyaysdelkiyvyzavisimostiyotylinii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/4_2y4yavtomaticheskoeysozdanieydelaypriyvkhodyashchikhyzvonkakh/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/2_2ynastroykiyintegratsii/5_2y5yintegratsiyaysydinamicheskimykolltrekingom/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/3_3yvkhodyashchiyyzvonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/4_4yiskhodyashchiyyzvonok/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/5_5ypropushchennyeyzvonki/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/6_6yistoriyayvyzovov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/7_7yzapisyrazgovorovy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/8_megaplan/1_integratsiya_virtualnoy_ats_mango_office_i_megaplan/8_8ysluzhebnyeyoperatsii/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/1_obshchee/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/2_trebovaniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/3_printsipyraboty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/4_kakypodklyuchityintegratsiyu/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/4_kakypodklyuchityintegratsiyu/1_podklyuchiteyintegratsiyuysymisyyinfoklinikay/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/4_kakypodklyuchityintegratsiyu/2_nastroyteyeksportykontaktov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/9_misyyinfoklinikay/4_kakypodklyuchityintegratsiyu/3_kakyproverit/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/ogranicheniya/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/opisanie_zaprosa/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/poluchit_spisok_aktivnyh_sessiy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/poluchit_spisok_vidzhetov/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/1_otpravlenie_kaskada_soobscheniy_cherez_whatsapp_i_sms/pravila_raboty/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/2_poluchenie_statusov_otpravlennyh_hsm_soobscheniy/",
+      "reason": "archive-or-obsolete"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/8_arhiv/index.md",
+      "reason": "archive-or-obsolete"
+    }
+  ],
+  "temporal_limit": "Historical map contains no article texts; prose comparison uses fresh HTML at its permitted URLs. HTML hash drift can include markup changes."
+}

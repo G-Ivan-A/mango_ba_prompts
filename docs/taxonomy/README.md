@@ -1,12 +1,18 @@
 ---
 status: review
-version: 1.0
-updated: 2026-10-28
+version: 1.1
+updated: 2026-10-29
 temperature: 0.1
 related_issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/399
 ---
 
 # Продуктовая таксономия Mango и карта веб-БЗ
+
+Дополнительный аудит #401: 3533 страницы альтернативного источника,
+сравнение всех 194 разделов PDF КЦ с обоими веб-источниками и принципы
+комбинированного чтения:
+https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-401-be292b53210f/docs/taxonomy/documentation-audit.md
+Карта #399 и продуктовые связи ниже сохраняют собственное происхождение.
 
 Каталог сохраняет весь исторический Product Layer и расширяет его операциями
 из актуального портала. Классификация остаётся **Domain → Capability → Feature

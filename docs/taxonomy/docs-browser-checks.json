@@ -1,0 +1,158 @@
+{
+  "observed_at": "2026-10-29T12:57:22.211Z",
+  "javascript_disabled": true,
+  "asset_requests_blocked": true,
+  "pages": [
+    {
+      "url": "https://docs.mango-office.ru/ru/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:19 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"3039951-23916-2026-10-28T19:38:13.503Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:13 GMT"
+      },
+      "title": "Документация MANGO OFFICE",
+      "body_found": true,
+      "text_chars": 1005,
+      "link_count": 18
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/1_nachat-zdes/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:19 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"3039678-28562-2026-10-28T19:38:05.488Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:05 GMT"
+      },
+      "title": "Начать здесь",
+      "body_found": true,
+      "text_chars": 386,
+      "link_count": 25
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/3_kontakt-tsentr/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:20 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"5792878-72351-2026-10-28T19:38:06.428Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:06 GMT"
+      },
+      "title": "Контакт-центр MANGO OFFICE",
+      "body_found": true,
+      "text_chars": 1678,
+      "link_count": 76
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:20 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"1597735-30649-2026-10-28T19:38:10.989Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:10 GMT"
+      },
+      "title": "Интеграции",
+      "body_found": true,
+      "text_chars": 265,
+      "link_count": 24
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:20 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"1598267-39335-2026-10-28T19:38:11.169Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:11 GMT"
+      },
+      "title": "API и разработка",
+      "body_found": true,
+      "text_chars": 1944,
+      "link_count": 46
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/6_administrirovanie/index.html",
+      "status": 200,
+      "headers": {
+        "connection": "keep-alive",
+        "content-encoding": "gzip",
+        "content-type": "text/html; charset=UTF-8",
+        "date": "Thu, 29 Oct 2026 12:57:20 GMT",
+        "keep-alive": "timeout=15",
+        "server": "QRATOR",
+        "strict-transport-security": "max-age=31536000; includeSubDomains",
+        "transfer-encoding": "chunked",
+        "vary": "Accept-Encoding",
+        "access-control-allow-headers": "Origin, X-Requested-With, Content-Type, Accept, Range,  --log-ip",
+        "access-control-allow-origin": "*",
+        "cache-control": "max-age=3600",
+        "etag": "W/\"5142152-29278-2026-10-28T19:38:11.239Z\"",
+        "last-modified": "Wed, 28 Oct 2026 19:38:11 GMT"
+      },
+      "title": "Администрирование",
+      "body_found": true,
+      "text_chars": 163,
+      "link_count": 18
+    }
+  ],
+  "cross_origin_fetch": {
+    "request_origin": "https://www.mango-office.ru",
+    "target": "https://docs.mango-office.ru/ru/index.html",
+    "status": 200,
+    "type": "cors",
+    "text_chars": 21977
+  }
+}
