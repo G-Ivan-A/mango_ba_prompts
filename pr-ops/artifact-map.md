@@ -49,6 +49,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/pr-ops/session-digests.md` | журнал / индекс | Индекс суммарий длинных сессий для передачи контекста между чатами; создан в issue #72. | По необходимости | `ai-rules/AI_SESSION_HANDOVER_PROMPT.md` |
 | `/pr-ops/artifact-map.md` | навигация | Эта карта активных артефактов и связей. | По необходимости | `README.md`, `.hub-profile.json` |
 | `/pr-ops/migration-manifest.md` | manifest | Живой снимок миграции Mango из Хаба и последующих sync snapshots. | Да | `docs/analysis/migration-strategy-rfc.md`, `.hub-profile.json` |
+| `/standards/bcreq-manual-classes/` | стандарты спицы, draft | 39 отдельных классов ручных BCREQ-промптов; каталог экземпляров четырёх фаз. | Да для нового маршрута | `docs/contracts/bcreq-manual-state.md`, `docs/rfc/2026-10-bcreq-manual-pipeline.md`, `runs/2026/RUN-0078/` |
 | `/docs/rfc/` | каталог | RFC спицы и пакеты передачи знаний в Хаб: процесс RFC, реестр, предложения по промптам, `knowledge-transfer-to-hub/`. | По необходимости | `docs/rfc-hub-integration.md`, `CHANGELOG.md` |
 | `/docs/audit/` | каталог | Исторические аудиты контрактов, Хаба и research (2026-06-17, #1027). Не действующая норма — фактура для решений. | По необходимости | `docs/adr/`, `pr-ops/migration-manifest.md` |
 | `/pr-ops/BACKLOG.md` | журнал | Бэклог задач и открытых вопросов проекта. | Да | `CONTRIBUTING.md`, `docs/adr/` |

@@ -1,0 +1,39 @@
+run_id: RUN-0078
+process: bcreq-manual-four-phase-task-1106-simulation
+version: "0.1"
+date: 2026-10-29
+author: "OpenAI Codex, авторская имитация ручного чата"
+model: "OpenAI Codex, текущая сессия; provider model ID не предоставлен"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/403
+  - https://github.com/user-attachments/files/33668084/chat-export-1106.json
+  - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0074/metadata.yaml
+inputs:
+  - inputs/README.md
+  - inputs/seed.json
+outputs:
+  - outputs/README.md
+  - outputs/bcreq-draft.md
+  - outputs/trace.json
+  - outputs/criteria-review.json
+  - outputs/comparison.md
+  - outputs/handoffs.md
+logs:
+  - logs/experiment-log.md
+  - logs/check-results.json
+feedback:
+  - feedback/review-notes.md
+metrics:
+  eval: "Новая авторская LLM-имитация ручного прохождения четырёх фаз по задаче RUN-0074. Получен новый восьмираздельный draft, проверены возврат за доказательством, полный перенос, адресная правка и блокирование реального выпуска. Проверки структуры и авторская рубрика не являются независимым повторным прогоном исходных моделей или оценкой снижения частоты ошибок."
+related_runs:
+  - RUN-0074
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/403
+related_artifacts:
+  - standards/bcreq-manual-classes/README.md
+  - docs/contracts/bcreq-manual-state.md
+  - docs/rfc/2026-10-bcreq-manual-pipeline.md
+  - experiments/issue_403/check_replay.py
+  - scripts/validate_issue_403_manual_pipeline.py

@@ -165,6 +165,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `prompts/` | Активные prompt assets бизнес-аналитика Mango. |
 | `prompts/archive/` | Архивные версии промптов и устаревшие варианты. |
 | `runs/` | Единый каталог результатов выполнения процессов: `runs/YYYY/RUN-XXXX/` с `metadata.yaml`, `inputs/`, `outputs/`, `feedback/`, `logs/`. |
+| [Ручной BCREQ pipeline](standards/bcreq-manual-classes/README.md) | 39 проектных стандартов, четыре фазы, [Mermaid и RFC](docs/rfc/2026-10-bcreq-manual-pipeline.md), [новый RUN-0078](runs/2026/RUN-0078/outputs/README.md). |
 | `standards/` | Стандарты проекта: глоссарий, контракт классификации, стандарты промпта и паттерна. |
 | `kb/` | Практики, примеры и справочники, не являющиеся стандартами. |
 | `docs/taxonomy.md` | Таксономия: 13 когнитивных операций и 9 процессов БА. |

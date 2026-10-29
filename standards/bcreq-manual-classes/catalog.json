@@ -627,6 +627,24 @@
       "checks": "Есть актор и результат; нет выдуманных ФТ; не заявлено полное покрытие документа.",
       "existing": "prompts/bcreq-scenarios-modeling-oneshot.md",
       "file": "38-requested-uc.md"
+    },
+    {
+      "id": "C39",
+      "slug": "manifest-alignment",
+      "name": "Сверка результата с манифестом задачи",
+      "phases": [
+        "a-in",
+        "a-core",
+        "a-work",
+        "a-release"
+      ],
+      "inputs": "baseline_manifest, generated_candidate, authorized_delta, decision_register",
+      "outputs": "manifest_diff{missing,changed_conditions,unsupported_additions,scope_changes,authority_promotions,preserved_ids,verdict}",
+      "behavior": "Сопоставить каждый обязательный ID, условие, исключение и решение манифеста с новым результатом в обе стороны. Отдельно показать пропуски, ослабленные отрицания, новые недоказанные сущности, расширение границ и повышение статуса без полномочия. Допустимая дельта должна иметь разрешение. Это проверка fidelity к заданию, отдельно от структуры C31 и истинности источников C28.",
+      "stop": "Обязательный элемент потерян, смысл условия изменён или согласование повышено без основания: FAIL затронутого результата, адресная правка C30; манифест не переписывать под ответ.",
+      "checks": "Каждый обязательный ID отражён; каждый новый элемент обоснован; числовая/семантическая дельта видна; draft не стал approved.",
+      "existing": "prompts/bcreq-review-validation-oneshot.md",
+      "file": "39-manifest-alignment.md"
     }
   ]
 }

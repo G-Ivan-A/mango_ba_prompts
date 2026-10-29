@@ -8,7 +8,7 @@ owner: G-Ivan-A
 
 # Инвентарь ручных промптов BCREQ
 
-38 классов = 38 отдельных подробных стандартов. Класс определяется целью, обязательными входами и формой результата, а не числом файлов. Повторения одного класса в фазах — экземпляры с одинаковым контрактом. Индекс и общий транспорт не являются дополнительными стандартами классов. Статус всех новых правил — проект.
+39 классов = 39 отдельных подробных стандартов. Класс определяется целью, обязательными входами и формой результата, а не числом файлов. Повторения одного класса в фазах — экземпляры с одинаковым контрактом. Индекс и общий транспорт не являются дополнительными стандартами классов. Статус всех новых правил — проект.
 
 ## Полный реестр
 
@@ -52,6 +52,7 @@ owner: G-Ivan-A
 | C36 | [Загрузка правил и параметров чата](36-rule-bundle.md) | a-in, a-core, a-work, a-release | [bcreq-constitution-governance-oneshot.md](../../prompts/bcreq-constitution-governance-oneshot.md) |
 | C37 | [User Story по запросу БА](37-user-story.md) | a-in, a-core, a-work | [bcreq-scenarios-modeling-oneshot.md](../../prompts/bcreq-scenarios-modeling-oneshot.md) |
 | C38 | [Отдельное моделирование UC по запросу БА](38-requested-uc.md) | a-in, a-core, a-work | [bcreq-scenarios-modeling-oneshot.md](../../prompts/bcreq-scenarios-modeling-oneshot.md) |
+| C39 | [Сверка результата с манифестом задачи](39-manifest-alignment.md) | a-in, a-core, a-work, a-release | [bcreq-review-validation-oneshot.md](../../prompts/bcreq-review-validation-oneshot.md) |
 
 ## Последовательности экземпляров
 
@@ -78,6 +79,7 @@ owner: G-Ivan-A
 | a-in/C14 | Глоссарий | `terms_in_sections_2_to_6, raw_wording, supplied_lexicons` | `section_1[{term,definition,source,lexicon_comparison}], term_questions` |
 | a-in/C15 | Бизнес-контекст | `atoms, scope, business_problem, value, decisions` | `section_2{context,problem,goal,in_scope,out_of_scope,products_owners}` |
 | a-in/C34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-in/C39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-in/C12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
 | a-in/C13 | Проверка переносимого контекста | `full_snapshot, required_inputs_for_target, source_bodies, rule_bundle` | `handoff_receipt[{input,status,locator}], missing_inputs, recommendation` |
 | a-in/C20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
@@ -108,6 +110,7 @@ owner: G-Ivan-A
 | a-core/C30 | Адресная правка | `candidate_revision, authorized_edit_scope, findings, human_instructions` | `patch[{id,before,after,reason}], preserved_ids, semantic_diff, stale_ids` |
 | a-core/C31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
 | a-core/C34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-core/C39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-core/C12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
 | a-core/C20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 ### a-work
@@ -143,6 +146,7 @@ owner: G-Ivan-A
 | a-work/C30 | Адресная правка | `candidate_revision, authorized_edit_scope, findings, human_instructions` | `patch[{id,before,after,reason}], preserved_ids, semantic_diff, stale_ids` |
 | a-work/C31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
 | a-work/C34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-work/C39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-work/C12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
 | a-work/C20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 ### a-release
@@ -157,6 +161,7 @@ owner: G-Ivan-A
 | a-release/C31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
 | a-release/C28 | Независимая содержательная проверка | `frozen_candidate, source_bodies, applicable_rules, approved_scope, decisions` | `findings[{id,claim,source,rule,severity,affected_ids}], checked_claims, unresolved` |
 | a-release/C34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-release/C39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-release/C12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
 | a-release/C20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 | a-release/C32 | Подготовка пакетов адресатам | `approved_or_draft_candidate, audience_policy, scope, approvals` | `customer_packet, internal_packet, delivery_manifest, excluded_items` |
@@ -174,3 +179,5 @@ C16/C17 — альтернативы delta/new по решению БА, C22 —
 - [Состояние и ручная работа](../../docs/contracts/bcreq-manual-state.md).
 - [Обоснование и маршрут](../../docs/rfc/2026-10-bcreq-manual-pipeline.md).
 - [Checkpoint до стандартов](../../docs/analysis/2026-10-29-bcreq-checkpoint.md).
+
+После имитации отдельно выделен C39: fidelity результата к исходному манифесту. Проверка структуры C31 не обнаруживает ослабленное условие, а проверка продуктовой истинности C28 решает другую задачу. Это расширяет исходные 38 классов checkpoint до 39 без объединения различных операций.
