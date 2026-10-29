@@ -67,3 +67,7 @@ experiments/issue_399/*.source.*
 experiments/issue_399/cache/
 experiments/issue_399/turns/
 experiments/issue_399/*.log
+# Issue #401: raw attachments, HTML/text extraction and local investigation logs.
+experiments/issue_401/raw/
+experiments/issue_401/cache/
+experiments/issue_401/logs/

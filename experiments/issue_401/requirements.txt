@@ -1,0 +1,2 @@
+# Only needed for local extraction of the explicitly supplied GitHub attachment.
+PyMuPDF==1.28.2
