@@ -175,9 +175,17 @@ def mapping(rows):
         admin = '/6_administrirovanie/' in r['url']
         integrations = '/4_integratsii/' in r['url'] or api
         tag = parts[1] if len(parts) > 1 else parts[0] if parts else 'root'
+        leaf = urlsplit(r['url']).path.rsplit('/', 1)[-1].removesuffix('.html')
+        tags = [tag] + (['product:' + parts[1]] if len(parts) > 1 and parts[0] == PREFIXES[1] else [])
+        if leaf != 'index':
+            tags.append('function:' + leaf)
+        if integrations:
+            tags.append('integration')
+        if admin:
+            tags.append('administration')
         mapped.append({**public(r), 'hierarchy': hierarchy,
             'content_type': 'API spec' if api else 'instruction' if admin or '/1_nachat-zdes/' in r['url'] else 'product-documentation',
-            'tags': sorted(set([tag] + (['integration'] if integrations else []) + (['administration'] if admin else []))),
+            'tags': sorted(set(tags)),
             'relevance_for_BA': {'FT': 2 if r.get('text_chars') else 0, 'NFT': 2 if admin or api else 1,
                                  'integrations': 3 if integrations else 1,
                                  'basis': 'editorial 0..3 routing heuristic; not measured relevance'},

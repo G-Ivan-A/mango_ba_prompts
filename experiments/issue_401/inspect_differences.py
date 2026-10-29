@@ -26,7 +26,7 @@ def main():
         for candidate in row['candidate_pages']:
             folder = BASE / ('cache' if args.source == 'docs' else 'cache/portal/cache')
             r = json.loads((folder/(hashlib.sha256(candidate['url'].encode()).hexdigest()+'.json')).read_text())
-            text.append(r['text'])
+            text.append(' '.join(tokens(r['text'])[candidate['article_token_start']:candidate['article_token_end']]))
             print(candidate['url'])
         a,b = tokens(reference[row['id']]['text']),tokens('\n'.join(text))
         changes = [o for o in SequenceMatcher(None,a,b,autojunk=False).get_opcodes() if o[0] != 'equal']

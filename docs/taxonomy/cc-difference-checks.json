@@ -1,0 +1,203 @@
+{
+  "method": "Manual review of bounded token-difference contexts and source structure; inspect_differences.py reproduces contexts locally.",
+  "all_operations_url": "https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-401-be292b53210f/docs/taxonomy/cc-source-comparison.json",
+  "checks": [
+    {
+      "pdf_id": "2.4.1",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=36",
+      "pdf_pages": [
+        36,
+        43
+      ],
+      "classification": "text-and-table-order",
+      "observation": "Performance descriptions differ in placement and amount; ordered text cannot certify parameter/cell equivalence.",
+      "sources": {
+        "docs": {
+          "difference_pct": 27.45525971191619,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/3_kontakt-tsentr/3_glavnoe_okno_programmy/2_4_panel_pokazateley/2_4_1_obshee_opisanie_pokazateley.html"
+          ]
+        },
+        "portal399": {
+          "difference_pct": 27.45525971191619,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/3_glavnoe_okno_programmy/2_4_panel_pokazateley/2_4_1_obshee_opisanie_pokazateley/"
+          ]
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "16.4",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=506",
+      "pdf_pages": [
+        506,
+        506
+      ],
+      "classification": "structural-and-wording",
+      "observation": "PDF lists three recording ingestion tabs; web lists settings including general settings. Exact title only; not evidence that ingestion was removed.",
+      "sources": {
+        "docs": {
+          "difference_pct": 73.58490566037736,
+          "mapping_status": "title-only-candidate",
+          "candidate_urls": [
+            "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/4_ra-skoring/5_podklyuchennye_kanaly/index.html"
+          ]
+        },
+        "portal399": {
+          "difference_pct": 73.58490566037736,
+          "mapping_status": "title-only-candidate",
+          "candidate_urls": [
+            "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/4_ra-skoring/5_podklyuchennye_kanaly/"
+          ]
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "16.6",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=512",
+      "pdf_pages": [
+        512,
+        512
+      ],
+      "classification": "baseline-map-gap-and-text-change",
+      "observation": "Embedded speech analytics page is in docs but not the pinned portal399 map. Web adds a prerequisite about configuring text analytics. Portal outside-map availability was not tested.",
+      "sources": {
+        "docs": {
+          "difference_pct": 22.368421052631582,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/9_6_tekstovye_kommunikatsii.html"
+          ]
+        },
+        "portal399": {
+          "difference_pct": 100.0,
+          "mapping_status": "not-located",
+          "candidate_urls": []
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "17.1",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=528",
+      "pdf_pages": [
+        528,
+        542
+      ],
+      "classification": "matrix-alignment-unverified",
+      "observation": "Long PDF rights matrix has column-broken words; selected web report page is a partial candidate. Full role/cell equivalence is not established.",
+      "sources": {
+        "docs": {
+          "difference_pct": 93.13104368122708,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://docs.mango-office.ru/ru/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/5_matritsa_roley_i_prav_dostupa/2_razdel_instrumenty/otchety_kontakt_tsentra.html"
+          ]
+        },
+        "portal399": {
+          "difference_pct": 93.13104368122708,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/5_matritsa_roley_i_prav_dostupa/2_razdel_instrumenty/otchety_kontakt_tsentra/"
+          ]
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "17.6",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=555",
+      "pdf_pages": [
+        555,
+        555
+      ],
+      "classification": "unlocated-matrix",
+      "observation": "Version-switch navigation exists, but no reliable match for this PDF role matrix was located. Not a claim that the product feature is absent.",
+      "sources": {
+        "docs": {
+          "difference_pct": 100.0,
+          "mapping_status": "not-located",
+          "candidate_urls": []
+        },
+        "portal399": {
+          "difference_pct": 100.0,
+          "mapping_status": "not-located",
+          "candidate_urls": []
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/7_produkt_vats/4_1_navigatsionnaya_panel.html"
+      ],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "17.7",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=555",
+      "pdf_pages": [
+        555,
+        555
+      ],
+      "classification": "unlocated-matrix",
+      "observation": "Widget pages exist, but no reliable match for this PDF role matrix was located. Not a claim that the product feature is absent.",
+      "sources": {
+        "docs": {
+          "difference_pct": 100.0,
+          "mapping_status": "not-located",
+          "candidate_urls": []
+        },
+        "portal399": {
+          "difference_pct": 100.0,
+          "mapping_status": "not-located",
+          "candidate_urls": []
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/1_4_obrabotka_zvonkov/4_4_1_nomera_podklyuchennye_k_ats.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/2_5_instrumenty/4_5_1_statistika_i_monitoring.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/3_6_nastroyka_ats/4_6_6_upravlenie_uslugami.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/4_Bezopasnost/3_kak_nastroit_prava_dostupa_dlya_raznykh_sotrudnikov.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/7_produkt_vats/1_2_blok_vashi_nomera/1_2_3_vidzhety_dlya_sayta/4_2_3_1_dobavlenie_vidzheta.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/7_produkt_vats/1_2_blok_vashi_nomera/index.html",
+        "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/7_produkt_vats/glavnaya_stranica_polzovatelya.html"
+      ],
+      "semantic_completeness_certified": false
+    },
+    {
+      "pdf_id": "18",
+      "pdf_url": "https://github.com/user-attachments/files/34130556/CC_manual_1.26.42_compressed.pdf#page=556",
+      "pdf_pages": [
+        556,
+        570
+      ],
+      "classification": "matrix-alignment-unverified",
+      "observation": "PDF covers more operations than selected report-page candidate. Word splitting and table order inflate lexical difference; semantic loss is not quantified.",
+      "sources": {
+        "docs": {
+          "difference_pct": 90.02574002574002,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://docs.mango-office.ru/ru/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/5_matritsa_roley_i_prav_dostupa/2_razdel_instrumenty/otchety_kontakt_tsentra.html"
+          ]
+        },
+        "portal399": {
+          "difference_pct": 90.02574002574002,
+          "mapping_status": "prose-candidate",
+          "candidate_urls": [
+            "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/5_matritsa_roley_i_prav_dostupa/2_razdel_instrumenty/otchety_kontakt_tsentra/"
+          ]
+        }
+      },
+      "related_docs_urls_not_equivalent_to_matrix": [],
+      "semantic_completeness_certified": false
+    }
+  ],
+  "limit": "Representative classifications do not replace the exhaustive lexical operation ledger; no image OCR or exhaustive role-matrix equivalence certification."
+}

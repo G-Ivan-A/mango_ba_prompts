@@ -44,7 +44,7 @@ def main():
         return {'url': r['url'], 'http_status': r.get('http_status'), 'error': r.get('error'),
                 'observed_at': r['observed_at'], 'source_sha256': r.get('sha256'),
                 'baseline_sha256': row['source_sha256'],
-                'matches_baseline_html': r.get('sha256') == row['source_sha256'],
+                'matches_baseline_html': bool(r.get('sha256')) and r['sha256'] == row['source_sha256'],
                 'text_chars': r.get('text_chars', 0),
                 'text_sha256': hashlib.sha256(r.get('text', '').encode()).hexdigest()}
     with ThreadPoolExecutor(max_workers=4) as pool:

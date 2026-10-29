@@ -1,0 +1,2028 @@
+{
+  "root_url": "https://docs.mango-office.ru/ru/index.html",
+  "pages": 3533,
+  "frontier_remaining": 0,
+  "http_status_counts": {
+    "200": 3533
+  },
+  "sections": {
+    "1_nachat-zdes": 1,
+    "3_produkty-i-prilozheniya": 1950,
+    "4_integratsii": 1156,
+    "5_api-i-razrabotka": 345,
+    "6_administrirovanie": 80
+  },
+  "errors": [],
+  "unrecognized_templates": [],
+  "excluded": [
+    {
+      "url": "http://blog.albato.ru/duplicates-handling/",
+      "reason": "external"
+    },
+    {
+      "url": "http://example.ru/orders/123?param=1",
+      "reason": "external"
+    },
+    {
+      "url": "http://info.paymaster.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://issa.mangotele.com/upload/cc_manual/shablony_soobshenij.htm",
+      "reason": "external"
+    },
+    {
+      "url": "http://lk.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://m-test.ma/dkt/forrep.html?utm_source=apple&utm_medium=apple&utm_campaign=apple&utm_term=apple...%22",
+      "reason": "external"
+    },
+    {
+      "url": "http://m-test.ma/dkt/testrep.html?utm_source=poland%22",
+      "reason": "external"
+    },
+    {
+      "url": "http://marketing-wiki.ru/wiki/%D0%A0%D0%B0%D0%B7%D0%BC%D0%B5%D1%82%D0%BA%D0%B0_%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA_utm_%D0%BC%D0%B5%D1%82%D0%BA%D0%B0%D0%BC%D0%B8",
+      "reason": "external"
+    },
+    {
+      "url": "http://marketplace.1c-bitrix.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://moskva.my-site.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://my-site.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://my-site.ru;",
+      "reason": "external"
+    },
+    {
+      "url": "http://nizjnii-novgorod.my-site.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://redmine.mango.local/projects/minsk-ssw-platform/wiki/%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81_Presence",
+      "reason": "external"
+    },
+    {
+      "url": "http://roistat.com/ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://sankt-peterburg.my-site.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://support.ticketscloud.org/ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://utmurl.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.bronotelej.ru/%7B%7B%D0%BF%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F4%7D%7D",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.carrotquest.io/",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/application/biznes_resheniya/fmc",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/shop/numbers",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/shop/numbers/",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/support/tekhnicheskaya_podderzhka/sip_oborudovanie/indikatsiya_zanyatosti_liniy_na_sip_telefonakh_blf",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/tariffs/connection/",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/tariffs/for_free",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/tariffs/vpbx_detail",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/upload/iblock/fe3/LK_7.19.48.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.mango-office.ru/upload/vats-versions.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.paymaster.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.payonline.ru",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.qiwi.com",
+      "reason": "external"
+    },
+    {
+      "url": "http://www.yoomoney.ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://1cfresh.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://2ip.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://academy.terrasoft.ru/documents/bank-sales/7-15/kvalifikaciya-lida",
+      "reason": "external"
+    },
+    {
+      "url": "https://academy.terrasoft.ru/documents/marketing/7-15/stranica-lida",
+      "reason": "external"
+    },
+    {
+      "url": "https://ads.vk.com/business",
+      "reason": "external"
+    },
+    {
+      "url": "https://ads.vk.com/help/articles/utm",
+      "reason": "external"
+    },
+    {
+      "url": "https://albato.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://albato.ru/apps-crm",
+      "reason": "external"
+    },
+    {
+      "url": "https://amocrm.mango-office.ru/webhook/company/%D1%85%D1%85%D1%85",
+      "reason": "external"
+    },
+    {
+      "url": "https://amocrm.mango-office.ru/webhook/contact/%D1%85%D1%85%D1%85",
+      "reason": "external"
+    },
+    {
+      "url": "https://analytics.google.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://analytics.google.com/analytics/web/template?uid=WiVpbm9zQWiimE_hsQBFHQ",
+      "reason": "external"
+    },
+    {
+      "url": "https://analytics.google.com/analytics/web/template?uid=gOzPnDSpSl-_jc3a0ePrGw",
+      "reason": "external"
+    },
+    {
+      "url": "https://answers.tilda.cc/ru/a/header/",
+      "reason": "external"
+    },
+    {
+      "url": "https://api-client.mango-office.ru/api",
+      "reason": "external"
+    },
+    {
+      "url": "https://api-client.mango-office.ru/api/v1",
+      "reason": "external"
+    },
+    {
+      "url": "https://app.mango-office.ru/cc/",
+      "reason": "external"
+    },
+    {
+      "url": "https://app.mango-office.ru/cc/md/hsm/send_message",
+      "reason": "external"
+    },
+    {
+      "url": "https://app.mango-office.ru/vpbx/",
+      "reason": "external"
+    },
+    {
+      "url": "https://app.mango-office.ru/vpbx/outbound_blacklist/update_description",
+      "reason": "external"
+    },
+    {
+      "url": "https://app.mango-office.ru/vpbx/v2/campaign/tasks",
+      "reason": "external"
+    },
+    {
+      "url": "https://appgallery.huawei.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://apps.apple.com/ru/app/id1451483297",
+      "reason": "external"
+    },
+    {
+      "url": "https://apps.apple.com/ru/app/mango-office-%D0%BB%D0%B8%D1%87%D0%BD%D1%8B%D0%B9-%D0%BA%D0%B0%D0%B1%D0%B8%D0%BD%D0%B5%D1%82/id1451483297",
+      "reason": "external"
+    },
+    {
+      "url": "https://business.max.ru/self",
+      "reason": "external"
+    },
+    {
+      "url": "https://business.whatsapp.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://callbaska.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://callkeeper.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ccc.mango-office.ru/contacts",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/14f/14f1a71de20c0adbc1d695a380ad94d6/RECHEVAYA-ANALITIKA_1.24.33.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/313/313b38a0fcbed65a6da85a7bd7b0370e/CC_manual_1.24.33.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/65d/65d4c957452cfe2fa46ce7da45f14b52/LK_manual_v-94.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/bcf/bcfd7541afebbd69be3ec51dbcae12cb/QM_manual_v-1.24.45.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/ec2/ec21eec1c034135f24b3bbf505fb42bb/LK_manual_v-97.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/mango_pages_files/f07/f07c98e603180412a8888fade7102bf9/LK_manual_v78.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://cdn.mango-office.ru/project-im/medialibrary/869/Mango_office_integration_retailCRM.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://chatra.com/ru/help/",
+      "reason": "external"
+    },
+    {
+      "url": "https://chatra.com/ru/plans/",
+      "reason": "external"
+    },
+    {
+      "url": "https://chrome.google.com/webstore/category/extensions?hl=ru&",
+      "reason": "external"
+    },
+    {
+      "url": "https://chrome.google.com/webstore/detail/%D1%81%D0%BE%D1%84%D1%82%D1%84%D0%BE%D0%BD-mango-connect/pkpkkdedpomedldeocifngicfebjpmjl?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://chrome.google.com/webstore/detail/click-to-call-%D0%B4%D0%BB%D1%8F-mango-t/hnffjpappohfnmhdimbpeljbnokjagdd?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://chrome.google.com/webstore/detail/mango-connect/pkpkkdedpomedldeocifngicfebjpmjl?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://chromewebstore.google.com/detail/mango-connect/pkpkkdedpomedldeocifngicfebjpmjl?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://containrrr.dev/watchtower/",
+      "reason": "external"
+    },
+    {
+      "url": "https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=41&LESSON_ID=2033&LESSON_PATH=3911.11757.2033",
+      "reason": "external"
+    },
+    {
+      "url": "https://dev.max.ru/docs/chatbots/bots-create",
+      "reason": "external"
+    },
+    {
+      "url": "https://dev.max.ru/docs/maxbusiness/connection",
+      "reason": "external"
+    },
+    {
+      "url": "https://developer.mozilla.org/ru/docs/Tools/Browser_Console",
+      "reason": "external"
+    },
+    {
+      "url": "https://docs.docker.com/desktop/setup/install/linux/ubuntu/",
+      "reason": "external"
+    },
+    {
+      "url": "https://docs.docker.com/engine/reference/builder/",
+      "reason": "external"
+    },
+    {
+      "url": "https://docs.docker.com/storage/volumes/",
+      "reason": "external"
+    },
+    {
+      "url": "https://docs.mango-office.ru/",
+      "reason": "outside-requested-sections"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/10_klientskoe-obsluzhivanie-i-dokumenty/index.html",
+      "reason": "outside-requested-sections"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/",
+      "reason": "non-html-file-or-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/1_4_obrabotka_zvonkov/4_4_2_golosovoe_menyu_i_raspredelenie_zvonkov.html?tabs=defaultTabsGroup-42auc11e_%25d0%2594%25d0%25be%25d0%25bf%25d0%25be%25d0%25bb%25d0%25bd%25d0%25b8%25d1%2582%25d0%25b5%25d0%25bb%25d1%258c%25d0%25bd%25d1%258b%25d0%25b5%2520%25d0%25bd%25d0%25b0%25d1%2581%25d1%2582%25d1%2580%25d0%25be%25d0%25b9%25d0%25ba%25d0%25b8",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/1_bystryy_start_dct/6_sozdanie_utm_metok/index.html?PATH=%2Fcalltracking_vs_analytics%2Fbystryy_start_dct%2Fsozdanie_utm_metok",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/2_podklyuchenie_dinamicheskogo_kolltrekinga/5_nastroyka_roley_kolltrekinga/index.html?url=calltracking_vs_analytics%2Fpodklyuchenie_dinamicheskogo_kolltrekinga%2Fnastroyka_roley_kolltrekinga%2F%3F_is_mobile%3D0",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/3_kanaly_otslezhivaniya/1_Nastroyka_kanalov_otslezhivaniya/index.html?PATH=%2Fcalltracking_vs_analytics%2Fkanaly_otslezhivaniya%2FNastroyka_kanalov_otslezhivaniya",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/2_kakynastroitykolltreking/3_kanaly_otslezhivaniya/index.html?PATH=%2Fcalltracking_vs_analytics%2Fkanaly_otslezhivaniya",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/3_otchety/index.html?PATH=%2Fcalltracking_vs_analytics%2Fotchety",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/10_integratsiya_s_zayavkami_s_sayta/index.html?edit=Y",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/30_integratsiya_kolltrekinga_s_google_analytics/2_integratsiya_kolltrekinga_s_google_analytics_4/1_trebovaniyaqwert/index.html?edit=Y",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/38_nastroyka_kolltrekinga_dlya_raboty_s_livetex/index.html?edit=Y",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/51_sluzhebnyeyoperatsii/2_uvedomleniyayobyoshibkakhyintegratsiiykolltrekinga/index.html?sphrase_id=903446",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/5_vk_ads/2_kt_itg4vk_kak_nastroit/index.html?PATH=%2Fcalltracking_vs_analytics%2Fintegratsiya%2Fvk_ads%2Fkak_nastroit_integratsiyu_kolltrekinga_s_vk_ads",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/4_integratsiya/index.html?PATH=%2Fcalltracking_vs_analytics%2Fintegratsiya%2Ffb_ads%2Fkak_nastroit_integratsiyu_kolltrekinga_s_fb_ads",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/5_skvoznaya_analitika/1_skvoznaya_analitika_nachalo_raboti/index.html?PATH=%2Fcalltracking_vs_analytics%2Fanalitika%2Fskvoznaya_analitika%2Fskvoznaya_analitika_nachalo_raboti",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/8_email_treking/2_emt_otchetnost/index.html?edit=N",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/9_servisyyanalizykonkurentovy/4_agram/1_onoe/index.html?edit=Y",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/index.html?utm_source=search_breadcrumb",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/6_mango-dialogi/index.html?sphrase_id=982360",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/7_mango-talker/5_userguide_windows_mtalker_ch1_working/10_istoriya_vyzovov/3_6_zapis_razgovora/skachat_zapis_iz_istorii_vyzovov.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/7_mango-talker/5_userguide_windows_mtalker_ch1_working/10_istoriya_vyzovov/3_6_zapis_razgovora/skachat_zapis_iz_kartochki_kontakta.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/index.html?sphrase_id=431042",
+      "reason": "query-endpoint"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/1_vse-integratsii/7_creatio/1_nachalo_raboty_s_integratsiey/2_shag_3_podklyuchenie_prilozheniya_integratsii_v_crm_creatio/2_sposob_2_ustanovka_prilozheniya_iz_fayla/poryadok_ustanovki_prilozheniya_iz_arhiva.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/23_zhurnalyizmeneniy/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/1_obshchie_voprosy_po_api_vats_mango_office/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/2_integratsiya_crm_api/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/3_sha256_generator/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/3_restapivatshelp/4_emulyator_api_virtualnoy_ats/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/1_support-integratsiya-api/6_bitrix24/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/4_integratsii/6_arhiv-integratsii/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/2_poluchenie_statusov_otpravlennyh_hsm_soobscheniy.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/5_api-i-razrabotka/3_api-mango-dialogi/8_ustarevshie_metody_api/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/11_faq/1_virtualnaya-ats/11_pravila_preobrazovania_teksta_pri_transliteratsii/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/4_kontakt-tsentr/1_skachat_tsov/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/4_kontakt-tsentr/6_tekhnicheskie_trebovaniya_tsov/1_trebovaniya_dlya_kontakt_tsentr_mango_office/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/5_tekhnicheskaya-baza-znanii/2_virtualnaya-ats/3_nastroyka-uslug/19_chernyy_spisok_i_belyy_spisok/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/5_tekhnicheskaya-baza-znanii/2_virtualnaya-ats/3_nastroyka-uslug/28_ivr_menyu/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/5_tekhnicheskaya-baza-znanii/2_virtualnaya-ats/3_nastroyka-uslug/6_podklyuchenie_i_diagnostika_nomerov_storonnikh_provayderov/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/6_sip-oborudovanie/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/2_bystryy-start-vats/3_sozdanie_sotrudnikov/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/2_bystryy-start-vats/4_nastroyka_skhemy_priema_zvonkov/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/2_bystryy-start-vats/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/4_video-vats/10_oblachnoe_khranilishche/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/4_video-vats/7_zapis_razgovorov/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/9_obuchenie-i-video/4_video-vats/9_popolnenie_balansa/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/7_podderzhka/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/8_archiv/index.html",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.mango-office.ru/ru/8_arhiv/index.md",
+      "reason": "archive-obsolete-download-or-support"
+    },
+    {
+      "url": "https://docs.microsoft.com/ru-ru/exchange/clients/pop3-and-imap4/configure-imap4?view=exchserver-2019",
+      "reason": "external"
+    },
+    {
+      "url": "https://docs.retailcrm.ru/Users/Administration/Stores",
+      "reason": "external"
+    },
+    {
+      "url": "https://drive.google.com/file/d/1pYHBLWP8Zrc7SMFVLzc8BWQEYEIZH_DI/view",
+      "reason": "external"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Onboarding",
+      "reason": "external"
+    },
+    {
+      "url": "https://enquiz.io/",
+      "reason": "external"
+    },
+    {
+      "url": "https://enquiz.io/docs/creation/from_scratch/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/products/envycrm/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/products/generator-klientov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/products/kvizy/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/products/obratnyy-zvonok/",
+      "reason": "external"
+    },
+    {
+      "url": "https://envybox.io/products/onlayn-chat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://flexbe.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ga-dev-tools.appspot.com/campaign-url-builder/",
+      "reason": "external"
+    },
+    {
+      "url": "https://get.teamviewer.com/mangotelecom",
+      "reason": "external"
+    },
+    {
+      "url": "https://get.timepad.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://github.com/willfarrell/docker-autoheal",
+      "reason": "external"
+    },
+    {
+      "url": "https://help.carrotquest.io/article/235",
+      "reason": "external"
+    },
+    {
+      "url": "https://help.k50.ru/search/?query=%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%82%D0%BE%D1%80+mango+calltracking",
+      "reason": "external"
+    },
+    {
+      "url": "https://help.mail.ru/mail/security/protection/external/",
+      "reason": "external"
+    },
+    {
+      "url": "https://help.opera.com/ru/latest/advanced/",
+      "reason": "external"
+    },
+    {
+      "url": "https://help.retailcrm.ru/Users/ApiKeys",
+      "reason": "external"
+    },
+    {
+      "url": "https://helpdesk.bitrix24.ru/open/25004908/",
+      "reason": "external"
+    },
+    {
+      "url": "https://helpdesk.bitrix24.ru/open/5440417/",
+      "reason": "external"
+    },
+    {
+      "url": "https://helpdesk.bitrix24.ru/open/6546149/",
+      "reason": "external"
+    },
+    {
+      "url": "https://helpdesk.bitrix24.ru/open/7362845",
+      "reason": "external"
+    },
+    {
+      "url": "https://infoclinica.ru/products/infoclinica/",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/cc_manual/ishodjashie_obrashenija.htm",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/cc_manual/istorijavyzovov_istorijavyzovov.htm",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/cc_manual/nastroiki_telefonija.htm",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/cc_manual/postobrabotka_zvonkov.htm",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/cc_manual/textovye_rassylki.htm",
+      "reason": "external"
+    },
+    {
+      "url": "https://issa.mangotele.com/upload/manual/",
+      "reason": "external"
+    },
+    {
+      "url": "https://its.1c.ru/db/metod81",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/products/integraciya/api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/products/integraciya/price/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/zapis-razgovorov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/calltracking_vs_analytics/otchety/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/integratsiya-api/?PATH=%2Fintegratsiya-api",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/integratsiya-api/spisok_integratsiy/integratsiya_crm_api/?PATH=%2Fintegratsiya-api%2Fspisok_integratsiy%2Fintegratsiya_crm_api",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/?PATH=%2Ftekhnicheskaya_podderzhka%2Fmango_talker_menu",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/gde_vzyat_dannye_dlya_vkhoda_i_drugie_voprosy/dannye_dlya_vhoda/gde_vzyat_dannye_dlya_vkhoda/?sphrase_id=573300&PATH=%2Ftekhnicheskaya_podderzhka%2Fmango_talker_menu%2Fgde_vzyat_dannye_dlya_vkhoda_i_drugie_voprosy%2Fdannye_dlya_vhoda%2Fgde_vzyat_dannye_dlya_vkhoda",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/m_windows/gde_vzyat_dannye_dlya_vkhoda/?PATH=%2Ftekhnicheskaya_podderzhka%2Fmango_talker_menu%2Fm_windows%2Fgde_vzyat_dannye_dlya_vkhoda",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/upload/help4vats/mangotalker-manual/4android/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%20MANGO%20TALKER_Android_%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D1%81%D1%82%D0%B0%D1%80%D1%82.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://ivanovo.mango-office.ru/upload/help4vats/mangotalker-manual/4windows-mac/%D0%9A%D0%BE%D0%BC%D0%BC%D1%83%D0%BD%D0%B8%D0%BA%D0%B0%D1%82%D0%BE%D1%80%20MANGO%20TALKER_%20Windows_Mac_%D0%91%D1%8B%D1%81%D1%82%D1%80%D1%8B%D0%B9_%D1%81%D1%82%D0%B0%D1%80%D1%82.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://k50.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://k50.ru/servisy/k50-optimizator.php",
+      "reason": "external"
+    },
+    {
+      "url": "https://leadback.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://leadgenic.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://leadgenic.userecho.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://livetex.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://lk.mango-office.ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://lk.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://lk.mango-office.ru/ics/demo",
+      "reason": "external"
+    },
+    {
+      "url": "https://lk.mango-office.ru/ics_mcw/assets/downloads/max-channel-manual.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://ltdfoto.ru/images/2024/08/20/cat548ba3aa37a77c1a.jpg",
+      "reason": "external"
+    },
+    {
+      "url": "https://mangoyijajo5706.envycrm.com",
+      "reason": "external"
+    },
+    {
+      "url": "https://mangoyijajo5706.envycrm.com/work/list/day/18.10.2021",
+      "reason": "external"
+    },
+    {
+      "url": "https://marketplace.1c-bitrix.ru/solutions/mangotelecom.calltracking/",
+      "reason": "external"
+    },
+    {
+      "url": "https://max.ru/mango_office_bot",
+      "reason": "external"
+    },
+    {
+      "url": "https://med.me/ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://my.calltouch.ru/accounts",
+      "reason": "external"
+    },
+    {
+      "url": "https://my.calltouch.ru/user/login",
+      "reason": "external"
+    },
+    {
+      "url": "https://mysite.ru/bitrix/admin/template_admin.php",
+      "reason": "external"
+    },
+    {
+      "url": "https://mysite.wordpress.com/wp-admin/",
+      "reason": "external"
+    },
+    {
+      "url": "https://online.business.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://operaru.ru/faq/how-to-block-pop-ups-in-opera",
+      "reason": "external"
+    },
+    {
+      "url": "https://perezvoni.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.mango.mlk",
+      "reason": "external"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.mango.mlk&hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://play.google.com/store/apps/details?id=com.mango.mlk&hl=ru&gl=US",
+      "reason": "external"
+    },
+    {
+      "url": "https://powerbi.microsoft.com/ru-ru/what-is-power-bi/",
+      "reason": "external"
+    },
+    {
+      "url": "https://profile.terrasoft.ru/user/login?destination=corp/ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://qm.mango-office.ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://qm.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://qm.mango-office.ru/,",
+      "reason": "external"
+    },
+    {
+      "url": "https://registry-vbpx.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://reports.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://robot.mango-office.ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://robot.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://robot.mango-office.ru/auth",
+      "reason": "external"
+    },
+    {
+      "url": "https://robot.mango-office.ru/help",
+      "reason": "external"
+    },
+    {
+      "url": "https://robot.mango-office.ru/help/1123",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%91%D0%BB%D0%BE%D0%BA%D0%BD%D0%BE%D1%82_%28%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0%29",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%94%D0%BE%D0%BC%D0%B5%D0%BD%D0%BD%D0%BE%D0%B5_%D0%B8%D0%BC%D1%8F",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%9F%D0%BE%D0%B4%D0%B4%D0%BE%D0%BC%D0%B5%D0%BD",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%A1%D0%BB%D0%BE%D0%B2%D0%BE%D1%84%D0%BE%D1%80%D0%BC%D0%B0",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%81%D0%B5%D1%82%D1%8C_%D0%BE%D0%B1%D1%89%D0%B5%D0%B3%D0%BE_%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D0%BD%D0%BD%D0%B0%D1%8F_%D1%82%D0%BE%D1%80%D0%B3%D0%BE%D0%B2%D0%BB%D1%8F",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/Cost_Per_Action",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/HTML-%D1%86%D0%B2%D0%B5%D1%82%D0%B0",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/ISO_3166-2:RU",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/URL",
+      "reason": "external"
+    },
+    {
+      "url": "https://ru.wikipedia.org/wiki/Webhook",
+      "reason": "external"
+    },
+    {
+      "url": "https://site-w1.retailcrm.ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://site-w1.retailcrm.ru/orders/",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/Support/Calltracking/Calltracking_MANGO_OFFICE_Razmeshchenie_koda_na_sayte.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/Support/Mango_Dialogi/Manual_API_Mango_Dialogi.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/api/MangoOffice_VPBX_API.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/mango_pages_files/1fd/Razmeshchenie-koda-na-sayte.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/medialibrary/625/625c0de378576b92334b68d0ddf4c40d/rm_pic_50.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/medialibrary/81e/81ec900e7f5d7d53a14f29ced6a7aa4a/Commerce_MANGO_OFFICE.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/medialibrary/b9a/b9a281474e5d17334d0b5b75f4b87e64/MangoOffice_VPBX_API_v1.9.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static.mango-office.ru/project-im/userguide_web_cc.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://static2.mango-office.ru/project-im/medialibrary/f50/f5041d5bf737fd1fbc1b47a7053baced/Mango_analytics.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://streamwood.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.apple.com/ru-ru/HT204266",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.apple.com/ru-ru/guide/iphone/iph248b543ca/ios",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.avito.ru/partitions/135",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.avito.ru/sections/125?articleId=2124",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.avito.ru/sections/587",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.avito.ru/sections/600",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/1008015?hl=ru&ref_topic=3544906",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/10089681?hl=ru&ref_topic=9143232",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/1012040?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/10269537?hl=ru&ref_topic=1009620",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/10269537?ref_topic=1009620",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/1033068",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/12925217?hl=ru&co=GENIE.Platform%3DiOS&sjid=2683341174184572780-EU",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/14240153?hl=ru&sjid=1153918178431517490-EU",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/14430645?hl=ru&ref_topic=12270146&sjid=12347459591524276435-EU",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/2649554?hl=ru&ref_topic=1009620",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/2884495",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/6205850?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/9143382",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/9304153?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/9305587",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/analytics/answer/9814495?sjid=1153918178431517490-EU",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/chrome/a/answer/9227157?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/chrome/answer/95472?co=GENIE.Platform%3DDesktop&hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/google-ads/answer/2404190?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/googleplay/answer/113409?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.google.com/googleplay/answer/2521768?hl=ru",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.livetex.ru/hc/ru/articles/360007113778--%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%9F%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B0",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.livetex.ru/hc/ru/articles/360007245557-%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B2%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%D0%B0-LiveTex-%D0%BD%D0%B0-%D1%81%D0%B0%D0%B9%D1%82%D0%B5",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.livetex.ru/hc/ru/sections/360002132897-%D0%9D%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-%D0%B2%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%D0%BE%D0%B2-%D0%BD%D0%B0-%D1%81%D0%B0%D0%B9%D1%82%D0%B5?_ga=2.177507874.606737192.1628868290-1737223965.1628868290",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.yclients.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.yclients.com/5-9--polzovateli-i-dostup/",
+      "reason": "external"
+    },
+    {
+      "url": "https://support.yclients.com/736",
+      "reason": "external"
+    },
+    {
+      "url": "https://talk-me.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://talk-me.ru/knowledge_base/s_chego_nachat/kod_chata_dlya_sayta_ustanovit_onlajn_konsultanta.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://talk-me.ru/knowledge_base/s_chego_nachat/registratsiya.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://talk-me.ru/knowledge_base/s_chego_nachat/skachat_onlajn_konsultant_dlya_saita.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://taplink.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://taplink.ru/profile/auth/signin/",
+      "reason": "external"
+    },
+    {
+      "url": "https://target.my.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://tech.yandex.ru/maps/geocoder/doc/desc/examples/geocoder_examples-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ticketscloud.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://ticketscloud.com/static/auth/login.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://tilda.cc/login/",
+      "reason": "external"
+    },
+    {
+      "url": "https://tilda.cc/ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://timepad.ru/business/",
+      "reason": "external"
+    },
+    {
+      "url": "https://timeweb.com/ru/docs/pochta/osnovnye-voprosy-po-rabote-s-pochtoj/domennaya-pochta/",
+      "reason": "external"
+    },
+    {
+      "url": "https://tv.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://tv.mango-office.ru/auth",
+      "reason": "external"
+    },
+    {
+      "url": "https://ubuntu.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://venyoo.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://venyoo.ru/info/how-to-install",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/ads?act=office_help",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/biz",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/biz/article/sbor-zayavok",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/business-ads",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/business-pages",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/faq11844?union_id=1607870481",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/faq12058?union_id=1607870481",
+      "reason": "external"
+    },
+    {
+      "url": "https://vk.com/mangotelecom",
+      "reason": "external"
+    },
+    {
+      "url": "https://vkvideo.ru/video_ext.php?oid=-28096024&id=456239656&hash=6ddeb5063a3363fd&hd=4",
+      "reason": "external"
+    },
+    {
+      "url": "https://vkvideo.ru/video_ext.php?oid=-28096024&id=456239657&hash=4ccb30ec16ddce81&hd=4",
+      "reason": "external"
+    },
+    {
+      "url": "https://website.ru/?ct_fb=%7B%7Bcampaign.id%7D%7D_%7B%7Badset.id%7D%7D_%7B%7Bad.id%7D%7D",
+      "reason": "external"
+    },
+    {
+      "url": "https://website.ru/?ct_vk=%7Bcampaign_id%7D_%7Bad_id%7D",
+      "reason": "external"
+    },
+    {
+      "url": "https://website.ru/?utm_medium=cpc&utm_source=vk.com&utm_campaign=kampaniya",
+      "reason": "external"
+    },
+    {
+      "url": "https://website.ru/?utm_medium=cpc&utm_source=vk.com&utm_campaign=kampaniya&ct_fb=%7B%7Bcampaign.id%7D%7D_%7B%7Badset.id%7D%7D_%7B%7Bad.id%7D%7D",
+      "reason": "external"
+    },
+    {
+      "url": "https://website.ru/?utm_medium=cpc&utm_source=vk.com&utm_campaign=kampaniya&ct_vk=%7Bcampaign_id%7D_%7Bad_id%7D",
+      "reason": "external"
+    },
+    {
+      "url": "https://widgets-api.mango-office.ru/v1/calltracking/%3CwidgetId%3E/deals",
+      "reason": "external"
+    },
+    {
+      "url": "https://widgets-api.mango-office.ru/v1/calltracking/%5BwidgetId%5D/calls.%5Bext%5D",
+      "reason": "external"
+    },
+    {
+      "url": "https://widgets-api.mango-office.ru/v1/calltracking/12345/deals/albato?access_token=dbf28bf3-6768-31a9-91ee-84ddc49ca8cb",
+      "reason": "external"
+    },
+    {
+      "url": "https://widgets-api.mango-office.ru/v1/calltracking/224/calls?dateStart=2017-06-01T00:00Z&da..",
+      "reason": "external"
+    },
+    {
+      "url": "https://wordstat.yandex.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.amocrm.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.amocrm.ru/support/contacts_company/search_and_contact_filter",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.amocrm.ru/support/digital_pipline/salesbot",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.amocrm.ru/support/user/create_users",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/business/tariffs",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/business/tariffs?avcm=for_business",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/business/tools/calltracking",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/company",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/legal/pro_tools/avito-pro/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/legal/pro_tools/public-api",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/legal/rules/paid_services/cost-per-action",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.avito.ru/professionals/api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.bitrix24.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.bitrix24.ru/articles/cloud_services_business.php%20",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.bitrix24.ru/features/box/box.php",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.calltouch.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.design-sites.ru/utility/url-encoding.php",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.google.com/search?q=HSM-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+&sca_esv=11e576cd2babb724&rlz=1C1GCEA_enRU1096RU1096&sxsrf=AHTn8zp9gCHWUn4OcraML0nrPaIc-eurmA%3A1745589700867&ei=xJULaN_hNKHCwPAPycPHwAI&ved=0ahUKEwjf06ywrPOMAxUhIRAIHcnhESgQ4dUDCBE&uact=5&oq=HSM-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5+&gs_lp=Egxnd3Mtd2l6LXNlcnAiF0hTTS3RgdC-0L7QsdGJ0LXQvdC40LUgMgQQABgeMgUQABjvBTIIEAAYgAQYogQyBRAAGO8FSKYVUIcLWOEMcAF4AJABAJgBdKAB2gGqAQMwLjK4AQPIAQD4AQGYAgOgAvcBwgILEAAYgAQYsAMYogTCAggQABiwAxjvBcICBRAhGKABmAMAiAYBkAYEkgcDMS4yoAfBBbIHAzAuMrgH7wE&sclient=gws-wiz-serp",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.google.com/search?q=HSM-%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D1%8F",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.gosuslugi.ru/help/faq/profile_ip/kak_sozdat_uz_ip",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.jivo.ru/help/installation/nachalo-raboty-s-jivosite.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/events/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/journal/newsletter/analiz-internet-magazina/?sphrase_id=812008",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/numbers_and_tariffs/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/numbers_and_tariffs/podklyuchenie-mnogokanalnogo-nomera/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/call_centre/resheniya/obzvon_klientov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/calltracking/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/calltracking/price/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/calltracking/price/?productId=400022973",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/calltracking/vozmozhnosti/analytics/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/competitor_analysis/?utm_source=main_page&utm_campaign=competitor_analysis",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/cov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/reports-constructor/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/tariffs/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/vozmozhnosti/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/vozmozhnosti/chat-bot/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/contact-center/vozmozhnosti/control_oper/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/integraciya/api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/mango-talker/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/mango-talker/?utm_source=google&utm_medium=cpc&utm_campaign=mt_main_tkb_src_all&utm_term=%2Bm%20%2Btalker&utm_content=aud-574492869802:kwd-901031957228%7Cpos_%7Creg_9047028%7Crin_&utm_id=cid_958929569%7Cgid_46440136223%7Caid_361971229409%7Ckey_%2Bm%20%2Btalker%7Cfiid_%7Cnetwork_g%7Cdvc_c%7Creg_9047028%7Crin_&gclid=EAIaIQobChMIwa27uZ7E8AIVkLt3Ch3bYA54EAAYASAAEgL_9PD_BwE",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/mango-talker/download/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/mango-talker/programmnyy-telefon/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/multichannel-chat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/multichannel-chat/emulyatoryapiymangoydialogi/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/post-call-analytics/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/quality-management/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/sdelki/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/kak-nachat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/price/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/address-book/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/calltracking/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/golosovoe-menyu-ivr/?sphrase_id=481496",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/mango-talker/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/obratnyj_zvonok/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/podklyuchenie-po-api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/rabota-s-nomerami-storonnikh-provayderov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/speech_to_text/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/virtualnaya_ats/vozmozhnosti/zapis-razgovorov/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/products/widgets/vozmozhnosti/whatsapp-business/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/shop/devices/wired-sip-phones/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/shop/numbers/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/shop/tariffs/vpbx/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/6_mango-dialogi/8_obrabotka_obrasheniy_MT/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/8_10_api_mobilnoe_prilozhenie/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/bystryy_start_dct/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/bystryy_start_dct/nastroyka_dkt_v_lichnom_kabinete/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/chasto_zadavaemye_voprosy_dct/voprosy_po_integratsii/chto_takoe_utm_metki_i_kak_ikh_nastraivat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/integratsiya/infoklinika/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/integratsiya/integratsiya_kolltrekinga_s_crm_bitrix_24/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/integratsiya/integratsiya_kolltrekinga_s_roistat/?sphrase_id=696310",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/integratsiya_kolltrekinga_s_roistat/integratsiya_colltrekinga_s_roistat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/integratsiya_s_vidzhetom_obratnyy_zvonok/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/otchety/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/podklyuchenie_dinamicheskogo_kolltrekinga/osnovnoe_menyu_dkt/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/sluzhebnye_operatsii/kakynaysayteynaytiyselektoryknopkiyiliypolya/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/calltracking_vs_analytics/ustanovka_vidzheta_na_sayte/eksport_koda_vidzheta_i_otpravka_ego_na_e_mail/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/1C/integratsiya_virtualnoy_ats_i_1C/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/amocrm/integratsiyaysyadr/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/amocrm/zachem_vnutrennie_nomera_v_vidzhete_i_gde_ikh_vzyat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/bitrix24/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/dopolnitelnye_prilozheniya/sha256_generator/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/fayl_otsutstvuet/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/napr_zabl_2300/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/nastroit_sotrudnika_dlya_integratsii/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/oshibka_avtorizatsii_401/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/restapivatshelp/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/restapivatshelp/integratsiya_crm_api/?sphrase_id=1026681",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/spisok_integratsiy/integratsiya_crm_api/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/integratsiya-api/spisok_integratsiy/integratsiya_crm_api/?sphrase_id=545377",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/monitoring/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/mt_ios/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/mt_macos/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tekhnicheskaya_podderzhka/mango_talker_menu/mt_windows/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/tsentr_obrabotki_vyzovov/rukovodstvo_polzovatelya_tsov/spravochnik_po_kontrol_kachestva/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/virtualnaya_ats/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/virtualnaya_ats/multikanalnyy_chat/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/virtualnaya_ats/nastroyka_vidzheta_mkch/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/support/virtualnaya_ats/rukovodstvo_polzovatelya/speech_analytics/?sphrase_id=431042",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/tariffs/numbers/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/Mango-Contact-Center.exe",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/MangoOffice_VPBX_API_v1.9.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg/dct4vkrazmetka/dct4vkrazmetka_pic_1.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg/dct4vkrazmetka/dct4vkrazmetka_pic_2.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg/dct4vkrazmetka/dct4vkrazmetka_pic_3.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg/dct4vkrazmetka/dct4vkrazmetka_pic_4.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg/dct4vkrazmetka/dct4vkrazmetka_pic_5.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/help4calltrecking/itg4powerbi/MANGO_OFFICE_Calltracking_leads.pbit",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/3da/callt113.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/990/CC_manual_1.21.15.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/9ec/LK_manual_v35.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/c3e/CC_manual_1.20.07.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/fa2/LK_7.20.39_novyy-MKCH.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/fb3/callt114.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/fe3/LK_%201.20.26.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/fe3/LK_7.19.48.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/iblock/fe3/LK_v_8_19_34.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/platlp1.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/platlp2.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/platlp3.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/platlp4.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/platlp5.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/wix1.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/wix2.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/wix3.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/images/wix4.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/0ff/QM_manual_v-1.22.17.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/53f/CC_manual.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/713/LK_manual_v35.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/ccb/LK_manual_v58.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/e18/MangoOffice_UT115_210121.zip",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/mango_pages_files/f84/LK_manual.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/1a2/SteamWood_pic_1a.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/373/kt_krossdomain_pic_2.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/3f1/SteamWood_pic_2b.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/68c/MangoOffice_UT114_210117.zip",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/930/Modul_VATS_Mobilnaya_versiya_LK_Rukovodstvo_polzovatelya.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/9ca/SteamWood_pic_1b.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/a36/SteamWood_pic_2a.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/b77/kt_f_pic_118.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/medialibrary/b9a/offline_fb.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/register_callto.zip",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/faq/Mango_office_speech_analytics.pdf",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/1_1.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/2_2.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/3.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/4.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/5_5.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/6.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mango-office.ru/upload/support/screens/atyur/FAQrag/7.png",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.marquiz.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.mysite.ru/?utm_source=yandex&utm_medium=cpc&utm_campaign=christmas-toys",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.origami.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.retailcrm.ru/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.retailcrm.ru/welcome",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.rustore.ru/catalog/app/com.mango.mlk",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.unisender.com/ru/support/api/common/api-key/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.yclients.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.yclients.com/signin",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.zendesk.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://www.zendesk.com/?variant=408a",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.cloud/ru/services/smartcaptcha",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/direct/doc/changelog/index-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/direct/doc/dg/concepts/access-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/direct/doc/ref-v5/agencyclients/agencyclients-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/direct/doc/reports/compatibility-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/direct/doc/support/troubleshooting/issue-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/oauth/doc/dg/concepts/ya-oauth-intro.html/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/dev/oauth/doc/dg/reference/token-invalidate-docpage/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/direct/efficiency/quick-links.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/direct/general/positions.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/direct/statistics/url-tags.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/id/ru/authorization/app-passwords?ysclid=m0mahthe5g228173350",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/general/creating-counter.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/general/goal-js-event.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/general/goal-steps.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/general/goals.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/general/how-it-works.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/index.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrica/quick-start.html",
+      "reason": "external"
+    },
+    {
+      "url": "https://yandex.ru/support/metrika/data/offline-params.xml",
+      "reason": "external"
+    },
+    {
+      "url": "https://yclients.com/",
+      "reason": "external"
+    },
+    {
+      "url": "https://yookassa.ru/yooid/signin/step/login?origin=Wallet&returnUrl=https%3A%2F%2Fyookassa.ru%2F",
+      "reason": "external"
+    }
+  ],
+  "scope": "All reachable HTML in the five requested branches; archives, obsolete versions, downloads, support and files excluded."
+}
