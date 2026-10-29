@@ -53,7 +53,7 @@ owner: G-Ivan-A
   "class_input": {
     "raw_request": "<передать raw_request>",
     "questionnaire": null,
-    "additional_comments": null
+    "additional_comments": "<передать additional_comments[{text,author_role?}]>"
   },
   "source_register": [],
   "decisions": [],

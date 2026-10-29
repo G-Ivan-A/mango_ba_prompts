@@ -34,7 +34,7 @@ owner: G-Ivan-A
   "phase": "a-in",
   "class": "C12",
   "input_mode": "START",
-  "output_mode": "SLICE",
+  "output_mode": "FULL",
   "revision": "<revision>",
   "rule_bundle": [
     {

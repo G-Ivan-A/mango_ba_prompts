@@ -38,6 +38,10 @@ class ManualPipeline(unittest.TestCase):
                 self.assertIn(call["phase"], entry["phases"])
                 self.assertIsInstance(call["class_input"], dict)
                 self.assertIsInstance(payload, dict)
+                if entry["id"] == "C01":
+                    self.assertIsNotNone(call["class_input"]["additional_comments"])
+                if entry["id"] == "C12":
+                    self.assertEqual(call["output_mode"], "FULL")
                 self.assertIn(entry["inputs"], text)
                 self.assertIn(entry["outputs"], text)
                 self.assertTrue((ROOT / entry["existing"]).is_file())
@@ -117,6 +121,11 @@ class StateProbes(unittest.TestCase):
                 with self.assertRaises(ValueError):
                     REPLAY.assemble(self.base, patches)
 
+        patches = deepcopy(self.slices)
+        patches[1]["revision"] = self.base["revision"]
+        with self.assertRaises(ValueError):
+            REPLAY.assemble(self.base, patches)
+
     def test_incomplete_entity_unknown_source_duplicate_rejected(self):
         for defect in ("text", "source", "duplicate"):
             with self.subTest(defect=defect):
@@ -164,14 +173,14 @@ class StateProbes(unittest.TestCase):
         self.assertFalse(REPLAY.release_allowed(candidate, None, "BA-fixture", "release"))
 
     def test_two_factors_only_for_disputed_command(self):
-        factors = [dict(message_id="m1", actor="BA", revision="r3", time=2, kind="understand_consequence"),
-                   dict(message_id="m2", actor="BA", revision="r3", time=3, kind="choose_disputed_option")]
-        self.assertTrue(REPLAY.disputed_command_allowed(True, "r3", 1, factors))
-        self.assertTrue(REPLAY.disputed_command_allowed(False, "r3", 1, []))
-        self.assertFalse(REPLAY.disputed_command_allowed(True, "r3", 1, factors[:1]))
-        for changes in ({"message_id":"m1"}, {"revision":"r2"}, {"actor":"other"}, {"time":0}):
+        factors = [dict(message_id="m1", actor="BA", command_id="D1", revision="r3", time=2, kind="understand_consequence"),
+                   dict(message_id="m2", actor="BA", command_id="D1", revision="r3", time=3, kind="choose_disputed_option")]
+        self.assertTrue(REPLAY.disputed_command_allowed(True, "D1", "r3", 1, factors))
+        self.assertTrue(REPLAY.disputed_command_allowed(False, "D1", "r3", 1, []))
+        self.assertFalse(REPLAY.disputed_command_allowed(True, "D1", "r3", 1, factors[:1]))
+        for changes in ({"message_id":"m1"}, {"revision":"r2"}, {"command_id":"D2"}, {"actor":"other"}, {"time":0}):
             altered = [factors[0], dict(factors[1], **changes)]
-            self.assertFalse(REPLAY.disputed_command_allowed(True, "r3", 1, altered))
+            self.assertFalse(REPLAY.disputed_command_allowed(True, "D1", "r3", 1, altered))
 
 
 if __name__ == "__main__":

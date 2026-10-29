@@ -20,11 +20,13 @@ def assemble(base, slices):
     entities = state["entities"]
     known_sources = {s["id"] for s in state["sources"]}
     retired = set(state.get("retired_ids", []))
+    seen_revisions = {state["revision"]}
     for patch in slices:
         if patch["task"] != state["task"] or patch["parent"] != state["revision"]:
             raise ValueError("task/revision chain mismatch")
-        if patch["revision"] == patch["parent"]:
+        if patch["revision"] in seen_revisions:
             raise ValueError("revision must advance")
+        seen_revisions.add(patch["revision"])
         ids = [x["id"] for x in patch["upserts"]]
         if len(ids) != len(set(ids)):
             raise ValueError("duplicate upsert")
@@ -66,7 +68,7 @@ def release_allowed(candidate, approval, required_actor, required_scope):
     )
 
 
-def disputed_command_allowed(disputed, revision, objection_time, factors):
+def disputed_command_allowed(disputed, command_id, revision, objection_time, factors):
     if not disputed:
         return True
     if len(factors) != 2:
@@ -74,6 +76,7 @@ def disputed_command_allowed(disputed, revision, objection_time, factors):
     first, second = factors
     return bool(
         first["message_id"] != second["message_id"]
+        and first["command_id"] == second["command_id"] == command_id
         and first["revision"] == second["revision"] == revision
         and first["actor"] == second["actor"]
         and first["kind"] == "understand_consequence"

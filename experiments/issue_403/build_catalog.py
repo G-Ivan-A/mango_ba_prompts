@@ -167,9 +167,9 @@ def write_standards():
         class_input = {}
         for field in fields:
             key = re.match(r"[A-Za-z0-9_]+", field)[0]
-            class_input[key] = None if "?" in field else f"<передать {field}>"
+            class_input[key] = None if re.match(r"[A-Za-z0-9_]+\?", field) else f"<передать {field}>"
         input_template = dict(task="<ID>", phase=entry["phases"][0], **{"class":class_id},
-                              input_mode="START", output_mode="SLICE", revision="<revision>",
+                              input_mode="START", output_mode="FULL" if class_id == "C12" else "SLICE", revision="<revision>",
                               rule_bundle=[{"id":"<rule-id>","version":"<version>","body":"<полный текст>"}],
                               capabilities={"web":False,"attachments":False,"images":False},
                               base=None, slices=[], class_input=class_input,
