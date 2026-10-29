@@ -1,0 +1,548 @@
+[
+  {
+    "capability": "outbound-calling",
+    "feature": "realtime-analytics",
+    "feature_name": "realtime-analytics",
+    "function": "campaign-realtime-view",
+    "name": "Просмотр текущей статистики кампании",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/14_iskhodyashchiy_obzvon/2_5_kartochka_kampanii/11_5_1_statistika_kampanii/",
+    "title": "Статистика по кампании",
+    "verification": "Открыть статистику кампании и проверить обновление показателей."
+  },
+  {
+    "capability": "outbound-calling",
+    "feature": "historical-reports",
+    "feature_name": "historical-reports",
+    "function": "campaign-history-view",
+    "name": "Формирование отчёта эффективности за период",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/14_iskhodyashchiy_obzvon/2_5_kartochka_kampanii/11_5_2_effektivnost_kampanii/",
+    "title": "Эффективность кампании",
+    "verification": "Установить период, сформировать отчёт, проверить границы периода."
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "adherence-tracking",
+    "feature_name": "adherence-tracking",
+    "function": "punctuality-report-view",
+    "name": "Просмотр отчёта пунктуальности WFM",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety/",
+    "title": "Как контролировать пунктуальность сотрудников в отчетах WFM",
+    "verification": "Сопоставить показатели отчёта с критериями пунктуальности; не переносить их автоматически в API."
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "adherence-tracking",
+    "feature_name": "adherence-tracking",
+    "function": "punctuality-criteria-configure",
+    "name": "Настройка критериев пунктуальности",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety/",
+    "title": "Как контролировать пунктуальность сотрудников в отчетах WFM",
+    "verification": "Изменить критерий пунктуальности и проверить его использование в отчёте.",
+    "heading": "Настройки критериев пунктуальности"
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "adherence-tracking",
+    "feature_name": "adherence-tracking",
+    "function": "punctuality-penalty-configure",
+    "name": "Настройка штрафа за нарушение пунктуальности",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_3_otchety/",
+    "title": "Как контролировать пунктуальность сотрудников в отчетах WFM",
+    "verification": "Изменить штраф и проверить отражение настройки в оценке.",
+    "heading": "Настройка штрафов за нарушение пунктуальности"
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "shift-scheduling",
+    "feature_name": "shift-scheduling",
+    "function": "shift-exchange-request",
+    "name": "Создание запроса на обмен сменами",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/8_4_obmen_smenami/",
+    "title": "Как обменяться сменами с коллегой",
+    "verification": "Создать обмен сменами и проверить появление запроса.",
+    "heading": "Создание обмена"
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "shift-scheduling",
+    "feature_name": "shift-scheduling",
+    "function": "holiday-calendar-configure",
+    "name": "Настройка рабочих и праздничных дней",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/2_5_nastroiki/8_5_2_kalendar/",
+    "title": "Где задать рабочие и праздничные дни",
+    "verification": "Изменить тип дня и проверить использование календаря при планировании."
+  },
+  {
+    "capability": "workforce-management",
+    "feature": "adherence-tracking",
+    "feature_name": "adherence-tracking",
+    "function": "working-time-notification-configure",
+    "name": "Настройка уведомления о нарушении рабочего времени",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/2_5_nastroiki/8_5_1_auto_wfm/",
+    "title": "Как настроить автоматические уведомления о нарушении рабочего времени",
+    "verification": "Изменить условие уведомления и проверить его отображение в настройках."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-status",
+    "feature_name": "agent-status",
+    "function": "desktop-agent-status-change",
+    "name": "Изменение статуса сотрудника в десктопном КЦ",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/3_glavnoe_okno_programmy/2_1_upravlenie_statusom/",
+    "title": "Как управлять статусом сотрудника",
+    "verification": "Выбрать статус в КЦ и проверить отображаемый статус; правила API проверять отдельно."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-status",
+    "feature_name": "agent-status",
+    "function": "agent-status-configure",
+    "name": "Настройка статусов сотрудников",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/5_5_1_3_nastroyki/2_5_1_3_12_statusy_sotrudnikov/",
+    "title": "Статусы сотрудников",
+    "verification": "Изменить пользовательский статус и проверить сохранение настройки."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-session",
+    "feature_name": "agent-session",
+    "function": "web-agent-login",
+    "name": "Вход сотрудника в web-КЦ",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/1_avtorizatsiya/1_2_poryadok_vhoda/",
+    "title": "Порядок входа",
+    "verification": "Выполнить вход в web-КЦ; начальный статус устанавливать только по прочитанному источнику."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "working-time-report",
+    "feature_name": "working-time-report",
+    "function": "agent-working-time-view",
+    "name": "Просмотр рабочего времени сотрудника",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/10_sotrudniki/7_3_rabochee_vremya/",
+    "title": "Как посмотреть рабочее время сотрудника",
+    "verification": "Открыть отчёт сотрудника за период и сверить строки времени/статусов с описанием отчёта."
+  },
+  {
+    "capability": "omnichannel-contact-center",
+    "feature": "wallboard",
+    "feature_name": "wallboard",
+    "function": "wallboard-template-select",
+    "name": "Выбор шаблона Wallboard",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/11_wallboard/wallboard_setup/",
+    "title": "Настройка Wallboard",
+    "verification": "Выбрать шаблон и проверить появление соответствующих показателей.",
+    "heading": "Настройка Wallboard по шаблону"
+  },
+  {
+    "capability": "omnichannel-contact-center",
+    "feature": "wallboard",
+    "feature_name": "wallboard",
+    "function": "wallboard-custom-template-configure",
+    "name": "Настройка собственного шаблона Wallboard",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/11_wallboard/wallboard_setup/",
+    "title": "Настройка Wallboard",
+    "verification": "Сохранить свой набор показателей и проверить его отображение.",
+    "heading": "Настройка «своего шаблона» показателей Wallboard"
+  },
+  {
+    "capability": "cloud-pbx",
+    "feature": "mobile-account",
+    "feature_name": "mobile-account",
+    "function": "mobile-account-login",
+    "name": "Вход в мобильный Личный кабинет",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/2_mobilnyi-lk/1_mob_lk_bystryy_start/2_dostup_k_mlk/2_2_vhod_v_mlk/",
+    "title": "2.2 Вход в МЛК",
+    "verification": "Войти в мобильный ЛК с разрешённой учётной записью; не считать это входом оператора КЦ."
+  },
+  {
+    "capability": "information-security",
+    "feature": "access-control",
+    "feature_name": "access-control",
+    "function": "mobile-account-access-check",
+    "name": "Проверка прав доступа к мобильному ЛК",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/2_mobilnyi-lk/1_mob_lk_bystryy_start/2_dostup_k_mlk/2_1_prava_dostupa/",
+    "title": "2.1 Права доступа",
+    "verification": "Сопоставить доступ пользователя с описанными правами."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "ai-assistance",
+    "feature_name": "ai-assistance",
+    "function": "web-ai-hints-view",
+    "name": "Просмотр подсказок ИИ в web-КЦ",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/12_dopolnitelnye_uslugi/12_2_panel_podskazki_ii/",
+    "title": "Панель «Подсказки ИИ»",
+    "verification": "Открыть панель подсказок; пилотность и доступность проверить по статье."
+  },
+  {
+    "capability": "omnichannel-contact-center",
+    "feature": "web-dashboard",
+    "feature_name": "web-dashboard",
+    "function": "web-dashboard-widget-create",
+    "name": "Создание виджета web Dashboard",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/2_dashboard/2_2_sozdanie_i_nastroyka_vidzheta/",
+    "title": "Создание и настройка виджета",
+    "verification": "Создать виджет и проверить его присутствие на панели."
+  },
+  {
+    "capability": "omnichannel-contact-center",
+    "feature": "web-dashboard",
+    "feature_name": "web-dashboard",
+    "function": "web-dashboard-widget-delete",
+    "name": "Удаление виджета web Dashboard",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/2_dashboard/2_4_udalenie_vidzheta/",
+    "title": "Удаление виджета",
+    "verification": "Удалить виджет и проверить отсутствие его на панели."
+  },
+  {
+    "capability": "outbound-calling",
+    "feature": "campaign-management",
+    "feature_name": "campaign-management",
+    "function": "outbound-campaign-create",
+    "name": "Создание кампании с участием сотрудника",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/14_iskhodyashchiy_obzvon/1_4_dobavlenie_kampanii/11_4_1_s_uchastiem_sotrudnika/",
+    "title": "Как создать кампанию исходящего обзвона с участием сотрудника",
+    "verification": "Создать кампанию по описанному сценарию и проверить её появление в списке."
+  },
+  {
+    "capability": "sms-messaging",
+    "feature": "bulk-sms",
+    "feature_name": "bulk-sms",
+    "function": "cc-message-campaign-create",
+    "name": "Создание кампании текстовой рассылки",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/17_tekstovye_rassylki/14_1_tekstovye_rassylki/",
+    "title": "Как создавать кампании текстовых рассылок",
+    "verification": "Создать кампанию, проверить выбранный канал; WhatsApp и SMS не считать взаимозаменяемыми."
+  },
+  {
+    "capability": "speech-analytics",
+    "feature": "transcription",
+    "feature_name": "transcription",
+    "function": "recognition-settings-configure",
+    "name": "Настройка распознавания записей разговоров",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/8_rechevaya_analitika/1_4_vkladka_nastroyki/9_4_2_nastroiki_raspoznavaniya_zapisei/",
+    "title": "Как настроить распознавание записей разговоров",
+    "verification": "Изменить параметр распознавания и проверить сохранение настройки."
+  },
+  {
+    "capability": "sip-connectivity",
+    "feature": "sip-trunking",
+    "feature_name": "sip-trunking",
+    "function": "sip-trunk-delete",
+    "name": "Удаление SIP Trunk",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_5_udalenie/",
+    "title": "Удаление SIP Trunk",
+    "verification": "Проверить документированные условия удаления и результат удаления."
+  },
+  {
+    "capability": "cloud-pbx",
+    "feature": "account-session",
+    "feature_name": "account-session",
+    "function": "account-auto-logout-configure",
+    "name": "Настройка автоматического выхода из ЛК",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/10_Vhod/4_kak_nastroit_avtomaticheskii_vykhod_iz_sistemy_dlya_bezopasnosti/",
+    "title": "Как настроить автоматический выход из системы для безопасности",
+    "verification": "Проверить настройку автоматического выхода; не приравнивать её к сессии КЦ."
+  },
+  {
+    "capability": "call-routing",
+    "feature": "overflow-routing",
+    "feature_name": "overflow-routing",
+    "function": "failed-call-behavior-configure",
+    "name": "Настройка поведения при недозвоне",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/1_4_obrabotka_zvonkov/4_4_3_nastroyki_dozvona_i_soobshcheniy_po_umolchaniyu/",
+    "title": "Как управлять поведением звонков, если абонент не дозвонился",
+    "verification": "Проверить выбор настройки недозвона по статье."
+  },
+  {
+    "capability": "unified-communications",
+    "feature": "presence-status",
+    "feature_name": "presence-status",
+    "function": "talker-presence-change",
+    "name": "Изменение статуса Mango Talker",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/7_mango-talker/3_userguide_mtalker_4mobile/14_upravlenie_profilem_polzovatelya/smena_statusa_polzovatelya/",
+    "title": "Смена статуса пользователя",
+    "verification": "Проверить отображаемый статус Talker; связь со статусом КЦ не предполагается."
+  },
+  {
+    "capability": "unified-communications",
+    "feature": "file-sharing",
+    "feature_name": "file-sharing",
+    "function": "talker-shared-files-view",
+    "name": "Просмотр общих файлов Talker",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/7_mango-talker/3_userguide_mtalker_4mobile/10_administrirovanie_obschego_chata_ili_kanala/prosmotr_obschih_faylov/",
+    "title": "Просмотр общих файлов",
+    "verification": "Проверить доступ к списку общих файлов; файлы в аудите не скачиваются."
+  },
+  {
+    "capability": "voice-bot",
+    "feature": "intent-dictionary",
+    "feature_name": "intent-dictionary",
+    "function": "nlu-dictionary-create",
+    "name": "Создание справочника NLU",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/9_roboty-i-ai-roboty/7_ai_roboty/12_1_sozdanie_ai_robota/",
+    "title": "Создание Справочника NLU",
+    "verification": "Проверить создание справочника по описанному сценарию."
+  },
+  {
+    "capability": "voice-bot",
+    "feature": "http-action",
+    "feature_name": "http-action",
+    "function": "robot-http-request-configure",
+    "name": "Настройка HTTP-запроса в скрипте робота",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/9_roboty-i-ai-roboty/4_konstruktor_skriptov/5_6_blok_otpravit_http_zapros/",
+    "title": "Блок «Отправить http-запрос»",
+    "verification": "Проверить параметры блока HTTP-запроса; не переносить их в публичный API."
+  },
+  {
+    "capability": "chatbot",
+    "feature": "dialog-analytics",
+    "feature_name": "dialog-analytics",
+    "function": "chatbot-script-statistics-view",
+    "name": "Просмотр статистики скрипта чат-бота",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/9_roboty-i-ai-roboty/3_chat_boty/4_3_statistika_po_skriptu_chat_bota/",
+    "title": "Как просмотреть статистику по скрипту чат-бота",
+    "verification": "Проверить доступные показатели статистики скрипта."
+  },
+  {
+    "capability": "speech-analytics",
+    "feature": "keyword-detection",
+    "feature_name": "keyword-detection",
+    "function": "speech-topic-create",
+    "name": "Создание своей тематики анализа разговоров",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/2_avtomaticheskoe_tegirovanie_razgovorov/3_2_sozdanie_i_nastroyka_svoikh_tematik/",
+    "title": "Создание и настройка своих тематик",
+    "verification": "Проверить создание тематики; алгоритм классификации не выводится из заголовка."
+  },
+  {
+    "capability": "speech-analytics",
+    "feature": "text-communication-analysis",
+    "feature_name": "text-communication-analysis",
+    "function": "text-communications-list-view",
+    "name": "Просмотр списка текстовых коммуникаций",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/1_rechevaya-analitika/6_poisk_i_analiz_razgovorov/2_2_analitika_tekstovykh_kommunikatsiy/2_2_2_prosmotr_spiska_kommunikatsiy/",
+    "title": "Просмотр списка коммуникаций",
+    "verification": "Проверить состав списка по статье."
+  },
+  {
+    "capability": "quality-management",
+    "feature": "scorecards",
+    "feature_name": "scorecards",
+    "function": "quality-scorecard-create",
+    "name": "Создание бланка оценки",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/2_nastroyka_blankov_otsenki/2_1_sozdanie_blanka_otsenki/",
+    "title": "Создание бланка оценки",
+    "verification": "Проверить создание бланка оценки."
+  },
+  {
+    "capability": "quality-management",
+    "feature": "scorecards",
+    "feature_name": "scorecards",
+    "function": "quality-score-weights-configure",
+    "name": "Настройка шкалы оценок и весов критериев",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/2_nastroyka_blankov_otsenki/2_3_nastroyka_shkaly_otsenok_i_vesa_kriteriev/",
+    "title": "Как настроить шкалу оценок и веса критериев",
+    "verification": "Проверить сохранение весов и шкалы; расчёт сверять с таблицей источника."
+  },
+  {
+    "capability": "quality-management",
+    "feature": "evaluation-workflow",
+    "feature_name": "evaluation-workflow",
+    "function": "quality-appeal-enable",
+    "name": "Настройка возможности апелляции",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/4_kontrol-kachestva/2_nastroyka_blankov_otsenki/2_4_nastroyka_apellyatsii/",
+    "title": "Как настроить возможность подать апелляцию",
+    "verification": "Проверить доступность подачи апелляции при выбранной настройке."
+  },
+  {
+    "capability": "call-tracking",
+    "feature": "dynamic-number-pool",
+    "feature_name": "dynamic-number-pool",
+    "function": "calltracking-widget-create",
+    "name": "Создание кода виджета Коллтрекинга",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/5_kolltreking-i-analitika/12_ustanovka_vidzheta_na_sayte/3_kakynastroitykodyvidzheta/",
+    "title": "Создание и базовая настройка кода виджета Коллтрекинга MANGO OFFICE",
+    "verification": "Проверить создание кода; правила подмены номера читать отдельно."
+  },
+  {
+    "capability": "omnichannel-messaging",
+    "feature": "channel-configuration",
+    "feature_name": "channel-configuration",
+    "function": "mdialogi-channel-configure",
+    "name": "Настройка каналов МангоДиалогов",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/6_mango-dialogi/3_nastroyka_vidzheta_mkch/1_nastroyka_vidzheta_mkch/",
+    "title": "Каналы",
+    "verification": "Проверить выбор канала и его настройки по статье."
+  },
+  {
+    "capability": "messenger-marketing",
+    "feature": "whatsapp-templates",
+    "feature_name": "whatsapp-templates",
+    "function": "whatsapp-template-create",
+    "name": "Создание HSM-шаблона WhatsApp",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/6_mango-dialogi/3_nastroyka_vidzheta_mkch/12_shablonyywhatsapp/",
+    "title": "Шаблоны WhatsApp",
+    "verification": "Проверить создание черновика HSM-шаблона; регистрацию и доступность канала читать отдельно.",
+    "heading": "Создание HSM-шаблона"
+  },
+  {
+    "capability": "report-builder",
+    "feature": "report-authoring",
+    "feature_name": "report-authoring",
+    "function": "report-create",
+    "name": "Добавление отчёта в Конструкторе",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/12_konstruktor-otchetov/1_otchety/dobavlenie_otcheta/",
+    "title": "Добавление отчета",
+    "verification": "Проверить появление нового отчёта."
+  },
+  {
+    "capability": "report-builder",
+    "feature": "report-authoring",
+    "feature_name": "report-authoring",
+    "function": "report-view",
+    "name": "Просмотр отчёта в Конструкторе",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/12_konstruktor-otchetov/1_otchety/prosmotr_otcheta/",
+    "title": "Просмотр отчета",
+    "verification": "Проверить отображение выбранного отчёта."
+  },
+  {
+    "capability": "report-builder",
+    "feature": "dataset-modeling",
+    "feature_name": "dataset-modeling",
+    "function": "custom-parameter-create",
+    "name": "Создание пользовательского параметра отчёта",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/12_konstruktor-otchetov/2_dannye/1_parametry/sozdanie_polzovatelskogo_parametra/",
+    "title": "Создание пользовательского параметра",
+    "verification": "Проверить появление параметра в Конструкторе."
+  },
+  {
+    "capability": "report-builder",
+    "feature": "dataset-modeling",
+    "feature_name": "dataset-modeling",
+    "function": "report-entity-create",
+    "name": "Создание сущности отчёта",
+    "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/12_konstruktor-otchetov/2_dannye/2_suschnosti/sozdanie_suschnosti/",
+    "title": "Создание сущности",
+    "verification": "Проверить появление сущности по сценарию статьи."
+  },
+  {
+    "capability": "platform-integration",
+    "feature": "crm-connectors",
+    "feature_name": "crm-connectors",
+    "function": "amocrm-employee-mapping",
+    "name": "Сопоставление сотрудников ВАТС и amoCRM",
+    "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/3_amocrm/1_nachalo_raboty_s_integratsiey/05_shag_5_sopostavlenie_sotrudnikov_virtualnoy_ats_i_amocrm/1_kak_nastroit_sopostavlenie_sotrudnikov/",
+    "title": "Как настроить сопоставление сотрудников",
+    "verification": "Проверить пару сотрудников именно amoCRM; BPMSoft не является доказательством этой операции."
+  },
+  {
+    "capability": "platform-integration",
+    "feature": "crm-connectors",
+    "feature_name": "crm-connectors",
+    "function": "bpmsoft-cc-status-enable",
+    "name": "Включение статусов КЦ в BPMSoft",
+    "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/kak_vklyuchit_nastroyku_ispolzovat_statusy_kontakt_tsentra/",
+    "title": "Как включить настройку «Использовать статусы Контакт-центра»",
+    "verification": "Проверить настройку только в интеграции BPMSoft."
+  },
+  {
+    "capability": "platform-integration",
+    "feature": "crm-connectors",
+    "feature_name": "crm-connectors",
+    "function": "bpmsoft-cc-status-change",
+    "name": "Изменение статуса КЦ через BPMSoft",
+    "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/statusy_kontakt_tsentra_v_interfeyse_bpmsoft/",
+    "title": "Статусы Контакт-центра в интерфейсе BPMSoft",
+    "verification": "Проверить изменение статуса в BPMSoft; свойства других CRM требуют отдельного источника."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-status",
+    "feature_name": "agent-status",
+    "function": "cc-api-user-status-set",
+    "name": "Смена статуса пользователя через API КЦ",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya/",
+    "title": "4.4.1.2 Смена статуса пользователя",
+    "verification": "Проверить статус пользователя, условия status/status_alias и ограничение offline строго по статье."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-session",
+    "feature_name": "agent-session",
+    "function": "cc-api-session-status-set",
+    "name": "Смена статуса сессии через API КЦ",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_smena_statusa_sessii_polzovatelya/",
+    "title": "4.4.1.3 Смена статуса сессии пользователя",
+    "verification": "Проверить статус выбранной сессии; не смешивать с методом статуса пользователя."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-status",
+    "feature_name": "agent-status",
+    "function": "cc-api-status-list",
+    "name": "Получение списка статусов на продукте КЦ",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_4_statusy_na_produkte/",
+    "title": "4.4.1.4 Статусы на продукте",
+    "verification": "Проверить поля ответа списка статусов по таблице."
+  },
+  {
+    "capability": "agent-workspace",
+    "feature": "agent-session",
+    "feature_name": "agent-session",
+    "function": "cc-api-presence-get",
+    "name": "Получение статусов пользователей продукта",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_statusy_polzovateley_produkta/",
+    "title": "4.4.1.3 Статусы пользователей продукта",
+    "verification": "Проверить session_types и различия полей статуса КЦ и Talker по тексту статьи."
+  },
+  {
+    "capability": "information-security",
+    "feature": "access-control",
+    "feature_name": "access-control",
+    "function": "role-create",
+    "name": "Создание пользовательской роли",
+    "url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/3_upravlenie_rolyami/sozdanie_roli/",
+    "title": "Создание роли",
+    "verification": "Проверить создание роли и исходный набор прав; условия системных ролей читать отдельно."
+  },
+  {
+    "capability": "information-security",
+    "feature": "access-control",
+    "feature_name": "access-control",
+    "function": "role-delete",
+    "name": "Удаление пользовательской роли",
+    "url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/3_upravlenie_rolyami/udalenie_roli/",
+    "title": "Удаление роли",
+    "verification": "Проверить удаление пользовательской роли и запрет для системной по статье."
+  },
+  {
+    "capability": "information-security",
+    "feature": "access-control",
+    "feature_name": "access-control",
+    "function": "role-permission-configure",
+    "name": "Настройка прав доступа роли",
+    "url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/4_nastroyka_prav_dostupa_roli/",
+    "title": "Настройка прав доступа роли",
+    "verification": "Проверить право и область влияния; визуальные настройки требуют дополнительной проверки."
+  },
+  {
+    "capability": "omnichannel-messaging",
+    "feature": "conversation-session",
+    "feature_name": "conversation-session",
+    "function": "mdialogi-session-create",
+    "name": "Создание новой сессии МангоДиалогов через API",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/3_rukovodstvo_po_api/3_api_upravleniya_sessiyami/sozdat_novuyu_sessiyu/",
+    "title": "Создать новую сессию",
+    "verification": "Проверить ответ создания сессии; не переносить семантику сессии на КЦ."
+  },
+  {
+    "capability": "omnichannel-messaging",
+    "feature": "conversation-session",
+    "feature_name": "conversation-session",
+    "function": "mdialogi-session-close",
+    "name": "Закрытие сессии МангоДиалогов через API",
+    "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/3_api-mango-dialogi/3_rukovodstvo_po_api/3_api_upravleniya_sessiyami/zakryt_sessiyu/",
+    "title": "Закрыть сессию",
+    "verification": "Проверить результат закрытия сессии по статье."
+  }
+]

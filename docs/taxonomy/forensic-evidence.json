@@ -1,0 +1,218 @@
+{
+  "source_url": "https://github.com/user-attachments/files/34090086/chat-export-1131.json",
+  "sha256": "b6890b265d1d2ea7b4706bef48e4cdc6f8d7382ed70e89e31a4a80b994ae92a5",
+  "visible_messages": 108,
+  "history_only_messages": 13,
+  "extraction": "published answer only; visible order first; history-only messages kept separate",
+  "privacy": "no raw transcript, customer brief, names or reasoning content",
+  "patterns": {
+    "scope-by-source": {
+      "turns": [
+        53,
+        55,
+        56,
+        58,
+        61,
+        62,
+        63
+      ],
+      "control": "preserve requested clients and distinguish public API from internal behavior"
+    },
+    "wrong-knowledge-owner": {
+      "turns": [
+        57,
+        63,
+        73
+      ],
+      "control": "route undocumented As-Is semantics to product/development; ask customer about desired outcome"
+    },
+    "cross-product-omission": {
+      "turns": [
+        8,
+        12,
+        14,
+        53,
+        55,
+        65,
+        73
+      ],
+      "control": "include WFM, clients, permissions, session and connector candidates"
+    },
+    "connector-substitution": {
+      "turns": [
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        72
+      ],
+      "control": "connector identity and exact source entailment are mandatory"
+    },
+    "coverage-without-receipt": {
+      "turns": [
+        58,
+        68,
+        70,
+        72
+      ],
+      "control": "record actual URLs, scope, missing evidence and confidence; page count is not semantic coverage"
+    }
+  },
+  "evidence": [
+    {
+      "turn": 8,
+      "message_id": "b3b9569e-3cbb-46ec-af86-52a54ca39faf",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2180,
+      "answer_sha256": "3f081e191988c79cf6d469d235a6519a17d3c7e892aebc9ac7150eb903ca536b"
+    },
+    {
+      "turn": 12,
+      "message_id": "ced4d584-c3df-4792-88a7-29d42e9738b8",
+      "role": "assistant",
+      "visible": true,
+      "chars": 1021,
+      "answer_sha256": "19614273dc7e2f261c28de09d2f31bc577e2b6488b18df83d08911cab639ac97"
+    },
+    {
+      "turn": 14,
+      "message_id": "a879f7e5-7d15-4a79-bcff-d53700e2b9ea",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2751,
+      "answer_sha256": "3e17cdaf97adf23fdc5e905290741aa71f85f0934170875d20170ccf9ca7eca6"
+    },
+    {
+      "turn": 53,
+      "message_id": "5f214f8a-4cbb-458a-a3c5-d0bffe9d7216",
+      "role": "user",
+      "visible": true,
+      "chars": 1869,
+      "answer_sha256": "14978b383579744c2c3f1365590c451436575888d480ac09c7a3d751d9c62689"
+    },
+    {
+      "turn": 55,
+      "message_id": "2a2b081f-3111-45ac-afcb-87f1b1cf9e43",
+      "role": "user",
+      "visible": true,
+      "chars": 425,
+      "answer_sha256": "8c143b778de82057ca69aff0473e21559ee8b24f30b994421d36f5d642184a1b"
+    },
+    {
+      "turn": 56,
+      "message_id": "a92fed35-97b0-472d-851f-e2bec3726e1f",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2359,
+      "answer_sha256": "041d745c0ef8c6ff24594fdc2d364204886d513aeb51e9c8f385eb8ab1c2793f"
+    },
+    {
+      "turn": 57,
+      "message_id": "9147526a-6cf2-40c2-aeb5-78a261da88f0",
+      "role": "user",
+      "visible": true,
+      "chars": 850,
+      "answer_sha256": "c7dc1c0b16053081f219714b61da31779ec77df498b61aebafabf61f67e39843"
+    },
+    {
+      "turn": 58,
+      "message_id": "80684cca-56dd-4898-b4df-7fae58536187",
+      "role": "assistant",
+      "visible": true,
+      "chars": 16734,
+      "answer_sha256": "9780af6a88c7f6833324c5f24682678a90a7e99480bae367ab87e11473d004f8"
+    },
+    {
+      "turn": 61,
+      "message_id": "c7c634d3-7600-41b5-8f26-06ce6b6381bb",
+      "role": "user",
+      "visible": true,
+      "chars": 104,
+      "answer_sha256": "391f698754ef9f75d48c31f7e90b4040eceec010a4950072fac6ac4ef1eabe87"
+    },
+    {
+      "turn": 62,
+      "message_id": "6f9c6a1c-c841-4e80-8f9f-a4941a9843d4",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2272,
+      "answer_sha256": "b36d2064dc6585cb19f889051ff953349cd97f3404325400f54b358ccb59c994"
+    },
+    {
+      "turn": 63,
+      "message_id": "660ccfd9-aee7-483f-87cf-6a9155736bd5",
+      "role": "user",
+      "visible": true,
+      "chars": 755,
+      "answer_sha256": "724b76d066f78d16a4009795805e5ba26c101f5e1c6d41537dcd8939b5573329"
+    },
+    {
+      "turn": 65,
+      "message_id": "40bfc0b1-80a9-4f7d-976b-30a531e6262c",
+      "role": "user",
+      "visible": true,
+      "chars": 1211,
+      "answer_sha256": "ee90669e2de4a4a039236b25602362b847eb4c7aeb020ab6caba472142e9f4fb"
+    },
+    {
+      "turn": 66,
+      "message_id": "11436207-532c-46ab-884d-bd812c2d2d31",
+      "role": "assistant",
+      "visible": true,
+      "chars": 4860,
+      "answer_sha256": "0d072cae12ffaecabc6d048cd874688aba9eeb36c8d44554deb830405856b9f3"
+    },
+    {
+      "turn": 67,
+      "message_id": "56085604-d190-47b7-add1-35fa1928fe50",
+      "role": "user",
+      "visible": true,
+      "chars": 484,
+      "answer_sha256": "b84bb9a087bda9c962e30fba58323e081bd7a1cd51fa98cbc659b0a4cbc69d20"
+    },
+    {
+      "turn": 68,
+      "message_id": "cdaf256f-827d-427d-b4b0-c18d6564e756",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2414,
+      "answer_sha256": "4c70c30aeff26660082227abc3fd1caab4ddfd1bcbc7e7ea4298c67df8697e71"
+    },
+    {
+      "turn": 69,
+      "message_id": "f789c6d8-51e0-407a-8269-eb96d75e000c",
+      "role": "user",
+      "visible": true,
+      "chars": 366,
+      "answer_sha256": "88b1dda35fe70131f35a274abd469efabf4b63a7a7bfaab874ed37dff5bfaadd"
+    },
+    {
+      "turn": 70,
+      "message_id": "3e81d24e-c23c-475b-a6ee-0fbbb067a8d6",
+      "role": "assistant",
+      "visible": true,
+      "chars": 2616,
+      "answer_sha256": "f4ecc1b6f709ecce5ff51066f4bbdbf41bcced72585e6cf16d544402ac87fcf7"
+    },
+    {
+      "turn": 72,
+      "message_id": "b986717b-7afe-4e00-9371-953856ef46a9",
+      "role": "assistant",
+      "visible": true,
+      "chars": 3304,
+      "answer_sha256": "97116c6d02596c5846236eba8966e955cd5bc5a0e0ad3821b51a0a36f513a594"
+    },
+    {
+      "turn": 73,
+      "message_id": "da5c5eeb-ec94-4b6c-a594-f596b35b56c1",
+      "role": "user",
+      "visible": true,
+      "chars": 333,
+      "answer_sha256": "1baba99a77e6aa599e3065861fc8f171966bcc3df9c5bc8aa505d1e43d12c2c8"
+    }
+  ],
+  "step1_url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-10-28-bcreq-evolution-failure-analysis.md"
+}

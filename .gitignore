@@ -62,3 +62,8 @@ experiments/issue_384/turns/
 experiments/issue_397/raw/
 experiments/issue_397/turns/
 experiments/issue_397/logs/
+# Issue #399: private forensic input and reproducible HTTP working cache.
+experiments/issue_399/*.source.*
+experiments/issue_399/cache/
+experiments/issue_399/turns/
+experiments/issue_399/*.log

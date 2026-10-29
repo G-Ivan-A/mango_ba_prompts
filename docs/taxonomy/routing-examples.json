@@ -1,0 +1,406 @@
+[
+  {
+    "query": "WFM статус API amoCRM",
+    "evidence_status": "locators-only",
+    "coverage_gaps": [
+      "connector-status-locator:amocrm"
+    ],
+    "requested_limit": 12,
+    "coverage_minimum": 6,
+    "scope_gate": "BA selects adjacent runtime classes before reading; no automatic requirement expansion",
+    "fallback_required": true,
+    "fallback": {
+      "read_order": [
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/README.md",
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/MAP.json",
+        "selected-class",
+        "document-index",
+        "targeted-sections"
+      ],
+      "image_semantics": "description-not-guaranteed; verify OCR/caption/description against source",
+      "missing_evidence": "record gap and route As-Is question to product/documentation owner"
+    },
+    "question_owner": {
+      "as_is": "product-team-or-documentation-owner",
+      "customer_need": "customer"
+    },
+    "pages": [
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/11_plan_raboty/2_5_nastroiki/",
+        "title": "Как настроить шаблоны графиков работы сотрудников и другие параметры WFM",
+        "portal_product": "cc-desktop",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 15,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/3_sotrudniki/3_3_rabochee_vremya_sotrudnika/",
+        "title": "Рабочее время сотрудника",
+        "portal_product": "cc-web",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 12,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/10_Vhod/",
+        "title": "Вход в Личный кабинет",
+        "portal_product": "pbx-account",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 18,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/1_rolevaya-model-vats/5_matritsa_roley_i_prav_dostupa/2_razdel_instrumenty/wfm/",
+        "title": "WFM",
+        "portal_product": "administration",
+        "connector_id": null,
+        "readability": "text-and-tables",
+        "routing_score": 15,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya/",
+        "title": "4.4.1.2 Смена статуса пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/3_amocrm/14_integratsiya_s_kontakt_tsentrom_mango_office/",
+        "title": "14 Интеграция с Контакт Центром MANGO OFFICE",
+        "portal_product": "integrations",
+        "connector_id": "amocrm",
+        "readability": "text",
+        "routing_score": 27,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_smena_statusa_sessii_polzovatelya/",
+        "title": "4.4.1.3 Смена статуса сессии пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_statusy_polzovateley_produkta/",
+        "title": "4.4.1.3 Статусы пользователей продукта",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_4_statusy_na_produkte/",
+        "title": "4.4.1.4 Статусы на продукте",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/",
+        "title": "4.4 Управление статусами и сессиями пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 32,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/",
+        "title": "4.4.1 Статусы",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 32,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_1_chto_oznachaet_status_polzovatelya/",
+        "title": "4.4.1.1 Что означает статус пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 32,
+        "next_action": "targeted-runtime-or-visual-review"
+      }
+    ]
+  },
+  {
+    "query": "статус API BPMSoft",
+    "evidence_status": "locators-only",
+    "coverage_gaps": [],
+    "requested_limit": 12,
+    "coverage_minimum": 6,
+    "scope_gate": "BA selects adjacent runtime classes before reading; no automatic requirement expansion",
+    "fallback_required": true,
+    "fallback": {
+      "read_order": [
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/README.md",
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/MAP.json",
+        "selected-class",
+        "document-index",
+        "targeted-sections"
+      ],
+      "image_semantics": "description-not-guaranteed; verify OCR/caption/description against source",
+      "missing_evidence": "record gap and route As-Is question to product/documentation owner"
+    },
+    "question_owner": {
+      "as_is": "product-team-or-documentation-owner",
+      "customer_need": "customer"
+    },
+    "pages": [
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_kontakt-tsentr/3_glavnoe_okno_programmy/2_1_upravlenie_statusom/",
+        "title": "Как управлять статусом сотрудника",
+        "portal_product": "cc-desktop",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 11,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/3_web_cc/3_sotrudniki/3_1_kontrol_sotrudnikov/3_1_2_vremya_v_statuse_i_nomer_abonenta/",
+        "title": "Время в статусе и номер абонента",
+        "portal_product": "cc-web",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 11,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/1_virtualnaya-ats-i-lichnyi-kabinet/10_Vhod/",
+        "title": "Вход в Личный кабинет",
+        "portal_product": "pbx-account",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 18,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/6_administrirovanie/1_roli-i-prava/",
+        "title": "Роли и права",
+        "portal_product": "administration",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 8,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_2_smena_statusa_polzovatelya/",
+        "title": "4.4.1.2 Смена статуса пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/statusy_kontakt_tsentra_v_interfeyse_bpmsoft/",
+        "title": "Статусы Контакт-центра в интерфейсе BPMSoft",
+        "portal_product": "integrations",
+        "connector_id": "bpmsoft",
+        "readability": "visual-review-required",
+        "routing_score": 38,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_smena_statusa_sessii_polzovatelya/",
+        "title": "4.4.1.3 Смена статуса сессии пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_3_statusy_polzovateley_produkta/",
+        "title": "4.4.1.3 Статусы пользователей продукта",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/1_4_1_statusy/4_4_1_4_statusy_na_produkte/",
+        "title": "4.4.1.4 Статусы на продукте",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 37,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/",
+        "title": "Использовать статусы Контакт-центра",
+        "portal_product": "integrations",
+        "connector_id": "bpmsoft",
+        "readability": "text",
+        "routing_score": 35,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/4_integratsii/1_vse-integratsii/5_bpm-soft/2_dopolnitelnye_nastroyki_integratsii/4_4_dopolnitelnye_nastroyki_integratsii/7_ispolzovat_statusy_kontakt_tsentra/kak_vklyuchit_nastroyku_ispolzovat_statusy_kontakt_tsentra/",
+        "title": "Как включить настройку «Использовать статусы Контакт-центра»",
+        "portal_product": "integrations",
+        "connector_id": "bpmsoft",
+        "readability": "visual-review-required",
+        "routing_score": 35,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/5_api-i-razrabotka/1_api-mango-office/6_opisanie_metodov_api_kontakt_tsentra_mango/2_4_upravlenie_statusami_i_sessiyami/",
+        "title": "4.4 Управление статусами и сессиями пользователя",
+        "portal_product": "api",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 32,
+        "next_action": "read-article"
+      }
+    ]
+  },
+  {
+    "query": "SIP Trunk речевая аналитика",
+    "evidence_status": "locators-only",
+    "coverage_gaps": [],
+    "requested_limit": 12,
+    "coverage_minimum": 2,
+    "scope_gate": "BA selects adjacent runtime classes before reading; no automatic requirement expansion",
+    "fallback_required": true,
+    "fallback": {
+      "read_order": [
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/README.md",
+        "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/b67410f627801345309281faa15e7219722bfb1a/docs/kb/MAP.json",
+        "selected-class",
+        "document-index",
+        "targeted-sections"
+      ],
+      "image_semantics": "description-not-guaranteed; verify OCR/caption/description against source",
+      "missing_evidence": "record gap and route As-Is question to product/documentation owner"
+    },
+    "question_owner": {
+      "as_is": "product-team-or-documentation-owner",
+      "customer_need": "customer"
+    },
+    "pages": [
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/",
+        "title": "SIP Trunk MANGO OFFICE",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 6,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/8_rechevaya-analitika-i-skoring/",
+        "title": "Речевая аналитика и скоринг",
+        "portal_product": "speech-analytics",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 6,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/",
+        "title": "Создание и редактирование SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_1_vneshniy_sip_trunk/",
+        "title": "Как создать внешний SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_2_vnutrenniy_sip_trunk/",
+        "title": "Как создать внутренний SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_3_aktivaciya_v_kartochke/",
+        "title": "Активация SIP Trunk в карточке сотрудника",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_4_redaktirovanie/",
+        "title": "Редактирование SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 6,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_sozdanie_i_redaktirovanie_sip_trunk/3_5_udalenie/",
+        "title": "Удаление SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/1_terminy_i_opredeleniya/",
+        "title": "Термины и определения",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "text",
+        "routing_score": 6,
+        "next_action": "read-article"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/2_chto_takoe_sip_trunk/",
+        "title": "Что такое SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/4_rabochaya_panel/",
+        "title": "Рабочая панель SIP Trunk",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      },
+      {
+        "url": "https://www.mango-office.ru/support/3_produkty-i-prilozheniya/10_sip-trunk/5_skhema_raspredeleniya/",
+        "title": "Настройка схемы распределения звонков в Личном кабинете",
+        "portal_product": "sip-trunk",
+        "connector_id": null,
+        "readability": "visual-review-required",
+        "routing_score": 6,
+        "next_action": "targeted-runtime-or-visual-review"
+      }
+    ]
+  }
+]
