@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "observed_at_utc": "2026-10-30T10:29:47+00:00",
+  "decision_status": "OBSERVED",
+  "target": {
+    "repository_url": "https://github.com/G-Ivan-A/mango_ba_prompts",
+    "commit_sha": "f02766dff46ea09cfafdb29eae913ebc6f50ef9e",
+    "tree_sha": "dbceb867d1b06dd9fcf475ce92ef6e9c9d92e0fb",
+    "committed_at_utc": "2026-10-30T06:36:07+00:00",
+    "commit_url": "https://github.com/G-Ivan-A/mango_ba_prompts/commit/f02766dff46ea09cfafdb29eae913ebc6f50ef9e"
+  },
+  "hub": {
+    "repository_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab",
+    "commit_sha": "c105323322d7e3a0450199db28071ea21fa9404d",
+    "tree_sha": "e0736662b2dbdc2ea5bc511706a1693763df224a",
+    "committed_at_utc": "2026-10-29T21:08:39Z",
+    "commit_url": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/commit/c105323322d7e3a0450199db28071ea21fa9404d"
+  },
+  "prepared_branch": {
+    "name": "issue-407-28502daafccb",
+    "bootstrap_sha": "44d91a28e0b8824bc65b64e6abf6392df94e32cd",
+    "difference_from_target": "Bootstrap .gitkeep only; not a product component"
+  },
+  "issue": {
+    "url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/407",
+    "updated_at_utc": "2026-10-30T10:15:09Z",
+    "body_sha256": "54bcea6703a4bcb910a1dd1db62ec515607c7fe60b7c5f0dbc6c943ab621d087",
+    "comments_url": "https://api.github.com/repos/G-Ivan-A/mango_ba_prompts/issues/407/comments",
+    "comments_count": 0,
+    "required_subissues": []
+  },
+  "pull_request": {
+    "url": "https://github.com/G-Ivan-A/mango_ba_prompts/pull/408",
+    "conversation_comments_count": 0,
+    "inline_comments_count": 0,
+    "reviews_count": 0,
+    "founder_stage_acceptance": "UNRESOLVED: no acceptance record at capture time"
+  },
+  "exclusions": [
+    "Untracked/ignored local files, .git object database, remote branch build output",
+    "Bootstrap .gitkeep: outside pinned upstream product baseline"
+  ],
+  "content_review": "Discovery metadata only; comprehensive semantic audit awaits Gate 0 acceptance"
+}

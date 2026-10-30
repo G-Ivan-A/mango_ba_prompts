@@ -1,0 +1,39 @@
+{
+  "verified_at_utc": "2026-10-30T10:32:13+00:00",
+  "scope": "Gate 0 evidence pipeline only; R1-R5 and Founder acceptance remain incomplete",
+  "checks": [
+    {
+      "command": "python3 experiments/issue_407/inventory.py --check",
+      "exit_code": 0,
+      "files": 1588
+    },
+    {
+      "command": "python3 scripts/test_issue_407_inventory.py",
+      "exit_code": 0,
+      "tests": 8
+    },
+    {
+      "command": "make validate-fast",
+      "exit_code": 0,
+      "validators": 71
+    },
+    {
+      "command": "make validate-full",
+      "exit_code": 0,
+      "validators": 71,
+      "failed": 0,
+      "seconds": 28.36
+    },
+    {
+      "command": "git merge-base --is-ancestor upstream/main HEAD",
+      "exit_code": 0
+    },
+    {
+      "command": "git diff --numstat -- runs kb prompts patterns standards site ai-rules ai-governance",
+      "exit_code": 0,
+      "changed_files": 0
+    }
+  ],
+  "local_logs": "/tmp/issue-407-research/ (not versioned)",
+  "remote_ci": "Pending first implementation push; check final PR status separately"
+}
