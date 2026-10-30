@@ -1,0 +1,213 @@
+[
+  {
+    "client": "goose",
+    "dimension": "rules",
+    "sources": [
+      "G02"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "skills",
+    "sources": [
+      "G03"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "memory",
+    "sources": [
+      "G07",
+      "G08",
+      "G12"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "filesystem",
+    "sources": [
+      "G05",
+      "G11"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "permissions",
+    "sources": [
+      "G04",
+      "G05"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "procedures",
+    "sources": [
+      "G06",
+      "G11"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "debugging",
+    "sources": [
+      "G07",
+      "G13"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "goose",
+    "dimension": "perimeter",
+    "sources": [
+      "G09",
+      "G14",
+      "G15"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "rules",
+    "sources": [
+      "O01"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "skills",
+    "sources": [
+      "O02"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "memory",
+    "sources": [
+      "O05",
+      "O06"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "filesystem",
+    "sources": [
+      "O03",
+      "O04"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "permissions",
+    "sources": [
+      "O03"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "procedures",
+    "sources": [
+      "O04",
+      "O07"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "debugging",
+    "sources": [
+      "O06"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "opencode-v1",
+    "dimension": "perimeter",
+    "sources": [
+      "O05",
+      "O08"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "rules",
+    "sources": [
+      "L01"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "skills",
+    "sources": [
+      "L02"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "memory",
+    "sources": [
+      "L05",
+      "L07"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "filesystem",
+    "sources": [
+      "L03",
+      "L07"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "permissions",
+    "sources": [
+      "L03",
+      "L04"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "procedures",
+    "sources": [
+      "L02",
+      "L10"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "debugging",
+    "sources": [
+      "L06",
+      "L07"
+    ],
+    "level": "documented"
+  },
+  {
+    "client": "cline",
+    "dimension": "perimeter",
+    "sources": [
+      "L08",
+      "L09",
+      "L10"
+    ],
+    "level": "documented"
+  }
+]

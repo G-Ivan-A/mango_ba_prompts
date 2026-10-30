@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 0.17
-updated: 2026-10-29
+updated: 2026-10-30
 temperature: 0.1
 ---
 
@@ -12,6 +12,13 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #405: IDE-клиенты Этапа 2
+
+- Датированное сравнение Goose, OpenCode V1 и Cline по первичным источникам;
+  последовательный план исследования и офлайн-проверки полноты доказательств.
+- Прикладное исследование хранится в docs/analysis; зависимости от мета-модели
+  Хаба закреплены SHA и зарегистрированы без копирования канона.
 
 ### Added — Issue #403: полный ручной BCREQ pipeline
 

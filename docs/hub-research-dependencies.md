@@ -254,3 +254,22 @@ related_issues:
   - `AI_GOVERNANCE.md` (раздел «Подготовка к приватизации»)
 - **Политика:** reference only; сам перевод в Private — решение Пользователя, а не
   спока.
+
+<a id="ide-stage-2"></a>
+
+### `#ide-stage-2` — Входы мета-модели для IDE-клиентов
+
+Потребитель: [анализ Этапа 2](analysis/2026-10-30-ide-clients-stage-2.md).
+Срез Хаба: `c105323322d7e3a0450199db28071ea21fa9404d`, прочитан 2026-10-30.
+Reference only: тексты исследований и Execution Package в спок не копируются.
+
+- [Индекс BA requirements](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/README.md).
+- [Проверка слоёв M0–M2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md).
+- [Датированные входы мета-модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md).
+- [Гранулярность навыка и формат контракта](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-09-10-skill-granularity-format-facts.md).
+- [Введение в проектную мета-модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/projects/ba-ai-process/ba-meta-model/00-introduction.md).
+- [Таксономии мета-модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/projects/ba-ai-process/ba-meta-model/20-taxonomy.md).
+
+Исторические измерения и текущая концепция могут расходиться. Клиентский
+`SKILL.md` — форма доставки инструкции, а не автоматическое признание класса
+промпта сущностью Skill мета-модели. Соответствие проверяется в анализе.

@@ -71,3 +71,7 @@ experiments/issue_399/*.log
 experiments/issue_401/raw/
 experiments/issue_401/cache/
 experiments/issue_401/logs/
+# Issue #405: fetched official documentation and local acceptance/CI logs.
+experiments/issue_405/.sources/
+experiments/issue_405/logs/
+ci-logs/
