@@ -35,5 +35,18 @@
     }
   ],
   "local_logs": "/tmp/issue-407-research/ (not versioned)",
-  "remote_ci": "Pending first implementation push; check final PR status separately"
+  "remote_ci": {
+    "repository_url": "https://github.com/konard/G-Ivan-A-mango_ba_prompts",
+    "head_sha": "b02860d1f47c8a4485717d175878b7069c73902b",
+    "run_url": "https://github.com/konard/G-Ivan-A-mango_ba_prompts/actions/runs/41041890202",
+    "created_at_utc": "2026-10-30T10:35:44Z",
+    "completed_at_utc": "2026-10-30T10:36:11Z",
+    "event": "workflow_dispatch",
+    "conclusion": "success",
+    "jobs": [
+      "All validators (full level)",
+      "Frontmatter, file naming and repository structure"
+    ],
+    "scope": "Published Gate 0 implementation; verify later commits separately"
+  }
 }
