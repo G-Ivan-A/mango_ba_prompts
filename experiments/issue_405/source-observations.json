@@ -1,0 +1,352 @@
+[
+  {
+    "id": "G01",
+    "url": "https://goose-docs.ai/docs/quickstart.md",
+    "accessed_at": "2026-10-30T09:48:38.865535+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/quickstart.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 11174,
+    "sha256": "4ca0e2d4e6faf3482176e9f7da0c0ed00a8ff3972e870998bd7dbfec78012aa7"
+  },
+  {
+    "id": "G02",
+    "url": "https://goose-docs.ai/docs/guides/context-engineering/using-goosehints.md",
+    "accessed_at": "2026-10-30T09:48:38.924059+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/context-engineering/using-goosehints.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 11961,
+    "sha256": "78cf24cebd79dd0ffded3ae0aeba79613f15ca4b79927378635129c3126a68c9"
+  },
+  {
+    "id": "G03",
+    "url": "https://goose-docs.ai/docs/guides/context-engineering/using-skills.md",
+    "accessed_at": "2026-10-30T09:48:38.945468+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/context-engineering/using-skills.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 8941,
+    "sha256": "3b8080f76ae8cd01a002a490b1a2bc04ece29bbf304a51f9b141b03b7b9b4b5d"
+  },
+  {
+    "id": "G04",
+    "url": "https://goose-docs.ai/docs/guides/managing-tools/goose-permissions.md",
+    "accessed_at": "2026-10-30T09:48:38.968280+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/managing-tools/goose-permissions.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 5981,
+    "sha256": "206eb8b4f7b1d03339a80ccc3fae6982128160410b159461503b2cadea38bd61"
+  },
+  {
+    "id": "G05",
+    "url": "https://goose-docs.ai/docs/guides/managing-tools/tool-permissions.md",
+    "accessed_at": "2026-10-30T09:48:38.995821+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/managing-tools/tool-permissions.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 5705,
+    "sha256": "1c08bb17a980529a0eb499e12724f319f1e7dadd1dcb86034fdb9f01440a611c"
+  },
+  {
+    "id": "G06",
+    "url": "https://goose-docs.ai/docs/guides/recipes/recipe-reference.md",
+    "accessed_at": "2026-10-30T09:48:39.026384+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/recipes/recipe-reference.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 32516,
+    "sha256": "12cf44dd2841750118b485d039373ae0406b90d434246b832cd861e5451d1bbb"
+  },
+  {
+    "id": "G07",
+    "url": "https://goose-docs.ai/docs/guides/sessions/session-management.md",
+    "accessed_at": "2026-10-30T09:48:39.055762+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/sessions/session-management.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 19976,
+    "sha256": "7582f89ac1fd1ee5e5130b257873ae68d618644d083ebce6223a8c3e1b3872e1"
+  },
+  {
+    "id": "G08",
+    "url": "https://goose-docs.ai/docs/guides/sessions/smart-context-management.md",
+    "accessed_at": "2026-10-30T09:48:39.195624+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/sessions/smart-context-management.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 17941,
+    "sha256": "ad894ec5c8cf952f1bee91fc7f24a62859e25a350a54efcefa5cd22dc16db966"
+  },
+  {
+    "id": "G09",
+    "url": "https://goose-docs.ai/docs/guides/config-files.md",
+    "accessed_at": "2026-10-30T09:48:39.227458+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/config-files.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 12609,
+    "sha256": "e87c0c72d59a2d32428b2641aa56240946bcca181c7cb94772772388b35ca40d"
+  },
+  {
+    "id": "G10",
+    "url": "https://goose-docs.ai/docs/guides/goose-cli-commands.md",
+    "accessed_at": "2026-10-30T09:48:39.361142+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/goose-cli-commands.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 36268,
+    "sha256": "5d20b7b80ca1292982e90eae340243edbf0b61b914efca769d1cbf722a941484"
+  },
+  {
+    "id": "G11",
+    "url": "https://goose-docs.ai/docs/getting-started/using-extensions.md",
+    "accessed_at": "2026-10-30T09:48:39.388465+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/getting-started/using-extensions.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 25046,
+    "sha256": "7bc0c8f18436134db29a2b67ec809c3049c3b9305a631bf6869851d98421beb6"
+  },
+  {
+    "id": "G12",
+    "url": "https://goose-docs.ai/docs/mcp/memory-mcp.md",
+    "accessed_at": "2026-10-30T09:48:39.408998+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/mcp/memory-mcp.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 6991,
+    "sha256": "5cd8bc9b985732689ed0868673e047aeadd6843bb021badf53e306b5888e2bc2"
+  },
+  {
+    "id": "G13",
+    "url": "https://goose-docs.ai/docs/guides/logs.md",
+    "accessed_at": "2026-10-30T09:48:39.684149+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/logs.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 6147,
+    "sha256": "a8e28b43b8cefc96e1b1844fec7a979700c6ab5b0b50727ad903ee972dab5f6b"
+  },
+  {
+    "id": "G14",
+    "url": "https://goose-docs.ai/docs/guides/usage-data.md",
+    "accessed_at": "2026-10-30T09:48:39.707982+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/guides/usage-data.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 2525,
+    "sha256": "46b60d1a01fc885bb5f0c3cff4e021a13bd189f842f9df2f90804bb629e611d8"
+  },
+  {
+    "id": "G15",
+    "url": "https://goose-docs.ai/docs/getting-started/providers.md",
+    "accessed_at": "2026-10-30T09:48:39.728041+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/getting-started/providers.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 93443,
+    "sha256": "158f0ad47132c89364ab52c406e1904a662582bb43d8a0bfeca5ea5c513ab1bc"
+  },
+  {
+    "id": "G16",
+    "url": "https://goose-docs.ai/docs/getting-started/installation.md",
+    "accessed_at": "2026-10-30T09:48:39.876240+00:00",
+    "status": 200,
+    "resolved_url": "https://goose-docs.ai/docs/getting-started/installation.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 16549,
+    "sha256": "658473dd63ab17cb0ca61eda2eb61c68a6392eef94e6387f342ccdbbb0b152c6"
+  },
+  {
+    "id": "O01",
+    "url": "https://opencode.ai/docs/rules/",
+    "accessed_at": "2026-10-30T09:48:40.039672+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/rules/",
+    "content_type": "text/html",
+    "bytes": 69731,
+    "sha256": "261ad1c4aecae58df383ac850ea99701c8a13675d8adc8f629ca38bb1d173cf1"
+  },
+  {
+    "id": "O02",
+    "url": "https://opencode.ai/docs/skills/",
+    "accessed_at": "2026-10-30T09:48:40.395791+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/skills/",
+    "content_type": "text/html",
+    "bytes": 67568,
+    "sha256": "467a564dc9bb3ac467a8c51f85a0917ac86a4ef2f1cd56e22da8c2f48b6e8241"
+  },
+  {
+    "id": "O03",
+    "url": "https://opencode.ai/docs/permissions/",
+    "accessed_at": "2026-10-30T09:48:40.747542+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/permissions/",
+    "content_type": "text/html",
+    "bytes": 82249,
+    "sha256": "5d3c7a0b6b82a26f521dddf1e71d219061a9afa94abe71add1668a62845c4acc"
+  },
+  {
+    "id": "O04",
+    "url": "https://opencode.ai/docs/agents/",
+    "accessed_at": "2026-10-30T09:48:41.125605+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/agents/",
+    "content_type": "text/html",
+    "bytes": 160971,
+    "sha256": "342d828a2088a1b2fcf44f9dec7313b2a282f4c077e1aa8e0d7d793666aaba35"
+  },
+  {
+    "id": "O05",
+    "url": "https://opencode.ai/docs/config/",
+    "accessed_at": "2026-10-30T09:48:41.561160+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/config/",
+    "content_type": "text/html",
+    "bytes": 184377,
+    "sha256": "9e6cf592e67d4c14f3f22df66b0683ec9f6904fb8f975492be5912225c144151"
+  },
+  {
+    "id": "O06",
+    "url": "https://opencode.ai/docs/tui/",
+    "accessed_at": "2026-10-30T09:48:42.032029+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/tui/",
+    "content_type": "text/html",
+    "bytes": 92545,
+    "sha256": "6912953f2be4944dc691793f9a34e118a68d72b2a4cfa4a833bf44a3bdf2a0cf"
+  },
+  {
+    "id": "O07",
+    "url": "https://opencode.ai/docs/mcp-servers/",
+    "accessed_at": "2026-10-30T09:48:42.462392+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/mcp-servers/",
+    "content_type": "text/html",
+    "bytes": 120129,
+    "sha256": "e18adde3421a4486377aad656238b6e27ad674c9b73dd7b9fb1d251bc228d99d"
+  },
+  {
+    "id": "O08",
+    "url": "https://opencode.ai/docs/enterprise/",
+    "accessed_at": "2026-10-30T09:48:42.873148+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/enterprise/",
+    "content_type": "text/html",
+    "bytes": 54412,
+    "sha256": "431e281848062c5bfaeae266ea652cd50747fb70d7d616e08b91a59249220872"
+  },
+  {
+    "id": "O09",
+    "url": "https://opencode.ai/docs/",
+    "accessed_at": "2026-10-30T09:48:43.237326+00:00",
+    "status": 200,
+    "resolved_url": "https://opencode.ai/docs/",
+    "content_type": "text/html",
+    "bytes": 84471,
+    "sha256": "b1f9cb92238e3f8b3c52a305f3b63456ee8c1dd6244a688dbdb46b5874eab215"
+  },
+  {
+    "id": "L01",
+    "url": "https://docs.cline.bot/customization/cline-rules.md",
+    "accessed_at": "2026-10-30T09:48:43.564609+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/customization/cline-rules.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 15002,
+    "sha256": "1c64e90dbe6b7750d2b3163e399aef1f53cee91360fe21d9444c24c128b21049"
+  },
+  {
+    "id": "L02",
+    "url": "https://docs.cline.bot/customization/skills.md",
+    "accessed_at": "2026-10-30T09:48:43.659074+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/customization/skills.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 11334,
+    "sha256": "2237ed38fc4fd43a3078a59779ee27db6e0c0d1c981d79575c18006768d38e48"
+  },
+  {
+    "id": "L03",
+    "url": "https://docs.cline.bot/features/auto-approve.md",
+    "accessed_at": "2026-10-30T09:48:43.758823+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/features/auto-approve.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 5043,
+    "sha256": "c021a36e2052c7e57c952015625f4bd8d94a61cd311089a0090f7eee8e991ad8"
+  },
+  {
+    "id": "L04",
+    "url": "https://docs.cline.bot/core-workflows/plan-and-act.md",
+    "accessed_at": "2026-10-30T09:48:43.860191+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/core-workflows/plan-and-act.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 6278,
+    "sha256": "1cec35b3ef8435d237534d25e41ac38e089099f6dc40ff66fc10fdc39f9c2082"
+  },
+  {
+    "id": "L05",
+    "url": "https://docs.cline.bot/best-practices/memory-bank.md",
+    "accessed_at": "2026-10-30T09:48:43.952220+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/best-practices/memory-bank.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 7686,
+    "sha256": "b479c5bb4cc6bb9288d811991404a4da2ac23c090dd779ea541086b7c7b2e11b"
+  },
+  {
+    "id": "L06",
+    "url": "https://docs.cline.bot/core-workflows/checkpoints.md",
+    "accessed_at": "2026-10-30T09:48:44.029494+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/core-workflows/checkpoints.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 5474,
+    "sha256": "9ec48c9f751b2094f7ed18a0a6c621616b88735a971c8a1a894cec519812ea00"
+  },
+  {
+    "id": "L07",
+    "url": "https://docs.cline.bot/core-workflows/working-with-files.md",
+    "accessed_at": "2026-10-30T09:48:44.101465+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/core-workflows/working-with-files.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 3605,
+    "sha256": "0d394d1ca9415f5a5564c0d897b63f70dae5d55e740114a5af085d9a22534872"
+  },
+  {
+    "id": "L08",
+    "url": "https://docs.cline.bot/running-models-locally/overview.md",
+    "accessed_at": "2026-10-30T09:48:44.189673+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/running-models-locally/overview.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 3936,
+    "sha256": "c92f7f490287c985e019063c530efce12d2d705c1d568034c76ebbe21df5a27d"
+  },
+  {
+    "id": "L09",
+    "url": "https://docs.cline.bot/enterprise-solutions/monitoring/telemetry.md",
+    "accessed_at": "2026-10-30T09:48:44.284582+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/enterprise-solutions/monitoring/telemetry.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 5205,
+    "sha256": "416b3acd9ae8c079c1c828239ef193cae74bf8dc287c3f278c01a3627b94ddb2"
+  },
+  {
+    "id": "L10",
+    "url": "https://docs.cline.bot/enterprise-solutions/configuration/infrastructure-configuration/control-other-cline-features/mcp-server-controls.md",
+    "accessed_at": "2026-10-30T09:48:44.410052+00:00",
+    "status": 200,
+    "resolved_url": "https://docs.cline.bot/enterprise-solutions/configuration/infrastructure-configuration/control-other-cline-features/mcp-server-controls.md",
+    "content_type": "text/markdown; charset=utf-8",
+    "bytes": 10488,
+    "sha256": "6fec0f1313263c9bdca3f2fb90075e67517460f14baa58ed26a449ad7c583c07"
+  }
+]

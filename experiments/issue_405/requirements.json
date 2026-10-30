@@ -1,0 +1,158 @@
+[
+  {
+    "id": "Q01",
+    "requirement": "Подробное обучение Goose",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-goose-guide.md"
+    ],
+    "evidence": "Пошагово: установка, provider, разрешения, rules/skills, START, review, источники, гейты, изменения, resume, выпуск, диагностика.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q02",
+    "requirement": "Раздельное сравнение трёх клиентов",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-comparison.md"
+    ],
+    "evidence": "Матрица 3 × 8; версии, память, ФС, rules/skills, permissions, процедуры, отладка, периметр.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q03",
+    "requirement": "Все 39 классов",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "39/39 исходных I/O/phases/behavior/stop/checks и 117 клиентских отображений; отдельные основания каждого применения.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q04",
+    "requirement": "SLICE/FULL и восстановление",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "Полные тела, baseline+вся цепь, ID, tombstones, UNKNOWN, INCOMPLETE, перечитывание и stale.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q05",
+    "requirement": "Человеческие гейты",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "Г-IN/Г-С1/Г-W отдельно от G1/G2/G3; C20/C34/C35, scope/revision/authority и неизвестная release-роль.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q06",
+    "requirement": "Circuit breakers",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "CB-0.1–0.7, class stops, отсутствие смыслового прогресса, независимые ветки; native deny отдельно.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q07",
+    "requirement": "З1–З5",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "Матрица носителей для всех клиентов, evidence и предел; два фактора только спорной команды.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q08",
+    "requirement": "Без Python в процессе БА",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md"
+    ],
+    "evidence": "Native rules/skills/editor; scripts отсутствуют в runtime-примерах, Python только офлайн CI.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q09",
+    "requirement": "Диалог БА и контекст агента",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-operations.md"
+    ],
+    "evidence": "Ограниченное поручение, технический контекст, handoff, самостоятельное чтение; выбор бизнес-перехода человеком.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q10",
+    "requirement": "Прозрачная отладка и решения",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-goose-guide.md"
+    ],
+    "evidence": "Tool trace/diff/receipt, входы/основания/gaps, диагностика, безопасный экспорт; без запроса скрытого рассуждения.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q11",
+    "requirement": "Корпоративная безопасность без Telegram",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-operations.md"
+    ],
+    "evidence": "12 угроз, N/I/O controls, endpoint/OS/IAM/egress/retention/коннекторы; Telegram и relay исключены.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q12",
+    "requirement": "Неконтролируемые scripts и execution surfaces",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-operations.md"
+    ],
+    "evidence": "Shell deny, editor ask, MCP/hooks/plugins/Code Mode, отсутствие внешних side effects; остаточный риск Cline ask.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q13",
+    "requirement": "Корреляция и эволюция мета-модели",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-meta-model.md"
+    ],
+    "evidence": "11 сущностей, M0–M2, все 39 C-ID, несовпадение уровней, SB-6, Trace/revision/stale и versioned migration.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q14",
+    "requirement": "Аргументированный выбор",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-operations.md"
+    ],
+    "evidence": "OpenCode V1 выбран по policy; Goose и Cline с условиями применимости, без выдуманного UX рейтинга.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q15",
+    "requirement": "Проверяемые источники истины",
+    "artifacts": [
+      "docs/analysis/ide-clients-stage-2/2026-10-30-sources.md"
+    ],
+    "evidence": "35 официальных HTTP-наблюдений с SHA/UTC, канон PR404 и закреплённый Hub, граница documented/design/runtime.",
+    "verification": "offline coverage and authored source/prose review"
+  },
+  {
+    "id": "Q16",
+    "requirement": "Последовательные итерации и авто-приёмка",
+    "artifacts": [
+      "experiments/issue_405/plan.md",
+      "experiments/issue_405/acceptance.md",
+      "scripts/validate_issue_405_ide_research.py"
+    ],
+    "evidence": "План до исполнения; приёмка 1 перед 2 и 2 перед 3, атомарные commits, стадийные тесты и общий CI.",
+    "verification": "stage-specific suites and timestamped acceptance journal"
+  },
+  {
+    "id": "Q17",
+    "requirement": "Полнота без частных исторических примеров и без итогового roadmap",
+    "artifacts": [
+      "docs/analysis/2026-10-30-ide-clients-stage-2.md",
+      "experiments/issue_405/examples/README.md"
+    ],
+    "evidence": "Все аспекты задания в одном PR; универсальные паттерны, синтетические TASK-A примеры; roadmap/deployment не заявляются результатом.",
+    "verification": "scope inventory and final PR review"
+  }
+]

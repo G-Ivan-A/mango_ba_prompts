@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.5
-updated: 2026-08-18
+version: 0.6
+updated: 2026-10-30
 owner: G-Ivan-A
 ai-generated: true
 type: research-dependency-registry
@@ -74,6 +74,8 @@ related_issues:
 | [`#adr-009-repo-split`](#adr-009-repo-split) | [`docs/adr/2026-07-adr-009-mango-repo-split.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/adr/2026-07-adr-009-mango-repo-split.md) | 248 lines | `README.md`, `AI_GOVERNANCE.md`, `docs/ba-ecosystem.md`, `docs/rfc-hub-integration.md` | 🔵 reference-only @ `56db375` |
 | [`#ba-process-ontology`](#ba-process-ontology) | [`research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/research/mango/2026-08-17-mango-ba-processes-and-dod-ontology.md) | 277 lines | `AI_GOVERNANCE.md`, `docs/ba-ecosystem.md`, `docs/taxonomy.md` | 🔵 reference-only @ `56db375` |
 | [`#separation-readiness`](#separation-readiness) | [`docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/56db375465a694ed39f8fcf3e3f8b12c902ab10d/docs/analysis/2026-08-13-mango-separation-and-runs-readiness.md) | 649 lines | `README.md`, `AI_GOVERNANCE.md` | 🔵 reference-only @ `56db375` |
+
+| [`#ide-stage-2`](#ide-stage-2) | Семь источников BA requirements / ba-meta-model, ссылки в якоре ниже | 7 файлов | `docs/analysis/2026-10-30-ide-clients-stage-2.md` | 🔵 reference-only @ `c105323` |
 
 > HTML-экспорты `classification.html`, `classification-tz.html`,
 > `requirements-flow.html` присутствуют в Хабе, но **не регистрируются** как
@@ -254,3 +256,23 @@ related_issues:
   - `AI_GOVERNANCE.md` (раздел «Подготовка к приватизации»)
 - **Политика:** reference only; сам перевод в Private — решение Пользователя, а не
   спока.
+
+<a id="ide-stage-2"></a>
+
+### `#ide-stage-2` — Входы мета-модели для IDE-клиентов
+
+Потребитель: [анализ Этапа 2](analysis/2026-10-30-ide-clients-stage-2.md).
+Срез Хаба: `c105323322d7e3a0450199db28071ea21fa9404d`, прочитан 2026-10-30.
+Reference only: тексты исследований и Execution Package в спок не копируются.
+
+- [Индекс BA requirements](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/README.md).
+- [Проверка слоёв M0–M2](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-08-26-m0-m2-layering-hypothesis-check.md).
+- [Датированные входы мета-модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-09-08-meta-model-inputs-facts.md).
+- [Гранулярность навыка и формат контракта](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/research/ba-requirements/2026-09-10-skill-granularity-format-facts.md).
+- [Введение в проектную мета-модель](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/projects/ba-ai-process/ba-meta-model/00-introduction.md).
+- [Таксономии мета-модели](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/projects/ba-ai-process/ba-meta-model/20-taxonomy.md).
+- [Теория сущностей и уточнение SB-6](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c105323322d7e3a0450199db28071ea21fa9404d/projects/ba-ai-process/ba-meta-model/10-theory.md).
+
+Исторические измерения и текущая концепция могут расходиться. Клиентский
+`SKILL.md` — форма доставки инструкции, а не автоматическое признание класса
+промпта сущностью Skill мета-модели. Соответствие проверяется в анализе.
