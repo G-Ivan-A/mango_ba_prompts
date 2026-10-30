@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.18
-updated: 2026-10-30
+version: 0.17
+updated: 2026-10-29
 temperature: 0.1
 ---
 
@@ -12,17 +12,6 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
-
-### Added — Issue #407: Gate 0 комплексного аудита
-
-- [Пакет Gate 0](https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/audit/2026-10-30-repository-modernization-gate-0.md):
-  закреплены версии обоих репозиториев, все 1 588 файлов, карта архитектуры,
-  231 предшествующий артефакт, 408 discovery-записей issues/PR и план Итерации 1.
-- Воспроизводимый offline-инвентарь, проверка всех Git tree SHA нормативного
-  снимка, восемь regression tests и 60 атомов требований задания.
-- Содержательный аудит и R1–R5 остаются незавершёнными: переход к следующему
-  этапу требует приёмки Пользователем; methodology/production не менялись.
-- Удалён корневой placeholder bootstrap-коммита ветки.
 
 ### Added — Issue #403: полный ручной BCREQ pipeline
 
