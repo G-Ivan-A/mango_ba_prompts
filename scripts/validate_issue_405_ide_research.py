@@ -1,10 +1,12 @@
 #!/usr/bin/env python3
 """Offline acceptance of the IDE-client research; does not execute BA workflows."""
 import argparse
+import importlib.util
 import json
 import re
 import unittest
 from pathlib import Path
+from copy import deepcopy
 from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -67,11 +69,126 @@ class Facts(unittest.TestCase):
                 self.assertTrue((path.parent / target.split("#")[0]).exists(), f"{path}: {target}")
 
 
+class Mapping(unittest.TestCase):
+    def test_all_classes_preserve_canonical_contracts_and_three_adapters(self):
+        canonical = read_json(ROOT / "standards/bcreq-manual-classes/catalog.json")
+        mapping = read_json(DATA / "class-mapping.json")
+        self.assertEqual(mapping["catalog_version"], canonical["version"])
+        self.assertEqual(len(mapping["classes"]), 39)
+        self.assertEqual([c["id"] for c in mapping["classes"]],
+                         [c["id"] for c in canonical["classes"]])
+        report = (DOCS / "2026-10-30-mapping.md").read_text()
+        for original, mapped in zip(canonical["classes"], mapping["classes"]):
+            with self.subTest(class_id=original["id"]):
+                for field, value in original.items():
+                    self.assertEqual(mapped[field], value, field)
+                self.assertIn("[" + mapped["id"] + " —", report)
+                self.assertEqual(set(mapped["adapters"]), {"goose", "opencode-v1", "cline"})
+                for client, folder in (("goose", ".agents"), ("opencode-v1", ".opencode"), ("cline", ".cline")):
+                    adapter = mapped["adapters"][client]
+                    self.assertEqual(adapter["profile"], mapped["profile"])
+                    self.assertEqual(adapter["skill_path"],
+                                     f"{folder}/skills/bcreq-{mapped['id'].lower()}/SKILL.md")
+                    self.assertTrue((ROOT / adapter["body_source"]).is_file())
+
+    def test_example_policies_do_not_grant_execution(self):
+        examples = DATA / "examples"
+        recipe = read_json(examples / "goose-review.json")
+        self.assertEqual(recipe["extensions"], [])
+        self.assertNotIn("retry", recipe)
+        self.assertNotIn("sub_recipes", recipe)
+        config = read_json(examples / "opencode-v1.json")
+        for tool in ("bash", "task", "external_directory", "webfetch", "websearch"):
+            self.assertEqual(config["permission"][tool], "deny")
+        self.assertEqual(config["permission"]["edit"], "ask")
+        self.assertEqual(config["agent"]["bcreq-review"]["permission"]["edit"], "deny")
+        self.assertFalse(config["autoupdate"])
+        self.assertEqual(config["plugin"], [])
+        self.assertEqual(config["mcp"], {})
+        self.assertFalse(any(p.suffix in {".sh", ".py", ".js", ".ps1"}
+                             for p in examples.rglob("*")))
+        self.assertFalse(list(DATA.rglob("SKILL.md")), "Examples must stay inactive")
+
+    def test_protections_and_breakers_remain_distinct(self):
+        report = (DOCS / "2026-10-30-mapping.md").read_text()
+        for number in range(1, 6):
+            self.assertEqual(len(re.findall(rf"^\| З{number} —", report, re.M)), 1)
+        for number in range(1, 8):
+            self.assertIn(f"CB-0.{number}", report)
+        self.assertIn("Чужой контекст, CB-0.7", report)
+        self.assertIn("Сохранение, З2/C39", report)
+
+
+class ContractExamples(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        spec = importlib.util.spec_from_file_location(
+            "issue405_reference", ROOT / "experiments/issue_403/check_replay.py")
+        cls.reference = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(cls.reference)
+
+    def setUp(self):
+        self.data = read_json(DATA / "examples/contract-fixture.json")
+
+    def test_example_full_matches_all_live_bodies(self):
+        actual = self.reference.assemble(self.data["base"], self.data["slices"])
+        self.assertEqual(actual, self.data["expected_full"])
+        self.assertEqual(set(actual["entities"]), {"A-01", "FR-01"})
+
+    def test_missing_parent_foreign_task_and_unapproved_deletion_fail(self):
+        for defect in ("parent", "task", "delete", "body"):
+            patches = deepcopy(self.data["slices"])
+            if defect == "parent":
+                patches[0]["parent"] = "missing"
+            elif defect == "task":
+                patches[0]["task"] = "TASK-B"
+            elif defect == "delete":
+                patches[0]["tombstones"] = [dict(id="A-01", reason="remove", authorized_by=None)]
+            else:
+                patches[0]["upserts"][0]["text"] = ""
+            with self.subTest(defect=defect), self.assertRaises(ValueError):
+                self.reference.assemble(self.data["base"], patches)
+
+    def test_only_current_human_record_allows_fixture_release(self):
+        candidate, approval = self.data["candidate"], self.data["approval"]
+        allowed = lambda c, a: self.reference.release_allowed(c, a, "BA-fixture", "TASK-A/release")
+        self.assertTrue(allowed(candidate, approval))
+        self.assertFalse(allowed(candidate, None))
+        for field, value in (("revision", "r000"), ("scope", "TASK-B/release"),
+                             ("actor_kind", "model"), ("message_locator", None)):
+            with self.subTest(field=field):
+                self.assertFalse(allowed(candidate, dict(approval, **{field: value})))
+        for field in ("blocking", "stale_ids"):
+            self.assertFalse(allowed(dict(candidate, **{field: ["FR-01"]}), approval))
+
+    def test_two_factors_require_distinct_ordered_current_messages(self):
+        factors = self.data["factors"]
+        allowed = lambda f: self.reference.disputed_command_allowed(True, "D-01", "r001", 1, f)
+        self.assertTrue(allowed(factors))
+        self.assertFalse(allowed(factors[:1]))
+        self.assertTrue(self.reference.disputed_command_allowed(False, "D-01", "r001", 1, []))
+        for field, value in (("message_id", "M1"), ("revision", "r000"),
+                             ("command_id", "D-02"), ("time", 0), ("actor", "other")):
+            with self.subTest(field=field):
+                self.assertFalse(allowed([factors[0], dict(factors[1], **{field: value})]))
+
+    def test_structural_check_does_not_certify_semantic_preservation(self):
+        patches = deepcopy(self.data["slices"])
+        patches[0]["upserts"][0]["text"] = "Export even without confirmation."
+        actual = self.reference.assemble(self.data["base"], patches)
+        # A deliberate negative semantic control: valid structure accepts reversed meaning.
+        self.assertNotEqual(actual, self.data["expected_full"])
+        self.assertEqual(actual["entities"]["FR-01"]["text"], "Export even without confirmation.")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", type=int, choices=(1, 2, 3), default=3)
     args = parser.parse_args()
     suite = unittest.TestSuite()
     suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(Facts))
+    if args.stage >= 2:
+        for checks in (Mapping, ContractExamples):
+            suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(checks))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     raise SystemExit(not result.wasSuccessful())

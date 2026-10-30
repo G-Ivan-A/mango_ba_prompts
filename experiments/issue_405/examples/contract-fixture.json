@@ -1,0 +1,126 @@
+{
+  "base": {
+    "task": "TASK-A",
+    "revision": "r000",
+    "sources": [
+      {
+        "id": "S-01",
+        "locator": "synthetic request paragraph 1"
+      }
+    ],
+    "entities": {
+      "A-01": {
+        "id": "A-01",
+        "kind": "requirement",
+        "text": "An export is allowed only after confirmation. No export without confirmation.",
+        "conditions": [
+          "only after confirmation"
+        ],
+        "source_ids": [
+          "S-01"
+        ],
+        "dependencies": [],
+        "status": "DRAFT"
+      }
+    }
+  },
+  "slices": [
+    {
+      "task": "TASK-A",
+      "parent": "r000",
+      "revision": "r001",
+      "upserts": [
+        {
+          "id": "FR-01",
+          "kind": "requirement",
+          "text": "The system shall export only after confirmation. Without confirmation it shall not export.",
+          "conditions": [
+            "only after confirmation"
+          ],
+          "source_ids": [
+            "S-01"
+          ],
+          "dependencies": [
+            "A-01"
+          ],
+          "status": "DRAFT"
+        }
+      ],
+      "tombstones": []
+    }
+  ],
+  "expected_full": {
+    "task": "TASK-A",
+    "revision": "r001",
+    "sources": [
+      {
+        "id": "S-01",
+        "locator": "synthetic request paragraph 1"
+      }
+    ],
+    "entities": {
+      "A-01": {
+        "id": "A-01",
+        "kind": "requirement",
+        "text": "An export is allowed only after confirmation. No export without confirmation.",
+        "conditions": [
+          "only after confirmation"
+        ],
+        "source_ids": [
+          "S-01"
+        ],
+        "dependencies": [],
+        "status": "DRAFT"
+      },
+      "FR-01": {
+        "id": "FR-01",
+        "kind": "requirement",
+        "text": "The system shall export only after confirmation. Without confirmation it shall not export.",
+        "conditions": [
+          "only after confirmation"
+        ],
+        "source_ids": [
+          "S-01"
+        ],
+        "dependencies": [
+          "A-01"
+        ],
+        "status": "DRAFT"
+      }
+    },
+    "retired_ids": []
+  },
+  "candidate": {
+    "task": "TASK-A",
+    "revision": "r001",
+    "blocking": [],
+    "stale_ids": []
+  },
+  "approval": {
+    "actor": "BA-fixture",
+    "actor_kind": "human",
+    "authority": "verified-in-fixture",
+    "decision": "approve",
+    "revision": "r001",
+    "scope": "TASK-A/release",
+    "message_locator": "synthetic/M3"
+  },
+  "factors": [
+    {
+      "message_id": "M1",
+      "actor": "BA-fixture",
+      "command_id": "D-01",
+      "revision": "r001",
+      "time": 2,
+      "kind": "understand_consequence"
+    },
+    {
+      "message_id": "M2",
+      "actor": "BA-fixture",
+      "command_id": "D-01",
+      "revision": "r001",
+      "time": 3,
+      "kind": "choose_disputed_option"
+    }
+  ]
+}

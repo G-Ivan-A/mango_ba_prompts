@@ -1,0 +1,26 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "autoupdate": false,
+  "instructions": ["rules/constitution.md", "rules/state-contract.md"],
+  "plugin": [],
+  "mcp": {},
+  "permission": {
+    "*": "ask",
+    "read": "ask",
+    "edit": "ask",
+    "bash": "deny",
+    "task": "deny",
+    "webfetch": "deny",
+    "websearch": "deny",
+    "external_directory": "deny",
+    "skill": {"*": "deny", "bcreq-*": "allow"}
+  },
+  "agent": {
+    "bcreq-review": {
+      "description": "Review a frozen candidate against its manifest and read sources; never approve a business gate.",
+      "mode": "primary",
+      "prompt": "Load the applicable full BCREQ rules and C28/C31/C39 standards. Read only the named task revision, manifest and evidence. Missing bodies mean WAITING. Report issue, entity ID, source locator and correction option. No edits, execution, external effects or simulated approvals.",
+      "permission": {"edit": "deny", "bash": "deny", "task": "deny"}
+    }
+  }
+}

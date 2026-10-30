@@ -19,6 +19,9 @@ research_dep: "docs/hub-research-dependencies.md#ide-stage-2"
 
 1. [Сравнение архитектур и факты](ide-clients-stage-2/2026-10-30-comparison.md),
    [первичные источники](ide-clients-stage-2/2026-10-30-sources.md).
+2. [Контракт, все 39 классов, гейты, breakers и З1–З5](ide-clients-stage-2/2026-10-30-mapping.md).
+3. [Учебная инструкция Goose](ide-clients-stage-2/2026-10-30-goose-guide.md),
+   [неактивные native-примеры](../../experiments/issue_405/examples/README.md).
 
 План и критерии: [план](../../experiments/issue_405/plan.md).
 Последовательность и результаты: [журнал приёмки](../../experiments/issue_405/acceptance.md).
