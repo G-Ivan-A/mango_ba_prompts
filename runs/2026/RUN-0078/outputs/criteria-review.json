@@ -1,0 +1,33 @@
+{
+  "method":"Author review of new output against RUN-0074 SC; labels are judgments, not automated semantic predictions",
+  "rows":[
+    {"id":"SC-01","result":"not_verified","evidence":"manual priority retained in inputs, but original manual bodies not checked"},
+    {"id":"SC-02","result":"observed","evidence":"source register S-*; historical design is not asserted as verified current fact"},
+    {"id":"SC-03","result":"observed","evidence":"explicit semantic migration to current sections 1-8; numbering stable within r3"},
+    {"id":"SC-04","result":"observed","evidence":"context contains only request-relevant facts; no generic product overview"},
+    {"id":"SC-05","result":"observed","evidence":"section 2 contains no NFR numeric target"},
+    {"id":"SC-06","result":"observed","evidence":"FR-01..FR-08 describe system behavior, design in section 5"},
+    {"id":"SC-07","result":"not_verified","evidence":"delta candidates retained, but actual current As-Is missing"},
+    {"id":"SC-08","result":"not_verified","evidence":"CC conflict surfaced; working projection excludes CC but BA has not resolved it"},
+    {"id":"SC-09","result":"observed","evidence":"FR contain no invented immediately/instantly quality targets"},
+    {"id":"SC-10","result":"observed","evidence":"all draft behavior linked to historical human source, not invented as current product fact"},
+    {"id":"SC-11","result":"not_verified","evidence":"reuse existing rights proposed from S-200; actual rights not revalidated"},
+    {"id":"SC-12","result":"observed","evidence":"section 5.1 starts with configuration then execution"},
+    {"id":"SC-13","result":"observed","evidence":"Q-02 lists alternatives; no choice made by model"},
+    {"id":"SC-14","result":"not_verified","evidence":"FR-08 remains high-level management; operation granularity needs BA review"},
+    {"id":"SC-15","result":"observed","evidence":"eight FR cover distinct configuration, announcement, recording and access actions"},
+    {"id":"SC-16","result":"observed","evidence":"historical BA design identified as design, not customer requirement provenance"},
+    {"id":"SC-17","result":"observed","evidence":"section 5 has no invented SIP/RTP/internal service architecture"},
+    {"id":"SC-18","result":"observed","evidence":"C37/C38 skipped without request; C19/C24 retained under current mandatory internal coverage contract"},
+    {"id":"SC-19","result":"observed","evidence":"FR-07/CON-01 retain separate client leg, not unified recording"},
+    {"id":"SC-20","result":"observed","evidence":"E31/E32 target FR-03 condition and dependent UC/AC, preserving other IDs"},
+    {"id":"SC-21","result":"observed","evidence":"UI placement, default settings and inherited upload behavior in section 5, not new FR"},
+    {"id":"SC-22","result":"observed","evidence":"FR-03, UC-03 and AC-03 explicitly retain no-recording/no-announcement branch"},
+    {"id":"SC-23","result":"not_verified","evidence":"new anonymized paraphrase, not a test of preserving every approved original wording"},
+    {"id":"SC-24","result":"observed","evidence":"6.1 points to 5.1; 6.2 contains distinct external constraints"},
+    {"id":"SC-25","result":"not_verified","evidence":"source chain distinguishes request from BA design; which design candidates become customer FR needs approval"},
+    {"id":"SC-26","result":"observed","evidence":"standards define positive checks; task-specific failures confined to RUN evidence"},
+    {"id":"SC-27","result":"not_verified","evidence":"C28 reviewer same author/model; no independent architect or human reviewer"},
+    {"id":"SC-28","result":"not_verified","evidence":"Q-02 and rights/scope ambiguities prevent unconditional implementability"}
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "baseline": {
+    "turns": 214,
+    "iterations": 107,
+    "sessions": 19,
+    "incidents_total": 193,
+    "incidents_prompt": 3,
+    "incidents_confirmed": 80,
+    "incidents_plausible": 113,
+    "answers_with_incidents": 74,
+    "success_criteria": 28,
+    "golden_cases": 46
+  },
+  "simulation": {
+    "events": 41,
+    "classes_accounted_for": 39,
+    "criteria": {
+      "observed": 19,
+      "not_verified": 9
+    },
+    "live_human_approvals": 0,
+    "delivery_status": "DRAFT_AWAITING_HUMAN"
+  },
+  "comparison_limit": "Author judgments and structural probes; no comparable defect-rate or latency estimate"
+}
