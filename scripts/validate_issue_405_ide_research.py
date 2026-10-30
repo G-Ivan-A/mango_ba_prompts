@@ -61,7 +61,12 @@ class Facts(unittest.TestCase):
             self.assertLessEqual(cited, ids, str(path))
 
     def test_links_exist(self):
-        paths = list(DOCS.glob("*.md")) + [DATA / "plan.md"]
+        paths = list(DOCS.glob("*.md")) + list(DATA.glob("*.md"))
+        paths += list((DATA / "examples").glob("*.md"))
+        paths += [ROOT / "docs/analysis/2026-10-30-ide-clients-stage-2.md"]
+        adr = ROOT / "docs/adr/2026-10-adr-016-ide-client-process.md"
+        if adr.exists():
+            paths.append(adr)
         for path in paths:
             for target in re.findall(r"\]\(([^\s)]+)\)", path.read_text()):
                 if "://" in target or target.startswith("#"):
@@ -181,6 +186,53 @@ class ContractExamples(unittest.TestCase):
         self.assertEqual(actual["entities"]["FR-01"]["text"], "Export even without confirmation.")
 
 
+class Operations(unittest.TestCase):
+    def test_requirement_inventory_is_complete_and_resolves(self):
+        requirements = read_json(DATA / "requirements.json")
+        expected = {f"Q{i:02}" for i in range(1, 18)}
+        self.assertEqual({r["id"] for r in requirements}, expected)
+        self.assertEqual(len(requirements), len(expected))
+        main = (ROOT / "docs/analysis/2026-10-30-ide-clients-stage-2.md").read_text()
+        for row in requirements:
+            self.assertTrue(row["artifacts"])
+            self.assertTrue(row["evidence"])
+            self.assertTrue(row["verification"])
+            self.assertIn("| " + row["id"] + " —", main)
+            for artifact in row["artifacts"]:
+                self.assertTrue((ROOT / artifact).is_file(), artifact)
+
+    def test_meta_model_preserves_entities_and_covers_every_class_once(self):
+        text = (DOCS / "2026-10-30-meta-model.md").read_text()
+        entities = set(re.findall(r"^\| ([A-Z][A-Za-z0-9]+) \|", text, re.M))
+        self.assertEqual(entities, {"Product", "System", "Artifact", "Operation", "Skill",
+                                    "Process", "Route", "Actor", "Gate", "Contract", "Trace", "M0", "M1", "M2"})
+        table = text.split("| Группа классов", 1)[1].split("В машинной приёмке", 1)[0]
+        classes = re.findall(r"\bC\d{2}\b", "\n".join(
+            line.split("|")[1] for line in table.splitlines() if line.startswith("| C")))
+        self.assertEqual(len(classes), 39)
+        self.assertEqual(set(classes), {f"C{i:02}" for i in range(1, 40)})
+        self.assertIn("SB-6", text)
+
+    def test_risks_and_runtime_admission_are_explicit_and_distinct(self):
+        text = (DOCS / "2026-10-30-operations.md").read_text()
+        risks = re.findall(r"^\| (R\d{2}) —", text, re.M)
+        self.assertEqual(risks, [f"R{i:02}" for i in range(1, 13)])
+        probes = re.findall(r"^\| (P\d{2}) \|", text, re.M)
+        self.assertEqual(probes, [f"P{i:02}" for i in range(1, 9)])
+        self.assertIn("runtime здесь не выполнен", text)
+        self.assertIn("Telegram исключён из архитектуры", text)
+
+    def test_hub_sources_are_pinned_and_registered(self):
+        registry = (ROOT / "docs/hub-research-dependencies.md").read_text()
+        section = registry.split('<a id="ide-stage-2"></a>', 1)[1]
+        links = re.findall(r"https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/([^\s)]+)", section)
+        self.assertEqual(len(links), 7)
+        for link in links:
+            self.assertTrue(link.startswith("c105323322d7e3a0450199db28071ea21fa9404d/"))
+        self.assertIn("10-theory.md", section)
+        self.assertFalse((ROOT / "research").exists())
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--stage", type=int, choices=(1, 2, 3), default=3)
@@ -190,5 +242,7 @@ if __name__ == "__main__":
     if args.stage >= 2:
         for checks in (Mapping, ContractExamples):
             suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(checks))
+    if args.stage >= 3:
+        suite.addTests(unittest.defaultTestLoader.loadTestsFromTestCase(Operations))
     result = unittest.TextTestRunner(verbosity=2).run(suite)
     raise SystemExit(not result.wasSuccessful())
