@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.5
+version: 0.6
 updated: 2026-10-31
 ai-generated: true
 type: register
@@ -11,6 +11,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/409"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/411"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -22,6 +23,7 @@ related_artifacts:
   - "docs/rfc/prompt-improvement-multichannel-proposal.md"
   - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
   - "docs/rfc/2026-10-repository-modernization.md"
+  - "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -165,6 +167,29 @@ v0.3 выносит на согласование десять решений. �
 | [RFC-409-DEC-09](2026-10-repository-modernization.md#dec-09-политика-разметки-истории-f-10-f-16) | Разметка истории | Правило каталога и блок перехода; `.archive/` — только `superseded` с преемником | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-10, F-16 | `proposed` | — |
 | [RFC-409-DEC-10](2026-10-repository-modernization.md#dec-10-вывод-локального-kb-конвейера-f-12) | KB-конвейер | Депрекация после проверки потребителей; `kb/` остаётся на месте | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-12 | `proposed` | — |
 
+## Уроки прогонов в конвейере промптов (источник: issue #411)
+
+RFC [`2026-10-bcreq-run-lessons-pipeline.md`](2026-10-bcreq-run-lessons-pipeline.md) v0.1 выносит на согласование двенадцать решений. Этап 1
+(реестр уроков, генерируемые блоки, golden set, рубрика, сайт) реализован в
+PR #412 по [ADR-017](../adr/2026-10-adr-017-run-lessons-ssot.md) и ждёт
+утверждения DEC-411-01. Изменения замороженных контрактов (DEC-411-02,
+-08, -10) не выполнены.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-411-DEC-01](2026-10-bcreq-run-lessons-pipeline.md#dec-411-01-утвердить-adr-017-реестр-уроков--ssot) | ADR-017, `standards/bcreq-lessons/` | Реестр уроков — единственный источник правил «как делать и как не делать»; блоки промптов генерируются | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | PR #412 (реализация этапа 1) |
+| [RFC-411-DEC-02](2026-10-bcreq-run-lessons-pipeline.md#dec-411-02-четыре-поля-контракта-прогона) | `standards/runs-contract-standard.md` | Поля `prompt_ref`, `lessons[]`, `golden_promotion`, `ba_reviewed` для новых прогонов | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-03](2026-10-bcreq-run-lessons-pipeline.md#dec-411-03-единый-словарь-кодов-ошибок) | Реестры ошибок новых прогонов | Коды ошибок — ID уроков; локальные коды только с колонкой «урок» | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-04](2026-10-bcreq-run-lessons-pipeline.md#dec-411-04-порог-приёмки-по-golden-set) | Рубрика этапа 1 | Порог: ядро 11 из 11; полный набор не ниже 90% по K1–K3; K5 без исключений | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-05](2026-10-bcreq-run-lessons-pipeline.md#dec-411-05-урок-l-42-канонические-пункты-раздела-6) | Стандарт раздела 6 | Вернуть или отклонить канонические пункты раздела 6 | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-06](2026-10-bcreq-run-lessons-pipeline.md#dec-411-06-бюджет-токенов-промптов-этапа-1) | `prompts/bcreq-*.md` | Полные блоки уроков на этапе 1; сокращение только по данным прогонов | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-07](2026-10-bcreq-run-lessons-pipeline.md#dec-411-07-39-классов--цель-этапов-23) | `standards/bcreq-manual-classes/` | Общий шаблон в один файл, переименование ID классов, явные правила 17 ослабленных уроков | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-08](2026-10-bcreq-run-lessons-pipeline.md#dec-411-08-восстановить-контракт-жизненного-цикла-эталонов) | Контракт эталонов | Восстановить утраченный контракт Golden Examples и сверить с контрактом evals | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-09](2026-10-bcreq-run-lessons-pipeline.md#dec-411-09-правило-сессии-п-9-и-его-проверка) | Клиент этапа 2 | Клиент сам подставляет правила сессии из 8.5 в каждый запрос | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-10](2026-10-bcreq-run-lessons-pipeline.md#dec-411-10-навигация-readme-промптов-и-стандартов) | `prompts/README.md`, `standards/README.md` | Ссылки на реестр уроков при обновлении базового снимка | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-11](2026-10-bcreq-run-lessons-pipeline.md#dec-411-11-поправки-к-rfc-модернизации-репозитория) | RFC модернизации | Цикл качества промптов в критериях выхода этапов, исправления путей и DoD | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+| [RFC-411-DEC-12](2026-10-bcreq-run-lessons-pipeline.md#dec-411-12-метаданные-adr-015) | ADR-015 | Исправить `decision-type` | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -187,3 +212,7 @@ v0.3 выносит на согласование десять решений. �
 - **2026-10-31** — добавлены RFC-409-DEC-01…10 в статусе `proposed` по итогам
   аудита issue #409 (PR #410). RFC-документ —
   [`docs/rfc/2026-10-repository-modernization.md`](2026-10-repository-modernization.md) v0.3.
+- **2026-10-31** — добавлены RFC-411-DEC-01…12 в статусе `proposed` по итогам
+  issue #411 (PR #412). RFC-документ —
+  [`docs/rfc/2026-10-bcreq-run-lessons-pipeline.md`](2026-10-bcreq-run-lessons-pipeline.md) v0.1; решение —
+  [ADR-017](../adr/2026-10-adr-017-run-lessons-ssot.md).
