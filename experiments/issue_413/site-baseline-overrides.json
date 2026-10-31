@@ -1,0 +1,24 @@
+{
+  "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413",
+  "base": "experiments/issue_395/site-baseline.json",
+  "files": {
+    "standards/prompt-standard.md": {
+      "sha256": "01662e6bad6b199134e88d77ac933131651439437f0fa73c729d1dc96679ae74",
+      "reason": "#413: раздел «Обобщение содержимого промпта», правила G1–G5"
+    },
+    "standards/pages-ux-standard.md": {
+      "sha256": "2ff2734b7ffd7710ef292bdaff6ad848f6700c2eda66b5886111ffb1c04c9ca3",
+      "reason": "#413: раздел «Дорожная карта» описывает четыре этапа и запуск этапа 1"
+    },
+    "site/styles.css": {
+      "sha256": "0859ccef55faba29ebaf81a06abede8620b78907d34869f2b246f8748c134ded",
+      "reason": "#413: полоса этапов на дашборде из четырёх колонок, блок запуска этапа 1"
+    }
+  },
+  "sections": {
+    "roadmap": {
+      "sha256": "c80926bfbadcf22a5dbb26844131a1869dee0a8f2225df583c7cf0dffd60394c",
+      "reason": "#413: раздел показывает четыре этапа ADR-017 и запуск этапа 1 из docs/roadmap.md"
+    }
+  }
+}

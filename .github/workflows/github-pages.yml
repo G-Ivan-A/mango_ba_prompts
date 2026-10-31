@@ -70,6 +70,9 @@ jobs:
       - name: Validate issue #263 vision alignment
         run: python3 scripts/validate_issue_263_vision_alignment.py
 
+      - name: Validate issue #413 prompt generalization
+        run: python3 scripts/validate_issue_413_prompt_generalization.py
+
       - name: Validate issue #388 BCREQ site and password gate
         run: python3 scripts/validate_issue_388_bcreq_site.py
 
