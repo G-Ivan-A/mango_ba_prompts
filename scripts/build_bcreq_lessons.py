@@ -120,6 +120,16 @@ def compute_coverage(registry: dict) -> dict:
             agg["runs"].setdefault(run, []).append({"code": code, "name": row["name"], "total": row["total"]})
         for code in sorted(set(spec["map"]) - set(rows)):
             stale.append({"run": run, "code": code})
+    inventory = registry.get("inventory", {})
+    inventory_ids = []
+    if inventory:
+        data = json.loads((ROOT / inventory["source"]).read_text(encoding="utf-8"))
+        inventory_ids = [item["id"] for item in data["lessons"]]
+    inventory_unmapped = [i for i in inventory_ids if inventory.get("map", {}).get(i) not in lessons]
+    for item_id in inventory_ids:
+        lid = inventory["map"].get(item_id)
+        if lid in per_lesson:
+            per_lesson[lid].setdefault("inventory", []).append(item_id)
     for source in registry.get("qualitative_sources", []):
         for lid in source["lessons"]:
             per_lesson[lid].setdefault("qualitative", []).append(source["run"])
@@ -135,6 +145,8 @@ def compute_coverage(registry: dict) -> dict:
         "incidents_total": sum(r["incidents"] for r in run_totals.values()),
         "unregistered_runs": unregistered_runs,
         "unmapped_codes": unmapped,
+        "inventory_items": len(inventory_ids),
+        "inventory_unmapped": inventory_unmapped,
         "stale_mappings": stale,
         "lessons": per_lesson,
     }
@@ -281,6 +293,10 @@ def render_readme(registry: dict, coverage: dict) -> str:
         f"Прогонов со статистикой вне реестра: **{len(coverage['unregistered_runs'])}**. "
         f"Устаревших сопоставлений: **{len(coverage['stale_mappings'])}**.",
         "",
+        f"Инвентаризация уроков из всех источников (промпты, стандарты, отзывы БА, анализы): "
+        f"**{coverage['inventory_items']}** пунктов, без урока реестра — **{len(coverage['inventory_unmapped'])}** "
+        f"([исследование](../../experiments/issue_411/research/lessons_coverage.md)).",
+        "",
         "Качественные источники (отзывы БА без статистики) учтены как свидетельства уроков: "
         + ", ".join(sorted({s["run"] for s in registry.get("qualitative_sources", [])})) + ".",
         "",
@@ -288,6 +304,9 @@ def render_readme(registry: dict, coverage: dict) -> str:
         "",
         "Порядок — по числу инцидентов. «Поймал БА» — инциденты, на которые БА указал в диалоге; "
         "«Повторы» — вхождения после первого замечания БА по той же категории.",
+        "",
+        "Уровень `runtime` вставляется в промпты, `authoring` проверяется при правке промптов; "
+        "статус `proposed` ждёт решения владельца и в промпты не вставляется.",
         "",
         "| Урок | Название | Уровень | Якоря | Инцидентов | Поймал БА | Повторы | Коды прогонов | Промпты | Golden |",
         "|---|---|---|---|---:|---:|---:|---|---|---|",
@@ -297,9 +316,11 @@ def render_readme(registry: dict, coverage: dict) -> str:
         codes = "; ".join(f"{run}: {', '.join(c['code'] for c in items)}" for run, items in sorted(agg["runs"].items()))
         if agg.get("qualitative"):
             codes = (codes + "; " if codes else "") + "отзывы: " + ", ".join(agg["qualitative"])
+        if lesson.get("sources") and not agg.get("qualitative") and not agg["runs"]:
+            codes = "источники: " + ", ".join(f"[`{Path(s).name}`](../../{s})" for s in lesson["sources"])
         prompts = "все" if lesson["prompts"] == ["all"] else (", ".join(lesson["prompts"]) or "— (авторский)")
         lines.append(
-            f"| {lesson['id']} | {lesson['title']} | {lesson['level']} | {', '.join(lesson['anchors'])} | "
+            f"| {lesson['id']} | {lesson['title']} | {lesson['level']}{'' if lesson['status'] == 'active' else ' (' + lesson['status'] + ')'} | {', '.join(lesson['anchors'])} | "
             f"{agg['total']} | {agg['ba_caught']} | {agg['repeats']} | {codes or '—'} | {prompts} | "
             f"{', '.join(lesson['golden'])} |"
         )
@@ -374,9 +395,10 @@ def build(check: bool) -> int:
     if check:
         for p in stale:
             print(f"stale: {p.relative_to(ROOT)}", file=sys.stderr)
-        problems = coverage["unmapped_codes"] or coverage["unregistered_runs"] or coverage["stale_mappings"]
+        problems = (coverage["unmapped_codes"] or coverage["unregistered_runs"]
+                    or coverage["stale_mappings"] or coverage["inventory_unmapped"])
         if problems:
-            print(json.dumps({k: coverage[k] for k in ("unmapped_codes", "unregistered_runs", "stale_mappings")},
+            print(json.dumps({k: coverage[k] for k in ("unmapped_codes", "unregistered_runs", "stale_mappings", "inventory_unmapped")},
                              ensure_ascii=False, indent=2), file=sys.stderr)
         return 1 if stale or problems else 0
     for p in stale:
