@@ -166,6 +166,12 @@ class RoadmapSiteTests(unittest.TestCase):
         self.assertEqual([p["title"] for p in phases], titles)
         self.assertEqual([p["status"] for p in phases],
                          [level["status"] for level in self.roadmap["levels"]])
+        for phase in phases[1:]:
+            with self.subTest(phase=phase["id"]):
+                metrics = {m["label"]: m["value"] for m in phase["metrics"]}
+                # The process does not change between stages; a person decides at gates.
+                self.assertEqual(metrics.get("гейты"), "человек")
+                self.assertNotIn("human gates", metrics)
         app = read("site/app.js")
         self.assertNotIn('"multiagents"', app)
         self.assertIn("repeat(4, minmax(0, 1fr))", re.search(r"\.phase-lane \{[^}]+\}", read("site/styles.css")).group())

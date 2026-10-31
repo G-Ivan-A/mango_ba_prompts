@@ -716,27 +716,27 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
       progress: 0,
       summary: "Агентный клиент типа OpenCode выполняет шаги по пакету правил и останавливается на гейтах.",
       metrics: [
-        { label: "основа", value: processIndex.length },
+        { label: "процессов", value: processIndex.length },
         { label: "операций", value: taxonomy.operations.length },
-        { label: "шагов", value: roadmap.gaps.length },
+        { label: "гейты", value: "человек" },
       ],
     }),
     phaseFromStage("n8n", 3, {
       progress: 0,
       summary: "Поток n8n ведёт процесс, хранит состояние и ждёт решения человека на гейтах (ADR-017).",
       metrics: [
-        { label: "этап", value: 3 },
-        { label: "human gates", value: "on" },
-        { label: "статус", value: "план" },
+        { label: "процессов", value: processIndex.length },
+        { label: "исполнитель", value: "n8n" },
+        { label: "гейты", value: "человек" },
       ],
     }),
     phaseFromStage("server", 4, {
       progress: 0,
       summary: "Потоки n8n на выделенном сервере в контуре Манго для всей команды БА.",
       metrics: [
-        { label: "этап", value: 4 },
-        { label: "human gates", value: "on" },
-        { label: "статус", value: "план" },
+        { label: "процессов", value: processIndex.length },
+        { label: "контур", value: "Манго" },
+        { label: "гейты", value: "человек" },
       ],
     }),
   ];
