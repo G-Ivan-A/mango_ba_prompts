@@ -35,3 +35,6 @@ for card in c["cards"]:
             "Переходное правило для документов, начатых до этого правила, — в стандарте раздела 6.")
 p.write_text(json.dumps(c, ensure_ascii=False, indent=2) + "\n")
 print("ok")
+# Follow-up applied after the first run: the same transitional note in card 2
+# ("В задачах, начатых по старой структуре, оно остаётся в 6.2 …") was replaced by
+# "Переходное правило для документов, начатых до этого правила, — в стандарте раздела 6."
