@@ -20,7 +20,8 @@ ADR-017). Из него генерируются README реестра, coverage
 * сайт: ``site/data/lessons.json`` совпадает с реестром, шаги процесса
   ссылаются на уроки своих промптов;
 * ADR, RFC и аналитический отчёт существуют, RFC зарегистрирован;
-* прогон регрессии фиксирует три версии: golden set, рубрики и промпта.
+* прогон регрессии фиксирует три версии: golden set, рубрики и промпта, а
+  его метрики пересчитываются из оценок судьи и ключа слепоты.
 """
 
 import importlib.util
@@ -373,6 +374,36 @@ class RegressionRunTests(unittest.TestCase):
         for label, version in versions.items():
             with self.subTest(label=label):
                 self.assertRegex(text, rf"{label}[^\n]*\b{re.escape(version)}\b")
+
+    def test_run_metrics_recomputed_from_scores(self):
+        """metrics.json пересчитывается из оценок судьи, ключа слепоты и golden set."""
+        load = lambda rel: json.loads((RUN_DIR / rel).read_text(encoding="utf-8"))
+        mapping = load("inputs/mapping.json")["mapping"]
+        key = load("outputs/judge-key.json")
+        metrics = load("outputs/metrics.json")
+        cases = {case["case-id"]: case for case in golden_cases()}
+        self.assertEqual(sorted(mapping.values()), sorted(cases))
+        scores = {}
+        for item in load("outputs/judge-scores.json"):
+            for label in ("X", "Y"):
+                scores[(item["case"], key[item["case"]][label])] = item[label]
+        meta = (RUN_DIR / "metadata.yaml").read_text(encoding="utf-8")
+        for version in ("A", "B"):
+            with self.subTest(version=version):
+                answers = {item["case"] for item in load(f"outputs/executor-{version}.json")}
+                self.assertEqual(answers, set(mapping))
+                passed = core = 0
+                for tid, case_id in mapping.items():
+                    case = cases[case_id]
+                    negative = case["Эталонный вердикт"] == "дефекта нет"
+                    applicable = [c for c in RUBRIC_CRITERIA if not (negative and c == "K2")]
+                    ok = all(scores[(tid, version)].get(c) is True for c in applicable)
+                    passed += ok
+                    core += ok and case["Ядро"] == "да"
+                core_total = sum(case["Ядро"] == "да" for case in cases.values())
+                self.assertEqual(metrics[version]["passed"], passed)
+                self.assertEqual(metrics[version]["core"], f"{core}/{core_total}")
+                self.assertRegex(meta, rf"\bpassed_{version}: {passed}\b")
 
 
 if __name__ == "__main__":
