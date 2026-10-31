@@ -1,0 +1,172 @@
+{
+  "A": {
+    "prompt_version": "0.1",
+    "prompt_ref": "34e07b06334001214ec3545310af5d0cfdfe4c7b",
+    "cases": 62,
+    "passed": 49,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "48/52",
+      "K3": "61/62",
+      "K4": "62/62",
+      "K5": "54/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "fix introduces an unsourced integration mechanism ('передавать событие') in an ФТ"
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "fix assigns status: 'ФТ-2 согласовано с Р-1' instead of 'сверено: <локатор>'"
+      },
+      {
+        "case": "GS-BCREQ-38",
+        "lesson": "L-38",
+        "failed": [
+          "K5"
+        ],
+        "note": "fix assigns the queue-editing right to 'Супервизор' without a source or request (a guess)"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "fix drops the limiter 'только' and adds an unsourced reference point 'после неотвеченного вызова'"
+      },
+      {
+        "case": "GS-BCREQ-35",
+        "lesson": "L-35",
+        "failed": [
+          "K2"
+        ],
+        "note": "names a missing quote/locator ('факт без источника'), not that a Заказчик document is not a source of current product behaviour"
+      },
+      {
+        "case": "GS-BCREQ-N07",
+        "lesson": "против L-48, L-04",
+        "failed": [
+          "K3"
+        ],
+        "note": "quotes only 2.4.2; the verdict also rests on 2.4.1 being complete, which is not pointed to"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "names an unsourced claim about the product, not a disclaimer of a problem that was never in the input"
+      },
+      {
+        "case": "GS-BCREQ-41",
+        "lesson": "L-41",
+        "failed": [
+          "K5"
+        ],
+        "note": "fix rewrites 6.1 as a description of how ФТ-1 is implemented (trigger, channel) rather than pointing to a section 5 feature, so section 6 still duplicates the ФТ"
+      },
+      {
+        "case": "GS-BCREQ-30",
+        "lesson": "L-30",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: labelled a contradiction with the source ('опровергнуто цитатой') rather than a fact carried over to another call type and tariff; the source is silent, it does not refute"
+      },
+      {
+        "case": "GS-BCREQ-22",
+        "lesson": "L-22",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: named scope expansion / no source / broken traceability, not context carried over from another task"
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "lesson": "L-47",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fix with a source still does not say whether the list is complete, so the same lesson is broken again"
+      },
+      {
+        "case": "GS-BCREQ-27",
+        "lesson": "L-27",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fix moves the gap into 8.4 with no addressee, which the lesson rule requires"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fixed FR is still non-atomic (route AND update status) and drops the FR formula"
+      }
+    ]
+  },
+  "B": {
+    "prompt_version": "0.2",
+    "prompt_ref": "5cef7bac482f073559aa2576ce2cdf60806495aa",
+    "cases": 62,
+    "passed": 61,
+    "core": "11/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "52/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "61/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-17",
+        "lesson": "L-17",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fix adds an unrequested block (list of dependent places UC/ORR/8.3); only the single requested edit is allowed"
+      }
+    ]
+  },
+  "diff": {
+    "only_A_failed": [
+      "GS-BCREQ-12",
+      "GS-BCREQ-14",
+      "GS-BCREQ-22",
+      "GS-BCREQ-26",
+      "GS-BCREQ-27",
+      "GS-BCREQ-30",
+      "GS-BCREQ-33",
+      "GS-BCREQ-35",
+      "GS-BCREQ-38",
+      "GS-BCREQ-41",
+      "GS-BCREQ-43",
+      "GS-BCREQ-47",
+      "GS-BCREQ-N07"
+    ],
+    "only_B_failed": [
+      "GS-BCREQ-17"
+    ],
+    "both_failed": []
+  }
+}
