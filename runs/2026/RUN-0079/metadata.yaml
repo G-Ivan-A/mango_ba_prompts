@@ -1,0 +1,85 @@
+run_id: RUN-0079
+process: bcreq-stage1-golden-set-ab-review-validation-prompt
+version: "0.1"
+date: 2026-10-31
+author: "Claude Code (claude-opus-5-5), issue #411"
+model: "claude-opus-5-5 — исполнитель (4 изолированных подагента) и судья (2 изолированных подагента)"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+  - inputs/cases-batch1.md
+  - inputs/cases-batch2.md
+  - inputs/mapping.json
+inputs:
+  - inputs/README.md
+  - inputs/cases-batch1.md
+  - inputs/cases-batch2.md
+  - inputs/mapping.json
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/executor-A.json
+  - outputs/executor-B.json
+  - outputs/judge-scores.json
+  - outputs/judge-key.json
+  - outputs/metrics.json
+logs:
+  - logs/experiment-log.md
+  - logs/judge-input-batch1.md
+  - logs/judge-input-batch2.md
+  - logs/judge-rules.md
+feedback:
+  - feedback/review-notes.md
+# Поля DEC-411-02 (предложены RFC уроков прогонов; контракт прогона их пока
+# не требует, здесь они добровольные).
+prompt_ref:
+  path: prompts/bcreq-review-validation-oneshot.md
+  A: {version: "0.1", commit: 34e07b06334001214ec3545310af5d0cfdfe4c7b}
+  B: {version: "0.2", commit: 5cef7bac482f073559aa2576ce2cdf60806495aa}
+golden_set: {path: standards/bcreq-lessons/golden-set-bcreq-stage1.md, version: "0.1"}
+rubric: {path: standards/bcreq-lessons/rubric-bcreq-stage1.md, version: "0.1"}
+lessons:
+  - L-17
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  success_rate: 0.98
+  success_rate_basis: "Доля кейсов golden set (61 из 62), сданных промптом версии 0.2 по всем применимым критериям K1–K6 по оценке модели-судьи. Версия 0.1 на тех же кейсах: 49 из 62 (0.79). Судья не подтверждён человеком."
+  cases: 62
+  passed_A: 49
+  passed_B: 61
+  core_A: "10/11"
+  core_B: "11/11"
+  negatives_false_positive_A: "0/10"
+  negatives_false_positive_B: "0/10"
+  tokens_executor_A: 55610
+  tokens_executor_B: 79235
+  tokens_judge: 96008
+  token_method: "subagent_tokens из отчёта Claude Code о подагенте (сумма по пакетам; включает чтение промпта и кейсов)"
+  duration_executor_A_s: 119
+  duration_executor_B_s: 105
+  duration_judge_s: 185
+  measured: true
+  eval: "Слепое A/B-сравнение одного промпта проверки до и после блока «Уроки прогонов» на 62 синтетических кейсах golden set: версия 0.2 сдала 61/62 и всё ядро, версия 0.1 — 49/62, разница в основном в правиле (K2) и в правке, вносящей новый дефект (K5). Прогон не доказывает качество полного документа на реальном входе БА и не заменяет подтверждение человеком."
+related_runs:
+  - RUN-0073
+  - RUN-0074
+  - RUN-0075
+  - RUN-0076
+  - RUN-0078
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/411
+related_artifacts:
+  - prompts/bcreq-review-validation-oneshot.md
+  - standards/bcreq-lessons/lessons.json
+  - standards/bcreq-lessons/golden-set-bcreq-stage1.md
+  - standards/bcreq-lessons/rubric-bcreq-stage1.md
+  - docs/adr/2026-10-adr-017-run-lessons-ssot.md
+  - docs/rfc/2026-10-bcreq-run-lessons-pipeline.md
+  - experiments/issue_411/run0079/prepare.py
+  - experiments/issue_411/run0079/judge_prepare.py
+  - experiments/issue_411/run0079/score.py
+  - experiments/issue_411/run0079/fixate.py
+  - scripts/validate_issue_411_lessons_pipeline.py

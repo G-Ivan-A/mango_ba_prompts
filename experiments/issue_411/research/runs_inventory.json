@@ -1,0 +1,5775 @@
+[
+  {
+    "run_id": "RUN-0001",
+    "num": 1,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-05-26",
+    "process": "prompt-experiment",
+    "run_type": "execution",
+    "status": "experimental",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 22610
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/tz-stats-generator-legacy.md",
+      "prompts/archive/tz-stats-generator-simple-legacy.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/tz-stats-generator-legacy.md",
+      "prompts/archive/tz-stats-generator-simple-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/archive/tz-stats-generator-legacy.md",
+      "prompts/archive/tz-stats-generator-simple-legacy.md"
+    ],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0002",
+    "num": 2,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-05-26",
+    "process": "user-story-generation",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 23529
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/user-story-generator-legacy.md",
+      "prompts/archive/user-story-generator-simple-legacy.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/user-story-generator-legacy.md",
+      "prompts/archive/user-story-generator-simple-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/archive/user-story-generator-simple-legacy.md",
+      "prompts/archive/user-story-generator-legacy.md"
+    ],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0003",
+    "num": 3,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-05-26",
+    "process": "usecase-generation",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 28287
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/usecase-stepwise-generator-legacy.md",
+      "prompts/archive/usecase-stepwise-generator-simple-legacy.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/usecase-stepwise-generator-legacy.md",
+      "prompts/archive/usecase-stepwise-generator-simple-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/archive/usecase-stepwise-generator-legacy.md",
+      "prompts/archive/usecase-stepwise-generator-simple-legacy.md"
+    ],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0004",
+    "num": 4,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-05-26",
+    "process": "prompt-audit",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 11912
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0005",
+    "num": 5,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-05-26",
+    "process": "prompt-selftest",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 8687
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/archive/usecase-stepwise-generator-legacy.md",
+      "prompts/archive/user-story-generator-simple-legacy.md",
+      "prompts/archive/user-story-generator-legacy.md",
+      "prompts/archive/tz-stats-generator-legacy.md",
+      "prompts/archive/tz-stats-generator-simple-legacy.md",
+      "prompts/archive/usecase-stepwise-generator-simple-legacy.md"
+    ],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0006",
+    "num": 6,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-13",
+    "process": "session-debug-documentation",
+    "run_type": "execution",
+    "status": "success",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 8513
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/session-debug-documentation-oneshot.md"
+    ],
+    "related_prompts": [
+      "prompts/session-debug-documentation-oneshot.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0007",
+    "num": 7,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-16",
+    "process": "fr-generation",
+    "run_type": "execution",
+    "status": "works-with-edits",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 7077
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-oneshot.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-oneshot.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0008",
+    "num": 8,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-16",
+    "process": "kb-citation-check",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 5581
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/kb-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0009",
+    "num": 9,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-16",
+    "process": "industry-standards-ab-check",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "not-recorded",
+    "author": "BA/AI",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 1,
+        "bytes": 5170
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/industry-standards-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0010",
+    "num": 10,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-17",
+    "process": "bcreq-1025-email-routing",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7 plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 0,
+        "bytes": 0
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 46537
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 0,
+        "bytes": 0
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [
+      "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
+    ],
+    "lesson_to_prompt": true,
+    "lesson_to_prompt_version": true,
+    "lesson_prompt_links": [
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/archive/glossary-context-understanding-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/archive/fr-documentation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/archive/constraints-documentation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md",
+        "version_on_line": true
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/fr-documentation-stepwise.md",
+        "version_on_line": true
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/constraints-documentation-stepwise.md",
+        "version_on_line": true
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/docs/rfc/prompt-improvement-bcreq-1025-proposal.md",
+        "version_on_line": false
+      }
+    ],
+    "prompt_version_used_lines": [
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md"
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/fr-documentation-stepwise.md"
+      },
+      {
+        "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
+        "target": "prompts/blob/main/prompts/archive/constraints-documentation-stepwise.md"
+      }
+    ],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 5,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0011",
+    "num": 11,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-06-18",
+    "process": "multichannel-agent-workload",
+    "run_type": "execution",
+    "status": "works-with-edits",
+    "model": "not-recorded",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 20533
+      },
+      "outputs": {
+        "count": 8,
+        "bytes": 58061
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 7281
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0011/outputs/prompts-chain.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 2,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 1,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0012",
+    "num": 12,
+    "period": "P0 Phase 0 / перенос (RUN-0001–0012)",
+    "date": "2026-07-14",
+    "process": "bcreq-1069-restricted-api-key",
+    "run_type": "execution",
+    "status": "works-with-edits",
+    "model": "claude-opus-4-8",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5637
+      },
+      "outputs": {
+        "count": 9,
+        "bytes": 53591
+      },
+      "feedback": {
+        "count": 0,
+        "bytes": 0
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 7362
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": false,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/261"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "none",
+    "feedback_bytes": 0,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0012/outputs/prompts-chain.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 1,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0013",
+    "num": 13,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-31",
+    "process": "bcreq-1059-multichannel-slots-limits",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus + qwen3.8-max-preview",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 8899
+      },
+      "outputs": {
+        "count": 11,
+        "bytes": 112223
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 8005
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 8904
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.62,
+    "success_rate_basis": null,
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/questions-customer-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md",
+      "prompts/archive/uc-modeling-stepwise.md",
+      "prompts/archive/us-modeling-stepwise.md",
+      "prompts/meeting-customer-documentation-stepwise.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/questions-customer-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md",
+      "prompts/archive/uc-modeling-stepwise.md",
+      "prompts/archive/us-modeling-stepwise.md",
+      "prompts/meeting-customer-documentation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/268",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0013/inputs/chat-export.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 8005,
+    "feedback_quotes": 16,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0013/feedback/review-notes.md": 3
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0013/feedback/review-notes.md"
+    ],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 2,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0014",
+    "num": 14,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-24",
+    "process": "task-1075-amocrm-deal-on-call",
+    "run_type": "statistics",
+    "status": "partial-success",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 292204
+      },
+      "outputs": {
+        "count": 6,
+        "bytes": 43718
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 8430
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 45303
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.25,
+    "success_rate_basis": null,
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/269"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0014/inputs/chat-export-1075.json"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 8430,
+    "feedback_quotes": 8,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0014/feedback/ba-review.md": 8,
+      "runs/2026/RUN-0014/outputs/prompts-chain.md": 7
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0014/feedback/ba-review.md"
+    ],
+    "lesson_to_prompt": true,
+    "lesson_to_prompt_version": true,
+    "lesson_prompt_links": [
+      {
+        "file": "runs/2026/RUN-0014/feedback/ba-review.md",
+        "target": "prompts/archive/glossary-context-understanding-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0014/feedback/ba-review.md",
+        "target": "prompts/archive/glossary-context-understanding-stepwise.md",
+        "version_on_line": true
+      }
+    ],
+    "prompt_version_used_lines": [
+      {
+        "file": "runs/2026/RUN-0014/feedback/ba-review.md",
+        "target": "prompts/archive/glossary-context-understanding-stepwise.md"
+      }
+    ],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0015",
+    "num": 15,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-08-21",
+    "process": "fr-validation-57204-ivr-scheme-amocrm-rule",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 328792
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 25471
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3266
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 8740
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.8,
+    "success_rate_basis": "8 из 10 эпизодов приняты БА с правками или без; в эпизоде 2 отклонён блок предложенных НФТ и API-требований (реплика 4: «раздел 3 - игнорировать», «5 игнорировать»), в эпизоде 7 БА отклонил основную рекомендацию модели заменить термин «Правило» на «Конфигурация интеграции» (реплика 12: «Правило ... оставим»)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/282"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0015/inputs/57204-chat-export-1787301664041.json",
+      "runs/2026/RUN-0015/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0015/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 3266,
+    "feedback_quotes": 5,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0015/feedback/ba-review-notes.md": 1,
+      "runs/2026/RUN-0015/outputs/prompts-chain.md": 6,
+      "runs/2026/RUN-0015/outputs/quality-findings.md": 8
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0016",
+    "num": 16,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-08-21",
+    "process": "fr-drafting-58093-amocrm-deal-card-new-tab",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 573510
+      },
+      "outputs": {
+        "count": 23,
+        "bytes": 44488
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 4243
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 10384
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.89,
+    "success_rate_basis": "17 из 19 эпизодов приняты БА с правками или без; отклонены эпизод 1 (реплика 2: «оставим исходные формулироваки проблематики») и эпизод 6 (реплика 12: «это не основное требование, это поведение системы текущее»)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md",
+      "standards/experiment-log-standard.md",
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/constraints-documentation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/281"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0016/inputs/58093-chat-export-1787301612928.json",
+      "runs/2026/RUN-0016/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0016/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 4243,
+    "feedback_quotes": 12,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0016/outputs/prompts-chain.md": 2,
+      "runs/2026/RUN-0016/outputs/quality-findings.md": 1
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0016/feedback/ba-review-notes.md"
+    ],
+    "lesson_to_prompt": true,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [
+      {
+        "file": "runs/2026/RUN-0016/feedback/ba-review-notes.md",
+        "target": "prompts/archive/fr-documentation-stepwise.md",
+        "version_on_line": false
+      }
+    ],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0017",
+    "num": 17,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-24",
+    "process": "task-1076-vks-artifacts-bpmsoft",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus + qwen3.8-max-preview",
+    "author": "BA-IH (фиксация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 1398790
+      },
+      "outputs": {
+        "count": 15,
+        "bytes": 74808
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 4024
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 12025
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.82,
+    "success_rate_basis": null,
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-documentation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/270"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0017/inputs/1076-chat-export-1787301046512.json",
+      "runs/2026/RUN-0017/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0017/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 4024,
+    "feedback_quotes": 8,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0017/outputs/quality-findings.md": 2
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0018",
+    "num": 18,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-21",
+    "process": "fr-validation-1079-messenger-id-search",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 4,
+        "bytes": 133085
+      },
+      "outputs": {
+        "count": 11,
+        "bytes": 53758
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 11140
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 14103
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.63,
+    "success_rate_basis": "5 из 8 эпизодов приняты без содержательной переработки (E1, E2, E3, E5, E8)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-validation-stepwise.md",
+      "standards/experiment-log-standard.md",
+      "standards/kb-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-validation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/271"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0018/inputs/chat-export.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 11140,
+    "feedback_quotes": 19,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0018/feedback/review-notes.md": 5,
+      "runs/2026/RUN-0018/outputs/prompts-chain.md": 1
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0018/feedback/review-notes.md"
+    ],
+    "lesson_to_prompt": true,
+    "lesson_to_prompt_version": true,
+    "lesson_prompt_links": [
+      {
+        "file": "runs/2026/RUN-0018/feedback/review-notes.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0018/feedback/review-notes.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": true
+      }
+    ],
+    "prompt_version_used_lines": [
+      {
+        "file": "runs/2026/RUN-0018/feedback/review-notes.md",
+        "target": "prompts/archive/fr-validation-stepwise.md"
+      },
+      {
+        "file": "runs/2026/RUN-0018/outputs/README.md",
+        "target": "prompts/archive/fr-validation-stepwise.md"
+      }
+    ],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0019",
+    "num": 19,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-15",
+    "process": "bcreq-1064-browser-softphone-in-mis",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 563553
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 35438
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 2892
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 13781
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.29,
+    "success_rate_basis": null,
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/questions-customer-understanding-stepwise.md",
+      "standards/runs-contract-standard.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/questions-customer-understanding-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/272"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0019/inputs/chat-export-1064.json",
+      "runs/2026/RUN-0019/inputs/chat-transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "no-review-declared",
+    "feedback_bytes": 2892,
+    "feedback_quotes": 4,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0019/outputs/prompts-chain.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 1,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0020",
+    "num": 20,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-10",
+    "process": "task-1065-context-and-questions-a7a",
+    "run_type": "statistics",
+    "status": "needs-rework",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH (фиксация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 2066638
+      },
+      "outputs": {
+        "count": 18,
+        "bytes": 72618
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 4444
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 12782
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.57,
+    "success_rate_basis": "8 из 14 эпизодов приняты человеком с правками или без (E1, E2, E4, E5, E6, E8, E10, E11); отклонённые редакции не засчитаны",
+    "verdict": "needs-rework",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/273"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0020/inputs/1065-chat-export-1787301452625.json",
+      "runs/2026/RUN-0020/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0020/outputs/quality-findings.md",
+      "runs/2026/RUN-0020/outputs/steps/step-8-doc-errors-and-rule.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 4444,
+    "feedback_quotes": 12,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0020/feedback/ba-review-notes.md": 4,
+      "runs/2026/RUN-0020/outputs/prompts-chain.md": 6,
+      "runs/2026/RUN-0020/outputs/quality-findings.md": 2
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0021",
+    "num": 21,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-10",
+    "process": "fr-drafting-975-ineffective-call-parameters",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 333198
+      },
+      "outputs": {
+        "count": 17,
+        "bytes": 46806
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 8260
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 22840
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.71,
+    "success_rate_basis": "27 из 38 эпизодов приняты БА без содержательной переработки; 11 эпизодов потребовали отката, исправления или повторной постановки (эпизоды 5, 7, 8, 9, 10, 14, 18, 21, 28, 35, 36)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-validation-stepwise.md",
+      "standards/experiment-log-standard.md",
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-validation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/274"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0021/inputs/chat-transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 8260,
+    "feedback_quotes": 12,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0021/feedback/review-notes.md": 3,
+      "runs/2026/RUN-0021/outputs/prompts-chain.md": 3
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0022",
+    "num": 22,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-08-21",
+    "process": "fr-validation-765-headhunter-channel",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 864731
+      },
+      "outputs": {
+        "count": 17,
+        "bytes": 65178
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 6219
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 14430
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.92,
+    "success_rate_basis": "12 из 13 эпизодов приняты БА с правками или без; отклонён Блок А отчёта аудитора в эпизоде 3 (реплика 6: «нет, не согласую, проведите доп проверку»)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-validation-stepwise.md",
+      "standards/experiment-log-standard.md",
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-validation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/276"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0022/inputs/765-chat-export-1787301501556.json",
+      "runs/2026/RUN-0022/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0022/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 6219,
+    "feedback_quotes": 18,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0022/feedback/ba-review-notes.md": 6,
+      "runs/2026/RUN-0022/outputs/prompts-chain.md": 4,
+      "runs/2026/RUN-0022/outputs/quality-findings.md": 1
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0022/outputs/prompts-chain.md"
+    ],
+    "lesson_to_prompt": true,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [
+      {
+        "file": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      },
+      {
+        "file": "runs/2026/RUN-0022/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-stepwise.md",
+        "version_on_line": false
+      }
+    ],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0023",
+    "num": 23,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-05-25",
+    "process": "task-59295-fr-validation-email-forward",
+    "run_type": "statistics",
+    "status": "partial-success",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH (фиксация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 121910
+      },
+      "outputs": {
+        "count": 7,
+        "bytes": 44320
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 5367
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 7605
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.33,
+    "success_rate_basis": "1 из 3 эпизодов без выявленных галлюцинаций и недоказанных утверждений (E1). Шкала «принято человеком» неприменима: явных оценок результата в диалоге нет, 7 вопросов согласования остались без ответа — прямое сравнение с success_rate прогонов, считанных по принятию человеком (например RUN-0020), некорректно",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-validation-legacy.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-validation-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/278"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0023/inputs/59295-chat-export-1787301537378.json",
+      "runs/2026/RUN-0023/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0023/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 5367,
+    "feedback_quotes": 5,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0023/feedback/ba-review-notes.md": 2,
+      "runs/2026/RUN-0023/outputs/prompts-chain.md": 4,
+      "runs/2026/RUN-0023/outputs/quality-findings.md": 3
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [
+      {
+        "file": "runs/2026/RUN-0023/logs/experiment-log.md",
+        "target": "prompts/archive/fr-validation-legacy.md"
+      },
+      {
+        "file": "runs/2026/RUN-0023/logs/experiment-log.md",
+        "target": "prompts/archive/fr-validation-legacy.md"
+      }
+    ],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0024",
+    "num": 24,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-05-25",
+    "process": "task-1020-okdesk-mango-integration-questions",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH (фиксация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 538058
+      },
+      "outputs": {
+        "count": 8,
+        "bytes": 60122
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 7570
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 16277
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.75,
+    "success_rate_basis": "3 из 4 эпизодов дали пригодный к использованию результат (E1-E3, все — с правками БА); E4 завершился пустым ответом модели",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/questions-customer-understanding-stepwise.md",
+      "prompts/archive/questions-customer-understanding-legacy.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/questions-customer-understanding-stepwise.md",
+      "prompts/archive/questions-customer-understanding-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/277"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0024/inputs/1020-chat-export-1787301522802.json",
+      "runs/2026/RUN-0024/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0024/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 7570,
+    "feedback_quotes": 8,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0024/outputs/prompts-chain.md": 6,
+      "runs/2026/RUN-0024/outputs/quality-findings.md": 2
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0025",
+    "num": 25,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-05-12",
+    "process": "fr-validation-997-ivr-scheme-incoming-call-rules",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 77167
+      },
+      "outputs": {
+        "count": 11,
+        "bytes": 38970
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 8015
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 14623
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.5,
+    "success_rate_basis": "5 из 10 эпизодов приняты БА без содержательной переработки (эпизоды 1, 6, 7, 8, 9); 5 эпизодов потребовали сокращения объёма, отклонения предложения модели или остались нерешёнными (эпизоды 2, 3, 4, 5, 10)",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-validation-stepwise.md",
+      "standards/experiment-log-standard.md",
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/glossary-context-understanding-stepwise.md",
+      "prompts/archive/fr-validation-stepwise.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/280"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0025/inputs/chat-transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 8015,
+    "feedback_quotes": 14,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0025/feedback/review-notes.md": 9,
+      "runs/2026/RUN-0025/outputs/prompts-chain.md": 4
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0026",
+    "num": 26,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-05-04",
+    "process": "task-1007-amocrm-outbound-campaign-funnel-stage-fr",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH (фиксация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 532592
+      },
+      "outputs": {
+        "count": 14,
+        "bytes": 63623
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 7462
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 24032
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.5,
+    "success_rate_basis": "доля эпизодов, принятых БА без содержательных правок в следующей реплике (E1, E2, E4, E6, E7 = 5 из 10); E10 засчитан как непринятый: приёмки нет, формулировки требований деградировали",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/fr-documentation-oneshot.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-documentation-stepwise.md",
+      "prompts/archive/fr-documentation-oneshot.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/283"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0026/inputs/1007-chat-export-1787301730570.json",
+      "runs/2026/RUN-0026/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0026/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 7462,
+    "feedback_quotes": 6,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0027",
+    "num": 27,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-04-10",
+    "process": "fr-analysis-978-email-signature-in-lk",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 3,
+        "bytes": 461149
+      },
+      "outputs": {
+        "count": 8,
+        "bytes": 34152
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 10808
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 20493
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.4,
+    "success_rate_basis": "2 из 5 эпизодов приняты БА без оспаривания и без переработки (эпизоды 1 и 3); эпизод 2 вышел за рамки запроса (вместо трассировки выданы новые требования и числа без источника), эпизод 4 оспорен самим БА следующей репликой (скриншот: описанной функции в интерфейсе нет), эпизод 5 закрыл диалог ссылкой на страницу руководства, непроверяемой из выгрузки",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/284"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0027/inputs/978-chat-export-1787301801668.json",
+      "runs/2026/RUN-0027/inputs/chat-transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 10808,
+    "feedback_quotes": 28,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0027/feedback/review-notes.md": 1,
+      "runs/2026/RUN-0027/outputs/prompts-chain.md": 2
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0028",
+    "num": 28,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-07-01",
+    "process": "fr-validation-1040-speech-analytics-direction-filter",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 4,
+        "bytes": 284692
+      },
+      "outputs": {
+        "count": 7,
+        "bytes": 59467
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 7016
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 14554
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.33,
+    "success_rate_basis": "1 из 3 эпизодов с наблюдаемым положительным исходом (E1 принят); E2 не применён — БА сменил концепцию решения, по E3 данных о приёмке нет",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "prompts/archive/fr-validation-legacy.md",
+      "standards/runs-contract-standard.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [
+      "prompts/archive/fr-validation-legacy.md"
+    ],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/275"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0028/inputs/1040-chat-export-1787301483841.json",
+      "runs/2026/RUN-0028/inputs/transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0028/outputs/quality-findings.md"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ba-reconstructed",
+    "feedback_bytes": 7016,
+    "feedback_quotes": 8,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0028/feedback/review-notes.md": 2,
+      "runs/2026/RUN-0028/outputs/prompts-chain.md": 5,
+      "runs/2026/RUN-0028/outputs/quality-findings.md": 8
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [
+      {
+        "file": "runs/2026/RUN-0028/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-legacy.md"
+      },
+      {
+        "file": "runs/2026/RUN-0028/outputs/prompts-chain.md",
+        "target": "prompts/archive/fr-validation-legacy.md"
+      }
+    ],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0029",
+    "num": 29,
+    "period": "P1 экспорт чатов + metrics (RUN-0013–0029)",
+    "date": "2026-05-13",
+    "process": "task-994-bitrix24-lead-title-elicitation",
+    "run_type": "statistics",
+    "status": "works-with-edits",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 53076
+      },
+      "outputs": {
+        "count": 12,
+        "bytes": 40890
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 11154
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 18037
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.56,
+    "success_rate_basis": "5 из 9 эпизодов приняты БА без корректирующей реплики; 4 эпизода (1, 2, 5, 8) потребовали правки: фактическая поправка, смена режима работы и два возврата к формату списка",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/experiment-log-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/279"
+    ],
+    "raw_chat_in_inputs": [
+      "runs/2026/RUN-0029/inputs/chat-transcript.md"
+    ],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "human-ba",
+    "feedback_bytes": 11154,
+    "feedback_quotes": 15,
+    "feedback_substantive_ba": true,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0029/feedback/review-notes.md": 1,
+      "runs/2026/RUN-0029/outputs/prompts-chain.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": true,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0030",
+    "num": 30,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-599-1c-subscriber-selection-on-call",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.5-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2776
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5100
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 6249
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0031",
+    "num": 31,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-791-unified-request-entity-deal-ticket",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-235b-a22b, qwen3-max-preview",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2800
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5777
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 14869
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0032",
+    "num": 32,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-792-post-call-processing-outbound",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-coder-plus, qwen3-max",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2787
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4633
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1674
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 7396
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1674,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0033",
+    "num": 33,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-804-speech-analytics-export-to-external-system",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen-plus-2025-09-11, qwen3-235b-a22b, qwen3-max-preview",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2761
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4759
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 10522
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0034",
+    "num": 34,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-804-speech-analytics-export-final",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-235b-a22b, qwen3-max",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2790
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5302
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 13373
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0035",
+    "num": 35,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-806-elma-knowledge-base-recommendations",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-235b-a22b",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2661
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4128
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1670
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 2909
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1670,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0036",
+    "num": 36,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-817-personal-data-consent-text",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-235b-a22b, qwen3-max-preview",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2678
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4232
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 6018
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0037",
+    "num": 37,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-838-preset-call-block-status",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen-plus-2025-09-11, qwen3-max, qwen3-max-preview",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2735
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4831
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4382
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0038",
+    "num": 38,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-854-mtalker-conference-participants-section",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen-plus-2025-09-11, qwen3-max",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2676
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4607
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4986
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0039",
+    "num": 39,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-854-mtalker-conference-participants-fr",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-10-30",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2671
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4270
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4664
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0040",
+    "num": 40,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-872-proactive-chat-retrigger",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen-max-latest, qwen-plus-2025-09-11, qwen3-max, qwen3-vl-30b-a3b",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2700
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4890
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 15288
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0041",
+    "num": 41,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-890-bitrix24-call-routing",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-10-30, qwen3-vl-30b-a3b",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2741
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5447
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 14313
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0042",
+    "num": 42,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-892-knowledge-base-page-restore",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.5-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2722
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4705
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 6397
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0043",
+    "num": 43,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-908-open-url-on-call-answer",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-10-30",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2662
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4576
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 5734
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0044",
+    "num": 44,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-908-open-url-on-call-answer-validation",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-10-30",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2654
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4111
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1672
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4014
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1672,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0045",
+    "num": 45,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-915-call-connection-sound-signal",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-09-23, qwen3-max-2026-01-23",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2646
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4565
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 7007
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0046",
+    "num": 46,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-918-mandatory-call-topics",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-09-23, qwen3-max-2026-01-23",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2700
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5420
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1674
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 15036
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1674,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0047",
+    "num": 47,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-920-meeting-transcript-analysis",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2025-09-23",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2661
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4374
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1672
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 3542
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1672,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0048",
+    "num": 48,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-930-amocrm-comment-and-tag-fields",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2684
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4620
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1674
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 7316
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1674,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0049",
+    "num": 49,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-935-speech-analytics-api-parameters",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2026-01-23",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2705
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5277
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 8869
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0050",
+    "num": 50,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-942-email-format-painter",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3-max-2026-01-23",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2676
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4816
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1674
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 10503
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1674,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0051",
+    "num": 51,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-960-call-records-multiselect-filter",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.5-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2716
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5379
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 11400
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0052",
+    "num": 52,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-964-ai-robot-on-line",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.5-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2728
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4387
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1673
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4265
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1673,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0053",
+    "num": 53,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-977-bitrix24-call-attribution",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.5-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2711
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 5388
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 14851
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0054",
+    "num": 54,
+    "period": "P2 пакетная фиксация #309 (RUN-0030–0054)",
+    "date": "2026-08-22",
+    "process": "task-980-number-replacement-questions",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.6-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2713
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 4445
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1675
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 4127
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/309"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 1675,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0055",
+    "num": 55,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-23",
+    "process": "tz-feasibility-assessment-utair-chat-mango-office",
+    "run_type": "execution",
+    "status": "works-with-edits",
+    "model": "qwen3.7-plus (первичный исполнитель) + claude-opus-5 (верификация по БЗ)",
+    "author": "BA-IH + LLM (перепрогон и верификация: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 9411
+      },
+      "outputs": {
+        "count": 3,
+        "bytes": 124922
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3760
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 20365
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.8,
+    "success_rate_basis": "Доля утверждений первичного исполнителя об API Mango Office, подтверждённых по kb/processed/vpbx-api: 40 из 50 проверенных утверждений подтверждены, 10 исправлены (см. logs/verification-log.md).",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/313"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 3760,
+    "feedback_quotes": 3,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0056",
+    "num": 56,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-25",
+    "process": "gap-analysis-hh-chats-mango-cc-integration-feasibility",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (claude-opus-5) по постановке БА",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 8238
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 54064
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 2563
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 18483
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.7,
+    "success_rate_basis": "Доля требований ФТ (ФТ-01…ФТ-10), для которых удалось вынести обоснованный вердикт покрытия с опорой на доступную документацию hh.ru и БЗ Mango: 7 из 10 оценены полностью, 3 (ФТ-04, ФТ-06, ФТ-10) оценены частично из-за недоступности OpenAPI-спецификации hh.ru и раздела «Чаты» базы знаний hh.ru.",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/ba-ontology.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/315"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 2563,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0057",
+    "num": 57,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-25",
+    "process": "feasibility-assessment-tender-tz-stt-tts-nlu-dialogue-manager",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (claude-opus-5) по постановке БА",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 8119
+      },
+      "outputs": {
+        "count": 6,
+        "bytes": 273938
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3598
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 30038
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 0.63,
+    "success_rate_basis": "Доля строк-требований ТЗ, по которым удалось вынести положительно обоснованный вывод об исполнимости с опорой на SSOT (полное покрытие У1, частичное У1ч либо покрытие модулем Речевой аналитики У3): 64 из 101. По оставшимся 37 строкам подтверждения в источниках нет — каждая размечена маркером ⚠️ и переведена в вопрос вендору или spike-проверку.",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/ba-ontology.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/319",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/325"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 3598,
+    "feedback_quotes": 3,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0058",
+    "num": 58,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-26",
+    "process": "Re-evaluation: HH.ru Chat API Feasibility",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (claude-opus-5) по постановке БА",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 8842
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 79400
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 4216
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 18703
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 1.0,
+    "success_rate_basis": "Доля требований ФТ (ФТ-01…ФТ-10), для которых вынесен обоснованный вердикт покрытия с опорой на действующую OpenAPI-спецификацию hh.ru: 10 из 10. В отличие от RUN-0056 ни одно требование не осталось с пометкой «источник недоступен»: спецификация прочитана целиком по разделам «Чаты», «Отклики/приглашения работодателя» и «Webhook API».",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/329",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/315"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 4216,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0059",
+    "num": 59,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-26",
+    "process": "Architecture Spike: HH.ru Chats ↔ Mango CC data mapping",
+    "run_type": "execution",
+    "status": "partial-success",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (claude-opus-5) по постановке БА",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5955
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 49430
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 4102
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 15486
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 1.0,
+    "success_rate_basis": "Доля шагов критического пути (входящее сообщение → обращение в КЦ → ответ оператора), для которых построен маппинг данных с опорой на SSOT: 3 из 3. Там, где публичный контракт отсутствует, шаг не выдуман, а помечен маркером «ТРЕБУЕТСЯ УТОЧНЕНИЕ ВНУТРЕННЕГО КОНТРАКТА MANGO».",
+    "verdict": "works-with-edits",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/331",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/329",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/315"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 4102,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0059/feedback/review-notes.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0060",
+    "num": 60,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-27",
+    "process": "Combined L4 gap report: BA verdicts + SA models + footnoted hh.ru API sources",
+    "run_type": "execution",
+    "status": "success",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (claude-opus-5) по постановке БА",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 3887
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 192049
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3195
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 16649
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": 1.0,
+    "success_rate_basis": "Доля разделов ФТ-хх, в которых присутствуют все три обязательных подраздела DoD постановки (БА со сносками, СА с моделью, источники со ссылками): 10 из 10.",
+    "verdict": "works",
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/333",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/329",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/331"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 3195,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0060/feedback/review-notes.md": 1,
+      "runs/2026/RUN-0060/outputs/human-review-checklist.md": 20
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0061",
+    "num": 61,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-28",
+    "process": "task-1090-human-review-of-twin-links",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 3930
+      },
+      "outputs": {
+        "count": 4,
+        "bytes": 19893
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3105
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 26368
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/336"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 3105,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0062",
+    "num": 62,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-01",
+    "process": "feasibility-assessment-tender-appendices-5-7",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "gpt-5.6-sol",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 1264
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 99845
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1401
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 1634
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/339",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/349"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1401,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0062/feedback/review-notes.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0063",
+    "num": 63,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-31",
+    "process": "feature-specification-bcreq-1074-communication-expenses-report",
+    "run_type": "execution",
+    "status": "invalid",
+    "model": "gpt-5.6-sol",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 3250
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 21255
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 2390
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 4058
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/343"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 2390,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0064",
+    "num": 64,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-08-31",
+    "process": "error-analysis-and-feature-specification-bcreq-1074-report-view",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "gpt-5.6-sol",
+    "author": "OpenAI Codex",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2121
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 14025
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1515
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 2468
+      }
+    },
+    "non_contract_files": [
+      "runs/2026/RUN-0064/reports/error-analysis.md"
+    ],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/345"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [
+      "runs/2026/RUN-0064/reports/error-analysis.md"
+    ],
+    "incident_register": [
+      "runs/2026/RUN-0064/reports/error-analysis.md"
+    ],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1515,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0064/reports/error-analysis.md": 1
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": true,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0065",
+    "num": 65,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-01",
+    "process": "feasibility-assessment-telephony-requirements-task-1099",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "gpt-5.6-sol",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 1354
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 331716
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1947
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 3089
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/347",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/349"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1947,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0066",
+    "num": 66,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-01",
+    "process": "feasibility-assessment-telephony-requirements-task-1099",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 3809
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 398357
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 2460
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 9962
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/351",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/349",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/347"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 2460,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0067",
+    "num": 67,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-03",
+    "process": "feature-specification-bcreq-1074-detailed-export (rework of RUN-0063 by audit)",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5",
+    "author": "AI issue solver (Claude Code)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5570
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 16447
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1546
+      },
+      "logs": {
+        "count": 1,
+        "bytes": 3298
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/355",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/343"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1546,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0068",
+    "num": 68,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-28",
+    "process": "feasibility-assessment-tender-bcreq-1114-pstn-mobile-access",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2374
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 39807
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 787
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 5063
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/363"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 787,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0069",
+    "num": 69,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-09-28",
+    "process": "feasibility-assessment-tz-bcreq-1114v2-speech-analytics-ai",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 1770
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 60273
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 776
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 3660
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/365"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": false,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 776,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0070",
+    "num": 70,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-10-01",
+    "process": "feasibility-assessment-tz-bcreq-1115-vats-robot-chatbot",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 2410
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 283653
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1843
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 8156
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/367"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1843,
+    "feedback_quotes": 5,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0071",
+    "num": 71,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-10-11",
+    "process": "feasibility-assessment-tz-bcreq-1116-contact-center",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 4280
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 301634
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 2354
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 12053
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/369"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 2354,
+    "feedback_quotes": 10,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0072",
+    "num": 72,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-10-12",
+    "process": "feasibility-assessment-tz-bcreq-1116-task-1117-telephony",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 3473
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 230018
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3398
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 13771
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/371"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 3398,
+    "feedback_quotes": 4,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0073",
+    "num": 73,
+    "period": "P4 реестры инцидентов и golden-кандидаты (RUN-0073–0076)",
+    "date": "2026-10-19",
+    "process": "task-1123-bcreq-fr-mango-callmentor-connector-error-golden-set",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.7-plus, qwen3.8-max",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5627
+      },
+      "outputs": {
+        "count": 11,
+        "bytes": 321580
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 10865
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 44602
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/evals-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/373",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/345"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [
+      "runs/2026/RUN-0073/outputs/error-statistics.md",
+      "runs/2026/RUN-0073/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0073/outputs/golden-set-candidates.md",
+      "runs/2026/RUN-0073/outputs/incident-register.md",
+      "runs/2026/RUN-0073/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0073/outputs/success-criteria.md"
+    ],
+    "incident_register": [
+      "runs/2026/RUN-0073/outputs/incident-register.md"
+    ],
+    "golden_candidates": [
+      "runs/2026/RUN-0073/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0073/outputs/golden-set-candidates.md"
+    ],
+    "criteria_or_rubric": [
+      "runs/2026/RUN-0073/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0073/outputs/success-criteria.md"
+    ],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 10865,
+    "feedback_quotes": 7,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0073/feedback/review-notes.md": 5,
+      "runs/2026/RUN-0073/outputs/how-not-to-do-by-product.md": 38,
+      "runs/2026/RUN-0073/outputs/runtime-improvements.md": 11
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 51,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": 92,
+    "dialog_stored": false,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0074",
+    "num": 74,
+    "period": "P4 реестры инцидентов и golden-кандидаты (RUN-0073–0076)",
+    "date": "2026-10-19",
+    "process": "task-1106-bcreq-fr-mango-outbound-recording-notice-error-golden-set",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.7-plus, qwen3.8-max",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 6688
+      },
+      "outputs": {
+        "count": 11,
+        "bytes": 328504
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 6777
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 51620
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/evals-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/375",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/345"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [
+      "runs/2026/RUN-0074/outputs/error-statistics.md",
+      "runs/2026/RUN-0074/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0074/outputs/golden-set-candidates.md",
+      "runs/2026/RUN-0074/outputs/incident-register.md",
+      "runs/2026/RUN-0074/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0074/outputs/success-criteria.md"
+    ],
+    "incident_register": [
+      "runs/2026/RUN-0074/outputs/incident-register.md"
+    ],
+    "golden_candidates": [
+      "runs/2026/RUN-0074/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0074/outputs/golden-set-candidates.md"
+    ],
+    "criteria_or_rubric": [
+      "runs/2026/RUN-0074/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0074/outputs/success-criteria.md"
+    ],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 6777,
+    "feedback_quotes": 2,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0074/feedback/review-notes.md": 3,
+      "runs/2026/RUN-0074/outputs/how-not-to-do-by-product.md": 49,
+      "runs/2026/RUN-0074/outputs/runtime-improvements.md": 11
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 46,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": 86,
+    "dialog_stored": false,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0075",
+    "num": 75,
+    "period": "P4 реестры инцидентов и golden-кандидаты (RUN-0073–0076)",
+    "date": "2026-10-19",
+    "process": "task-1104-bcreq-fr-vpbx-missed-calls-callback-error-golden-set",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5885
+      },
+      "outputs": {
+        "count": 10,
+        "bytes": 255633
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 5972
+      },
+      "logs": {
+        "count": 4,
+        "bytes": 43531
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/evals-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/378",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/345"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [
+      "runs/2026/RUN-0075/outputs/error-statistics.md",
+      "runs/2026/RUN-0075/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0075/outputs/golden-set-candidates.md",
+      "runs/2026/RUN-0075/outputs/incident-register.md",
+      "runs/2026/RUN-0075/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0075/outputs/success-criteria.md"
+    ],
+    "incident_register": [
+      "runs/2026/RUN-0075/outputs/incident-register.md"
+    ],
+    "golden_candidates": [
+      "runs/2026/RUN-0075/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0075/outputs/golden-set-candidates.md"
+    ],
+    "criteria_or_rubric": [
+      "runs/2026/RUN-0075/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0075/outputs/success-criteria.md"
+    ],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 5972,
+    "feedback_quotes": 2,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0075/feedback/review-notes.md": 4,
+      "runs/2026/RUN-0075/outputs/how-not-to-do-by-product.md": 30,
+      "runs/2026/RUN-0075/outputs/runtime-improvements.md": 13
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/bcreq-constitution-governance-oneshot.md"
+    ],
+    "golden_inventory_391_rows": 53,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": 60,
+    "dialog_stored": false,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0076",
+    "num": 76,
+    "period": "P4 реестры инцидентов и golden-кандидаты (RUN-0073–0076)",
+    "date": "2026-10-19",
+    "process": "task-1110-bcreq-fr-cc-operator-distribution-error-golden-set",
+    "run_type": "statistics",
+    "status": "draft",
+    "model": "qwen3.7-plus",
+    "author": "BA-IH + LLM (фиксация прогона: AI issue solver)",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 5343
+      },
+      "outputs": {
+        "count": 10,
+        "bytes": 499448
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3863
+      },
+      "logs": {
+        "count": 3,
+        "bytes": 55813
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/runs-contract-standard.md",
+      "standards/evals-contract-standard.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/377",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/373",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/345"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [
+      "runs/2026/RUN-0076/outputs/error-statistics.md",
+      "runs/2026/RUN-0076/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0076/outputs/golden-set-candidates.md",
+      "runs/2026/RUN-0076/outputs/incident-register.md",
+      "runs/2026/RUN-0076/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0076/outputs/success-criteria.md"
+    ],
+    "incident_register": [
+      "runs/2026/RUN-0076/outputs/incident-register.md"
+    ],
+    "golden_candidates": [
+      "runs/2026/RUN-0076/outputs/golden-set-candidates.json",
+      "runs/2026/RUN-0076/outputs/golden-set-candidates.md"
+    ],
+    "criteria_or_rubric": [
+      "runs/2026/RUN-0076/outputs/rubric-candidates.md",
+      "runs/2026/RUN-0076/outputs/success-criteria.md"
+    ],
+    "feedback_kind": "auto-limitations",
+    "feedback_bytes": 3863,
+    "feedback_quotes": 1,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0076/feedback/review-notes.md": 3,
+      "runs/2026/RUN-0076/outputs/how-not-to-do.md": 36,
+      "runs/2026/RUN-0076/outputs/prompt-improvements.md": 16
+    },
+    "lesson_section_files": [
+      "runs/2026/RUN-0076/outputs/prompt-improvements.md"
+    ],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [
+      "prompts/bcreq-constitution-governance-oneshot.md"
+    ],
+    "golden_inventory_391_rows": 50,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": 115,
+    "dialog_stored": false,
+    "structured_error_register": true,
+    "closed_loop": false,
+    "completeness_level": 3,
+    "failed_usage_signal": true,
+    "success_usage_signal": true
+  },
+  {
+    "run_id": "RUN-0077",
+    "num": 77,
+    "period": "P3 AI-исполнение / feasibility (RUN-0055–0072, 0077)",
+    "date": "2026-10-20",
+    "process": "feasibility-assessment-tz-bcreq-1125-cc-connector-ft",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "claude-opus-5-5",
+    "author": "AI issue solver",
+    "files": {
+      "inputs": {
+        "count": 1,
+        "bytes": 4862
+      },
+      "outputs": {
+        "count": 2,
+        "bytes": 374662
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 3232
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 12740
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/382",
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/371"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 3232,
+    "feedback_quotes": 5,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {
+      "runs/2026/RUN-0077/feedback/review-notes.md": 2
+    },
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  },
+  {
+    "run_id": "RUN-0078",
+    "num": 78,
+    "period": "P5 имитация по критериям (RUN-0078)",
+    "date": "2026-10-29",
+    "process": "bcreq-manual-four-phase-task-1106-simulation",
+    "run_type": "execution",
+    "status": "draft",
+    "model": "OpenAI Codex, текущая сессия; provider model ID не предоставлен",
+    "author": "OpenAI Codex, авторская имитация ручного чата",
+    "files": {
+      "inputs": {
+        "count": 2,
+        "bytes": 11208
+      },
+      "outputs": {
+        "count": 6,
+        "bytes": 231702
+      },
+      "feedback": {
+        "count": 1,
+        "bytes": 1316
+      },
+      "logs": {
+        "count": 2,
+        "bytes": 5505
+      }
+    },
+    "non_contract_files": [],
+    "has_metrics": true,
+    "success_rate": null,
+    "success_rate_basis": null,
+    "verdict": null,
+    "related_artifacts_prompts_standards": [
+      "standards/bcreq-manual-classes/README.md"
+    ],
+    "related_prompts": [],
+    "prompt_version_recorded": false,
+    "related_issues": [
+      "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403"
+    ],
+    "raw_chat_in_inputs": [],
+    "raw_chat_external_only": true,
+    "structured_registers": [
+      "runs/2026/RUN-0078/outputs/criteria-review.json",
+      "runs/2026/RUN-0078/logs/check-results.json"
+    ],
+    "incident_register": [],
+    "golden_candidates": [],
+    "criteria_or_rubric": [
+      "runs/2026/RUN-0078/outputs/criteria-review.json"
+    ],
+    "feedback_kind": "ai-self-review",
+    "feedback_bytes": 1316,
+    "feedback_quotes": 0,
+    "feedback_substantive_ba": false,
+    "lessons_as_rules_hits": {},
+    "lesson_section_files": [],
+    "lesson_to_prompt": false,
+    "lesson_to_prompt_version": false,
+    "lesson_prompt_links": [],
+    "prompt_version_used_lines": [],
+    "prompt_files_backlinking_run": [],
+    "golden_inventory_391_rows": 0,
+    "rfc_register_mentions": 0,
+    "incidents_detected_by_ba": null,
+    "dialog_stored": false,
+    "structured_error_register": false,
+    "closed_loop": false,
+    "completeness_level": 0,
+    "failed_usage_signal": false,
+    "success_usage_signal": false
+  }
+]
