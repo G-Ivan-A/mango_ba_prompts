@@ -1,0 +1,12 @@
+merge c6e748511684d3a68338b14c23dfa13d4e4a30b5: CONFLICT
+CHANGELOG.md
+merge 5f26abe5213dde3d50ad50fc8cfa4b641439dee6: clean
+  backlog validator: OK
+  make validate-fast: FAIL
+
+# Разбор FAIL для 5f26abe5 (PR #422)
+# make validate-fast на самом 5f26abe5 без слияния: 1 провал — тот же.
+FAIL   validate_issue_377_merge_hygiene
+       | ✗ .gitkeep: служебный файл стартового коммита агента в корне — удалите
+# Вывод: провал существовал в PR #422 до слияния (корневой .gitkeep его
+# стартового коммита); бэклог issue #418 к нему не причастен.
