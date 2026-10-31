@@ -53,7 +53,7 @@ TASKS = {
     "T-05": "Вывод локального KB-конвейера после переезда KB в mango-ba-ai-runtime (#361)",
     "T-06": "Структура docs/: docs/contracts, файлы корня docs/, дубли, регистрация RFC",
     "T-07": "Разметка истории: блоки перехода, политика датированных свидетельств, статусы ADR, архив логов",
-    "T-08": "SSOT и связи: синхронизация с Хабом, mango-ba-ai-runtime, видимость (ADR-009) и сайт",
+    "T-08": "SSOT и связи: синхронизация с Хабом, mango-ba-ai-runtime, видимость (ADR-009), ссылки на ветки форка",
     "T-09": "Этап 2: единый источник пакета OpenCode (ADR-016 ↔ dist/execution-package-opencode Хаба)",
 }
 
@@ -150,6 +150,20 @@ STANDARD_UPDATE = {
 
 LOOSE_EXPERIMENT_LOG = re.compile(r"^experiments/[^/]+\.log$")
 
+# Ссылки на временные ветки форка исполнителя: после удаления ветки они
+# ломаются, а все их цели существуют в main апстрима (находка F-19).
+FORK_LINK = re.compile(r"github\.com/konard/G-Ivan-A-mango_ba_prompts/(?:blob|tree)/")
+FORK_LINK_EXEMPT = {
+    # Записи журнала изменений — история, не правятся.
+    "CHANGELOG.md": "записи журнала — история",
+    # Аналитика #407: ссылки заменены на main в PR #410.
+    "docs/analysis/2026-10-30-repository-current-state.md": "исправлено в PR #410",
+    "docs/analysis/2026-10-30-ecosystem-compliance.md": "исправлено в PR #410",
+    "docs/analysis/2026-10-30-october-requirements-evolution.md": "исправлено в PR #410",
+    # RFC модернизации переписан до v0.3 в PR #410.
+    "docs/rfc/2026-10-repository-modernization.md": "переписан в PR #410",
+}
+
 # ---------------------------------------------------------------------------
 
 
@@ -188,8 +202,18 @@ def frontmatter(text: str) -> dict:
     return data
 
 
-def classify(path: str, fm: dict, machine_refs: int) -> tuple[str, str, str]:
+def classify(path: str, fm: dict, machine_refs: int, text: str = "") -> tuple[str, str, str]:
     """Вернуть (диспозиция, основание, задача)."""
+
+    disposition, reason, task = classify_base(path, fm, machine_refs)
+    if disposition == "current" and path not in FORK_LINK_EXEMPT and FORK_LINK.search(text):
+        return ("update", "Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; "
+                "цели существуют в main (F-19)", "T-08")
+    return disposition, reason, task
+
+
+def classify_base(path: str, fm: dict, machine_refs: int) -> tuple[str, str, str]:
+    """Диспозиция по роли и каталогу, без проверки ссылок форка."""
 
     status = fm.get("status", "")
 
@@ -297,7 +321,7 @@ def main() -> None:
         needle = path
         refs = sum(1 for p, t in consumers.items() if p != path and needle in t)
         mrefs = sum(1 for p, t in machine.items() if p != path and needle in t)
-        disposition, reason, task = classify(path, fm, mrefs)
+        disposition, reason, task = classify(path, fm, mrefs, texts[path])
         entries.append({
             "path": path,
             "area": path.split("/")[0] if "/" in path else "(корень)",

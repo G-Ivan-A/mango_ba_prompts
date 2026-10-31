@@ -19,8 +19,8 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/6f6cbc477f4b482d3c1
 
 | Диспозиция | Что означает | Файлов |
 | --- | --- | ---: |
-| `current` | Актуален: роль и содержание соответствуют текущим требованиям; оставить как есть. | 242 |
-| `update` | Актуальная роль, устаревшее содержание: актуализировать отдельной задачей по RFC/ADR. | 104 |
+| `current` | Актуален: роль и содержание соответствуют текущим требованиям; оставить как есть. | 233 |
+| `update` | Актуальная роль, устаревшее содержание: актуализировать отдельной задачей по RFC/ADR. | 113 |
 | `relocate` | Содержание актуально, но дом или имя нарушают структуру Хаба: перенести отдельной задачей с редиректом ссылок. | 4 |
 | `historical` | Историческое свидетельство: оставить на месте, не актуализировать; разметка — правилом каталога или блоком перехода. | 370 |
 | `archive-candidate` | Не используется или заменён: active → deprecated/superseded → archived по стандарту депрекации Хаба. | 38 |
@@ -40,7 +40,7 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/6f6cbc477f4b482d3c1
 | `.github` | 5 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
 | `ai-governance` | 3 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 4 |
 | `ai-rules` | 4 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
-| `docs` | 55 | 18 | 4 | 78 | 13 | 0 | 0 | 0 | 168 |
+| `docs` | 46 | 27 | 4 | 78 | 13 | 0 | 0 | 0 | 168 |
 | `experiments` | 0 | 0 | 0 | 285 | 17 | 0 | 0 | 0 | 302 |
 | `kb` | 0 | 39 | 0 | 1 | 1 | 0 | 0 | 0 | 41 |
 | `patterns` | 0 | 15 | 0 | 0 | 0 | 0 | 0 | 0 | 15 |
@@ -63,7 +63,7 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/6f6cbc477f4b482d3c1
 | T-05 | Вывод локального KB-конвейера после переезда KB в mango-ba-ai-runtime (#361) | 58 |
 | T-06 | Структура docs/: docs/contracts, файлы корня docs/, дубли, регистрация RFC | 11 |
 | T-07 | Разметка истории: блоки перехода, политика датированных свидетельств, статусы ADR, архив логов | 41 |
-| T-08 | SSOT и связи: синхронизация с Хабом, mango-ba-ai-runtime, видимость (ADR-009) и сайт | 3 |
+| T-08 | SSOT и связи: синхронизация с Хабом, mango-ba-ai-runtime, видимость (ADR-009), ссылки на ветки форка | 12 |
 | T-09 | Этап 2: единый источник пакета OpenCode (ADR-016 ↔ dist/execution-package-opencode Хаба) | 2 |
 
 ## Запрещённое поле ai-generated
@@ -319,8 +319,8 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/6f6cbc477f4b482d3c1
 | `docs/adr/010-pages-ux.md` | proposed | 2026-06-16 | `update` | ADR в статусе proposed с 2026-06: нужно решение accept / reject / supersede | T-07 | 7 / 2 |
 | `docs/adr/2026-08-adr-011-integration-task-artifacts.md` | proposed | 2026-08-28 | `current` | Решение в статусе proposed; действует | — | 5 / 1 |
 | `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` | proposed | 2026-10-23 | `current` | Решение в статусе proposed; действует | — | 18 / 0 |
-| `docs/adr/2026-10-adr-013-product-portal-mapping.md` | proposed | 2026-10-28 | `current` | Решение в статусе proposed; действует | — | 1 / 0 |
-| `docs/adr/2026-10-adr-014-documentation-source-validation.md` | proposed | 2026-10-29 | `current` | Решение в статусе proposed; действует | — | 2 / 0 |
+| `docs/adr/2026-10-adr-013-product-portal-mapping.md` | proposed | 2026-10-28 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 1 / 0 |
+| `docs/adr/2026-10-adr-014-documentation-source-validation.md` | proposed | 2026-10-29 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 2 / 0 |
 | `docs/adr/2026-10-adr-015-bcreq-manual-classes.md` | draft | 2026-10-29 | `current` | Решение в статусе draft; действует | — | 1 / 0 |
 | `docs/adr/2026-10-adr-016-ide-client-process.md` | draft | 2026-10-30 | `update` | Не связан с dist/execution-package-opencode Хаба (#652) и средами 1–4 | T-09 | 4 / 1 |
 | `docs/analysis/2026-08-21-runs-type-gap-analysis.md` | draft | 2026-08-21 | `historical` | Анализ — снимок на дату; выводы перенесены в стандарты/ADR или устарели | — | 6 / 1 |
@@ -444,27 +444,27 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/6f6cbc477f4b482d3c1
 | `docs/superpowers/plans/2026-08-31-issue-343-run-0063.md` | — | — | `archive-candidate` | План инструмента без frontmatter, задача закрыта | T-07 | 2 / 0 |
 | `docs/task-for-konard-template.md` | draft | 2026-06-13 | `archive-candidate` | Шаблон постановки на конкретного исполнителя (2026-06-13); шаблоны не хранятся как документы (HTOM) | T-06 | 12 / 2 |
 | `docs/taxonomy.md` | draft | 2026-06-11 | `update` | Таксономия операций 2026-06 — источник сайта; сверить с BCREQ и метамоделью Хаба | T-04 | 46 / 3 |
-| `docs/taxonomy/README.md` | review | 2026-10-29 | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 9 / 0 |
+| `docs/taxonomy/README.md` | review | 2026-10-29 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 9 / 0 |
 | `docs/taxonomy/catalog-diff.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
-| `docs/taxonomy/cc-difference-checks.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
+| `docs/taxonomy/cc-difference-checks.json` | — | — | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 2 / 0 |
 | `docs/taxonomy/cc-pdf-manifest.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 4 / 0 |
-| `docs/taxonomy/cc-section-differences.md` | review | 2026-10-29 | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
-| `docs/taxonomy/cc-source-comparison.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 5 / 0 |
+| `docs/taxonomy/cc-section-differences.md` | review | 2026-10-29 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 2 / 0 |
+| `docs/taxonomy/cc-source-comparison.json` | — | — | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 5 / 0 |
 | `docs/taxonomy/coverage.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/crawl-summary.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/docs-browser-checks.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/docs-crawl-summary.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/docs-readability-checks.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/docs.mango-map.jsonl` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
-| `docs/taxonomy/documentation-audit.md` | review | 2026-10-29 | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 7 / 0 |
+| `docs/taxonomy/documentation-audit.md` | review | 2026-10-29 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 7 / 0 |
 | `docs/taxonomy/documentation-sources.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/forensic-evidence.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/portal-audit.jsonl` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 4 / 0 |
 | `docs/taxonomy/portal-comparison-audit.jsonl` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/portal-comparison-summary.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
-| `docs/taxonomy/portal-index.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
+| `docs/taxonomy/portal-index.json` | — | — | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 2 / 0 |
 | `docs/taxonomy/portal-map.jsonl` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 9 / 0 |
-| `docs/taxonomy/product-layer.md` | review | 2026-10-28 | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
+| `docs/taxonomy/product-layer.md` | review | 2026-10-28 | `update` | Ссылки на временную ветку форка konard/G-Ivan-A-mango_ba_prompts; цели существуют в main (F-19) | T-08 | 2 / 0 |
 | `docs/taxonomy/products.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 5 / 2 |
 | `docs/taxonomy/readability-checks.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
 | `docs/taxonomy/routing-examples.json` | — | — | `current` | Данные каталога продуктов и документации (#399, #401; ADR-013/014) | — | 2 / 0 |
