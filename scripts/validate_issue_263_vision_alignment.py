@@ -7,8 +7,10 @@
   продублирован ссылкой в README;
 - ДОД требует механизм проверки операции (чек-лист / evals / human gate), а
   формулировка «операция без процесса проверки не завершена» присутствует;
-- роль проекта и инфраструктурная модель описаны без серверной инфраструктуры
-  и мультиагентной системы;
+- роль проекта и инфраструктурная модель описаны по четырём этапам
+  ADR-017 (#413): этапы 1–2 — GitHub, этап 3 — оркестрация в n8n, этап 4 —
+  выделенный сервер; прежние формулировки «GitHub — единственная платформа» и
+  «без серверной инфраструктуры» заменены решением владельца;
 - связь с `ai-ba-playbooks` описана как односторонний неавтоматический поток;
 - решения Хаба (ADR-009 v0.3, онтология процессов БА, анализ готовности)
   зарегистрированы якорями в едином мосте, а не скопированы;
@@ -86,7 +88,8 @@ REQUIRED_TEXT = {
         "чек-лист",
         "evals-метрика",
         "human-in-the-loop gate",
-        "GitHub — единственная платформа",
+        "2026-10-adr-017-four-stages-n8n-orchestration.md",
+        "оркестрацию процессов в n8n",
         "AI-исполнитель",
         "Подготовка к приватизации",
         "Статус механизмов проверки на сегодня",
@@ -100,10 +103,13 @@ REQUIRED_TEXT = {
         "ai-ba-playbooks",
         "телеком",
         "evals и golden-set отсутствуют",
+        "2026-10-adr-017-four-stages-n8n-orchestration.md",
     ),
     "docs/ba-ecosystem.md": (
         "ДОД операции: процесс проверки обязателен",
         "ai-ba-playbooks",
+        "## 7. Уровни зрелости автоматизации",
+        "2026-10-adr-017-four-stages-n8n-orchestration.md",
     ),
     "docs/rfc-hub-integration.md": (
         "Два адресата исходящего потока",
@@ -142,6 +148,32 @@ def check_frontmatter() -> list[str]:
         for field in REQUIRED_FRONTMATTER:
             if field not in block:
                 errors.append(f"{path}: во frontmatter нет поля {field!r}")
+    return errors
+
+
+# Формулировки границ #263, заменённые ADR-017 (#413): не должны вернуться.
+SUPERSEDED_TEXT = {
+    "README.md": ("GitHub — единственная платформа",),
+    "ai-governance/ai-governance.md": (
+        "GitHub — единственная платформа",
+        "без серверной инфраструктуры",
+    ),
+    "docs/ba-ecosystem.md": (
+        "Уровни 3–4 не являются планом",
+        "Область этого репозитория — уровни 1–2",
+    ),
+}
+
+
+def check_superseded_text() -> list[str]:
+    errors: list[str] = []
+    for path, needles in SUPERSEDED_TEXT.items():
+        text = read_text(path)
+        for needle in needles:
+            if needle in text:
+                errors.append(
+                    f"{path}: формулировка {needle!r} заменена ADR-017 (#413)"
+                )
     return errors
 
 
@@ -256,6 +288,7 @@ def main() -> int:
     errors = (
         check_frontmatter()
         + check_required_text()
+        + check_superseded_text()
         + check_forbidden_terms()
         + check_evals_status()
         + check_web_resource_variants()

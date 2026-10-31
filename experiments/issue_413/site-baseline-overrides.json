@@ -1,0 +1,11 @@
+{
+  "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413",
+  "base": "experiments/issue_395/site-baseline.json",
+  "files": {
+    "standards/prompt-standard.md": {
+      "sha256": "1115ca1edcac2dc87ba1bcd0df9b3f88b7aa739acde2fd32fed1871cfa2e888c",
+      "reason": "#413: раздел «Обобщение содержимого промпта», правила G1–G5 (сайт не меняется)"
+    }
+  },
+  "sections": {}
+}

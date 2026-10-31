@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Офлайн-приёмка аналитических артефактов issue #409 (аудит аудита репозитория).
 
-Проверяет согласованность, а не содержание решений: решения DEC-01…DEC-10 —
+Проверяет согласованность, а не содержание решений: решения DEC-01…DEC-11 —
 предложение на согласование владельцу. Проверки:
 
 * реестр диспозиции (JSON и Markdown) внутренне согласован, а его итоги
@@ -56,7 +56,7 @@ DISPOSITIONS = ("current", "update", "relocate", "historical",
                 "archive-candidate", "archived", "generated", "statistics")
 ACTIONABLE = {"update", "relocate", "archive-candidate"}
 FINDINGS = [f"F-{i:02}" for i in range(1, 21)]
-DECISIONS = [f"DEC-{i:02}" for i in range(1, 11)]
+DECISIONS = [f"DEC-{i:02}" for i in range(1, 12)]
 TASK_IDS = [f"T-{i:02}" for i in range(1, 10)]
 APPEALS = [f"H-{i:02}" for i in range(1, 8)]
 FORK = "github.com/konard/G-Ivan-A-mango_ba_prompts"
@@ -263,12 +263,15 @@ class Identifiers(unittest.TestCase):
                         self.assertLess(int(start), int(end))
                         self.assertIn(f"{kind}-{end}", ids)
                         if start == "01" and kind != "F":
-                            self.assertEqual(f"{kind}-{end}", max(ids))
+                            # DEC-11 (структура сайта) добавлено в #413;
+                            # артефакты и строки истории v0.3 цитируют DEC-01…DEC-10.
+                            allowed = {max(ids)} | ({"DEC-10"} if kind == "DEC" else set())
+                            self.assertIn(f"{kind}-{end}", allowed)
 
     def test_rfc_is_proposed_and_registered(self):
         fields = frontmatter(RFC)
         self.assertEqual(fields["status"], "proposed")
-        self.assertEqual(fields["version"], "0.3")
+        self.assertEqual(fields["version"], "0.4")
         register = text(RFC_REGISTER)
         rows = re.findall(r"^\| \[RFC-409-(DEC-\d{2})\]\(", register, re.M)
         self.assertEqual(rows, DECISIONS)

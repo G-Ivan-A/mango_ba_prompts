@@ -8,6 +8,7 @@ import unittest
 from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
+OVERRIDES = 'experiments/issue_413/site-baseline-overrides.json'
 
 
 class PageParser(HTMLParser):
@@ -66,6 +67,14 @@ class StandardsTests(unittest.TestCase):
 
     def test_existing_sections_gate_and_standards_remain_identical(self):
         baseline = json.loads((ROOT / 'experiments/issue_395/site-baseline.json').read_text())
+        # Intentional later changes are pinned by their own issue; the #395
+        # baseline itself is historical evidence and stays unchanged.
+        overrides = json.loads((ROOT / OVERRIDES).read_text())
+        for kind in ('files', 'sections'):
+            for name, entry in overrides[kind].items():
+                self.assertIn(name, baseline[kind], f'{OVERRIDES}: {name} не из baseline #395')
+                self.assertTrue(entry['reason'].startswith('#'), name)
+                baseline[kind][name] = entry['sha256']
         for name, digest in baseline['files'].items():
             with self.subTest(file=name):
                 self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
