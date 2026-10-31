@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: 2026-10-31
 ai-generated: true
 type: register
@@ -14,6 +14,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/411"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/415"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -27,6 +28,8 @@ related_artifacts:
   - "docs/rfc/2026-10-repository-modernization.md"
   - "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
   - "docs/rfc/2026-10-ba-automation-strategy.md"
+  - "docs/rfc/2026-10-standards-page-rfc.md"
+  - "docs/analysis/2026-10-31-standards-page-review.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -213,6 +216,30 @@ RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.
 | [RFC-415-DEC-07](2026-10-ba-automation-strategy.md#dec-415-07) | Агентный клиент этапа 2 | OpenCode — базовый кандидат; выбор квалификацией ADR-016 (CH-1) | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
 | [RFC-415-DEC-08](2026-10-ba-automation-strategy.md#dec-415-08) | Сайт, «О проекте» | Показ четырёх разделов после принятия DEC-11 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
 
+## Стандарт документа на сайте: страница «Стандарты» (источник: issue #420)
+
+RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1 предлагает новую структуру страницы
+«Стандарты»: сводку и введение для руководителей, единый шаблон карточки,
+основания глоссария со справочником D0 и обоснование 5±2. Доказательства —
+[анализ #420](../analysis/2026-10-31-standards-page-review.md). Сайт и
+стандарты меняются отдельной задачей после принятия.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-420-DEC-01](2026-10-standards-page-rfc.md#dec-420-01) | Страница «Стандарты», верх | «Коротко», «Заказчику: что вы подписываете», введение с оглавлением до подпунктов | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-02](2026-10-standards-page-rfc.md#dec-420-02) | Шаблон карточки | Девять блоков в одном порядке во всех карточках; блоки 7–9 свёрнуты | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-03](2026-10-standards-page-rfc.md#dec-420-03) | Подразделы | Один подраздел — одна строка в «Составе»; в чек-листе один пункт — один подраздел | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-04](2026-10-standards-page-rfc.md#dec-420-04) | Основания глоссария | Шесть оснований; D0 «Справочник согласованных терминов Манго» на втором месте как заглушка; меняет стандарт раздела 1 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-05](2026-10-standards-page-rfc.md#dec-420-05) | Правило 5±2 | 3–7 пунктов на каждом уровне раздела 3, отклонение с обоснованием в 8.5; меняет стандарт раздела 3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-06](2026-10-standards-page-rfc.md#dec-420-06) | Необходимо / достаточно | «Необходимо» по элементу, «Достаточно» по набору (ISO/IEC/IEEE 29148 §5.2.5/§5.2.6) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-07](2026-10-standards-page-rfc.md#dec-420-07) | Классы расхождения | На странице С0–С4, как в стандарте раздела 1, вместо S1–S3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-08](2026-10-standards-page-rfc.md#dec-420-08) | Структура раздела 3 | Обоснование «переменные группы по Capability» в карточке и во введении | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-09](2026-10-standards-page-rfc.md#dec-420-09) | Аудитории | Пометка адресата, блок «Кому что читать», раскрытые сокращения, определение «Заказчик» | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-10](2026-10-standards-page-rfc.md#dec-420-10) | Внедрение | Правка `site/` и теста #395 отдельной задачей после принятия, по `content.json` прототипа | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-11](2026-10-standards-page-rfc.md#dec-420-11) | Решение на Г-W | Единогласно по зонам трёх решающих; меняет контракт гейтов | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-12](2026-10-standards-page-rfc.md#dec-420-12) | Измеримые критерии Г-W | Пороги для Г-W.2–Г-W.4: трассировка 100 %, открытых замечаний Ш-В 0, рисков без владельца 0 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -249,3 +276,7 @@ RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.
 - **2026-10-31** — добавлены RFC-415-DEC-01…08 в статусе `proposed` по итогам
   issue #415 (PR #416). RFC-документ —
   [`docs/rfc/2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.1.
+- **2026-10-31** — добавлены RFC-420-DEC-01…12 в статусе `proposed` по итогам
+  issue #420 (PR #422). RFC-документ —
+  [`docs/rfc/2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1; анализ —
+  [`docs/analysis/2026-10-31-standards-page-review.md`](../analysis/2026-10-31-standards-page-review.md).
