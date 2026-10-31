@@ -26,7 +26,7 @@ related_artifacts: "docs/audit/2026-10-31-repository-audit.md, docs/analysis/202
 
 Решения DEC-01…DEC-10, от которых зависят задачи, описаны в
 [RFC v0.3](../rfc/2026-10-repository-modernization.md#решения-на-согласование).
-Находки F-01…F-18 — в [аудите](../audit/2026-10-31-repository-audit.md#реестр-находок).
+Находки F-01…F-20 — в [аудите](../audit/2026-10-31-repository-audit.md#реестр-находок).
 
 ## Почему issues не заведены этим PR
 
@@ -74,11 +74,11 @@ flowchart LR
 | T-04 | — | T-02 | 22 | L | Карта процессов описывает дофазовую модель (F-13) |
 | T-05 | DEC-10 | — | 58 | L | Второй источник KB; можно вести параллельно (F-12) |
 | T-06 | DEC-09 | T-01 | 11 | M | Дом `docs/` определяет `docs/README.md` из T-01 (F-09, F-16, F-17) |
-| T-07 | DEC-09 | T-04, T-05, T-06 | 41 (+113 по `ai-generated`) | M | Архивировать можно только то, у чего уже есть преемник (F-10, F-11) |
-| T-08 | DEC-01, DEC-03, DEC-04 | T-02 | 3 | S | Мосты к Хабу и runtime называют решения из T-02 (F-04, F-05) |
+| T-07 | DEC-09 | T-04, T-05, T-06 | 41 (+113 по `ai-generated`) | M | Архивировать можно только то, у чего уже есть преемник; область валидатора расширяется по каталогам (F-10, F-11, F-20) |
+| T-08 | DEC-01, DEC-03, DEC-04 | T-02 | 12 | S | Мосты к Хабу и runtime называют решения из T-02; ссылки ведут на `main`, а не на ветки форка (F-04, F-05, F-19) |
 | T-09 | DEC-06 | T-02 | 2 | M | Единый источник пакета этапа 2 (F-06) |
 
-Сумма по колонке «Файлов в реестре» — 146: это все файлы с диспозицией
+Сумма по колонке «Файлов в реестре» — 155: это все файлы с диспозицией
 `update`, `relocate` и `archive-candidate` в реестре.
 
 ## Задачи на изменение репозитория
@@ -261,7 +261,11 @@ flowchart LR
   `prompts/letter-customer-documentation-legacy.md`, 17 логов
   `experiments/*.log` (issue #317) и `standards/README.md`. Отдельно —
   удаление запрещённого поля `ai-generated` из 113 файлов вне `runs/`
-  (список — в реестре, раздел о `ai-generated`).
+  (список — в реестре, раздел о `ai-generated`). Расширение области
+  валидатора frontmatter в CI (F-20): вне `FRONTMATTER_SCOPE` сейчас 183
+  файла с 818 ошибками (`docs/` 75, `prompts/` 46, `standards/` 31,
+  `patterns/` 15, `kb/` 9, `pr-ops/` 7). Закрывает долг S-002 и S-003 из
+  `pr-ops/BACKLOG.md`.
 - **Особенность.**
   - Правило `.archive/` — «только файлы с `status: superseded`, у которых
     есть действующий преемник». У логов #317 преемника нет. Поэтому они
@@ -271,6 +275,13 @@ flowchart LR
     `ai-generated` в 628 файлах `runs/` остаётся.
   - Удаление `ai-generated` правит только метаданные и допустимо для
     исторических файлов.
+  - Область `FRONTMATTER_SCOPE` в `Makefile` расширяется по каталогу за
+    шаг: каталог входит в область, когда его ошибки исправлены. Иначе одна
+    массовая правка смешает метаданные сотни файлов с решениями о статусах.
+    Исключения перечисляются в `Makefile` с причиной: `runs/` —
+    статистика, `experiments/` — рабочие материалы задач. Датированные
+    отчёты (`docs/audit/`, `docs/report/`, `docs/reviews/`, `docs/analysis/`)
+    получают правку только метаданных, тело не меняется.
 - **SSOT.** DEC-09; [ADR-014 Хаба (наследие как свидетельство, LG-5)](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/32b5fa524e542af23c1a8e67c919bd66d5f4e399/docs/adr/2026-09-adr-014-legacy-evidence-not-baseline.md);
   [`.archive/README.md`](../../.archive/README.md).
 - **Готово, когда:**
@@ -279,7 +290,10 @@ flowchart LR
   - [ ] Перенесённые в `.archive/` файлы имеют баннер «🗄️ АРХИВ» и строку в
     таблице `.archive/README.md`.
   - [ ] Вне `runs/` нет файлов с `ai-generated`. Локальный валидатор
-    frontmatter проверяет все каталоги, кроме `runs/`.
+    frontmatter в CI проверяет все каталоги, кроме перечисленных в
+    `Makefile` исключений с причиной (`runs/`, `experiments/`);
+    `make validate-frontmatter` проходит, S-002 и S-003 в
+    `pr-ops/BACKLOG.md` закрыты.
   - [ ] Все `.md` вне `runs/` без статуса актуального документа имеют блок
     перехода по DEC-09.
   - [ ] `git diff -- runs/` пуст; `make validate-full` проходит.
@@ -288,10 +302,18 @@ flowchart LR
 
 - **Цель.** Мосты к Хабу и runtime называют фактическую модель:
   `mango-ba-ai-runtime` как среда исполнения, видимость по DEC-03, статус
-  по DEC-01.
-- **Объём (3).** `docs/hub-research-dependencies.md`, `pr-ops/BACKLOG.md`,
+  по DEC-01. Активные ссылки ведут на `main` апстрима, а не на временные
+  ветки форка исполнителя (F-19).
+- **Объём (12).** `docs/hub-research-dependencies.md`, `pr-ops/BACKLOG.md`,
   `pr-ops/artifact-map.md`. Плюс ре-синк с Хабом: последний синк —
-  2026-08-17 (`3bfa4103`).
+  2026-08-17 (`3bfa4103`). Плюс ссылки на ветки форка: ADR-013, ADR-014 и
+  7 файлов `docs/taxonomy/`; ссылки в `README.md` и `docs/site-access.md`
+  исправляются в T-02 и T-06 вместе с остальной правкой этих файлов.
+- **Особенность.** Три файла `docs/taxonomy/*.json` — выход исторических
+  генераторов `experiments/issue_399/` и `experiments/issue_401/`. Генераторы
+  не правятся: в JSON заменяется только префикс URL, а запись об этом
+  добавляется в `docs/taxonomy/README.md`. Записи `CHANGELOG.md` и
+  исторические ревью — свидетельства, их ссылки не меняются.
 - **SSOT.** DEC-01, DEC-03, DEC-04; [projects/ba-ai-process Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/32b5fa524e542af23c1a8e67c919bd66d5f4e399/projects/ba-ai-process).
 - **Готово, когда:**
   - [ ] `pr-ops/artifact-map.md` различает ADR-009 Хаба и локальный
@@ -302,6 +324,10 @@ flowchart LR
     фактическим состоянием Golden Set.
   - [ ] `.hub-profile.json` фиксирует новый `last_sync`, предыдущий синк
     перенесён в `sync_history`.
+  - [ ] `grep -rl 'github.com/konard/G-Ivan-A-mango_ba_prompts'` вне
+    `CHANGELOG.md`, `runs/`, `experiments/` и датированных
+    `docs/audit/`, `docs/report/`, `docs/reviews/`, `docs/analysis/`
+    ничего не находит.
 
 ### T-09. Этап 2: единый источник пакета OpenCode
 
