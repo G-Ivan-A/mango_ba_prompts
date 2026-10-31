@@ -1,0 +1,214 @@
+{
+  "navSide": "left",
+  "navItems": [
+    "01 Глоссарий",
+    "02 Бизнес-контекст",
+    "03 Функциональные требования",
+    "04 Нефункциональные требования",
+    "05 Описание решения",
+    "06 Особенности и ограничения",
+    "07 Пользовательские сценарии",
+    "08 Дополнительные материалы"
+  ],
+  "hasDocumentStructureOverview": false,
+  "subsectionNumbersInNav": false,
+  "introWords": 34,
+  "workflowWords": 269,
+  "totalWords": 2113,
+  "cards": [
+    {
+      "section": "1",
+      "title": "Глоссарий",
+      "eyebrow": "A-IN · общий язык",
+      "blocks": [
+        "heading",
+        "lead",
+        "h3:Принимаем, когда",
+        "checklist(3)",
+        "example:Как проверить на примере",
+        "sources"
+      ],
+      "words": 112,
+      "checklistItems": 3,
+      "mergedSubsectionItems": [],
+      "longestItemWords": 19,
+      "hasWhatFirst": true,
+      "hasExample": true,
+      "industrySources": 1
+    },
+    {
+      "section": "2",
+      "title": "Бизнес-контекст",
+      "eyebrow": "A-IN · зачем и в каких границах",
+      "blocks": [
+        "heading",
+        "lead",
+        "definitions(2)",
+        "h3:Принимаем, когда",
+        "checklist(4)",
+        "example:Учебный пример цели и границы",
+        "sources"
+      ],
+      "words": 268,
+      "checklistItems": 4,
+      "mergedSubsectionItems": [
+        [
+          "2.1",
+          "2.2"
+        ],
+        [
+          "2.3",
+          "8.4"
+        ],
+        [
+          "2.4.1",
+          "2.4.2"
+        ],
+        [
+          "2.4.2",
+          "2.5"
+        ]
+      ],
+      "longestItemWords": 36,
+      "hasWhatFirst": true,
+      "hasExample": true,
+      "industrySources": 2
+    },
+    {
+      "section": "3",
+      "title": "Функциональные требования",
+      "eyebrow": "A-CORE · что должно измениться",
+      "blocks": [
+        "heading",
+        "definitions(4)",
+        "h3:Принимаем, когда",
+        "checklist(4)",
+        "example:Учебный пример EARS и дельты",
+        "sources"
+      ],
+      "words": 356,
+      "checklistItems": 4,
+      "mergedSubsectionItems": [],
+      "longestItemWords": 47,
+      "hasWhatFirst": false,
+      "hasExample": true,
+      "industrySources": 2
+    },
+    {
+      "section": "4",
+      "title": "Нефункциональные требования",
+      "eyebrow": "A-CORE · насколько хорошо",
+      "blocks": [
+        "heading",
+        "definitions(1)",
+        "h3:Принимаем, когда",
+        "checklist(3)",
+        "example:Как сделать НФТ проверяемым",
+        "sources"
+      ],
+      "words": 158,
+      "checklistItems": 3,
+      "mergedSubsectionItems": [],
+      "longestItemWords": 24,
+      "hasWhatFirst": false,
+      "hasExample": true,
+      "industrySources": 1
+    },
+    {
+      "section": "5",
+      "title": "Описание решения (ОРР)",
+      "eyebrow": "A-WORK · как реализуем поведение",
+      "blocks": [
+        "heading",
+        "definitions(3)",
+        "h3:Принимаем, когда",
+        "checklist(4)",
+        "sources"
+      ],
+      "words": 271,
+      "checklistItems": 4,
+      "mergedSubsectionItems": [],
+      "longestItemWords": 48,
+      "hasWhatFirst": false,
+      "hasExample": false,
+      "industrySources": 3
+    },
+    {
+      "section": "6",
+      "title": "Особенности реализации и ограничения",
+      "eyebrow": "A-WORK · условия реализации",
+      "blocks": [
+        "heading",
+        "lead",
+        "h3:Принимаем, когда",
+        "checklist(3)",
+        "sources"
+      ],
+      "words": 127,
+      "checklistItems": 3,
+      "mergedSubsectionItems": [
+        [
+          "2.4.2",
+          "6.2"
+        ],
+        [
+          "6.1",
+          "6.2",
+          "8.4"
+        ]
+      ],
+      "longestItemWords": 43,
+      "hasWhatFirst": true,
+      "hasExample": false,
+      "industrySources": 1
+    },
+    {
+      "section": "7",
+      "title": "UC, матрица покрытия, граничные кейсы",
+      "eyebrow": "A-CORE → A-WORK · проверяем поведение",
+      "blocks": [
+        "heading",
+        "lead",
+        "definitions(1)",
+        "h3:Принимаем, когда",
+        "checklist(4)",
+        "sources"
+      ],
+      "words": 217,
+      "checklistItems": 4,
+      "mergedSubsectionItems": [],
+      "longestItemWords": 37,
+      "hasWhatFirst": true,
+      "hasExample": false,
+      "industrySources": 1
+    },
+    {
+      "section": "8",
+      "title": "Дополнительные разделы",
+      "eyebrow": "Все стадии · решения и открытые вопросы",
+      "blocks": [
+        "heading",
+        "lead",
+        "h3:Принимаем, когда",
+        "checklist(4)",
+        "sources"
+      ],
+      "words": 146,
+      "checklistItems": 4,
+      "mergedSubsectionItems": [
+        [
+          "8.1",
+          "8.4"
+        ],
+        [
+          "8.4",
+          "8.5"
+        ]
+      ],
+      "longestItemWords": 32,
+      "hasWhatFirst": true,
+      "hasExample": false,
+      "industrySources": 1
+    }
+  ]
+}
