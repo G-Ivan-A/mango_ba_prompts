@@ -10,8 +10,18 @@ START = b'\n<!-- issue-395: runtime-fallback -->\n'
 END = b'<!-- /issue-395: runtime-fallback -->\n'
 
 
+LESSONS = re.compile(rb'\n<!-- issue-411: run-lessons -->\n.*?<!-- /issue-411: run-lessons -->\n', re.S)
+
+
 def original_bytes(data):
-    """Remove exactly one bounded addition; compare all remaining bytes."""
+    """Remove exactly one bounded addition; compare all remaining bytes.
+
+    Issue 411 appends a generated run-lessons block after this one and bumps
+    the prompt version; scripts/validate_issue_411_lessons_pipeline.py
+    verifies that block against the lessons registry.
+    """
+    data = LESSONS.sub(b'', data)
+    data = data.replace(b'version: 0.2\nupdated: 2026-10-31\n', b'version: 0.1\nupdated: 2026-10-24\n', 1)
     if START not in data:
         return data
     before, addition = data.split(START, 1)
