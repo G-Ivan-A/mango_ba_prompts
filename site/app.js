@@ -7,7 +7,6 @@ const state = {
   patterns: null,
   processTree: null,
   bcreqFlow: null,
-  lessons: null,
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -41,10 +40,6 @@ const nodes = {
   processGrid: document.querySelector("#process-grid"),
   bcreqRules: document.querySelector("#bcreq-rules"),
   bcreqSteps: document.querySelector("#bcreq-steps"),
-  lessonsMetrics: document.querySelector("#lessons-metrics"),
-  lessonsLinks: document.querySelector("#lessons-links"),
-  lessonsStep: document.querySelector("#lessons-step"),
-  lessonsList: document.querySelector("#lessons-list"),
   bcreqApprovalLead: document.querySelector("#bcreq-approval-lead"),
   bcreqStages: document.querySelector("#bcreq-stages"),
   bcreqReturns: document.querySelector("#bcreq-returns"),
@@ -692,197 +687,10 @@ function bcreqStep(step) {
     actions,
     bcreqField("Результат", step.result),
   );
-  const stepLessons = bcreqStepLessons(step);
-  if (stepLessons) {
-    item.append(stepLessons);
-  }
   if (step.gate && step.gate !== "—") {
     item.append(el("p", "bcreq-gate", `⛳ ${step.gate}`));
   }
   return item;
-}
-
-// Уроки прогонов (issue #411): реестр standards/bcreq-lessons/lessons.json →
-// data/lessons.json. Карточка шага показывает особые уроки его промпта:
-// общие уроки встроены во все промпты и одинаковы для всех шагов.
-const STEP_TOP_LESSONS = 8;
-
-function lessonHref(id) {
-  return `#processes?lesson=${encodeURIComponent(id)}`;
-}
-
-function isCommonLesson(lesson) {
-  return lesson.prompts.length > 0 && lesson.prompts.length === state.lessons.promptCount;
-}
-
-function bcreqStepLessons(step) {
-  const lessons = state.lessons?.lessons;
-  if (!lessons || !step.lessons?.length) {
-    return null;
-  }
-  const ids = new Set(step.lessons);
-  const own = lessons.filter((lesson) => ids.has(lesson.id));
-  const special = own.filter((lesson) => !isCommonLesson(lesson));
-  const row = el("div", "bcreq-step-lessons");
-  row.append(
-    el(
-      "span",
-      "bcreq-field-label",
-      `Уроки шага: ${own.length} (общие ${own.length - special.length} + особые ${special.length})`,
-    ),
-  );
-  const chips = el("div", "tag-row");
-  for (const lesson of special.slice(0, STEP_TOP_LESSONS)) {
-    const chip = el("a", "tag lesson-chip", lesson.id);
-    chip.dataset.kind = "lesson";
-    chip.href = lessonHref(lesson.id);
-    chip.title = lesson.title;
-    chips.append(chip);
-  }
-  const all = el("a", "lesson-all", `все ${own.length} →`);
-  all.href = `#processes?step=${step.number}`;
-  all.title = `Уроки шага ${step.step}`;
-  chips.append(all);
-  row.append(chips);
-  return row;
-}
-
-function lessonCard(lesson) {
-  const card = el("li", "lesson-card");
-  card.id = `lesson-${lesson.id}`;
-  card.dataset.lessonId = lesson.id;
-  const details = el("details", "lesson-details");
-  const summary = el("summary", "lesson-summary");
-  const tags = el("span", "tag-row");
-  const idTag = el("span", "tag", lesson.id);
-  idTag.dataset.kind = "stage";
-  tags.append(idTag);
-  if (lesson.total) {
-    const count = el("span", "tag", `${lesson.total} инц. · ${lesson.repeats} повт.`);
-    count.title = "Инцидентов в прогонах · из них повторов после замечания БА";
-    tags.append(count);
-  }
-  if (lesson.status !== "active") {
-    const status = el("span", "tag", "на решении владельца");
-    status.dataset.kind = "gate";
-    tags.append(status);
-  } else if (lesson.level !== "runtime") {
-    const level = el("span", "tag", "для авторов промптов");
-    level.dataset.kind = "gate";
-    tags.append(level);
-  }
-  summary.append(el("span", "lesson-title", lesson.title), tags);
-  details.append(summary);
-
-  const body = el("div", "lesson-body");
-  body.append(bcreqField("Правило", lesson.rule), bcreqField("Проверка", lesson.check));
-  const pair = el("div", "lesson-pair");
-  const bad = el("div", "lesson-bad");
-  bad.append(el("span", "bcreq-field-label", "Не так"), el("p", "", lesson.bad));
-  const good = el("div", "lesson-good");
-  good.append(el("span", "bcreq-field-label", "Так"), el("p", "", lesson.good));
-  pair.append(bad, good);
-  body.append(pair);
-  const meta = [];
-  if (lesson.anchors?.length) {
-    meta.push(`Опора: ${lesson.anchors.join(", ")}`);
-  }
-  if (lesson.golden?.length) {
-    meta.push(`Кейс golden set: ${lesson.golden.join(", ")}`);
-  }
-  meta.push(lesson.prompts.length ? `Промптов: ${lesson.prompts.length}` : "В промпты не встроен");
-  body.append(el("p", "lesson-meta", meta.join(" · ")));
-  details.append(body);
-  card.append(details);
-  return card;
-}
-
-function renderLessonsList() {
-  const data = state.lessons;
-  if (!data || !nodes.lessonsList) {
-    return;
-  }
-  const number = nodes.lessonsStep.value;
-  const step = state.bcreqFlow?.manual.steps.find((item) => String(item.number) === number);
-  const ids = step ? new Set(step.lessons || []) : null;
-  const lessons = data.lessons.filter((lesson) => !ids || ids.has(lesson.id));
-  nodes.lessonsList.replaceChildren(...lessons.map(lessonCard));
-}
-
-function renderLessons() {
-  const data = state.lessons;
-  if (!data || !nodes.lessonsList) {
-    return;
-  }
-  const { totals, links } = data;
-  const metrics = [
-    [totals.lessons, "уроков в реестре"],
-    [totals.runtime, "встроено в промпты"],
-    [totals.incidents, "инцидентов в прогонах"],
-    [totals.repeatsAfterRemark, "повторов после замечания БА"],
-    [totals.runs, "прогонов с таксономией"],
-    [totals.unmapped, "кодов без урока"],
-  ];
-  nodes.lessonsMetrics.replaceChildren(
-    ...metrics.map(([value, label]) => {
-      const tile = el("div", "metric-tile");
-      tile.append(el("span", "metric-value", String(value)), el("span", "metric-label", label));
-      return tile;
-    }),
-  );
-
-  const linkItems = [
-    [links.registry, "Реестр уроков"],
-    [links.goldenSet, "Golden set этапа 1"],
-    [links.rubric, "Рубрика приёмки"],
-    [links.adr, "ADR-017"],
-    [links.rfc, "RFC конвейера"],
-  ];
-  nodes.lessonsLinks.replaceChildren(
-    ...linkItems.flatMap(([url, label], index) => {
-      const link = el("a", "", label);
-      link.href = url;
-      link.target = "_blank";
-      link.rel = "noreferrer";
-      return index ? [document.createTextNode(" · "), link] : [link];
-    }),
-  );
-
-  const options = [el("option", "", "Все шаги")];
-  options[0].value = "";
-  for (const step of state.bcreqFlow?.manual.steps || []) {
-    const option = el("option", "", `${step.step} (${step.lessons?.length || 0})`);
-    option.value = String(step.number);
-    options.push(option);
-  }
-  nodes.lessonsStep.replaceChildren(...options);
-  renderLessonsList();
-}
-
-function openLessonFromRoute(raw) {
-  const params = new URLSearchParams(raw.split("?")[1] || "");
-  const lessonId = params.get("lesson");
-  const stepNumber = params.get("step");
-  if (!nodes.lessonsList || (!lessonId && !stepNumber)) {
-    return false;
-  }
-  if (stepNumber !== null) {
-    nodes.lessonsStep.value = stepNumber;
-  } else {
-    nodes.lessonsStep.value = "";
-  }
-  renderLessonsList();
-  const target = lessonId
-    ? document.getElementById(`lesson-${lessonId}`)
-    : document.getElementById("bcreq-lessons");
-  if (!target) {
-    return false;
-  }
-  if (lessonId) {
-    target.querySelector("details").open = true;
-  }
-  target.scrollIntoView({ behavior: "instant", block: "start" });
-  return true;
 }
 
 function bcreqTable(table, headers, rows) {
@@ -1251,9 +1059,6 @@ function applyRoute() {
     }
   }
   window.scrollTo({ top: 0, behavior: "auto" });
-  if (page === "processes") {
-    openLessonFromRoute(raw);
-  }
   if (page === "standards") {
     const section = new URLSearchParams(raw.split("?")[1] || "").get("section");
     if (/^[1-8]$/.test(section || "")) {
@@ -1300,7 +1105,7 @@ async function init() {
   try {
     // Данные каталога загружаются только после ввода пароля (site/gate.js).
     await (window.siteGate?.ready ?? Promise.resolve());
-    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow, lessons] = await Promise.all([
+    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
@@ -1309,7 +1114,6 @@ async function init() {
       fetch("data/patterns.json").then((response) => response.json()),
       fetch("data/process-tree.json").then((response) => response.json()),
       fetch("data/bcreq-flow.json").then((response) => response.json()),
-      fetch("data/lessons.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
@@ -1321,7 +1125,6 @@ async function init() {
     state.patterns = patterns;
     state.processTree = processTree;
     state.bcreqFlow = bcreqFlow;
-    state.lessons = lessons;
 
     renderSuggestions();
     renderMetrics();
@@ -1332,7 +1135,6 @@ async function init() {
     renderRoadmap();
     renderProcesses();
     renderBcreqFlow();
-    renderLessons();
     renderProcessTree();
     renderPatterns();
     applyRoute();
@@ -1433,8 +1235,6 @@ async function copyPrompt(button) {
     showToast("Не удалось скопировать");
   }
 }
-
-nodes.lessonsStep?.addEventListener("change", renderLessonsList);
 
 nodes.bcreqSteps?.addEventListener("click", async (event) => {
   const button = event.target.closest("[data-copy-id]");

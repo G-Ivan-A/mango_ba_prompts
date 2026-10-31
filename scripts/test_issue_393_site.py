@@ -35,10 +35,6 @@ class StageTests(unittest.TestCase):
             # Preserve the original metadata/body assertion across the additive
             # issue 395 retrieval contract, verified independently byte for byte.
             text = re.sub(r'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', '', text, flags=re.S)
-            # Issue 411 appends the generated run-lessons block and bumps the
-            # prompt version; both are verified by validate_issue_411_lessons_pipeline.
-            text = re.sub(r'\n<!-- issue-411: run-lessons -->\n.*?<!-- /issue-411: run-lessons -->\n', '', text, flags=re.S)
-            text = text.replace('version: 0.2\nupdated: 2026-10-31\n', 'version: 0.1\nupdated: 2026-10-24\n', 1)
             opening, meta, body = text.split("---", 2)
             original_meta = re.sub(r"^(?:operation|processes):[^\n]*\n", "", meta, flags=re.M)
             original = "---".join([opening, original_meta, body])

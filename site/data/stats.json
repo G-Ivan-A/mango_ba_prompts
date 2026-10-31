@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T15:21:33.955Z",
+  "generatedAt": "2026-10-26T07:04:18.718Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -24,14 +24,6 @@
     {
       "path": "docs/ba-processes/bcreq-manual-process.md",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
-    },
-    {
-      "path": "standards/bcreq-lessons/lessons.json",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-lessons/lessons.json"
-    },
-    {
-      "path": "standards/bcreq-lessons/coverage.json",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-lessons/coverage.json"
     }
   ],
   "totals": {

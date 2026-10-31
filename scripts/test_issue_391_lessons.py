@@ -21,10 +21,6 @@ class LessonTests(unittest.TestCase):
                 # Issue 395 adds a bounded retrieval/fallback block. Its own
                 # regression compares the remaining bytes against a new baseline.
                 data = re.sub(rb'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', b'', data, flags=re.S)
-                # Issue 411 appends a generated run-lessons block and bumps version.
-                data = re.sub(rb'\n<!-- issue-411: run-lessons -->\n.*?<!-- /issue-411: run-lessons -->\n', b'', data, flags=re.S)
-                if Path(filename).name.startswith('bcreq-'):
-                    data = data.replace(b'version: 0.2\nupdated: 2026-10-31\n', b'version: 0.1\nupdated: 2026-10-24\n', 1)
                 addition = changes.ADDITIONS.get(Path(filename).name)
                 if addition:
                     encoded = addition[1].encode()

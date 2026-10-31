@@ -60,7 +60,11 @@ decision-type: methodology
 6. **Проверка.** `scripts/validate_issue_411_lessons_pipeline.py` входит в
    `make validate-full`. Он проверяет схему реестра, свежесть
    сгенерированных блоков, отсутствие несопоставленных кодов, golden set,
-   рубрику и данные сайта.
+   рубрику и отсутствие уроков на сайте.
+7. **Применение — после принятия.** Блоки уроков в промпты и классы
+   вносятся отдельной задачей (`--apply-prompts`) после принятия ADR/RFC.
+   Сайт уроки не показывает: он — интерфейс БА и статистика применения,
+   не отладчик (решение владельца, комментарий к PR #412).
 
 ## Рассмотренные варианты
 
@@ -95,5 +99,5 @@ decision-type: methodology
 - [Golden set этапа 1](../../standards/bcreq-lessons/golden-set-bcreq-stage1.md)
 - [Рубрика этапа 1](../../standards/bcreq-lessons/rubric-bcreq-stage1.md)
 - [RFC: уроки прогонов в конвейере промптов](../rfc/2026-10-bcreq-run-lessons-pipeline.md)
-- [Ручной процесс BCREQ, правила П-8…П-10](../ba-processes/bcreq-manual-process.md)
+- [Ручной процесс BCREQ](../ba-processes/bcreq-manual-process.md) — правила П-8…П-10 предложены в RFC
 - [Аналитический отчёт](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md)

@@ -193,34 +193,26 @@ class GenerationTests(unittest.TestCase):
                 self.assertFalse(COVERAGE[key])
         self.assertGreater(COVERAGE["incidents_total"], 0)
 
-    def test_prompts_carry_one_clean_block(self):
-        for key, rel in REGISTRY["prompt_keys"].items():
-            text = (ROOT / rel).read_text(encoding="utf-8")
-            with self.subTest(prompt=key):
-                self.assertEqual(text.count(BUILDER.PROMPT_START), 1)
-                self.assertEqual(text.count(BUILDER.PROMPT_END), 1)
-                block = BUILDER.PROMPT_BLOCK_RE.search(text).group()
-                self.assertEqual(task_ids(block), [])
-                self.assertEqual(frontmatter(ROOT / rel).get("version"), BUILDER.PROMPT_VERSION)
+    def test_prompts_and_classes_are_untouched_until_rfc_accepted(self):
+        """Промпты и классы меняются отдельными задачами после принятия RFC/ADR (решение владельца в PR #412)."""
+        for rel in REGISTRY["prompt_keys"].values():
+            with self.subTest(prompt=rel):
+                self.assertNotIn(BUILDER.PROMPT_START, (ROOT / rel).read_text(encoding="utf-8"))
+        for path in CLASSES_DIR.glob("*.md"):
+            with self.subTest(cls=path.name):
+                self.assertNotIn(BUILDER.CLASS_START, path.read_text(encoding="utf-8"))
 
-    def test_every_active_runtime_lesson_reaches_a_prompt(self):
-        blocks = "".join(
-            BUILDER.PROMPT_BLOCK_RE.search((ROOT / rel).read_text(encoding="utf-8")).group()
-            for rel in REGISTRY["prompt_keys"].values()
-        )
+    def test_rendered_blocks_cover_every_active_runtime_lesson(self):
+        """Блоки рендерятся в памяти (для будущей задачи --apply-prompts) без идентификаторов задач."""
+        blocks = ""
+        for key in REGISTRY["prompt_keys"]:
+            block = BUILDER.render_prompt_block(REGISTRY, COVERAGE, key)
+            self.assertEqual(task_ids(block), [])
+            blocks += block
         for lesson in ACTIVE:
             if lesson["level"] == "runtime":
                 with self.subTest(lesson=lesson["id"]):
                     self.assertIn(lesson["rule"], blocks)
-
-    def test_classes_carry_lessons_block(self):
-        catalog = json.loads((CLASSES_DIR / "catalog.json").read_text(encoding="utf-8"))
-        self.assertEqual(len(catalog["classes"]), 39)
-        for entry in catalog["classes"]:
-            text = (CLASSES_DIR / entry["file"]).read_text(encoding="utf-8")
-            with self.subTest(cls=entry["file"]):
-                self.assertEqual(text.count(BUILDER.CLASS_START), 1)
-                self.assertEqual(task_ids(BUILDER.CLASS_BLOCK_RE.search(text).group()), [])
 
 
 class GoldenSetTests(unittest.TestCase):
@@ -307,41 +299,18 @@ class RubricTests(unittest.TestCase):
 
 
 class SiteTests(unittest.TestCase):
-    site = json.loads(SITE_LESSONS.read_text(encoding="utf-8"))
+    """Сайт — интерфейс БА и статистика применения; данные об ошибках прогонов на сайт не выводятся."""
 
-    def test_site_matches_registry(self):
-        site = {lesson["id"]: lesson for lesson in self.site["lessons"]}
-        self.assertEqual(set(site), {lesson["id"] for lesson in LESSONS})
-        for lesson in LESSONS:
-            with self.subTest(lesson=lesson["id"]):
-                for field in ("title", "rule", "check", "bad", "good", "golden", "status", "level"):
-                    self.assertEqual(site[lesson["id"]][field], lesson[field])
-                self.assertEqual(site[lesson["id"]]["total"], COVERAGE["lessons"][lesson["id"]]["total"])
-        self.assertEqual(self.site["totals"]["incidents"], COVERAGE["incidents_total"])
-        self.assertEqual(self.site["promptCount"], len(REGISTRY["prompt_keys"]))
-
-    def test_site_has_no_run_or_task_ids(self):
-        self.assertEqual(task_ids(SITE_LESSONS.read_text(encoding="utf-8")), [])
-
-    def test_steps_point_to_their_prompt_lessons(self):
-        flow = json.loads(SITE_FLOW.read_text(encoding="utf-8"))
-        site = {lesson["id"]: lesson for lesson in self.site["lessons"]}
-        self.assertEqual(len(flow["manual"]["steps"]), 11)
-        for step in flow["manual"]["steps"]:
-            with self.subTest(step=step["step"]):
-                expected = {lid for lid, lesson in site.items() if step["prompt"]["file"] in lesson["prompts"]}
-                self.assertTrue(expected)
-                self.assertEqual(set(step["lessons"]), expected)
-
-    def test_page_has_lessons_band_and_rules(self):
-        html = (ROOT / "site/index.html").read_text(encoding="utf-8")
-        self.assertIn('id="bcreq-lessons"', html)
-        self.assertIn('href="lessons.css"', html)
-        app = (ROOT / "site/app.js").read_text(encoding="utf-8")
-        self.assertIn('fetch("data/lessons.json")', app)
-        rules = [rule["id"] for rule in json.loads(SITE_FLOW.read_text(encoding="utf-8"))["manual"]["rules"]]
-        self.assertEqual(rules, [f"П-{n}" for n in range(1, 11)])
-        self.assertIn("### 1.3. Уроки прогонов (этап 1)", PROCESS_DOC.read_text(encoding="utf-8"))
+    def test_site_has_no_lessons_data(self):
+        self.assertFalse(SITE_LESSONS.exists())
+        self.assertFalse((ROOT / "site/lessons.css").exists())
+        for rel in ("site/index.html", "site/app.js"):
+            text = (ROOT / rel).read_text(encoding="utf-8")
+            with self.subTest(file=rel):
+                self.assertNotIn("bcreq-lessons", text)
+                self.assertNotIn("lessons.json", text)
+        self.assertNotIn('"lessons"', SITE_FLOW.read_text(encoding="utf-8"))
+        self.assertNotIn("Уроки прогонов", PROCESS_DOC.read_text(encoding="utf-8"))
 
 
 class DecisionTests(unittest.TestCase):

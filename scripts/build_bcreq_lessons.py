@@ -372,15 +372,19 @@ def render_readme(registry: dict, coverage: dict) -> str:
 
 
 # ---------------------------------------------------------------------- main
-def build(check: bool) -> int:
+def build(check: bool, apply_prompts: bool = False) -> int:
     registry = json.loads(REGISTRY.read_text(encoding="utf-8"))
     coverage = compute_coverage(registry)
     outputs: dict[Path, str] = {
         README: render_readme(registry, coverage),
         COVERAGE: json.dumps(coverage, ensure_ascii=False, indent=2) + "\n",
     }
+    # Вставка блоков в промпты и классы — только после принятия RFC/ADR владельцем
+    # отдельной задачей (--apply-prompts). По умолчанию реестр не меняет промпты.
     for key, rel in registry["prompt_keys"].items():
         path = ROOT / rel
+        if not apply_prompts:
+            continue
         block = render_prompt_block(registry, coverage, key)
         leaked = TASK_ID_RE.findall(block)
         if leaked:
@@ -388,7 +392,7 @@ def build(check: bool) -> int:
         outputs[path] = apply_prompt(path.read_text(encoding="utf-8"), block)
     key_by_file = {v: k for k, v in registry["prompt_keys"].items()}
     catalog = json.loads((CLASSES_DIR / "catalog.json").read_text(encoding="utf-8"))
-    for entry in catalog["classes"]:
+    for entry in catalog["classes"] if apply_prompts else []:
         path = CLASSES_DIR / entry["file"]
         outputs[path] = apply_class(path.read_text(encoding="utf-8"), render_class_block(registry, coverage, entry, key_by_file))
 
@@ -413,7 +417,10 @@ def build(check: bool) -> int:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     parser.add_argument("--check", action="store_true", help="fail if generated artefacts are stale")
-    return build(parser.parse_args().check)
+    parser.add_argument("--apply-prompts", action="store_true",
+                        help="also write lesson blocks into prompts and classes (only after RFC/ADR acceptance)")
+    args = parser.parse_args()
+    return build(args.check, args.apply_prompts)
 
 
 if __name__ == "__main__":
