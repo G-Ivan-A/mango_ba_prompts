@@ -66,7 +66,7 @@ def render_markdown(data: dict) -> str:
     out = [f'# {page["title"]}', "", f'_{page["eyebrow"]}_', "", page["lead"], "", " · ".join(page["facts"]), ""]
     out += [f'## {page["summary_title"]}', ""] + [f"- **{k}.** {v}" for k, v in page["summary"]] + [""]
     out += [f'## {page["customer_title"]}', ""] + [f"- **{k}.** {v}" for k, v in page["customer"]] + [""]
-    out += [f'▸ **{page["abbr_title"]}**', ""] + [f"- **{k}** — {v}" for k, v in page["abbr"]] + [""]
+    out += [f"**{page['abbr_title']}**", ""] + [f"- **{k}** — {v}" for k, v in page["abbr"]] + [""]
     out += [f'## 0. {intro["title"]}', "", "**Кому что читать**", ""]
     out += [f'- **{a["who"]}** — {a["reads"]}' for a in intro["audiences"]]
     out += ["", "**Оглавление документа BCREQ**", ""] + outline_rows(data)
@@ -239,7 +239,7 @@ def render_html(data: dict) -> str:
               <dl class="std-summary">{summary}</dl>
               <h3 id="standard-customer">{e(page["customer_title"])}</h3>
               <dl class="std-summary">{customer}</dl>
-              <details class="standard-detail"><summary>{e(page["abbr_title"])}</summary><dl class="std-abbr">{abbr}</dl></details>
+              <details class="standard-detail" open><summary>{e(page["abbr_title"])}</summary><dl class="std-abbr">{abbr}</dl></details>
             </article>"""
     return f"""<!doctype html>
 <html lang="ru">
