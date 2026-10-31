@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T16:12:43.836Z",
+  "generatedAt": "2026-10-26T07:04:18.718Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -14,8 +14,8 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
     },
     {
-      "path": "docs/roadmap.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/roadmap.md"
+      "path": "docs/ba-ecosystem.md",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md"
     },
     {
       "path": "patterns/README.md",
@@ -312,13 +312,13 @@
     {
       "id": "prompts",
       "phase": 1,
-      "title": "Промпты в чате LLM",
+      "title": "Промпты",
       "status": "current",
-      "levelIds": [
-        "stage-1"
-      ],
       "progress": 100,
-      "summary": "БА копирует промпты процесса с сайта в чат LLM и сам решает на гейтах.",
+      "levelIds": [
+        "level-1"
+      ],
+      "summary": "Ручной выбор prompt-файла, копирование в AI-чат и human review результата.",
       "metrics": [
         {
           "label": "активных",
@@ -337,16 +337,17 @@
     {
       "id": "agents",
       "phase": 2,
-      "title": "Агентный клиент",
+      "title": "Агенты",
       "status": "planned",
-      "levelIds": [
-        "stage-2"
-      ],
       "progress": 0,
-      "summary": "Агентный клиент типа OpenCode выполняет шаги по пакету правил и останавливается на гейтах.",
+      "levelIds": [
+        "level-2",
+        "level-3"
+      ],
+      "summary": "Системный prompt, БЗ/RAG и агентный workflow поверх текущей библиотеки.",
       "metrics": [
         {
-          "label": "процессов",
+          "label": "основа",
           "value": 9
         },
         {
@@ -354,58 +355,33 @@
           "value": 13
         },
         {
-          "label": "гейты",
-          "value": "человек"
+          "label": "gaps",
+          "value": 7
         }
       ]
     },
     {
-      "id": "n8n",
+      "id": "multiagents",
       "phase": 3,
-      "title": "Оркестрация в n8n",
+      "title": "Мультиагенты",
       "status": "planned",
-      "levelIds": [
-        "stage-3"
-      ],
       "progress": 0,
-      "summary": "Поток n8n ведёт процесс, хранит состояние и ждёт решения человека на гейтах (ADR-017).",
+      "levelIds": [
+        "level-4"
+      ],
+      "summary": "Несколько ролей: BA orchestrator, evidence, documentation, risk и reviewer.",
       "metrics": [
         {
-          "label": "процессов",
-          "value": 9
+          "label": "уровень",
+          "value": 4
         },
         {
-          "label": "исполнитель",
-          "value": "n8n"
+          "label": "human gates",
+          "value": "on"
         },
         {
-          "label": "гейты",
-          "value": "человек"
-        }
-      ]
-    },
-    {
-      "id": "server",
-      "phase": 4,
-      "title": "Промышленная эксплуатация",
-      "status": "planned",
-      "levelIds": [
-        "stage-4"
-      ],
-      "progress": 0,
-      "summary": "Потоки n8n на выделенном сервере в контуре Манго для всей команды БА.",
-      "metrics": [
-        {
-          "label": "процессов",
-          "value": 9
-        },
-        {
-          "label": "контур",
-          "value": "Манго"
-        },
-        {
-          "label": "гейты",
-          "value": "человек"
+          "label": "статус",
+          "value": "план"
         }
       ]
     }

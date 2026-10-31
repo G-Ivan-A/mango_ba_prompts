@@ -44,8 +44,7 @@ class StandardsTests(unittest.TestCase):
         html = (ROOT / 'site/index.html').read_text()
         parser = PageParser()
         parser.feed(html)
-        # 'roadmap' added by #413: stage 1 launch is reachable from the navigation.
-        self.assertEqual(parser.nav, ['catalog', 'standards', 'dashboard', 'roadmap', 'processes'])
+        self.assertEqual(parser.nav, ['catalog', 'standards', 'dashboard', 'processes'])
         self.assertEqual(set(parser.articles), set('12345678'))
         self.assertEqual(parser.targets, list('12345678'))
         for number, article in parser.articles.items():

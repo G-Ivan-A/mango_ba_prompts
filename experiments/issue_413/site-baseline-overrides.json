@@ -3,26 +3,9 @@
   "base": "experiments/issue_395/site-baseline.json",
   "files": {
     "standards/prompt-standard.md": {
-      "sha256": "01662e6bad6b199134e88d77ac933131651439437f0fa73c729d1dc96679ae74",
-      "reason": "#413: раздел «Обобщение содержимого промпта», правила G1–G5"
-    },
-    "standards/pages-ux-standard.md": {
-      "sha256": "cfe062c35481cc729afe7f74878509365fa57193af9249383da987ec6bd23ae2",
-      "reason": "#413: раздел «Дорожная карта» описывает четыре этапа и запуск этапа 1"
-    },
-    "site/styles.css": {
-      "sha256": "3a1880ce99495cb33cf853f707bdcfd0ad0b876d5e784beb74251d74ecce4ebe",
-      "reason": "#413: полоса этапов на дашборде из четырёх колонок, блок запуска этапа 1"
+      "sha256": "1115ca1edcac2dc87ba1bcd0df9b3f88b7aa739acde2fd32fed1871cfa2e888c",
+      "reason": "#413: раздел «Обобщение содержимого промпта», правила G1–G5 (сайт не меняется)"
     }
   },
-  "sections": {
-    "dashboard": {
-      "sha256": "d8864004c48a765d663fa5f400e5e76cefa144111fa7227530f2e0898ce4f20e",
-      "reason": "#413: заголовок дашборда называет четыре этапа ADR-017 вместо «промптов, агентов и мультиагентов»"
-    },
-    "roadmap": {
-      "sha256": "7db776f0109ff5a1b42788038bd471ce73de761848d7c0e032dea87a39f8f9e9",
-      "reason": "#413: раздел показывает четыре этапа ADR-017 и запуск этапа 1 из docs/roadmap.md"
-    }
-  }
+  "sections": {}
 }

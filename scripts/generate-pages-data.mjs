@@ -13,8 +13,7 @@ const SOURCE_FILES = {
   promptsReadme: "prompts/README.md",
   taxonomy: "docs/taxonomy.md",
   processIndex: "docs/ba-processes/00-index.md",
-  // Источник раздела «Дорожная карта»: четыре этапа ADR-017 и запуск этапа 1 (issue #413).
-  roadmap: "docs/roadmap.md",
+  ecosystem: "docs/ba-ecosystem.md",
   patternsReadme: "patterns/README.md",
   bcreqFlow: "docs/ba-processes/bcreq-manual-process.md",
 };
@@ -567,79 +566,38 @@ function parsePatterns(markdown) {
   return patterns;
 }
 
-// Ссылки ячейки Markdown → абсолютные URL. Относительные пути считаются от
-// каталога файла-источника, чтобы ссылка с сайта вела в репозиторий.
-function extractLinks(cell, sourcePath) {
-  const links = [];
-  for (const match of cell.matchAll(/\[([^\]]+)]\(([^)]+)\)/g)) {
-    const [, label, href] = match;
-    const url = /^https?:\/\//.test(href)
-      ? href
-      : repoUrl(path.posix.normalize(path.posix.join(path.posix.dirname(sourcePath), href)));
-    links.push({ label: stripMarkdownInline(label), url });
-  }
-  return links;
-}
-
-const STAGE_STATUSES = new Set(["current", "planned", "done"]);
-
-// Раздел «Дорожная карта» (issue #413): docs/roadmap.md, три таблицы.
-// Заголовки таблиц — контракт с источником; без них генерация падает.
-function parseRoadmap(markdown, sourcePath = SOURCE_FILES.roadmap) {
+function parseRoadmap(markdown) {
   const tables = parseTables(markdown);
-  const find = (first, second) => {
-    const table = tables.find(
-      (item) => item.headers[0] === first && item.headers[1] === second,
-    );
-    if (!table || table.rows.length === 0) {
-      throw new Error(`${sourcePath}: нет таблицы «${first} | ${second}»`);
-    }
-    return table;
-  };
+  const levelsTable = tables.find(
+    (table) => table.headers[0] === "Уровень" && table.headers[1] === "Как работает",
+  );
+  const gapsTable = tables.find(
+    (table) => table.headers[0] === "Gap" && table.headers[1] === "Почему важен",
+  );
 
-  const levels = find("Этап", "Как работает").rows.map((row) => {
+  const levels = (levelsTable?.rows || []).map((row) => {
     const title = stripMarkdownInline(row[0]);
     const match = title.match(/^(\d+)\.\s*(.+)$/);
     const number = match ? Number(match[1]) : 0;
-    const status = stripMarkdownInline(row[5]);
-    if (!STAGE_STATUSES.has(status)) {
-      throw new Error(`${sourcePath}: этап «${title}» — неизвестный статус «${status}»`);
-    }
     return {
-      id: `stage-${number}`,
+      id: `level-${number}`,
       number,
       title: match ? match[2] : title,
       howItWorks: stripMarkdownInline(row[1]),
       baRole: stripMarkdownInline(row[2]),
-      entry: stripMarkdownInline(row[3]),
-      exitCriteria: stripMarkdownInline(row[4]),
-      status,
-      links: extractLinks(`${row[3]} ${row[4]}`, sourcePath),
+      exitCriteria: stripMarkdownInline(row[3]),
+      status: number === 1 ? "current" : "planned",
     };
   });
 
-  const launch = find("Шаг запуска", "Что сделать").rows.map((row) => {
-    const title = stripMarkdownInline(row[0]);
-    const match = title.match(/^(\d+)\.\s*(.+)$/);
-    return {
-      number: match ? Number(match[1]) : 0,
-      step: match ? match[2] : title,
-      action: stripMarkdownInline(row[1]),
-      where: stripMarkdownInline(row[2]),
-      links: extractLinks(row[2], sourcePath),
-      result: stripMarkdownInline(row[3]),
-    };
-  });
-
-  const gaps = find("Следующий шаг", "Почему важен").rows.map((row, index) => ({
+  const gaps = (gapsTable?.rows || []).map((row, index) => ({
     id: `gap-${index + 1}`,
     gap: stripMarkdownInline(row[0]),
     why: stripMarkdownInline(row[1]),
     nextArtifact: stripMarkdownInline(row[2]),
-    links: extractLinks(row[2], sourcePath),
   }));
 
-  return { levels, launch, gaps };
+  return { levels, gaps };
 }
 
 async function listPromptFiles() {
@@ -685,60 +643,49 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
     processes: countBy(prompts, (prompt) => prompt.processes),
   };
 
-  // Четыре этапа ADR-017 (issue #413): названия и статусы — из docs/roadmap.md.
-  const stage = (number) => {
-    const level = roadmap.levels.find((item) => item.number === number);
-    if (!level) {
-      throw new Error(`${SOURCE_FILES.roadmap}: нет этапа ${number}`);
-    }
-    return level;
-  };
-  const phaseFromStage = (id, number, extra) => ({
-    id,
-    phase: number,
-    title: stage(number).title,
-    status: stage(number).status,
-    levelIds: [stage(number).id],
-    ...extra,
-  });
-
   const phases = [
-    phaseFromStage("prompts", 1, {
+    {
+      id: "prompts",
+      phase: 1,
+      title: "Промпты",
+      status: "current",
       progress: prompts.length === 0 ? 0 : Math.round((activePrompts.length / prompts.length) * 100),
-      summary: "БА копирует промпты процесса с сайта в чат LLM и сам решает на гейтах.",
+      levelIds: ["level-1"],
+      summary: "Ручной выбор prompt-файла, копирование в AI-чат и human review результата.",
       metrics: [
         { label: "активных", value: activePrompts.length },
         { label: "проверено", value: canonicalPrompts.length },
         { label: "в работе", value: draftPrompts.length },
       ],
-    }),
-    phaseFromStage("agents", 2, {
+    },
+    {
+      id: "agents",
+      phase: 2,
+      title: "Агенты",
+      status: "planned",
       progress: 0,
-      summary: "Агентный клиент типа OpenCode выполняет шаги по пакету правил и останавливается на гейтах.",
+      levelIds: ["level-2", "level-3"],
+      summary: "Системный prompt, БЗ/RAG и агентный workflow поверх текущей библиотеки.",
       metrics: [
-        { label: "процессов", value: processIndex.length },
+        { label: "основа", value: processIndex.length },
         { label: "операций", value: taxonomy.operations.length },
-        { label: "гейты", value: "человек" },
+        { label: "gaps", value: roadmap.gaps.length },
       ],
-    }),
-    phaseFromStage("n8n", 3, {
+    },
+    {
+      id: "multiagents",
+      phase: 3,
+      title: "Мультиагенты",
+      status: "planned",
       progress: 0,
-      summary: "Поток n8n ведёт процесс, хранит состояние и ждёт решения человека на гейтах (ADR-017).",
+      levelIds: ["level-4"],
+      summary: "Несколько ролей: BA orchestrator, evidence, documentation, risk и reviewer.",
       metrics: [
-        { label: "процессов", value: processIndex.length },
-        { label: "исполнитель", value: "n8n" },
-        { label: "гейты", value: "человек" },
+        { label: "уровень", value: 4 },
+        { label: "human gates", value: "on" },
+        { label: "статус", value: "план" },
       ],
-    }),
-    phaseFromStage("server", 4, {
-      progress: 0,
-      summary: "Потоки n8n на выделенном сервере в контуре Манго для всей команды БА.",
-      metrics: [
-        { label: "процессов", value: processIndex.length },
-        { label: "контур", value: "Манго" },
-        { label: "гейты", value: "человек" },
-      ],
-    }),
+    },
   ];
 
   return {
@@ -1164,12 +1111,12 @@ function makeBcreqFlow(markdown, prompts) {
 }
 
 async function main() {
-  const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, roadmapMarkdown, patternsReadme] =
+  const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
       read(SOURCE_FILES.promptsReadme),
       read(SOURCE_FILES.taxonomy),
       read(SOURCE_FILES.processIndex),
-      read(SOURCE_FILES.roadmap),
+      read(SOURCE_FILES.ecosystem),
       read(SOURCE_FILES.patternsReadme),
     ]);
 
@@ -1179,7 +1126,7 @@ async function main() {
   const processIndex = processIndexData.processes;
   const processTree = parseProcessTree(processIndexMarkdown, processIndex);
   const patternsList = parsePatterns(patternsReadme);
-  const roadmap = parseRoadmap(roadmapMarkdown);
+  const roadmap = parseRoadmap(ecosystemMarkdown);
   const promptFiles = await listPromptFiles();
   const operationsById = new Map(taxonomy.operations.map((operation) => [operation.id, operation]));
   const processesByLabel = new Map(BCREQ_STAGES.map((process) => [process.label, process]));
@@ -1281,13 +1228,8 @@ async function main() {
 
   const roadmapData = {
     generatedAt: new Date().toISOString(),
-    sourceFiles: [
-      SOURCE_FILES.roadmap,
-      "docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md",
-      "docs/report/2026-10-31-repository-action-plan.md",
-    ].map((relativePath) => ({ path: relativePath, url: repoUrl(relativePath) })),
+    sourceFiles: [{ path: SOURCE_FILES.ecosystem, url: repoUrl(SOURCE_FILES.ecosystem) }],
     levels: roadmap.levels,
-    launch: roadmap.launch,
     gaps: roadmap.gaps,
   };
 
@@ -1330,7 +1272,7 @@ async function main() {
     `Generated ${processesData.processes.length} process cards and ${patternsData.patterns.length} patterns`,
   );
   console.log(`Generated ${taxonomy.operations.length} operations and ${catalogProcesses.length} BCREQ catalog stages`);
-  console.log(`Generated ${roadmap.levels.length} roadmap stages, ${roadmap.launch.length} launch steps and ${roadmap.gaps.length} next steps`);
+  console.log(`Generated ${roadmap.levels.length} roadmap levels and ${roadmap.gaps.length} gaps`);
   console.log(
     `Generated process tree: ${processTree.shownSubprocesses}/${processTree.totalSubprocesses} subprocesses with prompts in ${processTree.shownProcesses}/${processTree.totalProcesses} processes (useTree=${processTree.useTree})`,
   );

@@ -1,221 +1,91 @@
 {
-  "generatedAt": "2026-10-31T15:42:44.569Z",
+  "generatedAt": "2026-10-26T07:04:17.643Z",
   "sourceFiles": [
     {
-      "path": "docs/roadmap.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/roadmap.md"
-    },
-    {
-      "path": "docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md"
-    },
-    {
-      "path": "docs/report/2026-10-31-repository-action-plan.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/report/2026-10-31-repository-action-plan.md"
+      "path": "docs/ba-ecosystem.md",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md"
     }
   ],
   "levels": [
     {
-      "id": "stage-1",
+      "id": "level-1",
       "number": 1,
-      "title": "Промпты в чате LLM",
-      "howItWorks": "БА открывает сайт, копирует промпты процесса шаг за шагом в один чат с моделью, переносит состояние между шагами и сам решает на гейтах.",
-      "baRole": "Исполнитель и проверяющий каждого шага.",
-      "entry": "Промпты процесса и инструкция опубликованы на сайте.",
-      "exitCriteria": "Серия новых прогонов по всему процессу с решениями на гейтах; базовая линия метрик; утверждённый golden set процесса.",
-      "status": "current",
-      "links": []
+      "title": "Промпты",
+      "howItWorks": "БА вручную выбирает процесс, промпт, режим stepwise/oneshot, копирует контекст и валидирует результат.",
+      "baRole": "Оператор и reviewer каждого шага.",
+      "exitCriteria": "Есть процессная карта, стабильные prompt outputs, известные gaps и примеры прогонов.",
+      "status": "current"
     },
     {
-      "id": "stage-2",
+      "id": "level-2",
       "number": 2,
-      "title": "Агентный клиент",
-      "howItWorks": "Агентный клиент типа OpenCode читает пакет правил и файловое состояние задачи, выполняет шаги и останавливается на гейтах.",
-      "baRole": "Проверяющий результата и владелец решений на гейтах.",
-      "entry": "Выход этапа 1; профиль клиента (ADR-016); проверенная версия клиента.",
-      "exitCriteria": "Кейсы golden set дают вердикт не хуже этапа 1; статистика прогонов этапа 2 сопоставима с этапом 1.",
-      "status": "planned",
-      "links": [
-        {
-          "label": "ADR-016",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/2026-10-adr-016-ide-client-process.md"
-        }
-      ]
+      "title": "Системные промпты + БЗ",
+      "howItWorks": "Системный prompt предлагает маршрут по направлению, читает registry/KB/RAG, возвращает structured output и gates.",
+      "baRole": "Оркестратор: подтверждает route, отвечает на gates, исправляет output.",
+      "exitCriteria": "Есть product-matrix/source registry или их аналоги, evidence policy, regression examples, audit log.",
+      "status": "planned"
     },
     {
-      "id": "stage-3",
+      "id": "level-3",
       "number": 3,
-      "title": "Оркестрация в n8n",
-      "howItWorks": "Поток n8n ведёт процесс: запускает шаги, хранит состояние, вызывает модель, ждёт решения человека на гейтах и подключает почту и трекер.",
-      "baRole": "Собирает и сопровождает потоки визуально, решает на гейтах.",
-      "entry": "Выход этапа 2; ADR-017; доступы к корпоративным системам.",
-      "exitCriteria": "Требования ADR-017 выполнены; повтор и возобновление без двойных решений; статистика сопоставима с этапом 2.",
-      "status": "planned",
-      "links": [
-        {
-          "label": "ADR-017",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md"
-        }
-      ]
+      "title": "Агенты",
+      "howItWorks": "Агент ведет состояние workflow: выбирает операции, запускает промпты, сохраняет артефакты, предлагает next step.",
+      "baRole": "Коллега-валидатор: принимает gates, решает спорные статусы, утверждает публикацию.",
+      "exitCriteria": "Workflow повторяем, есть rollback prompt/version, manual override rate приемлем, sensitive-data policy готова.",
+      "status": "planned"
     },
     {
-      "id": "stage-4",
+      "id": "level-4",
       "number": 4,
-      "title": "Промышленная эксплуатация",
-      "howItWorks": "Потоки работают на выделенном сервере в контуре Манго для всей команды БА, с мониторингом и восстановлением.",
-      "baRole": "Владелец решений и точка эскалации.",
-      "entry": "Выход этапа 3; решения по серверу, данным и лицензии n8n.",
-      "exitCriteria": "Эксплуатационные метрики, проверенное восстановление, решение службы безопасности.",
-      "status": "planned",
-      "links": []
-    }
-  ],
-  "launch": [
-    {
-      "number": 1,
-      "step": "Войти на сайт",
-      "action": "Ввести пароль сайта. Пароль выдаёт владелец; он не записывается в репозиторий.",
-      "where": "Сайт, доступ",
-      "links": [
-        {
-          "label": "Сайт",
-          "url": "https://g-ivan-a.github.io/mango_ba_prompts/"
-        },
-        {
-          "label": "доступ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/site-access.md"
-        }
-      ],
-      "result": "Открыты каталог промптов и раздел «Процессы»."
-    },
-    {
-      "number": 2,
-      "step": "Подготовить задачу",
-      "action": "Собрать карточку задачи (номер, название, продукты) и обезличенный запрос Заказчика. Ссылки на закрытые документы не нужны.",
-      "where": "Рабочие системы БА",
-      "links": [],
-      "result": "Вход для первого шага процесса."
-    },
-    {
-      "number": 3,
-      "step": "Пройти процесс",
-      "action": "Открыть раздел «Процессы» и выполнять шаги по порядку в одном чате с моделью. Промпт копируется кнопкой ⧉, состояние переносится между шагами.",
-      "where": "Раздел «Процессы»",
-      "links": [
-        {
-          "label": "Раздел «Процессы»",
-          "url": "https://g-ivan-a.github.io/mango_ba_prompts/#processes"
-        }
-      ],
-      "result": "Разделы документа требований."
-    },
-    {
-      "number": 4,
-      "step": "Решить на гейтах",
-      "action": "Решение на гейте принимает человек из колонки «Кто решает». Модель только рекомендует. Решение записывается в журнал решений документа.",
-      "where": "«Процессы» → «Согласование»",
-      "links": [
-        {
-          "label": "«Процессы» → «Согласование»",
-          "url": "https://g-ivan-a.github.io/mango_ba_prompts/#processes"
-        }
-      ],
-      "result": "Журнал решений с автором и основанием."
-    },
-    {
-      "number": 5,
-      "step": "Зафиксировать прогон",
-      "action": "Открыть issue по шаблону «Прогон задачи: Исполнение процесса» и приложить обезличенные вход и результат. Исполнитель оформляет новую запись runs/.",
-      "where": "Шаблоны issue",
-      "links": [
-        {
-          "label": "Шаблоны issue",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/new/choose"
-        }
-      ],
-      "result": "Новая запись статистики этапа 1."
-    },
-    {
-      "number": 6,
-      "step": "Сообщить о проблеме промпта",
-      "action": "Если шаг дал неверный результат, открыть issue «Фидбек по промпту». Промпт меняется только через RFC по промптам.",
-      "where": "Шаблоны issue",
-      "links": [
-        {
-          "label": "Шаблоны issue",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/new/choose"
-        }
-      ],
-      "result": "Наблюдение для улучшения промптов."
-    },
-    {
-      "number": 7,
-      "step": "Подвести итог этапа",
-      "action": "После серии прогонов сравнить метрики с критериями выхода этапа 1 и решить, переходить ли к этапу 2.",
-      "where": "docs/analysis/",
-      "links": [],
-      "result": "Решение владельца о выходе из этапа 1."
+      "title": "Мультиагенты",
+      "howItWorks": "Несколько ролей: BA orchestrator, evidence agent, documentation agent, risk/compliance agent, reviewer agent.",
+      "baRole": "Владелец решения и escalation point.",
+      "exitCriteria": "Понятны права ролей, есть cross-agent audit, конфликтующие выводы не публикуются без человека.",
+      "status": "planned"
     }
   ],
   "gaps": [
     {
       "id": "gap-1",
-      "gap": "Серия реальных прогонов этапа 1",
-      "why": "Без новых прогонов нельзя доказать выход из этапа 1 и задать базовую линию метрик.",
-      "nextArtifact": "Новые записи runs/ по шаблону issue",
-      "links": []
+      "gap": "Tender-fit / coverage matrix prompt",
+      "why": "Issue 66 ставит тендеры как один из 9 процессов, а сейчас покрыты только вспомогательные операции.",
+      "nextArtifact": "prompts/tender-validation-stepwise.md или отдельный issue на tender-fit chain."
     },
     {
       "id": "gap-2",
-      "gap": "Golden set процесса",
-      "why": "Конкретные вопросы и фразы задач не должны попадать в промпты; им нужен отдельный проверочный набор.",
-      "nextArtifact": "Решение о месте golden set (вопрос Q1 стандарта evals), затем файл golden-set-процесс.md",
-      "links": []
+      "gap": "Impact analysis prompt",
+      "why": "Нужен для изменений legacy, интеграций и внутренних доработок.",
+      "nextArtifact": "prompts/impact-analysis-stepwise.md + traceability matrix template."
     },
     {
       "id": "gap-3",
-      "gap": "Очистка промптов от частных случаев",
-      "why": "В промпте конституции остались ссылки на отдельные прогоны и issue; правило обобщения уже введено.",
-      "nextArtifact": "Задача по промптам #411",
-      "links": [
-        {
-          "label": "#411",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/411"
-        }
-      ]
+      "gap": "Risk register / release-readiness prompts",
+      "why": "Нужны для Risk Analysis и release gates.",
+      "nextArtifact": "prompts/risk-analysis-stepwise.md, prompts/release-readiness-validation-stepwise.md."
     },
     {
       "id": "gap-4",
-      "gap": "Решения владельца по RFC модернизации",
-      "why": "Видимость, роль runtime, пакет этапа 2, архетип, политика истории и KB-конвейер ждут выбора.",
-      "nextArtifact": "DEC-01, DEC-03, DEC-04, DEC-06, DEC-07, DEC-09, DEC-10 в RFC",
-      "links": [
-        {
-          "label": "RFC",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-repository-modernization.md"
-        }
-      ]
+      "gap": "UML/BPMN/Mermaid prompt",
+      "why": "Визуализация - отдельный процесс БА, но инструмента нет.",
+      "nextArtifact": "Prompt для выбора диаграммы и генерации Mermaid/BPMN source."
     },
     {
       "id": "gap-5",
-      "gap": "Квалификация агентного клиента",
-      "why": "Вход в этап 2 требует проверенной версии клиента на тех же кейсах.",
-      "nextArtifact": "Проверка P01–P08 по ADR-016",
-      "links": []
+      "gap": "Product/RAG navigator",
+      "why": "Hub roadmap предлагает kb/product-matrix.md; в споке его пока нет.",
+      "nextArtifact": "Отдельный пилот после согласования owner и sanitized sources."
     },
     {
       "id": "gap-6",
-      "gap": "Требования к потокам n8n",
-      "why": "Этап 3 должен стартовать с готовыми правилами экспорта, гейтов и проверки ответов.",
-      "nextArtifact": "Валидатор экспорта потоков по ADR-017",
-      "links": []
+      "gap": "Orchestrator prompt",
+      "why": "Сейчас БА сам связывает промпты в цепочку.",
+      "nextArtifact": "Системный prompt уровня 2 для выбора процесса, операций и gates."
     },
     {
       "id": "gap-7",
-      "gap": "Указатель для агентов-исполнителей",
-      "why": "Стандарт экосистемы требует единую точку входа для AI-исполнителя.",
-      "nextArtifact": "ADR о корневом AGENTS.md (DEC-07)",
-      "links": []
+      "gap": "Механизм проверки не объявлен у части операций",
+      "why": "По §1.1 такая операция считается незавершённой; пробел должен быть виден, а не замаскирован.",
+      "nextArtifact": "Явный раздел «Проверка» в паттернах и quality gates в промптах; сверка с чек-листом D1–D10 (#ba-process-ontology)."
     }
   ]
 }

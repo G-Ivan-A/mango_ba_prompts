@@ -32,7 +32,6 @@ const nodes = {
   checksActivity: document.querySelector("#checks-activity"),
   roadmapLevels: document.querySelector("#roadmap-levels"),
   roadmapGaps: document.querySelector("#roadmap-gaps"),
-  roadmapLaunch: document.querySelector("#roadmap-launch-steps"),
   processNote: document.querySelector("#process-note"),
   processActions: document.querySelector("#process-actions"),
   processExpand: document.querySelector("#process-expand"),
@@ -284,8 +283,8 @@ function renderMetrics() {
 }
 
 function renderPhases() {
-  // Четыре этапа ADR-017 (issue #413); данные — data/stats.json из docs/roadmap.md.
-  const phases = state.stats.phases;
+  // Зрелость «Мультиагенты» вынесена в отдельный модуль «Проверки» (см. renderChecks).
+  const phases = state.stats.phases.filter((phase) => phase.id !== "multiagents");
   nodes.phases.replaceChildren(
     ...phases.map((phase) => {
       const card = el("article", "phase-card");
@@ -615,71 +614,16 @@ function renderChecks() {
   nodes.checksActivity.replaceChildren(heading, list);
 }
 
-const STAGE_STATUS_LABELS = { current: "сейчас", planned: "план", done: "пройден" };
-
-// Подпись + значение: «Вход: …», «Выход: …» (issue #413).
-function labeledParagraph(className, label, value) {
-  const paragraph = el("p", className);
-  paragraph.append(el("strong", "", `${label}: `), document.createTextNode(value));
-  return paragraph;
-}
-
-function linkRow(links) {
-  const row = el("p", "roadmap-links");
-  links.forEach((link, index) => {
-    if (index > 0) {
-      row.append(document.createTextNode(" · "));
-    }
-    const anchor = el("a", "", link.label);
-    anchor.href = link.url;
-    if (!link.url.startsWith("https://g-ivan-a.github.io/")) {
-      anchor.target = "_blank";
-      anchor.rel = "noreferrer";
-    }
-    row.append(anchor);
-  });
-  return row;
-}
-
-// Раздел «Дорожная карта» (issue #413): этапы, запуск этапа 1 и следующие шаги
-// из docs/roadmap.md через data/roadmap.json.
 function renderRoadmap() {
   nodes.roadmapLevels.replaceChildren(
     ...state.roadmap.levels.map((level) => {
       const card = el("article", "roadmap-card");
       card.dataset.status = level.status;
-      const top = el("div", "phase-top");
-      top.append(el("span", "roadmap-number", String(level.number)));
-      top.append(el("span", "status-pill", STAGE_STATUS_LABELS[level.status] || level.status));
-      card.append(top);
+      card.append(el("span", "roadmap-number", String(level.number)));
       card.append(el("h3", "", level.title));
       card.append(el("p", "", level.howItWorks));
-      card.append(labeledParagraph("", "Роль БА", level.baRole));
-      card.append(labeledParagraph("", "Вход", level.entry));
-      card.append(labeledParagraph("", "Выход", level.exitCriteria));
-      if (level.links.length > 0) {
-        card.append(linkRow(level.links));
-      }
+      card.append(el("p", "", level.exitCriteria));
       return card;
-    }),
-  );
-
-  nodes.roadmapLaunch.replaceChildren(
-    ...state.roadmap.launch.map((step) => {
-      const item = el("li", "launch-step");
-      const number = el("span", "launch-number", String(step.number));
-      number.setAttribute("aria-hidden", "true");
-      const body = el("div", "launch-body");
-      body.append(el("h4", "", step.step));
-      body.append(el("p", "", step.action));
-      body.append(labeledParagraph("launch-result", "Результат", step.result));
-      if (step.links.length > 0) {
-        body.append(linkRow(step.links));
-      } else {
-        body.append(labeledParagraph("launch-where", "Где", step.where));
-      }
-      item.append(number, body);
-      return item;
     }),
   );
 
@@ -688,10 +632,7 @@ function renderRoadmap() {
       const card = el("article", "gap-card");
       card.append(el("h3", "", gap.gap));
       card.append(el("p", "", gap.why));
-      card.append(labeledParagraph("", "Артефакт", gap.nextArtifact));
-      if (gap.links.length > 0) {
-        card.append(linkRow(gap.links));
-      }
+      card.append(el("p", "", gap.nextArtifact));
       return card;
     }),
   );
