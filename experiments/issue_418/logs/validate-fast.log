@@ -1,17 +1,17 @@
 python3 scripts/validate_all.py
 CACHED validate_issue_103_ui_fixes                 0.00s
-PASS   validate_issue_111_kb_pipeline              1.88s
-PASS   validate_issue_115_kb_mango_pipeline        0.44s
-PASS   validate_issue_117_kb_traceability          0.92s
+PASS   validate_issue_111_kb_pipeline              2.07s
+PASS   validate_issue_115_kb_mango_pipeline        0.32s
+PASS   validate_issue_117_kb_traceability          0.84s
 CACHED validate_issue_121_kb_multi_file            0.00s
 CACHED validate_issue_123_runs_contract            0.00s
 CACHED validate_issue_125_cascading_context        0.00s
-CACHED validate_issue_263_vision_alignment         0.00s
-PASS   validate_issue_265_hub_sync                18.48s
+PASS   validate_issue_263_vision_alignment         0.12s
+PASS   validate_issue_265_hub_sync                17.65s
 CACHED validate_issue_267_onboarding_v15           0.00s
 CACHED validate_issue_272_run_0019                 0.00s
-PASS   validate_issue_291_root_structure           0.53s
-PASS   validate_issue_310_kb_pdf_ingestion         0.45s
+PASS   validate_issue_291_root_structure           0.51s
+PASS   validate_issue_310_kb_pdf_ingestion         0.44s
 CACHED validate_issue_323_issue_forms              0.00s
 CACHED validate_issue_335_report_site              0.00s
 CACHED validate_issue_339_run                      0.00s
@@ -19,8 +19,8 @@ CACHED validate_issue_343_run                      0.00s
 CACHED validate_issue_345_run                      0.00s
 CACHED validate_issue_347_run                      0.00s
 CACHED validate_issue_349_critical_fix             0.00s
-PASS   validate_issue_351_run                     13.58s
-PASS   validate_issue_353_ab_rca                  23.11s
+PASS   validate_issue_351_run                     12.95s
+PASS   validate_issue_353_ab_rca                  25.78s
 CACHED validate_issue_355_run                      0.00s
 CACHED validate_issue_357_hub_backlog_validation   0.00s
 CACHED validate_issue_363_run                      0.00s
@@ -30,12 +30,12 @@ CACHED validate_issue_369_run                      0.00s
 CACHED validate_issue_371_run                      0.00s
 CACHED validate_issue_373_run                      0.00s
 CACHED validate_issue_375_run                      0.00s
-PASS   validate_issue_377_merge_hygiene            1.99s
+PASS   validate_issue_377_merge_hygiene            1.29s
 CACHED validate_issue_377_run                      0.00s
 CACHED validate_issue_377_section_prompts          0.00s
 CACHED validate_issue_378_run                      0.00s
 CACHED validate_issue_382_run                      0.00s
-PASS   validate_issue_384_prompts_audit            0.54s
+PASS   validate_issue_384_prompts_audit            0.59s
 CACHED validate_issue_387_bcreq_meta_standards     0.00s
 CACHED validate_issue_388_bcreq_site               0.00s
 CACHED validate_issue_403_manual_pipeline          0.00s
@@ -44,10 +44,10 @@ CACHED validate_issue_409_audit_artifacts          0.00s
 CACHED validate_issue_411_lessons_pipeline         0.00s
 CACHED validate_issue_413_prompt_generalization    0.00s
 CACHED validate_issue_415_strategy_rfc             0.00s
-PASS   validate_issue_418_backlog                  1.10s
+PASS   validate_issue_418_backlog                  1.27s
 CACHED validate_issue_61_governance                0.00s
 CACHED validate_issue_64_pattern_adr               0.00s
-CACHED validate_issue_72_hub_sync                  0.00s
+PASS   validate_issue_72_hub_sync                  0.17s
 CACHED validate_issue_74_github_pages              0.00s
 CACHED validate_issue_83_ba_process_map            0.00s
 CACHED validate_issue_85_patterns_library          0.00s
@@ -60,20 +60,20 @@ CACHED test_issue_323_issue_forms                  0.00s
 CACHED test_issue_353_redact_trace                 0.00s
 CACHED test_issue_361_kb_migration                 0.00s
 CACHED test_issue_391_lessons                      0.00s
-PASS   test_issue_391_site                         0.37s
-PASS   test_issue_393_site                         0.53s
+PASS   test_issue_391_site                         0.34s
+PASS   test_issue_393_site                         0.49s
 CACHED test_issue_395_bcreq                        0.00s
 CACHED test_issue_395_site                         0.00s
 CACHED test_issue_397_evidence                     0.00s
 CACHED test_issue_399_taxonomy                     0.00s
 CACHED test_issue_401_documentation                0.00s
-PASS   test_resolve_registry_conflicts             0.98s
+PASS   test_resolve_registry_conflicts             0.93s
 CACHED test_runs_contract_run_type                 0.00s
 CACHED test_runs_registry_tools_table              0.00s
 CACHED test_validate_all                           0.00s
 CACHED test_validate_pagination_shift              0.00s
 CACHED validate-file-naming                        0.00s
 CACHED validate-frontmatter                        0.00s
-PASS   validate-repository-structure               0.24s
+PASS   validate-repository-structure               0.21s
 
-fast: 76 валидаторов, 61 из кэша, 0 провалов, 23.85s
+fast: 76 валидаторов, 59 из кэша, 0 провалов, 26.51s
