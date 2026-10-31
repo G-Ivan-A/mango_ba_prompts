@@ -50,6 +50,7 @@ QUOTE_RE = re.compile(r"“([^”]+)”")
 LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
 TASK_ID_RE = re.compile(r"\bBL-\d{3}\b")
 DECISION_RE = re.compile(r"\bР-\d{2}\b")
+CODE_RE = re.compile(r"(?<![\w/#.-])[A-ZА-ЯЁ]{1,4}(?:-\d+)+\b")
 CARD_HEADING_RE = re.compile(r"^### (BL-\d{3})\. ", re.M)
 CARD_FIELDS = ("**Почему.**", "**Что меняется.**", "**Источники.**", "**Готово, когда.**")
 
@@ -282,6 +283,22 @@ class EntryDocument(unittest.TestCase):
     def test_tech_debt_rows(self):
         for number in range(1, 9):
             self.assertIn(f"| S-00{number} |", self.body)
+
+    def test_codes_explained(self):
+        """UX (issue #418): каждый код в разделах 1–4 расшифрован в таблицах кодов."""
+        start = self.body.index("\n## Как читать за две минуты\n")
+        guide = self.body[start:self.body.index("\n## 1. ")]
+        explained = {
+            re.sub(r"(?:\d*[xN]+|\d+)$", "", code)
+            for code in re.findall(r"^\| [`«]([^`»\s]+)", guide, re.M)
+        }
+        decisions = self.body[self.body.index("\n## 1. "):self.body.index("\n## 5. ")]
+        used = Counter(
+            re.sub(r"\d+$", "", token)
+            for token in CODE_RE.findall(decisions)
+        )
+        missing = sorted(prefix for prefix in used if prefix not in explained)
+        self.assertEqual(missing, [], "коды без расшифровки в «Как читать за две минуты»")
 
     def test_meta_model_answer(self):
         part = section(ENTRY, "3-мета-модель-ба-хаба-на-этом-шаге")
