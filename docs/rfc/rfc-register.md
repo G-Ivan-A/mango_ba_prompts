@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.5
+version: 0.6
 updated: 2026-10-31
 ai-generated: true
 type: register
@@ -11,6 +11,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/409"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -109,7 +110,7 @@ PR #105 **не изменены** — сверка и правка идут то
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
-| RFC-1025-P1 | `glossary-context-understanding-stepwise.md` | Явный запрос архитектурных компонентов/связок на Шаге 0 (паттерн Б5) | анализ BCREQ-1025 §2.2 Б5 | Minor | `proposed` | — |
+| RFC-1025-P1 | `glossary-context-understanding-stepwise.md` | Явный запрос архитектурных компонентов/связок на Шаге 0 (паттерн Б5). **#413:** фиксированная пара продуктов не отражает 7 доменов и 43 Capability таксономии; обобщить до паттерна «слой настройки и слой исполнения по каждой затронутой Capability» (C05), передано в [#411](https://github.com/G-Ivan-A/mango_ba_prompts/issues/411) | анализ BCREQ-1025 §2.2 Б5 | Minor | `proposed` | — |
 | RFC-1025-P2 | `fr-documentation-stepwise.md` | Явная матрица ролей + фиксация архитектурных границ в суммаризации Шага 1 (паттерны Б1+Б4) | анализ BCREQ-1025 §2.2 Б4, §2.3 Б1 | Minor | `proposed` | — |
 | RFC-1025-P3 | `fr-documentation-stepwise.md` | Пример-эталон стиля 4.x.1 (анти-канцелярит); усиление RFC-1027-P2 (паттерн Б3) | анализ BCREQ-1025 §2.1 Б3 | Minor | `proposed` | — |
 | RFC-1025-P4 | `fr-documentation-stepwise.md` | Явный запрет на 4-й уровень иерархии + правило раскладки многоусловных требований (паттерн Б2) | анализ BCREQ-1025 §2.1 Б2 | Minor | `proposed` | — |
@@ -124,7 +125,7 @@ PR #105 **не изменены** — сверка и правка идут то
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
-| RFC-MCH-P1 | `glossary-context-understanding-stepwise.md` | Явная фиксация архитектурного слоя (ЛК ВАТС vs КЦ) в ШАГ 0 (повтор Б1/Б5) | эксперимент #109 §М1 | Minor | `proposed` | — |
+| RFC-MCH-P1 | `glossary-context-understanding-stepwise.md` | Явная фиксация архитектурного слоя (ЛК ВАТС vs КЦ) в ШАГ 0 (повтор Б1/Б5). **#413:** фиксированная пара продуктов не отражает 7 доменов и 43 Capability таксономии; обобщить до паттерна «слой настройки и слой исполнения по каждой затронутой Capability» (C05), передано в [#411](https://github.com/G-Ivan-A/mango_ba_prompts/issues/411) | эксперимент #109 §М1 | Minor | `proposed` | — |
 | RFC-MCH-P2 | цепочка `understanding` (glossary↔questions) | Под-шаг/промпт «нормализация требования» (атомы + боль/решение + первичный gap) | эксперимент #109 §М2 | Minor | `proposed` | — |
 | RFC-MCH-P3 | `technical-details-solution-design-stepwise.md` (+ новый `options-*`) | Отдельный промпт «early-options» (варианты доработки, Раздел 3) отдельно от Раздела 7 | эксперимент #109 §М3 | Major | `proposed` | — |
 
@@ -148,20 +149,21 @@ issue #387). Существующие стандарты и контракты *
 ## Модернизация репозитория (источник: issue #409)
 
 RFC [`2026-10-repository-modernization.md`](2026-10-repository-modernization.md)
-v0.3 выносит на согласование десять решений. Репозиторий **не изменён**:
-после решений владельца изменения выполняются задачами T-01…T-09 из
-[реестра задач](../analysis/2026-10-31-follow-up-tasks.md).
+v0.3 выносит на согласование десять решений. После решений владельца
+изменения выполняются задачами T-01…T-09 из
+[реестра задач](../analysis/2026-10-31-follow-up-tasks.md). В v0.4 (#413)
+владелец принял DEC-05; DEC-02, DEC-05 и DEC-08 реализованы в PR #414.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
 | [RFC-409-DEC-01](2026-10-repository-modernization.md#dec-01-статус-репозитория-в-экосистеме-f-01-f-11) | Статус в экосистеме Хаба | Гибрид: спица — практика этапа 1 и сайт, `mango-ba-ai-runtime` — исполнение этапов 2–4 | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-01, F-11 | `proposed` | — |
-| [RFC-409-DEC-02](2026-10-repository-modernization.md#dec-02-замена-границ-263-f-03-f-14) | Границы #263, валидатор #263 | Новый ADR заменяет границы #263; валидатор меняется в том же PR | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-03, F-14 | `proposed` | — |
+| [RFC-409-DEC-02](2026-10-repository-modernization.md#dec-02-замена-границ-263-f-03-f-14) | Границы #263, валидатор #263 | [ADR-017](../adr/2026-10-adr-017-four-stages-n8n-orchestration.md) заменяет границы #263; валидатор изменён в том же PR | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-03, F-14 | `implemented` | [#414](https://github.com/G-Ivan-A/mango_ba_prompts/pull/414) |
 | [RFC-409-DEC-03](2026-10-repository-modernization.md#dec-03-видимость-f-05) | Видимость репозитория | Public до решения по ADR-009 Хаба | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-05 | `proposed` | — |
 | [RFC-409-DEC-04](2026-10-repository-modernization.md#dec-04-роль-mango-ba-ai-runtime-f-04) | Роль runtime | Runtime — исполнение и KB; спица — практика и сайт | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-04 | `proposed` | — |
-| [RFC-409-DEC-05](2026-10-repository-modernization.md#dec-05-роль-n8n-на-этапе-3-f-07) | Этап 3 | Runner управляет маршрутом, n8n — слой интеграций | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-07 | `proposed` | — |
+| [RFC-409-DEC-05](2026-10-repository-modernization.md#dec-05-роль-n8n-на-этапе-3-f-07) | Этап 3 | n8n — оркестратор этапа 3; риски Хаба — требования к потокам ([ADR-017](../adr/2026-10-adr-017-four-stages-n8n-orchestration.md), решение владельца в #413) | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-07 | `implemented` | [#414](https://github.com/G-Ivan-A/mango_ba_prompts/pull/414) |
 | [RFC-409-DEC-06](2026-10-repository-modernization.md#dec-06-ssot-пакета-этапа-2-f-06) | ADR-016, пакет этапа 2 | Пакет Хаба — источник сборки, runtime — место установки, ADR-016 — профиль применения | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-06 | `proposed` | — |
 | [RFC-409-DEC-07](2026-10-repository-modernization.md#dec-07-архетип-и-среда-f-08) | `AGENTS.md`, `.hub-profile.json` | `archetype: B`, `environment: local` | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-08 | `proposed` | — |
-| [RFC-409-DEC-08](2026-10-repository-modernization.md#dec-08-размещение-четырёх-документов-f-02) | Четыре стратегических документа | `docs/vision.md`, `docs/concept.md`, `docs/architecture.md`, `docs/roadmap.md` | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-02 | `proposed` | — |
+| [RFC-409-DEC-08](2026-10-repository-modernization.md#dec-08-размещение-четырёх-документов-f-02) | Четыре стратегических документа | `docs/vision.md`, `docs/concept.md`, `docs/architecture.md`, `docs/roadmap.md` | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-02 | `implemented` | [#414](https://github.com/G-Ivan-A/mango_ba_prompts/pull/414) |
 | [RFC-409-DEC-09](2026-10-repository-modernization.md#dec-09-политика-разметки-истории-f-10-f-16) | Разметка истории | Правило каталога и блок перехода; `.archive/` — только `superseded` с преемником | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-10, F-16 | `proposed` | — |
 | [RFC-409-DEC-10](2026-10-repository-modernization.md#dec-10-вывод-локального-kb-конвейера-f-12) | KB-конвейер | Депрекация после проверки потребителей; `kb/` остаётся на месте | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-12 | `proposed` | — |
 
@@ -187,3 +189,10 @@ v0.3 выносит на согласование десять решений. �
 - **2026-10-31** — добавлены RFC-409-DEC-01…10 в статусе `proposed` по итогам
   аудита issue #409 (PR #410). RFC-документ —
   [`docs/rfc/2026-10-repository-modernization.md`](2026-10-repository-modernization.md) v0.3.
+- **2026-10-31** — по решению владельца в issue #413 (PR #414): RFC модернизации
+  v0.4; RFC-409-DEC-02, DEC-05 (n8n — оркестратор этапа 3,
+  [ADR-017](../adr/2026-10-adr-017-four-stages-n8n-orchestration.md)) и DEC-08 →
+  `implemented`. RFC-MCH-P1 и RFC-1025-P1 получили пометку #413: пара
+  «ЛК ВАТС / КЦ» обобщается до паттерна по Domain→Capability и передана в
+  трек промптов #411; статусы не изменены. Предложения следующего шага —
+  [отчёт #413](../report/2026-10-31-repository-action-plan.md).

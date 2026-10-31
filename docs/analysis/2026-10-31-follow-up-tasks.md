@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-10-31
 temperature: 0.1
 analysis-subtype: recommendation
@@ -22,7 +22,8 @@ related_artifacts: "docs/audit/2026-10-31-repository-audit.md, docs/analysis/202
   (колонка «Задача»; машинная копия —
   `experiments/issue_409/disposition.json`).
 - **H-01…H-07** — обращения в [Хаб](https://github.com/G-Ivan-A/hybrid-Intelligence-lab)
-  по противоречиям, которые нельзя устранить на стороне спицы.
+  по противоречиям, которые нельзя устранить на стороне спицы. Отозваны в
+  #413 ([состояние после #413](#состояние-после-413)).
 
 Решения DEC-01…DEC-10, от которых зависят задачи, описаны в
 [RFC v0.3](../rfc/2026-10-repository-modernization.md#решения-на-согласование).
@@ -442,6 +443,19 @@ flowchart LR
   другого репозитория (префикс репозитория).
 - **Готово, когда:** htom-documentation-structure согласован с
   adr-structure-standard; правило межрепозиторных ссылок записано.
+
+## Состояние после #413
+
+Владелец уточнил область в [#413](https://github.com/G-Ivan-A/mango_ba_prompts/issues/413).
+Постановки выше сохранены как история; их состояние:
+
+| Пункт | Состояние | Основание |
+| --- | --- | --- |
+| T-02 | Реализована в PR #414: [ADR-017](../adr/2026-10-adr-017-four-stages-n8n-orchestration.md), `docs/vision.md`, `docs/concept.md`, `docs/architecture.md`, `docs/roadmap.md`; валидатор #263 изменён в том же PR | Цель #413 «реализовать изменения и запустить этап 1» |
+| T-03 | Реализована в PR #414: генератор сайта читает этапы из `docs/roadmap.md`, §7 `docs/ba-ecosystem.md` — шкала зрелости | То же |
+| T-04 | Передана в трек промптов [#411](https://github.com/G-Ivan-A/mango_ba_prompts/issues/411) | Содержание процессов BCREQ исключено из RFC проекта (#413) |
+| T-01, T-05…T-09 | Без изменений: ждут решений DEC-01, DEC-03, DEC-04, DEC-06, DEC-07, DEC-09, DEC-10 | [Отчёт #413](../report/2026-10-31-repository-action-plan.md) |
+| H-01…H-07 | Отозваны, в Хаб не заводятся | Хаб проверялся только для взятия стандартов экосистемы; передача опыта в Хаб вне области (#413). H-04 снят решением DEC-05 (n8n — оркестратор этапа 3) |
 
 ## Остаточные ограничения
 

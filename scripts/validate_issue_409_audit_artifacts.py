@@ -268,7 +268,7 @@ class Identifiers(unittest.TestCase):
     def test_rfc_is_proposed_and_registered(self):
         fields = frontmatter(RFC)
         self.assertEqual(fields["status"], "proposed")
-        self.assertEqual(fields["version"], "0.3")
+        self.assertEqual(fields["version"], "0.4")
         register = text(RFC_REGISTER)
         rows = re.findall(r"^\| \[RFC-409-(DEC-\d{2})\]\(", register, re.M)
         self.assertEqual(rows, DECISIONS)
