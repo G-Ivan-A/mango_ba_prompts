@@ -1,0 +1,124 @@
+/* Уроки прогонов (issue #411). Отдельный файл: styles.css зафиксирован базовой линией issue 395. */
+.lessons-howto {
+  margin-bottom: 18px;
+}
+
+.lessons-links,
+.lessons-toolbar,
+.lessons-list {
+  width: min(1240px, 100%);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.lessons-links {
+  margin-top: 0;
+  font-size: 0.9rem;
+}
+
+.lessons-filter {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.lessons-filter select {
+  min-height: 34px;
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+}
+
+.lessons-list {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+  padding: 0;
+  list-style: none;
+}
+
+.lesson-card {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  scroll-margin-top: 80px;
+}
+
+.lesson-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.lesson-title {
+  flex: 1 1 320px;
+  font-weight: 750;
+}
+
+.lesson-body {
+  display: grid;
+  gap: 10px;
+  padding: 0 14px 14px;
+}
+
+.lesson-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+.lesson-bad,
+.lesson-good {
+  padding: 8px 10px;
+  border-left: 3px solid;
+  font-size: 0.9rem;
+}
+
+.lesson-bad {
+  border-color: var(--red);
+  background: rgba(185, 28, 28, 0.06);
+}
+
+.lesson-good {
+  border-color: var(--teal);
+  background: rgba(15, 118, 110, 0.07);
+}
+
+.lesson-bad p,
+.lesson-good p {
+  margin: 4px 0 0;
+}
+
+.lesson-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.bcreq-step-lessons {
+  display: grid;
+  gap: 4px;
+}
+
+.lesson-chip {
+  text-decoration: none;
+}
+
+.tag[data-kind="lesson"] {
+  border-color: rgba(185, 28, 28, 0.3);
+  background: rgba(185, 28, 28, 0.06);
+  color: var(--red);
+}
+
+.lesson-all {
+  align-self: center;
+  font-size: 0.82rem;
+  font-weight: 700;
+}

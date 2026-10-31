@@ -22,10 +22,13 @@ class PublicationTests(unittest.TestCase):
         for prompt in data['prompts']:
             self.assertEqual(prompt['content'], (ROOT / prompt['sourcePath']).read_text())
 
-    def test_process_route_has_exactly_two_blocks(self):
+    def test_process_route_has_only_bcreq_blocks(self):
+        # Issue 411 adds the BCREQ run-lessons block between the manual process
+        # and the approval; the route still publishes BCREQ blocks only.
         html = (ROOT / 'site/index.html').read_text()
         sections = re.findall(r'<section\b[^>]*data-page="processes"[^>]*>', html)
-        self.assertEqual(len(sections), 2)
+        ids = [re.search(r'\bid="([^"]+)"', section).group(1) for section in sections]
+        self.assertEqual(ids, ['bcreq-manual', 'bcreq-lessons', 'bcreq-approval'])
 
     def test_login_is_a_separate_page(self):
         self.assertTrue((ROOT / 'site/login.html').exists())

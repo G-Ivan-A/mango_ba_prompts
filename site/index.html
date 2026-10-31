@@ -8,6 +8,7 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="standards.css" />
+    <link rel="stylesheet" href="lessons.css" />
   </head>
   <body>
     <header class="topbar">
@@ -165,6 +166,41 @@
         </p>
         <ol class="bcreq-rules" id="bcreq-rules"></ol>
         <ol class="bcreq-steps" id="bcreq-steps"></ol>
+      </section>
+
+      <section
+        class="page-band bcreq-band"
+        id="bcreq-lessons"
+        data-page="processes"
+        aria-labelledby="bcreq-lessons-title"
+      >
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Этап 1 · уроки прогонов</p>
+            <h2 id="bcreq-lessons-title">Уроки прогонов: как делать и как не делать</h2>
+          </div>
+          <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-lessons/README.md" target="_blank" rel="noreferrer" title="Реестр уроков в репозитории">↗</a>
+        </div>
+        <p class="bcreq-lead">
+          Опыт прошлых прогонов собран в реестре уроков. Каждый урок — правило, вопрос
+          для проверки ответа модели, пример «Не так» и «Так». Уроки уже встроены в промпты
+          шагов: блок «Уроки прогонов» копируется вместе с промптом кнопкой ⧉.
+        </p>
+        <ol class="bcreq-rules lessons-howto" id="lessons-howto">
+          <li class="bcreq-rule"><strong>До шага</strong> откройте список уроков шага: ссылки «Уроки шага» в карточке шага выше.</li>
+          <li class="bcreq-rule"><strong>После ответа</strong> пройдите вопросы «Проверка». Ответ «нет» — верните раздел модели с названием нарушения (П-8).</li>
+          <li class="bcreq-rule"><strong>После замечания</strong> запишите его в 8.5 как правило сессии и проверяйте все следующие ответы (П-9).</li>
+          <li class="bcreq-rule"><strong>Новое замечание</strong> вне реестра — владельцу реестра: сначала кейс golden set, потом промпт (П-10).</li>
+        </ol>
+        <div class="metrics-grid lessons-metrics" id="lessons-metrics"></div>
+        <p class="lessons-links" id="lessons-links"></p>
+        <div class="lessons-toolbar">
+          <label class="lessons-filter">
+            <span class="bcreq-field-label">Фильтр по шагу</span>
+            <select id="lessons-step"></select>
+          </label>
+        </div>
+        <ol class="lessons-list" id="lessons-list"></ol>
       </section>
 
       <section

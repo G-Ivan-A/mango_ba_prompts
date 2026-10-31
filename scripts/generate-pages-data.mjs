@@ -1166,6 +1166,7 @@ function makeLessons(registry, coverage, prompts) {
       adr: repoUrl(registry.adr),
       rfc: repoUrl(registry.rfc),
     },
+    promptCount: keyFiles.length,
     totals: {
       lessons: lessons.length,
       runtime: runtime.length,

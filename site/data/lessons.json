@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T15:10:36.031Z",
+  "generatedAt": "2026-10-31T15:21:33.988Z",
   "sourceFiles": [
     {
       "path": "standards/bcreq-lessons/lessons.json",
@@ -17,6 +17,7 @@
     "adr": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/2026-10-adr-017-run-lessons-ssot.md",
     "rfc": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
   },
+  "promptCount": 14,
   "totals": {
     "lessons": 53,
     "runtime": 51,
