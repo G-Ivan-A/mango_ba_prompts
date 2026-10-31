@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-08-17
+version: 0.4
+updated: 2026-10-31
 owner: G-Ivan-A
 ai-generated: true
 type: ecosystem-map
@@ -9,6 +9,7 @@ scope: mango-ba-processes
 related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/66"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/263"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413"
 research_deps:
   - "docs/hub-research-dependencies.md#adr-009-repo-split"
   - "docs/hub-research-dependencies.md#ba-process-ontology"
@@ -391,20 +392,22 @@ flowchart LR
 | Промпты | Частично: `glossary-context-understanding-*`, `questions-customer-understanding-*`, `fr-validation-*`; dedicated tender prompts отсутствуют. |
 | Правило | Для статуса `Покрывается` или `Частично покрывается` нужен evidence; при низкой уверенности статус становится `Требует уточнения`. |
 
-## 7. Границы автоматизации: где заканчивается спок
+## 7. Уровни зрелости автоматизации
 
-**Область этого репозитория — уровни 1–2.** `mango_ba_prompts` работает на
-GitHub с AI-исполнителем: промпты, паттерны, реестры, прогоны и
-локальные валидаторы. Инструментальный слой — агенты, оркестрация и
-инфраструктура их запуска — предмет отдельного проекта
-([`ai-ba-playbooks`](https://github.com/G-Ivan-A/ai-ba-playbooks), ADR-009 v0.3
-через [`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-split)),
-а не этой экосистемы.
+**План репозитория — четыре этапа** ([`docs/roadmap.md`](roadmap.md),
+[ADR-017](adr/2026-10-adr-017-four-stages-n8n-orchestration.md)): промпты в
+чате LLM → агентный клиент → оркестрация процессов в n8n → промышленная
+эксплуатация на выделенном сервере. Прежняя граница «область репозитория —
+уровни 1–2, инструментальный слой — отдельный проект» (#263) заменена
+ADR-017 по решению владельца в #413. Роль
+[`ai-ba-playbooks`](https://github.com/G-Ivan-A/ai-ba-playbooks) как публичной
+витрины (ADR-009 v0.3 через
+[`#adr-009-repo-split`](hub-research-dependencies.md#adr-009-repo-split)) не
+меняется до решения владельца (DEC-04 RFC модернизации).
 
-Шкала ниже — **справочная модель зрелости**, чтобы понимать, чем сегодняшние
-промпты станут в руках инструментального проекта. Уровни 3–4 не являются планом
-работ `mango_ba_prompts`: спок отвечает за *содержание, онтологию и стандарты
-качества* операций, а не за исполняющие их инструменты.
+Шкала ниже — **справочная модель зрелости** процесса. Этапы описывают смену
+исполнителя, уровни — зрелость автоматизации; соответствие уровней и этапов —
+в разделе «Связь с уровнями зрелости» [`docs/roadmap.md`](roadmap.md).
 
 ```mermaid
 stateDiagram-v2
@@ -428,12 +431,11 @@ stateDiagram-v2
 | 4. Мультиагенты | Несколько ролей: BA orchestrator, evidence agent, documentation agent, risk/compliance agent, reviewer agent. | Владелец решения и escalation point. | Понятны права ролей, есть cross-agent audit, конфликтующие выводы не публикуются без человека. |
 
 Плавность перехода обеспечивается тем, что сегодняшние промпты становятся
-компонентами будущего агента: каждый промпт закрывает одну когнитивную операцию,
-процессная карта задает порядок, registry задает источники, gates сохраняют
-human ownership. Вклад спока в эту плавность — качество и верифицируемость
-операций (§1.1), а не построение исполняющей системы: уровни 3–4 достигаются
-инструментальным проектом, который забирает готовые операции отсюда через
-односторонний ручной отбор ([docs/rfc-hub-integration.md](rfc-hub-integration.md)).
+компонентами будущего агента и узлами будущего потока n8n: каждый промпт
+закрывает одну когнитивную операцию, процессная карта задает порядок, registry
+задает источники, gates сохраняют human ownership. Качество и верифицируемость
+операций (§1.1) остаются условием каждого перехода: этап засчитывается новой
+статистикой прогонов, а не сменой инструмента.
 
 ## 8. Roadmap known gaps
 
