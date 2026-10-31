@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-10-30
+version: 0.3
+updated: 2026-10-31
 temperature: 0.1
 analysis-subtype: matrix
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/407"
@@ -94,7 +94,7 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/bc30b9d6bce8f445889
 | AR-16 EV-08 OBSERVED | Критика, impact, адресное исправление и структурная проверка — отдельные обязанности. | Разделение ролей → https://github.com/G-Ivan-A/mango_ba_prompts/blob/bc30b9d6bce8f4458895e84deab5f3552b13f394/standards/bcreq-manual-classes/catalog.json (C28–C31). | Отдельный critic снижает self-review blind spot только при независимом входе/проверке; номинальная роль сама по себе качества не гарантирует. |
 | AR-17 EV-06 APPROVED | Этап 2 автоматизирует работу БА через AI IDE-клиент; без Python-оркестратора в пользовательском workflow. | Сохранение метамодели, смена транспорта → https://github.com/G-Ivan-A/mango_ba_prompts/blob/bc30b9d6bce8f4458895e84deab5f3552b13f394/docs/analysis/2026-10-30-ide-clients-stage-2.md. | Нельзя превращать 39 классов в ровно 39 skills или считать один skill одним промптом. Выбор клиента пока draft. |
 | AR-18 EV-06 APPROVED | Этапы 3 и 4 — n8n и сервер; стратегия не отменяет качества, согласований и provenance. | Переносимые контракты → будущий runtime по одному RFC. | Сейчас нет внедрённой оркестрации; четыре этапа отражены в предложении, не выданы за готовый roadmap. |
-| AR-19 EV-01 APPROVED | Предложить vision/concept/architecture/roadmap и будущую актуализацию конфликтующей активной документации. | Разделение уровней документации → https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/rfc/2026-10-repository-modernization.md. | RFC — PROPOSED; сами стратегические/рабочие файлы не добавляются и не редактируются этим PR. |
+| AR-19 EV-01 APPROVED | Предложить vision/concept/architecture/roadmap и будущую актуализацию конфликтующей активной документации. | Разделение уровней документации → https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-repository-modernization.md. | RFC — PROPOSED; сами стратегические/рабочие файлы не добавляются и не редактируются этим PR. |
 | AR-20 EV-09 APPROVED | Контрольно показать понимание всего репозитория и границы history/управляющие артефакты. | Ролевая классификация и CC-01 в current-state; неизменённый полный inventory. | Структурная полнота воспроизводится; историческое содержание не переоценивается и не исполняется. |
 | AR-21 EV-09 APPROVED | Отразить фазовую эволюцию BCREQ и параллельный вектор Hub без концептуального отката к «Валидации ФТ/ТЗ». | Сопоставление выше, CC-02/03, semantic compatibility register в RFC. | Выявлены расхождения A-CORE/Skill; обязанности проверки сохранены в proposal, actual migration не выполнена. |
 | AR-22 EV-09 APPROVED | Предложить наполнение Vision/Concept/Architecture/Roadmap с обоснованием. | Четыре конкретных тезиса, таблицы разделов/содержания/rationale, cross-document acceptance в RFC. | Proposal написан; архитектура отнесена к L3, roadmap не подменяет L4 ADR. Файлы пока не созданы. |

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-10-30
+version: 0.3
+updated: 2026-10-31
 temperature: 0.1
 analysis-subtype: matrix
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/407"
@@ -15,7 +15,7 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/bc30b9d6bce8f445889
 
 Мандат: https://github.com/G-Ivan-A/mango_ba_prompts/issues/407 и явное уточнение https://github.com/G-Ivan-A/mango_ba_prompts/pull/408#issuecomment-6522949478. Фактический срез: https://github.com/G-Ivan-A/mango_ba_prompts/tree/bc30b9d6bce8f4458895e84deab5f3552b13f394. Нормативный срез: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/c105323322d7e3a0450199db28071ea21fa9404d. Это сопоставление и интерпретация для будущего RFC, без синхронизации, миграции или изменения действующих норм.
 
-Входные данные: полный реестр https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/analysis/2026-10-30-repository-inventory.md; карта компонентов/связей https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/analysis/2026-10-30-repository-current-state.md; реконструкция и ограничения первоисточников https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/analysis/2026-10-30-october-requirements-evolution.md. Последняя не завершена без приоритетного JSON; это ограничивает полноту методологической приёмки, но не мешает проверить наличие файлов и применимость опубликованной нормы.
+Входные данные: полный реестр https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-10-30-repository-inventory.md; карта компонентов/связей https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-10-30-repository-current-state.md; реконструкция и ограничения первоисточников https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/analysis/2026-10-30-october-requirements-evolution.md. Последняя не завершена без приоритетного JSON; это ограничивает полноту методологической приёмки, но не мешает проверить наличие файлов и применимость опубликованной нормы.
 
 Порядок: прочитать реестр стандартов → проверить frontmatter, текст, scope и источник решения → классифицировать применимость к библиотеке → сопоставить реальные дома и контракты → отделить формальную проверку от семантического/человеческого решения. «Н» — нормативное обязательство в своей области, «Р» — рекомендация, «П» — архитектурный принцип, «С» — справочное содержание. Статус `accepted` сам по себе не делает каждое предложение MUST; `draft` не разрешает выдавать проект за согласованный контракт.
 
@@ -117,4 +117,4 @@ based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/bc30b9d6bce8f445889
 
 **P0:** получить приоритетный JSON и завершить source-to-requirement mapping; сохранить текущую статистику и закрытую границу изменений. **P1:** содержательно согласовать значения уровней, границу библиотека/runtime, active BCREQ-version и будущий diff. **P2:** отдельным мандатом внедрить навигацию/документацию/bootstrap и semantic checks. **P3:** по entry/exit критериям развивать IDE, n8n и сервер. P0/P1 не закрываются прохождением P2-валидатора.
 
-Этот audit выявляет конкретные соответствия и gaps, но не выдаёт blanket compliance certificate. Спорная сила contract/executable стандартов и выбор нового профиля остаются UNRESOLVED. Аналитический packet не подтверждает human acceptance итераций и не является утверждённым RFC. Будущие изменения перечислены в единственном https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/issue-407-28502daafccb/docs/rfc/2026-10-repository-modernization.md.
+Этот audit выявляет конкретные соответствия и gaps, но не выдаёт blanket compliance certificate. Спорная сила contract/executable стандартов и выбор нового профиля остаются UNRESOLVED. Аналитический packet не подтверждает human acceptance итераций и не является утверждённым RFC. Будущие изменения перечислены в единственном https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-repository-modernization.md.
