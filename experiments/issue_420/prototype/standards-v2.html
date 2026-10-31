@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Прототип страницы «Стандарты» — issue #420 (не публикуется)</title>
+    <link rel="stylesheet" href="../../../site/styles.css">
+    <link rel="stylesheet" href="../../../site/standards.css">
+    <style>
+.proposal-banner{background:#fff7d6;color:#5b4500;padding:10px 16px;font-size:.85rem;border-bottom:1px solid #e6d48a}
+.std-meta{display:flex;flex-wrap:wrap;gap:6px 10px;margin:14px 0 4px;font-size:.8rem}
+.std-meta span{padding:3px 8px;border:1px solid var(--border);background:var(--surface-strong)}
+.std-meta .internal{border-color:#b45309;color:#b45309}
+.std-what{display:grid;grid-template-columns:88px minmax(0,1fr);gap:6px 12px;margin:16px 0}
+.std-what dt{font-weight:750;color:var(--teal)}
+.std-what dd{margin:0}
+.std-composition{margin:0;padding:0;list-style:none}
+.std-composition li{display:grid;grid-template-columns:4.5em minmax(0,1fr);gap:8px;padding:6px 0;border-bottom:1px dashed var(--border)}
+.std-composition b{color:var(--teal)}
+.std-special{margin:20px 0;padding:14px 16px;border-left:3px solid var(--teal);background:var(--surface-strong)}
+.std-special h3{margin-top:0}
+.std-special ol{margin:8px 0 0;padding-left:0;list-style:none}
+.std-special li{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:8px;padding:6px 0;border-top:1px solid var(--border)}
+.std-special .rank{font-weight:750;color:var(--teal)}
+.std-special .status{display:block;font-size:.78rem;color:var(--muted)}
+.std-special .gap{color:#b45309;font-weight:650}
+.std-accept{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.std-accept h4{margin:0 0 8px;font-size:.9rem}
+.std-accept h4 small{display:block;font-weight:400;color:var(--muted)}
+.standard-checklist li{display:flex;gap:8px}
+.standard-checklist li .ref{flex:0 0 auto;color:var(--teal);font-weight:700;font-variant-numeric:tabular-nums}
+.std-metrics{margin:0;padding-left:20px}
+.std-outline{width:100%;border-collapse:collapse;font-size:.86rem}
+.std-outline th,.std-outline td{padding:8px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.std-outline td:first-child{color:var(--teal);font-weight:750}
+.std-outline small{display:block;color:var(--muted)}
+.std-legend{margin:0;padding-left:20px;font-size:.88rem}
+@media (max-width:720px){.std-accept{grid-template-columns:1fr}.std-outline thead{display:none}.std-outline tr{display:block;padding:8px 0;border-bottom:1px solid var(--border)}.std-outline td{display:block;border:0;padding:2px 0}}
+</style>
+  </head>
+  <body>
+    <div class="proposal-banner">Прототип RFC-420 · сгенерирован из content.json · сайт в рамках #420 не меняется</div>
+    <main>
+      <section class="page-band standards-band" id="standards" aria-labelledby="standards-title">
+        <div class="standards-intro">
+          <p class="eyebrow">BCREQ · Стандарт документа требований</p>
+          <h1 id="standards-title">Документ BCREQ: восемь разделов, один шаблон</h1>
+          <p class="standards-lead">BCREQ — документ бизнес-требований к доработке продукта Манго. Он растёт по трём стадиям; после каждой стадии люди принимают решение на гейте. Ниже — оглавление документа, затем карточка каждого раздела по одному шаблону.</p>
+          <div class="standards-facts"><span>8 разделов · 3 стадии · 3 гейта</span><span>Каждый вывод — с основанием</span><span>Гейты принимают люди</span></div>
+        </div>
+        <div class="standards-layout">
+          <nav class="standards-index" aria-label="Разделы стандарта BCREQ">
+            <p class="eyebrow">В этом документе</p>
+            <a href="#standard-0"><span>00</span> Введение</a><a href="#standard-1"><span>01</span> Глоссарий</a><a href="#standard-2"><span>02</span> Бизнес-контекст</a><a href="#standard-3"><span>03</span> Функциональные требования</a><a href="#standard-4"><span>04</span> Нефункциональные требования</a><a href="#standard-5"><span>05</span> Описание решения (ОРР)</a><a href="#standard-6"><span>06</span> Особенности реализации и ограничения</a><a href="#standard-7"><span>07</span> UC, матрица покрытия, граничные кейсы</a><a href="#standard-8"><span>08</span> Дополнительные разделы</a>
+          </nav>
+          <div class="standards-content">
+            <article class="standard-card" id="standard-0" data-bcreq-section="0" data-document-structure tabindex="-1" aria-labelledby="standard-title-0">
+              <div class="standard-heading"><span class="standard-number">00</span><div><p class="eyebrow">Начните здесь · 2 минуты</p><h2 id="standard-title-0">Введение: как устроен документ</h2></div></div>
+              <h3>Кому что читать</h3>
+              <ul class="std-metrics"><li><strong>Руководитель</strong> — Введение и строки «Что» и «Зачем» оглавления — 2 минуты.</li><li><strong>Заказчик</strong> — Разделы 1–6 и план приёмки 8.3. Раздел 7 внутренний и Заказчику не отправляется.</li><li><strong>БА и ревьюер</strong> — Карточки целиком: «Принимаем, когда», «Метрики», пример.</li></ul>
+              <h3>Оглавление документа BCREQ</h3>
+              <table class="std-outline"><thead><tr><th>№</th><th>Раздел и подразделы</th><th>Что</th><th>Зачем</th><th>Стадия → гейт</th></tr></thead><tbody><tr><td>01</td><td><a href="#standard-1">Глоссарий</a><small>Термины</small><small>Расхождение с индустриальной практикой</small></td><td>Предметные термины задачи: одно определение на один термин.</td><td>Заказчик и команда читают разделы 2–6 в одних и тех же значениях слов.</td><td>A-IN → Г-IN; Заказчик согласует на Г-С1</td></tr><tr><td>02</td><td><a href="#standard-2">Бизнес-контекст</a><small>2.1 Контекст</small><small>2.2 Проблема</small><small>2.3 Цель</small><small>2.4 Границы</small><small>2.4.1 Включено</small><small>2.4.2 Не включено</small><small>2.5 Продукты и стейкхолдеры</small></td><td>Кто и что делает сейчас, чего не хватает, какой нужен результат и где кончается работа.</td><td>Заказчик подтверждает, что его поняли правильно, до того как пишутся требования.</td><td>A-IN → Г-IN; Заказчик согласует на Г-С1</td></tr><tr><td>03</td><td><a href="#standard-3">Функциональные требования</a><small>3.N Пункт верхнего уровня</small><small>3.N.M ФТ внутри группы</small><small>Пометка «→ раздел 5»</small></td><td>Что система должна делать после доработки; каждое ФТ проверяемо и ведёт к запросу.</td><td>Это обязательство, которое Заказчик подписывает на Согласовании 1; по нему работу оценивают и принимают.</td><td>A-CORE → Г-С1</td></tr><tr><td>04</td><td><a href="#standard-4">Нефункциональные требования</a><small>4.N НФТ</small><small>Пустой раздел</small></td><td>Измеримые свойства качества доработки: скорость, надёжность, защищённость и другие.</td><td>Без порога качество нельзя принять или оспорить; Заказчик подписывает НФТ вместе с ФТ.</td><td>A-CORE → Г-С1</td></tr><tr><td>05</td><td><a href="#standard-5">Описание решения (ОРР)</a><small>5.1 L1 ФДР — функциональное решение</small><small>5.2 L2 ТС — техническое решение</small><small>Трассировка ФТ ↔ ОРР</small></td><td>Как доработка выполнит каждое ФТ: 5.1 — поведение для Заказчика, 5.2 — технические изменения для разработки.</td><td>Даёт Заказчику понятную картину решения, а разработке и архитектору — основу для итоговой оценки.</td><td>A-WORK → Г-W</td></tr><tr><td>06</td><td><a href="#standard-6">Особенности реализации и ограничения</a><small>6.1 Особенности реализации</small><small>6.2 Ограничения</small></td><td>Где решение ведёт себя не так, как можно ожидать, и какие внешние ограничения нельзя снять в этой доработке.</td><td>Предупреждает заранее, чтобы особенность не стала претензией при приёмке.</td><td>A-WORK → Г-W</td></tr><tr><td>07</td><td><a href="#standard-7">UC, матрица покрытия, граничные кейсы</a><small>UC</small><small>Матрица покрытия UC × ФТ</small><small>Граничные кейсы</small></td><td>Сценарии использования, матрица «UC × ФТ» и граничные кейсы.</td><td>Внутренняя проверка полноты: каждое ФТ подтверждено сценарием, и ни один сценарий не остался без ФТ.</td><td>A-CORE (прогон 1) → Г-С1; A-WORK (прогон 2) → Г-W</td></tr><tr><td>08</td><td><a href="#standard-8">Дополнительные разделы</a><small>8.1 Риски</small><small>8.2 Зависимости</small><small>8.3 План приёмки</small><small>8.4 Реестр вопросов Заказчику</small><small>8.5 Журнал решений</small></td><td>Риски, зависимости, план приёмки, вопросы Заказчику и журнал решений.</td><td>Собирает всё, что нужно для оценки и приёмки, но не является требованием.</td><td>A-WORK → Г-W (8.4 ведётся с A-IN)</td></tr></tbody></table>
+              <h3>Стадии и гейты</h3>
+              <div class="standards-stage-grid"><div><strong>A-IN → Г-IN</strong><p>Пишем разделы 1–2. Решает: БА. Разделы 1 и 2 проходят чек-листы; границы заданы; расхождения терминов показаны БА; открытые вопросы — в 8.4.</p></div><div><strong>A-CORE → Г-С1 «Согласование 1»</strong><p>Пишем разделы 3, 4, 7 (прогон 1). Решает: Заказчик. Разделы 1–4 проходят чек-листы; 100 % ФТ покрыты сценариями UC; есть оценка «от»; блокирующих вопросов в 8.4 нет.</p></div><div><strong>A-WORK → Г-W</strong><p>Пишем разделы 5, 6, 7 (прогон 2), 8. Решает: Владелец продукта, архитектор, руководитель КК. Разделы 5–8 проходят чек-листы; трассировка ФТ ↔ ОРР полна; риски имеют владельцев; итоговая оценка готова.</p></div></div>
+              <p class="standards-note">Стиль текста различается по разделам намеренно: бюрократический (1, 3, 4) — для точности подписываемых формулировок; короткий (2, 5 L1, 6) — для быстрого чтения Заказчиком; табличный (5 L2, 7, 8) — строки с ID для проверки. Шаблон карточки при этом одинаков для всех разделов.</p>
+              <details class="standard-detail"><summary>Как читать карточку раздела</summary><ol class="std-legend"><li><strong>Стадия · гейт · адресат</strong> — когда раздел пишут, кто принимает, кто читает</li><li><strong>Что</strong> — одна фраза: что содержит раздел</li><li><strong>Зачем</strong> — одна фраза: какую задачу читателя решает</li><li><strong>Состав</strong> — по одному подразделу на строке</li><li><strong>Как пишем</strong> — стиль и формула текста</li><li><strong>Особое правило</strong> — одно правило, которое есть только у этого раздела</li><li><strong>Принимаем, когда</strong> — Необходимо — проверка каждого элемента; Достаточно — проверка набора целиком</li><li><strong>Метрики</strong> — числа, по которым ревьюер решает «да/нет»</li><li><strong>Понятия, пример, основание</strong> — раскрываются по запросу</li></ol><p>«Необходимо» проверяет каждый элемент: удалите его — что сломается? Если ничего, элемент лишний. «Достаточно» проверяет набор: возьмите каждый пункт источника — найдите элемент, который его покрывает. Так свойства требований разделяет ISO/IEC/IEEE 29148:2018: характеристики отдельного требования (§5.2.5, в том числе necessary) и набора требований (§5.2.6, в том числе complete, consistent).</p></details>
+            </article>
+            <article class="standard-card" id="standard-1" data-bcreq-section="1" tabindex="-1" aria-labelledby="standard-title-1">
+              <div class="standard-heading"><span class="standard-number">01</span><div><p class="eyebrow">Раздел 1</p><h2 id="standard-title-1">Глоссарий</h2></div></div>
+              <div class="std-meta"><span>A-IN → Г-IN; Заказчик согласует на Г-С1</span><span class="">Заказчик и команда</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Предметные термины задачи: одно определение на один термин.</dd><dt>Зачем</dt><dd>Заказчик и команда читают разделы 2–6 в одних и тех же значениях слов.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>•</b><span>Термины — таблица «термин · определение · основание».</span></li><li><b>•</b><span>Расхождение с индустриальной практикой — блок после таблицы — только если найдены расхождения С1–С3.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Бюрократический стиль. Определение — одно предложение «термин — родовое понятие — отличительный признак». Без требований, синонимов и ссылок на интерфейс.</p>
+              <div class="std-special"><h3>Основания глоссария и их приоритет</h3><p>Термин берётся из первого источника, где он есть. Нижние источники не заменяют верхние молча: расхождение показывают БА, решение БА записывают в 8.5.</p><ol><li><span class="rank">1</span><span><strong>Слова Заказчика или БА</strong> — Переносятся дословно. Это вход, а не справочник.<span class="status">действует</span></span></li><li><span class="rank">2</span><span><strong>Справочник согласованных терминов Манго (D0)</strong> — Приоритетное основание. Термины, согласованные внутри компании для всех продуктов.<span class="status gap">в модели нет — заглушка; пробел — триггер дельты (RFC-420-DEC-04)</span></span></li><li><span class="rank">3</span><span><strong>Модельный справочник: глоссарий продукта и БЗ</strong> — По kb-standard: БЗ не переопределяет глоссарий; новый термин — через issue в Хаб с пометкой «⚠️ требует уточнения».<span class="status">действует</span></span></li><li><span class="rank">4</span><span><strong>Маппинг терминов Манго ↔ международные аналоги (D11)</strong> — Связывает продуктовый термин с отраслевым аналогом для сверки.<span class="status">действует</span></span></li><li><span class="rank">5</span><span><strong>Индустриальный справочник: BABOK (D1) + IREB (D2), TM Forum (D9) — опорный стек ADR-003</strong> — Только для сверки, не для замены. Минимальный набор любой задачи: D1, D2, D11.<span class="status">действует</span></span></li><li><span class="rank">6</span><span><strong>Иные словари по профилю продукта (D3–D8, D10)</strong> — ISO/IEC/IEEE 24765, 29148, 3GPP, ITU-T, IEC, OpenAPI, ГОСТ 34.602 — когда их требует профиль продукта.<span class="status">действует</span></span></li></ol></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">Термины</span><span>Определение — одно предложение: родовое понятие и отличительный признак.</span></li><li><span class="ref">Термины</span><span>У термина указано основание из списка выше; слова Заказчика сохранены дословно.</span></li><li><span class="ref">Термины</span><span>Термин нельзя удалить: без него хотя бы одно место разделов 2–6 читается двояко.</span></li><li><span class="ref">Расхождение</span><span>Для каждого расхождения С1–С3 есть блок с рекомендацией; замену выбирает БА.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">Термины</span><span>Каждый предметный термин разделов 2–6 есть в глоссарии; неиспользуемых терминов нет.</span></li><li><span class="ref">Термины</span><span>Общеупотребительные слова в глоссарий не внесены.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Покрытие терминов разделов 2–6 — 100 %.</li><li>Терминов без основания — 0.</li><li>Расхождений С2 без решения БА — 0; иначе раздел 3 не начинают (CB-1.2).</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Классы расхождения С0–С4</dt><dd>С0 — совпадает название и значение. С1 — синоним. С2 — то же название, другое значение («ложный друг»), высокая критичность. С3 — значение уже или шире отраслевого. С4 — отраслевого аналога нет (термин продукта).</dd></div><div><dt>Справочник согласованных терминов Манго (D0)</dt><dd>Предлагаемое приоритетное основание глоссария. Пока его нет в модели, сайт показывает его как пробел, а RFC-420-DEC-04 описывает, как закрыть дельту.</dd></div></dl>
+              <p><strong>Корректно:</strong> «Группа обзвона — набор сотрудников, которым ВАТС одновременно или по очереди направляет входящий вызов.»<br><strong>Некорректно:</strong> «Группа обзвона — это когда звонок идёт сразу нескольким.»<br><strong>Почему:</strong> Нет родового понятия; разговорный стиль.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/01-glossary.md">стандарт раздела 1</a> · <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/003-ba-ontology.md">ADR-003: опорный стек TM Forum + IREB + BABOK</a> · <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/kb-standard.md">kb-standard</a> · <a href="https://cpre.ireb.org/en/downloads-and-resources/glossary">IREB CPRE Glossary</a></p>
+            </article>
+            <article class="standard-card" id="standard-2" data-bcreq-section="2" tabindex="-1" aria-labelledby="standard-title-2">
+              <div class="standard-heading"><span class="standard-number">02</span><div><p class="eyebrow">Раздел 2</p><h2 id="standard-title-2">Бизнес-контекст</h2></div></div>
+              <div class="std-meta"><span>A-IN → Г-IN; Заказчик согласует на Г-С1</span><span class="">Заказчик</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Кто и что делает сейчас, чего не хватает, какой нужен результат и где кончается работа.</dd><dt>Зачем</dt><dd>Заказчик подтверждает, что его поняли правильно, до того как пишутся требования.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>2.1</b><span>Контекст — кто действует, в какой ситуации, что делает сейчас; 1–3 предложения.</span></li><li><b>2.2</b><span>Проблема — чего не хватает для сценария 2.1 — словами Заказчика.</span></li><li><b>2.3</b><span>Цель — одна фраза о результате для Заказчика.</span></li><li><b>2.4</b><span>Границы — два списка: 2.4.1 и 2.4.2.</span></li><li><b>2.4.1</b><span>Включено — атомарные пункты работ, включая документацию, тестирование и вывод в эксплуатацию.</span></li><li><b>2.4.2</b><span>Не включено — исключения Заказчика и БА, ограничения платформы и версий.</span></li><li><b>2.5</b><span>Продукты и стейкхолдеры — продукты по классификации Манго, команды, согласующие; при одном продукте — одна строка.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Короткий стиль: главное первым, до трёх предложений в абзаце, до 20 слов в предложении. Основной текст — до 250 слов без реестра 2.5.</p>
+              <div class="std-special"><h3>Где записывать ограничения платформы и версий</h3><p>В новых задачах — пунктом 2.4.2 («Доработка не включает КЦ Десктоп»). В задачах, начатых по старой структуре, — в 6.2 со ссылкой из 2.4.2.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">2.1</span><span>Назван актор и текущий сценарий; есть источник.</span></li><li><span class="ref">2.2</span><span>Проблема сформулирована словами Заказчика, без технической интерпретации.</span></li><li><span class="ref">2.3</span><span>Цель — одна фраза; число — только с источником, иначе вопрос в 8.4.</span></li><li><span class="ref">2.4.1</span><span>Каждый пункт атомарный и проверяемый на принадлежность объёму.</span></li><li><span class="ref">2.4.2</span><span>Каждое исключение названо явно.</span></li><li><span class="ref">2.5</span><span>Продукты названы по классификации Манго; при двух и более — реестр.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">2.4</span><span>Любую работу можно отнести к 2.4.1 или к 2.4.2; противоречий между списками нет.</span></li><li><span class="ref">2.4.1</span><span>Включены документация, тестирование и вывод в эксплуатацию.</span></li><li><span class="ref">2</span><span>Лишнего нет: ни описания продукта целиком, ни реализации, ни НФТ.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Основной текст — до 250 слов.</li><li>Чисел без источника — 0.</li><li>Обязательные работы 2.4.1 — 3 из 3: документация, тестирование, вывод в эксплуатацию.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Измеримая цель</dt><dd>Результат, который можно проверить наблюдением или измерением: показатель, целевое значение, срок и источник. Чисел без источника не добавляют.</dd></div><div><dt>Включено / Не включено</dt><dd>Граница ответственности задачи: что обязано появиться и что сознательно исключено. Это не список технических компонентов.</dd></div></dl>
+              <p><strong>Корректно:</strong> 2.3: «Заказчик получает текст каждого разговора в своей CRM.»<br><strong>Некорректно:</strong> «Повысить эффективность и удобство работы.»<br><strong>Почему:</strong> Нет результата, размытые слова.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/02-business-context.md">стандарт раздела 2</a> · <a href="https://www.iiba.org/knowledgehub/business-analysis-body-of-knowledge-babok-guide/6-strategy-analysis/6-2-define-future-state/">BABOK 6.2: будущее состояние и цели</a> · <a href="https://docs.arc42.org/section-3/">arc42: context and scope</a></p>
+            </article>
+            <article class="standard-card" id="standard-3" data-bcreq-section="3" tabindex="-1" aria-labelledby="standard-title-3">
+              <div class="standard-heading"><span class="standard-number">03</span><div><p class="eyebrow">Раздел 3</p><h2 id="standard-title-3">Функциональные требования</h2></div></div>
+              <div class="std-meta"><span>A-CORE → Г-С1</span><span class="">Заказчик (подписывает)</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Что система должна делать после доработки; каждое ФТ проверяемо и ведёт к запросу.</dd><dt>Зачем</dt><dd>Это обязательство, которое Заказчик подписывает на Согласовании 1; по нему работу оценивают и принимают.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>3.N</b><span>Пункт верхнего уровня — одно ФТ или группа ФТ по бизнес-возможности (Capability).</span></li><li><b>3.N.M</b><span>ФТ внутри группы — состояния и условия одного действия.</span></li><li><b>•</b><span>Пометка «→ раздел 5» — нужное для решения, но не запрошенное изменение; описывается в ОРР.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Бюрократический стиль и шаблоны EARS: «Когда [событие], система должна [реакция]»; «Если [нежелательное событие], то система должна…».</p>
+              <div class="std-special"><h3>Правило 5±2 и два варианта раздела</h3><p>На каждом уровне списка — от 3 до 7 пунктов: 3–7 пунктов 3.N и 3–7 ФТ внутри группы. Больше 7 — сгруппировать; если групп всё ещё больше 7 — предложить БА разбить задачу. 1–2 пункта допустимы с обоснованием. Требования ради числа не придумывают.</p><ol><li><span class="rank">Зачем</span><span><strong>Обозримость на согласовании</strong> — Заказчику проще проверить и подписать короткий структурированный список. Это рабочий ориентир проекта, а не закон памяти: список на экране не нужно запоминать (NN/g), поэтому превышение допустимо с обоснованием.<span class="status">ориентир</span></span></li><li><span class="rank">Практика</span><span><strong>Как пишет БА</strong> — В двух выпусках с правкой БА — 3 и 4 пункта верхнего уровня, внутри групп — от 2 до 5 ФТ. Выборка мала (5 прогонов).<span class="status">наблюдение</span></span></li><li><span class="rank">В-Д</span><span><strong>Доработка (по умолчанию)</strong> — Описывается только изменение текущего поведения (фильтр Ф1).<span class="status">вариант</span></span></li><li><span class="rank">В-Н</span><span><strong>Новая разработка</strong> — Флаг «вариант: new»; полный набор функций по схеме Capability → Feature; фильтр Ф1 не применяется.<span class="status">вариант</span></span></li></ol></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">3.N</span><span>Ф1 Дельта (только В-Д): ФТ описывает изменение, а не текущее поведение.</span></li><li><span class="ref">3.N</span><span>Ф2 Трассировка: ФТ ведёт к пункту 2.4.1 или к запросу Заказчика.</span></li><li><span class="ref">3.N</span><span>Ф3 Единичность: одно ФТ — одно проверяемое действие.</span></li><li><span class="ref">3.N</span><span>Ф4 Чистота: нет интерфейса, архитектуры и показателей качества (они — в разделах 5 и 4).</span></li><li><span class="ref">3.N</span><span>Проверка: удалите ФТ — какой пункт 2.4.1 останется без покрытия? Если никакой — ФТ лишнее.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">2.4.1</span><span>Каждый пункт 2.4.1 покрыт ФТ или пометкой «→ раздел 5».</span></li><li><span class="ref">3.N</span><span>На каждом уровне — 3–7 пунктов или записано обоснование отклонения.</span></li><li><span class="ref">3.N</span><span>При двух и более продуктах группы построены по бизнес-возможности, а не по продуктам.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Покрытие пунктов 2.4.1 — 100 %.</li><li>ФТ без основания — 0.</li><li>Пунктов на уровне — 3–7 (или обоснование).</li><li>ФТ, покрытые сценариями UC раздела 7, — 100 % (условие Г-С1).</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Дельта</dt><dd>Разница между подтверждённым текущим поведением и требуемым: что добавляется, меняется или удаляется. Если текущее поведение неизвестно, фиксируют вопрос.</dd></div><div><dt>EARS</dt><dd>Easy Approach to Requirements Syntax — набор шаблонов фраз, которые делают условие, субъект и результат требования явными.</dd></div><div><dt>Индустриально значимое ФТ</dt><dd>Не запрошенная функция, без которой доработка по отраслевой практике неполна. Попадает в 3.N только после решения БА.</dd></div></dl>
+              <p><strong>Корректно:</strong> «Когда разговор завершён и текст разговора готов, система должна передавать текст разговора во внешнюю систему.»<br><strong>Некорректно:</strong> «Система должна быстро передавать текст.»<br><strong>Почему:</strong> Размытое «быстро»; показатель — в раздел 4.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md">стандарт раздела 3</a> · <a href="https://alistairmavin.com/ears/">EARS: авторское описание шаблонов</a> · <a href="https://www.iso.org/standard/72089.html">ISO/IEC/IEEE 29148:2018</a> · <a href="https://www.nngroup.com/articles/short-term-memory-and-web-usability/">NN/g: Short-Term Memory and Web Usability</a></p>
+            </article>
+            <article class="standard-card" id="standard-4" data-bcreq-section="4" tabindex="-1" aria-labelledby="standard-title-4">
+              <div class="standard-heading"><span class="standard-number">04</span><div><p class="eyebrow">Раздел 4</p><h2 id="standard-title-4">Нефункциональные требования</h2></div></div>
+              <div class="std-meta"><span>A-CORE → Г-С1</span><span class="">Заказчик (подписывает)</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Измеримые свойства качества доработки: скорость, надёжность, защищённость и другие.</dd><dt>Зачем</dt><dd>Без порога качество нельзя принять или оспорить; Заказчик подписывает НФТ вместе с ФТ.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>4.N</b><span>НФТ — одно требование из пяти элементов: характеристика, метрика, порог, условие, источник.</span></li><li><b>•</b><span>Пустой раздел — если НФТ не заданы — заголовок без пунктов и до 5 вопросов БА.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Бюрократический стиль: одно НФТ — одна метрика с порогом. НФТ пишут, только если оно есть во входных данных.</p>
+              <div class="std-special"><h3>Пять элементов НФТ</h3><p>Характеристика ISO/IEC 25010:2023 → метрика → порог → условие измерения → источник. Пример: производительность · время доставки текста в CRM · ≤ 5 минут для 95 % разговоров · до 1 000 разговоров в час · запрос Заказчика.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">4.N</span><span>Есть все пять элементов; ревьюер понимает, как подтвердить или опровергнуть выполнение.</span></li><li><span class="ref">4.N</span><span>Требование взято из входных данных; «стандартные» НФТ без источника не добавлены.</span></li><li><span class="ref">4.N</span><span>НФТ не повторяет ФТ и не описывает решение раздела 5.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">4</span><span>Каждое НФТ из входных данных записано.</span></li><li><span class="ref">4</span><span>Если НФТ нет — заголовок сохранён и задано не более 5 вопросов; неизвестный порог — вопрос в 8.4.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>НФТ без метрики, порога или источника — 0.</li><li>Вопросов при пустом разделе — не более 5.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Характеристики качества ISO/IEC 25010:2023</dt><dd>Девять категорий оценки: функциональная пригодность, производительность, совместимость, взаимодействие, надёжность, защищённость, сопровождаемость, гибкость, безопасность эксплуатации. Порог задаёт конкретное НФТ, а не характеристика.</dd></div></dl>
+              <p><strong>Корректно:</strong> «Надёжность: если внешняя система недоступна, система должна повторять доставку не менее 3 раз в течение 1 часа. Источник: документация API, §…»<br><strong>Некорректно:</strong> «Система должна обеспечивать отказоустойчивость 99,99 %.» (без источника)<br><strong>Почему:</strong> Число без источника — выдумка.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md">стандарт раздела 4</a> · <a href="https://www.iso.org/standard/78176.html">ISO/IEC 25010:2023</a></p>
+            </article>
+            <article class="standard-card" id="standard-5" data-bcreq-section="5" tabindex="-1" aria-labelledby="standard-title-5">
+              <div class="standard-heading"><span class="standard-number">05</span><div><p class="eyebrow">Раздел 5</p><h2 id="standard-title-5">Описание решения (ОРР)</h2></div></div>
+              <div class="std-meta"><span>A-WORK → Г-W</span><span class="">Заказчик (5.1), разработка (5.2)</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Как доработка выполнит каждое ФТ: 5.1 — поведение для Заказчика, 5.2 — технические изменения для разработки.</dd><dt>Зачем</dt><dd>Даёт Заказчику понятную картину решения, а разработке и архитектору — основу для итоговой оценки.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>5.1</b><span>L1 ФДР — функциональное решение — кто, где, что делает и что получает; обязателен.</span></li><li><b>5.2</b><span>L2 ТС — техническое решение — изменяемые сервисы, дельта API и данных; по выбору БА.</span></li><li><b>•</b><span>Трассировка ФТ ↔ ОРР — таблица: ФТ · пункт L1 · пункт L2 · продукт · стык.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>5.1 — короткий стиль, до 900 слов без таблицы трассировки. 5.2 — технические таблицы и контракты OpenAPI/AsyncAPI.</p>
+              <div class="std-special"><h3>Когда нужен L2</h3><p>Меняется публичный API, затронуты два и более продукта или нужна детальная оценка — рекомендуется L1+L2. Иначе L1, а в 5.2 одна строка «L2 — на стороне команды разработки». Модель рекомендует, выбирает БА.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">5.1</span><span>Для каждого ФТ описано видимое пользователю поведение; нет методов API, БД и имён сервисов.</span></li><li><span class="ref">5.2</span><span>Дельта API указывает тип изменения и обратную совместимость (если API меняется).</span></li><li><span class="ref">Трассировка</span><span>Каждая строка 5.2 ведёт к строке 5.1.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">Трассировка</span><span>Каждое ФТ раздела 3 есть в таблице трассировки.</span></li><li><span class="ref">5</span><span>Неизменяемые части системы не описаны.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>ФТ в таблице трассировки — 100 %.</li><li>5.1 — до 900 слов.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Трассируемость</dt><dd>Возможность пройти по ID от требования к решению и проверяющему сценарию и обратно. Совпадение формулировок не заменяет ссылку.</dd></div><div><dt>C4</dt><dd>Модель диаграмм архитектуры: L1 — контекст системы, L2 — контейнеры и сервисы.</dd></div></dl>
+              <p><strong>Корректно:</strong> 5.1: «Администратор включает передачу текста разговора в настройках интеграции ЛК. После разговора ВАТС отправляет текст в CRM Заказчика.»<br><strong>Некорректно:</strong> 5.1: «Сервис transcription-gateway публикует событие в Kafka-топик.»<br><strong>Почему:</strong> Детали L2 в L1.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md">стандарт раздела 5</a> · <a href="https://c4model.com/">C4 model</a> · <a href="https://spec.openapis.org/oas/latest.html">OpenAPI Specification</a></p>
+            </article>
+            <article class="standard-card" id="standard-6" data-bcreq-section="6" tabindex="-1" aria-labelledby="standard-title-6">
+              <div class="standard-heading"><span class="standard-number">06</span><div><p class="eyebrow">Раздел 6</p><h2 id="standard-title-6">Особенности реализации и ограничения</h2></div></div>
+              <div class="std-meta"><span>A-WORK → Г-W</span><span class="">Заказчик и разработка</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Где решение ведёт себя не так, как можно ожидать, и какие внешние ограничения нельзя снять в этой доработке.</dd><dt>Зачем</dt><dd>Предупреждает заранее, чтобы особенность не стала претензией при приёмке.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>6.1</b><span>Особенности реализации — задержки, порядок, частичная обработка, поведение при ошибке.</span></li><li><b>6.2</b><span>Ограничения — «ограничение · источник · последствие для Заказчика».</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Короткий стиль, до 250 слов. Каждый пункт — факт и последствие для Заказчика.</p>
+              <div class="std-special"><h3>Граница с 2.4.2</h3><p>Ограничение платформы или версии в новой задаче — пункт 2.4.2, а не 6.2. В 6.2 оно остаётся только для задач по старой структуре, со ссылкой из 2.4.2.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">6.1</span><span>Каждая особенность ведёт к пункту раздела 5 и называет последствие для Заказчика.</span></li><li><span class="ref">6.2</span><span>Каждое ограничение задано извне и имеет источник и последствие.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">6.1</span><span>Пустой подраздел помечен «нет».</span></li><li><span class="ref">6.2</span><span>Пустой подраздел помечен «нет»; неизвестные условия — вопросы в 8.4.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Ограничений без источника — 0.</li><li>Текст — до 250 слов.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Ограничение (constraint)</dt><dd>Заданное извне условие, которое сужает выбор решения (ISO/IEC/IEEE 29148). Предпочтение команды ограничением не является.</dd></div></dl>
+              <p><strong>Корректно:</strong> 6.2: «Внешняя CRM принимает не более 10 запросов в секунду · источник: документация CRM, §… · при пиковой нагрузке доставка задерживается.»<br><strong>Некорректно:</strong> 6.2: «Возможны ограничения со стороны CRM.»<br><strong>Почему:</strong> Нет ограничения, источника и последствия.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md">стандарт раздела 6</a> · <a href="https://cpre.ireb.org/en/downloads-and-resources/glossary">IREB: constraint</a></p>
+            </article>
+            <article class="standard-card" id="standard-7" data-bcreq-section="7" tabindex="-1" aria-labelledby="standard-title-7">
+              <div class="standard-heading"><span class="standard-number">07</span><div><p class="eyebrow">Раздел 7</p><h2 id="standard-title-7">UC, матрица покрытия, граничные кейсы</h2></div></div>
+              <div class="std-meta"><span>A-CORE (прогон 1) → Г-С1; A-WORK (прогон 2) → Г-W</span><span class="internal">Внутренний — Заказчику не отправляется</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Сценарии использования, матрица «UC × ФТ» и граничные кейсы.</dd><dt>Зачем</dt><dd>Внутренняя проверка полноты: каждое ФТ подтверждено сценарием, и ни один сценарий не остался без ФТ.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>•</b><span>UC — ID · актор · предусловие · основной поток до 7 шагов · альтернативы · результат · ФТ · класс.</span></li><li><b>•</b><span>Матрица покрытия UC × ФТ — каждое ФТ покрыто хотя бы одним UC.</span></li><li><b>•</b><span>Граничные кейсы — прогон 2: граничные значения, классы эквивалентности, переходы состояний.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Табличный стиль: строка с ID, в ячейке до двух предложений. Шаг потока — «актор или система + глагол + объект».</p>
+              <div class="std-special"><h3>Классы UC и два прогона</h3><p>Класс «влияет» связан с ФТ; «не влияет» сохраняется как доказательство проверки; «что ещё предусмотреть» ведёт к вопросу в 8.4. Прогон 1 — после раздела 3, без UI, до Г-С1. Прогон 2 — после раздела 5, с UI и API, до Г-W.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">UC</span><span>Каждый UC заполнен по шаблону и имеет класс.</span></li><li><span class="ref">UC</span><span>UC не дублирует другой UC с иным актором без иного поведения.</span></li><li><span class="ref">Граничные кейсы</span><span>Кейс называет конкретные граничные значения.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">Матрица</span><span>Покрытие ФТ сценариями — 100 %; нет UC «влияет» без ФТ.</span></li><li><span class="ref">UC</span><span>Стыковые ФТ имеют UC, проходящий через оба продукта.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Покрытие ФТ = ФТ с UC / все ФТ × 100 % = 100 % (условие Г-С1).</li><li>Шагов основного потока — до 7.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>UC (use case)</dt><dd>Взаимодействие участника с системой ради наблюдаемого результата: предусловие, основной поток, альтернативы, результат.</dd></div></dl>
+              <p><strong>Корректно:</strong> Граничный кейс: «текст разговора длительностью 0 с; ровно на пороге хранения 90 дней; 91 день».<br><strong>Некорректно:</strong> «Проверить разные длительности.»<br><strong>Почему:</strong> Нет граничных значений.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md">стандарт раздела 7</a> · <a href="https://glossary.istqb.org/">ISTQB Glossary</a></p>
+            </article>
+            <article class="standard-card" id="standard-8" data-bcreq-section="8" tabindex="-1" aria-labelledby="standard-title-8">
+              <div class="standard-heading"><span class="standard-number">08</span><div><p class="eyebrow">Раздел 8</p><h2 id="standard-title-8">Дополнительные разделы</h2></div></div>
+              <div class="std-meta"><span>A-WORK → Г-W (8.4 ведётся с A-IN)</span><span class="internal">Внутренний; план приёмки 8.3 — Заказчику</span></div>
+              <dl class="std-what"><dt>Что</dt><dd>Риски, зависимости, план приёмки, вопросы Заказчику и журнал решений.</dd><dt>Зачем</dt><dd>Собирает всё, что нужно для оценки и приёмки, но не является требованием.</dd></dl>
+              <h3>Состав</h3>
+              <ul class="std-composition"><li><b>8.1</b><span>Риски — причина → событие → последствие, вероятность, влияние, мера, владелец.</span></li><li><b>8.2</b><span>Зависимости — от чего зависит, что блокирует, статус от человека.</span></li><li><b>8.3</b><span>План приёмки — критерий · ФТ/НФТ · способ проверки · кто принимает.</span></li><li><b>8.4</b><span>Реестр вопросов Заказчику — вопрос · раздел-источник · кому · срок · ответ.</span></li><li><b>8.5</b><span>Журнал решений — решение · кто принял · дата · основание · затронутые разделы.</span></li></ul>
+              <h3>Как пишем</h3>
+              <p>Табличный стиль. Критерий приёмки 8.3 — «Дано / Когда / Тогда» или проверяемое утверждение с числом.</p>
+              <div class="std-special"><h3>Кто записывает решения</h3><p>Решение в 8.5 записывает человек или модель со ссылкой на реплику человека. Модель не согласует документ за человека.</p></div>
+              <h3>Принимаем, когда</h3>
+              <div class="std-accept">
+                <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist"><li><span class="ref">8.1</span><span>У риска есть причина, последствие, мера и владелец.</span></li><li><span class="ref">8.2</span><span>Зависимость указывает, что она блокирует.</span></li><li><span class="ref">8.3</span><span>Критерий проверяем и ведёт к ФТ или НФТ.</span></li><li><span class="ref">8.4</span><span>У вопроса есть адресат, срок и ответ или явное «нет ответа».</span></li><li><span class="ref">8.5</span><span>У решения есть автор, дата и основание.</span></li></ul></div>
+                <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist"><li><span class="ref">8.1</span><span>Риск без меры или владельца перенесён в 8.4 как вопрос.</span></li><li><span class="ref">8.4</span><span>Все открытые вопросы документа собраны здесь.</span></li></ul></div>
+              </div>
+              <h3>Метрики</h3>
+              <ul class="std-metrics"><li>Рисков без владельца — 0 (условие Г-W).</li><li>Блокирующих вопросов в 8.4 на Г-С1 — 0.</li></ul>
+              <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions"><div><dt>Критерий приёмки</dt><dd>Условие, по которому уполномоченный участник решает, приемлем ли результат. Это не отметка «раздел заполнен».</dd></div></dl>
+              <p><strong>Корректно:</strong> 8.3: «Дано: передача включена. Когда разговор завершён. Тогда текст появляется в CRM не позднее 5 минут · ФТ 3.2, НФТ 4.1.»<br><strong>Некорректно:</strong> 8.3: «Всё работает корректно.»<br><strong>Почему:</strong> Непроверяемо.</p></details>
+              <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md">стандарт раздела 8</a> · <a href="https://www.iso.org/standard/65694.html">ISO 31000:2018</a></p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
