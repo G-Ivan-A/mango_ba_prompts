@@ -119,14 +119,15 @@ def main() -> int:
             errors.append(f"site/data/stats.json: totals.{key} expected {expected}, found {totals.get(key)!r}")
 
     phase_ids = [phase.get("id") for phase in stats_data.get("phases", [])]
-    for phase_id in ("prompts", "agents", "multiagents"):
+    # Four stages of ADR-017 (issue #413) replace "multiagents".
+    for phase_id in ("prompts", "agents", "n8n", "server"):
         if phase_id not in phase_ids:
             errors.append(f"site/data/stats.json: phases missing {phase_id}")
 
     if len(roadmap_data.get("levels", [])) < 4:
-        errors.append("site/data/roadmap.json: expected at least 4 maturity levels from docs/ba-ecosystem.md")
+        errors.append("site/data/roadmap.json: expected at least 4 stages from docs/roadmap.md")
     if len(roadmap_data.get("gaps", [])) < 6:
-        errors.append("site/data/roadmap.json: expected roadmap known gaps from docs/ba-ecosystem.md")
+        errors.append("site/data/roadmap.json: expected at least 6 next steps from docs/roadmap.md")
 
     app_js = read_text("site/app.js")
     index_html = read_text("site/index.html")
