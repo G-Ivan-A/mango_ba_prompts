@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.6
+version: 0.7
 updated: 2026-10-31
 ai-generated: true
 type: register
@@ -13,6 +13,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/409"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/411"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/415"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -25,6 +26,7 @@ related_artifacts:
   - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
   - "docs/rfc/2026-10-repository-modernization.md"
   - "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
+  - "docs/rfc/2026-10-ba-automation-strategy.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -193,6 +195,24 @@ PR #412; промпты, классы, сайт и процесс БА не из
 | [RFC-411-DEC-11](2026-10-bcreq-run-lessons-pipeline.md#dec-411-11-поправки-к-rfc-модернизации-репозитория) | RFC модернизации | Цикл качества промптов в критериях выхода этапов, исправления путей и DoD | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
 | [RFC-411-DEC-12](2026-10-bcreq-run-lessons-pipeline.md#dec-411-12-метаданные-adr-015) | ADR-015 | Исправить `decision-type` | [отчёт #411](../analysis/2026-10-31-bcreq-pipeline-run-experience-review.md) | `proposed` | — |
 
+## Стратегия автоматизации БА команды крупных клиентов (источник: issue #415)
+
+RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.1 собирает видение, концепцию, архитектуру и
+дорожную карту в одном документе для руководителей разработки и маркетинга
+и выносит на согласование восемь решений. Канонические документы `docs/`
+меняются отдельной задачей после принятия.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-415-DEC-01](2026-10-ba-automation-strategy.md#dec-415-01) | Форма документа | RFC с четырьмя разделами; перенос в `docs/` отдельной задачей после принятия | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-02](2026-10-ba-automation-strategy.md#dec-415-02) | Область этапов 1–4 | Команда БА крупных клиентов (КК); остальные команды — этап 5 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-03](2026-10-ba-automation-strategy.md#dec-415-03) | Этап 2 | Агентный клиент + оценка исполнимости ТЗ заказчика; RUN-0077 — пример, не эталон | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-04](2026-10-ba-automation-strategy.md#dec-415-04) | Этап 5 | Масштабирование на продуктовые команды и аналитиков после ворот 3, параллельно этапу 4 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-05](2026-10-ba-automation-strategy.md#dec-415-05) | `docs/roadmap.md` | Stage-gate + Now/Next/Later + карточка «что — зачем — как — сколько»; оценки — гипотезы | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-06](2026-10-ba-automation-strategy.md#dec-415-06) | `docs/vision.md` | Метрики для руководства с базовой линией этапа 1 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-07](2026-10-ba-automation-strategy.md#dec-415-07) | Агентный клиент этапа 2 | OpenCode — базовый кандидат; выбор квалификацией ADR-016 (CH-1) | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-08](2026-10-ba-automation-strategy.md#dec-415-08) | Сайт, «О проекте» | Показ четырёх разделов после принятия DEC-11 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -226,3 +246,6 @@ PR #412; промпты, классы, сайт и процесс БА не из
   issue #411 (PR #412). RFC-документ —
   [`docs/rfc/2026-10-bcreq-run-lessons-pipeline.md`](2026-10-bcreq-run-lessons-pipeline.md) v0.1; решение —
   [ADR-017](../adr/2026-10-adr-017-run-lessons-ssot.md).
+- **2026-10-31** — добавлены RFC-415-DEC-01…08 в статусе `proposed` по итогам
+  issue #415 (PR #416). RFC-документ —
+  [`docs/rfc/2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.1.
