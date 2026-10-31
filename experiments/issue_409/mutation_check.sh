@@ -19,5 +19,6 @@ mutate docs/audit/2026-10-31-repository-audit.md 's/233$/234/;s/^   актуал
 mutate docs/analysis/2026-10-31-follow-up-tasks.md 's#(\.\./audit/#(https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/x/docs/audit/#' "fork link"
 mutate docs/analysis/2026-10-31-follow-up-tasks.md 's/^updated: 2026-10-31/updated: 2026-10-31\nai-generated: true/' "forbidden ai-generated field"
 mutate docs/audit/2026-10-31-repository-audit.md 's/ владелец / Фаундер /' "forbidden term"
+mutate docs/rfc/2026-10-repository-modernization.md "0,/^## Summary/s//## Summary\n\nLearning loop./" "jargon in RFC"
 mutate docs/rfc/2026-10-repository-modernization.md 's/hybrid-Intelligence-lab\/blob\/32b5fa52/hybrid-Intelligence-lab\/blob\/main/' "unpinned Hub link"
 exit $rc

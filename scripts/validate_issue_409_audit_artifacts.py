@@ -9,13 +9,15 @@
 * идентификаторы F-xx, DEC-xx, T-xx, H-xx разрешаются в определения;
 * относительные ссылки и якоря существуют, ссылки на другие репозитории
   закреплены на коммитах, ссылок на временные ветки форка нет;
-* frontmatter проходит валидатор Хаба, запрещённых полей и терминов нет;
+* frontmatter проходит валидатор Хаба, поля ``ai-generated`` нет, жаргона из
+  ``FORBIDDEN_TERMS`` валидатора #263 нет;
 * RFC имеет статус ``proposed`` и зарегистрирован в ``docs/rfc/rfc-register.md``.
 
 История git не читается: CI работает на shallow-клоне, поэтому реестр
 сверяется сам с собой и с документами, а не с деревом базового коммита.
 """
 
+import importlib.util
 import json
 import re
 import subprocess
@@ -313,12 +315,24 @@ class Hygiene(unittest.TestCase):
         self.assertEqual(proc.returncode, 0, proc.stdout + proc.stderr)
 
     def test_forbidden_fields_and_terms(self):
-        # Анализы #407 — датированные свидетельства: их термины не переписываются.
+        # Словарь жаргона — тот же, что валидатор #263 запрещает в концептуальных
+        # документах. RFC и предложение по стратегическим документам станут их
+        # источником, поэтому проверяются по всему списку; анализ эволюции
+        # цитирует сам запрет, поэтому остальным артефактам запрещено только
+        # «Фаундер». Анализы #407 — датированные свидетельства, их термины
+        # не переписываются.
+        spec = importlib.util.spec_from_file_location(
+            "vision263", ROOT / "scripts/validate_issue_263_vision_alignment.py")
+        vision263 = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(vision263)
         for path in (*ARTIFACTS, *ANALYSES_407):
             with self.subTest(path=path.name):
                 self.assertNotIn("ai-generated", frontmatter(path))
-                if path in ARTIFACTS:
-                    self.assertNotIn("Фаундер", text(path))
+                if path in (RFC, STRATEGY):
+                    for term in vision263.FORBIDDEN_TERMS:
+                        self.assertNotIn(term, text(path))
+                elif path in ARTIFACTS:
+                    self.assertNotIn("аундер", text(path))
                 self.assertEqual(frontmatter(path)["updated"][:7], "2026-10")
 
     def test_analysis_frontmatter_is_hub_class(self):
