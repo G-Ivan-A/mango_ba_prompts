@@ -255,6 +255,7 @@ def render_readme(registry: dict, coverage: dict) -> str:
         "status: draft",
         f"version: {registry['version']}",
         f"updated: {registry['updated']}",
+        "temperature: 0.1",
         f"owner: {registry['owner']}",
         "---",
         "",

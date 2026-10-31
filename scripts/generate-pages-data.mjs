@@ -16,6 +16,8 @@ const SOURCE_FILES = {
   ecosystem: "docs/ba-ecosystem.md",
   patternsReadme: "patterns/README.md",
   bcreqFlow: "docs/ba-processes/bcreq-manual-process.md",
+  lessons: "standards/bcreq-lessons/lessons.json",
+  lessonsCoverage: "standards/bcreq-lessons/coverage.json",
 };
 
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
@@ -1110,6 +1112,82 @@ function makeBcreqFlow(markdown, prompts) {
   };
 }
 
+// Уроки прогонов (issue #411): реестр standards/bcreq-lessons/lessons.json —
+// SSOT, счётчики — coverage.json (генерирует scripts/build_bcreq_lessons.py).
+// На сайт идут правило, проверка и примеры урока, счётчики и привязка к шагам;
+// идентификаторы прогонов и задач на сайт не выводятся.
+function makeLessons(registry, coverage, prompts) {
+  const promptsByFile = new Map(prompts.map((prompt) => [prompt.file, prompt]));
+  const keyFiles = Object.entries(registry.prompt_keys).map(([key, rel]) => [key, path.basename(rel)]);
+  const lessons = registry.lessons.map((lesson) => {
+    const counts = coverage.lessons[lesson.id] || {};
+    const files = lesson.prompts.includes("all")
+      ? keyFiles.map(([, file]) => file)
+      : lesson.prompts.map((key) => path.basename(registry.prompt_keys[key]));
+    return {
+      id: lesson.id,
+      title: lesson.title,
+      level: lesson.level,
+      status: lesson.status,
+      placement: lesson.placement || "list",
+      anchors: lesson.anchors,
+      rule: lesson.rule,
+      check: lesson.check,
+      bad: lesson.bad,
+      good: lesson.good,
+      prompts: lesson.status === "active" && lesson.level === "runtime" ? files : [],
+      golden: lesson.golden,
+      total: counts.total || 0,
+      repeats: counts.repeats || 0,
+      baCaught: counts.ba_caught || 0,
+      runs: Object.keys(counts.runs || {}).length,
+      sources: (counts.inventory || []).length + (counts.qualitative || []).length,
+    };
+  });
+  lessons.sort((a, b) => b.total - a.total || a.id.localeCompare(b.id));
+  for (const lesson of lessons) {
+    for (const file of lesson.prompts) {
+      if (!promptsByFile.has(file)) {
+        throw new Error(`${SOURCE_FILES.lessons}: ${lesson.id} ссылается на неизвестный промпт ${file}`);
+      }
+    }
+  }
+  const runtime = lessons.filter((lesson) => lesson.level === "runtime" && lesson.status === "active");
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [
+      { path: SOURCE_FILES.lessons, url: repoUrl(SOURCE_FILES.lessons) },
+      { path: SOURCE_FILES.lessonsCoverage, url: repoUrl(SOURCE_FILES.lessonsCoverage) },
+    ],
+    links: {
+      registry: repoUrl("standards/bcreq-lessons/README.md"),
+      goldenSet: repoUrl(registry.golden_set),
+      rubric: repoUrl(registry.rubric),
+      adr: repoUrl(registry.adr),
+      rfc: repoUrl(registry.rfc),
+    },
+    totals: {
+      lessons: lessons.length,
+      runtime: runtime.length,
+      proposed: lessons.filter((lesson) => lesson.status === "proposed").length,
+      authoring: lessons.filter((lesson) => lesson.level === "authoring").length,
+      incidents: coverage.incidents_total,
+      repeatsAfterRemark: coverage.repeats_after_ba_remark_total,
+      runs: Object.keys(coverage.runs).length,
+      unmapped: coverage.unmapped_codes.length,
+    },
+    lessons,
+  };
+}
+
+function attachStepLessons(flow, lessonsData) {
+  for (const step of flow.manual.steps) {
+    step.lessons = lessonsData.lessons
+      .filter((lesson) => lesson.prompts.includes(step.prompt.file))
+      .map((lesson) => lesson.id);
+  }
+}
+
 async function main() {
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
@@ -1262,9 +1340,19 @@ async function main() {
   await writeJson("site/data/processes.json", processesData);
   await writeJson("site/data/patterns.json", patternsData);
   const bcreqFlow = makeBcreqFlow(await read(SOURCE_FILES.bcreqFlow), prompts);
+  const lessonsData = makeLessons(
+    JSON.parse(await read(SOURCE_FILES.lessons)),
+    JSON.parse(await read(SOURCE_FILES.lessonsCoverage)),
+    prompts,
+  );
+  attachStepLessons(bcreqFlow, lessonsData);
   await writeJson("site/data/bcreq-flow.json", bcreqFlow);
+  await writeJson("site/data/lessons.json", lessonsData);
 
   console.log(`Generated ${prompts.length} prompts`);
+  console.log(
+    `Generated run lessons: ${lessonsData.totals.lessons} lessons, ${lessonsData.totals.incidents} incidents, ${lessonsData.totals.unmapped} unmapped`,
+  );
   console.log(
     `Generated BCREQ flow: ${bcreqFlow.manual.steps.length} manual steps, ${bcreqFlow.approval.stages.length} approval stages`,
   );
