@@ -41,8 +41,13 @@ def num(card: dict) -> str:
 
 
 def comp_label(item: dict) -> str:
-    """Numbered subsections show their number; unnumbered parts show only the title."""
-    return f'{item["n"]} {item["title"]}' if "." in item["n"] else item["title"]
+    """Numbered subsections show their number; unnumbered parts are marked explicitly."""
+    return f'{item["n"]} {item["title"]}' if item["n"] else f'{item["title"]} (без номера)'
+
+
+def depth(item: dict) -> int:
+    """2.4.1 is nested under 2.4; 3.N.M under 3.N."""
+    return max(item["n"].count(".") - 1, 0)
 
 
 # --------------------------------------------------------------------------- Markdown
@@ -51,7 +56,7 @@ def comp_label(item: dict) -> str:
 def outline_rows(data: dict) -> list[str]:
     rows = ["| № | Раздел и подразделы | Что | Зачем | Стадия → гейт |", "| --- | --- | --- | --- | --- |"]
     for card in data["cards"]:
-        subs = "<br>".join(comp_label(c) for c in card["composition"])
+        subs = "<br>".join("└ " * depth(c) + comp_label(c) for c in card["composition"])
         rows.append(f'| {card["n"]} | **{card["title"]}**<br>{subs} | {card["what"]} | {card["why"]} | {card["stage"]} |')
     return rows
 
@@ -59,30 +64,34 @@ def outline_rows(data: dict) -> list[str]:
 def render_markdown(data: dict) -> str:
     page, intro = data["page"], data["intro"]
     out = [f'# {page["title"]}', "", f'_{page["eyebrow"]}_', "", page["lead"], "", " · ".join(page["facts"]), ""]
+    out += [f'## {page["summary_title"]}', ""] + [f"- **{k}.** {v}" for k, v in page["summary"]] + [""]
+    out += [f'## {page["customer_title"]}', ""] + [f"- **{k}.** {v}" for k, v in page["customer"]] + [""]
+    out += [f'▸ **{page["abbr_title"]}**', ""] + [f"- **{k}** — {v}" for k, v in page["abbr"]] + [""]
     out += [f'## 0. {intro["title"]}', "", "**Кому что читать**", ""]
     out += [f'- **{a["who"]}** — {a["reads"]}' for a in intro["audiences"]]
     out += ["", "**Оглавление документа BCREQ**", ""] + outline_rows(data)
     out += ["", "**Стадии и гейты**", "", "| Стадия | Пишем разделы | Гейт | Кто решает | Условие прохода |", "| --- | --- | --- | --- | --- |"]
     out += [f'| {s["stage"]} | {s["sections"]} | {s["gate"]} | {s["decides"]} | {s["criteria"]} |' for s in intro["stages"]]
-    out += ["", intro["styles"], "", f'**{intro["template_title"]}**', ""]
+    out += ["", intro["gates_note"], "", intro["trace"], "", intro["process_metrics"], ""]
+    out += [intro["styles"], "", f'▸ **{intro["template_title"]}**', ""]
     out += [f"{i}. **{name}** — {text}" for i, (name, text) in enumerate(intro["template"], 1)]
     out += ["", f'**Необходимо и достаточно.** {intro["nec_suf"]}', ""]
     for card in data["cards"]:
         out += [f'## {card["n"]}. {card["title"]}', ""]
         out += [f'**Стадия · гейт:** {card["stage"]} · **Адресат:** {card["audience"]}', ""]
         out += [f'**Что.** {card["what"]}', "", f'**Зачем.** {card["why"]}', "", "**Состав**", ""]
-        out += [f'- {comp_label(c)} — {c["text"]}' for c in card["composition"]]
-        out += ["", f'**Как пишем.** {card["how"]}', "", f'**Особое правило: {card["special"]["title"]}.** {card["special"]["lead"]}', ""]
+        out += [f'{"  " * depth(c)}- {comp_label(c)} — {c["text"]}' for c in card["composition"]]
+        out += ["", f'**Как пишем.** {card["how"]}', "", f'**Правило раздела: {card["special"]["title"]}.** {card["special"]["lead"]}', ""]
         for item in card["special"]["items"]:
             out.append(f'- {item["rank"]}. **{item["name"]}** — {item["text"]} _[{item["status"]}]_')
         if card["special"]["items"]:
             out.append("")
-        out += ["**Принимаем, когда**", "", "_Необходимо — каждый элемент:_", ""]
+        out += ["▸ **Для БА и ревьюера: принимаем, когда и метрики** (чек-лист раздела)", "", "_Необходимо — каждый элемент:_", ""]
         out += [f'- [{c["ref"]}] {c["text"]}' for c in card["necessary"]]
         out += ["", "_Достаточно — набор целиком:_", ""]
         out += [f'- [{c["ref"]}] {c["text"]}' for c in card["sufficient"]]
         out += ["", "**Метрики**", ""] + [f"- {m}" for m in card["metrics"]]
-        out += ["", "**Ключевые понятия**", ""] + [f'- **{t["term"]}** — {t["def"]}' for t in card["terms"]]
+        out += ["", "▸ **Ключевые понятия и пример**", ""] + [f'- **{t["term"]}** — {t["def"]}' for t in card["terms"]]
         ex = card["example"]
         out += ["", f'**Пример.** Корректно: {ex["good"]} Некорректно: {ex["bad"]} Почему: {ex["why"]}', ""]
         out += ["**Основание:** " + " · ".join(f"[{label}]({url})" for label, url in card["sources"]), ""]
@@ -120,6 +129,16 @@ EXTRA_CSS = """
 .std-outline td:first-child{color:var(--teal);font-weight:750}
 .std-outline small{display:block;color:var(--muted)}
 .std-legend{margin:0;padding-left:20px;font-size:.88rem}
+.std-composition li.nested{padding-left:2em}
+.std-summary{display:grid;grid-template-columns:13em minmax(0,1fr);gap:8px 16px;margin:12px 0 0}
+.std-summary dt{font-weight:750;color:var(--teal)}
+.std-summary dd{margin:0}
+.std-abbr{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;margin:10px 0 0;font-size:.86rem}
+.std-abbr dt{font-weight:750}
+.std-abbr dd{margin:0 0 6px}
+.std-review{margin-top:18px}
+.std-review > summary{font-weight:750;cursor:pointer}
+@media (max-width:720px){.std-summary,.std-abbr{grid-template-columns:1fr}}
 @media (max-width:720px){.std-accept{grid-template-columns:1fr}.std-outline thead{display:none}.std-outline tr{display:block;padding:8px 0;border-bottom:1px solid var(--border)}.std-outline td{display:block;border:0;padding:2px 0}}
 """
 
@@ -133,7 +152,7 @@ def render_intro_html(data: dict) -> str:
     audiences = "".join(f'<li><strong>{e(a["who"])}</strong> — {e(a["reads"])}</li>' for a in intro["audiences"])
     rows = []
     for card in data["cards"]:
-        subs = "".join(f"<small>{e(comp_label(c))}</small>" for c in card["composition"])
+        subs = "".join(f"<small>{'└ ' * depth(c)}{e(comp_label(c))}</small>" for c in card["composition"])
         rows.append(
             f'<tr><td>{num(card)}</td><td><a href="#standard-{card["n"]}">{e(card["title"])}</a>{subs}</td>'
             f'<td>{e(card["what"])}</td><td>{e(card["why"])}</td><td>{e(card["stage"])}</td></tr>'
@@ -144,6 +163,7 @@ def render_intro_html(data: dict) -> str:
         for s in intro["stages"]
     )
     legend = "".join(f"<li><strong>{e(n)}</strong> — {e(t)}</li>" for n, t in intro["template"])
+    notes = "".join(f'<p class="standards-note">{e(intro[k])}</p>' for k in ("gates_note", "trace", "process_metrics"))
     return f"""
             <article class="standard-card" id="{intro["id"]}" data-bcreq-section="0" data-document-structure tabindex="-1" aria-labelledby="standard-title-0">
               <div class="standard-heading"><span class="standard-number">00</span><div><p class="eyebrow">Начните здесь · 2 минуты</p><h2 id="standard-title-0">{e(intro["title"])}</h2></div></div>
@@ -153,6 +173,7 @@ def render_intro_html(data: dict) -> str:
               <table class="std-outline"><thead><tr><th>№</th><th>Раздел и подразделы</th><th>Что</th><th>Зачем</th><th>Стадия → гейт</th></tr></thead><tbody>{"".join(rows)}</tbody></table>
               <h3>Стадии и гейты</h3>
               <div class="standards-stage-grid">{stages}</div>
+              {notes}
               <p class="standards-note">{e(intro["styles"])}</p>
               <details class="standard-detail"><summary>{e(intro["template_title"])}</summary><ol class="std-legend">{legend}</ol><p>{e(intro["nec_suf"])}</p></details>
             </article>"""
@@ -161,7 +182,9 @@ def render_intro_html(data: dict) -> str:
 def render_card_html(card: dict) -> str:
     n = card["n"]
     internal = " internal" if "Внутренний" in card["audience"] else ""
-    comp = "".join(f'<li><b>{e(c["n"] if "." in c["n"] else "•")}</b><span>{e(c["title"])} — {e(c["text"])}</span></li>' for c in card["composition"])
+    comp = "".join(
+        f'<li class="{"nested" if depth(c) else ""}"><b>{e(c["n"] or "•")}</b><span>{e(c["title"])}{"" if c["n"] else " (без номера)"} — {e(c["text"])}</span></li>'
+        for c in card["composition"])
     special_items = ""
     if card["special"]["items"]:
         lis = []
@@ -187,14 +210,14 @@ def render_card_html(card: dict) -> str:
               <ul class="std-composition">{comp}</ul>
               <h3>Как пишем</h3>
               <p>{e(card["how"])}</p>
-              <div class="std-special"><h3>{e(card["special"]["title"])}</h3><p>{e(card["special"]["lead"])}</p>{special_items}</div>
-              <h3>Принимаем, когда</h3>
+              <div class="std-special"><h3>Правило раздела: {e(card["special"]["title"])}</h3><p>{e(card["special"]["lead"])}</p>{special_items}</div>
+              <details class="standard-detail std-review"><summary>Для БА и ревьюера: принимаем, когда и метрики</summary>
               <div class="std-accept">
                 <div><h4>Необходимо<small>каждый элемент</small></h4><ul class="standard-checklist">{nec}</ul></div>
                 <div><h4>Достаточно<small>набор целиком</small></h4><ul class="standard-checklist">{suf}</ul></div>
               </div>
               <h3>Метрики</h3>
-              <ul class="std-metrics">{metrics}</ul>
+              <ul class="std-metrics">{metrics}</ul></details>
               <details class="standard-detail"><summary>Ключевые понятия и пример</summary><dl class="standard-definitions">{terms}</dl>
               <p><strong>Корректно:</strong> {e(ex["good"])}<br><strong>Некорректно:</strong> {e(ex["bad"])}<br><strong>Почему:</strong> {e(ex["why"])}</p></details>
               <p class="standard-sources">Основание: {sources}</p>
@@ -203,10 +226,21 @@ def render_card_html(card: dict) -> str:
 
 def render_html(data: dict) -> str:
     page = data["page"]
-    nav = ['<a href="#standard-0"><span>00</span> Введение</a>']
+    nav = ['<a href="#standard-summary"><span>›</span> Коротко</a>', '<a href="#standard-0"><span>00</span> Введение</a>']
     nav += [f'<a href="#standard-{c["n"]}"><span>{num(c)}</span> {e(c["title"])}</a>' for c in data["cards"]]
     facts = "".join(f"<span>{e(f)}</span>" for f in page["facts"])
     cards = "".join(render_card_html(c) for c in data["cards"])
+    summary = "".join(f"<dt>{e(k)}</dt><dd>{e(v)}</dd>" for k, v in page["summary"])
+    customer = "".join(f"<dt>{e(k)}</dt><dd>{e(v)}</dd>" for k, v in page["customer"])
+    abbr = "".join(f"<div><dt>{e(k)}</dt><dd>{e(v)}</dd></div>" for k, v in page["abbr"])
+    top = f"""
+            <article class="standard-card" id="standard-summary" aria-labelledby="standard-title-summary">
+              <h2 id="standard-title-summary">{e(page["summary_title"])}</h2>
+              <dl class="std-summary">{summary}</dl>
+              <h3 id="standard-customer">{e(page["customer_title"])}</h3>
+              <dl class="std-summary">{customer}</dl>
+              <details class="standard-detail"><summary>{e(page["abbr_title"])}</summary><dl class="std-abbr">{abbr}</dl></details>
+            </article>"""
     return f"""<!doctype html>
 <html lang="ru">
   <head>
@@ -232,7 +266,7 @@ def render_html(data: dict) -> str:
             <p class="eyebrow">В этом документе</p>
             {"".join(nav)}
           </nav>
-          <div class="standards-content">{render_intro_html(data)}{cards}
+          <div class="standards-content">{top}{render_intro_html(data)}{cards}
           </div>
         </div>
       </section>
