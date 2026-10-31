@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-10-23
+version: 0.5
+updated: 2026-10-31
 ai-generated: true
 type: register
 scope: governance
@@ -10,6 +10,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/107"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/109"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/409"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -20,6 +21,7 @@ related_artifacts:
   - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
   - "docs/rfc/prompt-improvement-multichannel-proposal.md"
   - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
+  - "docs/rfc/2026-10-repository-modernization.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -143,6 +145,26 @@ issue #387). Существующие стандарты и контракты *
 | [RFC-387-06](2026-10-bcreq-meta-standards-rfc.md#rfc-387-06) | стили разделов (issue #387) | Раздел 4 — бюрократический стиль; короткий — 2, 5 L1, 6 (канон issue, расхождение с чатом) | чат р. 764 (Ч-29, Ч-30) | `proposed` | — |
 | [RFC-387-07](2026-10-bcreq-meta-standards-rfc.md#rfc-387-07) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (А2.4) | Ограничения платформы и версий — в 2.4.2 для новых задач; 6.2 — внешние ограничения решения | чат р. 760 (Ч-27) | `proposed` | — |
 
+## Модернизация репозитория (источник: issue #409)
+
+RFC [`2026-10-repository-modernization.md`](2026-10-repository-modernization.md)
+v0.3 выносит на согласование десять решений. Репозиторий **не изменён**:
+после решений владельца изменения выполняются задачами T-01…T-09 из
+[реестра задач](../analysis/2026-10-31-follow-up-tasks.md).
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-409-DEC-01](2026-10-repository-modernization.md#dec-01-статус-репозитория-в-экосистеме-f-01-f-11) | Статус в экосистеме Хаба | Гибрид: спица — практика этапа 1 и сайт, `mango-ba-ai-runtime` — исполнение этапов 2–4 | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-01, F-11 | `proposed` | — |
+| [RFC-409-DEC-02](2026-10-repository-modernization.md#dec-02-замена-границ-263-f-03-f-14) | Границы #263, валидатор #263 | Новый ADR заменяет границы #263; валидатор меняется в том же PR | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-03, F-14 | `proposed` | — |
+| [RFC-409-DEC-03](2026-10-repository-modernization.md#dec-03-видимость-f-05) | Видимость репозитория | Public до решения по ADR-009 Хаба | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-05 | `proposed` | — |
+| [RFC-409-DEC-04](2026-10-repository-modernization.md#dec-04-роль-mango-ba-ai-runtime-f-04) | Роль runtime | Runtime — исполнение и KB; спица — практика и сайт | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-04 | `proposed` | — |
+| [RFC-409-DEC-05](2026-10-repository-modernization.md#dec-05-роль-n8n-на-этапе-3-f-07) | Этап 3 | Runner управляет маршрутом, n8n — слой интеграций | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-07 | `proposed` | — |
+| [RFC-409-DEC-06](2026-10-repository-modernization.md#dec-06-ssot-пакета-этапа-2-f-06) | ADR-016, пакет этапа 2 | Пакет Хаба — источник сборки, runtime — место установки, ADR-016 — профиль применения | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-06 | `proposed` | — |
+| [RFC-409-DEC-07](2026-10-repository-modernization.md#dec-07-архетип-и-среда-f-08) | `AGENTS.md`, `.hub-profile.json` | `archetype: B`, `environment: local` | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-08 | `proposed` | — |
+| [RFC-409-DEC-08](2026-10-repository-modernization.md#dec-08-размещение-четырёх-документов-f-02) | Четыре стратегических документа | `docs/vision.md`, `docs/concept.md`, `docs/architecture.md`, `docs/roadmap.md` | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-02 | `proposed` | — |
+| [RFC-409-DEC-09](2026-10-repository-modernization.md#dec-09-политика-разметки-истории-f-10-f-16) | Разметка истории | Правило каталога и блок перехода; `.archive/` — только `superseded` с преемником | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-10, F-16 | `proposed` | — |
+| [RFC-409-DEC-10](2026-10-repository-modernization.md#dec-10-вывод-локального-kb-конвейера-f-12) | KB-конвейер | Депрекация после проверки потребителей; `kb/` остаётся на месте | [аудит #409](../audit/2026-10-31-repository-audit.md#реестр-находок) F-12 | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -162,3 +184,6 @@ issue #387). Существующие стандарты и контракты *
   (мета-стандарты разделов BCREQ, PR #389). RFC-документ —
   [`docs/rfc/2026-10-bcreq-meta-standards-rfc.md`](2026-10-bcreq-meta-standards-rfc.md);
   решение — [ADR-012](../adr/2026-10-adr-012-bcreq-meta-standards.md).
+- **2026-10-31** — добавлены RFC-409-DEC-01…10 в статусе `proposed` по итогам
+  аудита issue #409 (PR #410). RFC-документ —
+  [`docs/rfc/2026-10-repository-modernization.md`](2026-10-repository-modernization.md) v0.3.
