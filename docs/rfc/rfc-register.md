@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.8
-updated: 2026-10-31
+version: 0.9
+updated: 2026-11-01
 ai-generated: true
 type: register
 scope: governance
@@ -245,26 +245,33 @@ DEC-415-09…12. Контрольная проверка на соответст
 
 ## Стандарт документа на сайте: страница «Стандарты» (источник: issue #420)
 
-RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1 предлагает новую структуру страницы
-«Стандарты»: сводку и введение для руководителей, единый шаблон карточки,
-основания глоссария со справочником D0 и обоснование 5±2. Доказательства —
-[анализ #420](../analysis/2026-10-31-standards-page-review.md). Сайт и
-стандарты меняются отдельной задачей после принятия.
+RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 предлагает
+структуру страницы «Стандарты» и зон сайта по итогам ревью владельца: введение
+со структурой документа, единый шаблон карточки, основания глоссария со
+справочником D0, практику прогонов для разделов 3–5. Доказательства —
+[анализ #420](../analysis/2026-10-31-standards-page-review.md) и
+[ревью 13 рисков](../analysis/2026-11-01-standards-page-risk-review.md). Сайт и
+стандарты меняются отдельной задачей после принятия. Варианты, отозванные
+автором в v0.2, остаются в строках со статусом `proposed`: отклонять их может
+только владелец.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-420-DEC-01](2026-10-standards-page-rfc.md#dec-420-01) | Страница «Стандарты», верх | «Коротко», «Заказчику: что вы подписываете», введение с оглавлением до подпунктов | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-02](2026-10-standards-page-rfc.md#dec-420-02) | Шаблон карточки | Девять блоков в одном порядке во всех карточках; блоки 7–9 свёрнуты | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-01](2026-10-standards-page-rfc.md#dec-420-01) | Страница «Стандарты», верх (v0.2) | H1 «BCREQ — стандарт бизнес-спецификации на доработку системы», одна вводная фраза, «Введение. Структура документа» — перечень разделов и подразделов с коротким комментарием. Вариант v0.1 («Коротко», «Заказчику: что вы подписываете») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-02](2026-10-standards-page-rfc.md#dec-420-02) | Шаблон карточки (v0.2) | Семь блоков в одном порядке во всех карточках. Вариант v0.1 (девять блоков) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
 | [RFC-420-DEC-03](2026-10-standards-page-rfc.md#dec-420-03) | Подразделы | Один подраздел — одна строка в «Составе»; в чек-листе один пункт — один подраздел | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
 | [RFC-420-DEC-04](2026-10-standards-page-rfc.md#dec-420-04) | Основания глоссария | Шесть оснований; D0 «Справочник согласованных терминов Манго» на втором месте как заглушка; меняет стандарт раздела 1 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-05](2026-10-standards-page-rfc.md#dec-420-05) | Правило 5±2 | 3–7 пунктов на каждом уровне раздела 3, отклонение с обоснованием в 8.5; меняет стандарт раздела 3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-05](2026-10-standards-page-rfc.md#dec-420-05) | Правило 5±2 | Рекомендация v0.2 — правило стандарта без изменений (3–7 ФТ верхнего уровня или обоснование). Вариант v0.1 (3–7 пунктов на каждом уровне) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
 | [RFC-420-DEC-06](2026-10-standards-page-rfc.md#dec-420-06) | Необходимо / достаточно | «Необходимо» по элементу, «Достаточно» по набору (ISO/IEC/IEEE 29148 §5.2.5/§5.2.6) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
 | [RFC-420-DEC-07](2026-10-standards-page-rfc.md#dec-420-07) | Классы расхождения | На странице С0–С4, как в стандарте раздела 1, вместо S1–S3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-08](2026-10-standards-page-rfc.md#dec-420-08) | Структура раздела 3 | Обоснование «переменные группы по Capability» в карточке и во введении | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-09](2026-10-standards-page-rfc.md#dec-420-09) | Аудитории | Пометка адресата, блок «Кому что читать», раскрытые сокращения, определение «Заказчик» | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-10](2026-10-standards-page-rfc.md#dec-420-10) | Внедрение | Правка `site/` и теста #395 отдельной задачей после принятия, по `content.json` прототипа | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-11](2026-10-standards-page-rfc.md#dec-420-11) | Решение на Г-W | Единогласно по зонам трёх решающих; меняет контракт гейтов | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-12](2026-10-standards-page-rfc.md#dec-420-12) | Измеримые критерии Г-W | Пороги для Г-W.2–Г-W.4: трассировка 100 %, открытых замечаний Ш-В 0, рисков без владельца 0 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-08](2026-10-standards-page-rfc.md#dec-420-08) | Структура раздела 3 (v0.2) | Как в практике прогонов: ФТ-01, ФТ-02 … в смысловых блоках, формула BABOK; пункты раздела 5 — «5.N Название (ФТ-NN)»; НФТ — 4.1, 4.2 …. Черновики стандартов выравниваются по практике отдельной задачей | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-09](2026-10-standards-page-rfc.md#dec-420-09) | Аудитории | Рекомендация v0.2 — без мета-текста; адресат назван только там, где он часть стандарта. Вариант v0.1 (пометки адресата, «Кому что читать») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-10](2026-10-standards-page-rfc.md#dec-420-10) | Внедрение | Правка `site/` и тестов сайта отдельной задачей после принятия, по прототипу site-v2 ([BL-206](../../pr-ops/backlog-repository.md#bl-206-страницы-сайта-по-rfc-420-прототип-site-v2)) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-11](2026-10-standards-page-rfc.md#dec-420-11) | Решение на Г-W | Рекомендация v0.2 — не уточнять в рамках #420. Вариант v0.1 (единогласно по зонам; меняет контракт гейтов) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-12](2026-10-standards-page-rfc.md#dec-420-12) | Измеримые критерии Г-W | Рекомендация v0.2 — как в контракте. Вариант v0.1 (пороги Г-W.2–Г-W.4) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-13](2026-10-standards-page-rfc.md#dec-420-13) | Зоны сайта и Справочник | Шесть зон: О проекте, Каталог, Стандарты, Процессы (два сворачиваемых потока), Дашборд (только цифры), Справочник терминов со ссылками со всех страниц; без мета-текста | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-14](2026-10-standards-page-rfc.md#dec-420-14) | Полные названия разделов | ОРР — описание разрабатываемого решения; ФДР — функциональный дизайн решения; ТС — техническая спецификация; расхождения аббревиатур и расшифровок исправляются с меткой | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-15](2026-10-standards-page-rfc.md#dec-420-15) | ТТЗ и ТЗ | Тендерное ТЗ принимается как есть и оценивается на исполнимость; ТЗ — результат BCREQ; стандарт ТТЗ — позже на странице «Стандарты» | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
 
 
 ## Журнал изменений реестра
@@ -313,3 +320,8 @@ RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1 пре
   issue #420 (PR #422). RFC-документ —
   [`docs/rfc/2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1; анализ —
   [`docs/analysis/2026-10-31-standards-page-review.md`](../analysis/2026-10-31-standards-page-review.md).
+- **2026-11-01** — по ревью владельца в PR #422: RFC #420 v0.2; строки
+  RFC-420-DEC-01…12 переписаны под v0.2 (отозванные автором варианты v0.1
+  сохранены в строках и ждут решения владельца), добавлены RFC-420-DEC-13…15 в
+  статусе `proposed`. Ревью рисков —
+  [`docs/analysis/2026-11-01-standards-page-risk-review.md`](../analysis/2026-11-01-standards-page-risk-review.md).
