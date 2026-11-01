@@ -5,6 +5,22 @@
     "standards/prompt-standard.md": {
       "sha256": "1115ca1edcac2dc87ba1bcd0df9b3f88b7aa739acde2fd32fed1871cfa2e888c",
       "reason": "#413: раздел «Обобщение содержимого промпта», правила G1–G5 (сайт не меняется)"
+    },
+    "standards/bcreq-sections/README.md": {
+      "sha256": "dadb37594192436118d4249dc00abfc32abba6267a6cbedb1872151718e61515",
+      "reason": "#420: метки расхождений с практикой прогонов и область действия BCREQ и ТТЗ (сайт не меняется)"
+    },
+    "standards/bcreq-sections/03-functional-requirements.md": {
+      "sha256": "e0381cb9260b63b8d067f3a9c01740ff226018b2b342094cbacf320592c4c478",
+      "reason": "#420: метки расхождений 3.N и EARS с практикой прогонов (сайт не меняется)"
+    },
+    "standards/bcreq-sections/05-solution-description.md": {
+      "sha256": "31058bfaaa29372ecf0863c1e931f93fe6a790ea8b94b81733b870df47bfe8a2",
+      "reason": "#420: полные названия ОРР, ФДР, ТС и метка нумерации ФТ-NN (сайт не меняется)"
+    },
+    "standards/bcreq-sections/08-supplementary.md": {
+      "sha256": "809e31d96e35e57e5af738fe30ce7ed13b96e941e144a2d715e6c07eae179c08",
+      "reason": "#420: метка нумерации ФТ-NN и пометка «досогласовать» для вопросов 8.4 (сайт не меняется)"
     }
   },
   "sections": {}
