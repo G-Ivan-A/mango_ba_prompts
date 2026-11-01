@@ -305,13 +305,14 @@ def pages_md() -> str:
     lines += ["| Этап | Как работает | Статус |", "| --- | --- | --- |"]
     lines += [f"| {n}. {t} | {md(d)} | {st} |" for n, t, d, st in a["stages"]]
     lines += ["", "Разделы сайта:", ""] + [f"- **{name}** — {md(text)}" for name, _, text in a["zones"]]
-    lines += ["", "### Стандарты", "", f"# {C.STANDARDS_TITLE}", "", md(C.STANDARDS_LEAD), "", f"## {C.INTRO_TITLE}", ""]
+    lines += ["", "### Каталог", "", "Без изменений: все промпты с фильтрами.", ""]
+    lines += ["### Стандарты", "", f"**Заголовок страницы (H1):** {C.STANDARDS_TITLE}", "", md(C.STANDARDS_LEAD), "", f"#### {C.INTRO_TITLE}", ""]
     for n, title, comment, subs in C.INTRO:
         lines.append(f"{n}. **{md(title)}** — {md(comment)}")
         for sn, st, sc in subs:
             lines.append(f"   - {sn} {md(st)}" + (f" — {md(sc)}" if sc else ""))
     for card in C.CARDS:
-        lines += ["", f"## {card['n']}. {card['title']}", "", f"**Назначение.** {md(card['purpose'])}", "", "**Состав.**", ""]
+        lines += ["", f"#### {card['n']}. {card['title']}", "", f"**Назначение.** {md(card['purpose'])}", "", "**Состав.**", ""]
         lines += [f"- {md(k)} — {md(v)}" for k, v in card["composition"]]
         lines += ["", "**Как пишем.**", ""] + [f"- {md(x)}" for x in card["how"]]
         lines += ["", "**Критерии приёмки.**", "", "| Пункт | Принимаем, когда |", "| --- | --- |"]
