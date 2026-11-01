@@ -1863,3 +1863,130 @@ h3 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Issue #423: 39 классов BCREQ, архив этапа 1, маршрут по стадиям, версия сайта. */
+.prompt-card[data-family="archive"] {
+  border-style: dashed;
+  opacity: 0.92;
+}
+
+.archive-badge {
+  display: inline-block;
+  margin-bottom: 6px;
+  padding: 2px 8px;
+  border: 1px dashed var(--muted);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.prompt-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 8px;
+  align-items: baseline;
+  margin-bottom: 10px;
+  font-size: 0.84rem;
+}
+
+.prompt-links-label {
+  color: var(--muted);
+}
+
+.prompt-link {
+  color: var(--teal);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.bcreq-route {
+  width: min(1240px, 100%);
+  margin: 0 auto 18px;
+}
+
+.bcreq-route-sources {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.bcreq-route-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.bcreq-route-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: inset 0 3px 0 var(--amber);
+}
+
+.bcreq-route-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bcreq-route-chain {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bcreq-route-chain li + li::before {
+  content: "→";
+  margin-right: 6px;
+  color: var(--muted);
+}
+
+.bcreq-route-chip {
+  display: inline-block;
+  padding: 2px 8px;
+  border: 1px solid var(--amber);
+  border-radius: 6px;
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.bcreq-route-chip:hover,
+.bcreq-route-chip:focus-visible {
+  background: var(--amber);
+  color: var(--surface);
+}
+
+.bcreq-step {
+  scroll-margin-top: 110px;
+}
+
+.bcreq-step:focus {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.site-version {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.site-footer {
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 18px 0 28px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.86rem;
+}

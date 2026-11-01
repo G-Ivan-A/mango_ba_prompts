@@ -353,7 +353,11 @@ def main(argv: list[str]) -> int:
         if rfc_text != expected_rfc:
             errors.append(f"{RFC.relative_to(ROOT)}: appendix is stale: run build.py")
         # The patch must apply to the current site/ (fails loudly if site/ drifted).
-        patch_index((SITE / "index.html").read_text(encoding="utf-8"))
+        # Issue #423 published site-v2 into site/ (experiments/issue_423/port_site_v2.py
+        # --check guards it), so the prototype patch applies only to the pre-port site.
+        index_src = (SITE / "index.html").read_text(encoding="utf-8")
+        if 'data-page="about"' not in index_src:
+            patch_index(index_src)
         for err in errors:
             print("ERROR:", err)
         print("site-v2 check:", "FAIL" if errors else "OK")
