@@ -1,0 +1,25 @@
+OK   BL-103 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-05: “Перед тем как оценку на golden set ставит модель, сверить её оценки с оценками человека”
+OK   BL-106 G-Ivan-A/mango_ba_prompts issues #418: “Каечство приоритет, экономия токенов запрещена”
+OK   BL-113 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#этап-2-агентный-клиент-и-оценка-тз: “BCREQ: тот же golden set не хуже этапа 1”
+OK   BL-121 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-14-единая-методология-ба-оптимизированная-под-ии-агентов: “преждевременная оптимизация до того, как система заработает на”
+OK   BL-122 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#статус-репозиториев-экосистемы: “Новая разработка в нём не ведётся.”
+OK   BL-131 G-Ivan-A/mango_ba_prompts issues #417: “Подтверждаю, на 2 этапе выбираем OpenCode”
+OK   BL-131 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-28-пакет-исполнения-opencode: “Довести пакет до пилота на рабочих местах Windows 10/11”
+OK   BL-131 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-06: “Пакет правил этапа 2 собирать в открытых форматах: навыки SKILL.md и инструкции AGENTS.md.”
+OK   BL-132 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-28-пакет-исполнения-opencode: “снять или принять решением человека ограничения OpenCode”
+OK   BL-133 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-03: “Внести риск косвенной prompt injection через документы заказчика”
+OK   BL-141 G-Ivan-A/mango_ba_prompts issues #417: “N8n - на сервере суть тестирование машинной оркестрации”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-09: “Потоки n8n на выделенном сервере — испытательный стенд машинной оркестрации”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-02: “Контракты процессов (шаги, состояние, гейты) вести в машиночитаемом формате вне n8n”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-04: “На этапах 3–4 трассировать вызовы модели и шаги процесса по соглашениям OpenTelemetry GenAI”
+OK   BL-142 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-10: “Промышленное решение без n8n: процессы в коде на Python”
+OK   BL-142 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-01: “Исполнитель этапа 4 строить на зрелом движке устойчивого исполнения (например, Temporal)”
+OK   BL-143 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-12: “Архитектурные и концептуальные решения пересматриваются по результатам”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Версия документов меняется с 1.0 на 2.0”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Roadmap: пять этапов автоматизации бизнес-анализа”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-10: “Промышленное решение без n8n: процессы в коде на Python”
+OK   BL-202 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#этап-3-машинная-оркестрация-в-n8n: “Юридическая проверка лицензии n8n (fair-code: внутреннее использование)”
+OK   BL-202 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “новый ADR фиксирует исполнителей этапов 3 и 4 (DEC-415-09, DEC-415-10)”
+OK   BL-204 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-11: “Сайт GitHub Pages на этапах 1–3”
+OK   BL-205 G-Ivan-A/mango_ba_prompts issues #420: “не устраивает оформление и содержани ераздела Стандарты”
+итог: проверено 24, не найдено 0
