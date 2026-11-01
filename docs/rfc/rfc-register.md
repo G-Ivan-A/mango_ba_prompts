@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.7
+version: 0.8
 updated: 2026-10-31
 ai-generated: true
 type: register
@@ -14,6 +14,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/413"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/411"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/415"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -27,6 +28,7 @@ related_artifacts:
   - "docs/rfc/2026-10-repository-modernization.md"
   - "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
   - "docs/rfc/2026-10-ba-automation-strategy.md"
+  - "docs/analysis/2026-10-31-industry-practice-check.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -197,21 +199,46 @@ PR #412; промпты, классы, сайт и процесс БА не из
 
 ## Стратегия автоматизации БА команды крупных клиентов (источник: issue #415)
 
-RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.1 собирает видение, концепцию, архитектуру и
-дорожную карту в одном документе для руководителей разработки и маркетинга
-и выносит на согласование восемь решений. Канонические документы `docs/`
-меняются отдельной задачей после принятия.
+RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) собирает видение, концепцию, архитектуру и
+дорожную карту в одном документе для руководителей разработки и маркетинга.
+Версия 0.1 (PR #416) вынесла на согласование восемь решений. Владелец принял
+документ в [#417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417)
+с исправлениями: видение и концепция — предварительно, архитектура и
+дорожная карта — с исправлениями. Версия 0.2 добавила решения
+DEC-415-09…12. Контрольная проверка на соответствие индустриальным
+практикам ([отчёт](../analysis/2026-10-31-industry-practice-check.md))
+критичных отклонений не нашла и подтвердила статус `accepted`. Её
+рекомендации REC-417-01…06 — `proposed` и в RFC не внесены. Канонические
+документы `docs/` меняются отдельной задачей переноса.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-415-DEC-01](2026-10-ba-automation-strategy.md#dec-415-01) | Форма документа | RFC с четырьмя разделами; перенос в `docs/` отдельной задачей после принятия | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-02](2026-10-ba-automation-strategy.md#dec-415-02) | Область этапов 1–4 | Команда БА крупных клиентов (КК); остальные команды — этап 5 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-03](2026-10-ba-automation-strategy.md#dec-415-03) | Этап 2 | Агентный клиент + оценка исполнимости ТЗ заказчика; RUN-0077 — пример, не эталон | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-04](2026-10-ba-automation-strategy.md#dec-415-04) | Этап 5 | Масштабирование на продуктовые команды и аналитиков после ворот 3, параллельно этапу 4 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-05](2026-10-ba-automation-strategy.md#dec-415-05) | `docs/roadmap.md` | Stage-gate + Now/Next/Later + карточка «что — зачем — как — сколько»; оценки — гипотезы | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-06](2026-10-ba-automation-strategy.md#dec-415-06) | `docs/vision.md` | Метрики для руководства с базовой линией этапа 1 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-07](2026-10-ba-automation-strategy.md#dec-415-07) | Агентный клиент этапа 2 | OpenCode — базовый кандидат; выбор квалификацией ADR-016 (CH-1) | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
-| [RFC-415-DEC-08](2026-10-ba-automation-strategy.md#dec-415-08) | Сайт, «О проекте» | Показ четырёх разделов после принятия DEC-11 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `proposed` | — |
+| [RFC-415-DEC-01](2026-10-ba-automation-strategy.md#dec-415-01) | Форма документа | RFC с четырьмя разделами; перенос в `docs/` отдельной задачей после принятия | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-02](2026-10-ba-automation-strategy.md#dec-415-02) | Область этапов 1–4 | Команда БА крупных клиентов (КК); остальные команды — этап 5 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-03](2026-10-ba-automation-strategy.md#dec-415-03) | Этап 2 | Агентный клиент + оценка исполнимости ТЗ заказчика; RUN-0077 — пример, не эталон | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-04](2026-10-ba-automation-strategy.md#dec-415-04) | Этап 5 | Масштабирование на продуктовые команды и аналитиков после ворот 3, параллельно этапу 4 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-05](2026-10-ba-automation-strategy.md#dec-415-05) | `docs/roadmap.md` | Stage-gate + Now/Next/Later + карточка «что — зачем — как — сколько»; оценки — гипотезы | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-06](2026-10-ba-automation-strategy.md#dec-415-06) | `docs/vision.md` | Метрики для руководства с базовой линией этапа 1 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-07](2026-10-ba-automation-strategy.md#dec-415-07) | Агентный клиент этапа 2 | OpenCode выбран владельцем (вариант Б, #417); квалификация ADR-016 проверяет закреплённую версию; CH-1 — переносимость правил | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415), [решение владельца #417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417) | `accepted` (#417) | — |
+| [RFC-415-DEC-08](2026-10-ba-automation-strategy.md#dec-415-08) | Сайт, «О проекте» | Показ четырёх разделов после принятия DEC-11 | [постановка #415](https://github.com/G-Ivan-A/mango_ba_prompts/issues/415) | `accepted` (#417) | — |
+| [RFC-415-DEC-09](2026-10-ba-automation-strategy.md#dec-415-09) | Этап 3 | Потоки n8n на выделенном сервере — испытательный стенд машинной оркестрации: отладка контрактов, накопление golden set | [решение владельца #417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417) | `accepted` (#417) | — |
+| [RFC-415-DEC-10](2026-10-ba-automation-strategy.md#dec-415-10) | Этап 4 | Промышленное решение без n8n: процессы в коде на Python под управлением исполнителя процессов (runner); способ разработки — в начале этапа 4 | [решение владельца #417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417) | `accepted` (#417) | — |
+| [RFC-415-DEC-11](2026-10-ba-automation-strategy.md#dec-415-11) | Витрина | Сайт GitHub Pages на этапах 1–3; решение о портале для БА — параллельно на этапе 3 | [решение владельца #417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417) | `accepted` (#417) | — |
+| [RFC-415-DEC-12](2026-10-ba-automation-strategy.md#dec-415-12) | Пересмотр решений | Пересмотр по итогам промышленной или тестовой эксплуатации при переходе этапа или по требованию владельца | [решение владельца #417](https://github.com/G-Ivan-A/mango_ba_prompts/issues/417) | `accepted` (#417) | — |
+
+### Рекомендации контрольной проверки (источник: issue #417)
+
+Отчёт — [`docs/analysis/2026-10-31-industry-practice-check.md`](../analysis/2026-10-31-industry-practice-check.md).
+Рекомендации некритичны, в RFC не внесены и ждут решения владельца.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [REC-417-01](../analysis/2026-10-31-industry-practice-check.md#rec-417-01) | Этап 4 | Исполнитель на зрелом движке устойчивого исполнения или библиотеке оркестрации; «строить или взять» — критерий входа этапа 4 | Temporal, 12-Factor Agents | `proposed` | — |
+| [REC-417-02](../analysis/2026-10-31-industry-practice-check.md#rec-417-02) | Этап 3 | Контракты процессов и прогон golden set — вне n8n | Spec-driven development | `proposed` | — |
+| [REC-417-03](../analysis/2026-10-31-industry-practice-check.md#rec-417-03) | Этап 2, оценка ТЗ | Защита от prompt injection через документы заказчика; кейсы-ловушки в golden set | OWASP LLM01:2025 | `proposed` | — |
+| [REC-417-04](../analysis/2026-10-31-industry-practice-check.md#rec-417-04) | Этапы 3–4 | Трассировка вызовов модели по OpenTelemetry GenAI вместе с `runs/` | OpenTelemetry GenAI | `proposed` | — |
+| [REC-417-05](../analysis/2026-10-31-industry-practice-check.md#rec-417-05) | Контур качества | Калибровка оценщика-модели по оценкам человека | Anthropic: evals | `proposed` | — |
+| [REC-417-06](../analysis/2026-10-31-industry-practice-check.md#rec-417-06) | Этап 2 | Пакет правил в открытых форматах `SKILL.md` и `AGENTS.md` | OpenCode Agent Skills, AGENTS.md | `proposed` | — |
 
 ## Журнал изменений реестра
 
@@ -249,3 +276,9 @@ RFC [`2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.
 - **2026-10-31** — добавлены RFC-415-DEC-01…08 в статусе `proposed` по итогам
   issue #415 (PR #416). RFC-документ —
   [`docs/rfc/2026-10-ba-automation-strategy.md`](2026-10-ba-automation-strategy.md) v0.1.
+- **2026-10-31** — по решению владельца в issue #417: RFC стратегии v0.2,
+  RFC-415-DEC-01…08 → `accepted` (DEC-07 — вариант Б, OpenCode), добавлены
+  RFC-415-DEC-09…12 в статусе `accepted`. Контрольная проверка на
+  соответствие индустриальным практикам —
+  [`docs/analysis/2026-10-31-industry-practice-check.md`](../analysis/2026-10-31-industry-practice-check.md);
+  рекомендации REC-417-01…06 добавлены в статусе `proposed`.
