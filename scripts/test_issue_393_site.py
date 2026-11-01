@@ -16,6 +16,12 @@ STAGES = [
     "Валидация второй ролью",
     "Сценарии вне документа",
 ]
+ACTIVE_STAGES = [
+    "A-IN · Приём задачи",
+    "A-CORE · Требования",
+    "A-WORK · Решение",
+    "A-RELEASE · Выпуск",
+]
 GROUPS = [
     ["context-understanding-stepwise", "products-impact-analysis-stepwise", "in-understanding-oneshot"],
     ["fr-documentation-stepwise", "nfr-documentation-stepwise", "uc-modeling-stepwise", "core-documentation-oneshot"],
@@ -41,19 +47,27 @@ class StageTests(unittest.TestCase):
             self.assertEqual(hashlib.sha256(original.encode()).hexdigest(), expected, filename)
 
     def test_six_stages_and_every_prompt_mapping(self):
+        # Issue #423: the six issue-393 stages stay on the 14 archived prompts
+        # (frontmatter untouched); the catalog filter shows the 4 stages of
+        # process v0.2 for the 39 active classes.
         data = json.loads((ROOT / "site/data/prompts.json").read_text())
-        self.assertEqual([p["label"] for p in data["filters"]["processes"]], STAGES)
+        self.assertEqual([p["label"] for p in data["filters"]["processes"]], ACTIVE_STAGES)
         self.assertEqual(len(data["filters"]["operations"]), 13)
-        self.assertEqual(len(data["prompts"]), 14)
-        for prompt in data["prompts"]:
+        archived = [p for p in data["prompts"] if p["archived"]]
+        active = [p for p in data["prompts"] if not p["archived"]]
+        self.assertEqual(len(archived), 14)
+        self.assertEqual(len(active), 39)
+        for prompt in archived:
             stem = prompt["file"].removeprefix("bcreq-").removesuffix(".md")
             expected = [stage for stage, group in zip(STAGES, GROUPS) if stem in group]
             self.assertTrue(expected, prompt["file"])
             self.assertEqual(prompt["processes"], expected)
             self.assertEqual(prompt["frontmatter"]["processes"], expected)
             self.assertEqual(prompt["operation"]["id"], prompt["frontmatter"]["operation"])
+        for prompt in active:
+            self.assertTrue(prompt["processes"] and set(prompt["processes"]) <= set(ACTIVE_STAGES), prompt["id"])
         for process in data["filters"]["processes"]:
-            expected = {p["operation"]["id"] for p in data["prompts"] if process["label"] in p["processes"]}
+            expected = {p["operation"]["id"] for p in active if process["label"] in p["processes"]}
             self.assertEqual(set(process["operations"]), expected)
 
     def test_actual_catalog_filter_logic(self):

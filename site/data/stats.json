@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T07:04:18.718Z",
+  "generatedAt": "2026-11-01T19:58:32.925Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -24,44 +24,56 @@
     {
       "path": "docs/ba-processes/bcreq-manual-process.md",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
+    },
+    {
+      "path": "standards/bcreq-manual-classes/catalog.json",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json"
     }
   ],
+  "siteVersion": {
+    "version": "2.0.0",
+    "released": "2026-11-01",
+    "issue": 423,
+    "basis": "PR #422: 39 классов ручных промптов BCREQ, процесс v0.2",
+    "changelog": "CHANGELOG.md"
+  },
   "totals": {
-    "allPrompts": 14,
-    "activePrompts": 14,
-    "archivedPrompts": 0,
+    "allPrompts": 53,
+    "activePrompts": 39,
+    "archivedPrompts": 14,
     "testsPassed": 0,
-    "inWork": 14,
-    "deferred": 0,
+    "inWork": 39,
+    "deferred": 14,
     "modes": {
-      "oneshot": 6,
-      "stepwise": 8
+      "manual": 39
     },
     "statuses": {
-      "draft": 14
+      "draft": 39
     },
     "operations": {
-      "governance": 1,
-      "documentation": 4,
+      "ingestion": 3,
       "understanding": 2,
-      "risk_analysis": 1,
+      "impact_analysis": 3,
+      "research": 2,
+      "validation": 4,
+      "documentation": 9,
+      "governance": 5,
+      "modeling": 4,
       "solution_design": 2,
-      "impact_analysis": 1,
-      "validation": 1,
-      "modeling": 2
+      "risk_analysis": 2,
+      "release_readiness": 2,
+      "quality": 1
     },
     "processes": {
-      "Конституция и управление": 1,
-      "Дизайн решения и оценка": 5,
-      "Приём и контекст": 3,
-      "Требования и предварительное согласование": 4,
-      "Валидация второй ролью": 1,
-      "Сценарии вне документа": 1
+      "A-IN · Приём задачи": 21,
+      "A-CORE · Требования": 26,
+      "A-WORK · Решение": 32,
+      "A-RELEASE · Выпуск": 14
     }
   },
   "taxonomy": {
     "operations": 13,
-    "processes": 6
+    "processes": 4
   },
   "processIndex": [
     {
@@ -314,15 +326,15 @@
       "phase": 1,
       "title": "Промпты",
       "status": "current",
-      "progress": 100,
+      "progress": 74,
       "levelIds": [
         "level-1"
       ],
-      "summary": "Ручной выбор prompt-файла, копирование в AI-чат и human review результата.",
+      "summary": "39 классов ручных промптов: БА копирует класс в AI-чат с контрактом состояния и проверяет результат.",
       "metrics": [
         {
           "label": "активных",
-          "value": 14
+          "value": 39
         },
         {
           "label": "проверено",
@@ -330,7 +342,7 @@
         },
         {
           "label": "в работе",
-          "value": 14
+          "value": 39
         }
       ]
     },
