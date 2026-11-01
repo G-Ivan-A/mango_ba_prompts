@@ -31,7 +31,12 @@ def reject(text: str, path: str, *needles: str) -> list[str]:
 
 
 def active_prompt_paths() -> list[Path]:
-    # Issue #391 narrows publication without removing repository tooling/archive.
+    # Issue #423: the catalog publishes the 39 BCREQ manual prompt classes (PR #422).
+    return sorted((ROOT / "standards" / "bcreq-manual-classes").glob("[0-9][0-9]-*.md"))
+
+
+def archived_prompt_paths() -> list[Path]:
+    # Issue #423: the 14 stage-1 prompts (issue #391 set) move to the catalog archive.
     return sorted((ROOT / "prompts").glob("bcreq-*.md"))
 
 
@@ -58,7 +63,8 @@ def main() -> int:
         return 1
 
     active_paths = active_prompt_paths()
-    prompt_paths = active_paths
+    archived_paths = archived_prompt_paths()
+    prompt_paths = active_paths + archived_paths
     prompt_path_names = {str(path.relative_to(ROOT)) for path in prompt_paths}
 
     prompts_data = read_json("site/data/prompts.json")
@@ -91,16 +97,20 @@ def main() -> int:
 
     active_generated = [prompt for prompt in prompts if not prompt.get("archived")]
     archived_generated = [prompt for prompt in prompts if prompt.get("archived")]
-    if len(active_generated) != len(active_paths):
-        errors.append(f"site/data/prompts.json: expected {len(active_paths)} active prompts, found {len(active_generated)}")
-    if archived_generated:
-        errors.append(f"site/data/prompts.json: expected no archived prompts, found {len(archived_generated)}")
+    if len(active_paths) != 39:
+        errors.append(f"standards/bcreq-manual-classes: expected 39 classes, found {len(active_paths)}")
+    if len(archived_paths) != 14:
+        errors.append(f"prompts/bcreq-*.md: expected 14 archived prompts, found {len(archived_paths)}")
+    if sorted(p.get("sourcePath") for p in active_generated) != sorted(str(p.relative_to(ROOT)) for p in active_paths):
+        errors.append(f"site/data/prompts.json: active prompts must be the {len(active_paths)} classes, found {len(active_generated)}")
+    if sorted(p.get("sourcePath") for p in archived_generated) != sorted(str(p.relative_to(ROOT)) for p in archived_paths):
+        errors.append(f"site/data/prompts.json: archived prompts must be the {len(archived_paths)} prompts/bcreq-*.md, found {len(archived_generated)}")
 
     filters = prompts_data.get("filters", {})
     if len(filters.get("operations", [])) != 13:
         errors.append("site/data/prompts.json: expected 13 cognitive operations in filters")
-    if len(filters.get("processes", [])) != 6:
-        errors.append("site/data/prompts.json: expected 6 BCREQ stages in filters (issue #393)")
+    if len(filters.get("processes", [])) != 4:
+        errors.append("site/data/prompts.json: expected 4 BCREQ stages A-IN…A-RELEASE in filters (issue #423)")
     for mode in {prompt["mode"] for prompt in prompts}:
         if mode not in filters.get("modes", []):
             errors.append(f"site/data/prompts.json: filters.modes missing {mode}")
@@ -109,10 +119,10 @@ def main() -> int:
     expected_totals = {
         "allPrompts": len(prompts),
         "activePrompts": len(active_paths),
-        "archivedPrompts": 0,
-        "testsPassed": sum(p["status"] == "canonical" for p in prompts),
-        "inWork": sum(p["status"] == "draft" for p in prompts),
-        "deferred": 0,
+        "archivedPrompts": len(archived_paths),
+        "testsPassed": sum(p["status"] == "canonical" for p in active_generated),
+        "inWork": sum(p["status"] == "draft" for p in active_generated),
+        "deferred": len(archived_paths),
     }
     for key, expected in expected_totals.items():
         if totals.get(key) != expected:
