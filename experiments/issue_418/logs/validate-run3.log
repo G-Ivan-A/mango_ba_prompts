@@ -1,0 +1,28 @@
+test_every_decision_used_by_tasks (__main__.Decisions.test_every_decision_used_by_tasks) ... ok
+test_register (__main__.Decisions.test_register) ... ok
+test_mermaid_labels_quoted (__main__.EntryDocument.test_mermaid_labels_quoted) ... ok
+test_meta_model_answer (__main__.EntryDocument.test_meta_model_answer) ... ok
+test_open_questions_anchor (__main__.EntryDocument.test_open_questions_anchor)
+README, CONTRIBUTING и ai-governance ссылаются на этот якорь. ... ok
+test_required_by_other_validators (__main__.EntryDocument.test_required_by_other_validators) ... ok
+test_sections_in_order (__main__.EntryDocument.test_sections_in_order) ... ok
+test_stage_order (__main__.EntryDocument.test_stage_order)
+Порядок владельца: этап 1 → ревизия мета-модели → этап 2 (OpenCode). ... ok
+test_tech_debt_rows (__main__.EntryDocument.test_tech_debt_rows) ... ok
+test_fields (__main__.Frontmatter.test_fields) ... ok
+test_hub_validator (__main__.Frontmatter.test_hub_validator) ... ok
+test_changelog (__main__.Links.test_changelog) ... ok
+test_forbidden_terms (__main__.Links.test_forbidden_terms) ... ok
+test_registered_in_artifact_map (__main__.Links.test_registered_in_artifact_map) ... ok
+test_relative_links_and_anchors (__main__.Links.test_relative_links_and_anchors) ... ok
+test_protected_paths (__main__.NoRepositoryChange.test_protected_paths) ... ok
+test_card_fields (__main__.Tasks.test_card_fields) ... ok
+test_every_row_has_one_card_and_back (__main__.Tasks.test_every_row_has_one_card_and_back) ... ok
+test_rows (__main__.Tasks.test_rows) ... ok
+test_sources_format_and_quotes (__main__.Tasks.test_sources_format_and_quotes) ... ok
+test_track_split (__main__.Tasks.test_track_split) ... ok
+
+----------------------------------------------------------------------
+Ran 21 tests in 0.770s
+
+OK
