@@ -75,3 +75,6 @@ experiments/issue_401/logs/
 experiments/issue_405/.sources/
 experiments/issue_405/logs/
 ci-logs/
+
+# прототип сайта issue #420 (собирается experiments/issue_420/site-v2/build.py)
+experiments/issue_420/site-v2/out/
