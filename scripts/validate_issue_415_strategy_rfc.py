@@ -6,8 +6,8 @@ RFC ``docs/rfc/2026-10-ba-automation-strategy.md`` собирает видени
 команды крупных клиентов в одном документе для руководителей. Проверка
 фиксирует контракт постановки, а не качество текста:
 
-* RFC в статусе ``proposed``, frontmatter проходит валидатор Хаба, решения
-  DEC-415-01…08 зарегистрированы в ``docs/rfc/rfc-register.md``;
+* RFC в статусе ``proposed`` или ``accepted`` (#417), frontmatter проходит
+  валидатор Хаба, решения DEC-415-01…08 зарегистрированы в ``docs/rfc/rfc-register.md``;
 * четыре раздела верхнего уровня, каждый с указанием канонического файла,
   и таблица переноса в ``docs/vision.md``, ``docs/concept.md``,
   ``docs/architecture.md``, ``docs/roadmap.md``;
@@ -113,7 +113,8 @@ class StrategyRfcTest(unittest.TestCase):
         cls.roadmap = section(cls.md, "## 4. Дорожная карта")
 
     def test_frontmatter_and_status(self):
-        self.assertEqual(self.fm.get("status"), "proposed")
+        # #417: владелец принял RFC (v0.2); до принятия статус был proposed.
+        self.assertIn(self.fm.get("status"), {"proposed", "accepted"})
         self.assertEqual(self.fm.get("owner"), "G-Ivan-A")
         self.assertIn("issues/415", self.fm.get("source", ""))
         for issue in ("409", "411", "415"):
