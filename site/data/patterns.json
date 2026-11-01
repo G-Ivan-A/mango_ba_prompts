@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T07:04:18.728Z",
+  "generatedAt": "2026-11-01T19:58:32.932Z",
   "sourceFiles": [
     {
       "path": "patterns/README.md",
@@ -27,8 +27,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         },
         {
           "id": "mango-bcreq-in-understanding-oneshot",
@@ -37,8 +37,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         }
       ]
     },
@@ -74,8 +74,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         }
       ]
     },
@@ -98,8 +98,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         },
         {
           "id": "mango-bcreq-scenarios-modeling-oneshot",
@@ -108,8 +108,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         }
       ]
     },
@@ -131,8 +131,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         },
         {
           "id": "mango-bcreq-core-documentation-oneshot",
@@ -141,8 +141,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         }
       ]
     },
@@ -166,8 +166,8 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
-          "status": "draft",
-          "archived": false
+          "status": "archived",
+          "archived": true
         }
       ]
     },
