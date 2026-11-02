@@ -1,0 +1,346 @@
+{
+  "issue": 425,
+  "catalog_version": "0.1",
+  "catalog_classes": 39,
+  "class_files": 39,
+  "executable_prompt_files_for_classes": 0,
+  "boilerplate": {
+    "files": 39,
+    "chars_total": 208139,
+    "chars_min": 5165,
+    "chars_max": 5806,
+    "shared_line_rule": "строка после замены C?? встречается >= 30 файлах",
+    "shared_chars_total": 153378,
+    "shared_share": 0.737,
+    "catalog_specific_fields": [
+      "name",
+      "inputs",
+      "outputs",
+      "behavior",
+      "stop",
+      "checks"
+    ],
+    "catalog_specific_chars_avg": 599,
+    "catalog_specific_share_avg": 0.112
+  },
+  "instances": {
+    "per_phase": {
+      "a-in": 21,
+      "a-core": 26,
+      "a-work": 32,
+      "a-release": 14
+    },
+    "total": 93,
+    "distinct_classes": 39,
+    "classes_in_all_four_phases": [
+      "C04",
+      "C12",
+      "C13",
+      "C20",
+      "C34",
+      "C36",
+      "C39"
+    ],
+    "max_repeats_in_one_phase": 1,
+    "sequence": {
+      "a-in": [
+        "C36",
+        "C01",
+        "C02",
+        "C03",
+        "C04",
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C37",
+        "C38",
+        "C14",
+        "C15",
+        "C34",
+        "C39",
+        "C12",
+        "C13",
+        "C20"
+      ],
+      "a-core": [
+        "C36",
+        "C13",
+        "C03",
+        "C04",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C37",
+        "C38",
+        "C19",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C34",
+        "C39",
+        "C12",
+        "C20"
+      ],
+      "a-work": [
+        "C36",
+        "C13",
+        "C03",
+        "C04",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C11",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C21",
+        "C22",
+        "C23",
+        "C24",
+        "C25",
+        "C26",
+        "C27",
+        "C37",
+        "C38",
+        "C28",
+        "C29",
+        "C30",
+        "C31",
+        "C34",
+        "C39",
+        "C12",
+        "C20"
+      ],
+      "a-release": [
+        "C36",
+        "C13",
+        "C04",
+        "C29",
+        "C30",
+        "C31",
+        "C28",
+        "C34",
+        "C39",
+        "C12",
+        "C20",
+        "C32",
+        "C33",
+        "C35"
+      ]
+    }
+  },
+  "old_prompts": {
+    "bcreq_prompts": 14,
+    "classes_per_prompt": {
+      "bcreq-constitution-governance-oneshot.md": [
+        "C13",
+        "C34",
+        "C35",
+        "C36"
+      ],
+      "bcreq-constraints-documentation-stepwise.md": [
+        "C23"
+      ],
+      "bcreq-context-understanding-stepwise.md": [
+        "C02",
+        "C03",
+        "C04",
+        "C14",
+        "C15"
+      ],
+      "bcreq-core-documentation-oneshot.md": [
+        "C31"
+      ],
+      "bcreq-extra-risk-analysis-stepwise.md": [
+        "C25",
+        "C26",
+        "C27"
+      ],
+      "bcreq-fr-documentation-stepwise.md": [
+        "C16",
+        "C17"
+      ],
+      "bcreq-in-understanding-oneshot.md": [
+        "C01",
+        "C09",
+        "C12"
+      ],
+      "bcreq-nfr-documentation-stepwise.md": [
+        "C18"
+      ],
+      "bcreq-orr-solution-design-stepwise.md": [
+        "C21",
+        "C22"
+      ],
+      "bcreq-products-impact-analysis-stepwise.md": [
+        "C05",
+        "C06",
+        "C07",
+        "C08",
+        "C11"
+      ],
+      "bcreq-review-validation-oneshot.md": [
+        "C10",
+        "C20",
+        "C28",
+        "C29",
+        "C30",
+        "C33",
+        "C39"
+      ],
+      "bcreq-scenarios-modeling-oneshot.md": [
+        "C37",
+        "C38"
+      ],
+      "bcreq-uc-modeling-stepwise.md": [
+        "C19",
+        "C24"
+      ],
+      "bcreq-work-solution-design-oneshot.md": []
+    },
+    "prompts_without_class_successor": [
+      "bcreq-work-solution-design-oneshot.md"
+    ],
+    "classes_mapped_outside_bcreq": {
+      "letter-customer-documentation-legacy.md": [
+        "C32"
+      ]
+    },
+    "max_classes_per_prompt": 7
+  },
+  "paste_volume": {
+    "contract_chars": 8189,
+    "standard_chars_avg": 5707,
+    "manual_classes_full_pass_chars": 1295109,
+    "manual_classes_without_release_chars": 1099302,
+    "manual_classes_without_release_lower_bound_chars": 476938,
+    "stepwise_route_source": "a7fbf928^:docs/ba-processes/bcreq-manual-process.md (v0.1)",
+    "stepwise_route_steps": 11,
+    "stepwise_route_prompts": [
+      "bcreq-constitution-governance-oneshot",
+      "bcreq-context-understanding-stepwise",
+      "bcreq-products-impact-analysis-stepwise",
+      "bcreq-fr-documentation-stepwise",
+      "bcreq-nfr-documentation-stepwise",
+      "bcreq-uc-modeling-stepwise",
+      "bcreq-orr-solution-design-stepwise",
+      "bcreq-constraints-documentation-stepwise",
+      "bcreq-uc-modeling-stepwise",
+      "bcreq-extra-risk-analysis-stepwise",
+      "bcreq-review-validation-oneshot"
+    ],
+    "stepwise_route_chars": 134177,
+    "ratio_classes_to_stepwise": 8.19,
+    "ratio_lower_bound_to_stepwise": 3.55,
+    "note": "Символы вставляемого текста без входных данных задачи; не токены и не стоимость."
+  },
+  "archetypes": {
+    "archetypes": 8,
+    "per_archetype": {
+      "INGEST": 3,
+      "EXTRACT": 3,
+      "ANALYZE": 6,
+      "ELICIT": 1,
+      "GENERATE": 15,
+      "VERIFY": 6,
+      "TRANSFORM": 3,
+      "RECORD": 2
+    },
+    "unassigned": [],
+    "unknown": [],
+    "duplicates": []
+  },
+  "terminology": {
+    "39 промптов": {
+      "files": 2,
+      "matches": 2,
+      "top": [
+        "CHANGELOG.md: 1",
+        "docs/ba-processes/bcreq-manual-process.md: 1"
+      ]
+    },
+    "39 классов": {
+      "files": 43,
+      "matches": 153,
+      "top": [
+        "experiments/issue_411/research/lessons_coverage.md: 24",
+        "experiments/issue_411/research/lessons_inventory.json: 17",
+        "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md: 9",
+        "experiments/issue_411/research/parent_tasks_chain.md: 9",
+        "docs/analysis/2026-10-31-bcreq-pipeline-run-experience-review.md: 8",
+        "site/index.html: 8",
+        "CHANGELOG.md: 6",
+        "docs/adr/2026-10-adr-017-run-lessons-ssot.md: 4"
+      ]
+    },
+    "39 стандартов": {
+      "files": 6,
+      "matches": 12,
+      "top": [
+        "docs/rfc/2026-10-bcreq-manual-pipeline.md: 4",
+        "docs/analysis/2026-10-30-repository-current-state.md: 3",
+        "docs/analysis/2026-10-30-october-requirements-evolution.md: 2",
+        "CHANGELOG.md: 1",
+        "docs/analysis/ide-clients-stage-2/2026-10-30-mapping.md: 1",
+        "standards/bcreq-manual-classes/README.md: 1"
+      ]
+    },
+    "38 классов": {
+      "files": 6,
+      "matches": 9,
+      "top": [
+        "docs/analysis/2026-10-29-bcreq-checkpoint.md: 2",
+        "docs/analysis/2026-10-30-repository-current-state.md: 2",
+        "docs/rfc/2026-10-bcreq-manual-pipeline.md: 2",
+        "experiments/issue_411/research/lessons_coverage.md: 1",
+        "experiments/issue_411/research/lessons_inventory.json: 1",
+        "standards/bcreq-manual-classes/README.md: 1"
+      ]
+    },
+    "14 промптов": {
+      "files": 27,
+      "matches": 89,
+      "top": [
+        "docs/analysis/2026-10-31-bcreq-pipeline-run-experience-review.md: 9",
+        "experiments/issue_411/research/parent_tasks_chain.md: 9",
+        "CHANGELOG.md: 6",
+        "docs/adr/2026-10-adr-017-run-lessons-ssot.md: 6",
+        "docs/analysis/2026-11-01-standards-page-risk-review.md: 6",
+        "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md: 6",
+        "pr-ops/backlog-ba-model.md: 5",
+        "docs/rfc/2026-10-ba-automation-strategy.md: 4"
+      ]
+    },
+    "класс промпта": {
+      "files": 49,
+      "matches": 136,
+      "top": [
+        "site/data/prompts.json: 80",
+        "site/index.html: 6",
+        "experiments/issue_423/audit.json: 2",
+        "site/app.js: 2",
+        "site/data/stats.json: 2",
+        "CHANGELOG.md: 1",
+        "docs/analysis/migration-strategy-rfc.md: 1",
+        "docs/hub-research-dependencies.md: 1"
+      ]
+    }
+  }
+}
