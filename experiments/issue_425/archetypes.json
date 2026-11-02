@@ -1,0 +1,46 @@
+{
+  "version": "0.1",
+  "note": "Авторская гипотеза #425: отнесение 39 операций каталога #403 к архетипам промпт-инжиниринга. Это вход для RFC, а не принятое решение. Архетип определяется формой работы модели (что она делает с входом), а не предметом раздела BCREQ.",
+  "archetypes": {
+    "INGEST": {
+      "name": "Приём и нормализация входа",
+      "industry": "Input Semantics (White et al. 2023); подготовка контекста перед цепочкой",
+      "classes": ["C01", "C02", "C36"]
+    },
+    "EXTRACT": {
+      "name": "Извлечение доказательств из источника с локатором",
+      "industry": "Extraction with citations; retrieval step of prompt chaining",
+      "classes": ["C07", "C08", "C09"]
+    },
+    "ANALYZE": {
+      "name": "Анализ и классификация без генерации раздела",
+      "industry": "Classification / routing step (Anthropic: routing; Prompt Report: decomposition)",
+      "classes": ["C03", "C05", "C06", "C10", "C11", "C29"]
+    },
+    "ELICIT": {
+      "name": "Формулировка вопросов человеку",
+      "industry": "Flipped Interaction / Question Refinement (White et al. 2023)",
+      "classes": ["C04"]
+    },
+    "GENERATE": {
+      "name": "Генерация раздела BCREQ по мета-стандарту",
+      "industry": "Template pattern + structured output (White et al. 2023; DSPy signature)",
+      "classes": ["C14", "C15", "C16", "C17", "C18", "C19", "C21", "C22", "C23", "C24", "C25", "C26", "C27", "C37", "C38"]
+    },
+    "VERIFY": {
+      "name": "Проверка без изменения артефакта (критик, гейт)",
+      "industry": "Evaluator / LLM-as-judge; gate in prompt chaining (Anthropic: Building effective agents)",
+      "classes": ["C13", "C20", "C28", "C31", "C33", "C39"]
+    },
+    "TRANSFORM": {
+      "name": "Сборка, проекция и адресная правка готового текста",
+      "industry": "Aggregator / editor step; self-correction chain",
+      "classes": ["C12", "C30", "C32"]
+    },
+    "RECORD": {
+      "name": "Фиксация решения человека и baseline",
+      "industry": "Human-in-the-loop checkpoint record (12-Factor Agents, фактор 7)",
+      "classes": ["C34", "C35"]
+    }
+  }
+}
