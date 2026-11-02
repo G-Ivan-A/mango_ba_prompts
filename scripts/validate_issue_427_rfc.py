@@ -9,8 +9,13 @@ DoD #427 — RFC на изменения и спринт в бэклоге. Пр
   ``ai-generated``, ``source`` — issue #427;
 * разделы RFC на месте: постановка по шаблону задачи, термин «Поток»,
   мета-модель, процессы, промпт/контракт/стандарт, стандарты, исключения
-  runtime, промпты, раздел «Процессы», решения DEC-427-01…12, план, риски,
+  runtime, промпты, раздел «Процессы», решения DEC-427-01…13, план, риски,
   альтернативы, самовопросы, «что не сделано»;
+* редакция 0.2 по ревью владельца PR #428: цепочка «Поток → Процесс →
+  Операция → Артефакт» из четырёх элементов; шаг, гейт и стадия — не
+  уровни цепочки; отклонённая иерархия «поток → этап с гейтом → процесс →
+  шаг → операция» упоминается только как отклонённая; точное определение
+  операции; уровни таксономии операций — техдолг S-010 → BL-125;
 * девять процессов ПБ-0…ПБ-7 и ПБ-С; последовательность 12 шагов этапа 1
   и шаг Ш-С вне последовательности; каждый промпт шага существует в
   ``prompts/``; состав — 11 файлов промптов;
@@ -18,7 +23,8 @@ DoD #427 — RFC на изменения и спринт в бэклоге. Пр
   mango-ba-ai-runtime закреплены полным SHA;
 * Спринт 9 в ``pr-ops/BACKLOG.md``: задачи BL-150…BL-158, BL-230, BL-231 с
   карточками, ссылающимися на RFC; решения Р-13…Р-15; долг S-009 → BL-158;
-* реестр RFC содержит RFC-427-DEC-01…12 со ссылками на существующие якоря;
+  задача BL-125 в Спринте 6 и долг S-010 → BL-125;
+* реестр RFC содержит RFC-427-DEC-01…13 со ссылками на существующие якоря;
 * CHANGELOG описывает #427 в ``Unreleased``;
 * относительные ссылки и якоря RFC разрешаются;
 * промпты, стандарты, процесс BCREQ, сайт и прогоны этим PR не меняются —
@@ -48,7 +54,7 @@ H2 = (
     "1. Постановка задачи",
     "2. SSOT и источники",
     "3. Термин «Поток»: сверка с практикой",
-    "4. Иерархия потока и совместимость с мета-моделью БА",
+    "4. Цепочка «Поток — Процесс — Операция — Артефакт» и совместимость с мета-моделью БА",
     "5. Процессы потока BCREQ",
     "6. Промпт, контракт, стандарт",
     "7. Полный набор стандартов",
@@ -83,6 +89,7 @@ TRACK_A_TASKS = ("BL-230", "BL-231")
 DECISIONS = ("Р-13", "Р-14", "Р-15")
 SPRINT = "### Спринт 9: Поток BCREQ: стандарты и промпты по тесту"
 SPRINT_ANCHOR = "спринт-9-поток-bcreq-стандарты-и-промпты-по-тесту"
+H2_CHAIN = "## 4. Цепочка «Поток — Процесс — Операция — Артефакт» и совместимость с мета-моделью БА"
 PROTECTED = ("prompts", "standards", "docs/ba-processes", "site", "runs")
 LINK_RE = re.compile(r"\]\(([^)\s]+)\)")
 RUNTIME_RE = re.compile(r"https://github\.com/G-Ivan-A/mango-ba-ai-runtime/(?:tree|blob)/([^/)\s>]+)")
@@ -159,13 +166,38 @@ class Issue427Rfc(unittest.TestCase):
     def test_decisions(self):
         block = section(self.text, "## 11. Решения на согласование")
         found = re.findall(r"^### (DEC-427-\d\d)\. ", block, re.M)
-        self.assertEqual(found, [f"DEC-427-{n:02d}" for n in range(1, 13)])
+        self.assertEqual(found, [f"DEC-427-{n:02d}" for n in range(1, 14)])
 
     def test_flow_term_verdict(self):
         block = section(self.text, "## 3. Термин «Поток»: сверка с практикой")
         for source in ("ГОСТ Р 56020-2020", "SAFe", "Business Architecture Guild", "APQC"):
             self.assertIn(source, block)
         self.assertIn("### 3.2. Вердикт исполнителя", block)
+
+    def test_chain_of_elements(self):
+        """Ревью владельца PR #428: цепочка из четырёх элементов, а не иерархия из пяти уровней."""
+        block = section(self.text, H2_CHAIN)
+        table = section(block, "### 4.1. Четыре элемента")
+        self.assertEqual(
+            [cell.strip() for cell in re.findall(r"^\| [1-4] \| ([^|]+)\|", table, re.M)],
+            ["Поток", "Процесс (подпроцесс)", "Операция", "Артефакт"],
+        )
+        not_levels = section(block, "### 4.2. Шаг, гейт и стадия — не уровни")
+        for term in ("Шаг", "Гейт", "Стадия"):
+            self.assertRegex(not_levels, rf"(?m)^\| {term} ", term)
+        self.assertIn("**Поток → Процесс (подпроцессы) → Операция → Артефакт**", self.text)
+        for paragraph in re.split(r"\n\s*\n", self.text):
+            if re.search(r"этап\S*\s+(?:\(стадия\)\s+)?с\s+гейтом\s+→\s+процесс", paragraph):
+                self.assertRegex(paragraph, r"отклонен", "отклонённая иерархия без пометки")
+
+    def test_operation_definition(self):
+        block = section(self.text, "### 4.3. Операция: точное определение")
+        self.assertIn("**Операция** — атомарное действие процесса", block)
+        for row in ("Тип операции (класс, контракт)", "Экземпляр операции", "Исполнение"):
+            self.assertRegex(block, rf"(?m)^\| {re.escape(row)} \|", row)
+        taxonomy = section(self.text, "### 4.4. Уровни таксономии операций: техдолг S-010")
+        for marker in ("ingestion", "C02", "normalize-text", "SK-transcript-normalization", "BL-125"):
+            self.assertIn(marker, taxonomy)
 
     def test_processes(self):
         block = section(self.text, "### 5.3. Процессы")
@@ -213,7 +245,7 @@ class Issue427Rfc(unittest.TestCase):
 
     def test_not_done_mapped_to_sprint(self):
         block = section(self.text, "## 16. Что не сделано в этом PR и почему")
-        for task in ("BL-151", "BL-155", "BL-156", "BL-158", "BL-230", "BL-231"):
+        for task in ("BL-151", "BL-155", "BL-156", "BL-158", "BL-230", "BL-231", "BL-125"):
             self.assertIn(task, block)
 
     def test_links_resolve(self):
@@ -275,13 +307,22 @@ class Issue427Backlog(unittest.TestCase):
         block = section(self.backlog, "## 6. Технический долг соответствия стандартам Хаба (issue #267)")
         self.assertRegex(block, r"(?m)^\| S-009 \| .*RFC #427", "строка долга")
         self.assertRegex(block, r"(?m)^\| S-009 \| BL-158 \|", "связь с задачей")
+        self.assertRegex(block, r"(?m)^\| S-010 \| .*RFC #427", "строка долга S-010")
+        self.assertRegex(block, r"(?m)^\| S-010 \| BL-125 \|", "связь S-010 с задачей")
+
+    def test_taxonomy_debt_task(self):
+        block = section(self.backlog, "### Спринт 6: Ревизия мета-модели после этапа 1")
+        self.assertRegex(block, r"(?m)^\| BL-125 \| .*S-010", "строка BL-125 в Спринте 6")
+        card = self.track_b.split("### BL-125. ", 1)[1].split("\n### ", 1)[0]
+        self.assertIn("2026-11-bcreq-flow-processes-prompts.md", card)
+        self.assertIn("**Решение владельца.** Р-1", card)
 
 
 class Issue427Registers(unittest.TestCase):
     def test_rfc_register(self):
         text = REGISTER.read_text(encoding="utf-8")
         found = re.findall(r"^\| \[RFC-427-DEC-(\d\d)\]\(2026-11-bcreq-flow-processes-prompts\.md#([^)]+)\)", text, re.M)
-        self.assertEqual([n for n, _ in found], [f"{n:02d}" for n in range(1, 13)])
+        self.assertEqual([n for n, _ in found], [f"{n:02d}" for n in range(1, 14)])
         rfc_anchors = anchors(RFC)
         for _, anchor in found:
             self.assertIn(anchor, rfc_anchors)
