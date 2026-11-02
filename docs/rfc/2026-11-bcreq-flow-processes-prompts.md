@@ -1,12 +1,13 @@
 ---
-status: draft
+status: proposed
 version: 0.1
 updated: 2026-11-02
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
-based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/1bd48293"
-rfc-scope: "Поток BCREQ этапа 1: процессы, полный набор стандартов и промптов, исключения со ссылками на mango-ba-ai-runtime, форма раздела «Процессы» сайта, спринт реализации"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403, https://github.com/G-Ivan-A/mango_ba_prompts/issues/418, https://github.com/G-Ivan-A/mango_ba_prompts/issues/425, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
+rfc-scope: multi
+type: rfc
 related_artifacts: "docs/analysis/2026-11-02-bcreq-prompts-classes-standards-check.md, docs/ba-processes/bcreq-manual-process.md, docs/contracts/bcreq-stage-gates.md, docs/contracts/bcreq-manual-state.md, standards/bcreq-manual-classes/catalog.json, docs/rfc/2026-10-bcreq-manual-pipeline.md, docs/rfc/2026-10-bcreq-run-lessons-pipeline.md, docs/adr/2026-10-adr-015-bcreq-manual-classes.md, pr-ops/BACKLOG.md"
 ---
 
