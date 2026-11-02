@@ -5,8 +5,10 @@ DoD #427 — RFC на изменения и спринт в бэклоге. Пр
 постановки, а не качество текста:
 
 * RFC ``docs/rfc/2026-11-bcreq-flow-processes-prompts.md`` проходит
-  валидатор frontmatter Хаба, статус ``proposed`` (ждёт рассмотрения владельцем), без поля
-  ``ai-generated``, ``source`` — issue #427;
+  валидатор frontmatter Хаба, статус ``accepted`` (решение владельца «Р-13 да»
+  после слияния PR #428; до него — ``proposed``), без поля ``ai-generated``,
+  ``source`` — issue #427; детали принятия проверяет
+  ``validate_issue_427_r13_acceptance.py``;
 * разделы RFC на месте: постановка по шаблону задачи, термин «Поток»,
   мета-модель, процессы, промпт/контракт/стандарт, стандарты, исключения
   runtime, промпты, раздел «Процессы», решения DEC-427-01…13, план, риски,
@@ -51,6 +53,7 @@ PROMPTS = ROOT / "prompts"
 H2 = (
     "Summary / BLUF",
     "Навигация и обязательные результаты",
+    "Статус принятия (Р-13)",
     "1. Постановка задачи",
     "2. SSOT и источники",
     "3. Термин «Поток»: сверка с практикой",
@@ -148,7 +151,7 @@ class Issue427Rfc(unittest.TestCase):
         cls.fm = frontmatter(cls.text)
 
     def test_frontmatter(self):
-        self.assertEqual(self.fm.get("status"), "proposed")
+        self.assertEqual(self.fm.get("status"), "accepted")
         self.assertEqual(self.fm.get("type"), "rfc")
         self.assertEqual(self.fm.get("owner"), "G-Ivan-A")
         self.assertIn("issues/427", self.fm.get("source", ""))
