@@ -44,26 +44,36 @@ class StandardsTests(unittest.TestCase):
         html = (ROOT / 'site/index.html').read_text()
         parser = PageParser()
         parser.feed(html)
-        self.assertEqual(parser.nav, ['catalog', 'standards', 'dashboard', 'processes'])
+        # Issue #423 publishes the menu of PR #422 (RFC standards page v0.2).
+        self.assertEqual(parser.nav, ['about', 'catalog', 'standards', 'processes', 'dashboard', 'glossary'])
         self.assertEqual(set(parser.articles), set('12345678'))
-        self.assertEqual(parser.targets, list('12345678'))
+        # Intro (0) and section cards 1–8 are reachable from the standards page.
+        self.assertEqual(set(parser.targets), set('012345678'))
+        terms = set(re.findall(r'id="term-([^"]+)"', html))
         for number, article in parser.articles.items():
             with self.subTest(section=number):
                 self.assertGreaterEqual(article['criteria'], 3)
-                self.assertTrue(article['links'])
-                self.assertTrue(all(url.startswith('https://') for url in article['links']))
+                self.assertTrue(any(url.startswith('https://') for url in article['links']))
+                for url in article['links']:
+                    if url.startswith('#glossary?term='):
+                        self.assertIn(url.split('=', 1)[1], terms, url)
+                    else:
+                        self.assertTrue(url.startswith('https://'), url)
         self.assertIn('"standards"', (ROOT / 'site/app.js').read_text())
 
     def test_terms_and_stage_context_are_present(self):
         html = (ROOT / 'site/index.html').read_text()
-        terms = ['Измеримая цель', 'Включено', 'Не включено', 'Дельта',
-                 'Необходимо и достаточно', '5±2', 'EARS', 'ФТ ↔ ОРР ↔ UC',
-                 '100%', 'L1 ФДР', 'L2 ТС', 'Характеристики качества',
-                 'A-IN', 'A-CORE', 'A-WORK', 'Г-IN', 'Г-С1', 'Г-W',
-                 'BABOK', 'IREB', 'ISO/IEC 25010:2023', 'arc42']
+        # Issue #423: the page text is the v0.2 template approved in PR #422
+        # (docs/rfc/2026-10-standards-page-rfc.md); the RFC drops EARS, «3.N»,
+        # «Коротко» and «за одну минуту» from the page.
+        terms = ['5±2', 'A-IN', 'A-CORE', 'A-WORK', 'Г-IN', 'Г-С1', 'Г-W',
+                 'BABOK', 'IREB', 'ISO/IEC 25010:2023']
         for term in terms:
             with self.subTest(term=term):
                 self.assertTrue(term in html, term)
+        for phrase in ['EARS', '3.N', 'Коротко', 'за одну минуту']:
+            with self.subTest(forbidden=phrase):
+                self.assertNotIn(phrase, html)
 
     def test_existing_sections_gate_and_standards_remain_identical(self):
         baseline = json.loads((ROOT / 'experiments/issue_395/site-baseline.json').read_text())
@@ -86,7 +96,14 @@ class StandardsTests(unittest.TestCase):
     def test_new_page_sources_resolve_to_real_repository_files(self):
         html = (ROOT / 'site/index.html').read_text()
         section = re.search(r'<section class="page-band standards-band".*?</section>', html, re.S).group()
+        terms = set(re.findall(r'id="term-([^"]+)"', html))
         for href in re.findall(r'href="([^"]+)"', section):
+            if href.startswith('#glossary?term='):
+                self.assertIn(href.split('=', 1)[1], terms, href)
+                continue
+            if href.startswith('#standards?section='):
+                self.assertIn(href.split('=', 1)[1], set('012345678'), href)
+                continue
             self.assertTrue(href.startswith('https://'), href)
             prefix = '/G-Ivan-A/mango_ba_prompts/blob/main/'
             url = urlsplit(href)

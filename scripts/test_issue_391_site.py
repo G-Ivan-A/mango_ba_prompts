@@ -12,13 +12,20 @@ ROOT = Path(__file__).resolve().parents[1]
 
 class PublicationTests(unittest.TestCase):
     def test_catalog_contains_all_and_only_bcreq_sources(self):
+        # Issue #423: the active catalog is the 39 BCREQ classes of PR #422; the 14
+        # stage-1 prompts (prompts/bcreq-*.md) stay published only as the archive.
         data = json.loads((ROOT / 'site/data/prompts.json').read_text())
-        expected = {str(p.relative_to(ROOT)) for p in (ROOT / 'prompts').glob('bcreq-*.md')}
+        classes = {str(p.relative_to(ROOT)) for p in (ROOT / 'standards/bcreq-manual-classes').glob('[0-9][0-9]-*.md')}
+        archived = {str(p.relative_to(ROOT)) for p in (ROOT / 'prompts').glob('bcreq-*.md')}
         actual = {p['sourcePath'] for p in data['prompts']}
-        self.assertEqual(actual, expected)
-        self.assertEqual(len(data['prompts']), len(expected))
-        self.assertTrue(all(p['family'] == 'bcreq' and not p['archived'] for p in data['prompts']))
-        self.assertEqual({f['id'] for f in data['filters']['families']}, {'bcreq'})
+        self.assertEqual(actual, classes | archived)
+        self.assertEqual(len(data['prompts']), len(classes) + len(archived))
+        for prompt in data['prompts']:
+            if prompt['sourcePath'] in classes:
+                self.assertTrue(prompt['family'] == 'bcreq' and not prompt['archived'], prompt['id'])
+            else:
+                self.assertTrue(prompt['family'] == 'archive' and prompt['archived'], prompt['id'])
+        self.assertEqual({f['id'] for f in data['filters']['families']}, {'bcreq', 'archive'})
         for prompt in data['prompts']:
             self.assertEqual(prompt['content'], (ROOT / prompt['sourcePath']).read_text())
 

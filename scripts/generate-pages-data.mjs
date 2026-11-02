@@ -42,10 +42,12 @@ const MODE_ICONS = {
   stepwise: "↔",
   oneshot: "●",
   legacy: "⌁",
+  manual: "✋",
 };
 
-// Catalog stages follow the BCREQ contract, independently of the legacy
-// process taxonomy. Prompt frontmatter is the source of membership/operations.
+// Стадии 14 архивных промптов этапа 1 (их frontmatter.processes). С issue #423
+// каталог и фильтры строятся по CLASS_STAGES; эти метки остаются только в
+// карточках архива, чтобы не переписывать архивные файлы.
 const BCREQ_STAGES = [
   { id: "bcreq-in", label: "Приём и контекст", emoji: "📥", description: "Контекст, термины, границы, продукты и стейкхолдеры." },
   { id: "bcreq-core", label: "Требования и предварительное согласование", emoji: "📋", description: "ФТ, НФТ и первый прогон UC для предварительного согласования." },
@@ -54,6 +56,54 @@ const BCREQ_STAGES = [
   { id: "bcreq-review", label: "Валидация второй ролью", emoji: "✅", description: "Независимая проверка разделов документа по чек-листам." },
   { id: "bcreq-scenarios", label: "Сценарии вне документа", emoji: "🎬", description: "Независимые US и UC по предоставленному контексту." },
 ];
+
+// Версия сайта (issue #423). Мажор 2 — сайт v2: страницы О проекте, Каталог,
+// Стандарты, Процессы, Дашборд, Справочник; каталог 39 классов (PR #422).
+// Минор и патч растут при последующих изменениях сайта (CHANGELOG.md).
+const SITE_VERSION = {
+  version: "2.0.0",
+  released: "2026-11-01",
+  issue: 423,
+  basis: "PR #422: 39 классов ручных промптов BCREQ, процесс v0.2",
+  changelog: "CHANGELOG.md",
+};
+
+// Каталог 39 классов ручных промптов BCREQ (PR #422, issue #423). Источник
+// истины — standards/bcreq-manual-classes/catalog.json и файлы классов;
+// генератор только читает их. 14 промптов prompts/bcreq-*.md — архив.
+const CLASS_DIR = "standards/bcreq-manual-classes";
+const CLASS_CATALOG = `${CLASS_DIR}/catalog.json`;
+const STATE_CONTRACT = "docs/contracts/bcreq-manual-state.md";
+
+const CLASS_STAGES = [
+  { id: "a-in", code: "A-IN", label: "A-IN · Приём задачи", emoji: "📥", gate: "Г-IN",
+    description: "Приём запроса, нормализация, вопросы, границы, источники, глоссарий и бизнес-контекст; гейт Г-IN решает БА." },
+  { id: "a-core", code: "A-CORE", label: "A-CORE · Требования", emoji: "📋", gate: "Г-С1",
+    description: "ФТ, НФТ, первый прогон UC, независимая проверка и сборка для Заказчика; гейт Г-С1 «Согласование 1»." },
+  { id: "a-work", code: "A-WORK", label: "A-WORK · Решение", emoji: "⚙️", gate: "Г-W",
+    description: "ОРР L1/L2, ограничения, второй прогон UC, риски, зависимости поставки и план приёмки; гейт Г-W." },
+  { id: "a-release", code: "A-RELEASE", label: "A-RELEASE · Выпуск", emoji: "🚀", gate: "выпуск",
+    description: "Сверка и контроль выпускного комплекта, пакеты адресатам, baseline и передача." },
+];
+
+// Операция таксономии для каждого класса: по назначению класса (behavior) —
+// одна из 13 операций docs/taxonomy.md. Сопоставление нужно только сайту.
+const CLASS_OPERATIONS = {
+  C01: "ingestion", C02: "ingestion", C09: "ingestion",
+  C03: "understanding", C04: "understanding",
+  C05: "impact_analysis", C06: "impact_analysis", C29: "impact_analysis",
+  C07: "research", C08: "research",
+  C10: "validation", C11: "validation", C28: "validation", C39: "validation",
+  C12: "documentation", C14: "documentation", C15: "documentation", C16: "documentation",
+  C17: "documentation", C18: "documentation", C23: "documentation", C30: "documentation",
+  C32: "documentation",
+  C13: "governance", C20: "governance", C34: "governance", C35: "governance", C36: "governance",
+  C19: "modeling", C24: "modeling", C37: "modeling", C38: "modeling",
+  C21: "solution_design", C22: "solution_design",
+  C25: "risk_analysis", C26: "risk_analysis",
+  C27: "release_readiness", C33: "release_readiness",
+  C31: "quality",
+};
 
 // Палитра эмодзи для процессов БА. Назначается по позиции процесса, поэтому
 // дашборд и каталог остаются гибкими: при добавлении новых процессов (после
@@ -83,6 +133,8 @@ const MODE_HINTS = {
     "Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка за один ответ без потери шага review.",
   legacy:
     "Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
+  manual:
+    "Ручной класс: БА вставляет его в чат с контрактом состояния и правилами C36, заполняет JSON-вход, проверяет BCREQ_OUTPUT и сам решает, что запускать дальше.",
 };
 
 function processEmoji(index) {
@@ -602,11 +654,12 @@ function parseRoadmap(markdown) {
 
 async function listPromptFiles() {
   const activeNames = await fs.readdir(path.join(ROOT, "prompts"));
-  // Publication boundary (issue #391). Repository tools and archives remain
-  // intact; every generated catalog, statistic and prompt link uses this set.
+  // Publication boundary (issue #391). Since issue #423 these 14 stage-1
+  // prompts are the catalog archive: files stay in prompts/ because standards,
+  // RFC, ADR and runs link to them; the active catalog is the 39 classes.
   return activeNames
     .filter((name) => name.startsWith("bcreq-") && name.endsWith(".md"))
-    .map((name) => ({ relativePath: `prompts/${name}`, archived: false }))
+    .map((name) => ({ relativePath: `prompts/${name}`, archived: true }))
     .sort((left, right) => left.relativePath.localeCompare(right.relativePath, "ru"));
 }
 
@@ -637,10 +690,10 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
     testsPassed: canonicalPrompts.length,
     inWork: draftPrompts.length,
     deferred: archivedPrompts.length,
-    modes: countBy(prompts, (prompt) => prompt.mode),
-    statuses: countBy(prompts, (prompt) => prompt.status),
-    operations: countBy(prompts, (prompt) => prompt.operation.id),
-    processes: countBy(prompts, (prompt) => prompt.processes),
+    modes: countBy(activePrompts, (prompt) => prompt.mode),
+    statuses: countBy(activePrompts, (prompt) => prompt.status),
+    operations: countBy(activePrompts, (prompt) => prompt.operation.id),
+    processes: countBy(activePrompts, (prompt) => prompt.processes),
   };
 
   const phases = [
@@ -651,7 +704,7 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
       status: "current",
       progress: prompts.length === 0 ? 0 : Math.round((activePrompts.length / prompts.length) * 100),
       levelIds: ["level-1"],
-      summary: "Ручной выбор prompt-файла, копирование в AI-чат и human review результата.",
+      summary: "39 классов ручных промптов: БА копирует класс в AI-чат с контрактом состояния и проверяет результат.",
       metrics: [
         { label: "активных", value: activePrompts.length },
         { label: "проверено", value: canonicalPrompts.length },
@@ -690,10 +743,11 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
 
   return {
     generatedAt: new Date().toISOString(),
-    sourceFiles: Object.values(SOURCE_FILES).map((relativePath) => ({
+    sourceFiles: [...Object.values(SOURCE_FILES), CLASS_CATALOG].map((relativePath) => ({
       path: relativePath,
       url: repoUrl(relativePath),
     })),
+    siteVersion: SITE_VERSION,
     totals,
     taxonomy: {
       operations: taxonomy.operations.length,
@@ -714,6 +768,10 @@ function normalizeForMatch(value) {
 
 // Набор «топиков» промпта для сопоставления с тестовыми логами runs/.
 function promptSearchTerms(prompt) {
+  if (prompt.classId) {
+    // Класс ищется только по пути стандарта: номер класса (C01) слишком общий.
+    return [normalizeForMatch(prompt.sourcePath.replace(/\.md$/, "").replace(/^standards\//, ""))];
+  }
   const stem = prompt.file
     .replace(/\.md$/, "")
     .replace(/-(stepwise|oneshot|legacy|simple)$/g, "")
@@ -827,7 +885,8 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
     checkedByLabel.set(process.label, 0);
     promptsByLabel.set(process.label, 0);
   }
-  for (const prompt of perPrompt) {
+  // Архив (issue #423) не входит в показатели стадий: его метки — прежние.
+  for (const prompt of perPrompt.filter((item) => item.status !== "archived")) {
     const labels = prompt.processes.length > 0 ? prompt.processes : [OTHER_LABEL];
     for (const label of labels) {
       if (!checkedByLabel.has(label)) {
@@ -839,6 +898,8 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
     }
   }
   const emojiByLabel = new Map(processes.map((process) => [process.label, process.emoji]));
+  const orderByLabel = new Map(processes.map((process, index) => [process.label, index]));
+  const stageOrder = (label) => (orderByLabel.has(label) ? orderByLabel.get(label) : processes.length);
   const byProcess = [...checkedByLabel.entries()]
     .map(([label, checks]) => ({
       label,
@@ -846,13 +907,15 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
       checks,
       coveredPrompts: promptsByLabel.get(label) || 0,
     }))
-    .sort((left, right) => right.checks - left.checks || left.label.localeCompare(right.label, "ru"));
+    .sort((left, right) => right.checks - left.checks || stageOrder(left.label) - stageOrder(right.label) ||
+      left.label.localeCompare(right.label, "ru"));
 
-  const coveredPrompts = perPrompt.filter((prompt) => prompt.tests > 0).length;
+  const activePerPrompt = perPrompt.filter((prompt) => prompt.status !== "archived");
+  const coveredPrompts = activePerPrompt.filter((prompt) => prompt.tests > 0).length;
   const testsPassed = {
     covered: coveredPrompts,
-    total: perPrompt.length,
-    percent: perPrompt.length === 0 ? 0 : Math.round((coveredPrompts / perPrompt.length) * 100),
+    total: activePerPrompt.length,
+    percent: activePerPrompt.length === 0 ? 0 : Math.round((coveredPrompts / activePerPrompt.length) * 100),
   };
 
   const activity = processes
@@ -990,12 +1053,12 @@ function makePatterns(patternsList, prompts, operationsById) {
   };
 }
 
-// Набор промпта (issue #388): новые промпты BCREQ выделяются на сайте и
-// фильтруются отдельной группой «Набор».
+// Набор промпта (issue #388, #423): 39 классов BCREQ выделяются на сайте и
+// фильтруются отдельной группой; 14 промптов этапа 1 — группа «Архив».
 const PROMPT_FAMILIES = [
-  { id: "bcreq", label: "BCREQ (новые)", icon: "★", description: "Набор BCREQ: Промпт 0 и промпты шагов и стадий (issue #388)." },
+  { id: "bcreq", label: "BCREQ · 39 классов", icon: "★", description: "39 классов ручных промптов BCREQ (PR #422): по одному стандарту на класс, общий контракт состояния." },
   { id: "other", label: "Прочие", icon: "•", description: "Действующие промпты вне набора BCREQ." },
-  { id: "archive", label: "Архив", icon: "⌛", description: "Промпты, заменённые набором BCREQ; сохранены для ссылок из прогонов." },
+  { id: "archive", label: "Архив", icon: "⌛", description: "14 промптов этапа 1, заменённые 39 классами (issue #423); файлы остаются в prompts/ для ссылок из стандартов, RFC и прогонов." },
 ];
 
 function promptFamily(basename, archived) {
@@ -1036,17 +1099,27 @@ function makeBcreqFlow(markdown, prompts) {
     text: stripMarkdownInline(row["Правило"]),
   }));
 
+  // С issue #423 ячейка «Промпт» — ссылка на файл класса
+  // standards/bcreq-manual-classes/NN-slug.md; шаг разрешается по цели ссылки.
   const steps = tableByHeaders(tables, ["Шаг", "Промпт", "Что делает БА"], "Шаги").map((row) => {
-    const file = `${stripMarkdownInline(row["Промпт"])}.md`;
+    const target = row["Промпт"].match(/\]\(([^)]+)\)/)?.[1] || "";
+    const file = target ? path.basename(target) : `${stripMarkdownInline(row["Промпт"])}.md`;
     const prompt = promptsByFile.get(file);
     if (!prompt || prompt.archived) {
-      throw new Error(`${SOURCE_FILES.bcreqFlow}: шаг ${row["Шаг"]} ссылается на неизвестный промпт ${file}`);
+      throw new Error(`${SOURCE_FILES.bcreqFlow}: шаг ${row["Шаг"]} ссылается на неизвестный или архивный промпт ${file}`);
     }
     return {
       number: Number(stripMarkdownInline(row["№"])),
       step: stripMarkdownInline(row["Шаг"]),
       stage: stripMarkdownInline(row["Стадия"]),
-      prompt: { id: prompt.id, file: prompt.file, title: prompt.title, url: prompt.url },
+      stages: stripMarkdownInline(row["Стадия"]).split(/,\s*/).filter(Boolean),
+      prompt: {
+        id: prompt.id,
+        classId: prompt.classId || "",
+        file: prompt.file,
+        title: prompt.title,
+        url: prompt.url,
+      },
       params: stripMarkdownInline(row["Параметры"]),
       prepare: stripMarkdownInline(row["Что подготовить"]),
       actions: splitList(row["Что делает БА"]),
@@ -1054,6 +1127,29 @@ function makeBcreqFlow(markdown, prompts) {
       gate: stripMarkdownInline(row["Гейт после шага"]),
     };
   });
+
+  const stepByClass = new Map(steps.map((step) => [step.prompt.classId, step]));
+  const sequences = tableByHeaders(tables, ["Стадия", "Порядок промптов"], "Порядок промптов по стадиям").map(
+    (row) => {
+      const stage = stripMarkdownInline(row["Стадия"]);
+      const chain = stripMarkdownInline(row["Порядок промптов"])
+        .split(/\s*→\s*/)
+        .filter(Boolean)
+        .map((classId) => {
+          const step = stepByClass.get(classId);
+          if (!step) {
+            throw new Error(`${SOURCE_FILES.bcreqFlow}: стадия ${stage} ссылается на класс без шага ${classId}`);
+          }
+          return { classId, number: step.number, title: step.prompt.title };
+        });
+      return {
+        stage,
+        chain,
+        gate: stripMarkdownInline(row["Гейт стадии"]),
+        decides: stripMarkdownInline(row["Кто решает"]),
+      };
+    },
+  );
 
   const approval = tableByHeaders(tables, ["Этап", "Гейт", "Кто согласует", "Исходы"], "Этапы согласования").map(
     (row) => ({
@@ -1089,9 +1185,12 @@ function makeBcreqFlow(markdown, prompts) {
     title,
     manual: {
       title,
-      route: "stepwise",
+      route: "manual",
+      contract: { label: "Контракт состояния ручного BCREQ", url: repoUrl(STATE_CONTRACT) },
+      classes: { label: "Инвентарь 39 классов", url: repoUrl(`${CLASS_DIR}/README.md`) },
       rules,
       steps,
+      sequences,
     },
     approval: {
       title: "Согласование BCREQ с командой и Заказчиком",
@@ -1131,7 +1230,84 @@ async function main() {
   const operationsById = new Map(taxonomy.operations.map((operation) => [operation.id, operation]));
   const processesByLabel = new Map(BCREQ_STAGES.map((process) => [process.label, process]));
 
+  const classCatalog = JSON.parse(await read(CLASS_CATALOG));
+  const successorsByFile = new Map();
+  for (const item of classCatalog.classes) {
+    const file = path.basename(item.existing || "");
+    if (!successorsByFile.has(file)) {
+      successorsByFile.set(file, []);
+    }
+    successorsByFile.get(file).push(item.id);
+  }
+
   const prompts = [];
+  // 39 классов (PR #422) — действующий каталог.
+  const classStagesById = new Map(CLASS_STAGES.map((stage) => [stage.id, stage]));
+  for (const item of classCatalog.classes) {
+    const relativePath = `${CLASS_DIR}/${item.file}`;
+    const content = await read(relativePath);
+    const frontmatter = parseFrontmatter(content);
+    const operation = operationsById.get(CLASS_OPERATIONS[item.id]);
+    if (!operation) {
+      throw new Error(`${relativePath}: CLASS_OPERATIONS must map ${item.id} to one of the 13 taxonomy operations`);
+    }
+    const stages = (item.phases || []).map((phase) => classStagesById.get(phase));
+    if (stages.length === 0 || stages.some((stage) => !stage)) {
+      throw new Error(`${CLASS_CATALOG}: ${item.id} phases must be a-in/a-core/a-work/a-release`);
+    }
+    const title = content.match(/^# (.+)$/m)?.[1]?.trim() || `${item.id}. ${item.name}`;
+    const behavior = String(item.behavior || "").trim();
+    const firstSentence = behavior.match(/^.+?[.!?](?=\s|$)/)?.[0] || behavior;
+    const analogFile = path.basename(item.existing || "");
+    const mode = "manual";
+    prompts.push({
+      id: `mango-bcreq-${item.id.toLowerCase()}-${item.slug}`,
+      classId: item.id,
+      file: item.file,
+      title,
+      sourcePath: relativePath,
+      url: repoUrl(relativePath),
+      archived: false,
+      family: "bcreq",
+      isNew: true,
+      description: firstSentence,
+      descriptionLong: buildLongDescription(behavior, operation, mode),
+      mode,
+      modeIcon: MODE_ICONS[mode],
+      status: frontmatter.status || "draft",
+      version: frontmatter.version || classCatalog.version || "unknown",
+      updated: frontmatter.updated || "",
+      temperature: frontmatter.temperature || "",
+      operation: {
+        id: operation.id,
+        label: operation.label,
+        description: operation.description,
+        icon: operation.icon,
+      },
+      phases: item.phases,
+      processes: stages.map((stage) => stage.label),
+      processDetails: stages.map((stage) => ({
+        id: stage.id,
+        label: stage.label,
+        icon: stage.emoji,
+        emoji: stage.emoji,
+      })),
+      inputs: item.inputs,
+      outputs: item.outputs,
+      stop: item.stop,
+      checks: item.checks,
+      analog: item.existing
+        ? { file: analogFile, path: item.existing, url: repoUrl(item.existing) }
+        : null,
+      frontmatter,
+      content,
+      body: stripFrontmatter(content),
+      contentHash: crypto.createHash("sha256").update(content).digest("hex"),
+      lineCount: content.split(/\r?\n/).length,
+    });
+  }
+
+  // 14 промптов этапа 1 — архив каталога (issue #423).
   for (const file of promptFiles) {
     const content = await read(file.relativePath);
     const frontmatter = parseFrontmatter(content);
@@ -1187,6 +1363,7 @@ async function main() {
         icon: process.emoji,
         emoji: process.emoji,
       })),
+      successors: successorsByFile.get(basename) || [],
       frontmatter,
       content,
       body: stripFrontmatter(content),
@@ -1195,11 +1372,12 @@ async function main() {
     });
   }
 
-  const catalogProcesses = BCREQ_STAGES.map((stage) => ({
+  const activePrompts = prompts.filter((prompt) => !prompt.archived);
+  const catalogProcesses = CLASS_STAGES.map((stage) => ({
     ...stage,
     icon: stage.emoji,
     operations: taxonomy.operations
-      .filter((operation) => prompts.some((prompt) => prompt.processes.includes(stage.label) && prompt.operation.id === operation.id))
+      .filter((operation) => activePrompts.some((prompt) => prompt.processes.includes(stage.label) && prompt.operation.id === operation.id))
       .map((operation) => operation.id),
   }));
   const filters = {
@@ -1220,8 +1398,12 @@ async function main() {
       { path: SOURCE_FILES.taxonomy, url: repoUrl(SOURCE_FILES.taxonomy) },
       { path: "docs/contracts/bcreq-stage-gates.md", url: repoUrl("docs/contracts/bcreq-stage-gates.md") },
       { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
-      ...promptFiles.map((file) => ({ path: file.relativePath, url: repoUrl(file.relativePath) })),
+      { path: CLASS_CATALOG, url: repoUrl(CLASS_CATALOG) },
+      { path: STATE_CONTRACT, url: repoUrl(STATE_CONTRACT) },
+      ...prompts.map((prompt) => ({ path: prompt.sourcePath, url: prompt.url })),
     ],
+    siteVersion: SITE_VERSION,
+    stateContract: { path: STATE_CONTRACT, url: repoUrl(STATE_CONTRACT) },
     filters,
     prompts,
   };
