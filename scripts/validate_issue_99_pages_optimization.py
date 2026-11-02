@@ -65,10 +65,12 @@ def main() -> int:
         errors.append("site/index.html: missing section data-page='dashboard'")
 
     # Section id order must stay catalog -> dashboard -> checks -> roadmap
-    # (locked by issue #91; the new pages are appended afterwards).
+    # (locked by issue #91; the new pages are appended afterwards). Issue #423
+    # publishes the «О проекте» page (menu of PR #422) as the only section before them.
     ids_order = re.findall(r'<section[^>]*\sid="([a-z-]+)"', index_html)
     expected_prefix = ["catalog", "dashboard", "checks", "roadmap"]
-    if ids_order[: len(expected_prefix)] != expected_prefix:
+    core_order = ids_order[1:] if ids_order[:1] == ["about"] else ids_order
+    if core_order[: len(expected_prefix)] != expected_prefix:
         errors.append(
             f"site/index.html: section id order {ids_order} must start with {expected_prefix}"
         )

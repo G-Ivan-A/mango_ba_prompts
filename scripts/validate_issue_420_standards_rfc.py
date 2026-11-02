@@ -356,6 +356,10 @@ class StandardsPageRfcTest(unittest.TestCase):
                 self.assertTrue((ROOT / f"docs/screenshots/issue-420-v2-{name}.png").exists())
 
     def test_site_unchanged_by_this_pr(self):
+        # Issue #423 published site-v2 into site/ on purpose; its own validator
+        # (scripts/validate_issue_423_site.py) checks the port against content.py.
+        if 'data-page="about"' in (ROOT / "site" / "index.html").read_text(encoding="utf-8"):
+            self.skipTest("сайт обновлён issue #423 (перенос site-v2), проверка #420 неприменима")
         base = None
         for ref in ("upstream/main", "origin/main", "main"):
             proc = run("git", "merge-base", "HEAD", ref)

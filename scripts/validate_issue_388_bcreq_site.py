@@ -19,9 +19,12 @@
    ``"site"`` в ``password-hashes.json`` — соль и SHA-256; пароль открытым
    текстом не лежит на сайте и в документации (сверка по хэшу, сам пароль
    валидатор не знает). Если задан ``SITE_PASSWORD`` — хэш сверяется с ним.
-4. Данные сайта: у промптов BCREQ ``family: bcreq`` и ``isNew``; фильтр
-   «Набор»; ``bcreq-flow.json`` — 11 шагов ручного процесса, у каждого
-   действующий промпт; пять этапов согласования с гейтами Г-IN, Г-С1, Г-W.
+4. Данные сайта: с issue #423 промпты BCREQ этапа 1 лежат в архиве каталога
+   (``family: archive``, ``archived``, ``successors`` — классы C01–C39 из
+   ``catalog.json``, у части промптов прямого аналога нет);
+   фильтр «Набор» — bcreq и archive; ``bcreq-flow.json`` — 39 шагов ручного
+   процесса (route ``manual``), у каждого действующий класс BCREQ; пять
+   этапов согласования с гейтами Г-IN, Г-С1, Г-W.
 5. Интерфейс: ``app.js`` грузит данные после входа, рисует иконку копирования
    и процесс BCREQ; ``index.html`` содержит разделы процесса на вкладке
    «Процессы».
@@ -228,22 +231,24 @@ def check_site_data() -> list[str]:
         prompt = by_file.get(f"{name}.md")
         if not prompt:
             errors.append(f"site/data/prompts.json: нет промпта {name}")
-        elif prompt.get("family") != "bcreq" or prompt.get("isNew") is not True:
-            errors.append(f"site/data/prompts.json: {name} — нужны family=bcreq и isNew=true")
+        elif prompt.get("family") != "archive" or prompt.get("archived") is not True or not isinstance(prompt.get("successors"), list):
+            # Issue #423: 14 промптов этапа 1 заменены 39 классами и перенесены в архив каталога;
+            # successors — классы из catalog.json PR #422 (у части промптов прямого аналога нет).
+            errors.append(f"site/data/prompts.json: {name} — нужны family=archive, archived=true и список successors (issue #423)")
     families = {f.get("id") for f in data.get("filters", {}).get("families", [])}
-    if families != {"bcreq"}:
-        errors.append(f"site/data/prompts.json: фильтр «Набор» должен содержать только bcreq: {sorted(families)}")
+    if families != {"bcreq", "archive"}:
+        errors.append(f"site/data/prompts.json: фильтр «Набор» должен содержать bcreq и archive: {sorted(families)}")
 
     flow = json.loads((SITE / "data" / "bcreq-flow.json").read_text(encoding="utf-8"))
     steps = flow["manual"]["steps"]
-    if len(steps) != 11:
-        errors.append(f"bcreq-flow.json: ожидалось 11 шагов ручного процесса, найдено {len(steps)}")
-    if flow["manual"]["route"] != "stepwise" or flow["manual"]["title"] != MANUAL_TITLE:
-        errors.append("bcreq-flow.json: ручной процесс — stepwise с названием раздела по issue #388")
+    if len(steps) != 39:
+        errors.append(f"bcreq-flow.json: ожидалось 39 шагов ручного процесса (issue #423), найдено {len(steps)}")
+    if flow["manual"]["route"] != "manual" or flow["manual"]["title"] != MANUAL_TITLE:
+        errors.append("bcreq-flow.json: ручной процесс — route manual с названием раздела по issue #388")
     for step in steps:
         prompt = by_id.get(step["prompt"]["id"])
-        if not prompt or prompt.get("family") != "bcreq":
-            errors.append(f"bcreq-flow.json: шаг {step['step']} — промпт {step['prompt']['id']} не из набора BCREQ")
+        if not prompt or prompt.get("family") != "bcreq" or prompt.get("archived") or not prompt.get("classId"):
+            errors.append(f"bcreq-flow.json: шаг {step['step']} — промпт {step['prompt']['id']} не действующий класс BCREQ")
         if not step["actions"]:
             errors.append(f"bcreq-flow.json: шаг {step['step']} без инструкций БА")
     approval = flow["approval"]
@@ -262,7 +267,7 @@ def check_ui() -> list[str]:
     app = (SITE / "app.js").read_text(encoding="utf-8")
     for needle in (
         "window.siteGate?.ready", 'fetch("data/bcreq-flow.json")', "function renderBcreqFlow",
-        "function copyIconButton", 'selectedValues("family")', "★ BCREQ · новый", "nodes.bcreqSteps?.addEventListener",
+        "function copyIconButton", 'selectedValues("family")', "★ BCREQ · класс", "nodes.bcreqSteps?.addEventListener",
     ):
         if needle not in app:
             errors.append(f"site/app.js: нет {needle!r}")

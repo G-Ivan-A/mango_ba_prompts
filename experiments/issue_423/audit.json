@@ -1,0 +1,42 @@
+{
+  "nav": [
+    "О проекте",
+    "Каталог",
+    "Стандарты",
+    "Процессы",
+    "Дашборд",
+    "Справочник"
+  ],
+  "version": {
+    "shown": [
+      "v2.0.0",
+      "v2.0.0"
+    ],
+    "panel": "Версия сайта 2.0.0\n\n2026-11-01 · PR #422: 39 классов ручных промптов BCREQ, процесс v0.2 · CHANGELOG\n\nКаталог: 39 классов ручных промптов BCREQ; 14 промптов этапа 1 — в архиве (фильтр «Архив»).\nПроцесс BCREQ на странице «Процессы» переписан под 39 классов: маршрут по стадиям, шаги Ш-1…Ш-39, гейты Г-IN, Г-С1, Г-W.\nРазделы: О проекте, Каталог, Стандарты, Процессы, Дашборд, Справочник."
+  },
+  "catalogDefault": 39,
+  "catalogArchiveOnly": 14,
+  "noAnalogCard": "⌛ архив · этап 1\nBCREQ A-WORK: решение, риски\nmango-bcreq-work-solution-design-oneshot\n⧉\n\nСтадия A-WORK для ИИ-агента: Ш-6…Ш-9 одним вызовом — разделы 5, 6, 7 (прогон 2) и 8; заканчивается предварительным отчётом по гейту Г-W. Прорабатывает системно-технические требования и варианты реализации. Режим one-shot — когда вход полный, а задача короткая: быстрый черновик или постобработка…\n\nv0.1\n2026-10-24\nтестов нет\n● One-shot\narchived\n⚙ Проектирование решения\n⚙️ Дизайн решения и оценка\nПрямого класса-аналога нет:\nмаршрут 39 классов\n⧉\nКопировать\n📁\nПерейти в репо",
+  "routeChips": 93,
+  "dashboardTiles": [
+    "53 Всего",
+    "39 Активных",
+    "14 Архив",
+    "0 Canonical",
+    "39 В работе",
+    "13 Операций",
+    "2.0.0 Версия сайта"
+  ],
+  "consoleErrors": [
+    "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+    "Failed to load resource: net::ERR_FAILED",
+    "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+    "Failed to load resource: net::ERR_FAILED"
+  ],
+  "mobileErrors": [
+    "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+    "Failed to load resource: net::ERR_FAILED",
+    "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+    "Failed to load resource: net::ERR_FAILED"
+  ]
+}
