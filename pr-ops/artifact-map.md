@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.10
-updated: 2026-10-28
+version: 0.11
+updated: 2026-11-02
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -77,6 +77,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/analysis/2026-10-23-bcreq-standards-third-opinion.md` | анализ | Третье мнение по достаточности стека стандартов BCREQ (issue #387). | По необходимости | `standards/bcreq-composition-standard.md`, `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` |
 | `/docs/analysis/2026-10-28-bcreq-evolution-failure-analysis.md` | анализ | Эволюция требований Founder, разрывы наследования AGENTS, пять гипотез по СПЛИТ/1131 и проект проверенных защит (issue #397). | По необходимости | `experiments/issue_397/README.md`, `docs/reviews/issue-391-bcreq-review.md`, `CHANGELOG.md` |
 | `/docs/rfc/2026-10-bcreq-meta-standards-rfc.md` | RFC | RFC-387-01…07 — инициированные изменения с путями отката. | По необходимости | `docs/rfc/rfc-register.md`, `docs/adr/2026-10-adr-012-bcreq-meta-standards.md` |
+| `/docs/rfc/2026-11-bcreq-flow-processes-prompts.md` | RFC | RFC-427-DEC-01…12: поток BCREQ, процессы потока, набор стандартов «по тесту», исключения ссылок на runtime, промпты по шагам, раздел «Процессы» в форме до 2.0.0 (issue #427). | Да для Спринта 9 | `docs/rfc/rfc-register.md`, `docs/analysis/2026-11-02-bcreq-prompts-classes-standards-check.md`, `pr-ops/BACKLOG.md` |
 | `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `ai-governance/ai-governance.md` |
 | `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `ai-governance/ai-governance.md`, `docs/adr/0004-hub-resync-2026-08.md` |
 | `/tools/` | инструмент | Рабочие копии валидаторов Хаба: `validate-frontmatter.sh`, `validate-file-naming.sh`; локальные дельты описаны в `tools/README.md`. Запуск — `make validate`. | Да | `tools/README.md`, `pr-ops/BACKLOG.md` |

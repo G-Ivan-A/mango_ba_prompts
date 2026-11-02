@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.9
-updated: 2026-11-01
+version: 0.10
+updated: 2026-11-02
 ai-generated: true
 type: register
 scope: governance
@@ -274,6 +274,33 @@ RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 пре
 | [RFC-420-DEC-15](2026-10-standards-page-rfc.md#dec-420-15) | ТТЗ и ТЗ | Тендерное ТЗ принимается как есть и оценивается на исполнимость; ТЗ — результат BCREQ; стандарт ТТЗ — позже на странице «Стандарты» | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
 
 
+## Поток BCREQ: процессы, стандарты, промпты (источник: issue #427)
+
+RFC [`2026-11-bcreq-flow-processes-prompts.md`](2026-11-bcreq-flow-processes-prompts.md) v0.1 предлагает термин «поток» для сложносоставного
+процесса получения BCREQ, процессы потока без новых процессов, набор
+стандартов «по тесту» (базовый + восемь профилей), исключения для ссылок на
+mango-ba-ai-runtime с заглушками, промпты по шагам потока и раздел сайта
+«Процессы» в форме до 2.0.0. SSOT —
+[проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md).
+Реализация — Спринт 9 бэклога
+([`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md#спринт-9-поток-bcreq-стандарты-и-промпты-по-тесту)),
+решения владельца Р-13…Р-15.
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-427-DEC-01](2026-11-bcreq-flow-processes-prompts.md#dec-427-01-термин-поток-и-иерархия) | Термин «Поток» и иерархия | «Поток» (value stream) — имя сложносоставного процесса получения одного продукта; поток → этап (стадия) с гейтом → процесс → шаг → операция | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-02](2026-11-bcreq-flow-processes-prompts.md#dec-427-02-мета-модель-не-меняется) | Мета-модель | Не меняется: поток — локальное имя уровня графа маршрута, процессы сопоставлены L2; передача в Хаб — только BL-122 по Р-12 | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-03](2026-11-bcreq-flow-processes-prompts.md#dec-427-03-девять-процессов-потока-bcreq) | Процессы потока BCREQ | ПБ-0…ПБ-7 и ПБ-С — актуализация шагов v0.1, операций каталога и L2, без новых процессов | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-04](2026-11-bcreq-flow-processes-prompts.md#dec-427-04-основная-линия-этапа-1--шаги-v01) | Основная линия этапа 1 | Шаги Ш-0…Ш-Р и Ш-С; 39 классов — пилот и контракты операций до BL-134 (REC-425-01) | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-05](2026-11-bcreq-flow-processes-prompts.md#dec-427-05-набор-стандартов-базовый--восемь-профилей) | Набор стандартов | Один базовый стандарт ручного промпта BCREQ и восемь профилей; операции — сигнатуры с префиксом К-; правило #403 «классов = стандартов» заменяется | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-06](2026-11-bcreq-flow-processes-prompts.md#dec-427-06-слово-промпт-и-словарь) | Словарь | «Промпт» — копируемый текст шага; «контракт» — сигнатура операции и контракты состояния и гейтов; «стандарт» — правила сборки и проверки | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-07](2026-11-bcreq-flow-processes-prompts.md#dec-427-07-режим-по-тесту) | Режим «по тесту» | Стандарты и промпты Спринта 9 — пробная редакция до ADR; golden set RUN-0079 — нижняя граница | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-08](2026-11-bcreq-flow-processes-prompts.md#dec-427-08-техдолг-обратного-согласования) | Техдолг обратного согласования | S-009 и BL-158: один ADR принимает стандарты «по тесту» по итогам прогонов | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-09](2026-11-bcreq-flow-processes-prompts.md#dec-427-09-исключения-ссылки-на-runtime) | Ссылки на runtime | Только по перечню И-1…И-8 и требованиям ТС-1…ТС-7; база знаний обязательна; ссылки по SHA | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-10](2026-11-bcreq-flow-processes-prompts.md#dec-427-10-заглушки-и-задачи-на-недостающие-справочники) | Заглушки | Где справочника runtime нет — блок заглушки и задача BL-155 | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-11](2026-11-bcreq-flow-processes-prompts.md#dec-427-11-промпты-по-процессам) | Промпты по процессам | 11 файлов промптов на 12 шагов и Ш-С из стандартов «по тесту»; в `prompts/` — только не хуже базовой линии golden set | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-12](2026-11-bcreq-flow-processes-prompts.md#dec-427-12-раздел-процессы-в-форме-до-200) | Раздел «Процессы» | Шаги потока по порядку с копированием промпта, «Зачем шаг» и «Варианты дальше»; не заменяет сайт 2.0.0; классы — блок «пилот» | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -325,3 +352,7 @@ RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 пре
   сохранены в строках и ждут решения владельца), добавлены RFC-420-DEC-13…15 в
   статусе `proposed`. Ревью рисков —
   [`docs/analysis/2026-11-01-standards-page-risk-review.md`](../analysis/2026-11-01-standards-page-risk-review.md).
+- **2026-11-02** — добавлены RFC-427-DEC-01…12 в статусе `proposed` по итогам
+  issue #427 (PR #428). RFC-документ —
+  [`docs/rfc/2026-11-bcreq-flow-processes-prompts.md`](2026-11-bcreq-flow-processes-prompts.md) v0.1; SSOT —
+  [`docs/analysis/2026-11-02-bcreq-prompts-classes-standards-check.md`](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md).
