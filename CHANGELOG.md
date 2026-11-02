@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.21
+version: 0.22
 updated: 2026-11-02
 temperature: 0.1
 ---
@@ -12,6 +12,20 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #427: решение владельца Р-13, RFC потока BCREQ принят
+
+- Владелец ответил [«Р-13 да»](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813) в PR #428.
+- RFC `docs/rfc/2026-11-bcreq-flow-processes-prompts.md` → `accepted` (v0.3):
+  раздел «Статус принятия (Р-13)» со статусом каждого решения;
+  DEC-427-01…03, 05, 06, 09…11, 13 — `accepted`; DEC-427-07, 08 ждут Р-14,
+  DEC-427-04, 12 — Р-15 и остаются `proposed`.
+- Реестр RFC v0.11: девять строк RFC-427-DEC → `accepted` со ссылкой на
+  комментарий владельца; запись в истории изменений.
+- Бэклог v1.2: Р-13 — «принято» со ссылкой; карточки BL-125, BL-150…BL-155
+  отмечают решение; BL-150 доступна к исполнению.
+- Валидатор `scripts/validate_issue_427_r13_acceptance.py`: статус RFC и
+  решений, раздел принятия, строки реестра и бэклога.
 
 ### Added — Issue #427: RFC потока BCREQ — процессы, стандарты, промпты и раздел «Процессы»
 
