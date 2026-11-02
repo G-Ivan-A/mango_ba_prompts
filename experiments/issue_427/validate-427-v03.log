@@ -1,0 +1,28 @@
+test_cards_cite_rfc (__main__.Issue427Backlog.test_cards_cite_rfc) ... ok
+test_decisions_declared (__main__.Issue427Backlog.test_decisions_declared) ... ok
+test_sprint_rows (__main__.Issue427Backlog.test_sprint_rows) ... ok
+test_taxonomy_debt_task (__main__.Issue427Backlog.test_taxonomy_debt_task) ... ok
+test_tech_debt (__main__.Issue427Backlog.test_tech_debt) ... ok
+test_changelog_and_map (__main__.Issue427Registers.test_changelog_and_map) ... ok
+test_rfc_register (__main__.Issue427Registers.test_rfc_register) ... ok
+test_chain_of_elements (__main__.Issue427Rfc.test_chain_of_elements)
+Ревью владельца PR #428: цепочка из четырёх элементов, а не иерархия из пяти уровней. ... ok
+test_decisions (__main__.Issue427Rfc.test_decisions) ... ok
+test_flow_term_verdict (__main__.Issue427Rfc.test_flow_term_verdict) ... ok
+test_frontmatter (__main__.Issue427Rfc.test_frontmatter) ... ok
+test_links_resolve (__main__.Issue427Rfc.test_links_resolve) ... ok
+test_not_done_mapped_to_sprint (__main__.Issue427Rfc.test_not_done_mapped_to_sprint) ... ok
+test_operation_definition (__main__.Issue427Rfc.test_operation_definition) ... ok
+test_processes (__main__.Issue427Rfc.test_processes) ... ok
+test_prompt_set_exists (__main__.Issue427Rfc.test_prompt_set_exists) ... ok
+test_protected_unchanged (__main__.Issue427Rfc.test_protected_unchanged) ... ok
+test_runtime_exceptions (__main__.Issue427Rfc.test_runtime_exceptions) ... ok
+test_runtime_links_pinned (__main__.Issue427Rfc.test_runtime_links_pinned) ... ok
+test_sections_in_order (__main__.Issue427Rfc.test_sections_in_order) ... ok
+test_standards_set (__main__.Issue427Rfc.test_standards_set) ... ok
+test_step_sequence (__main__.Issue427Rfc.test_step_sequence) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.310s
+
+OK
