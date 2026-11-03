@@ -69,7 +69,9 @@ class RfcAccepted(unittest.TestCase):
 
     def test_frontmatter(self):
         self.assertEqual(self.fm.get("status"), "accepted")
-        self.assertEqual(self.fm.get("version"), "0.3")
+        # Редакция 0.3 — принятие Р-13; поправки после приёмки (0.4 — #430,
+        # тип гейта) статус не меняют.
+        self.assertIn(self.fm.get("version"), ("0.3", "0.4"))
 
     def test_acceptance_section(self):
         block = section(self.body, HEADING)
@@ -106,7 +108,8 @@ class RegisterAccepted(unittest.TestCase):
 
     def test_history(self):
         body = text(REGISTER)
-        self.assertEqual(frontmatter(body).get("version"), "0.11")
+        # 0.11 — запись о приёмке RFC #427; поздние версии реестра её сохраняют.
+        self.assertGreaterEqual(tuple(map(int, frontmatter(body).get("version").split("."))), (0, 11))
         history = body.split("RFC #427 → `accepted` (v0.3)", 1)
         self.assertEqual(len(history), 2, "нет записи о принятии RFC #427")
 

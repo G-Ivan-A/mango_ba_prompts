@@ -1,0 +1,14 @@
+test_archetypes_cover_catalog_once (__main__.Issue425Check.test_archetypes_cover_catalog_once) ... ok
+test_backlog_note (__main__.Issue425Check.test_backlog_note) ... ok
+test_catalog_matches_files (__main__.Issue425Check.test_catalog_matches_files) ... ok
+test_frontmatter (__main__.Issue425Check.test_frontmatter) ... ok
+test_links_resolve (__main__.Issue425Check.test_links_resolve) ... ok
+test_metrics_fresh_and_quoted (__main__.Issue425Check.test_metrics_fresh_and_quoted) ... ok
+test_protected_unchanged (__main__.Issue425Check.test_protected_unchanged) ... ok
+test_sections (__main__.Issue425Check.test_sections) ... ok
+test_verdicts_and_recommendations (__main__.Issue425Check.test_verdicts_and_recommendations) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.269s
+
+OK

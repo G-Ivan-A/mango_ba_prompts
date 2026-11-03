@@ -288,6 +288,9 @@ class Issue427Backlog(unittest.TestCase):
     def test_sprint_rows(self):
         block = section(self.backlog, SPRINT)
         ids = re.findall(r"^\| (BL-\d{3}) \|", block, re.M)
+        # Задачи, добавленные в спринт после RFC #427 (BL-159 — поправка 0.4,
+        # issue #430), проверяют свои валидаторы.
+        ids = [i for i in ids if i in TRACK_B_TASKS + TRACK_A_TASKS]
         self.assertEqual(ids, list(TRACK_B_TASKS + TRACK_A_TASKS))
         self.assertIn(SPRINT_ANCHOR, anchors(BACKLOG))
         self.assertIn(f"#{SPRINT_ANCHOR}", RFC.read_text(encoding="utf-8"))

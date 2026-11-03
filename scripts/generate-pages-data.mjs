@@ -60,11 +60,12 @@ const BCREQ_STAGES = [
 // Версия сайта (issue #423). Мажор 2 — сайт v2: страницы О проекте, Каталог,
 // Стандарты, Процессы, Дашборд, Справочник; каталог 39 классов (PR #422).
 // Минор и патч растут при последующих изменениях сайта (CHANGELOG.md).
+// 2.1.0 (issue #430, BL-153): ID операций К-01…К-39 и шаг потока в каталоге.
 const SITE_VERSION = {
-  version: "2.0.0",
-  released: "2026-11-01",
-  issue: 423,
-  basis: "PR #422: 39 классов ручных промптов BCREQ, процесс v0.2",
+  version: "2.1.0",
+  released: "2026-11-03",
+  issue: 430,
+  basis: "PR #431: ID операций К-01…К-39 и шаг потока в каталоге",
   changelog: "CHANGELOG.md",
 };
 
@@ -89,20 +90,20 @@ const CLASS_STAGES = [
 // Операция таксономии для каждого класса: по назначению класса (behavior) —
 // одна из 13 операций docs/taxonomy.md. Сопоставление нужно только сайту.
 const CLASS_OPERATIONS = {
-  C01: "ingestion", C02: "ingestion", C09: "ingestion",
-  C03: "understanding", C04: "understanding",
-  C05: "impact_analysis", C06: "impact_analysis", C29: "impact_analysis",
-  C07: "research", C08: "research",
-  C10: "validation", C11: "validation", C28: "validation", C39: "validation",
-  C12: "documentation", C14: "documentation", C15: "documentation", C16: "documentation",
-  C17: "documentation", C18: "documentation", C23: "documentation", C30: "documentation",
-  C32: "documentation",
-  C13: "governance", C20: "governance", C34: "governance", C35: "governance", C36: "governance",
-  C19: "modeling", C24: "modeling", C37: "modeling", C38: "modeling",
-  C21: "solution_design", C22: "solution_design",
-  C25: "risk_analysis", C26: "risk_analysis",
-  C27: "release_readiness", C33: "release_readiness",
-  C31: "quality",
+  "К-01": "ingestion", "К-02": "ingestion", "К-09": "ingestion",
+  "К-03": "understanding", "К-04": "understanding",
+  "К-05": "impact_analysis", "К-06": "impact_analysis", "К-29": "impact_analysis",
+  "К-07": "research", "К-08": "research",
+  "К-10": "validation", "К-11": "validation", "К-28": "validation", "К-39": "validation",
+  "К-12": "documentation", "К-14": "documentation", "К-15": "documentation", "К-16": "documentation",
+  "К-17": "documentation", "К-18": "documentation", "К-23": "documentation", "К-30": "documentation",
+  "К-32": "documentation",
+  "К-13": "governance", "К-20": "governance", "К-34": "governance", "К-35": "governance", "К-36": "governance",
+  "К-19": "modeling", "К-24": "modeling", "К-37": "modeling", "К-38": "modeling",
+  "К-21": "solution_design", "К-22": "solution_design",
+  "К-25": "risk_analysis", "К-26": "risk_analysis",
+  "К-27": "release_readiness", "К-33": "release_readiness",
+  "К-31": "quality",
 };
 
 // Палитра эмодзи для процессов БА. Назначается по позиции процесса, поэтому
@@ -134,7 +135,7 @@ const MODE_HINTS = {
   legacy:
     "Режим legacy сохранён для совместимости и сравнения с историческим результатом; для новой работы выбирайте stepwise или one-shot.",
   manual:
-    "Ручной класс: БА вставляет его в чат с контрактом состояния и правилами C36, заполняет JSON-вход, проверяет BCREQ_OUTPUT и сам решает, что запускать дальше.",
+    "Ручной класс: БА вставляет его в чат с контрактом состояния и правилами К-36, заполняет JSON-вход, проверяет BCREQ_OUTPUT и сам решает, что запускать дальше.",
 };
 
 function processEmoji(index) {
@@ -769,7 +770,7 @@ function normalizeForMatch(value) {
 // Набор «топиков» промпта для сопоставления с тестовыми логами runs/.
 function promptSearchTerms(prompt) {
   if (prompt.classId) {
-    // Класс ищется только по пути стандарта: номер класса (C01) слишком общий.
+    // Класс ищется только по пути стандарта: номер класса (К-01) слишком общий.
     return [normalizeForMatch(prompt.sourcePath.replace(/\.md$/, "").replace(/^standards\//, ""))];
   }
   const stem = prompt.file
@@ -1261,7 +1262,10 @@ async function main() {
     const analogFile = path.basename(item.existing || "");
     const mode = "manual";
     prompts.push({
-      id: `mango-bcreq-${item.id.toLowerCase()}-${item.slug}`,
+      // ID промпта — по прежнему ID операции (history.previous_id, BL-153): копии,
+      // отзывы и ссылки на сайт не ломаются после перехода C → К-.
+      id: `mango-bcreq-${(item.history?.previous_id || item.id).toLowerCase()}-${item.slug}`,
+      flowStep: item.flow_step || "",
       classId: item.id,
       file: item.file,
       title,

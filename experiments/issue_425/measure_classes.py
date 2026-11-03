@@ -34,6 +34,19 @@ CONTRACT = ROOT / "docs" / "contracts" / "bcreq-manual-state.md"
 PROCESS = ROOT / "docs" / "ba-processes" / "bcreq-manual-process.md"
 PROCESS_V01_REF = "a7fbf928^"
 SHARED_MIN_FILES = 30
+# Срез замера #425: коммит, в котором записан metrics.json. Стандарты классов,
+# каталог и контракт после него меняются (BL-153 в issue #430 переименовал
+# операции в К-01…К-39, BL-151 перепишет стандарты), поэтому замер читает
+# файлы из этого коммита и остаётся воспроизводимым.
+SNAPSHOT_REF = "4444b49f"
+
+
+def read(path: Path) -> str:
+    rel = path.resolve().relative_to(ROOT).as_posix()
+    return subprocess.run(
+        ["git", "show", f"{SNAPSHOT_REF}:{rel}"],
+        cwd=ROOT, capture_output=True, text=True, check=True,
+    ).stdout
 
 TERMS = {
     "39 промптов": r"39\s+промпт",
@@ -54,12 +67,12 @@ def strip_frontmatter(text: str) -> str:
 
 
 def load_catalog() -> dict:
-    return json.loads((CLASSES_DIR / "catalog.json").read_text(encoding="utf-8"))
+    return json.loads(read(CLASSES_DIR / "catalog.json"))
 
 
 def boilerplate(catalog: dict) -> dict:
     files = [CLASSES_DIR / c["file"] for c in catalog["classes"]]
-    bodies = {f.name: strip_frontmatter(f.read_text(encoding="utf-8")) for f in files}
+    bodies = {f.name: strip_frontmatter(read(f)) for f in files}
     norm = {
         name: [re.sub(r"C\d\d", "C??", line).strip() for line in body.splitlines()]
         for name, body in bodies.items()
@@ -92,7 +105,7 @@ def boilerplate(catalog: dict) -> dict:
 
 
 def instances() -> dict:
-    text = (CLASSES_DIR / "README.md").read_text(encoding="utf-8")
+    text = read(CLASSES_DIR / "README.md")
     phase = None
     rows: dict[str, list[str]] = collections.OrderedDict()
     for line in text.splitlines():
@@ -139,8 +152,8 @@ def old_prompt_mapping(catalog: dict) -> dict:
 
 
 def paste_volume(catalog: dict, inst: dict) -> dict:
-    contract = len(CONTRACT.read_text(encoding="utf-8"))
-    std = {c["id"]: len((CLASSES_DIR / c["file"]).read_text(encoding="utf-8"))
+    contract = len(read(CONTRACT))
+    std = {c["id"]: len(read(CLASSES_DIR / c["file"]))
            for c in catalog["classes"]}
     full = sum(contract + std[c] for seq in inst["sequence"].values() for c in seq)
     without_release = sum(

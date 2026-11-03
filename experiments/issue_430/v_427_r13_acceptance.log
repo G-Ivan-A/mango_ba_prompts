@@ -1,0 +1,14 @@
+test_cards_mark_decision (__main__.BacklogAccepted.test_cards_mark_decision) ... ok
+test_changelog (__main__.BacklogAccepted.test_changelog) ... ok
+test_r13_accepted (__main__.BacklogAccepted.test_r13_accepted) ... ok
+test_r14_r15_pending (__main__.BacklogAccepted.test_r14_r15_pending) ... ok
+test_history (__main__.RegisterAccepted.test_history) ... ok
+test_rows (__main__.RegisterAccepted.test_rows) ... ok
+test_acceptance_section (__main__.RfcAccepted.test_acceptance_section) ... ok
+test_frontmatter (__main__.RfcAccepted.test_frontmatter) ... ok
+test_summary_points_to_acceptance (__main__.RfcAccepted.test_summary_points_to_acceptance) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.019s
+
+OK

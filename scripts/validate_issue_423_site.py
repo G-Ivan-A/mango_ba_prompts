@@ -9,7 +9,7 @@ BCREQ вместо 14 промптов этапа 1, процесс BCREQ v0.2 �
    Справочник», у каждого пункта есть раздел ``data-page`` и маршрут в
    ``PAGES`` (``site/app.js``).
 2. Каталог: 39 действующих классов — ровно файлы
-   ``standards/bcreq-manual-classes/NN-*.md``, ``classId`` C01–C39 как в
+   ``standards/bcreq-manual-classes/NN-*.md``, ``classId`` К-01…К-39 (до BL-153 — C01–C39) как в
    ``catalog.json``; 14 промптов ``prompts/bcreq-*.md`` — в архиве каталога
    (``family: archive``, ``archived``), ``successors`` совпадают с полем
    ``existing`` в ``catalog.json``. Тексты промптов на сайте совпадают с
@@ -20,7 +20,8 @@ BCREQ вместо 14 промптов этапа 1, процесс BCREQ v0.2 �
 4. Страницы PR #422 опубликованы без расхождений с прототипом
    (``port_site_v2.py --check``).
 5. Версия сайта вычислена и записана: ``stats.json → siteVersion`` (SemVer),
-   та же версия в шапке и подвале ``index.html`` и в CHANGELOG (Issue #423).
+   та же версия в шапке и подвале ``index.html`` и в CHANGELOG (запись issue,
+   поднявшего версию: 2.0.0 — #423, 2.1.0 — #430).
 
 Запуск: ``python3 scripts/validate_issue_423_site.py``
 """
@@ -133,7 +134,7 @@ def check_process() -> list[str]:
         if not step.get("stages") or not step.get("actions") or not step.get("result"):
             errors.append(f"bcreq-flow.json: шаг {step['step']} без стадий, действий или результата")
     classes = [s["prompt"].get("classId") for s in steps]
-    if sorted(classes) != [f"C{n:02d}" for n in range(1, 40)]:
+    if sorted(classes) != [f"К-{n:02d}" for n in range(1, 40)]:
         errors.append("bcreq-flow.json: каждый из 39 классов должен встречаться ровно в одном шаге")
     if manual.get("route") != "manual" or len(manual.get("sequences", [])) != 4:
         errors.append("bcreq-flow.json: маршрут manual и 4 последовательности стадий")
@@ -163,7 +164,8 @@ def check_version() -> list[str]:
     if not SEMVER.match(number):
         errors.append(f"stats.json: siteVersion.version {number!r} — не SemVer")
         return errors
-    if version.get("issue") != 423 or not version.get("released") or not version.get("basis"):
+    # Версию поднимает issue последнего изменения сайта (2.0.0 — #423, 2.1.0 — #430).
+    if not isinstance(version.get("issue"), int) or not version.get("released") or not version.get("basis"):
         errors.append("stats.json: siteVersion без issue, даты или основания")
     if load("prompts.json").get("siteVersion") != version:
         errors.append("prompts.json: siteVersion не совпадает со stats.json")
@@ -178,8 +180,9 @@ def check_version() -> list[str]:
         errors.append("site/app.js: нет renderSiteVersion")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     unreleased = changelog.split("## Unreleased", 1)[-1].split("\n## ", 1)[0]
-    if "Issue #423" not in unreleased or f"версия сайта {number}" not in unreleased.lower():
-        errors.append(f"CHANGELOG.md: нет записи Issue #423 с «версия сайта {number}»")
+    issue = f"Issue #{version.get('issue')}"
+    if issue not in unreleased or f"версия сайта {number}" not in unreleased.lower():
+        errors.append(f"CHANGELOG.md: нет записи {issue} с «версия сайта {number}»")
     return errors
 
 
