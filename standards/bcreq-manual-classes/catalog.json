@@ -440,8 +440,12 @@
       "history": {
         "previous_id": "C20",
         "renamed_in": "BL-153 (issue #430)",
-        "previous_name": "Подготовка доказательств человеческого гейта",
-        "name_changed_in": "BL-159 (issue #433)"
+        "previous_fields": {
+          "behavior": "Г-IN/Г-С1/Г-W по действующему контракту, G1/G2/G3 по процессу — разные идентификаторы. Для release применить явно предложенный RFC-контракт. Проверить каждое условие, оценку и владельца; eligible_for_review не означает approved. Роли и решение берутся от человека.",
+          "inputs": "gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
+          "name": "Подготовка доказательств человеческого гейта"
+        },
+        "fields_changed_in": "BL-159 (issue #433)"
       }
     },
     {
@@ -709,7 +713,11 @@
       "file": "33-release-audit.md",
       "history": {
         "previous_id": "C33",
-        "renamed_in": "BL-153 (issue #430)"
+        "renamed_in": "BL-153 (issue #430)",
+        "previous_fields": {
+          "stop": "Старое одобрение/непроверенный источник/неполный пакет: выпуск заблокирован до исправления и решения человека."
+        },
+        "fields_changed_in": "BL-159 (issue #433)"
       }
     },
     {
@@ -732,7 +740,13 @@
       "file": "34-human-record.md",
       "history": {
         "previous_id": "C34",
-        "renamed_in": "BL-153 (issue #430)"
+        "renamed_in": "BL-153 (issue #430)",
+        "previous_fields": {
+          "behavior": "Записывать только явное решение человека со ссылкой на его сообщение; UNKNOWN роль/полномочие не повышать. Отдельно recommendation, approval, rejection, request-change. Не разносить локальное решение на другие фазы; после изменения кандидата зависимое одобрение stale.",
+          "inputs": "human_message, actor_role, authority, candidate_revision, scope, timestamp",
+          "outputs": "section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}"
+        },
+        "fields_changed_in": "BL-159 (issue #433)"
       }
     },
     {

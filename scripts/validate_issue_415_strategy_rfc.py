@@ -233,7 +233,9 @@ class StrategyRfcTest(unittest.TestCase):
     def test_canonical_documents_untouched(self):
         for target in SECTIONS.values():
             fm = frontmatter(text(ROOT / target))
-            self.assertEqual(fm.get("version"), "1.0", f"{target}: перенос — отдельной задачей")
+            # Патч 1.0.x — редакционная правка без переноса (тип гейта, issue #433);
+            # перенос RFC поднимет минор или мажор.
+            self.assertRegex(fm.get("version", ""), r"^1\.0(\.\d+)?$", f"{target}: перенос — отдельной задачей")
 
     def test_changelog(self):
         self.assertIn("Issue #415", text(CHANGELOG).split("\n## ", 2)[1])

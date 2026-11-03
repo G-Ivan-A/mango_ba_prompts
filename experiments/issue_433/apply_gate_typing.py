@@ -178,9 +178,9 @@ REPLACEMENTS: list[tuple[str, str, str]] = [
     ("docs/roadmap.md",
      "вызывает модель, ждёт решения человека на гейтах и подключает почту и трекер.",
      "вызывает модель, ждёт решения человека на гейтах `человек` и `гибрид` и подключает почту и трекер."),
-    ("docs/rfc/2026-10-standards-page-rfc.md",
-     "| 3. Оркестрация в n8n | Поток n8n ведёт процесс и ждёт решения человека на гейтах. | план |",
-     "| 3. Оркестрация в n8n | Поток n8n ведёт процесс и ждёт решения человека на гейтах `человек` и `гибрид`. | план |"),
+    # docs/rfc/2026-10-standards-page-rfc.md не правим: строка этапа 3 лежит
+    # в приложении, которое порождает experiments/issue_420/site-v2/build.py
+    # (валидатор #420 сверяет его побайтно), см. исключение в валидаторе #433.
 
     # --- Контракт гейтов, RFC потока, бэклог ---
     ("docs/contracts/bcreq-stage-gates.md",
@@ -235,7 +235,6 @@ VERSIONS: dict[str, tuple[str, str]] = {
     "docs/rfc/2026-10-ba-automation-strategy.md": ("0.2", "0.2.1"),
     "docs/vision.md": ("1.0", "1.0.1"),
     "docs/roadmap.md": ("1.0", "1.0.1"),
-    "docs/rfc/2026-10-standards-page-rfc.md": ("0.2", "0.2.1"),
     "docs/rfc/2026-11-bcreq-flow-processes-prompts.md": ("0.4", "0.4.1"),
     "standards/bcreq-prompt-architecture.md": ("0.1", "0.1.1"),
     "docs/ba-processes/00-index.md": ("0.2", "0.2.1"),

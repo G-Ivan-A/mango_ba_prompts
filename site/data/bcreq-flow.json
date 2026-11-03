@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:06:46.630Z",
+  "generatedAt": "2026-11-03T10:01:06.386Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/bcreq-manual-process.md",
@@ -515,15 +515,15 @@
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/34-human-record.md"
         },
         "params": "class: К-34; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE; после фактической реплики человека",
-        "prepare": "human_message, actor_role, authority, candidate_revision, scope, timestamp",
+        "prepare": "human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?",
         "actions": [
           "Скопировать промпт К-34 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36",
-          "Заполнить блок входа: human_message, actor_role, authority, candidate_revision, scope, timestamp",
+          "Заполнить блок входа: human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?",
           "Если нет реплики/полномочия/ревизии: proposed или pending, никогда approved, молчание не согласие",
           "Проверить: можно восстановить кто что когда одобрил, запись не выдаёт модели право согласовать",
           "Сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим"
         ],
-        "result": "section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}",
+        "result": "section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}",
         "gate": "—"
       },
       {
@@ -615,7 +615,7 @@
       },
       {
         "number": 21,
-        "step": "Ш-21 Подготовка доказательств человеческого гейта",
+        "step": "Ш-21 Подготовка доказательств гейта",
         "stage": "A-IN, A-CORE, A-WORK, A-RELEASE",
         "stages": [
           "A-IN",
@@ -627,14 +627,14 @@
           "id": "mango-bcreq-c20-gate-evidence",
           "classId": "К-20",
           "file": "20-gate-evidence.md",
-          "title": "К-20. Подготовка доказательств человеческого гейта",
+          "title": "К-20. Подготовка доказательств гейта",
           "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/20-gate-evidence.md"
         },
         "params": "class: К-20; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
-        "prepare": "gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
+        "prepare": "gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
         "actions": [
           "Скопировать промпт К-20 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36",
-          "Заполнить блок входа: gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
+          "Заполнить блок входа: gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
           "Если любое обязательное условие без evidence: не рекомендовать прохождение, чужое или старое одобрение недействительно",
           "Проверить: есть ревизия, область и полный чек-лист, ни один гейт не пройден моделью",
           "Сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим"
@@ -1088,7 +1088,7 @@
         "actions": [
           "Скопировать промпт К-33 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36",
           "Заполнить блок входа: delivery_manifest, packets, candidate_revision, required_approvals, source_receipts",
-          "Если старое одобрение/непроверенный источник/неполный пакет: выпуск заблокирован до исправления и решения человека",
+          "Если старое одобрение/непроверенный источник/неполный пакет: выпуск заблокирован до исправления и решения человека на гейте выпуска (человек)",
           "Проверить: ревизии всех частей совпадают, реальные полномочия подтверждены, статус отправки не выдуман",
           "Сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим"
         ],
@@ -1229,7 +1229,7 @@
           {
             "classId": "К-20",
             "number": 21,
-            "title": "К-20. Подготовка доказательств человеческого гейта"
+            "title": "К-20. Подготовка доказательств гейта"
           }
         ],
         "gate": "Г-IN",
@@ -1366,7 +1366,7 @@
           {
             "classId": "К-20",
             "number": 21,
-            "title": "К-20. Подготовка доказательств человеческого гейта"
+            "title": "К-20. Подготовка доказательств гейта"
           }
         ],
         "gate": "Г-С1 «Согласование 1»",
@@ -1533,7 +1533,7 @@
           {
             "classId": "К-20",
             "number": 21,
-            "title": "К-20. Подготовка доказательств человеческого гейта"
+            "title": "К-20. Подготовка доказательств гейта"
           }
         ],
         "gate": "Г-W",
@@ -1595,7 +1595,7 @@
           {
             "classId": "К-20",
             "number": 21,
-            "title": "К-20. Подготовка доказательств человеческого гейта"
+            "title": "К-20. Подготовка доказательств гейта"
           },
           {
             "classId": "К-32",

@@ -59,8 +59,8 @@ def catalog():
             item["inputs"] = K20_IN
             if K20_BEH_TAIL not in item["behavior"]:
                 item["behavior"] = item["behavior"].replace(K20_OLD_BEH_TAIL, K20_BEH_TAIL)
-            item.setdefault("history", {})["previous_name"] = K20_OLD_NAME
-            item["history"]["name_changed_in"] = "BL-159 (issue #433)"
+            # Прежние значения полей пишет record_catalog_history.py
+            # (history.previous_fields).
         if item["id"] == "К-34":
             item["inputs"] = K34_IN
             item["outputs"] = K34_OUT
