@@ -1,0 +1,22 @@
+./tools/validate-frontmatter.sh CHANGELOG.md CONTRIBUTING.md README.md ai-rules tools
+Frontmatter validation passed.
+./tools/validate-file-naming.sh
+File naming validation passed.
+./tools/validate-repository-structure.sh
+Repository structure validation passed.
+python3 scripts/validate_issue_291_root_structure.py
+[A] корень канонический; контракты — в ai-governance/ + ai-rules/, по одному дому
+[B] архив вынесен в .archive/ и помечен: 5 файла
+[C] executable-слой handover перенесён в prompts/AI_SESSION_HANDOVER_PROMPT.executable.md
+[D] runs/ и kb/ на месте
+[E] замок на структуру подключён в make validate и CI
+[F] аудит предоставлен: docs/audit/2026-08-21-root-structure-audit.md
+
+OK: структура корня исправлена, архив скрыт, регресс закрыт проверкой
+python3 scripts/validate_issue_267_onboarding_v15.py
+[A] актуальный протокол: ai-rules/agent-onboarding-protocol.md v1.5
+[B] архив сохранён и помечен superseded: 2 файла
+[C] проверено навигационных артефактов: 5
+[D] валидаторы Хаба проходят, allowlist не маскирует новые нарушения
+
+OK: протокол онбординга актуализирован до v1.5, навигация согласована
