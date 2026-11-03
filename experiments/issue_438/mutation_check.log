@@ -1,0 +1,13 @@
+caught: v0.1 Ш-В изменён без пересборки
+caught: черновик правлен руками
+caught: лишний файл в drafts
+caught: лишняя колонка в комплекте
+caught: метрика RUN-0080 подправлена
+caught: Р-16 принят без валидатора 433
+caught: цитата ADR-0003 изменена
+ M CHANGELOG.md
+ M pr-ops/BACKLOG.md
+ M pr-ops/backlog-ba-model.md
+?? experiments/issue_438/mutation_check.log
+?? experiments/issue_438/mutation_check.sh
+?? scripts/validate_issue_438_step_prompts.py
