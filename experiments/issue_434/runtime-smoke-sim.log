@@ -1,0 +1,28 @@
+runtime HEAD: 5d8c201511fd730a596c9f9b4588470a7b01edc9
+
+=== scenario missing ===
+not ok - taxonomy/mango-products.yaml exists
+grep: /tmp/tmp.Y5VYvKgFXM/rt/taxonomy/mango-products.yaml: No such file or directory
+not ok - product catalog is closed
+runtime smoke test failed: 2 check(s)
+exit: 1
+
+=== scenario catalog ===
+ok - taxonomy/mango-products.yaml exists
+ok - product catalog is closed
+runtime smoke test passed
+exit: 0
+
+=== scenario invented ===
+ok - taxonomy/mango-products.yaml exists
+ok - product catalog is closed
+not ok - golden atomic_function queue-callback-offer is in catalog
+runtime smoke test failed: 1 check(s)
+exit: 1
+
+=== scenario catalogid ===
+ok - taxonomy/mango-products.yaml exists
+ok - product catalog is closed
+ok - golden atomic_function callback/function/callback-request-intake is in catalog
+runtime smoke test passed
+exit: 0

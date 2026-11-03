@@ -1,0 +1,26 @@
+hub HEAD: c06075d0b45da70cb68e2df3851b861b5ec3aed1
+classification.md unchanged since catalog source commit cd5d6e4b: True
+international table rows: 42 columns: 7
+distinct UNSPSC codes in table: 39
+russian table rows (ОКПД 2 / ГОСТ / НПА): 42
+working taxonomy fields (4 keys): ['TM Forum domain', 'TM Forum capability', 'UNSPSC code', 'ОКПД 2 class', 'Russian standards overlay']
+spoke capabilities: 43, with row -> international table: 42; without: ['report-builder']
+industry fields stored in spoke catalog nodes: none
+capability-decomposition atomic functions: 54 (54 unique); in spoke catalog by short id: 17
+international_sources by source family (top 15):
+   29 Genesys
+   21 TM Forum SID
+   20 Amazon Connect
+   14 Cisco UCCE
+    4 3GPP TS 23.040
+    3 Cisco UCCE/Outbound Option
+    3 BABOK
+    3 Amazon Pinpoint
+    2 Cisco Webex CC
+    1 ITU-T Q.23/Q.24
+    1 ISO/IEC 27001
+    1 TM Forum Open API
+    1 IETF RFC 3261
+    1 IETF RFC 5589
+    1 ITU-T / 3GPP TS 23.040
+runtime files mentioning TM Forum/UNSPSC/ОКПД/industry: none
