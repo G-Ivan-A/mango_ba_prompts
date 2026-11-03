@@ -174,7 +174,9 @@ class Issue425Check(unittest.TestCase):
     def test_archetypes_cover_catalog_once(self):
         data = json.loads(ARCHETYPES.read_text(encoding="utf-8"))
         assigned = [c for a in data["archetypes"].values() for c in a["classes"]]
-        ids = [c["id"] for c in self.catalog["classes"]]
+        # archetypes.json — снимок #425 в нотации C01…C39; после BL-153
+        # (issue #430) старый ID хранится в history.previous_id каталога.
+        ids = [c.get("history", {}).get("previous_id", c["id"]) for c in self.catalog["classes"]]
         self.assertEqual(sorted(assigned), sorted(ids))
         for name, item in data["archetypes"].items():
             self.assertIn(f"{name} {len(item['classes'])}", self.text)

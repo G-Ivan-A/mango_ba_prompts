@@ -9,7 +9,7 @@ BCREQ вместо 14 промптов этапа 1, процесс BCREQ v0.2 �
    Справочник», у каждого пункта есть раздел ``data-page`` и маршрут в
    ``PAGES`` (``site/app.js``).
 2. Каталог: 39 действующих классов — ровно файлы
-   ``standards/bcreq-manual-classes/NN-*.md``, ``classId`` C01–C39 как в
+   ``standards/bcreq-manual-classes/NN-*.md``, ``classId`` К-01…К-39 (до BL-153 — C01–C39) как в
    ``catalog.json``; 14 промптов ``prompts/bcreq-*.md`` — в архиве каталога
    (``family: archive``, ``archived``), ``successors`` совпадают с полем
    ``existing`` в ``catalog.json``. Тексты промптов на сайте совпадают с
@@ -133,7 +133,7 @@ def check_process() -> list[str]:
         if not step.get("stages") or not step.get("actions") or not step.get("result"):
             errors.append(f"bcreq-flow.json: шаг {step['step']} без стадий, действий или результата")
     classes = [s["prompt"].get("classId") for s in steps]
-    if sorted(classes) != [f"C{n:02d}" for n in range(1, 40)]:
+    if sorted(classes) != [f"К-{n:02d}" for n in range(1, 40)]:
         errors.append("bcreq-flow.json: каждый из 39 классов должен встречаться ровно в одном шаге")
     if manual.get("route") != "manual" or len(manual.get("sequences", [])) != 4:
         errors.append("bcreq-flow.json: маршрут manual и 4 последовательности стадий")

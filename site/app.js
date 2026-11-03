@@ -469,12 +469,13 @@ function promptCard(prompt) {
   const head = el("div", "prompt-head");
   const titleWrap = el("div");
   if (prompt.classId) {
-    const badge = el("span", "new-badge", `★ BCREQ · класс ${prompt.classId}`);
+    const step = prompt.flowStep ? ` · шаг потока ${prompt.flowStep}` : "";
+    const badge = el("span", "new-badge", `★ BCREQ · класс ${prompt.classId}${step}`);
     badge.title = "Класс ручного промпта BCREQ (PR #422, issue #423)";
     titleWrap.append(badge);
   } else if (prompt.archived) {
     const badge = el("span", "archive-badge", "⌛ архив · этап 1");
-    badge.title = "Промпт этапа 1 перенесён в архив: его заменяют классы C01–C39 (issue #423)";
+    badge.title = "Промпт этапа 1 перенесён в архив: его заменяют классы К-01…К-39 (issue #423)";
     titleWrap.append(badge);
   } else if (prompt.isNew) {
     const badge = el("span", "new-badge", "★ BCREQ · новый");
@@ -926,7 +927,7 @@ function externalLink(url, text) {
   return link;
 }
 
-// Маршрут по стадиям (issue #423): порядок классов C01–C39 по таблице процесса
+// Маршрут по стадиям (issue #423): порядок классов К-01…К-39 по таблице процесса
 // v0.2; чип ведёт к карточке шага ниже, гейт и решающая роль — справа.
 function renderBcreqRoute(manual) {
   if (!nodes.bcreqRoute) {

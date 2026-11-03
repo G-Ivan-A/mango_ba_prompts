@@ -14,6 +14,25 @@ DATA = ROOT / "experiments/issue_405"
 DOCS = ROOT / "docs/analysis/ide-clients-stage-2"
 
 
+# Каталог 0.2 (BL-153, issue #430) отличается от 0.1 только ID операций
+# (C01 → К-01, старый ID — в history.previous_id) и полем flow_step.
+# Отображение #405 — снимок каталога 0.1: сверяем с каталогом, приведённым
+# обратно к 0.1, чтобы контракты классов по-прежнему совпадали дословно.
+LEGACY_FIELDS = ("flow_step", "history")
+
+
+def legacy_catalog(catalog):
+    if catalog["version"] == "0.1":
+        return catalog
+    classes = []
+    for item in catalog["classes"]:
+        old = {k: (re.sub(r"К-(\d\d)", r"C\1", v) if isinstance(v, str) else v)
+               for k, v in item.items() if k not in LEGACY_FIELDS}
+        old["id"] = item["history"]["previous_id"]
+        classes.append(old)
+    return {"version": "0.1", "phases": catalog["phases"], "classes": classes}
+
+
 def read_json(path):
     return json.loads(path.read_text())
 
@@ -76,7 +95,7 @@ class Facts(unittest.TestCase):
 
 class Mapping(unittest.TestCase):
     def test_all_classes_preserve_canonical_contracts_and_three_adapters(self):
-        canonical = read_json(ROOT / "standards/bcreq-manual-classes/catalog.json")
+        canonical = legacy_catalog(read_json(ROOT / "standards/bcreq-manual-classes/catalog.json"))
         mapping = read_json(DATA / "class-mapping.json")
         self.assertEqual(mapping["catalog_version"], canonical["version"])
         self.assertEqual(len(mapping["classes"]), 39)

@@ -27,26 +27,26 @@ STAGES = [
     ("a-release", "A-RELEASE", "выпуск", "по процессу A-RELEASE"),
 ]
 
-# Conditions of the README note under the sequences («C16/C17 — альтернативы…»).
+# Conditions of the README note under the sequences («К-16/К-17 — альтернативы…»).
 CONDITIONS = {
-    "C07": "по доступности источника: web",
-    "C08": "по доступности источника: PDF и runtime",
-    "C09": "по доступности источника: материалы БА",
-    "C16": "альтернатива C17: `delta` по решению БА",
-    "C17": "альтернатива C16: `new` только по явному решению БА",
-    "C22": "по уровню: `L1+L2`",
-    "C28": "отдельный чат с ролью критика",
-    "C29": "только при изменении кандидата",
-    "C30": "только при изменении кандидата",
-    "C34": "после фактической реплики человека",
-    "C37": "только по запросу БА",
-    "C38": "только по запросу БА",
+    "К-07": "по доступности источника: web",
+    "К-08": "по доступности источника: PDF и runtime",
+    "К-09": "по доступности источника: материалы БА",
+    "К-16": "альтернатива К-17: `delta` по решению БА",
+    "К-17": "альтернатива К-16: `new` только по явному решению БА",
+    "К-22": "по уровню: `L1+L2`",
+    "К-28": "отдельный чат с ролью критика",
+    "К-29": "только при изменении кандидата",
+    "К-30": "только при изменении кандидата",
+    "К-34": "после фактической реплики человека",
+    "К-37": "только по запросу БА",
+    "К-38": "только по запросу БА",
 }
 
 GATE = {
-    "C20": "Предложение гейта стадии: Г-IN (A-IN) — решает БА; Г-С1 (A-CORE) — решает Заказчик; "
+    "К-20": "Предложение гейта стадии: Г-IN (A-IN) — решает БА; Г-С1 (A-CORE) — решает Заказчик; "
     "Г-W (A-WORK) — решают ПО продукта, архитектор продукта, руководитель КК",
-    "C33": "Выпуск — решает человек; C35 фиксирует baseline",
+    "К-33": "Выпуск — решает человек; К-35 фиксирует baseline",
 }
 
 
@@ -54,10 +54,10 @@ def sequences() -> dict[str, list[str]]:
     text = (CLASSES / "README.md").read_text(encoding="utf-8")
     result: dict[str, list[str]] = {}
     for phase, *_ in STAGES:
-        block = re.search(rf"^### {phase}\n(.*?)(?=^### |^C16/C17|\Z)", text, re.S | re.M)
+        block = re.search(rf"^### {phase}\n(.*?)(?=^### |^К-16/К-17|\Z)", text, re.S | re.M)
         if not block:
             raise SystemExit(f"README: нет последовательности {phase}")
-        result[phase] = re.findall(rf"^\| {phase}/(C\d\d) \|", block.group(1), re.M)
+        result[phase] = re.findall(rf"^\| {phase}/(К-\d\d) \|", block.group(1), re.M)
     return result
 
 
@@ -90,14 +90,14 @@ def build() -> tuple[str, str]:
         stem = item["file"].removesuffix(".md")
         link = f"[{class_id} {item['slug']}]({REPO}/standards/bcreq-manual-classes/{item['file']})"
         params = [f"`class: {class_id}`", f"`phase: {' / '.join(item['phases'])}`"]
-        if class_id == "C36":
+        if class_id == "К-36":
             params.append("`input_mode: START` (новый чат — `CONTINUE`)")
         else:
             params.append("`input_mode: CONTINUE`")
         if class_id in CONDITIONS:
             params.append(CONDITIONS[class_id])
         actions = [
-            f"Скопировать промпт {class_id} кнопкой ⧉ вместе с контрактом состояния и правилами из C36",
+            f"Скопировать промпт {class_id} кнопкой ⧉ вместе с контрактом состояния и правилами из К-36",
             f"заполнить блок входа: {soft(item['inputs'])}",
             f"если {soft(item['stop'])[0].lower()}{soft(item['stop'])[1:]}",
             f"проверить: {soft(item['checks'])[0].lower()}{soft(item['checks'])[1:]}",

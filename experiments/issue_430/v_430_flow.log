@@ -1,0 +1,22 @@
+test_active_documents_use_new_ids (__main__.Catalog.test_active_documents_use_new_ids) ... ok
+test_class_files_and_registry (__main__.Catalog.test_class_files_and_registry) ... ok
+test_flow_step_matches_rfc (__main__.Catalog.test_flow_step_matches_rfc) ... ok
+test_ids_history_and_version (__main__.Catalog.test_ids_history_and_version) ... ok
+test_no_legacy_ids_in_contract_text (__main__.Catalog.test_no_legacy_ids_in_contract_text) ... ok
+test_site_ids_stable (__main__.Catalog.test_site_ids_stable) ... ok
+test_stage_gates_typed (__main__.GateContract.test_stage_gates_typed) ... ok
+test_flow_gates_typed (__main__.Glossary.test_flow_gates_typed) ... ok
+test_gate_types (__main__.Glossary.test_gate_types) ... ok
+test_identifiers (__main__.Glossary.test_identifiers) ... ok
+test_key_gates_and_hypothesis (__main__.Glossary.test_key_gates_and_hypothesis) ... ok
+test_sections (__main__.Glossary.test_sections) ... ok
+test_flow_steps_match_catalog (__main__.ProcessPartZero.test_flow_steps_match_catalog) ... ok
+test_processes_with_sources (__main__.ProcessPartZero.test_processes_with_sources) ... ok
+test_stage_gates_typed (__main__.ProcessPartZero.test_stage_gates_typed) ... ok
+test_amendment_registered (__main__.Records.test_amendment_registered) ... ok
+test_bl159 (__main__.Records.test_bl159) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.089s
+
+OK

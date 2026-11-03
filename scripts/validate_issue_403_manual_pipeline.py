@@ -38,9 +38,9 @@ class ManualPipeline(unittest.TestCase):
                 self.assertIn(call["phase"], entry["phases"])
                 self.assertIsInstance(call["class_input"], dict)
                 self.assertIsInstance(payload, dict)
-                if entry["id"] == "C01":
+                if entry["id"] == "К-01":
                     self.assertIsNotNone(call["class_input"]["additional_comments"])
-                if entry["id"] == "C12":
+                if entry["id"] == "К-12":
                     self.assertEqual(call["output_mode"], "FULL")
                 self.assertIn(entry["inputs"], text)
                 self.assertIn(entry["outputs"], text)
@@ -61,7 +61,9 @@ class ManualPipeline(unittest.TestCase):
         run = ROOT / "runs/2026/RUN-0078"
         trace = json.loads((run / "outputs/trace.json").read_text())
         entries = json.loads((CLASSES / "catalog.json").read_text())["classes"]
-        self.assertEqual({e["class"] for e in trace["events"]}, {c["id"] for c in entries})
+        # RUN-0078 — исторический прогон в нотации C01…C39 (до BL-153, issue #430).
+        previous = {c.get("history", {}).get("previous_id", c["id"]) for c in entries}
+        self.assertEqual({e["class"] for e in trace["events"]}, previous)
         self.assertEqual({e["phase"] for e in trace["events"]}, {"a-in", "a-core", "a-work", "a-release"})
         self.assertEqual(trace["live_human_approvals"], [])
         self.assertEqual(trace["delivery_status"], "DRAFT_AWAITING_HUMAN")

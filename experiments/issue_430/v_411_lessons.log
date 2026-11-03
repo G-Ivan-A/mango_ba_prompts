@@ -1,0 +1,33 @@
+test_adr_rfc_and_report_exist (__main__.DecisionTests.test_adr_rfc_and_report_exist) ... ok
+test_decision_documents_pass_hub_validator (__main__.DecisionTests.test_decision_documents_pass_hub_validator) ... ok
+test_every_run_code_and_inventory_item_is_mapped (__main__.GenerationTests.test_every_run_code_and_inventory_item_is_mapped) ... ok
+test_generated_artifacts_are_fresh (__main__.GenerationTests.test_generated_artifacts_are_fresh) ... ok
+test_prompts_and_classes_are_untouched_until_rfc_accepted (__main__.GenerationTests.test_prompts_and_classes_are_untouched_until_rfc_accepted)
+Промпты и классы меняются отдельными задачами после принятия RFC/ADR (решение владельца в PR #412). ... ok
+test_rendered_blocks_cover_every_active_runtime_lesson (__main__.GenerationTests.test_rendered_blocks_cover_every_active_runtime_lesson)
+Блоки рендерятся в памяти (для будущей задачи --apply-prompts) без идентификаторов задач. ... ok
+test_case_fields_follow_evals_contract (__main__.GoldenSetTests.test_case_fields_follow_evals_contract) ... ok
+test_case_ids_are_unique (__main__.GoldenSetTests.test_case_ids_are_unique) ... ok
+test_core_is_top_lessons_plus_closing_and_negatives (__main__.GoldenSetTests.test_core_is_top_lessons_plus_closing_and_negatives) ... ok
+test_frontmatter_passes_hub_validator (__main__.GoldenSetTests.test_frontmatter_passes_hub_validator) ... ok
+test_inputs_do_not_copy_prompt_examples (__main__.GoldenSetTests.test_inputs_do_not_copy_prompt_examples) ... ok
+test_negative_cases_exist_and_reference_lessons (__main__.GoldenSetTests.test_negative_cases_exist_and_reference_lessons) ... ok
+test_no_task_ids (__main__.GoldenSetTests.test_no_task_ids) ... ok
+test_one_defect_case_per_active_lesson (__main__.GoldenSetTests.test_one_defect_case_per_active_lesson) ... ok
+test_anchors_exist_in_constitution (__main__.RegistryTests.test_anchors_exist_in_constitution) ... ok
+test_ids_are_sequential_and_unique (__main__.RegistryTests.test_ids_are_sequential_and_unique) ... ok
+test_lesson_fields (__main__.RegistryTests.test_lesson_fields) ... ok
+test_no_task_ids_in_lesson_text (__main__.RegistryTests.test_no_task_ids_in_lesson_text) ... ok
+test_prompt_keys_resolve (__main__.RegistryTests.test_prompt_keys_resolve) ... ok
+test_registry_paths_resolve (__main__.RegistryTests.test_registry_paths_resolve) ... ok
+test_run_metrics_recomputed_from_scores (__main__.RegressionRunTests.test_run_metrics_recomputed_from_scores)
+metrics.json пересчитывается из оценок судьи, ключа слепоты и golden set. ... ok
+test_run_records_three_versions (__main__.RegressionRunTests.test_run_records_three_versions) ... ok
+test_binary_criteria (__main__.RubricTests.test_binary_criteria) ... ok
+test_threshold_is_a_human_decision (__main__.RubricTests.test_threshold_is_a_human_decision) ... ok
+test_site_has_no_lessons_data (__main__.SiteTests.test_site_has_no_lessons_data) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.413s
+
+OK
