@@ -1,0 +1,32 @@
+== make validate-frontmatter
+rc=0
+== make validate-file-naming
+rc=0
+== make validate-structure
+rc=0
+== make validate-onboarding
+rc=0
+== node scripts/generate-pages-data.mjs
+rc=0
+rc=0 scripts/validate_issue_123_runs_contract.py
+rc=0 scripts/test_runs_contract_run_type.py
+rc=0 scripts/validate_issue_272_run_0019.py
+rc=0 scripts/validate_issue_125_cascading_context.py
+rc=0 scripts/validate_issue_265_hub_sync.py
+rc=0 scripts/validate_issue_74_github_pages.py
+rc=0 scripts/validate_issue_91_pages_enhancements.py
+rc=0 scripts/validate_issue_86_mango_widget.py
+rc=0 scripts/validate_issue_95_prompt_id_in_copy.py
+rc=0 scripts/validate_issue_99_pages_optimization.py
+rc=0 scripts/validate_issue_97_ontology_standards.py
+rc=0 scripts/validate_issue_103_ui_fixes.py
+rc=0 scripts/validate_issue_263_vision_alignment.py
+rc=0 scripts/validate_issue_388_bcreq_site.py
+rc=0 scripts/validate_issue_111_kb_pipeline.py
+rc=0 scripts/validate_issue_115_kb_mango_pipeline.py
+rc=0 scripts/validate_issue_117_kb_traceability.py
+rc=0 scripts/validate_issue_121_kb_multi_file.py
+rc=0 scripts/validate_issue_310_kb_pdf_ingestion.py
+== make validate-full
+rc=0
+failures=0
