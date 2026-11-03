@@ -12,6 +12,9 @@ changes = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(changes)
 
 
+TYPING = json.loads((ROOT / 'experiments/issue_438/prompt-typing.json').read_text())
+
+
 class LessonTests(unittest.TestCase):
     def test_only_additions_and_untouched_other_prompts(self):
         baseline = json.loads((ROOT / 'experiments/issue_391/prompt-baseline.json').read_text())
@@ -21,6 +24,12 @@ class LessonTests(unittest.TestCase):
                 # Issue 395 adds a bounded retrieval/fallback block. Its own
                 # regression compares the remaining bytes against a new baseline.
                 data = re.sub(rb'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', b'', data, flags=re.S)
+                # Issue #438 (BL-156): the listed gate typing outside that block
+                # (CB-0.5) is reverted before hashing.
+                for sub in TYPING['substitutions']:
+                    if sub['path'] == filename and not sub['in_runtime_fallback_block']:
+                        self.assertEqual(data.count(sub['after'].encode()), 1, filename)
+                        data = data.replace(sub['after'].encode(), sub['before'].encode())
                 addition = changes.ADDITIONS.get(Path(filename).name)
                 if addition:
                     encoded = addition[1].encode()

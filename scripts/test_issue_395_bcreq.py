@@ -10,13 +10,26 @@ START = b'\n<!-- issue-395: runtime-fallback -->\n'
 END = b'<!-- /issue-395: runtime-fallback -->\n'
 
 
-def original_bytes(data):
-    """Remove exactly one bounded addition; compare all remaining bytes."""
+TYPING = json.loads((ROOT / 'experiments/issue_438/prompt-typing.json').read_text())
+
+
+def original_bytes(data, name=None):
+    """Remove exactly one bounded addition; compare all remaining bytes.
+
+    Issue #438 (BL-156) types the gate in the CB-0.5 line outside the block;
+    that exact, listed substitution is reverted (each must occur once).
+    """
     if START not in data:
         return data
     before, addition = data.split(START, 1)
     _, after = addition.split(END, 1)
-    return before + after
+    data = before + after
+    for sub in TYPING['substitutions']:
+        if sub['path'] == name and not sub['in_runtime_fallback_block']:
+            typed = sub['after'].encode()
+            assert data.count(typed) == 1, (name, sub['line'])
+            data = data.replace(typed, sub['before'].encode())
+    return data
 
 
 class PromptContractTests(unittest.TestCase):
@@ -28,7 +41,7 @@ class PromptContractTests(unittest.TestCase):
                 data = (ROOT / name).read_bytes()
                 self.assertEqual(data.count(START), 1)
                 self.assertEqual(data.count(END), 1)
-                self.assertEqual(hashlib.sha256(original_bytes(data)).hexdigest(), digest)
+                self.assertEqual(hashlib.sha256(original_bytes(data, name)).hexdigest(), digest)
 
     def test_each_copied_prompt_has_the_complete_retrieval_contract(self):
         # Each prompt is copied independently; none may depend on another block

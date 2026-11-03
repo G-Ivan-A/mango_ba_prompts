@@ -32,6 +32,9 @@ GROUPS = [
 ]
 
 
+TYPING = json.loads((ROOT / "experiments/issue_438/prompt-typing.json").read_text())
+
+
 class StageTests(unittest.TestCase):
     def test_prompt_bytes_preserved_except_new_frontmatter_tags(self):
         baseline = json.loads((ROOT / "experiments/issue_393/prompt-baseline.json").read_text())
@@ -41,6 +44,12 @@ class StageTests(unittest.TestCase):
             # Preserve the original metadata/body assertion across the additive
             # issue 395 retrieval contract, verified independently byte for byte.
             text = re.sub(r'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', '', text, flags=re.S)
+            # Issue #438 (BL-156) types the gate in one line outside that block
+            # (CB-0.5); the exact substitution is reverted before hashing.
+            for sub in TYPING["substitutions"]:
+                if sub["path"] == f"prompts/{filename}" and not sub["in_runtime_fallback_block"]:
+                    self.assertEqual(text.count(sub["after"]), 1, filename)
+                    text = text.replace(sub["after"], sub["before"])
             opening, meta, body = text.split("---", 2)
             original_meta = re.sub(r"^(?:operation|processes):[^\n]*\n", "", meta, flags=re.M)
             original = "---".join([opening, original_meta, body])
