@@ -1,0 +1,82 @@
+# Issue #434: Hub (hybrid-Intelligence-lab) product form vs runtime — checked 2026-11-03
+hub clone HEAD: c06075d0b45da70cb68e2df3851b861b5ec3aed1
+
+## runtime compilation-manifest (runtime @ 5d8c2015)
+6:version: "0.5"
+8:compiled_at: 2026-09-26
+10:hub_commit: dbf3baa96d3585150974212254af81bcf7b03150
+103:  recompilation: смена hub_commit и compiled_at во всех затронутых файлах
+
+## commit dates
+dbf3baa96d3585150974212254af81bcf7b03150	2026-09-19T09:30:06Z	Merge pull request #590 from konard/issue-589-a03c1ec584b8
+90c7f1ef9d2b75dff144d17531302438548893e0	2026-09-23T15:52:26Z	feat(ba-ai-process): require confirmed product attribution
+da9fc6b47f7fdf634ae3d1b48fb8b2da16dd6dbb	2026-09-26T11:16:11Z	Merge pull request #618 from G-Ivan-A/issue-617-cf6b57ce950e
+compare dbf3baa...90c7f1ef: ahead	27
+history of dist taxonomy/products.yaml:
+90c7f1ef9d2b75dff144d17531302438548893e0	2026-09-23T15:52:26Z	feat(ba-ai-process): require confirmed product attribution
+9bcaf87b42d8cb374f0b7bc82d45b96131a17b98	2026-09-22T19:31:05Z	refactor(#599): migrate ba-ai-process source and distribution
+
+## Hub dist package-manifest
+manifest: execution-package-gigacode-cli
+package_version: "5.1"
+compiled_at: 2026-09-29
+source:
+  repository: https://github.com/G-Ivan-A/hybrid-Intelligence-lab
+  revision: da9fc6b47f7fdf634ae3d1b48fb8b2da16dd6dbb
+76:    taxonomy/mango-products.yaml: 73ab6c1d482e07d833b713144b23468ea076369bc990d8bd7323733b3fd45708
+82:    taxonomy/telecom-products.yaml: dbc8532bc753e9bb40205e041960a0ce3fdabe1a0cd9faf6c62af60e5b49ec69
+110:  - what: полный снимок 42 продуктовых capabilities MANGO и 42 отраслевых соответствия ИТ/телеком
+112:    to: [taxonomy/mango-products.yaml, taxonomy/telecom-products.yaml]
+113:    note: byte-identical копии Source управляют динамической продуктовой маршрутизацией; n0 разрешает полную цепочку и требует подтверждение бизнес-аналитика
+
+## Hub dist taxonomy/products.yaml (form v2.0)
+7:version: "2.0"
+8:scope: mango-portfolio
+9:catalog: taxonomy/mango-products.yaml
+10:industry_mapping: taxonomy/telecom-products.yaml
+12:  - {id: Domain, field: domain, question: "К какому домену портфеля MANGO относится задача?"}
+13:  - {id: Capability, field: capability, question: "Какую продуктовую способность затрагивает задача?"}
+14:  - {id: Feature, field: feature, question: "Какой пользовательский или системный аспект способности затронут?"}
+15:  - {id: Atomic Function, field: atomic_function, question: "Какая неделимая функция проверяется отдельно?"}
+19:  node: n0
+20:  skill: SK-product-attribution
+21:  confirmation_gate: G-human
+26:  reject_rule: "неразрешимая, неполная или неподтверждённая цепочка останавливает маршрут"
+37:  MP-2: каждая запись содержит marker, полную цепочку domain/capability/feature/atomic_function, profile и owner
+38:  MP-3: бизнес-аналитик подтверждает весь реестр одним решением G-human до n1; агент не выводит подтверждение из текста
+
+## Hub dist mango-products.yaml (JSON content)
+version 3.0 closed True scope mango-only
+compiled_from https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/3a7306d66011186d42f5017b89a9cc051226fe32/research/mango/2026-05-22-classification.md
+domains 8 ['voice-ucaas', 'contact-center', 'digital-channels', 'ai-automation', 'analytics', 'hardware', 'security', 'platform']
+capabilities 42 features(strings) 132 atomic_functions 98
+
+## Hub dist c-in.schema.json products item
+5:  "description": "A-IN может войти в product routing preflight со статусом pending. К основным узлам маршрут допускает вход только после явного подтверждения бизнес-аналитиком полной цепочки MANGO Domain → Capability → Feature → Atomic Function. Неподтверждённая или неразрешимая привязка останавливает маршрут fail-closed.",
+85:      "description": "Кандидатный либо подтверждённый реестр цепочек из taxonomy/mango-products.yaml. Пустой массив допустим только до product routing preflight.",
+required ['marker', 'domain', 'capability', 'feature', 'atomic_function', 'profile', 'owner']
+
+## Hub dist route n0
+17:  - {node: n0, process: P-01, skill: SK-product-attribution, actor: agent, gates: [G-self, G-mach, G-human], output: A-IN, note: "тип работы выбирает primary_axis; бизнес-аналитик подтверждает правило, evidence, industry mapping и полную MANGO-цепочку; P-08 передаётся отдельному маршруту"}
+36:  - {from: entry, to: n0, condition: "c_in.valid == true"}
+38:  - {from: n0, to: n1, condition: "work_type in ['mango-change','mango-kb','industry-practice'] and routing.decision == 'confirmed' and routing.primary_axis == axis_for(work_type) and product_attribution.status == 'confirmed' and product_binding.valid == true"}
+39:  - {from: n0, to: handoff-p08, condition: "work_type == 'external-spec' and routing.primary_axis == 'industry' and routing.decision == 'confirmed'", note: "оценка внешнего ТЗ принадлежит P-08, не BCREQ"}
+40:  - {from: n0, to: halt, condition: "routing.decision != 'confirmed' or (work_type != 'external-spec' and (product_attribution.status != 'confirmed' or product_binding.valid == false))", note: "неподтверждённая атрибуция не допускается к генерации"}
+
+## Hub dist validate-package.py catalog checks
+327:        fail(f"taxonomy/mango-products.yaml: ожидается 8 доменов snapshot v3.0, получено {len(domains)}")
+366:            "taxonomy/mango-products.yaml: ожидается 42 capabilities snapshot v3.0, "
+449:                f"products[{number}]: feature {product.get('feature')!r} не принадлежит capability {product.get('capability')!r}"
+454:                f"products[{number}]: atomic_function {product.get('atomic_function')!r} не принадлежит capability {product.get('capability')!r}"
+469:    if routing.get("catalog") != "taxonomy/mango-products.yaml":
+
+## Hub dist golden still class-based
+version: "1.0"
+product_class: contact-center
+structural_only: true   # все эталоны synthetic и до подтверждения человеком
+
+## runtime repo identity
+mango-ba-ai-runtime
+(mango-ba-ai-runtime-cli redirects to mango-ba-ai-runtime)
+runtime issue #3 closed 2026-09-26T11:01:57Z: clean env-free repo for chat models
+38:Инструкция рекомендует сохранить GigaCode-срез (`.agents/skills/`, `routes/`, `contracts/`, `tools/`, `runs/.gitkeep`). **Это некорректно для данного репозитория.** `mango-ba-ai-runtime` не должен знать о средах и вариантах. Ничего лишнего в репозитории быть не должно.

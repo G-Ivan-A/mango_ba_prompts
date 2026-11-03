@@ -1,0 +1,7 @@
+runtime 5d8c201 golden/*.md atomic function vs spoke docs/taxonomy/products.json @7f920e2e (152 AF)
+GS-CC-01: queue-callback-offer exact=False tail_match=None near=['callback/function/callback-request-intake', 'callback/function/callback-scheduling', 'call-routing/function/queue-management', 'outbound-calling/function/callback-scheduling']
+GS-CC-02: handling-report-export exact=False tail_match=None near=['call-recording/function/call-log-export', 'agent-workspace/function/interaction-handling', 'operator-mobile-app/function/mobile-interaction-handling', 'sms-messaging/function/opt-out-handling', 'email-tracking/function/unsubscribe-handling']
+GS-CC-NEG-01: callback-offer exact=False tail_match=None near=['callback/function/callback-request-intake', 'callback/function/callback-scheduling', 'outbound-calling/function/callback-scheduling']
+GS-CC-NEG-02: queue-capacity-limit exact=False tail_match=None near=['call-routing/function/queue-management', 'open-api/function/api-rate-limiting']
+GS-CC-NEG-03: group-report-threshold exact=False tail_match=None near=['workforce-management/function/punctuality-report-view', 'report-builder/function/report-create', 'report-builder/function/report-view', 'report-builder/function/custom-parameter-create', 'report-builder/function/report-entity-create']
+GS-CC-NEG-04: after-hours-greeting exact=False tail_match=None near=['cloud-pbx/function/working-hours-routing', 'ivr-voice-menu/function/auto-secretary-greeting']

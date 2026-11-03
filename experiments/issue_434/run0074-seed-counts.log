@@ -1,0 +1,16 @@
+{'golden_set': 'run-0073-bcreq-fr-sections', 'version': '0.1', 'status': 'draft', 'source': 'https://github.com/G-Ivan-A/mango_ba_prompts/issues/375', 'runtime_compat': 'golden/cases.yaml @ 91406e430aeb70dabf20548eee0ea95127f42690'}
+sets: ['GS-375-PRB', 'GS-375-FR', 'GS-375-SOL', 'GS-375-DLG', 'GS-375-PRM']
+cases = 46
+('cc', 'negative', 'user') 1
+('cross', 'negative', 'none') 8
+('cross', 'negative', 'user') 5
+('cross', 'positive', 'none') 1
+('cross', 'positive', 'user') 5
+('lk', 'negative', 'none') 6
+('lk', 'negative', 'user') 17
+('lk', 'positive', 'none') 1
+('lk', 'positive', 'user') 2
+outcomes {'refused': 37, 'completed': 9}
+{"id": "GS-375-SOL-09", "origin": "run-observed", "confirmed_by": "user", "product_profile": "P-SETTINGS", "section": "4", "slot": "S-SOLUTION"}
+{"id": "GS-375-SOL-10", "origin": "run-observed", "confirmed_by": "user", "product_profile": "P-SETTINGS", "section": "4", "slot": "S-SOLUTION"}
+{"id": "GS-375-DLG-10", "origin": "run-observed", "confirmed_by": "none", "product_profile": "P-SETTINGS", "section": "dialog", "slot": "—"}
