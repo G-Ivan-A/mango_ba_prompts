@@ -1,11 +1,11 @@
 ---
 status: accepted
-version: 0.5.1
+version: 0.6
 updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403, https://github.com/G-Ivan-A/mango_ba_prompts/issues/418, https://github.com/G-Ivan-A/mango_ba_prompts/issues/425, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/issues/432"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403, https://github.com/G-Ivan-A/mango_ba_prompts/issues/418, https://github.com/G-Ivan-A/mango_ba_prompts/issues/425, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/issues/432, https://github.com/G-Ivan-A/mango_ba_prompts/issues/433, https://github.com/G-Ivan-A/mango_ba_prompts/issues/438"
 rfc-scope: multi
 type: rfc
 related_artifacts: "docs/analysis/2026-11-02-bcreq-prompts-classes-standards-check.md, standards/bcreq-flow-glossary.md, docs/ba-processes/bcreq-manual-process.md, docs/contracts/bcreq-stage-gates.md, docs/contracts/bcreq-manual-state.md, standards/bcreq-manual-classes/catalog.json, docs/rfc/2026-10-bcreq-manual-pipeline.md, docs/rfc/2026-10-bcreq-run-lessons-pipeline.md, docs/adr/2026-10-adr-015-bcreq-manual-classes.md, pr-ops/BACKLOG.md"
@@ -84,14 +84,16 @@ mango-ba-ai-runtime только по перечню исключений это
 отдельные решения Р-14 и Р-15 с собственным выбором. Пока их нет, эти четыре решения
 остаются `proposed`; ответ «Р-13 да» их не закрывает. Р-14 принято в
 issue [#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)
-([поправка 0.5](#поправка-05-решение-р-14-и-гейты-по-этапам-issue-432)).
+([поправка 0.5](#поправка-05-решение-р-14-и-гейты-по-этапам-issue-432)),
+Р-15 — в issue [#438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)
+([поправка 0.6](#поправка-06-решение-р-15-и-промпты-шагов-issue-438)).
 
 | Решение | Статус | Основание |
 | --- | --- | --- |
 | DEC-427-01. Термин «Поток» и цепочка элементов | `accepted` | Р-13 |
 | DEC-427-02. Мета-модель не меняется | `accepted` | Р-13 |
 | DEC-427-03. Девять процессов потока BCREQ | `accepted` | Р-13 |
-| DEC-427-04. Основная линия этапа 1 — шаги v0.1 | `proposed` | ждёт Р-15 |
+| DEC-427-04. Основная линия этапа 1 — шаги v0.1 | `accepted` | Р-15 ([#438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)) |
 | DEC-427-05. Набор стандартов: базовый + восемь профилей | `accepted` | Р-13 |
 | DEC-427-06. Слово «промпт» и словарь | `accepted` | Р-13 |
 | DEC-427-07. Режим «по тесту» | `accepted` | Р-14 ([#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)) |
@@ -99,7 +101,7 @@ issue [#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)
 | DEC-427-09. Исключения: ссылки на runtime | `accepted` | Р-13 |
 | DEC-427-10. Заглушки и задачи на недостающие справочники | `accepted` | Р-13 |
 | DEC-427-11. Промпты по процессам | `accepted` | Р-13 |
-| DEC-427-12. Раздел «Процессы» в форме до 2.0.0 | `proposed` | ждёт Р-15 |
+| DEC-427-12. Раздел «Процессы» в форме до 2.0.0 | `accepted` | Р-15 ([#438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)) |
 | DEC-427-13. Уровни таксономии операций — техдолг, не правка сейчас | `accepted` | Р-13 |
 
 Что открывает решение: задача BL-150 (словарь и процессы, шаг 1 плана)
@@ -188,6 +190,49 @@ BL-151, а BL-151 ждёт Р-14, поэтому BL-154 и BL-155 ждут не 
 [стандарта профилей](../../standards/bcreq-prompt-profiles.md#3-операции-и-профили),
 раздел 3. Таблица 9.2 не правится: она — гипотеза RFC, расхождение
 записано здесь, а не исправлено молча (правило раздела 9.3).
+
+### Поправка 0.6: решение Р-15 и промпты шагов (issue #438)
+
+**Решение Р-15.** В
+[issue #438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)
+владелец принял PR #435 и поручил «последовательно итерационно выполнить
+рекомендованные действия (решение Р-15, см. цитата)»; цитата — «Владелец:
+решение Р-15 → BL-157 (комплект прогона), затем BL-156 (промпты шагов)».
+Исполнитель issue #438 читает поручение как выбор рекомендации Р-15 из
+[реестра решений](../../pr-ops/BACKLOG.md#2-решения-владельца): «Шаги
+v0.1 — основная линия; классы — пилот до BL-134; раздел «Процессы» — в
+форме до 2.0.0 с копированием промпта». DEC-427-04 и DEC-427-12 →
+`accepted`. Прецедент — Р-14 (поправка 0.5). Решение обратимо: если
+владелец имел в виду иное, при review PR #439 статусы возвращаются в
+`proposed`, черновики `prompts/drafts/` и комплект прогона остаются без
+применения, а BL-230 и BL-231 не начинаются.
+
+Что открывает решение: BL-156 и BL-157 исполнены в PR #439 (статус
+`review`, остатки с внешним блокером перечислены в карточках); BL-230 и
+BL-231 ждут ещё BL-156 `DONE` и Р-09.
+
+**Порядок BL-157 → BL-156.** Цитата ставит комплект прогона первым, а
+раздел 12 делает BL-157 зависимой от BL-156 (комплект ссылается на
+промпты). Обе формулировки выполняются так: сначала части комплекта, не
+зависящие от промптов (карточка прогона, форма обратной связи, правило,
+ссылки на процесс), затем BL-156, затем ссылка комплекта на черновики и
+промпты «по тесту». Отчёт —
+[разбор порядка](../analysis/2026-11-03-bl-156-step-prompts-report.md#1-порядок-исполнения).
+
+**Ш-В: профили — по таблице «Шаги и профили».** Подтверждено поручением
+#438: «Промпт Ш-В берёт профили из таблицы «шаги и профили», а не из
+таблицы 9.2 RFC». Сборка BL-156 берёт для Ш-В ANALYZE, VERIFY и
+TRANSFORM ([стандарт профилей, раздел 3](../../standards/bcreq-prompt-profiles.md#3-операции-и-профили)).
+Таблица 9.2 не правится (поправка 0.5).
+
+**Нижняя граница golden set (раздел 7.3, п. 4).** «RUN-0079 (49/62 →
+61/62)» называет две цифры: 49/62 — опубликованный промпт v0.1, 61/62 —
+редакция v0.2 с блоком уроков, которая в `prompts/` не опубликована
+(блоки уроков ждут ADR-017). Исполнитель #438 сравнивает черновик Ш-В с
+обеими цифрами и считает нижней границей публикации опубликованный v0.1
+(49/62, ядро 10/11, ложные срабатывания 0/10). Порог приёмки — решение
+владельца Р-03; до него публикация «по тесту» обратима. Данные —
+[RUN-0080](../../runs/2026/RUN-0080/).
 
 ## 1. Постановка задачи
 
