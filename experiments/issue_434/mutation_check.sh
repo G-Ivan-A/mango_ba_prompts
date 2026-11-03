@@ -22,3 +22,11 @@ mutate "drop obligation"          "$RFC" 's/обязывает runtime зафи�
 mutate "drop НФТ in body"         "$RFC" '0,/^## НФТ$/s//## НФТ-x/'
 mutate "drop Почему in step"      "$RFC" '0,/^   Почему: тела задач/s//   Так как тела задач/'
 mutate "invented function in cat" docs/taxonomy/products.json 's/"callback-scheduling"/"queue-callback-offer"/'
+# Комментарий владельца к PR #437: исток таксономии и индустриальный слой (подраздел 3.1).
+mutate "wrong inherited count"    "$RFC" 's/279 узлов `origin: inherited`/280 узлов `origin: inherited`/'
+mutate "wrong row coverage"       "$RFC" 's/42 из 43 Capability; у/41 из 43 Capability; у/'
+mutate "hub link on main"         "$RFC" '0,/hybrid-Intelligence-lab\/blob\/c06075d0[0-9a-f]*/s//hybrid-Intelligence-lab\/blob\/main/'
+mutate "drop check П-6"           "$RFC" '/^| П-6 |/d'
+mutate "industry in РТ-1 body"    "$RFC" '0,/^- \[ \] Файл `taxonomy\/mango-products.yaml` содержит заголовок/s//- [ ] UNSPSC. Файл `taxonomy\/mango-products.yaml` содержит заголовок/'
+mutate "drop BL-164 row"          pr-ops/BACKLOG.md '/^| BL-164 |/d'
+mutate "industry field in catalog" docs/taxonomy/products.json 's/"row":1,/"row":1,"unspsc":"81162000",/'

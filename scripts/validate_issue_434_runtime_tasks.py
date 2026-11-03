@@ -22,6 +22,13 @@ RFC-RT-001 ``docs/rfc/2026-11-runtime-product-catalog-golden-set.md`` — гот
   прежние; RFC зарегистрирован в реестре RFC, карте артефактов, бэклоге
   (Р-17, BL-163), CHANGELOG;
 * относительные ссылки и якоря RFC разрешаются;
+* подраздел 3.1 (комментарий владельца к PR #437): происхождение каталога
+  из классификации Хаба и связь с индустриальным слоем (``origin``, ``row``)
+  пересчитываются по каталогу; ссылки на Хаб — только по SHA; индустриальный
+  слой заведён только задачей BL-164 (бэклог, карточка, шаг раздела 11);
+* при ``HUB_CLONE=<путь к клону Хаба>`` — классификация не менялась с коммита
+  источника каталога, таблицы индустриального слоя — по одной строке на
+  Capability с ``row``; без клона проверка пропускается;
 * при ``RUNTIME_CLONE=<путь к клону runtime на SHA реестра>`` — факты Ф-1,
   Ф-6, Ф-7 и отсутствие каталога в runtime проверяются на клоне; без клона
   проверка пропускается (CI без сети).
@@ -51,6 +58,14 @@ ARTIFACT_MAP = ROOT / "pr-ops/artifact-map.md"
 BACKLOG = ROOT / "pr-ops/BACKLOG.md"
 TRACK_B = ROOT / "pr-ops/backlog-ba-model.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
+HUB = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"
+HUB_SHA = "c06075d0b45da70cb68e2df3851b861b5ec3aed1"
+CLASSIFICATION = "research/mango/2026-05-22-classification.md"
+# Коммит Хаба, из которого построен каталог спицы (``source_urls``).
+CATALOG_HUB_SHA = "cd5d6e4b72700e43ccca6c96119308ab5a6d7379"
+HUB_LINK = re.compile(r"github\.com/G-Ivan-A/hybrid-Intelligence-lab/(?:blob|tree)/([^/\s)`]+)/")
+# Поля индустриального слоя, которых в узлах каталога быть не должно (Ф-18).
+INDUSTRY_KEYS = re.compile(r"tm_?forum|unspsc|okpd|окпд|industry", re.I)
 
 REPO = "https://github.com/G-Ivan-A/mango_ba_prompts"
 CATALOG_VERSION = "2026-10-28.1"
@@ -64,6 +79,7 @@ SECTIONS = (
     "## 1. Проверенное текущее состояние",
     "## 2. Обоснование и связь с BL-156",
     "## 3. ССОТ и разделение ответственности",
+    "### 3.1. Происхождение таксономии и индустриальный слой",
     "## 4. Механизм снятия заглушки таксономии (критично)",
     "## 5. РТ-1 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)",
     "## 6. ХАБ-1 — тело задачи для `hybrid-Intelligence-lab` (норма привязки)",
@@ -480,6 +496,103 @@ class Records(unittest.TestCase):
         unreleased = text(CHANGELOG).split("\n## ", 2)[1]
         self.assertIn("Issue #434", unreleased)
         self.assertIn("RFC-RT-001", unreleased)
+
+
+class IndustryTaxonomy(unittest.TestCase):
+    """Подраздел 3.1: исток таксономии Mango и индустриальный слой (PR #437)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.body = text(RFC)
+        cls.data = json.loads(text(CATALOG))
+        cls.section = rfc_section("## 3. ").split("### 3.1. ", 1)[1]
+
+    def test_catalog_lineage(self):
+        self.assertIn(f"{HUB}/blob/{CATALOG_HUB_SHA}/{CLASSIFICATION}", self.data["source_urls"])
+        origin = collections.Counter(n["origin"] for n in self.data["nodes"])
+        self.assertEqual(sum(origin.values()), len(self.data["nodes"]))
+        fact = re.search(r"^\| Ф-16 \|.*$", self.body, re.M).group(0)
+        self.assertIn(f"{origin['inherited']} узлов `origin: inherited`", fact)
+        self.assertIn(f"{origin['portal-update']} — `portal-update`", fact)
+        self.assertIn(f"`{CATALOG_HUB_SHA[:8]}`", fact)
+
+    def test_row_bridge(self):
+        caps = [n for n in self.data["nodes"] if n["level"] == "Capability"]
+        missing = [n["id"] for n in caps if "row" not in n]
+        fact = re.search(r"^\| Ф-18 \|.*$", self.body, re.M).group(0)
+        self.assertIn(f"{len(caps) - len(missing)} из {len(caps)} Capability", fact)
+        for node_id in missing:
+            self.assertIn(f"`{node_id}`", fact)
+        for node in self.data["nodes"]:
+            for key in node:
+                with self.subTest(node=node["id"], key=key):
+                    self.assertIsNone(INDUSTRY_KEYS.search(key), "поле индустриального слоя в каталоге")
+
+    def test_hub_links_pinned(self):
+        refs = HUB_LINK.findall(self.body)
+        self.assertTrue(refs)
+        for ref in refs:
+            with self.subTest(ref=ref):
+                self.assertRegex(ref, r"^[0-9a-f]{40}$", "ссылка на Хаб без SHA")
+        self.assertIn(f"{HUB}/blob/{HUB_SHA}/{CLASSIFICATION}", self.body)
+
+    def test_section_checks_and_alternatives(self):
+        for n in range(1, 7):
+            self.assertRegex(self.section, rf"(?m)^\| П-{n} \|")
+        self.assertIn("backlog-ba-model.md#bl-164-", self.section)
+        self.assertIn(f"{REPO}/pull/437", self.section)
+        table = self.section.split("Рассмотренные альтернативы", 1)[1]
+        self.assertGreaterEqual(len(re.findall(r"^\| (?!---|Вариант).+ \|$", table, re.M)), 4)
+        self.assertEqual(table.count("**Принят**"), 1)
+
+    def test_bl164_only_backlog(self):
+        backlog = text(BACKLOG)
+        row = re.search(r"^\| BL-164 \|.*$", backlog, re.M).group(0)
+        self.assertIn("| deferred (triggered) |", row)
+        self.assertIn("BL-133", row)
+        self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-164")
+        card = text(TRACK_B).split("### BL-164. ", 1)[1]
+        for needle in ("**Почему.**", "**Источники.**", "**Зависит от.** BL-133", "**Готово, когда.**", RFC.name):
+            self.assertIn(needle, card, needle)
+        self.assertIn(f"{HUB}/blob/{HUB_SHA}/{CLASSIFICATION}", card)
+        # Индустриальный слой не входит в тела задач runtime и Хаба (R-9).
+        for prefix, _ in BODIES:
+            with self.subTest(body=prefix):
+                self.assertNotRegex(task_body(rfc_section(prefix)), r"UNSPSC|ОКПД|BL-164")
+        steps = rfc_section("## 11. ")
+        self.assertIn("BL-164", steps)
+        self.assertIn("docs/hub-research-dependencies.md", steps)
+
+
+class HubClone(unittest.TestCase):
+    """Факты Ф-16, Ф-17 на клоне Хаба (HUB_CLONE), без клона — пропуск."""
+
+    @classmethod
+    def setUpClass(cls):
+        clone = os.environ.get("HUB_CLONE")
+        if not clone:
+            raise unittest.SkipTest("HUB_CLONE не задан")
+        cls.clone = Path(clone)
+
+    def test_classification_unchanged_since_catalog(self):
+        diff = subprocess.run(
+            ["git", "-C", str(self.clone), "diff", "--quiet", CATALOG_HUB_SHA, HUB_SHA, "--", CLASSIFICATION]
+        )
+        self.assertEqual(diff.returncode, 0)
+
+    def test_industry_tables_cover_rows(self):
+        body = subprocess.run(
+            ["git", "-C", str(self.clone), "show", f"{HUB_SHA}:{CLASSIFICATION}"],
+            capture_output=True, text=True, check=True,
+        ).stdout
+        rows = {int(n) for n in re.findall(r"(?m)^\| *(\d+) *\| ", body.split("## Сравнительная таблица международной классификации", 1)[1].split("\n## ", 1)[0])}
+        caps = [n for n in json.loads(text(CATALOG))["nodes"] if n["level"] == "Capability" and "row" in n]
+        for node in caps:
+            with self.subTest(capability=node["id"]):
+                self.assertIn(int(node["row"]), rows)
+        self.assertIn("## Рабочая таксономия для входящих требований", body)
+        for field in ("TM Forum domain", "UNSPSC code", "ОКПД 2 class", "Russian standards overlay"):
+            self.assertIn(f"| {field} |", body)
 
 
 class RuntimeClone(unittest.TestCase):
