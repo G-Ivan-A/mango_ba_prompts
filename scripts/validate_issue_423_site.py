@@ -20,7 +20,8 @@ BCREQ вместо 14 промптов этапа 1, процесс BCREQ v0.2 �
 4. Страницы PR #422 опубликованы без расхождений с прототипом
    (``port_site_v2.py --check``).
 5. Версия сайта вычислена и записана: ``stats.json → siteVersion`` (SemVer),
-   та же версия в шапке и подвале ``index.html`` и в CHANGELOG (Issue #423).
+   та же версия в шапке и подвале ``index.html`` и в CHANGELOG (запись issue,
+   поднявшего версию: 2.0.0 — #423, 2.1.0 — #430).
 
 Запуск: ``python3 scripts/validate_issue_423_site.py``
 """
@@ -163,7 +164,8 @@ def check_version() -> list[str]:
     if not SEMVER.match(number):
         errors.append(f"stats.json: siteVersion.version {number!r} — не SemVer")
         return errors
-    if version.get("issue") != 423 or not version.get("released") or not version.get("basis"):
+    # Версию поднимает issue последнего изменения сайта (2.0.0 — #423, 2.1.0 — #430).
+    if not isinstance(version.get("issue"), int) or not version.get("released") or not version.get("basis"):
         errors.append("stats.json: siteVersion без issue, даты или основания")
     if load("prompts.json").get("siteVersion") != version:
         errors.append("prompts.json: siteVersion не совпадает со stats.json")
@@ -178,8 +180,9 @@ def check_version() -> list[str]:
         errors.append("site/app.js: нет renderSiteVersion")
     changelog = (ROOT / "CHANGELOG.md").read_text(encoding="utf-8")
     unreleased = changelog.split("## Unreleased", 1)[-1].split("\n## ", 1)[0]
-    if "Issue #423" not in unreleased or f"версия сайта {number}" not in unreleased.lower():
-        errors.append(f"CHANGELOG.md: нет записи Issue #423 с «версия сайта {number}»")
+    issue = f"Issue #{version.get('issue')}"
+    if issue not in unreleased or f"версия сайта {number}" not in unreleased.lower():
+        errors.append(f"CHANGELOG.md: нет записи {issue} с «версия сайта {number}»")
     return errors
 
 

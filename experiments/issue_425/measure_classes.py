@@ -34,18 +34,19 @@ CONTRACT = ROOT / "docs" / "contracts" / "bcreq-manual-state.md"
 PROCESS = ROOT / "docs" / "ba-processes" / "bcreq-manual-process.md"
 PROCESS_V01_REF = "a7fbf928^"
 SHARED_MIN_FILES = 30
-# Замер #425 сделан в нотации C01…C39. BL-153 (issue #430) переименовал
-# операции в К-01…К-39; чтобы замер оставался воспроизводимым, тексты и ID
-# приводятся обратно к нотации #425 (одна замена «К-NN» → «CNN»).
-LEGACY_ID = re.compile(r"К-(\d\d)")
-
-
-def legacy(text: str) -> str:
-    return LEGACY_ID.sub(r"C\1", text)
+# Срез замера #425: коммит, в котором записан metrics.json. Стандарты классов,
+# каталог и контракт после него меняются (BL-153 в issue #430 переименовал
+# операции в К-01…К-39, BL-151 перепишет стандарты), поэтому замер читает
+# файлы из этого коммита и остаётся воспроизводимым.
+SNAPSHOT_REF = "4444b49f"
 
 
 def read(path: Path) -> str:
-    return legacy(path.read_text(encoding="utf-8"))
+    rel = path.resolve().relative_to(ROOT).as_posix()
+    return subprocess.run(
+        ["git", "show", f"{SNAPSHOT_REF}:{rel}"],
+        cwd=ROOT, capture_output=True, text=True, check=True,
+    ).stdout
 
 TERMS = {
     "39 промптов": r"39\s+промпт",
@@ -66,13 +67,7 @@ def strip_frontmatter(text: str) -> str:
 
 
 def load_catalog() -> dict:
-    data = json.loads((CLASSES_DIR / "catalog.json").read_text(encoding="utf-8"))
-    for item in data["classes"]:
-        item["id"] = item.get("history", {}).get("previous_id", item["id"])
-        for key, value in item.items():
-            if isinstance(value, str):
-                item[key] = legacy(value)
-    return data
+    return json.loads(read(CLASSES_DIR / "catalog.json"))
 
 
 def boilerplate(catalog: dict) -> dict:

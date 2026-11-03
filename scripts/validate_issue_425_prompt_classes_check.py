@@ -82,6 +82,8 @@ REFERENCES = (
     "dspy.ai",
 )
 PROTECTED = ("standards/bcreq-manual-classes", "prompts", "site", "runs")
+# Слияние PR #426 (issue #425) в main.
+MERGE_425 = "1bd48293"
 LINK_RE = re.compile(r"\]\(([^)\s]+)\)")
 
 
@@ -237,15 +239,12 @@ class Issue425Check(unittest.TestCase):
         self.assertIn("2026-11-02-bcreq-prompts-classes-standards-check.md", card)
 
     def test_protected_unchanged(self):
-        base = None
-        for ref in ("upstream/main", "origin/main", "main"):
-            proc = run("git", "merge-base", "HEAD", ref)
-            if proc.returncode == 0:
-                base = proc.stdout.strip()
-                break
-        if not base:
-            self.skipTest("нет git-истории main")
-        proc = run("git", "diff", "--name-only", base, "HEAD", "--", *PROTECTED)
+        # Проверка относится к самому PR #426 (issue #425): его слияние сравнивается
+        # с main до слияния. Последующие PR (BL-153, issue #430) меняют классы и
+        # сайт законно, поэтому сравнение с текущим HEAD здесь неверно.
+        if run("git", "cat-file", "-e", f"{MERGE_425}^1").returncode != 0:
+            self.skipTest("нет git-истории слияния PR #426")
+        proc = run("git", "diff", "--name-only", f"{MERGE_425}^1", MERGE_425, "--", *PROTECTED)
         self.assertEqual(proc.stdout.strip(), "", "PR #425 не меняет классы, промпты, сайт и прогоны")
 
 
