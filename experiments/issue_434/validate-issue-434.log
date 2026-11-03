@@ -3,6 +3,12 @@ test_golden_md_functions_not_in_catalog (__main__.CatalogNumbers.test_golden_md_
 test_levels (__main__.CatalogNumbers.test_levels) ... ok
 test_per_class_table (__main__.CatalogNumbers.test_per_class_table) ... ok
 test_prototype_matches_catalog (__main__.CatalogNumbers.test_prototype_matches_catalog) ... ok
+setUpClass (__main__.HubClone) ... skipped 'HUB_CLONE не задан'
+test_bl164_only_backlog (__main__.IndustryTaxonomy.test_bl164_only_backlog) ... ok
+test_catalog_lineage (__main__.IndustryTaxonomy.test_catalog_lineage) ... ok
+test_hub_links_pinned (__main__.IndustryTaxonomy.test_hub_links_pinned) ... ok
+test_row_bridge (__main__.IndustryTaxonomy.test_row_bridge) ... ok
+test_section_checks_and_alternatives (__main__.IndustryTaxonomy.test_section_checks_and_alternatives) ... ok
 test_relative_links_and_anchors (__main__.Links.test_relative_links_and_anchors) ... ok
 test_runtime_links_pinned_to_registry (__main__.Links.test_runtime_links_pinned_to_registry) ... ok
 test_links_m1_to_m6 (__main__.Mechanism.test_links_m1_to_m6) ... ok
@@ -26,6 +32,6 @@ test_rt3_structure (__main__.TaskBodies.test_rt3_structure) ... ok
 test_template_sections_in_order (__main__.TaskBodies.test_template_sections_in_order) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.085s
+Ran 30 tests in 0.217s
 
-OK (skipped=1)
+OK (skipped=2)
