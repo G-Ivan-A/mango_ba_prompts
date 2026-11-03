@@ -69,7 +69,8 @@ class RfcAcceptanceTest(unittest.TestCase):
 
     def test_rfc_accepted_v02(self):
         self.assertEqual(self.fm.get("status"), "accepted")
-        self.assertEqual(self.fm.get("version"), "0.2")
+        # 0.2.x — редакционные правки принятой редакции (тип гейта, issue #433).
+        self.assertRegex(self.fm.get("version", ""), r"^0\.2(\.\d+)?$")
         self.assertIn(ISSUE, self.fm.get("related_issues", ""))
 
     def test_acceptance_section_status_per_section(self):
@@ -190,7 +191,8 @@ class RfcAcceptanceTest(unittest.TestCase):
 
     def test_canonical_documents_untouched(self):
         for target in SECTIONS.values():
-            self.assertEqual(frontmatter(text(ROOT / target)).get("version"), "1.0", target)
+            # Патч 1.0.x — редакционная правка без переноса (тип гейта, issue #433).
+            self.assertRegex(frontmatter(text(ROOT / target)).get("version", ""), r"^1\.0(\.\d+)?$", target)
 
     def test_changelog(self):
         unreleased = text(CHANGELOG).split("\n## ", 2)[1]

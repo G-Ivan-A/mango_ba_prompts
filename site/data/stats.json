@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-03T00:06:46.602Z",
+  "generatedAt": "2026-11-03T10:25:09.826Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -31,10 +31,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "released": "2026-11-03",
-    "issue": 430,
-    "basis": "PR #431: ID операций К-01…К-39 и шаг потока в каталоге",
+    "issue": 433,
+    "basis": "PR #436: тип гейта в классах, К-20 и журнал К-34",
     "changelog": "CHANGELOG.md"
   },
   "totals": {

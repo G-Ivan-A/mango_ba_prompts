@@ -280,7 +280,8 @@ class Records(unittest.TestCase):
     def test_bl159(self):
         card = text(TRACK_B).split("### BL-159. ", 1)[1].split("\n### ", 1)[0]
         self.assertTrue(card.startswith("Типы гейтов во всех документах проекта"))
-        self.assertGreaterEqual(len(re.findall(r"^- \[ \] ", card, re.M)), 8)
+        # Пункты отмечаются по мере выполнения (issue #433): считаем оба вида.
+        self.assertGreaterEqual(len(re.findall(r"^- \[[ x]\] ", card, re.M)), 8)
         for field in ("**Почему.**", "**Что меняется.**", "**Источники.**", "**Зависит от.**", "**Готово, когда.**"):
             with self.subTest(field=field):
                 self.assertIn(field, card)

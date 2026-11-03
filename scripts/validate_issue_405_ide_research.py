@@ -26,6 +26,9 @@ def legacy_catalog(catalog):
         return catalog
     classes = []
     for item in catalog["classes"]:
+        # Срез #405 снят до BL-159 (issue #433): прежние значения полей
+        # хранятся в history.previous_fields каталога.
+        item = {**item, **item.get("history", {}).get("previous_fields", {})}
         old = {k: (re.sub(r"К-(\d\d)", r"C\1", v) if isinstance(v, str) else v)
                for k, v in item.items() if k not in LEGACY_FIELDS}
         old["id"] = item["history"]["previous_id"]
