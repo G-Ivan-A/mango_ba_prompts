@@ -1,0 +1,72 @@
+ok - AGENTS.md exists
+ok - README.md exists
+ok - compilation-manifest.yaml exists
+ok - docs/guides/README.md exists
+ok - docs/guides/00-quick-start.md exists
+ok - routes/rg-bcreq-v1.yaml exists
+ok - routes/run-sheet-template.yaml exists
+ok - evaluation/validate-package.md exists
+ok - evaluation/g-mach-checklist.md exists
+ok - evaluation/g-human-checklist.md exists
+ok - docs/kb/README.md exists
+ok - contracts/c-in.md exists
+ok - c-in is a system prompt
+ok - contracts/c-core.md exists
+ok - c-core is a system prompt
+ok - contracts/c-quest.md exists
+ok - c-quest is a system prompt
+ok - contracts/c-out-bcreq.md exists
+ok - c-out-bcreq is a system prompt
+ok - contracts/c-rk.md exists
+ok - c-rk is a system prompt
+ok - .agents is absent
+ok - .hub-profile.json is absent
+ok - tools is absent
+ok - runs is absent
+ok - experiments is absent
+ok - no .py or .json runtime files
+ok - no environment-specific references
+ok - no explicit bans on external knowledge bases
+ok - contracts/c-core.md exists
+ok - contracts/c-in.md exists
+ok - contracts/c-out-bcreq.md exists
+ok - contracts/c-quest.md exists
+ok - contracts/c-rk.md exists
+ok - evaluation/g-human-checklist.md exists
+ok - evaluation/g-mach-checklist.md exists
+ok - evaluation/metrics.yaml exists
+ok - evaluation/validate-package.md exists
+ok - golden/cases.yaml exists
+ok - golden/gs-cc-01-queue-overflow.md exists
+ok - golden/gs-cc-02-report-export.md exists
+ok - golden/gs-cc-neg-01-inbound-vs-outbound.md exists
+ok - golden/gs-cc-neg-02-queue-vs-group.md exists
+ok - golden/gs-cc-neg-03-sla-vs-aht.md exists
+ok - golden/gs-cc-neg-04-ivr-vs-announcer.md exists
+ok - routes/rg-bcreq-v1.yaml exists
+ok - routes/run-sheet-template.yaml exists
+ok - taxonomy/artifacts.yaml exists
+ok - taxonomy/domain-glossary.yaml exists
+ok - taxonomy/operations.yaml exists
+ok - taxonomy/processes.yaml exists
+not ok - taxonomy/product-catalog.yaml exists
+ok - taxonomy/products.yaml exists
+ok - taxonomy/projections.yaml exists
+ok - taxonomy/source-tiers.yaml exists
+ok - templates/bcreq-skeleton.md exists
+ok - 11 skills
+ok - skill ambiguity-detection-contact-center declares its name
+ok - skill answer-integration-contact-center declares its name
+ok - skill bcreq-assembly-contact-center declares its name
+ok - skill bcreq-decomposition-contact-center declares its name
+ok - skill context-extraction-contact-center declares its name
+ok - skill core-assembly-contact-center declares its name
+ok - skill problem-statement-contact-center declares its name
+ok - skill question-formation-contact-center declares its name
+ok - skill question-prioritization-contact-center declares its name
+ok - skill transcript-normalization-contact-center declares its name
+ok - skill value-hypothesis-contact-center declares its name
+ok - knowledge base has 18 documents
+ok - ST-5-LOCAL points to docs/kb
+runtime smoke test failed: 1 check(s)
+exit=1

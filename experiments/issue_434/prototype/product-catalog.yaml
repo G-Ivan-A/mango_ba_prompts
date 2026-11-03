@@ -1,8 +1,9 @@
 # Закрытый каталог значений продуктовой таксономии (уровни Domain …
 # Atomic Function). Форма уровней — taxonomy/products.yaml; значения
 # скопированы из каталога спицы без изменения смысла (манифест: copied).
-# Правило: atomic_function во входе c-in — только id узла уровня
-# function из этого файла, у которого в classes есть объявленный класс.
+# Файл — факты (ТС-4 RFC #427): правило привязки atomic_function
+# объявлено в contracts/c-in.md, а не здесь. classes — продуктовые
+# классы products.yaml, к которым узел относится через предков Domain.
 vocabulary: product-catalog
 closed: true
 version: "1.0"
