@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2.3
+version: 0.2.4
 updated: 2026-11-03
 ai-generated: true
 type: process
@@ -13,11 +13,13 @@ related_artifacts:
   - "standards/bcreq-manual-classes/README.md"
   - "standards/bcreq-manual-classes/catalog.json"
   - "site/data/bcreq-flow.json"
+  - "docs/ba-processes/bcreq-run-kit.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/388"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/423"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/430"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438"
 ---
 
 # Создание спецификации бизнес-требований и дизайна решения (BCREQ)
@@ -131,6 +133,10 @@ v0.3 (BL-230).
 
 Состав шагов — RFC #427, разделы 5.4 и 9.2. К-01 и К-09 приходят в Ш-1
 из входа БА (запрос и материалы).
+
+Прогон на новой задаче БА ведёт по [комплекту прогона](bcreq-run-kit.md)
+(BL-157): карточка прогона, журнал гейтов К-34, форма обратной связи
+«шаг → что не так → предложение» и правило правки промптов.
 
 ## 1. Ручной процесс БА
 
