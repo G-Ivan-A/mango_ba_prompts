@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.13
+version: 0.14
 updated: 2026-11-03
 ai-generated: true
 type: register
@@ -291,7 +291,10 @@ mango-ba-ai-runtime с заглушками, промпты по шагам по
 DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
 ([issue #430](https://github.com/G-Ivan-A/mango_ba_prompts/issues/430), PR #431) —
 редакционная: определение гейта с типами `человек`, `гибрид`, `llm`, `код`
-и ключевыми гейтами; статусы решений не меняются.
+и ключевыми гейтами; статусы решений не меняются. Поправка 0.5
+([issue #432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432), PR #435):
+Р-14 принято — DEC-427-07, 08 → `accepted`; цель «машинные гейты, кроме
+ключевых» отнесена к этапам 3–4 дорожной карты.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
@@ -299,10 +302,10 @@ DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
 | [RFC-427-DEC-02](2026-11-bcreq-flow-processes-prompts.md#dec-427-02-мета-модель-не-меняется) | Мета-модель | Не меняется: поток — локальное имя процесса верхнего уровня, процессы сопоставлены L2, подпроцессы — L3-навыкам; передача в Хаб — только BL-122 по Р-12 | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
 | [RFC-427-DEC-03](2026-11-bcreq-flow-processes-prompts.md#dec-427-03-девять-процессов-потока-bcreq) | Процессы потока BCREQ | ПБ-0…ПБ-7 и ПБ-С — актуализация шагов v0.1, операций каталога и L2, без новых процессов | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
 | [RFC-427-DEC-04](2026-11-bcreq-flow-processes-prompts.md#dec-427-04-основная-линия-этапа-1--шаги-v01) | Основная линия этапа 1 | Шаги Ш-0…Ш-Р и Ш-С; 39 классов — пилот и контракты операций до BL-134 (REC-425-01) | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
-| [RFC-427-DEC-05](2026-11-bcreq-flow-processes-prompts.md#dec-427-05-набор-стандартов-базовый--восемь-профилей) | Набор стандартов | Один базовый стандарт ручного промпта BCREQ и восемь профилей; операции — сигнатуры с префиксом К-; правило #403 «классов = стандартов» заменяется | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | [PR #431](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431): BL-153 — префикс К-, `flow_step` |
+| [RFC-427-DEC-05](2026-11-bcreq-flow-processes-prompts.md#dec-427-05-набор-стандартов-базовый--восемь-профилей) | Набор стандартов | Один базовый стандарт ручного промпта BCREQ и восемь профилей; операции — сигнатуры с префиксом К-; правило #403 «классов = стандартов» заменяется | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | [PR #431](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431): BL-153 — префикс К-, `flow_step`; [PR #435](https://github.com/G-Ivan-A/mango_ba_prompts/pull/435): BL-151, BL-152 |
 | [RFC-427-DEC-06](2026-11-bcreq-flow-processes-prompts.md#dec-427-06-слово-промпт-и-словарь) | Словарь | «Промпт» — копируемый текст шага; «контракт» — сигнатура операции и контракты состояния и гейтов; «стандарт» — правила сборки и проверки | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
-| [RFC-427-DEC-07](2026-11-bcreq-flow-processes-prompts.md#dec-427-07-режим-по-тесту) | Режим «по тесту» | Стандарты и промпты Спринта 9 — пробная редакция до ADR; golden set RUN-0079 — нижняя граница | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
-| [RFC-427-DEC-08](2026-11-bcreq-flow-processes-prompts.md#dec-427-08-техдолг-обратного-согласования) | Техдолг обратного согласования | S-009 и BL-158: один ADR принимает стандарты «по тесту» по итогам прогонов | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
+| [RFC-427-DEC-07](2026-11-bcreq-flow-processes-prompts.md#dec-427-07-режим-по-тесту) | Режим «по тесту» | Стандарты и промпты Спринта 9 — пробная редакция до ADR; golden set RUN-0079 — нижняя граница | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-14](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)) | [PR #435](https://github.com/G-Ivan-A/mango_ba_prompts/pull/435): BL-151, BL-152 — [базовый стандарт](../../standards/bcreq-prompt-base-standard.md) и [профили](../../standards/bcreq-prompt-profiles.md) «по тесту» |
+| [RFC-427-DEC-08](2026-11-bcreq-flow-processes-prompts.md#dec-427-08-техдолг-обратного-согласования) | Техдолг обратного согласования | S-009 и BL-158: один ADR принимает стандарты «по тесту» по итогам прогонов | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-14](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)) | — (BL-158 ждёт триггера) |
 | [RFC-427-DEC-09](2026-11-bcreq-flow-processes-prompts.md#dec-427-09-исключения-ссылки-на-runtime) | Ссылки на runtime | Только по перечню И-1…И-8 и требованиям ТС-1…ТС-7; база знаний обязательна; ссылки по SHA | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | [PR #431](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431): BL-154 — [реестр справочников](../../standards/bcreq-runtime-references.md) |
 | [RFC-427-DEC-10](2026-11-bcreq-flow-processes-prompts.md#dec-427-10-заглушки-и-задачи-на-недостающие-справочники) | Заглушки | Где справочника runtime нет — блок заглушки и задача BL-155 | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | [PR #431](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431): BL-155 — заглушки З-1…З-4, задачи РТ-1…РТ-4 |
 | [RFC-427-DEC-11](2026-11-bcreq-flow-processes-prompts.md#dec-427-11-промпты-по-процессам) | Промпты по процессам | 11 файлов промптов на 12 шагов и Ш-С из стандартов «по тесту»; в `prompts/` — только не хуже базовой линии golden set | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
@@ -319,7 +322,7 @@ v0.1 — готовые к копированию тела задач РТ-1 и 
 
 - ССОТ значений — каталог спицы `docs/taxonomy/products.json`;
 - ССОТ формы — Хаб;
-- новые ID: Р-16 и BL-160.
+- новые ID: Р-16 и BL-161.
 
 Задачи в runtime и Хабе создаёт владелец (A-08 RFC #427). Носитель
 строк РТ-1…РТ-4 —
@@ -400,7 +403,12 @@ v0.1 — готовые к копированию тела задач РТ-1 и 
   ID операций `К-01…К-39`, поле `flow_step`), RFC-427-DEC-09 (BL-154: реестр
   справочников runtime по SHA) и RFC-427-DEC-10 (BL-155: заглушки и задачи для
   runtime; вставка в промпты — BL-156). Статусы не меняются до слияния.
+- **2026-11-03** — issue #432 (PR #435): решение Р-14 (поручение владельца
+  «решение Р-14 → BL-151 …, затем BL-152») — RFC-427-DEC-07, 08 → `accepted`;
+  поправка 0.5 RFC #427. В колонке реализации RFC-427-DEC-05 и 07 — PR #435:
+  базовый стандарт (BL-151) и профили (BL-152) «по тесту». Уточнение словаря:
+  типы гейтов и валидаторы по этапам дорожной карты (разделы 3.7, 3.8).
 - **2026-11-03** — issue #434 (PR #437): добавлен RFC-RT-001 в статусе
   `proposed` — тела задач РТ-1, РТ-3 для runtime и ХАБ-1 для Хаба, механизм
   снятия заглушки З-1. Строки РТ-1 и РТ-3 реестра справочников расширены
-  (v0.2); решение Р-16 и задача BL-160 — в бэклоге.
+  (v0.2); решение Р-16 и задача BL-161 — в бэклоге.

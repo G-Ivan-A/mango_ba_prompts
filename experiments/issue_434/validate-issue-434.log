@@ -26,6 +26,6 @@ test_rt3_structure (__main__.TaskBodies.test_rt3_structure) ... ok
 test_template_sections_in_order (__main__.TaskBodies.test_template_sections_in_order) ... ok
 
 ----------------------------------------------------------------------
-Ran 25 tests in 0.106s
+Ran 25 tests in 0.109s
 
 OK (skipped=1)

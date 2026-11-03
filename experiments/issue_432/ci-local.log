@@ -1,0 +1,26 @@
+Generated 53 prompts
+Generated BCREQ flow: 39 manual steps, 5 approval stages
+Generated 9 process cards and 7 patterns
+Generated 13 operations and 4 BCREQ catalog stages
+Generated 4 roadmap levels and 7 gaps
+Generated process tree: 22/38 subprocesses with prompts in 8/9 processes (useTree=true)
+Generated checks: 3 prompt tests in 525 logs, 0 feedback items
+PASS validate_issue_123_runs_contract
+PASS test_runs_contract_run_type
+PASS validate_issue_272_run_0019
+PASS validate_issue_125_cascading_context
+PASS validate_issue_265_hub_sync
+PASS validate_issue_74_github_pages
+PASS validate_issue_91_pages_enhancements
+PASS validate_issue_86_mango_widget
+PASS validate_issue_95_prompt_id_in_copy
+PASS validate_issue_99_pages_optimization
+PASS validate_issue_97_ontology_standards
+PASS validate_issue_103_ui_fixes
+PASS validate_issue_263_vision_alignment
+PASS validate_issue_388_bcreq_site
+PASS validate-frontmatter
+PASS validate-file-naming
+PASS validate-structure
+PASS validate-onboarding
+rc=0

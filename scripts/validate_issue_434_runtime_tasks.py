@@ -20,7 +20,7 @@ RFC-RT-001 ``docs/rfc/2026-11-runtime-product-catalog-golden-set.md`` — гот
 * ссылки на runtime — только по SHA реестра (ТС-1, ТС-5);
 * реестр справочников: строки РТ-1 и РТ-3 ведут в RFC, id заглушек и задач
   прежние; RFC зарегистрирован в реестре RFC, карте артефактов, бэклоге
-  (Р-16, BL-160), CHANGELOG;
+  (Р-16, BL-161), CHANGELOG;
 * относительные ссылки и якоря RFC разрешаются;
 * при ``RUNTIME_CLONE=<путь к клону runtime на SHA реестра>`` — факты Ф-1,
   Ф-6, Ф-7 и отсутствие каталога в runtime проверяются на клоне; без клона
@@ -468,11 +468,11 @@ class Records(unittest.TestCase):
 
     def test_backlog(self):
         backlog = text(BACKLOG)
-        self.assertRegex(backlog, r"(?m)^\| \*\*Р-16\*\* \|.*\| BL-160 \|")
-        self.assertRegex(backlog, r"(?m)^\| BL-160 \| \[Реестр справочников на каталог продуктов runtime\]")
-        self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-160")
+        self.assertRegex(backlog, r"(?m)^\| \*\*Р-16\*\* \|.*\| BL-161 \|")
+        self.assertRegex(backlog, r"(?m)^\| BL-161 \| \[Реестр справочников на каталог продуктов runtime\]")
+        self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-161")
         self.assertIn("| `ХАБ-N` |", backlog)
-        card = text(TRACK_B).split("### BL-160. ", 1)[1]
+        card = text(TRACK_B).split("### BL-161. ", 1)[1]
         self.assertIn("**Решение владельца.** Р-16", card)
         self.assertIn(RFC.name, card)
 
