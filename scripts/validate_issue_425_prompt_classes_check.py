@@ -185,6 +185,11 @@ class Issue425Check(unittest.TestCase):
 
     def test_metrics_fresh_and_quoted(self):
         module = load_measure()
+        # Замер читает файлы закреплённого среза (SNAPSHOT_REF) через git show.
+        # В неглубоком клоне среза нет: это пропуск с явной причиной, а не
+        # ошибка (CI берёт полную историю, issue #432).
+        if run("git", "cat-file", "-e", f"{module.SNAPSHOT_REF}^{{commit}}").returncode != 0:
+            self.skipTest(f"нет коммита среза замера #425 {module.SNAPSHOT_REF} (неглубокий клон)")
         catalog = module.load_catalog()
         inst = module.instances()
         fresh_b = module.boilerplate(catalog)
