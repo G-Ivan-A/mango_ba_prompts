@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.12
+version: 0.13
 updated: 2026-11-03
 ai-generated: true
 type: register
@@ -16,6 +16,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/415"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -32,6 +33,7 @@ related_artifacts:
   - "docs/analysis/2026-10-31-industry-practice-check.md"
   - "docs/rfc/2026-10-standards-page-rfc.md"
   - "docs/analysis/2026-10-31-standards-page-review.md"
+  - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -307,6 +309,26 @@ DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
 | [RFC-427-DEC-12](2026-11-bcreq-flow-processes-prompts.md#dec-427-12-раздел-процессы-в-форме-до-200) | Раздел «Процессы» | Шаги потока по порядку с копированием промпта, «Зачем шаг» и «Варианты дальше»; не заменяет сайт 2.0.0; классы — блок «пилот» | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `proposed` | — |
 | [RFC-427-DEC-13](2026-11-bcreq-flow-processes-prompts.md#dec-427-13-уровни-таксономии-операций--техдолг-не-правка-сейчас) | Уровни таксономии операций | «Операция» означает три уровня (13 типов работы, 39 контрактов C, 31 `OP-*`); таксономию сейчас не менять — техдолг S-010 и задача BL-125 после BL-121 | [ревью владельца PR #428](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6576047799); [ADR-003](../adr/003-ba-ontology.md) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
 
+## Задачи для runtime: каталог продуктов и golden set (источник: issue #434)
+
+RFC [`2026-11-runtime-product-catalog-golden-set.md`](2026-11-runtime-product-catalog-golden-set.md)
+v0.1 — готовые к копированию тела задач РТ-1 и РТ-3 для
+`mango-ba-ai-runtime` и задачи Хаба ХАБ-1. Он описывает механизм снятия
+заглушки таксономии З-1: М-1…М-6, от файла каталога до отказа на `c-in`.
+Решения в RFC:
+
+- ССОТ значений — каталог спицы `docs/taxonomy/products.json`;
+- ССОТ формы — Хаб;
+- новые ID: Р-16 и BL-160.
+
+Задачи в runtime и Хабе создаёт владелец (A-08 RFC #427). Носитель
+строк РТ-1…РТ-4 —
+[реестр справочников](../../standards/bcreq-runtime-references.md#6-задачи-для-репозитория-runtime).
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-16 о каталоге в статусе `review` | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431) | `proposed` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437) |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -378,3 +400,7 @@ DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
   ID операций `К-01…К-39`, поле `flow_step`), RFC-427-DEC-09 (BL-154: реестр
   справочников runtime по SHA) и RFC-427-DEC-10 (BL-155: заглушки и задачи для
   runtime; вставка в промпты — BL-156). Статусы не меняются до слияния.
+- **2026-11-03** — issue #434 (PR #437): добавлен RFC-RT-001 в статусе
+  `proposed` — тела задач РТ-1, РТ-3 для runtime и ХАБ-1 для Хаба, механизм
+  снятия заглушки З-1. Строки РТ-1 и РТ-3 реестра справочников расширены
+  (v0.2); решение Р-16 и задача BL-160 — в бэклоге.
