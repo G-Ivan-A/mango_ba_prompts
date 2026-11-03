@@ -1150,9 +1150,11 @@ BCREQ (часть 0), контракте гейтов и правиле B3. Ос
 - [x] `docs/ba-ecosystem.md`, `docs/roadmap.md`,
   `docs/rfc/2026-10-ba-automation-strategy.md`,
   `docs/rfc/knowledge-transfer-to-hub/` (для Хаба — через RFC-to-Hub).
-  Сделано, а также `docs/vision.md`, `docs/architecture.md`, RFC страницы
-  «Стандарты». Пакет для Хаба заморожен решением #413 → перенесено в
-  BL-122 (только если Р-12 откроет передачу).
+  Сделано, а также `docs/vision.md`, `docs/architecture.md`. RFC
+  страницы «Стандарты» не правится: строка этапа 3 лежит в приложении,
+  которое порождает `experiments/issue_420/site-v2/build.py`. Пакет для
+  Хаба заморожен решением #413 → перенесено в BL-122 (только если Р-12
+  откроет передачу).
 - [x] `docs/ba-processes/00-index.executable.md`: столбец gate — тип.
   Исполнимый слой уже типизирован («если операция относится к `человек`
   или `гибрид`»); колонка «Gate / gap» в `00-index.md` получила тип по
