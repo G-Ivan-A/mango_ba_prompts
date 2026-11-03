@@ -107,6 +107,9 @@ ALLOW = {
     ("standards/bcreq-runtime-references.md", "G-human"): ("O", "файл runtime g-human-checklist.md"),
     ("standards/bcreq-runtime-references.md", "| ТС-3 |"): ("O", "ссылка на g-human-checklist.md"),
     ("docs/rfc/2026-11-bcreq-flow-processes-prompts.md", "g-human-checklist.md"): ("O", "файл runtime"),
+    # Черновик Ш-В (BL-156, #438): имя справочника И-8 из реестра runtime, раздел 2;
+    # текст черновика измерен RUN-0080 и меняется только пересборкой.
+    ("prompts/drafts/bcreq-review-validation-oneshot.md", "Чек-лист гейта G-human"): ("O", "имя И-8 из реестра runtime"),
     ("standards/bcreq-flow-glossary.md", "G-self → G-mach → G-human"): ("O", "порядок гейтов узла runtime"),
     ("docs/rfc/2026-10-standards-page-rfc.md", "ждёт решения человека на гейтах. | план |"):
         ("O", "порождаемое приложение: источник experiments/issue_420/site-v2/content.py, "
