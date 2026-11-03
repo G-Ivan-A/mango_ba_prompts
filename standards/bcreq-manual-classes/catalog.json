@@ -422,7 +422,7 @@
     {
       "id": "К-20",
       "slug": "gate-evidence",
-      "name": "Подготовка доказательств человеческого гейта",
+      "name": "Подготовка доказательств гейта",
       "phases": [
         "a-in",
         "a-core",
@@ -430,16 +430,18 @@
         "a-release"
       ],
       "flow_step": "Ш-В",
-      "inputs": "gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
+      "inputs": "gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
       "outputs": "gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation",
-      "behavior": "Г-IN/Г-С1/Г-W по действующему контракту, G1/G2/G3 по процессу — разные идентификаторы. Для release применить явно предложенный RFC-контракт. Проверить каждое условие, оценку и владельца; eligible_for_review не означает approved. Роли и решение берутся от человека.",
+      "behavior": "Г-IN/Г-С1/Г-W по действующему контракту, G1/G2/G3 по процессу — разные идентификаторы. Для release применить явно предложенный RFC-контракт. Проверить каждое условие, оценку и владельца; eligible_for_review не означает approved. Тип гейта (`человек`, `гибрид`, `llm`, `код`) и ключевость — по словарю потока; для `человек` и `гибрид` роли и решение берутся от человека, recommendation — только рекомендация.",
       "stop": "Любое обязательное условие без evidence: не рекомендовать прохождение; чужое или старое одобрение недействительно.",
       "checks": "Есть ревизия, область и полный чек-лист; ни один гейт не пройден моделью.",
       "existing": "prompts/bcreq-review-validation-oneshot.md",
       "file": "20-gate-evidence.md",
       "history": {
         "previous_id": "C20",
-        "renamed_in": "BL-153 (issue #430)"
+        "renamed_in": "BL-153 (issue #430)",
+        "previous_name": "Подготовка доказательств человеческого гейта",
+        "name_changed_in": "BL-159 (issue #433)"
       }
     },
     {
@@ -721,9 +723,9 @@
         "a-release"
       ],
       "flow_step": "Ш-0",
-      "inputs": "human_message, actor_role, authority, candidate_revision, scope, timestamp",
-      "outputs": "section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}",
-      "behavior": "Записывать только явное решение человека со ссылкой на его сообщение; UNKNOWN роль/полномочие не повышать. Отдельно recommendation, approval, rejection, request-change. Не разносить локальное решение на другие фазы; после изменения кандидата зависимое одобрение stale.",
+      "inputs": "human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?",
+      "outputs": "section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}",
+      "behavior": "Записывать только явное решение человека со ссылкой на его сообщение; UNKNOWN роль/полномочие не повышать. Отдельно recommendation, approval, rejection, request-change. Не разносить локальное решение на другие фазы; после изменения кандидата зависимое одобрение stale. Для решения гейта записать gate_id и gate_type; для `гибрид` — model_recommendation и divergence (совпало или расходится, с причиной): это журнал для решения о типе гейта.",
       "stop": "Нет реплики/полномочия/ревизии: proposed или pending, никогда approved; молчание не согласие.",
       "checks": "Можно восстановить кто что когда одобрил; запись не выдаёт модели право согласовать.",
       "existing": "prompts/bcreq-constitution-governance-oneshot.md",
