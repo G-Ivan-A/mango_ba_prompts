@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-06-20
+version: 0.1.1
+updated: 2026-11-03
 ai-generated: true
 type: contract
 layer: executable

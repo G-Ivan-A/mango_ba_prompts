@@ -35,11 +35,11 @@
       "reason": "#430: словарь потока BCREQ и реестр справочников runtime в карте стандартов (сайт не меняется)"
     },
     "standards/ba-ontology.md": {
-      "sha256": "8896e094fb3609cb23c1ec96792f4d7600e0a9051862e555468c45d858365eb8",
+      "sha256": "4856470faca3ad8d9520099b6e93db89d1d78e29c906479ead693598339b50da",
       "reason": "#433: указатели «тип гейта — словарь потока; поправка ADR-003 ждёт Р-16» (сайт не меняется)"
     },
     "standards/ba-ontology.executable.md": {
-      "sha256": "e0e3829bda43e7e19a40d66f8c4d0984a83d902e1ceaab1d1977b70e99bad77b",
+      "sha256": "f07cb5eedf0c355f69bf85e0e509b1fba088bf7fd1c1c7ab75b3db787686a0b4",
       "reason": "#433: тип гейта в строке Gate и в запрете перехода без human gate (`человек` или `гибрид`) (сайт не меняется)"
     },
     "standards/bcreq-prompt-architecture.md": {

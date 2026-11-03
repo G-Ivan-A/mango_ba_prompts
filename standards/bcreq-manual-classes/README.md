@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.2.1
 updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
