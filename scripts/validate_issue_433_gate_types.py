@@ -12,9 +12,9 @@
   которого больше нет в тексте, тоже ломает её — список не устаревает;
 * ADR-003 и онтология: поправка 0.2 — проект, ждёт Р-16. Пока
   ``R16_ACCEPTED = False``, ADR-003 остаётся версией 0.1 с пометкой
-  «проект»; после ответа владельца (BL-160) константа меняется на
+  «проект»; после ответа владельца (BL-162) константа меняется на
   ``True`` и проверка требует версию 0.2 без пометки;
-* решение Р-16 в BACKLOG, задачи BL-160 и BL-161 — строки и карточки;
+* решение Р-16 в BACKLOG, задачи BL-162 и BL-161 — строки и карточки;
 * журнал К-34: поля ``gate_id``, ``gate_type``, ``model_recommendation``,
   ``divergence`` в стандарте класса, каталоге и правиле Г3 контракта;
 * К-20 называется «Подготовка доказательств гейта»;
@@ -49,7 +49,7 @@ BACKLOG = ROOT / "pr-ops/BACKLOG.md"
 TRACK_B = ROOT / "pr-ops/backlog-ba-model.md"
 INVENTORY = ROOT / "docs/analysis/2026-11-03-gate-types-bl-159-inventory.md"
 
-# Р-16 (BL-160): после ответа владельца «Р-16 да» поменять на True вместе с
+# Р-16 (BL-162): после ответа владельца «Р-16 да» поменять на True вместе с
 # применением поправки 0.2 ADR-003 и онтологии.
 R16_ACCEPTED = False
 
@@ -68,7 +68,7 @@ WINDOW = 2
 # Место без типа → (категория, причина). Ключ — путь и фрагмент строки
 # (не номер строки: номера сдвигаются при правках выше по файлу).
 ALLOW = {
-    # A — носитель определения «Контрольной точки»; меняется поправкой 0.2 (Р-16 → BL-160).
+    # A — носитель определения «Контрольной точки»; меняется поправкой 0.2 (Р-16 → BL-162).
     ("docs/adr/003-ba-ontology.md", "(human gate)"): ("A", "схема §1, ждёт Р-16"),
     ("docs/adr/003-ba-ontology.md", "требует подтверждения человека"): ("A", "определение §2, ждёт Р-16"),
     ("docs/adr/003-ba-ontology.md", "на модель human-gate из"): ("A", "§3, ждёт Р-16"),
@@ -225,7 +225,7 @@ class OntologyR16Test(unittest.TestCase):
             self.assertNotIn("проект, ждёт Р-16", body)
             self.assertNotIn("подготовлена, не принята", body)
         else:
-            self.assertEqual(version, "0.1", "ADR-003 0.2 — только после «Р-16 да» (BL-160)")
+            self.assertEqual(version, "0.1", "ADR-003 0.2 — только после «Р-16 да» (BL-162)")
             self.assertIn("## Поправка 0.2: тип гейта (проект, ждёт Р-16)", body)
             self.assertIn("**Поправка 0.2 подготовлена, не принята (BL-159, issue #433).**", body)
 
@@ -242,19 +242,19 @@ class OntologyR16Test(unittest.TestCase):
         backlog = text(BACKLOG)
         self.assertIn("| **Р-16** |", backlog)
         self.assertIn("Р-01…Р-16", backlog)
-        for task in ("BL-159", "BL-160", "BL-161"):
+        for task in ("BL-159", "BL-161", "BL-162"):
             self.assertRegex(backlog, re.compile(rf"^\| {task} \| \[", re.MULTILINE), task)
         track = text(TRACK_B)
-        self.assertIn("### BL-160. Поправка 0.2 ADR-003: тип гейта в онтологии", track)
+        self.assertIn("### BL-162. Поправка 0.2 ADR-003: тип гейта в онтологии", track)
         self.assertIn("### BL-161. Журнал К-34 по Г-IN и решение о типе гейта", track)
-        self.assertIn("R16_ACCEPTED", section(track, "### BL-160."))
+        self.assertIn("R16_ACCEPTED", section(track, "### BL-162."))
 
     def test_bl159_checklist_closed_or_moved(self):
         card = section(text(TRACK_B), "### BL-159.")
         items = re.findall(r"^- \[([ x])\] ", card, re.MULTILINE)
         self.assertGreaterEqual(len(items), 8)
         self.assertNotIn(" ", items, "каждый пункт BL-159 отмечен или перенесён в карточку-владельца")
-        for moved in ("BL-160", "BL-161", "BL-156", "BL-122"):
+        for moved in ("BL-161", "BL-162", "BL-156", "BL-122"):
             self.assertIn(moved, card)
         self.assertIn("2026-11-03-gate-types-bl-159-inventory.md", card)
         self.assertTrue(INVENTORY.is_file())
