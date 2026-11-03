@@ -8,8 +8,8 @@
   (``contact-center``, ``voice-ucaas``, ``analytics-reporting``) через предков
   уровня Domain и таблицу ``runtime_compatibility`` каталога;
 * печатает статистику (уровни, классы, lifecycle, binding_basis) — эти числа
-  цитирует RFC ``docs/rfc/2026-11-runtime-catalog-golden-set-tasks.md``;
-* пишет черновик файла runtime ``taxonomy/product-catalog.yaml`` в
+  цитирует RFC ``docs/rfc/2026-11-runtime-product-catalog-golden-set.md``;
+* пишет черновик файла runtime ``taxonomy/mango-products.yaml`` в
   ``experiments/issue_434/prototype/`` — образец формы для исполнителя РТ-1.
 
 Прототип живёт в спице: в runtime файлы ``.py`` запрещены
@@ -30,7 +30,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 SOURCE = ROOT / "docs/taxonomy/products.json"
-OUT = Path(__file__).resolve().parent / "prototype/product-catalog.yaml"
+OUT = Path(__file__).resolve().parent / "prototype/mango-products.yaml"
 RUNTIME_CLASSES = ("contact-center", "voice-ucaas", "analytics-reporting")
 LEVEL_KEY = {
     "Domain": "domain",
@@ -123,7 +123,7 @@ def render(data, nodes, summary):
         "# Файл — факты (ТС-4 RFC #427): правило привязки atomic_function",
         "# объявлено в contracts/c-in.md, а не здесь. classes — продуктовые",
         "# классы products.yaml, к которым узел относится через предков Domain.",
-        "vocabulary: product-catalog",
+        "vocabulary: mango-products",
         "closed: true",
         'version: "1.0"',
         f"catalog_version: {q(data['catalog_version'])}",
@@ -152,6 +152,8 @@ def render(data, nodes, summary):
             parts.append(f"params: {q(node['params'])}")
         if node.get("locator"):
             parts.append(f"locator: {q(node['locator'])}")
+        if node.get("legacy_id"):
+            parts.append(f"legacy_id: {q(node['legacy_id'])}")
         if node.get("binding_basis"):
             parts.append(f"binding_basis: {node['binding_basis']}")
         lines.append("  - {" + ", ".join(parts) + "}")
