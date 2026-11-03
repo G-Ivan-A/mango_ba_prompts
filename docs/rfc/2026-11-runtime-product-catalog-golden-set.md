@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.1
+version: 0.2
 updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
@@ -8,7 +8,7 @@ source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
 related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md"
+related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -55,6 +55,16 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
    `review`) целиком как таксономию runtime с сохранением `lifecycle`.
    Без этого решения половина функций контакт-центра (33 из 66) остаётся
    вне каталога.
+7. **Происхождение таксономии проверено (версия 0.2, комментарий
+   владельца к PR #437).** Таксономия Mango разработана в Хабе, в
+   `research/mango/2026-05-22-classification.md` v3.0. Каталог спицы
+   построен из этого файла: 279 из 353 узлов имеют `origin: inherited`.
+   В том же файле есть индустриальный слой: TM Forum, UNSPSC, ОКПД 2 и
+   ГОСТ/НПА для 42 строк классов. Каталог связан с ним только номером
+   строки `row`. Ни каталог, ни runtime индустриальных полей не хранят.
+   Сопоставление нужно будущему потоку оценки тендерного ТЗ. По указанию
+   владельца для него заведена только задача BL-164 в бэклоге спицы
+   (подраздел 3.1). РТ-1 и РТ-3 этим не меняются.
 
 ## 0. Тип и дом артефакта
 
@@ -100,6 +110,11 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 | Ф-13 | Каталог спицы: 353 узла (Domain 7, Capability 43, Feature 151, Atomic Function 152), статус `review`, `runtime_compatibility` сопоставляет три класса runtime доменам | [`docs/taxonomy/products.json`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/7f920e2e967ad1331e027fef885ea68ecef7070f/docs/taxonomy/products.json) | `experiments/issue_434/catalog-stats.json` |
 | Ф-14 | Текущий промпт спицы считает таксономию runtime «определённой», только если это каталог по всей продуктовой линейке с цепочкой до Atomic Function; иначе — «[ТРЕБУЕТСЯ УТОЧНЕНИЕ]» | [`prompts/bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md), раздел «Полнота таксономии и класс поиска» | Чтение файла |
 | Ф-15 | Манифест runtime уже содержит копию из спицы с `source_commit` — базу знаний (`docs/kb`); правки данных runtime вне компиляции уже были (`3df40fd`, `0a13425` и откат `b67410f`) | `compilation-manifest.yaml` runtime, раздел `copied`; история runtime | `git log` клона runtime |
+| Ф-16 | Каталог спицы построен из классификации Хаба v3.0: `source_urls` ведёт на `2026-05-22-classification.md` по коммиту `cd5d6e4b`; 279 узлов `origin: inherited`, 74 — `portal-update`; до Хаба `c06075d0` файл не менялся | [`2026-05-22-classification.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-classification.md), каталог спицы, ключ `source_urls` | `experiments/issue_434/industry-taxonomy-inventory.log` |
+| Ф-17 | Индустриальный слой — в том же файле Хаба: «одно требование получает четыре ключа классификации» (Mango, TM Forum, UNSPSC/ОКПД 2, ГОСТ/НПА); международная таблица — 42 строки, 39 разных кодов UNSPSC; российская таблица — 42 строки; поля «Рабочей таксономии для входящих требований» | там же, строка 75, разделы «Сравнительная таблица международной классификации», «Рабочая таксономия для входящих требований» | `experiments/issue_434/industry-taxonomy-inventory.log` |
+| Ф-18 | Связь каталога с индустриальным слоем — только поле `row` у 42 из 43 Capability; у `report-builder` его нет; полей TM Forum, UNSPSC, ОКПД 2 в узлах каталога нет; в runtime нет ни одного упоминания TM Forum, UNSPSC, ОКПД | каталог спицы; клон runtime `5d8c201` | `experiments/issue_434/industry-taxonomy-inventory.log` |
+| Ф-19 | Сравнение с внешними продуктами на уровне функций есть только в черновике Хаба: у функции ≥2 `international_sources` (Genesys — 29, TM Forum SID — 21, Amazon Connect — 20, Cisco UCCE — 14); из 54 функций 17 есть в каталоге спицы | [`2026-05-27-capability-decomposition.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-27-capability-decomposition.md), `status: draft` | `experiments/issue_434/industry-taxonomy-inventory.log` |
+| Ф-20 | Поток оценки тендерного ТЗ в runtime объявлен, но вне среза: `P-08 tender-tz-assessment`, `in_slice: false`; в спице — BL-133, `deferred (triggered)` | [`taxonomy/processes.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/taxonomy/processes.yaml), строка 50; [BL-133](../../pr-ops/backlog-ba-model.md#bl-133-процесс-оценки-тз-заказчика) | Чтение файлов |
 
 Числа каталога по классам runtime (узел относится к классу, если среди
 его предков есть Domain класса из `runtime_compatibility`):
@@ -161,10 +176,91 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 | Копия каталога в runtime | `taxonomy/mango-products.yaml` runtime | Модель читает runtime без доступа к Хабу и спице («`hub_access_required_at_runtime: false`», манифест) | Runtime (задача РТ-1), запись `copied` в манифесте |
 | Эталоны по классам | `golden/` runtime | Эталон — «обязательный элемент машинного гейта» (`golden/cases.yaml`) | Runtime (задача РТ-3); правило проверки — Хаб (ХАБ-1, пункт 5) |
 | Какой SHA runtime читает промпт | [Реестр справочников, раздел 1](../../standards/bcreq-runtime-references.md#1-закреплённый-срез) | ТС-5: «единственная точка обновления SHA» | Спица (BL-163) |
+| Исток значений (исследование) | Хаб, [`research/mango/2026-05-22-classification.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-classification.md) v3.0 | Из него унаследованы 279 узлов каталога (Ф-16); спица добавила 74 узла с портала | Не правится ради runtime: значения для runtime берутся из каталога спицы |
+| Индустриальный слой: TM Forum, UNSPSC, ОКПД 2, ГОСТ/НПА | Тот же файл Хаба, таблицы по номеру строки (Ф-17) | В каталоге и runtime этих полей нет (Ф-18); слой нужен потоку оценки тендерного ТЗ, а не РТ-1 и РТ-3 | Решает BL-164 по триггеру (подраздел 3.1) |
 
 Имя файла `taxonomy/mango-products.yaml` взято из Хаба (Ф-11), а не
 придумано. Так следующая компиляция Хаба заменит файл, а не создаст
 второй.
+
+### 3.1. Происхождение таксономии и индустриальный слой
+
+Владелец попросил проверить три вещи
+([комментарий к PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437)):
+
+1. что таксономия Mango разработана в
+   `research/mango/2026-05-22-classification.md` Хаба;
+2. что она правильно используется в спице и в runtime;
+3. что рядом с ней есть индустриальная таксономия.
+
+Цель индустриальной таксономии — в будущем потоке тендерного ТЗ
+сопоставлять таксономию Mango с рыночной, чтобы сравнивать функции с
+внешними продуктами. Скрипт проверки —
+`experiments/issue_434/industry_taxonomy_inventory.py`, лог —
+`experiments/issue_434/industry-taxonomy-inventory.log`.
+
+**Что подтверждено.**
+
+| № | Проверка | Результат | Факт |
+| --- | --- | --- | --- |
+| П-1 | Таксономия Mango разработана в `2026-05-22-classification.md` | Да. Это версия 3.0 с уровнями `Domain → Capability → Feature → Atomic Function` и 7 доменами. Каталог спицы ссылается на неё по коммиту `cd5d6e4b`, файл с тех пор не менялся | Ф-16 |
+| П-2 | Каталог спицы использует таксономию Хаба корректно | Да. 279 узлов унаследованы, 74 добавлены с портала со статусом `review` (Р-17). ССОТ значений для runtime — каталог спицы (раздел 3) | Ф-12, Ф-13, Ф-16 |
+| П-3 | Runtime использует таксономию корректно | Нет, пока нет РТ-1. В runtime только три класса и свободная строка `atomic_function` | Ф-1, Ф-3, Ф-7 |
+| П-4 | Есть индустриальная таксономия | Да, в том же файле Хаба, отдельного файла нет. Ключи TM Forum, UNSPSC, ОКПД 2 и ГОСТ/НПА заданы для 42 классов. Есть закупочный слой Commercial Layer. Отраслевая вертикаль R2.7 отложена: «вертикаль описывает контекст применения, а не продуктовый класс» | Ф-17 |
+| П-5 | Индустриальный слой связан с каталогом | Частично. Связь только через `row` Capability (42 из 43). Полей слоя нет ни в каталоге, ни в runtime | Ф-18 |
+| П-6 | Есть основа для сравнения с внешними продуктами | Частично. Внешние продукты названы только у функций черновика декомпозиции (Genesys, Amazon Connect, Cisco UCCE); 17 из 54 функций есть в каталоге | Ф-19 |
+
+**Что ещё проверено в документах Хаба и спицы.**
+
+- [`2026-05-22-requirements-flow.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-requirements-flow.md)
+  (поток анализа ТЗ), FR-06: «классифицировать требования по рабочей
+  таксономии MANGO OFFICE из `2026-05-22-classification.md`: product
+  family, Mango status, Mango product, TM Forum domain/capability,
+  UNSPSC, ОКПД 2, standards overlay и compliance trigger». BPR-10:
+  «хранить benchmark конкурентов как отдельный источник evidence с датой
+  среза, ссылкой, продуктом конкурента, capability и уровнем уверенности».
+  Это и есть сценарий владельца для тендерного ТЗ.
+- [`2026-05-26-taxonomy-concept.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-26-taxonomy-concept.md)
+  (`status: draft`) называет назначение таксономии: «функции конкурентов
+  и best-practice capabilities». Про UNSPSC и ОКПД 2 он говорит: «Не
+  делать закупочный код главным ключом taxonomy: он слишком грубый для
+  продуктового анализа». Предлагаемое поле — `tm_forum_mapping`.
+- Классификация, рекомендация 8: «Заполнять продуктовый ключ (`Domain →
+  Capability → Feature → Atomic Function`) и закупочный слой (`Commercial
+  Layer`) независимо». Поэтому индустриальный слой не вносится в
+  РТ-1. Узлы каталога в runtime сохраняют id без изменений (раздел 5,
+  ФТ), значит слой можно присоединить позже по id Capability.
+- В спице TM Forum используется в другой роли — как альтернативный
+  стандарт описания решения
+  ([`standards/bcreq-composition-standard.md`](../../standards/bcreq-composition-standard.md),
+  раздел 3). Это не продуктовая таксономия, и BL-164 её не меняет. Термины
+  отрасли (UCaaS, Outbound Campaign, ACD) есть в
+  [`standards/product-classification-contract.md`](../../standards/product-classification-contract.md)
+  как словарь, без кодов по узлам.
+- [`docs/hub-research-dependencies.md`](../hub-research-dependencies.md)
+  ведёт `#classification`, `#classification-tz`, `#taxonomy-concept`,
+  `#capability-decomposition` на старые пути Хаба по коммиту `038868dd`
+  (до переименования в `2026-05-22-…`). Ссылки закреплены по SHA и
+  открываются. Содержание классификации на `038868dd` и `cd5d6e4b`
+  отличается только метаданными и путями ссылок (16 строк diff). Среди
+  потребителей `#classification` указан `prompts/tz-stats-generator.md`,
+  которого в спице нет. Обновление — шаг 10 раздела 11.
+
+**Предложение по индустриальной таксономии (по указанию владельца —
+только задача в бэклоге).** Заведена
+[BL-164](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз),
+`deferred (triggered)`. Триггер — старт BL-133 или включение `P-08` в
+срез runtime. До триггера ничего не строится: потребителя нет (Ф-20).
+
+Рассмотренные альтернативы:
+
+| Вариант | Решение | Почему |
+| --- | --- | --- |
+| Только задача BL-164 в бэклоге спицы | **Принят** | Указание владельца. Потребителя пока нет (Ф-20), а знание не теряется: карточка ссылается на источники и ключ связи `row` |
+| Добавить поля TM Forum, UNSPSC, ОКПД 2 в узлы `products.json` сейчас | Отвергнут | Смешивает продуктовый и закупочный ключи (рекомендация 8 классификации); каталог в статусе `review` (Р-17); раздувает РТ-1 |
+| Перенести слой в РТ-1 или завести РТ-5 в runtime | Отвергнут сейчас | `P-08` вне среза, навыков нет; правило runtime читать «только то, что читается в исполнении» (EP-C4) |
+| Задача в Хабе вместо спицы | Отвергнут | Значения каталога принадлежат спице (раздел 3); Хаб правит форму, когда спица даст данные |
+| Ничего не заводить | Отвергнут | Связь держится на одном поле `row`, а 43-я Capability его не имеет; без задачи это знание теряется |
 
 ## 4. Механизм снятия заглушки таксономии (критично)
 
@@ -479,6 +575,7 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 | --- | --- | --- | --- |
 | Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 (статус `review`) целиком как таксономию runtime, с `lifecycle` и разрешением привязки к `added-for-review` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md) | ждёт |
 | BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | deferred (triggered): РТ-1 слита |
+| BL-164 | Индустриальная таксономия для оценки тендерного ТЗ: сопоставление каталога Mango с TM Forum, UNSPSC, ОКПД 2 и функциями внешних продуктов (подраздел 3.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) | deferred (triggered): старт BL-133 или `P-08` в срезе |
 
 Почему Р-17, а не молчаливый перенос:
 
@@ -502,6 +599,9 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 | R-6 | Допущение | «Действиям по P-14» в issue #434 читается как цепочка следующих шагов PR #431: шаг 3 (РТ-1…РТ-4) идёт параллельно Р-14 → BL-151/152 | Р-14 принято, BL-151/152 — `review` (issue #432, PR #435); образец текста промпта входит в BL-156 «по тесту» |
 | R-7 | Риск | Снимок Хаба содержит повтор id: функция `callback-scheduling`, Feature `audit-logging` и `incident-management` (`experiments/issue_434/hub-snapshot-vs-spoke-catalog.log`) | Каталог спицы использует путь-id (`callback/function/callback-scheduling`), повторов нет — проверено (353 уникальных id) |
 | R-8 | Допущение | Задачи РТ-2 и РТ-4 в этом RFC не детализированы: issue просит РТ-1 и РТ-3 | РТ-4 — предусловие РТ-3; её строка в реестре остаётся |
+| R-9 | Допущение | Индустриальный слой (TM Forum, UNSPSC, ОКПД 2, ГОСТ/НПА, внешние продукты) не входит в РТ-1, РТ-3 и ХАБ-1 | РТ-1 переносит id без изменений, поэтому слой присоединяется позже по id Capability; решение — BL-164 (подраздел 3.1) |
+| R-10 | Риск | Связь с индустриальным слоем держится на поле `row`: его нет у `report-builder`, а номера строк могут смениться при новой версии классификации | BL-164 проверяет `row` всех Capability на новой версии классификации до сопоставления |
+| R-11 | Риск | `docs/hub-research-dependencies.md` ведёт на старые пути Хаба (`038868dd`) и на несуществующий потребитель `prompts/tz-stats-generator.md` | Ссылки по SHA открываются, содержание не отличается по существу (подраздел 3.1); обновление — шаг 10 раздела 11 |
 
 ## 10. Обоснованные обходы
 
@@ -512,10 +612,12 @@ Definition of Done: таблица покрытия в PR (класс × пол�
      выходит с заглушкой З-1.
    - Почему допустимо: по Ф-15 копия из спицы уже есть в манифесте.
      Норма не правится.
-2. **Инициированы новые ID: ХАБ-1, Р-17, BL-163.** Issue даёт право
+2. **Инициированы новые ID: ХАБ-1, Р-17, BL-163, BL-164.** Issue даёт право
    «инициировать допонительные связанные задачи». Без ХАБ-1 каталог не
    станет нормой. Без Р-17 решение о статусе `review` принял бы
-   исполнитель. Без BL-163 заглушка З-1 не снимется в промптах.
+   исполнитель. Без BL-163 заглушка З-1 не снимется в промптах. BL-164
+   заведена по комментарию владельца к PR #437, чтобы не потерять
+   индустриальную таксономию.
 3. **Прототип вместо файла в runtime.** Файл
    `experiments/issue_434/prototype/mango-products.yaml` — образец формы
    для исполнителя РТ-1. В runtime он не кладётся: это решение владельца
@@ -544,6 +646,20 @@ Definition of Done: таблица покрытия в PR (класс × пол�
    Почему: тогда BL-156 выйдет без заглушек З-1 и З-3.
 8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога.
    Почему: это доказательная база для снятия «по тесту» (BL-158).
+9. **BL-164 держать `deferred (triggered)` до старта BL-133 или
+   включения `P-08` в срез runtime; при старте — до оценки первого
+   тендерного ТЗ.** Почему: потребитель индустриального слоя — оценка
+   тендерного ТЗ (FR-06, BPR-10 потока требований Хаба). Сейчас его нет
+   (Ф-20). Раньше времени слой раздует каталог и РТ-1. Позже — оценка
+   ТЗ останется без сравнения с внешними продуктами.
+10. **Обновить `docs/hub-research-dependencies.md`:** якоря
+    `#classification`, `#classification-tz`, `#taxonomy-concept`,
+    `#capability-decomposition` перевести на пути `2026-05-…` по
+    закреплённому SHA Хаба, убрать несуществующий потребитель
+    `prompts/tz-stats-generator.md`. Почему: ссылки работают, но ведут на
+    старые пути. Исполнитель BL-164 и BL-133 должен попадать в текущий
+    файл Хаба. Шаг не срочный, его можно сделать в любой задаче
+    обслуживания или первым шагом BL-164.
 
 РТ-2 (образцы разделов) остаётся строкой реестра. Её детализация — по
 этому же шаблону, когда владелец решит, что `A-FR`, `A-UC`, `A-US`
@@ -557,3 +673,7 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 - [Прототип каталога runtime](../../experiments/issue_434/prototype/mango-products.yaml) и [генератор](../../experiments/issue_434/compile_catalog_prototype.py)
 - [Симуляция проверок М-2](../../experiments/issue_434/runtime_smoke_sim.sh) — [лог](../../experiments/issue_434/runtime-smoke-sim.log)
 - [Валидатор постановки](../../scripts/validate_issue_434_runtime_tasks.py)
+- [Классификация Хаба v3.0](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-classification.md) — исток таксономии Mango и индустриальный слой (подраздел 3.1)
+- [Декомпозиция функций Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-27-capability-decomposition.md), [концепция таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-26-taxonomy-concept.md), [поток требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-requirements-flow.md) — черновики и требования для BL-164
+- [Инвентаризация индустриального слоя](../../experiments/issue_434/industry_taxonomy_inventory.py) — [лог](../../experiments/issue_434/industry-taxonomy-inventory.log)
+- [BL-164](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) — задача по индустриальной таксономии
