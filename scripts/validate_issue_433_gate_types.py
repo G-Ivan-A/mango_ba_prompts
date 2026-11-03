@@ -274,6 +274,21 @@ class JournalAndClassesTest(unittest.TestCase):
         for field in self.FIELDS:
             self.assertIn(f"`{field}`", rule, f"правило Г3: {field}")
 
+    def test_k34_gate_sentence_once(self):
+        # Регрессия: повторный прогон experiments/issue_433/apply_class_gate_types.py
+        # дописывал фразу журнала гейта в стандарт К-34 второй раз.
+        sentence = "Для решения гейта записать gate_id и gate_type"
+        self.assertEqual(text(CLASSES / "34-human-record.md").count(sentence), 1)
+        catalog = json.loads(text(CATALOG))
+        classes = catalog["classes"] if isinstance(catalog, dict) else catalog
+        k34 = next(c for c in classes if c.get("id") == "К-34")
+        self.assertEqual(k34["behavior"].count(sentence), 1)
+        # Базовый стандарт и профили (#432) цитируют новые строки классов.
+        self.assertIn("не проходит гейты с решением человека (тип `человек` или `гибрид`",
+                      text(ROOT / "standards/bcreq-prompt-base-standard.md"))
+        self.assertIn("| К-20 | Подготовка доказательств гейта |",
+                      text(ROOT / "standards/bcreq-prompt-profiles.md"))
+
     def test_k20_name(self):
         catalog = json.loads(text(CATALOG))
         classes = catalog["classes"] if isinstance(catalog, dict) else catalog

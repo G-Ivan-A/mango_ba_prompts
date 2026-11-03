@@ -44,7 +44,10 @@ K34_BEH_TAIL = (
 
 
 def sub_once(text, old, new, where):
-    if new in text and old not in text:
+    # Новое значение уже записано — не заменять повторно: старое значение
+    # бывает префиксом нового (хвост behavior К-34), и второй прогон
+    # дописывал фразу ещё раз.
+    if new in text:
         return text
     count = text.count(old)
     assert count >= 1, (where, old[:60])

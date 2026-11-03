@@ -6,13 +6,16 @@ https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813).
 «Да» — рекомендация Р-13 из реестра решений бэклога: принять RFC и решения
 DEC-427-01…13, RFC → ``accepted``. Решения DEC-427-07 и 08 вынесены в Р-14,
 DEC-427-04 и 12 — в Р-15; без ответа по ним они остаются ``proposed``.
+Р-14 принято позже — в issue #432 (поправка 0.5 RFC): DEC-427-07 и 08
+``accepted`` со ссылкой на issue #432.
 Проверка фиксирует:
 
 * RFC: ``status: accepted``, версия 0.3, раздел «Статус принятия (Р-13)»
   со ссылкой на комментарий владельца и статусом каждого из 13 решений;
 * реестр RFC: строки RFC-427-DEC с теми же статусами, у принятых — ссылка
   на комментарий; запись в истории изменений;
-* бэклог: Р-13 — «принято» со ссылкой; Р-14 и Р-15 — «ждёт»; карточки
+* бэклог: Р-13 — «принято» со ссылкой; Р-14 — «принято» (issue #432);
+  Р-15 — «ждёт»; карточки
   задач, которые открывает Р-13, отмечают решение;
 * CHANGELOG описывает принятие в ``Unreleased``.
 """
@@ -30,9 +33,12 @@ TRACK_B = ROOT / "pr-ops/backlog-ba-model.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 
 COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813"
-PENDING = {"04": "Р-15", "07": "Р-14", "08": "Р-14", "12": "Р-15"}
+PENDING = {"04": "Р-15", "12": "Р-15"}
+# Приняты позже отдельным решением владельца: Р-14 — issue #432.
+R14_ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/432"
+LATER = {"07": "Р-14", "08": "Р-14"}
 DECISIONS = [f"{n:02d}" for n in range(1, 14)]
-ACCEPTED = [n for n in DECISIONS if n not in PENDING]
+ACCEPTED = [n for n in DECISIONS if n not in PENDING and n not in LATER]
 OPENED_TASKS = ("BL-125", "BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155")
 HEADING = "## Статус принятия (Р-13)"
 
@@ -70,8 +76,9 @@ class RfcAccepted(unittest.TestCase):
     def test_frontmatter(self):
         self.assertEqual(self.fm.get("status"), "accepted")
         # Редакция 0.3 — принятие Р-13; поправки после приёмки (0.4 — #430,
-        # тип гейта; 0.4.1 — #433, типизация гейтов BL-159) статус не меняют.
-        self.assertIn(self.fm.get("version"), ("0.3", "0.4", "0.4.1"))
+        # тип гейта; 0.5 — #432, Р-14) статус RFC не меняют; 0.5.1 — #433,
+        # типизация гейтов BL-159.
+        self.assertIn(self.fm.get("version"), ("0.3", "0.4", "0.5", "0.5.1"))
 
     def test_acceptance_section(self):
         block = section(self.body, HEADING)
@@ -84,6 +91,8 @@ class RfcAccepted(unittest.TestCase):
                 self.assertEqual(rows[n], "proposed" if n in PENDING else "accepted")
         for n, decision in PENDING.items():
             self.assertRegex(block, rf"(?m)^\| DEC-427-{n}\. .*\| ждёт {decision} \|$")
+        for n, decision in LATER.items():
+            self.assertRegex(block, rf"(?m)^\| DEC-427-{n}\. .*\| {decision} \(\[#432\]\({re.escape(R14_ISSUE)}\)\) \|$")
 
     def test_summary_points_to_acceptance(self):
         bluf = section(self.body, "## Summary / BLUF")
@@ -103,6 +112,8 @@ class RegisterAccepted(unittest.TestCase):
                 status = cells[-2]
                 if n in PENDING:
                     self.assertEqual(status, "`proposed`")
+                elif n in LATER:
+                    self.assertEqual(status, f"`accepted` ([{LATER[n]}]({R14_ISSUE}))")
                 else:
                     self.assertEqual(status, f"`accepted` ([Р-13]({COMMENT}))")
 
@@ -128,10 +139,9 @@ class BacklogAccepted(unittest.TestCase):
     def test_r13_accepted(self):
         self.assertEqual(self.decision_status("Р-13"), f"принято ([PR #428]({COMMENT}))")
 
-    def test_r14_r15_pending(self):
-        for decision in ("Р-14", "Р-15"):
-            with self.subTest(decision=decision):
-                self.assertEqual(self.decision_status(decision), "ждёт")
+    def test_r14_accepted_r15_pending(self):
+        self.assertEqual(self.decision_status("Р-14"), f"принято ([issue #432]({R14_ISSUE}))")
+        self.assertEqual(self.decision_status("Р-15"), "ждёт")
 
     def test_cards_mark_decision(self):
         for task in OPENED_TASKS:

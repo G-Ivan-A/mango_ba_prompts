@@ -1,11 +1,11 @@
 ---
 status: accepted
-version: 0.4.1
+version: 0.5.1
 updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403, https://github.com/G-Ivan-A/mango_ba_prompts/issues/418, https://github.com/G-Ivan-A/mango_ba_prompts/issues/425, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/403, https://github.com/G-Ivan-A/mango_ba_prompts/issues/418, https://github.com/G-Ivan-A/mango_ba_prompts/issues/425, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/issues/432"
 rfc-scope: multi
 type: rfc
 related_artifacts: "docs/analysis/2026-11-02-bcreq-prompts-classes-standards-check.md, standards/bcreq-flow-glossary.md, docs/ba-processes/bcreq-manual-process.md, docs/contracts/bcreq-stage-gates.md, docs/contracts/bcreq-manual-state.md, standards/bcreq-manual-classes/catalog.json, docs/rfc/2026-10-bcreq-manual-pipeline.md, docs/rfc/2026-10-bcreq-run-lessons-pipeline.md, docs/adr/2026-10-adr-015-bcreq-manual-classes.md, pr-ops/BACKLOG.md"
@@ -82,7 +82,9 @@ mango-ba-ai-runtime только по перечню исключений это
 
 Решения DEC-427-04, 07, 08 и 12 реестр решений бэклога выносит в
 отдельные решения Р-14 и Р-15 с собственным выбором. Пока их нет, эти четыре решения
-остаются `proposed`; ответ «Р-13 да» их не закрывает.
+остаются `proposed`; ответ «Р-13 да» их не закрывает. Р-14 принято в
+issue [#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)
+([поправка 0.5](#поправка-05-решение-р-14-и-гейты-по-этапам-issue-432)).
 
 | Решение | Статус | Основание |
 | --- | --- | --- |
@@ -92,8 +94,8 @@ mango-ba-ai-runtime только по перечню исключений это
 | DEC-427-04. Основная линия этапа 1 — шаги v0.1 | `proposed` | ждёт Р-15 |
 | DEC-427-05. Набор стандартов: базовый + восемь профилей | `accepted` | Р-13 |
 | DEC-427-06. Слово «промпт» и словарь | `accepted` | Р-13 |
-| DEC-427-07. Режим «по тесту» | `proposed` | ждёт Р-14 |
-| DEC-427-08. Техдолг обратного согласования | `proposed` | ждёт Р-14 |
+| DEC-427-07. Режим «по тесту» | `accepted` | Р-14 ([#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)) |
+| DEC-427-08. Техдолг обратного согласования | `accepted` | Р-14 ([#432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)) |
 | DEC-427-09. Исключения: ссылки на runtime | `accepted` | Р-13 |
 | DEC-427-10. Заглушки и задачи на недостающие справочники | `accepted` | Р-13 |
 | DEC-427-11. Промпты по процессам | `accepted` | Р-13 |
@@ -151,6 +153,41 @@ BL-151, а BL-151 ждёт Р-14, поэтому BL-154 и BL-155 ждут не 
 требования и заглушки — в отдельном реестре
 [`standards/bcreq-runtime-references.md`](../../standards/bcreq-runtime-references.md),
 который базовый стандарт BL-151 подключит ссылкой.
+
+### Поправка 0.5: решение Р-14 и гейты по этапам (issue #432)
+
+**Решение Р-14.** В
+[issue #432](https://github.com/G-Ivan-A/mango_ba_prompts/issues/432)
+владелец принял PR #431 и поручил «последовательно итерационно выполнить
+рекомендованные действия (решение Р-14, см. цитата)»; цитата — «Владелец:
+решение Р-14 → BL-151 (базовый стандарт), затем BL-152 (профили)».
+Исполнитель issue #432 читает поручение как выбор рекомендации Р-14 из
+[реестра решений](../../pr-ops/BACKLOG.md#2-решения-владельца): «Принять:
+стандарты и промпты вводятся пробной редакцией; один ADR по итогам
+прогонов; долг S-009». DEC-427-07 и DEC-427-08 → `accepted`. Решение
+обратимо: если владелец имел в виду иное, при review PR #435 статусы
+возвращаются в `proposed`, а базовый стандарт и профили остаются
+черновиками без применения в промптах (BL-156 их не берёт).
+
+Что открывает решение: BL-151 и BL-152 исполнены в PR #435 (статус
+`review`); BL-156 ждёт ещё BL-155 (вставка заглушек) и Р-15; BL-158 ждёт
+триггера — прогонов на новых задачах.
+
+**Уточнение раздела 3.4 словаря.** Цель «все гейты, кроме ключевых, —
+машинные» относится к этапам 3–4 дорожной карты; на этапе 1 она
+недостижима. Тип гейта и его исполнитель на каждом этапе, а также этапы,
+на которых валидатор (`.py`) может быть гейтом `код`, —
+[словарь потока, разделы 3.7 и 3.8](../../standards/bcreq-flow-glossary.md#37-типы-гейтов-по-этапам-дорожной-карты).
+Принятые решения, граф потока и критерии гейтов не меняются: базовый
+стандарт BL-151 запрещает промпту этапа 1 опираться на гейт `код`.
+
+**Расхождение в разделе 9.2 (найдено в BL-152).** У Ш-В в столбце
+«Профили» указано «VERIFY, TRANSFORM», но операции C10 и C29 этого шага
+по гипотезе #425 относятся к ANALYZE. При сборке промпта Ш-В (BL-156)
+действует таблица «Шаги и профили»
+[стандарта профилей](../../standards/bcreq-prompt-profiles.md#3-операции-и-профили),
+раздел 3. Таблица 9.2 не правится: она — гипотеза RFC, расхождение
+записано здесь, а не исправлено молча (правило раздела 9.3).
 
 ## 1. Постановка задачи
 
