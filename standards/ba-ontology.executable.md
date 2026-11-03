@@ -47,7 +47,7 @@ Load this file first for ontology decisions. Do not load
 | Подпроцесс | `<process>.<step>`, источник: строки process map |
 | Артефакт | `kebab-case`, источник: registry A01-A30 |
 | Исполнитель | `человек`, `llm`, `гибрид` |
-| Gate | контрольная точка подпроцесса |
+| Gate | контрольная точка подпроцесса; тип гейта (`человек`, `гибрид`, `llm`, `код`) и ключевые гейты — `standards/bcreq-flow-glossary.md`, раздел 3; правка определения — Р-16 (ADR-003, поправка 0.2, проект) |
 | Направление разработки | `client-order`, `internal-product`, `tender-rfp`, `technical-debt`, `integration-project`, `release-readiness` |
 | Стандарт | standards/* |
 | Состояние ЖЦ | `raw`, `draft`, `in-review`, `needs-clarification`, `validated`, `approved`, `baselined/released`, `superseded/archived` |
@@ -86,7 +86,8 @@ Load this file first for ontology decisions. Do not load
 | `release_readiness` | `человек` | acceptance/rollback/comms подтверждены |
 
 Операция со значением `человек` или `гибрид` не переводит артефакт в
-`validated`, `approved` или `released` без human gate.
+`validated`, `approved` или `released` без human gate (тип гейта `человек`
+или `гибрид`: решает человек).
 
 ### Artifact registry keys
 
