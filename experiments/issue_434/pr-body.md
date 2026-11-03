@@ -70,7 +70,8 @@
 | `docs/rfc/rfc-register.md` v0.14, `pr-ops/artifact-map.md` v0.13 | Регистрация RFC-RT-001 |
 | `pr-ops/BACKLOG.md` v1.5, `backlog-ba-model.md` v1.4 | Решение **Р-17**, задача **BL-163** (`deferred (triggered)`), код `ХАБ-N`; у BL-156 — связь с механизмом |
 | `experiments/issue_434/` | Прототип каталога `prototype/mango-products.yaml` (sha256 и коммит каталога спицы в заголовке) и его компилятор; логи сверок; симуляция smoke; мутационная проверка; логи валидаторов |
-| `scripts/validate_issue_434_runtime_tasks.py` | Новый валидатор (25 тестов, 1 — только с клоном runtime) |
+| `scripts/validate_issue_434_runtime_tasks.py` | Новый валидатор: 25 тестов; ещё 3 — только с клоном runtime (`RUNTIME_CLONE`) |
+| `scripts/validate_issue_433_gate_types.py` | Проверка диапазона решений: `Р-01…Р-16` или длиннее (здесь `Р-01…Р-17`) |
 | `CHANGELOG.md` | `### Added — Issue #434: …` |
 
 ## Обоснованные обходы
@@ -80,10 +81,10 @@
 1. **Задачи в runtime и Хабе не созданы — только тела для копирования.** Строка реестра говорит: «создаёт владелец… (A-08 RFC #427)». Если исполнитель спицы создаст issue сам, он обойдёт полномочия владельца. Создание — шаг 3 ниже.
 2. **РТ-1 разделена на данные (runtime) и норму (ХАБ-1).** Без разделения промпты ждут цикла компиляции Хаба. Это допустимо: копия из спицы уже есть в манифесте runtime (база знаний, Ф-15), а норма не правится.
 3. **Новые ID: ХАБ-1, Р-17, BL-163.** Issue даёт право «инициировать допонительные связанные задачи». Каталог в статусе `review`, а у `contact-center` 33 из 66 функций — `added-for-review`. Поэтому решение о составе каталога принимает владелец (Р-17), а не исполнитель.
-4. **BL-163, а не BL-160.** BL-160 занял PR #435 (валидаторы процесса), слитый в `main` во время работы. Задача этого PR перенумерована при слиянии `main`.
+4. **Р-17 и BL-163, а не Р-16 и BL-160.** Пока шла работа, в `main` слились PR #435 (BL-160 — валидаторы процесса) и PR #436 (Р-16 — значение `код` в ADR-003, BL-161, BL-162). Решение и задача этого PR перенумерованы при слиянии `main`; строки обеих сторон сохранены (`experiments/issue_434/resolve_merge_436.py`). После слияния #436 в RFC-RT-001 у «решения человека» назван тип гейта `человек` (правило #433), а валидатор #433 принимает диапазон решений `Р-01…Р-17`.
 5. **Прототип каталога — в `experiments/`, не в runtime.** Это образец формы для исполнителя РТ-1. Валидатор сверяет его с каталогом спицы по sha256 и коммиту.
 6. **Удалён служебный `.gitkeep` в корне.** Он ломал `validate_issue_377_merge_hygiene` в `make validate-full`.
-7. **CI на fork-PR не запускается** («no checks», как у #431 и #435). Все команды `validate.yml`, `github-pages.yml` и `kb.yml` прогнаны локально: 25/25 без провалов (`experiments/issue_434/ci-local.log`).
+7. **CI на fork-PR не запускается** («no checks», как у #431 и #435). Все команды `validate.yml`, `github-pages.yml` и `kb.yml` прогнаны локально: 25/25 без провалов (`experiments/issue_434/run_ci_local.sh`, лог `experiments/issue_434/ci-local.log`).
 
 Промпты `prompts/`, ADR, онтология, Хаб-копии, прогоны и статусы решений DEC-427 не менялись. В runtime и Хабе ничего не создавалось и не правилось.
 
@@ -94,12 +95,13 @@
 
 ## Проверка
 
-- `python3 scripts/validate_issue_434_runtime_tasks.py` — 25 тестов OK (1 skip без клона).
-- `RUNTIME_CLONE=/tmp/runtime python3 scripts/validate_issue_434_runtime_tasks.py` — OK: факты раздела 1 подтверждены на клоне runtime закреплённого SHA (каталога `taxonomy/mango-products.yaml` нет, `golden/cases.yaml` — `structural_only` без `atomic_function`, шесть функций названы в `golden/*.md`).
+- `python3 scripts/validate_issue_434_runtime_tasks.py` — 25 тестов OK (класс клона пропущен без `RUNTIME_CLONE`).
+- `RUNTIME_CLONE=/tmp/runtime python3 scripts/validate_issue_434_runtime_tasks.py` — 28 тестов OK: факты раздела 1 подтверждены на клоне runtime закреплённого SHA (каталога `taxonomy/mango-products.yaml` нет, `golden/cases.yaml` — `structural_only` без `atomic_function`, шесть функций названы в `golden/*.md`).
 - `sh experiments/issue_434/mutation_check.sh` — 9/9 мутаций обнаружены. Например: выпал явный пункт о фиксации таксономии, ссылка на runtime по `main`, относительная ссылка в теле РТ-1, выпала ссылка на #427, в каталоге выдуманная функция.
 - `RUNTIME_CLONE=/tmp/runtime sh experiments/issue_434/runtime_smoke_sim.sh` — 4 сценария, как в таблице выше.
-- `python3 experiments/issue_418/check_external_quotes.py` — проверено 47, не найдено 0.
-- `make validate-full` — 86 валидаторов, 0 провалов (после слияния `main` с PR #435).
+- `python3 experiments/issue_418/check_external_quotes.py` — проверено 49, не найдено 0.
+- `python3 scripts/validate_issue_433_gate_types.py` — OK: в RFC-RT-001 нет гейта без типа.
+- `make validate-full` — 87 валидаторов, 0 провалов (после слияния `main` с PR #435 и #436).
 
 ## Рекомендуемые следующие шаги (после согласования PR)
 
@@ -121,7 +123,7 @@
 - Issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/434
 - Связанные: https://github.com/G-Ivan-A/mango_ba_prompts/pull/431 (шаг 3 следующих шагов), https://github.com/G-Ivan-A/mango_ba_prompts/issues/427 (golden set по классам), https://github.com/G-Ivan-A/mango_ba_prompts/pull/435 (Р-14, BL-151/152)
 - Репозитории: https://github.com/G-Ivan-A/mango_ba_prompts (спица), https://github.com/G-Ivan-A/mango-ba-ai-runtime (срез `5d8c201511fd730a596c9f9b4588470a7b01edc9`), https://github.com/G-Ivan-A/hybrid-Intelligence-lab (Хаб, снимок `c06075d0`)
-- Принятые решения: Р-13, Р-14; ждут — Р-15, Р-17 (новое)
+- Принятые решения: Р-13, Р-14; ждут — Р-15, Р-16 (PR #436), Р-17 (новое)
 - Что нельзя считать известным: состав таксономии runtime (каталог спицы в статусе `review`)
 
 ### Решаемая проблема
