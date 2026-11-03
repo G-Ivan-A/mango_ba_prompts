@@ -69,7 +69,7 @@ INDUSTRY_KEYS = re.compile(r"tm_?forum|unspsc|okpd|окпд|industry", re.I)
 
 REPO = "https://github.com/G-Ivan-A/mango_ba_prompts"
 CATALOG_VERSION = "2026-10-28.1"
-CATALOG_COMMIT = "7f920e2e967ad1331e027fef885ea68ecef7070f"
+CATALOG_COMMIT = "e3597fd74da9c4f631ca46697c643462e2cf0b85"
 RUNTIME_CLASSES = ("contact-center", "voice-ucaas", "analytics-reporting")
 LEVELS = ("Domain", "Capability", "Feature", "Atomic Function")
 
@@ -354,7 +354,7 @@ class Mechanism(unittest.TestCase):
             sample,
         )
         self.assertIn("[ТРЕБУЕТСЯ УТОЧНЕНИЕ]", sample)
-        self.assertIn("added-for-review", sample)
+        self.assertIn("lifecycle: accepted", sample)
 
     def test_smoke_simulation_log(self):
         # М-2 проверено симуляцией: без каталога и с выдуманной функцией — красный.
@@ -390,7 +390,7 @@ class CatalogNumbers(unittest.TestCase):
                 row = (
                     f"| `{cls}` | `{self.stats['compat'][cls]}` | {counts['Capability']} | "
                     f"{counts['Feature']} | {counts['Atomic Function']} | "
-                    f"{life['retained']} / {life['added-for-review']} |"
+                    f"{life['retained']} / {life['accepted']} |"
                 )
                 self.assertIn(row, self.body)
         outside = self.stats["outside"]
@@ -627,6 +627,30 @@ class RuntimeClone(unittest.TestCase):
         for name in GOLDEN_MD_FUNCTIONS:
             with self.subTest(function=name):
                 self.assertIn(name, corpus)
+
+
+class OwnerAcceptance(unittest.TestCase):
+    """Р-17 принято владельцем: 74 узла с портала review -> accepted."""
+
+    APPROVAL = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609"
+
+    def test_portal_nodes_accepted(self):
+        data = json.loads(text(CATALOG))
+        self.assertEqual(data["status"], "accepted")
+        portal = [n for n in data["nodes"] if n["origin"] == "portal-update"]
+        self.assertEqual(len(portal), 74)
+        self.assertEqual({n["lifecycle"] for n in portal}, {"accepted"})
+        self.assertNotIn("added-for-review", {n["lifecycle"] for n in data["nodes"]})
+        acc = data["acceptance"]
+        self.assertEqual((acc["decision"], acc["accepted_nodes"]), ("Р-17", 74))
+        self.assertEqual(acc["approval_url"], self.APPROVAL)
+
+    def test_decision_recorded(self):
+        for path in (RFC, ROOT / "pr-ops/BACKLOG.md", ROOT / "CHANGELOG.md"):
+            with self.subTest(path=path.name):
+                self.assertIn(self.APPROVAL, text(path))
+        row = re.search(r"^\| \*\*Р-17\*\* \|.*$", text(ROOT / "pr-ops/BACKLOG.md"), re.M).group(0)
+        self.assertTrue(row.endswith("| принято |"), row)
 
 
 if __name__ == "__main__":
