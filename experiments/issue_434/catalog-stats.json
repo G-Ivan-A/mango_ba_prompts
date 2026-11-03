@@ -1,0 +1,76 @@
+{
+  "source": "docs/taxonomy/products.json",
+  "source_commit": "7f920e2e967ad1331e027fef885ea68ecef7070f",
+  "source_sha256": "c5ff76c30ad5ac58a3dfb7eac1bc27ecf6f10e828f0f996c84b70e5940c3d29c",
+  "catalog_version": "2026-10-28.1",
+  "status": "review",
+  "nodes_total": 353,
+  "per_level": {
+    "Domain": 7,
+    "Capability": 43,
+    "Feature": 151,
+    "Atomic Function": 152
+  },
+  "per_class": {
+    "contact-center": {
+      "Domain": 1,
+      "Capability": 17,
+      "Feature": 59,
+      "Atomic Function": 66
+    },
+    "voice-ucaas": {
+      "Domain": 1,
+      "Capability": 16,
+      "Feature": 54,
+      "Atomic Function": 51
+    },
+    "analytics-reporting": {
+      "Domain": 1,
+      "Capability": 12,
+      "Feature": 35,
+      "Atomic Function": 28
+    }
+  },
+  "af_lifecycle_per_class": {
+    "contact-center": {
+      "retained": 33,
+      "added-for-review": 33
+    },
+    "voice-ucaas": {
+      "retained": 39,
+      "added-for-review": 12
+    },
+    "analytics-reporting": {
+      "retained": 20,
+      "added-for-review": 8
+    }
+  },
+  "outside_runtime_classes": {
+    "Domain": 4,
+    "Capability": 10,
+    "Feature": 39,
+    "Atomic Function": 39
+  },
+  "af_lifecycle": {
+    "retained": 98,
+    "added-for-review": 54
+  },
+  "af_binding_basis": {
+    "editorial-association-of-inherited-lists": 98,
+    "curated-page-or-heading": 54
+  },
+  "af_parent_count": {
+    "1": 119,
+    "2": 30,
+    "3": 3
+  },
+  "af_multi_class": 16,
+  "af_cyrillic_name": 54,
+  "feature_cyrillic_name": 0,
+  "capability_cyrillic_name": 42,
+  "availability": {
+    "not-established-by-taxonomy": 353
+  },
+  "prototype_yaml_bytes": 90085,
+  "prototype_yaml_lines": 371
+}
