@@ -1,0 +1,47 @@
+OK   BL-103 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-05: “Перед тем как оценку на golden set ставит модель, сверить её оценки с оценками человека”
+OK   BL-106 G-Ivan-A/mango_ba_prompts issues #418: “Каечство приоритет, экономия токенов запрещена”
+OK   BL-110 G-Ivan-A/mango_ba_prompts pull #422: “нельзхя менять уже используемые практики после стольких многих ПРОГОНОВ”
+OK   BL-113 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#этап-2-агентный-клиент-и-оценка-тз: “BCREQ: тот же golden set не хуже этапа 1”
+OK   BL-114 G-Ivan-A/mango_ba_prompts pull #422: “Где он раздувается - выделять чтение справочников в mango-ba-ai-runtime”
+OK   BL-115 G-Ivan-A/mango_ba_prompts pull #422: “РИСК 13 - это в бэклог, сейчас не решаем, но оптимизация напрашивается”
+OK   BL-115 G-Ivan-A/mango_ba_prompts pull #422: “Если указана в документации настройка - проверяй зависимость”
+OK   BL-121 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-14-единая-методология-ба-оптимизированная-под-ии-агентов: “преждевременная оптимизация до того, как система заработает на”
+OK   BL-122 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#статус-репозиториев-экосистемы: “Новая разработка в нём не ведётся.”
+OK   BL-123 G-Ivan-A/mango_ba_prompts pull #422: “это докуименты, которые надо конвертировать в WORD очищая от рассуждений и комментариев”
+OK   BL-124 G-Ivan-A/mango_ba_prompts pull #422: “вопросы заказчику формируются на этапе A-IN”
+OK   BL-125 G-Ivan-A/mango_ba_prompts pull #428: “Возможно потребуется пересмотрение таксономии операций?”
+OK   BL-131 G-Ivan-A/mango_ba_prompts issues #417: “Подтверждаю, на 2 этапе выбираем OpenCode”
+OK   BL-131 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-28-пакет-исполнения-opencode: “Довести пакет до пилота на рабочих местах Windows 10/11”
+OK   BL-131 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-06: “Пакет правил этапа 2 собирать в открытых форматах: навыки SKILL.md и инструкции AGENTS.md.”
+OK   BL-132 G-Ivan-A/hybrid-Intelligence-lab@32b5fa52/ops/backlog.md#спринт-28-пакет-исполнения-opencode: “снять или принять решением человека ограничения OpenCode”
+OK   BL-133 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-03: “Внести риск косвенной prompt injection через документы заказчика”
+OK   BL-133 G-Ivan-A/mango_ba_prompts pull #422: “принимаем как есть н аоценку ИСПОЛНИМОСТИ а не доработок”
+OK   BL-134 G-Ivan-A/mango_ba_prompts pull #422: “ТАк как мы расшили 14 промптов минимум на 38 (или 39)!! И их будем улучшать”
+OK   BL-141 G-Ivan-A/mango_ba_prompts issues #417: “N8n - на сервере суть тестирование машинной оркестрации”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-09: “Потоки n8n на выделенном сервере — испытательный стенд машинной оркестрации”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-02: “Контракты процессов (шаги, состояние, гейты) вести в машиночитаемом формате вне n8n”
+OK   BL-141 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-04: “На этапах 3–4 трассировать вызовы модели и шаги процесса по соглашениям OpenTelemetry GenAI”
+OK   BL-142 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-10: “Промышленное решение без n8n: процессы в коде на Python”
+OK   BL-142 G-Ivan-A/mango_ba_prompts@c6e74851/docs/analysis/2026-10-31-industry-practice-check.md#rec-417-01: “Исполнитель этапа 4 строить на зрелом движке устойчивого исполнения (например, Temporal)”
+OK   BL-143 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-12: “Архитектурные и концептуальные решения пересматриваются по результатам”
+OK   BL-150 G-Ivan-A/mango_ba_prompts issues #427: “предлагаю для исключения путаницы называть этот коплексный родительский процесс ПОТОКОМ”
+OK   BL-151 G-Ivan-A/mango_ba_prompts issues #427: “сформированы по тесту все стандарты”
+OK   BL-154 G-Ivan-A/mango_ba_prompts issues #427: “однозначно - к Базе знаний”
+OK   BL-155 G-Ivan-A/mango_ba_prompts issues #427: “если нет артефактк в рантайм - заглушка с задачей в бэклог н адоработку”
+OK   BL-156 G-Ivan-A/mango_ba_prompts issues #427: “сформированы по стандартам все промпты к каждому процесса по тесту”
+OK   BL-157 G-Ivan-A/mango_ba_prompts issues #427: “хочу получить набор промптов для реализиции следующих прогонов на новых задачах”
+OK   BL-158 G-Ivan-A/mango_ba_prompts issues #427: “в бэклог записан техдолг - обратное согласование стандартов через ADR”
+OK   BL-159 G-Ivan-A/mango_ba_prompts issues #430: “Гейт - аналогично гейты в BPMN (для аналогии) - может быть человеческим / машинных / гибридным”
+OK   BL-159 G-Ivan-A/mango_ba_prompts issues #430: “в бэклог - проверку что явно будет учтено в актуализированных всех документах”
+OK   BL-160 G-Ivan-A/mango_ba_prompts issues #434: “Механизм, гарантирующий, что промпты смогут читать эту таксономию, а не натыкаться на заглушку.”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Версия документов меняется с 1.0 на 2.0”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Roadmap: пять этапов автоматизации бизнес-анализа”
+OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-10: “Промышленное решение без n8n: процессы в коде на Python”
+OK   BL-202 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#этап-3-машинная-оркестрация-в-n8n: “Юридическая проверка лицензии n8n (fair-code: внутреннее использование)”
+OK   BL-202 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “новый ADR фиксирует исполнителей этапов 3 и 4 (DEC-415-09, DEC-415-10)”
+OK   BL-204 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-11: “Сайт GitHub Pages на этапах 1–3”
+OK   BL-205 G-Ivan-A/mango_ba_prompts issues #420: “не устраивает оформление и содержани ераздела Стандарты”
+OK   BL-206 G-Ivan-A/mango_ba_prompts issues #420: “В рамках жтой задачи не меняем страницы сайта”
+OK   BL-230 G-Ivan-A/mango_ba_prompts issues #427: “понимает что он может сделать на след шаге (возврат, продолжить, вступить в диалог с моделью и пр.)”
+OK   BL-231 G-Ivan-A/mango_ba_prompts issues #427: “промпты копируются и являются промптами (контрактами) этапа 1”
+итог: проверено 46, не найдено 0
