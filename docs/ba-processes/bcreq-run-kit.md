@@ -45,25 +45,33 @@ BL-157 «Готово, когда» требует ещё первого про�
 BL-231, они ждут BL-156 `DONE` и решение Р-09. До них ссылка на процесс —
 этот файл и [ручной процесс](bcreq-manual-process.md).
 
-| № | Шаг | Промпт для копирования | Ключ урока (`prompts` в `lessons.json`) | Гейт после шага |
-| --- | --- | --- | --- | --- |
-| 1 | Ш-0 Конституция | [`bcreq-constitution-governance-oneshot`](../../prompts/bcreq-constitution-governance-oneshot.md) | `constitution` | — |
-| 2 | Ш-1 Контекст и глоссарий | [`bcreq-context-understanding-stepwise`](../../prompts/bcreq-context-understanding-stepwise.md) | `context` | — |
-| 3 | Ш-2 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise`](../../prompts/bcreq-products-impact-analysis-stepwise.md) | `products` | Г-IN, `гибрид`, ключевой |
-| 4 | Ш-3 ФТ | [`bcreq-fr-documentation-stepwise`](../../prompts/bcreq-fr-documentation-stepwise.md) | `fr` | — |
-| 5 | Ш-4 НФТ | [`bcreq-nfr-documentation-stepwise`](../../prompts/bcreq-nfr-documentation-stepwise.md) | `nfr` | — |
-| 6 | Ш-5 UC, прогон 1 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | `uc` | Г-С1, `человек`, ключевой |
-| 7 | Ш-6 ОРР | [`bcreq-orr-solution-design-stepwise`](../../prompts/bcreq-orr-solution-design-stepwise.md) | `orr` | — |
-| 8 | Ш-7 Ограничения | [`bcreq-constraints-documentation-stepwise`](../../prompts/bcreq-constraints-documentation-stepwise.md) | `constraints` | — |
-| 9 | Ш-8 UC, прогон 2 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | `uc` | — |
-| 10 | Ш-9 Риски и приёмка | [`bcreq-extra-risk-analysis-stepwise`](../../prompts/bcreq-extra-risk-analysis-stepwise.md) | `risk` | — |
-| 11 | Ш-В Валидация второй ролью | [`bcreq-review-validation-oneshot`](../../prompts/bcreq-review-validation-oneshot.md) | `review` | Г-W, `человек`, ключевой |
-| 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
-| — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
+| № | Шаг | Промпт для копирования | Черновик «по тесту» (BL-156) | Ключ урока (`prompts` в `lessons.json`) | Гейт после шага |
+| --- | --- | --- | --- | --- | --- |
+| 1 | Ш-0 Конституция | [`bcreq-constitution-governance-oneshot`](../../prompts/bcreq-constitution-governance-oneshot.md) | [`drafts/bcreq-constitution-governance-oneshot`](../../prompts/drafts/bcreq-constitution-governance-oneshot.md) | `constitution` | — |
+| 2 | Ш-1 Контекст и глоссарий | [`bcreq-context-understanding-stepwise`](../../prompts/bcreq-context-understanding-stepwise.md) | [`drafts/bcreq-context-understanding-stepwise`](../../prompts/drafts/bcreq-context-understanding-stepwise.md) | `context` | — |
+| 3 | Ш-2 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise`](../../prompts/bcreq-products-impact-analysis-stepwise.md) | [`drafts/bcreq-products-impact-analysis-stepwise`](../../prompts/drafts/bcreq-products-impact-analysis-stepwise.md) | `products` | Г-IN, `гибрид`, ключевой |
+| 4 | Ш-3 ФТ | [`bcreq-fr-documentation-stepwise`](../../prompts/bcreq-fr-documentation-stepwise.md) | [`drafts/bcreq-fr-documentation-stepwise`](../../prompts/drafts/bcreq-fr-documentation-stepwise.md) | `fr` | — |
+| 5 | Ш-4 НФТ | [`bcreq-nfr-documentation-stepwise`](../../prompts/bcreq-nfr-documentation-stepwise.md) | [`drafts/bcreq-nfr-documentation-stepwise`](../../prompts/drafts/bcreq-nfr-documentation-stepwise.md) | `nfr` | — |
+| 6 | Ш-5 UC, прогон 1 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | Г-С1, `человек`, ключевой |
+| 7 | Ш-6 ОРР | [`bcreq-orr-solution-design-stepwise`](../../prompts/bcreq-orr-solution-design-stepwise.md) | [`drafts/bcreq-orr-solution-design-stepwise`](../../prompts/drafts/bcreq-orr-solution-design-stepwise.md) | `orr` | — |
+| 8 | Ш-7 Ограничения | [`bcreq-constraints-documentation-stepwise`](../../prompts/bcreq-constraints-documentation-stepwise.md) | [`drafts/bcreq-constraints-documentation-stepwise`](../../prompts/drafts/bcreq-constraints-documentation-stepwise.md) | `constraints` | — |
+| 9 | Ш-8 UC, прогон 2 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | — |
+| 10 | Ш-9 Риски и приёмка | [`bcreq-extra-risk-analysis-stepwise`](../../prompts/bcreq-extra-risk-analysis-stepwise.md) | [`drafts/bcreq-extra-risk-analysis-stepwise`](../../prompts/drafts/bcreq-extra-risk-analysis-stepwise.md) | `risk` | — |
+| 11 | Ш-В Валидация второй ролью | [`bcreq-review-validation-oneshot`](../../prompts/bcreq-review-validation-oneshot.md) | [`drafts/bcreq-review-validation-oneshot`](../../prompts/drafts/bcreq-review-validation-oneshot.md) | `review` | Г-W, `человек`, ключевой |
+| 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | [заглушка Ш-Р](../../prompts/drafts/bcreq-release-readiness-oneshot.md) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
+| — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | [`drafts/bcreq-scenarios-modeling-oneshot`](../../prompts/drafts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
 
 Колонка «Промпт для копирования» — опубликованные промпты v0.1 из
-`prompts/`. Промпты шагов «по тесту» (BL-156) БА берёт, только если
-карточка прогона это отмечает (раздел 2, поле `mode`).
+`prompts/`. Колонка «Черновик «по тесту»» — промпты шагов BL-156 из
+`prompts/drafts/`: текст v0.1 без изменений плюс блок стандартов «по
+тесту», собранный сборщиком `scripts/build_bcreq_step_prompts.py`
+([отчёт BL-156](../analysis/2026-11-03-bl-156-step-prompts-report.md)).
+Черновик БА берёт, только если карточка прогона это отмечает (раздел 2,
+поле `prompt_set.mode: by-test`); тогда в `prompt_ref` пишется путь
+`prompts/drafts/<файл>.md`. Измерен golden set только черновик Ш-В
+([RUN-0080](../../runs/2026/RUN-0080/outputs/golden-set-report.md):
+55/62, как v0.1); остальные черновики проверит первый прогон BL-111.
+Шаг Ш-Р промпта v0.1 не имеет: черновик — заглушка выпуска (пилот).
 
 ## 2. Карточка прогона
 
@@ -155,7 +163,7 @@ ba_reviewed: false       # true — БА прочитал результат и 
 
 | № | Шаг | Цитата вывода модели | Что не так | Предложение | Урок | Серьёзность |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Ш-3 | «<дословно, обезличено>» | <что нарушено и почему это плохо> | <как должно быть; правило одной фразой> | L-NN или «новый» | блокирует / мешает / косметика |
+| 1 | Ш-3 | «<дословно, обезличено>» | [`drafts/bcreq-fr-documentation-stepwise`](../../prompts/drafts/bcreq-fr-documentation-stepwise.md) | <что нарушено и почему это плохо> | <как должно быть; правило одной фразой> | L-NN или «новый» | блокирует / мешает / косметика |
 
 Как форма идёт в
 [реестр уроков](../../standards/bcreq-lessons/lessons.json):
