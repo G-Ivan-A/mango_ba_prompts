@@ -1,0 +1,302 @@
+python3 scripts/validate_all.py --full
+PASS   validate_issue_103_ui_fixes                 0.30s
+PASS   validate_issue_111_kb_pipeline              3.90s
+PASS   validate_issue_115_kb_mango_pipeline        0.64s
+PASS   validate_issue_117_kb_traceability          3.77s
+PASS   validate_issue_121_kb_multi_file            0.31s
+FAIL   validate_issue_123_runs_contract            0.71s
+       | issue-123 runs contract validation: FAIL
+       | - runs/2026/RUN-0080/metadata.yaml: missing
+       | - runs/README.md: no registry row for RUN-0080
+PASS   validate_issue_125_cascading_context        0.25s
+PASS   validate_issue_263_vision_alignment         0.12s
+FAIL   validate_issue_265_hub_sync                31.41s
+       | [A/C] проверено относительных ссылок: 7358
+       | [B] проверено рабочих копий Хаба: 11 @ 3bfa410
+       | 
+       | FAIL: 1 проблем:
+       |   - docs/rfc/2026-11-bcreq-flow-processes-prompts.md:220: битая ссылка `../analysis/2026-11-03-bl-156-step-prompts-report.md#1-порядок-исполнения`
+PASS   validate_issue_267_onboarding_v15           1.72s
+PASS   validate_issue_272_run_0019                 0.27s
+PASS   validate_issue_291_root_structure           0.53s
+PASS   validate_issue_310_kb_pdf_ingestion         0.95s
+PASS   validate_issue_323_issue_forms              0.17s
+PASS   validate_issue_335_report_site              0.28s
+PASS   validate_issue_339_run                      0.21s
+PASS   validate_issue_343_run                      0.17s
+PASS   validate_issue_345_run                      0.17s
+PASS   validate_issue_347_run                      0.30s
+PASS   validate_issue_349_critical_fix             0.12s
+PASS   validate_issue_351_run                     24.63s
+PASS   validate_issue_353_ab_rca                  37.28s
+PASS   validate_issue_355_run                      0.12s
+PASS   validate_issue_357_hub_backlog_validation   0.22s
+PASS   validate_issue_363_run                      0.15s
+PASS   validate_issue_365_run                      0.22s
+PASS   validate_issue_367_run                      0.27s
+PASS   validate_issue_369_run                      0.43s
+PASS   validate_issue_371_run                      0.30s
+PASS   validate_issue_373_run                      0.46s
+PASS   validate_issue_375_run                      1.49s
+PASS   validate_issue_377_merge_hygiene            2.96s
+PASS   validate_issue_377_run                      1.07s
+PASS   validate_issue_377_section_prompts          0.32s
+PASS   validate_issue_378_run                      0.54s
+PASS   validate_issue_382_run                      0.15s
+PASS   validate_issue_384_prompts_audit            0.77s
+PASS   validate_issue_387_bcreq_meta_standards     0.41s
+FAIL   validate_issue_388_bcreq_site               2.62s
+       | FAIL: bcreq-review-validation-oneshot: id во frontmatter должен быть mango-bcreq-review-validation-oneshot
+PASS   validate_issue_403_manual_pipeline          0.47s
+PASS   validate_issue_405_ide_research             0.47s
+PASS   validate_issue_409_audit_artifacts          2.52s
+PASS   validate_issue_411_lessons_pipeline         1.24s
+FAIL   validate_issue_413_prompt_generalization    0.40s
+       | Issue #413 prompt generalization validation failed:
+       | - prompts/bcreq-review-validation-oneshot.md: issue-ref — 5 вхождений при допуске 0. Промпт содержит паттерны, классы и принципы; кейс задачи переносится в golden set или журнал задачи (standards/prompt-standard.md, G2–G3)
+       | ----------------------------------------------------------------------
+       | Ran 4 tests in 0.004s
+       | 
+       | OK
+PASS   validate_issue_415_strategy_rfc             0.87s
+PASS   validate_issue_417_rfc_acceptance           1.21s
+PASS   validate_issue_418_backlog                  2.68s
+PASS   validate_issue_420_standards_rfc            2.69s
+FAIL   validate_issue_423_site                     0.65s
+       | FAIL: prompts.json: текст prompts/bcreq-review-validation-oneshot.md отличается от файла (перегенерируйте данные)
+PASS   validate_issue_425_prompt_classes_check     2.13s
+PASS   validate_issue_427_r13_acceptance           0.25s
+FAIL   validate_issue_427_rfc                      0.91s
+       | test_cards_cite_rfc (__main__.Issue427Backlog.test_cards_cite_rfc) ... ok
+       | test_decisions_declared (__main__.Issue427Backlog.test_decisions_declared) ... ok
+       | test_sprint_rows (__main__.Issue427Backlog.test_sprint_rows) ... ok
+       | test_taxonomy_debt_task (__main__.Issue427Backlog.test_taxonomy_debt_task) ... ok
+       | test_tech_debt (__main__.Issue427Backlog.test_tech_debt) ... ok
+       | test_changelog_and_map (__main__.Issue427Registers.test_changelog_and_map) ... ok
+       | test_rfc_register (__main__.Issue427Registers.test_rfc_register) ... ok
+       | test_chain_of_elements (__main__.Issue427Rfc.test_chain_of_elements)
+       | Ревью владельца PR #428: цепочка из четырёх элементов, а не иерархия из пяти уровней. ... ok
+       | test_decisions (__main__.Issue427Rfc.test_decisions) ... ok
+       | test_flow_term_verdict (__main__.Issue427Rfc.test_flow_term_verdict) ... ok
+       | test_frontmatter (__main__.Issue427Rfc.test_frontmatter) ... ok
+       | test_links_resolve (__main__.Issue427Rfc.test_links_resolve) ... 
+       |   test_links_resolve (__main__.Issue427Rfc.test_links_resolve) (link='../analysis/2026-11-03-bl-156-step-prompts-report.md#1-порядок-исполнения') ... FAIL
+       | test_not_done_mapped_to_sprint (__main__.Issue427Rfc.test_not_done_mapped_to_sprint) ... ok
+       | test_operation_definition (__main__.Issue427Rfc.test_operation_definition) ... ok
+       | test_processes (__main__.Issue427Rfc.test_processes) ... ok
+       | test_prompt_set_exists (__main__.Issue427Rfc.test_prompt_set_exists) ... ok
+       | test_protected_unchanged (__main__.Issue427Rfc.test_protected_unchanged) ... ok
+       | test_runtime_exceptions (__main__.Issue427Rfc.test_runtime_exceptions) ... ok
+       | test_runtime_links_pinned (__main__.Issue427Rfc.test_runtime_links_pinned) ... ok
+       | test_sections_in_order (__main__.Issue427Rfc.test_sections_in_order) ... ok
+       | test_standards_set (__main__.Issue427Rfc.test_standards_set) ... ok
+       | test_step_sequence (__main__.Issue427Rfc.test_step_sequence) ... ok
+       | 
+       | ======================================================================
+       | FAIL: test_links_resolve (__main__.Issue427Rfc.test_links_resolve) (link='../analysis/2026-11-03-bl-156-step-prompts-report.md#1-порядок-исполнения')
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/validate_issue_427_rfc.py", line 261, in test_links_resolve
+       |     self.assertTrue(path.exists(), target)
+       |     ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: False is not true : ../analysis/2026-11-03-bl-156-step-prompts-report.md#1-порядок-исполнения
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 22 tests in 0.607s
+       | 
+       | FAILED (failures=1)
+PASS   validate_issue_430_flow                     0.33s
+PASS   validate_issue_430_runtime_refs             0.35s
+PASS   validate_issue_432_standards                0.42s
+FAIL   validate_issue_433_gate_types               2.64s
+       | ..............F
+       | ======================================================================
+       | FAIL: test_every_untyped_place_is_allowed (__main__.UntypedGateTest.test_every_untyped_place_is_allowed)
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/validate_issue_433_gate_types.py", line 190, in test_every_untyped_place_is_allowed
+       |     self.assertEqual(rogue, [], "гейт без типа — назовите тип (`человек`, `гибрид`, `llm`, `код`) "
+       |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       |                                "или добавьте место в ALLOW с категорией и причиной")
+       |                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: Lists differ: ['prompts/bcreq-review-validation-oneshot.[790 chars]ю."'] != []
+       | 
+       | First list contains 4 additional elements.
+       | First extra element 0:
+       | 'prompts/bcreq-review-validation-oneshot.md:407: - **И-8 Чек-лист гейта G-human:** [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01e'
+       | 
+       | Diff is 902 characters long. Set self.maxDiff to None to see it. : гейт без типа — назовите тип (`человек`, `гибрид`, `llm`, `код`) или добавьте место в ALLOW с категорией и причиной
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 15 tests in 2.383s
+       | 
+       | FAILED (failures=1)
+PASS   validate_issue_61_governance                0.14s
+PASS   validate_issue_64_pattern_adr               0.67s
+PASS   validate_issue_72_hub_sync                  0.20s
+FAIL   validate_issue_74_github_pages              0.21s
+       | issue-74 github pages validation: FAIL
+       | - site/data/prompts.json: content mismatch for prompts/bcreq-review-validation-oneshot.md
+PASS   validate_issue_83_ba_process_map            0.32s
+PASS   validate_issue_85_patterns_library          0.15s
+PASS   validate_issue_86_mango_widget              0.26s
+PASS   validate_issue_91_pages_enhancements        0.26s
+PASS   validate_issue_95_prompt_id_in_copy         0.29s
+PASS   validate_issue_97_ontology_standards        0.18s
+PASS   validate_issue_99_pages_optimization        0.26s
+PASS   test_issue_323_issue_forms                  0.37s
+PASS   test_issue_353_redact_trace                 0.14s
+PASS   test_issue_361_kb_migration                 0.15s
+FAIL   test_issue_391_lessons                      0.25s
+       | F
+       | ======================================================================
+       | FAIL: test_only_additions_and_untouched_other_prompts (__main__.LessonTests.test_only_additions_and_untouched_other_prompts) (filename='prompts/bcreq-review-validation-oneshot.md')
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_issue_391_lessons.py", line 44, in test_only_additions_and_untouched_other_prompts
+       |     self.assertEqual(hashlib.sha256(data).hexdigest(), expected_hash)
+       |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: 'd6a2cb67a578c4b397750bbde14137f96e711a403f8bdc9def598661370abc9a' != 'a7d6812e00c29255619724689c8d813db032809b3d1d2fba21139f8f0cad7587'
+       | - d6a2cb67a578c4b397750bbde14137f96e711a403f8bdc9def598661370abc9a
+       | + a7d6812e00c29255619724689c8d813db032809b3d1d2fba21139f8f0cad7587
+       | 
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 1 test in 0.017s
+       | 
+       | FAILED (failures=1)
+FAIL   test_issue_391_site                         0.50s
+       | F....
+       | ======================================================================
+       | FAIL: test_catalog_contains_all_and_only_bcreq_sources (__main__.PublicationTests.test_catalog_contains_all_and_only_bcreq_sources)
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_issue_391_site.py", line 30, in test_catalog_contains_all_and_only_bcreq_sources
+       |     self.assertEqual(prompt['content'], (ROOT / prompt['sourcePath']).read_text())
+       |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: '---\[37 chars]eshot\ntitle: "BCREQ Ш-В: валидация документа"[11366 chars]->\n' != '---\[37 chars]eshot-by-test\ntitle: "BCREQ Ш-В: валидация до[26288 chars]->\n'
+       | Diff is 28121 characters long. Set self.maxDiff to None to see it.
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 5 tests in 0.199s
+       | 
+       | FAILED (failures=1)
+FAIL   test_issue_393_site                         1.24s
+       | ✔ default catalog shows the 39 classes and hides the archive (156.230461ms)
+       | ✔ the «Архив» family shows the 14 stage-1 prompts with their own modes (43.875158ms)
+       | ✔ stage selection restricts operation counts to actual prompts (2.488692ms)
+       | ✔ operation selection restricts stages in reverse (3.080456ms)
+       | ✔ facets honor other selections, query, mode and family; own values are OR (10.662969ms)
+       | ✔ zero-count selections can be removed and unselected choices are disabled both ways (4.120475ms)
+       | ℹ tests 6
+       | ℹ suites 0
+       | ℹ pass 6
+       | ℹ fail 0
+       | ℹ cancelled 0
+       | ℹ skipped 0
+       | ℹ todo 0
+       | ℹ duration_ms 576.364861
+       | .F.
+       | ======================================================================
+       | FAIL: test_prompt_bytes_preserved_except_new_frontmatter_tags (__main__.StageTests.test_prompt_bytes_preserved_except_new_frontmatter_tags)
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_issue_393_site.py", line 56, in test_prompt_bytes_preserved_except_new_frontmatter_tags
+       |     self.assertEqual(hashlib.sha256(original.encode()).hexdigest(), expected, filename)
+       |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: '454795357fd707d82b5fb6650decd185a1bf0ae5f60c3f55e82594942996f197' != 'aa962114b272384bf7c6d414a7527917725668ad0388fa30ca9044083729edb4'
+       | - 454795357fd707d82b5fb6650decd185a1bf0ae5f60c3f55e82594942996f197
+       | + aa962114b272384bf7c6d414a7527917725668ad0388fa30ca9044083729edb4
+       |  : bcreq-review-validation-oneshot.md
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 3 tests in 0.814s
+       | 
+       | FAILED (failures=1)
+FAIL   test_issue_395_bcreq                        0.56s
+       | F.
+       | ======================================================================
+       | FAIL: test_all_fourteen_originals_are_preserved (__main__.PromptContractTests.test_all_fourteen_originals_are_preserved) (prompt='prompts/bcreq-review-validation-oneshot.md')
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_issue_395_bcreq.py", line 44, in test_all_fourteen_originals_are_preserved
+       |     self.assertEqual(hashlib.sha256(original_bytes(data, name)).hexdigest(), digest)
+       |     ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       | AssertionError: '34e3705e773e9a076b332506d5ee0f769f9efa4f5454b36d2ef54caf8364f5f2' != '725e00d7c237ac915a7dd9ee7b4a26eb0ac6191a3970f4934fc35dc7f30a7f1b'
+       | - 34e3705e773e9a076b332506d5ee0f769f9efa4f5454b36d2ef54caf8364f5f2
+       | + 725e00d7c237ac915a7dd9ee7b4a26eb0ac6191a3970f4934fc35dc7f30a7f1b
+       | 
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 2 tests in 0.089s
+       | 
+       | FAILED (failures=1)
+PASS   test_issue_395_site                         0.97s
+PASS   test_issue_397_evidence                     1.19s
+PASS   test_issue_399_taxonomy                     2.37s
+PASS   test_issue_401_documentation                3.33s
+PASS   test_resolve_registry_conflicts             1.65s
+FAIL   test_runs_contract_run_type                 0.70s
+       | test_list_parser_stops_at_next_scalar (__main__.BoundariesTest.test_list_parser_stops_at_next_scalar) ... ok
+       | test_other_run_directory_rejected (__main__.BoundariesTest.test_other_run_directory_rejected) ... ok
+       | test_paths_inside_run_are_accepted (__main__.BoundariesTest.test_paths_inside_run_are_accepted) ... ok
+       | test_protected_directories_rejected (__main__.BoundariesTest.test_protected_directories_rejected) ... ok
+       | test_every_run_declares_a_known_type (__main__.ClassificationTest.test_every_run_declares_a_known_type) ... ERROR
+       | test_registry_and_metadata_agree (__main__.ClassificationTest.test_registry_and_metadata_agree) ... ERROR
+       | test_discovered_runs_match_directory_listing (__main__.DiscoveryTest.test_discovered_runs_match_directory_listing) ... ok
+       | test_run_ids_are_unique_across_years (__main__.DiscoveryTest.test_run_ids_are_unique_across_years) ... ok
+       | test_allowed_values (__main__.RunTypeTest.test_allowed_values) ... ok
+       | test_missing_run_type_defaults_to_execution (__main__.RunTypeTest.test_missing_run_type_defaults_to_execution) ... ok
+       | test_unknown_value_rejected (__main__.RunTypeTest.test_unknown_value_rejected) ... ok
+       | 
+       | ======================================================================
+       | ERROR: test_every_run_declares_a_known_type (__main__.ClassificationTest.test_every_run_declares_a_known_type)
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_runs_contract_run_type.py", line 123, in test_every_run_declares_a_known_type
+       |     metadata = parse_simple_yaml(ROOT / "runs" / year / run_id / "metadata.yaml")
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/validate_issue_123_runs_contract.py", line 138, in parse_simple_yaml
+       |     for line in path.read_text(encoding="utf-8").splitlines():
+       |                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+       |   File "/home/box/.pyenv/versions/3.15.0/lib/python3.15/pathlib/__init__.py", line 986, in read_text
+       |     with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+       |          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       |   File "/home/box/.pyenv/versions/3.15.0/lib/python3.15/pathlib/__init__.py", line 970, in open
+       |     return io.open(self, mode, buffering, encoding, errors, newline)
+       |            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/_validator_trace.py", line 113, in _traced_open
+       |     return _real_open(file, mode, *args, **kwargs)
+       | FileNotFoundError: [Errno 2] No such file or directory: '/tmp/gh-issue-solver-1793706306277/runs/2026/RUN-0080/metadata.yaml'
+       | 
+       | ======================================================================
+       | ERROR: test_registry_and_metadata_agree (__main__.ClassificationTest.test_registry_and_metadata_agree)
+       | ----------------------------------------------------------------------
+       | Traceback (most recent call last):
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/test_runs_contract_run_type.py", line 129, in test_registry_and_metadata_agree
+       |     metadata = parse_simple_yaml(ROOT / "runs" / year / run_id / "metadata.yaml")
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/validate_issue_123_runs_contract.py", line 138, in parse_simple_yaml
+       |     for line in path.read_text(encoding="utf-8").splitlines():
+       |                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+       |   File "/home/box/.pyenv/versions/3.15.0/lib/python3.15/pathlib/__init__.py", line 986, in read_text
+       |     with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+       |          ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       |   File "/home/box/.pyenv/versions/3.15.0/lib/python3.15/pathlib/__init__.py", line 970, in open
+       |     return io.open(self, mode, buffering, encoding, errors, newline)
+       |            ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+       |   File "/tmp/gh-issue-solver-1793706306277/scripts/_validator_trace.py", line 113, in _traced_open
+       |     return _real_open(file, mode, *args, **kwargs)
+       | FileNotFoundError: [Errno 2] No such file or directory: '/tmp/gh-issue-solver-1793706306277/runs/2026/RUN-0080/metadata.yaml'
+       | 
+       | ----------------------------------------------------------------------
+       | Ran 11 tests in 0.253s
+       | 
+       | FAILED (errors=2)
+PASS   test_runs_registry_tools_table              7.52s
+PASS   test_validate_all                          11.26s
+PASS   test_validate_pagination_shift              2.69s
+PASS   validate-file-naming                        0.68s
+PASS   validate-frontmatter                        0.70s
+PASS   validate-repository-structure               0.31s
+
+full: 86 валидаторов, 0 из кэша, 13 провалов, 39.82s
+make: *** [Makefile:158: validate-full] Error 1

@@ -1,0 +1,214 @@
+{
+  "A": {
+    "prompt_version": "0.1",
+    "prompt_path": "prompts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "18a98c97d449f88a79780926eb6e1fbe30b6f3bc",
+    "prompt_sha256": "ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+    "cases": 62,
+    "passed": 55,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "57/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix writes 'событие' into the FT, i.e. an integration mechanism/event without a source (rules: API/events not in customer FT; mechanism only from source)."
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds actor 'Оператор', which is not in the input or context (role invented without source)."
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил' instead of 'только если'), so it loses a qualifier itself."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic unsourced claim, not the lesson rule that a disclaimer about a problem absent from the input is itself the defect."
+      },
+      {
+        "case": "GS-BCREQ-50",
+        "tid": "T-28",
+        "lesson": "L-50",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix proposes re-running the check 'в новой сессии другой ролью', which is the same model in another role and gives no independent confirmation (the very lesson rule)."
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names only the generic 'product fact without source/locator' (АД-1/АД-8); the lesson's core — list presented as exhaustive without a completeness mark — is not named."
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fixed ФТ-2 still joins two actions with «и» ('направлять заявку … и обновлять статус заявки'), which breaks the atomicity rule. It also narrows «апдейт» to 'обновлять статус заявки' without a source."
+      }
+    ]
+  },
+  "D": {
+    "prompt_version": "0.1-by-test",
+    "prompt_path": "prompts/drafts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "18a98c97d449f88a79780926eb6e1fbe30b6f3bc",
+    "prompt_sha256": "d6358d7afa4f4209171d24da5010d117fe694e6443ba37267150a6a7b0f1c508",
+    "cases": 62,
+    "passed": 55,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "62/62",
+      "K4": "61/62",
+      "K5": "57/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds actor 'оператор', which is not in the input or context (role invented without source)."
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "tid": "T-06",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "K5/K6: fix says 'отметить ФТ-2 как согласованное с Р-1', so the model assigns the status 'согласовано' itself."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic unsourced claim/addition, not the lesson rule that a disclaimer about a problem absent from the input is itself the defect."
+      },
+      {
+        "case": "GS-BCREQ-21",
+        "tid": "T-25",
+        "lesson": "L-21",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix requires a before/after block for each item, a new structure the BA did not request (breaks the rule on keeping the BA's form)."
+      },
+      {
+        "case": "GS-BCREQ-41",
+        "tid": "T-31",
+        "lesson": "L-41",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix asks to describe the mechanism, channel and condition in 6.1 without requiring a source (mechanism only from source)."
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: the fixed ФТ-2 still joins two actions with «и» ('направлять заявку … и обновлять статус заявки'), which breaks the atomicity rule. It also narrows «апдейт лидов» to 'обновлять статус заявки после назначения' without a source."
+      },
+      {
+        "case": "GS-BCREQ-29",
+        "tid": "T-61",
+        "lesson": "L-29",
+        "failed": [
+          "K4"
+        ],
+        "note": "K4: calls the question «не адресный», but the input says it is a «Вопрос Заказчику», so this extra defect contradicts the case."
+      }
+    ]
+  },
+  "diff": {
+    "only_A_failed": [
+      "GS-BCREQ-33",
+      "GS-BCREQ-43",
+      "GS-BCREQ-47",
+      "GS-BCREQ-50"
+    ],
+    "only_D_failed": [
+      "GS-BCREQ-14",
+      "GS-BCREQ-21",
+      "GS-BCREQ-29",
+      "GS-BCREQ-41"
+    ],
+    "both_failed": [
+      "GS-BCREQ-12",
+      "GS-BCREQ-26",
+      "GS-BCREQ-37"
+    ]
+  },
+  "baseline_RUN_0079_A": {
+    "prompt_version": "0.1",
+    "passed": 49,
+    "core": "10/11",
+    "negatives_false_positive": "0/10"
+  },
+  "publication": {
+    "rule": "DEC-427-11: D не хуже v0.1 — по сданным кейсам, ядру и ложным дефектам",
+    "vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "vs_A_same_judge": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "not_worse": true
+  }
+}
