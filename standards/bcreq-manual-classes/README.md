@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.2.1
 updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
@@ -35,7 +35,7 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 | К-17 | [ФТ нового поведения с нуля](17-fr-new.md) | a-core, a-work | Ш-3 | [bcreq-fr-documentation-stepwise.md](../../prompts/bcreq-fr-documentation-stepwise.md) |
 | К-18 | [Нефункциональные требования](18-nfr.md) | a-core, a-work | Ш-4 | [bcreq-nfr-documentation-stepwise.md](../../prompts/bcreq-nfr-documentation-stepwise.md) |
 | К-19 | [Первый прогон UC и покрытие ФТ](19-uc-coverage.md) | a-core | Ш-5 | [bcreq-uc-modeling-stepwise.md](../../prompts/bcreq-uc-modeling-stepwise.md) |
-| К-20 | [Подготовка доказательств человеческого гейта](20-gate-evidence.md) | a-in, a-core, a-work, a-release | Ш-В | [bcreq-review-validation-oneshot.md](../../prompts/bcreq-review-validation-oneshot.md) |
+| К-20 | [Подготовка доказательств гейта](20-gate-evidence.md) | a-in, a-core, a-work, a-release | Ш-В | [bcreq-review-validation-oneshot.md](../../prompts/bcreq-review-validation-oneshot.md) |
 | К-21 | [ОРР L1](21-solution-l1.md) | a-work | Ш-6 | [bcreq-orr-solution-design-stepwise.md](../../prompts/bcreq-orr-solution-design-stepwise.md) |
 | К-22 | [ОРР L2 и контракты стыков](22-solution-l2.md) | a-work | Ш-6 | [bcreq-orr-solution-design-stepwise.md](../../prompts/bcreq-orr-solution-design-stepwise.md) |
 | К-23 | [Особенности и ограничения](23-constraints.md) | a-work | Ш-7 | [bcreq-constraints-documentation-stepwise.md](../../prompts/bcreq-constraints-documentation-stepwise.md) |
@@ -80,11 +80,11 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 | a-in/К-38 | Отдельное моделирование UC по запросу БА | `explicit_BA_request, atoms, scope, actors, FR?` | `requested_UC[{id,actor,precondition,flow,alternatives,result,fr_ids,source}]` |
 | a-in/К-14 | Глоссарий | `terms_in_sections_2_to_6, raw_wording, supplied_lexicons` | `section_1[{term,definition,source,lexicon_comparison}], term_questions` |
 | a-in/К-15 | Бизнес-контекст | `atoms, scope, business_problem, value, decisions` | `section_2{context,problem,goal,in_scope,out_of_scope,products_owners}` |
-| a-in/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-in/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}` |
 | a-in/К-39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-in/К-12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
 | a-in/К-13 | Проверка переносимого контекста | `full_snapshot, required_inputs_for_target, source_bodies, rule_bundle` | `handoff_receipt[{input,status,locator}], missing_inputs, recommendation` |
-| a-in/К-20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
+| a-in/К-20 | Подготовка доказательств гейта | `gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 ### a-core
 
 | Экземпляр | Класс | Обязательный вход | Результат |
@@ -111,10 +111,10 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 | a-core/К-29 | Анализ влияния изменения | `baseline_revision, change_request, dependency_graph, prior_approvals` | `impact_set, stale_ids, invalidated_approvals, proposed_edit_scope` |
 | a-core/К-30 | Адресная правка | `candidate_revision, authorized_edit_scope, findings, human_instructions` | `patch[{id,before,after,reason}], preserved_ids, semantic_diff, stale_ids` |
 | a-core/К-31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
-| a-core/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-core/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}` |
 | a-core/К-39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-core/К-12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
-| a-core/К-20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
+| a-core/К-20 | Подготовка доказательств гейта | `gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 ### a-work
 
 | Экземпляр | Класс | Обязательный вход | Результат |
@@ -147,10 +147,10 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 | a-work/К-29 | Анализ влияния изменения | `baseline_revision, change_request, dependency_graph, prior_approvals` | `impact_set, stale_ids, invalidated_approvals, proposed_edit_scope` |
 | a-work/К-30 | Адресная правка | `candidate_revision, authorized_edit_scope, findings, human_instructions` | `patch[{id,before,after,reason}], preserved_ids, semantic_diff, stale_ids` |
 | a-work/К-31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
-| a-work/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-work/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}` |
 | a-work/К-39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-work/К-12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
-| a-work/К-20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
+| a-work/К-20 | Подготовка доказательств гейта | `gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 ### a-release
 
 | Экземпляр | Класс | Обязательный вход | Результат |
@@ -162,10 +162,10 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 | a-release/К-30 | Адресная правка | `candidate_revision, authorized_edit_scope, findings, human_instructions` | `patch[{id,before,after,reason}], preserved_ids, semantic_diff, stale_ids` |
 | a-release/К-31 | Структурная сверка документа | `candidate, schema_version, entity_register, trace_matrix` | `conformance_report{missing,duplicates,broken_refs,section_order,counts,verdict}` |
 | a-release/К-28 | Независимая содержательная проверка | `frozen_candidate, source_bodies, applicable_rules, approved_scope, decisions` | `findings[{id,claim,source,rule,severity,affected_ids}], checked_claims, unresolved` |
-| a-release/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status}` |
+| a-release/К-34 | Регистрация решений и согласований | `human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?` | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}` |
 | a-release/К-39 | Сверка с манифестом | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | `manifest_diff` |
 | a-release/К-12 | Полная сборка фазы | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` |
-| a-release/К-20 | Подготовка доказательств человеческого гейта | `gate_id, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
+| a-release/К-20 | Подготовка доказательств гейта | `gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records` | `gate_report{criteria,evidence,gaps,eligible_for_review,required_actors}, recommendation` |
 | a-release/К-32 | Подготовка пакетов адресатам | `approved_or_draft_candidate, audience_policy, scope, approvals` | `customer_packet, internal_packet, delivery_manifest, excluded_items` |
 | a-release/К-33 | Контроль выпускного комплекта | `delivery_manifest, packets, candidate_revision, required_approvals, source_receipts` | `release_report{revision_checks,approval_checks,missing,stale,ready_for_human_release}` |
 | a-release/К-35 | Фиксация baseline и передача | `release_report, human_release_record?, final_packets, unresolved, owners` | `baseline_manifest{revision,artifacts,decisions,open_items,owners,delivery_status}, change_entrypoint` |

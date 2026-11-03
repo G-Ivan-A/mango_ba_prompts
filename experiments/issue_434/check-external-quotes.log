@@ -34,7 +34,9 @@ OK   BL-158 G-Ivan-A/mango_ba_prompts issues #427: “в бэклог запис
 OK   BL-159 G-Ivan-A/mango_ba_prompts issues #430: “Гейт - аналогично гейты в BPMN (для аналогии) - может быть человеческим / машинных / гибридным”
 OK   BL-159 G-Ivan-A/mango_ba_prompts issues #430: “в бэклог - проверку что явно будет учтено в актуализированных всех документах”
 OK   BL-160 G-Ivan-A/mango_ba_prompts issues #432: “проверить и обосновать, на каком этапе могут применяться в процессах валидаторы (.py)”
-OK   BL-161 G-Ivan-A/mango_ba_prompts issues #434: “Механизм, гарантирующий, что промпты смогут читать эту таксономию, а не натыкаться на заглушку.”
+OK   BL-161 G-Ivan-A/mango_ba_prompts issues #433: “Перевод Г-IN в llm — только после журнала К-34 с полем расхождения.”
+OK   BL-162 G-Ivan-A/mango_ba_prompts issues #433: “Сначала решение владельца по значению код в ADR-003 / онтологии, затем проход по перечню.”
+OK   BL-163 G-Ivan-A/mango_ba_prompts issues #434: “Механизм, гарантирующий, что промпты смогут читать эту таксономию, а не натыкаться на заглушку.”
 OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Версия документов меняется с 1.0 на 2.0”
 OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#перенос-в-канонические-документы: “Roadmap: пять этапов автоматизации бизнес-анализа”
 OK   BL-201 G-Ivan-A/mango_ba_prompts@c6e74851/docs/rfc/2026-10-ba-automation-strategy.md#dec-415-10: “Промышленное решение без n8n: процессы в коде на Python”
@@ -45,4 +47,4 @@ OK   BL-205 G-Ivan-A/mango_ba_prompts issues #420: “не устраивает 
 OK   BL-206 G-Ivan-A/mango_ba_prompts issues #420: “В рамках жтой задачи не меняем страницы сайта”
 OK   BL-230 G-Ivan-A/mango_ba_prompts issues #427: “понимает что он может сделать на след шаге (возврат, продолжить, вступить в диалог с моделью и пр.)”
 OK   BL-231 G-Ivan-A/mango_ba_prompts issues #427: “промпты копируются и являются промптами (контрактами) этапа 1”
-итог: проверено 47, не найдено 0
+итог: проверено 49, не найдено 0
