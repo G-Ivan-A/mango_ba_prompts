@@ -72,6 +72,7 @@
 - `python3 experiments/issue_432/check_profile_quotes.py` — 75 цитат профилей найдены дословно в стандарте своей операции.
 - `python3 experiments/issue_432/measure_common_part.py` — общая часть 78,1 %.
 - `make validate-full` — 85 валидаторов, 0 провалов (`experiments/issue_432/validate-full-final.log`).
+- CI на fork-PR не запускается (как у #431: «no checks»). Все команды `validate.yml` и `github-pages.yml` прогнаны локально — 0 провалов (`experiments/issue_432/ci-local.log`). Генератор сайта не даёт диффа, кроме `generatedAt`.
 
 ## Рекомендуемые следующие шаги (после согласования PR)
 
