@@ -70,8 +70,8 @@ class RfcAccepted(unittest.TestCase):
     def test_frontmatter(self):
         self.assertEqual(self.fm.get("status"), "accepted")
         # Редакция 0.3 — принятие Р-13; поправки после приёмки (0.4 — #430,
-        # тип гейта) статус не меняют.
-        self.assertIn(self.fm.get("version"), ("0.3", "0.4"))
+        # тип гейта; 0.4.1 — #433, типизация гейтов BL-159) статус не меняют.
+        self.assertIn(self.fm.get("version"), ("0.3", "0.4", "0.4.1"))
 
     def test_acceptance_section(self):
         block = section(self.body, HEADING)

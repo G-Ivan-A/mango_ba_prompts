@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-10-31
+version: 0.4.1
+updated: 2026-11-03
 owner: G-Ivan-A
 ai-generated: true
 type: ecosystem-map
@@ -65,7 +65,7 @@ enterprise-framework. Решения опираются на research Хаба, 
 | --- | --- | --- |
 | Чек-лист | Раздел «Проверка» в паттерне или блок quality gates в промпте. | `documentation`, `solution_design`, `release_readiness` |
 | Evals-метрика | Прогон в [`runs/`](../runs/) с зафиксированным входом и ожидаемым выходом. **Пока недоступен:** `evals/` и golden-set в репозитории отсутствуют ([статус механизмов](../ai-governance/ai-governance.md#статус-механизмов-проверки-на-сегодня)). | `validation`, `quality`, `research` |
-| Human-in-the-loop gate | Подтверждение человеком перед сменой статуса (`covered / validated / approved / released`). | `governance`, `risk_analysis`, `impact_analysis`, `reverse_requirements` |
+| Human-in-the-loop gate | Подтверждение человеком перед сменой статуса (`covered / validated / approved / released`). Тип гейта — `человек` или `гибрид` ([словарь потока BCREQ, раздел 3.3](../standards/bcreq-flow-glossary.md#33-типы-гейта)). | `governance`, `risk_analysis`, `impact_analysis`, `reverse_requirements` |
 
 Практические следствия для матриц §4 и карты процессов §5:
 

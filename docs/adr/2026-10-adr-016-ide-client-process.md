@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-10-30
+version: 0.1.1
+updated: 2026-11-03
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: architecture
@@ -11,7 +11,8 @@ decision-type: architecture
 
 Проблема: ручной перенос 39 классов требует от БА собирать контекст, а IDE
 может читать/сохранять его сама. Одновременно свободное исполнение tools
-и скрытая память способны обойти сохранение требований и human gates.
+и скрытая память способны обойти сохранение требований и гейты с решением
+человека (`человек`, `гибрид`).
 
 Проектное решение для review: полный versioned rule bundle, native skill
 на каждый локальный класс, файловый baseline+slices, C12 FULL, отдельный

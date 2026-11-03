@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-06-15
+version: 0.2.1
+updated: 2026-11-03
 ai-generated: true
 type: registry
 related_issues:
@@ -121,13 +121,20 @@ flowchart TD
 **Выходы.** `Business Alignment Pack`, ФТ КК, ТЗ, questions backlog, constraints,
 technical details, validation report.
 
+Колонка «Gate / gap»: тип гейта (`человек`, `гибрид`, `llm`, `код`) равен
+исполнителю операции строки ([онтология БА, раздел 3](../../standards/ba-ontology.md),
+С3; [словарь потока BCREQ, раздел 3.3](../../standards/bcreq-flow-glossary.md#33-типы-гейта)).
+Ключевые гейты процесса BCREQ — G1/G2/G3
+([стандарт процесса, раздел 3](../../standards/bcreq-process-standard.md#3-human-gates-в-ключевых-точках));
+перевод гейта в другой тип — решение владельца (BL-161).
+
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
-| 1. Нормализовать сырой вход | `ingestion` | Читаемый вход без потери смысла | [`asr-ingestion-oneshot.md`](../../prompts/asr-ingestion-oneshot.md); legacy: [`asr-ingestion-legacy.md`](../../prompts/asr-ingestion-legacy.md) | Gate: смысловая структура сохранена. |
-| 2. Собрать контекст | `understanding` | Термины, проблема, цель, задачи, вопросы, затронутые продукты | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-products-impact-analysis-stepwise.md`](../../prompts/bcreq-products-impact-analysis-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate: нет критичных неотвеченных вопросов для бизнес-слоя. |
-| 3. Смоделировать сценарии при необходимости | `modeling` | User Story, Use Case, acceptance context | [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md), [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md) | Gate: роль, ценность, основной поток и исключения согласованы. |
-| 4. Оформить ФТ и ограничения | `documentation` | Разделы BCREQ: 3 ФТ, 4 НФТ, 6 ограничения | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md), [`bcreq-nfr-documentation-stepwise.md`](../../prompts/bcreq-nfr-documentation-stepwise.md), [`bcreq-core-documentation-oneshot.md`](../../prompts/bcreq-core-documentation-oneshot.md), [`bcreq-constraints-documentation-stepwise.md`](../../prompts/bcreq-constraints-documentation-stepwise.md), [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Gate: требования атомарны и отделены от реализации. |
-| 5. Подготовить технические детали | `solution_design` | Раздел 5 BCREQ (ОРР), граничные кейсы раздела 7, риски раздела 8 | [`bcreq-orr-solution-design-stepwise.md`](../../prompts/bcreq-orr-solution-design-stepwise.md), [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-extra-risk-analysis-stepwise.md`](../../prompts/bcreq-extra-risk-analysis-stepwise.md), [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Gate: business layer уже согласован. |
+| 1. Нормализовать сырой вход | `ingestion` | Читаемый вход без потери смысла | [`asr-ingestion-oneshot.md`](../../prompts/asr-ingestion-oneshot.md); legacy: [`asr-ingestion-legacy.md`](../../prompts/asr-ingestion-legacy.md) | Gate (`llm`): смысловая структура сохранена. |
+| 2. Собрать контекст | `understanding` | Термины, проблема, цель, задачи, вопросы, затронутые продукты | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-products-impact-analysis-stepwise.md`](../../prompts/bcreq-products-impact-analysis-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate (`гибрид`): нет критичных неотвеченных вопросов для бизнес-слоя. |
+| 3. Смоделировать сценарии при необходимости | `modeling` | User Story, Use Case, acceptance context | [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md), [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md) | Gate (`llm`): роль, ценность, основной поток и исключения согласованы. |
+| 4. Оформить ФТ и ограничения | `documentation` | Разделы BCREQ: 3 ФТ, 4 НФТ, 6 ограничения | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md), [`bcreq-nfr-documentation-stepwise.md`](../../prompts/bcreq-nfr-documentation-stepwise.md), [`bcreq-core-documentation-oneshot.md`](../../prompts/bcreq-core-documentation-oneshot.md), [`bcreq-constraints-documentation-stepwise.md`](../../prompts/bcreq-constraints-documentation-stepwise.md), [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Gate (`llm`): требования атомарны и отделены от реализации. |
+| 5. Подготовить технические детали | `solution_design` | Раздел 5 BCREQ (ОРР), граничные кейсы раздела 7, риски раздела 8 | [`bcreq-orr-solution-design-stepwise.md`](../../prompts/bcreq-orr-solution-design-stepwise.md), [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-extra-risk-analysis-stepwise.md`](../../prompts/bcreq-extra-risk-analysis-stepwise.md), [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Gate (`гибрид`): business layer уже согласован. |
 | 6. Проверить черновик | `validation` | Defect report, вопросы, список правок | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Требуется разработка промпта: orchestrator для сборки полного ФТ/ТЗ chain. |
 
 ### 2. Валидация ФТ/ТЗ
@@ -143,10 +150,10 @@ risk notes.
 
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
-| 1. Провести аудит структуры и формулировок | `validation` | Дефекты полноты, противоречий и тестируемости | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate: дефекты привязаны к пунктам документа. |
+| 1. Провести аудит структуры и формулировок | `validation` | Дефекты полноты, противоречий и тестируемости | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate (`гибрид`): дефекты привязаны к пунктам документа. |
 | 2. Классифицировать качество | `quality` | Severity, тип дефекта, частота повторения | Выполняется вручную | Требуется разработка промпта: quality/statistics prompt для дефектов ФТ/ТЗ. |
 | 3. Отметить риски | `risk_analysis` | Legal/ИБ/NFR/commercial risk notes | Выполняется вручную с опорой на [`bcreq-constraints-documentation-stepwise.md`](../../prompts/bcreq-constraints-documentation-stepwise.md) | Требуется разработка промпта: risk overlay для валидации ФТ/ТЗ. |
-| 4. Вернуть результат в документ | `documentation` | Исправленный или размеченный черновик | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md), если нужна перегенерация раздела 4 | Gate: новые требования не добавлены без source. |
+| 4. Вернуть результат в документ | `documentation` | Исправленный или размеченный черновик | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md), если нужна перегенерация раздела 4 | Gate (`llm`): новые требования не добавлены без source. |
 
 ### 3. Анализ тендерных ТЗ
 
@@ -162,8 +169,8 @@ risk register, executive summary.
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
 | 1. Сохранить структуру внешнего ТЗ | `ingestion` | Реестр требований с sourceLocation | Выполняется вручную | Требуется разработка промпта: document-ingestion для тендерных DOCX/PDF/XLSX. |
-| 2. Понять термины и неоднозначности | `understanding` | Glossary, ambiguity list, questions | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate: сомнительные требования помечены как "требует уточнения". |
-| 3. Проверить атомарность и проверяемость | `validation` | Дефекты требований и вопросы | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate: нельзя ставить covered без evidence. |
+| 2. Понять термины и неоднозначности | `understanding` | Glossary, ambiguity list, questions | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate (`гибрид`): сомнительные требования помечены как "требует уточнения". |
+| 3. Проверить атомарность и проверяемость | `validation` | Дефекты требований и вопросы | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate (`гибрид`): нельзя ставить covered без evidence. |
 | 4. Оценить риски участия | `risk_analysis` | Compliance, SLA, интеграционные и коммерческие risks | Выполняется вручную | Требуется разработка промпта: tender risk scoring и no-bid criteria. |
 | 5. Свести coverage/gaps | `quality` | Coverage matrix и summary | Выполняется вручную | Требуется разработка промпта: tender-fit / coverage matrix. |
 
@@ -180,11 +187,11 @@ Case, основной и альтернативные потоки.
 
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
-| 1. Уточнить роль, ценность и границы | `understanding` | Role/value/context, open questions | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate: одна story или явная декомпозиция. |
-| 2. Сформировать User Story | `modeling` | US, acceptance criteria, INVEST check | [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md); archive reference: [`archive/user-story-generator-legacy.md`](../../prompts/archive/user-story-generator-legacy.md), [`archive/user-story-generator-simple-legacy.md`](../../prompts/archive/user-story-generator-simple-legacy.md) | Gate: ценность и критерии приемки проверяемы. |
-| 3. Сформировать Use Case | `modeling` | UC, actors, preconditions, main/alternative flows | [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md); archive reference: [`archive/usecase-stepwise-generator-legacy.md`](../../prompts/archive/usecase-stepwise-generator-legacy.md), [`archive/usecase-stepwise-generator-simple-legacy.md`](../../prompts/archive/usecase-stepwise-generator-simple-legacy.md) | Gate: actor/system boundary не смешан. |
+| 1. Уточнить роль, ценность и границы | `understanding` | Role/value/context, open questions | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate (`гибрид`): одна story или явная декомпозиция. |
+| 2. Сформировать User Story | `modeling` | US, acceptance criteria, INVEST check | [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md); archive reference: [`archive/user-story-generator-legacy.md`](../../prompts/archive/user-story-generator-legacy.md), [`archive/user-story-generator-simple-legacy.md`](../../prompts/archive/user-story-generator-simple-legacy.md) | Gate (`llm`): ценность и критерии приемки проверяемы. |
+| 3. Сформировать Use Case | `modeling` | UC, actors, preconditions, main/alternative flows | [`bcreq-uc-modeling-stepwise.md`](../../prompts/bcreq-uc-modeling-stepwise.md), [`bcreq-scenarios-modeling-oneshot.md`](../../prompts/bcreq-scenarios-modeling-oneshot.md); archive reference: [`archive/usecase-stepwise-generator-legacy.md`](../../prompts/archive/usecase-stepwise-generator-legacy.md), [`archive/usecase-stepwise-generator-simple-legacy.md`](../../prompts/archive/usecase-stepwise-generator-simple-legacy.md) | Gate (`llm`): actor/system boundary не смешан. |
 | 4. Проверить связку US -> UC -> ФТ | `validation` | Несоответствия, вопросы, ready/not ready | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Требуется разработка промпта: chain validation для US/UC/ФТ и отдельный Job Story prompt. |
-| 5. Передать в ФТ при необходимости | `documentation` | Вход для раздела 4 | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md) | Gate: ФТ создается после согласования бизнес-сценария. |
+| 5. Передать в ФТ при необходимости | `documentation` | Вход для раздела 4 | [`bcreq-fr-documentation-stepwise.md`](../../prompts/bcreq-fr-documentation-stepwise.md) | Gate (`llm`): ФТ создается после согласования бизнес-сценария. |
 
 ### 5. Визуализация UML/BPMN
 
@@ -216,9 +223,9 @@ session summary, owners/next steps.
 
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
-| 1. Очистить ASR или длинный вход | `ingestion` | Читаемый transcript/input | [`asr-ingestion-oneshot.md`](../../prompts/asr-ingestion-oneshot.md) | Gate: не потеряны decisions и вопросы. |
-| 2. Выделить смысл и вопросы | `understanding` | Questions backlog, decisions, blockers | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate: вопросы не навязывают решение заказчику. |
-| 3. Оформить коммуникацию | `documentation` | Meeting summary, customer/team note, letter | [`meeting-customer-documentation-stepwise.md`](../../prompts/meeting-customer-documentation-stepwise.md), [`meeting-team-documentation-stepwise.md`](../../prompts/meeting-team-documentation-stepwise.md), [`letter-customer-documentation-legacy.md`](../../prompts/letter-customer-documentation-legacy.md), [`session-debug-documentation-oneshot.md`](../../prompts/session-debug-documentation-oneshot.md) | Gate: есть decisions, owners, dates/next steps. |
+| 1. Очистить ASR или длинный вход | `ingestion` | Читаемый transcript/input | [`asr-ingestion-oneshot.md`](../../prompts/asr-ingestion-oneshot.md) | Gate (`llm`): не потеряны decisions и вопросы. |
+| 2. Выделить смысл и вопросы | `understanding` | Questions backlog, decisions, blockers | [`bcreq-context-understanding-stepwise.md`](../../prompts/bcreq-context-understanding-stepwise.md), [`bcreq-in-understanding-oneshot.md`](../../prompts/bcreq-in-understanding-oneshot.md) | Gate (`гибрид`): вопросы не навязывают решение заказчику. |
+| 3. Оформить коммуникацию | `documentation` | Meeting summary, customer/team note, letter | [`meeting-customer-documentation-stepwise.md`](../../prompts/meeting-customer-documentation-stepwise.md), [`meeting-team-documentation-stepwise.md`](../../prompts/meeting-team-documentation-stepwise.md), [`letter-customer-documentation-legacy.md`](../../prompts/letter-customer-documentation-legacy.md), [`session-debug-documentation-oneshot.md`](../../prompts/session-debug-documentation-oneshot.md) | Gate (`llm`): есть decisions, owners, dates/next steps. |
 | 4. Зафиксировать управление процессом | `governance` | Owners, статус, follow-up, link to artifact | Выполняется вручную | Требуется разработка промпта: product decision log и stakeholder map. |
 
 ### 7. Статистика
@@ -234,9 +241,9 @@ research hypotheses.
 
 | Шаг | Операция | Что получить | Промпты | Gate / gap |
 | --- | --- | --- | --- | --- |
-| 1. Собрать корпус | `ingestion` | Список документов и единый источник данных | Выполняется вручную | Gate: corpus source и правила включения понятны. |
+| 1. Собрать корпус | `ingestion` | Список документов и единый источник данных | Выполняется вручную | Gate (`llm`): corpus source и правила включения понятны. |
 | 2. Нормализовать категории | `quality` | Категории, исключение дублей, defect classes | Legacy reference: [`archive/tz-stats-generator-legacy.md`](../../prompts/archive/tz-stats-generator-legacy.md), [`archive/tz-stats-generator-simple-legacy.md`](../../prompts/archive/tz-stats-generator-simple-legacy.md) | Требуется разработка промпта: активный statistics prompt после архивирования legacy. |
-| 3. Сформировать выводы | `research` | Trend summary, гипотезы и next questions | Выполняется вручную | Gate: выводы отделены от непроверенных гипотез. |
+| 3. Сформировать выводы | `research` | Trend summary, гипотезы и next questions | Выполняется вручную | Gate (`гибрид`): выводы отделены от непроверенных гипотез. |
 
 ### 8. Impact Analysis
 
@@ -253,8 +260,8 @@ regression scope, decision gates.
 | --- | --- | --- | --- | --- |
 | 1. Восстановить текущее поведение | `reverse_requirements` | Reverse requirements и source evidence | Выполняется вручную с опорой на [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Требуется разработка промпта: reverse requirements для legacy behavior. |
 | 2. Связать изменение с артефактами | `impact_analysis` | Impact map по Product Layer, Commercial Layer, API, UX, NFR | Выполняется вручную; продукты и команды — [`bcreq-products-impact-analysis-stepwise.md`](../../prompts/bcreq-products-impact-analysis-stepwise.md); технический вход можно уточнить через [`bcreq-orr-solution-design-stepwise.md`](../../prompts/bcreq-orr-solution-design-stepwise.md) или [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Требуется разработка промпта: dedicated impact-analysis prompt и traceability matrix. |
-| 3. Проверить полноту влияния | `validation` | Missed dependencies, affected tests, owner gaps | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate: нет high-impact зоны без owner. |
-| 4. Назначить gates и owners | `governance` | Owner list, review gates, next step | Выполняется вручную | Gate: изменения без owner не идут в разработку. |
+| 3. Проверить полноту влияния | `validation` | Missed dependencies, affected tests, owner gaps | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate (`гибрид`): нет high-impact зоны без owner. |
+| 4. Назначить gates и owners | `governance` | Owner list, review gates, next step | Выполняется вручную | Gate (`человек`): изменения без owner не идут в разработку. |
 
 ### 9. Risk Analysis
 
@@ -271,7 +278,7 @@ list, known issues.
 | --- | --- | --- | --- | --- |
 | 1. Собрать риски | `risk_analysis` | Risk register: cause, impact, likelihood, mitigation, owner | Выполняется вручную; риски задачи — [`bcreq-extra-risk-analysis-stepwise.md`](../../prompts/bcreq-extra-risk-analysis-stepwise.md) (раздел 8.1 BCREQ); входные ограничения можно оформить через [`bcreq-constraints-documentation-stepwise.md`](../../prompts/bcreq-constraints-documentation-stepwise.md) или [`bcreq-work-solution-design-oneshot.md`](../../prompts/bcreq-work-solution-design-oneshot.md) | Требуется разработка промпта: risk register prompt. |
 | 2. Проверить readiness | `release_readiness` | Acceptance, rollback, comms, known issues | Выполняется вручную | Требуется разработка промпта: release-readiness validation prompt. |
-| 3. Проверить митигации | `validation` | Проверяемость mitigation и escalation criteria | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate: high/compliance risks имеют owner review. |
+| 3. Проверить митигации | `validation` | Проверяемость mitigation и escalation criteria | [`bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md) | Gate (`гибрид`): high/compliance risks имеют owner review. |
 | 4. Собрать recurring quality signals | `quality` | Trend/recurrence notes | Legacy statistics reference: [`archive/tz-stats-generator-legacy.md`](../../prompts/archive/tz-stats-generator-legacy.md) | Выполняется вручную до появления активного statistics prompt. |
 
 ## Known gaps
