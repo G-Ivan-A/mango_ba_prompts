@@ -322,7 +322,7 @@ v0.1 — готовые к копированию тела задач РТ-1 и 
 
 - ССОТ значений — каталог спицы `docs/taxonomy/products.json`;
 - ССОТ формы — Хаб;
-- новые ID: Р-16 и BL-161.
+- новые ID: Р-17 и BL-163.
 
 Задачи в runtime и Хабе создаёт владелец (A-08 RFC #427). Носитель
 строк РТ-1…РТ-4 —
@@ -330,7 +330,7 @@ v0.1 — готовые к копированию тела задач РТ-1 и 
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-16 о каталоге в статусе `review` | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431) | `proposed` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437) |
+| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review` | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431) | `proposed` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437) |
 
 ## Журнал изменений реестра
 
@@ -411,4 +411,4 @@ v0.1 — готовые к копированию тела задач РТ-1 и 
 - **2026-11-03** — issue #434 (PR #437): добавлен RFC-RT-001 в статусе
   `proposed` — тела задач РТ-1, РТ-3 для runtime и ХАБ-1 для Хаба, механизм
   снятия заглушки З-1. Строки РТ-1 и РТ-3 реестра справочников расширены
-  (v0.2); решение Р-16 и задача BL-161 — в бэклоге.
+  (v0.2); решение Р-17 и задача BL-163 — в бэклоге.
