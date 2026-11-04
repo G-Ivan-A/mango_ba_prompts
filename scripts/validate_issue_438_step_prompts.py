@@ -32,11 +32,12 @@
   ``SHV_V02_PUBLISHED = True`` (issue #448): подстановка Ш-В применена в
   v0.2 по RUN-0084 вместе с правилом «правка без добавлений»; тексты A и D
   RUN-0081 восстанавливаются из v0.2 откатом ``shv_v02_changes.revert()``;
-* бэклог: BL-157 — ``review`` (BL-157а ``DONE``, BL-157б ``review`` в
-  PR #447 — набор на сайте и A-IN ``by-test`` по RUN-0083, BL-157в ждёт
-  входа от владельца), BL-156 — ``deferred (triggered)`` (BL-156а ``DONE``,
-  BL-156б и BL-156в ждут Р-03 и бюджета); карточки — история «Заготовка
-  (до старта)», «Исполнение» BL-156а и BL-157б; входы BL-158;
+* бэклог (issue #448): BL-157 — ``deferred (triggered)`` (BL-157а и
+  BL-157б ``DONE`` — PR #439 и PR #447; BL-157в — вход владельца разобран
+  в PR #449, ждёт прогона БА с ``ba_reviewed: true``), BL-156 — ``review``
+  (BL-156а ``DONE``, BL-156б и BL-156в ``review`` в PR #449 по RUN-0084,
+  BL-156г ``TODO``); карточки — история «Заготовка (до старта)»,
+  «Исполнение» BL-156а, BL-156б, BL-156в, BL-157б и BL-157в; входы BL-158;
   ``R16_ACCEPTED = False`` в валидаторе #433 до BL-162;
 * отчёт BL-156, анализ Р-16 и разбор готовности BL-156 / BL-157: разделы
   стандарта анализа, вопрос владельцу AS-IS / TODO; цитаты анализа Р-16 и
@@ -472,24 +473,27 @@ class DecisionsTest(unittest.TestCase):
                           "BL-156", "BL-157", "BL-162")}
         for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159"):
             self.assertEqual(rows[t][4], "DONE", t)
-        # П-П: BL-157 сначала (через BL-157а) — один номер, два этапа в карточке.
-        # PR #439 слит: BL-157а — DONE; BL-157б — review в PR #447 (RUN-0083, issue #446);
-        # первый прогон BL-111 выделен в BL-157в и ждёт входа от владельца.
-        self.assertEqual(rows["BL-157"][4], "review")
-        for pr in ("PR #439", "PR #447"):
+        # П-П: BL-157 сначала (через BL-157а) — один номер, три этапа в карточке.
+        # PR #439 и PR #447 слиты: BL-157а и BL-157б — DONE (issue #448, ответ 2).
+        # BL-157в: вход владельца (шесть выгрузок чатов) разобран в PR #449, новых
+        # RUN нет; задача ждёт прогона БА с ba_reviewed: true.
+        self.assertEqual(rows["BL-157"][4], "deferred (triggered)")
+        for pr in ("PR #439", "PR #447", "PR #449"):
             self.assertIn(pr, rows["BL-157"][5])
-        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `review` (PR #447)", "RUN-0083",
-                       "BL-157в — `deferred (triggered)`", READINESS.name):
+        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `DONE` (PR #447)", "RUN-0083",
+                       "BL-157в — `deferred (triggered)`", "2026-11-04-bl-157v-chat-analysis.md",
+                       "`ba_reviewed: true`", READINESS.name):
             self.assertIn(marker, rows["BL-157"][7])
-        # PR #445 слит: BL-156а — DONE; BL-156б и BL-156в ждут Р-03 и бюджета (RUN-0082, issue #446).
-        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "deferred (triggered)")
+        # Issue #448: BL-156б и BL-156в — review в PR #449 по RUN-0084 (Р-03 принято),
+        # BL-156г — TODO (регрессия GS-BCREQ-25).
+        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "review")
         self.assertIn("BL-157 (этап BL-157а)", rows["BL-156"][3])
         self.assertIn(READINESS.name, rows["BL-156"][7])
         if BL156_STARTED:
-            self.assertIn("PR #445", rows["BL-156"][5])
-            self.assertIn("PR #447", rows["BL-156"][5])
-            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б — `deferred (triggered)`",
-                           "RUN-0082", "BL-156в — `deferred (triggered)`"):
+            for pr in ("PR #445", "PR #447", "PR #449"):
+                self.assertIn(pr, rows["BL-156"][5])
+            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `review` (PR #449)",
+                           "RUN-0084", "RUN-0082", "BL-156г — `TODO`"):
                 self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
@@ -513,12 +517,27 @@ class DecisionsTest(unittest.TestCase):
             bl156b = re.search(r"(?ms)^#### BL-156б\..*?(?=^#{3,4} )", text).group(0)
             self.assertIn("prompt-typing.json", bl156b)
             self.assertIn("RUN-0082", bl156b)
+            # Issue #448: этапы BL-156б и BL-156в исполнены RUN-0084, BL-156г открыт.
+            card = re.search(r"(?ms)^### BL-156\..*?(?=^#### )", text).group(0)
+            self.assertIn("**Исполнение (этапы BL-156б и BL-156в).** Issue #448, PR #449", card)
+            for stage in ("BL-156б", "BL-156в"):
+                body = re.search(rf"(?ms)^#### {stage}\..*?(?=^#{{3,4}} )", text).group(0)
+                self.assertIn("**Исполнение.** Issue #448, PR #449", body, stage)
+                self.assertIn("RUN-0084", body, stage)
+                self.assertIn("**Статус.** `review` (PR #449).", body, stage)
+            bl156g = re.search(r"(?ms)^#### BL-156г\..*?(?=^#{3,4} )", text).group(0)
+            self.assertIn("GS-BCREQ-25", bl156g)
+            self.assertIn("**Статус.** `TODO`", bl156g)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         for stage in ("#### BL-157б. Комплект прогона: промпты по тесту", "#### BL-157в. Первый прогон BL-111 с комплектом"):
             self.assertIn(stage, text)
         bl157b = re.search(r"(?ms)^#### BL-157б\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("RUN-0083", bl157b)
+        self.assertIn("Статус — `DONE`: PR #447 слит", bl157b)
+        bl157v = re.search(r"(?ms)^#### BL-157в\..*?(?=^#{3,4} )", text).group(0)
+        self.assertIn("**Исполнение.** Issue #448, PR #449", bl157v)
+        self.assertIn("`ba_reviewed: true`", bl157v)
         kit = read(KIT)
         self.assertIn("**Статус: действует; A-IN — по тесту (BL-157б).**", kit)
         self.assertNotIn("не применять", kit)

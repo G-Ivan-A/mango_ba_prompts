@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.18
+version: 0.19
 updated: 2026-11-04
 ai-generated: true
 type: register
@@ -339,7 +339,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога); поправка 0.4 — исполнение BL-156а на runtime `f31dcde3`, решение по PR #17 (строгий вариант PR #21), задачи BL-165, BL-166; поправка 0.5 — исполнение BL-157б (RUN-0083, A-IN `by-test`), пробелы runtime Р-1…Р-3, тело задачи РТ-7 (компактное оглавление БЗ) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442); [issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444); [issue #446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443), [PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445), [PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447) |
+| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога); поправка 0.4 — исполнение BL-156а на runtime `f31dcde3`, решение по PR #17 (строгий вариант PR #21), задачи BL-165, BL-166; поправка 0.5 — исполнение BL-157б (RUN-0083, A-IN `by-test`), пробелы runtime Р-1…Р-3, тело задачи РТ-7 (компактное оглавление БЗ); поправка 0.6 — RUN-0084 и Ш-В v0.2 (BL-156б, BL-156в), разбор чатов BL-157в, РТ-7 создана (runtime #22) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442); [issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444); [issue #446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446); [issue #448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443), [PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445), [PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447), [PR #449](https://github.com/G-Ivan-A/mango_ba_prompts/pull/449) |
 
 ## Журнал изменений реестра
 
@@ -441,3 +441,9 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   `by-test` в run kit v0.3), пробелы runtime Р-1…Р-3 и тело задачи РТ-7 —
   компактное оглавление разделов БЗ для чтения за одно обращение.
   Статус `accepted` не меняется.
+- **2026-11-04** — issue #448 (PR #449): RFC-RT-001 v0.6, поправка 0.6 —
+  раздел 15: замер Ш-В с одновременным контролем RUN-0084 (Р-03 принято),
+  Ш-В v0.2 опубликован (BL-156б, BL-156в — `review`), BL-156г открыт;
+  разбор шести выгрузок чатов БА (BL-157в), задачи BL-167, BL-168 и
+  решение Р-18; РТ-7 создана владельцем (runtime #22). Статус `accepted`
+  не меняется.

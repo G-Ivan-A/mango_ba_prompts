@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-11-04
 ai-generated: true
 type: process
@@ -16,6 +16,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/446"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/448"
 ---
 
 # Комплект прогона BCREQ на новых задачах (BL-157а, BL-157б)
