@@ -19,11 +19,17 @@
   ссылок; любая другая правка черновика требует нового прогона);
 * комплект прогона ссылается на существующий черновик каждого шага; у
   каждой таблицы комплекта число колонок строк равно заголовку;
-* RFC #427 — версия 0.6, Р-15 принято, DEC-427-04 и DEC-427-12 ``accepted``;
-* бэклог: BL-156 и BL-157 — ``review`` с остатком, входы BL-158;
-  Р-16 ждёт, и тогда ``R16_ACCEPTED = False`` в валидаторе #433;
-* отчёт BL-156 и анализ Р-16: разделы стандарта анализа, вопрос владельцу
-  AS-IS / TODO; цитаты анализа Р-16 сверяются с исходными документами.
+* ``R15_ACCEPTED = False`` (проверка готовности 2026-11-04, комментарий
+  владельца в PR #439): RFC #427 — версия 0.5.1, поправка 0.6 — проект,
+  DEC-427-04 и DEC-427-12 ``proposed``; Р-15 «ждёт»; ``PENDING`` валидатора
+  #427 (Р-13) содержит 04 и 12; заготовка ``prompt-typing.json`` к
+  ``prompts/`` не применена (строки ``before`` на месте, ``after`` нет);
+* бэклог: BL-156 и BL-157 — ``deferred (triggered)`` с триггером Р-15 и
+  ссылкой на разбор готовности; карточки — «Заготовка (до старта)»; входы
+  BL-158; Р-16 ждёт, и тогда ``R16_ACCEPTED = False`` в валидаторе #433;
+* отчёт BL-156, анализ Р-16 и разбор готовности BL-156 / BL-157: разделы
+  стандарта анализа, вопрос владельцу AS-IS / TODO; цитаты анализа Р-16 и
+  разбора готовности сверяются с исходными документами.
 
 Запуск: ``python3 scripts/validate_issue_438_step_prompts.py``
 """
@@ -50,6 +56,14 @@ CHANGELOG = ROOT / "CHANGELOG.md"
 RUN = ROOT / "runs/2026/RUN-0080"
 RUN_0079 = ROOT / "runs/2026/RUN-0079/outputs/metrics.json"
 POST_RUN_DELTAS = ROOT / "experiments/issue_438/run0080/post-run-deltas.json"
+PROMPT_TYPING = ROOT / "experiments/issue_438/prompt-typing.json"
+READINESS = ROOT / "docs/analysis/2026-11-04-bl-156-157-readiness-check.md"
+
+#: Р-15 принято владельцем явно («Р-15 да»). Пока False: поправка 0.6 RFC —
+#: проект, BL-156/157 не стартуют, ``prompts/`` не меняются. Переключать
+#: вместе с RFC, бэклогом, ``PENDING`` валидатора #427 и применением
+#: ``prompt-typing.json``.
+R15_ACCEPTED = False
 
 CRITERIA = ("K1", "K2", "K3", "K4", "K5", "K6")
 ANALYSIS_SECTIONS = ("## Summary / BLUF", "## Context / Scope", "## Findings / Options",
@@ -68,6 +82,14 @@ R16_QUOTES = {
     "docs/contracts/bcreq-manual-state.md": "Рекомендация модели и учебная симуляция не являются человеческим решением. Молчание не согласие.",
     "docs/ba-processes/bcreq-run-kit.md": "неявный (следующий промпт запущен без записи)",
     "prompts/bcreq-context-understanding-stepwise.md": "Если дополнение не передано, по умолчанию — без БЗ",
+}
+
+#: Цитаты разбора готовности BL-156 / BL-157 → файл-источник.
+READINESS_QUOTES = {
+    "pr-ops/backlog-instruction.md": "Задача стартует, когда зависимости `DONE` и решения приняты.",
+    "pr-ops/backlog-instruction.md#done": "Результат слит или принят; есть ссылка на доказательство.",
+    "docs/rfc/2026-11-runtime-product-catalog-golden-set.md": "Почему: тогда BL-156 выйдет без заглушек З-1 и З-3.",
+    "docs/rfc/2026-11-bcreq-flow-processes-prompts.md": "| 4 | Промпты и комплект прогона | BL-156, BL-157 |",
 }
 
 
@@ -236,18 +258,30 @@ class Run0080Test(unittest.TestCase):
         meta = read(RUN / "metadata.yaml")
         draft = ROOT / "prompts/drafts/bcreq-review-validation-oneshot.md"
         v01 = ROOT / "prompts/bcreq-review-validation-oneshot.md"
-        # Правки после замера, не меняющие поведения (версия источника в
-        # строке ссылок), перечислены в post-run-deltas.json; каждая
-        # откатывается ровно один раз. Любая другая правка — новый прогон.
+        # Правки после замера перечислены в post-run-deltas.json (поле
+        # behavior: none или reverted-to-v0.1); каждая откатывается ровно
+        # один раз. Любая другая правка — новый прогон.
         deltas = json.loads(read(POST_RUN_DELTAS))
         self.assertEqual(ROOT / deltas["file"], draft)
         measured = read(draft)
         for delta in deltas["deltas"]:
+            self.assertIn(delta["behavior"], ("none", "reverted-to-v0.1"))
             self.assertEqual(measured.count(delta["current"]), 1, delta["current"])
             measured = measured.replace(delta["current"], delta["measured"])
         self.assertEqual(hashlib.sha256(measured.encode("utf-8")).hexdigest(),
                          self.metrics["D"]["prompt_sha256"], "черновик Ш-В изменён после RUN-0080")
-        self.assertEqual(sha256(v01), self.metrics["A"]["prompt_sha256"], "v0.1 Ш-В изменён после RUN-0080")
+        # A — v0.1 с типом гейта BL-156. Правка prompts/ откатана до старта
+        # BL-156 (проверка готовности, 2026-11-04): измеренный A — текущий
+        # v0.1 плюс подстановки prompt-typing.json, каждая ровно один раз.
+        typing = json.loads(read(PROMPT_TYPING))
+        measured_a = read(v01)
+        subs = [s for s in typing["substitutions"] if ROOT / s["path"] == v01]
+        self.assertTrue(subs)
+        for sub in subs:
+            self.assertEqual(measured_a.count(sub["before"]), 1, sub["line"])
+            measured_a = measured_a.replace(sub["before"], sub["after"])
+        self.assertEqual(hashlib.sha256(measured_a.encode("utf-8")).hexdigest(),
+                         self.metrics["A"]["prompt_sha256"], "v0.1 Ш-В изменён после RUN-0080")
         self.assertIn(self.metrics["D"]["prompt_sha256"], meta)
         self.assertIn(self.metrics["A"]["prompt_sha256"], meta)
 
@@ -280,21 +314,40 @@ class KitTest(unittest.TestCase):
 class DecisionsTest(unittest.TestCase):
     def test_rfc_amendment_06(self):
         text = read(RFC)
-        self.assertRegex(text, r"(?m)^version: 0\.6$")
-        self.assertIn("### Поправка 0.6: решение Р-15 и промпты шагов (issue #438)", text)
+        self.assertFalse(R15_ACCEPTED, "Р-15 принято — обновите проверку под принятую поправку 0.6")
+        self.assertRegex(text, r"(?m)^version: 0\.5\.1$")
+        self.assertIn("### Поправка 0.6: промпты шагов (проект, ждёт Р-15; issue #438)", text)
+        self.assertIn("**Статус поправки: проект.**", text)
         for dec in ("DEC-427-04", "DEC-427-12"):
-            self.assertRegex(text, rf"(?m)^\| {dec}\. [^|]+\| `accepted` \| Р-15 \(\[#438\]")
+            self.assertRegex(text, rf"(?m)^\| {dec}\. [^|]+\| `proposed` \| ждёт Р-15 \|$")
+
+    def test_r13_validator_pending(self):
+        v427 = load("v427_for_438", ROOT / "scripts/validate_issue_427_r13_acceptance.py")
+        pending = {n for n, d in v427.PENDING.items() if d == "Р-15"}
+        self.assertEqual(pending, set() if R15_ACCEPTED else {"04", "12"})
+
+    def test_published_prompts_untouched(self):
+        typing = json.loads(read(PROMPT_TYPING))
+        self.assertIn("не применена", typing["status"])
+        self.assertEqual(len({s["path"] for s in typing["substitutions"]}), 14)
+        for sub in typing["substitutions"]:
+            text = read(ROOT / sub["path"])
+            expected, absent = ("after", "before") if R15_ACCEPTED else ("before", "after")
+            self.assertEqual(text.count(sub[expected]), 1, f"{sub['path']} {sub['line']}")
+            self.assertEqual(text.count(sub[absent]), 0, f"{sub['path']} {sub['line']}")
 
     def test_backlog_rows(self):
         text = read(BACKLOG)
-        self.assertRegex(text, r"(?m)^\| \*\*Р-15\*\* \|.*\| принято \(\[issue #438\]")
+        r15 = re.search(r"(?m)^\| \*\*Р-15\*\* \|.*\| (\S+) \|$", text).group(1)
+        self.assertEqual(r15 != "ждёт", R15_ACCEPTED, "Р-15 и R15_ACCEPTED расходятся")
         r16 = re.search(r"(?m)^\| \*\*Р-16\*\* \|.*\| (\S+) \|$", text).group(1)
         for task in ("BL-156", "BL-157"):
             row = re.search(rf"(?m)^\| {task} \|.*$", text).group(0)
             cells = [c.strip() for c in row.strip("|").split("|")]
-            self.assertEqual(cells[4], "review", task)
+            self.assertEqual(cells[4], "deferred (triggered)", task)
             self.assertIn("PR #439", cells[5], task)
-            self.assertIn("остаток", cells[7], task)
+            self.assertTrue(cells[7].startswith("Триггер: ответ владельца на Р-15"), task)
+            self.assertIn(READINESS.name, cells[7], task)
         v433 = load("v433_for_438", ROOT / "scripts/validate_issue_433_gate_types.py")
         self.assertEqual(v433.R16_ACCEPTED, r16 != "ждёт", "Р-16 и R16_ACCEPTED расходятся")
 
@@ -302,8 +355,9 @@ class DecisionsTest(unittest.TestCase):
         text = read(TRACK_B)
         for task in ("BL-156", "BL-157"):
             card = re.search(rf"(?ms)^### {task}\..*?(?=^### )", text).group(0)
-            self.assertIn("**Исполнение.** Issue #438, PR #439", card, task)
-            self.assertIn("Остаток:", card, task)
+            self.assertIn("**Заготовка (до старта).** Issue #438, PR #439 — задача не стартовала", card, task)
+            self.assertIn(READINESS.name, card, task)
+            self.assertNotIn("**Исполнение.**", card, task)
         bl158 = re.search(r"(?ms)^### BL-158\..*?(?=^### )", text).group(0)
         self.assertIn("**Входы из BL-156**", bl158)
         for rule in sorted(BUILDER.EXCLUDED_BASE):
@@ -347,6 +401,22 @@ class AnalysisTest(unittest.TestCase):
         for path, quote in R16_QUOTES.items():
             self.assertIn(flat(quote), flat_text, f"цитата {path} пропала из анализа")
             self.assertIn(flat(quote), flat(read(ROOT / path)), f"цитата не найдена в {path}")
+
+    def test_readiness_check(self):
+        text = self.check_analysis(READINESS, "recommendation")
+        flat_text = flat(text.replace("\\|", "|"))
+        for marker in ("**Гипотеза 1: «BL-156 запущена раньше срока».** Подтверждена.",
+                       "**Гипотеза 2: «предусловия BL-157 не готовы».** Подтверждена.",
+                       "| **Б (выбран)** |", "«Р-15 да»", "«П-П: BL-157 сначала»",
+                       "`R16_ACCEPTED = False`", "2db0ef5"):
+            self.assertIn(flat(marker), flat_text)
+        for number in range(1, 6):
+            self.assertIn(f"| О-{number} |", text)
+        for key, quote in READINESS_QUOTES.items():
+            self.assertIn(flat(quote), flat_text, f"цитата {key} пропала из разбора")
+            self.assertIn(flat(quote), flat(read(ROOT / key.split("#")[0])), f"цитата не найдена в {key}")
+        for path in (REPORT, RFC, KIT, TRACK_B, BACKLOG):
+            self.assertIn(READINESS.name, read(path), f"{path.name} не ссылается на разбор готовности")
 
 
 if __name__ == "__main__":

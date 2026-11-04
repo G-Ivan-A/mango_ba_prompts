@@ -16,4 +16,8 @@ run "лишняя колонка в комплекте" docs/ba-processes/bcreq-
 run "метрика RUN-0080 подправлена" runs/2026/RUN-0080/outputs/metrics.json 'sed -i "0,/\"passed\": 55/s//\"passed\": 56/" runs/2026/RUN-0080/outputs/metrics.json'
 run "Р-16 принят без валидатора 433" pr-ops/BACKLOG.md 'sed -i "/^| \*\*Р-16\*\* |/s/| ждёт |$/| принято |/" pr-ops/BACKLOG.md'
 run "цитата ADR-0003 изменена" docs/adr/0003-creative-mode-governance.md 'sed -i "s/молчание = согласие/молчание - согласие/" docs/adr/0003-creative-mode-governance.md'
+run "Р-15 принят без R15_ACCEPTED" pr-ops/BACKLOG.md 'sed -i "/^| \*\*Р-15\*\* |/s/| ждёт |$/| принято |/" pr-ops/BACKLOG.md'
+run "тип гейта в prompts/ до BL-156" prompts/bcreq-constitution-governance-oneshot.md 'sed -i "s/(гейт, выбор варианта)/(гейт типа \`человек\` или \`гибрид\`, выбор варианта)/" prompts/bcreq-constitution-governance-oneshot.md'
+run "BL-156 возвращена в review" pr-ops/BACKLOG.md 'sed -i "/^| BL-156 |/s/| deferred (triggered) |/| review |/" pr-ops/BACKLOG.md'
+run "DEC-427-04 accepted без Р-15" docs/rfc/2026-11-bcreq-flow-processes-prompts.md 'sed -i "/^| DEC-427-04\. /s/| \`proposed\` | ждёт Р-15 |/| \`accepted\` | Р-15 |/" docs/rfc/2026-11-bcreq-flow-processes-prompts.md'
 git status --short
