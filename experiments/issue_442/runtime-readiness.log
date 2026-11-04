@@ -43,14 +43,14 @@ OK   файлы раздела 2 не менялись — факты столб
 OK   closed: true
 OK   каждая строка узла разобрана (353)
 OK   source_sha256 c5ff76c30ad5… = sha256(спица@7f920e2) c5ff76c30ad5…
-     sha256 текущего docs/taxonomy/products.json = c5ff76c30ad5… (= источник)
+     sha256 текущего docs/taxonomy/products.json = 2ca6fafa85b8… (ДРЕЙФ от источника)
 OK   узлов: runtime 353, спица 353
 OK   множества id совпадают
 OK   уровень и родители совпадают (расхождений 0)
      уровни runtime: {'domain': 7, 'capability': 43, 'feature': 151, 'function': 152}
      функции по классам runtime: {'contact-center': 66, 'voice-ucaas': 51, 'analytics-reporting': 28} без класса: 39
      функций с params: [] — 54
-     catalog_status runtime review, status спицы review
-     дрейф lifecycle (runtime → спица): нет
+     catalog_status runtime review, status спицы accepted
+     дрейф lifecycle (runtime → спица): {('added-for-review', 'accepted'): 74}
 
 # итог: готово

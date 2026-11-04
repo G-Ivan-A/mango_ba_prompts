@@ -1,0 +1,25 @@
+test_cards_link_registry (__main__.Backlog.test_cards_link_registry) ... ok
+test_registry_registered (__main__.Backlog.test_registry_registered) ... ok
+test_main_debt_not_growing (__main__.PinnedLinks.test_main_debt_not_growing) ... ok
+test_one_sha (__main__.PinnedLinks.test_one_sha) ... ok
+test_frontmatter (__main__.Registry.test_frontmatter) ... ok
+test_glossary_stub_anchor (__main__.Registry.test_glossary_stub_anchor) ... ok
+test_inventory_matches_rfc (__main__.Registry.test_inventory_matches_rfc) ... ok
+test_links_resolve (__main__.Registry.test_links_resolve) ... ok
+test_paths_exist_in_clone (__main__.Registry.test_paths_exist_in_clone) ... ok
+test_prompt_line_ts6 (__main__.Registry.test_prompt_line_ts6) ... ok
+test_registry_links_pinned (__main__.Registry.test_registry_links_pinned) ... ok
+test_requirements_match_rfc (__main__.Registry.test_requirements_match_rfc) ... ok
+test_single_sha_point (__main__.Registry.test_single_sha_point) ... ok
+test_stub_block_matches_rfc (__main__.Registry.test_stub_block_matches_rfc) ... ok
+test_stub_per_missing_reference (__main__.Registry.test_stub_per_missing_reference) ... ok
+test_taxonomy_catalog_reference (__main__.Registry.test_taxonomy_catalog_reference) ... ok
+test_closed_and_complete (__main__.RuntimeCatalog.test_closed_and_complete) ... ok
+test_levels_and_parents (__main__.RuntimeCatalog.test_levels_and_parents) ... ok
+test_lifecycle_drift_allowed (__main__.RuntimeCatalog.test_lifecycle_drift_allowed) ... ok
+test_source_sha256 (__main__.RuntimeCatalog.test_source_sha256) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.111s
+
+OK
