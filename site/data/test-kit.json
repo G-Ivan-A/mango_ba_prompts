@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T17:48:14.795Z",
+  "generatedAt": "2026-11-04T18:25:26.007Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/bcreq-run-kit.md",
@@ -7,19 +7,19 @@
     }
   ],
   "kit": {
-    "version": "0.2",
+    "version": "0.3",
     "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md"
   },
   "counts": {
     "steps": 13,
-    "byTest": 1,
-    "published": 12
+    "byTest": 4,
+    "published": 9
   },
   "steps": [
     {
       "number": "1",
       "step": "Ш-0 Конституция",
-      "mode": "published",
+      "mode": "by-test",
       "modeNote": "",
       "params": "",
       "gate": "—",
@@ -45,7 +45,7 @@
     {
       "number": "2",
       "step": "Ш-1 Контекст и глоссарий",
-      "mode": "published",
+      "mode": "by-test",
       "modeNote": "",
       "params": "",
       "gate": "—",
@@ -71,7 +71,7 @@
     {
       "number": "3",
       "step": "Ш-2 Продукты и стейкхолдеры",
-      "mode": "published",
+      "mode": "by-test",
       "modeNote": "",
       "params": "",
       "gate": "Г-IN, гибрид, ключевой",

@@ -824,12 +824,30 @@ async function walkMarkdown(relativeDir) {
   return files;
 }
 
+// Промпты, которые прогон реально выполнял: пути `prompt_ref` из карточки
+// `runs/YYYY/RUN-XXXX/metadata.yaml`, черновик засчитывается опубликованному
+// промпту. Пустое множество — в карточке нет `prompt_ref`, файл прогона
+// сопоставляется по упоминаниям (как до issue #446). Без этого транскрипт
+// RUN-0083 засчитывал проверку всем шагам цепочки, которые Ш-0 лишь называет.
+async function runPromptRefs(file) {
+  const runDir = file.split("/").slice(0, 3).join("/");
+  let card = "";
+  try {
+    card = await read(`${runDir}/metadata.yaml`);
+  } catch {
+    return new Set();
+  }
+  const block = card.match(/^prompt_ref:\n((?:[ \t]+.*\n?)*)/m);
+  const paths = block ? [...block[1].matchAll(/path:\s*(prompts\/[^\s,}]+\.md)/g)].map((m) => m[1]) : [];
+  return new Set(paths.map((ref) => ref.replace(/^prompts\/drafts\//, "prompts/")));
+}
+
 async function loadExperiments() {
   const experiments = [];
   const files = (await walkMarkdown(RUNS_DIR)).filter((file) => /\/(outputs|logs)\//.test(file));
   for (const file of files) {
     const content = await read(file);
-    experiments.push({ name: file, normalized: normalizeForMatch(content) });
+    experiments.push({ name: file, normalized: normalizeForMatch(content), promptRefs: await runPromptRefs(file) });
   }
   return experiments;
 }
@@ -868,6 +886,7 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
   const perPrompt = prompts.map((prompt) => {
     const terms = promptSearchTerms(prompt);
     const testFiles = experiments
+      .filter((experiment) => experiment.promptRefs.size === 0 || experiment.promptRefs.has(prompt.sourcePath))
       .filter((experiment) => terms.some((term) => experiment.normalized.includes(term)))
       .map((experiment) => experiment.name);
     const feedback = feedbackByPrompt.get(prompt.id) || [];

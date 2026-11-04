@@ -29,10 +29,11 @@
   ``TYPING_APPLIED = False``: ``prompt-typing.json`` не применена —
   RUN-0081 измерил A с ней, ядро 9/11 против 10/11 RUN-0079, правка
   перенесена в BL-156б (строки ``before`` на месте, ``after`` нет);
-* бэклог: BL-157 — ``deferred (triggered)`` (BL-157а ``DONE``, BL-157б ждёт
-  BL-156а ``DONE``), BL-156 — ``review`` (этап BL-156а, PR #445), этап
-  BL-156б — ``deferred (triggered)``; карточки — история «Заготовка (до
-  старта)», у BL-156 — «Исполнение» BL-156а; входы BL-158;
+* бэклог: BL-157 — ``review`` (BL-157а ``DONE``, BL-157б ``review`` в
+  PR #447 — набор на сайте и A-IN ``by-test`` по RUN-0083, BL-157в ждёт
+  входа от владельца), BL-156 — ``deferred (triggered)`` (BL-156а ``DONE``,
+  BL-156б и BL-156в ждут Р-03 и бюджета); карточки — история «Заготовка
+  (до старта)», «Исполнение» BL-156а и BL-157б; входы BL-158;
   ``R16_ACCEPTED = False`` в валидаторе #433 до BL-162;
 * отчёт BL-156, анализ Р-16 и разбор готовности BL-156 / BL-157: разделы
   стандарта анализа, вопрос владельцу AS-IS / TODO; цитаты анализа Р-16 и
@@ -448,10 +449,13 @@ class DecisionsTest(unittest.TestCase):
         for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159"):
             self.assertEqual(rows[t][4], "DONE", t)
         # П-П: BL-157 сначала (через BL-157а) — один номер, два этапа в карточке.
-        # PR #439 слит: BL-157а — DONE; BL-157б ждёт BL-156а и BL-111 (issue #444).
-        self.assertEqual(rows["BL-157"][4], "deferred (triggered)")
-        self.assertIn("PR #439", rows["BL-157"][5])
-        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `deferred (triggered)` до BL-156а `DONE`", READINESS.name):
+        # PR #439 слит: BL-157а — DONE; BL-157б — review в PR #447 (RUN-0083, issue #446);
+        # первый прогон BL-111 выделен в BL-157в и ждёт входа от владельца.
+        self.assertEqual(rows["BL-157"][4], "review")
+        for pr in ("PR #439", "PR #447"):
+            self.assertIn(pr, rows["BL-157"][5])
+        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `review` (PR #447)", "RUN-0083",
+                       "BL-157в — `deferred (triggered)`", READINESS.name):
             self.assertIn(marker, rows["BL-157"][7])
         # PR #445 слит: BL-156а — DONE; BL-156б и BL-156в ждут Р-03 и бюджета (RUN-0082, issue #446).
         self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "deferred (triggered)")
@@ -478,7 +482,7 @@ class DecisionsTest(unittest.TestCase):
             if task == "BL-156" and BL156_STARTED:
                 self.assertIn("**Исполнение.** Issue #444, PR #445 (2026-11-04) — этап BL-156а.", card)
             else:
-                self.assertNotIn("**Исполнение.**", card, task)
+                self.assertIn("**Исполнение.** Issue #446, PR #447 (2026-11-04) — этап BL-157б.", card)
         if BL156_STARTED:
             for stage in ("#### BL-156а. ", "#### BL-156б. ", "#### BL-156в. "):
                 self.assertIn(stage, text)
@@ -487,11 +491,14 @@ class DecisionsTest(unittest.TestCase):
             self.assertIn("RUN-0082", bl156b)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
-        self.assertIn("#### BL-157б. Комплект прогона: промпты по тесту и первый прогон", text)
+        for stage in ("#### BL-157б. Комплект прогона: промпты по тесту", "#### BL-157в. Первый прогон BL-111 с комплектом"):
+            self.assertIn(stage, text)
+        bl157b = re.search(r"(?ms)^#### BL-157б\..*?(?=^#{3,4} )", text).group(0)
+        self.assertIn("RUN-0083", bl157b)
         kit = read(KIT)
-        self.assertIn("**Статус: действует в режиме v0.1 (BL-157а).**", kit)
-        self.assertNotIn("не применять.**", kit)
-        self.assertIn("`prompt_set.mode: published`", kit)
+        self.assertIn("**Статус: действует; A-IN — по тесту (BL-157б).**", kit)
+        self.assertNotIn("не применять", kit)
+        self.assertIn("`prompt_set.mode: by-test`", kit)
         bl158 = re.search(r"(?ms)^### BL-158\..*?(?=^### )", text).group(0)
         self.assertIn("**Входы из BL-156**", bl158)
         for rule in sorted(BUILDER.EXCLUDED_BASE):
