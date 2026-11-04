@@ -228,7 +228,7 @@ class BaseStandard(unittest.TestCase):
     def test_runtime_registry_by_link(self):
         block = section(self.body, "### 3.4. Источники, цитаты и справочники runtime")
         self.assertIn("(bcreq-runtime-references.md#2-перечень)", block)
-        for code in ("И-7", "ТС-1", "ТС-5", "ТС-6", "ТС-7", "З-2…З-4"):
+        for code in ("И-7", "ТС-1", "ТС-5", "ТС-6", "ТС-7", "только З-2"):
             self.assertIn(code, block)
         self.assertIsNone(SHA.search(self.body), "SHA — только в разделе 1 реестра (ТС-5)")
 

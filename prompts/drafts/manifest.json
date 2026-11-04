@@ -1,12 +1,12 @@
 {
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
-  "build_date": "2026-11-03",
-  "runtime_sha": "2db0ef5106883b01b096fe8c4af50334899e9fe0",
+  "build_date": "2026-11-04",
+  "runtime_sha": "f31dcde33f0bc120244128faab98fc0162e45701",
   "standards": {
-    "base": "standards/bcreq-prompt-base-standard.md@0.1.2",
+    "base": "standards/bcreq-prompt-base-standard.md@0.1.3",
     "profiles": "standards/bcreq-prompt-profiles.md@0.1.1",
-    "runtime_references": "standards/bcreq-runtime-references.md@0.3",
+    "runtime_references": "standards/bcreq-runtime-references.md@0.4",
     "catalog": "standards/bcreq-manual-classes/catalog.json@0.2"
   },
   "excluded_base_rules": {
@@ -39,8 +39,8 @@
         "Ш-0"
       ],
       "based_on": "prompts/bcreq-constitution-governance-oneshot.md",
-      "based_on_sha256": "97edd140a9d1b1ba1f99d1041dddfd2694b51142a6bf478b66a2934f602fff08",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "a66739d381f19b65524a78c79df98b2e99c589e6483a66be898c338c4ab9ef11",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
         "VERIFY",
@@ -74,8 +74,8 @@
         "Ш-1"
       ],
       "based_on": "prompts/bcreq-context-understanding-stepwise.md",
-      "based_on_sha256": "edce6a0a48b3609c7ff697649af605c15f80001ee8564040d2f9eedf1bdaf730",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "b261b84bd5277af7a59ba07efb4d7ffa497fc4304ab1bed2af1e4aa599e96c4d",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
         "EXTRACT",
@@ -97,9 +97,7 @@
         "И-6",
         "И-7"
       ],
-      "stubs": [
-        "З-4"
-      ],
+      "stubs": [],
       "gates": [
         "G-self"
       ],
@@ -118,8 +116,8 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "32a6c6ba1a0dd64ab0a91a3f7b0eccdc0a2f26255bce4432916ce4de9882c882",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "128b7b252704c33f2860af656183d78271972265ec0198bcb0eb389ff227cff6",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "EXTRACT",
         "ANALYZE"
@@ -156,8 +154,8 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "886a86baccff425e930a1da4189ae372b6b2b39e332abe33268e361a871f1fc7",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "f94bde79a7813caf6864ffddf357ce400b8e333a311bcf79ac2275fe2e47f23b",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -191,8 +189,8 @@
         "Ш-4"
       ],
       "based_on": "prompts/bcreq-nfr-documentation-stepwise.md",
-      "based_on_sha256": "3f54a1db2bfc6bdc8c583696b7a53ff4dbe4b0c67cce30693c49bd44de42576a",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "515cc8482341012cbaa8155f8eef545c71cc94e209427dc2401cc90791189fad",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -225,8 +223,8 @@
         "Ш-8"
       ],
       "based_on": "prompts/bcreq-uc-modeling-stepwise.md",
-      "based_on_sha256": "b6dd216b4305c8488d51c9c9ef9018e4f826c91a35b8469c51a20447c8b50744",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "71438c76a7d45cdc70e954b6a766695a19cad966ab0b009666437bfc900aff4a",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -261,8 +259,8 @@
         "Ш-6"
       ],
       "based_on": "prompts/bcreq-orr-solution-design-stepwise.md",
-      "based_on_sha256": "795bc6e6795dfebc6e9c28832963a3b59f16e7adb9c12ed2c4dfbafca609e3f0",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "1b4e66304cd607d6feb15709778c6f6fca9860b1f6a848d95bfe251222df7c6c",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -293,8 +291,8 @@
         "Ш-7"
       ],
       "based_on": "prompts/bcreq-constraints-documentation-stepwise.md",
-      "based_on_sha256": "4399ca27b2a216e27630ddf0a72253ee493b2aacfc6378ac769adba2028388f9",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "9b8beda2d26bf1af0a8a4f8ad2b674b1640a6885a7cf8c32517036e293974608",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -324,8 +322,8 @@
         "Ш-9"
       ],
       "based_on": "prompts/bcreq-extra-risk-analysis-stepwise.md",
-      "based_on_sha256": "854c7634fe586b38a0c14c9ce81a2d8fd013f092c3b5b22d049c7d0573f0ed0f",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "ee2ddfaa21f5ba340b2701937d3a3700a31d27322af0d82953379fa589e02b68",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -356,8 +354,8 @@
         "Ш-В"
       ],
       "based_on": "prompts/bcreq-review-validation-oneshot.md",
-      "based_on_sha256": "61e457cabe9d2ebe6ca4d2b0390943a1d019915bcc4241aec9691b7e4d35fae7",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "ANALYZE",
         "VERIFY",
@@ -377,9 +375,7 @@
         "И-7",
         "И-8"
       ],
-      "stubs": [
-        "З-3"
-      ],
+      "stubs": [],
       "gates": [
         "G-self",
         "G-mach",
@@ -438,8 +434,8 @@
         "Ш-С"
       ],
       "based_on": "prompts/bcreq-scenarios-modeling-oneshot.md",
-      "based_on_sha256": "55e221a3f91fceb2f198717ba6c9121aa843f098f7da486bf93c8b13ccd3d0b5",
-      "runtime_main_to_sha": 3,
+      "based_on_sha256": "40df2a50be1914f8f988903e401b7a51e8d92d12dc3d9e6ae28ebfd403a2b744",
+      "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
       ],

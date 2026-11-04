@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """BCREQ stage metadata and actual catalog filtering regressions (issue 393)."""
+import importlib.util
 import json
 import hashlib
 from pathlib import Path
@@ -8,6 +9,9 @@ import re
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
+bl156a_spec = importlib.util.spec_from_file_location('bl156a_prompt_changes', ROOT / 'experiments/issue_444/bl156a_prompt_changes.py')
+bl156a = importlib.util.module_from_spec(bl156a_spec)
+bl156a_spec.loader.exec_module(bl156a)
 STAGES = [
     "Приём и контекст",
     "Требования и предварительное согласование",
@@ -38,6 +42,8 @@ class StageTests(unittest.TestCase):
         self.assertEqual(set(baseline), {p.name for p in (ROOT / "prompts").glob("bcreq-*.md")})
         for filename, expected in baseline.items():
             text = (ROOT / "prompts" / filename).read_text()
+            # Issue 444 (BL-156а): revert typed gates and pinned runtime links.
+            text = bl156a.revert(f"prompts/{filename}", text)
             # Preserve the original metadata/body assertion across the additive
             # issue 395 retrieval contract, verified independently byte for byte.
             text = re.sub(r'\n<!-- issue-395: runtime-fallback -->\n.*?<!-- /issue-395: runtime-fallback -->\n', '', text, flags=re.S)
