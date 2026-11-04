@@ -99,3 +99,17 @@ d7082caae7f2409edbacc4d50b0de2bd698c485b
 ## checks PR #437, #440 (слиты без запусков CI)
 437 checks=0
 440 checks=0
+
+# обновление 2026-11-04T11:11:52Z (после слияния upstream/main e2190bf2)
+## spoke PRs
+#439 OPEN merged=- MERGEABLE draft=false docs(issue-438): проверка готовности BL-156/BL-157 — заготовка (Р-15 ждёт); RUN-0080; Р-16 — перепроверка, А+
+#440 MERGED merged=2026-11-04T10:25:00Z UNKNOWN draft=false Issue #434: Р-17 — accept 74 portal taxonomy nodes (review → accepted)
+#441 MERGED merged=2026-11-04T10:51:34Z UNKNOWN draft=false docs(issue-434): цепочка бэклога Р-17 → BL-163, конфликт с main решён
+#443 OPEN merged=- MERGEABLE draft=true Issue #442: BL-163 — registry pinned to runtime catalog (2db0ef51), И-2 «Да», З-1 retired
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+## G-Ivan-A/mango-ba-ai-runtime#17
+OPEN draft=false merged=- head=fa499e14b2c696018c6c148691d2c6800852d766
+## runtime issues (open)
+## spoke main
+e2190bf2b4244f94dd3ababb3f708f12d4fb1242

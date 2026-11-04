@@ -45,3 +45,25 @@ FAILED (failures=1)
 FAIL: test_measured_texts_are_current (__main__.Run0080Test.test_measured_texts_are_current)
 AssertionError: 0 != 1 : [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.
 ## Ш-2 (bcreq-products-impact-analysis-stepwise.md): ссылок 2db0ef51 — 8, строк блока заглушки З-1 — 0
+
+# повтор 2026-11-04T11:12:40Z: голова #439 43ad3d07 поверх ветки #443 fd1e8418 (после слияния upstream/main e2190bf2); конфликты CHANGELOG.md, rfc-register.md, BACKLOG.md, backlog-ba-model.md взяты из #439
+## validate_issue_430_runtime_refs
+FAILED (failures=62, skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_434_runtime_tasks
+FAILED (failures=1, skipped=2)
+FAIL: test_backlog — артефакт пробного слияния: BACKLOG.md взят из #439 (BL-163 TODO); при пересборке #439 строка BL-163 берётся из #443 (review)
+## validate_issue_438_step_prompts
+FAILED (errors=1)
+IndexError в load_registry (таблица «Снятые заглушки»)
+## та же однострочная правка сборщика + пересборка
+записано: 12 черновиков и манифест; изменено 13
+## validate_issue_430_runtime_refs
+OK (skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_438_step_prompts
+FAILED (failures=1)
+FAIL: test_measured_texts_are_current — RUN-0080 измерен на текстах реестра 0.2 (решение за #439)
+## Ш-2: ссылок 2db0ef51 — 8; ссылок 5d8c201 в prompts/drafts — 0
