@@ -93,7 +93,7 @@ related_artifacts:
 | BL-150, BL-153, BL-154, BL-155 | BL-151, BL-156 | `review` (PR #431 слит) | формально нет: слито, но не `DONE` | [BACKLOG](../../pr-ops/BACKLOG.md) |
 | BL-151, BL-152 | BL-156 | `review` (PR #435 слит) | формально нет | там же |
 | BL-156 | BL-157 | `deferred (triggered)` | **нет** | там же |
-| BL-163 | BL-156 по RFC-RT-001 | `deferred (triggered)`, триггер «РТ-1 слита в runtime» сработал | **нет** (не исполнена) | там же |
+| BL-163 | BL-156 по RFC-RT-001 | `TODO` (переведена из `deferred (triggered)` в PR #441: триггер «РТ-1 слита в runtime» сработал) | **нет** (не исполнена) | там же |
 | РТ-4, РТ-3 | BL-156 по RFC-RT-001 | задач в runtime нет | **нет** | runtime, issues |
 | Р-01, BL-101…BL-103 | BL-111 (условие «Готово» BL-157) | ждёт / `TODO` | **нет** | [BACKLOG](../../pr-ops/BACKLOG.md) |
 | Р-03 | граница golden set Ш-В | ждёт | **нет** | там же |
