@@ -573,7 +573,7 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 
 | ID | Что | Где | Статус |
 | --- | --- | --- | --- |
-| Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 (статус `review`) целиком как таксономию runtime, с `lifecycle` и разрешением привязки к `added-for-review` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md) | ждёт |
+| Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 (статус `review`) целиком как таксономию runtime, с `lifecycle` и разрешением привязки к `added-for-review` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md) | принято ([PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6625256153)) |
 | BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | deferred (triggered): РТ-1 слита |
 | BL-164 | Индустриальная таксономия для оценки тендерного ТЗ: сопоставление каталога Mango с TM Forum, UNSPSC, ОКПД 2 и функциями внешних продуктов (подраздел 3.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) | deferred (triggered): старт BL-133 или `P-08` в срезе |
 
