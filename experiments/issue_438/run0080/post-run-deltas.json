@@ -1,0 +1,111 @@
+{
+  "purpose": "Правки текста черновика Ш-В после замера RUN-0080. Валидатор #438 откатывает каждую ровно один раз и сверяет хэш с измеренным (metrics.json, D.prompt_sha256). Поле behavior: none — строка ссылок или метаданных, поведение промпта не меняется; reverted-to-v0.1 — строка возвращена к опубликованному тексту v0.1, поведение может отличаться, и замер RUN-0080 относится к редакции с этой строкой. Любая другая правка черновика требует нового прогона golden set.",
+  "file": "prompts/drafts/bcreq-review-validation-oneshot.md",
+  "deltas": [
+    {
+      "measured": "runtime_sha: 5d8c201511fd730a596c9f9b4588470a7b01edc9\n",
+      "current": "runtime_sha: 2db0ef5106883b01b096fe8c4af50334899e9fe0\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/taxonomy/products.yaml).\n",
+      "current": "Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/products.yaml).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/docs/kb/README.md),\n",
+      "current": "В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/docs/kb/README.md),\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/docs/kb/MAP.json).\n",
+      "current": "затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/docs/kb/MAP.json).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.1,\n",
+      "current": "из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.2,\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.\n",
+      "current": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.3.\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "- **БС-21.** Где справочника нет, промпт **ДОЛЖЕН** содержать блок заглушки раздела 4 реестра (З-1…З-4); заглушка — известный пробел, а не дефект\n",
+      "current": "- **БС-21.** Где справочника нет, промпт **ДОЛЖЕН** содержать блок заглушки раздела 4 реестра (З-2…З-4; З-1 снята BL-163); заглушка — известный пробел, а не дефект\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "Справочники runtime закреплены на коммите `5d8c201511fd730a596c9f9b4588470a7b01edc9`. Если ты не\n",
+      "current": "Справочники runtime закреплены на коммите `2db0ef5106883b01b096fe8c4af50334899e9fe0`. Если ты не\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/templates/bcreq-skeleton.md).\n",
+      "current": "- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/templates/bcreq-skeleton.md).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "- **И-5 Golden set по классу продуктовой таксономии:** [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/golden/cases.yaml).\n",
+      "current": "- **И-5 Golden set по классу продуктовой таксономии:** [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/golden/cases.yaml).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/taxonomy/source-tiers.yaml).\n",
+      "current": "- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/source-tiers.yaml).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "- **И-8 Чек-лист гейта G-human:** [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/evaluation/g-human-checklist.md).\n",
+      "current": "- **И-8 Чек-лист гейта G-human:** [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/evaluation/g-human-checklist.md).\n",
+      "behavior": "none",
+      "reason": "Слияние main (PR #443, issue #442, BL-163): реестр справочников runtime 0.2 → 0.3, срез runtime 5d8c201 → 2db0ef51, базовый стандарт 0.1.1 → 0.1.2, З-1 снята; сборщик пересобрал черновик. Меняются только версии и SHA закрепления ссылок, судья RUN-0080 ссылки не открывал.",
+      "since": "PR #439, слияние main 2026-11-04"
+    },
+    {
+      "measured": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.1.1.",
+      "current": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.",
+      "reason": "Слияние main (PR #437, issue #434): реестр справочников runtime 0.1.1 → 0.2; сборщик пишет версию источника в строку «Источники блока». Это строка ссылок, а не правило: состав правил, профилей, операций и заглушек не изменился.",
+      "since": "merge upstream/main d7082caa, 2026-11-04",
+      "behavior": "none"
+    },
+    {
+      "measured": "based_on_sha256: ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+      "current": "based_on_sha256: 61e457cabe9d2ebe6ca4d2b0390943a1d019915bcc4241aec9691b7e4d35fae7",
+      "behavior": "none",
+      "reason": "Хэш источника v0.1 в метаданных черновика: опубликованный prompts/bcreq-review-validation-oneshot.md возвращён к main (следующая правка).",
+      "since": "проверка готовности BL-156/BL-157, 2026-11-04"
+    },
+    {
+      "measured": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "current": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "behavior": "reverted-to-v0.1",
+      "reason": "Тип гейта в 14 опубликованных промптах — часть BL-156, а BL-156 стартовала раньше срока (Р-15 не принято, отдельной постановки нет; docs/analysis/2026-11-04-bl-156-157-readiness-check.md). Правка prompts/ откатана, черновик собран из текста v0.1 main. При старте BL-156 правка возвращается по experiments/issue_438/prompt-typing.json, и черновик снова совпадает с измеренным.",
+      "since": "проверка готовности BL-156/BL-157, 2026-11-04"
+    }
+  ]
+}

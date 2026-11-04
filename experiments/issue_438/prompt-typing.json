@@ -1,0 +1,113 @@
+{
+  "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
+  "task": "BL-156",
+  "status": "заготовка, не применена: Р-15 ждёт ответа владельца, BL-156 — deferred (triggered); см. docs/analysis/2026-11-04-bl-156-157-readiness-check.md",
+  "reason": "Тип гейта в тексте промпта по словарю потока (standards/bcreq-flow-glossary.md, раздел 3.3): пункт BL-159 по 14 промптам выполняется в BL-156, правка prompts/ вне BL-156 запрещена DEC-427-11 (pr-ops/backlog-ba-model.md, карточка BL-156). Применять после «Р-15 да» и отдельной постановки BL-156: подставить after вместо before в каждом файле и обновить регрессии сохранности промптов (#391, #393, #395) и категорию P валидатора #433. RUN-0080 измерял версию A с этими подстановками (validate_issue_438_step_prompts.py восстанавливает её из v0.1).",
+  "substitutions": [
+    {
+      "path": "prompts/bcreq-constitution-governance-oneshot.md",
+      "line": "CB-0.5",
+      "before": "| CB-0.5 | Нужно решение человека (гейт, выбор варианта). |",
+      "after": "| CB-0.5 | Нужно решение человека (гейт типа `человек` или `гибрид`, выбор варианта). |",
+      "in_runtime_fallback_block": false
+    },
+    {
+      "path": "prompts/bcreq-constitution-governance-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-constraints-documentation-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-context-understanding-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-core-documentation-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-fr-documentation-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-in-understanding-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-nfr-documentation-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-orr-solution-design-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-products-impact-analysis-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-review-validation-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-scenarios-modeling-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-uc-modeling-stepwise.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    },
+    {
+      "path": "prompts/bcreq-work-solution-design-oneshot.md",
+      "line": "отказ fallback",
+      "before": "объявить критерий выполненным или заменить отсутствующее решение человека.\n",
+      "after": "объявить критерий выполненным или заменить отсутствующее решение человека\nна гейте типа `человек` или `гибрид`.\n",
+      "in_runtime_fallback_block": true
+    }
+  ]
+}

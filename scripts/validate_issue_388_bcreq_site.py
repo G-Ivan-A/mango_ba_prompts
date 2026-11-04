@@ -12,7 +12,9 @@
    ``mango-<имя>``, ``status: draft``); Промпт 0 содержит защиты АД-1…АД-7;
    остальные начинаются блоком «Пройдено / Текущий / Рекомендуемый
    следующий» и содержат «Состояние BCREQ»; ссылки — абсолютные URL.
-2. Подкаталогов в ``prompts/`` нет, кроме ``archive/``; 18 заменённых
+2. Подкаталогов в ``prompts/`` нет, кроме ``archive/`` и ``drafts/``
+   (черновики по CONTRIBUTING.md; промпты шагов «по тесту» BL-156, issue
+   #438 — сайт их не публикует); 18 заменённых
    промптов лежат в архиве со ``status: archived`` и баннером «Архив
    (issue #388)», в основном каталоге их нет.
 3. Парольный вход: ``gate.js`` подключён во всех HTML-страницах сайта; запись
@@ -146,8 +148,9 @@ def check_prompts() -> list[str]:
 def check_archive() -> list[str]:
     errors = []
     subdirs = sorted(p.name for p in PROMPTS.iterdir() if p.is_dir())
-    if subdirs != ["archive"]:
-        errors.append(f"prompts/: допустим только подкаталог archive/, найдено {subdirs}")
+    # drafts/ — граница черновиков из CONTRIBUTING.md (BL-156, issue #438).
+    if [d for d in subdirs if d not in ("archive", "drafts")] or "archive" not in subdirs:
+        errors.append(f"prompts/: допустимы только подкаталоги archive/ и drafts/, найдено {subdirs}")
     for name in ARCHIVED_PROMPTS:
         if (PROMPTS / f"{name}.md").exists():
             errors.append(f"prompts/{name}.md: заменённый промпт остался в основном каталоге")

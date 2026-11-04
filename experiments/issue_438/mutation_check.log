@@ -1,0 +1,69 @@
+caught: v0.1 Ш-В изменён без пересборки
+caught: черновик правлен руками
+caught: лишний файл в drafts
+caught: лишняя колонка в комплекте
+caught: метрика RUN-0080 подправлена
+caught: Р-16 принят без валидатора 433
+caught: цитата ADR-0003 изменена
+caught: Р-15 принят без R15_ACCEPTED
+caught: тип гейта в prompts/ до BL-156
+caught: BL-156 возвращена в review
+caught: DEC-427-04 accepted без Р-15
+ M CHANGELOG.md
+ M docs/analysis/2026-11-03-bl-156-step-prompts-report.md
+M  docs/ba-processes/bcreq-manual-process.md
+ M docs/ba-processes/bcreq-run-kit.md
+ M docs/rfc/2026-11-bcreq-flow-processes-prompts.md
+ M docs/rfc/rfc-register.md
+ M experiments/issue_438/generate-pages-data.log
+ M experiments/issue_438/mutation_check.log
+ M experiments/issue_438/mutation_check.sh
+ M experiments/issue_438/prompt-typing.json
+ M experiments/issue_438/run0080/post-run-deltas.json
+ M experiments/issue_438/task-statement.md
+ M experiments/issue_438/validate-full.log
+ M pr-ops/BACKLOG.md
+ M pr-ops/backlog-ba-model.md
+ M pr-ops/backlog-repository.md
+M  prompts/bcreq-constitution-governance-oneshot.md
+M  prompts/bcreq-constraints-documentation-stepwise.md
+M  prompts/bcreq-context-understanding-stepwise.md
+M  prompts/bcreq-core-documentation-oneshot.md
+M  prompts/bcreq-extra-risk-analysis-stepwise.md
+M  prompts/bcreq-fr-documentation-stepwise.md
+M  prompts/bcreq-in-understanding-oneshot.md
+M  prompts/bcreq-nfr-documentation-stepwise.md
+M  prompts/bcreq-orr-solution-design-stepwise.md
+M  prompts/bcreq-products-impact-analysis-stepwise.md
+M  prompts/bcreq-review-validation-oneshot.md
+M  prompts/bcreq-scenarios-modeling-oneshot.md
+M  prompts/bcreq-uc-modeling-stepwise.md
+M  prompts/bcreq-work-solution-design-oneshot.md
+ M prompts/drafts/bcreq-constitution-governance-oneshot.md
+ M prompts/drafts/bcreq-constraints-documentation-stepwise.md
+ M prompts/drafts/bcreq-context-understanding-stepwise.md
+ M prompts/drafts/bcreq-extra-risk-analysis-stepwise.md
+ M prompts/drafts/bcreq-fr-documentation-stepwise.md
+ M prompts/drafts/bcreq-nfr-documentation-stepwise.md
+ M prompts/drafts/bcreq-orr-solution-design-stepwise.md
+ M prompts/drafts/bcreq-products-impact-analysis-stepwise.md
+ M prompts/drafts/bcreq-review-validation-oneshot.md
+ M prompts/drafts/bcreq-scenarios-modeling-oneshot.md
+ M prompts/drafts/bcreq-uc-modeling-stepwise.md
+ M prompts/drafts/manifest.json
+ M scripts/generate-pages-data.mjs
+M  scripts/test_issue_391_lessons.py
+M  scripts/test_issue_393_site.py
+M  scripts/test_issue_395_bcreq.py
+M  scripts/validate_issue_427_r13_acceptance.py
+ M scripts/validate_issue_433_gate_types.py
+ M scripts/validate_issue_438_step_prompts.py
+ M site/data/bcreq-flow.json
+ M site/data/checks.json
+ M site/data/patterns.json
+ M site/data/process-tree.json
+ M site/data/processes.json
+ M site/data/prompts.json
+ M site/data/roadmap.json
+ M site/data/stats.json
+?? docs/analysis/2026-11-04-bl-156-157-readiness-check.md

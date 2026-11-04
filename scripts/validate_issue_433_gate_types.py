@@ -106,6 +106,9 @@ ALLOW = {
     ("standards/bcreq-runtime-references.md", "G-human"): ("O", "файл runtime g-human-checklist.md"),
     ("standards/bcreq-runtime-references.md", "| ТС-3 |"): ("O", "ссылка на g-human-checklist.md"),
     ("docs/rfc/2026-11-bcreq-flow-processes-prompts.md", "g-human-checklist.md"): ("O", "файл runtime"),
+    # Черновик Ш-В (BL-156, #438): имя справочника И-8 из реестра runtime, раздел 2;
+    # текст черновика измерен RUN-0080 и меняется только пересборкой.
+    ("prompts/drafts/bcreq-review-validation-oneshot.md", "Чек-лист гейта G-human"): ("O", "имя И-8 из реестра runtime"),
     ("standards/bcreq-flow-glossary.md", "G-self → G-mach → G-human"): ("O", "порядок гейтов узла runtime"),
     ("docs/rfc/2026-10-standards-page-rfc.md", "ждёт решения человека на гейтах. | план |"):
         ("O", "порождаемое приложение: источник experiments/issue_420/site-v2/content.py, "
@@ -128,8 +131,10 @@ ALLOW = {
     ("docs/rfc/2026-10-repository-modernization.md", "решение человека"): ("H", "исторический RFC"),
     ("docs/rfc/2026-10-repository-modernization.md", "узел ожидания решения человека"): ("H", "принятый RFC, требования ADR-017"),
     ("docs/rfc/2026-10-repository-modernization.md", "запись решения человека"): ("H", "принятый RFC"),
-    # P — промпты; DEC-427-11 запрещает правку вне BL-156.
+    # P — промпты; DEC-427-11 запрещает правку вне BL-156. Заготовка правки —
+    # experiments/issue_438/prompt-typing.json (PR #439); BL-156 ждёт Р-15.
     ("prompts/bcreq-constitution-governance-oneshot.md", "| CB-0.5 |"): ("P", "BL-156"),
+    ("prompts/drafts/bcreq-constitution-governance-oneshot.md", "| CB-0.5 |"): ("P", "BL-156"),
     ("prompts/", "заменить отсутствующее решение человека"): ("P", "BL-156"),
 }
 CATEGORIES = {"A", "N", "T", "O", "H", "P"}
