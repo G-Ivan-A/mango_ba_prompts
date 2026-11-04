@@ -447,13 +447,18 @@ class DecisionsTest(unittest.TestCase):
         for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159"):
             self.assertEqual(rows[t][4], "DONE", t)
         # П-П: BL-157 сначала (через BL-157а) — один номер, два этапа в карточке.
-        self.assertEqual(rows["BL-157"][4], "in-progress")
+        # PR #439 слит: BL-157а — DONE; BL-157б ждёт BL-156а и BL-111 (issue #444).
+        self.assertEqual(rows["BL-157"][4], "deferred (triggered)")
         self.assertIn("PR #439", rows["BL-157"][5])
-        for marker in ("BL-157а — `review` (PR #439)", "BL-157б — `deferred (triggered)` до BL-156 `DONE`", READINESS.name):
+        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `deferred (triggered)` до BL-156а `DONE`", READINESS.name):
             self.assertIn(marker, rows["BL-157"][7])
         self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "review")
         self.assertIn("BL-157 (этап BL-157а)", rows["BL-156"][3])
         self.assertIn(READINESS.name, rows["BL-156"][7])
+        if BL156_STARTED:
+            self.assertIn("PR #445", rows["BL-156"][5])
+            for marker in ("BL-156а — `review` (PR #445)", "RUN-0081", "BL-156б — `deferred (triggered)`"):
+                self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
         v433 = load("v433_for_438", ROOT / "scripts/validate_issue_433_gate_types.py")
@@ -465,8 +470,16 @@ class DecisionsTest(unittest.TestCase):
             card = re.search(rf"(?ms)^### {task}\..*?(?=^#### |^### )", text).group(0)
             self.assertIn("**Заготовка (до старта).** Issue #438, PR #439 — ", card, task)
             self.assertIn(READINESS.name, card, task)
-            self.assertNotIn("**Исполнение.**", card, task)
             self.assertIn(OWNER_COMMENT, card, task)
+            if task == "BL-156" and BL156_STARTED:
+                self.assertIn("**Исполнение.** Issue #444, PR #445 (2026-11-04) — этап BL-156а.", card)
+            else:
+                self.assertNotIn("**Исполнение.**", card, task)
+        if BL156_STARTED:
+            for stage in ("#### BL-156а. ", "#### BL-156б. "):
+                self.assertIn(stage, text)
+            bl156b = re.search(r"(?ms)^#### BL-156б\..*?(?=^#{3,4} )", text).group(0)
+            self.assertIn("prompt-typing.json", bl156b)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         self.assertIn("#### BL-157б. Комплект прогона: промпты по тесту и первый прогон", text)
