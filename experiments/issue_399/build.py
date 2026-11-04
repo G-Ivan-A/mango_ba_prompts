@@ -266,9 +266,13 @@ def build():
         relevant = [m['url'] for m in maps if any(t['node_id'] == cap_id for t in m['taxonomy_matches'])]
         node['portal_locator_urls'] = relevant[:3] if node['level'] != 'Domain' else []
         node['availability'] = 'not-established-by-taxonomy'
-        node['lifecycle'] = 'retained' if node['origin'] == 'inherited' else 'added-for-review'
+        node['lifecycle'] = 'retained' if node['origin'] == 'inherited' else 'accepted'  # Р-17: 74 portal nodes accepted by owner 2026-11-03
     dump(OUT / 'products.json', {'schema_version': '1.0', 'catalog_version': '2026-10-28.1',
-         'status': 'review', 'levels': LEVELS, 'binding_level': 'Atomic Function',
+         'status': 'accepted',
+         'acceptance': {'decision': 'Р-17', 'accepted_nodes': sum(n['origin'] != 'inherited' for n in nodes),
+                        'previous_lifecycle': 'added-for-review', 'approved_by': 'G-Ivan-A', 'approved_at': '2026-11-03',
+                        'approval_url': 'https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609'},
+         'levels': LEVELS, 'binding_level': 'Atomic Function',
          'contract_url': 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md',
          'source_urls': [baseline['source_url'], RUNTIME],
          'runtime_compatibility': {'analytics-reporting': 'analytics', 'contact-center': 'contact-center',
