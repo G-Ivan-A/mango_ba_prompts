@@ -104,6 +104,10 @@ SECTIONS = (
     "### 13.2. Решение по PR #17 и сверка с комментарием к PR #21",
     "### 13.3. Что исполнено",
     "### 13.4. Задачи бэклога из решений владельца",
+    "## 14. Поправка 0.5: исполнение BL-157б (issue #446)",
+    "### 14.1. Тестовый набор и RUN-0083",
+    "### 14.2. Пробелы runtime (RUN-0083)",
+    "### 14.3. РТ-7 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)",
     "## Related Artifacts",
 )
 # Тела задач: (раздел RFC, заголовок задачи).
@@ -112,6 +116,7 @@ BODIES = (
     ("## 6. ", "ХАБ-1. "),
     ("## 7. ", "РТ-3. "),
     ("## 12. ", "РТ-6. "),
+    ("## 14. ", "РТ-7. "),
 )
 # Функции, которые эталоны runtime называют в markdown (Ф-7).
 GOLDEN_MD_FUNCTIONS = (
@@ -454,7 +459,7 @@ class CatalogNumbers(unittest.TestCase):
 class Links(unittest.TestCase):
     def test_runtime_links_pinned_to_registry(self):
         # Разделы 1–11 — факты среза проверки; поправка 0.3 — срез BL-163;
-        # поправка 0.4 (issue #444) — текущий срез реестра.
+        # поправки 0.4 (issue #444) и 0.5 (issue #446) — текущий срез реестра.
         sha = registry_sha()
         body = text(RFC)
         found = RUNTIME_LINK.findall(body)
@@ -468,6 +473,10 @@ class Links(unittest.TestCase):
         current = RUNTIME_LINK.findall(rfc_section("## 13. "))
         self.assertTrue(current)
         self.assertEqual({ref for ref, _ in current}, {sha}, "раздел 13 — по SHA реестра")
+        # Поправка 0.5 (issue #446): РТ-7 поставлена на том же срезе реестра.
+        rt7 = RUNTIME_LINK.findall(rfc_section("## 14. "))
+        self.assertTrue(rt7)
+        self.assertEqual({ref for ref, _ in rt7}, {sha}, "раздел 14 — по SHA реестра")
 
     def test_relative_links_and_anchors(self):
         for target in LINK_RE.findall(strip_fences(text(RFC))):
