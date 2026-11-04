@@ -18,6 +18,7 @@ from __future__ import annotations
 import hashlib
 import json
 import random
+import re
 import shutil
 import sys
 from pathlib import Path
@@ -49,7 +50,11 @@ def blind(work: Path) -> int:
     key = {"X": order[0], "Y": order[1], "seed": SEED}
     (work / "judge").mkdir(exist_ok=True)
     for label in ("X", "Y"):
-        shutil.copyfile(work / f"out/{key[label]}-transcript.md", work / f"judge/{label}.md")
+        # Маскировка: заголовок и пути к промптам в журнале исполнителя называют плечо.
+        body = (work / f"out/{key[label]}-transcript.md").read_text(encoding="utf-8")
+        body = re.sub(r"\A[^\n]*", "# RUN-0083 — транскрипт (SIM-1106)", body, count=1)
+        body = re.sub(r"/tmp/run83/[PT]/", "/tmp/run83/<prompt-dir>/", body)
+        (work / f"judge/{label}.md").write_text(body, encoding="utf-8")
     dump(work / "judge/key.json", key)
     print("blinded", "X" if key["X"] == "P" else "Y", "= P")
     return 0
@@ -88,10 +93,20 @@ def score(work: Path) -> int:
 def fixate(work: Path) -> int:
     for sub in ("inputs", "outputs", "logs", "feedback"):
         (RUN / sub).mkdir(parents=True, exist_ok=True)
-    for name in ("input-pack.md", "ba-script.md"):
-        shutil.copyfile(HERE / name, RUN / f"inputs/{name}")
-    for name in ("executor-instruction.md", "judge-instruction.md", "preregistration.md"):
-        shutil.copyfile(HERE / name, RUN / f"logs/{name}")
+    # Относительные ссылки пересчитываются под новое место файла в `runs/`.
+    links = {
+        "input-pack.md": {"](../../../runs/2026/RUN-0078/": "](../../RUN-0078/"},
+        "preregistration.md": {"](input-pack.md)": "](../inputs/input-pack.md)",
+                               "](ba-script.md)": "](../inputs/ba-script.md)"},
+    }
+    for sub, names in (("inputs", ("input-pack.md", "ba-script.md")),
+                       ("logs", ("executor-instruction.md", "judge-instruction.md", "preregistration.md"))):
+        for name in names:
+            body = (HERE / name).read_text(encoding="utf-8")
+            for old, new in links.get(name, {}).items():
+                assert old in body, (name, old)
+                body = body.replace(old, new)
+            (RUN / sub / name).write_text(body, encoding="utf-8")
     for arm in ("P", "T"):
         shutil.copyfile(work / f"out/{arm}-transcript.md", RUN / f"outputs/{arm}-transcript.md")
     shutil.copyfile(work / "judge/scores.json", RUN / "outputs/judge-scores.json")
