@@ -285,6 +285,8 @@ def load_registry():
     for line in stubs_section.splitlines():
         if re.match(r"^\| З-\d \|", line):
             c = cells(line)
+            if len(c) < 6:  # таблица снятых заглушек (BL-163): id, справочник, строка, снята, почему
+                continue
             stubs.append({"id": c[0], "ref": c[1].split()[0], "condition": absolutize(c[2], REGISTRY), "steps": c[3], "name": c[4].strip("`"), "task": c[5]})
     ts6 = re.search(r"```text\n(.*?)\n```", section(body, "## 5. Строка для промпта (ТС-6)"), re.S).group(1)
     ts6 = ts6.replace("<SHA из раздела 1>", f"`{sha}`")

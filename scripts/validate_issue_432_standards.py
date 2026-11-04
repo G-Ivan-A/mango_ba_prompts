@@ -355,7 +355,7 @@ class Records(unittest.TestCase):
         for task in ("BL-151", "BL-152"):
             with self.subTest(task=task):
                 row = re.search(rf"^\| {task} \|.*$", backlog, re.M).group(0)
-                self.assertIn(f"| review | {ISSUE}, {PR} |", row)
+                self.assertRegex(row, rf"\| (review|DONE) \| {re.escape(ISSUE)}, {re.escape(PR)} \|")  # DONE — PR #439, «закрыть слитые»
                 card = text(TRACK_B).split(f"### {task}. ", 1)[1].split("\n### ", 1)[0]
                 self.assertIn("**Исполнение.** Issue #432, PR #435", card)
         self.assertRegex(backlog, r"(?m)^\| BL-160 \| \[Валидаторы процесса: чистые функции для гейта `код`\]")

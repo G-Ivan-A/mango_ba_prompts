@@ -187,7 +187,7 @@ related_artifacts:
 - [Бэклог](../../pr-ops/BACKLOG.md) и
   [карточки трека Б](../../pr-ops/backlog-ba-model.md#bl-156-промпты-шагов-потока-из-стандартов-по-тесту)
 - [Инструкция бэклога](../../pr-ops/backlog-instruction.md)
-- [RFC #427, поправка 0.6 (проект)](../rfc/2026-11-bcreq-flow-processes-prompts.md#поправка-06-промпты-шагов-проект-ждёт-р-15-issue-438)
+- [RFC #427, поправка 0.6 (проект)](../rfc/2026-11-bcreq-flow-processes-prompts.md#поправка-06-промпты-шагов-принята-р-15-issue-438)
 - [RFC-RT-001](../rfc/2026-11-runtime-product-catalog-golden-set.md)
 - [Отчёт BL-156](2026-11-03-bl-156-step-prompts-report.md)
 - [Анализ Р-16](2026-11-03-silence-consent-gates-r16.md)

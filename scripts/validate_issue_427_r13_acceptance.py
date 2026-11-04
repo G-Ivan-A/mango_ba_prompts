@@ -33,12 +33,15 @@ TRACK_B = ROOT / "pr-ops/backlog-ba-model.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 
 COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813"
-PENDING = {"04": "Р-15", "12": "Р-15"}
+PENDING = {}
+# Р-15 принято в PR #439 (issue #438).
+R15_COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/439#issuecomment-6630337995"
+R15 = {"04": "Р-15", "12": "Р-15"}
 # Приняты позже отдельным решением владельца: Р-14 — issue #432.
 R14_ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/432"
 LATER = {"07": "Р-14", "08": "Р-14"}
 DECISIONS = [f"{n:02d}" for n in range(1, 14)]
-ACCEPTED = [n for n in DECISIONS if n not in PENDING and n not in LATER]
+ACCEPTED = [n for n in DECISIONS if n not in PENDING and n not in LATER and n not in R15]
 OPENED_TASKS = ("BL-125", "BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155")
 HEADING = "## Статус принятия (Р-13)"
 
@@ -78,7 +81,7 @@ class RfcAccepted(unittest.TestCase):
         # Редакция 0.3 — принятие Р-13; поправки после приёмки (0.4 — #430,
         # тип гейта; 0.5 — #432, Р-14) статус RFC не меняют; 0.5.1 — #433,
         # типизация гейтов BL-159.
-        self.assertIn(self.fm.get("version"), ("0.3", "0.4", "0.5", "0.5.1"))
+        self.assertIn(self.fm.get("version"), ("0.3", "0.4", "0.5", "0.5.1", "0.6"))
 
     def test_acceptance_section(self):
         block = section(self.body, HEADING)
@@ -93,6 +96,8 @@ class RfcAccepted(unittest.TestCase):
             self.assertRegex(block, rf"(?m)^\| DEC-427-{n}\. .*\| ждёт {decision} \|$")
         for n, decision in LATER.items():
             self.assertRegex(block, rf"(?m)^\| DEC-427-{n}\. .*\| {decision} \(\[#432\]\({re.escape(R14_ISSUE)}\)\) \|$")
+        for n, decision in R15.items():
+            self.assertRegex(block, rf"(?m)^\| DEC-427-{n}\. .*\| {decision} \(\[PR #439\]\({re.escape(R15_COMMENT)}\)\) \|$")
 
     def test_summary_points_to_acceptance(self):
         bluf = section(self.body, "## Summary / BLUF")
@@ -114,6 +119,8 @@ class RegisterAccepted(unittest.TestCase):
                     self.assertEqual(status, "`proposed`")
                 elif n in LATER:
                     self.assertEqual(status, f"`accepted` ([{LATER[n]}]({R14_ISSUE}))")
+                elif n in R15:
+                    self.assertEqual(status, f"`accepted` ([{R15[n]}]({R15_COMMENT}))")
                 else:
                     self.assertEqual(status, f"`accepted` ([Р-13]({COMMENT}))")
 
@@ -139,9 +146,9 @@ class BacklogAccepted(unittest.TestCase):
     def test_r13_accepted(self):
         self.assertEqual(self.decision_status("Р-13"), f"принято ([PR #428]({COMMENT}))")
 
-    def test_r14_accepted_r15_pending(self):
+    def test_r14_r15_accepted(self):
         self.assertEqual(self.decision_status("Р-14"), f"принято ([issue #432]({R14_ISSUE}))")
-        self.assertEqual(self.decision_status("Р-15"), "ждёт")
+        self.assertEqual(self.decision_status("Р-15"), f"принято ([PR #439]({R15_COMMENT}))")
 
     def test_cards_mark_decision(self):
         for task in OPENED_TASKS:

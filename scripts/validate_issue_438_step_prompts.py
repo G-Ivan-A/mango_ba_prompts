@@ -59,11 +59,14 @@ POST_RUN_DELTAS = ROOT / "experiments/issue_438/run0080/post-run-deltas.json"
 PROMPT_TYPING = ROOT / "experiments/issue_438/prompt-typing.json"
 READINESS = ROOT / "docs/analysis/2026-11-04-bl-156-157-readiness-check.md"
 
-#: Р-15 принято владельцем явно («Р-15 да»). Пока False: поправка 0.6 RFC —
-#: проект, BL-156/157 не стартуют, ``prompts/`` не меняются. Переключать
-#: вместе с RFC, бэклогом, ``PENDING`` валидатора #427 и применением
-#: ``prompt-typing.json``.
-R15_ACCEPTED = False
+#: Р-15 принято владельцем явно: «Р-15 да. … П-П: BL-157 сначала (через
+#: BL-157а). Р-16 да (А+).» (комментарий к PR #439). Поправка 0.6 RFC
+#: принята, RFC v0.6, DEC-427-04 и DEC-427-12 ``accepted``.
+R15_ACCEPTED = True
+OWNER_COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/439#issuecomment-6630337995"
+#: BL-156 стартовала (отдельная постановка после BL-157а). Пока False:
+#: ``prompts/`` совпадают с v0.1, ``prompt-typing.json`` не применена.
+BL156_STARTED = False
 
 CRITERIA = ("K1", "K2", "K3", "K4", "K5", "K6")
 ANALYSIS_SECTIONS = ("## Summary / BLUF", "## Context / Scope", "## Findings / Options",
@@ -314,16 +317,18 @@ class KitTest(unittest.TestCase):
 class DecisionsTest(unittest.TestCase):
     def test_rfc_amendment_06(self):
         text = read(RFC)
-        self.assertFalse(R15_ACCEPTED, "Р-15 принято — обновите проверку под принятую поправку 0.6")
-        self.assertRegex(text, r"(?m)^version: 0\.5\.1$")
-        self.assertIn("### Поправка 0.6: промпты шагов (проект, ждёт Р-15; issue #438)", text)
-        self.assertIn("**Статус поправки: проект.**", text)
+        self.assertTrue(R15_ACCEPTED)
+        self.assertRegex(text, r"(?m)^version: 0\.6$")
+        self.assertIn("### Поправка 0.6: промпты шагов (принята Р-15; issue #438)", text)
+        self.assertIn("**Статус поправки: принята.**", text)
+        self.assertIn(OWNER_COMMENT, text)
         for dec in ("DEC-427-04", "DEC-427-12"):
-            self.assertRegex(text, rf"(?m)^\| {dec}\. [^|]+\| `proposed` \| ждёт Р-15 \|$")
+            self.assertRegex(text, rf"(?m)^\| {dec}\. [^|]+\| `accepted` \| Р-15 \(\[PR #439\]\({re.escape(OWNER_COMMENT)}\)\) \|$")
 
     def test_r13_validator_pending(self):
         v427 = load("v427_for_438", ROOT / "scripts/validate_issue_427_r13_acceptance.py")
         pending = {n for n, d in v427.PENDING.items() if d == "Р-15"}
+        self.assertEqual(set(v427.R15), {"04", "12"})
         self.assertEqual(pending, set() if R15_ACCEPTED else {"04", "12"})
 
     def test_published_prompts_untouched(self):
@@ -332,32 +337,50 @@ class DecisionsTest(unittest.TestCase):
         self.assertEqual(len({s["path"] for s in typing["substitutions"]}), 14)
         for sub in typing["substitutions"]:
             text = read(ROOT / sub["path"])
-            expected, absent = ("after", "before") if R15_ACCEPTED else ("before", "after")
+            expected, absent = ("after", "before") if BL156_STARTED else ("before", "after")
             self.assertEqual(text.count(sub[expected]), 1, f"{sub['path']} {sub['line']}")
             self.assertEqual(text.count(sub[absent]), 0, f"{sub['path']} {sub['line']}")
 
     def test_backlog_rows(self):
         text = read(BACKLOG)
-        r15 = re.search(r"(?m)^\| \*\*Р-15\*\* \|.*\| (\S+) \|$", text).group(1)
+        r15 = re.search(r"(?m)^\| \*\*Р-15\*\* \|.*\| (\S+)[^|]* \|$", text).group(1)
         self.assertEqual(r15 != "ждёт", R15_ACCEPTED, "Р-15 и R15_ACCEPTED расходятся")
-        r16 = re.search(r"(?m)^\| \*\*Р-16\*\* \|.*\| (\S+) \|$", text).group(1)
-        for task in ("BL-156", "BL-157"):
-            row = re.search(rf"(?m)^\| {task} \|.*$", text).group(0)
-            cells = [c.strip() for c in row.strip("|").split("|")]
-            self.assertEqual(cells[4], "deferred (triggered)", task)
-            self.assertIn("PR #439", cells[5], task)
-            self.assertTrue(cells[7].startswith("Триггер: ответ владельца на Р-15"), task)
-            self.assertIn(READINESS.name, cells[7], task)
+        self.assertIn(OWNER_COMMENT, re.search(r"(?m)^\| \*\*Р-15\*\* \|.*$", text).group(0))
+        r16 = re.search(r"(?m)^\| \*\*Р-16\*\* \|.*$", text).group(0)
+        self.assertIn("принято, вариант А+", r16)
+        rows = {t: [c.strip() for c in re.search(rf"(?m)^\| {t} \|.*$", text).group(0).strip("|").split("|")]
+                for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159",
+                          "BL-156", "BL-157", "BL-162")}
+        for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159"):
+            self.assertEqual(rows[t][4], "DONE", t)
+        # П-П: BL-157 сначала (через BL-157а) — один номер, два этапа в карточке.
+        self.assertEqual(rows["BL-157"][4], "in-progress")
+        self.assertIn("PR #439", rows["BL-157"][5])
+        for marker in ("BL-157а — `review` (PR #439)", "BL-157б — `deferred (triggered)` до BL-156 `DONE`", READINESS.name):
+            self.assertIn(marker, rows["BL-157"][7])
+        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "review")
+        self.assertIn("BL-157 (этап BL-157а)", rows["BL-156"][3])
+        self.assertIn(READINESS.name, rows["BL-156"][7])
+        self.assertEqual(rows["BL-162"][4], "TODO")
+        # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
         v433 = load("v433_for_438", ROOT / "scripts/validate_issue_433_gate_types.py")
-        self.assertEqual(v433.R16_ACCEPTED, r16 != "ждёт", "Р-16 и R16_ACCEPTED расходятся")
+        self.assertFalse(v433.R16_ACCEPTED, "R16_ACCEPTED = True — только с исполнением BL-162")
 
     def test_cards(self):
         text = read(TRACK_B)
         for task in ("BL-156", "BL-157"):
-            card = re.search(rf"(?ms)^### {task}\..*?(?=^### )", text).group(0)
-            self.assertIn("**Заготовка (до старта).** Issue #438, PR #439 — задача не стартовала", card, task)
+            card = re.search(rf"(?ms)^### {task}\..*?(?=^#### |^### )", text).group(0)
+            self.assertIn("**Заготовка (до старта).** Issue #438, PR #439 — ", card, task)
             self.assertIn(READINESS.name, card, task)
             self.assertNotIn("**Исполнение.**", card, task)
+            self.assertIn(OWNER_COMMENT, card, task)
+        card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
+        self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
+        self.assertIn("#### BL-157б. Комплект прогона: промпты по тесту и первый прогон", text)
+        kit = read(KIT)
+        self.assertIn("**Статус: действует в режиме v0.1 (BL-157а).**", kit)
+        self.assertNotIn("не применять.**", kit)
+        self.assertIn("`prompt_set.mode: published`", kit)
         bl158 = re.search(r"(?ms)^### BL-158\..*?(?=^### )", text).group(0)
         self.assertIn("**Входы из BL-156**", bl158)
         for rule in sorted(BUILDER.EXCLUDED_BASE):

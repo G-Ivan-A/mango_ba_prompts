@@ -2,11 +2,11 @@
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
   "build_date": "2026-11-03",
-  "runtime_sha": "5d8c201511fd730a596c9f9b4588470a7b01edc9",
+  "runtime_sha": "2db0ef5106883b01b096fe8c4af50334899e9fe0",
   "standards": {
-    "base": "standards/bcreq-prompt-base-standard.md@0.1.1",
+    "base": "standards/bcreq-prompt-base-standard.md@0.1.2",
     "profiles": "standards/bcreq-prompt-profiles.md@0.1.1",
-    "runtime_references": "standards/bcreq-runtime-references.md@0.2",
+    "runtime_references": "standards/bcreq-runtime-references.md@0.3",
     "catalog": "standards/bcreq-manual-classes/catalog.json@0.2"
   },
   "excluded_base_rules": {
@@ -136,9 +136,7 @@
         "И-2",
         "И-7"
       ],
-      "stubs": [
-        "З-1"
-      ],
+      "stubs": [],
       "gates": [
         "G-self",
         "Г-IN"
