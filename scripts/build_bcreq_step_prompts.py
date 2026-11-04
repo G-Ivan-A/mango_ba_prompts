@@ -482,9 +482,11 @@ def build_all():
         ]
         header = f"\n> **{MODE_LINE}** Черновик BL-156 (issue #438): "
         if name == RELEASE_FILE:
+            # Суффиксы «-by-test» и «(по тесту)» добавляет build_frontmatter
+            # (до issue #446 они удваивались у заглушки).
             fm = "\n".join([
-                f"id: mango-{RELEASE_FILE}-by-test",
-                'title: "BCREQ Ш-Р: выпуск, заглушка (по тесту)"',
+                f"id: mango-{RELEASE_FILE}",
+                'title: "BCREQ Ш-Р: выпуск, заглушка"',
                 "status: draft",
                 "version: 0.1",
                 f"updated: {BUILD_DATE}",

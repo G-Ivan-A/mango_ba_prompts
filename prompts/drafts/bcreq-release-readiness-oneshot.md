@@ -1,6 +1,6 @@
 ---
-id: mango-bcreq-release-readiness-oneshot-by-test-by-test
-title: "BCREQ Ш-Р: выпуск, заглушка (по тесту) (по тесту)"
+id: mango-bcreq-release-readiness-oneshot-by-test
+title: "BCREQ Ш-Р: выпуск, заглушка (по тесту)"
 status: draft
 version: 0.1
 updated: 2026-11-04

@@ -7,6 +7,7 @@ const state = {
   patterns: null,
   processTree: null,
   bcreqFlow: null,
+  testKit: null,
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -40,6 +41,8 @@ const nodes = {
   processGrid: document.querySelector("#process-grid"),
   bcreqRules: document.querySelector("#bcreq-rules"),
   bcreqSteps: document.querySelector("#bcreq-steps"),
+  testKitSummary: document.querySelector("#bcreq-testkit-summary"),
+  testKitSteps: document.querySelector("#bcreq-testkit-steps"),
   bcreqRoute: document.querySelector("#bcreq-route"),
   siteVersion: document.querySelectorAll("[data-site-version]"),
   bcreqApprovalLead: document.querySelector("#bcreq-approval-lead"),
@@ -1303,7 +1306,7 @@ async function init() {
   try {
     // Данные каталога загружаются только после ввода пароля (site/gate.js).
     await (window.siteGate?.ready ?? Promise.resolve());
-    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow] = await Promise.all([
+    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow, testKit] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
@@ -1312,6 +1315,7 @@ async function init() {
       fetch("data/patterns.json").then((response) => response.json()),
       fetch("data/process-tree.json").then((response) => response.json()),
       fetch("data/bcreq-flow.json").then((response) => response.json()),
+      fetch("data/test-kit.json").then((response) => response.json()),
     ]);
 
     state.promptsData = promptsData;
@@ -1323,6 +1327,7 @@ async function init() {
     state.patterns = patterns;
     state.processTree = processTree;
     state.bcreqFlow = bcreqFlow;
+    state.testKit = testKit;
 
     renderSuggestions();
     renderMetrics();
@@ -1333,6 +1338,7 @@ async function init() {
     renderRoadmap();
     renderProcesses();
     renderBcreqFlow();
+    renderTestKit();
     renderProcessTree();
     renderPatterns();
     renderSiteVersion();
@@ -1434,6 +1440,132 @@ async function copyPrompt(button) {
     showToast("Не удалось скопировать");
   }
 }
+
+// Тестовый набор этапа 1 (issue #446, BL-157б): 13 шагов комплекта прогона.
+// Режим шага — колонка «Режим в тесте» комплекта: published — промпт v0.1
+// из prompts/, by-test — черновик «по тесту» из prompts/drafts/.
+// Данные — data/test-kit.json.
+const TEST_KIT_MODE_LABELS = {
+  published: "v0.1",
+  "by-test": "черновик «по тесту»",
+};
+
+function testKitVariant(step, kind) {
+  return kind === "draft" ? step.draft : step.published;
+}
+
+function testKitCopyButton(step, index, kind, primary) {
+  const variant = testKitVariant(step, kind);
+  const label = kind === "draft" ? "по тесту" : "v0.1";
+  const button = el("button", primary ? "copy-icon" : "testkit-alt", primary ? "⧉" : `⧉ ${label}`);
+  button.type = "button";
+  button.dataset.testkitIndex = String(index);
+  button.dataset.testkitKind = kind;
+  button.title = `Скопировать ${variant.file} (${label})`;
+  button.setAttribute("aria-label", `Скопировать промпт шага ${step.step}: ${label}`);
+  return button;
+}
+
+function testKitStep(step, index) {
+  const primaryKind = step.mode === "by-test" ? "draft" : "published";
+  const primary = testKitVariant(step, primaryKind);
+  const item = el("li", "bcreq-step testkit-step");
+  item.dataset.mode = step.mode;
+  item.id = `bcreq-testkit-step-${index + 1}`;
+
+  const head = el("div", "bcreq-step-head");
+  const number = el("span", "bcreq-step-number", step.number);
+  number.setAttribute("aria-hidden", "true");
+  const titleWrap = el("div", "bcreq-step-title-wrap");
+  titleWrap.append(el("h3", "bcreq-step-title", step.step));
+  const tags = el("div", "tag-row");
+  const mode = el("span", "tag", TEST_KIT_MODE_LABELS[step.mode] + (step.modeNote ? ` · ${step.modeNote}` : ""));
+  mode.dataset.kind = "testkit-mode";
+  mode.dataset.mode = step.mode;
+  tags.append(mode);
+  titleWrap.append(tags);
+  head.append(number, titleWrap, testKitCopyButton(step, index, primaryKind, true));
+
+  const prompt = el("p", "bcreq-step-prompt");
+  const link = el("a", "", primary.title || primary.file);
+  link.title = primary.file;
+  link.href = primary.url;
+  link.target = "_blank";
+  link.rel = "noreferrer";
+  prompt.append(el("span", "bcreq-field-label", "Промпт"), link);
+  if (step.params) {
+    prompt.append(el("code", "bcreq-params", step.params));
+  }
+  item.append(head, prompt);
+
+  const otherKind = primaryKind === "draft" ? "published" : "draft";
+  if (testKitVariant(step, otherKind)) {
+    const other = el("p", "testkit-other");
+    other.append(
+      el("span", "bcreq-field-label", "Для сравнения"),
+      testKitCopyButton(step, index, otherKind, false),
+    );
+    item.append(other);
+  }
+  item.append(el("code", "testkit-sha", `sha256 ${primary.sha256.slice(0, 16)}`));
+  if (step.gate && step.gate !== "—") {
+    item.append(el("p", "bcreq-gate", `⛳ ${step.gate}`));
+  }
+  return item;
+}
+
+function renderTestKit() {
+  const kit = state.testKit;
+  if (!kit || !nodes.testKitSteps) {
+    return;
+  }
+  const source = el("a", "", `комплект прогона v${kit.kit.version}`);
+  source.href = kit.kit.url;
+  source.target = "_blank";
+  source.rel = "noreferrer";
+  nodes.testKitSummary.replaceChildren(
+    document.createTextNode(
+      `Шагов: ${kit.counts.steps}; черновик «по тесту»: ${kit.counts.byTest}; v0.1: ${kit.counts.published}. Источник — `,
+    ),
+    source,
+    document.createTextNode("."),
+  );
+  nodes.testKitSteps.replaceChildren(...kit.steps.map(testKitStep));
+}
+
+async function copyTestKitPrompt(button) {
+  const step = state.testKit?.steps[Number(button.dataset.testkitIndex)];
+  const variant = step && testKitVariant(step, button.dataset.testkitKind);
+  if (!variant) {
+    showToast("Промпт не найден в тестовом наборе");
+    return;
+  }
+  // Текст v0.1 — из каталога (архивный промпт), черновика — из test-kit.json.
+  const body = button.dataset.testkitKind === "draft"
+    ? variant.body
+    : state.prompts.find((item) => item.id === variant.id)?.body;
+  if (!body) {
+    showToast(`Промпт ${variant.id} не найден в каталоге`);
+    return;
+  }
+  try {
+    await copyText(`<!-- ${variant.id} -->\n\n${body}`);
+    button.dataset.copied = "true";
+    showToast(`${variant.file} скопирован`);
+    window.setTimeout(() => {
+      button.dataset.copied = "false";
+    }, 1400);
+  } catch (error) {
+    showToast("Не удалось скопировать");
+  }
+}
+
+nodes.testKitSteps?.addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-testkit-index]");
+  if (button) {
+    await copyTestKitPrompt(button);
+  }
+});
 
 nodes.bcreqSteps?.addEventListener("click", async (event) => {
   const button = event.target.closest("[data-copy-id]");

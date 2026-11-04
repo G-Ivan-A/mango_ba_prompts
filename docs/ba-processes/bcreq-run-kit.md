@@ -47,21 +47,21 @@ BL-157б; до него комплект не проверен практико�
 BL-231, они ждут BL-156 `DONE` и решение Р-09. До них ссылка на процесс —
 этот файл и [ручной процесс](bcreq-manual-process.md).
 
-| № | Шаг | Промпт для копирования | Черновик «по тесту» (BL-156) | Ключ урока (`prompts` в `lessons.json`) | Гейт после шага |
-| --- | --- | --- | --- | --- | --- |
-| 1 | Ш-0 Конституция | [`bcreq-constitution-governance-oneshot`](../../prompts/bcreq-constitution-governance-oneshot.md) | [`drafts/bcreq-constitution-governance-oneshot`](../../prompts/drafts/bcreq-constitution-governance-oneshot.md) | `constitution` | — |
-| 2 | Ш-1 Контекст и глоссарий | [`bcreq-context-understanding-stepwise`](../../prompts/bcreq-context-understanding-stepwise.md) | [`drafts/bcreq-context-understanding-stepwise`](../../prompts/drafts/bcreq-context-understanding-stepwise.md) | `context` | — |
-| 3 | Ш-2 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise`](../../prompts/bcreq-products-impact-analysis-stepwise.md) | [`drafts/bcreq-products-impact-analysis-stepwise`](../../prompts/drafts/bcreq-products-impact-analysis-stepwise.md) | `products` | Г-IN, `гибрид`, ключевой |
-| 4 | Ш-3 ФТ | [`bcreq-fr-documentation-stepwise`](../../prompts/bcreq-fr-documentation-stepwise.md) | [`drafts/bcreq-fr-documentation-stepwise`](../../prompts/drafts/bcreq-fr-documentation-stepwise.md) | `fr` | — |
-| 5 | Ш-4 НФТ | [`bcreq-nfr-documentation-stepwise`](../../prompts/bcreq-nfr-documentation-stepwise.md) | [`drafts/bcreq-nfr-documentation-stepwise`](../../prompts/drafts/bcreq-nfr-documentation-stepwise.md) | `nfr` | — |
-| 6 | Ш-5 UC, прогон 1 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | Г-С1, `человек`, ключевой |
-| 7 | Ш-6 ОРР | [`bcreq-orr-solution-design-stepwise`](../../prompts/bcreq-orr-solution-design-stepwise.md) | [`drafts/bcreq-orr-solution-design-stepwise`](../../prompts/drafts/bcreq-orr-solution-design-stepwise.md) | `orr` | — |
-| 8 | Ш-7 Ограничения | [`bcreq-constraints-documentation-stepwise`](../../prompts/bcreq-constraints-documentation-stepwise.md) | [`drafts/bcreq-constraints-documentation-stepwise`](../../prompts/drafts/bcreq-constraints-documentation-stepwise.md) | `constraints` | — |
-| 9 | Ш-8 UC, прогон 2 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | — |
-| 10 | Ш-9 Риски и приёмка | [`bcreq-extra-risk-analysis-stepwise`](../../prompts/bcreq-extra-risk-analysis-stepwise.md) | [`drafts/bcreq-extra-risk-analysis-stepwise`](../../prompts/drafts/bcreq-extra-risk-analysis-stepwise.md) | `risk` | — |
-| 11 | Ш-В Валидация второй ролью | [`bcreq-review-validation-oneshot`](../../prompts/bcreq-review-validation-oneshot.md) | [`drafts/bcreq-review-validation-oneshot`](../../prompts/drafts/bcreq-review-validation-oneshot.md) | `review` | Г-W, `человек`, ключевой |
-| 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | [заглушка Ш-Р](../../prompts/drafts/bcreq-release-readiness-oneshot.md) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
-| — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | [`drafts/bcreq-scenarios-modeling-oneshot`](../../prompts/drafts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
+| № | Шаг | Промпт для копирования | Режим в тесте | Черновик «по тесту» (BL-156) | Ключ урока (`prompts` в `lessons.json`) | Гейт после шага |
+| --- | --- | --- | --- | --- | --- | --- |
+| 1 | Ш-0 Конституция | [`bcreq-constitution-governance-oneshot`](../../prompts/bcreq-constitution-governance-oneshot.md) | `published` | [`drafts/bcreq-constitution-governance-oneshot`](../../prompts/drafts/bcreq-constitution-governance-oneshot.md) | `constitution` | — |
+| 2 | Ш-1 Контекст и глоссарий | [`bcreq-context-understanding-stepwise`](../../prompts/bcreq-context-understanding-stepwise.md) | `published` | [`drafts/bcreq-context-understanding-stepwise`](../../prompts/drafts/bcreq-context-understanding-stepwise.md) | `context` | — |
+| 3 | Ш-2 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise`](../../prompts/bcreq-products-impact-analysis-stepwise.md) | `published` | [`drafts/bcreq-products-impact-analysis-stepwise`](../../prompts/drafts/bcreq-products-impact-analysis-stepwise.md) | `products` | Г-IN, `гибрид`, ключевой |
+| 4 | Ш-3 ФТ | [`bcreq-fr-documentation-stepwise`](../../prompts/bcreq-fr-documentation-stepwise.md) | `published` | [`drafts/bcreq-fr-documentation-stepwise`](../../prompts/drafts/bcreq-fr-documentation-stepwise.md) | `fr` | — |
+| 5 | Ш-4 НФТ | [`bcreq-nfr-documentation-stepwise`](../../prompts/bcreq-nfr-documentation-stepwise.md) | `published` | [`drafts/bcreq-nfr-documentation-stepwise`](../../prompts/drafts/bcreq-nfr-documentation-stepwise.md) | `nfr` | — |
+| 6 | Ш-5 UC, прогон 1 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | `published` | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | Г-С1, `человек`, ключевой |
+| 7 | Ш-6 ОРР | [`bcreq-orr-solution-design-stepwise`](../../prompts/bcreq-orr-solution-design-stepwise.md) | `published` | [`drafts/bcreq-orr-solution-design-stepwise`](../../prompts/drafts/bcreq-orr-solution-design-stepwise.md) | `orr` | — |
+| 8 | Ш-7 Ограничения | [`bcreq-constraints-documentation-stepwise`](../../prompts/bcreq-constraints-documentation-stepwise.md) | `published` | [`drafts/bcreq-constraints-documentation-stepwise`](../../prompts/drafts/bcreq-constraints-documentation-stepwise.md) | `constraints` | — |
+| 9 | Ш-8 UC, прогон 2 | [`bcreq-uc-modeling-stepwise`](../../prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | `published` | [`drafts/bcreq-uc-modeling-stepwise`](../../prompts/drafts/bcreq-uc-modeling-stepwise.md) | `uc` | — |
+| 10 | Ш-9 Риски и приёмка | [`bcreq-extra-risk-analysis-stepwise`](../../prompts/bcreq-extra-risk-analysis-stepwise.md) | `published` | [`drafts/bcreq-extra-risk-analysis-stepwise`](../../prompts/drafts/bcreq-extra-risk-analysis-stepwise.md) | `risk` | — |
+| 11 | Ш-В Валидация второй ролью | [`bcreq-review-validation-oneshot`](../../prompts/bcreq-review-validation-oneshot.md) | `published` | [`drafts/bcreq-review-validation-oneshot`](../../prompts/drafts/bcreq-review-validation-oneshot.md) | `review` | Г-W, `человек`, ключевой |
+| 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | `by-test` (заглушка) | [заглушка Ш-Р](../../prompts/drafts/bcreq-release-readiness-oneshot.md) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
+| — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | `published` | [`drafts/bcreq-scenarios-modeling-oneshot`](../../prompts/drafts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
 
 Колонка «Промпт для копирования» — опубликованные промпты v0.1 из
 `prompts/`. Колонка «Черновик «по тесту»» — промпты шагов BL-156 из

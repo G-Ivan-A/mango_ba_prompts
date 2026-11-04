@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:05:18.393Z",
+  "generatedAt": "2026-11-04T17:48:14.742Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -26,15 +26,19 @@
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
     },
     {
+      "path": "docs/ba-processes/bcreq-run-kit.md",
+      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md"
+    },
+    {
       "path": "standards/bcreq-manual-classes/catalog.json",
       "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json"
     }
   ],
   "siteVersion": {
-    "version": "2.1.3",
+    "version": "2.2.0",
     "released": "2026-11-04",
-    "issue": 444,
-    "basis": "PR #445: ссылки на runtime по SHA, RUN-0081",
+    "issue": 446,
+    "basis": "PR #447: тестовый набор этапа 1, RUN-0082, RUN-0083",
     "changelog": "CHANGELOG.md"
   },
   "totals": {
