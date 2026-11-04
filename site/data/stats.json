@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:02:12.035Z",
+  "generatedAt": "2026-11-04T20:10:17.748Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,10 +35,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.2.0",
+    "version": "2.3.0",
     "released": "2026-11-04",
-    "issue": 446,
-    "basis": "PR #447: тестовый набор этапа 1, RUN-0082, RUN-0083",
+    "issue": 448,
+    "basis": "PR #449: карточки шагов для БА и подстраницы «Процессов», Ш-В v0.2 (RUN-0084)",
     "changelog": "CHANGELOG.md"
   },
   "totals": {

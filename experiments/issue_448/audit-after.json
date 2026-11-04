@@ -1,0 +1,226 @@
+{
+  "label": "after",
+  "desktop": {
+    "cards": 13,
+    "visibleCards": 3,
+    "withPrepare": 13,
+    "withActions": 13,
+    "withResult": 13,
+    "tabs": [
+      "1. Старт и разделы 1–23",
+      "2. Разделы 3–4 и согласование с Заказчиком3",
+      "3. Разделы 5–84",
+      "4. Проверка, выпуск и сценарии по запросу3",
+      "Полный процесс (39 классов)",
+      "Согласование"
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "copiedFirstLine": "<!-- mango-bcreq-constitution-governance-oneshot-by-test · Ш-0 Конституция -->",
+    "tab:g1": {
+      "hash": "#processes?view=g1",
+      "visibleCards": [
+        "1",
+        "2",
+        "3"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g2": {
+      "hash": "#processes?view=g2",
+      "visibleCards": [
+        "4",
+        "5",
+        "6"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g3": {
+      "hash": "#processes?view=g3",
+      "visibleCards": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g4": {
+      "hash": "#processes?view=g4",
+      "visibleCards": [
+        "11",
+        "12",
+        "—"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:manual": {
+      "hash": "#processes?view=manual",
+      "visibleCards": [],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-manual"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:approval": {
+      "hash": "#processes?view=approval",
+      "visibleCards": [],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-approval"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "deepLinkStep5": {
+      "visibleSections": [
+        "process-nav",
+        "bcreq-manual"
+      ],
+      "focused": "bcreq-step-5"
+    },
+    "errors": [
+      "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+      "Failed to load resource: net::ERR_FAILED",
+      "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  },
+  "mobile": {
+    "cards": 13,
+    "visibleCards": 3,
+    "withPrepare": 13,
+    "withActions": 13,
+    "withResult": 13,
+    "tabs": [
+      "1. Старт и разделы 1–23",
+      "2. Разделы 3–4 и согласование с Заказчиком3",
+      "3. Разделы 5–84",
+      "4. Проверка, выпуск и сценарии по запросу3",
+      "Полный процесс (39 классов)",
+      "Согласование"
+    ],
+    "horizontalOverflow": false,
+    "overflowing": [],
+    "copiedFirstLine": "<!-- mango-bcreq-constitution-governance-oneshot-by-test · Ш-0 Конституция -->",
+    "tab:g1": {
+      "hash": "#processes?view=g1",
+      "visibleCards": [
+        "1",
+        "2",
+        "3"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g2": {
+      "hash": "#processes?view=g2",
+      "visibleCards": [
+        "4",
+        "5",
+        "6"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g3": {
+      "hash": "#processes?view=g3",
+      "visibleCards": [
+        "7",
+        "8",
+        "9",
+        "10"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:g4": {
+      "hash": "#processes?view=g4",
+      "visibleCards": [
+        "11",
+        "12",
+        "—"
+      ],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-testkit"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:manual": {
+      "hash": "#processes?view=manual",
+      "visibleCards": [],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-manual"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": []
+    },
+    "tab:approval": {
+      "hash": "#processes?view=approval",
+      "visibleCards": [],
+      "visibleSections": [
+        "process-nav",
+        "bcreq-approval"
+      ],
+      "horizontalOverflow": false,
+      "overflowing": [
+        "table#bcreq-returns.bcreq-table right=436",
+        "thead. right=436",
+        "tr. right=436",
+        "th. right=436",
+        "tbody. right=436",
+        "tr. right=436"
+      ]
+    },
+    "deepLinkStep5": {
+      "visibleSections": [
+        "process-nav",
+        "bcreq-manual"
+      ],
+      "focused": "bcreq-step-5"
+    },
+    "errors": [
+      "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+      "Failed to load resource: net::ERR_FAILED",
+      "requestfailed https://widgets.mango-office.ru/widgets/mango.js",
+      "Failed to load resource: net::ERR_FAILED"
+    ]
+  }
+}

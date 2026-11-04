@@ -43,6 +43,8 @@ const nodes = {
   bcreqSteps: document.querySelector("#bcreq-steps"),
   testKitSummary: document.querySelector("#bcreq-testkit-summary"),
   testKitSteps: document.querySelector("#bcreq-testkit-steps"),
+  processTabs: document.querySelector("#process-tabs"),
+  processHelp: document.querySelector("#process-help"),
   bcreqRoute: document.querySelector("#bcreq-route"),
   siteVersion: document.querySelectorAll("[data-site-version]"),
   bcreqApprovalLead: document.querySelector("#bcreq-approval-lead"),
@@ -767,8 +769,11 @@ function renderRoadmap() {
 
 // Процесс BCREQ (issue #388): ручные шаги БА с копированием промпта и
 // согласование с командой и Заказчиком. Данные — data/bcreq-flow.json.
-function bcreqField(label, value) {
+function bcreqField(label, value, field) {
   const row = el("div", "bcreq-field");
+  if (field) {
+    row.dataset.field = field;
+  }
   row.append(el("span", "bcreq-field-label", label), el("span", "bcreq-field-value", value));
   return row;
 }
@@ -817,10 +822,10 @@ function bcreqStep(step) {
   item.append(
     head,
     prompt,
-    bcreqField("Что подготовить", step.prepare),
+    bcreqField("Что подготовить", step.prepare, "prepare"),
     el("div", "bcreq-field-label", "Что делает БА"),
     actions,
-    bcreqField("Результат", step.result),
+    bcreqField("Результат", step.result, "result"),
   );
   if (step.gate && step.gate !== "—") {
     item.append(el("p", "bcreq-gate", `⛳ ${step.gate}`));
@@ -1250,10 +1255,13 @@ function applyRoute() {
     }
   }
   window.scrollTo({ top: 0, behavior: "auto" });
-  // Глубокая ссылка на шаг ручного процесса: #processes?step=<N> (issue #423).
+  // Глубокая ссылка на шаг ручного процесса: #processes?step=<N> (issue #423);
+  // подстраница — #processes?view=<id> (issue #448).
   if (page === "processes") {
-    const step = new URLSearchParams(raw.split("?")[1] || "").get("step");
+    const params = new URLSearchParams(raw.split("?")[1] || "");
+    const step = params.get("step");
     const target = /^\d{1,2}$/.test(step || "") ? document.getElementById(`bcreq-step-${step}`) : null;
+    applyProcessView(target ? "manual" : params.get("view"));
     if (target) {
       target.closest("details")?.setAttribute("open", "");
       target.focus({ preventScroll: true });
@@ -1442,13 +1450,14 @@ async function copyPrompt(button) {
 }
 
 // Тестовый набор этапа 1 (issue #446, BL-157б): 13 шагов комплекта прогона.
-// Режим шага — колонка «Режим в тесте» комплекта: published — промпт v0.1
-// из prompts/, by-test — черновик «по тесту» из prompts/drafts/.
+// Режим шага — колонка «Режим в тесте» комплекта: published — опубликованный
+// промпт из prompts/ (версия из его frontmatter), by-test — черновик «по тесту»
+// из prompts/drafts/. Карточка шага (issue #448) — инструкция для БА без кодов:
+// зачем шаг, что подготовить, что делать, результат, кто решает на гейте.
 // Данные — data/test-kit.json.
-const TEST_KIT_MODE_LABELS = {
-  published: "v0.1",
-  "by-test": "черновик «по тесту»",
-};
+function testKitModeLabel(step) {
+  return step.mode === "by-test" ? "черновик «по тесту»" : `опубликован v${step.published.version}`;
+}
 
 function testKitVariant(step, kind) {
   return kind === "draft" ? step.draft : step.published;
@@ -1456,7 +1465,7 @@ function testKitVariant(step, kind) {
 
 function testKitCopyButton(step, index, kind, primary) {
   const variant = testKitVariant(step, kind);
-  const label = kind === "draft" ? "по тесту" : "v0.1";
+  const label = kind === "draft" ? "по тесту" : `v${step.published.version}`;
   const button = el("button", primary ? "copy-icon" : "testkit-alt", primary ? "⧉" : `⧉ ${label}`);
   button.type = "button";
   button.dataset.testkitIndex = String(index);
@@ -1471,7 +1480,9 @@ function testKitStep(step, index) {
   const primary = testKitVariant(step, primaryKind);
   const item = el("li", "bcreq-step testkit-step");
   item.dataset.mode = step.mode;
+  item.dataset.group = step.group;
   item.id = `bcreq-testkit-step-${index + 1}`;
+  item.tabIndex = -1;
 
   const head = el("div", "bcreq-step-head");
   const number = el("span", "bcreq-step-number", step.number);
@@ -1479,7 +1490,7 @@ function testKitStep(step, index) {
   const titleWrap = el("div", "bcreq-step-title-wrap");
   titleWrap.append(el("h3", "bcreq-step-title", step.step));
   const tags = el("div", "tag-row");
-  const mode = el("span", "tag", TEST_KIT_MODE_LABELS[step.mode] + (step.modeNote ? ` · ${step.modeNote}` : ""));
+  const mode = el("span", "tag", testKitModeLabel(step) + (step.modeNote ? ` · ${step.modeNote}` : ""));
   mode.dataset.kind = "testkit-mode";
   mode.dataset.mode = step.mode;
   tags.append(mode);
@@ -1496,21 +1507,40 @@ function testKitStep(step, index) {
   if (step.params) {
     prompt.append(el("code", "bcreq-params", step.params));
   }
-  item.append(head, prompt);
 
+  const actions = el("ol", "bcreq-actions");
+  actions.append(...step.actions.map((action) => el("li", "", action)));
+
+  item.append(
+    head,
+    el("p", "testkit-purpose", step.purpose),
+    prompt,
+    bcreqField("Что подготовить", step.prepare, "prepare"),
+    el("div", "bcreq-field-label", "Что делает БА"),
+    actions,
+    bcreqField("Результат", step.result, "result"),
+  );
+  if (step.gate && step.gate !== "—") {
+    const gate = el("p", "bcreq-gate");
+    gate.dataset.field = "gate";
+    gate.append(el("strong", "", `⛳ ${step.gate}. `), document.createTextNode(step.gateHint));
+    item.append(gate);
+  }
+
+  // Сравнение редакций и SHA — для проверяющего, свёрнуто по умолчанию.
   const otherKind = primaryKind === "draft" ? "published" : "draft";
+  const more = el("details", "testkit-more");
+  more.append(el("summary", "", "Для проверяющего"));
   if (testKitVariant(step, otherKind)) {
     const other = el("p", "testkit-other");
     other.append(
-      el("span", "bcreq-field-label", "Для сравнения"),
+      el("span", "bcreq-field-label", "Другая редакция для сравнения"),
       testKitCopyButton(step, index, otherKind, false),
     );
-    item.append(other);
+    more.append(other);
   }
-  item.append(el("code", "testkit-sha", `sha256 ${primary.sha256.slice(0, 16)}`));
-  if (step.gate && step.gate !== "—") {
-    item.append(el("p", "bcreq-gate", `⛳ ${step.gate}`));
-  }
+  more.append(el("code", "testkit-sha", `${primary.file} · sha256 ${primary.sha256.slice(0, 16)}`));
+  item.append(more);
   return item;
 }
 
@@ -1525,12 +1555,99 @@ function renderTestKit() {
   source.rel = "noreferrer";
   nodes.testKitSummary.replaceChildren(
     document.createTextNode(
-      `Шагов: ${kit.counts.steps}; черновик «по тесту»: ${kit.counts.byTest}; v0.1: ${kit.counts.published}. Источник — `,
+      `Шагов: ${kit.counts.steps}; черновик «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. Источник — `,
     ),
     source,
     document.createTextNode("."),
   );
-  nodes.testKitSteps.replaceChildren(...kit.steps.map(testKitStep));
+  nodes.testKitSteps.replaceChildren(
+    ...kit.groups.map((group) => {
+      const block = el("li", "testkit-group");
+      block.id = `bcreq-testkit-${group.id}`;
+      block.dataset.group = group.id;
+      const head = el("div", "testkit-group-head");
+      head.append(
+        el("h3", "bcreq-subtitle", `Этап ${group.number}. ${group.title}`),
+        el("p", "bcreq-lead", `Получается: ${group.outcome}.`),
+      );
+      const list = el("ol", "bcreq-steps");
+      kit.steps.forEach((step, index) => {
+        if (step.group === group.id) {
+          list.append(testKitStep(step, index));
+        }
+      });
+      block.append(head, list);
+      return block;
+    }),
+  );
+  renderProcessTabs();
+}
+
+// Подстраницы «Процессов» (issue #448): этапы тестового набора по логике
+// формирования документа, полный процесс из 39 классов и согласование.
+// Адрес — #processes?view=<id>; #processes?step=<N> открывает полный процесс.
+const PROCESS_VIEWS_EXTRA = [
+  { id: "manual", title: "Полный процесс (39 классов)", section: "bcreq-manual" },
+  { id: "approval", title: "Согласование", section: "bcreq-approval" },
+];
+
+function processViews() {
+  const groups = state.testKit?.groups || [];
+  return [
+    ...groups.map((group) => ({
+      id: group.id,
+      title: `${group.number}. ${group.title}`,
+      count: group.count,
+      section: "bcreq-testkit",
+    })),
+    ...PROCESS_VIEWS_EXTRA,
+  ];
+}
+
+function renderProcessTabs() {
+  if (!nodes.processTabs) {
+    return;
+  }
+  nodes.processTabs.replaceChildren(
+    ...processViews().map((view) => {
+      const tab = el("a", "process-tab", view.title);
+      tab.href = `#processes?view=${view.id}`;
+      tab.dataset.processTab = view.id;
+      if (view.count) {
+        tab.append(el("span", "process-tab-count", String(view.count)));
+      }
+      return tab;
+    }),
+  );
+}
+
+function applyProcessView(view) {
+  const views = processViews();
+  const current = views.find((item) => item.id === view) || views[0];
+  if (!current) {
+    return;
+  }
+  for (const tab of nodes.processTabs?.querySelectorAll("[data-process-tab]") || []) {
+    const active = tab.dataset.processTab === current.id;
+    tab.dataset.active = String(active);
+    if (active) {
+      tab.setAttribute("aria-current", "page");
+    } else {
+      tab.removeAttribute("aria-current");
+    }
+  }
+  for (const id of ["bcreq-testkit", "bcreq-manual", "bcreq-approval"]) {
+    const section = document.getElementById(id);
+    if (section) {
+      section.hidden = section.id !== current.section;
+    }
+  }
+  if (nodes.processHelp) {
+    nodes.processHelp.hidden = current.section !== "bcreq-testkit";
+  }
+  for (const group of nodes.testKitSteps?.querySelectorAll(".testkit-group") || []) {
+    group.hidden = group.dataset.group !== current.id;
+  }
 }
 
 async function copyTestKitPrompt(button) {
@@ -1549,7 +1666,9 @@ async function copyTestKitPrompt(button) {
     return;
   }
   try {
-    await copyText(`<!-- ${variant.id} -->\n\n${body}`);
+    // Имя промпта и шаг — в первой строке: по ней видно в чате, какой промпт
+    // и на каком шаге применён (issue #448).
+    await copyText(`<!-- ${variant.id} · ${step.step} -->\n\n${body}`);
     button.dataset.copied = "true";
     showToast(`${variant.file} скопирован`);
     window.setTimeout(() => {
