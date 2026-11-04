@@ -1,0 +1,1304 @@
+[
+  {
+    "case": "T-01",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents an unsourced integration mechanism ('передавать ... событие') and a new function as a requirement"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents an unsourced integration mechanism ('передавать ... событие') and a new function as a requirement"
+    }
+  },
+  {
+    "case": "T-02",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-03",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-04",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-05",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: gives «Система должна обеспечивать…» as the formula for a user action, which contradicts the lesson rule (user action = «предоставлять <кому> возможность»)"
+    }
+  },
+  {
+    "case": "T-06",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-07",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-08",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-09",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix drops the limiter «только» («если клиент не ответил»), so the qualifier is still lost"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-10",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-11",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-12",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents behavior ('учитывать его изменения при уведомлении') that is in neither the input nor the context (meaning drift / unsourced function)"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents behavior ('учитывать его изменения при уведомлении') that is in neither the input nor the context (meaning drift / unsourced function)"
+    }
+  },
+  {
+    "case": "T-13",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-14",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-15",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-16",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-17",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-18",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-19",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-20",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-21",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-22",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-23",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-24",
+    "X": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K2: names a generic unsourced claim ('домысел о продукте'), not a disclaimer about a problem that was never in the input; K5: fix suggests opening an 8.4 question about tarification, which keeps the non-existent problem in the document"
+    },
+    "Y": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K2: names a generic unsupported addition, not a disclaimer about a problem that was never in the input; K5: fix suggests opening an 8.4 question about tarification, which keeps the non-existent problem in the document"
+    }
+  },
+  {
+    "case": "T-25",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix adds an unrequested per-item 'before/after' block, which departs from the form the BA set (new blocks only on explicit request)"
+    }
+  },
+  {
+    "case": "T-26",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-27",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-28",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix still reports a summary result ('замечаний не найдено') instead of a list of what was checked, as the rule requires for a same-model check"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-29",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-30",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-31",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-32",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-33",
+    "X": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names scope expansion / missing source, not foreign-context leakage (origin of input from another task)."
+    },
+    "Y": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names scope expansion / missing source, not foreign-context leakage (origin of input from another task)."
+    }
+  },
+  {
+    "case": "T-34",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-35",
+    "X": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names generic missing source/locator; does not flag the list as closed/exhaustive without a completeness mark."
+    },
+    "Y": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names generic missing source/locator; does not flag the list as closed/exhaustive without a completeness mark."
+    }
+  },
+  {
+    "case": "T-36",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-37",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-38",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-39",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-40",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-41",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-42",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": false,
+      "K5": true,
+      "K6": true,
+      "note": "K4: claims the numeric limit is 'опровергнут проверкой'; context only shows the quote is absent at the locator, not that the limit is false."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-43",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-44",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix keeps two actions in one FT (non-atomic) and adds unsourced 'ответственному сотруднику', 'статус', 'правила из п. 4.N'."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix keeps two actions in one FT (non-atomic), replaces the term 'лид' with 'заявка' and adds unsourced 'статус', 'ответственному сотруднику'."
+    }
+  },
+  {
+    "case": "T-45",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-46",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-47",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-48",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-49",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-50",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-51",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-52",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-53",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-54",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-55",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-56",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-57",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-58",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-59",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-60",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-61",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-62",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  }
+]

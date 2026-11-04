@@ -1,0 +1,5 @@
+A 0.1 (BL-156а: тип гейта, ссылки по SHA) passed 56 / 62 core 9/11 fp 0/10 {'K1': '62/62', 'K2': '49/52', 'K3': '62/62', 'K4': '62/62', 'K5': '58/62', 'K6': '62/62'}
+D 0.1-by-test (реестр 0.4) passed 51 / 62 core 9/11 fp 0/10 {'K1': '62/62', 'K2': '48/52', 'K3': '62/62', 'K4': '61/62', 'K5': '55/62', 'K6': '62/62'}
+{'only_A_failed': [], 'only_D_failed': ['GS-BCREQ-21', 'GS-BCREQ-31', 'GS-BCREQ-33', 'GS-BCREQ-37', 'GS-BCREQ-50'], 'both_failed': ['GS-BCREQ-01', 'GS-BCREQ-12', 'GS-BCREQ-22', 'GS-BCREQ-26', 'GS-BCREQ-43', 'GS-BCREQ-47']}
+publication {"rule": "DEC-427-11: D не хуже v0.1 — по сданным кейсам, ядру и ложным дефектам", "vs_RUN_0079": {"checks": {"passed": true, "core": false, "negatives_false_positive": true}, "not_worse": false}, "vs_A_same_judge": {"checks": {"passed": false, "core": true, "negatives_false_positive": true}, "not_worse": false}, "not_worse": false}
+A_vs_RUN_0079 {"checks": {"passed": true, "core": false, "negatives_false_positive": true}, "not_worse": false}
