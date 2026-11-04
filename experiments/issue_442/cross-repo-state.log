@@ -1,0 +1,22 @@
+# снимок 2026-11-04T10:26:59Z
+## G-Ivan-A/mango-ba-ai-runtime#16
+{"head":"dee3a92f2c228b98c949320ea897a19154cd8dbb","isDraft":false,"merge":"2db0ef5106883b01b096fe8c4af50334899e9fe0","mergedAt":"2026-11-04T09:55:05Z","number":16,"state":"MERGED","title":"РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16"}
+## G-Ivan-A/mango-ba-ai-runtime#17
+{"head":"fb5776bd7c3f4c4a50bce4485d16ea4678d704a6","isDraft":true,"merge":null,"mergedAt":null,"number":17,"state":"OPEN","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17"}
+## G-Ivan-A/hybrid-Intelligence-lab#720
+{"head":"a3bf12ef25902c8431ef5dc968f0e9f2c95b654e","isDraft":false,"merge":"b3a9e161c9fb459cb9112d3aaa4d003bbfb5c4fa","mergedAt":"2026-11-04T09:56:07Z","number":720,"state":"MERGED","title":"feat(#719): ХАБ-1 — привязка c-in.atomic_function к каталогу продуктов (PT-5) и компиляция в runtime","url":"https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720"}
+## runtime issue #15
+{"state":"CLOSED","title":"РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/15"}
+## hub issue #719
+{"state":"CLOSED","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов и компиляция в mango-ba-ai-runtime","url":"https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/719"}
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+## open spoke PRs
+#443 UNKNOWN draft=true [WIP] Запуск BL-163 по RFC-RT-001
+#441 CONFLICTING draft=false docs(issue-434): Р-17 принято
+#439 CONFLICTING draft=false docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+## issue #442 comments
+0
+## PR #443 comments
+0
+0
