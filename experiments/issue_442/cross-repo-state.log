@@ -59,3 +59,43 @@
 #4 MERGED 2026-09-26T11:01:56Z Пересборка runtime как чистого репозитория для работы БА в чатах моделей
 ## runtime main
 2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+
+# обновление 2026-11-04T10:45:35Z (перед описанием PR #443)
+## runtime PR #17
+{"headRefOid":"809848700123f9785c2120e6672009fb8aa58887","isDraft":false,"state":"OPEN","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)","updatedAt":"2026-11-04T10:41:01Z"}
+## runtime PR #17: файлы против 2db0ef51 (taxonomy/mango-products.yaml не меняется)
+AGENTS.md
+compilation-manifest.yaml
+contracts/c-in.md
+evaluation/g-mach-checklist.md
+evaluation/validate-package.md
+golden/cases.yaml
+golden/gs-cc-01-queue-overflow.md
+golden/gs-cc-02-report-export.md
+golden/gs-cc-neg-01-inbound-vs-outbound.md
+golden/gs-cc-neg-02-queue-vs-group.md
+golden/gs-cc-neg-03-sla-vs-aht.md
+golden/gs-cc-neg-04-ivr-vs-announcer.md
+golden/gs-cc-neg-05-function-outside-catalog.md
+skills/transcript-normalization-contact-center.md
+taxonomy/products.yaml
+tests/__pycache__/test_catalog_binding.cpython-315.pyc
+tests/__pycache__/test_kb_navigation.cpython-315.pyc
+tests/__pycache__/test_product_catalog.cpython-315.pyc
+tests/runtime-smoke.sh
+tests/test_catalog_binding.py
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0
+## спица: открытые PR
+443 MERGEABLE [WIP] Запуск BL-163 по RFC-RT-001
+441 MERGEABLE docs(issue-434): цепочка бэклога Р-17 → BL-163, конфликт с main решён
+439 MERGEABLE docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+## CI спицы: последний запуск pull_request
+GitHub Pages issue-281-019cd054cd2e 2026-08-22T15:16:46Z
+## CI спицы: последний запуск на main
+Validate governance ccb273e2 2026-08-22T15:19:31Z
+## main спицы
+d7082caae7f2409edbacc4d50b0de2bd698c485b
+## checks PR #437, #440 (слиты без запусков CI)
+437 checks=0
+440 checks=0
