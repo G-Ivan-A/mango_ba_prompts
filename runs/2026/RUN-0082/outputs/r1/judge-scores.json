@@ -1,0 +1,1304 @@
+[
+  {
+    "case": "T-01",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents an integration mechanism and function ('Система должна передавать в CRM ... событие') that has no source; the registry says a mechanism or event comes only from a source."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents an integration mechanism and function ('передавать в CRM Заказчика событие') that has no source."
+    }
+  },
+  {
+    "case": "T-02",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix decides how ФТ-6 is covered ('способ покрытия годового архива ... как доработку') without a source or BA decision, while also sending the same contradiction to 8.4 as a question."
+    }
+  },
+  {
+    "case": "T-03",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-04",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents a recipient and behaviour ('передавать его ответственному') that the input does not contain; this is a meaning drift / invented function."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-05",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix brings in the role 'Оператор', which has no source in the input or context (roles come only from the role model)."
+    }
+  },
+  {
+    "case": "T-06",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": false,
+      "note": "K5/K6: fix assigns a status: 'отметить как проверенное и согласованное' is self-certification."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": false,
+      "note": "K5/K6: fix offers to 'отметить трассировку ФТ-2 → Р-1 как согласованную', which is self-certification."
+    }
+  },
+  {
+    "case": "T-07",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-08",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-09",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил'), adds an unsourced reference point 'после неотвеченного вызова', and replaces the formula 'обеспечивать' with 'выполнять'."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил') and adds an unsourced reference point 'после неотвеченного вызова'."
+    }
+  },
+  {
+    "case": "T-10",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-11",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-12",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix invents a behaviour ('учитывать его изменения при уведомлении') that has no source, and sends the mechanism to an 'архитектор' decision in 8.5 instead of a question to the team in 8.4."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-13",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": false,
+      "K5": true,
+      "K6": true,
+      "note": "K4: flags an extra violation ('сокращение раздела без команды нарушает'), but the context says no such edit happened."
+    }
+  },
+  {
+    "case": "T-14",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-15",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-16",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-17",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-18",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-19",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-20",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-21",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-22",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-23",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-24",
+    "X": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names a generic unverified/unsupported claim ('непроверенное добавление'), not the lesson rule (a disclaimer about the absence of a problem that never appeared in the input)."
+    },
+    "Y": {
+      "K1": true,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K2: names a generic unsourced claim / speculation about the product ('домысел о продукте'), not the lesson rule (a disclaimer about a problem that does not exist)."
+    }
+  },
+  {
+    "case": "T-25",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix adds a before/after block for each item that the BA did not ask for, which breaks the form set by the BA (new blocks only on explicit request)."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-26",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-27",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix replaces one unsourced conclusion with the opposite unsourced one ('для выгрузки записей требуется доработка/интеграция'); the documentation only says the recording is requested separately."
+    }
+  },
+  {
+    "case": "T-28",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix ('Провести Ш-В ... в новой сессии другой ролью') treats a new session with another role as independent validation, which contradicts the registry rule that the same model in another role gives no independent confirmation."
+    }
+  },
+  {
+    "case": "T-29",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-30",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-31",
+    "X": {
+      "K1": false,
+      "K2": false,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": "K1: verdict 'дефекта нет', but the reference verdict is 'дефект'. K2: no violation named."
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix keeps 6.1 tied to ФТ-1 ('как решение реализует ФТ-1 ... покрывает ФТ-1') instead of leading to a section-5 feature or an external constraint, so section 6 still duplicates the ФТ."
+    }
+  },
+  {
+    "case": "T-32",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-33",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-34",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-35",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-36",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": false,
+      "K5": true,
+      "K6": true,
+      "note": "K4: asserts 'правка согласованных фрагментов без основания' - the input only says the whole document was output, no edits of agreed text are shown"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-37",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-38",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix moves the step detail into a UC scenario in section 5, but the lesson says detail goes to functional design, and scenarios are created only at the BA's request"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": false,
+      "K5": false,
+      "K6": true,
+      "note": "K4: claims 'ломает трассировку ФТ → UC' - the context has no UC or traceability; K5: fix moves the step sequence into a UC scenario in section 5 instead of functional design, and scenarios are created only at the BA's request"
+    }
+  },
+  {
+    "case": "T-39",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix offers invented replacement behaviour ('повторная попытка или эскалация') with no source as one acceptable option"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-40",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix labels 'менеджеры не успевают перезванивать клиентам' as '(цитата Заказчика)', but the Customer wrote it without 'клиентам', so the quote is not verbatim"
+    }
+  },
+  {
+    "case": "T-41",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-42",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-43",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-44",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": false,
+      "K5": false,
+      "K6": true,
+      "note": "K4: claims 'нет актора', but the requirement names the subject 'Система'; K5: proposed FT still combines two actions (направлять лид ... и обновлять статус) in one requirement, which is non-atomic"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: proposed FT still combines two actions (маршрутизацию ... и обновление статуса) in one requirement, which is non-atomic"
+    }
+  },
+  {
+    "case": "T-45",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-46",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-47",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-48",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-49",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-50",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-51",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-52",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-53",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": false,
+      "K6": true,
+      "note": "K5: fix adds a new capability with no source ('с возможностью последующего просмотра') and a named store ('журнал действий')"
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-54",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-55",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-56",
+    "X": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": null,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-57",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-58",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-59",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-60",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-61",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  },
+  {
+    "case": "T-62",
+    "X": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    },
+    "Y": {
+      "K1": true,
+      "K2": true,
+      "K3": true,
+      "K4": true,
+      "K5": true,
+      "K6": true,
+      "note": ""
+    }
+  }
+]

@@ -16,6 +16,7 @@ const SOURCE_FILES = {
   ecosystem: "docs/ba-ecosystem.md",
   patternsReadme: "patterns/README.md",
   bcreqFlow: "docs/ba-processes/bcreq-manual-process.md",
+  runKit: "docs/ba-processes/bcreq-run-kit.md",
 };
 
 // Тестовые логи промптов и (опциональный) статический срез обратной связи.
@@ -67,11 +68,14 @@ const BCREQ_STAGES = [
 // тексты промптов не менялись (Р-15 ждёт ответа).
 // 2.1.3 (issue #444, BL-156а): ссылки на runtime по SHA f31dcde3 в текстах
 // 14 архивных промптов; тип гейта не опубликован (RUN-0081, BL-156б).
+// 2.2.0 (issue #446, BL-157б): раздел «Тестовый набор этапа 1» на странице
+// «Процессы» — 13 шагов комплекта прогона с копированием промпта для теста
+// (v0.1 или черновик «по тесту» по колонке «Режим в тесте» комплекта).
 const SITE_VERSION = {
-  version: "2.1.3",
+  version: "2.2.0",
   released: "2026-11-04",
-  issue: 444,
-  basis: "PR #445: ссылки на runtime по SHA, RUN-0081",
+  issue: 446,
+  basis: "PR #447: тестовый набор этапа 1, RUN-0082, RUN-0083",
   changelog: "CHANGELOG.md",
 };
 
@@ -820,12 +824,30 @@ async function walkMarkdown(relativeDir) {
   return files;
 }
 
+// Промпты, которые прогон реально выполнял: пути `prompt_ref` из карточки
+// `runs/YYYY/RUN-XXXX/metadata.yaml`, черновик засчитывается опубликованному
+// промпту. Пустое множество — в карточке нет `prompt_ref`, файл прогона
+// сопоставляется по упоминаниям (как до issue #446). Без этого транскрипт
+// RUN-0083 засчитывал проверку всем шагам цепочки, которые Ш-0 лишь называет.
+async function runPromptRefs(file) {
+  const runDir = file.split("/").slice(0, 3).join("/");
+  let card = "";
+  try {
+    card = await read(`${runDir}/metadata.yaml`);
+  } catch {
+    return new Set();
+  }
+  const block = card.match(/^prompt_ref:\n((?:[ \t]+.*\n?)*)/m);
+  const paths = block ? [...block[1].matchAll(/path:\s*(prompts\/[^\s,}]+\.md)/g)].map((m) => m[1]) : [];
+  return new Set(paths.map((ref) => ref.replace(/^prompts\/drafts\//, "prompts/")));
+}
+
 async function loadExperiments() {
   const experiments = [];
   const files = (await walkMarkdown(RUNS_DIR)).filter((file) => /\/(outputs|logs)\//.test(file));
   for (const file of files) {
     const content = await read(file);
-    experiments.push({ name: file, normalized: normalizeForMatch(content) });
+    experiments.push({ name: file, normalized: normalizeForMatch(content), promptRefs: await runPromptRefs(file) });
   }
   return experiments;
 }
@@ -864,6 +886,7 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
   const perPrompt = prompts.map((prompt) => {
     const terms = promptSearchTerms(prompt);
     const testFiles = experiments
+      .filter((experiment) => experiment.promptRefs.size === 0 || experiment.promptRefs.has(prompt.sourcePath))
       .filter((experiment) => terms.some((term) => experiment.normalized.includes(term)))
       .map((experiment) => experiment.name);
     const feedback = feedbackByPrompt.get(prompt.id) || [];
@@ -1216,6 +1239,101 @@ function makeBcreqFlow(markdown, prompts) {
   };
 }
 
+// Тестовый набор этапа 1 (issue #446, BL-157б). Источник — таблица раздела 1
+// комплекта прогона docs/ba-processes/bcreq-run-kit.md: шаг, опубликованный
+// промпт v0.1, черновик «по тесту» и колонка «Режим в тесте» (published или
+// by-test). Генератор кладёт тексты черновиков в test-kit.json, чтобы БА
+// копировал на сайте ровно тот текст, который назначен шагу.
+const TEST_KIT_MODES = new Set(["published", "by-test"]);
+
+async function makeTestKit(markdown, prompts) {
+  const promptsByPath = new Map(prompts.map((prompt) => [prompt.sourcePath, prompt]));
+  const frontmatter = parseFrontmatter(markdown);
+  const table = parseTables(markdown).find((item) =>
+    ["№", "Шаг", "Промпт для копирования", "Режим в тесте"].every((header) => item.headers.includes(header)),
+  );
+  if (!table) {
+    throw new Error(`${SOURCE_FILES.runKit}: нет таблицы «Порядок шагов» с колонкой «Режим в тесте»`);
+  }
+  const draftHeader = table.headers.find((header) => header.startsWith("Черновик"));
+  const kitDir = path.dirname(SOURCE_FILES.runKit);
+  const linkTarget = (cell) => {
+    const target = cell.match(/\]\(([^)#]+)[^)]*\)/)?.[1];
+    return target ? path.posix.normalize(path.posix.join(kitDir, target)) : "";
+  };
+  const steps = [];
+  for (const raw of table.rows) {
+    const row = Object.fromEntries(table.headers.map((header, index) => [header, raw[index]]));
+    const step = stripMarkdownInline(row["Шаг"]);
+    // «`by-test` (заглушка)»: первое слово — режим, скобки — пояснение.
+    const [mode, ...modeNote] = stripMarkdownInline(row["Режим в тесте"]).split(/\s+/);
+    if (!TEST_KIT_MODES.has(mode)) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: режим «${mode}» не published и не by-test`);
+    }
+    const publishedPath = linkTarget(row["Промпт для копирования"]);
+    const publishedPrompt = publishedPath ? promptsByPath.get(publishedPath) : null;
+    if (publishedPath && !publishedPrompt) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: нет промпта ${publishedPath}`);
+    }
+    const params = row["Промпт для копирования"].match(/\(`([^`]+)`\)\s*$/)?.[1] || "";
+    const draftPath = linkTarget(row[draftHeader] || "");
+    let draft = null;
+    if (draftPath) {
+      const content = await read(draftPath);
+      // У черновиков поле steps: [Ш-0] — не JSON; берутся только нужные поля.
+      const field = (name) =>
+        content.match(new RegExp(`^${name}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || "";
+      const draftFrontmatter = { id: field("id"), title: field("title"), based_on_sha256: field("based_on_sha256") };
+      draft = {
+        id: draftFrontmatter.id || `mango-${path.basename(draftPath, ".md")}-by-test`,
+        file: path.basename(draftPath),
+        title: draftFrontmatter.title || path.basename(draftPath, ".md"),
+        sourcePath: draftPath,
+        url: repoUrl(draftPath),
+        basedOnSha256: draftFrontmatter.based_on_sha256 || "",
+        sha256: crypto.createHash("sha256").update(content).digest("hex"),
+        body: stripFrontmatter(content),
+      };
+    }
+    if (mode === "by-test" && !draft) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: режим by-test без черновика`);
+    }
+    if (mode === "published" && !publishedPrompt) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: режим published без опубликованного промпта`);
+    }
+    steps.push({
+      number: stripMarkdownInline(row["№"]),
+      step,
+      mode,
+      modeNote: modeNote.join(" ").replace(/^\(|\)$/g, ""),
+      params,
+      gate: stripMarkdownInline(row["Гейт после шага"] || "—"),
+      published: publishedPrompt
+        ? {
+            id: publishedPrompt.id,
+            file: publishedPrompt.file,
+            title: publishedPrompt.title,
+            url: publishedPrompt.url,
+            version: publishedPrompt.version,
+            sha256: publishedPrompt.contentHash,
+          }
+        : null,
+      draft,
+    });
+  }
+  return {
+    generatedAt: new Date().toISOString(),
+    sourceFiles: [{ path: SOURCE_FILES.runKit, url: repoUrl(SOURCE_FILES.runKit) }],
+    kit: { version: String(frontmatter.version || ""), url: repoUrl(SOURCE_FILES.runKit) },
+    counts: {
+      steps: steps.length,
+      byTest: steps.filter((step) => step.mode === "by-test").length,
+      published: steps.filter((step) => step.mode === "published").length,
+    },
+    steps,
+  };
+}
+
 async function main() {
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
@@ -1455,10 +1573,15 @@ async function main() {
   await writeJson("site/data/patterns.json", patternsData);
   const bcreqFlow = makeBcreqFlow(await read(SOURCE_FILES.bcreqFlow), prompts);
   await writeJson("site/data/bcreq-flow.json", bcreqFlow);
+  const testKit = await makeTestKit(await read(SOURCE_FILES.runKit), prompts);
+  await writeJson("site/data/test-kit.json", testKit);
 
   console.log(`Generated ${prompts.length} prompts`);
   console.log(
     `Generated BCREQ flow: ${bcreqFlow.manual.steps.length} manual steps, ${bcreqFlow.approval.stages.length} approval stages`,
+  );
+  console.log(
+    `Generated test kit: ${testKit.counts.steps} steps, ${testKit.counts.byTest} by-test, ${testKit.counts.published} published`,
   );
   console.log(
     `Generated ${processesData.processes.length} process cards and ${patternsData.patterns.length} patterns`,

@@ -1,0 +1,18 @@
+# снято: 2026-11-04T17:26:26Z
+## runtime main
+f31dcde33f0bc120244128faab98fc0162e45701 2026-11-04T14:55:56Z Merge pull request #21 from konard/issue-20-446bf8992238
+## runtime open PR
+## runtime open issues
+## spica main
+7a99853127683e231d5a74f79e758c327eaf213b 2026-11-04T17:03:51Z Merge pull request #445 from konard/issue-444-be981fac3f23
+## spica PR
+#447 OPEN merged=null [WIP] BL-157 а
+#445 MERGED merged=2026-11-04T17:03:51Z BL-156а: реестр 0.4 на runtime f31dcde3, черновики, ссылки по SHA, RUN-0081; BL-165, BL-166 (issue #444)
+#443 MERGED merged=2026-11-04T11:59:45Z Issue #442: BL-163 — registry pinned to runtime catalog (2db0ef51), И-2 «Да», З-1 retired
+#441 MERGED merged=2026-11-04T10:51:34Z docs(issue-434): цепочка бэклога Р-17 → BL-163, конфликт с main решён
+## spica open issues
+#446 BL-157 а
+## hub main
+9b140d99b12afd5328a822a974d6545a9068ce41 2026-11-04T12:22:00Z Merge pull request #724 from G-Ivan-A/issue-723-a4ba05b42346
+## hub open issues
+#725 Очистка Хаба от Gra по переносу

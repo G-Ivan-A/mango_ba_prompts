@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T16:05:18.363Z",
+  "generatedAt": "2026-11-04T18:25:25.865Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,16 +16,16 @@
     "archived": 14
   },
   "tests": {
-    "logs": 539,
-    "total": 5,
-    "coveredPrompts": 1
+    "logs": 552,
+    "total": 12,
+    "coveredPrompts": 4
   },
   "feedback": {
     "label": "prompt:feedback",
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 5,
+  "totalChecked": 12,
   "testsPassed": {
     "covered": 0,
     "total": 39,
@@ -78,6 +78,58 @@
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 5
+    },
+    {
+      "id": "mango-bcreq-constitution-governance-oneshot",
+      "file": "bcreq-constitution-governance-oneshot.md",
+      "status": "archived",
+      "operation": "governance",
+      "processes": [
+        "Конституция и управление"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "runs/2026/RUN-0083/logs/preregistration.md",
+        "runs/2026/RUN-0083/outputs/P-transcript.md",
+        "runs/2026/RUN-0083/outputs/T-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "mango-bcreq-context-understanding-stepwise",
+      "file": "bcreq-context-understanding-stepwise.md",
+      "status": "archived",
+      "operation": "understanding",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0083/outputs/P-transcript.md",
+        "runs/2026/RUN-0083/outputs/T-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-products-impact-analysis-stepwise",
+      "file": "bcreq-products-impact-analysis-stepwise.md",
+      "status": "archived",
+      "operation": "impact_analysis",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0083/outputs/P-transcript.md",
+        "runs/2026/RUN-0083/outputs/T-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
     },
     {
       "id": "mango-bcreq-c01-intake",
@@ -680,40 +732,12 @@
       "usage": 0
     },
     {
-      "id": "mango-bcreq-constitution-governance-oneshot",
-      "file": "bcreq-constitution-governance-oneshot.md",
-      "status": "archived",
-      "operation": "governance",
-      "processes": [
-        "Конституция и управление"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
       "id": "mango-bcreq-constraints-documentation-stepwise",
       "file": "bcreq-constraints-documentation-stepwise.md",
       "status": "archived",
       "operation": "documentation",
       "processes": [
         "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-context-understanding-stepwise",
-      "file": "bcreq-context-understanding-stepwise.md",
-      "status": "archived",
-      "operation": "understanding",
-      "processes": [
-        "Приём и контекст"
       ],
       "tests": 0,
       "testFiles": [],
@@ -798,20 +822,6 @@
       "operation": "solution_design",
       "processes": [
         "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-products-impact-analysis-stepwise",
-      "file": "bcreq-products-impact-analysis-stepwise.md",
-      "status": "archived",
-      "operation": "impact_analysis",
-      "processes": [
-        "Приём и контекст"
       ],
       "tests": 0,
       "testFiles": [],

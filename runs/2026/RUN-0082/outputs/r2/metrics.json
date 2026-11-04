@@ -1,0 +1,243 @@
+{
+  "A": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json), ссылки по SHA",
+    "prompt_path": "prompts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "460740f7647d4954364cef297b50072f99650011",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 53,
+    "core": "8/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "55/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит без источника механизм интеграции (передача события с данными в CRM) — выдуманный механизм/функция"
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: в правке назначена роль «Оператор», которой нет ни во входе, ни в контексте — роль без источника"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка теряет ограничитель «только» («если клиент не ответил») — тот же смысловой дрейф, что исправляется"
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка добавляет поведение без источника («учитывать его изменения при уведомлении») — уведомление во входе и контексте не упоминается"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: названо «утверждение без источника / домысел о продукте», а не урок «оговорка об отсутствии проблемы, которой во входе не было»"
+      },
+      {
+        "case": "GS-BCREQ-50",
+        "tid": "T-28",
+        "lesson": "L-50",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка предлагает как средство «провести Ш-В в новой сессии другой ролью» — та же модель в другой роли, что по уроку не даёт независимой проверки"
+      },
+      {
+        "case": "GS-BCREQ-22",
+        "tid": "T-33",
+        "lesson": "L-22",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names scope/traceability expansion (boundaries rule), not carry-over of content from another task / input origin"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix FT still combines two actions (routing and status update) in one requirement (non-atomic); replaces term 'лид' with 'заявка' and reads 'апдейт' as 'обновление статуса' without source/BA decision"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix introduces unsourced storage/element 'журнал действий' and a new property 'доступном для последующей проверки' not in any input"
+      }
+    ]
+  },
+  "D": {
+    "prompt_version": "0.1-by-test (реестр 0.4, на типизированном v0.1)",
+    "prompt_path": "prompts/drafts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "36799e9ebc7c538f8829d04870ac48da28042d4a",
+    "prompt_sha256": "2e8391723f365fa34be3ad9012547fe6db7e379dadae9d787c65ecead046d990",
+    "cases": 62,
+    "passed": 56,
+    "core": "8/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "58/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит без источника механизм интеграции (передача события в CRM) — выдуманный механизм/функция"
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка добавляет поведение без источника («учитывать его изменения при уведомлении») — уведомление во входе и контексте не упоминается"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: названо «утверждение без источника, вывод не обоснован», а не урок «оговорка об отсутствии проблемы, которой во входе не было»"
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: generic 'product fact without source' (AD-1); does not name the closed/exhaustive list or missing completeness mark"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix FT still combines two actions (distribution and status update) in one requirement (non-atomic)"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix introduces unsourced storage/element 'журнал действий' and a new access property 'доступном <роль>' not in any input"
+      }
+    ]
+  },
+  "diff": {
+    "only_A_failed": [
+      "GS-BCREQ-22",
+      "GS-BCREQ-33",
+      "GS-BCREQ-37",
+      "GS-BCREQ-50"
+    ],
+    "only_D_failed": [
+      "GS-BCREQ-47"
+    ],
+    "both_failed": [
+      "GS-BCREQ-01",
+      "GS-BCREQ-12",
+      "GS-BCREQ-26",
+      "GS-BCREQ-32",
+      "GS-BCREQ-43"
+    ]
+  },
+  "baseline_RUN_0079_A": {
+    "prompt_version": "0.1",
+    "passed": 49,
+    "core": "10/11",
+    "negatives_false_positive": "0/10"
+  },
+  "publication": {
+    "rule": "DEC-427-11: D не хуже v0.1 — по сданным кейсам, ядру и ложным дефектам",
+    "vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": false,
+        "negatives_false_positive": true
+      },
+      "not_worse": false
+    },
+    "vs_A_same_judge": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "not_worse": false
+  },
+  "A_vs_RUN_0079": {
+    "checks": {
+      "passed": true,
+      "core": false,
+      "negatives_false_positive": true
+    },
+    "not_worse": false
+  },
+  "previous_RUN_0080": {
+    "A": {
+      "prompt_sha256": "ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    },
+    "D": {
+      "prompt_sha256": "d6358d7afa4f4209171d24da5010d117fe694e6443ba37267150a6a7b0f1c508",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    }
+  }
+}

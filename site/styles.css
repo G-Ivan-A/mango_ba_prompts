@@ -980,6 +980,49 @@ h3 {
   color: var(--amber);
 }
 
+/* Тестовый набор этапа 1 (issue #446): режим шага и вторая кнопка копирования. */
+.tag[data-kind="testkit-mode"][data-mode="published"] {
+  border-color: rgba(15, 118, 110, 0.32);
+  background: rgba(15, 118, 110, 0.08);
+  color: var(--teal);
+}
+
+.tag[data-kind="testkit-mode"][data-mode="by-test"] {
+  border-color: rgba(180, 83, 9, 0.32);
+  background: rgba(180, 83, 9, 0.08);
+  color: var(--amber);
+}
+
+.testkit-other {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 0;
+}
+
+.testkit-alt {
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.84rem;
+  cursor: pointer;
+}
+
+.testkit-alt:hover,
+.testkit-alt:focus-visible,
+.testkit-alt[data-copied="true"] {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.testkit-sha {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
 .tag[data-kind="gate"] {
   border-color: rgba(15, 118, 110, 0.32);
   background: rgba(15, 118, 110, 0.08);

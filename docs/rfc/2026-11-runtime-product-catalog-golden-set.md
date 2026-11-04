@@ -1,14 +1,14 @@
 ---
 status: accepted
-version: 0.4
+version: 0.5
 updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444, https://github.com/G-Ivan-A/mango_ba_prompts/issues/446"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py"
+related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py, experiments/issue_446/kb_map_sizes.py"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -73,6 +73,11 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
    Копия каталога в runtime старше решения Р-17 (74 узла — ещё
    `added-for-review`), id и связи совпадают со спицей. Обновление копии —
    задача РТ-6 (раздел 12). RFC — `accepted`: PR #437 слит (шаг 1 раздела 11).
+9. **Поправка 0.5 (issue [#446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446)):
+   BL-157б.** Синтетический прогон RUN-0083 перевёл черновики A-IN в run
+   kit v0.3 режимом `by-test`. Прогон нашёл одну доработку runtime: карта
+   разделов большого документа не читается за одно обращение. Тело задачи
+   РТ-7 (компактное оглавление) и альтернатива без runtime — раздел 14.
 
 ## 0. Тип и дом артефакта
 
@@ -665,11 +670,20 @@ Definition of Done: таблица покрытия в PR (класс × пол�
    без пар `confusable_with` отрицательные случаи РТ-3 не по EP-G7.
 6. **Исполнено структурно (runtime PR #21, `structural_only: true`).** РТ-3 (раздел 7). Почему: базовая линия «не хуже golden set» для
    трёх классов. Сначала нужно подтверждение `contact-center` человеком — задача BL-165 (раздел 13.4).
-7. **Этап BL-156а исполнен (issue #444, раздел 13); BL-156б — после замера с повторами.** BL-156 после Р-15 (Р-14 принято в issue #432): промпт Ш-2 читает
-   каталог по разделу 4.
-   Почему: тогда BL-156 выйдет без заглушек З-1 и З-3.
-8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога (BL-157а `DONE`; BL-157б — после BL-156а и BL-111).
+7. **Этап BL-156а исполнен (issue #444, раздел 13); замер с повторами RUN-0082 снят (issue #446, раздел 14.1).** BL-156 после Р-15 (Р-14 принято в issue #432): промпт Ш-2 читает
+   каталог по разделу 4. Дальше — BL-156б (публикация по Р-03 с
+   одновременным контролем) и BL-156в (правило Ш-В «правка без
+   добавлений»), оба `deferred (triggered)` до бюджета владельца.
+   Почему: тогда BL-156 выйдет без заглушек З-1 и З-3. RUN-0082 показал
+   разброс ядра 6…10 из 11 на одном тексте: без контроля в тех же
+   повторах публикацию не решить.
+8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога (BL-157а `DONE`; BL-157б — `review`: RUN-0083, run kit v0.3, A-IN `by-test`, раздел 14; BL-157в — первый прогон BL-111 с комплектом).
    Почему: это доказательная база для снятия «по тесту» (BL-158).
+   Синтетика RUN-0083 (N = 1) показывает пригодность к тесту, а не
+   качество на задаче.
+   - 8а. **Владелец: создать РТ-7 в `mango-ba-ai-runtime` (раздел 14.3) или выбрать альтернативу — БА прикладывает разделы.**
+     Почему: 11 из 25 карт БЗ не читаются за одно обращение, выбор
+     раздела идёт по неполному списку (Р-1 RUN-0083).
 9. **BL-164 держать `deferred (triggered)` до старта BL-133 или
    включения `P-08` в срез runtime; при старте — до оценки первого
    тендерного ТЗ.** Почему: потребитель индустриального слоя — оценка
@@ -897,9 +911,133 @@ runtime показывает, что речь о разных частях #17:
 | BL-166 | Маппинг 46 кандидатов RUN-0074 на классы и функции каталога (подраздел 7.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-166-маппинг-кандидатов-run-0074-на-классы-и-функции-каталога) | deferred (triggered) |
 | BL-156б | Публикация черновиков и типа гейта после замера с повторами | [Карточка BL-156](../../pr-ops/backlog-ba-model.md#bl-156б-публикация-промптов-по-тесту-и-типа-гейта) | deferred (triggered) |
 
+## 14. Поправка 0.5: исполнение BL-157б (issue #446)
+
+Issue [#446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446)
+продолжает BL-157 после слияния
+[PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445). Владелец
+снял ревью человеком на итерацию и просит короткий путь: набор промптов
+этапа 1, готовый к тесту на сайте, минимум A-IN; runtime — база знаний
+для обращения из промптов, доработки — через RFC или альтернативу.
+Постановка —
+[`experiments/issue_446/task-statement.md`](../../experiments/issue_446/task-statement.md).
+Срез runtime не меняется: `f31dcde3` (реестр 0.4).
+
+### 14.1. Тестовый набор и RUN-0083
+
+- [RUN-0082](../../runs/2026/RUN-0082/outputs/golden-set-report.md) — golden
+  set Ш-В с повторами (N = 3): медианы A 53/8/0 и D 54/9/0, ядро ниже
+  RUN-0079 (10/11). Тип гейта и черновик Ш-В в `prompts/` не
+  опубликованы (BL-156б); правило «правка без добавлений» — этап BL-156в.
+- [RUN-0083](../../runs/2026/RUN-0083/outputs/report.md) — синтетический
+  прогон A-IN (Ш-0…Ш-2) на SIM-1106, слепой судья: v0.1 — 10/12 (провалы
+  J10 и критический J11), черновики «по тесту» — 12/12. По правилу,
+  записанному до прогона, черновики A-IN идут в
+  [run kit v0.3](../ba-processes/bcreq-run-kit.md) режимом `by-test`;
+  сайт показывает их с кнопкой копирования. `prompts/` не меняется.
+- Карточка прогона получает `prompt_set.mode` и `prompt_ref`, сайт
+  показывает проверки только тех промптов, что указаны в `prompt_ref`.
+
+### 14.2. Пробелы runtime (RUN-0083)
+
+| № | Пробел | Факт | Чья зона | Решение |
+| --- | --- | --- | --- | --- |
+| Р-1 | Карта разделов документа не читается за одно обращение | Исполнитель прочитал [`maps/mango-lk-manual.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/maps/mango-lk-manual.json) частично: «целиком файл не читается (превышен лимит)». Из 25 карт 11 больше 32 КБ, крупнейшая — 156 189 Б, 352 раздела. Оглавление «раздел, название, файл» — не больше 28 151 Б у всех 25 ([`kb-map-sizes.log`](../../experiments/issue_446/kb-map-sizes.log)). `index.md` документа — не замена: у `mango-lk-manual` он 113 348 Б | runtime | РТ-7 (подраздел 14.3) |
+| Р-2 | Стандарты спицы недоступны модели без веба | Оба плеча RUN-0083 — «Режим fallback» | спица, среда чата | Не runtime: правило fallback промпта и запись недоступных ссылок в `notes` карточки (run kit v0.3) |
+| Р-3 | Нет поиска по файлам (Grep, Glob) | Оба журнала RUN-0083 | среда исполнителя | Не runtime: навигация [`MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) → карта → раздел рассчитана на чтение без поиска; её ломает только Р-1 |
+
+Каталог `taxonomy/mango-products.yaml` (98 КБ) читался частями без
+потерь: одна строка — один узел. Доработки не требует.
+
+### 14.3. РТ-7 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)
+
+РТ-7 правит только генератор навигации БЗ и его вывод. Нормативная часть
+runtime (`AGENTS.md`, `contracts/`, `skills/`, `evaluation/`) на карты не
+ссылается и не меняется, поэтому задача Хаба не нужна.
+
+Заголовок: `РТ-7. Компактное оглавление разделов базы знаний для чтения за одно обращение`
+
+````markdown
+## Контекст задачи
+
+- Полный URL постановки: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-runtime-product-catalog-golden-set.md (RFC-RT-001, раздел 14.3)
+- Полные URL связанных PR/issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/446, https://github.com/G-Ivan-A/mango_ba_prompts/pull/447
+- Полные URL связанных репозиториев: https://github.com/G-Ivan-A/mango_ba_prompts (промпты спицы читают БЗ runtime по SHA реестра)
+- Важные решения, которые уже приняты:
+  - владелец спицы: runtime — база знаний для обращения из промптов; доработки — через RFC (issue #446, пункт 5);
+  - навигация БЗ без поиска по файлам: `MAP.json` → карта документа → раздел (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/USAGE.md).
+- Что нельзя считать известным из предыдущих задач: что у модели в чате есть поиск по файлам (Grep, Glob) — нет; что `index.md` документа компактен — у `mango-lk-manual` он 113 348 Б.
+
+## Решаемая проблема
+
+Карта документа `docs/kb/maps/<документ>.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/maps/mango-lk-manual.json) хранит у каждого раздела `id`, `hint`, `pages`, `tokens` и полный `path`. 11 из 25 карт больше 32 КБ, крупнейшая — 156 189 Б. Модель читает такую карту частями и пропускает разделы: в прогоне спицы RUN-0083 карта `mango-lk-manual` прочитана «частично: строки 1–60 и 560–1599».
+
+## Story
+
+**Как есть:**
+
+- Кто действует: модель в чате БА читает БЗ runtime по SHA реестра спицы, без поиска по файлам.
+- Что происходит сейчас: после `MAP.json` модель открывает карту документа; большая карта не читается за одно обращение.
+- Где возникает ошибка, блокировка или долг: выбор раздела идёт по неполному списку, нужный раздел может не попасть в выборку.
+
+**Как должно быть:**
+
+- Кто действует: та же модель.
+- Какой результат должен быть доступен после решения: компактное оглавление документа читается за одно обращение; по нему модель выбирает раздел и открывает его файл, а карту — только ради `hint` нескольких строк.
+- Как Пользователь принимает или возвращает решение на доработку: проверяет размер оглавлений и прогоняет проверки навигации БЗ.
+
+## ФТ
+
+- [ ] `docs/kb/build_map.py` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/build_map.py) пишет для каждого документа оглавление `docs/kb/maps/<документ>.toc.tsv`: строка заголовка из полей `section`, `title`, `file` через табуляцию, затем по строке на раздел в порядке карты; `file` — имя файла раздела в каталоге `sections/` документа.
+- [ ] Каждая запись `documents[]` в `docs/kb/MAP.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) получает поле `sections_toc` с путём оглавления.
+- [ ] `navigation.select_section` в `MAP.json` и шаг 2 `docs/kb/USAGE.md` говорят: сначала открыть `sections_toc`, выбрать разделы по `title`, затем открыть их файлы; строку `sections_map` открывать, когда нужны `hint`, страницы или токены.
+- [ ] `build_map.py --check` сообщает об устаревшем или лишнем оглавлении так же, как о карте.
+- [ ] Тест навигации БЗ проверяет: оглавление есть у каждого документа, строки совпадают с картой по `section`, `title` и файлу, размер каждого оглавления не больше 32 768 Б.
+
+## НФТ
+
+- [ ] Карты `maps/*.json`, `index.md` и `sections/` не меняются: оглавление — дополнительный вывод, а не замена.
+- [ ] Нормативная часть не правится: `AGENTS.md`, `contracts/`, `skills/`, `evaluation/` (правило 13).
+- [ ] Оглавление — текст UTF-8, без JSON-обвязки, одна строка — один раздел; символ табуляции внутри `title` заменяется пробелом.
+- [ ] Проверки `tests/test_kb_navigation.py` и `tests/runtime-smoke.sh` зелёные.
+
+## Цель
+
+Модель выбирает раздел БЗ по полному списку разделов документа, прочитанному за одно обращение.
+
+Definition of Done:
+
+- `python docs/kb/build_map.py --check` и `python -m unittest discover -s tests -p 'test_kb_navigation.py'` — зелёные;
+- в PR — таблица размеров 25 оглавлений (максимум не больше 32 768 Б);
+- в PR — SHA коммита слияния для реестра спицы (новый срез).
+
+## Operating Mode
+
+- `Structured`: меняются генератор, его вывод, `USAGE.md` и тест навигации; содержание разделов и карты — без изменений.
+
+## Специфика работы с Конардом
+
+- **молчание = согласие:** если Пользователь мержит PR без комментариев, решения приняты;
+- **комментарий + ручной перезапуск:** доработка в том же PR;
+- **close:** закрытие PR означает отказ от решения;
+- draft PR используется как место отложенной проверки до acceptance.
+
+## Обоснованные обходы
+
+- Порог 32 768 Б — ориентир одного чтения файла в чате; если среда читает больше, оглавление всё равно в 4–6 раз меньше карты.
+````
+
+Альтернатива без доработки runtime: БА прикладывает к чату нужные
+разделы или карту документа файлом. Она работает уже сейчас, но
+переносит выбор раздела с модели на БА.
+
+После слияния РТ-7 спица добавляет строку РТ-7 в реестр справочников и
+обновляет срез (раздел 1 реестра). До слияния реестр не меняется: строка
+задачи ссылается на созданную задачу runtime, а её создаёт владелец.
+
 ## Related Artifacts
 
-- [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1 (снята), З-3, РТ-1…РТ-4, РТ-6
+- [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1 (снята), З-3, РТ-1…РТ-4, РТ-6 (РТ-7 — после слияния, раздел 14.3)
 - [Проверка готовности BL-156а](../../experiments/issue_444/runtime_readiness.py) — [лог](../../experiments/issue_444/runtime-readiness.log), [постановка](../../experiments/issue_444/task-statement.md), раздел 13
 - [Проверка готовности BL-163](../../experiments/issue_442/runtime_readiness.py) — [лог](../../experiments/issue_442/runtime-readiness.log), [постановка](../../experiments/issue_442/task-statement.md)
 - [RFC #427, раздел 8](2026-11-bcreq-flow-processes-prompts.md) — исключения, требования, заглушка
@@ -911,3 +1049,4 @@ runtime показывает, что речь о разных частях #17:
 - [Декомпозиция функций Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-27-capability-decomposition.md), [концепция таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-26-taxonomy-concept.md), [поток требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-requirements-flow.md) — черновики и требования для BL-164
 - [Инвентаризация индустриального слоя](../../experiments/issue_434/industry_taxonomy_inventory.py) — [лог](../../experiments/issue_434/industry-taxonomy-inventory.log)
 - [BL-164](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) — задача по индустриальной таксономии
+- [Размер карт БЗ runtime](../../experiments/issue_446/kb_map_sizes.py) — [лог](../../experiments/issue_446/kb-map-sizes.log), раздел 14.2; [RUN-0083](../../runs/2026/RUN-0083/outputs/report.md) — раздел 14.1

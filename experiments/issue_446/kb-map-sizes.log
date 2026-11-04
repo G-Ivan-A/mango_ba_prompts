@@ -1,0 +1,28 @@
+runtime f31dcde33f0bc120244128faab98fc0162e45701; карт: 25; MAP.json: 14837 Б; порог 32768 Б
+документ	карта, Б	разделов	оглавление, Б	карта > порога	оглавление > порога
+mango-lk-manual	156189	352	28151	да	нет
+vpbx-api	91126	255	24589	да	нет
+integration-bitrix24	80892	192	20182	да	нет
+mtalker--windows-mac-working	61315	143	13263	да	нет
+integration-bpmsoft	52036	127	11716	да	нет
+mango-cc-manual	44660	103	7567	да	нет
+mtalker--android-user-guide	42719	99	9191	да	нет
+speech-analytics--vats-offline-scoring	37375	88	6912	да	нет
+speech-analytics--offline-scoring	37222	87	6535	да	нет
+integration-amocrm	37045	86	8519	да	нет
+speech-analytics--kats	36563	92	6951	да	нет
+cov-robot-fil	32230	75	5738	нет	нет
+speech-analytics--user-guide	30400	67	5304	нет	нет
+mdialogi-api	26424	70	5516	нет	нет
+mtalker--windows-mac-settings	22959	55	5110	нет	нет
+quality-management	22754	52	4169	нет	нет
+api-server-client	21895	57	4811	нет	нет
+rolevaya-model-vats	21024	65	4663	нет	нет
+integration-1c	13475	33	2811	нет	нет
+sip-trunk	13330	39	2439	нет	нет
+wallboard	9365	21	2122	нет	нет
+mtalker--windows-mac-admin	6702	15	1480	нет	нет
+integration-ident	4025	9	847	нет	нет
+lk-vats-sso	3865	10	941	нет	нет
+mtalker--quick-start	3007	7	598	нет	нет
+итого: карт больше порога — 11, оглавлений больше порога — 0

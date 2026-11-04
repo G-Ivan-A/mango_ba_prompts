@@ -1,0 +1,8 @@
+# Мутационная проверка валидаторов 434/446 (issue #446), 2026-11-04
+# Каждая мутация вносится во временную копию файла, файл восстанавливается после прогона. rc=1 — мутация поймана.
+# 438 на M1 не реагирует ожидаемо: режимы run kit проверяет 446.
+M1 Ш-1 by-test → published в run kit | validator 446 rc=1 | FAIL: test_rows_match_kit (__main__.TestKitTest.test_rows_match_kit) 
+M1 Ш-1 by-test → published в run kit | validator 438 rc=0 | 
+M2 ссылка РТ-7 на main вместо SHA | validator 434 rc=1 | FAIL: test_runtime_links_pinned_to_registry (__main__.Links.test_runtime_links_pinned_to_registry) (link='main/docs/kb/build_map.py') FAIL: test_runtime_links_pinned_to_registry (__main__.Links.test_runtime_links_pinned_to_registry) 
+M3 тело РТ-7 без раздела НФТ | validator 434 rc=1 | FAIL: test_template_sections_in_order (__main__.TaskBodies.test_template_sections_in_order) (task='РТ-7. ') 
+M4 RUN-0083 T провалил J11 | validator 446 rc=1 | FAIL: test_decision_from_scores (__main__.Run0083Test.test_decision_from_scores) 

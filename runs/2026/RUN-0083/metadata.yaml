@@ -1,0 +1,85 @@
+run_id: RUN-0083
+process: bcreq-stage1-a-in-synthetic-dialogue-bl157b
+version: "0.1"
+date: 2026-11-04
+author: "Claude Code (claude-opus-5-5), issue #446"
+model: "claude-opus-5-5 — исполнитель (2 изолированных подагента, по одному на плечо) и слепой судья (1 изолированный подагент)"
+status: draft
+run_type: execution
+input_kind: synthetic
+source_paths:
+  - inputs/README.md
+  - inputs/input-pack.md
+  - inputs/ba-script.md
+inputs:
+  - inputs/README.md
+  - inputs/input-pack.md
+  - inputs/ba-script.md
+outputs:
+  - outputs/README.md
+  - outputs/report.md
+  - outputs/P-transcript.md
+  - outputs/T-transcript.md
+  - outputs/judge-scores.json
+  - outputs/judge-key.json
+  - outputs/summary.json
+logs:
+  - logs/experiment-log.md
+  - logs/executor-instruction.md
+  - logs/judge-instruction.md
+  - logs/preregistration.md
+feedback:
+  - feedback/review-notes.md
+# Поля DEC-411-02 (добровольные, как в RUN-0079…RUN-0082).
+prompt_ref:
+  P:
+    - {step: Ш-0, path: prompts/bcreq-constitution-governance-oneshot.md, version: "0.1", sha256: 8af9eeac7e7c52068e005cfbb5199e64dbe63ebf5828279fa42414ff0e72d032}
+    - {step: Ш-1, path: prompts/bcreq-context-understanding-stepwise.md, version: "0.1", sha256: 7cce77ca3ce7eb01813b6ab59053e021b0c228fe20f734f95340183ca762d7be}
+    - {step: Ш-2, path: prompts/bcreq-products-impact-analysis-stepwise.md, version: "0.1", sha256: 7115bf94540680c3ae2d3dad33587529a79123f1e5b8370df50aec7e19c13522}
+  T:
+    - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "0.1-by-test (реестр 0.4)", sha256: 55f178a3f571bd023281cf58efffa2a1cc10b2597d443445b1f439fb35c05a05}
+    - {step: Ш-1, path: prompts/drafts/bcreq-context-understanding-stepwise.md, version: "0.1-by-test (реестр 0.4)", sha256: b3869b2d9283c1028cd68cfc16467712e1ae766064be4e670c486be9a3323546}
+    - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "0.1-by-test (реестр 0.4)", sha256: 72feeea5c92b9ce015b8a3157218dc320b6403d409f4702a08a7627447bc20f1}
+prompt_hashes: outputs/summary.json   # полные SHA-256 шести текстов — поле prompts
+runtime:
+  repo: G-Ivan-A/mango-ba-ai-runtime
+  commit: f31dcde33f0bc120244128faab98fc0162e45701
+task_seed: runs/2026/RUN-0078/inputs/seed.json   # SIM-1106
+preregistration: experiments/issue_446/run0083/preregistration.md
+replicates: 1
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  criteria: 12
+  passed_P: 10
+  passed_T: 12
+  failed_P: [J10, J11]
+  failed_T: []
+  critical: [J03, J07, J11]
+  by_test: true
+  judge_overall: T
+  tokens_executor_P: 57937
+  tokens_executor_T: 70729
+  tokens_judge: 102299
+  tokens_total: 230965
+  token_method: "subagent_tokens из отчёта Claude Code о подагенте (включает чтение промптов, входа и базы знаний runtime)"
+  measured: true
+  eval: "Синтетический диалог Ш-0 → Ш-1 → Ш-2 по задаче SIM-1106 со сценарием реплик БА; одно плечо — опубликованные v0.1 (P), другое — черновики «по тесту» (T). Слепой судья: P 10/12 (провалы J10 — сверка терминов без классов С0–С4, J11 — отчёт Г-IN без рекомендации), T 12/12. По правилу пред-регистрации черновики A-IN идут в run kit v0.3 как by-test. N = 1: дымовой тест пригодности, не замер качества; публикацию в prompts/ не решает."
+related_runs:
+  - RUN-0078
+  - RUN-0082
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/446
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/438
+related_artifacts:
+  - docs/ba-processes/bcreq-run-kit.md
+  - prompts/drafts/bcreq-constitution-governance-oneshot.md
+  - prompts/drafts/bcreq-context-understanding-stepwise.md
+  - prompts/drafts/bcreq-products-impact-analysis-stepwise.md
+  - experiments/issue_446/run0083/run.py
+  - experiments/issue_446/run0083/preregistration.md
+  - experiments/issue_446/kb_map_sizes.py
+  - experiments/issue_446/kb-map-sizes.log
+  - scripts/validate_issue_446_test_kit.py

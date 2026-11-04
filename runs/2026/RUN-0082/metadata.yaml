@@ -1,0 +1,110 @@
+run_id: RUN-0082
+process: bcreq-stage1-golden-set-ad-review-validation-replicates
+version: "0.1"
+date: 2026-11-04
+author: "Claude Code (claude-opus-5-5), issue #446"
+model: "claude-opus-5-5 — исполнитель (12 изолированных подагентов) и судья (6 изолированных подагентов)"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+  - inputs/mapping.json
+inputs:
+  - inputs/README.md
+  - inputs/mapping.json
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/summary.json
+  - outputs/r1/executor-A.json
+  - outputs/r1/executor-D.json
+  - outputs/r1/judge-scores.json
+  - outputs/r1/judge-key.json
+  - outputs/r1/metrics.json
+  - outputs/r2/executor-A.json
+  - outputs/r2/executor-D.json
+  - outputs/r2/judge-scores.json
+  - outputs/r2/judge-key.json
+  - outputs/r2/metrics.json
+  - outputs/r3/executor-A.json
+  - outputs/r3/executor-D.json
+  - outputs/r3/judge-scores.json
+  - outputs/r3/judge-key.json
+  - outputs/r3/metrics.json
+logs:
+  - logs/experiment-log.md
+  - logs/executor-instruction.md
+  - logs/judge-instruction.md
+feedback:
+  - feedback/review-notes.md
+# Поля DEC-411-02 (добровольные, как в RUN-0079…RUN-0081).
+prompt_ref:
+  A:
+    path: prompts/bcreq-review-validation-oneshot.md
+    version: "0.1 + тип гейта (prompt-typing.json), ссылки по SHA — текст A RUN-0081"
+    commit: 36799e9ebc7c538f8829d04870ac48da28042d4a
+    sha256: adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581
+  D:
+    path: prompts/drafts/bcreq-review-validation-oneshot.md
+    version: "0.1-by-test (реестр 0.4) — текст D RUN-0081"
+    commit: 36799e9ebc7c538f8829d04870ac48da28042d4a
+    sha256: 2e8391723f365fa34be3ad9012547fe6db7e379dadae9d787c65ecead046d990
+golden_set: {path: standards/bcreq-lessons/golden-set-bcreq-stage1.md, version: "0.1"}
+rubric: {path: standards/bcreq-lessons/rubric-bcreq-stage1.md, version: "0.1"}
+preregistration: experiments/issue_446/run0082/preregistration.md
+replicates: 3
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  success_rate: 0.85
+  success_rate_basis: "Медиана трёх повторов: A сдал 53 из 62 кейсов (повторы 47, 53, 54) по всем применимым K1–K6 по оценке модели-судьи. D — медиана 54 (51, 56, 54). v0.1 в RUN-0079 (N = 1): 49 из 62. Судья не подтверждён человеком."
+  cases: 62
+  passed_A_median: 53
+  passed_D_median: 54
+  passed_A_replicates: [47, 53, 54]
+  passed_D_replicates: [51, 56, 54]
+  core_A_median: 8
+  core_D_median: 9
+  core_A_replicates: [6, 8, 10]
+  core_D_replicates: [10, 8, 9]
+  core_total: 11
+  negatives_false_positive_A_median: 0
+  negatives_false_positive_D_median: 0
+  passed_RUN_0079_A: 49
+  core_RUN_0079_A: "10/11"
+  A_not_worse_than_RUN_0079: false
+  D_not_worse_than_RUN_0079: false
+  D_not_worse_than_A_median: true
+  publish_typing: false
+  publish_draft: false
+  tokens_executor_A: 168033
+  tokens_executor_D: 216529
+  tokens_judge: 307445
+  tokens_total: 692007
+  token_method: "subagent_tokens из отчёта Claude Code о подагенте (сумма по пакетам и повторам; включает чтение промпта и кейсов)"
+  measured: true
+  eval: "Пред-регистрированный замер с повторами (N = 3, медиана). A (v0.1 + тип гейта) — медиана 53/62, ядро 8/11; D (черновик Ш-В «по тесту») — 54/62, ядро 9/11; ложных дефектов 0/10 у обеих во всех повторах. По правилу DEC-427-11, применённому к медианам, обе версии ниже RUN-0079 по ядру (10/11): типизация в prompts/ не публикуется, черновик Ш-В остаётся в prompts/drafts/. D не хуже медианы A. GS-BCREQ-12 (ядро) проваливают 6 из 6 выходов: правка оставляет два действия в одном ФТ — дефект текста Ш-В, а не разброс. Ядро A на одном тексте колеблется от 6 до 10 из 11: историческая база N = 1 решение не держит, нужен одновременный контроль (Р-03)."
+related_runs:
+  - RUN-0079
+  - RUN-0080
+  - RUN-0081
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/446
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/444
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/427
+related_artifacts:
+  - prompts/bcreq-review-validation-oneshot.md
+  - prompts/drafts/bcreq-review-validation-oneshot.md
+  - experiments/issue_438/prompt-typing.json
+  - experiments/issue_444/bl156a_prompt_changes.py
+  - experiments/issue_444/run0081/prepare.py
+  - experiments/issue_444/run0081/judge_prepare.py
+  - experiments/issue_444/run0081/score.py
+  - experiments/issue_446/run0082/preregistration.md
+  - experiments/issue_446/run0082/run.py
+  - experiments/issue_446/run0082/score.log
+  - experiments/issue_446/run0082/tokens.tsv
+  - standards/bcreq-lessons/golden-set-bcreq-stage1.md
+  - standards/bcreq-lessons/rubric-bcreq-stage1.md

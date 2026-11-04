@@ -29,10 +29,13 @@ class PublicationTests(unittest.TestCase):
         for prompt in data['prompts']:
             self.assertEqual(prompt['content'], (ROOT / prompt['sourcePath']).read_text())
 
-    def test_process_route_has_exactly_two_blocks(self):
+    def test_process_route_has_expected_blocks(self):
+        # Issue #446 adds the third block on purpose: the stage-1 test kit
+        # (BL-157b) before the manual process and the approval stream.
         html = (ROOT / 'site/index.html').read_text()
         sections = re.findall(r'<section\b[^>]*data-page="processes"[^>]*>', html)
-        self.assertEqual(len(sections), 2)
+        ids = [re.search(r'\bid="([^"]+)"', s).group(1) for s in sections]
+        self.assertEqual(ids, ['bcreq-testkit', 'bcreq-manual', 'bcreq-approval'])
 
     def test_login_is_a_separate_page(self):
         self.assertTrue((ROOT / 'site/login.html').exists())
