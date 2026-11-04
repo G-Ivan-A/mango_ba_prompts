@@ -354,7 +354,7 @@
         "Ш-В"
       ],
       "based_on": "prompts/bcreq-review-validation-oneshot.md",
-      "based_on_sha256": "56dee0cc777870cb33ddf5db18fd2577103bc7611f8d36f5a9b27e46a16e0f9e",
+      "based_on_sha256": "b581e0748bbf8a40dde02d0dc2449333f1807053d83ccdcf765fdf80bf4140b7",
       "runtime_main_to_sha": 0,
       "profiles": [
         "ANALYZE",

@@ -31,8 +31,10 @@ related_issues:
 Шаги A-IN (Ш-0, Ш-1, Ш-2) идут по черновикам «по тесту» (`by-test`):
 синтетический прогон [RUN-0083](../../runs/2026/RUN-0083/outputs/report.md)
 дал черновикам 12 из 12 критериев против 10 из 12 у v0.1 при правиле,
-записанном до прогона. Остальные шаги идут по промптам `prompts/` v0.1
-(`published`). Первый прогон BL-111 с комплектом на реальной задаче —
+записанном до прогона. Остальные шаги идут по промптам `prompts/`
+(`published`): v0.1, кроме Ш-В — v0.2 по замеру
+[RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md)
+(issue #448, Р-03). Первый прогон BL-111 с комплектом на реальной задаче —
 BL-157в; до него комплект проверен только синтетикой
 ([разбор готовности](../analysis/2026-11-04-bl-156-157-readiness-check.md)).
 
@@ -70,10 +72,10 @@ BL-157в; до него комплект проверен только синт�
 | 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | `by-test` (заглушка) | [заглушка Ш-Р](../../prompts/drafts/bcreq-release-readiness-oneshot.md) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
 | — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | `published` | [`drafts/bcreq-scenarios-modeling-oneshot`](../../prompts/drafts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
 
-Колонка «Промпт для копирования» — опубликованные промпты v0.1 из
-`prompts/`. Колонка «Черновик «по тесту»» — промпты шагов BL-156 из
-`prompts/drafts/`: текст v0.1 без изменений плюс блок стандартов «по
-тесту», собранный сборщиком `scripts/build_bcreq_step_prompts.py`
+Колонка «Промпт для копирования» — опубликованные промпты из
+`prompts/` (v0.1; Ш-В — v0.2). Колонка «Черновик «по тесту»» — промпты
+шагов BL-156 из `prompts/drafts/`: опубликованный текст без изменений
+плюс блок стандартов «по тесту», собранный сборщиком `scripts/build_bcreq_step_prompts.py`
 ([отчёт BL-156](../analysis/2026-11-03-bl-156-step-prompts-report.md)).
 Режим шага задаёт колонка «Режим в тесте»: `published` — текст из
 «Промпт для копирования», `by-test` — из «Черновик «по тесту»». Карточка
@@ -85,7 +87,14 @@ BL-157в; до него комплект проверен только синт�
   ([RUN-0080](../../runs/2026/RUN-0080/outputs/golden-set-report.md):
   55/62, как v0.1; [RUN-0082](../../runs/2026/RUN-0082/outputs/golden-set-report.md),
   три повтора: медиана 54/62, ядро 9/11 — ниже базы RUN-0079 по ядру
-  (10/11), поэтому шаг остаётся `published`; правка — BL-156в);
+  (10/11), поэтому шаг остаётся `published`). Правка BL-156б+в измерена
+  в [RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md):
+  три плеча при одновременном контроле, N = 3 (Р-03). v0.1 + тип гейта +
+  правило «правка без добавлений» — медиана 56/62, ядро 10/11, ложных
+  дефектов 0 против 54/62, 9/11, 0 у v0.1. Опубликована как
+  `prompts/` v0.2. Черновик «по тесту» пересобран на v0.2 и не измерен,
+  поэтому шаг остаётся `published`. Известная регрессия v0.2 —
+  GS-BCREQ-25 (провал 3 из 3, вне ядра) — BL-156г;
 - Ш-0, Ш-1, Ш-2 — синтетический прогон A-IN
   ([RUN-0083](../../runs/2026/RUN-0083/outputs/report.md), N = 1);
 - Ш-3…Ш-9, Ш-С — не измерены, остаются `published`.
@@ -127,13 +136,14 @@ task:
   id: "BCREQ-<номер>"    # обезличенный: без имён клиентов и персональных данных
   title: "<суть запроса в одной фразе>"
 prompt_set:
-  mode: by-test          # by-test — хоть один шаг из черновика «по тесту» BL-156; published — все шаги prompts/ v0.1
+  mode: by-test          # by-test — хоть один шаг из черновика «по тесту» BL-156; published — все шаги из prompts/
   commit: <SHA коммита mango_ba_prompts, из которого скопированы промпты>
 prompt_ref:              # по строке на каждый выполненный шаг
   - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "0.1"}
   - {step: Ш-1, path: prompts/drafts/bcreq-context-understanding-stepwise.md, version: "0.1"}
   - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "0.1"}
   - {step: Ш-3, path: prompts/bcreq-fr-documentation-stepwise.md, version: "0.1"}
+  - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.2"}
 runtime:
   repo: G-Ivan-A/mango-ba-ai-runtime
   commit: f31dcde33f0bc120244128faab98fc0162e45701   # срез реестра runtime 0.4, раздел 2
