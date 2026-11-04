@@ -1,0 +1,168 @@
+# runtime clone /tmp/rt444
+# HEAD f31dcde33f0bc120244128faab98fc0162e45701
+# candidate f31dcde33f0bc120244128faab98fc0162e45701
+
+OK   HEAD клона = кандидат f31dcde33f0bc120244128faab98fc0162e45701
+
+## commit
+f31dcde33f0bc120244128faab98fc0162e45701 2026-11-04T17:55:56+03:00 Merge pull request #21 from konard/issue-20-446bf8992238
+
+## 2. пути раздела 2 реестра, И-5, И-6 и каталог (ТС-2)
+OK   путь docs/kb/MAP.json
+OK   путь docs/kb/USAGE.md
+OK   путь evaluation/g-human-checklist.md
+OK   путь golden/cases-analytics-reporting.yaml
+OK   путь golden/cases-voice-ucaas.yaml
+OK   путь golden/cases.yaml
+OK   путь taxonomy/domain-glossary-analytics-reporting.yaml
+OK   путь taxonomy/domain-glossary-voice-ucaas.yaml
+OK   путь taxonomy/domain-glossary.yaml
+OK   путь taxonomy/mango-products.yaml
+OK   путь taxonomy/products.yaml
+OK   путь taxonomy/source-tiers.yaml
+OK   путь templates/bcreq-skeleton.md
+
+## 3. версии (ТС-3)
+OK   taxonomy/products.yaml: version = "1.1"
+OK   taxonomy/mango-products.yaml: version = "1.0"
+OK   taxonomy/source-tiers.yaml: version = "0.5"
+OK   evaluation/g-human-checklist.md: version = 1.0
+OK   golden/cases.yaml: version = "1.1"
+OK   golden/cases-voice-ucaas.yaml: version = "0.2"
+OK   golden/cases-analytics-reporting.yaml: version = "0.2"
+OK   taxonomy/domain-glossary.yaml: version = "1.0"
+OK   taxonomy/domain-glossary-voice-ucaas.yaml: version = "0.1"
+OK   taxonomy/domain-glossary-analytics-reporting.yaml: version = "0.1"
+OK   docs/kb/MAP.json: schema_version = 1
+
+## 4. изменения runtime 2db0ef5..f31dcde
+ .gitignore                                         |   2 +
+ AGENTS.md                                          |  16 +-
+ README.md                                          |   2 +
+ compilation-manifest.yaml                          |  47 ++-
+ contracts/c-in.md                                  |  20 +-
+ .../__pycache__/extract_lk_manual.cpython-315.pyc  | Bin 45218 -> 0 bytes
+ evaluation/g-mach-checklist.md                     |   6 +-
+ evaluation/validate-package.md                     |  83 +++-
+ golden/cases-analytics-reporting.yaml              | 112 ++++++
+ golden/cases-voice-ucaas.yaml                      | 130 ++++++
+ golden/cases.yaml                                  |  36 +-
+ golden/gs-ar-01-monthly-romi.md                    |  66 +++
+ golden/gs-ar-02-calltracking-widget.md             |  62 +++
+ golden/gs-ar-neg-01-dynamic-vs-static.md           |  55 +++
+ golden/gs-ar-neg-02-calltracking-vs-e2e.md         |  55 +++
+ golden/gs-ar-neg-03-function-outside-catalog.md    |  58 +++
+ golden/gs-cc-01-queue-overflow.md                  |  13 +-
+ golden/gs-cc-02-report-export.md                   |  12 +-
+ golden/gs-cc-neg-01-inbound-vs-outbound.md         |  13 +-
+ golden/gs-cc-neg-02-queue-vs-group.md              |   9 +-
+ golden/gs-cc-neg-03-sla-vs-aht.md                  |  20 +-
+ golden/gs-cc-neg-04-ivr-vs-announcer.md            |  15 +-
+ golden/gs-cc-neg-05-function-outside-catalog.md    |  68 ++++
+ golden/gs-vu-01-after-hours-forwarding.md          |  68 ++++
+ golden/gs-vu-02-crm-api-call.md                    |  69 ++++
+ golden/gs-vu-neg-01-forwarding-vs-transfer.md      |  59 +++
+ golden/gs-vu-neg-02-blind-vs-consult.md            |  55 +++
+ golden/gs-vu-neg-03-sip-account-vs-trunk.md        |  55 +++
+ golden/gs-vu-neg-04-foreign-class-function.md      |  61 +++
+ skills/transcript-normalization-contact-center.md  |  23 +-
+ taxonomy/domain-glossary-analytics-reporting.yaml  |  89 +++++
+ taxonomy/domain-glossary-voice-ucaas.yaml          | 119 ++++++
+ taxonomy/mango-products.yaml                       | 163 ++++----
+ taxonomy/products.yaml                             |  13 +-
+ .../__pycache__/test_kb_navigation.cpython-315.pyc | Bin 7311 -> 0 bytes
+ tests/runtime-smoke.sh                             |  19 +-
+ tests/test_catalog_binding.py                      | 443 +++++++++++++++++++++
+ tests/test_domain_glossaries.py                    | 123 ++++++
+ tests/test_golden_sets.py                          | 138 +++++++
+ tests/test_product_catalog.py                      |  12 +-
+ 40 files changed, 2262 insertions(+), 147 deletions(-)
+
+     раздел 2: docs/kb/MAP.json — не менялся
+     раздел 2: docs/kb/USAGE.md — не менялся
+     раздел 2: evaluation/g-human-checklist.md — не менялся
+     раздел 2: golden/cases.yaml — ИЗМЕНЁН
+     раздел 2: taxonomy/domain-glossary.yaml — не менялся
+     раздел 2: taxonomy/mango-products.yaml — ИЗМЕНЁН
+     раздел 2: taxonomy/products.yaml — ИЗМЕНЁН
+     раздел 2: taxonomy/source-tiers.yaml — не менялся
+     раздел 2: templates/bcreq-skeleton.md — не менялся
+OK   база знаний docs/kb не менялась (И-1): нет изменений
+
+## 5. каталог runtime против каталога спицы (РТ-6)
+OK   closed: true
+OK   каждая строка узла разобрана (353)
+OK   source_sha256 2ca6fafa85b8… = sha256(спица@e3597fd) 2ca6fafa85b8…
+OK   текущий docs/taxonomy/products.json 2ca6fafa85b8… = источник копии (дрейфа нет)
+OK   узлов: runtime 353, спица 353
+OK   множества id совпадают
+OK   уровень и родители совпадают (расхождений 0)
+     уровни runtime: {'domain': 7, 'capability': 43, 'feature': 151, 'function': 152}
+OK   lifecycle без дрейфа (раздел 2.1 реестра снимается): нет
+OK   catalog_status runtime accepted, status спицы accepted
+
+## 6. golden set трёх классов (РТ-3, строгая форма PR #21)
+     golden/cases.yaml: {'positive': 2, 'negative': 5}; structural_only true; confirmed_by {'none': 7}
+OK   contact-center: ≥2 положительных и ≥1 отрицательный
+OK   GS-CC-01: product_class = contact-center
+OK   GS-CC-01: atomic_function call-routing/function/overflow-routing — функция каталога класса contact-center
+OK   GS-CC-02: product_class = contact-center
+OK   GS-CC-02: atomic_function report-builder/function/report-create — функция каталога класса contact-center
+OK   GS-CC-NEG-01: product_class = contact-center
+OK   GS-CC-NEG-01: atomic_function call-routing/function/overflow-routing — функция каталога класса contact-center
+OK   GS-CC-NEG-02: product_class = contact-center
+OK   GS-CC-NEG-02: atomic_function call-routing/function/queue-management — функция каталога класса contact-center
+OK   GS-CC-NEG-03: product_class = contact-center
+OK   GS-CC-NEG-03: atomic_function report-builder/function/custom-parameter-create — функция каталога класса contact-center
+OK   GS-CC-NEG-04: product_class = contact-center
+OK   GS-CC-NEG-04: atomic_function omnichannel-contact-center/function/interaction-routing — функция каталога класса contact-center
+OK   GS-CC-NEG-05: product_class = contact-center
+OK   GS-CC-NEG-05: atomic_function call-routing/function/overflow-routing — функция каталога класса contact-center
+OK   GS-CC-NEG-05: declared_function queue-callback-offer — outside-catalog
+     golden/cases-voice-ucaas.yaml: {'positive': 2, 'negative': 4}; structural_only true; confirmed_by {'none': 6}
+OK   voice-ucaas: ≥2 положительных и ≥1 отрицательный
+OK   GS-VU-01: product_class = voice-ucaas
+OK   GS-VU-01: atomic_function cloud-pbx/function/working-hours-routing — функция каталога класса voice-ucaas
+OK   GS-VU-02: product_class = voice-ucaas
+OK   GS-VU-02: atomic_function cpaas/function/programmable-voice-call — функция каталога класса voice-ucaas
+OK   GS-VU-NEG-01: product_class = voice-ucaas
+OK   GS-VU-NEG-01: atomic_function cloud-pbx/function/auto-attendant — функция каталога класса voice-ucaas
+OK   GS-VU-NEG-02: product_class = voice-ucaas
+OK   GS-VU-NEG-02: atomic_function unified-communications/function/softphone-call — функция каталога класса voice-ucaas
+OK   GS-VU-NEG-03: product_class = voice-ucaas
+OK   GS-VU-NEG-03: atomic_function number-management/function/number-assignment — функция каталога класса voice-ucaas
+OK   GS-VU-NEG-04: product_class = voice-ucaas
+OK   GS-VU-NEG-04: atomic_function number-management/function/number-assignment — функция каталога класса voice-ucaas
+OK   GS-VU-NEG-04: declared_function call-tracking/function/dynamic-number-substitution — foreign-class
+     golden/cases-analytics-reporting.yaml: {'positive': 2, 'negative': 3}; structural_only true; confirmed_by {'none': 5}
+OK   analytics-reporting: ≥2 положительных и ≥1 отрицательный
+OK   GS-AR-01: product_class = analytics-reporting
+OK   GS-AR-01: atomic_function end-to-end-analytics/function/romi-calculation — функция каталога класса analytics-reporting
+OK   GS-AR-02: product_class = analytics-reporting
+OK   GS-AR-02: atomic_function call-tracking/function/calltracking-widget-create — функция каталога класса analytics-reporting
+OK   GS-AR-NEG-01: product_class = analytics-reporting
+OK   GS-AR-NEG-01: atomic_function call-tracking/function/source-attribution — функция каталога класса analytics-reporting
+OK   GS-AR-NEG-02: product_class = analytics-reporting
+OK   GS-AR-NEG-02: atomic_function multichannel-analytics/function/attribution-modeling — функция каталога класса analytics-reporting
+OK   GS-AR-NEG-03: product_class = analytics-reporting
+OK   GS-AR-NEG-03: atomic_function end-to-end-analytics/function/romi-calculation — функция каталога класса analytics-reporting
+OK   GS-AR-NEG-03: declared_function romi-dashboard-export — outside-catalog
+
+## 7. глоссарии (РТ-4)
+     taxonomy/domain-glossary.yaml: терминов 8, пар confusable_with 8, узлов catalog 0
+OK   contact-center: глоссарий не пуст
+OK   contact-center: есть пары confusable_with (источник отрицательных случаев)
+     contact-center: пары вне словаря (термин-подмена, допустимо): нет
+OK   contact-center: узлы catalog есть в каталоге (вне: нет)
+     taxonomy/domain-glossary-voice-ucaas.yaml: терминов 6, пар confusable_with 6, узлов catalog 4
+OK   voice-ucaas: глоссарий не пуст
+OK   voice-ucaas: есть пары confusable_with (источник отрицательных случаев)
+     voice-ucaas: пары вне словаря (термин-подмена, допустимо): нет
+OK   voice-ucaas: узлы catalog есть в каталоге (вне: нет)
+     taxonomy/domain-glossary-analytics-reporting.yaml: терминов 4, пар confusable_with 4, узлов catalog 6
+OK   analytics-reporting: глоссарий не пуст
+OK   analytics-reporting: есть пары confusable_with (источник отрицательных случаев)
+     analytics-reporting: пары вне словаря (термин-подмена, допустимо): нет
+OK   analytics-reporting: узлы catalog есть в каталоге (вне: нет)
+
+# итог: готово

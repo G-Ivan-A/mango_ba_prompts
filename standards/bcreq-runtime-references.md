@@ -1,13 +1,13 @@
 ---
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-11-04
 temperature: 0.1
 ai-generated: true
 type: standard
 scope: bcreq-flow
 runtime_repo: "https://github.com/G-Ivan-A/mango-ba-ai-runtime"
-runtime_sha: "2db0ef5106883b01b096fe8c4af50334899e9fe0"
+runtime_sha: "f31dcde33f0bc120244128faab98fc0162e45701"
 related_artifacts:
   - "docs/rfc/2026-11-bcreq-flow-processes-prompts.md"
   - "standards/bcreq-flow-glossary.md"
@@ -20,6 +20,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/430"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/442"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/444"
 ---
 
 # Справочники runtime для промптов потока BCREQ
@@ -47,9 +48,9 @@ related_issues:
 | Поле | Значение |
 | --- | --- |
 | Репозиторий | [`G-Ivan-A/mango-ba-ai-runtime`](https://github.com/G-Ivan-A/mango-ba-ai-runtime) |
-| SHA | `2db0ef5106883b01b096fe8c4af50334899e9fe0` |
-| Дата коммита | 2026-11-04 (слияние РТ-1, [runtime PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16)) |
-| Проверено | 2026-11-04, клон на SHA: все пути раздела 2 со статусом «Да» или «Частично» существуют; файлы раздела 2, кроме каталога, не менялись с прежнего среза `5d8c201` (2026-11-02); каталог сверен с каталогом спицы — раздел 2.1 (`experiments/issue_442/runtime-readiness.log`) |
+| SHA | `f31dcde33f0bc120244128faab98fc0162e45701` |
+| Дата коммита | 2026-11-04 (слияние [runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21): РТ-6, РТ-4, РТ-3 и норма PT-5 — М-5, М-6 RFC-RT-001; прежний срез `2db0ef5` — слияние РТ-1, [runtime PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16)) |
+| Проверено | 2026-11-04, клон на SHA: все пути раздела 2 со статусом «Да» или «Частично» существуют; каталог, golden set и глоссарии трёх классов сверены — 86 проверок без отказа (`experiments/issue_444/runtime-readiness.log`); каталог совпадает с каталогом спицы — раздел 2.1. С прежнего среза `2db0ef5` изменены: `taxonomy/mango-products.yaml` (РТ-6), `taxonomy/products.yaml` 1.1 (поле `catalog`, PT-5), `golden/cases.yaml` 1.1, новые `golden/cases-voice-ucaas.yaml`, `golden/cases-analytics-reporting.yaml`, `taxonomy/domain-glossary-voice-ucaas.yaml`, `taxonomy/domain-glossary-analytics-reporting.yaml`; `docs/kb/` (удалён только кэш `__pycache__`), `templates/`, `routes/`, `taxonomy/source-tiers.yaml`, `taxonomy/domain-glossary.yaml` и чек-лист И-8 не менялись |
 
 Это **единственная точка обновления SHA** (ТС-5). Промпты набора берут
 SHA отсюда при сборке; другой SHA в ссылке на runtime — ошибка
@@ -71,14 +72,14 @@ SHA отсюда при сборке; другой SHA в ссылке на runt
 
 | № | Справочник | Ссылка на срезе | Есть в runtime | Решение | Шаги |
 | --- | --- | --- | --- | --- | --- |
-| И-1 | База знаний продуктов | [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/docs/kb/MAP.json) → `docs/kb/maps/<id>.json` → `docs/kb/<slug>/sections/NN-*.md`; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/docs/kb/USAGE.md) | Да: 25 документов в `MAP.json`, 18 каталогов документов | **Ссылка обязательна** | Ш-1, Ш-2, Ш-3, Ш-6, Ш-7 |
-| И-2 | Таксономия продуктов | Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/products.yaml) | Да: закрытый каталог (`closed: true`), 353 узла — Domain 7, Capability 43, Feature 151, Atomic Function 152; у каждого узла классы runtime; копия каталога спицы (раздел 2.1) | **Ссылка**; `atomic_function` — только id из каталога (BL-163, [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442)) | Ш-2 |
-| И-3 | Шаблон документа BCREQ | [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/templates/bcreq-skeleton.md) | Да: 14 слотов, формы F-SHORT, F-APPROVAL, F-CLASSIC, F-NARRATIVE | Ссылка | Ш-0, Ш-В, Ш-Р |
+| И-1 | База знаний продуктов | [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) → `docs/kb/maps/<id>.json` → `docs/kb/<slug>/sections/NN-*.md`; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/USAGE.md) | Да: 25 документов в `MAP.json`, 18 каталогов документов | **Ссылка обязательна** | Ш-1, Ш-2, Ш-3, Ш-6, Ш-7 |
+| И-2 | Таксономия продуктов | Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml) | Да: закрытый каталог (`closed: true`), 353 узла — Domain 7, Capability 43, Feature 151, Atomic Function 152; у каждого узла классы runtime; копия каталога спицы (раздел 2.1) | **Ссылка**; `atomic_function` — только id из каталога (BL-163, [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442)); как читать — раздел 2.2 (М-4) | Ш-2 |
+| И-3 | Шаблон документа BCREQ | [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/templates/bcreq-skeleton.md) | Да: 14 слотов, формы F-SHORT, F-APPROVAL, F-CLASSIC, F-NARRATIVE | Ссылка | Ш-0, Ш-В, Ш-Р |
 | И-4 | Примеры разделов (ФТ, UC, US, НФТ, ОРР) | — | Нет (`A-FR`, `A-UC`, `A-US` вне среза) | Заглушка З-2 | Ш-3, Ш-4, Ш-5, Ш-8, Ш-С |
-| И-5 | Golden set по классу продуктовой таксономии | [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/golden/cases.yaml) | Частично: только contact-center, 6 синтетических кейсов, `structural_only: true` | Ссылка для contact-center + заглушка З-3 | Ш-В |
-| И-6 | Доменный глоссарий | [`taxonomy/domain-glossary.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/domain-glossary.yaml) | Частично: только contact-center, 8 терминов | Ссылка для contact-center + заглушка З-4 | Ш-1 |
-| И-7 | Порядок источников и уровни доверия | [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/source-tiers.yaml) | Да | Ссылка в базовом стандарте (BL-151) | все шаги |
-| И-8 | Чек-лист гейта G-human | [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/evaluation/g-human-checklist.md) | Да | Ссылка | Ш-В |
+| И-5 | Golden set по классу продуктовой таксономии | `contact-center`: [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases.yaml); `voice-ucaas`: [`golden/cases-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases-voice-ucaas.yaml); `analytics-reporting`: [`golden/cases-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases-analytics-reporting.yaml) | Да: три класса, синтетические кейсы — `contact-center` 2 положительных и 5 отрицательных, `voice-ucaas` 2 и 4, `analytics-reporting` 2 и 3; `atomic_function` каждого — функция каталога И-2 класса набора; все `structural_only: true`, `confirmed_by: none` — содержательную проверку человеком ведёт BL-165 | Ссылка; кейс — образец формы, а не подтверждённый эталон | Ш-В |
+| И-6 | Доменный глоссарий | `contact-center`: [`taxonomy/domain-glossary.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/domain-glossary.yaml); `voice-ucaas`: [`taxonomy/domain-glossary-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/domain-glossary-voice-ucaas.yaml); `analytics-reporting`: [`taxonomy/domain-glossary-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/domain-glossary-analytics-reporting.yaml) | Да: три класса — 8, 6 и 4 термина, у каждого пары `confusable_with`; термины `voice-ucaas` и `analytics-reporting` ссылаются на узлы каталога И-2 | Ссылка по классу задачи | Ш-1 |
+| И-7 | Порядок источников и уровни доверия | [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml) | Да | Ссылка в базовом стандарте (BL-151) | все шаги |
+| И-8 | Чек-лист гейта G-human | [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/evaluation/g-human-checklist.md) | Да | Ссылка | Ш-В |
 | И-9 | Уроки прогонов | — (здесь: `standards/bcreq-lessons/lessons.json`) | — | **Не исключение**: уроки — правила, входят в промпт (ADR-017, DEC-411-01) | — |
 | И-10 | Мета-стандарты разделов | — (здесь: `standards/bcreq-sections/`) | — | **Не исключение**: правила входят в промпт через профиль GENERATE | — |
 
@@ -95,36 +96,61 @@ SHA отсюда при сборке; другой SHA в ссылке на runt
 `source_sha256` (манифест runtime, раздел `copied`). Промпт читает копию по
 SHA раздела 1, не спицу и не ветку (ТС-5, БС-19).
 
-Сверка на срезе раздела 1 (2026-11-04):
+Сверка на срезе раздела 1 (2026-11-04, после РТ-6):
 
 | Что сверяется | Копия runtime | Спица | Итог |
 | --- | --- | --- | --- |
-| Источник копии | `source_commit: 7f920e2`, `source_sha256: c5ff76c3…` | sha256 `docs/taxonomy/products.json` на `7f920e2` — `c5ff76c3…` | Совпадает: копия без потерь |
+| Источник копии | `source_commit: e3597fd7`, `source_sha256: 2ca6fafa…` | sha256 `docs/taxonomy/products.json` на `e3597fd7` (и на `main`) — `2ca6fafa…` | Совпадает: копия без потерь |
 | id, уровень, родители 353 узлов | 353 узла | 353 узла (`main`) | Совпадают все |
-| `lifecycle` 74 узлов с портала, статус каталога | `added-for-review`, `catalog_status: review` | `accepted`, `status: accepted` (Р-17, [PR #440](https://github.com/G-Ivan-A/mango_ba_prompts/pull/440), коммит `e3597fd7`) | **Расхождение**: копия старше решения Р-17 |
+| `lifecycle` 74 узлов с портала, статус каталога | `accepted`, `catalog_status: accepted` | `accepted`, `status: accepted` (Р-17, [PR #440](https://github.com/G-Ivan-A/mango_ba_prompts/pull/440)) | Совпадают: расхождение среза `2db0ef5` снято РТ-6 ([runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21)) |
 
-Правило чтения при расхождении: узел копии с `lifecycle: added-for-review`
-промпт читает как `accepted` — решение Р-17 приняло все 74 узла; id,
-уровни и родители копии совпадают со спицей, поэтому привязка
-`atomic_function` по id верна. Расхождение снимает задача РТ-6 (раздел 6):
-обновить копию до коммита каталога спицы, затем — новый срез раздела 1.
+Правило чтения `added-for-review` как `accepted` (реестр 0.3) снято вместе
+с расхождением: в копии таких узлов нет.
 
 Правило сверки (обязательно перед каждым обновлением SHA): id, уровни и
 родители копии совпадают с текущим каталогом спицы; `source_sha256` равен
-sha256 каталога спицы на `source_commit`; иное расхождение, кроме
-перечисленного в таблице выше, — повод не обновлять срез. Проверка —
+sha256 каталога спицы на `source_commit`; любое расхождение — повод не
+обновлять срез. Проверка —
 `scripts/validate_issue_430_runtime_refs.py` при `RUNTIME_CLONE`.
+
+### 2.2. Как промпт шага читает каталог (М-4)
+
+Звено М-4 механизма снятия заглушки таксономии
+([RFC-RT-001, раздел 4](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#4-механизм-снятия-заглушки-таксономии-критично)).
+Текст ниже сборщик `scripts/build_bcreq_step_prompts.py` переносит дословно
+в промпт каждого шага, у которого в разделе 2 есть И-2 (сейчас Ш-2).
+`<SHA реестра>` подставляется из раздела 1. Отличие от образца RFC — шаг 5:
+оговорка про `added-for-review` снята, потому что РТ-6 обновила копию
+(раздел 2.1).
+
+```text
+Таксономия продуктов: https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/<SHA реестра>/taxonomy/mango-products.yaml
+1. Возьми продуктовый класс задачи из входа БА (contact-center,
+   voice-ucaas или analytics-reporting). Класс не выводится из текста.
+2. Отбери узлы, у которых в `classes` есть этот класс.
+3. Пройди цепочку: domain → capability → feature → function по полю
+   `parents`. Для каждого затронутого продукта выбери id узла
+   `level: function` и приведи цепочку целиком.
+4. Если подходящей функции нет или подходят две, не выбирай сам: выведи
+   «Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ]», подтверждённые
+   уровни и вопрос БА.
+5. Узлы с `lifecycle: retained` и `lifecycle: accepted` равноправны:
+   оба утверждены владельцем (Р-17).
+6. Каталог не утверждает доступность функции клиенту
+   (`availability: not-established-by-taxonomy`): доступность — только
+   из источника задачи или БЗ.
+```
 
 ## 3. Требования к справочникам
 
 | № | Требование | Проверка | Как проверено сейчас |
 | --- | --- | --- | --- |
-| ТС-1 | Ссылка закреплена по коммиту: `https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/<SHA>/…`, `tree/<SHA>/…` или raw-URL с `<SHA>`; не `main` | Валидатор: в ссылке на runtime 40-символьный SHA | `validate_issue_430_runtime_refs.py`: все ссылки этого файла; новые промпты; долг раздела 6 не растёт |
+| ТС-1 | Ссылка закреплена по коммиту: `https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/<SHA>/…`, `tree/<SHA>/…` или raw-URL с `<SHA>`; не `main` | Валидатор: в ссылке на runtime 40-символьный SHA | `validate_issue_430_runtime_refs.py`: все ссылки на runtime в области ТС-5, ссылок на `main` нет (долг раздела 7 закрыт) |
 | ТС-2 | Путь стабилен и описан в `USAGE.md` или `README.md` runtime | Ссылка открывается на закреплённом SHA | Клон на SHA, 2026-11-04 (раздел 1) |
-| ТС-3 | У справочника есть версия (`version` в YAML или frontmatter) и источник происхождения | Поле есть | `products.yaml`, `mango-products.yaml`, `domain-glossary.yaml`, `cases.yaml` — `version: "1.0"`, источник каталога — `source_commit`, `source_sha256`; `source-tiers.yaml` — `"0.5"`; `g-human-checklist.md` — `version: 1.0`; `MAP.json` — `schema_version` |
+| ТС-3 | У справочника есть версия (`version` в YAML или frontmatter) и источник происхождения | Поле есть | `products.yaml` — `"1.1"`, `mango-products.yaml`, `domain-glossary.yaml` — `"1.0"`, `cases.yaml` — `"1.1"`, `cases-voice-ucaas.yaml`, `cases-analytics-reporting.yaml` — `"0.2"`, `domain-glossary-voice-ucaas.yaml`, `domain-glossary-analytics-reporting.yaml` — `"0.1"`; источник каталога — `source_commit`, `source_sha256`; `source-tiers.yaml` — `"0.5"`; `g-human-checklist.md` — `version: 1.0`; `MAP.json` — `schema_version` |
 | ТС-4 | Справочник содержит факты и образцы, не правила исполнения | Ревью при включении в перечень | И-9, И-10 исключены по этому требованию |
 | ТС-5 | Одна точка обновления SHA — раздел 1 этого файла | Один SHA во всех промптах набора | Валидатор: любой SHA runtime в репозитории вне истории совпадает с разделом 1 |
-| ТС-6 | Если модель не открывает ссылки — БА прикладывает файл; промпт говорит это явно | Строка в промпте | Текст строки — раздел 5; вставка — BL-156 |
+| ТС-6 | Если модель не открывает ссылки — БА прикладывает файл; промпт говорит это явно | Строка в промпте | Текст строки — раздел 5; вставка — сборщик BL-156 в черновики `prompts/drafts/` |
 | ТС-7 | Цитата из справочника — с локатором (документ, раздел) по [контракту цитат KB](../docs/contracts/kb-citations.md) | Проверка Ш-В | Правило входит в базовый стандарт BL-151 |
 
 ## 4. Заглушки
@@ -146,8 +172,6 @@ SHA обновляется по разделу 1.
 | № | Справочник | Условие заглушки | Шаги | Строка `<имя>` | Задача для runtime |
 | --- | --- | --- | --- | --- | --- |
 | З-2 | И-4 Примеры разделов | всегда | Ш-3, Ш-4, Ш-5, Ш-8, Ш-С | `И-4 примеры разделов ФТ, НФТ, UC, US, ОРР` | РТ-2 |
-| З-3 | И-5 Golden set | класс задачи — `voice-ucaas` или `analytics-reporting` | Ш-В | `И-5 golden set класса <класс>` | РТ-3 |
-| З-4 | И-6 Доменный глоссарий | класс задачи — `voice-ucaas` или `analytics-reporting` | Ш-1 | `И-6 доменный глоссарий класса <класс>` | РТ-4 |
 
 Шаг выпуска Ш-Р сам по себе — заглушка промпта (пилот, раздел 9.2 RFC),
 а не заглушка справочника: ему нужен только И-3. Промпт Ш-Р — в BL-156.
@@ -158,6 +182,8 @@ SHA обновляется по разделу 1.
 | № | Справочник | Строка `<имя>` | Снята | Почему |
 | --- | --- | --- | --- | --- |
 | З-1 | И-2 Таксономия продуктов | `И-2 таксономия продуктов: уровни ниже класса не заполнены` | 2026-11-04, BL-163 ([issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442)) | РТ-1 слита: каталог `taxonomy/mango-products.yaml` на срезе раздела 1, И-2 — «Да» |
+| З-3 | И-5 Golden set | `И-5 golden set класса <класс>` | 2026-11-04, BL-156а ([issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444)) | РТ-3 слита ([runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21)): наборы `voice-ucaas` и `analytics-reporting` на срезе раздела 1, И-5 — «Да» |
+| З-4 | И-6 Доменный глоссарий | `И-6 доменный глоссарий класса <класс>` | 2026-11-04, BL-156а ([issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444)) | РТ-4 слита ([runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21)): глоссарии `voice-ucaas` и `analytics-reporting` на срезе раздела 1, И-6 — «Да» |
 
 ## 5. Строка для промпта (ТС-6)
 
@@ -188,27 +214,28 @@ SHA обновляется по разделу 1.
 
 | № | Что нужно в runtime | Снимает заглушку | Приоритет | Почему | Задача runtime |
 | --- | --- | --- | --- | --- | --- |
-| РТ-1 | Закрытый каталог продуктов `taxonomy/mango-products.yaml`: все уровни Domain → Capability → Feature → Atomic Function по всей линейке (каталог спицы 2026-10-28.1, 353 узла) с классами runtime у каждого узла; проверка smoke без каталога падает. Норма привязки `c-in` — задача Хаба ХАБ-1 ([RFC-RT-001, разделы 5–6](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#5-рт-1--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-1 | P1 | `c-in` требует `atomic_function`, а каталога функций нет — модель придумывает функцию или оставляет пусто | [runtime #15](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/15), [PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16) — слита 2026-11-04, `2db0ef51`; норма `c-in` — Хаб [#719](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/719), [PR #720](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720) — слита; компиляция в runtime — [PR #17](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17), открыт |
+| РТ-1 | Закрытый каталог продуктов `taxonomy/mango-products.yaml`: все уровни Domain → Capability → Feature → Atomic Function по всей линейке (каталог спицы 2026-10-28.1, 353 узла) с классами runtime у каждого узла; проверка smoke без каталога падает. Норма привязки `c-in` — задача Хаба ХАБ-1 ([RFC-RT-001, разделы 5–6](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#5-рт-1--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-1 | P1 | `c-in` требует `atomic_function`, а каталога функций нет — модель придумывает функцию или оставляет пусто | [runtime #15](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/15), [PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16) — слита 2026-11-04, `2db0ef51`; норма `c-in` — Хаб [#719](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/719), [PR #720](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720) — слита; компиляция в runtime: [PR #17](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17) закрыт без слияния, недостающая логика (норма PT-5, `check_taxonomies` 6–11, `check_golden` 2–8) перенесена в [PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) — слита 2026-11-04, `f31dcde3` |
 | РТ-2 | Примеры разделов ФТ, НФТ, UC, US, ОРР (по одному эталону на раздел, с источником происхождения) | З-2 | P1 | Образцы улучшают форму вывода шагов Ш-3…Ш-8; сейчас `A-FR`, `A-UC`, `A-US` вне среза | — (создаёт владелец) |
-| РТ-3 | Golden set для `voice-ucaas` и `analytics-reporting` (`golden/cases-<класс>.yaml`); у каждого случая `product_class` и `atomic_function` из каталога РТ-1; подтверждение человеком кейсов `contact-center` (`structural_only: false`) ([RFC-RT-001, раздел 7](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#7-рт-3--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-3 | P1 | Issue #427: «голден сет по каждому классу проуктовой таксономии» | — (создаёт владелец) |
-| РТ-4 | Доменный глоссарий для `voice-ucaas` и `analytics-reporting` | З-4 | P2 | Термины продукта нужны глоссарию раздела 1 BCREQ (К-14) | — (создаёт владелец) |
-| РТ-6 | Обновить копию каталога `taxonomy/mango-products.yaml` до текущего коммита каталога спицы (после Р-17 — `e3597fd74da9c4f631ca46697c643462e2cf0b85`): `lifecycle: accepted` у 74 узлов, `catalog_status: accepted`, новые `source_commit` и `source_sha256`, запись `copied` в манифесте. Тело задачи — [RFC-RT-001, поправка 0.3](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#123-рт-6--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком) | расхождение раздела 2.1 | P2 | Копия старше решения Р-17: промпт читает `added-for-review` у принятых узлов; id и связи совпадают, поэтому не блокирует И-2 | — (создаёт владелец) |
+| РТ-3 | Golden set для `voice-ucaas` и `analytics-reporting` (`golden/cases-<класс>.yaml`); у каждого случая `product_class` и `atomic_function` из каталога РТ-1; подтверждение человеком кейсов `contact-center` (`structural_only: false`) ([RFC-RT-001, раздел 7](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#7-рт-3--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-3 | P1 | Issue #427: «голден сет по каждому классу проуктовой таксономии» | [runtime #20](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/20), [PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) — слита 2026-11-04, `f31dcde3`; подтверждение человеком кейсов (`confirmed_by: none` у всех трёх классов) — BL-165 спицы |
+| РТ-4 | Доменный глоссарий для `voice-ucaas` и `analytics-reporting` | З-4 | P2 | Термины продукта нужны глоссарию раздела 1 BCREQ (К-14) | [runtime #20](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/20), [PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) — слита 2026-11-04, `f31dcde3` |
+| РТ-6 | Обновить копию каталога `taxonomy/mango-products.yaml` до текущего коммита каталога спицы (после Р-17 — `e3597fd74da9c4f631ca46697c643462e2cf0b85`): `lifecycle: accepted` у 74 узлов, `catalog_status: accepted`, новые `source_commit` и `source_sha256`, запись `copied` в манифесте. Тело задачи — [RFC-RT-001, поправка 0.3](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#123-рт-6--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком) | расхождение раздела 2.1 | P2 | Копия старше решения Р-17: промпт читает `added-for-review` у принятых узлов; id и связи совпадают, поэтому не блокирует И-2 | [runtime #20](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/20), [PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) — слита 2026-11-04, `f31dcde3`; расхождение раздела 2.1 снято |
 
-## 7. Известный долг: ссылки на `main` в текущих промптах
+## 7. Долг закрыт: ссылки на `main` в промптах v0.1
 
-На 2026-11-02 все 14 файлов `prompts/bcreq-*.md` ссылаются на runtime
-через `blob/main` — нарушение ТС-1. Ссылок три:
+До 2026-11-04 все 14 файлов `prompts/bcreq-*.md` ссылались на runtime
+через `blob/main` — нарушение ТС-1. Ссылок было три:
 
 - `mango-ba-ai-runtime/blob/main/docs/kb/README.md`;
 - `mango-ba-ai-runtime/blob/main/docs/kb/MAP.json`;
 - `mango-ba-ai-runtime/blob/main/taxonomy/products.yaml`.
 
-Почему не исправлено в этом PR: замена ссылки меняет то, что модель
-читает в принятых промптах, а правка `prompts/` допускается только
-«не хуже базовой линии golden set» (BL-156, DEC-427-11). Промпты шагов
-BL-156 собираются уже со ссылками на срез раздела 1. До этого валидатор
-фиксирует долг: список файлов и ссылок на `main` не растёт, новые ссылки
-на runtime — только по SHA.
+Правка `prompts/` допускается только «не хуже базовой линии golden set»
+(DEC-427-11), поэтому долг держался до замера. BL-156а
+([issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444))
+закрепила ссылки на срез раздела 1 вместе с подстановками типизации
+`experiments/issue_438/prompt-typing.json` и измерила результат прогоном
+RUN-0081 против RUN-0079. Валидатор больше не держит список долга:
+ссылка на runtime через `main` в области ТС-5 — ошибка.
 
 ## Related Artifacts
 
@@ -217,4 +244,4 @@ BL-156 собираются уже со ссылками на срез разд�
 - [Словарь потока BCREQ](bcreq-flow-glossary.md) — термины «справочник runtime», «заглушка», типы гейтов
 - [Процесс BCREQ, часть 0](../docs/ba-processes/bcreq-manual-process.md#0-поток-bcreq-процессы-шаги-гейты) — шаги потока
 - [Контракт цитат KB](../docs/contracts/kb-citations.md) — ТС-7
-- [RFC-RT-001](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md) — тела задач РТ-1, РТ-3, ХАБ-1, РТ-6 и механизм снятия З-1 (исполнен BL-163, issue #442)
+- [RFC-RT-001](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md) — тела задач РТ-1, РТ-3, ХАБ-1, РТ-6, механизм снятия З-1 (исполнен BL-163, issue #442) и снятие З-3, З-4 (BL-156а, поправка 0.4, issue #444)

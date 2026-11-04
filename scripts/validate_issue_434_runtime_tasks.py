@@ -74,6 +74,8 @@ CATALOG_VERSION = "2026-10-28.1"
 CATALOG_COMMIT = "e3597fd74da9c4f631ca46697c643462e2cf0b85"
 # Срез runtime, на котором проверены факты разделов 1–11 RFC (до РТ-1).
 VERIFIED_SHA = "5d8c201511fd730a596c9f9b4588470a7b01edc9"
+#: Срез поправки 0.3 (BL-163, issue #442): раздел 12 — история этого среза.
+BL163_SHA = "2db0ef5106883b01b096fe8c4af50334899e9fe0"
 RUNTIME_CLASSES = ("contact-center", "voice-ucaas", "analytics-reporting")
 LEVELS = ("Domain", "Capability", "Feature", "Atomic Function")
 
@@ -97,6 +99,11 @@ SECTIONS = (
     "### 12.1. Проверка готовности (2026-11-04)",
     "### 12.2. Что исполнено",
     "### 12.3. РТ-6 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)",
+    "## 13. Поправка 0.4: исполнение BL-156а (issue #444)",
+    "### 13.1. Проверка готовности (2026-11-04)",
+    "### 13.2. Решение по PR #17 и сверка с комментарием к PR #21",
+    "### 13.3. Что исполнено",
+    "### 13.4. Задачи бэклога из решений владельца",
     "## Related Artifacts",
 )
 # Тела задач: (раздел RFC, заголовок задачи).
@@ -446,17 +453,21 @@ class CatalogNumbers(unittest.TestCase):
 
 class Links(unittest.TestCase):
     def test_runtime_links_pinned_to_registry(self):
-        # Разделы 1–11 — факты среза проверки; поправка 0.3 — срез реестра.
+        # Разделы 1–11 — факты среза проверки; поправка 0.3 — срез BL-163;
+        # поправка 0.4 (issue #444) — текущий срез реестра.
         sha = registry_sha()
         body = text(RFC)
         found = RUNTIME_LINK.findall(body)
         self.assertTrue(found)
         for ref, path in found:
             with self.subTest(link=f"{ref}{path}"):
-                self.assertIn(ref, (VERIFIED_SHA, sha))
+                self.assertIn(ref, (VERIFIED_SHA, BL163_SHA, sha))
         amendment = RUNTIME_LINK.findall(rfc_section("## 12. "))
         self.assertTrue(amendment)
-        self.assertEqual({ref for ref, _ in amendment}, {sha}, "раздел 12 — по SHA реестра")
+        self.assertEqual({ref for ref, _ in amendment}, {BL163_SHA}, "раздел 12 — срез BL-163")
+        current = RUNTIME_LINK.findall(rfc_section("## 13. "))
+        self.assertTrue(current)
+        self.assertEqual({ref for ref, _ in current}, {sha}, "раздел 13 — по SHA реестра")
 
     def test_relative_links_and_anchors(self):
         for target in LINK_RE.findall(strip_fences(text(RFC))):
@@ -486,7 +497,8 @@ class Records(unittest.TestCase):
                 self.assertIn(anchor, rfc_anchors)
         # Id заглушек и задач не меняются: на них ссылаются карточки и валидатор #430.
         # З-1 снята BL-163 (issue #442): строка — в таблице снятых, id не переиспользуется.
-        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-3", "З-4", "З-1"])
+        # З-3, З-4 сняты BL-156а (issue #444).
+        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-1", "З-3", "З-4"])
         self.assertEqual(
             re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6"]
         )
@@ -507,7 +519,8 @@ class Records(unittest.TestCase):
         backlog = text(BACKLOG)
         self.assertRegex(backlog, r"(?m)^\| \*\*Р-17\*\* \|.*\| BL-163 \|")
         self.assertRegex(backlog, r"(?m)^\| BL-163 \| \[Реестр справочников на каталог продуктов runtime\]")
-        self.assertRegex(backlog, r"(?m)^\| BL-163 \|.*\| review \|.*/issues/442\).*/pull/443\)")
+        # PR #443 слит 2026-11-04: BL-163 — DONE (issue #444).
+        self.assertRegex(backlog, r"(?m)^\| BL-163 \|.*\| DONE \|.*/issues/442\).*/pull/443\)")
         self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-163")
         self.assertIn("| `ХАБ-N` |", backlog)
         card = text(TRACK_B).split("### BL-163. ", 1)[1]

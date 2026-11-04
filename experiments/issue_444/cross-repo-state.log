@@ -1,0 +1,37 @@
+# снято: 2026-11-04T15:26:22Z
+## runtime main
+f31dcde33f0bc120244128faab98fc0162e45701 2026-11-04T14:55:56Z Merge pull request #21 from konard/issue-20-446bf8992238
+## runtime PR
+#16 MERGED merged=2026-11-04T09:55:05Z closed=2026-11-04T09:55:05Z commit=2db0ef5106883b01b096fe8c4af50334899e9fe0 РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+#17 CLOSED merged=null closed=2026-11-04T11:43:02Z commit=- ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)
+#19 MERGED merged=2026-11-04T11:58:40Z closed=2026-11-04T11:58:40Z commit=b62a2b2bf418ca452a3337b49ce11b805d97f224 Проверка выполнимости SSOT RFC-RT-001: PT-5 не скомпилировано в main (PR #17 закрыт без слияния)
+#21 MERGED merged=2026-11-04T14:55:57Z closed=2026-11-04T14:55:57Z commit=f31dcde33f0bc120244128faab98fc0162e45701 РТ-6, РТ-4, РТ-3, ХАБ-1: синхронизация каталога после Р-17, глоссарии voice-ucaas и analytics-reporting, Golden Set по классам, компиляция PT-5 (логика PR #17)
+## runtime issues
+#20 CLOSED 2026-11-04T14:55:59Z Финализация действий по RFC-RT-001
+#18 CLOSED 2026-11-04T11:58:42Z Проверка выполнимости SSOT RFC
+#15 CLOSED 2026-11-04T09:55:08Z РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+#12 CLOSED 2026-11-01T20:19:43Z Обновление БЗ разное
+#11 CLOSED 2026-11-01T19:41:32Z Обновление Базы знаний - QM РА Роботы МТ
+#8 CLOSED 2026-11-01T14:23:43Z Обновлени еданных БЗ по ВАТС
+#7 CLOSED 2026-10-31T21:39:58Z Обновление БЗ по КЦ
+#5 CLOSED 2026-09-27T17:02:20Z [implementation] Рефакторинг БЗ в `mango-ba-ai-runtime`: навигационная карта, очистка изображений, связь с таксономиями
+#3 CLOSED 2026-09-26T11:01:57Z [implementation] Пересборка `mango-ba-ai-runtime` как чистого репозитория для работы БА в чатах моделей
+#1 CLOSED 2026-09-19T11:07:08Z title: "[implementation] Развертывание и подготовка к запуску MVP в mango-ba-ai-runtime"
+## spica main
+d7f92c1e73d4c3aa0769eacd18ee2eb8011efc41 2026-11-04T13:36:14Z Merge pull request #439 from konard/issue-438-cebef63aa82f
+## spica PR
+#439 MERGED merged=2026-11-04T13:36:15Z feat(issue-438): решения Р-15, Р-16 (А+), BL-150…155/159 DONE, этап BL-157а; заготовка BL-156; RUN-0080
+#443 MERGED merged=2026-11-04T11:59:45Z Issue #442: BL-163 — registry pinned to runtime catalog (2db0ef51), И-2 «Да», З-1 retired
+#445 OPEN merged=null [WIP] BL - 156 или 157 продолжение выполнения
+## spica open issues
+#444 BL - 156 или 157 продолжение выполнения
+## hub main
+9b140d99b12afd5328a822a974d6545a9068ce41 2026-11-04T12:22:00Z Merge pull request #724 from G-Ivan-A/issue-723-a4ba05b42346
+## hub open issues (10)
+#725 Очистка Хаба от Gra по переносу
+## issue 444 comments
+0
+## PR 445 comments/reviews
+0
+0
+0

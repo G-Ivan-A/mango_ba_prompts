@@ -1,0 +1,7 @@
+OK    реестр: SHA раздела 1 → срез BL-163: scripts/validate_issue_430_runtime_refs.py rc=1
+OK    черновик Ш-2: удалено звено М-4: scripts/validate_issue_438_step_prompts.py rc=1
+OK    промпт Ш-В v0.1: ссылка по SHA → main: scripts/validate_issue_430_runtime_refs.py rc=1
+OK    флаг TYPING_APPLIED = True без нового прогона: scripts/validate_issue_438_step_prompts.py rc=1
+OK    RFC-RT-001: ссылка раздела 13 на срез BL-163: scripts/validate_issue_434_runtime_tasks.py rc=1
+OK    бэклог: BL-165 удалена из BACKLOG.md: scripts/validate_issue_418_backlog.py rc=1
+# итог: 6/6 мутаций пойманы

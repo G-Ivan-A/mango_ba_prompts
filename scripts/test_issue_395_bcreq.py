@@ -1,6 +1,7 @@
 """Issue 395: offline/hybrid retrieval contract and additive prompt preservation."""
 from pathlib import Path
 import hashlib
+import importlib.util
 import json
 import re
 import unittest
@@ -8,6 +9,9 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 START = b'\n<!-- issue-395: runtime-fallback -->\n'
 END = b'<!-- /issue-395: runtime-fallback -->\n'
+bl156a_spec = importlib.util.spec_from_file_location('bl156a_prompt_changes', ROOT / 'experiments/issue_444/bl156a_prompt_changes.py')
+bl156a = importlib.util.module_from_spec(bl156a_spec)
+bl156a_spec.loader.exec_module(bl156a)
 
 
 def original_bytes(data):
@@ -25,7 +29,8 @@ class PromptContractTests(unittest.TestCase):
         self.assertEqual(set(baseline), {str(p.relative_to(ROOT)) for p in (ROOT / 'prompts').glob('bcreq-*.md')})
         for name, digest in baseline.items():
             with self.subTest(prompt=name):
-                data = (ROOT / name).read_bytes()
+                # Issue 444 (BL-156а): revert typed gates and pinned runtime links.
+                data = bl156a.revert_bytes(name, (ROOT / name).read_bytes())
                 self.assertEqual(data.count(START), 1)
                 self.assertEqual(data.count(END), 1)
                 self.assertEqual(hashlib.sha256(original_bytes(data)).hexdigest(), digest)

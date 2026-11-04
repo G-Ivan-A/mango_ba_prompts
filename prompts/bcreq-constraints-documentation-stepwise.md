@@ -124,7 +124,7 @@ processes: ["Дизайн решения и оценка"]
 
 ### Полнота таксономии и класс поиска
 
-Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/taxonomy/products.yaml).
+Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
 по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
@@ -151,8 +151,8 @@ processes: ["Дизайн решения и оценка"]
 Явно переданное дополнение учитывай в любом режиме; если БА явно исключил
 его из источников, не используй. Не запрашивай повторно уже переданный вход.
 
-В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/docs/kb/README.md),
-затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/docs/kb/MAP.json).
+В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/README.md),
+затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json).
 Порядок: сначала класс → документы этого класса по `product_ids` → их
 `sections_map` → только относящиеся к вопросу разделы. Для нескольких
 подтверждённых продуктов выбери классы каждого. Заголовок, `aliases` и `hint`

@@ -13,8 +13,10 @@
    (для Ш-В — ANALYZE, VERIFY, TRANSFORM, поручение issue #438);
 4. контракты операций шага из ``catalog.json``: вход, выход, специальный
    стоп, специальные проверки;
-5. ссылки И-N по SHA из реестра справочников, строка ТС-6 дословно и
-   заглушки З-1…З-4 там, где справочника нет.
+5. ссылки И-N по SHA из реестра справочников, строка ТС-6 дословно,
+   текст чтения каталога (М-4, раздел 2.2 реестра) для шагов с И-2 и
+   заглушки раздела 4 реестра там, где справочника нет (после BL-156а,
+   issue #444, активна одна З-2).
 
 Источники читаются из файлов репозитория при каждом запуске; ни одно
 правило не пишется в сборщике руками. Руками заданы только решения сборки:
@@ -51,7 +53,7 @@ MANIFEST = DRAFTS / "manifest.json"
 
 REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
 RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
-BUILD_DATE = "2026-11-03"
+BUILD_DATE = "2026-11-04"
 ROUTE = ["Ш-0", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С"]
 RELEASE_FILE = "bcreq-release-readiness-oneshot"
 BEGIN = "<!-- bl-156: by-test -->"
@@ -290,7 +292,10 @@ def load_registry():
             stubs.append({"id": c[0], "ref": c[1].split()[0], "condition": absolutize(c[2], REGISTRY), "steps": c[3], "name": c[4].strip("`"), "task": c[5]})
     ts6 = re.search(r"```text\n(.*?)\n```", section(body, "## 5. Строка для промпта (ТС-6)"), re.S).group(1)
     ts6 = ts6.replace("<SHA из раздела 1>", f"`{sha}`")
-    return frontmatter_value(body, "version"), sha, refs, stub_block, stubs, ts6
+    # М-4 (RFC-RT-001, раздел 4): как промпт шага читает каталог; раздел 2.2 реестра.
+    m4 = re.search(r"```text\n(.*?)\n```", section(body, "### 2.2. Как промпт шага читает каталог (М-4)"), re.S).group(1)
+    m4 = m4.replace("<SHA реестра>", sha)
+    return frontmatter_value(body, "version"), sha, refs, stub_block, stubs, ts6, m4
 
 
 def steps_of(cell):
@@ -320,7 +325,7 @@ def gates_for(step, gates, rfc):
 def render_block(steps, ctx):
     base_version, groups, gates = ctx["base"]
     prof_version, prules, ptable = ctx["profiles"]
-    reg_version, sha, refs, stub_block, stubs, ts6 = ctx["registry"]
+    reg_version, sha, refs, stub_block, stubs, ts6, m4 = ctx["registry"]
     catalog = ctx["catalog"]
     rfc = ctx["rfc"]
     out = [BEGIN, "## Дополнение «по тесту» (BL-156): стандарты шага", ""]
@@ -423,6 +428,8 @@ def render_block(steps, ctx):
         link = r["link"] if "](" in r["link"] else "нет в срезе"
         out.append(f"- **{r['id']} {r['name']}:** {link}.")
     out.append("")
+    if any(r["id"] == "И-2" for r in used_refs):
+        out += ["Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):", "", "```text", m4, "```", ""]
     used_stubs = [s for s in stubs if steps_of(s["steps"]) & set(steps)]
     if used_stubs:
         out += ["Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.", ""]
@@ -497,9 +504,12 @@ def build_all():
                 f"based_on: prompts/{name}.md",
                 f"based_on_sha256: {hashlib.sha256(v01.encode('utf-8')).hexdigest()}",
             ]
+            # После BL-156а (issue #444) ссылки v0.1 уже закреплены по SHA: подстановок нет.
             header += (
                 "текст шага v0.1 ниже не изменён, кроме ссылок на runtime по SHA "
                 "реестра; блок «по тесту» — в конце файла.\n"
+                if substitutions else
+                "текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n"
             )
         text = build_frontmatter(fm, "-by-test", based_on + extra) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block
         outputs[DRAFTS / f"{name}.md"] = text
