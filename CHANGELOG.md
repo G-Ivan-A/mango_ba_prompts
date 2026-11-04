@@ -13,6 +13,25 @@ temperature: 0.1
 
 ## Unreleased
 
+### Changed — Issue #434: решение владельца Р-17 — 74 узла таксономии с портала приняты
+
+- **Решение.** Владелец согласовал включение 74 новых узлов таксономии
+  (источник: портал), которые были в статусе review
+  ([комментарий к PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609),
+  2026-11-03).
+- **Каталог** `docs/taxonomy/products.json` 2026-10-28.1: у 74 узлов
+  `origin: portal-update` `lifecycle` изменён с `added-for-review` на
+  `accepted`; `status` каталога изменён с `review` на `accepted`; добавлен
+  блок `acceptance` (решение, число узлов, ссылка на согласование). Id, имена
+  и связи узлов не менялись, поэтому `catalog_version` прежний. Генератор
+  `experiments/issue_399/build.py` выдаёт те же значения.
+- **Связанные артефакты.** RFC-RT-001 (резюме, таблица классов, шаг 5
+  механизма, тело РТ-1, раздел 8) и `pr-ops/BACKLOG.md` (Р-17 → «принято»).
+  Условие по таксономии для запуска РТ-1 в `mango-ba-ai-runtime` выполнено.
+- **Проверка.** `scripts/validate_issue_434_runtime_tasks.py`, класс
+  `OwnerAcceptance`: 74 узла `accepted`, нет `added-for-review`, решение
+  записано в RFC, BACKLOG и CHANGELOG.
+
 ### Added — Issue #434: RFC-RT-001 — задачи РТ-1 и РТ-3 для runtime, механизм снятия заглушки таксономии
 
 - **RFC-RT-001** `docs/rfc/2026-11-runtime-product-catalog-golden-set.md`

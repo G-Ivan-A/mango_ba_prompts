@@ -51,10 +51,10 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
    звено fail-closed. Промпт читает каталог по SHA из реестра спицы.
    Пока звено не выполнено, промпт явно ставит заглушку З-1, а не
    угадывает значение.
-6. **Решение владельца Р-17.** Принять каталог 2026-10-28.1 (статус
-   `review`) целиком как таксономию runtime с сохранением `lifecycle`.
-   Без этого решения половина функций контакт-центра (33 из 66) остаётся
-   вне каталога.
+6. **Решение владельца Р-17 принято** ([комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609),
+   2026-11-03). 74 узла с портала переведены из `added-for-review` в
+   `lifecycle: accepted`, каталог 2026-10-28.1 получил `status: accepted`.
+   Условие по таксономии для запуска РТ-1 в runtime выполнено.
 7. **Происхождение таксономии проверено (версия 0.2, комментарий
    владельца к PR #437).** Таксономия Mango разработана в Хабе, в
    `research/mango/2026-05-22-classification.md` v3.0. Каталог спицы
@@ -86,7 +86,7 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 
 Все ссылки в телах задач — полные URL. Задача запускается из runtime и
 читает эту спицу. Ссылки на runtime закреплены по SHA (ТС-1), ссылки на
-каталог спицы — по коммиту каталога `7f920e2e967ad1331e027fef885ea68ecef7070f`.
+каталог спицы — по коммиту каталога `e3597fd74da9c4f631ca46697c643462e2cf0b85`.
 
 ## 1. Проверенное текущее состояние
 
@@ -106,8 +106,8 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 | Ф-9 | Все 11 навыков и маршрут — только для `contact-center`; классы `voice-ucaas`, `analytics-reporting` — `in_slice: false` | [`skills/`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/5d8c201511fd730a596c9f9b4588470a7b01edc9/skills), [`routes/rg-bcreq-v1.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/routes/rg-bcreq-v1.yaml), строка 8 | Чтение файлов |
 | Ф-10 | Машинный гейт `G-mach` читает семь словарей; каталога функций среди них нет; `check_golden` проверяет только `golden/cases.yaml` | [`evaluation/validate-package.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/evaluation/validate-package.md), разделы `check_taxonomies`, `check_golden` | Чтение файла |
 | Ф-11 | Пакет runtime скомпилирован из Хаба `dbf3baa9` (2026-09-19); форма Хаба с каталогом `taxonomy/mango-products.yaml` и полной цепочкой в `c-in` появилась позже — `90c7f1ef` (2026-09-23), на 27 коммитов позже | `compilation-manifest.yaml` runtime, строка 10; история Хаба | `experiments/issue_434/hub-product-form-vs-runtime.log` |
-| Ф-12 | Каталог Хаба `mango-products.yaml` v3.0 (98 записей функций, 97 уникальных id) целиком входит в каталог спицы; спица добавляет узлы `added-for-review` | Хаб `c06075d0`, `projects/ba-ai-process/dist/execution-package-gigacode-cli/taxonomy/mango-products.yaml` | `experiments/issue_434/hub-snapshot-vs-spoke-catalog.log` |
-| Ф-13 | Каталог спицы: 353 узла (Domain 7, Capability 43, Feature 151, Atomic Function 152), статус `review`, `runtime_compatibility` сопоставляет три класса runtime доменам | [`docs/taxonomy/products.json`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/7f920e2e967ad1331e027fef885ea68ecef7070f/docs/taxonomy/products.json) | `experiments/issue_434/catalog-stats.json` |
+| Ф-12 | Каталог Хаба `mango-products.yaml` v3.0 (98 записей функций, 97 уникальных id) целиком входит в каталог спицы; спица добавляет 74 узла с портала (`origin: portal-update`, по Р-17 — `lifecycle: accepted`) | Хаб `c06075d0`, `projects/ba-ai-process/dist/execution-package-gigacode-cli/taxonomy/mango-products.yaml` | `experiments/issue_434/hub-snapshot-vs-spoke-catalog.log` |
+| Ф-13 | Каталог спицы: 353 узла (Domain 7, Capability 43, Feature 151, Atomic Function 152), статус `accepted` (Р-17), `runtime_compatibility` сопоставляет три класса runtime доменам | [`docs/taxonomy/products.json`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/e3597fd74da9c4f631ca46697c643462e2cf0b85/docs/taxonomy/products.json) | `experiments/issue_434/catalog-stats.json` |
 | Ф-14 | Текущий промпт спицы считает таксономию runtime «определённой», только если это каталог по всей продуктовой линейке с цепочкой до Atomic Function; иначе — «[ТРЕБУЕТСЯ УТОЧНЕНИЕ]» | [`prompts/bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md), раздел «Полнота таксономии и класс поиска» | Чтение файла |
 | Ф-15 | Манифест runtime уже содержит копию из спицы с `source_commit` — базу знаний (`docs/kb`); правки данных runtime вне компиляции уже были (`3df40fd`, `0a13425` и откат `b67410f`) | `compilation-manifest.yaml` runtime, раздел `copied`; история runtime | `git log` клона runtime |
 | Ф-16 | Каталог спицы построен из классификации Хаба v3.0: `source_urls` ведёт на `2026-05-22-classification.md` по коммиту `cd5d6e4b`; 279 узлов `origin: inherited`, 74 — `portal-update`; до Хаба `c06075d0` файл не менялся | [`2026-05-22-classification.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-classification.md), каталог спицы, ключ `source_urls` | `experiments/issue_434/industry-taxonomy-inventory.log` |
@@ -119,7 +119,7 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 Числа каталога по классам runtime (узел относится к классу, если среди
 его предков есть Domain класса из `runtime_compatibility`):
 
-| Класс runtime | Domain каталога | Capability | Feature | Atomic Function | из них `retained` / `added-for-review` |
+| Класс runtime | Domain каталога | Capability | Feature | Atomic Function | из них `retained` / `accepted` |
 | --- | --- | --- | --- | --- | --- |
 | `contact-center` | `contact-center` | 17 | 59 | 66 | 33 / 33 |
 | `voice-ucaas` | `voice-ucaas` | 16 | 54 | 51 | 39 / 12 |
@@ -171,7 +171,7 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 
 | Что | ССОТ | Почему | Кто правит |
 | --- | --- | --- | --- |
-| Значения уровней Domain…Atomic Function | Каталог спицы [`docs/taxonomy/products.json`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/7f920e2e967ad1331e027fef885ea68ecef7070f/docs/taxonomy/products.json) | Runtime прямо отдаёт значения спице (Ф-1, строка 3); каталог спицы — надмножество снимка Хаба (Ф-12) | Спица (PR в `mango_ba_prompts`) |
+| Значения уровней Domain…Atomic Function | Каталог спицы [`docs/taxonomy/products.json`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/e3597fd74da9c4f631ca46697c643462e2cf0b85/docs/taxonomy/products.json) | Runtime прямо отдаёт значения спице (Ф-1, строка 3); каталог спицы — надмножество снимка Хаба (Ф-12) | Спица (PR в `mango_ba_prompts`) |
 | Форма записи каталога и правило привязки в `c-in` | Хаб (`ba-meta-model/product-taxonomy`, пакет `dist/…/taxonomy/products.yaml` v2.0) | Хаб уже ввёл `catalog: taxonomy/mango-products.yaml` и цепочку в `c-in` (Ф-11); норма runtime — компиляция Хаба (Ф-5) | Хаб (задача ХАБ-1) |
 | Копия каталога в runtime | `taxonomy/mango-products.yaml` runtime | Модель читает runtime без доступа к Хабу и спице («`hub_access_required_at_runtime: false`», манифест) | Runtime (задача РТ-1), запись `copied` в манифесте |
 | Эталоны по классам | `golden/` runtime | Эталон — «обязательный элемент машинного гейта» (`golden/cases.yaml`) | Runtime (задача РТ-3); правило проверки — Хаб (ХАБ-1, пункт 5) |
@@ -204,7 +204,7 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 | № | Проверка | Результат | Факт |
 | --- | --- | --- | --- |
 | П-1 | Таксономия Mango разработана в `2026-05-22-classification.md` | Да. Это версия 3.0 с уровнями `Domain → Capability → Feature → Atomic Function` и 7 доменами. Каталог спицы ссылается на неё по коммиту `cd5d6e4b`, файл с тех пор не менялся | Ф-16 |
-| П-2 | Каталог спицы использует таксономию Хаба корректно | Да. 279 узлов унаследованы, 74 добавлены с портала со статусом `review` (Р-17). ССОТ значений для runtime — каталог спицы (раздел 3) | Ф-12, Ф-13, Ф-16 |
+| П-2 | Каталог спицы использует таксономию Хаба корректно | Да. 279 узлов унаследованы, 74 добавлены с портала и приняты владельцем (`accepted`, Р-17). ССОТ значений для runtime — каталог спицы (раздел 3) | Ф-12, Ф-13, Ф-16 |
 | П-3 | Runtime использует таксономию корректно | Нет, пока нет РТ-1. В runtime только три класса и свободная строка `atomic_function` | Ф-1, Ф-3, Ф-7 |
 | П-4 | Есть индустриальная таксономия | Да, в том же файле Хаба, отдельного файла нет. Ключи TM Forum, UNSPSC, ОКПД 2 и ГОСТ/НПА заданы для 42 классов. Есть закупочный слой Commercial Layer. Отраслевая вертикаль R2.7 отложена: «вертикаль описывает контекст применения, а не продуктовый класс» | Ф-17 |
 | П-5 | Индустриальный слой связан с каталогом | Частично. Связь только через `row` Capability (42 из 43). Полей слоя нет ни в каталоге, ни в runtime | Ф-18 |
@@ -304,8 +304,8 @@ BL-151: БС-19 (SHA — только в разделе 1 реестра) и Б�
 4. Если подходящей функции нет или подходят две, не выбирай сам: выведи
    «Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ]», подтверждённые
    уровни и вопрос БА.
-5. Узел с `lifecycle: added-for-review` используй, но пометь «функция на
-   ревью каталога».
+5. Узлы с `lifecycle: retained` и `lifecycle: accepted` равноправны:
+   оба утверждены владельцем (Р-17).
 6. Каталог не утверждает доступность функции клиенту
    (`availability: not-established-by-taxonomy`): доступность — только
    из источника задачи или БЗ.
@@ -327,13 +327,13 @@ BL-151: БС-19 (SHA — только в разделе 1 реестра) и Б�
 - Полные URL связанных репозиториев: https://github.com/G-Ivan-A/mango_ba_prompts (ССОТ значений каталога), https://github.com/G-Ivan-A/hybrid-Intelligence-lab (ССОТ формы, задача ХАБ-1)
 - Важные решения, которые уже приняты:
   - каталог значений принадлежит спице: «каталог значений принадлежит споку и расширяется в споке» (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/taxonomy/products.yaml, строка 3);
-  - решение владельца Р-17 (https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/BACKLOG.md): каталог 2026-10-28.1 переносится целиком, `lifecycle` сохраняется;
+  - решение владельца Р-17 (https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/BACKLOG.md): каталог 2026-10-28.1 (`status: accepted`) переносится целиком, `lifecycle` сохраняется, 74 узла с портала приняты (`accepted`);
   - нормативное содержание runtime не правится в runtime (правило 13 AGENTS.md) — норма идёт задачей ХАБ-1.
 - Что нельзя считать известным из предыдущих задач: значения уровней ниже класса — их в runtime нет; функции в `golden/*.md` (`queue-callback-offer` и др.) — выдуманы, в каталоге их нет.
 
 ## Решаемая проблема
 
-`contracts/c-in.md` требует `atomic_function`, но словаря функций в runtime нет (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/contracts/c-in.md, строки 42–50). Модель придумывает функцию или оставляет пусто; промпты спицы ставят заглушку З-1 (https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md, раздел 4). Каталог существует в спице: https://github.com/G-Ivan-A/mango_ba_prompts/blob/7f920e2e967ad1331e027fef885ea68ecef7070f/docs/taxonomy/products.json (353 узла, 152 функции, статус `review`).
+`contracts/c-in.md` требует `atomic_function`, но словаря функций в runtime нет (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/5d8c201511fd730a596c9f9b4588470a7b01edc9/contracts/c-in.md, строки 42–50). Модель придумывает функцию или оставляет пусто; промпты спицы ставят заглушку З-1 (https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md, раздел 4). Каталог существует в спице: https://github.com/G-Ivan-A/mango_ba_prompts/blob/e3597fd74da9c4f631ca46697c643462e2cf0b85/docs/taxonomy/products.json (353 узла, 152 функции, статус `accepted`).
 
 ## Story
 
@@ -573,19 +573,19 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 
 | ID | Что | Где | Статус |
 | --- | --- | --- | --- |
-| Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 (статус `review`) целиком как таксономию runtime, с `lifecycle` и разрешением привязки к `added-for-review` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md) | принято ([PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6625256153)) |
+| Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 целиком как таксономию runtime; 74 узла с портала — из `added-for-review` в `accepted` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md), [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609) | принято 2026-11-03 |
 | BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | deferred (triggered): РТ-1 слита |
 | BL-164 | Индустриальная таксономия для оценки тендерного ТЗ: сопоставление каталога Mango с TM Forum, UNSPSC, ОКПД 2 и функциями внешних продуктов (подраздел 3.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) | deferred (triggered): старт BL-133 или `P-08` в срезе |
 
-Почему Р-17, а не молчаливый перенос:
+Почему Р-17 понадобилось (до решения 2026-11-03):
 
-- каталог в статусе `review`;
-- у класса `contact-center` 33 из 66 функций — `added-for-review`;
+- каталог был в статусе `review`;
+- у класса `contact-center` 33 из 66 функций были `added-for-review`;
 - перенос только `retained` уменьшит класс вдвое, а перенос всего каталога
   делает ревью-узлы нормой runtime.
 
-Это выбор владельца. Рекомендация — перенос целиком с полем `lifecycle`,
-чтобы промпт помечал ревью-узлы (раздел 4, шаг 5).
+Владелец выбрал перенос целиком и принял 74 узла с портала
+(`lifecycle: accepted`, каталог `status: accepted`).
 
 ## 9. Риски, допущения, открытые вопросы
 
