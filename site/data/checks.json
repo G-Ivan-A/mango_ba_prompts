@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T10:54:26.085Z",
+  "generatedAt": "2026-11-04T16:05:18.363Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 14
   },
   "tests": {
-    "logs": 532,
-    "total": 4,
+    "logs": 539,
+    "total": 5,
     "coveredPrompts": 1
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 4,
+  "totalChecked": 5,
   "testsPassed": {
     "covered": 0,
     "total": 39,
@@ -67,16 +67,17 @@
       "processes": [
         "Валидация второй ролью"
       ],
-      "tests": 4,
+      "tests": 5,
       "testFiles": [
         "runs/2026/RUN-0079/logs/experiment-log.md",
         "runs/2026/RUN-0079/outputs/README.md",
         "runs/2026/RUN-0079/outputs/golden-set-report.md",
-        "runs/2026/RUN-0080/outputs/golden-set-report.md"
+        "runs/2026/RUN-0080/outputs/golden-set-report.md",
+        "runs/2026/RUN-0081/outputs/golden-set-report.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 4
+      "usage": 5
     },
     {
       "id": "mango-bcreq-c01-intake",
