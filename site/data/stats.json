@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T10:33:22.040Z",
+  "generatedAt": "2026-11-04T10:47:59.090Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -32,9 +32,9 @@
   ],
   "siteVersion": {
     "version": "2.1.2",
-    "released": "2026-11-03",
+    "released": "2026-11-04",
     "issue": 438,
-    "basis": "PR #439: тип гейта в архивных промптах, RUN-0080",
+    "basis": "PR #439: RUN-0080 в проверках промпта Ш-В",
     "changelog": "CHANGELOG.md"
   },
   "totals": {
