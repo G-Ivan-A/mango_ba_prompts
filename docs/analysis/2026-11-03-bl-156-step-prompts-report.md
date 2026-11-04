@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-11-04
 temperature: 0.1
 analysis-subtype: recommendation
@@ -15,6 +15,8 @@ related_artifacts:
   - "runs/2026/RUN-0080/outputs/golden-set-report.md"
   - "pr-ops/backlog-ba-model.md (BL-156, BL-157, BL-158)"
   - "docs/analysis/2026-11-04-bl-156-157-readiness-check.md"
+  - "docs/analysis/2026-11-04-bl-156-readiness-check-444.md"
+  - "runs/2026/RUN-0081/outputs/golden-set-report.md"
 ---
 
 # BL-156: промпты шагов «по тесту» — порядок, сборка, расхождения, публикация
@@ -27,6 +29,17 @@ related_artifacts:
 > Всё ниже — **заготовка**, а не исполнение: Р-15 ждёт ответа, правка
 > типа гейта в 14 промптах снята, `prompts/` совпадает с `main`, BL-156 и
 > BL-157 — `deferred (triggered)`.
+>
+> **Поправка 0.3 (2026-11-04, issue #444).** Р-15 принято, PR #439 слит.
+> Этап BL-156а исполнен в PR #445
+> ([разбор готовности](2026-11-04-bl-156-readiness-check-444.md)):
+> реестр справочников 0.4 на runtime `f31dcde3`, З-3 и З-4 сняты,
+> черновики пересобраны, Ш-2 читает каталог по звену М-4, 14 промптов v0.1
+> ссылаются на runtime по SHA. Тип гейта в `prompts/` не опубликован:
+> в [RUN-0081](../../runs/2026/RUN-0081/outputs/golden-set-report.md)
+> A — 56/62, ядро 9/11 против 10/11 RUN-0079 (DEC-427-11). Черновик D —
+> 51/62, ядро 9/11. Публикация черновиков и типа гейта — этап BL-156б
+> после замера с повторами. Ниже — текст редакции 0.2 без изменений.
 
 Сборщик `scripts/build_bcreq_step_prompts.py` по разделу 9.3 RFC #427
 собрал 11 черновиков промптов шагов и заглушку Ш-Р в `prompts/drafts/`.
@@ -268,6 +281,8 @@ CB-0.5 и отказ «заменить отсутствующее решени�
 - [Сборщик](../../scripts/build_bcreq_step_prompts.py) и [манифест](../../prompts/drafts/manifest.json)
 - [Комплект прогона (BL-157)](../ba-processes/bcreq-run-kit.md)
 - [RUN-0080: отчёт golden set](../../runs/2026/RUN-0080/outputs/golden-set-report.md)
+- [RUN-0081: отчёт golden set после BL-156а](../../runs/2026/RUN-0081/outputs/golden-set-report.md)
+- [Проверка готовности #444](2026-11-04-bl-156-readiness-check-444.md)
 - [RUN-0079: базовая линия](../../runs/2026/RUN-0079/outputs/golden-set-report.md)
 - [Анализ Р-16: молчание и согласие на гейтах](2026-11-03-silence-consent-gates-r16.md)
 - [Инвентаризация BL-159: тип гейта](2026-11-03-gate-types-bl-159-inventory.md)
