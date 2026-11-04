@@ -1,0 +1,39 @@
+test_catalog_commit_pinned (__main__.CatalogNumbers.test_catalog_commit_pinned) ... ok
+test_golden_md_functions_not_in_catalog (__main__.CatalogNumbers.test_golden_md_functions_not_in_catalog) ... ok
+test_levels (__main__.CatalogNumbers.test_levels) ... ok
+test_per_class_table (__main__.CatalogNumbers.test_per_class_table) ... ok
+test_prototype_matches_catalog (__main__.CatalogNumbers.test_prototype_matches_catalog) ... ok
+setUpClass (__main__.HubClone) ... skipped 'HUB_CLONE не задан'
+test_bl164_only_backlog (__main__.IndustryTaxonomy.test_bl164_only_backlog) ... ok
+test_catalog_lineage (__main__.IndustryTaxonomy.test_catalog_lineage) ... ok
+test_hub_links_pinned (__main__.IndustryTaxonomy.test_hub_links_pinned) ... ok
+test_row_bridge (__main__.IndustryTaxonomy.test_row_bridge) ... ok
+test_section_checks_and_alternatives (__main__.IndustryTaxonomy.test_section_checks_and_alternatives) ... ok
+test_relative_links_and_anchors (__main__.Links.test_relative_links_and_anchors) ... ok
+test_runtime_links_pinned_to_registry (__main__.Links.test_runtime_links_pinned_to_registry) ... ok
+test_links_m1_to_m6 (__main__.Mechanism.test_links_m1_to_m6) ... ok
+test_prompt_reading_text (__main__.Mechanism.test_prompt_reading_text) ... ok
+test_smoke_simulation_log (__main__.Mechanism.test_smoke_simulation_log) ... ok
+test_decision_recorded (__main__.OwnerAcceptance.test_decision_recorded) ... ok
+test_portal_nodes_accepted (__main__.OwnerAcceptance.test_portal_nodes_accepted) ... ok
+test_artifact_map (__main__.Records.test_artifact_map) ... ok
+test_backlog (__main__.Records.test_backlog) ... ok
+test_changelog (__main__.Records.test_changelog) ... ok
+test_registry_rows (__main__.Records.test_registry_rows) ... ok
+test_rfc_register (__main__.Records.test_rfc_register) ... ok
+test_bl156_rationale (__main__.RfcStructure.test_bl156_rationale) ... ok
+test_frontmatter (__main__.RfcStructure.test_frontmatter) ... ok
+test_issue_links (__main__.RfcStructure.test_issue_links) ... ok
+test_next_steps_justified (__main__.RfcStructure.test_next_steps_justified) ... ok
+test_sections_in_order (__main__.RfcStructure.test_sections_in_order) ... ok
+test_type_and_home (__main__.RfcStructure.test_type_and_home) ... ok
+setUpClass (__main__.RuntimeClone) ... skipped 'RUNTIME_CLONE не задан'
+test_full_urls_only (__main__.TaskBodies.test_full_urls_only) ... ok
+test_rt1_obligation (__main__.TaskBodies.test_rt1_obligation) ... ok
+test_rt3_structure (__main__.TaskBodies.test_rt3_structure) ... ok
+test_template_sections_in_order (__main__.TaskBodies.test_template_sections_in_order) ... ok
+
+----------------------------------------------------------------------
+Ran 32 tests in 0.225s
+
+OK (skipped=2)

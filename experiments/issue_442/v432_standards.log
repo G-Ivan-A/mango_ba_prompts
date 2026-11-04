@@ -1,0 +1,28 @@
+test_class_quotes_in_all_39 (__main__.BaseStandard.test_class_quotes_in_all_39) ... ok
+test_common_part_measured (__main__.BaseStandard.test_common_part_measured) ... ok
+test_frontmatter_and_header (__main__.BaseStandard.test_frontmatter_and_header) ... ok
+test_lessons_exist (__main__.BaseStandard.test_lessons_exist) ... ok
+test_rules_numbered_with_source (__main__.BaseStandard.test_rules_numbered_with_source) ... ok
+test_runtime_registry_by_link (__main__.BaseStandard.test_runtime_registry_by_link) ... ok
+test_stage_one_has_no_code_gate (__main__.BaseStandard.test_stage_one_has_no_code_gate) ... ok
+test_gate_types_by_stage (__main__.Glossary.test_gate_types_by_stage) ... ok
+test_goal_is_stages_3_4 (__main__.Glossary.test_goal_is_stages_3_4) ... ok
+test_validators_by_stage (__main__.Glossary.test_validators_by_stage) ... ok
+test_version (__main__.Glossary.test_version) ... ok
+test_each_operation_in_one_profile (__main__.Profiles.test_each_operation_in_one_profile) ... ok
+test_frontmatter_and_header (__main__.Profiles.test_frontmatter_and_header) ... ok
+test_hypothesis_425 (__main__.Profiles.test_hypothesis_425) ... ok
+test_own_rules_with_sources (__main__.Profiles.test_own_rules_with_sources) ... ok
+test_profile_sections_match_table (__main__.Profiles.test_profile_sections_match_table) ... ok
+test_steps_derived_from_catalog (__main__.Profiles.test_steps_derived_from_catalog) ... ok
+test_trigger_b (__main__.Profiles.test_trigger_b) ... ok
+test_backlog (__main__.Records.test_backlog) ... ok
+test_changelog (__main__.Records.test_changelog) ... ok
+test_registered (__main__.Records.test_registered) ... ok
+test_registry_links_base_standard (__main__.Records.test_registry_links_base_standard) ... ok
+test_rfc_amendment (__main__.Records.test_rfc_amendment) ... ok
+
+----------------------------------------------------------------------
+Ran 23 tests in 0.134s
+
+OK

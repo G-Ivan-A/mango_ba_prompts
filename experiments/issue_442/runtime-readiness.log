@@ -1,0 +1,56 @@
+# runtime clone /tmp/rt442/runtime
+# HEAD 2db0ef5106883b01b096fe8c4af50334899e9fe0
+# candidate 2db0ef5106883b01b096fe8c4af50334899e9fe0
+
+OK   HEAD клона = кандидат 2db0ef5106883b01b096fe8c4af50334899e9fe0
+
+## commit
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T12:55:03+03:00 Merge pull request #16 from konard/issue-15-01ec34f64925
+
+## 2. пути раздела 2 реестра + каталог (ТС-2)
+OK   путь docs/kb/MAP.json
+OK   путь docs/kb/USAGE.md
+OK   путь evaluation/g-human-checklist.md
+OK   путь golden/cases.yaml
+OK   путь taxonomy/domain-glossary.yaml
+OK   путь taxonomy/products.yaml
+OK   путь taxonomy/source-tiers.yaml
+OK   путь templates/bcreq-skeleton.md
+OK   путь taxonomy/mango-products.yaml
+
+## 3. версии (ТС-3)
+OK   taxonomy/products.yaml: version = "1.0"
+OK   taxonomy/domain-glossary.yaml: version = "1.0"
+OK   golden/cases.yaml: version = "1.0"
+OK   taxonomy/source-tiers.yaml: version = "0.5"
+OK   evaluation/g-human-checklist.md: version = 1.0
+OK   taxonomy/mango-products.yaml: version = "1.0"
+OK   docs/kb/MAP.json: schema_version = 1
+
+## 4. изменения runtime 5d8c201..2db0ef5
+ .github/workflows/validate.yml |   4 +-
+ README.md                      |   1 +
+ compilation-manifest.yaml      |   9 +
+ docs/guides/03-task-types.md   |  16 ++
+ taxonomy/mango-products.yaml   | 377 +++++++++++++++++++++++++++++++++++++++++
+ tests/runtime-smoke.sh         |   7 +
+ tests/test_product_catalog.py  | 105 ++++++++++++
+ 7 files changed, 517 insertions(+), 2 deletions(-)
+
+OK   файлы раздела 2 не менялись — факты столбца «Есть в runtime» прежние
+
+## 5. каталог runtime против каталога спицы
+OK   closed: true
+OK   каждая строка узла разобрана (353)
+OK   source_sha256 c5ff76c30ad5… = sha256(спица@7f920e2) c5ff76c30ad5…
+     sha256 текущего docs/taxonomy/products.json = 2ca6fafa85b8… (ДРЕЙФ от источника)
+OK   узлов: runtime 353, спица 353
+OK   множества id совпадают
+OK   уровень и родители совпадают (расхождений 0)
+     уровни runtime: {'domain': 7, 'capability': 43, 'feature': 151, 'function': 152}
+     функции по классам runtime: {'contact-center': 66, 'voice-ucaas': 51, 'analytics-reporting': 28} без класса: 39
+     функций с params: [] — 54
+     catalog_status runtime review, status спицы accepted
+     дрейф lifecycle (runtime → спица): {('added-for-review', 'accepted'): 74}
+
+# итог: готово

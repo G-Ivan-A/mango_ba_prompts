@@ -1,0 +1,23 @@
+# baseline
+scripts/validate_issue_430_runtime_refs.py green
+scripts/validate_issue_434_runtime_tasks.py green
+# реестр
+registry SHA back to 5d8c201                 detected
+И-2 link on main                            detected
+И-2 back to Нет                          detected
+drop З-1 tombstone row                      detected
+tombstone without BL-163                     detected
+drop РТ-6 row                              detected
+РТ-1 without PR #16                        detected
+drop section 2.1                             detected
+# RFC
+drop readiness heading 12.1                  detected
+РТ-6 body loses НФТ                     detected
+old SHA in section 12                        detected
+BL-163 not in review                         detected
+# клон runtime (/tmp/rt442/runtime)
+catalog not closed                           detected
+catalog loses a node                         detected
+wrong parent                                 detected
+source_sha256 tampered                       detected
+lifecycle drift outside 2.1                  detected

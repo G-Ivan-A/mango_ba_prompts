@@ -1,0 +1,115 @@
+# снимок 2026-11-04T10:26:59Z
+## G-Ivan-A/mango-ba-ai-runtime#16
+{"head":"dee3a92f2c228b98c949320ea897a19154cd8dbb","isDraft":false,"merge":"2db0ef5106883b01b096fe8c4af50334899e9fe0","mergedAt":"2026-11-04T09:55:05Z","number":16,"state":"MERGED","title":"РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16"}
+## G-Ivan-A/mango-ba-ai-runtime#17
+{"head":"fb5776bd7c3f4c4a50bce4485d16ea4678d704a6","isDraft":true,"merge":null,"mergedAt":null,"number":17,"state":"OPEN","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17"}
+## G-Ivan-A/hybrid-Intelligence-lab#720
+{"head":"a3bf12ef25902c8431ef5dc968f0e9f2c95b654e","isDraft":false,"merge":"b3a9e161c9fb459cb9112d3aaa4d003bbfb5c4fa","mergedAt":"2026-11-04T09:56:07Z","number":720,"state":"MERGED","title":"feat(#719): ХАБ-1 — привязка c-in.atomic_function к каталогу продуктов (PT-5) и компиляция в runtime","url":"https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720"}
+## runtime issue #15
+{"state":"CLOSED","title":"РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)","url":"https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/15"}
+## hub issue #719
+{"state":"CLOSED","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов и компиляция в mango-ba-ai-runtime","url":"https://github.com/G-Ivan-A/hybrid-Intelligence-lab/issues/719"}
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+## open spoke PRs
+#443 UNKNOWN draft=true [WIP] Запуск BL-163 по RFC-RT-001
+#441 CONFLICTING draft=false docs(issue-434): Р-17 принято
+#439 CONFLICTING draft=false docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+## issue #442 comments
+0
+## PR #443 comments
+0
+0
+
+# обновление 2026-11-04T10:34:59Z
+## spoke issues (связанные с RFC-RT-001)
+#427 CLOSED 2026-11-02T14:10:33Z RFC  на актуализацию процессов и создание промптов и обновление сайта актуализированно йинформацией
+#430 CLOSED 2026-11-03T06:15:28Z Спринт 9 150, 153-155 подготовка к формированию промптов
+#432 CLOSED 2026-11-03T10:19:14Z Базовый стандарт и профили
+#433 CLOSED 2026-11-03T10:30:28Z сквозной актуализации терминологии гейтов
+#434 CLOSED 2026-11-03T13:39:34Z title: "[creative/hybrid] Формирование детальной постановки задач РТ-1 и РТ-3 для mango-ba-ai-runtime (снятие заглушек таксономии и интеграция golden set)"
+#438 OPEN - Движение по беклогу - выполнение BL-156
+#442 OPEN - Запуск BL-163 по RFC-RT-001
+## spoke PRs
+#431 MERGED merged=2026-11-03T06:15:26Z UNKNOWN docs(issue-430): спринт 9 — словарь потока BCREQ, К-ID операций, реестр справочников runtime, типы гейтов (BL-150, BL-153…155, BL-159)
+#435 MERGED merged=2026-11-03T10:19:12Z UNKNOWN docs(issue-432): Р-14, базовый стандарт и профили промпта BCREQ «по тесту», гейты и валидаторы по этапам (BL-151, BL-152, BL-160)
+#436 MERGED merged=2026-11-03T10:30:26Z UNKNOWN docs(issue-433): BL-159 — тип гейта во всех документах проекта; Р-16 → BL-162 ждёт владельца, журнал К-34 (BL-161)
+#437 MERGED merged=2026-11-03T13:39:32Z UNKNOWN RFC-RT-001: задачи РТ-1 и РТ-3 для mango-ba-ai-runtime — каталог продуктов, golden set по классам, снятие заглушки таксономии (#434)
+#439 OPEN merged=- CONFLICTING docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+#440 MERGED merged=2026-11-04T10:25:00Z UNKNOWN Issue #434: Р-17 — accept 74 portal taxonomy nodes (review → accepted)
+#441 OPEN merged=- MERGEABLE docs(issue-434): Р-17 принято
+#443 OPEN merged=- MERGEABLE [WIP] Запуск BL-163 по RFC-RT-001
+## runtime issues (open)
+#15 CLOSED @G-Ivan-A РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+#12 CLOSED @G-Ivan-A Обновление БЗ разное
+#11 CLOSED @G-Ivan-A Обновление Базы знаний - QM РА Роботы МТ
+#8 CLOSED @G-Ivan-A Обновлени еданных БЗ по ВАТС
+#7 CLOSED @G-Ivan-A Обновление БЗ по КЦ
+#5 CLOSED @G-Ivan-A [implementation] Рефакторинг БЗ в `mango-ba-ai-runtime`: навигационная карта, очистка изображений, связь с таксономиями
+#3 CLOSED @G-Ivan-A [implementation] Пересборка `mango-ba-ai-runtime` как чистого репозитория для работы БА в чатах моделей
+#1 CLOSED @G-Ivan-A title: "[implementation] Развертывание и подготовка к запуску MVP в mango-ba-ai-runtime"
+## runtime PRs
+#17 OPEN - ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)
+#16 MERGED 2026-11-04T09:55:05Z РТ-1. Каталог продуктов Mango taxonomy/mango-products.yaml (снятие заглушки З-1)
+#14 MERGED 2026-11-01T20:19:41Z KB: описания иллюстраций и оптимизация для 6 документов, новые API «Сервер-клиент», IDENT, Wallboard (#12)
+#13 MERGED 2026-11-01T19:41:31Z Обновление Базы знаний - QM, РА 1.26.42, Робот Фил, mTalker: описания и оптимизация иллюстраций
+#10 MERGED 2026-10-31T21:39:56Z Обновление БЗ по КЦ: руководство v1.26.42 с описанием иллюстраций
+#9 MERGED 2026-11-01T14:23:42Z Update LK (Virtual PBX) KB to manual v1.25 with described illustrations
+#6 MERGED 2026-09-27T17:02:19Z [implementation] Навигация и очистка БЗ, связь с продуктовыми классами
+#4 MERGED 2026-09-26T11:01:56Z Пересборка runtime как чистого репозитория для работы БА в чатах моделей
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+
+# обновление 2026-11-04T10:45:35Z (перед описанием PR #443)
+## runtime PR #17
+{"headRefOid":"809848700123f9785c2120e6672009fb8aa58887","isDraft":false,"state":"OPEN","title":"ХАБ-1. Привязка c-in.atomic_function к каталогу продуктов (компиляция PT-5)","updatedAt":"2026-11-04T10:41:01Z"}
+## runtime PR #17: файлы против 2db0ef51 (taxonomy/mango-products.yaml не меняется)
+AGENTS.md
+compilation-manifest.yaml
+contracts/c-in.md
+evaluation/g-mach-checklist.md
+evaluation/validate-package.md
+golden/cases.yaml
+golden/gs-cc-01-queue-overflow.md
+golden/gs-cc-02-report-export.md
+golden/gs-cc-neg-01-inbound-vs-outbound.md
+golden/gs-cc-neg-02-queue-vs-group.md
+golden/gs-cc-neg-03-sla-vs-aht.md
+golden/gs-cc-neg-04-ivr-vs-announcer.md
+golden/gs-cc-neg-05-function-outside-catalog.md
+skills/transcript-normalization-contact-center.md
+taxonomy/products.yaml
+tests/__pycache__/test_catalog_binding.cpython-315.pyc
+tests/__pycache__/test_kb_navigation.cpython-315.pyc
+tests/__pycache__/test_product_catalog.cpython-315.pyc
+tests/runtime-smoke.sh
+tests/test_catalog_binding.py
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0
+## спица: открытые PR
+443 MERGEABLE [WIP] Запуск BL-163 по RFC-RT-001
+441 MERGEABLE docs(issue-434): цепочка бэклога Р-17 → BL-163, конфликт с main решён
+439 MERGEABLE docs(issue-438): BL-157 комплект прогона и BL-156 промпты шагов «по тесту» (Р-15); RUN-0080; Р-16 — перепроверка, рекомендован А+
+## CI спицы: последний запуск pull_request
+GitHub Pages issue-281-019cd054cd2e 2026-08-22T15:16:46Z
+## CI спицы: последний запуск на main
+Validate governance ccb273e2 2026-08-22T15:19:31Z
+## main спицы
+d7082caae7f2409edbacc4d50b0de2bd698c485b
+## checks PR #437, #440 (слиты без запусков CI)
+437 checks=0
+440 checks=0
+
+# обновление 2026-11-04T11:11:52Z (после слияния upstream/main e2190bf2)
+## spoke PRs
+#439 OPEN merged=- MERGEABLE draft=false docs(issue-438): проверка готовности BL-156/BL-157 — заготовка (Р-15 ждёт); RUN-0080; Р-16 — перепроверка, А+
+#440 MERGED merged=2026-11-04T10:25:00Z UNKNOWN draft=false Issue #434: Р-17 — accept 74 portal taxonomy nodes (review → accepted)
+#441 MERGED merged=2026-11-04T10:51:34Z UNKNOWN draft=false docs(issue-434): цепочка бэклога Р-17 → BL-163, конфликт с main решён
+#443 OPEN merged=- MERGEABLE draft=true Issue #442: BL-163 — registry pinned to runtime catalog (2db0ef51), И-2 «Да», З-1 retired
+## runtime main
+2db0ef5106883b01b096fe8c4af50334899e9fe0 2026-11-04T09:55:03Z
+## G-Ivan-A/mango-ba-ai-runtime#17
+OPEN draft=false merged=- head=fa499e14b2c696018c6c148691d2c6800852d766
+## runtime issues (open)
+## spoke main
+e2190bf2b4244f94dd3ababb3f708f12d4fb1242
