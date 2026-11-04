@@ -426,6 +426,7 @@ class DecisionsTest(unittest.TestCase):
         self.assertTrue(typing["status"].startswith("применена" if TYPING_APPLIED else "не применена"), typing["status"])
         if not TYPING_APPLIED:
             self.assertIn("RUN-0081", typing["status"])
+            self.assertIn("RUN-0082", typing["status"])
             self.assertIn("BL-156б", typing["status"])
         self.assertEqual(len({s["path"] for s in typing["substitutions"]}), 14)
         for sub in typing["substitutions"]:
@@ -452,12 +453,15 @@ class DecisionsTest(unittest.TestCase):
         self.assertIn("PR #439", rows["BL-157"][5])
         for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `deferred (triggered)` до BL-156а `DONE`", READINESS.name):
             self.assertIn(marker, rows["BL-157"][7])
-        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "review")
+        # PR #445 слит: BL-156а — DONE; BL-156б и BL-156в ждут Р-03 и бюджета (RUN-0082, issue #446).
+        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "deferred (triggered)")
         self.assertIn("BL-157 (этап BL-157а)", rows["BL-156"][3])
         self.assertIn(READINESS.name, rows["BL-156"][7])
         if BL156_STARTED:
             self.assertIn("PR #445", rows["BL-156"][5])
-            for marker in ("BL-156а — `review` (PR #445)", "RUN-0081", "BL-156б — `deferred (triggered)`"):
+            self.assertIn("PR #447", rows["BL-156"][5])
+            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б — `deferred (triggered)`",
+                           "RUN-0082", "BL-156в — `deferred (triggered)`"):
                 self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
@@ -476,10 +480,11 @@ class DecisionsTest(unittest.TestCase):
             else:
                 self.assertNotIn("**Исполнение.**", card, task)
         if BL156_STARTED:
-            for stage in ("#### BL-156а. ", "#### BL-156б. "):
+            for stage in ("#### BL-156а. ", "#### BL-156б. ", "#### BL-156в. "):
                 self.assertIn(stage, text)
             bl156b = re.search(r"(?ms)^#### BL-156б\..*?(?=^#{3,4} )", text).group(0)
             self.assertIn("prompt-typing.json", bl156b)
+            self.assertIn("RUN-0082", bl156b)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         self.assertIn("#### BL-157б. Комплект прогона: промпты по тесту и первый прогон", text)
