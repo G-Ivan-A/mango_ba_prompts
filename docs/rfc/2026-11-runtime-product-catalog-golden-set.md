@@ -1,14 +1,14 @@
 ---
-status: proposed
-version: 0.2
-updated: 2026-11-03
+status: accepted
+version: 0.3
+updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py"
+related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -65,6 +65,14 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
    Сопоставление нужно будущему потоку оценки тендерного ТЗ. По указанию
    владельца для него заведена только задача BL-164 в бэклоге спицы
    (подраздел 3.1). РТ-1 и РТ-3 этим не меняются.
+8. **Поправка 0.3 (issue [#442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442)):
+   М-1…М-3 исполнены.** РТ-1 слита в runtime
+   ([PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16), `2db0ef51`),
+   ХАБ-1 слита в Хаб ([PR #720](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720)).
+   BL-163 перевёл реестр справочников на этот срез: И-2 — «Да», З-1 снята.
+   Копия каталога в runtime старше решения Р-17 (74 узла — ещё
+   `added-for-review`), id и связи совпадают со спицей. Обновление копии —
+   задача РТ-6 (раздел 12). RFC — `accepted`: PR #437 слит (шаг 1 раздела 11).
 
 ## 0. Тип и дом артефакта
 
@@ -276,7 +284,7 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
 | --- | --- | --- | --- | --- |
 | М-1 | Файл `taxonomy/mango-products.yaml`: `vocabulary: mango-products`, `closed: true`, 353 узла с `id`, `level`, `parents`, `classes`, `lifecycle` | runtime, РТ-1 | Значения есть и читаются моделью по ссылке | — |
 | М-2 | Проверки `tests/runtime-smoke.sh`: файл есть, `closed: true`, каждый `atomic_function` в `golden/cases*.yaml` — id функции каталога | runtime, РТ-1 и РТ-3 | Каталог нельзя удалить или подменить незаметно; эталон не может ссылаться на выдуманную функцию | CI runtime красный. Проверено симуляцией: 4 сценария, `experiments/issue_434/runtime-smoke-sim.log` |
-| М-3 | Строка И-2 реестра → «Да», ссылка на `taxonomy/mango-products.yaml` по SHA; строка З-1 снимается | спица, BL-163 | Промпт читает каталог, а не `products.yaml`-форму | Валидатор реестра: ссылка только по SHA раздела 1 |
+| М-3 | Строка И-2 реестра → «Да», ссылка на `taxonomy/mango-products.yaml` по SHA; строка З-1 снимается | спица, BL-163 — исполнено 2026-11-04 (issue #442, раздел 12) | Промпт читает каталог, а не `products.yaml`-форму | Валидатор реестра: ссылка только по SHA раздела 1 |
 | М-4 | Инструкция чтения в промпте шага Ш-2 (ниже) | спица, BL-156 | Модель выбирает id из каталога и не изобретает функцию | Нет id → «[ТРЕБУЕТСЯ УТОЧНЕНИЕ]» и вопрос БА |
 | М-5 | `c-in.products[].atomic_function` — id узла `level: function` каталога; `product_class` ∈ `classes` узла; правило 1 `AGENTS.md` распространено на каталог | Хаб → runtime, ХАБ-1 | Вход с выдуманной функцией отклоняется на узле n1 | Отказ навыка нормализации по `C-IN` |
 | М-6 | `check_taxonomies` читает каталог: уникальные id, родитель на уровень выше, `closed: true` | Хаб → runtime, ХАБ-1 | Машинный гейт видит каталог как словарь | `G-mach: пакет отвергнут` |
@@ -305,7 +313,8 @@ BL-151: БС-19 (SHA — только в разделе 1 реестра) и Б�
    «Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ]», подтверждённые
    уровни и вопрос БА.
 5. Узлы с `lifecycle: retained` и `lifecycle: accepted` равноправны:
-   оба утверждены владельцем (Р-17).
+   оба утверждены владельцем (Р-17). В копии runtime до задачи РТ-6
+   узлы с портала помечены `added-for-review`: читай их как `accepted`.
 6. Каталог не утверждает доступность функции клиенту
    (`availability: not-established-by-taxonomy`): доступность — только
    из источника задачи или БЗ.
@@ -574,7 +583,7 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 | ID | Что | Где | Статус |
 | --- | --- | --- | --- |
 | Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 целиком как таксономию runtime; 74 узла с портала — из `added-for-review` в `accepted` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md), [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609) | принято 2026-11-03 |
-| BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | deferred (triggered): РТ-1 слита |
+| BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | review: issue [#442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442), PR [#443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443) |
 | BL-164 | Индустриальная таксономия для оценки тендерного ТЗ: сопоставление каталога Mango с TM Forum, UNSPSC, ОКПД 2 и функциями внешних продуктов (подраздел 3.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) | deferred (triggered): старт BL-133 или `P-08` в срезе |
 
 Почему Р-17 понадобилось (до решения 2026-11-03):
@@ -592,7 +601,7 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 | № | Тип | Что | Как учтено |
 | --- | --- | --- | --- |
 | R-1 | Риск | Коллизия терминов: в `products.yaml` уровень Capability называется «Класс», а «продуктовый класс» runtime — уровень Domain | Тела задач говорят «продуктовый класс» только о трёх `classes`, уровни называют по `id` (Domain, Capability…) |
-| R-2 | Риск | Каталог `review` меняется → копия в runtime стареет | `source_commit` и `source_sha256` в заголовке; смена каталога спицы — новая версия РТ-1-копии и шаг 1 реестра |
+| R-2 | Риск | Каталог `review` меняется → копия в runtime стареет | `source_commit` и `source_sha256` в заголовке; смена каталога спицы — новая версия РТ-1-копии и шаг 1 реестра. **Сработал 2026-11-04**: PR #440 (Р-17) слит после РТ-1, копия на `7f920e2` — правило чтения и РТ-6 (раздел 12) |
 | R-3 | Открыто | 39 функций доменов `digital-channels`, `ai-automation`, `hardware`, `security` не имеют класса runtime: в `c-in` их нельзя объявить | Каталог переносит их с `classes: []`; расширение классов — отдельное решение Хаба (не в ХАБ-1) |
 | R-4 | Открыто | Поведение маршрута для класса `in_slice: false`, когда эталоны есть | Решение — в PR РТ-3 (НФТ) |
 | R-5 | Риск | Golden set Хаба тоже классовый, без функций | ХАБ-1 правит `check_golden`; РТ-3 даёт данные |
@@ -625,18 +634,32 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 
 ## 11. Рекомендуемые следующие шаги (после согласования)
 
-1. **Владелец: ревью и слияние PR #437; RFC-RT-001 → `accepted`.**
+1. **Исполнено (PR #437 слит; RFC-RT-001 → `accepted` в поправке 0.3).** Было: владелец: ревью и слияние PR #437; RFC-RT-001 → `accepted`.
    Почему: тела задач копируются с `blob/main`; до слияния ссылки ведут
    на ветку.
-2. **Владелец: решение Р-17.** Почему: от него зависит состав каталога.
+2. **Исполнено (Р-17 принято 2026-11-03, PR #440).** Было: владелец: решение Р-17. Почему: от него зависит состав каталога.
    Без решения половина функций `contact-center` либо выпадает, либо
    входит в норму без согласия.
-3. **Владелец: создать РТ-1 в `mango-ba-ai-runtime` и ХАБ-1 в
+3. **Исполнено (runtime #15/PR #16 и Хаб #719/PR #720 слиты 2026-11-04; ссылки — в реестре, раздел 6).** Было: владелец: создать РТ-1 в `mango-ba-ai-runtime` и ХАБ-1 в
    `hybrid-Intelligence-lab` (разделы 5, 6); ссылки вписать в реестр,
    раздел 6.** Почему: РТ-1 снимает З-1 для промптов сразу, ХАБ-1 делает
    каталог нормой. Задачи независимы, их можно вести параллельно.
-4. **BL-163 после слияния РТ-1.** Почему: промпт видит каталог только
+4. **Исполнено: BL-163 после слияния РТ-1 (issue #442, PR #443, раздел 12).** Почему: промпт видит каталог только
    через SHA реестра (ТС-5). Строка З-1 снимается, И-2 → «Да».
+   - 4а. **Владелец: создать РТ-6 в `mango-ba-ai-runtime` (раздел 12.3).**
+     Почему: копия каталога старше Р-17, промпт держит правило чтения
+     `added-for-review` как `accepted` (реестр, раздел 2.1).
+   - 4б. **Новый срез реестра после РТ-6 и после слияния runtime PR #17
+     (компиляция ХАБ-1: М-5, М-6).** Почему: ТС-5 — одна точка SHA;
+     срез должен включать и обновлённую копию, и норму привязки `c-in`.
+   - 4в. **PR [#439](https://github.com/G-Ivan-A/mango_ba_prompts/pull/439)
+     (BL-156, BL-157) — пересобрать на реестре 0.3.** Почему: черновики
+     #439 закреплены на `5d8c201` и держат З-1 у Ш-2. Поверх этого PR
+     валидатор ТС-5 даёт 62 ошибки, а сборщик падает на таблице снятых
+     заглушек. Правка сборщика в одну строку (читать заглушки до «Снятые
+     заглушки.») и пересборка снимают обе ошибки. Остаётся решение #439 по
+     замеру RUN-0080: он снят на текстах реестра 0.2
+     ([`experiments/issue_442/pr439-on-top.log`](../../experiments/issue_442/pr439-on-top.log)).
 5. **РТ-4 (глоссарии `voice-ucaas`, `analytics-reporting`).** Почему:
    без пар `confusable_with` отрицательные случаи РТ-3 не по EP-G7.
 6. **РТ-3 (раздел 7).** Почему: базовая линия «не хуже golden set» для
@@ -665,9 +688,145 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 этому же шаблону, когда владелец решит, что `A-FR`, `A-UC`, `A-US`
 входят в срез.
 
+## 12. Поправка 0.3: исполнение BL-163 (issue #442)
+
+Issue [#442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442)
+запускает шаг 4 раздела 11 после проверки готовности. Постановка с
+граничными случаями — [`experiments/issue_442/task-statement.md`](../../experiments/issue_442/task-statement.md).
+
+### 12.1. Проверка готовности (2026-11-04)
+
+| № | Условие | Факт | Итог |
+| --- | --- | --- | --- |
+| Г-1 | РТ-1 слита в runtime | [runtime PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16) слит 2026-11-04T09:55Z, коммит `2db0ef5106883b01b096fe8c4af50334899e9fe0` — `main` runtime; issue [#15](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/15) закрыта | Да |
+| Г-2 | Каталог на этом SHA: `closed: true`, 353 узла | [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/mango-products.yaml): 353 узла, Domain 7, Capability 43, Feature 151, Atomic Function 152 | Да |
+| Г-3 | `source_sha256` копии = каталог спицы на `source_commit` | `c5ff76c3…` = sha256 `docs/taxonomy/products.json` на `7f920e2` | Да |
+| Г-4 | id, уровни и родители копии = текущий каталог спицы | 353 из 353 совпадают | Да |
+| Г-5 | Пути раздела 2 реестра есть на SHA (ТС-2), версии (ТС-3) | Все 9 путей есть; кроме каталога, файлы не менялись с `5d8c201` | Да |
+| Г-6 | Решение Р-17 | Принято 2026-11-03, записано PR #440 (слит 2026-11-04T10:25Z) | Да |
+| Г-7 | ХАБ-1 (норма привязки) | Хаб [PR #720](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720) слит; компиляция в runtime — [PR #17](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17), открыт | Не блокирует: М-5 и М-6 не нужны промптам (раздел 4) |
+| Г-8 | Копия совпадает со спицей по `lifecycle` и статусу | Копия: 74 узла `added-for-review`, `catalog_status: review`; спица после PR #440: `accepted` | **Нет** — расхождение R-2, не блокирует (ниже) |
+
+Лог проверки — [`experiments/issue_442/runtime-readiness.log`](../../experiments/issue_442/runtime-readiness.log),
+снимок PR и issue — [`experiments/issue_442/cross-repo-state.log`](../../experiments/issue_442/cross-repo-state.log).
+
+Почему Г-8 не блокирует BL-163: промпт связывает требование с функцией
+по id (раздел 4, шаги 2–4), а id, уровни и родители совпадают. Различие —
+только пометка `lifecycle`, а Р-17 приняло все 74 узла. Поэтому реестр
+переходит на срез с правилом чтения (реестр, раздел 2.1; шаг 5 текста
+раздела 4). Ждать обновления копии — значит держать З-1 во всех промптах
+ради метаданных, которые уже решены владельцем.
+
+### 12.2. Что исполнено
+
+- Реестр [`standards/bcreq-runtime-references.md`](../../standards/bcreq-runtime-references.md)
+  0.3: SHA `2db0ef51` в разделе 1 и во всех ссылках раздела 2; И-2 — «Да»
+  со ссылкой на каталог; раздел 2.1 — сверка копии и правило чтения;
+  З-1 перенесена в снятые заглушки (id не переиспользуется); строка РТ-1
+  ведёт на задачу и PR runtime; новая строка РТ-6.
+- Тест клона `scripts/validate_issue_430_runtime_refs.py`: каталог есть,
+  `closed: true`, число узлов, id, уровни и родители совпадают с каталогом
+  спицы, `source_sha256` совпадает с каталогом спицы на `source_commit`.
+  Мутационная проверка (17 порч реестра, RFC и копии каталога — все
+  ловятся): [`experiments/issue_442/mutation-check.log`](../../experiments/issue_442/mutation-check.log).
+- Runtime [PR #17](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/17)
+  (компиляция ХАБ-1, открыт, на ревью; голова `8098487`) на 2026-11-04 не меняет
+  `taxonomy/mango-products.yaml`, но меняет `contracts/c-in.md`, `golden/*`,
+  `taxonomy/products.yaml`, `evaluation/*` и добавляет отрицательный случай
+  `gs-cc-neg-05` (функция вне каталога). После слияния нужен новый срез
+  реестра: факты И-5 (golden set) и М-5/М-6 надо перепроверить (шаг 4б
+  раздела 11). В PR попали байткод-файлы `tests/__pycache__/*.pyc` —
+  замечание для ревью runtime, на спицу не влияет.
+- Остаётся в BL-156: промпт Ш-2 ссылается на каталог (последний пункт
+  «Готово, когда» BL-163). Правка `prompts/` — только «не хуже базовой
+  линии golden set» (DEC-427-11).
+
+### 12.3. РТ-6 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)
+
+Почему id РТ-6, а не РТ-5: РТ-5 уже занят альтернативой «слой в runtime»
+для индустриального слоя (раздел 3.1, карточка BL-164), а в Хабе есть
+правило `PT-5` (латиница), которое легко спутать с РТ-5. Номер РТ-5 не
+используется для другой задачи.
+
+Заголовок: `РТ-6. Обновить копию каталога продуктов до решения Р-17 (lifecycle accepted)`
+
+````markdown
+## Контекст задачи
+
+- Полный URL постановки: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-runtime-product-catalog-golden-set.md (RFC-RT-001, раздел 12.3)
+- Полные URL связанных PR/issue: https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16, https://github.com/G-Ivan-A/mango_ba_prompts/pull/440, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442
+- Полные URL связанных репозиториев: https://github.com/G-Ivan-A/mango_ba_prompts (ССОТ значений каталога)
+- Важные решения, которые уже приняты:
+  - решение владельца Р-17: 74 узла с портала приняты, `lifecycle: accepted`, каталог `status: accepted` (https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609);
+  - копия каталога — данные, а не норма: правится в runtime по прецеденту РТ-1 (раздел `copied` манифеста).
+- Что нельзя считать известным из предыдущих задач: что id или связи узлов менялись — не менялись (сверка 353 из 353).
+
+## Решаемая проблема
+
+Копия `taxonomy/mango-products.yaml` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/2db0ef5106883b01b096fe8c4af50334899e9fe0/taxonomy/mango-products.yaml) снята с коммита каталога спицы `7f920e2e967ad1331e027fef885ea68ecef7070f` до решения Р-17. В спице каталог уже `accepted` (https://github.com/G-Ivan-A/mango_ba_prompts/blob/e3597fd74da9c4f631ca46697c643462e2cf0b85/docs/taxonomy/products.json). Модель читает у принятых узлов `added-for-review`.
+
+## Story
+
+**Как есть:**
+
+- Кто действует: модель читает каталог runtime по SHA реестра спицы.
+- Что происходит сейчас: 74 узла — `lifecycle: added-for-review`, `catalog_status: review`.
+- Где возникает ошибка, блокировка или долг: промпт спицы держит отдельное правило чтения для этих узлов (реестр спицы, раздел 2.1).
+
+**Как должно быть:**
+
+- Кто действует: та же модель.
+- Какой результат должен быть доступен после решения: копия совпадает с каталогом спицы, включая `lifecycle` и статус.
+- Как Пользователь принимает или возвращает решение на доработку: сверяет `source_sha256` с каталогом спицы и прогоняет `sh tests/runtime-smoke.sh`.
+
+## ФТ
+
+- [ ] `source`, `source_commit`, `source_sha256` указывают на коммит каталога спицы `e3597fd74da9c4f631ca46697c643462e2cf0b85` (или более поздний коммит каталога в `main` спицы на дату задачи).
+- [ ] `catalog_status: "accepted"`; у 74 узлов с портала `lifecycle: accepted`; узлов `added-for-review` нет.
+- [ ] id, `level`, `name`, `parents`, `classes`, `params` всех 353 узлов не меняются.
+- [ ] Запись `copied` манифеста получает новый `source_commit`.
+- [ ] Комментарий-шапка файла описывает `accepted` вместо `added-for-review`.
+
+## НФТ
+
+- [ ] Правка только данных: `AGENTS.md`, `contracts/`, `skills/`, `evaluation/` не правятся (правило 13).
+- [ ] Одна строка — один узел (проверка `grep`).
+- [ ] Проверки `tests/test_product_catalog.py` и `tests/runtime-smoke.sh` зелёные.
+
+## Цель
+
+Копия каталога runtime совпадает с каталогом спицы после Р-17.
+
+Definition of Done:
+
+- `sh tests/runtime-smoke.sh` — `runtime smoke test passed`;
+- в PR — sha256 каталога спицы на новом `source_commit` и число узлов по `lifecycle`;
+- в PR — SHA коммита слияния для реестра спицы (новый срез раздела 1).
+
+## Operating Mode
+
+- `Structured`: меняются только `lifecycle`, статус и провенанс; расхождение id или связей — вопрос в PR, не правка.
+
+## Специфика работы с Конардом
+
+- **молчание = согласие:** если Пользователь мержит PR без комментариев, решения приняты;
+- **комментарий + ручной перезапуск:** доработка в том же PR;
+- **close:** закрытие PR означает отказ от решения;
+- draft PR используется как место отложенной проверки до acceptance.
+
+## Обоснованные обходы
+
+- Нет: задача повторяет порядок РТ-1 для данных.
+````
+
+После слияния РТ-6 спица обновляет срез реестра (раздел 1) и снимает
+правило чтения раздела 2.1. Шаги после согласования — раздел 11, пункты
+4а и 4б.
+
 ## Related Artifacts
 
-- [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1, З-3, РТ-1…РТ-4
+- [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1 (снята), З-3, РТ-1…РТ-4, РТ-6
+- [Проверка готовности BL-163](../../experiments/issue_442/runtime_readiness.py) — [лог](../../experiments/issue_442/runtime-readiness.log), [постановка](../../experiments/issue_442/task-statement.md)
 - [RFC #427, раздел 8](2026-11-bcreq-flow-processes-prompts.md) — исключения, требования, заглушка
 - [Каталог продуктов спицы](../taxonomy/products.json) — ССОТ значений
 - [Прототип каталога runtime](../../experiments/issue_434/prototype/mango-products.yaml) и [генератор](../../experiments/issue_434/compile_catalog_prototype.py)

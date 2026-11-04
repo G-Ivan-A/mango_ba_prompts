@@ -1,0 +1,69 @@
+# issue #442: пробное слияние PR #439 (голова 869f786e) поверх ветки #443 (c00e0113); конфликты CHANGELOG.md и rfc-register.md взяты из #439
+## validate_issue_430_runtime_refs
+FAILED (failures=62, skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_434_runtime_tasks
+OK (skipped=2)
+## файлы с SHA 5d8c201 (ТС-5)
+      5 prompts/drafts/bcreq-constitution-governance-oneshot.md
+      6 prompts/drafts/bcreq-constraints-documentation-stepwise.md
+      7 prompts/drafts/bcreq-context-understanding-stepwise.md
+      4 prompts/drafts/bcreq-extra-risk-analysis-stepwise.md
+      6 prompts/drafts/bcreq-fr-documentation-stepwise.md
+      4 prompts/drafts/bcreq-nfr-documentation-stepwise.md
+      6 prompts/drafts/bcreq-orr-solution-design-stepwise.md
+      7 prompts/drafts/bcreq-products-impact-analysis-stepwise.md
+      2 prompts/drafts/bcreq-release-readiness-oneshot.md
+      7 prompts/drafts/bcreq-review-validation-oneshot.md
+      4 prompts/drafts/bcreq-scenarios-modeling-oneshot.md
+      4 prompts/drafts/bcreq-uc-modeling-stepwise.md
+## validate_issue_438_step_prompts
+FAILED (errors=1)
+      1 ERROR: setUpClass (__main__.BuildTest)
+
+# пробный ребейз #439: сборщик читает только активные заглушки (до «Снятые заглушки.»)
+```diff
+@@ -282,7 +282,7 @@ def load_registry():
+     stubs_section = section(body, "## 4. Заглушки")
+     stub_block = re.search(r"```text\n(.*?)\n```", stubs_section, re.S).group(1)
+     stubs = []
+-    for line in stubs_section.splitlines():
++    for line in stubs_section.split("\nСнятые заглушки.", 1)[0].splitlines():
+         if re.match(r"^\| З-\d \|", line):
+             c = cells(line)
+             stubs.append({"id": c[0], "ref": c[1].split()[0], "condition": absolutize(c[2], REGISTRY), "steps": c[3], "name": c[4].strip("`"), "task": c[5]})
+```
+## build_bcreq_step_prompts.py
+записано: 12 черновиков и манифест; изменено 13
+## validate_issue_430_runtime_refs
+OK (skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_438_step_prompts
+FAILED (failures=1)
+FAIL: test_measured_texts_are_current (__main__.Run0080Test.test_measured_texts_are_current)
+AssertionError: 0 != 1 : [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.
+## Ш-2 (bcreq-products-impact-analysis-stepwise.md): ссылок 2db0ef51 — 8, строк блока заглушки З-1 — 0
+
+# повтор 2026-11-04T11:12:40Z: голова #439 43ad3d07 поверх ветки #443 fd1e8418 (после слияния upstream/main e2190bf2); конфликты CHANGELOG.md, rfc-register.md, BACKLOG.md, backlog-ba-model.md взяты из #439
+## validate_issue_430_runtime_refs
+FAILED (failures=62, skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_434_runtime_tasks
+FAILED (failures=1, skipped=2)
+FAIL: test_backlog — артефакт пробного слияния: BACKLOG.md взят из #439 (BL-163 TODO); при пересборке #439 строка BL-163 берётся из #443 (review)
+## validate_issue_438_step_prompts
+FAILED (errors=1)
+IndexError в load_registry (таблица «Снятые заглушки»)
+## та же однострочная правка сборщика + пересборка
+записано: 12 черновиков и манифест; изменено 13
+## validate_issue_430_runtime_refs
+OK (skipped=5)
+## validate_issue_432_standards
+OK
+## validate_issue_438_step_prompts
+FAILED (failures=1)
+FAIL: test_measured_texts_are_current — RUN-0080 измерен на текстах реестра 0.2 (решение за #439)
+## Ш-2: ссылок 2db0ef51 — 8; ссылок 5d8c201 в prompts/drafts — 0
