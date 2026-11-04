@@ -1,0 +1,124 @@
+run_id: RUN-0084
+process: bcreq-stage1-golden-set-ad-review-validation-three-arms
+version: "0.1"
+date: 2026-11-04
+author: "Claude Code (claude-opus-5-5), issue #448"
+model: "claude-opus-5-5 — исполнитель (18 изолированных подагентов) и судья (6 изолированных подагентов)"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+  - inputs/mapping.json
+inputs:
+  - inputs/README.md
+  - inputs/mapping.json
+  - inputs/prompt-A0.md
+  - inputs/prompt-A1.md
+  - inputs/prompt-A2.md
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/summary.json
+  - outputs/r1/executor-A0.json
+  - outputs/r1/executor-A1.json
+  - outputs/r1/executor-A2.json
+  - outputs/r1/judge-scores.json
+  - outputs/r1/judge-key.json
+  - outputs/r1/metrics.json
+  - outputs/r2/executor-A0.json
+  - outputs/r2/executor-A1.json
+  - outputs/r2/executor-A2.json
+  - outputs/r2/judge-scores.json
+  - outputs/r2/judge-key.json
+  - outputs/r2/metrics.json
+  - outputs/r3/executor-A0.json
+  - outputs/r3/executor-A1.json
+  - outputs/r3/executor-A2.json
+  - outputs/r3/judge-scores.json
+  - outputs/r3/judge-key.json
+  - outputs/r3/metrics.json
+logs:
+  - logs/experiment-log.md
+  - logs/executor-instruction.md
+  - logs/judge-instruction.md
+feedback:
+  - feedback/review-notes.md
+# Поля DEC-411-02 (добровольные, как в RUN-0079…RUN-0082).
+prompt_ref:
+  A0:
+    path: prompts/bcreq-review-validation-oneshot.md
+    version: "0.1 (опубликованный, одновременный контроль)"
+    commit: 4a4df7bcb09d134a1ccf7449730ae95a898993ce
+    sha256: 56dee0cc777870cb33ddf5db18fd2577103bc7611f8d36f5a9b27e46a16e0f9e
+  A1:
+    path: prompts/bcreq-review-validation-oneshot.md
+    version: "0.1 + тип гейта (prompt-typing.json) — текст A RUN-0081/0082"
+    commit: 4a4df7bcb09d134a1ccf7449730ae95a898993ce
+    sha256: adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581
+  A2:
+    path: prompts/bcreq-review-validation-oneshot.md
+    version: "0.1 + тип гейта + правило «правка без добавлений» → опубликован как 0.2"
+    commit: 4a4df7bcb09d134a1ccf7449730ae95a898993ce
+    sha256: 158c743e03db5529db44d1cbafd82541d05935c2cb427259c19c620409f11551
+golden_set: {path: standards/bcreq-lessons/golden-set-bcreq-stage1.md, version: "0.1"}
+rubric: {path: standards/bcreq-lessons/rubric-bcreq-stage1.md, version: "0.1"}
+preregistration: experiments/issue_448/run0084/preregistration.md
+replicates: 3
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  success_rate: 0.90
+  success_rate_basis: "Медиана трёх повторов: A2 сдал 56 из 62 кейсов (повторы 58, 56, 56) по всем применимым K1–K6 по оценке модели-судьи. Контроль A0 в тех же повторах — 54 (56, 54, 54), A1 — 55 (56, 55, 55). Судья не подтверждён человеком."
+  cases: 62
+  passed_A0_median: 54
+  passed_A1_median: 55
+  passed_A2_median: 56
+  passed_A0_replicates: [56, 54, 54]
+  passed_A1_replicates: [56, 55, 55]
+  passed_A2_replicates: [58, 56, 56]
+  core_A0_median: 9
+  core_A1_median: 9
+  core_A2_median: 10
+  core_A0_replicates: [9, 10, 9]
+  core_A1_replicates: [9, 10, 8]
+  core_A2_replicates: [10, 11, 9]
+  core_total: 11
+  negatives_false_positive_A0_median: 0
+  negatives_false_positive_A1_median: 0
+  negatives_false_positive_A2_median: 0
+  A1_not_worse_than_A0: true
+  A2_not_worse_than_A0: true
+  A2_not_worse_than_A1: true
+  publish: A2
+  gs_bcreq_12_failed: {A0: 3, A1: 3, A2: 1}
+  new_regression: "GS-BCREQ-25 (L-25 «Избыточная декомпозиция ФТ», не ядро): A0 0/3, A1 0/3, A2 3/3 — «дефекта нет»"
+  tokens_executor_A0: 169967
+  tokens_executor_A1: 169539
+  tokens_executor_A2: 179395
+  tokens_judge: 343860
+  tokens_total: 862761
+  token_method: "subagent_tokens из отчёта Claude Code о подагенте (сумма по пакетам и повторам; включает чтение промпта и кейсов)"
+  measured: true
+  eval: "Пред-регистрированный замер с одновременным контролем (Р-03, N = 3, медиана). A0 (v0.1) — 54/62, ядро 9/11; A1 (+ тип гейта) — 55/62, ядро 9/11; A2 (+ правило «правка без добавлений») — 56/62, ядро 10/11; ложных дефектов 0/10 у всех плеч во всех повторах. A2 не хуже A0 и A1 по всем трём медианам — по лестнице публикуется A2 (v0.2). GS-BCREQ-12 (ядро): A0 и A1 — 3 из 3 провалов, A2 — 1 из 3. GS-BCREQ-43: 3/3/0. Новая регрессия: GS-BCREQ-25 (не ядро) — A2 3 из 3 отвечает «дефекта нет»: правило «по одному действию в каждом» оправдывает дробление процесса на шаги-ФТ. Следующий шаг — уточнение правила (BL-156г) замером A2 против A3."
+related_runs:
+  - RUN-0079
+  - RUN-0081
+  - RUN-0082
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/448
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/446
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/427
+related_artifacts:
+  - prompts/bcreq-review-validation-oneshot.md
+  - experiments/issue_438/prompt-typing.json
+  - experiments/issue_448/run0084/preregistration.md
+  - experiments/issue_448/run0084/run.py
+  - experiments/issue_448/run0084/no_additions.py
+  - experiments/issue_448/run0084/score.log
+  - experiments/issue_448/run0084/tokens.tsv
+  - experiments/issue_448/run0084/diff_cases.py
+  - experiments/issue_448/run0084/diff-cases.log
+  - standards/bcreq-lessons/golden-set-bcreq-stage1.md
+  - standards/bcreq-lessons/rubric-bcreq-stage1.md

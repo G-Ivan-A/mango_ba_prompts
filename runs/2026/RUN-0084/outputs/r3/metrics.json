@@ -1,0 +1,250 @@
+{
+  "A0": {
+    "prompt_version": "0.1 (опубликованный, контроль)",
+    "prompt_sha256": "56dee0cc777870cb33ddf5db18fd2577103bc7611f8d36f5a9b27e46a16e0f9e",
+    "cases": 62,
+    "passed": 54,
+    "core": "9/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "61/62",
+      "K4": "62/62",
+      "K5": "55/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism without a source ('передавать в CRM Заказчика событие ... с данными')."
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix assigns the role 'Оператор', which has no source in the case (no role model or BA decision given)."
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "tid": "T-06",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "K5/K6: fix assigns the status wording 'ФТ-2 согласовано с Р-1'."
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил') and adds an unsourced reference point 'после пропущенного звонка'."
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds an unsourced behaviour 'использовать его актуальную версию при уведомлении' (notifications are not in the input)."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: names an unsourced claim/guess (АД-1, АД-6), not a disclaimer about a nonexistent problem. K5: the alternative fix (a question in 8.4 about tariffication) keeps the nonexistent problem in the document and adds an unneeded question."
+      },
+      {
+        "case": "GS-BCREQ-07",
+        "tid": "T-37",
+        "lesson": "L-07",
+        "failed": [
+          "K3"
+        ],
+        "note": "K3: обоснование ссылается на выдуманный источник 'дополнение БА (БЗ_дополнение)', которого нет во входе и контексте"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка оставляет два действия в одном ФТ (неатомарно) и сужает 'апдейт' до выдуманного 'статуса заявки'"
+      }
+    ]
+  },
+  "A1": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json)",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 55,
+    "core": "8/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "56/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism without a source ('передавать в CRM Заказчика событие о пропущенном звонке')."
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил') and adds an unsourced reference point 'после пропущенного вызова'."
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds an unsourced behaviour 'учитывать его изменения при уведомлении' and an invented role 'архитектор продукта'."
+      },
+      {
+        "case": "GS-BCREQ-51",
+        "tid": "T-18",
+        "lesson": "L-51",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: the violation named is only the unverified claim of 'неверные данные'. It does not say that a subjective customer statement was classified as a product defect."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: names an unsourced product claim, not a disclaimer about a nonexistent problem. K5: the alternative fix (a [ТРЕБУЕТСЯ УТОЧНЕНИЕ] question in 8.4 about tariffication) keeps the nonexistent problem in the document."
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка оставляет два действия в одном ФТ (неатомарно), формула 'предоставлять возможность' без 'кому', 'апдейт' сужен до выдуманного 'статуса заявки'"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит элемент интерфейса 'журнал действий' без источника"
+      }
+    ]
+  },
+  "A2": {
+    "prompt_version": "0.1 + тип гейта + «правка без добавлений»",
+    "prompt_sha256": "158c743e03db5529db44d1cbafd82541d05935c2cb427259c19c620409f11551",
+    "cases": 62,
+    "passed": 56,
+    "core": "9/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "61/62",
+      "K2": "49/52",
+      "K3": "62/62",
+      "K4": "61/62",
+      "K5": "59/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K4",
+          "K5"
+        ],
+        "note": "K4: flags a non-atomicity defect ('два условия — ФТ должно быть атомарным'), but one action with conditions is not non-atomic. K5: split ФТ-b 'повторный звонок ... не позднее 2 часов' drops the condition 'только если клиент не ответил' (semantic drift)."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names an unsourced claim, not a disclaimer about a nonexistent problem."
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: названо общее нарушение 'факт без источника'; не названа полнота/исчерпываемость перечня, ключевая для правила урока"
+      },
+      {
+        "case": "GS-BCREQ-25",
+        "tid": "T-38",
+        "lesson": "L-25",
+        "failed": [
+          "K1",
+          "K2"
+        ],
+        "note": "K1: вердикт 'дефекта нет' при эталоне 'дефект'; K2: нарушение не названо"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка использует формулу 'Система должна маршрутизировать/обновлять' вместо формулы ФТ 'Система должна обеспечивать <что>' без решения БА"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка теряет назначение 'аудит' из исходного текста и задаёт вопрос о цели, которая есть во входе (смысловой дрейф)"
+      }
+    ]
+  }
+}

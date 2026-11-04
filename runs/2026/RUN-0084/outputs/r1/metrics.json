@@ -1,0 +1,203 @@
+{
+  "A0": {
+    "prompt_version": "0.1 (опубликованный, контроль)",
+    "prompt_sha256": "56dee0cc777870cb33ddf5db18fd2577103bc7611f8d36f5a9b27e46a16e0f9e",
+    "cases": 62,
+    "passed": 56,
+    "core": "9/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "62/62",
+      "K4": "61/62",
+      "K5": "57/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix invents an integration mechanism with no source: 'передавать в CRM Заказчика событие ... с данными' is a new function and event that neither the input nor 8.4 supports"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix drops the qualifier 'только' ('если клиент не ответил' instead of 'только если') and adds an anchor 'после исходного звонка' that is not in the source (meaning drift)"
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix replaces publishing with a vague, untestable 'учитывать его изменения' (ambiguous wording, meaning drift)"
+      },
+      {
+        "case": "GS-BCREQ-28",
+        "tid": "T-13",
+        "lesson": "L-28",
+        "failed": [
+          "K4"
+        ],
+        "note": "K4: Flags an extra defect, 'изменение раздела без основания, не отражённое в 8.5', but the context says the edit does not exist"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: Names a generic invented product claim (АД-6/АД-1), not the lesson rule: a disclaimer about a nonexistent problem; K5: The alternative fix (a question in 8.4 about tariffing) raises the same nonexistent problem"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка оставляет два действия в одном ФТ (маршрутизация и обновление — неатомарно) и вносит без источника «ответственному сотруднику» и «статус лида»."
+      }
+    ]
+  },
+  "A1": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json)",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 56,
+    "core": "9/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "56/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix invents an integration mechanism with no source: 'Система должна передавать в CRM событие ... с данными' is a new function and event that neither the input nor 8.4 supports"
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix names the role 'оператору', which has no source in the input or context (invented role)"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix drops the qualifier 'только' and adds an anchor 'после первого звонка' that is not in the source (meaning drift)"
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix replaces 'публиковать изменения' with an invented function 'обеспечивать доступ к его изменениям' (meaning drift) and sends the decision to an architect with a record in 8.5 instead of a question in 8.4"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: Names a generic unsupported product claim (АД-1/АД-6), not the lesson rule: a disclaimer about a problem that was not in the input; K5: The alternative fix (a question in 8.4 about tariffing) raises the same nonexistent problem"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка оставляет два действия в одном ФТ (маршрутизация и обновление — неатомарно) и вносит без источника «ответственному сотруднику» и «статус заявки», заменяя термин «лид» на «заявка»."
+      }
+    ]
+  },
+  "A2": {
+    "prompt_version": "0.1 + тип гейта + «правка без добавлений»",
+    "prompt_sha256": "158c743e03db5529db44d1cbafd82541d05935c2cb427259c19c620409f11551",
+    "cases": 62,
+    "passed": 58,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "61/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "60/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: Fix drops the qualifier 'только' ('если клиент не ответил' instead of 'только если'), so the restriction is lost"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: Names a claim without a source ('не имеет источника', 'факт о продукте'), not the lesson rule: a disclaimer about a problem that was not in the input"
+      },
+      {
+        "case": "GS-BCREQ-25",
+        "tid": "T-38",
+        "lesson": "L-25",
+        "failed": [
+          "K1",
+          "K2"
+        ],
+        "note": "K1: вердикт «дефекта нет» при эталоне «дефект»; K2: нарушение (избыточная декомпозиция ФТ) не названо."
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка «Система должна записывать событие [ТРЕБУЕТСЯ УТОЧНЕНИЕ]» теряет назначение «для аудита» из исходного ФТ — смысловой дрейф."
+      }
+    ]
+  }
+}

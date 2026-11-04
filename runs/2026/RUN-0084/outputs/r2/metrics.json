@@ -1,0 +1,250 @@
+{
+  "A0": {
+    "prompt_version": "0.1 (опубликованный, контроль)",
+    "prompt_sha256": "56dee0cc777870cb33ddf5db18fd2577103bc7611f8d36f5a9b27e46a16e0f9e",
+    "cases": 62,
+    "passed": 54,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "48/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "57/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит механизм «передавать событие» в CRM без источника"
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "tid": "T-06",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "K5/K6: правка предлагает «отметить ФТ-2 как согласованное» — присвоение статуса моделью"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: в правке потерян ограничитель «только» («если клиент не ответил»); добавлена точка отсчёта «после исходного звонка», которой нет в источнике"
+      },
+      {
+        "case": "GS-BCREQ-51",
+        "tid": "T-18",
+        "lesson": "L-51",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: названо непроверенное утверждение о неверных данных, а не запись субъективного мнения Заказчика как дефекта продукта"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: названо общее «утверждение без источника/домысел», а не оговорка о несуществующей проблеме; K5: правка предлагает вопрос в 8.4 о влиянии на тарификацию — снова вносит несуществующую проблему в документ"
+      },
+      {
+        "case": "GS-BCREQ-22",
+        "tid": "T-33",
+        "lesson": "L-22",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names untraceable requirement / scope expansion without source, not leakage of facts from another task or context (lesson rule)"
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic product fact without source/locator; does not name the list being presented as exhaustive without a completeness mark (lesson rule)"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix still packs two actions (маршрутизация и обновление) into one FT, and it replaces the term 'лид' with 'заявка' without a BA decision; it also adds an unsourced 'ответственному сотруднику' and 'статус'"
+      }
+    ]
+  },
+  "A1": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json)",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 55,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "49/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "57/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит механизм «передавать событие» в CRM без источника"
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка использует формулу «обеспечивать ... возможность» вместо «предоставлять <кому> возможность» для действия пользователя"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: в правке потерян ограничитель «только» («если клиент не ответил»); добавлена точка отсчёта «после первого звонка», которой нет в источнике"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: названо общее «утверждение без источника/домысел», а не оговорка о несуществующей проблеме; K5: правка предлагает вопрос в 8.4 о влиянии на тарификацию — снова вносит несуществующую проблему в документ"
+      },
+      {
+        "case": "GS-BCREQ-22",
+        "tid": "T-33",
+        "lesson": "L-22",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names untraceable requirement / scope expansion without source, not leakage of facts from another task or context (lesson rule)"
+      },
+      {
+        "case": "GS-BCREQ-40",
+        "tid": "T-40",
+        "lesson": "L-40",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names only generic invented numbers without source (АД-1); does not name that section 2 must use the Customer's words and that a threshold/NFR does not belong in business context"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix still packs two actions (направлять ... и обновлять статус) into one FT, so it is non-atomic, and it adds an unsourced recipient ('ответственному сотруднику') and object ('статус лида')"
+      }
+    ]
+  },
+  "A2": {
+    "prompt_version": "0.1 + тип гейта + «правка без добавлений»",
+    "prompt_sha256": "158c743e03db5529db44d1cbafd82541d05935c2cb427259c19c620409f11551",
+    "cases": 62,
+    "passed": 56,
+    "core": "11/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "61/62",
+      "K2": "47/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "60/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: в правке потерян ограничитель «только» («если клиент не ответил»)"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: названо общее «утверждение без источника/домысел», а не оговорка о несуществующей проблеме; K5: правка предлагает вопрос в 8.4 о влиянии на тарификацию — снова вносит несуществующую проблему в документ"
+      },
+      {
+        "case": "GS-BCREQ-22",
+        "tid": "T-33",
+        "lesson": "L-22",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names untraceable requirement / scope expansion without source, not leakage of facts from another task or context (lesson rule)"
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic product fact without source/locator; does not name the list being presented as exhaustive without a completeness mark (lesson rule)"
+      },
+      {
+        "case": "GS-BCREQ-25",
+        "tid": "T-38",
+        "lesson": "L-25",
+        "failed": [
+          "K1",
+          "K2"
+        ],
+        "note": "K1: verdict 'дефекта нет' on a defect case; K2: no violation named"
+      },
+      {
+        "case": "GS-BCREQ-40",
+        "tid": "T-40",
+        "lesson": "L-40",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names only generic invented numbers without source (АД-1); does not name that section 2 must use the Customer's words and that a threshold/NFR does not belong in business context"
+      }
+    ]
+  }
+}

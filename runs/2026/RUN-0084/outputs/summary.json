@@ -1,0 +1,371 @@
+{
+  "replicates": {
+    "A0": {
+      "r1": {
+        "passed": 56,
+        "core": 9,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 51,
+          "K3": 62,
+          "K4": 61,
+          "K5": 57,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-28",
+          "GS-BCREQ-26",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r2": {
+        "passed": 54,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 48,
+          "K3": 62,
+          "K4": 62,
+          "K5": 57,
+          "K6": 61
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-14",
+          "GS-BCREQ-33",
+          "GS-BCREQ-51",
+          "GS-BCREQ-26",
+          "GS-BCREQ-22",
+          "GS-BCREQ-47",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r3": {
+        "passed": 54,
+        "core": 9,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 51,
+          "K3": 61,
+          "K4": 62,
+          "K5": 55,
+          "K6": 61
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-14",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-07",
+          "GS-BCREQ-12"
+        ]
+      }
+    },
+    "A1": {
+      "r1": {
+        "passed": 56,
+        "core": 9,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 51,
+          "K3": 62,
+          "K4": 62,
+          "K5": 56,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r2": {
+        "passed": 55,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 49,
+          "K3": 62,
+          "K4": 62,
+          "K5": 57,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-33",
+          "GS-BCREQ-26",
+          "GS-BCREQ-22",
+          "GS-BCREQ-40",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r3": {
+        "passed": 55,
+        "core": 8,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 62,
+          "K2": 50,
+          "K3": 62,
+          "K4": 62,
+          "K5": 56,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-51",
+          "GS-BCREQ-26",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      }
+    },
+    "A2": {
+      "r1": {
+        "passed": 58,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 61,
+          "K2": 50,
+          "K3": 62,
+          "K4": 62,
+          "K5": 60,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-33",
+          "GS-BCREQ-26",
+          "GS-BCREQ-25",
+          "GS-BCREQ-32"
+        ]
+      },
+      "r2": {
+        "passed": 56,
+        "core": 11,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 61,
+          "K2": 47,
+          "K3": 62,
+          "K4": 62,
+          "K5": 60,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-33",
+          "GS-BCREQ-26",
+          "GS-BCREQ-22",
+          "GS-BCREQ-47",
+          "GS-BCREQ-25",
+          "GS-BCREQ-40"
+        ]
+      },
+      "r3": {
+        "passed": 56,
+        "core": 9,
+        "negatives_false_positive": 0,
+        "criteria": {
+          "K1": 61,
+          "K2": 49,
+          "K3": 62,
+          "K4": 61,
+          "K5": 59,
+          "K6": 62
+        },
+        "failed": [
+          "GS-BCREQ-33",
+          "GS-BCREQ-26",
+          "GS-BCREQ-47",
+          "GS-BCREQ-25",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      }
+    }
+  },
+  "median": {
+    "A0": {
+      "passed": 54,
+      "core": 9,
+      "negatives_false_positive": 0
+    },
+    "A1": {
+      "passed": 55,
+      "core": 9,
+      "negatives_false_positive": 0
+    },
+    "A2": {
+      "passed": 56,
+      "core": 10,
+      "negatives_false_positive": 0
+    }
+  },
+  "criteria_median": {
+    "A0": {
+      "K1": 62,
+      "K2": 51,
+      "K3": 62,
+      "K4": 62,
+      "K5": 57,
+      "K6": 61
+    },
+    "A1": {
+      "K1": 62,
+      "K2": 50,
+      "K3": 62,
+      "K4": 62,
+      "K5": 56,
+      "K6": 62
+    },
+    "A2": {
+      "K1": 61,
+      "K2": 49,
+      "K3": 62,
+      "K4": 62,
+      "K5": 60,
+      "K6": 62
+    }
+  },
+  "fail_frequency": {
+    "A0": {
+      "GS-BCREQ-12": 3,
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-33": 3,
+      "GS-BCREQ-43": 3,
+      "GS-BCREQ-01": 2,
+      "GS-BCREQ-14": 2,
+      "GS-BCREQ-07": 1,
+      "GS-BCREQ-22": 1,
+      "GS-BCREQ-28": 1,
+      "GS-BCREQ-37": 1,
+      "GS-BCREQ-47": 1,
+      "GS-BCREQ-51": 1
+    },
+    "A1": {
+      "GS-BCREQ-12": 3,
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-33": 3,
+      "GS-BCREQ-43": 3,
+      "GS-BCREQ-01": 2,
+      "GS-BCREQ-37": 2,
+      "GS-BCREQ-22": 1,
+      "GS-BCREQ-32": 1,
+      "GS-BCREQ-40": 1,
+      "GS-BCREQ-51": 1
+    },
+    "A2": {
+      "GS-BCREQ-25": 3,
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-33": 3,
+      "GS-BCREQ-32": 2,
+      "GS-BCREQ-47": 2,
+      "GS-BCREQ-12": 1,
+      "GS-BCREQ-22": 1,
+      "GS-BCREQ-40": 1
+    }
+  },
+  "decision": {
+    "A1_vs_A0": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "A2_vs_A0": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "A2_vs_A1": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "publish": "A2"
+  },
+  "fail_by_criterion": {
+    "A0": {
+      "K2": 6,
+      "K3": 1,
+      "K4": 1,
+      "K5": 17,
+      "K6": 2
+    },
+    "A1": {
+      "K2": 6,
+      "K5": 17
+    },
+    "A2": {
+      "K1": 3,
+      "K2": 10,
+      "K4": 1,
+      "K5": 7
+    }
+  },
+  "paired_minus_A0": {
+    "A1": {
+      "r1": {
+        "passed": 0,
+        "core": 0,
+        "negatives_false_positive": 0
+      },
+      "r2": {
+        "passed": 1,
+        "core": 0,
+        "negatives_false_positive": 0
+      },
+      "r3": {
+        "passed": 1,
+        "core": -1,
+        "negatives_false_positive": 0
+      }
+    },
+    "A2": {
+      "r1": {
+        "passed": 2,
+        "core": 1,
+        "negatives_false_positive": 0
+      },
+      "r2": {
+        "passed": 2,
+        "core": 1,
+        "negatives_false_positive": 0
+      },
+      "r3": {
+        "passed": 2,
+        "core": 0,
+        "negatives_false_positive": 0
+      }
+    }
+  },
+  "gs_bcreq_12_failed": {
+    "A0": 3,
+    "A1": 3,
+    "A2": 1
+  }
+}
