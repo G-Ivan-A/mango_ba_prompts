@@ -17,9 +17,10 @@ RFC-RT-001 ``docs/rfc/2026-11-runtime-product-catalog-golden-set.md`` — гот
 * числа RFC совпадают с каталогом спицы ``docs/taxonomy/products.json``
   (пересчёт здесь же), прототип ``taxonomy/mango-products.yaml`` — с каталогом;
   функции эталонов runtime, названные в Ф-7, в каталоге отсутствуют;
-* ссылки на runtime — только по SHA реестра (ТС-1, ТС-5);
+* ссылки на runtime — по полному SHA: факты разделов 1–11 — срез проверки
+  ``5d8c201``, поправка 0.3 (раздел 12, issue #442) — SHA реестра (ТС-1, ТС-5);
 * реестр справочников: строки РТ-1 и РТ-3 ведут в RFC, id заглушек и задач
-  прежние; RFC зарегистрирован в реестре RFC, карте артефактов, бэклоге
+  прежние (З-1 — в таблице снятых, BL-163), РТ-6 ведёт в раздел 12.3; RFC зарегистрирован в реестре RFC, карте артефактов, бэклоге
   (Р-17, BL-163), CHANGELOG;
 * относительные ссылки и якоря RFC разрешаются;
 * подраздел 3.1 (комментарий владельца к PR #437): происхождение каталога
@@ -29,9 +30,10 @@ RFC-RT-001 ``docs/rfc/2026-11-runtime-product-catalog-golden-set.md`` — гот
 * при ``HUB_CLONE=<путь к клону Хаба>`` — классификация не менялась с коммита
   источника каталога, таблицы индустриального слоя — по одной строке на
   Capability с ``row``; без клона проверка пропускается;
-* при ``RUNTIME_CLONE=<путь к клону runtime на SHA реестра>`` — факты Ф-1,
-  Ф-6, Ф-7 и отсутствие каталога в runtime проверяются на клоне; без клона
-  проверка пропускается (CI без сети).
+* при ``RUNTIME_CLONE=<путь к клону runtime>`` — факты Ф-1, Ф-6, Ф-7 и
+  отсутствие каталога проверяются на срезе проверки ``5d8c201`` (``git show``,
+  HEAD клона не важен); без клона или без коммита — пропуск (CI без сети).
+  Каталог на SHA реестра проверяет валидатор issue #430.
 
 Запуск: ``python3 scripts/validate_issue_434_runtime_tasks.py``.
 """
@@ -70,6 +72,8 @@ INDUSTRY_KEYS = re.compile(r"tm_?forum|unspsc|okpd|окпд|industry", re.I)
 REPO = "https://github.com/G-Ivan-A/mango_ba_prompts"
 CATALOG_VERSION = "2026-10-28.1"
 CATALOG_COMMIT = "e3597fd74da9c4f631ca46697c643462e2cf0b85"
+# Срез runtime, на котором проверены факты разделов 1–11 RFC (до РТ-1).
+VERIFIED_SHA = "5d8c201511fd730a596c9f9b4588470a7b01edc9"
 RUNTIME_CLASSES = ("contact-center", "voice-ucaas", "analytics-reporting")
 LEVELS = ("Domain", "Capability", "Feature", "Atomic Function")
 
@@ -89,6 +93,10 @@ SECTIONS = (
     "## 9. Риски, допущения, открытые вопросы",
     "## 10. Обоснованные обходы",
     "## 11. Рекомендуемые следующие шаги (после согласования)",
+    "## 12. Поправка 0.3: исполнение BL-163 (issue #442)",
+    "### 12.1. Проверка готовности (2026-11-04)",
+    "### 12.2. Что исполнено",
+    "### 12.3. РТ-6 — тело задачи для `mango-ba-ai-runtime` (копировать целиком)",
     "## Related Artifacts",
 )
 # Тела задач: (раздел RFC, заголовок задачи).
@@ -96,6 +104,7 @@ BODIES = (
     ("## 5. ", "РТ-1. "),
     ("## 6. ", "ХАБ-1. "),
     ("## 7. ", "РТ-3. "),
+    ("## 12. ", "РТ-6. "),
 )
 # Функции, которые эталоны runtime называют в markdown (Ф-7).
 GOLDEN_MD_FUNCTIONS = (
@@ -437,12 +446,17 @@ class CatalogNumbers(unittest.TestCase):
 
 class Links(unittest.TestCase):
     def test_runtime_links_pinned_to_registry(self):
+        # Разделы 1–11 — факты среза проверки; поправка 0.3 — срез реестра.
         sha = registry_sha()
-        found = RUNTIME_LINK.findall(text(RFC))
+        body = text(RFC)
+        found = RUNTIME_LINK.findall(body)
         self.assertTrue(found)
         for ref, path in found:
             with self.subTest(link=f"{ref}{path}"):
-                self.assertEqual(ref, sha)
+                self.assertIn(ref, (VERIFIED_SHA, sha))
+        amendment = RUNTIME_LINK.findall(rfc_section("## 12. "))
+        self.assertTrue(amendment)
+        self.assertEqual({ref for ref, _ in amendment}, {sha}, "раздел 12 — по SHA реестра")
 
     def test_relative_links_and_anchors(self):
         for target in LINK_RE.findall(strip_fences(text(RFC))):
@@ -471,8 +485,15 @@ class Records(unittest.TestCase):
                 self.assertTrue(f"#{anchor}".startswith(prefix), anchor)
                 self.assertIn(anchor, rfc_anchors)
         # Id заглушек и задач не меняются: на них ссылаются карточки и валидатор #430.
-        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-1", "З-2", "З-3", "З-4"])
-        self.assertEqual(re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4"])
+        # З-1 снята BL-163 (issue #442): строка — в таблице снятых, id не переиспользуется.
+        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-3", "З-4", "З-1"])
+        self.assertEqual(
+            re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6"]
+        )
+        row = re.search(r"^\| РТ-6 \|.*$", body, re.M).group(0)
+        anchor = [t for t in LINK_RE.findall(row) if RFC.name in t][0].split("#", 1)[1]
+        self.assertTrue(anchor.startswith("123-рт-6-"), anchor)
+        self.assertIn(anchor, rfc_anchors)
 
     def test_rfc_register(self):
         body = text(RFC_REGISTER)
@@ -486,6 +507,7 @@ class Records(unittest.TestCase):
         backlog = text(BACKLOG)
         self.assertRegex(backlog, r"(?m)^\| \*\*Р-17\*\* \|.*\| BL-163 \|")
         self.assertRegex(backlog, r"(?m)^\| BL-163 \| \[Реестр справочников на каталог продуктов runtime\]")
+        self.assertRegex(backlog, r"(?m)^\| BL-163 \|.*\| review \|.*/issues/442\).*/pull/443\)")
         self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-163")
         self.assertIn("| `ХАБ-N` |", backlog)
         card = text(TRACK_B).split("### BL-163. ", 1)[1]
@@ -607,23 +629,36 @@ class RuntimeClone(unittest.TestCase):
         head = subprocess.run(
             ["git", "-C", clone, "rev-parse", "HEAD"], capture_output=True, text=True
         ).stdout.strip()
-        if head != registry_sha():
-            raise unittest.SkipTest(f"клон на {head}, реестр на {registry_sha()}")
+        probe = subprocess.run(
+            ["git", "-C", clone, "cat-file", "-e", f"{VERIFIED_SHA}^{{commit}}"], capture_output=True
+        )
+        if probe.returncode != 0:
+            raise unittest.SkipTest(f"в клоне нет среза проверки {VERIFIED_SHA[:7]}")
+
+    def show(self, rel):
+        out = subprocess.run(
+            ["git", "-C", str(self.clone), "show", f"{VERIFIED_SHA}:{rel}"], capture_output=True
+        )
+        return out.stdout.decode("utf-8") if out.returncode == 0 else None
 
     def test_stub_is_real(self):
-        products = text(self.clone / "taxonomy/products.yaml")
+        products = self.show("taxonomy/products.yaml")
         for cls in RUNTIME_CLASSES:
             self.assertIn(cls, products)
-        self.assertFalse((self.clone / "taxonomy/mango-products.yaml").exists())
+        self.assertIsNone(self.show("taxonomy/mango-products.yaml"))
 
     def test_golden_index(self):
-        cases = text(self.clone / "golden/cases.yaml")
+        cases = self.show("golden/cases.yaml")
         self.assertIn("structural_only: true", cases)
         self.assertIn("product_class: contact-center", cases)
         self.assertNotIn("atomic_function", cases)
 
     def test_golden_md_functions(self):
-        corpus = "".join(text(p) for p in sorted((self.clone / "golden").glob("*.md")))
+        names = subprocess.run(
+            ["git", "-C", str(self.clone), "ls-tree", "--name-only", f"{VERIFIED_SHA}:golden"],
+            capture_output=True, text=True, check=True,
+        ).stdout.split()
+        corpus = "".join(self.show(f"golden/{n}") for n in sorted(names) if n.endswith(".md"))
         for name in GOLDEN_MD_FUNCTIONS:
             with self.subTest(function=name):
                 self.assertIn(name, corpus)
