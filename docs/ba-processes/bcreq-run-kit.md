@@ -25,8 +25,11 @@ related_issues:
 [RFC #427, раздел 9.4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#94-комплект-прогона-на-новых-задачах);
 задача — BL-157 ([карточка](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/backlog-ba-model.md#bl-157-комплект-прогона-на-новых-задачах)).
 
-**Статус: черновик «по тесту».** Комплект опубликован в PR #439
-(issue [#438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)).
+**Статус: проект (заготовка BL-157), не применять.** Подготовлен в PR #439
+(issue [#438](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)) до
+старта задачи: Р-15 ждёт ответа владельца, BL-157 — `deferred (triggered)`
+([разбор готовности](../analysis/2026-11-04-bl-156-157-readiness-check.md)).
+Комплект применяется после «Р-15 да» и отдельной постановки BL-157.
 BL-157 «Готово, когда» требует ещё первого прогона BL-111 с этим
 комплектом, записанного в `runs/`; прогон делает БА на реальной задаче —
 до него комплект не проверен практикой.
