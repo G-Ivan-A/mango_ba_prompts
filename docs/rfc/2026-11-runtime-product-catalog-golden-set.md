@@ -1,14 +1,14 @@
 ---
 status: accepted
-version: 0.3
+version: 0.4
 updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py"
+related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -583,8 +583,9 @@ Definition of Done: таблица покрытия в PR (класс × пол�
 | ID | Что | Где | Статус |
 | --- | --- | --- | --- |
 | Р-17 | Принять каталог `docs/taxonomy/products.json` 2026-10-28.1 целиком как таксономию runtime; 74 узла с портала — из `added-for-review` в `accepted` | [BACKLOG, раздел 2](../../pr-ops/BACKLOG.md), [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437#issuecomment-6605372609) | принято 2026-11-03 |
-| BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | review: issue [#442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442), PR [#443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443) |
+| BL-163 | Реестр справочников на каталог runtime: SHA, И-2 → «Да», снятие З-1, тест клона | [Карточка](../../pr-ops/backlog-ba-model.md#bl-163-реестр-справочников-на-каталог-продуктов-runtime) | DONE: issue [#442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442), PR [#443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443) слит 2026-11-04 |
 | BL-164 | Индустриальная таксономия для оценки тендерного ТЗ: сопоставление каталога Mango с TM Forum, UNSPSC, ОКПД 2 и функциями внешних продуктов (подраздел 3.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) | deferred (triggered): старт BL-133 или `P-08` в срезе |
+| BL-165, BL-166 | Human Review кейсов `contact-center` и маппинг кандидатов RUN-0074 (решения владельца в issue #444) | [Раздел 13.4](#134-задачи-бэклога-из-решений-владельца) | deferred (triggered) |
 
 Почему Р-17 понадобилось (до решения 2026-11-03):
 
@@ -649,25 +650,25 @@ Definition of Done: таблица покрытия в PR (класс × пол�
    - 4а. **Владелец: создать РТ-6 в `mango-ba-ai-runtime` (раздел 12.3).**
      Почему: копия каталога старше Р-17, промпт держит правило чтения
      `added-for-review` как `accepted` (реестр, раздел 2.1).
-   - 4б. **Новый срез реестра после РТ-6 и после слияния runtime PR #17
-     (компиляция ХАБ-1: М-5, М-6).** Почему: ТС-5 — одна точка SHA;
+   - 4а, 4б. **Исполнено (runtime PR #21 слит 2026-11-04, `f31dcde3`; реестр 0.4, раздел 13).** Было: РТ-6; новый срез реестра после РТ-6 и после слияния runtime PR #17
+     (компиляция ХАБ-1: М-5, М-6; PR #17 закрыт, логика перенесена в PR #21). Почему: ТС-5 — одна точка SHA;
      срез должен включать и обновлённую копию, и норму привязки `c-in`.
-   - 4в. **PR [#439](https://github.com/G-Ivan-A/mango_ba_prompts/pull/439)
-     (BL-156, BL-157) — пересобрать на реестре 0.3.** Почему: черновики
+   - 4в. **Исполнено (PR #439 слит; черновики пересобраны на реестре 0.4 в issue #444).** Было: PR [#439](https://github.com/G-Ivan-A/mango_ba_prompts/pull/439)
+     (BL-156, BL-157) — пересобрать на реестре 0.3. Почему: черновики
      #439 закреплены на `5d8c201` и держат З-1 у Ш-2. Поверх этого PR
      валидатор ТС-5 даёт 62 ошибки, а сборщик падает на таблице снятых
      заглушек. Правка сборщика в одну строку (читать заглушки до «Снятые
      заглушки.») и пересборка снимают обе ошибки. Остаётся решение #439 по
      замеру RUN-0080: он снят на текстах реестра 0.2
      ([`experiments/issue_442/pr439-on-top.log`](../../experiments/issue_442/pr439-on-top.log)).
-5. **РТ-4 (глоссарии `voice-ucaas`, `analytics-reporting`).** Почему:
+5. **Исполнено (runtime PR #21).** РТ-4 (глоссарии `voice-ucaas`, `analytics-reporting`). Почему:
    без пар `confusable_with` отрицательные случаи РТ-3 не по EP-G7.
-6. **РТ-3 (раздел 7).** Почему: базовая линия «не хуже golden set» для
-   трёх классов. Сначала нужно подтверждение `contact-center` человеком.
-7. **BL-156 после Р-15** (Р-14 принято в issue #432): промпт Ш-2 читает
+6. **Исполнено структурно (runtime PR #21, `structural_only: true`).** РТ-3 (раздел 7). Почему: базовая линия «не хуже golden set» для
+   трёх классов. Сначала нужно подтверждение `contact-center` человеком — задача BL-165 (раздел 13.4).
+7. **Этап BL-156а исполнен (issue #444, раздел 13); BL-156б — после замера с повторами.** BL-156 после Р-15 (Р-14 принято в issue #432): промпт Ш-2 читает
    каталог по разделу 4.
    Почему: тогда BL-156 выйдет без заглушек З-1 и З-3.
-8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога.
+8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога (BL-157а `DONE`; BL-157б — после BL-156а и BL-111).
    Почему: это доказательная база для снятия «по тесту» (BL-158).
 9. **BL-164 держать `deferred (triggered)` до старта BL-133 или
    включения `P-08` в срез runtime; при старте — до оценки первого
@@ -823,9 +824,83 @@ Definition of Done:
 правило чтения раздела 2.1. Шаги после согласования — раздел 11, пункты
 4а и 4б.
 
+## 13. Поправка 0.4: исполнение BL-156а (issue #444)
+
+Issue [#444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444)
+продолжает BL-156 и BL-157 после слияния
+[PR #439](https://github.com/G-Ivan-A/mango_ba_prompts/pull/439). Постановка
+с граничными случаями —
+[`experiments/issue_444/task-statement.md`](../../experiments/issue_444/task-statement.md),
+разбор готовности —
+[`docs/analysis/2026-11-04-bl-156-readiness-check-444.md`](../analysis/2026-11-04-bl-156-readiness-check-444.md).
+
+### 13.1. Проверка готовности (2026-11-04)
+
+| № | Условие | Факт | Итог |
+| --- | --- | --- | --- |
+| Г-9 | РТ-3, РТ-4, РТ-6 и компиляция ХАБ-1 слиты в runtime | [runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) слит 2026-11-04T14:55Z, `f31dcde33f0bc120244128faab98fc0162e45701` — `main` runtime; issue [#20](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/20) закрыта | Да |
+| Г-10 | Пути и версии реестра есть на SHA (ТС-2, ТС-3) | 13 путей и 11 версий на `f31dcde3`; база знаний `docs/kb` не менялась с `2db0ef51` | Да |
+| Г-11 | Копия каталога = каталог спицы, `lifecycle` без дрейфа | [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/mango-products.yaml): 353 узла, id, уровни и родители совпадают, `catalog_status: accepted`; расхождение Г-8 снято РТ-6 | Да |
+| Г-12 | Golden set трёх классов в строгой форме (функция кейса — id каталога класса) | `contact-center` 7 кейсов (2 положительных, 5 отрицательных), `voice-ucaas` 6, `analytics-reporting` 5; везде `structural_only: true`, `confirmed_by: none`; функция вне каталога — только в `declared_function` | Да, с оговоркой: смысл кейсов человек не проверял (BL-165) |
+| Г-13 | Глоссарии трёх классов с парами `confusable_with` (РТ-4) | 8, 6 и 4 пары; узлы `catalog` есть в каталоге | Да |
+| Г-14 | PR #439 слит, черновики BL-156 — в `main` спицы | слит 2026-11-04T13:36Z | Да |
+
+Лог — [`experiments/issue_444/runtime-readiness.log`](../../experiments/issue_444/runtime-readiness.log),
+снимок трёх репозиториев — [`experiments/issue_444/cross-repo-state.log`](../../experiments/issue_444/cross-repo-state.log).
+
+### 13.2. Решение по PR #17 и сверка с комментарием к PR #21
+
+Решение владельца в issue #444: принять строгий вариант PR #21 — функция
+кейса строго равна id каталога, без исключений и магических маркеров;
+PR #17 остаётся закрытым, его логика в поток не интегрируется.
+
+Кажущееся расхождение. В [комментарии к runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21#issuecomment-6633420940)
+(2026-11-04T14:36Z) владелец просил «взять из PR #17 ту логику и
+проверки, которых нет в текущем PR #21, и реализовать их прямо здесь».
+Issue #444 говорит, что логика #17 «не интегрируется». Сверка по коммитам
+runtime показывает, что речь о разных частях #17:
+
+| Часть PR #17 | Где в PR #21 | Итог |
+| --- | --- | --- |
+| Норма PT-5 в `contracts/c-in.md`: функция продукта на входе — id каталога класса | `09cc684` | перенесено |
+| Проверки `check_taxonomies` 6–11 и `check_golden` 2–8 в `evaluation/validate-package.md` | `09cc684`, `23d2a4b` | перенесено |
+| Тесты привязки к каталогу (прокси G-mach) | `449d772`, `tests/test_catalog_binding.py` | перенесено |
+| Байткод `tests/__pycache__/*.pyc` в индексе | `11fad36` убирает его и дополняет `.gitignore` | снято |
+| Форма отказа по каталогу: `atomic_function: queue-callback-offer   # намеренно вне каталога` и `grep -v` по этому комментарию в `tests/runtime-smoke.sh` | не перенесено: в PR #21 `atomic_function` — всегда id каталога, объявленная функция вне каталога — в поле `declared_function` | **отвергнуто** |
+
+Вывод: комментарий к PR #21 исполнен (проверки и норма перенесены), а
+решение issue #444 отвергает только форму #17 — маркер-исключение в
+комментарии. Расхождения нет. Спица не меняет ничего в runtime: строгая
+форма уже в `main` (`f31dcde3`).
+
+### 13.3. Что исполнено
+
+- Реестр [`standards/bcreq-runtime-references.md`](../../standards/bcreq-runtime-references.md)
+  0.4 на `f31dcde3`: И-5 (golden set трёх классов) и И-6 (глоссарии) —
+  «Да»; З-3 и З-4 перенесены в снятые заглушки; раздел 2.1 снят (РТ-6);
+  раздел 2.2 — звено М-4: каталог для раздела 2.2 BCREQ (анализ влияния
+  на продукты).
+- 11 черновиков BL-156 в `prompts/drafts/` пересобраны на реестре 0.4,
+  черновик Ш-2 читает каталог по звену М-4 (раздел 4).
+- 14 промптов v0.1 в `prompts/` ссылаются на runtime по SHA (долг ТС-1
+  раздела 7 реестра закрыт).
+- Golden set Ш-В [RUN-0081](../../runs/2026/RUN-0081/outputs/golden-set-report.md):
+  A с типом гейта — 56/62, ядро 9/11 против 10/11 RUN-0079. По DEC-427-11
+  тип гейта в `prompts/` не опубликован (этап BL-156б), ссылки по SHA
+  остаются.
+
+### 13.4. Задачи бэклога из решений владельца
+
+| ID | Что | Где | Статус |
+| --- | --- | --- | --- |
+| BL-165 | Human Review кейсов `contact-center` golden set runtime (решение issue #444: отложено) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-165-human-review-кейсов-contact-center-в-golden-set-runtime) | deferred (triggered) |
+| BL-166 | Маппинг 46 кандидатов RUN-0074 на классы и функции каталога (подраздел 7.1) | [Карточка](../../pr-ops/backlog-ba-model.md#bl-166-маппинг-кандидатов-run-0074-на-классы-и-функции-каталога) | deferred (triggered) |
+| BL-156б | Публикация черновиков и типа гейта после замера с повторами | [Карточка BL-156](../../pr-ops/backlog-ba-model.md#bl-156б-публикация-промптов-по-тесту-и-типа-гейта) | deferred (triggered) |
+
 ## Related Artifacts
 
 - [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1 (снята), З-3, РТ-1…РТ-4, РТ-6
+- [Проверка готовности BL-156а](../../experiments/issue_444/runtime_readiness.py) — [лог](../../experiments/issue_444/runtime-readiness.log), [постановка](../../experiments/issue_444/task-statement.md), раздел 13
 - [Проверка готовности BL-163](../../experiments/issue_442/runtime_readiness.py) — [лог](../../experiments/issue_442/runtime-readiness.log), [постановка](../../experiments/issue_442/task-statement.md)
 - [RFC #427, раздел 8](2026-11-bcreq-flow-processes-prompts.md) — исключения, требования, заглушка
 - [Каталог продуктов спицы](../taxonomy/products.json) — ССОТ значений
