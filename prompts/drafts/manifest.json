@@ -39,7 +39,7 @@
         "Ш-0"
       ],
       "based_on": "prompts/bcreq-constitution-governance-oneshot.md",
-      "based_on_sha256": "ce90592e55fac3942f66f1fb7a1234d6a052ecb972e9f3c1d2003cf7c147a66e",
+      "based_on_sha256": "97edd140a9d1b1ba1f99d1041dddfd2694b51142a6bf478b66a2934f602fff08",
       "runtime_main_to_sha": 3,
       "profiles": [
         "INGEST",
@@ -74,7 +74,7 @@
         "Ш-1"
       ],
       "based_on": "prompts/bcreq-context-understanding-stepwise.md",
-      "based_on_sha256": "4347507298412deaeeab06854066b97fb6cb6679bc9bd381b69ed9639e6b8371",
+      "based_on_sha256": "edce6a0a48b3609c7ff697649af605c15f80001ee8564040d2f9eedf1bdaf730",
       "runtime_main_to_sha": 3,
       "profiles": [
         "INGEST",
@@ -118,7 +118,7 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "3f27e35df277b58554384f257992425ed9fc5cc1dc08d8c6e550d035b94fbfe3",
+      "based_on_sha256": "32a6c6ba1a0dd64ab0a91a3f7b0eccdc0a2f26255bce4432916ce4de9882c882",
       "runtime_main_to_sha": 3,
       "profiles": [
         "EXTRACT",
@@ -158,7 +158,7 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "b6607792ad659f8c4b0192827791d21ad43b18744283e3a5358067be868fecb3",
+      "based_on_sha256": "886a86baccff425e930a1da4189ae372b6b2b39e332abe33268e361a871f1fc7",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -193,7 +193,7 @@
         "Ш-4"
       ],
       "based_on": "prompts/bcreq-nfr-documentation-stepwise.md",
-      "based_on_sha256": "8897ea519a9bbd492e2055cf30fd29dc39a28f4969c2401900cf9ccdddffe104",
+      "based_on_sha256": "3f54a1db2bfc6bdc8c583696b7a53ff4dbe4b0c67cce30693c49bd44de42576a",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -227,7 +227,7 @@
         "Ш-8"
       ],
       "based_on": "prompts/bcreq-uc-modeling-stepwise.md",
-      "based_on_sha256": "c844584c71a10a197be26326c37d1779dfd67f9a00361506848228cb23557775",
+      "based_on_sha256": "b6dd216b4305c8488d51c9c9ef9018e4f826c91a35b8469c51a20447c8b50744",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -263,7 +263,7 @@
         "Ш-6"
       ],
       "based_on": "prompts/bcreq-orr-solution-design-stepwise.md",
-      "based_on_sha256": "8f0bf58790b2d552747a6389d914eccb23eb4389fa6525b069c9e1bfc2f76650",
+      "based_on_sha256": "795bc6e6795dfebc6e9c28832963a3b59f16e7adb9c12ed2c4dfbafca609e3f0",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -295,7 +295,7 @@
         "Ш-7"
       ],
       "based_on": "prompts/bcreq-constraints-documentation-stepwise.md",
-      "based_on_sha256": "813d4cb2776ba7fb5dc8e960ef13644e3295d237a03395812b9d726871020774",
+      "based_on_sha256": "4399ca27b2a216e27630ddf0a72253ee493b2aacfc6378ac769adba2028388f9",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -326,7 +326,7 @@
         "Ш-9"
       ],
       "based_on": "prompts/bcreq-extra-risk-analysis-stepwise.md",
-      "based_on_sha256": "6d6b20b690ea27564c3fe8add60fe950d0a1a4cff7af23d0d6d8d1f54a6c5478",
+      "based_on_sha256": "854c7634fe586b38a0c14c9ce81a2d8fd013f092c3b5b22d049c7d0573f0ed0f",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"
@@ -358,7 +358,7 @@
         "Ш-В"
       ],
       "based_on": "prompts/bcreq-review-validation-oneshot.md",
-      "based_on_sha256": "ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+      "based_on_sha256": "61e457cabe9d2ebe6ca4d2b0390943a1d019915bcc4241aec9691b7e4d35fae7",
       "runtime_main_to_sha": 3,
       "profiles": [
         "ANALYZE",
@@ -440,7 +440,7 @@
         "Ш-С"
       ],
       "based_on": "prompts/bcreq-scenarios-modeling-oneshot.md",
-      "based_on_sha256": "e688cc9d1c23d8dc9661782b13f1a8ac48e738788c47119a2dcc5c267ba700b4",
+      "based_on_sha256": "55e221a3f91fceb2f198717ba6c9121aa843f098f7da486bf93c8b13ccd3d0b5",
       "runtime_main_to_sha": 3,
       "profiles": [
         "GENERATE"

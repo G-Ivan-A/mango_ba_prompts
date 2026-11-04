@@ -1,7 +1,8 @@
 {
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
-  "reason": "Тип гейта в тексте промпта по словарю потока (standards/bcreq-flow-glossary.md, раздел 3.3): пункт BL-159 по 14 промптам выполняется в BL-156, правка prompts/ вне BL-156 запрещена DEC-427-11 (pr-ops/backlog-ba-model.md, карточка BL-156). Регрессии сохранности промптов (#391, #393, #395) сравнивают хэши после обратной подстановки after → before; строки внутри блока issue-395 и так вырезаются.",
+  "status": "заготовка, не применена: Р-15 ждёт ответа владельца, BL-156 — deferred (triggered); см. docs/analysis/2026-11-04-bl-156-157-readiness-check.md",
+  "reason": "Тип гейта в тексте промпта по словарю потока (standards/bcreq-flow-glossary.md, раздел 3.3): пункт BL-159 по 14 промптам выполняется в BL-156, правка prompts/ вне BL-156 запрещена DEC-427-11 (pr-ops/backlog-ba-model.md, карточка BL-156). Применять после «Р-15 да» и отдельной постановки BL-156: подставить after вместо before в каждом файле и обновить регрессии сохранности промптов (#391, #393, #395) и категорию P валидатора #433. RUN-0080 измерял версию A с этими подстановками (validate_issue_438_step_prompts.py восстанавливает её из v0.1).",
   "substitutions": [
     {
       "path": "prompts/bcreq-constitution-governance-oneshot.md",
