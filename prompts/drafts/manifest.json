@@ -6,7 +6,7 @@
   "standards": {
     "base": "standards/bcreq-prompt-base-standard.md@0.1.1",
     "profiles": "standards/bcreq-prompt-profiles.md@0.1.1",
-    "runtime_references": "standards/bcreq-runtime-references.md@0.1.1",
+    "runtime_references": "standards/bcreq-runtime-references.md@0.2",
     "catalog": "standards/bcreq-manual-classes/catalog.json@0.2"
   },
   "excluded_base_rules": {

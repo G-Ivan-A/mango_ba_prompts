@@ -243,7 +243,8 @@ class OntologyR16Test(unittest.TestCase):
     def test_backlog_r16_and_tasks(self):
         backlog = text(BACKLOG)
         self.assertIn("| **Р-16** |", backlog)
-        self.assertIn("Р-01…Р-16", backlog)
+        # Р-16 входит в общий диапазон решений; следующие PR могут продлить его (Р-17 — PR #437).
+        self.assertRegex(backlog, r"Р-01…Р-(1[6-9]|[2-9]\d)")
         for task in ("BL-159", "BL-161", "BL-162"):
             self.assertRegex(backlog, re.compile(rf"^\| {task} \| \[", re.MULTILINE), task)
         track = text(TRACK_B)

@@ -1,0 +1,12 @@
+{
+  "purpose": "Правки текста черновика Ш-В после замера RUN-0080, которые не меняют поведения промпта. Валидатор #438 откатывает каждую ровно один раз и сверяет хэш с измеренным (metrics.json, D.prompt_sha256). Любая другая правка черновика требует нового прогона golden set.",
+  "file": "prompts/drafts/bcreq-review-validation-oneshot.md",
+  "deltas": [
+    {
+      "measured": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.1.1.",
+      "current": "[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.",
+      "reason": "Слияние main (PR #437, issue #434): реестр справочников runtime 0.1.1 → 0.2; сборщик пишет версию источника в строку «Источники блока». Это строка ссылок, а не правило: состав правил, профилей, операций и заглушек не изменился.",
+      "since": "merge upstream/main d7082caa, 2026-11-04"
+    }
+  ]
+}

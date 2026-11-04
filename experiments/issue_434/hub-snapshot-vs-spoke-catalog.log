@@ -1,0 +1,10 @@
+# Hub mango-products.yaml v3.0 (98 AF) vs spoke docs/taxonomy/products.json 2026-10-28.1
+Capability: hub=42 spoke=43 spoke_retained=42 hub_ids_found_as_spoke_tail=42 hub_only=0
+Feature: hub=130 spoke=151 spoke_retained=132 hub_ids_found_as_spoke_tail=130 hub_only=0
+Atomic Function: hub=97 spoke=152 spoke_retained=98 hub_ids_found_as_spoke_tail=97 hub_only=0
+spoke domains: ['voice-ucaas', 'contact-center', 'digital-channels', 'ai-automation', 'analytics', 'hardware', 'security']
+hub domains: ['voice-ucaas', 'contact-center', 'digital-channels', 'ai-automation', 'analytics', 'hardware', 'security', 'platform']
+spoke lifecycle values: {'retained': 279, 'added-for-review': 74}
+hub AF entries 98 unique 97 dup ['callback-scheduling']
+hub feature entries 132 unique 130 dup ['audit-logging', 'incident-management']
+conclusion: every Hub v3.0 id exists in the spoke catalog (retained layer); spoke adds added-for-review nodes and folds Hub domain 'platform' into multi-parent capabilities

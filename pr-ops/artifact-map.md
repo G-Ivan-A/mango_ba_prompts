@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.12
+version: 0.13
 updated: 2026-11-03
 owner: G-Ivan-A
 temperature: 0.1
@@ -83,6 +83,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/standards/bcreq-runtime-references.md` | стандарт | Справочники runtime для промптов потока BCREQ (BL-154, BL-155, issue #430): И-1…И-10 по закреплённому SHA, ТС-1…ТС-7, заглушки З-1…З-4, задачи для runtime РТ-1…РТ-4, долг ссылок на `main`. | Да для Спринта 9 | `docs/rfc/2026-11-bcreq-flow-processes-prompts.md`, `pr-ops/backlog-ba-model.md` |
 | `/standards/bcreq-prompt-base-standard.md` | стандарт | Базовый стандарт ручного промпта BCREQ «по тесту» (BL-151, issue #432): правила БС-01…БС-36 с источником, подключение справочников runtime ссылкой, типы гейтов шага, покрытие общей части 39 стандартов классов. | Да для Спринта 9 | `docs/rfc/2026-11-bcreq-flow-processes-prompts.md`, `standards/bcreq-runtime-references.md`, `standards/bcreq-flow-glossary.md` |
 | `/standards/bcreq-prompt-profiles.md` | стандарт | Восемь профилей ручного промпта BCREQ «по тесту» (BL-152, issue #432): свои MUST-правила с цитатами из стандартов классов, отнесение 39 операций, шаги и профили, проверка триггера B. | Да для Спринта 9 | `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-manual-classes/catalog.json`, `experiments/issue_425/archetypes.json` |
+| `/docs/rfc/2026-11-runtime-product-catalog-golden-set.md` | RFC | RFC-RT-001 (issue #434): готовые к копированию задачи РТ-1 (каталог `taxonomy/mango-products.yaml`) и РТ-3 (golden set по классам) для runtime, ХАБ-1 для Хаба, механизм снятия заглушки З-1 (М-1…М-6), решение Р-17, задача BL-163; v0.2 — исток таксономии в классификации Хаба и индустриальный слой, задача BL-164. | Да для Спринта 9 | `standards/bcreq-runtime-references.md`, `docs/rfc/rfc-register.md`, `docs/taxonomy/products.json` |
 | `/ai-rules/` | рабочие копии Хаба | Правила поведения агента-исполнителя: `agent-work-rules.md`, `agent-onboarding-protocol.md`, `adversarial-stress-testing.md`. Локально не редактируются. | Да | `ai-rules/agent-onboarding-protocol.md`, `ai-governance/ai-governance.md` |
 | `/ai-governance/` | рабочие копии Хаба | Политики уровня организации, compliance и ИБ, включая `agent-security-checklist.md`. Локально не редактируются. | Да | `ai-governance/ai-governance.md`, `docs/adr/0004-hub-resync-2026-08.md` |
 | `/tools/` | инструмент | Рабочие копии валидаторов Хаба: `validate-frontmatter.sh`, `validate-file-naming.sh`; локальные дельты описаны в `tools/README.md`. Запуск — `make validate`. | Да | `tools/README.md`, `pr-ops/BACKLOG.md` |

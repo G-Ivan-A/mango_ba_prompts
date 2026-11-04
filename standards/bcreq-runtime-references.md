@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.1.1
+version: 0.2
 updated: 2026-11-03
 temperature: 0.1
 ai-generated: true
@@ -14,9 +14,11 @@ related_artifacts:
   - "docs/ba-processes/bcreq-manual-process.md"
   - "docs/contracts/kb-citations.md"
   - "pr-ops/backlog-ba-model.md"
+  - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/430"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
 ---
 
 # Справочники runtime для промптов потока BCREQ
@@ -141,11 +143,19 @@ SHA обновляется по разделу 1.
 Ссылка на задачу runtime вписывается в столбец «Задача runtime» после
 создания.
 
+Готовые к копированию тела задач РТ-1 и РТ-3, задача Хаба ХАБ-1 и
+механизм снятия заглушки З-1 — в
+[RFC-RT-001](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md)
+(issue [#434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434)).
+Строки РТ-1 и РТ-3 ниже расширены по нему: каталог нужен всем трём
+классам, а не только `contact-center`, и живёт в отдельном файле
+`taxonomy/mango-products.yaml`, а не в словаре формы `taxonomy/products.yaml`.
+
 | № | Что нужно в runtime | Снимает заглушку | Приоритет | Почему | Задача runtime |
 | --- | --- | --- | --- | --- | --- |
-| РТ-1 | Значения уровней Feature и Atomic Function для класса `contact-center` в `taxonomy/products.yaml` | З-1 | P1 | `c-in` требует `atomic_function`, а каталога функций нет — модель придумывает функцию или оставляет пусто | — (создаёт владелец) |
+| РТ-1 | Закрытый каталог продуктов `taxonomy/mango-products.yaml`: все уровни Domain → Capability → Feature → Atomic Function по всей линейке (каталог спицы 2026-10-28.1, 353 узла) с классами runtime у каждого узла; проверка smoke без каталога падает. Норма привязки `c-in` — задача Хаба ХАБ-1 ([RFC-RT-001, разделы 5–6](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#5-рт-1--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-1 | P1 | `c-in` требует `atomic_function`, а каталога функций нет — модель придумывает функцию или оставляет пусто | — (создаёт владелец) |
 | РТ-2 | Примеры разделов ФТ, НФТ, UC, US, ОРР (по одному эталону на раздел, с источником происхождения) | З-2 | P1 | Образцы улучшают форму вывода шагов Ш-3…Ш-8; сейчас `A-FR`, `A-UC`, `A-US` вне среза | — (создаёт владелец) |
-| РТ-3 | Golden set для `voice-ucaas` и `analytics-reporting`; подтверждение человеком кейсов `contact-center` (`structural_only: false`) | З-3 | P1 | Issue #427: «голден сет по каждому классу проуктовой таксономии» | — (создаёт владелец) |
+| РТ-3 | Golden set для `voice-ucaas` и `analytics-reporting` (`golden/cases-<класс>.yaml`); у каждого случая `product_class` и `atomic_function` из каталога РТ-1; подтверждение человеком кейсов `contact-center` (`structural_only: false`) ([RFC-RT-001, раздел 7](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#7-рт-3--тело-задачи-для-mango-ba-ai-runtime-копировать-целиком)) | З-3 | P1 | Issue #427: «голден сет по каждому классу проуктовой таксономии» | — (создаёт владелец) |
 | РТ-4 | Доменный глоссарий для `voice-ucaas` и `analytics-reporting` | З-4 | P2 | Термины продукта нужны глоссарию раздела 1 BCREQ (К-14) | — (создаёт владелец) |
 
 ## 7. Известный долг: ссылки на `main` в текущих промптах
@@ -171,3 +181,4 @@ BL-156 собираются уже со ссылками на срез разд�
 - [Словарь потока BCREQ](bcreq-flow-glossary.md) — термины «справочник runtime», «заглушка», типы гейтов
 - [Процесс BCREQ, часть 0](../docs/ba-processes/bcreq-manual-process.md#0-поток-bcreq-процессы-шаги-гейты) — шаги потока
 - [Контракт цитат KB](../docs/contracts/kb-citations.md) — ТС-7
+- [RFC-RT-001](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md) — тела задач РТ-1, РТ-3, ХАБ-1 и механизм снятия З-1

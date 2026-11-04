@@ -14,8 +14,9 @@
   (ждут ADR-017);
 * RUN-0080: метрики A и D пересчитываются из оценок судьи, ключа и golden
   set и совпадают с ``metrics.json``; флаги ``publication.not_worse`` —
-  тоже; хэш черновика Ш-В равен измеренному (черновик меняется только
-  новым прогоном);
+  тоже; хэш черновика Ш-В равен измеренному после отката правок из
+  ``experiments/issue_438/run0080/post-run-deltas.json`` (только строки
+  ссылок; любая другая правка черновика требует нового прогона);
 * комплект прогона ссылается на существующий черновик каждого шага; у
   каждой таблицы комплекта число колонок строк равно заголовку;
 * RFC #427 — версия 0.6, Р-15 принято, DEC-427-04 и DEC-427-12 ``accepted``;
@@ -48,6 +49,7 @@ R16 = ROOT / "docs/analysis/2026-11-03-silence-consent-gates-r16.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 RUN = ROOT / "runs/2026/RUN-0080"
 RUN_0079 = ROOT / "runs/2026/RUN-0079/outputs/metrics.json"
+POST_RUN_DELTAS = ROOT / "experiments/issue_438/run0080/post-run-deltas.json"
 
 CRITERIA = ("K1", "K2", "K3", "K4", "K5", "K6")
 ANALYSIS_SECTIONS = ("## Summary / BLUF", "## Context / Scope", "## Findings / Options",
@@ -234,7 +236,17 @@ class Run0080Test(unittest.TestCase):
         meta = read(RUN / "metadata.yaml")
         draft = ROOT / "prompts/drafts/bcreq-review-validation-oneshot.md"
         v01 = ROOT / "prompts/bcreq-review-validation-oneshot.md"
-        self.assertEqual(sha256(draft), self.metrics["D"]["prompt_sha256"], "черновик Ш-В изменён после RUN-0080")
+        # Правки после замера, не меняющие поведения (версия источника в
+        # строке ссылок), перечислены в post-run-deltas.json; каждая
+        # откатывается ровно один раз. Любая другая правка — новый прогон.
+        deltas = json.loads(read(POST_RUN_DELTAS))
+        self.assertEqual(ROOT / deltas["file"], draft)
+        measured = read(draft)
+        for delta in deltas["deltas"]:
+            self.assertEqual(measured.count(delta["current"]), 1, delta["current"])
+            measured = measured.replace(delta["current"], delta["measured"])
+        self.assertEqual(hashlib.sha256(measured.encode("utf-8")).hexdigest(),
+                         self.metrics["D"]["prompt_sha256"], "черновик Ш-В изменён после RUN-0080")
         self.assertEqual(sha256(v01), self.metrics["A"]["prompt_sha256"], "v0.1 Ш-В изменён после RUN-0080")
         self.assertIn(self.metrics["D"]["prompt_sha256"], meta)
         self.assertIn(self.metrics["A"]["prompt_sha256"], meta)

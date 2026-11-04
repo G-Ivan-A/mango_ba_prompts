@@ -16,6 +16,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/415"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -32,6 +33,7 @@ related_artifacts:
   - "docs/analysis/2026-10-31-industry-practice-check.md"
   - "docs/rfc/2026-10-standards-page-rfc.md"
   - "docs/analysis/2026-10-31-standards-page-review.md"
+  - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -313,6 +315,32 @@ DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
 | [RFC-427-DEC-12](2026-11-bcreq-flow-processes-prompts.md#dec-427-12-раздел-процессы-в-форме-до-200) | Раздел «Процессы» | Шаги потока по порядку с копированием промпта, «Зачем шаг» и «Варианты дальше»; не заменяет сайт 2.0.0; классы — блок «пилот» | [постановка #427](https://github.com/G-Ivan-A/mango_ba_prompts/issues/427); [проверка #425](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md#recommendations) | `accepted` ([Р-15](https://github.com/G-Ivan-A/mango_ba_prompts/issues/438)) | — (BL-230, BL-231 ждут BL-156 `DONE` и Р-09) |
 | [RFC-427-DEC-13](2026-11-bcreq-flow-processes-prompts.md#dec-427-13-уровни-таксономии-операций--техдолг-не-правка-сейчас) | Уровни таксономии операций | «Операция» означает три уровня (13 типов работы, 39 контрактов C, 31 `OP-*`); таксономию сейчас не менять — техдолг S-010 и задача BL-125 после BL-121 | [ревью владельца PR #428](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6576047799); [ADR-003](../adr/003-ba-ontology.md) | `accepted` ([Р-13](https://github.com/G-Ivan-A/mango_ba_prompts/pull/428#issuecomment-6579261813)) | — |
 
+## Задачи для runtime: каталог продуктов и golden set (источник: issue #434)
+
+RFC [`2026-11-runtime-product-catalog-golden-set.md`](2026-11-runtime-product-catalog-golden-set.md)
+v0.1 — готовые к копированию тела задач РТ-1 и РТ-3 для
+`mango-ba-ai-runtime` и задачи Хаба ХАБ-1. Он описывает механизм снятия
+заглушки таксономии З-1: М-1…М-6, от файла каталога до отказа на `c-in`.
+Решения в RFC:
+
+- ССОТ значений — каталог спицы `docs/taxonomy/products.json`;
+- ССОТ формы — Хаб;
+- новые ID: Р-17, BL-163 и BL-164.
+
+v0.2 по комментарию владельца к PR #437 проверяет происхождение
+таксономии: каталог спицы построен из классификации Хаба
+`2026-05-22-classification.md` v3.0. Там же лежит индустриальный слой
+(TM Forum, UNSPSC, ОКПД 2, ГОСТ/НПА). Для него заведена только задача
+BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
+
+Задачи в runtime и Хабе создаёт владелец (A-08 RFC #427). Носитель
+строк РТ-1…РТ-4 —
+[реестр справочников](../../standards/bcreq-runtime-references.md#6-задачи-для-репозитория-runtime).
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review` | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431) | `proposed` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437) |
+
 ## Журнал изменений реестра
 
 - **2026-06-16** — реестр создан; внесены RFC-1027-P1…P5 (промпты) и
@@ -389,6 +417,14 @@ DEC-427-04, 07, 08, 12 ждут Р-14 и Р-15. Поправка 0.4
   поправка 0.5 RFC #427. В колонке реализации RFC-427-DEC-05 и 07 — PR #435:
   базовый стандарт (BL-151) и профили (BL-152) «по тесту». Уточнение словаря:
   типы гейтов и валидаторы по этапам дорожной карты (разделы 3.7, 3.8).
+- **2026-11-03** — issue #434 (PR #437): добавлен RFC-RT-001 в статусе
+  `proposed` — тела задач РТ-1, РТ-3 для runtime и ХАБ-1 для Хаба, механизм
+  снятия заглушки З-1. Строки РТ-1 и РТ-3 реестра справочников расширены
+  (v0.2); решение Р-17 и задача BL-163 — в бэклоге.
+- **2026-11-03** — issue #434 (PR #437), комментарий владельца: RFC-RT-001
+  v0.2 — подраздел 3.1 «Происхождение таксономии и индустриальный слой»,
+  факты Ф-16…Ф-20, риски R-9…R-11, шаги 9–10 раздела 11; задача BL-164
+  (индустриальная таксономия для оценки тендерного ТЗ). Статус `proposed`.
 - **2026-11-03** — issue #438 (PR #439): решение Р-15 (поручение владельца
   «решение Р-15 → BL-157 …, затем BL-156») — RFC-427-DEC-04, 12 → `accepted`;
   поправка 0.6 RFC #427. В колонке реализации RFC-427-DEC-04 — PR #439:

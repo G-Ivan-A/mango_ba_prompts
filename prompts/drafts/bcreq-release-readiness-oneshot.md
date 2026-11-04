@@ -89,7 +89,7 @@ Baseline К-35: <кандидат; released — только по записи �
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.1,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.1.1.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.2.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
