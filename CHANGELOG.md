@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.25
-updated: 2026-11-03
+version: 0.26
+updated: 2026-11-04
 temperature: 0.1
 ---
 
@@ -12,6 +12,34 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #442: BL-163 — реестр справочников на каталог продуктов runtime
+
+- **Проверка готовности** (RFC-RT-001, раздел 12.1): РТ-1 слита в runtime
+  ([PR #16](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/16),
+  коммит `2db0ef5106883b01b096fe8c4af50334899e9fe0`), ХАБ-1 слита в Хаб
+  ([PR #720](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/pull/720)).
+  Каталог `taxonomy/mango-products.yaml`: `closed: true`, 353 узла, id,
+  уровни и родители совпадают с каталогом спицы, `source_sha256` совпадает
+  с каталогом спицы на `7f920e2`. Скрипт и логи —
+  `experiments/issue_442/`.
+- **Реестр справочников** `standards/bcreq-runtime-references.md` 0.3:
+  срез `2db0ef51` в разделе 1 и во всех ссылках; И-2 — «Да» со ссылкой на
+  каталог; раздел 2.1 — сверка копии каталога со спицей и правило чтения;
+  З-1 снята (таблица снятых заглушек, id не переиспользуется); РТ-1 ведёт на
+  задачу и PR runtime; новая задача РТ-6.
+- **Расхождение R-2.** Копия каталога в runtime снята до решения Р-17:
+  74 узла — `added-for-review`, `catalog_status: review`. Промпт читает их
+  как `accepted` (реестр, раздел 2.1). Тело задачи РТ-6 для runtime — в
+  RFC-RT-001, раздел 12.3, создаёт владелец.
+- **RFC-RT-001** → `accepted`, v0.3 (поправка 0.3, раздел 12); реестр RFC
+  v0.15, бэклог v1.6 (BL-163 → `review`), карточка BL-163, карта
+  артефактов v0.14. Базовый стандарт 0.1.2: БС-21 перечисляет З-2…З-4.
+  Словарь потока ссылается на runtime по SHA реестра (ТС-5).
+- **Проверки.** `scripts/validate_issue_430_runtime_refs.py`: И-2 «Да»,
+  снятая З-1, при `RUNTIME_CLONE` — каталог на SHA реестра против каталога
+  спицы. `scripts/validate_issue_434_runtime_tasks.py`: раздел 12, тело
+  РТ-6 по шаблону, факты разделов 1–11 — на срезе `5d8c201`.
 
 ### Changed — Issue #434: решение владельца Р-17 — 74 узла таксономии с портала приняты
 

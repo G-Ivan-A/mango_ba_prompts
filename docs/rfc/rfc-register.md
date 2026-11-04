@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.14
-updated: 2026-11-03
+version: 0.15
+updated: 2026-11-04
 ai-generated: true
 type: register
 scope: governance
@@ -336,7 +336,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review` | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431) | `proposed` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437) |
+| [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443) |
 
 ## Журнал изменений реестра
 
@@ -422,3 +422,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   v0.2 — подраздел 3.1 «Происхождение таксономии и индустриальный слой»,
   факты Ф-16…Ф-20, риски R-9…R-11, шаги 9–10 раздела 11; задача BL-164
   (индустриальная таксономия для оценки тендерного ТЗ). Статус `proposed`.
+- **2026-11-04** — issue #442 (PR #443): RFC-RT-001 → `accepted` (PR #437
+  слит), поправка 0.3 — раздел 12: проверка готовности, исполнение BL-163
+  (реестр справочников на runtime `2db0ef51`, И-2 «Да», З-1 снята) и тело
+  задачи РТ-6 — обновить копию каталога до решения Р-17.
