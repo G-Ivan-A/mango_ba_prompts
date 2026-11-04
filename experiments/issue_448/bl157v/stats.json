@@ -1,0 +1,159 @@
+{
+  "exports": [
+    {
+      "export": "chat-export-1069.json",
+      "messages": 176,
+      "ba_turns": 88,
+      "prompt_pastes": 3,
+      "ba_replies": 85,
+      "models": {
+        "qwen3.7-plus": 82,
+        "qwen3.8-max-preview": 6
+      },
+      "prompts_named": [],
+      "correction_kinds": {
+        "ошибка": 27,
+        "пропуск": 9,
+        "добавление": 0,
+        "переделка": 23,
+        "формат": 12,
+        "уточнение": 14,
+        "практика": 9
+      },
+      "input_tokens": 23129901,
+      "output_tokens": 251329,
+      "answer_chars": 346371
+    },
+    {
+      "export": "chat-export-1074.json",
+      "messages": 108,
+      "ba_turns": 54,
+      "prompt_pastes": 3,
+      "ba_replies": 51,
+      "models": {
+        "qwen3.7-plus": 50,
+        "qwen3.8-max": 4
+      },
+      "prompts_named": [
+        "bcreq-1074"
+      ],
+      "correction_kinds": {
+        "ошибка": 11,
+        "пропуск": 1,
+        "добавление": 0,
+        "переделка": 11,
+        "формат": 16,
+        "уточнение": 6,
+        "практика": 2
+      },
+      "input_tokens": 4844857,
+      "output_tokens": 135658,
+      "answer_chars": 150266
+    },
+    {
+      "export": "chat-export-1101.json",
+      "messages": 122,
+      "ba_turns": 61,
+      "prompt_pastes": 1,
+      "ba_replies": 60,
+      "models": {
+        "qwen3.7-plus": 61
+      },
+      "prompts_named": [],
+      "correction_kinds": {
+        "ошибка": 7,
+        "пропуск": 5,
+        "добавление": 3,
+        "переделка": 20,
+        "формат": 13,
+        "уточнение": 9,
+        "практика": 1
+      },
+      "input_tokens": 15765892,
+      "output_tokens": 185211,
+      "answer_chars": 272202
+    },
+    {
+      "export": "chat-export-1106.json",
+      "messages": 216,
+      "ba_turns": 108,
+      "prompt_pastes": 2,
+      "ba_replies": 106,
+      "models": {
+        "qwen3.7-plus": 83,
+        "qwen3.8-max": 25
+      },
+      "prompts_named": [
+        "bcreq-decomposition",
+        "bcreq-decomposition-contact-center",
+        "bcreq-v1-dispatcher"
+      ],
+      "correction_kinds": {
+        "ошибка": 16,
+        "пропуск": 15,
+        "добавление": 4,
+        "переделка": 28,
+        "формат": 17,
+        "уточнение": 28,
+        "практика": 20
+      },
+      "input_tokens": 18227339,
+      "output_tokens": 300899,
+      "answer_chars": 357817
+    },
+    {
+      "export": "chat-export-1110.json",
+      "messages": 158,
+      "ba_turns": 79,
+      "prompt_pastes": 2,
+      "ba_replies": 77,
+      "models": {
+        "qwen3.7-plus": 79
+      },
+      "prompts_named": [],
+      "correction_kinds": {
+        "ошибка": 14,
+        "пропуск": 14,
+        "добавление": 3,
+        "переделка": 28,
+        "формат": 18,
+        "уточнение": 8,
+        "практика": 8
+      },
+      "input_tokens": 27902171,
+      "output_tokens": 216710,
+      "answer_chars": 272073
+    },
+    {
+      "export": "chat-export-1128.json",
+      "messages": 10,
+      "ba_turns": 5,
+      "prompt_pastes": 1,
+      "ba_replies": 4,
+      "models": {
+        "qwen3.7-plus": 5
+      },
+      "prompts_named": [],
+      "correction_kinds": {
+        "ошибка": 0,
+        "пропуск": 0,
+        "добавление": 0,
+        "переделка": 3,
+        "формат": 0,
+        "уточнение": 1,
+        "практика": 0
+      },
+      "input_tokens": 1227666,
+      "output_tokens": 18217,
+      "answer_chars": 14603
+    }
+  ],
+  "total": {
+    "messages": 790,
+    "ba_turns": 395,
+    "prompt_pastes": 12,
+    "ba_replies": 383,
+    "input_tokens": 91097826,
+    "output_tokens": 1108024
+  }
+}
