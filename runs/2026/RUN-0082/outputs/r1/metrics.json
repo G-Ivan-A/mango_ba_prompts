@@ -1,0 +1,356 @@
+{
+  "A": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json), ссылки по SHA",
+    "prompt_path": "prompts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "460740f7647d4954364cef297b50072f99650011",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 47,
+    "core": "6/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "62/62",
+      "K4": "61/62",
+      "K5": "49/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism and function ('Система должна передавать в CRM ... событие') that has no source; the registry says a mechanism or event comes only from a source."
+      },
+      {
+        "case": "GS-BCREQ-18",
+        "tid": "T-02",
+        "lesson": "L-18",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix decides how ФТ-6 is covered ('способ покрытия годового архива ... как доработку') without a source or BA decision, while also sending the same contradiction to 8.4 as a question."
+      },
+      {
+        "case": "GS-BCREQ-36",
+        "tid": "T-04",
+        "lesson": "L-36",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents a recipient and behaviour ('передавать его ответственному') that the input does not contain; this is a meaning drift / invented function."
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "tid": "T-06",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "K5/K6: fix assigns a status: 'отметить как проверенное и согласованное' is self-certification."
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил'), adds an unsourced reference point 'после неотвеченного вызова', and replaces the formula 'обеспечивать' with 'выполнять'."
+      },
+      {
+        "case": "GS-BCREQ-01",
+        "tid": "T-12",
+        "lesson": "L-01",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents a behaviour ('учитывать его изменения при уведомлении') that has no source, and sends the mechanism to an 'архитектор' decision in 8.5 instead of a question to the team in 8.4."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic unsourced claim / speculation about the product ('домысел о продукте'), not the lesson rule (a disclaimer about a problem that does not exist)."
+      },
+      {
+        "case": "GS-BCREQ-15",
+        "tid": "T-27",
+        "lesson": "L-15",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix replaces one unsourced conclusion with the opposite unsourced one ('для выгрузки записей требуется доработка/интеграция'); the documentation only says the recording is requested separately."
+      },
+      {
+        "case": "GS-BCREQ-50",
+        "tid": "T-28",
+        "lesson": "L-50",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix ('Провести Ш-В ... в новой сессии другой ролью') treats a new session with another role as independent validation, which contradicts the registry rule that the same model in another role gives no independent confirmation."
+      },
+      {
+        "case": "GS-BCREQ-41",
+        "tid": "T-31",
+        "lesson": "L-41",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix keeps 6.1 tied to ФТ-1 ('как решение реализует ФТ-1 ... покрывает ФТ-1') instead of leading to a section-5 feature or an external constraint, so section 6 still duplicates the ФТ."
+      },
+      {
+        "case": "GS-BCREQ-17",
+        "tid": "T-36",
+        "lesson": "L-17",
+        "failed": [
+          "K4"
+        ],
+        "note": "K4: asserts 'правка согласованных фрагментов без основания' - the input only says the whole document was output, no edits of agreed text are shown"
+      },
+      {
+        "case": "GS-BCREQ-25",
+        "tid": "T-38",
+        "lesson": "L-25",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix moves the step detail into a UC scenario in section 5, but the lesson says detail goes to functional design, and scenarios are created only at the BA's request"
+      },
+      {
+        "case": "GS-BCREQ-06",
+        "tid": "T-39",
+        "lesson": "L-06",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix offers invented replacement behaviour ('повторная попытка или эскалация') with no source as one acceptable option"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: proposed FT still combines two actions (маршрутизацию ... и обновление статуса) in one requirement, which is non-atomic"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds a new capability with no source ('с возможностью последующего просмотра') and a named store ('журнал действий')"
+      }
+    ]
+  },
+  "D": {
+    "prompt_version": "0.1-by-test (реестр 0.4, на типизированном v0.1)",
+    "prompt_path": "prompts/drafts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "36799e9ebc7c538f8829d04870ac48da28042d4a",
+    "prompt_sha256": "2e8391723f365fa34be3ad9012547fe6db7e379dadae9d787c65ecead046d990",
+    "cases": 62,
+    "passed": 51,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "61/62",
+      "K2": "50/52",
+      "K3": "62/62",
+      "K4": "59/62",
+      "K5": "54/62",
+      "K6": "61/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism and function ('передавать в CRM Заказчика событие') that has no source."
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix brings in the role 'Оператор', which has no source in the input or context (roles come only from the role model)."
+      },
+      {
+        "case": "GS-BCREQ-14",
+        "tid": "T-06",
+        "lesson": "L-14",
+        "failed": [
+          "K5",
+          "K6"
+        ],
+        "note": "K5/K6: fix offers to 'отметить трассировку ФТ-2 → Р-1 как согласованную', which is self-certification."
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('если клиент не ответил') and adds an unsourced reference point 'после неотвеченного вызова'."
+      },
+      {
+        "case": "GS-BCREQ-28",
+        "tid": "T-13",
+        "lesson": "L-28",
+        "failed": [
+          "K4"
+        ],
+        "note": "K4: flags an extra violation ('сокращение раздела без команды нарушает'), but the context says no such edit happened."
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic unverified/unsupported claim ('непроверенное добавление'), not the lesson rule (a disclaimer about the absence of a problem that never appeared in the input)."
+      },
+      {
+        "case": "GS-BCREQ-21",
+        "tid": "T-25",
+        "lesson": "L-21",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix adds a before/after block for each item that the BA did not ask for, which breaks the form set by the BA (new blocks only on explicit request)."
+      },
+      {
+        "case": "GS-BCREQ-41",
+        "tid": "T-31",
+        "lesson": "L-41",
+        "failed": [
+          "K1",
+          "K2"
+        ],
+        "note": "K1: verdict 'дефекта нет', but the reference verdict is 'дефект'. K2: no violation named."
+      },
+      {
+        "case": "GS-BCREQ-25",
+        "tid": "T-38",
+        "lesson": "L-25",
+        "failed": [
+          "K4",
+          "K5"
+        ],
+        "note": "K4: claims 'ломает трассировку ФТ → UC' - the context has no UC or traceability; K5: fix moves the step sequence into a UC scenario in section 5 instead of functional design, and scenarios are created only at the BA's request"
+      },
+      {
+        "case": "GS-BCREQ-40",
+        "tid": "T-40",
+        "lesson": "L-40",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix labels 'менеджеры не успевают перезванивать клиентам' as '(цитата Заказчика)', but the Customer wrote it without 'клиентам', so the quote is not verbatim"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K4",
+          "K5"
+        ],
+        "note": "K4: claims 'нет актора', but the requirement names the subject 'Система'; K5: proposed FT still combines two actions (направлять лид ... и обновлять статус) in one requirement, which is non-atomic"
+      }
+    ]
+  },
+  "diff": {
+    "only_A_failed": [
+      "GS-BCREQ-01",
+      "GS-BCREQ-06",
+      "GS-BCREQ-15",
+      "GS-BCREQ-17",
+      "GS-BCREQ-18",
+      "GS-BCREQ-32",
+      "GS-BCREQ-36",
+      "GS-BCREQ-50"
+    ],
+    "only_D_failed": [
+      "GS-BCREQ-21",
+      "GS-BCREQ-28",
+      "GS-BCREQ-37",
+      "GS-BCREQ-40"
+    ],
+    "both_failed": [
+      "GS-BCREQ-12",
+      "GS-BCREQ-14",
+      "GS-BCREQ-25",
+      "GS-BCREQ-26",
+      "GS-BCREQ-33",
+      "GS-BCREQ-41",
+      "GS-BCREQ-43"
+    ]
+  },
+  "baseline_RUN_0079_A": {
+    "prompt_version": "0.1",
+    "passed": 49,
+    "core": "10/11",
+    "negatives_false_positive": "0/10"
+  },
+  "publication": {
+    "rule": "DEC-427-11: D не хуже v0.1 — по сданным кейсам, ядру и ложным дефектам",
+    "vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "vs_A_same_judge": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "not_worse": true
+  },
+  "A_vs_RUN_0079": {
+    "checks": {
+      "passed": false,
+      "core": false,
+      "negatives_false_positive": true
+    },
+    "not_worse": false
+  },
+  "previous_RUN_0080": {
+    "A": {
+      "prompt_sha256": "ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    },
+    "D": {
+      "prompt_sha256": "d6358d7afa4f4209171d24da5010d117fe694e6443ba37267150a6a7b0f1c508",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    }
+  }
+}

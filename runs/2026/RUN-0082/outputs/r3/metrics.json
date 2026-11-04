@@ -1,0 +1,254 @@
+{
+  "A": {
+    "prompt_version": "0.1 + тип гейта (prompt-typing.json), ссылки по SHA",
+    "prompt_path": "prompts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "460740f7647d4954364cef297b50072f99650011",
+    "prompt_sha256": "adf826634b2e8190da4d0f4ef307a59104a6f8fa3da6ef5a48a3c923ada90581",
+    "cases": 62,
+    "passed": 54,
+    "core": "10/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "48/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "57/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism ('передавать в CRM событие') with no source"
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K2",
+          "K5"
+        ],
+        "note": "K2: names 'Система должна обеспечивать' as the correct formula for a user action, which contradicts the lesson's 'предоставлять <кому> возможность'; K5: fix uses 'обеспечивать пользователю возможность' instead of the required formula"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('только если' becomes 'если') and adds an unsourced reference point ('после исходного звонка')"
+      },
+      {
+        "case": "GS-BCREQ-51",
+        "tid": "T-18",
+        "lesson": "L-51",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: flags only the invented 'неверные данные'; does not say that a subjective customer complaint was recorded as a product defect"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic claim without a source rather than a disclaimer about a problem that was never in the input"
+      },
+      {
+        "case": "GS-BCREQ-47",
+        "tid": "T-35",
+        "lesson": "L-47",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: названо общее нарушение «факт без источника» (АД-1); исчерпывающий характер перечня и вопрос о полноте не названы"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка сохраняет два действия в одном ФТ (назначать и обновлять) — неатомарно; добавлено «статус лида при назначении» без источника"
+      },
+      {
+        "case": "GS-BCREQ-46",
+        "tid": "T-54",
+        "lesson": "L-46",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: предлагает удалить ID ФТ-5 без команды БА и записи в 8.5"
+      }
+    ]
+  },
+  "D": {
+    "prompt_version": "0.1-by-test (реестр 0.4, на типизированном v0.1)",
+    "prompt_path": "prompts/drafts/bcreq-review-validation-oneshot.md",
+    "prompt_ref": "36799e9ebc7c538f8829d04870ac48da28042d4a",
+    "prompt_sha256": "2e8391723f365fa34be3ad9012547fe6db7e379dadae9d787c65ecead046d990",
+    "cases": 62,
+    "passed": 54,
+    "core": "9/11",
+    "negatives_false_positive": "0/10",
+    "criteria": {
+      "K1": "62/62",
+      "K2": "51/52",
+      "K3": "62/62",
+      "K4": "62/62",
+      "K5": "55/62",
+      "K6": "62/62"
+    },
+    "failed": [
+      {
+        "case": "GS-BCREQ-43",
+        "tid": "T-01",
+        "lesson": "L-43",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix invents an integration mechanism ('передавать в CRM событие') with no source"
+      },
+      {
+        "case": "GS-BCREQ-36",
+        "tid": "T-04",
+        "lesson": "L-36",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix changes the action from sending ('отправлять') to recording ('фиксировать'), which is semantic drift"
+      },
+      {
+        "case": "GS-BCREQ-37",
+        "tid": "T-05",
+        "lesson": "L-37",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix brings in the role 'оператор', which is not in the input or context"
+      },
+      {
+        "case": "GS-BCREQ-33",
+        "tid": "T-09",
+        "lesson": "L-33",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix drops the qualifier 'только' ('только если' becomes 'если')"
+      },
+      {
+        "case": "GS-BCREQ-26",
+        "tid": "T-24",
+        "lesson": "L-26",
+        "failed": [
+          "K2"
+        ],
+        "note": "K2: names a generic unsourced claim ('непроверенный вывод') rather than a disclaimer about a problem that was never in the input"
+      },
+      {
+        "case": "GS-BCREQ-34",
+        "tid": "T-30",
+        "lesson": "L-34",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: fix contains the English jargon term 'unverifiable', which breaks the Russian-terms rule"
+      },
+      {
+        "case": "GS-BCREQ-12",
+        "tid": "T-44",
+        "lesson": "L-12",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка сохраняет два действия в одном ФТ (маршрутизация и обновление данных) — неатомарно"
+      },
+      {
+        "case": "GS-BCREQ-32",
+        "tid": "T-53",
+        "lesson": "L-32",
+        "failed": [
+          "K5"
+        ],
+        "note": "K5: правка вводит без источника элемент хранения «журнал действий» — новый механизм/элемент вместо поведения"
+      }
+    ]
+  },
+  "diff": {
+    "only_A_failed": [
+      "GS-BCREQ-46",
+      "GS-BCREQ-47",
+      "GS-BCREQ-51"
+    ],
+    "only_D_failed": [
+      "GS-BCREQ-32",
+      "GS-BCREQ-34",
+      "GS-BCREQ-36"
+    ],
+    "both_failed": [
+      "GS-BCREQ-12",
+      "GS-BCREQ-26",
+      "GS-BCREQ-33",
+      "GS-BCREQ-37",
+      "GS-BCREQ-43"
+    ]
+  },
+  "baseline_RUN_0079_A": {
+    "prompt_version": "0.1",
+    "passed": 49,
+    "core": "10/11",
+    "negatives_false_positive": "0/10"
+  },
+  "publication": {
+    "rule": "DEC-427-11: D не хуже v0.1 — по сданным кейсам, ядру и ложным дефектам",
+    "vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": false,
+        "negatives_false_positive": true
+      },
+      "not_worse": false
+    },
+    "vs_A_same_judge": {
+      "checks": {
+        "passed": true,
+        "core": false,
+        "negatives_false_positive": true
+      },
+      "not_worse": false
+    },
+    "not_worse": false
+  },
+  "A_vs_RUN_0079": {
+    "checks": {
+      "passed": true,
+      "core": true,
+      "negatives_false_positive": true
+    },
+    "not_worse": true
+  },
+  "previous_RUN_0080": {
+    "A": {
+      "prompt_sha256": "ff8553e398baf7518f6fb8bfb281fce040a63f5882a221a220d07ca6d998cb52",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    },
+    "D": {
+      "prompt_sha256": "d6358d7afa4f4209171d24da5010d117fe694e6443ba37267150a6a7b0f1c508",
+      "passed": 55,
+      "core": "10/11",
+      "negatives_false_positive": "0/10"
+    }
+  }
+}

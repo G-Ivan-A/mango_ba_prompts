@@ -1,0 +1,206 @@
+{
+  "replicates": {
+    "A": {
+      "r1": {
+        "passed": 47,
+        "core": 6,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-18",
+          "GS-BCREQ-36",
+          "GS-BCREQ-14",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-15",
+          "GS-BCREQ-50",
+          "GS-BCREQ-41",
+          "GS-BCREQ-17",
+          "GS-BCREQ-25",
+          "GS-BCREQ-06",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      },
+      "r2": {
+        "passed": 53,
+        "core": 8,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-33",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-50",
+          "GS-BCREQ-22",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      },
+      "r3": {
+        "passed": 54,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-33",
+          "GS-BCREQ-51",
+          "GS-BCREQ-26",
+          "GS-BCREQ-47",
+          "GS-BCREQ-12",
+          "GS-BCREQ-46"
+        ]
+      }
+    },
+    "D": {
+      "r1": {
+        "passed": 51,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-37",
+          "GS-BCREQ-14",
+          "GS-BCREQ-33",
+          "GS-BCREQ-28",
+          "GS-BCREQ-26",
+          "GS-BCREQ-21",
+          "GS-BCREQ-41",
+          "GS-BCREQ-25",
+          "GS-BCREQ-40",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r2": {
+        "passed": 56,
+        "core": 8,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-47",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      },
+      "r3": {
+        "passed": 54,
+        "core": 9,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-43",
+          "GS-BCREQ-36",
+          "GS-BCREQ-37",
+          "GS-BCREQ-33",
+          "GS-BCREQ-26",
+          "GS-BCREQ-34",
+          "GS-BCREQ-12",
+          "GS-BCREQ-32"
+        ]
+      }
+    }
+  },
+  "median": {
+    "A": {
+      "passed": 53,
+      "core": 8,
+      "negatives_false_positive": 0
+    },
+    "D": {
+      "passed": 54,
+      "core": 9,
+      "negatives_false_positive": 0
+    }
+  },
+  "decision": {
+    "A_vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": false,
+        "negatives_false_positive": true
+      },
+      "not_worse": false
+    },
+    "D_vs_RUN_0079": {
+      "checks": {
+        "passed": true,
+        "core": false,
+        "negatives_false_positive": true
+      },
+      "not_worse": false
+    },
+    "D_vs_A_median": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "publish_typing": false,
+    "publish_draft": false
+  },
+  "fail_frequency": {
+    "A": {
+      "GS-BCREQ-12": 3,
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-33": 3,
+      "GS-BCREQ-43": 3,
+      "GS-BCREQ-01": 2,
+      "GS-BCREQ-32": 2,
+      "GS-BCREQ-37": 2,
+      "GS-BCREQ-50": 2,
+      "GS-BCREQ-06": 1,
+      "GS-BCREQ-14": 1,
+      "GS-BCREQ-15": 1,
+      "GS-BCREQ-17": 1,
+      "GS-BCREQ-18": 1,
+      "GS-BCREQ-22": 1,
+      "GS-BCREQ-25": 1,
+      "GS-BCREQ-36": 1,
+      "GS-BCREQ-41": 1,
+      "GS-BCREQ-46": 1,
+      "GS-BCREQ-47": 1,
+      "GS-BCREQ-51": 1
+    },
+    "D": {
+      "GS-BCREQ-12": 3,
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-43": 3,
+      "GS-BCREQ-32": 2,
+      "GS-BCREQ-33": 2,
+      "GS-BCREQ-37": 2,
+      "GS-BCREQ-01": 1,
+      "GS-BCREQ-14": 1,
+      "GS-BCREQ-21": 1,
+      "GS-BCREQ-25": 1,
+      "GS-BCREQ-28": 1,
+      "GS-BCREQ-34": 1,
+      "GS-BCREQ-36": 1,
+      "GS-BCREQ-40": 1,
+      "GS-BCREQ-41": 1,
+      "GS-BCREQ-47": 1
+    }
+  },
+  "baseline_RUN_0079_A": {
+    "passed": 49,
+    "core": 10,
+    "negatives_false_positive": 0
+  },
+  "reference_RUN_0081": {
+    "A": {
+      "passed": 56,
+      "core": "9/11",
+      "negatives_false_positive": "0/10"
+    },
+    "D": {
+      "passed": 51,
+      "core": "9/11",
+      "negatives_false_positive": "0/10"
+    }
+  }
+}
