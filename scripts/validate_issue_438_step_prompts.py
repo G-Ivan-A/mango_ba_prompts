@@ -6,27 +6,34 @@
 * сборщик ``scripts/build_bcreq_step_prompts.py`` детерминирован: его выход
   совпадает с ``prompts/drafts/`` байт в байт, лишних файлов нет (то же, что
   ``--check``); манифест покрывает 13 шагов маршрута в 12 файлах;
-* каждый черновик несёт текст v0.1 без изменений, кроме ссылок на runtime
-  ``blob/main`` → ``blob/<SHA реестра>``; ``based_on_sha256`` равен хэшу
+* каждый черновик несёт текст v0.1 без изменений; после BL-156а (issue
+  #444) ссылки на runtime в v0.1 уже закреплены по SHA реестра, замен
+  ``blob/main`` → ``blob/<SHA>`` ноль; ``based_on_sha256`` равен хэшу
   текущего v0.1 — правка v0.1 без пересборки ломает проверку;
 * профили Ш-В — из таблицы «Шаги и профили» стандарта профилей, а не из
   таблицы 9.2 RFC (ответ владельца в #438); блоки уроков не применены
   (ждут ADR-017);
-* RUN-0080: метрики A и D пересчитываются из оценок судьи, ключа и golden
-  set и совпадают с ``metrics.json``; флаги ``publication.not_worse`` —
-  тоже; хэш черновика Ш-В равен измеренному после отката правок из
-  ``experiments/issue_438/run0080/post-run-deltas.json`` (только строки
-  ссылок; любая другая правка черновика требует нового прогона);
+* RUN-0080 и RUN-0081: метрики A и D пересчитываются из оценок судьи,
+  ключа и golden set и совпадают с ``metrics.json``; флаги
+  ``publication.not_worse`` — тоже. RUN-0080 — история (правки
+  ``post-run-deltas.json`` разобраны), текущие тексты A и D измерены
+  RUN-0081: их хэши равны ``prompt_sha256`` RUN-0081 байт в байт (любая
+  правка v0.1 Ш-В или черновика Ш-В требует нового прогона);
 * комплект прогона ссылается на существующий черновик каждого шага; у
   каждой таблицы комплекта число колонок строк равно заголовку;
 * ``R15_ACCEPTED = False`` (проверка готовности 2026-11-04, комментарий
   владельца в PR #439): RFC #427 — версия 0.5.1, поправка 0.6 — проект,
   DEC-427-04 и DEC-427-12 ``proposed``; Р-15 «ждёт»; ``PENDING`` валидатора
-  #427 (Р-13) содержит 04 и 12; заготовка ``prompt-typing.json`` к
-  ``prompts/`` не применена (строки ``before`` на месте, ``after`` нет);
-* бэклог: BL-156 и BL-157 — ``deferred (triggered)`` с триггером Р-15 и
-  ссылкой на разбор готовности; карточки — «Заготовка (до старта)»; входы
-  BL-158; Р-16 ждёт, и тогда ``R16_ACCEPTED = False`` в валидаторе #433;
+  #427 (Р-13) содержит 04 и 12; ``BL156_STARTED = True`` (BL-156а,
+  issue #444): ссылки на runtime в ``prompts/`` закреплены по SHA;
+  ``TYPING_APPLIED = False``: ``prompt-typing.json`` не применена —
+  RUN-0081 измерил A с ней, ядро 9/11 против 10/11 RUN-0079, правка
+  перенесена в BL-156б (строки ``before`` на месте, ``after`` нет);
+* бэклог: BL-157 — ``deferred (triggered)`` (BL-157а ``DONE``, BL-157б ждёт
+  BL-156а ``DONE``), BL-156 — ``review`` (этап BL-156а, PR #445), этап
+  BL-156б — ``deferred (triggered)``; карточки — история «Заготовка (до
+  старта)», у BL-156 — «Исполнение» BL-156а; входы BL-158;
+  ``R16_ACCEPTED = False`` в валидаторе #433 до BL-162;
 * отчёт BL-156, анализ Р-16 и разбор готовности BL-156 / BL-157: разделы
   стандарта анализа, вопрос владельцу AS-IS / TODO; цитаты анализа Р-16 и
   разбора готовности сверяются с исходными документами.
@@ -54,6 +61,7 @@ REPORT = ROOT / "docs/analysis/2026-11-03-bl-156-step-prompts-report.md"
 R16 = ROOT / "docs/analysis/2026-11-03-silence-consent-gates-r16.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 RUN = ROOT / "runs/2026/RUN-0080"
+RUN_0081 = ROOT / "runs/2026/RUN-0081"
 RUN_0079 = ROOT / "runs/2026/RUN-0079/outputs/metrics.json"
 POST_RUN_DELTAS = ROOT / "experiments/issue_438/run0080/post-run-deltas.json"
 PROMPT_TYPING = ROOT / "experiments/issue_438/prompt-typing.json"
@@ -64,9 +72,13 @@ READINESS = ROOT / "docs/analysis/2026-11-04-bl-156-157-readiness-check.md"
 #: принята, RFC v0.6, DEC-427-04 и DEC-427-12 ``accepted``.
 R15_ACCEPTED = True
 OWNER_COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/439#issuecomment-6630337995"
-#: BL-156 стартовала (отдельная постановка после BL-157а). Пока False:
-#: ``prompts/`` совпадают с v0.1, ``prompt-typing.json`` не применена.
-BL156_STARTED = False
+#: BL-156 стартовала: этап BL-156а (issue #444, PR #445) закрепил ссылки на
+#: runtime в ``prompts/`` по SHA.
+BL156_STARTED = True
+#: Типизация гейтов (``prompt-typing.json``) в ``prompts/`` не применена:
+#: RUN-0081 — ядро A 9/11 против 10/11 RUN-0079 (DEC-427-11), правка
+#: перенесена в BL-156б. True — только с прогоном, где A не хуже RUN-0079.
+TYPING_APPLIED = False
 
 CRITERIA = ("K1", "K2", "K3", "K4", "K5", "K6")
 ANALYSIS_SECTIONS = ("## Summary / BLUF", "## Context / Scope", "## Findings / Options",
@@ -104,6 +116,37 @@ def load(name, path):
 
 
 BUILDER = load("bcreq_step_builder", ROOT / "scripts/build_bcreq_step_prompts.py")
+BL156A = load("bl156a_for_438", ROOT / "experiments/issue_444/bl156a_prompt_changes.py")
+SHV = "prompts/bcreq-review-validation-oneshot.md"
+SHV_DRAFT = "prompts/drafts/bcreq-review-validation-oneshot.md"
+
+
+def digest(text):
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
+
+
+def measured_a():
+    """A RUN-0081: текущий v0.1 Ш-В с подстановками типа гейта (BL-156б)."""
+    text = read(ROOT / SHV)
+    return text if TYPING_APPLIED else BL156A.apply_typing(SHV, text)
+
+
+def measured_d():
+    """D RUN-0081: черновик Ш-В, собранный из ``measured_a()``.
+
+    Черновик встраивает текст шага v0.1 и хранит его хэш в
+    ``based_on_sha256``; без типизации отличаются только эти места.
+    """
+    text = read(ROOT / SHV_DRAFT)
+    if TYPING_APPLIED:
+        return text
+    base = digest(read(ROOT / SHV))
+    assert text.count(f"based_on_sha256: {base}") == 1, SHV_DRAFT
+    text = text.replace(f"based_on_sha256: {base}", f"based_on_sha256: {digest(measured_a())}")
+    for sub in BL156A.substitutions(SHV):
+        assert text.count(sub["before"]) == 1, (SHV_DRAFT, sub["line"])
+        text = text.replace(sub["before"], sub["after"])
+    return text
 
 
 def read(path):
@@ -185,9 +228,13 @@ class BuildTest(unittest.TestCase):
             _, body = BUILDER.split_frontmatter(read(source))
             draft = read(ROOT / item["file"])
             self.assertEqual(body.count(BUILDER.RUNTIME_MAIN), item["runtime_main_to_sha"], item["file"])
-            self.assertGreater(item["runtime_main_to_sha"], 0, item["file"])
+            # BL-156а: v0.1 ссылается на runtime по SHA реестра, а не на main.
+            self.assertEqual(item["runtime_main_to_sha"], 0 if BL156_STARTED else item["runtime_main_to_sha"], item["file"])
+            if BL156_STARTED:
+                self.assertGreater(body.count(pinned), 0, item["file"])
+            # Текст шага встроен байт в байт; ссылки на main (до BL-156а)
+            # сборщик закрепляет по SHA.
             self.assertIn(body.replace(BUILDER.RUNTIME_MAIN, pinned).rstrip("\n"), draft, item["file"])
-            self.assertIn(body.rstrip("\n"), draft.replace(pinned, BUILDER.RUNTIME_MAIN), item["file"])
 
     def test_review_profiles_from_steps_table(self):
         _, _, steps = BUILDER.load_profiles()
@@ -197,13 +244,17 @@ class BuildTest(unittest.TestCase):
         self.assertIn("Шаги и профили", read(PROFILES))
 
 
-class Run0080Test(unittest.TestCase):
+class RunScoring:
+    """Пересчёт метрик прогона из оценок судьи, ключа и golden set."""
+    RUN_DIR = RUN
+
     @classmethod
     def setUpClass(cls):
-        cls.metrics = json.loads(read(RUN / "outputs/metrics.json"))
-        cls.mapping = json.loads(read(RUN / "inputs/mapping.json"))
-        cls.key = json.loads(read(RUN / "outputs/judge-key.json"))
-        cls.scores = json.loads(read(RUN / "outputs/judge-scores.json"))
+        run = cls.RUN_DIR
+        cls.metrics = json.loads(read(run / "outputs/metrics.json"))
+        cls.mapping = json.loads(read(run / "inputs/mapping.json"))
+        cls.key = json.loads(read(run / "outputs/judge-key.json"))
+        cls.scores = json.loads(read(run / "outputs/judge-scores.json"))
         v411 = load("v411_for_438", ROOT / "scripts/validate_issue_411_lessons_pipeline.py")
         cls.cases = {c["case-id"]: c for c in v411.golden_cases()}
 
@@ -235,6 +286,16 @@ class Run0080Test(unittest.TestCase):
         return {"passed": passed, "core": f"{core}/{core_total}", "negatives_false_positive": f"{fp}/{neg}",
                 "criteria": {c: f"{v[0]}/{v[1]}" for c, v in per.items()}}
 
+    @staticmethod
+    def not_worse(candidate, reference):
+        def first(text):
+            return int(text.split("/")[0])
+
+        return (candidate["passed"] >= reference["passed"] and first(candidate["core"]) >= first(reference["core"])
+                and first(candidate["negatives_false_positive"]) <= first(reference["negatives_false_positive"]))
+
+
+class Run0080Test(RunScoring, unittest.TestCase):
     def test_metrics_recomputed(self):
         self.assertEqual(len(self.mapping["mapping"]), 62)
         for version in ("A", "D"):
@@ -246,52 +307,81 @@ class Run0080Test(unittest.TestCase):
 
     def test_publication_flags(self):
         baseline = json.loads(read(RUN_0079))["A"]
-        d = self.metrics["D"]
-
-        def first(text):
-            return int(text.split("/")[0])
-
         for name, ref in (("vs_RUN_0079", baseline), ("vs_A_same_judge", self.metrics["A"])):
-            expect = (d["passed"] >= ref["passed"] and first(d["core"]) >= first(ref["core"])
-                      and first(d["negatives_false_positive"]) <= first(ref["negatives_false_positive"]))
-            self.assertEqual(self.metrics["publication"][name]["not_worse"], expect, name)
+            self.assertEqual(self.metrics["publication"][name]["not_worse"],
+                             self.not_worse(self.metrics["D"], ref), name)
         self.assertTrue(self.metrics["publication"]["not_worse"])
 
-    def test_measured_texts_are_current(self):
+    def test_measured_texts_are_history(self):
+        # RUN-0080 — история: тексты A и D после него менялись (BL-156а,
+        # issue #444) и измерены заново RUN-0081 (Run0081Test).
         meta = read(RUN / "metadata.yaml")
         draft = ROOT / "prompts/drafts/bcreq-review-validation-oneshot.md"
         v01 = ROOT / "prompts/bcreq-review-validation-oneshot.md"
-        # Правки после замера перечислены в post-run-deltas.json (поле
-        # behavior: none или reverted-to-v0.1); каждая откатывается ровно
-        # один раз. Любая другая правка — новый прогон.
+        # Правки черновика после замера (post-run-deltas.json) — только
+        # строки ссылок, поведение none или reverted-to-v0.1.
         deltas = json.loads(read(POST_RUN_DELTAS))
         self.assertEqual(ROOT / deltas["file"], draft)
-        measured = read(draft)
         for delta in deltas["deltas"]:
             self.assertIn(delta["behavior"], ("none", "reverted-to-v0.1"))
-            self.assertEqual(measured.count(delta["current"]), 1, delta["current"])
-            measured = measured.replace(delta["current"], delta["measured"])
-        self.assertEqual(hashlib.sha256(measured.encode("utf-8")).hexdigest(),
-                         self.metrics["D"]["prompt_sha256"], "черновик Ш-В изменён после RUN-0080")
-        # A — v0.1 с типом гейта BL-156. Правка prompts/ откатана до старта
-        # BL-156 (проверка готовности, 2026-11-04): измеренный A — текущий
-        # v0.1 плюс подстановки prompt-typing.json, каждая ровно один раз.
-        typing = json.loads(read(PROMPT_TYPING))
-        measured_a = read(v01)
-        subs = [s for s in typing["substitutions"] if ROOT / s["path"] == v01]
-        self.assertTrue(subs)
-        for sub in subs:
-            self.assertEqual(measured_a.count(sub["before"]), 1, sub["line"])
-            measured_a = measured_a.replace(sub["before"], sub["after"])
-        self.assertEqual(hashlib.sha256(measured_a.encode("utf-8")).hexdigest(),
-                         self.metrics["A"]["prompt_sha256"], "v0.1 Ш-В изменён после RUN-0080")
+        # A RUN-0080 — v0.1 с типом гейта и ссылками на main. BL-156а
+        # закрепила ссылки по SHA, тип гейта не применён: подстановки и
+        # откат закрепления дают измеренный A.
+        sha = json.loads(read(MANIFEST))["runtime_sha"]
+        pinned = BUILDER.RUNTIME_MAIN.replace("/main/", f"/{sha}/")
+        self.assertEqual(ROOT / SHV, v01)
+        text = measured_a()
+        self.assertGreater(text.count(pinned), 0)
+        text = text.replace(pinned, BUILDER.RUNTIME_MAIN)
+        self.assertEqual(digest(text), self.metrics["A"]["prompt_sha256"],
+                         "v0.1 Ш-В: правка сверх закрепления ссылок BL-156а")
         self.assertIn(self.metrics["D"]["prompt_sha256"], meta)
         self.assertIn(self.metrics["A"]["prompt_sha256"], meta)
+        previous = json.loads(read(RUN_0081 / "outputs/metrics.json"))["previous_RUN_0080"]
+        for version in ("A", "D"):
+            self.assertEqual(previous[version]["prompt_sha256"], self.metrics[version]["prompt_sha256"], version)
+            self.assertEqual(previous[version]["passed"], self.metrics[version]["passed"], version)
 
     def test_report_records_decision(self):
         report = flat(read(RUN / "outputs/golden-set-report.md"))
         self.assertIn("«П-Ш-В»", report)
         self.assertIn("в `prompts/` в этом PR не переносится", report)
+
+
+class Run0081Test(RunScoring, unittest.TestCase):
+    """RUN-0081 (BL-156а, issue #444): текущие A и D, тот же golden set и раскладка, что RUN-0079."""
+    RUN_DIR = RUN_0081
+
+    def test_metrics_recomputed(self):
+        self.assertEqual(len(self.mapping["mapping"]), 62)
+        self.assertEqual(self.mapping["mapping"], json.loads(read(ROOT / "runs/2026/RUN-0079/inputs/mapping.json"))["mapping"])
+        for version in ("A", "D"):
+            got = self.score(version)
+            for field, value in got.items():
+                self.assertEqual(self.metrics[version][field], value, f"{version}.{field}")
+
+    def test_publication_flags(self):
+        # DEC-427-11: правка prompts/ (A) и черновик (D) не хуже базы RUN-0079.
+        baseline = json.loads(read(RUN_0079))["A"]
+        publication = self.metrics["publication"]
+        for name, ref in (("vs_RUN_0079", baseline), ("vs_A_same_judge", self.metrics["A"])):
+            self.assertEqual(publication[name]["not_worse"], self.not_worse(self.metrics["D"], ref), name)
+        self.assertEqual(self.metrics["A_vs_RUN_0079"]["not_worse"], self.not_worse(self.metrics["A"], baseline))
+        # A (v0.1 с типом гейта) хуже RUN-0079 по ядру: типизацию не
+        # публиковать. TYPING_APPLIED = True без такого прогона ломает проверку.
+        self.assertEqual(TYPING_APPLIED, self.metrics["A_vs_RUN_0079"]["not_worse"],
+                         "TYPING_APPLIED расходится с A_vs_RUN_0079 RUN-0081")
+        self.assertFalse(publication["not_worse"], "D хуже — черновики остаются в prompts/drafts/")
+
+    def test_measured_texts_are_current(self):
+        # Текущие v0.1 и черновик Ш-В — измеренные A и D без подстановок
+        # типа гейта (TYPING_APPLIED = False); любая другая правка требует
+        # нового прогона.
+        meta = read(RUN_0081 / "metadata.yaml")
+        for version, text in (("A", measured_a()), ("D", measured_d())):
+            self.assertEqual(digest(text), self.metrics[version]["prompt_sha256"],
+                             f"{version}: Ш-В изменён после RUN-0081 — нужен новый прогон")
+            self.assertIn(self.metrics[version]["prompt_sha256"], meta)
 
 
 class KitTest(unittest.TestCase):
@@ -331,13 +421,16 @@ class DecisionsTest(unittest.TestCase):
         self.assertEqual(set(v427.R15), {"04", "12"})
         self.assertEqual(pending, set() if R15_ACCEPTED else {"04", "12"})
 
-    def test_published_prompts_untouched(self):
+    def test_published_prompts_typed(self):
         typing = json.loads(read(PROMPT_TYPING))
-        self.assertIn("не применена", typing["status"])
+        self.assertTrue(typing["status"].startswith("применена" if TYPING_APPLIED else "не применена"), typing["status"])
+        if not TYPING_APPLIED:
+            self.assertIn("RUN-0081", typing["status"])
+            self.assertIn("BL-156б", typing["status"])
         self.assertEqual(len({s["path"] for s in typing["substitutions"]}), 14)
         for sub in typing["substitutions"]:
             text = read(ROOT / sub["path"])
-            expected, absent = ("after", "before") if BL156_STARTED else ("before", "after")
+            expected, absent = ("after", "before") if TYPING_APPLIED else ("before", "after")
             self.assertEqual(text.count(sub[expected]), 1, f"{sub['path']} {sub['line']}")
             self.assertEqual(text.count(sub[absent]), 0, f"{sub['path']} {sub['line']}")
 

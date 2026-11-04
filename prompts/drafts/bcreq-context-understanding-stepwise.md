@@ -8,7 +8,7 @@ temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
 based_on: prompts/bcreq-context-understanding-stepwise.md
-based_on_sha256: b261b84bd5277af7a59ba07efb4d7ffa497fc4304ab1bed2af1e4aa599e96c4d
+based_on_sha256: 7cce77ca3ce7eb01813b6ab59053e021b0c228fe20f734f95340183ca762d7be
 mode: by-test
 steps: [Ш-1]
 runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
@@ -172,8 +172,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 а не весь независимый черновик. Штатное поведение, лимиты, API, настройки и
 дельту без источника не придумывай; ставь `[ТРЕБУЕТСЯ УТОЧНЕНИЕ: …]` в 8.4.
 Нет БЗ не означает «функции нет». Fallback не разрешает пересечь гейт,
-объявить критерий выполненным или заменить отсутствующее решение человека
-на гейте типа `человек` или `гибрид`.
+объявить критерий выполненным или заменить отсутствующее решение человека.
 
 ### Полнота таксономии и класс поиска
 

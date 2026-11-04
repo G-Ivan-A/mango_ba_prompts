@@ -1,15 +1,19 @@
-"""Обратимые правки BL-156а (issue #444) в 14 промптах v0.1 потока BCREQ.
+"""Обратимая правка BL-156а (issue #444) в 14 промптах v0.1 потока BCREQ.
 
-BL-156а применяет к `prompts/bcreq-*.md` ровно две правки:
+BL-156а применяет к `prompts/bcreq-*.md` одну правку: закрепляет ссылки на
+runtime, `blob/main/` → `blob/<SHA реестра>/` (ТС-1, раздел 7 реестра
+справочников 0.4). Поведение промпта она не меняет: правило RUN-0080
+относит ссылки к правкам без поведения.
 
-1. типизацию гейтов — 15 подстановок `before` → `after` из
-   `experiments/issue_438/prompt-typing.json` (словарь потока, раздел 3.3);
-2. закрепление ссылок на runtime: `blob/main/` → `blob/<SHA реестра>/`
-   (ТС-1, раздел 7 реестра справочников 0.4).
+Типизация гейтов (15 подстановок `experiments/issue_438/prompt-typing.json`)
+в `prompts/` не применена: RUN-0081 измерил A с ней, ядро 9/11 против 10/11
+RUN-0079 (DEC-427-11). Подстановка перенесена в BL-156б;
+`apply_typing()` восстанавливает измеренный текст для проверок RUN-0080 и
+RUN-0081.
 
 Регрессии сохранности промптов (#391, #393, #395) не переписывают свои
 эталоны: они вызывают `revert()` и сверяют оставшиеся байты с эталоном.
-Так доказано, что, кроме этих двух правок, в промптах ничего не менялось.
+Так доказано, что, кроме закрепления ссылок, в промптах ничего не менялось.
 """
 from pathlib import Path
 import json
@@ -26,17 +30,39 @@ def substitutions(path=None):
     return [s for s in items if path is None or s["path"] == path]
 
 
+def edited(path):
+    """True для 14 промптов v0.1, которые правит BL-156а."""
+    return any(s["path"] == path for s in substitutions())
+
+
 def revert(path, text):
     """Вернуть текст промпта `path` (repo-relative) к виду до BL-156а.
 
-    Каждая подстановка обязана встретиться ровно один раз, иначе
-    AssertionError: правка потеряна или задублирована.
+    В промпте v0.1 закреплённая ссылка обязана встретиться хотя бы раз, а
+    ссылки на main не должно остаться, иначе AssertionError: правка потеряна
+    или неполна. Остальные промпты BL-156а не трогает: их текст возвращается
+    как есть, закреплённой ссылки в нём быть не должно.
     """
-    for s in substitutions(path):
-        assert text.count(s["after"]) == 1, (path, s["line"], text.count(s["after"]))
-        text = text.replace(s["after"], s["before"])
+    if not edited(path):
+        assert RUNTIME_PINNED not in text, path
+        return text
+    assert RUNTIME_PINNED in text and RUNTIME_MAIN not in text, path
     return text.replace(RUNTIME_PINNED, RUNTIME_MAIN)
 
 
 def revert_bytes(path, data):
     return revert(path, data.decode("utf-8")).encode("utf-8")
+
+
+def apply_typing(path, text):
+    """Текст с подстановками типа гейта, как его измерили RUN-0080 и RUN-0081.
+
+    `path` — промпт v0.1, по которому выбираются подстановки. Каждая
+    строка `before` должна встретиться ровно один раз.
+    """
+    subs = substitutions(path)
+    assert subs, path
+    for s in subs:
+        assert text.count(s["before"]) == 1, (path, s["line"], text.count(s["before"]))
+        text = text.replace(s["before"], s["after"])
+    return text

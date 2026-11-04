@@ -1,7 +1,7 @@
 {
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
-  "status": "заготовка, не применена: Р-15 ждёт ответа владельца, BL-156 — deferred (triggered); см. docs/analysis/2026-11-04-bl-156-157-readiness-check.md",
+  "status": "не применена: RUN-0081 (BL-156а, issue #444, PR #445) измерил A с подстановками — ядро 9/11 против 10/11 RUN-0079 (DEC-427-11), в prompts/ стоит before; перенесена в BL-156б (runs/2026/RUN-0081/outputs/golden-set-report.md); история заготовки — docs/analysis/2026-11-04-bl-156-157-readiness-check.md",
   "reason": "Тип гейта в тексте промпта по словарю потока (standards/bcreq-flow-glossary.md, раздел 3.3): пункт BL-159 по 14 промптам выполняется в BL-156, правка prompts/ вне BL-156 запрещена DEC-427-11 (pr-ops/backlog-ba-model.md, карточка BL-156). Применять после «Р-15 да» и отдельной постановки BL-156: подставить after вместо before в каждом файле и обновить регрессии сохранности промптов (#391, #393, #395) и категорию P валидатора #433. RUN-0080 измерял версию A с этими подстановками (validate_issue_438_step_prompts.py восстанавливает её из v0.1).",
   "substitutions": [
     {

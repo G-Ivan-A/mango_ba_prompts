@@ -8,7 +8,7 @@ temperature: 0.1
 operation: documentation
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-constraints-documentation-stepwise.md
-based_on_sha256: 9b8beda2d26bf1af0a8a4f8ad2b674b1640a6885a7cf8c32517036e293974608
+based_on_sha256: b084347e5051bfb99b65ad3cac1b8f12730f20ba15a21fdf423e9c12c06657ce
 mode: by-test
 steps: [Ш-7]
 runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
@@ -129,8 +129,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 а не весь независимый черновик. Штатное поведение, лимиты, API, настройки и
 дельту без источника не придумывай; ставь `[ТРЕБУЕТСЯ УТОЧНЕНИЕ: …]` в 8.4.
 Нет БЗ не означает «функции нет». Fallback не разрешает пересечь гейт,
-объявить критерий выполненным или заменить отсутствующее решение человека
-на гейте типа `человек` или `гибрид`.
+объявить критерий выполненным или заменить отсутствующее решение человека.
 
 ### Полнота таксономии и класс поиска
 
