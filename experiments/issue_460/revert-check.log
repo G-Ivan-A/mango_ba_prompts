@@ -1,25 +1,14 @@
 # Issue #460: доказательство отката пароля одним коммитом
-HEAD: 0af8d59e0801b6d828297b644196ecd4cb1a48f2
-Коммит отключения: e383c06a4a86fc8efb2ba921a20189bd3bbe9ba2
-$ git revert --no-edit e383c06a4a86fc8efb2ba921a20189bd3bbe9ba2
-[detached HEAD 09a7f3e6] Revert "chore(site): временно отключить пароль на период отладки BL-157в (issue #460)"
- Date: Thu Nov 5 10:19:57 2026 +0000
+HEAD: f9e560b99cb15d6bb11a4e30899d06dde6a94fa7
+Коммит отключения: ab1b78b503b461a238d096c5ba96972126c75cc9
+$ git revert --no-edit ab1b78b503b461a238d096c5ba96972126c75cc9
+[detached HEAD 5cd37558] Revert "chore(site): временно отключить пароль на период отл�
+ Date: Thu Nov 5 10:24:13 2026 +0000
  4 files changed, 5 insertions(+), 40 deletions(-)
-$ git show --stat HEAD
-Revert "chore(site): временно отключить пароль на пе�
-
- README.md                                          |  5 ++---
- docs/site-access.md                                | 20 ++------------------
- experiments/issue_413/site-baseline-overrides.json |  4 ----
- site/gate.js                                       | 16 +---------------
- 4 files changed, 5 insertions(+), 40 deletions(-)
-$ git diff e383c06a4a86fc8efb2ba921a20189bd3bbe9ba2~1 HEAD -- site/gate.js README.md docs/site-access.md experiments/issue_413/site-baseline-overrides.json | wc -l  (0 = как до отключения)
-0
+$ git diff ab1b78b503b461a238d096c5ba96972126c75cc9~1 HEAD -- site/gate.js docs/site-access.md README.md | wc -l  # 0 = как до отключения
 0
 $ make validate-full
-PASS   validate-repository-structure               0.26s
-
-full: 92 валидаторов, 0 из кэша, 0 провалов, 39.71s
+full: 92 валидаторов, 0 из кэша, 0 провалов, 66.62s
 
 $ SITE_ROOT=<откат> node experiments/issue_460/revert-browser-check.cjs  # синтетический хэш только в маршруте браузера
 PASS  прямая ссылка ведёт на форму входа  (https://g-ivan-a.github.io/mango_ba_prompts/login.html)
