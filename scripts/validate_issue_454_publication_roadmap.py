@@ -177,6 +177,20 @@ class OwnerConfirmation(unittest.TestCase):
         self.assertIn("parallel_track_blast_radius", text)
         self.assertIn("Сайт сам не движется", text)
 
+    def test_verdict_follows_run0090_rules(self):
+        """Section 15 repeats the preregistered rules: a failed R3' may not read as ready packets."""
+        summary = json.loads(read("runs/2026/RUN-0090/outputs/summary.json"))
+        rows = [line for line in self.section(15).splitlines() if line.startswith("|")]
+        packets = next(row for row in rows if row.startswith("| Пакеты готовы к отправке"))
+        if not summary["R3"]["passed"]:
+            self.assertIn("**не доказано: BL-170, пакеты правит БА**", packets, UPDATE)
+            self.assertIn("пакеты читает и правит БА", self.rfc.replace("\n", " ").replace("**", ""), UPDATE)
+        confirmed = next(row for row in rows if row.startswith("| Ш-В получает конституцию"))
+        if all(summary[rule]["passed"] for rule in ("R4", "R5", "R6")):
+            self.assertIn("доказано с ограничением", confirmed, UPDATE)
+        else:
+            self.assertIn("не доказано", confirmed, UPDATE)
+
     def test_verdict_does_not_claim_readiness_without_ba(self):
         text = self.section(15)
         self.assertIn("Однозначной готовности нет", text)

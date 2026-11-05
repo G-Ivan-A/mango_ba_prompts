@@ -1,0 +1,87 @@
+run_id: RUN-0090
+process: bcreq-stage1-kit07-confirmation-issue454
+version: "0.1"
+date: 2026-11-05
+author: "Claude Code (claude-opus-5-5), issue #454"
+model: "claude-opus-5-5 — 6 изолированных подагентов-исполнителей, 1 слепой судья (подагент)"
+status: draft
+run_type: execution
+input_kind: synthetic
+source_paths:
+  - inputs/ba-script.md
+  - ../RUN-0089/outputs/K-document.md
+  - ../RUN-0089/outputs/T-document.md
+  - ../RUN-0089/outputs/T-gate-journal.md
+  - ../RUN-0089/outputs/K-gate-journal.md
+inputs:
+  - inputs/ba-script.md
+outputs:
+  - outputs/README.md
+  - outputs/report.md
+  - outputs/rel-T-01-dialogue.md
+  - outputs/rel-T-packet-ft.md
+  - outputs/rel-T-packet-tz.md
+  - outputs/rel-T-99-executor-log.md
+  - outputs/rel-K-01-dialogue.md
+  - outputs/rel-K-packet-ft.md
+  - outputs/rel-K-packet-tz.md
+  - outputs/rel-K-99-executor-log.md
+  - outputs/val-K-01-dialogue.md
+  - outputs/val-K-99-executor-log.md
+  - outputs/gate-in-01-dialogue.md
+  - outputs/gate-in-99-executor-log.md
+  - outputs/gate-c1-01-dialogue.md
+  - outputs/gate-c1-99-executor-log.md
+  - outputs/sc-01-dialogue.md
+  - outputs/sc-99-executor-log.md
+  - outputs/judge-verdicts.json
+  - outputs/judge-key.json
+  - outputs/summary.json
+logs:
+  - logs/experiment-log.md
+  - logs/executor-instruction.md
+  - logs/judge-instruction.md
+  - logs/preregistration.md
+feedback:
+  - feedback/review-notes.md
+# SHA-256 — точные байты буфера обмена комплекта 0.7, основная кнопка: файл шага плюс строка-метка кнопки ⧉.
+prompt_ref:
+  - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "по тесту (копия буфера)", sha256: 6460694898fe966b411acc0203ca7f450e9683db51be9987becdb1f6c11aece7}
+  - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "по тесту (копия буфера)", sha256: e9374d4944e4d75a256c200078ada7a7d893ee3a752a4c901568834fb22cd2e2}
+  - {step: Ш-5, path: prompts/drafts/bcreq-uc-modeling-stepwise.md, version: "по тесту (копия буфера)", sha256: 58013d44629261202270e8d1f2a48d9f9d921fe1bda7199830042dc800e3d1cf}
+  - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.3", sha256: 2e63b64f7649403cee0cc948f47e45cfd3bc9ee3c825e305b17a189359c9af54}
+  - {step: Ш-Р, path: prompts/drafts/bcreq-release-readiness-oneshot.md, version: "по тесту (копия буфера)", sha256: 53b1cfa65292eab1d0f037bb2c7898ee38afa8086667249854225505fd0fb2e9}
+  - {step: Ш-С, path: prompts/bcreq-scenarios-modeling-oneshot.md, version: "0.1", sha256: 95cfd54b4e90b06666586f24f7cdbb2fc2a95fa1476aef265a2fd2cf73079042}
+prompt_hashes: outputs/summary.json   # поле prompt_hashes
+runtime:
+  repo: G-Ivan-A/mango-ba-ai-runtime
+  commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855
+task_seed: runs/2026/RUN-0078/inputs/seed.json   # SIM-1106
+preregistration: runs/2026/RUN-0090/logs/preregistration.md
+replicates: 1
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: confirmed-with-failure
+  r3_packets: false
+  r3_mechanical: false
+  r3_judge_T: {P16: pass, P12: pass}
+  r3_judge_K: {P16: fail, P12: pass}
+  r4_validation: true
+  r5_gates: true
+  r6_scenarios: true
+  checker_defect: "механическая проверка P16 считает номер заголовка, а Ш-Р требует сквозную нумерацию в ТЗ: раздел 6 документа законно становится разделом 5 пакета"
+  tokens_total: null
+  token_method: "не считались"
+  measured: true
+  eval: "Подтверждение четырёх правок комплекта 0.7 после RUN-0089: 6 плеч, 1 слепой судья, правила R3', R4, R5, R6 записаны до запуска"
+related_runs:
+  - RUN-0089
+  - RUN-0078
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/454
+related_artifacts:
+  - docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md
+  - docs/ba-processes/bcreq-run-kit.md
+  - experiments/issue_454/run0090/run.py
