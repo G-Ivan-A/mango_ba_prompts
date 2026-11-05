@@ -1,0 +1,35 @@
+{
+ "kit": "0.7",
+ "commit": "c915492b",
+ "note": "Тексты основной кнопки комплекта 0.7 из site/data/test-kit.json и site/data/prompts.json, применяются с Ш-6 (поправка 2)",
+ "steps": {
+  "Ш-6": {
+   "sha256": "4da83852561d9db22690dd3f970a4cc853b6e46553b1efda02448145f5270953",
+   "bytes": 37525
+  },
+  "Ш-7": {
+   "sha256": "1364014099bad7ab2ff5b52e7186257000a980b48a0ea638ed23280e8b57ce6e",
+   "bytes": 31465
+  },
+  "Ш-8": {
+   "sha256": "bebfb136d4228d5b8afbfbf97666316181d8236f20c0159306a5b142b4f28778",
+   "bytes": 36404
+  },
+  "Ш-9": {
+   "sha256": "070d87d172bbc5a0c08f8786a5f608443d5930faacf0d10b4b505f615b3917f2",
+   "bytes": 32611
+  },
+  "Ш-В": {
+   "sha256": "1c30a214474fcde04d60516c92ef442b51e6a23bf9612b38b666c17c76f2db4d",
+   "bytes": 19701
+  },
+  "Ш-Р": {
+   "sha256": "66377b26c9c9153323b2de14e2155174f8df2fec05a05da5f3bec6aeb4bbc67b",
+   "bytes": 26995
+  },
+  "Ш-С": {
+   "sha256": "1b3c73db322d68b722434865d2f22ba487ba14fd12a0527e73bda28eec6c5bb1",
+   "bytes": 16305
+  }
+ }
+}
