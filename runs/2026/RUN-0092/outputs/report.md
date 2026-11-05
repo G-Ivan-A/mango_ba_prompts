@@ -5,7 +5,7 @@ updated: 2026-11-05
 temperature: 0.1
 ---
 
-# RUN-0090: подтверждение правок комплекта 0.7 после RUN-0089
+# RUN-0092: подтверждение правок комплекта 0.7 после RUN-0089
 
 ## Итог
 
@@ -20,7 +20,7 @@ temperature: 0.1
 | **R6** | Ш-С знает шаг вызова: P02, P15 | **сдан** | `pass`, `pass` |
 
 Следствие R3' по правилу, записанному до запуска: R3 остаётся `не собирается`, правка уходит в
-[BL-170](../../../../pr-ops/backlog-ba-model.md#bl-170-промпт-шага-выпуска-ш-р-вместо-заглушки), в роадмэпе и в PR — оговорка.
+[BL-172](../../../../pr-ops/backlog-ba-model.md#bl-172-промпт-шага-выпуска-ш-р-вместо-заглушки), в роадмэпе и в PR — оговорка.
 
 ## Почему R3' не сдан
 
@@ -65,6 +65,6 @@ temperature: 0.1
 ## Как проверить
 
 ```bash
-python3 experiments/issue_454/run0090/run.py check /tmp/run90   # нужен рабочий каталог прогона
-python3 -c "import json;print(json.load(open('runs/2026/RUN-0090/outputs/summary.json'))['R3'])"
+python3 experiments/issue_454/run0092/run.py check /tmp/run90   # нужен рабочий каталог прогона
+python3 -c "import json;print(json.load(open('runs/2026/RUN-0092/outputs/summary.json'))['R3'])"
 ```

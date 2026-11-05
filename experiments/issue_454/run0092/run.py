@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""RUN-0090: подтверждение правок комплекта 0.7 после RUN-0089. Правила — logs/preregistration.md.
+"""RUN-0092: подтверждение правок комплекта 0.7 после RUN-0089. Правила — logs/preregistration.md.
 
-    python3 experiments/issue_454/run0090/run.py prepare WORK COPIES  # входы плеч, хеши, сверка с плечом T RUN-0089
-    python3 experiments/issue_454/run0090/run.py blind   WORK         # материалы судьи, seed 8090
-    python3 experiments/issue_454/run0090/run.py check   WORK         # механика P16, правила R3'…R6, summary.json
-    python3 experiments/issue_454/run0090/run.py fixate  WORK         # runs/2026/RUN-0090/outputs
+    python3 experiments/issue_454/run0092/run.py prepare WORK COPIES  # входы плеч, хеши, сверка с плечом T RUN-0089
+    python3 experiments/issue_454/run0092/run.py blind   WORK         # материалы судьи, seed 8090
+    python3 experiments/issue_454/run0092/run.py check   WORK         # механика P16, правила R3'…R6, summary.json
+    python3 experiments/issue_454/run0092/run.py fixate  WORK         # runs/2026/RUN-0092/outputs
 
 WORK — каталог прогона (/tmp/run90). COPIES — вывод site_walkthrough.cjs, {main,alt}/<шаг>.md.
 """
@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
-RUN = ROOT / "runs/2026/RUN-0090"
+RUN = ROOT / "runs/2026/RUN-0092"
 PRIOR = ROOT / "runs/2026/RUN-0089"
 SEED = 8090
 ARMS = {"rel-T": ("Ш-Р",), "rel-K": ("Ш-Р",), "val-K": ("Ш-В", "Ш-0"), "gate-in": ("Ш-2",), "gate-c1": ("Ш-5",), "sc": ("Ш-С",)}

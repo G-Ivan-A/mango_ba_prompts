@@ -1,4 +1,4 @@
-run_id: RUN-0090
+run_id: RUN-0092
 process: bcreq-stage1-kit07-confirmation-issue454
 version: "0.1"
 date: 2026-11-05
@@ -57,7 +57,7 @@ runtime:
   repo: G-Ivan-A/mango-ba-ai-runtime
   commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 task_seed: runs/2026/RUN-0078/inputs/seed.json   # SIM-1106
-preregistration: runs/2026/RUN-0090/logs/preregistration.md
+preregistration: runs/2026/RUN-0092/logs/preregistration.md
 replicates: 1
 lessons: []
 golden_promotion: []
@@ -84,4 +84,4 @@ related_issues:
 related_artifacts:
   - docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md
   - docs/ba-processes/bcreq-run-kit.md
-  - experiments/issue_454/run0090/run.py
+  - experiments/issue_454/run0092/run.py
