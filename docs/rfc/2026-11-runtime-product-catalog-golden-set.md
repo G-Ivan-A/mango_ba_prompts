@@ -1,14 +1,14 @@
 ---
 status: accepted
-version: 0.7
+version: 0.8
 updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444, https://github.com/G-Ivan-A/mango_ba_prompts/issues/446, https://github.com/G-Ivan-A/mango_ba_prompts/issues/448"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454, https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444, https://github.com/G-Ivan-A/mango_ba_prompts/issues/446, https://github.com/G-Ivan-A/mango_ba_prompts/issues/448"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py, experiments/issue_446/kb_map_sizes.py, runs/2026/RUN-0084/outputs/golden-set-report.md, docs/analysis/2026-11-04-bl-157v-chat-analysis.md"
+related_artifacts: "docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md, standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py, experiments/issue_446/kb_map_sizes.py, runs/2026/RUN-0084/outputs/golden-set-report.md, docs/analysis/2026-11-04-bl-157v-chat-analysis.md"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -83,6 +83,9 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
     трёх плечах с одновременным контролем опубликовал Ш-В v0.2. Шесть
     выгрузок чатов БА разобраны без новых RUN. Владелец создал РТ-7
     (runtime #22). Срез runtime не меняется — раздел 15.
+11. **Поправка 0.8 (issue [#454](https://github.com/G-Ivan-A/mango_ba_prompts/issues/454)):
+    роадмэп публикации вынесен в отдельный RFC.** Для цели «все промпты шагов на
+    сайте» задач в runtime не требуется — раздел 17.
 
 ## 0. Тип и дом артефакта
 
@@ -1103,6 +1106,17 @@ Issue [#448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448)
 
 Р-18 принято и применено во всех трёх пред-регистрациях. Все оценки —
 модель-судья без калибровки по БА: приёмку даёт только BL-157в.
+
+## 17. Поправка 0.8: роадмэп публикации промптов (issue #454)
+
+Движение к цели «промпт на сайте для каждого шага потока» ведётся в
+[RFC-PUB-001](2026-11-bcreq-prompts-publication-roadmap.md). Предмет этого RFC
+остаётся прежним: каталог и golden set runtime.
+
+Вывод для runtime: срез `68ad8fcf` равен runtime `main`, открытых задач и PR нет,
+цель не требует новых задач там. Единственная заглушка — З-2, её снимает РТ-2.
+РТ-2 остаётся строкой реестра: триггер — дефекты формы вывода Ш-3…Ш-8 в прогоне БА
+([пробел П-6](2026-11-bcreq-prompts-publication-roadmap.md#5-пробелы)).
 
 ## Related Artifacts
 

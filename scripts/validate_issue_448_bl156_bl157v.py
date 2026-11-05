@@ -323,14 +323,14 @@ class BacklogTest(unittest.TestCase):
         self.assertIn("ответ 3", re.search(r"(?m)^\| \*\*Р-03\*\* \|.*$", self.backlog).group(0))
         self.assertIsNotNone(re.search(r"(?m)^\| \*\*Р-18\*\* \|.*$", self.backlog))
         bl156 = self.row("BL-156")
-        for marker in ("| review |", "BL-156б и BL-156в — `DONE` (PR #449)", "RUN-0084", "BL-156г — `review` (PR #451)",
+        for marker in ("| ЧАСТИЧНО |", "BL-156б и BL-156в — `DONE` (PR #449)", "RUN-0084", "BL-156г — `DONE` (PR #451 слит",
                        "GS-BCREQ-25"):
             self.assertIn(marker, bl156)
         bl157 = self.row("BL-157")
         for marker in ("| deferred (triggered) |", "BL-157б — `DONE` (PR #447)", "`ba_reviewed: true`"):
             self.assertIn(marker, bl157)
         for code in ("BL-167", "BL-168"):
-            self.assertIn("| review |", self.row(code), code)  # issue #450
+            self.assertIn("| DONE |", self.row(code), code)  # PR #451 слит, issue #454
 
     def card(self, heading):
         self.assertIn(heading, self.model)
@@ -342,7 +342,7 @@ class BacklogTest(unittest.TestCase):
         # Статус карточек ### — в строке таблицы BACKLOG (test_rows); у этапа
         # #### — своя строка «Статус».
         stage = self.card("#### BL-156г. Правило «правка без добавлений» и шаги одного процесса")
-        self.assertRegex(stage, r"(?m)^\*\*Статус\.\*\* `review` \(PR #451\)")
+        self.assertRegex(stage, r"(?m)^\*\*Статус\.\*\* `DONE` \(PR #451 слит")
         for heading in ("### BL-167. Блок «Отраслевая практика — на решение БА» в шагах Ш-1, Ш-3, Ш-6",
                         "### BL-168. Правила многоходовой сессии правок"):
             self.assertIn("**Готово, когда.**", self.card(heading), heading)
@@ -350,7 +350,6 @@ class BacklogTest(unittest.TestCase):
                                 ("#### BL-157б.", "`DONE`")):
             line = next(line for line in self.model.splitlines() if line.startswith(heading))
             self.assertIn(status, self.card(line), heading)
-        self.assertNotIn("BL-156г — `DONE`", self.backlog)  # до слияния PR #451
 
 
 class TaskStatementTest(unittest.TestCase):

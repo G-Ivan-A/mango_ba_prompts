@@ -10,7 +10,7 @@ M = [("prompts/bcreq-review-validation-oneshot.md", "version: 0.3", "version: 0.
      ("runs/2026/RUN-0086/outputs/shv-check/r1.json", '"defect":false', '"defect":true'),
      ("runs/2026/RUN-0086/logs/experiment-log.md", "загрязнённая подача", "подача"),
      ("runs/2026/RUN-0085/metadata.yaml", "ba_reviewed: false", "ba_reviewed: true"),
-     ("pr-ops/BACKLOG.md", "BL-156г — `review` (PR #451)", "BL-156г — `TODO`"),
+     ("pr-ops/BACKLOG.md", "BL-156г — `DONE` (PR #451 слит", "BL-156г — `TODO`"),
      ("docs/rfc/2026-11-runtime-product-catalog-golden-set.md", "Пробел Р-1 раздела 14.2 снят", "Р-1 открыт"),
      ("site/index.html", "v2.4.0", "v2.3.0")]
 bad = 0

@@ -117,8 +117,8 @@ class Backlog(unittest.TestCase):
     def test_chain(self):
         self.assertIn("**Движение по цепочке (на 2026-11-05, issue #450).**", self.backlog)
         for code in ("BL-167", "BL-168"):
-            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| review \|")
-        self.assertIn("BL-156г — `review` (PR #451)", self.backlog)
+            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")  # PR #451 слит, issue #454
+        self.assertIn("BL-156г — `DONE` (PR #451 слит", self.backlog)
         self.assertRegex(self.backlog, r"(?m)^\| BL-157 \|.*\| deferred \(triggered\) \|")
 
     def test_r18_accepted(self):
@@ -126,7 +126,7 @@ class Backlog(unittest.TestCase):
 
     def test_rfc(self):
         rfc = read("docs/rfc/2026-11-runtime-product-catalog-golden-set.md")
-        self.assertRegex(rfc, r"(?m)^version: 0\.7$")
+        self.assertRegex(rfc, r"(?m)^version: 0\.8$")
         self.assertIn("Пробел Р-1 раздела 14.2 снят", rfc)
 
 

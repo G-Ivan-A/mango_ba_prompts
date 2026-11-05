@@ -2,7 +2,8 @@
 """Issue #454: read-only per-step audit of the BCREQ flow: repository, site data, production.
 
 Run from anywhere: python3 experiments/issue_454/audit_flow_coverage.py [--offline]
-Writes experiments/issue_454/audit_flow_coverage.json (facts) and prints a table.
+Prints a table and exits 1 on an integrity problem. A full run also writes
+experiments/issue_454/audit_flow_coverage.json (facts); --offline checks the repository only and keeps that snapshot.
 Touches neither gh-pages nor the password. Re-run after each deploy: the goal is met
 for a step when prod_step_current is true: the production kit serves the same texts as main.
 """
@@ -115,7 +116,8 @@ def main():
             "catalog_texts_same_as_main": sum(1 for r in rows if r["prod_text_same_as_main"]),
         },
     }
-    OUT.write_text(json.dumps(facts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    if not offline:
+        OUT.write_text(json.dumps(facts, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"slice {slice_sha}; kit {facts['kit_version']}; {kit['counts']}; files {len(files)}; archive {facts['catalog_step_prompts_marked_archive']}")
     print("step | mode | main | prod | same_text | archived | draft | stubs | evidence")
     for r in rows:
@@ -126,7 +128,8 @@ def main():
     bad = [r["step"] for r in rows if not (r["draft_sha_ok"] and r["draft_based_on_current"] and r["draft_runtime_is_registry_slice"]
                                            and (r["published_sha_ok"] or r["main_version"] is None))]
     print("integrity problems:", bad or "none")
+    return 1 if bad else 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())
