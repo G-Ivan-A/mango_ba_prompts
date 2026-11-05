@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.31
+version: 0.32
 updated: 2026-11-05
 temperature: 0.1
 ---
@@ -12,6 +12,18 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Security — Issue #462: отчёт RUN-0060 исключён из публичной сборки (вариант А); версия сайта 2.5.1
+
+- **Сборка.** `scripts/generate-pages-data.mjs` удаляет `reports/run-0060/` из `site/`
+  при каждом запуске (`PUBLIC_SITE_EXCLUSIONS`). Клиентский пароль файлы не защищает.
+- **Сайт.** Файлы отчёта и запись `run-0060` в `site/password-hashes.json` удалены,
+  на `site/reports/index.html` ссылки на отчёт нет.
+- **Сборщик отчёта.** `experiments/issue_335_build_report_site.py` пишет в
+  неотслеживаемый `.private-reports/`, а не в `site/`.
+- **Проверка.** `scripts/validate_issue_462_report_exclusion.py`.
+- **Остаётся за владельцем.** Деплой и решение BL-170: источники отчёта в `runs/` и
+  история git остаются публичными.
 
 ### Fixed — Issue #460: все шаги тестового набора, пароль отключён на отладку, контейнер чтения; версия сайта 2.5.0
 
