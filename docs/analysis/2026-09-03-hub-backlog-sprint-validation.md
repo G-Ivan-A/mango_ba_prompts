@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-09-03
 temperature: 0.1
-ai-generated: true
 type: analysis
 scope: hub-backlog-validation
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/357"

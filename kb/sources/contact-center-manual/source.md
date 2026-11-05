@@ -2,7 +2,6 @@
 status: pending-source-file
 version: 0.1
 updated: 2026-06-18
-ai-generated: true
 type: kb-source-manifest
 doc_code: CC
 doc_title: "Контакт-центр MANGO OFFICE — Руководство пользователя"

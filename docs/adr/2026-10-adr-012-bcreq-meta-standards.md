@@ -2,7 +2,6 @@
 status: proposed
 version: 0.1
 updated: 2026-10-23
-ai-generated: true
 type: adr
 scope: bcreq-meta-standards
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/387"

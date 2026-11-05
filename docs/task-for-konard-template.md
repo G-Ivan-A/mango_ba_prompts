@@ -2,7 +2,6 @@
 status: draft
 version: 0.2
 updated: 2026-06-13
-ai-generated: true
 type: template
 scope: task-brief
 ---

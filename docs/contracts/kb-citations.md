@@ -2,7 +2,6 @@
 status: active
 version: 1.0
 updated: 2026-09-01
-ai-generated: true
 type: contract
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/353"

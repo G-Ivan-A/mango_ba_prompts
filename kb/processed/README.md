@@ -2,7 +2,6 @@
 status: canonical
 version: 1.0
 updated: 2026-09-26
-ai-generated: true
 type: kb-processed-guide
 scope: kb/processed
 related_issues:

@@ -3,7 +3,6 @@ status: draft
 version: 0.4
 updated: 2026-08-17
 owner: G-Ivan-A
-ai-generated: true
 type: rfc
 scope: strategic
 related_artifacts:

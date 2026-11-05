@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-16
-ai-generated: true
 type: process
 scope: governance
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/governance/rfc/knowledge-lifecycle-proposal.md"

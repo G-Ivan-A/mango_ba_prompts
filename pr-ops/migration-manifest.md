@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-05
-ai-generated: true
 type: migration-manifest
 scope: mango_ba_prompts-migration-execution
 based_on: "docs/analysis/migration-strategy-rfc.md"

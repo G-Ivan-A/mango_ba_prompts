@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-18
-ai-generated: true
 type: kb-weblinks-guide
 scope: kb/sources/web-links
 related_issues:

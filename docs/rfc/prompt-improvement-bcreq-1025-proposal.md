@@ -2,7 +2,6 @@
 status: proposed
 version: 0.2
 updated: 2026-06-18
-ai-generated: true
 type: rfc
 scope: prompts
 source_experiment: "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md"
