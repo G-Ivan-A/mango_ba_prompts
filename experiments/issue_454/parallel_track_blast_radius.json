@@ -1,8 +1,8 @@
 {
- "head": "0bd3706a0d1f56e4137cf10d10b31996f25e8c96",
+ "head": "deb31d1cea0cc0e1579942d97a88ed0b86983309",
  "modes_match_committed_kit": true,
  "baseline": {
-  "kit_version": "0.5",
+  "kit_version": "0.7",
   "steps": {
    "Ш-0": {
     "mode": "by-test",
@@ -20,80 +20,80 @@
    },
    "Ш-2": {
     "mode": "by-test",
-    "main_button": "73ee1c0748c49393",
-    "comparison_draft": "73ee1c0748c49393",
+    "main_button": "d503792e87eee6a7",
+    "comparison_draft": "d503792e87eee6a7",
     "published": "fc404d5571154de7",
-    "card": "f8fb209a484d5ae4"
+    "card": "ec40aa67c22ffef4"
    },
    "Ш-3": {
-    "mode": "published",
-    "main_button": "f2c875fc3433cb90",
+    "mode": "by-test",
+    "main_button": "f9622ea9183f1fde",
     "comparison_draft": "f9622ea9183f1fde",
     "published": "f2c875fc3433cb90",
-    "card": "2ce84170120737b8"
+    "card": "f2fa6ea14795fb14"
    },
    "Ш-4": {
-    "mode": "published",
-    "main_button": "cced7c7114a8a44c",
+    "mode": "by-test",
+    "main_button": "998e6f68ba2aa0bd",
     "comparison_draft": "998e6f68ba2aa0bd",
     "published": "cced7c7114a8a44c",
-    "card": "022f0bbb05952677"
+    "card": "ce149060884b1834"
    },
    "Ш-5": {
-    "mode": "published",
-    "main_button": "bd3d671afb39d644",
-    "comparison_draft": "c978023acb31571c",
+    "mode": "by-test",
+    "main_button": "bebfb136d4228d5b",
+    "comparison_draft": "bebfb136d4228d5b",
     "published": "bd3d671afb39d644",
-    "card": "4bed54a9d3a7f743"
+    "card": "9ba2607b1709ad88"
    },
    "Ш-6": {
-    "mode": "published",
-    "main_button": "aa5a777bc65c947b",
+    "mode": "by-test",
+    "main_button": "4da83852561d9db2",
     "comparison_draft": "4da83852561d9db2",
     "published": "aa5a777bc65c947b",
-    "card": "89d9b5fcc89f5790"
+    "card": "8c7ef0640b3db8b7"
    },
    "Ш-7": {
-    "mode": "published",
-    "main_button": "840fa774632c3507",
+    "mode": "by-test",
+    "main_button": "1364014099bad7ab",
     "comparison_draft": "1364014099bad7ab",
     "published": "840fa774632c3507",
-    "card": "9ea4813e93e631a3"
+    "card": "c8971cf1f8881165"
    },
    "Ш-8": {
-    "mode": "published",
-    "main_button": "bd3d671afb39d644",
-    "comparison_draft": "c978023acb31571c",
+    "mode": "by-test",
+    "main_button": "bebfb136d4228d5b",
+    "comparison_draft": "bebfb136d4228d5b",
     "published": "bd3d671afb39d644",
-    "card": "64b43c01fe6ce143"
+    "card": "a12b6daf618994b7"
    },
    "Ш-9": {
-    "mode": "published",
-    "main_button": "4fc826f3d0acfce3",
+    "mode": "by-test",
+    "main_button": "070d87d172bbc5a0",
     "comparison_draft": "070d87d172bbc5a0",
     "published": "4fc826f3d0acfce3",
-    "card": "2e9b3621a65a58c0"
+    "card": "fd80fef9df226dd6"
    },
    "Ш-В": {
     "mode": "published",
     "main_button": "1c30a214474fcde0",
     "comparison_draft": "7c54b2a3eec5e93e",
     "published": "1c30a214474fcde0",
-    "card": "63320cc664b337f8"
+    "card": "572e89ec85fb4d39"
    },
    "Ш-Р": {
     "mode": "by-test",
-    "main_button": "209056697507e304",
-    "comparison_draft": "209056697507e304",
+    "main_button": "66377b26c9c91533",
+    "comparison_draft": "66377b26c9c91533",
     "published": "e3b0c44298fc1c14",
-    "card": "6d63b8283448de32"
+    "card": "6a7d9474759e39d6"
    },
    "Ш-С": {
     "mode": "published",
     "main_button": "1b3c73db322d68b7",
     "comparison_draft": "27295c6fe519ddbd",
     "published": "1b3c73db322d68b7",
-    "card": "135360e18feba0e8"
+    "card": "e754b539576a776e"
    }
   },
   "other_prompts": {
@@ -182,7 +182,10 @@
    "title": "К-24 (Ш-8): контракт операции в каталоге",
    "status": "built",
    "moved": {
-    "main_button": [],
+    "main_button": [
+     "Ш-5",
+     "Ш-8"
+    ],
     "comparison_draft": [
      "Ш-5",
      "Ш-8"
@@ -220,6 +223,13 @@
      "Ш-0",
      "Ш-1",
      "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
      "Ш-Р"
     ],
     "comparison_draft": [
@@ -251,6 +261,13 @@
      "Ш-0",
      "Ш-1",
      "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
      "Ш-Р"
     ],
     "comparison_draft": [
@@ -336,7 +353,7 @@
    "other_prompts_changed": []
   },
   "mode_switch_Ш-9": {
-   "title": "Смена режима Ш-9 на by-test",
+   "title": "Откат режима Ш-9 на published",
    "status": "built",
    "moved": {
     "main_button": [

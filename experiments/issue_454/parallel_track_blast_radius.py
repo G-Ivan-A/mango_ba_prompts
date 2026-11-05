@@ -90,7 +90,7 @@ SCENARIOS = {
     "new_module_prompt": ("Новый промпт следующего модуля (вне 13 шагов)", None),
     "shared_file_Ш-5_Ш-8": ("Общий файл Ш-5 и Ш-8", lambda t: append(t, "prompts/bcreq-uc-modeling-stepwise.md")),
     "card_text_Ш-8": ("Карточка Ш-8: текст подготовки или действий", None),
-    "mode_switch_Ш-9": ("Смена режима Ш-9 на by-test", None),
+    "mode_switch_Ш-9": ("Откат режима Ш-9 на published", None),
 }
 
 
@@ -144,10 +144,11 @@ def card_text_edit(tree):
 
 
 def mode_edit(tree):
+    """The rollback the run kit promises: one row of the column «Режим в тесте»."""
     path = tree / "docs/ba-processes/bcreq-run-kit.md"
     lines = path.read_text(encoding="utf-8").split("\n")
-    row = next(i for i, l in enumerate(lines) if l.startswith("|") and "Ш-9" in l and "`published`" in l)
-    lines[row] = lines[row].replace("`published`", "`by-test`", 1)
+    row = next(i for i, l in enumerate(lines) if l.startswith("| 10 | Ш-9"))
+    lines[row] = lines[row].replace("`by-test`", "`published`", 1)
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
