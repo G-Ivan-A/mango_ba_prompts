@@ -1,0 +1,47 @@
+## Files: production vs main
+index.html: prod=49388 main=71366 same=False
+app.js: prod=46846 main=66274 same=False
+v2.js: prod=404 main=955 same=False
+v2.css: prod=404 main=5460 same=False
+data/stats.json: prod=11054 main=11622 same=False
+data/prompts.json: prod=603526 main=1489654 same=False
+data/bcreq-flow.json: prod=25202 main=97633 same=False
+data/test-kit.json: prod=404 main=514525 same=False
+data/checks.json: prod=7013 main=22432 same=False
+
+## Content
+main: {"generatedAt": "2026-11-05T05:32:55.923Z", "siteVersion": "2.4.0", "classes": 39, "archive": 14, "kit_steps": 13, "kit_drafts_with_text": ["bcreq-constitution-governance-oneshot.md", "bcreq-constraints-documentation-stepwise.md", "bcreq-context-understanding-stepwise.md", "bcreq-extra-risk-analysis-stepwise.md", "bcreq-fr-documentation-stepwise.md", "bcreq-nfr-documentation-stepwise.md", "bcreq-orr-solution-design-stepwise.md", "bcreq-products-impact-analysis-stepwise.md", "bcreq-release-readiness-oneshot.md", "bcreq-review-validation-oneshot.md", "bcreq-scenarios-modeling-oneshot.md", "bcreq-uc-modeling-stepwise.md", "bcreq-uc-modeling-stepwise.md"]}
+prod: {"generatedAt": "2026-10-26T12:30:21.858Z", "siteVersion": null, "classes": 0, "archive": 0, "kit_steps": 0, "kit_drafts_with_text": []}
+
+## Pages (data-page)
+main: ['about', 'catalog', 'dashboard', 'glossary', 'patterns', 'processes', 'roadmap', 'standards']
+prod: ['catalog', 'dashboard', 'patterns', 'processes', 'roadmap', 'standards']
+missing on prod: ['about', 'glossary']
+nav on main: ['about', 'catalog', 'standards', 'processes', 'dashboard', 'glossary']
+nav on prod: ['catalog', 'standards', 'dashboard', 'processes']
+
+## Profiles (standards/bcreq-prompt-profiles.md, section 3)
+operations mapped: 39 {'ANALYZE': 6, 'ELICIT': 1, 'EXTRACT': 3, 'GENERATE': 15, 'INGEST': 3, 'RECORD': 2, 'TRANSFORM': 3, 'VERIFY': 6}
+main: operations with a catalog card per profile: {'ANALYZE': 6, 'ELICIT': 1, 'EXTRACT': 3, 'GENERATE': 15, 'INGEST': 3, 'RECORD': 2, 'TRANSFORM': 3, 'VERIFY': 6}
+main: word 'profile' exposed in prompt fields: False
+prod: operations with a catalog card per profile: {}
+prod: word 'profile' exposed in prompt fields: False
+
+## By-test drafts (prompts/drafts/manifest.json)
+bcreq-constitution-governance-oneshot.md: steps=['Ш-0'] profiles=['INGEST', 'VERIFY', 'RECORD'] text_on_site_main=True
+bcreq-context-understanding-stepwise.md: steps=['Ш-1'] profiles=['INGEST', 'EXTRACT', 'ANALYZE', 'ELICIT', 'GENERATE'] text_on_site_main=True
+bcreq-products-impact-analysis-stepwise.md: steps=['Ш-2'] profiles=['EXTRACT', 'ANALYZE'] text_on_site_main=True
+bcreq-fr-documentation-stepwise.md: steps=['Ш-3'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-nfr-documentation-stepwise.md: steps=['Ш-4'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-uc-modeling-stepwise.md: steps=['Ш-5', 'Ш-8'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-orr-solution-design-stepwise.md: steps=['Ш-6'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-constraints-documentation-stepwise.md: steps=['Ш-7'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-extra-risk-analysis-stepwise.md: steps=['Ш-9'] profiles=['GENERATE'] text_on_site_main=True
+bcreq-review-validation-oneshot.md: steps=['Ш-В'] profiles=['ANALYZE', 'VERIFY', 'TRANSFORM'] text_on_site_main=True
+bcreq-release-readiness-oneshot.md: steps=['Ш-Р'] profiles=['VERIFY', 'TRANSFORM', 'RECORD'] text_on_site_main=True
+bcreq-scenarios-modeling-oneshot.md: steps=['Ш-С'] profiles=['GENERATE'] text_on_site_main=True
+profiles in drafts: ['ANALYZE', 'ELICIT', 'EXTRACT', 'GENERATE', 'INGEST', 'RECORD', 'TRANSFORM', 'VERIFY'] | with a draft on main site: ['ANALYZE', 'ELICIT', 'EXTRACT', 'GENERATE', 'INGEST', 'RECORD', 'TRANSFORM', 'VERIFY']
+
+## Prompts outside the publication boundary (prompts/*.md, not bcreq-*)
+['AI_SESSION_HANDOVER_PROMPT.executable.md', 'README.executable.md', 'README.md', 'asr-ingestion-legacy.md', 'asr-ingestion-oneshot.md', 'letter-customer-documentation-legacy.md', 'meeting-customer-documentation-stepwise.md', 'meeting-team-documentation-stepwise.md', 'session-debug-documentation-oneshot.md']
+site/reports on prod: present

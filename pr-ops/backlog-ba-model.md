@@ -1739,6 +1739,8 @@ Forum, UNSPSC, ОКПД 2 лежит отдельно от каталога и �
 состоянии; их проверка — по решению владельца при триггере.
 
 **Источники.**
+- [Runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21),
+  раздел «Решения владельца», Human Review `contact-center`: “проверка по содержанию уходит в бэклог `mango_ba_prompts`”
 - [Issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444),
   раздел «3. Явные ответы на вопросы исполнителя», Human Review: “задачу на содержательную проверку владельцем/БА структурных кейсов”
 - [`docs/rfc/2026-11-runtime-product-catalog-golden-set.md`](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#71-структура-данных-по-классам),
@@ -1753,6 +1755,8 @@ golden set runtime или решение владельца.
 переданы задачей в runtime; после её слияния `confirmed_by` кейсов — не
 `none`.
 
+**Статус.** `deferred (triggered)`.
+
 ### BL-166. Маппинг кандидатов RUN-0074 на классы и функции каталога
 
 **Почему.** В RUN-0074 46 кандидатов эталонов, из них 30 подтверждены
@@ -1766,6 +1770,10 @@ id функции каталога или отмечает «нет функци
 подтверждённых кейсов — задачей runtime.
 
 **Источники.**
+- [`runs/2026/RUN-0074/outputs/golden-set-candidates.md`](../runs/2026/RUN-0074/outputs/golden-set-candidates.md),
+  раздел «Назначение»: “Кандидаты в golden-set”
+- [Runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21),
+  раздел «Решения владельца», маппинг RUN-0074: “ручное сопоставление уходит в бэклог `mango_ba_prompts`”
 - [Issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444),
   раздел «3. Явные ответы на вопросы исполнителя», маппинг RUN-0074: “задачу на перенос кандидатных кейсов из старого прогона в классы/функции”
 - [`docs/rfc/2026-11-runtime-product-catalog-golden-set.md`](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#71-структура-данных-по-классам),
@@ -1779,6 +1787,8 @@ id функции каталога или отмечает «нет функци
 
 **Готово, когда.** У 46 кандидатов есть класс и функция каталога или
 отметка «нет функции»; подтверждённые кейсы переданы задачей в runtime.
+
+**Статус.** `deferred (triggered)`.
 
 ### BL-167. Блок «Отраслевая практика — на решение БА» в шагах Ш-1, Ш-3, Ш-6
 
