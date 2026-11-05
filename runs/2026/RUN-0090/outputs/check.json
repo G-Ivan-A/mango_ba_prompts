@@ -1,0 +1,44 @@
+{
+  "C01": {
+    "pass": true,
+    "missing_sections": [],
+    "missing_subsections": []
+  },
+  "C02": {
+    "pass": true,
+    "checked": 25,
+    "broken": []
+  },
+  "C03": {
+    "pass": true,
+    "checked": 6,
+    "unknown": []
+  },
+  "C04": {
+    "pass": true,
+    "suspicious": [],
+    "gates_pending": {
+      "Г-IN": true,
+      "Г-С1": true,
+      "Г-W": true
+    }
+  },
+  "C05": {
+    "pass": true,
+    "missed": []
+  },
+  "C06": {
+    "pass": true,
+    "emails": [],
+    "phones": []
+  },
+  "C07": {
+    "pass": true,
+    "found": []
+  },
+  "C08": {
+    "pass": true,
+    "changed": []
+  },
+  "passed": 8
+}

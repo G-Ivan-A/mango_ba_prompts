@@ -330,7 +330,7 @@ class BacklogTest(unittest.TestCase):
         for marker in ("| deferred (triggered) |", "BL-157б — `DONE` (PR #447)", "`ba_reviewed: true`"):
             self.assertIn(marker, bl157)
         for code in ("BL-167", "BL-168"):
-            self.assertIn("| DONE |", self.row(code), code)  # PR #451 слит, issue #454
+            self.assertIn("| DONE |", self.row(code), code)  # PR #451 слит, issue #458
 
     def card(self, heading):
         self.assertIn(heading, self.model)
