@@ -149,7 +149,7 @@ class Glossary(unittest.TestCase):
         cls.body = text(GLOSSARY)
 
     def test_version(self):
-        self.assertEqual(frontmatter(self.body)["version"], "0.2")
+        self.assertEqual(frontmatter(self.body)["version"], "0.2.1")
 
     def test_goal_is_stages_3_4(self):
         block = section(self.body, "### 3.4. Ключевые гейты")

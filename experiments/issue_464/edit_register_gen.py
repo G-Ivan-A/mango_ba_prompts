@@ -5,7 +5,7 @@ edit("docs/rfc/rfc-register.md", [
     ("version: 0.21\nupdated: 2026-11-05\n", "version: 0.22\nupdated: 2026-11-05\n"),
     ("- **2026-11-05** — issue #454 (PR #455): добавлен RFC-PUB-001 в статусе\n",
      "- **2026-11-05** — issue #464 (PR #465): RFC #427 v0.7, поправка 0.7 — шаг Ш-А, порядок сбора\n"
-     "  на A-IN, выход в поток CS; [ADR-018](../adr/2026-11-adr-018-bcreq-a-in-collection.md) в статусе\n"
+     "  на A-IN, выход в поток CS; [ADR-019](../adr/2026-11-adr-019-bcreq-a-in-collection.md) в статусе\n"
      "  `proposed`; RFC-PUB-001 v0.5 — Ш-А и новые версии в таблице покрытия.\n"
      "- **2026-11-05** — issue #454 (PR #455): добавлен RFC-PUB-001 в статусе\n"),
 ])

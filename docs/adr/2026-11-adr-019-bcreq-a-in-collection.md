@@ -16,7 +16,7 @@ related_artifacts:
   - "prompts/drafts/bcreq-intake-questionnaire-stepwise.md"
 ---
 
-# ADR-018: порядок сбора на A-IN, шаг Ш-А и выход из BCREQ
+# ADR-019: порядок сбора на A-IN, шаг Ш-А и выход из BCREQ
 
 ## Статус
 
