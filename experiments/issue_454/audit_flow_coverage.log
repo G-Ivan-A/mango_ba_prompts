@@ -1,17 +1,17 @@
-slice 68ad8fcffd47439fc3051852d9a2fbbe23815855; kit 0.5; {'steps': 13, 'byTest': 4, 'published': 9}; files 12; archive 14
+slice 68ad8fcffd47439fc3051852d9a2fbbe23815855; kit 0.7; {'steps': 13, 'byTest': 11, 'published': 2}; files 12; archive 14
 step | mode | main | prod | same_text | archived | draft | stubs | evidence
-Ш-0 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0083,RUN-0087
-Ш-1 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0083,RUN-0086
-Ш-2 | by-test | 0.1 | 0.1 | False | True | True | - | RUN-0083
-Ш-3 | published | 0.2 | 0.1 | False | True | True | З-2 | RUN-0086
-Ш-4 | published | 0.1 | 0.1 | False | True | True | З-2 | -
-Ш-5 | published | 0.1 | 0.1 | False | True | True | З-2 | -
-Ш-6 | published | 0.2 | 0.1 | False | True | True | - | RUN-0086
-Ш-7 | published | 0.1 | 0.1 | False | True | True | - | -
-Ш-8 | published | 0.1 | 0.1 | False | True | True | З-2 | -
-Ш-9 | published | 0.1 | 0.1 | False | True | True | - | -
-Ш-В | published | 0.3 | 0.1 | False | True | True | - | RUN-0081,RUN-0082,RUN-0084,RUN-0085
-Ш-Р | by-test | None | None | False | False | True | - | -
-Ш-С | published | 0.1 | 0.1 | False | True | True | З-2 | -
-prod: {'kit_available': False, 'prompts': 14, 'steps_current': 0, 'steps_total': 13, 'catalog_texts_same_as_main': 0}
+Ш-0 | by-test | 0.2 | 0.2 | True | True | True | - | RUN-0083,RUN-0087,RUN-0089
+Ш-1 | by-test | 0.2 | 0.2 | True | True | True | - | RUN-0083,RUN-0086,RUN-0089
+Ш-2 | by-test | 0.1 | 0.1 | True | True | True | - | RUN-0083,RUN-0089
+Ш-3 | by-test | 0.2 | 0.2 | True | True | True | З-2 | RUN-0086,RUN-0089
+Ш-4 | by-test | 0.1 | 0.1 | True | True | True | З-2 | RUN-0089
+Ш-5 | by-test | 0.1 | 0.1 | True | True | True | З-2 | RUN-0089
+Ш-6 | by-test | 0.2 | 0.2 | True | True | True | - | RUN-0086,RUN-0089
+Ш-7 | by-test | 0.1 | 0.1 | True | True | True | - | RUN-0089
+Ш-8 | by-test | 0.1 | 0.1 | True | True | True | З-2 | RUN-0089
+Ш-9 | by-test | 0.1 | 0.1 | True | True | True | - | RUN-0089
+Ш-В | published | 0.3 | 0.3 | True | True | True | - | RUN-0081,RUN-0082,RUN-0084,RUN-0085,RUN-0089
+Ш-Р | by-test | None | None | False | False | True | - | RUN-0089
+Ш-С | published | 0.1 | 0.1 | True | True | True | З-2 | RUN-0089
+prod: {'kit_available': True, 'prompts': 53, 'steps_current': 4, 'steps_total': 13, 'catalog_texts_same_as_main': 12}
 integrity problems: none

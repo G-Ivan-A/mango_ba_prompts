@@ -1,0 +1,30 @@
+run_id: RUN-0088
+process: bcreq-stage1-site-texts-chain-issue454
+version: "0.1"
+date: 2026-11-05
+author: "Claude Code (claude-opus-5-5), issue #454"
+model: "claude-opus-5-5 — изолированные подагенты на вызов шага; судьи на момент записи не запускались"
+status: draft
+run_type: execution
+input_kind: synthetic
+source_paths:
+  - inputs/input-pack.md
+  - inputs/ba-script.md
+  - inputs/answers-c1.md
+  - inputs/prompt-set.json
+inputs:
+  - inputs/input-pack.md
+  - inputs/ba-script.md
+  - inputs/answers-c1.md
+  - inputs/prompt-set.json
+outputs:
+  - outputs/document/current.json
+logs:
+  - logs/preregistration.md
+  - logs/amendment-1.md
+  - logs/executor-instruction.md
+  - logs/gate-journal.md
+  - logs/judge-chain-instruction.md
+  - logs/judge-pairs-instruction.md
+feedback:
+  - feedback/review-notes.md

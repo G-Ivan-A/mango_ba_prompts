@@ -1,10 +1,10 @@
 {
  "runtime_slice": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
- "kit_version": "0.6",
+ "kit_version": "0.7",
  "counts": {
   "steps": 13,
-  "byTest": 4,
-  "published": 9
+  "byTest": 11,
+  "published": 2
  },
  "steps": [
   {
@@ -27,7 +27,8 @@
    "active_stubs": [],
    "evidence": [
     "RUN-0083",
-    "RUN-0087"
+    "RUN-0087",
+    "RUN-0089"
    ],
    "prod_version": "0.2",
    "prod_text_same_as_main": true,
@@ -54,7 +55,8 @@
    "active_stubs": [],
    "evidence": [
     "RUN-0083",
-    "RUN-0086"
+    "RUN-0086",
+    "RUN-0089"
    ],
    "prod_version": "0.2",
    "prod_text_same_as_main": true,
@@ -80,19 +82,20 @@
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
    "evidence": [
-    "RUN-0083"
+    "RUN-0083",
+    "RUN-0089"
    ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-3",
    "title": "Ш-3 ФТ",
    "group": "g2",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-fr-documentation-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.2",
@@ -108,19 +111,20 @@
     "З-2"
    ],
    "evidence": [
-    "RUN-0086"
+    "RUN-0086",
+    "RUN-0089"
    ],
    "prod_version": "0.2",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-4",
    "title": "Ш-4 НФТ",
    "group": "g2",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-nfr-documentation-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.1",
@@ -135,18 +139,20 @@
    "active_stubs": [
     "З-2"
    ],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-5",
    "title": "Ш-5 UC, прогон 1",
    "group": "g2",
    "gate": "Г-С1, человек, ключевой",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-uc-modeling-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.1",
@@ -161,18 +167,20 @@
    "active_stubs": [
     "З-2"
    ],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-6",
    "title": "Ш-6 ОРР",
    "group": "g3",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-orr-solution-design-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.2",
@@ -186,19 +194,20 @@
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
    "evidence": [
-    "RUN-0086"
+    "RUN-0086",
+    "RUN-0089"
    ],
    "prod_version": "0.2",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-7",
    "title": "Ш-7 Ограничения",
    "group": "g3",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-constraints-documentation-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.1",
@@ -211,18 +220,20 @@
    "draft_sha_ok": true,
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-8",
    "title": "Ш-8 UC, прогон 2",
    "group": "g3",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-uc-modeling-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.1",
@@ -237,18 +248,20 @@
    "active_stubs": [
     "З-2"
    ],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-9",
    "title": "Ш-9 Риски и приёмка",
    "group": "g3",
    "gate": "—",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-extra-risk-analysis-stepwise.md",
    "main_published_exists": true,
    "main_version": "0.1",
@@ -261,11 +274,13 @@
    "draft_sha_ok": true,
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-В",
@@ -289,7 +304,8 @@
     "RUN-0081",
     "RUN-0082",
     "RUN-0084",
-    "RUN-0085"
+    "RUN-0085",
+    "RUN-0089"
    ],
    "prod_version": "0.3",
    "prod_text_same_as_main": true,
@@ -309,16 +325,18 @@
    "catalog_has_text": false,
    "catalog_archived": false,
    "draft_on_site": true,
-   "draft_version": "0.1",
+   "draft_version": "0.2",
    "draft_based_on_current": true,
    "draft_sha_ok": true,
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": null,
    "prod_text_same_as_main": false,
    "prod_kit": true,
-   "prod_step_current": true
+   "prod_step_current": false
   },
   {
    "step": "Ш-С",
@@ -340,7 +358,9 @@
    "active_stubs": [
     "З-2"
    ],
-   "evidence": [],
+   "evidence": [
+    "RUN-0089"
+   ],
    "prod_version": "0.1",
    "prod_text_same_as_main": true,
    "prod_kit": true,
@@ -357,7 +377,7 @@
  "prod": {
   "kit_available": true,
   "prompts": 53,
-  "steps_current": 13,
+  "steps_current": 4,
   "steps_total": 13,
   "catalog_texts_same_as_main": 12
  }
