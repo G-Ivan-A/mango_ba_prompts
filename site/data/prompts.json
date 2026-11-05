@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:32:55.923Z",
+  "generatedAt": "2026-11-05T12:05:54.843Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.4.0",
+    "version": "2.6.0",
     "released": "2026-11-05",
-    "issue": 450,
-    "basis": "PR #451: Ш-В v0.3, блок практики Ш-1, Ш-3, Ш-6, правила сессии Ш-0 (RUN-0085…0087), РТ-7",
+    "issue": 454,
+    "basis": "PR #455: шаги Ш-3…Ш-9 по тесту (RUN-0089), пакеты Ш-Р, запись решения гейта",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

@@ -3,7 +3,7 @@ id: mango-bcreq-uc-modeling-stepwise-by-test
 title: "BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)"
 status: draft
 version: 0.1
-updated: 2026-11-04
+updated: 2026-11-05
 temperature: 0.1
 operation: modeling
 processes: ["Требования и предварительное согласование", "Дизайн решения и оценка"]
@@ -290,6 +290,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 | Ш-5 | G-self | `llm`: самоотчёт в том же ответе | нет | Выполняет чек-лист и пишет его в receipt; маршрут не двигает |
 | Ш-5 | Г-С1 | `человек`; предпроверка — `гибрид` | да (КГ-1, КГ-2) | Только отчёт по Г-С1.1…Г-С1.5; исход не предлагает |
 | Ш-8 | G-self | `llm`: самоотчёт в том же ответе | нет | Выполняет чек-лист и пишет его в receipt; маршрут не двигает |
+
+**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5
+и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.
+У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа
+гейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:
+[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).
 
 ### Базовый стандарт
 

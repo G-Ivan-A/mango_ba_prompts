@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:32:57.629Z",
+  "generatedAt": "2026-11-05T12:05:56.512Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,16 +16,16 @@
     "archived": 14
   },
   "tests": {
-    "logs": 651,
-    "total": 15,
-    "coveredPrompts": 4
+    "logs": 709,
+    "total": 55,
+    "coveredPrompts": 14
   },
   "feedback": {
     "label": "prompt:feedback",
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 15,
+  "totalChecked": 55,
   "testsPassed": {
     "covered": 0,
     "total": 39,
@@ -60,27 +60,6 @@
   "activity": [],
   "prompts": [
     {
-      "id": "mango-bcreq-review-validation-oneshot",
-      "file": "bcreq-review-validation-oneshot.md",
-      "status": "archived",
-      "operation": "validation",
-      "processes": [
-        "Валидация второй ролью"
-      ],
-      "tests": 6,
-      "testFiles": [
-        "runs/2026/RUN-0079/logs/experiment-log.md",
-        "runs/2026/RUN-0079/outputs/README.md",
-        "runs/2026/RUN-0079/outputs/golden-set-report.md",
-        "runs/2026/RUN-0080/outputs/golden-set-report.md",
-        "runs/2026/RUN-0081/outputs/golden-set-report.md",
-        "runs/2026/RUN-0084/outputs/golden-set-report.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 6
-    },
-    {
       "id": "mango-bcreq-constitution-governance-oneshot",
       "file": "bcreq-constitution-governance-oneshot.md",
       "status": "archived",
@@ -88,17 +67,56 @@
       "processes": [
         "Конституция и управление"
       ],
-      "tests": 5,
+      "tests": 21,
       "testFiles": [
         "runs/2026/RUN-0083/logs/preregistration.md",
         "runs/2026/RUN-0083/outputs/P-transcript.md",
         "runs/2026/RUN-0083/outputs/T-transcript.md",
         "runs/2026/RUN-0086/outputs/r1/executor/S1-B.md",
-        "runs/2026/RUN-0086/outputs/r1/executor/S3-B.md"
+        "runs/2026/RUN-0086/outputs/r1/executor/S3-B.md",
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-3/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-3в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-4/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-5/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-1/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-1в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-2/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-2в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-3/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-3в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-4/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-5/transcript.md",
+        "runs/2026/RUN-0089/outputs/K-transcript.md",
+        "runs/2026/RUN-0089/outputs/T-transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 5
+      "usage": 21
+    },
+    {
+      "id": "mango-bcreq-review-validation-oneshot",
+      "file": "bcreq-review-validation-oneshot.md",
+      "status": "archived",
+      "operation": "validation",
+      "processes": [
+        "Валидация второй ролью"
+      ],
+      "tests": 8,
+      "testFiles": [
+        "runs/2026/RUN-0079/logs/experiment-log.md",
+        "runs/2026/RUN-0079/outputs/README.md",
+        "runs/2026/RUN-0079/outputs/golden-set-report.md",
+        "runs/2026/RUN-0080/outputs/golden-set-report.md",
+        "runs/2026/RUN-0081/outputs/golden-set-report.md",
+        "runs/2026/RUN-0084/outputs/golden-set-report.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 8
     },
     {
       "id": "mango-bcreq-context-understanding-stepwise",
@@ -108,14 +126,16 @@
       "processes": [
         "Приём и контекст"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0083/outputs/P-transcript.md",
-        "runs/2026/RUN-0083/outputs/T-transcript.md"
+        "runs/2026/RUN-0083/outputs/T-transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 2
+      "usage": 4
     },
     {
       "id": "mango-bcreq-products-impact-analysis-stepwise",
@@ -125,14 +145,185 @@
       "processes": [
         "Приём и контекст"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0083/outputs/P-transcript.md",
-        "runs/2026/RUN-0083/outputs/T-transcript.md"
+        "runs/2026/RUN-0083/outputs/T-transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 4
+    },
+    {
+      "id": "mango-bcreq-fr-documentation-stepwise",
+      "file": "bcreq-fr-documentation-stepwise.md",
+      "status": "archived",
+      "operation": "documentation",
+      "processes": [
+        "Требования и предварительное согласование"
+      ],
+      "tests": 3,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-3в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 3
+    },
+    {
+      "id": "mango-bcreq-constraints-documentation-stepwise",
+      "file": "bcreq-constraints-documentation-stepwise.md",
+      "status": "archived",
+      "operation": "documentation",
+      "processes": [
+        "Дизайн решения и оценка"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
       "usage": 2
+    },
+    {
+      "id": "mango-bcreq-extra-risk-analysis-stepwise",
+      "file": "bcreq-extra-risk-analysis-stepwise.md",
+      "status": "archived",
+      "operation": "risk_analysis",
+      "processes": [
+        "Дизайн решения и оценка"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-nfr-documentation-stepwise",
+      "file": "bcreq-nfr-documentation-stepwise.md",
+      "status": "archived",
+      "operation": "documentation",
+      "processes": [
+        "Требования и предварительное согласование"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-orr-solution-design-stepwise",
+      "file": "bcreq-orr-solution-design-stepwise.md",
+      "status": "archived",
+      "operation": "solution_design",
+      "processes": [
+        "Дизайн решения и оценка"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-scenarios-modeling-oneshot",
+      "file": "bcreq-scenarios-modeling-oneshot.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Сценарии вне документа"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-uc-modeling-stepwise",
+      "file": "bcreq-uc-modeling-stepwise.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Требования и предварительное согласование",
+        "Дизайн решения и оценка"
+      ],
+      "tests": 2,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 2
+    },
+    {
+      "id": "mango-bcreq-core-documentation-oneshot",
+      "file": "bcreq-core-documentation-oneshot.md",
+      "status": "archived",
+      "operation": "documentation",
+      "processes": [
+        "Требования и предварительное согласование"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "mango-bcreq-in-understanding-oneshot",
+      "file": "bcreq-in-understanding-oneshot.md",
+      "status": "archived",
+      "operation": "understanding",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
+    },
+    {
+      "id": "mango-bcreq-work-solution-design-oneshot",
+      "file": "bcreq-work-solution-design-oneshot.md",
+      "status": "archived",
+      "operation": "solution_design",
+      "processes": [
+        "Дизайн решения и оценка"
+      ],
+      "tests": 1,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 1
     },
     {
       "id": "mango-bcreq-c01-intake",
@@ -727,147 +918,6 @@
         "A-CORE · Требования",
         "A-WORK · Решение",
         "A-RELEASE · Выпуск"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-constraints-documentation-stepwise",
-      "file": "bcreq-constraints-documentation-stepwise.md",
-      "status": "archived",
-      "operation": "documentation",
-      "processes": [
-        "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-core-documentation-oneshot",
-      "file": "bcreq-core-documentation-oneshot.md",
-      "status": "archived",
-      "operation": "documentation",
-      "processes": [
-        "Требования и предварительное согласование"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-extra-risk-analysis-stepwise",
-      "file": "bcreq-extra-risk-analysis-stepwise.md",
-      "status": "archived",
-      "operation": "risk_analysis",
-      "processes": [
-        "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-fr-documentation-stepwise",
-      "file": "bcreq-fr-documentation-stepwise.md",
-      "status": "archived",
-      "operation": "documentation",
-      "processes": [
-        "Требования и предварительное согласование"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-in-understanding-oneshot",
-      "file": "bcreq-in-understanding-oneshot.md",
-      "status": "archived",
-      "operation": "understanding",
-      "processes": [
-        "Приём и контекст"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-nfr-documentation-stepwise",
-      "file": "bcreq-nfr-documentation-stepwise.md",
-      "status": "archived",
-      "operation": "documentation",
-      "processes": [
-        "Требования и предварительное согласование"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-orr-solution-design-stepwise",
-      "file": "bcreq-orr-solution-design-stepwise.md",
-      "status": "archived",
-      "operation": "solution_design",
-      "processes": [
-        "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-scenarios-modeling-oneshot",
-      "file": "bcreq-scenarios-modeling-oneshot.md",
-      "status": "archived",
-      "operation": "modeling",
-      "processes": [
-        "Сценарии вне документа"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-uc-modeling-stepwise",
-      "file": "bcreq-uc-modeling-stepwise.md",
-      "status": "archived",
-      "operation": "modeling",
-      "processes": [
-        "Требования и предварительное согласование",
-        "Дизайн решения и оценка"
-      ],
-      "tests": 0,
-      "testFiles": [],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 0
-    },
-    {
-      "id": "mango-bcreq-work-solution-design-oneshot",
-      "file": "bcreq-work-solution-design-oneshot.md",
-      "status": "archived",
-      "operation": "solution_design",
-      "processes": [
-        "Дизайн решения и оценка"
       ],
       "tests": 0,
       "testFiles": [],

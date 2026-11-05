@@ -1309,8 +1309,20 @@ function rerenderInteractive() {
   }
 }
 
+// Панель карточки прилипает под верхней панелью: её высота зависит от ширины окна.
+function trackTopbarHeight() {
+  const topbar = document.querySelector(".topbar");
+  if (!topbar) {
+    return;
+  }
+  new ResizeObserver(() => {
+    document.documentElement.style.setProperty("--topbar-height", `${topbar.offsetHeight}px`);
+  }).observe(topbar);
+}
+
 async function init() {
   initTheme();
+  trackTopbarHeight();
   try {
     // Данные каталога загружаются только после ввода пароля (site/gate.js).
     await (window.siteGate?.ready ?? Promise.resolve());
@@ -1463,24 +1475,103 @@ function testKitVariant(step, kind) {
   return kind === "draft" ? step.draft : step.published;
 }
 
-function testKitCopyButton(step, index, kind, primary) {
+function testKitAssignedKind(step) {
+  return step.mode === "by-test" ? "draft" : "published";
+}
+
+function testKitEditionLabel(step, kind) {
+  return kind === "draft" ? "по тесту" : `v${step.published.version}`;
+}
+
+// Текст опубликованной редакции — из каталога (архивный промпт), черновика — из
+// test-kit.json. Один источник для чтения и копирования (issue #460).
+function testKitBody(step, kind) {
+  if (kind === "draft") {
+    return step.draft?.body || "";
+  }
+  return state.prompts.find((item) => item.id === step.published?.id)?.body || "";
+}
+
+// Контейнер чтения (issue #460): текст выбранной редакции прокручивается внутри
+// контейнера, панель с переключателем и копированием прилипает при прокрутке страницы.
+function testKitReader(step, index) {
+  const assigned = testKitAssignedKind(step);
+  const other = assigned === "draft" ? "published" : "draft";
+  const kinds = [assigned, other].filter((kind) => testKitVariant(step, kind));
+
+  const switcher = el("div", "testkit-edition");
+  switcher.setAttribute("role", "group");
+  switcher.setAttribute("aria-label", `Редакция промпта шага ${step.step}`);
+  switcher.append(
+    ...kinds.map((kind) => {
+      const button = el("button", "testkit-edition-button", testKitEditionLabel(step, kind));
+      button.type = "button";
+      button.dataset.testkitEdition = kind;
+      button.disabled = kinds.length === 1;
+      return button;
+    }),
+  );
+
+  const copy = el("button", "testkit-copy", "⧉ Копировать");
+  copy.type = "button";
+  copy.dataset.testkitIndex = String(index);
+
+  const bar = el("div", "testkit-reader-bar");
+  bar.append(switcher, copy);
+
+  const text = el("pre", "testkit-prompt-text");
+  text.tabIndex = 0;
+  text.setAttribute("role", "region");
+  text.setAttribute("aria-label", `Текст промпта шага ${step.step}`);
+
+  const note = el("p", "testkit-reader-note");
+  note.setAttribute("aria-live", "polite");
+
+  const reader = el("div", "testkit-reader");
+  reader.append(bar, note, text);
+  return reader;
+}
+
+function selectTestKitEdition(item, kind) {
+  const step = state.testKit.steps[Number(item.dataset.testkitStep)];
   const variant = testKitVariant(step, kind);
-  const label = kind === "draft" ? "по тесту" : `v${step.published.version}`;
-  const button = el("button", primary ? "copy-icon" : "testkit-alt", primary ? "⧉" : `⧉ ${label}`);
-  button.type = "button";
-  button.dataset.testkitIndex = String(index);
-  button.dataset.testkitKind = kind;
-  button.title = `Скопировать ${variant.file} (${label})`;
-  button.setAttribute("aria-label", `Скопировать промпт шага ${step.step}: ${label}`);
-  return button;
+  const label = testKitEditionLabel(step, kind);
+  const assigned = testKitAssignedKind(step);
+
+  for (const button of item.querySelectorAll("[data-testkit-edition]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.testkitEdition === kind));
+  }
+  const copy = item.querySelector(".testkit-copy");
+  copy.dataset.testkitKind = kind;
+  copy.title = `Скопировать ${variant.file} (${label})`;
+  copy.setAttribute("aria-label", `Скопировать промпт шага ${step.step}: ${label}`);
+
+  const text = item.querySelector(".testkit-prompt-text");
+  text.textContent = testKitBody(step, kind) || "Текст редакции не найден в каталоге.";
+  text.scrollTop = 0;
+
+  const note = item.querySelector(".testkit-reader-note");
+  note.dataset.comparison = String(kind !== assigned);
+  if (kind !== assigned) {
+    note.textContent = `Редакция для сравнения. Для теста шагу назначена редакция «${testKitEditionLabel(step, assigned)}».`;
+  } else if (item.querySelectorAll("[data-testkit-edition]").length === 1) {
+    note.textContent = "Единственная редакция шага: сравнивать не с чем.";
+  } else {
+    note.textContent = "Эта редакция назначена шагу для теста.";
+  }
+
+  const link = item.querySelector(".bcreq-step-prompt a");
+  link.textContent = variant.title || variant.file;
+  link.title = variant.file;
+  link.href = variant.url;
+  item.querySelector(".testkit-sha").textContent = `${variant.file} · sha256 ${variant.sha256.slice(0, 16)}`;
 }
 
 function testKitStep(step, index) {
-  const primaryKind = step.mode === "by-test" ? "draft" : "published";
-  const primary = testKitVariant(step, primaryKind);
   const item = el("li", "bcreq-step testkit-step");
   item.dataset.mode = step.mode;
   item.dataset.group = step.group;
+  item.dataset.testkitStep = String(index);
   item.id = `bcreq-testkit-step-${index + 1}`;
   item.tabIndex = -1;
 
@@ -1495,12 +1586,10 @@ function testKitStep(step, index) {
   mode.dataset.mode = step.mode;
   tags.append(mode);
   titleWrap.append(tags);
-  head.append(number, titleWrap, testKitCopyButton(step, index, primaryKind, true));
+  head.append(number, titleWrap);
 
   const prompt = el("p", "bcreq-step-prompt");
-  const link = el("a", "", primary.title || primary.file);
-  link.title = primary.file;
-  link.href = primary.url;
+  const link = el("a", "");
   link.target = "_blank";
   link.rel = "noreferrer";
   prompt.append(el("span", "bcreq-field-label", "Промпт"), link);
@@ -1511,8 +1600,8 @@ function testKitStep(step, index) {
   const actions = el("ol", "bcreq-actions");
   actions.append(...step.actions.map((action) => el("li", "", action)));
 
-  item.append(
-    head,
+  const info = el("div", "testkit-step-info");
+  info.append(
     el("p", "testkit-purpose", step.purpose),
     prompt,
     bcreqField("Что подготовить", step.prepare, "prepare"),
@@ -1524,23 +1613,18 @@ function testKitStep(step, index) {
     const gate = el("p", "bcreq-gate");
     gate.dataset.field = "gate";
     gate.append(el("strong", "", `⛳ ${step.gate}. `), document.createTextNode(step.gateHint));
-    item.append(gate);
+    info.append(gate);
   }
 
-  // Сравнение редакций и SHA — для проверяющего, свёрнуто по умолчанию.
-  const otherKind = primaryKind === "draft" ? "published" : "draft";
+  // SHA выбранной редакции — для проверяющего, свёрнуто по умолчанию.
   const more = el("details", "testkit-more");
-  more.append(el("summary", "", "Для проверяющего"));
-  if (testKitVariant(step, otherKind)) {
-    const other = el("p", "testkit-other");
-    other.append(
-      el("span", "bcreq-field-label", "Другая редакция для сравнения"),
-      testKitCopyButton(step, index, otherKind, false),
-    );
-    more.append(other);
-  }
-  more.append(el("code", "testkit-sha", `${primary.file} · sha256 ${primary.sha256.slice(0, 16)}`));
-  item.append(more);
+  more.append(el("summary", "", "Для проверяющего"), el("code", "testkit-sha"));
+  info.append(more);
+
+  const layout = el("div", "testkit-step-layout");
+  layout.append(info, testKitReader(step, index));
+  item.append(head, layout);
+  selectTestKitEdition(item, testKitAssignedKind(step));
   return item;
 }
 
@@ -1586,6 +1670,7 @@ function renderTestKit() {
 // Подстраницы «Процессов» (issue #448): этапы тестового набора по логике
 // формирования документа, полный процесс из 39 классов и согласование.
 // Адрес — #processes?view=<id>; #processes?step=<N> открывает полный процесс.
+const TEST_KIT_ALL_VIEW = "all";
 const PROCESS_VIEWS_EXTRA = [
   { id: "manual", title: "Полный процесс (39 классов)", section: "bcreq-manual" },
   { id: "approval", title: "Согласование", section: "bcreq-approval" },
@@ -1594,6 +1679,8 @@ const PROCESS_VIEWS_EXTRA = [
 function processViews() {
   const groups = state.testKit?.groups || [];
   return [
+    // Первая вкладка открывается по умолчанию: БА сразу видит все шаги (issue #460).
+    { id: TEST_KIT_ALL_VIEW, title: "Все шаги", count: state.testKit?.counts.steps, section: "bcreq-testkit" },
     ...groups.map((group) => ({
       id: group.id,
       title: `${group.number}. ${group.title}`,
@@ -1646,7 +1733,7 @@ function applyProcessView(view) {
     nodes.processHelp.hidden = current.section !== "bcreq-testkit";
   }
   for (const group of nodes.testKitSteps?.querySelectorAll(".testkit-group") || []) {
-    group.hidden = group.dataset.group !== current.id;
+    group.hidden = current.id !== TEST_KIT_ALL_VIEW && group.dataset.group !== current.id;
   }
 }
 
@@ -1657,10 +1744,8 @@ async function copyTestKitPrompt(button) {
     showToast("Промпт не найден в тестовом наборе");
     return;
   }
-  // Текст v0.1 — из каталога (архивный промпт), черновика — из test-kit.json.
-  const body = button.dataset.testkitKind === "draft"
-    ? variant.body
-    : state.prompts.find((item) => item.id === variant.id)?.body;
+  const kind = button.dataset.testkitKind;
+  const body = testKitBody(step, kind);
   if (!body) {
     showToast(`Промпт ${variant.id} не найден в каталоге`);
     return;
@@ -1670,7 +1755,8 @@ async function copyTestKitPrompt(button) {
     // и на каком шаге применён (issue #448).
     await copyText(`<!-- ${variant.id} · ${step.step} -->\n\n${body}`);
     button.dataset.copied = "true";
-    showToast(`${variant.file} скопирован`);
+    // У черновика и опубликованного промпта одно имя файла: редакция — в уведомлении.
+    showToast(`${variant.file} (${testKitEditionLabel(step, kind)}) скопирован`);
     window.setTimeout(() => {
       button.dataset.copied = "false";
     }, 1400);
@@ -1680,6 +1766,11 @@ async function copyTestKitPrompt(button) {
 }
 
 nodes.testKitSteps?.addEventListener("click", async (event) => {
+  const edition = event.target.closest("[data-testkit-edition]");
+  if (edition) {
+    selectTestKitEdition(edition.closest(".testkit-step"), edition.dataset.testkitEdition);
+    return;
+  }
   const button = event.target.closest("[data-testkit-index]");
   if (button) {
     await copyTestKitPrompt(button);

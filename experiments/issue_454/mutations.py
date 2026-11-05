@@ -13,7 +13,7 @@ M = [(B, "| BL-232 | [Публикация сайта на прод и приё�
      (B, "BL-230, BL-231, BL-232 `DONE`", "BL-230, BL-231 `DONE`"),
      (RFC, "| ЧАСТИЧНО | исполнитель |", "| DONE | исполнитель |"),
      (RFC, "| DONE, DONE |", "| DONE |"),
-     (RFC, "| Ш-Р | `bcreq-release-readiness-oneshot` | by-test | нет | нет | нет | заглушка шага | BL-232, затем BL-169 |\n", ""),
+     (RFC, "| Ш-Р | `bcreq-release-readiness-oneshot` | by-test | нет | нет | нет | заглушка шага | BL-232, затем BL-170 |\n", ""),
      (RFC, "| Ш-В | `bcreq-review-validation-oneshot` | published | 0.3 |", "| Ш-В | `bcreq-review-validation-oneshot` | published | 0.2 |"),
      (RFC, "| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test |", "| Ш-0 | `bcreq-constitution-governance-oneshot` | published |"),
      (RFC, "**Пробел П-6**, задачи нет", "задачи нет"),
