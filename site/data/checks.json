@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T12:05:56.512Z",
+  "generatedAt": "2026-11-05T14:55:15.795Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 14
   },
   "tests": {
-    "logs": 709,
-    "total": 55,
+    "logs": 806,
+    "total": 89,
     "coveredPrompts": 14
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 55,
+  "totalChecked": 89,
   "testsPassed": {
     "covered": 0,
     "total": 39,
@@ -67,7 +67,7 @@
       "processes": [
         "Конституция и управление"
       ],
-      "tests": 21,
+      "tests": 37,
       "testFiles": [
         "runs/2026/RUN-0083/logs/preregistration.md",
         "runs/2026/RUN-0083/outputs/P-transcript.md",
@@ -77,6 +77,7 @@
         "runs/2026/RUN-0088/outputs/steps/T-Ш-3/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/T-Ш-3в/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/T-Ш-4/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/T-Ш-4в/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/T-Ш-5/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-1/transcript.md",
@@ -86,14 +87,29 @@
         "runs/2026/RUN-0088/outputs/steps/Ш-3/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-3в/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-4/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-4в/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-5/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-5в/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-6/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-7/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-8/transcript.md",
+        "runs/2026/RUN-0088/outputs/steps/Ш-9/transcript.md",
         "runs/2026/RUN-0089/outputs/K-transcript.md",
         "runs/2026/RUN-0089/outputs/T-transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/logs/session-journal.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/logs/session-journal.md",
+        "runs/2026/RUN-0092/outputs/gate-c1-01-dialogue.md",
+        "runs/2026/RUN-0092/outputs/gate-c1-99-executor-log.md",
+        "runs/2026/RUN-0092/outputs/gate-in-01-dialogue.md",
+        "runs/2026/RUN-0092/outputs/gate-in-99-executor-log.md",
+        "runs/2026/RUN-0092/outputs/sc-01-dialogue.md",
+        "runs/2026/RUN-0092/outputs/sc-99-executor-log.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 21
+      "usage": 37
     },
     {
       "id": "mango-bcreq-review-validation-oneshot",
@@ -103,7 +119,7 @@
       "processes": [
         "Валидация второй ролью"
       ],
-      "tests": 8,
+      "tests": 10,
       "testFiles": [
         "runs/2026/RUN-0079/logs/experiment-log.md",
         "runs/2026/RUN-0079/outputs/README.md",
@@ -112,11 +128,13 @@
         "runs/2026/RUN-0081/outputs/golden-set-report.md",
         "runs/2026/RUN-0084/outputs/golden-set-report.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 8
+      "usage": 10
     },
     {
       "id": "mango-bcreq-context-understanding-stepwise",
@@ -126,16 +144,18 @@
       "processes": [
         "Приём и контекст"
       ],
-      "tests": 4,
+      "tests": 6,
       "testFiles": [
         "runs/2026/RUN-0083/outputs/P-transcript.md",
         "runs/2026/RUN-0083/outputs/T-transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 4
+      "usage": 6
     },
     {
       "id": "mango-bcreq-products-impact-analysis-stepwise",
@@ -145,16 +165,18 @@
       "processes": [
         "Приём и контекст"
       ],
-      "tests": 4,
+      "tests": 6,
       "testFiles": [
         "runs/2026/RUN-0083/outputs/P-transcript.md",
         "runs/2026/RUN-0083/outputs/T-transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 4
+      "usage": 6
     },
     {
       "id": "mango-bcreq-fr-documentation-stepwise",
@@ -164,15 +186,17 @@
       "processes": [
         "Требования и предварительное согласование"
       ],
-      "tests": 3,
+      "tests": 5,
       "testFiles": [
         "runs/2026/RUN-0088/outputs/steps/T-Ш-3в/transcript.md",
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 3
+      "usage": 5
     },
     {
       "id": "mango-bcreq-constraints-documentation-stepwise",
@@ -182,14 +206,16 @@
       "processes": [
         "Дизайн решения и оценка"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 2
+      "usage": 4
     },
     {
       "id": "mango-bcreq-extra-risk-analysis-stepwise",
@@ -199,14 +225,16 @@
       "processes": [
         "Дизайн решения и оценка"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 2
+      "usage": 4
     },
     {
       "id": "mango-bcreq-nfr-documentation-stepwise",
@@ -216,14 +244,16 @@
       "processes": [
         "Требования и предварительное согласование"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 2
+      "usage": 4
     },
     {
       "id": "mango-bcreq-orr-solution-design-stepwise",
@@ -233,31 +263,16 @@
       "processes": [
         "Дизайн решения и оценка"
       ],
-      "tests": 2,
+      "tests": 4,
       "testFiles": [
         "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 2
-    },
-    {
-      "id": "mango-bcreq-scenarios-modeling-oneshot",
-      "file": "bcreq-scenarios-modeling-oneshot.md",
-      "status": "archived",
-      "operation": "modeling",
-      "processes": [
-        "Сценарии вне документа"
-      ],
-      "tests": 2,
-      "testFiles": [
-        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
-        "runs/2026/RUN-0089/outputs/common-transcript.md"
-      ],
-      "feedback": 0,
-      "feedbackIssues": [],
-      "usage": 2
+      "usage": 4
     },
     {
       "id": "mango-bcreq-uc-modeling-stepwise",
@@ -267,6 +282,25 @@
       "processes": [
         "Требования и предварительное согласование",
         "Дизайн решения и оценка"
+      ],
+      "tests": 4,
+      "testFiles": [
+        "runs/2026/RUN-0088/outputs/steps/Ш-0/transcript.md",
+        "runs/2026/RUN-0089/outputs/common-transcript.md",
+        "runs/2026/RUN-0090/outputs/transcripts/transcript-Ш-0.md",
+        "runs/2026/RUN-0091/outputs/transcripts/transcript-Ш-0.md"
+      ],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 4
+    },
+    {
+      "id": "mango-bcreq-scenarios-modeling-oneshot",
+      "file": "bcreq-scenarios-modeling-oneshot.md",
+      "status": "archived",
+      "operation": "modeling",
+      "processes": [
+        "Сценарии вне документа"
       ],
       "tests": 2,
       "testFiles": [
