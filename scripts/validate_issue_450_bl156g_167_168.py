@@ -117,8 +117,8 @@ class Backlog(unittest.TestCase):
     def test_chain(self):
         self.assertIn("**Движение по цепочке (на 2026-11-05, issue #450).**", self.backlog)
         for code in ("BL-167", "BL-168"):
-            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| review \|")
-        self.assertIn("BL-156г — `review` (PR #451)", self.backlog)
+            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")
+        self.assertIn("BL-156г — `DONE` (PR #451 слит", self.backlog)
         self.assertRegex(self.backlog, r"(?m)^\| BL-157 \|.*\| deferred \(triggered\) \|")
 
     def test_r18_accepted(self):
