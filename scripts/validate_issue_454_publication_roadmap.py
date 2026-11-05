@@ -106,7 +106,8 @@ class Roadmap(unittest.TestCase):
 
     def test_audit_backs_the_stated_value(self):
         facts = json.loads(read("experiments/issue_454/audit_flow_coverage.json"))
-        self.assertEqual(facts["prod"]["steps_total"], len(self.kit["steps"]))
+        # Снимок прода снят на 13 шагах; Ш-А (issue #464) появится на проде с деплоем 2.7.0.
+        self.assertEqual(facts["prod"]["steps_total"], len([s for s in self.kit["steps"] if not s["step"].startswith("Ш-А")]))
         current = facts["prod"]["steps_current"]
         self.assertIn(f"**{current} из {facts['prod']['steps_total']}**", self.rfc, UPDATE)
         run = subprocess.run([sys.executable, str(ROOT / "experiments/issue_454/audit_flow_coverage.py"), "--offline"],
