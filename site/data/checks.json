@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:24:05.602Z",
+  "generatedAt": "2026-11-05T05:31:15.674Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,8 +16,8 @@
     "archived": 14
   },
   "tests": {
-    "logs": 557,
-    "total": 13,
+    "logs": 651,
+    "total": 15,
     "coveredPrompts": 4
   },
   "feedback": {
@@ -25,7 +25,7 @@
     "total": 0,
     "prompts": 0
   },
-  "totalChecked": 13,
+  "totalChecked": 15,
   "testsPassed": {
     "covered": 0,
     "total": 39,
@@ -88,15 +88,17 @@
       "processes": [
         "Конституция и управление"
       ],
-      "tests": 3,
+      "tests": 5,
       "testFiles": [
         "runs/2026/RUN-0083/logs/preregistration.md",
         "runs/2026/RUN-0083/outputs/P-transcript.md",
-        "runs/2026/RUN-0083/outputs/T-transcript.md"
+        "runs/2026/RUN-0083/outputs/T-transcript.md",
+        "runs/2026/RUN-0086/outputs/r1/executor/S1-B.md",
+        "runs/2026/RUN-0086/outputs/r1/executor/S3-B.md"
       ],
       "feedback": 0,
       "feedbackIssues": [],
-      "usage": 3
+      "usage": 5
     },
     {
       "id": "mango-bcreq-context-understanding-stepwise",

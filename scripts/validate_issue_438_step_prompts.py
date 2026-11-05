@@ -493,8 +493,8 @@ class DecisionsTest(unittest.TestCase):
         if BL156_STARTED:
             for pr in ("PR #445", "PR #447", "PR #449"):
                 self.assertIn(pr, rows["BL-156"][5])
-            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `review` (PR #449)",
-                           "RUN-0084", "RUN-0082", "BL-156г — `TODO`"):
+            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `DONE` (PR #449)",
+                           "RUN-0084", "RUN-0082", "BL-156г — `review` (PR #451)"):
                 self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
@@ -525,10 +525,10 @@ class DecisionsTest(unittest.TestCase):
                 body = re.search(rf"(?ms)^#### {stage}\..*?(?=^#{{3,4}} )", text).group(0)
                 self.assertIn("**Исполнение.** Issue #448, PR #449", body, stage)
                 self.assertIn("RUN-0084", body, stage)
-                self.assertIn("**Статус.** `review` (PR #449).", body, stage)
+                self.assertIn("**Статус.** `DONE` (PR #449", body, stage)
             bl156g = re.search(r"(?ms)^#### BL-156г\..*?(?=^#{3,4} )", text).group(0)
             self.assertIn("GS-BCREQ-25", bl156g)
-            self.assertIn("**Статус.** `TODO`", bl156g)
+            self.assertIn("**Статус.** `review` (PR #451)", bl156g)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         for stage in ("#### BL-157б. Комплект прогона: промпты по тесту", "#### BL-157в. Первый прогон BL-111 с комплектом"):

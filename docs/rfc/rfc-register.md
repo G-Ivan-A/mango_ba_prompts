@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.19
-updated: 2026-11-04
+version: 0.20
+updated: 2026-11-05
 ai-generated: true
 type: register
 scope: governance
@@ -447,3 +447,6 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   разбор шести выгрузок чатов БА (BL-157в), задачи BL-167, BL-168 и
   решение Р-18; РТ-7 создана владельцем (runtime #22). Статус `accepted`
   не меняется.
+- **2026-11-05** — issue #450 (PR #451): RFC-RT-001 v0.7, поправка 0.7 —
+  раздел 16: РТ-7 слита, Р-1 снят; BL-156г, BL-167, BL-168 по RUN-0085…0087.
+  Статус `accepted` не меняется.

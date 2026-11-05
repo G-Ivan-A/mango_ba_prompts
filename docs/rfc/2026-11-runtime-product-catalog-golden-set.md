@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.6
-updated: 2026-11-04
+version: 0.7
+updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
@@ -1088,6 +1088,21 @@ Issue [#448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448)
 
 Для runtime разбор новых задач не даёт: правки касаются промптов и
 ведения сессии, а не справочников. Пробел Р-1 закрывает РТ-7.
+
+## 16. Поправка 0.7: исполнение BL-156г, BL-167, BL-168 и РТ-7 (issue #450)
+
+РТ-7 слита ([runtime PR #23](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/23)):
+реестр справочников 0.5 указывает срез `68ad8fcf`, промпты и черновики идут
+маршрутом `sections_toc`. **Пробел Р-1 раздела 14.2 снят.**
+
+| Задача | Прогон | Итог |
+| --- | --- | --- |
+| BL-156г | [RUN-0085](../../runs/2026/RUN-0085/outputs/golden-set-report.md) | Ш-В v0.3 |
+| BL-167 | [RUN-0086](../../runs/2026/RUN-0086/outputs/golden-set-report.md) | Ш-1, Ш-3, Ш-6 v0.2 |
+| BL-168 | [RUN-0087](../../runs/2026/RUN-0087/outputs/golden-set-report.md) | Ш-0 v0.2 |
+
+Р-18 принято и применено во всех трёх пред-регистрациях. Все оценки —
+модель-судья без калибровки по БА: приёмку даёт только BL-157в.
 
 ## Related Artifacts
 

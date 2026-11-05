@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:24:05.666Z",
+  "generatedAt": "2026-11-05T05:31:15.727Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/bcreq-run-kit.md",
@@ -7,7 +7,7 @@
     }
   ],
   "kit": {
-    "version": "0.4",
+    "version": "0.5",
     "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md"
   },
   "groups": [

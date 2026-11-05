@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.4
-updated: 2026-11-04
+version: 0.5
+updated: 2026-11-05
 ai-generated: true
 type: process
 scope: bcreq-run-kit
@@ -33,9 +33,11 @@ related_issues:
 синтетический прогон [RUN-0083](../../runs/2026/RUN-0083/outputs/report.md)
 дал черновикам 12 из 12 критериев против 10 из 12 у v0.1 при правиле,
 записанном до прогона. Остальные шаги идут по промптам `prompts/`
-(`published`): v0.1, кроме Ш-В — v0.2 по замеру
-[RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md)
-(issue #448, Р-03). Первый прогон BL-111 с комплектом на реальной задаче —
+(`published`): v0.1, кроме Ш-В — v0.3 ([RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md),
+[RUN-0085](../../runs/2026/RUN-0085/outputs/golden-set-report.md)) и Ш-3, Ш-6 — v0.2
+([RUN-0086](../../runs/2026/RUN-0086/outputs/golden-set-report.md)). Ш-0 и Ш-1 в черновиках
+содержат правки [RUN-0087](../../runs/2026/RUN-0087/outputs/golden-set-report.md) и RUN-0086;
+измерены опубликованные тексты, черновики пересобраны на них и как целое не измерены. Первый прогон BL-111 с комплектом на реальной задаче —
 BL-157в; до него комплект проверен только синтетикой
 ([разбор готовности](../analysis/2026-11-04-bl-156-157-readiness-check.md)).
 
@@ -73,8 +75,12 @@ BL-157в; до него комплект проверен только синт�
 | 12 | Ш-Р Выпуск | заглушка выпуска (пилот) | `by-test` (заглушка) | [заглушка Ш-Р](../../prompts/drafts/bcreq-release-readiness-oneshot.md) | нет ключа: новый — через BL-112 | Выпуск, `человек`, ключевой |
 | — | Ш-С Сценарии по запросу | [`bcreq-scenarios-modeling-oneshot`](../../prompts/bcreq-scenarios-modeling-oneshot.md) | `published` | [`drafts/bcreq-scenarios-modeling-oneshot`](../../prompts/drafts/bcreq-scenarios-modeling-oneshot.md) | `scenarios` | — |
 
+Блок Ш-3 v0.2 «Отраслевая практика — на решение БА» заменяет блок «Индустриально
+значимые — на решение БА» из `standards/bcreq-sections/03-functional-requirements.md`:
+смысл тот же, стандарт по тесту заморожен, название согласует BL-158.
+
 Колонка «Промпт для копирования» — опубликованные промпты из
-`prompts/` (v0.1; Ш-В — v0.2). Колонка «Черновик «по тесту»» — промпты
+`prompts/` (v0.1; Ш-0, Ш-1, Ш-3, Ш-6 — v0.2; Ш-В — v0.3). Колонка «Черновик «по тесту»» — промпты
 шагов BL-156 из `prompts/drafts/`: опубликованный текст без изменений
 плюс блок стандартов «по тесту», собранный сборщиком `scripts/build_bcreq_step_prompts.py`
 ([отчёт BL-156](../analysis/2026-11-03-bl-156-step-prompts-report.md)).
@@ -95,7 +101,7 @@ BL-157в; до него комплект проверен только синт�
   дефектов 0 против 54/62, 9/11, 0 у v0.1. Опубликована как
   `prompts/` v0.2. Черновик «по тесту» пересобран на v0.2 и не измерен,
   поэтому шаг остаётся `published`. Известная регрессия v0.2 —
-  GS-BCREQ-25 (провал 3 из 3, вне ядра) — BL-156г;
+  GS-BCREQ-25 (провал 3 из 3, вне ядра) — снята в Ш-В v0.3, RUN-0085 (BL-156г);
 - Ш-0, Ш-1, Ш-2 — синтетический прогон A-IN
   ([RUN-0083](../../runs/2026/RUN-0083/outputs/report.md), N = 1);
 - Ш-3…Ш-9, Ш-С — не измерены, остаются `published`.
@@ -183,11 +189,11 @@ prompt_ref:              # по строке на каждый выполнен�
   - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.2"}
 runtime:
   repo: G-Ivan-A/mango-ba-ai-runtime
-  commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855   # срез реестра runtime 0.4, раздел 2
+  commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855   # срез реестра runtime 0.5, раздел 2
 standards:               # версии стандартов «по тесту», если mode: by-test
   base: standards/bcreq-prompt-base-standard.md@0.1.3
   profiles: standards/bcreq-prompt-profiles.md@0.1.1
-  runtime_references: standards/bcreq-runtime-references.md@0.4
+  runtime_references: standards/bcreq-runtime-references.md@0.5
 lessons: []              # L-NN из формы обратной связи (раздел 4)
 ba_reviewed: false       # true — БА прочитал результат и форму целиком
 notes: []                # недоступные модели ссылки («Режим fallback»), приложенные файлы, отклонения
