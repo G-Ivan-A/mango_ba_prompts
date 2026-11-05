@@ -1,9 +1,9 @@
 caught pr-ops/BACKLOG.md | BL-232 | [Публикация сайта на прод и п
 caught pr-ops/BACKLOG.md BL-156г — `DONE`
 caught pr-ops/BACKLOG.md **Движение по цепочке (на 2026-11-05, is
-caught pr-ops/BACKLOG.md | Текущий — закрывается | Роадмэп
+caught pr-ops/BACKLOG.md | Текущий — закрывается |
 caught pr-ops/BACKLOG.md | Р-15, Р-19; этап BL-157в — BL-111, BL-
-caught pr-ops/BACKLOG.md BL-230, BL-231, BL-232 `DONE`
+caught pr-ops/BACKLOG.md BL-231, BL-232, BL-233
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | ЧАСТИЧНО | исполнитель |
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DONE, DONE |
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | Ш-Р | `bcreq-release-readiness-oneshot
@@ -11,13 +11,24 @@ caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | Ш-В | `bcreq-re
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | Ш-0 | `bcreq-constitution-governance-o
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **Пробел П-6**, задачи нет
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md #bl-232-публикация-сайта-на-прод-и-приём
-caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **0 из 13**
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **4 из 13**
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | 7.11 |
-caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md проверка пароля в чистой вкладке (BL-232
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md (BL-232), повторить аудит
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DEC-454-03 |
 caught site/data/test-kit.json "step": "Ш-Р
 caught docs/rfc/rfc-register.md | [RFC-PUB-001](2026-11-bcreq-prompts-pu
 caught pr-ops/artifact-map.md `/docs/rfc/2026-11-bcreq-prompts-publica
 caught docs/rfc/2026-11-runtime-product-catalog-golden-set.md ## 17. Поправка 0.8
-caught experiments/issue_454/audit_flow_coverage.json "steps_current": 0
-мутаций: 22, пропущено: 0
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DEC-454-07 |
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | A-WORK | Ш-6
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Отдельных промптов гейтов нет
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | 6 Особенности реализации |
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | **Итого** | 8 из 8 | **41** |
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | 5 Описание решения | [`05-solution-des
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md У гейта «Выпуск» нет критериев
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Сайт сам не движется
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Однозначной готовности нет
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **заблокировано: нужен БА**
+caught pr-ops/BACKLOG.md | **Р-20** |
+caught experiments/issue_454/audit_flow_coverage.json "steps_current": 4
+мутаций: 33, пропущено: 0

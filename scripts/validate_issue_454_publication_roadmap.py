@@ -127,6 +127,66 @@ class Roadmap(unittest.TestCase):
         self.assertRegex(self.rfc, r"(?m)^status: (proposed|in-review|accepted|implemented|rejected)$")
 
 
+class OwnerConfirmation(unittest.TestCase):
+    """Owner comment on PR #455: stages, 8 sections, closure plan, parallel track, readiness verdict."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rfc = read(RFC)
+        cls.stages = json.loads(read("experiments/issue_454/audit_stage_contracts.json"))
+        cls.backlog = read("pr-ops/BACKLOG.md")
+
+    def section(self, number):
+        return self.rfc.split(f"\n## {number}. ")[1].split("\n## ")[0]
+
+    def test_stages_and_sections_are_confirmed(self):
+        text = self.section(13)
+        for stage in ("A-IN", "A-CORE", "A-WORK", "A-RELEASE"):
+            self.assertIn(f"| {stage} |", text)
+        for gate in ("Г-IN", "Г-С1", "Г-W", "Выпуск"):
+            self.assertIn(gate, text)
+        for number in range(1, 9):
+            self.assertRegex(text, rf"(?m)^\| {number} \S")
+        self.assertIn("Отдельных промптов гейтов нет", text)
+        totals = next(line for line in text.splitlines() if line.startswith("| **Итого** |"))
+        self.assertEqual(cells(totals)[2], "**41**")
+
+    def test_section_rows_add_up(self):
+        rows = [cells(l) for l in self.section(13).splitlines() if re.match(r"\| [1-8] \S", l)]
+        self.assertEqual(sum(int(r[2]) for r in rows), 41)
+        totals = next(cells(l) for l in self.section(13).splitlines() if l.startswith("| **Итого** |"))
+        self.assertEqual(f"**{sum(int(r[5]) for r in rows)}**", totals[5])
+        self.assertEqual(f"**{sum(int(r[6]) for r in rows)}**", totals[6])
+
+    def test_gaps_keep_their_tasks(self):
+        self.assertIn("У гейта «Выпуск» нет критериев", self.section(5))
+        for code in ("BL-233", "BL-234", "BL-171"):
+            self.assertIn(code, self.section(14))
+            row = next(line for line in self.backlog.splitlines() if line.startswith(f"| {code} |"))
+            if code != "BL-233":
+                self.assertIn("Р-20", cells(row)[3], f"{code}: Р-20 должно быть в зависимостях")
+        self.assertTrue(any(line.startswith("| **Р-20** |") for line in self.backlog.splitlines()))
+
+    def test_decisions_of_the_second_round(self):
+        decisions = self.section(7)
+        for number in range(5, 9):
+            self.assertIn(f"| DEC-454-0{number} |", decisions)
+
+    def test_parallel_track_is_measured(self):
+        text = self.section(12)
+        self.assertIn("parallel_track_blast_radius", text)
+        self.assertIn("Сайт сам не движется", text)
+
+    def test_verdict_does_not_claim_readiness_without_ba(self):
+        text = self.section(15)
+        self.assertIn("Однозначной готовности нет", text)
+        self.assertIn("**заблокировано: нужен БА**", text)
+        ba_runs = [p for p in (ROOT / "runs/2026").glob("RUN-*/metadata.yaml")
+                   if re.search(r"(?m)^ba_reviewed: true", p.read_text(encoding="utf-8"))]
+        self.assertEqual([], [p.parent.name for p in ba_runs if p.parent.name >= "RUN-0089"],
+                         f"появился прогон с ba_reviewed: true, пересмотрите вердикт: {UPDATE}")
+
+
 class Chain(unittest.TestCase):
     """Issue postcondition: previous step, current step, what it opens; statuses reflected."""
 
@@ -138,7 +198,7 @@ class Chain(unittest.TestCase):
         return next(line for line in self.backlog.splitlines() if line.startswith(prefix))
 
     def test_chain_table(self):
-        chain = self.backlog.split("**Движение по цепочке (на 2026-11-05, issue #454).**")[1].split("### Как дать решение")[0]
+        chain = re.split(r"\*\*Движение по цепочке|### Как дать решение", self.backlog.split("**Движение по цепочке (на 2026-11-05, issue #454).**")[1])[0]
         for label in ("Предшествующий (полнота)", "Текущий — закрывается", "Открывает", "Ждёт триггера"):
             self.assertIn(f"| {label}", chain)
         for code in ("BL-156г", "BL-167", "BL-168", "BL-156", "BL-232", "Р-19", "BL-230", "BL-231", "BL-157в", "BL-170"):
