@@ -1,0 +1,24 @@
+kit 0.5; operations 39/39 with contract file; assigned 325.2 KB
+stage | step | mode | KB | ops | contract files | contracts in assigned | contracts in draft | stubs assigned | stubs draft
+A-IN | Ш-1 | by-test | 44.4 | К-01,К-02,К-03,К-04,К-09,К-14,К-15 | True | True | True | - | -
+A-IN | Ш-2 | by-test | 40.3 | К-05,К-06,К-07,К-08,К-11 | True | True | True | - | -
+A-CORE | Ш-3 | published | 19.3 | К-16,К-17 | True | False | True | - | З-2
+A-CORE | Ш-4 | published | 16.4 | К-18 | True | False | True | - | З-2
+A-CORE | Ш-5 | published | 19.2 | К-19 | True | False | True | - | З-2
+A-WORK | Ш-6 | published | 21.5 | К-21,К-22 | True | False | True | - | -
+A-WORK | Ш-7 | published | 16.2 | К-23 | True | False | True | - | -
+A-WORK | Ш-8 | published | 19.2 | К-24 | True | False | True | - | З-2
+A-WORK | Ш-9 | published | 16.7 | К-25,К-26,К-27 | True | False | True | - | -
+A-WORK | Ш-В | published | 19.2 | К-10,К-20,К-28,К-29,К-30,К-39 | True | False | True | - | -
+A-RELEASE | Ш-Р | by-test | 23.1 | К-12,К-31,К-32,К-33,К-35 | True | True | True | - | -
+вне стадии | Ш-0 | by-test | 53.8 | К-13,К-34,К-36 | True | True | True | - | -
+вне стадии | Ш-С | published | 15.9 | К-37,К-38 | True | False | True | - | З-2
+gate criteria reported in:
+  A-IN Г-IN cards: ['Ш-2'] {'Г-IN.1': ['Ш-2'], 'Г-IN.2': ['Ш-2'], 'Г-IN.3': ['Ш-2'], 'Г-IN.4': ['Ш-2'], 'Г-IN.5': ['Ш-2']}
+  A-CORE Г-С1 cards: ['Ш-5'] {'Г-С1.1': ['Ш-5', 'Ш-8'], 'Г-С1.2': ['Ш-5', 'Ш-8'], 'Г-С1.3': ['Ш-5', 'Ш-8'], 'Г-С1.4': ['Ш-5', 'Ш-8'], 'Г-С1.5': ['Ш-5', 'Ш-8']}
+  A-WORK Г-W cards: ['Ш-В'] {'Г-W.1': ['Ш-В'], 'Г-W.2': ['Ш-В'], 'Г-W.3': ['Ш-В'], 'Г-W.4': ['Ш-В'], 'Г-W.5': ['Ш-В']}
+  A-RELEASE Выпуск cards: ['Ш-Р'] {}
+gate cycle operations: {'К-12': ['Ш-Р'], 'К-13': ['Ш-0'], 'К-20': [], 'К-34': ['Ш-0', 'Ш-1', 'Ш-2', 'Ш-Р'], 'К-39': []}
+sections: {'1': (5, ['Ш-1', 'Ш-2']), '2': (6, ['Ш-1', 'Ш-2']), '3': (6, ['Ш-3']), '4': (4, ['Ш-4']), '5': (6, ['Ш-6']), '6': (5, ['Ш-7']), '7': (5, ['Ш-5', 'Ш-8', 'Ш-С']), '8': (4, ['Ш-9'])}
+ТЗ in assigned texts: none | assembly on site: False
+problems: none
