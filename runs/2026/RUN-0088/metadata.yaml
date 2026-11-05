@@ -59,6 +59,7 @@ logs:
 feedback:
   - feedback/review-notes.md
 # SHA-256 — точные тексты, которые получил исполнитель. Ш-0…Ш-5 и их возвраты — комплект 0.5, с Ш-6 — комплект 0.7 (поправка 2).
+# Кнопка добавляет служебную первую строку и пустую строку, поэтому хеш копии отличается от этих: сверка — experiments/issue_454/run0088_button_hashes.py.
 prompt_ref:
   - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "комплект 0.5, текст основной кнопки", sha256: 6c1e24af7319472533eb8ed2000e88859e5f595a2f9676e57f60cdc3eb8804e4}
   - {step: Ш-1, path: prompts/drafts/bcreq-context-understanding-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: ec826a46d529b3edce22e07f2d6a7d3afa4e119efed53e42459034f05bf68322}
