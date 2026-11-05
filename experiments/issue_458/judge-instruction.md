@@ -7,7 +7,7 @@ type: experiment-instruction
 scope: mango-only
 ---
 
-# RUN-0088, RUN-0089 — инструкция судьи (передаётся подагенту)
+# RUN-0090, RUN-0091 — инструкция судьи (передаётся подагенту)
 
 ```text
 You are an independent reviewer of a business requirements document (BCREQ, in Russian) produced by another model for a real task. You did not write it and you have no stake in it. A pass you cannot prove is a fail.

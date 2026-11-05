@@ -7,7 +7,7 @@ type: experiment-instruction
 scope: mango-only
 ---
 
-# RUN-0088, RUN-0089 — инструкция исполнителя (шаблон, передаётся подагенту)
+# RUN-0090, RUN-0091 — инструкция исполнителя (шаблон, передаётся подагенту)
 
 `{…}` подставляет `run.py prepare`; итог для каждой сессии — в
 `{WORK}/<RUN>/C<n>/instruction.txt`.
