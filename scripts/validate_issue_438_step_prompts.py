@@ -540,7 +540,7 @@ class DecisionsTest(unittest.TestCase):
         self.assertIn("**Исполнение.** Issue #448, PR #449", bl157v)
         self.assertIn("`ba_reviewed: true`", bl157v)
         kit = read(KIT)
-        self.assertIn("**Статус: действует; A-IN — по тесту (BL-157б).**", kit)
+        self.assertIn("**Статус: действует; шаги Ш-0…Ш-9 и Ш-Р — по тесту (BL-157б, RUN-0089).**", kit)
         self.assertNotIn("не применять", kit)
         self.assertIn("`prompt_set.mode: by-test`", kit)
         bl158 = re.search(r"(?ms)^### BL-158\..*?(?=^### )", text).group(0)

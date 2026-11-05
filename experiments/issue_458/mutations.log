@@ -9,15 +9,15 @@ caught runs/2026/RUN-0090/outputs/release-readiness.md Готово к выпу�
 caught runs/2026/RUN-0091/outputs/release-readiness.md ready_for_human_release | **не
 caught runs/2026/RUN-0091/outputs/bcreq.md BCREQ-1137
 caught runs/README.md [`RUN-0091`](2026/RUN-0091/met
-caught prompts/bcreq-review-validation-oneshot.md version: 0.3
+caught runs/2026/RUN-0090/metadata.yaml sha256: d5fe5d70
 caught experiments/issue_458/preregistration.md **недоступен**
 caught docs/rfc/2026-11-bcreq-machine-run-baseline.md status: proposed
 caught docs/rfc/2026-11-bcreq-machine-run-baseline.md **не читая** RUN-0090
 caught docs/rfc/rfc-register.md [PR #459](https://github.com/G
 caught pr-ops/BACKLOG.md BL-156г — `DONE` (PR #451 слит
-caught pr-ops/BACKLOG.md BL-157г — `review` ([PR #459]
+caught pr-ops/BACKLOG.md BL-157г — `DONE` ([PR #459]
 caught pr-ops/BACKLOG.md | P1 | BL-157г | TODO |
 caught pr-ops/BACKLOG.md машинный прогон её не закрывае
-caught pr-ops/backlog-ba-model.md **Статус.** `review` (PR #459)
+caught pr-ops/backlog-ba-model.md **Статус.** `DONE` (PR #459 сл
 caught docs/rfc/2026-11-runtime-product-catalog-golden-set.md (2026-11-bcreq-machine-run-bas
 мутаций: 22, пропущено: 0
