@@ -75,12 +75,53 @@ def prepare(work: Path, copies: Path) -> int:
     return 0 if len(ids) == 41 else 1
 
 
+PIECES = {
+    "core": ("P01", "P02", "P03", "P04", "P05", "P06", "P08", "P09", "P10", "P13", "P14"),
+    "work": ("P01", "P02", "P04", "P05", "P06", "P07", "P08", "P09", "P10", "P13", "P14"),
+    "end": ("P02", "P05", "P08", "P11", "P12", "P13", "P14", "P15", "P16"),
+}
+
+
 def transcript(out: Path) -> str:
     return "\n\n".join(path.read_text(encoding="utf-8") for path in sorted(out.glob("[0-9][0-9]-*.md")))
 
 
 def mask(body: str) -> str:
-    return re.sub(r"/tmp/run88/(?:out/)?(?:[KT]|core-[KT]|work-[KT]|val-[KT]|rel-[KT])(?=/)", "/tmp/run88/<arm>", body)
+    body = re.sub(r"/tmp/run88/(?:out/)?(?:[KT]|core-[KT]|work-[KT]|val-[KT]|rel-[KT])(?=/)", "/tmp/run88/<arm>", body)
+    return re.sub(r"\b(core|work|val|rel)-[KT]\b", r"\1-<arm>", body)
+
+
+def pieces(work: Path, judge: Path, label: str, arm: str) -> None:
+    """Addendum 1: one label's transcript cut into three parts a judge can read whole."""
+    journal = (work / f"out/val-{arm}/gate-journal.md").read_text(encoding="utf-8")
+    (judge / f"{label}-core.md").write_text(mask(transcript(work / "out" / f"core-{arm}")), encoding="utf-8")
+    (judge / f"{label}-work.md").write_text(mask(transcript(work / "out" / f"work-{arm}")), encoding="utf-8")
+    end = [f"# Стадия {stage}\n\n{transcript(work / 'out' / f'{stage}-{arm}')}" for stage in ("val", "rel")]
+    (judge / f"{label}-end.md").write_text(mask("\n\n".join(end + ["# Журнал гейтов\n\n" + journal])), encoding="utf-8")
+
+
+def merge(work: Path) -> int:
+    """Addendum 1: a criterion passes only if every piece judge that saw it passes it."""
+    judge = work / "judge"
+    process: dict = {"X": {}, "Y": {}}
+    p00 = json.loads((judge / "p-common.json").read_text(encoding="utf-8"))["P00"]
+    for label in ("X", "Y"):
+        seen: dict = {"P00": [("common", p00)]}
+        for piece in ("core", "work", "end"):
+            scores = json.loads((judge / f"p-{label}-{piece}.json").read_text(encoding="utf-8"))
+            assert set(scores) == set(PIECES[piece]), (label, piece, sorted(set(scores) ^ set(PIECES[piece])))
+            for code, value in scores.items():
+                seen.setdefault(code, []).append((piece, value))
+        assert set(seen) == set(PROCESS), sorted(set(seen) ^ set(PROCESS))
+        for code, values in seen.items():
+            failed = [v for _, v in values if v["verdict"] != "pass"]
+            chosen = (failed or [v for _, v in values])[0]
+            process[label][code] = {**chosen, "verdict": "fail" if failed else "pass", "pieces": {name: v["verdict"] for name, v in values}}
+    document = json.loads((judge / "document.json").read_text(encoding="utf-8"))
+    process["overall"], process["overall_reason"] = document["overall"], document["overall_reason"]
+    dump(judge / "process.json", process)
+    print({label: sum(v["verdict"] == "pass" for v in process[label].values()) for label in ("X", "Y")})
+    return 0
 
 
 def blind(work: Path) -> int:
@@ -96,6 +137,8 @@ def blind(work: Path) -> int:
         parts.append("# Журнал гейтов\n\n" + (work / f"out/val-{arm}/gate-journal.md").read_text(encoding="utf-8"))
         (judge / f"{label}-process.md").write_text(mask("\n\n".join(parts)), encoding="utf-8")
         (judge / f"{label}-document.md").write_text(mask((work / f"out/val-{arm}/document-final.md").read_text(encoding="utf-8")), encoding="utf-8")
+        pieces(work, judge, label, arm)
+    (judge / "common.md").write_text(mask(transcript(work / "out/in")), encoding="utf-8")
     dump(judge / "key.json", key)
     print("blinded; sizes", {p.name: p.stat().st_size for p in sorted(judge.glob("*.md"))})
     return 0
@@ -188,7 +231,7 @@ def main() -> int:
     command, work = sys.argv[1], Path(sys.argv[2]).resolve()
     if command == "prepare":
         return prepare(work, Path(sys.argv[3]).resolve())
-    return {"blind": blind, "score": score, "fixate": fixate}[command](work)
+    return {"blind": blind, "merge": merge, "score": score, "fixate": fixate}[command](work)
 
 
 if __name__ == "__main__":
