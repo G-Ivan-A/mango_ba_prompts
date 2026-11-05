@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.20
+version: 0.21
 updated: 2026-11-05
 ai-generated: true
 type: register
@@ -17,6 +17,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -34,6 +35,7 @@ related_artifacts:
   - "docs/rfc/2026-10-standards-page-rfc.md"
   - "docs/analysis/2026-10-31-standards-page-review.md"
   - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
+  - "docs/rfc/2026-11-bcreq-machine-run-baseline.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -340,6 +342,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
 | [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога); поправка 0.4 — исполнение BL-156а на runtime `f31dcde3`, решение по PR #17 (строгий вариант PR #21), задачи BL-165, BL-166; поправка 0.5 — исполнение BL-157б (RUN-0083, A-IN `by-test`), пробелы runtime Р-1…Р-3, тело задачи РТ-7 (компактное оглавление БЗ); поправка 0.6 — RUN-0084 и Ш-В v0.2 (BL-156б, BL-156в), разбор чатов BL-157в, РТ-7 создана (runtime #22) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442); [issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444); [issue #446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446); [issue #448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443), [PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445), [PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447), [PR #449](https://github.com/G-Ivan-A/mango_ba_prompts/pull/449) |
+| [RFC-MR-001](2026-11-bcreq-machine-run-baseline.md) | Машинная база сравнения для прогона БА по задачам 1135 и 1137 | RUN-0090 и RUN-0091 — база сравнения, а не приёмка (`partial-success`, гейты `pending`, `ba_reviewed: false`); протокол сравнения с BL-157в с защитой от якоря; решения Р-МР-1…Р-МР-4; BL-170 — расхождение маршрута каталог ↔ БЗ; BL-171 — пакет правок после данных БА | [Issue #458](https://github.com/G-Ivan-A/mango_ba_prompts/issues/458) | proposed | [PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |
 
 ## Журнал изменений реестра
 
@@ -450,3 +453,6 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 - **2026-11-05** — issue #450 (PR #451): RFC-RT-001 v0.7, поправка 0.7 —
   раздел 16: РТ-7 слита, Р-1 снят; BL-156г, BL-167, BL-168 по RUN-0085…0087.
   Статус `accepted` не меняется.
+- **2026-11-05** — issue #458 (PR #459): RFC-MR-001 v0.1 `proposed` — машинная
+  база сравнения RUN-0090, RUN-0091 и протокол сравнения с BL-157в. RFC-RT-001
+  получает только ссылку, статус `accepted` не меняется.

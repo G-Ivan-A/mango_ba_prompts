@@ -17,6 +17,9 @@ kb/sources/**/*.pdf
 kb/sources/**/_diagram.png
 __pycache__/
 
+# локальная сборка непубличных отчётов (issue #462)
+.private-reports/
+
 # логи CI, скачанные для отладки
 ci-logs/
 .validate-cache/

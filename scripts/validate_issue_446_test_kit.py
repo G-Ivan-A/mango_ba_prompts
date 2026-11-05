@@ -44,8 +44,9 @@ RUN81 = ROOT / "experiments/issue_444/run0081"
 REPLICATES = ("r1", "r2", "r3")
 #: База DEC-427-11: RUN-0079, версия A (v0.1), N = 1.
 BASELINE_0079 = {"passed": 49, "core": 10, "negatives_false_positive": 0}
-#: Текущая версия сайта; 2.2.0 — issue #446, 2.3.0 — issue #448, 2.4.0 — issue #450.
-SITE_VERSION = "2.4.0"
+#: Текущая версия сайта; 2.2.0 — issue #446, 2.3.0 — issue #448, 2.4.0 — issue #450,
+#: 2.5.0 — issue #460; 2.5.1 — issue #462.
+SITE_VERSION = "2.5.1"
 #: Шаги A-IN, режим которых решает RUN-0083.
 A_IN = ("Ш-0 Конституция", "Ш-1 Контекст и глоссарий", "Ш-2 Продукты и стейкхолдеры")
 

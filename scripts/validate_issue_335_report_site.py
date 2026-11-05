@@ -5,13 +5,10 @@
 - ADR-011: уровни детализации, обязательная структура L4, требование
   читаемости ссылок для Human Review, процесс запуска и quality gates;
 - RFC таксономии задач: типы T1…T5 с профилем артефактов;
-- веб-представление отчёта: индекс отчётов, парольная страница, отчёт с
-  номером задачи 765, инлайновые SVG вместо Mermaid, кнопка копирования в
-  Confluence, отсутствие пароля в открытом виде и внешних загрузок;
+- индекс отчётов на сайте; сам веб-отчёт снят с публикации в issue #462;
 - артефакты human review: чек-лист всех 53 сносок и документ методики.
 """
 
-import json
 import re
 from pathlib import Path
 
@@ -21,10 +18,7 @@ ADR = "docs/adr/2026-08-adr-011-integration-task-artifacts.md"
 RFC = "docs/rfc/2026-08-task-taxonomy.md"
 ANALYSIS = "docs/analysis/2026-08-28-human-review-accessibility.md"
 CHECKLIST = "runs/2026/RUN-0060/outputs/human-review-checklist.md"
-REPORT = "site/reports/run-0060/detailed-gap-report.html"
-GATE = "site/reports/run-0060/index.html"
 INDEX = "site/reports/index.html"
-HASHES = "site/password-hashes.json"
 
 FOOTNOTES_TOTAL = 53
 
@@ -67,41 +61,9 @@ def main() -> int:
     errors += require(report_md, "L4-combined-gap-report.md",
                       "Где смотреть", "Цитата из спецификации")
 
-    # --- часть 3: веб-представление -------------------------------------------
-    report = read(REPORT)
-    gate = read(GATE)
-    index = read(INDEX)
-    hashes = json.loads(read(HASHES))
-
-    errors += require(report, REPORT,
-                      "765", "Интеграция КЦ Mango Office", "Актуализировано: 2026-08-27",
-                      "Скопировать для Конфы", "История изменений",
-                      "Сводный вердикт", "RUN-0056", "RUN-0058", "RUN-0059", "RUN-0060")
-    if "```mermaid" in report or "<pre><code>graph" in report:
-        errors.append(f"{REPORT}: диаграммы должны быть отрисованы в SVG, а не в виде кода")
-    if report.count("<svg") < 11:
-        errors.append(f"{REPORT}: инлайновых SVG {report.count('<svg')}, ожидалось не менее 11")
-    # Парольный вход сайта (issue #388) — единственный допустимый внешний
-    # скрипт: при офлайн-копировании gate.js не загрузится и отчёт откроется
-    # без входа, копирование не ломается.
-    report_without_gate = report.replace('<script src="../../gate.js" data-base="../../"></script>', "")
-    for external in ("<script src=", "<link ", "cdn.jsdelivr", "unpkg.com"):
-        if external in report_without_gate:
-            errors.append(f"{REPORT}: внешняя загрузка {external!r} ломает офлайн-копирование")
-
-    errors += require(gate, GATE, "SHA-256", "localStorage", "detailed-gap-report.html")
-    errors += require(index, INDEX, "run-0060/", "Отчёты")
-    # Issue 393 removes menu access; the direct report route retains its gate.
-    errors += require(index, INDEX, '<script src="../gate.js" data-base="../"></script>')
-
-    entry = hashes.get("run-0060", {})
-    if not re.fullmatch(r"[0-9a-f]{64}", entry.get("hash", "")):
-        errors.append(f"{HASHES}: hash должен быть 64 hex-символами SHA-256")
-    if not re.fullmatch(r"[0-9a-f]{16}", entry.get("salt", "")):
-        errors.append(f"{HASHES}: salt должен быть 16 hex-символами")
-    if set(entry) - {"algorithm", "salt", "hash"}:
-        errors.append(f"{HASHES}: допустимы только поля algorithm, salt и hash — "
-                      "сам пароль в репозитории не хранится")
+    # --- часть 3: веб-представление снято с публикации (issue #462) -----------
+    # Запрет публикации проверяет scripts/validate_issue_462_report_exclusion.py.
+    errors += require(read(INDEX), INDEX, "Отчёты", '<script src="../gate.js" data-base="../"></script>')
 
     errors += require(read("CHANGELOG.md"), "CHANGELOG.md", "#335")
 

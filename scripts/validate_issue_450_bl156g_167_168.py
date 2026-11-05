@@ -117,8 +117,8 @@ class Backlog(unittest.TestCase):
     def test_chain(self):
         self.assertIn("**Движение по цепочке (на 2026-11-05, issue #450).**", self.backlog)
         for code in ("BL-167", "BL-168"):
-            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| review \|")
-        self.assertIn("BL-156г — `review` (PR #451)", self.backlog)
+            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")
+        self.assertIn("BL-156г — `DONE` (PR #451 слит", self.backlog)
         self.assertRegex(self.backlog, r"(?m)^\| BL-157 \|.*\| deferred \(triggered\) \|")
 
     def test_r18_accepted(self):
@@ -132,8 +132,8 @@ class Backlog(unittest.TestCase):
 
 class Site(unittest.TestCase):
     def test_version_everywhere(self):
-        self.assertIn('version: "2.4.0"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.4.0"), 2)
+        self.assertIn('version: "2.5.1"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count("v2.5.1"), 2)
         self.assertNotIn("v2.3.0", read("site/index.html"))
 
     def test_kit_serves_published_prompts(self):
