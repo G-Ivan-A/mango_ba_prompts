@@ -13,9 +13,9 @@ temperature: 0.1
 ## Контекст задачи
 
 - Issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/456; PR: https://github.com/G-Ivan-A/mango_ba_prompts/pull/457.
-- Связанные цепочки: PR #451 (слит, issue #450), PR #455 (черновик без содержательных файлов, issue #454).
+- Связанные цепочки: PR #451 (слит, issue #450), PR #455 (черновик, голова `08525fe3`, 21 файл; issue #454).
 - SSOT выбора: `pr-ops/BACKLOG.md`, карточки — `pr-ops/backlog-repository.md`.
-- Нельзя считать известным: что сайт задеплоен (на 2026-11-05 `gh-pages` = `b273b387` от 2026-10-27, `test-kit.json` отдаёт 404); какие файлы займёт #455.
+- Нельзя считать известным: что сайт задеплоен (на 2026-11-05 `gh-pages` = `b273b387` от 2026-10-27, `test-kit.json` отдаёт 404); останется ли состав файлов #455 тем же до слияния.
 
 ## Решаемая проблема
 
@@ -43,7 +43,8 @@ temperature: 0.1
 
 | Случай | Как учтён |
 | --- | --- |
-| Файлы #455 ещё неизвестны | Независимость от #455 — прогноз; перед исполнением пересечение считается заново |
+| #455 ещё меняется | Срез А проверен поверх его головы `08525fe3`; перед исполнением пересечение считается заново |
+| Номер решения занят | Р-19 занят в #455; новое решение получает следующий свободный номер в момент записи |
 | Правка метаданных меняет данные сайта | Хеш данных сайта без `generatedAt` до и после |
 | Заморозка содержимого хешем | Полный `validate_all` на каждом срезе; `standards/` и `prompts/` отсеяны так |
 | Поле возвращается в новых файлах | Сторож-храповик в CI; после слияния #455 его файлы проверяются отдельно |
@@ -64,6 +65,9 @@ python3 experiments/issue_456/dry_run_slices.py /tmp/wt docs-etc /tmp/v.log
 ./tools/validate-frontmatter.sh . > /tmp/fm.log
 gh pr diff 451 --repo G-Ivan-A/mango_ba_prompts --name-only > /tmp/451.files
 python3 experiments/issue_456/slice_overlap.py /tmp/451.files /tmp/reads.txt /tmp/fm.log
+gh pr diff 455 --repo G-Ivan-A/mango_ba_prompts --name-only > /tmp/455.files
+git fetch upstream pull/455/head:refs/ev/455 && git worktree add --detach /tmp/wt455 refs/ev/455
+python3 experiments/issue_456/dry_run_on_pr.py /tmp/wt455 /tmp/451.files /tmp/reads.txt /tmp/455.files experiments/issue_456/slice-a-files.txt
 ```
 
-Ограничение: `dry-run.log` снят при ещё не удалённом `.gitkeep`, поэтому во всех срезах падает `validate_issue_377_merge_hygiene`.
+Ограничение: `dry-run.log` снят при ещё не удалённом `.gitkeep`, поэтому во всех срезах падает `validate_issue_377_merge_hygiene`. `slice-overlap.log` снят до появления файлов в #455; действующий результат — `dry-run-on-pr455.log` и `slice-a-files.txt`.
