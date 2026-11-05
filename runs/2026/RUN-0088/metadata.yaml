@@ -1,9 +1,9 @@
 run_id: RUN-0088
 process: bcreq-stage1-site-texts-chain-issue454
-version: "0.1"
+version: "0.2"
 date: 2026-11-05
 author: "Claude Code (claude-opus-5-5), issue #454"
-model: "claude-opus-5-5 — изолированные подагенты на вызов шага; судьи на момент записи не запускались"
+model: "claude-opus-5-5 — изолированный подагент на каждый вызов шага, подагент БА-редактор, слепые судьи пар, 4 судьи цепочки (подагенты)"
 status: draft
 run_type: execution
 input_kind: synthetic
@@ -12,19 +12,107 @@ source_paths:
   - inputs/ba-script.md
   - inputs/answers-c1.md
   - inputs/prompt-set.json
+  - inputs/prompt-set-0.7.json
 inputs:
   - inputs/input-pack.md
   - inputs/ba-script.md
   - inputs/answers-c1.md
   - inputs/prompt-set.json
+  - inputs/prompt-set-0.7.json
 outputs:
+  - outputs/README.md
+  - outputs/report.md
+  - outputs/summary.json
+  - outputs/mechanical-checks.json
+  - outputs/ba-missing.json
+  - outputs/judge-pairs-key.json
   - outputs/document/current.json
+  - outputs/document/after-Ш-В-правки.md
+  - outputs/document/after-Ш-Р.md
+  - outputs/document/sc-input.md
+  - outputs/judge-chain/a-in.json
+  - outputs/judge-chain/a-core.json
+  - outputs/judge-chain/final.json
+  - outputs/judge-chain/release.json
+  - outputs/judge-pairs/Ш-3.json
+  - outputs/judge-pairs/Ш-3в.json
+  - outputs/judge-pairs/Ш-4.json
+  - outputs/judge-pairs/Ш-4в.json
+  - outputs/judge-pairs/Ш-5.json
+  - outputs/judge-pairs/Ш-5в.json
+  - outputs/steps/Ш-В/transcript.md
+  - outputs/steps/Ш-В-правки/edit-log.md
+  - outputs/steps/Ш-Р/transcript.md
+  - outputs/steps/Ш-С/transcript.md
 logs:
-  - logs/preregistration.md
   - logs/amendment-1.md
+  - logs/amendment-2.md
+  - logs/amendment-3.md
+  - logs/ba-script-given-Ш-Р.md
+  - logs/ba-script-given-Ш-С.md
   - logs/executor-instruction.md
+  - logs/experiment-log.md
   - logs/gate-journal.md
   - logs/judge-chain-instruction.md
   - logs/judge-pairs-instruction.md
+  - logs/preregistration.md
 feedback:
   - feedback/review-notes.md
+# SHA-256 — точные тексты, которые получил исполнитель. Ш-0…Ш-5 и их возвраты — комплект 0.5, с Ш-6 — комплект 0.7 (поправка 2).
+prompt_ref:
+  - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "комплект 0.5, текст основной кнопки", sha256: 6c1e24af7319472533eb8ed2000e88859e5f595a2f9676e57f60cdc3eb8804e4}
+  - {step: Ш-1, path: prompts/drafts/bcreq-context-understanding-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: ec826a46d529b3edce22e07f2d6a7d3afa4e119efed53e42459034f05bf68322}
+  - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: 73ee1c0748c49393064a4d13ee64048ef31685998574b455ff15f78c01b301a7}
+  - {step: Ш-3, path: prompts/bcreq-fr-documentation-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: f2c875fc3433cb90c507f7476b610c71e799f030cf3ae2fe649ab5d5c518bfe5}
+  - {step: Ш-4, path: prompts/bcreq-nfr-documentation-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: cced7c7114a8a44cec80553011bd4be34240a1ba017b4cd644fda21d5d4cc309}
+  - {step: Ш-5, path: prompts/bcreq-uc-modeling-stepwise.md, version: "комплект 0.5, текст основной кнопки", sha256: bd3d671afb39d644e6206afc3ec06d9fc1e8f0b363ef22190536215b3aa16572}
+  - {step: Ш-3, path: prompts/drafts/bcreq-fr-documentation-stepwise.md, version: "плечо T, черновик на коммите 53e8b2c4", sha256: f9622ea9183f1fde617d7e77e751039ae4e9ebf55d14892a45c5f1075166c7cf}
+  - {step: Ш-4, path: prompts/drafts/bcreq-nfr-documentation-stepwise.md, version: "плечо T, черновик на коммите 53e8b2c4", sha256: 998e6f68ba2aa0bd79f0f1a5fe3c66d776ce417d920e8ddbacb4586a97ae661a}
+  - {step: Ш-5, path: prompts/drafts/bcreq-uc-modeling-stepwise.md, version: "плечо T, черновик на коммите 53e8b2c4", sha256: c978023acb31571c276673a2b72790d9824769785e61644b9d7405a9a0e00296}
+  - {step: Ш-6, path: prompts/drafts/bcreq-orr-solution-design-stepwise.md, version: "комплект 0.7, коммит c915492b", sha256: 4da83852561d9db22690dd3f970a4cc853b6e46553b1efda02448145f5270953}
+  - {step: Ш-7, path: prompts/drafts/bcreq-constraints-documentation-stepwise.md, version: "комплект 0.7, коммит c915492b", sha256: 1364014099bad7ab2ff5b52e7186257000a980b48a0ea638ed23280e8b57ce6e}
+  - {step: Ш-8, path: prompts/drafts/bcreq-uc-modeling-stepwise.md, version: "комплект 0.7, коммит c915492b", sha256: bebfb136d4228d5b8afbfbf97666316181d8236f20c0159306a5b142b4f28778}
+  - {step: Ш-9, path: prompts/drafts/bcreq-extra-risk-analysis-stepwise.md, version: "комплект 0.7, коммит c915492b", sha256: 070d87d172bbc5a0c08f8786a5f608443d5930faacf0d10b4b505f615b3917f2}
+  - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "комплект 0.7, коммит c915492b", sha256: 1c30a214474fcde04d60516c92ef442b51e6a23bf9612b38b666c17c76f2db4d}
+  - {step: Ш-Р, path: prompts/drafts/bcreq-release-readiness-oneshot.md, version: "комплект 0.7, коммит c915492b", sha256: 66377b26c9c9153323b2de14e2155174f8df2fec05a05da5f3bec6aeb4bbc67b}
+  - {step: Ш-С, path: prompts/bcreq-scenarios-modeling-oneshot.md, version: "комплект 0.7, коммит c915492b", sha256: 1b3c73db322d68b722434865d2f22ba487ba14fd12a0527e73bda28eec6c5bb1}
+prompt_hashes: inputs/prompt-set.json
+runtime:
+  repo: G-Ivan-A/mango-ba-ai-runtime
+  commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855
+task_seed: runs/2026/RUN-0078/inputs/seed.json   # SIM-1106
+preregistration: runs/2026/RUN-0088/logs/preregistration.md
+replicates: 1
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: stages-ready-with-defects-packets-not-assembled
+  stage_a_in: "готова с дефектами"
+  stage_a_core: "готова с дефектами"
+  stage_a_work: "готова с дефектами"
+  packets: "не собирается"
+  final_document_checklist: "24 из 41"
+  x1_fabrication: pass
+  x2_human_decision: "pass, нижняя граница"
+  x3_exclusions: pass
+  x4_sources: pass
+  x5_customer_note: pass
+  x6_traceability: fail
+  r2_not_repeated_pairs: "3 из 6: Ш-5, Ш-3 возврат, Ш-5 возврат"
+  document_bytes_before_release: 304414
+  tokens_total: 2178747
+  token_method: "отчёт инструмента о вызове подагента; после сжатия контекста числа занижены, нижняя граница"
+  measured: true
+  eval: "Новый чат на шаг и возврат с Г-С1 по текстам сайта: правила записаны до запуска, вердикты считает run0088_summary.py из JSON судей"
+related_runs:
+  - RUN-0089
+  - RUN-0092
+  - RUN-0078
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/454
+related_artifacts:
+  - docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md
+  - docs/ba-processes/bcreq-run-kit.md
+  - experiments/issue_454/run0088_summary.py
+  - experiments/issue_454/run0088_tools.py
