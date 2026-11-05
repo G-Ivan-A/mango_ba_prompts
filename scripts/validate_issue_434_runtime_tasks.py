@@ -509,7 +509,7 @@ class Records(unittest.TestCase):
         # З-3, З-4 сняты BL-156а (issue #444).
         self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-1", "З-3", "З-4"])
         self.assertEqual(
-            re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6"]
+            re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6", "РТ-7"]
         )
         row = re.search(r"^\| РТ-6 \|.*$", body, re.M).group(0)
         anchor = [t for t in LINK_RE.findall(row) if RFC.name in t][0].split("#", 1)[1]

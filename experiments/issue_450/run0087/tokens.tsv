@@ -1,0 +1,10 @@
+rep	role	arm	batch	tokens	ms	tool_uses
+r1	executor	C	SES	29989	47282	22
+r1	executor	B	SES	30005	42729	22
+r2	executor	C	SES	30777	49515	22
+r2	executor	B	SES	30477	48271	22
+r3	executor	C	SES	32456	62381	23
+r3	executor	B	SES	30647	52662	22
+r1	judge	-	SES	20582	17013	4
+r2	judge	-	SES	21415	17103	4
+r3	judge	-	SES	22854	19350	4

@@ -28,6 +28,9 @@ ROOT = Path(__file__).resolve().parents[2]
 _V02_SPEC = importlib.util.spec_from_file_location("shv_v02_changes", ROOT / "experiments/issue_448/shv_v02_changes.py")
 SHV_V02 = importlib.util.module_from_spec(_V02_SPEC)
 _V02_SPEC.loader.exec_module(SHV_V02)
+_I450_SPEC = importlib.util.spec_from_file_location("i450_prompt_changes", ROOT / "experiments/issue_450/prompt_changes.py")
+I450 = importlib.util.module_from_spec(_I450_SPEC)
+_I450_SPEC.loader.exec_module(I450)
 TYPING = ROOT / "experiments/issue_438/prompt-typing.json"
 RUNTIME_SHA = "f31dcde33f0bc120244128faab98fc0162e45701"
 RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
@@ -52,6 +55,7 @@ def revert(path, text):
     или неполна. Остальные промпты BL-156а не трогает: их текст возвращается
     как есть, закреплённой ссылки в нём быть не должно.
     """
+    text = I450.revert(path, text)  # issue #450: верхний слой снимается первым
     text = SHV_V02.revert(path, text)
     if not edited(path):
         assert RUNTIME_PINNED not in text, path

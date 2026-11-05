@@ -1,0 +1,14 @@
+[
+  {"case": "S3-a1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": false, "P3": null, "P4": null, "note": "P2: источник практики указан как «Общая практика контроля доступа к API; источник в этой сессии не прочитан» — нет конкретного проверяемого источника."}},
+  {"case": "S3-a2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: при применимой практике блок «Индустриально значимые» содержит «Предложений нет»; практика БА не предложена."}},
+  {"case": "S3-n1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}},
+  {"case": "S3-n2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}}
+]

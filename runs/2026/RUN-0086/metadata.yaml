@@ -1,0 +1,87 @@
+run_id: RUN-0086
+process: bcreq-industry-practice-block-steps-1-3-6
+version: "0.1"
+date: 2026-11-05
+author: "Claude Code (claude-opus-5-5), issue #450"
+model: "claude-opus-5-5 — исполнители и слепые судьи, изолированные подагенты"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+inputs:
+  - inputs/README.md
+  - inputs/cases-S1.md
+  - inputs/cases-S3.md
+  - inputs/cases-S6.md
+  - inputs/criteria.txt
+  - inputs/prompt-S1-B.md
+  - inputs/prompt-S1-C.md
+  - inputs/prompt-S3-B.md
+  - inputs/prompt-S3-C.md
+  - inputs/prompt-S6-B.md
+  - inputs/prompt-S6-C.md
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/r1/executor/S1-B.md
+  - outputs/r1/executor/S1-C.md
+  - outputs/r1/executor/S3-B.md
+  - outputs/r1/executor/S3-C.md
+  - outputs/r1/executor/S6-B.md
+  - outputs/r1/executor/S6-C.md
+  - outputs/r1/judge-key.json
+  - outputs/r1/judge-scores-S1.json
+  - outputs/r1/judge-scores-S3.json
+  - outputs/r1/judge-scores-S6.json
+  - outputs/r2/executor/S1-B.md
+  - outputs/r2/executor/S1-C.md
+  - outputs/r2/executor/S3-B.md
+  - outputs/r2/executor/S3-C.md
+  - outputs/r2/executor/S6-B.md
+  - outputs/r2/executor/S6-C.md
+  - outputs/r2/judge-key.json
+  - outputs/r2/judge-scores-S1.json
+  - outputs/r2/judge-scores-S3.json
+  - outputs/r2/judge-scores-S6.json
+  - outputs/r3/executor/S1-B.md
+  - outputs/r3/executor/S1-C.md
+  - outputs/r3/executor/S3-B.md
+  - outputs/r3/executor/S3-C.md
+  - outputs/r3/executor/S6-B.md
+  - outputs/r3/executor/S6-C.md
+  - outputs/r3/judge-key.json
+  - outputs/r3/judge-scores-S1.json
+  - outputs/r3/judge-scores-S3.json
+  - outputs/r3/judge-scores-S6.json
+  - outputs/shv-check/expected.json
+  - outputs/shv-check/fragments.md
+  - outputs/shv-check/r1.json
+  - outputs/shv-check/r2.json
+  - outputs/shv-check/r3.json
+  - outputs/summary.json
+logs:
+  - logs/executor-instruction.md
+  - logs/experiment-log.md
+  - logs/judge-instruction.md
+feedback:
+  - feedback/review-notes.md
+preregistration: experiments/issue_450/run0086/preregistration.md
+replicates: 3
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  tokens_total: 1005492
+  measured: true
+  eval: "Блок не хуже контроля и даёт прирост пользы на всех трёх шагах, сторож Р-18 пуст — Ш-1, Ш-3, Ш-6 публикуются как v0.2."
+related_runs:
+  - RUN-0084
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/450
+related_artifacts:
+  - prompts/bcreq-context-understanding-stepwise.md
+  - prompts/bcreq-fr-documentation-stepwise.md
+  - prompts/bcreq-orr-solution-design-stepwise.md
+  - experiments/issue_450/run0086/preregistration.md
+  - experiments/issue_450/run0086/tokens.tsv

@@ -2,16 +2,16 @@
 id: mango-bcreq-review-validation-oneshot-by-test
 title: "BCREQ Ш-В: валидация документа (по тесту)"
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-11-04
 temperature: 0.1
 operation: validation
 processes: ["Валидация второй ролью"]
 based_on: prompts/bcreq-review-validation-oneshot.md
-based_on_sha256: b581e0748bbf8a40dde02d0dc2449333f1807053d83ccdcf765fdf80bf4140b7
+based_on_sha256: b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b
 mode: by-test
 steps: [Ш-В]
-runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
+runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
@@ -81,8 +81,9 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - Вариант — предложение; решение за автором (АД-2). Не меняй текст документа.
 - Правка без добавлений. Вариант только удаляет лишнее, делит пункт или
   заменяет недоказанное на `[ТРЕБУЕТСЯ УТОЧНЕНИЕ: …]` с вопросом в 8.4.
-  Неатомарное ФТ (два действия или условия в одном пункте) вариант делит
-  на отдельные ФТ, по одному действию в каждом. Механизм, объект, роль,
+  Неатомарное ФТ (два независимых действия или условия в одном пункте)
+  вариант делит на отдельные ФТ. Шаги одного процесса в отдельные ФТ не
+  дробятся (L-25). Механизм, объект, роль,
   число или поведение, которых нет во входе и в источнике, в вариант не
   вносятся, даже если кажутся очевидными (АД-1, АД-6).
 - Критичность: «блокирует гейт» — нарушает критерий Г-W; «важно» — нарушает
@@ -159,7 +160,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Полнота таксономии и класс поиска
 
-Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml).
+Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
 по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
@@ -186,10 +187,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Явно переданное дополнение учитывай в любом режиме; если БА явно исключил
 его из источников, не используй. Не запрашивай повторно уже переданный вход.
 
-В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/README.md),
-затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json).
+В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/README.md),
+затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json).
 Порядок: сначала класс → документы этого класса по `product_ids` → их
-`sections_map` → только относящиеся к вопросу разделы. Для нескольких
+`sections_toc` (оглавление читается за одно обращение; разделы выбирай по
+`title`) → только относящиеся к вопросу разделы; `sections_map` открывай, только
+когда нужны `hint`, страницы или токены. Для нескольких
 подтверждённых продуктов выбери классы каждого. Заголовок, `aliases` и `hint`
 помогают выбрать документ, но не служат доказательством поведения. Цитируй
 прочитанный раздел: абсолютный URL, заголовок, страницы, `source_refs` и цитата.
@@ -246,7 +249,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.4.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -403,13 +406,13 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Справочники runtime
 
-Справочники runtime закреплены на коммите `f31dcde33f0bc120244128faab98fc0162e45701`. Если ты не
+Справочники runtime закреплены на коммите `68ad8fcffd47439fc3051852d9a2fbbe23815855`. Если ты не
 можешь открыть ссылку, скажи об этом и попроси БА приложить файл; не
 восстанавливай содержимое справочника по памяти.
 
-- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/templates/bcreq-skeleton.md).
-- **И-5 Golden set по классу продуктовой таксономии:** `contact-center`: [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases.yaml); `voice-ucaas`: [`golden/cases-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases-voice-ucaas.yaml); `analytics-reporting`: [`golden/cases-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/golden/cases-analytics-reporting.yaml).
-- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml).
-- **И-8 Чек-лист гейта G-human:** [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/evaluation/g-human-checklist.md).
+- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/templates/bcreq-skeleton.md).
+- **И-5 Golden set по классу продуктовой таксономии:** `contact-center`: [`golden/cases.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/golden/cases.yaml); `voice-ucaas`: [`golden/cases-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/golden/cases-voice-ucaas.yaml); `analytics-reporting`: [`golden/cases-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/golden/cases-analytics-reporting.yaml).
+- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
+- **И-8 Чек-лист гейта G-human:** [`evaluation/g-human-checklist.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/evaluation/g-human-checklist.md).
 
 <!-- /bl-156: by-test -->

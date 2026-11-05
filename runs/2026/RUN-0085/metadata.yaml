@@ -1,0 +1,69 @@
+run_id: RUN-0085
+process: bcreq-stage1-golden-set-review-validation-no-split-a3
+version: "0.1"
+date: 2026-11-05
+author: "Claude Code (claude-opus-5-5), issue #450"
+model: "claude-opus-5-5 — исполнители и слепые судьи, изолированные подагенты"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+inputs:
+  - inputs/README.md
+  - inputs/cases-batch1.md
+  - inputs/cases-batch2.md
+  - inputs/mapping.json
+  - inputs/prompt-A2.md
+  - inputs/prompt-A3.md
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/r1/executor/A2-batch1.json
+  - outputs/r1/executor/A2-batch2.json
+  - outputs/r1/executor/A3-batch1.json
+  - outputs/r1/executor/A3-batch2.json
+  - outputs/r1/judge-key.json
+  - outputs/r1/judge-scores-batch1.json
+  - outputs/r1/judge-scores-batch2.json
+  - outputs/r1/metrics.json
+  - outputs/r2/executor/A2-batch1.json
+  - outputs/r2/executor/A2-batch2.json
+  - outputs/r2/executor/A3-batch1.json
+  - outputs/r2/executor/A3-batch2.json
+  - outputs/r2/judge-key.json
+  - outputs/r2/judge-scores-batch1.json
+  - outputs/r2/judge-scores-batch2.json
+  - outputs/r2/metrics.json
+  - outputs/r3/executor/A2-batch1.json
+  - outputs/r3/executor/A2-batch2.json
+  - outputs/r3/executor/A3-batch1.json
+  - outputs/r3/executor/A3-batch2.json
+  - outputs/r3/judge-key.json
+  - outputs/r3/judge-scores-batch1.json
+  - outputs/r3/judge-scores-batch2.json
+  - outputs/r3/metrics.json
+  - outputs/summary.json
+logs:
+  - logs/executor-instruction.md
+  - logs/experiment-log.md
+  - logs/judge-instruction.md
+feedback:
+  - feedback/review-notes.md
+preregistration: experiments/issue_450/run0085/preregistration.md
+replicates: 3
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  tokens_total: 608975
+  measured: true
+  eval: "A3 не хуже контроля, сторож Р-18 пуст — публикуется как Ш-В v0.3."
+related_runs:
+  - RUN-0084
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/450
+related_artifacts:
+  - prompts/bcreq-review-validation-oneshot.md
+  - experiments/issue_450/run0085/preregistration.md
+  - experiments/issue_450/run0085/tokens.tsv

@@ -1,0 +1,118 @@
+run_id: RUN-0087
+process: bcreq-long-session-rules-constitution
+version: "0.1"
+date: 2026-11-05
+author: "Claude Code (claude-opus-5-5), issue #450"
+model: "claude-opus-5-5 — исполнители и слепые судьи, изолированные подагенты"
+status: draft
+run_type: execution
+source_paths:
+  - inputs/README.md
+inputs:
+  - inputs/README.md
+  - inputs/S1-t1.md
+  - inputs/S1-t2.md
+  - inputs/S2-t1.md
+  - inputs/S2-t2.md
+  - inputs/S3-t1.md
+  - inputs/S3-t2.md
+  - inputs/S4-t1.md
+  - inputs/S4-t2.md
+  - inputs/S5-t1.md
+  - inputs/S5-t2.md
+  - inputs/prompt-B.md
+  - inputs/prompt-C.md
+outputs:
+  - outputs/README.md
+  - outputs/golden-set-report.md
+  - outputs/r1/executor/B/S1-t1.md
+  - outputs/r1/executor/B/S1-t2.md
+  - outputs/r1/executor/B/S2-t1.md
+  - outputs/r1/executor/B/S2-t2.md
+  - outputs/r1/executor/B/S3-t1.md
+  - outputs/r1/executor/B/S3-t2.md
+  - outputs/r1/executor/B/S4-t1.md
+  - outputs/r1/executor/B/S4-t2.md
+  - outputs/r1/executor/B/S5-t1.md
+  - outputs/r1/executor/B/S5-t2.md
+  - outputs/r1/executor/C/S1-t1.md
+  - outputs/r1/executor/C/S1-t2.md
+  - outputs/r1/executor/C/S2-t1.md
+  - outputs/r1/executor/C/S2-t2.md
+  - outputs/r1/executor/C/S3-t1.md
+  - outputs/r1/executor/C/S3-t2.md
+  - outputs/r1/executor/C/S4-t1.md
+  - outputs/r1/executor/C/S4-t2.md
+  - outputs/r1/executor/C/S5-t1.md
+  - outputs/r1/executor/C/S5-t2.md
+  - outputs/r1/judge-key.json
+  - outputs/r1/judge-scores-SES.json
+  - outputs/r2/executor/B/S1-t1.md
+  - outputs/r2/executor/B/S1-t2.md
+  - outputs/r2/executor/B/S2-t1.md
+  - outputs/r2/executor/B/S2-t2.md
+  - outputs/r2/executor/B/S3-t1.md
+  - outputs/r2/executor/B/S3-t2.md
+  - outputs/r2/executor/B/S4-t1.md
+  - outputs/r2/executor/B/S4-t2.md
+  - outputs/r2/executor/B/S5-t1.md
+  - outputs/r2/executor/B/S5-t2.md
+  - outputs/r2/executor/C/S1-t1.md
+  - outputs/r2/executor/C/S1-t2.md
+  - outputs/r2/executor/C/S2-t1.md
+  - outputs/r2/executor/C/S2-t2.md
+  - outputs/r2/executor/C/S3-t1.md
+  - outputs/r2/executor/C/S3-t2.md
+  - outputs/r2/executor/C/S4-t1.md
+  - outputs/r2/executor/C/S4-t2.md
+  - outputs/r2/executor/C/S5-t1.md
+  - outputs/r2/executor/C/S5-t2.md
+  - outputs/r2/judge-key.json
+  - outputs/r2/judge-scores-SES.json
+  - outputs/r3/executor/B/S1-t1.md
+  - outputs/r3/executor/B/S1-t2.md
+  - outputs/r3/executor/B/S2-t1.md
+  - outputs/r3/executor/B/S2-t2.md
+  - outputs/r3/executor/B/S3-t1.md
+  - outputs/r3/executor/B/S3-t2.md
+  - outputs/r3/executor/B/S4-t1.md
+  - outputs/r3/executor/B/S4-t2.md
+  - outputs/r3/executor/B/S5-t1.md
+  - outputs/r3/executor/B/S5-t2.md
+  - outputs/r3/executor/C/S1-t1.md
+  - outputs/r3/executor/C/S1-t2.md
+  - outputs/r3/executor/C/S2-t1.md
+  - outputs/r3/executor/C/S2-t2.md
+  - outputs/r3/executor/C/S3-t1.md
+  - outputs/r3/executor/C/S3-t2.md
+  - outputs/r3/executor/C/S4-t1.md
+  - outputs/r3/executor/C/S4-t2.md
+  - outputs/r3/executor/C/S5-t1.md
+  - outputs/r3/executor/C/S5-t2.md
+  - outputs/r3/judge-key.json
+  - outputs/r3/judge-scores-SES.json
+  - outputs/summary.json
+logs:
+  - logs/executor-instruction.md
+  - logs/experiment-log.md
+  - logs/judge-instruction.md
+feedback:
+  - feedback/review-notes.md
+preregistration: experiments/issue_450/run0087/preregistration.md
+replicates: 3
+lessons: []
+golden_promotion: []
+ba_reviewed: false
+metrics:
+  verdict: works-with-edits
+  tokens_total: 249202
+  measured: true
+  eval: "Правила не хуже контроля, польза выше, сторож Р-18 пуст — Ш-0 публикуется как v0.2."
+related_runs:
+  - RUN-0084
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/450
+related_artifacts:
+  - prompts/bcreq-constitution-governance-oneshot.md
+  - experiments/issue_450/run0087/preregistration.md
+  - experiments/issue_450/run0087/tokens.tsv

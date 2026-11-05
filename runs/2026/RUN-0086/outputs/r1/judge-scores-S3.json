@@ -1,0 +1,14 @@
+[
+  {"case": "S3-a1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""}},
+  {"case": "S3-a2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика применима, но блок на решение БА содержит только запись «Не предлагаются до ответа на В1»; ни одна практика не предложена."}},
+  {"case": "S3-n1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}},
+  {"case": "S3-n2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}}
+]

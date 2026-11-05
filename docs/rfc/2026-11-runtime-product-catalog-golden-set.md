@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 0.6
-updated: 2026-11-04
+version: 0.7
+updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
@@ -871,7 +871,7 @@ Issue [#444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444)
 | --- | --- | --- | --- |
 | Г-9 | РТ-3, РТ-4, РТ-6 и компиляция ХАБ-1 слиты в runtime | [runtime PR #21](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/21) слит 2026-11-04T14:55Z, `f31dcde33f0bc120244128faab98fc0162e45701` — `main` runtime; issue [#20](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/20) закрыта | Да |
 | Г-10 | Пути и версии реестра есть на SHA (ТС-2, ТС-3) | 13 путей и 11 версий на `f31dcde3`; база знаний `docs/kb` не менялась с `2db0ef51` | Да |
-| Г-11 | Копия каталога = каталог спицы, `lifecycle` без дрейфа | [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/mango-products.yaml): 353 узла, id, уровни и родители совпадают, `catalog_status: accepted`; расхождение Г-8 снято РТ-6 | Да |
+| Г-11 | Копия каталога = каталог спицы, `lifecycle` без дрейфа | [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml): 353 узла, id, уровни и родители совпадают, `catalog_status: accepted`; расхождение Г-8 снято РТ-6 | Да |
 | Г-12 | Golden set трёх классов в строгой форме (функция кейса — id каталога класса) | `contact-center` 7 кейсов (2 положительных, 5 отрицательных), `voice-ucaas` 6, `analytics-reporting` 5; везде `structural_only: true`, `confirmed_by: none`; функция вне каталога — только в `declared_function` | Да, с оговоркой: смысл кейсов человек не проверял (BL-165) |
 | Г-13 | Глоссарии трёх классов с парами `confusable_with` (РТ-4) | 8, 6 и 4 пары; узлы `catalog` есть в каталоге | Да |
 | Г-14 | PR #439 слит, черновики BL-156 — в `main` спицы | слит 2026-11-04T13:36Z | Да |
@@ -959,9 +959,9 @@ Issue [#446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446)
 
 | № | Пробел | Факт | Чья зона | Решение |
 | --- | --- | --- | --- | --- |
-| Р-1 | Карта разделов документа не читается за одно обращение | Исполнитель прочитал [`maps/mango-lk-manual.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/maps/mango-lk-manual.json) частично: «целиком файл не читается (превышен лимит)». Из 25 карт 11 больше 32 КБ, крупнейшая — 156 189 Б, 352 раздела. Оглавление «раздел, название, файл» — не больше 28 151 Б у всех 25 ([`kb-map-sizes.log`](../../experiments/issue_446/kb-map-sizes.log)). `index.md` документа — не замена: у `mango-lk-manual` он 113 348 Б | runtime | РТ-7 (подраздел 14.3) |
+| Р-1 | Карта разделов документа не читается за одно обращение | Исполнитель прочитал [`maps/mango-lk-manual.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/maps/mango-lk-manual.json) частично: «целиком файл не читается (превышен лимит)». Из 25 карт 11 больше 32 КБ, крупнейшая — 156 189 Б, 352 раздела. Оглавление «раздел, название, файл» — не больше 28 151 Б у всех 25 ([`kb-map-sizes.log`](../../experiments/issue_446/kb-map-sizes.log)). `index.md` документа — не замена: у `mango-lk-manual` он 113 348 Б | runtime | РТ-7 (подраздел 14.3) |
 | Р-2 | Стандарты спицы недоступны модели без веба | Оба плеча RUN-0083 — «Режим fallback» | спица, среда чата | Не runtime: правило fallback промпта и запись недоступных ссылок в `notes` карточки (run kit v0.3) |
-| Р-3 | Нет поиска по файлам (Grep, Glob) | Оба журнала RUN-0083 | среда исполнителя | Не runtime: навигация [`MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) → карта → раздел рассчитана на чтение без поиска; её ломает только Р-1 |
+| Р-3 | Нет поиска по файлам (Grep, Glob) | Оба журнала RUN-0083 | среда исполнителя | Не runtime: навигация [`MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → карта → раздел рассчитана на чтение без поиска; её ломает только Р-1 |
 
 Каталог `taxonomy/mango-products.yaml` (98 КБ) читался частями без
 потерь: одна строка — один узел. Доработки не требует.
@@ -982,12 +982,12 @@ runtime (`AGENTS.md`, `contracts/`, `skills/`, `evaluation/`) на карты н
 - Полные URL связанных репозиториев: https://github.com/G-Ivan-A/mango_ba_prompts (промпты спицы читают БЗ runtime по SHA реестра)
 - Важные решения, которые уже приняты:
   - владелец спицы: runtime — база знаний для обращения из промптов; доработки — через RFC (issue #446, пункт 5);
-  - навигация БЗ без поиска по файлам: `MAP.json` → карта документа → раздел (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/USAGE.md).
+  - навигация БЗ без поиска по файлам: `MAP.json` → карта документа → раздел (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).
 - Что нельзя считать известным из предыдущих задач: что у модели в чате есть поиск по файлам (Grep, Glob) — нет; что `index.md` документа компактен — у `mango-lk-manual` он 113 348 Б.
 
 ## Решаемая проблема
 
-Карта документа `docs/kb/maps/<документ>.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/maps/mango-lk-manual.json) хранит у каждого раздела `id`, `hint`, `pages`, `tokens` и полный `path`. 11 из 25 карт больше 32 КБ, крупнейшая — 156 189 Б. Модель читает такую карту частями и пропускает разделы: в прогоне спицы RUN-0083 карта `mango-lk-manual` прочитана «частично: строки 1–60 и 560–1599».
+Карта документа `docs/kb/maps/<документ>.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/maps/mango-lk-manual.json) хранит у каждого раздела `id`, `hint`, `pages`, `tokens` и полный `path`. 11 из 25 карт больше 32 КБ, крупнейшая — 156 189 Б. Модель читает такую карту частями и пропускает разделы: в прогоне спицы RUN-0083 карта `mango-lk-manual` прочитана «частично: строки 1–60 и 560–1599».
 
 ## Story
 
@@ -1005,8 +1005,8 @@ runtime (`AGENTS.md`, `contracts/`, `skills/`, `evaluation/`) на карты н
 
 ## ФТ
 
-- [ ] `docs/kb/build_map.py` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/build_map.py) пишет для каждого документа оглавление `docs/kb/maps/<документ>.toc.tsv`: строка заголовка из полей `section`, `title`, `file` через табуляцию, затем по строке на раздел в порядке карты; `file` — имя файла раздела в каталоге `sections/` документа.
-- [ ] Каждая запись `documents[]` в `docs/kb/MAP.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) получает поле `sections_toc` с путём оглавления.
+- [ ] `docs/kb/build_map.py` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/build_map.py) пишет для каждого документа оглавление `docs/kb/maps/<документ>.toc.tsv`: строка заголовка из полей `section`, `title`, `file` через табуляцию, затем по строке на раздел в порядке карты; `file` — имя файла раздела в каталоге `sections/` документа.
+- [ ] Каждая запись `documents[]` в `docs/kb/MAP.json` (https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) получает поле `sections_toc` с путём оглавления.
 - [ ] `navigation.select_section` в `MAP.json` и шаг 2 `docs/kb/USAGE.md` говорят: сначала открыть `sections_toc`, выбрать разделы по `title`, затем открыть их файлы; строку `sections_map` открывать, когда нужны `hint`, страницы или токены.
 - [ ] `build_map.py --check` сообщает об устаревшем или лишнем оглавлении так же, как о карте.
 - [ ] Тест навигации БЗ проверяет: оглавление есть у каждого документа, строки совпадают с картой по `section`, `title` и файлу, размер каждого оглавления не больше 32 768 Б.
@@ -1088,6 +1088,21 @@ Issue [#448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448)
 
 Для runtime разбор новых задач не даёт: правки касаются промптов и
 ведения сессии, а не справочников. Пробел Р-1 закрывает РТ-7.
+
+## 16. Поправка 0.7: исполнение BL-156г, BL-167, BL-168 и РТ-7 (issue #450)
+
+РТ-7 слита ([runtime PR #23](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/23)):
+реестр справочников 0.5 указывает срез `68ad8fcf`, промпты и черновики идут
+маршрутом `sections_toc`. **Пробел Р-1 раздела 14.2 снят.**
+
+| Задача | Прогон | Итог |
+| --- | --- | --- |
+| BL-156г | [RUN-0085](../../runs/2026/RUN-0085/outputs/golden-set-report.md) | Ш-В v0.3 |
+| BL-167 | [RUN-0086](../../runs/2026/RUN-0086/outputs/golden-set-report.md) | Ш-1, Ш-3, Ш-6 v0.2 |
+| BL-168 | [RUN-0087](../../runs/2026/RUN-0087/outputs/golden-set-report.md) | Ш-0 v0.2 |
+
+Р-18 принято и применено во всех трёх пред-регистрациях. Все оценки —
+модель-судья без калибровки по БА: приёмку даёт только BL-157в.
 
 ## Related Artifacts
 

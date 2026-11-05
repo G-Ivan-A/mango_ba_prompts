@@ -137,7 +137,7 @@ def digest(text):
 
 def shv_v01():
     """v0.1 Ш-В (A0 RUN-0084): текущий файл с откатом публикации v0.2."""
-    text = read(ROOT / SHV)
+    text = BL156A.I450.revert(SHV, read(ROOT / SHV))  # issue #450: срез РТ-7 снимается первым
     return SHV_V02.revert(SHV, text) if SHV_V02_PUBLISHED else text
 
 
@@ -153,7 +153,7 @@ def measured_d():
     Черновик встраивает текст шага v0.1 и хранит его хэш в
     ``based_on_sha256``; без типизации отличаются только эти места.
     """
-    text = read(ROOT / SHV_DRAFT)
+    text = BL156A.I450.revert(SHV_DRAFT, read(ROOT / SHV_DRAFT))
     if TYPING_APPLIED:
         return text
     base = digest(read(ROOT / SHV))
@@ -349,7 +349,8 @@ class Run0080Test(RunScoring, unittest.TestCase):
         # A RUN-0080 — v0.1 с типом гейта и ссылками на main. BL-156а
         # закрепила ссылки по SHA, тип гейта не применён: подстановки и
         # откат закрепления дают измеренный A.
-        sha = json.loads(read(MANIFEST))["runtime_sha"]
+        # measured_a() уже снял срез РТ-7 (issue #450), поэтому SHA — прежний.
+        sha = BL156A.I450.SHA_OLD
         pinned = BUILDER.RUNTIME_MAIN.replace("/main/", f"/{sha}/")
         self.assertEqual(ROOT / SHV, v01)
         text = measured_a()
@@ -492,8 +493,8 @@ class DecisionsTest(unittest.TestCase):
         if BL156_STARTED:
             for pr in ("PR #445", "PR #447", "PR #449"):
                 self.assertIn(pr, rows["BL-156"][5])
-            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `review` (PR #449)",
-                           "RUN-0084", "RUN-0082", "BL-156г — `TODO`"):
+            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `DONE` (PR #449)",
+                           "RUN-0084", "RUN-0082", "BL-156г — `review` (PR #451)"):
                 self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
@@ -524,10 +525,10 @@ class DecisionsTest(unittest.TestCase):
                 body = re.search(rf"(?ms)^#### {stage}\..*?(?=^#{{3,4}} )", text).group(0)
                 self.assertIn("**Исполнение.** Issue #448, PR #449", body, stage)
                 self.assertIn("RUN-0084", body, stage)
-                self.assertIn("**Статус.** `review` (PR #449).", body, stage)
+                self.assertIn("**Статус.** `DONE` (PR #449", body, stage)
             bl156g = re.search(r"(?ms)^#### BL-156г\..*?(?=^#{3,4} )", text).group(0)
             self.assertIn("GS-BCREQ-25", bl156g)
-            self.assertIn("**Статус.** `TODO`", bl156g)
+            self.assertIn("**Статус.** `review` (PR #451)", bl156g)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         for stage in ("#### BL-157б. Комплект прогона: промпты по тесту", "#### BL-157в. Первый прогон BL-111 с комплектом"):

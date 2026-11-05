@@ -2,16 +2,16 @@
 id: mango-bcreq-constitution-governance-oneshot-by-test
 title: "BCREQ Ш-0: конституция процесса (по тесту)"
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-11-04
 temperature: 0.1
 operation: governance
 processes: ["Конституция и управление"]
 based_on: prompts/bcreq-constitution-governance-oneshot.md
-based_on_sha256: 8af9eeac7e7c52068e005cfbb5199e64dbe63ebf5828279fa42414ff0e72d032
+based_on_sha256: 8e36b8b398436e7eefb9593fdc0fcd3c78174be917c7e88bc2a22d9b2536c279
 mode: by-test
 steps: [Ш-0]
-runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
+runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
@@ -165,6 +165,10 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 | АД-9 | Граница правки | Перед ответом назови операцию и объект запроса одной фразой, затем сверь с ними результат. Меняй только запрошенный фрагмент и явно зависимые места; перечисли зависимости. Сохрани остальные формулировки, ID, названия и порядок. Удаление, слияние и переименование — только по явному решению БА, с записью в 8.5. |
 | АД-10 | Вопрос после поиска | До вопроса проверь запрос, согласованный черновик, вложения и 8.5. Не спрашивай повторно решённое; при достаточном входе выполни шаг. Неразрешённый вопрос в 8.4 адресуй тому, кто может ответить: Заказчику — о потребности, команде — о реализации, владельцу продукта — о подтверждении поведения. Не подменяй анализ советом обратиться в поддержку. |
 | АД-11 | Граница контекста | Сверь ID задачи и происхождение каждого входа. Не переноси факты, решения и память из другой задачи. Универсальный промпт содержит принцип, а не значения, имена методов или частное решение из одного кейса. |
+| АД-12 | Последняя версия | Если БА вставил документ заново, правь именно эту версию и назови её в ответе одной строкой; его правки сохрани. К более ранней версии из диалога не возвращайся. |
+| АД-13 | Понимание до правки | Замечание допускает два прочтения — перескажи своё понимание и спроси подтверждение до правки; текст не меняй. Однозначное замечание выполняй сразу, без вопроса (АД-10). |
+| АД-14 | Один вопрос — одна тема | В одном вопросе одна тема. На свой вопрос не отвечай и не подставляй предполагаемый ответ как решение. Повторно не спрашивай то, на что БА уже ответил (АД-10). |
+| АД-15 | Текст для Заказчика | В текст для Заказчика не переноси внутренние заметки, номера внутренних задач и планы разработки. По запросу БА «только изменения» выводи только изменённые фрагменты. |
 
 Дополнительные остановки: **CB-0.6** — необходимый для проверяемого факта
 источник недоступен или не прочитан: останови зависимую часть, перечисли,
@@ -313,7 +317,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Полнота таксономии и класс поиска
 
-Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml).
+Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
 по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
@@ -340,10 +344,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Явно переданное дополнение учитывай в любом режиме; если БА явно исключил
 его из источников, не используй. Не запрашивай повторно уже переданный вход.
 
-В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/README.md),
-затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json).
+В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/README.md),
+затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json).
 Порядок: сначала класс → документы этого класса по `product_ids` → их
-`sections_map` → только относящиеся к вопросу разделы. Для нескольких
+`sections_toc` (оглавление читается за одно обращение; разделы выбирай по
+`title`) → только относящиеся к вопросу разделы; `sections_map` открывай, только
+когда нужны `hint`, страницы или токены. Для нескольких
 подтверждённых продуктов выбери классы каждого. Заголовок, `aliases` и `hint`
 помогают выбрать документ, но не служат доказательством поведения. Цитируй
 прочитанный раздел: абсолютный URL, заголовок, страницы, `source_refs` и цитата.
@@ -400,7 +406,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.4.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -533,11 +539,11 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Справочники runtime
 
-Справочники runtime закреплены на коммите `f31dcde33f0bc120244128faab98fc0162e45701`. Если ты не
+Справочники runtime закреплены на коммите `68ad8fcffd47439fc3051852d9a2fbbe23815855`. Если ты не
 можешь открыть ссылку, скажи об этом и попроси БА приложить файл; не
 восстанавливай содержимое справочника по памяти.
 
-- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/templates/bcreq-skeleton.md).
-- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml).
+- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/templates/bcreq-skeleton.md).
+- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
 <!-- /bl-156: by-test -->

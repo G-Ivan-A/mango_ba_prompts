@@ -1,0 +1,14 @@
+[
+  {"case": "S6-a1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: блок практики содержит только «практика не найдена», хотя практика применима; ни одна практика БА не предложена."},
+   "Y": {"G1": true, "G2": false, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "G2: в 5.1.1 указано «8 добавляемых столбцов» — этого числа нет во входе, и оно предполагает, что 6 текущих входят в 14, что сам ответ оставляет открытым в В-1. P1: блока практики нет, ни одна практика БА не предложена."}},
+  {"case": "S6-a2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": true, "note": "P1: блока практики нет; вне разделов практика не предложена, а В-8 прямо не предлагает событие готовности."},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": true, "note": ""}},
+  {"case": "S6-n1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}},
+  {"case": "S6-n2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}}
+]

@@ -9,7 +9,7 @@ operation: release_readiness
 processes: ["Выпуск BCREQ"]
 mode: by-test
 steps: [Ш-Р]
-runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
+runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
@@ -89,7 +89,7 @@ Baseline К-35: <кандидат; released — только по записи �
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.4.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -235,11 +235,11 @@ Baseline К-35: <кандидат; released — только по записи �
 
 ### Справочники runtime
 
-Справочники runtime закреплены на коммите `f31dcde33f0bc120244128faab98fc0162e45701`. Если ты не
+Справочники runtime закреплены на коммите `68ad8fcffd47439fc3051852d9a2fbbe23815855`. Если ты не
 можешь открыть ссылку, скажи об этом и попроси БА приложить файл; не
 восстанавливай содержимое справочника по памяти.
 
-- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/templates/bcreq-skeleton.md).
-- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml).
+- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/templates/bcreq-skeleton.md).
+- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
 <!-- /bl-156: by-test -->

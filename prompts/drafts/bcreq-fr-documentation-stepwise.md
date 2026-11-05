@@ -2,16 +2,16 @@
 id: mango-bcreq-fr-documentation-stepwise-by-test
 title: "BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)"
 status: draft
-version: 0.1
+version: 0.2
 updated: 2026-11-04
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-fr-documentation-stepwise.md
-based_on_sha256: 7f3d4f51df0c70e6312b7dd1e81edaa16a04182720317188ad24f7deedd456f9
+based_on_sha256: 8f55fc65ce9c239d282cb8bc46f64151a012195b34a6b5a19ca62a96a165a025
 mode: by-test
 steps: [Ш-3]
-runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
+runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
@@ -73,9 +73,9 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 4. **Группировка и 5±2.** Состояния и условия — подпункты 3.N.M. Вне 3–7 —
    блок «Обоснование отклонения 5±2». При ≥2 продуктах — единый список по
    бизнес-способности; стыковое ФТ — по правилу К4.
-5. **Индустриально значимые.** Отдельным блоком «Индустриально значимые — на
-   решение БА»: ФТ, источник практики, последствие отказа. В список 3.N — только
-   после решения БА.
+5. **Отраслевая практика.** ФТ, которое диктует практика, а не запрос, идёт в
+   блок «Отраслевая практика — на решение БА»; в «что даст» назови и последствие
+   отказа. В список 3.N — только после решения БА.
 6. **Итог.** Проверь пункты 2.4.1 без ФТ и без «→ раздел 5». Обнови 8.4, 8.5
    и «Состояние BCREQ».
 
@@ -94,6 +94,17 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - АД-6: механизм реализации не домысливается; архитектура — в раздел 5.
 - Р5: без названий методологий в тексте ФТ.
 
+### Отраслевая практика — на решение БА
+
+Блок обязателен в итоге шага и стоит вне разделов BCREQ. В него идёт
+практика, которая прямо относится к объекту этой задачи: до трёх пунктов. У
+каждого пункта — проверяемый источник (каталог runtime, названный стандарт
+или руководство, существующий API продукта; «обычно так делают» источником
+не считается), одна строка «что даст» и отметка «в раздел не включено».
+Нет применимой практики с таким источником — напиши «практика не найдена»;
+для полноты пункт не добавляется. В текст раздела практика попадает только
+после решения БА с записью в 8.5: запрет L-03 и правило АД-1 не меняются.
+
 ## 5. Формат вывода
 
 ```text
@@ -110,8 +121,9 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 Обоснование отклонения 5±2 (если ФТ <3 или >7)
 
-Индустриально значимые — на решение БА
-| ФТ | Источник практики | Последствие отказа |
+Отраслевая практика — на решение БА
+| Практика | Источник | Что даст | Статус |
+<до 3 строк со статусом «в раздел не включено» или строка «практика не найдена»>
 
 8.4 Реестр вопросов и 8.5 Журнал решений — дополненные таблицы.
 ```
@@ -156,7 +168,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Полнота таксономии и класс поиска
 
-Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml).
+Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
 по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
@@ -183,10 +195,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Явно переданное дополнение учитывай в любом режиме; если БА явно исключил
 его из источников, не используй. Не запрашивай повторно уже переданный вход.
 
-В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/README.md),
-затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json).
+В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/README.md),
+затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json).
 Порядок: сначала класс → документы этого класса по `product_ids` → их
-`sections_map` → только относящиеся к вопросу разделы. Для нескольких
+`sections_toc` (оглавление читается за одно обращение; разделы выбирай по
+`title`) → только относящиеся к вопросу разделы; `sections_map` открывай, только
+когда нужны `hint`, страницы или токены. Для нескольких
 подтверждённых продуктов выбери классы каждого. Заголовок, `aliases` и `hint`
 помогают выбрать документ, но не служат доказательством поведения. Цитируй
 прочитанный раздел: абсолютный URL, заголовок, страницы, `source_refs` и цитата.
@@ -243,7 +257,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.4.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -350,13 +364,13 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Справочники runtime
 
-Справочники runtime закреплены на коммите `f31dcde33f0bc120244128faab98fc0162e45701`. Если ты не
+Справочники runtime закреплены на коммите `68ad8fcffd47439fc3051852d9a2fbbe23815855`. Если ты не
 можешь открыть ссылку, скажи об этом и попроси БА приложить файл; не
 восстанавливай содержимое справочника по памяти.
 
-- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) → `docs/kb/maps/<id>.json` → `docs/kb/<slug>/sections/NN-*.md`; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/USAGE.md).
+- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).
 - **И-4 Примеры разделов (ФТ, UC, US, НФТ, ОРР):** нет в срезе.
-- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml).
+- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
 Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.
 

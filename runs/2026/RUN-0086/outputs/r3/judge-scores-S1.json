@@ -1,0 +1,22 @@
+[
+  {
+    "case": "S1-a1",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: нет предложения практики БА: событие recording.ready упомянуто только в дайджесте и вопросе В-8 как факт и неопределённость, блока или рекомендации нет."}
+  },
+  {
+    "case": "S1-a2",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика БА не предложена: нет ни блока практики, ни отсылки к закону о персональных данных или порядку согласия; есть только вопрос В-3 о требованиях юристов."},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""}
+  },
+  {
+    "case": "S1-n1",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}
+  },
+  {
+    "case": "S1-n2",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}
+  }
+]

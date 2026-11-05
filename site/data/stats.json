@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T20:41:52.679Z",
+  "generatedAt": "2026-11-05T05:32:57.658Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,10 +35,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.3.0",
-    "released": "2026-11-04",
-    "issue": 448,
-    "basis": "PR #449: карточки шагов для БА и подстраницы «Процессов», Ш-В v0.2 (RUN-0084)",
+    "version": "2.4.0",
+    "released": "2026-11-05",
+    "issue": 450,
+    "basis": "PR #451: Ш-В v0.3, блок практики Ш-1, Ш-3, Ш-6, правила сессии Ш-0 (RUN-0085…0087), РТ-7",
     "changelog": "CHANGELOG.md"
   },
   "totals": {
