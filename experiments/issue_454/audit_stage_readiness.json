@@ -1,8 +1,8 @@
 {
- "kit_version": "0.5",
+ "kit_version": "0.7",
  "operations_total": 39,
  "operations_with_contract_file": 39,
- "assigned_total_kb": 325.2,
+ "assigned_total_kb": 437.1,
  "stages": {
   "A-IN": {
    "steps": {
@@ -106,7 +106,11 @@
     "К-19"
    ],
    "all_contract_files_exist": true,
-   "steps_with_contracts_in_assigned_text": [],
+   "steps_with_contracts_in_assigned_text": [
+    "Ш-3",
+    "Ш-4",
+    "Ш-5"
+   ],
    "steps_with_contracts_in_draft": [
     "Ш-3",
     "Ш-4",
@@ -165,7 +169,12 @@
     "К-39"
    ],
    "all_contract_files_exist": true,
-   "steps_with_contracts_in_assigned_text": [],
+   "steps_with_contracts_in_assigned_text": [
+    "Ш-6",
+    "Ш-7",
+    "Ш-8",
+    "Ш-9"
+   ],
    "steps_with_contracts_in_draft": [
     "Ш-6",
     "Ш-7",
@@ -286,8 +295,8 @@
    "title": "Ш-2 Продукты и стейкхолдеры",
    "mode": "by-test",
    "file": "bcreq-products-impact-analysis-stepwise.md",
-   "size_kb": 40.3,
-   "sha256": "73ee1c0748c49393064a4d13ee64048ef31685998574b455ff15f78c01b301a7",
+   "size_kb": 41.0,
+   "sha256": "d503792e87eee6a72cffce7299734541c3fa1c931a7e926e9c49981656c91377",
    "operations": [
     "К-05",
     "К-06",
@@ -322,27 +331,32 @@
   },
   "Ш-3": {
    "title": "Ш-3 ФТ",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-fr-documentation-stepwise.md",
-   "size_kb": 19.3,
-   "sha256": "f2c875fc3433cb90c507f7476b610c71e799f030cf3ae2fe649ab5d5c518bfe5",
+   "size_kb": 35.1,
+   "sha256": "f9622ea9183f1fde617d7e77e751039ae4e9ebf55d14892a45c5f1075166c7cf",
    "operations": [
     "К-16",
     "К-17"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-16",
+    "К-17"
+   ],
    "ops_named_in_draft": [
     "К-16",
     "К-17"
    ],
-   "stubs_in_assigned_text": [],
+   "stubs_in_assigned_text": [
+    "З-2"
+   ],
    "stubs_in_draft": [
     "З-2"
    ],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -350,25 +364,29 @@
   },
   "Ш-4": {
    "title": "Ш-4 НФТ",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-nfr-documentation-stepwise.md",
-   "size_kb": 16.4,
-   "sha256": "cced7c7114a8a44cec80553011bd4be34240a1ba017b4cd644fda21d5d4cc309",
+   "size_kb": 31.0,
+   "sha256": "998e6f68ba2aa0bd79f0f1a5fe3c66d776ce417d920e8ddbacb4586a97ae661a",
    "operations": [
     "К-18"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-18"
+   ],
    "ops_named_in_draft": [
     "К-18"
    ],
-   "stubs_in_assigned_text": [],
+   "stubs_in_assigned_text": [
+    "З-2"
+   ],
    "stubs_in_draft": [
     "З-2"
    ],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -376,25 +394,29 @@
   },
   "Ш-5": {
    "title": "Ш-5 UC, прогон 1",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-uc-modeling-stepwise.md",
-   "size_kb": 19.2,
-   "sha256": "bd3d671afb39d644e6206afc3ec06d9fc1e8f0b363ef22190536215b3aa16572",
+   "size_kb": 35.6,
+   "sha256": "bebfb136d4228d5b8afbfbf97666316181d8236f20c0159306a5b142b4f28778",
    "operations": [
     "К-19"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-19"
+   ],
    "ops_named_in_draft": [
     "К-19"
    ],
-   "stubs_in_assigned_text": [],
+   "stubs_in_assigned_text": [
+    "З-2"
+   ],
    "stubs_in_draft": [
     "З-2"
    ],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "Г-С1, человек, ключевой",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -402,25 +424,28 @@
   },
   "Ш-6": {
    "title": "Ш-6 ОРР",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-orr-solution-design-stepwise.md",
-   "size_kb": 21.5,
-   "sha256": "aa5a777bc65c947b9cfadf33189166af35386fdb51fab5f9665c42d854abc660",
+   "size_kb": 36.6,
+   "sha256": "4da83852561d9db22690dd3f970a4cc853b6e46553b1efda02448145f5270953",
    "operations": [
     "К-21",
     "К-22"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-21",
+    "К-22"
+   ],
    "ops_named_in_draft": [
     "К-21",
     "К-22"
    ],
    "stubs_in_assigned_text": [],
    "stubs_in_draft": [],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -428,23 +453,25 @@
   },
   "Ш-7": {
    "title": "Ш-7 Ограничения",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-constraints-documentation-stepwise.md",
-   "size_kb": 16.2,
-   "sha256": "840fa774632c350760cb29be34d22349588c642d6e544027e75d8c7ac82b8aae",
+   "size_kb": 30.7,
+   "sha256": "1364014099bad7ab2ff5b52e7186257000a980b48a0ea638ed23280e8b57ce6e",
    "operations": [
     "К-23"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-23"
+   ],
    "ops_named_in_draft": [
     "К-23"
    ],
    "stubs_in_assigned_text": [],
    "stubs_in_draft": [],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -452,25 +479,29 @@
   },
   "Ш-8": {
    "title": "Ш-8 UC, прогон 2",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-uc-modeling-stepwise.md",
-   "size_kb": 19.2,
-   "sha256": "bd3d671afb39d644e6206afc3ec06d9fc1e8f0b363ef22190536215b3aa16572",
+   "size_kb": 35.6,
+   "sha256": "bebfb136d4228d5b8afbfbf97666316181d8236f20c0159306a5b142b4f28778",
    "operations": [
     "К-24"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-24"
+   ],
    "ops_named_in_draft": [
     "К-24"
    ],
-   "stubs_in_assigned_text": [],
+   "stubs_in_assigned_text": [
+    "З-2"
+   ],
    "stubs_in_draft": [
     "З-2"
    ],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -478,19 +509,23 @@
   },
   "Ш-9": {
    "title": "Ш-9 Риски и приёмка",
-   "mode": "published",
+   "mode": "by-test",
    "file": "bcreq-extra-risk-analysis-stepwise.md",
-   "size_kb": 16.7,
-   "sha256": "4fc826f3d0acfce377ee3732985733dfcf7190c567773e72716f0d898100d1b9",
+   "size_kb": 31.8,
+   "sha256": "070d87d172bbc5a0c08f8786a5f608443d5930faacf0d10b4b505f615b3917f2",
    "operations": [
     "К-25",
     "К-26",
     "К-27"
    ],
    "contract_files_exist": true,
-   "contracts_in_assigned_text": false,
+   "contracts_in_assigned_text": true,
    "contracts_in_comparison_draft": true,
-   "ops_named_in_assigned_text": [],
+   "ops_named_in_assigned_text": [
+    "К-25",
+    "К-26",
+    "К-27"
+   ],
    "ops_named_in_draft": [
     "К-25",
     "К-26",
@@ -498,7 +533,7 @@
    ],
    "stubs_in_assigned_text": [],
    "stubs_in_draft": [],
-   "section_standard_links": 1,
+   "section_standard_links": 2,
    "card_gate": "—",
    "card_has_actions": true,
    "card_has_prepare": true,
@@ -542,8 +577,8 @@
    "title": "Ш-Р Выпуск",
    "mode": "by-test",
    "file": "bcreq-release-readiness-oneshot.md",
-   "size_kb": 23.1,
-   "sha256": "209056697507e304d64a2f6f0699595272605e18207d7431dfc065b89339d90a",
+   "size_kb": 26.4,
+   "sha256": "66377b26c9c9153323b2de14e2155174f8df2fec05a05da5f3bec6aeb4bbc67b",
    "operations": [
     "К-12",
     "К-31",
@@ -694,6 +729,13 @@
     "Ш-0",
     "Ш-1",
     "Ш-2",
+    "Ш-3",
+    "Ш-4",
+    "Ш-5",
+    "Ш-6",
+    "Ш-7",
+    "Ш-8",
+    "Ш-9",
     "Ш-Р"
    ]
   },
@@ -701,6 +743,60 @@
    "file_exists": true,
    "flow_step": "Ш-В",
    "named_in_assigned": []
+  }
+ },
+ "action_profiles": {
+  "INGEST": {
+   "in_assigned": [
+    "Ш-0",
+    "Ш-1"
+   ]
+  },
+  "EXTRACT": {
+   "in_assigned": [
+    "Ш-1",
+    "Ш-2"
+   ]
+  },
+  "ANALYZE": {
+   "in_assigned": [
+    "Ш-1",
+    "Ш-2"
+   ]
+  },
+  "ELICIT": {
+   "in_assigned": [
+    "Ш-1"
+   ]
+  },
+  "GENERATE": {
+   "in_assigned": [
+    "Ш-1",
+    "Ш-3",
+    "Ш-4",
+    "Ш-5",
+    "Ш-6",
+    "Ш-7",
+    "Ш-8",
+    "Ш-9"
+   ]
+  },
+  "VERIFY": {
+   "in_assigned": [
+    "Ш-0",
+    "Ш-Р"
+   ]
+  },
+  "TRANSFORM": {
+   "in_assigned": [
+    "Ш-Р"
+   ]
+  },
+  "RECORD": {
+   "in_assigned": [
+    "Ш-0",
+    "Ш-Р"
+   ]
   }
  },
  "tz_term_in_assigned_texts": {
@@ -715,9 +811,9 @@
   "Ш-8": 0,
   "Ш-9": 0,
   "Ш-В": 0,
-  "Ш-Р": 0,
+  "Ш-Р": 3,
   "Ш-С": 0
  },
- "tz_assembly_on_site": false,
+ "tz_assembly_on_site": true,
  "problems": []
 }
