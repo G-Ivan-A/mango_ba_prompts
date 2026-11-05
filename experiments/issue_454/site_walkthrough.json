@@ -1,0 +1,265 @@
+{
+ "kit": "0.5",
+ "siteMain": true,
+ "production": "не проверяется этим скриптом: audit_flow_coverage.py",
+ "cards": [
+  {
+   "step": "Ш-0",
+   "mode": "by-test",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "6460694898fe966b411acc0203ca7f450e9683db51be9987becdb1f6c11aece7",
+   "mainBytes": 55235,
+   "firstLine": "<!-- mango-bcreq-constitution-governance-oneshot-by-test · Ш-0 Конституция -->",
+   "altCopyExact": true,
+   "altSha256": "9096c5483b581e491f1f5f7e28565624c945a3f515b2ad724364dfdbd8b93d16"
+  },
+  {
+   "step": "Ш-1",
+   "mode": "by-test",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "af2d3f575d4812741a9c06660aef8e92d9e1be8aa27772ec9c17a72ca48f0032",
+   "mainBytes": 45577,
+   "firstLine": "<!-- mango-bcreq-context-understanding-stepwise-by-test · Ш-1 Контекст и глоссарий -->",
+   "altCopyExact": true,
+   "altSha256": "90a306b422be300bf9f8c91a0bb30b7fd1208dbcbaea3fd274fafc881caf4328"
+  },
+  {
+   "step": "Ш-2",
+   "mode": "by-test",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": "⛳ Г-IN, гибрид, ключевой. Проверка входа: решение «дальше» и",
+   "mainCopyExact": true,
+   "mainSha256": "20c799d027a8b9b444191cea54e0329fd70cf788475683185aa51552bb497332",
+   "mainBytes": 41384,
+   "firstLine": "<!-- mango-bcreq-products-impact-analysis-stepwise-by-test · Ш-2 Продукты и стейкхолдеры -->",
+   "altCopyExact": true,
+   "altSha256": "8d95c8f4efefd27857a1f014d2a4f98c107f2024e0d1036ab0f2c8e4cff1b4c4"
+  },
+  {
+   "step": "Ш-3",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "34d31d56da6cba3689c07e7e3100ee4c48d9fe580c4e09e1051f28ef1b03868d",
+   "mainBytes": 19804,
+   "firstLine": "<!-- mango-bcreq-fr-documentation-stepwise · Ш-3 ФТ -->",
+   "altCopyExact": true,
+   "altSha256": "c5f1574f3436a1ba5edc64a2b1cb5561e902f8249664953ab7670a78b3f23fd6"
+  },
+  {
+   "step": "Ш-4",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "71b72561f0bcd486b977e912810ac8730292e0b68a45d90b5854ed57183dbec9",
+   "mainBytes": 16837,
+   "firstLine": "<!-- mango-bcreq-nfr-documentation-stepwise · Ш-4 НФТ -->",
+   "altCopyExact": true,
+   "altSha256": "c2cf49610c4f0856d652d2c86960725d48303f44b471935fabc37e41133184b4"
+  },
+  {
+   "step": "Ш-5",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": "⛳ Г-С1, человек, ключевой. Согласование 1 с Заказчиком: даль",
+   "mainCopyExact": true,
+   "mainSha256": "ef79ab4773cfdcea4dfe1dd884e06c63b32b5ae7ae00a45790325ea8f00d0242",
+   "mainBytes": 19729,
+   "firstLine": "<!-- mango-bcreq-uc-modeling-stepwise · Ш-5 UC, прогон 1 -->",
+   "altCopyExact": true,
+   "altSha256": "521d78b7f2b7e64df6570f3b820ebf33717e8c6d45b56bf9823ac2e623691528"
+  },
+  {
+   "step": "Ш-6",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "0f50bf0f18e904b9d97350489f00ae0650a05f5e923e41334b716fcb04aa0851",
+   "mainBytes": 22071,
+   "firstLine": "<!-- mango-bcreq-orr-solution-design-stepwise · Ш-6 ОРР -->",
+   "altCopyExact": true,
+   "altSha256": "dc2227225878967d2fed1e3f68ab06052f7ee0ec0f47ef694969532d5c641622"
+  },
+  {
+   "step": "Ш-7",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "78696dae85087d3220c3f86a25846987cc130b093f4903932335a899945c481e",
+   "mainBytes": 16692,
+   "firstLine": "<!-- mango-bcreq-constraints-documentation-stepwise · Ш-7 Ограничения -->",
+   "altCopyExact": true,
+   "altSha256": "963d7e95f0beea5ef1d7c118b73a5c586cbd3cf8811f9c0f974ed0c76d5af8b3"
+  },
+  {
+   "step": "Ш-8",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "0dfcf7b97446dcf39762ca6e87378346d39e8b5e9874dca5675b2580bf4dc958",
+   "mainBytes": 19729,
+   "firstLine": "<!-- mango-bcreq-uc-modeling-stepwise · Ш-8 UC, прогон 2 -->",
+   "altCopyExact": true,
+   "altSha256": "d0ae76ba085e35e703f765587f9d8f0807f9188b3737294e0eda38477e6831cc"
+  },
+  {
+   "step": "Ш-9",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "2ffbac9dbe8e82ab59b69b099f77c17bb13d1b0d001b25cfefef4dcfe1d8d5f2",
+   "mainBytes": 17161,
+   "firstLine": "<!-- mango-bcreq-extra-risk-analysis-stepwise · Ш-9 Риски и приёмка -->",
+   "altCopyExact": true,
+   "altSha256": "0a58bf6da042428244f4e0dfde00f92284bc3010f25955106e09532bd0962507"
+  },
+  {
+   "step": "Ш-В",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": "⛳ Г-W, человек, ключевой. Согласование с командой (владелец ",
+   "mainCopyExact": true,
+   "mainSha256": "2e63b64f7649403cee0cc948f47e45cfd3bc9ee3c825e305b17a189359c9af54",
+   "mainBytes": 19801,
+   "firstLine": "<!-- mango-bcreq-review-validation-oneshot · Ш-В Валидация второй ролью -->",
+   "altCopyExact": true,
+   "altSha256": "e6d258c1684f5f958f6a70d9e7f52bb87e7646a01fe5ef4a3e226fa4f4340284"
+  },
+  {
+   "step": "Ш-Р",
+   "mode": "by-test",
+   "visible": true,
+   "prepare": 1,
+   "actions": 4,
+   "result": 1,
+   "purpose": 1,
+   "gate": "⛳ Выпуск, человек, ключевой. Выпуск: документ выпускает чело",
+   "mainCopyExact": true,
+   "mainSha256": "959b387347171c909751ab6b0209a21bf52d7f50fb506204a063796cf2cf9af6",
+   "mainBytes": 23774,
+   "firstLine": "<!-- mango-bcreq-release-readiness-oneshot-by-test · Ш-Р Выпуск -->",
+   "altCopyExact": null
+  },
+  {
+   "step": "Ш-С",
+   "mode": "published",
+   "visible": true,
+   "prepare": 1,
+   "actions": 3,
+   "result": 1,
+   "purpose": 1,
+   "gate": null,
+   "mainCopyExact": true,
+   "mainSha256": "95cfd54b4e90b06666586f24f7cdbb2fc2a95fa1476aef265a2fd2cf73079042",
+   "mainBytes": 16400,
+   "firstLine": "<!-- mango-bcreq-scenarios-modeling-oneshot · Ш-С Сценарии по запросу -->",
+   "altCopyExact": true,
+   "altSha256": "b49668eca5fe3729d42cbfbeba18a0f9604141d41cd06e0626d0bf6bb3fb7641"
+  }
+ ],
+ "problems": [],
+ "lead": "13 шагов комплекта прогона: один чат с моделью, шаги по порядку, на каждом шаге БА копирует промпт кнопкой ⧉. Основная кнопка копирует текст, назначенный шагу для теста; вторая — другую редакцию для сравнения. После гейтов решение записывает человек (П-5); карточку прогона, журнал гейтов и форму обратной связи ведут по комплекту.",
+ "kitLink": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md",
+ "gateCards": [
+  "Ш-2: ⛳ Г-IN, гибрид, ключевой. Проверка входа: решение «дальше» и",
+  "Ш-5: ⛳ Г-С1, человек, ключевой. Согласование 1 с Заказчиком: даль",
+  "Ш-В: ⛳ Г-W, человек, ключевой. Согласование с командой (владелец ",
+  "Ш-Р: ⛳ Выпуск, человек, ключевой. Выпуск: документ выпускает чело"
+ ],
+ "standardsPage": [
+  {
+   "name": "Глоссарий",
+   "shown": true
+  },
+  {
+   "name": "Бизнес-контекст",
+   "shown": true
+  },
+  {
+   "name": "Функциональные требования",
+   "shown": true
+  },
+  {
+   "name": "Нефункциональные требования",
+   "shown": true
+  },
+  {
+   "name": "Описание разрабатываемого решения",
+   "shown": true
+  },
+  {
+   "name": "Особенности реализации",
+   "shown": true
+  },
+  {
+   "name": "UC",
+   "shown": true
+  },
+  {
+   "name": "Дополнительные",
+   "shown": true
+  }
+ ],
+ "consoleErrors": [],
+ "blockedOrigins": [
+  "https://widgets.mango-office.ru"
+ ],
+ "mobile": {
+  "cards": 13,
+  "overflowX": false
+ }
+}
