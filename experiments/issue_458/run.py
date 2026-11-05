@@ -8,7 +8,8 @@ usage:
   run.py prepare            снимок промптов и стандартов, инструкции сессий
   run.py instr RUN C<n>     вывести инструкцию сессии
   run.py check RUN          скриптовые проверки C01–C08 (preregistration.md)
-  run.py fixate RUN         перенос в runs/2026/RUN (metadata пишет write_records.py)
+  run.py judge RUN          вывести инструкцию судьи и записать её в рабочую папку
+  run.py fixate RUN         перенос в runs/2026/RUN (metadata и отчёт пишутся отдельно)
 """
 import hashlib
 import json
@@ -108,7 +109,8 @@ SESSIONS = {
     },
 }
 
-SECTIONS = [r"^#+\s*1\.?\s", r"^#+\s*2\.?\s", r"^#+\s*3\.?\s", r"^#+\s*4\.?\s", r"^#+\s*5\.?\s", r"^#+\s*6\.?\s", r"^#+\s*7\.?\s", r"^#+\s*8\.?\s"]
+# Заголовки у моделей разные: «### 1. Глоссарий», «### Раздел 1. Глоссарий», «### 8. Дополнительные…».
+SECTIONS = [rf"^#+\s*(?:Раздел\s+)?{n}\.?\s" for n in range(1, 9)]
 SUBSECTIONS = ["2.1", "2.2", "2.3", "2.4", "2.5", "5.1", "6.1", "6.2", "8.1", "8.2", "8.3", "8.4", "8.5"]
 
 
@@ -210,7 +212,9 @@ def check(run: str) -> dict:
     results = {}
 
     missing = [p for p in SECTIONS if not re.search(p, doc, re.M)]
-    missing_sub = [s for s in SUBSECTIONS if not re.search(rf"^#+\s*[＋+]?\s*{re.escape(s)}\b", doc, re.M)]
+    # Подраздел — начало строки в любой разметке: «#### 5.1 L1», «**2.1 Контекст:**», «### ＋8.4 Реестр»,
+    # «2.1 Контекст — статус: …», «2.4.1 Включено». Каркас требует наличие подраздела, а не вид заголовка.
+    missing_sub = [s for s in SUBSECTIONS if not re.search(rf"^(?:#+\s*)?(?:\*\*\s*)?[＋+]?\s*{re.escape(s)}(?!\d)", doc, re.M)]
     results["C01"] = {"pass": not missing and not missing_sub, "missing_sections": missing, "missing_subsections": missing_sub}
 
     paths = sorted(set(re.findall(r"(?:docs/kb|taxonomy)/[\w./-]*\w\.[a-z]{2,5}", doc)))
@@ -254,6 +258,67 @@ def check(run: str) -> dict:
     return results
 
 
+def render_judge(run: str) -> str:
+    cfg = RUNS[run]
+    rdir = WORK / run
+    text = (HERE / "judge-instruction.md").read_text(encoding="utf-8")
+    text = re.search(r"```text\n(.*?)\n```", text, re.S).group(1)
+    criteria = WORK / "preregistration.md"
+    shutil.copyfile(HERE / "preregistration.md", criteria)
+    subs = {
+        "{DOC}": str(rdir / "C5" / "bcreq.md"),
+        "{INPUT}": str(rdir / "input.md"),
+        "{CRITERIA}": str(criteria),
+        "{RUNTIME}": str(RUNTIME),
+        "{OUT}": str(rdir / "judge-scores.json"),
+        "{TASK_LABEL}": f"BCREQ-{cfg['num']}",
+    }
+    for key, val in subs.items():
+        text = text.replace(key, val)
+    (rdir / "judge-instruction.txt").write_text(text, encoding="utf-8")
+    return text
+
+
+# Транскрипты каждого шага, журнал и замечания переносятся как есть; state.md сессий C1–C3
+# содержит полный документ на момент передачи, поэтому в репозиторий идёт только итоговая сборка.
+TRANSCRIPT_SESSIONS = ("C1", "C2", "C3", "C4", "C5")
+
+
+def merge_tables(run: str, name: str, title: str) -> str:
+    rdir = WORK / run
+    parts = [f"# {run}. {title}\n"]
+    for ses in TRANSCRIPT_SESSIONS:
+        body = (rdir / ses / name).read_text(encoding="utf-8").strip()
+        parts.append(f"## Сессия {ses}: {SESSIONS[ses]['title']}\n\n{body}\n")
+    return "\n".join(parts)
+
+
+def fixate(run: str) -> None:
+    cfg = RUNS[run]
+    rdir = WORK / run
+    dst = ROOT / "runs" / "2026" / run
+    for sub in ("inputs", "outputs/transcripts", "logs", "feedback"):
+        (dst / sub).mkdir(parents=True, exist_ok=True)
+    (dst / "inputs" / "request.md").write_text(
+        (HERE / cfg["request"]).read_text(encoding="utf-8"), encoding="utf-8"
+    )
+    shutil.copyfile(rdir / "input.md", dst / "inputs" / "task-card.md")
+    shutil.copyfile(rdir / "C5" / "bcreq.md", dst / "outputs" / "bcreq.md")
+    shutil.copyfile(rdir / "C5" / "state.md", dst / "outputs" / "release-readiness.md")
+    shutil.copyfile(rdir / "C4" / "state.md", dst / "outputs" / "review-remarks.md")
+    shutil.copyfile(rdir / "check.json", dst / "outputs" / "check.json")
+    shutil.copyfile(rdir / "judge-scores.json", dst / "outputs" / "judge-scores.json")
+    for ses in TRANSCRIPT_SESSIONS:
+        for src in sorted((rdir / ses).glob("transcript-*.md")):
+            shutil.copyfile(src, dst / "outputs" / "transcripts" / src.name)
+    (dst / "logs" / "gate-journal.md").write_text(merge_tables(run, "gates.md", "Журнал гейтов и переходов"), encoding="utf-8")
+    (dst / "logs" / "session-journal.md").write_text(merge_tables(run, "journal.md", "Журналы исполнителя"), encoding="utf-8")
+    (dst / "feedback" / "step-feedback.md").write_text(merge_tables(run, "feedback.md", "Обратная связь по промптам"), encoding="utf-8")
+    for name in ("preregistration.md", "executor-instruction.md", "judge-instruction.md", "ba-policy.md"):
+        shutil.copyfile(HERE / name, dst / "logs" / name)
+    print(f"ok: {dst}")
+
+
 def main() -> int:
     cmd = sys.argv[1] if len(sys.argv) > 1 else ""
     if cmd == "prepare":
@@ -264,6 +329,10 @@ def main() -> int:
         res = check(sys.argv[2])
         for key, val in res.items():
             print(key, json.dumps(val, ensure_ascii=False)[:400])
+    elif cmd == "judge":
+        print(render_judge(sys.argv[2]))
+    elif cmd == "fixate":
+        fixate(sys.argv[2])
     else:
         print(__doc__)
         return 2
