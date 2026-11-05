@@ -31,6 +31,19 @@ SHARED = ("Ш-В", "Ш-Р", "Ш-С")
 CRITICAL = ("P03", "P08", "P11", "P12", "P14")
 PROCESS = tuple(f"P{n:02d}" for n in range(17))
 STAGES = ("core", "work", "val", "rel")
+# Pre-registration, "Провалы": every failure of the arm that stays in the kit is a fix in this PR or a backlog task.
+FAIL_HANDLING = {
+    "P02": "правка карточки Ш-С (указать шаг вызова); подтверждение — RUN-0090",
+    "P05": "запись решения гейта: сборщик черновиков и карточки гейтов; подтверждение — RUN-0090",
+    "P16": "Ш-Р v0.2 и политика на карточке: задача на промпт по R3; подтверждение — RUN-0090",
+    "P14 (K, тот же Ш-В в T)": "карточка Ш-В: приложить Промпт 0 и стандарты разделов, если нет веба; подтверждение — RUN-0090",
+    "S1.1": "BL-233: сверка терминов разделов 2–6 с глоссарием",
+    "S1.3": "BL-233: локатор термина продукта",
+    "S1.4": "BL-233: сверка со словарями; здесь нижняя граница, в чате без веба словари недоступны",
+    "S3.2": "BL-233: ФТ без пункта 2.4.1 и подпункты без приёмки",
+    "S3.6": "BL-233: пункт 2.4.1 без ФТ и без пометки «→ раздел 5»",
+    "S8.1": "BL-233: решение по владельцу риска не доходит до таблицы 8.1",
+}
 
 
 def sha256(path: Path) -> str:
@@ -138,7 +151,6 @@ def blind(work: Path) -> int:
         (judge / f"{label}-process.md").write_text(mask("\n\n".join(parts)), encoding="utf-8")
         (judge / f"{label}-document.md").write_text(mask((work / f"out/val-{arm}/document-final.md").read_text(encoding="utf-8")), encoding="utf-8")
         pieces(work, judge, label, arm)
-    (judge / "common.md").write_text(mask(transcript(work / "out/in")), encoding="utf-8")
     dump(judge / "key.json", key)
     print("blinded; sizes", {p.name: p.stat().st_size for p in sorted(judge.glob("*.md"))})
     return 0
@@ -190,10 +202,8 @@ def score(work: Path) -> int:
     k, t = summary["arms"]["K"], summary["arms"]["T"]
     summary["R2"] = {"t_not_worse": t["total"] >= k["total"], "t_r1_not_failed": t["R1"] != "не готов", "by_test": t["total"] >= k["total"] and t["R1"] != "не готов"}
     summary["R3"] = {"assembles": all(proc["P16"]["verdict"] == "pass" for proc in (process["X"], process["Y"]))}
-    previous = work / "summary.json"
-    if previous.exists():
-        summary["fail_handling"] = json.loads(previous.read_text(encoding="utf-8")).get("fail_handling", {})
-    dump(previous, summary)
+    summary["fail_handling"] = FAIL_HANDLING
+    dump(work / "summary.json", summary)
     print(json.dumps({"arms": summary["arms"], "R2": summary["R2"], "R3": summary["R3"], "overall": summary["overall"]}, ensure_ascii=False))
     return 0
 
@@ -203,6 +213,7 @@ def fixate(work: Path) -> int:
         (RUN / sub).mkdir(parents=True, exist_ok=True)
     links = {
         "input-pack.md": {"](../../../runs/2026/RUN-0078/": "](../../RUN-0078/"},
+        "judge-instruction.md": {"](run.py)": "](../../../../experiments/issue_454/run0089/run.py)"},
         "preregistration.md": {"](input-pack.md)": "](../inputs/input-pack.md)", "](customer-materials.md)": "](../inputs/customer-materials.md)",
                                "](ba-script.md)": "](../inputs/ba-script.md)"},
     }
