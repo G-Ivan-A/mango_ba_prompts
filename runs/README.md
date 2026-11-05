@@ -211,6 +211,7 @@ runs/
 | [`RUN-0087`](2026/RUN-0087/metadata.yaml) | 2026-11-05 | `execution` | bcreq-long-session-rules-constitution | [Отчёт](2026/RUN-0087/outputs/golden-set-report.md), [`outputs/README.md`](2026/RUN-0087/outputs/README.md), [сводка](2026/RUN-0087/outputs/summary.json), [`logs/experiment-log.md`](2026/RUN-0087/logs/experiment-log.md), [review](2026/RUN-0087/feedback/review-notes.md) |
 | [`RUN-0088`](2026/RUN-0088/metadata.yaml) | 2026-11-05 | `execution` | process | **Идёт, итога нет, пока не свидетельство:** [`feedback/review-notes.md`](2026/RUN-0088/feedback/review-notes.md), [`logs/preregistration.md`](2026/RUN-0088/logs/preregistration.md) |
 | [`RUN-0089`](2026/RUN-0089/metadata.yaml) | 2026-11-05 | `execution` | process | [Отчёт](2026/RUN-0089/outputs/report.md), [`outputs/README.md`](2026/RUN-0089/outputs/README.md), [сводка](2026/RUN-0089/outputs/summary.json), [`logs/experiment-log.md`](2026/RUN-0089/logs/experiment-log.md), [review](2026/RUN-0089/feedback/review-notes.md) |
+| [`RUN-0090`](2026/RUN-0090/metadata.yaml) | 2026-11-05 | `execution` | process | [Отчёт](2026/RUN-0090/outputs/report.md), [`outputs/README.md`](2026/RUN-0090/outputs/README.md), [сводка](2026/RUN-0090/outputs/summary.json), [`logs/experiment-log.md`](2026/RUN-0090/logs/experiment-log.md), [review](2026/RUN-0090/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 

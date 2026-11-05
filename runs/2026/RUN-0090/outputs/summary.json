@@ -1,0 +1,91 @@
+{
+  "prompt_hashes": {
+    "Ш-0": "6460694898fe966b411acc0203ca7f450e9683db51be9987becdb1f6c11aece7",
+    "Ш-2": "e9374d4944e4d75a256c200078ada7a7d893ee3a752a4c901568834fb22cd2e2",
+    "Ш-5": "58013d44629261202270e8d1f2a48d9f9d921fe1bda7199830042dc800e3d1cf",
+    "Ш-В": "2e63b64f7649403cee0cc948f47e45cfd3bc9ee3c825e305b17a189359c9af54",
+    "Ш-Р": "53b1cfa65292eab1d0f037bb2c7898ee38afa8086667249854225505fd0fb2e9",
+    "Ш-С": "95cfd54b4e90b06666586f24f7cdbb2fc2a95fa1476aef265a2fd2cf73079042"
+  },
+  "mechanical_p16": {
+    "rel-T": {
+      "ft": {
+        "ok": true,
+        "forbidden": {},
+        "outside": [],
+        "absent": [],
+        "bytes": 6547
+      },
+      "tz": {
+        "ok": false,
+        "forbidden": {},
+        "outside": [
+          "5"
+        ],
+        "absent": [
+          "6"
+        ],
+        "bytes": 8582
+      }
+    },
+    "rel-K": {
+      "ft": {
+        "ok": true,
+        "forbidden": {},
+        "outside": [],
+        "absent": [],
+        "bytes": 5624
+      },
+      "tz": {
+        "ok": false,
+        "forbidden": {},
+        "outside": [
+          "5"
+        ],
+        "absent": [
+          "6"
+        ],
+        "bytes": 7295
+      }
+    }
+  },
+  "key": {
+    "A": "T",
+    "B": "K"
+  },
+  "R3": {
+    "passed": false,
+    "mechanical": false,
+    "judge": {
+      "T": {
+        "P16": "pass",
+        "P12": "pass"
+      },
+      "K": {
+        "P16": "fail",
+        "P12": "pass"
+      }
+    }
+  },
+  "R4": {
+    "passed": true,
+    "judge": {
+      "P14": "pass",
+      "P11": "pass"
+    }
+  },
+  "R5": {
+    "passed": true,
+    "judge": {
+      "gate-in": "pass",
+      "gate-c1": "pass"
+    }
+  },
+  "R6": {
+    "passed": true,
+    "judge": {
+      "P02": "pass",
+      "P15": "pass"
+    }
+  }
+}
