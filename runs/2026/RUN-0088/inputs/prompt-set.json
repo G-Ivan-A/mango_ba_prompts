@@ -1,0 +1,104 @@
+{
+ "kit": "0.5",
+ "steps": [
+  {
+   "step": "Ш-0",
+   "mode": "by-test",
+   "assigned_sha256": "6c1e24af7319472533eb8ed2000e88859e5f595a2f9676e57f60cdc3eb8804e4",
+   "assigned_bytes": 55142,
+   "card_sha256": "d5fe5d70da9096306446409baaec1dd12a7f8f0f757ae38dd159475b6b0fe304"
+  },
+  {
+   "step": "Ш-1",
+   "mode": "by-test",
+   "assigned_sha256": "ec826a46d529b3edce22e07f2d6a7d3afa4e119efed53e42459034f05bf68322",
+   "assigned_bytes": 45469,
+   "card_sha256": "c5905f3f73ddd165dd6c2c0fccd6f36e2a706c4c11a26ba1607e7576fef6515f"
+  },
+  {
+   "step": "Ш-2",
+   "mode": "by-test",
+   "assigned_sha256": "73ee1c0748c49393064a4d13ee64048ef31685998574b455ff15f78c01b301a7",
+   "assigned_bytes": 41267,
+   "card_sha256": "a4028bf2af6af250258dd9c778bd5f5ba80007c66ea282910c085670ae4a250a"
+  },
+  {
+   "step": "Ш-3",
+   "mode": "published",
+   "assigned_sha256": "f2c875fc3433cb90c507f7476b610c71e799f030cf3ae2fe649ab5d5c518bfe5",
+   "assigned_bytes": 19743,
+   "card_sha256": "8f55fc65ce9c239d282cb8bc46f64151a012195b34a6b5a19ca62a96a165a025",
+   "draft_sha256": "f9622ea9183f1fde617d7e77e751039ae4e9ebf55d14892a45c5f1075166c7cf"
+  },
+  {
+   "step": "Ш-4",
+   "mode": "published",
+   "assigned_sha256": "cced7c7114a8a44cec80553011bd4be34240a1ba017b4cd644fda21d5d4cc309",
+   "assigned_bytes": 16773,
+   "card_sha256": "ec9868ce0d3bf7a2c8e2189e35ce6e58b87012bc16ba1c0d58957ec638684ff1",
+   "draft_sha256": "998e6f68ba2aa0bd79f0f1a5fe3c66d776ce417d920e8ddbacb4586a97ae661a"
+  },
+  {
+   "step": "Ш-5",
+   "mode": "published",
+   "assigned_sha256": "bd3d671afb39d644e6206afc3ec06d9fc1e8f0b363ef22190536215b3aa16572",
+   "assigned_bytes": 19659,
+   "card_sha256": "4dd18ccc590b71a77544725a30ed5ad261f363fc6876b2de1a9c87b3e9adcc7f",
+   "draft_sha256": "c978023acb31571c276673a2b72790d9824769785e61644b9d7405a9a0e00296"
+  },
+  {
+   "step": "Ш-6",
+   "mode": "published",
+   "assigned_sha256": "aa5a777bc65c947b9cfadf33189166af35386fdb51fab5f9665c42d854abc660",
+   "assigned_bytes": 22005,
+   "card_sha256": "785c9720a78e9f877ae6daf770c25c89d59a5eb48c30e757b6b6c21c01ea035f",
+   "draft_sha256": "4da83852561d9db22690dd3f970a4cc853b6e46553b1efda02448145f5270953"
+  },
+  {
+   "step": "Ш-7",
+   "mode": "published",
+   "assigned_sha256": "840fa774632c350760cb29be34d22349588c642d6e544027e75d8c7ac82b8aae",
+   "assigned_bytes": 16604,
+   "card_sha256": "bf3b67ca0cd940c156bf0c7538033a5531bdfa67dea075295315e4457b596316",
+   "draft_sha256": "1364014099bad7ab2ff5b52e7186257000a980b48a0ea638ed23280e8b57ce6e"
+  },
+  {
+   "step": "Ш-8",
+   "mode": "published",
+   "assigned_sha256": "bd3d671afb39d644e6206afc3ec06d9fc1e8f0b363ef22190536215b3aa16572",
+   "assigned_bytes": 19659,
+   "card_sha256": "4dd18ccc590b71a77544725a30ed5ad261f363fc6876b2de1a9c87b3e9adcc7f",
+   "draft_sha256": "c978023acb31571c276673a2b72790d9824769785e61644b9d7405a9a0e00296"
+  },
+  {
+   "step": "Ш-9",
+   "mode": "published",
+   "assigned_sha256": "4fc826f3d0acfce377ee3732985733dfcf7190c567773e72716f0d898100d1b9",
+   "assigned_bytes": 17073,
+   "card_sha256": "2f86ba8eaee4f70d3f56407783394bc10422631ffc39451d31ee8fb237057e99",
+   "draft_sha256": "070d87d172bbc5a0c08f8786a5f608443d5930faacf0d10b4b505f615b3917f2"
+  },
+  {
+   "step": "Ш-В",
+   "mode": "published",
+   "assigned_sha256": "1c30a214474fcde04d60516c92ef442b51e6a23bf9612b38b666c17c76f2db4d",
+   "assigned_bytes": 19701,
+   "card_sha256": "b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b",
+   "draft_sha256": "7c54b2a3eec5e93eb8134194858d26f71b33cfc6c67d941159f8a50e941f505d"
+  },
+  {
+   "step": "Ш-Р",
+   "mode": "by-test",
+   "assigned_sha256": "209056697507e304d64a2f6f0699595272605e18207d7431dfc065b89339d90a",
+   "assigned_bytes": 23696,
+   "card_sha256": "df3b019fca7acc28db8bc123fa69eaef809fb3ce934a5412f72f89bd65e8659f"
+  },
+  {
+   "step": "Ш-С",
+   "mode": "published",
+   "assigned_sha256": "1b3c73db322d68b722434865d2f22ba487ba14fd12a0527e73bda28eec6c5bb1",
+   "assigned_bytes": 16305,
+   "card_sha256": "e8df095d3ef7bf6195455ca01b5ddc884aa1eb89c817d1e039ac1c987e1500c9"
+  }
+ ]
+}
