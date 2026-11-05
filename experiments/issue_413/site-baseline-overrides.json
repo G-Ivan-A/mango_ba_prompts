@@ -49,6 +49,10 @@
     "site/gate.js": {
       "sha256": "5833157c54d3c491de3af163dd6171ccd16668d1f30b0de87c57872b01fdebff",
       "reason": "#460: пароль временно отключён на отладку BL-157в; откат коммита снимает и эту запись (BL-169)"
+    },
+    "site/password-hashes.json": {
+      "sha256": "b66df9da574ecf6f212f7c433f6efd5949e0f9bc4c2ac28d07b6127007c8220c",
+      "reason": "#462: удалена запись run-0060, запись site не менялась"
     }
   },
   "sections": {

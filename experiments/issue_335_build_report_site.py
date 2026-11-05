@@ -8,13 +8,16 @@ CSS встроен, диаграммы Mermaid заменены на инлай�
 бэкенда.
 
 Диаграммы рендерятся `@mermaid-js/mermaid-cli` (нужен один раз, результат
-кэшируется в ``site/reports/run-0060/diagrams/``):
+кэшируется в ``.private-reports/run-0060/diagrams/``):
 
     python3 experiments/issue_335_build_report_site.py --render-diagrams
 
 Обычная пересборка (SVG берутся из кэша):
 
     python3 experiments/issue_335_build_report_site.py
+
+Issue #462: результат пишется в ``.private-reports/`` (вне git и вне ``site/``).
+Отчёт не публикуется: клиентский пароль не защищает файлы на статическом хостинге.
 
 Добавление следующего прогона: добавить запись в ``REPORTS`` и запустить
 скрипт — индекс, страница входа и отчёт создаются по тем же шаблонам.
@@ -595,7 +598,7 @@ def main() -> int:
                         help="перерисовать диаграммы через mermaid-cli")
     args = parser.parse_args()
 
-    reports_dir = ROOT / "site" / "reports"
+    reports_dir = ROOT / ".private-reports"
     reports_dir.mkdir(parents=True, exist_ok=True)
     (reports_dir / "index.html").write_text(build_index_page(), encoding="utf-8")
 

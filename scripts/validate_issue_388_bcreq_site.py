@@ -84,9 +84,6 @@ POSITION_MARKERS = ("**Пройдено:**", "**Текущий:**", "**Реко�
 GATED_PAGES = {
     SITE / "index.html": '<script src="gate.js"></script>',
     SITE / "reports" / "index.html": '<script src="../gate.js" data-base="../"></script>',
-    SITE / "reports" / "run-0060" / "index.html": '<script src="../../gate.js" data-base="../../"></script>',
-    SITE / "reports" / "run-0060" / "detailed-gap-report.html":
-        '<script src="../../gate.js" data-base="../../"></script>',
 }
 # Где пароль открытым текстом запрещён: страницы и данные сайта, документация.
 NO_PLAINTEXT = (SITE, ROOT / "docs", ROOT / "README.md", PROMPTS / "README.md", ROOT / "CHANGELOG.md")

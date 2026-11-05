@@ -20,7 +20,7 @@ caught docs/rfc/rfc-register.md | [RFC-PUB-001](2026-11-bcreq-prompts-pu
 caught pr-ops/artifact-map.md `/docs/rfc/2026-11-bcreq-prompts-publica
 caught docs/rfc/2026-11-runtime-product-catalog-golden-set.md ## 17. Поправка 0.8
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DEC-454-07 |
-caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **не доказано: BL-172, пакеты правит БА*
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **не доказано: BL-174, пакеты правит БА*
 caught runs/2026/RUN-0092/outputs/summary.json "R4": {     "passed": true
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | A-WORK | Ш-6
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Отдельных промптов гейтов нет
