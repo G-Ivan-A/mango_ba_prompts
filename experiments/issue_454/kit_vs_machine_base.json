@@ -1,0 +1,172 @@
+{
+ "base_commit": "56029742",
+ "kit": "0.7",
+ "steps_in_base": 12,
+ "same": [
+  "Ш-0",
+  "Ш-1",
+  "Ш-В"
+ ],
+ "different": [
+  "Ш-2",
+  "Ш-3",
+  "Ш-4",
+  "Ш-5",
+  "Ш-6",
+  "Ш-7",
+  "Ш-8",
+  "Ш-9",
+  "Ш-Р"
+ ],
+ "not_in_base": [
+  "Ш-С"
+ ],
+ "prod_kit": "0.6",
+ "prod_same": [
+  "Ш-0",
+  "Ш-1",
+  "Ш-2",
+  "Ш-3",
+  "Ш-4",
+  "Ш-5",
+  "Ш-6",
+  "Ш-7",
+  "Ш-8",
+  "Ш-9",
+  "Ш-В",
+  "Ш-Р"
+ ],
+ "prod_different": [],
+ "rows": [
+  {
+   "step": "Ш-0",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "base_path": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "same_as_base": true,
+   "prod_mode": "by-test",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-1",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "base_path": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "same_as_base": true,
+   "prod_mode": "by-test",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-2",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "base_path": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "by-test",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-3",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "base_path": "prompts/bcreq-fr-documentation-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-4",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "base_path": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-5",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "base_path": "prompts/bcreq-uc-modeling-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-6",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "base_path": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-7",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "base_path": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-8",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "base_path": "prompts/bcreq-uc-modeling-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-9",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "base_path": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "same_as_base": false,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-В",
+   "kit_mode": "published",
+   "kit_path": "prompts/bcreq-review-validation-oneshot.md",
+   "base_path": "prompts/bcreq-review-validation-oneshot.md",
+   "same_as_base": true,
+   "prod_mode": "published",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-Р",
+   "kit_mode": "by-test",
+   "kit_path": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "base_path": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "same_as_base": false,
+   "prod_mode": "by-test",
+   "prod_same_as_base": true,
+   "pin_verified_at_commit": true
+  },
+  {
+   "step": "Ш-С",
+   "kit_mode": "published",
+   "kit_path": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "base_path": null,
+   "same_as_base": null,
+   "prod_mode": "published",
+   "prod_same_as_base": null,
+   "pin_verified_at_commit": null
+  }
+ ]
+}

@@ -26,6 +26,10 @@ EVIDENCE = {
     "Ш-Р": ["RUN-0089", "RUN-0092"], "Ш-С": ["RUN-0089", "RUN-0092"],
     "Ш-В": ["RUN-0081", "RUN-0082", "RUN-0084", "RUN-0085", "RUN-0089", "RUN-0092"],
 }
+# Машинная база на реальных задачах: все шаги, кроме Ш-С; тексты комплекта 0.5 (kit_vs_machine_base.py).
+for _code in EVIDENCE:
+    if _code != "Ш-С":
+        EVIDENCE[_code] += ["RUN-0090", "RUN-0091"]
 
 
 def fetch(path):
