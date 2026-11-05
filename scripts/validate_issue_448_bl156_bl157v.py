@@ -207,7 +207,9 @@ class ShvV02Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.changes = load("shv_v02_for_448", EXP / "shv_v02_changes.py")
-        cls.text = read(PROMPT)
+        # issue #450: срез РТ-7 снимается первым; RUN-0084 мерил текст на прежнем срезе.
+        cls.i450 = load("i450_for_448", EXP.parent / "issue_450/prompt_changes.py")
+        cls.text = cls.i450.revert(cls.changes.PATH, read(PROMPT))
 
     def test_published_equals_a2(self):
         self.assertEqual(self.text, self.changes.published_text())

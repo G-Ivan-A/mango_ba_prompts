@@ -8,10 +8,10 @@ temperature: 0.1
 operation: solution_design
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-orr-solution-design-stepwise.md
-based_on_sha256: 6ee79ebd6a66bef58374c9e581178f9009b24a260bf6a2190b34bd7d7f2947db
+based_on_sha256: bad8c3783e3c86a7932b33a3c79b7ab38ca3f2f2ee96c8c02410e7aae1f4bb10
 mode: by-test
 steps: [Ш-6]
-runtime_sha: f31dcde33f0bc120244128faab98fc0162e45701
+runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
@@ -170,7 +170,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Полнота таксономии и класс поиска
 
-Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml).
+Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
 по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
@@ -197,10 +197,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Явно переданное дополнение учитывай в любом режиме; если БА явно исключил
 его из источников, не используй. Не запрашивай повторно уже переданный вход.
 
-В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/README.md),
-затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json).
+В `auto` сначала прочитай [README docs/kb](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/README.md),
+затем навигационную [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json).
 Порядок: сначала класс → документы этого класса по `product_ids` → их
-`sections_map` → только относящиеся к вопросу разделы. Для нескольких
+`sections_toc` (оглавление читается за одно обращение; разделы выбирай по
+`title`) → только относящиеся к вопросу разделы; `sections_map` открывай, только
+когда нужны `hint`, страницы или токены. Для нескольких
 подтверждённых продуктов выбери классы каждого. Заголовок, `aliases` и `hint`
 помогают выбрать документ, но не служат доказательством поведения. Цитируй
 прочитанный раздел: абсолютный URL, заголовок, страницы, `source_refs` и цитата.
@@ -257,7 +259,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
 [профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.4.
+[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -364,11 +366,11 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ### Справочники runtime
 
-Справочники runtime закреплены на коммите `f31dcde33f0bc120244128faab98fc0162e45701`. Если ты не
+Справочники runtime закреплены на коммите `68ad8fcffd47439fc3051852d9a2fbbe23815855`. Если ты не
 можешь открыть ссылку, скажи об этом и попроси БА приложить файл; не
 восстанавливай содержимое справочника по памяти.
 
-- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) → `docs/kb/maps/<id>.json` → `docs/kb/<slug>/sections/NN-*.md`; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/USAGE.md).
-- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/source-tiers.yaml).
+- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).
+- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
 <!-- /bl-156: by-test -->

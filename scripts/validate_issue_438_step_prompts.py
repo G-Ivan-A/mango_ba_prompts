@@ -137,7 +137,7 @@ def digest(text):
 
 def shv_v01():
     """v0.1 Ш-В (A0 RUN-0084): текущий файл с откатом публикации v0.2."""
-    text = read(ROOT / SHV)
+    text = BL156A.I450.revert(SHV, read(ROOT / SHV))  # issue #450: срез РТ-7 снимается первым
     return SHV_V02.revert(SHV, text) if SHV_V02_PUBLISHED else text
 
 
@@ -153,7 +153,7 @@ def measured_d():
     Черновик встраивает текст шага v0.1 и хранит его хэш в
     ``based_on_sha256``; без типизации отличаются только эти места.
     """
-    text = read(ROOT / SHV_DRAFT)
+    text = BL156A.I450.revert(SHV_DRAFT, read(ROOT / SHV_DRAFT))
     if TYPING_APPLIED:
         return text
     base = digest(read(ROOT / SHV))
@@ -349,7 +349,8 @@ class Run0080Test(RunScoring, unittest.TestCase):
         # A RUN-0080 — v0.1 с типом гейта и ссылками на main. BL-156а
         # закрепила ссылки по SHA, тип гейта не применён: подстановки и
         # откат закрепления дают измеренный A.
-        sha = json.loads(read(MANIFEST))["runtime_sha"]
+        # measured_a() уже снял срез РТ-7 (issue #450), поэтому SHA — прежний.
+        sha = BL156A.I450.SHA_OLD
         pinned = BUILDER.RUNTIME_MAIN.replace("/main/", f"/{sha}/")
         self.assertEqual(ROOT / SHV, v01)
         text = measured_a()

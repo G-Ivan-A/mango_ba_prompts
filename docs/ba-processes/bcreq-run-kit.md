@@ -183,7 +183,7 @@ prompt_ref:              # по строке на каждый выполнен�
   - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.2"}
 runtime:
   repo: G-Ivan-A/mango-ba-ai-runtime
-  commit: f31dcde33f0bc120244128faab98fc0162e45701   # срез реестра runtime 0.4, раздел 2
+  commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855   # срез реестра runtime 0.4, раздел 2
 standards:               # версии стандартов «по тесту», если mode: by-test
   base: standards/bcreq-prompt-base-standard.md@0.1.3
   profiles: standards/bcreq-prompt-profiles.md@0.1.1
