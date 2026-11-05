@@ -28,6 +28,8 @@ SECTION_FILES = {"1": "01-glossary.md", "2": "02-business-context.md", "3": "03-
 # The operations of each gate cycle in docs/ba-processes/bcreq-manual-process.md: evidence К-20, decision record К-34.
 GATE_OPS = ["К-12", "К-13", "К-20", "К-34", "К-39"]
 CONTRACT_MARK = "Контракты операций"
+# standards/bcreq-prompt-profiles.md: the eight action profiles a step prompt may carry.
+ACTION_PROFILES = ["INGEST", "EXTRACT", "ANALYZE", "ELICIT", "GENERATE", "VERIFY", "TRANSFORM", "RECORD"]
 
 
 def sha(text):
@@ -130,12 +132,18 @@ def main():
     gate_ops = {op: {"file_exists": (ROOT / "standards/bcreq-manual-classes" / ops[op]["file"]).is_file(),
                      "flow_step": ops[op]["flow_step"],
                      "named_in_assigned": [c for c in cards if op in assigned[c]]} for op in GATE_OPS}
+    profiles = {name: {"in_assigned": [c for c in cards if name in assigned[c]]}
+                for name in ACTION_PROFILES}
+    for name, item in profiles.items():
+        if not item["in_assigned"]:
+            problems.append(f"profile {name}: no assigned text carries it")
     fact_terms = {c: len(re.findall(r"(?<![А-Яа-яЁё])ТЗ(?![А-Яа-яЁё])", assigned[c])) for c in cards}
     facts = {
         "kit_version": kit["kit"]["version"], "operations_total": len(ops),
         "operations_with_contract_file": sum((ROOT / "standards/bcreq-manual-classes" / o["file"]).is_file() for o in ops.values()),
         "assigned_total_kb": round(sum(s["size_kb"] for s in steps.values()), 1),
         "stages": stages, "outside_stages": OUTSIDE, "steps": steps, "sections": sections, "gate_cycle_operations": gate_ops,
+        "action_profiles": profiles,
         "tz_term_in_assigned_texts": fact_terms,
         "tz_assembly_on_site": any(fact_terms.values()) or any("ТЗ" in " ".join(c["actions"]) + c["prepare"] + c["result"] for c in cards.values()),
         "problems": problems,
@@ -159,6 +167,7 @@ def main():
         print(" ", name, stage["gate"], "cards:", stage["gate_card"], {k: v for k, v in stage["criteria_reported_in"].items()})
     print("gate cycle operations:", {k: v["named_in_assigned"] for k, v in gate_ops.items()})
     print("sections:", {k: (v["checklist_items"], v["assigned_texts_linking_standard"]) for k, v in sections.items()})
+    print("action profiles:", {k: v["in_assigned"] for k, v in profiles.items()})
     print("ТЗ in assigned texts:", {k: v for k, v in fact_terms.items() if v} or "none", "| assembly on site:", facts["tz_assembly_on_site"])
     print("problems:", problems or "none")
     return 1 if problems else 0
