@@ -21,7 +21,7 @@ OUT = Path(__file__).with_name("audit_flow_coverage.json")
 AGENT_ROUTE = {"bcreq-in-understanding-oneshot", "bcreq-core-documentation-oneshot", "bcreq-work-solution-design-oneshot"}
 # Measured evidence per step: what a report in runs/ covers. Checked for existence below.
 EVIDENCE = {
-    "Ш-0": ["RUN-0087"], "Ш-1": ["RUN-0086"], "Ш-2": ["RUN-0083"], "Ш-3": ["RUN-0086"], "Ш-6": ["RUN-0086"],
+    "Ш-0": ["RUN-0083", "RUN-0087"], "Ш-1": ["RUN-0083", "RUN-0086"], "Ш-2": ["RUN-0083"], "Ш-3": ["RUN-0086"], "Ш-6": ["RUN-0086"],
     "Ш-В": ["RUN-0081", "RUN-0082", "RUN-0084", "RUN-0085"],
 }
 

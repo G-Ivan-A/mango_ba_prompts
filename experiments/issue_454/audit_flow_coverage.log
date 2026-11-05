@@ -1,7 +1,7 @@
 slice 68ad8fcffd47439fc3051852d9a2fbbe23815855; kit 0.5; {'steps': 13, 'byTest': 4, 'published': 9}; files 12; archive 14
 step | mode | main | prod | same_text | archived | draft | stubs | evidence
-Ш-0 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0087
-Ш-1 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0086
+Ш-0 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0083,RUN-0087
+Ш-1 | by-test | 0.2 | 0.1 | False | True | True | - | RUN-0083,RUN-0086
 Ш-2 | by-test | 0.1 | 0.1 | False | True | True | - | RUN-0083
 Ш-3 | published | 0.2 | 0.1 | False | True | True | З-2 | RUN-0086
 Ш-4 | published | 0.1 | 0.1 | False | True | True | З-2 | -

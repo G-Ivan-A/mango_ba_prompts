@@ -26,6 +26,7 @@
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
    "evidence": [
+    "RUN-0083",
     "RUN-0087"
    ],
    "prod_version": "0.1",
@@ -52,6 +53,7 @@
    "draft_runtime_is_registry_slice": true,
    "active_stubs": [],
    "evidence": [
+    "RUN-0083",
     "RUN-0086"
    ],
    "prod_version": "0.1",
