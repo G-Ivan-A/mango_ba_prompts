@@ -29,10 +29,10 @@
     "RUN-0083",
     "RUN-0087"
    ],
-   "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_version": "0.2",
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-1",
@@ -56,10 +56,10 @@
     "RUN-0083",
     "RUN-0086"
    ],
-   "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_version": "0.2",
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-2",
@@ -83,9 +83,9 @@
     "RUN-0083"
    ],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-3",
@@ -110,10 +110,10 @@
    "evidence": [
     "RUN-0086"
    ],
-   "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_version": "0.2",
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-4",
@@ -137,9 +137,9 @@
    ],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-5",
@@ -163,9 +163,9 @@
    ],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-6",
@@ -188,10 +188,10 @@
    "evidence": [
     "RUN-0086"
    ],
-   "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_version": "0.2",
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-7",
@@ -213,9 +213,9 @@
    "active_stubs": [],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-8",
@@ -239,9 +239,9 @@
    ],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-9",
@@ -263,9 +263,9 @@
    "active_stubs": [],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-В",
@@ -291,10 +291,10 @@
     "RUN-0084",
     "RUN-0085"
    ],
-   "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_version": "0.3",
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-Р",
@@ -317,8 +317,8 @@
    "evidence": [],
    "prod_version": null,
    "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_kit": true,
+   "prod_step_current": true
   },
   {
    "step": "Ш-С",
@@ -342,9 +342,9 @@
    ],
    "evidence": [],
    "prod_version": "0.1",
-   "prod_text_same_as_main": false,
-   "prod_kit": false,
-   "prod_step_current": false
+   "prod_text_same_as_main": true,
+   "prod_kit": true,
+   "prod_step_current": true
   }
  ],
  "unique_prompt_files": 12,
@@ -355,10 +355,10 @@
  ],
  "catalog_step_prompts_marked_archive": 14,
  "prod": {
-  "kit_available": false,
-  "prompts": 14,
-  "steps_current": 0,
+  "kit_available": true,
+  "prompts": 53,
+  "steps_current": 13,
   "steps_total": 13,
-  "catalog_texts_same_as_main": 0
+  "catalog_texts_same_as_main": 12
  }
 }
