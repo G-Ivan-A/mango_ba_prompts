@@ -1,0 +1,7 @@
+Simulated deploy: contents of site/ copied with cp (rsync unavailable locally), served by http.server
+index.html 200
+reports/ 200
+reports/run-0060/ 404
+reports/run-0060/index.html 404
+reports/run-0060/detailed-gap-report.html 404
+password-hashes.json 200

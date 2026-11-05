@@ -6,8 +6,21 @@ import { fileURLToPath } from "node:url";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
-const SITE_DATA_DIR = path.join(ROOT, "site", "data");
+const SITE_DIR = path.join(ROOT, "site");
+const SITE_DATA_DIR = path.join(SITE_DIR, "data");
 const REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main";
+
+// Issue #462, выбран вариант А: отчёты с данными задач не публикуются. Клиентский
+// пароль файлы не защищает, поэтому каталог удаляется из site/ при каждой сборке,
+// а деплой копирует только то, что осталось. Проверка:
+// scripts/validate_issue_462_report_exclusion.py.
+export const PUBLIC_SITE_EXCLUSIONS = ["reports/run-0060"];
+
+export async function enforcePublicSiteExclusions(siteDir = SITE_DIR) {
+  for (const relative of PUBLIC_SITE_EXCLUSIONS) {
+    await fs.rm(path.join(siteDir, relative), { recursive: true, force: true });
+  }
+}
 
 const SOURCE_FILES = {
   promptsReadme: "prompts/README.md",
@@ -77,11 +90,12 @@ const BCREQ_STAGES = [
 // Ш-В v0.2 по RUN-0084.
 // 2.4.0 (issue #450): Ш-В v0.3, Ш-0, Ш-1, Ш-3, Ш-6 v0.2 (RUN-0085…0087),
 // срез runtime 68ad8fcf и маршрут sections_toc (РТ-7).
+// 2.5.1 (issue #462): отчёт RUN-0060 исключён из публичной сборки.
 // 2.5.0 (issue #460): «Процессы» по умолчанию показывает все 13 шагов; текст
 // редакции в прокручиваемом контейнере, переключатель редакций; пароль временно
 // отключён на период отладки BL-157в. Тексты промптов не менялись.
 const SITE_VERSION = {
-  version: "2.5.0",
+  version: "2.5.1",
   released: "2026-11-05",
   issue: 460,
   basis: "PR #461: все шаги тестового набора, контейнер чтения промпта, пароль отключён на отладку",
@@ -1459,6 +1473,7 @@ export async function makeTestKit(markdown, prompts) {
 }
 
 async function main() {
+  await enforcePublicSiteExclusions();
   const [promptsReadme, taxonomyMarkdown, processIndexMarkdown, ecosystemMarkdown, patternsReadme] =
     await Promise.all([
       read(SOURCE_FILES.promptsReadme),

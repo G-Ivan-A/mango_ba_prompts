@@ -13,6 +13,18 @@ temperature: 0.1
 
 ## Unreleased
 
+### Security — Issue #462: отчёт RUN-0060 исключён из публичной сборки (вариант А); версия сайта 2.5.1
+
+- **Сборка.** `scripts/generate-pages-data.mjs` удаляет `reports/run-0060/` из `site/`
+  при каждом запуске (`PUBLIC_SITE_EXCLUSIONS`). Клиентский пароль файлы не защищает.
+- **Сайт.** Файлы отчёта и запись `run-0060` в `site/password-hashes.json` удалены,
+  на `site/reports/index.html` ссылки на отчёт нет.
+- **Сборщик отчёта.** `experiments/issue_335_build_report_site.py` пишет в
+  неотслеживаемый `.private-reports/`, а не в `site/`.
+- **Проверка.** `scripts/validate_issue_462_report_exclusion.py`.
+- **Остаётся за владельцем.** Деплой и решение BL-172: источники отчёта в `runs/` и
+  история git остаются публичными.
+
 ### Added — Issue #458: машинный прогон BCREQ по задачам 1135 и 1137, RFC-MR-001
 
 - **Прогоны.** [RUN-0090](runs/2026/RUN-0090/outputs/report.md) (задача 1135) и

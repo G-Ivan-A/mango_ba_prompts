@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T10:13:19.158Z",
+  "generatedAt": "2026-11-05T12:41:35.210Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,7 +35,7 @@
     }
   ],
   "siteVersion": {
-    "version": "2.5.0",
+    "version": "2.5.1",
     "released": "2026-11-05",
     "issue": 460,
     "basis": "PR #461: все шаги тестового набора, контейнер чтения промпта, пароль отключён на отладку",
