@@ -1,87 +1,103 @@
 run_id: RUN-0090
-process: bcreq-stage1-kit07-confirmation-issue454
+process: bcreq-stage1-machine-run-task-1135
 version: "0.1"
 date: 2026-11-05
-author: "Claude Code (claude-opus-5-5), issue #454"
-model: "claude-opus-5-5 — 6 изолированных подагентов-исполнителей, 1 слепой судья (подагент)"
+author: "Claude Code (claude-opus-5-5), issue #458"
+model: "claude-opus-5-5 — исполнитель (5 изолированных подагентов по сессиям) и слепой судья (1 изолированный подагент)"
 status: draft
 run_type: execution
-input_kind: synthetic
+input_kind: real
+task:
+  id: BCREQ-1135
+  title: "Единая история звонков и заявок: телефония Mango Office и HelpDeskEddy"
 source_paths:
-  - inputs/ba-script.md
-  - ../RUN-0089/outputs/K-document.md
-  - ../RUN-0089/outputs/T-document.md
-  - ../RUN-0089/outputs/T-gate-journal.md
-  - ../RUN-0089/outputs/K-gate-journal.md
+  - inputs/request.md
+  - inputs/task-card.md
 inputs:
-  - inputs/ba-script.md
+  - inputs/request.md
+  - inputs/task-card.md
 outputs:
   - outputs/README.md
   - outputs/report.md
-  - outputs/rel-T-01-dialogue.md
-  - outputs/rel-T-packet-ft.md
-  - outputs/rel-T-packet-tz.md
-  - outputs/rel-T-99-executor-log.md
-  - outputs/rel-K-01-dialogue.md
-  - outputs/rel-K-packet-ft.md
-  - outputs/rel-K-packet-tz.md
-  - outputs/rel-K-99-executor-log.md
-  - outputs/val-K-01-dialogue.md
-  - outputs/val-K-99-executor-log.md
-  - outputs/gate-in-01-dialogue.md
-  - outputs/gate-in-99-executor-log.md
-  - outputs/gate-c1-01-dialogue.md
-  - outputs/gate-c1-99-executor-log.md
-  - outputs/sc-01-dialogue.md
-  - outputs/sc-99-executor-log.md
-  - outputs/judge-verdicts.json
-  - outputs/judge-key.json
-  - outputs/summary.json
+  - outputs/bcreq.md
+  - outputs/release-readiness.md
+  - outputs/review-remarks.md
+  - outputs/check.json
+  - outputs/judge-scores.json
+  - outputs/transcripts/transcript-ВОЗВРАТ.md
+  - outputs/transcripts/transcript-Ш-0.md
+  - outputs/transcripts/transcript-Ш-1.md
+  - outputs/transcripts/transcript-Ш-2.md
+  - outputs/transcripts/transcript-Ш-3.md
+  - outputs/transcripts/transcript-Ш-4.md
+  - outputs/transcripts/transcript-Ш-5.md
+  - outputs/transcripts/transcript-Ш-6.md
+  - outputs/transcripts/transcript-Ш-7.md
+  - outputs/transcripts/transcript-Ш-8.md
+  - outputs/transcripts/transcript-Ш-9.md
+  - outputs/transcripts/transcript-Ш-В.md
+  - outputs/transcripts/transcript-Ш-Р.md
 logs:
   - logs/experiment-log.md
+  - logs/gate-journal.md
+  - logs/session-journal.md
+  - logs/preregistration.md
   - logs/executor-instruction.md
   - logs/judge-instruction.md
-  - logs/preregistration.md
+  - logs/ba-policy.md
 feedback:
-  - feedback/review-notes.md
-# SHA-256 — точные байты буфера обмена комплекта 0.7, основная кнопка: файл шага плюс строка-метка кнопки ⧉.
+  - feedback/step-feedback.md
+prompt_set:
+  mode: "run kit v0.5: Ш-0, Ш-1, Ш-2, Ш-Р — by-test; остальные — published"
+  commit: 56029742
 prompt_ref:
-  - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "по тесту (копия буфера)", sha256: 6460694898fe966b411acc0203ca7f450e9683db51be9987becdb1f6c11aece7}
-  - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "по тесту (копия буфера)", sha256: e9374d4944e4d75a256c200078ada7a7d893ee3a752a4c901568834fb22cd2e2}
-  - {step: Ш-5, path: prompts/drafts/bcreq-uc-modeling-stepwise.md, version: "по тесту (копия буфера)", sha256: 58013d44629261202270e8d1f2a48d9f9d921fe1bda7199830042dc800e3d1cf}
-  - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.3", sha256: 2e63b64f7649403cee0cc948f47e45cfd3bc9ee3c825e305b17a189359c9af54}
-  - {step: Ш-Р, path: prompts/drafts/bcreq-release-readiness-oneshot.md, version: "по тесту (копия буфера)", sha256: 53b1cfa65292eab1d0f037bb2c7898ee38afa8086667249854225505fd0fb2e9}
-  - {step: Ш-С, path: prompts/bcreq-scenarios-modeling-oneshot.md, version: "0.1", sha256: 95cfd54b4e90b06666586f24f7cdbb2fc2a95fa1476aef265a2fd2cf73079042}
-prompt_hashes: outputs/summary.json   # поле prompt_hashes
+  - {step: Ш-0, path: prompts/drafts/bcreq-constitution-governance-oneshot.md, version: "0.2-by-test (реестр 0.5)", sha256: d5fe5d70da9096306446409baaec1dd12a7f8f0f757ae38dd159475b6b0fe304}
+  - {step: Ш-1, path: prompts/drafts/bcreq-context-understanding-stepwise.md, version: "0.2-by-test (реестр 0.5)", sha256: c5905f3f73ddd165dd6c2c0fccd6f36e2a706c4c11a26ba1607e7576fef6515f}
+  - {step: Ш-2, path: prompts/drafts/bcreq-products-impact-analysis-stepwise.md, version: "0.1-by-test (реестр 0.5)", sha256: a4028bf2af6af250258dd9c778bd5f5ba80007c66ea282910c085670ae4a250a}
+  - {step: Ш-3, path: prompts/bcreq-fr-documentation-stepwise.md, version: "0.2", sha256: 8f55fc65ce9c239d282cb8bc46f64151a012195b34a6b5a19ca62a96a165a025}
+  - {step: Ш-4, path: prompts/bcreq-nfr-documentation-stepwise.md, version: "0.1", sha256: ec9868ce0d3bf7a2c8e2189e35ce6e58b87012bc16ba1c0d58957ec638684ff1}
+  - {step: Ш-5, path: prompts/bcreq-uc-modeling-stepwise.md, version: "0.1", sha256: 4dd18ccc590b71a77544725a30ed5ad261f363fc6876b2de1a9c87b3e9adcc7f}
+  - {step: Ш-6, path: prompts/bcreq-orr-solution-design-stepwise.md, version: "0.2", sha256: 785c9720a78e9f877ae6daf770c25c89d59a5eb48c30e757b6b6c21c01ea035f}
+  - {step: Ш-7, path: prompts/bcreq-constraints-documentation-stepwise.md, version: "0.1", sha256: bf3b67ca0cd940c156bf0c7538033a5531bdfa67dea075295315e4457b596316}
+  - {step: Ш-8, path: prompts/bcreq-uc-modeling-stepwise.md, version: "0.1", sha256: 4dd18ccc590b71a77544725a30ed5ad261f363fc6876b2de1a9c87b3e9adcc7f}
+  - {step: Ш-9, path: prompts/bcreq-extra-risk-analysis-stepwise.md, version: "0.1", sha256: 2f86ba8eaee4f70d3f56407783394bc10422631ffc39451d31ee8fb237057e99}
+  - {step: Ш-В, path: prompts/bcreq-review-validation-oneshot.md, version: "0.3", sha256: b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b}
+  - {step: Ш-Р, path: prompts/drafts/bcreq-release-readiness-oneshot.md, version: "0.1-by-test (реестр 0.5)", sha256: df3b019fca7acc28db8bc123fa69eaef809fb3ce934a5412f72f89bd65e8659f}
+standards:
+  base: standards/bcreq-prompt-base-standard.md@0.1.3
+  profiles: standards/bcreq-prompt-profiles.md@0.1.1
+  runtime_references: standards/bcreq-runtime-references.md@0.5
 runtime:
   repo: G-Ivan-A/mango-ba-ai-runtime
   commit: 68ad8fcffd47439fc3051852d9a2fbbe23815855
-task_seed: runs/2026/RUN-0078/inputs/seed.json   # SIM-1106
-preregistration: runs/2026/RUN-0090/logs/preregistration.md
+preregistration: experiments/issue_458/preregistration.md
 replicates: 1
 lessons: []
 golden_promotion: []
 ba_reviewed: false
 metrics:
-  verdict: confirmed-with-failure
-  r3_packets: false
-  r3_mechanical: false
-  r3_judge_T: {P16: pass, P12: pass}
-  r3_judge_K: {P16: fail, P12: pass}
-  r4_validation: true
-  r5_gates: true
-  r6_scenarios: true
-  checker_defect: "механическая проверка P16 считает номер заголовка, а Ш-Р требует сквозную нумерацию в ТЗ: раздел 6 документа законно становится разделом 5 пакета"
-  tokens_total: null
-  token_method: "не считались"
+  verdict: partial-success
+  steps_done: 12
+  scripted_checks: 8
+  scripted_passed: 8
+  criteria: 14
+  passed: 10
+  failed: [J01, J02, J03, J07]
+  critical: [A1, A2, A3, J01, J02, J03, J04]
+  gates_pending: [Г-IN, Г-С1, Г-W, Выпуск]
+  tokens_executor: 423516
+  tokens_judge: 110732
+  tokens_total: 534248
+  token_method: "subagent_tokens из отчёта Claude Code о подагенте; при сжатии контекста внутри сессии возможна недооценка"
   measured: true
-  eval: "Подтверждение четырёх правок комплекта 0.7 после RUN-0089: 6 плеч, 1 слепой судья, правила R3', R4, R5, R6 записаны до запуска"
+  eval: "Машинный прогон потока BCREQ по задаче 1135: 5 изолированных сессий, 12 шагов, возврат по Ш-В, гейты `pending`, реплики БА — симулятор. Скриптовые проверки 8/8; слепой судья 10/14, провалы J01, J02, J03, J07. Вердикт по правилу пред-регистрации. N = 1, судья не откалиброван, БА не проверял."
 related_runs:
-  - RUN-0089
-  - RUN-0078
+  - RUN-0091
 related_issues:
-  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/454
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/458
 related_artifacts:
-  - docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md
-  - docs/ba-processes/bcreq-run-kit.md
-  - experiments/issue_454/run0090/run.py
+  - docs/rfc/2026-11-bcreq-machine-run-baseline.md
+  - experiments/issue_458/task-statement.md
+  - experiments/issue_458/run.py
+  - experiments/issue_458/preregistration.md
+  - scripts/validate_issue_458_machine_runs.py

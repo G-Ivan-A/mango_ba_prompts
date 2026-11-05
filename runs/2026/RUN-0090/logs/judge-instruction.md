@@ -7,27 +7,23 @@ type: experiment-instruction
 scope: mango-only
 ---
 
-# RUN-0090 — инструкция судьи (дословно передаётся подагенту)
+# RUN-0090, RUN-0091 — инструкция судьи (передаётся подагенту)
 
 ```text
-You are a strict evaluator of dialogue outputs in a BA documentation process. You know nothing about who produced them. ALLOWED: Read on {JUDGE}; Write on {JUDGE}/verdicts.json only. No Bash, no other files. Read everything named below in full. For each criterion give "pass" or "fail", a short quote from the output and a one-sentence reason. Judge only what the criterion says. A criterion with several conditions passes only if all hold. Reasoning in Russian.
+You are an independent reviewer of a business requirements document (BCREQ, in Russian) produced by another model for a real task. You did not write it and you have no stake in it. A pass you cannot prove is a fail.
 
-Blocks and criteria:
+ALLOWED: Read on {DOC}, {INPUT}, {CRITERIA}; Read and search inside {RUNTIME} (the knowledge base at a pinned commit). If Grep/Glob are unavailable, use Bash ONLY for read-only grep, find, ls inside {RUNTIME}. Write only {OUT}. Do not read anything else; do not open transcripts or other tasks.
 
-rel-A and rel-B: each folder is one release step on a document (document-A.md, document-B.md). 01-dialogue.md is the model's turn, packet-ft.md and packet-tz.md are its packets.
-P12 (critical): reports of К-31, К-12, К-33, К-32, К-35 are present on the real document; packets are drafts following the addressee policy (the default one: no policy was attached); `released` and sending are not declared; the decision stays with people.
-P16: the output has both packets as full text. "ФТ на согласование" holds exactly sections 1, 2.1–2.4, 3, 4; "ТЗ в договор" holds exactly sections 1, 2.1–2.4, 3, 4, 6 with continuous numbering and a document-number placeholder; neither has section 5, 2.5, 7, 8, reasoning or service marks; meaning is unchanged against the document; both stay drafts; a manifest lists what was excluded and every removed open marker. A point left out because it would lose meaning without its marker is fine if the manifest lists it. Sampling: compare at least five requirements and one table against the document.
+Task: score the document against the criteria in {CRITERIA}: the section "Общие" and the section for task {TASK_LABEL}. Ignore the sections on scripts and verdict.
 
-val-K: a review step.
-P11 (critical): remarks have a locator, a rule, a variant, a severity; the Г-W report gives facts for Г-W.1–Г-W.5; no "готово" or decision by the model; the model does not edit the document.
-P14 (critical): no line "ТУПИК" in 99-executor-log.md; the step found what it needed in the attachments; a stop outside a stop-gate was resolved by the scripted continuation.
+Rules
+- J01: pick the 10 strongest statements about current product behaviour yourself; for each, open the fragment at its locator in {RUNTIME} and compare. Record the statement, the locator, what the fragment says, and supports/contradicts/not-found/no-locator. A statement with a false or absent locator fails J01.
+- J02: look for any capability or fact about adjacent systems or the client that is not in {INPUT} and is not marked [ТРЕБУЕТСЯ УТОЧНЕНИЕ]. Search {RUNTIME} before calling something invented.
+- J03: walk the chain for every item of 2.4.1. Report every break by its two ends.
+- For each criterion give verdict pass/fail, a verbatim quote from the document with its section, and one sentence of reasoning.
+- Then list up to 10 defects you consider most significant for a business analyst who would pick up this document, most severe first, regardless of the criteria: what, where, why it matters. Do not rewrite the document.
+- Do not judge readiness. No gate decision and no overall score.
 
-gate-in: step Ш-2 ends with hybrid gate Г-IN; gate-c1: step Ш-5 ends with human gate Г-С1.
-P05, each block separately: the human's gate decision is written to 8.5 and shown to the BA with gate id, gate type, decision, decider and reason; for the hybrid gate Г-IN also model recommendation and divergence.
-
-sc: a scenario step called with the caller step named by the BA.
-P02: "Состояние BCREQ" is output at the end with the correct current step and a named recommended next step (a step, not a marker), not a decision.
-P15: the requested type is produced from sections 1–3 only, roles and values come from the request, nothing is added.
-
-Write {JUDGE}/verdicts.json: {"rel-A": {"P12": {"verdict": "pass"|"fail", "quote": "...", "reason": "..."}, "P16": {...}}, "rel-B": {...}, "val-K": {"P11": {...}, "P14": {...}}, "gate-in": {"P05": {...}}, "gate-c1": {"P05": {...}}, "sc": {"P02": {...}, "P15": {...}}}. Valid JSON, UTF-8. Reply with one line: done.
+Write {OUT} as JSON: {"task": "...", "criteria": {"J01": {"verdict": "pass|fail", "quote": "...", "section": "...", "why": "..."}, ...}, "j01_samples": [{"statement": "...", "locator": "...", "fragment": "...", "result": "supports|contradicts|not-found|no-locator"}], "j03_breaks": ["..."], "defects": [{"what": "...", "where": "...", "why": "..."}]}.
+Reply with one line: count of passes and fails.
 ```

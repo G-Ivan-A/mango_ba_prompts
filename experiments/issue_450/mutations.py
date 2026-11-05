@@ -12,7 +12,7 @@ M = [("prompts/bcreq-review-validation-oneshot.md", "version: 0.3", "version: 0.
      ("runs/2026/RUN-0085/metadata.yaml", "ba_reviewed: false", "ba_reviewed: true"),
      ("pr-ops/BACKLOG.md", "BL-156г — `DONE` (PR #451 слит", "BL-156г — `TODO`"),
      ("docs/rfc/2026-11-runtime-product-catalog-golden-set.md", "Пробел Р-1 раздела 14.2 снят", "Р-1 открыт"),
-     ("site/index.html", "v2.4.0", "v2.3.0")]
+     ("site/index.html", "v2.5.0", "v2.3.0")]
 bad = 0
 for path, a, b in M:
     f = ROOT / path; src = f.read_text(encoding="utf-8")

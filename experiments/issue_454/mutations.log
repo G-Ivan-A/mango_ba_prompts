@@ -20,6 +20,8 @@ caught docs/rfc/rfc-register.md | [RFC-PUB-001](2026-11-bcreq-prompts-pu
 caught pr-ops/artifact-map.md `/docs/rfc/2026-11-bcreq-prompts-publica
 caught docs/rfc/2026-11-runtime-product-catalog-golden-set.md ## 17. Поправка 0.8
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DEC-454-07 |
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **не доказано: BL-172, пакеты правит БА*
+caught runs/2026/RUN-0092/outputs/summary.json "R4": {     "passed": true
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | A-WORK | Ш-6
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Отдельных промптов гейтов нет
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | 6 Особенности реализации |
@@ -30,5 +32,22 @@ caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Сайт сам н�
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md Однозначной готовности нет
 caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **заблокировано: нужен БА**
 caught pr-ops/BACKLOG.md | **Р-20** |
+caught experiments/issue_454/kit_vs_machine_base.json "prod_kit": "0.6"
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md различаются [9 из 12]
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md различаются Ш-2…Ш-9 и Ш-Р, 9 шагов из 12
+caught docs/rfc/2026-11-bcreq-machine-run-baseline.md 9 шагах из 12
+caught docs/rfc/2026-11-bcreq-machine-run-baseline.md **не читая** RUN-0090
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md | DEC-454-09 |
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md не читая RUN-0090 и RUN-0091
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md прогон не считается независимым
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md доказано с ограничением, не приёмка
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **не доказано: BL-157в**
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md **не доказано: BL-173, BL-170**
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md `contact-center` не проверен. `analytics
+caught docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md По Р-МР-4 кандидаты
+caught pr-ops/BACKLOG.md Кандидаты BL-171 сюда не входят
+caught pr-ops/BACKLOG.md DEC-454-05…09
+caught pr-ops/BACKLOG.md `review` → `DONE` (PR #459 слит)
+caught pr-ops/BACKLOG.md создаёт владелец, Р-МР-2
 caught experiments/issue_454/audit_flow_coverage.json "steps_current": 4
-мутаций: 33, пропущено: 0
+мутаций: 52, пропущено: 0

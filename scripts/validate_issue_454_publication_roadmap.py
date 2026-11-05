@@ -97,7 +97,7 @@ class Roadmap(unittest.TestCase):
                 self.assertEqual(rows[code][2], step["mode"], UPDATE)
                 self.assertEqual(rows[code][3], published["version"] if published else "нет", UPDATE)
                 self.assertIn("BL-232", rows[code][7])
-        self.assertIn("BL-170", rows["Ш-Р"][7])
+        self.assertIn("BL-172", rows["Ш-Р"][7])
 
     def test_measured_runs_exist(self):
         for row in table(self.rfc, "coverage"):
@@ -160,7 +160,7 @@ class OwnerConfirmation(unittest.TestCase):
 
     def test_gaps_keep_their_tasks(self):
         self.assertIn("У гейта «Выпуск» нет критериев", self.section(5))
-        for code in ("BL-233", "BL-234", "BL-171"):
+        for code in ("BL-233", "BL-234", "BL-173"):
             self.assertIn(code, self.section(14))
             row = next(line for line in self.backlog.splitlines() if line.startswith(f"| {code} |"))
             if code != "BL-233":
@@ -169,7 +169,7 @@ class OwnerConfirmation(unittest.TestCase):
 
     def test_decisions_of_the_second_round(self):
         decisions = self.section(7)
-        for number in range(5, 9):
+        for number in range(5, 10):
             self.assertIn(f"| DEC-454-0{number} |", decisions)
 
     def test_parallel_track_is_measured(self):
@@ -177,13 +177,13 @@ class OwnerConfirmation(unittest.TestCase):
         self.assertIn("parallel_track_blast_radius", text)
         self.assertIn("Сайт сам не движется", text)
 
-    def test_verdict_follows_run0090_rules(self):
+    def test_verdict_follows_run0092_rules(self):
         """Section 15 repeats the preregistered rules: a failed R3' may not read as ready packets."""
-        summary = json.loads(read("runs/2026/RUN-0090/outputs/summary.json"))
+        summary = json.loads(read("runs/2026/RUN-0092/outputs/summary.json"))
         rows = [line for line in self.section(15).splitlines() if line.startswith("|")]
         packets = next(row for row in rows if row.startswith("| Пакеты готовы к отправке"))
         if not summary["R3"]["passed"]:
-            self.assertIn("**не доказано: BL-170, пакеты правит БА**", packets, UPDATE)
+            self.assertIn("**не доказано: BL-172, пакеты правит БА**", packets, UPDATE)
             self.assertIn("пакеты читает и правит БА", self.rfc.replace("\n", " ").replace("**", ""), UPDATE)
         confirmed = next(row for row in rows if row.startswith("| Ш-В получает конституцию"))
         if all(summary[rule]["passed"] for rule in ("R4", "R5", "R6")):
@@ -201,6 +201,66 @@ class OwnerConfirmation(unittest.TestCase):
                          f"появился прогон с ba_reviewed: true, пересмотрите вердикт: {UPDATE}")
 
 
+class MachineBase(unittest.TestCase):
+    """PR #459 went in first: the plan and the verdict must stay consistent with it."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.rfc = read(RFC)
+        cls.base_rfc = read("docs/rfc/2026-11-bcreq-machine-run-baseline.md")
+        cls.backlog = read("pr-ops/BACKLOG.md")
+        cls.compare = json.loads(read("experiments/issue_454/kit_vs_machine_base.json"))
+
+    def section(self, number):
+        return self.rfc.split(f"\n## {number}. ")[1].split("\n## ")[0]
+
+    def test_stated_difference_matches_the_comparison(self):
+        """The number in the text comes from hashes pinned in the runs, not from memory."""
+        total, different = self.compare["steps_in_base"], len(self.compare["different"])
+        self.assertEqual(self.compare["prod_kit"], "0.6", UPDATE)
+        self.assertEqual(len(self.compare["prod_same"]), total, "прод ушёл от текстов базы: " + UPDATE)
+        for text in (self.rfc, self.base_rfc):
+            self.assertIn(f"{different} шагах из {total}", text.replace("\n", " "), UPDATE)
+        self.assertIn(f"{different} шагов из {total}", self.section(5), UPDATE)
+        self.assertIn(f"различаются [{different} из {total}]", self.rfc.split("\n## 1. ")[0], UPDATE)
+
+    def test_machine_base_is_not_acceptance(self):
+        rows = [line for line in self.section(15).splitlines() if line.startswith("|")]
+        real = next(row for row in rows if row.startswith("| Реальные задачи проходят поток"))
+        self.assertIn("`partial-success`", real)
+        self.assertIn("не приёмка", real)
+        kit = next(row for row in rows if row.startswith("| Комплект 0.7 работает на реальных задачах"))
+        self.assertIn("**не доказано: BL-157в**", kit)
+        for code in ("RUN-0090", "RUN-0091"):
+            self.assertIn(f"{code}]", real)
+            self.assertTrue((ROOT / f"runs/2026/{code}/outputs/report.md").exists())
+
+    def test_the_decision_and_the_ba_rule_are_written_down(self):
+        self.assertIn("| DEC-454-09 |", self.section(7))
+        self.assertIn("не читая RUN-0090 и RUN-0091", self.section(6))
+        self.assertIn("не считается независимым", self.section(10))
+        self.assertIn("DEC-454-05…09", self.backlog)
+        self.assertIn("**не читая** RUN-0090", self.base_rfc, "защита от якоря задана в RFC-MR-001")
+
+    def test_classes_are_not_overstated(self):
+        self.assertIn("`contact-center` не проверен", self.section(15))
+        self.assertIn("**не доказано: BL-173, BL-170**", self.section(15))
+        self.assertIn("| DEC-454-08 |", self.section(7))
+        self.assertIn("Р-МР-3", self.section(7))
+
+    def test_candidates_wait_for_ba_data(self):
+        self.assertIn("Р-МР-4", self.section(12))
+        self.assertIn("Кандидаты BL-171 сюда не входят", next(
+            line for line in self.backlog.splitlines() if line.startswith("| BL-233 |")))
+
+    def test_chain_shows_the_merged_step_and_its_next_one(self):
+        chain = self.backlog.split("**Движение по цепочке (на 2026-11-05, issue #454).**")[1].split("### ")[0]
+        for code in ("BL-157г", "BL-170", "BL-171"):
+            self.assertIn(code, chain)
+        self.assertIn("`review` → `DONE` (PR #459 слит)", chain)
+        self.assertIn("создаёт владелец, Р-МР-2", chain)
+
+
 class Chain(unittest.TestCase):
     """Issue postcondition: previous step, current step, what it opens; statuses reflected."""
 
@@ -215,7 +275,7 @@ class Chain(unittest.TestCase):
         chain = re.split(r"\*\*Движение по цепочке|### Как дать решение", self.backlog.split("**Движение по цепочке (на 2026-11-05, issue #454).**")[1])[0]
         for label in ("Предшествующий (полнота)", "Текущий — закрывается", "Открывает", "Ждёт триггера"):
             self.assertIn(f"| {label}", chain)
-        for code in ("BL-156г", "BL-167", "BL-168", "BL-156", "BL-232", "Р-19", "BL-230", "BL-231", "BL-157в", "BL-170"):
+        for code in ("BL-156г", "BL-167", "BL-168", "BL-156", "BL-232", "Р-19", "BL-230", "BL-231", "BL-157в", "BL-172"):
             self.assertIn(code, chain)
 
     def test_previous_step_statuses(self):
@@ -227,16 +287,16 @@ class Chain(unittest.TestCase):
     def test_opened_tasks(self):
         deploy = self.row("| BL-232 |")
         self.assertIn("| P0 | — | TODO |", deploy, "деплой не должен ждать Р-19")
-        self.assertIn("| deferred (triggered) |", self.row("| BL-170 |"))
+        self.assertIn("| deferred (triggered) |", self.row("| BL-172 |"))
         self.assertTrue(self.row("| **Р-19** |").rstrip().endswith("| ждёт |") or "принято" in self.row("| **Р-19** |"))
-        for code in ("BL-157", "BL-170", "BL-230", "BL-231"):
+        for code in ("BL-157", "BL-172", "BL-230", "BL-231"):
             self.assertIn("Р-19", cells(self.row(f"| {code} |"))[3], f"{code}: Р-19 должно быть в зависимостях")
         self.assertIn("BL-232", cells(self.row("| BL-157 |"))[3], "этап BL-157в ждёт деплоя")
 
     def test_closure_criterion(self):
         closure = self.backlog.split("**Критерий закрытия.** BL-150…BL-157")[1].split("\n\n")[0]
         self.assertIn("BL-232", closure)
-        self.assertIn("BL-170", closure)
+        self.assertIn("BL-172", closure)
 
 
 class Registration(unittest.TestCase):

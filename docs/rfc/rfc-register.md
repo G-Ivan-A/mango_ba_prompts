@@ -18,6 +18,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -36,6 +37,7 @@ related_artifacts:
   - "docs/analysis/2026-10-31-standards-page-review.md"
   - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
   - "docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md"
+  - "docs/rfc/2026-11-bcreq-machine-run-baseline.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -342,6 +344,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
 | [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога); поправка 0.4 — исполнение BL-156а на runtime `f31dcde3`, решение по PR #17 (строгий вариант PR #21), задачи BL-165, BL-166; поправка 0.5 — исполнение BL-157б (RUN-0083, A-IN `by-test`), пробелы runtime Р-1…Р-3, тело задачи РТ-7 (компактное оглавление БЗ); поправка 0.6 — RUN-0084 и Ш-В v0.2 (BL-156б, BL-156в), разбор чатов BL-157в, РТ-7 создана (runtime #22) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442); [issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444); [issue #446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446); [issue #448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443), [PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445), [PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447), [PR #449](https://github.com/G-Ivan-A/mango_ba_prompts/pull/449) |
+| [RFC-MR-001](2026-11-bcreq-machine-run-baseline.md) | Машинная база сравнения для прогона БА по задачам 1135 и 1137 | RUN-0090 и RUN-0091 — база сравнения, а не приёмка (`partial-success`, гейты `pending`, `ba_reviewed: false`); протокол сравнения с BL-157в с защитой от якоря; решения Р-МР-1…Р-МР-4; BL-170 — расхождение маршрута каталог ↔ БЗ; BL-171 — пакет правок после данных БА | [Issue #458](https://github.com/G-Ivan-A/mango_ba_prompts/issues/458) | proposed | [PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |
 
 ## Публикация промптов потока BCREQ (источник: issue #454)
 
@@ -350,7 +353,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | ID | Предложение | Суть | Статус | Артефакт | Дата |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-PUB-001](2026-11-bcreq-prompts-publication-roadmap.md) | Роадмэп закрытия потока BCREQ промптами и контрактами | Подтверждение по стадиям и 8 разделам, план закрытия, вердикт готовности от ФТ до ТЗ, параллельный трек; прод 2.5.0: относительно ветки актуальны 4 шага из 13. BL-232, BL-233, BL-234, BL-170, BL-171, Р-19, Р-20 | proposed | [Аудит покрытия](../../experiments/issue_454/audit_flow_coverage.log) | 2026-11-05 |
+| [RFC-PUB-001](2026-11-bcreq-prompts-publication-roadmap.md) | Роадмэп закрытия потока BCREQ промптами и контрактами | Подтверждение по стадиям и 8 разделам, план закрытия, вердикт готовности от ФТ до ТЗ, параллельный трек; прод 2.5.0: относительно ветки актуальны 4 шага из 13. BL-232, BL-233, BL-234, BL-172, BL-173, Р-19, Р-20 | proposed | [Аудит покрытия](../../experiments/issue_454/audit_flow_coverage.log) | 2026-11-05 |
 
 ## Журнал изменений реестра
 
@@ -465,6 +468,11 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   `proposed` — роадмэп публикации промптов, решения DEC-454-01…04 (Р-19).
   RFC-RT-001 v0.8, поправка 0.8 — раздел 17, ссылка на новый RFC. Статус
   `accepted` не меняется.
+- **2026-11-05** — issue #454 (PR #455): RFC-PUB-001 v0.3 — машинная база RFC-MR-001, сверка
+  текстов с комплектом 0.7, DEC-454-09; RFC-MR-001 v0.2 — ссылка на эту сверку.
 - **2026-11-05** — issue #454 (PR #455): RFC-PUB-001 v0.2 по комментарию владельца —
   разделы 12–15: параллельный трек, подтверждение по стадиям, план закрытия, вердикт
   готовности; решения DEC-454-05…08 (Р-20). Статус `proposed` не меняется.
+- **2026-11-05** — issue #458 (PR #459): RFC-MR-001 v0.1 `proposed` — машинная
+  база сравнения RUN-0090, RUN-0091 и протокол сравнения с BL-157в. RFC-RT-001
+  получает только ссылку, статус `accepted` не меняется.
