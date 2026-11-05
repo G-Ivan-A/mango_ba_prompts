@@ -199,6 +199,21 @@ class StandardsPage(unittest.TestCase):
         self.assertIn("IREB CPRE Glossary", self.html)
 
 
+class ClassHistory(unittest.TestCase):
+    """Срез #405 снят до правок #464: прежние поведение и стоп остаются в каталоге."""
+
+    def test_previous_fields_kept(self):
+        catalog = json.loads(read("standards/bcreq-manual-classes/catalog.json"))
+        changed = {item["id"]: item for item in catalog["classes"]
+                   if item["history"].get("fields_changed_in") == "issue #464"}
+        self.assertEqual(set(changed), {"К-01", "К-14", "К-15", "К-16", "К-17", "К-21", "К-22", "К-23", "К-36"})
+        for item in changed.values():
+            previous = item["history"]["previous_fields"]
+            self.assertTrue(previous)
+            for field, value in previous.items():
+                self.assertNotEqual(item[field], value, (item["id"], field))
+
+
 class Release(unittest.TestCase):
     def test_site_version(self):
         stats = json.loads(read("site/data/stats.json"))

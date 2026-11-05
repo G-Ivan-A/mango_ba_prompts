@@ -1,6 +1,16 @@
 {
  "base_commit": "632007c0",
  "files": {
+  "prompts/README.md": [
+   {
+    "after": "| Ш-1 | 1 Глоссарий, 2 Бизнес-контекст | [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) | [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) (стадия A-IN = Ш-1 + Ш-2) | — |\n| Ш-2 | 2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |\n| Ш-3 | 3 Функциональные требования | [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) | [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) (стадия A-CORE = Ш-3…Ш-5) | — |\n",
+    "before": "| Ш-1 | 1 Глоссарий, 2 Бизнес-контекст | [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) | [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) (стадия A-IN = Ш-1 + Ш-2) | — |\n| Ш-2 | ＋2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |\n| Ш-3 | 3 Функциональные требования | [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) | [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) (стадия A-CORE = Ш-3…Ш-5) | — |\n"
+   },
+   {
+    "after": "3. `bcreq-context-understanding-stepwise.md` и\n   `bcreq-products-impact-analysis-stepwise.md` формируют разделы 1, 2 и 2.5;\n   гейт Г-IN решает БА.\n",
+    "before": "3. `bcreq-context-understanding-stepwise.md` и\n   `bcreq-products-impact-analysis-stepwise.md` формируют разделы 1, 2 и ＋2.5;\n   гейт Г-IN решает БА.\n"
+   }
+  ],
   "prompts/bcreq-constitution-governance-oneshot.md": [
    {
     "after": "status: draft\nversion: 0.3\nupdated: 2026-11-05\n",

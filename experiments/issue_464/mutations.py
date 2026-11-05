@@ -15,7 +15,9 @@ S = "standards/bcreq-sections/"
 B = "pr-ops/BACKLOG.md"
 PAGE = "site/index.html"
 KIT = "site/data/test-kit.json"
+CATALOG = "standards/bcreq-manual-classes/catalog.json"
 M = [
+    (CATALOG, '"fields_changed_in": "issue #464"', '"fields_changed_in": "issue #000"'),
     (S0, "Не выводи её: БА уже вставил этот промпт в чат.", "Выведи её в чат."),
     (S0, "**На этом шаге запрещено:** выводить конституцию или каркас; писать разделы,", "**На этом шаге запрещено:** ничего;"),
     (S0, "Попроси ввести следующий промпт", "Продолжай без остановки"),

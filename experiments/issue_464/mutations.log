@@ -1,3 +1,4 @@
+убита | standards/bcreq-manual-classes/catalog.json | "fields_changed_in": "issue #464"
 убита | prompts/bcreq-constitution-governance-oneshot.md | Не выводи её: БА уже вставил этот промпт в чат.
 убита | prompts/bcreq-constitution-governance-oneshot.md | **На этом шаге запрещено:** выводить конституцию или каркас;
 убита | prompts/bcreq-constitution-governance-oneshot.md | Попроси ввести следующий промпт
@@ -33,4 +34,4 @@
 убита | pr-ops/BACKLOG.md | деплой 2.7.0, повторный аудит
 убита | pr-ops/backlog-repository.md | ### BL-236. 
 убита | pr-ops/backlog-ba-model.md | ### BL-175. 
-итого: 35, живых: 0
+итого: 36, живых: 0
