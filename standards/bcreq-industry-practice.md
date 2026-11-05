@@ -11,7 +11,7 @@ related_artifacts:
   - "standards/bcreq-sections/README.md"
   - "standards/bcreq-sections/03-functional-requirements.md"
   - "standards/bcreq-sections/05-solution-description.md"
-  - "prompts/bcreq-intake-questionnaire-stepwise.md"
+  - "prompts/drafts/bcreq-intake-questionnaire-stepwise.md"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/464"
 ---

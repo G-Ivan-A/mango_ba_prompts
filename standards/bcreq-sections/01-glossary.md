@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.1
-updated: 2026-10-23
+version: 0.2
+updated: 2026-11-05
 ai-generated: true
 type: standard
 scope: bcreq-section-1
