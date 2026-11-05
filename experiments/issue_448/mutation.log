@@ -1,0 +1,13 @@
+# Мутационная проверка валидатора 448 (issue #448), 2026-11-04
+# Каждая мутация вносится в файл, файл восстанавливается после прогона. rc=1 — мутация поймана.
+M1 RUN-0084 r2: судья провалил A2 по K3 на сданном кейсе | validator 448 rc=1 | test_fail_frequency test_replicate_metrics_match_scores test_report_table
+M2 summary.json: решение publish A1 вместо A2 | validator 448 rc=1 | test_medians_and_decision
+M3 Ш-В v0.2 в prompts/ с правилом вне замера | validator 448 rc=1 | test_published_equals_a2 test_revert_gives_control
+M4 разбор BL-157в: 256 правок вместо 255 | validator 448 rc=1 | test_numbers_in_analysis
+M5 coding.json: e-mail в пересказе | validator 448 rc=1 | test_schema_and_leaks
+M6 coding.json: потеряна одна запись (свод не пересчитан) | validator 448 rc=1 | test_aggregate_recomputed
+M7 BACKLOG: BL-156г `DONE` без замера | validator 448 rc=1 | test_cards test_rows
+M8 карточка BL-156г: `DONE` без замера | validator 448 rc=1 | test_cards
+M9 сайт: копия без имени промпта в первой строке | validator 448 rc=1 | test_copy_header_names_prompt
+M10 сайт: код шага в инструкции карточки | validator 448 rc=1 | test_cards_are_instructions
+# итог: поймано 10 из 10

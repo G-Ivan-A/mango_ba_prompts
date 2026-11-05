@@ -71,11 +71,15 @@ const BCREQ_STAGES = [
 // 2.2.0 (issue #446, BL-157б): раздел «Тестовый набор этапа 1» на странице
 // «Процессы» — 13 шагов комплекта прогона с копированием промпта для теста
 // (v0.1 или черновик «по тесту» по колонке «Режим в тесте» комплекта).
+// 2.3.0 (issue #448): «Процессы» — подстраницы по этапам формирования
+// документа; карточки шагов тестового набора — инструкция для БА (что
+// подготовить, что делать, результат); в скопированном тексте — имя промпта;
+// Ш-В v0.2 по RUN-0084.
 const SITE_VERSION = {
-  version: "2.2.0",
+  version: "2.3.0",
   released: "2026-11-04",
-  issue: 446,
-  basis: "PR #447: тестовый набор этапа 1, RUN-0082, RUN-0083",
+  issue: 448,
+  basis: "PR #449: карточки шагов для БА и подстраницы «Процессов», Ш-В v0.2 (RUN-0084)",
   changelog: "CHANGELOG.md",
 };
 
@@ -1246,6 +1250,55 @@ function makeBcreqFlow(markdown, prompts) {
 // копировал на сайте ровно тот текст, который назначен шагу.
 const TEST_KIT_MODES = new Set(["published", "by-test"]);
 
+// Карточки шагов для БА (issue #448): этапы-подстраницы и тексты карточек —
+// подраздел «Карточки шагов для БА (сайт)» комплекта прогона. Подсказка
+// гейта — простыми словами, без кодов: тип гейта решает, кто идёт дальше.
+const TEST_KIT_GATE_HINTS = {
+  "Г-IN": "Проверка входа: решение «дальше» или «доработать» принимает БА и записывает в журнал гейтов; модель только советует.",
+  "Г-С1": "Согласование 1 с Заказчиком: дальше — только после его решения, записанного в журнал гейтов. Молчание — не согласие.",
+  "Г-W": "Согласование с командой (владелец продукта, архитектор, руководитель КК): дальше — только после их решения, записанного в журнал гейтов.",
+  "Выпуск": "Выпуск: документ выпускает человек, решение записывается в журнал гейтов; модель выпуск не объявляет.",
+};
+
+function makeTestKitCards(markdown) {
+  const tables = parseTables(markdown);
+  const groupsTable = tables.find((item) =>
+    ["Этап", "Название на сайте", "Шаги", "Что получается"].every((header) => item.headers.includes(header)),
+  );
+  const cardsTable = tables.find((item) =>
+    ["№", "Этап", "Зачем шаг", "Что подготовить", "Что делает БА", "Результат"].every((header) =>
+      item.headers.includes(header),
+    ),
+  );
+  if (!groupsTable || !cardsTable) {
+    throw new Error(`${SOURCE_FILES.runKit}: нет таблиц «Карточки шагов для БА (сайт)»`);
+  }
+  const cell = (headers, raw, name) => stripMarkdownInline(raw[headers.indexOf(name)] || "");
+  const groups = groupsTable.rows.map((raw) => ({
+    id: `g${cell(groupsTable.headers, raw, "Этап")}`,
+    number: cell(groupsTable.headers, raw, "Этап"),
+    title: cell(groupsTable.headers, raw, "Название на сайте"),
+    steps: cell(groupsTable.headers, raw, "Шаги").split(/,\s*/),
+    outcome: cell(groupsTable.headers, raw, "Что получается"),
+  }));
+  const cards = new Map();
+  for (const raw of cardsTable.rows) {
+    const number = cell(cardsTable.headers, raw, "№");
+    const group = `g${cell(cardsTable.headers, raw, "Этап")}`;
+    if (!groups.some((item) => item.id === group)) {
+      throw new Error(`${SOURCE_FILES.runKit}: карточка ${number}: нет этапа ${group}`);
+    }
+    cards.set(number, {
+      group,
+      purpose: cell(cardsTable.headers, raw, "Зачем шаг"),
+      prepare: cell(cardsTable.headers, raw, "Что подготовить"),
+      actions: cell(cardsTable.headers, raw, "Что делает БА").split(/;\s*/).filter(Boolean),
+      result: cell(cardsTable.headers, raw, "Результат"),
+    });
+  }
+  return { groups, cards };
+}
+
 async function makeTestKit(markdown, prompts) {
   const promptsByPath = new Map(prompts.map((prompt) => [prompt.sourcePath, prompt]));
   const frontmatter = parseFrontmatter(markdown);
@@ -1261,10 +1314,25 @@ async function makeTestKit(markdown, prompts) {
     const target = cell.match(/\]\(([^)#]+)[^)]*\)/)?.[1];
     return target ? path.posix.normalize(path.posix.join(kitDir, target)) : "";
   };
+  const { groups, cards } = makeTestKitCards(markdown);
   const steps = [];
   for (const raw of table.rows) {
     const row = Object.fromEntries(table.headers.map((header, index) => [header, raw[index]]));
     const step = stripMarkdownInline(row["Шаг"]);
+    const card = cards.get(stripMarkdownInline(row["№"]));
+    if (!card) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: нет карточки для БА`);
+    }
+    const code = step.split(/\s+/)[0];
+    const group = groups.find((item) => item.id === card.group);
+    if (!group.steps.includes(code)) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: этап ${group.number} не перечисляет ${code}`);
+    }
+    const gate = stripMarkdownInline(row["Гейт после шага"] || "—");
+    const gateId = gate.split(",")[0].trim();
+    if (gate !== "—" && !TEST_KIT_GATE_HINTS[gateId]) {
+      throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: нет подсказки для гейта ${gateId}`);
+    }
     // «`by-test` (заглушка)»: первое слово — режим, скобки — пояснение.
     const [mode, ...modeNote] = stripMarkdownInline(row["Режим в тесте"]).split(/\s+/);
     if (!TEST_KIT_MODES.has(mode)) {
@@ -1307,7 +1375,9 @@ async function makeTestKit(markdown, prompts) {
       mode,
       modeNote: modeNote.join(" ").replace(/^\(|\)$/g, ""),
       params,
-      gate: stripMarkdownInline(row["Гейт после шага"] || "—"),
+      gate,
+      gateHint: gate === "—" ? "" : TEST_KIT_GATE_HINTS[gateId],
+      ...card,
       published: publishedPrompt
         ? {
             id: publishedPrompt.id,
@@ -1325,6 +1395,10 @@ async function makeTestKit(markdown, prompts) {
     generatedAt: new Date().toISOString(),
     sourceFiles: [{ path: SOURCE_FILES.runKit, url: repoUrl(SOURCE_FILES.runKit) }],
     kit: { version: String(frontmatter.version || ""), url: repoUrl(SOURCE_FILES.runKit) },
+    groups: groups.map((group) => ({
+      ...group,
+      count: steps.filter((step) => step.group === group.id).length,
+    })),
     counts: {
       steps: steps.length,
       byTest: steps.filter((step) => step.mode === "by-test").length,

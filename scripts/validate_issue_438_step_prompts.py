@@ -26,14 +26,18 @@
   DEC-427-04 и DEC-427-12 ``proposed``; Р-15 «ждёт»; ``PENDING`` валидатора
   #427 (Р-13) содержит 04 и 12; ``BL156_STARTED = True`` (BL-156а,
   issue #444): ссылки на runtime в ``prompts/`` закреплены по SHA;
-  ``TYPING_APPLIED = False``: ``prompt-typing.json`` не применена —
-  RUN-0081 измерил A с ней, ядро 9/11 против 10/11 RUN-0079, правка
-  перенесена в BL-156б (строки ``before`` на месте, ``after`` нет);
-* бэклог: BL-157 — ``review`` (BL-157а ``DONE``, BL-157б ``review`` в
-  PR #447 — набор на сайте и A-IN ``by-test`` по RUN-0083, BL-157в ждёт
-  входа от владельца), BL-156 — ``deferred (triggered)`` (BL-156а ``DONE``,
-  BL-156б и BL-156в ждут Р-03 и бюджета); карточки — история «Заготовка
-  (до старта)», «Исполнение» BL-156а и BL-157б; входы BL-158;
+  ``TYPING_APPLIED = False``: ``prompt-typing.json`` не применена к 14
+  подстановкам — RUN-0081 измерил A с ней, ядро 9/11 против 10/11 RUN-0079,
+  правка перенесена в BL-156б (строки ``before`` на месте, ``after`` нет);
+  ``SHV_V02_PUBLISHED = True`` (issue #448): подстановка Ш-В применена в
+  v0.2 по RUN-0084 вместе с правилом «правка без добавлений»; тексты A и D
+  RUN-0081 восстанавливаются из v0.2 откатом ``shv_v02_changes.revert()``;
+* бэклог (issue #448): BL-157 — ``deferred (triggered)`` (BL-157а и
+  BL-157б ``DONE`` — PR #439 и PR #447; BL-157в — вход владельца разобран
+  в PR #449, ждёт прогона БА с ``ba_reviewed: true``), BL-156 — ``review``
+  (BL-156а ``DONE``, BL-156б и BL-156в ``review`` в PR #449 по RUN-0084,
+  BL-156г ``TODO``); карточки — история «Заготовка (до старта)»,
+  «Исполнение» BL-156а, BL-156б, BL-156в, BL-157б и BL-157в; входы BL-158;
   ``R16_ACCEPTED = False`` в валидаторе #433 до BL-162;
 * отчёт BL-156, анализ Р-16 и разбор готовности BL-156 / BL-157: разделы
   стандарта анализа, вопрос владельцу AS-IS / TODO; цитаты анализа Р-16 и
@@ -80,6 +84,10 @@ BL156_STARTED = True
 #: RUN-0081 — ядро A 9/11 против 10/11 RUN-0079 (DEC-427-11), правка
 #: перенесена в BL-156б. True — только с прогоном, где A не хуже RUN-0079.
 TYPING_APPLIED = False
+#: Issue #448 (BL-156б+в): Ш-В опубликован как v0.2 по RUN-0084 (Р-03,
+#: одновременный контроль): подстановка типа гейта Ш-В и правило «правка
+#: без добавлений». Остальные 14 подстановок — по ``TYPING_APPLIED``.
+SHV_V02_PUBLISHED = True
 
 CRITERIA = ("K1", "K2", "K3", "K4", "K5", "K6")
 ANALYSIS_SECTIONS = ("## Summary / BLUF", "## Context / Scope", "## Findings / Options",
@@ -118,6 +126,7 @@ def load(name, path):
 
 BUILDER = load("bcreq_step_builder", ROOT / "scripts/build_bcreq_step_prompts.py")
 BL156A = load("bl156a_for_438", ROOT / "experiments/issue_444/bl156a_prompt_changes.py")
+SHV_V02 = BL156A.SHV_V02
 SHV = "prompts/bcreq-review-validation-oneshot.md"
 SHV_DRAFT = "prompts/drafts/bcreq-review-validation-oneshot.md"
 
@@ -126,9 +135,15 @@ def digest(text):
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def measured_a():
-    """A RUN-0081: текущий v0.1 Ш-В с подстановками типа гейта (BL-156б)."""
+def shv_v01():
+    """v0.1 Ш-В (A0 RUN-0084): текущий файл с откатом публикации v0.2."""
     text = read(ROOT / SHV)
+    return SHV_V02.revert(SHV, text) if SHV_V02_PUBLISHED else text
+
+
+def measured_a():
+    """A RUN-0081: v0.1 Ш-В с подстановками типа гейта (BL-156б)."""
+    text = shv_v01()
     return text if TYPING_APPLIED else BL156A.apply_typing(SHV, text)
 
 
@@ -144,6 +159,12 @@ def measured_d():
     base = digest(read(ROOT / SHV))
     assert text.count(f"based_on_sha256: {base}") == 1, SHV_DRAFT
     text = text.replace(f"based_on_sha256: {base}", f"based_on_sha256: {digest(measured_a())}")
+    if SHV_V02_PUBLISHED:
+        # Черновик собран из v0.2: правило и версия — откат, тип гейта уже стоит.
+        assert text.count(SHV_V02.RULE) == 1, SHV_DRAFT
+        text = text.replace(SHV_V02.RULE, "")
+        assert text.count("\nversion: 0.2\n") == 1, SHV_DRAFT
+        return text.replace("\nversion: 0.2\n", "\nversion: 0.1\n", 1)
     for sub in BL156A.substitutions(SHV):
         assert text.count(sub["before"]) == 1, (SHV_DRAFT, sub["line"])
         text = text.replace(sub["before"], sub["after"])
@@ -375,9 +396,9 @@ class Run0081Test(RunScoring, unittest.TestCase):
         self.assertFalse(publication["not_worse"], "D хуже — черновики остаются в prompts/drafts/")
 
     def test_measured_texts_are_current(self):
-        # Текущие v0.1 и черновик Ш-В — измеренные A и D без подстановок
-        # типа гейта (TYPING_APPLIED = False); любая другая правка требует
-        # нового прогона.
+        # Текущие Ш-В и черновик Ш-В — измеренные A и D: v0.2 (RUN-0084)
+        # откатывается к v0.1 (shv_v02_changes.revert), к нему добавляются
+        # подстановки типа гейта; любая другая правка требует нового прогона.
         meta = read(RUN_0081 / "metadata.yaml")
         for version, text in (("A", measured_a()), ("D", measured_d())):
             self.assertEqual(digest(text), self.metrics[version]["prompt_sha256"],
@@ -424,15 +445,19 @@ class DecisionsTest(unittest.TestCase):
 
     def test_published_prompts_typed(self):
         typing = json.loads(read(PROMPT_TYPING))
-        self.assertTrue(typing["status"].startswith("применена" if TYPING_APPLIED else "не применена"), typing["status"])
+        prefix = "применена" if TYPING_APPLIED else ("частично применена" if SHV_V02_PUBLISHED else "не применена")
+        self.assertTrue(typing["status"].startswith(prefix), typing["status"])
         if not TYPING_APPLIED:
-            self.assertIn("RUN-0081", typing["status"])
-            self.assertIn("RUN-0082", typing["status"])
-            self.assertIn("BL-156б", typing["status"])
+            for marker in ("RUN-0081", "RUN-0082", "BL-156б"):
+                self.assertIn(marker, typing["status"])
+            if SHV_V02_PUBLISHED:
+                self.assertIn("RUN-0084", typing["status"])
         self.assertEqual(len({s["path"] for s in typing["substitutions"]}), 14)
+        applied = [s for s in typing["substitutions"] if s.get("applied")]
+        self.assertEqual([s["path"] for s in applied], [SHV] if SHV_V02_PUBLISHED else [])
         for sub in typing["substitutions"]:
             text = read(ROOT / sub["path"])
-            expected, absent = ("after", "before") if TYPING_APPLIED else ("before", "after")
+            expected, absent = ("after", "before") if TYPING_APPLIED or sub.get("applied") else ("before", "after")
             self.assertEqual(text.count(sub[expected]), 1, f"{sub['path']} {sub['line']}")
             self.assertEqual(text.count(sub[absent]), 0, f"{sub['path']} {sub['line']}")
 
@@ -448,24 +473,27 @@ class DecisionsTest(unittest.TestCase):
                           "BL-156", "BL-157", "BL-162")}
         for t in ("BL-150", "BL-151", "BL-152", "BL-153", "BL-154", "BL-155", "BL-159"):
             self.assertEqual(rows[t][4], "DONE", t)
-        # П-П: BL-157 сначала (через BL-157а) — один номер, два этапа в карточке.
-        # PR #439 слит: BL-157а — DONE; BL-157б — review в PR #447 (RUN-0083, issue #446);
-        # первый прогон BL-111 выделен в BL-157в и ждёт входа от владельца.
-        self.assertEqual(rows["BL-157"][4], "review")
-        for pr in ("PR #439", "PR #447"):
+        # П-П: BL-157 сначала (через BL-157а) — один номер, три этапа в карточке.
+        # PR #439 и PR #447 слиты: BL-157а и BL-157б — DONE (issue #448, ответ 2).
+        # BL-157в: вход владельца (шесть выгрузок чатов) разобран в PR #449, новых
+        # RUN нет; задача ждёт прогона БА с ba_reviewed: true.
+        self.assertEqual(rows["BL-157"][4], "deferred (triggered)")
+        for pr in ("PR #439", "PR #447", "PR #449"):
             self.assertIn(pr, rows["BL-157"][5])
-        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `review` (PR #447)", "RUN-0083",
-                       "BL-157в — `deferred (triggered)`", READINESS.name):
+        for marker in ("BL-157а — `DONE` (PR #439)", "BL-157б — `DONE` (PR #447)", "RUN-0083",
+                       "BL-157в — `deferred (triggered)`", "2026-11-04-bl-157v-chat-analysis.md",
+                       "`ba_reviewed: true`", READINESS.name):
             self.assertIn(marker, rows["BL-157"][7])
-        # PR #445 слит: BL-156а — DONE; BL-156б и BL-156в ждут Р-03 и бюджета (RUN-0082, issue #446).
-        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "deferred (triggered)")
+        # Issue #448: BL-156б и BL-156в — review в PR #449 по RUN-0084 (Р-03 принято),
+        # BL-156г — TODO (регрессия GS-BCREQ-25).
+        self.assertEqual(rows["BL-156"][4], "TODO" if not BL156_STARTED else "review")
         self.assertIn("BL-157 (этап BL-157а)", rows["BL-156"][3])
         self.assertIn(READINESS.name, rows["BL-156"][7])
         if BL156_STARTED:
-            self.assertIn("PR #445", rows["BL-156"][5])
-            self.assertIn("PR #447", rows["BL-156"][5])
-            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б — `deferred (triggered)`",
-                           "RUN-0082", "BL-156в — `deferred (triggered)`"):
+            for pr in ("PR #445", "PR #447", "PR #449"):
+                self.assertIn(pr, rows["BL-156"][5])
+            for marker in ("BL-156а — `DONE` (PR #445)", "RUN-0081", "BL-156б и BL-156в — `review` (PR #449)",
+                           "RUN-0084", "RUN-0082", "BL-156г — `TODO`"):
                 self.assertIn(marker, rows["BL-156"][7])
         self.assertEqual(rows["BL-162"][4], "TODO")
         # Р-16 принято, но поправку 0.2 ADR-003 применяет BL-162: флаг #433 меняется вместе с ней.
@@ -489,12 +517,27 @@ class DecisionsTest(unittest.TestCase):
             bl156b = re.search(r"(?ms)^#### BL-156б\..*?(?=^#{3,4} )", text).group(0)
             self.assertIn("prompt-typing.json", bl156b)
             self.assertIn("RUN-0082", bl156b)
+            # Issue #448: этапы BL-156б и BL-156в исполнены RUN-0084, BL-156г открыт.
+            card = re.search(r"(?ms)^### BL-156\..*?(?=^#### )", text).group(0)
+            self.assertIn("**Исполнение (этапы BL-156б и BL-156в).** Issue #448, PR #449", card)
+            for stage in ("BL-156б", "BL-156в"):
+                body = re.search(rf"(?ms)^#### {stage}\..*?(?=^#{{3,4}} )", text).group(0)
+                self.assertIn("**Исполнение.** Issue #448, PR #449", body, stage)
+                self.assertIn("RUN-0084", body, stage)
+                self.assertIn("**Статус.** `review` (PR #449).", body, stage)
+            bl156g = re.search(r"(?ms)^#### BL-156г\..*?(?=^#{3,4} )", text).group(0)
+            self.assertIn("GS-BCREQ-25", bl156g)
+            self.assertIn("**Статус.** `TODO`", bl156g)
         card = re.search(r"(?ms)^#### BL-157а\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("**Исполнение.** Issue #438, PR #439.", card)
         for stage in ("#### BL-157б. Комплект прогона: промпты по тесту", "#### BL-157в. Первый прогон BL-111 с комплектом"):
             self.assertIn(stage, text)
         bl157b = re.search(r"(?ms)^#### BL-157б\..*?(?=^#{3,4} )", text).group(0)
         self.assertIn("RUN-0083", bl157b)
+        self.assertIn("Статус — `DONE`: PR #447 слит", bl157b)
+        bl157v = re.search(r"(?ms)^#### BL-157в\..*?(?=^#{3,4} )", text).group(0)
+        self.assertIn("**Исполнение.** Issue #448, PR #449", bl157v)
+        self.assertIn("`ba_reviewed: true`", bl157v)
         kit = read(KIT)
         self.assertIn("**Статус: действует; A-IN — по тесту (BL-157б).**", kit)
         self.assertNotIn("не применять", kit)

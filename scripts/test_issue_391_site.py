@@ -32,10 +32,11 @@ class PublicationTests(unittest.TestCase):
     def test_process_route_has_expected_blocks(self):
         # Issue #446 adds the third block on purpose: the stage-1 test kit
         # (BL-157b) before the manual process and the approval stream.
+        # Issue #448 adds the sub-page tabs (process-nav) above them.
         html = (ROOT / 'site/index.html').read_text()
         sections = re.findall(r'<section\b[^>]*data-page="processes"[^>]*>', html)
         ids = [re.search(r'\bid="([^"]+)"', s).group(1) for s in sections]
-        self.assertEqual(ids, ['bcreq-testkit', 'bcreq-manual', 'bcreq-approval'])
+        self.assertEqual(ids, ['process-nav', 'bcreq-testkit', 'bcreq-manual', 'bcreq-approval'])
 
     def test_login_is_a_separate_page(self):
         self.assertTrue((ROOT / 'site/login.html').exists())

@@ -69,7 +69,9 @@ def git(*args: str) -> str:
 
 def prompts() -> dict[str, str]:
     typing = load("bl156a", ROOT / "experiments/issue_444/bl156a_prompt_changes.py")
-    a = typing.apply_typing(PROMPT_A, (ROOT / PROMPT_A).read_text(encoding="utf-8"))
+    # С issue #448 опубликован v0.2 (RUN-0084): A1 = откат v0.2 к v0.1 + тип гейта.
+    v01 = typing.SHV_V02.revert(PROMPT_A, (ROOT / PROMPT_A).read_text(encoding="utf-8"))
+    a = typing.apply_typing(PROMPT_A, v01)
     d = git("show", f"{D_COMMIT}:{PROMPT_D}")
     assert sha256(a) == SHA_A, ("A1 не совпал с RUN-0081", sha256(a))
     assert sha256(d) == SHA_D, ("D не совпал с RUN-0081", sha256(d))

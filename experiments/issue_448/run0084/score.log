@@ -1,0 +1,9 @@
+r1 A0 56/9/11/0/10 A1 56/9/11/0/10 A2 58/10/11/0/10
+r2 A0 54/10/11/0/10 A1 55/10/11/0/10 A2 56/11/11/0/10
+r3 A0 54/9/11/0/10 A1 55/8/11/0/10 A2 56/9/11/0/10
+== median {"A0": {"passed": 54, "core": 9, "negatives_false_positive": 0}, "A1": {"passed": 55, "core": 9, "negatives_false_positive": 0}, "A2": {"passed": 56, "core": 10, "negatives_false_positive": 0}}
+== criteria_median {"A0": {"K1": 62, "K2": 51, "K3": 62, "K4": 62, "K5": 57, "K6": 61}, "A1": {"K1": 62, "K2": 50, "K3": 62, "K4": 62, "K5": 56, "K6": 62}, "A2": {"K1": 61, "K2": 49, "K3": 62, "K4": 62, "K5": 60, "K6": 62}}
+== decision {"A1_vs_A0": {"checks": {"passed": true, "core": true, "negatives_false_positive": true}, "not_worse": true}, "A2_vs_A0": {"checks": {"passed": true, "core": true, "negatives_false_positive": true}, "not_worse": true}, "A2_vs_A1": {"checks": {"passed": true, "core": true, "negatives_false_positive": true}, "not_worse": true}, "publish": "A2"}
+== paired {"A1": {"r1": {"passed": 0, "core": 0, "negatives_false_positive": 0}, "r2": {"passed": 1, "core": 0, "negatives_false_positive": 0}, "r3": {"passed": 1, "core": -1, "negatives_false_positive": 0}}, "A2": {"r1": {"passed": 2, "core": 1, "negatives_false_positive": 0}, "r2": {"passed": 2, "core": 1, "negatives_false_positive": 0}, "r3": {"passed": 2, "core": 0, "negatives_false_positive": 0}}}
+== GS-BCREQ-12 failed {'A0': 3, 'A1': 3, 'A2': 1}
+== fail_by_criterion {"A0": {"K2": 6, "K3": 1, "K4": 1, "K5": 17, "K6": 2}, "A1": {"K2": 6, "K5": 17}, "A2": {"K1": 3, "K2": 10, "K4": 1, "K5": 7}}

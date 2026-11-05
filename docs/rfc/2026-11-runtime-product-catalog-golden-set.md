@@ -1,14 +1,14 @@
 ---
 status: accepted
-version: 0.5
+version: 0.6
 updated: 2026-11-04
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444, https://github.com/G-Ivan-A/mango_ba_prompts/issues/446"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/427, https://github.com/G-Ivan-A/mango_ba_prompts/issues/430, https://github.com/G-Ivan-A/mango_ba_prompts/pull/431, https://github.com/G-Ivan-A/mango_ba_prompts/issues/434, https://github.com/G-Ivan-A/mango_ba_prompts/issues/442, https://github.com/G-Ivan-A/mango_ba_prompts/issues/444, https://github.com/G-Ivan-A/mango_ba_prompts/issues/446, https://github.com/G-Ivan-A/mango_ba_prompts/issues/448"
 rfc-scope: multi
 type: rfc
-related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py, experiments/issue_446/kb_map_sizes.py"
+related_artifacts: "standards/bcreq-runtime-references.md, docs/taxonomy/products.json, docs/rfc/2026-11-bcreq-flow-processes-prompts.md, prompts/bcreq-products-impact-analysis-stepwise.md, experiments/issue_434/prototype/mango-products.yaml, experiments/issue_434/runtime_smoke_sim.sh, pr-ops/BACKLOG.md, pr-ops/backlog-ba-model.md, docs/hub-research-dependencies.md, standards/product-classification-contract.md, experiments/issue_434/industry_taxonomy_inventory.py, experiments/issue_442/runtime_readiness.py, experiments/issue_444/runtime_readiness.py, experiments/issue_446/kb_map_sizes.py, runs/2026/RUN-0084/outputs/golden-set-report.md, docs/analysis/2026-11-04-bl-157v-chat-analysis.md"
 ---
 
 # RFC-RT-001: Каталог продуктов и golden set по классам для `mango-ba-ai-runtime` (РТ-1, РТ-3; #434)
@@ -78,6 +78,11 @@ runtime `5d8c201511fd730a596c9f9b4588470a7b01edc9`, на каталоге спи
    kit v0.3 режимом `by-test`. Прогон нашёл одну доработку runtime: карта
    разделов большого документа не читается за одно обращение. Тело задачи
    РТ-7 (компактное оглавление) и альтернатива без runtime — раздел 14.
+10. **Поправка 0.6 (issue [#448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448)):
+    BL-156б, BL-156в и разбор BL-157в.** Р-03 принято. Замер RUN-0084 на
+    трёх плечах с одновременным контролем опубликовал Ш-В v0.2. Шесть
+    выгрузок чатов БА разобраны без новых RUN. Владелец создал РТ-7
+    (runtime #22). Срез runtime не меняется — раздел 15.
 
 ## 0. Тип и дом артефакта
 
@@ -677,13 +682,25 @@ Definition of Done: таблица покрытия в PR (класс × пол�
    Почему: тогда BL-156 выйдет без заглушек З-1 и З-3. RUN-0082 показал
    разброс ядра 6…10 из 11 на одном тексте: без контроля в тех же
    повторах публикацию не решить.
+   - 7а. **Исполнено (issue #448, раздел 15): BL-156б и BL-156в — `review`
+     в PR #449.** RUN-0084 с одновременным контролем (Р-03 принято),
+     опубликован Ш-В v0.2. Дальше — BL-156г: правило «правка без
+     добавлений» не должно дробить шаги одного процесса (регрессия
+     GS-BCREQ-25), около 0,7 млн токенов.
 8. **BL-157 — прогон на новых задачах** с отчётом по функциям каталога (BL-157а `DONE`; BL-157б — `review`: RUN-0083, run kit v0.3, A-IN `by-test`, раздел 14; BL-157в — первый прогон BL-111 с комплектом).
    Почему: это доказательная база для снятия «по тесту» (BL-158).
    Синтетика RUN-0083 (N = 1) показывает пригодность к тесту, а не
    качество на задаче.
-   - 8а. **Владелец: создать РТ-7 в `mango-ba-ai-runtime` (раздел 14.3) или выбрать альтернативу — БА прикладывает разделы.**
+   - 8а. **Задача создана (issue #448, ответ 5): РТ-7 — [runtime #22](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/22), [PR #23](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/23) открыт.** Было: владелец: создать РТ-7 в `mango-ba-ai-runtime` (раздел 14.3) или выбрать альтернативу — БА прикладывает разделы.
      Почему: 11 из 25 карт БЗ не читаются за одно обращение, выбор
-     раздела идёт по неполному списку (Р-1 RUN-0083).
+     раздела идёт по неполному списку (Р-1 RUN-0083). После слияния — строка
+     РТ-7 в реестре справочников и новый срез (раздел 14.3).
+   - 8б. **Исполнено частично (issue #448, раздел 15): BL-157б — `DONE`
+     (PR #447 слит); вход BL-157в разобран.** Шесть выгрузок чатов — 255
+     правок БА; новых RUN нет. BL-157в остаётся `deferred (triggered)` до
+     прогона БА по сайту 2.3.0 с `ba_reviewed: true`. Почему: «готово»
+     BL-157 требует прогона на задаче с человеком; этот же прогон —
+     калибровка судьи.
 9. **BL-164 держать `deferred (triggered)` до старта BL-133 или
    включения `P-08` в срез runtime; при старте — до оценки первого
    тендерного ТЗ.** Почему: потребитель индустриального слоя — оценка
@@ -1035,6 +1052,43 @@ Definition of Done:
 обновляет срез (раздел 1 реестра). До слияния реестр не меняется: строка
 задачи ссылается на созданную задачу runtime, а её создаёт владелец.
 
+## 15. Поправка 0.6: BL-156б, BL-156в и разбор BL-157в (issue #448)
+
+Issue [#448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448)
+продолжает BL-156 и BL-157 после слияния
+[PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447). Ответы
+владельца: риск некалиброванного судьи принят (ответ 1), PR #447 слит
+(ответ 2), Р-03 принято (ответ 3), бюджет — вариант 1 (ответ 4), РТ-7
+владелец создаёт сам (ответ 5), выгрузки чатов — вход BL-157в (ответ 6).
+Постановка —
+[`experiments/issue_448/task-statement.md`](../../experiments/issue_448/task-statement.md).
+Срез runtime не меняется: `f31dcde3` (реестр 0.4).
+
+### 15.1. Замер Ш-В с одновременным контролем (RUN-0084)
+
+- [RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md) —
+  golden set Ш-В, N = 3, три плеча в одних повторах у одних судей; правило
+  решения закоммичено до запуска. Медианы: A0 (v0.1) — 54/9/0, A1 (+ тип
+  гейта) — 55/9/0, A2 (+ «правка без добавлений») — 56/10/0.
+- По правилу опубликован A2:
+  [`prompts/bcreq-review-validation-oneshot.md`](../../prompts/bcreq-review-validation-oneshot.md)
+  v0.2. Провалы K5 — 17 → 7. Регрессия GS-BCREQ-25 (A2 — 3 из 3, A0 — 0
+  из 3) — этап BL-156г.
+- Устойчивые провалы всех плеч — GS-BCREQ-26 и GS-BCREQ-33: правка
+  текста Ш-В их не снимает, это вход уроков (BL-112).
+
+### 15.2. Разбор шести выгрузок чатов (BL-157в)
+
+[Разбор](../analysis/2026-11-04-bl-157v-chat-analysis.md): 255 правок БА.
+По принципу текущими правилами закрыты 176, частично — 75, не закрыты — 4.
+Отраслевую практику модель не предложила 19 раз. Новые задачи — BL-167
+(блок «Отраслевая практика — на решение БА» в Ш-1, Ш-3, Ш-6) и BL-168
+(правила многоходовой сессии правок). Решение Р-18 (ограждающий
+показатель в пред-регистрации) ждёт владельца.
+
+Для runtime разбор новых задач не даёт: правки касаются промптов и
+ведения сессии, а не справочников. Пробел Р-1 закрывает РТ-7.
+
 ## Related Artifacts
 
 - [Реестр справочников runtime](../../standards/bcreq-runtime-references.md) — И-2, З-1 (снята), З-3, РТ-1…РТ-4, РТ-6 (РТ-7 — после слияния, раздел 14.3)
@@ -1049,4 +1103,5 @@ Definition of Done:
 - [Декомпозиция функций Хаба](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-27-capability-decomposition.md), [концепция таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-26-taxonomy-concept.md), [поток требований](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/c06075d0b45da70cb68e2df3851b861b5ec3aed1/research/mango/2026-05-22-requirements-flow.md) — черновики и требования для BL-164
 - [Инвентаризация индустриального слоя](../../experiments/issue_434/industry_taxonomy_inventory.py) — [лог](../../experiments/issue_434/industry-taxonomy-inventory.log)
 - [BL-164](../../pr-ops/backlog-ba-model.md#bl-164-индустриальная-таксономия-для-оценки-тендерного-тз) — задача по индустриальной таксономии
+- [RUN-0084](../../runs/2026/RUN-0084/outputs/golden-set-report.md) и [разбор чатов BL-157в](../analysis/2026-11-04-bl-157v-chat-analysis.md) — раздел 15
 - [Размер карт БЗ runtime](../../experiments/issue_446/kb_map_sizes.py) — [лог](../../experiments/issue_446/kb-map-sizes.log), раздел 14.2; [RUN-0083](../../runs/2026/RUN-0083/outputs/report.md) — раздел 14.1

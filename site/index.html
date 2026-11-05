@@ -16,7 +16,7 @@
         <span class="brand-mark" aria-hidden="true">M</span>
         <span>
           <span class="brand-title">Mango BA Prompts</span>
-          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.2.0</span></span>
+          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.3.0</span></span>
         </span>
       </a>
       <nav class="topnav" id="topnav" aria-label="Разделы">
@@ -160,6 +160,33 @@
         </div>
         <div class="roadmap-timeline" id="roadmap-levels"></div>
         <div class="gap-grid" id="roadmap-gaps"></div>
+      </section>
+
+      <section
+        class="page-band bcreq-band process-nav-band"
+        id="process-nav"
+        data-page="processes"
+        aria-label="Подстраницы процессов"
+      >
+        <nav class="process-tabs" id="process-tabs" aria-label="Этапы формирования документа"></nav>
+        <details class="process-help" id="process-help">
+          <summary>Как пользоваться</summary>
+          <ol class="process-help-steps">
+            <li>Откройте этап по порядку: 1 → 2 → 3 → 4. Один документ ведётся в одном чате с моделью.</li>
+            <li>В карточке шага подготовьте то, что указано в «Что подготовить».</li>
+            <li>Нажмите ⧉ — промпт скопируется; первая строка с именем промпта и шага останется в чате и покажет, что применено.</li>
+            <li>Выполните «Что делает БА» по пунктам и сверьте ответ модели с «Результатом».</li>
+            <li>На шаге с ⛳ решает человек: БА, Заказчик или команда. Решение записывается в журнал гейтов; модель только советует.</li>
+          </ol>
+          <dl class="process-help-terms">
+            <div><dt>ФТ / НФТ</dt><dd>функциональные требования (что делает система) и нефункциональные (качество: скорость, доступность, безопасность)</dd></div>
+            <div><dt>UC</dt><dd>пользовательский сценарий: кто, что делает и какой результат получает</dd></div>
+            <div><dt>ОРР</dt><dd>описание разрабатываемого решения, раздел 5 документа</dd></div>
+            <div><dt>8.4 / 8.5</dt><dd>открытые вопросы и допущения документа: сюда модель пишет то, чего нет во входных данных</dd></div>
+            <div><dt>«Состояние BCREQ»</dt><dd>блок в конце ответа модели: какие разделы готовы и какой шаг следующий; сохраняйте его</dd></div>
+            <div><dt>Черновик «по тесту»</dt><dd>редакция промпта, которая ещё проверяется; опубликованный промпт — прошедший замер</dd></div>
+          </dl>
+        </details>
       </section>
 
       <section
@@ -367,7 +394,7 @@
     </main>
 
     <footer class="site-footer">
-      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.2.0</a>
+      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.3.0</a>
       · каталог: 39 классов BCREQ, архив: 14 промптов этапа 1
     </footer>
 
