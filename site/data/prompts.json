@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T05:32:55.923Z",
+  "generatedAt": "2026-11-05T10:13:17.204Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.4.0",
+    "version": "2.5.0",
     "released": "2026-11-05",
-    "issue": 450,
-    "basis": "PR #451: Ш-В v0.3, блок практики Ш-1, Ш-3, Ш-6, правила сессии Ш-0 (RUN-0085…0087), РТ-7",
+    "issue": 460,
+    "basis": "PR #461: все шаги тестового набора, контейнер чтения промпта, пароль отключён на отладку",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {
