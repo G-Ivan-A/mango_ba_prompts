@@ -1,0 +1,599 @@
+{
+ "kit": "0.5",
+ "summary": {
+  "старт": {
+   "steps": 1,
+   "texts_assigned": 1,
+   "operations": 3,
+   "contract_codes_in_assigned": 3,
+   "contract_codes_in_draft": 3,
+   "modes": [
+    "by-test"
+   ]
+  },
+  "A-IN": {
+   "steps": 2,
+   "texts_assigned": 2,
+   "operations": 12,
+   "contract_codes_in_assigned": 12,
+   "contract_codes_in_draft": 12,
+   "modes": [
+    "by-test"
+   ]
+  },
+  "A-CORE": {
+   "steps": 3,
+   "texts_assigned": 3,
+   "operations": 4,
+   "contract_codes_in_assigned": 0,
+   "contract_codes_in_draft": 4,
+   "modes": [
+    "published"
+   ]
+  },
+  "A-WORK": {
+   "steps": 5,
+   "texts_assigned": 5,
+   "operations": 13,
+   "contract_codes_in_assigned": 0,
+   "contract_codes_in_draft": 13,
+   "modes": [
+    "published"
+   ]
+  },
+  "A-RELEASE": {
+   "steps": 1,
+   "texts_assigned": 1,
+   "operations": 5,
+   "contract_codes_in_assigned": 5,
+   "contract_codes_in_draft": 5,
+   "modes": [
+    "by-test"
+   ]
+  },
+  "вне последовательности": {
+   "steps": 1,
+   "texts_assigned": 1,
+   "operations": 2,
+   "contract_codes_in_assigned": 0,
+   "contract_codes_in_draft": 2,
+   "modes": [
+    "published"
+   ]
+  }
+ },
+ "gates": {
+  "Г-IN": {
+   "closing_step": "Ш-2",
+   "criteria": 5,
+   "decides": "БА",
+   "type": "гибрид",
+   "criteria_in_assigned": [
+    "Г-IN.1",
+    "Г-IN.2",
+    "Г-IN.3",
+    "Г-IN.4",
+    "Г-IN.5"
+   ],
+   "criteria_in_draft": [
+    "Г-IN.1",
+    "Г-IN.2",
+    "Г-IN.3",
+    "Г-IN.4",
+    "Г-IN.5"
+   ],
+   "report_block_in_assigned": true,
+   "card_gate": "Г-IN, гибрид, ключевой",
+   "card_hint": true,
+   "journal_form_in_kit": true,
+   "separate_gate_prompt": false
+  },
+  "Г-С1": {
+   "closing_step": "Ш-5",
+   "criteria": 5,
+   "decides": "Заказчик",
+   "type": "человек",
+   "criteria_in_assigned": [
+    "Г-С1.1",
+    "Г-С1.2",
+    "Г-С1.3",
+    "Г-С1.4",
+    "Г-С1.5"
+   ],
+   "criteria_in_draft": [
+    "Г-С1.1",
+    "Г-С1.2",
+    "Г-С1.3",
+    "Г-С1.4",
+    "Г-С1.5"
+   ],
+   "report_block_in_assigned": true,
+   "card_gate": "Г-С1, человек, ключевой",
+   "card_hint": true,
+   "journal_form_in_kit": true,
+   "separate_gate_prompt": false
+  },
+  "Г-W": {
+   "closing_step": "Ш-В",
+   "criteria": 5,
+   "decides": "команда",
+   "type": "человек",
+   "criteria_in_assigned": [
+    "Г-W.1",
+    "Г-W.2",
+    "Г-W.3",
+    "Г-W.4",
+    "Г-W.5"
+   ],
+   "criteria_in_draft": [
+    "Г-W.1",
+    "Г-W.2",
+    "Г-W.3",
+    "Г-W.4",
+    "Г-W.5"
+   ],
+   "report_block_in_assigned": true,
+   "card_gate": "Г-W, человек, ключевой",
+   "card_hint": true,
+   "journal_form_in_kit": true,
+   "separate_gate_prompt": false
+  },
+  "Выпуск": {
+   "closing_step": "Ш-Р",
+   "criteria": 0,
+   "decides": "человек",
+   "type": "человек",
+   "criteria_in_assigned": [],
+   "criteria_in_draft": [],
+   "report_block_in_assigned": true,
+   "card_gate": "Выпуск, человек, ключевой",
+   "card_hint": true,
+   "journal_form_in_kit": true,
+   "separate_gate_prompt": false
+  }
+ },
+ "sections": {
+  "1": {
+   "standard": "01-glossary.md",
+   "producers": [
+    "Ш-1"
+   ],
+   "linked_from_assigned": [
+    "Ш-1"
+   ],
+   "checklist_items": 5
+  },
+  "2": {
+   "standard": "02-business-context.md",
+   "producers": [
+    "Ш-1",
+    "Ш-2"
+   ],
+   "linked_from_assigned": [
+    "Ш-1",
+    "Ш-2"
+   ],
+   "checklist_items": 6
+  },
+  "3": {
+   "standard": "03-functional-requirements.md",
+   "producers": [
+    "Ш-3"
+   ],
+   "linked_from_assigned": [
+    "Ш-3"
+   ],
+   "checklist_items": 6
+  },
+  "4": {
+   "standard": "04-non-functional-requirements.md",
+   "producers": [
+    "Ш-4"
+   ],
+   "linked_from_assigned": [
+    "Ш-4"
+   ],
+   "checklist_items": 4
+  },
+  "5": {
+   "standard": "05-solution-description.md",
+   "producers": [
+    "Ш-6"
+   ],
+   "linked_from_assigned": [
+    "Ш-6"
+   ],
+   "checklist_items": 6
+  },
+  "6": {
+   "standard": "06-implementation-constraints.md",
+   "producers": [
+    "Ш-7"
+   ],
+   "linked_from_assigned": [
+    "Ш-7"
+   ],
+   "checklist_items": 5
+  },
+  "7": {
+   "standard": "07-use-cases.md",
+   "producers": [
+    "Ш-5",
+    "Ш-8"
+   ],
+   "linked_from_assigned": [
+    "Ш-5",
+    "Ш-8"
+   ],
+   "checklist_items": 5
+  },
+  "8": {
+   "standard": "08-supplementary.md",
+   "producers": [
+    "Ш-9"
+   ],
+   "linked_from_assigned": [
+    "Ш-9"
+   ],
+   "checklist_items": 4
+  }
+ },
+ "steps": [
+  {
+   "step": "Ш-0",
+   "stage": "старт",
+   "mode": "by-test",
+   "assigned_file": "bcreq-constitution-governance-oneshot.md",
+   "assigned_version": "по тесту",
+   "assigned_bytes": 55142,
+   "operations": [
+    "К-13",
+    "К-34",
+    "К-36"
+   ],
+   "contract_codes_in_assigned": [
+    "К-13",
+    "К-34",
+    "К-36"
+   ],
+   "contract_codes_in_draft": [
+    "К-13",
+    "К-34",
+    "К-36"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 26,
+   "broken_repo_links": [],
+   "runtime_links": 5,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-1",
+   "stage": "A-IN",
+   "mode": "by-test",
+   "assigned_file": "bcreq-context-understanding-stepwise.md",
+   "assigned_version": "по тесту",
+   "assigned_bytes": 45469,
+   "operations": [
+    "К-01",
+    "К-02",
+    "К-03",
+    "К-04",
+    "К-09",
+    "К-14",
+    "К-15"
+   ],
+   "contract_codes_in_assigned": [
+    "К-01",
+    "К-02",
+    "К-03",
+    "К-04",
+    "К-09",
+    "К-14",
+    "К-15"
+   ],
+   "contract_codes_in_draft": [
+    "К-01",
+    "К-02",
+    "К-03",
+    "К-04",
+    "К-09",
+    "К-14",
+    "К-15"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 8,
+   "broken_repo_links": [],
+   "runtime_links": 8,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-2",
+   "stage": "A-IN",
+   "mode": "by-test",
+   "assigned_file": "bcreq-products-impact-analysis-stepwise.md",
+   "assigned_version": "по тесту",
+   "assigned_bytes": 41267,
+   "operations": [
+    "К-05",
+    "К-06",
+    "К-07",
+    "К-08",
+    "К-11"
+   ],
+   "contract_codes_in_assigned": [
+    "К-05",
+    "К-06",
+    "К-07",
+    "К-08",
+    "К-11"
+   ],
+   "contract_codes_in_draft": [
+    "К-05",
+    "К-06",
+    "К-07",
+    "К-08",
+    "К-11"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 10,
+   "broken_repo_links": [],
+   "runtime_links": 6,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-3",
+   "stage": "A-CORE",
+   "mode": "published",
+   "assigned_file": "bcreq-fr-documentation-stepwise.md",
+   "assigned_version": "0.2",
+   "assigned_bytes": 19743,
+   "operations": [
+    "К-16",
+    "К-17"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-16",
+    "К-17"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-4",
+   "stage": "A-CORE",
+   "mode": "published",
+   "assigned_file": "bcreq-nfr-documentation-stepwise.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 16773,
+   "operations": [
+    "К-18"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-18"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-5",
+   "stage": "A-CORE",
+   "mode": "published",
+   "assigned_file": "bcreq-uc-modeling-stepwise.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 19659,
+   "operations": [
+    "К-19"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-19"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-6",
+   "stage": "A-WORK",
+   "mode": "published",
+   "assigned_file": "bcreq-orr-solution-design-stepwise.md",
+   "assigned_version": "0.2",
+   "assigned_bytes": 22005,
+   "operations": [
+    "К-21",
+    "К-22"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-21",
+    "К-22"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 3,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-7",
+   "stage": "A-WORK",
+   "mode": "published",
+   "assigned_file": "bcreq-constraints-documentation-stepwise.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 16604,
+   "operations": [
+    "К-23"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-23"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-8",
+   "stage": "A-WORK",
+   "mode": "published",
+   "assigned_file": "bcreq-uc-modeling-stepwise.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 19659,
+   "operations": [
+    "К-24"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-24"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-9",
+   "stage": "A-WORK",
+   "mode": "published",
+   "assigned_file": "bcreq-extra-risk-analysis-stepwise.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 17073,
+   "operations": [
+    "К-25",
+    "К-26",
+    "К-27"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-25",
+    "К-26",
+    "К-27"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 2,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-В",
+   "stage": "A-WORK",
+   "mode": "published",
+   "assigned_file": "bcreq-review-validation-oneshot.md",
+   "assigned_version": "0.3",
+   "assigned_bytes": 19701,
+   "operations": [
+    "К-10",
+    "К-20",
+    "К-28",
+    "К-29",
+    "К-30",
+    "К-39"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-10",
+    "К-20",
+    "К-28",
+    "К-29",
+    "К-30",
+    "К-39"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 3,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-Р",
+   "stage": "A-RELEASE",
+   "mode": "by-test",
+   "assigned_file": "bcreq-release-readiness-oneshot.md",
+   "assigned_version": "по тесту",
+   "assigned_bytes": 23696,
+   "operations": [
+    "К-12",
+    "К-31",
+    "К-32",
+    "К-33",
+    "К-35"
+   ],
+   "contract_codes_in_assigned": [
+    "К-12",
+    "К-31",
+    "К-32",
+    "К-33",
+    "К-35"
+   ],
+   "contract_codes_in_draft": [
+    "К-12",
+    "К-31",
+    "К-32",
+    "К-33",
+    "К-35"
+   ],
+   "state_block": true,
+   "fallback_rule": false,
+   "repo_links": 5,
+   "broken_repo_links": [],
+   "runtime_links": 2,
+   "broken_runtime_links": []
+  },
+  {
+   "step": "Ш-С",
+   "stage": "вне последовательности",
+   "mode": "published",
+   "assigned_file": "bcreq-scenarios-modeling-oneshot.md",
+   "assigned_version": "0.1",
+   "assigned_bytes": 16305,
+   "operations": [
+    "К-37",
+    "К-38"
+   ],
+   "contract_codes_in_assigned": [],
+   "contract_codes_in_draft": [
+    "К-37",
+    "К-38"
+   ],
+   "state_block": true,
+   "fallback_rule": true,
+   "repo_links": 3,
+   "broken_repo_links": [],
+   "runtime_links": 3,
+   "broken_runtime_links": []
+  }
+ ],
+ "journal_fields": {
+  "gate_id": true,
+  "gate_type": true,
+  "model_recommendation": true,
+  "divergence": true
+ },
+ "holes": []
+}
