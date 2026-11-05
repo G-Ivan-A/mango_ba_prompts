@@ -105,6 +105,12 @@ class AInOrder(unittest.TestCase):
         positions = [text.index(mark) for mark in ("*Сбор*", "*Интерпретация*", "*Фиксация*")]
         self.assertEqual(positions, sorted(positions), "подшаги идут не по порядку")
 
+    def test_new_system_uses_benchmark_products(self):
+        self.assertIn("какие 1–2 аналогичных продукта Mango взять опорой", read(STEP_A))
+        self.assertIn("и не задаёт границу функциональности", read(STEP1))
+        self.assertIn("публичный API не\nзадаёт границу функциональности",
+                      read("standards/bcreq-sections/03-functional-requirements.md"))
+
     def test_kit_order_and_size(self):
         kit = json.loads(read("site/data/test-kit.json"))
         self.assertEqual(kit["kit"]["version"], "0.8")
