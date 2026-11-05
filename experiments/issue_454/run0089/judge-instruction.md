@@ -57,3 +57,28 @@ Write {OUTPUT}: JSON {"X": {"P00": {"verdict": "pass"|"fail", "quote": "...", "r
 
 Reply with one line: pass counts for X and Y.
 ```
+
+## Поправка 1 (до запуска судей): судья процесса разрезан по размеру
+
+Вход одного судьи процесса — 2,1 МБ, в один контекст не помещается. Поэтому вместо одного судьи работают семь на
+те же критерии и формулировки: P00 — отдельный судья на `common.md`; по три судьи на метку: `core` (Ш-3, Ш-4, Ш-5 и
+возврат), `work` (Ш-6…Ш-9), `end` (Ш-В, Ш-Р, Ш-С, журнал гейтов). Судья видит одну метку и одну часть. Критерий
+проходит, только если его прошли все судьи, которым он назначен (`run.py merge`). Назначение критериев — `PIECES` в
+[`run.py`](run.py). Вопрос `overall` не влияет на правила и передан судье документов: он видит оба документа.
+
+Судья документов получает дополнительно: «Then answer: "overall": "X" | "Y" | "tie": which document a BA could take to
+release with fewer corrections, and why (two sentences). Add the keys "overall" and "overall_reason" to the JSON.»
+
+```text
+You are a blind judge. ALLOWED ACTIONS: the Read tool on exactly three files ({PART}, {SCRIPT}, {MATERIALS}); Read, Grep and Glob inside {RUNTIME} only to verify a quote or a locator; Grep on {PART}; the Write tool on exactly one output file. Do not read anything else. Read {PART} completely, in consecutive ranges of 400 lines. After each range append your interim notes to {OUTPUT}.notes so a context reset loses nothing.
+
+{PART} is part of the transcript of one run on task SIM-1106: {PART_DESCRIPTION}. It starts after earlier steps you do not see: do not fail a criterion for what happened outside this part, judge the part you see. {SCRIPT} lists the human replies; {MATERIALS} lists the facts. Facts not present in the materials, in the human replies or in a file under {RUNTIME} quoted with a locator are inventions; lines marked "условно" are scripted human answers. Links outside {RUNTIME} were unavailable to the executor by the conditions of the run, and that alone is not a defect of a step.
+
+Score only these criteria: {CRITERIA}. For a criterion that mentions a step outside this part, apply it to the steps in this part. Each gets "pass" or "fail", a short evidence quote of at most 160 characters (verbatim) and one sentence of reasoning in Russian.
+
+{CRITERIA_TEXT}
+
+Write {OUTPUT}: JSON {"P01": {"verdict": "pass"|"fail", "quote": "...", "reason": "..."}, ...}. Valid JSON, UTF-8.
+
+Reply with one line: pass count.
+```
