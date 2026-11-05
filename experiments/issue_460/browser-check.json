@@ -1,0 +1,211 @@
+{
+  "total": 41,
+  "failed": 0,
+  "results": [
+    {
+      "name": "direct link stays on the site",
+      "ok": true,
+      "detail": "https://g-ivan-a.github.io/mango_ba_prompts/"
+    },
+    {
+      "name": "site is visible, gate open",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no password field",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no logout button",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "deep link keeps its address",
+      "ok": true,
+      "detail": "https://g-ivan-a.github.io/mango_ba_prompts/#processes?view=g2"
+    },
+    {
+      "name": "stale login.html opens the site",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "login.html?next keeps the destination",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "foreign next is ignored",
+      "ok": true,
+      "detail": "https://g-ivan-a.github.io/mango_ba_prompts/"
+    },
+    {
+      "name": "reports index opens without the site password",
+      "ok": true,
+      "detail": "https://g-ivan-a.github.io/mango_ba_prompts/reports/"
+    },
+    {
+      "name": "RUN-0060 keeps its own report password (decision flagged in the PR)",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors on access paths",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "13 steps visible without choosing a tab",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "«Все шаги» is the active tab",
+      "ok": true,
+      "detail": "Все шаги\n13"
+    },
+    {
+      "name": "stage tabs filter and sum to 13",
+      "ok": true,
+      "detail": "{\"g1\":3,\"g2\":3,\"g3\":4,\"g4\":3}"
+    },
+    {
+      "name": "full process tab still works",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "approval tab still works",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "unknown view falls back to all steps",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors on tabs",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "displayed text equals the source for all steps",
+      "ok": true,
+      "detail": "13/13"
+    },
+    {
+      "name": "containers bounded by 60vh with overflow-y auto",
+      "ok": true,
+      "detail": "13/13"
+    },
+    {
+      "name": "long prompts scroll inside the container",
+      "ok": true,
+      "detail": "13/13"
+    },
+    {
+      "name": "edition switch works where two editions exist",
+      "ok": true,
+      "detail": "12/12"
+    },
+    {
+      "name": "single-edition step has a disabled control and a note",
+      "ok": true,
+      "detail": "1/1"
+    },
+    {
+      "name": "copy puts the selected edition with the first line",
+      "ok": true,
+      "detail": "13/13"
+    },
+    {
+      "name": "no reader failures",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors in the reader",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "desktop: toolbar is stuck while the reader is scrolled past",
+      "ok": true,
+      "detail": "{\"bar\":72,\"topbar\":72,\"reader\":-197.53125}"
+    },
+    {
+      "name": "desktop: buttons in view and not overlapped",
+      "ok": true,
+      "detail": "[{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true}]"
+    },
+    {
+      "name": "desktop: no horizontal page scroll",
+      "ok": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "desktop: 13 steps visible",
+      "ok": true,
+      "detail": "13"
+    },
+    {
+      "name": "desktop: no console errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "tablet: toolbar is stuck while the reader is scrolled past",
+      "ok": true,
+      "detail": "{\"bar\":88,\"topbar\":88.375,\"reader\":-151.890625}"
+    },
+    {
+      "name": "tablet: buttons in view and not overlapped",
+      "ok": true,
+      "detail": "[{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true}]"
+    },
+    {
+      "name": "tablet: no horizontal page scroll",
+      "ok": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "tablet: 13 steps visible",
+      "ok": true,
+      "detail": "13"
+    },
+    {
+      "name": "tablet: no console errors",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "mobile: toolbar is stuck while the reader is scrolled past",
+      "ok": true,
+      "detail": "{\"bar\":0,\"topbar\":0,\"reader\":-243.75}"
+    },
+    {
+      "name": "mobile: buttons in view and not overlapped",
+      "ok": true,
+      "detail": "[{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true},{\"inView\":true,\"onTop\":true}]"
+    },
+    {
+      "name": "mobile: no horizontal page scroll",
+      "ok": true,
+      "detail": "overflow 0px"
+    },
+    {
+      "name": "mobile: 13 steps visible",
+      "ok": true,
+      "detail": "13"
+    },
+    {
+      "name": "mobile: no console errors",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}
