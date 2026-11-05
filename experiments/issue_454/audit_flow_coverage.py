@@ -21,10 +21,10 @@ OUT = Path(__file__).with_name("audit_flow_coverage.json")
 AGENT_ROUTE = {"bcreq-in-understanding-oneshot", "bcreq-core-documentation-oneshot", "bcreq-work-solution-design-oneshot"}
 # Measured evidence per step: what a report in runs/ covers. Checked for existence below.
 EVIDENCE = {
-    "Ш-0": ["RUN-0083", "RUN-0087", "RUN-0089"], "Ш-1": ["RUN-0083", "RUN-0086", "RUN-0089"], "Ш-2": ["RUN-0083", "RUN-0089", "RUN-0092"],
-    "Ш-3": ["RUN-0086", "RUN-0089"], "Ш-4": ["RUN-0089"], "Ш-5": ["RUN-0089", "RUN-0092"], "Ш-6": ["RUN-0086", "RUN-0089"], "Ш-7": ["RUN-0089"], "Ш-8": ["RUN-0089"], "Ш-9": ["RUN-0089"],
-    "Ш-Р": ["RUN-0089", "RUN-0092"], "Ш-С": ["RUN-0089", "RUN-0092"],
-    "Ш-В": ["RUN-0081", "RUN-0082", "RUN-0084", "RUN-0085", "RUN-0089", "RUN-0092"],
+    "Ш-0": ["RUN-0083", "RUN-0087", "RUN-0088", "RUN-0089"], "Ш-1": ["RUN-0083", "RUN-0086", "RUN-0088", "RUN-0089"], "Ш-2": ["RUN-0083", "RUN-0088", "RUN-0089", "RUN-0092"],
+    "Ш-3": ["RUN-0086", "RUN-0088", "RUN-0089"], "Ш-4": ["RUN-0088", "RUN-0089"], "Ш-5": ["RUN-0088", "RUN-0089", "RUN-0092"], "Ш-6": ["RUN-0086", "RUN-0088", "RUN-0089"], "Ш-7": ["RUN-0088", "RUN-0089"], "Ш-8": ["RUN-0088", "RUN-0089"], "Ш-9": ["RUN-0088", "RUN-0089"],
+    "Ш-Р": ["RUN-0088", "RUN-0089", "RUN-0092"], "Ш-С": ["RUN-0088", "RUN-0089", "RUN-0092"],
+    "Ш-В": ["RUN-0081", "RUN-0082", "RUN-0084", "RUN-0085", "RUN-0088", "RUN-0089", "RUN-0092"],
 }
 # Машинная база на реальных задачах: все шаги, кроме Ш-С; тексты комплекта 0.5 (kit_vs_machine_base.py).
 for _code in EVIDENCE:
