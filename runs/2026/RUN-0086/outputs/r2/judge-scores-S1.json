@@ -1,0 +1,22 @@
+[
+  {
+    "case": "S1-a1",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика применима, но вне разделов требований ответ не предлагает БА ни одной практики; recording.ready упомянут только в дайджесте и вопросе В-6."},
+    "Y": {"G1": true, "G2": false, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": "G2: в глоссарии запись разговора определена как «аудиоматериал»; во входе природа записи не указана (только поля recording_id, call_id, created_at, url)."}
+  },
+  {
+    "case": "S1-a2",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика применима, но вне разделов требований ответ не предлагает БА ни одной практики; есть только вопрос о требованиях юристов (В-2)."}
+  },
+  {
+    "case": "S1-n1",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}
+  },
+  {
+    "case": "S1-n2",
+    "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+    "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}
+  }
+]

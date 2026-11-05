@@ -1,0 +1,145 @@
+{
+  "replicates": {
+    "A2": {
+      "r1": {
+        "passed": 58,
+        "core": 11,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-26",
+          "GS-BCREQ-41",
+          "GS-BCREQ-47",
+          "GS-BCREQ-27"
+        ]
+      },
+      "r2": {
+        "passed": 57,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-37",
+          "GS-BCREQ-01",
+          "GS-BCREQ-26",
+          "GS-BCREQ-25",
+          "GS-BCREQ-27"
+        ]
+      },
+      "r3": {
+        "passed": 60,
+        "core": 10,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-01",
+          "GS-BCREQ-26"
+        ]
+      }
+    },
+    "A3": {
+      "r1": {
+        "passed": 58,
+        "core": 10,
+        "negatives_false_positive": 1,
+        "failed": [
+          "GS-BCREQ-N07",
+          "GS-BCREQ-26",
+          "GS-BCREQ-41",
+          "GS-BCREQ-12"
+        ]
+      },
+      "r2": {
+        "passed": 59,
+        "core": 11,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-26",
+          "GS-BCREQ-50",
+          "GS-BCREQ-41"
+        ]
+      },
+      "r3": {
+        "passed": 60,
+        "core": 11,
+        "negatives_false_positive": 0,
+        "failed": [
+          "GS-BCREQ-26",
+          "GS-BCREQ-08"
+        ]
+      }
+    }
+  },
+  "median": {
+    "A2": {
+      "passed": 58,
+      "core": 10,
+      "negatives_false_positive": 0
+    },
+    "A3": {
+      "passed": 59,
+      "core": 11,
+      "negatives_false_positive": 0
+    }
+  },
+  "fail_frequency": {
+    "A2": {
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-01": 2,
+      "GS-BCREQ-27": 2,
+      "GS-BCREQ-25": 1,
+      "GS-BCREQ-37": 1,
+      "GS-BCREQ-41": 1,
+      "GS-BCREQ-47": 1
+    },
+    "A3": {
+      "GS-BCREQ-26": 3,
+      "GS-BCREQ-41": 2,
+      "GS-BCREQ-08": 1,
+      "GS-BCREQ-12": 1,
+      "GS-BCREQ-50": 1,
+      "GS-BCREQ-N07": 1
+    }
+  },
+  "fail_by_criterion": {
+    "A2": {
+      "K1": 1,
+      "K2": 5,
+      "K4": 2,
+      "K5": 4
+    },
+    "A3": {
+      "K1": 1,
+      "K2": 3,
+      "K4": 1,
+      "K5": 6
+    }
+  },
+  "decision": {
+    "A3_vs_A2": {
+      "checks": {
+        "passed": true,
+        "core": true,
+        "negatives_false_positive": true
+      },
+      "not_worse": true
+    },
+    "guardrail_R18": [],
+    "publish": "A3"
+  },
+  "secondary": {
+    "GS-BCREQ-25": {
+      "A2": 1,
+      "A3": 0
+    },
+    "GS-BCREQ-12": {
+      "A2": 0,
+      "A3": 1
+    },
+    "GS-BCREQ-03": {
+      "A2": 0,
+      "A3": 0
+    },
+    "GS-BCREQ-N05": {
+      "A2": 0,
+      "A3": 0
+    }
+  }
+}

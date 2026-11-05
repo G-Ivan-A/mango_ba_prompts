@@ -1,0 +1,22 @@
+{
+  "85": {
+    "executor_A2": 167035,
+    "executor_A3": 166847,
+    "judge": 275093,
+    "total": 608975
+  },
+  "86": {
+    "executor_C": 283643,
+    "executor_B": 287822,
+    "judge": 320485,
+    "check-clean": 56597,
+    "check-discarded": 56945,
+    "total": 1005492
+  },
+  "87": {
+    "executor_C": 93222,
+    "executor_B": 91129,
+    "judge": 64851,
+    "total": 249202
+  }
+}

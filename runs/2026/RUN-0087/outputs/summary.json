@@ -1,0 +1,38 @@
+{
+ "median": {
+  "C": {
+   "passed": 4,
+   "core": 5,
+   "false": 0,
+   "benefit": 3,
+   "replicates_passed": [
+    4,
+    4,
+    4
+   ]
+  },
+  "B": {
+   "passed": 5,
+   "core": 5,
+   "false": 0,
+   "benefit": 4,
+   "replicates_passed": [
+    5,
+    4,
+    5
+   ]
+  }
+ },
+ "fail_frequency": {
+  "C": {
+   "S3": 3
+  },
+  "B": {
+   "S3": 1
+  }
+ },
+ "not_worse": true,
+ "guardrail_R18": [],
+ "benefit_gain": true,
+ "publish": true
+}

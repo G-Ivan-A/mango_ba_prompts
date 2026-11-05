@@ -1,0 +1,14 @@
+[
+  {"case": "S1-a1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: ответ не предлагает БА ни одной практики; блока практики нет, доставка по событию упомянута только в дайджесте как факт выдержки."}},
+  {"case": "S1-a2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: ответ не предлагает БА ни одной практики; блока практики нет, есть только вопрос о требованиях юристов Заказчика."},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": null, "note": ""}},
+  {"case": "S1-n1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}},
+  {"case": "S1-n2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}}
+]

@@ -1,0 +1,14 @@
+[
+  {"case": "S6-a1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика применима, но в блоке указано «практика не найдена», ни одной практики БА не предложено."},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": null, "note": "P1: практика применима, но вне разделов требований ни одна практика не предложена; есть только вопросы в 8.4."}},
+  {"case": "S6-a2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": true, "P2": true, "P3": null, "P4": true, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": false, "P2": null, "P3": null, "P4": true, "note": "P1: отдельного предложения практики нет; тема события готовности поднята только как вопрос В-8 и как разрыв в таблице раздела 5.2.2, без предложения практики."}},
+  {"case": "S6-n1",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}},
+  {"case": "S6-n2",
+   "X": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""},
+   "Y": {"G1": true, "G2": true, "G3": true, "P1": null, "P2": null, "P3": true, "P4": null, "note": ""}}
+]

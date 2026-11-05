@@ -1,0 +1,117 @@
+{
+ "S1": {
+  "median": {
+   "C": {
+    "passed": 2,
+    "core": 4,
+    "false": 0,
+    "benefit": 0,
+    "replicates_passed": [
+     2,
+     2,
+     2
+    ]
+   },
+   "B": {
+    "passed": 4,
+    "core": 4,
+    "false": 0,
+    "benefit": 2,
+    "replicates_passed": [
+     4,
+     3,
+     4
+    ]
+   }
+  },
+  "fail_frequency": {
+   "C": {
+    "S1-a1": 3,
+    "S1-a2": 3
+   },
+   "B": {
+    "S1-a1": 1
+   }
+  },
+  "not_worse": true,
+  "guardrail_R18": [],
+  "benefit_gain": true,
+  "publish": true
+ },
+ "S3": {
+  "median": {
+   "C": {
+    "passed": 2,
+    "core": 4,
+    "false": 0,
+    "benefit": 0,
+    "replicates_passed": [
+     3,
+     2,
+     2
+    ]
+   },
+   "B": {
+    "passed": 4,
+    "core": 4,
+    "false": 0,
+    "benefit": 2,
+    "replicates_passed": [
+     4,
+     4,
+     4
+    ]
+   }
+  },
+  "fail_frequency": {
+   "C": {
+    "S3-a2": 3,
+    "S3-a1": 2
+   },
+   "B": {}
+  },
+  "not_worse": true,
+  "guardrail_R18": [],
+  "benefit_gain": true,
+  "publish": true
+ },
+ "S6": {
+  "median": {
+   "C": {
+    "passed": 2,
+    "core": 3,
+    "false": 1,
+    "benefit": 0,
+    "replicates_passed": [
+     2,
+     2,
+     2
+    ]
+   },
+   "B": {
+    "passed": 3,
+    "core": 4,
+    "false": 0,
+    "benefit": 1,
+    "replicates_passed": [
+     3,
+     3,
+     3
+    ]
+   }
+  },
+  "fail_frequency": {
+   "C": {
+    "S6-a1": 3,
+    "S6-a2": 3
+   },
+   "B": {
+    "S6-a1": 3
+   }
+  },
+  "not_worse": true,
+  "guardrail_R18": [],
+  "benefit_gain": true,
+  "publish": true
+ }
+}
