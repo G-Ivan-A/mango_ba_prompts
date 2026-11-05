@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T10:13:17.204Z",
+  "generatedAt": "2026-11-05T12:02:20.973Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.5.0",
+    "version": "2.6.0",
     "released": "2026-11-05",
-    "issue": 460,
-    "basis": "PR #461: все шаги тестового набора, контейнер чтения промпта, пароль отключён на отладку",
+    "issue": 454,
+    "basis": "PR #455: шаги Ш-3…Ш-9 по тесту (RUN-0089), пакеты Ш-Р, запись решения гейта",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

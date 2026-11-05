@@ -1,5 +1,5 @@
 {
- "kit": "0.5",
+ "kit": "0.7",
  "summary": {
   "старт": {
    "steps": 1,
@@ -25,19 +25,20 @@
    "steps": 3,
    "texts_assigned": 3,
    "operations": 4,
-   "contract_codes_in_assigned": 0,
+   "contract_codes_in_assigned": 4,
    "contract_codes_in_draft": 4,
    "modes": [
-    "published"
+    "by-test"
    ]
   },
   "A-WORK": {
    "steps": 5,
    "texts_assigned": 5,
    "operations": 13,
-   "contract_codes_in_assigned": 0,
+   "contract_codes_in_assigned": 7,
    "contract_codes_in_draft": 13,
    "modes": [
+    "by-test",
     "published"
    ]
   },
@@ -266,7 +267,7 @@
    "repo_links": 26,
    "broken_repo_links": [],
    "runtime_links": 5,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-1",
@@ -307,7 +308,7 @@
    "repo_links": 8,
    "broken_repo_links": [],
    "runtime_links": 8,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-2",
@@ -315,7 +316,7 @@
    "mode": "by-test",
    "assigned_file": "bcreq-products-impact-analysis-stepwise.md",
    "assigned_version": "по тесту",
-   "assigned_bytes": 41267,
+   "assigned_bytes": 41971,
    "operations": [
     "К-05",
     "К-06",
@@ -339,154 +340,172 @@
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 10,
+   "repo_links": 11,
    "broken_repo_links": [],
    "runtime_links": 6,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-3",
    "stage": "A-CORE",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-fr-documentation-stepwise.md",
-   "assigned_version": "0.2",
-   "assigned_bytes": 19743,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 35919,
    "operations": [
     "К-16",
     "К-17"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-16",
+    "К-17"
+   ],
    "contract_codes_in_draft": [
     "К-16",
     "К-17"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 7,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 5,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-4",
    "stage": "A-CORE",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-nfr-documentation-stepwise.md",
-   "assigned_version": "0.1",
-   "assigned_bytes": 16773,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 31732,
    "operations": [
     "К-18"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-18"
+   ],
    "contract_codes_in_draft": [
     "К-18"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 7,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 4,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-5",
    "stage": "A-CORE",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-uc-modeling-stepwise.md",
-   "assigned_version": "0.1",
-   "assigned_bytes": 19659,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 36404,
    "operations": [
     "К-19"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-19"
+   ],
    "contract_codes_in_draft": [
     "К-19"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 8,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 4,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-6",
    "stage": "A-WORK",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-orr-solution-design-stepwise.md",
-   "assigned_version": "0.2",
-   "assigned_bytes": 22005,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 37525,
    "operations": [
     "К-21",
     "К-22"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-21",
+    "К-22"
+   ],
    "contract_codes_in_draft": [
     "К-21",
     "К-22"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 3,
+   "repo_links": 8,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 5,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-7",
    "stage": "A-WORK",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-constraints-documentation-stepwise.md",
-   "assigned_version": "0.1",
-   "assigned_bytes": 16604,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 31465,
    "operations": [
     "К-23"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-23"
+   ],
    "contract_codes_in_draft": [
     "К-23"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 7,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 5,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-8",
    "stage": "A-WORK",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-uc-modeling-stepwise.md",
-   "assigned_version": "0.1",
-   "assigned_bytes": 19659,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 36404,
    "operations": [
     "К-24"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-24"
+   ],
    "contract_codes_in_draft": [
     "К-24"
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 8,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 4,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-9",
    "stage": "A-WORK",
-   "mode": "published",
+   "mode": "by-test",
    "assigned_file": "bcreq-extra-risk-analysis-stepwise.md",
-   "assigned_version": "0.1",
-   "assigned_bytes": 17073,
+   "assigned_version": "по тесту",
+   "assigned_bytes": 32611,
    "operations": [
     "К-25",
     "К-26",
     "К-27"
    ],
-   "contract_codes_in_assigned": [],
+   "contract_codes_in_assigned": [
+    "К-25",
+    "К-26",
+    "К-27"
+   ],
    "contract_codes_in_draft": [
     "К-25",
     "К-26",
@@ -494,10 +513,10 @@
    ],
    "state_block": true,
    "fallback_rule": true,
-   "repo_links": 2,
+   "repo_links": 7,
    "broken_repo_links": [],
-   "runtime_links": 3,
-   "broken_runtime_links": []
+   "runtime_links": 4,
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-В",
@@ -528,7 +547,7 @@
    "repo_links": 3,
    "broken_repo_links": [],
    "runtime_links": 3,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-Р",
@@ -536,7 +555,7 @@
    "mode": "by-test",
    "assigned_file": "bcreq-release-readiness-oneshot.md",
    "assigned_version": "по тесту",
-   "assigned_bytes": 23696,
+   "assigned_bytes": 26995,
    "operations": [
     "К-12",
     "К-31",
@@ -560,10 +579,10 @@
    ],
    "state_block": true,
    "fallback_rule": false,
-   "repo_links": 5,
+   "repo_links": 6,
    "broken_repo_links": [],
    "runtime_links": 2,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   },
   {
    "step": "Ш-С",
@@ -586,7 +605,7 @@
    "repo_links": 3,
    "broken_repo_links": [],
    "runtime_links": 3,
-   "broken_runtime_links": []
+   "broken_runtime_links": "не проверялось"
   }
  ],
  "journal_fields": {

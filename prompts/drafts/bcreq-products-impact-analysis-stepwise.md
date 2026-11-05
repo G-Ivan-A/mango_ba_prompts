@@ -3,7 +3,7 @@ id: mango-bcreq-products-impact-analysis-stepwise-by-test
 title: "BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)"
 status: draft
 version: 0.1
-updated: 2026-11-04
+updated: 2026-11-05
 temperature: 0.1
 operation: impact_analysis
 processes: ["Приём и контекст"]
@@ -286,6 +286,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 | --- | --- | --- | --- | --- |
 | Ш-2 | G-self | `llm`: самоотчёт в том же ответе | нет | Выполняет чек-лист и пишет его в receipt; маршрут не двигает |
 | Ш-2 | Г-IN | `гибрид` | да (КГ-3) | Отчёт Г-IN.1…Г-IN.5 и рекомендация исхода |
+
+**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5
+и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.
+У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа
+гейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:
+[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).
 
 ### Базовый стандарт
 

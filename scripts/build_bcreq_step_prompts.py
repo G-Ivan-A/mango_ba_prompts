@@ -54,6 +54,19 @@ MANIFEST = DRAFTS / "manifest.json"
 REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
 RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
 BUILD_DATE = "2026-11-04"
+#: Правки после RUN-0089: дата только у изменённых файлов, остальные черновики не меняются ни на байт.
+FIX_DATE = "2026-11-05"
+#: Гейты, решение которых принимает человек и записывает К-34 (стандарт гейтов, Г3).
+#: Г-W здесь нет: черновик Ш-В — измеренный RUN-0081 текст, шаг идёт по `prompts/`, запись задаёт его карточка.
+RECORDED_GATES = {"Г-IN", "Г-С1", "Выпуск"}
+GATE_RECORD = [
+    "**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5",
+    "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.",
+    "У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа",
+    "гейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:",
+    f"[`docs/contracts/bcreq-stage-gates.md`]({REPO_BLOB}docs/contracts/bcreq-stage-gates.md).",
+    "",
+]
 ROUTE = ["Ш-0", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С"]
 RELEASE_FILE = "bcreq-release-readiness-oneshot"
 BEGIN = "<!-- bl-156: by-test -->"
@@ -103,8 +116,8 @@ RELEASE_BODY = """
 
 Шаг Ш-Р — заглушка выпуска (пилот): у него нет промпта v0.1
 ([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).
-Текст шага ниже собран только из контрактов операций К-31, К-12, К-33,
-К-32, К-35 и гейта «Выпуск»; содержательных правил сверх них нет.
+Текст шага ниже собран из контрактов операций К-31, К-12, К-33, К-32, К-35 и
+гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).
 Отдельный вызов, новая сессия.
 
 ## 0. Позиция
@@ -134,10 +147,43 @@ RELEASE_BODY = """
 2. **К-12.** Полная сборка: каждый живой ID с полным текстом.
 3. **К-33.** Контроль выпускного комплекта: отчёт о готовности к выпуску
    человеком.
-4. **К-32.** Пакеты адресатам: только draft-пакеты, пока нет решения
-   человека на гейте «Выпуск» (`человек`).
+4. **К-32.** Пакеты адресатам по разделу 4: только draft-пакеты, пока нет
+   решения человека на гейте «Выпуск» (`человек`).
 5. **К-35.** Кандидат baseline: состав версии и открытые вопросы; статус
    `released` — только по записи выпуска человеком.
+
+## 4. Пакеты К-32
+
+**Состав.** Его задаёт политика адресатов. Если БА её не приложил, действует
+политика по умолчанию:
+
+| Пакет | Состав |
+| --- | --- |
+| «ФТ на согласование» | разделы 1, 2.1–2.4, 3, 4 |
+| «ТЗ в договор» | разделы 1, 2.1–2.4, 3, 4, 6; сквозная нумерация; номер документа — заполнитель `<номер ТЗ>`; раздел 5 — только если политика включает его явно |
+| Внутренний | документ целиком, без очистки |
+
+**Очистка пакетов «ФТ на согласование» и «ТЗ в договор».** Пакет идёт полным
+текстом, без рассуждений и служебного слоя. Убери из него:
+
+- маркеры вида `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, `[ТРЕБУЕТСЯ …]`;
+- ссылки на вопросы и решения (`В-NN`, `Р-NN`) и на разделы вне пакета;
+- строки статуса разделов и блок «Состояние BCREQ»;
+- столбцы и пометки источника, если таблица без них остаётся понятной.
+
+**Смысл не меняй.** Убирай пометку, а не факт; новых формулировок не добавляй.
+Пункт, который без маркера теряет смысл или утверждает непроверенное, в пакет
+не включай.
+
+**Манифест пакета.** Под каждым пакетом перечисли:
+
+- `Исключено`: разделы и столбцы вне состава;
+- `Открытые пункты`: каждый убранный маркер и невключённый пункт с локатором
+  в документе и номером вопроса;
+- `Готов к отправке`: `да`, только если открытых пунктов нет; иначе `нет`.
+  Статус пакета `draft` не меняется в обоих случаях: отправку решает человек.
+
+Служебные обозначения разрешены только в манифесте, он не входит в текст пакета.
 
 ## 5. Формат вывода
 
@@ -145,7 +191,7 @@ RELEASE_BODY = """
 Ш-Р. Выпускной комплект BCREQ <ID задачи>, ревизия <N>
 Отчёт К-31: <пропуски, дубликаты, битые ссылки, порядок разделов, счётчики, вердикт>
 Отчёт К-33: <ревизии, одобрения, недостающее, устаревшее, готово к выпуску человеком: да/нет>
-Пакеты К-32: <заказчику, внутренний, исключённое> — статус draft
+Пакеты К-32: <полный текст каждого пакета, под ним манифест: исключено, открытые пункты, готов к отправке> — статус draft
 Baseline К-35: <кандидат; released — только по записи выпуска>
 Решение по гейту «Выпуск» (`человек`, ключевой): за людьми гейта.
 ```
@@ -322,6 +368,10 @@ def gates_for(step, gates, rfc):
     return result
 
 
+def closes_human_gate(steps, gates, rfc):
+    return any(g["gate"] in RECORDED_GATES for step in steps for g in gates_for(step, gates, rfc))
+
+
 def render_block(steps, ctx):
     base_version, groups, gates = ctx["base"]
     prof_version, prules, ptable = ctx["profiles"]
@@ -383,6 +433,8 @@ def render_block(steps, ctx):
         for gate in gates_for(step, gates, rfc):
             out.append(f"| {step} | {gate['gate']} | {gate['type']} | {gate['key']} | {gate['model']} |")
     out.append("")
+    if closes_human_gate(steps, gates, rfc):
+        out += GATE_RECORD
 
     # Базовый стандарт.
     out += ["### Базовый стандарт", ""]
@@ -441,7 +493,7 @@ def render_block(steps, ctx):
     return "\n".join(out) + "\n", profiles, [op for _, op in operations], used_refs, used_stubs
 
 
-def build_frontmatter(original_fm, file_id_suffix, extra):
+def build_frontmatter(original_fm, file_id_suffix, extra, updated=BUILD_DATE):
     lines = []
     for line in original_fm.splitlines():
         key = line.split(":", 1)[0]
@@ -452,7 +504,7 @@ def build_frontmatter(original_fm, file_id_suffix, extra):
         elif key == "status":
             line = "status: draft"
         elif key == "updated":
-            line = f"updated: {BUILD_DATE}"
+            line = f"updated: {updated}"
         lines.append(line)
     lines += extra
     return "---\n" + "\n".join(lines) + "\n---\n"
@@ -488,8 +540,8 @@ def build_all():
                 f"id: mango-{RELEASE_FILE}",
                 'title: "BCREQ Ш-Р: выпуск, заглушка"',
                 "status: draft",
-                "version: 0.1",
-                f"updated: {BUILD_DATE}",
+                "version: 0.2",
+                f"updated: {FIX_DATE}",
                 "temperature: 0.1",
                 "operation: release_readiness",
                 'processes: ["Выпуск BCREQ"]',
@@ -513,7 +565,8 @@ def build_all():
                 if substitutions else
                 "текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n"
             )
-        text = build_frontmatter(fm, "-by-test", based_on + extra) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block
+        updated = FIX_DATE if closes_human_gate(steps, ctx["base"][2], ctx["rfc"]) else BUILD_DATE
+        text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block
         outputs[DRAFTS / f"{name}.md"] = text
         manifest.append({
             "file": f"prompts/drafts/{name}.md",
