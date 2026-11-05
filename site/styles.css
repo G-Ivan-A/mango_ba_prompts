@@ -980,7 +980,7 @@ h3 {
   color: var(--amber);
 }
 
-/* Тестовый набор этапа 1 (issue #446): режим шага и вторая кнопка копирования. */
+/* Тестовый набор этапа 1 (issue #446): режим шага. */
 .tag[data-kind="testkit-mode"][data-mode="published"] {
   border-color: rgba(15, 118, 110, 0.32);
   background: rgba(15, 118, 110, 0.08);
@@ -991,31 +991,6 @@ h3 {
   border-color: rgba(180, 83, 9, 0.32);
   background: rgba(180, 83, 9, 0.08);
   color: var(--amber);
-}
-
-.testkit-other {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
-  margin: 0;
-}
-
-.testkit-alt {
-  padding: 4px 10px;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 0.84rem;
-  cursor: pointer;
-}
-
-.testkit-alt:hover,
-.testkit-alt:focus-visible,
-.testkit-alt[data-copied="true"] {
-  border-color: var(--teal);
-  color: var(--teal);
 }
 
 .testkit-sha {
@@ -1145,6 +1120,115 @@ h3 {
 
 .testkit-step .bcreq-gate {
   font-weight: 400;
+}
+
+/* Контейнер чтения промпта (issue #460): текст прокручивается внутри контейнера,
+   панель с редакциями и копированием прилипает под верхней панелью сайта. */
+.testkit-step-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.testkit-step-info {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.testkit-reader {
+  display: grid;
+  min-width: 0;
+  gap: 6px;
+}
+
+.testkit-reader-bar {
+  position: sticky;
+  top: var(--topbar-height, 72px);
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  background: var(--surface);
+}
+
+.testkit-edition {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.testkit-edition-button,
+.testkit-copy {
+  min-height: 36px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.testkit-edition-button[aria-pressed="true"] {
+  border-color: var(--teal);
+  background: var(--teal);
+  color: var(--surface);
+}
+
+.testkit-edition-button:disabled {
+  cursor: default;
+}
+
+.testkit-edition-button:not(:disabled):not([aria-pressed="true"]):hover,
+.testkit-edition-button:not([aria-pressed="true"]):focus-visible,
+.testkit-copy:hover,
+.testkit-copy:focus-visible,
+.testkit-copy[data-copied="true"] {
+  border-color: var(--teal);
+  color: var(--teal);
+}
+
+.testkit-reader-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.testkit-reader-note[data-comparison="true"] {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.testkit-prompt-text {
+  max-height: 60vh;
+  margin: 0;
+  padding: 12px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface-strong);
+  color: var(--text);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.testkit-prompt-text:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
+}
+
+#bcreq-testkit-steps .bcreq-steps {
+  grid-template-columns: minmax(0, 1fr);
 }
 
 /* Без горизонтальной прокрутки: колонка карточки не шире экрана, длинные
@@ -1966,6 +2050,10 @@ h3 {
 }
 
 @media (max-width: 1080px) {
+  .testkit-step-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .metrics-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -1987,6 +2075,11 @@ h3 {
 }
 
 @media (max-width: 720px) {
+  /* Верхняя панель здесь статична: панель карточки прилипает к верху окна. */
+  .testkit-reader-bar {
+    top: 0;
+  }
+
   .topbar {
     position: static;
     align-items: flex-start;

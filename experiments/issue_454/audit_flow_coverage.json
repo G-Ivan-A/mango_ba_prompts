@@ -1,6 +1,6 @@
 {
  "runtime_slice": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
- "kit_version": "0.5",
+ "kit_version": "0.6",
  "counts": {
   "steps": 13,
   "byTest": 4,

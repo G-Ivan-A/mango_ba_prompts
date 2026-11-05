@@ -97,7 +97,7 @@ class Roadmap(unittest.TestCase):
                 self.assertEqual(rows[code][2], step["mode"], UPDATE)
                 self.assertEqual(rows[code][3], published["version"] if published else "нет", UPDATE)
                 self.assertIn("BL-232", rows[code][7])
-        self.assertIn("BL-169", rows["Ш-Р"][7])
+        self.assertIn("BL-170", rows["Ш-Р"][7])
 
     def test_measured_runs_exist(self):
         for row in table(self.rfc, "coverage"):
@@ -141,7 +141,7 @@ class Chain(unittest.TestCase):
         chain = self.backlog.split("**Движение по цепочке (на 2026-11-05, issue #454).**")[1].split("### Как дать решение")[0]
         for label in ("Предшествующий (полнота)", "Текущий — закрывается", "Открывает", "Ждёт триггера"):
             self.assertIn(f"| {label}", chain)
-        for code in ("BL-156г", "BL-167", "BL-168", "BL-156", "BL-232", "Р-19", "BL-230", "BL-231", "BL-157в", "BL-169"):
+        for code in ("BL-156г", "BL-167", "BL-168", "BL-156", "BL-232", "Р-19", "BL-230", "BL-231", "BL-157в", "BL-170"):
             self.assertIn(code, chain)
 
     def test_previous_step_statuses(self):
@@ -153,16 +153,16 @@ class Chain(unittest.TestCase):
     def test_opened_tasks(self):
         deploy = self.row("| BL-232 |")
         self.assertIn("| P0 | — | TODO |", deploy, "деплой не должен ждать Р-19")
-        self.assertIn("| deferred (triggered) |", self.row("| BL-169 |"))
+        self.assertIn("| deferred (triggered) |", self.row("| BL-170 |"))
         self.assertTrue(self.row("| **Р-19** |").rstrip().endswith("| ждёт |") or "принято" in self.row("| **Р-19** |"))
-        for code in ("BL-157", "BL-169", "BL-230", "BL-231"):
+        for code in ("BL-157", "BL-170", "BL-230", "BL-231"):
             self.assertIn("Р-19", cells(self.row(f"| {code} |"))[3], f"{code}: Р-19 должно быть в зависимостях")
         self.assertIn("BL-232", cells(self.row("| BL-157 |"))[3], "этап BL-157в ждёт деплоя")
 
     def test_closure_criterion(self):
         closure = self.backlog.split("**Критерий закрытия.** BL-150…BL-157")[1].split("\n\n")[0]
         self.assertIn("BL-232", closure)
-        self.assertIn("BL-169", closure)
+        self.assertIn("BL-170", closure)
 
 
 class Registration(unittest.TestCase):

@@ -1,0 +1,20 @@
+# Issue #460: доказательство отката пароля одним коммитом
+HEAD: f9e560b99cb15d6bb11a4e30899d06dde6a94fa7
+Коммит отключения: ab1b78b503b461a238d096c5ba96972126c75cc9
+$ git revert --no-edit ab1b78b503b461a238d096c5ba96972126c75cc9
+[detached HEAD 5cd37558] Revert "chore(site): временно отключить пароль на период отл�
+ Date: Thu Nov 5 10:24:13 2026 +0000
+ 4 files changed, 5 insertions(+), 40 deletions(-)
+$ git diff ab1b78b503b461a238d096c5ba96972126c75cc9~1 HEAD -- site/gate.js docs/site-access.md README.md | wc -l  # 0 = как до отключения
+0
+$ make validate-full
+full: 92 валидаторов, 0 из кэша, 0 провалов, 66.62s
+
+$ SITE_ROOT=<откат> node experiments/issue_460/revert-browser-check.cjs  # синтетический хэш только в маршруте браузера
+PASS  прямая ссылка ведёт на форму входа  (https://g-ivan-a.github.io/mango_ba_prompts/login.html)
+PASS  неверный пароль отклонён
+PASS  после входа видны все 13 шагов  (13)
+PASS  кнопка выхода на месте
+PASS  выход возвращает на форму входа
+5/5 passed
+exit=0

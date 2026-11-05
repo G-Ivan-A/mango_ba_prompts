@@ -77,11 +77,14 @@ const BCREQ_STAGES = [
 // Ш-В v0.2 по RUN-0084.
 // 2.4.0 (issue #450): Ш-В v0.3, Ш-0, Ш-1, Ш-3, Ш-6 v0.2 (RUN-0085…0087),
 // срез runtime 68ad8fcf и маршрут sections_toc (РТ-7).
+// 2.5.0 (issue #460): «Процессы» по умолчанию показывает все 13 шагов; текст
+// редакции в прокручиваемом контейнере, переключатель редакций; пароль временно
+// отключён на период отладки BL-157в. Тексты промптов не менялись.
 const SITE_VERSION = {
-  version: "2.4.0",
+  version: "2.5.0",
   released: "2026-11-05",
-  issue: 450,
-  basis: "PR #451: Ш-В v0.3, блок практики Ш-1, Ш-3, Ш-6, правила сессии Ш-0 (RUN-0085…0087), РТ-7",
+  issue: 460,
+  basis: "PR #461: все шаги тестового набора, контейнер чтения промпта, пароль отключён на отладку",
   changelog: "CHANGELOG.md",
 };
 
@@ -1301,7 +1304,51 @@ function makeTestKitCards(markdown) {
   return { groups, cards };
 }
 
-async function makeTestKit(markdown, prompts) {
+// Нижняя граница тестового набора (issue #460): столько шагов в таблице комплекта
+// v0.5. Ловит потерю, которую сверка таблиц не видит: одновременно удалены строка,
+// карточка и код этапа. Новые шаги границу не трогают, их считает сверка таблиц.
+export const TEST_KIT_MIN_STEPS = 13;
+
+// Гарантия полноты тестового набора (issue #460): всё, что перечисляет комплект,
+// дошло до test-kit.json, и у каждой редакции есть текст. Иначе генератор падает,
+// а не публикует сокращённый набор.
+export function assertTestKitComplete({ groups, cards, steps, prompts }) {
+  const problems = [];
+  if (steps.length < TEST_KIT_MIN_STEPS) {
+    problems.push(`шагов ${steps.length}, минимум ${TEST_KIT_MIN_STEPS}`);
+  }
+  const codes = steps.map((step) => step.step.split(/\s+/)[0]);
+  for (const code of new Set(codes.filter((item, index) => codes.indexOf(item) !== index))) {
+    problems.push(`шаг ${code} повторяется`);
+  }
+  for (const group of groups) {
+    for (const code of group.steps) {
+      if (!codes.includes(code)) {
+        problems.push(`этап ${group.number} перечисляет ${code}, а строки шага нет`);
+      }
+    }
+  }
+  const numbers = new Set(steps.map((step) => step.number));
+  for (const number of cards.keys()) {
+    if (!numbers.has(number)) {
+      problems.push(`у карточки № ${number} нет строки в таблице шагов`);
+    }
+  }
+  const bodies = new Map(prompts.map((prompt) => [prompt.id, prompt.body]));
+  for (const step of steps) {
+    if (step.draft && !step.draft.body?.trim()) {
+      problems.push(`шаг ${step.step}: пустой текст черновика`);
+    }
+    if (step.published && !bodies.get(step.published.id)?.trim()) {
+      problems.push(`шаг ${step.step}: нет текста промпта ${step.published.id}`);
+    }
+  }
+  if (problems.length) {
+    throw new Error(`${SOURCE_FILES.runKit}: тестовый набор неполон: ${problems.join("; ")}`);
+  }
+}
+
+export async function makeTestKit(markdown, prompts) {
   const promptsByPath = new Map(prompts.map((prompt) => [prompt.sourcePath, prompt]));
   const frontmatter = parseFrontmatter(markdown);
   const table = parseTables(markdown).find((item) =>
@@ -1393,6 +1440,7 @@ async function makeTestKit(markdown, prompts) {
       draft,
     });
   }
+  assertTestKitComplete({ groups, cards, steps, prompts });
   return {
     generatedAt: new Date().toISOString(),
     sourceFiles: [{ path: SOURCE_FILES.runKit, url: repoUrl(SOURCE_FILES.runKit) }],
@@ -1672,7 +1720,10 @@ async function main() {
   );
 }
 
-main().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
-});
+// Импорт из проверок (issue #460) не запускает генерацию и не пишет site/data/.
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch((error) => {
+    console.error(error);
+    process.exitCode = 1;
+  });
+}
