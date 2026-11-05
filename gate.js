@@ -7,10 +7,14 @@
   const ENTRY = "site";
   const STORAGE_KEY = "mango-site-access";
   const isLogin = script.dataset.page === "login";
+  // TODO: вернуть пароль после завершения отладки BL-157в
+  // Issue #460: сайт публичен на период отладки. Откат: git revert коммита
+  // отключения (docs/site-access.md, BL-169).
+  const GATE_DISABLED = true;
   const root = document.documentElement;
   let resolveReady;
   const ready = new Promise((resolve) => { resolveReady = resolve; });
-  root.dataset.gate = "locked";
+  root.dataset.gate = GATE_DISABLED && !isLogin ? "open" : "locked";
   // Hide protected content before any asynchronous work, also on nested reports.
   const style = document.createElement("style");
   style.textContent = 'html[data-gate="locked"] body { visibility: hidden !important; }';
@@ -60,6 +64,16 @@
   }
 
   async function start() {
+    if (GATE_DISABLED) {
+      // Старая закладка на форму входа ведёт на сайт; выйти неоткуда.
+      if (isLogin) {
+        location.replace(destination());
+        return;
+      }
+      document.querySelector("#site-logout")?.remove();
+      resolveReady();
+      return;
+    }
     if (!isLogin) {
       try {
         const entry = await loadEntry();
