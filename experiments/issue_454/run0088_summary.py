@@ -104,6 +104,7 @@ def main():
         "packets": packets,
         "packets_verdict": "собирается" if assembled else "не собирается",
         "pairs_repeat_of_R2": pairs(),
+        "ba_missing_outside_stage_rule": {k: BA_MISSING.get(k, []) for k in ("A-RELEASE", "Ш-С")},
     }
     (RUN / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(json.dumps({"cross": xs, "stages": {k: v.get("verdict") for k, v in summary["stages"].items()}, "packets": packets}, ensure_ascii=False))
