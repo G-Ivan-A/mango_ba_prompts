@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""RUN-0088: сквозной синтетический прогон BCREQ, K (основная кнопка) против T (черновики «по тесту»), issue #454.
+"""RUN-0089: сквозной синтетический прогон BCREQ, K (основная кнопка) против T (черновики «по тесту»), issue #454.
 
 Правила R1 и R2 — в `preregistration.md` (закоммичено до запуска подагентов).
 
 Использование:
-    python3 experiments/issue_454/run0088/run.py prepare WORK COPIES  # промпты плеч, чек-листы, хеши
-    python3 experiments/issue_454/run0088/run.py blind   WORK         # материалы слепых судей, seed 8088
-    python3 experiments/issue_454/run0088/run.py score   WORK         # summary.json, вердикты R1 и R2
-    python3 experiments/issue_454/run0088/run.py fixate  WORK         # runs/2026/RUN-0088/
+    python3 experiments/issue_454/run0089/run.py prepare WORK COPIES  # промпты плеч, чек-листы, хеши
+    python3 experiments/issue_454/run0089/run.py blind   WORK         # материалы слепых судей, seed 8089
+    python3 experiments/issue_454/run0089/run.py score   WORK         # summary.json, вердикты R1 и R2
+    python3 experiments/issue_454/run0089/run.py fixate  WORK         # runs/2026/RUN-0089/
 
 WORK — каталог прогона (`/tmp/run88`). COPIES — вывод site_walkthrough.cjs: `{main,alt}/<шаг>.md`.
 """
@@ -23,13 +23,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
-RUN = ROOT / "runs/2026/RUN-0088"
-SEED = 8088
+RUN = ROOT / "runs/2026/RUN-0089"
+SEED = 8089
 COMMON = ("Ш-0", "Ш-1", "Ш-2")
 ARM = ("Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9")
 SHARED = ("Ш-В", "Ш-Р", "Ш-С")
 CRITICAL = ("P03", "P08", "P11", "P12", "P14")
-PROCESS = tuple(f"P{n:02d}" for n in range(16))
+PROCESS = tuple(f"P{n:02d}" for n in range(17))
 STAGES = ("core", "work", "val", "rel")
 
 
@@ -146,11 +146,12 @@ def score(work: Path) -> int:
         }
     k, t = summary["arms"]["K"], summary["arms"]["T"]
     summary["R2"] = {"t_not_worse": t["total"] >= k["total"], "t_r1_not_failed": t["R1"] != "не готов", "by_test": t["total"] >= k["total"] and t["R1"] != "не готов"}
+    summary["R3"] = {"assembles": all(proc["P16"]["verdict"] == "pass" for proc in (process["X"], process["Y"]))}
     previous = work / "summary.json"
     if previous.exists():
         summary["fail_handling"] = json.loads(previous.read_text(encoding="utf-8")).get("fail_handling", {})
     dump(previous, summary)
-    print(json.dumps({"arms": summary["arms"], "R2": summary["R2"], "overall": summary["overall"]}, ensure_ascii=False))
+    print(json.dumps({"arms": summary["arms"], "R2": summary["R2"], "R3": summary["R3"], "overall": summary["overall"]}, ensure_ascii=False))
     return 0
 
 

@@ -7,7 +7,7 @@ type: experiment-instruction
 scope: mango-only
 ---
 
-# RUN-0088 — инструкции слепых судей (дословно передаются подагентам)
+# RUN-0089 — инструкции слепых судей (дословно передаются подагентам)
 
 ## Судья документа
 
@@ -49,9 +49,11 @@ P13 Honest sources: no claim to have read or verified a source that the executor
 P14 No dead end (critical): no line "ТУПИК" in an executor log; every step found what it needed in the output of earlier steps or in the kit's preparation list; a stop outside a stop-gate was resolved by the scripted continuation.
 P15 Ш-С: the requested type is produced from sections 1–3 only, roles and values come from the request, nothing is added.
 
+P16 Packets: the Ш-Р output has both packets of the policy as full text. "ФТ на согласование" holds exactly sections 1, 2.1–2.4, 3, 4; "ТЗ в договор" holds exactly sections 1, 2.1–2.4, 3, 4, 6 with continuous numbering and a document-number placeholder; neither has section 5, 2.5, 7, 8, reasoning or service marks; meaning is unchanged against the final document; both stay drafts; a manifest lists what was excluded.
+
 Then answer: "overall": "X" | "Y" | "tie": which run a BA could take to release with fewer corrections, and why (two sentences).
 
-Write {OUTPUT}: JSON {"X": {"P00": {"verdict": "pass"|"fail", "quote": "...", "reason": "..."}, ... "P15": {...}}, "Y": {...same...}, "overall": "X"|"Y"|"tie", "overall_reason": "..."}. Valid JSON, UTF-8.
+Write {OUTPUT}: JSON {"X": {"P00": {"verdict": "pass"|"fail", "quote": "...", "reason": "..."}, ... "P16": {...}}, "Y": {...same...}, "overall": "X"|"Y"|"tie", "overall_reason": "..."}. Valid JSON, UTF-8.
 
 Reply with one line: pass counts for X and Y.
 ```
