@@ -1,0 +1,367 @@
+{
+ "ba_reviewed": false,
+ "cross": {
+  "X5": "pass"
+ },
+ "stages": {
+  "A-IN": {
+   "verdict": "не готова",
+   "sections": {
+    "1": {
+     "pass": 1,
+     "total": 5,
+     "share": 0.2,
+     "failed": [
+      "S1.1",
+      "S1.2",
+      "S1.3",
+      "S1.4"
+     ]
+    },
+    "2": {
+     "pass": 4,
+     "total": 6,
+     "share": 0.667,
+     "failed": [
+      "S2.3",
+      "S2.5"
+     ]
+    }
+   },
+   "below_threshold": [
+    "1",
+    "2"
+   ],
+   "critical_failed": [
+    "X1",
+    "X2",
+    "X3"
+   ],
+   "gates": {
+    "Г-IN.1": {
+     "verdict": "fail",
+     "report_accurate": true
+    },
+    "Г-IN.2": {
+     "verdict": "fail",
+     "report_accurate": true
+    },
+    "Г-IN.3": {
+     "verdict": "fail",
+     "report_accurate": true
+    },
+    "Г-IN.4": {
+     "verdict": "fail",
+     "report_accurate": false
+    },
+    "Г-IN.5": {
+     "verdict": "fail",
+     "report_accurate": true
+    }
+   },
+   "ba_missing": []
+  },
+  "A-CORE": {
+   "verdict": "не готова",
+   "sections": {
+    "3": {
+     "pass": 4,
+     "total": 6,
+     "share": 0.667,
+     "failed": [
+      "S3.2",
+      "S3.4"
+     ]
+    },
+    "4": {
+     "pass": 3,
+     "total": 4,
+     "share": 0.75,
+     "failed": [
+      "S4.1"
+     ]
+    },
+    "7": {
+     "pass": 3,
+     "total": 5,
+     "share": 0.6,
+     "failed": [
+      "S7.1",
+      "S7.4"
+     ]
+    }
+   },
+   "below_threshold": [
+    "3",
+    "4",
+    "7"
+   ],
+   "critical_failed": [
+    "X1",
+    "X2",
+    "X3"
+   ],
+   "gates": {
+    "Г-С1.1": {
+     "verdict": "fail",
+     "report_accurate": true
+    },
+    "Г-С1.2": {
+     "verdict": "pass",
+     "report_accurate": true
+    },
+    "Г-С1.3": {
+     "verdict": "pass",
+     "report_accurate": true
+    },
+    "Г-С1.4": {
+     "verdict": "pass",
+     "report_accurate": true
+    },
+    "Г-С1.5": {
+     "verdict": "fail",
+     "report_accurate": true
+    }
+   },
+   "ba_missing": []
+  },
+  "A-WORK": {
+   "verdict": "нет данных"
+  }
+ },
+ "final_document_sections": {},
+ "packets": {
+  "ФТ": {
+   "pass": 0,
+   "total": 0,
+   "failed": []
+  },
+  "ТЗ": {
+   "pass": 0,
+   "total": 0,
+   "failed": []
+  }
+ },
+ "packets_verdict": "не собирается",
+ "pairs_repeat_of_R2": {
+  "Ш-3": {
+   "A": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 6,
+    "failed": [
+     "C2",
+     "C4",
+     "C6"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 6,
+    "failed": [
+     "C2",
+     "C4",
+     "C6"
+    ]
+   },
+   "pass_A": 8,
+   "pass_T": 8,
+   "overall": "T",
+   "R2_repeat": "T"
+  },
+  "Ш-4": {
+   "A": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 4,
+    "failed": [
+     "C4"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 4,
+    "failed": [
+     "C2"
+    ]
+   },
+   "pass_A": 8,
+   "pass_T": 8,
+   "overall": "A",
+   "R2_repeat": "T"
+  },
+  "Ш-5": {
+   "A": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 1,
+    "C_total": 5,
+    "failed": [
+     "C1",
+     "C2",
+     "C4",
+     "C5"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "fail",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 1,
+    "C_total": 5,
+    "failed": [
+     "C1",
+     "C2",
+     "C4",
+     "C5",
+     "J1"
+    ]
+   },
+   "pass_A": 6,
+   "pass_T": 5,
+   "overall": "A",
+   "R2_repeat": "A"
+  },
+  "Ш-3в": {
+   "A": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 5,
+    "C_total": 6,
+    "failed": [
+     "C6"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "fail"
+    },
+    "C_pass": 3,
+    "C_total": 6,
+    "failed": [
+     "C2",
+     "C4",
+     "C6",
+     "J5"
+    ]
+   },
+   "pass_A": 10,
+   "pass_T": 7,
+   "overall": "A",
+   "R2_repeat": "A"
+  },
+  "Ш-4в": {
+   "A": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 4,
+    "failed": [
+     "C1"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "pass",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 3,
+    "C_total": 4,
+    "failed": [
+     "C1"
+    ]
+   },
+   "pass_A": 8,
+   "pass_T": 8,
+   "overall": "A",
+   "R2_repeat": "T"
+  },
+  "Ш-5в": {
+   "A": {
+    "J": {
+     "J1": "fail",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 5,
+    "C_total": 5,
+    "failed": [
+     "J1"
+    ]
+   },
+   "T": {
+    "J": {
+     "J1": "fail",
+     "J2": "pass",
+     "J3": "pass",
+     "J4": "pass",
+     "J5": "pass"
+    },
+    "C_pass": 4,
+    "C_total": 5,
+    "failed": [
+     "C1",
+     "J1"
+    ]
+   },
+   "pass_A": 9,
+   "pass_T": 8,
+   "overall": "A",
+   "R2_repeat": "A"
+  }
+ }
+}
