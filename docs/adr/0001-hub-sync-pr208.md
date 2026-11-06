@@ -2,7 +2,6 @@
 status: accepted
 version: 1.0
 updated: 2026-06-10
-ai-generated: true
 type: adr
 scope: mango_ba_prompts-governance-sync
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/46"

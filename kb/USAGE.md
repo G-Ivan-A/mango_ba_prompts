@@ -2,7 +2,6 @@
 status: draft
 version: 0.2
 updated: 2026-08-22
-ai-generated: true
 type: kb-usage-examples
 scope: kb
 related_artifacts:

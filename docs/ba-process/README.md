@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-18
-ai-generated: true
 type: index
 scope: mango-only
 related_issues:

@@ -2,7 +2,6 @@
 status: accepted
 version: 1.0
 updated: 2026-06-11
-ai-generated: true
 type: adr
 scope: pattern-standard
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/64"

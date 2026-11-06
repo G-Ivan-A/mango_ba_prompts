@@ -2,7 +2,6 @@
 status: draft
 version: 0.2
 updated: 2026-08-25
-ai-generated: true
 type: kb-structure-review
 scope: kb/
 related_issues:

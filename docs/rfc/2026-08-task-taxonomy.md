@@ -2,7 +2,6 @@
 status: proposed
 version: 0.1
 updated: 2026-08-28
-ai-generated: true
 type: rfc
 scope: ba-process
 source_experiment: "runs/2026/"

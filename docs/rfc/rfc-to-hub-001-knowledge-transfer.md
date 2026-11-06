@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-16
-ai-generated: true
 type: rfc
 scope: strategic
 target_repo: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab"

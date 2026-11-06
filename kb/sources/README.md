@@ -2,7 +2,6 @@
 status: draft
 version: 0.3
 updated: 2026-06-20
-ai-generated: true
 type: kb-sources-guide
 scope: kb/sources
 related_artifacts:

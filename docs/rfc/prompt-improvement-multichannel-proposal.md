@@ -2,7 +2,6 @@
 status: proposed
 version: 0.1
 updated: 2026-06-18
-ai-generated: true
 type: rfc
 scope: prompts
 source_experiment: "runs/2026/RUN-0011/logs/experiment-log.md"

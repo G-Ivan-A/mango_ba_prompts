@@ -2,7 +2,6 @@
 status: proposed
 version: 0.1
 updated: 2026-06-16
-ai-generated: true
 type: adr
 scope: artifact-team-naming
 issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/97"
