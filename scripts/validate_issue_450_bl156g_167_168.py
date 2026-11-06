@@ -117,7 +117,7 @@ class Backlog(unittest.TestCase):
     def test_chain(self):
         self.assertIn("**Движение по цепочке (на 2026-11-05, issue #450).**", self.backlog)
         for code in ("BL-167", "BL-168"):
-            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")
+            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")  # PR #451 слит, issue #454
         self.assertIn("BL-156г — `DONE` (PR #451 слит", self.backlog)
         self.assertRegex(self.backlog, r"(?m)^\| BL-157 \|.*\| deferred \(triggered\) \|")
 
@@ -126,14 +126,14 @@ class Backlog(unittest.TestCase):
 
     def test_rfc(self):
         rfc = read("docs/rfc/2026-11-runtime-product-catalog-golden-set.md")
-        self.assertRegex(rfc, r"(?m)^version: 0\.7$")
+        self.assertRegex(rfc, r"(?m)^version: 0\.8$")
         self.assertIn("Пробел Р-1 раздела 14.2 снят", rfc)
 
 
 class Site(unittest.TestCase):
     def test_version_everywhere(self):
-        self.assertIn('version: "2.5.1"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.5.1"), 2)
+        self.assertIn('version: "2.6.0"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count("v2.6.0"), 2)
         self.assertNotIn("v2.3.0", read("site/index.html"))
 
     def test_kit_serves_published_prompts(self):

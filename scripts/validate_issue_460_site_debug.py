@@ -213,9 +213,9 @@ class Gate(unittest.TestCase):
 
 class Project(unittest.TestCase):
     def test_site_version(self):
-        self.assertIn('version: "2.5.1"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.5.1"), 2)
-        self.assertEqual(json.loads(read("site/data/stats.json"))["siteVersion"]["version"], "2.5.1")
+        self.assertIn('version: "2.6.0"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count("v2.6.0"), 2)
+        self.assertEqual(json.loads(read("site/data/stats.json"))["siteVersion"]["version"], "2.6.0")
 
     def test_backlog(self):
         self.assertRegex(read("pr-ops/BACKLOG.md"), r"\| BL-169 \|.*\| deferred \(triggered\) \|")

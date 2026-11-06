@@ -1,0 +1,374 @@
+{
+ "head": "deb31d1cea0cc0e1579942d97a88ed0b86983309",
+ "modes_match_committed_kit": true,
+ "baseline": {
+  "kit_version": "0.7",
+  "steps": {
+   "Ш-0": {
+    "mode": "by-test",
+    "main_button": "6c1e24af73194725",
+    "comparison_draft": "6c1e24af73194725",
+    "published": "6c1ae9121349aa50",
+    "card": "15e224691e4b5800"
+   },
+   "Ш-1": {
+    "mode": "by-test",
+    "main_button": "ec826a46d529b3ed",
+    "comparison_draft": "ec826a46d529b3ed",
+    "published": "8d1dcef2f5097af4",
+    "card": "25dc81d7c719e8d1"
+   },
+   "Ш-2": {
+    "mode": "by-test",
+    "main_button": "d503792e87eee6a7",
+    "comparison_draft": "d503792e87eee6a7",
+    "published": "fc404d5571154de7",
+    "card": "ec40aa67c22ffef4"
+   },
+   "Ш-3": {
+    "mode": "by-test",
+    "main_button": "f9622ea9183f1fde",
+    "comparison_draft": "f9622ea9183f1fde",
+    "published": "f2c875fc3433cb90",
+    "card": "f2fa6ea14795fb14"
+   },
+   "Ш-4": {
+    "mode": "by-test",
+    "main_button": "998e6f68ba2aa0bd",
+    "comparison_draft": "998e6f68ba2aa0bd",
+    "published": "cced7c7114a8a44c",
+    "card": "ce149060884b1834"
+   },
+   "Ш-5": {
+    "mode": "by-test",
+    "main_button": "bebfb136d4228d5b",
+    "comparison_draft": "bebfb136d4228d5b",
+    "published": "bd3d671afb39d644",
+    "card": "9ba2607b1709ad88"
+   },
+   "Ш-6": {
+    "mode": "by-test",
+    "main_button": "4da83852561d9db2",
+    "comparison_draft": "4da83852561d9db2",
+    "published": "aa5a777bc65c947b",
+    "card": "8c7ef0640b3db8b7"
+   },
+   "Ш-7": {
+    "mode": "by-test",
+    "main_button": "1364014099bad7ab",
+    "comparison_draft": "1364014099bad7ab",
+    "published": "840fa774632c3507",
+    "card": "c8971cf1f8881165"
+   },
+   "Ш-8": {
+    "mode": "by-test",
+    "main_button": "bebfb136d4228d5b",
+    "comparison_draft": "bebfb136d4228d5b",
+    "published": "bd3d671afb39d644",
+    "card": "a12b6daf618994b7"
+   },
+   "Ш-9": {
+    "mode": "by-test",
+    "main_button": "070d87d172bbc5a0",
+    "comparison_draft": "070d87d172bbc5a0",
+    "published": "4fc826f3d0acfce3",
+    "card": "fd80fef9df226dd6"
+   },
+   "Ш-В": {
+    "mode": "published",
+    "main_button": "1c30a214474fcde0",
+    "comparison_draft": "7c54b2a3eec5e93e",
+    "published": "1c30a214474fcde0",
+    "card": "572e89ec85fb4d39"
+   },
+   "Ш-Р": {
+    "mode": "by-test",
+    "main_button": "66377b26c9c91533",
+    "comparison_draft": "66377b26c9c91533",
+    "published": "e3b0c44298fc1c14",
+    "card": "6a7d9474759e39d6"
+   },
+   "Ш-С": {
+    "mode": "published",
+    "main_button": "1b3c73db322d68b7",
+    "comparison_draft": "27295c6fe519ddbd",
+    "published": "1b3c73db322d68b7",
+    "card": "e754b539576a776e"
+   }
+  },
+  "other_prompts": {
+   "01-intake.md": "2523f5a2b902b55d",
+   "02-normalize.md": "213ec7bced95f50b",
+   "03-ambiguity.md": "88b922602a51267a",
+   "04-questions.md": "62a6cb984f708537",
+   "05-taxonomy.md": "406ad861211766d8",
+   "06-scope.md": "db3219ac289af889",
+   "07-web-evidence.md": "b9e3db447bbbf0e5",
+   "08-document-evidence.md": "1b9522ad360d5731",
+   "09-ba-enrichment.md": "0ea3c90c834dfdbe",
+   "10-source-conflicts.md": "42d34189cabd2ef2",
+   "11-dependency-check.md": "8522c5142568407f",
+   "12-phase-assembly.md": "36459233ed6cb904",
+   "13-handoff-check.md": "bc7cbeeedd54ddd2",
+   "14-glossary.md": "de9a1395328aaca0",
+   "15-business-context.md": "753b8d8ba4b1e22f",
+   "16-fr-delta.md": "f3c85299b58ff39e",
+   "17-fr-new.md": "6971bf1f76ffd925",
+   "18-nfr.md": "e78b7a79c5128bb9",
+   "19-uc-coverage.md": "475b8873a5c643c5",
+   "20-gate-evidence.md": "b8aa29939a4de716",
+   "21-solution-l1.md": "6a96d307ef9dfaae",
+   "22-solution-l2.md": "75f79cfe77ef5b7e",
+   "23-constraints.md": "73c30e4c0f35405d",
+   "24-uc-boundaries.md": "7550303b558687f4",
+   "25-risks.md": "79e620147282e9ac",
+   "26-delivery-dependencies.md": "d1be316234c9745c",
+   "27-acceptance.md": "dcef82db2d194a97",
+   "28-independent-review.md": "45a4dd10958cab0b",
+   "29-impact.md": "fc40a90caa16e5d5",
+   "30-targeted-edit.md": "504ee544cefc3d07",
+   "31-conformance.md": "99821c1300f36576",
+   "32-audience-projection.md": "449867fed79066c2",
+   "33-release-audit.md": "28207459b26d3d96",
+   "34-human-record.md": "12b849282c8bd609",
+   "35-baseline-handover.md": "d2f764e9bbd171e4",
+   "36-rule-bundle.md": "1085f3307cab9a80",
+   "37-user-story.md": "2e16cfc0bed80700",
+   "38-requested-uc.md": "2e05cd11606ddd23",
+   "39-manifest-alignment.md": "030f475171cba937",
+   "bcreq-core-documentation-oneshot.md": "7ea1f23f9f94a24a",
+   "bcreq-in-understanding-oneshot.md": "f491fa327fb19426",
+   "bcreq-work-solution-design-oneshot.md": "0daf5fb304e87c69"
+  }
+ },
+ "scenarios": {
+  "published_step_Ш-6": {
+   "title": "Ш-6: правка текста опубликованного промпта",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-6"
+    ],
+    "comparison_draft": [
+     "Ш-6"
+    ],
+    "published": [
+     "Ш-6"
+    ],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "by_test_source_Ш-1": {
+   "title": "Ш-1: правка источника шага в режиме by-test",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-1"
+    ],
+    "comparison_draft": [
+     "Ш-1"
+    ],
+    "published": [
+     "Ш-1"
+    ],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "operation_contract_К-24": {
+   "title": "К-24 (Ш-8): контракт операции в каталоге",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-5",
+     "Ш-8"
+    ],
+    "comparison_draft": [
+     "Ш-5",
+     "Ш-8"
+    ],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "profile_VERIFY": {
+   "title": "Профиль VERIFY: новое правило в стандарте профилей",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-0",
+     "Ш-Р"
+    ],
+    "comparison_draft": [
+     "Ш-0",
+     "Ш-В",
+     "Ш-Р"
+    ],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "base_standard": {
+   "title": "Базовый стандарт: новое правило",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-0",
+     "Ш-1",
+     "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
+     "Ш-Р"
+    ],
+    "comparison_draft": [
+     "Ш-0",
+     "Ш-1",
+     "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
+     "Ш-В",
+     "Ш-Р",
+     "Ш-С"
+    ],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "runtime_slice": {
+   "title": "Срез runtime в реестре справочников",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-0",
+     "Ш-1",
+     "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
+     "Ш-Р"
+    ],
+    "comparison_draft": [
+     "Ш-0",
+     "Ш-1",
+     "Ш-2",
+     "Ш-3",
+     "Ш-4",
+     "Ш-5",
+     "Ш-6",
+     "Ш-7",
+     "Ш-8",
+     "Ш-9",
+     "Ш-В",
+     "Ш-Р",
+     "Ш-С"
+    ],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "section_standard_06": {
+   "title": "Мета-стандарт раздела 6",
+   "status": "built",
+   "moved": {
+    "main_button": [],
+    "comparison_draft": [],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "new_module_prompt": {
+   "title": "Новый промпт следующего модуля (вне 13 шагов)",
+   "status": "built",
+   "moved": {
+    "main_button": [],
+    "comparison_draft": [],
+    "published": [],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": [
+    "bcreq-next-module-experiment.md"
+   ]
+  },
+  "shared_file_Ш-5_Ш-8": {
+   "title": "Общий файл Ш-5 и Ш-8",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-5",
+     "Ш-8"
+    ],
+    "comparison_draft": [
+     "Ш-5",
+     "Ш-8"
+    ],
+    "published": [
+     "Ш-5",
+     "Ш-8"
+    ],
+    "card": [],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "card_text_Ш-8": {
+   "title": "Карточка Ш-8: текст подготовки или действий",
+   "status": "built",
+   "moved": {
+    "main_button": [],
+    "comparison_draft": [],
+    "published": [],
+    "card": [
+     "Ш-8"
+    ],
+    "mode": []
+   },
+   "other_prompts_changed": []
+  },
+  "mode_switch_Ш-9": {
+   "title": "Откат режима Ш-9 на published",
+   "status": "built",
+   "moved": {
+    "main_button": [
+     "Ш-9"
+    ],
+    "comparison_draft": [],
+    "published": [],
+    "card": [
+     "Ш-9"
+    ],
+    "mode": [
+     "Ш-9"
+    ]
+   },
+   "other_prompts_changed": []
+  }
+ }
+}

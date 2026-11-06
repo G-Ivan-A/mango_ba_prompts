@@ -4,7 +4,7 @@
 Вердикт пересчитывается из check.json и judge-scores.json по правилу
 пред-регистрации, а не читается из карточки.
 """
-import hashlib, json, re, unittest
+import hashlib, json, re, subprocess, unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -109,10 +109,13 @@ class Runs(unittest.TestCase):
                 )
 
     def test_prompts_match_snapshot(self):
+        # Запись прогона — текст на его коммите: черновики идут дальше, снимок не двигается (issue #454).
         for run in RUNS:
+            commit = re.search(r"(?m)^  commit: (\S+)$", meta(run)).group(1)
             for path, digest in re.findall(r"path: (\S+), version: \"[^\"]+\", sha256: ([0-9a-f]{64})", meta(run)):
                 with self.subTest(run=run, path=path):
-                    self.assertEqual(hashlib.sha256((ROOT / path).read_bytes()).hexdigest(), digest)
+                    text = subprocess.run(["git", "show", f"{commit}:{path}"], cwd=ROOT, capture_output=True, check=True).stdout
+                    self.assertEqual(hashlib.sha256(text).hexdigest(), digest)
 
     def test_prompts_count(self):
         for run in RUNS:
@@ -161,9 +164,9 @@ class Backlog(unittest.TestCase):
         self.assertEqual(self.status("BL-156"), "ЧАСТИЧНО")
 
     def test_current_step(self):
-        self.assertIn("BL-157г — `review` ([PR #459]", self.backlog)
+        self.assertIn("BL-157г — `DONE` ([PR #459]", self.backlog)  # PR #459 слит, issue #454
         card = self.model.split("#### BL-157г.", 1)[1].split("\n### ", 1)[0]
-        self.assertIn("**Статус.** `review` (PR #459).", card)
+        self.assertIn("**Статус.** `DONE` (PR #459 слит, issue #454).", card)
 
     def test_opened_steps(self):
         self.assertEqual(self.status("BL-157"), "deferred (triggered)")
