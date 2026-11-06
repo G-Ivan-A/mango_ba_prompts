@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.22
-updated: 2026-11-05
+version: 0.23
+updated: 2026-11-06
 ai-generated: true
 type: register
 scope: governance
@@ -19,6 +19,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/466"
 related_artifacts:
   - "docs/rfc/rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -38,6 +39,7 @@ related_artifacts:
   - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
   - "docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md"
   - "docs/rfc/2026-11-bcreq-machine-run-baseline.md"
+  - "docs/rfc/2026-11-ttz-feasibility-flow.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -479,3 +481,9 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 - **2026-11-05** — issue #458 (PR #459): RFC-MR-001 v0.1 `proposed` — машинная
   база сравнения RUN-0090, RUN-0091 и протокол сравнения с BL-157в. RFC-RT-001
   получает только ссылку, статус `accepted` не меняется.
+
+## Поток ТТЗ (issue #466)
+
+| RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
+| --- | --- | --- | --- | --- | --- |
+| [RFC-TTZ-001](2026-11-ttz-feasibility-flow.md) | ТТЗ — оценка исполнимости тендерных ТЗ | Полная постановка, 8 RUN и 4 PDF (только форма/явные комментарии БА), many-to-many внешних понятий и продуктов, мета-модель без изменения, отчётность, F1+F2, ручной пилот → автоматизация; BL-133/BL-164 и BL-176…BL-178 | [#466](https://github.com/G-Ivan-A/mango_ba_prompts/issues/466), каркас #427 | `proposed` | [PR #467](https://github.com/G-Ivan-A/mango_ba_prompts/pull/467): проект и три подраздела сайта 2.8.0; деплой ручной, не выполнен |

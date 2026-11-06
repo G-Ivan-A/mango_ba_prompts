@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-05T23:44:31.211Z",
+  "generatedAt": "2026-11-06T09:19:53.514Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.7.0",
-    "released": "2026-11-05",
-    "issue": 464,
-    "basis": "PR #465: замечания к странице «Стандарты» и тест задачи 1135, шаг Ш-А; текст не измерен",
+    "version": "2.8.0",
+    "released": "2026-11-06",
+    "issue": 466,
+    "basis": "PR #467: проект потока ТТЗ и три подраздела стандартов; RFC на рассмотрении",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

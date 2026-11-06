@@ -592,7 +592,11 @@ class IndustryTaxonomy(unittest.TestCase):
     def test_bl164_only_backlog(self):
         backlog = text(BACKLOG)
         row = re.search(r"^\| BL-164 \|.*$", backlog, re.M).group(0)
-        self.assertIn("| deferred (triggered) |", row)
+        # #466 explicitly starts the planning part; implementation still has
+        # its original DoD and must not be mistaken for a completed mapping.
+        self.assertIn("| ЧАСТИЧНО |", row)
+        self.assertIn("#466", row)
+        self.assertIn("BL-177", row)
         self.assertIn("BL-133", row)
         self.assertRegex(backlog, r"\*\*Критерий закрытия\.\*\* [^\n]*BL-159[\s\S]*?BL-164")
         card = text(TRACK_B).split("### BL-164. ", 1)[1]

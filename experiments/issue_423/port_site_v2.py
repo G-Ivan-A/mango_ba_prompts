@@ -48,6 +48,10 @@ C = B.C
 # Issue #464: new standards text is an overlay; content.py stays the approved #420 input.
 sys.path.insert(0, str(ROOT / "experiments" / "issue_464"))
 import site_standards as I464  # noqa: E402
+_spec466 = importlib.util.spec_from_file_location(
+    "issue_466_site_standards", ROOT / "experiments" / "issue_466" / "site_standards.py")
+I466 = importlib.util.module_from_spec(_spec466)
+_spec466.loader.exec_module(I466)
 
 # ------------------------------------------------------------------ overrides
 # Only facts changed by PR #422 / issue #423; everything else is content.py as approved.
@@ -126,6 +130,7 @@ def port_index(src: str) -> str:
         start, end = section_span(src, sid)
         src = src[:start] + html + src[end:]
     src = I464.apply(src)
+    src = I466.apply(src)
     nav_start = src.index('<nav class="topnav"')
     first = src.index("<a ", nav_start)
     nav_end = src.index("        <button\n          class=\"icon-button\"\n          id=\"site-logout\"", nav_start)
@@ -135,7 +140,8 @@ def port_index(src: str) -> str:
 
 
 def port_app(js: str) -> str:
-    for old, new in I464.app_js_patches(B.APP_JS_PATCHES):
+    js = I466.prepare_app(js)
+    for old, new in I466.app_js_patches(I464.app_js_patches(B.APP_JS_PATCHES)):
         if new in js:
             continue
         js = B.replace_once(js, old, new, "app.js")
