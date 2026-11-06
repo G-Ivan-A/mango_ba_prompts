@@ -2,7 +2,6 @@
 status: draft
 version: 0.3
 updated: 2026-06-03
-ai-generated: true
 type: rfc
 scope: mango_ba_prompts-migration-strategy
 based_on: "docs/audit/initial-state-2026-06.md"

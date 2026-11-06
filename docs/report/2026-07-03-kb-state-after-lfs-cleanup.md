@@ -2,7 +2,6 @@
 status: review
 version: 0.1
 updated: 2026-07-03
-ai-generated: true
 type: kb-state-report
 scope: kb/processed
 related_issues:

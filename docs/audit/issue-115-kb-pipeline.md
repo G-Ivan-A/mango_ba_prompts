@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-19
-ai-generated: true
 type: audit
 scope: kb-pipeline
 related_issues:

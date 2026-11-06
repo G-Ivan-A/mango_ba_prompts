@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-10-26
-ai-generated: true
 type: review
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/393"

@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-04
-ai-generated: true
 type: issue-set
 scope: mango_ba_prompts-migration-execution
 based_on: "pr-ops/BACKLOG.md"

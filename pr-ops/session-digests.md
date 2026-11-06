@@ -3,7 +3,6 @@ status: draft
 version: 0.1
 updated: 2026-06-13
 temperature: 0.1
-ai-generated: true
 executable: false
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b/governance/session-digests.md"
 source_sha: "f3e8b265b1577d0ee1fe173dbe16728cc3c7e31b"

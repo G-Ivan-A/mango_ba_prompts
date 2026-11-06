@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-06-02
-ai-generated: true
 type: audit
 scope: mango_ba_prompts-bootstrap
 based_on: "hybrid-Intelligence-lab/templates/spoke/"

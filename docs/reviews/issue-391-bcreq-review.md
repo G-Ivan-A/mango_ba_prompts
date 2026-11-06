@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-10-24
-ai-generated: true
 type: review
 scope: bcreq
 ---

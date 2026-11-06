@@ -1,0 +1,9 @@
+кандидатов 76 безопасных 65
+исключено: читает генератор сайта 5 ['docs/ba-ecosystem.md', 'docs/ba-processes/00-index.md', 'docs/ba-processes/bcreq-manual-process.md', 'docs/taxonomy.md', 'patterns/README.md']
+исключено: файлы цепочки #454/бэклога 3 ['docs/ba-processes/00-index.executable.md', 'docs/ba-processes/README.md', 'docs/site-access.md']
+исключено: в PR #451 3 ['docs/ba-processes/bcreq-run-kit.md', 'docs/rfc/rfc-register.md', 'pr-ops/artifact-map.md']
+по каталогам: Counter({'docs': 52, 'kb': 9, 'pr-ops': 4})
+patterns 16 {'frontmatter field is forbidden': 1, 'missing required frontmatter field': 8, 'missing frontmatter block': 7}
+kb 26 {'frontmatter field is forbidden': 9, 'missing required frontmatter field': 9, 'frontmatter field is not approved for this document class': 7, "invalid status 'pending-source-file' (expected a controlled lifecycle status)": 1}
+pr-ops 20 {'frontmatter field is forbidden': 5, 'missing frontmatter block': 1, 'frontmatter field is not approved for this document class': 11, 'missing required frontmatter field': 3}
+docs 406 {'frontmatter field is forbidden': 61, 'frontmatter field is not approved for this document class': 134, 'missing required frontmatter field': 63, 'missing required frontmatter field for governance artifact': 31, 'missing required frontmatter field for ADR artifact': 18, "invalid decision-type 'architecture' (expected one of": 2, 'missing required frontmatter field for Audit artifact': 24, 'missing required Audit body section': 48, "invalid status 'active' (expected a controlled lifecycle status)": 1, "invalid knowledge status 'review' (expected one of": 1, "invalid knowledge status 'complete' (expected one of": 2, 'missing frontmatter block': 3, 'missing required frontmatter field for RFC artifact': 13, "invalid rfc-scope 'bcreq-manual-four-phase-classes' (expected one of": 1, "invalid status 'review' (expected a controlled lifecycle status)": 4}

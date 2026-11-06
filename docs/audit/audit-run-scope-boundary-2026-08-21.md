@@ -2,7 +2,6 @@
 status: draft
 version: 0.1
 updated: 2026-08-21
-ai-generated: true
 type: audit
 scope: runs
 related_issues:

@@ -3,7 +3,6 @@ status: draft
 version: 0.6
 updated: 2026-10-30
 owner: G-Ivan-A
-ai-generated: true
 type: research-dependency-registry
 scope: mango_ba_prompts
 source_hub: "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/038868dd125b4e2d849ff73604890f1d2787ac0f/research/mango"

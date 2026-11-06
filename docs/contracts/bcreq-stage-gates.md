@@ -2,7 +2,6 @@
 status: draft
 version: 0.2.2
 updated: 2026-11-05
-ai-generated: true
 type: contract
 scope: bcreq-stage-gates
 related_artifacts:
