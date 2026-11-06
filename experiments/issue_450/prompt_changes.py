@@ -76,5 +76,9 @@ def revert_publish(path: str, text: str) -> str:
     return text
 
 
+I464 = _load("issue_464_prompt_changes", "../issue_464/prompt_changes.py")
+
+
 def revert(path: str, text: str) -> str:
+    text = I464.revert(path, text)  # issue #464: верхний слой снимается первым
     return revert_pin(revert_publish(path, text))

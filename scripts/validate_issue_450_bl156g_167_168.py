@@ -4,7 +4,7 @@
 Числа пересчитываются из оценок судей и ключей в runs/, а не читаются из отчётов.
 Обратимость текстов держит ``experiments/issue_450/prompt_changes.py``.
 """
-import json, re, unittest
+import importlib.util, json, re, unittest
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -12,10 +12,10 @@ RUNS = ROOT / "runs/2026"
 REPS = ("r1", "r2", "r3")
 PUBLISHED = {
     "prompts/bcreq-review-validation-oneshot.md": "0.3",
-    "prompts/bcreq-constitution-governance-oneshot.md": "0.2",
-    "prompts/bcreq-context-understanding-stepwise.md": "0.2",
-    "prompts/bcreq-fr-documentation-stepwise.md": "0.2",
-    "prompts/bcreq-orr-solution-design-stepwise.md": "0.2",
+    "prompts/bcreq-constitution-governance-oneshot.md": "0.3",
+    "prompts/bcreq-context-understanding-stepwise.md": "0.3",
+    "prompts/bcreq-fr-documentation-stepwise.md": "0.3",
+    "prompts/bcreq-orr-solution-design-stepwise.md": "0.3",
 }
 
 def read(path):
@@ -45,16 +45,22 @@ class Published(unittest.TestCase):
             self.assertRegex(read(path), rf"(?m)^version: {re.escape(version)}$", path)
 
     def test_arm_b_equals_published_body(self):
+        # Issue #464 правит тексты поверх измеренных: плечо сравнивается с текстом без слоя #464.
+        # Ш-В слой не трогает: сравнение с RUN-0085 идёт побайтово, как раньше.
+        spec = importlib.util.spec_from_file_location("i464_for_450", ROOT / "experiments/issue_464/prompt_changes.py")
+        i464 = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(i464)
+        measured = lambda p: i464.revert(p, read(p))  # noqa: E731
         strip = lambda t: re.sub(r"\A---\n.*?\n---\n", "", t, count=1, flags=re.S)  # noqa: E731
         for label, path in (("S1", "prompts/bcreq-context-understanding-stepwise.md"),
                             ("S3", "prompts/bcreq-fr-documentation-stepwise.md"),
                             ("S6", "prompts/bcreq-orr-solution-design-stepwise.md")):
             arm = (RUNS / f"RUN-0086/inputs/prompt-{label}-B.md").read_text(encoding="utf-8")
-            self.assertEqual(strip(read(path)), strip(arm), path)
+            self.assertEqual(strip(measured(path)), strip(arm), path)
         arm = (RUNS / "RUN-0085/inputs/prompt-A3.md").read_text(encoding="utf-8")
         self.assertEqual(strip(read("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
         arm = (RUNS / "RUN-0087/inputs/prompt-B.md").read_text(encoding="utf-8")
-        self.assertEqual(strip(read("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))
+        self.assertEqual(strip(measured("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))
 
 
 class Recount(unittest.TestCase):
@@ -117,7 +123,7 @@ class Backlog(unittest.TestCase):
     def test_chain(self):
         self.assertIn("**Движение по цепочке (на 2026-11-05, issue #450).**", self.backlog)
         for code in ("BL-167", "BL-168"):
-            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")
+            self.assertRegex(self.backlog, rf"(?m)^\| {code} \|.*\| DONE \|")  # PR #451 слит, issue #454
         self.assertIn("BL-156г — `DONE` (PR #451 слит", self.backlog)
         self.assertRegex(self.backlog, r"(?m)^\| BL-157 \|.*\| deferred \(triggered\) \|")
 
@@ -126,14 +132,14 @@ class Backlog(unittest.TestCase):
 
     def test_rfc(self):
         rfc = read("docs/rfc/2026-11-runtime-product-catalog-golden-set.md")
-        self.assertRegex(rfc, r"(?m)^version: 0\.7$")
+        self.assertRegex(rfc, r"(?m)^version: 0\.8$")
         self.assertIn("Пробел Р-1 раздела 14.2 снят", rfc)
 
 
 class Site(unittest.TestCase):
     def test_version_everywhere(self):
-        self.assertIn('version: "2.5.1"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.5.1"), 2)
+        self.assertIn('version: "2.7.0"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count("v2.7.0"), 2)
         self.assertNotIn("v2.3.0", read("site/index.html"))
 
     def test_kit_serves_published_prompts(self):

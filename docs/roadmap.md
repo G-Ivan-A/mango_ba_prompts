@@ -1,7 +1,7 @@
 ---
 status: accepted
-version: 1.0.1
-updated: 2026-11-03
+version: 1.0.2
+updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
 type: roadmap
@@ -55,7 +55,9 @@ related_issues:
 ## Следующие шаги
 
 Полный список предложений с обоснованием — в
-[отчёте #413](report/2026-10-31-repository-action-plan.md).
+[отчёте #413](report/2026-10-31-repository-action-plan.md). Движение к публикации
+промптов всех шагов потока BCREQ — в
+[RFC-PUB-001](rfc/2026-11-bcreq-prompts-publication-roadmap.md#3-роадмэп).
 
 | Следующий шаг | Почему важен | Артефакт или решение |
 | --- | --- | --- |

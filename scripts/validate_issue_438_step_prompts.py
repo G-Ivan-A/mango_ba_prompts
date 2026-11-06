@@ -5,7 +5,7 @@
 
 * сборщик ``scripts/build_bcreq_step_prompts.py`` детерминирован: его выход
   совпадает с ``prompts/drafts/`` байт в байт, лишних файлов нет (то же, что
-  ``--check``); манифест покрывает 13 шагов маршрута в 12 файлах;
+  ``--check``); манифест покрывает 14 шагов маршрута в 13 файлах;
 * каждый черновик несёт текст v0.1 без изменений; после BL-156а (issue
   #444) ссылки на runtime в v0.1 уже закреплены по SHA реестра, замен
   ``blob/main`` → ``blob/<SHA>`` ноль; ``based_on_sha256`` равен хэшу
@@ -222,7 +222,7 @@ class BuildTest(unittest.TestCase):
 
     def test_manifest_covers_route(self):
         drafts = self.manifest["drafts"]
-        self.assertEqual(len(drafts), 12)
+        self.assertEqual(len(drafts), 13)
         steps = [s for d in drafts for s in d["steps"]]
         self.assertEqual(sorted(steps), sorted(BUILDER.ROUTE))
         self.assertEqual(self.manifest["source_issue"], "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438")
@@ -243,7 +243,7 @@ class BuildTest(unittest.TestCase):
         pinned = BUILDER.RUNTIME_MAIN.replace("/main/", f"/{sha}/")
         for item in self.manifest["drafts"]:
             if item["based_on"] is None:
-                self.assertEqual(item["steps"], ["Ш-Р"], "без v0.1 — только заглушка Ш-Р")
+                self.assertIn(item["steps"], (["Ш-Р"], ["Ш-А"]), "без v0.1 — только заглушка Ш-Р и анкета Ш-А")
                 continue
             source = ROOT / item["based_on"]
             self.assertEqual(sha256(source), item["based_on_sha256"], f"{item['based_on']} изменён без пересборки")
@@ -412,7 +412,7 @@ class KitTest(unittest.TestCase):
         text = read(KIT)
         manifest = {d["file"] for d in json.loads(read(MANIFEST))["drafts"]}
         header, rows = next(t for t in table_rows(text) if "Черновик «по тесту» (BL-156)" in t[0])
-        self.assertEqual(len(rows), 13)
+        self.assertEqual(len(rows), 14)
         index = [c.strip() for c in header.strip().strip("|").split("|")].index("Черновик «по тесту» (BL-156)")
         for row in rows:
             cell = row.strip().strip("|").split("|")[index]
@@ -431,7 +431,7 @@ class DecisionsTest(unittest.TestCase):
     def test_rfc_amendment_06(self):
         text = read(RFC)
         self.assertTrue(R15_ACCEPTED)
-        self.assertRegex(text, r"(?m)^version: 0\.6$")
+        self.assertRegex(text, r"(?m)^version: 0\.7$")
         self.assertIn("### Поправка 0.6: промпты шагов (принята Р-15; issue #438)", text)
         self.assertIn("**Статус поправки: принята.**", text)
         self.assertIn(OWNER_COMMENT, text)
@@ -540,7 +540,7 @@ class DecisionsTest(unittest.TestCase):
         self.assertIn("**Исполнение.** Issue #448, PR #449", bl157v)
         self.assertIn("`ba_reviewed: true`", bl157v)
         kit = read(KIT)
-        self.assertIn("**Статус: действует; A-IN — по тесту (BL-157б).**", kit)
+        self.assertIn("**Статус: действует; шаги Ш-0…Ш-9 и Ш-Р — по тесту (BL-157б, RUN-0089).**", kit)
         self.assertNotIn("не применять", kit)
         self.assertIn("`prompt_set.mode: by-test`", kit)
         bl158 = re.search(r"(?ms)^### BL-158\..*?(?=^### )", text).group(0)

@@ -47,7 +47,7 @@ BACKLOG = ROOT / "pr-ops/BACKLOG.md"
 TYPES = ("`человек`", "`гибрид`", "`llm`", "`код`")
 STAGE_GATES = ("Г-IN", "Г-С1", "Г-W", "Выпуск")
 PROCESSES = ("ПБ-0", "ПБ-1", "ПБ-2", "ПБ-3", "ПБ-4", "ПБ-5", "ПБ-6", "ПБ-7", "ПБ-С")
-FLOW_STEPS = ("Ш-0", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С")
+FLOW_STEPS = ("Ш-0", "Ш-А", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С")
 GATE_OPERATIONS = ("К-12", "К-13", "К-20", "К-34", "К-39")
 OPERATION = re.compile(r"К-\d\d")
 LEGACY_OPERATION = re.compile(r"\bC\d\d\b")
@@ -227,12 +227,12 @@ class Catalog(unittest.TestCase):
 
     def test_flow_step_matches_rfc(self):
         rfc = rfc_flow_steps()
-        self.assertEqual(sorted(rfc), [f"C{n:02d}" for n in range(1, 40) if f"C{n:02d}" not in ("C01", "C09")])
+        self.assertEqual(sorted(rfc), [f"C{n:02d}" for n in range(1, 40) if f"C{n:02d}" != "C09"])
         for item in self.classes:
             with self.subTest(op=item["id"]):
                 self.assertIn(item["flow_step"], FLOW_STEPS)
                 previous = item["history"]["previous_id"]
-                # C01 и C09 приходят в Ш-1 из входа БА (RFC #427, раздел 9.2).
+                # C09 приходит в Ш-1 из входа БА; C01 — операция шага Ш-А (RFC #427, раздел 9.2; issue #464).
                 self.assertEqual(item["flow_step"], rfc.get(previous, "Ш-1"))
 
     def test_no_legacy_ids_in_contract_text(self):

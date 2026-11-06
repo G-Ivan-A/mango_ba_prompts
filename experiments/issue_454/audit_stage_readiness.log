@@ -1,0 +1,25 @@
+kit 0.7; operations 39/39 with contract file; assigned 437.1 KB
+stage | step | mode | KB | ops | contract files | contracts in assigned | contracts in draft | stubs assigned | stubs draft
+A-IN | Ш-1 | by-test | 44.4 | К-01,К-02,К-03,К-04,К-09,К-14,К-15 | True | True | True | - | -
+A-IN | Ш-2 | by-test | 41.0 | К-05,К-06,К-07,К-08,К-11 | True | True | True | - | -
+A-CORE | Ш-3 | by-test | 35.1 | К-16,К-17 | True | True | True | З-2 | З-2
+A-CORE | Ш-4 | by-test | 31.0 | К-18 | True | True | True | З-2 | З-2
+A-CORE | Ш-5 | by-test | 35.6 | К-19 | True | True | True | З-2 | З-2
+A-WORK | Ш-6 | by-test | 36.6 | К-21,К-22 | True | True | True | - | -
+A-WORK | Ш-7 | by-test | 30.7 | К-23 | True | True | True | - | -
+A-WORK | Ш-8 | by-test | 35.6 | К-24 | True | True | True | З-2 | З-2
+A-WORK | Ш-9 | by-test | 31.8 | К-25,К-26,К-27 | True | True | True | - | -
+A-WORK | Ш-В | published | 19.2 | К-10,К-20,К-28,К-29,К-30,К-39 | True | False | True | - | -
+A-RELEASE | Ш-Р | by-test | 26.4 | К-12,К-31,К-32,К-33,К-35 | True | True | True | - | -
+вне стадии | Ш-0 | by-test | 53.8 | К-13,К-34,К-36 | True | True | True | - | -
+вне стадии | Ш-С | published | 15.9 | К-37,К-38 | True | False | True | - | З-2
+gate criteria reported in:
+  A-IN Г-IN cards: ['Ш-2'] {'Г-IN.1': ['Ш-2'], 'Г-IN.2': ['Ш-2'], 'Г-IN.3': ['Ш-2'], 'Г-IN.4': ['Ш-2'], 'Г-IN.5': ['Ш-2']}
+  A-CORE Г-С1 cards: ['Ш-5'] {'Г-С1.1': ['Ш-5', 'Ш-8'], 'Г-С1.2': ['Ш-5', 'Ш-8'], 'Г-С1.3': ['Ш-5', 'Ш-8'], 'Г-С1.4': ['Ш-5', 'Ш-8'], 'Г-С1.5': ['Ш-5', 'Ш-8']}
+  A-WORK Г-W cards: ['Ш-В'] {'Г-W.1': ['Ш-В'], 'Г-W.2': ['Ш-В'], 'Г-W.3': ['Ш-В'], 'Г-W.4': ['Ш-В'], 'Г-W.5': ['Ш-В']}
+  A-RELEASE Выпуск cards: ['Ш-Р'] {}
+gate cycle operations: {'К-12': ['Ш-Р'], 'К-13': ['Ш-0'], 'К-20': [], 'К-34': ['Ш-0', 'Ш-1', 'Ш-2', 'Ш-3', 'Ш-4', 'Ш-5', 'Ш-6', 'Ш-7', 'Ш-8', 'Ш-9', 'Ш-Р'], 'К-39': []}
+sections: {'1': (5, ['Ш-1', 'Ш-2']), '2': (6, ['Ш-1', 'Ш-2']), '3': (6, ['Ш-3']), '4': (4, ['Ш-4']), '5': (6, ['Ш-6']), '6': (5, ['Ш-7']), '7': (5, ['Ш-5', 'Ш-8', 'Ш-С']), '8': (4, ['Ш-9'])}
+action profiles: {'INGEST': ['Ш-0', 'Ш-1'], 'EXTRACT': ['Ш-1', 'Ш-2'], 'ANALYZE': ['Ш-1', 'Ш-2'], 'ELICIT': ['Ш-1'], 'GENERATE': ['Ш-1', 'Ш-3', 'Ш-4', 'Ш-5', 'Ш-6', 'Ш-7', 'Ш-8', 'Ш-9'], 'VERIFY': ['Ш-0', 'Ш-Р'], 'TRANSFORM': ['Ш-Р'], 'RECORD': ['Ш-0', 'Ш-Р']}
+ТЗ in assigned texts: {'Ш-Р': 3} | assembly on site: True
+problems: none

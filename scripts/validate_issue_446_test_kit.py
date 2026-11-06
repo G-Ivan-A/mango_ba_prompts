@@ -45,8 +45,9 @@ REPLICATES = ("r1", "r2", "r3")
 #: База DEC-427-11: RUN-0079, версия A (v0.1), N = 1.
 BASELINE_0079 = {"passed": 49, "core": 10, "negatives_false_positive": 0}
 #: Текущая версия сайта; 2.2.0 — issue #446, 2.3.0 — issue #448, 2.4.0 — issue #450,
-#: 2.5.0 — issue #460; 2.5.1 — issue #462.
-SITE_VERSION = "2.5.1"
+#: 2.5.0 — issue #460; 2.6.0 — issue #454 (режимы по RUN-0089, пакеты Ш-Р);
+#: 2.7.0 — issue #464 (страница «Стандарты», шаг Ш-А).
+SITE_VERSION = "2.7.0"
 #: Шаги A-IN, режим которых решает RUN-0083.
 A_IN = ("Ш-0 Конституция", "Ш-1 Контекст и глоссарий", "Ш-2 Продукты и стейкхолдеры")
 
@@ -191,7 +192,7 @@ class TestKitTest(unittest.TestCase):
         cls.prompts = {p["id"]: p for p in json.loads(read(PROMPTS_JSON))["prompts"]}
 
     def test_rows_match_kit(self):
-        self.assertEqual(len(self.rows), 13)
+        self.assertEqual(len(self.rows), 14)
         self.assertEqual(len(self.data["steps"]), len(self.rows))
         version = re.search(r"(?m)^version: (\S+)$", self.kit_text).group(1)
         self.assertEqual(self.data["kit"]["version"], version)
@@ -204,8 +205,8 @@ class TestKitTest(unittest.TestCase):
             self.assertEqual((step["published"] or {}).get("file", ""), Path(published).name if published else "")
             self.assertEqual(step["draft"]["sourcePath"], link_target(row[draft_col]), step["step"])
         counts = self.data["counts"]
-        self.assertEqual(counts["steps"], 13)
-        self.assertEqual(counts["byTest"] + counts["published"], 13)
+        self.assertEqual(counts["steps"], 14)
+        self.assertEqual(counts["byTest"] + counts["published"], 14)
         self.assertEqual(counts["byTest"], sum(s["mode"] == "by-test" for s in self.data["steps"]))
 
     def test_texts_match_files(self):
@@ -231,8 +232,15 @@ class TestKitTest(unittest.TestCase):
         expected = "by-test" if Run0083Test.decision()["by_test"] else "published"
         for step in A_IN:
             self.assertEqual(modes[step], expected, step)
-        others = {s: m for s, m in modes.items() if s not in A_IN and not s.startswith("Ш-Р")}
-        self.assertEqual(set(others.values()), {"published"}, "вне A-IN режим by-test не измерен")
+        # Ш-А (issue #464) в RUN-0083 не было; по тесту он идёт как черновик без опубликованного текста.
+        self.assertEqual(modes["Ш-А Анкета"], "by-test")
+        # Ш-3…Ш-9 меняет только правило R2 RUN-0089, записанное до прогона; Ш-В и Ш-С оно не трогает.
+        r2 = json.loads(read(ROOT / "runs/2026/RUN-0089/outputs/summary.json"))["R2"]["by_test"]
+        for step in ("Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9"):
+            hit = [m for s, m in modes.items() if s.startswith(step)]
+            self.assertEqual(hit, ["by-test" if r2 else "published"], step)
+        others = {s: m for s, m in modes.items() if s.startswith(("Ш-В", "Ш-С"))}
+        self.assertEqual(set(others.values()), {"published"}, "Ш-В и Ш-С: сравнения в пользу черновика нет")
 
     def test_no_double_suffix(self):
         # Регрессия: заглушка Ш-Р несла id «…-by-test-by-test» (сборщик до issue #446).

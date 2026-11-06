@@ -15,16 +15,16 @@ M = [("runs/2026/RUN-0090/metadata.yaml", "verdict: partial-success", "verdict: 
      ("runs/2026/RUN-0091/outputs/release-readiness.md", "ready_for_human_release | **нет**", "ready_for_human_release | **да**"),
      ("runs/2026/RUN-0091/outputs/bcreq.md", "BCREQ-1137", "BCREQ-1135"),
      ("runs/README.md", "[`RUN-0091`](2026/RUN-0091/metadata.yaml)", "[`RUN-0091`](2026/RUN-0091/x.yaml)"),
-     ("prompts/bcreq-review-validation-oneshot.md", "version: 0.3", "version: 0.31"),
+     ("runs/2026/RUN-0090/metadata.yaml", "sha256: d5fe5d70", "sha256: 00000000"),
      ("experiments/issue_458/preregistration.md", "**недоступен**", "доступен"),
      (RFC, "status: proposed", "status: accepted"),
      (RFC, "**не читая** RUN-0090", "RUN-0090"),
      ("docs/rfc/rfc-register.md", "[PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |", "x |"),
      ("pr-ops/BACKLOG.md", "BL-156г — `DONE` (PR #451 слит", "BL-156г — `review` (PR #451"),
-     ("pr-ops/BACKLOG.md", "BL-157г — `review` ([PR #459]", "BL-157г — `DONE` ([PR #459]"),
+     ("pr-ops/BACKLOG.md", "BL-157г — `DONE` ([PR #459]", "BL-157г — `review` ([PR #459]"),
      ("pr-ops/BACKLOG.md", "| P1 | BL-157г | TODO |", "| P1 | BL-157г | DONE |"),
      ("pr-ops/BACKLOG.md", "машинный прогон её не закрывает", "закрыта"),
-     ("pr-ops/backlog-ba-model.md", "**Статус.** `review` (PR #459).", "**Статус.** `DONE`."),
+     ("pr-ops/backlog-ba-model.md", "**Статус.** `DONE` (PR #459 слит, issue #454).", "**Статус.** `review` (PR #459)."),
      ("docs/rfc/2026-11-runtime-product-catalog-golden-set.md", "(2026-11-bcreq-machine-run-baseline.md)", "(x.md)")]
 bad = 0
 for path, a, b in M:

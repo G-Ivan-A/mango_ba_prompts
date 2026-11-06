@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2.3
-updated: 2026-11-03
+version: 0.2.4
+updated: 2026-11-05
 ai-generated: true
 type: process
 scope: bcreq-manual-process
@@ -116,7 +116,8 @@ v0.3 (BL-230).
 | Шаг потока | Процесс | Стадия артефакта | Промпт маршрута v0.1 | Операции (поле `flow_step` каталога) | Гейт после шага |
 | --- | --- | --- | --- | --- | --- |
 | Ш-0 Конституция | ПБ-0 | старт | `bcreq-constitution-governance-oneshot` | К-36, К-34, К-13 | — |
-| Ш-1 Контекст и глоссарий | ПБ-1 | A-IN | `bcreq-context-understanding-stepwise` | К-01, К-02, К-03, К-04, К-09, К-14, К-15 | — |
+| Ш-А Анкета | ПБ-1 | A-IN | `bcreq-intake-questionnaire-stepwise` (черновик) | К-01 | — |
+| Ш-1 Контекст и глоссарий | ПБ-1 | A-IN | `bcreq-context-understanding-stepwise` | К-02, К-03, К-04, К-09, К-14, К-15 | — |
 | Ш-2 Продукты и стейкхолдеры | ПБ-1 | A-IN | `bcreq-products-impact-analysis-stepwise` | К-05, К-06, К-07, К-08, К-11 | Г-IN |
 | Ш-3 ФТ | ПБ-3 | A-CORE | `bcreq-fr-documentation-stepwise` | К-16, К-17 | — |
 | Ш-4 НФТ | ПБ-3 | A-CORE | `bcreq-nfr-documentation-stepwise` | К-18 | — |
@@ -129,8 +130,20 @@ v0.3 (BL-230).
 | Ш-Р Выпуск | ПБ-7 | A-RELEASE | заглушка выпуска (пилот) | К-31, К-32, К-33, К-35, К-12 | выпуск |
 | Ш-С Сценарии по запросу | ПБ-С | вне последовательности | `bcreq-scenarios-modeling-oneshot` | К-37, К-38 | — |
 
-Состав шагов — RFC #427, разделы 5.4 и 9.2. К-01 и К-09 приходят в Ш-1
-из входа БА (запрос и материалы).
+Состав шагов — RFC #427, разделы 5.4 и 9.2. К-09 приходит в Ш-1 из входа БА
+(материалы). Шаг Ш-А добавлен issue #464: анкету можно пропустить, неизвестные поля
+остаются UNKNOWN, стандарты берутся по умолчанию с записью в 8.5.
+
+**Порядок A-IN (issue #464):** Ш-0 фиксирует конституцию и стартовые данные, Ш-А
+собирает анкету, Ш-1 идёт как «сбор → интерпретация → фиксация». Разделы 1 и 2
+пишутся только из данных, собранных явно и однозначно или записанных как гипотеза.
+Неясное не выдумывается: вопрос БА, нет ответа — вопрос Заказчику и согласованная с БА
+гипотеза; работа идёт дальше, пока БА её не остановит.
+
+**Выход из BCREQ (issue #464).** Если проверка исполнимости на Ш-1 дала «Да» по всей
+проблеме, функция уже есть и Заказчик ошибся. БА решает, завершить ли BCREQ и передать
+ли задачу в [поток CS](cs-flow-stub.md). Работа по BCREQ возобновляется, только если БА
+вернётся с новыми данными. Поток CS — заглушка (BL-235).
 
 ## 1. Ручной процесс БА
 
@@ -170,7 +183,7 @@ v0.3 (BL-230).
 | 13 | Ш-13 User Story по запросу БА | A-IN, A-CORE, A-WORK | [К-37 user-story](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/37-user-story.md) | `class: К-37`; `phase: a-in / a-core / a-work`; `input_mode: CONTINUE`; только по запросу БА | `explicit_BA_request, atoms, scope, value, FR?` | Скопировать промпт К-37 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: explicit_BA_request, atoms, scope, value, FR?; если нет запроса БА или не известна ценность: не создавать US автоматически, запросить основание; проверить: нет кнопок/API как намерения, история в границах, источник и связь ФТ честно заполнены; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `stories[{id,role,action,value,acceptance,fr_ids,source}], story_questions` | — |
 | 14 | Ш-14 Отдельное моделирование UC по запросу БА | A-IN, A-CORE, A-WORK | [К-38 requested-uc](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/38-requested-uc.md) | `class: К-38`; `phase: a-in / a-core / a-work`; `input_mode: CONTINUE`; только по запросу БА | `explicit_BA_request, atoms, scope, actors, FR?` | Скопировать промпт К-38 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: explicit_BA_request, atoms, scope, actors, FR?; если нет запроса БА или выбран сценарий вне границ: вопрос, не создавать новый объём; проверить: есть актор и результат, нет выдуманных ФТ, не заявлено полное покрытие документа; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `requested_UC[{id,actor,precondition,flow,alternatives,result,fr_ids,source}]` | — |
 | 15 | Ш-15 Глоссарий | A-IN, A-CORE, A-WORK | [К-14 glossary](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/14-glossary.md) | `class: К-14`; `phase: a-in / a-core / a-work`; `input_mode: CONTINUE` | `terms_in_sections_2_to_6, raw_wording, supplied_lexicons` | Скопировать промпт К-14 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: terms_in_sections_2_to_6, raw_wording, supplied_lexicons; если два значения меняют требования: показать конфликт терминов и вопрос, не унифицировать молча; проверить: определение не рекурсивно, нет неиспользуемых терминов, сверка не придумана; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `section_1[{term,definition,source,lexicon_comparison}], term_questions` | — |
-| 16 | Ш-16 Бизнес-контекст | A-IN, A-CORE, A-WORK | [К-15 business-context](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/15-business-context.md) | `class: К-15`; `phase: a-in / a-core / a-work`; `input_mode: CONTINUE` | `atoms, scope, business_problem, value, decisions` | Скопировать промпт К-15 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: atoms, scope, business_problem, value, decisions; если неизвестна проблема/цель: пометить UNKNOWN и спросить, не изобретать выгоду; проверить: не более 250 слов и 20 слов в предложении по действующему мета-стандарту, все границы сохранены; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `section_2{context,problem,goal,in_scope,out_of_scope,products_owners}` | — |
+| 16 | Ш-16 Бизнес-контекст | A-IN, A-CORE, A-WORK | [К-15 business-context](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/15-business-context.md) | `class: К-15`; `phase: a-in / a-core / a-work`; `input_mode: CONTINUE` | `atoms, scope, business_problem, value, decisions` | Скопировать промпт К-15 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: atoms, scope, business_problem, value, decisions; если неизвестна проблема/цель: пометить UNKNOWN и спросить, не изобретать выгоду. Нет ответа БА — вопрос Заказчику и согласованная гипотеза, работа идёт дальше; проверить: не более 250 слов и 20 слов в предложении по действующему мета-стандарту, все границы сохранены; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `section_2{context,problem,goal,in_scope,out_of_scope,products_owners}` | — |
 | 17 | Ш-17 Регистрация решений и согласований | A-IN, A-CORE, A-WORK, A-RELEASE | [К-34 human-record](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/34-human-record.md) | `class: К-34`; `phase: a-in / a-core / a-work / a-release`; `input_mode: CONTINUE`; после фактической реплики человека | `human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?` | Скопировать промпт К-34 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?; если нет реплики/полномочия/ревизии: proposed или pending, никогда approved, молчание не согласие; проверить: можно восстановить кто что когда одобрил, запись не выдаёт модели право согласовать; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `section_8_5_record{id,decision,actor,authority,revision,scope,time,evidence,status,gate_id,gate_type,model_recommendation,divergence}` | — |
 | 18 | Ш-18 Сверка результата с манифестом задачи | A-IN, A-CORE, A-WORK, A-RELEASE | [К-39 manifest-alignment](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/39-manifest-alignment.md) | `class: К-39`; `phase: a-in / a-core / a-work / a-release`; `input_mode: CONTINUE` | `baseline_manifest, generated_candidate, authorized_delta, decision_register` | Скопировать промпт К-39 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: baseline_manifest, generated_candidate, authorized_delta, decision_register; если обязательный элемент потерян, смысл условия изменён или согласование повышено без основания: FAIL затронутого результата, адресная правка К-30, манифест не переписывать под ответ; проверить: каждый обязательный ID отражён, каждый новый элемент обоснован, числовая/семантическая дельта видна, draft не стал approved; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `manifest_diff{missing,changed_conditions,unsupported_additions,scope_changes,authority_promotions,preserved_ids,verdict}` | — |
 | 19 | Ш-19 Полная сборка фазы | A-IN, A-CORE, A-WORK, A-RELEASE | [К-12 phase-assembly](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/12-phase-assembly.md) | `class: К-12`; `phase: a-in / a-core / a-work / a-release`; `input_mode: CONTINUE` | `base_snapshot, ordered_slices, tombstones, source_register, decisions` | Скопировать промпт К-12 кнопкой ⧉ вместе с контрактом состояния и правилами из К-36; заполнить блок входа: base_snapshot, ordered_slices, tombstones, source_register, decisions; если пропущен slice, конфликт ревизий или не помещается вход: запросить недостающее/разбить сборку, не выдавать FULL; проверить: каждый живой ID имеет полный текст, удаления явные, счётчики и цепочка сходятся; сохранить блок BCREQ_OUTPUT и решить, какой класс запустить следующим | `full_snapshot, entity_register, unresolved, superseded, completeness_receipt` | — |
@@ -217,7 +230,7 @@ v0.3 (BL-230).
 
 | Этап | Стадия | Гейт | Цель | Вход | Действия | Выход | Кто согласует | Исходы |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1. Приём задачи | A-IN | Г-IN | подготовить данные для ФТ | сырой запрос Заказчика в Jira | матчинг на продуктовую принадлежность по таксономии Mango, командам и модулям; проверка, что запрос — дельта к доработке; вопросы Заказчику; нормализация запроса | разделы 1, 2, ＋2.5; вопросы 8.4 с адресатом | БА по критериям Г-IN.1–Г-IN.5 | дальше в A-CORE; доработать A-IN |
+| 1. Приём задачи | A-IN | Г-IN | подготовить данные для ФТ или выйти в поток CS, если функция уже есть | сырой запрос Заказчика в Jira | матчинг на продуктовую принадлежность по таксономии Mango, командам и модулям; проверка, что запрос — дельта к доработке; вопросы Заказчику; нормализация запроса | разделы 1, 2, ＋2.5; вопросы 8.4 с адресатом | БА по критериям Г-IN.1–Г-IN.5 | дальше в A-CORE; доработать A-IN |
 | 2. Согласование 1: ФТ и оценка «от» | A-CORE | Г-С1 | согласовать ФТ с Заказчиком до технической спецификации | решение Г-IN; разделы 1, 2, ＋2.5 | консультация с продуктовой командой (по необходимости); ФТ как дельта по BABOK; НФТ; UC без UI; матрица UC × ФТ; верхнеуровневая оценка «от» от команды | разделы 3, 4, 7 (прогон 1); оценка «от» | Заказчик по критериям Г-С1.1–Г-С1.5 | согласование → A-WORK; уточнение → возврат в A-IN или A-CORE; отказ → стоп |
 | 3. Внутреннее согласование решения и итоговой оценки | A-WORK | Г-W | подготовить решение и итоговую оценку | решение Заказчика по Г-С1; разделы 1–4 и 7 | консультация с КК, архитектором и продуктовой командой; ОРР L1 и при необходимости L2; ограничения; граничные UC с UI; риски и план приёмки; независимая проверка К-28 в отдельном чате с ролью критика | разделы 5, 6, 7 (прогон 2), 8; итоговая оценка | ПО продукта, архитектор продукта, руководитель КК по критериям Г-W.1–Г-W.5 | согласование → передача Заказчику; уточнение → возврат в A-IN, A-CORE или A-WORK; отказ → стоп |
 | 4. Итоговая оценка Заказчику | A-WORK | Г-W (исход) | согласовать итоговую оценку с Заказчиком | решение Г-W | передача итоговой оценки, раздела 5 L1 и раздела 6 по существующему процессу выставления оценки | согласованная оценка | Заказчик | согласование → A-RELEASE; отказ или замечания → исход «уточнение» гейта Г-W |

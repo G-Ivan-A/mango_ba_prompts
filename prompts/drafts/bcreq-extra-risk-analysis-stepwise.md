@@ -2,13 +2,13 @@
 id: mango-bcreq-extra-risk-analysis-stepwise-by-test
 title: "BCREQ Ш-9 (2.14): риски, приёмка (по тесту)"
 status: draft
-version: 0.1
-updated: 2026-11-04
+version: 0.2
+updated: 2026-11-05
 temperature: 0.1
 operation: risk_analysis
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-extra-risk-analysis-stepwise.md
-based_on_sha256: 2f86ba8eaee4f70d3f56407783394bc10422631ffc39451d31ee8fb237057e99
+based_on_sha256: 1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2
 mode: by-test
 steps: [Ш-9]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -73,6 +73,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 [Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).
 
+- Р2: неясное не выдумывай. Сначала вопрос БА; нет ответа — вопрос Заказчику
+  в 8.4 и согласованная с БА гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается
+  вопросом В-NN]`. Работа идёт дальше, пока её не остановил БА.
+- ЧТ-2…ЧТ-5 конституции: шаг не забегает вперёд, вопросы в конце ответа,
+  комментарий для БА — отдельной строкой `> Комментарий для БА (не в выпуск): …`,
+  вопрос Заказчику — на уровне бизнес-логики.
 - Табличный стиль: строка с ID, ≤2 предложений в ячейке.
 - Каждый критерий 8.3 ведёт к ФТ или НФТ; каждая зависимость 8.2 указывает,
   что блокирует.
@@ -224,7 +230,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
 [RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
+[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
 [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.

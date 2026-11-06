@@ -18,6 +18,9 @@ Changes applied to site/:
 - v2.css, v2.js copied from experiments/issue_420/site-v2/;
 - app.js: PAGES gain about/glossary, #standards?section=0 opens the intro.
 
+Issue #464 overlays the generated #standards and #glossary sections with
+experiments/issue_464/site_standards.py and adds #standards?section=9.
+
 Usage:
     python3 experiments/issue_423/port_site_v2.py           # apply (idempotent)
     python3 experiments/issue_423/port_site_v2.py --check   # verify site/ is in sync
@@ -41,6 +44,10 @@ _spec = importlib.util.spec_from_file_location("issue_420_site_v2_build", V2 / "
 B = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(B)  # imports content.py as B.C; nothing is written
 C = B.C
+
+# Issue #464: new standards text is an overlay; content.py stays the approved #420 input.
+sys.path.insert(0, str(ROOT / "experiments" / "issue_464"))
+import site_standards as I464  # noqa: E402
 
 # ------------------------------------------------------------------ overrides
 # Only facts changed by PR #422 / issue #423; everything else is content.py as approved.
@@ -118,6 +125,7 @@ def port_index(src: str) -> str:
     for sid, html in (("about", about_html()), ("standards", B.standards_html().strip()), ("glossary", B.glossary_html().strip())):
         start, end = section_span(src, sid)
         src = src[:start] + html + src[end:]
+    src = I464.apply(src)
     nav_start = src.index('<nav class="topnav"')
     first = src.index("<a ", nav_start)
     nav_end = src.index("        <button\n          class=\"icon-button\"\n          id=\"site-logout\"", nav_start)
@@ -127,7 +135,7 @@ def port_index(src: str) -> str:
 
 
 def port_app(js: str) -> str:
-    for old, new in B.APP_JS_PATCHES:
+    for old, new in I464.app_js_patches(B.APP_JS_PATCHES):
         if new in js:
             continue
         js = B.replace_once(js, old, new, "app.js")

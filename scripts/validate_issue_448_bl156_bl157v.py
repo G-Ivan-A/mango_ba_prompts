@@ -243,7 +243,7 @@ class SiteTest(unittest.TestCase):
             self.assertTrue(group["title"] and group["outcome"], group["id"])
 
     def test_cards_are_instructions(self):
-        self.assertEqual(len(self.data["steps"]), 13)
+        self.assertEqual(len(self.data["steps"]), 14)
         for step in self.data["steps"]:
             for field in ("purpose", "prepare", "result"):
                 self.assertTrue(step[field].strip(), f"{step['step']}: {field}")
