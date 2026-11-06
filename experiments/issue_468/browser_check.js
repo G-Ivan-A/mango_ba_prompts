@@ -1,8 +1,8 @@
-// Playwright MCP browser_run_code_unsafe(filename=absolute path), HTTP :8768.
+// Run Playwright MCP from the repository root, HTTP :8768.
 async (page) => {
   const check=(condition,message)=>{if(!condition)throw new Error(message)};
   const base='http://127.0.0.1:8768/';
-  const out='/tmp/gh-issue-solver-1793968475199/site/screenshots/issue-468/';
+  const out='site/screenshots/issue-468/';
   const errors=[]; const onError=e=>errors.push(e.message);
   page.on('pageerror',onError); page.setDefaultTimeout(5000);
   try {
