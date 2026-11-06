@@ -29,7 +29,6 @@ related_issues:
 > сохраняются; переход после решения по RFC и производства BL-180, без
 > объявления новых правил измеренными.
 
-
 Источник раздела «Процессы» сайта
 ([#processes](https://g-ivan-a.github.io/mango_ba_prompts/#processes)).
 Генератор `scripts/generate-pages-data.mjs` читает таблицы этого файла в

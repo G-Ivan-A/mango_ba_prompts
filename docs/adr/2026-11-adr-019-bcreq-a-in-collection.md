@@ -25,7 +25,6 @@ related_artifacts:
 > сохраняются; переход после решения по RFC и производства BL-180, без
 > объявления новых правил измеренными.
 
-
 ## Статус
 
 `proposed`. Предложение исполнителя по [issue #464](https://github.com/G-Ivan-A/mango_ba_prompts/issues/464).

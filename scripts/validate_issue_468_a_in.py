@@ -32,6 +32,13 @@ class AINAcceptance(unittest.TestCase):
         self.assertTrue(self.route['receipt']['required_every_step'])
         self.assertFalse(self.route['navigation']['visible'])
         self.assertTrue(self.route['navigation']['loop_aware'])
+        startup=self.route['startup_rules']
+        self.assertTrue(startup['must_read_before_intake'])
+        self.assertEqual(startup['unavailable'],'blocked')
+        self.assertEqual(startup['application_sources_steps'],['AIN-08','AIN-09'])
+        self.assertIn('blocked до AIN-02',steps[0]['checks'])
+        self.assertEqual(steps[-1]['next'],'A-CORE или CS по решению БА')
+        self.assertNotIn('A-ARCH',steps[-1]['why'])
     def test_rfc_table_and_links(self):
         table=module('ain_table',HERE/'route_table.py').table()
         self.assertIn(table,self.rfc)
