@@ -223,7 +223,9 @@ class ClassHistory(unittest.TestCase):
 class Release(unittest.TestCase):
     def test_site_version(self):
         stats = json.loads(read("site/data/stats.json"))
-        self.assertIn("2.7.0", json.dumps(stats, ensure_ascii=False))
+        # Later releases retain the #464 feature; do not pin the live release.
+        version = tuple(map(int, stats["siteVersion"]["version"].split(".")))
+        self.assertGreaterEqual(version, (2, 7, 0))
         self.assertIn("версия сайта 2.7.0", read("CHANGELOG.md"))
 
     def test_adr_number_does_not_take_lessons_reservation(self):

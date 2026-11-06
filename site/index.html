@@ -16,7 +16,7 @@
         <span class="brand-mark" aria-hidden="true">M</span>
         <span>
           <span class="brand-title">Mango BA Prompts</span>
-          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.7.0</span></span>
+          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.8.0</span></span>
         </span>
       </a>
       <nav class="topnav" id="topnav" aria-label="Разделы">
@@ -283,10 +283,12 @@
       </section>
       <section class="page-band standards-band" id="standards" data-page="standards" aria-labelledby="standards-title" hidden>
         <div class="standards-intro">
-          <h1 id="standards-title">BCREQ — стандарт бизнес-спецификации на доработку системы</h1>
-          <p class="standards-lead">Документ <a class="v2-term" href="#glossary?term=bcreq" title="Справочник: BCREQ">BCREQ</a> состоит из восьми разделов. Ниже — структура документа, затем каждый раздел: назначение, состав, правила написания и критерии приёмки. В конце — <a href="#standards?section=9" data-standard-target="9">Индустриальные стандарты</a>: что и где используем.</p>
+          <h1 id="standards-title">Стандарты</h1>
+          <p class="standards-lead">Выберите направление: бизнес-спецификация BCREQ, проект оценки тендерных ТЗ или индустриальная практика. Каждый подраздел раскрывается отдельно.</p>
         </div>
-
+        <details class="standards-group" id="standards-bcreq">
+          <summary><h2>BCREQ — стандарт бизнес-спецификации на доработку системы</h2></summary>
+          <p class="standards-group-lead">Структура документа из восьми разделов: назначение, состав, правила написания и критерии приёмки.</p>
         <div class="standards-layout">
           <nav class="standards-index" aria-label="Разделы стандарта BCREQ">
             <a href="#standards?section=0" data-standard-target="0"><span>00</span> Введение</a>
@@ -302,7 +304,7 @@
           </nav>
 
           <div class="standards-content">
-            <section class="v2-intro" id="standard-intro" aria-labelledby="standard-intro-title"><h2 id="standard-intro-title">Введение. Структура документа</h2><ol class="v2-intro-list"><li><a href="#standards?section=1" data-standard-target="1"><span>1</span> Глоссарий</a> — <em>термины документа с определениями</em></li><li><a href="#standards?section=2" data-standard-target="2"><span>2</span> Бизнес-контекст</a> — <em>зачем нужна доработка и в каких границах</em><ol class="v2-intro-sub"><li><span>2.1</span> Контекст — <em>акторы и их сценарии работы в кейсах, где наблюдается проблема; продукты Mango, на уровне которых Заказчик фиксирует проблему</em></li><li><span>2.2</span> Проблема — <em>формулировка Заказчика, нормализованная до терминологически верной, однозначной, полной и проверяемой</em></li><li><span>2.3</span> Цель — <em>измеримый результат одной фразой</em></li><li><span>2.4</span> Границы — <em>2.4.1 В поставку включено · 2.4.2 В поставку не включено</em></li><li><span>2.5</span> Продукты и стейкхолдеры — <em>явно определённые продукты; стейкхолдеры: Заказчик и Продуктовая команда</em></li></ol></li><li><a href="#standards?section=3" data-standard-target="3"><span>3</span> Функциональные требования (ФТ)</a> — <em>что должна делать система: ФТ-01, ФТ-02 …</em></li><li><a href="#standards?section=4" data-standard-target="4"><span>4</span> Нефункциональные требования (НФТ)</a> — <em>показатели качества: 4.1, 4.2 …</em></li><li><a href="#standards?section=5" data-standard-target="5"><span>5</span> Описание разрабатываемого решения (ОРР)</a> — <em>как реализуется доработка: каждое <a class="v2-term" href="#glossary?term=ft" title="Справочник: ФТ">ФТ</a> и то, что нужно для полноты</em><ol class="v2-intro-sub"><li><span>L1</span> Функциональный дизайн решения (<a class="v2-term" href="#glossary?term=fdr" title="Справочник: ФДР">ФДР</a>) — <em>детализация разработки на уровне бизнес-логики, достаточная для однозначного согласования со стейкхолдерами; пункты 5.х — по выбранному стандарту</em></li><li><span>L2</span> Техническая спецификация (<a class="v2-term" href="#glossary?term=ts" title="Справочник: ТС">ТС</a>) — <em>полная детализация для команды разработки: бизнес-логика и внешне наблюдаемые технические параметры, не архитектура; по решению <a class="v2-term" href="#glossary?term=ba" title="Справочник: БА">БА</a></em></li></ol></li><li><a href="#standards?section=6" data-standard-target="6"><span>6</span> Особенности реализации и ограничения</a> — <em>что важно учесть Заказчику</em><ol class="v2-intro-sub"><li><span>6.1</span> Особенности реализации — <em>поведение решения, которое легко понять неверно</em></li><li><span>6.2</span> Ограничения — <em>внешние условия, сужающие решение; условия работы и сценарные исключения</em></li></ol></li><li><a href="#standards?section=7" data-standard-target="7"><span>7</span> Пользовательские сценарии (UC)</a> — <em>проверка полноты ФТ; Заказчику не передаётся</em></li><li><a href="#standards?section=8" data-standard-target="8"><span>8</span> Дополнительные разделы</a> — <em>риски, зависимости, приёмка, вопросы, решения</em><ol class="v2-intro-sub"><li><span>8.1</span> Риски</li><li><span>8.2</span> Зависимости</li><li><span>8.3</span> План приёмки</li><li><span>8.4</span> Реестр вопросов Заказчику</li><li><span>8.5</span> Журнал решений</li></ol></li></ol></section>
+            <section class="v2-intro" id="standard-intro" tabindex="-1" aria-labelledby="standard-intro-title"><h2 id="standard-intro-title">Введение. Структура документа</h2><ol class="v2-intro-list"><li><a href="#standards?section=1" data-standard-target="1"><span>1</span> Глоссарий</a> — <em>термины документа с определениями</em></li><li><a href="#standards?section=2" data-standard-target="2"><span>2</span> Бизнес-контекст</a> — <em>зачем нужна доработка и в каких границах</em><ol class="v2-intro-sub"><li><span>2.1</span> Контекст — <em>акторы и их сценарии работы в кейсах, где наблюдается проблема; продукты Mango, на уровне которых Заказчик фиксирует проблему</em></li><li><span>2.2</span> Проблема — <em>формулировка Заказчика, нормализованная до терминологически верной, однозначной, полной и проверяемой</em></li><li><span>2.3</span> Цель — <em>измеримый результат одной фразой</em></li><li><span>2.4</span> Границы — <em>2.4.1 В поставку включено · 2.4.2 В поставку не включено</em></li><li><span>2.5</span> Продукты и стейкхолдеры — <em>явно определённые продукты; стейкхолдеры: Заказчик и Продуктовая команда</em></li></ol></li><li><a href="#standards?section=3" data-standard-target="3"><span>3</span> Функциональные требования (ФТ)</a> — <em>что должна делать система: ФТ-01, ФТ-02 …</em></li><li><a href="#standards?section=4" data-standard-target="4"><span>4</span> Нефункциональные требования (НФТ)</a> — <em>показатели качества: 4.1, 4.2 …</em></li><li><a href="#standards?section=5" data-standard-target="5"><span>5</span> Описание разрабатываемого решения (ОРР)</a> — <em>как реализуется доработка: каждое <a class="v2-term" href="#glossary?term=ft" title="Справочник: ФТ">ФТ</a> и то, что нужно для полноты</em><ol class="v2-intro-sub"><li><span>L1</span> Функциональный дизайн решения (<a class="v2-term" href="#glossary?term=fdr" title="Справочник: ФДР">ФДР</a>) — <em>детализация разработки на уровне бизнес-логики, достаточная для однозначного согласования со стейкхолдерами; пункты 5.х — по выбранному стандарту</em></li><li><span>L2</span> Техническая спецификация (<a class="v2-term" href="#glossary?term=ts" title="Справочник: ТС">ТС</a>) — <em>полная детализация для команды разработки: бизнес-логика и внешне наблюдаемые технические параметры, не архитектура; по решению <a class="v2-term" href="#glossary?term=ba" title="Справочник: БА">БА</a></em></li></ol></li><li><a href="#standards?section=6" data-standard-target="6"><span>6</span> Особенности реализации и ограничения</a> — <em>что важно учесть Заказчику</em><ol class="v2-intro-sub"><li><span>6.1</span> Особенности реализации — <em>поведение решения, которое легко понять неверно</em></li><li><span>6.2</span> Ограничения — <em>внешние условия, сужающие решение; условия работы и сценарные исключения</em></li></ol></li><li><a href="#standards?section=7" data-standard-target="7"><span>7</span> Пользовательские сценарии (UC)</a> — <em>проверка полноты ФТ; Заказчику не передаётся</em></li><li><a href="#standards?section=8" data-standard-target="8"><span>8</span> Дополнительные разделы</a> — <em>риски, зависимости, приёмка, вопросы, решения</em><ol class="v2-intro-sub"><li><span>8.1</span> Риски</li><li><span>8.2</span> Зависимости</li><li><span>8.3</span> План приёмки</li><li><span>8.4</span> Реестр вопросов Заказчику</li><li><span>8.5</span> Журнал решений</li></ol></li></ol></section>
 
             <article class="standard-card v2-card" id="standard-1" data-bcreq-section="1" tabindex="-1" aria-labelledby="standard-title-1">
               <div class="standard-heading"><span class="standard-number">01</span><div><p class="eyebrow">Раздел 1</p><h2 id="standard-title-1">Глоссарий</h2></div></div>
@@ -384,6 +386,39 @@
               <details class="standard-detail"><summary>Пример критерия приёмки</summary><p>8.3. Дано: уведомление включено. Когда: звонок завершён. Тогда: уведомление получено не позднее [порога] · ФТ-01, 4.1.</p></details>
               <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md" target="_blank" rel="noreferrer">Стандарт раздела 8</a> · <a href="https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/" target="_blank" rel="noreferrer">BABOK 10.1: acceptance criteria</a></p>
             </article>
+
+          </div>
+        </div>
+        </details>
+        <details class="standards-group" id="standards-ttz">
+          <summary><h2>ТТЗ — оценка исполнимости тендерных ТЗ</h2></summary>
+          <article class="standard-card v2-card ttz-card" id="standard-ttz" tabindex="-1" aria-labelledby="standard-title-ttz">
+            <p class="eyebrow">Проект потока · RFC-TTZ-001 · на рассмотрении</p>
+            <h3 id="standard-title-ttz">От внешнего требования к проверяемому решению</h3>
+            <p>БА оценивает тендерное ТЗ в его исходных формулировках: что исполнимо сейчас, при каких условиях, что не подтверждено и что требует разработки. Пробный поток подготовлен к рассмотрению; новая оценка ТЗ и автоматизация ещё не проводились.</p>
+            <h3>Как проходит оценка</h3>
+            <ol class="v2-list">
+              <li><strong>Принять ТЗ.</strong> Зафиксировать версию, область оценки, среду и принимающего.</li>
+              <li><strong>Разобрать пункты.</strong> Сохранить исходные строки, выделить части составных требований, заголовки и дубли.</li>
+              <li><strong>Выбрать маршрут.</strong> Сопоставить внешний термин с одним или несколькими продуктами Mango; различить альтернативы и совместную работу.</li>
+              <li><strong>Собрать основания.</strong> Для каждой части — применимый источник, версия, цитата, ограничения. Если подтверждения нет, так и записать.</li>
+              <li><strong>Принять оценку.</strong> БА проверяет вывод, спорные пункты и риски; коммерческие и договорные условия передаются их владельцам.</li>
+              <li><strong>Собрать отчёт.</strong> Записка, матрица, вопросы, доказательства и статистика из одной версии данных; публикация после решения человека.</li>
+            </ol>
+            <h3>Что важно в матрице</h3>
+            <dl class="v2-composition">
+              <div><dt>Продукт и сценарий</dt><dd>Название раздела заказчика не определяет продукт Mango. «Речевая аналитика» может требовать проверки РА, Роботов или их границ; запись и живой диалог — разные режимы.</dd></div>
+              <div><dt>Оценка и основание</dt><dd>Да / Частично / Нет / Не подтверждено / б/о. Отсутствие найденной цитаты не доказывает отсутствие функции. Общий API не доказывает наличие готового коннектора.</dd></div>
+              <div><dt>Решение БА</dt><dd>Оценка ИИ, итог БА и комментарий хранятся отдельно. Готовность разработать показывается отдельным сценарием.</dd></div>
+              <div><dt>Проверенное знание</dt><dd>Повтор комментария не делает его правилом. Для эталонного случая нужны независимое первичное основание и явное подтверждение вторым компетентным человеком.</dd></div>
+            </dl>
+            <h3>Следующий шаг</h3>
+            <p>Рассмотреть проект, затем провести ручную пробу с БА. Автоматизацию планируем по результатам: агентный маршрут → n8n → серверный поток при подтверждённой потребности.</p>
+            <p class="standard-sources"><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-ttz-feasibility-flow.md" target="_blank" rel="noreferrer">Подробный RFC: постановка, восемь RUN, практика БА, мета-модель и план</a> · <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/pr-ops/BACKLOG.md#поток-ттз-issue-466" target="_blank" rel="noreferrer">Бэклог ТТЗ и статусы</a></p>
+          </article>
+        </details>
+        <details class="standards-group" id="standards-industry">
+          <summary><h2>Индустриальные стандарты</h2></summary>
             <section class="standard-card v2-card standards-industry" id="standard-industry" tabindex="-1" aria-labelledby="standard-title-industry">
               <div class="standard-heading"><span class="standard-number">И</span><div><p class="eyebrow">Дополнительный раздел</p><h2 id="standard-title-industry">Индустриальные стандарты</h2></div></div>
               <h3>Назначение</h3><p>Делает ссылки вида «по BABOK» однозначными: у каждого стандарта указано, что именно он определяет в BCREQ и как из него выводится структура.</p>
@@ -432,8 +467,16 @@
               <details class="standard-detail"><summary>Другой стандарт по ссылке БА</summary><p>Ассистент выписывает из него элементы модели, правило «один пункт раздела — один элемент» и способ отметить покрытие ФТ. Если стандарт закрыт или таких правил в нём нет, ассистент говорит об этом и предлагает значение по умолчанию. Решение за БА.</p></details>
               <p class="standard-sources">Основание: <a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md" target="_blank" rel="noreferrer">Справочник индустриальных стандартов</a> · <a href="https://www.iiba.org/career-resources/a-business-analysis-professionals-foundation-for-success/babok/" target="_blank" rel="noreferrer">BABOK v3</a> · <a href="https://c4model.com/diagrams/system-context" target="_blank" rel="noreferrer">C4: system context</a> · <a href="https://c4model.com/abstractions" target="_blank" rel="noreferrer">C4: абстракции</a> · <a href="https://www.tmforum.org/oda/" target="_blank" rel="noreferrer">TM Forum ODA</a> · <a href="https://github.com/tmforum-apis" target="_blank" rel="noreferrer">TMF Open API</a> · <a href="https://cpre.ireb.org/en/downloads-and-resources/glossary" target="_blank" rel="noreferrer">IREB CPRE Glossary</a></p>
             </section>
+          <div class="standard-card v2-card ttz-card">
+            <h3>Для тендерных ТЗ</h3>
+            <p>Внешняя классификация и каталог Mango сопоставляются отдельно. Одно индустриальное понятие может вести к нескольким продуктам; близкие названия не доказывают равенство функций.</p>
+            <ul class="v2-list">
+              <li><a href="https://www.w3.org/TR/skos-reference/#mapping" target="_blank" rel="noreferrer">W3C SKOS</a> — различать точное, близкое, широкое и узкое соответствие.</li>
+              <li><a href="https://www.tmforum.org/oda/information-systems/information-framework-sid/" target="_blank" rel="noreferrer">TM Forum SID</a> — общий язык отрасли для сопоставления.</li>
+              <li><a href="https://doi.org/10.6028/NIST.AI.100-1" target="_blank" rel="noreferrer">NIST AI RMF</a> — независимая проверка, документированные тесты и границы применения ИИ.</li>
+            </ul>
           </div>
-        </div>
+        </details>
       </section>
 
       <section class="page-band v2-glossary-band" id="glossary" data-page="glossary" aria-labelledby="glossary-title" hidden>
@@ -444,7 +487,7 @@
     </main>
 
     <footer class="site-footer">
-      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.7.0</a>
+      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.8.0</a>
       · каталог: 39 классов BCREQ, архив: 14 промптов этапа 1
     </footer>
 

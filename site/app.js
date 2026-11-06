@@ -1270,11 +1270,16 @@ function applyRoute() {
   }
   if (page === "standards") {
     const section = new URLSearchParams(raw.split("?")[1] || "").get("section");
-    if (/^[0-9]$/.test(section || "")) {
-      const ids = { 0: "standard-intro", 9: "standard-industry" };
+    if (/^(?:[0-9]|ttz)$/.test(section || "")) {
+      const ids = { 0: "standard-intro", 9: "standard-industry", ttz: "standard-ttz" };
       const target = document.getElementById(ids[section] || `standard-${section}`);
-      target.focus({ preventScroll: true });
-      target.scrollIntoView({ behavior: "instant", block: "start" });
+      if (target) {
+        for (let ancestor = target.parentElement; ancestor; ancestor = ancestor.parentElement) {
+          if (ancestor.tagName === "DETAILS") ancestor.open = true;
+        }
+        target.focus({ preventScroll: true });
+        target.scrollIntoView({ behavior: "instant", block: "start" });
+      }
     }
   }
 }

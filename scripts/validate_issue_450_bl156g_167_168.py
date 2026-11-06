@@ -138,8 +138,10 @@ class Backlog(unittest.TestCase):
 
 class Site(unittest.TestCase):
     def test_version_everywhere(self):
-        self.assertIn('version: "2.7.0"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.7.0"), 2)
+        version = json.loads(read("site/data/stats.json"))["siteVersion"]["version"]
+        self.assertGreaterEqual(tuple(map(int, version.split("."))), (2, 7, 0))
+        self.assertIn(f'version: "{version}"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count(f"v{version}"), 2)
         self.assertNotIn("v2.3.0", read("site/index.html"))
 
     def test_kit_serves_published_prompts(self):

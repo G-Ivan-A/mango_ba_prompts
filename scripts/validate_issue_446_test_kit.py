@@ -47,7 +47,7 @@ BASELINE_0079 = {"passed": 49, "core": 10, "negatives_false_positive": 0}
 #: Текущая версия сайта; 2.2.0 — issue #446, 2.3.0 — issue #448, 2.4.0 — issue #450,
 #: 2.5.0 — issue #460; 2.6.0 — issue #454 (режимы по RUN-0089, пакеты Ш-Р);
 #: 2.7.0 — issue #464 (страница «Стандарты», шаг Ш-А).
-SITE_VERSION = "2.7.0"
+SITE_VERSION = json.loads((ROOT / "site/data/stats.json").read_text())["siteVersion"]["version"]
 #: Шаги A-IN, режим которых решает RUN-0083.
 A_IN = ("Ш-0 Конституция", "Ш-1 Контекст и глоссарий", "Ш-2 Продукты и стейкхолдеры")
 
@@ -254,6 +254,7 @@ class TestKitTest(unittest.TestCase):
                 self.assertLessEqual(title.group(1).count("(по тесту)"), 1, path.name)
 
     def test_site_version(self):
+        self.assertGreaterEqual(tuple(map(int, SITE_VERSION.split("."))), (2, 7, 0))
         gen = read(ROOT / "scripts/generate-pages-data.mjs")
         self.assertRegex(gen, rf'version: "{re.escape(SITE_VERSION)}"')
         self.assertIn("runKit:", gen)

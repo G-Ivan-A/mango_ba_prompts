@@ -271,3 +271,29 @@
     scroll-behavior: auto;
   }
 }
+/* Issue #466: independent native accordions, including keyboard behaviour. */
+.standards-group {
+  margin: 0 0 18px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  scroll-margin-top: 110px;
+}
+.standards-group > summary {
+  cursor: pointer;
+  padding: 20px;
+  color: var(--text);
+}
+.standards-group > summary h2 { display: inline; font-size: 1.25rem; margin: 0; }
+.standards-group > summary::marker { color: var(--teal); }
+.standards-group > summary:focus-visible { outline: 3px solid var(--teal); outline-offset: 3px; }
+.standards-group-lead { margin: 0 20px 20px; color: var(--muted); }
+.standards-group > .standards-layout { margin: 0 20px 20px; }
+.standards-group > .standard-card { margin: 0 20px 20px; }
+.ttz-card { overflow-wrap: anywhere; }
+@media (max-width: 600px) {
+  .standards-group > summary { padding: 16px; }
+  .standards-group > summary h2 { font-size: 1.1rem; }
+  .standards-group > .standards-layout,
+  .standards-group > .standard-card { margin-left: 10px; margin-right: 10px; }
+}
