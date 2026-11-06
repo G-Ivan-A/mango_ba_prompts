@@ -28,3 +28,36 @@ def violations(state):
     if state.get('no_progress_passes', 0) >= 2 and state.get('frontier'):
         errors.append('retrieval_stalled')
     return sorted(set(errors))
+
+
+def review_violations(state):
+    """Check human-labelled decisions, not the semantics of generated text."""
+    errors = []
+    if state.get('mode') in ('paused', 'analysis_only') and state.get('produces_artifact'):
+        errors.append('paused_execution')
+    if state.get('authorization') == 'future_note' and state.get('produces_artifact'):
+        errors.append('future_note_execution')
+    if state.get('removed_rule') and not all(state.get(field) for field in
+            ('change_evidence', 'impact_reviewed', 'replacement_coverage', 'ba_approved')):
+        errors.append('unapproved_removal')
+    if state.get('product_verdict') == 'confirmed' and state.get('basis') in (
+            'analogy', 'search_report', 'memory', 'unknown'):
+        errors.append('unsupported_product_fact')
+    if state.get('raw_origin') == 'customer' and state.get('actual_origin') == 'knowledge':
+        errors.append('source_substitution')
+    if state.get('norm_conflict') and state.get('review_outcome') == 'accept':
+        errors.append('uncritical_agreement')
+    if state.get('question') and (state.get('already_answered') or state.get('asks_design')):
+        errors.append('unnecessary_or_misaddressed_question')
+    if state.get('contradiction_basis') == 'exists_but_out_of_scope':
+        errors.append('scope_as_contradiction')
+    if state.get('delivery_boundary_closed') and state.get('boundary_basis') == 'mechanism_only':
+        errors.append('unresolved_delivery_boundary')
+    if state.get('classification') == 'functional' and state.get('item_kind') in (
+            'quality', 'design_example', 'api_workaround'):
+        errors.append('what_how_mixed')
+    if state.get('terms_conflated'):
+        errors.append('meaning_lost')
+    if state.get('artifact_available') == 'after_event' and state.get('requires_at_event'):
+        errors.append('event_timing_conflict')
+    return sorted(set(errors))

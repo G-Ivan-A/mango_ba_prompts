@@ -14,5 +14,13 @@
     "locator": "11 pages; text context only",
     "analyzed": "2026-11-06",
     "raw_committed": false
+  },
+  {
+    "kind": "Продолжение диалога",
+    "url": "https://github.com/user-attachments/files/34499057/chat-export-1135-2.json",
+    "sha256": "e5dff84fc8de9e4f73c407abfb72da4fc79f33c28d969895ad4be1e91bd65322",
+    "locator": "chat.messages[0..65]; visible prefix 0..27 unchanged; delta 28..65; 86 history nodes, 20 inactive excluded",
+    "analyzed": "2026-11-06",
+    "raw_committed": false
   }
 ]

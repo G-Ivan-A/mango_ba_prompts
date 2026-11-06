@@ -81,3 +81,6 @@ ci-logs/
 
 # прототип сайта issue #420 (собирается experiments/issue_420/site-v2/build.py)
 experiments/issue_420/site-v2/out/
+
+# Issue #468: private source exports and extracted dialogue stay local.
+experiments/issue_468/private/
