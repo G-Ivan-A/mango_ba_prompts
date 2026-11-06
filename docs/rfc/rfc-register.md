@@ -492,4 +492,4 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Суть | Статус | Реализация |
 | --- | --- | --- | --- |
-| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 шага, evidence/вопросы/гипотезы до раздела 2, retrieval loop, роли, бюджет, производство | `proposed` | [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469); сайт 2.8.1 подготовлен, промпты не произведены; BL-179/180/175/232 |
+| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 шага, evidence/вопросы/гипотезы до раздела 2, retrieval loop, роли, бюджет, производство; v0.2 — сверка прежней практики, новый диалог недоступен (§2.3) | `proposed` | [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469); сайт 2.8.1 подготовлен, промпты не произведены; BL-179 in-progress с блокером Т-11, BL-180/175/232 без изменений |
