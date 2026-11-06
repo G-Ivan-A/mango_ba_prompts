@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T09:19:53.514Z",
+  "generatedAt": "2026-11-06T12:52:04.966Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.8.0",
+    "version": "2.8.1",
     "released": "2026-11-06",
-    "issue": 466,
-    "basis": "PR #467: проект потока ТТЗ и три подраздела стандартов; RFC на рассмотрении",
+    "issue": 468,
+    "basis": "PR #469: проект A-IN из 24 шагов; подготовка ручного деплоя, RFC на рассмотрении",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

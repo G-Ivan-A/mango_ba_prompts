@@ -1,0 +1,16 @@
+F
+======================================================================
+FAIL: test_proposed_panel_and_reproducible_overlay (ain_acceptance.AINAcceptance.test_proposed_panel_and_reproducible_overlay)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/gh-issue-solver-1793968475199/scripts/validate_issue_468_a_in.py", line 57, in test_proposed_panel_and_reproducible_overlay
+    self.assertEqual(html.count('id="a-in-proposal"'),1)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 1 test in 0.010s
+
+FAILED (failures=1)
+
+Expected pre-fix failure reproduced; run current validator for after-fix result.

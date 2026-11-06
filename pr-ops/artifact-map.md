@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.21
+version: 0.22
 updated: 2026-11-06
 owner: G-Ivan-A
 temperature: 0.1
@@ -95,6 +95,8 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/scripts/sync_from_hub.py` | инструмент | Воспроизводимый ре-синк по манифесту с переписыванием ссылок; `--check` сверяет копии с Хабом. | Да | `.hub-profile.json`, `scripts/validate_issue_265_hub_sync.py` |
 | `/.github/ISSUE_TEMPLATE/` | шаблон | GitHub issue templates для структурированного фидбека. | По необходимости | `CONTRIBUTING.md` |
 | `/docs/rfc/2026-11-ttz-feasibility-flow.md` | RFC | RFC-TTZ-001 (issue #466), proposed: постановка/SSOT, практика 8 RUN, обезличенная форма 4 PDF и явные замечания БА; crosswalk, мета-модель, отчётность, F1+F2, план пробного потока и автоматизации. | Да для потока ТТЗ | `docs/rfc/rfc-register.md`, `pr-ops/BACKLOG.md`, `standards/bcreq-runtime-references.md`, `experiments/issue_466/README.md`, `site/index.html` |
+| `/docs/rfc/2026-11-a-in-decomposition.md` | RFC | RFC-AIN-001 (#468), proposed: 24 шага, контракты, retrieval loop, provenance, вопросы/гипотезы, роли/бюджет/миграция. | Да для проектирования A-IN | `docs/ba-processes/bcreq-a-in-route.json`, `docs/rfc/rfc-register.md`, `pr-ops/BACKLOG.md`, `experiments/issue_468/README.md`, `site/index.html` |
+| `/docs/ba-processes/bcreq-a-in-route.json` | Модель процесса | SSOT списка и полей 24 проектных контрактов; не runtime, не тексты промптов. | Да для RFC-AIN-001 | `experiments/issue_468/route_table.py`, `experiments/issue_468/site_a_in.py`, `scripts/validate_issue_468_a_in.py` |
 
 ## Smart Sync decisions: Hub PR #229/#230
 

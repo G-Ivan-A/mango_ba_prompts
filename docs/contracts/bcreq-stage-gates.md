@@ -15,7 +15,15 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/430"
 ---
 
+
 # Контракт стадий A-IN / A-CORE / A-WORK и гейтов BCREQ
+
+> **Проект изменения A-IN (#468).** [RFC-AIN-001](../rfc/2026-11-a-in-decomposition.md) предлагает
+> 24 отдельных шага, retrieval loop и допуск до раздела 2. Это принципы
+> будущих промптов на рассмотрении. Текущий комплект и статус этого документа
+> сохраняются; переход после решения по RFC и производства BL-180, без
+> объявления новых правил измеренными.
+
 
 > Носитель — [ADR-012](../adr/2026-10-adr-012-bcreq-meta-standards.md).
 > Нормативный словарь [RFC 2119](https://www.rfc-editor.org/info/bcp14).
