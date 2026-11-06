@@ -204,6 +204,25 @@
   font-size: 0.8rem;
 }
 
+.v2-table-scroll {
+  overflow-x: auto;
+}
+
+.standards-industry-table td,
+.standards-industry-table th {
+  min-width: 140px;
+}
+
+.standards-industry-table thead th {
+  width: auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.standards-industry .standard-detail {
+  margin-top: 10px;
+}
+
 .standards-provenance {
   padding: 24px 0;
   font-size: 0.9rem;

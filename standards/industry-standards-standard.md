@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2
-updated: 2026-10-23
+version: 0.3
+updated: 2026-11-05
 ai-generated: true
 type: contract
 scope: industry-standards
@@ -109,6 +109,20 @@ Practice, Guideline …) — в [GLOSSARY.md](GLOSSARY.md); здесь — ра�
 | Miller 1956 · Cowan 2001 · Brysbaert 2019 | исследование | информативный | <https://doi.org/10.1037/h0043158> (403) · <https://doi.org/10.1017/S0140525X01003922> · <https://doi.org/10.1016/j.jml.2019.104047> | размер чек-листа 3–7, бюджет слов КС7 |
 | ISO/IEC/IEEE 42010:2022 · TOGAF · Volere Template | de jure / framework / best practice (платный) | информативный | <https://www.iso.org/standard/74393.html> (403) · <https://www.opengroup.org/togaf> · <https://www.volere.org/templates/volere-requirements-specification-template/> | альтернативы в третьем мнении |
 | Anthropic, Building effective agents · Liu et al. 2023 «Lost in the Middle» | best practice / исследование | информативный | <https://www.anthropic.com/engineering/building-effective-agents> · <https://arxiv.org/abs/2307.03172> | архитектура промптов |
+
+### 3.2. Дополнение по issue #464 (индустриальные стандарты на странице «Стандарты»)
+
+> Добавлено по правилу И6 через issue #464. Проверка 2026-11-05. `tmforum.org` отвечает
+> 403 автоматическим запросам, состав блоков ODA сверен по вторичному источнику.
+> BABOK v3 платный: номера пунктов сверены по вторичным учебным материалам.
+> Применение — в [индустриальных стандартах BCREQ](bcreq-industry-practice.md).
+
+| Источник | Tier | Норм/Инф | Сверенный URL | Где применяется (issue #464) |
+| --- | --- | --- | --- | --- |
+| IREB, M. Glinz, A Glossary of Requirements Engineering Terminology, v2.1.0 | framework/best practice | информативный | <https://cpre.ireb.org/en/downloads-and-resources/glossary> · <https://gasq.org/files/content/gasq/downloads/certification/IREB/ireb_cpre_glossary_en_2.1.pdf> | отраслевой словарь по умолчанию, раздел 1 |
+| C4 model: System Context, abstractions | de facto | информативный | <https://c4model.com/diagrams/system-context> · <https://c4model.com/abstractions> | структура раздела 5 по умолчанию |
+| TM Forum ODA: components, GB1022 | de facto | информативный | <https://www.tmforum.org/oda/implementation/components-canvas/> (403) · <https://tmforum.org/resources/standard/gb1022-oda-functional-architecture-guidebook-v1-1-0> (403) | структура раздела 5 по выбору БА |
+| GÉANT, SURFnet OAV Architecture Analysis (вторичный источник блоков ODA) | best practice | информативный | <https://resources.geant.org/wp-content/uploads/2022/02/GN4-3_White-Paper_SURFnet-OAV-Architecture-Analysis.pdf> | сверка блоков ODA |
 
 ## Критерии соответствия (DoD)
 

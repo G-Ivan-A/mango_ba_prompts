@@ -1,6 +1,6 @@
 ---
 status: proposed
-version: 0.4
+version: 0.5
 updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
@@ -150,22 +150,27 @@ flowchart LR
 <!-- coverage:start -->
 | Шаг | Промпт | Режим | `main` | Прод | Замер | Заглушка | Закрывает шаг |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.2 | 0.2, актуален | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
-| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.2 | 0.2, актуален | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
-| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
-| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.2 | 0.2, кнопка другая | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
-| Ш-4 | `bcreq-nfr-documentation-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0088, RUN-0089 | З-2 | BL-232 |
-| Ш-5 | `bcreq-uc-modeling-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
-| Ш-6 | `bcreq-orr-solution-design-stepwise` | by-test | 0.2 | 0.2, кнопка другая | RUN-0086, RUN-0088, RUN-0089 | — | BL-232 |
-| Ш-7 | `bcreq-constraints-documentation-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0088, RUN-0089 | — | BL-232 |
-| Ш-8 | `bcreq-uc-modeling-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0088, RUN-0089 | З-2 | BL-232 |
-| Ш-9 | `bcreq-extra-risk-analysis-stepwise` | by-test | 0.1 | 0.1, кнопка другая | RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
+| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.3 | 0.2, текст другой | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-А | `bcreq-intake-questionnaire-stepwise` | by-test | нет | нет | не измерен | черновик v0.1 | BL-232, затем BL-157в |
+| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.3 | 0.2, текст другой | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
+| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
+| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.3 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
+| Ш-4 | `bcreq-nfr-documentation-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
+| Ш-5 | `bcreq-uc-modeling-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
+| Ш-6 | `bcreq-orr-solution-design-stepwise` | by-test | 0.3 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-7 | `bcreq-constraints-documentation-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-8 | `bcreq-uc-modeling-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
+| Ш-9 | `bcreq-extra-risk-analysis-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
 | Ш-В | `bcreq-review-validation-oneshot` | published | 0.3 | 0.3, актуален | RUN-0081, RUN-0082, RUN-0084, RUN-0085, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
 | Ш-Р | `bcreq-release-readiness-oneshot` | by-test | нет | нет, кнопка другая | RUN-0088, RUN-0089, RUN-0092 | черновик v0.2 | BL-232, затем BL-174, BL-234 |
-| Ш-С | `bcreq-scenarios-modeling-oneshot` | published | 0.1 | 0.1, актуален | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
+| Ш-С | `bcreq-scenarios-modeling-oneshot` | published | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
 <!-- coverage:end -->
 
-Итого 13 шагов и 12 файлов: Ш-5 и Ш-8 используют один файл. Текст Ш-Р — только
+**Поправка issue #464.** Добавлен шаг Ш-А, правлены тексты всех шагов, кроме Ш-В. В колонке
+«Замер» — прошлые прогоны: новый текст они не покрывают, его проверит BL-157в. В разделах ниже
+план и замеры на 2026-11-05 до #464 оставлены как история: «13 шагов» там — прежний состав.
+
+Итого 14 шагов и 13 файлов: Ш-5 и Ш-8 используют один файл. Текст Ш-А и Ш-Р — только
 черновик в `prompts/drafts/`, на сайт он попадает через комплект прогона. Комплект и строка
 таблицы по-прежнему называют Ш-Р заглушкой выпуска: правил из настоящего случая выпуска у
 него нет, это BL-174. Замеры синтетические (`ba_reviewed: false`) и потому не приёмка.

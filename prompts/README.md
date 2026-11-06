@@ -73,7 +73,7 @@ related_issues:
 | --- | --- | --- | --- | --- |
 | Ш-0 | Каркас, параметры, конституция | [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) | [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) | — |
 | Ш-1 | 1 Глоссарий, 2 Бизнес-контекст | [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) | [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) (стадия A-IN = Ш-1 + Ш-2) | — |
-| Ш-2 | ＋2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |
+| Ш-2 | 2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |
 | Ш-3 | 3 Функциональные требования | [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) | [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) (стадия A-CORE = Ш-3…Ш-5) | — |
 | Ш-4 | 4 Нефункциональные требования | [`bcreq-nfr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-nfr-documentation-stepwise.md) | A-CORE | — |
 | Ш-5 | 7 UC, прогон 1 | [`bcreq-uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | A-CORE | Г-С1 «Согласование 1» (решает Заказчик) |
@@ -362,7 +362,7 @@ workflow формирования ФТ/ТЗ.
 2. `bcreq-constitution-governance-oneshot.md` (Промпт 0) задаёт конституцию,
    параметры задачи и каркас документа BCREQ.
 3. `bcreq-context-understanding-stepwise.md` и
-   `bcreq-products-impact-analysis-stepwise.md` формируют разделы 1, 2 и ＋2.5;
+   `bcreq-products-impact-analysis-stepwise.md` формируют разделы 1, 2 и 2.5;
    гейт Г-IN решает БА.
 4. `bcreq-fr-documentation-stepwise.md`, `bcreq-nfr-documentation-stepwise.md`
    и `bcreq-uc-modeling-stepwise.md` (прогон 1) формируют разделы 3, 4 и 7;

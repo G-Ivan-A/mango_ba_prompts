@@ -30,7 +30,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 GATE_TODO = "// TODO: вернуть пароль после завершения отладки BL-157в"
-EXPECTED_CODES = {f"Ш-{n}" for n in range(10)} | {"Ш-В", "Ш-Р", "Ш-С"}
+EXPECTED_CODES = {f"Ш-{n}" for n in range(10)} | {"Ш-А", "Ш-В", "Ш-Р", "Ш-С"}
 
 # Мутации настоящего комплекта через настоящий makeTestKit; печатает JSON с итогами.
 MUTATION_SCRIPT = r"""
@@ -97,7 +97,7 @@ class Completeness(unittest.TestCase):
             table.append(line)
         rows = [line for line in table if re.match(r"\|\s*(\d+|—)\s*\|", line)]
         table_codes = [row.split("|")[2].split()[0] for row in rows]
-        self.assertGreaterEqual(len(table_codes), 13)
+        self.assertGreaterEqual(len(table_codes), 14)
         self.assertEqual(table_codes, [step["step"].split()[0] for step in self.kit["steps"]])
         self.assertEqual(self.kit["counts"]["steps"], len(table_codes))
 
@@ -121,12 +121,12 @@ class Completeness(unittest.TestCase):
         self.assertNotIn("Generated", result.stdout, "импорт генератора запустил генерацию")
         outcome = json.loads(result.stdout)
         self.assertEqual(outcome["intact"], {"ok": True, "steps": self.kit["counts"]["steps"]})
-        self.assertEqual(outcome["minimum"], 13)
+        self.assertEqual(outcome["minimum"], 14)
         self.assertFalse(outcome["rowRemoved"]["ok"])
         self.assertIn("неполон", outcome["rowRemoved"]["message"])
         self.assertIn("Ш-5", outcome["rowRemoved"]["message"])
         self.assertFalse(outcome["everythingAboutStepRemoved"]["ok"])
-        self.assertIn("минимум 13", outcome["everythingAboutStepRemoved"]["message"])
+        self.assertIn("минимум 14", outcome["everythingAboutStepRemoved"]["message"])
         self.assertFalse(outcome["emptyPublishedBody"]["ok"])
         self.assertIn("нет текста промпта", outcome["emptyPublishedBody"]["message"])
 
@@ -213,9 +213,9 @@ class Gate(unittest.TestCase):
 
 class Project(unittest.TestCase):
     def test_site_version(self):
-        self.assertIn('version: "2.6.0"', read("scripts/generate-pages-data.mjs"))
-        self.assertEqual(read("site/index.html").count("v2.6.0"), 2)
-        self.assertEqual(json.loads(read("site/data/stats.json"))["siteVersion"]["version"], "2.6.0")
+        self.assertIn('version: "2.7.0"', read("scripts/generate-pages-data.mjs"))
+        self.assertEqual(read("site/index.html").count("v2.7.0"), 2)
+        self.assertEqual(json.loads(read("site/data/stats.json"))["siteVersion"]["version"], "2.7.0")
 
     def test_backlog(self):
         self.assertRegex(read("pr-ops/BACKLOG.md"), r"\| BL-169 \|.*\| deferred \(triggered\) \|")

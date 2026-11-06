@@ -26,6 +26,10 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ## 0. Позиция
 
+**Фиксация памяти (только первый этап роадмапа).** Перед шагом один раз выведи
+компактно часть 4.1, Р1–Р7 и АП1–АП9 конституции под заголовком «Конституция: фиксация
+памяти (БА читать не нужно)». Без вопросов рядом; повторно не выводи.
+
 - **Пройдено:** Ш-0…Ш-9, Ш-В; гейт Г-W — решение людей гейта, записанное
   в 8.5 (К-34). Нет записи — шаг не начинается: молчание не согласие.
 - **Текущий:** Ш-Р, выпуск документа BCREQ (стадия выпуска, ПБ-7).
@@ -70,7 +74,8 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 **Очистка пакетов «ФТ на согласование» и «ТЗ в договор».** Пакет идёт полным
 текстом, без рассуждений и служебного слоя. Убери из него:
 
-- маркеры вида `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, `[ТРЕБУЕТСЯ …]`;
+- маркеры вида `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, `[ТРЕБУЕТСЯ …]`, `[ГИПОТЕЗА …]` и строки
+  «Комментарий для БА»;
 - ссылки на вопросы и решения (`В-NN`, `Р-NN`) и на разделы вне пакета;
 - строки статуса разделов и блок «Состояние BCREQ»;
 - столбцы и пометки источника, если таблица без них остаётся понятной.
@@ -120,7 +125,7 @@ Baseline К-35: <кандидат; released — только по записи �
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
 [RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
+[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
 [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.

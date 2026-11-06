@@ -2,13 +2,13 @@
 id: mango-bcreq-constraints-documentation-stepwise-by-test
 title: "BCREQ Ш-7 (2.8): ограничения (по тесту)"
 status: draft
-version: 0.1
-updated: 2026-11-04
+version: 0.2
+updated: 2026-11-05
 temperature: 0.1
 operation: documentation
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-constraints-documentation-stepwise.md
-based_on_sha256: bf3b67ca0cd940c156bf0c7538033a5531bdfa67dea075295315e4457b596316
+based_on_sha256: 3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c
 mode: by-test
 steps: [Ш-7]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -64,7 +64,11 @@ assembled_by: scripts/build_bcreq_step_prompts.py
    последствии; ссылка на пункт раздела 5.
 3. **6.2 Ограничения.** Формат «ограничение · источник · последствие».
    Ограничение платформы и версии в новой задаче — в 2.4.2 (CB-6.2); в задаче
-   старой структуры — в 6.2 со ссылкой «см. 6.2» в 2.4.2.
+   старой структуры — в 6.2 со ссылкой «см. 6.2» в 2.4.2. Условие работы
+   («работает только при такой настройке или подключённой услуге») и сценарное
+   исключение («не работает в таком сценарии») — всегда в 6.2, а не в 2.4.1 и
+   2.4.2: 2.4 отвечает «на что распространяется доработка», 6.2 — «при каких
+   условиях то, что входит, работает или не работает».
 4. **Итог.** Пустой подраздел — «нет». Обнови 8.4, 8.5 и «Состояние BCREQ».
 
 ## 4. Правила раздела
@@ -76,6 +80,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - АД-7: ограничение не переписывается в ФТ; штатное управление продуктом —
   ограничением или ссылкой, не требованием.
 - АД-6: ограничение без источника — `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]` и вопрос.
+- Р2: неясное не выдумывай. Сначала вопрос БА; нет ответа — вопрос Заказчику
+  в 8.4 и согласованная с БА гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается
+  вопросом В-NN]`. Работа идёт дальше, пока её не остановил БА.
+- ЧТ-2…ЧТ-5 конституции: шаг не забегает вперёд, вопросы в конце ответа,
+  комментарий для БА — отдельной строкой `> Комментарий для БА (не в выпуск): …`,
+  вопрос Заказчику — на уровне бизнес-логики.
 
 ## 5. Формат вывода
 
@@ -84,7 +94,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 6.1 Особенности
 | ID | Особенность | Последствие | Пункт раздела 5 | Источник |
 6.2 Ограничения
-| ID | Ограничение | Источник | Последствие |
+| ID | Класс: ограничение, условие работы, сценарное исключение | Ограничение | Источник | Последствие |
 (пустой подраздел — «нет»)
 
 Перенос в 2.4.2 — на решение БА
@@ -220,7 +230,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
 [RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
+[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
 [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.

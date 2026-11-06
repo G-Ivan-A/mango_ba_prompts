@@ -1,0 +1,41 @@
+убита | prompts/drafts/bcreq-intake-questionnaire-stepwise.md | какие 1–2 аналогичных продукта Mango взять опорой
+убита | prompts/bcreq-context-understanding-stepwise.md | и не задаёт границу функциональности
+убита | standards/bcreq-sections/03-functional-requirements.md | публичный API не
+задаёт
+убита | standards/bcreq-manual-classes/catalog.json | "fields_changed_in": "issue #464"
+убита | prompts/bcreq-constitution-governance-oneshot.md | Не выводи её: БА уже вставил этот промпт в чат.
+убита | prompts/bcreq-constitution-governance-oneshot.md | **На этом шаге запрещено:** выводить конституцию или каркас;
+убита | prompts/bcreq-constitution-governance-oneshot.md | Попроси ввести следующий промпт
+убита | prompts/bcreq-constitution-governance-oneshot.md | ЧТ-1 | Конституция предназначена модели и в чат не выводится
+убита | prompts/drafts/bcreq-intake-questionnaire-stepwise.md | 2. Сколько операторов работает?
+убита | prompts/drafts/bcreq-intake-questionnaire-stepwise.md | шаг можно пропустить
+убита | prompts/drafts/bcreq-intake-questionnaire-stepwise.md | | Раздел 5, структура ОРР | C4 | TM Forum ODA или другой по 
+убита | prompts/drafts/bcreq-intake-questionnaire-stepwise.md | mode: by-test
+убита | prompts/bcreq-context-understanding-stepwise.md | **Порядок: сбор → интерпретация → фиксация.**
+убита | prompts/bcreq-context-understanding-stepwise.md | *Фиксация*
+убита | prompts/bcreq-context-understanding-stepwise.md | Р2: неясное не выдумывай
+убита | standards/bcreq-sections/01-glossary.md | ### Пользователь и Оператор
+убита | standards/bcreq-sections/02-business-context.md | ### Проверка исполнимости требования
+убита | standards/bcreq-sections/02-business-context.md | | **Частично** |
+убита | standards/bcreq-sections/02-business-context.md | ### Однозначность границ
+убита | standards/bcreq-sections/02-business-context.md | **Что не входит в 2.4.1 и 2.4.2.**
+убита | standards/bcreq-sections/02-business-context.md | Стейкхолдеры всегда: Заказчик и Продуктовая команда
+убита | standards/bcreq-sections/03-functional-requirements.md | ## Необходимые и достаточные ФТ: определение
+убита | standards/bcreq-sections/05-solution-description.md | Раздел 5 **не строится** по блокам ФТ
+убита | standards/bcreq-sections/05-solution-description.md | Номера пунктов не зависят от номеров ФТ
+убита | standards/bcreq-sections/05-solution-description.md | Это не архитектура и не системный анализ
+убита | site/index.html | class="standard-card v2-card standards-industry"
+убита | site/index.html | href="#standards?section=9" data-standard-target="9"
+убита | site/index.html | <h3>Как пишем</h3>
+убита | site/app.js | 9: "standard-industry"
+убита | site/data/test-kit.json | "version": "0.8"
+убита | site/data/test-kit.json | "step": "Ш-А Анкета"
+убита | site/data/stats.json | 2.7.0
+убита | CHANGELOG.md | версия сайта 2.7.0
+убита | pr-ops/BACKLOG.md | | **Р-21** |
+убита | pr-ops/BACKLOG.md | **Движение по цепочке (на 2026-11-05, issue #464).**
+убита | pr-ops/BACKLOG.md | | BL-235 | [Поток CS
+убита | pr-ops/BACKLOG.md | деплой 2.7.0, повторный аудит
+убита | pr-ops/backlog-repository.md | ### BL-236. 
+убита | pr-ops/backlog-ba-model.md | ### BL-175. 
+итого: 39, живых: 0

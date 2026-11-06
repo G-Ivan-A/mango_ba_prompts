@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.19
+version: 0.20
 updated: 2026-11-05
 owner: G-Ivan-A
 temperature: 0.1
@@ -62,7 +62,9 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/rfc-hub-integration.md` | RFC | Односторонний неавтоматический поток практик наружу: Хаб (методология) и `ai-ba-playbooks` (универсальные и специализированные плейбуки). | Да | `docs/hub-research-dependencies.md`, `standards/pattern-standard.md` |
 | `/docs/taxonomy.md` | стандарт / модель | Таксономия когнитивных операций и процессов БА. | Да | `patterns/`, `prompts/` |
 | `/docs/ba-processes/00-index.md` | индекс | Маппинг процесс ↔ операция ↔ паттерн ↔ промпт. | Да | `patterns/`, `prompts/README.md` |
-| `/docs/ba-processes/bcreq-run-kit.md` | процесс | Комплект прогона BL-157 (v0.5, issue #450; v0.3 — issue #446): 13 шагов этапа 1, режим промпта шага (`published` или `by-test`; A-IN — `by-test` по RUN-0083), карточка прогона с `prompt_set.mode`, `prompt_ref`, `notes`. Источник тестового набора на сайте (`site/data/test-kit.json`). v0.4 (issue #448): Ш-В — v0.2 по RUN-0084; «Карточки шагов для БА (сайт)» — 4 этапа и 13 карточек, источник вкладок раздела «Процессы». | Да | `prompts/`, `prompts/drafts/`, `scripts/generate-pages-data.mjs`, `runs/` |
+| `/docs/ba-processes/cs-flow-stub.md` | заглушка | Поток CS «клиентский сервис»: выход из BCREQ при результате «Да» проверки исполнимости (issue #464, ADR-019, BL-235). | Да | `docs/ba-processes/bcreq-manual-process.md`, `standards/bcreq-sections/02-business-context.md` |
+| `/standards/bcreq-industry-practice.md` | справочник | Индустриальные стандарты BCREQ: BABOK по пунктам, C4, TM Forum ODA, выбор на шаге Ш-А (issue #464). | Да | `site/index.html`, `standards/bcreq-sections/` |
+| `/docs/ba-processes/bcreq-run-kit.md` | процесс | Комплект прогона BL-157 (v0.8, issue #464: новый шаг Ш-А; v0.5 — issue #450; v0.3 — issue #446): 14 шагов этапа 1, режим промпта шага (`published` или `by-test`; A-IN — `by-test` по RUN-0083), карточка прогона с `prompt_set.mode`, `prompt_ref`, `notes`. Источник тестового набора на сайте (`site/data/test-kit.json`). v0.4 (issue #448): Ш-В — v0.2 по RUN-0084; «Карточки шагов для БА (сайт)» — 4 этапа и 13 карточек, источник вкладок раздела «Процессы». | Да | `prompts/`, `prompts/drafts/`, `scripts/generate-pages-data.mjs`, `runs/` |
 | `/docs/analysis/2026-09-03-hub-backlog-sprint-validation.md` | анализ | Протокол сплошной валидации активных спринтов бэклога Хаба (issue #357): фактическое состояние задач, доказательства абсолютными ссылками, дельта правок для `pr-ops/backlog.md` Хаба. | По необходимости | `docs/hub-research-dependencies.md`, `CHANGELOG.md` |
 | `/docs/adr/` | решения | ADR: почему принято конкретное архитектурное или governance-решение. | По необходимости | `CHANGELOG.md`, `ai-governance/ai-governance.md` |
 | `/patterns/` | каталог | Паттерны БА как reusable способы решения классов задач. | Да | `standards/pattern-standard.md`, `docs/taxonomy.md` |

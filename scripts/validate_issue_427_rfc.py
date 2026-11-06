@@ -84,7 +84,7 @@ TASK_SECTIONS = (
     "Обоснованные обходы",
 )
 PROCESSES = tuple(f"ПБ-{n}" for n in range(8)) + ("ПБ-С",)
-STEPS = ("Ш-0", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р")
+STEPS = ("Ш-0", "Ш-А", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р")
 EXCEPTIONS = tuple(f"И-{n}" for n in range(1, 11))
 REQUIREMENTS = tuple(f"ТС-{n}" for n in range(1, 8))
 TRACK_B_TASKS = tuple(f"BL-{n}" for n in range(150, 159))
@@ -208,8 +208,8 @@ class Issue427Rfc(unittest.TestCase):
 
     def test_step_sequence(self):
         block = section(self.text, "### 5.4. Последовательность шагов этапа 1")
-        numbered = re.findall(r"^\| (\d+) \| (Ш-[0-9ВР]) ", block, re.M)
-        self.assertEqual([int(n) for n, _ in numbered], list(range(1, 13)))
+        numbered = re.findall(r"^\| (\d+) \| (Ш-[0-9АВР]) ", block, re.M)
+        self.assertEqual([int(n) for n, _ in numbered], list(range(1, 14)))
         self.assertEqual([s for _, s in numbered], list(STEPS))
         self.assertRegex(block, r"(?m)^\| — \| Ш-С ", "Ш-С вне последовательности")
         header = block.split("\n| --- ", 1)[0]
@@ -218,12 +218,14 @@ class Issue427Rfc(unittest.TestCase):
 
     def test_prompt_set_exists(self):
         block = section(self.text, "### 9.2. Состав")
-        table = [r for r in rows(block, r"Ш-[0-9ВРС]")]
+        table = [r for r in rows(block, r"Ш-[0-9АВРС]")]
         names = {m for _, cells in table for m in re.findall(r"`(bcreq-[a-z-]+)`", cells.split("|")[1])}
-        self.assertEqual(len(names), 11, sorted(names))
+        self.assertEqual(len(names), 12, sorted(names))
         for name in names:
             with self.subTest(prompt=name):
-                self.assertTrue((PROMPTS / f"{name}.md").exists(), name)
+                # Ш-А (issue #464) — новый промпт: пока только черновик, как Ш-Р.
+                folder = PROMPTS / "drafts" if name == "bcreq-intake-questionnaire-stepwise" else PROMPTS
+                self.assertTrue((folder / f"{name}.md").exists(), name)
         self.assertEqual([r[0] for r in table], list(STEPS) + ["Ш-С"])
 
     def test_standards_set(self):

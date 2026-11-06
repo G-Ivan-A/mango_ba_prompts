@@ -307,7 +307,8 @@ class JournalAndClassesTest(unittest.TestCase):
         history = k20[0]["history"]
         self.assertEqual(history["previous_fields"]["name"], "Подготовка доказательств человеческого гейта")
         self.assertEqual(history["fields_changed_in"], "BL-159 (issue #433)")
-        changed = {c["id"] for c in classes if "previous_fields" in c.get("history", {})}
+        changed = {c["id"] for c in classes if "previous_fields" in c.get("history", {})
+                   and c["history"].get("fields_changed_in") == "BL-159 (issue #433)"}
         self.assertEqual(changed, {"К-20", "К-33", "К-34"}, "прежние значения полей — в history.previous_fields")
 
     def test_self_check_line_typed_in_all_classes(self):

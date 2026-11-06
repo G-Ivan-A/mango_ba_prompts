@@ -1270,8 +1270,9 @@ function applyRoute() {
   }
   if (page === "standards") {
     const section = new URLSearchParams(raw.split("?")[1] || "").get("section");
-    if (/^[0-8]$/.test(section || "")) {
-      const target = document.getElementById(section === "0" ? "standard-intro" : `standard-${section}`);
+    if (/^[0-9]$/.test(section || "")) {
+      const ids = { 0: "standard-intro", 9: "standard-industry" };
+      const target = document.getElementById(ids[section] || `standard-${section}`);
       target.focus({ preventScroll: true });
       target.scrollIntoView({ behavior: "instant", block: "start" });
     }

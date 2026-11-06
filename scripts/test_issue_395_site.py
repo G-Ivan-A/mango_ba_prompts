@@ -47,8 +47,9 @@ class StandardsTests(unittest.TestCase):
         # Issue #423 publishes the menu of PR #422 (RFC standards page v0.2).
         self.assertEqual(parser.nav, ['about', 'catalog', 'standards', 'processes', 'dashboard', 'glossary'])
         self.assertEqual(set(parser.articles), set('12345678'))
-        # Intro (0) and section cards 1–8 are reachable from the standards page.
-        self.assertEqual(set(parser.targets), set('012345678'))
+        # Intro (0), section cards 1–8 and the industry standards block (9, issue #464)
+        # are reachable from the standards page.
+        self.assertEqual(set(parser.targets), set('0123456789'))
         terms = set(re.findall(r'id="term-([^"]+)"', html))
         for number, article in parser.articles.items():
             with self.subTest(section=number):
@@ -57,6 +58,9 @@ class StandardsTests(unittest.TestCase):
                 for url in article['links']:
                     if url.startswith('#glossary?term='):
                         self.assertIn(url.split('=', 1)[1], terms, url)
+                    elif url.startswith('#standards?section='):
+                        # Issue #464: cards 3 and 5 refer to the industry standards block.
+                        self.assertEqual(url, '#standards?section=9')
                     else:
                         self.assertTrue(url.startswith('https://'), url)
         self.assertIn('"standards"', (ROOT / 'site/app.js').read_text())
@@ -102,7 +106,7 @@ class StandardsTests(unittest.TestCase):
                 self.assertIn(href.split('=', 1)[1], terms, href)
                 continue
             if href.startswith('#standards?section='):
-                self.assertIn(href.split('=', 1)[1], set('012345678'), href)
+                self.assertIn(href.split('=', 1)[1], set('0123456789'), href)
                 continue
             self.assertTrue(href.startswith('https://'), href)
             prefix = '/G-Ivan-A/mango_ba_prompts/blob/main/'

@@ -2,13 +2,13 @@
 id: mango-bcreq-scenarios-modeling-oneshot-by-test
 title: "BCREQ Ш-С (2.12/2.13): US, UC (по тесту)"
 status: draft
-version: 0.1
-updated: 2026-11-04
+version: 0.2
+updated: 2026-11-05
 temperature: 0.1
 operation: modeling
 processes: ["Сценарии вне документа"]
 based_on: prompts/bcreq-scenarios-modeling-oneshot.md
-based_on_sha256: e8df095d3ef7bf6195455ca01b5ddc884aa1eb89c817d1e039ac1c987e1500c9
+based_on_sha256: 9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7
 mode: by-test
 steps: [Ш-С]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -30,7 +30,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 [Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
 защиты АД-1…АД-7 и запреты АП1–АП9 действуют в этом шаге.
 
-- **Пройдено:** Ш-0 каркас; Ш-1 разделы 1, 2 — статусы и итог из блока
+- **Пройдено:** Ш-0 старт; Ш-А анкета; Ш-1 разделы 1, 2 — статусы и итог из блока
   «Состояние BCREQ».
 - **Текущий:** Ш-С, сценарии `тип` (вне стадий). Цель — US или UC для
   команды разработки на основе контекста Ш-1.
@@ -57,7 +57,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 Выполни подшаги подряд, без ожидания ответа.
 
-1. **Акторы и цели.** Акторы из 2.1 и ＋2.5; цель каждого — с цитатой входа.
+1. **Акторы и цели.** Акторы из 2.1; цель каждого — с цитатой входа.
 2. **Сценарии.**
    - `тип: US` — «Как <роль>, я хочу <действие>, чтобы <ценность>»; к каждой
      US — 1–3 критерия приёмки «Дано / Когда / Тогда».
@@ -73,6 +73,9 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 (шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4
 [архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).
 
+- Р2: неясное не выдумывай. В режиме oneshot спросить БА в ходе шага нельзя:
+  вопрос в 8.4 и гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается вопросом В-NN]` на
+  согласование БА в конце ответа.
 - Табличный стиль: строка с ID, ≤2 предложений в ячейке.
 - Одна US — одно действие одной роли; в US нет решения («кнопка», «API»).
 - Шаг UC — «актор/система + глагол + объект», без элементов интерфейса.
@@ -221,7 +224,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
 [RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
+[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
 [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.

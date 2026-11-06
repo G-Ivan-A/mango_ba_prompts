@@ -2,13 +2,13 @@
 id: mango-bcreq-nfr-documentation-stepwise-by-test
 title: "BCREQ Ш-4 (2.5): НФТ (по тесту)"
 status: draft
-version: 0.1
-updated: 2026-11-04
+version: 0.2
+updated: 2026-11-05
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-nfr-documentation-stepwise.md
-based_on_sha256: ec9868ce0d3bf7a2c8e2189e35ce6e58b87012bc16ba1c0d58957ec638684ff1
+based_on_sha256: bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada
 mode: by-test
 steps: [Ш-4]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -27,7 +27,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 [Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
 защиты АД-1…АД-7 и запреты АП1–АП9 действуют в этом шаге.
 
-- **Пройдено:** Ш-0 каркас; Ш-1 разделы 1, 2; Ш-2 ＋2.5; Ш-3 раздел 3 —
+- **Пройдено:** Ш-0 старт; Ш-А анкета; Ш-1 разделы 1, 2; Ш-2 2.5; Ш-3 раздел 3 —
   статусы и итог из блока «Состояние BCREQ».
 - **Текущий:** Ш-4, раздел 4 (стадия A-CORE). Цель — записать только НФТ,
   заданные во входных данных, с числом и источником.
@@ -73,6 +73,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 [Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).
 
+- Р2: неясное не выдумывай. Сначала вопрос БА; нет ответа — вопрос Заказчику
+  в 8.4 и согласованная с БА гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается
+  вопросом В-NN]`. Работа идёт дальше, пока её не остановил БА.
+- ЧТ-2…ЧТ-5 конституции: шаг не забегает вперёд, вопросы в конце ответа,
+  комментарий для БА — отдельной строкой `> Комментарий для БА (не в выпуск): …`,
+  вопрос Заказчику — на уровне бизнес-логики.
 - Бюрократический стиль БС1–БС5; формула «<Характеристика>: система должна
   <метрика> <порог> <условие>. Источник: <локатор>.»
 - Характеристики 25010:2023: функциональная пригодность, производительность,
@@ -223,7 +229,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
 [RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
 из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.1,
+[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
 [каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
 [реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.

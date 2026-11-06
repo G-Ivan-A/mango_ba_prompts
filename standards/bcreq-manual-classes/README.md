@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.2.1
-updated: 2026-11-03
+version: 0.2.2
+updated: 2026-11-05
 temperature: 0.1
 owner: G-Ivan-A
 ---
@@ -16,7 +16,7 @@ ID операций — `К-NN` (BL-153, issue #430; REC-425-07): префикс
 
 | Класс | Назначение / стандарт | Фазы | Шаг потока | Существующий носитель (аналог, не готовая реализация) |
 | --- | --- | --- | --- | --- |
-| К-01 | [Приём исходного запроса](01-intake.md) | a-in | Ш-1 | [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md) |
+| К-01 | [Приём исходного запроса](01-intake.md) | a-in | Ш-А | [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md) |
 | К-02 | [Атомарная нормализация](02-normalize.md) | a-in | Ш-1 | [bcreq-context-understanding-stepwise.md](../../prompts/bcreq-context-understanding-stepwise.md) |
 | К-03 | [Оценка неоднозначности](03-ambiguity.md) | a-in, a-core, a-work | Ш-1 | [bcreq-context-understanding-stepwise.md](../../prompts/bcreq-context-understanding-stepwise.md) |
 | К-04 | [Пакет вопросов](04-questions.md) | a-in, a-core, a-work, a-release | Ш-1 | [bcreq-context-understanding-stepwise.md](../../prompts/bcreq-context-understanding-stepwise.md) |
