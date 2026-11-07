@@ -107,10 +107,10 @@ sub("standards/bcreq-sections/01-glossary.md", [
 
 sub("standards/bcreq-sections/02-business-context.md", [
 ("""Подраздел 2.5 — дополнение с индустриальным обоснованием
-([RFC-387-05](../../docs/rfc/2026-10-bcreq-meta-standards-rfc.md#rfc-387-05)).
+([RFC-387-05](../../docs/rfc/2026-10-bcreq-meta-standards.md#rfc-387-05)).
 """,
 """Подраздел 2.5 — дополнение с индустриальным обоснованием
-([RFC-387-05](../../docs/rfc/2026-10-bcreq-meta-standards-rfc.md#rfc-387-05)).
+([RFC-387-05](../../docs/rfc/2026-10-bcreq-meta-standards.md#rfc-387-05)).
 
 **Раздел 2 — фиксация факта.** Его пишут только из данных, которые собраны явно и
 однозначно или записаны как гипотеза. Домысел запрещён. Порядок при неясности:

@@ -358,7 +358,7 @@ Creative (так задано в issue). Исполнитель определя
 
 Язык документов — русский. Исполнитель не правит нормы до решения
 владельца: RFC → решение → задачи спринта
-([процесс RFC](rfc-process.md)). Сайт — только после принятия решения
+([процесс RFC](2026-06-rfc-process.md)). Сайт — только после принятия решения
 и отдельными задачами (Р-09 бэклога).
 
 ### Обоснованные обходы
@@ -380,7 +380,7 @@ Creative (так задано в issue). Исполнитель определя
 | 5 | [Контракт стадий и гейтов](../contracts/bcreq-stage-gates.md), [контракт состояния](../contracts/bcreq-manual-state.md) | Стадии, гейты, перенос состояния |
 | 6 | Мета-модель БА в составе [mango-ba-ai-runtime @ `5d8c201`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/5d8c201511fd730a596c9f9b4588470a7b01edc9): `taxonomy/processes.yaml`, `taxonomy/operations.yaml`, `routes/rg-bcreq-v1.yaml`, `templates/bcreq-skeleton.md` | Уровни L0–L3, процессы P-01…P-10, граф маршрута, слоты A-BCREQ |
 | 7 | [База знаний runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/5d8c201511fd730a596c9f9b4588470a7b01edc9/docs/kb) | Источник фактов о продуктах |
-| 8 | [Бэклог](../../pr-ops/BACKLOG.md), [реестр RFC](rfc-register.md) | Решения Р-01…Р-12, задачи BL-109, BL-110, BL-114, BL-134 |
+| 8 | [Бэклог](../../pr-ops/BACKLOG.md), [реестр RFC](rfc-registry.md) | Решения Р-01…Р-12, задачи BL-109, BL-110, BL-114, BL-134 |
 | 9 | Внешняя практика (раздел 3) | Термин «поток» |
 
 Правило конфликта: ожидание владельца в issue → SSOT → репозиторий →
@@ -1165,6 +1165,6 @@ v0.1, операций каталога и L2 мета-модели, без но
 - [Проверка #425 (SSOT)](../analysis/2026-11-02-bcreq-prompts-classes-standards-check.md)
 - [Процесс BCREQ](../ba-processes/bcreq-manual-process.md), [контракт стадий и гейтов](../contracts/bcreq-stage-gates.md), [контракт состояния](../contracts/bcreq-manual-state.md)
 - [Каталог операций](../../standards/bcreq-manual-classes/README.md), [ADR-015](../adr/2026-10-adr-015-bcreq-manual-classes.md)
-- [RFC ручного конвейера](2026-10-bcreq-manual-pipeline.md), [RFC уроков](2026-10-bcreq-run-lessons-pipeline.md), [реестр RFC](rfc-register.md)
+- [RFC ручного конвейера](2026-10-bcreq-manual-pipeline.md), [RFC уроков](2026-10-bcreq-run-lessons-pipeline.md), [реестр RFC](rfc-registry.md)
 - [Бэклог, Спринт 9](../../pr-ops/BACKLOG.md#спринт-9-поток-bcreq-стандарты-и-промпты-по-тесту)
 - [mango-ba-ai-runtime @ 5d8c201](https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/5d8c201511fd730a596c9f9b4588470a7b01edc9)

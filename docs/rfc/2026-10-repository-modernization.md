@@ -501,7 +501,7 @@ Bootstrap Хаба (T-01): корневой `AGENTS.md` как диспетче�
 | `docs/ba-ecosystem.md`, `scripts/generate-pages-data.mjs`, `standards/pages-ux-standard.md`, производные `site/` | T-03 | Сайт — проекция, не SSOT; рабочие функции сохраняются |
 | `docs/ba-processes/`, `docs/taxonomy.md`, `patterns/`, стандарты паттернов и классификации | T-04 → [#411](https://github.com/G-Ivan-A/mango_ba_prompts/issues/411) (v0.4) | Не терять обязанности при смене модели процессов; содержание процессов BCREQ — трек промптов |
 | `kb/`, `scripts/kb/`, `Makefile`, `.github/workflows/kb.yml`, KB-валидаторы | T-05 | Проверка потребителей до вывода; `kb/` не переносится в `.archive/` |
-| `docs/contracts/`, файлы корня `docs/`, `docs/rfc/rfc-register.md`, `prompts/README.md` | T-06 | Журнал `path_migrations` и указатели на старом месте |
+| `docs/contracts/`, файлы корня `docs/`, `docs/rfc/rfc-registry.md`, `prompts/README.md` | T-06 | Журнал `path_migrations` и указатели на старом месте |
 | ADR 003–010, кандидаты в архив, поле `ai-generated` вне `runs/`; `FRONTMATTER_SCOPE` в `Makefile` | T-07 | Статусы ADR — решение владельца; `runs/` не изменяется; область валидатора frontmatter расширяется по каталогам, исключения — с причиной (F-20) |
 | `docs/hub-research-dependencies.md`, `pr-ops/BACKLOG.md`, `pr-ops/artifact-map.md`; ссылки на ветки форка в ADR-013, ADR-014 и `docs/taxonomy/` | T-08 | Ссылки на ADR других репозиториев — с префиксом репозитория; в JSON `docs/taxonomy/` меняется только префикс URL, исторические генераторы не правятся (F-19) |
 | `docs/adr/2026-10-adr-016-ide-client-process.md`, `docs/analysis/2026-10-30-ide-clients-stage-2.md` | T-09 | Один источник пакета; ADR-016 становится профилем применения |
@@ -519,7 +519,7 @@ Bootstrap Хаба (T-01): корневой `AGENTS.md` как диспетче�
   согласованность JSON и Markdown-реестра и совпадение итогов с аудитом,
   реестром задач и RFC; разрешимость F-xx, DEC-xx, T-xx, H-xx; существование
   относительных ссылок и якорей, включая строки RFC-409-DEC в
-  `rfc-register.md`; закрепление ссылок на Хаб и runtime на коммитах;
+  `rfc-registry.md`; закрепление ссылок на Хаб и runtime на коммитах;
   отсутствие ссылок на ветки форка, поля `ai-generated` и жаргона из
   `FORBIDDEN_TERMS` валидатора #263;
 - `experiments/issue_409/mutation_check.sh`: десять намеренных порч

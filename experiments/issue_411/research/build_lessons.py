@@ -472,14 +472,14 @@ lesson(id="I-31", title="Доменная модель: настройка в Л
        rule="Различать, где настраивается и где исполняется; доменное поведение — по документации и уточнениям БА.",
        phase="a-in / a-core", section="2, 3, 5", severity="high",
        freq="RUN-0074 C15=4; RUN-0076 C15=14 (13 повторов); RUN-0073 C15=7; RUN-0026 [6].",
-       sources=[e74("C15"), f"{PI76}:32", "runs/2026/RUN-0026/feedback/ba-review-notes.md:26", "docs/rfc/prompt-improvement-bcreq-1025-proposal.md (Б1)", "docs/rfc/prompt-improvement-multichannel-proposal.md (М1)"],
+       sources=[e74("C15"), f"{PI76}:32", "runs/2026/RUN-0026/feedback/ba-review-notes.md:26", "docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md (Б1)", "docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md (М1)"],
        cids=["C15"],
        cov={"a": ["generic", f"{MC}21-solution-l1.md:100 «Настройка предшествует исполнению»; {MC}05-taxonomy.md:103"],
             "b": ["absent", "—"],
             "c": ["generic", f"{FRP}:57-60 (порядок настройка → исполнение)"],
             "d": ["generic", f"{SEC}03-functional-requirements.md:67"]},
        examples="Golden: GS-375-DLG-05 «product_class: contact-center» (C15).", guard="нет",
-       old="docs/rfc/prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/prompt-improvement-multichannel-proposal.md М1",
+       old="docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md М1",
        notes="Источники «old» — предложения RFC; принятие их как нормы не проверено (uncertain).")
 
 lesson(id="I-32", title="Роли: существующая ролевая модель (Пользователь vs Сотрудник)",

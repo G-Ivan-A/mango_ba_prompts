@@ -44,7 +44,7 @@ SITE_LESSONS = ROOT / "site/data/lessons.json"
 SITE_FLOW = ROOT / "site/data/bcreq-flow.json"
 PROCESS_DOC = ROOT / "docs/ba-processes/bcreq-manual-process.md"
 REPORT = ROOT / "docs/analysis/2026-10-31-bcreq-pipeline-run-experience-review.md"
-RFC_REGISTER = ROOT / "docs/rfc/rfc-register.md"
+RFC_REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 RUN_DIR = ROOT / "runs/2026/RUN-0079"
 
 LESSON_ID_RE = re.compile(r"^L-(\d{2})$")

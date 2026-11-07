@@ -9,7 +9,7 @@ async (page) => {
     await page.setViewportSize({width:1440,height:1000});
     await page.goto(base+'#processes',{waitUntil:'domcontentloaded'});
     await page.reload({waitUntil:'domcontentloaded'});
-    await page.waitForFunction(()=>document.querySelector('[data-site-version]')?.textContent==='v2.8.1');
+    await page.waitForFunction(()=>document.querySelector('[data-site-version]')?.textContent==='v2.8.2');
     const proposal=page.locator('#a-in-proposal'); const summary=proposal.locator('summary');
     check(await proposal.locator('[data-ain-step]').count()===24,'24 steps');
     check(await proposal.locator('button').count()===0,'proposal has no fake copy buttons');
@@ -18,7 +18,7 @@ async (page) => {
     await page.keyboard.press('Space');
     check(!(await proposal.evaluate(el=>el.open)),'Space closes proposal');
     await page.keyboard.press('Enter');
-    const link=proposal.locator('a');
+    const link=proposal.locator('a').first();
     check((await link.getAttribute('href')).endsWith('/docs/rfc/2026-11-a-in-decomposition.md'),'RFC link');
     await page.evaluate(()=>document.activeElement.blur());
     await page.evaluate(()=>scrollTo(0,0));

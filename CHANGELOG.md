@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.36
-updated: 2026-11-06
+version: 0.37
+updated: 2026-11-07
 temperature: 0.1
 ---
 
@@ -12,6 +12,16 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #470: аудит RFC BCREQ и ТТЗ, имена `docs/rfc`; версия сайта 2.8.2
+
+- **Аудит** `docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md`: полнота и актуальность двух RFC,
+  14 проблем 1135 с граничными случаями двух порядков, список RFC с незавершёнными задачами.
+- **RFC-AIN-001 v0.4** и **RFC-TTZ-001 v0.2**: LE-01…LE-20, LT-01…LT-10, метрики предсказуемости,
+  оценка пробы, решения Р-AIN-3, Р-ТТЗ-4 и Р-ТТЗ-5. Статусы прежние, прогонов не было.
+- **Переименование**: 12 файлов `docs/rfc` по стандарту, ссылки перенесены, список исключений
+  для `docs/rfc` снят. Старые адреса — в журнале `docs/rfc/rfc-registry.md`.
+- **Бэклог**: BL-181; срез `docs/rfc` в BL-225. Сайт 2.8.2 подготовлен, деплой не выполнялся.
 
 ### Added — Issue #468: RFC декомпозиции A-IN; версия сайта 2.8.1
 
@@ -656,7 +666,7 @@ temperature: 0.1
 
 ### Changed — Issue #420 v0.2: ревью владельца (13 рисков)
 
-- RFC `docs/rfc/2026-10-standards-page-rfc.md` v0.2: верх страницы —
+- RFC `docs/rfc/2026-10-standards-page.md` v0.2: верх страницы —
   H1 «BCREQ — стандарт бизнес-спецификации на доработку системы» и
   «Введение. Структура документа» без сводок и мета-текста; шаблон карточки
   из семи блоков; раздел 3 по практике прогонов (ФТ-01, ФТ-02 …, формула
@@ -679,7 +689,7 @@ temperature: 0.1
 
 ### Added — Issue #420: ревью страницы «Стандарты»
 
-- RFC `docs/rfc/2026-10-standards-page-rfc.md` (proposed): сводка
+- RFC `docs/rfc/2026-10-standards-page.md` (proposed): сводка
   «Коротко» и блок «Заказчику» для руководителей, введение с оглавлением
   документа до подпунктов, единый шаблон карточки из девяти блоков,
   основания глоссария со справочником согласованных терминов Манго (D0,
@@ -977,8 +987,8 @@ temperature: 0.1
   [`docs/analysis/2026-10-23-bcreq-standards-third-opinion.md`](docs/analysis/2026-10-23-bcreq-standards-third-opinion.md);
   решение — [ADR-012](docs/adr/2026-10-adr-012-bcreq-meta-standards.md).
 - Инициированы обоснованные изменения: RFC-387-01…07 с путями отката —
-  [`docs/rfc/2026-10-bcreq-meta-standards-rfc.md`](docs/rfc/2026-10-bcreq-meta-standards-rfc.md),
-  строки в [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md) (v0.4).
+  [`docs/rfc/2026-10-bcreq-meta-standards.md`](docs/rfc/2026-10-bcreq-meta-standards.md),
+  строки в [`docs/rfc/rfc-registry.md`](docs/rfc/rfc-registry.md) (v0.4).
 - [`standards/industry-standards-standard.md`](standards/industry-standards-standard.md)
   v0.2: §3.1 регистрирует источники issue #387 (правило И6).
   [`standards/README.md`](standards/README.md) и
@@ -2852,8 +2862,8 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
 - Добавлен индекс каталога прогонов BA-процесса
   [`docs/ba-process/README.md`](docs/ba-process/README.md) (**ФТ-6**).
 - Подготовлен RFC по улучшению промптов (**ФТ-5**, промпты **не изменены**):
-  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](docs/rfc/prompt-improvement-multichannel-proposal.md)
-  (RFC-MCH-P1…P3); реестр [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md)
+  [`docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md`](docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md)
+  (RFC-MCH-P1…P3); реестр [`docs/rfc/rfc-registry.md`](docs/rfc/rfc-registry.md)
   дополнен записями RFC-MCH-*. RFC-MCH-P1 — повтор паттернов Б1/Б5 из BCREQ-1025.
 
 ### Added — Issue #105 синхронизация контрактов с Хабом (Research + Structured)
@@ -2870,15 +2880,15 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   [`pr-ops/sync-matrix-2026-06-17.md`](pr-ops/sync-matrix-2026-06-17.md)
   (**ФТ-3**): соответствие контрактов спок ↔ Хаб, реестр RFC-сверки и передачи знаний.
 - Интегрирован RFC-процесс Хаба (**ФТ-4**):
-  [`docs/rfc/rfc-process.md`](docs/rfc/rfc-process.md) **ссылается** на
+  [`docs/rfc/2026-06-rfc-process.md`](docs/rfc/2026-06-rfc-process.md) **ссылается** на
   `knowledge-lifecycle-proposal.md` Хаба (не дублирует), отображает жизненный цикл
-  знаний на артефакты спока; реестр [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md)
+  знаний на артефакты спока; реестр [`docs/rfc/rfc-registry.md`](docs/rfc/rfc-registry.md)
   дополнен RFC-SYNC-* и RFC-HUB-*. Подготовлен RFC в Хаб о процессе отладки промптов
-  [`docs/rfc/rfc-to-hub-002-prompt-debugging-process.md`](docs/rfc/rfc-to-hub-002-prompt-debugging-process.md).
+  [`docs/rfc/2026-06-rfc-to-hub-002-prompt-debugging-process.md`](docs/rfc/2026-06-rfc-to-hub-002-prompt-debugging-process.md).
 - Подготовлена передача знаний в Хаб (**ФТ-5**):
   каталог [`docs/rfc/knowledge-transfer-to-hub/`](docs/rfc/knowledge-transfer-to-hub/)
   (онтология БА #003, таксономия операций #004, процесс BCREQ #009, UX Pages #010) и
-  umbrella-RFC [`docs/rfc/rfc-to-hub-001-knowledge-transfer.md`](docs/rfc/rfc-to-hub-001-knowledge-transfer.md).
+  umbrella-RFC [`docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md`](docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md).
 - Контракты спока в этом PR **не изменены**: расхождения с Хабом оформлены как RFC
   `proposed`, уникальные практики — как документы передачи знаний (правило «не менять
   сразу, а создать RFC»).
@@ -2906,7 +2916,7 @@ RFC #532 Хаба ([PR #538](https://github.com/G-Ivan-A/hybrid-Intelligence-lab
   передачи онтологии (ADR #3–#8).
 - Добавлен черновик процесса отладки промптов
   [`standards/prompt-debugging-process.md`](standards/prompt-debugging-process.md)
-  и реестр RFC [`docs/rfc/rfc-register.md`](docs/rfc/rfc-register.md):
+  и реестр RFC [`docs/rfc/rfc-registry.md`](docs/rfc/rfc-registry.md):
   порядок «эксперимент → RFC → согласование с пользователем → изменение».
 
 ### Added — Issue #97 формализация онтологии БА и стандартов (Creative + Research)

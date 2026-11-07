@@ -11,7 +11,7 @@
   закреплены на коммитах, ссылок на временные ветки форка нет;
 * frontmatter проходит валидатор Хаба, поля ``ai-generated`` нет, жаргона из
   ``FORBIDDEN_TERMS`` валидатора #263 нет;
-* RFC имеет статус ``proposed`` и зарегистрирован в ``docs/rfc/rfc-register.md``.
+* RFC имеет статус ``proposed`` и зарегистрирован в ``docs/rfc/rfc-registry.md``.
 
 История git не читается: CI работает на shallow-клоне, поэтому реестр
 сверяется сам с собой и с документами, а не с деревом базового коммита.
@@ -33,7 +33,7 @@ TASKS = ROOT / "docs/analysis/2026-10-31-follow-up-tasks.md"
 EVOLUTION = ROOT / "docs/analysis/2026-10-31-requirements-evolution.md"
 STRATEGY = ROOT / "docs/analysis/2026-10-31-strategic-documents-proposal.md"
 RFC = ROOT / "docs/rfc/2026-10-repository-modernization.md"
-RFC_REGISTER = ROOT / "docs/rfc/rfc-register.md"
+RFC_REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 DISPOSITION = ROOT / "experiments/issue_409/disposition.json"
 GENERATOR = ROOT / "experiments/issue_409/build_disposition.py"
 

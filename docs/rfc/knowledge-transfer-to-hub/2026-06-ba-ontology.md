@@ -11,7 +11,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/003-ba-ontology.md"
   - "standards/ba-ontology.md"
-  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: онтология бизнес-анализа (граф Артефакт↔Процесс↔Операция)
@@ -48,22 +48,22 @@ related_artifacts:
 
 ## Примеры использования
 
-- **Навигация GitHub Pages** (см. [`pages-ux.md`](pages-ux.md)): дерево процессов
+- **Навигация GitHub Pages** (см. [`2026-06-pages-ux.md`](2026-06-pages-ux.md)): дерево процессов
   строится прямо из онтологии; видно, какие узлы покрыты промптами, какие — gap.
 - **Проверка покрытия:** аудит «для каких операций нет промпта» — это обход графа.
 - **Состояние `needs-clarification`:** артефакт в неполном baseline явно
-  отмечается, что связывает онтологию с процессом BCREQ ([`bcreq-process.md`](bcreq-process.md)).
+  отмечается, что связывает онтологию с процессом BCREQ ([`2026-06-bcreq-process.md`](2026-06-bcreq-process.md)).
 
 ## Что обобщить перед переносом (критерий C2)
 
 Убрать Mango-специфику набора артефактов; оставить **мета-модель** (три сущности +
 типы связей + состояния ЖЦ) как шаблон, который каждый BA-спок наполняет своими
 типами. Конкретный набор из 13 операций передаётся отдельно
-([`operations-taxonomy.md`](operations-taxonomy.md)).
+([`2026-06-operations-taxonomy.md`](2026-06-operations-taxonomy.md)).
 
 ## Ссылки
 
 - ADR-носитель: [`docs/adr/003-ba-ontology.md`](../../adr/003-ba-ontology.md)
 - Стандарт: [`standards/ba-ontology.md`](../../../standards/ba-ontology.md)
-- Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
+- Umbrella-RFC: [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../2026-06-rfc-to-hub-001-knowledge-transfer.md)
 - Контракт Хаба (родственный): [`executable-documentation-standard.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/standards/executable-documentation-standard.md)

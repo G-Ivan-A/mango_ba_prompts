@@ -86,21 +86,21 @@ ALLOW = {
     ("docs/rfc-hub-integration.md", "чек-лист или human-in-the-loop gate."): ("N", "DoD Хаба"),
     ("ai-rules/agent-onboarding-protocol.md", "без решения человека"): ("N", "структура репозитория, не гейт"),
     ("ai-rules/agent-work-rules.md", "не переопределяет решение человека"): ("N", "полномочия агента"),
-    ("docs/rfc/rfc-process.md", "предсказуемый путь до решения человека"): ("N", "приёмка RFC"),
-    ("docs/rfc/rfc-process.md", "право даёт только решение человека"): ("N", "приёмка RFC"),
-    ("docs/rfc/rfc-process.md", "только по решению человека"): ("N", "статус RFC"),
+    ("docs/rfc/2026-06-rfc-process.md", "предсказуемый путь до решения человека"): ("N", "приёмка RFC"),
+    ("docs/rfc/2026-06-rfc-process.md", "право даёт только решение человека"): ("N", "приёмка RFC"),
+    ("docs/rfc/2026-06-rfc-process.md", "только по решению человека"): ("N", "статус RFC"),
     ("standards/evals-contract-standard.md", "Порог — решение человека"): ("N", "порог метрики"),
     ("standards/evals-contract-standard.md", "требуют решения человека"): ("N", "границы стандарта evals"),
     ("docs/rfc/2026-10-ba-automation-strategy.md", "продукта или решение человека"): ("N", "вердикт «нет данных»"),
     ("docs/rfc/2026-10-ba-automation-strategy.md", "те же решения человека"): ("N", "детерминированность"),
     # T — пакет передачи знаний в Хаб, заморожен решением #413 (→ BL-122).
     ("docs/rfc/knowledge-transfer-to-hub/README.md", "(human gates)"): ("T", "BL-122"),
-    ("docs/rfc/knowledge-transfer-to-hub/bcreq-process.md", "(human gates)"): ("T", "BL-122"),
-    ("docs/rfc/knowledge-transfer-to-hub/bcreq-process.md", "human-in-the-loop и без"): ("T", "BL-122"),
-    ("docs/rfc/knowledge-transfer-to-hub/bcreq-process.md", "типизированные human gates"): ("T", "BL-122"),
-    ("docs/rfc/knowledge-transfer-to-hub/bcreq-process.md", "точками решения человека"): ("T", "BL-122"),
-    ("docs/rfc/rfc-to-hub-001-knowledge-transfer.md", "(human gates)"): ("T", "BL-122"),
-    ("docs/rfc/rfc-to-hub-001-knowledge-transfer.md", "BCREQ hum"): ("T", "BL-122"),
+    ("docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md", "(human gates)"): ("T", "BL-122"),
+    ("docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md", "human-in-the-loop и без"): ("T", "BL-122"),
+    ("docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md", "типизированные human gates"): ("T", "BL-122"),
+    ("docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md", "точками решения человека"): ("T", "BL-122"),
+    ("docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md", "(human gates)"): ("T", "BL-122"),
+    ("docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md", "BCREQ hum"): ("T", "BL-122"),
     # O — идентификатор или термин другого источника.
     ("docs/hub-research-dependencies.md", "`human gate`)"): ("O", "пробелы исследования Хаба"),
     ("standards/bcreq-runtime-references.md", "G-human"): ("O", "файл runtime g-human-checklist.md"),
@@ -110,7 +110,7 @@ ALLOW = {
     # текст черновика меняется только пересборкой (измерен RUN-0080, после BL-156а — RUN-0081).
     ("prompts/drafts/bcreq-review-validation-oneshot.md", "Чек-лист гейта G-human"): ("O", "имя И-8 из реестра runtime"),
     ("standards/bcreq-flow-glossary.md", "G-self → G-mach → G-human"): ("O", "порядок гейтов узла runtime"),
-    ("docs/rfc/2026-10-standards-page-rfc.md", "ждёт решения человека на гейтах. | план |"):
+    ("docs/rfc/2026-10-standards-page.md", "ждёт решения человека на гейтах. | план |"):
         ("O", "порождаемое приложение: источник experiments/issue_420/site-v2/content.py, "
               "валидатор #420 сверяет его с build.py побайтно"),
     # H — история, цитата «было», прежнее имя.

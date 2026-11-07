@@ -33,7 +33,7 @@ related_issues:
 **Граница с разделом 2.4.2.** Для новых задач ограничение платформы и версии
 («не поддерживается КЦ Десктоп») — пункт 2.4.2. Раздел 6.2 содержит его только
 в задачах, начатых по старой структуре, по решению БА
-[р. 760, Ч-27](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L61), [RFC-387-07](../../docs/rfc/2026-10-bcreq-meta-standards-rfc.md#rfc-387-07).
+[р. 760, Ч-27](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L61), [RFC-387-07](../../docs/rfc/2026-10-bcreq-meta-standards.md#rfc-387-07).
 Тогда в 2.4.2 ставится ссылка «см. 6.2».
 
 ## Условия работы и сценарные исключения

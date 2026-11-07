@@ -721,7 +721,7 @@
       },
       {
         "file": "runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md",
-        "target": "prompts/blob/main/docs/rfc/prompt-improvement-bcreq-1025-proposal.md",
+        "target": "prompts/blob/main/docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md",
         "version_on_line": false
       }
     ],

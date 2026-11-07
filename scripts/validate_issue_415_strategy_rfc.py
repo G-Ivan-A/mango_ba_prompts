@@ -7,7 +7,7 @@ RFC ``docs/rfc/2026-10-ba-automation-strategy.md`` собирает видени
 фиксирует контракт постановки, а не качество текста:
 
 * RFC в статусе ``proposed`` или ``accepted`` (#417), frontmatter проходит
-  валидатор Хаба, решения DEC-415-01…08 зарегистрированы в ``docs/rfc/rfc-register.md``;
+  валидатор Хаба, решения DEC-415-01…08 зарегистрированы в ``docs/rfc/rfc-registry.md``;
 * четыре раздела верхнего уровня, каждый с указанием канонического файла,
   и таблица переноса в ``docs/vision.md``, ``docs/concept.md``,
   ``docs/architecture.md``, ``docs/roadmap.md``;
@@ -30,7 +30,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RFC = ROOT / "docs/rfc/2026-10-ba-automation-strategy.md"
-RFC_REGISTER = ROOT / "docs/rfc/rfc-register.md"
+RFC_REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 
 SECTIONS = {

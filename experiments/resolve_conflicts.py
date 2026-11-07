@@ -1,5 +1,5 @@
 import re,sys
-for f,mode in [("CHANGELOG.md","both"),("docs/rfc/rfc-register.md","both"),("pr-ops/BACKLOG.md","theirs"),("pr-ops/backlog-ba-model.md","theirs")]:
+for f,mode in [("CHANGELOG.md","both"),("docs/rfc/rfc-registry.md","both"),("pr-ops/BACKLOG.md","theirs"),("pr-ops/backlog-ba-model.md","theirs")]:
     s=open(f).read()
     def r(m):
         o,t=m.group(1),m.group(2)

@@ -7,7 +7,7 @@ analysis-subtype: recommendation
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
 scope: repo
 based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/350927f2"
-related_artifacts: "docs/rfc/2026-10-ba-automation-strategy.md, docs/rfc/rfc-register.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md"
+related_artifacts: "docs/rfc/2026-10-ba-automation-strategy.md, docs/rfc/rfc-registry.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/adr/2026-10-adr-017-four-stages-n8n-orchestration.md"
 ---
 
 # Контрольная проверка стратегии автоматизации БА на соответствие индустриальным практикам
@@ -122,7 +122,7 @@ related_artifacts: "docs/rfc/2026-10-ba-automation-strategy.md, docs/rfc/rfc-reg
 ## Recommendations
 
 Все рекомендации — **PROPOSED**. В RFC стратегии они не внесены и
-зарегистрированы в [реестре RFC](../rfc/rfc-register.md) для решения
+зарегистрированы в [реестре RFC](../rfc/rfc-registry.md) для решения
 владельца.
 
 | ID | Рекомендация | Что меняется при принятии | Когда | Основание |
@@ -174,7 +174,7 @@ related_artifacts: "docs/rfc/2026-10-ba-automation-strategy.md, docs/rfc/rfc-reg
 ## Related Artifacts
 
 - [RFC стратегии автоматизации БА](../rfc/2026-10-ba-automation-strategy.md), раздел [«Статус принятия»](../rfc/2026-10-ba-automation-strategy.md#статус-принятия-417)
-- [Реестр RFC](../rfc/rfc-register.md)
+- [Реестр RFC](../rfc/rfc-registry.md)
 - [ADR-016: агентный клиент](../adr/2026-10-adr-016-ide-client-process.md)
 - [ADR-017: четыре этапа и n8n](../adr/2026-10-adr-017-four-stages-n8n-orchestration.md)
 - [RFC уроков прогонов BCREQ](../rfc/2026-10-bcreq-run-lessons-pipeline.md)

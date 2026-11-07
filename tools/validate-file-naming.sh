@@ -52,14 +52,14 @@ is_adr_chronological_name() {
 }
 
 # --- Локальная дельта спицы (issue #267) -------------------------------------
-# Легаси-корпус docs/adr, docs/rfc и docs/analysis создан до принятия
+# Легаси-корпус docs/adr и docs/analysis создан до принятия
 # standards/file-naming.md (Хаб) и на него ссылаются десятки артефактов и
 # внешних ссылок. Переименование — отдельная задача с миграцией ссылок
 # (pr-ops/BACKLOG.md). Здесь список заморожен: файл, которого нет в
 # tools/file-naming-legacy-allowlist.txt, обязан соответствовать правилу, то
 # есть для всех новых файлов валидатор работает в полную силу. Хаб применяет
 # тот же приём к собственному RFC-корпусу (см. tools/validate-file-naming.sh
-# в hybrid-Intelligence-lab).
+# в hybrid-Intelligence-lab). docs/rfc выведен из списка в issue #470.
 LEGACY_ALLOWLIST="$ROOT_DIR/tools/file-naming-legacy-allowlist.txt"
 
 is_legacy_allowlisted() {

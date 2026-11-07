@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Mutation check: each edit must make the #417 acceptance validator fail.
 f=docs/rfc/2026-10-ba-automation-strategy.md
-r=docs/rfc/rfc-register.md
+r=docs/rfc/rfc-registry.md
 a=docs/analysis/2026-10-31-industry-practice-check.md
 cp $f /tmp/rfc417.bak; cp $r /tmp/reg417.bak; cp $a /tmp/ana417.bak
 run() {

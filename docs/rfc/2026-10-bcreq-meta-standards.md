@@ -15,7 +15,7 @@ related_artifacts:
   - "standards/prompt-standard.md"
   - "standards/bcreq-process-standard.md"
   - "docs/analysis/2026-10-20-bcreq-fr-section-prompts.md"
-  - "docs/rfc/rfc-register.md"
+  - "docs/rfc/rfc-registry.md"
 ---
 
 # RFC-387: Инициированные изменения мета-стандартов BCREQ
@@ -27,7 +27,7 @@ related_artifacts:
 > нужно для цели задачи (карт-бланш Creative-режима [р. 796, Ч-49](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L83)).
 > Существующие стандарты и контракты в PR **не изменены**: правки к ним
 > предложены ниже и ждут решения пользователя
-> ([rfc-process §6](rfc-process.md#6-когда-нужен-rfc-а-когда-нет)).
+> ([rfc-process §6](2026-06-rfc-process.md#6-когда-нужен-rfc-а-когда-нет)).
 > Каждый RFC можно откатить отдельной задачей [р. 796, Ч-50](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L84): путь отката указан
 > в его карточке.
 

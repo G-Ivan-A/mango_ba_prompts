@@ -44,13 +44,13 @@ related_artifacts:
 
 | # | Практика | Документ передачи | Носитель в Mango |
 | --- | --- | --- | --- |
-| 1 | Онтология БА (Артефакт↔Процесс↔Операция) | [`ba-ontology.md`](knowledge-transfer-to-hub/ba-ontology.md) | [ADR #003](../adr/003-ba-ontology.md) |
-| 2 | Таксономия 13 операций БА (BABOK/ISO-маппинг) | [`operations-taxonomy.md`](knowledge-transfer-to-hub/operations-taxonomy.md) | [ADR #004](../adr/004-operations-taxonomy.md) |
-| 3 | Процесс формирования BCREQ (human gates) | [`bcreq-process.md`](knowledge-transfer-to-hub/bcreq-process.md) | [ADR #009](../adr/009-bcreq-formation-process.md) |
-| 4 | UX дерева процессов GitHub Pages | [`pages-ux.md`](knowledge-transfer-to-hub/pages-ux.md) | [ADR #010](../adr/010-pages-ux.md) |
+| 1 | Онтология БА (Артефакт↔Процесс↔Операция) | [`ba-ontology.md`](knowledge-transfer-to-hub/2026-06-ba-ontology.md) | [ADR #003](../adr/003-ba-ontology.md) |
+| 2 | Таксономия 13 операций БА (BABOK/ISO-маппинг) | [`operations-taxonomy.md`](knowledge-transfer-to-hub/2026-06-operations-taxonomy.md) | [ADR #004](../adr/004-operations-taxonomy.md) |
+| 3 | Процесс формирования BCREQ (human gates) | [`bcreq-process.md`](knowledge-transfer-to-hub/2026-06-bcreq-process.md) | [ADR #009](../adr/009-bcreq-formation-process.md) |
+| 4 | UX дерева процессов GitHub Pages | [`pages-ux.md`](knowledge-transfer-to-hub/2026-06-pages-ux.md) | [ADR #010](../adr/010-pages-ux.md) |
 
 > Процесс отладки промптов — отдельный RFC
-> [`rfc-to-hub-002-prompt-debugging-process.md`](rfc-to-hub-002-prompt-debugging-process.md)
+> [`2026-06-rfc-to-hub-002-prompt-debugging-process.md`](2026-06-rfc-to-hub-002-prompt-debugging-process.md)
 > (это процесс, а не BA-контент).
 
 ## 3. Совместимость с контрактами Хаба
@@ -86,7 +86,7 @@ related_artifacts:
 
 ## 6. Связанные записи
 
-- Реестр: RFC-HUB-001 в [`rfc-register.md`](rfc-register.md) (`proposed`).
+- Реестр: RFC-HUB-001 в [`rfc-registry.md`](rfc-registry.md) (`proposed`).
 - Матрица: раздел «Передача знаний» в [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md).
 - Каталог практик: [`knowledge-transfer-to-hub/README.md`](knowledge-transfer-to-hub/README.md).
 

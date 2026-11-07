@@ -90,7 +90,7 @@ UPDATE = {
     "pr-ops/artifact-map.md": ("Карта артефактов: ADR-009 Хаба смешан с локальным ADR 009; нет mango-ba-ai-runtime", "T-08"),
     "pr-ops/BACKLOG.md": ("Маркеры «evals отсутствуют» устарели после golden-set #373–#378", "T-08"),
     "docs/rfc-hub-integration.md": ("RFC в корне docs/ (нарушение HTOM) и описание ai-ba-playbooks как публичной методологии", "T-06"),
-    "docs/rfc/rfc-register.md": ("Реестр не содержит RFC 2026-10 (manual pipeline, modernization); ai-generated во frontmatter", "T-06"),
+    "docs/rfc/rfc-registry.md": ("Реестр не содержит RFC 2026-10 (manual pipeline, modernization); ai-generated во frontmatter", "T-06"),
     "docs/adr/2026-10-adr-016-ide-client-process.md": ("Не связан с dist/execution-package-opencode Хаба (#652) и средами 1–4", "T-09"),
     "docs/analysis/2026-10-30-ide-clients-stage-2.md": ("Рекомендация OpenCode V1 без сверки с пакетом Хаба; дополнить по T-09", "T-09"),
     "prompts/README.md": ("Навигация актуальна; ai-generated во frontmatter и ссылка на docs/contracts", "T-06"),
@@ -124,11 +124,11 @@ ARCHIVE = {
     "pr-ops/sync-matrix-2026-06-17.md": ("Матрица синхронизации на 2026-06-17; заменена ADR-0004 и .hub-profile.json", "T-07"),
     "docs/adr/009-bcreq-formation-process.md": ("proposed 2026-06; процесс BCREQ заменён ADR-012/015 и стадиями A-IN…A-RELEASE; номер конфликтует с ADR-009 Хаба", "T-07"),
     "docs/rfc/knowledge-transfer-to-hub/README.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
-    "docs/rfc/knowledge-transfer-to-hub/ba-ontology.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
-    "docs/rfc/knowledge-transfer-to-hub/bcreq-process.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
-    "docs/rfc/knowledge-transfer-to-hub/operations-taxonomy.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
-    "docs/rfc/knowledge-transfer-to-hub/pages-ux.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
-    "docs/rfc/rfc-to-hub-001-knowledge-transfer.md": ("RFC в Хаб 2026-06; результат поглощён метамоделью Хаба", "T-07"),
+    "docs/rfc/knowledge-transfer-to-hub/2026-06-ba-ontology.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
+    "docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
+    "docs/rfc/knowledge-transfer-to-hub/2026-06-operations-taxonomy.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
+    "docs/rfc/knowledge-transfer-to-hub/2026-06-pages-ux.md": ("Передача знаний в Хаб 2026-06 выполнена через research/ba-requirements Хаба", "T-07"),
+    "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md": ("RFC в Хаб 2026-06; результат поглощён метамоделью Хаба", "T-07"),
 }
 
 # Июньские ADR в статусе proposed: решение (accept / reject / supersede) не

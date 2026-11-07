@@ -59,8 +59,8 @@ ARCHITECTURE = ROOT / "standards" / "bcreq-prompt-architecture.md"
 GATES = ROOT / "docs" / "contracts" / "bcreq-stage-gates.md"
 ANALYSIS = ROOT / "docs" / "analysis" / "2026-10-23-bcreq-standards-third-opinion.md"
 ADR = ROOT / "docs" / "adr" / "2026-10-adr-012-bcreq-meta-standards.md"
-RFC = ROOT / "docs" / "rfc" / "2026-10-bcreq-meta-standards-rfc.md"
-RFC_REGISTER = ROOT / "docs" / "rfc" / "rfc-register.md"
+RFC = ROOT / "docs" / "rfc" / "2026-10-bcreq-meta-standards.md"
+RFC_REGISTER = ROOT / "docs" / "rfc" / "rfc-registry.md"
 INDEXES = (
     RFC_REGISTER, ROOT / "standards" / "README.md", ROOT / "standards" / "industry-standards-standard.md",
     ROOT / "pr-ops" / "artifact-map.md",
@@ -233,7 +233,7 @@ def check_rfc(rfc: str, register: str) -> list[str]:
         for part in ("Конфликт", "Предложение", "Обоснование", "Путь отката"):
             if part not in body.group(1):
                 errors.append(f"RFC: в {rid} нет части «{part}»")
-        if not re.search(rf"^\| \[{rid}\]\(2026-10-bcreq-meta-standards-rfc\.md#{anchor}\) \|", register, re.M):
+        if not re.search(rf"^\| \[{rid}\]\(2026-10-bcreq-meta-standards\.md#{anchor}\) \|", register, re.M):
             errors.append(f"реестр RFC: нет строки {rid}")
     return errors
 

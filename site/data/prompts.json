@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-06T12:52:04.966Z",
+  "generatedAt": "2026-11-07T08:16:02.256Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -239,10 +239,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.8.1",
-    "released": "2026-11-06",
-    "issue": 468,
-    "basis": "PR #469: проект A-IN из 24 шагов; подготовка ручного деплоя, RFC на рассмотрении",
+    "version": "2.8.2",
+    "released": "2026-11-07",
+    "issue": 470,
+    "basis": "PR #471: аудит RFC и имена docs/rfc; подготовка ручного деплоя, RFC на рассмотрении",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

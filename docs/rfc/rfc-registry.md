@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.23
-updated: 2026-11-06
+version: 0.24
+updated: 2026-11-07
 ai-generated: true
 type: register
 scope: governance
@@ -20,21 +20,22 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/466"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/470"
 related_artifacts:
-  - "docs/rfc/rfc-process.md"
+  - "docs/rfc/2026-06-rfc-process.md"
   - "standards/prompt-debugging-process.md"
   - "pr-ops/sync-matrix-2026-06-17.md"
   - "docs/analysis/experiment-1027-analysis.md"
   - "docs/audit/audit-contracts-2026-06-17.md"
   - "runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md"
-  - "docs/rfc/prompt-improvement-bcreq-1025-proposal.md"
-  - "docs/rfc/prompt-improvement-multichannel-proposal.md"
-  - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
+  - "docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md"
+  - "docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md"
+  - "docs/rfc/2026-10-bcreq-meta-standards.md"
   - "docs/rfc/2026-10-repository-modernization.md"
   - "docs/rfc/2026-10-bcreq-run-lessons-pipeline.md"
   - "docs/rfc/2026-10-ba-automation-strategy.md"
   - "docs/analysis/2026-10-31-industry-practice-check.md"
-  - "docs/rfc/2026-10-standards-page-rfc.md"
+  - "docs/rfc/2026-10-standards-page.md"
   - "docs/analysis/2026-10-31-standards-page-review.md"
   - "docs/rfc/2026-11-runtime-product-catalog-golden-set.md"
   - "docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md"
@@ -46,7 +47,7 @@ related_artifacts:
 
 > **Что это.** Единый список предложений изменить промпты или governance-контракты.
 > Каждый RFC движется по статусам и **не удаляется** из реестра (rejected остаётся
-> с причиной). Общий процесс — в [`docs/rfc/rfc-process.md`](rfc-process.md)
+> с причиной). Общий процесс — в [`docs/rfc/2026-06-rfc-process.md`](2026-06-rfc-process.md)
 > (интеграция жизненного цикла знаний Хаба); детализация для промптов — в
 > [`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md).
 
@@ -115,15 +116,15 @@ PR #105 **не изменены** — сверка и правка идут то
 
 | RFC | Практика Mango | Документ / RFC в Хаб | Статус | Реализация |
 | --- | --- | --- | --- | --- |
-| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`rfc-to-hub-001-knowledge-transfer.md`](rfc-to-hub-001-knowledge-transfer.md) | `proposed` | — |
-| RFC-HUB-002 | Процесс отладки промптов | [`rfc-to-hub-002-prompt-debugging-process.md`](rfc-to-hub-002-prompt-debugging-process.md) | `proposed` | — |
+| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](2026-06-rfc-to-hub-001-knowledge-transfer.md) | `proposed` | — |
+| RFC-HUB-002 | Процесс отладки промптов | [`2026-06-rfc-to-hub-002-prompt-debugging-process.md`](2026-06-rfc-to-hub-002-prompt-debugging-process.md) | `proposed` | — |
 
 ## Открытые RFC по промптам (источник: эксперимент BCREQ-1025, issue #107)
 
 Правки ниже — **предложения** из разбора
 [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
-Полный RFC: [`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](prompt-improvement-bcreq-1025-proposal.md).
+Полный RFC: [`docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md`](2026-06-prompt-improvement-bcreq-1025-proposal.md).
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -138,7 +139,7 @@ PR #105 **не изменены** — сверка и правка идут то
 Правки ниже — **предложения** из разбора
 [`runs/2026/RUN-0011/logs/experiment-log.md`](../../runs/2026/RUN-0011/logs/experiment-log.md).
 Промпты **не изменены** (остаются v0.1); записи ждут инициативы пользователя.
-Полный RFC: [`docs/rfc/prompt-improvement-multichannel-proposal.md`](prompt-improvement-multichannel-proposal.md).
+Полный RFC: [`docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md`](2026-06-prompt-improvement-multichannel-proposal.md).
 
 | RFC | Промпт(ы) | Суть предложения | Источник-сигнал | Тип версии | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -151,17 +152,17 @@ PR #105 **не изменены** — сверка и правка идут то
 Изменения применены в новых draft-артефактах PR #389 (карт-бланш Creative-режима
 issue #387). Существующие стандарты и контракты **не изменены**: правки к ним ждут
 решения пользователя. Путь отката каждого RFC — в RFC-документе
-[`2026-10-bcreq-meta-standards-rfc.md`](2026-10-bcreq-meta-standards-rfc.md).
+[`2026-10-bcreq-meta-standards.md`](2026-10-bcreq-meta-standards.md).
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-387-01](2026-10-bcreq-meta-standards-rfc.md#rfc-387-01) | `standards/prompt-standard.md` | Семантика режимов stepwise / oneshot; режимонезависимый промпт помечается `oneshot`; напоминание конституции в каждом промпте кроме Промпта 0 | issue #387, чат р. 796 (Ч-44…Ч-47) | `proposed` | — |
-| [RFC-387-02](2026-10-bcreq-meta-standards-rfc.md#rfc-387-02) | структура 2.1–2.14 (предложение БА) | Пространство шагов `Ш-`, слияния файлов М1–М4, шаг Ш-В «валидация второй ролью» | аудит Задачи 1 Н7, Н8; чат р. 778 (Ч-35) | `proposed` | — |
-| [RFC-387-03](2026-10-bcreq-meta-standards-rfc.md#rfc-387-03) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (О8, О10) | Индустриальная практика — отдельным блоком «Рекомендация — на решение БА»; исключение О10 для 5 L2 | issue #387; чат р. 748, 796 (Ч-08, Ч-38) | `proposed` | — |
-| [RFC-387-04](2026-10-bcreq-meta-standards-rfc.md#rfc-387-04) | `standards/bcreq-process-standard.md` | Ссылка на контракт стадий и гейтов; таблица «П1–П6 ↔ стадия» | чат р. 746 (Ч-01…Ч-03, Ч-51…Ч-53) | `proposed` | — |
-| [RFC-387-05](2026-10-bcreq-meta-standards-rfc.md#rfc-387-05) | состав разделов 2 и 8 (issue #387) | Подразделы ＋2.5 «Продукты и стейкхолдеры», ＋8.4 «Реестр вопросов Заказчику», ＋8.5 «Журнал решений» | чат р. 746, 748 (Ч-08, Ч-55) | `proposed` | — |
-| [RFC-387-06](2026-10-bcreq-meta-standards-rfc.md#rfc-387-06) | стили разделов (issue #387) | Раздел 4 — бюрократический стиль; короткий — 2, 5 L1, 6 (канон issue, расхождение с чатом) | чат р. 764 (Ч-29, Ч-30) | `proposed` | — |
-| [RFC-387-07](2026-10-bcreq-meta-standards-rfc.md#rfc-387-07) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (А2.4) | Ограничения платформы и версий — в 2.4.2 для новых задач; 6.2 — внешние ограничения решения | чат р. 760 (Ч-27) | `proposed` | — |
+| [RFC-387-01](2026-10-bcreq-meta-standards.md#rfc-387-01) | `standards/prompt-standard.md` | Семантика режимов stepwise / oneshot; режимонезависимый промпт помечается `oneshot`; напоминание конституции в каждом промпте кроме Промпта 0 | issue #387, чат р. 796 (Ч-44…Ч-47) | `proposed` | — |
+| [RFC-387-02](2026-10-bcreq-meta-standards.md#rfc-387-02) | структура 2.1–2.14 (предложение БА) | Пространство шагов `Ш-`, слияния файлов М1–М4, шаг Ш-В «валидация второй ролью» | аудит Задачи 1 Н7, Н8; чат р. 778 (Ч-35) | `proposed` | — |
+| [RFC-387-03](2026-10-bcreq-meta-standards.md#rfc-387-03) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (О8, О10) | Индустриальная практика — отдельным блоком «Рекомендация — на решение БА»; исключение О10 для 5 L2 | issue #387; чат р. 748, 796 (Ч-08, Ч-38) | `proposed` | — |
+| [RFC-387-04](2026-10-bcreq-meta-standards.md#rfc-387-04) | `standards/bcreq-process-standard.md` | Ссылка на контракт стадий и гейтов; таблица «П1–П6 ↔ стадия» | чат р. 746 (Ч-01…Ч-03, Ч-51…Ч-53) | `proposed` | — |
+| [RFC-387-05](2026-10-bcreq-meta-standards.md#rfc-387-05) | состав разделов 2 и 8 (issue #387) | Подразделы ＋2.5 «Продукты и стейкхолдеры», ＋8.4 «Реестр вопросов Заказчику», ＋8.5 «Журнал решений» | чат р. 746, 748 (Ч-08, Ч-55) | `proposed` | — |
+| [RFC-387-06](2026-10-bcreq-meta-standards.md#rfc-387-06) | стили разделов (issue #387) | Раздел 4 — бюрократический стиль; короткий — 2, 5 L1, 6 (канон issue, расхождение с чатом) | чат р. 764 (Ч-29, Ч-30) | `proposed` | — |
+| [RFC-387-07](2026-10-bcreq-meta-standards.md#rfc-387-07) | `docs/analysis/2026-10-20-bcreq-fr-section-prompts.md` (А2.4) | Ограничения платформы и версий — в 2.4.2 для новых задач; 6.2 — внешние ограничения решения | чат р. 760 (Ч-27) | `proposed` | — |
 
 ## Модернизация репозитория (источник: issue #409)
 
@@ -253,7 +254,7 @@ DEC-415-09…12. Контрольная проверка на соответст
 
 ## Стандарт документа на сайте: страница «Стандарты» (источник: issue #420)
 
-RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 предлагает
+RFC [`2026-10-standards-page.md`](2026-10-standards-page.md) v0.2 предлагает
 структуру страницы «Стандарты» и зон сайта по итогам ревью владельца: введение
 со структурой документа, единый шаблон карточки, основания глоссария со
 справочником D0, практику прогонов для разделов 3–5. Доказательства —
@@ -265,21 +266,21 @@ RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 пре
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-420-DEC-01](2026-10-standards-page-rfc.md#dec-420-01) | Страница «Стандарты», верх (v0.2) | H1 «BCREQ — стандарт бизнес-спецификации на доработку системы», одна вводная фраза, «Введение. Структура документа» — перечень разделов и подразделов с коротким комментарием. Вариант v0.1 («Коротко», «Заказчику: что вы подписываете») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-02](2026-10-standards-page-rfc.md#dec-420-02) | Шаблон карточки (v0.2) | Семь блоков в одном порядке во всех карточках. Вариант v0.1 (девять блоков) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-03](2026-10-standards-page-rfc.md#dec-420-03) | Подразделы | Один подраздел — одна строка в «Составе»; в чек-листе один пункт — один подраздел | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-04](2026-10-standards-page-rfc.md#dec-420-04) | Основания глоссария | Шесть оснований; D0 «Справочник согласованных терминов Манго» на втором месте как заглушка; меняет стандарт раздела 1 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-05](2026-10-standards-page-rfc.md#dec-420-05) | Правило 5±2 | Рекомендация v0.2 — правило стандарта без изменений (3–7 ФТ верхнего уровня или обоснование). Вариант v0.1 (3–7 пунктов на каждом уровне) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-06](2026-10-standards-page-rfc.md#dec-420-06) | Необходимо / достаточно | «Необходимо» по элементу, «Достаточно» по набору (ISO/IEC/IEEE 29148 §5.2.5/§5.2.6) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-07](2026-10-standards-page-rfc.md#dec-420-07) | Классы расхождения | На странице С0–С4, как в стандарте раздела 1, вместо S1–S3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
-| [RFC-420-DEC-08](2026-10-standards-page-rfc.md#dec-420-08) | Структура раздела 3 (v0.2) | Как в практике прогонов: ФТ-01, ФТ-02 … в смысловых блоках, формула BABOK; пункты раздела 5 — «5.N Название (ФТ-NN)»; НФТ — 4.1, 4.2 …. Черновики стандартов выравниваются по практике отдельной задачей | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-09](2026-10-standards-page-rfc.md#dec-420-09) | Аудитории | Рекомендация v0.2 — без мета-текста; адресат назван только там, где он часть стандарта. Вариант v0.1 (пометки адресата, «Кому что читать») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-10](2026-10-standards-page-rfc.md#dec-420-10) | Внедрение | Правка `site/` и тестов сайта отдельной задачей после принятия, по прототипу site-v2 ([BL-206](../../pr-ops/backlog-repository.md#bl-206-страницы-сайта-по-rfc-420-прототип-site-v2)) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-11](2026-10-standards-page-rfc.md#dec-420-11) | Решение на Г-W | Рекомендация v0.2 — не уточнять в рамках #420. Вариант v0.1 (единогласно по зонам; меняет контракт гейтов) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-12](2026-10-standards-page-rfc.md#dec-420-12) | Измеримые критерии Г-W | Рекомендация v0.2 — как в контракте. Вариант v0.1 (пороги Г-W.2–Г-W.4) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-13](2026-10-standards-page-rfc.md#dec-420-13) | Зоны сайта и Справочник | Шесть зон: О проекте, Каталог, Стандарты, Процессы (два сворачиваемых потока), Дашборд (только цифры), Справочник терминов со ссылками со всех страниц; без мета-текста | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-14](2026-10-standards-page-rfc.md#dec-420-14) | Полные названия разделов | ОРР — описание разрабатываемого решения; ФДР — функциональный дизайн решения; ТС — техническая спецификация; расхождения аббревиатур и расшифровок исправляются с меткой | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
-| [RFC-420-DEC-15](2026-10-standards-page-rfc.md#dec-420-15) | ТТЗ и ТЗ | Тендерное ТЗ принимается как есть и оценивается на исполнимость; ТЗ — результат BCREQ; стандарт ТТЗ — позже на странице «Стандарты» | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-01](2026-10-standards-page.md#dec-420-01) | Страница «Стандарты», верх (v0.2) | H1 «BCREQ — стандарт бизнес-спецификации на доработку системы», одна вводная фраза, «Введение. Структура документа» — перечень разделов и подразделов с коротким комментарием. Вариант v0.1 («Коротко», «Заказчику: что вы подписываете») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-02](2026-10-standards-page.md#dec-420-02) | Шаблон карточки (v0.2) | Семь блоков в одном порядке во всех карточках. Вариант v0.1 (девять блоков) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-03](2026-10-standards-page.md#dec-420-03) | Подразделы | Один подраздел — одна строка в «Составе»; в чек-листе один пункт — один подраздел | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-04](2026-10-standards-page.md#dec-420-04) | Основания глоссария | Шесть оснований; D0 «Справочник согласованных терминов Манго» на втором месте как заглушка; меняет стандарт раздела 1 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-05](2026-10-standards-page.md#dec-420-05) | Правило 5±2 | Рекомендация v0.2 — правило стандарта без изменений (3–7 ФТ верхнего уровня или обоснование). Вариант v0.1 (3–7 пунктов на каждом уровне) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-06](2026-10-standards-page.md#dec-420-06) | Необходимо / достаточно | «Необходимо» по элементу, «Достаточно» по набору (ISO/IEC/IEEE 29148 §5.2.5/§5.2.6) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-07](2026-10-standards-page.md#dec-420-07) | Классы расхождения | На странице С0–С4, как в стандарте раздела 1, вместо S1–S3 | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420) | `proposed` | — |
+| [RFC-420-DEC-08](2026-10-standards-page.md#dec-420-08) | Структура раздела 3 (v0.2) | Как в практике прогонов: ФТ-01, ФТ-02 … в смысловых блоках, формула BABOK; пункты раздела 5 — «5.N Название (ФТ-NN)»; НФТ — 4.1, 4.2 …. Черновики стандартов выравниваются по практике отдельной задачей | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-09](2026-10-standards-page.md#dec-420-09) | Аудитории | Рекомендация v0.2 — без мета-текста; адресат назван только там, где он часть стандарта. Вариант v0.1 (пометки адресата, «Кому что читать») отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-10](2026-10-standards-page.md#dec-420-10) | Внедрение | Правка `site/` и тестов сайта отдельной задачей после принятия, по прототипу site-v2 ([BL-206](../../pr-ops/backlog-repository.md#bl-206-страницы-сайта-по-rfc-420-прототип-site-v2)) | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-11](2026-10-standards-page.md#dec-420-11) | Решение на Г-W | Рекомендация v0.2 — не уточнять в рамках #420. Вариант v0.1 (единогласно по зонам; меняет контракт гейтов) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-12](2026-10-standards-page.md#dec-420-12) | Измеримые критерии Г-W | Рекомендация v0.2 — как в контракте. Вариант v0.1 (пороги Г-W.2–Г-W.4) отозван автором в v0.2, ждёт решения владельца | [постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420); [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-13](2026-10-standards-page.md#dec-420-13) | Зоны сайта и Справочник | Шесть зон: О проекте, Каталог, Стандарты, Процессы (два сворачиваемых потока), Дашборд (только цифры), Справочник терминов со ссылками со всех страниц; без мета-текста | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-14](2026-10-standards-page.md#dec-420-14) | Полные названия разделов | ОРР — описание разрабатываемого решения; ФДР — функциональный дизайн решения; ТС — техническая спецификация; расхождения аббревиатур и расшифровок исправляются с меткой | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
+| [RFC-420-DEC-15](2026-10-standards-page.md#dec-420-15) | ТТЗ и ТЗ | Тендерное ТЗ принимается как есть и оценивается на исполнимость; ТЗ — результат BCREQ; стандарт ТТЗ — позже на странице «Стандарты» | [комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) | `proposed` | — |
 
 
 ## Поток BCREQ: процессы, стандарты, промпты (источник: issue #427)
@@ -363,18 +364,18 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   RFC-GOV-D4…D6 (контракты) в статусе `proposed` по итогам issue #101 / PR #102.
 - **2026-06-17** — добавлены RFC-SYNC-004…IW (сверка с Хабом) и RFC-HUB-001/002
   (передача знаний в Хаб) в статусе `proposed` по итогам issue #105 (синхронизация
-  контрактов с Хабом). Реестр привязан к общему [`rfc-process.md`](rfc-process.md).
+  контрактов с Хабом). Реестр привязан к общему [`2026-06-rfc-process.md`](2026-06-rfc-process.md).
 - **2026-06-17** — добавлены RFC-1025-P1…P5 (промпты) в статусе `proposed` по
   итогам эксперимента BCREQ-1025 (issue #107). Полный анализ —
   [`runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md`](../../runs/2026/RUN-0010/outputs/analysis-bcreq-1025-2026-06-17.md);
-  RFC-документ — [`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`](prompt-improvement-bcreq-1025-proposal.md).
+  RFC-документ — [`docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md`](2026-06-prompt-improvement-bcreq-1025-proposal.md).
 - **2026-06-18** — добавлены RFC-MCH-P1…P3 (промпты) в статусе `proposed` по
   итогам эксперимента «Многоканальная нагрузка агента» (issue #109). RFC-документ —
-  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](prompt-improvement-multichannel-proposal.md).
+  [`docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md`](2026-06-prompt-improvement-multichannel-proposal.md).
   P1 — повтор паттернов Б1/Б5 из BCREQ-1025 (рекомендация объединить с RFC-1025-P1).
 - **2026-10-23** — добавлены RFC-387-01…07 в статусе `proposed` по итогам issue #387
   (мета-стандарты разделов BCREQ, PR #389). RFC-документ —
-  [`docs/rfc/2026-10-bcreq-meta-standards-rfc.md`](2026-10-bcreq-meta-standards-rfc.md);
+  [`docs/rfc/2026-10-bcreq-meta-standards.md`](2026-10-bcreq-meta-standards.md);
   решение — [ADR-012](../adr/2026-10-adr-012-bcreq-meta-standards.md).
 - **2026-10-31** — добавлены RFC-409-DEC-01…10 в статусе `proposed` по итогам
   аудита issue #409 (PR #410). RFC-документ —
@@ -401,7 +402,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   рекомендации REC-417-01…06 добавлены в статусе `proposed`.
 - **2026-10-31** — добавлены RFC-420-DEC-01…12 в статусе `proposed` по итогам
   issue #420 (PR #422). RFC-документ —
-  [`docs/rfc/2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.1; анализ —
+  [`docs/rfc/2026-10-standards-page.md`](2026-10-standards-page.md) v0.1; анализ —
   [`docs/analysis/2026-10-31-standards-page-review.md`](../analysis/2026-10-31-standards-page-review.md).
 - **2026-11-01** — по ревью владельца в PR #422: RFC #420 v0.2; строки
   RFC-420-DEC-01…12 переписаны под v0.2 (отозванные автором варианты v0.1
@@ -486,10 +487,33 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Документ | Суть предложения | Источник-сигнал | Статус | PR реализации |
 | --- | --- | --- | --- | --- | --- |
-| [RFC-TTZ-001](2026-11-ttz-feasibility-flow.md) | ТТЗ — оценка исполнимости тендерных ТЗ | Полная постановка, 8 RUN и 4 PDF (только форма/явные комментарии БА), many-to-many внешних понятий и продуктов, мета-модель без изменения, отчётность, F1+F2, ручной пилот → автоматизация; BL-133/BL-164 и BL-176…BL-178 | [#466](https://github.com/G-Ivan-A/mango_ba_prompts/issues/466), каркас #427 | `proposed` | [PR #467](https://github.com/G-Ivan-A/mango_ba_prompts/pull/467): проект и три подраздела сайта 2.8.0; деплой ручной, не выполнен |
+| [RFC-TTZ-001](2026-11-ttz-feasibility-flow.md) | ТТЗ — оценка исполнимости тендерных ТЗ | v0.2 (#470): LT-01…LT-10, оценка пробы, Р-ТТЗ-4/5. Полная постановка, 8 RUN и 4 PDF (только форма/явные комментарии БА), many-to-many внешних понятий и продуктов, мета-модель без изменения, отчётность, F1+F2, ручной пилот → автоматизация; BL-133/BL-164 и BL-176…BL-178 | [#466](https://github.com/G-Ivan-A/mango_ba_prompts/issues/466), каркас #427 | `proposed` | [PR #467](https://github.com/G-Ivan-A/mango_ba_prompts/pull/467): проект и три подраздела сайта 2.8.0; деплой ручной, не выполнен |
 
 ## Декомпозиция A-IN (issue #468)
 
 | RFC | Суть | Статус | Реализация |
 | --- | --- | --- | --- |
-| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 шага, evidence/вопросы/гипотезы до раздела 2, retrieval loop, роли, бюджет, производство; v0.3 — продолжение 1135, методология, P01…P20 и сохранение прежней практики (§2.3…2.6) | `proposed` | [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469); сайт 2.8.1 подготовлен, промпты не произведены; Т-11…13 выполнены, BL-179 review, Р-AIN-1/2 на рассмотрении; BL-180/175/232 без изменений |
+| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 шага, evidence/вопросы/гипотезы до раздела 2, retrieval loop, роли, бюджет, производство; v0.3 — продолжение 1135, методология, P01…P20 и сохранение прежней практики (§2.3…2.6); v0.4 (#470) — поведение LLM в чате LE-01…LE-20, метрики предсказуемости, Р-AIN-3 | `proposed` | [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469); сайт 2.8.1 подготовлен, промпты не произведены; Т-11…13 выполнены, BL-179 review, Р-AIN-1/2 на рассмотрении; BL-180/175/232 без изменений |
+
+## Журнал переименований `docs/rfc` (issue #470)
+
+Имена приведены к правилу `YYYY-MM-name.md`, реестр — к исключению `*-registry.md`.
+Месяц взят из даты создания файла в git. Содержание файлов при переименовании не
+менялось. Старые адреса со страницы `blob/main/...` и внешние ссылки на них теперь
+ведут в никуда: ищите новый путь в этой таблице. Ссылки с закреплённым SHA работают
+и остаются как есть.
+
+| Старый путь | Новый путь |
+| --- | --- |
+| `docs/rfc/rfc-register.md` | [`docs/rfc/rfc-registry.md`](rfc-registry.md) |
+| `docs/rfc/rfc-process.md` | [`docs/rfc/2026-06-rfc-process.md`](2026-06-rfc-process.md) |
+| `docs/rfc/rfc-to-hub-001-knowledge-transfer.md` | [`docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md`](2026-06-rfc-to-hub-001-knowledge-transfer.md) |
+| `docs/rfc/rfc-to-hub-002-prompt-debugging-process.md` | [`docs/rfc/2026-06-rfc-to-hub-002-prompt-debugging-process.md`](2026-06-rfc-to-hub-002-prompt-debugging-process.md) |
+| `docs/rfc/prompt-improvement-bcreq-1025-proposal.md` | [`docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md`](2026-06-prompt-improvement-bcreq-1025-proposal.md) |
+| `docs/rfc/prompt-improvement-multichannel-proposal.md` | [`docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md`](2026-06-prompt-improvement-multichannel-proposal.md) |
+| `docs/rfc/2026-10-bcreq-meta-standards-rfc.md` | [`docs/rfc/2026-10-bcreq-meta-standards.md`](2026-10-bcreq-meta-standards.md) |
+| `docs/rfc/2026-10-standards-page-rfc.md` | [`docs/rfc/2026-10-standards-page.md`](2026-10-standards-page.md) |
+| `docs/rfc/knowledge-transfer-to-hub/ba-ontology.md` | [`docs/rfc/knowledge-transfer-to-hub/2026-06-ba-ontology.md`](knowledge-transfer-to-hub/2026-06-ba-ontology.md) |
+| `docs/rfc/knowledge-transfer-to-hub/bcreq-process.md` | [`docs/rfc/knowledge-transfer-to-hub/2026-06-bcreq-process.md`](knowledge-transfer-to-hub/2026-06-bcreq-process.md) |
+| `docs/rfc/knowledge-transfer-to-hub/operations-taxonomy.md` | [`docs/rfc/knowledge-transfer-to-hub/2026-06-operations-taxonomy.md`](knowledge-transfer-to-hub/2026-06-operations-taxonomy.md) |
+| `docs/rfc/knowledge-transfer-to-hub/pages-ux.md` | [`docs/rfc/knowledge-transfer-to-hub/2026-06-pages-ux.md`](knowledge-transfer-to-hub/2026-06-pages-ux.md) |

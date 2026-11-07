@@ -14,7 +14,7 @@ rc=0
 mutate docs/analysis/2026-10-31-file-disposition-register.md 's/^| `docs` | 46 |/| `docs` | 47 |/' "register area count"
 mutate docs/rfc/2026-10-repository-modernization.md 's/F-01…F-20/F-01…F-19/' "stale finding range"
 mutate docs/rfc/2026-10-repository-modernization.md '0,/^## Summary/s//## Summary\n\nСм. T-10./' "undefined task id"
-mutate docs/rfc/rfc-register.md 's/#dec-03-видимость-f-05/#dec-03-видимость/' "broken DEC anchor"
+mutate docs/rfc/rfc-registry.md 's/#dec-03-видимость-f-05/#dec-03-видимость/' "broken DEC anchor"
 mutate docs/audit/2026-10-31-repository-audit.md 's/233$/234/;s/^   актуальны, 113/   актуальны, 114/' "audit total drift"
 mutate docs/analysis/2026-10-31-follow-up-tasks.md 's#(\.\./audit/#(https://github.com/konard/G-Ivan-A-mango_ba_prompts/blob/x/docs/audit/#' "fork link"
 mutate docs/analysis/2026-10-31-follow-up-tasks.md 's/^updated: 2026-10-31/updated: 2026-10-31\nai-generated: true/' "forbidden ai-generated field"

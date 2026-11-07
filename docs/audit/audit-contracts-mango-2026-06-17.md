@@ -9,7 +9,7 @@ related_issues:
 related_artifacts:
   - "docs/audit/audit-hub-2026-06-17.md"
   - "pr-ops/sync-matrix-2026-06-17.md"
-  - "docs/rfc/rfc-process.md"
+  - "docs/rfc/2026-06-rfc-process.md"
   - "pr-ops/artifact-map.md"
 ---
 
@@ -103,7 +103,7 @@ related_artifacts:
 | [`pr-ops/artifact-map.md`](../../pr-ops/artifact-map.md) | навигация | Локальный (адаптация Хаба) | Да — Хаб `pr-ops/artifact-map.md` | **Частично** (Smart Sync) | Уже синхронизирован (см. `source_hub` в frontmatter). |
 | [`.archive/ai-rules/agent-onboarding-protocol_old.md`](../../.archive/ai-rules/agent-onboarding-protocol_old.md) | исполнимый контракт | Локальный | Да — Хаб одноимённый эталон | **Частично** (Smart Sync) | Эталон исполнимого контракта Хаба, адаптирован. |
 | [`standards/prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) | процесс | **Локальный** | Нет аналога | **Передача знаний** | Создан в issue #101; уникальный — кандидат на RFC в Хаб (ФТ-4/ФТ-5). |
-| [`docs/rfc/rfc-register.md`](../rfc/rfc-register.md) | реестр | Локальный | Частично — Хаб `knowledge-lifecycle-proposal.md` (lifecycle) | **Частично** (интеграция) | Реестр RFC привязывается к lifecycle Хаба (см. `rfc-process.md`). |
+| [`docs/rfc/rfc-registry.md`](../rfc/rfc-registry.md) | реестр | Локальный | Частично — Хаб `knowledge-lifecycle-proposal.md` (lifecycle) | **Частично** (интеграция) | Реестр RFC привязывается к lifecycle Хаба (см. `2026-06-rfc-process.md`). |
 | [`docs/audit/audit-contracts-2026-06-17.md`](audit-contracts-2026-06-17.md) | аудит | Локальный | — | **Нет** | Аудит по issue #101 (отладка промптов), исторический. |
 | [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md) | трекер | Локальный | Да — Хаб `governance/backlog.md` | **Частично** (Smart Sync) | Локальные открытые вопросы; формат из Хаба. |
 | [`pr-ops/migration-manifest.md`](../../pr-ops/migration-manifest.md), [`migration-phase1-issues.md`](../../pr-ops/migration-phase1-issues.md), [`migration-issues-registry.md`](../../pr-ops/migration-issues-registry.md) | миграция | Локальный | — | **Нет** | Снимки миграции из Хаба; исторический контекст. |
@@ -120,7 +120,7 @@ related_artifacts:
 | **Передача знаний → Хаб (ФТ-5)** | ADR #003 (онтология), #009 (BCREQ), #010 (Pages UX), prompt-debugging-process | Подготовить документы передачи знаний + RFC в Хаб. |
 | **Частичная сверка с Хабом** | ADR #004, #005, #007, #008, prompt-standard, pattern-standard, industry-standards | Сверить, при расхождении — **RFC, не прямая правка**. |
 | **Smart Sync из Хаба** | GLOSSARY, AI_GOVERNANCE, CONTRIBUTING, artifact-map, AI_QUICK_RULES, handover, BACKLOG, session-digests, .hub-profile | Источник истины — Хаб; обновлять осознанным Smart Sync. |
-| **Интеграция процесса Хаба** | rfc-register → lifecycle Хаба | См. [`rfc-process.md`](../rfc/rfc-process.md). |
+| **Интеграция процесса Хаба** | rfc-register → lifecycle Хаба | См. [`2026-06-rfc-process.md`](../rfc/2026-06-rfc-process.md). |
 
 ## 5. Вывод
 
@@ -137,5 +137,5 @@ related_artifacts:
    источник истины Хаб, обновляются Smart Sync.
 
 Ни один контракт не требует немедленной правки в рамках этой задачи: расхождения
-оформляются как RFC (см. [`rfc-process.md`](../rfc/rfc-process.md) и
+оформляются как RFC (см. [`2026-06-rfc-process.md`](../rfc/2026-06-rfc-process.md) и
 [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md)).

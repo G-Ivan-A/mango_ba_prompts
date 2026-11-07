@@ -7,7 +7,7 @@ scope: governance
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
-  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md"
   - "pr-ops/sync-matrix-2026-06-17.md"
   - "docs/rfc-hub-integration.md"
 ---
@@ -22,7 +22,7 @@ related_artifacts:
 >
 > **Статус.** Документы передачи — **предложения**. Сам перенос — отдельная
 > follow-up задача и решение пользователя/Хаба
-> ([`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)).
+> ([`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../2026-06-rfc-to-hub-001-knowledge-transfer.md)).
 > До утверждения практики остаются локальными контрактами Mango.
 
 ## Как выявлены уникальные практики
@@ -38,13 +38,13 @@ related_artifacts:
 
 | Практика | ADR / стандарт | Документ передачи | Почему полезно другим |
 | --- | --- | --- | --- |
-| Онтология БА (Артефакт↔Процесс↔Операция) | [ADR #003](../../adr/003-ba-ontology.md) | [`ba-ontology.md`](ba-ontology.md) | переиспользуемая модель графа знаний для любого BA-/knowledge-проекта |
-| Таксономия когнитивных операций БА | [ADR #004](../../adr/004-operations-taxonomy.md) | [`operations-taxonomy.md`](operations-taxonomy.md) | маппинг операций на BABOK/ISO — общий язык для BA-команд |
-| Процесс формирования BCREQ (human gates) | [ADR #009](../../adr/009-bcreq-formation-process.md) | [`bcreq-process.md`](bcreq-process.md) | каркас многоуровневого процесса с human-in-the-loop |
-| UX дерева процессов GitHub Pages | [ADR #010](../../adr/010-pages-ux.md) | [`pages-ux.md`](pages-ux.md) | паттерн «слой данных / слой отображения» для документ-сайтов |
+| Онтология БА (Артефакт↔Процесс↔Операция) | [ADR #003](../../adr/003-ba-ontology.md) | [`2026-06-ba-ontology.md`](2026-06-ba-ontology.md) | переиспользуемая модель графа знаний для любого BA-/knowledge-проекта |
+| Таксономия когнитивных операций БА | [ADR #004](../../adr/004-operations-taxonomy.md) | [`2026-06-operations-taxonomy.md`](2026-06-operations-taxonomy.md) | маппинг операций на BABOK/ISO — общий язык для BA-команд |
+| Процесс формирования BCREQ (human gates) | [ADR #009](../../adr/009-bcreq-formation-process.md) | [`2026-06-bcreq-process.md`](2026-06-bcreq-process.md) | каркас многоуровневого процесса с human-in-the-loop |
+| UX дерева процессов GitHub Pages | [ADR #010](../../adr/010-pages-ux.md) | [`2026-06-pages-ux.md`](2026-06-pages-ux.md) | паттерн «слой данных / слой отображения» для документ-сайтов |
 
 > Процесс отладки промптов — тоже уникальная практика, но передаётся отдельным RFC
-> [`rfc-to-hub-002-prompt-debugging-process.md`](../rfc-to-hub-002-prompt-debugging-process.md)
+> [`2026-06-rfc-to-hub-002-prompt-debugging-process.md`](../2026-06-rfc-to-hub-002-prompt-debugging-process.md)
 > (он про процесс, а не про BA-контент).
 
 ## Формат документа передачи

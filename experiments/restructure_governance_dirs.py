@@ -44,12 +44,12 @@ MOVES = {
     "governance/agent-onboarding-protocol.md": "ai-rules/agent-onboarding-protocol_old.md",
     "governance/agent-onboarding-protocol.executable.md": "ai-rules/agent-onboarding-protocol_old.executable.md",
     # RFC и их материалы → docs/rfc/ (как в Хабе).
-    "governance/rfc-process.md": "docs/rfc/rfc-process.md",
-    "governance/rfc-register.md": "docs/rfc/rfc-register.md",
-    "governance/rfc-to-hub-001-knowledge-transfer.md": "docs/rfc/rfc-to-hub-001-knowledge-transfer.md",
-    "governance/rfc-to-hub-002-prompt-debugging-process.md": "docs/rfc/rfc-to-hub-002-prompt-debugging-process.md",
-    "governance/rfc/prompt-improvement-bcreq-1025-proposal.md": "docs/rfc/prompt-improvement-bcreq-1025-proposal.md",
-    "governance/rfc/prompt-improvement-multichannel-proposal.md": "docs/rfc/prompt-improvement-multichannel-proposal.md",
+    "governance/2026-06-rfc-process.md": "docs/rfc/2026-06-rfc-process.md",
+    "governance/rfc-registry.md": "docs/rfc/rfc-registry.md",
+    "governance/2026-06-rfc-to-hub-001-knowledge-transfer.md": "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md",
+    "governance/2026-06-rfc-to-hub-002-prompt-debugging-process.md": "docs/rfc/2026-06-rfc-to-hub-002-prompt-debugging-process.md",
+    "governance/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md": "docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md",
+    "governance/rfc/2026-06-prompt-improvement-multichannel-proposal.md": "docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md",
     "governance/knowledge-transfer-to-hub": "docs/rfc/knowledge-transfer-to-hub",
     # Аудиты → docs/audit/ (каталог уже есть локально и в Хабе).
     "governance/audit-contracts-2026-06-17.md": "docs/audit/audit-contracts-2026-06-17.md",
