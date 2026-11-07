@@ -254,8 +254,10 @@ class Backlog(unittest.TestCase):
             with self.subTest(mark=mark):
                 self.assertIn(mark, chain.group(1))
 
-    def test_deploy_task_targets_new_build(self):
-        self.assertRegex(self.entry, r"(?m)^\| BL-232 \|.*деплой 2\.7\.0")
+    def test_deploy_task_records_batch_decision(self):
+        # Issue #472 supersedes the per-task deployment requirement from #464.
+        self.assertRegex(self.entry, r"(?m)^\| BL-232 \|.*прод намеренно 2\.7\.0")
+        self.assertRegex(self.entry, r"(?m)^\| BL-232 \|.*пакетного деплоя.*комплексной приёмки")
 
 
 if __name__ == "__main__":
