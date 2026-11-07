@@ -111,11 +111,11 @@ RUN-0023…0029 датированы апрелем–маем, а зафикс�
 
 | Прогон | Урок → адресат | Статус |
 | --- | --- | --- |
-| RUN-0010 | `runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md` §«RFC на улучшение промптов»: RFC-1025-P1…P5 → `glossary-context-understanding-stepwise` / `fr-documentation-stepwise` / `constraints-documentation-stepwise` v0.1. Продублировано в `docs/rfc/rfc-register.md` | все `proposed` с 2026-06-17; «Промпты **не изменены** (остаются v0.1)». После #388 целевые промпты лежат в `prompts/archive/` |
+| RUN-0010 | `runs/2026/RUN-0010/outputs/2026-06-17-bcreq-1025-email-routing.md` §«RFC на улучшение промптов»: RFC-1025-P1…P5 → `glossary-context-understanding-stepwise` / `fr-documentation-stepwise` / `constraints-documentation-stepwise` v0.1. Продублировано в `docs/rfc/rfc-registry.md` | все `proposed` с 2026-06-17; «Промпты **не изменены** (остаются v0.1)». После #388 целевые промпты лежат в `prompts/archive/` |
 | RUN-0014 | `runs/2026/RUN-0014/feedback/ba-review.md` §«Что править» (6 правок, каждая закрывает Д-1…Д-5) → `prompts/archive/glossary-context-understanding-stepwise.md` v0.1 | статуса нет |
 | RUN-0018 | `runs/2026/RUN-0018/feedback/review-notes.md` §4 «Предложения по промпту `fr-validation-stepwise`» П1…П3 → Г6/Г7, v0.1 | статуса нет |
 
-Аналогично RUN-0011: RFC-MCH-P1…P3 в `docs/rfc/rfc-register.md`, все
+Аналогично RUN-0011: RFC-MCH-P1…P3 в `docs/rfc/rfc-registry.md`, все
 `proposed`. Итого 8 из 8 RFC, выведенных из прогонов, не реализованы.
 
 ## 4. Неуспешные применения (failed usages)
@@ -188,7 +188,7 @@ success_rate < 0.8, или есть реестр инцидентов.
 | # | Разрыв | Число | Доказательство |
 | --- | --- | --- | --- |
 | G-1 | Нет версии использованного промпта | В `related_artifacts` 20 прогонов ссылаются на `prompts/` — **0** с версией или SHA. Версия встречается в тексте файлов только у 5 прогонов (0010, 0014, 0018, 0023, 0028). 17 из 19 упомянутых промптов уже в `prompts/archive/` | `standards/runs-contract-standard.md` §metadata.yaml (поля нет) |
-| G-2 | Урок не адресован промпту | Секция уроков есть у 7 прогонов (0010, 0013, 0014, 0016, 0018, 0022, 0076). Путь к промпту — у 5. Путь + версия — у 3. Статус закрытия — только в `docs/rfc/rfc-register.md` (8 RFC из RUN-0010/0011, все `proposed`) | раздел 3 |
+| G-2 | Урок не адресован промпту | Секция уроков есть у 7 прогонов (0010, 0013, 0014, 0016, 0018, 0022, 0076). Путь к промпту — у 5. Путь + версия — у 3. Статус закрытия — только в `docs/rfc/rfc-registry.md` (8 RFC из RUN-0010/0011, все `proposed`) | раздел 3 |
 | G-3 | Нет обратной ссылки промпт → прогон (закрытие) | Обратная ссылка в `prompts/` есть на 6 прогонов. RUN-0001/0002/0003/0005 — это provenance `based_on` / `selftest_ref` архивных legacy-промптов, а не уроки. Урок закрыт ссылкой только для RUN-0075 и RUN-0076: `prompts/bcreq-constitution-governance-oneshot.md` §4.4 АД-1…АД-7 «выведены из 168 инцидентов прогона RUN-0075», плюс RUN-0076 SC-65. **L4: 0** | `runs_inventory.json` → `prompt_files_backlinking_run` |
 | G-4 | Контракт блокирует перенос урока | Границы прогона запрещают менять `prompts/`, а механизма «урок → backlog» нет. RUN-0020 сам называет правила БА «кандидатами на перенос в промпт» | `standards/runs-contract-standard.md` §Границы; B-068 `TODO` |
 | G-5 | Диалог не сохранён | Сырой экспорт / transcript в `inputs/` — у 17 из 78. Только внешняя ссылка — у 38. В 25 прогонах P2 диалога нет совсем, хотя эвристика `prompt-usage.md` насчитала там 319 меток `validation` (критика результата БА). Все 319 потеряны | `runs/2026/RUN-0030…0054/outputs/prompt-usage.md` |

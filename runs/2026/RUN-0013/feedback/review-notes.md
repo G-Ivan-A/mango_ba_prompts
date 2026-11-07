@@ -49,7 +49,7 @@ related_issues:
 1. **Нужен режим «правка согласованного документа»** с жёстким инвариантом
    «не трогать то, что не просили»: 37 итераций эпизода 7 — прямое следствие
    его отсутствия. Кандидат в RFC — расширение
-   [`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md).
+   [`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md).
 2. **Формат требований и уровни нумерации нужно перепроверять внутри промпта**
    (self-check перед выводом), а не полагаться на память модели в длинном
    контексте — дефекты 4 и 5 повторились в разных эпизодах.

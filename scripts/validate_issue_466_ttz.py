@@ -100,7 +100,7 @@ class TTZAcceptance(unittest.TestCase):
 
     def test_registered_proposal_and_release(self):
         self.assertIn("status: proposed", RFC.read_text().split("---", 2)[1])
-        for path in ("docs/rfc/rfc-register.md", "pr-ops/artifact-map.md", "standards/README.md"):
+        for path in ("docs/rfc/rfc-registry.md", "pr-ops/artifact-map.md", "standards/README.md"):
             self.assertIn(RFC.name, (ROOT / path).read_text())
         for number in (176, 177, 178):
             for path in ("pr-ops/BACKLOG.md", "pr-ops/backlog-ba-model.md"):

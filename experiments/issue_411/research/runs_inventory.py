@@ -251,7 +251,7 @@ def _scan_golden_inventory():
 
 
 def _scan_rfc_register():
-    t = read("docs/rfc/rfc-register.md")
+    t = read("docs/rfc/rfc-registry.md")
     return Counter(re.findall(r"runs/2026/(RUN-\d{4})", t))
 
 
@@ -441,7 +441,7 @@ def main():
     p("prompt version used recorded in run files:", [r["run_id"] for r in runs if r["prompt_version_used_lines"]])
     p("prompts/ files back-linking run:", {r["run_id"]: r["prompt_files_backlinking_run"] for r in runs if r["prompt_files_backlinking_run"]})
     p("issue-391 golden inventory rows:", {r["run_id"]: r["golden_inventory_391_rows"] for r in runs if r["golden_inventory_391_rows"]})
-    p("docs/rfc/rfc-register.md mentions:", {r["run_id"]: r["rfc_register_mentions"] for r in runs if r["rfc_register_mentions"]})
+    p("docs/rfc/rfc-registry.md mentions:", {r["run_id"]: r["rfc_register_mentions"] for r in runs if r["rfc_register_mentions"]})
     p("closed loop (L4):", [r["run_id"] for r in runs if r["closed_loop"]])
     p("dialog stored:", sum(r["dialog_stored"] for r in runs), "| structured error register:", sum(r["structured_error_register"] for r in runs))
     p("related prompts/ in metadata:", sum(bool(r["related_prompts"]) for r in runs),

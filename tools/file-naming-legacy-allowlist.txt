@@ -14,13 +14,3 @@ docs/adr/009-bcreq-formation-process.md
 docs/adr/010-pages-ux.md
 docs/analysis/experiment-1027-analysis.md
 docs/analysis/migration-strategy-rfc.md
-docs/rfc/knowledge-transfer-to-hub/ba-ontology.md
-docs/rfc/knowledge-transfer-to-hub/bcreq-process.md
-docs/rfc/knowledge-transfer-to-hub/operations-taxonomy.md
-docs/rfc/knowledge-transfer-to-hub/pages-ux.md
-docs/rfc/prompt-improvement-bcreq-1025-proposal.md
-docs/rfc/prompt-improvement-multichannel-proposal.md
-docs/rfc/rfc-process.md
-docs/rfc/rfc-register.md
-docs/rfc/rfc-to-hub-001-knowledge-transfer.md
-docs/rfc/rfc-to-hub-002-prompt-debugging-process.md

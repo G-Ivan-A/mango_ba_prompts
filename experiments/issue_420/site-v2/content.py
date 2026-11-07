@@ -3,7 +3,7 @@
 Single data source for:
 - the site-v2 prototype (build.py → out/, screenshots in docs/screenshots/issue-420-v2-*.png);
 - the Markdown copy of the Standards page (standards-page.md);
-- the RFC appendix (docs/rfc/2026-10-standards-page-rfc.md).
+- the RFC appendix (docs/rfc/2026-10-standards-page.md).
 
 Inline markup in strings:
 - [[ФТ]] or [[ФТ|ФТ-01]] — link to the Справочник term (key — term id or label);
@@ -64,7 +64,7 @@ GLOSSARY = [
      "Стандарт раздела 3", f"{REPO}/standards/bcreq-sections/03-functional-requirements.md", "doc"),
     ("d0", "D0", "Справочник согласованных терминов Манго",
      "Приоритетный источник терминов глоссария. Пока не заполнен: 0 терминов; место в модели зарезервировано.",
-     "RFC страницы «Стандарты»", f"{REPO}/docs/rfc/2026-10-standards-page-rfc.md", "doc"),
+     "RFC страницы «Стандарты»", f"{REPO}/docs/rfc/2026-10-standards-page.md", "doc"),
     ("tz", "ТЗ", "Техническое задание",
      "Документ для договора с Заказчиком, собранный из разделов BCREQ без рассуждений и комментариев. Не равно ТТЗ.",
      "Решение владельца, PR #422", "https://github.com/G-Ivan-A/mango_ba_prompts/pull/422", "doc"),

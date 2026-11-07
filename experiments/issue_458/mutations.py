@@ -19,7 +19,7 @@ M = [("runs/2026/RUN-0090/metadata.yaml", "verdict: partial-success", "verdict: 
      ("experiments/issue_458/preregistration.md", "**недоступен**", "доступен"),
      (RFC, "status: proposed", "status: accepted"),
      (RFC, "**не читая** RUN-0090", "RUN-0090"),
-     ("docs/rfc/rfc-register.md", "[PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |", "x |"),
+     ("docs/rfc/rfc-registry.md", "[PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |", "x |"),
      ("pr-ops/BACKLOG.md", "BL-156г — `DONE` (PR #451 слит", "BL-156г — `review` (PR #451"),
      ("pr-ops/BACKLOG.md", "BL-157г — `DONE` ([PR #459]", "BL-157г — `review` ([PR #459]"),
      ("pr-ops/BACKLOG.md", "| P1 | BL-157г | TODO |", "| P1 | BL-157г | DONE |"),

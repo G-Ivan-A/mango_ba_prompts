@@ -8,7 +8,7 @@
 * RFC в статусе ``proposed``, анализ в статусе knowledge-словаря; frontmatter
   обоих проходит валидатор Хаба; RFC начинается с «Кратко для руководителя»;
 * решения DEC-420-01…15 заякорены в RFC и зарегистрированы в
-  ``docs/rfc/rfc-register.md``; открытые вопросы Q1–Q10 на месте;
+  ``docs/rfc/rfc-registry.md``; открытые вопросы Q1–Q10 на месте;
 * v0.2 отвечает на тринадцать рисков владельца (PR #422): таблица рисков
   RFC ссылается на раздел каждого риска в анализе рисков; на страницах
   прототипа site-v2 нет запрещённых владельцем блоков («Коротко — за
@@ -39,10 +39,10 @@ from collections import Counter
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-RFC = ROOT / "docs/rfc/2026-10-standards-page-rfc.md"
+RFC = ROOT / "docs/rfc/2026-10-standards-page.md"
 ANALYSIS = ROOT / "docs/analysis/2026-10-31-standards-page-review.md"
 RISK_REVIEW = ROOT / "docs/analysis/2026-11-01-standards-page-risk-review.md"
-RFC_REGISTER = ROOT / "docs/rfc/rfc-register.md"
+RFC_REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 EXP = ROOT / "experiments/issue_420"
 FOCUS = EXP / "focus-group"
@@ -216,10 +216,10 @@ class StandardsPageRfcTest(unittest.TestCase):
             with self.subTest(decision=dec):
                 anchor = dec.lower()
                 self.assertIn(anchor, own)
-                self.assertIn(f"| [RFC-420-DEC-{dec[-2:]}](2026-10-standards-page-rfc.md#{anchor}) |",
+                self.assertIn(f"| [RFC-420-DEC-{dec[-2:]}](2026-10-standards-page.md#{anchor}) |",
                               register)
         head = register.split("\n---\n", 1)[0]
-        self.assertIn('"docs/rfc/2026-10-standards-page-rfc.md"', head)
+        self.assertIn('"docs/rfc/2026-10-standards-page.md"', head)
         self.assertIn("issues/420", head)
 
     def test_open_questions(self):

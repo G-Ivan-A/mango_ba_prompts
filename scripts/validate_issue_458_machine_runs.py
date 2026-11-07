@@ -131,7 +131,7 @@ class Runs(unittest.TestCase):
 class Rfc(unittest.TestCase):
     def test_status_proposed(self):
         self.assertRegex(read(RFC), r"(?m)^status: proposed$")
-        self.assertRegex(read("docs/rfc/rfc-register.md"), r"(?m)^\| \[RFC-MR-001\]\(.*\| proposed \| \[PR #459\]")
+        self.assertRegex(read("docs/rfc/rfc-registry.md"), r"(?m)^\| \[RFC-MR-001\]\(.*\| proposed \| \[PR #459\]")
 
     def test_baseline_is_not_acceptance(self):
         text = read(RFC)

@@ -11,7 +11,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/009-bcreq-formation-process.md"
   - "standards/bcreq-process-standard.md"
-  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: процесс формирования BCREQ (бизнес- и системных требований)
@@ -32,7 +32,7 @@ related_artifacts:
   задают: вертикаль (нотация с точками — иерархия детализации требований) и
   горизонталь (П1→П6). На воротах G1/G2/G3 человек подтверждает переход; неполнота
   явно помечается состоянием `needs-clarification` (связь с онтологией,
-  [`ba-ontology.md`](ba-ontology.md)).
+  [`2026-06-ba-ontology.md`](2026-06-ba-ontology.md)).
 - **Зачем.** Делает превращение «контекст → требования» воспроизводимым, с явным
   human-in-the-loop и без «тихого» проскакивания неполных мест.
 
@@ -67,5 +67,5 @@ related_artifacts:
 
 - ADR-носитель: [`docs/adr/009-bcreq-formation-process.md`](../../adr/009-bcreq-formation-process.md)
 - Стандарт: [`standards/bcreq-process-standard.md`](../../../standards/bcreq-process-standard.md)
-- Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
+- Umbrella-RFC: [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../2026-06-rfc-to-hub-001-knowledge-transfer.md)
 - Контракт Хаба (родственный): [`AI_GOVERNANCE.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/AI_GOVERNANCE.md)

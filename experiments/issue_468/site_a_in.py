@@ -4,6 +4,7 @@ import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 RFC = 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md'
+AUDIT = 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md'
 START = '        <!-- issue-468:start -->'
 END = '        <!-- issue-468:end -->'
 
@@ -20,6 +21,7 @@ def panel():
           </ol>
           <p>Если evidence недостаточно, возвращаемся к сбору и извлечению из БЗ. В память следующего шага переносится только согласованное БА, с происхождением и статусом гипотез.</p>
           <p><a href="{RFC}" target="_blank" rel="noreferrer">Подробный RFC: контракты, возвраты, роли, бюджет и план производства промптов</a></p>
+          <p id="rfc-audit-link"><a href="{AUDIT}" target="_blank" rel="noreferrer">Аудит RFC: что уже проверено, какие риски поведения модели учтены и что решить дальше</a></p>
         </details>
 {END}
 '''

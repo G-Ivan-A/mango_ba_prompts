@@ -39,7 +39,7 @@ related_issues:
 этапе в [RUN-0011](../../RUN-0011/outputs/README.md)
 ([issue #109](https://github.com/G-Ivan-A/mango_ba_prompts/issues/109)) — там
 зафиксирован разбор сырого требования и предложения по улучшению промптов
-([`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md)).
+([`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md)).
 RUN-0013 — продолжение той же темы до состояния документа ФТ и сценарной
 матрицы.
 

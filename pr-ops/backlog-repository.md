@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.4
-updated: 2026-11-06
+version: 1.5
+updated: 2026-11-07
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -189,9 +189,9 @@ CH-6 спорит со статусом репозитория (КФ-10).
 **Источники.**
 - [Issue #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420),
   раздел «Описание issue»: “В рамках жтой задачи не меняем страницы сайта”
-- [`docs/rfc/2026-10-standards-page-rfc.md`](../docs/rfc/2026-10-standards-page-rfc.md#dec-420-10),
+- [`docs/rfc/2026-10-standards-page.md`](../docs/rfc/2026-10-standards-page.md#dec-420-10),
   раздел «DEC-420-10»: “Отдельная задача на правку `site/` и тестов сайта по прототипу site-v2”
-- [`docs/rfc/2026-10-standards-page-rfc.md`](../docs/rfc/2026-10-standards-page-rfc.md#dec-420-13),
+- [`docs/rfc/2026-10-standards-page.md`](../docs/rfc/2026-10-standards-page.md#dec-420-13),
   раздел «DEC-420-13»: “Справочник терминов и ссылки на него со всех страниц”
 
 **Зависит от.** BL-201, BL-205.
@@ -343,11 +343,11 @@ OpenCode выбран), но рекомендации REC-417 и решения 
 Р-02; закрытые RFC — `rejected` или `implemented` со ссылкой.
 
 **Источники.**
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#стратегия-автоматизации-ба-команды-крупных-клиентов-источник-issue-415),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#стратегия-автоматизации-ба-команды-крупных-клиентов-источник-issue-415),
   раздел «Стратегия автоматизации БА»: “OpenCode выбран владельцем (вариант Б, #417)”
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#открытые-rfc-по-промптам-источник-эксперимент-bcreq-1025-issue-107),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#открытые-rfc-по-промптам-источник-эксперимент-bcreq-1025-issue-107),
   раздел «Открытые RFC по промптам (BCREQ-1025)»: “Промпты не изменены (остаются v0.1)”
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#статусы),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#статусы),
   раздел «Статусы»: “принят к реализации”
 
 **Зависит от.** BL-107, BL-201.
@@ -359,11 +359,11 @@ OpenCode выбран), но рекомендации REC-417 и решения 
 
 ### BL-225. Легаси-именование хронологических файлов (S-001)
 
-**Почему.** 26 файлов `docs/adr`, `docs/rfc`, `docs/analysis` названы не по
-стандарту именования. Переименование ломает внутренние ссылки и внешние
+**Почему.** Файлы `docs/adr` и `docs/analysis` названы не по стандарту именования
+(срез `docs/rfc` переименован прямым поручением #470). Переименование ломает внутренние ссылки и внешние
 permalink'и, а пользы для БА не даёт.
 
-**Что меняется.** На этом шаге ничего: задача в Icebox. Allowlist легаси
+**Что меняется.** На этом шаге ничего сверх #470: остаток в Icebox. Allowlist легаси
 остаётся замороженным. Возврат — если переименование понадобится для
 переноса в другой репозиторий.
 

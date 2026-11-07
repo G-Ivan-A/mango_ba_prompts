@@ -1,7 +1,7 @@
 """Issue #464: реестр RFC, версия сайта. Одноразовая правка."""
 from _edit import edit
 
-edit("docs/rfc/rfc-register.md", [
+edit("docs/rfc/rfc-registry.md", [
     ("version: 0.21\nupdated: 2026-11-05\n", "version: 0.22\nupdated: 2026-11-05\n"),
     ("- **2026-11-05** — issue #454 (PR #455): добавлен RFC-PUB-001 в статусе\n",
      "- **2026-11-05** — issue #464 (PR #465): RFC #427 v0.7, поправка 0.7 — шаг Ш-А, порядок сбора\n"

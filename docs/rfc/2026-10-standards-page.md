@@ -417,10 +417,10 @@ v0.2 фокус-группой не проверялась: владелец о�
 
 | Артефакт | Изменение | Когда |
 | --- | --- | --- |
-| `docs/rfc/2026-10-standards-page-rfc.md` | v0.2 | Этот PR |
+| `docs/rfc/2026-10-standards-page.md` | v0.2 | Этот PR |
 | `docs/analysis/2026-11-01-standards-page-risk-review.md` | Анализ 13 рисков владельца и ревью с позиции ИИ-инженера | Этот PR |
 | `docs/analysis/2026-10-31-standards-page-review.md` | Анализ v0.1; ссылка на анализ рисков | Этот PR |
-| `docs/rfc/rfc-register.md` | Строки DEC-420-01…15 | Этот PR |
+| `docs/rfc/rfc-registry.md` | Строки DEC-420-01…15 | Этот PR |
 | `experiments/issue_420/site-v2/` | Прототип всех страниц | Этот PR |
 | `standards/bcreq-sections/README.md`, `05-solution-description.md`, `03-functional-requirements.md`, `08-additional-sections.md`, `README.md` | Полные названия, метки отклонений от практики, область ТТЗ | Этот PR |
 | `docs/rfc/2026-10-ba-automation-strategy.md` | Явные пометки о «14 промптах» (риск 11) | Этот PR |
@@ -457,7 +457,7 @@ v0.2 фокус-группой не проверялась: владелец о�
 
 `proposed` (этот PR) → `in-review` (комментарии владельца в PR или issue)
 → `accepted` или `rejected` по каждому DEC-420 → `implemented` после
-задачи внедрения. Порядок — [RFC-процесс](rfc-process.md).
+задачи внедрения. Порядок — [RFC-процесс](2026-06-rfc-process.md).
 
 ## Open Questions
 
@@ -479,7 +479,7 @@ v0.2 фокус-группой не проверялась: владелец о�
 - [Анализ рисков v0.2](../analysis/2026-11-01-standards-page-risk-review.md)
 - [Анализ v0.1](../analysis/2026-10-31-standards-page-review.md)
 - [Мета-стандарты разделов BCREQ](../../standards/bcreq-sections/README.md),
-  [RFC мета-стандартов #387](2026-10-bcreq-meta-standards-rfc.md)
+  [RFC мета-стандартов #387](2026-10-bcreq-meta-standards.md)
 - [Контракт стадий и гейтов BCREQ](../contracts/bcreq-stage-gates.md)
 - [ADR-003: онтология БА](../adr/003-ba-ontology.md)
 - [RFC модернизации репозитория, DEC-11](2026-10-repository-modernization.md#dec-11-структура-сайта-413)
@@ -831,7 +831,7 @@ v0.2 фокус-группой не проверялась: владелец о�
 | ТС | Техническая спецификация | Уровень 2 ОРР для команды разработки: изменения сервисов, контрактов API и данных. Добавляется по решению БА. | [Стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md) |
 | UC | Пользовательский сценарий (use case) | Взаимодействие участника с системой ради наблюдаемого результата: предусловие, основной ход, альтернативы, результат. | [Стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md) |
 | В-Д / В-Н | Вариант документа: доработка / новая разработка | В-Д — доработка существующего продукта, описывается только дельта (по умолчанию). В-Н — новый сервис, описывается полный набор функций. | [Стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md) |
-| D0 | Справочник согласованных терминов Манго | Приоритетный источник терминов глоссария. Пока не заполнен: 0 терминов; место в модели зарезервировано. | [RFC страницы «Стандарты»](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-standards-page-rfc.md) |
+| D0 | Справочник согласованных терминов Манго | Приоритетный источник терминов глоссария. Пока не заполнен: 0 терминов; место в модели зарезервировано. | [RFC страницы «Стандарты»](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-10-standards-page.md) |
 | ТЗ | Техническое задание | Документ для договора с Заказчиком, собранный из разделов BCREQ без рассуждений и комментариев. Не равно ТТЗ. | [Решение владельца, PR #422](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422) |
 | ТТЗ | Тендерное техническое задание | Документ Заказчика в его собственном формате. Принимается как есть для оценки исполнимости, а не для описания доработок. Не равно ТЗ. | [Решение владельца, PR #422](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422) |
 | **Процесс и согласование** | | | |

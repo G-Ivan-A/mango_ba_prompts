@@ -228,7 +228,7 @@ flowchart LR
   `docs/site-access.md`. Кандидаты в архив: `docs/.gitkeep`,
   `docs/adr/.gitkeep`, `docs/ba-process/README.md`,
   `docs/task-for-konard-template.md`. Обновление:
-  `docs/rfc-hub-integration.md`, `docs/rfc/rfc-register.md`,
+  `docs/rfc-hub-integration.md`, `docs/rfc/rfc-registry.md`,
   `prompts/README.md`. Третий файл `docs/contracts/` (`kb-citations.md`)
   уходит в T-05.
 - **Особенность.** Перенос делается с журналом `path_migrations` в
@@ -242,7 +242,7 @@ flowchart LR
   - [ ] Каталога `docs/contracts/` нет. Все ссылки на перенесённые файлы
     обновлены, генератор сайта собирается.
   - [ ] В корне `docs/` — только файлы, описанные в `docs/README.md`.
-  - [ ] В `docs/rfc/rfc-register.md` есть все RFC каталога `docs/rfc/`.
+  - [ ] В `docs/rfc/rfc-registry.md` есть все RFC каталога `docs/rfc/`.
     `docs/rfc-hub-integration.md` перенесён в `docs/rfc/` или помечен
     историческим.
   - [ ] `make validate-structure` и `make validate-full` проходят.
@@ -255,7 +255,7 @@ flowchart LR
 - **Объём (41).** Восемь ADR `docs/adr/003`…`010`: у семи нужно решение
   accept/reject/supersede, `009-bcreq-formation-process.md` — кандидат в
   архив. Плюс `docs/rfc/knowledge-transfer-to-hub/` (5),
-  `docs/rfc/rfc-to-hub-001-knowledge-transfer.md`,
+  `docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md`,
   `docs/superpowers/plans/` (2), `pr-ops/migration-*` (3),
   `pr-ops/session-digests.md`, `pr-ops/sync-matrix-2026-06-17.md`,
   `prompts/asr-ingestion-legacy.md`,

@@ -105,7 +105,7 @@ related_issues:
   что глоссарий должен фиксироваться до Раздела 4 и после этого быть
   неизменяемым.
 - **Связь с RUN-0011.** Наблюдения подтверждают и расширяют
-  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/prompt-improvement-multichannel-proposal.md),
+  [`docs/rfc/prompt-improvement-multichannel-proposal.md`](../../../../docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md),
   сформированный по итогам [RUN-0011](../../RUN-0011/outputs/README.md).
 
 ## Оговорка о статусе данных

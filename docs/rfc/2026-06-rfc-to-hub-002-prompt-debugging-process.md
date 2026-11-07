@@ -9,7 +9,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
   - "standards/prompt-debugging-process.md"
-  - "docs/rfc/rfc-process.md"
+  - "docs/rfc/2026-06-rfc-process.md"
   - "docs/audit/audit-hub-2026-06-17.md"
   - "docs/rfc-hub-integration.md"
 ---

@@ -50,7 +50,7 @@ BL-151 и BL-152 по-прежнему ждут Р-14, BL-125 — триггер
 | `docs/ba-processes/bcreq-manual-process.md` | Часть 0 «Поток BCREQ: процессы, шаги, гейты»; B3 — тип гейта; К- ID |
 | `docs/contracts/bcreq-stage-gates.md`, `bcreq-manual-state.md` | Тип и ключевость гейтов; К- ID |
 | `docs/rfc/2026-11-bcreq-flow-processes-prompts.md` | Поправка 0.4: гейт и типы, уточнение доступности BL-154/155 |
-| `docs/rfc/rfc-register.md` v0.12 | PR #431 в реализации RFC-427-DEC-05/09/10; запись в истории |
+| `docs/rfc/rfc-registry.md` v0.12 | PR #431 в реализации RFC-427-DEC-05/09/10; запись в истории |
 | `standards/bcreq-manual-classes/*` | К-01…К-39, `flow_step`, `previous_id`; каталог v0.2 |
 | `pr-ops/BACKLOG.md` v1.3, `backlog-ba-model.md` | BL-150/153/154/155 → `review`; BL-159; коды И-, ТС-, З-, РТ- в таблице кодов |
 | `standards/README.md`, `pr-ops/artifact-map.md` | Регистрация словаря и реестра |

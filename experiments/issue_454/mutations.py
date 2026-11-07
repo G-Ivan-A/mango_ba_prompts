@@ -23,7 +23,7 @@ M = [(B, "| BL-232 | [Публикация сайта на прод и приё�
      (RFC, "(BL-232), повторить аудит", ", повторить аудит"),
      (RFC, "| DEC-454-03 |", "| DEC-454-30 |"),
      ("site/data/test-kit.json", '"step": "Ш-Р', '"step": "Ш-Х'),
-     ("docs/rfc/rfc-register.md", "| [RFC-PUB-001](2026-11-bcreq-prompts-publication-roadmap.md) |", "| RFC-PUB-001 |"),
+     ("docs/rfc/rfc-registry.md", "| [RFC-PUB-001](2026-11-bcreq-prompts-publication-roadmap.md) |", "| RFC-PUB-001 |"),
      ("pr-ops/artifact-map.md", "`/docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md`", "`/docs/rfc/other.md`"),
      ("docs/rfc/2026-11-runtime-product-catalog-golden-set.md", "## 17. Поправка 0.8", "## 17. Поправка"),
      (RFC, "| DEC-454-07 |", "| DEC-454-70 |"),
