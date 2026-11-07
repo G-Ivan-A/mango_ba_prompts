@@ -1357,8 +1357,8 @@
         "runs/2026/RUN-0074/outputs/error-statistics.md:62 (C15=4)",
         "runs/2026/RUN-0076/outputs/prompt-improvements.md:32",
         "runs/2026/RUN-0026/feedback/ba-review-notes.md:26",
-        "docs/rfc/prompt-improvement-bcreq-1025-proposal.md (Б1)",
-        "docs/rfc/prompt-improvement-multichannel-proposal.md (М1)"
+        "docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md (Б1)",
+        "docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md (М1)"
       ],
       "cids": [
         "C15"
@@ -1383,7 +1383,7 @@
       },
       "examples": "Golden: GS-375-DLG-05 «product_class: contact-center» (C15).",
       "guard": "нет",
-      "old": "docs/rfc/prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/prompt-improvement-multichannel-proposal.md М1",
+      "old": "docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md М1",
       "notes": "Источники «old» — предложения RFC; принятие их как нормы не проверено (uncertain).",
       "degraded": true,
       "degraded_basis": [

@@ -11,8 +11,8 @@ related_issues:
 related_artifacts:
   - "docs/audit/audit-contracts-mango-2026-06-17.md"
   - "docs/audit/audit-hub-2026-06-17.md"
-  - "docs/rfc/rfc-process.md"
-  - "docs/rfc/rfc-register.md"
+  - "docs/rfc/2026-06-rfc-process.md"
+  - "docs/rfc/rfc-registry.md"
 ---
 
 # Матрица синхронизации mango_ba_prompts ↔ Хаб (2026-06-17)
@@ -23,7 +23,7 @@ related_artifacts:
 > что синхронизировать, что оставить локальным, где требуется RFC.
 >
 > **Правило синхронизации (критическое).** Если в Хабе есть аналог, но у нас иначе —
-> **не менять сразу**, а создать RFC ([`rfc-process.md`](../docs/rfc/rfc-process.md)). Если у
+> **не менять сразу**, а создать RFC ([`2026-06-rfc-process.md`](../docs/rfc/2026-06-rfc-process.md)). Если у
 > нас уникальная практика — подготовить **передачу знаний** в Хаб
 > ([`knowledge-transfer-to-hub/`](../docs/rfc/knowledge-transfer-to-hub/)). Все ссылки на Хаб —
 > permalink на снимок [`6ddffdf`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/tree/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf).
@@ -67,7 +67,7 @@ related_artifacts:
 | `pr-ops/session-digests.md` | `pr-ops/session-digests.md` | да | **Smart Sync ←** | — |
 | `.hub-profile.json` | формат Smart Sync (Хаб PR #208) | да | **Smart Sync ←** | — |
 | `standards/prompt-debugging-process.md` | — нет в Хабе | — | **Передача знаний →** | RFC-HUB-002 |
-| RFC-процесс (`docs/rfc/rfc-register.md`) | `knowledge-lifecycle-proposal.md` (lifecycle) | да (нужна привязка) | **Интегрировать** | см. `rfc-process.md` |
+| RFC-процесс (`docs/rfc/rfc-registry.md`) | `knowledge-lifecycle-proposal.md` (lifecycle) | да (нужна привязка) | **Интегрировать** | см. `2026-06-rfc-process.md` |
 | (нет) — архетип/структура | `htom-vs-spoke-clarification` (canonical), `repo-model.md`, `repository-archetypes` (PR #243) | — | **Следовать** (структура — PR #244) | — |
 | (нет) — issue lifecycle | `standards/issue-workflow.md` (7 статусов) | — | **Сверить → RFC** (опционально принять статусы) | RFC-SYNC-IW |
 
@@ -75,7 +75,7 @@ related_artifacts:
 
 ## 2. Реестр RFC синхронизации (открыт этой задачей)
 
-Эти RFC — **предложения сверки**, заведены в [`rfc-register.md`](../docs/rfc/rfc-register.md)
+Эти RFC — **предложения сверки**, заведены в [`rfc-registry.md`](../docs/rfc/rfc-registry.md)
 в статусе `proposed`. Контракты Mango в этой задаче **не меняются**; решение о
 правке — за пользователем (правило синхронизации).
 
@@ -97,8 +97,8 @@ related_artifacts:
 
 | RFC в Хаб | Практика Mango | Документ передачи |
 | --- | --- | --- |
-| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`rfc-to-hub-001-knowledge-transfer.md`](../docs/rfc/rfc-to-hub-001-knowledge-transfer.md) + `knowledge-transfer-to-hub/` |
-| RFC-HUB-002 | Процесс отладки промптов | [`rfc-to-hub-002-prompt-debugging-process.md`](../docs/rfc/rfc-to-hub-002-prompt-debugging-process.md) |
+| RFC-HUB-001 | Онтология БА (#003), таксономия (#004), BCREQ (#009), Pages UX (#010) | [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md) + `knowledge-transfer-to-hub/` |
+| RFC-HUB-002 | Процесс отладки промптов | [`2026-06-rfc-to-hub-002-prompt-debugging-process.md`](../docs/rfc/2026-06-rfc-to-hub-002-prompt-debugging-process.md) |
 
 ## 4. Что НЕ синхронизируется (осознанно локальное)
 

@@ -34,7 +34,7 @@ edit(RFC,
   "После ответа: BL-157а исполнена в PR #439, BL-156 — `TODO` (после\nBL-157а, отдельной постановкой), BL-157б — `deferred (triggered)` до\nBL-156 `DONE`."),
  ("**Порядок BL-157 и BL-156 — открытый вопрос.**", "**Порядок BL-157 и BL-156 — решён (П-П: BL-157 сначала).** До ответа:"),
 )
-REG = "docs/rfc/rfc-register.md"
+REG = "docs/rfc/rfc-registry.md"
 for n in ("04", "12"):
     resub(REG, rf"^(\| \[RFC-427-DEC-{n}\].*\| )`proposed` \| — \|$", rf"\1`accepted` ([Р-15]({C})) | — |")
 edit(REG, ("version: 0.15\n", "version: 0.16\n"))

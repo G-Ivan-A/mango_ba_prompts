@@ -13,7 +13,7 @@ related_artifacts:
   - "standards/bcreq-prompt-architecture.md"
   - "docs/contracts/bcreq-stage-gates.md"
   - "docs/analysis/2026-10-23-bcreq-standards-third-opinion.md"
-  - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
+  - "docs/rfc/2026-10-bcreq-meta-standards.md"
   - "docs/analysis/2026-10-23-prompts-catalog-audit.md"
   - "standards/bcreq-process-standard.md"
   - "experiments/issue_387/chat-2026-10-22-23-register.md"
@@ -64,7 +64,7 @@ related_artifacts:
 | [docs/contracts/bcreq-stage-gates.md](../contracts/bcreq-stage-gates.md) | Стадии и шаги, гейты Г-IN, Г-С1, Г-W с критериями и решающей ролью, правила возврата Г1–Г3, маппинг стандартов на стадии, связь с П1–П6. | 4 |
 | [standards/bcreq-prompt-architecture.md](../../standards/bcreq-prompt-architecture.md) | Промпт 0 (конституция), шаблон шага с блоком «Состояние BCREQ», stepwise / oneshot, слияния шагов М1–М4, 14 файлов набора, подтверждение структуры 2.1–2.14. | 9 |
 | [docs/analysis/2026-10-23-bcreq-standards-third-opinion.md](../analysis/2026-10-23-bcreq-standards-third-opinion.md) | Третье мнение по достаточности стека. | 6 |
-| [docs/rfc/2026-10-bcreq-meta-standards-rfc.md](../rfc/2026-10-bcreq-meta-standards-rfc.md) | RFC-387-01…07 с путями отката. | 10 |
+| [docs/rfc/2026-10-bcreq-meta-standards.md](../rfc/2026-10-bcreq-meta-standards.md) | RFC-387-01…07 с путями отката. | 10 |
 
 Ключевые решения:
 
@@ -119,8 +119,8 @@ related_artifacts:
 
 ## Связанные артефакты
 
-- RFC-387-01…07 — в [RFC-документе](../rfc/2026-10-bcreq-meta-standards-rfc.md)
-  и в [реестре RFC](../rfc/rfc-register.md).
+- RFC-387-01…07 — в [RFC-документе](../rfc/2026-10-bcreq-meta-standards.md)
+  и в [реестре RFC](../rfc/rfc-registry.md).
 - Процесс П1–П6 и гейты G1–G3 —
   [bcreq-process-standard](../../standards/bcreq-process-standard.md),
   носитель [ADR-009](009-bcreq-formation-process.md).

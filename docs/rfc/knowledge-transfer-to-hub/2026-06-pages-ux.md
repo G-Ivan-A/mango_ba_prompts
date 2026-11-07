@@ -11,7 +11,7 @@ related_issues:
 related_artifacts:
   - "docs/adr/010-pages-ux.md"
   - "standards/pages-ux-standard.md"
-  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: UX дерева процессов на GitHub Pages
@@ -64,5 +64,5 @@ related_artifacts:
 
 - ADR-носитель: [`docs/adr/010-pages-ux.md`](../../adr/010-pages-ux.md)
 - Стандарт: [`standards/pages-ux-standard.md`](../../../standards/pages-ux-standard.md)
-- Онтология (источник данных): [`ba-ontology.md`](ba-ontology.md)
-- Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
+- Онтология (источник данных): [`2026-06-ba-ontology.md`](2026-06-ba-ontology.md)
+- Umbrella-RFC: [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../2026-06-rfc-to-hub-001-knowledge-transfer.md)

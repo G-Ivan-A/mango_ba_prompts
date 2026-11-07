@@ -32,7 +32,7 @@ from validate_issue_415_strategy_rfc import (  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 RFC = ROOT / "docs/rfc/2026-10-ba-automation-strategy.md"
-REGISTER = ROOT / "docs/rfc/rfc-register.md"
+REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 ANALYSIS = ROOT / "docs/analysis/2026-10-31-industry-practice-check.md"
 CHANGELOG = ROOT / "CHANGELOG.md"
 ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"

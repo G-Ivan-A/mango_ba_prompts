@@ -303,7 +303,7 @@ class Chain(unittest.TestCase):
 class Registration(unittest.TestCase):
     def test_rfc_is_registered_and_linked(self):
         name = Path(RFC).name
-        self.assertIn(f"| [RFC-PUB-001]({name}) |", read("docs/rfc/rfc-register.md"))
+        self.assertIn(f"| [RFC-PUB-001]({name}) |", read("docs/rfc/rfc-registry.md"))
         self.assertIn(f"`/{RFC}`", read("pr-ops/artifact-map.md"))
         self.assertIn(f"rfc/{name}", read("docs/roadmap.md"))
         amended = read("docs/rfc/2026-11-runtime-product-catalog-golden-set.md")

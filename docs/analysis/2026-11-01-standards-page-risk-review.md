@@ -7,7 +7,7 @@ analysis-subtype: recommendation
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938"
 scope: repo
 based_on: "https://github.com/G-Ivan-A/mango_ba_prompts/tree/efbf2c3aa2aca684c078444a77d435a0b88c2f2f"
-related_artifacts: "docs/rfc/2026-10-standards-page-rfc.md, docs/analysis/2026-10-31-standards-page-review.md, experiments/issue_420/site-v2/pages.md, experiments/issue_420/site-v2/audit.json, standards/bcreq-sections/README.md, docs/contracts/bcreq-stage-gates.md, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md"
+related_artifacts: "docs/rfc/2026-10-standards-page.md, docs/analysis/2026-10-31-standards-page-review.md, experiments/issue_420/site-v2/pages.md, experiments/issue_420/site-v2/audit.json, standards/bcreq-sections/README.md, docs/contracts/bcreq-stage-gates.md, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md"
 ---
 
 # Риски владельца к RFC #420: проверка по источнику истины и прогонам
@@ -35,7 +35,7 @@ v0.1. В них страница «Стандарты» подменяла со�
 | Поле | Значение |
 | --- | --- |
 | Дата | 2026-11-01 |
-| Что проверяется | Тринадцать рисков из [комментария владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) к [RFC #420 v0.1](../rfc/2026-10-standards-page-rfc.md) и [анализу v0.1](2026-10-31-standards-page-review.md) |
+| Что проверяется | Тринадцать рисков из [комментария владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938) к [RFC #420 v0.1](../rfc/2026-10-standards-page.md) и [анализу v0.1](2026-10-31-standards-page-review.md) |
 | Источник истины | [Мета-стандарты разделов](../../standards/bcreq-sections/README.md), [контракт стадий и гейтов](../contracts/bcreq-stage-gates.md), финальные редакции БА в `runs/2026/RUN-0072`…`RUN-0079` |
 | Внешняя сверка | [mango-ba-ai-runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime) на коммите `9d26a05` (2026-11-01): `taxonomy/artifacts.yaml`, `taxonomy/projections.yaml`, `taxonomy/processes.yaml` |
 | Ограничение постановки | «В рамках жтой задачи не меняем страницы сайта» ([#420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420)): `site/` не меняется, все страницы показаны прототипом [site-v2](../../experiments/issue_420/site-v2/pages.md) |
@@ -132,7 +132,7 @@ v0.1 дублировала процесс и нарушила разделен�
 коротким комментарием «что это» ([`audit.json`](../../experiments/issue_420/site-v2/audit.json):
 `introItems: 8`, `introTables: 0`). Название «Введение. Структура
 документа» выбрано из двух вариантов постановки. Процессы остались на
-странице «Процессы» ([DEC-420-01](../rfc/2026-10-standards-page-rfc.md#dec-420-01)).
+странице «Процессы» ([DEC-420-01](../rfc/2026-10-standards-page.md#dec-420-01)).
 
 ## Риск 2
 
@@ -158,7 +158,7 @@ v0.2 принимает формат владельца, а выбор един�
 
 **Что сделано.** Карточка 3 прототипа — ФТ-01, ФТ-02 … в смысловых
 блоках; карточка 5 — «5.N Название (ФТ-01, ФТ-02)»
-([DEC-420-08](../rfc/2026-10-standards-page-rfc.md#dec-420-08)). В
+([DEC-420-08](../rfc/2026-10-standards-page.md#dec-420-08)). В
 стандартах 03, 05 и README мета-стандартов стоят метки расхождения
 «#420, риск 2». Выравнивание черновиков и промптов —
 [BL-110](../../pr-ops/backlog-ba-model.md#bl-110-выровнять-стандарты-и-промпты-bcreq-по-практике-прогонов).
@@ -183,7 +183,7 @@ v0.2 принимает формат владельца, а выбор един�
 [README мета-стандартов](../../standards/bcreq-sections/README.md#область-действия-bcreq-и-ттз)
 добавлена область действия: BCREQ даёт регламентированный документ, ТТЗ
 принимается в формате Заказчика и оценивается на исполнимость, а не на
-доработку ([DEC-420-15](../rfc/2026-10-standards-page-rfc.md#dec-420-15)).
+доработку ([DEC-420-15](../rfc/2026-10-standards-page.md#dec-420-15)).
 Пометка добавлена и в
 [BL-133](../../pr-ops/backlog-ba-model.md#bl-133-процесс-оценки-тз-заказчика).
 
@@ -211,8 +211,8 @@ v0.2 принимает формат владельца, а выбор един�
 | Справочник | Термины с расшифровкой, определением и источником |
 
 Пометки адресата отозваны в v0.2
-([DEC-420-09](../rfc/2026-10-standards-page-rfc.md#dec-420-09),
-[DEC-420-13](../rfc/2026-10-standards-page-rfc.md#dec-420-13)).
+([DEC-420-09](../rfc/2026-10-standards-page.md#dec-420-09),
+[DEC-420-13](../rfc/2026-10-standards-page.md#dec-420-13)).
 
 ## Риск 5
 
@@ -241,7 +241,7 @@ mango-ba-ai-runtime.
 **Вердикт.** Подтверждён.
 
 **Что сделано.** Скриншоты сняты для каждой страницы и каждой карточки
-([Proposal RFC](../rfc/2026-10-standards-page-rfc.md#proposal),
+([Proposal RFC](../rfc/2026-10-standards-page.md#proposal),
 [список ниже](#скриншоты)). Все восемь карточек собраны по одному шаблону
 (`audit.json`, поле `cards`).
 
@@ -282,7 +282,7 @@ EARS нет. v0.1 взяла EARS из черновика и вынесла на
 **Что сделано.** Название и расшифровки исправлены в
 [стандарте раздела 5](../../standards/bcreq-sections/05-solution-description.md)
 и [README](../../standards/bcreq-sections/README.md), с меткой «#420,
-риск 8» ([DEC-420-14](../rfc/2026-10-standards-page-rfc.md#dec-420-14)).
+риск 8» ([DEC-420-14](../rfc/2026-10-standards-page.md#dec-420-14)).
 Места в защищённых файлах записаны в реестр и переданы в BL-110 (промпты)
 и BL-206 (сайт).
 
@@ -343,7 +343,7 @@ Word без рассуждений и комментариев; при необ�
 V-APPROVE и V-CONTRACT по назначению совпадают с документами ФТ и ТЗ, но
 состав разделов в них не задан.
 
-**Что сделано.** [Раздел 7 RFC](../rfc/2026-10-standards-page-rfc.md#7-документы-для-заказчика)
+**Что сделано.** [Раздел 7 RFC](../rfc/2026-10-standards-page.md#7-документы-для-заказчика)
 описывает два документа для Заказчика и опциональный запуск выпуска.
 Изменение модели — карточка
 [BL-123](../../pr-ops/backlog-ba-model.md#bl-123-проекции-выпуска-документы-фт-и-тз-в-word).
@@ -369,7 +369,7 @@ V-APPROVE и V-CONTRACT по назначению совпадают с доку
 в карточке 8 прототипа 8.4 назван архивом вопросов. Согласование
 процесса — карточка
 [BL-124](../../pr-ops/backlog-ba-model.md#bl-124-вопросы-заказчику-стадия-a-in-и-архив-84-досогласовать)
-и вопрос Q10 [RFC](../rfc/2026-10-standards-page-rfc.md#open-questions).
+и вопрос Q10 [RFC](../rfc/2026-10-standards-page.md#open-questions).
 
 ## Риск 11
 
@@ -408,7 +408,7 @@ V-APPROVE и V-CONTRACT по назначению совпадают с доку
 | `pr-ops/BACKLOG.md` | Описание текущего каталога, а не целевого состава |
 | `prompts/README.md`, `prompts/bcreq-constitution-governance-oneshot.md`, `site/data/prompts.json` | Защищённые файлы; верно описывают текущий каталог |
 | `standards/bcreq-lessons/golden-set-bcreq-stage1.md` | Генерируется из уроков; верно для этапа 1 |
-| `docs/rfc/2026-10-standards-page-rfc.md`, `experiments/issue_420/site-v2/pages.md` | Справочник v0.2: «Каталог — 14 промптов этапа 1; 39 классов ручного процесса — в репозитории» |
+| `docs/rfc/2026-10-standards-page.md`, `experiments/issue_420/site-v2/pages.md` | Справочник v0.2: «Каталог — 14 промптов этапа 1; 39 классов ручного процесса — в репозитории» |
 
 ## Риск 12
 

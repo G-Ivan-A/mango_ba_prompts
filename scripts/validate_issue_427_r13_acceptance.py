@@ -27,7 +27,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RFC = ROOT / "docs/rfc/2026-11-bcreq-flow-processes-prompts.md"
-REGISTER = ROOT / "docs/rfc/rfc-register.md"
+REGISTER = ROOT / "docs/rfc/rfc-registry.md"
 BACKLOG = ROOT / "pr-ops/BACKLOG.md"
 TRACK_B = ROOT / "pr-ops/backlog-ba-model.md"
 CHANGELOG = ROOT / "CHANGELOG.md"

@@ -10,7 +10,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
   - "docs/adr/004-operations-taxonomy.md"
-  - "docs/rfc/rfc-to-hub-001-knowledge-transfer.md"
+  - "docs/rfc/2026-06-rfc-to-hub-001-knowledge-transfer.md"
 ---
 
 # Передача знаний: таксономия когнитивных операций БА
@@ -25,7 +25,7 @@ related_artifacts:
 
 - **Что.** Замкнутый набор атомарных действий аналитика (например: извлечение,
   классификация, моделирование, верификация, формализация требований и т.д.),
-  каждое из которых — узел онтологии ([`ba-ontology.md`](ba-ontology.md)) и точка
+  каждое из которых — узел онтологии ([`2026-06-ba-ontology.md`](2026-06-ba-ontology.md)) и точка
   привязки промптов.
 - **Как.** Зафиксировано в [ADR #004](../../adr/004-operations-taxonomy.md):
   каждая операция сопоставлена с областями знаний BABOK и пунктами ISO 29148,
@@ -62,7 +62,7 @@ Registry, а споки — расширять (паттерн Base Registry / L
 ## Ссылки
 
 - ADR-носитель: [`docs/adr/004-operations-taxonomy.md`](../../adr/004-operations-taxonomy.md)
-- Онтология (контекст): [`ba-ontology.md`](ba-ontology.md)
-- Umbrella-RFC: [`rfc-to-hub-001-knowledge-transfer.md`](../rfc-to-hub-001-knowledge-transfer.md)
-- Связанный RFC сверки: RFC-SYNC-004 в [`rfc-register.md`](../rfc-register.md)
+- Онтология (контекст): [`2026-06-ba-ontology.md`](2026-06-ba-ontology.md)
+- Umbrella-RFC: [`2026-06-rfc-to-hub-001-knowledge-transfer.md`](../2026-06-rfc-to-hub-001-knowledge-transfer.md)
+- Связанный RFC сверки: RFC-SYNC-004 в [`rfc-registry.md`](../rfc-registry.md)
 - RFC Хаба: [`methodology-research-and-proposals.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf/governance/rfc/methodology-research-and-proposals.md)

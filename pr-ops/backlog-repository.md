@@ -189,9 +189,9 @@ CH-6 спорит со статусом репозитория (КФ-10).
 **Источники.**
 - [Issue #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420),
   раздел «Описание issue»: “В рамках жтой задачи не меняем страницы сайта”
-- [`docs/rfc/2026-10-standards-page-rfc.md`](../docs/rfc/2026-10-standards-page-rfc.md#dec-420-10),
+- [`docs/rfc/2026-10-standards-page.md`](../docs/rfc/2026-10-standards-page.md#dec-420-10),
   раздел «DEC-420-10»: “Отдельная задача на правку `site/` и тестов сайта по прототипу site-v2”
-- [`docs/rfc/2026-10-standards-page-rfc.md`](../docs/rfc/2026-10-standards-page-rfc.md#dec-420-13),
+- [`docs/rfc/2026-10-standards-page.md`](../docs/rfc/2026-10-standards-page.md#dec-420-13),
   раздел «DEC-420-13»: “Справочник терминов и ссылки на него со всех страниц”
 
 **Зависит от.** BL-201, BL-205.
@@ -343,11 +343,11 @@ OpenCode выбран), но рекомендации REC-417 и решения 
 Р-02; закрытые RFC — `rejected` или `implemented` со ссылкой.
 
 **Источники.**
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#стратегия-автоматизации-ба-команды-крупных-клиентов-источник-issue-415),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#стратегия-автоматизации-ба-команды-крупных-клиентов-источник-issue-415),
   раздел «Стратегия автоматизации БА»: “OpenCode выбран владельцем (вариант Б, #417)”
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#открытые-rfc-по-промптам-источник-эксперимент-bcreq-1025-issue-107),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#открытые-rfc-по-промптам-источник-эксперимент-bcreq-1025-issue-107),
   раздел «Открытые RFC по промптам (BCREQ-1025)»: “Промпты не изменены (остаются v0.1)”
-- [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md#статусы),
+- [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md#статусы),
   раздел «Статусы»: “принят к реализации”
 
 **Зависит от.** BL-107, BL-201.

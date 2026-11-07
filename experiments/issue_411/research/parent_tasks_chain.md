@@ -31,7 +31,7 @@ https://github.com/G-Ivan-A/mango_ba_prompts.
      на утверждение»;
    - каталогов `evals/` и `golden/` нет;
    - `pr-ops/prompt-feedback.json` содержит `"entries": []` с 2026-06-16;
-   - все промптовые RFC в `docs/rfc/rfc-register.md` (RFC-1027-P1…P5,
+   - все промптовые RFC в `docs/rfc/rfc-registry.md` (RFC-1027-P1…P5,
      RFC-1025-P1…P5, RFC-MCH, RFC-387-01) остаются в статусе `proposed`.
 
    В RUN-0078 снижение ошибок не измерялось:
@@ -67,7 +67,7 @@ https://github.com/G-Ivan-A/mango_ba_prompts.
 | # | Дата | Issue | Тр. к опыту прогонов | Влитый PR | Перенесено дальше? |
 |---|---|---|---|---|---|
 | 1 | 06-16 | [#101](https://github.com/G-Ivan-A/mango_ba_prompts/issues/101) Анализ боевого эксперимента 1027 и стандарт фиксации опыта | Выделить паттерны успеха и ошибок, создать стандарт обратной связи | [#102](https://github.com/G-Ivan-A/mango_ba_prompts/pull/102). 6 прямых правок промптов откачены после ревью владельца (коммит `2abf5e6f`), создан `standards/prompt-debugging-process.md` («эксперимент → RFC → согласование → изменение») | Частично. Стандарт жив, но канал `prompt:feedback` пуст (`pr-ops/prompt-feedback.json`), RFC-1027-P1…P5 в статусе `proposed` |
-| 2 | 06-17 | [#107](https://github.com/G-Ivan-A/mango_ba_prompts/issues/107) Анализ BCREQ-1025 | Паттерны ошибок LLM: путаница ЛК/КЦ «(несколько раз повторял ошибки)», канцелярит, матрица ролей. RFC вместо прямой правки | [#108](https://github.com/G-Ivan-A/mango_ba_prompts/pull/108) (`docs/rfc/prompt-improvement-bcreq-1025-proposal.md`, правка «учесть ревью G-Ivan-A — исключить Б4») | Частично. RFC-1025-P1…P5 `proposed`. В 39 классах нет «канцелярит» и «ЛК/КЦ», «матрица ролей» встречается в 2 классах |
+| 2 | 06-17 | [#107](https://github.com/G-Ivan-A/mango_ba_prompts/issues/107) Анализ BCREQ-1025 | Паттерны ошибок LLM: путаница ЛК/КЦ «(несколько раз повторял ошибки)», канцелярит, матрица ролей. RFC вместо прямой правки | [#108](https://github.com/G-Ivan-A/mango_ba_prompts/pull/108) (`docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md`, правка «учесть ревью G-Ivan-A — исключить Б4») | Частично. RFC-1025-P1…P5 `proposed`. В 39 классах нет «канцелярит» и «ЛК/КЦ», «матрица ролей» встречается в 2 классах |
 | 3 | 06-18 | [#109](https://github.com/G-Ivan-A/mango_ba_prompts/issues/109) Dogfooding, несколько каналов | Повторяемый анализ сырого требования | [#110](https://github.com/G-Ivan-A/mango_ba_prompts/pull/110) | RFC-MCH-P1…P3 `proposed` |
 | 4 | 06-19 | [#113](https://github.com/G-Ivan-A/mango_ba_prompts/issues/113) BCREQ-1059 | Анализ третьего эксперимента | PR #114 **закрыт без слияния** | Нет |
 | 5 | 06-20 | [#123](https://github.com/G-Ivan-A/mango_ba_prompts/issues/123) Контракт `runs/` | Фиксировать результаты процессов | [#124](https://github.com/G-Ivan-A/mango_ba_prompts/pull/124) | Да, позднее заменён контрактом Хаба `standards/runs-contract-standard.md` (#265, #293) |
@@ -108,7 +108,7 @@ https://github.com/G-Ivan-A/mango_ba_prompts.
 | Требование владельца | Впервые | Выполнено в | Живо сейчас? | Доказательство (файлы) |
 |---|---|---|---|---|
 | Выделять паттерны ошибок и успеха из каждого боевого прогона | #101 | PR #102, #108 | **частично** | Есть `docs/analysis/*`, `runs/2026/RUN-0073…0076/outputs/*`. Механизма регулярного выделения нет |
-| Менять промпты только через «эксперимент → RFC → согласование → изменение» | #101 (ревью владельца, откат 6 правок) | `standards/prompt-debugging-process.md` | **частично** | Процесс записан. Все промптовые RFC в `docs/rfc/rfc-register.md` остались `proposed`, без PR реализации. Цикл не замыкается |
+| Менять промпты только через «эксперимент → RFC → согласование → изменение» | #101 (ревью владельца, откат 6 правок) | `standards/prompt-debugging-process.md` | **частично** | Процесс записан. Все промптовые RFC в `docs/rfc/rfc-registry.md` остались `proposed`, без PR реализации. Цикл не замыкается |
 | Канал обратной связи по промптам (`prompt:feedback`) | #101 | `pr-ops/prompt-feedback.json` | **нет** | `"entries": []`, `updated: 2026-06-16` |
 | Конкретные уроки 1025/1027: ЛК vs КЦ, канцелярит, матрица ролей, проверка As-Is по документации, отсев «штатных» ФТ | #107, RFC-1027/1025 | RFC (proposed) → позднее частично АД-* | **частично** | В `prompts/bcreq-*.md`: «ЛК…КЦ» в 1 файле, «штатн/текущий функционал» в 14. В `standards/bcreq-manual-classes/`: «канцелярит» 0, «ЛК/КЦ» 0, «штатн» 2, «As-Is» 3 |
 | Контракт жизненного цикла Golden Examples | #211 | PR #213 (`kb/golden-examples/CONTRACT.md`) | **нет** | Файл и каталог отсутствуют на `main` (GitHub API 404). PR #128–#258 вне истории `main` после LFS/BFG-очистки (#259, PR #260) |

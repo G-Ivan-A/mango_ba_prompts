@@ -11,7 +11,7 @@ related_artifacts:
   - "CONTRIBUTING.md"
   - "standards/experiment-log-standard.md"
   - "standards/prompt-debugging-process.md"
-  - "docs/rfc/rfc-register.md"
+  - "docs/rfc/rfc-registry.md"
 ---
 
 # Аудит контрактов — отладка и изменение промптов (2026-06-17)
@@ -101,7 +101,7 @@ related_artifacts:
 | # | Действие | Где | Статус в этом PR |
 | --- | --- | --- | --- |
 | Д1 | Ввести процесс отладки промптов (4 части: сбор обратной связи → RFC-реестр → инициатива пользователя → изменение после согласования) | `standards/prompt-debugging-process.md` | **Создано** (Draft) |
-| Д2 | Завести живой реестр RFC со статусами proposed → in-review → accepted/rejected → implemented | `docs/rfc/rfc-register.md` | **Создано** (Draft) |
+| Д2 | Завести живой реестр RFC со статусами proposed → in-review → accepted/rejected → implemented | `docs/rfc/rfc-registry.md` | **Создано** (Draft) |
 | Д3 | Связать правку промпта с версией (Minor/Major/Breaking) и CHANGELOG | в процессе отладки, часть 4 | **Описано** в Д1 |
 | Д4 | Уточнить в Capability Boundaries, что изменение существующего промпта идёт через процесс отладки (ссылка) | `AI_GOVERNANCE.md` | **Предложение** (через RFC, не правится в этом PR) |
 | Д5 | Дополнить «Временный workflow промптов» разделом про изменение существующих (не только создание) | `CONTRIBUTING.md` | **Предложение** (через RFC, не правится в этом PR) |
@@ -133,4 +133,4 @@ governance-контракты и сами должны пройти через R
 описывали **как отлаживать и изменять** существующие — этот пробел и сделал
 возможным прямое изменение версий. Пробел закрывается процессом отладки
 (`standards/prompt-debugging-process.md`) и реестром RFC
-(`docs/rfc/rfc-register.md`); правки в сами контракты вынесены в RFC.
+(`docs/rfc/rfc-registry.md`); правки в сами контракты вынесены в RFC.

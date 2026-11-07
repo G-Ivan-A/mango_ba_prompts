@@ -95,7 +95,7 @@ BL-159 выполним в одном PR, кроме одного пункта. 
 | --- | --- | --- |
 | A | `docs/adr/003-ba-ontology.md`: 107, 133, 170, 179, 241 | Определение «Контрольной точки» и столбец «Обязательный human gate» меняются только поправкой 0.2. Её текст готов, но вступает в силу после «Р-16 да» |
 | N | `README.md` 46, 49; `ai-governance.md` 100, 309, 312; `docs/rfc-hub-integration.md` 71, 75; ADR-0004 145 | «чек-лист, evals-метрика или human-in-the-loop gate» — механизм проверки операции из DoD Хаба. Строку требует валидатор issue #263 |
-| N | `ai-rules/agent-onboarding-protocol.md` 271, `ai-rules/agent-work-rules.md` 110, `docs/rfc/rfc-process.md` 32, 42, 84 | Полномочия агента и приёмка RFC или PR (ADR-0003), не гейт процесса BCREQ |
+| N | `ai-rules/agent-onboarding-protocol.md` 271, `ai-rules/agent-work-rules.md` 110, `docs/rfc/2026-06-rfc-process.md` 32, 42, 84 | Полномочия агента и приёмка RFC или PR (ADR-0003), не гейт процесса BCREQ |
 | N | `standards/evals-contract-standard.md` 67, 363; RFC стратегии 331, 466 | Порог метрики, вердикт «нет данных», детерминированность — решение человека вне гейта |
 | T | `docs/rfc/knowledge-transfer-to-hub/` (README, `bcreq-process.md`), `rfc-to-hub-001` | Пакет заморожен (#413); правка → BL-122 |
 | O | `standards/bcreq-runtime-references.md` 77, 92; RFC #427 714; словарь 141; `docs/hub-research-dependencies.md` 236; RFC страницы «Стандарты» 531 | `G-human` и `g-human-checklist.md` — имена в runtime и порядке гейтов узла; ссылка на пробелы исследования Хаба; строка этапа 3 в приложении, которое порождает `experiments/issue_420/site-v2/build.py` (валидатор #420 сверяет приложение побайтно) |

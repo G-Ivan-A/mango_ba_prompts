@@ -36,12 +36,12 @@ CASES = [
     ("merge missing", "standards/bcreq-prompt-architecture.md", "| М4 |", "| M4 |", "нет слияния М4"),
     ("analysis ai-generated", "docs/analysis/2026-10-23-bcreq-standards-third-opinion.md",
      "status: draft\n", "status: draft\nai-generated: true\n", "ai-generated"),
-    ("rollback path missing", "docs/rfc/2026-10-bcreq-meta-standards-rfc.md",
+    ("rollback path missing", "docs/rfc/2026-10-bcreq-meta-standards.md",
      "Путь отката", "Откат", "Путь отката"),
     ("wrong quote line", "docs/contracts/bcreq-stage-gates.md", REG + "85)", REG + "84)", "Ч-51"),
     ("placeholder left", "standards/bcreq-sections/07-use-cases.md",
      "## Назначение\n", "## Назначение\n{{Ч-06}}\n", "плейсхолдеры"),
-    ("broken anchor", "docs/rfc/2026-10-bcreq-meta-standards-rfc.md", "#50-общая-часть", "#4-recommendations",
+    ("broken anchor", "docs/rfc/2026-10-bcreq-meta-standards.md", "#50-общая-часть", "#4-recommendations",
      "якоря #4-recommendations"),
 ]
 

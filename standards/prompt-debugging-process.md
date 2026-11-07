@@ -8,7 +8,7 @@ scope: prompts
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/101"
 related_artifacts:
-  - "docs/rfc/rfc-register.md"
+  - "docs/rfc/rfc-registry.md"
   - "docs/audit/audit-contracts-2026-06-17.md"
   - "standards/experiment-log-standard.md"
   - "AI_GOVERNANCE.md"
@@ -73,7 +73,7 @@ related_artifacts:
 ## Часть 2. RFC-реестр как живой документ
 
 RFC (Request for Comments) — предложение изменить промпт. Все RFC живут в одном
-реестре [`docs/rfc/rfc-register.md`](../docs/rfc/rfc-register.md) и проходят статусы:
+реестре [`docs/rfc/rfc-registry.md`](../docs/rfc/rfc-registry.md) и проходят статусы:
 
 ```
 proposed → in-review → accepted  → implemented
@@ -150,7 +150,7 @@ RFC (accepted) → правка prompts/<файл>.md (frontmatter version + upd
 
 ## Открытые вопросы (валидировать на ближайших отладках)
 
-1. Достаточно ли строки в `rfc-register.md`, или RFC нужен отдельный файл на
+1. Достаточно ли строки в `rfc-registry.md`, или RFC нужен отдельный файл на
    крупные изменения?
 2. Нужен ли порог «N прогонов с одним и тем же сигналом» до перевода RFC в
    `proposed`?

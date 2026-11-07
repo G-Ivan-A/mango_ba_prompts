@@ -13,7 +13,7 @@ related_artifacts:
   - "standards/bcreq-sections/01-glossary.md"
   - "standards/bcreq-composition-standard.md"
   - "standards/bcreq-prompt-architecture.md"
-  - "docs/rfc/2026-10-bcreq-meta-standards-rfc.md"
+  - "docs/rfc/2026-10-bcreq-meta-standards.md"
   - "experiments/issue_387/chat-2026-10-22-23-register.md"
 ---
 
@@ -207,7 +207,7 @@ D4, D9, D10. Он был ориентирован на термины БА и н
 5. Проверить пороги стиля и чек-листов на прогонах Задачи 3; кросс-модельный
    прогон — после тестирования промптов [р. 766, Ч-34](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/experiments/issue_387/chat-2026-10-22-23-register.md?plain=1#L68).
 6. Решения, которые расходятся с текущими контрактами, — через
-   [RFC-387-01…07](../rfc/2026-10-bcreq-meta-standards-rfc.md).
+   [RFC-387-01…07](../rfc/2026-10-bcreq-meta-standards.md).
 
 ## 5. Related Artifacts
 

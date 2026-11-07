@@ -54,7 +54,7 @@ source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/418"
 | `DEC-NN` | Решение RFC модернизации репозитория | [RFC модернизации](../docs/rfc/2026-10-repository-modernization.md#решения-на-согласование) |
 | `CH-N` | Требование владельца из чатов #413 | [RFC модернизации](../docs/rfc/2026-10-repository-modernization.md#требования-владельца-из-чатов-приложенных-к-413) |
 | `DEC-411-NN` | Решение RFC уроков | [RFC уроков](../docs/rfc/2026-10-bcreq-run-lessons-pipeline.md#решения-на-согласование) |
-| `DEC-420-NN` | Решение RFC раздела «Стандарты» | [RFC #420](../docs/rfc/2026-10-standards-page-rfc.md#решения-на-согласование) |
+| `DEC-420-NN` | Решение RFC раздела «Стандарты» | [RFC #420](../docs/rfc/2026-10-standards-page.md#решения-на-согласование) |
 | `DEC-415-NN` | Решение RFC стратегии | [RFC стратегии](../docs/rfc/2026-10-ba-automation-strategy.md#решения-на-согласование) |
 | `DEC-427-NN` | Решение RFC потока BCREQ: процессы, стандарты, промпты (issue #427) | [RFC #427](../docs/rfc/2026-11-bcreq-flow-processes-prompts.md#11-решения-на-согласование) |
 | `DEC-454-NN` | Решение роадмэпа публикации промптов (issue #454) | [RFC-PUB-001](../docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md#7-решения-на-согласование) |
@@ -73,7 +73,7 @@ source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/418"
 | `Т-NN` | Требование RFC-AIN-001 (кириллическая «Т») | [Матрица требований A-IN](../docs/rfc/2026-11-a-in-decomposition.md#11-фт-нфт-и-evidence-приёмки) |
 | `F-NN` | Находка аудита репозитория | [Аудит, реестр находок](../docs/audit/2026-10-31-repository-audit.md#реестр-находок) |
 | `L-NN` | Урок прогонов BCREQ | [Реестр уроков](../standards/bcreq-lessons/README.md#уроки) |
-| `RFC-NNNN` | Запись реестра RFC промптов | [Реестр RFC](../docs/rfc/rfc-register.md) |
+| `RFC-NNNN` | Запись реестра RFC промптов | [Реестр RFC](../docs/rfc/rfc-registry.md) |
 | `LG-N` | Правило передачи опыта в Хаб (ADR-014 Хаба) | ADR-014 Хаба |
 | `ADR-NNN` | Архитектурное решение | [`docs/adr/`](../docs/adr/) |
 | `RUN-NNNN` | Прогон промптов | [`runs/`](../runs/) |
@@ -459,7 +459,7 @@ S-001 в Icebox подтверждён.
 | BL-221 | [Вывести локальный KB-конвейер (T-05)](backlog-repository.md#bl-221-вывести-локальный-kb-конвейер-t-05) | P2 | Р-05; деплой (Р-22 снимает BL-203); Р-08 принято | TODO | — (planned) | RFC модернизации, DEC-10 | `kb/` на месте с указателем на runtime; конвейер выведен из сборки. | Structured |
 | BL-222 | [Структура `docs/` (T-06)](backlog-repository.md#bl-222-структура-docs-t-06) | P2 | BL-211, BL-221; Р-08 | TODO | — (planned) | RFC модернизации, T-06 | Перенос `docs/contracts/` с журналом путей; все RFC — в реестре. | Structured |
 | BL-223 | [Разметка истории, статусы ADR, архив (T-07)](backlog-repository.md#bl-223-разметка-истории-статусы-adr-архив-t-07) | P2 | BL-203 для остатка (срез А исполнен без неё, Р-22); S-002, S-003; Р-08 принято | TODO | [#456](https://github.com/G-Ivan-A/mango_ba_prompts/issues/456), [PR #457](https://github.com/G-Ivan-A/mango_ba_prompts/pull/457) | RFC модернизации, DEC-09 | Правило каталога плюс блок перехода; S-002 и S-003 закрыты с актуальными числами. Исполнен срез А: `ai-generated` убрано из 65 исторических файлов, сторож `validate_issue_456_slice_a`; статусы ADR и блоки перехода — остаток. | Structured |
-| BL-224 | [Разобрать реестр RFC](backlog-repository.md#bl-224-разобрать-реестр-rfc) | P1 | BL-107, BL-201; Р-01, Р-02 | TODO | — (planned) | `docs/rfc/rfc-register.md` | Статусы всех записей реестра RFC приведены к фактам. | Hybrid |
+| BL-224 | [Разобрать реестр RFC](backlog-repository.md#bl-224-разобрать-реестр-rfc) | P1 | BL-107, BL-201; Р-01, Р-02 | TODO | — (planned) | `docs/rfc/rfc-registry.md` | Статусы всех записей реестра RFC приведены к фактам. | Hybrid |
 | BL-225 | [Легаси-именование хронологических файлов (S-001)](backlog-repository.md#bl-225-легаси-именование-хронологических-файлов-s-001) | P3 | S-001; Р-08 | deferred (icebox) | — (deferred) | Раздел 6, S-001 | Переименование не делается; allowlist заморожен. Возврат — при переносе в другой репозиторий. | — |
 
 ### Спринт 6: Ревизия мета-модели после этапа 1

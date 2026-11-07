@@ -1,14 +1,14 @@
-"""One-off (applied once on 2026-11-01, not idempotent): bring the #420 section of docs/rfc/rfc-register.md to RFC v0.2.
+"""One-off (applied once on 2026-11-01, not idempotent): bring the #420 section of docs/rfc/rfc-registry.md to RFC v0.2.
 
 Statuses stay `proposed` (only the owner accepts or rejects); no row is deleted.
 """
 from pathlib import Path
 
-P = Path("docs/rfc/rfc-register.md")
+P = Path("docs/rfc/rfc-registry.md")
 t = P.read_text(encoding="utf-8")
 SRC = "[постановка #420](https://github.com/G-Ivan-A/mango_ba_prompts/issues/420)"
 OWN = "[комментарий владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/422#issuecomment-6560476938)"
-RFC = "2026-10-standards-page-rfc.md"
+RFC = "2026-10-standards-page.md"
 
 rows = [
     ("01", "Страница «Стандарты», верх (v0.2)", "H1 «BCREQ — стандарт бизнес-спецификации на доработку системы», одна вводная фраза, «Введение. Структура документа» — перечень разделов и подразделов с коротким комментарием. Вариант v0.1 («Коротко», «Заказчику: что вы подписываете») отозван автором в v0.2, ждёт решения владельца", SRC + "; " + OWN),
@@ -34,7 +34,7 @@ section = t[start:end]
 head_end = section.index("| RFC | Документ |")
 intro = """## Стандарт документа на сайте: страница «Стандарты» (источник: issue #420)
 
-RFC [`2026-10-standards-page-rfc.md`](2026-10-standards-page-rfc.md) v0.2 предлагает
+RFC [`2026-10-standards-page.md`](2026-10-standards-page.md) v0.2 предлагает
 структуру страницы «Стандарты» и зон сайта по итогам ревью владельца: введение
 со структурой документа, единый шаблон карточки, основания глоссария со
 справочником D0, практику прогонов для разделов 3–5. Доказательства —

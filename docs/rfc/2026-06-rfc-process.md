@@ -9,7 +9,7 @@ source_sha: "6ddffdfff693d8279792cd1e9c4c5d94ee0dffcf"
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/105"
 related_artifacts:
-  - "docs/rfc/rfc-register.md"
+  - "docs/rfc/rfc-registry.md"
   - "standards/prompt-debugging-process.md"
   - "pr-ops/sync-matrix-2026-06-17.md"
   - "AI_GOVERNANCE.md"
@@ -61,7 +61,7 @@ Pattern — на RFC, RFC — на Research/Observation. RFC — обязате�
 | --- | --- | --- |
 | Observation | сигнал из прогона БА, issue `prompt:feedback` | issues, `pr-ops/prompt-feedback.json` |
 | Research / Hypothesis | анализ эксперимента, гипотеза правки | `docs/analysis/*`, `runs/*` |
-| **RFC** | запись в реестре RFC | [`docs/rfc/rfc-register.md`](rfc-register.md) |
+| **RFC** | запись в реестре RFC | [`docs/rfc/rfc-registry.md`](rfc-registry.md) |
 | Pattern | паттерн | `patterns/` ([`pattern-standard.md`](../../standards/pattern-standard.md)) |
 | Standard | стандарт / ADR | `standards/`, `docs/adr/` |
 | Deprecation/Archive | архив | `prompts/archive/`, `superseded` в frontmatter |
@@ -75,7 +75,7 @@ Pattern — на RFC, RFC — на Research/Observation. RFC — обязате�
    governance-контракт, стандарт или согласовать расхождение с Хабом
    (см. [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md)).
 
-Оба класса ведутся в **одном реестре** [`rfc-register.md`](rfc-register.md).
+Оба класса ведутся в **одном реестре** [`rfc-registry.md`](rfc-registry.md).
 
 ## 4. Статусы RFC (локальный реестр)
 
@@ -105,7 +105,7 @@ proposed → in-review → accepted  → implemented
 [Observation/сигнал]
       │  фиксируется с цитатой/источником
       ▼
-[RFC: proposed]  ── автор оформляет запись в rfc-register.md
+[RFC: proposed]  ── автор оформляет запись в rfc-registry.md
       │
       ▼
 [in-review]      ── пользователь рассматривает
@@ -137,7 +137,7 @@ proposed → in-review → accepted  → implemented
 
 ## 7. Связь с реестром и существующими контрактами
 
-- **Реестр**: [`rfc-register.md`](rfc-register.md) — живой список всех RFC спока.
+- **Реестр**: [`rfc-registry.md`](rfc-registry.md) — живой список всех RFC спока.
 - **Промпты**: [`prompt-debugging-process.md`](../../standards/prompt-debugging-process.md) —
   детализация для промптов.
 - **Синхронизация**: [`sync-matrix-2026-06-17.md`](../../pr-ops/sync-matrix-2026-06-17.md) —

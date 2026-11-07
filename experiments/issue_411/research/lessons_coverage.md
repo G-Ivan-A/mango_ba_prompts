@@ -182,7 +182,7 @@ README классов заявляет: «Каждая запись — само
 | I-26 | Не-требование в ФТ (определения, перечни, решения команды) | общо | старое: runs/2026/RUN-0074/outputs/section-prompts.md:156 «каждое ФТ отвечает на вопрос «что должна делать система», а не определяет термин или перечень» |
 | I-29 | Неатомарность, двусмысленность, англоязычный жаргон, стиль | общо | c: prompts/bcreq-constitution-governance-oneshot.md:92-105 КС1-КС7, БС1-БС5; prompts/bcreq-constitution-governance-oneshot.md:178 АП7<br>d: standards/bcreq-sections/README.md:78-80, 102-108<br>старое: prompts/bcreq-constitution-governance-oneshot.md:92-105; runs/2026/RUN-0074/outputs/section-prompts.md:157 «в ФТ нет «мгновенно», «100%», «удобно»» |
 | I-30 | Формула ФТ «Система должна предоставлять <кому> возможность …» | нет | c: prompts/bcreq-fr-documentation-stepwise.md:78 «Формулы: «Система должна предоставлять <кому> возможность …»<br>d: standards/bcreq-sections/03-functional-requirements.md:52, 105<br>старое: runs/2026/RUN-0074/outputs/section-prompts.md:154 формат «ФТ-NN. Система должна предоставлять Пользователю возможность …»; prompts/bcreq-fr-documentation-stepwise.md:78 |
-| I-31 | Доменная модель: настройка в ЛК ВАТС vs исполнение в КЦ; системный уровень | общо | старое: docs/rfc/prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/prompt-improvement-multichannel-proposal.md М1 |
+| I-31 | Доменная модель: настройка в ЛК ВАТС vs исполнение в КЦ; системный уровень | общо | старое: docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md М1 |
 | I-32 | Роли: существующая ролевая модель (Пользователь vs Сотрудник) | общо | старое: runs/2026/RUN-0074/outputs/section-prompts.md:170 «Размещение настроек и права — из РЕШЕНИЙ БА» |
 | I-37 | Канонические пункты 6.1.1-6.1.3 | нет | старое: prompts/archive/constraints-documentation-stepwise.md:17-21 (полный текст 6.1.1-6.1.3), :53; prompts/archive/constraints-documentation-oneshot.md:17,33 |
 | I-45 | «Розовый слон»: оговорка об отсутствующей ошибке | нет | c: prompts/bcreq-constitution-governance-oneshot.md:165-166 «не добавляй в документ оговорку об отсутствии ошибки … (RUN-0076, SC-65)»<br>старое: prompts/bcreq-constitution-governance-oneshot.md:165-166 |
@@ -810,8 +810,8 @@ README классов заявляет: «Каждая запись — само
   - `runs/2026/RUN-0074/outputs/error-statistics.md:62 (C15=4)`
   - `runs/2026/RUN-0076/outputs/prompt-improvements.md:32`
   - `runs/2026/RUN-0026/feedback/ba-review-notes.md:26`
-  - `docs/rfc/prompt-improvement-bcreq-1025-proposal.md (Б1)`
-  - `docs/rfc/prompt-improvement-multichannel-proposal.md (М1)`
+  - `docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md (Б1)`
+  - `docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md (М1)`
 - **a — общо:** standards/bcreq-manual-classes/21-solution-l1.md:100 «Настройка предшествует исполнению»; standards/bcreq-manual-classes/05-taxonomy.md:103
 - **b — нет:** —
 - **c — общо:** prompts/bcreq-fr-documentation-stepwise.md:57-60 (порядок настройка → исполнение)
@@ -819,7 +819,7 @@ README классов заявляет: «Каждая запись — само
 - **Примеры:** Golden: GS-375-DLG-05 «product_class: contact-center» (C15).
 - **Автопроверка:** нет
 - **DEGRADED:** да (основание: old)
-- **Старое явное правило:** docs/rfc/prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/prompt-improvement-multichannel-proposal.md М1
+- **Старое явное правило:** docs/rfc/2026-06-prompt-improvement-bcreq-1025-proposal.md Б1 (ЛК ВАТС vs КЦ); docs/rfc/2026-06-prompt-improvement-multichannel-proposal.md М1
 - **Примечание (uncertain):** Источники «old» — предложения RFC; принятие их как нормы не проверено (uncertain).
 
 ### I-32. Роли: существующая ролевая модель (Пользователь vs Сотрудник)

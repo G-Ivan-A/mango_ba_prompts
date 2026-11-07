@@ -68,7 +68,7 @@ RUN и четыре выгрузки Confluence показывают практ�
 | Т-10 | Проверки, русскоязычный PR и сборка для ручной публикации | §10, [PR #467](https://github.com/G-Ivan-A/mango_ba_prompts/pull/467) |
 
 **SSOT.** Этот RFC хранит постановку, решения на рассмотрение и контракты
-пробного ТТЗ. [Реестр RFC](rfc-register.md) хранит статус, [бэклог](../../pr-ops/BACKLOG.md)
+пробного ТТЗ. [Реестр RFC](rfc-registry.md) хранит статус, [бэклог](../../pr-ops/BACKLOG.md)
 — исполнение. [Онтология](../../standards/ba-ontology.md) и контракт классификации
 остаются SSOT типов и ID; [реестр зависимостей Хаба](../hub-research-dependencies.md#classification-tz)
 — точка входа в исследования; [runtime references](../../standards/bcreq-runtime-references.md)

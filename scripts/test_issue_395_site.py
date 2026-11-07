@@ -68,7 +68,7 @@ class StandardsTests(unittest.TestCase):
     def test_terms_and_stage_context_are_present(self):
         html = (ROOT / 'site/index.html').read_text()
         # Issue #423: the page text is the v0.2 template approved in PR #422
-        # (docs/rfc/2026-10-standards-page-rfc.md); the RFC drops EARS, «3.N»,
+        # (docs/rfc/2026-10-standards-page.md); the RFC drops EARS, «3.N»,
         # «Коротко» and «за одну минуту» from the page.
         terms = ['5±2', 'A-IN', 'A-CORE', 'A-WORK', 'Г-IN', 'Г-С1', 'Г-W',
                  'BABOK', 'IREB', 'ISO/IEC 25010:2023']
