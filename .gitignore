@@ -84,3 +84,5 @@ experiments/issue_420/site-v2/out/
 
 # Issue #468: private source exports and extracted dialogue stay local.
 experiments/issue_468/private/
+experiments/issue_474/private/
+experiments/issue_474/logs/
