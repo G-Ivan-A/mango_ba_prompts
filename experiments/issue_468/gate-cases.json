@@ -1,0 +1,406 @@
+[
+  {
+    "id": "S12-exact-match-no-questions",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": []
+  },
+  {
+    "id": "S01-export-9-open-gap",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "question": "Q-01"
+        }
+      ],
+      "claims": []
+    },
+    "expected": [
+      "unresolved_gap"
+    ]
+  },
+  {
+    "id": "S02-rejected-question-only",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "question_rejected": true
+        }
+      ],
+      "claims": []
+    },
+    "expected": [
+      "unresolved_gap"
+    ]
+  },
+  {
+    "id": "S03-new-connector",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [
+        "settings",
+        "roles"
+      ],
+      "gaps": [],
+      "claims": [],
+      "mode": "new"
+    },
+    "expected": [
+      "coverage_open"
+    ]
+  },
+  {
+    "id": "S04-analogy",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": [
+        {
+          "basis": "analogy",
+          "verdict": "confirmed"
+        }
+      ]
+    },
+    "expected": [
+      "analogy_as_fact"
+    ]
+  },
+  {
+    "id": "S05-rules-inaccessible",
+    "state": {
+      "rules_read": false,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": [
+      "rules_read"
+    ]
+  },
+  {
+    "id": "S06-no-progress",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [
+        "external-document"
+      ],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": [],
+      "no_progress_passes": 2
+    },
+    "expected": [
+      "coverage_open",
+      "retrieval_stalled"
+    ]
+  },
+  {
+    "id": "S07-unaccepted-memory",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": false,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": [
+      "snapshot_approved"
+    ]
+  },
+  {
+    "id": "S08-reported-read-without-call",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": false,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": [
+      "receipt_truthful"
+    ]
+  },
+  {
+    "id": "S10-new-source-invalidates",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": false,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": [
+      "snapshot_current"
+    ]
+  },
+  {
+    "id": "S11-explicit-hypothesis",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "hypothesis": {
+            "kind": "ba_hypothesis",
+            "accepted": true,
+            "owner": "BA",
+            "risk": "bounded",
+            "review_trigger": "customer-response",
+            "visible": true
+          }
+        }
+      ],
+      "claims": []
+    },
+    "expected": []
+  },
+  {
+    "id": "S11-not-customer-answer",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "hypothesis": {
+            "kind": "customer_answer",
+            "accepted": true,
+            "owner": "BA",
+            "risk": "bounded",
+            "review_trigger": "customer-response",
+            "visible": true
+          }
+        }
+      ],
+      "claims": []
+    },
+    "expected": [
+      "unresolved_gap"
+    ]
+  },
+  {
+    "id": "S11-no-acceptance",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "hypothesis": {
+            "kind": "ba_hypothesis",
+            "accepted": false,
+            "owner": "BA",
+            "risk": "bounded",
+            "review_trigger": "customer-response",
+            "visible": true
+          }
+        }
+      ],
+      "claims": []
+    },
+    "expected": [
+      "unresolved_gap"
+    ]
+  },
+  {
+    "id": "S11-critical-risk",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [
+        {
+          "id": "G-01",
+          "hypothesis": {
+            "kind": "ba_hypothesis",
+            "accepted": true,
+            "owner": "BA",
+            "risk": "critical",
+            "review_trigger": "customer-response",
+            "visible": true
+          }
+        }
+      ],
+      "claims": []
+    },
+    "expected": [
+      "unresolved_gap"
+    ]
+  },
+  {
+    "id": "S13-export-15-premature-FT",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": true,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "functional_requirements",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": [],
+      "mode": "new"
+    },
+    "expected": [
+      "future_action"
+    ]
+  },
+  {
+    "id": "S16-pending-BA-question-review",
+    "state": {
+      "rules_read": true,
+      "pool_approved": true,
+      "glossary_approved": true,
+      "atoms_traceable": true,
+      "questions_reviewed": false,
+      "snapshot_approved": true,
+      "snapshot_current": true,
+      "receipt_truthful": true,
+      "action": "section2",
+      "frontier": [],
+      "unchecked_dependencies": [],
+      "gaps": [],
+      "claims": []
+    },
+    "expected": [
+      "questions_reviewed"
+    ]
+  }
+]

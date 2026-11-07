@@ -1,0 +1,17 @@
+[
+  {"id":"S17-paused", "state":{"mode":"analysis_only","produces_artifact":true}, "expected":["paused_execution"]},
+  {"id":"S17-future", "state":{"authorization":"future_note","produces_artifact":true}, "expected":["future_note_execution"]},
+  {"id":"S17-resumed", "state":{"mode":"active","authorization":"current_action","produces_artifact":true}, "expected":[]},
+  {"id":"S18", "state":{"removed_rule":"prior-exclusion","change_evidence":true,"impact_reviewed":true,"replacement_coverage":true,"ba_approved":false}, "expected":["unapproved_removal"]},
+  {"id":"S19", "state":{"product_verdict":"confirmed","basis":"search_report"}, "expected":["unsupported_product_fact"]},
+  {"id":"S20", "state":{"raw_origin":"customer","actual_origin":"knowledge"}, "expected":["source_substitution"]},
+  {"id":"S21", "state":{"norm_conflict":true,"review_outcome":"accept"}, "expected":["uncritical_agreement"]},
+  {"id":"S21-partial", "state":{"norm_conflict":true,"review_outcome":"partial"}, "expected":[]},
+  {"id":"S22-answered", "state":{"question":true,"already_answered":true}, "expected":["unnecessary_or_misaddressed_question"]},
+  {"id":"S22-design", "state":{"question":true,"asks_design":true}, "expected":["unnecessary_or_misaddressed_question"]},
+  {"id":"S23", "state":{"contradiction_basis":"exists_but_out_of_scope"}, "expected":["scope_as_contradiction"]},
+  {"id":"S24", "state":{"delivery_boundary_closed":true,"boundary_basis":"mechanism_only"}, "expected":["unresolved_delivery_boundary"]},
+  {"id":"S25", "state":{"classification":"functional","item_kind":"api_workaround"}, "expected":["what_how_mixed"]},
+  {"id":"S26", "state":{"terms_conflated":true}, "expected":["meaning_lost"]},
+  {"id":"S27", "state":{"artifact_available":"after_event","requires_at_event":true}, "expected":["event_timing_conflict"]}
+]

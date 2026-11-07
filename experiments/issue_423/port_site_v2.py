@@ -52,6 +52,10 @@ _spec466 = importlib.util.spec_from_file_location(
     "issue_466_site_standards", ROOT / "experiments" / "issue_466" / "site_standards.py")
 I466 = importlib.util.module_from_spec(_spec466)
 _spec466.loader.exec_module(I466)
+_spec468 = importlib.util.spec_from_file_location(
+    "issue_468_site_a_in", ROOT / "experiments" / "issue_468" / "site_a_in.py")
+I468 = importlib.util.module_from_spec(_spec468)
+_spec468.loader.exec_module(I468)
 
 # ------------------------------------------------------------------ overrides
 # Only facts changed by PR #422 / issue #423; everything else is content.py as approved.
@@ -131,6 +135,7 @@ def port_index(src: str) -> str:
         src = src[:start] + html + src[end:]
     src = I464.apply(src)
     src = I466.apply(src)
+    src = I468.apply(src)
     nav_start = src.index('<nav class="topnav"')
     first = src.index("<a ", nav_start)
     nav_end = src.index("        <button\n          class=\"icon-button\"\n          id=\"site-logout\"", nav_start)

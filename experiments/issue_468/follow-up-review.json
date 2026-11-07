@@ -1,0 +1,93 @@
+{
+  "requirement": "Т-11",
+  "status": "analyzed_and_mapped",
+  "resolved_by_comment": "https://github.com/G-Ivan-A/mango_ba_prompts/pull/469#issuecomment-6695048587",
+  "analysis_request": "https://github.com/G-Ivan-A/mango_ba_prompts/pull/469#issuecomment-6695105116",
+  "attachment": {
+    "kind": "Продолжение диалога",
+    "url": "https://github.com/user-attachments/files/34499057/chat-export-1135-2.json",
+    "sha256": "e5dff84fc8de9e4f73c407abfb72da4fc79f33c28d969895ad4be1e91bd65322",
+    "locator": "chat.messages[0..65]; visible prefix 0..27 unchanged; delta 28..65; 86 history nodes, 20 inactive excluded",
+    "analyzed": "2026-11-06",
+    "raw_committed": false
+  },
+  "delta_report": "dialogue-delta.json",
+  "practice_ledger": "practice-ledger.json",
+  "visible_messages_read": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "new_product_verification": false,
+  "new_model_runs": 0,
+  "previous_availability_check": {
+    "requirement": "Т-11",
+    "status": "blocked_missing_attachment",
+    "checked_at": "2026-11-06T16:09:56+00:00",
+    "comment": {
+      "id": 6688379803,
+      "html_url": "https://github.com/G-Ivan-A/mango_ba_prompts/pull/469#issuecomment-6688379803",
+      "created_at": "2026-11-06T15:23:01Z",
+      "updated_at": "2026-11-06T15:23:01Z",
+      "body": "проверьте обновленный диалог пользователя с ИИ ассистентом по задаче 1135\r\nчто нужно из практики сохранить и преенсти в правила шагов BCREQ?\r\n[Uploading chat-export-1793978446751.json…]()\r\n"
+    },
+    "attachment": {
+      "filename": "chat-export-1793978446751.json",
+      "url": null,
+      "downloaded": false,
+      "analyzed": false
+    },
+    "checks": {
+      "github_markdown": "empty link destination",
+      "github_html": "empty href",
+      "workspace_exact_filename_matches": [],
+      "github_code_search": {
+        "owner": "G-Ivan-A",
+        "query": "1793978446751",
+        "matches": []
+      }
+    },
+    "previous_export": {
+      "url": "https://github.com/user-attachments/files/34479060/chat-export-1135-2.json",
+      "sha256": "a2422b253dc8625c7765bb9cfbf9b0a59c413d1da9eab00c1fccadfb074cb4ba",
+      "is_requested_update": false,
+      "raw_committed": false
+    }
+  },
+  "remaining": []
+}

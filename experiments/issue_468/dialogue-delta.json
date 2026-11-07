@@ -1,0 +1,336 @@
+{
+  "schema_version": 1,
+  "selection": "chat.messages ordered parent chain; assistant content_list phase=answer only",
+  "sources": {
+    "before": {
+      "sha256": "a2422b253dc8625c7765bb9cfbf9b0a59c413d1da9eab00c1fccadfb074cb4ba",
+      "history_count": 33,
+      "inactive_history_count": 5,
+      "active_count": 28,
+      "empty_visible_indices": [
+        6,
+        11
+      ]
+    },
+    "after": {
+      "sha256": "e5dff84fc8de9e4f73c407abfb72da4fc79f33c28d969895ad4be1e91bd65322",
+      "history_count": 86,
+      "inactive_history_count": 20,
+      "active_count": 66,
+      "empty_visible_indices": [
+        6,
+        11
+      ]
+    }
+  },
+  "common_visible_prefix": 28,
+  "unchanged_indices": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27
+  ],
+  "added_indices": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65
+  ],
+  "changed_indices": [],
+  "removed_indices": [],
+  "moved_indices": [],
+  "delta": [
+    {
+      "index": 28,
+      "role": "user",
+      "visible_sha256": "65441ff16fd6886f83ea53c1b1233b3ceb9de2c0e4290d08c381e65d01b3fdec",
+      "characters": 619
+    },
+    {
+      "index": 29,
+      "role": "assistant",
+      "visible_sha256": "72ff22b50e3668488cd683aa5bdf3c38f618439a2ae8b13774535219e3450038",
+      "characters": 2573
+    },
+    {
+      "index": 30,
+      "role": "user",
+      "visible_sha256": "9d77e285dd9ae1d956d81cbb2231e863582a3f74dff1e95ef01f9fcb856c04b0",
+      "characters": 768
+    },
+    {
+      "index": 31,
+      "role": "assistant",
+      "visible_sha256": "1cf4eb7e4c3aa68e18381e0a2de15d6a5f3a321047d044ddd636102c06ef16d0",
+      "characters": 5944
+    },
+    {
+      "index": 32,
+      "role": "user",
+      "visible_sha256": "cea5bfaedb228b5225785357924c178b278d36fd0c9256457fa067b390027959",
+      "characters": 1577
+    },
+    {
+      "index": 33,
+      "role": "assistant",
+      "visible_sha256": "9e3fbbef2adb02fb48c7f0298157517b4dbdb9ce115ff4e4067f367f9dadabca",
+      "characters": 2056
+    },
+    {
+      "index": 34,
+      "role": "user",
+      "visible_sha256": "f8b4abb1bd70a087ac38aa1e64b8293492198a7ad0b0d9e9cc6c7d940de50438",
+      "characters": 136
+    },
+    {
+      "index": 35,
+      "role": "assistant",
+      "visible_sha256": "dfa3d242413df6b65f06aca3779c01fa89d28ac32f163eb71764054eada97ab6",
+      "characters": 4661
+    },
+    {
+      "index": 36,
+      "role": "user",
+      "visible_sha256": "b7bee5158f676ff37d9f481da4db1713c4d8d7ceb93f183cc2d1b1400f60e322",
+      "characters": 200
+    },
+    {
+      "index": 37,
+      "role": "assistant",
+      "visible_sha256": "87292a2925d9599a57c8bdcb765ccc8b8de3d85e6732c9d336ec96cf6500b2c3",
+      "characters": 4774
+    },
+    {
+      "index": 38,
+      "role": "user",
+      "visible_sha256": "1ab97ab0dedae4d3492fba55060c048ed22fd84029365feb3d1e9076cfd2a64f",
+      "characters": 3254
+    },
+    {
+      "index": 39,
+      "role": "assistant",
+      "visible_sha256": "7d11aeb9b38ef21d83a723a3e4b9c1da54812b39c59360ee8a3f70bac4410c0f",
+      "characters": 2142
+    },
+    {
+      "index": 40,
+      "role": "user",
+      "visible_sha256": "e8f9ce2e82d1e6bfd44be583c464d0677beba5fe52deb70e633d1fc65c422a04",
+      "characters": 26
+    },
+    {
+      "index": 41,
+      "role": "assistant",
+      "visible_sha256": "206b9fe81ed0b0e90d9f0ef303db9112ff814f5ed178b5c6319001b623dec7b1",
+      "characters": 2311
+    },
+    {
+      "index": 42,
+      "role": "user",
+      "visible_sha256": "c61cc72c6d7b6708541f4956b3eb26f563a99ca5f1fca23dba47e51f30e358df",
+      "characters": 12
+    },
+    {
+      "index": 43,
+      "role": "assistant",
+      "visible_sha256": "23301321254fef5365e79f1bad33fe3682cb200df93c106597aec97e11d88c4f",
+      "characters": 2901
+    },
+    {
+      "index": 44,
+      "role": "user",
+      "visible_sha256": "9513f6e8ca9ec8f6ddb2491e853034e54d3fc0f8a610ddc888e20313fa081c2f",
+      "characters": 5
+    },
+    {
+      "index": 45,
+      "role": "assistant",
+      "visible_sha256": "ae68d9691a9d0fddb7ce9d3353d10d4cdfe9a0d5e409f3affd84dda55aff0f94",
+      "characters": 6064
+    },
+    {
+      "index": 46,
+      "role": "user",
+      "visible_sha256": "f644a0cca6fa50906a4ea9e7c4f2008e1b46ce573137a5801b32e49252ddf605",
+      "characters": 5
+    },
+    {
+      "index": 47,
+      "role": "assistant",
+      "visible_sha256": "aaf45abc25ceb9fe37fa2fb57f0c2a0d90eeee4982e56492df8b9fb848dd6eb5",
+      "characters": 4885
+    },
+    {
+      "index": 48,
+      "role": "user",
+      "visible_sha256": "ac634f910aa6a6a6a0c5f41753639136fef2d4ede0c5a055344644a1ea1c94ae",
+      "characters": 5458
+    },
+    {
+      "index": 49,
+      "role": "assistant",
+      "visible_sha256": "8e41157c796db2189348b256e41e10c69fff658358211302049ed9a2778322d4",
+      "characters": 6696
+    },
+    {
+      "index": 50,
+      "role": "user",
+      "visible_sha256": "8c4ed9a027960ca0704987c087a450cc0b8f0be74b422f22d66b761d8f9f548d",
+      "characters": 1300
+    },
+    {
+      "index": 51,
+      "role": "assistant",
+      "visible_sha256": "e2d02e654ca2ad684e11a15549f488d98465c86307e10a31028cc75360efb9e8",
+      "characters": 4445
+    },
+    {
+      "index": 52,
+      "role": "user",
+      "visible_sha256": "4d141adb2e923184f02830f4257039736f22b35b40bb89f1dba56fe395151958",
+      "characters": 594
+    },
+    {
+      "index": 53,
+      "role": "assistant",
+      "visible_sha256": "a137cac913a46f7ca49edf7b3605c5b2a0c7bf1a903c591ef0fcc5782930cedf",
+      "characters": 2240
+    },
+    {
+      "index": 54,
+      "role": "user",
+      "visible_sha256": "4b6d2b8332b51b2c2720e42ffbf7a2604c3cb91963ae0d25815cda5c3f397a7f",
+      "characters": 4725
+    },
+    {
+      "index": 55,
+      "role": "assistant",
+      "visible_sha256": "1aa737453d23b2402b17101fa439e8985f0128df01b597bf71486879834e27c6",
+      "characters": 6082
+    },
+    {
+      "index": 56,
+      "role": "user",
+      "visible_sha256": "c76b2b73f9dd0e73a485196690537133d6b4150cb70affd927b596a24f3f524d",
+      "characters": 6128
+    },
+    {
+      "index": 57,
+      "role": "assistant",
+      "visible_sha256": "404570ece53a96f909327f2e5a7a9db7485325b77dc29789a9fff166039827a2",
+      "characters": 7172
+    },
+    {
+      "index": 58,
+      "role": "user",
+      "visible_sha256": "8c47ad7157a121dc2dbc9e17e518f1cc5d7ac48ea72c23305b443f8b50a55f2f",
+      "characters": 768
+    },
+    {
+      "index": 59,
+      "role": "assistant",
+      "visible_sha256": "9f269b0a31d9745f21018f34f389eb24e50ba6f10b01be57e06c2421f09e483a",
+      "characters": 2757
+    },
+    {
+      "index": 60,
+      "role": "user",
+      "visible_sha256": "495e4b7234b6ba730cfe168dc889075449f1ffa631e0be93c7e3310f63e6a943",
+      "characters": 1374
+    },
+    {
+      "index": 61,
+      "role": "assistant",
+      "visible_sha256": "769c86012d2bdfc23788e1c6f9021a61bacbf9523a5b022c9b436eed4b48990d",
+      "characters": 2712
+    },
+    {
+      "index": 62,
+      "role": "user",
+      "visible_sha256": "85a4ef0b6b92f38b3f1ad4ef6ca9e90bcca347d2bc06610c9f37513799e61dfb",
+      "characters": 769
+    },
+    {
+      "index": 63,
+      "role": "assistant",
+      "visible_sha256": "ebaac675f1ddbf2fea43aa7e9820ae07228a0e4546f5776dcc0ce0ccaf0268b0",
+      "characters": 616
+    },
+    {
+      "index": 64,
+      "role": "user",
+      "visible_sha256": "7715325032d246cf03b5c6f8482b23c0f735d22325154cfe29b87e9dda9cfcc3",
+      "characters": 94
+    },
+    {
+      "index": 65,
+      "role": "assistant",
+      "visible_sha256": "87203a1cb749ee9f0a755e82a7f7aa708a77088175590586a36847c24447545e",
+      "characters": 687
+    }
+  ],
+  "raw_committed": false,
+  "limitations": [
+    "Visible text equality does not verify attachments or tool execution.",
+    "Inactive history and hidden reasoning are excluded from practice evidence.",
+    "Reported retrieval and assistant self-correction are claims, not product verification."
+  ]
+}
