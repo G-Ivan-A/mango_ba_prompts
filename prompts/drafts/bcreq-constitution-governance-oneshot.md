@@ -2,13 +2,13 @@
 id: mango-bcreq-constitution-governance-oneshot-by-test
 title: "BCREQ Ш-0: конституция процесса (по тесту)"
 status: draft
-version: 0.3
-updated: 2026-11-05
+version: 0.4
+updated: 2026-11-07
 temperature: 0.1
 operation: governance
 processes: ["Конституция и управление"]
 based_on: prompts/bcreq-constitution-governance-oneshot.md
-based_on_sha256: 986a126c11931a4337cb492bef562bc65c078c1228b8f17753470962c7186bfd
+based_on_sha256: 32dff224b6f3f59f9bbda0bbabb773f808664104e7eaa8ae80fda96794d2dfff
 mode: by-test
 steps: [Ш-0]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -17,6 +17,24 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
+
+<!-- issue-474:entry -->
+## Действующий вход A-IN — приоритет над прежним маршрутом
+
+Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу/режим/исходный запрос без анализа. Затем остановись перед AIN-01. Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02.
+
+СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21
+текущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.
+Все stakeholder-вопросы адресованы Заказчику нумерованным списком AIN-16.
+БА — куратор, не адресат этих вопросов. New/delta, молчание и согласие с RFC
+не проходят гейт. Пауза/analysis-only не запускают следующий шаг.
+
+[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).
+Конституция/мета-стандарты и прежние операции вне мигрировавшей A-IN сохраняются.
+Исторические команды ниже применяются только в пределах разрешённого действия
+этого входа; прежние переходы/производство раздела 2 здесь не исполняются.
+<!-- /issue-474:entry -->
+
 
 # BCREQ Ш-0. Промпт 0 — конституция процесса
 

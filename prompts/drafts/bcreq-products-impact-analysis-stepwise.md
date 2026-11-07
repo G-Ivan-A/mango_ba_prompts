@@ -2,13 +2,13 @@
 id: mango-bcreq-products-impact-analysis-stepwise-by-test
 title: "BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)"
 status: draft
-version: 0.2
-updated: 2026-11-05
+version: 0.3
+updated: 2026-11-07
 temperature: 0.1
 operation: impact_analysis
 processes: ["Приём и контекст"]
 based_on: prompts/bcreq-products-impact-analysis-stepwise.md
-based_on_sha256: 889cddf367a499af5a6eb6cec8393f829bde516874e58f06117da1263c434fe1
+based_on_sha256: 1f63504c476c3d9c5bd09282027358f5adbdae8ce70dc6a5266b24cf812be636
 mode: by-test
 steps: [Ш-2]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -17,6 +17,24 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
+
+<!-- issue-474:entry -->
+## Действующий вход A-IN — приоритет над прежним маршрутом
+
+Ш-2 теперь проверяет пакет AIN-24, а не добывает продукты после написания контекста. Нет актуального AIN-21 и принятого AIN-24/Г-IN — остановись и назови возврат. Продукты/2.5 собирает AIN-13/22, гейт — AIN-24. Историческую последовательность ниже не запускай.
+
+СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21
+текущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.
+Все stakeholder-вопросы адресованы Заказчику нумерованным списком AIN-16.
+БА — куратор, не адресат этих вопросов. New/delta, молчание и согласие с RFC
+не проходят гейт. Пауза/analysis-only не запускают следующий шаг.
+
+[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).
+Конституция/мета-стандарты и прежние операции вне мигрировавшей A-IN сохраняются.
+Исторические команды ниже применяются только в пределах разрешённого действия
+этого входа; прежние переходы/производство раздела 2 здесь не исполняются.
+<!-- /issue-474:entry -->
+
 
 # BCREQ Ш-2 (пункт 2.2). Подраздел 2.5 «Продукты и стейкхолдеры» и сверка терминов
 

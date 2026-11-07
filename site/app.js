@@ -1326,8 +1326,48 @@ function trackTopbarHeight() {
   }).observe(topbar);
 }
 
+// #474: copy and preview use the same complete source, loaded only on demand.
+let ainKitPromise;
+async function loadAinStep(id) {
+  if (!ainKitPromise) {
+    ainKitPromise = fetch("data/a-in-kit.json").then((response) => {
+      if (!response.ok) throw new Error("A-IN data unavailable");
+      return response.json();
+    }).catch((error) => { ainKitPromise = null; throw error; });
+  }
+  const kit = await ainKitPromise;
+  const step = kit.steps.find((item) => item.id === id);
+  if (!step?.prompt) throw new Error("A-IN prompt unavailable");
+  return step;
+}
+
+function initAinKit() {
+  const panel = document.getElementById("a-in-proposal");
+  if (!panel) return;
+  panel.addEventListener("click", async (event) => {
+    const button = event.target.closest("button[data-ain-copy]");
+    if (!button) return;
+    button.disabled = true;
+    try {
+      const step = await loadAinStep(button.dataset.ainCopy);
+      await copyText(step.prompt);
+      showToast(`${step.id}: полный draft промпт скопирован`);
+    } catch {
+      showToast("Не удалось загрузить или скопировать A-IN. Повторите попытку.");
+    } finally { button.disabled = false; }
+  });
+  panel.addEventListener("toggle", async (event) => {
+    const preview = event.target;
+    if (!preview.matches("details[data-ain-preview]") || !preview.open) return;
+    const text = preview.querySelector("pre");
+    try { text.textContent = (await loadAinStep(preview.dataset.ainPreview)).prompt; }
+    catch { text.textContent = "Не удалось загрузить текст. Закройте и откройте его повторно."; }
+  }, true);
+}
+
 async function init() {
   initTheme();
+  initAinKit();
   trackTopbarHeight();
   try {
     // Данные каталога загружаются только после ввода пароля (site/gate.js).

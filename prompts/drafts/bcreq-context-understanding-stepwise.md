@@ -2,13 +2,13 @@
 id: mango-bcreq-context-understanding-stepwise-by-test
 title: "BCREQ Ш-1 (2.1): контекст, глоссарий (по тесту)"
 status: draft
-version: 0.3
-updated: 2026-11-05
+version: 0.4
+updated: 2026-11-07
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
 based_on: prompts/bcreq-context-understanding-stepwise.md
-based_on_sha256: b28bb5dd582e663d734ef2014ea5c011d869e6fa1ad7043ade38a33dc1d9f034
+based_on_sha256: dfc178fac5696cd734f26e117793c41ef8e087dc83b14e12ba3eeaa337f8929d
 mode: by-test
 steps: [Ш-1]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -17,6 +17,24 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
+
+<!-- issue-474:entry -->
+## Действующий вход A-IN — приоритет над прежним маршрутом
+
+Ш-1 теперь диспетчер 24 отдельных контрактов. По переданному пакету назови один текущий AIN-ID и недостающий вход; предложи скопировать его полный промпт. Не выполняй подшаги исторического Ш-1 ниже. Нет принятого предшественника — возврат к нему; нет пакета — AIN-01.
+
+СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21
+текущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.
+Все stakeholder-вопросы адресованы Заказчику нумерованным списком AIN-16.
+БА — куратор, не адресат этих вопросов. New/delta, молчание и согласие с RFC
+не проходят гейт. Пауза/analysis-only не запускают следующий шаг.
+
+[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).
+Конституция/мета-стандарты и прежние операции вне мигрировавшей A-IN сохраняются.
+Исторические команды ниже применяются только в пределах разрешённого действия
+этого входа; прежние переходы/производство раздела 2 здесь не исполняются.
+<!-- /issue-474:entry -->
+
 
 # BCREQ Ш-1 (пункт 2.1). Разделы 1 «Глоссарий» и 2 «Бизнес-контекст»
 

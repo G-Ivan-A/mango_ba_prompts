@@ -2,13 +2,13 @@
 id: mango-bcreq-fr-documentation-stepwise-by-test
 title: "BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)"
 status: draft
-version: 0.3
-updated: 2026-11-05
+version: 0.4
+updated: 2026-11-07
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-fr-documentation-stepwise.md
-based_on_sha256: 595dd1c37054ac4b71088759a0a02d02603477cf79bde1351e18497fb630fa28
+based_on_sha256: 542e33ba04c6cbb64743a1beaaef646f4ebfffb09e06e677d45d8b68bb9b7879
 mode: by-test
 steps: [Ш-3]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -17,6 +17,24 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 <!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
+
+<!-- issue-474:entry -->
+## Действующий вход A-IN — приоритет над прежним маршрутом
+
+До алгоритма Ш-3 проверь явные AIN-21 и AIN-24/Г-IN, их task/attempt/route/snapshot и актуальность. Без одного из них — blocked, возврат к указанному AIN-ID; ФТ не создавай. При действующем Г-IN выполняй прежний алгоритм ФТ ниже.
+
+СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21
+текущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.
+Все stakeholder-вопросы адресованы Заказчику нумерованным списком AIN-16.
+БА — куратор, не адресат этих вопросов. New/delta, молчание и согласие с RFC
+не проходят гейт. Пауза/analysis-only не запускают следующий шаг.
+
+[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).
+Конституция/мета-стандарты и прежние операции вне мигрировавшей A-IN сохраняются.
+Исторические команды ниже применяются только в пределах разрешённого действия
+этого входа; прежние переходы/производство раздела 2 здесь не исполняются.
+<!-- /issue-474:entry -->
+
 
 # BCREQ Ш-3 (пункт 2.3 `delta` / 2.10 `new`). Раздел 3 «Функциональные требования»
 

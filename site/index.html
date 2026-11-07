@@ -16,7 +16,7 @@
         <span class="brand-mark" aria-hidden="true">M</span>
         <span>
           <span class="brand-title">Mango BA Prompts</span>
-          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.8.2</span></span>
+          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.8.3</span></span>
         </span>
       </a>
       <nav class="topnav" id="topnav" aria-label="Разделы">
@@ -170,39 +170,160 @@
       >
         <nav class="process-tabs" id="process-tabs" aria-label="Этапы формирования документа"></nav>
         <!-- issue-468:start -->
-        <details class="process-help" id="a-in-proposal">
-          <summary>Проект A-IN: 24 шага до перехода к следующей стадии</summary>
-          <p><strong>RFC-AIN-001 · на рассмотрении.</strong> Предлагаем разделить сбор, проверку источников, вопросы и написание контекста. Это принципы будущих промптов; текущий комплект из 14 шагов ниже пока сохраняется.</p>
-          <p>На каждом шаге — проверяемый результат и отчёт об источниках. Вопросы адресованы Заказчику; БА принимает пакет и может явно согласовать гипотезу. До допуска по данным и вопросам раздел 2 не создаётся.</p>
+        <details class="process-help" id="a-in-proposal" open>
+          <summary>A-IN: 24 отдельных шага · draft</summary>
+          <p><strong>RFC-AIN-001 принят · промпты draft, эффективность не измерена.</strong> Начните с Ш-0 (полная конституция) в комплекте ниже, затем копируйте один полный AIN-промпт за вызов. Передайте правила и принятый пакет; после результата решение принимает БА.</p>
+          <p>Раздел 2 строго после явного актуального допуска БА AIN-21 и отдельной команды AIN-22. Вопросы — Заказчику нумерованным списком AIN-16. Принятие RFC и команда new не заменяют допуск. AIN-24 и Г-IN разрешают переход к ФТ.</p>
+          <p><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md" target="_blank" rel="noreferrer">Инструкция БА: запуск, версии, вопросы, возвраты и восстановление длинного чата</a></p>
           <ol class="v2-list">
-            <li data-ain-step="AIN-01"><strong>Правила и версия</strong> — Паспорт запуска и применимые нормы.</li>
-            <li data-ain-step="AIN-02"><strong>Данные у БА</strong> — Пакет имеющихся материалов без интерпретации.</li>
-            <li data-ain-step="AIN-03"><strong>Реестр источников</strong> — Реестр происхождения и доступа.</li>
-            <li data-ain-step="AIN-04"><strong>Атомизация</strong> — Реестр атомов с исходными фрагментами.</li>
-            <li data-ain-step="AIN-05"><strong>Качество и смысл</strong> — Реестр дефектов и проверяемых предпосылок.</li>
-            <li data-ain-step="AIN-06"><strong>Кандидаты продуктов</strong> — Карта прямых, опорных и внешних компонентов.</li>
-            <li data-ain-step="AIN-07"><strong>План retrieval</strong> — Проверяемый план покрытия документацией.</li>
-            <li data-ain-step="AIN-08"><strong>Веб-извлечение</strong> — Квитанция чтения внешних и нормативных источников.</li>
-            <li data-ain-step="AIN-09"><strong>Извлечение БЗ</strong> — Квитанция чтения продуктовой и внешней БЗ.</li>
-            <li data-ain-step="AIN-10"><strong>Замыкание зависимостей</strong> — Матрица покрытия и открытый frontier.</li>
-            <li data-ain-step="AIN-11"><strong>Сверка противоречий</strong> — Журнал расхождений источников.</li>
-            <li data-ain-step="AIN-12"><strong>Исполнимость сейчас</strong> — Матрица атом → возможность → доказательство.</li>
-            <li data-ain-step="AIN-13"><strong>Согласование пула</strong> — Принятый БА пул продуктов и оснований.</li>
-            <li data-ain-step="AIN-14"><strong>Словарь — раздел 1</strong> — Согласованный словарь.</li>
-            <li data-ain-step="AIN-15"><strong>Остаточные пробелы</strong> — Полный реестр нерешённых вопросов качества.</li>
-            <li data-ain-step="AIN-16"><strong>Вопросы Заказчику</strong> — Нумерованный список вопросов до раздела 2.</li>
-            <li data-ain-step="AIN-17"><strong>Решение БА по вопросам</strong> — Поэлементный протокол решения.</li>
-            <li data-ain-step="AIN-18"><strong>Новые данные</strong> — Реестр ответов и гипотез.</li>
-            <li data-ain-step="AIN-19"><strong>Повторная нормализация</strong> — Новая версия атомов и impact set.</li>
-            <li data-ain-step="AIN-20"><strong>Снимок памяти</strong> — Принятый БА evidence-пакет всей спецификации.</li>
-            <li data-ain-step="AIN-21"><strong>Гейт до раздела 2</strong> — Протокол допуска или остановки.</li>
-            <li data-ain-step="AIN-22"><strong>Сборка раздела 2</strong> — Черновик контекста только из принятого snapshot.</li>
-            <li data-ain-step="AIN-23"><strong>Проверка раздела 2</strong> — Отчёт соответствия и BA-review.</li>
-            <li data-ain-step="AIN-24"><strong>Г-IN и передача</strong> — Принятый пакет A-IN либо возврат/CS.</li>
+            <li data-ain-step="AIN-01">
+              <strong>AIN-01: Правила и версия</strong><p>Паспорт запуска и применимые нормы.</p>
+              <p>Проверка: Конституция и обязательные стартовые нормы прочитаны, версии и квитанция зафиксированы; без доступа — blocked до AIN-02; Проверены режим/разрешённое действие; спорное предложение сопоставлено с действующей нормой до согласия.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-01" aria-label="Копировать полный промпт AIN-01">⧉ Копировать AIN-01</button>
+              <details data-ain-preview="AIN-01"><summary>Полный текст промпта AIN-01</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-02">
+              <strong>AIN-02: Данные у БА</strong><p>Пакет имеющихся материалов без интерпретации.</p>
+              <p>Проверка: Файлы, версии, права, источник утверждений и отсутствующие данные перечислены; Уже имеющиеся материалы переиспользованы с версией; полный ввод просмотрен до вопросов.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-02" aria-label="Копировать полный промпт AIN-02">⧉ Копировать AIN-02</button>
+              <details data-ain-preview="AIN-02"><summary>Полный текст промпта AIN-02</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-03">
+              <strong>AIN-03: Реестр источников</strong><p>Реестр происхождения и доступа.</p>
+              <p>Проверка: Каждый материал имеет ID, владельца, дату, locator и статус доступа; Raw клиента, факт БЗ, вывод, пример и гипотеза имеют разные типы происхождения.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-03" aria-label="Копировать полный промпт AIN-03">⧉ Копировать AIN-03</button>
+              <details data-ain-preview="AIN-03"><summary>Полный текст промпта AIN-03</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-04">
+              <strong>AIN-04: Атомизация</strong><p>Реестр атомов с исходными фрагментами.</p>
+              <p>Проверка: Каждый атом проверяется отдельно; количественные параметры и отрицания сохранены; Группировка и дедупликация сохраняют все условия, отрицания и обратные ссылки; цитата БЗ не становится словами клиента.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-04" aria-label="Копировать полный промпт AIN-04">⧉ Копировать AIN-04</button>
+              <details data-ain-preview="AIN-04"><summary>Полный текст промпта AIN-04</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-05">
+              <strong>AIN-05: Качество и смысл</strong><p>Реестр дефектов и проверяемых предпосылок.</p>
+              <p>Проверка: По каждому атому проверены измерения качества §4; есть основание либо unknown; Окружение не равно scope; предварительная оценка не подменяет вердикт 12; метрики и технология не выдуманы.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-05" aria-label="Копировать полный промпт AIN-05">⧉ Копировать AIN-05</button>
+              <details data-ain-preview="AIN-05"><summary>Полный текст промпта AIN-05</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-06">
+              <strong>AIN-06: Кандидаты продуктов</strong><p>Карта прямых, опорных и внешних компонентов.</p>
+              <p>Проверка: У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависимость исключённых из scope компонентов.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-06" aria-label="Копировать полный промпт AIN-06">⧉ Копировать AIN-06</button>
+              <details data-ain-preview="AIN-06"><summary>Полный текст промпта AIN-06</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-07">
+              <strong>AIN-07: План retrieval</strong><p>Проверяемый план покрытия документацией.</p>
+              <p>Проверка: Для каждого атома и компонента назначены источник, запрос и критерий остановки; Mango-БЗ сначала; внешняя граница проверяется при зависимости/неприменимости/запросе БА, без потери обеих границ.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-07" aria-label="Копировать полный промпт AIN-07">⧉ Копировать AIN-07</button>
+              <details data-ain-preview="AIN-07"><summary>Полный текст промпта AIN-07</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-08">
+              <strong>AIN-08: Веб-извлечение</strong><p>Квитанция чтения внешних и нормативных источников.</p>
+              <p>Проверка: URL, версия/дата, раздел/цитата, способ чтения и вердикт; ошибки доступа явны; Для каждого утверждения подтверждены версия и точный смысл источника; empty/unknown/access_gap различены.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-08" aria-label="Копировать полный промпт AIN-08">⧉ Копировать AIN-08</button>
+              <details data-ain-preview="AIN-08"><summary>Полный текст промпта AIN-08</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-09">
+              <strong>AIN-09: Извлечение БЗ</strong><p>Квитанция чтения продуктовой и внешней БЗ.</p>
+              <p>Проверка: Документ, версия, locator, применимость и пробел; повторное чтение согласовано при расширении; Квитанция описывает фактическое чтение; ссылка/пересказ поиска и отсутствие результата не доказывают функцию или запрет.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-09" aria-label="Копировать полный промпт AIN-09">⧉ Копировать AIN-09</button>
+              <details data-ain-preview="AIN-09"><summary>Полный текст промпта AIN-09</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-10">
+              <strong>AIN-10: Замыкание зависимостей</strong><p>Матрица покрытия и открытый frontier.</p>
+              <p>Проверка: Все узлы/связи просмотрены либо имеют явный пробел; новый узел возвращает к 06/07; Похожие услуги, каналы, поля хранения/отображения проверены раздельно; scope не скрывает реальную зависимость.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-10" aria-label="Копировать полный промпт AIN-10">⧉ Копировать AIN-10</button>
+              <details data-ain-preview="AIN-10"><summary>Полный текст промпта AIN-10</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-11">
+              <strong>AIN-11: Сверка противоречий</strong><p>Журнал расхождений источников.</p>
+              <p>Проверка: Каждая коллизия имеет применимость, приоритет и BA-решение либо blocked; Между атомами согласованы роли, события, состояния, время и асинхронность; разные области scope не названы противоречием.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-11" aria-label="Копировать полный промпт AIN-11">⧉ Копировать AIN-11</button>
+              <details data-ain-preview="AIN-11"><summary>Полный текст промпта AIN-11</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-12">
+              <strong>AIN-12: Исполнимость сейчас</strong><p>Матрица атом → возможность → доказательство.</p>
+              <p>Проверка: Да/частично/нет/не подтверждено, условия и delta по компонентам; нет вывода из молчания; Точное утверждение доказано в своей границе; API/аналогия и воспоминание не подтверждают весь сценарий; unknown не равен опровержению.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-12" aria-label="Копировать полный промпт AIN-12">⧉ Копировать AIN-12</button>
+              <details data-ain-preview="AIN-12"><summary>Полный текст промпта AIN-12</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-13">
+              <strong>AIN-13: Согласование пула</strong><p>Принятый БА пул продуктов и оснований.</p>
+              <p>Проверка: БА принял версии, покрытие, исключения; пробелы не выданы за факты; По каждому спорному тезису accept/partial/reject с основанием, без blanket-согласия.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-13" aria-label="Копировать полный промпт AIN-13">⧉ Копировать AIN-13</button>
+              <details data-ain-preview="AIN-13"><summary>Полный текст промпта AIN-13</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-14">
+              <strong>AIN-14: Словарь — раздел 1</strong><p>Согласованный словарь.</p>
+              <p>Проверка: Термины трассируются к продуктам/источникам; unknown не выдуман; Близкие номера, UI-сущности, роли и моменты различены; неоднозначность не угадана по отраслевому примеру.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-14" aria-label="Копировать полный промпт AIN-14">⧉ Копировать AIN-14</button>
+              <details data-ain-preview="AIN-14"><summary>Полный текст промпта AIN-14</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-15">
+              <strong>AIN-15: Остаточные пробелы</strong><p>Полный реестр нерешённых вопросов качества.</p>
+              <p>Проверка: Каждый дефект 05/10/11/12 закрыт доказательством либо связан с вопросом/гипотезой; Перед новым вопросом проверены весь ввод и БЗ; цель, ответственность, способ, качество и ограничение различены.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-15" aria-label="Копировать полный промпт AIN-15">⧉ Копировать AIN-15</button>
+              <details data-ain-preview="AIN-15"><summary>Полный текст промпта AIN-15</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-16">
+              <strong>AIN-16: Вопросы Заказчику</strong><p>Нумерованный список вопросов до раздела 2.</p>
+              <p>Проверка: Вопрос → дефект/атом/основание/влияние; все stakeholder-вопросы адресованы Заказчику; Финальные вопросы только в разрешённом режиме: список, одно бизнес-решение на пункт, нейтральный тон, без выбора архитектуры Заказчиком.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-16" aria-label="Копировать полный промпт AIN-16">⧉ Копировать AIN-16</button>
+              <details data-ain-preview="AIN-16"><summary>Полный текст промпта AIN-16</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-17">
+              <strong>AIN-17: Решение БА по вопросам</strong><p>Поэлементный протокол решения.</p>
+              <p>Проверка: Принять/отклонить с причиной/доработать/явная гипотеза; молчание не решение; Отклонение вопроса не закрывает дефект; изменение/удаление прежней практики имеет evidence, влияние и явное решение БА.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-17" aria-label="Копировать полный промпт AIN-17">⧉ Копировать AIN-17</button>
+              <details data-ain-preview="AIN-17"><summary>Полный текст промпта AIN-17</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-18">
+              <strong>AIN-18: Новые данные</strong><p>Реестр ответов и гипотез.</p>
+              <p>Проверка: У каждого ответа автор/дата/источник; гипотеза имеет владельца, риск, срок проверки; Частичное согласие применено только к названному тезису; механизм API не заменяет ответ об ответственности сторон.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-18" aria-label="Копировать полный промпт AIN-18">⧉ Копировать AIN-18</button>
+              <details data-ain-preview="AIN-18"><summary>Полный текст промпта AIN-18</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-19">
+              <strong>AIN-19: Повторная нормализация</strong><p>Новая версия атомов и impact set.</p>
+              <p>Проверка: Обновлённые атомы и все зависимые результаты инвалидированы и перепроверены; Версии и supersedes сохранены; новые условия не удалены молча, зависимые выводы отозваны до повторного допуска.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-19" aria-label="Копировать полный промпт AIN-19">⧉ Копировать AIN-19</button>
+              <details data-ain-preview="AIN-19"><summary>Полный текст промпта AIN-19</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-20">
+              <strong>AIN-20: Снимок памяти</strong><p>Принятый БА evidence-пакет всей спецификации.</p>
+              <p>Проверка: Snapshot ID, версии, полный пул БЗ Mango/внешних систем, атомы, решения, provenance; Принятый snapshot сохраняет происхождение, ограничения частичного согласия, отозванные решения и отложенные замечания.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-20" aria-label="Копировать полный промпт AIN-20">⧉ Копировать AIN-20</button>
+              <details data-ain-preview="AIN-20"><summary>Полный текст промпта AIN-20</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-21">
+              <strong>AIN-21: Гейт до раздела 2</strong><p>Протокол допуска или остановки.</p>
+              <p>Проверка: Условия §6 выполнены; нерешённый блокер или непринятая гипотеза запрещают допуск; Ни сокращение схемы, ни пауза/неясная граница поставки не обходят вопросы и принятие допустимых гипотез.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-21" aria-label="Копировать полный промпт AIN-21">⧉ Копировать AIN-21</button>
+              <details data-ain-preview="AIN-21"><summary>Полный текст промпта AIN-21</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-22">
+              <strong>AIN-22: Сборка раздела 2</strong><p>Черновик контекста только из принятого snapshot.</p>
+              <p>Проверка: Каждое утверждение связано с атомом/источником; гипотезы видимы, ФТ не генерируются; Текущий режим разрешает составление; замечание на будущее и анализ-only не запускают редактуру.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-22" aria-label="Копировать полный промпт AIN-22">⧉ Копировать AIN-22</button>
+              <details data-ain-preview="AIN-22"><summary>Полный текст промпта AIN-22</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-23">
+              <strong>AIN-23: Проверка раздела 2</strong><p>Отчёт соответствия и BA-review.</p>
+              <p>Проверка: Обратная трассировка, полнота, отсутствие новых фактов и согласие БА; Все прежние атомы и практики покрыты; совпадают события/состояния/условия; checklist не заменил весь ввод; нормативный формат не подменён согласием.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-23" aria-label="Копировать полный промпт AIN-23">⧉ Копировать AIN-23</button>
+              <details data-ain-preview="AIN-23"><summary>Полный текст промпта AIN-23</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
+            <li data-ain-step="AIN-24">
+              <strong>AIN-24: Г-IN и передача</strong><p>Принятый пакет A-IN либо возврат/CS.</p>
+              <p>Проверка: БА подтвердил §6; разделы 1/2 и evidence согласованы; полный match направлен в CS решением БА; Handover классифицирует what/how/качество/ограничения/UC по версиям стандартов, сохраняет ФТ-NN и L1/L2 без производства будущих разделов.</p>
+              <button type="button" class="testkit-copy" data-ain-copy="AIN-24" aria-label="Копировать полный промпт AIN-24">⧉ Копировать AIN-24</button>
+              <details data-ain-preview="AIN-24"><summary>Полный текст промпта AIN-24</summary><pre class="testkit-prompt-text" aria-live="polite">Откройте для загрузки полного текста.</pre></details>
+            </li>
           </ol>
-          <p>Если evidence недостаточно, возвращаемся к сбору и извлечению из БЗ. В память следующего шага переносится только согласованное БА, с происхождением и статусом гипотез.</p>
-          <p><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md" target="_blank" rel="noreferrer">Подробный RFC: контракты, возвраты, роли, бюджет и план производства промптов</a></p>
-          <p id="rfc-audit-link"><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md" target="_blank" rel="noreferrer">Аудит RFC: что уже проверено, какие риски поведения модели учтены и что решить дальше</a></p>
+          <p>Прежний комплект ниже сохранён для совместимости и других стадий. Его Ш-А/Ш-1/Ш-2 и one-shot адаптированы к этому порядку; прежние результаты тестов не измеряют новые тексты. 39 классов остаются библиотекой операций.</p>
+          <p><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md" target="_blank" rel="noreferrer">Принятый RFC: контракты, возвраты, роли и бюджет</a></p>
+          <p id="rfc-audit-link"><a href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md" target="_blank" rel="noreferrer">Аудит RFC и ограничения проверки поведения модели</a></p>
         </details>
         <!-- issue-468:end -->
         <details class="process-help" id="process-help">
@@ -523,7 +644,7 @@
     </main>
 
     <footer class="site-footer">
-      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.8.2</a>
+      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.8.3</a>
       · каталог: 39 классов BCREQ, архив: 14 промптов этапа 1
     </footer>
 

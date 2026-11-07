@@ -670,7 +670,7 @@ def build_all():
                 f"id: mango-{INTAKE_FILE}",
                 'title: "BCREQ Ш-А: анкета и согласие со стандартами"',
                 "status: draft",
-                "version: 0.1",
+                "version: 0.2",
                 f"updated: {FIX_DATE}",
                 "temperature: 0.1",
                 "operation: intake",
@@ -696,6 +696,11 @@ def build_all():
                 "текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n"
             )
         updated = BUILD_DATE if name == REVIEW_FILE else FIX_DATE
+        if name == INTAKE_FILE or "<!-- issue-474:entry -->" in body:
+            updated = "2026-11-07"
+        # #474: intake is now only AIN-02; retain the questionnaire as a data form.
+        if name == INTAKE_FILE:
+            body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
         text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block
         outputs[DRAFTS / f"{name}.md"] = text
         manifest.append({
@@ -714,7 +719,7 @@ def build_all():
     outputs[MANIFEST] = json.dumps({
         "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
         "task": "BL-156",
-        "build_date": BUILD_DATE,
+        "build_date": "2026-11-07",
         "runtime_sha": sha,
         "standards": {
             "base": f"standards/bcreq-prompt-base-standard.md@{ctx['base'][0]}",
