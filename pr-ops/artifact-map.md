@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.22
-updated: 2026-11-06
+version: 0.23
+updated: 2026-11-07
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -97,6 +97,8 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/rfc/2026-11-ttz-feasibility-flow.md` | RFC | RFC-TTZ-001 (issue #466), proposed: постановка/SSOT, практика 8 RUN, обезличенная форма 4 PDF и явные замечания БА; crosswalk, мета-модель, отчётность, F1+F2, план пробного потока и автоматизации. | Да для потока ТТЗ | `docs/rfc/rfc-registry.md`, `pr-ops/BACKLOG.md`, `standards/bcreq-runtime-references.md`, `experiments/issue_466/README.md`, `site/index.html` |
 | `/docs/rfc/2026-11-a-in-decomposition.md` | RFC | RFC-AIN-001 (#468), proposed v0.3: 24 шага, retrieval loop, provenance, вопросы/гипотезы, роли/бюджет/миграция; §2.3…2.6 — продолжение 1135, методология, P01…P20 и защита прежней практики. Т-11…13 выполнены, BL-179 review. | Да для проектирования A-IN | `docs/ba-processes/bcreq-a-in-route.json`, `docs/rfc/rfc-registry.md`, `pr-ops/BACKLOG.md`, `experiments/issue_468/README.md`, `site/index.html` |
 | `/docs/ba-processes/bcreq-a-in-route.json` | Модель процесса | SSOT списка и полей 24 проектных контрактов, v0.2: взаимодействие, handover и ссылки на P01…P20; не runtime, не тексты промптов. | Да для RFC-AIN-001 | `experiments/issue_468/route_table.py`, `experiments/issue_468/site_a_in.py`, `scripts/validate_issue_468_a_in.py`, `scripts/test_issue_468_dialogue.py` |
+| `/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md` | Аудит | Аудит RFC-TTZ-001 и RFC-AIN-001 (#470): полнота, проблемы 1135 и граничные случаи, RFC с незавершёнными задачами, рекомендация | Владелец, ИИ-инженер |
+| `/experiments/issue_470/` | Скрипт миграции | Переименование `docs/rfc` и перенос ссылок, разовый инструмент #470 | ИИ-инженер |
 | `/experiments/issue_468/` | Evidence и проверки | Manifest и видимая дельта 28 → 66, ledger практики, baseline прежних контрактов, контрпримеры допуска/review; приватные исходники и извлечения исключены из git. | Да для review RFC-AIN-001 | `docs/rfc/2026-11-a-in-decomposition.md`, `docs/ba-processes/bcreq-a-in-route.json`, `scripts/test_issue_468_dialogue.py` |
 
 ## Smart Sync decisions: Hub PR #229/#230
