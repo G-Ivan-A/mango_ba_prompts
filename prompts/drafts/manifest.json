@@ -1,7 +1,7 @@
 {
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
-  "build_date": "2026-11-07",
+  "build_date": "2026-11-08",
   "runtime_sha": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
   "standards": {
     "base": "standards/bcreq-prompt-base-standard.md@0.1.3",

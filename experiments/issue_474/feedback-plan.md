@@ -41,7 +41,7 @@ ACCESS_GAP. Контроль памяти не создаёт новых шаг�
 2. [x] Исправить все тексты, доступ/память, provenance и представление сайта.
 3. [x] Выполнить focused regression, реальный retrieval smoke, browser checks и validate-full.
 4. [x] Review трёх ролей (БА/RE, архитектор данных, ИИ-инженер), остановка при 3/3 принять, максимум пять итераций.
-5. [ ] Коммиты/push только рабочей ветки, main merge, CI, русский PR и ready.
+5. [x] Коммиты/push только рабочей ветки, main merge, CI, русский PR и ready.
 
 НФТ: без полного клона БЗ, без тяжёлых сборок, без клиентских данных и
 программного оркестратора. HTTP 200 и статический тест не доказывают поведение
@@ -53,4 +53,10 @@ LLM. Проверяется наблюдаемый вывод, цитаты и �
 reproduce_feedback.py — ожидаемый отказ старого текста, retrieval_smoke.py
 --fetch — SHA и цитата проверены; browser — 35 карточек, 24/24 текст/copy,
 legacy switcher, mobile без overflow, error/reload, pageErrors=[].
-Review завершён на итерации 4, 3/3 принять; дальнейшая финализация — пункт 5.
+Review завершён на итерации 4, 3/3 принять. Коммит реализации ae7ea98d
+опубликован в рабочей ветке; upstream/main включён. Оба CI workflow прошли:
+[governance](https://github.com/konard/G-Ivan-A-mango_ba_prompts/actions/runs/42498323912),
+[Pages build](https://github.com/konard/G-Ivan-A-mango_ba_prompts/actions/runs/42498326453).
+[PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475) обновлён на
+русском и переведён в ready. После финальной синхронизации дат черновиков
+CI повторяется; ссылки на проверки окончательного SHA фиксируются в PR.

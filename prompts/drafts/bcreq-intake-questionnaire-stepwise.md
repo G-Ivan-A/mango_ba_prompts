@@ -3,7 +3,7 @@ id: mango-bcreq-intake-questionnaire-stepwise-by-test
 title: "BCREQ Ш-А: анкета и согласие со стандартами (по тесту)"
 status: draft
 version: 0.2
-updated: 2026-11-07
+updated: 2026-11-08
 temperature: 0.1
 operation: intake
 processes: ["Приём и контекст"]

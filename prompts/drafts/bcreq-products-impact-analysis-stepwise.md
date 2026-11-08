@@ -3,7 +3,7 @@ id: mango-bcreq-products-impact-analysis-stepwise-by-test
 title: "BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)"
 status: draft
 version: 0.4
-updated: 2026-11-07
+updated: 2026-11-08
 temperature: 0.1
 operation: impact_analysis
 processes: ["Приём и контекст"]

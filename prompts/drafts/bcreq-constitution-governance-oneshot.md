@@ -3,7 +3,7 @@ id: mango-bcreq-constitution-governance-oneshot-by-test
 title: "BCREQ Ш-0: конституция процесса (по тесту)"
 status: draft
 version: 0.5
-updated: 2026-11-07
+updated: 2026-11-08
 temperature: 0.1
 operation: governance
 processes: ["Конституция и управление"]

@@ -3,7 +3,7 @@ id: mango-bcreq-fr-documentation-stepwise-by-test
 title: "BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)"
 status: draft
 version: 0.5
-updated: 2026-11-07
+updated: 2026-11-08
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]

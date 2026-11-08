@@ -697,7 +697,7 @@ def build_all():
             )
         updated = BUILD_DATE if name == REVIEW_FILE else FIX_DATE
         if name == INTAKE_FILE or "<!-- issue-474:entry -->" in body:
-            updated = "2026-11-07"
+            updated = "2026-11-08"
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
@@ -719,7 +719,7 @@ def build_all():
     outputs[MANIFEST] = json.dumps({
         "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
         "task": "BL-156",
-        "build_date": "2026-11-07",
+        "build_date": "2026-11-08",
         "runtime_sha": sha,
         "standards": {
             "base": f"standards/bcreq-prompt-base-standard.md@{ctx['base'][0]}",

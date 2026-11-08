@@ -3,7 +3,7 @@ id: mango-bcreq-context-understanding-stepwise-by-test
 title: "BCREQ Ш-1 (2.1): контекст, глоссарий (по тесту)"
 status: draft
 version: 0.5
-updated: 2026-11-07
+updated: 2026-11-08
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
