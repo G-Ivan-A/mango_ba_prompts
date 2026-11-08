@@ -62,12 +62,15 @@ class AINAcceptance(unittest.TestCase):
         overlay=module('ain_site',HERE/'site_a_in.py')
         html=(ROOT/'site/index.html').read_text()
         self.assertEqual(html.count('id="a-in-proposal"'),1)
-        self.assertEqual(len(re.findall(r'data-ain-step="AIN-\d+"',html)),24)
+        self.assertNotIn('data-ain-step=', html)
+        self.assertEqual(html.count('class="process-help"'), 1)
         self.assertEqual(overlay.apply(html),html)
         stripped=html[:html.index(overlay.START)]+html[html.index(overlay.END)+len(overlay.END)+1:]
         self.assertEqual(overlay.apply(stripped),html)
         panel=overlay.panel()
-        self.assertNotIn('<table',panel);self.assertEqual(panel.count('data-ain-copy='),24)
+        self.assertNotIn('<table',panel);self.assertNotIn('data-ain-copy=',panel)
+        self.assertNotIn('<details',panel)
+        self.assertLess(html.index('id="process-help"'), html.index('id="a-in-proposal"'))
         self.assertIn('промпты draft, эффективность не измерена',panel)
         for id in ('process-help','process-tabs','standards-bcreq','standards-ttz','standards-industry'):
             self.assertIn(f'id="{id}"',html)
@@ -78,7 +81,7 @@ class AINAcceptance(unittest.TestCase):
             self.assertFalse(record['raw_committed'])
         self.assertFalse(list(HERE.glob('*.pdf')))
         self.assertFalse((HERE/'issue.json').exists())
-        self.assertEqual(json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version'],'2.8.3')
+        self.assertEqual(json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version'],'2.8.4')
         self.assertIn('BL-179',(ROOT/'pr-ops/BACKLOG.md').read_text())
         self.assertIn('BL-180',(ROOT/'pr-ops/backlog-ba-model.md').read_text())
 if __name__=='__main__':

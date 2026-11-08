@@ -30,28 +30,19 @@ def violations(state):
 
 
 def evidence_violations(claim):
-    """Validate illustrative claims against the proposed local profile only."""
+    """Offline counterexamples for the existing feasibility scale, no new enum.
+
+    This is a review oracle, not a product classifier or a provenance adapter.
+    """
     errors = []
-    if claim['evidence_status'] not in ('VERIFIED', 'PARTIAL', 'CONFLICT', 'UNKNOWN', 'REFUTED', 'NOT_APPLICABLE'):
-        errors.append('unknown_status')
-    if claim['feasibility'] in ('yes', 'no'):
-        if not (claim['evidence_status'] == 'VERIFIED' and claim.get('exact_scope')
-                and claim.get('evidence_ids') and claim['access'] == 'read'
-                and claim['freshness'] == 'current'):
+    verdict = claim.get('feasibility')
+    if verdict not in (None, 'Да', 'Нет', 'Частично'):
+        errors.append('unknown_feasibility')
+    if verdict is not None:
+        if not (claim.get('exact_scope') and claim.get('evidence_ids')
+                and claim.get('access') == 'read' and claim.get('freshness') == 'current'
+                and not claim.get('contradiction')):
             errors.append('unsupported_feasibility')
-    if claim.get('origin') == 'ba_hypothesis' and claim['evidence_status'] == 'VERIFIED':
-        errors.append('hypothesis_as_fact')
+        if claim.get('origin') == 'ba_hypothesis':
+            errors.append('hypothesis_as_fact')
     return errors
-
-
-def example_import_status(system, status, sufficient=False):
-    """Loss-aware illustration for RFC review, not an external API adapter."""
-    if system == 'gra' and status in ('VERIFIED', 'PARTIAL', 'CONFLICT'):
-        mapped = status if sufficient else 'UNKNOWN'
-    elif system == 'orbis' and status == 'CONTRADICTED':
-        mapped = 'CONFLICT'
-    elif system == 'orbis' and status == 'OBSERVED' and sufficient:
-        mapped = 'VERIFIED'
-    else:
-        mapped = 'UNKNOWN'
-    return {'evidence_status': mapped, 'original_status': status, 'source_system': system}

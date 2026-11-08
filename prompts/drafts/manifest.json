@@ -39,7 +39,7 @@
         "Ш-0"
       ],
       "based_on": "prompts/bcreq-constitution-governance-oneshot.md",
-      "based_on_sha256": "32dff224b6f3f59f9bbda0bbabb773f808664104e7eaa8ae80fda96794d2dfff",
+      "based_on_sha256": "3ffa79cbef3509845312efc44117d52997ed0c231e9c6b86266e1b7575d7fcd1",
       "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
@@ -104,7 +104,7 @@
         "Ш-1"
       ],
       "based_on": "prompts/bcreq-context-understanding-stepwise.md",
-      "based_on_sha256": "dfc178fac5696cd734f26e117793c41ef8e087dc83b14e12ba3eeaa337f8929d",
+      "based_on_sha256": "5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9",
       "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
@@ -145,7 +145,7 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "1f63504c476c3d9c5bd09282027358f5adbdae8ce70dc6a5266b24cf812be636",
+      "based_on_sha256": "235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf",
       "runtime_main_to_sha": 0,
       "profiles": [
         "EXTRACT",
@@ -183,7 +183,7 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "542e33ba04c6cbb64743a1beaaef646f4ebfffb09e06e677d45d8b68bb9b7879",
+      "based_on_sha256": "04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"

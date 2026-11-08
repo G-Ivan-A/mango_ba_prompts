@@ -1,0 +1,91 @@
+{
+  "execution": {
+    "date": "2026-11-08",
+    "model": "current Codex session; same implementing model",
+    "mode": "tool",
+    "independent_model_run": false,
+    "scope": "Focused execution of the evidence-normalization sub-contract in AIN-09; no route advance, no BA acceptance or section 2 generation",
+    "prompt_path": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+    "prompt_sha256": "da7eca2bc7c82e88c1265664b83917ac4f758c150f3817c96001d349f06765f0",
+    "tools": [
+      "GitHub CLI code search",
+      "GitHub contents API"
+    ],
+    "read_sequence": [
+      "runtime README",
+      "docs/kb/MAP.json",
+      "docs/kb/maps/integration-amocrm.toc.tsv",
+      "docs/kb/integration-amocrm/sections/60-zapis-razgovorov.md:1-34"
+    ],
+    "queries": [
+      "запись разговора",
+      "integration-amocrm / Запись разговоров",
+      "функциональный эквивалент: появление записи в карточке, задержка, права и ограничения"
+    ]
+  },
+  "source": {
+    "repo": "G-Ivan-A/mango-ba-ai-runtime",
+    "commit": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
+    "path": "docs/kb/integration-amocrm/sections/60-zapis-razgovorov.md",
+    "sha256": "1c4826f332ac777512fbd3ee4028d96ab5564b0fdf6ef651d14ae8b63fa3d5ad",
+    "doc_code": "INTAMO",
+    "doc_version": "25.08.2025",
+    "section": "10",
+    "pages": "112-113",
+    "read_lines": "1-34"
+  },
+  "input": {
+    "synthetic": true,
+    "raw_customer": "В amoCRM запись разговора может появляться в карточке контакта с задержкой; доступ к записи должен учитывать права сотрудника.",
+    "origin": "Synthetic customer statement for #475; no client data",
+    "technical_question": {
+      "id": "TECH-1",
+      "addressee": "команда интеграций",
+      "text": "Может ли запись разговора появляться в amoCRM с задержкой, с проверкой прав доступа?"
+    }
+  },
+  "output": {
+    "candidate_only": true,
+    "raw_preserved": true,
+    "evidence": [
+      {
+        "id": "E-1",
+        "quote": "запись разговора может отобразиться в карточке контакта с небольшой задержкой.",
+        "locator": "https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/integration-amocrm/sections/60-zapis-razgovorov.md#L34",
+        "applicability": "Только ВАТС MANGO OFFICE + amoCRM указанной версии; включена запись и запись существует. Права проверяются по модели ВАТС; короткий разговор может не сохраниться.",
+        "conclusion": "Факт подтвержден для указанной границы. Возможная задержка и проверка прав описаны в прочитанном разделе."
+      }
+    ],
+    "feasibility": "Да",
+    "verdict_scope": "Заявленный сценарий задержки появления существующей записи в amoCRM с проверкой прав; не общая оценка любой интеграции.",
+    "removed_questions": [
+      "TECH-1"
+    ],
+    "removal_reason": "Ответ найден в прочитанной БЗ, адресовать тот же вопрос команде интеграций или БА не требуется.",
+    "customer_questions": [],
+    "not_established": [
+      "API-механизм асинхронной привязки по ID",
+      "численное SLA задержки",
+      "применимость к HDE или иной CRM"
+    ],
+    "receipt": "candidate на review БА, evidence E-1; раздел 2 не сформирован, допуск AIN-21 не выдан"
+  },
+  "negative_cases": [
+    {
+      "kind": "specification counterexample, not a separate model run",
+      "access": "none",
+      "topic": "запись разговоров в amoCRM",
+      "marker": "[ACCESS_GAP: Требуется ручной поиск в БЗ по теме: запись разговоров в amoCRM]",
+      "feasibility": null,
+      "technical_question_to_ba": false
+    },
+    {
+      "kind": "specification counterexample, not a separate model run",
+      "access": "context: only unrelated document",
+      "topic": "API-привязка записи в HDE",
+      "marker": "[ACCESS_GAP: Требуется ручной поиск в БЗ по теме: API-привязка записи в HDE]",
+      "feasibility": null,
+      "technical_question_to_ba": false
+    }
+  ]
+}

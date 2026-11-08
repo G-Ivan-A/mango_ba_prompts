@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.25
-updated: 2026-11-07
+version: 0.26
+updated: 2026-11-08
 ai-generated: true
 type: register
 scope: governance
@@ -493,8 +493,8 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Суть | Статус | Реализация |
 | --- | --- | --- | --- |
-| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 отдельных шага, evidence/вопросы/гипотезы до раздела 2; P01…20, S01…27, LE-01…20; v0.5 — принятие и draft реализация | `accepted` (#474) | [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475): полные контракты, адаптеры, процессы и сайт 2.8.3; BL-180 review, измерение BL-175 и деплой BL-232 открыты |
-| [RFC-PROV-001](2026-11-ba-evidence-provenance.md) | Локальный профиль provenance/evidence/feasibility: минимальный draft-пилот; критический анализ двух aether-репозиториев | `proposed` | [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475); решение Р-PROV-1 за владельцем |
+| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 отдельных шага, evidence/вопросы/гипотезы до раздела 2; P01…20, S01…27, LE-01…20; v0.5 — принятие и draft реализация | `accepted` (#474) | [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475): полные контракты, адаптеры, процессы и сайт 2.8.4; BL-180 review, измерение BL-175 и деплой BL-232 открыты |
+| [RFC-PROV-001](2026-11-ba-evidence-provenance.md) | Историческое предложение локального профиля provenance/evidence/feasibility; критический анализ двух aether-репозиториев | `deferred` | [Решение владельца 08.11 в PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475#issuecomment-6723485929); только исследование BL-182 |
 
 ## Журнал переименований `docs/rfc` (issue #470)
 

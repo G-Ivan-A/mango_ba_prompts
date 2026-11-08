@@ -12,9 +12,9 @@ RUNS = ROOT / "runs/2026"
 REPS = ("r1", "r2", "r3")
 PUBLISHED = {
     "prompts/bcreq-review-validation-oneshot.md": "0.3",
-    "prompts/bcreq-constitution-governance-oneshot.md": "0.4",
-    "prompts/bcreq-context-understanding-stepwise.md": "0.4",
-    "prompts/bcreq-fr-documentation-stepwise.md": "0.4",
+    "prompts/bcreq-constitution-governance-oneshot.md": "0.5",
+    "prompts/bcreq-context-understanding-stepwise.md": "0.5",
+    "prompts/bcreq-fr-documentation-stepwise.md": "0.5",
     "prompts/bcreq-orr-solution-design-stepwise.md": "0.3",
 }
 

@@ -1,7 +1,7 @@
 ---
 status: proposed
-version: 0.6
-updated: 2026-11-07
+version: 0.7
+updated: 2026-11-08
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454"
@@ -150,11 +150,11 @@ flowchart LR
 <!-- coverage:start -->
 | Шаг | Промпт | Режим | `main` | Прод | Замер | Заглушка | Закрывает шаг |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.4 | 0.2, текст другой | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.5 | 0.2, текст другой | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
 | Ш-А | `bcreq-intake-questionnaire-stepwise` | by-test | нет | нет | не измерен | черновик v0.2 | BL-232, затем BL-157в |
-| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.4 | 0.2, текст другой | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
-| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
-| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.4 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
+| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.5 | 0.2, текст другой | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
+| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.4 | 0.1, текст другой | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
+| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.5 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
 | Ш-4 | `bcreq-nfr-documentation-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
 | Ш-5 | `bcreq-uc-modeling-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
 | Ш-6 | `bcreq-orr-solution-design-stepwise` | by-test | 0.3 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | — | BL-232 |
@@ -168,10 +168,11 @@ flowchart LR
 
 **Поправка issue #474.** Для A-IN действует принятый RFC-AIN-001:
 Ш-0 → AIN-01…24, Ш-А — совместимый AIN-02, Ш-1 — диспетчер.
-[Инструкция](../ba-processes/bcreq-a-in-execution.md) и отдельная панель сайта
-содержат полный комплект 24 draft контрактов. Версии в таблице обновлены;
+[Инструкция](../ba-processes/bcreq-a-in-execution.md) и карточки сайта формы
+2.7.0 содержат полный комплект 24 draft контрактов. В интерфейсе 35 шагов;
+14 строк ниже сохраняют связь прежнего комплекта с измерениями. Версии в таблице обновлены;
 все RUN в колонке «Замер» относятся к прежним текстам, новые guards и AIN
-ими не измерены. Кандидат сайта — 2.8.3 для ручного пакетного деплоя BL-232.
+ими не измерены. Кандидат сайта — 2.8.4 для ручного пакетного деплоя BL-232.
 
 **Поправка issue #464.** Добавлен шаг Ш-А, правлены тексты всех шагов, кроме Ш-В. В колонке
 «Замер» — прошлые прогоны: новый текст они не покрывают, его проверит BL-157в. В разделах ниже

@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Draft A-IN regression contracts, provenance counterexamples and copy parity.
+"""Draft A-IN regression contracts, retrieval counterexamples and copy parity.
 
 No LLM calls. A passing test cannot certify tone, judgement or model obedience.
 """
+import hashlib
 import importlib.util
 import json
 import unittest
@@ -61,33 +62,38 @@ class Execution(unittest.TestCase):
                     self.assertIn(expected,self.oracle.violations(state))
                 if not case['expected']:self.assertEqual(self.oracle.violations(state),[])
 
-    def test_provenance_does_not_collapse_feasibility(self):
-        # A verified negative source is compatible with 'no'; verification of
-        # the quote alone cannot establish either positive or negative scope.
-        base=dict(evidence_status='VERIFIED',feasibility='no',exact_scope=True,
-                  evidence_ids=['E-1'],access='read',freshness='current',origin='knowledge')
-        self.assertEqual(self.oracle.evidence_violations(base),[])
-        for patch in ({'evidence_status':'CONFLICT'}, {'evidence_status':'PARTIAL'},
-                      {'access':'empty'}, {'access':'access_gap'}, {'exact_scope':False},
-                      {'freshness':'stale'}, {'evidence_ids':[]}):
+    def test_missing_evidence_is_not_a_negative_verdict(self):
+        base=dict(feasibility='Нет', exact_scope=True, evidence_ids=['E-1'],
+                  access='read', freshness='current', origin='knowledge')
+        for verdict in ('Да', 'Нет', 'Частично'):
+            self.assertEqual(self.oracle.evidence_violations({**base,'feasibility':verdict}),[])
+        for patch in ({'contradiction':True}, {'access':'empty'}, {'access':'access_gap'},
+                      {'exact_scope':False}, {'freshness':'stale'}, {'evidence_ids':[]}):
             state={**base,**patch}
             self.assertIn('unsupported_feasibility',self.oracle.evidence_violations(state))
-            state['feasibility']='unknown'
+            state['feasibility']=None
             self.assertEqual(self.oracle.evidence_violations(state),[])
-        state={**base,'origin':'ba_hypothesis'}
-        self.assertIn('hypothesis_as_fact',self.oracle.evidence_violations(state))
+        self.assertIn('hypothesis_as_fact',self.oracle.evidence_violations({**base,'origin':'ba_hypothesis'}))
 
-    def test_loss_aware_status_examples(self):
-        for system,status,sufficient,expected in [
-                ('gra','VERIFIED',True,'VERIFIED'),('gra','VERIFIED',False,'UNKNOWN'),
-                ('gra','PARTIAL',True,'PARTIAL'),('gra','CONFLICT',True,'CONFLICT'),
-                ('orbis','OBSERVED',False,'UNKNOWN'),('orbis','OBSERVED',True,'VERIFIED'),
-                ('orbis','NOT_OBSERVED',True,'UNKNOWN'),('orbis','UNCERTAIN',True,'UNKNOWN'),
-                ('orbis','CONTRADICTED',True,'CONFLICT'),('orbis','new-state',True,'UNKNOWN')]:
-            result=self.oracle.example_import_status(system,status,sufficient)
-            self.assertEqual(result['evidence_status'],expected)
-            self.assertEqual(result['original_status'],status)
-            self.assertNotIn('feasibility',result)
+    def test_retrieval_contract_and_deferred_provenance(self):
+        normal=(ROOT/'docs/ba-processes/bcreq-evidence-normalization.md').read_text().split('---',2)[2].strip()
+        common=(ROOT/'docs/ba-processes/bcreq-a-in-common.md').read_text()
+        self.assertIn(normal, common)
+        for step in self.kit['steps']:
+            self.assertIn(normal, step['prompt'])
+            self.assertNotIn('evidence_status', step['prompt'])
+            self.assertNotIn('VERIFIED', step['prompt'])
+        for n in (8,16,24):
+            self.assertIn('Пакет памяти проекта',self.kit['steps'][n-1]['prompt'])
+        registry=(ROOT/'docs/rfc/rfc-registry.md').read_text()
+        self.assertRegex(registry,r'RFC-PROV-001[^\n]*`deferred`')
+        backlog=(ROOT/'pr-ops/BACKLOG.md').read_text()
+        self.assertIn('Спринт 10. Доисследование provenance',backlog)
+        self.assertIn('BL-182',backlog)
+
+    def test_observed_recording_retrieval(self):
+        smoke=module('retrieval474','experiments/issue_474/retrieval_smoke.py')
+        smoke.check()
 
     def test_complete_prompts_and_byte_equal_copy_source(self):
         build=module('build474','scripts/build_bcreq_a_in.py').build()
@@ -99,13 +105,15 @@ class Execution(unittest.TestCase):
         for step in self.kit['steps']:
             text=(ROOT/step['promptPath']).read_text();self.assertEqual(text,step['prompt'])
             for token in (step['id'],step['checks'],step['forbidden'],'AIN-21','AIN-22','Заказчику',
-                          'task_id','attempt','snapshot_id','retrieved_at','CONFLICT',
+                          'task_id','attempt','snapshot_id','ACCESS_GAP','Проверено в БЗ:',
                           'КОНЕЦ','не имитируй инструменты'.capitalize(),'Проверки (receipt)'):
                 self.assertIn(token,text)
             self.assertIn('### Выполни',text);self.assertIn('### Форма результата',text)
         text=self.kit['steps'][15]['prompt']
         self.assertIn('нумерованным списком, без таблицы',text)
-        self.assertIn('проверено и пусто',text)
+        self.assertIn('Неясно:',text)
+        for step in self.kit['steps']:
+            self.assertEqual(hashlib.sha256(step['prompt'].encode()).hexdigest(),step['promptSha256'])
         for n in range(1,21):
             self.assertTrue(any(f'LE-{n:02}' in s['prompt'] for s in self.kit['steps']),f'LE-{n:02}')
 
@@ -119,6 +127,8 @@ class Execution(unittest.TestCase):
             text=path.read_text();guard=text.split('<!-- issue-474:entry -->')[1].split('<!-- /issue-474:entry -->')[0]
             self.assertIn('AIN-21',guard);self.assertIn('AIN-16',guard)
             self.assertIn('Заказчику',guard)
+            normal=(ROOT/'docs/ba-processes/bcreq-evidence-normalization.md').read_text().split('---',2)[2].strip()
+            self.assertIn(normal,guard)
         state=(ROOT/'docs/contracts/bcreq-manual-state.md').read_text()
         self.assertIn('в том числе при вызове отдельного класса',state)
         self.assertIn('allow AIN-21',self.kit['steps'][21]['prompt'])

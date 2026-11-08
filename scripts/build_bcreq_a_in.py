@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render 24 complete A-IN draft prompts and website data from accepted contracts."""
 import argparse
+import hashlib
 import json
 import re
 from pathlib import Path
@@ -27,8 +28,8 @@ def build():
 id: mango-bcreq-{sid.lower()}-stepwise
 title: "BCREQ {sid}: {step['name']}"
 status: draft
-version: 0.1
-updated: 2026-11-07
+version: 0.2
+updated: 2026-11-08
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
@@ -83,7 +84,8 @@ Draft для ручной проверки БА; эффективность мо
 '''
         path = DRAFTS / f'bcreq-{sid.lower()}-understanding-stepwise.md'
         outputs[path] = body
-        kit.append({**step, 'promptPath':str(path.relative_to(ROOT)), 'prompt':body})
+        kit.append({**step, 'promptPath':str(path.relative_to(ROOT)), 'prompt':body,
+                    'promptSha256':hashlib.sha256(body.encode()).hexdigest()})
     outputs[ROOT/'site/data/a-in-kit.json'] = json.dumps({'routeVersion':route['version'],'status':'draft','measured':False,'steps':kit},ensure_ascii=False,indent=2)+'\n'
     return outputs
 
