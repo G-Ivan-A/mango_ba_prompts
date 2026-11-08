@@ -113,7 +113,7 @@ class AInOrder(unittest.TestCase):
 
     def test_kit_order_and_size(self):
         kit = json.loads(read("site/data/test-kit.json"))
-        self.assertEqual(kit["kit"]["version"], "0.8")
+        self.assertEqual(kit["kit"]["version"], "0.9")  # #474 adds the accepted A-IN overlay
         steps = [item["step"].split()[0] for item in kit["steps"]]
         self.assertEqual(len(steps), 14)
         self.assertEqual(steps[:3], ["Ш-0", "Ш-А", "Ш-1"])

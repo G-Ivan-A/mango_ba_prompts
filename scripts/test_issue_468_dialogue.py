@@ -178,7 +178,14 @@ class PracticePreservation(unittest.TestCase):
                 else:
                     self.assertEqual(current[field], value, (current['id'], field))
         for field, value in baseline['common'].items():
-            self.assertEqual(route[field], value, field)
+            if field == 'status':
+                # #474 explicitly accepts the route. Other frozen contracts
+                # and fixtures remain identical to their original baseline.
+                self.assertEqual(value, 'proposed')
+                self.assertEqual(route[field], 'accepted')
+                self.assertIn('/issues/474', route['decision'])
+            else:
+                self.assertEqual(route[field], value, field)
         cases = (HERE / 'gate-cases.json').read_bytes()
         self.assertEqual(dialogue.digest(cases), baseline['gate_cases_sha256'])
         rfc = (ROOT / 'docs/rfc/2026-11-a-in-decomposition.md').read_text()

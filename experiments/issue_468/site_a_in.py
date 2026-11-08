@@ -1,28 +1,25 @@
-"""Proposed A-IN panel; existing copyable kit remains owned by its sources."""
-from html import escape
+"""Accepted A-IN guidance inside the existing Processes help disclosure."""
 import json
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 RFC = 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md'
 AUDIT = 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md'
+GUIDE = 'https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md'
 START = '        <!-- issue-468:start -->'
 END = '        <!-- issue-468:end -->'
 
 def panel():
     route = json.loads((ROOT/'docs/ba-processes/bcreq-a-in-route.json').read_text())
-    items = '\n'.join(f'            <li data-ain-step="{s["id"]}"><strong>{escape(s["name"])}</strong> — {escape(s["output"])}.</li>' for s in route['steps'])
     return f'''{START}
-        <details class="process-help" id="a-in-proposal">
-          <summary>Проект A-IN: {route['step_count']} шага до перехода к следующей стадии</summary>
-          <p><strong>RFC-AIN-001 · на рассмотрении.</strong> Предлагаем разделить сбор, проверку источников, вопросы и написание контекста. Это принципы будущих промптов; текущий комплект из 14 шагов ниже пока сохраняется.</p>
-          <p>На каждом шаге — проверяемый результат и отчёт об источниках. Вопросы адресованы Заказчику; БА принимает пакет и может явно согласовать гипотезу. До допуска по данным и вопросам раздел 2 не создаётся.</p>
-          <ol class="v2-list">
-{items}
-          </ol>
-          <p>Если evidence недостаточно, возвращаемся к сбору и извлечению из БЗ. В память следующего шага переносится только согласованное БА, с происхождением и статусом гипотез.</p>
-          <p><a href="{RFC}" target="_blank" rel="noreferrer">Подробный RFC: контракты, возвраты, роли, бюджет и план производства промптов</a></p>
-          <p id="rfc-audit-link"><a href="{AUDIT}" target="_blank" rel="noreferrer">Аудит RFC: что уже проверено, какие риски поведения модели учтены и что решить дальше</a></p>
-        </details>
+        <div id="a-in-proposal">
+          <p><strong>A-IN: {route['step_count']} отдельных шага · draft</strong></p>
+          <p><strong>RFC-AIN-001 принят · промпты draft, эффективность не измерена.</strong> Начните с Ш-0 (полная конституция) в комплекте ниже, затем копируйте один полный AIN-промпт из карточки за вызов. Передайте правила и принятый пакет; после результата решение принимает БА.</p>
+          <p>Раздел 2 строго после явного актуального допуска БА AIN-21 и отдельной команды AIN-22. Вопросы — Заказчику нумерованным списком AIN-16. Принятие RFC и команда new не заменяют допуск. AIN-24 и Г-IN разрешают переход к ФТ.</p>
+          <p><a href="{GUIDE}" target="_blank" rel="noreferrer">Инструкция БА: запуск, версии, вопросы, возвраты и восстановление длинного чата</a></p>
+          <p>Карточки AIN-01…24 находятся в этапе «Старт и разделы 1–2» ниже: инструкция, полный текст и копирование в форме 2.7.0. Ш-0 остаётся стартером; остальные стадии и сравнение редакций сохранены. 39 классов остаются библиотекой операций.</p>
+          <p><a href="{RFC}" target="_blank" rel="noreferrer">Принятый RFC: контракты, возвраты, роли и бюджет</a></p>
+          <p id="rfc-audit-link"><a href="{AUDIT}" target="_blank" rel="noreferrer">Аудит RFC и ограничения проверки поведения модели</a></p>
+        </div>
 {END}
 '''
 
@@ -33,7 +30,7 @@ def apply(html):
         if html[end:end+1] == '\n':
             end += 1
         html = html[:start]+html[end:]
-    marker = '        <details class="process-help" id="process-help">'
+    marker = '        <details class="process-help" id="process-help">\n          <summary>Как пользоваться</summary>\n'
     if html.count(marker) != 1:
         raise ValueError('process help anchor must be unique')
-    return html.replace(marker, panel()+marker, 1)
+    return html.replace(marker, marker+panel(), 1)

@@ -45,8 +45,9 @@ for code in ('S01', 'S27', 'Р-AIN-1', 'Р-AIN-2', 'Р-AIN-3', '### 7.2.'):
     check(code in ain, f'RFC-AIN-001: нет {code}')
 for code in ('Р-ТТЗ-1', 'Р-ТТЗ-3', 'Р-ТТЗ-4', 'Р-ТТЗ-5', '### 8.1.', '### 8.2.'):
     check(code in ttz, f'RFC-TTZ-001: нет {code}')
-for text, name in ((ain, 'RFC-AIN-001'), (ttz, 'RFC-TTZ-001')):
-    check(re.search(r'^status: proposed$', text, re.M), f'{name}: статус должен остаться proposed')
+# #474 accepts A-IN explicitly; TTZ still awaits its own decision.
+check(re.search(r'^status: accepted$', ain, re.M), 'RFC-AIN-001: нет принятия #474')
+check(re.search(r'^status: proposed$', ttz, re.M), 'RFC-TTZ-001: статус должен остаться proposed')
 
 ledger = json.loads(read('experiments/issue_468/practice-ledger.json'))
 items = ledger if isinstance(ledger, list) else next(v for v in ledger.values() if isinstance(v, list))
@@ -70,12 +71,12 @@ check(not bad, f'нестандартные имена: {bad}')
 check('docs/rfc/' not in read('tools/file-naming-legacy-allowlist.txt'), 'docs/rfc вернулся в allowlist')
 
 stats = json.loads(read('site/data/stats.json'))
-check('"version": "2.8.2"' in json.dumps(stats, indent=2), 'stats.json: версия не 2.8.2')
+check('"version": "2.8.4"' in json.dumps(stats, indent=2), 'stats.json: версия не 2.8.4')
 index = read('site/index.html')
-check('>v2.8.2<' in index and '>v2.8.1<' not in index, 'site/index.html: версия не 2.8.2')
+check('>v2.8.4<' in index and '>v2.8.1<' not in index, 'site/index.html: версия не 2.8.4')
 check('rfc-audit-link' in index, 'site/index.html: нет ссылки на аудит')
 backlog = read('pr-ops/BACKLOG.md')
-check(re.search(r'^\| BL-181 \|.*\| review \|', backlog, re.M), 'нет BL-181 в статусе review')
+check(re.search(r'^\| BL-181 \|.*\| DONE \|', backlog, re.M), 'нет BL-181 в статусе DONE после #472')
 
 if errors:
     print('\n'.join(f'ERROR: {e}' for e in errors))

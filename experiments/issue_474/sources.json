@@ -1,0 +1,50 @@
+[
+  {
+    "repo": "aether-orbis-gra",
+    "sha": "b49acde5af86629eb781015f4338b5ec834f27c8",
+    "path": "docs/methodology.md",
+    "url": "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/methodology.md"
+  },
+  {
+    "repo": "aether-orbis-gra",
+    "sha": "b49acde5af86629eb781015f4338b5ec834f27c8",
+    "path": "docs/glossary.md",
+    "url": "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/docs/glossary.md"
+  },
+  {
+    "repo": "aether-orbis-gra",
+    "sha": "b49acde5af86629eb781015f4338b5ec834f27c8",
+    "path": "methodology/research-program/10-theory.md",
+    "url": "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/methodology/research-program/10-theory.md"
+  },
+  {
+    "repo": "aether-orbis-gra",
+    "sha": "b49acde5af86629eb781015f4338b5ec834f27c8",
+    "path": "education/technograd-reputation-engineering/handouts/course-quotes-provenance/README.md",
+    "url": "https://github.com/G-Ivan-A/aether-orbis-gra/blob/b49acde5af86629eb781015f4338b5ec834f27c8/education/technograd-reputation-engineering/handouts/course-quotes-provenance/README.md"
+  },
+  {
+    "repo": "aether-orbis",
+    "sha": "ead22d699c92ff3d91f300efb0cd0ec0702b967b",
+    "path": "configs/schemas/extraction-result.schema.json",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/blob/ead22d699c92ff3d91f300efb0cd0ec0702b967b/configs/schemas/extraction-result.schema.json"
+  },
+  {
+    "repo": "aether-orbis",
+    "sha": "ead22d699c92ff3d91f300efb0cd0ec0702b967b",
+    "path": "configs/schemas/evaluation-result.schema.json",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/blob/ead22d699c92ff3d91f300efb0cd0ec0702b967b/configs/schemas/evaluation-result.schema.json"
+  },
+  {
+    "repo": "aether-orbis",
+    "sha": "ead22d699c92ff3d91f300efb0cd0ec0702b967b",
+    "path": "configs/schemas/preserved-record.schema.json",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/blob/ead22d699c92ff3d91f300efb0cd0ec0702b967b/configs/schemas/preserved-record.schema.json"
+  },
+  {
+    "repo": "aether-orbis",
+    "sha": "ead22d699c92ff3d91f300efb0cd0ec0702b967b",
+    "path": "docs/concept.md",
+    "url": "https://github.com/G-Ivan-A/aether-orbis/blob/ead22d699c92ff3d91f300efb0cd0ec0702b967b/docs/concept.md"
+  }
+]

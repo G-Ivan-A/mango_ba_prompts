@@ -100,10 +100,10 @@ const BCREQ_STAGES = [
 // «Индустриальные стандарты», шаг Ш-А (14 шагов), промпты: сбор до разделов,
 // запрет дампа конституции, гипотезы, раздел 5 по стандарту. Новый текст не измерен.
 const SITE_VERSION = {
-  version: "2.8.2",
-  released: "2026-11-07",
-  issue: 470,
-  basis: "PR #471: аудит RFC и имена docs/rfc; подготовка ручного деплоя, RFC на рассмотрении",
+  version: "2.8.4",
+  released: "2026-11-08",
+  issue: 474,
+  basis: "PR #475: 24 A-IN, доказательный retrieval и память, карточки формы 2.7.0; подготовка ручного пакетного деплоя",
   changelog: "CHANGELOG.md",
 };
 
@@ -1719,6 +1719,17 @@ async function main() {
   await writeJson("site/data/bcreq-flow.json", bcreqFlow);
   const testKit = await makeTestKit(await read(SOURCE_FILES.runKit), prompts);
   await writeJson("site/data/test-kit.json", testKit);
+  const ainRoute = JSON.parse(await read("docs/ba-processes/bcreq-a-in-route.json"));
+  const ainSteps = [];
+  for (const step of ainRoute.steps) {
+    const promptPath = `prompts/drafts/a-in/bcreq-${step.id.toLowerCase()}-understanding-stepwise.md`;
+    const prompt = await read(promptPath);
+    ainSteps.push({ ...step, promptPath, prompt,
+      promptSha256: crypto.createHash("sha256").update(prompt).digest("hex") });
+  }
+  await writeJson("site/data/a-in-kit.json", {
+    routeVersion: ainRoute.version, status: "draft", measured: false, steps: ainSteps,
+  });
 
   console.log(`Generated ${prompts.length} prompts`);
   console.log(

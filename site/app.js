@@ -1326,13 +1326,44 @@ function trackTopbarHeight() {
   }).observe(topbar);
 }
 
+// #475: expand A-IN inside the approved 2.7.0 cards and reader. The historical
+// 14-step data remains available for frozen runs; it is not a second UI route.
+function composeAinTestKit(kit, ain) {
+  if (ain.steps?.length !== 24 || ain.steps.some((s) => !s.prompt)) {
+    throw new Error("Не удалось загрузить 24 полных промпта A-IN");
+  }
+  const steps = kit.steps.flatMap((step) => {
+    if (step.step.startsWith("Ш-А ") || step.step.startsWith("Ш-2 ")) return [];
+    if (!step.step.startsWith("Ш-1 ")) return [{ ...step }];
+    return ain.steps.map((s) => ({
+      ainId: s.id, step: `${s.id} ${s.name}`, group: step.group,
+      mode: "by-test", modeNote: "эффективность не измерена",
+      purpose: s.why, prepare: s.input,
+      actions: ["Передать полный промпт, правила и принятый пакет текущей версии",
+        "Проверить результат и доказательства; принять эту версию либо вернуть с причиной",
+        "Следующий шаг запускать отдельной командой после решения"],
+      result: s.output, gate: s.id === "AIN-21" ? "Допуск к разделу 2" :
+        s.id === "AIN-24" ? "Г-IN" : "Review результата",
+      gateHint: `${s.checks}. Решение принимает БА.`,
+      draft: { id: `mango-bcreq-${s.id.toLowerCase()}-stepwise`,
+        file: s.promptPath.split("/").pop(), body: s.prompt, version: "0.2",
+        title: `${s.id}: ${s.name}`, sha256: s.promptSha256,
+        url: `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/${s.promptPath}` },
+    }));
+  });
+  steps.forEach((s, i) => { s.number = s.number === "—" ? "—" : String(i + 1); });
+  const byTest = steps.filter((s) => s.mode === "by-test").length;
+  return { ...kit, steps, counts: { steps: steps.length, byTest, published: steps.length - byTest },
+    groups: kit.groups.map((g) => ({ ...g, count: steps.filter((s) => s.group === g.id).length })) };
+}
+
 async function init() {
   initTheme();
   trackTopbarHeight();
   try {
     // Данные каталога загружаются только после ввода пароля (site/gate.js).
     await (window.siteGate?.ready ?? Promise.resolve());
-    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow, testKit] = await Promise.all([
+    const [promptsData, stats, roadmap, checks, processes, patterns, processTree, bcreqFlow, testKit, ainKit] = await Promise.all([
       fetch("data/prompts.json").then((response) => response.json()),
       fetch("data/stats.json").then((response) => response.json()),
       fetch("data/roadmap.json").then((response) => response.json()),
@@ -1342,6 +1373,10 @@ async function init() {
       fetch("data/process-tree.json").then((response) => response.json()),
       fetch("data/bcreq-flow.json").then((response) => response.json()),
       fetch("data/test-kit.json").then((response) => response.json()),
+      fetch("data/a-in-kit.json").then((response) => {
+        if (!response.ok) throw new Error("Не удалось загрузить A-IN; обновите страницу");
+        return response.json();
+      }),
     ]);
 
     state.promptsData = promptsData;
@@ -1353,7 +1388,7 @@ async function init() {
     state.patterns = patterns;
     state.processTree = processTree;
     state.bcreqFlow = bcreqFlow;
-    state.testKit = testKit;
+    state.testKit = composeAinTestKit(testKit, ainKit);
 
     renderSuggestions();
     renderMetrics();
@@ -1371,6 +1406,7 @@ async function init() {
     applyRoute();
   } catch (error) {
     nodes.promptGrid.replaceChildren(el("div", "empty-state", "Данные не загрузились"));
+    nodes.testKitSummary.textContent = "Данные не загрузились. Обновите страницу для повторной загрузки.";
     console.error(error);
   }
 }
@@ -1474,6 +1510,7 @@ async function copyPrompt(button) {
 // зачем шаг, что подготовить, что делать, результат, кто решает на гейте.
 // Данные — data/test-kit.json.
 function testKitModeLabel(step) {
+  if (step.ainId) return "draft";
   return step.mode === "by-test" ? "черновик «по тесту»" : `опубликован v${step.published.version}`;
 }
 
@@ -1486,6 +1523,7 @@ function testKitAssignedKind(step) {
 }
 
 function testKitEditionLabel(step, kind) {
+  if (step.ainId) return "draft";
   return kind === "draft" ? "по тесту" : `v${step.published.version}`;
 }
 
@@ -1578,6 +1616,7 @@ function testKitStep(step, index) {
   item.dataset.mode = step.mode;
   item.dataset.group = step.group;
   item.dataset.testkitStep = String(index);
+  if (step.ainId) item.dataset.ainStep = step.ainId;
   item.id = `bcreq-testkit-step-${index + 1}`;
   item.tabIndex = -1;
 
@@ -1645,7 +1684,7 @@ function renderTestKit() {
   source.rel = "noreferrer";
   nodes.testKitSummary.replaceChildren(
     document.createTextNode(
-      `Шагов: ${kit.counts.steps}; черновик «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. Источник — `,
+      `Шагов: ${kit.counts.steps}; draft / «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. 24 контракта A-IN по принятому RFC; остальные стадии — `,
     ),
     source,
     document.createTextNode("."),

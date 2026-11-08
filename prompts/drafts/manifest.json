@@ -1,7 +1,7 @@
 {
   "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
   "task": "BL-156",
-  "build_date": "2026-11-04",
+  "build_date": "2026-11-08",
   "runtime_sha": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
   "standards": {
     "base": "standards/bcreq-prompt-base-standard.md@0.1.3",
@@ -39,7 +39,7 @@
         "Ш-0"
       ],
       "based_on": "prompts/bcreq-constitution-governance-oneshot.md",
-      "based_on_sha256": "986a126c11931a4337cb492bef562bc65c078c1228b8f17753470962c7186bfd",
+      "based_on_sha256": "3ffa79cbef3509845312efc44117d52997ed0c231e9c6b86266e1b7575d7fcd1",
       "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
@@ -104,7 +104,7 @@
         "Ш-1"
       ],
       "based_on": "prompts/bcreq-context-understanding-stepwise.md",
-      "based_on_sha256": "b28bb5dd582e663d734ef2014ea5c011d869e6fa1ad7043ade38a33dc1d9f034",
+      "based_on_sha256": "5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9",
       "runtime_main_to_sha": 0,
       "profiles": [
         "INGEST",
@@ -145,7 +145,7 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "889cddf367a499af5a6eb6cec8393f829bde516874e58f06117da1263c434fe1",
+      "based_on_sha256": "235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf",
       "runtime_main_to_sha": 0,
       "profiles": [
         "EXTRACT",
@@ -183,7 +183,7 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "595dd1c37054ac4b71088759a0a02d02603477cf79bde1351e18497fb630fa28",
+      "based_on_sha256": "04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"

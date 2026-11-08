@@ -1,7 +1,7 @@
 {
   "id": "RFC-AIN-001",
-  "version": "0.2",
-  "status": "proposed",
+  "version": "0.3",
+  "status": "accepted",
   "runtime": false,
   "step_count": 24,
   "startup_rules": {
@@ -719,5 +719,7 @@
     ],
     "rule": "AIN только нормализует и передаёт принятые атомы, вопросы, риски и evidence. Поведение, качество, дизайн, ограничения и UC классифицируются раздельно по действующим стандартам 3…7; пример стека и API-workaround не становятся ФТ. Платформенный scope новых задач — 2.4.2, условия работы — 6.2. Новый L3 не вводится. ФТ-NN сразу сопровождает формулировку поведения без отдельного заголовка каждого ФТ; смысловые блоки стандарта сохраняются.",
     "functional_item_heading": false
-  }
+  },
+  "accepted_by": "G-Ivan-A",
+  "decision": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/474"
 }

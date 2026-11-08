@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.24
-updated: 2026-11-07
+version: 0.26
+updated: 2026-11-08
 ai-generated: true
 type: register
 scope: governance
@@ -493,7 +493,8 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 
 | RFC | Суть | Статус | Реализация |
 | --- | --- | --- | --- |
-| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 шага, evidence/вопросы/гипотезы до раздела 2, retrieval loop, роли, бюджет, производство; v0.3 — продолжение 1135, методология, P01…P20 и сохранение прежней практики (§2.3…2.6); v0.4 (#470) — поведение LLM в чате LE-01…LE-20, метрики предсказуемости, Р-AIN-3 | `proposed` | [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469); сайт 2.8.1 подготовлен, промпты не произведены; Т-11…13 выполнены, BL-179 review, Р-AIN-1/2 на рассмотрении; BL-180/175/232 без изменений |
+| [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 отдельных шага, evidence/вопросы/гипотезы до раздела 2; P01…20, S01…27, LE-01…20; v0.5 — принятие и draft реализация | `accepted` (#474) | [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475): полные контракты, адаптеры, процессы и сайт 2.8.4; BL-180 review, измерение BL-175 и деплой BL-232 открыты |
+| [RFC-PROV-001](2026-11-ba-evidence-provenance.md) | Историческое предложение локального профиля provenance/evidence/feasibility; критический анализ двух aether-репозиториев | `deferred` | [Решение владельца 08.11 в PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475#issuecomment-6723485929); только исследование BL-182 |
 
 ## Журнал переименований `docs/rfc` (issue #470)
 

@@ -29,6 +29,7 @@ Usage:
 from __future__ import annotations
 
 import importlib.util
+import json
 import re
 import sys
 from pathlib import Path
@@ -136,6 +137,9 @@ def port_index(src: str) -> str:
     src = I464.apply(src)
     src = I466.apply(src)
     src = I468.apply(src)
+    # #474: static badges share the release source used by app.js.
+    version = json.loads((SITE / "data/stats.json").read_text())["siteVersion"]["version"]
+    src = re.sub(r'(data-site-version[^>]*>)(?:v[0-9.]+)', rf'\g<1>v{version}', src)
     nav_start = src.index('<nav class="topnav"')
     first = src.index("<a ", nav_start)
     nav_end = src.index("        <button\n          class=\"icon-button\"\n          id=\"site-logout\"", nav_start)
