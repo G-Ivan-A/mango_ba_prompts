@@ -22,4 +22,5 @@ def apply(src):
         anchor=f'<h2 id="standard-title-{number}">'
         end=src.index('</div></div>',src.index(anchor))+len('</div></div>')
         src=src[:end]+'<p class="standard-summary" data-ain-guidance="'+str(number)+'">'+''.join(parts)+'</p>'+src[end:]
-    return src
+    return re.sub(r'(· каталог: 39 классов BCREQ, архив:) [^<\n]+',
+                  r'\1 14 промптов этапа 1 и 4 редакции 2.7.0', src)
