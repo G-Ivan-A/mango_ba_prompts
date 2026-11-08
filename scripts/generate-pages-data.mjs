@@ -100,10 +100,10 @@ const BCREQ_STAGES = [
 // «Индустриальные стандарты», шаг Ш-А (14 шагов), промпты: сбор до разделов,
 // запрет дампа конституции, гипотезы, раздел 5 по стандарту. Новый текст не измерен.
 const SITE_VERSION = {
-  version: "2.8.4",
+  version: "2.8.5",
   released: "2026-11-08",
-  issue: 474,
-  basis: "PR #475: 24 A-IN, доказательный retrieval и память, карточки формы 2.7.0; подготовка ручного пакетного деплоя",
+  issue: 476,
+  basis: "PR #477: проверка 24 A-IN, архив 2.7.0, фильтры и трассировка; готово к ручному пакетному деплою",
   changelog: "CHANGELOG.md",
 };
 
@@ -288,7 +288,9 @@ function parseFrontmatter(content) {
     let value = match[2].trim();
     value = value.replace(/^["']|["']$/g, "");
     if (value.startsWith("[")) {
-      frontmatter[key] = JSON.parse(value);
+      // Historical draft metadata also uses YAML lists such as steps: [Ш-А].
+      frontmatter[key] = key === "steps" && !value.includes('"')
+        ? value.slice(1, -1).split(/,\s*/).filter(Boolean) : JSON.parse(value);
     } else if (value === "true") {
       frontmatter[key] = true;
     } else if (value === "false") {
@@ -696,9 +698,17 @@ async function listPromptFiles() {
   // Publication boundary (issue #391). Since issue #423 these 14 stage-1
   // prompts are the catalog archive: files stay in prompts/ because standards,
   // RFC, ADR and runs link to them; the active catalog is the 39 classes.
+  const historical = JSON.parse(await read("prompts/archive/a-in-v2.7.0/manifest.json"));
+  const snapshots = historical.entries.map((entry) => ({
+    relativePath: entry.archivePath, archived: true,
+    archiveInfo: { siteVersion: historical.siteVersion, step: entry.step,
+      sourceCommit: historical.sourceCommit, sourcePath: entry.sourcePath,
+      replacedBy: entry.replacedBy },
+  }));
   return activeNames
     .filter((name) => name.startsWith("bcreq-") && name.endsWith(".md"))
     .map((name) => ({ relativePath: `prompts/${name}`, archived: true }))
+    .concat(snapshots)
     .sort((left, right) => left.relativePath.localeCompare(right.relativePath, "ru"));
 }
 
@@ -1116,7 +1126,7 @@ function makePatterns(patternsList, prompts, operationsById) {
 const PROMPT_FAMILIES = [
   { id: "bcreq", label: "BCREQ · 39 классов", icon: "★", description: "39 классов ручных промптов BCREQ (PR #422): по одному стандарту на класс, общий контракт состояния." },
   { id: "other", label: "Прочие", icon: "•", description: "Действующие промпты вне набора BCREQ." },
-  { id: "archive", label: "Архив", icon: "⌛", description: "14 промптов этапа 1, заменённые 39 классами (issue #423); файлы остаются в prompts/ для ссылок из стандартов, RFC и прогонов." },
+  { id: "archive", label: "Архив", icon: "⌛", description: "Промпты этапа 1 и полные заменённые редакции A-IN сайта 2.7.0; поиск и фильтры доступны, исходные файлы сохранены для трассировки." },
 ];
 
 function promptFamily(basename, archived) {
@@ -1585,7 +1595,7 @@ async function main() {
     const frontmatter = parseFrontmatter(content);
     const basename = path.basename(file.relativePath);
     const metadata = promptMetadata.get(basename);
-    const operation = operationsById.get(frontmatter.operation);
+    const operation = operationsById.get(file.archiveInfo?.step === "Ш-А" ? "ingestion" : frontmatter.operation);
     if (!operation) {
       throw new Error(`${file.relativePath}: frontmatter.operation must name one of the 13 taxonomy operations`);
     }
@@ -1602,12 +1612,22 @@ async function main() {
     const slug = basename.replace(/\.md$/, "");
     const family = promptFamily(basename, file.archived);
     prompts.push({
-      id: frontmatter.id || `mango-${slug}`,
+      id: file.archiveInfo ? `${frontmatter.id}-site-v2p7p0` : frontmatter.id || `mango-${slug}`,
       file: basename,
       title: frontmatter.title || slug,
       sourcePath: file.relativePath,
       url: repoUrl(file.relativePath),
       archived: file.archived,
+      archiveInfo: file.archiveInfo || null,
+      // Keep historical labels/frontmatter intact, map applicability only for facets.
+      filterProcesses: processes.flatMap((label) => ({
+        "Приём и контекст": [CLASS_STAGES[0].label],
+        "Требования и предварительное согласование": [CLASS_STAGES[1].label],
+        "Дизайн решения и оценка": [CLASS_STAGES[2].label],
+        "Конституция и управление": CLASS_STAGES.map((stage) => stage.label),
+        "Валидация второй ролью": CLASS_STAGES.slice(1).map((stage) => stage.label),
+        "Сценарии вне документа": [CLASS_STAGES[1].label, CLASS_STAGES[2].label],
+      }[label] || [])),
       family,
       isNew: family === "bcreq",
       description: metadata?.description || "Описание отсутствует в prompts/README.md.",
