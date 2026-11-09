@@ -16,6 +16,11 @@ on:
       - main
   workflow_dispatch:
     inputs:
+      validation_only:
+        description: "Run the same lightweight checks as PR CI, without PDF extraction"
+        required: true
+        type: boolean
+        default: false
       source_dir:
         description: "Source manifest directory under kb/sources/; leave empty to use raw source/out inputs"
         required: false
@@ -86,7 +91,7 @@ jobs:
   # source → extract.py → kb/processed/<slug> → проверка. Результат всегда
   # выкладывается артефактом; при commit_result=true также коммитится в ветку.
   extract:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' && !inputs.validation_only
     runs-on: ubuntu-latest
     steps:
       - name: Checkout

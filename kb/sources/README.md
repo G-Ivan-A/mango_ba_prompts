@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.3
-updated: 2026-06-20
+version: 0.4
+updated: 2026-11-09
 type: kb-sources-guide
 scope: kb/sources
 related_artifacts:
@@ -312,6 +312,11 @@ python3 scripts/kb/extract.py kb/sources/cc-manual/CC_manual_1.26.23.pdf \
 будут сквозными, а `source_refs` сохранит точный файл-часть и локальные страницы.
 
 ### Через GitHub Actions (без локального окружения)
+
+Для повторения лёгких проверок PR на выбранной ветке установите
+`validation_only=true`. Извлечение PDF и установка его зависимостей тогда
+не запускаются. По умолчанию `validation_only=false`: сохраняется полный
+ручной запуск извлечения; ему нужны исходные PDF по указанным путям.
 
 Actions → **KB pipeline** → *Run workflow* → укажите `source`, `out`, `doc_code`,
 `doc_title`, `doc_version`. Для multi-part PDF перечислите пути в `source` через

@@ -67,9 +67,9 @@ class Readiness(unittest.TestCase):
 
     def test_release_and_archive_applicability(self):
         data=load('site/data/prompts.json')
-        self.assertEqual(data['siteVersion']['version'],'2.8.5')
+        self.assertEqual(data['siteVersion']['version'],'2.8.6')
         self.assertEqual(data['siteVersion'],load('site/data/stats.json')['siteVersion'])
-        self.assertIn('>v2.8.5<',read('site/index.html'))
+        self.assertIn('>v2.8.6<',read('site/index.html'))
         self.assertIn('архив: 14 промптов этапа 1 и 4 редакции 2.7.0',read('site/index.html'))
         stages={p['label'] for p in data['filters']['processes']}
         ops={p['id'] for p in data['filters']['operations']}

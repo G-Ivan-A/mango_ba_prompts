@@ -1,0 +1,15 @@
+{
+  "sourceBaseline": "e6a72240ba5f7b121f42e2446d9bd7fa341f753c",
+  "unchangedSourceFiles": 179,
+  "allSiteDataEqualExceptVersionAndTimestamp": true,
+  "htmlEqualExceptVersion": true,
+  "liveBaselineChecked": true,
+  "liveVersion": "2.7.0",
+  "liveCatalogIdsRetained": 53,
+  "archivedLiveBodiesEqual": 4,
+  "otherLiveStepsUnchanged": 9,
+  "liveStepsWithOnlyAcceptedAINGuard": [
+    "Ш-0 Конституция",
+    "Ш-3 ФТ"
+  ]
+}
