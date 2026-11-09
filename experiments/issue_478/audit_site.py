@@ -13,7 +13,7 @@ from urllib.request import urlopen
 
 ROOT = Path(__file__).resolve().parents[2]
 HERE = Path(__file__).resolve().parent
-BASE = 'f0f5ad561f7fe2cd0de0c40bffe97ea3bdd0fefd'
+BASE = 'e6a72240ba5f7b121f42e2446d9bd7fa341f753c'
 LIVE = 'https://g-ivan-a.github.io/mango_ba_prompts/'
 LIVE_FILES = ('index.html', 'data/stats.json', 'data/prompts.json', 'data/test-kit.json')
 

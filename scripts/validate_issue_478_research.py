@@ -66,7 +66,7 @@ class Research(unittest.TestCase):
         audit = json.loads((HERE / 'site-audit.json').read_text())
         self.assertEqual(audit['baseline_semantic_changes'], [])
         self.assertEqual(audit['live_version']['version'], '2.7.0')
-        self.assertEqual(audit['candidate_version']['version'], '2.8.4')
+        self.assertEqual(audit['candidate_version']['version'], '2.8.5')
         self.assertTrue(audit['catalogue_ids_preserved'])
         for name, record in audit['assets'].items():
             path = ROOT / name

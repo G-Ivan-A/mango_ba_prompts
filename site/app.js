@@ -133,6 +133,8 @@ function promptSearchText(prompt) {
     prompt.operation.id,
     prompt.operation.label,
     prompt.processes.join(" "),
+    (prompt.filterProcesses || []).join(" "),
+    prompt.archiveInfo ? `Архивная версия ${prompt.archiveInfo.siteVersion} ${prompt.archiveInfo.step}` : "",
   ].join(" "));
 }
 
@@ -180,7 +182,7 @@ function matchingPrompts(excludedKind = "", { includeArchive = archiveSelected()
     }
     if (
       selectedProcesses.length > 0 &&
-      !prompt.processes.some((process) => selectedProcesses.includes(process))
+      !(prompt.filterProcesses || prompt.processes).some((process) => selectedProcesses.includes(process))
     ) {
       return false;
     }
@@ -207,7 +209,7 @@ function facetCounts(kind) {
   const counts = {};
   for (const prompt of matchingPrompts(kind)) {
     const values =
-      kind === "process" ? prompt.processes : kind === "mode" ? [prompt.mode] : [prompt.operation.id];
+      kind === "process" ? [...new Set(prompt.filterProcesses || prompt.processes)] : kind === "mode" ? [prompt.mode] : [prompt.operation.id];
     for (const value of values) {
       counts[value] = (counts[value] || 0) + 1;
     }
@@ -332,7 +334,7 @@ function renderSiteVersion() {
     const totals = state.stats.totals;
     const list = el("ul", "v2-list");
     list.append(
-      el("li", "", `Каталог: ${totals.activePrompts} классов ручных промптов BCREQ; ${totals.archivedPrompts} промптов этапа 1 — в архиве (фильтр «Архив»).`),
+      el("li", "", `Каталог: ${totals.activePrompts} классов ручных промптов BCREQ; ${totals.archivedPrompts} архивных редакций — в архиве (фильтр «Архив»).`),
       el("li", "", "Процесс BCREQ на странице «Процессы» переписан под 39 классов: маршрут по стадиям, шаги Ш-1…Ш-39, гейты Г-IN, Г-С1, Г-W."),
       el("li", "", "Разделы: О проекте, Каталог, Стандарты, Процессы, Дашборд, Справочник."),
     );
@@ -479,8 +481,8 @@ function promptCard(prompt) {
     badge.title = "Класс ручного промпта BCREQ (PR #422, issue #423)";
     titleWrap.append(badge);
   } else if (prompt.archived) {
-    const badge = el("span", "archive-badge", "⌛ архив · этап 1");
-    badge.title = "Промпт этапа 1 перенесён в архив: его заменяют классы К-01…К-39 (issue #423)";
+    const badge = el("span", "archive-badge", `⌛ Архивная версия · ${prompt.archiveInfo ? `сайт ${prompt.archiveInfo.siteVersion} · ${prompt.archiveInfo.step}` : "этап 1"}`);
+    badge.title = prompt.archiveInfo ? "Полная редакция 2.7.0; заменена отдельными вызовами AIN. Текст сохранён без сокращений." : "Промпт этапа 1 перенесён в архив: его заменяют классы К-01…К-39 (issue #423)";
     titleWrap.append(badge);
   } else if (prompt.isNew) {
     const badge = el("span", "new-badge", "★ BCREQ · новый");
@@ -570,6 +572,14 @@ function promptLinks(prompt) {
       row.append(el("span", "prompt-links-label", "Аналог в архиве:"));
       row.append(linkTo(prompt.analog.url, prompt.analog.file, prompt.analog.path));
     }
+  } else if (prompt.archiveInfo) {
+    row.append(el("span", "prompt-links-label", "Заменён шагами:"));
+    for (const id of prompt.archiveInfo.replacedBy) {
+      const link = el("a", "prompt-link", id);
+      link.href = `#processes?ain=${id}`;
+      row.append(link);
+    }
+    row.append(linkTo(`https://github.com/G-Ivan-A/mango_ba_prompts/blob/${prompt.archiveInfo.sourceCommit}/${prompt.archiveInfo.sourcePath}`, "Исходная редакция 2.7.0"));
   } else if (prompt.archived && (prompt.successors || []).length > 0) {
     row.append(el("span", "prompt-links-label", "Заменён классами:"));
     for (const classId of prompt.successors) {
@@ -1247,11 +1257,13 @@ function applyRoute() {
     if (prompt) {
       state.query = id;
       nodes.search.value = id;
+      state.selectedFilters.clear();
       // Архивный промпт виден только в наборе «Архив» (issue #423).
-      if (prompt.archived && !archiveSelected()) {
+      if (prompt.archived) {
         state.selectedFilters.add("family:archive");
       }
       rerenderInteractive();
+      updateClearButtonVisibility();
     }
   }
   window.scrollTo({ top: 0, behavior: "auto" });
@@ -1259,9 +1271,12 @@ function applyRoute() {
   // подстраница — #processes?view=<id> (issue #448).
   if (page === "processes") {
     const params = new URLSearchParams(raw.split("?")[1] || "");
+    const ain = params.get("ain");
     const step = params.get("step");
-    const target = /^\d{1,2}$/.test(step || "") ? document.getElementById(`bcreq-step-${step}`) : null;
-    applyProcessView(target ? "manual" : params.get("view"));
+    const ainTarget = /^AIN-(?:0[1-9]|1\d|2[0-4])$/.test(ain || "")
+      ? document.querySelector(`[data-ain-step="${ain}"]`) : null;
+    const target = ainTarget || (/^\d{1,2}$/.test(step || "") ? document.getElementById(`bcreq-step-${step}`) : null);
+    applyProcessView(ainTarget ? "g1" : target ? "manual" : params.get("view"));
     if (target) {
       target.closest("details")?.setAttribute("open", "");
       target.focus({ preventScroll: true });
@@ -1337,6 +1352,7 @@ function composeAinTestKit(kit, ain) {
     if (!step.step.startsWith("Ш-1 ")) return [{ ...step }];
     return ain.steps.map((s) => ({
       ainId: s.id, step: `${s.id} ${s.name}`, group: step.group,
+      next: s.next, returns: s.returns, failure: s.failure, operation: s.operation,
       mode: "by-test", modeNote: "эффективность не измерена",
       purpose: s.why, prepare: s.input,
       actions: ["Передать полный промпт, правила и принятый пакет текущей версии",
@@ -1660,10 +1676,41 @@ function testKitStep(step, index) {
     gate.append(el("strong", "", `⛳ ${step.gate}. `), document.createTextNode(step.gateHint));
     info.append(gate);
   }
+  if (step.ainId) {
+    // Navigation proposes a destination; acceptance and execution stay manual.
+    const links = el("p", "prompt-links");
+    const destinations = [...new Set([step.next, ...(step.returns || []), step.failure])];
+    for (const id of destinations) {
+      const target = /^AIN-\d{2}$/.test(id) ? `#processes?ain=${id}` : "#processes?view=g2";
+      const link = el("a", "prompt-link", id === step.next ? `После принятия: ${id}` : `Возврат: ${id}`);
+      link.href = target;
+      links.append(link);
+    }
+    info.append(links);
+  }
 
   // SHA выбранной редакции — для проверяющего, свёрнуто по умолчанию.
   const more = el("details", "testkit-more");
   more.append(el("summary", "", "Для проверяющего"), el("code", "testkit-sha"));
+  if (step.ainId) {
+    const refs = el("p", "prompt-links");
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md", "Инструкция A-IN"));
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-route.json", "Карта шагов"));
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-manual-state.md", "Контракт состояния"));
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/01-glossary.md", "Стандарт раздела 1"));
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/02-business-context.md", "Стандарт раздела 2"));
+    refs.append(linkTo("https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb", "База знаний"));
+    for (const old of state.prompts.filter((p) => p.archiveInfo?.replacedBy.includes(step.ainId))) {
+      const link = el("a", "prompt-link", `Архив 2.7.0 · ${old.archiveInfo.step}`);
+      link.href = `#prompt=${encodeURIComponent(old.id)}`;
+      refs.append(link);
+    }
+    for (const id of step.operation.match(/К-\d{2}/g) || []) {
+      const operation = state.prompts.find((p) => p.classId === id);
+      if (operation) refs.append(linkTo(operation.url, `Контракт ${id}`));
+    }
+    more.append(refs);
+  }
   info.append(more);
 
   const layout = el("div", "testkit-step-layout");

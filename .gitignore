@@ -89,3 +89,5 @@ experiments/issue_474/logs/
 # Issue #478: downloaded primary sources and local verification logs.
 experiments/issue_478/source-snapshots/
 experiments/issue_478/logs/
+experiments/issue_476/private/
+experiments/issue_476/*.log

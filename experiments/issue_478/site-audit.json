@@ -1,6 +1,6 @@
 {
   "accessed_at": "2026-11-09",
-  "baseline_sha": "f0f5ad561f7fe2cd0de0c40bffe97ea3bdd0fefd",
+  "baseline_sha": "e6a72240ba5f7b121f42e2446d9bd7fa341f753c",
   "live_url": "https://g-ivan-a.github.io/mango_ba_prompts/",
   "live_version": {
     "version": "2.7.0",
@@ -10,10 +10,10 @@
     "changelog": "CHANGELOG.md"
   },
   "candidate_version": {
-    "version": "2.8.4",
+    "version": "2.8.5",
     "released": "2026-11-08",
-    "issue": 474,
-    "basis": "PR #475: 24 A-IN, доказательный retrieval и память, карточки формы 2.7.0; подготовка ручного пакетного деплоя",
+    "issue": 476,
+    "basis": "PR #477: проверка 24 A-IN, архив 2.7.0, фильтры и трассировка; готово к ручному пакетному деплою",
     "changelog": "CHANGELOG.md"
   },
   "live_totals": {
@@ -51,12 +51,12 @@
     }
   },
   "candidate_totals": {
-    "allPrompts": 53,
+    "allPrompts": 57,
     "activePrompts": 39,
-    "archivedPrompts": 14,
+    "archivedPrompts": 18,
     "testsPassed": 0,
     "inWork": 39,
-    "deferred": 14,
+    "deferred": 18,
     "modes": {
       "manual": 39
     },
@@ -145,13 +145,18 @@
     "mango-bcreq-uc-modeling-stepwise",
     "mango-bcreq-work-solution-design-oneshot"
   ],
-  "catalogue_ids_added": [],
+  "catalogue_ids_added": [
+    "mango-bcreq-context-understanding-stepwise-by-test-site-v2p7p0",
+    "mango-bcreq-in-understanding-oneshot-site-v2p7p0",
+    "mango-bcreq-intake-questionnaire-stepwise-by-test-site-v2p7p0",
+    "mango-bcreq-products-impact-analysis-stepwise-by-test-site-v2p7p0"
+  ],
   "baseline_semantic_changes": [],
   "normalization": "Ignore generatedAt only; screenshots excluded from deploy-content hash comparison.",
   "assets": {
     "site/app.js": {
-      "sha256": "9a93a0dd0724cd7f3355bc0f0efd3df3f2051171cdbec9cd153af53e84019323",
-      "bytes": 73263
+      "sha256": "020f873123f39e2e6f9e945f8c9e9fd9d91b8fbec66914312848368f09ca38b2",
+      "bytes": 76700
     },
     "site/data/a-in-kit.json": {
       "sha256": "8b1a08d556041dbc70794167d6210aa375bec33e4a1b94dc07157276366c7f7d",
@@ -159,47 +164,47 @@
       "normalized_sha256": "b95b55e877369f3c07a8ed860c00c1ea13a3d68a3f88c07edb95d05697fef114"
     },
     "site/data/bcreq-flow.json": {
-      "sha256": "5eedf5bf9ae1972c774a06a55d7653540ad9ba1f0a968565f8bb8339ff48c7a9",
+      "sha256": "ff83c70efc5a6a8ce263d82deaf3a4bdc78c05c7ee35612c66707d5946072fb7",
       "bytes": 97854,
       "normalized_sha256": "34f250b8a2b8d36ddacb9ca124d5282e55ff3c894614d395827e1ecb0f063a39"
     },
     "site/data/checks.json": {
-      "sha256": "569e682211df0793392257b03c93a08f252e98e54ba4958299f702a20042fbc9",
-      "bytes": 27068,
-      "normalized_sha256": "fe7cc3e9620c248a2e1c7fd49af30764601684813cdae09f3c50a33b7f853082"
+      "sha256": "6922e9c6b56dbd7d112b345c4edd844a472ea2a991310f8dd390207899ddf801",
+      "bytes": 28610,
+      "normalized_sha256": "5be67e2a218370e6d80e5b00091c1324b3e42e09e8458af1a52e832d3092371a"
     },
     "site/data/patterns.json": {
-      "sha256": "6b3e220555c4ee297a4461982fb5679905638d55ba30dd0be095d3e9e7ef72f8",
+      "sha256": "dc21e8e8b5b8ed9b5e70f25903876bcebd8bd4e2d1c0433b58b3c1713f6a9cef",
       "bytes": 7272,
       "normalized_sha256": "2fafe880aed8a31b0cd9bdd4235dca800b644b25d59850ec8c2c0e06cfa98379"
     },
     "site/data/process-tree.json": {
-      "sha256": "1871e0dc758ddcb51824e9a24b7c7788945958ad78a266a2ac5c77ec408fb6e1",
+      "sha256": "cea3bab48381697b9694df903d63f8d9b411e50f5cb59abd59048d5fa5aa7b21",
       "bytes": 22550,
       "normalized_sha256": "d1530d660e9e500c61b28244eadb79a9bd0effca1ec26f5dbdf9522424d34196"
     },
     "site/data/processes.json": {
-      "sha256": "5575fe922120c9e8ad493842e566295838b38ae8de57cc04f453e3dd60383989",
+      "sha256": "27549912ef36c611bf41ee2c06d1f5702a055db36a192f3786a6cec99f0298b7",
       "bytes": 28152,
       "normalized_sha256": "4769b10695ecbe985a368b27a5021170f5518bb3c5c83c8dffa08d24e7bd36f4"
     },
     "site/data/prompts.json": {
-      "sha256": "fcae5389d6a5b9f7817432cedc6588dba094bd077894b206dd2a6dc9ab638c08",
-      "bytes": 1662204,
-      "normalized_sha256": "bacc3813252bdbd4e5084e8c8c6e34febd87e26afbf0eecd8b435de058e11a80"
+      "sha256": "ce7a0df081f06237422bbde6992d18c4879f0dacf814ce9c2da8b6fc0741874c",
+      "bytes": 1962101,
+      "normalized_sha256": "320832187453534872fabfa3abc8aa1a8266accbb64d7bdac0ab28f6cd3ec7d3"
     },
     "site/data/roadmap.json": {
-      "sha256": "202942f3261b55e768bc4a97b44ad57c9d40e3172954b12538a21796460b5a65",
+      "sha256": "09bde76b013b094f0318a44a209df74e89e35772cc392ef6004b03eeab572420",
       "bytes": 4954,
       "normalized_sha256": "a324663beb146d8e82b27b69b9bcffb598ba27f2c7f9fcaf6211b31303b0ff41"
     },
     "site/data/stats.json": {
-      "sha256": "c185a17b545e7922a555887b0c9852b97314572948df9c5184644fc128b8e407",
-      "bytes": 11673,
-      "normalized_sha256": "9b8bbdf7299e082c62691590dec9662ed53fb5cac731eda473746351dda053cf"
+      "sha256": "d520666323f7073ee4e2c08f240abd610523bc5a7f1a1f67092b75213658e2cd",
+      "bytes": 11656,
+      "normalized_sha256": "3e2c64181d4e0c2757b90f9c33263407eab912146156e97e1c8f037778e7972d"
     },
     "site/data/test-kit.json": {
-      "sha256": "3a740776af6eb1c061fa3dfc91f2af405bf305b2a97566e24eec417440d1fedd",
+      "sha256": "199bad9a95def8a189052f0894d5d3e816d38c755e97a3cd57aafa4d0aa95c03",
       "bytes": 615865,
       "normalized_sha256": "590d5f10bdeb790721ad7c881a9a38e72e3c76c3e3198a7ff24137687e7090dd"
     },
@@ -212,8 +217,8 @@
       "bytes": 4685
     },
     "site/index.html": {
-      "sha256": "36ed9b9ab1172c0ee6e70626e405f9dfa7816e94a408844b00475befc9e818f6",
-      "bytes": 107106
+      "sha256": "78db690947e37cf2e958e5dbbc7875411216f76221e3fd00e37705aaadce83e8",
+      "bytes": 110645
     },
     "site/login.css": {
       "sha256": "15954bdaa679474bb6c136b69b3ef601f94c6585423f5488f72abdbf7d5387b2",

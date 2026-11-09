@@ -81,7 +81,7 @@ class AINAcceptance(unittest.TestCase):
             self.assertFalse(record['raw_committed'])
         self.assertFalse(list(HERE.glob('*.pdf')))
         self.assertFalse((HERE/'issue.json').exists())
-        self.assertEqual(json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version'],'2.8.4')
+        self.assertEqual(json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version'],'2.8.5')
         self.assertIn('BL-179',(ROOT/'pr-ops/BACKLOG.md').read_text())
         self.assertIn('BL-180',(ROOT/'pr-ops/backlog-ba-model.md').read_text())
 if __name__=='__main__':

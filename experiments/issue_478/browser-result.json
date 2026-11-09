@@ -1,11 +1,15 @@
 {
   "accessed_at": "2026-11-09",
   "base_url": "http://127.0.0.1:8768/",
-  "candidate_version": "2.8.4",
+  "candidate_version": "2.8.5",
   "routes": ["about", "catalog", "standards", "processes", "dashboard", "glossary"],
   "cards": 35,
   "ain": 24,
   "copies": 24,
+  "archiveCopies": 4,
+  "archiveSearch": true,
+  "deepLinks": true,
+  "standardLinks": true,
   "byteEqual": true,
   "previewEqual": true,
   "legacyEditions": true,
@@ -15,7 +19,7 @@
   "pageErrors": [],
   "screenshots": [
     "site/screenshots/issue-478/live-2.7.0.png",
-    "site/screenshots/issue-478/candidate-2.8.4-desktop.png",
-    "site/screenshots/issue-478/candidate-2.8.4-mobile.png"
+    "site/screenshots/issue-478/candidate-2.8.5-desktop.png",
+    "site/screenshots/issue-478/candidate-2.8.5-mobile.png"
   ]
 }

@@ -15,6 +15,8 @@ async (page) => {
   if (await page.locator('.testkit-step-layout').count() !== 35) throw new Error('Card form changed');
   for (const step of steps) {
     const card = page.locator(`[data-ain-step="${step.id}"]`);
+    if (await card.locator('.testkit-more a[href^="#prompt="]').count() < 2) throw new Error('Archive links missing: '+step.id);
+    if (!await card.locator('.prompt-links a').count()) throw new Error('Step links missing: '+step.id);
     if (await card.locator('.testkit-prompt-text').textContent() !== step.prompt) throw new Error('Preview differs: '+step.id);
     const expected = `<!-- mango-bcreq-${step.id.toLowerCase()}-stepwise · ${step.id} ${step.name} -->\n\n${step.prompt}`;
     await card.locator('.testkit-copy').click();
@@ -42,11 +44,11 @@ async (page) => {
     });
   };
   await scrollToCard();
-  await page.screenshot({path:screenshotDir+'/candidate-2.8.4-desktop.png'});
+  await page.screenshot({path:screenshotDir+'/candidate-2.8.5-desktop.png'});
   await page.setViewportSize({width:390,height:844});
   await scrollToCard();
   if (await page.evaluate(() => document.documentElement.scrollWidth > innerWidth)) throw new Error('Mobile overflow');
-  await card.screenshot({path:screenshotDir+'/candidate-2.8.4-mobile.png'});
+  await card.screenshot({path:screenshotDir+'/candidate-2.8.5-mobile.png'});
   // A failed data load has explicit feedback and a normal reload recovers.
   await page.route('**/data/a-in-kit.json', route => route.abort());
   await page.reload({waitUntil:'domcontentloaded'});
@@ -64,7 +66,37 @@ async (page) => {
     await page.waitForFunction(r => document.querySelector(`[data-nav="${r}"]`).dataset.active === 'true', route);
     if (!await page.locator(`[data-page="${route}"]:visible`).count()) throw new Error('Page hidden: '+route);
   }
+  await page.goto(baseUrl+'#catalog', {waitUntil:'domcontentloaded'});
+  const select = async token => page.locator('[data-filter-token]').evaluateAll(
+    (els,token)=>els.find(e=>e.dataset.filterToken===token).click(), token);
+  if (await page.locator('.prompt-card').count() !== 39) throw new Error('Active catalogue');
+  await select('family:archive');
+  if (await page.locator('.prompt-card').count() !== 18) throw new Error('Archive catalogue');
+  await select('process:A-IN · Приём задачи');
+  await page.locator('#search-input').fill('2.7.0');
+  await page.waitForFunction(()=>document.querySelectorAll('.prompt-card').length===4);
+  const archives = await page.evaluate(async()=>
+    (await (await fetch('data/prompts.json')).json()).prompts.filter(p=>p.archiveInfo));
+  if (archives.length !== 4) throw new Error('Archive count');
+  for (const prompt of archives) {
+    await page.locator(`[data-copy-id="${prompt.id}"]`).first().click();
+    await page.waitForFunction(async text=>(await navigator.clipboard.readText())===text,
+      `<!-- ${prompt.id} -->\n\n${prompt.body}`);
+  }
+  await page.locator('#search-input').fill('no-such-id');
+  await page.goto(baseUrl+'#prompt='+archives[0].id, {waitUntil:'domcontentloaded'});
+  await page.waitForFunction(()=>document.querySelectorAll('.prompt-card').length===1);
+  for (const id of ['AIN-02','AIN-14','AIN-24']) {
+    await page.goto(baseUrl+'#processes?ain='+id, {waitUntil:'domcontentloaded'});
+    await page.waitForFunction(id=>!document.querySelector(`[data-ain-step="${id}"]`).closest('.testkit-group').hidden,id);
+  }
+  for (const section of ['1','2','ttz','9']) {
+    await page.goto(baseUrl+'#standards?section='+section, {waitUntil:'domcontentloaded'});
+    const target=page.locator(section==='ttz'?'#standard-ttz':section==='9'?'#standard-industry':'#standard-'+section);
+    if (!await target.isVisible()) throw new Error('Standard hidden: '+section);
+  }
   if (errors.length) throw new Error(errors.join('\n'));
-  return {routes, cards:35,ain:24,copies:24,byteEqual:true,previewEqual:true,legacyEditions:true,
+  return {routes, cards:35,ain:24,copies:24,archiveCopies:4,archiveSearch:true,deepLinks:true,standardLinks:true,
+    byteEqual:true,previewEqual:true,legacyEditions:true,
     sameCardForm:true,mobileOverflow:false,errorReload:true,pageErrors:errors};
 }
