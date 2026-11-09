@@ -17,6 +17,8 @@ class PublicationTests(unittest.TestCase):
         data = json.loads((ROOT / 'site/data/prompts.json').read_text())
         classes = {str(p.relative_to(ROOT)) for p in (ROOT / 'standards/bcreq-manual-classes').glob('[0-9][0-9]-*.md')}
         archived = {str(p.relative_to(ROOT)) for p in (ROOT / 'prompts').glob('bcreq-*.md')}
+        manifest = json.loads((ROOT / 'prompts/archive/a-in-v2.7.0/manifest.json').read_text())
+        archived |= {e['archivePath'] for e in manifest['entries']}
         actual = {p['sourcePath'] for p in data['prompts']}
         self.assertEqual(actual, classes | archived)
         self.assertEqual(len(data['prompts']), len(classes) + len(archived))

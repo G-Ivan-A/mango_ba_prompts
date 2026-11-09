@@ -57,6 +57,10 @@ _spec468 = importlib.util.spec_from_file_location(
     "issue_468_site_a_in", ROOT / "experiments" / "issue_468" / "site_a_in.py")
 I468 = importlib.util.module_from_spec(_spec468)
 _spec468.loader.exec_module(I468)
+_spec476 = importlib.util.spec_from_file_location(
+    "issue_476_site_publication", ROOT / "experiments" / "issue_476" / "site_publication.py")
+I476 = importlib.util.module_from_spec(_spec476)
+_spec476.loader.exec_module(I476)
 
 # ------------------------------------------------------------------ overrides
 # Only facts changed by PR #422 / issue #423; everything else is content.py as approved.
@@ -79,8 +83,8 @@ GLOSSARY_ADDITIONS = [
     ("state", "Контракт состояния", "Общие правила ручного чата BCREQ",
      "Документ, который БА вставляет вместе с каждым классом: подготовка вызова, блок BCREQ_OUTPUT, перенос в новый чат.",
      "Контракт состояния", f"{REPO}/docs/contracts/bcreq-manual-state.md", "project"),
-    ("archive", "Архив", "14 промптов этапа 1",
-     "Промпты prompts/bcreq-*.md, заменённые 39 классами. Видны в каталоге при фильтре «Архив»; файлы сохранены для ссылок из стандартов, RFC и прогонов.",
+    ("archive", "Архив", "14 промптов этапа 1 и 4 редакции 2.7.0",
+     "Промпты prompts/bcreq-*.md, заменённые 39 классами, и полные заменённые редакции A-IN сайта 2.7.0. Видны в каталоге при фильтре «Архив»; файлы сохранены для ссылок из стандартов, RFC и прогонов.",
      "Каталог промптов", f"{REPO}/prompts/README.md", "project"),
 ]
 ZONE_OVERRIDES = {
@@ -137,6 +141,7 @@ def port_index(src: str) -> str:
     src = I464.apply(src)
     src = I466.apply(src)
     src = I468.apply(src)
+    src = I476.apply(src)
     # #474: static badges share the release source used by app.js.
     version = json.loads((SITE / "data/stats.json").read_text())["siteVersion"]["version"]
     src = re.sub(r'(data-site-version[^>]*>)(?:v[0-9.]+)', rf'\g<1>v{version}', src)

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T16:06:15.175Z",
+  "generatedAt": "2026-11-08T21:11:06.011Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -13,7 +13,7 @@
   "statuses": {
     "draft": 39,
     "canonical": 0,
-    "archived": 14
+    "archived": 18
   },
   "tests": {
     "logs": 819,
@@ -913,6 +913,20 @@
       "usage": 0
     },
     {
+      "id": "mango-bcreq-context-understanding-stepwise-by-test-site-v2p7p0",
+      "file": "bcreq-context-understanding-stepwise.md",
+      "status": "archived",
+      "operation": "understanding",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
       "id": "mango-bcreq-core-documentation-oneshot",
       "file": "bcreq-core-documentation-oneshot.md",
       "status": "archived",
@@ -931,6 +945,48 @@
       "file": "bcreq-in-understanding-oneshot.md",
       "status": "archived",
       "operation": "understanding",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "mango-bcreq-in-understanding-oneshot-site-v2p7p0",
+      "file": "bcreq-in-understanding-oneshot.md",
+      "status": "archived",
+      "operation": "understanding",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "mango-bcreq-intake-questionnaire-stepwise-by-test-site-v2p7p0",
+      "file": "bcreq-intake-questionnaire-stepwise.md",
+      "status": "archived",
+      "operation": "ingestion",
+      "processes": [
+        "Приём и контекст"
+      ],
+      "tests": 0,
+      "testFiles": [],
+      "feedback": 0,
+      "feedbackIssues": [],
+      "usage": 0
+    },
+    {
+      "id": "mango-bcreq-products-impact-analysis-stepwise-by-test-site-v2p7p0",
+      "file": "bcreq-products-impact-analysis-stepwise.md",
+      "status": "archived",
+      "operation": "impact_analysis",
       "processes": [
         "Приём и контекст"
       ],

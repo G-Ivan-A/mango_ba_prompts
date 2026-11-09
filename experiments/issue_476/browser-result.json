@@ -1,0 +1,14 @@
+{
+  "cards": 35,
+  "ainPreviews": 24,
+  "ainClipboard": 24,
+  "archiveClipboard": 4,
+  "archiveSearch": true,
+  "deepLinks": true,
+  "legacyEditionCopy": true,
+  "standards": true,
+  "mobileOverflow": false,
+  "lightDark": true,
+  "errorReload": true,
+  "pageErrors": []
+}

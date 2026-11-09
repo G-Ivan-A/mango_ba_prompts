@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-08T16:06:15.216Z",
+  "generatedAt": "2026-11-08T21:11:06.061Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,19 +35,19 @@
     }
   ],
   "siteVersion": {
-    "version": "2.8.4",
+    "version": "2.8.5",
     "released": "2026-11-08",
-    "issue": 474,
-    "basis": "PR #475: 24 A-IN, доказательный retrieval и память, карточки формы 2.7.0; подготовка ручного пакетного деплоя",
+    "issue": 476,
+    "basis": "PR #477: проверка 24 A-IN, архив 2.7.0, фильтры и трассировка; готово к ручному пакетному деплою",
     "changelog": "CHANGELOG.md"
   },
   "totals": {
-    "allPrompts": 53,
+    "allPrompts": 57,
     "activePrompts": 39,
-    "archivedPrompts": 14,
+    "archivedPrompts": 18,
     "testsPassed": 0,
     "inWork": 39,
-    "deferred": 14,
+    "deferred": 18,
     "modes": {
       "manual": 39
     },
@@ -330,7 +330,7 @@
       "phase": 1,
       "title": "Промпты",
       "status": "current",
-      "progress": 74,
+      "progress": 68,
       "levelIds": [
         "level-1"
       ],

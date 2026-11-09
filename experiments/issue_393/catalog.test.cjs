@@ -24,13 +24,13 @@ test('default catalog shows the 39 classes and hides the archive', () => {
   assert.ok(run('visiblePrompts().every(p => p.classId && !p.archived)'));
   assert.deepEqual(run('facetCounts("mode")'), {manual: 39});
 });
-test('the «Архив» family shows the 14 stage-1 prompts with their own modes', () => {
+test('the «Архив» family shows 14 stage-1 prompts and four 2.7.0 snapshots with their own modes', () => {
   const run = app(['family:archive']);
-  assert.equal(run('visiblePrompts().length'), 14);
+  assert.equal(run('visiblePrompts().length'), 18);
   assert.ok(run('visiblePrompts().every(p => p.archived && p.family === "archive")'));
-  assert.deepEqual(run('facetCounts("mode")'), {stepwise: 8, oneshot: 6});
+  assert.deepEqual(run('facetCounts("mode")'), {stepwise: 11, oneshot: 7});
   assert.equal(app(['mode:stepwise'])('visiblePrompts().length'), 0);
-  assert.equal(app(['family:bcreq', 'family:archive'])('visiblePrompts().length'), 53);
+  assert.equal(app(['family:bcreq', 'family:archive'])('visiblePrompts().length'), 57);
 });
 test('stage selection restricts operation counts to actual prompts', () => {
   const run = app([`process:${IN}`]);

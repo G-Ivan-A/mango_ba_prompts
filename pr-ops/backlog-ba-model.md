@@ -2269,7 +2269,7 @@ new скрывает проверку опорных систем, BA-review с�
 
 ### BL-180. Производство и миграция промптов A-IN
 
-**Статус.** `review`, #474 / [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475).
+**Статус.** `DONE`: #474 / [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475) слит 08.11.2026.
 Реализованы 24 полных draft контракта, адаптеры всех входов, общий контракт,
 инструкция БА, процессы/состояние/гейты, copy UI формы 2.7.0 и сборка 2.8.4. Проверки:
 `validate_issue_474_execution.py`, `make validate-full`, browser smoke.

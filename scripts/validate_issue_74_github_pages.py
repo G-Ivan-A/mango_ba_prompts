@@ -37,7 +37,8 @@ def active_prompt_paths() -> list[Path]:
 
 def archived_prompt_paths() -> list[Path]:
     # Issue #423: the 14 stage-1 prompts (issue #391 set) move to the catalog archive.
-    return sorted((ROOT / "prompts").glob("bcreq-*.md"))
+    manifest = read_json("prompts/archive/a-in-v2.7.0/manifest.json")
+    return sorted((ROOT / "prompts").glob("bcreq-*.md")) + [ROOT / entry["archivePath"] for entry in manifest["entries"]]
 
 
 def main() -> int:
@@ -99,12 +100,12 @@ def main() -> int:
     archived_generated = [prompt for prompt in prompts if prompt.get("archived")]
     if len(active_paths) != 39:
         errors.append(f"standards/bcreq-manual-classes: expected 39 classes, found {len(active_paths)}")
-    if len(archived_paths) != 14:
+    if len(list((ROOT / "prompts").glob("bcreq-*.md"))) != 14:
         errors.append(f"prompts/bcreq-*.md: expected 14 archived prompts, found {len(archived_paths)}")
     if sorted(p.get("sourcePath") for p in active_generated) != sorted(str(p.relative_to(ROOT)) for p in active_paths):
         errors.append(f"site/data/prompts.json: active prompts must be the {len(active_paths)} classes, found {len(active_generated)}")
     if sorted(p.get("sourcePath") for p in archived_generated) != sorted(str(p.relative_to(ROOT)) for p in archived_paths):
-        errors.append(f"site/data/prompts.json: archived prompts must be the {len(archived_paths)} prompts/bcreq-*.md, found {len(archived_generated)}")
+        errors.append(f"site/data/prompts.json: archived prompts must be the {len(archived_paths)} registered historical sources, found {len(archived_generated)}")
 
     filters = prompts_data.get("filters", {})
     if len(filters.get("operations", [])) != 13:

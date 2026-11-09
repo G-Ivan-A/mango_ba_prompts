@@ -85,8 +85,9 @@ def check_catalog() -> list[str]:
     archived = [p for p in data["prompts"] if p.get("archived")]
     if {p["sourcePath"] for p in active} != class_files:
         errors.append("prompts.json: действующий каталог не совпадает с 39 файлами классов")
-    if {p["sourcePath"] for p in archived} != archive_files:
-        errors.append("prompts.json: архив не совпадает с 14 промптами prompts/bcreq-*.md")
+    snapshots = json.loads((ROOT / "prompts/archive/a-in-v2.7.0/manifest.json").read_text())["entries"]
+    if {p["sourcePath"] for p in archived} != archive_files | {p["archivePath"] for p in snapshots}:
+        errors.append("prompts.json: архив не совпадает с 14 промптами этапа 1 и четырьмя снимками 2.7.0")
     if sorted(p.get("classId") for p in active) != sorted(item["id"] for item in catalog):
         errors.append("prompts.json: classId действующих промптов не совпадают с catalog.json")
     for prompt in active:
@@ -116,7 +117,7 @@ def check_catalog() -> list[str]:
         errors.append("prompts.json: фильтр стадий — A-IN, A-CORE, A-WORK, A-RELEASE")
 
     totals = load("stats.json")["totals"]
-    for key, value in (("activePrompts", 39), ("archivedPrompts", 14), ("allPrompts", 53)):
+    for key, value in (("activePrompts", 39), ("archivedPrompts", 18), ("allPrompts", 57)):
         if totals.get(key) != value:
             errors.append(f"stats.json: totals.{key}={totals.get(key)}, ожидалось {value}")
     return errors

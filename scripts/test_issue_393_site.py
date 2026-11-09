@@ -59,7 +59,8 @@ class StageTests(unittest.TestCase):
         data = json.loads((ROOT / "site/data/prompts.json").read_text())
         self.assertEqual([p["label"] for p in data["filters"]["processes"]], ACTIVE_STAGES)
         self.assertEqual(len(data["filters"]["operations"]), 13)
-        archived = [p for p in data["prompts"] if p["archived"]]
+        # #476 adds four immutable 2.7.0 snapshots; preserve all original mappings.
+        archived = [p for p in data["prompts"] if p["archived"] and not p.get("archiveInfo")]
         active = [p for p in data["prompts"] if not p["archived"]]
         self.assertEqual(len(archived), 14)
         self.assertEqual(len(active), 39)
