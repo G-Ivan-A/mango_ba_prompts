@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 import subprocess
+from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import urlopen
 
@@ -74,7 +75,9 @@ def main():
     assert old_ids <= new_ids, 'Public catalogue entries removed'
     assert changed == [], 'Prepared site diverged from merged baseline: ' + str(changed)
     result = {
-        'accessed_at': '2026-11-09', 'baseline_sha': BASE,
+        'accessed_at': datetime.fromtimestamp(
+            (cache / 'data/stats.json').stat().st_mtime, timezone.utc).date().isoformat(),
+        'baseline_sha': BASE,
         'live_url': LIVE, 'live_version': live_stats['siteVersion'],
         'candidate_version': local_stats['siteVersion'],
         'live_totals': live_stats['totals'], 'candidate_totals': local_stats['totals'],

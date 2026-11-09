@@ -79,6 +79,8 @@ scope: "Проверка сайта и подготовка существующ
    не нужен: манифест уже сохранён.
 3. `python3 scripts/validate_issue_478_research.py` и `make validate-full` —
    целостность evidence и манифеста плюс все обнаруженные проверки репозитория.
+   Манифест сверяется с закреплённым релизом, чтобы последующие версии сайта
+   не требовали переписывать исторический снимок этого исследования.
 4. Для UI запустить `python3 -m http.server 8768 --directory site` и
    `experiments/issue_478/browser-smoke.js` через Playwright MCP
    `browser_run_code_unsafe(filename=...)`. В начале файла заданы адрес и

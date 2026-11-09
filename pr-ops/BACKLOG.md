@@ -618,10 +618,10 @@ BL-179 подготовил RFC #468; аудит BL-181 (#470/#471) принят
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-179 | [Декомпозиция A-IN и RFC](backlog-ba-model.md#bl-179-декомпозиция-a-in-и-rfc) | P1 | #427, #464 | DONE | [#468](https://github.com/G-Ivan-A/mango_ba_prompts/issues/468), [PR #469](https://github.com/G-Ivan-A/mango_ba_prompts/pull/469) | RFC-AIN-001 | Принят в #474; предшественник BL-180, P01…P20 и LE сохранены | Creative |
 | BL-180 | [Производство и миграция промптов A-IN](backlog-ba-model.md#bl-180-производство-и-миграция-промптов-a-in) | P1 | BL-179; BL-181; #472 | DONE | [#474](https://github.com/G-Ivan-A/mango_ba_prompts/issues/474), [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475) | RFC-AIN-001 §3…8 | PR #475 слит 08.11; 24 draft контракта, допуски, copy UI формы 2.7.0, доступ к БЗ и память; provenance-пилот отложен в BL-182 | Creative |
-| BL-238 | [Проверка и подготовка пакетного деплоя 2.8.x](backlog-repository.md#bl-238-проверка-и-подготовка-пакетного-деплоя-28x) | P0 | BL-180 | review | [#476](https://github.com/G-Ivan-A/mango_ba_prompts/issues/476), [PR #477](https://github.com/G-Ivan-A/mango_ba_prompts/pull/477) | issue #476 | 2.8.5: 24 полных шага, архив 2.7.0 без потерь, фильтры, ссылки, стандарты, браузерные проверки и пакет для ручного деплоя | Creative |
+| BL-238 | [Проверка и подготовка пакетного деплоя 2.8.x](backlog-repository.md#bl-238-проверка-и-подготовка-пакетного-деплоя-28x) | P0 | BL-180 | DONE | [#476](https://github.com/G-Ivan-A/mango_ba_prompts/issues/476), [PR #477](https://github.com/G-Ivan-A/mango_ba_prompts/pull/477) | issue #476 | PR #477 слит 09.11; 2.8.5: 24 полных шага, архив 2.7.0 без потерь, фильтры, ссылки, стандарты, браузерные проверки и пакет для ручного деплоя | Creative |
 
 **Движение по цепочке (#476).** BL-179 и BL-181 `DONE`; предыдущий BL-180 `DONE`
-по merge #475. Текущий BL-238 — проверка/подготовка 2.8.5, `review` до merge #477.
+по merge #475. BL-238 — проверка/подготовка 2.8.5, `DONE`: PR #477 слит 09.11.2026.
 Следующий BL-232 — существующий `TODO`: ручной пакетный деплой и комплексная
 приёмка владельцем, не закрытые подготовкой. BL-182 и BL-175 не блокируют
 подготовку; порядок проверок моделей/БА ADR-018 сохранён, их результаты не заявлены.

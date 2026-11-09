@@ -7,6 +7,7 @@ of a remote page. No network, LLM, build, or third-party dependency.
 import hashlib
 import json
 import re
+import subprocess
 import unittest
 from pathlib import Path
 
@@ -27,6 +28,7 @@ class Research(unittest.TestCase):
         evidence = json.loads((HERE / 'evidence.json').read_text())
         sources = evidence['sources']
         by_id = {s['id']: s for s in sources}
+        self.assertEqual(len(sources), 16)
         self.assertEqual(len(by_id), len(sources))
         self.assertRegex(evidence['baseline']['sha'], r'^[0-9a-f]{40}$')
         for s in sources:
@@ -62,16 +64,24 @@ class Research(unittest.TestCase):
         # No copied personal contact fields; URLs are the only @-free contact data.
         self.assertFalse(re.search(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', json.dumps(evidence)))
 
-    def test_prepared_site_preserves_merged_baseline(self):
+    def test_site_audit_matches_pinned_release(self):
         audit = json.loads((HERE / 'site-audit.json').read_text())
+        self.assertRegex(audit['baseline_sha'], r'^[0-9a-f]{40}$')
         self.assertEqual(audit['baseline_semantic_changes'], [])
         self.assertEqual(audit['live_version']['version'], '2.7.0')
         self.assertEqual(audit['candidate_version']['version'], '2.8.5')
         self.assertTrue(audit['catalogue_ids_preserved'])
+        self.assertEqual(len(audit['assets']), 22)
+        # Verify the historical audit against its pinned release. Future site
+        # changes must not require rewriting this research snapshot's hashes.
+        def release_file(name):
+            return subprocess.check_output(
+                ['git', 'show', f"{audit['baseline_sha']}:{name}"], cwd=ROOT)
+
         for name, record in audit['assets'].items():
             path = ROOT / name
             self.assertTrue(path.is_relative_to(ROOT / 'site'))
-            body = path.read_bytes()
+            body = release_file(name)
             # Generator timestamps are variable, content must remain byte-equivalent
             # after dropping that field, as during manifest generation.
             if path.suffix == '.json':
@@ -80,9 +90,9 @@ class Research(unittest.TestCase):
                 self.assertEqual(hashlib.sha256(content).hexdigest(), record['normalized_sha256'], name)
             else:
                 self.assertEqual(hashlib.sha256(body).hexdigest(), record['sha256'], name)
-        stats = json.loads((ROOT / 'site/data/stats.json').read_text())
+        stats = json.loads(release_file('site/data/stats.json'))
         self.assertEqual(stats['siteVersion'], audit['candidate_version'])
-        kit = json.loads((ROOT / 'site/data/a-in-kit.json').read_text())
+        kit = json.loads(release_file('site/data/a-in-kit.json'))
         self.assertEqual(len(kit['steps']), 24)
         self.assertFalse(kit['measured'])
         self.assertFalse((ROOT / 'site/reports/run-0060').exists())
