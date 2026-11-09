@@ -270,16 +270,19 @@ function parseTables(markdown) {
   return tables;
 }
 
-function parseFrontmatter(content) {
-  if (!content.startsWith("---\n")) {
-    return {};
-  }
-  const end = content.indexOf("\n---", 4);
-  if (end === -1) {
+// Match source boundaries without normalizing the historical content/hash.
+// CRLF checkouts and UTF-8 BOM must not look like missing metadata (issue #480).
+function frontmatterBlock(content) {
+  return content.match(/^\uFEFF?---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/);
+}
+
+export function parseFrontmatter(content) {
+  const block = frontmatterBlock(content);
+  if (!block) {
     return {};
   }
   const frontmatter = {};
-  for (const line of content.slice(4, end).split(/\r?\n/)) {
+  for (const line of block[1].split(/\r?\n/)) {
     const match = line.match(/^([A-Za-z0-9_-]+):\s*(.*)$/);
     if (!match) {
       continue;
@@ -302,16 +305,11 @@ function parseFrontmatter(content) {
   return frontmatter;
 }
 
-function stripFrontmatter(content) {
+export function stripFrontmatter(content) {
   // Remove the leading YAML frontmatter block and the legacy EXPERIMENTAL
   // marker so the copied prompt is clean text without metadata noise.
-  let body = content;
-  if (body.startsWith("---\n")) {
-    const end = body.indexOf("\n---", 4);
-    if (end !== -1) {
-      body = body.slice(end + 4);
-    }
-  }
+  const block = frontmatterBlock(content);
+  let body = block ? content.slice(block[0].length) : content;
   body = body.replace(/^\s*<!--\s*EXPERIMENTAL[^>]*-->\s*\n/m, "");
   return body.replace(/^\s+/, "").replace(/\s+$/, "") + "\n";
 }
@@ -1597,7 +1595,7 @@ async function main() {
     const metadata = promptMetadata.get(basename);
     const operation = operationsById.get(file.archiveInfo?.step === "Ш-А" ? "ingestion" : frontmatter.operation);
     if (!operation) {
-      throw new Error(`${file.relativePath}: frontmatter.operation must name one of the 13 taxonomy operations`);
+      throw new Error(`${file.relativePath}: frontmatter.operation must name one of the 13 taxonomy operations (received ${JSON.stringify(frontmatter.operation) ?? "undefined; frontmatter missing or malformed"})`);
     }
     const processes = frontmatter.processes;
     if (!Array.isArray(processes) || processes.length === 0 ||
