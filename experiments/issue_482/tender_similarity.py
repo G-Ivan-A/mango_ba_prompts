@@ -28,12 +28,31 @@ P5 = (
     "робот»), применяемого для предоставления сервисов в рамках настоящего технического задания, должны быть "
     "включены в реестр российского программного обеспечения.",
 )
-items = [(f"p5:{i}", t) for i, t in enumerate(P5, start=1)]
-for n, (_page, text) in json.loads((HERE.parent / "issue_367/tender_index.json").read_text(encoding="utf-8")).items():
-    t = re.sub(r"\s+наличие\b.*$", "", text, flags=re.S).strip()
-    if t:
-        items.append((n, t))
-low = lambda s: re.sub(r"\s+", " ", s.replace("<br>", " ")).lower().strip(" .;:")
+# Текст пункта индекса заканчивается колонкой «наличие»; в ряде пунктов индекс склеил следующий
+# подпункт (2.14.8 -> 2.14.8.1, 2.14.8.2) или заголовок раздела («… наличие 3. Требования к
+# отчетности»). Режем по «наличие», за которым идёт конец текста или номер, — слово «наличие»
+# внутри формулировки (2.18.21 «наличие и количество перебиваний», 10.1.3) не обрезается.
+END = re.compile(r"\s+наличие(?=\s*$|\s+\d+(?:\.\d+)*\.?\s)")
+HEAD = re.compile(r"^(\d+(?:\.\d+)*)\.?\s+(.+)$", re.S)
+
+
+def tender_items(index):
+    out = []
+    for n, (_page, text) in index.items():
+        for k, part in enumerate(END.split(text)):
+            part = part.strip()
+            if not part:
+                continue
+            m = HEAD.match(part) if k else None
+            out.append((m.group(1), m.group(2).strip()) if m else (n, part))
+    return out
+
+
+TENDER_INDEX = json.loads((HERE.parent / "issue_367/tender_index.json").read_text(encoding="utf-8"))
+items = [(f"p5:{i}", t) for i, t in enumerate(P5, start=1)] + tender_items(TENDER_INDEX)
+ITEM = dict(items)
+# маркер списка U+F0B7 шаблона — оформление, не текст
+low = lambda s: re.sub(r"\s+", " ", s.replace("<br>", " ").replace("\uf0b7", " ")).lower().strip(" .;:")
 LEAD = re.compile(r"^(в )?(систем[аеы]|платформ[аеы]|приложени[ея])?\s*(должн[аоы]?|должен)?\s*"
                   r"(иметь|предоставлять|позволять|обеспечивать)?\s*(возможность|возможности)?\s*"
                   r"(использования|использовать|осуществлять|для)?\s*", re.I)
@@ -51,9 +70,17 @@ best = {}
 for rid, num, _vis, _page, acc, _value, _doc in json.loads((HERE / "source_transcription.json").read_text(encoding="utf-8"))["rows"]:
     if not acc:
         continue
+    num = re.sub(r"~~.*?~~", "", num).strip()
     r, n = max((difflib.SequenceMatcher(None, low(acc), low(t[:len(acc) + 40])).ratio(), n) for n, t in items)
     c, cn = max((difflib.SequenceMatcher(None, core(acc), core(t)).ratio(), n) for n, t in items)
     d, dn = max((dice(acc, t), n) for n, t in items)
+    # пункт шаблона с тем же номером (если есть): при равном сходстве ссылаемся на него
+    same = num.rstrip(".")
+    if same in ITEM:
+        sr = difflib.SequenceMatcher(None, low(acc), low(ITEM[same])).ratio()
+        sd = dice(acc, ITEM[same])
+        if max(sr, sd) >= max(r, c, d) - 1e-9 or max(sr, sd) > 0.9:
+            r, n, c, cn, d, dn = sr, same, difflib.SequenceMatcher(None, core(acc), core(ITEM[same])).ratio(), same, sd, same
     best[rid] = (round(r, 3), n, round(c, 3), cn, round(d, 3), dn)
     print(f"{rid} {num:10} raw {r:.3f} п/п {n:10} core {c:.3f} п/п {cn:10} dice {d:.3f} п/п {dn:10}: {low(acc)[:60]}")
 over = {k: v for k, v in best.items() if max(v[0], v[2], v[4]) > 0.9}
