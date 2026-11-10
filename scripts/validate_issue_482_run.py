@@ -89,7 +89,10 @@ def frontmatter(path: Path) -> dict[str, str]:
             break
         if ":" in line and not line.startswith((" ", "-")):
             key, _, value = line.partition(":")
-            data[key.strip()] = value.strip().strip("\"'")
+            value = value.strip()
+            if len(value) > 1 and value[0] == value[-1] and value[0] in "\"'":
+                value = value[1:-1]  # только внешняя пара кавычек YAML-скаляра
+            data[key.strip()] = value
     return data
 
 
@@ -240,7 +243,7 @@ def main() -> int:
         return 1
 
     summary = ", ".join("%s %d" % (k or "пусто", v) for k, v in counts.items())
-    print("OK: validate_issue_482_run: документов %d, строк требований %d (%s), атомарных ссылок %d, колонок 6"
+    print("OK: validate_issue_482_run: документов %d, строк требований %d (%s), ссылок на БЗ и шаблон v4 %d (ссылки портала не считаются), колонок 6"
           % (len(found), total, summary, citations))
     return 0
 

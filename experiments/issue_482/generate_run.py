@@ -81,7 +81,11 @@ def front(path: Path) -> dict[str, str]:
             break
         key, _, value = line.partition(":")
         if ":" in line and not line.startswith((" ", "-")):
-            data[key.strip()] = value.strip().strip('"')
+            value = value.strip()
+            # YAML-скаляр в кавычках: снимается только внешняя пара ("Группа отчетов 'Продажи'")
+            if len(value) > 1 and value[0] == value[-1] and value[0] in "\"'":
+                value = value[1:-1]
+            data[key.strip()] = value
     return data
 
 

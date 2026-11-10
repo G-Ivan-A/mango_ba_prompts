@@ -1,0 +1,66 @@
+run_id: RUN-0093
+process: feasibility-assessment-tz-bcreq-1140-gasification
+version: "1.0"
+date: 2026-11-10
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/482
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb
+  - https://github.com/user-attachments/files/34651817/-.-v4.pdf
+  - https://github.com/user-attachments/files/34651826/default.pdf
+  - https://www.mango-office.ru/products/contact-center/ai/voice-robot/
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1140.md
+logs:
+  - logs/experiment-log.md
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_documents: 2  # в одном PDF: «Функциональные требования» (с.1–31) и вложенное ТЗ ТО ВДГО/ВКГО (с.32–33)
+  source_pages: 33
+  source_rows: 355  # документ 1 — 322, документ 2 — 33
+  assessed_requirements: 325  # без 22 заголовков, 7 целиком зачёркнутых строк и 1 строки вне функционального контура
+  verdicts_yes: 306
+  verdicts_partial: 14
+  verdicts_no: 5
+  verdicts_no_data: 3
+  verdicts_empty: 30
+  struck_rows: 7
+  heading_rows: 22
+  template_v4_matches_over_90: 311  # из 348 строк с непустым принятым текстом (включая 12 заголовков)
+  template_v4_auto_confirmed: 291
+  template_v4_overridden_by_critic_gate: 8  # WhatsApp заменён на MAX
+  atomic_citations: 382
+  kb_citations: 62
+  template_v4_citations: 318
+  portal_citations: 2
+  quote_mismatches: 0
+  source_check_mismatches: 0
+  eval: "L0-оценка исполнимости «ТЗ газификация ХХХ области.pdf» (BCREQ-1140), 355 строк в двух документах одного PDF с правками рецензирования Word. Документ 1 «Функциональные требования» (322 строки) построен на шаблоне v4: 291 строка подтверждена правилом > 90 % («Не требует обоснования»), 8 строк с заменой WhatsApp на MAX оценены по существу (Да 3, Частично 5), 16 заголовков и 7 целиком зачёркнутых пунктов — пусто. Документ 2 «ТЗ на автоматизацию ТО ВДГО/ВКГО» (33 строки, сходство с v4 ≤ 0,615): Да 12, Частично 9, Нет 5 (Нет данных 3), пусто 7 (6 заголовков, 1 вне контура). Объёмы голосовых вызовов подтверждены только заявлением портала Mango; объём SMS, планирование бригад и интеграция с БД Заказчика не подтверждены."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/482
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/382
+related_runs:
+  - RUN-0077
+  - RUN-0072
+related_artifacts:
+  - experiments/issue_482/make_transcription.py
+  - experiments/issue_482/check_source.py
+  - experiments/issue_482/source_transcription.json
+  - experiments/issue_482/tender_similarity.py
+  - experiments/issue_482/tender_similarity.json
+  - experiments/issue_482/research/BRIEF.md
+  - experiments/issue_482/research/A_vdgo_inform.json
+  - experiments/issue_482/research/B_vdgo_incoming_reports.json
+  - experiments/issue_482/research/C_max.json
+  - experiments/issue_482/generate_run.py
+  - experiments/issue_482/verify_quotes.py
+  - experiments/issue_367/tender_index.json
+  - scripts/validate_issue_482_run.py
