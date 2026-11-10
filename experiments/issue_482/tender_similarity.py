@@ -37,19 +37,22 @@ HEAD = re.compile(r"^(\d+(?:\.\d+)*)\.?\s+(.+)$", re.S)
 
 
 def tender_items(index):
+    """[(п/п, текст, страница)] — пункты индекса, склеенные подпункты отделены."""
     out = []
-    for n, (_page, text) in index.items():
+    for n, (page, text) in index.items():
         for k, part in enumerate(END.split(text)):
             part = part.strip()
             if not part:
                 continue
             m = HEAD.match(part) if k else None
-            out.append((m.group(1), m.group(2).strip()) if m else (n, part))
+            out.append((m.group(1), m.group(2).strip(), page) if m else (n, part, page))
     return out
 
 
 TENDER_INDEX = json.loads((HERE.parent / "issue_367/tender_index.json").read_text(encoding="utf-8"))
-items = [(f"p5:{i}", t) for i, t in enumerate(P5, start=1)] + tender_items(TENDER_INDEX)
+TENDER_ITEMS = tender_items(TENDER_INDEX)
+PAGE = {n: page for n, _t, page in TENDER_ITEMS}
+items = [(f"p5:{i}", t) for i, t in enumerate(P5, start=1)] + [(n, t) for n, t, _p in TENDER_ITEMS]
 ITEM = dict(items)
 # маркер списка U+F0B7 шаблона — оформление, не текст
 low = lambda s: re.sub(r"\s+", " ", s.replace("<br>", " ").replace("\uf0b7", " ")).lower().strip(" .;:")
@@ -66,23 +69,28 @@ def dice(a, b):
     return 2 * len(a & b) / (len(a) + len(b)) if a and b else 0.0
 
 
-best = {}
-for rid, num, _vis, _page, acc, _value, _doc in json.loads((HERE / "source_transcription.json").read_text(encoding="utf-8"))["rows"]:
-    if not acc:
-        continue
-    num = re.sub(r"~~.*?~~", "", num).strip()
-    r, n = max((difflib.SequenceMatcher(None, low(acc), low(t[:len(acc) + 40])).ratio(), n) for n, t in items)
-    c, cn = max((difflib.SequenceMatcher(None, core(acc), core(t)).ratio(), n) for n, t in items)
-    d, dn = max((dice(acc, t), n) for n, t in items)
-    # пункт шаблона с тем же номером (если есть): при равном сходстве ссылаемся на него
-    same = num.rstrip(".")
-    if same in ITEM:
-        sr = difflib.SequenceMatcher(None, low(acc), low(ITEM[same])).ratio()
-        sd = dice(acc, ITEM[same])
-        if max(sr, sd) >= max(r, c, d) - 1e-9 or max(sr, sd) > 0.9:
-            r, n, c, cn, d, dn = sr, same, difflib.SequenceMatcher(None, core(acc), core(ITEM[same])).ratio(), same, sd, same
-    best[rid] = (round(r, 3), n, round(c, 3), cn, round(d, 3), dn)
-    print(f"{rid} {num:10} raw {r:.3f} п/п {n:10} core {c:.3f} п/п {cn:10} dice {d:.3f} п/п {dn:10}: {low(acc)[:60]}")
-over = {k: v for k, v in best.items() if max(v[0], v[2], v[4]) > 0.9}
-print("items:", len(items), "rows:", len(best), "max>0.9:", len(over))
-(HERE / "tender_similarity.json").write_text(json.dumps(best, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
+def main():
+    best = {}
+    for rid, num, _vis, _page, acc, _value, _doc in json.loads((HERE / "source_transcription.json").read_text(encoding="utf-8"))["rows"]:
+        if not acc:
+            continue
+        num = re.sub(r"~~.*?~~", "", num).strip()
+        r, n = max((difflib.SequenceMatcher(None, low(acc), low(t[:len(acc) + 40])).ratio(), n) for n, t in items)
+        c, cn = max((difflib.SequenceMatcher(None, core(acc), core(t)).ratio(), n) for n, t in items)
+        d, dn = max((dice(acc, t), n) for n, t in items)
+        # пункт шаблона с тем же номером (если есть): при равном сходстве ссылаемся на него
+        same = num.rstrip(".")
+        if same in ITEM:
+            sr = difflib.SequenceMatcher(None, low(acc), low(ITEM[same])).ratio()
+            sd = dice(acc, ITEM[same])
+            if max(sr, sd) >= max(r, c, d) - 1e-9 or max(sr, sd) > 0.9:
+                r, n, c, cn, d, dn = sr, same, difflib.SequenceMatcher(None, core(acc), core(ITEM[same])).ratio(), same, sd, same
+        best[rid] = (round(r, 3), n, round(c, 3), cn, round(d, 3), dn)
+        print(f"{rid} {num:10} raw {r:.3f} п/п {n:10} core {c:.3f} п/п {cn:10} dice {d:.3f} п/п {dn:10}: {low(acc)[:60]}")
+    over = {k: v for k, v in best.items() if max(v[0], v[2], v[4]) > 0.9}
+    print("items:", len(items), "rows:", len(best), "max>0.9:", len(over))
+    (HERE / "tender_similarity.json").write_text(json.dumps(best, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")
+
+
+if __name__ == "__main__":
+    main()
