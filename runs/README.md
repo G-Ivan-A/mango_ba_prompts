@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.3
-updated: 2026-10-20
+version: 1.4
+updated: 2026-11-10
 ai-generated: true
 type: registry
 scope: runs
@@ -13,6 +13,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/373"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/375"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/382"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/482"
 related_artifacts:
   - "standards/runs-contract-standard.md"
   - "docs/analysis/2026-08-21-runs-type-gap-analysis.md"
@@ -214,6 +215,7 @@ runs/
 | [`RUN-0090`](2026/RUN-0090/metadata.yaml) | 2026-11-05 | `execution` | bcreq-stage1-machine-run-task-1135 | [Отчёт](2026/RUN-0090/outputs/report.md), [`outputs/README.md`](2026/RUN-0090/outputs/README.md), [спецификация](2026/RUN-0090/outputs/bcreq.md), [журнал](2026/RUN-0090/logs/experiment-log.md) |
 | [`RUN-0091`](2026/RUN-0091/metadata.yaml) | 2026-11-05 | `execution` | bcreq-stage1-machine-run-task-1137 | [Отчёт](2026/RUN-0091/outputs/report.md), [`outputs/README.md`](2026/RUN-0091/outputs/README.md), [спецификация](2026/RUN-0091/outputs/bcreq.md), [журнал](2026/RUN-0091/logs/experiment-log.md) |
 | [`RUN-0092`](2026/RUN-0092/metadata.yaml) | 2026-11-05 | `execution` | process | [Отчёт](2026/RUN-0092/outputs/report.md), [`outputs/README.md`](2026/RUN-0092/outputs/README.md), [сводка](2026/RUN-0092/outputs/summary.json), [`logs/experiment-log.md`](2026/RUN-0092/logs/experiment-log.md), [review](2026/RUN-0092/feedback/review-notes.md) |
+| [`RUN-0093`](2026/RUN-0093/metadata.yaml) | 2026-11-10 | `execution` | feasibility-assessment-tz-bcreq-1140-gasification | [`outputs/README.md`](2026/RUN-0093/outputs/README.md), [`outputs/L0-feasibility-assessment-1140.md`](2026/RUN-0093/outputs/L0-feasibility-assessment-1140.md), [`logs/experiment-log.md`](2026/RUN-0093/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0093/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0093/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -251,6 +253,7 @@ runs/
 | [`experiments/issue_378_verify_quotes.py`](../experiments/issue_378_verify_quotes.py) | Сверяет каждую цитату разметки с текстом заявленной реплики экспорта чата (нормализация пробелов и markdown-выделения) и пишет `experiments/issue_378/quote-check.json`. Используется в [`RUN-0075`](2026/RUN-0075/logs/quote-verification.md). |
 | [`experiments/issue_378_golden_set.py`](../experiments/issue_378_golden_set.py) | Порождает записи [`RUN-0075`](2026/RUN-0075/outputs/README.md) из статистики диалога, сверки цитат и разметки: реестр вхождений, статистику ошибок, «как не надо» по продуктам, кандидаты в золотые наборы и рубрики, критерии успеха, предложения для runtime. |
 | [`experiments/issue_382/generate_run.py`](../experiments/issue_382/generate_run.py) | Собирает шестиколоночный L0 [`RUN-0077`](2026/RUN-0077/outputs/L0-feasibility-assessment-1125.md) из транскрипции пяти CSV-вложений issue #382 (`source_transcription.json`, сверяется `check_source.py`) и результатов исследования `research/*.json`; колонки Заказчика не перепечатываются вручную, цитаты сверяет `verify_quotes.py`. |
+| [`experiments/issue_482/generate_run.py`](../experiments/issue_482/generate_run.py) | Собирает шестиколоночный L0 [`RUN-0093`](2026/RUN-0093/outputs/L0-feasibility-assessment-1140.md) из транскрипции PDF-вложения issue #482 с правками рецензирования Word (`source_transcription.json` от `make_transcription.py`, сверяется `check_source.py` через pdfplumber), сходства с шаблоном v4 (`tender_similarity.py`, правило > 90 %) и результатов исследования `research/*.json`; колонки Заказчика не перепечатываются вручную, цитаты сверяет `verify_quotes.py`. |
 | [`experiments/issue_377_golden_data.py`](../experiments/issue_377_golden_data.py) | Разметка ошибок ИИ задачи 1110 (гибридный режим, без продуктов): каждое вхождение с дословной цитатой, категорией C01–C20, происхождением, разделом документа, реакцией или правилом БА; привязка категорий к BABOK v3, TM Forum ODA и правилам стандарта BCREQ из диалога, позитивные кейсы и критерии успеха. Используется в [`RUN-0076`](2026/RUN-0076/outputs/incident-register.md). |
 | [`experiments/issue_377_verify_quotes.py`](../experiments/issue_377_verify_quotes.py) | Сверяет каждую цитату разметки задачи 1110 с заявленной репликой экспорта и пишет `experiments/issue_377/quote-check.json`. Используется в [`RUN-0076`](2026/RUN-0076/logs/quote-verification.md). |
 | [`experiments/issue_377_golden_set.py`](../experiments/issue_377_golden_set.py) | Порождает записи [`RUN-0076`](2026/RUN-0076/outputs/README.md): реестр вхождений, статистику с цепочками повторов и сравнением с предыдущим прогоном задачи, «как не надо» по категориям и разделам, кандидаты в золотые наборы и рубрики, критерии успеха, предложения для промптов и стандарта BCREQ. |
