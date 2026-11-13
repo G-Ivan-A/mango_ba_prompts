@@ -1,0 +1,77 @@
+run_id: RUN-0094
+process: feasibility-assessment-tz-bcreq-1199-v2
+version: "1.0"
+date: 2026-11-13
+author: "AI issue solver"
+model: "claude-opus-5"
+status: draft
+run_type: execution
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/484
+  - https://github.com/G-Ivan-A/mango_ba_prompts/pull/473
+  - https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb
+  - https://github.com/user-attachments/files/34787757/-.-v4.pdf
+  - https://github.com/user-attachments/files/34788103/SoC_.29-10.xlsx
+inputs:
+  - inputs/README.md
+outputs:
+  - outputs/README.md
+  - outputs/L0-feasibility-assessment-1199-2.md
+  - outputs/analytical-note-1199-v1-vs-v2.md
+logs:
+  - logs/experiment-log.md
+  - logs/technical-audit.md
+feedback:
+  - feedback/review-notes.md
+metrics:
+  source_sheets: 3  # два видимых листа с требованиями + скрытый «Лист1» со словарями выпадающих списков
+  assessed_sheets: 2
+  source_rows: 43  # лист «Требования к системе» — 19, лист «SLA» — 24 непустые строки из 34
+  assessed_requirements: 21  # без 4 заголовков и 18 строк вне функционального контура
+  verdicts_yes: 3
+  verdicts_partial: 17
+  verdicts_no: 1
+  verdicts_no_data: 1
+  verdicts_empty: 22
+  heading_rows: 4
+  out_of_scope_rows: 18
+  blocker_requirements: 6  # пометка «Блок фактор» в колонке C листа 1
+  atomic_parts: 137
+  template_v4_matches_over_90: 7  # атомарных частей из 137
+  template_v4_rows_no_justification: 1  # строка целиком (SLA п. 1.4, п/п 9.11)
+  atomic_citations: 172
+  kb_citations: 95
+  template_v4_citations: 77
+  portal_citations: 0
+  quote_mismatches: 0
+  source_check_mismatches: 0
+  version_diff_v1_rows: 442
+  version_diff_carried_verbatim: 21
+  version_diff_carried_edited: 52
+  version_diff_no_match: 369
+  version_diff_v2_new_atoms: 81
+  eval: "L0-оценка исполнимости «SoC_внешний 29-10.xlsx» (BCREQ-1199, 2-я версия), 43 строки на двух листах книги — оба листа оценены полностью. Исходник является собственной формой Заказчика, а не производной шаблона ТЗ-тендеров-v4: порог > 90 % превышают 7 атомарных частей из 137, поэтому строки разобраны по атомарным составляющим с дословными цитатами SSOT (172 ссылки: шаблон v4 — 77, runtime-БЗ — 95, портал — 0). Итог: Да — 3, Частично — 17, Нет — 1 («Нет данных» — 1), пусто — 22 (4 заголовка, 18 строк вне функционального контура — организационные обязательства Исполнителя). Преобладание «Частично» объясняется числовыми порогами Заказчика (5 %, 95 %, 98 %, 100 операторов, 3 месяца, 15 минут) и интеграцией со Skillaz, которых SSOT прямо не заявляет. Дополнительно собрана аналитическая записка со сравнением v2 и v1 (RUN-0065): из 442 строк v1 дословно перенесена 21, с правками — 52; функциональный контур сузился до исходящего обзвона кандидатов в связке со Skillaz."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/484
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/347
+related_runs:
+  - RUN-0077
+  - RUN-0093
+  - RUN-0065
+related_artifacts:
+  - experiments/issue_484/make_transcription.py
+  - experiments/issue_484/check_source.py
+  - experiments/issue_484/source_transcription.json
+  - experiments/issue_484/atomize.py
+  - experiments/issue_484/atom_similarity.json
+  - experiments/issue_484/make_batches.py
+  - experiments/issue_484/ssot.py
+  - experiments/issue_484/research/
+  - experiments/issue_484/generate_run.py
+  - experiments/issue_484/verify_quotes.py
+  - experiments/issue_484/compare_versions.py
+  - experiments/issue_484/version_diff.json
+  - experiments/issue_484/generate_note.py
+  - experiments/issue_484/mutation_check.py
+  - experiments/issue_367/tender_index.json
+  - scripts/validate_issue_484_run.py
