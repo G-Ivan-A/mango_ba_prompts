@@ -23,7 +23,8 @@
    ссылается на непрерывный диапазон «№ пп», который начинается со следующей строки и
    состоит из строк той же строки исходника (и строк-продолжений объединённой ячейки);
 7. строки отчёта совпадают с декомпозицией `experiments/issue_486/fragments.json`, итог
-   «всего — N строк отчёта» и метрики `metadata.yaml` согласованы с таблицей, frontmatter
+   «всего — N строк отчёта» и метрики `metadata.yaml` (число строк, заголовков комплексных
+   требований и вердиктов) согласованы с таблицей, frontmatter
    отчёта — версия 2.0 со ссылкой на issue #486.
 """
 
@@ -188,7 +189,13 @@ def main() -> int:
     if not total or int(total.group(1)) != len(rows):
         errors.append(f"итог «всего — N строк» не равен числу строк таблицы {len(rows)}")
     metadata = (RUN / "metadata.yaml").read_text(encoding="utf-8")
-    for key, value in (("report_rows", len(rows)), ("complex_headings", leads)):
+    counts = {"report_rows": len(rows), "complex_headings": leads,
+              "verdicts_yes": sum(r["verdict"] == "Да" for r in rows),
+              "verdicts_partial": sum(r["verdict"] == "Частично" for r in rows),
+              "verdicts_no": sum(r["verdict"] == "Нет" for r in rows),
+              "verdicts_no_data": sum(r["verdict"] == "Нет" and "Нет данных" in r["why"] for r in rows),
+              "verdicts_empty": sum(r["verdict"] == "" for r in rows)}
+    for key, value in counts.items():
         if not re.search(rf"^  {key}: {value}\b", metadata, re.M):
             errors.append(f"metadata.yaml: метрика {key} должна быть {value}")
 
