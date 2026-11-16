@@ -126,10 +126,15 @@ def plural(n: int) -> str:
     return g484.plural(n)
 
 
+def genitive(n: int) -> str:
+    """«из N строк(и)»: родительный падеж после «из»."""
+    return "строки" if n % 10 == 1 and n % 100 != 11 else "строк"
+
+
 def summary(c: dict[str, int]) -> str:
     rated = c["rows"] - c["пусто"]
     pct = lambda n: f"{n / rated * 100:.1f}".replace(".", ",") + " %" if rated else "—"
-    return (f"{c['rows']} {plural(c['rows'])} отчёта из {c['src']} {g484.plural(c['src'])} "
+    return (f"{c['rows']} {plural(c['rows'])} отчёта из {c['src']} {genitive(c['src'])} "
             f"исходника: пусто — {c['пусто']} (заголовки — {c['heading']}, заголовки "
             f"комплексных требований — {c['lead']}, вне функционального контура — {c['out']}); "
             f"оценено — {rated}: `Да` — {c['Да']} ({pct(c['Да'])}), `Частично` — "
