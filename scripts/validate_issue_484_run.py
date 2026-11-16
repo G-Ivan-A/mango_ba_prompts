@@ -1,32 +1,35 @@
 #!/usr/bin/env python3
 """Валидация артефакта прогона RUN-0094 (issue #484, ТЗ BCREQ-1199, 2-я версия).
 
-Проверяет отчёт `runs/2026/RUN-0094/outputs/L0-feasibility-assessment-1199-2.md`:
+Правила оценки issue #484 для отчёта `runs/2026/RUN-0094/outputs/L0-feasibility-assessment-1199-2.md`
+в форме v2.0 (issue #486): слева добавлена колонка «№ пп», составные требования разложены на
+атомарные строки. Форму (сквозной «№ пп», колонки «№» и «Требование» против транскрипции
+исходника, заголовки комплексных требований) проверяет `scripts/validate_issue_486_run.py`;
+здесь — содержательные правила issue #484 для каждой строки отчёта:
 
 0. исходник содержит два листа с требованиями — в отчёте два блока с явными разделителями
    `### Лист 1 из 2: «…»` и `### Лист 2 из 2: «…»`, у каждого своя таблица;
-1. таблица результата содержит ровно 6 колонок в каждой строке;
-2. колонки 1–2 (№ и текст требования) посимвольно совпадают с транскрипцией исходника
-   `experiments/issue_484/source_transcription.json` — в том же порядке, без пропусков
-   и добавлений (переводы строк ячейки — `<br>`, опечатки исходника сохраняются);
-3. колонка 3 имеет формат `Оценка: <br>[оценка] | [ ] | [ ]`, оценка — строго по шкале
+1. таблица результата содержит ровно 7 колонок в каждой строке, шапка — по контракту;
+2. строк отчёта не меньше, чем непустых строк исходника на листе (транскрипция
+   `experiments/issue_484/source_transcription.json`);
+3. колонка «Оценка» имеет формат `Оценка: <br>[оценка] | [ ] | [ ]`, оценка — строго по шкале
    `Да / Частично / Нет / пусто`; колонки исходника «Факт реализации» и «Срок доработки»
-   пустые, поэтому средняя часть колонки 3 пустая;
-4. колонки 4–5 заполнены, колонка 5 содержит технический аудит, колонка 6 пуста;
-   «Нет данных» в колонке 5 только при оценке `Нет`, «вне функционального контура» —
+   пустые, поэтому средняя часть колонки пустая;
+4. колонки «Обоснование» и «Цитата» заполнены, вторая содержит технический аудит,
+   «Комментарий БА» пуст; «Нет данных» в колонке цитат только при оценке `Нет`, «вне функционального контура» —
    только при пустой оценке; «Не требует обоснования» — только при `Да` со ссылкой на
    п/п шаблона ТЗ-тендеров-v4 (для строки целиком — только при `Да`, для отдельной
-   атомарной части составного требования — внутри обоснования); оценка `Да` / `Частично`
+   атомарной части внутри обоснования); оценка `Да` / `Частично`
    — только со ссылкой на SSOT;
 5. атомарные ссылки `[ДОК, §X «Заголовок», с.Y](url)` указывают на runtime-БЗ на
    зафиксированном commit; если runtime на этом commit доступен локально
    (`MANGO_BA_RUNTIME_MAIN`), § / заголовок / страницы сверяются с frontmatter;
 6. ссылки `[ТЗ-тендеров-v4, п/п X, с.Y](url)` указывают на существующий пункт шаблона и его
    страницу (`experiments/issue_367/tender_index.json`) и на вложение шаблона из issue #484;
-   веб-ссылки колонок 4–5 — только на домены Mango Office;
-7. число сносок `[n]` колонки 4 равно числу цитат `[n] «…»` колонки 5 в каждой строке;
+   веб-ссылки — только на домены Mango Office;
+7. число сносок `[n]` обоснования равно числу цитат `[n] «…»` в каждой строке;
 8. каталог прогона содержит обязательные файлы, контрольные суммы исходника и шаблона
-   зафиксированы в `inputs/README.md`, исходники в `inputs/` не хранятся;
+   зафиксированы в `inputs/README.md`, исходники в `inputs/` не хранятся (только `*.md`);
 9. аналитическая записка со сравнением версий ТЗ присутствует и ссылается на обе версии.
 """
 
@@ -53,6 +56,7 @@ SHEETS = ("Требования к системе", "SLA")
 RUN_FILES = (
     "metadata.yaml",
     "inputs/README.md",
+    "inputs/task-statement-486.md",
     "outputs/README.md",
     "outputs/L0-feasibility-assessment-1199-2.md",
     "outputs/analytical-note-1199-v1-vs-v2.md",
@@ -65,6 +69,8 @@ ALLOWED_HOSTS = ("github.com", "www.mango-office.ru", "mango-office.ru")
 
 VERDICT = re.compile(r"^Оценка: <br>(Да|Частично|Нет|) \\\| (.*?) ?\\\|$")
 AUDIT = "Аудит: "
+COLUMNS = ("№ пп", "№", "Требование", "Оценка", "Обоснование и ссылка",
+           "Цитата источника и технический аудит", "Комментарий БА")
 NO_DATA = "Нет данных"
 OUT = "вне функционального контура"
 CITATION = re.compile(
@@ -144,7 +150,8 @@ def check_run(source: dict, errors: list[str]) -> None:
             errors.append("нет файла прогона: %s" % name)
     inputs = RUN / "inputs"
     if inputs.exists():
-        stored = [p.name for p in inputs.iterdir() if p.name != "README.md"]
+        # Описания (README, постановка задачи) — markdown; исходники Заказчика не хранятся.
+        stored = [p.name for p in inputs.iterdir() if p.suffix != ".md"]
         if stored:
             errors.append("в inputs/ хранятся исходные файлы: %s" % ", ".join(sorted(stored)))
         readme = (inputs / "README.md").read_text(encoding="utf-8") if (inputs / "README.md").exists() else ""
@@ -236,57 +243,56 @@ def main() -> int:
     for index, (_head, table) in enumerate(found):
         sheet = SHEETS[index] if index < len(SHEETS) else "?"
         name = "Лист %d" % (index + 1)
+        if not table or split_row(table[0]) != list(COLUMNS):
+            errors.append("%s: шапка таблицы %r, ожидается %r"
+                          % (name, split_row(table[0]) if table else None, list(COLUMNS)))
         for offset, line in enumerate(table, start=1):
-            if len(split_row(line)) != 6:
-                errors.append("%s: строка таблицы %d: колонок %d, ожидается 6"
-                              % (name, offset, len(split_row(line))))
+            if len(split_row(line)) != len(COLUMNS):
+                errors.append("%s: строка таблицы %d: колонок %d, ожидается %d"
+                              % (name, offset, len(split_row(line)), len(COLUMNS)))
         rows = [split_row(line) for line in table[2:]]
         expected = expected_rows(source, sheet) if sheet in SHEETS else []
         total += len(rows)
-        if len(rows) != len(expected):
-            errors.append("%s: строк требований %d, в транскрипции исходника %d"
+        if len(rows) < len(expected):
+            errors.append("%s: строк отчёта %d, непустых строк исходника %d"
                           % (name, len(rows), len(expected)))
-        for position, (cells, (num, visible)) in enumerate(zip(rows, expected), start=1):
-            if len(cells) != 6:
+        for position, cells in enumerate(rows, start=1):
+            if len(cells) != len(COLUMNS):
                 continue
-            where = "%s строка %d (№%s)" % (name, position, num or "—")
-            if cells[0] != num.replace("|", "\\|"):
-                errors.append("%s: № %r, в исходнике %r" % (where, cells[0], num))
-            if cells[1].replace("\\|", "|").replace("<br>", "\n") != visible:
-                errors.append("%s: текст требования расходится с исходником" % where)
-            cells = [cell.strip() for cell in cells]
-            match = VERDICT.match(cells[2])
+            where = "%s строка %d (№ пп %s)" % (name, position, cells[0] or "—")
+            cells = [cell.strip() for cell in cells[2:]]
+            match = VERDICT.match(cells[1])
             if not match:
-                errors.append("%s: колонка «Оценка» не по формату/шкале: %r" % (where, cells[2]))
+                errors.append("%s: колонка «Оценка» не по формату/шкале: %r" % (where, cells[1]))
                 continue
             verdict = match.group(1)
             counts[verdict] += 1
             if match.group(2):
-                errors.append("%s: средняя часть колонки 3 должна быть пустой: %r" % (where, match.group(2)))
-            if not cells[3] or not cells[4]:
+                errors.append("%s: средняя часть колонки «Оценка» должна быть пустой: %r" % (where, match.group(2)))
+            if not cells[2] or not cells[3]:
                 errors.append("%s: пустое обоснование или цитата" % where)
-            if AUDIT not in cells[4]:
-                errors.append("%s: в колонке 5 нет технического аудита" % where)
-            if cells[5]:
-                errors.append("%s: колонка 6 (комментарий БА) должна быть пустой" % where)
-            if verdict == "Нет" and NO_DATA in cells[3] and not cells[4].startswith(NO_DATA):
-                errors.append("%s: «Нет данных» в обосновании, но не в колонке 5" % where)
-            if not verdict and OUT not in cells[3]:
+            if AUDIT not in cells[3]:
+                errors.append("%s: в колонке цитат нет технического аудита" % where)
+            if cells[4]:
+                errors.append("%s: колонка «Комментарий БА» должна быть пустой" % where)
+            if verdict == "Нет" and NO_DATA in cells[2] and not cells[3].startswith(NO_DATA):
+                errors.append("%s: «Нет данных» в обосновании, но не в колонке цитат" % where)
+            if not verdict and OUT not in cells[2]:
                 errors.append("%s: пустая оценка без «вне функционального контура»" % where)
-            if cells[4].startswith(NO_DATA) and verdict != "Нет":
+            if cells[3].startswith(NO_DATA) and verdict != "Нет":
                 errors.append("%s: «Нет данных» при оценке %r" % (where, verdict))
-            if cells[4].lower().startswith(OUT) and verdict:
+            if cells[3].lower().startswith(OUT) and verdict:
                 errors.append("%s: «вне функционального контура» при оценке %r" % (where, verdict))
-            if verdict in ("Да", "Частично") and "](" not in cells[3]:
+            if verdict in ("Да", "Частично") and "](" not in cells[2]:
                 errors.append("%s: оценка %r без ссылки на SSOT" % (where, verdict))
-            if "Не требует обоснования" in cells[3] and "[ТЗ-тендеров-v4, " not in cells[3]:
+            if "Не требует обоснования" in cells[2] and "[ТЗ-тендеров-v4, " not in cells[2]:
                 errors.append("%s: «Не требует обоснования» без ссылки на п/п шаблона v4" % where)
-            if cells[3].startswith("Не требует обоснования") and verdict != "Да":
+            if cells[2].startswith("Не требует обоснования") and verdict != "Да":
                 errors.append("%s: «Не требует обоснования» для строки целиком при оценке %r" % (where, verdict))
-            notes = [int(n) for n in FOOTNOTE.findall(cells[3])]
-            quotes = [int(n) for n in QUOTE.findall(cells[4])]
+            notes = [int(n) for n in FOOTNOTE.findall(cells[2])]
+            quotes = [int(n) for n in QUOTE.findall(cells[3])]
             if notes != list(range(1, len(notes) + 1)) or notes != quotes:
-                errors.append("%s: сноски колонки 4 %r не соответствуют цитатам колонки 5 %r"
+                errors.append("%s: сноски обоснования %r не соответствуют цитатам %r"
                               % (where, notes, quotes))
 
     citations = check_citations(text, errors)
@@ -302,7 +308,7 @@ def main() -> int:
         return 1
 
     summary = ", ".join("%s %d" % (k or "пусто", v) for k, v in counts.items())
-    print("OK: validate_issue_484_run: листов %d, строк требований %d (%s), ссылок на БЗ и шаблон v4 %d, колонок 6"
+    print("OK: validate_issue_484_run: листов %d, строк отчёта %d (%s), ссылок на БЗ и шаблон v4 %d, колонок 7"
           % (len(found), total, summary, citations))
     return 0
 
