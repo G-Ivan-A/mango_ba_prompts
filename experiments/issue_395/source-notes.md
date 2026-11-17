@@ -7,7 +7,7 @@
 - https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/docs/kb/MAP.json
 - https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/taxonomy/products.yaml
 - Completeness reference:
-  https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+  https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 README → MAP.documents → product_ids → sections_map → exact section is usable.
 USAGE explicitly distinguishes routing classes from Atomic Function binding.

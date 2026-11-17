@@ -236,7 +236,7 @@
 - Недоступно:
   - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
   - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md
-  - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+  - https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - Непроверяемые критерии: соответствие мета-стандарту раздела 4; Р1–Р5, Р7, АД-2…АД-11, АП1–АП9, КС1–КС7, БС1–БС5.
 - Вопросы 8.4 по этому шагу: В-3, В-33…В-37.
 - Ожидание решения БА о расширении поиска: новых зависимостей других продуктов в этом шаге не обнаружено; В-25 остаётся открытым.
@@ -321,7 +321,7 @@
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 (c) Чего не хватило:
 

@@ -28,7 +28,7 @@ related_artifacts:
 
 ## Отношение к первичному исследованию
 
-Ориентир — [`research/mango/2026-05-22-classification-tz.md`](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification-tz.md)
+Ориентир — [`research/mango/2026-05-22-classification-tz.md`](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification-tz.md)
 (корпус из 30 ТЗ, классы A/B/C). Отличие единицы наблюдения принципиально:
 
 | | Первичное исследование | Настоящий документ |

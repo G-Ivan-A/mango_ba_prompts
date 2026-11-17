@@ -605,7 +605,7 @@ G-self, тип `llm`, не ключевой: самоотчёт в этом от
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - Ссылки из мета-стандарта раздела 5: README, стандарт композиции, ADR-012, внешние источники (arc42, C4, OpenAPI, AsyncAPI, BABOK, TM Forum)
 - Ссылки RUN-0075 в конституции (error-statistics, success-criteria, runtime-improvements)
 

@@ -216,7 +216,7 @@
   - `docs/rfc/2026-11-bcreq-flow-processes-prompts.md`;
   - `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-prompt-profiles.md`;
   - `standards/bcreq-manual-classes/catalog.json`, `standards/bcreq-runtime-references.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`.
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`.
 - **Непроверяемые критерии:** чек-листы мета-стандартов; правила Г1–Г3 контракта гейтов; полнота каталога относительно эталона. Статус — `unverifiable`.
 - **Вопросы 8.4:** 0 на этом шаге. Вопрос о продуктовом классе задачи вношу на Ш-1, когда появится реестр.
 - **Решение БА о расширении поиска:** не запрашивается на этом шаге. Другие классы не открывал.
@@ -657,7 +657,7 @@
   - `docs/rfc/2026-11-bcreq-flow-processes-prompts.md`;
   - `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-prompt-profiles.md`;
   - `standards/bcreq-manual-classes/catalog.json`, `standards/bcreq-runtime-references.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - руководство КЦ: во входе нет.
 - **Непроверяемые критерии:** чек-листы мета-стандартов разделов 1 и 2 — `unverifiable`.
 - **Вопросы 8.4:** 20 открытых, 10 блокируют.
@@ -1179,7 +1179,7 @@ UNKNOWN не означает «Нет».
   - `docs/rfc/2026-11-bcreq-flow-processes-prompts.md`;
   - `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-prompt-profiles.md`;
   - `standards/bcreq-manual-classes/catalog.json`, `standards/bcreq-runtime-references.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - руководство КЦ: во входе нет.
 - **Непроверяемые критерии:** Г-IN.1; сверка с D-* в Г-IN.5; полнота каталога относительно эталона. Статус — `unverifiable`.
 - **Вопросы 8.4:** 28 открытых, 17 блокируют.
@@ -1290,7 +1290,7 @@ UNKNOWN не означает «Нет».
 
 Вне этого репозитория:
 
-- github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 ### Остановки вне стоп-гейта
 

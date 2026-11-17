@@ -76,7 +76,7 @@
   - `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-prompt-profiles.md`;
   - `standards/bcreq-manual-classes/catalog.json`, `standards/bcreq-runtime-references.md`;
   - `docs/contracts/bcreq-stage-gates.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`.
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`.
 
   Я не могу открыть эти ссылки. Если они нужны для проверки, прошу приложить файлы. По памяти не восстанавливаю.
 - **Непроверяемые критерии:** полнота каталога; чек-лист ＋2.5.
@@ -587,7 +587,7 @@
   - `standards/bcreq-prompt-base-standard.md`, `standards/bcreq-prompt-profiles.md`;
   - `standards/bcreq-manual-classes/catalog.json`, `standards/bcreq-runtime-references.md`;
   - `docs/contracts/bcreq-stage-gates.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - словари D1, D2, D5, D6, D11: файлов нет.
 - **Непроверяемые критерии:** Г-IN.1 полностью; Г-IN.5 в части сверки с D-словарями; полнота каталога; правило К4.
 - **Вопросы 8.4:** 28 открытых, 16 блокируют.

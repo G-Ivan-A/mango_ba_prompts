@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.44
-updated: 2026-11-16
+version: 0.45
+updated: 2026-11-17
 temperature: 0.1
 ---
 
@@ -12,6 +12,24 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Changed — Issue #488: ссылки на `research/mango` Хаба после выноса метамодели БА
+
+- Метамодель БА вынесена из Хаба в [`G-Ivan-A/ba-ai-metamodel`](https://github.com/G-Ivan-A/ba-ai-metamodel)
+  с историей (Хаб: B-243…B-249, issue G-Ivan-A/hybrid-Intelligence-lab#738). Хаб удаляет рабочие
+  копии `projects/ba-ai-process/` и `research/mango/`, поэтому плавающие ссылки `blob/main/...` на них
+  перестанут открываться. На `main` таких ссылок было 162 в 78 файлах, все на
+  `research/mango/2026-05-22-classification.md`.
+- 61 ссылка в 33 файлах, которые не закреплены побайтово (транскрипты и журналы прогонов
+  RUN-0057, 0083, 0088, 0089, 0091, 0092; `experiments/issue_319`, `issue_395`, `issue_397`),
+  переписана на тот же файл в `ba-ai-metamodel` на коммите приёмки E6
+  `e1f67e267beb73809e1edb26313691a5c769c92a`. Меняется только адрес ссылки, а объект остаётся тем же.
+- 101 ссылка в 45 файлах закреплена валидаторами побайтово: опубликованные промпты, черновики,
+  архив a-in v2.7.0, входы измеренных прогонов RUN-0084…0087, транскрипты RUN-0088 Ш-7 и RUN-0089 T,
+  `site/data/prompts.json` и `test-kit.json`. Эти ссылки остаются до релиза промптов по issue #488.
+- Новый `scripts/validate_issue_488_hub_extraction_links.py` (обнаруживается `make validate-full`)
+  запрещает новые плавающие ссылки на вынесенные пути Хаба вне перечня закреплённых файлов.
+  Число ссылок в перечне может только уменьшаться.
 
 ### Changed — Issue #486: RUN-0094 v2.0 — атомарная форма отчёта оценки исполнимости BCREQ-1199 v2
 
