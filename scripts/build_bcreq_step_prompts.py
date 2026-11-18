@@ -42,6 +42,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "scripts"))
+import bcreq_handoff  # noqa: E402  (issue #490)
 BASE = ROOT / "standards/bcreq-prompt-base-standard.md"
 PROFILES = ROOT / "standards/bcreq-prompt-profiles.md"
 CATALOG = ROOT / "standards/bcreq-manual-classes/catalog.json"
@@ -325,6 +327,71 @@ INTAKE_BODY = """
 - открытые вопросы: 8.4 — 0
 ```
 """
+
+
+#: Issue #490: блок «Итог шага» из SSOT docs/ba-processes/bcreq-step-handoff.md.
+HANDOFF_DATE = "2026-11-18"
+#: Шаги Ш-В и Ш-С тестовый набор берёт из `prompts/` (режим published,
+#: RUN-0084/0085): их черновики — измеренная история, байты не меняются;
+#: блок к опубликованному тексту добавляет сайт (site/data/step-handoff.json).
+HANDOFF_SKIP = {REVIEW_FILE, "bcreq-scenarios-modeling-oneshot"}
+SYSTEM_BLOB = REPO_BLOB + "prompts/drafts/system/"
+AIN_BLOB = REPO_BLOB + "prompts/drafts/a-in/"
+#: Issue #490, п. 2: формат шагов вместо выбора stepwise/oneshot. Каждая
+#: подстановка обязана встретиться в тексте v0.1 ровно один раз.
+FORMAT_EDITS = {
+    "bcreq-constitution-governance-oneshot": [
+        ("Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу/режим/исходный запрос без анализа. Затем остановись перед AIN-01. Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02.",
+         "Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу, формат шагов и исходный запрос без анализа. "
+         "Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»; без строки — декомпозированный; у БА формат не спрашивай. "
+         "Декомпозированный формат: остановись перед AIN-01; Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02. "
+         "Системный формат: остановись перед системным Ш-А; затем системные Ш-1 и Ш-2, как в редакции 2.7.0."),
+        ("СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21\nтекущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.\nВсе stakeholder-вопросы адресованы Заказчику нумерованным списком AIN-16.",
+         "Декомпозированный формат: СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного allow AIN-21\nтекущего принятого snapshot; раздел создаёт только AIN-22 отдельным вызовом.\n"
+         "Системный формат: СТРОГО ЗАПРЕЩЕНО генерировать текст раздела 2 до явного решения БА\nпо стоп-гейтам системного Ш-1; раздел пишет только Ш-1 после этого решения.\n"
+         "Все stakeholder-вопросы адресованы Заказчику нумерованным списком (AIN-16 или системный Ш-1)."),
+        ("в начале чата (stepwise) или первым\nвызовом агента (oneshot). Он задаёт",
+         "в начале чата в любом формате шагов\n(системном или декомпозированном). Он задаёт"),
+        ("| `режим` | `stepwise` \\| `oneshot` | `stepwise` |",
+         "| `формат шагов` | `системный` \\| `декомпозированный` (задаёт сайт; у БА не спрашивать) | `декомпозированный` |"),
+        ("3. Зафиксируй стартовые данные: задача, режим, запрос Заказчика дословно, без правки",
+         "3. Зафиксируй стартовые данные: задача, формат шагов, запрос Заказчика дословно, без правки"),
+        (f"6. Попроси ввести следующий промпт — [Ш-А]({REPO_BLOB}prompts/drafts/bcreq-intake-questionnaire-stepwise.md)\n   (oneshot: стадия A-IN). Остановись.",
+         f"6. Попроси ввести следующий промпт: в декомпозированном формате —\n   [AIN-01]({AIN_BLOB}bcreq-ain-01-understanding-stepwise.md), в системном —\n   [Ш-А]({SYSTEM_BLOB}bcreq-intake-questionnaire-system.md). Остановись."),
+        ("| Шаг | Пункт 2.x | Раздел | Вход | Стадия | Промпт stepwise |",
+         "| Шаг | Пункт 2.x | Раздел | Вход | Стадия | Промпт (системный формат) |"),
+        (f"[bcreq-intake-questionnaire-stepwise]({REPO_BLOB}prompts/drafts/bcreq-intake-questionnaire-stepwise.md) |",
+         f"[bcreq-intake-questionnaire-system]({SYSTEM_BLOB}bcreq-intake-questionnaire-system.md) |"),
+        (f"[bcreq-context-understanding-stepwise]({REPO_BLOB}prompts/bcreq-context-understanding-stepwise.md) |",
+         f"[bcreq-context-understanding-system]({SYSTEM_BLOB}bcreq-context-understanding-system.md) |"),
+        (f"[bcreq-products-impact-analysis-stepwise]({REPO_BLOB}prompts/bcreq-products-impact-analysis-stepwise.md) |",
+         f"[bcreq-products-impact-analysis-system]({SYSTEM_BLOB}bcreq-products-impact-analysis-system.md) |"),
+        (f"**oneshot (ИИ-агент), один вызов — одна стадия:**\n[A-IN]({REPO_BLOB}prompts/bcreq-in-understanding-oneshot.md) (Ш-А, Ш-1, Ш-2) →\nгейт Г-IN →\n[A-CORE]({REPO_BLOB}prompts/bcreq-core-documentation-oneshot.md) (Ш-3…Ш-5) →\nгейт Г-С1 →\n[A-WORK]({REPO_BLOB}prompts/bcreq-work-solution-design-oneshot.md) (Ш-6…Ш-9) →\nШ-В → гейт Г-W.",
+         f"**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из\nтаблицы выше; декомпозированный — вместо них\n[AIN-01…AIN-24]({REPO_BLOB}docs/ba-processes/bcreq-a-in-execution.md)\nотдельными промптами. С Ш-3 шаги общие. Формат выбирает БА на сайте,\nмодель его не спрашивает. Стадийные промпты для ИИ-агента (A-IN, A-CORE,\nA-WORK) остаются в каталоге и в этот набор не входят."),
+        ("Возврат выбирает БА (stepwise) или человек по рекомендации агента\n(oneshot); разделы",
+         "Возврат выбирает БА (при агентном прогоне — человек по рекомендации\nагента); разделы"),
+        ("- режим: <stepwise|oneshot>", "- формат шагов: <системный|декомпозированный>"),
+        ("- параметры: режим=<…>; остальные — на Ш-А",
+         "- параметры: формат шагов=<…>; остальные — на Ш-А (в декомпозированном — AIN-02)"),
+        ("- рекомендуемый следующий: Ш-А анкета (oneshot: стадия A-IN)",
+         "- рекомендуемый следующий: декомпозированный формат — AIN-01; системный — Ш-А анкета"),
+    ],
+    "bcreq-fr-documentation-stepwise": [
+        ("До алгоритма Ш-3 проверь явные AIN-21 и AIN-24/Г-IN, их task/attempt/route/snapshot и актуальность. Без одного из них — blocked, возврат к указанному AIN-ID; ФТ не создавай. При действующем Г-IN выполняй прежний алгоритм ФТ ниже.",
+         "До алгоритма Ш-3 проверь вход по формату шагов из «Состояния BCREQ» (#490). "
+         "Декомпозированный (по умолчанию): явные AIN-21 и AIN-24/Г-IN, их task/attempt/route/snapshot и актуальность; без одного из них — blocked, возврат к указанному AIN-ID. "
+         "Системный: явное решение БА по Г-IN после системного Ш-2, записанное в журнал гейтов и 8.5; без него — blocked, возврат к Ш-2. "
+         "Без входа ФТ не создавай. При действующем Г-IN выполняй прежний алгоритм ФТ ниже."),
+    ],
+}
+
+
+def apply_format_edits(name, body):
+    for old, new in FORMAT_EDITS.get(name, []):
+        if body.count(old) != 1:
+            raise SystemExit(f"#490: подстановка в {name} встречается {body.count(old)} раз: {old[:60]}")
+        body = body.replace(old, new)
+    return body
 
 
 def read(path):
@@ -634,6 +701,7 @@ def build_all():
         "registry": load_registry(),
         "catalog": json.loads(read(CATALOG)),
         "rfc": load_rfc_steps(),
+        "handoff": bcreq_handoff.load(),
     }
     sha = ctx["registry"][1]
     files = {}
@@ -698,10 +766,16 @@ def build_all():
         updated = BUILD_DATE if name == REVIEW_FILE else FIX_DATE
         if name == INTAKE_FILE or "<!-- issue-474:entry -->" in body:
             updated = "2026-11-08"
+        body = apply_format_edits(name, body)
+        if name in FORMAT_EDITS:
+            header = header.replace(" ниже не изменён", " ниже не изменён, кроме формата шагов (#490)", 1)
+        handoff = "" if name in HANDOFF_SKIP else "\n" + bcreq_handoff.render(steps, ctx["handoff"])
+        if handoff:
+            updated = HANDOFF_DATE
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
-        text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block
+        text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block + handoff
         outputs[DRAFTS / f"{name}.md"] = text
         manifest.append({
             "file": f"prompts/drafts/{name}.md",
