@@ -99,6 +99,15 @@ class PromptsTest(unittest.TestCase):
             self.assertIn("track: system", text)
             source = re.search(r"^based_on: (\S+)$", text, re.M).group(1)
             self.assertTrue(source.startswith("prompts/archive/a-in-v2.7.0/"), source)
+            # Правила из чата 1135-2 (анализ #490, П-12, П-13, П-15).
+            block = text.split(build_bcreq_system_track.BEGIN, 1)[1].split(build_bcreq_system_track.END, 1)[0]
+            for rule in ("Темп задаёт БА", "одно бизнес-решение на пункт",
+                         "сленг в требования не переноси"):
+                self.assertIn(rule, block, path.name)
+
+    def test_fr_step_keeps_what_not_how(self):
+        fr = read(ROOT / "prompts/drafts/bcreq-fr-documentation-stepwise.md")
+        self.assertIn("сленг в ФТ не переноси", fr)
 
     def test_starter_takes_format_not_mode_choice(self):
         starter = read(ROOT / "prompts/drafts/bcreq-constitution-governance-oneshot.md")
