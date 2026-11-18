@@ -13,6 +13,13 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 
 
+def _delta490():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('delta490', ROOT/'experiments/issue_490/prompt_delta.py')
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module
+
+
 def check(fetch=False):
     data = json.loads((HERE/'recording-observation.json').read_text())
     evidence = data['output']['evidence'][0]
@@ -26,7 +33,9 @@ def check(fetch=False):
     assert evidence['locator'].endswith('#L34')
     kit = json.loads((ROOT/'site/data/a-in-kit.json').read_text())
     prompt = kit['steps'][8]['prompt']
-    assert hashlib.sha256(prompt.encode()).hexdigest() == data['execution']['prompt_sha256']
+    # Observed on the v0.2 prompt; #490 (v0.3) only added the «Итог шага» block.
+    observed = _delta490().revert_ain(prompt, 'AIN-09')
+    assert hashlib.sha256(observed.encode()).hexdigest() == data['execution']['prompt_sha256']
     assert 'resolved_technical_questions' in prompt
     assert 'Доказательную базу проверки' in prompt
     for case in data['negative_cases']:
