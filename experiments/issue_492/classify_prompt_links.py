@@ -125,11 +125,14 @@ PARTIAL = {
 CARDS = {
     "BL-185": {
         "title": "Конституция Ш-0 и промпты набора этапа 1 в runtime",
-        "match": lambda p: p in CONSTITUTION or (p.startswith("prompts/") and not p.startswith("prompts/archive/")),
+        "match": lambda p: p in CONSTITUTION or (p.startswith("prompts/") and not p.startswith(
+            ("prompts/archive/", "prompts/drafts/a-in/"))),
     },
     "BL-186": {
         "title": "Маршрут A-IN, контракты AIN и итог шага в runtime",
-        "match": lambda p: p in {AIN_RFC, "docs/ba-processes/bcreq-a-in-execution.md",
+        "match": lambda p: p.startswith("prompts/drafts/a-in/") or p in {
+                                 AIN_RFC, "docs/ba-processes/bcreq-a-in-execution.md",
+                                 "docs/ba-processes/bcreq-a-in-common.md",
                                  "docs/ba-processes/bcreq-step-handoff.md",
                                  "docs/ba-processes/bcreq-evidence-normalization.md"},
     },

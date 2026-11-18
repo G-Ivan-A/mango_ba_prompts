@@ -1,4 +1,4 @@
-commit=786f8f3d67c5a8d08ceb8abfad891dda9cf2f2f2 registry_sha=68ad8fcffd47439fc3051852d9a2fbbe23815855 runtime_main=90f082330015634f3a0632cdd31ebfe1c15fd7ae
+commit=9dff6bfa8c6491d7f43fbf53183da8587a162a7c registry_sha=68ad8fcffd47439fc3051852d9a2fbbe23815855 runtime_main=90f082330015634f3a0632cdd31ebfe1c15fd7ae
 prompt_files=90 with_links=79 occurrences=543 targets=54 relative_links=0
 by class: {"а": 225, "б": 318}
 by rule: {"А-0": 2, "А-1": 43, "А-2": 3, "А-3": 7, "А-4": 132, "А-5": 1, "А-6": 37, "Б-1": 85, "Б-2": 24, "Б-3": 6, "Б-4": 43, "Б-5": 104, "Б-6": 15, "Б-7": 41}
