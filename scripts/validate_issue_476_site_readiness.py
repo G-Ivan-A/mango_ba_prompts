@@ -60,16 +60,27 @@ class Readiness(unittest.TestCase):
 
     def test_no_prompt_or_layout_degradation(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'prompts/'],cwd=ROOT).decode().splitlines()
-        for path in paths:
-            self.assertEqual((ROOT/path).read_bytes(),subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT),path)
+        changed=[path for path in paths
+                 if (ROOT/path).read_bytes()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
+        # Issue #490: «Итог шага» и формат шагов меняют только сгенерированные
+        # черновики; каждый совпадает с выходом своего сборщика (--check).
+        for path in changed:
+            self.assertTrue(path.startswith('prompts/drafts/') and '/archive/' not in path, path)
+            self.assertIn('Итог шага', read(path), path)
+        for builder in ('scripts/build_bcreq_a_in.py','scripts/build_bcreq_step_prompts.py'):
+            subprocess.run(['python3',builder,'--check'],cwd=ROOT,check=True,capture_output=True,timeout=60)
+        # Новые правила #490 — в site/step-format.css; файлы 2.8.6 не меняются.
         for path in ('site/styles.css','site/v2.css','site/standards.css','site/v2.js'):
             self.assertEqual((ROOT/path).read_bytes(),subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT),path)
 
     def test_release_and_archive_applicability(self):
         data=load('site/data/prompts.json')
-        self.assertEqual(data['siteVersion']['version'],'2.8.6')
+        # 2.8.6 — релиз #476/#480; #490 выпускает 2.9.0. Версия не откатывается
+        # и одинакова в данных и разметке.
+        version=data['siteVersion']['version']
+        self.assertGreaterEqual(tuple(map(int,version.split('.'))),(2,8,6))
         self.assertEqual(data['siteVersion'],load('site/data/stats.json')['siteVersion'])
-        self.assertIn('>v2.8.6<',read('site/index.html'))
+        self.assertIn(f'>v{version}<',read('site/index.html'))
         self.assertIn('архив: 14 промптов этапа 1 и 4 редакции 2.7.0',read('site/index.html'))
         stages={p['label'] for p in data['filters']['processes']}
         ops={p['id'] for p in data['filters']['operations']}

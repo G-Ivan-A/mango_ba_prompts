@@ -22,14 +22,17 @@ test('default catalog shows the 39 classes and hides the archive', () => {
   const run = app();
   assert.equal(run('visiblePrompts().length'), 39);
   assert.ok(run('visiblePrompts().every(p => p.classId && !p.archived)'));
-  assert.deepEqual(run('facetCounts("mode")'), {manual: 39});
+  // Issue #490: фасет «Формат шагов» вместо режимов stepwise/oneshot; системный
+  // формат есть только в архиве 2.7.0, поэтому фасет считает и архив.
+  assert.deepEqual(run('facetCounts("format")'), {decomposed: 39, system: 18});
 });
-test('the «Архив» family shows 14 stage-1 prompts and four 2.7.0 snapshots with their own modes', () => {
+test('the «Архив» family shows 14 stage-1 prompts and four 2.7.0 snapshots with the system step format', () => {
   const run = app(['family:archive']);
   assert.equal(run('visiblePrompts().length'), 18);
   assert.ok(run('visiblePrompts().every(p => p.archived && p.family === "archive")'));
-  assert.deepEqual(run('facetCounts("mode")'), {stepwise: 11, oneshot: 7});
-  assert.equal(app(['mode:stepwise'])('visiblePrompts().length'), 0);
+  assert.deepEqual(run('facetCounts("format")'), {system: 18});
+  // Выбор «Системные» открывает архив (#490, п. 2.3), а не пустой список.
+  assert.equal(app(['format:system'])('visiblePrompts().length'), 18);
   assert.equal(app(['family:bcreq', 'family:archive'])('visiblePrompts().length'), 57);
 });
 test('stage selection restricts operation counts to actual prompts', () => {
@@ -42,8 +45,8 @@ test('operation selection restricts stages in reverse', () => {
   assert.deepEqual(run('facetCounts("process")'), {[CORE]: 3, [WORK]: 3, [IN]: 2});
   assert.equal(run('visiblePrompts().length'), 4);
 });
-test('facets honor other selections, query, mode and family; own values are OR', () => {
-  const run = app([`process:${CORE}`, `process:${RELEASE}`, 'operation:documentation', 'operation:governance', 'mode:manual', 'family:bcreq']);
+test('facets honor other selections, query, step format and family; own values are OR', () => {
+  const run = app([`process:${CORE}`, `process:${RELEASE}`, 'operation:documentation', 'operation:governance', 'format:decomposed', 'family:bcreq']);
   assert.equal(run('visiblePrompts().length'), 13);
   assert.deepEqual(run('facetCounts("process")'), {[IN]: 7, [CORE]: 11, [WORK]: 12, [RELEASE]: 8});
   assert.deepEqual(run('facetCounts("operation")'), {understanding: 2, impact_analysis: 2, research: 2, ingestion: 1, validation: 4, documentation: 8, governance: 5, modeling: 3, quality: 1, release_readiness: 1});

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="standards.css" />
     <link rel="stylesheet" href="v2.css" />
+    <link rel="stylesheet" href="step-format.css" />
   </head>
   <body>
     <header class="topbar">
@@ -16,7 +17,7 @@
         <span class="brand-mark" aria-hidden="true">M</span>
         <span>
           <span class="brand-title">Mango BA Prompts</span>
-          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.8.6</span></span>
+          <span class="brand-subtitle">каталог промптов · <span class="site-version" data-site-version>v2.9.0</span></span>
         </span>
       </a>
       <nav class="topnav" id="topnav" aria-label="Разделы">
@@ -183,11 +184,13 @@
         </div>
         <!-- issue-468:end -->
           <ol class="process-help-steps">
+            <li>Выберите формат шагов: «Декомпозированные шаги» (AIN-01…24, по одному контракту за вызов) или «Системные (комплексные шаги)» (Ш-А, Ш-1, Ш-2 текстом сайта 2.7.0). Модель не спрашивает о формате: выбор уходит в Ш-0 строкой «Формат шагов».</li>
             <li>Идите по шагам сверху вниз: вкладка «Все шаги» показывает весь набор, вкладки 1–4 — один этап. Один документ ведётся в одном чате с моделью.</li>
             <li>В карточке шага подготовьте то, что указано в «Что подготовить».</li>
             <li>Прочитайте текст в карточке; кнопки редакций переключают «по тесту» и опубликованную версию. По умолчанию выбрана редакция, назначенная шагу для теста.</li>
             <li>Нажмите «⧉ Копировать» — скопируется выбранная редакция; первая строка с именем промпта и шага останется в чате и покажет, что применено.</li>
-            <li>Выполните «Что делает БА» по пунктам и сверьте ответ модели с «Результатом».</li>
+            <li>Прочитайте «Цель»: как работает промпт и зачем он нужен. Сверьте ответ модели с «Результатом»: строка «БА — проверить» называет, что проверить обязательно; у технического шага проверка необязательна.</li>
+            <li>Ответ модели заканчивается «Итогом шага»: какой промпт выполнен, что проверить БА (или что шаг технический) и какой промпт вводить следующим. Положения на решение БА модель дублирует понятным текстом в блоке «На согласование БА».</li>
             <li>На шаге с ⛳ решает человек: БА, Заказчик или команда. Решение записывается в журнал гейтов; модель только советует.</li>
           </ol>
           <dl class="process-help-terms">
@@ -216,11 +219,12 @@
           <a class="source-link" href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md#1-порядок-шагов" target="_blank" rel="noreferrer" title="Источник в репозитории">↗</a>
         </div></summary>
         <p class="bcreq-lead">
-          35 шагов с декомпозицией A-IN: один чат с моделью, шаги по порядку, на каждом шаге БА копирует
+          35 шагов с декомпозицией A-IN или 14 системных шагов — формат выбирается переключателем ниже: один чат с моделью, шаги по порядку, на каждом шаге БА копирует
           промпт кнопкой «⧉ Копировать». По умолчанию выбран текст, назначенный шагу для теста;
           кнопки редакций показывают другой текст для сравнения. После гейтов решение записывает человек (П-5); карточку прогона,
           журнал гейтов и форму обратной связи ведут по комплекту.
         </p>
+        <nav class="step-format-switch" id="step-format-switch" aria-label="Формат шагов"></nav>
         <p class="bcreq-lead" id="bcreq-testkit-summary"></p>
         <ol class="bcreq-steps" id="bcreq-testkit-steps"></ol>
         </details>
@@ -498,7 +502,7 @@
     </main>
 
     <footer class="site-footer">
-      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.8.6</a>
+      Mango BA Prompts · версия сайта <a class="site-version" data-site-version href="https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/CHANGELOG.md">v2.9.0</a>
       · каталог: 39 классов BCREQ, архив: 14 промптов этапа 1 и 4 редакции 2.7.0
     </footer>
 

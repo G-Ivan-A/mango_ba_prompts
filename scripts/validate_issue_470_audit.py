@@ -71,9 +71,11 @@ check(not bad, f'нестандартные имена: {bad}')
 check('docs/rfc/' not in read('tools/file-naming-legacy-allowlist.txt'), 'docs/rfc вернулся в allowlist')
 
 stats = json.loads(read('site/data/stats.json'))
-check('"version": "2.8.6"' in json.dumps(stats, indent=2), 'stats.json: версия не 2.8.6')
+# 2.8.6 — релиз аудита; поздние релизы (#490: 2.9.0) версию не откатывают.
+site_version = stats['siteVersion']['version']
+check(tuple(map(int, site_version.split('.'))) >= (2, 8, 6), f'stats.json: версия {site_version} ниже 2.8.6')
 index = read('site/index.html')
-check('>v2.8.6<' in index and '>v2.8.1<' not in index, 'site/index.html: версия не 2.8.6')
+check(f'>v{site_version}<' in index and '>v2.8.1<' not in index, f'site/index.html: версия не {site_version}')
 check('rfc-audit-link' in index, 'site/index.html: нет ссылки на аудит')
 backlog = read('pr-ops/BACKLOG.md')
 check(re.search(r'^\| BL-181 \|.*\| DONE \|', backlog, re.M), 'нет BL-181 в статусе DONE после #472')

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.6
-updated: 2026-11-09
+version: 1.7
+updated: 2026-11-18
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -470,8 +470,9 @@ Evidence: [постановка](../experiments/issue_476/README.md),
 
 ### BL-239. Сборка сайта с CRLF и BOM без потерь архива
 
-**Статус.** `review`, [#480](https://github.com/G-Ivan-A/mango_ba_prompts/issues/480),
-[PR #481](https://github.com/G-Ivan-A/mango_ba_prompts/pull/481).
+**Статус.** `DONE`: [#480](https://github.com/G-Ivan-A/mango_ba_prompts/issues/480),
+[PR #481](https://github.com/G-Ivan-A/mango_ba_prompts/pull/481) слит 09.11.2026.
+Сборка 2.9.0 (#490) использует то же чтение CRLF/BOM.
 
 **Почему.** Ошибка `frontmatter.operation` точно воспроизводится на CRLF:
 парсер не видит начальную границу, хотя `understanding` валиден. LF baseline
@@ -490,8 +491,9 @@ smoke и CI на текущем SHA подтверждены. Evidence: [пос�
 - [Issue #480](https://github.com/G-Ivan-A/mango_ba_prompts/issues/480),
   раздел «Цель»: “обеспечив успешное выполнение скрипта generate-pages-data.mjs”
 
-**Цепочка.** Предыдущий BL-238 `DONE` по merge #477. BL-239 на review до
-принятия #481; следующий BL-232 `TODO` до ручного деплоя и приёмки владельцем.
+**Цепочка.** Предыдущий BL-238 `DONE` по merge #477. BL-239 `DONE` по merge
+#481; следующий BL-232 `TODO` до ручного деплоя и приёмки владельцем
+(кандидат после #490 — 2.9.0).
 BL-175/BL-182 этим исправлением не закрываются. Новых этапов не требуется.
 
 ### BL-232. Публикация сайта на прод и приёмка

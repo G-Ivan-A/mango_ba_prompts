@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.26
-updated: 2026-11-08
+version: 0.27
+updated: 2026-11-18
 ai-generated: true
 type: register
 scope: governance
@@ -21,6 +21,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/466"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/470"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/490"
 related_artifacts:
   - "docs/rfc/2026-06-rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -41,6 +42,7 @@ related_artifacts:
   - "docs/rfc/2026-11-bcreq-prompts-publication-roadmap.md"
   - "docs/rfc/2026-11-bcreq-machine-run-baseline.md"
   - "docs/rfc/2026-11-ttz-feasibility-flow.md"
+  - "docs/rfc/2026-11-bcreq-step-format.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -482,6 +484,10 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 - **2026-11-05** — issue #458 (PR #459): RFC-MR-001 v0.1 `proposed` — машинная
   база сравнения RUN-0090, RUN-0091 и протокол сравнения с BL-157в. RFC-RT-001
   получает только ссылку, статус `accepted` не меняется.
+- **2026-11-18** — issue #490 (PR #491): RFC-BCREQ-STEP-FORMAT-001 v0.1 `proposed` —
+  цель шага, «Итог шага» и два формата шагов по разбору чата 1135-2; раздел 6 —
+  перенос практики на этап 2 (OpenCode). RFC-AIN-001 v0.7 получает поправку о
+  параллельном системном формате, статус `accepted` не меняется.
 
 ## Поток ТТЗ (issue #466)
 
@@ -495,6 +501,12 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 | --- | --- | --- | --- |
 | [RFC-AIN-001](2026-11-a-in-decomposition.md) | 24 отдельных шага, evidence/вопросы/гипотезы до раздела 2; P01…20, S01…27, LE-01…20; v0.5 — принятие и draft реализация | `accepted` (#474) | [PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475): полные контракты, адаптеры, процессы и сайт 2.8.4; BL-180 review, измерение BL-175 и деплой BL-232 открыты |
 | [RFC-PROV-001](2026-11-ba-evidence-provenance.md) | Историческое предложение локального профиля provenance/evidence/feasibility; критический анализ двух aether-репозиториев | `deferred` | [Решение владельца 08.11 в PR #475](https://github.com/G-Ivan-A/mango_ba_prompts/pull/475#issuecomment-6723485929); только исследование BL-182 |
+
+## Формат шагов и итог шага (issue #490)
+
+| RFC | Суть | Статус | Реализация |
+| --- | --- | --- | --- |
+| [RFC-BCREQ-STEP-FORMAT-001](2026-11-bcreq-step-format.md) | ВП чата 1135-2 и гипотезы Г1…Г6: «Цель» в карточках, блок «Итог шага» в 38 шагах, «На согласование БА», системный формат Ш-А/Ш-1/Ш-2 параллельно AIN, «Формат шагов» вместо stepwise/oneshot; перенос на этап 2 | `proposed` | [PR #491](https://github.com/G-Ivan-A/mango_ba_prompts/pull/491): SSOT `bcreq-step-handoff.md`, черновики и сайт 2.9.0; деплой BL-232 и прогон БА открыты |
 
 ## Журнал переименований `docs/rfc` (issue #470)
 

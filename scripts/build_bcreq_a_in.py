@@ -4,8 +4,11 @@ import argparse
 import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT/'scripts'))
+import bcreq_handoff  # noqa: E402  (issue #490: «Итог шага» из SSOT)
 DRAFTS = ROOT / 'prompts/drafts/a-in'
 
 def build():
@@ -15,6 +18,7 @@ def build():
     rfc = (ROOT/'docs/rfc/2026-11-a-in-decomposition.md').read_text()
     lessons = [line for line in rfc.splitlines() if re.match(r'\| LE-\d{2} \|', line)]
     assert len(lessons) == 20
+    handoff = bcreq_handoff.load()
     outputs, kit = {}, []
     for step in route['steps']:
         sid = step['id']; instruction = instructions[sid]
@@ -28,8 +32,8 @@ def build():
 id: mango-bcreq-{sid.lower()}-stepwise
 title: "BCREQ {sid}: {step['name']}"
 status: draft
-version: 0.2
-updated: 2026-11-08
+version: 0.3
+updated: 2026-11-18
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
@@ -80,7 +84,9 @@ Draft для ручной проверки БА; эффективность мо
 
 {chr(10).join(selected)}
 
-Сначала результат, затем receipt, затем `КОНЕЦ {sid} <версия результата>`.
+{bcreq_handoff.render([sid], handoff)}
+Порядок ответа: результат, «На согласование БА» (если есть), receipt,
+«Итог шага», затем `КОНЕЦ {sid} <версия результата>`.
 '''
         path = DRAFTS / f'bcreq-{sid.lower()}-understanding-stepwise.md'
         outputs[path] = body

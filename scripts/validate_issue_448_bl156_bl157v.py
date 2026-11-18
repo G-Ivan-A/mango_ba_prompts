@@ -249,7 +249,9 @@ class SiteTest(unittest.TestCase):
                 self.assertTrue(step[field].strip(), f"{step['step']}: {field}")
                 # Инструкция для БА — без кодов шагов и классов.
                 self.assertNotRegex(step[field], r"\b(?:Ш-[0-9ВРС]+|C\d{2}|L-\d+|GS-BCREQ-\d+)\b", step["step"])
-            self.assertGreaterEqual(len(step["actions"]), 2, step["step"])
+            # Issue #490: «Что делает БА» заменено «Целью» и строкой проверки БА из SSOT.
+            self.assertTrue(step["goal"].strip() and step["check"].strip(), step["step"])
+            self.assertIn(step["checkKind"], {"required", "technical"}, step["step"])
             self.assertIn(step["group"], {"g1", "g2", "g3", "g4"})
 
     def test_copy_header_names_prompt(self):

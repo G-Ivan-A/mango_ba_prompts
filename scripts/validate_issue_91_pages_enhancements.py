@@ -3,7 +3,7 @@
 
 Locks the requirements re-issued after PR #90:
 - catalog is rendered before dashboard and roadmap (ФТ-1);
-- filter order is Процессы БА -> Операции -> Режимы (ФТ-2);
+- filter order is Процессы БА -> Операции -> Формат шагов (ФТ-2; issue #490 replaced «Режимы»);
 - cascade + AND/OR filtering helpers exist (ФТ-2, ФТ-3);
 - the "Проверки" module and its checks data replace "Мультиагенты" (ФТ-4);
 - the prompt-feedback static source exists (ФТ-4).
@@ -80,13 +80,13 @@ def main() -> int:
     )
     errors += require(index_html, "site/index.html", "checks-grid", "Проверки")
 
-    # ФТ-2: порядок фильтров Процессы БА -> Операции -> Режимы.
+    # ФТ-2: порядок фильтров Процессы БА -> Операции -> Формат шагов (#490: вместо «Режимы»).
     errors += require_order(
         app_js,
         "site/app.js",
         'renderFilterGroup("Процессы БА"',
         'renderFilterGroup("Операции"',
-        'renderFilterGroup("Режимы"',
+        'renderFilterGroup("Формат шагов"',
     )
 
     # ФТ-2/ФТ-3: каскад и И/ИЛИ-логика фильтров.

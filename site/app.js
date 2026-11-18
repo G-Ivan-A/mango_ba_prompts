@@ -8,6 +8,10 @@ const state = {
   processTree: null,
   bcreqFlow: null,
   testKit: null,
+  // Issue #490: исходные данные обоих форматов шагов; state.testKit — выбранный.
+  testKitSource: null,
+  ainKit: null,
+  stepFormat: "decomposed",
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -42,6 +46,7 @@ const nodes = {
   bcreqRules: document.querySelector("#bcreq-rules"),
   bcreqSteps: document.querySelector("#bcreq-steps"),
   testKitSummary: document.querySelector("#bcreq-testkit-summary"),
+  stepFormatSwitch: document.querySelector("#step-format-switch"),
   testKitSteps: document.querySelector("#bcreq-testkit-steps"),
   processTabs: document.querySelector("#process-tabs"),
   processHelp: document.querySelector("#process-help"),
@@ -68,6 +73,17 @@ const MODE_LABELS = {
   oneshot: "One-shot",
   legacy: "Legacy",
 };
+
+// Формат шагов (issue #490): системные (комплексные) шаги — промпты Ш-ХХ
+// и архив stepwise/oneshot; декомпозированные шаги — классы и AIN-01…24.
+const FORMAT_ICONS = {
+  system: "▣",
+  decomposed: "☰",
+};
+
+function formatLabel(format) {
+  return (state.promptsData?.filters?.formats || []).find((item) => item.id === format)?.label || format || "—";
+}
 
 const KIND_LABELS = {
   direct: "промпт",
@@ -162,15 +178,19 @@ function sortPrompts(prompts) {
 // Внутри одного фильтра — ИЛИ (несколько значений), между фильтрами — И.
 // Архив (issue #423): 14 промптов этапа 1 скрыты, пока не выбран набор «Архив»;
 // по умолчанию каталог показывает 39 классов BCREQ.
+// Issue #490, п. 2.3: системные (комплексные) промпты лежат в архиве 2.7.0,
+// поэтому выбор формата «Системные» тоже открывает архив — иначе фасет пуст.
 function archiveSelected() {
-  return selectedValues("family").includes("archive");
+  return selectedValues("family").includes("archive") || selectedValues("format").includes("system");
 }
 
 function matchingPrompts(excludedKind = "", { includeArchive = archiveSelected() } = {}) {
   const query = normalize(state.query);
   const selectedProcesses = excludedKind === "process" ? [] : selectedValues("process");
   const selectedOperations = excludedKind === "operation" ? [] : selectedValues("operation");
-  const selectedModes = excludedKind === "mode" ? [] : selectedValues("mode");
+  // Issue #490, п. 2.3: фасет «Формат шагов» (системные / декомпозированные)
+  // вместо stepwise/oneshot — БА выбирает формат взаимодействия, а не режим.
+  const selectedFormats = excludedKind === "format" ? [] : selectedValues("format");
   const selectedFamilies = selectedValues("family");
 
   return state.prompts.filter((prompt) => {
@@ -189,7 +209,7 @@ function matchingPrompts(excludedKind = "", { includeArchive = archiveSelected()
     if (selectedOperations.length > 0 && !selectedOperations.includes(prompt.operation.id)) {
       return false;
     }
-    if (selectedModes.length > 0 && !selectedModes.includes(prompt.mode)) {
+    if (selectedFormats.length > 0 && !selectedFormats.includes(prompt.format)) {
       return false;
     }
     if (selectedFamilies.length > 0 && !selectedFamilies.includes(prompt.family)) {
@@ -207,9 +227,11 @@ function visiblePrompts() {
 // Query, modes, family and the opposite facet still constrain each count.
 function facetCounts(kind) {
   const counts = {};
-  for (const prompt of matchingPrompts(kind)) {
+  // Фасет «Формат шагов» считает и архив: системный формат есть только там (#490).
+  const options = kind === "format" ? { includeArchive: true } : {};
+  for (const prompt of matchingPrompts(kind, options)) {
     const values =
-      kind === "process" ? [...new Set(prompt.filterProcesses || prompt.processes)] : kind === "mode" ? [prompt.mode] : [prompt.operation.id];
+      kind === "process" ? [...new Set(prompt.filterProcesses || prompt.processes)] : kind === "format" ? [prompt.format] : [prompt.operation.id];
     for (const value of values) {
       counts[value] = (counts[value] || 0) + 1;
     }
@@ -264,7 +286,7 @@ function exportCatalog() {
     lines.push("");
     lines.push(`- **ID:** \`${prompt.id}\``);
     lines.push(`- **Версия:** ${prompt.version} · **Обновлён:** ${prompt.updated || "—"}`);
-    lines.push(`- **Режим:** ${prompt.mode} · **Статус:** ${promptStatus(prompt)} · **Тестов:** ${testsFor(prompt)}`);
+    lines.push(`- **Формат шагов:** ${formatLabel(prompt.format)} · **Режим:** ${prompt.mode} · **Статус:** ${promptStatus(prompt)} · **Тестов:** ${testsFor(prompt)}`);
     lines.push(`- **Операция:** ${prompt.operation.label}`);
     if (prompt.processes.length > 0) {
       lines.push(`- **Процессы:** ${prompt.processes.join(", ")}`);
@@ -428,16 +450,16 @@ function renderFilters() {
     unavailable: !operationCounts[operation.id],
   }));
 
-  const modeCounts = facetCounts("mode");
-  const modes = state.promptsData.filters.modes.map((mode) => ({
-    token: `mode:${mode}`,
-    icon: state.prompts.find((prompt) => prompt.mode === mode)?.modeIcon || "•",
-    label: MODE_LABELS[mode] || mode,
-    count: modeCounts[mode] || 0,
-    title: modeCounts[mode]
-      ? `${MODE_LABELS[mode] || mode}: ${mode}`
-      : `${MODE_LABELS[mode] || mode}: только в архиве — выберите набор «Архив»`,
-    unavailable: !modeCounts[mode],
+  const formatCounts = facetCounts("format");
+  const formats = (state.promptsData.filters.formats || []).map((format) => ({
+    token: `format:${format.id}`,
+    icon: FORMAT_ICONS[format.id] || "•",
+    label: format.label,
+    count: formatCounts[format.id] || 0,
+    title: formatCounts[format.id]
+      ? `${format.label}: ${format.description}`
+      : `${format.label}: нет промптов при текущих фильтрах`,
+    unavailable: !formatCounts[format.id],
   }));
 
   // Набор (issue #388): новые промпты BCREQ, прочие действующие, архив.
@@ -453,7 +475,7 @@ function renderFilters() {
     renderFilterGroup("Набор", families, "filter-group--families"),
     renderFilterGroup("Процессы БА", processes, "filter-group--processes"),
     renderFilterGroup("Операции", operations, "filter-group--operations"),
-    renderFilterGroup("Режимы", modes, "filter-group--modes"),
+    renderFilterGroup("Формат шагов", formats, "filter-group--modes"),
   );
 }
 
@@ -509,8 +531,9 @@ function promptCard(prompt) {
   meta.append(testItem);
 
   const tags = el("div", "tag-row");
-  const mode = el("span", "tag", `${prompt.modeIcon} ${MODE_LABELS[prompt.mode] || prompt.mode}`);
+  const mode = el("span", "tag", `${FORMAT_ICONS[prompt.format] || prompt.modeIcon} ${formatLabel(prompt.format)}`);
   mode.dataset.kind = "mode";
+  mode.title = `Режим файла: ${MODE_LABELS[prompt.mode] || prompt.mode}`;
   const status = el("span", "tag", promptStatus(prompt));
   status.dataset.kind = "status";
   const operation = el("span", "tag", `${prompt.operation.icon} ${prompt.operation.label}`);
@@ -1273,6 +1296,10 @@ function applyRoute() {
     const params = new URLSearchParams(raw.split("?")[1] || "");
     const ain = params.get("ain");
     const step = params.get("step");
+    // Issue #490: #processes?track=system|decomposed; ссылка на AIN — декомпозированный формат.
+    const track = params.get("track");
+    if (/^AIN-/.test(ain || "")) setStepFormat("decomposed");
+    else if (track) setStepFormat(track);
     const ainTarget = /^AIN-(?:0[1-9]|1\d|2[0-4])$/.test(ain || "")
       ? document.querySelector(`[data-ain-step="${ain}"]`) : null;
     const target = ainTarget || (/^\d{1,2}$/.test(step || "") ? document.getElementById(`bcreq-step-${step}`) : null);
@@ -1341,6 +1368,45 @@ function trackTopbarHeight() {
   }).observe(topbar);
 }
 
+// Issue #490: «Цель» и строка проверки БА из SSOT bcreq-step-handoff.md.
+function ainHandoff(kit, id) {
+  const handoff = kit.handoff?.steps?.[id];
+  if (!handoff?.goal || !handoff?.check) {
+    throw new Error(`Нет «Итога шага» для ${id}; пересоберите данные сайта`);
+  }
+  return { goal: handoff.goal, checkKind: handoff.checkKind, check: handoff.check, handoffBlock: "" };
+}
+
+// Issue #490, п. 2.2: системный (комплексный) формат — Ш-А, Ш-1, Ш-2 текстом
+// сайта 2.7.0 (prompts/drafts/system/) параллельно декомпозированным AIN-01…24.
+function composeSystemTestKit(kit) {
+  const steps = kit.steps.map((step) => (step.system
+    ? { ...step, mode: "by-test", modeNote: "системный формат 2.7.0", draft: step.system }
+    : { ...step }));
+  if (steps.filter((step) => step.system).length !== 3) {
+    throw new Error("Не удалось загрузить системный формат Ш-А, Ш-1, Ш-2");
+  }
+  const byTest = steps.filter((s) => s.mode === "by-test").length;
+  return { ...kit, steps, counts: { ...kit.counts, steps: steps.length, byTest, published: steps.length - byTest } };
+}
+
+const STEP_FORMATS = {
+  decomposed: { label: "Декомпозированные шаги", short: "декомпозированный" },
+  system: { label: "Системные (комплексные шаги)", short: "системный" },
+};
+
+function composeTestKit(format) {
+  return format === "system" ? composeSystemTestKit(state.testKitSource) : composeAinTestKit(state.testKitSource, state.ainKit);
+}
+
+function setStepFormat(format) {
+  const next = STEP_FORMATS[format] ? format : "decomposed";
+  if (state.testKit && next === state.stepFormat) return;
+  state.stepFormat = next;
+  state.testKit = composeTestKit(next);
+  renderTestKit();
+}
+
 // #475: expand A-IN inside the approved 2.7.0 cards and reader. The historical
 // 14-step data remains available for frozen runs; it is not a second UI route.
 function composeAinTestKit(kit, ain) {
@@ -1355,9 +1421,7 @@ function composeAinTestKit(kit, ain) {
       next: s.next, returns: s.returns, failure: s.failure, operation: s.operation,
       mode: "by-test", modeNote: "эффективность не измерена",
       purpose: s.why, prepare: s.input,
-      actions: ["Передать полный промпт, правила и принятый пакет текущей версии",
-        "Проверить результат и доказательства; принять эту версию либо вернуть с причиной",
-        "Следующий шаг запускать отдельной командой после решения"],
+      ...ainHandoff(kit, s.id),
       result: s.output, gate: s.id === "AIN-21" ? "Допуск к разделу 2" :
         s.id === "AIN-24" ? "Г-IN" : "Review результата",
       gateHint: `${s.checks}. Решение принимает БА.`,
@@ -1404,7 +1468,9 @@ async function init() {
     state.patterns = patterns;
     state.processTree = processTree;
     state.bcreqFlow = bcreqFlow;
-    state.testKit = composeAinTestKit(testKit, ainKit);
+    state.testKitSource = testKit;
+    state.ainKit = ainKit;
+    state.testKit = composeTestKit(state.stepFormat);
 
     renderSuggestions();
     renderMetrics();
@@ -1545,11 +1611,19 @@ function testKitEditionLabel(step, kind) {
 
 // Текст опубликованной редакции — из каталога (архивный промпт), черновика — из
 // test-kit.json. Один источник для чтения и копирования (issue #460).
+// Issue #490: к опубликованным Ш-В/Ш-С (тексты заморожены) добавляется «Итог
+// шага» из SSOT; к черновику Ш-0 — строка выбранного формата шагов, по которой
+// модель ведёт маршрут, не спрашивая БА о формате.
 function testKitBody(step, kind) {
   if (kind === "draft") {
-    return step.draft?.body || "";
+    const body = step.draft?.body || "";
+    if (body && step.step.startsWith("Ш-0 ")) {
+      return `${body.trimEnd()}\n\nФормат шагов: ${STEP_FORMATS[state.stepFormat].short}\n`;
+    }
+    return body;
   }
-  return state.prompts.find((item) => item.id === step.published?.id)?.body || "";
+  const body = state.prompts.find((item) => item.id === step.published?.id)?.body || "";
+  return body && step.handoffBlock ? `${body.trimEnd()}\n\n${step.handoffBlock}` : body;
 }
 
 // Контейнер чтения (issue #460): текст выбранной редакции прокручивается внутри
@@ -1658,17 +1732,26 @@ function testKitStep(step, index) {
     prompt.append(el("code", "bcreq-params", step.params));
   }
 
-  const actions = el("ol", "bcreq-actions");
-  actions.append(...step.actions.map((action) => el("li", "", action)));
+  // Issue #490, п. 1.1: «Цель» (как работает промпт и зачем его применяем)
+  // вместо «Что делает БА»; под «Результатом» — что БА проверяет или что шаг технический.
+  const check = el("p", "testkit-check");
+  check.dataset.field = "check";
+  check.dataset.checkKind = step.checkKind;
+  if (step.checkKind === "technical") {
+    check.append(el("strong", "", "Шаг технический, "),
+      document.createTextNode(`можно проверить (${step.check}), но не обязательно.`));
+  } else {
+    check.append(el("strong", "", "БА — проверить: "), document.createTextNode(step.check));
+  }
 
   const info = el("div", "testkit-step-info");
   info.append(
     el("p", "testkit-purpose", step.purpose),
     prompt,
+    bcreqField("Цель", step.goal, "goal"),
     bcreqField("Что подготовить", step.prepare, "prepare"),
-    el("div", "bcreq-field-label", "Что делает БА"),
-    actions,
     bcreqField("Результат", step.result, "result"),
+    check,
   );
   if (step.gate && step.gate !== "—") {
     const gate = el("p", "bcreq-gate");
@@ -1729,9 +1812,13 @@ function renderTestKit() {
   source.href = kit.kit.url;
   source.target = "_blank";
   source.rel = "noreferrer";
+  renderStepFormatSwitch();
+  const formatNote = state.stepFormat === "system"
+    ? "Системный формат: Ш-А, Ш-1, Ш-2 — комплексные промпты сайта 2.7.0"
+    : "Декомпозированный формат: 24 контракта A-IN по принятому RFC";
   nodes.testKitSummary.replaceChildren(
     document.createTextNode(
-      `Шагов: ${kit.counts.steps}; draft / «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. 24 контракта A-IN по принятому RFC; остальные стадии — `,
+      `Шагов: ${kit.counts.steps}; draft / «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. ${formatNote}; остальные стадии — `,
     ),
     source,
     document.createTextNode("."),
@@ -1757,6 +1844,23 @@ function renderTestKit() {
     }),
   );
   renderProcessTabs();
+}
+
+// Переключатель формата шагов (issue #490, п. 2.3): БА выбирает формат
+// взаимодействия на сайте; выбор уходит в Ш-0 строкой «Формат шагов: …».
+function renderStepFormatSwitch() {
+  if (!nodes.stepFormatSwitch) return;
+  nodes.stepFormatSwitch.replaceChildren(
+    el("span", "step-format-label", "Формат шагов:"),
+    ...Object.entries(STEP_FORMATS).map(([id, format]) => {
+      const link = el("a", "process-tab", format.label);
+      link.href = `#processes?track=${id}`;
+      link.dataset.stepFormat = id;
+      link.dataset.active = String(id === state.stepFormat);
+      if (id === state.stepFormat) link.setAttribute("aria-current", "true");
+      return link;
+    }),
+  );
 }
 
 // Подстраницы «Процессов» (issue #448): этапы тестового набора по логике
