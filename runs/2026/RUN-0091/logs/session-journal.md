@@ -125,7 +125,7 @@
 ## Недоступные ссылки
 
 - `runs/2026/RUN-0075/outputs/error-statistics.md`, `success-criteria.md`, `runtime-improvements.md`: путей нет в снимке Хаба.
-- `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`: другой репозиторий, ссылка вне разрешённых.
+- `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`: другой репозиторий, ссылка вне разрешённых.
 - Словари D1, D2 (iiba.org, cpre.ireb.org): web запрещён; пробел перенесён из передачи, DEC-04.
 
 Не читались намеренно: `docs/kb/mango-lk-manual`, `docs/kb/rolevaya-model-vats` — другой класс, расширение поиска не разрешено (DEC-02, Q-01).

@@ -195,7 +195,7 @@
 - Правила — fallback. «Режим fallback: детальные стандарты недоступны — мета-стандарты разделов (standards/bcreq-sections/README.md, 01-glossary.md, 02-business-context.md), архитектура промптов (standards/bcreq-prompt-architecture.md), контракт гейтов (docs/contracts/bcreq-stage-gates.md), стандарт композиции (standards/bcreq-composition-standard.md), классификация продуктов (standards/product-classification-contract.md), шаговые промпты prompts/*.md и материалы RUN-0075 в G-Ivan-A/mango_ba_prompts — ссылки вне базы знаний runtime, в этом прогоне не открываются; применена встроенная конституция и прочитанные правила текущего промпта». Чек-листы этих стандартов я не проверял.
 - Таксономия требует доработки. «Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ] — требует доработки».
   - Подтверждено: [taxonomy/products.yaml](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/products.yaml) — словарь классов v1.1: contact-center, voice-ucaas, analytics-reporting; уровни Domain → Capability → Feature → Atomic Function. [taxonomy/mango-products.yaml](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/taxonomy/mango-products.yaml) — каталог v1.0, catalog_version 2026-10-28.1, статус accepted; Domain voice-ucaas «Телефония и унифицированные коммуникации» в нём есть.
-  - Пробел: [эталон классификации](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md) и исходник каталога (mango_ba_prompts docs/taxonomy/products.json @e3597fd) недоступны, поэтому полноту каталога подтвердить нельзя. Каталог сам оговаривает: «availability: not-established-by-taxonomy».
+  - Пробел: [эталон классификации](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md) и исходник каталога (mango_ba_prompts docs/taxonomy/products.json @e3597fd) недоступны, поэтому полноту каталога подтвердить нельзя. Каталог сам оговаривает: «availability: not-established-by-taxonomy».
   - Временная запись: «ВАТС · voice-ucaas · Capability, Feature, Atomic Function — [ТРЕБУЕТСЯ УТОЧНЕНИЕ]».
 - Класс поиска — voice-ucaas.
   - Основание: в карточке `продукты: ВАТС`; в [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/f31dcde33f0bc120244128faab98fc0162e45701/docs/kb/MAP.json) документ mango-lk-manual с псевдонимом «ВАТС» отнесён к классу voice-ucaas.
@@ -849,7 +849,7 @@
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/product-classification-contract.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md и остальные prompts/*.md из карты шагов
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/error-statistics.md, success-criteria.md, runtime-improvements.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md (эталон таксономии)
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md (эталон таксономии)
 - mango_ba_prompts docs/taxonomy/products.json @e3597fd (источник mango-products.yaml)
 - runs/2026/RUN-0078/inputs/seed.json (ссылка из входа прогона)
 - https://github.com/G-Ivan-A/mango_ba_prompts/tree/main/kb/processed (ссылка из README runtime)

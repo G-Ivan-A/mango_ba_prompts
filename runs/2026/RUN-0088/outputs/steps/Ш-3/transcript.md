@@ -4,7 +4,7 @@
 
 - Промпт 0: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - мета-стандарт раздела 3: https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md
-- эталон таксономии: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- эталон таксономии: https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 Встроенной конституции в этом чате нет. Применяю только прочитанные правила текущего промпта. Правила по памяти не восстанавливаю. Копию конституции запрашиваю у вас повторно (В-3). Мета-стандарт раздела 3 запрашиваю новым вопросом (В-28). Фильтры Ф1–Ф4 в промпте только названы: применю их по названиям, это моё чтение, и оно непроверяемо.
 
@@ -391,7 +391,7 @@ API: ФТ нет, «API не дорабатывается.» (Д-15).
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 **(c) Чего не хватило**
 

@@ -721,7 +721,7 @@ Coverage: разделы про запись, аудиофайлы и исход
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - `taxonomy/README.md`: файла нет; это моя догадка о пути, в промпте такой ссылки нет.
 
 **(c) Чего не хватило**

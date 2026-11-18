@@ -32,7 +32,7 @@
 - standards/bcreq-manual-classes/catalog.json
 - standards/bcreq-runtime-references.md
 - docs/contracts/bcreq-stage-gates.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - словари D1, D2, D5, D6, D11: файлы не приложены, путь неизвестен
 
 Ссылки на репозиторий mango-ba-ai-runtime читались как локальная копия /tmp/rt454, без web.

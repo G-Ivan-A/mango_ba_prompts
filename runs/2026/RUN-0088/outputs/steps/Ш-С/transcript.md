@@ -70,7 +70,7 @@
 - Класс поиска: `voice-ucaas`, основание — ＋2.5, Д-2.
 - Режим БЗ: auto; дополнений нет. Прочитаны README docs/kb и MAP.json по commit 68ad8fcf: [README](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/README.md), [MAP.json](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json), [products.yaml](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 - Разделы БЗ не открывал: шаг не вводит новых продуктовых фактов. Цитаты LK и MTALKER — по входу, в этом шаге мной не перепроверены.
-- Недоступно: Промпт 0; архитектура промптов (правило М4); [эталон таксономии](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md); из мета-стандарта — README §2.3, ADR-012, bcreq-stage-gates, реестр чата issue_387, внешние BABOK, UML, ISTQB. Причина: нет доступа из этого чата.
+- Недоступно: Промпт 0; архитектура промптов (правило М4); [эталон таксономии](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md); из мета-стандарта — README §2.3, ADR-012, bcreq-stage-gates, реестр чата issue_387, внешние BABOK, UML, ISTQB. Причина: нет доступа из этого чата.
 - Тексты В- и Д- и реестр 8.4 во вход не входят: ссылки на них в таблице сохранены из входа, содержание ответов не проверено.
 - Непроверяемые критерии: Р1–Р7, АД-1…АД-11 (кроме изложенного в промпте), АП1–АП9, КС1–КС7, БС1–БС5; табличный стиль README §2.3. Заявлять их выполненными не могу.
 - Ожидание решения БА о расширении поиска: нет.
@@ -112,7 +112,7 @@
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md (Промпт 0)
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md (эталон таксономии)
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md (эталон таксономии)
 - Из мета-стандарта раздела 7: README.md (§2.3), docs/adr/2026-10-adr-012-bcreq-meta-standards.md, docs/contracts/bcreq-stage-gates.md, experiments/issue_387/chat-2026-10-22-23-register.md, ссылки BABOK, UML, ISTQB
 
 **(c) Чего не хватило**

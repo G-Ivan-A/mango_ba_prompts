@@ -229,7 +229,7 @@
   - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md
   - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md
   - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/error-statistics.md, `success-criteria.md`, `runtime-improvements.md` того же каталога
-  - https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md (эталон таксономии)
+  - https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md (эталон таксономии)
   - промпты других шагов из карты 4.6 и https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md: текст шага БА вставляет при запуске.
 - **Уровни источников (И-7):** ST-0 — материал задачи, прочитан; ST-1…ST-4 пропущены: в этой сессии нет доступа; ST-5 — `docs/kb`; ST-6 — только через вопрос человеку.
 - **Непроверяемые критерии (`unverifiable`):**
@@ -462,7 +462,7 @@
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md (включая якорь #93-как-промпт-собирается-из-стандартов)
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md

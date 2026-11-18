@@ -6,7 +6,7 @@
 
 Ссылка на Промпт 0 не открывается, его текст есть выше в этом чате. Ссылка на мета-стандарт раздела 7 не открывается, файл приложен и прочитан; приложены и прочитаны также мета-стандарты разделов 1, 2, 3, 4. В-38 закрою в 8.4 на подшаге 5.
 
-Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ] — требует доработки. Подтверждён класс поиска `voice-ucaas` (MAP.json, `product_ids` документов mango-lk-manual и mtalker--windows-mac-working; Д-2). Пробел: feature и function для пункта 1 в 2.4.1; эталон https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md недоступен (taxonomy/products.yaml версии 1.1 читан, но с эталоном не сверен). Временная запись: ВАТС · voice-ucaas · feature, function для пункта 1 — [ТРЕБУЕТСЯ УТОЧНЕНИЕ].
+Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ] — требует доработки. Подтверждён класс поиска `voice-ucaas` (MAP.json, `product_ids` документов mango-lk-manual и mtalker--windows-mac-working; Д-2). Пробел: feature и function для пункта 1 в 2.4.1; эталон https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md недоступен (taxonomy/products.yaml версии 1.1 читан, но с эталоном не сверен). Временная запись: ВАТС · voice-ucaas · feature, function для пункта 1 — [ТРЕБУЕТСЯ УТОЧНЕНИЕ].
 
 Остановка CB-0.2 не применяется: раздел 3 есть. Прежний раздел 7 имеет статус `устарело`; подтверждения Д-37…Д-40 относятся к прежней ревизии и не переносятся.
 
@@ -492,7 +492,7 @@
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 **(c) Чего не хватило**
 

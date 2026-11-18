@@ -4,7 +4,7 @@
 
 **Операция и объект.** Адресная правка раздела 3 (ревизия after-Ш-2в) и написание ФТ по ответам людей. Сохраняю ID и порядок мест 3.1, 3.2, 3.2.1, 3.2.2, 3.3. Текстов ФТ в этой ревизии нет, только места будущих ФТ, поэтому менять формулировки ФТ не приходится. Другие разделы не правлю: затронутое покажу списком.
 
-**Режим.** Режим fallback: детальные стандарты недоступны — https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md (ссылка не открывается, текст Промпта 0 есть в этом чате); README мета-стандартов, стандарт композиции, контракт гейтов, контракт классификации (ссылки не открываются); https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md (ссылка не открывается); применена встроенная конституция и прочитанные правила текущего промпта. Мета-стандарт раздела 3 прочитан: его приложил БА.
+**Режим.** Режим fallback: детальные стандарты недоступны — https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md (ссылка не открывается, текст Промпта 0 есть в этом чате); README мета-стандартов, стандарт композиции, контракт гейтов, контракт классификации (ссылки не открываются); https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md (ссылка не открывается); применена встроенная конституция и прочитанные правила текущего промпта. Мета-стандарт раздела 3 прочитан: его приложил БА.
 
 **Проверка остановок**
 
@@ -509,7 +509,7 @@ API: ФТ нет, «API не дорабатывается.» (Д-15).
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md (текст приложен как Ш-0)
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md (как ссылка; файл приложен БА)
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - Ссылки мета-стандарта раздела 3: README мета-стандартов, стандарт композиции, контракт классификации, ADR-012, реестр чата, стандарт процесса
 - Ссылки из Ш-0 на набор стандартов и контракт гейтов
 

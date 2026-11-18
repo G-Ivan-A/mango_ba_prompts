@@ -408,7 +408,7 @@
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - руководство КЦ: во входе нет;
   - web: для блока отраслевой практики внешние источники не проверялись.
 - **Не прочитано:** руководства Mango Talker для Android и iOS; документ `integration-bpmsoft`.
@@ -679,7 +679,7 @@
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - руководство КЦ: во входе нет.
 - **Непроверяемые критерии:** чек-лист мета-стандарта раздела 4; сверка с D-* (`unverifiable`); полнота каталога относительно эталона (`unverifiable`).
 - **Вопросы 8.4:** 39 открытых, 19 блокируют.
@@ -1022,7 +1022,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: критерии Г-С1 взяты из промпта шага;
   - руководство КЦ: во входе нет.
 - **Не прочитано:** руководства Mango Talker для Android и iOS; UC-10 и С-2 подтверждены только для Windows/Mac.
@@ -1429,7 +1429,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет. Возврат записан по решению БА и реплике, условие контракта не проверял;
   - руководство КЦ: во входе нет;
   - web: для блока отраслевой практики внешние источники не проверялись.
@@ -1715,7 +1715,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - руководство КЦ: во входе нет.
 - **Непроверяемые критерии:** чек-лист мета-стандарта раздела 4; сверка с D-* (`unverifiable`); полнота каталога относительно эталона (`unverifiable`).
 - **Вопросы 8.4:** 40 открытых, 19 блокируют.
@@ -2094,7 +2094,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет, критерии Г-С1 взяты из промпта шага;
   - руководство КЦ: во входе нет.
 - **Не прочитано:** руководства Mango Talker для Android и iOS; UC-10 и С-2 подтверждены только для Windows/Mac.
@@ -2151,7 +2151,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md`: вне /tmp/rt454, недоступно.
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md`: вне /tmp/rt454, недоступно.
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`: вне /tmp/rt454, недоступно.
-- `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`: вне /tmp/rt454, недоступно.
+- `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`: вне /tmp/rt454, недоступно.
 - Руководство КЦ: во входе нет. Документ `integration-bpmsoft` не открывал: дополнительное изучение инициирует БА.
 
 ### Остановки вне стоп-гейта
@@ -2724,7 +2724,7 @@ CB-7.1 не сработал: ФТ без UC нет.
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет;
   - руководство КЦ: во входе нет;
   - внутренняя техническая документация по контейнерам: у БА нет (Р-67);
@@ -3055,7 +3055,7 @@ CB-7.1 не сработал: ФТ без UC нет.
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет;
   - руководство КЦ: во входе нет;
   - внутренняя техническая документация: у БА нет (Р-67).
@@ -3554,7 +3554,7 @@ UC-05, UC-06, UC-07 класса «не влияет» опоры в решен�
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет;
   - руководство КЦ: во входе нет;
   - внутренняя техническая документация: у БА нет (Р-67).
@@ -4093,7 +4093,7 @@ CB-8.2 проверен. Каждый критерий ведёт к ФТ. Кр�
 - **Недоступно:**
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md`;
   - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md`;
-  - эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`;
+  - эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`;
   - контракт гейтов `docs/contracts/bcreq-stage-gates.md`: в доступной копии runtime файла нет;
   - руководство КЦ: во входе нет;
   - внутренняя техническая документация: у БА нет (Р-67).
@@ -4150,7 +4150,7 @@ CB-8.2 проверен. Каждый критерий ведёт к ФТ. Кр�
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md`
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md`
 - `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции`
-- эталон `https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md`
+- эталон `https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md`
 - `docs/contracts/bcreq-stage-gates.md`: файла нет в копии runtime
 - руководство КЦ: во входе нет
 
@@ -4200,7 +4200,7 @@ CB-8.1 сработал на Ш-9.2 (Д-1, Д-2). Промпт требует п
 - Из правил Р, АД и КС применяю только то содержание, которое названо в тексте этого промпта.
 - Решение на Г-W за людьми гейта; fallback его не заменяет.
 
-Таксономия. Прочитан опубликованный каталог `taxonomy/mango-products.yaml` (catalog_version 2026-10-28.1, catalog_status accepted) и `taxonomy/products.yaml`. Эталон https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md недоступен, сравнить полноту с ним нельзя. Функции для предупреждения о записи при исходящем звонке в каталоге не нашёл.
+Таксономия. Прочитан опубликованный каталог `taxonomy/mango-products.yaml` (catalog_version 2026-10-28.1, catalog_status accepted) и `taxonomy/products.yaml`. Эталон https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md недоступен, сравнить полноту с ним нельзя. Функции для предупреждения о записи при исходящем звонке в каталоге не нашёл.
 
 Продуктовая принадлежность: [ТРЕБУЕТСЯ УТОЧНЕНИЕ] — требует доработки. Подтверждённые уровни: `voice-ucaas`; `call-recording/function/call-recording-capture` и `unified-communications/function/softphone-call` как соседние узлы каталога. Пробел: Function пункта озвучивания. Временная запись: ВАТС · voice-ucaas (подтверждённые `product_ids` карты БЗ, это класс поиска) · неподтверждённые уровни — [ТРЕБУЕТСЯ УТОЧНЕНИЕ].
 
@@ -4449,7 +4449,7 @@ CB-8.1 сработал на Ш-9.2 (Д-1, Д-2). Промпт требует п
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md#2-гейты
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 Прочее:
 
@@ -5891,7 +5891,7 @@ UNKNOWN не означает «Нет».
   Читал локальную копию runtime; совпадение с закреплённым коммитом не проверял.
 - **Недоступное:**
   - три ссылки из строки fallback;
-  - эталон https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md;
+  - эталон https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md;
   - во входе нет конституции, блока «Состояние BCREQ», реестра 8.4, текстов Р- и Ф-.
 - **Непроверяемые критерии:**
   - соответствие Р1–Р7, АД-1…АД-11, АП1–АП9 (АД-1, АД-6, АД-7 применены только в той формулировке, что есть в промпте);
@@ -5938,7 +5938,7 @@ UNKNOWN не означает «Нет».
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 **Остановки вне стоп-гейта:** нет.
 

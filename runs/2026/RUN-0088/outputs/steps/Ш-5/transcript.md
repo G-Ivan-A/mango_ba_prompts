@@ -1,6 +1,6 @@
 ## Ход 1 — Ш-5.1 — модель
 
-Режим fallback: детальные стандарты недоступны — https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md, https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md, https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md (ссылки не открываются); применена встроенная конституция и прочитанные правила текущего промпта. Полного текста конституции в этом чате нет (В-3): применяю только правила, приведённые в промпте и во входе.
+Режим fallback: детальные стандарты недоступны — https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md, https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md, https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md (ссылки не открываются); применена встроенная конституция и прочитанные правила текущего промпта. Полного текста конституции в этом чате нет (В-3): применяю только правила, приведённые в промпте и во входе.
 
 Проверка остановок: раздел 3 есть, CB-0.2 не срабатывает. CB-7.3 к прогону 1 не относится. В разделе 3 нет написанных ФТ, только места 3.1, 3.2, 3.2.1, 3.2.2, 3.3 (CB-3.3, CB-1.2): UC ниже опираются на эти места и не заменяют ФТ.
 
@@ -429,7 +429,7 @@
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 
 (в) Чего не хватило:
 

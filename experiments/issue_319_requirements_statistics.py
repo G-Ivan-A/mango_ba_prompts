@@ -3,7 +3,7 @@
 
 Практика заводится по требованию Заказчика (комментарий к PR #322 от 2026-08-25)
 и по образцу первичного исследования
-https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification-tz.md
+https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification-tz.md
 — там классифицируется корпус из 30 ТЗ, здесь единицей наблюдения становится
 отдельное требование внутри одного ТЗ.
 

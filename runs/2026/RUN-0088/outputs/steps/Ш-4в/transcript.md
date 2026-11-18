@@ -463,7 +463,7 @@ API: ФТ нет, «API не дорабатывается.» (Д-15).
 - standards/bcreq-prompt-architecture.md
 - docs/contracts/bcreq-stage-gates.md
 - standards/bcreq-composition-standard.md
-- Эталон: https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- Эталон: https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - Внешние ссылки мета-стандарта на ISO/IEC 25010:2023, BABOK, EARS
 - Выходы RUN-0075
 

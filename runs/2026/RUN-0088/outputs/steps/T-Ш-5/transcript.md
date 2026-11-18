@@ -553,7 +553,7 @@ G-self (`llm`, не ключевой; маршрут не двигает). Г-С
 
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md
-- https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md
+- https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md
 - https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md
