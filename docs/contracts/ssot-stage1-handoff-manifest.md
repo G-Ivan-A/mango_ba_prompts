@@ -2,7 +2,8 @@
 status: draft
 version: 0.1
 updated: 2026-11-18
-ai-generated: true
+temperature: 0.1
+owner: G-Ivan-A
 type: contract
 scope: ssot-stage1-handoff
 related_artifacts:
