@@ -1,0 +1,87 @@
+{
+ "assistant_answers": 32,
+ "totals": {
+  "sycophancy": 10,
+  "table_rows": 142,
+  "next_prompt": 13,
+  "ask_ba": 2,
+  "mode_choice": 8
+ },
+ "answers_with_signal": {
+  "sycophancy": 5,
+  "table_rows": 11,
+  "next_prompt": 9,
+  "ask_ba": 1,
+  "mode_choice": 4
+ },
+ "per_turn": {
+  "1": {
+   "next_prompt": 2,
+   "mode_choice": 5
+  },
+  "5": {
+   "next_prompt": 2,
+   "mode_choice": 1
+  },
+  "7": {
+   "next_prompt": 1
+  },
+  "9": {
+   "table_rows": 38,
+   "next_prompt": 2,
+   "mode_choice": 1
+  },
+  "13": {
+   "next_prompt": 1,
+   "ask_ba": 2
+  },
+  "15": {
+   "table_rows": 29,
+   "next_prompt": 2,
+   "mode_choice": 1
+  },
+  "17": {
+   "table_rows": 9
+  },
+  "25": {
+   "sycophancy": 1
+  },
+  "31": {
+   "table_rows": 11,
+   "next_prompt": 1
+  },
+  "35": {
+   "table_rows": 13
+  },
+  "37": {
+   "table_rows": 12
+  },
+  "43": {
+   "table_rows": 7
+  },
+  "45": {
+   "table_rows": 4
+  },
+  "47": {
+   "table_rows": 8
+  },
+  "49": {
+   "sycophancy": 3
+  },
+  "55": {
+   "sycophancy": 2,
+   "next_prompt": 1
+  },
+  "57": {
+   "sycophancy": 2,
+   "table_rows": 7
+  },
+  "59": {
+   "sycophancy": 2,
+   "next_prompt": 1
+  },
+  "61": {
+   "table_rows": 4
+  }
+ }
+}

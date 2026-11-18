@@ -1,0 +1,58 @@
+run_id: RUN-0095
+process: bcreq-step-handoff-and-step-formats
+version: "1.0"
+date: 2026-11-18
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+operating_mode: Creative
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/490
+  - https://github.com/user-attachments/files/35014279/chat-export-1794988207605.json
+inputs:
+  - inputs/README.md
+  - inputs/task-statement-490.md
+  - inputs/chat-1135-2-metrics.md
+outputs:
+  - outputs/README.md
+logs:
+  - logs/experiment-log.md
+  - logs/chat-signals.json
+feedback:
+  - feedback/review-notes.md
+metrics:
+  chat_turns: 66  # видимая ветка выгрузки 1135-2: 33 реплики БА и 33 ответа модели (один пустой, ход 11)
+  chat_model: "qwen3.7-plus"
+  chat_input_tokens: 3105194
+  chat_output_tokens: 84486
+  chat_reasoning_tokens: 48340
+  chat_duration_s: 41681  # 2026-11-06 09:06:51 — 20:41:32 UTC
+  chat_answers_without_next_step: 23  # из 32 непустых ответов модели нет явного «следующий шаг/промпт»
+  chat_answers_with_tables: 11  # 142 строки Markdown-таблиц; жалоба БА в ходе 18
+  chat_answers_with_sycophancy: 5  # «абсолютно правы», «безупречна»
+  chat_problems: 16  # П-01…П-16 в анализе
+  hypotheses: 6  # Г1…Г6 внутри одной верхнеуровневой проблемы ВП
+  steps_with_handoff: 38  # Ш-0, Ш-А, Ш-1…Ш-9, Ш-В, Ш-Р, Ш-С, AIN-01…24
+  technical_steps: 14
+  system_track_prompts: 3  # Ш-А, Ш-1, Ш-2 из архива сайта 2.7.0
+  review_roles: 3
+  review_iterations_max: 3
+  eval: "Issue #490: разобран чат 1135-2 (66 ходов, 3,19 млн токенов, 11,6 ч) на промптах сайта 2.7.0 — 16 проблем сведены к одной верхнеуровневой: на каждом шаге БА не видит, зачем запущен промпт, что проверить и нужно ли действие, и вынужден работать в одном формате взаимодействия. Шесть гипотез реализованы и проверены: «Цель» и строка проверки в карточках сайта (Г1), блок «Итог шага» в 38 промптах (Г2), человекочитаемый блок «На согласование БА» (Г3), системный формат Ш-А/Ш-1/Ш-2 из архива 2.7.0 параллельно AIN (Г4), фасет и переключатель «Формат шагов» вместо stepwise/oneshot (Г5), поведенческие правила из чата в системном блоке (Г6). Ревью тремя ролями сошлось за 2 итерации (ИИ-архитектор, техлид), 3 итерации (промпт-инженер). Перенос практики на этап 2 (OpenCode) — RFC-BCREQ-STEP-FORMAT-001, раздел 6."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/490
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/468
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/474
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/427
+related_runs:
+  - RUN-0090
+related_artifacts:
+  - docs/analysis/2026-11-18-1135-2-chat-step-handoff-analysis.md
+  - docs/rfc/2026-11-bcreq-step-format.md
+  - docs/ba-processes/bcreq-step-handoff.md
+  - scripts/bcreq_handoff.py
+  - scripts/build_bcreq_system_track.py
+  - scripts/validate_issue_490_step_handoff.py
+  - scripts/chat_export_to_markdown.py
+  - experiments/issue_490/chat_signals.py
+  - experiments/issue_490/prompt_delta.py

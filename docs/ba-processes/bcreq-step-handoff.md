@@ -37,7 +37,7 @@ issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/490
 `python3 scripts/bcreq_handoff.py && python3 scripts/build_bcreq_a_in.py &&
 python3 scripts/build_bcreq_step_prompts.py && python3 scripts/build_bcreq_system_track.py &&
 node scripts/generate-pages-data.mjs`.
-Проверка согласованности — `python3 scripts/validate_issue_490_handoff.py`.
+Проверка согласованности — `python3 scripts/validate_issue_490_step_handoff.py`.
 
 ## 1. Правила
 
