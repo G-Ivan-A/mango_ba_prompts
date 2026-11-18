@@ -1,0 +1,67 @@
+commit=786f8f3d67c5a8d08ceb8abfad891dda9cf2f2f2 registry_sha=68ad8fcffd47439fc3051852d9a2fbbe23815855 runtime_main=90f082330015634f3a0632cdd31ebfe1c15fd7ae
+prompt_files=90 with_links=79 occurrences=543 targets=54 relative_links=0
+by class: {"а": 225, "б": 318}
+by rule: {"А-0": 2, "А-1": 43, "А-2": 3, "А-3": 7, "А-4": 132, "А-5": 1, "А-6": 37, "Б-1": 85, "Б-2": 24, "Б-3": 6, "Б-4": 43, "Б-5": 104, "Б-6": 15, "Б-7": 41}
+group AIN v0.3: {"а": 24, "б": 120}
+group v0.1 (14 промптов): {"б": 80, "а": 23}
+group архив 2.7.0: {"а": 19, "б": 26}
+group архив до BCREQ: {"а": 31}
+group системный формат: {"а": 21, "б": 18}
+group служебные промпты: {"а": 9}
+group черновики Ш-ХХ: {"а": 98, "б": 74}
+(б) prompts/bcreq-constitution-governance-oneshot.md | 80 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) standards/bcreq-runtime-references.md | 62 вхожд. | кандидат на замену ссылки: справочники реестра есть в runtime на SHA реестра | карточка BL-190 | runtime ['docs/kb/MAP.json', 'docs/kb/USAGE.md', 'evaluation/g-human-checklist.md', 'golden/cases-analytics-reporting.yaml', 'golden/cases-voice-ucaas.yaml', 'golden/cases.yaml', 'taxonomy/domain-glossary-analytics-reporting.yaml', 'taxonomy/domain-glossary-voice-ucaas.yaml', 'taxonomy/domain-glossary.yaml', 'taxonomy/mango-products.yaml', 'taxonomy/products.yaml', 'taxonomy/source-tiers.yaml', 'templates/bcreq-skeleton.md']
+(б) standards/bcreq-sections/README.md | 32 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) docs/ba-processes/bcreq-step-handoff.md | 24 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-186 | runtime —
+(б) docs/rfc/2026-11-a-in-decomposition.md | 24 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-186 | runtime —
+(б) docs/contracts/bcreq-stage-gates.md | 15 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-188 | runtime —
+(б) standards/bcreq-composition-standard.md | 13 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) docs/ba-processes/bcreq-a-in-execution.md | 11 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-186 | runtime —
+(б) standards/bcreq-industry-practice.md | 10 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/01-glossary.md | 10 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/02-business-context.md | 10 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) prompts/bcreq-context-understanding-stepwise.md | 7 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) prompts/bcreq-uc-modeling-stepwise.md | 7 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) docs/ba-processes/cs-flow-stub.md | 6 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-188 | runtime —
+(б) prompts/bcreq-orr-solution-design-stepwise.md | 6 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) standards/bcreq-sections/07-use-cases.md | 6 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) prompts/drafts/bcreq-constitution-governance-oneshot.md | 5 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) standards/bcreq-prompt-architecture.md | 4 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/product-classification-contract.md | 4 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) prompts/bcreq-products-impact-analysis-stepwise.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-185 | runtime —
+(б) standards/bcreq-sections/03-functional-requirements.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/04-non-functional-requirements.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/05-solution-description.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/06-implementation-constraints.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(б) standards/bcreq-sections/08-supplementary.md | 3 вхожд. | нет в runtime: задача в бэклог на перенос закреплённой копией | карточка BL-187 | runtime —
+(а) issues/* | 48 вхожд. | правила {'А-0': 2, 'А-1': 43, 'А-2': 3}
+(а) docs/rfc/2026-11-bcreq-flow-processes-prompts.md | 20 вхожд. | правила {'А-4': 19, 'А-5': 1}
+(а) standards/bcreq-manual-classes/catalog.json | 19 вхожд. | правила {'А-4': 19}
+(а) standards/bcreq-prompt-base-standard.md | 19 вхожд. | правила {'А-4': 19}
+(а) standards/bcreq-prompt-profiles.md | 19 вхожд. | правила {'А-4': 19}
+(а) prompts/bcreq-work-solution-design-oneshot.md | 7 вхожд. | правила {'А-4': 5, 'А-6': 2}
+(а) prompts/bcreq-review-validation-oneshot.md | 6 вхожд. | правила {'А-4': 3, 'А-6': 3}
+(а) prompts/bcreq-scenarios-modeling-oneshot.md | 6 вхожд. | правила {'А-4': 4, 'А-6': 2}
+(а) prompts/bcreq-core-documentation-oneshot.md | 5 вхожд. | правила {'А-6': 3, 'А-4': 2}
+(а) prompts/bcreq-in-understanding-oneshot.md | 5 вхожд. | правила {'А-4': 4, 'А-6': 1}
+(а) prompts/bcreq-constraints-documentation-stepwise.md | 4 вхожд. | правила {'А-4': 2, 'А-6': 2}
+(а) prompts/bcreq-fr-documentation-stepwise.md | 4 вхожд. | правила {'А-4': 2, 'А-6': 2}
+(а) prompts/drafts/bcreq-intake-questionnaire-stepwise.md | 4 вхожд. | правила {'А-6': 4}
+(а) pr-ops/session-digests.md | 2 вхожд. | правила {'А-3': 2}
+(а) prompts/bcreq-extra-risk-analysis-stepwise.md | 2 вхожд. | правила {'А-6': 2}
+(а) prompts/bcreq-nfr-documentation-stepwise.md | 2 вхожд. | правила {'А-6': 2}
+(а) prompts/drafts/system/bcreq-intake-questionnaire-system.md | 2 вхожд. | правила {'А-6': 2}
+(а) runs/2026/RUN-0075/outputs/error-statistics.md | 2 вхожд. | правила {'А-4': 2}
+(а) runs/2026/RUN-0075/outputs/runtime-improvements.md | 2 вхожд. | правила {'А-4': 2}
+(а) runs/2026/RUN-0075/outputs/success-criteria.md | 2 вхожд. | правила {'А-4': 2}
+(а) (корень) | 1 вхожд. | правила {'А-3': 1}
+(а) docs/adr/001-prompt-standard.md | 1 вхожд. | правила {'А-3': 1}
+(а) docs/ba-ecosystem.md | 1 вхожд. | правила {'А-3': 1}
+(а) docs/taxonomy.md | 1 вхожд. | правила {'А-3': 1}
+(а) prompts/README.executable.md | 1 вхожд. | правила {'А-3': 1}
+(а) prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md | 1 вхожд. | правила {'А-6': 1}
+(а) prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md | 1 вхожд. | правила {'А-6': 1}
+(а) prompts/drafts/system/bcreq-context-understanding-system.md | 1 вхожд. | правила {'А-6': 1}
+(а) prompts/drafts/system/bcreq-products-impact-analysis-system.md | 1 вхожд. | правила {'А-6': 1}
+stub З-2 И-4 Примеры разделов → РТ-2 → карточка BL-189
+problems: —
