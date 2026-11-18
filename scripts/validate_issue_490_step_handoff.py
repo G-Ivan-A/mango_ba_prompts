@@ -103,6 +103,8 @@ class PromptsTest(unittest.TestCase):
     def test_starter_takes_format_not_mode_choice(self):
         starter = read(ROOT / "prompts/drafts/bcreq-constitution-governance-oneshot.md")
         self.assertIn("Формат шагов", starter)
+        # Граничный случай E-02: «stepwise»/«oneshot» от БА формат не меняют.
+        self.assertIn("а не формат шагов: формат не меняй и не переспрашивай", starter)
         self.assertNotRegex(starter, r"(?i)выбери(те)? режим|режим stepwise или oneshot")
 
 
