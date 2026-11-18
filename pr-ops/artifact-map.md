@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.23
-updated: 2026-11-07
+version: 0.24
+updated: 2026-11-18
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -100,6 +100,10 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/audit/2026-11-07-bcreq-ttz-rfc-audit.md` | Аудит | Аудит RFC-TTZ-001 и RFC-AIN-001 (#470): полнота, проблемы 1135 и граничные случаи, RFC с незавершёнными задачами, рекомендация | Владелец, ИИ-инженер |
 | `/experiments/issue_470/` | Скрипт миграции | Переименование `docs/rfc` и перенос ссылок, разовый инструмент #470 | ИИ-инженер |
 | `/experiments/issue_468/` | Evidence и проверки | Manifest и видимая дельта 28 → 66, ledger практики, baseline прежних контрактов, контрпримеры допуска/review; приватные исходники и извлечения исключены из git. | Да для review RFC-AIN-001 | `docs/rfc/2026-11-a-in-decomposition.md`, `docs/ba-processes/bcreq-a-in-route.json`, `scripts/test_issue_468_dialogue.py` |
+| `/docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md` | Аудит | Аудит #492: защищённые пути runtime (447, из них 14 с двойным потребителем), классификация 543 ссылок промптов (а/б), манифест SSOT этапа 1, карточки BL-184…BL-190, движение по бэклогу, рекомендация. | Да для передачи SSOT в runtime | `docs/contracts/ssot-stage1-handoff-manifest.json`, `experiments/issue_492/`, `pr-ops/BACKLOG.md`, `scripts/validate_issue_492_ssot_handoff.py` |
+| `/docs/contracts/ssot-stage1-handoff-manifest.json` | Контракт | Манифест передачи SSOT этапа 1 в `mango-ba-ai-runtime` (#492): 133 артефакта с версией, sha256, git-блобом и коммитом-источником, 24 контракта AIN, цепочка эволюции, политика синхронизации. Без клиентских данных: только пути, версии, хэши. MD — рендер JSON. | Да для RFC-задачи runtime | `docs/contracts/ssot-stage1-handoff-manifest.md`, `experiments/issue_492/build_ssot_manifest.py`, `scripts/validate_issue_492_ssot_handoff.py` |
+| `/experiments/issue_492/` | Скрипты и evidence | Воспроизводимый аудит зависимостей от runtime (ФТ-1), классификация ссылок промптов (ФТ-2) и сборка манифеста (ФТ-3): скрипты, JSON/MD-выходы и журналы запуска. | Да для повтора аудита | `docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md`, `standards/bcreq-runtime-references.md` |
+| `/scripts/validate_issue_492_ssot_handoff.py` | Валидатор | Проверяет sha256 манифеста на коммите-источнике, отсутствие клиентских данных, 24 контракта, MD-рендер, карточки пробелов в бэклоге и то, что коммиты #492 не меняют `prompts/`. | Да | `docs/contracts/ssot-stage1-handoff-manifest.json`, `experiments/issue_492/prompt-links.json`, `pr-ops/BACKLOG.md` |
 
 ## Smart Sync decisions: Hub PR #229/#230
 
