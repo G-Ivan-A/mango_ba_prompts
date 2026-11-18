@@ -154,6 +154,10 @@ class SiteTest(unittest.TestCase):
         for token in ("STEP_FORMATS", "composeSystemTestKit", "Формат шагов: ", 'renderFilterGroup("Формат шагов"'):
             self.assertIn(token, self.app)
         self.assertNotIn('renderFilterGroup("Режимы"', self.app)
+        # Системные промпты — в архиве 2.7.0: выбор формата открывает архив,
+        # а фасет считает архив, иначе «Системные» показывает 0.
+        self.assertIn('selectedValues("format").includes("system")', self.app)
+        self.assertIn('kind === "format" ? { includeArchive: true }', self.app)
         formats = {f["id"]: f for f in self.prompts["filters"]["formats"]}
         self.assertEqual(set(formats), {"system", "decomposed"})
         self.assertEqual(formats["system"]["label"], "Системные (комплексные шаги)")

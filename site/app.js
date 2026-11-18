@@ -178,8 +178,10 @@ function sortPrompts(prompts) {
 // Внутри одного фильтра — ИЛИ (несколько значений), между фильтрами — И.
 // Архив (issue #423): 14 промптов этапа 1 скрыты, пока не выбран набор «Архив»;
 // по умолчанию каталог показывает 39 классов BCREQ.
+// Issue #490, п. 2.3: системные (комплексные) промпты лежат в архиве 2.7.0,
+// поэтому выбор формата «Системные» тоже открывает архив — иначе фасет пуст.
 function archiveSelected() {
-  return selectedValues("family").includes("archive");
+  return selectedValues("family").includes("archive") || selectedValues("format").includes("system");
 }
 
 function matchingPrompts(excludedKind = "", { includeArchive = archiveSelected() } = {}) {
@@ -225,7 +227,9 @@ function visiblePrompts() {
 // Query, modes, family and the opposite facet still constrain each count.
 function facetCounts(kind) {
   const counts = {};
-  for (const prompt of matchingPrompts(kind)) {
+  // Фасет «Формат шагов» считает и архив: системный формат есть только там (#490).
+  const options = kind === "format" ? { includeArchive: true } : {};
+  for (const prompt of matchingPrompts(kind, options)) {
     const values =
       kind === "process" ? [...new Set(prompt.filterProcesses || prompt.processes)] : kind === "format" ? [prompt.format] : [prompt.operation.id];
     for (const value of values) {
@@ -454,7 +458,7 @@ function renderFilters() {
     count: formatCounts[format.id] || 0,
     title: formatCounts[format.id]
       ? `${format.label}: ${format.description}`
-      : `${format.label}: только в архиве — выберите набор «Архив»`,
+      : `${format.label}: нет промптов при текущих фильтрах`,
     unavailable: !formatCounts[format.id],
   }));
 

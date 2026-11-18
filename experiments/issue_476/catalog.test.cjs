@@ -37,7 +37,7 @@ test('history remains opt-in; all old active filters and both families still wor
   assert.equal(app(['family:archive'])('visiblePrompts().length'),18);
   assert.equal(app(['family:archive','family:bcreq'])('visiblePrompts().length'),57);
   assert.equal(app([`process:${IN}`])('visiblePrompts().length'),21);
-  assert.equal(app(['format:system'])('visiblePrompts().length'),0);
+  assert.equal(app(['format:system'])('visiblePrompts().length'),18); // #490: формат открывает архив
   assert.equal(app(['format:decomposed'])('visiblePrompts().length'),39);
   assert.equal(app(['family:archive'],'no-such-id')('visiblePrompts().length'),0);
 });

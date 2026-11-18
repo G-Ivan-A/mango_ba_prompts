@@ -22,15 +22,17 @@ test('default catalog shows the 39 classes and hides the archive', () => {
   const run = app();
   assert.equal(run('visiblePrompts().length'), 39);
   assert.ok(run('visiblePrompts().every(p => p.classId && !p.archived)'));
-  // Issue #490: фасет «Формат шагов» вместо режимов stepwise/oneshot.
-  assert.deepEqual(run('facetCounts("format")'), {decomposed: 39});
+  // Issue #490: фасет «Формат шагов» вместо режимов stepwise/oneshot; системный
+  // формат есть только в архиве 2.7.0, поэтому фасет считает и архив.
+  assert.deepEqual(run('facetCounts("format")'), {decomposed: 39, system: 18});
 });
 test('the «Архив» family shows 14 stage-1 prompts and four 2.7.0 snapshots with the system step format', () => {
   const run = app(['family:archive']);
   assert.equal(run('visiblePrompts().length'), 18);
   assert.ok(run('visiblePrompts().every(p => p.archived && p.family === "archive")'));
   assert.deepEqual(run('facetCounts("format")'), {system: 18});
-  assert.equal(app(['format:system'])('visiblePrompts().length'), 0);
+  // Выбор «Системные» открывает архив (#490, п. 2.3), а не пустой список.
+  assert.equal(app(['format:system'])('visiblePrompts().length'), 18);
   assert.equal(app(['family:bcreq', 'family:archive'])('visiblePrompts().length'), 57);
 });
 test('stage selection restricts operation counts to actual prompts', () => {
