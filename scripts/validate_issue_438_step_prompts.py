@@ -256,7 +256,10 @@ class BuildTest(unittest.TestCase):
                 self.assertGreater(body.count(pinned), 0, item["file"])
             # Текст шага встроен байт в байт; ссылки на main (до BL-156а)
             # сборщик закрепляет по SHA.
-            self.assertIn(body.replace(BUILDER.RUNTIME_MAIN, pinned).rstrip("\n"), draft, item["file"])
+            # Issue #490: единственная правка v0.1 — формат шагов вместо stepwise/oneshot
+            # (FORMAT_EDITS сборщика); остальной текст встроен байт в байт.
+            expected = BUILDER.apply_format_edits(Path(item["based_on"]).stem, body.replace(BUILDER.RUNTIME_MAIN, pinned))
+            self.assertIn(expected.rstrip("\n"), draft, item["file"])
 
     def test_review_profiles_from_steps_table(self):
         _, _, steps = BUILDER.load_profiles()

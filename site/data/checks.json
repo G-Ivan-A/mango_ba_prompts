@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-09T09:07:37.387Z",
+  "generatedAt": "2026-11-18T08:41:01.127Z",
   "sourceFiles": [
     {
       "path": "runs/",
@@ -16,7 +16,7 @@
     "archived": 18
   },
   "tests": {
-    "logs": 819,
+    "logs": 828,
     "total": 87,
     "coveredPrompts": 11
   },

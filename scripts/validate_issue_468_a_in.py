@@ -81,7 +81,9 @@ class AINAcceptance(unittest.TestCase):
             self.assertFalse(record['raw_committed'])
         self.assertFalse(list(HERE.glob('*.pdf')))
         self.assertFalse((HERE/'issue.json').exists())
-        self.assertEqual(json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version'],'2.8.6')
+        # 2.8.6 — релиз #468; поздние релизы (#490: 2.9.0) не откатывают версию.
+        version=json.loads((ROOT/'site/data/stats.json').read_text())['siteVersion']['version']
+        self.assertGreaterEqual(tuple(map(int,version.split('.'))),(2,8,6))
         self.assertIn('BL-179',(ROOT/'pr-ops/BACKLOG.md').read_text())
         self.assertIn('BL-180',(ROOT/'pr-ops/backlog-ba-model.md').read_text())
 if __name__=='__main__':

@@ -21,12 +21,13 @@ test('archive + A-IN finds the original intake prompts and four 2.7.0 snapshots'
   assert.ok(run('facetCounts("process")')[IN]>0);
   assert.ok(run('facetCounts("operation")').understanding>0);
 });
-test('archive facets honor process/operation OR, group AND, modes and searches', {timeout:5000},()=>{
-  const tokens=['family:archive',`process:${IN}`,'operation:understanding','operation:impact_analysis','mode:stepwise'];
+test('archive facets honor process/operation OR, group AND, step formats and searches', {timeout:5000},()=>{
+  const tokens=['family:archive',`process:${IN}`,'operation:understanding','operation:impact_analysis','format:system'];
   const prompts=app(tokens)('visiblePrompts()');
-  assert.equal(prompts.length,4);
+  assert.equal(prompts.length,6);
   assert.ok(prompts.every(p=>p.archived && ['understanding','impact_analysis'].includes(p.operation.id)));
-  assert.equal(app([...tokens,'mode:oneshot'])('visiblePrompts().length'),6);
+  // Issue #490: фасет «Формат шагов» заменил stepwise/oneshot; OR внутри фасета.
+  assert.equal(app([...tokens,'format:decomposed'])('visiblePrompts().length'),6);
   assert.equal(app(['family:archive',`process:${IN}`],'2.7.0')('visiblePrompts().length'),4);
   assert.equal(app(['family:archive',`process:${IN}`,'operation:ingestion'])('visiblePrompts().length'),1);
   assert.equal(app(['family:archive','operation:solution_design',`process:${IN}`])('visiblePrompts().length'),0);
@@ -36,6 +37,7 @@ test('history remains opt-in; all old active filters and both families still wor
   assert.equal(app(['family:archive'])('visiblePrompts().length'),18);
   assert.equal(app(['family:archive','family:bcreq'])('visiblePrompts().length'),57);
   assert.equal(app([`process:${IN}`])('visiblePrompts().length'),21);
-  assert.equal(app(['mode:stepwise'])('visiblePrompts().length'),0);
+  assert.equal(app(['format:system'])('visiblePrompts().length'),0);
+  assert.equal(app(['format:decomposed'])('visiblePrompts().length'),39);
   assert.equal(app(['family:archive'],'no-such-id')('visiblePrompts().length'),0);
 });

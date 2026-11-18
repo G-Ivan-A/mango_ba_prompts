@@ -99,11 +99,15 @@ const BCREQ_STAGES = [
 // 2.7.0 (issue #464): страница «Стандарты» по замечаниям владельца, блок
 // «Индустриальные стандарты», шаг Ш-А (14 шагов), промпты: сбор до разделов,
 // запрет дампа конституции, гипотезы, раздел 5 по стандарту. Новый текст не измерен.
+// 2.9.0 (issue #490): карточки шагов — «Цель» и проверка БА вместо «Что делает
+// БА»; каждый промпт заканчивается блоком «Итог шага»; формат шагов «системные
+// (комплексные шаги)» / «декомпозированные шаги» вместо выбора stepwise/oneshot,
+// системные Ш-А, Ш-1, Ш-2 редакции 2.7.0 — параллельно AIN-01…24. Не измерено.
 const SITE_VERSION = {
-  version: "2.8.6",
-  released: "2026-11-09",
-  issue: 480,
-  basis: "PR #481: сборка LF/CRLF/BOM, полные архивные тексты и проверка пакета #477 перед ручным деплоем",
+  version: "2.9.0",
+  released: "2026-11-18",
+  issue: 490,
+  basis: "PR #491: цель и итог шага для БА, системный и декомпозированный форматы шагов",
   changelog: "CHANGELOG.md",
 };
 
@@ -332,6 +336,21 @@ function extractFilename(cell) {
   }
   const linkMatch = cell.match(/\[([^\]]+\.md)]/);
   return linkMatch ? linkMatch[1] : stripMarkdownInline(cell);
+}
+
+// Формат шагов (issue #490) вместо выбора stepwise/oneshot для БА: прежние
+// Ш-промпты и стадийные промпты (stepwise, oneshot, legacy) — «системные
+// (комплексные шаги)»; 39 классов по одной операции — «декомпозированные шаги».
+// Поле mode и frontmatter не меняются: формат — только фасет каталога.
+export const STEP_FORMATS = [
+  { id: "system", label: "Системные (комплексные шаги)",
+    description: "один промпт ведёт весь шаг или стадию, как прежние Ш-промпты" },
+  { id: "decomposed", label: "Декомпозированные шаги",
+    description: "один промпт — одна операция; модель перепроверяет каждый результат отдельно" },
+];
+
+export function stepFormatOf(mode) {
+  return mode === "manual" ? "decomposed" : "system";
 }
 
 function modeFromFilename(file) {
@@ -1036,6 +1055,7 @@ function promptSummary(prompt) {
     url: prompt.url,
     mode: prompt.mode,
     modeIcon: prompt.modeIcon,
+    format: prompt.format,
     status: prompt.archived ? "archived" : prompt.status,
     archived: prompt.archived,
   };
@@ -1298,7 +1318,7 @@ function makeTestKitCards(markdown) {
     ["Этап", "Название на сайте", "Шаги", "Что получается"].every((header) => item.headers.includes(header)),
   );
   const cardsTable = tables.find((item) =>
-    ["№", "Этап", "Зачем шаг", "Что подготовить", "Что делает БА", "Результат"].every((header) =>
+    ["№", "Этап", "Зачем шаг", "Что подготовить", "Результат"].every((header) =>
       item.headers.includes(header),
     ),
   );
@@ -1324,7 +1344,6 @@ function makeTestKitCards(markdown) {
       group,
       purpose: cell(cardsTable.headers, raw, "Зачем шаг"),
       prepare: cell(cardsTable.headers, raw, "Что подготовить"),
-      actions: cell(cardsTable.headers, raw, "Что делает БА").split(/;\s*/).filter(Boolean),
       result: cell(cardsTable.headers, raw, "Результат"),
     });
   }
@@ -1366,6 +1385,12 @@ export function assertTestKitComplete({ groups, cards, steps, prompts }) {
     if (step.draft && !step.draft.body?.trim()) {
       problems.push(`шаг ${step.step}: пустой текст черновика`);
     }
+    if (step.system && !step.system.body?.trim()) {
+      problems.push(`шаг ${step.step}: пустой текст системного формата`);
+    }
+    if (step.goal !== undefined && (!step.goal || !step.check)) {
+      problems.push(`шаг ${step.step}: нет цели или проверки БА (итог шага #490)`);
+    }
     if (step.published && !bodies.get(step.published.id)?.trim()) {
       problems.push(`шаг ${step.step}: нет текста промпта ${step.published.id}`);
     }
@@ -1375,7 +1400,31 @@ export function assertTestKitComplete({ groups, cards, steps, prompts }) {
   }
 }
 
-export async function makeTestKit(markdown, prompts) {
+// Итог шага (issue #490): цель, проверка БА и блок «Итог шага» — из SSOT
+// docs/ba-processes/bcreq-step-handoff.md, отрендеренного scripts/bcreq_handoff.py
+// в site/data/step-handoff.json. «Что делает БА» в карточке заменено «Целью».
+export const STEP_HANDOFF_FILE = "site/data/step-handoff.json";
+
+// Текст промпта по ссылке ячейки: черновик «по тесту» или системный формат (#490).
+async function readLinkedPrompt(draftPath, suffix) {
+  const content = await read(draftPath);
+  // У черновиков поле steps: [Ш-0] — не JSON; берутся только нужные поля.
+  const field = (name) =>
+    content.match(new RegExp(`^${name}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || "";
+  return {
+    id: field("id") || `mango-${path.basename(draftPath, ".md")}${suffix}`,
+    file: path.basename(draftPath),
+    title: field("title") || path.basename(draftPath, ".md"),
+    sourcePath: draftPath,
+    url: repoUrl(draftPath),
+    basedOnSha256: field("based_on_sha256"),
+    sha256: crypto.createHash("sha256").update(content).digest("hex"),
+    body: stripFrontmatter(content),
+  };
+}
+
+export async function makeTestKit(markdown, prompts, handoff = null) {
+  handoff ??= JSON.parse(await read(STEP_HANDOFF_FILE));
   const promptsByPath = new Map(prompts.map((prompt) => [prompt.sourcePath, prompt]));
   const frontmatter = parseFrontmatter(markdown);
   const table = parseTables(markdown).find((item) =>
@@ -1385,6 +1434,10 @@ export async function makeTestKit(markdown, prompts) {
     throw new Error(`${SOURCE_FILES.runKit}: нет таблицы «Порядок шагов» с колонкой «Режим в тесте»`);
   }
   const draftHeader = table.headers.find((header) => header.startsWith("Черновик"));
+  const systemHeader = table.headers.find((header) => header.startsWith("Системный формат"));
+  if (!systemHeader) {
+    throw new Error(`${SOURCE_FILES.runKit}: нет колонки «Системный формат (#490)»`);
+  }
   const kitDir = path.dirname(SOURCE_FILES.runKit);
   const linkTarget = (cell) => {
     const target = cell.match(/\]\(([^)#]+)[^)]*\)/)?.[1];
@@ -1421,23 +1474,12 @@ export async function makeTestKit(markdown, prompts) {
     }
     const params = row["Промпт для копирования"].match(/\(`([^`]+)`\)\s*$/)?.[1] || "";
     const draftPath = linkTarget(row[draftHeader] || "");
-    let draft = null;
-    if (draftPath) {
-      const content = await read(draftPath);
-      // У черновиков поле steps: [Ш-0] — не JSON; берутся только нужные поля.
-      const field = (name) =>
-        content.match(new RegExp(`^${name}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || "";
-      const draftFrontmatter = { id: field("id"), title: field("title"), based_on_sha256: field("based_on_sha256") };
-      draft = {
-        id: draftFrontmatter.id || `mango-${path.basename(draftPath, ".md")}-by-test`,
-        file: path.basename(draftPath),
-        title: draftFrontmatter.title || path.basename(draftPath, ".md"),
-        sourcePath: draftPath,
-        url: repoUrl(draftPath),
-        basedOnSha256: draftFrontmatter.based_on_sha256 || "",
-        sha256: crypto.createHash("sha256").update(content).digest("hex"),
-        body: stripFrontmatter(content),
-      };
+    const draft = draftPath ? await readLinkedPrompt(draftPath, "-by-test") : null;
+    const systemPath = linkTarget(row[systemHeader] || "");
+    const system = systemPath ? await readLinkedPrompt(systemPath, "-system") : null;
+    const stepHandoff = handoff.steps?.[code];
+    if (!stepHandoff) {
+      throw new Error(`${STEP_HANDOFF_FILE}: нет итога шага ${code}`);
     }
     if (mode === "by-test" && !draft) {
       throw new Error(`${SOURCE_FILES.runKit}: шаг ${step}: режим by-test без черновика`);
@@ -1454,6 +1496,12 @@ export async function makeTestKit(markdown, prompts) {
       gate,
       gateHint: gate === "—" ? "" : TEST_KIT_GATE_HINTS[gateId],
       ...card,
+      goal: stepHandoff.goal,
+      checkKind: stepHandoff.checkKind,
+      check: stepHandoff.check,
+      // Опубликованные Ш-В и Ш-С заморожены: блок «Итог шага» сайт дописывает к их тексту.
+      handoffBlock: mode === "published" ? stepHandoff.block : "",
+      system,
       published: publishedPrompt
         ? {
             id: publishedPrompt.id,
@@ -1472,6 +1520,17 @@ export async function makeTestKit(markdown, prompts) {
     generatedAt: new Date().toISOString(),
     sourceFiles: [{ path: SOURCE_FILES.runKit, url: repoUrl(SOURCE_FILES.runKit) }],
     kit: { version: String(frontmatter.version || ""), url: repoUrl(SOURCE_FILES.runKit) },
+    // Цель и проверка БА для AIN-шагов декомпозированного формата (issue #490):
+    // сайт подставляет их в карточки AIN, собранные из a-in-kit.json.
+    handoff: {
+      source: handoff.source,
+      version: handoff.version,
+      steps: Object.fromEntries(
+        Object.entries(handoff.steps)
+          .filter(([id]) => id.startsWith("AIN-"))
+          .map(([id, item]) => [id, { goal: item.goal, checkKind: item.checkKind, check: item.check }]),
+      ),
+    },
     groups: groups.map((group) => ({
       ...group,
       count: steps.filter((step) => step.group === group.id).length,
@@ -1480,6 +1539,7 @@ export async function makeTestKit(markdown, prompts) {
       steps: steps.length,
       byTest: steps.filter((step) => step.mode === "by-test").length,
       published: steps.filter((step) => step.mode === "published").length,
+      system: steps.filter((step) => step.system).length,
     },
     steps,
   };
@@ -1554,6 +1614,7 @@ async function main() {
       descriptionLong: buildLongDescription(behavior, operation, mode),
       mode,
       modeIcon: MODE_ICONS[mode],
+      format: stepFormatOf(mode),
       status: frontmatter.status || "draft",
       version: frontmatter.version || classCatalog.version || "unknown",
       updated: frontmatter.updated || "",
@@ -1636,6 +1697,7 @@ async function main() {
       ),
       mode,
       modeIcon: MODE_ICONS[mode] || "•",
+      format: stepFormatOf(mode),
       status: frontmatter.status || metadata?.status || "unknown",
       version: frontmatter.version || metadata?.version || "unknown",
       updated: frontmatter.updated || "",
@@ -1674,6 +1736,10 @@ async function main() {
     operations: taxonomy.operations,
     processes: catalogProcesses,
     modes: [...new Set(prompts.map((prompt) => prompt.mode))].sort(),
+    formats: STEP_FORMATS.map((item) => ({
+      ...item,
+      count: prompts.filter((prompt) => prompt.format === item.id).length,
+    })).filter((item) => item.count > 0),
     families: PROMPT_FAMILIES.map((item) => ({
       ...item,
       count: prompts.filter((prompt) => prompt.family === item.id).length,
