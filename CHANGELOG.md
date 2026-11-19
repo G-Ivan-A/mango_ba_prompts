@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.46
+version: 0.47
 updated: 2026-11-18
 temperature: 0.1
 ---
@@ -12,6 +12,24 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #492: аудит зависимостей от runtime и манифест передачи SSOT этапа 1
+
+- ФТ-1: `experiments/issue_492/audit_runtime_deps.py` → `runtime-deps.{json,md}` и журнал. 447 путей
+  `mango-ba-ai-runtime`, на которые ссылается репозиторий: защищённых 431, из них с двойным
+  потребителем (модель и код) 14, свободных 2. Ссылок на `main` в области аудита 3, решение по каждой.
+- ФТ-2: `classify_prompt_links.py` → `prompt-links.{json,md}`. 543 ссылки 79 промптов на
+  `mango_ba_prompts`: (а) governance 225, (б) нормативные для модели 318. Из 25 целей (б) замена
+  в runtime есть у одной (реестр справочников), 24 цели в runtime нет. Тексты промптов не менялись.
+- ФТ-3: [манифест передачи SSOT этапа 1](docs/contracts/ssot-stage1-handoff-manifest.md) (JSON — SSOT,
+  MD — рендер). 133 артефакта с версией, sha256 и git-блобом на коммите-источнике `7dea8f71`,
+  24 контракта AIN, цепочка эволюции v0.1 → черновики Ш-ХХ → архив 2.7.0 → AIN v0.3 → системный формат,
+  политика синхронизации «закреплённая копия». Клиентские данные и вложения не включены.
+- ФТ-4: карточки BL-184…BL-190 в `pr-ops/backlog-ba-model.md` v2.7 и секция #492 в
+  `pr-ops/BACKLOG.md` v2.10 со статусами цепочки; BL-183 → `DONE`.
+- [Итоговый аудит](docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md) с рекомендацией и
+  движением по бэклогу; новый `scripts/validate_issue_492_ssot_handoff.py` (обнаруживается
+  `make validate-full`). Runtime в задаче не менялся.
 
 ### Added — Issue #490: цель и итог шага, системный и декомпозированный форматы шагов; версия сайта 2.9.0
 

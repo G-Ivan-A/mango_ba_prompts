@@ -1,0 +1,151 @@
+source_commit=7dea8f716d69e55c183865630d10f40cdb6e46b1 registry_sha=68ad8fcffd47439fc3051852d9a2fbbe23815855 runtime_main=90f082330015634f3a0632cdd31ebfe1c15fd7ae
+{"artifacts": 133, "contracts": 24, "in_runtime": 0, "chain_status": {"действует": 121, "архив": 6, "заменён": 6}, "transfer_cards": {"BL-186": 31, "BL-185": 38, "BL-187": 62, "BL-188": 2}}
+group ain-route: 29 → BL-186 {'действует': 29}
+group system-format: 3 → BL-185 {'действует': 3}
+group archive-2.7.0: 6 → BL-185 {'архив': 6}
+group drafts: 14 → BL-185 {'действует': 11, 'заменён': 3}
+group prompts-v0.1: 15 → BL-185 {'действует': 12, 'заменён': 3}
+group step-handoff: 1 → BL-186 {'действует': 1}
+group base-standard: 2 → BL-187 {'действует': 2}
+group catalog-39: 41 → BL-187 {'действует': 41}
+group section-meta-standards: 9 → BL-187 {'действует': 9}
+group industry-practice: 1 → BL-187 {'действует': 1}
+group evidence-normalization: 1 → BL-186 {'действует': 1}
+group lessons: 5 → BL-187 {'действует': 5}
+group runtime-references: 1 → BL-187 {'действует': 1}
+group execution-norms: 3 → BL-187 {'действует': 3}
+group gates-and-cs: 2 → BL-188 {'действует': 2}
+1466a2c7fffadedc83ad31ad2e216e4f7bd760aa1007da54fa9391542e973c11      0.3 действует  BL-186 runtime=False docs/ba-processes/bcreq-a-in-common.md
+8949c3ffab25f24f435e4932115eb32ea1bf298ea37aa1ac7a1e9a8b7568691f      0.3 действует  BL-186 runtime=False docs/ba-processes/bcreq-a-in-execution.md
+90b055c0485c2abdc6e8056f20f6ec25c7f0571dca8af2fb6feeb06e163738c3        — действует  BL-186 runtime=False docs/ba-processes/bcreq-a-in-instructions.json
+9aa0140dd900ffd9991f33a613f00053e07153cc4231da4e031037671e5c2a22      0.3 действует  BL-186 runtime=False docs/ba-processes/bcreq-a-in-route.json
+6b5dfc1ff2b389d3ae9bc885a507125c634e23a136fc9388137bc4eb9b3e1055      0.7 действует  BL-186 runtime=False docs/rfc/2026-11-a-in-decomposition.md
+d140c5e7bf2e1ef69c2a7208122cc39350ba99cec84eaa6ba493f5fdcdba88ba      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md
+741b17602bf460624154db66cef294040acde923d72d7e4cb0f7d29c24e1d6dc      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md
+11441407a7590c496c6cd925f471c384d9b8f8bc78a57a25148f4042fae77743      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md
+5a92175e9de017478af9632b423108fb51517c738ab84044ec5a59e5ad07b656      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md
+60cbc7ff7a6c4fe93203df7ea72db8036f2062eb8aef4690ac952387e62d2aa1      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md
+d8dec02cec33749c7fbe8edd429d61e5922cc1290fde2b16864274dfff8ad941      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md
+2cb7309ca4ed3dd1a7a4eab9c39119aff999715654215c9bebfa181f87dc9ee1      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md
+386cd61a7d6d53bd22e4e60e63bfa6bc9244d89f7d3d48b8c7c8b35bbd991269      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md
+e8a46837d882d28ed81310719f9e661913940d70edeef6d1b3f5bd8e94b54afd      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md
+1223e3e98febaa955735c5b21625f9dc47a7064cf6c2f99c7de2c3d04bda1769      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md
+125d2b90461a97f71b6b7ef9c2769764282eb53364ac0954db226ce8b0fea927      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md
+a089851d1eef6897a16a4408df4a501fd862c9bae579f4610504071baaf370ea      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md
+fe6a4a39d581fdc24512769bc06bbe1e89353fceed5d48ed07b5a5f6d805b3a5      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md
+b5187bb8a888707f6ff799c732ffcf3b4656036a2a4784f15df6a00e69915f00      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md
+dcc840d45cf6b98d693b400da6290a26c027931858a41b8d4807b096a6510362      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md
+90a527e65978fc53d701e3e671ce2db93ecc03d93b1c22fb6f690522767294fa      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md
+c48391e68beb86a5c039415aa0db124b92433a6fdc9b750ceefc89e3baba09c6      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md
+b2e69c96c3e7099c4531788ebe33bc61845a51dd20717aa5595d3b3f75d72058      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md
+cf742963e4d2ea00f5a455904bac63137e20411655a4d355e2034ce4757a30cb      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md
+88f28b5e5047f98695775562715f0aa1df8a0b88b33af857a09b8d67acae177c      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md
+46d6f3db1d9a6e116e0f000ea76ef2d601704ec2dd4a149fe27a2cb0f2ebe3fa      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md
+141a9778194fbcfa0ada3457e2aef9d83529b5976a58ec3991b54bb3549f8beb      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md
+f46856d9268eebce274cd27d5f2f8756ea28ad5973153e89e0defa0e2c0658d4      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md
+1ab867ba5f88f0eee4a56bad8374eae7d63c09a76f3ee53212299542d39dee2a      0.3 действует  BL-186 runtime=False prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md
+371f39bf07c8cd87d936ca0ec2b7c1db0d2b7970e45785332e3c01f64e110105      0.3 действует  BL-185 runtime=False prompts/drafts/system/bcreq-context-understanding-system.md
+47c35c2e96fa6a60eeeec11c83ab0f8d455dfa80258bd1621c00b72ea22661a7      0.1 действует  BL-185 runtime=False prompts/drafts/system/bcreq-intake-questionnaire-system.md
+ff13abe00ae7e6b588f701e09120c14d1cffe9686432bd2cf6715d4910ed7416      0.2 действует  BL-185 runtime=False prompts/drafts/system/bcreq-products-impact-analysis-system.md
+1b79442c5ed5b16c68838113019bb4ba1623609aa705e9c2a57f1a50806c1fab        — архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/README.md
+277b6577a3adca185930c4665c58f001ccf27b122ef132bc84c73573d9cc04d6      0.3 архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md
+838e3c5fbae47e8a5684a24bdeafb4b27f7eb21caff5696151ceaa3487c235f9      0.2 архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md
+580106bfb3458042de6d08e3d6ff320e0e4ef67cd5b73825a43234d8a21b9e37      0.1 архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md
+1f9e7c452b256de3f1f3c287b7b153a75be40572ec95cd6282e8d63974e29c67      0.2 архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md
+0cf1d23e098ea8cecd5c17644713672a2976e30675d70d75129c3fe1c98afaa4    2.7.0 архив      BL-185 runtime=False prompts/archive/a-in-v2.7.0/manifest.json
+81652ae24230047df48b75b769a2c14ea7e35c25e15f030b73e1fdc5d73ef079      0.5 действует  BL-185 runtime=False prompts/drafts/bcreq-constitution-governance-oneshot.md
+5cde0026c92dcb6b859ee5a8e136fb4579ff20dc15cadf2eeff5757a2b9f5eb7      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-constraints-documentation-stepwise.md
+0d92de04d6464866ecf915e4d821468a15b705baa5ab61ba6656b42ab3dd5acc      0.5 заменён    BL-185 runtime=False prompts/drafts/bcreq-context-understanding-stepwise.md
+d166daa1a4bfae06b51992151214565dc3cb982c3f7b7700506304af1e5756fb      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-extra-risk-analysis-stepwise.md
+dd8e0102f8b52356826a158c482cf65df75913067649d1adbca583e74481f7dd      0.5 действует  BL-185 runtime=False prompts/drafts/bcreq-fr-documentation-stepwise.md
+79cb695b441d54e3c638bebdda2b3e98385e81242398f3a193a1698d7143e35b      0.2 заменён    BL-185 runtime=False prompts/drafts/bcreq-intake-questionnaire-stepwise.md
+3d47e65b7fda55cb72171caf651ca412e3d3642b00612e31fc0f0355bb574041      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-nfr-documentation-stepwise.md
+521491281f4e641a6ecf5445b5e47313cfeb914b8350a4a822fdbc7fed7937ba      0.3 действует  BL-185 runtime=False prompts/drafts/bcreq-orr-solution-design-stepwise.md
+0dd3069fbef22d85c271161e4e3e469334626bca321ddc792e949ecd32cfca70      0.4 заменён    BL-185 runtime=False prompts/drafts/bcreq-products-impact-analysis-stepwise.md
+2135c6e3cc5c24b5e5a50407951a0a7e1130cc4e43001969b8fd1fe7c5f40b67      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-release-readiness-oneshot.md
+2fc1b056be7e8cb05d336ce12fc8ba9e41f01952510a073f56c67c63a75a7c90      0.3 действует  BL-185 runtime=False prompts/drafts/bcreq-review-validation-oneshot.md
+dbbd3f4cbd8ab60f94451d771904956fe606c4f23964283611d092e165f537cf      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-scenarios-modeling-oneshot.md
+cadc34c43ca817e5f9657c3f31f4f4fc1d872dc128a682e2c8d5831bb356830f      0.2 действует  BL-185 runtime=False prompts/drafts/bcreq-uc-modeling-stepwise.md
+cbe13abae6af09b2f89434da8bff7c72caecd630de4c4cc4f5046c1700194fd0        — действует  BL-185 runtime=False prompts/drafts/manifest.json
+fc4802dcb5dea177e769e4feb5e192393b8b534b1e3a8a9bb58319146fdc5032     0.10 действует  BL-185 runtime=False docs/ba-processes/bcreq-run-kit.md
+3ffa79cbef3509845312efc44117d52997ed0c231e9c6b86266e1b7575d7fcd1      0.5 действует  BL-185 runtime=False prompts/bcreq-constitution-governance-oneshot.md
+3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c      0.2 действует  BL-185 runtime=False prompts/bcreq-constraints-documentation-stepwise.md
+5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9      0.5 заменён    BL-185 runtime=False prompts/bcreq-context-understanding-stepwise.md
+7fb48b087b63f04b09bb4d6449d26d8f2bdeb746232fb370a9e454a6e1a74f9a      0.4 действует  BL-185 runtime=False prompts/bcreq-core-documentation-oneshot.md
+1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2      0.2 действует  BL-185 runtime=False prompts/bcreq-extra-risk-analysis-stepwise.md
+04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337      0.5 действует  BL-185 runtime=False prompts/bcreq-fr-documentation-stepwise.md
+5d916d68c82160b29222cfad4c12117980fd68e8d7de1e0946f00e1780d26dd9      0.4 заменён    BL-185 runtime=False prompts/bcreq-in-understanding-oneshot.md
+bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada      0.2 действует  BL-185 runtime=False prompts/bcreq-nfr-documentation-stepwise.md
+d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0      0.3 действует  BL-185 runtime=False prompts/bcreq-orr-solution-design-stepwise.md
+235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf      0.4 заменён    BL-185 runtime=False prompts/bcreq-products-impact-analysis-stepwise.md
+b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b      0.3 действует  BL-185 runtime=False prompts/bcreq-review-validation-oneshot.md
+9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7      0.2 действует  BL-185 runtime=False prompts/bcreq-scenarios-modeling-oneshot.md
+61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890      0.2 действует  BL-185 runtime=False prompts/bcreq-uc-modeling-stepwise.md
+204e8abfd5248edfb16e45690f44b86f2970a38a60b1810dd028cd49988ec41d      0.2 действует  BL-185 runtime=False prompts/bcreq-work-solution-design-oneshot.md
+33e9c4c3db0d9bb06e4ad1e7bed823ee8b6e57d89efaebc81e90f791f86d950a      0.1 действует  BL-186 runtime=False docs/ba-processes/bcreq-step-handoff.md
+533a37c255f961243a53606615a2ac78dbb010ecf5bdbf65f231d3609dce2ee5    0.1.3 действует  BL-187 runtime=False standards/bcreq-prompt-base-standard.md
+ac8c46ef07a8a6e4b41023b6cc1173ba0de3546fadebfb4e2d07c110229c5aa4    0.1.2 действует  BL-187 runtime=False standards/bcreq-prompt-profiles.md
+4f4862306d29283e8b5c8aa74eb85424df8967b36faa3655f7c732fd5d4f3735    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/01-intake.md
+ca6d62218451aef46c53f9995513587535aa6bc67d6aa47291c10d2ad129535e    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/02-normalize.md
+7cd2704ac0c02094ef6327a9c08041057ec8815da2e63fc6c012471550a280a5    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/03-ambiguity.md
+f8aa022e186a7c62e610145e39fa5ab5d291a6e695ecdd45db96c2cf953dd8d8    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/04-questions.md
+eb8dd7d7ae57fc9192850a8871c1a38ece7951bb07a5c5d1a6b1842bf518b83f    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/05-taxonomy.md
+a01310bbc6e324e02a86cf64b4a90c52bd283dcdef1c6f3a49c66346a5231859    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/06-scope.md
+20b833ad47530924128e11913c05f24ae10571f44be11cc4ab7d16505685b2bd    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/07-web-evidence.md
+fe2b74c3bdb25ea04ba6a482f6c05d987df0b18ced9b368332d81a11c0aca7ba    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/08-document-evidence.md
+ec7596ce708dc6cd9db97900b300ef6ac935f9679d299ac59a9c75fc7af866ba    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/09-ba-enrichment.md
+5b6803d7cc13567e86e6803bb5b44f8c7d220c354e78afc3d19e4492c11594f7    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/10-source-conflicts.md
+e5798fe989f5a6fc4827068660621d37b709a1a894c2de4b5b65da12dfe69262    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/11-dependency-check.md
+abf33a6deb35d9041ca7a2f65af324f57e418d50fb97211946bdd95ad516f7d2    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/12-phase-assembly.md
+6bc2bd6f6257a24c8b73f56b07dcb2ff179196f3b1ebe675c3792d3e94894603    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/13-handoff-check.md
+3dcd4072f519469b020bd818a14606ab6503d3a970e65d5dc6c8da0f3072de30    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/14-glossary.md
+e3ad8851afd024179644d56fa41ca91957dcf44a25b90b2fe3e0e2638f8125f5    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/15-business-context.md
+e3ec2a170602398da7f1435f9efa501f8b5a64bfb9d72c76b980e8867454b142    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/16-fr-delta.md
+fd1af6e009285546777a53013aa4bc6c93b49ad03f667ff127b871b6066b4910    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/17-fr-new.md
+6dc8f672d9cd8f40620aac7a339833ee1eda18cf4e20086031bfdb5c261004fb    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/18-nfr.md
+cace70bb1018d6fd1ca32226612b59d38169add929c516d4ad323ad8c094b88e    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/19-uc-coverage.md
+b8ef1827fb6f225a42ecff91e65a4efc690143dd8e0826cd77b0691c4b141f7c    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/20-gate-evidence.md
+9f43908b539b8516de5a109d311b743d271e5969474eb3688cec0ad0c0b1128d    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/21-solution-l1.md
+03560a933bb4ed5a3eea2b0db6cc85d65098f030ba859b97113ff458e963bbea    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/22-solution-l2.md
+633ee0ab31e8ea936b3861b25166e425690d9645acd26814220e27557c969ac6    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/23-constraints.md
+dbd6e3d20fba46a70d84e9a0091fc6691953535fd50d5f1b6034bd287febcdaa    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/24-uc-boundaries.md
+817c715e7df4b11057069d6055517efeeb7ce9dde2c7955803fb21a40ccb5b21    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/25-risks.md
+6ac1b7365c51e7066e9ca56002e090cc338e1fce2f7e2708d95bbee677488205    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/26-delivery-dependencies.md
+508045aca1a56c7ede39e24884678ec09e6a6f60f43fd0dec202d2d33ba22706    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/27-acceptance.md
+bfbf9fbddef01a28962d7f1a28662a3105887e35292a761a99ad53fcf7c5be47    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/28-independent-review.md
+7874eece61b16b23bb415e1c430239e2cc7df5a15cc739b9d14bdab077211c57    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/29-impact.md
+cd149ce2f49ad9e7325272ee2a74032a9c45d3281a2c7e7798a8977f3a15a812    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/30-targeted-edit.md
+7e891d41bfca4b39aa7a2538bfcba7942f14a05e0add5408b51f743599e8c0cf    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/31-conformance.md
+56c36296d5e8531e68a76d2cb4da4d5d494e42091a1d6fad96c4d8b65786cc7c    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/32-audience-projection.md
+fdbb7d85a26bec57e9299349c8a28b5c0ccf3430676d096632831c2139ba34d4    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/33-release-audit.md
+7259f81df7203c10ce5da4e9440f4842c006aeff0fe676fccf6d10a07efdeb87    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/34-human-record.md
+79117175f34816c02e4fedb26b4b2fbb2c0ed68f2fea81f370e7298ae0108a23    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/35-baseline-handover.md
+63daf04c89abd3cf6b0f55b2e4b9b6676abcd0e1b8604eb1a5bbd6007a30c4b2    0.1.3 действует  BL-187 runtime=False standards/bcreq-manual-classes/36-rule-bundle.md
+3cd873263d6b9b52410769211d1c17965ffaf96280c976e26b326ca2c7c7c941    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/37-user-story.md
+05ad16ea6550826a0916d7b657ab2a0fa17012e74b0f388288b5a656203477d4    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/38-requested-uc.md
+9dded5140dc111937234fc860e2f03b25b8ffa662f258aba4b6d1b06a08700d5    0.1.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/39-manifest-alignment.md
+ba284fe195e9c309ee01b8f5ff1bf1803add9cf31ed5e4a26153bb07b19ff8c4    0.2.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/README.md
+f84a948aec19cdad94859a8ececb9ef6b1f66532ce135c73a952237693c80012      0.2 действует  BL-187 runtime=False standards/bcreq-manual-classes/catalog.json
+7eb9d85072ad69e9b1c676166d28ea6eb8df10136b330f96daa9ca29bcdceb5c      0.3 действует  BL-187 runtime=False standards/bcreq-sections/01-glossary.md
+20f904bf28e359d8834ef3e8c2090b6d9c60bc80160a5c388084f0caa81823e8      0.3 действует  BL-187 runtime=False standards/bcreq-sections/02-business-context.md
+565e214fd87210d408e100baa6555e45234693d6094c88d93cc35951e8f21763      0.2 действует  BL-187 runtime=False standards/bcreq-sections/03-functional-requirements.md
+684413ea3d16806c426a481db219dbb1dc84177373912b2535d57a9a212f24f0      0.1 действует  BL-187 runtime=False standards/bcreq-sections/04-non-functional-requirements.md
+20c4a9de8167370473cc6f6b36d6f8f407bfedea4a4caea1feb15d2fbda78559      0.2 действует  BL-187 runtime=False standards/bcreq-sections/05-solution-description.md
+7887c8347fc7bd62afbb19c59ab4114d1181ae173686a7788da1a168a179ca10      0.2 действует  BL-187 runtime=False standards/bcreq-sections/06-implementation-constraints.md
+44b299133d19189d67f3cb7841d3aae5b013f2b51a028acdc5831cf07795e9f6      0.1 действует  BL-187 runtime=False standards/bcreq-sections/07-use-cases.md
+e30f28e167eee744af5e3fdc84837ed671103a923ed07004c3a5fa981f0e642b      0.1 действует  BL-187 runtime=False standards/bcreq-sections/08-supplementary.md
+c1cda832ffbd3c2ef5bcd80e27657ecb00c6db0e2cfaff3f8b1add3298f8ee04      0.2 действует  BL-187 runtime=False standards/bcreq-sections/README.md
+7856e6b45f52c9b22a93d82d1c54d46bc042049e1b27112f72f1ee1eb0561884      0.1 действует  BL-187 runtime=False standards/bcreq-industry-practice.md
+536151695ad208f0b9eba8387ccc1a9153b0d2adfbace36eb7e8df84140159c1      0.1 действует  BL-186 runtime=False docs/ba-processes/bcreq-evidence-normalization.md
+dc8b255c38bf2224bc60dd46a2c5ccfdaba3f0b57cc09d5f052f985bc7dddffa      1.0 действует  BL-187 runtime=False standards/bcreq-lessons/README.md
+af8ada9a3ae2bd688f1c9f4a0aca4e54781e7acf6782f748b3cdf5f5553c1308        — действует  BL-187 runtime=False standards/bcreq-lessons/coverage.json
+fff8b8c1af9d5d59f093fc467b9e352aa79ec701e2b7ccddaba202f25665e6e5      0.1 действует  BL-187 runtime=False standards/bcreq-lessons/golden-set-bcreq-stage1.md
+568b68c3d01ffc7dec4287baf2977c6cec070263569f27b7e60f34fd64ee5a14      1.0 действует  BL-187 runtime=False standards/bcreq-lessons/lessons.json
+4507a990a879df5e071d53ac44711921bd3e8bc250485c0c9c82001ac4fa5629      0.1 действует  BL-187 runtime=False standards/bcreq-lessons/rubric-bcreq-stage1.md
+7245a80e491dd3e7e636c348d44b7e56b3b7b609d08a46853cd5e215c0dadd83      0.5 действует  BL-187 runtime=False standards/bcreq-runtime-references.md
+28acb16f0ae0cdc6a6c6dfd86654ab8dcf138eb5ebe00e44a72f72d49d44c0ee      0.2 действует  BL-187 runtime=False standards/bcreq-composition-standard.md
+78e2fcc4d3027b53036d030b7d34a29b158c72d8a73fa53a9f35e9da7aa66476    0.1.1 действует  BL-187 runtime=False standards/bcreq-prompt-architecture.md
+312f599b56f66a3efe573d4cc0d1dc116526a965222834f23675067d921dc220      0.1 действует  BL-187 runtime=False standards/product-classification-contract.md
+ce37ef29da3bf07a7436c3c35bb9735bceb3726c4ffc2a9765ac7134eaafe26b      0.1 действует  BL-188 runtime=False docs/ba-processes/cs-flow-stub.md
+327c22bbda4bf79d32a581fa56b5319791bda41d9d639f5809fcd153c962fd5e    0.3.0 действует  BL-188 runtime=False docs/contracts/bcreq-stage-gates.md
+based_on_sha256 не совпадает с источником на source_commit (редакция-основа обновлена позже сборки черновика): ['prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md', 'prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md']

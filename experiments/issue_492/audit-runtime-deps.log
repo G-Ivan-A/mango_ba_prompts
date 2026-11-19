@@ -1,0 +1,453 @@
+commit=3eda0026e6faf685d86e149c4506132d82d3ce10 registry_sha=68ad8fcffd47439fc3051852d9a2fbbe23815855 runtime_main=90f082330015634f3a0632cdd31ebfe1c15fd7ae
+files=2548 occurrences=2282 rows=1166 in_scope_rows=195 runtime_paths=447
+validators traced: test_issue_361_kb_migration.py, validate_issue_111_kb_pipeline.py, validate_issue_115_kb_mango_pipeline.py, validate_issue_117_kb_traceability.py, validate_issue_265_hub_sync.py, validate_issue_310_kb_pdf_ingestion.py, validate_issue_351_run.py, validate_issue_363_run.py, validate_issue_365_run.py, validate_issue_367_run.py, validate_issue_369_run.py, validate_issue_371_run.py, validate_issue_382_run.py, validate_issue_409_audit_artifacts.py, validate_issue_427_rfc.py, validate_issue_430_runtime_refs.py, validate_issue_434_runtime_tasks.py, validate_issue_472_decisions.py, validate_issue_482_run.py, validate_issue_484_run.py
+paths by status: {"защищённый": 431, "защищённый (двойной)": 14, "свободный": 2}
+in-scope rows by ref type: {"SHA (иной срез)": 1, "SHA (реестр)": 174, "main": 3, "клон": 4, "корень": 10, "шаблон": 3}
+in-scope paths missing at their own pinned ref: —
+PATH / | защищённый | валидатор/сайт/сборка | SHA (иной срез),SHA (реестр),main,корень,шаблон | sources=66 | own_ref=True pinned=True main=True
+PATH AGENTS.md | защищённый | валидатор | SHA (иной срез) | sources=14 | own_ref=True pinned=True main=True
+PATH README.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=True main=True
+PATH contracts/c-in.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb | защищённый | валидатор | SHA (иной срез),шаблон | sources=12 | own_ref=True pinned=True main=True
+PATH docs/kb/ | защищённый | валидатор/сайт/сборка | SHA (иной срез),SHA (реестр),main,шаблон | sources=41 | own_ref=True pinned=True main=True
+PATH docs/kb/MAP.json | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),main | sources=57 | own_ref=True pinned=True main=True
+PATH docs/kb/README.md | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),main | sources=55 | own_ref=True pinned=True main=True
+PATH docs/kb/USAGE.md | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),main | sources=17 | own_ref=True pinned=True main=True
+PATH docs/kb/api-server-client/sections/13-poryadok-perevoda-na-otvetstvennogo-sotr.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/build_map.py | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/01-stranica-avtorizacii.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/06-roboty.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/07-forma-pokupki-robotov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/08-stranica-roboty-mango-office.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/09-kartochka-robota.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/10-skripty-dlya-robotov.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/11-nastroyki-robota.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/12-statistika-po-skriptu-robota.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/13-analitika-po-golosovym-robotam.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/14-chat-boty.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/15-skripty-dlya-chat-botov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/16-nastroyki-chat-bota.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/17-statistika-po-skriptu-chat-bota.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/18-konstruktor-skriptov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/19-blok-fraza-robota.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/20-blok-fraza-chat-bota.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/21-blok-golos-v-tekst.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/22-blok-otpravit-sms.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/23-blok-otpravit-e-mail.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/24-blok-otpravit-http-zapros.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=5 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/26-blok-dobavit-tematiku.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/27-blok-perevesti-zvonok.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/28-blok-sravnit-znachenie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/32-blok-raspisanie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/36-blok-fonovye-sobytiya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/39-blok-rabota-s-pamyatyu.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/40-blok-perevesti-chat.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/43-blok-ai-assistent-dlya-chat-botov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/44-blok-ai-assistent-dlya-golosovyh-robotov.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/54-integraciya-s-api-konnektor-mango-office.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/57-peremennye.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/cov-robot-fil/sections/65-mnogokanalnyy-robot.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-1c/sections/02-naznachenie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-1c/sections/03-vazhnye-ogranicheniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-1c/sections/11-obrabotka-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-1c/sections/30-osnovnye-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-amocrm/sections/60-zapis-razgovorov.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bitrix24/sections/10-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bitrix24/sections/18-bazovyy-paket.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/ | защищённый | валидатор | SHA (иной срез),шаблон | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/02-obzor.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/05-poryadok-deystviy.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/07-shag-2-ustanovka-softfona-mango-talker.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/10-ustanovka-sistemnyh-nastroek.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/104-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/107-kak-otpravit-klientu-soobschenie-whatsap.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/113-vhodyaschiy-zvonok.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/114-ishodyaschiy-zvonok.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/116-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/118-kak-perevesti-zvonok-s-konsultaciey.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/12-ustanovka-i-bazovye-nastroyki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/120-propuschennye-zvonki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/123-zapis-razgovorov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/13-nastoyka-podklyucheniya-k-bpmsoft.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/15-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/19-kak-nastroit-dlitelnost-uspeshno-prinyat.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/20-sozdavat-kontakt-kontragenta-lid-pri-zvo.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/24-obzor.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/35-kak-sozdat-i-nastroit-umnye-pravila.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/38-ishodyaschiy-zvonok-po-kliku-iz-bpmsoft.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/44-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/47-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/62-obzor.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/64-statusy-kontakt-centra-v-interfeyse-bpms.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/67-obzor.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/69-privyazka-zvonka-k-suschnosti-vruchnuyu.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/72-naznachenie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/integration-bpmsoft/sections/78-opisanie-interfeysa.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/lk-vats-sso/sections/03-obschie-svedeniya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/lk-vats-sso/sections/04-nastroyka-idp-v-lk-vats-mango-office.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/01-nachalo-raboty.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/03-registraciya-novogo-polzovatelya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/05-upravlenie-statusom.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/06-upravlenie-statusom.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/09-instrumenty-obrascheniya-ochered-obrasch.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/09-panel-upravleniya-telefoniey.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/10-panel-pokazateley.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/103-tegirovanie-razgovorov-v-rechevoy-analit.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/11-dashboard.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/11-panel-upravleniya-telefoniey.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/114-konstruktor-otchetov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/116-otchety.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/117-dannye.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/124-vkladka-obrabotka-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/13-dopolnitelnye-nastroyki.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/14-prohozhdenie-kvesta-eto-poshagovoe-vypol.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/16-dashboard.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/17-sozdanie-i-nastroyka-vidzheta.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/18-avtomaticheskoe-raspredelenie-obrascheni.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/19-moi-obrascheniya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/21-istoriya-obrascheniy.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/21-obrascheniya.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/22-kontrol-obrascheniy.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/23-avtomaticheskoe-raspredelenie-obrascheni.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/24-moi-obrascheniya.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/26-istoriya-obrascheniy.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/37-kontrol-sotrudnikov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/40-zadachi.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/42-otchet-po-zadacham.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/43-plan-raboty-wfm.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/43-spisok-zadach-v-verhney-paneli.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/44-grafik-raboty.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/44-sozdanie-zadachi.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/48-nastroyki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/50-istoriya-vyzovov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/50-kontrol-sotrudnikov.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/51-kartochka-rabochego-dnya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/52-rabochee-vremya-sotrudnika.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/53-proizvoditelnost-sotrudnikov.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/54-proizvoditelnost-grupp.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/56-plan-raboty-wfm.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/57-grafik-raboty.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/58-planirovanie-vhodyaschih.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/58-spisok-kampaniy.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/59-otchety.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/60-obmen-smenami.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/61-dobavlenie-kampanii.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/61-nastroyki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/62-kartochka-kampanii.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/63-istoriya-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/64-obsluzhivanie-vhodyaschih-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/65-propuschennye-vyzovy.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/68-kontakty-adresnaya-kniga.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/69-sotrudniki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/70-nastroyka-poley.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/72-ishodyaschiy-obzvon.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/73-tekstovye-rassylki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/74-spisok-kampaniy.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/74-tekstovye-rassylki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/76-nastroyka-avtomaticheskih-deystviy.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/77-biznes-analitika.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/77-dobavlenie-kampanii.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/78-gruppa-otchetov-prodazhi.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/78-kartochka-kampanii.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/79-gruppa-otchetov-obsluzhivanie.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-cc-manual/sections/80-skripty.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/82-sozdanie-import-eksport-skripta.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/83-statistika.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/85-sotrudniki.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/87-chaty.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/89-tekstovye-rassylki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-cc-manual/sections/96-rechevaya-analitika.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/index.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/02-vhod-v-lichnyy-kabinet.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/06-panel-licevogo-scheta.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/101-zakladka-nomera.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/102-zakladka-nomera.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/103-zakladka-nastroyki-priema-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/104-golosovoe-menyu-i-raspredelenie-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/105-golosovoe-menyu-i-raspredelenie-zvonkov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/105-nastroyki-dlya-vhodyaschih-liniy.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/106-dopolnitelnye-nastroyki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/106-nastroyki-dlya-vhodyaschih-liniy.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/107-dopolnitelnye-nastroyki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/108-nastroyki-dozvona-i-soobscheniy-po-umolc.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/109-nastroyki-dozvona-i-soobscheniy-po-umolc.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=6 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/109-pereadresaciya-po-nomeru-klienta.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/110-chernyy-belyy-spisok.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/111-chernyy-belyy-spisok.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/112-rabota-s-sotrudnikami.md | защищённый | валидатор | SHA (иной срез) | sources=5 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/113-vkladka-kartochka.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/114-vkladka-telefoniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/115-vkladka-telefoniya.md | свободный | — | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/117-vkladka-avtosekretar.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/118-rabota-s-gruppami.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/119-vkladka-parametry-gruppy.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/120-vkladka-sotrudniki-i-priem-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/121-vkladka-ochered-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/121-vkladka-sotrudniki-i-priem-vyzovov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/122-roboty.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/124-statistika-i-monitoring.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/126-nagruzka-po-chasam.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/127-pokazateli-obsluzhivaniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/129-istoriya-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/130-vse-vyzovy.md | защищённый | валидатор | SHA (иной срез) | sources=5 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/131-propuschennye-vyzovy.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/132-propuschennye-vyzovy.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/134-zapis-razgovorov.md | защищённый | валидатор | SHA (иной срез) | sources=5 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/135-zapis-razgovorov.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=8 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/135-zapisannye-razgovory.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/135-zapisi-razgovorov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=False pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/136-zapisannye-razgovory.md | защищённый | валидатор | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/137-rezhimy-zapisi.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/138-nastroyki.md | защищённый | валидатор | SHA (иной срез) | sources=5 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/138-rezhimy-zapisi.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=8 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/139-eksport.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/139-nastroyki.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=10 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/140-kontakt-centr.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/141-kontakt-centr.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/143-bitriks-24.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/145-golosovye-soobscheniya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/145-zakaz-zvonka.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/148-analitika.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/151-otchet-propuschennye-zvonki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/152-otchet-prichiny-propuschennyh-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/153-otchet-vremya-ozhidaniya.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/155-otchet-kolichestvo-perezvonov-po-propusc.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/159-otchet-kachestvennye-zvonki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/161-otchet-ishodyaschiy-obzvon.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/165-otchet-kolichestvo-propuschennyh-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/168-otchet-skolko-klienty-gotovy-zhdat-na-li.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/171-otchet-srednyaya-prodolzhitelnost.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/172-otchet-vremya-ozhidaniya-otveta.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/175-otchet-skolko-zvonkov-trebuetsya-klientu.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/176-otchet-raspredelenie-zvonkov-po-punktam.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/177-otchet-raspredelenie-zvonkov-po-punktam.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/179-tekstovye-kommunikacii.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/185-kod-dlya-sayta.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/186-nastroyka-kanalov-kommunikacii.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/189-chat-na-sayte.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/190-vkontakte.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/191-whatsapp.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/192-telegram.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/193-max.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/193-telegram.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/194-max.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/195-nazanachenie-kanala-max.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/197-poluchenie-api-tokena-max.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/201-5-priem-i-obrabotka-obrascheniy.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/202-avtomaticheskie-otvety.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/204-nerabochee-vremya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/207-klientskoe-prilozhenie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/208-e-mail.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/210-avito-rabota.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/212-chat-bot-dlya-grupp-kanalov-tekstovye-ko.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/23-blok-5-nastroyka-ishodyaschih-vyzovov.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/234-wallboard.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/238-kontrol-kachestva.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/246-statistika.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/249-etiketka-i-mav.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/249-etiketka.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/250-etiketka.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/252-karusel-nomerov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/254-sozdanie-karuseli.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/256-dobavlenie-nomerov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/272-uchetnye-zapisi-sip.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/276-audiofayly.md | защищённый | валидатор | SHA (реестр) | sources=7 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/277-audiofayly.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/278-nastroyka.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/279-nastroyka.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/28-dokumenty.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/280-zhurnal-deystviy.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/287-nastroyka-prav-dostupa-roli.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/288-dostup-k-ii-instrumentam-kontakt-centra.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/291-bezopasnost-pro.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/299-oblachnoe-hranilische.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/300-oblachnoe-hranilische.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/303-avtoperezvon.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/304-avtoperezvon.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/304-prochie.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/305-obschie-nastroyki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/307-upravlenie-uslugami.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/308-integracii.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/308-podklyuchit-integraciyu.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/311-api-konnektor.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/49-vkladka-podderzhka.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/50-kontakty-personalnogo-menedzhera.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/51-bystrye-kanaly-svyazi.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/52-napisat-v-tehpodderzhku.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/53-napisat-v-tehpodderzhku.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/57-rabota-so-statusami.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/58-kartochka-obrascheniya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/60-produkt-virtualnaya-ats.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/70-prilozhenie-lichnyy-kabinet.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/73-navigacionnaya-panel.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/74-smena-versii-i-tarifa-produkta.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/76-nomera-mango-office.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=False main=False
+PATH docs/kb/mango-lk-manual/sections/78-nomera-drugih-operatorov.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mango-lk-manual/sections/99-obrabotka-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=False main=False
+PATH docs/kb/maps/mango-lk-manual.json | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/maps/mango-lk-manual.toc.tsv | защищённый | валидатор/сайт | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/maps/mtalker--windows-mac-working.json | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/maps/mtalker--windows-mac-working.toc.tsv | защищённый | валидатор/сайт | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/maps/vpbx-api.toc.tsv | защищённый | валидатор/сайт | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/04-podderzhivaemye-kanaly-kommunikacii.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/05-princip-tekstovyh-kommunikaciy-s-kliento.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/08-vvedenie-v-api.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/26-obekt-message.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/39-otpravit-soobschenie-operatora-k-klientu.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/40-zagruzka-istorii-chata.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/47-soobschenie-operatora-dostavleno-klientu.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/48-soobschenie-operatora-prochitano-kliento.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/58-priem-i-obrabotka-obrascheniy-klienta.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mdialogi-api/sections/69-istoriya-dokumenta.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/02-obzor.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/16-kak-pozvonit-ili-otpravit-sms-na-proizvo.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/21-upravlenie-audio-zvonkom.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/35-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/36-opisanie-elementov-interfeysa-chata-kana.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/47-posmotret-istoriyu-soobscheniy-v-chate.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/62-opisanie-zhurnala-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/android-user-guide/sections/96-uvedomleniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-admin/sections/11-vybor-ishodyaschego-nomera.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-settings/sections/26-nastroyka-otpravki-na-e-mail.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/02-obzor.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/108-zapis-razgovora.md | защищённый | валидатор | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/117-obschie-svedeniya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/125-obschie-svedeniya.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/136-ispolzovat-vneshniy-telefon.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/23-o-chatah-v-mtalker.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/57-kak-pozvonit.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=7 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/58-kak-prinyat-vhodyaschiy-audio-zvonok.md | свободный | — | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/59-zakaz-obratnogo-zvonka.md | защищённый | валидатор | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/60-kak-dobavit-tretego-uchastnika-v-zvonok.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/63-perevod-vyzova-na-drugogo-sotrudnika.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/67-zapis-razgovora-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=8 | own_ref=True pinned=True main=True
+PATH docs/kb/mtalker/windows-mac-working/sections/68-soobschenie-vnimanie-zvonok-byl-otpravle.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/02-kak-podklyuchit-modul-kontrol-kachestva.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/05-nastroyka-blankov-ocenki.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/06-sozdanie-blanka-ocenki.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/08-nastroyka-shkaly-ocenok-i-vesa-kriteriev.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/09-nastroyka-apellyacii.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/13-ocenka-zvonkov.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/14-ocenka-chatov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/15-randomayzer.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/17-nastroyka-pravil-postzvonkovoy-ocenki.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/18-nastroyka-uvedomleniy-o-postzvonkovyh-oc.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/20-prosmotr-i-skachivanie-zapisey.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/23-ocenka-kachestva-v-chatah.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/26-dinamika-ocenok.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/27-svodnaya-statistika.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/29-apellyacii.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/30-kak-sotrudniku-podat-apellyaciyu.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/32-rechevaya-analitika.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/38-nastroyki-raspoznavaniya-zapisey.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/quality-management/sections/42-ii-tegirovanie.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/rolevaya-model-vats/sections/01-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/rolevaya-model-vats/sections/03-upravlenie-rolyami.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/rolevaya-model-vats/sections/11-nastroyka-prav-dostupa-roli.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/rolevaya-model-vats/sections/12-gibkaya-nastroyka-prav-dostupa-s-uchetom.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/rolevaya-model-vats/sections/15-vybor-podkontrolnyh-grupp.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/sip-trunk/sections/01-terminy-i-opredeleniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/sip-trunk/sections/02-chto-takoe-sip-trunk.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/sip-trunk/sections/08-nastroyka.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/sip-trunk/sections/13-rezervirovanie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/offline-scoring/sections/34-zagruzit-vruchnuyu.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/offline-scoring/sections/36-vse-razgovory.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/user-guide/sections/01-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/user-guide/sections/12-ii-pomoschniki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/user-guide/sections/30-predustanovlennye-tematiki.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/user-guide/sections/39-moi-otchety.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/user-guide/sections/53-statistika.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/02-obschie-svedeniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/04-podklyuchenie-v-demo-rezhime.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/05-podklyuchenie-uslugi-v-platnom-rezhime.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/08-nastroyki-raspoznavaniya-zapisey.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/11-ii-konspekty.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/12-ii-tegirovanie.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/14-chto-eto-takoe-i-zachem-nuzhno.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/16-nastroyka-ii-pomoschnika.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/25-polya-formy-modulya-poiska-v-zapisyah-ra.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/26-proslushivanie-zapisey.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/27-tegirovanie-razgovorov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/30-klyuchevye-slova.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/35-predustanovlennye-tematiki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/36-zayavki-na-uluchshenie-kachestva-raspozn.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/38-ii-tematiki.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/39-oflayn-skoring.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/40-oflaynovye-zapisi.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/46-nastroyki-api.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/47-zagruzit-vruchnuyu.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/51-otchety.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/56-blok-tablicy-razgovory-detalizaciya.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/57-detalizaciya-razgovorov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/60-blok-vizualizaciy.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/63-analiz-po-chek-listam.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/64-konstruktor-chek-listov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/65-statistika.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/67-lovec-insaytov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/68-blok-parametrov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/70-pokazateli-otchetov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/71-roli-i-prava-dostupa.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/speech-analytics/vats-offline-scoring/sections/72-integraciya-rechevoy-analitiki-so-storon.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/01-opredeleniya-i-sokrascheniya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/03-naznachenie.md | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/04-trebovaniya-sovmestimosti-i-spisok-podde.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/102-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/106-dobavlenie-nomera-v-ch-b-spisok-vats.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/14-api-vats.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/158-upravlenie-zadachey-na-avtoperezvon.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/159-sozdanie-zadachi-na-avtoperezvon.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/169-smena-statusa-sessii-polzovatelya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/170-smena-statusa-polzovatelya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/174-izmenenie-statusa-polzovatelya.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/186-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/191-opisanie-zaprosa-na-sozdanie-kampanii-io.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/192-obnovlenie-kampanii.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/193-dobavlenie-neskolkih-zadaniy-v-kampaniyu.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/196-ostanovka-kampanii.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/199-poluchenie-informacii-o-zadache-kampanii.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/20-o-parametre-sign.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/210-poluchenie-dannyh-kontakt-centra-dlya-zv.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/214-rabota-s-obrascheniyami-v-kontakt-centre.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/26-obschee.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/27-uvedomlenie-o-vyzove.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/28-uvedomlenie-o-rezultate-otpravki-sms.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/29-uvedomlenie-o-zapisi-razgovora.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/32-uvedomlenie-o-zavershenii-vyzova.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/36-iniciirovanie-vyzova-ot-imeni-sotrudnika.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/39-otpravka-sms.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/40-vklyuchenie-zapisi-razgovora.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/41-vklyuchenie-vosproizvedeniya-zvukovogo-f.md | защищённый | валидатор | SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/42-marshrutizaciya-vyzova.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/55-api-statistika.md | защищённый | валидатор | SHA (иной срез),SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/58-poluchenie-statistiki-vyzovov.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/63-api-zapisi-razgovorov-rechevaya-analitik.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/64-poluchenie-zapisi-razgovora-posredstvom.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/65-poluchenie-zapisi-razgovora-posredstvom.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/66-pryamaya-ssylka-na-zapis-razgovora-s-avt.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/68-poluchenie-spiska-rasshifrovok-raspoznan.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/70-zapros-zapisey-s-rasshifrovkami-zvonkov.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/76-api-konfiguraciya.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/77-zapros-spiska-sotrudnikov-vats.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/79-dobavit-gruppu.md | защищённый | валидатор | SHA (иной срез) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/84-poluchenie-spiska-melodiy-i-zvukovyh-soo.md | защищённый | валидатор | SHA (реестр) | sources=2 | own_ref=True pinned=True main=True
+PATH docs/kb/vpbx-api/sections/88-sozdat-sotrudnika.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/wallboard/sections/01-nachalo-raboty.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH docs/kb/wallboard/sections/13-pokazateli-proizvoditelnosti-gruppy-zvon.md | защищённый | валидатор | SHA (реестр) | sources=1 | own_ref=True pinned=True main=True
+PATH evaluation/g-human-checklist.md | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр) | sources=4 | own_ref=True pinned=True main=True
+PATH evaluation/validate-package.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH golden/cases-analytics-reporting.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH golden/cases-voice-ucaas.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (реестр) | sources=3 | own_ref=True pinned=True main=True
+PATH golden/cases.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),клон | sources=12 | own_ref=True pinned=True main=True
+PATH golden/gs-cc-01-queue-overflow.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH golden/gs-cc-neg-03-sla-vs-aht.md | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH routes/rg-bcreq-v1.yaml | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH skills/ | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH taxonomy/domain-glossary-analytics-reporting.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (реестр) | sources=6 | own_ref=True pinned=True main=True
+PATH taxonomy/domain-glossary-voice-ucaas.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр) | sources=10 | own_ref=True pinned=True main=True
+PATH taxonomy/domain-glossary.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (реестр) | sources=6 | own_ref=True pinned=True main=True
+PATH taxonomy/mango-products.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),клон | sources=19 | own_ref=True pinned=True main=True
+PATH taxonomy/processes.yaml | защищённый | валидатор | SHA (иной срез) | sources=3 | own_ref=True pinned=True main=True
+PATH taxonomy/products.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр),main,клон | sources=65 | own_ref=True pinned=True main=True
+PATH taxonomy/projections.yaml | защищённый | валидатор | SHA (иной срез) | sources=1 | own_ref=True pinned=True main=True
+PATH taxonomy/source-tiers.yaml | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр) | sources=26 | own_ref=True pinned=True main=True
+PATH templates/bcreq-skeleton.md | защищённый (двойной) | валидатор/модель/сайт | SHA (иной срез),SHA (реестр) | sources=8 | own_ref=True pinned=True main=True

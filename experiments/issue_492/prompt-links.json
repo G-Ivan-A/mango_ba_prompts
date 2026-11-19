@@ -1,0 +1,6807 @@
+{
+ "summary": {
+  "issue": 492,
+  "repository_commit": "9dff6bfa8c6491d7f43fbf53183da8587a162a7c",
+  "registry_sha": "68ad8fcffd47439fc3051852d9a2fbbe23815855",
+  "runtime_main": "90f082330015634f3a0632cdd31ebfe1c15fd7ae",
+  "prompt_files": 90,
+  "prompt_files_with_links": 79,
+  "occurrences": 543,
+  "relative_links": 0,
+  "targets": 54,
+  "normative_targets": 25,
+  "by_class": {
+   "а": 225,
+   "б": 318
+  },
+  "by_rule": {
+   "А-0": 2,
+   "А-1": 43,
+   "А-2": 3,
+   "А-3": 7,
+   "А-4": 132,
+   "А-5": 1,
+   "А-6": 37,
+   "Б-1": 85,
+   "Б-2": 24,
+   "Б-3": 6,
+   "Б-4": 43,
+   "Б-5": 104,
+   "Б-6": 15,
+   "Б-7": 41
+  },
+  "by_group": {
+   "AIN v0.3": {
+    "а": 24,
+    "б": 120
+   },
+   "v0.1 (14 промптов)": {
+    "б": 80,
+    "а": 23
+   },
+   "архив 2.7.0": {
+    "а": 19,
+    "б": 26
+   },
+   "архив до BCREQ": {
+    "а": 31
+   },
+   "системный формат": {
+    "а": 21,
+    "б": 18
+   },
+   "служебные промпты": {
+    "а": 9
+   },
+   "черновики Ш-ХХ": {
+    "а": 98,
+    "б": 74
+   }
+  },
+  "replacement_candidates": [
+   "standards/bcreq-runtime-references.md"
+  ],
+  "missing_in_runtime": [
+   "docs/ba-processes/bcreq-a-in-execution.md",
+   "docs/ba-processes/bcreq-step-handoff.md",
+   "docs/ba-processes/cs-flow-stub.md",
+   "docs/contracts/bcreq-stage-gates.md",
+   "docs/rfc/2026-11-a-in-decomposition.md",
+   "prompts/bcreq-constitution-governance-oneshot.md",
+   "prompts/bcreq-context-understanding-stepwise.md",
+   "prompts/bcreq-orr-solution-design-stepwise.md",
+   "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "prompts/bcreq-uc-modeling-stepwise.md",
+   "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "standards/bcreq-composition-standard.md",
+   "standards/bcreq-industry-practice.md",
+   "standards/bcreq-prompt-architecture.md",
+   "standards/bcreq-sections/01-glossary.md",
+   "standards/bcreq-sections/02-business-context.md",
+   "standards/bcreq-sections/03-functional-requirements.md",
+   "standards/bcreq-sections/04-non-functional-requirements.md",
+   "standards/bcreq-sections/05-solution-description.md",
+   "standards/bcreq-sections/06-implementation-constraints.md",
+   "standards/bcreq-sections/07-use-cases.md",
+   "standards/bcreq-sections/08-supplementary.md",
+   "standards/bcreq-sections/README.md",
+   "standards/product-classification-contract.md"
+  ],
+  "cards": [
+   "BL-185",
+   "BL-186",
+   "BL-187",
+   "BL-188",
+   "BL-189",
+   "BL-190"
+  ],
+  "problems": []
+ },
+ "rules": [
+  {
+   "id": "А-0",
+   "class": "а",
+   "condition": "ссылка во frontmatter",
+   "rationale": "Метаданные файла (related_issue и т. п.): модель их не исполняет."
+  },
+  {
+   "id": "А-1",
+   "class": "а",
+   "condition": "ссылка в HTML-комментарии",
+   "rationale": "Служебная пометка (Experimental, маркер сборки): не инструкция модели."
+  },
+  {
+   "id": "А-2",
+   "class": "а",
+   "condition": "цель — issue или PR",
+   "rationale": "Трассировка решения владельца; правило уже записано в тексте промпта."
+  },
+  {
+   "id": "А-3",
+   "class": "а",
+   "condition": "служебный промпт вне потока BCREQ",
+   "rationale": "Промпт обслуживания сессий спицы: результат сохраняется в pr-ops спицы, обязательная структура вывода перечислена в самом тексте."
+  },
+  {
+   "id": "А-4",
+   "class": "а",
+   "condition": "абзац происхождения встроенного текста",
+   "rationale": "Указывает, из чего собран или чем заменён текст; правила перенесены дословно, модели не нужно открывать источник."
+  },
+  {
+   "id": "А-5",
+   "class": "а",
+   "condition": "цель — RFC, ADR, pr-ops, runs, архив, issue-шаблоны, анализ",
+   "rationale": "Документ управления и истории решений; норма для исполнения в нём не вынесена (RFC #427, раздел 8.1: правила исполнения в справочник не выносятся)."
+  },
+  {
+   "id": "Б-1",
+   "class": "б",
+   "condition": "цель — конституция Ш-0",
+   "rationale": "Шаги требуют «Прочитай полную конституцию из Ш-0»: Р1…Р7, АД, АП, КС, БС и гейты действуют на каждом шаге."
+  },
+  {
+   "id": "Б-2",
+   "class": "б",
+   "condition": "цель — RFC-AIN-001",
+   "rationale": "Общий контракт A-IN: «приоритет у принятого RFC-AIN-001 и этого контракта»."
+  },
+  {
+   "id": "А-6",
+   "class": "а",
+   "condition": "цель — другой промпт набора без якоря",
+   "rationale": "Навигация: модель называет следующий промпт, текст промпта вводит БА."
+  },
+  {
+   "id": "Б-3",
+   "class": "б",
+   "condition": "цель — правило другого промпта по якорю",
+   "rationale": "Шаг ссылается на конкретное правило другого шага как на действующую норму."
+  },
+  {
+   "id": "Б-4",
+   "class": "б",
+   "condition": "цель — реестр справочников runtime",
+   "rationale": "БС-18 «промпт ДОЛЖЕН ссылаться» на И-7; AIN «Runtime: версии и источники»."
+  },
+  {
+   "id": "Б-5",
+   "class": "б",
+   "condition": "цель — стандарт в standards/",
+   "rationale": "Мета-стандарт или стандарт, по которому модель строит вывод шага."
+  },
+  {
+   "id": "Б-6",
+   "class": "б",
+   "condition": "цель — контракт в docs/contracts/",
+   "rationale": "Контракт гейтов и возвратов, по которому шаг принимает решение."
+  },
+  {
+   "id": "Б-7",
+   "class": "б",
+   "condition": "цель — процесс в docs/ba-processes/",
+   "rationale": "Процессный SSOT (итог шага, исполнение A-IN, поток CS), читаемый шагом."
+  }
+ ],
+ "cards": {
+  "BL-185": "Конституция Ш-0 и промпты набора этапа 1 в runtime",
+  "BL-186": "Маршрут A-IN, контракты AIN и итог шага в runtime",
+  "BL-187": "Стандарты исполнения шагов в runtime",
+  "BL-188": "Контракт гейтов и поток CS в runtime",
+  "BL-189": "Примеры разделов И-4 (РТ-2, заглушка З-2)",
+  "BL-190": "Замена ссылок (б) в текстах промптов на runtime"
+ },
+ "registry_handbooks": {
+  "И-1": [
+   "docs/kb/MAP.json",
+   "docs/kb/USAGE.md"
+  ],
+  "И-2": [
+   "taxonomy/mango-products.yaml",
+   "taxonomy/products.yaml"
+  ],
+  "И-3": [
+   "templates/bcreq-skeleton.md"
+  ],
+  "И-4": [],
+  "И-5": [
+   "golden/cases-analytics-reporting.yaml",
+   "golden/cases-voice-ucaas.yaml",
+   "golden/cases.yaml"
+  ],
+  "И-6": [
+   "taxonomy/domain-glossary-analytics-reporting.yaml",
+   "taxonomy/domain-glossary-voice-ucaas.yaml",
+   "taxonomy/domain-glossary.yaml"
+  ],
+  "И-7": [
+   "taxonomy/source-tiers.yaml"
+  ],
+  "И-8": [
+   "evaluation/g-human-checklist.md"
+  ],
+  "И-9": [],
+  "И-10": []
+ },
+ "stubs": [
+  {
+   "id": "З-2",
+   "handbook": "И-4 Примеры разделов",
+   "steps": "Ш-3, Ш-4, Ш-5, Ш-8, Ш-С",
+   "label": "И-4 примеры разделов ФТ, НФТ, UC, US, ОРР",
+   "runtime_task": "РТ-2",
+   "card": "BL-189"
+  }
+ ],
+ "targets": [
+  {
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "occurrences": 80,
+   "classes": {
+    "б": 80
+   },
+   "rules": {
+    "Б-1": 80
+   },
+   "groups": {
+    "архив 2.7.0": 7,
+    "v0.1 (14 промптов)": 27,
+    "AIN v0.3": 24,
+    "черновики Ш-ХХ": 22
+   },
+   "prompts": 54,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-runtime-references.md",
+   "occurrences": 62,
+   "classes": {
+    "а": 19,
+    "б": 43
+   },
+   "rules": {
+    "А-4": 19,
+    "Б-4": 43
+   },
+   "groups": {
+    "архив 2.7.0": 6,
+    "AIN v0.3": 24,
+    "черновики Ш-ХХ": 26,
+    "системный формат": 6
+   },
+   "prompts": 43,
+   "normative": true,
+   "runtime": [
+    "docs/kb/MAP.json",
+    "docs/kb/USAGE.md",
+    "evaluation/g-human-checklist.md",
+    "golden/cases-analytics-reporting.yaml",
+    "golden/cases-voice-ucaas.yaml",
+    "golden/cases.yaml",
+    "taxonomy/domain-glossary-analytics-reporting.yaml",
+    "taxonomy/domain-glossary-voice-ucaas.yaml",
+    "taxonomy/domain-glossary.yaml",
+    "taxonomy/mango-products.yaml",
+    "taxonomy/products.yaml",
+    "taxonomy/source-tiers.yaml",
+    "templates/bcreq-skeleton.md"
+   ],
+   "decision": "кандидат на замену ссылки: справочники реестра есть в runtime на SHA реестра",
+   "card": "BL-190",
+   "note": "Нормативная функция реестра для модели — указать справочники И-1…И-8 на закреплённом SHA; сами справочники есть в runtime (БС-18 → И-7 `taxonomy/source-tiers.yaml`). Замена: прямые закреплённые ссылки на справочники runtime; реестр остаётся governance-индексом спицы и входит в манифест ФТ-3."
+  },
+  {
+   "target": "issues/*",
+   "occurrences": 48,
+   "classes": {
+    "а": 48
+   },
+   "rules": {
+    "А-0": 2,
+    "А-1": 43,
+    "А-2": 3
+   },
+   "groups": {
+    "служебные промпты": 2,
+    "архив 2.7.0": 3,
+    "AIN v0.3": 24,
+    "черновики Ш-ХХ": 13,
+    "системный формат": 6
+   },
+   "prompts": 45,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/README.md",
+   "occurrences": 32,
+   "classes": {
+    "б": 32
+   },
+   "rules": {
+    "Б-5": 32
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 4,
+    "AIN v0.3": 24,
+    "черновики Ш-ХХ": 4
+   },
+   "prompts": 28,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": "В runtime есть шаблон документа `templates/bcreq-skeleton.md` (И-3), но не мета-стандарты разделов."
+  },
+  {
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "occurrences": 24,
+   "classes": {
+    "б": 24
+   },
+   "rules": {
+    "Б-7": 24
+   },
+   "groups": {
+    "AIN v0.3": 24
+   },
+   "prompts": 24,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-186",
+   "note": ""
+  },
+  {
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "occurrences": 24,
+   "classes": {
+    "б": 24
+   },
+   "rules": {
+    "Б-2": 24
+   },
+   "groups": {
+    "AIN v0.3": 24
+   },
+   "prompts": 24,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-186",
+   "note": ""
+  },
+  {
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "occurrences": 20,
+   "classes": {
+    "а": 20
+   },
+   "rules": {
+    "А-4": 19,
+    "А-5": 1
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "черновики Ш-ХХ": 14,
+    "системный формат": 3
+   },
+   "prompts": 19,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "occurrences": 19,
+   "classes": {
+    "а": 19
+   },
+   "rules": {
+    "А-4": 19
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "черновики Ш-ХХ": 13,
+    "системный формат": 3
+   },
+   "prompts": 19,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "occurrences": 19,
+   "classes": {
+    "а": 19
+   },
+   "rules": {
+    "А-4": 19
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "черновики Ш-ХХ": 13,
+    "системный формат": 3
+   },
+   "prompts": 19,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-prompt-profiles.md",
+   "occurrences": 19,
+   "classes": {
+    "а": 19
+   },
+   "rules": {
+    "А-4": 19
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "черновики Ш-ХХ": 13,
+    "системный формат": 3
+   },
+   "prompts": 19,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "occurrences": 15,
+   "classes": {
+    "б": 15
+   },
+   "rules": {
+    "Б-6": 15
+   },
+   "groups": {
+    "архив 2.7.0": 2,
+    "v0.1 (14 промптов)": 6,
+    "черновики Ш-ХХ": 6,
+    "системный формат": 1
+   },
+   "prompts": 13,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-188",
+   "note": "В runtime есть только чек-лист G-human `evaluation/g-human-checklist.md` (И-8); гейты Г-IN/Г-W и возвраты — нет."
+  },
+  {
+   "target": "standards/bcreq-composition-standard.md",
+   "occurrences": 13,
+   "classes": {
+    "б": 13
+   },
+   "rules": {
+    "Б-5": 13
+   },
+   "groups": {
+    "архив 2.7.0": 2,
+    "v0.1 (14 промптов)": 6,
+    "черновики Ш-ХХ": 4,
+    "системный формат": 1
+   },
+   "prompts": 11,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "occurrences": 11,
+   "classes": {
+    "б": 11
+   },
+   "rules": {
+    "Б-7": 11
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 6,
+    "черновики Ш-ХХ": 5
+   },
+   "prompts": 10,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-186",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-industry-practice.md",
+   "occurrences": 10,
+   "classes": {
+    "б": 10
+   },
+   "rules": {
+    "Б-5": 10
+   },
+   "groups": {
+    "архив 2.7.0": 2,
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 4,
+    "системный формат": 2
+   },
+   "prompts": 7,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "occurrences": 10,
+   "classes": {
+    "б": 10
+   },
+   "rules": {
+    "Б-5": 10
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "v0.1 (14 промптов)": 3,
+    "черновики Ш-ХХ": 2,
+    "системный формат": 2
+   },
+   "prompts": 10,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "occurrences": 10,
+   "classes": {
+    "б": 10
+   },
+   "rules": {
+    "Б-5": 10
+   },
+   "groups": {
+    "архив 2.7.0": 3,
+    "v0.1 (14 промптов)": 3,
+    "черновики Ш-ХХ": 2,
+    "системный формат": 2
+   },
+   "prompts": 10,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "occurrences": 7,
+   "classes": {
+    "б": 2,
+    "а": 5
+   },
+   "rules": {
+    "Б-3": 2,
+    "А-4": 4,
+    "А-6": 1
+   },
+   "groups": {
+    "архив 2.7.0": 1,
+    "архив до BCREQ": 4,
+    "v0.1 (14 промптов)": 2
+   },
+   "prompts": 7,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "occurrences": 7,
+   "classes": {
+    "а": 6,
+    "б": 1
+   },
+   "rules": {
+    "А-4": 2,
+    "А-6": 4,
+    "Б-3": 1
+   },
+   "groups": {
+    "архив до BCREQ": 2,
+    "v0.1 (14 промптов)": 3,
+    "черновики Ш-ХХ": 2
+   },
+   "prompts": 5,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "occurrences": 7,
+   "classes": {
+    "а": 7
+   },
+   "rules": {
+    "А-4": 5,
+    "А-6": 2
+   },
+   "groups": {
+    "архив до BCREQ": 5,
+    "v0.1 (14 промптов)": 2
+   },
+   "prompts": 7,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "occurrences": 6,
+   "classes": {
+    "б": 6
+   },
+   "rules": {
+    "Б-7": 6
+   },
+   "groups": {
+    "архив 2.7.0": 1,
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 2,
+    "системный формат": 1
+   },
+   "prompts": 6,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-188",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "occurrences": 6,
+   "classes": {
+    "а": 5,
+    "б": 1
+   },
+   "rules": {
+    "А-4": 3,
+    "А-6": 2,
+    "Б-3": 1
+   },
+   "groups": {
+    "архив до BCREQ": 3,
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 6,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "occurrences": 6,
+   "classes": {
+    "а": 6
+   },
+   "rules": {
+    "А-4": 3,
+    "А-6": 3
+   },
+   "groups": {
+    "архив до BCREQ": 3,
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 6,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "occurrences": 6,
+   "classes": {
+    "а": 6
+   },
+   "rules": {
+    "А-4": 4,
+    "А-6": 2
+   },
+   "groups": {
+    "архив до BCREQ": 4,
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 6,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "occurrences": 6,
+   "classes": {
+    "б": 6
+   },
+   "rules": {
+    "Б-5": 6
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 4,
+    "черновики Ш-ХХ": 2
+   },
+   "prompts": 6,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "occurrences": 5,
+   "classes": {
+    "а": 5
+   },
+   "rules": {
+    "А-6": 3,
+    "А-4": 2
+   },
+   "groups": {
+    "архив 2.7.0": 1,
+    "архив до BCREQ": 2,
+    "v0.1 (14 промптов)": 2
+   },
+   "prompts": 5,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "occurrences": 5,
+   "classes": {
+    "а": 5
+   },
+   "rules": {
+    "А-4": 4,
+    "А-6": 1
+   },
+   "groups": {
+    "архив до BCREQ": 4,
+    "v0.1 (14 промптов)": 1
+   },
+   "prompts": 5,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "occurrences": 5,
+   "classes": {
+    "б": 5
+   },
+   "rules": {
+    "Б-1": 5
+   },
+   "groups": {
+    "системный формат": 5
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "occurrences": 4,
+   "classes": {
+    "а": 4
+   },
+   "rules": {
+    "А-4": 2,
+    "А-6": 2
+   },
+   "groups": {
+    "архив до BCREQ": 2,
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 4,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-fr-documentation-stepwise.md",
+   "occurrences": 4,
+   "classes": {
+    "а": 4
+   },
+   "rules": {
+    "А-4": 2,
+    "А-6": 2
+   },
+   "groups": {
+    "архив до BCREQ": 2,
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 4,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "occurrences": 4,
+   "classes": {
+    "а": 4
+   },
+   "rules": {
+    "А-6": 4
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 3,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-prompt-architecture.md",
+   "occurrences": 4,
+   "classes": {
+    "б": 4
+   },
+   "rules": {
+    "Б-5": 4
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 2
+   },
+   "prompts": 4,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/product-classification-contract.md",
+   "occurrences": 4,
+   "classes": {
+    "б": 4
+   },
+   "rules": {
+    "Б-5": 4
+   },
+   "groups": {
+    "архив 2.7.0": 1,
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1,
+    "системный формат": 1
+   },
+   "prompts": 4,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": "В runtime есть значения таксономии `taxonomy/mango-products.yaml` (И-2), но не правила классификации."
+  },
+  {
+   "target": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 2,
+    "а": 1
+   },
+   "rules": {
+    "Б-3": 2,
+    "А-6": 1
+   },
+   "groups": {
+    "архив 2.7.0": 1,
+    "v0.1 (14 промптов)": 2
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-185",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/03-functional-requirements.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 3
+   },
+   "rules": {
+    "Б-5": 3
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/04-non-functional-requirements.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 3
+   },
+   "rules": {
+    "Б-5": 3
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/05-solution-description.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 3
+   },
+   "rules": {
+    "Б-5": 3
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/06-implementation-constraints.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 3
+   },
+   "rules": {
+    "Б-5": 3
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "standards/bcreq-sections/08-supplementary.md",
+   "occurrences": 3,
+   "classes": {
+    "б": 3
+   },
+   "rules": {
+    "Б-5": 3
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 2,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 3,
+   "normative": true,
+   "runtime": null,
+   "decision": "нет в runtime: задача в бэклог на перенос закреплённой копией",
+   "card": "BL-187",
+   "note": ""
+  },
+  {
+   "target": "pr-ops/session-digests.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-3": 2
+   },
+   "groups": {
+    "служебные промпты": 2
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-6": 2
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-6": 2
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-6": 2
+   },
+   "groups": {
+    "черновики Ш-ХХ": 2
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "runs/2026/RUN-0075/outputs/error-statistics.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-4": 2
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "runs/2026/RUN-0075/outputs/runtime-improvements.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-4": 2
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "runs/2026/RUN-0075/outputs/success-criteria.md",
+   "occurrences": 2,
+   "classes": {
+    "а": 2
+   },
+   "rules": {
+    "А-4": 2
+   },
+   "groups": {
+    "v0.1 (14 промптов)": 1,
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 2,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "(корень)",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-3": 1
+   },
+   "groups": {
+    "служебные промпты": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "docs/adr/001-prompt-standard.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-3": 1
+   },
+   "groups": {
+    "служебные промпты": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "docs/ba-ecosystem.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-3": 1
+   },
+   "groups": {
+    "служебные промпты": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "docs/taxonomy.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-3": 1
+   },
+   "groups": {
+    "служебные промпты": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/README.executable.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-3": 1
+   },
+   "groups": {
+    "служебные промпты": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-6": 1
+   },
+   "groups": {
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-6": 1
+   },
+   "groups": {
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-6": 1
+   },
+   "groups": {
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  },
+  {
+   "target": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "occurrences": 1,
+   "classes": {
+    "а": 1
+   },
+   "rules": {
+    "А-6": 1
+   },
+   "groups": {
+    "черновики Ш-ХХ": 1
+   },
+   "prompts": 1,
+   "normative": false,
+   "runtime": null,
+   "decision": "governance: остаётся ссылкой спицы, не переносится",
+   "card": null,
+   "note": ""
+  }
+ ],
+ "occurrences": [
+  {
+   "prompt": "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+   "group": "служебные промпты",
+   "line": 10,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-0",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/README.executable.md",
+   "group": "служебные промпты",
+   "line": 10,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-0",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 27,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 111,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 143,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 148,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 251,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 352,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 353,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 354,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 355,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 356,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 407,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 21,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 29,
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 86,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 87,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 88,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 89,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 104,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "проверка-релевантности-as-is",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 106,
+   "target": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "anchor": "проверка-принадлежности-доказательства",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md",
+   "group": "архив 2.7.0",
+   "line": 172,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 15,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 23,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "1-выбор-стандартов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 29,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 83,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 129,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 130,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 131,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 132,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 133,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 184,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 27,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 46,
+   "target": "standards/product-classification-contract.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 47,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 89,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 92,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "механизм-сверки",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 169,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 270,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 271,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 272,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 273,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 274,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 306,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md",
+   "group": "архив 2.7.0",
+   "line": 332,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/archive/constraints-documentation-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/constraints-documentation-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/constraints-documentation-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/constraints-documentation-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-documentation-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-fr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-documentation-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-documentation-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-fr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-documentation-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-validation-legacy.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-validation-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/fr-validation-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/glossary-context-understanding-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/glossary-context-understanding-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/glossary-context-understanding-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/glossary-context-understanding-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/questions-customer-understanding-legacy.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/questions-customer-understanding-legacy.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/questions-customer-understanding-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/questions-customer-understanding-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-legacy.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-legacy.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/technical-details-solution-design-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/uc-modeling-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/uc-modeling-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/uc-modeling-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/uc-modeling-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/us-modeling-oneshot.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/archive/us-modeling-stepwise.md",
+   "group": "архив до BCREQ",
+   "line": 10,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 99,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 100,
+   "target": "standards/bcreq-prompt-architecture.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 101,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 102,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 120,
+   "target": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 132,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 157,
+   "target": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 180,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "1-восемь-разделов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 200,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "2-стили",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 227,
+   "target": "runs/2026/RUN-0075/outputs/error-statistics.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 229,
+   "target": "runs/2026/RUN-0075/outputs/success-criteria.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 231,
+   "target": "runs/2026/RUN-0075/outputs/runtime-improvements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 286,
+   "target": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 287,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 288,
+   "target": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 289,
+   "target": "prompts/bcreq-fr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 290,
+   "target": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 291,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 292,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 293,
+   "target": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 294,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 295,
+   "target": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 296,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 297,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 304,
+   "target": "prompts/bcreq-in-understanding-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 306,
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 308,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 323,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "3-возвраты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 327,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constitution-governance-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 386,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 18,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 67,
+   "target": "standards/bcreq-sections/06-implementation-constraints.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 121,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 94,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 178,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 210,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 215,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-context-understanding-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 318,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 97,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 109,
+   "target": "prompts/bcreq-work-solution-design-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 150,
+   "target": "standards/bcreq-sections/03-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 151,
+   "target": "standards/bcreq-sections/04-non-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 152,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 153,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-core-documentation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 219,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 18,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 65,
+   "target": "standards/bcreq-sections/08-supplementary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 121,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-fr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-fr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 94,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-fr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 167,
+   "target": "standards/bcreq-sections/03-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-fr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 175,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "2-babok-guide-v3-что-берём-по-пунктам",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-fr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 249,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 97,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 105,
+   "target": "prompts/bcreq-core-documentation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 162,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 163,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 164,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 165,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 180,
+   "target": "prompts/bcreq-context-understanding-stepwise.md",
+   "anchor": "проверка-релевантности-as-is",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 182,
+   "target": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "anchor": "проверка-принадлежности-доказательства",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-in-understanding-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 248,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 18,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 65,
+   "target": "standards/bcreq-sections/04-non-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 120,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 20,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 97,
+   "target": "standards/bcreq-sections/05-solution-description.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 98,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "2-правила-композиции",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 107,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "3-раздел-5-выбор-между-c4-и-tm-forum-oda",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 196,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 23,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 94,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 113,
+   "target": "standards/product-classification-contract.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 114,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 156,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 159,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "механизм-сверки",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 236,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-review-validation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 21,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-review-validation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 65,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-review-validation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 66,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-review-validation-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 137,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 21,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 63,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 65,
+   "target": "standards/bcreq-prompt-architecture.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 115,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-uc-modeling-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 21,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-uc-modeling-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 83,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-uc-modeling-stepwise.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 156,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 21,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 34,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 82,
+   "target": "standards/bcreq-sections/05-solution-description.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 83,
+   "target": "standards/bcreq-sections/06-implementation-constraints.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 84,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 85,
+   "target": "standards/bcreq-sections/08-supplementary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 86,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "2-правила-композиции",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 87,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 106,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "проверка-последовательности-и-контракта",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 108,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "проверка-покрытия-условий-контракта",
+   "ref": "main",
+   "rule": "Б-3",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/bcreq-work-solution-design-oneshot.md",
+   "group": "v0.1 (14 промптов)",
+   "line": 167,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 13,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 25,
+   "target": "docs/ba-processes/bcreq-step-handoff.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 51,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 52,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 53,
+   "target": "docs/rfc/2026-11-a-in-decomposition.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-2",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md",
+   "group": "AIN v0.3",
+   "line": 54,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 34,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 110,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 111,
+   "target": "standards/bcreq-prompt-architecture.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 112,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 113,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 131,
+   "target": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 143,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 169,
+   "target": "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 170,
+   "target": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 192,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "1-восемь-разделов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 212,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "2-стили",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 239,
+   "target": "runs/2026/RUN-0075/outputs/error-statistics.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 241,
+   "target": "runs/2026/RUN-0075/outputs/success-criteria.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 243,
+   "target": "runs/2026/RUN-0075/outputs/runtime-improvements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 298,
+   "target": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 299,
+   "target": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 300,
+   "target": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 301,
+   "target": "prompts/bcreq-fr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 302,
+   "target": "prompts/bcreq-nfr-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 303,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 304,
+   "target": "prompts/bcreq-orr-solution-design-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 305,
+   "target": "prompts/bcreq-constraints-documentation-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 306,
+   "target": "prompts/bcreq-uc-modeling-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 307,
+   "target": "prompts/bcreq-extra-risk-analysis-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 308,
+   "target": "prompts/bcreq-review-validation-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 309,
+   "target": "prompts/bcreq-scenarios-modeling-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 317,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 334,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "3-возвраты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 338,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 397,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 498,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 499,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 500,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 501,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 502,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 555,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 27,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 76,
+   "target": "standards/bcreq-sections/06-implementation-constraints.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 130,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 231,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 232,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 233,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 234,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 235,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-constraints-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 286,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 32,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 103,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 187,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 219,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 224,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 327,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 428,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 429,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 430,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 431,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 432,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-context-understanding-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 483,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 27,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 74,
+   "target": "standards/bcreq-sections/08-supplementary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 130,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 231,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 232,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 233,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 234,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 235,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 286,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 32,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 103,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 176,
+   "target": "standards/bcreq-sections/03-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 184,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "2-babok-guide-v3-что-берём-по-пунктам",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 258,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 359,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 360,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 361,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 362,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 363,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-fr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 414,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 15,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 24,
+   "target": "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-6",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 100,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "1-выбор-стандартов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 106,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 160,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 206,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 207,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 208,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 209,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 210,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-intake-questionnaire-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 261,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 27,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 74,
+   "target": "standards/bcreq-sections/04-non-functional-requirements.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 129,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 230,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 231,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 232,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 233,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 234,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-nfr-documentation-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 285,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 29,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 106,
+   "target": "standards/bcreq-sections/05-solution-description.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 107,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "2-правила-композиции",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 116,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "3-раздел-5-выбор-между-c4-и-tm-forum-oda",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 205,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 306,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 307,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 308,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 309,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 310,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-orr-solution-design-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 361,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 32,
+   "target": "docs/ba-processes/bcreq-a-in-execution.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 103,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 122,
+   "target": "standards/product-classification-contract.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 123,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 165,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 168,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "механизм-сверки",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 245,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 346,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 347,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 348,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 349,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 350,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 382,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-products-impact-analysis-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 408,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 15,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 22,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "92-состав",
+   "ref": "main",
+   "rule": "А-5",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 126,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 127,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 128,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 129,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 130,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 162,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-release-readiness-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 188,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 30,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 74,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "2-гейты",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 75,
+   "target": "standards/bcreq-sections/README.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 146,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 248,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 249,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 250,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 251,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 252,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-review-validation-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 307,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 30,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 72,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 74,
+   "target": "standards/bcreq-prompt-architecture.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 124,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 225,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 226,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 227,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 228,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 229,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-scenarios-modeling-oneshot.md",
+   "group": "черновики Ш-ХХ",
+   "line": 280,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 17,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 30,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 92,
+   "target": "standards/bcreq-sections/07-use-cases.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 165,
+   "target": "prompts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 266,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 267,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 268,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 269,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 270,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 304,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/bcreq-uc-modeling-stepwise.md",
+   "group": "черновики Ш-ХХ",
+   "line": 330,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 16,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 27,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-2",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 113,
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 197,
+   "target": "docs/ba-processes/cs-flow-stub.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-7",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 229,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 234,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 337,
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 438,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 439,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 440,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 441,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 442,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-context-understanding-system.md",
+   "group": "системный формат",
+   "line": 493,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 16,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 27,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-2",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 111,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "1-выбор-стандартов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 117,
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 171,
+   "target": "standards/bcreq-industry-practice.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 217,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 218,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 219,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 220,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 221,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-intake-questionnaire-system.md",
+   "group": "системный формат",
+   "line": 272,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 16,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-1",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 27,
+   "target": "issues/*",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-2",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 113,
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 132,
+   "target": "standards/product-classification-contract.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 133,
+   "target": "standards/bcreq-composition-standard.md",
+   "anchor": "4-профили-продуктов",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 175,
+   "target": "standards/bcreq-sections/02-business-context.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 178,
+   "target": "standards/bcreq-sections/01-glossary.md",
+   "anchor": "механизм-сверки",
+   "ref": "main",
+   "rule": "Б-5",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 255,
+   "target": "prompts/drafts/bcreq-constitution-governance-oneshot.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-1",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 356,
+   "target": "docs/rfc/2026-11-bcreq-flow-processes-prompts.md",
+   "anchor": "93-как-промпт-собирается-из-стандартов",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 357,
+   "target": "standards/bcreq-prompt-base-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 358,
+   "target": "standards/bcreq-prompt-profiles.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 359,
+   "target": "standards/bcreq-manual-classes/catalog.json",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 360,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-4",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 392,
+   "target": "docs/contracts/bcreq-stage-gates.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "Б-6",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/drafts/system/bcreq-products-impact-analysis-system.md",
+   "group": "системный формат",
+   "line": 418,
+   "target": "standards/bcreq-runtime-references.md",
+   "anchor": "2-перечень",
+   "ref": "main",
+   "rule": "Б-4",
+   "class": "б"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 58,
+   "target": "pr-ops/session-digests.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 103,
+   "target": "docs/adr/001-prompt-standard.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 105,
+   "target": "prompts/README.executable.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 107,
+   "target": "pr-ops/session-digests.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 109,
+   "target": "docs/taxonomy.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 111,
+   "target": "docs/ba-ecosystem.md",
+   "anchor": "",
+   "ref": "main",
+   "rule": "А-3",
+   "class": "а"
+  },
+  {
+   "prompt": "prompts/session-debug-documentation-oneshot.md",
+   "group": "служебные промпты",
+   "line": 112,
+   "target": "(корень)",
+   "anchor": "",
+   "ref": "",
+   "rule": "А-3",
+   "class": "а"
+  }
+ ]
+}
