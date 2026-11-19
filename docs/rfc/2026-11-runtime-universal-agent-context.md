@@ -5,7 +5,7 @@ updated: 2026-11-19
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25"
-related_issues: "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/493, https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
+related_issues: "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/493, https://github.com/G-Ivan-A/mango_ba_prompts/issues/417"
 rfc-scope: multi
 type: rfc
 related_artifacts: "docs/contracts/ssot-stage1-handoff-manifest.md, docs/contracts/ssot-stage1-handoff-manifest.json, experiments/issue_492/runtime-deps.md, docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/rfc/2026-11-runtime-product-catalog-golden-set.md, pr-ops/backlog-ba-model.md, pr-ops/BACKLOG.md, scripts/validate_issue_rt25_agent_context.py"
@@ -53,7 +53,7 @@ PR #493 слит, `7611c041`). Это анализ и RFC `proposed`. Runtime н
    потому, что их потребители читают закреплённый SHA. Это проверяется
    валидаторами спицы на SHA реестра.
 
-**Рекомендация: принять RFC и слить PR runtime #26 и PR спицы.** Производство
+**Рекомендация: принять RFC и слить PR runtime #26 и PR спицы #494.** Производство
 контекста и приём SSOT начинаются после решений Р-RT, отдельными задачами.
 
 ## 1. Постановка и границы
@@ -423,7 +423,7 @@ BL-132 закрепит версию OpenCode и проверит P01–P08. Э�
 
 | Этап | После решения | Что делается | Где | Оценка (гипотеза) | Откат |
 | --- | --- | --- | --- | --- | --- |
-| Э0 | — | принять RFC, слить PR runtime #26 и PR спицы | обе | 0 | revert PR |
+| Э0 | — | принять RFC, слить PR runtime #26 и PR спицы #494 | обе | 0 | revert PR |
 | Э1 | Р-RT-3, Р-RT-4 | генератор зеркала `.agents/skills/` в `tests/`, сторож sha256 зеркала, поправка smoke | runtime | 0,5 | revert; зеркало генерируемое, удаляется без потерь |
 | Э2 | Р-RT-2 | `AGENTS.md`: `ACCESS_GAP`, навигация, ссылка на навыки — компиляция `ba-ai-metamodel`; README — задача runtime | `ba-ai-metamodel`, runtime | 0,5–1 | revert; потребители читают закреплённый SHA |
 | Э3 | Р-RT-6, Р-RT-7 | классификация 334 ссылок, приём BL-185…BL-188 одной передачей, журнал передач и карта ссылок, сторож sha256 | runtime | 2–3 | revert коммита передачи; спица не меняется |
@@ -525,7 +525,7 @@ BL-132 закрепит версию OpenCode и проверит P01–P08. Э�
 
 ## Related Artifacts
 
-- [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26)
+- [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26), [PR спицы #494](https://github.com/G-Ivan-A/mango_ba_prompts/pull/494)
 - [Скрипт аудита](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/490188ef90e3f3a6fd600f6988cc3c1f5d6d84b4/tests/agent_context_audit.py), [лог](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/490188ef90e3f3a6fd600f6988cc3c1f5d6d84b4/tests/agent_context_audit.log), [сторожа](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/490188ef90e3f3a6fd600f6988cc3c1f5d6d84b4/tests/test_agent_context_audit.py)
 - [Манифест передачи SSOT](../contracts/ssot-stage1-handoff-manifest.md), [аудит #492](../audit/2026-11-18-runtime-dependencies-ssot-handoff.md), [защищённые пути](../../experiments/issue_492/runtime-deps.md)
 - [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md), [ADR-016](../adr/2026-10-adr-016-ide-client-process.md)

@@ -2591,7 +2591,7 @@ US, ОРР. Задача РТ-2 в разделе 6 реестра есть, з�
 ### BL-191. RFC универсального агентного контекста runtime
 
 **Статус.** `review`: [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
-[PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) и PR спицы
+[PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) и [PR #494](https://github.com/G-Ivan-A/mango_ba_prompts/pull/494)
 с [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md). Анализ и
 RFC `proposed`: структура runtime, тексты промптов и навыков, SHA реестра не
 менялись. Проверки: `validate_issue_rt25_agent_context.py`, `make validate-full`;
@@ -2619,7 +2619,7 @@ runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 —
 
 **Решение владельца.** Р-RT-1…Р-RT-9 (RFC-RT-002, раздел 9).
 
-**Готово, когда.** PR runtime #26 и PR спицы приняты; решения Р-RT приняты
+**Готово, когда.** PR runtime #26 и PR #494 приняты; решения Р-RT приняты
 или отклонены владельцем.
 
 ### BL-192. Производство универсального агентного контекста runtime
