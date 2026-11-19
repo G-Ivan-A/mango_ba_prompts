@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.47
-updated: 2026-11-18
+version: 0.48
+updated: 2026-11-19
 temperature: 0.1
 ---
 
@@ -12,6 +12,19 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — runtime issue #25: RFC-RT-002, универсальный агентный контекст runtime
+
+- [`docs/rfc/2026-11-runtime-universal-agent-context.md`](docs/rfc/2026-11-runtime-universal-agent-context.md)
+  v0.1 `proposed`: аудит As-Is runtime по скрипту `tests/agent_context_audit.py` (PR runtime #26) —
+  Г1 подтверждена и исполнена в `a4b1377`, Г2 частично (плоский `skills/` не находит ни один клиент,
+  11 из 11 навыков пригодны для зеркала `<имя>/SKILL.md`), Г3 подтверждена; матрица клиентов по
+  первоисточникам; целевая раскладка; приём 133 артефактов манифеста #492 одной передачей с картой
+  334 ссылок вне передачи; вывод legacy; миграция с откатом; решения Р-RT-1…Р-RT-9.
+- Реестр RFC 0.28: строка RFC-RT-002 и запись журнала. Бэклог: BL-184 `DONE`, BL-191 `review`,
+  BL-192 `deferred (triggered)`, движение по цепочке runtime #25.
+- `scripts/validate_issue_rt25_agent_context.py`: frontmatter и разделы RFC, Р-RT без пропусков,
+  реестр, карточки и статусы бэклога, коммиты задачи не трогают `prompts/`.
 
 ### Added — Issue #492: аудит зависимостей от runtime и манифест передачи SSOT этапа 1
 

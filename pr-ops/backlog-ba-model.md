@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.7
-updated: 2026-11-18
+version: 2.8
+updated: 2026-11-19
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -2386,7 +2386,9 @@ stepwise/oneshot в начале. БА не видит цель шага, что
 
 ### BL-184. Аудит зависимостей от runtime и манифест передачи SSOT этапа 1
 
-**Статус.** `review`: [#492](https://github.com/G-Ivan-A/mango_ba_prompts/issues/492),
+**Статус.** `DONE`: PR #493 слит (`7611c041`); RFC-задача runtime —
+[runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), её вход —
+манифест (BL-191). Ранее — `review`: [#492](https://github.com/G-Ivan-A/mango_ba_prompts/issues/492),
 [PR #493](https://github.com/G-Ivan-A/mango_ba_prompts/pull/493). Статический
 аудит без модельных прогонов; runtime и тексты промптов не менялись.
 Проверки: `validate_issue_492_ssot_handoff.py`, `make validate-full`.
@@ -2585,3 +2587,66 @@ US, ОРР. Задача РТ-2 в разделе 6 реестра есть, з�
 **Готово, когда.** `classify_prompt_links.py` на новом коммите не находит
 ссылок (б) на спицу; golden set на правленых промптах не хуже базовой
 линии.
+
+### BL-191. RFC универсального агентного контекста runtime
+
+**Статус.** `review`: [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
+[PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) и [PR #494](https://github.com/G-Ivan-A/mango_ba_prompts/pull/494)
+с [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md). Анализ и
+RFC `proposed`: структура runtime, тексты промптов и навыков, SHA реестра не
+менялись. Проверки: `validate_issue_rt25_agent_context.py`, `make validate-full`;
+в runtime — `tests/runtime-smoke.sh` и unittest.
+
+**Почему.** Этап 2 читает контекст из runtime клиентом OpenCode. Отдельные
+пакеты под клиентов дробят контекст, а часть runtime — защищённые контракты
+этапа 1 (BL-184). Нужна одна структура контекста и безопасный план миграции.
+
+**Что меняется.** Аудит As-Is скриптом `tests/agent_context_audit.py` в
+runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 — частично (плоский
+`skills/` не находит ни один клиент; 11 из 11 навыков пригодны для зеркала
+`<имя>/SKILL.md`), Г3 подтверждена. Матрица клиентов по первоисточникам,
+целевая раскладка, план приёма 133 артефактов манифеста одной передачей с
+картой 334 ссылок вне передачи, вывод legacy, миграция Э0…Э6 с откатом,
+решения Р-RT-1…Р-RT-9.
+
+**Источники.**
+- [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
+  раздел «2. Решаемая проблема»: “Поддержка отдельных пакетов под каждый IDE-клиент фрагментирует контекст”
+- [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
+  раздел «4. НФТ и граничные кейсы»: “Эта задача производит **анализ и RFC (proposed)**, не рефакторинг”
+
+**Зависит от.** BL-184.
+
+**Решение владельца.** Р-RT-1…Р-RT-9 (RFC-RT-002, раздел 9).
+
+**Готово, когда.** PR runtime #26 и PR #494 приняты; решения Р-RT приняты
+или отклонены владельцем.
+
+### BL-192. Производство универсального агентного контекста runtime
+
+**Почему.** RFC-RT-002 описывает раскладку, но по разделу 5 runtime #25 не
+производит её: зеркало навыков, поправку smoke и правку `AGENTS.md` делает
+отдельная задача после решений владельца.
+
+**Что меняется.** Этапы Э1, Э2, Э4 RFC-RT-002: генерируемое зеркало
+`.agents/skills/<имя>/SKILL.md` со сверкой sha256 и поправка
+`tests/runtime-smoke.sh` (Р-RT-3, Р-RT-4); `ACCESS_GAP`, навигация БЗ и
+ссылка на навыки в `AGENTS.md` — компиляцией `ba-ai-metamodel`, README —
+задачей runtime (Р-RT-2); smoke инициализации в закреплённой версии
+OpenCode (BL-132). Сценарные навыки — в BL-131 (Р-RT-8); приём SSOT —
+BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не перемещаются.
+
+**Источники.**
+- [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md#8-миграция-валидация-и-откат-фт-6),
+  раздел «8. Миграция, валидация и откат»: “Оценки трудозатрат — **гипотезы**.”
+- [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
+  раздел «7. Постусловие»: “производство универсального контекста и приём SSOT — после решений Р-RT”
+
+**Зависит от.** BL-191; Р-RT-2, Р-RT-3, Р-RT-4.
+
+**Решение владельца.** Р-RT-2…Р-RT-4; issue в runtime и в `ba-ai-metamodel`
+создаёт владелец.
+
+**Готово, когда.** Зеркало проходит сверку sha256 со `skills/`; smoke runtime
+и валидаторы спицы на SHA реестра — 0 провалов; OpenCode закреплённой версии
+загружает `AGENTS.md` и показывает 11 навыков.

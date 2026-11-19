@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.24
-updated: 2026-11-18
+version: 0.25
+updated: 2026-11-19
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -104,6 +104,8 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/docs/contracts/ssot-stage1-handoff-manifest.json` | Контракт | Манифест передачи SSOT этапа 1 в `mango-ba-ai-runtime` (#492): 133 артефакта с версией, sha256, git-блобом и коммитом-источником, 24 контракта AIN, цепочка эволюции, политика синхронизации. Без клиентских данных: только пути, версии, хэши. MD — рендер JSON. | Да для RFC-задачи runtime | `docs/contracts/ssot-stage1-handoff-manifest.md`, `experiments/issue_492/build_ssot_manifest.py`, `scripts/validate_issue_492_ssot_handoff.py` |
 | `/experiments/issue_492/` | Скрипты и evidence | Воспроизводимый аудит зависимостей от runtime (ФТ-1), классификация ссылок промптов (ФТ-2) и сборка манифеста (ФТ-3): скрипты, JSON/MD-выходы и журналы запуска. | Да для повтора аудита | `docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md`, `standards/bcreq-runtime-references.md` |
 | `/scripts/validate_issue_492_ssot_handoff.py` | Валидатор | Проверяет sha256 манифеста на коммите-источнике, отсутствие клиентских данных, 24 контракта, MD-рендер, карточки пробелов в бэклоге и то, что коммиты #492 не меняют `prompts/`. | Да | `docs/contracts/ssot-stage1-handoff-manifest.json`, `experiments/issue_492/prompt-links.json`, `pr-ops/BACKLOG.md` |
+| `/docs/rfc/2026-11-runtime-universal-agent-context.md` | RFC | RFC-RT-002 (runtime #25): аудит агентного контекста runtime и гипотез Г1–Г3, матрица клиентов, целевая раскладка `AGENTS.md` и навыков, план приёма SSOT #492, вывод legacy, миграция с откатом, решения Р-RT-1…Р-RT-9. | Да для решений по контексту этапа 2 | `docs/contracts/ssot-stage1-handoff-manifest.json`, `pr-ops/backlog-ba-model.md`, `scripts/validate_issue_rt25_agent_context.py` |
+| `/scripts/validate_issue_rt25_agent_context.py` | Валидатор | Проверяет frontmatter и разделы RFC-RT-002, нумерацию Р-RT, строку реестра, карточки BL-191 и BL-192, `DONE` у BL-184 и то, что коммиты задачи не меняют `prompts/`. | Да | `docs/rfc/2026-11-runtime-universal-agent-context.md`, `docs/rfc/rfc-registry.md`, `pr-ops/BACKLOG.md` |
 
 ## Smart Sync decisions: Hub PR #229/#230
 
