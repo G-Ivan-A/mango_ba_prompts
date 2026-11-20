@@ -2954,7 +2954,7 @@
   },
   "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": {
    "sha256_before": "0dd3069fbef22d85c271161e4e3e469334626bca321ddc792e949ecd32cfca70",
-   "sha256_after": "abae51f3e19098417043beadb449437c42c08900ca64ebbb9795e87c881a2f40",
+   "sha256_after": "c8ea711beb639e6f310f38176d8b07a30b6e63b26eba62d135d93f2ba4729904",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)\"\nstatus: draft\nversion: 0.4\nupdated: 2026-11-18\n",
@@ -3042,7 +3042,7 @@
     },
     {
      "before": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:\n[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).\n",
-     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна (стандарт гейтов, правило Г3).\n"
+     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна.\n"
     },
     {
      "before": "\n#### Источники, цитаты и справочники runtime\n\n- **БС-18.** Порядок источников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень); промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать\n",
@@ -3076,7 +3076,7 @@
   },
   "prompts/drafts/bcreq-release-readiness-oneshot.md": {
    "sha256_before": "2135c6e3cc5c24b5e5a50407951a0a7e1130cc4e43001969b8fd1fe7c5f40b67",
-   "sha256_after": "eb2c7eb568e86952aafa5df6a9214cd172e61d4b6c77f2456f8c9a67b589210c",
+   "sha256_after": "c6af344dfd6b0dfba2520494b2631a02a3331047fcf8c1df4f96894aef66fa37",
    "hunks": [
     {
      "before": "version: 0.2\nupdated: 2026-11-18\n",
@@ -3112,7 +3112,7 @@
     },
     {
      "before": "У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:\n[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).\n",
-     "after": "У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна (стандарт гейтов, правило Г3).\n"
+     "after": "У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна.\n"
     },
     {
      "before": "\n- **БС-18.** Порядок источников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень); промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать\n",
@@ -3290,7 +3290,7 @@
   },
   "prompts/drafts/bcreq-uc-modeling-stepwise.md": {
    "sha256_before": "cadc34c43ca817e5f9657c3f31f4f4fc1d872dc128a682e2c8d5831bb356830f",
-   "sha256_after": "72c485227faf822a592ed0626cd00681067d8b1e550cf35cb2bed7093931031d",
+   "sha256_after": "0ab22e4a14646ca131f283142ab013ab3d11b7b3a027c6ae3be8ad53430f3aa5",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3346,7 +3346,7 @@
     },
     {
      "before": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:\n[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).\n",
-     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна (стандарт гейтов, правило Г3).\n"
+     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна.\n"
     },
     {
      "before": "\n#### Источники, цитаты и справочники runtime\n\n- **БС-18.** Порядок источников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень); промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать\n",
@@ -3642,7 +3642,7 @@
   },
   "prompts/drafts/system/bcreq-products-impact-analysis-system.md": {
    "sha256_before": "ff13abe00ae7e6b588f701e09120c14d1cffe9686432bd2cf6715d4910ed7416",
-   "sha256_after": "48121e3350a6c68fc79ea5ece0691f817c863887afa6484a99ed613495060c5e",
+   "sha256_after": "9940b3b85b9bfa9312e3a16828d5242f50f4c347394443365fef668f9ae043d4",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (системный формат)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3730,7 +3730,7 @@
     },
     {
      "before": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:\n[`docs/contracts/bcreq-stage-gates.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).\n",
-     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна (стандарт гейтов, правило Г3).\n"
+     "after": "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.\nУ гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа\nгейта, а у гибрида без расхождения, неполна.\n"
     },
     {
      "before": "\n#### Источники, цитаты и справочники runtime\n\n- **БС-18.** Порядок источников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень); промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать\n",

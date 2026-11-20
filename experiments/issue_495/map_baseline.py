@@ -50,11 +50,18 @@ GROUPS = {
              "clean_sources.py; prompts/archive/a-in-v2.7.0/manifest.json"),
     "M-04": ("а", "Служебные файлы рядом с промптами (README, манифесты, каталог): ссылки на спицу → пути от корня",
              "ручная правка + сборщики манифестов"),
-    "G-01": ("а, б, в", "Черновики, A-IN и системный трек (`prompts/drafts/**`): пересборка из чистых ССОТ и сборщиков",
+    "M-05": ("а", "Ссылки на спицу, которые строят сами сборщики (REPO_BLOB, AIN_BLOB, SYSTEM_BLOB, ISSUE): "
+             "проекция на выходе сборщика → подпись ссылки",
+             "prompt_purity.project в build_bcreq_step_prompts, build_bcreq_a_in, build_bcreq_system_track; "
+             "сторож test_builders_check"),
+    "G-01": ("а, б, в", "Черновики, A-IN и системный трек (`prompts/drafts/**`): только копии нарушений ручных "
+             "источников (окно ±15 символов вокруг нарушения есть в ручном исходнике базы); "
+             "пересборка из чистых ССОТ",
              "сборщики bcreq_handoff, build_bcreq_a_in, build_bcreq_step_prompts, build_bcreq_system_track (проекция стандартов)"),
     "G-02": ("а", "Данные сайта: поля url/путь → путь от корня, ссылку строит интерфейс",
              "A-01: scripts/generate-pages-data.mjs (repoUrl), site/app.js (repoHref)"),
-    "G-03": ("а, б, в", "Данные сайта: тела промптов и поля карточек — копия очищенных источников",
+    "G-03": ("а, б, в", "Данные сайта: тела промптов и поля карточек — только копии нарушений ручных источников "
+             "(то же окно ±15 символов)",
              "node scripts/generate-pages-data.mjs"),
 }
 
@@ -98,11 +105,35 @@ def line_ranges(text, old):
         pos = i + 1
 
 
+def squash(text):
+    return re.sub(r"\s+", " ", text)
+
+
+def window(f, pad=15):
+    """Окно ±``pad`` символов вокруг нарушения в его фрагменте (пробелы сжаты)."""
+    snippet = squash(f["snippet"]).strip("…")
+    i = snippet.find(f["match"])
+    if i < 0:
+        return snippet[:60].strip()
+    return snippet[max(0, i - pad):i + len(f["match"]) + pad].strip("…").strip()
+
+
 class Mapper:
-    def __init__(self, base_root):
+    def __init__(self, base_root, kinds=None):
         self.root = Path(base_root)
         self.entries = register_entries()
         self.texts = {}
+        # Ручные исходники базы (всё в контуре, кроме собранных черновиков и данных
+        # сайта): группы G принимают только копии их нарушений. Текст сборщика,
+        # которого нет в ручных исходниках, должен иметь свою запись реестра.
+        hand = [rel for rel, kind in (kinds or {}).items()
+                if kind != "site_data" and not rel.startswith("prompts/drafts/")]
+        raw = "\n".join((self.root / rel).read_text(encoding="utf-8") for rel in sorted(hand))
+        self.hand = squash(raw) + "\n" + squash(prompt_purity.project(raw))
+
+    def is_copy(self, f):
+        w = window(f)
+        return w in self.hand or squash(prompt_purity.project(w + "\n")).strip() in self.hand
 
     def line(self, rel, no):
         if rel not in self.texts:
@@ -150,11 +181,12 @@ class Mapper:
         eid = self.by_register(f, kind)
         if eid:
             return eid
-        rel, rule = f["file"], f["rule"]
-        if kind == "site_data":
-            return "G-02" if f["where"].endswith(".url") or f["where"] in ("issue",) else "G-03"
-        if rel.startswith("prompts/drafts/"):
-            return "G-01"
+        if kind == "site_data" and (f["where"].endswith(".url") or f["where"] in ("issue",)):
+            return "G-02"
+        if kind == "site_data" or rel.startswith("prompts/drafts/"):
+            if self.is_copy(f):
+                return "G-03" if kind == "site_data" else "G-01"
+            return "M-05" if rule.startswith("A-") else None
         if kind == "archive_texts":
             return "M-03" if rule.startswith("A-") else ("M-02" if rule == "BP-01" else None)
         if kind == "repo_docs_in_prompts":
@@ -171,7 +203,7 @@ def build(base_root):
     policy = audit.load_policy()
     auditor = audit.Auditor(base_root, policy)
     findings = auditor.run()
-    mapper = Mapper(base_root)
+    mapper = Mapper(base_root, auditor.files)
     groups, unmapped = defaultdict(list), []
     for f in findings:
         g = mapper.classify(f, auditor.files[f["file"]])
@@ -187,7 +219,7 @@ def describe(gid):
         if eid == gid:
             return cls, f"{', '.join(files)}: «{old.splitlines()[0][:90]}»", where
     if gid == "D-11":
-        return "в", "Баннер архива «(issue #388)» в 25 файлах архива", "> **Архив.** Промпт заменён"
+        return "в", "Баннер архива «(issue #388)» в 18 из 24 файлов архива (`prompts/archive/*.md`)", "> **Архив.** Промпт заменён; номер решения — prompts/README.md (строки 50, 107, 169)"
     if gid == "D-12":
         return "а", "Ссылки на issue во frontmatter служебных файлов", "номер issue вместо URL"
     return "?", gid, ""
