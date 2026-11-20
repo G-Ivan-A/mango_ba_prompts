@@ -507,9 +507,11 @@ class Records(unittest.TestCase):
         # Id заглушек и задач не меняются: на них ссылаются карточки и валидатор #430.
         # З-1 снята BL-163 (issue #442): строка — в таблице снятых, id не переиспользуется.
         # З-3, З-4 сняты BL-156а (issue #444).
-        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-1", "З-3", "З-4"])
+        # З-5 и РТ-8, РТ-9 добавил issue #495 (профили продуктов и регрессионные кейсы).
+        self.assertEqual(re.findall(r"^\| (З-\d) \|", body, re.M), ["З-2", "З-5", "З-1", "З-3", "З-4"])
         self.assertEqual(
-            re.findall(r"^\| (РТ-\d) \|", body, re.M), ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6", "РТ-7"]
+            re.findall(r"^\| (РТ-\d) \|", body, re.M),
+            ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6", "РТ-7", "РТ-8", "РТ-9"],
         )
         row = re.search(r"^\| РТ-6 \|.*$", body, re.M).group(0)
         anchor = [t for t in LINK_RE.findall(row) if RFC.name in t][0].split("#", 1)[1]

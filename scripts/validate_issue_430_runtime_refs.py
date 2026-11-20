@@ -147,8 +147,12 @@ class Registry(unittest.TestCase):
     def test_inventory_matches_rfc(self):
         rfc_ids = table_ids(section(text(RFC), "### 8.2. Перечень"), "И")
         ids = table_ids(section(self.body, "## 2. Перечень"), "И")
-        self.assertEqual(ids, [f"И-{n}" for n in range(1, 11)])
-        self.assertEqual(ids, rfc_ids)
+        # Issue #495 добавил И-11 (профили продуктов) и И-12 (регрессионные кейсы
+        # чистоты промптов) после RFC: RFC — исторический документ, его перечень
+        # остаётся префиксом реестра (РТ-8, РТ-9; SHA закрепляет BL-242).
+        self.assertEqual(ids, [f"И-{n}" for n in range(1, 13)])
+        self.assertEqual(ids[: len(rfc_ids)], rfc_ids)
+        self.assertEqual(rfc_ids, [f"И-{n}" for n in range(1, 11)])
 
     def test_requirements_match_rfc(self):
         rfc_ids = table_ids(section(text(RFC), "### 8.3. Требования к справочникам"), "ТС")
@@ -171,14 +175,16 @@ class Registry(unittest.TestCase):
         self.assertEqual(code_block(stubs), rfc_block)
         self.assertTrue(rfc_block.startswith(STUB_HEAD))
         active, _, retired = stubs.partition("Снятые заглушки.")
-        self.assertEqual(table_ids(active, "З"), ["З-2"])
+        # З-5 (И-11, РТ-8) — заглушка issue #495 до слияния РТ-8 и BL-242.
+        self.assertEqual(table_ids(active, "З"), ["З-2", "З-5"])
         # Снятая заглушка остаётся строкой: id не переиспользуется (BL-163).
         self.assertEqual(table_ids(retired, "З"), ["З-1", "З-3", "З-4"])
         self.assertRegex(retired, r"(?m)^\| З-1 \| И-2 .*BL-163")
         self.assertRegex(retired, r"(?m)^\| З-3 \| И-5 .*BL-156а.*РТ-3 слита")
         self.assertRegex(retired, r"(?m)^\| З-4 \| И-6 .*BL-156а.*РТ-4 слита")
         tasks = table_ids(section(self.body, "## 6. Задачи для репозитория runtime"), "РТ")
-        self.assertEqual(tasks, ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6", "РТ-7"])
+        # РТ-8, РТ-9 — задачи issue #495 (BL-241).
+        self.assertEqual(tasks, ["РТ-1", "РТ-2", "РТ-3", "РТ-4", "РТ-6", "РТ-7", "РТ-8", "РТ-9"])
         for row in re.findall(r"^\| З-\d .*$", active, re.M):
             with self.subTest(row=row[:12]):
                 self.assertRegex(row, r"\| РТ-\d \|$")
