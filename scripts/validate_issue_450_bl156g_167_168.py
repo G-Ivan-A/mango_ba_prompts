@@ -10,12 +10,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / "runs/2026"
 REPS = ("r1", "r2", "r3")
+# Issue #488 перезакрепил ссылку на эталон классификации и поднял минорную
+# версию каждого опубликованного промпта; остальной текст — тот же.
 PUBLISHED = {
-    "prompts/bcreq-review-validation-oneshot.md": "0.3",
-    "prompts/bcreq-constitution-governance-oneshot.md": "0.5",
-    "prompts/bcreq-context-understanding-stepwise.md": "0.5",
-    "prompts/bcreq-fr-documentation-stepwise.md": "0.5",
-    "prompts/bcreq-orr-solution-design-stepwise.md": "0.3",
+    "prompts/bcreq-review-validation-oneshot.md": "0.4",
+    "prompts/bcreq-constitution-governance-oneshot.md": "0.6",
+    "prompts/bcreq-context-understanding-stepwise.md": "0.6",
+    "prompts/bcreq-fr-documentation-stepwise.md": "0.6",
+    "prompts/bcreq-orr-solution-design-stepwise.md": "0.4",
 }
 
 def read(path):
@@ -46,10 +48,14 @@ class Published(unittest.TestCase):
 
     def test_arm_b_equals_published_body(self):
         # Issue #464 правит тексты поверх измеренных: плечо сравнивается с текстом без слоя #464.
-        # Ш-В слой не трогает: сравнение с RUN-0085 идёт побайтово, как раньше.
+        # Ш-В слой #464 не трогает: сравнение с RUN-0085 идёт побайтово без слоя
+        # #488 (перезакреплённая ссылка, experiments/issue_488/prompt_changes.py).
         spec = importlib.util.spec_from_file_location("i464_for_450", ROOT / "experiments/issue_464/prompt_changes.py")
         i464 = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(i464)
+        spec = importlib.util.spec_from_file_location("i488_for_450", ROOT / "experiments/issue_488/prompt_changes.py")
+        i488 = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(i488)
         measured = lambda p: i464.revert(p, read(p))  # noqa: E731
         strip = lambda t: re.sub(r"\A---\n.*?\n---\n", "", t, count=1, flags=re.S)  # noqa: E731
         for label, path in (("S1", "prompts/bcreq-context-understanding-stepwise.md"),
@@ -58,7 +64,8 @@ class Published(unittest.TestCase):
             arm = (RUNS / f"RUN-0086/inputs/prompt-{label}-B.md").read_text(encoding="utf-8")
             self.assertEqual(strip(measured(path)), strip(arm), path)
         arm = (RUNS / "RUN-0085/inputs/prompt-A3.md").read_text(encoding="utf-8")
-        self.assertEqual(strip(read("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
+        shv = "prompts/bcreq-review-validation-oneshot.md"
+        self.assertEqual(strip(i488.revert(shv, read(shv))), strip(arm))
         arm = (RUNS / "RUN-0087/inputs/prompt-B.md").read_text(encoding="utf-8")
         self.assertEqual(strip(measured("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))
 
