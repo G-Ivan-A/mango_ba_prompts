@@ -1,0 +1,73 @@
+Профильные проверки и мутации (38 тестов)
+test_archive_card_line_goes_to_archive (validate_issue_495_prompt_purity.BaselineMapTest.test_archive_card_line_goes_to_archive) ... ok
+test_archive_only_window_is_not_copy (validate_issue_495_prompt_purity.BaselineMapTest.test_archive_only_window_is_not_copy) ... ok
+test_auditor_marks_archive_card_findings (validate_issue_495_prompt_purity.BaselineMapTest.test_auditor_marks_archive_card_findings) ... ok
+test_builder_only_marker_is_not_copy (validate_issue_495_prompt_purity.BaselineMapTest.test_builder_only_marker_is_not_copy) ... ok
+test_carriers_split_shared_fragments (validate_issue_495_prompt_purity.BaselineMapTest.test_carriers_split_shared_fragments) ... ok
+test_copy_of_hand_comment_is_copy (validate_issue_495_prompt_purity.BaselineMapTest.test_copy_of_hand_comment_is_copy) ... ok
+test_empty_window_is_not_copy (validate_issue_495_prompt_purity.BaselineMapTest.test_empty_window_is_not_copy) ... ok
+test_link_copy_needs_whole_link (validate_issue_495_prompt_purity.BaselineMapTest.test_link_copy_needs_whole_link) ... ok
+test_short_piece_matches_whole_line_only (validate_issue_495_prompt_purity.BaselineMapTest.test_short_piece_matches_whole_line_only) ... ok
+test_ballast_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_ballast_in_prompt) ... ok
+test_bare_private_name_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_bare_private_name_in_prompt) ... ok
+test_baseline_clean (validate_issue_495_prompt_purity.MutationTest.test_baseline_clean) ... ok
+test_case_token_and_comment_in_site_prompt_body (validate_issue_495_prompt_purity.MutationTest.test_case_token_and_comment_in_site_prompt_body) ... ok
+test_case_tokens_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_case_tokens_in_prompt) ... ok
+test_pinned_runtime_link_is_allowed (validate_issue_495_prompt_purity.MutationTest.test_pinned_runtime_link_is_allowed) ... ok
+test_private_url_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_private_url_in_prompt) ... ok
+test_private_url_in_site_data (validate_issue_495_prompt_purity.MutationTest.test_private_url_in_site_data) ... ok
+test_profile_mapping_vs_minimal_set (validate_issue_495_prompt_purity.MutationTest.test_profile_mapping_vs_minimal_set) ... ok
+test_relative_link_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_relative_link_in_prompt) ... ok
+test_spoke_path_in_prompt (validate_issue_495_prompt_purity.MutationTest.test_spoke_path_in_prompt) ... ok
+test_spoke_path_in_site_prompt_body (validate_issue_495_prompt_purity.MutationTest.test_spoke_path_in_site_prompt_body) ... ok
+test_spoke_path_outside_live_body_is_not_checked (validate_issue_495_prompt_purity.MutationTest.test_spoke_path_outside_live_body_is_not_checked) ... ok
+test_unpinned_runtime_link (validate_issue_495_prompt_purity.MutationTest.test_unpinned_runtime_link) ... ok
+test_exempt_ids_keep_their_home (validate_issue_495_prompt_purity.OverCleaningTest.test_exempt_ids_keep_their_home) ... ok
+test_mutations_fail (validate_issue_495_prompt_purity.OverCleaningTest.test_mutations_fail) ... ok
+test_no_protected_marker_lost (validate_issue_495_prompt_purity.OverCleaningTest.test_no_protected_marker_lost) ... ok
+test_backlog_chain (validate_issue_495_prompt_purity.RegistryAndBacklogTest.test_backlog_chain) ... ok
+test_case_register_traces_to_runtime (validate_issue_495_prompt_purity.RegistryAndBacklogTest.test_case_register_traces_to_runtime) ... ok
+test_runtime_registry_rows (validate_issue_495_prompt_purity.RegistryAndBacklogTest.test_runtime_registry_rows) ... ok
+test_no_private_url_in_site_data_anywhere (validate_issue_495_prompt_purity.RepoAuditTest.test_no_private_url_in_site_data_anywhere) ... ok
+test_projection_is_idempotent_on_prompts (validate_issue_495_prompt_purity.RepoAuditTest.test_projection_is_idempotent_on_prompts) ... ok
+test_repo_has_zero_findings (validate_issue_495_prompt_purity.RepoAuditTest.test_repo_has_zero_findings) ... ok
+test_builders_check (validate_issue_495_prompt_purity.SsotTest.test_builders_check) ... ok
+test_hand_edited_draft_fails_check (validate_issue_495_prompt_purity.SsotTest.test_hand_edited_draft_fails_check) ... ok
+test_prompt_edits_registry_current (validate_issue_495_prompt_purity.SsotTest.test_prompt_edits_registry_current) ... ok
+test_rollback_preserves_unrelated_edits_and_rejects_corrupt_hunks (validate_issue_495_prompt_purity.SsotTest.test_rollback_preserves_unrelated_edits_and_rejects_corrupt_hunks) ... ok
+test_site_version_consistent_and_allowed (validate_issue_495_prompt_purity.VersionTest.test_site_version_consistent_and_allowed) ... ok
+test_version_mutations_fail (validate_issue_495_prompt_purity.VersionTest.test_version_mutations_fail) ... ok
+
+----------------------------------------------------------------------
+Ran 38 tests in 65.363s
+
+OK
+
+Отключение ветвей проверки карты
+без носителей: падений 1
+без правила полной ссылки: падений 1
+без коротких фрагментов (SHORT=100): падений 3
+без маршрута карточек архива: падений 1
+baseline: 0
+
+Побайтовая сверка и генераторы
+24 контракта, маршрут и набор сайта побайтно совпадают с fdaab708 после интеграции main.
+OK: site/data/step-handoff.json совпадает с SSOT
+A-IN: 24 draft prompts and site data verified
+OK: 13 черновиков и манифест совпадают с выходом сборщика
+OK: системный формат — 3 промпта совпадают с архивом 2.7.0 и SSOT
+OK: prompt-edits.json актуален
+OK: сводка актуальна
+
+Проверки бэклога после восстановления формата карточки BL-243
+test_track_split (__main__.Tasks.test_track_split) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 2.949s
+
+OK
+
+Проверка сборки сайта в браузере
+Playwright Chromium, #processes?ain=AIN-06, 24 контракта, ACCESS_GAP, байты тела совпадают с a-in-kit.json.
+2.9.1: Новизна коннектора, приватная ссылка есть, SHA d8dec02cec33749c7fbe8edd429d61e5922cc1290fde2b16864274dfff8ad941
+2.9.2: Новизна решения, приватной ссылки нет, SHA 2f76d677b92f30f6befeb788174f4fdff2641a4046febae3df6dc24cbdce0587

@@ -65,6 +65,7 @@ source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/418"
 | `ТС-N` | Требование к справочнику runtime (BL-154) | [Реестр справочников, раздел 3](../standards/bcreq-runtime-references.md#3-требования-к-справочникам) |
 | `З-N` | Заглушка недостающего справочника runtime (BL-155) | [Реестр справочников, раздел 4](../standards/bcreq-runtime-references.md#4-заглушки) |
 | `РТ-N` | Задача на справочник для репозитория runtime (BL-155) | [Реестр справочников, раздел 6](../standards/bcreq-runtime-references.md#6-задачи-для-репозитория-runtime) |
+| `CR-NN` | Кейс, вынесенный из промпта с трассировкой в runtime | [Стандарт чистоты, раздел 3](../standards/bcreq-prompt-purity.md#3-политика-размещения) |
 | `К-NN` | Класс операции ручного процесса BCREQ (39 стандартов классов) | [Каталог классов](../standards/bcreq-manual-classes/README.md) |
 | `Ш-N` | Шаг потока BCREQ этапа 1 (Ш-0…Ш-10, Ш-В, Ш-Р, Ш-С) | [Комплект прогона](../docs/ba-processes/bcreq-run-kit.md#1-порядок-шагов) |
 | `ХАБ-N` | Задача для Хаба по RFC-RT-001 (норма привязки к каталогу продуктов) | [RFC-RT-001, раздел 6](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#6-хаб-1--тело-задачи-для-hybrid-intelligence-lab-норма-привязки) |
