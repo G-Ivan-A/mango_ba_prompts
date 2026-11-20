@@ -10,7 +10,7 @@
   аудитор обязан его найти (URL приватного репозитория в промпте и в данных
   сайта, голое имя репозитория, относительная ссылка, ссылка на runtime не по
   закреплённому SHA, голый путь спицы A-SPOKE-PATH (и его исключения: frontmatter,
-  архив, пути runtime), кейс-токены CT-01…CT-09, балласт BP-01…BP-12);
+  архив, пути runtime), кейс-токены CT-01…CT-09, балласт BP-01…BP-13);
 * ЧП-4: сборщики ССОТ в режиме ``--check`` и реестр обратимых правок
   ``experiments/issue_495/prompt-edits.json`` актуальны — ручная правка
   сгенерированного файла ловится (мутация: правка черновика роняет ``--check``);
@@ -18,7 +18,9 @@
   генераторе, данных и разметке; мутации 2.10.0 и 2.8.9 падают;
 * реестр runtime: ссылки на runtime — только по SHA из ``runtime_sha``;
   справочники И-11/И-12 и задачи РТ-8/РТ-9 заведены, заглушка З-5 активна;
-* бэклог: цепочка BL-240 → BL-241 → BL-242 → BL-232 в ``pr-ops/BACKLOG.md``.
+* бэклог: цепочка BL-240 → BL-241 → BL-242 → BL-232 в ``pr-ops/BACKLOG.md``;
+* карта базы: группы G принимают только копии нарушений ручных исходников —
+  маркер одного сборщика, пустое окно и окно из архива копией не считаются.
 """
 import contextlib
 import importlib.util
@@ -188,7 +190,8 @@ class MutationTest(unittest.TestCase):
                            ("Правка из PR #12.", "BP-05"), ("Редакция по тесту.", "BP-06"),
                            ("Блок собран сборщиком.", "BP-07"), ("Experimental: правило шага.", "BP-08"),
                            ("Правило действует до ADR.", "BP-09"), ("Не внесены правила шага.", "BP-10"),
-                           ("История изменений правила — ниже.", "BP-11"), ("Урок из Golden Set (ревизия 3).", "BP-12")]:
+                           ("История изменений правила — ниже.", "BP-11"), ("Урок из Golden Set (ревизия 3).", "BP-12"),
+                           ("Приоритет у принятого RFC-AIN-001.", "BP-13"), ("Решение — ADR-RT-002.", "BP-13")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
@@ -341,6 +344,49 @@ class SsotTest(unittest.TestCase):
 
     def test_prompt_edits_registry_current(self):
         self.check(sys.executable, "experiments/issue_495/build_prompt_edits.py", "--check")
+
+
+class BaselineMapTest(unittest.TestCase):
+    """Группы G карты базы принимают только копии нарушений ручных исходников.
+
+    Мутации (роль Б, раунд 2): маркер, который пишет только сборщик, пустое окно
+    и окно, найденное лишь в архиве, копией не считаются — иначе удаление без
+    записи реестра ушло бы в группу G молча.
+    """
+
+    def setUp(self):
+        self.mb = load_module("experiments/issue_495/map_baseline.py", "map_baseline_495")
+        self.dir = tempfile.TemporaryDirectory(prefix="i495-map-")
+        root = Path(self.dir.name)
+        files = {
+            "prompts/hand.md": "Текст шага. <!-- hand-marker: kept --> Правило шага.\n",
+            "prompts/archive/old.md": "Архив. <!-- archive-only: zz --> Старый текст.\n",
+            "prompts/drafts/step.md": "сборка\n",
+        }
+        for rel, text in files.items():
+            (root / rel).parent.mkdir(parents=True, exist_ok=True)
+            (root / rel).write_text(text, encoding="utf-8")
+        kinds = {"prompts/hand.md": "prompts", "prompts/archive/old.md": "archive_texts",
+                 "prompts/drafts/step.md": "prompts"}
+        self.mapper = self.mb.Mapper(root, kinds)
+
+    def tearDown(self):
+        self.dir.cleanup()
+
+    def copy(self, snippet, match):
+        return self.mapper.is_copy({"snippet": snippet, "match": match})
+
+    def test_copy_of_hand_comment_is_copy(self):
+        self.assertTrue(self.copy("Текст шага. <!-- hand-marker: kept --> Правило", "<!-- hand-marker: kept -->"))
+
+    def test_builder_only_marker_is_not_copy(self):
+        self.assertFalse(self.copy("<!-- totally-new-marker: zz -->", "<!-- totally-new-marker: zz -->"))
+
+    def test_empty_window_is_not_copy(self):
+        self.assertFalse(self.copy("", ""))
+
+    def test_archive_only_window_is_not_copy(self):
+        self.assertFalse(self.copy("Архив. <!-- archive-only: zz --> Старый", "<!-- archive-only: zz -->"))
 
 
 class RegistryAndBacklogTest(unittest.TestCase):

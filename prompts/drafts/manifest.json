@@ -189,7 +189,7 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "bd5066fbc8266458d6338939e104265577a411c6e9e61c67ac12ad1f7094344a",
+      "based_on_sha256": "33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -294,7 +294,7 @@
         "Ш-6"
       ],
       "based_on": "prompts/bcreq-orr-solution-design-stepwise.md",
-      "based_on_sha256": "be31f1deb386c2133cb7979ea82d9249e74129f9d5d36e8c58f5f3b766dc0b72",
+      "based_on_sha256": "c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"

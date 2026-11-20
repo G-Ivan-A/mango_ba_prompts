@@ -1,7 +1,7 @@
-Файлов в контуре: 151; нарушений: 4623
+Файлов в контуре: 151; нарушений: 4723
   (a) приватные/незакреплённые ссылки: 2457
   (b) кейс-специфика: 296
-  (c) неисполнимый балласт: 1870
+  (c) неисполнимый балласт: 1970
 По правилам:
   a A-PRIVATE: 1674
   a A-RELATIVE: 702
@@ -24,6 +24,7 @@
   c BP-10: 66
   c BP-11: 6
   c BP-12: 10
+  c BP-13: 100
 По файлам (a/b/c):
   docs/ba-processes/bcreq-a-in-common.md: 5/2/0
   docs/ba-processes/bcreq-a-in-instructions.json: 0/5/0
@@ -73,30 +74,30 @@
   prompts/bcreq-scenarios-modeling-oneshot.md: 4/0/2
   prompts/bcreq-uc-modeling-stepwise.md: 3/0/2
   prompts/bcreq-work-solution-design-oneshot.md: 11/0/2
-  prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md: 6/8/10
-  prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md: 6/4/10
-  prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md: 6/2/10
-  prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md: 6/2/10
+  prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md: 6/8/12
+  prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md: 6/4/12
+  prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md: 6/2/12
   prompts/drafts/bcreq-constitution-governance-oneshot.md: 41/5/49
   prompts/drafts/bcreq-constraints-documentation-stepwise.md: 12/0/33
   prompts/drafts/bcreq-context-understanding-stepwise.md: 15/2/35
@@ -105,7 +106,7 @@
   prompts/drafts/bcreq-intake-questionnaire-stepwise.md: 12/4/35
   prompts/drafts/bcreq-nfr-documentation-stepwise.md: 12/0/34
   prompts/drafts/bcreq-orr-solution-design-stepwise.md: 14/0/33
-  prompts/drafts/bcreq-products-impact-analysis-stepwise.md: 17/11/36
+  prompts/drafts/bcreq-products-impact-analysis-stepwise.md: 17/11/37
   prompts/drafts/bcreq-release-readiness-oneshot.md: 11/0/36
   prompts/drafts/bcreq-review-validation-oneshot.md: 12/0/30
   prompts/drafts/bcreq-scenarios-modeling-oneshot.md: 13/0/31
@@ -113,9 +114,9 @@
   prompts/drafts/manifest.json: 1/0/0
   prompts/drafts/system/bcreq-context-understanding-system.md: 15/2/39
   prompts/drafts/system/bcreq-intake-questionnaire-system.md: 12/4/39
-  prompts/drafts/system/bcreq-products-impact-analysis-system.md: 17/11/40
+  prompts/drafts/system/bcreq-products-impact-analysis-system.md: 17/11/41
   prompts/session-debug-documentation-oneshot.md: 9/0/2
-  site/data/a-in-kit.json: 144/58/240
+  site/data/a-in-kit.json: 144/58/288
   site/data/bcreq-flow.json: 43/0/0
   site/data/checks.json: 2/0/0
   site/data/patterns.json: 16/0/0
@@ -125,7 +126,7 @@
   site/data/roadmap.json: 1/0/0
   site/data/stats.json: 8/0/0
   site/data/step-handoff.json: 1/3/0
-  site/data/test-kit.json: 288/44/611
+  site/data/test-kit.json: 288/44/613
   standards/bcreq-manual-classes/01-intake.md: 6/1/0
   standards/bcreq-manual-classes/02-normalize.md: 6/0/0
   standards/bcreq-manual-classes/03-ambiguity.md: 6/0/0

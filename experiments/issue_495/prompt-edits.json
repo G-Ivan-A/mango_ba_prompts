@@ -832,7 +832,7 @@
   },
   "prompts/bcreq-fr-documentation-stepwise.md": {
    "sha256_before": "04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337",
-   "sha256_after": "bd5066fbc8266458d6338939e104265577a411c6e9e61c67ac12ad1f7094344a",
+   "sha256_after": "33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb",
    "hunks": [
     {
      "before": "processes: [\"Требования и предварительное согласование\"]\n---\n\n<!-- issue-474:entry -->\n",
@@ -860,7 +860,7 @@
     },
     {
      "before": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-babok-guide-v3-что-берём-по-пунктам).\n",
-     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — справочник стандартов.\n"
+     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  порядок внутри блока — категории 7.1, как в шаге группировки выше.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -958,7 +958,7 @@
   },
   "prompts/bcreq-orr-solution-design-stepwise.md": {
    "sha256_before": "d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0",
-   "sha256_after": "be31f1deb386c2133cb7979ea82d9249e74129f9d5d36e8c58f5f3b766dc0b72",
+   "sha256_after": "c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
@@ -970,7 +970,7 @@
     },
     {
      "before": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раздел-5-выбор-между-c4-и-tm-forum-oda).\n",
-     "after": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — справочник стандартов.\n"
+     "after": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Структура раздела выводится из метамодели выбранного стандарта (C4 или\n  TM Forum ODA), а не из номеров ФТ.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -1166,7 +1166,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md": {
    "sha256_before": "d140c5e7bf2e1ef69c2a7208122cc39350ba99cec84eaa6ba493f5fdcdba88ba",
-   "sha256_after": "6247c6c72e075f0e18b183060177737e79395e638faa5fe24669659eea26e76b",
+   "sha256_after": "abcb7d4e41e667b0f5658a626b4a478e84e923aa8a62c1c685961af5a6bce23c",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1183,6 +1183,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1208,7 +1212,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md": {
    "sha256_before": "741b17602bf460624154db66cef294040acde923d72d7e4cb0f7d29c24e1d6dc",
-   "sha256_after": "e371c5e2f2f0f32769ec5182f4ae0258e0122f73fd91de12b2fa235a91785151",
+   "sha256_after": "71885b5e6fec07c3d8e9e32d2ddb9a1b483fcb56c88ed4a98e7b88dd02bdcc2d",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1225,6 +1229,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1250,7 +1258,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md": {
    "sha256_before": "11441407a7590c496c6cd925f471c384d9b8f8bc78a57a25148f4042fae77743",
-   "sha256_after": "456ad9f731b636742a5537e1f3b25b6b859142e4d4e273ea8059ff069e6cedbc",
+   "sha256_after": "adc0d16c6e7d7ff6bb316948ddb68fc85b8a94a510c9e9f61b9e934447e2b573",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1267,6 +1275,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1292,7 +1304,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md": {
    "sha256_before": "5a92175e9de017478af9632b423108fb51517c738ab84044ec5a59e5ad07b656",
-   "sha256_after": "aaef874952d5b552d105f1ee0bb06e49f2669561169bf4bc9998d61f05ef6b5a",
+   "sha256_after": "0a0a8d1a5ca7be73684b4c2d73dabe1501939e2adeabd9ea4f28ec7a4f3465ab",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1309,6 +1321,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1334,7 +1350,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md": {
    "sha256_before": "60cbc7ff7a6c4fe93203df7ea72db8036f2062eb8aef4690ac952387e62d2aa1",
-   "sha256_after": "0e3df8211c5343d255c3bd1ebfe74e6c8a68b2038c4e0514154930ea2e327983",
+   "sha256_after": "aedfb134f9cfab0a1d033a4ef30ddf3eee37dcfcac982cd404c3fd8f172f3c82",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1351,6 +1367,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1376,7 +1396,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md": {
    "sha256_before": "d8dec02cec33749c7fbe8edd429d61e5922cc1290fde2b16864274dfff8ad941",
-   "sha256_after": "ee52889cc6b2dbbc37149df44220341d224940403f8287ce496ebd3c75e56779",
+   "sha256_after": "2f76d677b92f30f6befeb788174f4fdff2641a4046febae3df6dc24cbdce0587",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1393,6 +1413,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1438,7 +1462,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md": {
    "sha256_before": "2cb7309ca4ed3dd1a7a4eab9c39119aff999715654215c9bebfa181f87dc9ee1",
-   "sha256_after": "aa9bdc9ebc32262ff77b00382c7871ef6dcbae3057b997b246cb52ef67398337",
+   "sha256_after": "9619dbcdd012a5662c04518bad588980a8e6c48df0cc28229065c6c5f56018b8",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1455,6 +1479,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1480,7 +1508,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md": {
    "sha256_before": "386cd61a7d6d53bd22e4e60e63bfa6bc9244d89f7d3d48b8c7c8b35bbd991269",
-   "sha256_after": "f8b6dfc91d7a0bb2f0765da3260c5bb5125d2a7aff5ee9996b63c2b3ac597d6f",
+   "sha256_after": "4f9bf6db3fc16045fcc71c54cc06564e6458453a4169ebdbf795f43a5c52c16c",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1497,6 +1525,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1522,7 +1554,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md": {
    "sha256_before": "e8a46837d882d28ed81310719f9e661913940d70edeef6d1b3f5bd8e94b54afd",
-   "sha256_after": "fab77620e121825be2b06dbbd59d17a75f679d50af81511e9e65a7dd11f4273b",
+   "sha256_after": "a1d312d6a7060b6cf20b29eb4f8676c07efc7337eaed3be1d2e3189562323389",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1539,6 +1571,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1564,7 +1600,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md": {
    "sha256_before": "1223e3e98febaa955735c5b21625f9dc47a7064cf6c2f99c7de2c3d04bda1769",
-   "sha256_after": "433bfcb8c0e68e0d7acf252cfd1f0b05ee7ddef7a2d747ae3903de434153e91c",
+   "sha256_after": "d7fc904b11aecae7804ecdafb06488ec780e0594b88a9bfd6eaa4a0ecddf17ed",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1581,6 +1617,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1606,7 +1646,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md": {
    "sha256_before": "125d2b90461a97f71b6b7ef9c2769764282eb53364ac0954db226ce8b0fea927",
-   "sha256_after": "f4fcc56ff062ace94b1c56fe2c199a15c762394207b8ff270f96905a090e2cb0",
+   "sha256_after": "9be750a3a024465ac36bf50861db716bf6a3ce74176d69fabb4859530100d324",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1623,6 +1663,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1648,7 +1692,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md": {
    "sha256_before": "a089851d1eef6897a16a4408df4a501fd862c9bae579f4610504071baaf370ea",
-   "sha256_after": "5105b1a0b3026622c12c85c623d674b0bfd809ddfe3158e387c1603650f817e8",
+   "sha256_after": "27880335f2ae68125fdc604f18caea18ea844ce82ff87f3cc3a359482210b888",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1665,6 +1709,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1694,7 +1742,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md": {
    "sha256_before": "fe6a4a39d581fdc24512769bc06bbe1e89353fceed5d48ed07b5a5f6d805b3a5",
-   "sha256_after": "6b6c0c735dd92a980fcc2748269dba0d6b864b5a1da7915487d9062e3a81cd20",
+   "sha256_after": "34ed23eb37c27983e0d96072f8ccdb829266b02ffca9dd25c9d12d78847e3dd2",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1711,6 +1759,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1736,7 +1788,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md": {
    "sha256_before": "b5187bb8a888707f6ff799c732ffcf3b4656036a2a4784f15df6a00e69915f00",
-   "sha256_after": "77398fef11815f08b6e16076fd97a743f702a5aaf1b59534ebf7fcd1cf6e1753",
+   "sha256_after": "bad0097b5973041234b647623af8df5471dfb70718999a3b1d78e80932981e79",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1753,6 +1805,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1778,7 +1834,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md": {
    "sha256_before": "dcc840d45cf6b98d693b400da6290a26c027931858a41b8d4807b096a6510362",
-   "sha256_after": "eb971eb3cf7ae1bce174504e9d617a1758e5cae5d61d239ca0bff7747dca490b",
+   "sha256_after": "4519d5f634d8fa81eff9b7cbc1a01456fcc4f931b141d1e8b81b73975e72529d",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1795,6 +1851,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1820,7 +1880,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md": {
    "sha256_before": "90a527e65978fc53d701e3e671ce2db93ecc03d93b1c22fb6f690522767294fa",
-   "sha256_after": "f79b426c06e728928d78c868079df478efe29740e6642e00a5e572dfa5f4266c",
+   "sha256_after": "8fda230c15fa170d7f7511bcddd000f789d5f4891cb0b378272bfc398db4bbd2",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1837,6 +1897,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1862,7 +1926,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md": {
    "sha256_before": "c48391e68beb86a5c039415aa0db124b92433a6fdc9b750ceefc89e3baba09c6",
-   "sha256_after": "bb78cc2b755e976ac6da7e4f3e6794905c98631b8ded4e174643caf23b22a29c",
+   "sha256_after": "fa08a45d5ae777fe87f874c2ca86725f726e4fd25fa6e2f4dfdeb215bb6cb4a2",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1879,6 +1943,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1904,7 +1972,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md": {
    "sha256_before": "b2e69c96c3e7099c4531788ebe33bc61845a51dd20717aa5595d3b3f75d72058",
-   "sha256_after": "6987e4cd530259d0a7cae42358ad78e8f782916720a4725efa83af9dd2687fb7",
+   "sha256_after": "1d16d25536071bbed48e422f5276cf7a10ef73cbfdb421ca5958a7ba61ec8aee",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1921,6 +1989,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1946,7 +2018,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md": {
    "sha256_before": "cf742963e4d2ea00f5a455904bac63137e20411655a4d355e2034ce4757a30cb",
-   "sha256_after": "73a6286f1a4d79e2de12fa1d3858e6f158fdfe5b805b1d38da6224514ed3f44f",
+   "sha256_after": "45de7fa196aa769d280cf96f9fa80066a4e3e85d8e8fd94bbb2289f52c77969b",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -1963,6 +2035,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -1988,7 +2064,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md": {
    "sha256_before": "88f28b5e5047f98695775562715f0aa1df8a0b88b33af857a09b8d67acae177c",
-   "sha256_after": "8a4ccbdbfb1e9e3f0f2cc0ff469e6dfeb25f4d2510ef597fe4772922c095afaf",
+   "sha256_after": "92e13a944941ceafcd17a45d9c780cd73ac2cbde25fbf5290890c6bec9b5956a",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -2005,6 +2081,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -2030,7 +2110,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md": {
    "sha256_before": "46d6f3db1d9a6e116e0f000ea76ef2d601704ec2dd4a149fe27a2cb0f2ebe3fa",
-   "sha256_after": "c50500e1f6a2c6530864d67d8dc291a15ce7d55248742561e969d97978489a1d",
+   "sha256_after": "6c184ef0fdc2fe36239779d81570d058382fd0e092fd636959bf87c07e1c49ef",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -2047,6 +2127,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -2072,7 +2156,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md": {
    "sha256_before": "141a9778194fbcfa0ada3457e2aef9d83529b5976a58ec3991b54bb3549f8beb",
-   "sha256_after": "64b29cfecd3f558f0dfe0260d1cf42525215c1b753cdbb02a2e5b0d79d7ee701",
+   "sha256_after": "c50624faf44e1624a119ea43dbb2c0cecc5a31d119f428ac4b2bda24d2a2a0a4",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -2089,6 +2173,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -2114,7 +2202,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md": {
    "sha256_before": "f46856d9268eebce274cd27d5f2f8756ea28ad5973153e89e0defa0e2c0658d4",
-   "sha256_after": "2c370972c0692d246ce606bfca0af1122822ce7b15d4ac52c52aea1fc032c450",
+   "sha256_after": "d32229ff9666bff04558f6aeefc8c19b64737ebe84a86efec0585e33a8ca233d",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -2131,6 +2219,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -2156,7 +2248,7 @@
   },
   "prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md": {
    "sha256_before": "1ab867ba5f88f0eee4a56bad8374eae7d63c09a76f3ee53212299542d39dee2a",
-   "sha256_after": "5196bba54a3c3548ba754cce5f820d13fb21468db4e19c36d29fad76bae43b42",
+   "sha256_after": "e84980acd17ac004940d433f04291de725fd9254e845cb423ef8042920eb6544",
    "hunks": [
     {
      "before": "version: 0.3\nupdated: 2026-11-18\n",
@@ -2173,6 +2265,10 @@
     {
      "before": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):\n",
      "after": "не разрешает объединять шаги. Следующий шаг — отдельный вызов после решения БА.\nРешение БА по техническому шагу (блок «Итог шага»):\n"
+    },
+    {
+     "before": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;\n",
+     "after": "АД-1…АД-11, АП1…АП9, КС1…КС7, БС1…БС5 и гейты действуют. В A-IN приоритет\nу маршрута A-IN из 24 шагов и этого контракта: раздел 2 только после AIN-21;\n"
     },
     {
      "before": "\nИсточники:\n- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).\n- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).\n- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).\n- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).\n",
@@ -2622,7 +2718,7 @@
   },
   "prompts/drafts/bcreq-fr-documentation-stepwise.md": {
    "sha256_before": "dd8e0102f8b52356826a158c482cf65df75913067649d1adbca583e74481f7dd",
-   "sha256_after": "5b0de2a418c80a4c23f795da2a9418ad328f08d918a772b6294b734d83ff7859",
+   "sha256_after": "faae19cbaaea23473337f4f5ccc9f5c6efd9423f9a4db4ccf42eba08a92eda3b",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-18\n",
@@ -2630,7 +2726,7 @@
     },
     {
      "before": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\n",
-     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: bd5066fbc8266458d6338939e104265577a411c6e9e61c67ac12ad1f7094344a\n"
+     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -2666,7 +2762,7 @@
     },
     {
      "before": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-babok-guide-v3-что-берём-по-пунктам).\n",
-     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — справочник стандартов.\n"
+     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  порядок внутри блока — категории 7.1, как в шаге группировки выше.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2896,7 +2992,7 @@
   },
   "prompts/drafts/bcreq-orr-solution-design-stepwise.md": {
    "sha256_before": "521491281f4e641a6ecf5445b5e47313cfeb914b8350a4a822fdbc7fed7937ba",
-   "sha256_after": "5cb0f3f2e3e26555c82faff9fd95d72471b97131954e28e29fc39d9343b4b24d",
+   "sha256_after": "4931ccb579b61b3035bf1c01c05d0bc0b4d799edefb899e67ada7be82a65c999",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-6 (2.6+2.7): ОРР (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-18\n",
@@ -2904,7 +3000,7 @@
     },
     {
      "before": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\n",
-     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: be31f1deb386c2133cb7979ea82d9249e74129f9d5d36e8c58f5f3b766dc0b72\n"
+     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2920,7 +3016,7 @@
     },
     {
      "before": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раздел-5-выбор-между-c4-и-tm-forum-oda).\n",
-     "after": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — справочник стандартов.\n"
+     "after": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Структура раздела выводится из метамодели выбранного стандарта (C4 или\n  TM Forum ODA), а не из номеров ФТ.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2978,7 +3074,7 @@
   },
   "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": {
    "sha256_before": "0dd3069fbef22d85c271161e4e3e469334626bca321ddc792e949ecd32cfca70",
-   "sha256_after": "c8ea711beb639e6f310f38176d8b07a30b6e63b26eba62d135d93f2ba4729904",
+   "sha256_after": "3c6202a700beee99de730a9a6dc9dec90c9b00f0cb05031626927eba0bd8b203",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)\"\nstatus: draft\nversion: 0.4\nupdated: 2026-11-18\n",
@@ -3083,6 +3179,10 @@
     {
      "before": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n",
      "after": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.\n"
+    },
+    {
+     "before": "\nКак читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):\n",
+     "after": "\nКак читать каталог:\n"
     },
     {
      "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n",
@@ -3408,7 +3508,7 @@
   },
   "prompts/drafts/manifest.json": {
    "sha256_before": "cbe13abae6af09b2f89434da8bff7c72caecd630de4c4cc4f5046c1700194fd0",
-   "sha256_after": "f078a88e205e1f1559b8870e6da49ff2e413ec5b7f18d3686e17723f2010cfac",
+   "sha256_after": "3bc87739b0d135e7acb797f5fcde7ce0f03bb01aeae3fa6f3742f7308b9bfa3d",
    "hunks": [
     {
      "before": "{\n  \"source_issue\": \"https://github.com/G-Ivan-A/mango_ba_prompts/issues/438\",\n",
@@ -3456,7 +3556,7 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"bd5066fbc8266458d6338939e104265577a411c6e9e61c67ac12ad1f7094344a\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada\",\n",
@@ -3468,7 +3568,7 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"be31f1deb386c2133cb7979ea82d9249e74129f9d5d36e8c58f5f3b766dc0b72\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c\",\n",
@@ -3682,7 +3782,7 @@
   },
   "prompts/drafts/system/bcreq-products-impact-analysis-system.md": {
    "sha256_before": "ff13abe00ae7e6b588f701e09120c14d1cffe9686432bd2cf6715d4910ed7416",
-   "sha256_after": "9940b3b85b9bfa9312e3a16828d5242f50f4c347394443365fef668f9ae043d4",
+   "sha256_after": "ca20e83ae8ae82e8350e1775b17118749230a5d2fad8abfcd260f3755aac83a8",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (системный формат)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3787,6 +3887,10 @@
     {
      "before": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n",
      "after": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.\n"
+    },
+    {
+     "before": "\nКак читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):\n",
+     "after": "\nКак читать каталог:\n"
     },
     {
      "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n",

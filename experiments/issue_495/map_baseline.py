@@ -123,17 +123,29 @@ class Mapper:
         self.root = Path(base_root)
         self.entries = register_entries()
         self.texts = {}
-        # Ручные исходники базы (всё в контуре, кроме собранных черновиков и данных
-        # сайта): группы G принимают только копии их нарушений. Текст сборщика,
-        # которого нет в ручных исходниках, должен иметь свою запись реестра.
+        # Ручные исходники базы (всё в контуре, кроме собранных черновиков, данных
+        # сайта и архива): группы G принимают только копии их нарушений. Текст
+        # сборщика, которого нет в ручных исходниках, должен иметь свою запись
+        # реестра. Архив — снимок прежних сборок: совпадение с ним не доказывает,
+        # что нарушение пришло из действующего исходника (роль Б, раунд 2).
         hand = [rel for rel, kind in (kinds or {}).items()
-                if kind != "site_data" and not rel.startswith("prompts/drafts/")]
+                if kind not in ("site_data", "archive_texts") and not rel.startswith("prompts/drafts/")]
         raw = "\n".join((self.root / rel).read_text(encoding="utf-8") for rel in sorted(hand))
         self.hand = squash(raw) + "\n" + squash(prompt_purity.project(raw))
 
     def is_copy(self, f):
+        """Окно нарушения есть в ручном исходнике базы — как есть или после проекции.
+
+        Пустое окно копией не считается, а окно, которое проекция стирает целиком
+        (служебный комментарий), — только при совпадении как есть: пустая строка
+        входит в любой текст, и новый маркер сборщика ушёл бы в группу G молча
+        (роль Б, раунд 2).
+        """
         w = window(f)
-        return w in self.hand or squash(prompt_purity.project(w + "\n")).strip() in self.hand
+        projected = squash(prompt_purity.project(w + "\n")).strip()
+        if not w:
+            return False
+        return w in self.hand or bool(projected) and projected in self.hand
 
     def line(self, rel, no):
         if rel not in self.texts:
@@ -167,9 +179,13 @@ class Mapper:
                     return eid
         # Сгенерированные копии: строку, которую целиком сняла запись реестра
         # (например, служебный комментарий D-18), относим к записи по всем правилам.
+        # Короткую строку (подпись ссылки с версией, маркер блока) — только при
+        # совпадении строки целиком.
         if kind == "site_data" or rel.startswith("prompts/drafts/"):
+            whole = {c.strip().strip("…").strip() for c in candidates}
             for eid, paths, old, pieces in self.entries:
-                if any(len(p) >= 20 and p in c for p in pieces for c in candidates):
+                if any(len(p) >= 20 and p in c for p in pieces for c in candidates) \
+                        or any(p in whole for p in pieces):
                     return eid
         return None
 

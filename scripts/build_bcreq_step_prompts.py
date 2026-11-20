@@ -658,7 +658,7 @@ def render_block(steps, ctx):
         out.append(f"- **{r['id']} {r['name']}:** {link}.")
     out.append("")
     if any(r["id"] == "И-2" for r in used_refs):
-        out += ["Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):", "", "```text", m4, "```", ""]
+        out += ["Как читать каталог:", "", "```text", m4, "```", ""]
     used_stubs = [s for s in stubs if steps_of(s["steps"]) & set(steps)]
     if used_stubs:
         out += ["Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.", ""]

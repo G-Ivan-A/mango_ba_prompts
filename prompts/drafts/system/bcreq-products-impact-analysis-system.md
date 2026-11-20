@@ -493,7 +493,7 @@ provenance не применяется; происхождение и цитат
 - **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 - **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.
 
-Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):
+Как читать каталог:
 
 ```text
 Таксономия продуктов: https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml
