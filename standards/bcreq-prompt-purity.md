@@ -138,7 +138,7 @@ python3 scripts/bcreq_handoff.py && python3 scripts/build_bcreq_a_in.py \
 | ЧП-4 | сборщики `--check`, `experiments/issue_495/build_prompt_edits.py --check` | ручная правка сгенерированного черновика |
 | ЧП-6 | `scripts/validate_issue_495_prompt_purity.py` | версия 2.10.0, откат версии ниже 2.9.0 |
 | Защита от сверхчистки (раздел 4) | `scripts/validate_issue_495_prompt_purity.py` (`OverCleaningTest`, снимок `protected-baseline.json`) | удаление `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, «Итог шага», ID правила, ACCESS_GAP или файла промпта |
-| ЧП-2, CT-09 | `scripts/audit_prompt_purity.py` | соответствие «<продукт> — D…» в промпте (универсальный минимальный набор D1, D2, D11 — не кейс) |
+| ЧП-2, CT-09 | `scripts/audit_prompt_purity.py` | соответствие «<продукт> — D…» или «<продукт>: D…» в промпте (универсальный минимальный набор D1, D2, D11 — не кейс) |
 
 Все проверки — в `scripts/validate_issue_495_prompt_purity.py`, его находит
 `scripts/validate_all.py`. Аудит с отчётом:

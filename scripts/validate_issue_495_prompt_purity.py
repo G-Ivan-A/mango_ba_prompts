@@ -171,8 +171,10 @@ class MutationTest(unittest.TestCase):
 
     def test_profile_mapping_vs_minimal_set(self):
         # CT-09 — соответствие «профиль → словари»; универсальный минимальный набор — не кейс.
-        self.mutate_prompt("Словари профиля: оператор связи — D9.")
-        self.assertIn(("b", "CT-09", PROMPT), self.rules())
+        for line in ["Словари профиля: оператор связи — D9.", "Словари профиля КЦ: D6, D11."]:
+            with self.subTest(line=line):
+                self.mutate_prompt(line)
+                self.assertIn(("b", "CT-09", PROMPT), self.rules())
         self.mutate_prompt("Возьми минимальный набор D1, D2, D11.")
         self.assertEqual(self.box.run(), [])
 
