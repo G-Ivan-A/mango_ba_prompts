@@ -5,8 +5,10 @@
 
 * ``a`` — ссылки: URL приватного репозитория (в теле промпта — и голое имя
   репозитория), относительная ссылка на файл
-  репозитория из текста промпта (у исполнителя промпта её нет), ссылка на
-  runtime не по SHA из реестра справочников runtime;
+  репозитория из текста промпта (у исполнителя промпта её нет), голый путь
+  или название файла спицы в теле живого промпта (``A-SPOKE-PATH``; архив —
+  история, не проверяется), ссылка на runtime не по SHA из реестра
+  справочников runtime;
 * ``b`` — кейс-специфика: токены словаря ``case_tokens`` вне разрешённых
   справочных секций;
 * ``c`` — неисполнимый балласт: шаблоны ``ballast_patterns`` в теле промпта
@@ -80,6 +82,7 @@ class Auditor:
         self.sha = runtime_sha(self.root, self.policy)
         self.runtime_re = re.compile(links["runtime_link_regex"])
         self.relative_re = re.compile(links["relative_repo_link_regex"])
+        self.spoke_re = re.compile(links["spoke_path_regex"])
         self.tokens = [(t["id"], re.compile(t["regex"]), t) for t in self.policy["case_tokens"]]
         self.ballast = [(b["id"], re.compile(b["regex"]), b) for b in self.policy["ballast_patterns"]]
         self.allowed = self.policy.get("allowed_sections", [])
@@ -87,7 +90,8 @@ class Auditor:
         self.findings = []
 
     # --- правила по строке -------------------------------------------------
-    def check_links(self, line, *, prompt_text):
+    def check_links(self, line, *, prompt_text, live=False):
+        """Класс a. ``live`` — тело действующего промпта (не архив): голые пути спицы."""
         out = []
         for match in self.private_re.finditer(line):
             out.append(("a", "A-PRIVATE", match.group(0)))
@@ -102,6 +106,8 @@ class Auditor:
                 if target.startswith(("http", "#")):
                     continue
                 out.append(("a", "A-RELATIVE", target))
+        if live:
+            out += [("a", "A-SPOKE-PATH", m.group(0)) for m in self.spoke_re.finditer(line)]
         return out
 
     def check_tokens(self, line):
@@ -128,7 +134,7 @@ class Auditor:
                               "match": match, "where": where, "snippet": snippet})
 
     # --- файлы -------------------------------------------------------------
-    def audit_text_file(self, rel, classes, *, prompt_text, ballast_ids=None):
+    def audit_text_file(self, rel, classes, *, prompt_text, ballast_ids=None, live=False):
         text = (self.root / rel).read_text(encoding="utf-8")
         fm_lines, _ = split_frontmatter(text) if rel.endswith(".md") else (0, text)
         heading = ""
@@ -138,7 +144,7 @@ class Auditor:
                 heading = line
             found = []
             if "a" in classes:
-                found += self.check_links(line, prompt_text=prompt_text and in_body)
+                found += self.check_links(line, prompt_text=prompt_text and in_body, live=live and in_body)
             if in_body and "b" in classes:
                 found += [f for f in self.check_tokens(line) if not self.is_allowed(rel, heading, f[1])]
             if in_body and "c" in classes:
@@ -150,8 +156,10 @@ class Auditor:
         data = json.loads((self.root / rel).read_text(encoding="utf-8"))
         for path, value, archived in walk(data, archive=self.is_archive_card):
             is_body = any(field_match(path, f) for f in body_fields)
+            front = split_frontmatter(value)[0] if is_body else 0
             for no, line in enumerate(value.splitlines() or [value], 1):
-                found = self.check_links(line, prompt_text=is_body) if "a" in classes else []
+                live = is_body and not archived and no > front
+                found = self.check_links(line, prompt_text=is_body, live=live) if "a" in classes else []
                 if "b" in classes and (card or is_body) and not archived:
                     found += self.check_tokens(line)
                 if is_body:
@@ -171,7 +179,8 @@ class Auditor:
             for rel in expand(self.root, spec):
                 self.files[rel] = name
                 self.audit_text_file(rel, set(spec["classes"]), prompt_text=name in ("prompt_texts", "archive_texts"),
-                                     ballast_ids=set(spec["ballast_ids"]) if "ballast_ids" in spec else None)
+                                     ballast_ids=set(spec["ballast_ids"]) if "ballast_ids" in spec else None,
+                                     live=name == "prompt_texts")
         site = contour["site_data"]
         for rel in expand(self.root, site):
             self.files[rel] = "site_data"

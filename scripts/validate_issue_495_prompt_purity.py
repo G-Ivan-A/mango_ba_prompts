@@ -9,17 +9,20 @@
 * мутации: в копию контура во временном каталоге вносится одно нарушение —
   аудитор обязан его найти (URL приватного репозитория в промпте и в данных
   сайта, голое имя репозитория, относительная ссылка, ссылка на runtime не по
-  закреплённому SHA, кейс-токены, HTML-комментарий, отсылка к BL/issue);
+  закреплённому SHA, голый путь спицы A-SPOKE-PATH (и его исключения: frontmatter,
+  архив, пути runtime), кейс-токены CT-01…CT-09, балласт BP-01…BP-12);
 * ЧП-4: сборщики ССОТ в режиме ``--check`` и реестр обратимых правок
   ``experiments/issue_495/prompt-edits.json`` актуальны — ручная правка
-  сгенерированного файла ловится;
+  сгенерированного файла ловится (мутация: правка черновика роняет ``--check``);
 * ЧП-6: версия сайта — patch-серия 2.9.x, не ниже 2.9.0, одинакова в
   генераторе, данных и разметке; мутации 2.10.0 и 2.8.9 падают;
 * реестр runtime: ссылки на runtime — только по SHA из ``runtime_sha``;
   справочники И-11/И-12 и задачи РТ-8/РТ-9 заведены, заглушка З-5 активна;
 * бэклог: цепочка BL-240 → BL-241 → BL-242 → BL-232 в ``pr-ops/BACKLOG.md``.
 """
+import contextlib
 import importlib.util
+import io
 import json
 import re
 import shutil
@@ -38,6 +41,7 @@ POLICY = "standards/bcreq-prompt-purity.json"
 REGISTRY = "standards/bcreq-runtime-references.md"
 PROMPT = "prompts/bcreq-fr-documentation-stepwise.md"
 SITE = "site/data/a-in-kit.json"
+ARCHIVE = "prompts/archive/fr-documentation-stepwise.md"
 #: Опубликованная версия сайта на начало задачи; patch-серия — только 2.9.x.
 PUBLISHED = (2, 9, 0)
 SERIES = (2, 9)
@@ -163,7 +167,7 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(self.box.run(), [])
 
     def test_case_tokens_in_prompt(self):
-        for token, rule in [("amoCRM", "CT-01"), ("коннектор", "CT-03"), ("ВАТС", "CT-04"), ("ЛК", "CT-05"),
+        for token, rule in [("amoCRM", "CT-01"), ("API-привязка", "CT-02"), ("коннектор", "CT-03"), ("ВАТС", "CT-04"), ("ЛК", "CT-05"),
                             ("HDE", "CT-06"), ("Битрикс24", "CT-07"), ("задача 1075", "CT-08")]:
             with self.subTest(token=token):
                 self.mutate_prompt(f"Проверь интеграцию: {token} и смежные данные.")
@@ -179,11 +183,46 @@ class MutationTest(unittest.TestCase):
         self.assertEqual(self.box.run(), [])
 
     def test_ballast_in_prompt(self):
-        for line, rule in [("<!-- Experimental: for BL-156 -->", "BP-01"), ("Добавлено по BL-123.", "BP-04"),
-                           ("Редакция по тесту.", "BP-06"), ("См. issue про шаг.", "BP-03")]:
+        for line, rule in [("<!-- Experimental: for BL-156 -->", "BP-01"), ("Решение принято в #427.", "BP-02"),
+                           ("См. issue про шаг.", "BP-03"), ("Добавлено по BL-123.", "BP-04"),
+                           ("Правка из PR #12.", "BP-05"), ("Редакция по тесту.", "BP-06"),
+                           ("Блок собран сборщиком.", "BP-07"), ("Experimental: правило шага.", "BP-08"),
+                           ("Правило действует до ADR.", "BP-09"), ("Не внесены правила шага.", "BP-10"),
+                           ("История изменений правила — ниже.", "BP-11"), ("Урок из Golden Set (ревизия 3).", "BP-12")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
+
+    def test_spoke_path_in_prompt(self):
+        # ЧП-1, A-SPOKE-PATH: снятая ссылка не остаётся голым путём или названием файла спицы.
+        for line in ["Правила — в standards/bcreq-sections/NN-*.md.", "Журнал — `pr-ops/session-digests.md`.",
+                     "Профили — в стандарте композиции §4.", "Полный текст — README §2.",
+                     "Каталог docs/taxonomy и runtime taxonomy/products.yaml.", "Сборка: scripts/build_x.py."]:
+            with self.subTest(line=line):
+                self.mutate_prompt(line)
+                self.assertIn(("a", "A-SPOKE-PATH", PROMPT), self.rules())
+        # Пути runtime (docs/kb, docs/guides) — не спица; правило не срабатывает.
+        self.mutate_prompt("Справочник runtime — docs/kb/products.md и docs/guides.")
+        self.assertEqual(self.box.run(), [])
+
+    def test_spoke_path_outside_live_body_is_not_checked(self):
+        # Frontmatter промпта — метаданные карточки (IG-3, IG-9).
+        text = read(PROMPT)
+        self.box.write(PROMPT, text.replace("---\n", "---\nsource: standards/bcreq-sections/README.md\n", 1))
+        self.assertEqual(self.box.run(), [])
+        # Архив — история (IG-9): тот же путь в архивном промпте не нарушение.
+        box = Sandbox([ARCHIVE])
+        try:
+            box.write(ARCHIVE, read(ARCHIVE) + "\nПравила — в standards/bcreq-sections/NN-*.md.\n")
+            self.assertNotIn("A-SPOKE-PATH", {f["rule"] for f in box.run()})
+        finally:
+            box.close()
+
+    def test_spoke_path_in_site_prompt_body(self):
+        data = json.loads(read(SITE))
+        data["steps"][0]["prompt"] += "\nПравила — в standards/bcreq-sections/README.md."
+        self.box.write(SITE, json.dumps(data, ensure_ascii=False))
+        self.assertIn(("a", "A-SPOKE-PATH", SITE), self.rules())
 
     def test_private_url_in_site_data(self):
         data = json.loads(read(SITE))
@@ -289,6 +328,16 @@ class SsotTest(unittest.TestCase):
                        "scripts/build_bcreq_step_prompts.py", "scripts/build_bcreq_system_track.py"]:
             with self.subTest(script=script):
                 self.check(sys.executable, script, "--check")
+
+    def test_hand_edited_draft_fails_check(self):
+        # Мутация ЧП-4: ручная правка черновика (в обход ССОТ) роняет --check сборщика.
+        builder = load_module("scripts/build_bcreq_step_prompts.py", "build_steps_495")
+        target = sorted(builder.DRAFTS.glob("*.md"))[0]
+        original = builder.read
+        builder.read = lambda path: original(path) + ("\nРучная правка.\n" if path == target else "")
+        with contextlib.redirect_stdout(io.StringIO()) as out:
+            self.assertEqual(builder.main(["--check"]), 1)
+        self.assertIn(target.name, out.getvalue())
 
     def test_prompt_edits_registry_current(self):
         self.check(sys.executable, "experiments/issue_495/build_prompt_edits.py", "--check")

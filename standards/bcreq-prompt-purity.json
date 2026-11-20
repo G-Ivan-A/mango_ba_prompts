@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.3.0",
   "updated": "2026-11-20",
   "standard": "standards/bcreq-prompt-purity.md",
   "contour": {
@@ -114,7 +114,9 @@
     "relative_repo_link_regex": "\\]\\((?!https?://|#|mailto:)([^)\\s]+)\\)",
     "private_link_regex": "(?i)(?:https?://)?(?:[\\w.-]+\\.)?(?:github\\.com|githubusercontent\\.com)/G-Ivan-A/mango_ba_prompts",
     "private_name_note": "Голое имя приватного репозитория запрещено только в теле исполнимого промпта; публичный адрес сайта (g-ivan-a.github.io/mango_ba_prompts) ссылкой на репозиторий не считается",
-    "public_site_regex": "g-ivan-a\\.github\\.io/mango_ba_prompts"
+    "public_site_regex": "g-ivan-a\\.github\\.io/mango_ba_prompts",
+  "spoke_path_regex": "(?<![\\w/.:-])(?:(?:standards|pr-ops|scripts|runs|experiments|site|prompts)/[\\w*<>{}-]|docs/(?!kb\\b|guides\\b)[\\w*<>{}-])[\\w./*<>{}-]*|стандарт\\w*\\s+композиции\\s+§|README\\s+§\\s*\\d",
+  "spoke_path_note": "A-SPOKE-PATH: голый указатель на файл спицы в теле живого промпта (не архив). Пути runtime (docs/kb, docs/guides, taxonomy, golden, templates, contracts, evaluation) указателями на спицу не считаются; frontmatter не проверяется"
   },
   "case_tokens": [
     {

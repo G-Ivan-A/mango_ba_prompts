@@ -34,9 +34,9 @@ import audit_prompt_purity as audit  # noqa: E402
 MECHANISMS = [
     ("IG-1", "Архив 2.7.0 и прежних редакций: классы б и в (кроме HTML-комментариев) не применяются",
      "Постановка, проблема A: приватные ссылки убираются из всех промптов, включая архив, — класс а применяется и снят проекцией; удаление текста архива — только по команде (БС-12), поэтому классы б и в в архиве не применяются (стандарт, раздел 5). Статус архива 2.7.0 как исторической сущности — комментарий 2, п.14"),
-    ("IG-2", "Карточки архивных промптов в данных сайта (`archive_source_globs`): классы б и в, кроме BP-01",
+    ("IG-2", "Карточки архивных промптов в данных сайта (`archive_source_globs`): классы б и в, кроме BP-01, и правило A-SPOKE-PATH",
      "То же основание, что IG-1: карточка сайта — копия архивного текста; BP-01 (HTML-комментарий) снят проекцией"),
-    ("IG-3", "Frontmatter промптов: классы б и в и правила A-PRIVATE-NAME/A-RELATIVE",
+    ("IG-3", "Frontmatter промптов: классы б и в и правила A-PRIVATE-NAME/A-RELATIVE/A-SPOKE-PATH",
      "Frontmatter — метаданные карточки, в исполнимый текст не копируется (сборщики и сайт отрезают его)"),
     ("IG-4", "Служебные файлы рядом с промптами (`repo_docs_in_prompts`): только класс а",
      "Это не исполнимые промпты (README, манифесты, каталог); приватные ссылки в них всё равно запрещены"),
@@ -48,22 +48,34 @@ MECHANISMS = [
      "Публичный адрес доступен исполнителю и не ведёт в приватный репозиторий (политика, `private_name_note`)"),
     ("IG-8", "Разметка сайта (`site/index.html`, `site/app.js`, `site/*.css`) вне контура",
      "Интерфейс, а не промпт: ссылку «исходник на GitHub» строит интерфейс (стандарт, раздел 5; ЧП-5)"),
+    ("IG-9", "Правило A-SPOKE-PATH (голый путь спицы) — только тело действующего промпта: архив, карточки архива, "
+     "frontmatter, ССОТ, служебные файлы и поля сайта вне тел не проверяются",
+     "Архив — история (п.14, БС-12); в ССОТ, служебных файлах, frontmatter и полях интерфейса путь спицы адресован "
+     "сопровождающему, а не исполнителю промпта (стандарт, ЧП-1, правило A-SPOKE-PATH)"),
+    ("IG-10", "Пути runtime `docs/kb`, `docs/guides` не считаются путями спицы",
+     "Это каталоги runtime, доступные исполнителю по SHA реестра справочников; путь спицы — `docs/` всего остального "
+     "(политика, `spoke_path_note`)"),
 ]
 
 
 class Relaxed(audit.Auditor):
-    """Аудитор с флагами снятия исключений IG-3 и IG-6."""
+    """Аудитор с флагами снятия исключений IG-3, IG-6 и IG-9."""
 
     no_frontmatter = False
     all_site_fields = False
+    spoke_everywhere = False
 
-    def audit_text_file(self, rel, classes, *, prompt_text, ballast_ids=None):
+    def check_links(self, line, *, prompt_text, live=False):
+        return super().check_links(line, prompt_text=prompt_text, live=live or self.spoke_everywhere)
+
+    def run(self):
+        """IG-3: frontmatter считается телом — и в файлах, и в телах промптов данных сайта."""
         if not self.no_frontmatter:
-            return super().audit_text_file(rel, classes, prompt_text=prompt_text, ballast_ids=ballast_ids)
+            return super().run()
         saved = audit.split_frontmatter
         audit.split_frontmatter = lambda text: (0, text)
         try:
-            return super().audit_text_file(rel, classes, prompt_text=prompt_text, ballast_ids=ballast_ids)
+            return super().run()
         finally:
             audit.split_frontmatter = saved
 
@@ -73,8 +85,9 @@ class Relaxed(audit.Auditor):
         data = json.loads((self.root / rel).read_text(encoding="utf-8"))
         for path, value, archived in audit.walk(data, archive=self.is_archive_card):
             is_body = any(audit.field_match(path, f) for f in body_fields)
+            front = audit.split_frontmatter(value)[0] if is_body else 0
             for no, line in enumerate(value.splitlines() or [value], 1):
-                found = self.check_links(line, prompt_text=is_body)
+                found = self.check_links(line, prompt_text=is_body, live=is_body and not archived and no > front)
                 if not archived:
                     found += self.check_tokens(line)
                 found += self.check_ballast(line, {"BP-01"} if archived else None)
@@ -107,6 +120,11 @@ def variant(policy, mech):
         flags["all_site_fields"] = True
     elif mech == "IG-7":
         p["links"]["public_site_regex"] = r"(?!)"
+    elif mech == "IG-9":
+        flags["spoke_everywhere"] = True
+    elif mech == "IG-10":
+        p["links"]["spoke_path_regex"] = p["links"]["spoke_path_regex"].replace(r"docs/(?!kb\b|guides\b)", "docs/")
+        assert p["links"]["spoke_path_regex"] != policy["links"]["spoke_path_regex"]
     return p, flags
 
 

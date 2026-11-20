@@ -84,7 +84,7 @@ def register_entries():
         # Записи по JSON-ССОТ хранят «было» с ключом и кавычками; в черновиках
         # и на сайте тот же текст стоит без них.
         pieces += [JSON_VALUE.sub(r"\1", p).strip().rstrip('",').strip() for p in pieces if JSON_VALUE.search(p)]
-        pieces = [p for p in pieces if len(p) >= 12 and p not in ("| --- | --- | --- | --- |",)]
+        pieces = [p for p in pieces if len(p) >= 10 and p not in ("| --- | --- | --- | --- |",)]
         paths = [f.split(" (")[0] for f in files]
         out.append((eid, paths, old, pieces))
     out.append(("D-11", ["prompts/archive/*.md"], rewrite_cases.ARCHIVE_BANNER[0], [rewrite_cases.ARCHIVE_BANNER[0]]))
@@ -181,6 +181,9 @@ class Mapper:
         eid = self.by_register(f, kind)
         if eid:
             return eid
+        if rule == "A-SPOKE-PATH":
+            # Голый путь спицы — смысловая правка: только запись реестра, без групп-проекций.
+            return None
         if kind == "site_data" and (f["where"].endswith(".url") or f["where"] in ("issue",)):
             return "G-02"
         if kind == "site_data" or rel.startswith("prompts/drafts/"):

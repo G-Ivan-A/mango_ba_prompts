@@ -108,7 +108,7 @@
       "flow_step": "Ш-2",
       "inputs": "atoms, taxonomy_snapshot, taxonomy_version",
       "outputs": "matches[{atom_id,domain,capability,feature,atomic_function,status,evidence}], gaps",
-      "behavior": "Использовать только переданный снимок; статус Verified/Partial/Conflict. Сохранить исходное слово рядом с найденным термином. Нет совпадения означает пробел классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.",
+      "behavior": "Использовать только переданный снимок; статус Verified/Partial/Conflict. Сохранить исходное слово рядом с найденным термином. Нет совпадения означает пробел классификации, а не отсутствие функции. Каталог продуктов репозитория и runtime-каталог taxonomy/products.yaml — разные носители, указать фактический.",
       "stop": "Нет снимка или версии: запросить; не генерировать якобы существующий узел.",
       "checks": "Каждый идентификатор существует во входе; версия и основание соответствия указаны.",
       "existing": "prompts/bcreq-products-impact-analysis-stepwise.md",
