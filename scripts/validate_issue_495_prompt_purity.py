@@ -199,12 +199,15 @@ class MutationTest(unittest.TestCase):
                            # Роль Б, раунд 4, замечания 2 и 3: длинное тире, мягкий перенос,
                            # публичный RFC через дефис — тоже ID (пишется «RFC 2119»).
                            ("Приоритет у RFC\u2014AIN\u2014001.", "BP-13"),
-                           ("Приоритет у RFC\u00adAIN\u00ad001.", "BP-13"), ("Ключевые слова — RFC-2119.", "BP-13")]:
+                           ("Приоритет у RFC\u00adAIN\u00ad001.", "BP-13"), ("Ключевые слова — RFC-2119.", "BP-13"),
+                           # Роль Б, раунд 5, замечание 3: тире вплотную перед ID, полноширинный
+                           # дефис, буквенно-цифровой сегмент.
+                           ("Так решено—ADR-001.", "BP-13"), ("Приоритет у RFC\uff0dAIN1\uff0d001.", "BP-13")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
         # Слово без номера («RFC-шаблон», «адрес») — не ID: BP-13 не срабатывает.
-        self.mutate_prompt("Сохрани адрес и RFC-шаблон ответа; ключевые слова — по RFC 2119.")
+        self.mutate_prompt("Сохрани адрес и RFC-шаблон ответа; ключевые слова — по RFC 2119; см. PRE-RFC-AIN-001.")
         self.assertNotIn(("c", "BP-13", PROMPT), self.rules())
 
     def test_spoke_path_in_prompt(self):
@@ -446,6 +449,12 @@ class BaselineMapTest(unittest.TestCase):
                  "rule": rule, "where": "prompts[].content"}
             self.assertEqual(self.mapper.classify(dict(f, archived=True), "site_data"), group)
             self.assertNotEqual(self.mapper.classify(f, "site_data"), group)
+            # Новое текстовое поле карточки архива идёт туда же: маршрут задан
+            # исключением (url), а не перечнем полей (роль Б, раунд 5).
+            self.assertEqual(self.mapper.classify(dict(f, archived=True, where="prompts[].summary"), "site_data"), group)
+        self.assertNotIn(self.mapper.classify(
+            {"file": "site/data/prompts.json", "line": 1, "snippet": url, "match": url, "rule": "A-PRIVATE",
+             "where": "prompts[].url", "archived": True}, "site_data"), ("M-02", "M-03"))
         self.assertEqual(self.mapper.classify(
             {"file": "site/data/prompts.json", "line": 1, "snippet": "<!-- bl-156: by-test -->",
              "match": "<!-- bl-156: by-test -->", "rule": "BP-01", "where": "prompts[].content"}, "site_data"), "D-14")

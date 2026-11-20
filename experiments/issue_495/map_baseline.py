@@ -45,7 +45,7 @@ GROUPS = {
     "M-01": ("а", "Ручные исходники промптов и ССОТ: ссылки на спицу (абсолютные и относительные) → подпись ссылки",
              "experiments/issue_495/clean_sources.py → prompt_purity.project (delink)"),
     "M-02": ("в", "Ручные исходники, архив и карточки архива в данных сайта: служебные HTML-комментарии удалены",
-             "experiments/issue_495/clean_sources.py → prompt_purity.project (strip_comments)"),
+             "experiments/issue_495/clean_sources.py → prompt_purity.project (strip_comments); карточки — generate-pages-data.mjs"),
     "M-03": ("а", "Архив 2.7.0 и прежних редакций и его карточки в данных сайта: ссылки на спицу → подпись; "
              "хэши оригинала — в манифесте архива",
              "clean_sources.py; prompts/archive/a-in-v2.7.0/manifest.json; карточки — generate-pages-data.mjs"),
@@ -102,9 +102,11 @@ SHORT = 5
 #: ручном исходнике та же ссылка целиком (подпись и адрес), а не только её окно.
 LINK = re.compile(r"\[[^\]\n]*\]\([^)\s]*\)")
 
-#: Поля карточки архива в данных сайта, которые копируют текст файла архива:
-#: их нарушения идут в M-02 и M-03, как строки самого файла (роль Б, раунд 4).
-ARCHIVE_CARD_FIELDS = (".content", ".body")
+#: Поля карточки архива в данных сайта, которые строит генератор, а не копирует
+#: из файла архива (ссылка карточки — G-02). Нарушения всех остальных полей
+#: карточки, в том числе новых, идут в M-02 и M-03, как строки самого файла
+#: (роль Б, раунды 4 и 5: маршрут задан исключением, а не перечнем полей).
+ARCHIVE_CARD_LINK_FIELDS = (".url",)
 
 
 def export_base(target):
@@ -274,7 +276,7 @@ class Mapper:
 
     def classify(self, f, kind):
         rel, rule = f["file"], f["rule"]
-        archive_copy = kind == "site_data" and f.get("archived") and f["where"].endswith(ARCHIVE_CARD_FIELDS)
+        archive_copy = kind == "site_data" and f.get("archived") and not f["where"].endswith(ARCHIVE_CARD_LINK_FIELDS)
         if (kind == "archive_texts" or archive_copy) and (rule.startswith("A-") or rule == "BP-01"):
             # Архив чистит только проекция (решение владельца, п.14). Карточка
             # архива в данных сайта — копия файла архива: её строка идёт туда же,

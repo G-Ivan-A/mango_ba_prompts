@@ -2125,7 +2125,7 @@ AIN-02.
 
 - Класс: в
 - Что: Ручные исходники, архив и карточки архива в данных сайта: служебные HTML-комментарии удалены
-- Исправление / куда перенесено: experiments/issue_495/clean_sources.py → prompt_purity.project (strip_comments)
+- Исправление / куда перенесено: experiments/issue_495/clean_sources.py → prompt_purity.project (strip_comments); карточки — generate-pages-data.mjs
 - Нарушений базы в группе: 88
 
 Локаторы базы (выборка):
