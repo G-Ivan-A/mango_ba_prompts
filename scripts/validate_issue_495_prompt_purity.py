@@ -23,6 +23,7 @@
   маркер одного сборщика, пустое окно и окно из архива копией не считаются.
 """
 import contextlib
+import hashlib
 import importlib.util
 import io
 import json
@@ -44,8 +45,8 @@ REGISTRY = "standards/bcreq-runtime-references.md"
 PROMPT = "prompts/bcreq-fr-documentation-stepwise.md"
 SITE = "site/data/a-in-kit.json"
 ARCHIVE = "prompts/archive/fr-documentation-stepwise.md"
-#: Опубликованная версия сайта на начало задачи; patch-серия — только 2.9.x.
-PUBLISHED = (2, 9, 0)
+# Кандидат релиза после интеграции #496; patch-серия — только 2.9.x.
+MINIMUM = (2, 9, 2)
 SERIES = (2, 9)
 
 
@@ -63,7 +64,7 @@ def load_module(rel, name):
 PURITY = load_module("scripts/prompt_purity.py", "prompt_purity_495")
 
 
-def version_errors(version, published=PUBLISHED, series=SERIES):
+def version_errors(version, minimum=MINIMUM, series=SERIES):
     """Нарушения ЧП-6 для строки версии; пусто — версия допустима."""
     match = re.fullmatch(r"(\d+)\.(\d+)\.(\d+)", version or "")
     if not match:
@@ -72,8 +73,8 @@ def version_errors(version, published=PUBLISHED, series=SERIES):
     errors = []
     if parts[:2] != series:
         errors.append(f"версия {version} вне patch-серии {series[0]}.{series[1]}.x")
-    if parts < published:
-        errors.append(f"версия {version} ниже опубликованной {'.'.join(map(str, published))}")
+    if parts < minimum:
+        errors.append(f"версия {version} ниже минимальной {'.'.join(map(str, minimum))}")
     return errors
 
 
@@ -202,7 +203,9 @@ class MutationTest(unittest.TestCase):
                            ("Приоритет у RFC\u00adAIN\u00ad001.", "BP-13"), ("Ключевые слова — RFC-2119.", "BP-13"),
                            # Роль Б, раунд 5, замечание 3: тире вплотную перед ID, полноширинный
                            # дефис, буквенно-цифровой сегмент.
-                           ("Так решено—ADR-001.", "BP-13"), ("Приоритет у RFC\uff0dAIN1\uff0d001.", "BP-13")]:
+                           ("Так решено—ADR-001.", "BP-13"), ("Приоритет у RFC\uff0dAIN1\uff0d001.", "BP-13"),
+                           ("-ADR-001", "BP-13"), ("(\u2011ADR-001)", "BP-13"), (" -RFC-AIN-001", "BP-13"),
+                           ("RFC\u2015AIN\u2015001", "BP-13"), ("RFC\ufe63AIN\ufe63001", "BP-13")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
@@ -312,7 +315,7 @@ class OverCleaningTest(unittest.TestCase):
 
 
 class VersionTest(unittest.TestCase):
-    """ЧП-6: только 2.9.x, не ниже опубликованной 2.9.0."""
+    """ЧП-6: только 2.9.x, начиная с кандидата 2.9.2."""
 
     def test_site_version_consistent_and_allowed(self):
         version = json.loads(read("site/data/prompts.json"))["siteVersion"]["version"]
@@ -325,10 +328,10 @@ class VersionTest(unittest.TestCase):
         self.assertIn(f"Версия сайта {version}", read("CHANGELOG.md"))
 
     def test_version_mutations_fail(self):
-        for bad in ["2.10.0", "2.8.9", "3.0.0", "2.9", "v2.9.1"]:
+        for bad in ["2.10.0", "2.8.9", "2.9.0", "2.9.1", "3.0.0", "2.9", "v2.9.2"]:
             with self.subTest(version=bad):
                 self.assertNotEqual(version_errors(bad), [])
-        for good in ["2.9.0", "2.9.1", "2.9.17"]:
+        for good in ["2.9.2", "2.9.17"]:
             with self.subTest(version=good):
                 self.assertEqual(version_errors(good), [])
 
@@ -358,6 +361,22 @@ class SsotTest(unittest.TestCase):
 
     def test_prompt_edits_registry_current(self):
         self.check(sys.executable, "experiments/issue_495/build_prompt_edits.py", "--check")
+
+    def test_rollback_preserves_unrelated_edits_and_rejects_corrupt_hunks(self):
+        rollback = load_module("experiments/issue_495/prompt_changes.py", "prompt_rollback_495")
+        path = "prompts/bcreq-constitution-governance-oneshot.md"
+        text = read(path)
+        purity = rollback.EDITS[path]
+        original = rollback.revert(path, text)
+        self.assertEqual(hashlib.sha256(original.encode()).hexdigest(), purity["sha256_before"])
+        extra = "\nПосторонняя правка.\n"
+        self.assertEqual(rollback.revert(path, text + extra), original + extra)
+        for hunk in (rollback.RELEASE.EDITS[path][0], purity["hunks"][0]):
+            with self.subTest(hunk=hunk["after"][:60]):
+                self.assertIn(hunk["after"], text)
+                corrupted = text.replace(hunk["after"], extra, 1)
+                with self.assertRaises(ValueError):
+                    rollback.revert(path, corrupted)
 
 
 class BaselineMapTest(unittest.TestCase):

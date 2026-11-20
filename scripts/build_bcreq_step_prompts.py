@@ -62,6 +62,13 @@ MANIFEST = DRAFTS / "manifest.json"
 
 REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
 RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
+#: Issue #488: метамодель БА вынесена из Хаба в ba-ai-metamodel, Хаб удаляет
+#: `research/mango/`. Плавающая ссылка Хаба в тексте шага закрепляется на
+#: коммите приёмки E6 (тот же файл по тому же пути), чтобы новые версии
+#: промптов не возвращали ссылку, которая отдаёт 404.
+HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
+HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
+              "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
 BUILD_DATE = "2026-11-04"
 #: Issue #495: чистка исполнимого текста меняет тело каждого черновика.
 PURITY_DATE = "2026-11-20"
@@ -753,6 +760,8 @@ def build_all():
             ]
         updated = PURITY_DATE
         body = apply_format_edits(name, body)
+        hub_substitutions = body.count(HUB_FLOATING)
+        body = body.replace(HUB_FLOATING, HUB_PINNED)
         handoff = "" if name in HANDOFF_SKIP else "\n" + bcreq_handoff.render(steps, ctx["handoff"])
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
@@ -767,6 +776,7 @@ def build_all():
             "based_on": f"prompts/{name}.md" if v01 else None,
             "based_on_sha256": hashlib.sha256(v01.encode("utf-8")).hexdigest() if v01 else None,
             "runtime_main_to_sha": substitutions,
+            "hub_main_to_metamodel_sha": hub_substitutions,
             "profiles": profiles,
             "operations": operations,
             "runtime_refs": [r["id"] for r in refs],

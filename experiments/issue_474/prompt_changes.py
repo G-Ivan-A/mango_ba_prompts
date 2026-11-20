@@ -8,7 +8,7 @@ import json
 from pathlib import Path
 EDITS=json.loads(Path(__file__).with_name('prompt-edits.json').read_text())['files']
 
-# Issue #495: верхний слой — правки чистоты промптов снимаются первыми.
+# Issue #495: снять #488, затем #495, до отката #474.
 _spec=importlib.util.spec_from_file_location('prompt495', Path(__file__).parent/'../issue_495/prompt_changes.py')
 I495=importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(I495)

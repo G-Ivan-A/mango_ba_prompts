@@ -71,8 +71,7 @@ class Readiness(unittest.TestCase):
 
     def test_no_prompt_or_layout_degradation(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'prompts/'],cwd=ROOT).decode().splitlines()
-        # Issue #495: обратимый слой чистоты (ссылки, комментарии, кейс-лексика)
-        # снимается; правка вне prompt-edits.json по-прежнему видна здесь.
+        # Слои #488 и #495 снимаются перед точной сверкой всех байтов.
         changed=[path for path in paths
                  if EDITS495.revert(path,(ROOT/path).read_text()).encode()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
         # Issue #490: «Итог шага» и формат шагов меняют только сгенерированные

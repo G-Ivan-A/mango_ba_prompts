@@ -39,7 +39,7 @@ import audit_prompt_purity as audit  # noqa: E402
 import prompt_purity  # noqa: E402
 import rewrite_cases  # noqa: E402
 
-BASE = "e051e0fa46e22c43004a6af19e8c53b827ce1b1d"
+BASE = "c90477f326e20d01e27aa1ac16603a62d6bb7327"
 
 GROUPS = {
     "M-01": ("а", "Ручные исходники промптов и ССОТ: ссылки на спицу (абсолютные и относительные) → подпись ссылки",

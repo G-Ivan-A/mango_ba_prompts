@@ -2,13 +2,13 @@
 id: mango-bcreq-constitution-governance-oneshot-by-test
 title: "BCREQ Ш-0: конституция процесса (по тесту)"
 status: draft
-version: 0.5
+version: 0.6
 updated: 2026-11-20
 temperature: 0.1
 operation: governance
 processes: ["Конституция и управление"]
 based_on: prompts/bcreq-constitution-governance-oneshot.md
-based_on_sha256: 864f80663cc524da14ef022ff6f99fc0dabc4136ff4a4baab28f06c0b6775a9d
+based_on_sha256: 794b4df122dca054dcae0f1b0d7aa0ff571e8f1bfa0fe54e540780a5dd123407
 mode: by-test
 steps: [Ш-0]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -397,7 +397,7 @@ BCREQ возобновляется, только если БА вернулся 
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.
@@ -614,7 +614,7 @@ BCREQ возобновляется, только если БА вернулся 
 
 Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.
 
-З-5 — условие: пока РТ-8 не слита и SHA не обновлён.
+З-5 — условие: пока профиль недоступен в закреплённом срезе runtime.
 
 ```text
 [СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]

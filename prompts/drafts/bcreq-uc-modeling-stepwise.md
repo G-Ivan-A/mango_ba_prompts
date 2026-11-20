@@ -2,13 +2,13 @@
 id: mango-bcreq-uc-modeling-stepwise-by-test
 title: "BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)"
 status: draft
-version: 0.2
+version: 0.3
 updated: 2026-11-20
 temperature: 0.1
 operation: modeling
 processes: ["Требования и предварительное согласование", "Дизайн решения и оценка"]
 based_on: prompts/bcreq-uc-modeling-stepwise.md
-based_on_sha256: 1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3
+based_on_sha256: 5ed17d013e50e5141d114153d55cf79714fba85ff0c71583229e538fbc6a35f8
 mode: by-test
 steps: [Ш-5, Ш-8]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -175,7 +175,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

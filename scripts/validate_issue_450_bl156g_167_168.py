@@ -10,12 +10,14 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 RUNS = ROOT / "runs/2026"
 REPS = ("r1", "r2", "r3")
+# Issue #488 перезакрепил ссылку на эталон классификации и поднял минорную
+# версию каждого опубликованного промпта; остальной текст — тот же.
 PUBLISHED = {
-    "prompts/bcreq-review-validation-oneshot.md": "0.3",
-    "prompts/bcreq-constitution-governance-oneshot.md": "0.5",
-    "prompts/bcreq-context-understanding-stepwise.md": "0.5",
-    "prompts/bcreq-fr-documentation-stepwise.md": "0.5",
-    "prompts/bcreq-orr-solution-design-stepwise.md": "0.3",
+    "prompts/bcreq-review-validation-oneshot.md": "0.4",
+    "prompts/bcreq-constitution-governance-oneshot.md": "0.6",
+    "prompts/bcreq-context-understanding-stepwise.md": "0.6",
+    "prompts/bcreq-fr-documentation-stepwise.md": "0.6",
+    "prompts/bcreq-orr-solution-design-stepwise.md": "0.4",
 }
 
 def read(path):
@@ -46,7 +48,7 @@ class Published(unittest.TestCase):
 
     def test_arm_b_equals_published_body(self):
         # Issue #464 правит тексты поверх измеренных: плечо сравнивается с текстом без слоя #464.
-        # Ш-В слой #464 не трогает.
+        # Байтовая сверка снимает слои #488, #495 и прежние правки.
         spec = importlib.util.spec_from_file_location("i464_for_450", ROOT / "experiments/issue_464/prompt_changes.py")
         i464 = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(i464)
@@ -58,8 +60,6 @@ class Published(unittest.TestCase):
             arm = (RUNS / f"RUN-0086/inputs/prompt-{label}-B.md").read_text(encoding="utf-8")
             self.assertEqual(strip(measured(path)), strip(arm), path)
         arm = (RUNS / "RUN-0085/inputs/prompt-A3.md").read_text(encoding="utf-8")
-        # Issue #495 снял с Ш-В приватные ссылки и HTML-комментарии: сравнение — с
-        # текстом без слоя #495 (measured снимает его вместе с #464 и #474).
         self.assertEqual(strip(measured("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
         arm = (RUNS / "RUN-0087/inputs/prompt-B.md").read_text(encoding="utf-8")
         self.assertEqual(strip(measured("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))

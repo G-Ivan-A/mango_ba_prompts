@@ -2,13 +2,13 @@
 id: mango-bcreq-orr-solution-design-stepwise-by-test
 title: "BCREQ Ш-6 (2.6+2.7): ОРР (по тесту)"
 status: draft
-version: 0.3
+version: 0.4
 updated: 2026-11-20
 temperature: 0.1
 operation: solution_design
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-orr-solution-design-stepwise.md
-based_on_sha256: eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517
+based_on_sha256: a3625617be079c43475b17f8c7485e148f34416d8f3bcc2a066f91c33af04b69
 mode: by-test
 steps: [Ш-6]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -215,7 +215,7 @@ L2 ТС
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

@@ -1,5 +1,5 @@
 {
-  "version": "1.4.4",
+  "version": "1.4.5",
   "updated": "2026-11-20",
   "standard": "standards/bcreq-prompt-purity.md",
   "contour": {
@@ -262,7 +262,7 @@
     },
     {
       "id": "BP-13",
-      "regex": "(?i)(?<![\\w\\-\u2010\u2011\u2212\u00ad\ufe63\uff0d])(?:RFC|ADR)[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d](?:[A-ZА-ЯЁ][A-ZА-ЯЁ0-9]*[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d])*\\d",
+      "regex": "(?i)(?<!\\w)(?<!\\w[\\-\u2010\u2011\u2212\u00ad\ufe63\uff0d])(?:RFC|ADR)[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d](?:[A-ZА-ЯЁ][A-ZА-ЯЁ0-9]*[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d])*\\d",
       "what": "отсылка к внутреннему RFC/ADR по ID (справочное, исполнителю недоступно)"
     }
   ],

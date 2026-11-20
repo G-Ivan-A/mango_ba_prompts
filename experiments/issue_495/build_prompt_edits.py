@@ -5,13 +5,12 @@
 #464, #474, #476) сверяют байты промптов с эталонами замеров. Issue #495
 меняет тексты (приватные ссылки, HTML-комментарии, кейс-лексика, балласт), поэтому
 в цепочку откатов (``experiments/issue_474/prompt_changes.py`` и далее) добавлен
-верхний слой: ``prompt_changes.revert`` снимает ровно эти правки. Правка вне
+слой: ``prompt_changes.revert`` снимает сначала #488, затем #495. Правка вне
 реестра после отката остаётся, и старая регрессия падает — тихая правка промпта
 по-прежнему невозможна.
 
-Ханки строятся по строкам (difflib) между базой задачи ``BASE`` и рабочим
-деревом с контекстом, достаточным для однозначного поиска; для каждого файла
-проверяется ``revert(текущий) == файл на BASE`` и sha256 обеих сторон.
+Ханки строятся по строкам (difflib) между срезом до #488 и рабочим деревом
+после снятия #488. Для каждого файла проверяется точный обратный переход.
 
 Запуск: ``python3 experiments/issue_495/build_prompt_edits.py`` (запись) или
 ``--check`` (сверка без записи). LLM не вызывается.
@@ -26,13 +25,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = Path(__file__).with_name("prompt-edits.json")
-#: База задачи — main на момент начала issue #495 (merge PR #494).
-BASE = "e051e0fa46e22c43004a6af19e8c53b827ce1b1d"
+#: База побайтовых регрессий до #488. База аудита задаётся в map_baseline.py.
+PRE_RELEASE = "e051e0fa46e22c43004a6af19e8c53b827ce1b1d"
 #: Пути, чьи байты сверяют прошлые регрессии.
 SCOPE = ["prompts"]
 
 sys.path.insert(0, str(Path(__file__).parent))
-from prompt_changes import apply_hunks  # noqa: E402
+from prompt_changes import RELEASE, apply_hunks  # noqa: E402
 
 
 def sha(text):
@@ -63,13 +62,15 @@ def hunks(before, after, context):
 
 def build():
     files = {}
-    names = git("diff", "--name-only", BASE, "--", *SCOPE).split()
+    names = git("diff", "--name-only", PRE_RELEASE, "--", *SCOPE).split()
     for rel in sorted(names):
         path = ROOT / rel
         if not path.exists():
             continue
-        before = git("show", f"{BASE}:{rel}")
-        after = path.read_text(encoding="utf-8")
+        before = git("show", f"{PRE_RELEASE}:{rel}")
+        after = RELEASE.revert(rel, path.read_text(encoding="utf-8"))
+        if after == before:
+            continue
         for context in range(1, 8):
             hs = hunks(before, after, context)
             if hs is not None and apply_hunks(after, hs) == before:
@@ -77,8 +78,8 @@ def build():
         else:
             raise SystemExit(f"{rel}: не удалось построить однозначные ханки")
         files[rel] = {"sha256_before": sha(before), "sha256_after": sha(after), "hunks": hs}
-    return {"issue": 495, "base": BASE, "scope": SCOPE,
-            "note": "Обратимые правки #495: prompt_changes.revert(path, text) возвращает текст на base.",
+    return {"issue": 495, "base": PRE_RELEASE, "scope": SCOPE, "revert_order": [488, 495],
+            "note": "Ханки #495 применяются к тексту после снятия #488.",
             "files": files}
 
 

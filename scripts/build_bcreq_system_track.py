@@ -37,6 +37,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402
 import build_bcreq_step_prompts as steps_builder  # noqa: E402
+from build_bcreq_step_prompts import HUB_FLOATING, HUB_PINNED  # noqa: E402
 from prompt_purity import project  # noqa: E402
 
 ARCHIVE = ROOT / "prompts/archive/a-in-v2.7.0"
@@ -49,11 +50,6 @@ BEGIN = "## Системный формат шагов"
 END = "Ниже — текст шага редакции 2.7.0."
 #: Начало архивного блока «по тесту» — его заменяет блок «Стандарты шага».
 ARCHIVE_BLOCK = "\n## Дополнение «по тесту» (BL-156): стандарты шага\n"
-# Issue #488: метамодель вынесена из Хаба; плавающая ссылка архива 2.7.0
-# закрепляется на коммите приёмки E6 в ba-ai-metamodel.
-HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
-HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
-              "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
 #: Баннер архивной редакции — служебная история сборки, в промпт не идёт.
 BANNER = re.compile(r"^> \*\*Редакция по тесту \(#427\): действует до ADR обратного согласования\.\*\*[^\n]*\n\n", re.M)
 #: Кейс-лексика архивного текста → принцип (реестр замен PR #497, ID в скобках).

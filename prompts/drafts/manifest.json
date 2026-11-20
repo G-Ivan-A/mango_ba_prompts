@@ -39,8 +39,9 @@
         "Ш-0"
       ],
       "based_on": "prompts/bcreq-constitution-governance-oneshot.md",
-      "based_on_sha256": "864f80663cc524da14ef022ff6f99fc0dabc4136ff4a4baab28f06c0b6775a9d",
+      "based_on_sha256": "794b4df122dca054dcae0f1b0d7aa0ff571e8f1bfa0fe54e540780a5dd123407",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "INGEST",
         "VERIFY",
@@ -79,6 +80,7 @@
       "based_on": null,
       "based_on_sha256": null,
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "INGEST"
       ],
@@ -107,8 +109,9 @@
         "Ш-1"
       ],
       "based_on": "prompts/bcreq-context-understanding-stepwise.md",
-      "based_on_sha256": "9e911aa3fb2c77182bbe896a902e522ef3959065283daa744cf9b3ccab796b86",
+      "based_on_sha256": "8183dd1872fcef6637fc4822ae2e254cbc2afd62eb0e58f62b18f99cb6d16f4e",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "INGEST",
         "EXTRACT",
@@ -148,8 +151,9 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "628447a39a2a4450e9740156309b084220a4f430fec3e471dfb0955b94f4f0b9",
+      "based_on_sha256": "59babf58f4e8ba885d4c5a8fec47d4acc4986a7d4b1e6aaf2c3c66ed3ef80ffa",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "EXTRACT",
         "ANALYZE"
@@ -189,8 +193,9 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c",
+      "based_on_sha256": "27dfe183a84460de1259204008e7cf93850e6e10c7f374df9f1520289ea6aa60",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -224,8 +229,9 @@
         "Ш-4"
       ],
       "based_on": "prompts/bcreq-nfr-documentation-stepwise.md",
-      "based_on_sha256": "f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a",
+      "based_on_sha256": "af1acb878a87497ae9b021d65cd59e3c06f5d5a8fc662ef40c7170b282e805bb",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -258,8 +264,9 @@
         "Ш-8"
       ],
       "based_on": "prompts/bcreq-uc-modeling-stepwise.md",
-      "based_on_sha256": "1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3",
+      "based_on_sha256": "5ed17d013e50e5141d114153d55cf79714fba85ff0c71583229e538fbc6a35f8",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -294,8 +301,9 @@
         "Ш-6"
       ],
       "based_on": "prompts/bcreq-orr-solution-design-stepwise.md",
-      "based_on_sha256": "eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517",
+      "based_on_sha256": "a3625617be079c43475b17f8c7485e148f34416d8f3bcc2a066f91c33af04b69",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -326,8 +334,9 @@
         "Ш-7"
       ],
       "based_on": "prompts/bcreq-constraints-documentation-stepwise.md",
-      "based_on_sha256": "b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d",
+      "based_on_sha256": "b11e8c4429ce4136b6eea8802b28223b91c68d452a9fdf546d148382dd0373ae",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -357,8 +366,9 @@
         "Ш-9"
       ],
       "based_on": "prompts/bcreq-extra-risk-analysis-stepwise.md",
-      "based_on_sha256": "0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6",
+      "based_on_sha256": "16f581591b9ad0a4dc0fff2c958080531e94a4a8add1f3f762eb89333d4994ab",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],
@@ -389,8 +399,9 @@
         "Ш-В"
       ],
       "based_on": "prompts/bcreq-review-validation-oneshot.md",
-      "based_on_sha256": "9fbec4f7a36f08fec83495ac4d2c9fdd9b70e06d1f7dc3bc47381c6e14534881",
+      "based_on_sha256": "46466fdb6608aa463d38a0aa8f86e5a2d0f80b8f62bbf780f97418c144ba5cda",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "ANALYZE",
         "VERIFY",
@@ -433,6 +444,7 @@
       "based_on": null,
       "based_on_sha256": null,
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "VERIFY",
         "TRANSFORM",
@@ -469,8 +481,9 @@
         "Ш-С"
       ],
       "based_on": "prompts/bcreq-scenarios-modeling-oneshot.md",
-      "based_on_sha256": "4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96",
+      "based_on_sha256": "5bc6187a97807c8636f2beae6ed5a7a813073875746057b569cf7e657f9cd2b3",
       "runtime_main_to_sha": 0,
+      "hub_main_to_metamodel_sha": 0,
       "profiles": [
         "GENERATE"
       ],

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-20T02:46:21.665Z",
+  "generatedAt": "2026-11-20T17:52:52.162Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,7 +35,7 @@
     }
   ],
   "siteVersion": {
-    "version": "2.9.1",
+    "version": "2.9.2",
     "released": "2026-11-20",
     "issue": 495,
     "basis": "PR #497: чистота промптов — без приватных ссылок, балласта и кейс-лексики",

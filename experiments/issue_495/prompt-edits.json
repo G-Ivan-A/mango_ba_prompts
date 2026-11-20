@@ -4,7 +4,11 @@
  "scope": [
   "prompts"
  ],
- "note": "Обратимые правки #495: prompt_changes.revert(path, text) возвращает текст на base.",
+ "revert_order": [
+  488,
+  495
+ ],
+ "note": "Ханки #495 применяются к тексту после снятия #488.",
  "files": {
   "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md": {
    "sha256_before": "7b3946b31e2dc1bda7b82d415ce212ef1df7e43ca61c888996ebc749c1baeb19",
@@ -2290,15 +2294,11 @@
   },
   "prompts/drafts/bcreq-constitution-governance-oneshot.md": {
    "sha256_before": "81652ae24230047df48b75b769a2c14ea7e35c25e15f030b73e1fdc5d73ef079",
-   "sha256_after": "b6733bc961f1bec0bb537a6b6f6bccfc67b736006f3eb4f017a412036cc19405",
+   "sha256_after": "dfbdec050066cefa88bcd39111c8d0d044ef492ef9faa55cf3f79e368f82c534",
    "hunks": [
     {
-     "before": "status: draft\nversion: 0.5\nupdated: 2026-11-18\n",
-     "after": "status: draft\nversion: 0.5\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "processes: [\"Конституция и управление\"]\nbased_on: prompts/bcreq-constitution-governance-oneshot.md\nbased_on_sha256: 3ffa79cbef3509845312efc44117d52997ed0c231e9c6b86266e1b7575d7fcd1\n",
-     "after": "processes: [\"Конституция и управление\"]\nbased_on: prompts/bcreq-constitution-governance-oneshot.md\nbased_on_sha256: 864f80663cc524da14ef022ff6f99fc0dabc4136ff4a4baab28f06c0b6775a9d\n"
+     "after": "processes: [\"Конституция и управление\"]\nbased_on: prompts/bcreq-constitution-governance-oneshot.md\nbased_on_sha256: 794b4df122dca054dcae0f1b0d7aa0ff571e8f1bfa0fe54e540780a5dd123407\n"
     },
     {
      "before": "assembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -2446,7 +2446,7 @@
     },
     {
      "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
+     "after": "\nЗ-5 — условие: пока профиль недоступен в закреплённом срезе runtime.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "результат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",
@@ -2456,15 +2456,11 @@
   },
   "prompts/drafts/bcreq-constraints-documentation-stepwise.md": {
    "sha256_before": "5cde0026c92dcb6b859ee5a8e136fb4579ff20dc15cadf2eeff5757a2b9f5eb7",
-   "sha256_after": "bb927e229940f273f4bfc050d5b2dfb1baeafec439e1fa2151d950c28bba9c98",
+   "sha256_after": "f7686fd92abeda2c0cca4114e636fb4a863d0985ee2401de346a0b0f5142d99a",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-7 (2.8): ограничения (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-7 (2.8): ограничения (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: 3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c\n",
-     "after": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d\n"
+     "after": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: b11e8c4429ce4136b6eea8802b28223b91c68d452a9fdf546d148382dd0373ae\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2534,15 +2530,11 @@
   },
   "prompts/drafts/bcreq-context-understanding-stepwise.md": {
    "sha256_before": "0d92de04d6464866ecf915e4d821468a15b705baa5ab61ba6656b42ab3dd5acc",
-   "sha256_after": "1fe9f8b4bbe0106036444458aaf72e25d80ac5f33a20282ffdd058d7ed62accd",
+   "sha256_after": "bb1c8ae82a0a5406fbde19eaddea5fb227bf32c1769a520dea301b656b090a9f",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-1 (2.1): контекст, глоссарий (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-1 (2.1): контекст, глоссарий (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: understanding\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-context-understanding-stepwise.md\nbased_on_sha256: 5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9\n",
-     "after": "operation: understanding\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-context-understanding-stepwise.md\nbased_on_sha256: 9e911aa3fb2c77182bbe896a902e522ef3959065283daa744cf9b3ccab796b86\n"
+     "after": "operation: understanding\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-context-understanding-stepwise.md\nbased_on_sha256: 8183dd1872fcef6637fc4822ae2e254cbc2afd62eb0e58f62b18f99cb6d16f4e\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -2636,15 +2628,11 @@
   },
   "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md": {
    "sha256_before": "d166daa1a4bfae06b51992151214565dc3cb982c3f7b7700506304af1e5756fb",
-   "sha256_after": "0aba86ca11b485d8a4ba99e42b2eeb89f2eec9acf60539865a8c549edc388e8f",
+   "sha256_after": "dd1df314f6e13f759fac64bffaa226db6979a3732ac46f09fbf7e775e906ceb8",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-9 (2.14): риски, приёмка (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-9 (2.14): риски, приёмка (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2\n",
-     "after": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6\n"
+     "after": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 16f581591b9ad0a4dc0fff2c958080531e94a4a8add1f3f762eb89333d4994ab\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2714,15 +2702,11 @@
   },
   "prompts/drafts/bcreq-fr-documentation-stepwise.md": {
    "sha256_before": "dd8e0102f8b52356826a158c482cf65df75913067649d1adbca583e74481f7dd",
-   "sha256_after": "c580cd98c370b727573434cebd320dd52f676c8a5ed0e11b86aff7bbd914ee56",
+   "sha256_after": "4542341834bb672bd5e01addb2cca20dc708f11a9f28e40f21c821a86999ec9d",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\n",
-     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c\n"
+     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 27dfe183a84460de1259204008e7cf93850e6e10c7f374df9f1520289ea6aa60\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -2906,15 +2890,11 @@
   },
   "prompts/drafts/bcreq-nfr-documentation-stepwise.md": {
    "sha256_before": "3d47e65b7fda55cb72171caf651ca412e3d3642b00612e31fc0f0355bb574041",
-   "sha256_after": "1c730387dfe503dcddfd5ad43905ee2d8fbfe4364c6044dfb2ebfc9ce5dbd6a3",
+   "sha256_after": "ce03e8ef9084e1c47ab507c8f607cb87ca0ad5cbc3b68bf7b291dc290af93ec9",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-4 (2.5): НФТ (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-4 (2.5): НФТ (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada\n",
-     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a\n"
+     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: af1acb878a87497ae9b021d65cd59e3c06f5d5a8fc662ef40c7170b282e805bb\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2988,15 +2968,11 @@
   },
   "prompts/drafts/bcreq-orr-solution-design-stepwise.md": {
    "sha256_before": "521491281f4e641a6ecf5445b5e47313cfeb914b8350a4a822fdbc7fed7937ba",
-   "sha256_after": "8b1ead970e93e31635178902fef5404c790bd7236a1fc05bd50c0715a733e2d8",
+   "sha256_after": "a2bec1c5219e70569f2eddd57d1d4da4e7b4ec19ead69e818dd243026ee0eaad",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-6 (2.6+2.7): ОРР (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-6 (2.6+2.7): ОРР (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\n",
-     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517\n"
+     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: a3625617be079c43475b17f8c7485e148f34416d8f3bcc2a066f91c33af04b69\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3070,15 +3046,11 @@
   },
   "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": {
    "sha256_before": "0dd3069fbef22d85c271161e4e3e469334626bca321ddc792e949ecd32cfca70",
-   "sha256_after": "3c6202a700beee99de730a9a6dc9dec90c9b00f0cb05031626927eba0bd8b203",
+   "sha256_after": "4f5ab11958eb0cc7dcfb6cce9dd8b6f173bb5d8be3058ae07df6ed17e45e9ee0",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)\"\nstatus: draft\nversion: 0.4\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)\"\nstatus: draft\nversion: 0.4\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: impact_analysis\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-products-impact-analysis-stepwise.md\nbased_on_sha256: 235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf\n",
-     "after": "operation: impact_analysis\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-products-impact-analysis-stepwise.md\nbased_on_sha256: 628447a39a2a4450e9740156309b084220a4f430fec3e471dfb0955b94f4f0b9\n"
+     "after": "operation: impact_analysis\nprocesses: [\"Приём и контекст\"]\nbased_on: prompts/bcreq-products-impact-analysis-stepwise.md\nbased_on_sha256: 59babf58f4e8ba885d4c5a8fec47d4acc4986a7d4b1e6aaf2c3c66ed3ef80ffa\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -3186,7 +3158,7 @@
     },
     {
      "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
+     "after": "\nЗ-5 — условие: пока профиль недоступен в закреплённом срезе runtime.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "шагу вернуться>». Итог — факты, не самооценка: не хвали ни БА, ни свой\nрезультат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",
@@ -3258,15 +3230,11 @@
   },
   "prompts/drafts/bcreq-review-validation-oneshot.md": {
    "sha256_before": "2fc1b056be7e8cb05d336ce12fc8ba9e41f01952510a073f56c67c63a75a7c90",
-   "sha256_after": "aa1c6e0060f7d43132450c3fd74a6bcc8adcfb17074a5c6232e38705ae2b7b02",
+   "sha256_after": "05b9660f25ed5d98da13645d281a4de9db9edc465d51f306dbad526cbb254540",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-В: валидация документа (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-04\n",
-     "after": "title: \"BCREQ Ш-В: валидация документа (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: validation\nprocesses: [\"Валидация второй ролью\"]\nbased_on: prompts/bcreq-review-validation-oneshot.md\nbased_on_sha256: b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b\n",
-     "after": "operation: validation\nprocesses: [\"Валидация второй ролью\"]\nbased_on: prompts/bcreq-review-validation-oneshot.md\nbased_on_sha256: 9fbec4f7a36f08fec83495ac4d2c9fdd9b70e06d1f7dc3bc47381c6e14534881\n"
+     "after": "operation: validation\nprocesses: [\"Валидация второй ролью\"]\nbased_on: prompts/bcreq-review-validation-oneshot.md\nbased_on_sha256: 46466fdb6608aa463d38a0aa8f86e5a2d0f80b8f62bbf780f97418c144ba5cda\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3332,15 +3300,11 @@
   },
   "prompts/drafts/bcreq-scenarios-modeling-oneshot.md": {
    "sha256_before": "dbbd3f4cbd8ab60f94451d771904956fe606c4f23964283611d092e165f537cf",
-   "sha256_after": "8213f9c065e459750749b62eb2305d0a48cd7799ca1318e204d4c01220b662c0",
+   "sha256_after": "913bdd2c4a0c76ddf6a079f2e0bc27f78f3efeb1c47475137a6237648686f461",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-С (2.12/2.13): US, UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-05\n",
-     "after": "title: \"BCREQ Ш-С (2.12/2.13): US, UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7\n",
-     "after": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96\n"
+     "after": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 5bc6187a97807c8636f2beae6ed5a7a813073875746057b569cf7e657f9cd2b3\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3410,15 +3374,11 @@
   },
   "prompts/drafts/bcreq-uc-modeling-stepwise.md": {
    "sha256_before": "cadc34c43ca817e5f9657c3f31f4f4fc1d872dc128a682e2c8d5831bb356830f",
-   "sha256_after": "cf5fe98a5852e682cdc64d1d4131a6e3cd7a9eb4c4184c2ca81c739f86031267",
+   "sha256_after": "cc20148b61cda9ba837c440656c4f4bbccde586a7ae17f40971c5b6912320601",
    "hunks": [
     {
-     "before": "title: \"BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
-     "after": "title: \"BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-20\n"
-    },
-    {
      "before": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890\n",
-     "after": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3\n"
+     "after": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 5ed17d013e50e5141d114153d55cf79714fba85ff0c71583229e538fbc6a35f8\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3500,7 +3460,7 @@
   },
   "prompts/drafts/manifest.json": {
    "sha256_before": "cbe13abae6af09b2f89434da8bff7c72caecd630de4c4cc4f5046c1700194fd0",
-   "sha256_after": "7d4c913b8ea596fc43e7f17223a8b4381fe9cd102449fe32d3c7820f4e0aadd1",
+   "sha256_after": "4820add6abbb87fc7c27c6070afdbfa2a6128cb9a2cc6876d4d040399e80ab12",
    "hunks": [
     {
      "before": "{\n  \"source_issue\": \"https://github.com/G-Ivan-A/mango_ba_prompts/issues/438\",\n",
@@ -3520,7 +3480,11 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-constitution-governance-oneshot.md\",\n      \"based_on_sha256\": \"3ffa79cbef3509845312efc44117d52997ed0c231e9c6b86266e1b7575d7fcd1\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-constitution-governance-oneshot.md\",\n      \"based_on_sha256\": \"864f80663cc524da14ef022ff6f99fc0dabc4136ff4a4baab28f06c0b6775a9d\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-constitution-governance-oneshot.md\",\n      \"based_on_sha256\": \"794b4df122dca054dcae0f1b0d7aa0ff571e8f1bfa0fe54e540780a5dd123407\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "        \"И-3\",\n        \"И-7\"\n",
@@ -3531,12 +3495,24 @@
      "after": "      ],\n      \"stubs\": [\n        \"З-5\"\n      ],\n"
     },
     {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
+    },
+    {
      "before": "      \"based_on\": \"prompts/bcreq-context-understanding-stepwise.md\",\n      \"based_on_sha256\": \"5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-context-understanding-stepwise.md\",\n      \"based_on_sha256\": \"9e911aa3fb2c77182bbe896a902e522ef3959065283daa744cf9b3ccab796b86\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-context-understanding-stepwise.md\",\n      \"based_on_sha256\": \"8183dd1872fcef6637fc4822ae2e254cbc2afd62eb0e58f62b18f99cb6d16f4e\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-products-impact-analysis-stepwise.md\",\n      \"based_on_sha256\": \"235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-products-impact-analysis-stepwise.md\",\n      \"based_on_sha256\": \"628447a39a2a4450e9740156309b084220a4f430fec3e471dfb0955b94f4f0b9\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-products-impact-analysis-stepwise.md\",\n      \"based_on_sha256\": \"59babf58f4e8ba885d4c5a8fec47d4acc4986a7d4b1e6aaf2c3c66ed3ef80ffa\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "        \"И-2\",\n        \"И-7\"\n",
@@ -3548,35 +3524,71 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"27dfe183a84460de1259204008e7cf93850e6e10c7f374df9f1520289ea6aa60\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"af1acb878a87497ae9b021d65cd59e3c06f5d5a8fc662ef40c7170b282e805bb\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"5ed17d013e50e5141d114153d55cf79714fba85ff0c71583229e538fbc6a35f8\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"a3625617be079c43475b17f8c7485e148f34416d8f3bcc2a066f91c33af04b69\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"b11e8c4429ce4136b6eea8802b28223b91c68d452a9fdf546d148382dd0373ae\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"16f581591b9ad0a4dc0fff2c958080531e94a4a8add1f3f762eb89333d4994ab\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-review-validation-oneshot.md\",\n      \"based_on_sha256\": \"b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-review-validation-oneshot.md\",\n      \"based_on_sha256\": \"9fbec4f7a36f08fec83495ac4d2c9fdd9b70e06d1f7dc3bc47381c6e14534881\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-review-validation-oneshot.md\",\n      \"based_on_sha256\": \"46466fdb6608aa463d38a0aa8f86e5a2d0f80b8f62bbf780f97418c144ba5cda\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"5bc6187a97807c8636f2beae6ed5a7a813073875746057b569cf7e657f9cd2b3\",\n"
+    },
+    {
+     "before": "      \"runtime_main_to_sha\": 0,\n",
+     "after": "      \"runtime_main_to_sha\": 0,\n      \"hub_main_to_metamodel_sha\": 0,\n"
     }
    ]
   },
@@ -3774,7 +3786,7 @@
   },
   "prompts/drafts/system/bcreq-products-impact-analysis-system.md": {
    "sha256_before": "ff13abe00ae7e6b588f701e09120c14d1cffe9686432bd2cf6715d4910ed7416",
-   "sha256_after": "ca20e83ae8ae82e8350e1775b17118749230a5d2fad8abfcd260f3755aac83a8",
+   "sha256_after": "fdbd630783696c48bf0a5e9e13098f789b04dfb00606252b50c7b94eb35c475c",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (системный формат)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3890,7 +3902,7 @@
     },
     {
      "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
+     "after": "\nЗ-5 — условие: пока профиль недоступен в закреплённом срезе runtime.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "шагу вернуться>». Итог — факты, не самооценка: не хвали ни БА, ни свой\nрезультат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",
