@@ -171,8 +171,18 @@ class PracticePreservation(unittest.TestCase):
         baseline = json.loads((HERE / 'preservation-baseline.json').read_text())
         route = json.loads((ROOT / 'docs/ba-processes/bcreq-a-in-route.json').read_text())
         self.assertEqual(len(route['steps']), len(baseline['steps']))
+        # Issue #495 (АД-11, решение владельца п.6): кейс-лексика «коннектор»
+        # в цели AIN-06 обобщена, продуктовое «ЛК» в проверке — тоже. Других
+        # расхождений с baseline нет.
+        accepted_495 = {('AIN-06', 'why'): ('Новизна коннектора', 'Новизна решения'),
+                        ('AIN-06', 'checks'): ('ЛК/права/настройки рассмотрены',
+                                               'интерфейсы настройки, права доступа и параметры рассмотрены')}
         for original, current in zip(baseline['steps'], route['steps']):
             for field, value in original.items():
+                if (original['id'], field) in accepted_495:
+                    old, new = accepted_495[(original['id'], field)]
+                    self.assertIn(old, value)
+                    value = value.replace(old, new)
                 if field in ('checks', 'forbidden'):
                     self.assertTrue(current[field].startswith(value), (current['id'], field))
                 else:
@@ -183,7 +193,9 @@ class PracticePreservation(unittest.TestCase):
                 # and fixtures remain identical to their original baseline.
                 self.assertEqual(value, 'proposed')
                 self.assertEqual(route[field], 'accepted')
-                self.assertIn('/issues/474', route['decision'])
+                        # Issue #495: решение — ссылкой «issue #474», без URL приватного репо.
+                self.assertIn('issue #474', route['decision'])
+                self.assertNotIn('mango_ba_prompts', route['decision'])
             else:
                 self.assertEqual(route[field], value, field)
         cases = (HERE / 'gate-cases.json').read_bytes()

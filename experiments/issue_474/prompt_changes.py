@@ -8,13 +8,13 @@ import json
 from pathlib import Path
 EDITS=json.loads(Path(__file__).with_name('prompt-edits.json').read_text())['files']
 
-# Issue #488: the newer release layer (classification link by SHA) is removed first.
-_spec=importlib.util.spec_from_file_location('prompt488', Path(__file__).parent / '../issue_488/prompt_changes.py')
-I488=importlib.util.module_from_spec(_spec)
-_spec.loader.exec_module(I488)
+# Issue #495: снять #488, затем #495, до отката #474.
+_spec=importlib.util.spec_from_file_location('prompt495', Path(__file__).parent/'../issue_495/prompt_changes.py')
+I495=importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(I495)
 
 def revert(path, text):
-    text=I488.revert(path, text)
+    text=I495.revert(path, text)
     cursor=0
     for hunk in EDITS.get(path,[]):
         start=text.index(hunk['after'],cursor)

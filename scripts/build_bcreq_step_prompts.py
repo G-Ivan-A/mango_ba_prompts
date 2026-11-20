@@ -31,6 +31,12 @@
 Выход: ``prompts/drafts/*.md`` (11 файлов шагов и заглушка Ш-Р) и
 ``prompts/drafts/manifest.json``. Блоки уроков (``--apply-prompts``) сборщик
 не добавляет: они ждут ADR-017.
+
+Чистота исполнимого текста (issue #495, ``standards/bcreq-prompt-purity.md``):
+тело черновика проходит ``prompt_purity.project`` — без ссылок на
+приватный репозиторий и служебных HTML-комментариев; баннеры режима,
+ссылки на задачи и отчёт сборки остаются только во frontmatter и манифесте.
+Блок стандартов начинается заголовком ``## Стандарты шага`` (``BLOCK_HEADING``).
 """
 
 import argparse
@@ -44,6 +50,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402  (issue #490)
+from prompt_purity import project  # noqa: E402  (issue #495)
 BASE = ROOT / "standards/bcreq-prompt-base-standard.md"
 PROFILES = ROOT / "standards/bcreq-prompt-profiles.md"
 CATALOG = ROOT / "standards/bcreq-manual-classes/catalog.json"
@@ -62,20 +69,19 @@ RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
 HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
 HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
               "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
-#: Релиз промптов #488: дата черновиков, чей текст v0.1 получил ссылку по SHA.
-PIN_DATE = "2026-11-20"
 BUILD_DATE = "2026-11-04"
+#: Issue #495: чистка исполнимого текста меняет тело каждого черновика.
+PURITY_DATE = "2026-11-20"
 #: Правки после RUN-0089: дата только у изменённых файлов, остальные черновики не меняются ни на байт.
 FIX_DATE = "2026-11-05"
 #: Гейты, решение которых принимает человек и записывает К-34 (стандарт гейтов, Г3).
 #: Г-W здесь нет: черновик Ш-В — измеренный RUN-0081 текст, шаг идёт по `prompts/`, запись задаёт его карточка.
 RECORDED_GATES = {"Г-IN", "Г-С1", "Выпуск"}
 GATE_RECORD = [
-    "**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5",
+    "**Запись решения гейта (К-34).** Когда человек решил, добавь запись в 8.5",
     "и покажи её в ответе одной строкой: `gate_id`; `gate_type`; решение; кто решил; причина.",
     "У гейта типа `гибрид` добавь `model_recommendation` и `divergence` (да или нет). Запись без типа",
-    "гейта, а у гибрида без расхождения, неполна. Источник — стандарт гейтов, правило Г3:",
-    f"[`docs/contracts/bcreq-stage-gates.md`]({REPO_BLOB}docs/contracts/bcreq-stage-gates.md).",
+    "гейта, а у гибрида без расхождения, неполна.",
     "",
 ]
 ROUTE = ["Ш-0", "Ш-А", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С"]
@@ -84,11 +90,9 @@ RELEASE_FILE = "bcreq-release-readiness-oneshot"
 INTAKE_FILE = "bcreq-intake-questionnaire-stepwise"
 #: Черновик Ш-В — измеренный RUN-0081 текст: дата и байты не меняются.
 REVIEW_FILE = "bcreq-review-validation-oneshot"
-BEGIN = "<!-- bl-156: by-test -->"
-END = "<!-- /bl-156: by-test -->"
-# Маркер черновика по временному workflow промптов (CONTRIBUTING.md, шаг 3).
-EXPERIMENTAL = "<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n"
-MODE_LINE = "Редакция по тесту (#427): действует до ADR обратного согласования."
+#: Начало блока стандартов шага (до issue #495 — HTML-маркер ``bl-156: by-test``).
+#: Блок идёт до блока «Итог шага» или до конца файла.
+BLOCK_HEADING = "## Стандарты шага"
 
 # Правила базового стандарта, которые расходятся с текстом v0.1 (RFC, 9.3, п. 6;
 # базовый стандарт, раздел 2: «его НЕ ДОЛЖНО вносить молча»). Решаются по golden
@@ -107,7 +111,7 @@ EXCLUDED_BASE = {
 TERMS = [
     ("UNKNOWN", "`[ТРЕБУЕТСЯ УТОЧНЕНИЕ]` с вопросом в 8.4 (маркер v0.1)"),
     ("WAITING, BLOCKED, INCOMPLETE", "остановка по CB с перечнем недостающего; статус — в строке «текущий» блока «Состояние BCREQ»"),
-    ("receipt", "блок «Проверки (receipt)» после блока «Состояние BCREQ»: выполненные проверки, прочитанные и непрочитанные источники, ограничения, расхождения с блоком «по тесту»"),
+    ("receipt", "блок «Проверки (receipt)» после блока «Состояние BCREQ»: выполненные проверки, прочитанные и непрочитанные источники, ограничения, расхождения с блоком «Стандарты шага»"),
     ("операция К-NN", "часть шага; контракт операции — ниже, раздел «Контракты операций»"),
 ]
 
@@ -116,7 +120,7 @@ TERMS = [
 NOTES = {
     "Ш-В": [
         "Профиль TRANSFORM в этом шаге относится к варианту исправления в замечании "
-        "(операция К-30 — адресная правка): документ ты не меняешь — текст v0.1, "
+        "(операция К-30 — адресная правка): документ ты не меняешь — текст шага выше, "
         "раздел 4: «Не меняй текст документа» (АД-2). `before` — цитата из документа, "
         "`after` — вариант, semantic_diff — смысл правки.",
     ],
@@ -130,11 +134,9 @@ NOTES = {
 RELEASE_BODY = """
 # BCREQ Ш-Р. Выпуск: заглушка шага (пилот)
 
-Шаг Ш-Р — заглушка выпуска (пилот): у него нет промпта v0.1
-([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).
-Текст шага ниже собран из контрактов операций К-31, К-12, К-33, К-32, К-35 и
-гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).
-Отдельный вызов, новая сессия.
+Шаг Ш-Р — заглушка выпуска (пилот). Текст шага ниже — контракты операций
+К-31, К-12, К-33, К-32, К-35 и гейта «Выпуск»; сверх них — только правила
+пакетов раздела 4. Отдельный вызов, новая сессия.
 
 ## 0. Позиция
 
@@ -234,16 +236,13 @@ Baseline К-35: <кандидат; released — только по записи �
 INTAKE_BODY = """
 # BCREQ Ш-А. Анкета и согласие со стандартами
 
-Шаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса. У него нет
-промпта v0.1: текст шага собран из контракта операции К-01 и правил
-[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).
+Шаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса:
+контракт операции К-01 и правила выбора стандартов (раздел 4В ниже).
 Тот же чат, что и у Ш-0.
 
 ## 0. Конституция и позиция
 
-Конституция —
-[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
-в чат её не выводи.
+Конституция — Промпт 0 (Ш-0), принятый в этом чате; в чат её не выводи.
 
 - **Пройдено:** Ш-0 старт: конституция принята, стартовые данные зафиксированы.
 - **Текущий:** Ш-А, анкета (стадия A-IN).
@@ -283,7 +282,7 @@ INTAKE_BODY = """
 
 1. Какие продукты Mango Office подключены у Заказчика?
 2. Сколько операторов работает?
-3. Сколько номеров Mango ВАТС?
+3. Сколько номеров телефонии продукта?
 4. Сколько сторонних номеров?
 5. Сколько звонков и текстовых коммуникаций в месяц?
 
@@ -295,8 +294,7 @@ INTAKE_BODY = """
 7. Если `new`: какие 1–2 аналогичных продукта Mango взять опорой? Внутреннего API
    ни у БА, ни у ассистента нет, поэтому функциональность смотрим на них.
 
-**В. Согласие со стандартами** (подробно — в
-[справочнике стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md)):
+**В. Согласие со стандартами** (варианты по умолчанию):
 
 | Что | По умолчанию | Другие варианты |
 | --- | --- | --- |
@@ -313,7 +311,7 @@ INTAKE_BODY = """
 Анкета зафиксирована
 - продукты Заказчика: <…|UNKNOWN>
 - операторы: <…|UNKNOWN>
-- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>
+- номера телефонии продукта: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>
 - коммуникации в месяц: звонки <…|UNKNOWN>; текст <…|UNKNOWN>
 - вариант: <delta|new|UNKNOWN>
 - опорные продукты: <…|не применимо|UNKNOWN>
@@ -352,7 +350,7 @@ FORMAT_EDITS = {
     "bcreq-constitution-governance-oneshot": [
         ("Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу/режим/исходный запрос без анализа. Затем остановись перед AIN-01. Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02.",
          "Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу, формат шагов и исходный запрос без анализа. "
-         "Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»; без строки — декомпозированный; у БА формат не спрашивай. "
+         "Формат шагов задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»; без строки — декомпозированный; у БА формат не спрашивай. "
          "Слова «stepwise»/«oneshot» от БА — прежнее название способа запуска (чат или агент), а не формат шагов: формат не меняй и не переспрашивай. "
          "Декомпозированный формат: остановись перед AIN-01; Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02. "
          "Системный формат: остановись перед системным Ш-А; затем системные Ш-1 и Ш-2, как в редакции 2.7.0."),
@@ -377,7 +375,7 @@ FORMAT_EDITS = {
         (f"[bcreq-products-impact-analysis-stepwise]({REPO_BLOB}prompts/bcreq-products-impact-analysis-stepwise.md) |",
          f"[bcreq-products-impact-analysis-system]({SYSTEM_BLOB}bcreq-products-impact-analysis-system.md) |"),
         (f"**oneshot (ИИ-агент), один вызов — одна стадия:**\n[A-IN]({REPO_BLOB}prompts/bcreq-in-understanding-oneshot.md) (Ш-А, Ш-1, Ш-2) →\nгейт Г-IN →\n[A-CORE]({REPO_BLOB}prompts/bcreq-core-documentation-oneshot.md) (Ш-3…Ш-5) →\nгейт Г-С1 →\n[A-WORK]({REPO_BLOB}prompts/bcreq-work-solution-design-oneshot.md) (Ш-6…Ш-9) →\nШ-В → гейт Г-W.",
-         f"**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из\nтаблицы выше; декомпозированный — вместо них\n[AIN-01…AIN-24]({REPO_BLOB}docs/ba-processes/bcreq-a-in-execution.md)\nотдельными промптами. С Ш-3 шаги общие. Формат выбирает БА на сайте,\nмодель его не спрашивает. Стадийные промпты для ИИ-агента (A-IN, A-CORE,\nA-WORK) остаются в каталоге и в этот набор не входят."),
+         f"**Формат шагов.** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из\nтаблицы выше; декомпозированный — вместо них\n[AIN-01…AIN-24]({REPO_BLOB}docs/ba-processes/bcreq-a-in-execution.md)\nотдельными промптами. С Ш-3 шаги общие. Формат выбирает БА на сайте,\nмодель его не спрашивает. Стадийные промпты для ИИ-агента (A-IN, A-CORE,\nA-WORK) остаются в каталоге и в этот набор не входят."),
         ("Возврат выбирает БА (stepwise) или человек по рекомендации агента\n(oneshot); разделы",
          "Возврат выбирает БА (при агентном прогоне — человек по рекомендации\nагента); разделы"),
         ("- режим: <stepwise|oneshot>", "- формат шагов: <системный|декомпозированный>"),
@@ -388,7 +386,7 @@ FORMAT_EDITS = {
     ],
     "bcreq-fr-documentation-stepwise": [
         ("До алгоритма Ш-3 проверь явные AIN-21 и AIN-24/Г-IN, их task/attempt/route/snapshot и актуальность. Без одного из них — blocked, возврат к указанному AIN-ID; ФТ не создавай. При действующем Г-IN выполняй прежний алгоритм ФТ ниже.",
-         "До алгоритма Ш-3 проверь вход по формату шагов из «Состояния BCREQ» (#490). "
+         "До алгоритма Ш-3 проверь вход по формату шагов из «Состояния BCREQ». "
          "Декомпозированный (по умолчанию): явные AIN-21 и AIN-24/Г-IN, их task/attempt/route/snapshot и актуальность; без одного из них — blocked, возврат к указанному AIN-ID. "
          "Системный: явное решение БА по Г-IN после системного Ш-2, записанное в журнал гейтов и 8.5; без него — blocked, возврат к Ш-2. "
          "Без входа ФТ не создавай. При действующем Г-IN выполняй прежний алгоритм ФТ ниже. "
@@ -399,7 +397,9 @@ FORMAT_EDITS = {
 
 
 def apply_format_edits(name, body):
+    """Подстановки формата шагов по исполнимой проекции (issue #495): ссылки → подписи."""
     for old, new in FORMAT_EDITS.get(name, []):
+        old, new = project(old), project(new)
         if body.count(old) != 1:
             raise SystemExit(f"#490: подстановка в {name} встречается {body.count(old)} раз: {old[:60]}")
         body = body.replace(old, new)
@@ -574,19 +574,12 @@ def render_block(steps, ctx):
     reg_version, sha, refs, stub_block, stubs, ts6, m4 = ctx["registry"]
     catalog = ctx["catalog"]
     rfc = ctx["rfc"]
-    out = [BEGIN, "## Дополнение «по тесту» (BL-156): стандарты шага", ""]
-    out += [f"> **{MODE_LINE}**", ""]
+    out = [BLOCK_HEADING, ""]
     out += [
-        "Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по",
-        f"[RFC #427, раздел 9.3]({REPO_BLOB}docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)",
-        f"из [базового стандарта]({REPO_BLOB}standards/bcreq-prompt-base-standard.md) {base_version},",
-        f"[профилей]({REPO_BLOB}standards/bcreq-prompt-profiles.md) {prof_version},",
-        f"[каталога операций]({REPO_BLOB}standards/bcreq-manual-classes/catalog.json) и",
-        f"[реестра справочников runtime]({REPO_BLOB}standards/bcreq-runtime-references.md) {reg_version}.",
-        "Правила перенесены дословно с номером; источник правила — в стандарте.",
+        "Правила базового стандарта, профилей шага и контракты операций — с номером правила.",
         "",
-        "**Приоритет.** Где правило ниже расходится с текстом шага выше",
-        "(v0.1), действует текст v0.1; расхождение запиши в receipt.",
+        "**Приоритет.** Где правило ниже расходится с текстом шага выше,",
+        "действует текст шага выше; расхождение запиши в receipt.",
         "",
         "**Как читать.** «Промпт ДОЛЖЕН …» читай как «ты ДОЛЖЕН …». Термины",
         "стандартов в этом шаге пишутся так:",
@@ -641,11 +634,6 @@ def render_block(steps, ctx):
         out += [f"#### {title}", ""]
         out += [f"- **{rid}.** {text}" for rid, text in kept]
         out.append("")
-    out += [
-        "Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): "
-        + ", ".join(EXCLUDED_BASE) + ". Для них действует текст v0.1.",
-        "",
-    ]
 
     # Профили.
     for p in profiles:
@@ -677,7 +665,7 @@ def render_block(steps, ctx):
         out.append(f"- **{r['id']} {r['name']}:** {link}.")
     out.append("")
     if any(r["id"] == "И-2" for r in used_refs):
-        out += ["Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):", "", "```text", m4, "```", ""]
+        out += ["Как читать каталог:", "", "```text", m4, "```", ""]
     used_stubs = [s for s in stubs if steps_of(s["steps"]) & set(steps)]
     if used_stubs:
         out += ["Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.", ""]
@@ -685,7 +673,6 @@ def render_block(steps, ctx):
             out += [f"{s['id']} — условие: {s['condition']}.", "", "```text"]
             out.append(stub_block.replace("<имя>", s["name"]))
             out += ["```", ""]
-    out.append(END)
     return "\n".join(out) + "\n", profiles, [op for _, op in operations], used_refs, used_stubs
 
 
@@ -706,8 +693,10 @@ def build_frontmatter(original_fm, file_id_suffix, extra, updated=BUILD_DATE):
     return "---\n" + "\n".join(lines) + "\n---\n"
 
 
-def build_all():
-    ctx = {
+def context():
+    """Разобранные SSOT стандартов — общий вход ``render_block`` (им пользуется и
+    сборщик системного формата ``build_bcreq_system_track``)."""
+    return {
         "base": load_base(),
         "profiles": load_profiles(),
         "registry": load_registry(),
@@ -715,6 +704,10 @@ def build_all():
         "rfc": load_rfc_steps(),
         "handoff": bcreq_handoff.load(),
     }
+
+
+def build_all():
+    ctx = context()
     sha = ctx["registry"][1]
     files = {}
     for step in ROUTE:
@@ -729,7 +722,6 @@ def build_all():
             f"runtime_sha: {sha}",
             "assembled_by: scripts/build_bcreq_step_prompts.py",
         ]
-        header = f"\n> **{MODE_LINE}** Черновик BL-156 (issue #438): "
         if name == RELEASE_FILE:
             # Суффиксы «-by-test» и «(по тесту)» добавляет build_frontmatter
             # (до issue #446 они удваивались у заглушки).
@@ -744,7 +736,6 @@ def build_all():
                 'processes: ["Выпуск BCREQ"]',
             ])
             v01, body, substitutions, based_on = None, RELEASE_BODY, 0, []
-            header += "шаг без промпта v0.1 — заглушка выпуска (пилот, RFC #427, раздел 9.2); блок «по тесту» — в конце файла.\n"
         elif name == INTAKE_FILE:
             fm = "\n".join([
                 f"id: mango-{INTAKE_FILE}",
@@ -757,7 +748,6 @@ def build_all():
                 'processes: ["Приём и контекст"]',
             ])
             v01, body, substitutions, based_on = None, INTAKE_BODY, 0, []
-            header += "шаг без промпта v0.1 (issue #464); блок «по тесту» — в конце файла.\n"
         else:
             source = PROMPTS / f"{name}.md"
             v01 = read(source)
@@ -768,30 +758,17 @@ def build_all():
                 f"based_on: prompts/{name}.md",
                 f"based_on_sha256: {hashlib.sha256(v01.encode('utf-8')).hexdigest()}",
             ]
-            # После BL-156а (issue #444) ссылки v0.1 уже закреплены по SHA: подстановок нет.
-            header += (
-                "текст шага v0.1 ниже не изменён, кроме ссылок на runtime по SHA "
-                "реестра; блок «по тесту» — в конце файла.\n"
-                if substitutions else
-                "текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n"
-            )
-        updated = BUILD_DATE if name == REVIEW_FILE else FIX_DATE
-        if name == INTAKE_FILE or "<!-- issue-474:entry -->" in body:
-            updated = "2026-11-08"
+        updated = PURITY_DATE
         body = apply_format_edits(name, body)
         hub_substitutions = body.count(HUB_FLOATING)
         body = body.replace(HUB_FLOATING, HUB_PINNED)
-        if name in FORMAT_EDITS:
-            header = header.replace(" ниже не изменён", " ниже не изменён, кроме формата шагов (#490)", 1)
         handoff = "" if name in HANDOFF_SKIP else "\n" + bcreq_handoff.render(steps, ctx["handoff"])
-        if handoff:
-            updated = HANDOFF_DATE
-        if v01 and HUB_PINNED in v01:
-            updated = PIN_DATE
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
-        text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + EXPERIMENTAL + header + body.rstrip("\n") + "\n\n" + block + handoff
+        # #495: исполнимая проекция тела — без приватных ссылок и HTML-комментариев.
+        text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + project(
+            "\n" + body.strip("\n") + "\n\n" + block.rstrip("\n") + "\n" + handoff)
         outputs[DRAFTS / f"{name}.md"] = text
         manifest.append({
             "file": f"prompts/drafts/{name}.md",
@@ -808,7 +785,7 @@ def build_all():
             "excluded_base_rules": sorted(EXCLUDED_BASE),
         })
     outputs[MANIFEST] = json.dumps({
-        "source_issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438",
+        "source_issue": "#438",
         "task": "BL-156",
         "build_date": "2026-11-08",
         "runtime_sha": sha,

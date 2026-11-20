@@ -9,7 +9,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT/'scripts'))
 import bcreq_handoff  # noqa: E402  (issue #490: «Итог шага» из SSOT)
+from prompt_purity import project  # noqa: E402  (issue #495: тело промпта без приватных ссылок и комментариев)
 DRAFTS = ROOT / 'prompts/drafts/a-in'
+#: Происхождение урока (номер прогона) остаётся в RFC, в промпт не идёт (issue #495, BP-04).
+PROVENANCE = re.compile(r' \(обратная связь RUN-\d{4}\)')
 
 def build():
     route = json.loads((ROOT/'docs/ba-processes/bcreq-a-in-route.json').read_text())
@@ -27,24 +30,21 @@ def build():
             cells = [c.strip() for c in line.split('|')[1:-1]]
             # Rules assigned to the common contract apply to every prompt.
             if '§3' in cells[-1] or re.search(rf'(?<!\d){sid[-2:]}(?!\d)', cells[-1]):
-                selected.append(f'- **{cells[0]}.** {cells[1]} → {cells[2]}. Граница: {cells[3]}.')
+                selected.append(PROVENANCE.sub('', f'- **{cells[0]}.** {cells[1]} → {cells[2]}. Граница: {cells[3]}.'))
         body = f'''---
 id: mango-bcreq-{sid.lower()}-stepwise
 title: "BCREQ {sid}: {step['name']}"
 status: draft
 version: 0.3
-updated: 2026-11-18
+updated: 2026-11-20
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]
 route_version: "{route['version']}"
 assembled_by: scripts/build_bcreq_a_in.py
 ---
-<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->
 
 # {sid}. {step['name']}
-
-Draft для ручной проверки БА; эффективность модели не измерена.
 
 {common}
 
@@ -88,6 +88,8 @@ Draft для ручной проверки БА; эффективность мо
 Порядок ответа: результат, «На согласование БА» (если есть), receipt,
 «Итог шага», затем `КОНЕЦ {sid} <версия результата>`.
 '''
+        head, text = body.split('\n---\n', 1)
+        body = head + '\n---\n' + project(text)
         path = DRAFTS / f'bcreq-{sid.lower()}-understanding-stepwise.md'
         outputs[path] = body
         kit.append({**step, 'promptPath':str(path.relative_to(ROOT)), 'prompt':body,

@@ -46,14 +46,10 @@ PATTERNS: dict[str, re.Pattern[str]] = {
 }
 
 # Violations that existed when the rule was introduced (2026-10-31). Fixing
-# them is a prompt-content change, tracked in #411.
-ALLOWLIST: dict[str, dict[str, int]] = {
-    "bcreq-constitution-governance-oneshot.md": {
-        "run-id": 6,
-        "scenario-id": 1,
-        "issue-ref": 1,
-    },
-}
+# them is a prompt-content change, tracked in #411. Issue #495 removed the
+# last ones (ballast register D-01…D-22), so the allowlist is empty: any
+# identifier in an active prompt is a failure.
+ALLOWLIST: dict[str, dict[str, int]] = {}
 
 STANDARD_ANCHOR = "обобщение-содержимого-промпта-issue-413"
 STANDARD_HEADING = "## Обобщение содержимого промпта (issue #413)"

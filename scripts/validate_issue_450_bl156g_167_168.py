@@ -48,14 +48,10 @@ class Published(unittest.TestCase):
 
     def test_arm_b_equals_published_body(self):
         # Issue #464 правит тексты поверх измеренных: плечо сравнивается с текстом без слоя #464.
-        # Ш-В слой #464 не трогает: сравнение с RUN-0085 идёт побайтово без слоя
-        # #488 (перезакреплённая ссылка, experiments/issue_488/prompt_changes.py).
+        # Байтовая сверка снимает слои #488, #495 и прежние правки.
         spec = importlib.util.spec_from_file_location("i464_for_450", ROOT / "experiments/issue_464/prompt_changes.py")
         i464 = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(i464)
-        spec = importlib.util.spec_from_file_location("i488_for_450", ROOT / "experiments/issue_488/prompt_changes.py")
-        i488 = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(i488)
         measured = lambda p: i464.revert(p, read(p))  # noqa: E731
         strip = lambda t: re.sub(r"\A---\n.*?\n---\n", "", t, count=1, flags=re.S)  # noqa: E731
         for label, path in (("S1", "prompts/bcreq-context-understanding-stepwise.md"),
@@ -64,8 +60,7 @@ class Published(unittest.TestCase):
             arm = (RUNS / f"RUN-0086/inputs/prompt-{label}-B.md").read_text(encoding="utf-8")
             self.assertEqual(strip(measured(path)), strip(arm), path)
         arm = (RUNS / "RUN-0085/inputs/prompt-A3.md").read_text(encoding="utf-8")
-        shv = "prompts/bcreq-review-validation-oneshot.md"
-        self.assertEqual(strip(i488.revert(shv, read(shv))), strip(arm))
+        self.assertEqual(strip(measured("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
         arm = (RUNS / "RUN-0087/inputs/prompt-B.md").read_text(encoding="utf-8")
         self.assertEqual(strip(measured("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))
 

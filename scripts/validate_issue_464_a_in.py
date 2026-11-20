@@ -92,7 +92,8 @@ class FirstTestAntipatterns(unittest.TestCase):
 class AInOrder(unittest.TestCase):
     def test_questionnaire_asks_five_indicators_and_can_be_skipped(self):
         text = read(STEP_A)
-        for item in ("продукты Mango Office подключены", "операторов", "номеров Mango ВАТС",
+        # Issue #495 (АД-11): «номеров Mango ВАТС» обобщено до «номеров телефонии продукта».
+        for item in ("продукты Mango Office подключены", "операторов", "номеров телефонии продукта",
                      "сторонних номеров", "звонков и текстовых коммуникаций в месяц"):
             with self.subTest(item=item):
                 self.assertIn(item, text)

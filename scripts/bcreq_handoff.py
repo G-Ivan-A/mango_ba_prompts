@@ -21,8 +21,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SSOT = ROOT / "docs/ba-processes/bcreq-step-handoff.md"
 OUT = ROOT / "site/data/step-handoff.json"
-BEGIN = "<!-- issue-490:handoff -->"
-END = "<!-- /issue-490:handoff -->"
+#: Границы блока в промпте — заголовок и последняя фраза шаблона: HTML-комментарии
+#: в тексте промпта запрещены стандартом чистоты (issue #495, BP-07).
+BEGIN = "## Итог шага для БА"
+END = "без записи — декомпозированный."
 COLUMNS = ["Шаг", "Название", "Цель", "Выполнено", "Проверка БА", "Что проверить", "Следующий"]
 KINDS = {"обязательна": "required", "технический": "technical"}
 ROUTE = ["Ш-0", "Ш-А", "Ш-1", "Ш-2", "Ш-3", "Ш-4", "Ш-5", "Ш-6", "Ш-7", "Ш-8", "Ш-9", "Ш-В", "Ш-Р", "Ш-С"]
@@ -110,7 +112,7 @@ def render(step_ids, data=None):
              .replace("{approve_rule}", approve)
              .replace("{forms}", "\n".join(forms)))
     assert "{" not in block.replace("`{", ""), block
-    assert block.startswith(BEGIN) and block.endswith(END)
+    assert block.startswith(BEGIN + "\n") and block.endswith(END) and "<!--" not in block
     return block + "\n"
 
 
@@ -123,7 +125,7 @@ def site_data(data=None):
     return {
         "source": "docs/ba-processes/bcreq-step-handoff.md",
         "version": data["version"],
-        "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/490",
+        "issue": "#490",
         "steps": steps,
     }
 

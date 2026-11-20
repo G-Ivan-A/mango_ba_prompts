@@ -6,7 +6,7 @@ ai-generated: true
 type: navigation
 scope: prompts
 related_issues:
-  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/65"
+  - "#65"
 ---
 
 > **LLM Loading Contract — full layer.**
@@ -23,35 +23,35 @@ related_issues:
 `legacy`), увидеть связь с процессами БА и понять, как давать фидбек.
 
 Полный стандарт промптов закреплён в
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>
+[`standards/prompt-standard.md`](../standards/prompt-standard.md)
 и ADR-001:
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>.
+[`docs/adr/001-prompt-standard.md`](../docs/adr/001-prompt-standard.md).
 
 ## Как быстро выбрать промпт
 
 | Если задача | Начните с |
 | --- | --- |
-| Нужно создать спецификацию бизнес-требований и дизайна решения (BCREQ) | [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) (Промпт 0), затем шаги по разделу [«BCREQ: маршрутизация»](#bcreq-маршрутизация) |
-| Нужно собрать контекст, глоссарий и вопросы заказчику | [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) или [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) |
-| Нужно определить затронутые продукты и команды | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) |
-| Нужно сформировать User Story или Use Case | [`bcreq-scenarios-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md) (`тип: US \| UC`) или [`bcreq-uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md) |
-| Нужно написать функциональные требования | [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) или [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) |
-| Нужно написать нефункциональные требования | [`bcreq-nfr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-nfr-documentation-stepwise.md) |
-| Нужно проверить черновик требований | [`bcreq-review-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md) |
-| Нужно оформить ограничения и границы скоупа | [`bcreq-constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md) |
-| Нужно описать решение (ОРР) для разработки | [`bcreq-orr-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md) или [`bcreq-work-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md) |
-| Нужно собрать риски, зависимости и план приёмки | [`bcreq-extra-risk-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-extra-risk-analysis-stepwise.md) |
-| Нужно обработать ASR-расшифровку | [`asr-ingestion-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md) |
-| Нужно сделать резюме встречи | [`meeting-customer-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md) или [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) |
-| Нужно суммаризировать длинную сессию работы с LLM | [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) |
+| Нужно создать спецификацию бизнес-требований и дизайна решения (BCREQ) | [`bcreq-constitution-governance-oneshot.md`](bcreq-constitution-governance-oneshot.md) (Промпт 0), затем шаги по разделу [«BCREQ: маршрутизация»](#bcreq-маршрутизация) |
+| Нужно собрать контекст, глоссарий и вопросы заказчику | [`bcreq-context-understanding-stepwise.md`](bcreq-context-understanding-stepwise.md) или [`bcreq-in-understanding-oneshot.md`](bcreq-in-understanding-oneshot.md) |
+| Нужно определить затронутые продукты и команды | [`bcreq-products-impact-analysis-stepwise.md`](bcreq-products-impact-analysis-stepwise.md) |
+| Нужно сформировать User Story или Use Case | [`bcreq-scenarios-modeling-oneshot.md`](bcreq-scenarios-modeling-oneshot.md) (`тип: US \| UC`) или [`bcreq-uc-modeling-stepwise.md`](bcreq-uc-modeling-stepwise.md) |
+| Нужно написать функциональные требования | [`bcreq-fr-documentation-stepwise.md`](bcreq-fr-documentation-stepwise.md) или [`bcreq-core-documentation-oneshot.md`](bcreq-core-documentation-oneshot.md) |
+| Нужно написать нефункциональные требования | [`bcreq-nfr-documentation-stepwise.md`](bcreq-nfr-documentation-stepwise.md) |
+| Нужно проверить черновик требований | [`bcreq-review-validation-oneshot.md`](bcreq-review-validation-oneshot.md) |
+| Нужно оформить ограничения и границы скоупа | [`bcreq-constraints-documentation-stepwise.md`](bcreq-constraints-documentation-stepwise.md) |
+| Нужно описать решение (ОРР) для разработки | [`bcreq-orr-solution-design-stepwise.md`](bcreq-orr-solution-design-stepwise.md) или [`bcreq-work-solution-design-oneshot.md`](bcreq-work-solution-design-oneshot.md) |
+| Нужно собрать риски, зависимости и план приёмки | [`bcreq-extra-risk-analysis-stepwise.md`](bcreq-extra-risk-analysis-stepwise.md) |
+| Нужно обработать ASR-расшифровку | [`asr-ingestion-oneshot.md`](asr-ingestion-oneshot.md) |
+| Нужно сделать резюме встречи | [`meeting-customer-documentation-stepwise.md`](meeting-customer-documentation-stepwise.md) или [`meeting-team-documentation-stepwise.md`](meeting-team-documentation-stepwise.md) |
+| Нужно суммаризировать длинную сессию работы с LLM | [`session-debug-documentation-oneshot.md`](session-debug-documentation-oneshot.md) |
 
 ## BCREQ: маршрутизация
 
 Набор BCREQ (issue #388) создаёт спецификацию бизнес-требований и дизайна
 решения по мета-стандартам Задачи 2:
-[архитектура промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md),
-[композиция документа](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md),
-[контракт гейтов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).
+[архитектура промптов](../standards/bcreq-prompt-architecture.md),
+[композиция документа](../standards/bcreq-composition-standard.md),
+[контракт гейтов](../docs/contracts/bcreq-stage-gates.md).
 Каждый промпт начинается блоком «Конституция и позиция»: **пройдено / текущий /
 рекомендуемый следующий** — и заканчивается блоком «Состояние BCREQ», который
 БА вставляет в следующий вызов.
@@ -64,25 +64,25 @@ related_issues:
   процесс согласования с командой и Заказчиком —
   [на сайте, вкладка «Процессы»](https://g-ivan-a.github.io/mango_ba_prompts/#processes);
   источник —
-  [`docs/ba-processes/bcreq-manual-process.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md).
+  [`docs/ba-processes/bcreq-manual-process.md`](../docs/ba-processes/bcreq-manual-process.md).
 - **Агентный (oneshot)** — ИИ-агент выполняет стадию A-IN, A-CORE или A-WORK
   одним вызовом, копит вопросы в 8.4 и заканчивает отчётом по гейту. Гейт
   агент не пересекает: его решают люди.
 
 | Шаг | Разделы BCREQ | Ручной маршрут (stepwise) | Агентный маршрут (oneshot) | Гейт после шага |
 | --- | --- | --- | --- | --- |
-| Ш-0 | Каркас, параметры, конституция | [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) | [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) | — |
-| Ш-1 | 1 Глоссарий, 2 Бизнес-контекст | [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) | [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) (стадия A-IN = Ш-1 + Ш-2) | — |
-| Ш-2 | 2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |
-| Ш-3 | 3 Функциональные требования | [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) | [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) (стадия A-CORE = Ш-3…Ш-5) | — |
-| Ш-4 | 4 Нефункциональные требования | [`bcreq-nfr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-nfr-documentation-stepwise.md) | A-CORE | — |
-| Ш-5 | 7 UC, прогон 1 | [`bcreq-uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | A-CORE | Г-С1 «Согласование 1» (решает Заказчик) |
-| Ш-6 | 5 Описание решения (ОРР) | [`bcreq-orr-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md) | [`bcreq-work-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md) (стадия A-WORK = Ш-6…Ш-9) | — |
-| Ш-7 | 6 Особенности и ограничения | [`bcreq-constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md) | A-WORK | — |
-| Ш-8 | 7 UC, прогон 2 | [`bcreq-uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | A-WORK | — |
-| Ш-9 | 8 Риски, зависимости, приёмка | [`bcreq-extra-risk-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-extra-risk-analysis-stepwise.md) | A-WORK | — |
-| Ш-В | Валидация документа второй ролью | [`bcreq-review-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md) | [`bcreq-review-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md) | Г-W (решают ПО продукта, архитектор, руководитель КК) |
-| Ш-С | US или UC вне документа (2.12 / 2.13) | [`bcreq-scenarios-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md) (`тип: US \| UC`) | [`bcreq-scenarios-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md) | — |
+| Ш-0 | Каркас, параметры, конституция | [`bcreq-constitution-governance-oneshot.md`](bcreq-constitution-governance-oneshot.md) | [`bcreq-constitution-governance-oneshot.md`](bcreq-constitution-governance-oneshot.md) | — |
+| Ш-1 | 1 Глоссарий, 2 Бизнес-контекст | [`bcreq-context-understanding-stepwise.md`](bcreq-context-understanding-stepwise.md) | [`bcreq-in-understanding-oneshot.md`](bcreq-in-understanding-oneshot.md) (стадия A-IN = Ш-1 + Ш-2) | — |
+| Ш-2 | 2.5 Продукты и стейкхолдеры | [`bcreq-products-impact-analysis-stepwise.md`](bcreq-products-impact-analysis-stepwise.md) | A-IN | Г-IN (решает БА) |
+| Ш-3 | 3 Функциональные требования | [`bcreq-fr-documentation-stepwise.md`](bcreq-fr-documentation-stepwise.md) | [`bcreq-core-documentation-oneshot.md`](bcreq-core-documentation-oneshot.md) (стадия A-CORE = Ш-3…Ш-5) | — |
+| Ш-4 | 4 Нефункциональные требования | [`bcreq-nfr-documentation-stepwise.md`](bcreq-nfr-documentation-stepwise.md) | A-CORE | — |
+| Ш-5 | 7 UC, прогон 1 | [`bcreq-uc-modeling-stepwise.md`](bcreq-uc-modeling-stepwise.md) (`прогон: 1`) | A-CORE | Г-С1 «Согласование 1» (решает Заказчик) |
+| Ш-6 | 5 Описание решения (ОРР) | [`bcreq-orr-solution-design-stepwise.md`](bcreq-orr-solution-design-stepwise.md) | [`bcreq-work-solution-design-oneshot.md`](bcreq-work-solution-design-oneshot.md) (стадия A-WORK = Ш-6…Ш-9) | — |
+| Ш-7 | 6 Особенности и ограничения | [`bcreq-constraints-documentation-stepwise.md`](bcreq-constraints-documentation-stepwise.md) | A-WORK | — |
+| Ш-8 | 7 UC, прогон 2 | [`bcreq-uc-modeling-stepwise.md`](bcreq-uc-modeling-stepwise.md) (`прогон: 2`) | A-WORK | — |
+| Ш-9 | 8 Риски, зависимости, приёмка | [`bcreq-extra-risk-analysis-stepwise.md`](bcreq-extra-risk-analysis-stepwise.md) | A-WORK | — |
+| Ш-В | Валидация документа второй ролью | [`bcreq-review-validation-oneshot.md`](bcreq-review-validation-oneshot.md) | [`bcreq-review-validation-oneshot.md`](bcreq-review-validation-oneshot.md) | Г-W (решают ПО продукта, архитектор, руководитель КК) |
+| Ш-С | US или UC вне документа (2.12 / 2.13) | [`bcreq-scenarios-modeling-oneshot.md`](bcreq-scenarios-modeling-oneshot.md) (`тип: US \| UC`) | [`bcreq-scenarios-modeling-oneshot.md`](bcreq-scenarios-modeling-oneshot.md) | — |
 
 Возвраты: если критерий гейта не выполнен, промпт рекомендует возврат в
 формате «стадия · шаг · причина»; решение о возврате принимает БА.
@@ -99,7 +99,7 @@ related_issues:
 **«Токен»** — это поле `id`: уникальный идентификатор промпта для аналитики
 использования, по схеме `mango-[операция]-[режим]` (совпадает с именем файла с
 префиксом `mango-`). Оба поля обязательны и описаны в
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>
+[`standards/prompt-standard.md`](../standards/prompt-standard.md)
 и ADR-001.
 
 ### 0. BCREQ: спецификация бизнес-требований и дизайна решения
@@ -109,27 +109,27 @@ related_issues:
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`bcreq-constitution-governance-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md) | BCREQ Ш-0: конституция | `mango-bcreq-constitution-governance-oneshot` | Промпт 0: задаёт структуру BCREQ из 8 разделов, стили, правила Р1–Р7, защиты АД-1…АД-7, параметры задачи и каркас документа со статусами. | `oneshot` | `draft` | `0.1` | `governance` | Формирование ФТ/ТЗ |
-| [`bcreq-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md) | BCREQ Ш-1: глоссарий и контекст | `mango-bcreq-context-understanding-stepwise` | Ш-1: пошагово формирует раздел 1 «Глоссарий» и раздел 2 «Бизнес-контекст» (проблема, цель, границы) из материалов Заказчика; вопросы — в 8.4. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US; Помощь ПО/ПМ |
-| [`bcreq-products-impact-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md) | BCREQ Ш-2: продукты и команды | `mango-bcreq-products-impact-analysis-stepwise` | Ш-2: пошагово формирует пункт ＋2.5 — затронутые продукты по таксономии, продуктовые команды, согласующих и стыки; готовит отчёт к гейту Г-IN. | `stepwise` | `draft` | `0.1` | `impact_analysis` | Формирование ФТ/ТЗ; Impact Analysis |
-| [`bcreq-fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md) | BCREQ Ш-3: функциональные требования | `mango-bcreq-fr-documentation-stepwise` | Ш-3: пошагово формирует раздел 3 «Функциональные требования» (вариант delta или new) с фильтрами Ф1–Ф4, условиями EARS и трассой к 2.4.1. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`bcreq-nfr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-nfr-documentation-stepwise.md) | BCREQ Ш-4: нефункциональные требования | `mango-bcreq-nfr-documentation-stepwise` | Ш-4: пошагово формирует раздел 4 «Нефункциональные требования» по ISO/IEC 25010:2023 — характеристика, метрика, порог, условие, источник; без выдуманных НФТ. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`bcreq-uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md) | BCREQ Ш-5/Ш-8: UC | `mango-bcreq-uc-modeling-stepwise` | Ш-5 и Ш-8: пошагово формирует раздел 7 Use Case — прогон 1 подтверждает ФТ сценариями (покрытие 100 %), прогон 2 добавляет граничные кейсы и ошибки. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование ФТ/ТЗ; Формирование UC/US |
-| [`bcreq-orr-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md) | BCREQ Ш-6 (2.6+2.7): ОРР | `mango-bcreq-orr-solution-design-stepwise` | Ш-6: пошагово формирует раздел 5 «Описание решения» — L1 ФДР и контекст C4, при `уровень: L1+L2` — L2 ТС, дельта API, данные; трассировка ФТ ↔ ОРР. | `stepwise` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ; Impact Analysis |
-| [`bcreq-constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md) | BCREQ Ш-7 (2.8): ограничения | `mango-bcreq-constraints-documentation-stepwise` | Ш-7: пошагово формирует раздел 6 «Особенности реализации и ограничения» — особенность со ссылкой на раздел 5, ограничение с источником и последствием. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ; Risk Analysis |
-| [`bcreq-extra-risk-analysis-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-extra-risk-analysis-stepwise.md) | BCREQ Ш-9 (2.14): риски, приёмка | `mango-bcreq-extra-risk-analysis-stepwise` | Ш-9: пошагово формирует раздел 8 — риски с мерой и владельцем, зависимости, план приёмки «Дано / Когда / Тогда», сводит 8.4 и 8.5; готовит данные к Г-W. | `stepwise` | `draft` | `0.1` | `risk_analysis` | Формирование ФТ/ТЗ; Risk Analysis |
-| [`bcreq-review-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md) | BCREQ Ш-В: валидация документа | `mango-bcreq-review-validation-oneshot` | Ш-В: проверяет документ BCREQ второй ролью по чек-листам разделов — «пункт → проблема → вариант»; не объявляет готовность, готовит отчёт к гейту Г-W. | `oneshot` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Impact Analysis; Risk Analysis |
-| [`bcreq-scenarios-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md) | BCREQ Ш-С (2.12/2.13): US, UC | `mango-bcreq-scenarios-modeling-oneshot` | Ш-С: формирует User Story с критериями приёмки или Use Case (параметр `тип`: US или UC) вне документа BCREQ на основе контекста Ш-1; трассирует сценарии к ФТ. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`bcreq-in-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md) | BCREQ A-IN: контекст, продукты | `mango-bcreq-in-understanding-oneshot` | Стадия A-IN для ИИ-агента: Ш-1 и Ш-2 одним вызовом — разделы 1, 2 и ＋2.5, словари и расхождения терминов; заканчивается отчётом по гейту Г-IN. | `oneshot` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
-| [`bcreq-core-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md) | BCREQ A-CORE: ФТ, НФТ, UC | `mango-bcreq-core-documentation-oneshot` | Стадия A-CORE для ИИ-агента: Ш-3…Ш-5 одним вызовом — разделы 3, 4 и 7 (прогон 1); заканчивается отчётом по гейту Г-С1 «Согласование 1» для Заказчика. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`bcreq-work-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md) | BCREQ A-WORK: решение, риски | `mango-bcreq-work-solution-design-oneshot` | Стадия A-WORK для ИИ-агента: Ш-6…Ш-9 одним вызовом — разделы 5, 6, 7 (прогон 2) и 8; заканчивается предварительным отчётом по гейту Г-W. | `oneshot` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ; Impact Analysis; Risk Analysis |
+| [`bcreq-constitution-governance-oneshot.md`](bcreq-constitution-governance-oneshot.md) | BCREQ Ш-0: конституция | `mango-bcreq-constitution-governance-oneshot` | Промпт 0: задаёт структуру BCREQ из 8 разделов, стили, правила Р1–Р7, защиты АД-1…АД-7, параметры задачи и каркас документа со статусами. | `oneshot` | `draft` | `0.1` | `governance` | Формирование ФТ/ТЗ |
+| [`bcreq-context-understanding-stepwise.md`](bcreq-context-understanding-stepwise.md) | BCREQ Ш-1: глоссарий и контекст | `mango-bcreq-context-understanding-stepwise` | Ш-1: пошагово формирует раздел 1 «Глоссарий» и раздел 2 «Бизнес-контекст» (проблема, цель, границы) из материалов Заказчика; вопросы — в 8.4. | `stepwise` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US; Помощь ПО/ПМ |
+| [`bcreq-products-impact-analysis-stepwise.md`](bcreq-products-impact-analysis-stepwise.md) | BCREQ Ш-2: продукты и команды | `mango-bcreq-products-impact-analysis-stepwise` | Ш-2: пошагово формирует пункт ＋2.5 — затронутые продукты по таксономии, продуктовые команды, согласующих и стыки; готовит отчёт к гейту Г-IN. | `stepwise` | `draft` | `0.1` | `impact_analysis` | Формирование ФТ/ТЗ; Impact Analysis |
+| [`bcreq-fr-documentation-stepwise.md`](bcreq-fr-documentation-stepwise.md) | BCREQ Ш-3: функциональные требования | `mango-bcreq-fr-documentation-stepwise` | Ш-3: пошагово формирует раздел 3 «Функциональные требования» (вариант delta или new) с фильтрами Ф1–Ф4, условиями EARS и трассой к 2.4.1. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`bcreq-nfr-documentation-stepwise.md`](bcreq-nfr-documentation-stepwise.md) | BCREQ Ш-4: нефункциональные требования | `mango-bcreq-nfr-documentation-stepwise` | Ш-4: пошагово формирует раздел 4 «Нефункциональные требования» по ISO/IEC 25010:2023 — характеристика, метрика, порог, условие, источник; без выдуманных НФТ. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`bcreq-uc-modeling-stepwise.md`](bcreq-uc-modeling-stepwise.md) | BCREQ Ш-5/Ш-8: UC | `mango-bcreq-uc-modeling-stepwise` | Ш-5 и Ш-8: пошагово формирует раздел 7 Use Case — прогон 1 подтверждает ФТ сценариями (покрытие 100 %), прогон 2 добавляет граничные кейсы и ошибки. | `stepwise` | `draft` | `0.1` | `modeling` | Формирование ФТ/ТЗ; Формирование UC/US |
+| [`bcreq-orr-solution-design-stepwise.md`](bcreq-orr-solution-design-stepwise.md) | BCREQ Ш-6 (2.6+2.7): ОРР | `mango-bcreq-orr-solution-design-stepwise` | Ш-6: пошагово формирует раздел 5 «Описание решения» — L1 ФДР и контекст C4, при `уровень: L1+L2` — L2 ТС, дельта API, данные; трассировка ФТ ↔ ОРР. | `stepwise` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ; Impact Analysis |
+| [`bcreq-constraints-documentation-stepwise.md`](bcreq-constraints-documentation-stepwise.md) | BCREQ Ш-7 (2.8): ограничения | `mango-bcreq-constraints-documentation-stepwise` | Ш-7: пошагово формирует раздел 6 «Особенности реализации и ограничения» — особенность со ссылкой на раздел 5, ограничение с источником и последствием. | `stepwise` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ; Risk Analysis |
+| [`bcreq-extra-risk-analysis-stepwise.md`](bcreq-extra-risk-analysis-stepwise.md) | BCREQ Ш-9 (2.14): риски, приёмка | `mango-bcreq-extra-risk-analysis-stepwise` | Ш-9: пошагово формирует раздел 8 — риски с мерой и владельцем, зависимости, план приёмки «Дано / Когда / Тогда», сводит 8.4 и 8.5; готовит данные к Г-W. | `stepwise` | `draft` | `0.1` | `risk_analysis` | Формирование ФТ/ТЗ; Risk Analysis |
+| [`bcreq-review-validation-oneshot.md`](bcreq-review-validation-oneshot.md) | BCREQ Ш-В: валидация документа | `mango-bcreq-review-validation-oneshot` | Ш-В: проверяет документ BCREQ второй ролью по чек-листам разделов — «пункт → проблема → вариант»; не объявляет готовность, готовит отчёт к гейту Г-W. | `oneshot` | `draft` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Impact Analysis; Risk Analysis |
+| [`bcreq-scenarios-modeling-oneshot.md`](bcreq-scenarios-modeling-oneshot.md) | BCREQ Ш-С (2.12/2.13): US, UC | `mango-bcreq-scenarios-modeling-oneshot` | Ш-С: формирует User Story с критериями приёмки или Use Case (параметр `тип`: US или UC) вне документа BCREQ на основе контекста Ш-1; трассирует сценарии к ФТ. | `oneshot` | `draft` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`bcreq-in-understanding-oneshot.md`](bcreq-in-understanding-oneshot.md) | BCREQ A-IN: контекст, продукты | `mango-bcreq-in-understanding-oneshot` | Стадия A-IN для ИИ-агента: Ш-1 и Ш-2 одним вызовом — разделы 1, 2 и ＋2.5, словари и расхождения терминов; заканчивается отчётом по гейту Г-IN. | `oneshot` | `draft` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
+| [`bcreq-core-documentation-oneshot.md`](bcreq-core-documentation-oneshot.md) | BCREQ A-CORE: ФТ, НФТ, UC | `mango-bcreq-core-documentation-oneshot` | Стадия A-CORE для ИИ-агента: Ш-3…Ш-5 одним вызовом — разделы 3, 4 и 7 (прогон 1); заканчивается отчётом по гейту Г-С1 «Согласование 1» для Заказчика. | `oneshot` | `draft` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`bcreq-work-solution-design-oneshot.md`](bcreq-work-solution-design-oneshot.md) | BCREQ A-WORK: решение, риски | `mango-bcreq-work-solution-design-oneshot` | Стадия A-WORK для ИИ-агента: Ш-6…Ш-9 одним вызовом — разделы 5, 6, 7 (прогон 2) и 8; заканчивается предварительным отчётом по гейту Г-W. | `oneshot` | `draft` | `0.1` | `solution_design` | Формирование ФТ/ТЗ; Impact Analysis; Risk Analysis |
 
 ### 1. Формирование ФТ/ТЗ
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`asr-ingestion-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-oneshot.md) | ASR: Нормализация транскрипции | `mango-asr-ingestion-oneshot` | Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла. | `oneshot` | `draft` | `0.1` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
-| [`asr-ingestion-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/asr-ingestion-legacy.md) | ASR: Обработка транскрипции (устаревший) | `mango-asr-ingestion-legacy` | Исторический итеративный вариант обработки ASR-транскрипций. | `legacy` | `draft` | `1.0` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
+| [`asr-ingestion-oneshot.md`](asr-ingestion-oneshot.md) | ASR: Нормализация транскрипции | `mango-asr-ingestion-oneshot` | Нормализует ASR-расшифровку в читаемый вход для анализа без потери смысла. | `oneshot` | `draft` | `0.1` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
+| [`asr-ingestion-legacy.md`](asr-ingestion-legacy.md) | ASR: Обработка транскрипции (устаревший) | `mango-asr-ingestion-legacy` | Исторический итеративный вариант обработки ASR-транскрипций. | `legacy` | `draft` | `1.0` | `ingestion` | Формирование ФТ/ТЗ; Помощь ПО/ПМ |
 
 ### 2. Валидация ФТ/ТЗ и анализ тендерных ТЗ
 
@@ -145,26 +145,26 @@ related_issues:
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`meeting-customer-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-customer-documentation-stepwise.md) | Встреча с клиентом: Резюме | `mango-meeting-customer-documentation-stepwise` | Пошагово формирует резюме встречи с заказчиком. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
-| [`meeting-team-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/meeting-team-documentation-stepwise.md) | Встреча команды: Резюме | `mango-meeting-team-documentation-stepwise` | Пошагово формирует резюме внутренней встречи команды. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
-| [`letter-customer-documentation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/letter-customer-documentation-legacy.md) | Письмо клиенту: Сопровождение (устаревший) | `mango-letter-customer-documentation-legacy` | Унаследованный промпт для сопроводительного письма заказчику. | `legacy` | `draft` | `1.0` | `documentation` | Помощь ПО/ПМ |
+| [`meeting-customer-documentation-stepwise.md`](meeting-customer-documentation-stepwise.md) | Встреча с клиентом: Резюме | `mango-meeting-customer-documentation-stepwise` | Пошагово формирует резюме встречи с заказчиком. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`meeting-team-documentation-stepwise.md`](meeting-team-documentation-stepwise.md) | Встреча команды: Резюме | `mango-meeting-team-documentation-stepwise` | Пошагово формирует резюме внутренней встречи команды. | `stepwise` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`letter-customer-documentation-legacy.md`](letter-customer-documentation-legacy.md) | Письмо клиенту: Сопровождение (устаревший) | `mango-letter-customer-documentation-legacy` | Унаследованный промпт для сопроводительного письма заказчику. | `legacy` | `draft` | `1.0` | `documentation` | Помощь ПО/ПМ |
 
 ### 5. Отладка и суммаризация сессий
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`session-debug-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/session-debug-documentation-oneshot.md) | Сессия LLM: Суммаризация | `mango-session-debug-documentation-oneshot` | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `pr-ops/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
+| [`session-debug-documentation-oneshot.md`](session-debug-documentation-oneshot.md) | Сессия LLM: Суммаризация | `mango-session-debug-documentation-oneshot` | Суммаризирует длинную сессию работы с LLM в структурированное резюме (контекст, ключевые решения, проблемы, открытые вопросы, шаги), совместимое с `pr-ops/session-digests.md`. | `oneshot` | `draft` | `0.1` | `documentation` | Помощь ПО/ПМ |
 
 ### 6. Архив: статистика и исторические генераторы
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`tz-stats-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-legacy.md) | ТЗ: Статистика, расширенный (архив) | `mango-tz-stats-generator-legacy` | Архивный расширенный генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
-| [`tz-stats-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/tz-stats-generator-simple-legacy.md) | ТЗ: Статистика, простой (архив) | `mango-tz-stats-generator-simple-legacy` | Архивный простой генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
-| [`usecase-stepwise-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-legacy.md) | Use Case: Генератор (архив) | `mango-usecase-stepwise-generator-legacy` | Архивный Hub-style генератор Use Case в пошаговой логике. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`usecase-stepwise-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-simple-legacy.md) | Use Case: Генератор, простой (архив) | `mango-usecase-stepwise-generator-simple-legacy` | Архивный простой генератор Use Case. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`user-story-generator-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-legacy.md) | User Story: Генератор (архив) | `mango-user-story-generator-legacy` | Архивный Hub-style генератор User Story из сырого запроса. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
-| [`user-story-generator-simple-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-simple-legacy.md) | User Story: Генератор, простой (архив) | `mango-user-story-generator-simple-legacy` | Архивный простой генератор User Story. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`tz-stats-generator-legacy.md`](archive/tz-stats-generator-legacy.md) | ТЗ: Статистика, расширенный (архив) | `mango-tz-stats-generator-legacy` | Архивный расширенный генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
+| [`tz-stats-generator-simple-legacy.md`](archive/tz-stats-generator-simple-legacy.md) | ТЗ: Статистика, простой (архив) | `mango-tz-stats-generator-simple-legacy` | Архивный простой генератор статистики по ТЗ. | `legacy` | `archived` | `1.0` | `quality` | Статистика |
+| [`usecase-stepwise-generator-legacy.md`](archive/usecase-stepwise-generator-legacy.md) | Use Case: Генератор (архив) | `mango-usecase-stepwise-generator-legacy` | Архивный Hub-style генератор Use Case в пошаговой логике. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`usecase-stepwise-generator-simple-legacy.md`](archive/usecase-stepwise-generator-simple-legacy.md) | Use Case: Генератор, простой (архив) | `mango-usecase-stepwise-generator-simple-legacy` | Архивный простой генератор Use Case. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`user-story-generator-legacy.md`](archive/user-story-generator-legacy.md) | User Story: Генератор (архив) | `mango-user-story-generator-legacy` | Архивный Hub-style генератор User Story из сырого запроса. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
+| [`user-story-generator-simple-legacy.md`](archive/user-story-generator-simple-legacy.md) | User Story: Генератор, простой (архив) | `mango-user-story-generator-simple-legacy` | Архивный простой генератор User Story. | `legacy` | `archived` | `1.0` | `modeling` | Формирование UC/US |
 
 ### 7. Архив: промпты, заменённые набором BCREQ (issue #388)
 
@@ -173,28 +173,28 @@ related_issues:
 
 | Файл | Название | Токен | Назначение | Режим | Статус | Версия | Когнитивная операция | Процесс БА |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| [`constraints-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-oneshot.md) | Ограничения: За один ответ | `mango-constraints-documentation-oneshot` | Формирует раздел 6 ограничений одним ответом. | `oneshot` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`constraints-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/constraints-documentation-stepwise.md) | Ограничения: Документирование | `mango-constraints-documentation-stepwise` | Пошагово формирует раздел 6 «Особенности реализации / Ограничения». | `stepwise` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`fr-documentation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-oneshot.md) | ФТ: Генерация за один ответ | `mango-fr-documentation-oneshot` | Формирует раздел 4 ФТ одним ответом при уже собранном контексте. | `oneshot` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`fr-documentation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md) | ФТ: Генерация требований | `mango-fr-documentation-stepwise` | Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC. | `stepwise` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
-| [`fr-validation-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-legacy.md) | ФТ: Валидация (устаревший) | `mango-fr-validation-legacy` | Унаследованный вариант анализа и валидации функциональных требований. | `legacy` | `archived` | `1.0` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
-| [`fr-validation-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-oneshot.md) | ФТ: Экспресс-валидация | `mango-fr-validation-oneshot` | Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом. | `oneshot` | `archived` | `0.1` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
-| [`fr-validation-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-stepwise.md) | ФТ: Валидация и аудит | `mango-fr-validation-stepwise` | Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным. | `stepwise` | `archived` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ |
-| [`glossary-context-understanding-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-oneshot.md) | Контекст: Терминология за один ответ | `mango-glossary-context-understanding-oneshot` | Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте. | `oneshot` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
-| [`glossary-context-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md) | Контекст: Терминология и цели | `mango-glossary-context-understanding-stepwise` | Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ. | `stepwise` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
-| [`questions-customer-understanding-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/questions-customer-understanding-legacy.md) | Вопросы: Подготовка заказчику (устаревший) | `mango-questions-customer-understanding-legacy` | Унаследованный вариант анализа запроса и подготовки вопросов заказчику. | `legacy` | `archived` | `1.0` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
-| [`questions-customer-understanding-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/questions-customer-understanding-stepwise.md) | Вопросы: Выявление потребностей | `mango-questions-customer-understanding-stepwise` | Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику. | `stepwise` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
-| [`technical-details-solution-design-legacy.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-legacy.md) | Технические детали: Доработки (устаревший) | `mango-technical-details-solution-design-legacy` | Унаследованный вариант подготовки раздела 7 «Список доработок». | `legacy` | `archived` | `1.0` | `solution_design` | Формирование ФТ/ТЗ |
-| [`technical-details-solution-design-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-oneshot.md) | Технические детали: За один ответ | `mango-technical-details-solution-design-oneshot` | Формирует раздел 7 для разработки одним ответом. | `oneshot` | `archived` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
-| [`technical-details-solution-design-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/technical-details-solution-design-stepwise.md) | Технические детали: Проектирование | `mango-technical-details-solution-design-stepwise` | Пошагово формирует раздел 7 «Список доработок» для разработки. | `stepwise` | `archived` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
-| [`uc-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/uc-modeling-oneshot.md) | Use Case: Моделирование за один ответ | `mango-uc-modeling-oneshot` | Формирует Use Case по Cockburn одним ответом. | `oneshot` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`uc-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/uc-modeling-stepwise.md) | Use Case: Моделирование | `mango-uc-modeling-stepwise` | Пошагово формирует Use Case по Cockburn из сырого описания. | `stepwise` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`us-modeling-oneshot.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/us-modeling-oneshot.md) | User Story: Формирование за один ответ | `mango-us-modeling-oneshot` | Формирует User Story одним ответом. | `oneshot` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
-| [`us-modeling-stepwise.md`](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/us-modeling-stepwise.md) | User Story: Формирование | `mango-us-modeling-stepwise` | Пошагово формирует User Story из сырого запроса. | `stepwise` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`constraints-documentation-oneshot.md`](archive/constraints-documentation-oneshot.md) | Ограничения: За один ответ | `mango-constraints-documentation-oneshot` | Формирует раздел 6 ограничений одним ответом. | `oneshot` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`constraints-documentation-stepwise.md`](archive/constraints-documentation-stepwise.md) | Ограничения: Документирование | `mango-constraints-documentation-stepwise` | Пошагово формирует раздел 6 «Особенности реализации / Ограничения». | `stepwise` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`fr-documentation-oneshot.md`](archive/fr-documentation-oneshot.md) | ФТ: Генерация за один ответ | `mango-fr-documentation-oneshot` | Формирует раздел 4 ФТ одним ответом при уже собранном контексте. | `oneshot` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`fr-documentation-stepwise.md`](archive/fr-documentation-stepwise.md) | ФТ: Генерация требований | `mango-fr-documentation-stepwise` | Пошагово формирует раздел 4 «Функциональные требования» на основе контекста, US и UC. | `stepwise` | `archived` | `0.1` | `documentation` | Формирование ФТ/ТЗ |
+| [`fr-validation-legacy.md`](archive/fr-validation-legacy.md) | ФТ: Валидация (устаревший) | `mango-fr-validation-legacy` | Унаследованный вариант анализа и валидации функциональных требований. | `legacy` | `archived` | `1.0` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
+| [`fr-validation-oneshot.md`](archive/fr-validation-oneshot.md) | ФТ: Экспресс-валидация | `mango-fr-validation-oneshot` | Выполняет экспресс-валидацию и перегенерацию ФТ одним ответом. | `oneshot` | `archived` | `0.1` | `validation` | Валидация ФТ/ТЗ; Анализ тендерных ТЗ |
+| [`fr-validation-stepwise.md`](archive/fr-validation-stepwise.md) | ФТ: Валидация и аудит | `mango-fr-validation-stepwise` | Пошагово проводит аудит ФТ и помогает перегенерировать требования по сырым данным. | `stepwise` | `archived` | `0.1` | `validation` | Валидация ФТ/ТЗ; Формирование ФТ/ТЗ; Анализ тендерных ТЗ |
+| [`glossary-context-understanding-oneshot.md`](archive/glossary-context-understanding-oneshot.md) | Контекст: Терминология за один ответ | `mango-glossary-context-understanding-oneshot` | Формирует разделы 1-2 ТЗ за один ответ при достаточном входном контексте. | `oneshot` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
+| [`glossary-context-understanding-stepwise.md`](archive/glossary-context-understanding-stepwise.md) | Контекст: Терминология и цели | `mango-glossary-context-understanding-stepwise` | Пошагово формирует терминологию, проблему, цель и задачи для разделов 1-2 ТЗ. | `stepwise` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Формирование UC/US |
+| [`questions-customer-understanding-legacy.md`](archive/questions-customer-understanding-legacy.md) | Вопросы: Подготовка заказчику (устаревший) | `mango-questions-customer-understanding-legacy` | Унаследованный вариант анализа запроса и подготовки вопросов заказчику. | `legacy` | `archived` | `1.0` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
+| [`questions-customer-understanding-stepwise.md`](archive/questions-customer-understanding-stepwise.md) | Вопросы: Выявление потребностей | `mango-questions-customer-understanding-stepwise` | Пошагово нормализует сырой запрос и готовит точные уточняющие вопросы заказчику. | `stepwise` | `archived` | `0.1` | `understanding` | Формирование ФТ/ТЗ; Анализ тендерных ТЗ; Помощь ПО/ПМ |
+| [`technical-details-solution-design-legacy.md`](archive/technical-details-solution-design-legacy.md) | Технические детали: Доработки (устаревший) | `mango-technical-details-solution-design-legacy` | Унаследованный вариант подготовки раздела 7 «Список доработок». | `legacy` | `archived` | `1.0` | `solution_design` | Формирование ФТ/ТЗ |
+| [`technical-details-solution-design-oneshot.md`](archive/technical-details-solution-design-oneshot.md) | Технические детали: За один ответ | `mango-technical-details-solution-design-oneshot` | Формирует раздел 7 для разработки одним ответом. | `oneshot` | `archived` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
+| [`technical-details-solution-design-stepwise.md`](archive/technical-details-solution-design-stepwise.md) | Технические детали: Проектирование | `mango-technical-details-solution-design-stepwise` | Пошагово формирует раздел 7 «Список доработок» для разработки. | `stepwise` | `archived` | `0.1` | `solution_design` | Формирование ФТ/ТЗ |
+| [`uc-modeling-oneshot.md`](archive/uc-modeling-oneshot.md) | Use Case: Моделирование за один ответ | `mango-uc-modeling-oneshot` | Формирует Use Case по Cockburn одним ответом. | `oneshot` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`uc-modeling-stepwise.md`](archive/uc-modeling-stepwise.md) | Use Case: Моделирование | `mango-uc-modeling-stepwise` | Пошагово формирует Use Case по Cockburn из сырого описания. | `stepwise` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`us-modeling-oneshot.md`](archive/us-modeling-oneshot.md) | User Story: Формирование за один ответ | `mango-us-modeling-oneshot` | Формирует User Story одним ответом. | `oneshot` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
+| [`us-modeling-stepwise.md`](archive/us-modeling-stepwise.md) | User Story: Формирование | `mango-us-modeling-stepwise` | Пошагово формирует User Story из сырого запроса. | `stepwise` | `archived` | `0.1` | `modeling` | Формирование UC/US; Формирование ФТ/ТЗ |
 
 Процесс «Визуализация UML/BPMN» пока не имеет активного рекомендуемого промпта;
 «Impact Analysis» и «Risk Analysis» опираются на шаги BCREQ Ш-2, Ш-6, Ш-9 и Ш-В. Это зафиксировано в центральном индексе:
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>.
+[`docs/ba-processes/00-index.md`](../docs/ba-processes/00-index.md).
 
 ## Две структуры промптов
 
@@ -227,8 +227,8 @@ workflow формирования ФТ/ТЗ.
 
 Примеры:
 
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/user-story-generator-legacy.md>
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/usecase-stepwise-generator-legacy.md>
+- [`prompts/archive/user-story-generator-legacy.md`](archive/user-story-generator-legacy.md)
+- [`prompts/archive/usecase-stepwise-generator-legacy.md`](archive/usecase-stepwise-generator-legacy.md)
 
 ### Структура B: Mango BA workflow prompt
 
@@ -258,9 +258,9 @@ workflow формирования ФТ/ТЗ.
 
 Примеры:
 
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/glossary-context-understanding-stepwise.md>
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-documentation-stepwise.md>
-- <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/archive/fr-validation-oneshot.md>
+- [`prompts/archive/glossary-context-understanding-stepwise.md`](archive/glossary-context-understanding-stepwise.md)
+- [`prompts/archive/fr-documentation-stepwise.md`](archive/fr-documentation-stepwise.md)
+- [`prompts/archive/fr-validation-oneshot.md`](archive/fr-validation-oneshot.md)
 
 ## Режимы: `stepwise`, `oneshot`, `legacy`
 
@@ -297,7 +297,7 @@ workflow формирования ФТ/ТЗ.
    доработки.
 
 Фидбек создаётся через шаблон:
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/.github/ISSUE_TEMPLATE/prompt-feedback.yml>.
+[`.github/ISSUE_TEMPLATE/prompt-feedback.yml`](../.github/ISSUE_TEMPLATE/prompt-feedback.yml).
 Такие issues получают лейбл `prompt:feedback`.
 
 Что указать в фидбеке:
@@ -347,13 +347,13 @@ workflow формирования ФТ/ТЗ.
 ## Связь с таксономией и процессами БА
 
 Таксономия задаёт 13 когнитивных операций:
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>.
+[`docs/taxonomy.md`](../docs/taxonomy.md).
 Операция входит в имя файла по схеме `[домен]-[операция]-[режим].md`, где
 `solution_design` записывается как `solution-design`.
 
 Индекс процессов БА задаёт 9 процессов и централизованный маппинг
 «процесс -> операции -> рекомендуемые промпты»:
-<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>.
+[`docs/ba-processes/00-index.md`](../docs/ba-processes/00-index.md).
 Этот маппинг не дублируется во frontmatter промптов.
 
 Пример процесса «Формирование ФТ/ТЗ»:
@@ -375,18 +375,18 @@ workflow формирования ФТ/ТЗ.
 
 ## Связанные документы
 
-- Репозиторий: <https://github.com/G-Ivan-A/mango_ba_prompts>
-- Таксономия 13 операций: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md>
-- Процессы БА и маппинг: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md>
-- Стандарт промптов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>
-- ADR-001 по стандарту промптов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>
-- Структура паттернов: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md>
-- Шаблон фидбека: <https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/.github/ISSUE_TEMPLATE/prompt-feedback.yml>
-- PR #57: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/57>
-- PR #59: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/59>
-- PR #60: <https://github.com/G-Ivan-A/mango_ba_prompts/pull/60>
-- Issue #61: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/61>
-- Issue #62: <https://github.com/G-Ivan-A/mango_ba_prompts/issues/62>
+- Репозиторий: корень этого репозитория ([`README.md`](../README.md))
+- Таксономия 13 операций: [`docs/taxonomy.md`](../docs/taxonomy.md)
+- Процессы БА и маппинг: [`docs/ba-processes/00-index.md`](../docs/ba-processes/00-index.md)
+- Стандарт промптов: [`standards/prompt-standard.md`](../standards/prompt-standard.md)
+- ADR-001 по стандарту промптов: [`docs/adr/001-prompt-standard.md`](../docs/adr/001-prompt-standard.md)
+- Структура паттернов: [`patterns/README.md`](../patterns/README.md)
+- Шаблон фидбека: [`.github/ISSUE_TEMPLATE/prompt-feedback.yml`](../.github/ISSUE_TEMPLATE/prompt-feedback.yml)
+- PR #57
+- PR #59
+- PR #60
+- Issue #61
+- Issue #62
 - Хаб `hybrid-Intelligence-lab`: <https://github.com/G-Ivan-A/hybrid-Intelligence-lab>
 - `clarify-engine-ai`: <https://github.com/G-Ivan-A/clarify-engine-ai>
 - `open-ai.ru`: <https://github.com/G-Ivan-A/open-ai.ru>

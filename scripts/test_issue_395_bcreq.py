@@ -9,6 +9,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 START = b'\n<!-- issue-395: runtime-fallback -->\n'
 END = b'<!-- /issue-395: runtime-fallback -->\n'
+HEAD = '\n## Дополнение: runtime, продуктовая принадлежность и гибридная БЗ\n'
 bl156a_spec = importlib.util.spec_from_file_location('bl156a_prompt_changes', ROOT / 'experiments/issue_444/bl156a_prompt_changes.py')
 bl156a = importlib.util.module_from_spec(bl156a_spec)
 bl156a_spec.loader.exec_module(bl156a)
@@ -49,9 +50,12 @@ class PromptContractTests(unittest.TestCase):
         ]
         for path in sorted((ROOT / 'prompts').glob('bcreq-*.md')):
             with self.subTest(prompt=path.name):
-                data = path.read_bytes()
-                self.assertTrue(START in data, 'missing fallback block')
-                block = data.split(START)[1].split(END)[0].decode()
+                # Issue #495 снял HTML-маркеры блока: граница — заголовок
+                # дополнения, блок идёт до конца файла, комментариев нет.
+                data = path.read_text(encoding='utf-8')
+                self.assertNotIn('<!--', data)
+                self.assertEqual(data.count(HEAD), 1, 'missing fallback block')
+                block = data.split(HEAD)[1]
                 for obligation in obligations:
                     self.assertIn(obligation, block)
                 for target in re.findall(r'\]\(([^)]+)\)', block):

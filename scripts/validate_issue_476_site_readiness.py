@@ -10,6 +10,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'f0f5ad56'  # merged PR #475, before publication-only changes
+_spec = importlib.util.spec_from_file_location('purity476', ROOT/'scripts/prompt_purity.py')
+PURITY = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(PURITY)
+_spec = importlib.util.spec_from_file_location('edits495_476', ROOT/'experiments/issue_495/prompt_changes.py')
+EDITS495 = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(EDITS495)
 
 
 def read(path):
@@ -18,20 +22,6 @@ def read(path):
 
 def load(path):
     return json.loads(read(path))
-
-
-def only_pin_488(path, text, base):
-    """Issue #488: файл отличается от BASE только перезакреплённой ссылкой и версией.
-
-    Слой experiments/issue_488/prompt_changes.py снимает ровно эти правки; строку
-    based_on_sha256 черновика и манифеста (хеш опубликованного текста) и счётчик
-    hub_main_to_metamodel_sha манифеста сверяет --check сборщика.
-    """
-    spec=importlib.util.spec_from_file_location('i488_for_476',ROOT/'experiments/issue_488/prompt_changes.py')
-    layer=importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(layer)
-    drop=lambda t: re.sub(r'(?m)^ *"?(based_on_sha256|hub_main_to_metamodel_sha)"?: .*\n','',t)  # noqa: E731
-    return drop(layer.revert(path,text))==drop(base)
 
 
 class Readiness(unittest.TestCase):
@@ -43,10 +33,16 @@ class Readiness(unittest.TestCase):
         for entry in manifest['entries']:
             text=read(entry['archivePath'])
             original=subprocess.check_output(['git','show',f"{manifest['sourceCommit']}:{entry['sourcePath']}"],cwd=ROOT).decode()
-            self.assertEqual(text,original)
-            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),entry['sha256'])
+            # Issue #495: архив — проекция оригинала без приватных ссылок и
+            # HTML-комментариев; хэши опубликованного оригинала сохранены.
+            self.assertEqual(hashlib.sha256(original.encode()).hexdigest(),entry['sha256'])
+            original_body=original.split('---',2)[2].lstrip('\r\n')
+            self.assertEqual(hashlib.sha256(original_body.encode()).hexdigest(),entry['bodySha256'])
+            self.assertEqual(manifest['projection']['function'],'scripts/prompt_purity.py:project')
+            self.assertEqual(text,PURITY.project(original))
+            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),entry['projectedSha256'])
             body=text.split('---',2)[2].lstrip('\r\n')
-            self.assertEqual(hashlib.sha256(body.encode()).hexdigest(),entry['bodySha256'])
+            self.assertEqual(hashlib.sha256(body.encode()).hexdigest(),entry['projectedBodySha256'])
             card=next(p for p in catalog if p['sourcePath']==entry['archivePath'])
             self.assertTrue(card['archived'])
             self.assertEqual(card['content'],text)
@@ -75,9 +71,9 @@ class Readiness(unittest.TestCase):
 
     def test_no_prompt_or_layout_degradation(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'prompts/'],cwd=ROOT).decode().splitlines()
-        base={path:subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT) for path in paths}
-        changed=[path for path in paths if (ROOT/path).read_bytes()!=base[path]
-                 and not only_pin_488(path,read(path),base[path].decode())]
+        # Слои #488 и #495 снимаются перед точной сверкой всех байтов.
+        changed=[path for path in paths
+                 if EDITS495.revert(path,(ROOT/path).read_text()).encode()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
         # Issue #490: «Итог шага» и формат шагов меняют только сгенерированные
         # черновики; каждый совпадает с выходом своего сборщика (--check).
         for path in changed:

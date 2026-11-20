@@ -1,0 +1,168 @@
+Файлов в контуре: 151; нарушений: 4724
+  (a) приватные/незакреплённые ссылки: 2457
+  (b) кейс-специфика: 296
+  (c) неисполнимый балласт: 1971
+По правилам:
+  a A-PRIVATE: 1674
+  a A-RELATIVE: 702
+  a A-SPOKE-PATH: 81
+  b CT-01: 90
+  b CT-02: 84
+  b CT-03: 22
+  b CT-04: 27
+  b CT-05: 28
+  b CT-06: 3
+  b CT-09: 42
+  c BP-01: 555
+  c BP-02: 298
+  c BP-03: 49
+  c BP-04: 298
+  c BP-06: 231
+  c BP-07: 33
+  c BP-08: 162
+  c BP-09: 162
+  c BP-10: 66
+  c BP-11: 6
+  c BP-12: 10
+  c BP-13: 101
+По файлам (a/b/c):
+  docs/ba-processes/bcreq-a-in-common.md: 5/2/0
+  docs/ba-processes/bcreq-a-in-instructions.json: 0/5/0
+  docs/ba-processes/bcreq-a-in-route.json: 1/2/0
+  docs/ba-processes/bcreq-evidence-normalization.md: 0/2/0
+  docs/ba-processes/bcreq-step-handoff.md: 1/2/0
+  prompts/AI_SESSION_HANDOVER_PROMPT.executable.md: 1/0/0
+  prompts/README.executable.md: 1/0/0
+  prompts/README.md: 109/0/0
+  prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md: 12/0/5
+  prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md: 9/0/2
+  prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md: 10/0/3
+  prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md: 14/0/5
+  prompts/archive/constraints-documentation-oneshot.md: 2/0/0
+  prompts/archive/constraints-documentation-stepwise.md: 2/0/0
+  prompts/archive/fr-documentation-oneshot.md: 2/0/0
+  prompts/archive/fr-documentation-stepwise.md: 2/0/0
+  prompts/archive/fr-validation-legacy.md: 1/0/0
+  prompts/archive/fr-validation-oneshot.md: 1/0/0
+  prompts/archive/fr-validation-stepwise.md: 1/0/0
+  prompts/archive/glossary-context-understanding-oneshot.md: 2/0/0
+  prompts/archive/glossary-context-understanding-stepwise.md: 2/0/0
+  prompts/archive/questions-customer-understanding-legacy.md: 2/0/0
+  prompts/archive/questions-customer-understanding-stepwise.md: 2/0/0
+  prompts/archive/technical-details-solution-design-legacy.md: 2/0/0
+  prompts/archive/technical-details-solution-design-oneshot.md: 2/0/0
+  prompts/archive/technical-details-solution-design-stepwise.md: 2/0/0
+  prompts/archive/tz-stats-generator-simple-legacy.md: 0/0/1
+  prompts/archive/uc-modeling-oneshot.md: 2/0/0
+  prompts/archive/uc-modeling-stepwise.md: 2/0/0
+  prompts/archive/us-modeling-oneshot.md: 1/0/0
+  prompts/archive/us-modeling-stepwise.md: 1/0/0
+  prompts/archive/usecase-stepwise-generator-simple-legacy.md: 0/0/1
+  prompts/archive/user-story-generator-simple-legacy.md: 0/0/1
+  prompts/asr-ingestion-oneshot.md: 0/5/0
+  prompts/bcreq-constitution-governance-oneshot.md: 34/5/15
+  prompts/bcreq-constraints-documentation-stepwise.md: 3/0/2
+  prompts/bcreq-context-understanding-stepwise.md: 6/2/4
+  prompts/bcreq-core-documentation-oneshot.md: 8/2/4
+  prompts/bcreq-extra-risk-analysis-stepwise.md: 3/0/2
+  prompts/bcreq-fr-documentation-stepwise.md: 5/2/4
+  prompts/bcreq-in-understanding-oneshot.md: 10/2/4
+  prompts/bcreq-nfr-documentation-stepwise.md: 3/0/2
+  prompts/bcreq-orr-solution-design-stepwise.md: 5/0/2
+  prompts/bcreq-products-impact-analysis-stepwise.md: 7/11/4
+  prompts/bcreq-review-validation-oneshot.md: 4/0/2
+  prompts/bcreq-scenarios-modeling-oneshot.md: 4/0/2
+  prompts/bcreq-uc-modeling-stepwise.md: 3/0/2
+  prompts/bcreq-work-solution-design-oneshot.md: 11/0/2
+  prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md: 6/8/12
+  prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-09-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-10-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-11-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md: 6/4/12
+  prompts/drafts/a-in/bcreq-ain-13-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-14-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-15-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-16-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-17-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-18-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-19-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-20-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-21-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-22-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-23-understanding-stepwise.md: 6/2/12
+  prompts/drafts/a-in/bcreq-ain-24-understanding-stepwise.md: 6/2/12
+  prompts/drafts/bcreq-constitution-governance-oneshot.md: 41/5/49
+  prompts/drafts/bcreq-constraints-documentation-stepwise.md: 12/0/33
+  prompts/drafts/bcreq-context-understanding-stepwise.md: 15/2/35
+  prompts/drafts/bcreq-extra-risk-analysis-stepwise.md: 12/0/33
+  prompts/drafts/bcreq-fr-documentation-stepwise.md: 14/2/38
+  prompts/drafts/bcreq-intake-questionnaire-stepwise.md: 12/4/35
+  prompts/drafts/bcreq-nfr-documentation-stepwise.md: 12/0/34
+  prompts/drafts/bcreq-orr-solution-design-stepwise.md: 14/0/33
+  prompts/drafts/bcreq-products-impact-analysis-stepwise.md: 17/11/37
+  prompts/drafts/bcreq-release-readiness-oneshot.md: 11/0/36
+  prompts/drafts/bcreq-review-validation-oneshot.md: 12/0/30
+  prompts/drafts/bcreq-scenarios-modeling-oneshot.md: 13/0/31
+  prompts/drafts/bcreq-uc-modeling-stepwise.md: 14/0/35
+  prompts/drafts/manifest.json: 1/0/0
+  prompts/drafts/system/bcreq-context-understanding-system.md: 15/2/39
+  prompts/drafts/system/bcreq-intake-questionnaire-system.md: 12/4/39
+  prompts/drafts/system/bcreq-products-impact-analysis-system.md: 17/11/41
+  prompts/session-debug-documentation-oneshot.md: 9/0/3
+  site/data/a-in-kit.json: 144/58/288
+  site/data/bcreq-flow.json: 43/0/0
+  site/data/checks.json: 2/0/0
+  site/data/patterns.json: 16/0/0
+  site/data/process-tree.json: 42/0/0
+  site/data/processes.json: 48/0/0
+  site/data/prompts.json: 932/51/132
+  site/data/roadmap.json: 1/0/0
+  site/data/stats.json: 8/0/0
+  site/data/step-handoff.json: 1/3/0
+  site/data/test-kit.json: 288/44/613
+  standards/bcreq-manual-classes/01-intake.md: 6/1/0
+  standards/bcreq-manual-classes/02-normalize.md: 6/0/0
+  standards/bcreq-manual-classes/03-ambiguity.md: 6/0/0
+  standards/bcreq-manual-classes/04-questions.md: 6/0/0
+  standards/bcreq-manual-classes/05-taxonomy.md: 7/0/0
+  standards/bcreq-manual-classes/06-scope.md: 6/0/0
+  standards/bcreq-manual-classes/07-web-evidence.md: 6/0/0
+  standards/bcreq-manual-classes/08-document-evidence.md: 6/0/0
+  standards/bcreq-manual-classes/09-ba-enrichment.md: 6/0/0
+  standards/bcreq-manual-classes/10-source-conflicts.md: 6/0/0
+  standards/bcreq-manual-classes/11-dependency-check.md: 6/0/0
+  standards/bcreq-manual-classes/12-phase-assembly.md: 6/0/0
+  standards/bcreq-manual-classes/13-handoff-check.md: 6/0/0
+  standards/bcreq-manual-classes/14-glossary.md: 6/0/0
+  standards/bcreq-manual-classes/15-business-context.md: 6/0/0
+  standards/bcreq-manual-classes/16-fr-delta.md: 6/0/0
+  standards/bcreq-manual-classes/17-fr-new.md: 6/0/0
+  standards/bcreq-manual-classes/18-nfr.md: 6/0/0
+  standards/bcreq-manual-classes/19-uc-coverage.md: 6/0/0
+  standards/bcreq-manual-classes/20-gate-evidence.md: 6/0/0
+  standards/bcreq-manual-classes/21-solution-l1.md: 6/0/0
+  standards/bcreq-manual-classes/22-solution-l2.md: 6/0/0
+  standards/bcreq-manual-classes/23-constraints.md: 6/0/0
+  standards/bcreq-manual-classes/24-uc-boundaries.md: 6/0/0
+  standards/bcreq-manual-classes/25-risks.md: 6/0/0
+  standards/bcreq-manual-classes/26-delivery-dependencies.md: 6/0/0
+  standards/bcreq-manual-classes/27-acceptance.md: 6/0/0
+  standards/bcreq-manual-classes/28-independent-review.md: 6/0/0
+  standards/bcreq-manual-classes/29-impact.md: 6/0/0
+  standards/bcreq-manual-classes/30-targeted-edit.md: 6/0/0
+  standards/bcreq-manual-classes/31-conformance.md: 6/0/0
+  standards/bcreq-manual-classes/32-audience-projection.md: 6/0/0
+  standards/bcreq-manual-classes/33-release-audit.md: 6/0/0
+  standards/bcreq-manual-classes/34-human-record.md: 6/0/0
+  standards/bcreq-manual-classes/35-baseline-handover.md: 6/0/0
+  standards/bcreq-manual-classes/36-rule-bundle.md: 6/0/0
+  standards/bcreq-manual-classes/37-user-story.md: 6/0/0
+  standards/bcreq-manual-classes/38-requested-uc.md: 6/0/0
+  standards/bcreq-manual-classes/39-manifest-alignment.md: 6/0/0

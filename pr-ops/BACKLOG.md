@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.11
-updated: 2026-11-19
+version: 2.12
+updated: 2026-11-20
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -65,6 +65,7 @@ source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/418"
 | `ТС-N` | Требование к справочнику runtime (BL-154) | [Реестр справочников, раздел 3](../standards/bcreq-runtime-references.md#3-требования-к-справочникам) |
 | `З-N` | Заглушка недостающего справочника runtime (BL-155) | [Реестр справочников, раздел 4](../standards/bcreq-runtime-references.md#4-заглушки) |
 | `РТ-N` | Задача на справочник для репозитория runtime (BL-155) | [Реестр справочников, раздел 6](../standards/bcreq-runtime-references.md#6-задачи-для-репозитория-runtime) |
+| `CR-NN` | Кейс, вынесенный из промпта с трассировкой в runtime | [Стандарт чистоты, раздел 3](../standards/bcreq-prompt-purity.md#3-политика-размещения) |
 | `К-NN` | Класс операции ручного процесса BCREQ (39 стандартов классов) | [Каталог классов](../standards/bcreq-manual-classes/README.md) |
 | `Ш-N` | Шаг потока BCREQ этапа 1 (Ш-0…Ш-10, Ш-В, Ш-Р, Ш-С) | [Комплект прогона](../docs/ba-processes/bcreq-run-kit.md#1-порядок-шагов) |
 | `ХАБ-N` | Задача для Хаба по RFC-RT-001 (норма привязки к каталогу продуктов) | [RFC-RT-001, раздел 6](../docs/rfc/2026-11-runtime-product-catalog-golden-set.md#6-хаб-1--тело-задачи-для-hybrid-intelligence-lab-норма-привязки) |
@@ -690,6 +691,31 @@ BL-131, его триггер не меняется. Правка ссылок �
 `deferred (triggered)` после переносов. Issue в runtime и ссылку на неё в
 PR создаёт владелец (раздел 6 реестра справочников). BL-232 `TODO` без
 изменений.
+
+## Чистота промптов: issue #495
+
+Исполнимый промпт ссылался на приватную спицу, нёс маркеры сборки и
+кейс-лексику конкретной задачи. BL-240 вводит стандарт чистоты
+[`standards/bcreq-prompt-purity.md`](../standards/bcreq-prompt-purity.md),
+аудитор трёх классов и чистит промпты, ССОТ и данные сайта 2.9.2. Справочники И-11 и И-12 добавлены в runtime (BL-241). Закрепление
+нового SHA и снятие заглушки З-5 идут следующим PR (BL-242).
+
+| ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| BL-240 | [Чистота исполнимых промптов: приватные ссылки, балласт, кейс-лексика](backlog-repository.md#bl-240-чистота-исполнимых-промптов-приватные-ссылки-балласт-кейс-лексика) | P0 | BL-184 | review | [#495](https://github.com/G-Ivan-A/mango_ba_prompts/issues/495), [PR #497](https://github.com/G-Ivan-A/mango_ba_prompts/pull/497) | [стандарт чистоты](../standards/bcreq-prompt-purity.md) | Аудит трёх классов с журналом, 0 нарушений после чистки; правка через ССОТ; сторожа с мутациями; сайт 2.9.2 без деплоя. Следующая — BL-241 | Creative |
+| BL-241 | [Справочники И-11 и И-12 в runtime: профили продуктов и регрессии промптов](backlog-repository.md#bl-241-справочники-и-11-и-и-12-в-runtime-профили-продуктов-и-регрессии-промптов) | P1 | BL-240 | DONE | [runtime PR #28](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/28) | [реестр справочников, раздел 6](../standards/bcreq-runtime-references.md#6-задачи-для-репозитория-runtime) | РТ-8 `taxonomy/product-profiles.yaml` и РТ-9 `golden/prompt-regressions.yaml` с тестом; четыре регрессии с трассировкой CR-01…CR-04. Следующая — BL-242 | Structured |
+| BL-242 | [Слияние PR runtime и закрепление SHA справочников И-11, И-12](backlog-repository.md#bl-242-слияние-pr-runtime-и-закрепление-sha-справочников-и-11-и-12) | P1 | BL-241 | TODO | [решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/497#issuecomment-7041438373) | [реестр справочников, раздел 1](../standards/bcreq-runtime-references.md#1-закреплённый-срез) | Новый `runtime_sha`, строки И-11/И-12 со ссылками по SHA, заглушка З-5 снята; аудитор и `validate_all` без нарушений. Следующая — BL-232 | Structured |
+| BL-243 | [Транспорт конституции для шагов A-IN: Ш-0 в чате или контракт runtime по SHA](backlog-repository.md#bl-243-транспорт-конституции-для-шагов-a-in-ш-0-в-чате-или-контракт-runtime-по-sha) | P2 | BL-240 | deferred (triggered) | [решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/497#issuecomment-7041438373) | [стандарт чистоты, раздел 2](../standards/bcreq-prompt-purity.md#2-правила) | Этап 1: полный текст конституции встроен в Ш-0 и доступен шагам A-IN из чата. Этап 2: копия в runtime по SHA по отдельной команде владельца | Structured |
+
+**Движение по цепочке (#495).** Предыдущий BL-184 — `DONE`: PR #493 слит
+(`7611c041`). Текущий BL-240 — `review` до принятия PR #497. BL-241 — `DONE`:
+[runtime PR #28](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/28) слит в `fe623c6b`; в нём И-11, И-12 и тесты. BL-242 — `TODO`:
+отдельный PR закрепит этот срез и снимет З-5. Далее BL-232 — `TODO`:
+пакетный деплой; сборка PR #497 — 2.9.2, опубликована версия 2.9.0
+(gh-pages `81e88872`, source `e051e0fa`, дополнение 2 к #495).
+Переход на 2.10.0 — после записанной приёмки и решения о деплое.
+BL-243 — отложенный этап 2 по доставке конституции. Этап 1 согласован в
+[решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/497#issuecomment-7041438373).
 
 ## Универсальный агентный контекст runtime: issue #25 (runtime)
 

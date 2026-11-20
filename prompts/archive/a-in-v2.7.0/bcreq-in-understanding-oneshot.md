@@ -18,7 +18,7 @@ processes: ["Приём и контекст"]
 
 Вспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.
 Конституция —
-[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
+Промпт 0;
 защиты АД-1…АД-7 и запреты АП1–АП9 действуют в этой стадии.
 
 - **Пройдено:** Ш-0 старт — стартовые данные и статусы из блока «Состояние BCREQ».
@@ -26,7 +26,7 @@ processes: ["Приём и контекст"]
   и Ш-2 (2.5, словари раздела 1). Цель — собрать факты, нормализовать запрос,
   затем зафиксировать контекст, границы и карту продуктов.
 - **Рекомендуемый следующий:** гейт Г-IN (решает БА), затем стадия
-  [A-CORE](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md).
+  A-CORE.
 
 ## 1. Роль
 
@@ -83,10 +83,10 @@ processes: ["Приём и контекст"]
 
 ## 4. Правила раздела
 
-[Раздел 1](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/01-glossary.md);
-[раздел 2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/02-business-context.md);
-[композиция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md);
-[контракт гейтов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md#2-гейты).
+Раздел 1;
+раздел 2;
+композиция;
+контракт гейтов.
 
 - Раздел 1 — бюрократический стиль; раздел 2 — короткий стиль КС1–КС7.
 - Термин заменяется индустриальным только решением БА (АД-2).
@@ -101,9 +101,9 @@ processes: ["Приём и контекст"]
 ### Общие проверки с ручными шагами
 
 Выполни также «Проверку релевантности As-Is» из
-[Ш-1](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md#проверка-релевантности-as-is)
+Ш-1
 и «Проверку принадлежности доказательства» из
-[Ш-2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md#проверка-принадлежности-доказательства).
+Ш-2.
 Режим остаётся oneshot: не добавляй ожидание между подшагами.
 
 ## 5. Формат вывода
@@ -158,7 +158,6 @@ processes: ["Приём и контекст"]
 - открытые вопросы: 8.4 — <N> (<M> блокируют)
 ```
 
-<!-- issue-395: runtime-fallback -->
 ## Дополнение: runtime, продуктовая принадлежность и гибридная БЗ
 
 ### Работа без runtime
@@ -169,7 +168,7 @@ processes: ["Приём и контекст"]
 Р1–Р7, АД-1…АД-11, АП1–АП9, КС1–КС7, БС1–БС5, структуру и человеческие
 гейты Г-IN, Г-С1, Г-W. В Ш-0 этот текст уже встроен. В новой сессии,
 включая Ш-В, передай конституцию вместе с входом. Если её нет и нельзя
-прочитать [Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md),
+прочитать Промпт 0,
 запроси копию у БА; правила по памяти не восстанавливай.
 
 Если runtime или детальные стандарты недоступны, явно выведи:
@@ -262,4 +261,3 @@ processes: ["Приём и контекст"]
 границы чтения соблюдены; дополнения учтены; недоступность обозначена;
 гейты и исходные формулировки сохранены. В Ш-В это отчёт о проверке, без
 правки документа и без заявления о полной валидации недоступных стандартов.
-<!-- /issue-395: runtime-fallback -->

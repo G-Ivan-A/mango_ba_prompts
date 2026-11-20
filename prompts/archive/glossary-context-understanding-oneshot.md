@@ -7,7 +7,7 @@ updated: 2026-06-11
 temperature: 0.1
 ---
 
-> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-context-understanding-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md), [bcreq-in-understanding-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
+> **Архив.** Промпт заменён набором BCREQ: bcreq-context-understanding-stepwise, bcreq-in-understanding-oneshot. Файл сохранён для ссылок из записанных прогонов.
 
 Ты — эксперт по бизнес-анализу в Телеком SaaS. Сформируй Разделы 1 (Терминология) и
 2 (Проблема, цель, задачи) на основе предоставленного ниже текста.
