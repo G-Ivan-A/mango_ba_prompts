@@ -8,7 +8,6 @@ const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
 const SITE_DIR = path.join(ROOT, "site");
 const SITE_DATA_DIR = path.join(SITE_DIR, "data");
-const REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main";
 
 // Issue #462, выбран вариант А: отчёты с данными задач не публикуются. Клиентский
 // пароль файлы не защищает, поэтому каталог удаляется из site/ при каждой сборке,
@@ -103,11 +102,14 @@ const BCREQ_STAGES = [
 // БА»; каждый промпт заканчивается блоком «Итог шага»; формат шагов «системные
 // (комплексные шаги)» / «декомпозированные шаги» вместо выбора stepwise/oneshot,
 // системные Ш-А, Ш-1, Ш-2 редакции 2.7.0 — параллельно AIN-01…24. Не измерено.
+// 2.9.1 (issue #495, BL-240): чистота промптов — в промптах и данных сайта нет
+// ссылок на приватный репозиторий, HTML-комментариев и кейс-лексики; данные
+// сайта хранят пути от корня репо. Только патч серии 2.9.x (дополнение 2 к #495).
 const SITE_VERSION = {
-  version: "2.9.0",
-  released: "2026-11-18",
-  issue: 490,
-  basis: "PR #491: цель и итог шага для БА, системный и декомпозированный форматы шагов",
+  version: "2.9.1",
+  released: "2026-11-20",
+  issue: 495,
+  basis: "PR #497: чистота промптов — без приватных ссылок, балласта и кейс-лексики",
   changelog: "CHANGELOG.md",
 };
 
@@ -219,8 +221,10 @@ async function writeJson(relativePath, data) {
   await fs.writeFile(target, `${JSON.stringify(data, null, 2)}\n`, "utf8");
 }
 
+// Issue #495 (СУПЕР-ПРАВИЛО): в данных сайта нет URL приватного репозитория —
+// только путь от корня репо. Ссылку сопровождающего строит site/app.js (repoHref).
 function repoUrl(relativePath) {
-  return `${REPO_BLOB}/${relativePath}`;
+  return relativePath;
 }
 
 function stripMarkdownInline(value) {

@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-18T09:05:25.624Z",
+  "generatedAt": "2026-11-20T01:21:37.454Z",
   "sourceFiles": [
     {
       "path": "patterns/README.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md"
+      "url": "patterns/README.md"
     }
   ],
   "patterns": [
     {
       "slug": "glossary-context-generation",
       "path": "patterns/glossary-context-generation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/glossary-context-generation/",
+      "url": "patterns/glossary-context-generation/",
       "whenToStart": "bcreq-context-understanding-stepwise.md, bcreq-in-understanding-oneshot.md; архив:",
       "processes": [
         "Формирование ФТ/ТЗ",
@@ -24,7 +24,7 @@
           "id": "mango-bcreq-context-understanding-stepwise",
           "file": "bcreq-context-understanding-stepwise.md",
           "title": "BCREQ Ш-1 (2.1): контекст, глоссарий",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md",
+          "url": "prompts/bcreq-context-understanding-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "format": "system",
@@ -35,7 +35,7 @@
           "id": "mango-bcreq-in-understanding-oneshot",
           "file": "bcreq-in-understanding-oneshot.md",
           "title": "BCREQ A-IN: контекст, продукты",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md",
+          "url": "prompts/bcreq-in-understanding-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "format": "system",
@@ -47,7 +47,7 @@
     {
       "slug": "asr-ingestion",
       "path": "patterns/asr-ingestion/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/asr-ingestion/",
+      "url": "patterns/asr-ingestion/",
       "whenToStart": "Входом является сырая ASR-расшифровка, встреча или голосовая заметка.",
       "processes": [
         "Формирование ФТ/ТЗ",
@@ -60,7 +60,7 @@
     {
       "slug": "user-story-generation",
       "path": "patterns/user-story-generation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/user-story-generation/",
+      "url": "patterns/user-story-generation/",
       "whenToStart": "bcreq-scenarios-modeling-oneshot.md; архив:",
       "processes": [
         "Формирование UC/US",
@@ -73,7 +73,7 @@
           "id": "mango-bcreq-scenarios-modeling-oneshot",
           "file": "bcreq-scenarios-modeling-oneshot.md",
           "title": "BCREQ Ш-С (2.12/2.13): US, UC",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
+          "url": "prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "format": "system",
@@ -85,7 +85,7 @@
     {
       "slug": "usecase-generation",
       "path": "patterns/usecase-generation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/usecase-generation/",
+      "url": "patterns/usecase-generation/",
       "whenToStart": "bcreq-uc-modeling-stepwise.md, bcreq-scenarios-modeling-oneshot.md; архив:",
       "processes": [
         "Формирование UC/US",
@@ -98,7 +98,7 @@
           "id": "mango-bcreq-uc-modeling-stepwise",
           "file": "bcreq-uc-modeling-stepwise.md",
           "title": "BCREQ Ш-5/Ш-8 (2.4/2.9): UC",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md",
+          "url": "prompts/bcreq-uc-modeling-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "format": "system",
@@ -109,7 +109,7 @@
           "id": "mango-bcreq-scenarios-modeling-oneshot",
           "file": "bcreq-scenarios-modeling-oneshot.md",
           "title": "BCREQ Ш-С (2.12/2.13): US, UC",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md",
+          "url": "prompts/bcreq-scenarios-modeling-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "format": "system",
@@ -121,7 +121,7 @@
     {
       "slug": "fr-generation",
       "path": "patterns/fr-generation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/fr-generation/",
+      "url": "patterns/fr-generation/",
       "whenToStart": "bcreq-fr-documentation-stepwise.md, bcreq-core-documentation-oneshot.md; архив:",
       "processes": [
         "Формирование ФТ/ТЗ"
@@ -133,7 +133,7 @@
           "id": "mango-bcreq-fr-documentation-stepwise",
           "file": "bcreq-fr-documentation-stepwise.md",
           "title": "BCREQ Ш-3 (2.3/2.10): ФТ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md",
+          "url": "prompts/bcreq-fr-documentation-stepwise.md",
           "mode": "stepwise",
           "modeIcon": "↔",
           "format": "system",
@@ -144,7 +144,7 @@
           "id": "mango-bcreq-core-documentation-oneshot",
           "file": "bcreq-core-documentation-oneshot.md",
           "title": "BCREQ A-CORE: ФТ, НФТ, UC",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md",
+          "url": "prompts/bcreq-core-documentation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "format": "system",
@@ -156,7 +156,7 @@
     {
       "slug": "fr-validation",
       "path": "patterns/fr-validation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/fr-validation/",
+      "url": "patterns/fr-validation/",
       "whenToStart": "bcreq-review-validation-oneshot.md; архив:",
       "processes": [
         "Валидация ФТ/ТЗ",
@@ -170,7 +170,7 @@
           "id": "mango-bcreq-review-validation-oneshot",
           "file": "bcreq-review-validation-oneshot.md",
           "title": "BCREQ Ш-В: валидация документа",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md",
+          "url": "prompts/bcreq-review-validation-oneshot.md",
           "mode": "oneshot",
           "modeIcon": "●",
           "format": "system",
@@ -182,7 +182,7 @@
     {
       "slug": "meeting-summary-generation",
       "path": "patterns/meeting-summary-generation/",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/meeting-summary-generation/",
+      "url": "patterns/meeting-summary-generation/",
       "whenToStart": "Нужно оформить meeting summary с decisions, questions, owners and next steps.",
       "processes": [
         "Помощь ПО/ПМ",

@@ -1,44 +1,44 @@
 {
-  "generatedAt": "2026-11-18T09:05:25.602Z",
+  "generatedAt": "2026-11-20T01:21:37.427Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/README.md"
+      "url": "prompts/README.md"
     },
     {
       "path": "docs/taxonomy.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/taxonomy.md"
+      "url": "docs/taxonomy.md"
     },
     {
       "path": "docs/ba-processes/00-index.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
+      "url": "docs/ba-processes/00-index.md"
     },
     {
       "path": "docs/ba-ecosystem.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-ecosystem.md"
+      "url": "docs/ba-ecosystem.md"
     },
     {
       "path": "patterns/README.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/patterns/README.md"
+      "url": "patterns/README.md"
     },
     {
       "path": "docs/ba-processes/bcreq-manual-process.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
+      "url": "docs/ba-processes/bcreq-manual-process.md"
     },
     {
       "path": "docs/ba-processes/bcreq-run-kit.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-run-kit.md"
+      "url": "docs/ba-processes/bcreq-run-kit.md"
     },
     {
       "path": "standards/bcreq-manual-classes/catalog.json",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json"
+      "url": "standards/bcreq-manual-classes/catalog.json"
     }
   ],
   "siteVersion": {
-    "version": "2.9.0",
-    "released": "2026-11-18",
-    "issue": 490,
-    "basis": "PR #491: цель и итог шага для БА, системный и декомпозированный форматы шагов",
+    "version": "2.9.1",
+    "released": "2026-11-20",
+    "issue": 495,
+    "basis": "PR #497: чистота промптов — без приватных ссылок, балласта и кейс-лексики",
     "changelog": "CHANGELOG.md"
   },
   "totals": {

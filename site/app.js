@@ -81,6 +81,18 @@ const FORMAT_ICONS = {
   decomposed: "☰",
 };
 
+
+// Issue #495: site data хранит пути к файлам относительно корня репозитория, без
+// URL приватного репозитория (стандарт чистоты промптов, класс а). Ссылку для
+// сопровождающих с доступом к репозиторию собирает только интерфейс — здесь.
+const REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob";
+
+function repoHref(target, ref = "main") {
+  if (!target) return "";
+  if (/^[a-z][a-z0-9+.-]*:/i.test(target) || target.startsWith("#")) return target;
+  return `${REPO_BLOB}/${ref}/${target.replace(/^\.?\//, "")}`;
+}
+
 function formatLabel(format) {
   return (state.promptsData?.filters?.formats || []).find((item) => item.id === format)?.label || format || "—";
 }
@@ -346,7 +358,7 @@ function renderSiteVersion() {
     node.textContent = `v${info.version}`;
     node.title = title;
     if (node.tagName === "A") {
-      node.href = `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/${info.changelog}`;
+      node.href = repoHref(info.changelog);
       node.target = "_blank";
       node.rel = "noreferrer";
     }
@@ -362,7 +374,7 @@ function renderSiteVersion() {
     );
     const head = el("h2", "", `Версия сайта ${info.version}`);
     const meta = el("p", "v2-links", `${info.released} · ${info.basis} · `);
-    meta.append(externalLink(`https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/${info.changelog}`, "CHANGELOG"));
+    meta.append(externalLink(repoHref(info.changelog), "CHANGELOG"));
     panel.replaceChildren(head, meta, list);
   }
 }
@@ -552,7 +564,7 @@ function promptCard(prompt) {
   copy.append(el("span", "", "⧉"));
   copy.append(el("span", "", "Копировать"));
   const repoLink = el("a", "repo-link");
-  repoLink.href = prompt.url;
+  repoLink.href = repoHref(prompt.url);
   repoLink.target = "_blank";
   repoLink.rel = "noreferrer";
   repoLink.title = "Открыть файл в GitHub";
@@ -572,7 +584,7 @@ function promptCard(prompt) {
 
 function linkTo(url, text, title) {
   const link = el("a", "prompt-link", text);
-  link.href = url;
+  link.href = repoHref(url);
   link.target = "_blank";
   link.rel = "noreferrer";
   if (title) {
@@ -602,7 +614,7 @@ function promptLinks(prompt) {
       link.href = `#processes?ain=${id}`;
       row.append(link);
     }
-    row.append(linkTo(`https://github.com/G-Ivan-A/mango_ba_prompts/blob/${prompt.archiveInfo.sourceCommit}/${prompt.archiveInfo.sourcePath}`, "Исходная редакция 2.7.0"));
+    row.append(linkTo(repoHref(prompt.archiveInfo.sourcePath, prompt.archiveInfo.sourceCommit), "Исходная редакция 2.7.0"));
   } else if (prompt.archived && (prompt.successors || []).length > 0) {
     row.append(el("span", "prompt-links-label", "Заменён классами:"));
     for (const classId of prompt.successors) {
@@ -841,7 +853,7 @@ function bcreqStep(step) {
   const prompt = el("p", "bcreq-step-prompt");
   const link = el("a", "", step.prompt.title || step.prompt.file);
   link.title = step.prompt.file;
-  link.href = step.prompt.url;
+  link.href = repoHref(step.prompt.url);
   link.target = "_blank";
   link.rel = "noreferrer";
   prompt.append(el("span", "bcreq-field-label", "Промпт"), link);
@@ -897,11 +909,11 @@ function renderBcreqFlow() {
 
   const lead = nodes.bcreqApprovalLead;
   const basis = el("a", "", flow.approval.basis.label);
-  basis.href = flow.approval.basis.url;
+  basis.href = repoHref(flow.approval.basis.url);
   basis.target = "_blank";
   basis.rel = "noreferrer";
   const contract = el("a", "", flow.approval.contract.label);
-  contract.href = flow.approval.contract.url;
+  contract.href = repoHref(flow.approval.contract.url);
   contract.target = "_blank";
   contract.rel = "noreferrer";
   lead.replaceChildren(
@@ -962,7 +974,7 @@ function renderBcreqFlow() {
 
 function externalLink(url, text) {
   const link = el("a", "", text);
-  link.href = url;
+  link.href = repoHref(url);
   link.target = "_blank";
   link.rel = "noreferrer";
   return link;
@@ -1072,7 +1084,7 @@ function openProcessModal(processId) {
     for (const prompt of process.prompts) {
       const item = el("li", "modal-list-row");
       const link = el("a", "modal-link", `${prompt.modeIcon || "•"} ${prompt.title}`);
-      link.href = prompt.url;
+      link.href = repoHref(prompt.url);
       link.target = "_blank";
       link.rel = "noreferrer";
       item.append(link);
@@ -1090,7 +1102,7 @@ function openProcessModal(processId) {
     for (const pattern of process.patterns) {
       const item = el("li", "modal-list-row");
       const link = el("a", "modal-link", pattern.slug);
-      link.href = pattern.url;
+      link.href = repoHref(pattern.url);
       link.target = "_blank";
       link.rel = "noreferrer";
       item.append(link);
@@ -1131,7 +1143,7 @@ function renderPatterns() {
       head.append(el("span", "process-icon", pattern.operationIcon || "•"));
       head.append(el("h3", "process-title", pattern.slug));
       const link = el("a", "source-link", "↗");
-      link.href = pattern.url;
+      link.href = repoHref(pattern.url);
       link.target = "_blank";
       link.rel = "noreferrer";
       link.title = "Открыть паттерн в GitHub";
@@ -1156,7 +1168,7 @@ function renderPatterns() {
         for (const prompt of pattern.prompts) {
           const item = el("li", "modal-list-row");
           const promptLink = el("a", "modal-link", `${prompt.modeIcon || "•"} ${prompt.title}`);
-          promptLink.href = prompt.url;
+          promptLink.href = repoHref(prompt.url);
           promptLink.target = "_blank";
           promptLink.rel = "noreferrer";
           item.append(promptLink);
@@ -1189,7 +1201,7 @@ function subprocessRow(subprocess) {
   const links = el("div", "subprocess-prompts");
   for (const prompt of subprocess.prompts) {
     const link = el("a", "subprocess-prompt", prompt.file);
-    link.href = prompt.url;
+    link.href = repoHref(prompt.url);
     link.target = "_blank";
     link.rel = "noreferrer";
     link.title = `Открыть ${prompt.file} в GitHub`;
@@ -1428,7 +1440,7 @@ function composeAinTestKit(kit, ain) {
       draft: { id: `mango-bcreq-${s.id.toLowerCase()}-stepwise`,
         file: s.promptPath.split("/").pop(), body: s.prompt, version: "0.2",
         title: `${s.id}: ${s.name}`, sha256: s.promptSha256,
-        url: `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/${s.promptPath}` },
+        url: s.promptPath },
     }));
   });
   steps.forEach((s, i) => { s.number = s.number === "—" ? "—" : String(i + 1); });
@@ -1697,7 +1709,7 @@ function selectTestKitEdition(item, kind) {
   const link = item.querySelector(".bcreq-step-prompt a");
   link.textContent = variant.title || variant.file;
   link.title = variant.file;
-  link.href = variant.url;
+  link.href = repoHref(variant.url);
   item.querySelector(".testkit-sha").textContent = `${variant.file} · sha256 ${variant.sha256.slice(0, 16)}`;
 }
 
@@ -1777,11 +1789,11 @@ function testKitStep(step, index) {
   more.append(el("summary", "", "Для проверяющего"), el("code", "testkit-sha"));
   if (step.ainId) {
     const refs = el("p", "prompt-links");
-    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md", "Инструкция A-IN"));
-    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-route.json", "Карта шагов"));
-    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-manual-state.md", "Контракт состояния"));
-    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/01-glossary.md", "Стандарт раздела 1"));
-    refs.append(linkTo("https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/02-business-context.md", "Стандарт раздела 2"));
+    refs.append(linkTo("docs/ba-processes/bcreq-a-in-execution.md", "Инструкция A-IN"));
+    refs.append(linkTo("docs/ba-processes/bcreq-a-in-route.json", "Карта шагов"));
+    refs.append(linkTo("docs/contracts/bcreq-manual-state.md", "Контракт состояния"));
+    refs.append(linkTo("standards/bcreq-sections/01-glossary.md", "Стандарт раздела 1"));
+    refs.append(linkTo("standards/bcreq-sections/02-business-context.md", "Стандарт раздела 2"));
     refs.append(linkTo("https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/main/docs/kb", "База знаний"));
     for (const old of state.prompts.filter((p) => p.archiveInfo?.replacedBy.includes(step.ainId))) {
       const link = el("a", "prompt-link", `Архив 2.7.0 · ${old.archiveInfo.step}`);
@@ -1809,7 +1821,7 @@ function renderTestKit() {
     return;
   }
   const source = el("a", "", `комплект прогона v${kit.kit.version}`);
-  source.href = kit.kit.url;
+  source.href = repoHref(kit.kit.url);
   source.target = "_blank";
   source.rel = "noreferrer";
   renderStepFormatSwitch();
