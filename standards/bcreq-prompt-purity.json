@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "updated": "2026-11-20",
   "standard": "standards/bcreq-prompt-purity.md",
   "contour": {
@@ -14,16 +14,30 @@
         "prompts/drafts/*.md",
         "prompts/drafts/a-in/*.md",
         "prompts/drafts/system/*.md",
-        "prompts/archive/*.md",
-        "prompts/archive/a-in-v2.7.0/*.md",
         "standards/bcreq-manual-classes/*.md"
       ],
       "exclude": [
         "prompts/README.md",
         "prompts/README.executable.md",
         "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
-        "prompts/archive/a-in-v2.7.0/README.md",
         "standards/bcreq-manual-classes/README.md"
+      ]
+    },
+    "archive_texts": {
+      "note": "Историческая сущность (архив прежних редакций): только класс a и служебные HTML-комментарии (BP-01); классы b/c не применяются — решение владельца, комментарий 2 issue #495, п.14",
+      "classes": [
+        "a",
+        "c"
+      ],
+      "ballast_ids": [
+        "BP-01"
+      ],
+      "globs": [
+        "prompts/archive/*.md",
+        "prompts/archive/a-in-v2.7.0/*.md"
+      ],
+      "exclude": [
+        "prompts/archive/a-in-v2.7.0/README.md"
       ]
     },
     "ssot_texts": {
@@ -86,6 +100,9 @@
         "site/data/processes.json",
         "site/data/process-tree.json",
         "site/data/bcreq-flow.json"
+      ],
+      "archive_source_globs": [
+        "prompts/archive/*"
       ]
     }
   },
@@ -94,7 +111,10 @@
     "runtime_repo": "github.com/G-Ivan-A/mango-ba-ai-runtime",
     "runtime_sha_registry": "standards/bcreq-runtime-references.md",
     "runtime_link_regex": "github\\.com/G-Ivan-A/mango-ba-ai-runtime/(?:blob|tree)/([^/\\s)]+)",
-    "relative_repo_link_regex": "\\]\\((?!https?://|#|mailto:)([^)\\s]+)\\)"
+    "relative_repo_link_regex": "\\]\\((?!https?://|#|mailto:)([^)\\s]+)\\)",
+    "private_link_regex": "(?i)(?:https?://)?(?:[\\w.-]+\\.)?(?:github\\.com|githubusercontent\\.com)/G-Ivan-A/mango_ba_prompts",
+    "private_name_note": "Голое имя приватного репозитория запрещено только в теле исполнимого промпта; публичный адрес сайта (g-ivan-a.github.io/mango_ba_prompts) ссылкой на репозиторий не считается",
+    "public_site_regex": "g-ivan-a\\.github\\.io/mango_ba_prompts"
   },
   "case_tokens": [
     {

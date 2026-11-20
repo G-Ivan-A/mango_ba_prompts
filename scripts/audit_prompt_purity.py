@@ -3,7 +3,8 @@
 
 Классы (стандарт ``standards/bcreq-prompt-purity.md``):
 
-* ``a`` — ссылки: URL приватного репозитория, относительная ссылка на файл
+* ``a`` — ссылки: URL приватного репозитория (в теле промпта — и голое имя
+  репозитория), относительная ссылка на файл
   репозитория из текста промпта (у исполнителя промпта её нет), ссылка на
   runtime не по SHA из реестра справочников runtime;
 * ``b`` — кейс-специфика: токены словаря ``case_tokens`` вне разрешённых
@@ -11,7 +12,10 @@
 * ``c`` — неисполнимый балласт: шаблоны ``ballast_patterns`` в теле промпта
   (frontmatter — метаданные карточки, в тело не копируется и не проверяется).
 
-Контур, словарь и шаблоны — в ``standards/bcreq-prompt-purity.json``.
+Контур, словарь и шаблоны — в ``standards/bcreq-prompt-purity.json``. Архив
+прежних редакций (контур ``archive_texts`` и карточки сайта из
+``archive_source_globs``) — историческая сущность: для него проверяются только
+ссылки (класс a) и служебные HTML-комментарии.
 Скрипт ничего не меняет и не вызывает LLM.
 
     python3 scripts/audit_prompt_purity.py                 # сводка, код 1 при нарушениях
@@ -71,19 +75,24 @@ class Auditor:
         self.policy = policy or load_policy(self.root / "standards/bcreq-prompt-purity.json")
         links = self.policy["links"]
         self.private = links["private_repo"]
+        self.private_re = re.compile(links["private_link_regex"])
+        self.public_site_re = re.compile(links["public_site_regex"])
         self.sha = runtime_sha(self.root, self.policy)
         self.runtime_re = re.compile(links["runtime_link_regex"])
         self.relative_re = re.compile(links["relative_repo_link_regex"])
         self.tokens = [(t["id"], re.compile(t["regex"]), t) for t in self.policy["case_tokens"]]
         self.ballast = [(b["id"], re.compile(b["regex"]), b) for b in self.policy["ballast_patterns"]]
         self.allowed = self.policy.get("allowed_sections", [])
+        self.archive_sources = self.policy["contour"]["site_data"].get("archive_source_globs", [])
         self.findings = []
 
     # --- правила по строке -------------------------------------------------
     def check_links(self, line, *, prompt_text):
         out = []
-        if self.private in line:
-            out.append(("a", "A-PRIVATE", self.private))
+        for match in self.private_re.finditer(line):
+            out.append(("a", "A-PRIVATE", match.group(0)))
+        if prompt_text and not out and self.private in self.public_site_re.sub("", line):
+            out.append(("a", "A-PRIVATE-NAME", self.private))
         for match in self.runtime_re.finditer(line):
             if match.group(1) != self.sha:
                 out.append(("a", "A-RUNTIME-UNPINNED", match.group(0)))
@@ -98,8 +107,9 @@ class Auditor:
     def check_tokens(self, line):
         return [("b", tid, m.group(0)) for tid, rx, _ in self.tokens for m in rx.finditer(line)]
 
-    def check_ballast(self, line):
-        return [("c", bid, m.group(0)) for bid, rx, _ in self.ballast for m in rx.finditer(line)]
+    def check_ballast(self, line, ids=None):
+        return [("c", bid, m.group(0)) for bid, rx, _ in self.ballast
+                if ids is None or bid in ids for m in rx.finditer(line)]
 
     def is_allowed(self, rel, heading, rule_id):
         for item in self.allowed:
@@ -118,7 +128,7 @@ class Auditor:
                               "match": match, "where": where, "snippet": snippet})
 
     # --- файлы -------------------------------------------------------------
-    def audit_text_file(self, rel, classes, *, prompt_text):
+    def audit_text_file(self, rel, classes, *, prompt_text, ballast_ids=None):
         text = (self.root / rel).read_text(encoding="utf-8")
         fm_lines, _ = split_frontmatter(text) if rel.endswith(".md") else (0, text)
         heading = ""
@@ -132,31 +142,36 @@ class Auditor:
             if in_body and "b" in classes:
                 found += [f for f in self.check_tokens(line) if not self.is_allowed(rel, heading, f[1])]
             if in_body and "c" in classes:
-                found += self.check_ballast(line)
+                found += self.check_ballast(line, ballast_ids)
             for cls, rule, match in found:
                 self.add(rel, no, cls, rule, match, line, "frontmatter" if not in_body else "body")
 
     def audit_site_file(self, rel, classes, body_fields, card):
         data = json.loads((self.root / rel).read_text(encoding="utf-8"))
-        for path, value in walk(data):
+        for path, value, archived in walk(data, archive=self.is_archive_card):
             is_body = any(field_match(path, f) for f in body_fields)
             for no, line in enumerate(value.splitlines() or [value], 1):
                 found = self.check_links(line, prompt_text=is_body) if "a" in classes else []
-                if "b" in classes and (card or is_body):
+                if "b" in classes and (card or is_body) and not archived:
                     found += self.check_tokens(line)
                 if is_body:
-                    found += self.check_ballast(line)
+                    found += self.check_ballast(line, {"BP-01"} if archived else None)
                 for cls, rule, match in found:
                     self.add(rel, no, cls, rule, match, line, path)
+
+    def is_archive_card(self, node):
+        source = node.get("sourcePath") or node.get("relativePath") or ""
+        return isinstance(source, str) and any(fnmatch.fnmatch(source, g) for g in self.archive_sources)
 
     def run(self):
         contour = self.policy["contour"]
         self.files = {}
-        for name in ("prompt_texts", "ssot_texts", "repo_docs_in_prompts"):
+        for name in ("prompt_texts", "archive_texts", "ssot_texts", "repo_docs_in_prompts"):
             spec = contour[name]
             for rel in expand(self.root, spec):
                 self.files[rel] = name
-                self.audit_text_file(rel, set(spec["classes"]), prompt_text=name == "prompt_texts")
+                self.audit_text_file(rel, set(spec["classes"]), prompt_text=name in ("prompt_texts", "archive_texts"),
+                                     ballast_ids=set(spec["ballast_ids"]) if "ballast_ids" in spec else None)
         site = contour["site_data"]
         for rel in expand(self.root, site):
             self.files[rel] = "site_data"
@@ -167,15 +182,17 @@ class Auditor:
         return self.findings
 
 
-def walk(node, path=""):
+def walk(node, path="", archive=lambda node: False, archived=False):
+    """Строки JSON: (путь, значение, лежит ли в карточке архивного промпта)."""
     if isinstance(node, dict):
+        archived = archived or archive(node)
         for key, value in node.items():
-            yield from walk(value, f"{path}.{key}" if path else key)
+            yield from walk(value, f"{path}.{key}" if path else key, archive, archived)
     elif isinstance(node, list):
         for value in node:
-            yield from walk(value, f"{path}[]")
+            yield from walk(value, f"{path}[]", archive, archived)
     elif isinstance(node, str):
-        yield path, node
+        yield path, node, archived
 
 
 def field_match(path, pattern):
