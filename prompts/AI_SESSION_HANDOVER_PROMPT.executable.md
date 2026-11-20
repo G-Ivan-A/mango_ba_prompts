@@ -7,7 +7,7 @@ type: prompt
 layer: executable
 full_version: "ai-rules/AI_SESSION_HANDOVER_PROMPT.md"
 related_standard: "standards/cascading-context-loading-standard.md"
-related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
+related_issue: "#125"
 ---
 
 # Handover Prompt — executable layer

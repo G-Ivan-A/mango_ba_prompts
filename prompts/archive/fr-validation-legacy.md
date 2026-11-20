@@ -7,7 +7,7 @@ updated: 2026-06-11
 temperature: 0.1
 ---
 
-> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-review-validation-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
+> **Архив.** Промпт заменён набором BCREQ: bcreq-review-validation-oneshot. Файл сохранён для ссылок из записанных прогонов.
 
 1. Задача
 Проанализировать и валидировать исходные функциональные требования, сформировать

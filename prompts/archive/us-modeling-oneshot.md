@@ -7,7 +7,7 @@ updated: 2026-06-11
 temperature: 0.1
 ---
 
-> **Архив (issue #388).** Промпт заменён набором BCREQ: [bcreq-scenarios-modeling-oneshot](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md). Файл сохранён для ссылок из записанных прогонов.
+> **Архив.** Промпт заменён набором BCREQ: bcreq-scenarios-modeling-oneshot. Файл сохранён для ссылок из записанных прогонов.
 
 # РОЛЬ
 Ты — команда экспертов: бизнес-аналитик (CBAP), Product Owner и UX-исследователь с

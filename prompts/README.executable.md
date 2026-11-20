@@ -7,7 +7,7 @@ type: navigation
 layer: executable
 full_version: "prompts/README.md"
 related_standard: "../standards/cascading-context-loading-standard.md"
-related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"
+related_issue: "#125"
 ---
 
 # Prompts README — executable layer

@@ -14,7 +14,6 @@ steps: [Ш-1]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
 assembled_by: scripts/build_bcreq_step_prompts.py
 ---
-<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
 
@@ -24,7 +23,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 Вспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.
 Конституция —
-[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
+Промпт 0;
 защиты АД-1…АД-7 и запреты АП1–АП9 действуют в этом шаге.
 
 - **Пройдено:** Ш-0 старт; Ш-А анкета — стартовые данные, ответы анкеты и
@@ -108,7 +107,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
    и URL без цитаты не доказательство; нет данных не означает «Нет». Вердикт
    утверждает БА. «Да» по всей проблеме — CB-2.4: БА решает, завершить ли BCREQ и
    передать ли задачу в поток
-   [CS](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/cs-flow-stub.md).
+   CS.
 7. **Вопросы и гипотезы.** Только после того, как БА согласовал нормализацию:
    вопросы БА, затем вопросы Заказчику на уровне бизнес-логики, для каждого
    неснятого места — гипотеза на согласование БА.
@@ -140,12 +139,12 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 ## 4. Правила раздела
 
 - Раздел 1:
-  [мета-стандарт](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/01-glossary.md).
+  мета-стандарт.
   Бюрократический стиль БС1–БС5. Каждый предметный термин разделов 2–6 есть
   в разделе 1, лишних терминов нет. Определение без синонимов, требований и
   примеров интерфейса. Общеупотребительные слова не вносятся.
 - Раздел 2:
-  [мета-стандарт](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/02-business-context.md).
+  мета-стандарт.
   Короткий стиль КС1–КС7, бюджет ≤250 слов. В 2.4.1 нет пояснений
   реализации. Ограничение платформы в новой задаче — пункт 2.4.2, а не
   раздел 6. Условие работы и сценарное исключение — раздел 6.2, а не 2.4.
@@ -237,7 +236,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - открытые вопросы: 8.4 — <N> (<M> блокируют)
 ```
 
-<!-- issue-395: runtime-fallback -->
 ## Дополнение: runtime, продуктовая принадлежность и гибридная БЗ
 
 ### Работа без runtime
@@ -248,7 +246,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Р1–Р7, АД-1…АД-11, АП1–АП9, КС1–КС7, БС1–БС5, структуру и человеческие
 гейты Г-IN, Г-С1, Г-W. В Ш-0 этот текст уже встроен. В новой сессии,
 включая Ш-В, передай конституцию вместе с входом. Если её нет и нельзя
-прочитать [Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md),
+прочитать Промпт 0,
 запроси копию у БА; правила по памяти не восстанавливай.
 
 Если runtime или детальные стандарты недоступны, явно выведи:
@@ -341,19 +339,17 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 границы чтения соблюдены; дополнения учтены; недоступность обозначена;
 гейты и исходные формулировки сохранены. В Ш-В это отчёт о проверке, без
 правки документа и без заявления о полной валидации недоступных стандартов.
-<!-- /issue-395: runtime-fallback -->
 
-<!-- bl-156: by-test -->
 ## Дополнение «по тесту» (BL-156): стандарты шага
 
 > **Редакция по тесту (#427): действует до ADR обратного согласования.**
 
 Блок собран сборщиком `scripts/build_bcreq_step_prompts.py` по
-[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собирается-из-стандартов)
-из [базового стандарта](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-base-standard.md) 0.1.3,
-[профилей](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-profiles.md) 0.1.2,
-[каталога операций](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/catalog.json) и
-[реестра справочников runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md) 0.5.
+RFC #427, раздел 9.3
+из базового стандарта 0.1.3,
+профилей 0.1.2,
+каталога операций и
+реестра справочников runtime 0.5.
 Правила перенесены дословно с номером; источник правила — в стандарте.
 
 **Приоритет.** Где правило ниже расходится с текстом шага выше
@@ -404,7 +400,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 #### Источники, цитаты и справочники runtime
 
-- **БС-18.** Порядок источников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md#2-перечень); промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать
+- **БС-18.** Порядок источников и уровни доверия — справочник И-7 реестра runtime; промпт **ДОЛЖЕН** ссылаться на него по закреплённому SHA, а не копировать
 - **БС-19.** Ссылки на runtime **ДОЛЖНЫ** быть закреплены по коммиту; единственная точка обновления SHA — раздел 1 реестра. Этот стандарт SHA не содержит
 - **БС-20.** Промпт шага со ссылкой на справочник **ДОЛЖЕН** содержать строку ТС-6 (раздел 5 реестра) дословно
 - **БС-21.** Где справочника нет, промпт **ДОЛЖЕН** содержать блок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект
@@ -532,4 +528,3 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - **И-6 Доменный глоссарий:** `contact-center`: [`taxonomy/domain-glossary.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary.yaml); `voice-ucaas`: [`taxonomy/domain-glossary-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary-voice-ucaas.yaml); `analytics-reporting`: [`taxonomy/domain-glossary-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary-analytics-reporting.yaml).
 - **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
-<!-- /bl-156: by-test -->

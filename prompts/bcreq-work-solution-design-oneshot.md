@@ -18,7 +18,7 @@ processes: ["Дизайн решения и оценка"]
 
 Вспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.
 Конституция —
-[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);
+Промпт 0;
 защиты АД-1…АД-7 и запреты АП1–АП9 действуют в этой стадии.
 
 **Фиксация памяти (только первый этап роадмапа).** Перед шагом один раз выведи
@@ -31,7 +31,7 @@ processes: ["Дизайн решения и оценка"]
   прогон 2), Ш-9 (раздел 8). Цель — решение, ограничения, граничные кейсы,
   риски и план приёмки для оценки.
 - **Рекомендуемый следующий:**
-  [Ш-В](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md)
+  Ш-В
   отдельным вызовом, затем гейт Г-W.
 
 ## 1. Роль
@@ -79,12 +79,12 @@ processes: ["Дизайн решения и оценка"]
 
 ## 4. Правила раздела
 
-[Раздел 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);
-[раздел 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md);
-[раздел 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md);
-[раздел 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md);
-[композиция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции);
-[контракт гейтов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md#2-гейты).
+Раздел 5;
+раздел 6;
+раздел 7;
+раздел 8;
+композиция;
+контракт гейтов.
 
 - L1 ФДР и 6 — короткий стиль; L2 ТС — технический; 7 и 8 — табличный.
 - L1 ФДР без API, БД и имён сервисов; К3 — один каркас раздела 5; К4 — стыковое
@@ -103,9 +103,9 @@ processes: ["Дизайн решения и оценка"]
 ### Общие проверки с ручными шагами
 
 Выполни также «Проверку последовательности и контракта» из
-[Ш-6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md#проверка-последовательности-и-контракта)
+Ш-6
 и «Проверку покрытия условий контракта» из
-[Ш-8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md#проверка-покрытия-условий-контракта).
+Ш-8.
 Режим остаётся oneshot; остановки и гейты сохраняются.
 
 ## 5. Формат вывода
@@ -153,7 +153,6 @@ L2 ТС · ТС 1. <Контейнер или компонент> · Дельт�
 - открытые вопросы: 8.4 — <N> (<M> блокируют)
 ```
 
-<!-- issue-395: runtime-fallback -->
 ## Дополнение: runtime, продуктовая принадлежность и гибридная БЗ
 
 ### Работа без runtime
@@ -164,7 +163,7 @@ L2 ТС · ТС 1. <Контейнер или компонент> · Дельт�
 Р1–Р7, АД-1…АД-11, АП1–АП9, КС1–КС7, БС1–БС5, структуру и человеческие
 гейты Г-IN, Г-С1, Г-W. В Ш-0 этот текст уже встроен. В новой сессии,
 включая Ш-В, передай конституцию вместе с входом. Если её нет и нельзя
-прочитать [Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md),
+прочитать Промпт 0,
 запроси копию у БА; правила по памяти не восстанавливай.
 
 Если runtime или детальные стандарты недоступны, явно выведи:
@@ -257,4 +256,3 @@ L2 ТС · ТС 1. <Контейнер или компонент> · Дельт�
 границы чтения соблюдены; дополнения учтены; недоступность обозначена;
 гейты и исходные формулировки сохранены. В Ш-В это отчёт о проверке, без
 правки документа и без заявления о полной валидации недоступных стандартов.
-<!-- /issue-395: runtime-fallback -->
