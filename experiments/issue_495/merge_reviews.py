@@ -25,6 +25,12 @@ ROW = re.compile(r"^\|\s*\**([UDAMG]-\d+b?)\**\s*\|\s*([^|]+?)\s*\|\s*(.+?)\s*\|
 TITLES = {"a": "Роль А — инженер ИИ-промптов", "b": "Роль Б — ИИ-архитектор контрактов и данных"}
 
 
+def model_id(raw):
+    """ID модели из строки «Модель: …» (раунд 1 роли Б пишет «Fable 5.2, ID модели `claude-…`»)."""
+    found = re.search(r"claude-[a-z0-9-]+", raw)
+    return found[0] if found else raw.strip(" *`.")
+
+
 def rounds(role):
     files = sorted(REVIEW.glob(f"role-{role}.r*.md"), key=lambda p: int(re.search(r"\.r(\d+)\.md$", p.name)[1]))
     out = []
@@ -37,7 +43,7 @@ def rounds(role):
             if m and not set(m[2]) <= set("-: ") and not m[2].lower().startswith("вердикт"):
                 rows[m[1]] = (m[2].strip("* ").lower(), m[3])
         out.append((int(re.search(r"\.r(\d+)\.md$", path.name)[1]), path.name,
-                    model[1].strip(" *`.") if model else "не указана", rows))
+                    model_id(model[1]) if model else "не указана", rows))
     return out
 
 
