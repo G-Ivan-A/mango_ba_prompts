@@ -1,0 +1,243 @@
+{
+  "version": "1.0.0",
+  "updated": "2026-11-20",
+  "standard": "standards/bcreq-prompt-purity.md",
+  "contour": {
+    "prompt_texts": {
+      "classes": [
+        "a",
+        "b",
+        "c"
+      ],
+      "globs": [
+        "prompts/*.md",
+        "prompts/drafts/*.md",
+        "prompts/drafts/a-in/*.md",
+        "prompts/drafts/system/*.md",
+        "prompts/archive/*.md",
+        "prompts/archive/a-in-v2.7.0/*.md",
+        "standards/bcreq-manual-classes/*.md"
+      ],
+      "exclude": [
+        "prompts/README.md",
+        "prompts/README.executable.md",
+        "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+        "prompts/archive/a-in-v2.7.0/README.md",
+        "standards/bcreq-manual-classes/README.md"
+      ]
+    },
+    "ssot_texts": {
+      "classes": [
+        "a",
+        "b"
+      ],
+      "globs": [
+        "docs/ba-processes/bcreq-a-in-common.md",
+        "docs/ba-processes/bcreq-step-handoff.md",
+        "docs/ba-processes/bcreq-a-in-route.json",
+        "docs/ba-processes/bcreq-a-in-instructions.json",
+        "docs/ba-processes/bcreq-evidence-normalization.md"
+      ]
+    },
+    "repo_docs_in_prompts": {
+      "classes": [
+        "a"
+      ],
+      "globs": [
+        "prompts/README.md",
+        "prompts/README.executable.md",
+        "prompts/AI_SESSION_HANDOVER_PROMPT.executable.md",
+        "prompts/archive/a-in-v2.7.0/README.md",
+        "prompts/archive/a-in-v2.7.0/manifest.json",
+        "prompts/drafts/manifest.json",
+        "standards/bcreq-manual-classes/README.md",
+        "standards/bcreq-manual-classes/catalog.json"
+      ]
+    },
+    "site_data": {
+      "classes": [
+        "a",
+        "b"
+      ],
+      "globs": [
+        "site/data/*.json"
+      ],
+      "prompt_body_fields": {
+        "site/data/prompts.json": [
+          "prompts[].content",
+          "prompts[].body"
+        ],
+        "site/data/test-kit.json": [
+          "steps[].draft.body",
+          "steps[].system.body"
+        ],
+        "site/data/a-in-kit.json": [
+          "steps[].prompt"
+        ],
+        "site/data/step-handoff.json": [
+          "blocks.*"
+        ]
+      },
+      "card_files": [
+        "site/data/prompts.json",
+        "site/data/test-kit.json",
+        "site/data/a-in-kit.json",
+        "site/data/step-handoff.json",
+        "site/data/processes.json",
+        "site/data/process-tree.json",
+        "site/data/bcreq-flow.json"
+      ]
+    }
+  },
+  "links": {
+    "private_repo": "mango_ba_prompts",
+    "runtime_repo": "github.com/G-Ivan-A/mango-ba-ai-runtime",
+    "runtime_sha_registry": "standards/bcreq-runtime-references.md",
+    "runtime_link_regex": "github\\.com/G-Ivan-A/mango-ba-ai-runtime/(?:blob|tree)/([^/\\s)]+)",
+    "relative_repo_link_regex": "\\]\\((?!https?://|#|mailto:)([^)\\s]+)\\)"
+  },
+  "case_tokens": [
+    {
+      "id": "CT-01",
+      "regex": "amo ?CRM|амоCRM|амо ?срм",
+      "kind": "внешняя система",
+      "origin": "общий контракт A-IN (issue #495, проблема B, экземпляр 2); инструкция AIN-12"
+    },
+    {
+      "id": "CT-02",
+      "regex": "API-привяз\\w*|привязк\\w* по ID",
+      "kind": "кейс-связка",
+      "origin": "общий контракт A-IN (issue #495, проблема B, экземпляр 2)"
+    },
+    {
+      "id": "CT-03",
+      "regex": "(?i)коннектор\\w*",
+      "kind": "кейс-термин",
+      "origin": "цель AIN-06 (issue #495, проблема B, экземпляр 1)"
+    },
+    {
+      "id": "CT-04",
+      "regex": "(?<![А-Яа-яЁёA-Za-z])ВАТС(?![А-Яа-яЁёA-Za-z])|Виртуальн\\w+ АТС",
+      "kind": "имя продукта",
+      "origin": "анкета Ш-А, профили Ш-0/Ш-2"
+    },
+    {
+      "id": "CT-05",
+      "regex": "(?<![А-Яа-яЁёA-Za-z])ЛК(?![А-Яа-яЁёA-Za-z])",
+      "kind": "подсистема продукта",
+      "origin": "контрпример AIN-06, профили Ш-0/Ш-2"
+    },
+    {
+      "id": "CT-06",
+      "regex": "(?<![A-Za-z])HDE(?![A-Za-z])|HelpDeskEddy",
+      "kind": "внешняя система",
+      "origin": "контрпример AIN-12"
+    },
+    {
+      "id": "CT-07",
+      "regex": "Битрикс\\w*|Bitrix\\w*|(?<![А-Яа-яЁё\\w])1С(?![А-Яа-яЁё\\w])|Salesforce|HubSpot|retailCRM|RetailCRM|Мегаплан|YCLIENTS|Zendesk|Usedesk|Jivo|Calltouch|Roistat|Talker",
+      "kind": "внешняя система / продукт",
+      "origin": "словарь превентивно: внешние CRM и сервисы"
+    },
+    {
+      "id": "CT-08",
+      "regex": "(?i)задач[аеиу]?\\s*№?\\s*\\d{3,5}(?!\\d)|(?<![\\d.\\w-])(?:1075|1135|1140|1199)(?![\\d.\\w])",
+      "kind": "ID кейса",
+      "origin": "задачи-источники кейсов (реестр кейсов)"
+    },
+    {
+      "id": "CT-09",
+      "regex": "(?<![A-Za-z])D(?:1|2|3|5|6|8|9|11)(?:,|;| —)",
+      "kind": "параметр профиля продукта",
+      "origin": "маппинг профилей D-N в Ш-2"
+    }
+  ],
+  "generic_allowed": [
+    "Mango, Mango Office, MANGO OFFICE — имя организации-владельца процесса и БЗ (контекст развёртывания), не имя продукта",
+    "интеграция, заявка, CRM, API, контакт-центр, IVR, SIP, телефония, личный кабинет — общеупотребительные термины",
+    "RFC-AIN-001, Р1…Р7, АД-…, АП…, КС…, БС…, ИШ-… — ID норм, исполняемых промптом"
+  ],
+  "allowed_sections": [],
+  "ballast_patterns": [
+    {
+      "id": "BP-01",
+      "regex": "<!--",
+      "what": "служебный HTML-комментарий или маркер сборки"
+    },
+    {
+      "id": "BP-02",
+      "regex": "(?<![\\w/&])#\\d{2,4}(?![\\d\\w])",
+      "what": "ссылка на issue/PR по номеру"
+    },
+    {
+      "id": "BP-03",
+      "regex": "(?i)(?<![\\w-])issue(?![\\w-])",
+      "what": "отсылка к issue"
+    },
+    {
+      "id": "BP-04",
+      "regex": "(?<![\\w-])(?:BL|RUN|SC|FIX|ADR)-?\\s?\\d",
+      "what": "отсылка к задаче бэклога, прогону, критерию прогона, фиксации или ADR"
+    },
+    {
+      "id": "BP-05",
+      "regex": "(?<![\\w-])PR\\s*#|(?<![\\w-])PR\\s+\\d",
+      "what": "отсылка к PR"
+    },
+    {
+      "id": "BP-06",
+      "regex": "(?i)по тесту|by-test",
+      "what": "пометка режима «по тесту»"
+    },
+    {
+      "id": "BP-07",
+      "regex": "(?i)сборщик|assembled by",
+      "what": "пометка сборки / отчёт сборщика"
+    },
+    {
+      "id": "BP-08",
+      "regex": "Experimental|(?i:Draft для|Черновик BL|черновик для ручной)",
+      "what": "редакционный статус в тексте промпта"
+    },
+    {
+      "id": "BP-09",
+      "regex": "(?i)действует до ADR|не измерен|эффективность модели",
+      "what": "редакционная оговорка"
+    },
+    {
+      "id": "BP-10",
+      "regex": "(?i)не внесены|невнесённ|отчёт BL",
+      "what": "перечень невнесённых правил"
+    },
+    {
+      "id": "BP-11",
+      "regex": "(?i)changelog|истори[яи] (?:изменени|баннер|правил|происхождени)",
+      "what": "история изменений"
+    },
+    {
+      "id": "BP-12",
+      "regex": "(?i)Golden Set \\(|ревизии Golden|категория RUN",
+      "what": "происхождение правила из прогона/ревизии"
+    }
+  ],
+  "case_register": [
+    {
+      "id": "CR-01",
+      "summary": "Новизна интеграционного компонента не отменяет дельту существующих подсистем продукта",
+      "source": "AIN-06: цель, why маршрута, контрпример инструкции",
+      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+    },
+    {
+      "id": "CR-02",
+      "summary": "Наблюдаемое поведение внешней системы (задержка, порядок событий) не доказывает способ интеграции, тайминг SLA и переносимость на другую систему",
+      "source": "общий контракт A-IN, блок «Доказательная нормализация и фактический доступ»",
+      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+    },
+    {
+      "id": "CR-03",
+      "summary": "Аналогия с внешней системой не доказывает полный сценарий исполнимости",
+      "source": "AIN-12: контрпример инструкции",
+      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+    }
+  ]
+}
