@@ -684,15 +684,15 @@
   },
   "prompts/bcreq-constraints-documentation-stepwise.md": {
    "sha256_before": "3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c",
-   "sha256_after": "e588d2ece3b83e11bcae45e8484c041efcf72158316afb23197eca546fcb5088",
+   "sha256_after": "b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 6.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -806,15 +806,15 @@
   },
   "prompts/bcreq-extra-risk-analysis-stepwise.md": {
    "sha256_before": "1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2",
-   "sha256_after": "826f1d5a6c7c0ce9dceb58409ed4b83dce76f1b059be1ea8e31adab4bb3e62f4",
+   "sha256_after": "0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 8.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -832,7 +832,7 @@
   },
   "prompts/bcreq-fr-documentation-stepwise.md": {
    "sha256_before": "04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337",
-   "sha256_after": "33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb",
+   "sha256_after": "fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c",
    "hunks": [
     {
      "before": "processes: [\"Требования и предварительное согласование\"]\n---\n\n<!-- issue-474:entry -->\n",
@@ -855,12 +855,12 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 3.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-babok-guide-v3-что-берём-по-пунктам).\n",
-     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  порядок внутри блока — категории 7.1, как в шаге группировки выше.\n"
+     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  категории — по 7.1; порядок категорий — как в шаге группировки выше.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -932,15 +932,15 @@
   },
   "prompts/bcreq-nfr-documentation-stepwise.md": {
    "sha256_before": "bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada",
-   "sha256_after": "ccdb7ca06052f2dbe119b99a2276c896adf671a801a753b25b4eae8e95b0dd0f",
+   "sha256_after": "f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 4.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -958,15 +958,15 @@
   },
   "prompts/bcreq-orr-solution-design-stepwise.md": {
    "sha256_before": "d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0",
-   "sha256_after": "c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9",
+   "sha256_after": "eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);\n[правила композиции](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 5;\nправила композиции.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);\n[правила композиции](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раздел-5-выбор-между-c4-и-tm-forum-oda).\n",
@@ -1072,19 +1072,15 @@
   },
   "prompts/bcreq-scenarios-modeling-oneshot.md": {
    "sha256_before": "9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7",
-   "sha256_after": "2aada99859db9e5f7f8309feb666d119f6b95146aafebf2da53849570c59ea62",
+   "sha256_after": "4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md)\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 7\n"
-    },
-    {
-     "before": "(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\n[архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).\n",
-     "after": "(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\nархитектуры промптов).\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md)\n(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\n[архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).\n",
+     "after": "\n## 4. Правила раздела\n\nШаблон UC — общий для Ш-С и Ш-5/Ш-8 (правило М4).\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -1102,15 +1098,15 @@
   },
   "prompts/bcreq-uc-modeling-stepwise.md": {
    "sha256_before": "61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890",
-   "sha256_after": "8e7b1a25ed5c9802c77471ba95f982ebe700fb452f860cb8fcfd54bbe38367d2",
+   "sha256_after": "1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3",
    "hunks": [
     {
      "before": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);\n",
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 7.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2460,7 +2456,7 @@
   },
   "prompts/drafts/bcreq-constraints-documentation-stepwise.md": {
    "sha256_before": "5cde0026c92dcb6b859ee5a8e136fb4579ff20dc15cadf2eeff5757a2b9f5eb7",
-   "sha256_after": "ea3b099f6b9845418e71f57cbf3396faea6610694691297a2b2b42dc5783ef24",
+   "sha256_after": "bb927e229940f273f4bfc050d5b2dfb1baeafec439e1fa2151d950c28bba9c98",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-7 (2.8): ограничения (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -2468,7 +2464,7 @@
     },
     {
      "before": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: 3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c\n",
-     "after": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: e588d2ece3b83e11bcae45e8484c041efcf72158316afb23197eca546fcb5088\n"
+     "after": "operation: documentation\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-constraints-documentation-stepwise.md\nbased_on_sha256: b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2479,8 +2475,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 6.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2640,7 +2636,7 @@
   },
   "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md": {
    "sha256_before": "d166daa1a4bfae06b51992151214565dc3cb982c3f7b7700506304af1e5756fb",
-   "sha256_after": "843a1b0f694d6ce62506e544b693f38e58c5199d434a5df210f388edf8039661",
+   "sha256_after": "0aba86ca11b485d8a4ba99e42b2eeb89f2eec9acf60539865a8c549edc388e8f",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-9 (2.14): риски, приёмка (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -2648,7 +2644,7 @@
     },
     {
      "before": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2\n",
-     "after": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 826f1d5a6c7c0ce9dceb58409ed4b83dce76f1b059be1ea8e31adab4bb3e62f4\n"
+     "after": "operation: risk_analysis\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-extra-risk-analysis-stepwise.md\nbased_on_sha256: 0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2659,8 +2655,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 8.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2718,7 +2714,7 @@
   },
   "prompts/drafts/bcreq-fr-documentation-stepwise.md": {
    "sha256_before": "dd8e0102f8b52356826a158c482cf65df75913067649d1adbca583e74481f7dd",
-   "sha256_after": "faae19cbaaea23473337f4f5ccc9f5c6efd9423f9a4db4ccf42eba08a92eda3b",
+   "sha256_after": "c580cd98c370b727573434cebd320dd52f676c8a5ed0e11b86aff7bbd914ee56",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)\"\nstatus: draft\nversion: 0.5\nupdated: 2026-11-18\n",
@@ -2726,7 +2722,7 @@
     },
     {
      "before": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\n",
-     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: 33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb\n"
+     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-fr-documentation-stepwise.md\nbased_on_sha256: fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n",
@@ -2757,12 +2753,12 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 3.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-babok-guide-v3-что-берём-по-пунктам).\n",
-     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  порядок внутри блока — категории 7.1, как в шаге группировки выше.\n"
+     "after": "  объекта>»; условие по EARS: «Когда …», «Пока …», «Если …, то …», «Где …».\n- Ф1–Ф4, ориентир 5±2 для итогового списка, блок «Отраслевая практика — на\n  решение БА»: он источник пометки `[Предложено]`.\n- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6),\n  категории — по 7.1; порядок категорий — как в шаге группировки выше.\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2910,7 +2906,7 @@
   },
   "prompts/drafts/bcreq-nfr-documentation-stepwise.md": {
    "sha256_before": "3d47e65b7fda55cb72171caf651ca412e3d3642b00612e31fc0f0355bb574041",
-   "sha256_after": "ce48d3ddcf3a2fb48267d970a13fea230ae265bb815c0de3cf7e2853e8d39161",
+   "sha256_after": "1c730387dfe503dcddfd5ad43905ee2d8fbfe4364c6044dfb2ebfc9ce5dbd6a3",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-4 (2.5): НФТ (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -2918,7 +2914,7 @@
     },
     {
      "before": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada\n",
-     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: ccdb7ca06052f2dbe119b99a2276c896adf671a801a753b25b4eae8e95b0dd0f\n"
+     "after": "operation: documentation\nprocesses: [\"Требования и предварительное согласование\"]\nbased_on: prompts/bcreq-nfr-documentation-stepwise.md\nbased_on_sha256: f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -2929,8 +2925,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 4.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -2992,7 +2988,7 @@
   },
   "prompts/drafts/bcreq-orr-solution-design-stepwise.md": {
    "sha256_before": "521491281f4e641a6ecf5445b5e47313cfeb914b8350a4a822fdbc7fed7937ba",
-   "sha256_after": "4931ccb579b61b3035bf1c01c05d0bc0b4d799edefb899e67ada7be82a65c999",
+   "sha256_after": "8b1ead970e93e31635178902fef5404c790bd7236a1fc05bd50c0715a733e2d8",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-6 (2.6+2.7): ОРР (по тесту)\"\nstatus: draft\nversion: 0.3\nupdated: 2026-11-18\n",
@@ -3000,7 +2996,7 @@
     },
     {
      "before": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\n",
-     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9\n"
+     "after": "operation: solution_design\nprocesses: [\"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-orr-solution-design-stepwise.md\nbased_on_sha256: eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3011,8 +3007,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);\n[правила композиции](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 5;\nправила композиции.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);\n[правила композиции](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "  стыковых ФТ рекомендуется L1+L2.\n- АД-6: механизм, которого нет в документации, не придумывается.\n- Р6: неизменяемые части системы не описываются.\n- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раздел-5-выбор-между-c4-и-tm-forum-oda).\n",
@@ -3336,7 +3332,7 @@
   },
   "prompts/drafts/bcreq-scenarios-modeling-oneshot.md": {
    "sha256_before": "dbbd3f4cbd8ab60f94451d771904956fe606c4f23964283611d092e165f537cf",
-   "sha256_after": "5b36bfd8e515e7bd3a4d8c7165fed940f5c2ced20d24a68a9309db1327f92300",
+   "sha256_after": "8213f9c065e459750749b62eb2305d0a48cd7799ca1318e204d4c01220b662c0",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-С (2.12/2.13): US, UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-05\n",
@@ -3344,7 +3340,7 @@
     },
     {
      "before": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7\n",
-     "after": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 2aada99859db9e5f7f8309feb666d119f6b95146aafebf2da53849570c59ea62\n"
+     "after": "operation: modeling\nprocesses: [\"Сценарии вне документа\"]\nbased_on: prompts/bcreq-scenarios-modeling-oneshot.md\nbased_on_sha256: 4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3355,12 +3351,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md)\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 7\n"
-    },
-    {
-     "before": "(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\n[архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).\n",
-     "after": "(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\nархитектуры промптов).\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md)\n(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4\n[архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).\n",
+     "after": "\n## 4. Правила раздела\n\nШаблон UC — общий для Ш-С и Ш-5/Ш-8 (правило М4).\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -3418,7 +3410,7 @@
   },
   "prompts/drafts/bcreq-uc-modeling-stepwise.md": {
    "sha256_before": "cadc34c43ca817e5f9657c3f31f4f4fc1d872dc128a682e2c8d5831bb356830f",
-   "sha256_after": "d602c09367bb8c4936500ac8a3e0b662197a358ca402ee0ec3be23e99742e086",
+   "sha256_after": "cf5fe98a5852e682cdc64d1d4131a6e3cd7a9eb4c4184c2ca81c739f86031267",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-5/Ш-8 (2.4/2.9): UC (по тесту)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3426,7 +3418,7 @@
     },
     {
      "before": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890\n",
-     "after": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 8e7b1a25ed5c9802c77471ba95f982ebe700fb452f860cb8fcfd54bbe38367d2\n"
+     "after": "operation: modeling\nprocesses: [\"Требования и предварительное согласование\", \"Дизайн решения и оценка\"]\nbased_on: prompts/bcreq-uc-modeling-stepwise.md\nbased_on_sha256: 1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3\n"
     },
     {
      "before": "runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855\nassembled_by: scripts/build_bcreq_step_prompts.py\n---\n<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->\n\n> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.\n",
@@ -3437,8 +3429,8 @@
      "after": "\nВспомни конституцию (Промпт 0): структура, стили, правила Р1–Р7, запреты.\nКонституция —\nПромпт 0;\n"
     },
     {
-     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md).\n",
-     "after": "\n## 4. Правила раздела\n\nМета-стандарт раздела 7.\n"
+     "before": "\n## 4. Правила раздела\n\n[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md).\n\n",
+     "after": "\n## 4. Правила раздела\n\n"
     },
     {
      "before": "- открытые вопросы: 8.4 — <N> (<M> блокируют)\n```\n\n<!-- issue-395: runtime-fallback -->\n",
@@ -3508,7 +3500,7 @@
   },
   "prompts/drafts/manifest.json": {
    "sha256_before": "cbe13abae6af09b2f89434da8bff7c72caecd630de4c4cc4f5046c1700194fd0",
-   "sha256_after": "3bc87739b0d135e7acb797f5fcde7ce0f03bb01aeae3fa6f3742f7308b9bfa3d",
+   "sha256_after": "7d4c913b8ea596fc43e7f17223a8b4381fe9cd102449fe32d3c7820f4e0aadd1",
    "hunks": [
     {
      "before": "{\n  \"source_issue\": \"https://github.com/G-Ivan-A/mango_ba_prompts/issues/438\",\n",
@@ -3556,27 +3548,27 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"ccdb7ca06052f2dbe119b99a2276c896adf671a801a753b25b4eae8e95b0dd0f\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-nfr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"61ae4645c0db9688ce8562aa23506011abfc054fe35eb193470df0280b30e890\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"8e7b1a25ed5c9802c77471ba95f982ebe700fb452f860cb8fcfd54bbe38367d2\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-uc-modeling-stepwise.md\",\n      \"based_on_sha256\": \"1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"d8563bea066cb5e42e3e1a5f554f410dbf9c12656ed710790972cf18c1e558c0\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-orr-solution-design-stepwise.md\",\n      \"based_on_sha256\": \"eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"3b169baa6575267b4802e6154c46198e5b639fe814a7af4cf05315f8e39f700c\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"e588d2ece3b83e11bcae45e8484c041efcf72158316afb23197eca546fcb5088\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-constraints-documentation-stepwise.md\",\n      \"based_on_sha256\": \"b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"826f1d5a6c7c0ce9dceb58409ed4b83dce76f1b059be1ea8e31adab4bb3e62f4\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-extra-risk-analysis-stepwise.md\",\n      \"based_on_sha256\": \"0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-review-validation-oneshot.md\",\n      \"based_on_sha256\": \"b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b\",\n",
@@ -3584,7 +3576,7 @@
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7\",\n",
-     "after": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"2aada99859db9e5f7f8309feb666d119f6b95146aafebf2da53849570c59ea62\",\n"
+     "after": "      \"based_on\": \"prompts/bcreq-scenarios-modeling-oneshot.md\",\n      \"based_on_sha256\": \"4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96\",\n"
     }
    ]
   },
@@ -3692,7 +3684,7 @@
   },
   "prompts/drafts/system/bcreq-intake-questionnaire-system.md": {
    "sha256_before": "47c35c2e96fa6a60eeeec11c83ab0f8d455dfa80258bd1621c00b72ea22661a7",
-   "sha256_after": "ce6da01cea399a5fdc4eaedc3f530b1bf04b8d8fa9e64cdef32f909f651c233f",
+   "sha256_after": "bda50143187f17ff21f608e537f6308f6df303d6386d5cc25d76fba4ad9a17e2",
    "hunks": [
     {
      "before": "version: 0.1\nupdated: 2026-11-18\n",
@@ -3720,23 +3712,23 @@
     },
     {
      "before": "проверку; изменение основания отзывает зависимые допуски и возвращает A-IN.\n<!-- /issue-490:system -->\n",
-     "after": "проверку; изменение основания отзывает зависимые допуски и возвращает A-IN.\n\nНиже — текст шага редакции 2.7.0.\n"
+     "after": "проверку; изменение основания отзывает зависимые допуски и возвращает A-IN.\n"
     },
     {
-     "before": "промпта v0.1: текст шага собран из контракта операции К-01 и правил\n[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).\n",
-     "after": "промпта v0.1: текст шага собран из контракта операции К-01 и правил\nсправочника стандартов.\n"
+     "before": "\nШаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса. У него нет\nпромпта v0.1: текст шага собран из контракта операции К-01 и правил\n[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).\n",
+     "after": "\nНиже — текст шага редакции 2.7.0.\n\nШаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса:\nконтракт операции К-01 и правила выбора стандартов (раздел 4В ниже).\n"
     },
     {
-     "before": "Конституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-constitution-governance-oneshot.md);\n",
-     "after": "Конституция —\nПромпт 0;\n"
+     "before": "\nКонституция —\n[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-constitution-governance-oneshot.md);\nв чат её не выводи.\n",
+     "after": "\nКонституция — Промпт 0 (Ш-0), принятый в этом чате; в чат её не выводи.\n"
     },
     {
      "before": "2. Сколько операторов работает?\n3. Сколько номеров Mango ВАТС?\n",
      "after": "2. Сколько операторов работает?\n3. Сколько номеров телефонии продукта?\n"
     },
     {
-     "before": "**В. Согласие со стандартами** (подробно — в\n[справочнике стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md)):\n",
-     "after": "**В. Согласие со стандартами** (подробно — в\nсправочнике стандартов):\n"
+     "before": "\n**В. Согласие со стандартами** (подробно — в\n[справочнике стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md)):\n",
+     "after": "\n**В. Согласие со стандартами** (варианты по умолчанию):\n"
     },
     {
      "before": "- операторы: <…|UNKNOWN>\n- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>\n",

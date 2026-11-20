@@ -1,7 +1,7 @@
-Файлов в контуре: 151; нарушений: 4723
+Файлов в контуре: 151; нарушений: 4724
   (a) приватные/незакреплённые ссылки: 2457
   (b) кейс-специфика: 296
-  (c) неисполнимый балласт: 1970
+  (c) неисполнимый балласт: 1971
 По правилам:
   a A-PRIVATE: 1674
   a A-RELATIVE: 702
@@ -24,7 +24,7 @@
   c BP-10: 66
   c BP-11: 6
   c BP-12: 10
-  c BP-13: 100
+  c BP-13: 101
 По файлам (a/b/c):
   docs/ba-processes/bcreq-a-in-common.md: 5/2/0
   docs/ba-processes/bcreq-a-in-instructions.json: 0/5/0
@@ -115,7 +115,7 @@
   prompts/drafts/system/bcreq-context-understanding-system.md: 15/2/39
   prompts/drafts/system/bcreq-intake-questionnaire-system.md: 12/4/39
   prompts/drafts/system/bcreq-products-impact-analysis-system.md: 17/11/41
-  prompts/session-debug-documentation-oneshot.md: 9/0/2
+  prompts/session-debug-documentation-oneshot.md: 9/0/3
   site/data/a-in-kit.json: 144/58/288
   site/data/bcreq-flow.json: 43/0/0
   site/data/checks.json: 2/0/0

@@ -8,7 +8,7 @@ temperature: 0.1
 operation: documentation
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-constraints-documentation-stepwise.md
-based_on_sha256: e588d2ece3b83e11bcae45e8484c041efcf72158316afb23197eca546fcb5088
+based_on_sha256: b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d
 mode: by-test
 steps: [Ш-7]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -69,8 +69,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 4. **Итог.** Пустой подраздел — «нет». Обнови 8.4, 8.5 и «Состояние BCREQ».
 
 ## 4. Правила раздела
-
-Мета-стандарт раздела 6.
 
 - Короткий стиль КС1–КС7, раздел ≤250 слов, предложения ≤20 слов.
 - Каждый пункт 6.1 ведёт к разделу 5; каждый пункт 6.2 имеет источник.

@@ -189,7 +189,7 @@
         "Ш-3"
       ],
       "based_on": "prompts/bcreq-fr-documentation-stepwise.md",
-      "based_on_sha256": "33875f84ed7dd77058a0f703a72b6f9c1f9aa1f059dbc099d4cd4efca4c006eb",
+      "based_on_sha256": "fdba625569cfe5d82cc3592906bb2120fbe2bc78a0902d23d38818e92acd5f7c",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -224,7 +224,7 @@
         "Ш-4"
       ],
       "based_on": "prompts/bcreq-nfr-documentation-stepwise.md",
-      "based_on_sha256": "ccdb7ca06052f2dbe119b99a2276c896adf671a801a753b25b4eae8e95b0dd0f",
+      "based_on_sha256": "f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -258,7 +258,7 @@
         "Ш-8"
       ],
       "based_on": "prompts/bcreq-uc-modeling-stepwise.md",
-      "based_on_sha256": "8e7b1a25ed5c9802c77471ba95f982ebe700fb452f860cb8fcfd54bbe38367d2",
+      "based_on_sha256": "1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -294,7 +294,7 @@
         "Ш-6"
       ],
       "based_on": "prompts/bcreq-orr-solution-design-stepwise.md",
-      "based_on_sha256": "c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9",
+      "based_on_sha256": "eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -326,7 +326,7 @@
         "Ш-7"
       ],
       "based_on": "prompts/bcreq-constraints-documentation-stepwise.md",
-      "based_on_sha256": "e588d2ece3b83e11bcae45e8484c041efcf72158316afb23197eca546fcb5088",
+      "based_on_sha256": "b072f8f79321cee4b024cb569e58f0ea85903b1291eb72d2deaf111405f5e77d",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -357,7 +357,7 @@
         "Ш-9"
       ],
       "based_on": "prompts/bcreq-extra-risk-analysis-stepwise.md",
-      "based_on_sha256": "826f1d5a6c7c0ce9dceb58409ed4b83dce76f1b059be1ea8e31adab4bb3e62f4",
+      "based_on_sha256": "0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"
@@ -469,7 +469,7 @@
         "Ш-С"
       ],
       "based_on": "prompts/bcreq-scenarios-modeling-oneshot.md",
-      "based_on_sha256": "2aada99859db9e5f7f8309feb666d119f6b95146aafebf2da53849570c59ea62",
+      "based_on_sha256": "4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96",
       "runtime_main_to_sha": 0,
       "profiles": [
         "GENERATE"

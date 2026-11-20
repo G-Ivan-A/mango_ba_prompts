@@ -191,10 +191,17 @@ class MutationTest(unittest.TestCase):
                            ("Блок собран сборщиком.", "BP-07"), ("Experimental: правило шага.", "BP-08"),
                            ("Правило действует до ADR.", "BP-09"), ("Не внесены правила шага.", "BP-10"),
                            ("История изменений правила — ниже.", "BP-11"), ("Урок из Golden Set (ревизия 3).", "BP-12"),
-                           ("Приоритет у принятого RFC-AIN-001.", "BP-13"), ("Решение — ADR-RT-002.", "BP-13")]:
+                           ("Приоритет у принятого RFC-AIN-001.", "BP-13"), ("Решение — ADR-RT-002.", "BP-13"),
+                           ("Стандарт промптов (ADR-001).", "BP-13"), ("Приоритет у RFC-A-IN-001.", "BP-13"),
+                           # Роль Б, раунд 3, замечание 8: строчная запись и не-ASCII дефисы.
+                           ("Приоритет у rfc-ain-001.", "BP-13"), ("Приоритет у RFC\u2011AIN\u2011001.", "BP-13"),
+                           ("Решение — ADR\u2010RT\u2010002.", "BP-13"), ("Решение — Adr\u2013001.", "BP-13")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
+        # Слово без номера («RFC-шаблон», «адрес») — не ID: BP-13 не срабатывает.
+        self.mutate_prompt("Сохрани адрес и RFC-шаблон ответа.")
+        self.assertNotIn(("c", "BP-13", PROMPT), self.rules())
 
     def test_spoke_path_in_prompt(self):
         # ЧП-1, A-SPOKE-PATH: снятая ссылка не остаётся голым путём или названием файла спицы.
@@ -362,12 +369,17 @@ class BaselineMapTest(unittest.TestCase):
             "prompts/hand.md": "Текст шага. <!-- hand-marker: kept --> Правило шага.\n",
             "prompts/archive/old.md": "Архив. <!-- archive-only: zz --> Старый текст.\n",
             "prompts/drafts/step.md": "сборка\n",
+            "prompts/hand-link.md": "См. [Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/a.md) далее.\n",
+            "prompts/drafts/system/bcreq-intake-questionnaire-system.md":
+                "Промпт 0;\nИспользуй Промпт 0; затем шаг\n"
+                "> **Редакция по тесту (#427): действует до ADR обратного согласования.**\n",
+            "prompts/drafts/bcreq-other-stepwise.md":
+                "Промпт 0;\n> **Редакция по тесту (#427): действует до ADR обратного согласования.**\n",
         }
         for rel, text in files.items():
             (root / rel).parent.mkdir(parents=True, exist_ok=True)
             (root / rel).write_text(text, encoding="utf-8")
-        kinds = {"prompts/hand.md": "prompts", "prompts/archive/old.md": "archive_texts",
-                 "prompts/drafts/step.md": "prompts"}
+        kinds = {rel: "archive_texts" if "/archive/" in rel else "prompts" for rel in files}
         self.mapper = self.mb.Mapper(root, kinds)
 
     def tearDown(self):
@@ -387,6 +399,34 @@ class BaselineMapTest(unittest.TestCase):
 
     def test_archive_only_window_is_not_copy(self):
         self.assertFalse(self.copy("Архив. <!-- archive-only: zz --> Старый", "<!-- archive-only: zz -->"))
+
+    def test_link_copy_needs_whole_link(self):
+        # Окно «[Ш-А](https://…/blob/main/p» есть в ручном исходнике, но ссылка
+        # целиком (на черновик системного трека) — нет: это не копия (роль Б, раунд 3).
+        url = "https://github.com/G-Ivan-A/mango_ba_prompts"
+        same = f"См. [Ш-А]({url}/blob/main/prompts/a.md) далее."
+        other = f"См. [Ш-А]({url}/blob/main/prompts/drafts/system/a.md) далее."
+        self.assertTrue(self.copy(same, url))
+        self.assertFalse(self.copy(other, url))
+
+    def register(self, rel, no, match):
+        line = (Path(self.dir.name) / rel).read_text(encoding="utf-8").splitlines()[no - 1]
+        return self.mapper.by_register({"file": rel, "line": no, "snippet": line, "match": match}, "prompts")
+
+    def test_short_piece_matches_whole_line_only(self):
+        # «Промпт 0;» (A-07) короче 10 символов: относится к записи только строкой целиком.
+        intake = "prompts/drafts/system/bcreq-intake-questionnaire-system.md"
+        self.assertEqual(self.register(intake, 1, "Промпт 0"), "A-07")
+        self.assertNotEqual(self.register(intake, 2, "Промпт 0"), "A-07")
+
+    def test_carriers_split_shared_fragments(self):
+        # Носитель решает, чья копия: «Промпт 0;» вне Ш-А — не A-07; общий хвост
+        # баннера в черновике шага — D-13, в системном формате — D-22.
+        step = "prompts/drafts/bcreq-other-stepwise.md"
+        intake = "prompts/drafts/system/bcreq-intake-questionnaire-system.md"
+        self.assertNotEqual(self.register(step, 1, "Промпт 0"), "A-07")
+        self.assertEqual(self.register(step, 2, "ADR"), "D-13")
+        self.assertEqual(self.register(intake, 3, "ADR"), "D-22")
 
 
 class RegistryAndBacklogTest(unittest.TestCase):

@@ -8,7 +8,7 @@ temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-nfr-documentation-stepwise.md
-based_on_sha256: ccdb7ca06052f2dbe119b99a2276c896adf671a801a753b25b4eae8e95b0dd0f
+based_on_sha256: f2f2ea5398d3b212f20fbf736cfef06b209b87c8998bbc7f91ce162c12921d9a
 mode: by-test
 steps: [Ш-4]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -67,8 +67,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
    8.5 и «Состояние BCREQ».
 
 ## 4. Правила раздела
-
-Мета-стандарт раздела 4.
 
 - Р2: неясное не выдумывай. Сначала вопрос БА; нет ответа — вопрос Заказчику
   в 8.4 и согласованная с БА гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается

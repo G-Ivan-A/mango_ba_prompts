@@ -8,7 +8,7 @@ temperature: 0.1
 operation: solution_design
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-orr-solution-design-stepwise.md
-based_on_sha256: c35c01d7085b7293682b6156b1d081307a737c6ff0abc0393f1e704590061ba9
+based_on_sha256: eefebc0b70e7b6d03560739b80d2845788677d62e34ef76b5ada73028164a517
 mode: by-test
 steps: [Ш-6]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -99,9 +99,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
    BCREQ».
 
 ## 4. Правила раздела
-
-Мета-стандарт раздела 5;
-правила композиции.
 
 - L1 — короткий стиль КС1–КС7, ≤900 слов без таблицы трассировки.
 - L2 — технический стиль: таблицы и контракты, КС2, КС5, КС6; названия

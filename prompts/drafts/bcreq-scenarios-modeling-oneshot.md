@@ -8,7 +8,7 @@ temperature: 0.1
 operation: modeling
 processes: ["Сценарии вне документа"]
 based_on: prompts/bcreq-scenarios-modeling-oneshot.md
-based_on_sha256: 2aada99859db9e5f7f8309feb666d119f6b95146aafebf2da53849570c59ea62
+based_on_sha256: 4e7aa782192f97751c792b089afbe5c6543bb250cb487e5758c998d733580f96
 mode: by-test
 steps: [Ш-С]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -66,9 +66,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 
 ## 4. Правила раздела
 
-Мета-стандарт раздела 7
-(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4
-архитектуры промптов).
+Шаблон UC — общий для Ш-С и Ш-5/Ш-8 (правило М4).
 
 - Р2: неясное не выдумывай. В режиме oneshot спросить БА в ходе шага нельзя:
   вопрос в 8.4 и гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается вопросом В-NN]` на

@@ -8,7 +8,7 @@ temperature: 0.1
 operation: modeling
 processes: ["Требования и предварительное согласование", "Дизайн решения и оценка"]
 based_on: prompts/bcreq-uc-modeling-stepwise.md
-based_on_sha256: 8e7b1a25ed5c9802c77471ba95f982ebe700fb452f860cb8fcfd54bbe38367d2
+based_on_sha256: 1a782f97c60ec58c2c09171dc3ab27087ba1d29bc9296dd0b11419cb82419dd3
 mode: by-test
 steps: [Ш-5, Ш-8]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -85,8 +85,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 4. **Матрица и итог.** Обнови матрицу UC × ФТ, 8.4, 8.5 и «Состояние BCREQ».
 
 ## 4. Правила раздела
-
-Мета-стандарт раздела 7.
 
 - Табличный стиль: строка с ID, ≤2 предложений в ячейке.
 - UC не дублирует другой UC с иным актором без иного поведения (Р6).

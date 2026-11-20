@@ -8,7 +8,7 @@ temperature: 0.1
 operation: risk_analysis
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-extra-risk-analysis-stepwise.md
-based_on_sha256: 826f1d5a6c7c0ce9dceb58409ed4b83dce76f1b059be1ea8e31adab4bb3e62f4
+based_on_sha256: 0e172f3d086f7b5e11a78aed48abb291ba0b2dd215f5c0175f56276d7e94d5c6
 mode: by-test
 steps: [Ш-9]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -67,8 +67,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 5. **Итог.** Обнови «Состояние BCREQ».
 
 ## 4. Правила раздела
-
-Мета-стандарт раздела 8.
 
 - Р2: неясное не выдумывай. Сначала вопрос БА; нет ответа — вопрос Заказчику
   в 8.4 и согласованная с БА гипотеза `[ГИПОТЕЗА Г-NN: <текст>; снимается

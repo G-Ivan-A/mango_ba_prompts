@@ -70,6 +70,38 @@ JSON_VALUE = re.compile(r'^\s*"[\w.]+":\s*"(.*)$')
 HAND_PREFIXES = ("prompts/", "standards/bcreq-manual-classes/", "docs/ba-processes/")
 
 
+def step_draft(_mapper, f):
+    rel = f["file"]
+    return (rel.startswith("prompts/drafts/") and "/" not in rel[len("prompts/drafts/"):]) \
+        or f.get("where", "").startswith("steps[].draft")
+
+
+def system_draft(_mapper, f):
+    return f["file"].startswith("prompts/drafts/system/") or f.get("where", "").startswith("steps[].system")
+
+
+def intake_step(mapper, f):
+    """Нарушение в тексте Ш-А: в его черновиках или в его теле в данных сайта."""
+    if f["file"].startswith("site/data/"):
+        return any(owner.startswith("Ш-А") for owner in mapper.site_owners(f))
+    return "intake-questionnaire" in f["file"]
+
+
+# Носители копий записи. Баннеры черновиков шагов (D-13) и системного формата
+# (D-22) совпадают по хвосту «Черновик BL-156 (issue #438): …», а сниппет данных
+# сайта обрезан: различает их только носитель (роль Б, раунд 3). Фразы и маркеры
+# Ш-А (A-07, A-08) дословно совпадают с ручными промптами (`Промпт 0;`,
+# `<!-- issue-474:entry -->`), но в Ш-А их пишет сборщик, а не ручной исходник
+# (роль Б, раунд 3, замечание 3).
+CARRIERS = {"D-13": step_draft, "D-22": system_draft, "A-07": intake_step, "A-08": intake_step}
+#: Короткий фрагмент «было» (подпись ссылки, `Промпт 0;`) относит строку к записи
+#: только при совпадении строки целиком (роль Б, раунд 3, замечание 2).
+SHORT = 5
+#: Полная markdown-ссылка вокруг нарушения: копией считается, только если в
+#: ручном исходнике та же ссылка целиком (подпись и адрес), а не только её окно.
+LINK = re.compile(r"\[[^\]\n]*\]\([^)\s]*\)")
+
+
 def export_base(target):
     data = subprocess.run(["git", "archive", "--format=tar", BASE], cwd=ROOT, capture_output=True, check=True).stdout
     with tarfile.open(fileobj=io.BytesIO(data)) as tar:
@@ -84,13 +116,20 @@ def register_entries():
         # Записи по JSON-ССОТ хранят «было» с ключом и кавычками; в черновиках
         # и на сайте тот же текст стоит без них.
         pieces += [JSON_VALUE.sub(r"\1", p).strip().rstrip('",').strip() for p in pieces if JSON_VALUE.search(p)]
-        pieces = [p for p in pieces if len(p) >= 10 and p not in ("| --- | --- | --- | --- |",)]
+        pieces = [p for p in pieces if len(p) >= SHORT and p not in ("| --- | --- | --- | --- |",)]
         paths = [f.split(" (")[0] for f in files]
         out.append((eid, paths, old, pieces))
     out.append(("D-11", ["prompts/archive/*.md"], rewrite_cases.ARCHIVE_BANNER[0], [rewrite_cases.ARCHIVE_BANNER[0]]))
     for rel, old, _ in rewrite_cases.FRONTMATTER_LINKS:
         out.append(("D-12", [rel], old, [old]))
     return out
+
+
+def visible_prefix(snippet):
+    """Видимый текст строки, обрезанной внутри ссылки: «[подпись](https://…» → «подпись»."""
+    if not snippet.endswith("…") or snippet.startswith("…"):
+        return ""
+    return re.sub(r"\[([^\]\n]*)\]\([^)\s]*…$", r"\1", snippet).rstrip("…").strip()
 
 
 def line_ranges(text, old):
@@ -123,6 +162,7 @@ class Mapper:
         self.root = Path(base_root)
         self.entries = register_entries()
         self.texts = {}
+        self.jsons, self.owners = {}, {}
         # Ручные исходники базы (всё в контуре, кроме собранных черновиков, данных
         # сайта и архива): группы G принимают только копии их нарушений. Текст
         # сборщика, которого нет в ручных исходниках, должен иметь свою запись
@@ -145,7 +185,34 @@ class Mapper:
         projected = squash(prompt_purity.project(w + "\n")).strip()
         if not w:
             return False
+        for link in LINK.findall(f["snippet"]):
+            if f["match"] in link and squash(link) not in self.hand:
+                return False
         return w in self.hand or bool(projected) and projected in self.hand
+
+    def site_owners(self, f):
+        """Шаги данных сайта, в теле которых на строке нарушения стоит его фрагмент."""
+        key = (f["file"], f["where"], f["line"], f["snippet"])
+        if key not in self.owners:
+            data = self.json(f["file"])
+            head, *rest = f["where"].split(".")
+            owners = set()
+            if head.endswith("[]") and isinstance(data, dict):
+                frag = f["snippet"].strip("…")
+                for item in data.get(head[:-2], []) or []:
+                    value = item
+                    for part in rest:
+                        value = value.get(part) if isinstance(value, dict) else None
+                    lines = value.splitlines() if isinstance(value, str) else []
+                    if 0 < f["line"] <= len(lines) and frag in lines[f["line"] - 1]:
+                        owners.add(str(item.get("step") or item.get("id") or ""))
+            self.owners[key] = owners
+        return self.owners[key]
+
+    def json(self, rel):
+        if rel not in self.jsons:
+            self.jsons[rel] = json.loads((self.root / rel).read_text(encoding="utf-8"))
+        return self.jsons[rel]
 
     def line(self, rel, no):
         if rel not in self.texts:
@@ -169,13 +236,20 @@ class Mapper:
                 if delinked.count("\n") == self.texts[rel].count("\n") \
                         and f["line"] in line_ranges(delinked, old):
                     return eid
+                # «Было» из нескольких строк в разных файлах (A-06): строка
+                # нарушения целиком совпадает с одной строкой «было».
+                own = delinked.splitlines()
+                if delinked.count("\n") == self.texts[rel].count("\n") and \
+                        0 < f["line"] <= len(own) and own[f["line"] - 1].strip() in pieces:
+                    return eid
         # Копии в сгенерированных файлах и в данных сайта: по фрагменту «было».
         # «Было» в реестре записано после проекции (ссылки уже сняты), поэтому
         # строка сравнивается и в исходном виде, и в проекции.
         candidates = (text_line, prompt_purity.project(text_line + "\n").rstrip("\n"))
-        for eid, paths, old, pieces in self.entries:
+        entries = [e for e in self.entries if CARRIERS.get(e[0], lambda _m, _f: True)(self, f)]
+        for eid, paths, old, pieces in entries:
             for piece in pieces:
-                if f["match"] in piece and any(piece in c for c in candidates):
+                if len(piece) >= 10 and f["match"] in piece and any(piece in c for c in candidates):
                     return eid
         # Сгенерированные копии: строку, которую целиком сняла запись реестра
         # (например, служебный комментарий D-18), относим к записи по всем правилам.
@@ -183,9 +257,13 @@ class Mapper:
         # совпадении строки целиком.
         if kind == "site_data" or rel.startswith("prompts/drafts/"):
             whole = {c.strip().strip("…").strip() for c in candidates}
-            for eid, paths, old, pieces in self.entries:
+            # Строка данных сайта обрезана внутри ссылки: её видимое начало —
+            # начало строки «было» (A-06 в site data).
+            prefix = visible_prefix(text_line) if kind == "site_data" else ""
+            for eid, paths, old, pieces in entries:
                 if any(len(p) >= 20 and p in c for p in pieces for c in candidates) \
-                        or any(p in whole for p in pieces):
+                        or any(p in whole for p in pieces) \
+                        or len(prefix) >= 20 and any(p.startswith(prefix) for p in pieces):
                     return eid
         return None
 

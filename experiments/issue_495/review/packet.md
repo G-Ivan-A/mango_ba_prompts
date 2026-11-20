@@ -1,6 +1,6 @@
 # Пакет двухролевой проверки реестра issue #495
 
-База `e051e0fa`: нарушений 4723, без группы 0; текущее дерево: нарушений 0.
+База `e051e0fa`: нарушений 4724, без группы 0; текущее дерево: нарушений 0.
 
 ## U-01
 
@@ -91,10 +91,10 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1886 `docs/ba-processes/bcreq-step-handoff.md:119` (body) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем. | карта компонентов-кандидатов | те…`
-- V-1887 `docs/ba-processes/bcreq-step-handoff.md:119` (body) CT-05 «ЛК» — `…ов-кандидатов | технический | у каждой связи есть источник; ЛК, права и настройки рассмотрены | AIN-07 |…`
-- V-3776 `site/data/step-handoff.json:1` (steps.AIN-06.goal) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем.…`
-- V-3781 `site/data/test-kit.json:1` (handoff.steps.AIN-06.goal) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем.…`
+- V-1887 `docs/ba-processes/bcreq-step-handoff.md:119` (body) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем. | карта компонентов-кандидатов | те…`
+- V-1888 `docs/ba-processes/bcreq-step-handoff.md:119` (body) CT-05 «ЛК» — `…ов-кандидатов | технический | у каждой связи есть источник; ЛК, права и настройки рассмотрены | AIN-07 |…`
+- V-3777 `site/data/step-handoff.json:1` (steps.AIN-06.goal) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем.…`
+- V-3782 `site/data/test-kit.json:1` (handoff.steps.AIN-06.goal) CT-03 «коннектора» — `…понентов как кандидатов с источниками. Нужен, чтобы новизна коннектора не скрыла доработку существующих подсистем.…`
 
 ## U-03
 
@@ -119,11 +119,11 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 4; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1004 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:281` (body) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
-- V-2136 `site/data/a-in-kit.json:281` (steps[].prompt) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
-- V-3777 `site/data/step-handoff.json:1` (steps.AIN-06.check) CT-05 «ЛК» — `у каждой связи есть источник; ЛК, права и настройки рассмотрены`
-- V-3778 `site/data/step-handoff.json:15` (steps.AIN-06.block) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
-- V-3782 `site/data/test-kit.json:1` (handoff.steps.AIN-06.check) CT-05 «ЛК» — `у каждой связи есть источник; ЛК, права и настройки рассмотрены`
+- V-1005 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:281` (body) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
+- V-2137 `site/data/a-in-kit.json:281` (steps[].prompt) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
+- V-3778 `site/data/step-handoff.json:1` (steps.AIN-06.check) CT-05 «ЛК» — `у каждой связи есть источник; ЛК, права и настройки рассмотрены`
+- V-3779 `site/data/step-handoff.json:15` (steps.AIN-06.block) CT-05 «ЛК» — `…технический, можно проверить (у каждой связи есть источник; ЛК, права и настройки рассмотрены), но не обязательно. ИИ-ассистент ожидает ввода промпта …`
+- V-3783 `site/data/test-kit.json:1` (handoff.steps.AIN-06.check) CT-05 «ЛК» — `у каждой связи есть источник; ЛК, права и настройки рассмотрены`
 
 ## U-04
 
@@ -148,10 +148,10 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 1; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0996 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:220` (body) CT-03 «коннектора» — `- Зачем: Новизна коннектора не отменяет дельту существующих подсистем.`
-- V-1888 `docs/ba-processes/bcreq-a-in-route.json:167` (body) CT-03 «коннектора» — `"why": "Новизна коннектора не отменяет дельту существующих подсистем",`
-- V-2110 `site/data/a-in-kit.json:1` (steps[].why) CT-03 «коннектора» — `Новизна коннектора не отменяет дельту существующих подсистем`
-- V-2128 `site/data/a-in-kit.json:220` (steps[].prompt) CT-03 «коннектора» — `- Зачем: Новизна коннектора не отменяет дельту существующих подсистем.`
+- V-0997 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:220` (body) CT-03 «коннектора» — `- Зачем: Новизна коннектора не отменяет дельту существующих подсистем.`
+- V-1889 `docs/ba-processes/bcreq-a-in-route.json:167` (body) CT-03 «коннектора» — `"why": "Новизна коннектора не отменяет дельту существующих подсистем",`
+- V-2111 `site/data/a-in-kit.json:1` (steps[].why) CT-03 «коннектора» — `Новизна коннектора не отменяет дельту существующих подсистем`
+- V-2129 `site/data/a-in-kit.json:220` (steps[].prompt) CT-03 «коннектора» — `- Зачем: Новизна коннектора не отменяет дельту существующих подсистем.`
 
 ## U-05
 
@@ -176,10 +176,10 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0998 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:237` (body) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
-- V-1889 `docs/ba-processes/bcreq-a-in-route.json:168` (body) CT-05 «ЛК» — `"checks": "У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторо…`
-- V-2111 `site/data/a-in-kit.json:1` (steps[].checks) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
-- V-2130 `site/data/a-in-kit.json:237` (steps[].prompt) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
+- V-0999 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:237` (body) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
+- V-1890 `docs/ba-processes/bcreq-a-in-route.json:168` (body) CT-05 «ЛК» — `"checks": "У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторо…`
+- V-2112 `site/data/a-in-kit.json:1` (steps[].checks) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
+- V-2131 `site/data/a-in-kit.json:237` (steps[].prompt) CT-05 «ЛК» — `У каждой связи есть источник и статус candidate; ЛК/права/настройки рассмотрены; Отдельно определены объект поставки, ответственность сторон и зависим…`
 
 ## U-06
 
@@ -204,14 +204,14 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0880 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-0900 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-0920 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-0940 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-0960 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-0980 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-1006 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
-- V-1026 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0881 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0901 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0921 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0941 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0961 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-0981 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-1007 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
+- V-1027 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:13` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for https://github.com/G-Ivan-A/mango_ba_prompts/issues/474, no formal research yet -->`
 - … ещё 41 (полный список — `audit/baseline-map.json`)
 
 ## U-07
@@ -237,9 +237,9 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0997 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:229` (body) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
-- V-1891 `docs/ba-processes/bcreq-a-in-instructions.json:28` (body) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
-- V-2129 `site/data/a-in-kit.json:229` (steps[].prompt) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
+- V-0998 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:229` (body) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
+- V-1892 `docs/ba-processes/bcreq-a-in-instructions.json:28` (body) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
+- V-2130 `site/data/a-in-kit.json:229` (steps[].prompt) CT-05 «ЛК» — `… → источник. Отдельно прямые, опорные и внешние компоненты; ЛК, права, настройки, хранение, события, интерфейсы, лицензии. Определи поставку и ответст…`
 
 ## U-08
 
@@ -264,12 +264,12 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0999 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:248` (body) CT-03 «коннектор» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
-- V-1000 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:248` (body) CT-05 «ЛК» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
-- V-1892 `docs/ba-processes/bcreq-a-in-instructions.json:30` (body) CT-03 «коннектор» — `"negative_example": "Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие."`
-- V-1893 `docs/ba-processes/bcreq-a-in-instructions.json:30` (body) CT-05 «ЛК» — `"negative_example": "Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие."`
-- V-2131 `site/data/a-in-kit.json:248` (steps[].prompt) CT-03 «коннектор» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
-- V-2132 `site/data/a-in-kit.json:248` (steps[].prompt) CT-05 «ЛК» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
+- V-1000 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:248` (body) CT-03 «коннектор» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
+- V-1001 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:248` (body) CT-05 «ЛК» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
+- V-1893 `docs/ba-processes/bcreq-a-in-instructions.json:30` (body) CT-03 «коннектор» — `"negative_example": "Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие."`
+- V-1894 `docs/ba-processes/bcreq-a-in-instructions.json:30` (body) CT-05 «ЛК» — `"negative_example": "Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие."`
+- V-2132 `site/data/a-in-kit.json:248` (steps[].prompt) CT-03 «коннектор» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
+- V-2133 `site/data/a-in-kit.json:248` (steps[].prompt) CT-05 «ЛК» — `Контрпример: Новый коннектор не отменяет дельту ЛК. Исключённый компонент с зависимостью остаётся в графе; это не само по себе противоречие.`
 
 ## U-09
 
@@ -294,12 +294,12 @@
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1122 `prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md:248` (body) CT-01 «amoCRM» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
-- V-1123 `prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md:248` (body) CT-06 «HDE» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
-- V-1894 `docs/ba-processes/bcreq-a-in-instructions.json:60` (body) CT-01 «amoCRM» — `"negative_example": "Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет»."`
-- V-1895 `docs/ba-processes/bcreq-a-in-instructions.json:60` (body) CT-06 «HDE» — `"negative_example": "Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет»."`
-- V-2254 `site/data/a-in-kit.json:248` (steps[].prompt) CT-01 «amoCRM» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
-- V-2255 `site/data/a-in-kit.json:248` (steps[].prompt) CT-06 «HDE» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
+- V-1123 `prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md:248` (body) CT-01 «amoCRM» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
+- V-1124 `prompts/drafts/a-in/bcreq-ain-12-understanding-stepwise.md:248` (body) CT-06 «HDE» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
+- V-1895 `docs/ba-processes/bcreq-a-in-instructions.json:60` (body) CT-01 «amoCRM» — `"negative_example": "Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет»."`
+- V-1896 `docs/ba-processes/bcreq-a-in-instructions.json:60` (body) CT-06 «HDE» — `"negative_example": "Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет»."`
+- V-2255 `site/data/a-in-kit.json:248` (steps[].prompt) CT-01 «amoCRM» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
+- V-2256 `site/data/a-in-kit.json:248` (steps[].prompt) CT-06 «HDE» — `Контрпример: Прочитанная цитата не означает «Да» по исполнимости. Аналогия amoCRM не доказывает полный HDE-сценарий. Нет evidence — не «Нет».`
 
 ## U-10
 
@@ -325,10 +325,10 @@
 
 Локаторы базы (выборка):
 - V-0037 `prompts/bcreq-constitution-governance-oneshot.md:250` (body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
-- V-0244 `prompts/drafts/bcreq-constitution-governance-oneshot.md:262` (body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
-- V-3422 `site/data/prompts.json:250` (prompts[].content) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
-- V-3476 `site/data/prompts.json:239` (prompts[].body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
-- V-3831 `site/data/test-kit.json:246` (steps[].draft.body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
+- V-0245 `prompts/drafts/bcreq-constitution-governance-oneshot.md:262` (body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
+- V-3423 `site/data/prompts.json:250` (prompts[].content) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
+- V-3477 `site/data/prompts.json:239` (prompts[].body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
+- V-3832 `site/data/test-kit.json:246` (steps[].draft.body) CT-03 «коннекторе» — `…; наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе. «Не описано», «источник недоступен» и «явно не поддерживает…`
 
 ## U-11
 
@@ -354,12 +354,12 @@
 
 Локаторы базы (выборка):
 - V-0153 `prompts/bcreq-products-impact-analysis-stepwise.md:177` (body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-0663 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:186` (body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-1513 `prompts/drafts/system/bcreq-products-impact-analysis-system.md:196` (body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-3676 `site/data/prompts.json:177` (prompts[].content) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-3698 `site/data/prompts.json:166` (prompts[].body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-4135 `site/data/test-kit.json:181` (steps[].system.body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
-- V-4202 `site/data/test-kit.json:170` (steps[].draft.body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-0664 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:186` (body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-1514 `prompts/drafts/system/bcreq-products-impact-analysis-system.md:196` (body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-3677 `site/data/prompts.json:177` (prompts[].content) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-3699 `site/data/prompts.json:166` (prompts[].body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-4136 `site/data/test-kit.json:181` (steps[].system.body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
+- V-4203 `site/data/test-kit.json:170` (steps[].draft.body) CT-03 «коннектор» — `передачу этих функций через коннектор. Неподтверждённая сторона — вопрос`
 
 ## U-11b
 
@@ -408,12 +408,12 @@
 Локаторы базы (выборка):
 - V-0016 `prompts/bcreq-constitution-governance-oneshot.md:124` (body) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
 - V-0017 `prompts/bcreq-constitution-governance-oneshot.md:124` (body) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-0222 `prompts/drafts/bcreq-constitution-governance-oneshot.md:135` (body) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-0223 `prompts/drafts/bcreq-constitution-governance-oneshot.md:135` (body) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-3401 `site/data/prompts.json:124` (prompts[].content) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-3402 `site/data/prompts.json:124` (prompts[].content) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-3455 `site/data/prompts.json:113` (prompts[].body) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
-- V-3456 `site/data/prompts.json:113` (prompts[].body) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-0223 `prompts/drafts/bcreq-constitution-governance-oneshot.md:135` (body) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-0224 `prompts/drafts/bcreq-constitution-governance-oneshot.md:135` (body) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-3402 `site/data/prompts.json:124` (prompts[].content) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-3403 `site/data/prompts.json:124` (prompts[].content) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-3456 `site/data/prompts.json:113` (prompts[].body) CT-04 «ВАТС» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
+- V-3457 `site/data/prompts.json:113` (prompts[].body) CT-05 «ЛК» — `| 'продукты' | профили: ЛК, ВАТС, КЦ, РА, API, оператор связи | из анкеты; если не ясно — вопрос БА |`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## U-12b
@@ -443,12 +443,12 @@ runtime (И-11).
 Локаторы базы (выборка):
 - V-0018 `prompts/bcreq-constitution-governance-oneshot.md:132` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
 - V-0019 `prompts/bcreq-constitution-governance-oneshot.md:132` (body) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-0224 `prompts/drafts/bcreq-constitution-governance-oneshot.md:143` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-0225 `prompts/drafts/bcreq-constitution-governance-oneshot.md:143` (body) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-3403 `site/data/prompts.json:132` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-3404 `site/data/prompts.json:132` (prompts[].content) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-3457 `site/data/prompts.json:121` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
-- V-3458 `site/data/prompts.json:121` (prompts[].body) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-0225 `prompts/drafts/bcreq-constitution-governance-oneshot.md:143` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-0226 `prompts/drafts/bcreq-constitution-governance-oneshot.md:143` (body) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-3404 `site/data/prompts.json:132` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-3405 `site/data/prompts.json:132` (prompts[].content) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-3458 `site/data/prompts.json:121` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
+- V-3459 `site/data/prompts.json:121` (prompts[].body) A-SPOKE-PATH «стандарте композиции §» — `[стандарте композиции §4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#4-профили-продуктов).`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## U-13
@@ -616,10 +616,10 @@ runtime (И-11, раздел spoken_aliases), если он передан во 
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 1; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1551 `standards/bcreq-manual-classes/01-intake.md:96` (body) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
-- V-2716 `site/data/prompts.json:1` (prompts[].descriptionLong) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
-- V-2721 `site/data/prompts.json:96` (prompts[].content) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
-- V-2728 `site/data/prompts.json:88` (prompts[].body) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
+- V-1552 `standards/bcreq-manual-classes/01-intake.md:96` (body) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
+- V-2717 `site/data/prompts.json:1` (prompts[].descriptionLong) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
+- V-2722 `site/data/prompts.json:96` (prompts[].content) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
+- V-2729 `site/data/prompts.json:88` (prompts[].body) CT-04 «ВАТС» — `…кета: продукты, подключённые у Заказчика, операторы, номера ВАТС и сторонние номера, объём звонков и текстовых коммуникаций в месяц, вариант (доработк…`
 
 ## U-18
 
@@ -645,10 +645,10 @@ runtime (И-11, раздел spoken_aliases), если он передан во 
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 3; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 1
 
 Локаторы базы (выборка):
-- V-0510 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:147` (body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
-- V-1449 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:158` (body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
-- V-3907 `site/data/test-kit.json:143` (steps[].system.body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
-- V-3959 `site/data/test-kit.json:133` (steps[].draft.body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
+- V-0511 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:147` (body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
+- V-1450 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:158` (body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
+- V-3908 `site/data/test-kit.json:143` (steps[].system.body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
+- V-3960 `site/data/test-kit.json:133` (steps[].draft.body) CT-04 «ВАТС» — `3. Сколько номеров Mango ВАТС?`
 
 ## U-19
 
@@ -674,10 +674,10 @@ runtime (И-11, раздел spoken_aliases), если он передан во 
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 3; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 1
 
 Локаторы базы (выборка):
-- V-0512 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:177` (body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
-- V-1451 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:188` (body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
-- V-3909 `site/data/test-kit.json:173` (steps[].system.body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
-- V-3961 `site/data/test-kit.json:163` (steps[].draft.body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
+- V-0513 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:177` (body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
+- V-1452 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:188` (body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
+- V-3910 `site/data/test-kit.json:173` (steps[].system.body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
+- V-3962 `site/data/test-kit.json:163` (steps[].draft.body) CT-04 «ВАТС» — `- номера ВАТС: <…|UNKNOWN>; сторонние номера: <…|UNKNOWN>`
 
 ## U-20
 
@@ -703,14 +703,14 @@ runtime (И-11, раздел spoken_aliases), если он передан во 
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-3880 `site/data/test-kit.json:1` (steps[].prepare) CT-04 «ВАТС» — `Подключённые у Заказчика продукты, число операторов, номера ВАТС и сторонние номера, объём коммуникаций в месяц, если известны`
+- V-3881 `site/data/test-kit.json:1` (steps[].prepare) CT-04 «ВАТС» — `Подключённые у Заказчика продукты, число операторов, номера ВАТС и сторонние номера, объём коммуникаций в месяц, если известны`
 
 ## D-01
 
 - Класс: в
 - Что: prompts/bcreq-constitution-governance-oneshot.md: «Защиты выведены из 168 инцидентов прогона»
 - Исправление / куда перенесено: происхождение (RUN-0075, success-criteria, runtime-improvements) → репозиторий runs/2026/RUN-0075
-- Нарушений базы в группе: 23
+- Нарушений базы в группе: 35
 
 Файлы: `prompts/bcreq-constitution-governance-oneshot.md`
 
@@ -740,8 +740,8 @@ runtime-improvements.
 - V-0029 `prompts/bcreq-constitution-governance-oneshot.md:229` (body) BP-04 «RUN-0» — `[success-criteria](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/success-criteria.md),`
 - V-0030 `prompts/bcreq-constitution-governance-oneshot.md:231` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[runtime-improvements](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/runtime-improvements.md).`
 - V-0031 `prompts/bcreq-constitution-governance-oneshot.md:231` (body) BP-04 «RUN-0» — `[runtime-improvements](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/runtime-improvements.md).`
-- V-0235 `prompts/drafts/bcreq-constitution-governance-oneshot.md:241` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[success-criteria](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/success-criteria.md),`
-- … ещё 15 (полный список — `audit/baseline-map.json`)
+- V-0233 `prompts/drafts/bcreq-constitution-governance-oneshot.md:239` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[RUN-0075](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/runs/2026/RUN-0075/outputs/error-statistics.md)`
+- … ещё 27 (полный список — `audit/baseline-map.json`)
 
 ## D-02
 
@@ -770,12 +770,12 @@ runtime-improvements.
 Локаторы базы (выборка):
 - V-0032 `prompts/bcreq-constitution-governance-oneshot.md:233` (body) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
 - V-0033 `prompts/bcreq-constitution-governance-oneshot.md:233` (body) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-0239 `prompts/drafts/bcreq-constitution-governance-oneshot.md:245` (body) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-0240 `prompts/drafts/bcreq-constitution-governance-oneshot.md:245` (body) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-3417 `site/data/prompts.json:233` (prompts[].content) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-3418 `site/data/prompts.json:233` (prompts[].content) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-3471 `site/data/prompts.json:222` (prompts[].body) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
-- V-3472 `site/data/prompts.json:222` (prompts[].body) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-0240 `prompts/drafts/bcreq-constitution-governance-oneshot.md:245` (body) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-0241 `prompts/drafts/bcreq-constitution-governance-oneshot.md:245` (body) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-3418 `site/data/prompts.json:233` (prompts[].content) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-3419 `site/data/prompts.json:233` (prompts[].content) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-3472 `site/data/prompts.json:222` (prompts[].body) BP-04 «RUN-0» — `| ID | Защита | Правило | Категория RUN-0075 |`
+- V-3473 `site/data/prompts.json:222` (prompts[].body) BP-12 «Категория RUN» — `| ID | Защита | Правило | Категория RUN-0075 |`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## D-02b
@@ -837,11 +837,11 @@ runtime-improvements.
 - V-0034 `prompts/bcreq-constitution-governance-oneshot.md:243` (body) BP-02 «#391» — `#### Дополнения по ревизии Golden Set (issue #391)`
 - V-0035 `prompts/bcreq-constitution-governance-oneshot.md:243` (body) BP-03 «issue» — `#### Дополнения по ревизии Golden Set (issue #391)`
 - V-0036 `prompts/bcreq-constitution-governance-oneshot.md:243` (body) BP-12 «ревизии Golden» — `#### Дополнения по ревизии Golden Set (issue #391)`
-- V-0241 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-02 «#391» — `#### Дополнения по ревизии Golden Set (issue #391)`
-- V-0242 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-03 «issue» — `#### Дополнения по ревизии Golden Set (issue #391)`
-- V-0243 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-12 «ревизии Golden» — `#### Дополнения по ревизии Golden Set (issue #391)`
-- V-3419 `site/data/prompts.json:243` (prompts[].content) BP-02 «#391» — `#### Дополнения по ревизии Golden Set (issue #391)`
-- V-3420 `site/data/prompts.json:243` (prompts[].content) BP-03 «issue» — `#### Дополнения по ревизии Golden Set (issue #391)`
+- V-0242 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-02 «#391» — `#### Дополнения по ревизии Golden Set (issue #391)`
+- V-0243 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-03 «issue» — `#### Дополнения по ревизии Golden Set (issue #391)`
+- V-0244 `prompts/drafts/bcreq-constitution-governance-oneshot.md:255` (body) BP-12 «ревизии Golden» — `#### Дополнения по ревизии Golden Set (issue #391)`
+- V-3420 `site/data/prompts.json:243` (prompts[].content) BP-02 «#391» — `#### Дополнения по ревизии Golden Set (issue #391)`
+- V-3421 `site/data/prompts.json:243` (prompts[].content) BP-03 «issue» — `#### Дополнения по ревизии Golden Set (issue #391)`
 - … ещё 7 (полный список — `audit/baseline-map.json`)
 
 ## D-04
@@ -869,12 +869,12 @@ runtime-improvements.
 Локаторы базы (выборка):
 - V-0038 `prompts/bcreq-constitution-governance-oneshot.md:265` (body) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
 - V-0039 `prompts/bcreq-constitution-governance-oneshot.md:265` (body) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-0245 `prompts/drafts/bcreq-constitution-governance-oneshot.md:277` (body) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-0246 `prompts/drafts/bcreq-constitution-governance-oneshot.md:277` (body) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-3423 `site/data/prompts.json:265` (prompts[].content) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-3424 `site/data/prompts.json:265` (prompts[].content) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-3477 `site/data/prompts.json:254` (prompts[].body) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
-- V-3478 `site/data/prompts.json:254` (prompts[].body) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-0246 `prompts/drafts/bcreq-constitution-governance-oneshot.md:277` (body) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-0247 `prompts/drafts/bcreq-constitution-governance-oneshot.md:277` (body) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-3424 `site/data/prompts.json:265` (prompts[].content) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-3425 `site/data/prompts.json:265` (prompts[].content) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-3478 `site/data/prompts.json:254` (prompts[].body) BP-04 «RUN-0» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
+- V-3479 `site/data/prompts.json:254` (prompts[].body) BP-04 «SC-6» — `об отсутствии ошибки, которой во входе не было (RUN-0076, SC-65).`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## D-05
@@ -911,8 +911,8 @@ runtime-improvements.
 - V-0097 `prompts/bcreq-fr-documentation-stepwise.md:23` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
 - V-0108 `prompts/bcreq-in-understanding-oneshot.md:23` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
 - V-0136 `prompts/bcreq-products-impact-analysis-stepwise.md:23` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
-- V-0213 `prompts/drafts/bcreq-constitution-governance-oneshot.md:34` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
-- V-0351 `prompts/drafts/bcreq-context-understanding-stepwise.md:32` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
+- V-0214 `prompts/drafts/bcreq-constitution-governance-oneshot.md:34` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
+- V-0352 `prompts/drafts/bcreq-context-understanding-stepwise.md:32` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Полные 24 draft контракта и инструкция БА](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md).`
 - … ещё 18 (полный список — `audit/baseline-map.json`)
 
 ## D-06
@@ -999,7 +999,7 @@ runtime-improvements.
 - Класс: в
 - Что: prompts/session-debug-documentation-oneshot.md: «»
 - Исправление / куда перенесено: раздел ссылок на артефакты репозитория → prompts/README.md и карточка промпта
-- Нарушений базы в группе: 1
+- Нарушений базы в группе: 2
 
 Файлы: `prompts/session-debug-documentation-oneshot.md`
 
@@ -1026,6 +1026,7 @@ runtime-improvements.
 
 Локаторы базы (выборка):
 - V-0191 `prompts/session-debug-documentation-oneshot.md:102` (body) BP-04 «ADR-0» — `- Стандарт промптов (ADR-001):`
+- V-0192 `prompts/session-debug-documentation-oneshot.md:102` (body) BP-13 «ADR-0» — `- Стандарт промптов (ADR-001):`
 
 ## D-09
 
@@ -1050,14 +1051,14 @@ runtime-improvements.
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 25; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0886 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0887 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0906 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0907 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0926 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0927 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0946 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
-- V-0947 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0887 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0888 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0907 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0908 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0927 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0928 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0947 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:25` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
+- V-0948 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:25` (body) BP-02 «#490» — `Решение БА по техническому шагу (#490, [итог шага](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-step-handoff.md)):`
 - … ещё 89 (полный список — `audit/baseline-map.json`)
 
 ## D-10
@@ -1089,14 +1090,14 @@ runtime-improvements.
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 25; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0889 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:51` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).`
-- V-0890 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:52` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).`
-- V-0891 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:53` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
-- V-0892 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:53` (body) BP-13 «RFC-AIN-0» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
-- V-0893 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:54` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).`
-- V-0909 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:51` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).`
-- V-0910 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:52` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).`
-- V-0911 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:53` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
+- V-0890 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:51` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).`
+- V-0891 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:52` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).`
+- V-0892 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:53` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
+- V-0893 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:53` (body) BP-13 «RFC-AIN-0» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
+- V-0894 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:54` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Runtime: версии и источники](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.md).`
+- V-0910 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:51` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Ш-0: полная конституция](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md).`
+- V-0911 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:52` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты 1…8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md).`
+- V-0912 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:53` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Маршрут и решения RFC-AIN-001](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-a-in-decomposition.md).`
 - … ещё 236 (полный список — `audit/baseline-map.json`)
 
 ## D-11
@@ -1149,27 +1150,31 @@ issue: "#490"
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1885 `docs/ba-processes/bcreq-step-handoff.md:7` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/490`
-- V-2007 `prompts/README.executable.md:10` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"`
-- V-2008 `prompts/AI_SESSION_HANDOVER_PROMPT.executable.md:10` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"`
+- V-1886 `docs/ba-processes/bcreq-step-handoff.md:7` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `issue: https://github.com/G-Ivan-A/mango_ba_prompts/issues/490`
+- V-2008 `prompts/README.executable.md:10` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"`
+- V-2009 `prompts/AI_SESSION_HANDOVER_PROMPT.executable.md:10` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `related_issue: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/125"`
 
 ## D-13
 
 - Класс: в
-- Что: scripts/build_bcreq_step_prompts.py: «> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (»
-- Исправление / куда перенесено: frontmatter карточки, манифест сборки
-- Нарушений базы в группе: 246
+- Что: scripts/build_bcreq_step_prompts.py (черновики шагов): «> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (»
+- Исправление / куда перенесено: режим — поле `mode: by-test` frontmatter черновика шага; задача BL-156 и issue #438 — prompts/drafts/manifest.json; «шаг без промпта v0.1 (issue #464)» — комментарий INTAKE_FILE в scripts/build_bcreq_step_prompts.py; «заглушка выпуска (пилот)» — заголовок и первая строка черновика Ш-Р; «(#490)» — запись D-25
+- Нарушений базы в группе: 303
 
-Файлы: `scripts/build_bcreq_step_prompts.py`
+Файлы: `scripts/build_bcreq_step_prompts.py (черновики шагов)`
 
 Было:
 ```text
 > **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.
 > **Редакция по тесту (#427): действует до ADR обратного согласования.**
+Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов … ; блок «по тесту» — в конце файла.
+Черновик BL-156 (issue #438): шаг без промпта v0.1 (issue #464); блок «по тесту» — в конце файла.
+Черновик BL-156 (issue #438): шаг без промпта v0.1 — заглушка выпуска (пилот, RFC #427, раздел 9.2); блок «по тесту» — в конце файла.
+Черновик BL-156 (issue #438):
 ```
 Стало:
 ```text
-— (оба баннера удалены — в начале файла и внутри блока; режим — поле `mode: by-test` frontmatter)
+— (верхний баннер удалён во всех четырёх вариантах; баннер внутри блока удалён вместе с заголовком «по тесту», D-14)
 ```
 
 Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
@@ -1177,15 +1182,15 @@ issue: "#490"
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0202 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#427» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
-- V-0207 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-06 «по тесту» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
+- V-0203 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#427» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
+- V-0204 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#438» — `…ует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в ко…`
+- V-0206 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-03 «issue» — `…действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» …`
+- V-0207 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-04 «BL-1» — `…(#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по…`
 - V-0208 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-06 «по тесту» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
-- V-0210 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-09 «действует до ADR» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
-- V-0270 `prompts/drafts/bcreq-constitution-governance-oneshot.md:495` (body) BP-02 «#427» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.**`
-- V-0271 `prompts/drafts/bcreq-constitution-governance-oneshot.md:495` (body) BP-06 «по тесту» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.**`
-- V-0272 `prompts/drafts/bcreq-constitution-governance-oneshot.md:495` (body) BP-09 «действует до ADR» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.**`
-- V-0297 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:19` (body) BP-02 «#427» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту…`
-- … ещё 238 (полный список — `audit/baseline-map.json`)
+- V-0209 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-06 «по тесту» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
+- V-0210 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-08 «Черновик BL» — `…по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490);…`
+- V-0211 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-09 «действует до ADR» — `> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата …`
+- … ещё 295 (полный список — `audit/baseline-map.json`)
 
 ## D-14
 
@@ -1206,6 +1211,7 @@ RFC #427, раздел 9.3
 профилей 0.1.2,
 каталога операций и
 реестра справочников runtime 0.5.
+Правила перенесены дословно с номером; источник правила — в стандарте.
 <!-- /bl-156: by-test -->
 ```
 Стало:
@@ -1218,14 +1224,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0266 `prompts/drafts/bcreq-constitution-governance-oneshot.md:492` (body) BP-01 «<!--» — `<!-- bl-156: by-test -->`
-- V-0267 `prompts/drafts/bcreq-constitution-governance-oneshot.md:492` (body) BP-06 «by-test» — `<!-- bl-156: by-test -->`
-- V-0268 `prompts/drafts/bcreq-constitution-governance-oneshot.md:493` (body) BP-04 «BL-1» — `## Дополнение «по тесту» (BL-156): стандарты шага`
-- V-0269 `prompts/drafts/bcreq-constitution-governance-oneshot.md:493` (body) BP-06 «по тесту» — `## Дополнение «по тесту» (BL-156): стандарты шага`
-- V-0273 `prompts/drafts/bcreq-constitution-governance-oneshot.md:497` (body) A-SPOKE-PATH «scripts/build_bcreq_step_prompts.py» — `Блок собран сборщиком 'scripts/build_bcreq_step_prompts.py' по`
-- V-0274 `prompts/drafts/bcreq-constitution-governance-oneshot.md:497` (body) BP-07 «сборщик» — `Блок собран сборщиком 'scripts/build_bcreq_step_prompts.py' по`
-- V-0275 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
-- V-0276 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) BP-02 «#427» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
+- V-0267 `prompts/drafts/bcreq-constitution-governance-oneshot.md:492` (body) BP-01 «<!--» — `<!-- bl-156: by-test -->`
+- V-0268 `prompts/drafts/bcreq-constitution-governance-oneshot.md:492` (body) BP-06 «by-test» — `<!-- bl-156: by-test -->`
+- V-0269 `prompts/drafts/bcreq-constitution-governance-oneshot.md:493` (body) BP-04 «BL-1» — `## Дополнение «по тесту» (BL-156): стандарты шага`
+- V-0270 `prompts/drafts/bcreq-constitution-governance-oneshot.md:493` (body) BP-06 «по тесту» — `## Дополнение «по тесту» (BL-156): стандарты шага`
+- V-0274 `prompts/drafts/bcreq-constitution-governance-oneshot.md:497` (body) A-SPOKE-PATH «scripts/build_bcreq_step_prompts.py» — `Блок собран сборщиком 'scripts/build_bcreq_step_prompts.py' по`
+- V-0275 `prompts/drafts/bcreq-constitution-governance-oneshot.md:497` (body) BP-07 «сборщик» — `Блок собран сборщиком 'scripts/build_bcreq_step_prompts.py' по`
+- V-0276 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
+- V-0277 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) BP-02 «#427» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
 - … ещё 496 (полный список — `audit/baseline-map.json`)
 
 ## D-15
@@ -1273,14 +1279,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0285 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0286 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0287 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-10 «отчёт BL» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0329 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0330 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0331 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-10 «отчёт BL» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0381 `prompts/drafts/bcreq-context-understanding-stepwise.md:509` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
-- V-0382 `prompts/drafts/bcreq-context-understanding-stepwise.md:509` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0286 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0287 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0288 `prompts/drafts/bcreq-constitution-governance-oneshot.md:581` (body) BP-10 «отчёт BL» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0330 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0331 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0332 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:312` (body) BP-10 «отчёт BL» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0382 `prompts/drafts/bcreq-context-understanding-stepwise.md:509` (body) BP-04 «BL-1» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
+- V-0383 `prompts/drafts/bcreq-context-understanding-stepwise.md:509` (body) BP-10 «Не внесены» — `Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.`
 - … ещё 91 (полный список — `audit/baseline-map.json`)
 
 ## D-17
@@ -1307,14 +1313,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 5; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 1
 
 Локаторы базы (выборка):
-- V-0683 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:378` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
-- V-0684 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:382` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
-- V-0685 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:382` (body) A-SPOKE-PATH «docs/contracts/bcreq-stage-gates.md» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
-- V-0731 `prompts/drafts/bcreq-release-readiness-oneshot.md:158` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
-- V-0732 `prompts/drafts/bcreq-release-readiness-oneshot.md:162` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
-- V-0733 `prompts/drafts/bcreq-release-readiness-oneshot.md:162` (body) A-SPOKE-PATH «docs/contracts/bcreq-stage-gates.md» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
-- V-0864 `prompts/drafts/bcreq-uc-modeling-stepwise.md:300` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
-- V-0865 `prompts/drafts/bcreq-uc-modeling-stepwise.md:304` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
+- V-0684 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:378` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
+- V-0685 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:382` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
+- V-0686 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:382` (body) A-SPOKE-PATH «docs/contracts/bcreq-stage-gates.md» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
+- V-0732 `prompts/drafts/bcreq-release-readiness-oneshot.md:158` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
+- V-0733 `prompts/drafts/bcreq-release-readiness-oneshot.md:162` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
+- V-0734 `prompts/drafts/bcreq-release-readiness-oneshot.md:162` (body) A-SPOKE-PATH «docs/contracts/bcreq-stage-gates.md» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
+- V-0865 `prompts/drafts/bcreq-uc-modeling-stepwise.md:300` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
+- V-0866 `prompts/drafts/bcreq-uc-modeling-stepwise.md:304` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
 - … ещё 21 (полный список — `audit/baseline-map.json`)
 
 ## D-18
@@ -1342,14 +1348,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0198 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0199 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-01 «<!--» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0200 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-04 «BL-1» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0201 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-08 «Experimental» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0293 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0294 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-01 «<!--» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0295 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-04 «BL-1» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- V-0296 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-08 «Experimental» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0199 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0200 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-01 «<!--» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0201 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-04 «BL-1» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0202 `prompts/drafts/bcreq-constitution-governance-oneshot.md:17` (body) BP-08 «Experimental» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0294 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0295 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-01 «<!--» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0296 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-04 «BL-1» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
+- V-0297 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-08 «Experimental» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
 - … ещё 226 (полный список — `audit/baseline-map.json`)
 
 ## D-19
@@ -1375,14 +1381,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 17; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0283 `prompts/drafts/bcreq-constitution-governance-oneshot.md:558` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
 - V-0284 `prompts/drafts/bcreq-constitution-governance-oneshot.md:558` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
-- V-0327 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
+- V-0285 `prompts/drafts/bcreq-constitution-governance-oneshot.md:558` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
 - V-0328 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
-- V-0379 `prompts/drafts/bcreq-context-understanding-stepwise.md:486` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
+- V-0329 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
 - V-0380 `prompts/drafts/bcreq-context-understanding-stepwise.md:486` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
-- V-0424 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
+- V-0381 `prompts/drafts/bcreq-context-understanding-stepwise.md:486` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
 - V-0425 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
+- V-0426 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:289` (body) BP-04 «BL-1» — `…ок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка — известный пробел, а не дефект…`
 - … ещё 58 (полный список — `audit/baseline-map.json`)
 
 ## D-20
@@ -1411,14 +1417,14 @@ RFC #427, раздел 9.3
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 5; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0483 `prompts/drafts/bcreq-fr-documentation-stepwise.md:483` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-0580 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:346` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-0828 `prompts/drafts/bcreq-scenarios-modeling-oneshot.md:348` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-0874 `prompts/drafts/bcreq-uc-modeling-stepwise.md:398` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-4287 `site/data/test-kit.json:467` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-4335 `site/data/test-kit.json:330` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-4386 `site/data/test-kit.json:382` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
-- V-4533 `site/data/test-kit.json:382` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-0484 `prompts/drafts/bcreq-fr-documentation-stepwise.md:483` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-0581 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:346` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-0829 `prompts/drafts/bcreq-scenarios-modeling-oneshot.md:348` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-0875 `prompts/drafts/bcreq-uc-modeling-stepwise.md:398` (body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-4288 `site/data/test-kit.json:467` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-4336 `site/data/test-kit.json:330` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-4387 `site/data/test-kit.json:382` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
+- V-4534 `site/data/test-kit.json:382` (steps[].draft.body) BP-04 «BL-1» — `[СПРАВОЧНИК ОТСУТСТВУЕТ: И-4 примеры разделов ФТ, НФТ, UC, US, ОРР; задача BL-155]`
 - … ещё 1 (полный список — `audit/baseline-map.json`)
 
 ## D-21
@@ -1444,22 +1450,22 @@ LE-19: … модель выбирает сама → …
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 25; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0896 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-0916 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-0936 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-0956 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:265` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-0976 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:265` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-1001 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:264` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-1022 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
-- V-1042 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:264` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-0897 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-0917 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-0937 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-0957 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:265` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-0977 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:265` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-1002 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:264` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-1023 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:263` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
+- V-1043 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:264` (body) BP-04 «RUN-0» — `…оречат или недоступны, модель выбирает сама (обратная связь RUN-0090) → Назвать обе нормы и остановиться. Порядок применения — §1.2. Граница: Порядок …`
 - … ещё 40 (полный список — `audit/baseline-map.json`)
 
 ## D-22
 
 - Класс: в
 - Что: scripts/build_bcreq_system_track.py: «> **Системный формат шагов (#490): текст редакции сайта 2.7.0.** История баннера: …; архив»
-- Исправление / куда перенесено: архив prompts/archive/a-in-v2.7.0 (историческая сущность)
-- Нарушений базы в группе: 139
+- Исправление / куда перенесено: архив prompts/archive/a-in-v2.7.0 (историческая сущность); носитель записи — системный формат (prompts/drafts/system/, steps[].system в site/data/test-kit.json), поле `track: system` frontmatter
+- Нарушений базы в группе: 82
 
 Файлы: `scripts/build_bcreq_system_track.py`
 
@@ -1467,10 +1473,11 @@ LE-19: … модель выбирает сама → …
 ```text
 > **Системный формат шагов (#490): текст редакции сайта 2.7.0.** История баннера: …; архивный блок «Дополнение «по тесту» (BL-156)»
 История баннера: «Редакция … «Редакция по тесту (#427): действует до ADR … Черновик BL-156 (issue #438)
+> **Редакция по тесту (#427): действует до ADR обратного согласования.**
 ```
 Стало:
 ```text
-— (баннер удалён; архивный блок заменён текущим блоком «Стандарты шага»)
+— (баннер удалён; архивный блок вместе с его баннером заменён текущим блоком «Стандарты шага»)
 ```
 
 Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
@@ -1478,15 +1485,15 @@ LE-19: … модель выбирает сама → …
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0203 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#438» — `…ует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в ко…`
-- V-0205 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-03 «issue» — `…действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» …`
-- V-0206 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-04 «BL-1» — `…(#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по…`
-- V-0209 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-08 «Черновик BL» — `…по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490);…`
-- V-0440 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-02 «#438» — `…ует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в ко…`
-- V-0442 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-03 «issue» — `…действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» …`
-- V-0443 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-04 «BL-1» — `…(#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по…`
-- V-0446 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-08 «Черновик BL» — `…по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490);…`
-- … ещё 131 (полный список — `audit/baseline-map.json`)
+- V-1372 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-02 «#490» — `> **Системный формат шагов (#490): текст редакции сайта 2.7.0.** История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования».…`
+- V-1373 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-02 «#427» — `…едакции сайта 2.7.0.** История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования». Черновик BL-156 (issue #438): текст шага …`
+- V-1374 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-02 «#438» — `…вует до ADR обратного согласования». Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.…`
+- V-1375 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-03 «issue» — `… действует до ADR обратного согласования». Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.…`
+- V-1376 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-04 «BL-1» — `… (#427): действует до ADR обратного согласования». Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.…`
+- V-1377 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-06 «по тесту» — `…): текст редакции сайта 2.7.0.** История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования». Черновик BL-156 (issue #438): т…`
+- V-1378 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-06 «по тесту» — `…): текст редакции сайта 2.7.0.** История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования». Черновик BL-156 (issue #438): т…`
+- V-1379 `prompts/drafts/system/bcreq-context-understanding-system.md:18` (body) BP-08 «Черновик BL» — `… по тесту (#427): действует до ADR обратного согласования». Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце ф…`
+- … ещё 74 (полный список — `audit/baseline-map.json`)
 
 ## D-23
 
@@ -1511,14 +1518,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0883 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0884 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0885 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-09 «не измерен» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0903 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0904 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0905 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-09 «не измерен» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0923 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
-- V-0924 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0884 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0885 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0886 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:17` (body) BP-09 «не измерен» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0904 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0905 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0906 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:17` (body) BP-09 «не измерен» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0924 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:17` (body) BP-08 «Draft для» — `Draft для ручной проверки БА; эффективность модели не измерена.`
+- V-0925 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:17` (body) BP-09 «эффективность модели» — `Draft для ручной проверки БА; эффективность модели не измерена.`
 - … ещё 136 (полный список — `audit/baseline-map.json`)
 
 ## D-24
@@ -1549,14 +1556,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 4; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1381 `prompts/drafts/system/bcreq-context-understanding-system.md:22` (body) BP-01 «<!--» — `<!-- issue-490:system -->`
-- V-1382 `prompts/drafts/system/bcreq-context-understanding-system.md:23` (body) BP-02 «#490» — `## Системный формат шагов (#490)`
-- V-1383 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
-- V-1384 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) BP-02 «#490» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
-- V-1385 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) BP-03 «issue» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
-- V-1388 `prompts/drafts/system/bcreq-context-understanding-system.md:107` (body) BP-01 «<!--» — `<!-- /issue-490:system -->`
-- V-1439 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:22` (body) BP-01 «<!--» — `<!-- issue-490:system -->`
-- V-1440 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:23` (body) BP-02 «#490» — `## Системный формат шагов (#490)`
+- V-1382 `prompts/drafts/system/bcreq-context-understanding-system.md:22` (body) BP-01 «<!--» — `<!-- issue-490:system -->`
+- V-1383 `prompts/drafts/system/bcreq-context-understanding-system.md:23` (body) BP-02 «#490» — `## Системный формат шагов (#490)`
+- V-1384 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
+- V-1385 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) BP-02 «#490» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
+- V-1386 `prompts/drafts/system/bcreq-context-understanding-system.md:27` (body) BP-03 «issue» — `([issue #490](https://github.com/G-Ivan-A/mango_ba_prompts/issues/490)). БА выбрал системный формат на сайте: не предлагай`
+- V-1389 `prompts/drafts/system/bcreq-context-understanding-system.md:107` (body) BP-01 «<!--» — `<!-- /issue-490:system -->`
+- V-1440 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:22` (body) BP-01 «<!--» — `<!-- issue-490:system -->`
+- V-1441 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:23` (body) BP-02 «#490» — `## Системный формат шагов (#490)`
 - … ещё 28 (полный список — `audit/baseline-map.json`)
 
 ## D-25
@@ -1588,14 +1595,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 3; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0204 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
-- V-0212 `prompts/drafts/bcreq-constitution-governance-oneshot.md:24` (body) BP-02 «#490» — `…, формат шагов и исходный запрос без анализа. Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»;…`
-- V-0259 `prompts/drafts/bcreq-constitution-governance-oneshot.md:315` (body) BP-02 «#490» — `**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из`
-- V-0441 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
-- V-0449 `prompts/drafts/bcreq-fr-documentation-stepwise.md:24` (body) BP-02 «#490» — `…тма Ш-3 проверь вход по формату шагов из «Состояния BCREQ» (#490). Декомпозированный (по умолчанию): явные AIN-21 и AIN-24/Г-IN, их task/attempt/route…`
-- V-3791 `site/data/test-kit.json:3` (steps[].draft.body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
-- V-3799 `site/data/test-kit.json:8` (steps[].draft.body) BP-02 «#490» — `…, формат шагов и исходный запрос без анализа. Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»;…`
-- V-3846 `site/data/test-kit.json:299` (steps[].draft.body) BP-02 «#490» — `**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из`
+- V-0205 `prompts/drafts/bcreq-constitution-governance-oneshot.md:19` (body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
+- V-0213 `prompts/drafts/bcreq-constitution-governance-oneshot.md:24` (body) BP-02 «#490» — `…, формат шагов и исходный запрос без анализа. Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»;…`
+- V-0260 `prompts/drafts/bcreq-constitution-governance-oneshot.md:315` (body) BP-02 «#490» — `**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из`
+- V-0442 `prompts/drafts/bcreq-fr-documentation-stepwise.md:19` (body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
+- V-0450 `prompts/drafts/bcreq-fr-documentation-stepwise.md:24` (body) BP-02 «#490» — `…тма Ш-3 проверь вход по формату шагов из «Состояния BCREQ» (#490). Декомпозированный (по умолчанию): явные AIN-21 и AIN-24/Г-IN, их task/attempt/route…`
+- V-3792 `site/data/test-kit.json:3` (steps[].draft.body) BP-02 «#490» — `…438): текст шага v0.1 ниже не изменён, кроме формата шагов (#490); блок «по тесту» — в конце файла.…`
+- V-3800 `site/data/test-kit.json:8` (steps[].draft.body) BP-02 «#490» — `…, формат шагов и исходный запрос без анализа. Формат шагов (#490) задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»;…`
+- V-3847 `site/data/test-kit.json:299` (steps[].draft.body) BP-02 «#490» — `**Формат шагов (#490).** Системный — комплексные шаги Ш-А, Ш-1, Ш-2 из`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## D-26
@@ -1624,14 +1631,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0711 `prompts/drafts/bcreq-release-readiness-oneshot.md:22` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
-- V-0712 `prompts/drafts/bcreq-release-readiness-oneshot.md:22` (body) BP-02 «#427» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
-- V-0713 `prompts/drafts/bcreq-release-readiness-oneshot.md:24` (body) BP-04 «BL-1» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
-- V-0714 `prompts/drafts/bcreq-release-readiness-oneshot.md:24` (body) BP-04 «RUN-0» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
-- V-4644 `site/data/test-kit.json:8` (steps[].draft.body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
-- V-4645 `site/data/test-kit.json:8` (steps[].draft.body) BP-02 «#427» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
-- V-4646 `site/data/test-kit.json:10` (steps[].draft.body) BP-04 «BL-1» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
-- V-4647 `site/data/test-kit.json:10` (steps[].draft.body) BP-04 «RUN-0» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
+- V-0712 `prompts/drafts/bcreq-release-readiness-oneshot.md:22` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
+- V-0713 `prompts/drafts/bcreq-release-readiness-oneshot.md:22` (body) BP-02 «#427» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
+- V-0714 `prompts/drafts/bcreq-release-readiness-oneshot.md:24` (body) BP-04 «BL-1» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
+- V-0715 `prompts/drafts/bcreq-release-readiness-oneshot.md:24` (body) BP-04 «RUN-0» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
+- V-4645 `site/data/test-kit.json:8` (steps[].draft.body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
+- V-4646 `site/data/test-kit.json:8` (steps[].draft.body) BP-02 «#427» — `([RFC #427, раздел 9.2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#92-состав)).`
+- V-4647 `site/data/test-kit.json:10` (steps[].draft.body) BP-04 «BL-1» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
+- V-4648 `site/data/test-kit.json:10` (steps[].draft.body) BP-04 «RUN-0» — `гейта «Выпуск»; сверх них — только правила пакетов раздела 4 (BL-123, RUN-0089, P16).`
 
 ## D-27
 
@@ -1660,14 +1667,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 41; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0290 `prompts/drafts/bcreq-constitution-governance-oneshot.md:644` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
-- V-0291 `prompts/drafts/bcreq-constitution-governance-oneshot.md:645` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
-- V-0292 `prompts/drafts/bcreq-constitution-governance-oneshot.md:666` (body) BP-01 «<!--» — `<!-- /issue-490:handoff -->`
-- V-0335 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:344` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
-- V-0336 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:345` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
-- V-0337 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:366` (body) BP-01 «<!--» — `<!-- /issue-490:handoff -->`
-- V-0387 `prompts/drafts/bcreq-context-understanding-stepwise.md:613` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
-- V-0388 `prompts/drafts/bcreq-context-understanding-stepwise.md:614` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
+- V-0291 `prompts/drafts/bcreq-constitution-governance-oneshot.md:644` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
+- V-0292 `prompts/drafts/bcreq-constitution-governance-oneshot.md:645` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
+- V-0293 `prompts/drafts/bcreq-constitution-governance-oneshot.md:666` (body) BP-01 «<!--» — `<!-- /issue-490:handoff -->`
+- V-0336 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:344` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
+- V-0337 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:345` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
+- V-0338 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:366` (body) BP-01 «<!--» — `<!-- /issue-490:handoff -->`
+- V-0388 `prompts/drafts/bcreq-context-understanding-stepwise.md:613` (body) BP-01 «<!--» — `<!-- issue-490:handoff -->`
+- V-0389 `prompts/drafts/bcreq-context-understanding-stepwise.md:614` (body) BP-02 «#490» — `## Итог шага для БА (#490)`
 - … ещё 223 (полный список — `audit/baseline-map.json`)
 
 ## D-28
@@ -1693,14 +1700,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 25; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0888 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-0908 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-0928 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-0948 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-0968 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-0988 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-1014 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
-- V-1034 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0889 `prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0909 `prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0929 `prompts/drafts/a-in/bcreq-ain-03-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0949 `prompts/drafts/a-in/bcreq-ain-04-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0969 `prompts/drafts/a-in/bcreq-ain-05-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-0989 `prompts/drafts/a-in/bcreq-ain-06-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-1015 `prompts/drafts/a-in/bcreq-ain-07-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
+- V-1035 `prompts/drafts/a-in/bcreq-ain-08-understanding-stepwise.md:45` (body) BP-13 «RFC-AIN-0» — `у принятого RFC-AIN-001 и этого контракта: раздел 2 только после AIN-21;`
 - … ещё 40 (полный список — `audit/baseline-map.json`)
 
 ## D-29
@@ -1726,10 +1733,10 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 3; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 1
 
 Локаторы базы (выборка):
-- V-0692 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:502` (body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
-- V-1542 `prompts/drafts/system/bcreq-products-impact-analysis-system.md:512` (body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
-- V-4164 `site/data/test-kit.json:497` (steps[].system.body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
-- V-4231 `site/data/test-kit.json:486` (steps[].draft.body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
+- V-0693 `prompts/drafts/bcreq-products-impact-analysis-stepwise.md:502` (body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
+- V-1543 `prompts/drafts/system/bcreq-products-impact-analysis-system.md:512` (body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
+- V-4165 `site/data/test-kit.json:497` (steps[].system.body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
+- V-4232 `site/data/test-kit.json:486` (steps[].draft.body) BP-13 «RFC-RT-0» — `Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):`
 
 ## D-30
 
@@ -1754,14 +1761,14 @@ Draft для ручной проверки БА; эффективность мо
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 17; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 3
 
 Локаторы базы (выборка):
-- V-0281 `prompts/drafts/bcreq-constitution-governance-oneshot.md:513` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0325 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:246` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0377 `prompts/drafts/bcreq-context-understanding-stepwise.md:443` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0422 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:246` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0475 `prompts/drafts/bcreq-fr-documentation-stepwise.md:374` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0528 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:221` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0572 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:245` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
-- V-0620 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:321` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0282 `prompts/drafts/bcreq-constitution-governance-oneshot.md:513` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0326 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:246` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0378 `prompts/drafts/bcreq-context-understanding-stepwise.md:443` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0423 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:246` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0476 `prompts/drafts/bcreq-fr-documentation-stepwise.md:374` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0529 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:221` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0573 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:245` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
+- V-0621 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:321` (body) BP-06 «по тесту» — `…непрочитанные источники, ограничения, расхождения с блоком «по тесту»;…`
 - … ещё 25 (полный список — `audit/baseline-map.json`)
 
 ## A-01
@@ -1810,14 +1817,14 @@ https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/<путь> в полях 
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 10; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 1
 
 Локаторы базы (выборка):
-- V-0332 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:316` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0384 `prompts/drafts/bcreq-context-understanding-stepwise.md:549` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0429 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:316` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0482 `prompts/drafts/bcreq-fr-documentation-stepwise.md:444` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0579 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:315` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0627 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:391` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0827 `prompts/drafts/bcreq-scenarios-modeling-oneshot.md:310` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
-- V-0873 `prompts/drafts/bcreq-uc-modeling-stepwise.md:360` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0333 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:316` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0385 `prompts/drafts/bcreq-context-understanding-stepwise.md:549` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0430 `prompts/drafts/bcreq-extra-risk-analysis-stepwise.md:316` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0483 `prompts/drafts/bcreq-fr-documentation-stepwise.md:444` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0580 `prompts/drafts/bcreq-nfr-documentation-stepwise.md:315` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0628 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:391` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0828 `prompts/drafts/bcreq-scenarios-modeling-oneshot.md:310` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
+- V-0874 `prompts/drafts/bcreq-uc-modeling-stepwise.md:360` (body) A-SPOKE-PATH «standards/bcreq-sections/NN-*.md» — `- **GE-01.** Раздел **ДОЛЖЕН** следовать мета-стандарту своего раздела ('standards/bcreq-sections/NN-*.md'); стиль проверяется без утраты смысла`
 - … ещё 11 (полный список — `audit/baseline-map.json`)
 
 ## A-03
@@ -1846,12 +1853,12 @@ standards/bcreq-sections.
 Локаторы базы (выборка):
 - V-0021 `prompts/bcreq-constitution-governance-oneshot.md:180` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
 - V-0022 `prompts/bcreq-constitution-governance-oneshot.md:180` (body) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-0228 `prompts/drafts/bcreq-constitution-governance-oneshot.md:192` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-0229 `prompts/drafts/bcreq-constitution-governance-oneshot.md:192` (body) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-3406 `site/data/prompts.json:180` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-3407 `site/data/prompts.json:180` (prompts[].content) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-3460 `site/data/prompts.json:169` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
-- V-3461 `site/data/prompts.json:169` (prompts[].body) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-0229 `prompts/drafts/bcreq-constitution-governance-oneshot.md:192` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-0230 `prompts/drafts/bcreq-constitution-governance-oneshot.md:192` (body) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-3407 `site/data/prompts.json:180` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-3408 `site/data/prompts.json:180` (prompts[].content) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-3461 `site/data/prompts.json:169` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
+- V-3462 `site/data/prompts.json:169` (prompts[].body) A-SPOKE-PATH «standards/bcreq-sections» — `[standards/bcreq-sections](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#1-восемь-разделов).`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## A-04
@@ -1880,12 +1887,12 @@ README §2.
 Локаторы базы (выборка):
 - V-0023 `prompts/bcreq-constitution-governance-oneshot.md:200` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
 - V-0024 `prompts/bcreq-constitution-governance-oneshot.md:200` (body) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-0230 `prompts/drafts/bcreq-constitution-governance-oneshot.md:212` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-0231 `prompts/drafts/bcreq-constitution-governance-oneshot.md:212` (body) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-3408 `site/data/prompts.json:200` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-3409 `site/data/prompts.json:200` (prompts[].content) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-3462 `site/data/prompts.json:189` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
-- V-3463 `site/data/prompts.json:189` (prompts[].body) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-0231 `prompts/drafts/bcreq-constitution-governance-oneshot.md:212` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-0232 `prompts/drafts/bcreq-constitution-governance-oneshot.md:212` (body) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-3409 `site/data/prompts.json:200` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-3410 `site/data/prompts.json:200` (prompts[].content) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-3463 `site/data/prompts.json:189` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
+- V-3464 `site/data/prompts.json:189` (prompts[].body) A-SPOKE-PATH «README §2» — `[README §2](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md#2-стили).`
 - … ещё 2 (полный список — `audit/baseline-map.json`)
 
 ## A-05
@@ -1912,16 +1919,16 @@ README §2.
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 1; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-1576 `standards/bcreq-manual-classes/05-taxonomy.md:103` (body) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
-- V-2779 `site/data/prompts.json:103` (prompts[].content) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
-- V-2786 `site/data/prompts.json:95` (prompts[].body) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
+- V-1577 `standards/bcreq-manual-classes/05-taxonomy.md:103` (body) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
+- V-2780 `site/data/prompts.json:103` (prompts[].content) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
+- V-2787 `site/data/prompts.json:95` (prompts[].body) A-SPOKE-PATH «docs/taxonomy» — `…л классификации, а не отсутствие функции. Локальный каталог docs/taxonomy и runtime taxonomy/products.yaml — разные носители, указать фактический.…`
 
 ## A-06
 
 - Класс: а
 - Что: prompts/bcreq-orr-solution-design-stepwise.md (раздел 4), prompts/bcreq-fr-documentation-stepwise.md (раздел 4): «- Правила вывода структуры — справочник стандартов.»
 - Исправление / куда перенесено: отсылка к справочнику спицы → правило в самом промпте (метамодель C4/ODA; группировка BABOK); источник — standards/bcreq-industry-practice.md, разделы 2 и 3, в спице
-- Нарушений базы в группе: 2
+- Нарушений базы в группе: 10
 
 Файлы: `prompts/bcreq-orr-solution-design-stepwise.md (раздел 4)`, `prompts/bcreq-fr-documentation-stepwise.md (раздел 4)`
 
@@ -1933,7 +1940,7 @@ README §2.
 Стало:
 ```text
 - Структура раздела выводится из метамодели выбранного стандарта (C4 или TM Forum ODA), а не из номеров ФТ.
-- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6), порядок внутри блока — категории 7.1, как в шаге группировки выше.
+- Группировка — по BABOK Guide v3: блок — одна бизнес-возможность (10.6), категории — по 7.1; порядок категорий — как в шаге группировки выше.
 ```
 
 Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
@@ -1942,15 +1949,164 @@ README §2.
 - Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
 
 Локаторы базы (выборка):
-- V-0456 `prompts/drafts/bcreq-fr-documentation-stepwise.md:184` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-b…`
-- V-0601 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:116` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раз…`
+- V-0103 `prompts/bcreq-fr-documentation-stepwise.md:175` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-b…`
+- V-0131 `prompts/bcreq-orr-solution-design-stepwise.md:107` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раз…`
+- V-0457 `prompts/drafts/bcreq-fr-documentation-stepwise.md:184` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-b…`
+- V-0602 `prompts/drafts/bcreq-orr-solution-design-stepwise.md:116` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раз…`
+- V-3584 `site/data/prompts.json:175` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-b…`
+- V-3595 `site/data/prompts.json:164` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Группировка и пункты BABOK — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#2-b…`
+- V-3647 `site/data/prompts.json:107` (prompts[].content) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раз…`
+- V-3654 `site/data/prompts.json:96` (prompts[].body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- Правила вывода структуры — [справочник стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#3-раз…`
+- … ещё 2 (полный список — `audit/baseline-map.json`)
+
+## A-07
+
+- Класс: а, в
+- Что: scripts/build_bcreq_step_prompts.py (INTAKE_BODY), scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-А системный): «Шаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса. У него нет»
+- Исправление / куда перенесено: отсылка к справочнику спицы, недоступному исполнителю → правила выбора стандартов изложены в самом шаге (раздел 4В: таблица «Что | По умолчанию | Другие варианты»); источник — standards/bcreq-industry-practice.md, раздел 1, в спице; ссылка на Промпт 0 → Ш-0, принятый в том же чате (порядок маршрута A-IN); «нет промпта v0.1» — комментарий INTAKE_FILE сборщика
+- Нарушений базы в группе: 12
+
+Файлы: `scripts/build_bcreq_step_prompts.py (INTAKE_BODY)`, `scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-А системный)`
+
+Было:
+```text
+Шаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса. У него нет
+промпта v0.1: текст шага собран из контракта операции К-01 и правил
+справочника стандартов.
+…
+Конституция —
+Промпт 0;
+в чат её не выводи.
+…
+**В. Согласие со стандартами** (подробно — в
+справочнике стандартов):
+```
+Стало:
+```text
+Шаг Ш-А собирает данные о Заказчике и выбор стандартов до разбора запроса:
+контракт операции К-01 и правила выбора стандартов (раздел 4В ниже).
+…
+Конституция — Промпт 0 (Ш-0), принятый в этом чате; в чат её не выводи.
+…
+**В. Согласие со стандартами** (варианты по умолчанию):
+```
+
+Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
+- `scripts/build_bcreq_step_prompts.py`: «было» в тексте — нет (только левая часть пары замены сборщика: 2); «стало» — 4/4 фрагментов
+- `scripts/build_bcreq_system_track.py`: «было» в тексте — нет (только левая часть пары замены сборщика: 7); «стало» — 3/4 фрагментов
+- Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 1: Промпт 0;; единиц с «стало» — 3; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 17
+
+Локаторы базы (выборка):
+- V-0509 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:100` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).`
+- V-0510 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:106` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governance-oneshot.md);`
+- V-0512 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:160` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[справочнике стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md)):`
+- V-1448 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:111` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).`
+- V-1449 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:117` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-constitution-governance-oneshot.md);`
+- V-1451 `prompts/drafts/system/bcreq-intake-questionnaire-system.md:171` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[справочнике стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md)):`
+- V-3906 `site/data/test-kit.json:96` (steps[].system.body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[справочника стандартов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-industry-practice.md#1-выбор-стандартов).`
+- V-3907 `site/data/test-kit.json:102` (steps[].system.body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Промпт 0](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-constitution-governance-oneshot.md);`
+- … ещё 4 (полный список — `audit/baseline-map.json`)
+
+## A-08
+
+- Класс: а, в
+- Что: experiments/issue_474/intake_guard.md (вход Ш-А; сборщик build_bcreq_step_prompts вставляет его в черновик): «<!-- issue-474:entry -->»
+- Исправление / куда перенесено: служебные маркеры сборки → граница входа — заголовок «## Действующий Ш-А» (scripts/validate_issue_474_execution.py, test_all_legacy_entries_are_guarded); ссылка на черновик AIN-02 → ID шага маршрута A-IN, подпись сохранена
+- Нарушений базы в группе: 6
+
+Файлы: `experiments/issue_474/intake_guard.md (вход Ш-А; сборщик build_bcreq_step_prompts вставляет его в черновик)`
+
+Было:
+```text
+<!-- issue-474:entry -->
+…
+AIN-02.
+…
+<!-- /issue-474:entry -->
+```
+Стало:
+```text
+— (маркеры удалены)
+…
+AIN-02.
+…
+— (маркер удалён)
+```
+
+Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
+- `experiments/issue_474/intake_guard.md`: «было» в тексте — нет; «стало» — удаление
+- Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 0; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
+
+Локаторы базы (выборка):
+- V-0504 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:18` (body) BP-01 «<!--» — `<!-- issue-474:entry -->`
+- V-0505 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:24` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-02](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md).`
+- V-0508 `prompts/drafts/bcreq-intake-questionnaire-stepwise.md:93` (body) BP-01 «<!--» — `<!-- /issue-474:entry -->`
+- V-3953 `site/data/test-kit.json:4` (steps[].draft.body) BP-01 «<!--» — `<!-- issue-474:entry -->`
+- V-3954 `site/data/test-kit.json:10` (steps[].draft.body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-02](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/a-in/bcreq-ain-02-understanding-stepwise.md).`
+- V-3957 `site/data/test-kit.json:79` (steps[].draft.body) BP-01 «<!--» — `<!-- /issue-474:entry -->`
+
+## A-09
+
+- Класс: а
+- Что: prompts/bcreq-constraints-documentation-stepwise.md (раздел 4), prompts/bcreq-fr-documentation-stepwise.md (раздел 4), prompts/bcreq-nfr-documentation-stepwise.md (раздел 4), prompts/bcreq-extra-risk-analysis-stepwise.md (раздел 4), prompts/bcreq-uc-modeling-stepwise.md (раздел 4), prompts/bcreq-orr-solution-design-stepwise.md (раздел 4), prompts/bcreq-scenarios-modeling-oneshot.md (раздел 4): «Мета-стандарт раздела 6.»
+- Исправление / куда перенесено: подпись снятой ссылки на мета-стандарт раздела (standards/bcreq-sections/*.md, в спице; исполнителю недоступен) удалена: правила раздела изложены списком ниже в том же разделе 4 промпта; в Ш-С сохранены общий шаблон UC и ID правила М4
+- Нарушений базы в группе: 46
+
+Файлы: `prompts/bcreq-constraints-documentation-stepwise.md (раздел 4)`, `prompts/bcreq-fr-documentation-stepwise.md (раздел 4)`, `prompts/bcreq-nfr-documentation-stepwise.md (раздел 4)`, `prompts/bcreq-extra-risk-analysis-stepwise.md (раздел 4)`, `prompts/bcreq-uc-modeling-stepwise.md (раздел 4)`, `prompts/bcreq-orr-solution-design-stepwise.md (раздел 4)`, `prompts/bcreq-scenarios-modeling-oneshot.md (раздел 4)`
+
+Было:
+```text
+Мета-стандарт раздела 6.
+…
+Мета-стандарт раздела 3.
+…
+Мета-стандарт раздела 4.
+…
+Мета-стандарт раздела 8.
+…
+Мета-стандарт раздела 7.
+…
+Мета-стандарт раздела 5;
+правила композиции.
+…
+Мета-стандарт раздела 7
+(шаблон UC общий для Ш-С и Ш-5/Ш-8, правило М4
+архитектуры промптов).
+```
+Стало:
+```text
+— (подпись удалена в шести промптах)
+…
+Шаблон UC — общий для Ш-С и Ш-5/Ш-8 (правило М4).
+```
+
+Сверка текущего дерева (машинная, по фрагментам ≥ 8 символов; описательные «стало» — проверять вручную):
+- `prompts/bcreq-constraints-documentation-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-fr-documentation-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-nfr-documentation-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-extra-risk-analysis-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-uc-modeling-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-orr-solution-design-stepwise.md`: «было» в тексте — нет; «стало» — 0/1 фрагментов
+- `prompts/bcreq-scenarios-modeling-oneshot.md`: «было» в тексте — нет; «стало» — 1/1 фрагментов
+- Собранные черновики и данные сайта (90 единиц): фрагментов «было» — 0; единиц с «стало» — 2; архивных карточек 2.7.0 с «было» (только проекция, п.14) — 0
+
+Локаторы базы (выборка):
+- V-0061 `prompts/bcreq-constraints-documentation-stepwise.md:67` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 6](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/06-implementation-constraints.md).`
+- V-0092 `prompts/bcreq-extra-risk-analysis-stepwise.md:65` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 8](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/08-supplementary.md).`
+- V-0102 `prompts/bcreq-fr-documentation-stepwise.md:167` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/03-functional-requirements.md).`
+- V-0124 `prompts/bcreq-nfr-documentation-stepwise.md:65` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/04-non-functional-requirements.md).`
+- V-0129 `prompts/bcreq-orr-solution-design-stepwise.md:97` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/05-solution-description.md);`
+- V-0130 `prompts/bcreq-orr-solution-design-stepwise.md:98` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[правила композиции](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md#2-правила-композиции).`
+- V-0164 `prompts/bcreq-scenarios-modeling-oneshot.md:63` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Мета-стандарт раздела 7](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/07-use-cases.md)`
+- V-0165 `prompts/bcreq-scenarios-modeling-oneshot.md:65` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[архитектуры промптов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)).`
+- … ещё 38 (полный список — `audit/baseline-map.json`)
 
 ## M-01
 
 - Класс: а
 - Что: Ручные исходники промптов и ССОТ: ссылки на спицу (абсолютные и относительные) → подпись ссылки
 - Исправление / куда перенесено: experiments/issue_495/clean_sources.py → prompt_purity.project (delink)
-- Нарушений базы в группе: 332
+- Нарушений базы в группе: 321
 
 Локаторы базы (выборка):
 - V-0011 `prompts/bcreq-constitution-governance-oneshot.md:99` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты разделов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md)`
@@ -1961,7 +2117,7 @@ README §2.
 - V-0020 `prompts/bcreq-constitution-governance-oneshot.md:157` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `6. Попроси ввести следующий промпт — [Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-intake-questionnaire-stepwise.md)`
 - V-0040 `prompts/bcreq-constitution-governance-oneshot.md:286` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…артами | Ш-0 | A-IN | [bcreq-intake-questionnaire-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-intake-questio…`
 - V-0041 `prompts/bcreq-constitution-governance-oneshot.md:287` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ы Заказчика | A-IN | [bcreq-context-understanding-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding…`
-- … ещё 324 (полный список — `audit/baseline-map.json`)
+- … ещё 313 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 54; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
@@ -1993,14 +2149,14 @@ README §2.
 - Нарушений базы в группе: 76
 
 Локаторы базы (выборка):
-- V-1784 `prompts/archive/constraints-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
 - V-1785 `prompts/archive/constraints-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
-- V-1786 `prompts/archive/constraints-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
+- V-1786 `prompts/archive/constraints-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
 - V-1787 `prompts/archive/constraints-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
-- V-1788 `prompts/archive/fr-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
+- V-1788 `prompts/archive/constraints-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
 - V-1789 `prompts/archive/fr-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
-- V-1790 `prompts/archive/fr-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
+- V-1790 `prompts/archive/fr-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
 - V-1791 `prompts/archive/fr-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
+- V-1792 `prompts/archive/fr-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
 - … ещё 68 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 22; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
@@ -2013,14 +2169,14 @@ README §2.
 - Нарушений базы в группе: 109
 
 Локаторы базы (выборка):
-- V-1898 `prompts/README.md:9` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- "https://github.com/G-Ivan-A/mango_ba_prompts/issues/65"`
-- V-1899 `prompts/README.md:26` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>`
-- V-1900 `prompts/README.md:28` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>.`
-- V-1901 `prompts/README.md:34` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ения (BCREQ) | ['bcreq-constitution-governance-oneshot.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governan…`
-- V-1902 `prompts/README.md:35` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…осы заказчику | ['bcreq-context-understanding-stepwise.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding…`
+- V-1899 `prompts/README.md:9` (frontmatter) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- "https://github.com/G-Ivan-A/mango_ba_prompts/issues/65"`
+- V-1900 `prompts/README.md:26` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/prompt-standard.md>`
+- V-1901 `prompts/README.md:28` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `<https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/adr/001-prompt-standard.md>.`
+- V-1902 `prompts/README.md:34` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ения (BCREQ) | ['bcreq-constitution-governance-oneshot.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constitution-governan…`
 - V-1903 `prompts/README.md:35` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…осы заказчику | ['bcreq-context-understanding-stepwise.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding…`
-- V-1904 `prompts/README.md:36` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `… и команды | ['bcreq-products-impact-analysis-stepwise.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analy…`
-- V-1905 `prompts/README.md:37` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…tory или Use Case | ['bcreq-scenarios-modeling-oneshot.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-on…`
+- V-1904 `prompts/README.md:35` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…осы заказчику | ['bcreq-context-understanding-stepwise.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding…`
+- V-1905 `prompts/README.md:36` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `… и команды | ['bcreq-products-impact-analysis-stepwise.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analy…`
+- V-1906 `prompts/README.md:37` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…tory или Use Case | ['bcreq-scenarios-modeling-oneshot.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-on…`
 - … ещё 101 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 1; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
@@ -2033,14 +2189,14 @@ README §2.
 - Нарушений базы в группе: 64
 
 Локаторы базы (выборка):
-- V-0226 `prompts/drafts/bcreq-constitution-governance-oneshot.md:169` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md), в системном —`
-- V-0247 `prompts/drafts/bcreq-constitution-governance-oneshot.md:298` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ндартами | Ш-0 | A-IN | [bcreq-intake-questionnaire-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-intake-…`
-- V-0248 `prompts/drafts/bcreq-constitution-governance-oneshot.md:299` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…нты Заказчика | A-IN | [bcreq-context-understanding-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-context…`
-- V-0249 `prompts/drafts/bcreq-constitution-governance-oneshot.md:300` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ла 1 | Ш-1 | A-IN | [bcreq-products-impact-analysis-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-product…`
-- V-0260 `prompts/drafts/bcreq-constitution-governance-oneshot.md:317` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01…AIN-24](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md)`
-- V-0282 `prompts/drafts/bcreq-constitution-governance-oneshot.md:555` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
-- V-0326 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:286` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
-- V-0378 `prompts/drafts/bcreq-context-understanding-stepwise.md:483` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
+- V-0227 `prompts/drafts/bcreq-constitution-governance-oneshot.md:169` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md), в системном —`
+- V-0228 `prompts/drafts/bcreq-constitution-governance-oneshot.md:170` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-intake-questionnaire-system.md). Остановись.`
+- V-0248 `prompts/drafts/bcreq-constitution-governance-oneshot.md:298` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ндартами | Ш-0 | A-IN | [bcreq-intake-questionnaire-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-intake-…`
+- V-0249 `prompts/drafts/bcreq-constitution-governance-oneshot.md:299` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…нты Заказчика | A-IN | [bcreq-context-understanding-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-context…`
+- V-0250 `prompts/drafts/bcreq-constitution-governance-oneshot.md:300` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ла 1 | Ш-1 | A-IN | [bcreq-products-impact-analysis-system](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-product…`
+- V-0261 `prompts/drafts/bcreq-constitution-governance-oneshot.md:317` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01…AIN-24](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md)`
+- V-0283 `prompts/drafts/bcreq-constitution-governance-oneshot.md:555` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
+- V-0327 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:286` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
 - … ещё 56 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 19; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
@@ -2050,20 +2206,20 @@ README §2.
 - Класс: а, б, в
 - Что: Черновики, A-IN и системный трек (`prompts/drafts/**`): только копии нарушений ручных источников (окно ±15 символов вокруг нарушения есть в ручном исходнике базы); пересборка из чистых ССОТ
 - Исправление / куда перенесено: сборщики bcreq_handoff, build_bcreq_a_in, build_bcreq_step_prompts, build_bcreq_system_track (проекция стандартов)
-- Нарушений базы в группе: 108
+- Нарушений базы в группе: 87
 
 Локаторы базы (выборка):
-- V-0211 `prompts/drafts/bcreq-constitution-governance-oneshot.md:21` (body) BP-01 «<!--» — `<!-- issue-474:entry -->`
-- V-0216 `prompts/drafts/bcreq-constitution-governance-oneshot.md:96` (body) BP-01 «<!--» — `<!-- /issue-474:entry -->`
-- V-0217 `prompts/drafts/bcreq-constitution-governance-oneshot.md:110` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты разделов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md)`
-- V-0218 `prompts/drafts/bcreq-constitution-governance-oneshot.md:111` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Архитектура промптов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)`
-- V-0219 `prompts/drafts/bcreq-constitution-governance-oneshot.md:112` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Контракт стадий и гейтов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md)`
-- V-0220 `prompts/drafts/bcreq-constitution-governance-oneshot.md:113` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Стандарт композиции продуктов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md)`
-- V-0221 `prompts/drafts/bcreq-constitution-governance-oneshot.md:131` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-intake-questionnaire-stepwise.md), на Ш-0 о них не спрашивай:`
-- V-0227 `prompts/drafts/bcreq-constitution-governance-oneshot.md:170` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/system/bcreq-intake-questionnaire-system.md). Остановись.`
-- … ещё 100 (полный список — `audit/baseline-map.json`)
+- V-0212 `prompts/drafts/bcreq-constitution-governance-oneshot.md:21` (body) BP-01 «<!--» — `<!-- issue-474:entry -->`
+- V-0217 `prompts/drafts/bcreq-constitution-governance-oneshot.md:96` (body) BP-01 «<!--» — `<!-- /issue-474:entry -->`
+- V-0218 `prompts/drafts/bcreq-constitution-governance-oneshot.md:110` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Мета-стандарты разделов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-sections/README.md)`
+- V-0219 `prompts/drafts/bcreq-constitution-governance-oneshot.md:111` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Архитектура промптов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-prompt-architecture.md)`
+- V-0220 `prompts/drafts/bcreq-constitution-governance-oneshot.md:112` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Контракт стадий и гейтов BCREQ](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md)`
+- V-0221 `prompts/drafts/bcreq-constitution-governance-oneshot.md:113` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `- [Стандарт композиции продуктов](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-composition-standard.md)`
+- V-0222 `prompts/drafts/bcreq-constitution-governance-oneshot.md:131` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[Ш-А](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/bcreq-intake-questionnaire-stepwise.md), на Ш-0 о них не спрашивай:`
+- V-0251 `prompts/drafts/bcreq-constitution-governance-oneshot.md:301` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…ORE; 'new' — вне стадий | [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
+- … ещё 79 (полный список — `audit/baseline-map.json`)
 
-Файлов группы: 15; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
+Файлов группы: 13; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
 ## G-02
 
@@ -2073,14 +2229,14 @@ README §2.
 - Нарушений базы в группе: 352
 
 Локаторы базы (выборка):
-- V-2500 `site/data/bcreq-flow.json:1` (sourceFiles[].url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md`
-- V-2501 `site/data/bcreq-flow.json:1` (manual.contract.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-manual-state.md`
-- V-2502 `site/data/bcreq-flow.json:1` (manual.classes.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/README.md`
-- V-2503 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/36-rule-bundle.md`
-- V-2504 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/01-intake.md`
-- V-2505 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/02-normalize.md`
-- V-2506 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/03-ambiguity.md`
-- V-2507 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/04-questions.md`
+- V-2501 `site/data/bcreq-flow.json:1` (sourceFiles[].url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md`
+- V-2502 `site/data/bcreq-flow.json:1` (manual.contract.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-manual-state.md`
+- V-2503 `site/data/bcreq-flow.json:1` (manual.classes.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/README.md`
+- V-2504 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/36-rule-bundle.md`
+- V-2505 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/01-intake.md`
+- V-2506 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/02-normalize.md`
+- V-2507 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/03-ambiguity.md`
+- V-2508 `site/data/bcreq-flow.json:1` (manual.steps[].prompt.url) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/04-questions.md`
 - … ещё 344 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 10; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
@@ -2090,18 +2246,18 @@ README §2.
 - Класс: а, б, в
 - Что: Данные сайта: тела промптов и поля карточек — только копии нарушений ручных источников (то же окно ±15 символов)
 - Исправление / куда перенесено: node scripts/generate-pages-data.mjs
-- Нарушений базы в группе: 905
+- Нарушений базы в группе: 853
 
 Локаторы базы (выборка):
-- V-2718 `site/data/prompts.json:15` (prompts[].content) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
-- V-2719 `site/data/prompts.json:15` (prompts[].content) A-RELATIVE «../../prompts/bcreq-in-understanding-oneshot.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
-- V-2720 `site/data/prompts.json:25` (prompts[].content) A-RELATIVE «../../docs/contracts/bcreq-manual-state.md» — `[контракт состояния](../../docs/contracts/bcreq-manual-state.md).`
-- V-2722 `site/data/prompts.json:141` (prompts[].content) A-RELATIVE «../../docs/analysis/2026-10-29-bcreq-checkpoint.md» — `Основания: [checkpoint](../../docs/analysis/2026-10-29-bcreq-checkpoint.md),`
-- V-2723 `site/data/prompts.json:142` (prompts[].content) A-RELATIVE «../../docs/rfc/2026-10-bcreq-manual-pipeline.md» — `[RFC и маршрут](../../docs/rfc/2026-10-bcreq-manual-pipeline.md),`
-- V-2724 `site/data/prompts.json:143` (prompts[].content) A-RELATIVE «../bcreq-sections/README.md» — `[мета-стандарты разделов](../bcreq-sections/README.md).`
-- V-2725 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
-- V-2726 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «../../prompts/bcreq-in-understanding-oneshot.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
-- … ещё 897 (полный список — `audit/baseline-map.json`)
+- V-2719 `site/data/prompts.json:15` (prompts[].content) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
+- V-2720 `site/data/prompts.json:15` (prompts[].content) A-RELATIVE «../../prompts/bcreq-in-understanding-oneshot.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
+- V-2721 `site/data/prompts.json:25` (prompts[].content) A-RELATIVE «../../docs/contracts/bcreq-manual-state.md» — `[контракт состояния](../../docs/contracts/bcreq-manual-state.md).`
+- V-2723 `site/data/prompts.json:141` (prompts[].content) A-RELATIVE «../../docs/analysis/2026-10-29-bcreq-checkpoint.md» — `Основания: [checkpoint](../../docs/analysis/2026-10-29-bcreq-checkpoint.md),`
+- V-2724 `site/data/prompts.json:142` (prompts[].content) A-RELATIVE «../../docs/rfc/2026-10-bcreq-manual-pipeline.md» — `[RFC и маршрут](../../docs/rfc/2026-10-bcreq-manual-pipeline.md),`
+- V-2725 `site/data/prompts.json:143` (prompts[].content) A-RELATIVE «../bcreq-sections/README.md» — `[мета-стандарты разделов](../bcreq-sections/README.md).`
+- V-2726 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
+- V-2727 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «../../prompts/bcreq-in-understanding-oneshot.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
+- … ещё 845 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 2; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
