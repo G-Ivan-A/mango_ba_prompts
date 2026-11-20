@@ -305,7 +305,7 @@
 
 - Класс: б
 - Что: prompts/bcreq-constitution-governance-oneshot.md: «наличие функции в продукте не доказывает её доступность в коннекторе или базовом тарифе.»
-- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-02
+- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-04 (CR-04)
 - Нарушений базы в группе: 5
 
 Файлы: `prompts/bcreq-constitution-governance-oneshot.md`
@@ -334,7 +334,7 @@
 
 - Класс: б
 - Что: prompts/bcreq-products-impact-analysis-stepwise.md: «передачу этих функций через коннектор.»
-- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-02
+- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-04 (CR-04)
 - Нарушений базы в группе: 7
 
 Файлы: `prompts/bcreq-products-impact-analysis-stepwise.md`
@@ -365,7 +365,7 @@
 
 - Класс: б
 - Что: scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-2 системный): «передачу этих функций через коннектор.»
-- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-02
+- Исправление / куда перенесено: кейс → runtime golden/prompt-regressions.yaml PR-04 (CR-04)
 - Нарушений базы в группе: 0
 
 Файлы: `scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-2 системный)`
