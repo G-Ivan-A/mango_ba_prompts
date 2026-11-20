@@ -221,7 +221,8 @@ def to_markdown(findings, files, title):
     out = [f"# {title}", "", "```", summary(findings, files), "```", "",
            "| ID | Класс | Правило | Локатор | Совпадение | Фрагмент |", "| --- | --- | --- | --- | --- | --- |"]
     for f in findings:
-        snippet = f["snippet"].replace("|", "\\|")
+        # «](» экранируется: фрагмент — цитата, а не ссылка (проверка ссылок #265).
+        snippet = f["snippet"].replace("|", "\\|").replace("](", "]\\(")
         match = f["match"].replace("|", "\\|")
         loc = f"{f['file']}:{f['line']}" + (f" ({f['where']})" if f["where"] not in ("body",) else "")
         out.append(f"| {f['id']} | {f['class']} | {f['rule']} | `{loc}` | `{match}` | {snippet} |")

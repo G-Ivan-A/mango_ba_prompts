@@ -12,6 +12,8 @@
 """
 import argparse
 import glob
+import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -37,6 +39,26 @@ def split(text):
     return "", text
 
 
+BASE = "e051e0fa46e22c43004a6af19e8c53b827ce1b1d"
+
+
+def repair_blank(rel, text):
+    """Двойной пропуск, который оставил удалённый абзац-комментарий первой чистки.
+
+    Пропуск схлопывается, только если на базе задачи на этом месте стоял
+    комментарий («…\n\n<!--»); прочие двойные пропуски исходника не трогаются.
+    """
+    base = subprocess.run(["git", "show", f"{BASE}:{rel}"], cwd=ROOT, capture_output=True,
+                          text=True).stdout
+    out, pos = [], 0
+    for m in re.finditer(r"\n\n\n", text):
+        before = text[max(0, m.start() - 40):m.start()]
+        if before and before + "\n\n<!--" in base:
+            out.append(text[pos:m.start()] + "\n\n")
+            pos = m.end()
+    return "".join(out) + text[pos:]
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--dry-run", action="store_true")
@@ -49,7 +71,7 @@ def main(argv=None):
                 continue
             text = Path(name).read_text(encoding="utf-8")
             head, body = split(text)
-            new = head + prompt_purity.project(body)
+            new = repair_blank(rel, head + prompt_purity.project(body))
             if new != text:
                 changed.append(rel)
                 if not args.dry_run:

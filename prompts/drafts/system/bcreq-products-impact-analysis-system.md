@@ -10,7 +10,7 @@ processes: ["Приём и контекст"]
 steps: [Ш-2]
 track: system
 based_on: prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md
-based_on_sha256: 149c327d3907c655fd2008841dec30b7feedfed75abd6ab2406affe6cb52c8c3
+based_on_sha256: 2e6854bb7c7b62b77e8a62f5b500f5919ed335e3bc23e3969d3014747944ac19
 assembled_by: scripts/build_bcreq_system_track.py
 ---
 

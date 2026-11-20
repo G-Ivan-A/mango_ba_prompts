@@ -10,7 +10,7 @@ processes: ["Приём и контекст"]
 steps: [Ш-1]
 track: system
 based_on: prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md
-based_on_sha256: 4665ea5cf6d523a7827dc8b9c387539aa316d24813e126d6692fb5f74dcf9eb1
+based_on_sha256: 73808f55708e07cc407d5d6092388c92bbf1e1ef63506db39f0341c10cf2d1cb
 assembled_by: scripts/build_bcreq_system_track.py
 ---
 

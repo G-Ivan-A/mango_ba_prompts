@@ -10,7 +10,7 @@ processes: ["Приём и контекст"]
 steps: [Ш-А]
 track: system
 based_on: prompts/archive/a-in-v2.7.0/bcreq-intake-questionnaire-stepwise.md
-based_on_sha256: d5585328208c35fe5ac160721f4019f4dec8ccac678750fa424dd4007056690f
+based_on_sha256: 14edd82b28af03018bfbb9021a868d82192220af1b8b1aec001f3a2981a72a48
 assembled_by: scripts/build_bcreq_system_track.py
 ---
 

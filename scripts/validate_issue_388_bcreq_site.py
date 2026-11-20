@@ -134,8 +134,12 @@ def check_prompts() -> list[str]:
                 errors.append(f"{name}: нет блока позиции {missing}")
             if "Состояние BCREQ" not in text:
                 errors.append(f"{name}: нет блока «Состояние BCREQ»")
-            if f"{BASE_URL}prompts/{CONSTITUTION}.md" not in text:
+            # Issue #495 (СУПЕР-ПРАВИЛО): ссылка на Промпт 0 — по имени, без URL
+            # приватного репозитория.
+            if "Промпт 0" not in text:
                 errors.append(f"{name}: нет ссылки на Промпт 0")
+            if BASE_URL.split("/blob/")[0] in text:
+                errors.append(f"{name}: URL приватного репозитория в промпте (issue #495)")
         relative = [t for t in LINK.findall(text) if not t.startswith(("https://", "#"))]
         if relative:
             errors.append(f"{name}: ссылки должны быть абсолютными URL: {relative[:3]}")
@@ -158,8 +162,10 @@ def check_archive() -> list[str]:
         text = path.read_text(encoding="utf-8")
         if frontmatter(text).get("status") != "archived":
             errors.append(f"prompts/archive/{name}.md: status должен быть archived")
-        if "**Архив (issue #388).**" not in text or f"{BASE_URL}prompts/bcreq-" not in text:
-            errors.append(f"prompts/archive/{name}.md: нет баннера архива со ссылкой на замену BCREQ")
+        # Issue #495: баннер без номера задачи и без URL — замена названа по имени.
+        banner = next((l for l in text.splitlines() if l.startswith("> **Архив.**")), "")
+        if "Промпт заменён набором BCREQ: bcreq-" not in banner or BASE_URL in text:
+            errors.append(f"prompts/archive/{name}.md: нет баннера архива с именем замены BCREQ")
     return errors
 
 
@@ -289,9 +295,10 @@ def check_docs() -> list[str]:
         errors.append("CHANGELOG.md: нет записи Issue #388 в Unreleased")
     readme = (PROMPTS / "README.md").read_text(encoding="utf-8")
     for name in BCREQ_PROMPTS:
-        if f"{BASE_URL}prompts/{name}.md" not in readme:
+        # Issue #495: README ведёт относительными ссылками, без URL репозитория.
+        if f"]({name}.md)" not in readme:
             errors.append(f"prompts/README.md: нет маршрута на {name}.md")
-    if f"{BASE_URL}docs/ba-processes/bcreq-manual-process.md" not in readme:
+    if "](../docs/ba-processes/bcreq-manual-process.md)" not in readme:
         errors.append("prompts/README.md: нет ссылки на ручной процесс BCREQ")
     access = ROOT / "docs" / "site-access.md"
     if not access.exists():

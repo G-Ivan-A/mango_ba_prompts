@@ -438,4 +438,3 @@ RFC #427, раздел 9.3
    (`availability: not-established-by-taxonomy`): доступность — только
    из источника задачи или БЗ.
 ```
-

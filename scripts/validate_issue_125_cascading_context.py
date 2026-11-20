@@ -109,10 +109,12 @@ def check_contract_documents() -> list[str]:
         "Escalation triggers",
         "LLM Loading Contract",
     )
-    errors += require_text(
-        "prompts/session-debug-documentation-oneshot.md",
-        "prompts/README.executable.md",
-    )
+    # Issue #495 (СУПЕР-ПРАВИЛО): промпт не ссылается на приватный репозиторий.
+    # Связь «навигация → промпт» держит executable-слой: README.executable.md
+    # перечисляет промпт, а не промпт — README.
+    errors += require_text("prompts/README.executable.md", "session-debug-documentation-oneshot.md")
+    if "mango_ba_prompts" in read_text("prompts/session-debug-documentation-oneshot.md"):
+        errors.append("prompts/session-debug-documentation-oneshot.md: ссылка на приватный репозиторий (issue #495)")
     errors += require_text(
         "CHANGELOG.md",
         "Issue #125",

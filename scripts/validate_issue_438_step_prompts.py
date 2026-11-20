@@ -127,6 +127,7 @@ def load(name, path):
 BUILDER = load("bcreq_step_builder", ROOT / "scripts/build_bcreq_step_prompts.py")
 BL156A = load("bl156a_for_438", ROOT / "experiments/issue_444/bl156a_prompt_changes.py")
 SHV_V02 = BL156A.SHV_V02
+I495 = load("prompt495_for_438", ROOT / "experiments/issue_495/prompt_changes.py")
 SHV = "prompts/bcreq-review-validation-oneshot.md"
 SHV_DRAFT = "prompts/drafts/bcreq-review-validation-oneshot.md"
 
@@ -156,7 +157,8 @@ def measured_d():
     text = BL156A.I450.revert(SHV_DRAFT, read(ROOT / SHV_DRAFT))
     if TYPING_APPLIED:
         return text
-    base = digest(read(ROOT / SHV))
+    # Откат I450 снимает и слой #495, поэтому хэш v0.1 — тоже до правок #495.
+    base = digest(I495.revert(SHV, read(ROOT / SHV)))
     assert text.count(f"based_on_sha256: {base}") == 1, SHV_DRAFT
     text = text.replace(f"based_on_sha256: {base}", f"based_on_sha256: {digest(measured_a())}")
     if SHV_V02_PUBLISHED:
@@ -225,14 +227,17 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(len(drafts), 13)
         steps = [s for d in drafts for s in d["steps"]]
         self.assertEqual(sorted(steps), sorted(BUILDER.ROUTE))
-        self.assertEqual(self.manifest["source_issue"], "https://github.com/G-Ivan-A/mango_ba_prompts/issues/438")
+        # Issue #495: в манифесте сборки — номер задачи, без URL приватного репозитория.
+        self.assertEqual(self.manifest["source_issue"], "#438")
         self.assertIn("ADR-017", self.manifest["lessons_blocks"])
 
     def test_draft_markers(self):
         for item in self.manifest["drafts"]:
             text = read(ROOT / item["file"])
-            self.assertIn(BUILDER.EXPERIMENTAL, text, item["file"])
-            self.assertIn(BUILDER.MODE_LINE, text, item["file"])
+            # Issue #495 (D-13, D-18): баннер редакции и HTML-комментарий Experimental
+            # — балласт; режим «по тесту» держат frontmatter (id, mode) и манифест.
+            self.assertNotIn("<!--", text, item["file"])
+            self.assertNotIn("Редакция по тесту (#427)", text, item["file"])
             fm = re.match(r"^---\n(.*?)\n---\n", text, re.S).group(1)
             self.assertRegex(fm, r"(?m)^id: \S+-by-test$", item["file"])
             self.assertRegex(fm, r"(?m)^mode: by-test$", item["file"])

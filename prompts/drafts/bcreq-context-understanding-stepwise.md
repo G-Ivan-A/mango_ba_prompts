@@ -590,7 +590,6 @@ provenance не применяется; происхождение и цитат
 - **И-6 Доменный глоссарий:** `contact-center`: [`taxonomy/domain-glossary.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary.yaml); `voice-ucaas`: [`taxonomy/domain-glossary-voice-ucaas.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary-voice-ucaas.yaml); `analytics-reporting`: [`taxonomy/domain-glossary-analytics-reporting.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/domain-glossary-analytics-reporting.yaml).
 - **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
-
 ## Итог шага для БА
 
 Заверши каждый ответ двумя блоками для БА простым языком.

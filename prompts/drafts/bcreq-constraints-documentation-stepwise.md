@@ -323,7 +323,6 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 - **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).
 - **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
 
-
 ## Итог шага для БА
 
 Заверши каждый ответ двумя блоками для БА простым языком.

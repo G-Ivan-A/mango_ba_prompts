@@ -21,6 +21,9 @@ PRIVATE = "github.com/G-Ivan-A/mango_ba_prompts"
 LINK = re.compile(r"\[((?:[^\[\]]|\[[^\]]*\])*)\]\(([^)\s]+)\)")
 COMMENT_LINE = re.compile(r"(?m)^[ \t]*<!--(?:(?!-->).)*-->[ \t]*\n", re.S)
 COMMENT = re.compile(r"<!--.*?-->", re.S)
+#: Комментарий отдельным абзацем (пустая строка до и после) уходит вместе с одной
+#: пустой строкой, чтобы не оставлять двойной пропуск.
+COMMENT_PARA = re.compile(r"(?<=\n\n)[ \t]*<!--(?:(?!-->).)*-->[ \t]*\n\n", re.S)
 
 
 def is_executable_target(target):
@@ -48,10 +51,19 @@ def delink(text):
 
 def strip_comments(text):
     """Удалить служебные HTML-комментарии: целые строки — вместе с переводом строки."""
+    text = COMMENT_PARA.sub("", text)
     text = COMMENT_LINE.sub("", text)
     return COMMENT.sub("", text)
 
 
 def project(text):
-    """Исполнимая проекция: без приватных/относительных ссылок и HTML-комментариев."""
-    return strip_comments(delink(text))
+    """Исполнимая проекция: без приватных/относительных ссылок и HTML-комментариев.
+
+    Хвост из переводов строк сохраняется как во входе: удалённый комментарий в
+    конце файла не оставляет пустую строку.
+    """
+    out = strip_comments(delink(text))
+    if not out.strip():
+        return out
+    trail = len(text) - len(text.rstrip("\n"))
+    return out.rstrip("\n") + "\n" * trail

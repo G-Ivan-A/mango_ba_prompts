@@ -759,7 +759,7 @@ def build_all():
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
         # #495: исполнимая проекция тела — без приватных ссылок и HTML-комментариев.
         text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + project(
-            "\n" + body.strip("\n") + "\n\n" + block + handoff)
+            "\n" + body.strip("\n") + "\n\n" + block.rstrip("\n") + "\n" + handoff)
         outputs[DRAFTS / f"{name}.md"] = text
         manifest.append({
             "file": f"prompts/drafts/{name}.md",
