@@ -72,7 +72,10 @@ SHA_RE = re.compile(r"^[0-9a-f]{40}$")
 SCOPE = ("prompts", "standards", "docs/ba-processes", "docs/contracts")
 # Классы продуктовой таксономии runtime: И-5 и И-6 дают ссылку на каждый.
 CLASSES = ("contact-center", "voice-ucaas", "analytics-reporting")
-STUB_HEAD = "[СПРАВОЧНИК ОТСУТСТВУЕТ: <имя>; задача BL-155]"
+STUB_HEAD = "[СПРАВОЧНИК ОТСУТСТВУЕТ: <имя>]"
+# Блок RFC 8.4 несёт номер задачи; в реестре и промптах его нет (issue #495,
+# стандарт чистоты промптов: номера задач бэклога в промпт не переносятся).
+RFC_TASK_SUFFIX = "; задача BL-155]"
 LINK_RE = re.compile(r"\]\(([^)\s]+)\)")
 
 
@@ -163,6 +166,8 @@ class Registry(unittest.TestCase):
     def test_stub_block_matches_rfc(self):
         stubs = section(self.body, "## 4. Заглушки")
         rfc_block = code_block(section(text(RFC), "### 8.4. Заглушка"))
+        self.assertIn(RFC_TASK_SUFFIX, rfc_block)
+        rfc_block = rfc_block.replace(RFC_TASK_SUFFIX, "]", 1)
         self.assertEqual(code_block(stubs), rfc_block)
         self.assertTrue(rfc_block.startswith(STUB_HEAD))
         active, _, retired = stubs.partition("Снятые заглушки.")

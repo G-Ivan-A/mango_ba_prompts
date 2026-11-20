@@ -22,7 +22,7 @@ issue: "#490"
 
 Из этого файла собираются:
 
-- блок `<!-- issue-490:handoff -->` в 24 промптах AIN
+- блок «## Итог шага для БА» в 24 промптах AIN
   ([`scripts/build_bcreq_a_in.py`](../../scripts/build_bcreq_a_in.py));
 - тот же блок в черновиках Ш-ХХ
   ([`scripts/build_bcreq_step_prompts.py`](../../scripts/build_bcreq_step_prompts.py))
@@ -58,8 +58,7 @@ node scripts/generate-pages-data.mjs`.
 `handoff-template` попадает в промпты как есть.
 
 <!-- handoff-template -->
-<!-- issue-490:handoff -->
-## Итог шага для БА (#490)
+## Итог шага для БА
 
 {steps_intro}Заверши каждый ответ двумя блоками для БА простым языком.
 Они идут последними: после результата, receipt и «Состояния BCREQ»; если
@@ -75,7 +74,6 @@ node scripts/generate-pages-data.mjs`.
 шагу вернуться>». Итог — факты, не самооценка: не хвали ни БА, ни свой
 результат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,
 без записи — декомпозированный.
-<!-- /issue-490:handoff -->
 <!-- /handoff-template -->
 
 Тексты правил для плейсхолдера `{approve_rule}`:

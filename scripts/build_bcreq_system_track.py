@@ -6,46 +6,74 @@ Issue #490, п. 2.2: вернуть прежние не декомпозиров
 Источник — полные неизменённые файлы ``prompts/archive/a-in-v2.7.0`` (их SHA
 закреплены в ``manifest.json`` архива). Сборщик:
 
-* копирует тело архивного файла без изменений, кроме четырёх точечных правок:
-  ссылки «Промпт 0» ведут на черновик Ш-0 с выбором формата шагов, параметр
-  «режим» в «Состоянии BCREQ» заменён на «формат шагов=системный», баннер
-  «действует до ADR» помечен как история, ссылка на вынесенную из Хаба
-  метамодель закреплена по SHA (#488);
-* добавляет в начало блок ``issue-490:system`` — что это за формат и какие
-  защиты #474 (доказательная нормализация, вопросы Заказчику, нет согласия
-  без проверки) действуют поверх текста 2.7.0;
-* добавляет в конец блок «Итог шага» из SSOT ``bcreq-step-handoff.md``.
+* берёт текст шага архивного файла (до архивного блока «по тесту») без
+  изменений, кроме точечных правок: параметр «режим» в «Состоянии BCREQ»
+  заменён на «формат шагов=системный», ссылка на вынесенную из Хаба
+  метамодель закреплена по SHA (#488), кейс-лексика заменена принципом
+  (``CASE_EDITS``, issue #495);
+* вместо архивного блока «по тесту» ставит блок «Стандарты шага» из текущих
+  стандартов — тот же, что у черновиков Ш-ХХ (``build_bcreq_step_prompts``);
+* добавляет в начало раздел «Системный формат шагов» — что это за формат и
+  какие защиты #474 (доказательная нормализация, вопросы Заказчику, нет
+  согласия без проверки) действуют поверх текста 2.7.0;
+* добавляет в конец блок «Итог шага» из SSOT ``bcreq-step-handoff.md``;
+* пропускает тело через ``prompt_purity.project``: в промпте нет ссылок на
+  приватный репозиторий и HTML-комментариев (стандарт чистоты, issue #495).
+
+Архив 2.7.0 — историческая сущность (комментарий 2 владельца к issue #495,
+п. 14): стандарт чистоты применяется к нему только в части ссылок, а очищенный
+текст для исполнения собирает этот сборщик.
 
 Результат — ``prompts/drafts/system/*-system.md``. ``--check`` сверяет файлы,
 ничего не записывая. LLM не вызывается.
 """
 import argparse
 import hashlib
-import json
+import re
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402
+import build_bcreq_step_prompts as steps_builder  # noqa: E402
+from prompt_purity import project  # noqa: E402
 
 ARCHIVE = ROOT / "prompts/archive/a-in-v2.7.0"
 OUT = ROOT / "prompts/drafts/system"
-DATE = "2026-11-18"
-ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/490"
-BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
-PUBLISHED_P0 = BLOB + "prompts/bcreq-constitution-governance-oneshot.md"
-DRAFT_P0 = BLOB + "prompts/drafts/bcreq-constitution-governance-oneshot.md"
+DATE = "2026-11-20"
 NORMALIZATION = ROOT / "docs/ba-processes/bcreq-evidence-normalization.md"
-BEGIN, END = "<!-- issue-490:system -->", "<!-- /issue-490:system -->"
+#: Границы раздела системного формата в промпте: заголовок и строка перед
+#: текстом 2.7.0 (HTML-комментарии в промпте запрещены, issue #495).
+BEGIN = "## Системный формат шагов"
+END = "Ниже — текст шага редакции 2.7.0."
+#: Начало архивного блока «по тесту» — его заменяет блок «Стандарты шага».
+ARCHIVE_BLOCK = "\n## Дополнение «по тесту» (BL-156): стандарты шага\n"
 # Issue #488: метамодель вынесена из Хаба; плавающая ссылка архива 2.7.0
 # закрепляется на коммите приёмки E6 в ba-ai-metamodel.
 HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
 HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
               "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
-BANNER_OLD = "> **Редакция по тесту (#427): действует до ADR обратного согласования.**"
-BANNER_NEW = ("> **Системный формат шагов (#490): текст редакции сайта 2.7.0.** "
-              "История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования».")
+#: Баннер архивной редакции — служебная история сборки, в промпт не идёт.
+BANNER = re.compile(r"^> \*\*Редакция по тесту \(#427\): действует до ADR обратного согласования\.\*\*[^\n]*\n\n", re.M)
+#: Кейс-лексика архивного текста → принцип (реестр замен PR #497, ID в скобках).
+#: Шаг → [(было, стало, сколько раз)].
+CASE_EDITS = {
+    "Ш-А": [  # U-18, U-19
+        ("3. Сколько номеров Mango ВАТС?", "3. Сколько номеров телефонии продукта?", 1),
+        ("- номера ВАТС: <…|UNKNOWN>", "- номера телефонии продукта: <…|UNKNOWN>", 1),
+    ],
+    "Ш-2": [  # U-11, U-13
+        ("передачу этих функций через коннектор.", "передачу этих функций через интеграцию.", 1),
+        ("4. **Набор словарей.** Возьми минимальный набор D1, D2, D11 и словари\n"
+         "   профилей задействованных продуктов (ЛК — D1, D2, D11; ВАТС — D5, D6;\n"
+         "   КЦ — D6, D11; РА — D11, D3; API — D8; оператор связи — D9).",
+         "4. **Набор словарей.** Возьми минимальный набор словарей раздела 1 и\n"
+         "   словари профилей задействованных продуктов из справочника профилей\n"
+         "   продуктов runtime (И-11). Справочника нет во входе — назови пробел\n"
+         "   ACCESS_GAP, возьми минимальный набор и отметь `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`.", 1),
+    ],
+}
 
 #: шаг → (архивный файл, файл системного формата, название, что добавляет блок)
 STEPS = {
@@ -71,14 +99,12 @@ def normalization():
 
 def system_block(step, title, extra):
     return f"""{BEGIN}
-## Системный формат шагов (#490)
 
 Это системный (комплексный) шаг {step} «{title}» — текст редакции сайта 2.7.0,
-восстановленный параллельно декомпозированным шагам AIN-01…24
-([issue #490]({ISSUE})). БА выбрал системный формат на сайте: не предлагай
-другой формат и не переводи работу на AIN-шаги без явной просьбы БА. Ниже —
-текст 2.7.0 без изменений, кроме ссылок (Промпт 0, метамодель по SHA) и параметра «формат шагов».
-При конфликте с текстом ниже действует этот блок.
+восстановленный параллельно декомпозированным шагам AIN-01…24.
+БА выбрал системный формат на сайте: не предлагай
+другой формат и не переводи работу на AIN-шаги без явной просьбы БА.
+При конфликте с текстом шага ниже действует этот раздел.
 
 - {extra}
 - Вопросы к Заказчику — нумерованным списком, без таблицы; адресат — Заказчик,
@@ -98,12 +124,13 @@ def system_block(step, title, extra):
   «На согласование БА» (см. «Итог шага» в конце); техническая разметка остаётся.
 
 {normalization()}
+
 {END}
 
 """
 
 
-def build_one(step):
+def build_one(step, ctx):
     src_name, out_name, title, extra = STEPS[step]
     src = ARCHIVE / f"{src_name}.md"
     original = src.read_text(encoding="utf-8")
@@ -129,26 +156,30 @@ def build_one(step):
         "assembled_by: scripts/build_bcreq_system_track.py",
     ]
     fm_text = "\n".join(l for l in keep if l)
-    # Баннер меняем только в шапке; копия в блоке «по тесту» — история BL-156.
-    for old, new, limit in [(PUBLISHED_P0, DRAFT_P0, -1), (BANNER_OLD, BANNER_NEW, 1),
-                            ("- параметры: режим=<…>;", "- параметры: формат шагов=системный;", -1),
-                            (HUB_FLOATING, HUB_PINNED, -1)]:
-        if old == BANNER_OLD and old not in body:
-            raise SystemExit(f"{src.name}: нет баннера «{old[:40]}»")
-        body = body.replace(old, new, limit)
-    experimental, rest = body.lstrip("\n").split("\n", 1)
-    if not experimental.startswith("<!-- Experimental:"):
-        raise SystemExit(f"{src.name}: нет строки Experimental после frontmatter")
-    head, tail = rest.split("\n\n", 2)[0:2], rest.split("\n\n", 2)[2]
-    text = (f"---\n{fm_text}\n---\n"
-            f"<!-- Experimental: for {ISSUE}, no formal research yet -->\n"
-            + "\n\n".join(head) + "\n\n" + system_block(step, title, extra) + tail.rstrip("\n")
-            + "\n\n" + bcreq_handoff.render([step]))
-    return OUT / f"{out_name}.md", text
+    if body.count(ARCHIVE_BLOCK) != 1:
+        raise SystemExit(f"{src.name}: нет архивного блока «по тесту»")
+    body = body.split(ARCHIVE_BLOCK, 1)[0]
+    body, banners = BANNER.subn("", body.lstrip("\n"), count=1)
+    if banners != 1:
+        raise SystemExit(f"{src.name}: нет баннера архивной редакции")
+    for old, new, count in [("- параметры: режим=<…>;", "- параметры: формат шагов=системный;", None),
+                            (HUB_FLOATING, HUB_PINNED, None)] + CASE_EDITS.get(step, []):
+        if count is not None and body.count(old) != count:
+            raise SystemExit(f"{src.name}: «{old[:40]}» встречается {body.count(old)} раз, ожидалось {count}")
+        body = body.replace(old, new)
+    # Заголовок шага (первая строка «# …») остаётся первым; раздел формата — сразу за ним.
+    title_line, rest = body.split("\n", 1)
+    if not title_line.startswith("# "):
+        raise SystemExit(f"{src.name}: текст шага не начинается с заголовка «# …»")
+    block = steps_builder.render_block([step], ctx)[0]
+    text = (title_line + "\n\n" + system_block(step, title, extra) + rest.strip("\n")
+            + "\n\n" + block.rstrip("\n") + "\n\n" + bcreq_handoff.render([step]))
+    return OUT / f"{out_name}.md", f"---\n{fm_text}\n---\n\n" + project(text)
 
 
 def build():
-    return dict(build_one(step) for step in STEPS)
+    ctx = steps_builder.context()
+    return dict(build_one(step, ctx) for step in STEPS)
 
 
 def main(argv=None):

@@ -162,6 +162,54 @@ FRONTMATTER_LINKS = [
 ]
 
 
+#: Правки в исходниках сборщиков и в блоке-стражe Ш-А (experiments/issue_474/intake_guard.md):
+#: внесены руками в тот же коммит, что и сборщики; в реестр замен попадают отсюда.
+REGISTER_ONLY = [
+    ("U-01b", ["experiments/issue_474/intake_guard.md"], AMO_OLD, AMO_NEW, 1, "б",
+     "кейс → runtime golden/prompt-regressions.yaml PR-01; в промпте — принцип"),
+    ("U-11b", ["scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-2 системный)"], "передачу этих функций через коннектор.",
+     "передачу этих функций через интеграцию.", 1, "б", "кейс → runtime golden/prompt-regressions.yaml PR-02"),
+    ("U-13b", ["scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-2 системный)"], "минимальный набор D1, D2, D11 … оператор связи — D9",
+     "минимальный набор словарей раздела 1 … справочника профилей продуктов runtime (И-11)", 1, "б",
+     "соответствие профиль → словари → runtime taxonomy/product-profiles.yaml"),
+    ("U-18", ["scripts/build_bcreq_step_prompts.py (INTAKE_BODY)", "scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-А системный)"], "3. Сколько номеров Mango ВАТС?",
+     "3. Сколько номеров телефонии продукта?", 1, "б", "имя продукта → runtime taxonomy/product-profiles.yaml"),
+    ("U-19", ["scripts/build_bcreq_step_prompts.py (INTAKE_BODY)", "scripts/build_bcreq_system_track.py (CASE_EDITS, Ш-А системный)"], "- номера ВАТС: <…|UNKNOWN>",
+     "- номера телефонии продукта: <…|UNKNOWN>", 1, "б", "имя продукта → runtime taxonomy/product-profiles.yaml"),
+    ("D-13", ["scripts/build_bcreq_step_prompts.py"],
+     "> **Редакция по тесту (#427): действует до ADR обратного согласования.** Черновик BL-156 (issue #438): текст шага v0.1 ниже не изменён; блок «по тесту» — в конце файла.",
+     "— (баннер удалён; режим — поле `mode: by-test` frontmatter)", 1, "в", "frontmatter карточки, манифест сборки"),
+    ("D-14", ["scripts/build_bcreq_step_prompts.py"],
+     "<!-- bl-156: by-test --> ## Дополнение «по тесту» (BL-156): стандарты шага … Блок собран сборщиком … из [базового стандарта](…) … [реестра справочников runtime](…)",
+     "## Стандарты шага / Правила базового стандарта, профилей шага и контракты операций — с номером правила.", 1, "в",
+     "версии стандартов — prompts/drafts/manifest.json"),
+    ("D-15", ["scripts/build_bcreq_step_prompts.py"],
+     "**Приоритет.** Где правило ниже расходится с текстом шага выше (v0.1), действует текст v0.1; расхождение запиши в receipt.",
+     "**Приоритет.** Где правило ниже расходится с текстом шага выше, действует текст шага выше; расхождение запиши в receipt.", 1, "в",
+     "правило приоритета сохранено явно (комментарий 2 владельца)"),
+    ("D-16", ["scripts/build_bcreq_step_prompts.py"],
+     "Не внесены, потому что расходятся с текстом v0.1 (отчёт BL-156): БС-01, БС-04, БС-07, БС-09, БС-11, БС-13. Для них действует текст v0.1.",
+     "— (строка удалена)", 1, "в", "prompts/drafts/manifest.json → excluded_base_rules"),
+    ("D-17", ["scripts/build_bcreq_step_prompts.py"],
+     "**Запись решения гейта (К-34, RUN-0089, P05).** … Источник — стандарт гейтов, правило Г3: [`docs/contracts/bcreq-stage-gates.md`](…).",
+     "**Запись решения гейта (К-34).** … неполна (стандарт гейтов, правило Г3).", 1, "а, в",
+     "контракт гейтов → runtime (BL-241)"),
+    ("D-19", ["standards/bcreq-prompt-base-standard.md"], "БС-21: … блок заглушки раздела 4 реестра (сейчас только З-2; З-1 снята BL-163, З-3 и З-4 — BL-156а); заглушка …",
+     "БС-21: … блок заглушки раздела 4 реестра; заглушка … (история заглушек — колонка «Источник»)", 1, "в",
+     "колонка «Источник» стандарта, реестр справочников раздел 4"),
+    ("D-20", ["standards/bcreq-runtime-references.md"], "[СПРАВОЧНИК ОТСУТСТВУЕТ: <имя>; задача BL-155]",
+     "[СПРАВОЧНИК ОТСУТСТВУЕТ: <имя>]", 1, "в", "RFC #427, раздел 8.4; pr-ops/BACKLOG.md BL-155"),
+    ("D-21", ["scripts/build_bcreq_a_in.py (PROVENANCE)"], "LE-19: … модель выбирает сама (обратная связь RUN-0090) → …",
+     "LE-19: … модель выбирает сама → …", 1, "в", "RFC A-IN, таблица LE (источник урока остаётся там)"),
+    ("D-22", ["scripts/build_bcreq_system_track.py"], "> **Системный формат шагов (#490): текст редакции сайта 2.7.0.** История баннера: …; архивный блок «Дополнение «по тесту» (BL-156)»",
+     "— (баннер удалён; архивный блок заменён текущим блоком «Стандарты шага»)", 1, "в",
+     "архив prompts/archive/a-in-v2.7.0 (историческая сущность)"),
+    ("D-18", ["scripts/build_bcreq_step_prompts.py", "scripts/build_bcreq_a_in.py", "scripts/build_bcreq_system_track.py"],
+     "<!-- Experimental: for … issues/438|474|490, no formal research yet -->",
+     "— (строка удалена)", 1, "а, в", "статус draft — поле frontmatter `status`"),
+]
+
+
 def plan():
     """Список (путь, было, стало, id) после проверки числа вхождений."""
     out, errors = [], []
@@ -190,7 +238,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     if args.register:
         print("| ID | Класс | Файлы | Было | Стало | Куда перенесено |\n| --- | --- | --- | --- | --- | --- |")
-        for eid, files, old, new, _, cls, where in EDITS:
+        for eid, files, old, new, _, cls, where in EDITS + REGISTER_ONLY:
             cell = lambda s: (s.replace("\n", " ").replace("|", "\\|")[:160] or "—")
             print(f"| {eid} | {cls} | {', '.join(f'`{f}`' for f in files)} | {cell(old)} | {cell(new)} | {where} |")
         return 0
