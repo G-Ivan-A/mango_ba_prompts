@@ -141,7 +141,7 @@ def build(base_root):
                 out.append(f"Файлов группы: {len(files)}; удалено из дерева: {len(gone)}; "
                            f"нарушений в текущих версиях этих файлов: {len(left)}.")
                 out.append("")
-    return "\n".join(out) + "\n"
+    return "\n".join(line.rstrip() for block in out for line in block.split("\n")).rstrip("\n") + "\n"
 
 
 def rewrite_entries():

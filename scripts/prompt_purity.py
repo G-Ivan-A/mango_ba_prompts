@@ -80,4 +80,3 @@ def protected_counts(text, patterns, exempt=()):
         found = re.findall(regex, text)
         out[kind] = len([m for m in found if m not in exempt]) if kind == "rule_id" else len(found)
     return out
-
