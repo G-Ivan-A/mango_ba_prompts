@@ -36,6 +36,7 @@ cases = {
     "без носителей": lambda m: setattr(m, "CARRIERS", {}),
     "без правила полной ссылки": lambda m: setattr(m, "LINK", re.compile(r"(?!x)x")),
     "без коротких фрагментов (SHORT=100)": lambda m: setattr(m, "SHORT", 100),
+    "без маршрута карточек архива": lambda m: setattr(m, "ARCHIVE_CARD_FIELDS", ()),
 }
 bad = 0
 for name, patch in cases.items():

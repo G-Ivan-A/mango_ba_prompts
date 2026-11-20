@@ -124,14 +124,19 @@ class Auditor:
                 return True
         return False
 
-    def add(self, rel, line_no, cls, rule, match, line, where):
+    def add(self, rel, line_no, cls, rule, match, line, where, archived=False):
         snippet = line.strip()
         if len(snippet) > 160:
             pos = snippet.find(match)
             start = max(0, pos - 60)
             snippet = ("…" if start else "") + snippet[start:start + 150] + "…"
-        self.findings.append({"class": cls, "rule": rule, "file": rel, "line": line_no,
-                              "match": match, "where": where, "snippet": snippet})
+        item = {"class": cls, "rule": rule, "file": rel, "line": line_no,
+                "match": match, "where": where, "snippet": snippet}
+        if archived:
+            # Строка карточки архивного промпта в данных сайта: карта базы
+            # относит её к архиву, а не к записи сборщика (#495, роль Б, раунд 4).
+            item["archived"] = True
+        self.findings.append(item)
 
     # --- файлы -------------------------------------------------------------
     def audit_text_file(self, rel, classes, *, prompt_text, ballast_ids=None, live=False):
@@ -165,7 +170,7 @@ class Auditor:
                 if is_body:
                     found += self.check_ballast(line, {"BP-01"} if archived else None)
                 for cls, rule, match in found:
-                    self.add(rel, no, cls, rule, match, line, path)
+                    self.add(rel, no, cls, rule, match, line, path, archived)
 
     def is_archive_card(self, node):
         source = node.get("sourcePath") or node.get("relativePath") or ""

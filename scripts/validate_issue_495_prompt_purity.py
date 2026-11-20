@@ -195,12 +195,16 @@ class MutationTest(unittest.TestCase):
                            ("Стандарт промптов (ADR-001).", "BP-13"), ("Приоритет у RFC-A-IN-001.", "BP-13"),
                            # Роль Б, раунд 3, замечание 8: строчная запись и не-ASCII дефисы.
                            ("Приоритет у rfc-ain-001.", "BP-13"), ("Приоритет у RFC\u2011AIN\u2011001.", "BP-13"),
-                           ("Решение — ADR\u2010RT\u2010002.", "BP-13"), ("Решение — Adr\u2013001.", "BP-13")]:
+                           ("Решение — ADR\u2010RT\u2010002.", "BP-13"), ("Решение — Adr\u2013001.", "BP-13"),
+                           # Роль Б, раунд 4, замечания 2 и 3: длинное тире, мягкий перенос,
+                           # публичный RFC через дефис — тоже ID (пишется «RFC 2119»).
+                           ("Приоритет у RFC\u2014AIN\u2014001.", "BP-13"),
+                           ("Приоритет у RFC\u00adAIN\u00ad001.", "BP-13"), ("Ключевые слова — RFC-2119.", "BP-13")]:
             with self.subTest(line=line):
                 self.mutate_prompt(line)
                 self.assertIn(("c", rule, PROMPT), self.rules())
         # Слово без номера («RFC-шаблон», «адрес») — не ID: BP-13 не срабатывает.
-        self.mutate_prompt("Сохрани адрес и RFC-шаблон ответа.")
+        self.mutate_prompt("Сохрани адрес и RFC-шаблон ответа; ключевые слова — по RFC 2119.")
         self.assertNotIn(("c", "BP-13", PROMPT), self.rules())
 
     def test_spoke_path_in_prompt(self):
@@ -427,6 +431,38 @@ class BaselineMapTest(unittest.TestCase):
         self.assertNotEqual(self.register(step, 1, "Промпт 0"), "A-07")
         self.assertEqual(self.register(step, 2, "ADR"), "D-13")
         self.assertEqual(self.register(intake, 3, "ADR"), "D-22")
+
+    def test_archive_card_line_goes_to_archive(self):
+        # Строка шапки блока «по тесту» на карточке архива 2.7.0 в данных сайта —
+        # копия файла архива (M-02, M-03), а не запись сборщика D-14; та же строка
+        # в карточке действующего промпта — D-14 (роль Б, раунд 4).
+        url = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/x.md"
+        site = Path(self.dir.name) / "site/data/prompts.json"
+        site.parent.mkdir(parents=True)
+        site.write_text(json.dumps({"prompts": [{"sourcePath": "prompts/hand.md", "content": "x"}]}), encoding="utf-8")
+        for line, match, rule, group in (("<!-- bl-156: by-test -->", "<!-- bl-156: by-test -->", "BP-01", "M-02"),
+                                         (f"Источник — [стандарт]({url}).", url, "A-PRIVATE", "M-03")):
+            f = {"file": "site/data/prompts.json", "line": 1, "snippet": line, "match": match,
+                 "rule": rule, "where": "prompts[].content"}
+            self.assertEqual(self.mapper.classify(dict(f, archived=True), "site_data"), group)
+            self.assertNotEqual(self.mapper.classify(f, "site_data"), group)
+        self.assertEqual(self.mapper.classify(
+            {"file": "site/data/prompts.json", "line": 1, "snippet": "<!-- bl-156: by-test -->",
+             "match": "<!-- bl-156: by-test -->", "rule": "BP-01", "where": "prompts[].content"}, "site_data"), "D-14")
+
+    def test_auditor_marks_archive_card_findings(self):
+        root = Path(self.dir.name)
+        url = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/x.md"
+        cards = {"prompts": [{"sourcePath": "prompts/archive/old.md", "content": f"[a]({url})"},
+                             {"sourcePath": "prompts/hand.md", "content": f"[a]({url})"}]}
+        (root / "site/data").mkdir(parents=True, exist_ok=True)
+        (root / "standards").mkdir(exist_ok=True)
+        shutil.copy(ROOT / "standards/bcreq-runtime-references.md", root / "standards")
+        (root / "site/data/prompts.json").write_text(json.dumps(cards), encoding="utf-8")
+        auditor = audit.Auditor(root, audit.load_policy())
+        auditor.audit_site_file("site/data/prompts.json", {"a"}, ["prompts[].content"], True)
+        flags = [bool(f.get("archived")) for f in auditor.findings if f["rule"] == "A-PRIVATE"]
+        self.assertEqual(flags, [True, False])
 
 
 class RegistryAndBacklogTest(unittest.TestCase):

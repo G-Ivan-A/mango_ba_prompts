@@ -1197,7 +1197,7 @@ issue: "#490"
 - Класс: в
 - Что: scripts/build_bcreq_step_prompts.py: «<!-- bl-156: by-test -->»
 - Исправление / куда перенесено: версии стандартов — prompts/drafts/manifest.json
-- Нарушений базы в группе: 504
+- Нарушений базы в группе: 462
 
 Файлы: `scripts/build_bcreq_step_prompts.py`
 
@@ -1232,7 +1232,7 @@ RFC #427, раздел 9.3
 - V-0275 `prompts/drafts/bcreq-constitution-governance-oneshot.md:497` (body) BP-07 «сборщик» — `Блок собран сборщиком 'scripts/build_bcreq_step_prompts.py' по`
 - V-0276 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
 - V-0277 `prompts/drafts/bcreq-constitution-governance-oneshot.md:498` (body) BP-02 «#427» — `[RFC #427, раздел 9.3](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#93-как-промпт-собираетс…`
-- … ещё 496 (полный список — `audit/baseline-map.json`)
+- … ещё 454 (полный список — `audit/baseline-map.json`)
 
 ## D-15
 
@@ -1294,7 +1294,7 @@ RFC #427, раздел 9.3
 - Класс: а, в
 - Что: scripts/build_bcreq_step_prompts.py: «**Запись решения гейта (К-34, RUN-0089, P05).** … Источник — стандарт гейтов, правило Г3:»
 - Исправление / куда перенесено: правило изложено в шаге целиком (поля записи, условие неполноты), отсылка к стандарту гейтов снята; происхождение К-34 — runs/2026/RUN-0089/outputs/report.md (P05), правило Г3 — docs/contracts/bcreq-stage-gates.md; в runtime выносить нечего
-- Нарушений базы в группе: 29
+- Нарушений базы в группе: 27
 
 Файлы: `scripts/build_bcreq_step_prompts.py`
 
@@ -1321,14 +1321,14 @@ RFC #427, раздел 9.3
 - V-0734 `prompts/drafts/bcreq-release-readiness-oneshot.md:162` (body) A-SPOKE-PATH «docs/contracts/bcreq-stage-gates.md» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
 - V-0865 `prompts/drafts/bcreq-uc-modeling-stepwise.md:300` (body) BP-04 «RUN-0» — `**Запись решения гейта (К-34, RUN-0089, P05).** Когда человек решил, добавь запись в 8.5`
 - V-0866 `prompts/drafts/bcreq-uc-modeling-stepwise.md:304` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `['docs/contracts/bcreq-stage-gates.md'](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md).`
-- … ещё 21 (полный список — `audit/baseline-map.json`)
+- … ещё 19 (полный список — `audit/baseline-map.json`)
 
 ## D-18
 
 - Класс: а, в
 - Что: scripts/build_bcreq_step_prompts.py, scripts/build_bcreq_a_in.py, scripts/build_bcreq_system_track.py: «<!-- Experimental: for … issues/438|474|490, no formal research yet -->»
 - Исправление / куда перенесено: статус draft — поле frontmatter `status`
-- Нарушений базы в группе: 234
+- Нарушений базы в группе: 222
 
 Файлы: `scripts/build_bcreq_step_prompts.py`, `scripts/build_bcreq_a_in.py`, `scripts/build_bcreq_system_track.py`
 
@@ -1356,7 +1356,7 @@ RFC #427, раздел 9.3
 - V-0295 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-01 «<!--» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
 - V-0296 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-04 «BL-1» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
 - V-0297 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:17` (body) BP-08 «Experimental» — `<!-- Experimental: for BL-156 https://github.com/G-Ivan-A/mango_ba_prompts/issues/438, no formal research yet -->`
-- … ещё 226 (полный список — `audit/baseline-map.json`)
+- … ещё 214 (полный список — `audit/baseline-map.json`)
 
 ## D-19
 
@@ -2124,9 +2124,9 @@ AIN-02.
 ## M-02
 
 - Класс: в
-- Что: Ручные исходники: служебные HTML-комментарии удалены
+- Что: Ручные исходники, архив и карточки архива в данных сайта: служебные HTML-комментарии удалены
 - Исправление / куда перенесено: experiments/issue_495/clean_sources.py → prompt_purity.project (strip_comments)
-- Нарушений базы в группе: 58
+- Нарушений базы в группе: 88
 
 Локаторы базы (выборка):
 - V-0006 `prompts/bcreq-constitution-governance-oneshot.md:12` (body) BP-01 «<!--» — `<!-- issue-474:entry -->`
@@ -2137,16 +2137,16 @@ AIN-02.
 - V-0064 `prompts/bcreq-constraints-documentation-stepwise.md:214` (body) BP-01 «<!--» — `<!-- /issue-395: runtime-fallback -->`
 - V-0065 `prompts/bcreq-context-understanding-stepwise.md:12` (body) BP-01 «<!--» — `<!-- issue-474:entry -->`
 - V-0069 `prompts/bcreq-context-understanding-stepwise.md:85` (body) BP-01 «<!--» — `<!-- /issue-474:entry -->`
-- … ещё 50 (полный список — `audit/baseline-map.json`)
+- … ещё 80 (полный список — `audit/baseline-map.json`)
 
-Файлов группы: 21; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
+Файлов группы: 22; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
 ## M-03
 
 - Класс: а
-- Что: Архив 2.7.0 и прежних редакций: ссылки на спицу → подпись; хэши оригинала — в манифесте архива
-- Исправление / куда перенесено: clean_sources.py; prompts/archive/a-in-v2.7.0/manifest.json
-- Нарушений базы в группе: 76
+- Что: Архив 2.7.0 и прежних редакций и его карточки в данных сайта: ссылки на спицу → подпись; хэши оригинала — в манифесте архива
+- Исправление / куда перенесено: clean_sources.py; prompts/archive/a-in-v2.7.0/manifest.json; карточки — generate-pages-data.mjs
+- Нарушений базы в группе: 166
 
 Локаторы базы (выборка):
 - V-1785 `prompts/archive/constraints-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…н набором BCREQ: [bcreq-constraints-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documenta…`
@@ -2157,9 +2157,9 @@ AIN-02.
 - V-1790 `prompts/archive/fr-documentation-oneshot.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
 - V-1791 `prompts/archive/fr-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
 - V-1792 `prompts/archive/fr-documentation-stepwise.md:10` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…пт заменён набором BCREQ: [bcreq-fr-documentation-stepwise](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-step…`
-- … ещё 68 (полный список — `audit/baseline-map.json`)
+- … ещё 158 (полный список — `audit/baseline-map.json`)
 
-Файлов группы: 22; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
+Файлов группы: 23; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
 ## M-04
 
@@ -2186,7 +2186,7 @@ AIN-02.
 - Класс: а
 - Что: Ссылки на спицу, которые строят сами сборщики (REPO_BLOB, AIN_BLOB, SYSTEM_BLOB, ISSUE): проекция на выходе сборщика → подпись ссылки
 - Исправление / куда перенесено: prompt_purity.project в build_bcreq_step_prompts, build_bcreq_a_in, build_bcreq_system_track; сторож test_builders_check
-- Нарушений базы в группе: 64
+- Нарушений базы в группе: 54
 
 Локаторы базы (выборка):
 - V-0227 `prompts/drafts/bcreq-constitution-governance-oneshot.md:169` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md), в системном —`
@@ -2197,9 +2197,9 @@ AIN-02.
 - V-0261 `prompts/drafts/bcreq-constitution-governance-oneshot.md:317` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `[AIN-01…AIN-24](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-a-in-execution.md)`
 - V-0283 `prompts/drafts/bcreq-constitution-governance-oneshot.md:555` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
 - V-0327 `prompts/drafts/bcreq-constraints-documentation-stepwise.md:286` (body) A-PRIVATE «https://github.com/G-Ivan-A/mango_ba_prompts» — `…очников и уровни доверия — справочник И-7 [реестра runtime](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-runtime-references.…`
-- … ещё 56 (полный список — `audit/baseline-map.json`)
+- … ещё 46 (полный список — `audit/baseline-map.json`)
 
-Файлов группы: 19; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
+Файлов группы: 18; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
 ## G-01
 
@@ -2246,7 +2246,7 @@ AIN-02.
 - Класс: а, б, в
 - Что: Данные сайта: тела промптов и поля карточек — только копии нарушений ручных источников (то же окно ±15 символов)
 - Исправление / куда перенесено: node scripts/generate-pages-data.mjs
-- Нарушений базы в группе: 853
+- Нарушений базы в группе: 799
 
 Локаторы базы (выборка):
 - V-2719 `site/data/prompts.json:15` (prompts[].content) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
@@ -2257,7 +2257,7 @@ AIN-02.
 - V-2725 `site/data/prompts.json:143` (prompts[].content) A-RELATIVE «../bcreq-sections/README.md» — `[мета-стандарты разделов](../bcreq-sections/README.md).`
 - V-2726 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «README.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
 - V-2727 `site/data/prompts.json:7` (prompts[].body) A-RELATIVE «../../prompts/bcreq-in-understanding-oneshot.md» — `[инвентарь](README.md). Текущий аналог: [bcreq-in-understanding-oneshot.md](../../prompts/bcreq-in-understanding-oneshot.md);`
-- … ещё 845 (полный список — `audit/baseline-map.json`)
+- … ещё 791 (полный список — `audit/baseline-map.json`)
 
 Файлов группы: 2; удалено из дерева: 0; нарушений в текущих версиях этих файлов: 0.
 
