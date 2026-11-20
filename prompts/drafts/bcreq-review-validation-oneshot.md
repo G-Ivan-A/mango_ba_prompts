@@ -2,13 +2,13 @@
 id: mango-bcreq-review-validation-oneshot-by-test
 title: "BCREQ Ш-В: валидация документа (по тесту)"
 status: draft
-version: 0.3
-updated: 2026-11-04
+version: 0.4
+updated: 2026-11-20
 temperature: 0.1
 operation: validation
 processes: ["Валидация второй ролью"]
 based_on: prompts/bcreq-review-validation-oneshot.md
-based_on_sha256: b6a6af0bd8abfa176e6d5a5aaa80d8b110a5795f42eb7c5d9aecfa7f14ed0b3b
+based_on_sha256: ed725564b78cf2aaab65da18847c2f065e717cae45b2f8b14d70740db205ac9b
 mode: by-test
 steps: [Ш-В]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -163,7 +163,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

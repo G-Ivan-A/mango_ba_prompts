@@ -2,13 +2,13 @@
 id: mango-bcreq-nfr-documentation-stepwise-by-test
 title: "BCREQ Ш-4 (2.5): НФТ (по тесту)"
 status: draft
-version: 0.2
-updated: 2026-11-18
+version: 0.3
+updated: 2026-11-20
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-nfr-documentation-stepwise.md
-based_on_sha256: bf565bfa0e6138ea06b525d7e1258721c6b10b04b71c8e8bdad35b2eab393ada
+based_on_sha256: 588b0cbd76431e9df176575f9f2b527a3ff10f64542caf048e999cb1d20c428b
 mode: by-test
 steps: [Ш-4]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -145,7 +145,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

@@ -39,10 +39,9 @@ DRAFT_P0 = BLOB + "prompts/drafts/bcreq-constitution-governance-oneshot.md"
 NORMALIZATION = ROOT / "docs/ba-processes/bcreq-evidence-normalization.md"
 BEGIN, END = "<!-- issue-490:system -->", "<!-- /issue-490:system -->"
 # Issue #488: метамодель вынесена из Хаба; плавающая ссылка архива 2.7.0
-# закрепляется на коммите приёмки E6 в ba-ai-metamodel.
-HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
-HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
-              "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
+# закрепляется на коммите приёмки E6 в ba-ai-metamodel. Адреса — общие со
+# сборщиком шагов, чтобы оба формата закрепляли ссылку одинаково.
+from build_bcreq_step_prompts import HUB_FLOATING, HUB_PINNED  # noqa: E402
 BANNER_OLD = "> **Редакция по тесту (#427): действует до ADR обратного согласования.**"
 BANNER_NEW = ("> **Системный формат шагов (#490): текст редакции сайта 2.7.0.** "
               "История баннера: «Редакция по тесту (#427): действует до ADR обратного согласования».")

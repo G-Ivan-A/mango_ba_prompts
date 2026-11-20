@@ -2,13 +2,13 @@
 id: mango-bcreq-fr-documentation-stepwise-by-test
 title: "BCREQ Ш-3 (2.3/2.10): ФТ (по тесту)"
 status: draft
-version: 0.5
-updated: 2026-11-18
+version: 0.6
+updated: 2026-11-20
 temperature: 0.1
 operation: documentation
 processes: ["Требования и предварительное согласование"]
 based_on: prompts/bcreq-fr-documentation-stepwise.md
-based_on_sha256: 04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337
+based_on_sha256: 011ca13cbaf140d783efebf569adf538ed4e1bd2ffba10f2f8e1019dceb4c5d1
 mode: by-test
 steps: [Ш-3]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -274,7 +274,7 @@ provenance не применяется; происхождение и цитат
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.
