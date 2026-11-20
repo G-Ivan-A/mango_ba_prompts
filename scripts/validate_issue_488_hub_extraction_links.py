@@ -6,12 +6,23 @@ G-Ivan-A/ba-ai-metamodel (Hub B-249) and deletes its working copies, so links in
 those paths on a branch of the Hub (`blob/main/...`) stop resolving. Links pinned to a
 Hub SHA keep working. A link into the moved tree goes to ba-ai-metamodel by SHA.
 
-LOCKED lists the byte-locked files (published prompts, drafts, archive, measured
-run inputs and transcripts, site data) that may keep floating links until the prompt
-release of issue #488. A count may only go down; when a file is fixed, drop its row.
+The prompt release of issue #488 pinned the link in the published prompts
+(`prompts/bcreq-*.md`, new minor versions), rebuilt the step drafts and the site
+data. The step builder pins the link itself (`HUB_FLOATING` → `HUB_PINNED`), so a
+new version built from a published text with the floating link does not bring it
+back; `test_builder_pins` proves it on the measured texts.
+
+HISTORY lists the files that keep a floating link for good (issue #488, item 2):
+the 2.7.0 archive, the inputs of measured runs, the transcripts, the archive cards
+of the site catalog and the revert layer of the release itself. They are records of
+what was sent or measured; rewriting them would falsify the history. A count may
+only go down; any other file must not have a floating link.
 """
+import importlib.util
+import json
 import re
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -23,35 +34,12 @@ LINK = re.compile(
     re.I,
 )
 SHA40 = re.compile(r"^[0-9a-f]{40}$")
-LOCKED = {
+HISTORY = {
+    # Архив редакции 2.7.0: байт в байт исходники коммита sourceCommit.
     "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md": 1,
     "prompts/archive/a-in-v2.7.0/bcreq-in-understanding-oneshot.md": 1,
     "prompts/archive/a-in-v2.7.0/bcreq-products-impact-analysis-stepwise.md": 1,
-    "prompts/bcreq-constitution-governance-oneshot.md": 1,
-    "prompts/bcreq-constraints-documentation-stepwise.md": 1,
-    "prompts/bcreq-context-understanding-stepwise.md": 1,
-    "prompts/bcreq-core-documentation-oneshot.md": 1,
-    "prompts/bcreq-extra-risk-analysis-stepwise.md": 1,
-    "prompts/bcreq-fr-documentation-stepwise.md": 1,
-    "prompts/bcreq-in-understanding-oneshot.md": 1,
-    "prompts/bcreq-nfr-documentation-stepwise.md": 1,
-    "prompts/bcreq-orr-solution-design-stepwise.md": 1,
-    "prompts/bcreq-products-impact-analysis-stepwise.md": 1,
-    "prompts/bcreq-review-validation-oneshot.md": 1,
-    "prompts/bcreq-scenarios-modeling-oneshot.md": 1,
-    "prompts/bcreq-uc-modeling-stepwise.md": 1,
-    "prompts/bcreq-work-solution-design-oneshot.md": 1,
-    "prompts/drafts/bcreq-constitution-governance-oneshot.md": 1,
-    "prompts/drafts/bcreq-constraints-documentation-stepwise.md": 1,
-    "prompts/drafts/bcreq-context-understanding-stepwise.md": 1,
-    "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md": 1,
-    "prompts/drafts/bcreq-fr-documentation-stepwise.md": 1,
-    "prompts/drafts/bcreq-nfr-documentation-stepwise.md": 1,
-    "prompts/drafts/bcreq-orr-solution-design-stepwise.md": 1,
-    "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": 1,
-    "prompts/drafts/bcreq-review-validation-oneshot.md": 1,
-    "prompts/drafts/bcreq-scenarios-modeling-oneshot.md": 1,
-    "prompts/drafts/bcreq-uc-modeling-stepwise.md": 1,
+    # Входы измеренных прогонов: текст, который получила модель.
     "runs/2026/RUN-0084/inputs/prompt-A0.md": 1,
     "runs/2026/RUN-0084/inputs/prompt-A1.md": 1,
     "runs/2026/RUN-0084/inputs/prompt-A2.md": 1,
@@ -65,10 +53,13 @@ LOCKED = {
     "runs/2026/RUN-0086/inputs/prompt-S6-C.md": 1,
     "runs/2026/RUN-0087/inputs/prompt-B.md": 1,
     "runs/2026/RUN-0087/inputs/prompt-C.md": 1,
+    # Транскрипты прогонов.
     "runs/2026/RUN-0088/outputs/steps/Ш-7/transcript.md": 1,
     "runs/2026/RUN-0089/outputs/T-transcript.md": 13,
-    "site/data/prompts.json": 34,
-    "site/data/test-kit.json": 12,
+    # Карточки архива 2.7.0 в каталоге сайта: content и body трёх файлов выше.
+    "site/data/prompts.json": 6,
+    # Обратимый слой релиза: поле floating и «before» 25 правок — измеренный текст.
+    "experiments/issue_488/prompt-edits.json": 26,
 }
 
 
@@ -90,16 +81,57 @@ def floating():
     return found
 
 
+def load(name, path):
+    spec = importlib.util.spec_from_file_location(name, path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def check_builder_pins(errors):
+    """Build the drafts from the measured texts (floating link) and expect pinned output."""
+    sys.path.insert(0, str(ROOT / "scripts"))
+    builder = load("step_builder_488_check", ROOT / "scripts/build_bcreq_step_prompts.py")
+    layer = load("p488_check", ROOT / "experiments/issue_488/prompt_changes.py")
+    read = builder.read
+
+    def measured(path):
+        text = read(path)
+        rel = path.relative_to(ROOT).as_posix()
+        return layer.revert(rel, text) if rel.startswith("prompts/bcreq-") else text
+
+    builder.read = measured
+    try:
+        outputs = builder.build_all()
+    finally:
+        builder.read = read
+    pinned = 0
+    for path, text in outputs.items():
+        refs = [ref for ref in LINK.findall(text) if not SHA40.match(ref.lower())]
+        if refs:
+            errors.append(f"{path.relative_to(ROOT)}: the step builder kept {len(refs)} floating Hub link(s)")
+        pinned += path.name == "manifest.json" and sum(
+            d["hub_main_to_metamodel_sha"] for d in json.loads(text)["drafts"])
+    if pinned != 11:
+        errors.append(f"step builder pinned {pinned} draft link(s) from the measured texts, expected 11")
+
+
 def main():
     errors = []
     for rel, count in sorted(floating().items()):
-        limit = LOCKED.get(rel, 0)
+        limit = HISTORY.get(rel, 0)
         if count > limit:
             errors.append(f"{rel}: {count} floating Hub link(s) into a moved path (allowed {limit}); "
                           "pin to https://github.com/G-Ivan-A/ba-ai-metamodel/blob/<sha>/...")
+    check_builder_pins(errors)
+    release = subprocess.run([sys.executable, str(ROOT / "experiments/issue_488/release.py"), "--check"],
+                             capture_output=True, text=True)
+    if release.returncode:
+        errors.append(release.stdout + release.stderr)
     if errors:
         raise SystemExit("issue #488 hub extraction links: FAIL\n" + "\n".join(errors))
-    print(f"issue #488 hub extraction links: OK ({len(LOCKED)} locked file(s) pending the prompt release)")
+    print(f"issue #488 hub extraction links: OK (prompts, drafts and site pinned; "
+          f"{len(HISTORY)} historical file(s); builder pins measured texts)")
 
 
 if __name__ == "__main__":
