@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 1.1.0
+version: 1.2.0
 updated: 2026-11-20
 temperature: 0.1
 ai-generated: true
@@ -91,10 +91,21 @@ related_issues:
 - операциональные пояснения: «читай "Промпт ДОЛЖЕН" как "ты ДОЛЖЕН"»,
   UNKNOWN → `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, приоритет текста шага над общим блоком
   (служебная рамка блока удаляется, правило приоритета остаётся явно);
-- локаторы и цитаты runtime, ссылки на runtime по закреплённому SHA.
+- локаторы и цитаты runtime, ссылки на runtime по закреплённому SHA;
+- универсальные нормы со значениями, одинаковыми для любой задачи
+  (минимальный набор словарей D1, D2, D11): в runtime уходит только
+  соответствие «профиль продукта → словари» (CT-09).
 
 Общеупотребительные термины и имя организации-владельца процесса не являются
 кейс-лексикой (`generic_allowed` в JSON).
+
+Сторож сверхчистки — `protected_markers` в JSON: число защищённых маркеров
+(ID правил, `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, ACCESS_GAP, «Состояние BCREQ», «Пакет
+памяти проекта», «КОНЕЦ», «Итог шага», «На согласование БА», «Промпт ДОЛЖЕН»,
+receipt, стоп-краны) в каждом промпте и черновике не меньше, чем в базе
+(снимок `experiments/issue_495/audit/protected-baseline.json`). Исключение —
+ID правил, не внесённых в промпты по решению базового стандарта: они
+перечислены с причиной в `prompts/drafts/manifest.json` (`excluded_base_rules`).
 
 ## 5. Контур и исключения
 
@@ -126,6 +137,8 @@ python3 scripts/bcreq_handoff.py && python3 scripts/build_bcreq_a_in.py \
 | ЧП-3 | `scripts/audit_prompt_purity.py` (класс в, шаблоны BP) | HTML-комментарий, отсылка к BL/issue |
 | ЧП-4 | сборщики `--check`, `experiments/issue_495/build_prompt_edits.py --check` | ручная правка сгенерированного черновика |
 | ЧП-6 | `scripts/validate_issue_495_prompt_purity.py` | версия 2.10.0, откат версии ниже 2.9.0 |
+| Защита от сверхчистки (раздел 4) | `scripts/validate_issue_495_prompt_purity.py` (`OverCleaningTest`, снимок `protected-baseline.json`) | удаление `[ТРЕБУЕТСЯ УТОЧНЕНИЕ]`, «Итог шага», ID правила, ACCESS_GAP или файла промпта |
+| ЧП-2, CT-09 | `scripts/audit_prompt_purity.py` | соответствие «<продукт> — D…» в промпте (универсальный минимальный набор D1, D2, D11 — не кейс) |
 
 Все проверки — в `scripts/validate_issue_495_prompt_purity.py`, его находит
 `scripts/validate_all.py`. Аудит с отчётом:

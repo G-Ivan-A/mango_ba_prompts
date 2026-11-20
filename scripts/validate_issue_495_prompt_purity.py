@@ -169,6 +169,13 @@ class MutationTest(unittest.TestCase):
                 self.mutate_prompt(f"Проверь интеграцию: {token} и смежные данные.")
                 self.assertIn(("b", rule, PROMPT), self.rules())
 
+    def test_profile_mapping_vs_minimal_set(self):
+        # CT-09 — соответствие «профиль → словари»; универсальный минимальный набор — не кейс.
+        self.mutate_prompt("Словари профиля: оператор связи — D9.")
+        self.assertIn(("b", "CT-09", PROMPT), self.rules())
+        self.mutate_prompt("Возьми минимальный набор D1, D2, D11.")
+        self.assertEqual(self.box.run(), [])
+
     def test_ballast_in_prompt(self):
         for line, rule in [("<!-- Experimental: for BL-156 -->", "BP-01"), ("Добавлено по BL-123.", "BP-04"),
                            ("Редакция по тесту.", "BP-06"), ("См. issue про шаг.", "BP-03")]:
@@ -189,6 +196,61 @@ class MutationTest(unittest.TestCase):
         found = self.rules()
         for rule in [("c", "BP-01", SITE), ("b", "CT-03", SITE), ("b", "CT-01", SITE)]:
             self.assertIn(rule, found)
+
+
+class OverCleaningTest(unittest.TestCase):
+    """Защита от сверхчистки (комментарий 2 владельца, раздел 3; стандарт, раздел 4).
+
+    Защищённые маркеры (ID правил, ``[ТРЕБУЕТСЯ УТОЧНЕНИЕ]``, ACCESS_GAP,
+    «Состояние BCREQ», «Итог шага», «На согласование БА», receipt, стоп-краны…)
+    в каждом промпте и черновике — не меньше, чем в базе (снимок
+    ``experiments/issue_495/audit/protected-baseline.json``).
+    """
+
+    SNAPSHOT = "experiments/issue_495/audit/protected-baseline.json"
+
+    @classmethod
+    def setUpClass(cls):
+        cls.policy = audit.load_policy(ROOT / POLICY)["protected_markers"]
+        rel, key = cls.policy["exempt_ids_from"].split("#")
+        cls.exempt = sorted(json.loads(read(rel))[key])
+        cls.base = json.loads(read(cls.SNAPSHOT))
+
+    def drops(self, texts):
+        out = []
+        for rel, before in self.base["files"].items():
+            if rel not in texts:
+                out.append(f"{rel}: файл удалён")
+                continue
+            after = PURITY.protected_counts(texts[rel], self.policy["patterns"], self.exempt)
+            out += [f"{rel}: {kind} {n} → {after[kind]}" for kind, n in before.items() if after[kind] < n]
+        return out
+
+    def current(self):
+        return {rel: read(rel) for rel in self.base["files"] if (ROOT / rel).exists()}
+
+    def test_no_protected_marker_lost(self):
+        self.assertEqual(self.base["exempt_ids"], self.exempt, "снимок снят с другим перечнем исключений")
+        self.assertGreaterEqual(len(self.base["files"]), 60)
+        self.assertEqual(self.drops(self.current()), [])
+
+    def test_exempt_ids_keep_their_home(self):
+        # Исключённые правила не исчезают: ID и причина — в манифесте, текст — в базовом стандарте.
+        reasons = json.loads(read(self.policy["exempt_ids_from"].split("#")[0]))["excluded_base_rules"]
+        standard = read("standards/bcreq-prompt-base-standard.md")
+        for rid in self.exempt:
+            self.assertTrue(reasons[rid].strip(), rid)
+            self.assertRegex(standard, rf"\b{rid}\b", rid)
+
+    def test_mutations_fail(self):
+        texts = self.current()
+        rel = "prompts/drafts/bcreq-fr-documentation-stepwise.md"
+        for marker in ["[ТРЕБУЕТСЯ УТОЧНЕНИЕ]", "Итог шага", "АД-8", "ACCESS_GAP"]:
+            with self.subTest(marker=marker):
+                self.assertIn(marker, texts[rel])
+                mutated = dict(texts, **{rel: texts[rel].replace(marker, "…", 1)})
+                self.assertTrue(any(d.startswith(rel) for d in self.drops(mutated)), marker)
+        self.assertTrue(self.drops({k: v for k, v in texts.items() if k != rel}))
 
 
 class VersionTest(unittest.TestCase):

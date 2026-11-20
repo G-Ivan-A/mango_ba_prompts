@@ -67,3 +67,17 @@ def project(text):
         return out
     trail = len(text) - len(text.rstrip("\n"))
     return out.rstrip("\n") + "\n" * trail
+
+
+def protected_counts(text, patterns, exempt=()):
+    """Число защищённых маркеров (стандарт чистоты, раздел 4) по видам.
+
+    ``exempt`` — ID правил, которые не считаются (исключённые правила базового
+    стандарта, названные в манифесте черновиков).
+    """
+    out = {}
+    for kind, regex in patterns.items():
+        found = re.findall(regex, text)
+        out[kind] = len([m for m in found if m not in exempt]) if kind == "rule_id" else len(found)
+    return out
+

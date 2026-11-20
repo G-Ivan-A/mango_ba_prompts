@@ -1,6 +1,6 @@
-Файлов в контуре: 151; нарушений: 4584
+Файлов в контуре: 151; нарушений: 4542
   (a) приватные/незакреплённые ссылки: 2376
-  (b) кейс-специфика: 338
+  (b) кейс-специфика: 296
   (c) неисполнимый балласт: 1870
 По правилам:
   a A-PRIVATE: 1674
@@ -11,7 +11,7 @@
   b CT-04: 27
   b CT-05: 28
   b CT-06: 3
-  b CT-09: 84
+  b CT-09: 42
   c BP-01: 555
   c BP-02: 298
   c BP-03: 49
@@ -67,7 +67,7 @@
   prompts/bcreq-in-understanding-oneshot.md: 10/2/4
   prompts/bcreq-nfr-documentation-stepwise.md: 3/0/2
   prompts/bcreq-orr-solution-design-stepwise.md: 5/0/2
-  prompts/bcreq-products-impact-analysis-stepwise.md: 7/17/4
+  prompts/bcreq-products-impact-analysis-stepwise.md: 7/11/4
   prompts/bcreq-review-validation-oneshot.md: 4/0/2
   prompts/bcreq-scenarios-modeling-oneshot.md: 4/0/2
   prompts/bcreq-uc-modeling-stepwise.md: 3/0/2
@@ -104,7 +104,7 @@
   prompts/drafts/bcreq-intake-questionnaire-stepwise.md: 11/4/35
   prompts/drafts/bcreq-nfr-documentation-stepwise.md: 10/0/34
   prompts/drafts/bcreq-orr-solution-design-stepwise.md: 12/0/33
-  prompts/drafts/bcreq-products-impact-analysis-stepwise.md: 15/17/36
+  prompts/drafts/bcreq-products-impact-analysis-stepwise.md: 15/11/36
   prompts/drafts/bcreq-release-readiness-oneshot.md: 9/0/36
   prompts/drafts/bcreq-review-validation-oneshot.md: 11/0/30
   prompts/drafts/bcreq-scenarios-modeling-oneshot.md: 11/0/31
@@ -112,7 +112,7 @@
   prompts/drafts/manifest.json: 1/0/0
   prompts/drafts/system/bcreq-context-understanding-system.md: 13/2/39
   prompts/drafts/system/bcreq-intake-questionnaire-system.md: 11/4/39
-  prompts/drafts/system/bcreq-products-impact-analysis-system.md: 15/17/40
+  prompts/drafts/system/bcreq-products-impact-analysis-system.md: 15/11/40
   prompts/session-debug-documentation-oneshot.md: 7/0/2
   site/data/a-in-kit.json: 144/58/240
   site/data/bcreq-flow.json: 43/0/0
@@ -120,11 +120,11 @@
   site/data/patterns.json: 16/0/0
   site/data/process-tree.json: 42/0/0
   site/data/processes.json: 48/0/0
-  site/data/prompts.json: 924/63/132
+  site/data/prompts.json: 924/51/132
   site/data/roadmap.json: 1/0/0
   site/data/stats.json: 8/0/0
   site/data/step-handoff.json: 1/3/0
-  site/data/test-kit.json: 253/56/611
+  site/data/test-kit.json: 253/44/611
   standards/bcreq-manual-classes/01-intake.md: 6/1/0
   standards/bcreq-manual-classes/02-normalize.md: 6/0/0
   standards/bcreq-manual-classes/03-ambiguity.md: 6/0/0

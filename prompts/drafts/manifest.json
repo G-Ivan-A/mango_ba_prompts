@@ -148,7 +148,7 @@
         "Ш-2"
       ],
       "based_on": "prompts/bcreq-products-impact-analysis-stepwise.md",
-      "based_on_sha256": "52dd5d1a29d2f786f1695b4ac783bc74bbb31c5cad05e644a2ed3973e52f2074",
+      "based_on_sha256": "628447a39a2a4450e9740156309b084220a4f430fec3e471dfb0955b94f4f0b9",
       "runtime_main_to_sha": 0,
       "profiles": [
         "EXTRACT",
