@@ -480,6 +480,7 @@ provenance не применяется; происхождение и цитат
 - **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).
 - **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 - **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).
+- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.
 
 Как читать каталог (реестр, раздел 2.2; RFC-RT-001, звено М-4):
 
@@ -499,6 +500,16 @@ provenance не применяется; происхождение и цитат
 6. Каталог не утверждает доступность функции клиенту
    (`availability: not-established-by-taxonomy`): доступность — только
    из источника задачи или БЗ.
+```
+
+Заглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.
+
+З-5 — условие: пока РТ-8 не слита и SHA не обновлён.
+
+```text
+[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]
+Действуй без образца: не придумывай значения, которых нет во входе;
+пометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.
 ```
 
 ## Итог шага для БА

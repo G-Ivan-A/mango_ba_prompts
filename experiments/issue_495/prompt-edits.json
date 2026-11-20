@@ -116,6 +116,20 @@
     }
    ]
   },
+  "prompts/archive/a-in-v2.7.0/README.md": {
+   "sha256_before": "1b79442c5ed5b16c68838113019bb4ba1623609aa705e9c2a57f1a50806c1fab",
+   "sha256_after": "52ffb824f46ec7277220e9ce6404d525fdccb967604e11b31a8494dbcef98ba0",
+   "hunks": [
+    {
+     "before": "\nЗдесь сохранены **полные неизменённые файлы** трёх карточек, которые заменены\n24 отдельными вызовами A-IN, и совмещённого A-IN one-shot. Архив доступен в\n",
+     "after": "\nЗдесь сохранены **полные файлы** трёх карточек, которые заменены\n24 отдельными вызовами A-IN, и совмещённого A-IN one-shot. С issue #495 файл\nархива — проекция оригинала (`scripts/prompt_purity.py:project`): удалены только\nссылки на приватный репозиторий и HTML-комментарии, остальной текст байт в байт\nпрежний. Хэши опубликованного оригинала остаются в манифесте. Архив доступен в\n"
+    },
+    {
+     "before": "\n[Manifest](manifest.json) содержит исходный путь/SHA, SHA-256 всего файла и тела,\n",
+     "after": "\n[Manifest](manifest.json) содержит исходный путь/SHA, SHA-256 всего файла и тела\n(оригинал и проекция `projectedSha256`/`projectedBodySha256`),\n"
+    }
+   ]
+  },
   "prompts/archive/a-in-v2.7.0/bcreq-context-understanding-stepwise.md": {
    "sha256_before": "277b6577a3adca185930c4665c58f001ccf27b122ef132bc84c73573d9cc04d6",
    "sha256_after": "73808f55708e07cc407d5d6092388c92bbf1e1ef63506db39f0341c10cf2d1cb",
@@ -301,6 +315,32 @@
     {
      "before": "   (`availability: not-established-by-taxonomy`): доступность — только\n   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n",
      "after": "   (`availability: not-established-by-taxonomy`): доступность — только\n   из источника задачи или БЗ.\n```\n"
+    }
+   ]
+  },
+  "prompts/archive/a-in-v2.7.0/manifest.json": {
+   "sha256_before": "0cf1d23e098ea8cecd5c17644713672a2976e30675d70d75129c3fe1c98afaa4",
+   "sha256_after": "0efeec829a8e2535ed2f841c8e53e24f07e64dba2c14816d5eedd3b6d0e5b7a6",
+   "hunks": [
+    {
+     "before": "  \"url\": \"https://g-ivan-a.github.io/mango_ba_prompts/\",\n",
+     "after": "  \"url\": \"https://g-ivan-a.github.io/mango_ba_prompts/\",\n  \"projection\": {\n    \"issue\": 495,\n    \"function\": \"scripts/prompt_purity.py:project\",\n    \"note\": \"Файлы архива = project(оригинал на sourceCommit): без ссылок на приватный репо и HTML-комментариев (супер-правило #495). sha256/bodySha256 — опубликованный оригинал 2.7.0; projectedSha256/projectedBodySha256 — файл в архиве.\"\n  },\n"
+    },
+    {
+     "before": "      \"sha256\": \"580106bfb3458042de6d08e3d6ff320e0e4ef67cd5b73825a43234d8a21b9e37\",\n      \"bodySha256\": \"b88de09a50e2139b871b7d4fe51a7469b00fdd5c0a494d76628bda5524cc85af\"\n",
+     "after": "      \"sha256\": \"580106bfb3458042de6d08e3d6ff320e0e4ef67cd5b73825a43234d8a21b9e37\",\n      \"bodySha256\": \"b88de09a50e2139b871b7d4fe51a7469b00fdd5c0a494d76628bda5524cc85af\",\n      \"projectedSha256\": \"14edd82b28af03018bfbb9021a868d82192220af1b8b1aec001f3a2981a72a48\",\n      \"projectedBodySha256\": \"e468544a85289a063306fd836057b8e9f9f9216a4fdb244f96bb4603a75ff835\"\n"
+    },
+    {
+     "before": "      \"sha256\": \"277b6577a3adca185930c4665c58f001ccf27b122ef132bc84c73573d9cc04d6\",\n      \"bodySha256\": \"5aecfb3416747cc39c607274b9b07a9e6f678b102d8f9a480c456a922c29e941\"\n",
+     "after": "      \"sha256\": \"277b6577a3adca185930c4665c58f001ccf27b122ef132bc84c73573d9cc04d6\",\n      \"bodySha256\": \"5aecfb3416747cc39c607274b9b07a9e6f678b102d8f9a480c456a922c29e941\",\n      \"projectedSha256\": \"73808f55708e07cc407d5d6092388c92bbf1e1ef63506db39f0341c10cf2d1cb\",\n      \"projectedBodySha256\": \"4840bb46ba3e6c9ff1eed1441a1be936722b1649d7ca0d36e115d6288b301e5a\"\n"
+    },
+    {
+     "before": "      \"sha256\": \"1f9e7c452b256de3f1f3c287b7b153a75be40572ec95cd6282e8d63974e29c67\",\n      \"bodySha256\": \"9365c53824c70f08357fb29c74b4c70c93727a1b6b2ada166a9696c450545829\"\n",
+     "after": "      \"sha256\": \"1f9e7c452b256de3f1f3c287b7b153a75be40572ec95cd6282e8d63974e29c67\",\n      \"bodySha256\": \"9365c53824c70f08357fb29c74b4c70c93727a1b6b2ada166a9696c450545829\",\n      \"projectedSha256\": \"2e6854bb7c7b62b77e8a62f5b500f5919ed335e3bc23e3969d3014747944ac19\",\n      \"projectedBodySha256\": \"da67e960fe9d7079e4be1750a8796103be724a4f57d313e513a0fa30d4a7c7ea\"\n"
+    },
+    {
+     "before": "      \"sha256\": \"838e3c5fbae47e8a5684a24bdeafb4b27f7eb21caff5696151ceaa3487c235f9\",\n      \"bodySha256\": \"2c5674dbda4a41e58e794003aed6567986d1cd5876b708ced2ab98841baa30f3\"\n",
+     "after": "      \"sha256\": \"838e3c5fbae47e8a5684a24bdeafb4b27f7eb21caff5696151ceaa3487c235f9\",\n      \"bodySha256\": \"2c5674dbda4a41e58e794003aed6567986d1cd5876b708ced2ab98841baa30f3\",\n      \"projectedSha256\": \"9b1291785c3f862b1f1cc2d75b4ac725f99b4a473761cc500756b02b253f42c7\",\n      \"projectedBodySha256\": \"0eb36155904d713a2eb790086dcca17a774e1cdc66c4951951d71722df0177b0\"\n"
     }
    ]
   },
@@ -2158,7 +2198,7 @@
   },
   "prompts/drafts/bcreq-constitution-governance-oneshot.md": {
    "sha256_before": "81652ae24230047df48b75b769a2c14ea7e35c25e15f030b73e1fdc5d73ef079",
-   "sha256_after": "48d929857766d0ca504c24d5c466f0546c49b6bd343efee7a54333f0ef40567d",
+   "sha256_after": "aea2cf8d4f09ad4967b611d051c61a9d589227c62ec55ba1fe72bcce3bfa12ce",
    "hunks": [
     {
      "before": "status: draft\nversion: 0.5\nupdated: 2026-11-18\n",
@@ -2305,8 +2345,16 @@
      "after": "- **БС-35.** Дословность, структурная полнота, смысловое сохранение и правильность решения — разные проверки; наличие текста не доказывает правильность вывода\n- **БС-36.** Вопросы к людям выдаются пакетом: у каждого — владелец (адресат) и перечень того, что он блокирует; ответ, которого нет, не подменяется предположением\n"
     },
     {
-     "before": "- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n\n<!-- /bl-156: by-test -->\n\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n\n## Итог шага для БА\n"
+     "before": "- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/templates/bcreq-skeleton.md).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n",
+     "after": "- **И-3 Шаблон документа BCREQ:** [`templates/bcreq-skeleton.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/templates/bcreq-skeleton.md).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.\n"
+    },
+    {
+     "before": "\n<!-- /bl-156: by-test -->\n",
+     "after": "\nЗаглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.\n"
+    },
+    {
+     "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
+     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "результат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",
@@ -2906,7 +2954,7 @@
   },
   "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": {
    "sha256_before": "0dd3069fbef22d85c271161e4e3e469334626bca321ddc792e949ecd32cfca70",
-   "sha256_after": "129582250916ee8def77ab357da437a18f72ce2ca178a1a4d749408ecee7c348",
+   "sha256_after": "813c17db8633906fcd6b1ede5274330110eb13ad0c1933b4bb6c5418bc5d4f10",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)\"\nstatus: draft\nversion: 0.4\nupdated: 2026-11-18\n",
@@ -3009,8 +3057,16 @@
      "after": "- **БС-34.** Перед ответом результат сверяется со специальными проверками операции; в ответ входят полные тела изменённых объектов, сохранённые ID и адресные вопросы\n- **БС-35.** Дословность, структурная полнота, смысловое сохранение и правильность решения — разные проверки; наличие текста не доказывает правильность вывода\n- **БС-36.** Вопросы к людям выдаются пакетом: у каждого — владелец (адресат) и перечень того, что он блокирует; ответ, которого нет, не подменяется предположением\n"
     },
     {
-     "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "   из источника задачи или БЗ.\n```\n\n## Итог шага для БА\n"
+     "before": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n",
+     "after": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.\n"
+    },
+    {
+     "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n",
+     "after": "   из источника задачи или БЗ.\n```\n\nЗаглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.\n"
+    },
+    {
+     "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
+     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "шагу вернуться>». Итог — факты, не самооценка: не хвали ни БА, ни свой\nрезультат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",
@@ -3320,7 +3376,7 @@
   },
   "prompts/drafts/manifest.json": {
    "sha256_before": "cbe13abae6af09b2f89434da8bff7c72caecd630de4c4cc4f5046c1700194fd0",
-   "sha256_after": "c3e4b2479b0f33d7a8ed9e6e38f8ffa78dd124186f1e87a46fa3399e22203f72",
+   "sha256_after": "4f73f7523ec52c521c7f4a8f93105bd846f81716c9cb4cc1f3b1237abb00137d",
    "hunks": [
     {
      "before": "{\n  \"source_issue\": \"https://github.com/G-Ivan-A/mango_ba_prompts/issues/438\",\n",
@@ -3339,12 +3395,28 @@
      "after": "      \"based_on\": \"prompts/bcreq-constitution-governance-oneshot.md\",\n      \"based_on_sha256\": \"5008ef964db168b7eefa49eecd6a2b0d4f06f1f6a010d1de7b44950db34b007e\",\n"
     },
     {
+     "before": "        \"И-3\",\n        \"И-7\"\n",
+     "after": "        \"И-3\",\n        \"И-7\",\n        \"И-11\"\n"
+    },
+    {
+     "before": "      ],\n      \"stubs\": [],\n",
+     "after": "      ],\n      \"stubs\": [\n        \"З-5\"\n      ],\n"
+    },
+    {
      "before": "      \"based_on\": \"prompts/bcreq-context-understanding-stepwise.md\",\n      \"based_on_sha256\": \"5defc5543698e24228fe43e436c82092c9ac1f9b4ed867559692a333926ccec9\",\n",
      "after": "      \"based_on\": \"prompts/bcreq-context-understanding-stepwise.md\",\n      \"based_on_sha256\": \"9e911aa3fb2c77182bbe896a902e522ef3959065283daa744cf9b3ccab796b86\",\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-products-impact-analysis-stepwise.md\",\n      \"based_on_sha256\": \"235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf\",\n",
      "after": "      \"based_on\": \"prompts/bcreq-products-impact-analysis-stepwise.md\",\n      \"based_on_sha256\": \"52dd5d1a29d2f786f1695b4ac783bc74bbb31c5cad05e644a2ed3973e52f2074\",\n"
+    },
+    {
+     "before": "        \"И-2\",\n        \"И-7\"\n",
+     "after": "        \"И-2\",\n        \"И-7\",\n        \"И-11\"\n"
+    },
+    {
+     "before": "      ],\n      \"stubs\": [],\n",
+     "after": "      ],\n      \"stubs\": [\n        \"З-5\"\n      ],\n"
     },
     {
      "before": "      \"based_on\": \"prompts/bcreq-fr-documentation-stepwise.md\",\n      \"based_on_sha256\": \"04fb5da191ec844af3f72fdd61f933e57d219ce4fbae891baeb3d3703082f337\",\n",
@@ -3570,7 +3642,7 @@
   },
   "prompts/drafts/system/bcreq-products-impact-analysis-system.md": {
    "sha256_before": "ff13abe00ae7e6b588f701e09120c14d1cffe9686432bd2cf6715d4910ed7416",
-   "sha256_after": "aa667337b8818e41666ba10990d3c7fa6deb07dde20697652e466b47e343e5ed",
+   "sha256_after": "cb9676b8bff3a5bf1ebb84c0b9c51e600715f1b9b7c212e887f083db6f8e9704",
    "hunks": [
     {
      "before": "title: \"BCREQ Ш-2 (2.2): продукты, стейкхолдеры (системный формат)\"\nstatus: draft\nversion: 0.2\nupdated: 2026-11-18\n",
@@ -3673,8 +3745,16 @@
      "after": "- **БС-34.** Перед ответом результат сверяется со специальными проверками операции; в ответ входят полные тела изменённых объектов, сохранённые ID и адресные вопросы\n- **БС-35.** Дословность, структурная полнота, смысловое сохранение и правильность решения — разные проверки; наличие текста не доказывает правильность вывода\n- **БС-36.** Вопросы к людям выдаются пакетом: у каждого — владелец (адресат) и перечень того, что он блокирует; ответ, которого нет, не подменяется предположением\n"
     },
     {
-     "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
-     "after": "   из источника задачи или БЗ.\n```\n\n## Итог шага для БА\n"
+     "before": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n",
+     "after": "- **И-1 База знаний продуктов:** [`docs/kb/MAP.json`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/MAP.json) → `docs/kb/maps/<id>.toc.tsv` (поле `sections_toc`, читается за одно обращение) → `docs/kb/<slug>/sections/NN-*.md`; `docs/kb/maps/<id>.json` — только когда нужны `hint`, страницы или токены; путь поиска — [`docs/kb/USAGE.md`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/docs/kb/USAGE.md).\n- **И-2 Таксономия продуктов:** Значения: [`taxonomy/mango-products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/mango-products.yaml); форма уровней и классы: [`taxonomy/products.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).\n- **И-7 Порядок источников и уровни доверия:** [`taxonomy/source-tiers.yaml`](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/source-tiers.yaml).\n- **И-11 Профили продуктов (словари и параметры профиля продукта для набора словарей Ш-2 и таблицы Ш-0):** нет в срезе.\n"
+    },
+    {
+     "before": "   из источника задачи или БЗ.\n```\n\n<!-- /bl-156: by-test -->\n",
+     "after": "   из источника задачи или БЗ.\n```\n\nЗаглушки справочников (реестр, раздел 4): заглушка — известный пробел, а не дефект.\n"
+    },
+    {
+     "before": "\n<!-- issue-490:handoff -->\n## Итог шага для БА (#490)\n",
+     "after": "\nЗ-5 — условие: пока РТ-8 не слита и SHA не обновлён.\n\n```text\n[СПРАВОЧНИК ОТСУТСТВУЕТ: И-11 профили продуктов]\nДействуй без образца: не придумывай значения, которых нет во входе;\nпометь место [ТРЕБУЕТСЯ УТОЧНЕНИЕ] и добавь вопрос в 8.4.\n```\n\n## Итог шага для БА\n"
     },
     {
      "before": "шагу вернуться>». Итог — факты, не самооценка: не хвали ни БА, ни свой\nрезультат. Формат шагов у БА не спрашивай: он записан в «Состоянии BCREQ»,\nбез записи — декомпозированный.\n<!-- /issue-490:handoff -->\n",

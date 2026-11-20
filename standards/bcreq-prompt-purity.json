@@ -245,19 +245,19 @@
       "id": "CR-01",
       "summary": "Новизна интеграционного компонента не отменяет дельту существующих подсистем продукта",
       "source": "AIN-06: цель, why маршрута, контрпример инструкции",
-      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+      "golden": "runtime golden/prompt-regressions.yaml, кейс PR-02 (И-12, РТ-9; SHA закрепляет BL-242)"
     },
     {
       "id": "CR-02",
       "summary": "Наблюдаемое поведение внешней системы (задержка, порядок событий) не доказывает способ интеграции, тайминг SLA и переносимость на другую систему",
       "source": "общий контракт A-IN, блок «Доказательная нормализация и фактический доступ»",
-      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+      "golden": "runtime golden/prompt-regressions.yaml, кейс PR-01 (И-12, РТ-9; SHA закрепляет BL-242)"
     },
     {
       "id": "CR-03",
       "summary": "Аналогия с внешней системой не доказывает полный сценарий исполнимости",
       "source": "AIN-12: контрпример инструкции",
-      "golden": "runtime golden/regressions (PR в runtime, см. описание PR #497)"
+      "golden": "runtime golden/prompt-regressions.yaml, кейс PR-03 (И-12, РТ-9; SHA закрепляет BL-242)"
     }
   ]
 }
