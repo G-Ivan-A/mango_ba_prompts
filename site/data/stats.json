@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T09:05:25.602Z",
+  "generatedAt": "2026-11-20T00:22:19.141Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,10 +35,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.9.0",
-    "released": "2026-11-18",
-    "issue": 490,
-    "basis": "PR #491: цель и итог шага для БА, системный и декомпозированный форматы шагов",
+    "version": "2.9.1",
+    "released": "2026-11-20",
+    "issue": 488,
+    "basis": "PR #496: ссылка на эталон классификации закреплена в ba-ai-metamodel по SHA",
     "changelog": "CHANGELOG.md"
   },
   "totals": {
