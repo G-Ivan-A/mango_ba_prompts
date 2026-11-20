@@ -46,7 +46,7 @@ class Published(unittest.TestCase):
 
     def test_arm_b_equals_published_body(self):
         # Issue #464 правит тексты поверх измеренных: плечо сравнивается с текстом без слоя #464.
-        # Ш-В слой не трогает: сравнение с RUN-0085 идёт побайтово, как раньше.
+        # Ш-В слой #464 не трогает.
         spec = importlib.util.spec_from_file_location("i464_for_450", ROOT / "experiments/issue_464/prompt_changes.py")
         i464 = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(i464)
@@ -58,7 +58,9 @@ class Published(unittest.TestCase):
             arm = (RUNS / f"RUN-0086/inputs/prompt-{label}-B.md").read_text(encoding="utf-8")
             self.assertEqual(strip(measured(path)), strip(arm), path)
         arm = (RUNS / "RUN-0085/inputs/prompt-A3.md").read_text(encoding="utf-8")
-        self.assertEqual(strip(read("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
+        # Issue #495 снял с Ш-В приватные ссылки и HTML-комментарии: сравнение — с
+        # текстом без слоя #495 (measured снимает его вместе с #464 и #474).
+        self.assertEqual(strip(measured("prompts/bcreq-review-validation-oneshot.md")), strip(arm))
         arm = (RUNS / "RUN-0087/inputs/prompt-B.md").read_text(encoding="utf-8")
         self.assertEqual(strip(measured("prompts/bcreq-constitution-governance-oneshot.md")), strip(arm))
 

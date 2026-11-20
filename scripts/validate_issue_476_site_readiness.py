@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Release parity, immutable history, traceability and actual Catalog filter regression."""
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import re
@@ -9,6 +10,10 @@ import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'f0f5ad56'  # merged PR #475, before publication-only changes
+_spec = importlib.util.spec_from_file_location('purity476', ROOT/'scripts/prompt_purity.py')
+PURITY = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(PURITY)
+_spec = importlib.util.spec_from_file_location('edits495_476', ROOT/'experiments/issue_495/prompt_changes.py')
+EDITS495 = importlib.util.module_from_spec(_spec); _spec.loader.exec_module(EDITS495)
 
 
 def read(path):
@@ -28,10 +33,16 @@ class Readiness(unittest.TestCase):
         for entry in manifest['entries']:
             text=read(entry['archivePath'])
             original=subprocess.check_output(['git','show',f"{manifest['sourceCommit']}:{entry['sourcePath']}"],cwd=ROOT).decode()
-            self.assertEqual(text,original)
-            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),entry['sha256'])
+            # Issue #495: архив — проекция оригинала без приватных ссылок и
+            # HTML-комментариев; хэши опубликованного оригинала сохранены.
+            self.assertEqual(hashlib.sha256(original.encode()).hexdigest(),entry['sha256'])
+            original_body=original.split('---',2)[2].lstrip('\r\n')
+            self.assertEqual(hashlib.sha256(original_body.encode()).hexdigest(),entry['bodySha256'])
+            self.assertEqual(manifest['projection']['function'],'scripts/prompt_purity.py:project')
+            self.assertEqual(text,PURITY.project(original))
+            self.assertEqual(hashlib.sha256(text.encode()).hexdigest(),entry['projectedSha256'])
             body=text.split('---',2)[2].lstrip('\r\n')
-            self.assertEqual(hashlib.sha256(body.encode()).hexdigest(),entry['bodySha256'])
+            self.assertEqual(hashlib.sha256(body.encode()).hexdigest(),entry['projectedBodySha256'])
             card=next(p for p in catalog if p['sourcePath']==entry['archivePath'])
             self.assertTrue(card['archived'])
             self.assertEqual(card['content'],text)
@@ -60,8 +71,10 @@ class Readiness(unittest.TestCase):
 
     def test_no_prompt_or_layout_degradation(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'prompts/'],cwd=ROOT).decode().splitlines()
+        # Issue #495: обратимый слой чистоты (ссылки, комментарии, кейс-лексика)
+        # снимается; правка вне prompt-edits.json по-прежнему видна здесь.
         changed=[path for path in paths
-                 if (ROOT/path).read_bytes()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
+                 if EDITS495.revert(path,(ROOT/path).read_text()).encode()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
         # Issue #490: «Итог шага» и формат шагов меняют только сгенерированные
         # черновики; каждый совпадает с выходом своего сборщика (--check).
         for path in changed:

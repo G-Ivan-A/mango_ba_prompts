@@ -2,6 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 import hashlib
+import importlib.util
 import json
 import re
 import unittest
@@ -9,6 +10,11 @@ from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parents[1]
 OVERRIDES = 'experiments/issue_413/site-baseline-overrides.json'
+# Issue #495: обратимый слой чистоты промптов (prompt-edits.json) снимается
+# перед сверкой; правка промпта вне реестра по-прежнему меняет хэш.
+_spec = importlib.util.spec_from_file_location('edits495_395', ROOT / 'experiments/issue_495/prompt_changes.py')
+EDITS495 = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(EDITS495)
 
 
 class PageParser(HTMLParser):
@@ -91,7 +97,8 @@ class StandardsTests(unittest.TestCase):
                 baseline[kind][name] = entry['sha256']
         for name, digest in baseline['files'].items():
             with self.subTest(file=name):
-                self.assertEqual(hashlib.sha256((ROOT / name).read_bytes()).hexdigest(), digest)
+                data = EDITS495.revert(name, (ROOT / name).read_text(encoding='utf-8')).encode('utf-8')
+                self.assertEqual(hashlib.sha256(data).hexdigest(), digest)
         sections = re.findall(r'<section\b.*?</section>', (ROOT / 'site/index.html').read_text(), re.S)
         actual = {re.search(r'\bid="([^"]+)"', part).group(1): part for part in sections}
         for name, digest in baseline['sections'].items():

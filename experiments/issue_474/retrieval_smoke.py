@@ -20,6 +20,13 @@ def _delta490():
     return module
 
 
+def _revert495():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location('revert495', ROOT/'experiments/issue_495/prompt_changes.py')
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+    return module.revert
+
+
 def check(fetch=False):
     data = json.loads((HERE/'recording-observation.json').read_text())
     evidence = data['output']['evidence'][0]
@@ -34,7 +41,8 @@ def check(fetch=False):
     kit = json.loads((ROOT/'site/data/a-in-kit.json').read_text())
     prompt = kit['steps'][8]['prompt']
     # Observed on the v0.2 prompt; #490 (v0.3) only added the «Итог шага» block.
-    observed = _delta490().revert_ain(prompt, 'AIN-09')
+    # #495 removed private links/HTML comments; its reversible layer is undone first.
+    observed = _delta490().revert_ain(_revert495()(kit['steps'][8]['promptPath'], prompt), 'AIN-09')
     assert hashlib.sha256(observed.encode()).hexdigest() == data['execution']['prompt_sha256']
     assert 'resolved_technical_questions' in prompt
     assert 'Доказательную базу проверки' in prompt

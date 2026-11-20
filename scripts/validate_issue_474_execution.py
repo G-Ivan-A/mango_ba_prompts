@@ -124,7 +124,11 @@ class Execution(unittest.TestCase):
         paths=[ROOT/f'prompts/bcreq-{name}.md' for name in names]
         paths.append(ROOT/'prompts/drafts/bcreq-intake-questionnaire-stepwise.md')
         for path in paths:
-            text=path.read_text();guard=text.split('<!-- issue-474:entry -->')[1].split('<!-- /issue-474:entry -->')[0]
+            # Issue #495 снял HTML-маркеры <!-- issue-474:entry -->: граница входа —
+            # заголовок «## Действующий …» (вход A-IN или Ш-А) до заголовка уровня 1.
+            text=path.read_text();self.assertNotIn('<!--',text,str(path))
+            self.assertEqual(text.count('\n## Действующий '),1,str(path))
+            guard=text.split('\n## Действующий ')[1].split('\n# ')[0]
             self.assertIn('AIN-21',guard);self.assertIn('AIN-16',guard)
             self.assertIn('Заказчику',guard)
             normal=(ROOT/'docs/ba-processes/bcreq-evidence-normalization.md').read_text().split('---',2)[2].strip()
