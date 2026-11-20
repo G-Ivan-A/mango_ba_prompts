@@ -150,21 +150,27 @@ flowchart LR
 <!-- coverage:start -->
 | Шаг | Промпт | Режим | `main` | Прод | Замер | Заглушка | Закрывает шаг |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.5 | 0.2, текст другой | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-0 | `bcreq-constitution-governance-oneshot` | by-test | 0.6 | 0.2, текст другой | RUN-0083, RUN-0087, RUN-0088, RUN-0089 | — | BL-232 |
 | Ш-А | `bcreq-intake-questionnaire-stepwise` | by-test | нет | нет | не измерен | черновик v0.2 | BL-232, затем BL-157в |
-| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.5 | 0.2, текст другой | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
-| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.4 | 0.1, текст другой | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
-| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.5 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
-| Ш-4 | `bcreq-nfr-documentation-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
-| Ш-5 | `bcreq-uc-modeling-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
-| Ш-6 | `bcreq-orr-solution-design-stepwise` | by-test | 0.3 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | — | BL-232 |
-| Ш-7 | `bcreq-constraints-documentation-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232 |
-| Ш-8 | `bcreq-uc-modeling-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
-| Ш-9 | `bcreq-extra-risk-analysis-stepwise` | by-test | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
-| Ш-В | `bcreq-review-validation-oneshot` | published | 0.3 | 0.3, актуален | RUN-0081, RUN-0082, RUN-0084, RUN-0085, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
+| Ш-1 | `bcreq-context-understanding-stepwise` | by-test | 0.6 | 0.2, текст другой | RUN-0083, RUN-0086, RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
+| Ш-2 | `bcreq-products-impact-analysis-stepwise` | by-test | 0.5 | 0.1, текст другой | RUN-0083, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
+| Ш-3 | `bcreq-fr-documentation-stepwise` | by-test | 0.6 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | З-2 | BL-232, затем BL-233 |
+| Ш-4 | `bcreq-nfr-documentation-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
+| Ш-5 | `bcreq-uc-modeling-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
+| Ш-6 | `bcreq-orr-solution-design-stepwise` | by-test | 0.4 | 0.2, текст другой | RUN-0086, RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-7 | `bcreq-constraints-documentation-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232 |
+| Ш-8 | `bcreq-uc-modeling-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089 | З-2 | BL-232 |
+| Ш-9 | `bcreq-extra-risk-analysis-stepwise` | by-test | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089 | — | BL-232, затем BL-233 |
+| Ш-В | `bcreq-review-validation-oneshot` | published | 0.4 | 0.3, актуален | RUN-0081, RUN-0082, RUN-0084, RUN-0085, RUN-0088, RUN-0089, RUN-0092 | — | BL-232 |
 | Ш-Р | `bcreq-release-readiness-oneshot` | by-test | нет | нет, кнопка другая | RUN-0088, RUN-0089, RUN-0092 | черновик v0.2 | BL-232, затем BL-174, BL-234 |
-| Ш-С | `bcreq-scenarios-modeling-oneshot` | published | 0.2 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
+| Ш-С | `bcreq-scenarios-modeling-oneshot` | published | 0.3 | 0.1, текст другой | RUN-0088, RUN-0089, RUN-0092 | З-2 | BL-232 |
 <!-- coverage:end -->
+
+**Поправка issue #488.** Метамодель БА вынесена из Хаба в
+`G-Ivan-A/ba-ai-metamodel`; ссылка на эталон классификации в каждом промпте
+перезакреплена на SHA `e1f67e26` этого репозитория. Минорная версия в колонке
+`main` поднята только из-за ссылки: остальной текст байт в байт тот же, что был
+измерен, и колонка «Замер» остаётся в силе.
 
 **Поправка issue #474.** Для A-IN действует принятый RFC-AIN-001:
 Ш-0 → AIN-01…24, Ш-А — совместимый AIN-02, Ш-1 — диспетчер.

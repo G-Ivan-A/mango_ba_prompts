@@ -2,13 +2,13 @@
 id: mango-bcreq-extra-risk-analysis-stepwise-by-test
 title: "BCREQ Ш-9 (2.14): риски, приёмка (по тесту)"
 status: draft
-version: 0.2
-updated: 2026-11-18
+version: 0.3
+updated: 2026-11-20
 temperature: 0.1
 operation: risk_analysis
 processes: ["Дизайн решения и оценка"]
 based_on: prompts/bcreq-extra-risk-analysis-stepwise.md
-based_on_sha256: 1b459dc25a66ae44da7d26a01641fa9c699effce55c28d05623bddabb7e8daa2
+based_on_sha256: 9897e112a81261c16c86bb74a31eb29f87f93c05c223c3b2d1e9838951daa5b2
 mode: by-test
 steps: [Ш-9]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -146,7 +146,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

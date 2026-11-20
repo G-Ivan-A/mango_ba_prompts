@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Release parity, immutable history, traceability and actual Catalog filter regression."""
 import hashlib
+import importlib.util
 import json
 from pathlib import Path
 import re
@@ -17,6 +18,20 @@ def read(path):
 
 def load(path):
     return json.loads(read(path))
+
+
+def only_pin_488(path, text, base):
+    """Issue #488: файл отличается от BASE только перезакреплённой ссылкой и версией.
+
+    Слой experiments/issue_488/prompt_changes.py снимает ровно эти правки; строку
+    based_on_sha256 черновика и манифеста (хеш опубликованного текста) и счётчик
+    hub_main_to_metamodel_sha манифеста сверяет --check сборщика.
+    """
+    spec=importlib.util.spec_from_file_location('i488_for_476',ROOT/'experiments/issue_488/prompt_changes.py')
+    layer=importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(layer)
+    drop=lambda t: re.sub(r'(?m)^ *"?(based_on_sha256|hub_main_to_metamodel_sha)"?: .*\n','',t)  # noqa: E731
+    return drop(layer.revert(path,text))==drop(base)
 
 
 class Readiness(unittest.TestCase):
@@ -60,8 +75,9 @@ class Readiness(unittest.TestCase):
 
     def test_no_prompt_or_layout_degradation(self):
         paths=subprocess.check_output(['git','ls-tree','-r','--name-only',BASE,'prompts/'],cwd=ROOT).decode().splitlines()
-        changed=[path for path in paths
-                 if (ROOT/path).read_bytes()!=subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT)]
+        base={path:subprocess.check_output(['git','show',f'{BASE}:{path}'],cwd=ROOT) for path in paths}
+        changed=[path for path in paths if (ROOT/path).read_bytes()!=base[path]
+                 and not only_pin_488(path,read(path),base[path].decode())]
         # Issue #490: «Итог шага» и формат шагов меняют только сгенерированные
         # черновики; каждый совпадает с выходом своего сборщика (--check).
         for path in changed:

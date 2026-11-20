@@ -1,0 +1,258 @@
+{
+  "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/488",
+  "date": "2026-11-20",
+  "floating": "https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md",
+  "pinned": "https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md",
+  "files": {
+    "prompts/bcreq-constitution-governance-oneshot.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-08\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-constraints-documentation-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-context-understanding-stepwise.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-08\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-core-documentation-oneshot.md": [
+      {
+        "before": "version: 0.4\nupdated: 2026-11-08\n",
+        "after": "version: 0.5\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-extra-risk-analysis-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-fr-documentation-stepwise.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-08\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-in-understanding-oneshot.md": [
+      {
+        "before": "version: 0.4\nupdated: 2026-11-08\n",
+        "after": "version: 0.5\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-nfr-documentation-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-orr-solution-design-stepwise.md": [
+      {
+        "before": "version: 0.3\nupdated: 2026-11-05\n",
+        "after": "version: 0.4\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-products-impact-analysis-stepwise.md": [
+      {
+        "before": "version: 0.4\nupdated: 2026-11-08\n",
+        "after": "version: 0.5\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-review-validation-oneshot.md": [
+      {
+        "before": "version: 0.3\nupdated: 2026-11-05\n",
+        "after": "version: 0.4\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-scenarios-modeling-oneshot.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-uc-modeling-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/bcreq-work-solution-design-oneshot.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-constitution-governance-oneshot.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-18\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-context-understanding-stepwise.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-18\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": [
+      {
+        "before": "version: 0.4\nupdated: 2026-11-18\n",
+        "after": "version: 0.5\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-fr-documentation-stepwise.md": [
+      {
+        "before": "version: 0.5\nupdated: 2026-11-18\n",
+        "after": "version: 0.6\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-nfr-documentation-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-18\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-uc-modeling-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-18\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-orr-solution-design-stepwise.md": [
+      {
+        "before": "version: 0.3\nupdated: 2026-11-18\n",
+        "after": "version: 0.4\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-constraints-documentation-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-18\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-18\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-review-validation-oneshot.md": [
+      {
+        "before": "version: 0.3\nupdated: 2026-11-04\n",
+        "after": "version: 0.4\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ],
+    "prompts/drafts/bcreq-scenarios-modeling-oneshot.md": [
+      {
+        "before": "version: 0.2\nupdated: 2026-11-05\n",
+        "after": "version: 0.3\nupdated: 2026-11-20\n"
+      },
+      {
+        "before": "по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).\n",
+        "after": "по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).\n"
+      }
+    ]
+  }
+}

@@ -2,13 +2,13 @@
 id: mango-bcreq-scenarios-modeling-oneshot-by-test
 title: "BCREQ Ш-С (2.12/2.13): US, UC (по тесту)"
 status: draft
-version: 0.2
-updated: 2026-11-05
+version: 0.3
+updated: 2026-11-20
 temperature: 0.1
 operation: modeling
 processes: ["Сценарии вне документа"]
 based_on: prompts/bcreq-scenarios-modeling-oneshot.md
-based_on_sha256: 9b82e301403b16054cbb95d55f8e826c1543ab06d6f8ae1e4b943c8af1ed14e7
+based_on_sha256: 4f93320d0e53f587ece4298ccd2d0bbaff792aca9b884e38dfeb5fa43342bab5
 mode: by-test
 steps: [Ш-С]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -140,7 +140,7 @@ assembled_by: scripts/build_bcreq_step_prompts.py
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.

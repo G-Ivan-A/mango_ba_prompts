@@ -55,6 +55,15 @@ MANIFEST = DRAFTS / "manifest.json"
 
 REPO_BLOB = "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/"
 RUNTIME_MAIN = "github.com/G-Ivan-A/mango-ba-ai-runtime/blob/main/"
+#: Issue #488: метамодель БА вынесена из Хаба в ba-ai-metamodel, Хаб удаляет
+#: `research/mango/`. Плавающая ссылка Хаба в тексте шага закрепляется на
+#: коммите приёмки E6 (тот же файл по тому же пути), чтобы новые версии
+#: промптов не возвращали ссылку, которая отдаёт 404.
+HUB_FLOATING = "https://github.com/G-Ivan-A/hybrid-Intelligence-lab" + "/blob/main/research/" + "mango/"
+HUB_PINNED = ("https://github.com/G-Ivan-A/ba-ai-metamodel/blob/"
+              "e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/")
+#: Релиз промптов #488: дата черновиков, чей текст v0.1 получил ссылку по SHA.
+PIN_DATE = "2026-11-20"
 BUILD_DATE = "2026-11-04"
 #: Правки после RUN-0089: дата только у изменённых файлов, остальные черновики не меняются ни на байт.
 FIX_DATE = "2026-11-05"
@@ -770,11 +779,15 @@ def build_all():
         if name == INTAKE_FILE or "<!-- issue-474:entry -->" in body:
             updated = "2026-11-08"
         body = apply_format_edits(name, body)
+        hub_substitutions = body.count(HUB_FLOATING)
+        body = body.replace(HUB_FLOATING, HUB_PINNED)
         if name in FORMAT_EDITS:
             header = header.replace(" ниже не изменён", " ниже не изменён, кроме формата шагов (#490)", 1)
         handoff = "" if name in HANDOFF_SKIP else "\n" + bcreq_handoff.render(steps, ctx["handoff"])
         if handoff:
             updated = HANDOFF_DATE
+        if v01 and HUB_PINNED in v01:
+            updated = PIN_DATE
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
@@ -786,6 +799,7 @@ def build_all():
             "based_on": f"prompts/{name}.md" if v01 else None,
             "based_on_sha256": hashlib.sha256(v01.encode("utf-8")).hexdigest() if v01 else None,
             "runtime_main_to_sha": substitutions,
+            "hub_main_to_metamodel_sha": hub_substitutions,
             "profiles": profiles,
             "operations": operations,
             "runtime_refs": [r["id"] for r in refs],

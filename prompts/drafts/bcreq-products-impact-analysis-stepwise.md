@@ -2,13 +2,13 @@
 id: mango-bcreq-products-impact-analysis-stepwise-by-test
 title: "BCREQ Ш-2 (2.2): продукты, стейкхолдеры (по тесту)"
 status: draft
-version: 0.4
-updated: 2026-11-18
+version: 0.5
+updated: 2026-11-20
 temperature: 0.1
 operation: impact_analysis
 processes: ["Приём и контекст"]
 based_on: prompts/bcreq-products-impact-analysis-stepwise.md
-based_on_sha256: 235a83909931085e3fae9320ee6777d7da4602db0134fff036ad3bcd5c1548cf
+based_on_sha256: 7fe083cfee6da7734367ffd273deefaa0290ab442964519ca3a601f004a25c2a
 mode: by-test
 steps: [Ш-2]
 runtime_sha: 68ad8fcffd47439fc3051852d9a2fbbe23815855
@@ -261,7 +261,7 @@ provenance не применяется; происхождение и цитат
 Проверь опубликованную [таксономию runtime](https://github.com/G-Ivan-A/mango-ba-ai-runtime/blob/68ad8fcffd47439fc3051852d9a2fbbe23815855/taxonomy/products.yaml).
 «Определена» означает каталог по всей продуктовой линейке, с конкретными
 соответствиями Domain → Capability → Feature → Atomic Function, сопоставимый
-по полноте с [эталоном](https://github.com/G-Ivan-A/hybrid-Intelligence-lab/blob/main/research/mango/2026-05-22-classification.md).
+по полноте с [эталоном](https://github.com/G-Ivan-A/ba-ai-metamodel/blob/e1f67e267beb73809e1edb26313691a5c769c92a/research/mango/2026-05-22-classification.md).
 Правило классификации, три широких класса поиска или описание уровней без
 значений функций не подтверждают полноту. Проверяй фактически прочитанную
 версию, не объявляй эталон опубликованной таксономией runtime.
