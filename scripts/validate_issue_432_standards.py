@@ -228,8 +228,15 @@ class BaseStandard(unittest.TestCase):
     def test_runtime_registry_by_link(self):
         block = section(self.body, "### 3.4. Источники, цитаты и справочники runtime")
         self.assertIn("(bcreq-runtime-references.md#2-перечень)", block)
-        for code in ("И-7", "ТС-1", "ТС-5", "ТС-6", "ТС-7", "только З-2"):
+        for code in ("И-7", "ТС-1", "ТС-5", "ТС-6", "ТС-7"):
             self.assertIn(code, block)
+        # Действующие заглушки БС-21 — строки первой таблицы раздела 4 реестра
+        # (до #495 — «только З-2»; #495 добавил З-5 для И-11, PR runtime #28).
+        stubs = table(section(text(REFERENCES), "## 4. Заглушки"), "№", "Условие заглушки")
+        active = [row["№"] for row in stubs]
+        self.assertIn("З-2", active)
+        named = "сейчас " + " и ".join(active) + ";"
+        self.assertIn(named, block, "БС-21 называет все действующие заглушки реестра")
         self.assertIsNone(SHA.search(self.body), "SHA — только в разделе 1 реестра (ТС-5)")
 
     def test_stage_one_has_no_code_gate(self):
