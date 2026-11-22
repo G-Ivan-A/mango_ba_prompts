@@ -136,7 +136,8 @@ def check_steps(route, kit, handoff):
             "Шаги и порядок должны совпадать с комплектом прогона")
     for number, (code, entry) in enumerate(zip(steps, kit), 1):
         step = steps[code]
-        assigned = entry["system"] or entry["published" if entry["mode"] == "published" else "draft"]
+        mode_edition = "published" if entry["mode"] == "published" else "draft"
+        assigned = entry["system"] or entry[mode_edition]
         require(step["number"] == (str(number) if code != "Ш-С" else EMPTY), f"{code}: неверный номер")
         step["edition"] = edition(step["edition"])
         require(step["edition"] == assigned["sourcePath"] and step["mode"] == entry["mode"],
@@ -281,14 +282,15 @@ def decision(route, state, source, gate, outcome):
 
 def check_sh3_input(route, state):
     """Check the two supported inputs to the common Ш-3 edition."""
-    if state["format"] == "decomposed":
-        decision(route, state, "AIN-21", "AIN-21", "allow")
-        checked(state, "AIN-24")
-        source = "AIN-24"
-    else:
-        checked(state, "Ш-2")
+    try:
         source = "Ш-2"
-    decision(route, state, source, "Г-IN", "дальше")
+        if state["format"] == "decomposed":
+            decision(route, state, "AIN-21", "AIN-21", "allow")
+            source = "AIN-24"
+        checked(state, source)
+        decision(route, state, source, "Г-IN", "дальше")
+    except ValueError as error:
+        raise ValueError(f"BLOCKED: вход Ш-3, {error}") from error
 
 
 def navigate(route, state, action, target, *, reason=None):
@@ -356,21 +358,19 @@ def saved_context(state, step):
 def check_action(route, state, row):
     source = state["current"]
     gate, _, outcome = row["guard"].partition("/")
-    if gate == "БА" or (outcome and row["name"] in ("продолжить", "выпустить", "выйти в CS")):
-        checked(state, source)
-    if outcome:
-        decision(route, state, source, gate, outcome)
+    if row["name"] == "продолжить" and (row["target"] == "Ш-3" or source == "Ш-3"):
+        check_sh3_input(route, state)
+    if row["target"] != "Ш-3":
+        if gate == "БА" or (outcome and row["name"] in ("продолжить", "выпустить", "выйти в CS")):
+            checked(state, source)
+        if outcome:
+            decision(route, state, source, gate, outcome)
     facts = set() if row["facts"] == EMPTY else set(row["facts"].split(", "))
     require(facts.issubset(state["facts"]), f"{source}: не подтверждены условия {sorted(facts - state['facts'])}")
     if row["name"] == "сценарии по запросу":
         require(source != "Ш-С" and source not in route["ain"], "Ш-С: контекст не допускает сценарии")
     if row["name"] == "уточнить с Заказчиком" and source in route["ain"]:
         require(source == "AIN-16", "Вопросы Заказчику в AIN — только через AIN-16")
-    if row["name"] == "продолжить" and (row["target"] == "Ш-3" or source == "Ш-3"):
-        try:
-            check_sh3_input(route, state)
-        except ValueError as error:
-            raise ValueError(f"BLOCKED: вход Ш-3, {error}") from error
 
 
 def check_return(route, state, target, reason):
@@ -386,6 +386,10 @@ def check_return(route, state, target, reason):
         require(choice.get(track) == target and source in chain
                 and chain.index(target) <= chain.index(source), f"{source}: нет возврата к {target} по причине {reason}")
     require("возврат-БА" in state["facts"], "БА должен выбрать точку возврата")
+    if target == "Ш-3":
+        check_sh3_input(route, state)
+    if target in ("AIN-22", "AIN-24"):
+        decision(route, state, "AIN-21", "AIN-21", "allow")
 
 
 def main():

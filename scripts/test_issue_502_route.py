@@ -70,14 +70,14 @@ class RouteTests(unittest.TestCase):
 
     def test_system_gate_and_sh3_input(self):
         s = state("system", "Ш-2", "Ш-2")
-        with self.assertRaisesRegex(ValueError, "Г-IN"):
+        with self.assertRaisesRegex(ValueError, "BLOCKED: вход Ш-3.*Г-IN"):
             self.go(s, "Ш-3")
         record(s, "Ш-2", "Г-IN", "дальше", "БА")
         self.assertEqual(self.go(s, "Ш-3")["current"], "Ш-3")
         with self.assertRaisesRegex(ValueError, "недопустимое действие"):
             self.go(s, "Ш-4")
         s["decisions"]["Г-IN"]["step"] = "AIN-24"
-        with self.assertRaisesRegex(ValueError, "Г-IN"):
+        with self.assertRaisesRegex(ValueError, "BLOCKED: вход Ш-3.*Г-IN"):
             self.go(s, "Ш-3")
         s["current"] = "Ш-3"
         s["results"]["Ш-3"] = s["accepted"]["Ш-3"] = "r1"
@@ -118,6 +118,27 @@ class RouteTests(unittest.TestCase):
         del s["decisions"]["AIN-21"]
         with self.assertRaisesRegex(ValueError, "AIN-21"):
             self.go(s, "Ш-3")
+
+    def test_reentry_checks_the_destination_admission(self):
+        for track, source in (("system", "Ш-2"), ("decomposed", "AIN-24")):
+            with self.subTest(track=track):
+                s = state(track, "Ш-5", source, "Ш-3", "Ш-5", facts={"возврат-БА"})
+                if track == "decomposed":
+                    s["results"]["AIN-21"] = "r1"
+                    record(s, "AIN-21", "AIN-21", "allow", "БА")
+                with self.assertRaisesRegex(ValueError, "BLOCKED: вход Ш-3.*Г-IN"):
+                    self.go(s, "Ш-3", action="вернуться", reason="ФТ")
+                record(s, source, "Г-IN", "дальше", "БА")
+                returned = self.go(s, "Ш-3", action="вернуться", reason="ФТ")
+                self.assertEqual(returned["current"], "Ш-3")
+                self.assertEqual(returned["decisions"], s["decisions"])
+                self.assertNotIn("Ш-3", returned["results"])
+
+        ain = state("decomposed", "AIN-23", "AIN-21", "AIN-22", facts={"возврат-БА"})
+        with self.assertRaisesRegex(ValueError, "AIN-21.*актуальный допуск"):
+            self.go(ain, "AIN-22", action="вернуться", reason="пересборка")
+        record(ain, "AIN-21", "AIN-21", "allow", "БА")
+        self.assertEqual(self.go(ain, "AIN-22", action="вернуться", reason="пересборка")["current"], "AIN-22")
 
     def test_return_rechecks_admission_and_invalidates_all_downstream_approvals(self):
         s = state("decomposed", "Ш-7", "AIN-14", "AIN-21", "AIN-24", "Ш-3", "Ш-5",
