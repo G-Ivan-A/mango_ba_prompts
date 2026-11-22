@@ -28,3 +28,20 @@
   font-size: 0.9rem;
   font-weight: 700;
 }
+
+.working-prompt-path {
+  overflow-wrap: anywhere;
+}
+
+.prompt-card[data-family="working"] {
+  scroll-margin-top: calc(var(--topbar-height, 90px) + 12px);
+}
+
+.prompt-card[data-family="working"]:focus {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+.testkit-edition-status {
+  margin-inline-start: 6px;
+}

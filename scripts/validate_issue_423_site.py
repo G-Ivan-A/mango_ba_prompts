@@ -111,8 +111,8 @@ def check_catalog() -> list[str]:
             errors.append(f"prompts.json: текст {prompt['sourcePath']} отличается от файла (перегенерируйте данные)")
 
     families = [f["id"] for f in data["filters"]["families"]]
-    if sorted(families) != ["archive", "bcreq"]:
-        errors.append(f"prompts.json: фильтр «Набор» — bcreq и archive, найдено {families}")
+    if families != ["bcreq", "working", "archive"]:
+        errors.append(f"prompts.json: фильтр «Набор» — bcreq, working и archive, найдено {families}")
     if [p["label"] for p in data["filters"]["processes"]] != STAGES:
         errors.append("prompts.json: фильтр стадий — A-IN, A-CORE, A-WORK, A-RELEASE")
 
