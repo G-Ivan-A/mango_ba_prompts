@@ -75,9 +75,9 @@ BL-157в; до него комплект проверен только синт�
 ## 1. Порядок шагов
 
 Процесс прогона — [ручной процесс BCREQ](bcreq-manual-process.md):
-шаги потока — [раздел 0.3](bcreq-manual-process.md#03-шаги-потока),
-гейты — [раздел 0.2](bcreq-manual-process.md#02-гейты-и-стадии-артефакта),
-правила П-1…П-8 — [раздел 1.1](bcreq-manual-process.md#11-общие-правила-ручного-прогона).
+условия действий, гейтов и возвратов — [нормативный маршрут v0.3](bcreq-manual-process.md#10-нормативный-маршрут-этапа-1-v03),
+правила П-1…П-7 — [раздел 1.1](bcreq-manual-process.md#11-общие-правила-ручного-прогона),
+правила 39 классов — [пилот](bcreq-manual-process.md#пилот--39-классов).
 Порядок, назначение шага и варианты «продолжить / вернуться / диалог» —
 [RFC #427, раздел 5.4](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#54-последовательность-шагов-этапа-1)
 и [5.5](https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/rfc/2026-11-bcreq-flow-processes-prompts.md#55-три-варианта-на-каждом-шаге).
