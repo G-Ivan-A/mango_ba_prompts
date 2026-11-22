@@ -178,7 +178,8 @@ class WorkingEditionsTest(unittest.TestCase):
             for directory in ("docs", "patterns", "pr-ops", "prompts", "runs", "standards"):
                 (target / directory).symlink_to(ROOT / directory, target_is_directory=True)
             (target / generator.parent).mkdir()
-            shutil.copy2(ROOT / generator, target / generator)
+            for script in (generator, Path("scripts/bcreq_manual_route.py"), Path("scripts/bcreq_handoff.py")):
+                shutil.copy2(ROOT / script, target / script)
             output = target / "site/data"
             output.mkdir(parents=True)
             shutil.copy2(site_data / "step-handoff.json", output)

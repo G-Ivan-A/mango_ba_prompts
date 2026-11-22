@@ -56,6 +56,30 @@ class RouteTests(unittest.TestCase):
                 with self.assertRaisesRegex(ValueError, diagnosis):
                     manual.load(self.source.replace(original, mutation, 1))
 
+    def test_site_route_preserves_format_and_guards(self):
+        tracks = manual.site_route(self.route)["tracks"]
+        for track, cards in tracks.items():
+            self.assertEqual(list(cards), [*self.route["paths"][track], "Ш-С"])
+            for card in cards.values():
+                for action in card["actions"]:
+                    self.assertIn(action["target"], set(cards) | manual.TERMINAL | {"текущий", "исходный"})
+                for option in card["returns"]:
+                    self.assertIn(option["target"], cards)
+        system, decomposed = tracks["system"], tracks["decomposed"]
+        for card, target, guard in (
+            (system["Ш-2"], "Ш-3", "Г-IN/дальше"),
+            (decomposed["AIN-21"], "AIN-22", "AIN-21/allow"),
+            (decomposed["AIN-24"], "Ш-3", "Г-IN/дальше"),
+            (decomposed["Ш-Р"], "BASELINE", "Выпуск/выпуск"),
+        ):
+            self.assertEqual([row["guard"] for row in card["actions"] if row["target"] == target], [guard])
+        self.assertIn("Ш-2", [row["target"] for row in system["Ш-3"]["returns"]])
+        self.assertIn("AIN-24", [row["target"] for row in decomposed["Ш-3"]["returns"]])
+        self.assertNotIn("AIN-24", [row["target"] for row in decomposed["AIN-21"]["returns"]])
+        self.assertNotIn("Ш-С", [row["target"] for row in decomposed["AIN-24"]["actions"]])
+        self.assertFalse(system["Ш-С"]["returns"])
+        self.assertIn("исходный", [row["target"] for row in system["Ш-С"]["actions"]])
+
     def test_technical_step_and_ba_confirmation(self):
         s = state("system", "Ш-0", facts={"вход-Ш-0", "ввод-промпта"})
         self.assertEqual(self.go(s, "Ш-А")["current"], "Ш-А")

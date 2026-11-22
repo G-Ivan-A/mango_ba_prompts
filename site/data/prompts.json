@@ -255,10 +255,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.9.3",
+    "version": "2.9.4",
     "released": "2026-11-22",
     "issue": 500,
-    "basis": "Рабочие редакции этапа 1 в Каталоге и Процессах",
+    "basis": "Продолжение и возврат по нормативному маршруту BCREQ v0.3",
     "changelog": "CHANGELOG.md"
   },
   "stateContract": {

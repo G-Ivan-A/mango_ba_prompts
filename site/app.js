@@ -1387,6 +1387,19 @@ function applyRoute() {
     } else {
       updateFormatLinks("");
     }
+    const originLink = workingTarget?.querySelector("[data-route-origin]");
+    if (originLink) {
+      const origin = params.get("from");
+      const cards = state.testKit.route.tracks[state.stepFormat];
+      const canReturn = Object.hasOwn(cards, origin) && cards[origin].actions.some(({ target }) => target === "Ш-С");
+      originLink.hidden = !canReturn;
+      if (canReturn) {
+        originLink.href = processStepHref(origin, state.stepFormat, params.get("fromEdition"));
+        originLink.textContent = `Открыть ${origin}`;
+      } else {
+        originLink.removeAttribute("href");
+      }
+    }
     focusCard(workingTarget || legacyTarget);
   }
   if (page === "standards") {
@@ -1514,7 +1527,7 @@ function composeAinTestKit(kit, ain) {
     if (!step.step.startsWith("Ш-1 ")) return [{ ...step }];
     return ain.steps.map((s) => ({
       ainId: s.id, step: `${s.id} ${s.name}`, group: step.group,
-      next: s.next, returns: s.returns, failure: s.failure, operation: s.operation,
+      operation: s.operation,
       mode: "by-test", modeNote: "эффективность не измерена",
       purpose: s.why, prepare: s.input,
       ...ainHandoff(kit, s.id),
@@ -1807,6 +1820,61 @@ function selectTestKitEdition(item, kind) {
   source.href = repoHref(variant.url);
   source.title = variant.sourcePath;
   item.querySelector(".testkit-sha").textContent = `${variant.file} · sha256 ${variant.sha256.slice(0, 16)}`;
+  const scenarios = item.querySelector("[data-route-scenarios]");
+  if (scenarios) {
+    const context = new URLSearchParams({ from: stepCode(step), fromEdition: variant.id });
+    scenarios.href = `${processStepHref("Ш-С", state.stepFormat)}&${context}`;
+  }
+}
+
+function testKitRoute(code) {
+  const track = state.stepFormat;
+  const { actions, returns } = state.testKit.route.tracks[track][code];
+  const gates = state.testKit.route.gates;
+  const details = el("details", "testkit-more testkit-route");
+  details.append(el("summary", "", "Варианты дальше"));
+  details.append(el("p", "", "Ссылки открывают карточки. Решение и запуск шага выполняются в рабочем контексте."));
+  const choices = el("ul", "testkit-route-list");
+  for (const { name, when, guard, target } of actions) {
+    const choice = el("li", "");
+    const label = `${name[0].toUpperCase()}${name.slice(1)}`;
+    if (Object.hasOwn(state.testKit.route.tracks[track], target)) {
+      const link = internalLink(processStepHref(target, track), `${label} → ${target}`);
+      if (target === "Ш-С") link.dataset.routeScenarios = "";
+      choice.append(link);
+    } else {
+      const outcome = ["СТОП", "CS", "BASELINE"].includes(target) ? ` → ${target}` : "";
+      choice.append(el("strong", "", label + outcome));
+    }
+    choice.append(el("p", "", when));
+    if (target === "исходный") {
+      const link = internalLink("", "Открыть исходную карточку");
+      link.hidden = true;
+      link.dataset.routeOrigin = "";
+      choice.append(link);
+    }
+    if (guard === "БА") choice.append(el("p", "", "Требуется явное подтверждение БА."));
+    const [gate, decision] = guard.split("/");
+    if (gates[gate]) {
+      const { deciders, record } = gates[gate];
+      choice.append(el("p", "", `${gate} / ${decision}. Решает ${deciders}. Запись решения — ${record}.`));
+    }
+    choices.append(choice);
+  }
+  details.append(choices);
+  if (returns.length) {
+    details.append(el("strong", "", "Возврат"));
+    details.append(el("p", "", "БА выбирает точку входа, отмечает зависимые результаты как устаревшие, отзывает допуски и фиксирует решение в 8.5."));
+    const options = el("ul", "testkit-route-list");
+    for (const { name, when, target } of returns) {
+      const choice = el("li", "");
+      choice.append(internalLink(processStepHref(target, track), name ? `${name} → ${target}` : target));
+      choice.append(el("p", "", when));
+      options.append(choice);
+    }
+    details.append(options);
+  }
+  return details;
 }
 
 function testKitStep(step, index) {
@@ -1866,18 +1934,7 @@ function testKitStep(step, index) {
     gate.append(el("strong", "", `⛳ ${step.gate}. `), document.createTextNode(step.gateHint));
     info.append(gate);
   }
-  if (step.ainId) {
-    // Navigation proposes a destination; acceptance and execution stay manual.
-    const links = el("p", "prompt-links");
-    const destinations = [...new Set([step.next, ...(step.returns || []), step.failure])];
-    for (const id of destinations) {
-      const target = /^AIN-\d{2}$/.test(id) ? `#processes?ain=${id}` : "#processes?view=g2";
-      const link = el("a", "prompt-link", id === step.next ? `После принятия: ${id}` : `Возврат: ${id}`);
-      link.href = target;
-      links.append(link);
-    }
-    info.append(links);
-  }
+  info.append(testKitRoute(stepCode(step)));
 
   // SHA выбранной редакции — для проверяющего, свёрнуто по умолчанию.
   const more = el("details", "testkit-more");
@@ -1940,7 +1997,9 @@ function renderTestKit() {
       `Шагов: ${kit.counts.steps}; draft / «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. ${formatNote}; остальные стадии — `,
     ),
     source,
-    document.createTextNode("."),
+    document.createTextNode(". "),
+    linkTo(kit.route.source, "Нормативный маршрут v0.3"),
+    document.createTextNode(". При незакрытом ACCESS_GAP или критическом конфликте норм остановите прогон (BLOCKED) до устранения причины."),
   );
   nodes.testKitSteps.replaceChildren(
     ...kit.groups.map((group) => {

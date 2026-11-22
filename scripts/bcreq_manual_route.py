@@ -6,6 +6,7 @@ from copy import deepcopy
 import json
 from pathlib import Path
 import re
+import sys
 
 import bcreq_handoff
 
@@ -70,16 +71,17 @@ def edition(link):
     match = re.fullmatch(r"\[[^\]]+\]\((\.\./\.\./prompts/[^)]+\.md)\)", link)
     require(match, f"Отсутствует ссылка на редакцию: {link}")
     path = (PROCESS.parent / match[1]).resolve()
-    require(path.is_relative_to(ROOT / "prompts") and path.is_file(),
+    prompts = (ROOT / "prompts").resolve()
+    require(path.is_relative_to(prompts) and path.is_file(),
             f"Редакция отсутствует: {match[1]}")
-    require(not path.is_relative_to(ROOT / "prompts/archive"), f"Редакция в архиве: {path.name}")
+    require(not path.is_relative_to((prompts / "archive").resolve()), f"Редакция в архиве: {path.name}")
     header = path.read_text(encoding="utf-8").split("---", 2)
     require(len(header) == 3 and all(re.search(rf"(?m)^{key}: \S", header[1])
                                     for key in ("id", "version", "status")),
             f"Нет ID, статуса или версии: {path.name}")
     require(not re.search(r'(?m)^status:\s*["\']?archived\b', header[1]),
             f"Редакция архивная: {path.name}")
-    return path.relative_to(ROOT).as_posix()
+    return (Path("prompts") / path.relative_to(prompts)).as_posix()
 
 
 def available(route, step, track):
@@ -88,12 +90,13 @@ def available(route, step, track):
     )
 
 
-def load(text=None):
+def load(text=None, kit=None):
     """Read the SSOT and check it against the current run kit, handoff and A-IN."""
     if text is None:
         text = PROCESS.read_text(encoding="utf-8")
     require(re.search(r"(?m)^version: 0\.3$", text), "Нужен ручной процесс v0.3")
-    kit = json.loads((ROOT / "site/data/test-kit.json").read_text(encoding="utf-8"))["steps"]
+    if kit is None:
+        kit = json.loads((ROOT / "site/data/test-kit.json").read_text(encoding="utf-8"))["steps"]
     ain = json.loads((PROCESS.parent / "bcreq-a-in-route.json").read_text(encoding="utf-8"))
     handoff = bcreq_handoff.load()["steps"]
 
@@ -392,12 +395,69 @@ def check_return(route, state, target, reason):
         decision(route, state, "AIN-21", "AIN-21", "allow")
 
 
+
+SITE_SOURCE = "docs/ba-processes/bcreq-manual-process.md#10-нормативный-маршрут-этапа-1-v03"
+
+
+def site_route(route):
+    """Project ordered, conditional navigation for the static step cards."""
+    tracks = {}
+    for track, chain in route["paths"].items():
+        cards = {}
+        for index, source in enumerate([*chain, "Ш-С"]):
+            ain = route["ain"].get(source)
+            actions = [
+                {key: row[key] for key in ("name", "when", "guard", "target")}
+                for row in route["actions"]
+                if slot(row, track) and (
+                    row["source"] == source or row["source"] == "*" and (
+                        (row["target"] != "Ш-С" or (not ain and source != "Ш-С"))
+                        and (row["name"] != "уточнить с Заказчиком" or not ain or source == "AIN-16")
+                    )
+                )
+            ]
+            if ain:
+                if not any(row["name"] == "продолжить" for row in actions):
+                    actions.insert(0, {
+                        "name": "продолжить", "when": ain["checks"], "target": ain["next"],
+                        "guard": "БА" if ain["check"] == "required" else EMPTY,
+                    })
+                returns = []
+                for target in dict.fromkeys([*ain["returns"], ain["failure"]]):
+                    require(target in route["ain"], f"{source}: неизвестная цель возврата A-IN {target}")
+                    returns.append({
+                        "target": target,
+                        "when": "Проверка шага не пройдена." if target == ain["failure"]
+                        else "БА определил, что нужно пересмотреть результат этого шага.",
+                    })
+            elif source == "Ш-С":
+                returns = []
+            else:
+                returns = [
+                    {"name": reason, "when": row["when"], "target": row[track]}
+                    for reason, row in route["returns"].items()
+                    if row[track] in chain[:index + 1]
+                ]
+            for row in returns:
+                if row["target"] == "Ш-3":
+                    row["when"] += " На входе Ш-3 проверяет формат и действующий допуск Г-IN."
+                elif row["target"] in ("AIN-22", "AIN-24"):
+                    row["when"] += " Нужен актуальный допуск AIN-21."
+            cards[source] = {"actions": actions, "returns": returns}
+        tracks[track] = cards
+    return {"source": SITE_SOURCE, "tracks": tracks, "gates": route["gates"]}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--json", action="store_true", help="вывести производный маршрут в stdout")
+    parser.add_argument("--site", action="store_true", help="построить навигацию сайта из комплекта в stdin")
     args = parser.parse_args()
     try:
-        route = load()
+        route = load(kit=json.load(sys.stdin) if args.site else None)
+        if args.site:
+            print(json.dumps(site_route(route), ensure_ascii=False))
+            return
     except ValueError as error:
         parser.exit(1, f"{error}\n")
     if args.json:
