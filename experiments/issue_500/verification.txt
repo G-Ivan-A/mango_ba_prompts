@@ -1,0 +1,70 @@
+BL-231 (#500) — проверка рабочих редакций на 206011de
+
+Базовый срез e89a6dea73ddeb27aa824cc2ca8c64fcf4d5ef3c — ожидаемый сбой теста полноты
+test_working_editions (__main__.WorkingEditionsTest.test_working_editions) ... ERROR
+ValueError: site/data/prompts.json: отсутствуют рабочие редакции этапа 1
+FAILED (errors=1)
+
+python3 scripts/test_issue_500_working_editions.py
+test_catalog_mutations (__main__.WorkingEditionsTest.test_catalog_mutations) ... ok
+test_generator_rejects_invalid_source_links (__main__.WorkingEditionsTest.test_generator_rejects_invalid_source_links) ... ✔ generator detects an unknown class from A-IN
+✔ generator detects an unknown step from flow_step
+✔ generator detects an edition with a missing source
+✔ generator detects an ID that resolves to two source paths
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 324.495766
+ok
+test_post_497_mutations (__main__.WorkingEditionsTest.test_post_497_mutations) ... ok
+test_post_497_snapshot (__main__.WorkingEditionsTest.test_post_497_snapshot) ... OK post-#497: 132 исходников, 195 проекций, 22 CT/BP
+ok
+test_site_json_reproducible (__main__.WorkingEditionsTest.test_site_json_reproducible) ... Generated 57 prompts
+Generated BCREQ flow: 39 manual steps, 5 approval stages
+Generated test kit: 14 steps, 12 by-test, 2 published
+Generated 9 process cards and 7 patterns
+Generated 13 operations and 4 BCREQ catalog stages
+Generated 4 roadmap levels and 7 gaps
+Generated process tree: 22/38 subprocesses with prompts in 8/9 processes (useTree=true)
+Generated checks: 87 prompt tests in 830 logs, 0 feedback items
+ok
+test_working_editions (__main__.WorkingEditionsTest.test_working_editions) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 4.576s
+
+OK
+Мутация отклонена — draft → archived
+Мутация отклонена — исторический путь для системного Ш-1
+Мутация отклонена — исторический путь с тем же именем
+Мутация отклонена — неизвестный шаг
+Мутация отклонена — сломана обратная связь К-36
+Мутация отклонена — дублирован ID
+Мутация отклонена — a-in-kit.json:AIN-01: Проверки (receipt)
+Мутация отклонена — a-in-kit.json:AIN-01: ACCESS_GAP
+Мутация отклонена — a-in-kit.json:AIN-01: Итог шага
+Мутация отклонена — a-in-kit.json:AIN-01: КОНЕЦ AIN-01 <версия результата>
+Мутация отклонена — a-in-kit.json:AIN-01: Р1
+Мутация отклонена — отсутствует CT-01
+Мутация отклонена — отсутствует BP-01
+Мутация отклонена — исчезновение a-in-kit.json:AIN-01
+Мутация отклонена — ручная правка site/data/prompts.json
+
+python3 experiments/issue_495/protected_baseline.py --check
+OK: снимок актуален
+
+python3 scripts/audit_prompt_purity.py
+Файлов в контуре: 151; нарушений: 0
+  (a) приватные/незакреплённые ссылки: 0
+  (b) кейс-специфика: 0
+  (c) неисполнимый балласт: 0
+По правилам:
+По файлам (a/b/c):
+
+Playwright Chromium, 1440×1000 и 390×844
+Фокус, переходы и копирование в Chromium пройдены. Проверено тел: 8.
+Буфер Chromium — 8 тел, 0 нарушений

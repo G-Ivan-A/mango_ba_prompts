@@ -8,6 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
 const SITE_DIR = path.join(ROOT, "site");
 const SITE_DATA_DIR = path.join(SITE_DIR, "data");
+const GENERATED_AT = process.env.SITE_DATA_GENERATED_AT || new Date().toISOString();
 
 // Issue #462, выбран вариант А: отчёты с данными задач не публикуются. Клиентский
 // пароль файлы не защищает, поэтому каталог удаляется из site/ при каждой сборке,
@@ -20,6 +21,8 @@ export async function enforcePublicSiteExclusions(siteDir = SITE_DIR) {
     await fs.rm(path.join(siteDir, relative), { recursive: true, force: true });
   }
 }
+
+const AIN_ROUTE = "docs/ba-processes/bcreq-a-in-route.json";
 
 const SOURCE_FILES = {
   promptsReadme: "prompts/README.md",
@@ -69,6 +72,7 @@ const BCREQ_STAGES = [
   { id: "bcreq-review", label: "Валидация второй ролью", emoji: "✅", description: "Независимая проверка разделов документа по чек-листам." },
   { id: "bcreq-scenarios", label: "Сценарии вне документа", emoji: "🎬", description: "Независимые US и UC по предоставленному контексту." },
 ];
+const RELEASE_STAGE = { id: "bcreq-release", label: "Выпуск BCREQ", emoji: "📦" };
 
 // Версия сайта (issue #423). Мажор 2 — сайт v2: страницы О проекте, Каталог,
 // Стандарты, Процессы, Дашборд, Справочник; каталог 39 классов (PR #422).
@@ -110,10 +114,10 @@ const BCREQ_STAGES = [
 // ссылок на приватный репозиторий, HTML-комментариев и кейс-лексики; данные
 // сайта хранят пути от корня репо. Только патч серии 2.9.x (дополнение 2 к #495).
 const SITE_VERSION = {
-  version: "2.9.2",
-  released: "2026-11-20",
-  issue: 495,
-  basis: "PR #497: чистота промптов — без приватных ссылок, балласта и кейс-лексики",
+  version: "2.9.3",
+  released: "2026-11-22",
+  issue: 500,
+  basis: "Рабочие редакции этапа 1 в Каталоге и Процессах",
   changelog: "CHANGELOG.md",
 };
 
@@ -816,7 +820,7 @@ function makeStats(prompts, taxonomy, processIndex, roadmap) {
   ];
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [...Object.values(SOURCE_FILES), CLASS_CATALOG].map((relativePath) => ({
       path: relativePath,
       url: repoUrl(relativePath),
@@ -1031,7 +1035,7 @@ function makeChecks(prompts, processes, experiments, feedbackEntries) {
     .filter((group) => group.prompts.length > 0);
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [
       { path: `${RUNS_DIR}/`, url: repoUrl(`${RUNS_DIR}/`) },
       { path: FEEDBACK_SOURCE, url: repoUrl(FEEDBACK_SOURCE) },
@@ -1109,7 +1113,7 @@ function makeProcesses(taxonomyProcesses, processIndexData, prompts, patternsLis
   });
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [
       { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
       { path: SOURCE_FILES.taxonomy, url: repoUrl(SOURCE_FILES.taxonomy) },
@@ -1141,7 +1145,7 @@ function makePatterns(patternsList, prompts, operationsById) {
   });
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [{ path: SOURCE_FILES.patternsReadme, url: repoUrl(SOURCE_FILES.patternsReadme) }],
     patterns,
   };
@@ -1152,8 +1156,21 @@ function makePatterns(patternsList, prompts, operationsById) {
 const PROMPT_FAMILIES = [
   { id: "bcreq", label: "BCREQ · 39 классов", icon: "★", description: "39 классов ручных промптов BCREQ (PR #422): по одному стандарту на класс, общий контракт состояния." },
   { id: "other", label: "Прочие", icon: "•", description: "Действующие промпты вне набора BCREQ." },
+  { id: "working", label: "Рабочие шаги этапа 1", icon: "▶", description: "Назначенные редакции и доступные варианты для сравнения." },
   { id: "archive", label: "Архив", icon: "⌛", description: "Промпты этапа 1 и полные заменённые редакции A-IN сайта 2.7.0; поиск и фильтры доступны, исходные файлы сохранены для трассировки." },
 ];
+
+function filterProcesses(processes) {
+  return processes.flatMap((label) => ({
+    "Приём и контекст": [CLASS_STAGES[0].label],
+    "Требования и предварительное согласование": [CLASS_STAGES[1].label],
+    "Дизайн решения и оценка": [CLASS_STAGES[2].label],
+    "Конституция и управление": CLASS_STAGES.map((stage) => stage.label),
+    "Валидация второй ролью": CLASS_STAGES.slice(1).map((stage) => stage.label),
+    "Сценарии вне документа": [CLASS_STAGES[1].label, CLASS_STAGES[2].label],
+    "Выпуск BCREQ": [CLASS_STAGES[3].label],
+  }[label] || []));
+}
 
 function promptFamily(basename, archived) {
   if (archived) {
@@ -1274,7 +1291,7 @@ function makeBcreqFlow(markdown, prompts) {
   }));
 
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [{ path: SOURCE_FILES.bcreqFlow, url: repoUrl(SOURCE_FILES.bcreqFlow) }],
     title,
     manual: {
@@ -1413,22 +1430,32 @@ export function assertTestKitComplete({ groups, cards, steps, prompts }) {
 // в site/data/step-handoff.json. «Что делает БА» в карточке заменено «Целью».
 export const STEP_HANDOFF_FILE = "site/data/step-handoff.json";
 
-// Текст промпта по ссылке ячейки: черновик «по тесту» или системный формат (#490).
-async function readLinkedPrompt(draftPath, suffix) {
-  const content = await read(draftPath);
-  // У черновиков поле steps: [Ш-0] — не JSON; берутся только нужные поля.
-  const field = (name) =>
-    content.match(new RegExp(`^${name}:\\s*"?([^"\\n]*)"?\\s*$`, "m"))?.[1]?.trim() || "";
+function promptIdentity(sourcePath, content) {
+  const frontmatter = parseFrontmatter(content);
+  const { id, title, version, status, updated } = frontmatter;
+  if (!id || !title || !version || !status) {
+    throw new Error(`${sourcePath}: нужны ID, название, версия и статус редакции`);
+  }
   return {
-    id: field("id") || `mango-${path.basename(draftPath, ".md")}${suffix}`,
-    file: path.basename(draftPath),
-    title: field("title") || path.basename(draftPath, ".md"),
-    sourcePath: draftPath,
-    url: repoUrl(draftPath),
-    basedOnSha256: field("based_on_sha256"),
+    id, title, version, status, updated, sourcePath,
+    file: path.posix.basename(sourcePath),
+    url: repoUrl(sourcePath),
+    basedOnSha256: frontmatter.based_on_sha256 || "",
     sha256: crypto.createHash("sha256").update(content).digest("hex"),
-    body: stripFrontmatter(content),
   };
+}
+
+async function readStepPrompt(sourcePath, step, source = SOURCE_FILES.runKit) {
+  try {
+    return await read(sourcePath);
+  } catch (error) {
+    throw new Error(`${source}: ${step}: не удалось прочитать ${sourcePath} (${error.code || error.message})`);
+  }
+}
+
+async function readLinkedPrompt(sourcePath, step) {
+  const content = await readStepPrompt(sourcePath, step);
+  return { ...promptIdentity(sourcePath, content), body: stripFrontmatter(content) };
 }
 
 export async function makeTestKit(markdown, prompts, handoff = null) {
@@ -1482,9 +1509,9 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
     }
     const params = row["Промпт для копирования"].match(/\(`([^`]+)`\)\s*$/)?.[1] || "";
     const draftPath = linkTarget(row[draftHeader] || "");
-    const draft = draftPath ? await readLinkedPrompt(draftPath, "-by-test") : null;
+    const draft = draftPath ? await readLinkedPrompt(draftPath, code) : null;
     const systemPath = linkTarget(row[systemHeader] || "");
-    const system = systemPath ? await readLinkedPrompt(systemPath, "-system") : null;
+    const system = systemPath ? await readLinkedPrompt(systemPath, code) : null;
     const stepHandoff = handoff.steps?.[code];
     if (!stepHandoff) {
       throw new Error(`${STEP_HANDOFF_FILE}: нет итога шага ${code}`);
@@ -1516,6 +1543,8 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
             file: publishedPrompt.file,
             title: publishedPrompt.title,
             url: publishedPrompt.url,
+            sourcePath: publishedPrompt.sourcePath,
+            status: publishedPrompt.status,
             version: publishedPrompt.version,
             sha256: publishedPrompt.contentHash,
           }
@@ -1525,7 +1554,7 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
   }
   assertTestKitComplete({ groups, cards, steps, prompts });
   return {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [{ path: SOURCE_FILES.runKit, url: repoUrl(SOURCE_FILES.runKit) }],
     kit: { version: String(frontmatter.version || ""), url: repoUrl(SOURCE_FILES.runKit) },
     // Цель и проверка БА для AIN-шагов декомпозированного формата (issue #490):
@@ -1551,6 +1580,107 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
     },
     steps,
   };
+}
+
+async function makeAinKit() {
+  const route = JSON.parse(await read(AIN_ROUTE));
+  const steps = [];
+  const ids = new Set();
+  for (const step of route.steps) {
+    if (!/^AIN-(?:0[1-9]|1\d|2[0-4])$/.test(step.id) || ids.has(step.id)) {
+      throw new Error(`${AIN_ROUTE}: неизвестный или повторный шаг ${step.id}`);
+    }
+    ids.add(step.id);
+    const promptPath = `prompts/drafts/a-in/bcreq-${step.id.toLowerCase()}-understanding-stepwise.md`;
+    const prompt = await readStepPrompt(promptPath, step.id, AIN_ROUTE);
+    steps.push({ ...step, promptPath, prompt, promptSha256: crypto.createHash("sha256").update(prompt).digest("hex") });
+  }
+  if (steps.length !== 24) {
+    throw new Error(`${AIN_ROUTE}: ожидалось 24 шага, получено ${steps.length}`);
+  }
+  return { routeVersion: route.version, status: "draft", measured: false, steps };
+}
+
+export async function makeWorkingCatalog(kit, ain, classes, operations) {
+  const working = new Map();
+  const stepClasses = {};
+  const classSteps = Object.fromEntries(classes.map(({ id }) => [id, []]));
+  const kitCodes = new Set(kit.steps.map(({ step }) => step.split(/\s+/)[0]));
+  const paths = new Map();
+
+  function linkClass(step, id, source) {
+    if (!Object.hasOwn(classSteps, id)) {
+      throw new Error(`${source}: ${step}: неизвестный класс ${id}`);
+    }
+    if (classSteps[id].includes(step)) {
+      throw new Error(`${source}: повторная связь ${id} ↔ ${step}`);
+    }
+    classSteps[id].push(step);
+    (stepClasses[step] ??= []).push(id);
+  }
+
+  async function addEdition(edition, context, description, source) {
+    const { id, sourcePath, sha256, status } = edition;
+    const label = `${source}: ${context.step}: ${id} (${sourcePath})`;
+    if (!/^prompts\/(?!archive\/)/.test(sourcePath) ||
+        (context.mode === "by-test" && status !== "draft")) {
+      throw new Error(`${label}: недопустимый исходник или статус рабочей редакции ${status}`);
+    }
+    const existing = working.get(id);
+    if (existing) {
+      if (existing.sourcePath !== sourcePath || existing.contentHash !== sha256 ||
+          existing.contexts.some((item) => item.step === context.step)) {
+        throw new Error(`${label}: неоднозначная ссылка или повторный ID`);
+      }
+      existing.contexts.push(context);
+      return;
+    }
+    if (paths.has(sourcePath)) {
+      throw new Error(`${label}: путь редакции уже связан с ${paths.get(sourcePath)}`);
+    }
+    paths.set(sourcePath, id);
+    const frontmatter = parseFrontmatter(await readStepPrompt(sourcePath, id, source));
+    const operation = operations.get(frontmatter.operation === "intake" ? "ingestion" : frontmatter.operation);
+    if (!operation || !Array.isArray(frontmatter.processes) || !frontmatter.processes.length) {
+      throw new Error(`${label}: нужны операция из таксономии и процессы из frontmatter`);
+    }
+    const processDetails = frontmatter.processes.map((name) =>
+      [...BCREQ_STAGES, RELEASE_STAGE].find((stage) => stage.label === name));
+    if (processDetails.some((stage) => !stage)) {
+      throw new Error(`${label}: неизвестный процесс ${frontmatter.processes.join(", ")}`);
+    }
+    const { basedOnSha256, body, ...identity } = edition;
+    working.set(id, {
+      ...identity, updated: frontmatter.updated, contentHash: sha256, archived: false, family: "working",
+      description, operation, processes: frontmatter.processes, processDetails,
+      filterProcesses: filterProcesses(frontmatter.processes),
+      mode: modeFromFilename(edition.file), contexts: [context],
+    });
+  }
+
+  for (const step of kit.steps) {
+    const code = step.step.split(/\s+/)[0];
+    const formats = step.system ? ["system"] : ["decomposed", "system"];
+    for (const [key, mode] of [["draft", "by-test"], ["published", "published"], ["system", "by-test"]]) {
+      if (!step[key] || (key === "draft" && step.system)) continue;
+      const assigned = step.system ? key === "system" : step.mode === mode;
+      await addEdition(step[key], { step: code, formats, mode, assigned }, step.goal, SOURCE_FILES.runKit);
+    }
+  }
+  for (const { id, flow_step: step } of classes) {
+    if (!step) continue;
+    if (!kitCodes.has(step)) {
+      throw new Error(`${CLASS_CATALOG}: ${id}: неизвестный шаг ${step}`);
+    }
+    linkClass(step, id, CLASS_CATALOG);
+  }
+  for (const step of ain.steps) {
+    await addEdition(promptIdentity(step.promptPath, step.prompt), {
+      step: step.id, formats: ["decomposed"], mode: "by-test", assigned: true,
+    }, kit.handoff.steps[step.id]?.goal || step.why, AIN_ROUTE);
+    for (const id of step.operation.split(/,\s*/)) linkClass(step.id, id, AIN_ROUTE);
+  }
+  return { workingPrompts: [...working.values()], classSteps, stepClasses };
 }
 
 async function main() {
@@ -1687,14 +1817,7 @@ async function main() {
       archived: file.archived,
       archiveInfo: file.archiveInfo || null,
       // Keep historical labels/frontmatter intact, map applicability only for facets.
-      filterProcesses: processes.flatMap((label) => ({
-        "Приём и контекст": [CLASS_STAGES[0].label],
-        "Требования и предварительное согласование": [CLASS_STAGES[1].label],
-        "Дизайн решения и оценка": [CLASS_STAGES[2].label],
-        "Конституция и управление": CLASS_STAGES.map((stage) => stage.label),
-        "Валидация второй ролью": CLASS_STAGES.slice(1).map((stage) => stage.label),
-        "Сценарии вне документа": [CLASS_STAGES[1].label, CLASS_STAGES[2].label],
-      }[label] || [])),
+      filterProcesses: filterProcesses(processes),
       family,
       isNew: family === "bcreq",
       description: metadata?.description || "Описание отсутствует в prompts/README.md.",
@@ -1732,6 +1855,9 @@ async function main() {
     });
   }
 
+  const testKit = await makeTestKit(await read(SOURCE_FILES.runKit), prompts);
+  const ainKit = await makeAinKit();
+  const workingCatalog = await makeWorkingCatalog(testKit, ainKit, classCatalog.classes, operationsById);
   const activePrompts = prompts.filter((prompt) => !prompt.archived);
   const catalogProcesses = CLASS_STAGES.map((stage) => ({
     ...stage,
@@ -1750,13 +1876,14 @@ async function main() {
     })).filter((item) => item.count > 0),
     families: PROMPT_FAMILIES.map((item) => ({
       ...item,
-      count: prompts.filter((prompt) => prompt.family === item.id).length,
+      count: item.id === "working" ? workingCatalog.workingPrompts.length :
+        prompts.filter((prompt) => prompt.family === item.id).length,
     })).filter((item) => item.count > 0),
     statuses: [...new Set(prompts.map((prompt) => prompt.status))].sort(),
   };
 
   const promptsData = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [
       { path: SOURCE_FILES.promptsReadme, url: repoUrl(SOURCE_FILES.promptsReadme) },
       { path: SOURCE_FILES.taxonomy, url: repoUrl(SOURCE_FILES.taxonomy) },
@@ -1770,17 +1897,18 @@ async function main() {
     stateContract: { path: STATE_CONTRACT, url: repoUrl(STATE_CONTRACT) },
     filters,
     prompts,
+    ...workingCatalog,
   };
 
   const roadmapData = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [{ path: SOURCE_FILES.ecosystem, url: repoUrl(SOURCE_FILES.ecosystem) }],
     levels: roadmap.levels,
     gaps: roadmap.gaps,
   };
 
   const processTreeData = {
-    generatedAt: new Date().toISOString(),
+    generatedAt: GENERATED_AT,
     sourceFiles: [
       { path: SOURCE_FILES.processIndex, url: repoUrl(SOURCE_FILES.processIndex) },
     ],
@@ -1809,19 +1937,8 @@ async function main() {
   await writeJson("site/data/patterns.json", patternsData);
   const bcreqFlow = makeBcreqFlow(await read(SOURCE_FILES.bcreqFlow), prompts);
   await writeJson("site/data/bcreq-flow.json", bcreqFlow);
-  const testKit = await makeTestKit(await read(SOURCE_FILES.runKit), prompts);
   await writeJson("site/data/test-kit.json", testKit);
-  const ainRoute = JSON.parse(await read("docs/ba-processes/bcreq-a-in-route.json"));
-  const ainSteps = [];
-  for (const step of ainRoute.steps) {
-    const promptPath = `prompts/drafts/a-in/bcreq-${step.id.toLowerCase()}-understanding-stepwise.md`;
-    const prompt = await read(promptPath);
-    ainSteps.push({ ...step, promptPath, prompt,
-      promptSha256: crypto.createHash("sha256").update(prompt).digest("hex") });
-  }
-  await writeJson("site/data/a-in-kit.json", {
-    routeVersion: ainRoute.version, status: "draft", measured: false, steps: ainSteps,
-  });
+  await writeJson("site/data/a-in-kit.json", ainKit);
 
   console.log(`Generated ${prompts.length} prompts`);
   console.log(

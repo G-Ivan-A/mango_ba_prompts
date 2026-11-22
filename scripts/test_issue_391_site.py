@@ -27,7 +27,7 @@ class PublicationTests(unittest.TestCase):
                 self.assertTrue(prompt['family'] == 'bcreq' and not prompt['archived'], prompt['id'])
             else:
                 self.assertTrue(prompt['family'] == 'archive' and prompt['archived'], prompt['id'])
-        self.assertEqual({f['id'] for f in data['filters']['families']}, {'bcreq', 'archive'})
+        self.assertEqual({f['id'] for f in data['filters']['families']}, {'bcreq', 'working', 'archive'})
         for prompt in data['prompts']:
             self.assertEqual(prompt['content'], (ROOT / prompt['sourcePath']).read_text())
 

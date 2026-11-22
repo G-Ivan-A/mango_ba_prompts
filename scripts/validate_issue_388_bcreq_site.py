@@ -242,8 +242,8 @@ def check_site_data() -> list[str]:
             # successors — классы из catalog.json PR #422 (у части промптов прямого аналога нет).
             errors.append(f"site/data/prompts.json: {name} — нужны family=archive, archived=true и список successors (issue #423)")
     families = {f.get("id") for f in data.get("filters", {}).get("families", [])}
-    if families != {"bcreq", "archive"}:
-        errors.append(f"site/data/prompts.json: фильтр «Набор» должен содержать bcreq и archive: {sorted(families)}")
+    if families != {"bcreq", "working", "archive"}:
+        errors.append(f"site/data/prompts.json: фильтр «Набор» должен содержать bcreq, working и archive: {sorted(families)}")
 
     flow = json.loads((SITE / "data" / "bcreq-flow.json").read_text(encoding="utf-8"))
     steps = flow["manual"]["steps"]
