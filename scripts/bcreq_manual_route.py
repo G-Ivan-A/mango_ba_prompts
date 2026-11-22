@@ -20,6 +20,12 @@ GATE_OWNERS = {
     "Г-W": {"ПО продукта", "архитектор продукта", "руководитель КК"},
     "Выпуск": {"БА"},
 }
+OTHER_TARGETS = {
+    "выйти в CS": "CS", "остановить": "СТОП", "выпустить": "BASELINE",
+    "уточнить с моделью": "текущий", "уточнить с Заказчиком": "текущий",
+    "сценарии по запросу": "Ш-С", "вернуться в контекст": "исходный",
+    "остановить по решению БА": "СТОП",
+}
 SCOPE = ("task_id", "attempt", "route_version", "snapshot_id", "snapshot_version")
 
 
@@ -213,13 +219,7 @@ def check_actions(route, stages):
                 gate in route["gates"] and outcome
                 and outcome.casefold() in route["gates"][gate]["outcomes"].casefold()
             ), f"{source}: неизвестный допуск {guard}")
-            other_targets = {
-                "выйти в CS": "CS", "остановить": "СТОП", "выпустить": "BASELINE",
-                "уточнить с моделью": "текущий", "уточнить с Заказчиком": "текущий",
-                "сценарии по запросу": "Ш-С", "вернуться в контекст": "исходный",
-                "остановить по решению БА": "СТОП",
-            }
-            require(name == "продолжить" or other_targets.get(name) == target,
+            require(name == "продолжить" or OTHER_TARGETS.get(name) == target,
                     f"{source}: неизвестное действие или недопустимая цель {name} → {target}")
             if name == "продолжить":
                 require(source not in forward, f"{source}: два продолжения в {track}")
@@ -236,6 +236,9 @@ def check_actions(route, stages):
                 require(guard == expected_guard, f"{source} → {target}: обход обязательной проверки или гейта")
             elif target == "BASELINE":
                 require(source == "Ш-Р" and guard == "Выпуск/выпуск", "Обход гейта выпуска")
+            elif target == "CS":
+                cs_guards = {"Ш-1": "БА", "Ш-2": "Г-IN/CS", "AIN-24": "Г-IN/CS"}
+                require(cs_guards.get(source) == guard, f"{source}: обход проверки выхода в CS")
 
         require(("Ш-Р", "выпустить", "BASELINE") in seen, "Нет конечного исхода выпуска")
         require(("*", "сценарии по запросу", "Ш-С") in seen and
@@ -272,6 +275,8 @@ def decision(route, state, source, gate, outcome):
                 f"{gate}: неверная задача, попытка, маршрут или snapshot")
         if gate == "AIN-21":
             require(record.get("report_version"), "AIN-21: нет версии отчёта")
+    require(all(previous["revoked"].get(gate) != record for previous in state.get("returns", [])),
+            f"{gate}: допуск отозван при возврате")
 
 
 def check_sh3_input(route, state):
@@ -315,7 +320,8 @@ def navigate(route, state, action, target, *, reason=None):
         })
     else:
         if action == "вернуться в контекст":
-            require(source == "Ш-С" and target == state.get("origin"), "Ш-С: неверный исходный контекст")
+            require(source == "Ш-С" and saved_context(state, target) == state.get("origin"),
+                    "Ш-С: неверный исходный контекст")
             table_target = "исходный"
             updated.pop("origin")
         elif action.startswith("уточнить"):
@@ -330,13 +336,21 @@ def navigate(route, state, action, target, *, reason=None):
             require(route["ain"][source]["next"] == target, f"{source}: нет такого ребра A-IN")
             if route["ain"][source]["check"] == "required":
                 checked(state, source)
+            else:
+                require(source in state["results"] and "ввод-промпта" in state["facts"],
+                        f"{source}: нужен результат технического шага и следующий промпт")
         else:
             require(len(rows) == 1, f"{source}: недопустимое действие {action} → {target}")
             check_action(route, state, rows[0])
         if target == "Ш-С" and target != source:
-            updated["origin"] = source
+            updated["origin"] = saved_context(state, source)
     updated["current"] = target
     return updated
+
+
+def saved_context(state, step):
+    return {"step": step, "format": state["format"], "revision": state["results"].get(step),
+            "scope": state["scope"].copy()}
 
 
 def check_action(route, state, row):

@@ -43,6 +43,7 @@ class RouteTests(unittest.TestCase):
             ("| Г-IN/дальше | — | Ш-3 |", "| БА | — | Ш-3 |", "обход"),
             ("| Г-IN/дальше | — | Ш-3 |", "| Г-IN/дальше | — | Ш-4 |", "без обхода"),
             ("| Выпуск/выпуск | пакеты-готовы | BASELINE |", "| БА | пакеты-готовы | BASELINE |", "Обход"),
+            ("| AIN-24 | decomposed | выйти в CS |", "| AIN-21 | decomposed | выйти в CS |", "обход проверки"),
             (step, f"{step}\n{step}", "повторная строка"),
             ("[черновик UC](../../prompts/drafts/bcreq-uc-modeling-stepwise.md)",
              "[черновик UC](../../prompts/drafts/bcreq-missing.md)", "Редакция отсутствует"),
@@ -132,8 +133,13 @@ class RouteTests(unittest.TestCase):
         self.assertEqual(other["decisions"], {})
         self.assertEqual(other["returns"][-1]["revoked"], s["decisions"])
 
+        other["results"]["AIN-21"] = other["accepted"]["AIN-21"] = "r1"
+        other["decisions"]["AIN-21"] = s["decisions"]["AIN-21"].copy()
+        with self.assertRaisesRegex(ValueError, "отозван при возврате"):
+            self.go(other, "AIN-22")
         other["scope"]["snapshot_version"] = "r2"
         other["results"]["AIN-21"] = other["accepted"]["AIN-21"] = "r2"
+        del other["decisions"]["AIN-21"]
         with self.assertRaisesRegex(ValueError, "AIN-21"):
             self.go(other, "AIN-22")
         other["decisions"]["AIN-21"] = s["decisions"]["AIN-21"].copy()
@@ -192,6 +198,8 @@ class RouteTests(unittest.TestCase):
         side["results"]["Ш-С"] = side["accepted"]["Ш-С"] = "us-1"
         with self.assertRaisesRegex(ValueError, "неверный исходный контекст"):
             self.go(side, "Ш-7", "вернуться в контекст")
+        with self.assertRaisesRegex(ValueError, "неверный исходный контекст"):
+            self.go({**side, "format": "decomposed"}, "Ш-6", "вернуться в контекст")
         resumed = self.go(side, "Ш-6", "вернуться в контекст")
         self.assertEqual(resumed["decisions"], s["decisions"])
         self.assertEqual(resumed["current"], "Ш-6")
