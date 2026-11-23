@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-18T09:05:20.291Z",
+  "generatedAt": "2026-11-22T15:45:27.002Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/00-index.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/00-index.md"
+      "url": "docs/ba-processes/00-index.md"
     }
   ],
   "treeThreshold": 20,
@@ -48,15 +48,15 @@
           "prompts": [
             {
               "file": "bcreq-context-understanding-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md"
+              "url": "prompts/bcreq-context-understanding-stepwise.md"
             },
             {
               "file": "bcreq-products-impact-analysis-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md"
+              "url": "prompts/bcreq-products-impact-analysis-stepwise.md"
             },
             {
               "file": "bcreq-in-understanding-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md"
+              "url": "prompts/bcreq-in-understanding-oneshot.md"
             }
           ]
         },
@@ -70,11 +70,11 @@
           "prompts": [
             {
               "file": "bcreq-scenarios-modeling-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md"
+              "url": "prompts/bcreq-scenarios-modeling-oneshot.md"
             },
             {
               "file": "bcreq-uc-modeling-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md"
+              "url": "prompts/bcreq-uc-modeling-stepwise.md"
             }
           ]
         },
@@ -88,23 +88,23 @@
           "prompts": [
             {
               "file": "bcreq-fr-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md"
+              "url": "prompts/bcreq-fr-documentation-stepwise.md"
             },
             {
               "file": "bcreq-nfr-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-nfr-documentation-stepwise.md"
+              "url": "prompts/bcreq-nfr-documentation-stepwise.md"
             },
             {
               "file": "bcreq-core-documentation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-core-documentation-oneshot.md"
+              "url": "prompts/bcreq-core-documentation-oneshot.md"
             },
             {
               "file": "bcreq-constraints-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md"
+              "url": "prompts/bcreq-constraints-documentation-stepwise.md"
             },
             {
               "file": "bcreq-work-solution-design-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md"
+              "url": "prompts/bcreq-work-solution-design-oneshot.md"
             }
           ]
         },
@@ -118,19 +118,19 @@
           "prompts": [
             {
               "file": "bcreq-orr-solution-design-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md"
+              "url": "prompts/bcreq-orr-solution-design-stepwise.md"
             },
             {
               "file": "bcreq-uc-modeling-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md"
+              "url": "prompts/bcreq-uc-modeling-stepwise.md"
             },
             {
               "file": "bcreq-extra-risk-analysis-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-extra-risk-analysis-stepwise.md"
+              "url": "prompts/bcreq-extra-risk-analysis-stepwise.md"
             },
             {
               "file": "bcreq-work-solution-design-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md"
+              "url": "prompts/bcreq-work-solution-design-oneshot.md"
             }
           ]
         },
@@ -144,7 +144,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         }
@@ -173,7 +173,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "prompts": [
             {
               "file": "bcreq-constraints-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md"
+              "url": "prompts/bcreq-constraints-documentation-stepwise.md"
             }
           ]
         },
@@ -210,7 +210,7 @@
           "prompts": [
             {
               "file": "bcreq-fr-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md"
+              "url": "prompts/bcreq-fr-documentation-stepwise.md"
             }
           ]
         }
@@ -250,11 +250,11 @@
           "prompts": [
             {
               "file": "bcreq-context-understanding-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md"
+              "url": "prompts/bcreq-context-understanding-stepwise.md"
             },
             {
               "file": "bcreq-in-understanding-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md"
+              "url": "prompts/bcreq-in-understanding-oneshot.md"
             }
           ]
         },
@@ -268,7 +268,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },
@@ -316,11 +316,11 @@
           "prompts": [
             {
               "file": "bcreq-context-understanding-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md"
+              "url": "prompts/bcreq-context-understanding-stepwise.md"
             },
             {
               "file": "bcreq-in-understanding-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md"
+              "url": "prompts/bcreq-in-understanding-oneshot.md"
             }
           ]
         },
@@ -334,7 +334,7 @@
           "prompts": [
             {
               "file": "bcreq-scenarios-modeling-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md"
+              "url": "prompts/bcreq-scenarios-modeling-oneshot.md"
             }
           ]
         },
@@ -348,11 +348,11 @@
           "prompts": [
             {
               "file": "bcreq-uc-modeling-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md"
+              "url": "prompts/bcreq-uc-modeling-stepwise.md"
             },
             {
               "file": "bcreq-scenarios-modeling-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md"
+              "url": "prompts/bcreq-scenarios-modeling-oneshot.md"
             }
           ]
         },
@@ -366,7 +366,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },
@@ -380,7 +380,7 @@
           "prompts": [
             {
               "file": "bcreq-fr-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-fr-documentation-stepwise.md"
+              "url": "prompts/bcreq-fr-documentation-stepwise.md"
             }
           ]
         }
@@ -409,11 +409,11 @@
           "prompts": [
             {
               "file": "bcreq-uc-modeling-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-uc-modeling-stepwise.md"
+              "url": "prompts/bcreq-uc-modeling-stepwise.md"
             },
             {
               "file": "bcreq-scenarios-modeling-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-scenarios-modeling-oneshot.md"
+              "url": "prompts/bcreq-scenarios-modeling-oneshot.md"
             }
           ]
         },
@@ -470,11 +470,11 @@
           "prompts": [
             {
               "file": "bcreq-context-understanding-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-context-understanding-stepwise.md"
+              "url": "prompts/bcreq-context-understanding-stepwise.md"
             },
             {
               "file": "bcreq-in-understanding-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-in-understanding-oneshot.md"
+              "url": "prompts/bcreq-in-understanding-oneshot.md"
             }
           ]
         },
@@ -564,7 +564,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },
@@ -578,15 +578,15 @@
           "prompts": [
             {
               "file": "bcreq-products-impact-analysis-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-products-impact-analysis-stepwise.md"
+              "url": "prompts/bcreq-products-impact-analysis-stepwise.md"
             },
             {
               "file": "bcreq-orr-solution-design-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-orr-solution-design-stepwise.md"
+              "url": "prompts/bcreq-orr-solution-design-stepwise.md"
             },
             {
               "file": "bcreq-work-solution-design-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md"
+              "url": "prompts/bcreq-work-solution-design-oneshot.md"
             }
           ]
         },
@@ -600,7 +600,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },
@@ -639,15 +639,15 @@
           "prompts": [
             {
               "file": "bcreq-extra-risk-analysis-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-extra-risk-analysis-stepwise.md"
+              "url": "prompts/bcreq-extra-risk-analysis-stepwise.md"
             },
             {
               "file": "bcreq-constraints-documentation-stepwise.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-constraints-documentation-stepwise.md"
+              "url": "prompts/bcreq-constraints-documentation-stepwise.md"
             },
             {
               "file": "bcreq-work-solution-design-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-work-solution-design-oneshot.md"
+              "url": "prompts/bcreq-work-solution-design-oneshot.md"
             }
           ]
         },
@@ -670,7 +670,7 @@
           "prompts": [
             {
               "file": "bcreq-review-validation-oneshot.md",
-              "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/prompts/bcreq-review-validation-oneshot.md"
+              "url": "prompts/bcreq-review-validation-oneshot.md"
             }
           ]
         },

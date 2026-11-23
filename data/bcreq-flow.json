@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-18T09:05:25.635Z",
+  "generatedAt": "2026-11-22T15:45:27.002Z",
   "sourceFiles": [
     {
       "path": "docs/ba-processes/bcreq-manual-process.md",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/ba-processes/bcreq-manual-process.md"
+      "url": "docs/ba-processes/bcreq-manual-process.md"
     }
   ],
   "title": "Создание спецификации бизнес-требований и дизайна решения (BCREQ)",
@@ -12,11 +12,11 @@
     "route": "manual",
     "contract": {
       "label": "Контракт состояния ручного BCREQ",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-manual-state.md"
+      "url": "docs/contracts/bcreq-manual-state.md"
     },
     "classes": {
       "label": "Инвентарь 39 классов",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/README.md"
+      "url": "standards/bcreq-manual-classes/README.md"
     },
     "rules": [
       {
@@ -68,7 +68,7 @@
           "classId": "К-36",
           "file": "36-rule-bundle.md",
           "title": "К-36. Загрузка правил и параметров чата",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/36-rule-bundle.md"
+          "url": "standards/bcreq-manual-classes/36-rule-bundle.md"
         },
         "params": "class: К-36; phase: a-in / a-core / a-work / a-release; input_mode: START (новый чат — CONTINUE)",
         "prepare": "full_constitution, applicable_standards, versions, task_parameters, access_receipts",
@@ -94,7 +94,7 @@
           "classId": "К-01",
           "file": "01-intake.md",
           "title": "К-01. Приём исходного запроса",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/01-intake.md"
+          "url": "standards/bcreq-manual-classes/01-intake.md"
         },
         "params": "class: К-01; phase: a-in; input_mode: CONTINUE",
         "prepare": "raw_request, questionnaire?, additional_comments[{text,author_role?}]",
@@ -120,7 +120,7 @@
           "classId": "К-02",
           "file": "02-normalize.md",
           "title": "К-02. Атомарная нормализация",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/02-normalize.md"
+          "url": "standards/bcreq-manual-classes/02-normalize.md"
         },
         "params": "class: К-02; phase: a-in; input_mode: CONTINUE",
         "prepare": "raw_verbatim, comments, source_register",
@@ -148,7 +148,7 @@
           "classId": "К-03",
           "file": "03-ambiguity.md",
           "title": "К-03. Оценка неоднозначности",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/03-ambiguity.md"
+          "url": "standards/bcreq-manual-classes/03-ambiguity.md"
         },
         "params": "class: К-03; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "atoms, candidate_readings, known_decisions",
@@ -177,7 +177,7 @@
           "classId": "К-04",
           "file": "04-questions.md",
           "title": "К-04. Пакет вопросов",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/04-questions.md"
+          "url": "standards/bcreq-manual-classes/04-questions.md"
         },
         "params": "class: К-04; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "ambiguities, missing_evidence, prior_questions, owners",
@@ -203,7 +203,7 @@
           "classId": "К-05",
           "file": "05-taxonomy.md",
           "title": "К-05. Сопоставление с таксономией",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/05-taxonomy.md"
+          "url": "standards/bcreq-manual-classes/05-taxonomy.md"
         },
         "params": "class: К-05; phase: a-in; input_mode: CONTINUE",
         "prepare": "atoms, taxonomy_snapshot, taxonomy_version",
@@ -231,7 +231,7 @@
           "classId": "К-06",
           "file": "06-scope.md",
           "title": "К-06. Границы изменения",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/06-scope.md"
+          "url": "standards/bcreq-manual-classes/06-scope.md"
         },
         "params": "class: К-06; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "atoms, matches, BA_decisions, adjacent_dependencies",
@@ -259,7 +259,7 @@
           "classId": "К-07",
           "file": "07-web-evidence.md",
           "title": "К-07. Извлечение из web",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/07-web-evidence.md"
+          "url": "standards/bcreq-manual-classes/07-web-evidence.md"
         },
         "params": "class: К-07; phase: a-in / a-core / a-work; input_mode: CONTINUE; по доступности источника: web",
         "prepare": "source_plan, accessible_page_bodies, URLs, versions",
@@ -287,7 +287,7 @@
           "classId": "К-08",
           "file": "08-document-evidence.md",
           "title": "К-08. Извлечение из PDF и runtime",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/08-document-evidence.md"
+          "url": "standards/bcreq-manual-classes/08-document-evidence.md"
         },
         "params": "class: К-08; phase: a-in / a-core / a-work; input_mode: CONTINUE; по доступности источника: PDF и runtime",
         "prepare": "source_plan, attached_documents, runtime_sections?, provenance",
@@ -315,7 +315,7 @@
           "classId": "К-09",
           "file": "09-ba-enrichment.md",
           "title": "К-09. Дообогащение материалами БА",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/09-ba-enrichment.md"
+          "url": "standards/bcreq-manual-classes/09-ba-enrichment.md"
         },
         "params": "class: К-09; phase: a-in / a-core / a-work; input_mode: CONTINUE; по доступности источника: материалы БА",
         "prepare": "missing_evidence, BA_raw_materials?, author_roles, provenance",
@@ -343,7 +343,7 @@
           "classId": "К-10",
           "file": "10-source-conflicts.md",
           "title": "К-10. Разрешение конфликтов источников",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/10-source-conflicts.md"
+          "url": "standards/bcreq-manual-classes/10-source-conflicts.md"
         },
         "params": "class: К-10; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "claims, versions, source_priorities, BA_decisions",
@@ -371,7 +371,7 @@
           "classId": "К-11",
           "file": "11-dependency-check.md",
           "title": "К-11. Контроль полноты зависимостей",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/11-dependency-check.md"
+          "url": "standards/bcreq-manual-classes/11-dependency-check.md"
         },
         "params": "class: К-11; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "scope, claims, actors, settings, product_links, unresolved",
@@ -399,7 +399,7 @@
           "classId": "К-37",
           "file": "37-user-story.md",
           "title": "К-37. User Story по запросу БА",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/37-user-story.md"
+          "url": "standards/bcreq-manual-classes/37-user-story.md"
         },
         "params": "class: К-37; phase: a-in / a-core / a-work; input_mode: CONTINUE; только по запросу БА",
         "prepare": "explicit_BA_request, atoms, scope, value, FR?",
@@ -427,7 +427,7 @@
           "classId": "К-38",
           "file": "38-requested-uc.md",
           "title": "К-38. Отдельное моделирование UC по запросу БА",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/38-requested-uc.md"
+          "url": "standards/bcreq-manual-classes/38-requested-uc.md"
         },
         "params": "class: К-38; phase: a-in / a-core / a-work; input_mode: CONTINUE; только по запросу БА",
         "prepare": "explicit_BA_request, atoms, scope, actors, FR?",
@@ -455,7 +455,7 @@
           "classId": "К-14",
           "file": "14-glossary.md",
           "title": "К-14. Глоссарий",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/14-glossary.md"
+          "url": "standards/bcreq-manual-classes/14-glossary.md"
         },
         "params": "class: К-14; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "terms_in_sections_2_to_6, raw_wording, supplied_lexicons",
@@ -483,7 +483,7 @@
           "classId": "К-15",
           "file": "15-business-context.md",
           "title": "К-15. Бизнес-контекст",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/15-business-context.md"
+          "url": "standards/bcreq-manual-classes/15-business-context.md"
         },
         "params": "class: К-15; phase: a-in / a-core / a-work; input_mode: CONTINUE",
         "prepare": "atoms, scope, business_problem, value, decisions",
@@ -512,7 +512,7 @@
           "classId": "К-34",
           "file": "34-human-record.md",
           "title": "К-34. Регистрация решений и согласований",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/34-human-record.md"
+          "url": "standards/bcreq-manual-classes/34-human-record.md"
         },
         "params": "class: К-34; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE; после фактической реплики человека",
         "prepare": "human_message, actor_role, authority, candidate_revision, scope, timestamp, gate_id?, gate_type?, model_recommendation?",
@@ -541,7 +541,7 @@
           "classId": "К-39",
           "file": "39-manifest-alignment.md",
           "title": "К-39. Сверка результата с манифестом задачи",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/39-manifest-alignment.md"
+          "url": "standards/bcreq-manual-classes/39-manifest-alignment.md"
         },
         "params": "class: К-39; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "baseline_manifest, generated_candidate, authorized_delta, decision_register",
@@ -570,7 +570,7 @@
           "classId": "К-12",
           "file": "12-phase-assembly.md",
           "title": "К-12. Полная сборка фазы",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/12-phase-assembly.md"
+          "url": "standards/bcreq-manual-classes/12-phase-assembly.md"
         },
         "params": "class: К-12; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "base_snapshot, ordered_slices, tombstones, source_register, decisions",
@@ -599,7 +599,7 @@
           "classId": "К-13",
           "file": "13-handoff-check.md",
           "title": "К-13. Проверка переносимого контекста",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/13-handoff-check.md"
+          "url": "standards/bcreq-manual-classes/13-handoff-check.md"
         },
         "params": "class: К-13; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "full_snapshot, required_inputs_for_target, source_bodies, rule_bundle",
@@ -628,7 +628,7 @@
           "classId": "К-20",
           "file": "20-gate-evidence.md",
           "title": "К-20. Подготовка доказательств гейта",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/20-gate-evidence.md"
+          "url": "standards/bcreq-manual-classes/20-gate-evidence.md"
         },
         "params": "class: К-20; phase: a-in / a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "gate_id, gate_type, candidate_revision, applicable_gate_contract, checklist_evidence, human_records",
@@ -655,7 +655,7 @@
           "classId": "К-16",
           "file": "16-fr-delta.md",
           "title": "К-16. ФТ изменения существующего поведения",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/16-fr-delta.md"
+          "url": "standards/bcreq-manual-classes/16-fr-delta.md"
         },
         "params": "class: К-16; phase: a-core / a-work; input_mode: CONTINUE; альтернатива К-17: delta по решению БА",
         "prepare": "request_atoms, verified_as_is, scope, BA_accepted_recommendations",
@@ -682,7 +682,7 @@
           "classId": "К-17",
           "file": "17-fr-new.md",
           "title": "К-17. ФТ нового поведения с нуля",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/17-fr-new.md"
+          "url": "standards/bcreq-manual-classes/17-fr-new.md"
         },
         "params": "class: К-17; phase: a-core / a-work; input_mode: CONTINUE; альтернатива К-16: new только по явному решению БА",
         "prepare": "explicit_new_mode_decision, request_atoms, scope, product_context",
@@ -709,7 +709,7 @@
           "classId": "К-18",
           "file": "18-nfr.md",
           "title": "К-18. Нефункциональные требования",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/18-nfr.md"
+          "url": "standards/bcreq-manual-classes/18-nfr.md"
         },
         "params": "class: К-18; phase: a-core / a-work; input_mode: CONTINUE",
         "prepare": "supplied_quality_requirements, scope, applicable_source_thresholds",
@@ -735,7 +735,7 @@
           "classId": "К-19",
           "file": "19-uc-coverage.md",
           "title": "К-19. Первый прогон UC и покрытие ФТ",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/19-uc-coverage.md"
+          "url": "standards/bcreq-manual-classes/19-uc-coverage.md"
         },
         "params": "class: К-19; phase: a-core; input_mode: CONTINUE",
         "prepare": "sections_2_3_4, scope",
@@ -763,7 +763,7 @@
           "classId": "К-28",
           "file": "28-independent-review.md",
           "title": "К-28. Независимая содержательная проверка",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/28-independent-review.md"
+          "url": "standards/bcreq-manual-classes/28-independent-review.md"
         },
         "params": "class: К-28; phase: a-core / a-work / a-release; input_mode: CONTINUE; отдельный чат с ролью критика",
         "prepare": "frozen_candidate, source_bodies, applicable_rules, approved_scope, decisions",
@@ -791,7 +791,7 @@
           "classId": "К-29",
           "file": "29-impact.md",
           "title": "К-29. Анализ влияния изменения",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/29-impact.md"
+          "url": "standards/bcreq-manual-classes/29-impact.md"
         },
         "params": "class: К-29; phase: a-core / a-work / a-release; input_mode: CONTINUE; только при изменении кандидата",
         "prepare": "baseline_revision, change_request, dependency_graph, prior_approvals",
@@ -819,7 +819,7 @@
           "classId": "К-30",
           "file": "30-targeted-edit.md",
           "title": "К-30. Адресная правка",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/30-targeted-edit.md"
+          "url": "standards/bcreq-manual-classes/30-targeted-edit.md"
         },
         "params": "class: К-30; phase: a-core / a-work / a-release; input_mode: CONTINUE; только при изменении кандидата",
         "prepare": "candidate_revision, authorized_edit_scope, findings, human_instructions",
@@ -847,7 +847,7 @@
           "classId": "К-31",
           "file": "31-conformance.md",
           "title": "К-31. Структурная сверка документа",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/31-conformance.md"
+          "url": "standards/bcreq-manual-classes/31-conformance.md"
         },
         "params": "class: К-31; phase: a-core / a-work / a-release; input_mode: CONTINUE",
         "prepare": "candidate, schema_version, entity_register, trace_matrix",
@@ -873,7 +873,7 @@
           "classId": "К-21",
           "file": "21-solution-l1.md",
           "title": "К-21. ОРР L1",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/21-solution-l1.md"
+          "url": "standards/bcreq-manual-classes/21-solution-l1.md"
         },
         "params": "class: К-21; phase: a-work; input_mode: CONTINUE",
         "prepare": "sections_1_to_4, UC_first, verified_claims, scope",
@@ -899,7 +899,7 @@
           "classId": "К-22",
           "file": "22-solution-l2.md",
           "title": "К-22. ОРР L2 и контракты стыков",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/22-solution-l2.md"
+          "url": "standards/bcreq-manual-classes/22-solution-l2.md"
         },
         "params": "class: К-22; phase: a-work; input_mode: CONTINUE; по уровню: L1+L2",
         "prepare": "BA_level_decision, section_5_1, supplied_API_events, product_profiles",
@@ -925,7 +925,7 @@
           "classId": "К-23",
           "file": "23-constraints.md",
           "title": "К-23. Особенности и ограничения",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/23-constraints.md"
+          "url": "standards/bcreq-manual-classes/23-constraints.md"
         },
         "params": "class: К-23; phase: a-work; input_mode: CONTINUE",
         "prepare": "section_5, source_constraints, scope_exclusions",
@@ -951,7 +951,7 @@
           "classId": "К-24",
           "file": "24-uc-boundaries.md",
           "title": "К-24. Второй прогон UC и граничные случаи",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/24-uc-boundaries.md"
+          "url": "standards/bcreq-manual-classes/24-uc-boundaries.md"
         },
         "params": "class: К-24; phase: a-work; input_mode: CONTINUE",
         "prepare": "sections_3_to_6, UC_first, supplied_UI_API_contracts",
@@ -977,7 +977,7 @@
           "classId": "К-25",
           "file": "25-risks.md",
           "title": "К-25. Анализ рисков",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/25-risks.md"
+          "url": "standards/bcreq-manual-classes/25-risks.md"
         },
         "params": "class: К-25; phase: a-work; input_mode: CONTINUE",
         "prepare": "scope, design, uncertainty, evidence",
@@ -1003,7 +1003,7 @@
           "classId": "К-26",
           "file": "26-delivery-dependencies.md",
           "title": "К-26. Реестр зависимостей поставки",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/26-delivery-dependencies.md"
+          "url": "standards/bcreq-manual-classes/26-delivery-dependencies.md"
         },
         "params": "class: К-26; phase: a-work; input_mode: CONTINUE",
         "prepare": "dependency_manifest, design, team_responses, scope",
@@ -1029,7 +1029,7 @@
           "classId": "К-27",
           "file": "27-acceptance.md",
           "title": "К-27. План приёмки",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/27-acceptance.md"
+          "url": "standards/bcreq-manual-classes/27-acceptance.md"
         },
         "params": "class: К-27; phase: a-work; input_mode: CONTINUE",
         "prepare": "FR, NFR, UC, source_thresholds, proposed_acceptors",
@@ -1055,7 +1055,7 @@
           "classId": "К-32",
           "file": "32-audience-projection.md",
           "title": "К-32. Подготовка пакетов адресатам",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/32-audience-projection.md"
+          "url": "standards/bcreq-manual-classes/32-audience-projection.md"
         },
         "params": "class: К-32; phase: a-release; input_mode: CONTINUE",
         "prepare": "approved_or_draft_candidate, audience_policy, scope, approvals",
@@ -1081,7 +1081,7 @@
           "classId": "К-33",
           "file": "33-release-audit.md",
           "title": "К-33. Контроль выпускного комплекта",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/33-release-audit.md"
+          "url": "standards/bcreq-manual-classes/33-release-audit.md"
         },
         "params": "class: К-33; phase: a-release; input_mode: CONTINUE",
         "prepare": "delivery_manifest, packets, candidate_revision, required_approvals, source_receipts",
@@ -1107,7 +1107,7 @@
           "classId": "К-35",
           "file": "35-baseline-handover.md",
           "title": "К-35. Фиксация baseline и передача",
-          "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/standards/bcreq-manual-classes/35-baseline-handover.md"
+          "url": "standards/bcreq-manual-classes/35-baseline-handover.md"
         },
         "params": "class: К-35; phase: a-release; input_mode: CONTINUE",
         "prepare": "release_report, human_release_record?, final_packets, unresolved, owners",
@@ -1626,7 +1626,7 @@
     },
     "contract": {
       "label": "Контракт стадий и гейтов BCREQ",
-      "url": "https://github.com/G-Ivan-A/mango_ba_prompts/blob/main/docs/contracts/bcreq-stage-gates.md"
+      "url": "docs/contracts/bcreq-stage-gates.md"
     },
     "stages": [
       {
