@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { spawnSync } from "node:child_process";
 import crypto from "node:crypto";
 import fs from "node:fs/promises";
 import path from "node:path";
@@ -114,10 +115,10 @@ const RELEASE_STAGE = { id: "bcreq-release", label: "Выпуск BCREQ", emoji:
 // ссылок на приватный репозиторий, HTML-комментариев и кейс-лексики; данные
 // сайта хранят пути от корня репо. Только патч серии 2.9.x (дополнение 2 к #495).
 const SITE_VERSION = {
-  version: "2.9.3",
+  version: "2.9.4",
   released: "2026-11-22",
   issue: 500,
-  basis: "Рабочие редакции этапа 1 в Каталоге и Процессах",
+  basis: "Продолжение и возврат по нормативному маршруту BCREQ v0.3",
   changelog: "CHANGELOG.md",
 };
 
@@ -1856,6 +1857,12 @@ async function main() {
   }
 
   const testKit = await makeTestKit(await read(SOURCE_FILES.runKit), prompts);
+  const route = spawnSync("python3", [path.join(ROOT, "scripts/bcreq_manual_route.py"), "--site"], {
+    input: JSON.stringify(testKit.steps), encoding: "utf8",
+  });
+  if (route.error) throw route.error;
+  if (route.status !== 0) throw new Error(`${SOURCE_FILES.bcreqFlow}: ${route.stderr.trim()}`);
+  testKit.route = JSON.parse(route.stdout);
   const ainKit = await makeAinKit();
   const workingCatalog = await makeWorkingCatalog(testKit, ainKit, classCatalog.classes, operationsById);
   const activePrompts = prompts.filter((prompt) => !prompt.archived);
