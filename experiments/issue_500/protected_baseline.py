@@ -27,7 +27,11 @@ def read_json(root, relative):
 
 def counts(text):
     result = Counter(RULE.findall(text))
-    result.update(END.findall(text))
+    # #509 explicitly replaces the erroneous result-version suffix. Preserve
+    # the frozen baseline and recognize only the reviewed prompt version;
+    # a different version still fails the marker check.
+    endings = [re.sub(r" 0\.4$", " <версия результата>", marker) for marker in END.findall(text)]
+    result.update(endings)
     result.update({marker: text.count(marker) for marker in MARKERS if marker in text})
     return dict(result)
 

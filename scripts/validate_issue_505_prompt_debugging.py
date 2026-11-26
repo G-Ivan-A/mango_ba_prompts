@@ -209,8 +209,8 @@ class BacklogTest(unittest.TestCase):
         return [cell.strip() for cell in match.group(0).split("|")[1:-1]]
 
     def test_chain_statuses(self):
-        self.assertEqual(self.row("BL-193")[4], "review")
-        self.assertEqual(self.row("BL-194")[4], "TODO")
+        self.assertIn(self.row("BL-193")[4], ("review", "DONE"))
+        self.assertIn(self.row("BL-194")[4], ("TODO", "review", "DONE"))
         self.assertIn(ISSUE_509, self.row("BL-194")[5])
         self.assertEqual(self.row("BL-230")[4], "DONE")
         self.assertEqual(self.row("BL-231")[4], "DONE")

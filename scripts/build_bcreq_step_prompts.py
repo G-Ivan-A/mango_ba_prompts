@@ -51,6 +51,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402  (issue #490)
 from prompt_purity import project  # noqa: E402  (issue #495)
+import bcreq_fragments as fragments  # noqa: E402
 BASE = ROOT / "standards/bcreq-prompt-base-standard.md"
 PROFILES = ROOT / "standards/bcreq-prompt-profiles.md"
 CATALOG = ROOT / "standards/bcreq-manual-classes/catalog.json"
@@ -403,6 +404,12 @@ def apply_format_edits(name, body):
         if body.count(old) != 1:
             raise SystemExit(f"#490: подстановка в {name} встречается {body.count(old)} раз: {old[:60]}")
         body = body.replace(old, new)
+    # #509: executable draft projection; published source remains unchanged.
+    if name not in HANDOFF_SKIP:
+        body = body.replace(fragments.body("bcreq-evidence-normalization.md"), fragments.access())
+    if name == "bcreq-fr-documentation-stepwise":
+        body = body.replace("3.1 Система должна …\n  3.1.1 Когда …, система должна …\n3.2 …",
+                            "ФТ-01. Система должна…\nФТ-02. Система должна…\nЗаголовки групп без нумерации.")
     return body
 
 
@@ -766,6 +773,16 @@ def build_all():
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
+        if name not in HANDOFF_SKIP:
+            if fragments.access() not in body:
+                block += "\n\n" + fragments.access()
+            block += "\n\n" + fragments.output()
+            if any(s in {"Ш-3", "Ш-4", "Ш-5"} for s in steps):
+                block += "\n\n" + fragments.decisions()
+            if "Ш-3" in steps:
+                block += "\n\nФормат ФТ: «ФТ-NN. Система должна…»; заголовки групп без нумерации."
+            fm = re.sub(r"(?m)^version: .+$", f"version: {fragments.VERSION}", fm)
+            updated = "2026-11-26"
         # #495: исполнимая проекция тела — без приватных ссылок и HTML-комментариев.
         text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + project(
             "\n" + body.strip("\n") + "\n\n" + block.rstrip("\n") + "\n" + handoff)

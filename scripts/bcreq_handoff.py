@@ -71,6 +71,7 @@ def load(path=SSOT):
     return {
         "version": re.search(r"^version: (\S+)$", text, re.M).group(1),
         "template": _between(text, "handoff-template"),
+        "responseOrder": _between(text, "response-order"),
         "approveRequired": _between(text, "approve-required"),
         "approveTechnical": _between(text, "approve-technical"),
         "steps": steps,
@@ -110,6 +111,7 @@ def render(step_ids, data=None):
         intro, forms = "", _form(steps[0]) + [""]
     block = (data["template"].replace("{steps_intro}", intro)
              .replace("{approve_rule}", approve)
+             .replace("{response_order}", data["responseOrder"])
              .replace("{forms}", "\n".join(forms)))
     assert "{" not in block.replace("`{", ""), block
     assert block.startswith(BEGIN + "\n") and block.endswith(END) and "<!--" not in block

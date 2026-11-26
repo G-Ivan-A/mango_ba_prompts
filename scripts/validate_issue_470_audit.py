@@ -39,7 +39,7 @@ def check_catalog(text, prefix, count):
 
 
 audit, ain, ttz = read(AUDIT), read(AIN), read(TTZ)
-check_catalog(ain, 'LE', 20)
+check_catalog(ain, 'LE', 21)
 check_catalog(ttz, 'LT', 10)
 for code in ('S01', 'S27', 'Р-AIN-1', 'Р-AIN-2', 'Р-AIN-3', '### 7.2.'):
     check(code in ain, f'RFC-AIN-001: нет {code}')
