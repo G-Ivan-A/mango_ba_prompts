@@ -1,0 +1,65 @@
+run_id: RUN-0096
+process: bcreq-prompt-debugging-1143
+version: "1.0"
+date: 2026-11-26
+author: "AI issue solver"
+model: "claude-opus-5-5"
+status: draft
+run_type: execution
+operating_mode: Creative
+source_paths:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/505
+  - https://github.com/user-attachments/files/35459115/1143.txt
+inputs:
+  - inputs/README.md
+  - inputs/task-statement-505.md
+  - inputs/chat-1143-metrics.md
+outputs:
+  - outputs/README.md
+logs:
+  - logs/experiment-log.md
+  - logs/chat-signals.json
+  - logs/prompt-redundancy.json
+feedback:
+  - feedback/review-notes.md
+metrics:
+  chat_lines: 8145  # LF-копия вложения 1143.txt, 599 651 байт, sha256 ecfc81cf…b2ac
+  chat_model: "DeepSeek (веб-интерфейс)"  # стр. 2053: уведомление интерфейса о лимите чтения файла
+  chat_step_end_markers: 34  # маркеры «КОНЕЦ <шаг> <версия>», один из них (стр. 958) внутри рассуждения
+  chat_distinct_steps: 27  # AIN-01…24, Ш-3, Ш-4, Ш-5; Ш-0 закрыт без маркера
+  chat_repeated_steps: 6  # AIN-03, AIN-04, AIN-06, AIN-11, AIN-22 (×3), Ш-4
+  chat_access_gap_tokens: 55
+  chat_web_tool_denied_lines: 46  # «нет веб…», «не инициируются», «не предоставлен»
+  chat_web_search_traces: 4  # «Найдено N веб-страниц»: стр. 1933, 1942, 3932, 4396
+  chat_memory_packages: 11  # положено 3 (AIN-08, 16, 24)
+  chat_sycophancy_lines: 3  # «абсолютно прав»: стр. 2932, 3060, 6302
+  chat_problems: 16  # ПР-01…ПР-16 в анализе, 7 высокой серьёзности
+  hypotheses: 8  # Г-01…Г-08 внутри одной верхнеуровневой проблемы ВП
+  ba_debug_remarks: 12  # строки раздела 5 анализа, все сопоставлены с ПР и правкой
+  rfc_prompt_fixes: 12  # правки 2.1–2.12
+  owner_decisions: 6  # Р-ОТЛ-1…6
+  regression_cases: 10  # RG-01…RG-10
+  ain_common_block_chars: 17132
+  ain_unique_share_min: 0.098
+  ain_unique_share_max: 0.159
+  route_chars_as_pasted: 582201
+  route_chars_contract_once: 188165
+  route_saving_share: 0.677
+  review_roles: 3
+  eval: "Issue #505: разобран чат БА задачи 1143 (8 145 строк, DeepSeek, маршрут Ш-0 → AIN-01…24 → Ш-3…Ш-5 сборки 2.9.x). Результат получен, гейты удержаны, «Итог шага» (#490) работает в каждом ответе. 16 проблем промптов (ПР-01…ПР-16) сведены к одной верхнеуровневой: честность о доступе и память держатся на повторении правил в каждом ответе и карточке, что даёт отказ от веб-инструмента, жаргон для БА и потерю решений. Замер: общий контракт A-IN 17 132 символа повторён в 24 карточках, уникальная часть шага 9,8–15,9 %, маршрут −67,7 % символов при контракте один раз. RFC-BCREQ-PROMPT-DEBUG-001 предлагает правки 2.1–2.12, две формы карточки, оба формата шагов, инструкции, сайт, перенос на этап 2 и решения Р-ОТЛ-1…6. Исполнение — BL-194 (#509). Промпты и сайт не менялись."
+related_issues:
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/505
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/509
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/490
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/495
+  - https://github.com/G-Ivan-A/mango_ba_prompts/issues/474
+related_runs:
+  - RUN-0095
+related_artifacts:
+  - docs/analysis/2026-11-26-1143-chat-prompt-debugging-analysis.md
+  - docs/rfc/2026-11-bcreq-prompt-debugging-1143.md
+  - docs/ba-processes/bcreq-a-in-common.md
+  - docs/ba-processes/bcreq-step-handoff.md
+  - experiments/issue_505/chat_signals.py
+  - experiments/issue_505/prompt_redundancy.py
+  - scripts/validate_issue_505_prompt_debugging.py
