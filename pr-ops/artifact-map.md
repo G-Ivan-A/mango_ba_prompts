@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.25
-updated: 2026-11-19
+version: 0.26
+updated: 2026-11-26
 owner: G-Ivan-A
 temperature: 0.1
 ai-generated: true
@@ -110,6 +110,7 @@ source_sha: "3bfa4103c9efbbd59bc951814884920e406982e2"
 | `/scripts/validate_issue_495_prompt_purity.py` | Валидатор | 0 нарушений аудитора на рабочем дереве, мутации классов а/б/в в копии контура, `--check` сборщиков и реестра обратимых правок, версия сайта только 2.9.x (мутация 2.10.0 падает), строки И-11/И-12 реестра runtime, цепочка BL-240 → BL-242 → BL-232. | Да | `scripts/audit_prompt_purity.py`, `standards/bcreq-prompt-purity.json`, `pr-ops/BACKLOG.md` |
 | `/docs/rfc/2026-11-runtime-universal-agent-context.md` | RFC | RFC-RT-002 (runtime #25): аудит агентного контекста runtime и гипотез Г1–Г3, матрица клиентов, целевая раскладка `AGENTS.md` и навыков, план приёма SSOT #492, вывод legacy, миграция с откатом, решения Р-RT-1…Р-RT-9. | Да для решений по контексту этапа 2 | `docs/contracts/ssot-stage1-handoff-manifest.json`, `pr-ops/backlog-ba-model.md`, `scripts/validate_issue_rt25_agent_context.py` |
 | `/scripts/validate_issue_rt25_agent_context.py` | Валидатор | Проверяет frontmatter и разделы RFC-RT-002, нумерацию Р-RT, строку реестра, карточки BL-191 и BL-192, `DONE` у BL-184 и то, что коммиты задачи не меняют `prompts/`. | Да | `docs/rfc/2026-11-runtime-universal-agent-context.md`, `docs/rfc/rfc-registry.md`, `pr-ops/BACKLOG.md` |
+| `/scripts/validate_issue_rt27_agent_context_production.py` | Валидатор | Runtime #27 (BL-192): BL-191 `DONE`, BL-192 `review` со ссылками на runtime #27 и PR runtime #29, блок движения по цепочке, BL-132 и BL-185 без изменений, RFC-RT-002 `proposed`, коммиты задачи не меняют `prompts/`; при `RUNTIME_RT27_CLONE` — зеркало навыков и маркеры `AGENTS.md` в runtime. | Да | `pr-ops/BACKLOG.md`, `pr-ops/backlog-ba-model.md`, `docs/rfc/2026-11-runtime-universal-agent-context.md` |
 
 ## Smart Sync decisions: Hub PR #229/#230
 
