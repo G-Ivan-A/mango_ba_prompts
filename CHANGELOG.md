@@ -34,6 +34,19 @@ temperature: 0.1
   BL-194 `TODO`. Промпты и сайт не менялись. Связность проверяет
   `scripts/validate_issue_505_prompt_debugging.py`.
 
+
+### Changed — runtime issue #27: BL-192, производство универсального агентного контекста runtime
+
+- Бэклог: BL-191 `review` → `DONE` (PR runtime #26 и #494 слиты, решение владельца по Р-RT-2…Р-RT-4
+  и Р-RT-6), BL-192 `deferred (triggered)` → `review` — производство в PR runtime #29: зеркало
+  навыков `.agents/skills/<имя>/SKILL.md` со сверкой sha256, `AGENTS.md` 0.8 (`ACCESS_GAP`, поиск
+  в базе знаний по `docs/kb/USAGE.md`), smoke инициализации OpenCode V1 и V2 в CI. Э3 (приём SSOT,
+  BL-185…BL-188) ждёт выбора по Р-RT-7; BL-132 (закрепление версии OpenCode) не сдвинут.
+- `scripts/validate_issue_rt27_agent_context_production.py`: статусы и движение по цепочке, соседние
+  задачи и статус RFC-RT-002 без изменений, коммиты задачи не трогают `prompts/`; при
+  `RUNTIME_RT27_CLONE` — зеркало и маркеры `AGENTS.md` в клоне runtime.
+  `validate_issue_rt25_agent_context.py` принимает дальнейшее движение BL-191 и BL-192.
+
 ### Added — Issue #500: варианты дальше в «Процессах» (ФТ-4)
 
 - Версия сайта 2.9.4. Варианты продолжения, возврата, уточнения и остановки строятся
