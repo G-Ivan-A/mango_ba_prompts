@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.53
-updated: 2026-11-22
+version: 0.54
+updated: 2026-11-26
 temperature: 0.1
 ---
 
@@ -12,6 +12,19 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+### Added — Issue #505: прогон 1143 и RFC отладки промптов (BL-193)
+
+- RUN-0096: разбор чата БА задачи 1143 без коммита расшифровки — только
+  числа, номера строк и короткие цитаты замечаний БА о модели. 16 проблем
+  промптов в [анализе](docs/analysis/2026-11-26-1143-chat-prompt-debugging-analysis.md).
+- [RFC-BCREQ-PROMPT-DEBUG-001](docs/rfc/2026-11-bcreq-prompt-debugging-1143.md):
+  правки 2.1–2.12, замер избыточности (общий контракт A-IN 17 132 символа в
+  каждой из 24 карточек), две формы карточки, оба формата шагов, сайт,
+  инструкции и перенос на этап 2. Исполнение — BL-194 (issue #509).
+- Бэклог: BL-230 и BL-231 отмечены `DONE`; добавлены BL-193 `review` и
+  BL-194 `TODO`. Промпты и сайт не менялись. Связность проверяет
+  `scripts/validate_issue_505_prompt_debugging.py`.
 
 ### Added — Issue #500: варианты дальше в «Процессах» (ФТ-4)
 
