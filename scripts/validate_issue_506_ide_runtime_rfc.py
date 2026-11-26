@@ -285,10 +285,12 @@ class RfcTest(unittest.TestCase):
 
     def test_backlog_chain(self):
         part = section(self.text, "## 10. Движение по бэклогу")
-        for needle in (CARD, "BL-192", "BL-185", "BL-242", "BL-243", "ADR-020"):
+        for needle in (CARD, "BL-192", "BL-185", "BL-242", "BL-243", "ADR-020",
+                       "BL-194", "issues/509"):
             with self.subTest(needle=needle):
                 self.assertIn(needle, part)
-        self.assertIn("в бэклоге нет, будут созданы", part)
+        # Постусловие #506: прогоны M6 — «в бэклоге задачи нет, будет создана».
+        self.assertIn("Задачи в бэклоге нет, будет создана", part)
 
 
 class AdrTest(unittest.TestCase):
@@ -341,7 +343,7 @@ class BacklogTest(unittest.TestCase):
 
     def test_chain(self):
         chain = self.backlog.split("**Движение по цепочке (#506).**", 1)[1].split("\n## ", 1)[0]
-        for needle in (CARD, "ADR-020", "BL-192", "BL-242", "BL-243", "#505"):
+        for needle in (CARD, "ADR-020", "BL-192", "BL-242", "BL-243", "#505", "BL-194", "#509"):
             with self.subTest(needle=needle):
                 self.assertIn(needle, chain)
         # Постусловие #506: «в бэклоге задачи нет, будет создана».

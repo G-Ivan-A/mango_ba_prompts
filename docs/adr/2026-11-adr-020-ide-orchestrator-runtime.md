@@ -121,7 +121,8 @@ IDE-слоя.
 8. **Производство** — этап Э5 «IDE-слой» задачи BL-192 после слияния PR
    runtime #29. Задачу описывает RFC-RT-003, раздел 11, issue создаёт
    владелец. Правки текстов промптов по 1143 идут в
-   [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505).
+   [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505), исполнение —
+   BL-194 ([#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509)).
 
 ## Что не менялось
 

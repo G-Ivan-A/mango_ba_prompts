@@ -803,9 +803,10 @@ RFC-RT-003 `proposed`, ADR-020 `proposed`. Следующий шаг — вла�
 runtime #29 и приём SSOT BL-185…BL-188 (`TODO`). Затем BL-242 и BL-243.
 BL-132 закрепляет версию и диалект OpenCode. Тестовые прогоны в IDE (M6) — в
 бэклоге задачи нет, будет создана после ADR-020; стоимость прогонов
-согласует владелец. Правки текстов промптов по 1143 идут в спице через
-[#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505); карточки в
-бэклоге нет, будет создана по итогам #505.
+согласует владелец. Правки текстов промптов по 1143 идут в спице: разбор и
+RFC-BCREQ-PROMPT-DEBUG-001 — BL-193
+([#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505)), исполнение —
+BL-194 `TODO` ([#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509)).
 
 ## Спринт 10. Доисследование provenance
 
