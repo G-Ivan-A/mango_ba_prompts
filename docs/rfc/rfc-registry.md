@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.28
-updated: 2026-11-19
+version: 0.29
+updated: 2026-11-26
 ai-generated: true
 type: register
 scope: governance
@@ -24,6 +24,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/490"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/492"
   - "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
 related_artifacts:
   - "docs/rfc/2026-06-rfc-process.md"
   - "standards/prompt-debugging-process.md"
@@ -46,6 +47,9 @@ related_artifacts:
   - "docs/rfc/2026-11-ttz-feasibility-flow.md"
   - "docs/rfc/2026-11-bcreq-step-format.md"
   - "docs/rfc/2026-11-runtime-universal-agent-context.md"
+  - "docs/rfc/2026-11-runtime-ide-orchestrator.md"
+  - "docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md"
+  - "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md"
 ---
 
 # Реестр RFC (живой документ)
@@ -354,6 +358,7 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 | [RFC-RT-001](2026-11-runtime-product-catalog-golden-set.md) | Каталог продуктов и golden set по классам для runtime | РТ-1: `taxonomy/mango-products.yaml` (353 узла, классы runtime у узлов, проверка smoke); ХАБ-1: `atomic_function` — id каталога, каталог в `G-mach`; РТ-3: `golden/cases-<класс>.yaml`, у случая `product_class` и `atomic_function`; решение Р-17 о каталоге в статусе `review`; поправка 0.3 — исполнение BL-163 и РТ-6 (обновление копии каталога); поправка 0.4 — исполнение BL-156а на runtime `f31dcde3`, решение по PR #17 (строгий вариант PR #21), задачи BL-165, BL-166; поправка 0.5 — исполнение BL-157б (RUN-0083, A-IN `by-test`), пробелы runtime Р-1…Р-3, тело задачи РТ-7 (компактное оглавление БЗ); поправка 0.6 — RUN-0084 и Ш-В v0.2 (BL-156б, BL-156в), разбор чатов BL-157в, РТ-7 создана (runtime #22) | [постановка #434](https://github.com/G-Ivan-A/mango_ba_prompts/issues/434); [PR #431, шаг 3](https://github.com/G-Ivan-A/mango_ba_prompts/pull/431); [issue #442](https://github.com/G-Ivan-A/mango_ba_prompts/issues/442); [issue #444](https://github.com/G-Ivan-A/mango_ba_prompts/issues/444); [issue #446](https://github.com/G-Ivan-A/mango_ba_prompts/issues/446); [issue #448](https://github.com/G-Ivan-A/mango_ba_prompts/issues/448) | `accepted` | [PR #437](https://github.com/G-Ivan-A/mango_ba_prompts/pull/437), [PR #443](https://github.com/G-Ivan-A/mango_ba_prompts/pull/443), [PR #445](https://github.com/G-Ivan-A/mango_ba_prompts/pull/445), [PR #447](https://github.com/G-Ivan-A/mango_ba_prompts/pull/447), [PR #449](https://github.com/G-Ivan-A/mango_ba_prompts/pull/449) |
 | [RFC-MR-001](2026-11-bcreq-machine-run-baseline.md) | Машинная база сравнения для прогона БА по задачам 1135 и 1137 | RUN-0090 и RUN-0091 — база сравнения, а не приёмка (`partial-success`, гейты `pending`, `ba_reviewed: false`); протокол сравнения с BL-157в с защитой от якоря; решения Р-МР-1…Р-МР-4; BL-170 — расхождение маршрута каталог ↔ БЗ; BL-171 — пакет правок после данных БА | [Issue #458](https://github.com/G-Ivan-A/mango_ba_prompts/issues/458) | proposed | [PR #459](https://github.com/G-Ivan-A/mango_ba_prompts/pull/459) |
 | [RFC-RT-002](2026-11-runtime-universal-agent-context.md) | Универсальный агентный контекст runtime (OpenCode-first) | Аудит As-Is скриптом в runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 частично (плоский `skills/` не находит ни один клиент), Г3 подтверждена; матрица клиентов (12 строк); `AGENTS.md` — `ACCESS_GAP` и навигация БЗ каналом компиляции; зеркало `.agents/skills/<имя>/SKILL.md`; без `agents/` и адаптеров; приём SSOT #492 одной передачей с картой 334 ссылок вне передачи; решения Р-RT-1…Р-RT-9; BL-184 `DONE`, BL-191, BL-192 | [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), [манифест #492](../contracts/ssot-stage1-handoff-manifest.md) | proposed | [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26): скрипт аудита, лог и сторожа в `tests/` |
+| [RFC-RT-003](2026-11-runtime-ide-orchestrator.md) | IDE-слой runtime для этапа 2: оркестратор, гейты, MCP | Аудит готовности runtime к IDE (16 проверок RT на `main` `fe623c6b` и PR runtime #29): нет оркестратора, команд `/a-*`, карты гейтов, MCP, маршрута этапа 1 (исполняется RG-BCREQ-v1); ревизия #492, RFC-RT-002 (Р-RT-5 пересмотрена), BL-192, ADR-016, RFC-BCREQ-STEP-FORMAT-001 §6; разбор прогона 1143 — 56 проблем (A 19, B 16, C 21), критичны ложные допуски AIN-21 и Г-IN; оркестратор — агент OpenCode с субагентами, автономны только 14 технических шагов, журнал решений вне контекста, MCP только на чтение, песочница `work/`, миграция M0…M7 с откатом; решения Р-RT-10…Р-RT-21; [ADR-020](../adr/2026-11-adr-020-ide-orchestrator-runtime.md) `proposed`; BL-244 | [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), прогон 1143 ([#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505)) | proposed | [PR #508](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508): RFC, ADR, аудит, скрипт `experiments/issue_506/`; runtime не менялся, задача runtime описана (раздел 11) |
 
 ## Публикация промптов потока BCREQ (источник: issue #454)
 
@@ -496,6 +501,13 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   `proposed` — аудит агентного контекста runtime, матрица клиентов, целевая
   раскладка, план приёма SSOT #492, вывод legacy и миграция с откатом; решения
   Р-RT-1…Р-RT-9. Строки RFC-RT-001 и манифеста #492 не меняются.
+- **2026-11-26** — issue #506 (PR #508): RFC-RT-003 v0.1 `proposed` — аудит
+  готовности runtime к IDE этапа 2, ревизия предшествующих задач, разбор
+  прогона 1143 по указателю sha256, целевая структура `.opencode/`, карта
+  автономных шагов и гейтов, контракт оркестратора и журнал решений, MCP
+  только на чтение, миграция M0…M7; решения Р-RT-10…Р-RT-21; ADR-020
+  `proposed`. Строка RFC-RT-002 не меняется; её Р-RT-5 пересматривает
+  Р-RT-11.
 
 ## Поток ТТЗ (issue #466)
 
