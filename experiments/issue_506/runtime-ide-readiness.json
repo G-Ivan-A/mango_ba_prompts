@@ -1,0 +1,790 @@
+{
+  "issue": "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506",
+  "runtime": [
+    {
+      "label": "main",
+      "ref": "fe623c6b190ca987127c3ff1de36ed8b7eb3e24f",
+      "sha": "fe623c6b190ca987127c3ff1de36ed8b7eb3e24f",
+      "agents_md_bytes": 12070,
+      "agents_md_version": "0.7",
+      "checks": [
+        {
+          "id": "RT-01",
+          "what": "AGENTS.md в корне",
+          "present": true,
+          "evidence": "AGENTS.md, 12070 байт",
+          "locator": "AGENTS.md:1"
+        },
+        {
+          "id": "RT-02",
+          "what": "Навыки, плоский каталог skills/<имя>.md",
+          "present": true,
+          "evidence": "11 файлов",
+          "locator": "skills/"
+        },
+        {
+          "id": "RT-03",
+          "what": "Нативные навыки .agents/skills/<имя>/SKILL.md",
+          "present": false,
+          "evidence": "0 файлов",
+          "locator": ".agents/skills/"
+        },
+        {
+          "id": "RT-04",
+          "what": "Конфигурация клиента opencode.json",
+          "present": false,
+          "evidence": "нет",
+          "locator": "opencode.json"
+        },
+        {
+          "id": "RT-05",
+          "what": "Агенты OpenCode (оркестратор primary, исполнители subagent)",
+          "present": false,
+          "evidence": "нет .opencode/agents/",
+          "locator": ".opencode/agents/"
+        },
+        {
+          "id": "RT-06",
+          "what": "Входные команды /a-in, /a-core, /a-work, /a-release",
+          "present": false,
+          "evidence": "/a-in: нет; /a-core: нет; /a-work: нет; /a-release: нет",
+          "locator": ".opencode/commands/"
+        },
+        {
+          "id": "RT-07",
+          "what": "Конфигурация MCP (Jira, Confluence, веб)",
+          "present": false,
+          "evidence": "нет",
+          "locator": "opencode.json#mcp"
+        },
+        {
+          "id": "RT-08",
+          "what": "Маршрут потока: шаги BCREQ этапа 1 (Ш-*, AIN-01…24) в runtime",
+          "present": false,
+          "evidence": "маршрут RG-BCREQ-v1: 12 узлов n1…n12; AIN-01 в исполнимых файлах: нет",
+          "locator": "routes/rg-bcreq-v1.yaml, routes/run-sheet-template.yaml"
+        },
+        {
+          "id": "RT-09",
+          "what": "Карта автономных шагов и гейтов (Г-IN, Г-С1, Г-W, Выпуск, AIN-21)",
+          "present": false,
+          "evidence": "Г-IN: нет; Г-С1: нет; Г-W: нет; AIN-21: нет; Р-09: нет",
+          "locator": "AGENTS.md, routes/"
+        },
+        {
+          "id": "RT-10",
+          "what": "Маркер ACCESS_GAP и BLOCKED (Р-19)",
+          "present": false,
+          "evidence": "нет в AGENTS.md",
+          "locator": "AGENTS.md"
+        },
+        {
+          "id": "RT-11",
+          "what": "Оркестратор: контракт в AGENTS.md или агент OpenCode",
+          "present": false,
+          "evidence": "упоминания вне контракта: routes/run-sheet-template.yaml:1",
+          "locator": "AGENTS.md, .opencode/agents/"
+        },
+        {
+          "id": "RT-12",
+          "what": "Абсолютные URL репозиториев G-Ivan-A в исполнимых файлах",
+          "present": false,
+          "evidence": "1 URL в 1 файлах",
+          "locator": "docs/guides/00-quick-start.md:13"
+        },
+        {
+          "id": "RT-13",
+          "what": "Относительные пути AGENTS.md разрешаются в клоне",
+          "present": true,
+          "evidence": "16 из 16",
+          "locator": "AGENTS.md"
+        },
+        {
+          "id": "RT-14",
+          "what": "Локальная БЗ docs/kb",
+          "present": true,
+          "evidence": "6931 файлов; README: да; MAP.json: да; USAGE.md: да",
+          "locator": "docs/kb/"
+        },
+        {
+          "id": "RT-15",
+          "what": "Таксономии и контракты",
+          "present": true,
+          "evidence": "taxonomy: 11; contracts: 5",
+          "locator": "taxonomy/, contracts/"
+        },
+        {
+          "id": "RT-16",
+          "what": "Smoke runtime не запрещает .agents/.opencode",
+          "present": false,
+          "evidence": "упоминания .agents/.opencode в tests/runtime-smoke.sh: строка 46",
+          "locator": "tests/runtime-smoke.sh"
+        }
+      ],
+      "repo_urls": {
+        "docs/guides/00-quick-start.md": [
+          {
+            "line": 13,
+            "url": "https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/<SHA"
+          }
+        ]
+      },
+      "unresolved_paths": [],
+      "markers": {
+        "Confluence": {
+          "token": "Confluence",
+          "files": [
+            "AGENTS.md"
+          ],
+          "count": 1
+        },
+        "Jira": {
+          "token": "Jira",
+          "files": [],
+          "count": 0
+        },
+        "MCP": {
+          "token": "MCP",
+          "files": [],
+          "count": 0
+        },
+        "ACCESS_GAP": {
+          "token": "ACCESS_GAP",
+          "files": [],
+          "count": 0
+        },
+        "Г-IN": {
+          "token": "Г-IN",
+          "files": [],
+          "count": 0
+        },
+        "AIN-": {
+          "token": "AIN-",
+          "files": [],
+          "count": 0
+        }
+      }
+    },
+    {
+      "label": "pr29",
+      "ref": "pr29",
+      "sha": "9421edad855e1748b15bb3cef00ae1dc2c54171b",
+      "agents_md_bytes": 14262,
+      "agents_md_version": "0.8",
+      "checks": [
+        {
+          "id": "RT-01",
+          "what": "AGENTS.md в корне",
+          "present": true,
+          "evidence": "AGENTS.md, 14262 байт",
+          "locator": "AGENTS.md:1"
+        },
+        {
+          "id": "RT-02",
+          "what": "Навыки, плоский каталог skills/<имя>.md",
+          "present": true,
+          "evidence": "11 файлов",
+          "locator": "skills/"
+        },
+        {
+          "id": "RT-03",
+          "what": "Нативные навыки .agents/skills/<имя>/SKILL.md",
+          "present": true,
+          "evidence": "11 файлов",
+          "locator": ".agents/skills/"
+        },
+        {
+          "id": "RT-04",
+          "what": "Конфигурация клиента opencode.json",
+          "present": false,
+          "evidence": "нет",
+          "locator": "opencode.json"
+        },
+        {
+          "id": "RT-05",
+          "what": "Агенты OpenCode (оркестратор primary, исполнители subagent)",
+          "present": false,
+          "evidence": "нет .opencode/agents/",
+          "locator": ".opencode/agents/"
+        },
+        {
+          "id": "RT-06",
+          "what": "Входные команды /a-in, /a-core, /a-work, /a-release",
+          "present": false,
+          "evidence": "/a-in: нет; /a-core: нет; /a-work: нет; /a-release: нет",
+          "locator": ".opencode/commands/"
+        },
+        {
+          "id": "RT-07",
+          "what": "Конфигурация MCP (Jira, Confluence, веб)",
+          "present": false,
+          "evidence": "нет",
+          "locator": "opencode.json#mcp"
+        },
+        {
+          "id": "RT-08",
+          "what": "Маршрут потока: шаги BCREQ этапа 1 (Ш-*, AIN-01…24) в runtime",
+          "present": false,
+          "evidence": "маршрут RG-BCREQ-v1: 12 узлов n1…n12; AIN-01 в исполнимых файлах: нет",
+          "locator": "routes/rg-bcreq-v1.yaml, routes/run-sheet-template.yaml"
+        },
+        {
+          "id": "RT-09",
+          "what": "Карта автономных шагов и гейтов (Г-IN, Г-С1, Г-W, Выпуск, AIN-21)",
+          "present": false,
+          "evidence": "Г-IN: нет; Г-С1: нет; Г-W: нет; AIN-21: нет; Р-09: нет",
+          "locator": "AGENTS.md, routes/"
+        },
+        {
+          "id": "RT-10",
+          "what": "Маркер ACCESS_GAP и BLOCKED (Р-19)",
+          "present": true,
+          "evidence": "ACCESS_GAP в AGENTS.md: строка 99",
+          "locator": "AGENTS.md"
+        },
+        {
+          "id": "RT-11",
+          "what": "Оркестратор: контракт в AGENTS.md или агент OpenCode",
+          "present": false,
+          "evidence": "упоминания вне контракта: routes/run-sheet-template.yaml:1",
+          "locator": "AGENTS.md, .opencode/agents/"
+        },
+        {
+          "id": "RT-12",
+          "what": "Абсолютные URL репозиториев G-Ivan-A в исполнимых файлах",
+          "present": false,
+          "evidence": "1 URL в 1 файлах",
+          "locator": "docs/guides/00-quick-start.md:13"
+        },
+        {
+          "id": "RT-13",
+          "what": "Относительные пути AGENTS.md разрешаются в клоне",
+          "present": true,
+          "evidence": "19 из 19",
+          "locator": "AGENTS.md"
+        },
+        {
+          "id": "RT-14",
+          "what": "Локальная БЗ docs/kb",
+          "present": true,
+          "evidence": "6931 файлов; README: да; MAP.json: да; USAGE.md: да",
+          "locator": "docs/kb/"
+        },
+        {
+          "id": "RT-15",
+          "what": "Таксономии и контракты",
+          "present": true,
+          "evidence": "taxonomy: 11; contracts: 5",
+          "locator": "taxonomy/, contracts/"
+        },
+        {
+          "id": "RT-16",
+          "what": "Smoke runtime не запрещает .agents/.opencode",
+          "present": true,
+          "evidence": "упоминания .agents/.opencode в tests/runtime-smoke.sh: строка 53",
+          "locator": "tests/runtime-smoke.sh"
+        }
+      ],
+      "repo_urls": {
+        "docs/guides/00-quick-start.md": [
+          {
+            "line": 13,
+            "url": "https://github.com/G-Ivan-A/mango-ba-ai-runtime/tree/<SHA"
+          }
+        ]
+      },
+      "unresolved_paths": [],
+      "markers": {
+        "Confluence": {
+          "token": "Confluence",
+          "files": [
+            "AGENTS.md"
+          ],
+          "count": 1
+        },
+        "Jira": {
+          "token": "Jira",
+          "files": [],
+          "count": 0
+        },
+        "MCP": {
+          "token": "MCP",
+          "files": [],
+          "count": 0
+        },
+        "ACCESS_GAP": {
+          "token": "ACCESS_GAP",
+          "files": [
+            "AGENTS.md"
+          ],
+          "count": 1
+        },
+        "Г-IN": {
+          "token": "Г-IN",
+          "files": [],
+          "count": 0
+        },
+        "AIN-": {
+          "token": "AIN-",
+          "files": [],
+          "count": 0
+        }
+      }
+    }
+  ],
+  "spoke": {
+    "exec_prompts": 62,
+    "prompts_with_remote_urls": 30,
+    "remote_urls_by_repo": {
+      "ba-ai-metamodel": 27,
+      "mango-ba-ai-runtime": 130
+    },
+    "remote_url_files": {
+      "prompts/bcreq-constitution-governance-oneshot.md": [
+        {
+          "line": 389,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 392,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 416,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-constraints-documentation-stepwise.md": [
+        {
+          "line": 134,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 137,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 161,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-context-understanding-stepwise.md": [
+        {
+          "line": 331,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 334,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 358,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-core-documentation-oneshot.md": [
+        {
+          "line": 232,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 235,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 259,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-extra-risk-analysis-stepwise.md": [
+        {
+          "line": 134,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 137,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 161,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-fr-documentation-stepwise.md": [
+        {
+          "line": 261,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 264,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 288,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-in-understanding-oneshot.md": [
+        {
+          "line": 261,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 264,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 288,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-nfr-documentation-stepwise.md": [
+        {
+          "line": 133,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 136,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 160,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-orr-solution-design-stepwise.md": [
+        {
+          "line": 209,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 212,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 236,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-products-impact-analysis-stepwise.md": [
+        {
+          "line": 250,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 253,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 277,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-review-validation-oneshot.md": [
+        {
+          "line": 153,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 156,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 180,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-scenarios-modeling-oneshot.md": [
+        {
+          "line": 128,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 131,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 155,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-uc-modeling-stepwise.md": [
+        {
+          "line": 169,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 172,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 196,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/bcreq-work-solution-design-oneshot.md": [
+        {
+          "line": 182,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 185,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 209,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-constitution-governance-oneshot.md": [
+        {
+          "line": 397,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 400,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 424,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-constraints-documentation-stepwise.md": [
+        {
+          "line": 140,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 143,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 167,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-context-understanding-stepwise.md": [
+        {
+          "line": 337,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 340,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 364,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-extra-risk-analysis-stepwise.md": [
+        {
+          "line": 140,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 143,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 167,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-fr-documentation-stepwise.md": [
+        {
+          "line": 267,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 270,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 294,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-intake-questionnaire-stepwise.md": [
+        {
+          "line": 294,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-nfr-documentation-stepwise.md": [
+        {
+          "line": 139,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 142,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 166,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-orr-solution-design-stepwise.md": [
+        {
+          "line": 215,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 218,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 242,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-products-impact-analysis-stepwise.md": [
+        {
+          "line": 256,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 259,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 283,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-release-readiness-oneshot.md": [
+        {
+          "line": 269,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 270,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-review-validation-oneshot.md": [
+        {
+          "line": 159,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 162,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 186,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-scenarios-modeling-oneshot.md": [
+        {
+          "line": 134,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 137,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 161,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/bcreq-uc-modeling-stepwise.md": [
+        {
+          "line": 175,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 178,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 202,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/system/bcreq-context-understanding-system.md": [
+        {
+          "line": 348,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 351,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 375,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/system/bcreq-intake-questionnaire-system.md": [
+        {
+          "line": 305,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ],
+      "prompts/drafts/system/bcreq-products-impact-analysis-system.md": [
+        {
+          "line": 267,
+          "repo": "mango-ba-ai-runtime"
+        },
+        {
+          "line": 270,
+          "repo": "ba-ai-metamodel"
+        },
+        {
+          "line": 294,
+          "repo": "mango-ba-ai-runtime"
+        }
+      ]
+    },
+    "generic_continue_files": {},
+    "pinned_targets_relative_ok": {
+      "mango-ba-ai-runtime@68ad8fcf:docs/kb/MAP.json": 34,
+      "mango-ba-ai-runtime@68ad8fcf:docs/kb/README.md": 27,
+      "mango-ba-ai-runtime@68ad8fcf:docs/kb/USAGE.md": 7,
+      "mango-ba-ai-runtime@68ad8fcf:evaluation/g-human-checklist.md": 1,
+      "mango-ba-ai-runtime@68ad8fcf:golden/cases-analytics-reporting.yaml": 1,
+      "mango-ba-ai-runtime@68ad8fcf:golden/cases-voice-ucaas.yaml": 1,
+      "mango-ba-ai-runtime@68ad8fcf:golden/cases.yaml": 1,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/domain-glossary-analytics-reporting.yaml": 2,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/domain-glossary-voice-ucaas.yaml": 2,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/domain-glossary.yaml": 2,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/mango-products.yaml": 4,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/products.yaml": 29,
+      "mango-ba-ai-runtime@68ad8fcf:taxonomy/source-tiers.yaml": 16,
+      "mango-ba-ai-runtime@68ad8fcf:templates/bcreq-skeleton.md": 3
+    },
+    "pinned_targets_missing_in_clone": {
+      "ba-ai-metamodel@e1f67e26:research/mango/2026-05-22-classification.md": 27
+    },
+    "clone_sha": "fe623c6b190ca987127c3ff1de36ed8b7eb3e24f",
+    "ain_route": {
+      "id": "RFC-AIN-001",
+      "version": "0.3",
+      "status": "accepted",
+      "steps": 24,
+      "interaction": {
+        "advance_while_paused": false,
+        "future_comment_authorizes_execution": false,
+        "reuse_accepted_inputs": true,
+        "review_outcomes": [
+          "accept",
+          "partial",
+          "reject"
+        ],
+        "public_transition_sentences": 2,
+        "resume_requires_ba_instruction": true,
+        "scope_fields": [
+          "mode",
+          "authorized_action",
+          "deferred_notes"
+        ],
+        "rule": "Сначала применимые нормы и основания; частичное согласие не подтверждает весь ответ. Две фразы статуса только при разрешённом переходе, без раскрытия служебных полей и выполнения следующего шага."
+      }
+    }
+  }
+}
