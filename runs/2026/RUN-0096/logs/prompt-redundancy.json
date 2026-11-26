@@ -1,0 +1,195 @@
+{
+  "ain_files": 24,
+  "common_lines": 212,
+  "common_block_chars": 17132,
+  "common_sections_chars": {
+    "Вход и полномочия": 1398,
+    "Границы, вопросы и гейты": 1728,
+    "Источники, память и изменения": 2081,
+    "Доказательная нормализация и фактический доступ": 3921,
+    "Взаимодействие и квитанция каждого ответа": 2655
+  },
+  "ain_total_chars": 469305,
+  "ain_unique_chars": 58137,
+  "ain_unique_share_min": 0.098,
+  "ain_unique_share_max": 0.159,
+  "route_other_prompts_chars": {
+    "bcreq-constitution-governance-oneshot.md": 40424,
+    "bcreq-fr-documentation-stepwise.md": 29580,
+    "bcreq-nfr-documentation-stepwise.md": 19711,
+    "bcreq-uc-modeling-stepwise.md": 23181
+  },
+  "route_total_chars_as_pasted": 582201,
+  "route_total_chars_contract_once": 188165,
+  "route_saving_share": 0.677,
+  "per_file": [
+    {
+      "file": "bcreq-ain-01-understanding-stepwise.md",
+      "chars": 19303,
+      "shared_chars": 17132,
+      "unique_chars": 2171,
+      "unique_share": 0.112
+    },
+    {
+      "file": "bcreq-ain-02-understanding-stepwise.md",
+      "chars": 19139,
+      "shared_chars": 17132,
+      "unique_chars": 2007,
+      "unique_share": 0.105
+    },
+    {
+      "file": "bcreq-ain-03-understanding-stepwise.md",
+      "chars": 19002,
+      "shared_chars": 17132,
+      "unique_chars": 1870,
+      "unique_share": 0.098
+    },
+    {
+      "file": "bcreq-ain-04-understanding-stepwise.md",
+      "chars": 19682,
+      "shared_chars": 17132,
+      "unique_chars": 2550,
+      "unique_share": 0.13
+    },
+    {
+      "file": "bcreq-ain-05-understanding-stepwise.md",
+      "chars": 19917,
+      "shared_chars": 17132,
+      "unique_chars": 2785,
+      "unique_share": 0.14
+    },
+    {
+      "file": "bcreq-ain-06-understanding-stepwise.md",
+      "chars": 19557,
+      "shared_chars": 17132,
+      "unique_chars": 2425,
+      "unique_share": 0.124
+    },
+    {
+      "file": "bcreq-ain-07-understanding-stepwise.md",
+      "chars": 19517,
+      "shared_chars": 17132,
+      "unique_chars": 2385,
+      "unique_share": 0.122
+    },
+    {
+      "file": "bcreq-ain-08-understanding-stepwise.md",
+      "chars": 19801,
+      "shared_chars": 17132,
+      "unique_chars": 2669,
+      "unique_share": 0.135
+    },
+    {
+      "file": "bcreq-ain-09-understanding-stepwise.md",
+      "chars": 20106,
+      "shared_chars": 17132,
+      "unique_chars": 2974,
+      "unique_share": 0.148
+    },
+    {
+      "file": "bcreq-ain-10-understanding-stepwise.md",
+      "chars": 19591,
+      "shared_chars": 17132,
+      "unique_chars": 2459,
+      "unique_share": 0.126
+    },
+    {
+      "file": "bcreq-ain-11-understanding-stepwise.md",
+      "chars": 19268,
+      "shared_chars": 17132,
+      "unique_chars": 2136,
+      "unique_share": 0.111
+    },
+    {
+      "file": "bcreq-ain-12-understanding-stepwise.md",
+      "chars": 19904,
+      "shared_chars": 17132,
+      "unique_chars": 2772,
+      "unique_share": 0.139
+    },
+    {
+      "file": "bcreq-ain-13-understanding-stepwise.md",
+      "chars": 19257,
+      "shared_chars": 17132,
+      "unique_chars": 2125,
+      "unique_share": 0.11
+    },
+    {
+      "file": "bcreq-ain-14-understanding-stepwise.md",
+      "chars": 19065,
+      "shared_chars": 17132,
+      "unique_chars": 1933,
+      "unique_share": 0.101
+    },
+    {
+      "file": "bcreq-ain-15-understanding-stepwise.md",
+      "chars": 19625,
+      "shared_chars": 17132,
+      "unique_chars": 2493,
+      "unique_share": 0.127
+    },
+    {
+      "file": "bcreq-ain-16-understanding-stepwise.md",
+      "chars": 20367,
+      "shared_chars": 17132,
+      "unique_chars": 3235,
+      "unique_share": 0.159
+    },
+    {
+      "file": "bcreq-ain-17-understanding-stepwise.md",
+      "chars": 19421,
+      "shared_chars": 17132,
+      "unique_chars": 2289,
+      "unique_share": 0.118
+    },
+    {
+      "file": "bcreq-ain-18-understanding-stepwise.md",
+      "chars": 19453,
+      "shared_chars": 17132,
+      "unique_chars": 2321,
+      "unique_share": 0.119
+    },
+    {
+      "file": "bcreq-ain-19-understanding-stepwise.md",
+      "chars": 19499,
+      "shared_chars": 17132,
+      "unique_chars": 2367,
+      "unique_share": 0.121
+    },
+    {
+      "file": "bcreq-ain-20-understanding-stepwise.md",
+      "chars": 19349,
+      "shared_chars": 17132,
+      "unique_chars": 2217,
+      "unique_share": 0.115
+    },
+    {
+      "file": "bcreq-ain-21-understanding-stepwise.md",
+      "chars": 19394,
+      "shared_chars": 17132,
+      "unique_chars": 2262,
+      "unique_share": 0.117
+    },
+    {
+      "file": "bcreq-ain-22-understanding-stepwise.md",
+      "chars": 19900,
+      "shared_chars": 17132,
+      "unique_chars": 2768,
+      "unique_share": 0.139
+    },
+    {
+      "file": "bcreq-ain-23-understanding-stepwise.md",
+      "chars": 19295,
+      "shared_chars": 17132,
+      "unique_chars": 2163,
+      "unique_share": 0.112
+    },
+    {
+      "file": "bcreq-ain-24-understanding-stepwise.md",
+      "chars": 19893,
+      "shared_chars": 17132,
+      "unique_chars": 2761,
+      "unique_share": 0.139
+    }
+  ]
+}

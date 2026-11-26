@@ -1,7 +1,7 @@
 ---
 status: draft
 version: 1.6
-updated: 2026-11-16
+updated: 2026-11-26
 ai-generated: true
 type: registry
 scope: runs
@@ -14,6 +14,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/375"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/382"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/482"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/505"
 related_artifacts:
   - "standards/runs-contract-standard.md"
   - "docs/analysis/2026-08-21-runs-type-gap-analysis.md"
@@ -218,6 +219,7 @@ runs/
 | [`RUN-0093`](2026/RUN-0093/metadata.yaml) | 2026-11-10 | `execution` | feasibility-assessment-tz-bcreq-1140-gasification | [`outputs/README.md`](2026/RUN-0093/outputs/README.md), [`outputs/L0-feasibility-assessment-1140.md`](2026/RUN-0093/outputs/L0-feasibility-assessment-1140.md), [`logs/experiment-log.md`](2026/RUN-0093/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0093/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0093/feedback/review-notes.md) |
 | [`RUN-0094`](2026/RUN-0094/metadata.yaml) | 2026-11-16 | `execution` | feasibility-assessment-tz-bcreq-1199-v2 | [`inputs/task-statement-486.md`](2026/RUN-0094/inputs/task-statement-486.md), [`outputs/README.md`](2026/RUN-0094/outputs/README.md), [`outputs/L0-feasibility-assessment-1199-2.md`](2026/RUN-0094/outputs/L0-feasibility-assessment-1199-2.md), [`outputs/analytical-note-1199-v1-vs-v2.md`](2026/RUN-0094/outputs/analytical-note-1199-v1-vs-v2.md), [`logs/experiment-log.md`](2026/RUN-0094/logs/experiment-log.md), [`logs/technical-audit.md`](2026/RUN-0094/logs/technical-audit.md), [`feedback/review-notes.md`](2026/RUN-0094/feedback/review-notes.md) |
 | [`RUN-0095`](2026/RUN-0095/metadata.yaml) | 2026-11-18 | `execution` | bcreq-step-handoff-and-step-formats | [`inputs/task-statement-490.md`](2026/RUN-0095/inputs/task-statement-490.md), [`outputs/README.md`](2026/RUN-0095/outputs/README.md), [анализ чата 1135-2](../docs/analysis/2026-11-18-1135-2-chat-step-handoff-analysis.md), [`logs/experiment-log.md`](2026/RUN-0095/logs/experiment-log.md), [сигналы чата](2026/RUN-0095/logs/chat-signals.json), [review](2026/RUN-0095/feedback/review-notes.md) |
+| [`RUN-0096`](2026/RUN-0096/metadata.yaml) | 2026-11-26 | `execution` | bcreq-prompt-debugging-chat-1143 | [`inputs/task-statement-505.md`](2026/RUN-0096/inputs/task-statement-505.md), [`outputs/README.md`](2026/RUN-0096/outputs/README.md), [анализ чата 1143](../docs/analysis/2026-11-26-1143-chat-prompt-debugging-analysis.md), [RFC отладки промптов](../docs/rfc/2026-11-bcreq-prompt-debugging-1143.md), [`logs/experiment-log.md`](2026/RUN-0096/logs/experiment-log.md), [сигналы чата](2026/RUN-0096/logs/chat-signals.json), [избыточность промптов](2026/RUN-0096/logs/prompt-redundancy.json), [review](2026/RUN-0096/feedback/review-notes.md) |
 
 ## Локальные инструменты воспроизводимости
 
@@ -230,6 +232,8 @@ runs/
 | [`scripts/chat_export_to_markdown.py`](../scripts/chat_export_to_markdown.py) | Разворачивает экспорт чата (JSON) в линейный транскрипт и таблицу метрик по репликам. Используется в [`RUN-0015`](2026/RUN-0015/inputs/README.md), [`RUN-0016`](2026/RUN-0016/inputs/README.md), [`RUN-0017`](2026/RUN-0017/inputs/README.md), [`RUN-0020`](2026/RUN-0020/inputs/README.md), [`RUN-0021`](2026/RUN-0021/inputs/README.md), [`RUN-0022`](2026/RUN-0022/inputs/README.md), [`RUN-0023`](2026/RUN-0023/inputs/README.md), [`RUN-0024`](2026/RUN-0024/inputs/README.md), [`RUN-0025`](2026/RUN-0025/inputs/README.md), [`RUN-0026`](2026/RUN-0026/inputs/README.md), [`RUN-0027`](2026/RUN-0027/inputs/README.md), [`RUN-0028`](2026/RUN-0028/inputs/README.md) [`RUN-0029`](2026/RUN-0029/inputs/README.md) и [`RUN-0095`](2026/RUN-0095/inputs/README.md). |
 | [`scripts/chat_export_to_transcript.py`](../scripts/chat_export_to_transcript.py) | Разворачивает экспорт чата (JSON) в стенограмму и таблицу метрик по вызовам модели (поля `usage`). Используется в [`RUN-0019`](2026/RUN-0019/inputs/README.md). |
 | [`experiments/issue_490/chat_signals.py`](../experiments/issue_490/chat_signals.py) | Считает по расшифровке чата текстовые сигналы в ответах модели: угодливость, строки таблиц, явный следующий шаг, вопросы к БА, выбор stepwise/oneshot. Используется в [`RUN-0095`](2026/RUN-0095/logs/chat-signals.json). |
+| [`experiments/issue_505/chat_signals.py`](../experiments/issue_505/chat_signals.py) | Считает по расшифровке чата сигналы отладки промптов без её текста: маркеры шагов, `ACCESS_GAP`, отказы веб-поиска, пакеты памяти, угодливость; пишет только числа и номера строк. Используется в [`RUN-0096`](2026/RUN-0096/logs/experiment-log.md). |
+| [`experiments/issue_505/prompt_redundancy.py`](../experiments/issue_505/prompt_redundancy.py) | Замеряет общую и уникальную часть карточек AIN-01…24 и объём маршрута BCREQ, вставляемого в чат. Используется в [`RUN-0096`](2026/RUN-0096/logs/experiment-log.md). |
 | [`experiments/chat_export_probe.py`](../experiments/chat_export_probe.py) | Разведочный скрипт: печатает структуру незнакомого экспорта чата перед конвертацией. |
 | [`experiments/parse_qwen_chat_export.py`](../experiments/parse_qwen_chat_export.py) | Считает токены (`tiktoken:cl100k_base`), длительности и метрики по эпизодам из выгрузки чата Qwen. Используется в [`RUN-0018`](2026/RUN-0018/logs/metrics.md), [`RUN-0021`](2026/RUN-0021/logs/metrics.md) и [`RUN-0029`](2026/RUN-0029/logs/metrics.md). |
 | [`experiments/chat_export_usage_metrics.py`](../experiments/chat_export_usage_metrics.py) | Считает токены по нативным полям `usage` провайдера (без оценки токенизатором), латентности и длительности по эпизодам. Используется в [`RUN-0028`](2026/RUN-0028/logs/metrics.md). |

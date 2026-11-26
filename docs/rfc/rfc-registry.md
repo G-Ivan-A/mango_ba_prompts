@@ -1,6 +1,6 @@
 ---
 status: draft
-version: 0.29
+version: 0.30
 updated: 2026-11-26
 ai-generated: true
 type: register
@@ -18,6 +18,7 @@ related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/420"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/434"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/454"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/505"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/458"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/466"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/470"
@@ -501,6 +502,9 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   `proposed` — аудит агентного контекста runtime, матрица клиентов, целевая
   раскладка, план приёма SSOT #492, вывод legacy и миграция с откатом; решения
   Р-RT-1…Р-RT-9. Строки RFC-RT-001 и манифеста #492 не меняются.
+- **2026-11-26** — issue #505 (PR #507): RFC-BCREQ-PROMPT-DEBUG-001 v0.1
+  `proposed` — отладка промптов BCREQ по прогону 1143; исполнение — BL-194
+  (issue #509). Остальные строки реестра не меняются.
 - **2026-11-26** — issue #506 (PR #508): RFC-RT-003 v0.1 `proposed` — аудит
   готовности runtime к IDE этапа 2, ревизия предшествующих задач, разбор
   прогона 1143 по указателю sha256, целевая структура `.opencode/`, карта
@@ -527,6 +531,12 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
 | RFC | Суть | Статус | Реализация |
 | --- | --- | --- | --- |
 | [RFC-BCREQ-STEP-FORMAT-001](2026-11-bcreq-step-format.md) | ВП чата 1135-2 и гипотезы Г1…Г6: «Цель» в карточках, блок «Итог шага» в 38 шагах, «На согласование БА», системный формат Ш-А/Ш-1/Ш-2 параллельно AIN, «Формат шагов» вместо stepwise/oneshot; перенос на этап 2 | `proposed` | [PR #491](https://github.com/G-Ivan-A/mango_ba_prompts/pull/491): SSOT `bcreq-step-handoff.md`, черновики и сайт 2.9.0; деплой BL-232 и прогон БА открыты |
+
+## Отладка промптов по прогону 1143 (issue #505)
+
+| RFC | Суть | Статус | Реализация |
+| --- | --- | --- | --- |
+| [RFC-BCREQ-PROMPT-DEBUG-001](2026-11-bcreq-prompt-debugging-1143.md) | 16 проблем чата 1143 ([анализ](../analysis/2026-11-26-1143-chat-prompt-debugging-analysis.md)); правки 2.1–2.12: веб-доступ без ложного `ACCESS_GAP`, одна квитанция на ответ, интеграционные роли, allow гейта; общий контракт A-IN — 17 132 символа в каждой из 24 карточек, вставка контракта один раз сокращает маршрут на 67,7 %; две формы карточки и оба формата шагов; сайт, инструкции, этап 2 (OpenCode); RG-01…RG-10; решения Р-ОТЛ-1…6 | `proposed` | [PR #507](https://github.com/G-Ivan-A/mango_ba_prompts/pull/507): RUN-0096, анализ, замеры; правки промптов — BL-194 ([#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509)) |
 
 ## Журнал переименований `docs/rfc` (issue #470)
 
