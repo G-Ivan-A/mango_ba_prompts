@@ -5,9 +5,11 @@
 бэклога — в спице. Проверяет без LLM и без сети:
 
 * движение по цепочке: BL-191 ``DONE`` (PR runtime #26 и PR #494 слиты,
-  решение владельца по Р-RT-2…Р-RT-4 и Р-RT-6), BL-192 ``DONE`` со ссылками
-  на runtime #27 и PR runtime #29 — в таблице, в карточках и в блоке
-  «Движение по цепочке (runtime #27)»;
+  решение владельца по Р-RT-2…Р-RT-4 и Р-RT-6), Э1, Э2, Э4 BL-192 ``DONE`` со
+  ссылками на runtime #27 и PR runtime #29 — в таблице, в карточках и в блоке
+  «Движение по цепочке (runtime #27)». После #506 BL-192 снова ``review``:
+  Р-RT-19 расширяет её этапом Э5 (PR runtime #30); свидетельства Э1, Э2, Э4
+  в карточке остаются;
 * соседние задачи не сдвинуты без основания: BL-132 ``deferred (triggered)``,
   BL-185 ``TODO``; RFC-RT-002 остаётся ``proposed`` (решения в разделе 9
   записывает владелец);
@@ -63,12 +65,14 @@ class ChainTest(unittest.TestCase):
             self.assertIn(evidence, text)
 
     def test_bl192_done(self):
+        # #506, Р-RT-19: BL-192 расширена этапом Э5 и снова в `review`;
+        # Э1, Э2, Э4 остаются `DONE` с прежними свидетельствами.
         line = row(self.backlog, "BL-192")
-        self.assertRegex(line, r"\| DONE \|")
+        self.assertRegex(line, r"\| (DONE|review) \|")
         self.assertIn(ISSUE, line)
         self.assertIn(PR, line)
         text = card(self.model, "BL-192")
-        self.assertIn("**Статус.** `DONE`", text)
+        self.assertRegex(text, r"\*\*Статус\.\*\* `DONE`|Э1, Э2, Э4 — `DONE`")
         for evidence in (ISSUE, PR, ".agents/skills/<имя>/SKILL.md", "ACCESS_GAP", "tests/opencode_smoke.py",
                          "Ранее — `deferred (triggered)` → `review`", "bee5f9ba", OWNER_DECISION):
             self.assertIn(evidence, text)

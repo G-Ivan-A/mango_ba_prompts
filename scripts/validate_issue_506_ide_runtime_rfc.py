@@ -1,28 +1,35 @@
 #!/usr/bin/env python3
 """Issue #506: готовность runtime к этапу 2 (IDE), RFC-RT-003 и ADR-020.
 
-Задача — исследование и RFC без правок runtime. Проверяет без LLM, без сети
-и без клона runtime:
+Исследование и RFC без правок runtime; после решения владельца (PR #508,
+комментарий 7196820484) — RFC-RT-003 и ADR-020 ``accepted``, карта гейтов
+этапа 1 и постановка BL-192 Э5, реализованная PR runtime #30. Проверяет без
+LLM, без сети и без клона runtime:
 
 * аудит: frontmatter (``type: audit``, вердикт), разделы ФТ-1…ФТ-3,
   указатели sha256 на экспорт диалога и чат прогона 1143, 56 проблем
   П-1143-NN без пропусков, классы A/B/C и счётчики вердикта сходятся с
   таблицей, распределение раздела 4.4 совпадает с классами;
-* RFC-RT-003: ``status: proposed``, ``type: rfc``, обязательные разделы ФТ-4,
+* RFC-RT-003: ``status: accepted``, ``type: rfc``, обязательные разделы ФТ-4,
   карта гейтов этапа 1, решения Р-RT-10…Р-RT-N без пропусков и повторов,
-  задача runtime описана, но не создана;
-* ADR-020: ``status: proposed`` и разделы ADR;
-* реестр RFC: строка RFC-RT-003 и запись журнала;
-* бэклог: строка и карточка BL-244 ``review``, BL-192 остаётся
-  ``deferred (triggered)``, цепочка #506 с пометкой «в бэклоге задачи нет»;
+  решение владельца, постановка Э5 (ФТ, НФТ, граничные кейсы, решения,
+  «Готово, когда») без issue в runtime;
+* ADR-020: ``status: accepted`` и разделы ADR;
+* карта гейтов ``bcreq-ide-gates.json``: генератор ``--check`` не находит
+  расхождений, 14 технических шагов, 5 гейтов, 4 процесса, поля журнала;
+* реестр RFC: строка RFC-RT-003 ``accepted`` и записи журнала;
+* бэклог: BL-244 ``DONE``, BL-192 ``review`` (Э5, PR runtime #30), новая
+  BL-245 (M6), цепочка #506: предыдущий, текущий и следующий шаг;
 * клиентские данные не коммитятся: в документах задачи нет длинных цитат
   из чата и e-mail, только sha256 и указатель;
 * тексты промптов, SHA реестра runtime и сайт не менялись: коммиты задачи
   (``issue-506`` в сообщении) не трогают ``prompts/``,
   ``standards/bcreq-runtime-references.md`` и ``site/``.
 """
+import json
 import re
 import subprocess
+import sys
 import unittest
 from collections import Counter
 from pathlib import Path
@@ -36,6 +43,11 @@ BACKLOG = ROOT / "pr-ops/BACKLOG.md"
 REPOSITORY = ROOT / "pr-ops/backlog-repository.md"
 MODEL = ROOT / "pr-ops/backlog-ba-model.md"
 EXPERIMENT = ROOT / "experiments/issue_506"
+GATE_MAP = ROOT / "docs/ba-processes/bcreq-ide-gates.json"
+GATE_BUILDER = ROOT / "scripts/build_bcreq_ide_gates.py"
+OWNER_DECISION = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484"
+PR = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/514"
+RUNTIME_PR = "https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30"
 
 ISSUE = "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
 CARD = "BL-244"
@@ -65,8 +77,12 @@ RFC_SECTIONS = [
     "## 8. Миграция и откат (ФТ-4)",
     "## 9. Решения на согласование",
     "## 10. Движение по бэклогу",
-    "## 11. Задача runtime (описана, не создана)",
+    "## 11. Постановка BL-192 Э5 «IDE-слой» (задача runtime)",
 ]
+# Постановка Э5 по шагу 3 решения владельца: SSOT, ФТ, НФТ, граничные кейсы,
+# обоснованные решения.
+STATEMENT_SECTIONS = ("SSOT", "Функциональные требования", "Нефункциональные требования",
+                      "Граничные кейсы", "Обоснованные решения", "Готово, когда")
 ADR_SECTIONS = [
     "## Статус",
     "## Контекст",
@@ -221,8 +237,9 @@ class RfcTest(unittest.TestCase):
         cls.meta = frontmatter(cls.text)
 
     def test_frontmatter(self):
-        self.assertEqual(self.meta.get("status"), "proposed")
+        self.assertEqual(self.meta.get("status"), "accepted")
         self.assertEqual(self.meta.get("type"), "rfc")
+        self.assertIn(OWNER_DECISION, self.text)
         self.assertEqual(self.meta.get("source"), ISSUE)
         self.assertIn("rfc-scope", self.meta)
 
@@ -277,20 +294,39 @@ class RfcTest(unittest.TestCase):
         self.assertGreaterEqual(len(numbers), 5)
         self.assertEqual(numbers, list(range(10, 10 + len(numbers))))
 
-    def test_runtime_task_described_not_created(self):
-        part = section(self.text, "## 11. Задача runtime (описана, не создана)")
-        self.assertIn("BL-192 Э5", part)
-        self.assertIn("**Готово, когда.**", part)
+    def test_owner_decision(self):
+        part = section(self.text, "## 9. Решения на согласование")
+        self.assertIn(OWNER_DECISION, part)
+        for needle in ("Р-RT-11", "Р-RT-13", "Р-RT-15", "Р-RT-19", "принять и\n  запустить"):
+            with self.subTest(needle=needle):
+                self.assertIn(needle, part)
+
+    def test_runtime_statement(self):
+        """Шаг 3 решения владельца: полная постановка Э5, issue в runtime нет."""
+        part = section(self.text, "## 11. Постановка BL-192 Э5 «IDE-слой» (задача runtime)")
+        self.assertIn(RUNTIME_PR, part)
         self.assertNotRegex(part, r"mango-ba-ai-runtime/issues/(?!25\b|27\b)\d+")
+        headings = re.findall(r"(?m)^### 11\.(\d+)\. (.+)$", part)
+        self.assertEqual([int(n) for n, _ in headings], list(range(1, len(headings) + 1)))
+        titles = [title for _, title in headings]
+        for name in STATEMENT_SECTIONS:
+            with self.subTest(section=name):
+                self.assertIn(name, titles)
+        cases = re.findall(r"(?m)^\| (\d+) \|", section(part, "### 11.7. Граничные кейсы"))
+        self.assertGreaterEqual(len(cases), 30)
+        self.assertEqual([int(n) for n in cases], list(range(1, len(cases) + 1)))
+        for need in ("ФТ-1", "НФТ-1", "git diff --output", "AGENTS.md", "78 решений"):
+            with self.subTest(needle=need):
+                self.assertIn(need, part)
 
     def test_backlog_chain(self):
         part = section(self.text, "## 10. Движение по бэклогу")
-        for needle in (CARD, "BL-192", "BL-185", "BL-242", "BL-243", "ADR-020",
-                       "BL-194", "issues/509"):
+        for needle in (CARD, "BL-192", "BL-185", "BL-242", "BL-243", "BL-245",
+                       "BL-194", "issues/509", "Предыдущий", "Открывается", PR, RUNTIME_PR):
             with self.subTest(needle=needle):
                 self.assertIn(needle, part)
-        # Постусловие #506: прогоны M6 — «в бэклоге задачи нет, будет создана».
-        self.assertIn("Задачи в бэклоге нет, будет создана", part)
+        # Постусловие: следующие шаги с обоснованием.
+        self.assertIn("**Следующие шаги.**", part)
 
 
 class AdrTest(unittest.TestCase):
@@ -300,8 +336,9 @@ class AdrTest(unittest.TestCase):
         cls.meta = frontmatter(cls.text)
 
     def test_frontmatter(self):
-        self.assertEqual(self.meta.get("status"), "proposed")
+        self.assertEqual(self.meta.get("status"), "accepted")
         self.assertIn("decision-type", self.meta)
+        self.assertIn(OWNER_DECISION, self.text)
 
     def test_title_and_sections(self):
         self.assertIn("# ADR-020: ", self.text)
@@ -314,12 +351,37 @@ class AdrTest(unittest.TestCase):
         self.assertIn("../audit/2026-11-26-runtime-stage2-ide-readiness.md", self.text)
 
 
+class GateMapTest(unittest.TestCase):
+    """Карта гейтов этапа 1 — раздел 5 RFC в машинном виде (вход M2 и Э5)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.map = json.loads(read(GATE_MAP))
+
+    def test_generator_check(self):
+        res = subprocess.run([sys.executable, str(GATE_BUILDER), "--check"],
+                             cwd=ROOT, capture_output=True, text=True, timeout=60)
+        self.assertEqual(res.returncode, 0, res.stdout + res.stderr)
+
+    def test_matches_rfc(self):
+        self.assertEqual(self.map["status"], "accepted")
+        self.assertEqual(tuple(self.map["technical_steps"]), TECHNICAL)
+        self.assertEqual(tuple(gate["code"] for gate in self.map["gates"]), GATES)
+        self.assertEqual([proc["stage"] for proc in self.map["processes"]],
+                         ["A-IN", "A-CORE", "A-WORK", "A-RELEASE"])
+        self.assertEqual(set(self.map["stop_types"]), {"T", "P", "G", "B"})
+        self.assertIn("принять и запустить", self.map["stop_types"]["P"])
+        self.assertEqual(self.map["decision_log"]["path"], "work/<ключ>/decisions.jsonl")
+        self.assertTrue(self.map["runtime_path"].startswith("ssot/mango_ba_prompts/"))
+
+
 class RegistryTest(unittest.TestCase):
     def test_row_and_journal(self):
         text = read(REGISTRY)
-        self.assertRegex(text, r"(?m)^\| \[RFC-RT-003\]\(2026-11-runtime-ide-orchestrator\.md\) \|.*`proposed`")
+        self.assertRegex(text, r"(?m)^\| \[RFC-RT-003\]\(2026-11-runtime-ide-orchestrator\.md\) \|.*\| `accepted` \|")
         self.assertIn("2026-11-runtime-ide-orchestrator.md", text)
         self.assertRegex(text, r"(?m)^- \*\*2026-11-26\*\* — issue #506")
+        self.assertRegex(text, r"(?m)^- \*\*2026-11-27\*\* — issue #506 \(PR #514")
 
 
 class BacklogTest(unittest.TestCase):
@@ -334,27 +396,43 @@ class BacklogTest(unittest.TestCase):
         self.assertRegex(
             self.backlog, rf"(?m)^\| {CARD} \| \[{re.escape(CARD_TITLE)}\]\(backlog-repository\.md#"
         )
-        self.assertRegex(self.backlog, rf"(?m)^\| {CARD} \| .*\| review \|")
+        self.assertRegex(self.backlog, rf"(?m)^\| {CARD} \| .*\| DONE \|.*{re.escape(PR)}")
+        card = self.repository.split(f"### {CARD}.", 1)[1].split("\n### ", 1)[0]
+        self.assertIn("**Статус.** `DONE`", card)
+        self.assertIn(OWNER_DECISION, card)
 
-    def test_bl192_status_unchanged(self):
-        self.assertRegex(self.backlog, r"(?m)^\| BL-192 \| .*\| deferred \(triggered\) \|")
+    def test_bl192_e5_review(self):
+        """Р-RT-19: Э5 расширяет BL-192, новой задачи нет."""
+        self.assertRegex(self.backlog, rf"(?m)^\| BL-192 \| .*\| review \|.*{re.escape(RUNTIME_PR)}")
         card = self.model.split("### BL-192.", 1)[1].split("\n### ", 1)[0]
-        self.assertIn("ADR-020", card)
+        for needle in ("**Статус.** `review`", "ADR-020", "Э5", RUNTIME_PR, OWNER_DECISION):
+            with self.subTest(needle=needle):
+                self.assertIn(needle, card)
+
+    def test_bl245_m6(self):
+        title = "Тестовые прогоны процессов этапа 1 в IDE (M6)"
+        self.assertIn(f"### BL-245. {title}", self.repository)
+        self.assertRegex(self.backlog, rf"(?m)^\| BL-245 \| \[{re.escape(title)}\]\(backlog-repository\.md#.*\| deferred \(triggered\) \|")
+        card = self.repository.split("### BL-245.", 1)[1].split("\n### ", 1)[0]
+        for needle in ("**Статус.**", "**Почему.**", "**Что меняется.**", "**Источники.**",
+                       "**Зависит от.**", "**Решение владельца.**", "**Готово, когда.**", "BL-185"):
+            with self.subTest(needle=needle):
+                self.assertIn(needle, card)
 
     def test_chain(self):
         chain = self.backlog.split("**Движение по цепочке (#506).**", 1)[1].split("\n## ", 1)[0]
-        for needle in (CARD, "ADR-020", "BL-192", "BL-242", "BL-243", "#505", "BL-194", "#509"):
+        for needle in (CARD, "ADR-020", "BL-192", "BL-242", "BL-243", "#505", "BL-194", "#509",
+                       "BL-245", "Предыдущий шаг", "Открывается", PR, RUNTIME_PR):
             with self.subTest(needle=needle):
                 self.assertIn(needle, chain)
-        # Постусловие #506: «в бэклоге задачи нет, будет создана».
-        self.assertIn("в бэклоге задачи нет, будет создана", re.sub(r"\s+", " ", chain))
 
 
 class ClientDataTest(unittest.TestCase):
     """#506, раздел 6: клиентские данные не коммитятся."""
 
-    FILES = (AUDIT, RFC, ADR)
-    EMAIL = re.compile(r"[\w.+-]+@[\w-]+\.[\w.]+")
+    FILES = (AUDIT, RFC, ADR, GATE_MAP)
+    # Домен верхнего уровня — буквы: «opencode-ai@1.19.6» — версия пакета, не адрес.
+    EMAIL = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)*\.[A-Za-z]{2,}\b")
     PHONE = re.compile(r"\+7[\s(-]*\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}")
 
     def files(self):
