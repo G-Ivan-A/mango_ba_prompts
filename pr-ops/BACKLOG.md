@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.14
-updated: 2026-11-26
+version: 2.15
+updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -772,7 +772,7 @@ IDE-пакетах и предлагает один агентный конте�
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-191 | [RFC универсального агентного контекста runtime](backlog-ba-model.md#bl-191-rfc-универсального-агентного-контекста-runtime) | P1 | BL-184 | DONE | [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) | [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md) | Аудит As-Is скриптом в runtime (Г1 исполнена, Г2 частично, Г3 подтверждена), матрица клиентов, зеркало `.agents/skills`, план приёма SSOT с картой ссылок, вывод legacy, миграция с откатом, Р-RT-1…Р-RT-9 | Creative |
-| BL-192 | [Производство универсального агентного контекста runtime](backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime) | P1 | BL-191; Р-RT-2, Р-RT-3, Р-RT-4 | DONE | [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) | [RFC-RT-002, раздел 8](../docs/rfc/2026-11-runtime-universal-agent-context.md#8-миграция-валидация-и-откат-фт-6) | Решения Р-RT-2…Р-RT-4 приняты. Зеркало навыков и поправка smoke, `ACCESS_GAP` и навигация БЗ в `AGENTS.md`, smoke OpenCode V1 1.19.6 и V2 2.4.2; защищённые пути не перемещаются | Structured |
+| BL-192 | [Производство универсального агентного контекста runtime](backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime) | P1 | BL-191; Р-RT-2, Р-RT-3, Р-RT-4; Э5 — ADR-020 | review | [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29); Э5 — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) | [RFC-RT-002, раздел 8](../docs/rfc/2026-11-runtime-universal-agent-context.md#8-миграция-валидация-и-откат-фт-6); Э5 — [RFC-RT-003, раздел 11](../docs/rfc/2026-11-runtime-ide-orchestrator.md) | Решения Р-RT-2…Р-RT-4 приняты. Э1, Э2, Э4 `DONE` (PR runtime #29): зеркало навыков и поправка smoke, `ACCESS_GAP` и навигация БЗ в `AGENTS.md`, smoke OpenCode V1 1.19.6 и V2 2.4.2; защищённые пути не перемещаются. Э5 «IDE-слой» (Р-RT-19) — `review`: оркестратор и два субагента, команды `/a-*`, права клиента, журнал решений | Structured |
 
 **Движение по цепочке (runtime #25).** Предыдущий BL-184 `review` → `DONE`:
 PR #493 слит (`7611c041`), манифест передан в RFC-задачу runtime #25.
@@ -801,22 +801,27 @@ BL-185…BL-188 `TODO` после выбора Р-RT-7; версию OpenCode з
 Исследование и RFC без правок runtime. Задача проверяет готовность runtime к
 этапу 2 в IDE-клиенте OpenCode, разбирает прогон 1143 и предлагает
 оркестратор-агент, карту автономных шагов и гейтов, журнал решений и
-топологию MCP только на чтение. Runtime, тексты промптов и SHA реестра не
-меняются; производство — расширение BL-192 после решения владельца.
+топологию MCP только на чтение. Тексты промптов и SHA реестра не меняются.
+Владелец принял ADR-020 26.11; производство — этап Э5 задачи BL-192 в
+runtime, тестовые прогоны — BL-245.
 
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| BL-244 | [RFC IDE-слоя runtime для этапа 2: оркестратор, гейты, MCP](backlog-repository.md#bl-244-rfc-ide-слоя-runtime-для-этапа-2-оркестратор-гейты-mcp) | P1 | BL-191, BL-192 | review | [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #508](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508) | [RFC-RT-003](../docs/rfc/2026-11-runtime-ide-orchestrator.md), [ADR-020](../docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md) | Аудит 16 gap'ов runtime скриптом, ревизия #492, RFC-RT-002 и BL-192, разбор 56 проблем прогона 1143 (конфиг среды или правка промптов), оркестратор и гейты с журналом решений, MCP только на чтение, миграция M0…M7 с откатом, Р-RT-10…Р-RT-21 | Creative |
+| BL-244 | [RFC IDE-слоя runtime для этапа 2: оркестратор, гейты, MCP](backlog-repository.md#bl-244-rfc-ide-слоя-runtime-для-этапа-2-оркестратор-гейты-mcp) | P1 | BL-191, BL-192 | DONE | [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #508](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508) (закрыт), [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514) | [RFC-RT-003](../docs/rfc/2026-11-runtime-ide-orchestrator.md), [ADR-020](../docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md), [решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) | Аудит 16 gap'ов runtime скриптом, ревизия #492, RFC-RT-002 и BL-192, разбор 56 проблем прогона 1143 (конфиг среды или правка промптов), оркестратор и гейты с журналом решений, MCP только на чтение, миграция M0…M7 с откатом, Р-RT-10…Р-RT-21 приняты; карта гейтов с генератором, постановка BL-192 Э5 | Creative |
+| BL-245 | [Тестовые прогоны процессов этапа 1 в IDE (M6)](backlog-repository.md#bl-245-тестовые-прогоны-процессов-этапа-1-в-ide-m6) | P1 | BL-192 Э5 (M3), BL-185…BL-188 (M2), слой ссылок (M4), BL-242, BL-243 (M5); разрешение владельца на стоимость | deferred (triggered) | [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514) | [RFC-RT-003, раздел 8](../docs/rfc/2026-11-runtime-ide-orchestrator.md#8-миграция-и-откат-фт-4) | Прогоны A-IN…A-RELEASE в OpenCode на кейсе: метрики ходов БА без решения, ложных допусков гейтов и `BLOCKED` без источника; решение о плагине-стороже | Hybrid |
 
-**Движение по цепочке (#506).** Текущий BL-244 — `review` до слияния PR #508:
-RFC-RT-003 `proposed`, ADR-020 `proposed`. Следующий шаг — владелец
-принимает ADR-020 (M0). Затем BL-192 расширяется этапом Э5 «IDE-слой»
-(Р-RT-19); его статус `deferred (triggered)` не меняется до M0, вход — PR
-runtime #29 и приём SSOT BL-185…BL-188 (`TODO`). Затем BL-242 и BL-243.
-BL-132 закрепляет версию и диалект OpenCode. Тестовые прогоны в IDE (M6) — в
-бэклоге задачи нет, будет создана после ADR-020; стоимость прогонов
-согласует владелец. Правки текстов промптов по 1143 идут в спице: разбор и
-RFC-BCREQ-PROMPT-DEBUG-001 — BL-193
+**Движение по цепочке (#506).** Предыдущий шаг — BL-192 Э1, Э2, Э4
+`DONE` (PR runtime #29, `bee5f9ba`), выполнен полностью и служит входом Э5.
+Текущий BL-244 `review` → `DONE` слиянием [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514): владелец принял
+RFC-RT-003 и ADR-020 ([решение](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) от 26.11); PR #508 закрыт без
+слияния из-за инцидента репозитория. Открывается BL-192 Э5 «IDE-слой»
+(Р-RT-19): статус BL-192 `DONE` → `review`, реализация —
+[PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30). Процесс в IDE ждёт приёма SSOT BL-185…BL-188
+(`TODO`): до него оркестратор отвечает `ACCESS_GAP` и `BLOCKED`. Тестовые
+прогоны в IDE (M6) — новая задача BL-245 `deferred (triggered)`; стоимость
+прогонов согласует владелец. BL-242 и BL-243 (M5) не меняются. BL-132
+закрепляет версию и диалект OpenCode. Правки текстов промптов по 1143 идут
+в спице: разбор и RFC-BCREQ-PROMPT-DEBUG-001 — BL-193
 ([#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505)), исполнение —
 BL-194 `TODO` ([#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509)).
 

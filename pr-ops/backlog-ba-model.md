@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.9
-updated: 2026-11-26
+version: 2.10
+updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -2640,7 +2640,11 @@ runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 —
 
 ### BL-192. Производство универсального агентного контекста runtime
 
-**Статус.** `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
+**Статус.** `review`: этап Э5 «IDE-слой» — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) по
+Р-RT-19 ([решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) от 26.11). Ранее — `DONE` за этапы Э1,
+Э2, Э4.
+
+Э1, Э2, Э4 — `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
 [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) слит 26.11 (`bee5f9ba`). Э1 — зеркало `.agents/skills/<имя>/SKILL.md`
 (`tests/build_skills_mirror.py`, сверка sha256 в `tests/test_skills_mirror.py`
 и `tests/runtime-smoke.sh`); Э2 — `AGENTS.md` 0.8 (`ACCESS_GAP` в правиле 10,
@@ -2669,10 +2673,15 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 - [Runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
   раздел «7. Постусловие»: “производство универсального контекста и приём SSOT — после решений Р-RT”
 
-**Расширение (#506).** RFC-RT-003 предлагает этап Э5 «IDE-слой»:
-оркестратор-агент, команды `/a-*`, журнал решений гейтов, MCP только на
-чтение и песочница `work/` (Р-RT-19). Он входит в задачу только после
-принятия ADR-020 владельцем; до этого статус и состав не меняются.
+**Расширение (#506).** Этап Э5 «IDE-слой» входит в задачу по Р-RT-19:
+владелец принял ADR-020 26.11 и велел расширить BL-192, а не заводить новую
+задачу. Состав: оркестратор `bcreq-orchestrator` и субагенты `bcreq-step`,
+`bcreq-reviewer`; команды `/a-in`, `/a-core`, `/a-work`, `/a-release`;
+права клиента (`work/` — запись, MCP выключены, чтение — `ask`, запись —
+`deny`); журнал решений `work/<ключ>/decisions.jsonl`. Постановка —
+[RFC-RT-003, раздел 11](../docs/rfc/2026-11-runtime-ide-orchestrator.md),
+реализация — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30). До приёма SSOT BL-185…BL-188
+оркестратор отвечает `ACCESS_GAP` и `BLOCKED`. Тестовые прогоны — BL-245.
 
 **Зависит от.** BL-191; Р-RT-2, Р-RT-3, Р-RT-4.
 
@@ -2682,6 +2691,9 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 **Готово, когда.** Зеркало проходит сверку sha256 со `skills/`; smoke runtime
 и валидаторы спицы на SHA реестра — 0 провалов; OpenCode V1 и V2
 загружают `AGENTS.md` и показывают 11 навыков. Закрепление версии — BL-132.
+Э5: PR runtime #30 слит; OpenCode V1 и V2 загружают 3 агента и 4 команды,
+права клиента дают решения таблицы раздела 11.9 RFC-RT-003; тесты без
+модели и smoke runtime — 0 провалов.
 
 ### BL-193. Прогон 1143: проблемы промптов и RFC отладки
 
