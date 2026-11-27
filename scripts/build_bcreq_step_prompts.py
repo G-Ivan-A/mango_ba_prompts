@@ -51,6 +51,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402  (issue #490)
 from prompt_purity import project  # noqa: E402  (issue #495)
+import bcreq_fragments as fragments  # noqa: E402
 BASE = ROOT / "standards/bcreq-prompt-base-standard.md"
 PROFILES = ROOT / "standards/bcreq-prompt-profiles.md"
 CATALOG = ROOT / "standards/bcreq-manual-classes/catalog.json"
@@ -351,6 +352,9 @@ FORMAT_EDITS = {
         ("Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу/режим/исходный запрос без анализа. Затем остановись перед AIN-01. Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02.",
          "Ш-0 остаётся стартером: прими полную конституцию ниже без вывода, зафиксируй задачу, формат шагов и исходный запрос без анализа. "
          "Формат шагов задаёт сайт строкой «Формат шагов: системный» или «Формат шагов: декомпозированный»; без строки — декомпозированный; у БА формат не спрашивай. "
+         "Прими строку «Источники БЗ» от БА и сохрани её дословно в «Состоянии BCREQ»; без строки — «нет». "
+         "Значение задаёт область источников, но не подтверждает доступ или чтение. "
+         "Сохраняй «Источники БЗ» и реестр пробелов при каждом обновлении состояния. "
          "Слова «stepwise»/«oneshot» от БА — прежнее название способа запуска (чат или агент), а не формат шагов: формат не меняй и не переспрашивай. "
          "Декомпозированный формат: остановись перед AIN-01; Ш-А разрешён только после принятого AIN-01 и выполняет исключительно AIN-02. "
          "Системный формат: остановись перед системным Ш-А; затем системные Ш-1 и Ш-2, как в редакции 2.7.0."),
@@ -380,7 +384,9 @@ FORMAT_EDITS = {
          "Возврат выбирает БА (при агентном прогоне — человек по рекомендации\nагента); разделы"),
         ("- режим: <stepwise|oneshot>", "- формат шагов: <системный|декомпозированный>"),
         ("- параметры: режим=<…>; остальные — на Ш-А",
-         "- параметры: формат шагов=<…>; остальные — на Ш-А (в декомпозированном — AIN-02)"),
+         "- параметры: формат шагов=<…>; остальные — на Ш-А (в декомпозированном — AIN-02)\n"
+         "- Источники БЗ: <переданные БА источники или нет>\n"
+         "- реестр пробелов БЗ: <пуст при старте>"),
         ("- рекомендуемый следующий: Ш-А анкета (oneshot: стадия A-IN)",
          "- рекомендуемый следующий: декомпозированный формат — AIN-01; системный — Ш-А анкета"),
     ],
@@ -403,6 +409,9 @@ def apply_format_edits(name, body):
         if body.count(old) != 1:
             raise SystemExit(f"#490: подстановка в {name} встречается {body.count(old)} раз: {old[:60]}")
         body = body.replace(old, new)
+    if name == "bcreq-fr-documentation-stepwise":
+        body = body.replace("3.1 Система должна …\n  3.1.1 Когда …, система должна …\n3.2 …",
+                            "ФТ-01. Система должна…\nФТ-02. Система должна…\nЗаголовки групп без нумерации.")
     return body
 
 
@@ -706,6 +715,15 @@ def context():
     }
 
 
+def replace_legacy_access(body):
+    """Apply the current contract to the historical block in working drafts."""
+    return re.subn(
+        r"(?ms)^## Доказательная нормализация и фактический доступ\n"
+        r".*?проверку; изменение основания отзывает зависимые допуски и возвращает A-IN\.",
+        lambda match: fragments.access(), body,
+    )
+
+
 def build_all():
     ctx = context()
     sha = ctx["registry"][1]
@@ -766,6 +784,17 @@ def build_all():
         # #474: intake is now only AIN-02; retain the questionnaire as a data form.
         if name == INTAKE_FILE:
             body = (ROOT / "experiments/issue_474/intake_guard.md").read_text() + "\n" + body
+        if name not in HANDOFF_SKIP:
+            body, replaced = replace_legacy_access(body)
+            if replaced == 0:
+                block += "\n\n" + fragments.access()
+            block += "\n\n" + fragments.output()
+            if any(s in {"Ш-3", "Ш-4", "Ш-5"} for s in steps):
+                block += "\n\n" + fragments.decisions()
+            if "Ш-3" in steps:
+                block += "\n\nФормат ФТ: «ФТ-NN. Система должна…»; заголовки групп без нумерации."
+            fm = re.sub(r"(?m)^version: .+$", f"version: {fragments.VERSION}", fm)
+            updated = fragments.DATE
         # #495: исполнимая проекция тела — без приватных ссылок и HTML-комментариев.
         text = build_frontmatter(fm, "-by-test", based_on + extra, updated) + project(
             "\n" + body.strip("\n") + "\n\n" + block.rstrip("\n") + "\n" + handoff)

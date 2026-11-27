@@ -65,12 +65,21 @@ def load(path=SSOT):
         steps[row["id"]] = row
     if list(steps) != ROUTE + AIN:
         raise ValueError(f"SSOT: шаги {list(steps)} вместо {ROUTE + AIN}")
+    for sid in _between(text, "accept-on-silence").split():
+        if steps[sid]["checkKind"] != "technical":
+            raise ValueError(f"SSOT: принятие по умолчанию допустимо только на техническом шаге: {sid}")
+        steps[sid]["acceptOnSilence"] = True
+    for sid in _between(text, "approval-once").split():
+        if steps[sid]["checkKind"] != "required":
+            raise ValueError(f"SSOT: один запрос согласования требует обязательной проверки: {sid}")
+        steps[sid]["approvalOnce"] = True
     for sid in NEVER_TECHNICAL:
         if steps[sid]["checkKind"] != "required":
             raise ValueError(f"SSOT: гейт {sid} не может быть техническим")
     return {
         "version": re.search(r"^version: (\S+)$", text, re.M).group(1),
         "template": _between(text, "handoff-template"),
+        "responseOrder": _between(text, "response-order"),
         "approveRequired": _between(text, "approve-required"),
         "approveTechnical": _between(text, "approve-technical"),
         "steps": steps,
@@ -80,7 +89,12 @@ def load(path=SSOT):
 def _form(step, indent="   "):
     head = f"{indent}- Выполнен промпт {step['id']} «{step['name']}»: {step['done']}."
     nxt = step["next"]
-    if step["checkKind"] == "required":
+    if step.get("approvalOnce"):
+        second = f"{indent}- Ожидается решение БА по блоку «На согласование БА»."
+    elif step.get("acceptOnSilence"):
+        second = (f"{indent}- Шаг технический. При отсутствии возражений БА текущая версия принята. "
+                  f"Проверка по желанию: {step['check']}. Для следующего шага нужен отдельный вызов БА.")
+    elif step["checkKind"] == "required":
         second = f"{indent}- БА — проверить: {step['check']}. Без решения БА следующий промпт не запускается."
     else:
         target = f"промпта {nxt}" if SINGLE.match(nxt) else f"следующего промпта ({nxt})"
@@ -98,6 +112,10 @@ def render(step_ids, data=None):
         check = "; ".join(
             (f"на {s['id']} — {s['check']}" if len(steps) > 1 else s["check"]) for s in required)
         approve = data["approveRequired"].replace("{check}", check)
+        for step in required:
+            if step.get("approvalOnce"):
+                approve += (f" На {step['id']} запроси решение один раз в этом блоке. "
+                            "В итоге только укажи, что решение ожидается.")
     else:
         approve = data["approveTechnical"]
     if len(steps) > 1:
@@ -110,6 +128,7 @@ def render(step_ids, data=None):
         intro, forms = "", _form(steps[0]) + [""]
     block = (data["template"].replace("{steps_intro}", intro)
              .replace("{approve_rule}", approve)
+             .replace("{response_order}", data["responseOrder"])
              .replace("{forms}", "\n".join(forms)))
     assert "{" not in block.replace("`{", ""), block
     assert block.startswith(BEGIN + "\n") and block.endswith(END) and "<!--" not in block
@@ -121,6 +140,8 @@ def site_data(data=None):
     steps = {}
     for sid, s in data["steps"].items():
         steps[sid] = {k: s[k] for k in ("name", "goal", "done", "checkKind", "check", "next")}
+        if s.get("acceptOnSilence"):
+            steps[sid]["acceptOnSilence"] = True
         steps[sid]["block"] = render([sid], data)
     return {
         "source": "docs/ba-processes/bcreq-step-handoff.md",

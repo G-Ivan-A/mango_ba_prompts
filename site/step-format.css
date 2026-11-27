@@ -45,3 +45,28 @@
 .testkit-edition-status {
   margin-inline-start: 6px;
 }
+
+/* A-IN card forms and prompt size, issue #509. */
+.testkit-reader-bar { flex-wrap: wrap; }
+.ain-forms { flex-wrap: wrap; }
+.testkit-size { margin: .5rem 0; font-size: .85rem; color: var(--muted); overflow-wrap: anywhere; }
+.ain-contract-card { padding: 1rem; }
+.ain-contract-card .testkit-prompt-text { max-height: 22rem; white-space: pre-wrap; }
+
+.testkit-kb-sources {
+  display: grid;
+  gap: .35rem;
+  margin-block-end: .75rem;
+  font-weight: 600;
+}
+
+.testkit-kb-sources input {
+  min-width: 0;
+  padding: .55rem .65rem;
+  border: 1px solid var(--border);
+  border-radius: .4rem;
+  background: var(--surface);
+  color: inherit;
+  font: inherit;
+  font-weight: 400;
+}

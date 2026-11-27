@@ -145,18 +145,18 @@ class WorkingEditionsTest(unittest.TestCase):
                        cwd=ROOT, check=True)
 
     def test_post_497_mutations(self):
-        base = read_json(ROOT, protection.OUT.relative_to(ROOT))
+        base = protection.snapshot(ROOT)
         ain_path = "prompts/drafts/a-in/bcreq-ain-01-understanding-stepwise.md"
         source = (ROOT / ain_path).read_text(encoding="utf-8")
         key = "a-in-kit.json:AIN-01"
         self.assertEqual(protection.counts(source), base["projections"][key])
-        for marker in ("Проверки (receipt)", "ACCESS_GAP", "Итог шага", "КОНЕЦ AIN-01 <версия результата>",
+        for marker in ("Проверки (receipt)", "ACCESS_GAP", "Итог шага", "КОНЕЦ AIN-01 0.5",
                        next(iter(protection.RULE.findall(source)))):
             with self.subTest(marker=marker):
                 candidate = deepcopy(base)
                 replace = "КОНЕЦ AIN-01 v9.9" if marker.startswith("КОНЕЦ") else ""
                 candidate["projections"][key] = protection.counts(source.replace(marker, replace, 1))
-                self.assertTrue(any(marker in error and key in error
+                self.assertTrue(any(("КОНЕЦ AIN-01" if marker.startswith("КОНЕЦ") else marker) in error and key in error
                                     for error in protection.regressions(base, candidate)))
                 print(f"Мутация отклонена — {key}: {marker}")
         for rule in ("CT-01", "BP-01"):
@@ -178,7 +178,9 @@ class WorkingEditionsTest(unittest.TestCase):
             for directory in ("docs", "patterns", "pr-ops", "prompts", "runs", "standards"):
                 (target / directory).symlink_to(ROOT / directory, target_is_directory=True)
             (target / generator.parent).mkdir()
-            for script in (generator, Path("scripts/bcreq_manual_route.py"), Path("scripts/bcreq_handoff.py")):
+            for script in (generator, Path("scripts/bcreq_manual_route.py"), Path("scripts/bcreq_handoff.py"),
+                           Path("scripts/build_bcreq_a_in.py"), Path("scripts/bcreq_fragments.py"),
+                           Path("scripts/prompt_purity.py")):
                 shutil.copy2(ROOT / script, target / script)
             output = target / "site/data"
             output.mkdir(parents=True)

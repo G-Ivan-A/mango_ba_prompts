@@ -27,6 +27,7 @@ OTHER_TARGETS = {
     "сценарии по запросу": "Ш-С", "вернуться в контекст": "исходный",
     "остановить по решению БА": "СТОП",
 }
+GAP_GATES = {"AIN-21": "AIN-21", "AIN-24": "Г-IN", "Ш-2": "Г-IN", "Ш-5": "Г-С1"}
 SCOPE = ("task_id", "attempt", "route_version", "snapshot_id", "snapshot_version")
 
 
@@ -126,6 +127,8 @@ def load(text=None, kit=None):
     ain_steps = index(ain["steps"], "id")
     for code, step in ain_steps.items():
         step["check"] = handoff[code]["checkKind"]
+        if handoff[code].get("acceptOnSilence"):
+            step["acceptOnSilence"] = True
     route = {"steps": steps, "gates": gates, "returns": returns, "actions": actions,
              "ain": ain_steps, "ain_version": ain["version"]}
     check_steps(route, kit, handoff)
@@ -263,7 +266,13 @@ def checked(state, source):
             f"{source}: нужно явное подтверждение БА для текущего результата")
 
 
+def has_gate_gap(state, gate):
+    return any(gap["status"] == "open" and gap.get("required_for_gate") == gate
+               for gap in state.get("access_gaps", []))
+
+
 def decision(route, state, source, gate, outcome):
+    require(not has_gate_gap(state, gate), f"{gate}: не подтверждён обязательный факт")
     record = state["decisions"].get(gate, {})
     revision = state["results"].get(source)
     require(revision and record.get("explicit") and record.get("step") == source
@@ -301,8 +310,12 @@ def navigate(route, state, action, target, *, reason=None):
     track = state["format"]
     source = state["current"]
     require(track in FORMATS and available(route, source, track), f"{source}: нет активного шага в {track}")
+    gate = GAP_GATES.get(source)
+    # Старые состояния хранят ACCESS_GAP как флаг уже выставленной остановки.
     require(not any(state.get(key) for key in ("BLOCKED", "ACCESS_GAP", "critical_conflict")),
             "BLOCKED: устраните причину перед переходом")
+    if gate:
+        require(not has_gate_gap(state, gate), f"BLOCKED: {gate}, не подтверждён обязательный факт")
     require(target in TERMINAL or available(route, target, track), f"{target}: недоступная цель в {track}")
     updated = deepcopy(state)
     if action == "вернуться":
@@ -344,6 +357,11 @@ def navigate(route, state, action, target, *, reason=None):
             else:
                 require(source in state["results"] and "ввод-промпта" in state["facts"],
                         f"{source}: нужен результат технического шага и следующий промпт")
+                if route["ain"][source].get("acceptOnSilence"):
+                    revision = state["results"][source]
+                    require(state.get("rejected", {}).get(source) != revision,
+                            f"{source}: БА возразил против текущей версии")
+                    updated["accepted"][source] = revision
         else:
             require(len(rows) == 1, f"{source}: недопустимое действие {action} → {target}")
             check_action(route, state, rows[0])

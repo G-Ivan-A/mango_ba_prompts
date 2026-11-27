@@ -36,14 +36,13 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 import bcreq_handoff  # noqa: E402
+import bcreq_fragments as fragments  # noqa: E402
 import build_bcreq_step_prompts as steps_builder  # noqa: E402
 from build_bcreq_step_prompts import HUB_FLOATING, HUB_PINNED  # noqa: E402
 from prompt_purity import project  # noqa: E402
 
 ARCHIVE = ROOT / "prompts/archive/a-in-v2.7.0"
 OUT = ROOT / "prompts/drafts/system"
-DATE = "2026-11-20"
-NORMALIZATION = ROOT / "docs/ba-processes/bcreq-evidence-normalization.md"
 #: Границы раздела системного формата в промпте: заголовок и строка перед
 #: текстом 2.7.0 (HTML-комментарии в промпте запрещены, issue #495).
 BEGIN = "## Системный формат шагов"
@@ -97,7 +96,7 @@ STEPS = {
 
 
 def normalization():
-    return NORMALIZATION.read_text(encoding="utf-8").split("---", 2)[2].strip()
+    return fragments.access()
 
 
 def system_block(step, title, extra):
@@ -126,7 +125,14 @@ def system_block(step, title, extra):
 - Положения для явного решения БА дублируй человекочитаемым блоком
   «На согласование БА» (см. «Итог шага» в конце); техническая разметка остаётся.
 
+Правила «Доступ и пробелы» ниже заменяют правила доступа и пробелов
+в архивном тексте шага.
+
 {normalization()}
+
+{fragments.decisions()}
+
+{fragments.output()}
 
 {END}
 
@@ -147,7 +153,9 @@ def build_one(step, ctx):
         elif key == "title":
             line = line.replace("(по тесту)", "(системный формат)")
         elif key == "updated":
-            line = f"updated: {DATE}"
+            line = f"updated: {fragments.DATE}"
+        elif key == "version":
+            line = f"version: {fragments.VERSION}"
         elif key in ("mode", "based_on", "based_on_sha256", "assembled_by", "runtime_sha"):
             continue
         keep.append(line)

@@ -19,6 +19,12 @@ MARKERS = (
 )
 RULE = re.compile(r"(?<![\w-])(?:Р-?\d+|АД-\d+|БС-?\d+|КС-?\d+)(?!\w)")
 END = re.compile(r"КОНЕЦ AIN-\d{2} (?:<[^>\n]+>|v?\d+(?:\.\d+)*)")
+ACCESS_SSOT = {
+    "docs/ba-processes/bcreq-a-in-common.md": 0,
+    "docs/ba-processes/bcreq-a-in-instructions.json": 0,
+    "docs/ba-processes/bcreq-step-handoff.md": 0,
+    "docs/ba-processes/bcreq-evidence-normalization.md": 1,
+}
 
 
 def read_json(root, relative):
@@ -27,7 +33,11 @@ def read_json(root, relative):
 
 def counts(text):
     result = Counter(RULE.findall(text))
-    result.update(END.findall(text))
+    # #509 explicitly replaces the erroneous result-version suffix. Preserve
+    # the frozen baseline and recognize only the reviewed prompt versions;
+    # a different version still fails the marker check.
+    endings = [re.sub(r" 0\.[45]$", " <версия результата>", marker) for marker in END.findall(text)]
+    result.update(endings)
     result.update({marker: text.count(marker) for marker in MARKERS if marker in text})
     return dict(result)
 
@@ -66,7 +76,21 @@ def snapshot(root):
     }
 
 
-def regressions(base, current):
+def access_marker_minimum(key, minimum):
+    # The 0.5 contract emits the marker only in a receipt. Handoff text is
+    # for the analyst and the common template gets the policy at assembly.
+    if key in ACCESS_SSOT:
+        return min(minimum, ACCESS_SSOT[key])
+    if key.startswith("step-handoff.json:") or key.endswith(":handoffBlock"):
+        return 0
+    if key.startswith(("prompts/drafts/", "a-in-kit.json:")):
+        return min(minimum, 1)
+    if key.startswith("test-kit.json:") and (":draft:" in key or ":system:" in key):
+        return min(minimum, 1)
+    return minimum
+
+
+def regressions(base, current, *, followup=False):
     errors = []
     for rule in sorted(set(base["policy_ids"]) - set(current["policy_ids"])):
         errors.append(f"{POLICY}: отсутствует {rule}")
@@ -77,6 +101,8 @@ def regressions(base, current):
                 errors.append(f"{key}: редакция отсутствует")
                 continue
             for marker, minimum in before.items():
+                if followup and marker == "ACCESS_GAP":
+                    minimum = access_marker_minimum(key, minimum)
                 if after.get(marker, 0) < minimum:
                     errors.append(f"{key}: {marker}: {after.get(marker, 0)} < {minimum}")
     return errors
@@ -106,7 +132,7 @@ def main():
         return
     if OUT.read_text(encoding="utf-8") != serialized:
         raise SystemExit(f"{OUT.name} отличается от закреплённого среза {BASE}")
-    errors = regressions(reference, snapshot(ROOT))
+    errors = regressions(reference, snapshot(ROOT), followup=True)
     if errors:
         raise SystemExit("\n".join(errors))
     print(f"OK post-#497: {len(reference['sources'])} исходников, "

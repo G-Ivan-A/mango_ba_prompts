@@ -115,8 +115,8 @@ class AInOrder(unittest.TestCase):
     def test_kit_order_and_size(self):
         kit = json.loads(read("site/data/test-kit.json"))
         # #474 adds the accepted A-IN overlay (0.9); #490 adds the system step format (0.10);
-        # #488 pins the classification link to ba-ai-metamodel (0.11).
-        self.assertIn(kit["kit"]["version"], ("0.9", "0.10", "0.11"))
+        # #488 pins the classification link (0.11); #510 adds the Ш-0 source (0.13).
+        self.assertIn(kit["kit"]["version"], ("0.9", "0.10", "0.11", "0.12", "0.13"))
         steps = [item["step"].split()[0] for item in kit["steps"]]
         self.assertEqual(len(steps), 14)
         self.assertEqual(steps[:3], ["Ш-0", "Ш-А", "Ш-1"])

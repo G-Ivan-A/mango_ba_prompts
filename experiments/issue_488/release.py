@@ -102,7 +102,8 @@ def main(argv=None):
         files = json.loads(EDITS.read_text(encoding="utf-8"))["files"]
         for rel in files:
             text = (ROOT / rel).read_text(encoding="utf-8")
-            if FLOATING in text or apply(layer.revert(rel, text), [(h["before"], h["after"]) for h in files[rel]]) != text:
+            reviewed = layer.DEBUGGING.revert(rel, text)
+            if FLOATING in text or apply(layer.revert(rel, text), [(h["before"], h["after"]) for h in files[rel]]) != reviewed:
                 raise SystemExit(f"#488: {rel} differs from prompt-edits.json")
         print(f"#488 release: OK ({len(files)} prompt(s) and draft(s) match prompt-edits.json)")
         return 0

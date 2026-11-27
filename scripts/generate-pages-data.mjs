@@ -115,10 +115,10 @@ const RELEASE_STAGE = { id: "bcreq-release", label: "Выпуск BCREQ", emoji:
 // ссылок на приватный репозиторий, HTML-комментариев и кейс-лексики; данные
 // сайта хранят пути от корня репо. Только патч серии 2.9.x (дополнение 2 к #495).
 const SITE_VERSION = {
-  version: "2.9.4",
-  released: "2026-11-22",
-  issue: 500,
-  basis: "Продолжение и возврат по нормативному маршруту BCREQ v0.3",
+  version: "2.9.6",
+  released: "2026-11-26",
+  issue: 509,
+  basis: "Источники БЗ в Ш-0, реестр пробелов и правила согласования A-IN",
   changelog: "CHANGELOG.md",
 };
 
@@ -1566,7 +1566,10 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
       steps: Object.fromEntries(
         Object.entries(handoff.steps)
           .filter(([id]) => id.startsWith("AIN-"))
-          .map(([id, item]) => [id, { goal: item.goal, checkKind: item.checkKind, check: item.check }]),
+          .map(([id, item]) => [id, {
+            goal: item.goal, checkKind: item.checkKind, check: item.check,
+            ...(item.acceptOnSilence ? { acceptOnSilence: true } : {}),
+          }]),
       ),
     },
     groups: groups.map((group) => ({
@@ -1584,22 +1587,28 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
 }
 
 async function makeAinKit() {
-  const route = JSON.parse(await read(AIN_ROUTE));
-  const steps = [];
+  // Both forms and the contract come from the Python SSOT builder.
+  const result = spawnSync("python3", ["scripts/build_bcreq_a_in.py", "--site-json"], {
+    cwd: ROOT, encoding: "utf8", maxBuffer: 8 * 1024 * 1024,
+  });
+  if (result.error || result.status !== 0) {
+    throw new Error(`A-IN: ${result.error?.message || result.stderr}`);
+  }
+  const kit = JSON.parse(result.stdout);
   const ids = new Set();
-  for (const step of route.steps) {
+  for (const step of kit.steps) {
     if (!/^AIN-(?:0[1-9]|1\d|2[0-4])$/.test(step.id) || ids.has(step.id)) {
       throw new Error(`${AIN_ROUTE}: неизвестный или повторный шаг ${step.id}`);
     }
     ids.add(step.id);
-    const promptPath = `prompts/drafts/a-in/bcreq-${step.id.toLowerCase()}-understanding-stepwise.md`;
-    const prompt = await readStepPrompt(promptPath, step.id, AIN_ROUTE);
-    steps.push({ ...step, promptPath, prompt, promptSha256: crypto.createHash("sha256").update(prompt).digest("hex") });
+    if (await readStepPrompt(step.promptPath, step.id, AIN_ROUTE) !== step.prompt) {
+      throw new Error(`${step.id}: regenerate A-IN prompts before site data`);
+    }
   }
-  if (steps.length !== 24) {
-    throw new Error(`${AIN_ROUTE}: ожидалось 24 шага, получено ${steps.length}`);
+  if (kit.steps.length !== 24) {
+    throw new Error(`${AIN_ROUTE}: ожидалось 24 шага, получено ${kit.steps.length}`);
   }
-  return { routeVersion: route.version, status: "draft", measured: false, steps };
+  return kit;
 }
 
 export async function makeWorkingCatalog(kit, ain, classes, operations) {

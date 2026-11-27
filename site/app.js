@@ -12,7 +12,9 @@ const state = {
   // Issue #490: исходные данные обоих форматов шагов; state.testKit — выбранный.
   testKitSource: null,
   ainKit: null,
+  ainForms: {},
   stepFormat: "decomposed",
+  kbSources: "",
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -559,6 +561,7 @@ function promptCard(prompt) {
   const tests = testsFor(prompt);
   const meta = el("div", "prompt-meta");
   meta.append(el("span", "prompt-meta-item", `v${String(prompt.version).replace(/^v/, "")}`));
+  meta.append(el("span", "prompt-meta-item", promptSizeLabel(prompt.body || prompt.content || "")));
   if (prompt.updated) {
     meta.append(el("span", "prompt-meta-item", prompt.updated));
   }
@@ -1483,7 +1486,8 @@ function ainHandoff(kit, id) {
   if (!handoff?.goal || !handoff?.check) {
     throw new Error(`Нет «Итога шага» для ${id}; пересоберите данные сайта`);
   }
-  return { goal: handoff.goal, checkKind: handoff.checkKind, check: handoff.check, handoffBlock: "" };
+  return { goal: handoff.goal, checkKind: handoff.checkKind, check: handoff.check,
+    acceptOnSilence: handoff.acceptOnSilence, handoffBlock: "" };
 }
 
 // Issue #490, п. 2.2: системный (комплексный) формат — Ш-А, Ш-1, Ш-2 текстом
@@ -1736,11 +1740,37 @@ function testKitEditionLabel(step, kind) {
 function testKitBody(step, kind) {
   const edition = testKitVariant(step, kind);
   const body = state.workingPrompts.find(({ id }) => id === edition?.id)?.body || "";
+  if (step.ainId && state.ainForms[step.ainId] === "compact") {
+    return state.ainKit.steps.find(({ id }) => id === step.ainId)?.compactPrompt || "";
+  }
   if (body && stepCode(step) === "Ш-0") {
-    return `${body.trimEnd()}\n\nФормат шагов: ${STEP_FORMATS[state.stepFormat].short}\n`;
+    return `${body.trimEnd()}\n\nФормат шагов: ${STEP_FORMATS[state.stepFormat].short}\nИсточники БЗ: ${state.kbSources.trim() || "нет"}\n`;
   }
   return body && kind === "published" && step.handoffBlock
     ? `${body.trimEnd()}\n\n${step.handoffBlock}` : body;
+}
+
+// Conservative character estimate; the model/interface tokenizer may differ.
+function promptSizeLabel(body) {
+  const chars = Array.from(body).length;
+  const tokens = Math.ceil(chars / 3);
+  return `${chars.toLocaleString("ru-RU")} символов · ≈${tokens.toLocaleString("ru-RU")} токенов (оценка)` +
+    (tokens > 10000 ? ". Если чат читает файлы частично, вставьте текстом" : "");
+}
+
+function ainContractCard() {
+  const card = el("li", "bcreq-step ain-contract-card");
+  card.id = "bcreq-a-in-contract";
+  card.append(el("h3", "bcreq-step-title", `Контракт A-IN · v${state.ainKit.contract.version}`),
+    el("p", "", "Для компактных карточек: после Ш-0 вставьте контракт один раз в этот чат. При потере контекста вставьте его снова. Полные карточки уже содержат контракт."));
+  const details = el("details", "testkit-more");
+  details.append(el("summary", "", "Прочитать контракт"),
+    el("pre", "testkit-prompt-text", state.ainKit.contract.prompt));
+  const copy = el("button", "testkit-copy", "⧉ Копировать контракт A-IN");
+  copy.type = "button";
+  copy.dataset.copyAinContract = "";
+  card.append(el("p", "testkit-size", promptSizeLabel(state.ainKit.contract.prompt)), copy, details);
+  return card;
 }
 
 // Контейнер чтения (issue #460): текст выбранной редакции прокручивается внутри
@@ -1769,6 +1799,18 @@ function testKitReader(step, index) {
 
   const bar = el("div", "testkit-reader-bar");
   bar.append(switcher, copy);
+  if (step.ainId) {
+    const forms = el("div", "testkit-edition ain-forms");
+    forms.setAttribute("role", "group");
+    forms.setAttribute("aria-label", `Форма карточки ${step.ainId}`);
+    for (const [form, label] of [["full", "Полная"], ["compact", "Компактная"]]) {
+      const button = el("button", "testkit-edition-button", label);
+      button.type = "button";
+      button.dataset.ainForm = form;
+      forms.append(button);
+    }
+    bar.append(forms);
+  }
 
   const text = el("pre", "testkit-prompt-text");
   text.tabIndex = 0;
@@ -1779,7 +1821,25 @@ function testKitReader(step, index) {
   note.setAttribute("aria-live", "polite");
 
   const reader = el("div", "testkit-reader");
-  reader.append(bar, note, text);
+  const size = el("p", "testkit-size");
+  if (stepCode(step) === "Ш-0") {
+    const label = el("label", "testkit-kb-sources", "Источники БЗ");
+    const input = el("input");
+    input.type = "text";
+    input.value = state.kbSources;
+    input.placeholder = "Адрес или нет";
+    input.autocomplete = "off";
+    input.spellcheck = false;
+    label.append(input);
+    input.addEventListener("input", () => {
+      state.kbSources = input.value;
+      const body = testKitBody(step, copy.dataset.testkitKind);
+      text.textContent = body;
+      size.textContent = promptSizeLabel(body);
+    });
+    reader.append(label);
+  }
+  reader.append(bar, note, size, text);
   return reader;
 }
 
@@ -1800,6 +1860,11 @@ function selectTestKitEdition(item, kind) {
   const text = item.querySelector(".testkit-prompt-text");
   text.textContent = testKitBody(step, kind) || "Текст редакции не найден в каталоге.";
   text.scrollTop = 0;
+  item.querySelector(".testkit-size").textContent = promptSizeLabel(testKitBody(step, kind));
+  const form = state.ainForms[step.ainId] || "full";
+  for (const button of item.querySelectorAll("[data-ain-form]")) {
+    button.setAttribute("aria-pressed", String(button.dataset.ainForm === form));
+  }
 
   const note = item.querySelector(".testkit-reader-note");
   note.dataset.comparison = String(kind !== assigned);
@@ -1809,6 +1874,9 @@ function selectTestKitEdition(item, kind) {
     note.textContent = "Единственная редакция шага: сравнивать не с чем.";
   } else {
     note.textContent = "Эта редакция назначена шагу для теста.";
+  }
+  if (step.ainId && form === "compact") {
+    note.textContent = `Перед первым компактным шагом вставьте «Контракт A-IN ${state.ainKit.contract.version}» из карточки рядом с Ш-0. Без него шаг заблокирован.`;
   }
 
   const link = item.querySelector(".bcreq-step-prompt a");
@@ -1915,6 +1983,9 @@ function testKitStep(step, index) {
   if (step.checkKind === "technical") {
     check.append(el("strong", "", "Шаг технический, "),
       document.createTextNode(`можно проверить (${step.check}), но не обязательно.`));
+    if (step.acceptOnSilence) {
+      check.append(document.createTextNode(" Проверьте «Итог шага». Если возражений нет, текущий результат принят."));
+    }
   } else {
     check.append(el("strong", "", "БА — проверить: "), document.createTextNode(step.check));
   }
@@ -1991,7 +2062,7 @@ function renderTestKit() {
   renderStepFormatSwitch();
   const formatNote = state.stepFormat === "system"
     ? "Системный формат: рабочие черновики Ш-А, Ш-1 и Ш-2"
-    : "Декомпозированный формат: 24 контракта A-IN по принятому RFC";
+    : "Декомпозированный формат: 24 шага с проверкой каждого. Полная карточка по умолчанию; для компактных вставьте Контракт A-IN один раз после Ш-0";
   nodes.testKitSummary.replaceChildren(
     document.createTextNode(
       `Шагов: ${kit.counts.steps}; draft / «по тесту»: ${kit.counts.byTest}; опубликованный промпт: ${kit.counts.published}. ${formatNote}; остальные стадии — `,
@@ -1999,7 +2070,7 @@ function renderTestKit() {
     source,
     document.createTextNode(". "),
     linkTo(kit.route.source, "Нормативный маршрут v0.3"),
-    document.createTextNode(". При незакрытом ACCESS_GAP или критическом конфликте норм остановите прогон (BLOCKED) до устранения причины."),
+    document.createTextNode(". При пробеле в БЗ продолжайте. Остановитесь (BLOCKED), если без факта нельзя пройти гейт или нормы критически противоречат друг другу."),
   );
   nodes.testKitSteps.replaceChildren(
     ...kit.groups.map((group) => {
@@ -2015,6 +2086,9 @@ function renderTestKit() {
       kit.steps.forEach((step, index) => {
         if (step.group === group.id) {
           list.append(testKitStep(step, index));
+          if (stepCode(step) === "Ш-0" && state.stepFormat === "decomposed") {
+            list.append(ainContractCard());
+          }
         }
       });
       block.append(head, list);
@@ -2162,6 +2236,23 @@ async function copyTestKitPrompt(button) {
 }
 
 nodes.testKitSteps?.addEventListener("click", async (event) => {
+  if (event.target.closest("[data-copy-ain-contract]")) {
+    try {
+      await copyText(state.ainKit.contract.prompt);
+      showToast("Контракт A-IN скопирован");
+    } catch {
+      showToast("Не удалось скопировать");
+    }
+    return;
+  }
+  const form = event.target.closest("[data-ain-form]");
+  if (form) {
+    const card = form.closest(".testkit-step");
+    const step = state.testKit.steps[Number(card.dataset.testkitStep)];
+    state.ainForms[step.ainId] = form.dataset.ainForm;
+    selectTestKitEdition(card, testKitAssignedKind(step));
+    return;
+  }
   const edition = event.target.closest("[data-testkit-edition]");
   if (edition) {
     const card = edition.closest(".testkit-step");

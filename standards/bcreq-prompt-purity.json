@@ -50,7 +50,9 @@
         "docs/ba-processes/bcreq-step-handoff.md",
         "docs/ba-processes/bcreq-a-in-route.json",
         "docs/ba-processes/bcreq-a-in-instructions.json",
-        "docs/ba-processes/bcreq-evidence-normalization.md"
+        "docs/ba-processes/bcreq-evidence-normalization.md",
+        "docs/ba-processes/bcreq-ba-output.md",
+        "docs/ba-processes/bcreq-decision-context.md"
       ]
     },
     "repo_docs_in_prompts": {
@@ -86,7 +88,9 @@
           "steps[].system.body"
         ],
         "site/data/a-in-kit.json": [
-          "steps[].prompt"
+          "steps[].prompt",
+          "steps[].compactPrompt",
+          "contract.prompt"
         ],
         "site/data/step-handoff.json": [
           "blocks.*"
@@ -115,8 +119,8 @@
     "private_link_regex": "(?i)(?:https?://)?(?:[\\w.-]+\\.)?(?:github\\.com|githubusercontent\\.com)/G-Ivan-A/mango_ba_prompts",
     "private_name_note": "Голое имя приватного репозитория запрещено только в теле исполнимого промпта; публичный адрес сайта (g-ivan-a.github.io/mango_ba_prompts) ссылкой на репозиторий не считается",
     "public_site_regex": "g-ivan-a\\.github\\.io/mango_ba_prompts",
-  "spoke_path_regex": "(?<![\\w/.:-])(?:(?:standards|pr-ops|scripts|runs|experiments|site|prompts)/[\\w*<>{}-]|docs/(?!kb\\b|guides\\b)[\\w*<>{}-])[\\w./*<>{}-]*|стандарт\\w*\\s+композиции\\s+§|README\\s+§\\s*\\d",
-  "spoke_path_note": "A-SPOKE-PATH: голый указатель на файл спицы в теле живого промпта (не архив). Пути runtime (docs/kb, docs/guides, taxonomy, golden, templates, contracts, evaluation) указателями на спицу не считаются; frontmatter не проверяется"
+    "spoke_path_regex": "(?<![\\w/.:-])(?:(?:standards|pr-ops|scripts|runs|experiments|site|prompts)/[\\w*<>{}-]|docs/(?!kb\\b|guides\\b)[\\w*<>{}-])[\\w./*<>{}-]*|стандарт\\w*\\s+композиции\\s+§|README\\s+§\\s*\\d",
+    "spoke_path_note": "A-SPOKE-PATH: голый указатель на файл спицы в теле живого промпта (не архив). Пути runtime (docs/kb, docs/guides, taxonomy, golden, templates, contracts, evaluation) указателями на спицу не считаются; frontmatter не проверяется"
   },
   "case_tokens": [
     {
@@ -182,7 +186,10 @@
   ],
   "protected_markers": {
     "note": "Машинная форма раздела 4 (защита от сверхчистки): число совпадений в каждом промпте и черновике не ниже базы. ID исключённых правил базового стандарта не считаются, если они названы в манифесте черновиков (exempt_ids_from).",
-    "files": ["prompts/*.md", "prompts/drafts/**/*.md"],
+    "files": [
+      "prompts/*.md",
+      "prompts/drafts/**/*.md"
+    ],
     "exempt_ids_from": "prompts/drafts/manifest.json#excluded_base_rules",
     "patterns": {
       "rule_id": "(?<![\\w-])(?:Р[1-7]|АД-\\d+|АП\\d+|БС-?\\d+|КС-?\\d+|ИШ-\\d+)(?!\\w)",
@@ -262,7 +269,7 @@
     },
     {
       "id": "BP-13",
-      "regex": "(?i)(?<!\\w)(?<!\\w[\\-\u2010\u2011\u2212\u00ad\ufe63\uff0d])(?:RFC|ADR)[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d](?:[A-ZА-ЯЁ][A-ZА-ЯЁ0-9]*[\\-\u2010-\u2015\u2212\u00ad\ufe63\uff0d])*\\d",
+      "regex": "(?i)(?<!\\w)(?<!\\w[\\-‐‑−­﹣－])(?:RFC|ADR)[\\-‐-―−­﹣－](?:[A-ZА-ЯЁ][A-ZА-ЯЁ0-9]*[\\-‐-―−­﹣－])*\\d",
       "what": "отсылка к внутреннему RFC/ADR по ID (справочное, исполнителю недоступно)"
     }
   ],
