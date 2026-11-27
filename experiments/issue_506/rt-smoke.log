@@ -1,0 +1,144 @@
+ok - AGENTS.md exists
+ok - README.md exists
+ok - compilation-manifest.yaml exists
+ok - docs/guides/README.md exists
+ok - docs/guides/00-quick-start.md exists
+ok - routes/rg-bcreq-v1.yaml exists
+ok - routes/run-sheet-template.yaml exists
+ok - evaluation/validate-package.md exists
+ok - evaluation/g-mach-checklist.md exists
+ok - evaluation/g-human-checklist.md exists
+ok - docs/kb/README.md exists
+ok - golden/cases.yaml exists
+ok - golden/cases-voice-ucaas.yaml exists
+ok - golden/cases-analytics-reporting.yaml exists
+ok - contracts/c-in.md exists
+ok - c-in is a system prompt
+ok - contracts/c-core.md exists
+ok - c-core is a system prompt
+ok - contracts/c-quest.md exists
+ok - c-quest is a system prompt
+ok - contracts/c-out-bcreq.md exists
+ok - c-out-bcreq is a system prompt
+ok - contracts/c-rk.md exists
+ok - c-rk is a system prompt
+ok - .hub-profile.json is absent
+ok - tools is absent
+ok - runs is absent
+ok - experiments is absent
+ok - .agents/skills/ambiguity-detection-contact-center/SKILL.md mirrors skills/ambiguity-detection-contact-center.md
+ok - .agents/skills/answer-integration-contact-center/SKILL.md mirrors skills/answer-integration-contact-center.md
+ok - .agents/skills/bcreq-assembly-contact-center/SKILL.md mirrors skills/bcreq-assembly-contact-center.md
+ok - .agents/skills/bcreq-decomposition-contact-center/SKILL.md mirrors skills/bcreq-decomposition-contact-center.md
+ok - .agents/skills/context-extraction-contact-center/SKILL.md mirrors skills/context-extraction-contact-center.md
+ok - .agents/skills/core-assembly-contact-center/SKILL.md mirrors skills/core-assembly-contact-center.md
+ok - .agents/skills/problem-statement-contact-center/SKILL.md mirrors skills/problem-statement-contact-center.md
+ok - .agents/skills/question-formation-contact-center/SKILL.md mirrors skills/question-formation-contact-center.md
+ok - .agents/skills/question-prioritization-contact-center/SKILL.md mirrors skills/question-prioritization-contact-center.md
+ok - .agents/skills/transcript-normalization-contact-center/SKILL.md mirrors skills/transcript-normalization-contact-center.md
+ok - .agents/skills/value-hypothesis-contact-center/SKILL.md mirrors skills/value-hypothesis-contact-center.md
+ok - .agents holds only the skills mirror
+ok - no .py or .json runtime files besides opencode.json
+ok - opencode.json exists
+ok - work/ is not tracked
+ok - .opencode/agents/bcreq-orchestrator.md exists
+ok - .opencode/agents/bcreq-step.md exists
+ok - .opencode/agents/bcreq-reviewer.md exists
+ok - .opencode/commands/a-in.md exists
+ok - /a-in starts bcreq-orchestrator
+ok - .opencode/commands/a-core.md exists
+ok - /a-core starts bcreq-orchestrator
+ok - .opencode/commands/a-work.md exists
+ok - /a-work starts bcreq-orchestrator
+ok - .opencode/commands/a-release.md exists
+ok - /a-release starts bcreq-orchestrator
+ok - .opencode holds 3 agents and 4 commands
+ok - no environment-specific references
+ok - no explicit bans on external knowledge bases
+ok - contracts/c-core.md exists
+ok - contracts/c-in.md exists
+ok - contracts/c-out-bcreq.md exists
+ok - contracts/c-quest.md exists
+ok - contracts/c-rk.md exists
+ok - evaluation/g-human-checklist.md exists
+ok - evaluation/g-mach-checklist.md exists
+ok - evaluation/metrics.yaml exists
+ok - evaluation/validate-package.md exists
+ok - golden/cases-analytics-reporting.yaml exists
+ok - golden/cases-voice-ucaas.yaml exists
+ok - golden/cases.yaml exists
+ok - golden/gs-ar-01-monthly-romi.md exists
+ok - golden/gs-ar-02-calltracking-widget.md exists
+ok - golden/gs-ar-neg-01-dynamic-vs-static.md exists
+ok - golden/gs-ar-neg-02-calltracking-vs-e2e.md exists
+ok - golden/gs-ar-neg-03-function-outside-catalog.md exists
+ok - golden/gs-cc-01-queue-overflow.md exists
+ok - golden/gs-cc-02-report-export.md exists
+ok - golden/gs-cc-neg-01-inbound-vs-outbound.md exists
+ok - golden/gs-cc-neg-02-queue-vs-group.md exists
+ok - golden/gs-cc-neg-03-sla-vs-aht.md exists
+ok - golden/gs-cc-neg-04-ivr-vs-announcer.md exists
+ok - golden/gs-cc-neg-05-function-outside-catalog.md exists
+ok - golden/gs-vu-01-after-hours-forwarding.md exists
+ok - golden/gs-vu-02-crm-api-call.md exists
+ok - golden/gs-vu-neg-01-forwarding-vs-transfer.md exists
+ok - golden/gs-vu-neg-02-blind-vs-consult.md exists
+ok - golden/gs-vu-neg-03-sip-account-vs-trunk.md exists
+ok - golden/gs-vu-neg-04-foreign-class-function.md exists
+ok - golden/prompt-regressions.yaml exists
+ok - routes/rg-bcreq-v1.yaml exists
+ok - routes/run-sheet-template.yaml exists
+ok - skills/transcript-normalization-contact-center.md exists
+ok - taxonomy/artifacts.yaml exists
+ok - taxonomy/domain-glossary-analytics-reporting.yaml exists
+ok - taxonomy/domain-glossary-voice-ucaas.yaml exists
+ok - taxonomy/domain-glossary.yaml exists
+ok - taxonomy/mango-products.yaml exists
+ok - taxonomy/operations.yaml exists
+ok - taxonomy/processes.yaml exists
+ok - taxonomy/product-profiles.yaml exists
+ok - taxonomy/products.yaml exists
+ok - taxonomy/projections.yaml exists
+ok - taxonomy/source-tiers.yaml exists
+ok - templates/bcreq-skeleton.md exists
+ok - 11 skills
+ok - skill ambiguity-detection-contact-center declares its name
+ok - skill answer-integration-contact-center declares its name
+ok - skill bcreq-assembly-contact-center declares its name
+ok - skill bcreq-decomposition-contact-center declares its name
+ok - skill context-extraction-contact-center declares its name
+ok - skill core-assembly-contact-center declares its name
+ok - skill problem-statement-contact-center declares its name
+ok - skill question-formation-contact-center declares its name
+ok - skill question-prioritization-contact-center declares its name
+ok - skill transcript-normalization-contact-center declares its name
+ok - skill value-hypothesis-contact-center declares its name
+ok - knowledge base has 18 documents
+ok - ST-5-LOCAL points to docs/kb
+ok - taxonomy/mango-products.yaml exists
+ok - product catalog is closed
+ok - golden atomic_function end-to-end-analytics/function/romi-calculation is in catalog
+ok - golden atomic_function call-tracking/function/calltracking-widget-create is in catalog
+ok - golden atomic_function call-tracking/function/source-attribution is in catalog
+ok - golden atomic_function multichannel-analytics/function/attribution-modeling is in catalog
+ok - golden atomic_function end-to-end-analytics/function/romi-calculation is in catalog
+ok - golden atomic_function cloud-pbx/function/working-hours-routing is in catalog
+ok - golden atomic_function cpaas/function/programmable-voice-call is in catalog
+ok - golden atomic_function cloud-pbx/function/auto-attendant is in catalog
+ok - golden atomic_function unified-communications/function/softphone-call is in catalog
+ok - golden atomic_function number-management/function/number-assignment is in catalog
+ok - golden atomic_function number-management/function/number-assignment is in catalog
+ok - golden atomic_function call-routing/function/overflow-routing is in catalog
+ok - golden atomic_function report-builder/function/report-create is in catalog
+ok - golden atomic_function call-routing/function/overflow-routing is in catalog
+ok - golden atomic_function call-routing/function/queue-management is in catalog
+ok - golden atomic_function report-builder/function/custom-parameter-create is in catalog
+ok - golden atomic_function omnichannel-contact-center/function/interaction-routing is in catalog
+ok - golden atomic_function call-routing/function/overflow-routing is in catalog
+ok - product taxonomy declares the closed catalog
+ok - product taxonomy declares class_domains
+ok - golden sets have catalog-refusal cases
+ok - declared function romi-dashboard-export is outside catalog
+ok - declared function call-tracking/function/dynamic-number-substitution is a catalog node (foreign-class)
+ok - declared function queue-callback-offer is outside catalog
+runtime smoke test passed

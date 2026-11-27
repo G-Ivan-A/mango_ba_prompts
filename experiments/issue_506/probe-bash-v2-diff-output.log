@@ -1,0 +1,12 @@
+rc 0
+ERR [0m
+> bcreq-orchestrator · m
+[0m$ [0mgit diff --output=AGENTS.md
+(no output)
+> bcreq-orchestrator · m
+
+shell tool [('shell', ['background', 'command', 'timeout', 'workdir'])]
+toolresult (no output)
+toolresult (no output)
+COMMAND git diff --output=AGENTS.md
+AGENTS.md unchanged False 18704 19000
