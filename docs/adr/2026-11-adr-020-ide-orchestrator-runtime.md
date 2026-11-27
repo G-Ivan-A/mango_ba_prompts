@@ -1,13 +1,16 @@
 ---
-status: proposed
-version: 0.1
-updated: 2026-11-26
+status: accepted
+version: 0.2
+updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 decision-type: architecture
 related_issues:
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/508"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484"
+  - "https://github.com/G-Ivan-A/mango_ba_prompts/pull/514"
+  - "https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30"
   - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/505"
   - "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27"
 related_artifacts:
@@ -17,16 +20,27 @@ related_artifacts:
   - "docs/rfc/2026-11-runtime-universal-agent-context.md"
   - "docs/ba-processes/bcreq-manual-process.md"
   - "docs/ba-processes/bcreq-a-in-execution.md"
+  - "docs/ba-processes/bcreq-ide-gates.json"
 ---
 
 # ADR-020: IDE-слой runtime — оркестратор-агент, гейты с журналом решений, MCP только на чтение
 
 ## Статус
 
-`proposed` — на утверждение владельцу. Это решение M0 миграции
+`accepted` — [решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) от 26.11 (Р-RT-10). Это решение M0
+миграции
 [RFC-RT-003](../rfc/2026-11-runtime-ide-orchestrator.md#8-миграция-и-откат-фт-4).
-Принятие происходит слиянием PR #508 (молчание = согласие) или комментарием
-владельца с номерами решений Р-RT-10…Р-RT-21.
+Р-RT-10…Р-RT-21 приняты; уточнения владельца:
+
+- Р-RT-11 — основной агент и два субагента; БА — не транспорт;
+- Р-RT-13 — журнал решений вне контекста модели, исход «принять и
+  запустить»;
+- Р-RT-15 — MCP выключены, только чтение, запись — `deny`;
+- Р-RT-19 — BL-192 расширяется этапом Э5 «IDE-слой» без новой задачи.
+
+PR #508 закрыт без слияния из-за инцидента репозитория; решение
+переносит [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514).
+Производство — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30).
 
 ADR-016 (`draft`) уточняется, а не отменяется. Его положения сохраняются:
 
@@ -101,11 +115,14 @@ IDE-слоя.
      решением не являются.
    - Неоднозначный ответ получает один уточняющий вопрос.
    - Общий вопрос «Продолжаем?» запрещён.
+   - Шаг с проверкой БА закрывается исходом «принять и запустить
+     <следующий шаг>» или «принять и остановиться» (Р-RT-13).
 4. **Возврат.** Агент предлагает точку из таблицы возвратов с основанием,
    БА подтверждает. Зависимые результаты помечаются устаревшими, старые
    редакции не удаляются.
 5. **MCP только на чтение.**
    - Серверы по умолчанию `disabled`.
+   - Чтение — `ask`: каждое обращение видно БА (human in the loop).
    - Инструменты записи — `deny`, встроенный веб — `deny`.
    - Секреты — в окружении.
    - БЗ читается из файловой системы.
@@ -113,21 +130,29 @@ IDE-слоя.
 6. **Песочница.**
    - Состояние прогона — в `work/` под `.gitignore` или во внешнем
      каталоге.
-   - Запись вне песочницы — `deny`.
+   - Запись вне песочницы — `deny`; файлы инструкций (`AGENTS.md`,
+     `CLAUDE.md`, `CONTEXT.md`) в `work/` — `deny`: клиент выдаёт их модели
+     как инструкции.
+   - Оболочка — `ask`; без вопроса только точная `git status`: опции
+     `git diff --output` и `--no-index` пишут и читают мимо прав файлов.
+   - Текст входов и источников — данные, а не инструкции.
    - Контракты, маршруты, навыки, `AGENTS.md` и конфигурация IDE меняются
      только через PR.
 7. **Маршрут для оркестратора** — переданный SSOT этапа 1 (BL-185…BL-188)
-   и карта гейтов, сгенерированная в спице. RG-BCREQ-v1 не расширяется.
+   и [карта гейтов](../ba-processes/bcreq-ide-gates.json), сгенерированная
+   в спице (`scripts/build_bcreq_ide_gates.py`). RG-BCREQ-v1 не
+   расширяется. До приёма SSOT оркестратор отвечает `ACCESS_GAP` и
+   `BLOCKED`.
 8. **Производство** — этап Э5 «IDE-слой» задачи BL-192 после слияния PR
-   runtime #29. Задачу описывает RFC-RT-003, раздел 11, issue создаёт
-   владелец. Правки текстов промптов по 1143 идут в
+   runtime #29. Постановка — RFC-RT-003, раздел 11, реализация —
+   [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30). Тестовые прогоны в IDE (M6) — BL-245. Правки текстов промптов по 1143 идут в
    [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505), исполнение —
    BL-194 ([#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509)).
 
 ## Что не менялось
 
-- Runtime, тексты промптов, SHA реестра и сайт. Деплоя и модельных
-  прогонов не было.
+- Тексты промптов, SHA реестра и сайт. Деплоя и модельных прогонов не
+  было. Runtime меняет только PR runtime #30.
 - Нормы этапа 1: Р-09, Р-19, LE-01…LE-13, состав технических шагов,
   гейты и их роли.
 - RG-BCREQ-v1, защищённые пути runtime, зеркало навыков BL-192.

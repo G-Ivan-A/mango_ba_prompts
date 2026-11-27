@@ -1,24 +1,34 @@
 ---
-status: proposed
-version: 0.1
-updated: 2026-11-26
+status: accepted
+version: 0.2
+updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30"
 rfc-scope: multi
 type: rfc
-related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md, experiments/issue_506/audit_runtime_ide_readiness.py, experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md, docs/rfc/2026-11-runtime-universal-agent-context.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/ba-processes/bcreq-manual-process.md, docs/ba-processes/bcreq-a-in-execution.md, docs/ba-processes/bcreq-a-in-route.json, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md, pr-ops/BACKLOG.md, scripts/validate_issue_506_ide_runtime_rfc.py"
+related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/ba-processes/bcreq-ide-gates.json, scripts/build_bcreq_ide_gates.py, docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md, experiments/issue_506/audit_runtime_ide_readiness.py, experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md, docs/rfc/2026-11-runtime-universal-agent-context.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/ba-processes/bcreq-manual-process.md, docs/ba-processes/bcreq-a-in-execution.md, docs/ba-processes/bcreq-a-in-route.json, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md, pr-ops/BACKLOG.md, scripts/validate_issue_506_ide_runtime_rfc.py"
 ---
 
 # RFC-RT-003: IDE-слой runtime для этапа 2 — оркестратор, гейты, MCP
 
 ## Summary / BLUF
 
+> **Принято (v0.2, 2026-11-27).** Владелец принял RFC-RT-003 и ADR-020
+> ([решение](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484)). Решения Р-RT-10…Р-RT-21 приняты по рекомендациям.
+> Уточнены Р-RT-11, Р-RT-13, Р-RT-15 и Р-RT-19 (раздел 9).
+>
+> - Карта раздела 5 в машинном виде —
+>   [`bcreq-ide-gates.json`](../ba-processes/bcreq-ide-gates.json).
+> - Постановка BL-192 Э5 «IDE-слой» — раздел 11. Реализация —
+>   [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30).
+> - PR #508 закрыт без слияния из-за инцидента в репозитории. Его
+>   содержание перенесено в [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514).
+
 Задача — [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506).
-Это анализ и RFC `proposed`. Runtime, тексты промптов и SHA реестра не
-меняются. Ничего не деплоится, модельных прогонов не было. Задача runtime
-только описана (раздел 11), не создана. Вход:
+Это анализ и RFC. Спица не меняет runtime, тексты промптов и SHA реестра.
+Ничего не деплоится, модельных прогонов не было. Вход:
 [аудит готовности](../audit/2026-11-26-runtime-stage2-ide-readiness.md).
 
 **Вывод аудита.** Runtime готов как источник контекста, но не как
@@ -72,7 +82,7 @@ IDE-среда. Не хватает пяти вещей:
    пока владелец не переключит.
 
 [ADR-020](../adr/2026-11-adr-020-ide-orchestrator-runtime.md) фиксирует
-решение на согласование владельцу.
+решение. Владелец принял его 26.11 ([комментарий](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484)).
 
 ## 1. Постановка и границы
 
@@ -89,10 +99,13 @@ IDE-среда. Не хватает пяти вещей:
 | ФТ-4. Решения Р-RT | раздел 9 |
 | ФТ-4. ADR | [ADR-020](../adr/2026-11-adr-020-ide-orchestrator-runtime.md) |
 | ФТ-5. Всё в спице, runtime не трогать, задачу описать | раздел 11, «Обоснованные обходы» |
+| Решение владельца, шаг 3: постановка BL-192 Э5 в runtime (SSOT, ФТ, НФТ, граничные кейсы, решения) и PR в runtime | раздел 11; [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) |
+| Решение владельца: задача тестовых прогонов M6 | BL-245, раздел 10 |
 
 Вне рамок:
 
-- текст `AGENTS.md`, агентов и команд — это производство (раздел 11);
+- текст `AGENTS.md`, агентов и команд — это производство: PR runtime #30
+  (раздел 11);
 - выбор V1 или V2 OpenCode — это BL-132;
 - правка текстов промптов — это #505;
 - перевод AIN-06 и AIN-22 в нетехнические шаги — это норма этапа 1,
@@ -249,14 +262,18 @@ BL-131 (Р-RT-8).
   24 шага, `advance_while_paused=false`, `resume_requires_ba_instruction=true`;
 - BL-230 — форма процесса по шагам.
 
-Карта **не меняет норму**, она её исполняет.
+Карта **не меняет норму**, она её исполняет. Машинный вид карты —
+[`bcreq-ide-gates.json`](../ba-processes/bcreq-ide-gates.json) (`accepted`).
+Генератор `scripts/build_bcreq_ide_gates.py` строит его из источников
+выше, `--check` сверяет. В runtime карта приходит с SSOT этапа 1 (M2) по
+пути `ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json`.
 
 ### 5.1. Типы остановок
 
 | Тип | Что делает оркестратор | Кто решает | Чем закрывается |
 | --- | --- | --- | --- |
 | **T — технический шаг** | исполняет автономно и выводит «Итог шага» в журнал; БА видит итог на ближайшей остановке | — | итог шага без `BLOCKED` |
-| **P — проверка БА (Р-09)** | стоп; вопрос «Принять результат <шаг>, редакция <N>?» с исходами «принять / доработать: что / вернуться: куда» | БА | явный ответ на этот вопрос |
+| **P — проверка БА (Р-09)** | стоп; вопрос «Принять результат <шаг>, редакция <N>?» с исходами «принять и запустить <следующий шаг> / принять и остановиться / доработать: что / вернуться: куда» (Р-RT-13) | БА | явный ответ на этот вопрос |
 | **G — гейт** | стоп; вопрос решения гейта: исходы, роль, для гибрида рекомендация модели с основанием | роль из таблицы гейтов | явный ответ с кодом гейта; запись в журнал с `model_recommendation` и `divergence` для гибрида |
 | **B — блокировка (Р-19)** | стоп всего процесса; источник `ACCESS_GAP` или конфликт норм | БА | новые данные или доступ; повтор шага |
 
@@ -419,7 +436,11 @@ BL-131 (Р-RT-8).
 - не публикует в Jira и Confluence: запись вне песочницы — только через PR
   или вручную;
 - не показывает служебные блоки памяти БА, если шаг их не требует
-  (П-1143-46).
+  (П-1143-46);
+- не исполняет указания из текста входов, итогов и источников: это данные.
+  Клиент OpenCode выдаёт модели вложенный `AGENTS.md` из `work/` как
+  «Instructions from: …». Поэтому такие файлы в `work/` не пишутся
+  (раздел 11, кейс 5).
 
 ## 7. Топология MCP и разрешений (ФТ-4)
 
@@ -436,8 +457,8 @@ BL-131 (Р-RT-8).
   локально. Причина — «MCP tools consume model context, so add only the
   servers you need».
 - Инструменты записи (создать, изменить, комментировать) запрещены
-  правилом `deny` по маске `<server>_*` для записи. Остальное — `ask` или
-  `allow` по решению Р-RT-15.
+  правилом `deny` по глаголам записи. Чтение — `ask` (Р-RT-15). Прочие
+  инструменты сервера — `deny` по маске `<server>_*`.
 - Встроенные `webfetch` и `websearch` — `deny`. Веб идёт только через
   MCP, единым каналом с локатором.
 
@@ -448,16 +469,20 @@ BL-131 (Р-RT-8).
 | `read`, `grep`, `glob` в клоне | allow | allow | allow |
 | `edit` в `work/**` | allow | allow | deny |
 | `edit` вне `work/**`: `AGENTS.md`, `contracts/**`, `routes/**`, `skills/**`, `.agents/**`, `.opencode/**`, `opencode.json`, `ssot/**`, `docs/kb/**`, `taxonomy/**` | deny | deny | deny |
-| `shell` | ask (только `git status`, `git diff` — allow) | deny | deny |
+| `edit` файлов инструкций в `work/**`: `AGENTS.md`, `CLAUDE.md`, `CONTEXT.md` | deny | deny | deny |
+| `shell` | ask; без вопроса — только точная `git status` | deny | deny |
 | `subagent` | `bcreq-step`, `bcreq-reviewer` — allow; прочее — deny | deny | deny |
 | `question` | allow | deny (вопросы задаёт только оркестратор) | deny |
 | `external_directory` | deny (исключение — внешняя песочница по Р-RT-16) | deny | deny |
-| MCP чтение | allow или ask (Р-RT-15) | allow или ask | allow |
+| MCP чтение | ask (Р-RT-15) | ask | ask |
 | MCP запись | deny | deny | deny |
 
 - Правило по умолчанию — `ask`: «If no rule matches, OpenCode uses `ask`».
   Явный `deny` нужен там, где `ask` нельзя: защищённые пути и запись в
   Jira.
+- Оболочка: правило `git diff*` — `allow` из первой редакции снято. Опции
+  `git diff --output=<файл>` и `--no-index` пишут и читают мимо прав на
+  файлы. Это воспроизведено на V1 и V2 (раздел 11, кейс 6).
 - Smoke runtime запрещает в клоне `runs`, `experiments`, `tools`. Каталог
   `work/` поэтому в `.gitignore` и в исключениях smoke. Альтернатива —
   внешняя песочница (Р-RT-16).
@@ -469,7 +494,7 @@ BL-131 (Р-RT-8).
 | **M0** | Решение владельца по ADR-020 и Р-RT-10…21 | спица | этот PR | закрытие PR = отказ | — |
 | **M1** | Базовый слой: зеркало, `AGENTS.md` 0.8, `ACCESS_GAP`, smoke OpenCode | runtime, BL-192, PR #29 | Р-RT-2…4 | revert PR #29 | smoke runtime; 11 навыков в OpenCode |
 | **M2** | Приём SSOT этапа 1: маршрут A-IN, итог шага, гейты; карта раздела 5 в машинном виде | runtime `ssot/` ← спица, BL-185…BL-188 | M1; манифест #492 | удаление каталога `ssot/` | сверка sha256 с SHA спицы |
-| **M3** | IDE-слой: `opencode.json`, `.opencode/agents`, `.opencode/commands`, раздел `AGENTS.md`, `work/` в `.gitignore`, поправка smoke | runtime, задача раздела 11 | M2; BL-132 (диалект) | удалить `.opencode/` и `opencode.json`, вернуть раздел `AGENTS.md` прежней компиляцией | smoke; OpenCode видит 4 команды и 3 агента; сухой тест без модели: сторожа разрешений |
+| **M3** | IDE-слой: `opencode.json`, `.opencode/agents`, `.opencode/commands`, раздел `AGENTS.md`, `work/` в `.gitignore`, поправка smoke | runtime, задача раздела 11 ([PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30)) | M2; BL-132 (диалект). Слой производится до M2 и до него отвечает `BLOCKED` (раздел 11.8, решение 11) | удалить `.opencode/` и `opencode.json`, вернуть раздел `AGENTS.md` прежней компиляцией | smoke; OpenCode видит 4 команды и 3 агента; сухой тест без модели: сторожа разрешений |
 | **M4** | Ссылки: сборка навыков переписывает 130 закреплённых URL runtime в относительные пути; цель `ba-ai-metamodel` (27 ссылок) передаётся в runtime | runtime, сборка; спица — без правки текстов (BL-190) | M2 | пересборка без слоя | 0 удалённых URL в собранных навыках |
 | **M5** | Закрепление SHA справочников И-11, И-12 и транспорт конституции | BL-242, BL-243 | M3 | по их карточкам | по их карточкам |
 | **M6** | Тестовые прогоны в IDE в песочнице на кейсах runtime #28, без клиентских данных | IDE, `work/` | M3…M5; разрешение владельца на стоимость | — (только чтение) | метрики раздела 10 |
@@ -479,6 +504,21 @@ BL-131 (Р-RT-8).
 RG-BCREQ-v1 не меняется. Откат любого этапа не трогает предыдущие.
 
 ## 9. Решения на согласование
+
+**Решение владельца, 26.11** ([комментарий](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484)): все решения приняты.
+Р-RT-10, Р-RT-12, Р-RT-14, Р-RT-16…Р-RT-18, Р-RT-20 и Р-RT-21 — по
+рекомендации. С уточнением приняты:
+
+- Р-RT-11 — основной агент и два субагента; БА — не транспорт;
+- Р-RT-13 — журнал решений вне контекста модели и исход «принять и
+  запустить»;
+- Р-RT-15 — MCP выключены, только чтение, запись — `deny`;
+- Р-RT-19 — расширить BL-192 этапом Э5 «IDE-слой», новой задачи не
+  заводить.
+
+Приоритет — отраслевая практика: OpenCode Commands, Agents, Permissions,
+MCP; MCP 2025-06-18; human in the loop. Колонка «Если промолчать»
+оставлена как история.
 
 | № | Вопрос | Рекомендация | Почему | Если промолчать |
 | --- | --- | --- | --- | --- |
@@ -500,20 +540,33 @@ RG-BCREQ-v1 не меняется. Откат любого этапа не тр�
 Таблица ведётся в [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md), блок
 «Движение по цепочке (#506)».
 
-- **Текущий шаг.** BL-244 (этот RFC и ADR-020) — `review` до слияния PR.
-- **Следующий шаг.** Владелец принимает ADR-020 (M0).
-- **Открывает.**
-  - BL-192 — расширение этапом Э5 «IDE-слой» (M3; Р-RT-19). Статус
-    `deferred (triggered)` не меняется до M0.
-  - BL-185…BL-188 — блокеры M2, статус `TODO`.
-  - BL-242, BL-243 — M5.
-  - BL-132 — диалект и выбор MCP-серверов.
-  - BL-194 — правки промптов по 1143 по
-    [RFC-BCREQ-PROMPT-DEBUG-001](2026-11-bcreq-prompt-debugging-1143.md)
-    (итог #505, BL-193), статус `TODO`, issue
-    [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509).
-- **Задачи в бэклоге нет, будет создана:** тестовые прогоны в IDE (M6) —
-  после ADR-020.
+| Шаг | Задача | Статус | Полнота |
+| --- | --- | --- | --- |
+| Предыдущий | BL-192 Э1, Э2, Э4: зеркало навыков, `AGENTS.md` 0.8, smoke OpenCode | `DONE`, [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) `bee5f9ba` | полностью: вход Э5 |
+| Текущий, закрывается этим PR | BL-244: аудит, RFC-RT-003, ADR-020, карта гейтов | `review` → `DONE` слиянием [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514) | решения приняты владельцем 26.11 |
+| Открывается этим PR | BL-192 Э5 «IDE-слой» (Р-RT-19) | `DONE` → `review`, [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) | слой и проверки готовы; процесс в IDE ждёт M2 |
+| Блокер процесса | BL-185…BL-188: приём SSOT этапа 1 (M2) | `TODO` | без него оркестратор отвечает `BLOCKED` |
+| Новая задача | BL-245: тестовые прогоны в IDE (M6) | `deferred (triggered)` | триггер — M2…M5 по таблице раздела 8, Э5 `DONE` и разрешение владельца на стоимость |
+
+- BL-242, BL-243 — M5, статусы не меняются.
+- BL-132 — диалект и выбор MCP-серверов, `deferred (triggered)`. Слой
+  проверен на обеих линиях: V1 1.19.6 и V2 2.4.2.
+- BL-194 — правки промптов по 1143 по
+  [RFC-BCREQ-PROMPT-DEBUG-001](2026-11-bcreq-prompt-debugging-1143.md)
+  (итог #505, BL-193), issue
+  [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509). Слой
+  Э5 текстов промптов не меняет.
+
+**Следующие шаги.**
+
+1. Слить PR #514. Это закрывает BL-244 и фиксирует карту гейтов в спице.
+2. Принять PR runtime #30 (BL-192 Э5 → `DONE`). Слой не меняет канал
+   чата и включается только командой.
+3. M2: BL-185…BL-188. Без них оркестратор в IDE честно стоит.
+4. После M2 в runtime должен пройти пропущенный сейчас тест
+   `test_map_matches_the_layer`, без правки слоя.
+5. BL-245 (M6) с разрешением владельца на стоимость. По итогам решить,
+   нужен ли плагин-сторож (раздел 11.8, решение 10).
 
 Метрики M6 — гипотезы до замеров:
 
@@ -521,54 +574,219 @@ RG-BCREQ-v1 не меняется. Откат любого этапа не тр�
 - число ложных допусков гейтов: в 1143 — 2, цель — 0;
 - число `BLOCKED` без указания источника: цель — 0.
 
-## 11. Задача runtime (описана, не создана)
+## 11. Постановка BL-192 Э5 «IDE-слой» (задача runtime)
 
-**Заголовок.** «BL-192 Э5: IDE-слой — оркестратор, команды `/a-*`, MCP,
-песочница (RFC-RT-003)».
+Постановка составлена по шагу 3 [решения владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484). Реализация —
+[PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), его описание повторяет этот раздел. Issue в runtime
+не создавался: задачи runtime создаёт владелец, поэтому ключа `Fixes` в
+PR #30 нет.
 
-**Вход.**
+**Поправка первой редакции.** Пункт состава «раздел `AGENTS.md` — каналом
+компиляции `ba-ai-metamodel`» неисполним. Нормативного текста `AGENTS.md`
+runtime в `ba-ai-metamodel` нет. `AGENTS.md` правится в runtime напрямую,
+правка записывается в `transformed` манифеста — как в PR runtime #29
+(решение 12 раздела 11.8). Слой ссылок (M4) вынесен из Э5: он заблокирован
+M2 (решение 14).
 
-- PR runtime #29 слит (M1);
-- SSOT этапа 1 и карта гейтов переданы (M2);
-- версия OpenCode закреплена (BL-132);
-- ADR-020 принят.
+### 11.1. Цель
 
-**Состав.**
+Процессы этапа 1 (A-IN, A-CORE, A-WORK, A-RELEASE) в IDE-клиенте OpenCode
+ведёт агент-оркестратор, а не БА. БА перестаёт быть транспортом между
+шагами. Он отвечает только на вопросы шагов с проверкой и гейтов, и его
+решение фиксируется вне контекста модели. Корень сбоев прогона 1143 —
+модель выводила допуск гейта из текста чата (П-1143-38, П-1143-44). Здесь
+он устраняется механикой, а не текстом промпта.
 
-1. Раздел «Оркестрация и гейты» в `AGENTS.md` — каналом компиляции
-   `ba-ai-metamodel` (Р-RT-2).
-2. `.opencode/agents/bcreq-orchestrator.md`, `bcreq-step.md`,
-   `bcreq-reviewer.md` по разделам 4.2, 6 и 7.2.
-3. `.opencode/commands/a-in.md`, `a-core.md`, `a-work.md`, `a-release.md`
-   с полем `agent: bcreq-orchestrator`.
-4. `opencode.json`: разрешения раздела 7.2; MCP раздела 7.1 в режиме
-   `disabled`.
-5. `work/` в `.gitignore`; поправка `tests/runtime-smoke.sh`: разрешить
-   `.opencode/`, `opencode.json`, исключить `work/`.
-6. Слой сборки ссылок (M4) и сторож «0 удалённых URL в собранных навыках».
-7. Тесты без модели:
-   - сторож прав: запись вне `work/` — `deny`, MCP-запись — `deny`;
-   - сторож карты: 14 типов T совпадают со спицей;
-   - сторож команд: у каждой `agent` — оркестратор.
+### 11.2. SSOT
 
-**Готово, когда.**
+| Что | Где | Статус |
+| --- | --- | --- |
+| Решение | [ADR-020](../adr/2026-11-adr-020-ide-orchestrator-runtime.md) | `accepted` ([решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484)) |
+| Архитектура и контракт оркестратора | этот RFC, разделы 4–8 | `accepted`, Р-RT-10…Р-RT-21 |
+| Карта шагов, типов остановок и гейтов | [`docs/ba-processes/bcreq-ide-gates.json`](../ba-processes/bcreq-ide-gates.json) спицы, генератор `scripts/build_bcreq_ide_gates.py --check` | в спице; в runtime — путь `ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json` после приёма SSOT (M2) |
+| Норма шагов и гейтов этапа 1 | `bcreq-a-in-route.json`, `bcreq-a-in-execution.md`, `bcreq-manual-process.md` спицы | без изменений |
+| Отраслевая практика | OpenCode Agents, Commands, Permissions, MCP; MCP 2025-06-18 Tools и Elicitation (human in the loop) | RFC-RT-003, раздел 3 |
 
-- smoke runtime и тесты зелёные;
-- OpenCode закреплённой версии видит 4 команды и 3 агента;
-- валидаторы спицы на SHA реестра — 0 провалов.
+Нормативное содержание этапа 1 остаётся в спице. Runtime его исполняет и
+не меняет.
 
-**Не входит.** Модельные прогоны (M6), тексты промптов (#505), правка
-RG-BCREQ-v1.
+### 11.3. Входы
+
+| Вход | Состояние на 27.11 | Влияние на Э5 |
+| --- | --- | --- |
+| M0: ADR-020, Р-RT-10…Р-RT-21 | приняты владельцем 26.11 | Э5 запущен |
+| M1: базовый контекст ([PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29)) | слит, `bee5f9b` | слой ставится поверх |
+| M2: приём SSOT этапа 1 (BL-185…BL-188, Р-RT-7) | не сделан | карты и текстов шагов в runtime нет. Оркестратор отвечает `ACCESS_GAP` и `BLOCKED` (fail-closed). Слой готов, процесс заработает после M2 без правки слоя |
+| BL-132: версия OpenCode | не закреплена | слой проверен на обеих линиях: V1 1.19.6 и V2 2.4.2 |
+| M4: слой ссылок (130 URL на runtime@68ad8fcf и 27 на ba-ai-metamodel в промптах спицы) | заблокирован M2 | до M4 удалённые ссылки дают `ACCESS_GAP`, потому что встроенный веб запрещён |
+| M5: BL-242, BL-243 | по их карточкам | не блокирует слой |
+| M6: тестовые прогоны в IDE | новая задача BL-245 в спице | нужны M2…M5 и разрешение владельца на стоимость |
+
+### 11.4. Состав
+
+| Файл | Роль |
+| --- | --- |
+| `.opencode/agents/bcreq-orchestrator.md` | `primary`. Ведёт процесс по карте, вызывает субагентов, задаёт вопросы БА, пишет журнал |
+| `.opencode/agents/bcreq-step.md` | `subagent`, скрытый. Исполняет один шаг в отдельном контексте, пишет только в `work/` |
+| `.opencode/agents/bcreq-reviewer.md` | `subagent`, скрытый. Только чтение: проверяет итог шага или гейта по критериям |
+| `.opencode/commands/a-in.md`, `a-core.md`, `a-work.md`, `a-release.md` | `agent: bcreq-orchestrator`; передают процесс и ключ задачи |
+| `opencode.json` | права клиента для всех агентов, три MCP-сервера в состоянии `enabled: false` |
+| `AGENTS.md` 0.9, раздел «Оркестрация и гейты» | 8 правил для любого клиента |
+| `README.md` 0.9, раздел «Процессы этапа 1 в IDE» | как запустить и что запрещено |
+| `compilation-manifest.yaml` 0.9 | слой в `transformed`; `source_commit` и `compiled_at` не меняются |
+| `.gitignore`: `work/`; `tests/runtime-smoke.sh` | песочница прогона вне git; smoke знает слой |
+| `tests/test_ide_layer.py`, `tests/opencode_smoke.py` | проверки без модели и с моделью-заглушкой |
+
+### 11.5. Функциональные требования
+
+| ФТ | Требование | Где | Проверка |
+| --- | --- | --- | --- |
+| ФТ-1 | Команды `/a-in`, `/a-core`, `/a-work`, `/a-release` запускают оркестратор и передают «Процесс: X. Ключ задачи: …». Текст команды решением не является | `.opencode/commands/*` | `Layout.test_commands_start_the_orchestrator`; smoke V1: текст `/a-in` доходит до модели |
+| ФТ-2 | Маршрут берётся только из карты гейтов. Карты или процесса нет — `ACCESS_GAP` и `BLOCKED`; RG-BCREQ-v1 и память не подставляются | оркестратор, «Старт»; правило 1 | `GateMap.test_orchestrator_is_fail_closed` |
+| ФТ-3 | Тип T — без вопроса. Тип P — рецензент, затем один вопрос с исходами «принять и запустить <шаг>», «принять и остановиться», «доработать», «вернуться». Тип G — вопрос гейта: код, редакция, исходы, роль. Тип B — остановка с причиной | оркестратор, «Цикл»; правила 2–3 | `GateMap.test_orchestrator_names_decisions_the_map_relies_on`; карта: 14 шагов T (`validate_issue_506` в спице) |
+| ФТ-4 | Решение — только явный ответ на открытый вопрос (таблица «Что считается ответом») | оркестратор; правило 4 | статически. Поведение модели — M6 |
+| ФТ-5 | Журнал `work/<ключ>/decisions.jsonl` с полями `decision_log.fields` карты. Строки не правятся, отмена — `superseded`. Предпосылка `requires_gate` проверяется по журналу | оркестратор, «Журнал»; правило 5 | поля названы в промпте: `GateMap`; сверка с картой — после M2 (`test_map_matches_the_layer`) |
+| ФТ-6 | Перед каждым шагом состояние читается из `work/<ключ>/state.json` и журнала, а не из чата | оркестратор, «Цикл» | статически; M6 |
+| ФТ-7 | Шаг исполняет `bcreq-step`: один вызов — один шаг. Итог — новая редакция `work/<ключ>/<код>.md` | субагент | права: `Writes`, `Tools`; smoke |
+| ФТ-8 | `bcreq-reviewer` проверяет по критериям и даёт рекомендацию для гибридного гейта. Не пишет, вопросов не задаёт | субагент | `Writes.test_work_is_writable_except_for_reviewer`, `Tools` |
+| ФТ-9 | Возврат: причина и точка — из `returns` карты, выбирает БА. Пауза держится до явного возобновления | оркестратор; правила 7–8 | статически; M6 |
+| ФТ-10 | Права клиента: запись только в `work/`; внешние источники только для чтения; MCP выключены | `opencode.json` | `Writes`, `Tools`, `Mcp`; smoke — решения клиента и живая запись |
+
+### 11.6. Нефункциональные требования
+
+| НФТ | Требование | Проверка |
+| --- | --- | --- |
+| НФТ-1 | Этап 1 не ослабляется. RG-BCREQ-v1, контракты, маршруты, навыки, `docs/kb/`, `ssot/` не меняются. Тексты промптов и SHA реестра спицы не меняются | `git diff --stat origin/main`: только файлы раздела «Состав»; `agent_context_audit.py` |
+| НФТ-2 | Fail-closed: неизвестное — `ask`, защищённое — `deny`, нет SSOT — `BLOCKED` | `Tools.test_unknown_tool_asks`, `Writes`, `GateMap` |
+| НФТ-3 | Секретов в репозитории нет. URL и токены MCP — `{env:…}` | `Layout.test_config_has_no_secrets` |
+| НФТ-4 | Клиентские данные не попадают в git: `work/` под `.gitignore` | `Layout.test_work_is_not_tracked`; runtime-smoke |
+| НФТ-5 | Один диалект конфигурации на двух линиях клиента до BL-132. V2 переводит `permission` V1 сам (`bash`→`shell`, `task`→`subagent`) | smoke V1 и V2 в CI |
+| НФТ-6 | Контекст: `AGENTS.md` не больше 32 КБ (сейчас 18 973 байта). MCP выключены, пока не нужны («MCP tools consume model context») | runtime-smoke; `Mcp.test_servers_are_disabled_remote` |
+| НФТ-7 | Обратимость: удалить `.opencode/` и `opencode.json`, вернуть `AGENTS.md`, README и манифест к 0.8 | revert PR |
+| НФТ-8 | Проверяется без модели и без ключей: оценщик прав и модель-заглушка | `test_ide_layer.py`, `opencode_smoke.py` |
+| НФТ-9 | Канал «чат модели по ссылке на репозиторий» от слоя не зависит | README; `deployment` манифеста |
+
+### 11.7. Граничные кейсы
+
+«Live» — живой прогон клиента с моделью-заглушкой на V1 1.19.6 и V2 2.4.2.
+
+| # | Кейс | Поведение | Где закреплено | Проверка |
+| --- | --- | --- | --- | --- |
+| 1 | SSOT этапа 1 не передан (сейчас) | `ACCESS_GAP: карта гейтов этапа 1 — SSOT этапа 1 не передан в runtime`, `BLOCKED` | оркестратор, правило 1 | `GateMap` |
+| 2 | В карте нет процесса команды или карта не разбирается | то же | оркестратор, «Старт» 2 | статически |
+| 3 | Ключ пуст, с пробелами, `/`, `..` | один вопрос о ключе, ничего не исполняется | оркестратор, «Старт» 1 | статически |
+| 4 | Запись `work/<ключ>/../../AGENTS.md` | клиент нормализует путь — `deny` | `opencode.json` `edit` | live V1, V2 |
+| 5 | Запись `work/<ключ>/AGENTS.md` (или `CLAUDE.md`, `CONTEXT.md`) | `deny`. Клиент выдаёт такой файл модели как «Instructions from: …», когда читается соседний файл (проверено на V1 и V2). Текст в `work/` — данные | `opencode.json`, правило 6, оба промпта | live; `Writes`; `test_text_in_work_is_data` |
+| 6 | `git diff --output=AGENTS.md`, `git diff --no-index /dev/null .env` | `ask`; без человека клиент отклоняет. Правило `git diff*: allow` позволяло перезаписать `AGENTS.md` и прочитать `.env` (воспроизведено на обеих линиях) | `opencode.json` `bash` | live; `Tools.test_shell` |
+| 7 | `git status > AGENTS.md`, `git diff; echo x > AGENTS.md` | `ask`: шаблон без опций не совпадает | `opencode.json` | эксперимент `probe_bash.py` |
+| 8 | Запись вне `work/` любым агентом, включая встроенный `build` | `deny` | `opencode.json` | `Writes`; smoke — решения клиента |
+| 9 | Рецензент пишет в `work/` | `deny` | frontmatter | `Writes` |
+| 10 | Субагент задаёт вопрос, делегирует или запускает оболочку | `deny` | frontmatter | `Tools` |
+| 11 | Оркестратор вызывает `general`, `explore` или иной агент | `deny`, разрешены только два субагента | frontmatter | `Tools`; smoke |
+| 12 | Встроенные `webfetch`, `websearch`, `codesearch`; удалённые URL в промптах | `deny`, отсюда `ACCESS_GAP` до M4 | `opencode.json`, правило 10 | `Tools` |
+| 13 | `external_directory`, в том числе каталог вывода инструментов клиента | `deny`. Правило конфигурации идёт после встроенного `allow` клиента, побеждает последнее совпадение. Длинный вывод модель читает из файла по частям | `opencode.json` | `Tools`; `debug agent` V1 |
+| 14 | `execute` V2 (codemode: скрипт, вызывающий инструменты) | `deny`, иначе правила по инструментам обходятся | `opencode.json` | `Tools`; smoke V2 |
+| 15 | `plan_enter`, `plan_exit` | `deny`: смена режима выводит из оркестратора | `opencode.json` | `Tools` |
+| 16 | Инструмент, которого нет в правилах (новая версия клиента, плагин) | `ask` | `"*": "ask"` | `Tools.test_unknown_tool_asks` |
+| 17 | MCP-сервер включён локально: запись (`create`, `update`, `delete`, `transition` …) | `deny` | `opencode.json` | `Mcp.test_write_is_denied` |
+| 18 | MCP: инструмент с глаголами чтения и записи (`jira_get_and_update_issue`) | `deny`: правила записи стоят после правил чтения | `opencode.json` | `Mcp` |
+| 19 | MCP: чтение | `ask` (человек видит запрос) | `opencode.json` | `Mcp.test_read_asks` |
+| 20 | MCP: инструмент без известного глагола | `deny` по `<сервер>_*` | `opencode.json` | `Mcp.test_unlisted_tool_is_denied` |
+| 21 | Сервер БА, которого нет в `opencode.json` | `ask` по `"*"`. Его права задаёт тот, кто его добавил | `opencode.json` | `Tools.test_unknown_tool_asks` |
+| 22 | MCP включён, а `MANGO_*_MCP_URL` или токен не заданы | клиент не подключит сервер, `ACCESS_GAP` и `BLOCKED` на шаге (Р-19) | правило 10 | M6 |
+| 23 | Чтение `.env`, `*.env.*` | `deny` | `opencode.json` | `Writes.test_env_files_are_not_read` |
+| 24 | «да» при нескольких открытых вопросах; одна строка на решения разных ролей | один уточняющий вопрос по каждому | оркестратор, таблица ответа; правило 4 | M6 |
+| 25 | Вставка текста промпта или команды вместо ответа (1143) | не решение | то же | M6 |
+| 26 | Отменённый `question`, молчание | процесс стоит | то же | M6 |
+| 27 | Гибридный гейт AIN-21: рекомендация модели расходится с решением БА | решает БА; в журнале `model_recommendation` и `divergence` | оркестратор, «Журнал» | статически; M6 |
+| 28 | Гейты Г-С1, Г-W, «Выпуск» | только человек в своей роли, рекомендация за решение не выдаётся | правило 2 | `GateMap` |
+| 29 | AIN-22 без строки допуска AIN-21 в журнале | не запускается (`requires_gate`) | оркестратор, «Журнал» | карта; M6 |
+| 30 | Решение по той же редакции уже есть / новая редакция | вопрос не повторяется / нужно новое решение | то же | M6 |
+| 31 | Шаги с `accept_unless_objection` (AIN-06, AIN-22) | показываются как принятые, если БА не возразит до следующей остановки | оркестратор, «Цикл» | карта |
+| 32 | Пауза | ничего не исполняется до явного возобновления | правило 8 | M6 |
+| 33 | Клиент сам создаёт `.opencode/.gitignore` | файл игнорирует сам себя; smoke считает только `*.md` | runtime-smoke | runtime-smoke |
+| 34 | Список команд проекта на V2 не виден в `run` и API | агент V2 проверяется через `run --agent`, команда — статически, в TUI — M6 | smoke | smoke V2 |
+| 35 | Два сеанса на один ключ | блокировки нет. Журнал только дописывается, состояние перечитывается перед шагом. Один ключ — один сеанс (README) | ограничение | M6 |
+| 36 | Модель правит строку журнала, хотя запись в `work/` разрешена | права клиента не различают дописывание и правку. Правило 5 и `superseded`; ложные допуски — метрика M6. Запасной путь — плагин-сторож (решение 10) | ограничение | M6 |
+
+### 11.8. Обоснованные решения
+
+| # | Решение | Альтернатива | Почему так |
+| --- | --- | --- | --- |
+| 1 | Оркестратор — агент OpenCode, `primary` плюс два `subagent` (Р-RT-11) | скрипт-раннер; пакет Хаба `execution-package-opencode` (Python-инструменты, плагин-сторож) | ADR-016: «Python/скриптовый оркестратор в работе БА не нужен». Runtime-smoke запрещает `.py` и `tools/`. Субагент даёт отдельный контекст шага против LE-01, LE-02 |
+| 2 | Базовое правило `"*": "ask"`, явный `deny` для защищённого | `"*": "deny"`, как в пакете Хаба | `deny` ломает встроенные инструменты новых версий без сигнала. `ask` показывает их человеку (документация: «If no rule matches, OpenCode uses `ask`»). Где `ask` недопустим — явный `deny` |
+| 3 | MCP-чтение — `ask` (Р-RT-15) | `allow` | MCP Tools: «human in the loop». Каждое обращение к Jira или Confluence видно БА до первых замеров M6 |
+| 4 | MCP выключены, адрес и токен — из окружения | включены с адресом в файле | секреты вне git; экономия контекста; корпоративный контур — `ACCESS_GAP` до выбора серверов |
+| 5 | Оболочка: без вопроса только точная `git status` | `git status`, `git diff*` | опция команды пишет или читает мимо прав файлов (кейс 6, воспроизведён) |
+| 6 | Файлы инструкций в `work/` запрещены | без ограничения | клиент выдаёт их модели как инструкции (кейс 5, воспроизведён) |
+| 7 | Субагенты скрыты (`hidden`) | видимы в `@`-меню | БА запускает процесс командой, а не шаг в обход оркестратора |
+| 8 | `execute` V2 — `deny` | `ask` | codemode исполняет скрипт, внутри которого правила по инструментам не видны человеку |
+| 9 | Команды без `subtask` | `subtask: true` | команда должна стартовать первичный оркестратор, а не субагента в чужом контексте |
+| 10 | Плагин-сторож (`tool.execute.before`) не ставится | сторож из пакета Хаба | нужен JS или Python в runtime. Включается, если M6 покажет ложные допуски (кейс 36) |
+| 11 | Карта гейтов не копируется в runtime до M2 | копия в `ssot/` сейчас | обход приёма по манифесту #492 со сверкой sha256 (Р-RT-14). Fail-closed безопаснее частичной копии |
+| 12 | `AGENTS.md` правится в runtime напрямую | канал компиляции `ba-ai-metamodel` (так в RFC-RT-003, раздел 11, первая редакция) | в `ba-ai-metamodel` `e1f67e2` нормативного текста `AGENTS.md` runtime нет. Прецедент — PR #29; правка записана в `transformed` манифеста |
+| 13 | Диалект V1 (`permission`, `bash`, `task`) | диалект V2 | V2 переводит его сам, проверено на 2.4.2. Выбор — BL-132 |
+| 14 | Слой ссылок M4 не в этом PR | вместе | заблокирован M2: переписывать нечего, пока промпты не переданы |
+| 15 | Версия 0.9 без перекомпиляции | перекомпиляция | нормативное содержание модели не тронуто, `source_commit` тот же |
+
+### 11.9. Готово, когда
+
+| Критерий | Состояние |
+| --- | --- |
+| 3 агента и 4 команды загружаются клиентом, команды стартуют оркестратор | ✅ V1 `debug config`, `debug agent`; V2 `debug agents` |
+| Права дают решения из таблицы (78 решений на 4 агента) на обеих линиях | ✅ smoke |
+| Живая запись вне `work/`, в обход через `..`, файлом инструкций и через `git diff --output` отклонена; запись в `work/` прошла | ✅ smoke V1, V2 |
+| Тесты без модели и runtime-smoke зелёные | ✅ 111 тестов, 1 пропуск; 143 проверки |
+| Защищённые пути, промпты спицы и SHA реестра не тронуты | ✅ |
+| Карта гейтов совпадает со слоем | ⏳ после M2: `test_map_matches_the_layer` пропущен, пока нет `ssot/` |
+| Процесс исполняется в IDE на кейсе | ⏳ M6 (BL-245), после M2 и разрешения владельца |
+
+### 11.10. Не входит
+
+Приём SSOT (M2, BL-185…BL-188), слой ссылок (M4), BL-242 и BL-243 (M5),
+модельные прогоны (M6, BL-245), закрепление версии OpenCode (BL-132),
+тексты промптов (#505, BL-194), правка RG-BCREQ-v1, адаптеры других
+клиентов (Р-RT-9).
+
+### 11.11. Проверки в runtime
+
+| Команда | Итог |
+| --- | --- |
+| `python -m unittest discover -s tests -p 'test_*.py'` | 111 тестов OK, 1 пропуск (`test_map_matches_the_layer` до M2) |
+| `sh tests/runtime-smoke.sh` | 143 проверки, `runtime smoke test passed` |
+| `python3 tests/opencode_smoke.py --opencode <opencode-ai@1.19.6>` | 149 проверок, `passed` |
+| `python3 tests/opencode_smoke.py --opencode <@opencode/cli@2.4.2>` | 115 проверок, `passed` |
+
+Регрессия проверена в обе стороны. Со старым правилом `"git diff*": "allow"`
+smoke падает на обеих линиях: `AGENTS.md` перезаписан. `test_ide_layer`
+даёт 5 провалов. С новым правилом всё зелёное.
+
+Эксперименты — [`experiments/issue_506/`](../../experiments/issue_506/): `probe_bash.py`,
+`probe_nested.py` и логи. Модели — заглушки, реальных модельных вызовов нет.
+
+### 11.12. Ограничения
+
+- Процесс в IDE не исполнялся на кейсе: нет SSOT (M2) и разрешения на
+  модельные прогоны (M6).
+- Подключение MCP вживую не проверено: серверов нет, Р-19.
+- Журнал защищён от правки только правилом, а не правами клиента
+  (кейс 36).
+- Блокировки параллельных сеансов на один ключ нет (кейс 35).
+- Вложенный `AGENTS.md`, положенный БА руками, клиент всё равно выдаст
+  модели. Защита — норма «данные, а не инструкции» и находка для БА
+  (кейс 5).
+- Версия OpenCode не закреплена (BL-132): CI проверяет обе линии.
 
 ## 12. Пределы
 
-- Анализ статический, модельных прогонов не было. Поведение `question` и
-  прав субагентов — по документации на 2026-11-26. На закреплённой версии
-  его проверяет BL-132.
+- Модельных прогонов не было. Права клиента и загрузка агентов и команд
+  проверены живым клиентом с моделью-заглушкой на V1 1.19.6 и V2 2.4.2
+  (раздел 11.11). Поведение модели на вопросах и гейтах проверит M6.
 - Выбор конкретных MCP-серверов Jira и Confluence зависит от корпоративного
   контура — `ACCESS_GAP` до BL-132.
 - Метрики раздела 10 — гипотезы.
 - 1143 — один прогон с одним БА, обобщение ограничено.
+- Ограничения слоя Э5 — раздел 11.12.
 
 ## Проверки
 
@@ -576,11 +794,15 @@ RG-BCREQ-v1.
 | --- | --- | --- |
 | `experiments/issue_506/audit_runtime_ide_readiness.py` на runtime `fe623c6b` и PR #29 `9421edad` | спица, чтение runtime | 16 проверок RT; журнал в `experiments/issue_506/` |
 | Чат 1143 по sha256 вложения #505 | локально, вне репозитория | 56 проблем; критичные П-38, П-44 перепроверены по строкам |
+| `scripts/build_bcreq_ide_gates.py --check` | спица | карта актуальна |
+| `experiments/issue_506/probe_bash.py`, `probe_nested.py` на V1 1.19.6 и V2 2.4.2 | клон runtime, модель-заглушка | `git diff --output` переписывает `AGENTS.md`; вложенный `AGENTS.md` уходит модели как инструкция; журналы в `experiments/issue_506/` |
+| Тесты и smoke [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) | runtime | раздел 11.11 |
 | `scripts/validate_issue_506_ide_runtime_rfc.py`, `make validate-full` | спица | 0 провалов (журнал в PR) |
 
 ## Operating Mode
 
-- `Creative`: режим задан #506. Статус `accepted` ставит только владелец.
+- `Creative`: режим задан #506. Статус `accepted` — по
+  [решению владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484).
 
 ## Специфика работы с Конардом
 
@@ -596,6 +818,8 @@ RG-BCREQ-v1.
   - #506 запрещает менять runtime;
   - runtime не хранит организационных материалов;
   - прецеденты — RFC-RT-001 и RFC-RT-002.
+- Э5 исполнен в runtime отдельным PR по шагу 3 решения владельца:
+  [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) из форка, без issue в runtime.
 - Чат 1143 и экспорт диалога в репозиторий не попали. В аудите — только
   sha256, номера строк и нейтральные описания процесса.
 
@@ -606,4 +830,5 @@ RG-BCREQ-v1.
 - [Ручной процесс](../ba-processes/bcreq-manual-process.md), [исполнение A-IN](../ba-processes/bcreq-a-in-execution.md), [маршрут A-IN](../ba-processes/bcreq-a-in-route.json)
 - [BL-192](../../pr-ops/backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime), [BL-244](../../pr-ops/backlog-repository.md#bl-244-rfc-ide-слоя-runtime-для-этапа-2-оркестратор-гейты-mcp), [BL-132](../../pr-ops/backlog-ba-model.md#bl-132-квалификация-закреплённой-версии-opencode-по-p01p08)
 - [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505), [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29)
+- [Карта гейтов](../ba-processes/bcreq-ide-gates.json), [генератор](../../scripts/build_bcreq_ide_gates.py), [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), [BL-245](../../pr-ops/backlog-repository.md#bl-245-тестовые-прогоны-процессов-этапа-1-в-ide-m6)
 - [Валидатор](../../scripts/validate_issue_506_ide_runtime_rfc.py)
