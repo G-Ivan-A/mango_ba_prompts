@@ -18,8 +18,17 @@ Runtime не меняется: клон читается только для п�
     RUNTIME_CLONE=/путь/к/клону python3 experiments/issue_492/build_ssot_manifest.py \
         > experiments/issue_492/build-ssot-manifest.log
 
-``SOURCE_COMMIT`` — merge PR #491 в main, база ветки issue #492. Смена коммита —
-это новая закреплённая передача: новый манифест, а не правка копии в runtime.
+``SOURCE_COMMIT`` — коммит-источник передачи. Смена коммита — это новая
+закреплённая передача: новый манифест, а не правка копии в runtime.
+
+Редакции манифеста:
+
+* 0.1 (issue #492) — ``7dea8f71`` (merge PR #491), 133 артефакта;
+* 0.2 (issue #506, приём M2) — ``40ef5edd`` (merge PR #514): та же выборка на
+  свежем коммите плюс карта гейтов IDE и ручной процесс этапа 1, которые
+  читает оркестратор runtime (RFC-RT-003); правило 5 политики уточнено по
+  Р-RT-7, вариант 7а; рядом пишется карта ссылок
+  ``docs/contracts/ssot-stage1-link-map.json``.
 """
 
 from __future__ import annotations
@@ -27,7 +36,9 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import posixpath
 import re
+import subprocess
 import sys
 from collections import Counter
 from pathlib import Path
@@ -35,12 +46,27 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from audit_runtime_deps import ROOT, git, registry_sha, runtime_clone  # noqa: E402
 
-SOURCE_COMMIT = os.environ.get("SOURCE_COMMIT", "7dea8f716d69e55c183865630d10f40cdb6e46b1")
+SOURCE_COMMIT = os.environ.get("SOURCE_COMMIT", "40ef5edd0938b9a5e961dec2e46e625b6c7a2576")
+SOURCE_LABEL = "merge PR #514"
+UPDATED = "2026-11-27"
+SUPERSEDES = {"version": "0.1", "issue": 492, "source_commit": "7dea8f716d69e55c183865630d10f40cdb6e46b1",
+              "source_label": "merge PR #491", "artifacts": 133,
+              "why": "Байты 0.1 устарели: после 7dea8f71 изменились 112 из 133 артефактов; в 0.1 нет карты "
+                     "гейтов IDE и ручного процесса, без которых оркестратор runtime отвечает ACCESS_GAP; "
+                     "правило 5 противоречило побайтной копии (Р-RT-7)."}
 HUB_REPO = "G-Ivan-A/mango_ba_prompts"
 RUNTIME_REPO = "G-Ivan-A/mango-ba-ai-runtime"
 OUT_JSON = ROOT / "docs/contracts/ssot-stage1-handoff-manifest.json"
 OUT_MD = ROOT / "docs/contracts/ssot-stage1-handoff-manifest.md"
-MANIFEST_VERSION = "0.1"
+OUT_LINKS = ROOT / "docs/contracts/ssot-stage1-link-map.json"
+MANIFEST_VERSION = "0.2"
+TARGET_DIR = "ssot/mango_ba_prompts/"
+IDE_GATES = "docs/ba-processes/bcreq-ide-gates.json"
+MANUAL_PROCESS = "docs/ba-processes/bcreq-manual-process.md"
+# Корни нормативных целей: ссылка на них из перенесённого файла — кандидат
+# следующей передачи; остальное (RFC, аудиты, бэклог, прогоны) — справка.
+NORMATIVE_ROOTS = ("prompts/", "standards/", "docs/ba-processes/", "docs/contracts/", "docs/taxonomy/")
+MD_LINK = re.compile(r"\]\(([^)\s]+)\)")
 ROUTE = "docs/ba-processes/bcreq-a-in-route.json"
 INSTRUCTIONS = "docs/ba-processes/bcreq-a-in-instructions.json"
 ARCHIVE_MANIFEST = "prompts/archive/a-in-v2.7.0/manifest.json"
@@ -94,11 +120,13 @@ GROUPS = [
                      "standards/product-classification-contract.md"}),
     ("gates-and-cs", "Контракт гейтов и поток CS (ФТ-2, класс б)", "BL-188",
      lambda p: p in {"docs/contracts/bcreq-stage-gates.md", "docs/ba-processes/cs-flow-stub.md"}),
+    # 0.2 (#506): источники оркестратора runtime (RFC-RT-003, разделы 5 и 11).
+    ("ide-gates", "Карта гейтов IDE и ручной процесс этапа 1 (RFC-RT-003, M2)", "BL-188",
+     lambda p: p in {IDE_GATES, MANUAL_PROCESS}),
 ]
 
 
 def show(path: str) -> bytes:
-    import subprocess
     return subprocess.run(["git", "show", f"{SOURCE_COMMIT}:{path}"], cwd=ROOT,
                           check=True, capture_output=True).stdout
 
@@ -166,7 +194,95 @@ def chain_status(path: str, group: str, modes: dict, replaced: dict) -> tuple[st
         return "действует", "Стадийный one-shot библиотеки (A-CORE или A-WORK); в таблице комплекта — альтернатива шагам"
     if group == "drafts":
         return "черновик", "Черновик «по тесту» вне таблицы комплекта"
+    if path == IDE_GATES:
+        return "действует", ("Карта шагов, типов остановок и гейтов для оркестратора runtime (RFC-RT-003, "
+                             "раздел 5); генерируется `scripts/build_bcreq_ide_gates.py`")
+    if path == MANUAL_PROCESS:
+        return "действует", "Гейты, переходы и возвраты процессов этапа 1: источник карты гейтов"
     return "действует", "Норма исполнения шагов этапа 1"
+
+
+def build_link_map(artifacts: list[dict], tracked: list[str]) -> dict:
+    """Карта ссылок (Р-RT-7, 7а): куда ведёт каждая относительная ссылка копии.
+
+    Метод совпадает с ``intake_check`` в ``tests/agent_context_audit.py``
+    runtime: ссылки ``](цель)`` в ``.md``, путь разрешается от каталога файла
+    (``posixpath.normpath``), якорь отбрасывается. Классы: ``inside`` — цель в
+    передаче, ``outside`` — цель есть в спице на ``source_commit``, но не
+    передаётся (permalink), ``broken`` — цели нет на ``source_commit``,
+    ``outside-repo`` — путь выходит за корень спицы.
+    """
+    from urllib.parse import unquote
+
+    paths = {a["path"] for a in artifacts}
+    tree = set(tracked)
+    dirs = {"/".join(t.split("/")[:i]) for t in tree for i in range(1, t.count("/") + 1)}
+    base = f"https://github.com/{HUB_REPO}"
+    counts, records, absolute_hub = Counter(), [], 0
+    for path in sorted(paths):
+        if not path.endswith(".md"):
+            continue
+        for number, line in enumerate(show(path).decode("utf-8").splitlines(), 1):
+            for raw in MD_LINK.findall(line):
+                if re.match(r"^[a-z]+:", raw) or raw.startswith("#"):
+                    counts["absolute/anchor"] += 1
+                    absolute_hub += raw.startswith(base + "/")
+                    continue
+                ref, _, fragment = raw.partition("#")
+                target = posixpath.normpath(posixpath.join(posixpath.dirname(path), unquote(ref)))
+                if target in paths or any(q.startswith(target + "/") for q in paths):
+                    counts["inside"] += 1  # файл или каталог, который появится в копии
+                    continue
+                if target.startswith("../") or target == "..":
+                    cls, kind = "outside-repo", None
+                elif target in tree:
+                    cls, kind = "outside", "blob"
+                elif target in dirs:
+                    cls, kind = "outside", "tree"
+                else:
+                    cls, kind = "broken", None
+                counts[cls] += 1
+                permalink = f"{base}/{kind}/{SOURCE_COMMIT}/{target}" if kind else None
+                records.append({"from": path, "line": number, "raw": raw, "target": target, "class": cls,
+                                "permalink": permalink + (f"#{fragment}" if fragment and permalink else "")
+                                if permalink else None})
+    targets = {}
+    for r in records:
+        t = targets.setdefault(r["target"], {
+            "target": r["target"], "class": r["class"],
+            "kind": "tree" if r["permalink"] and "/tree/" in r["permalink"] else ("blob" if r["permalink"] else None),
+            "permalink": r["permalink"].split("#")[0] if r["permalink"] else None,
+            "normative": r["target"].startswith(NORMATIVE_ROOTS), "occurrences": 0, "from": set()})
+        t["occurrences"] += 1
+        t["from"].add(r["from"])
+    for t in targets.values():
+        t["from"] = sorted(t["from"])
+        t["next_transfer_candidate"] = t["class"] == "outside" and t["normative"]
+    target_list = sorted(targets.values(), key=lambda t: (t["class"], not t["normative"], t["target"]))
+    by_class = Counter(t["class"] for t in target_list)
+    return {
+        "link_map": "ssot-stage1-link-map", "version": MANIFEST_VERSION, "issue": 506,
+        "manifest": "docs/contracts/ssot-stage1-handoff-manifest.json",
+        "source_repository": HUB_REPO, "source_commit": SOURCE_COMMIT, "target_dir": TARGET_DIR,
+        "decision": "Р-RT-7, вариант 7а: байты не меняются, ссылка вне передачи разрешается по этой карте",
+        "method": "`](цель)` в .md артефактах манифеста; схема `x:` и `#якорь` — абсолютные; путь от каталога "
+                  "файла через posixpath.normpath, якорь отброшен, %-кодирование снято; как intake_check "
+                  "в tests/agent_context_audit.py runtime",
+        "normative_roots": list(NORMATIVE_ROOTS),
+        "how_to_resolve": "inside — открыть target_dir + target; outside — permalink (нужен доступ к спице, "
+                          "иначе ACCESS_GAP); next_transfer_candidate — нормативная цель, кандидат передачи №2; "
+                          "broken — дефект источника, не восстанавливать по памяти",
+        "summary": {
+            "files_scanned": sum(1 for p in paths if p.endswith(".md")),
+            "links": dict(sorted(counts.items())),
+            "absolute_links_to_hub": absolute_hub,
+            "files_with_outside_links": len({r["from"] for r in records if r["class"] == "outside"}),
+            "targets": dict(sorted(by_class.items())),
+            "next_transfer_candidates": sum(t["next_transfer_candidate"] for t in target_list),
+        },
+        "targets": target_list,
+        "links": records,
+    }
 
 
 def main() -> int:
@@ -276,9 +392,12 @@ def main() -> int:
             "Обновление — только новой закреплённой передачей: новый манифест с новым "
             "`source_commit`, новыми sha256 и записью в журнале передач runtime.",
             "Проверка копии — равенство sha256 файла в runtime значению манифеста; несовпадение — дефект передачи.",
-            "Ссылки внутри перенесённых файлов переписываются на путь в runtime, если цель тоже "
-            "перенесена, иначе на permalink спицы с закреплённым SHA (как `scripts/sync_from_hub.py`).",
-            "Тексты промптов в спице до принятия манифеста не меняются; замена ссылок (б) — отдельная задача BL-190.",
+            "Байты ссылок не переписываются (Р-RT-7, вариант 7а). Копия лежит в `ssot/mango_ba_prompts/` "
+            "с путями источника, поэтому относительная ссылка на перенесённую цель работает без правки. "
+            "Цель вне передачи разрешается по карте ссылок `docs/contracts/ssot-stage1-link-map.json` на "
+            "permalink спицы на `source_commit`; агент без доступа к спице отвечает `ACCESS_GAP`, а не "
+            "восстанавливает цель по памяти. Нормативные цели вне передачи — кандидаты следующей передачи.",
+            "Тексты промптов в спице ради передачи не меняются; замена ссылок (б) в спице — отдельная задача BL-190.",
         ],
         "precedents": [
             {"where": HUB_REPO, "what": "ADR-0004 и scripts/sync_from_hub.py: рабочие копии Хаба на "
@@ -288,7 +407,11 @@ def main() -> int:
              "на 8cbf82aa73129ec5747af07f790aaf438b0fb6e9, каталог продуктов — на "
              "e3597fd74da9c4f631ca46697c643462e2cf0b85; `hub_access_required_at_runtime: false`."},
         ],
-        "runtime_task": "Приём манифеста — RFC-задача в runtime; issue в runtime создаёт владелец (раздел 6 реестра справочников).",
+        "runtime_task": "Приём манифеста — задача runtime M2 (BL-185…BL-188), выставлена по поручению владельца "
+                        "в PR #514; раздел 12 RFC-RT-003.",
+        "decision_7a": "Р-RT-7 → 7а (RFC-RT-002, раздел 9): правило 5 редакции 0.1 требовало переписывать "
+                       "ссылки, а правила 1, 2 и 4 — побайтную копию со сверкой sha256; оба требования вместе "
+                       "невыполнимы. 7а сохраняет сверку sha256 и требование ФТ-3 #492 о нормативных ссылках.",
     }
 
     groups = []
@@ -301,15 +424,28 @@ def main() -> int:
 
     deps = json.loads((ROOT / "experiments/issue_492/runtime-deps.json").read_text(encoding="utf-8"))
     links = json.loads((ROOT / "experiments/issue_492/prompt-links.json").read_text(encoding="utf-8"))
+    link_map = build_link_map(artifacts, tracked)
     manifest = {
-        "manifest": "ssot-stage1-handoff", "version": MANIFEST_VERSION, "issue": 492,
-        "status": "draft: ждёт принятия владельцем и RFC-задачи в runtime",
-        "source_repository": HUB_REPO, "source_commit": SOURCE_COMMIT,
+        "manifest": "ssot-stage1-handoff", "version": MANIFEST_VERSION, "issue": 492, "revision_issue": 506,
+        "status": "ready: передача №1 выставлена в runtime (M2)",
+        "updated": UPDATED,
+        "supersedes": SUPERSEDES,
+        "source_repository": HUB_REPO, "source_commit": SOURCE_COMMIT, "source_label": SOURCE_LABEL,
         "target_repository": RUNTIME_REPO, "runtime_registry_sha": pinned,
         "runtime_main_observed": runtime_main, "hash": "sha256 байтов файла на source_commit",
         "excluded": "Клиентские данные и вложения не включаются: только пути, версии, хэши и "
                     "метаданные; пути runs/, kb/, inputs/, attachments/ запрещены.",
         "runtime_changed": False,
+        "transfer": {
+            "number": 1, "milestone": "M2 (RFC-RT-003, раздел 8)", "cards": ["BL-185", "BL-186", "BL-187", "BL-188"],
+            "target_dir": TARGET_DIR,
+            "layout": "путь артефакта в runtime = target_dir + путь в спице; в target_dir нет других файлов",
+            "journal": "ssot/TRANSFERS.md",
+            "manifest_copy": "ssot/mango_ba_prompts.manifest.json",
+            "link_map": "docs/contracts/ssot-stage1-link-map.json",
+            "link_map_copy": "ssot/mango_ba_prompts.link-map.json",
+            "statement": "docs/rfc/2026-11-runtime-ide-orchestrator.md, раздел 12",
+        },
         "summary": {
             "artifacts": len(artifacts), "contracts": len(contracts),
             "in_runtime": sum(a["in_runtime"] for a in artifacts),
@@ -333,9 +469,11 @@ def main() -> int:
     }
     OUT_JSON.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     OUT_MD.write_text(render(manifest), encoding="utf-8")
+    OUT_LINKS.write_text(json.dumps(link_map, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     print(f"source_commit={SOURCE_COMMIT} registry_sha={pinned} runtime_main={runtime_main}")
     print(json.dumps(manifest["summary"], ensure_ascii=False))
+    print("link map:", json.dumps(link_map["summary"], ensure_ascii=False))
     for group in groups:
         print(f"group {group['id']}: {group['count']} → {group['transfer_card']} {group['chain_status']}")
     for item in artifacts:
@@ -351,28 +489,33 @@ def render(m: dict) -> str:
     s = m["summary"]
     lines = [
         "---",
-        "status: draft",
+        f"status: {m['status'].split(':')[0]}",
         f"version: {m['version']}",
-        "updated: 2026-11-18",
+        f"updated: {m['updated']}",
         "temperature: 0.1",
         "owner: G-Ivan-A",
         "type: contract",
         "scope: ssot-stage1-handoff",
         "related_artifacts:",
         '  - "docs/contracts/ssot-stage1-handoff-manifest.json"',
+        '  - "docs/contracts/ssot-stage1-link-map.json"',
+        '  - "docs/rfc/2026-11-runtime-ide-orchestrator.md"',
         '  - "docs/audit/2026-11-18-runtime-dependencies-ssot-handoff.md"',
         '  - "standards/bcreq-runtime-references.md"',
         "related_issues:",
         '  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/492"',
+        '  - "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"',
         "---",
         "",
         "# Манифест передачи SSOT этапа 1 в mango-ba-ai-runtime (issue #492)",
         "",
         "Сгенерировано `experiments/issue_492/build_ssot_manifest.py` из "
         "[JSON-манифеста](ssot-stage1-handoff-manifest.json); не править вручную.",
-        "Статус: черновик, ждёт принятия владельцем и RFC-задачи в runtime. Runtime этой задачей не менялся.",
+        f"Редакция {m['version']}, статус: {m['status']}. Заменяет редакцию {m['supersedes']['version']} "
+        f"(`{m['supersedes']['source_commit'][:8]}`, {m['supersedes']['source_label']}): {m['supersedes']['why']} "
+        "Runtime этой задачей не менялся.",
         "",
-        f"- Источник: `{m['source_repository']}` на коммите `{m['source_commit']}` (merge PR #491).",
+        f"- Источник: `{m['source_repository']}` на коммите `{m['source_commit']}` ({m['source_label']}).",
         f"- Получатель: `{m['target_repository']}`; SHA реестра справочников `{m['runtime_registry_sha']}`, "
         f"наблюдавшийся main `{m['runtime_main_observed']}`.",
         f"- Хэш: {m['hash']}. {m['excluded']}",
@@ -401,7 +544,11 @@ def render(m: dict) -> str:
     lines += [f"{i}. {rule}" for i, rule in enumerate(m["sync_policy"]["rules"], 1)]
     lines += ["", "Прецеденты:", ""]
     lines += [f"- `{p['where']}`: {p['what']}" for p in m["sync_policy"]["precedents"]]
-    lines += ["", m["sync_policy"]["runtime_task"], "",
+    t = m["transfer"]
+    lines += ["", m["sync_policy"]["runtime_task"], "", m["sync_policy"]["decision_7a"], "",
+              f"Передача №{t['number']} ({t['milestone']}, {', '.join(t['cards'])}): каталог `{t['target_dir']}`, "
+              f"{t['layout']}. Журнал передач — `{t['journal']}`, копия манифеста — `{t['manifest_copy']}`, "
+              f"копия карты ссылок — `{t['link_map_copy']}`. Постановка — {t['statement']}.", "",
               "## 4. Маршрут A-IN: 24 контракта шагов", "",
               "| Шаг | Название | Операция | Дальше | Версия маршрута | Промпт | Версия | sha256 промпта | sha256 инструкции |",
               "| --- | --- | --- | --- | --- | --- | --- | --- | --- |"]
