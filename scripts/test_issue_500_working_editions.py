@@ -150,7 +150,7 @@ class WorkingEditionsTest(unittest.TestCase):
         source = (ROOT / ain_path).read_text(encoding="utf-8")
         key = "a-in-kit.json:AIN-01"
         self.assertEqual(protection.counts(source), base["projections"][key])
-        for marker in ("Проверки (receipt)", "ACCESS_GAP", "Итог шага", "КОНЕЦ AIN-01 0.4",
+        for marker in ("Проверки (receipt)", "ACCESS_GAP", "Итог шага", "КОНЕЦ AIN-01 0.5",
                        next(iter(protection.RULE.findall(source)))):
             with self.subTest(marker=marker):
                 candidate = deepcopy(base)

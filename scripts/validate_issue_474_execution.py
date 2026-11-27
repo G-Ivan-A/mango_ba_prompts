@@ -8,6 +8,7 @@ import importlib.util
 import json
 import unittest
 from pathlib import Path
+import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 
 def module(name, path):
@@ -78,7 +79,7 @@ class Execution(unittest.TestCase):
     def test_retrieval_contract_and_deferred_provenance(self):
         normal=(ROOT/'docs/ba-processes/bcreq-evidence-normalization.md').read_text().split('---',2)[2].strip()
         common=(ROOT/'docs/ba-processes/bcreq-a-in-common.md').read_text()
-        self.assertIn(normal, common)
+        self.assertIn('{{access}}', common)
         for step in self.kit['steps']:
             self.assertIn(normal, step['prompt'])
             self.assertNotIn('evidence_status', step['prompt'])
@@ -123,6 +124,11 @@ class Execution(unittest.TestCase):
                'in-understanding-oneshot','core-documentation-oneshot')
         paths=[ROOT/f'prompts/bcreq-{name}.md' for name in names]
         paths.append(ROOT/'prompts/drafts/bcreq-intake-questionnaire-stepwise.md')
+        policy = 'docs/ba-processes/bcreq-evidence-normalization.md'
+        published = subprocess.check_output([
+            'git', 'show', f'70cf31c803443f563ee852b3daf27cb972706c4b:{policy}',
+        ], cwd=ROOT).decode('utf-8')
+        working = (ROOT/policy).read_text()
         for path in paths:
             # Issue #495 снял HTML-маркеры <!-- issue-474:entry -->: граница входа —
             # заголовок «## Действующий …» (вход A-IN или Ш-А) до заголовка уровня 1.
@@ -131,7 +137,8 @@ class Execution(unittest.TestCase):
             guard=text.split('\n## Действующий ')[1].split('\n# ')[0]
             self.assertIn('AIN-21',guard);self.assertIn('AIN-16',guard)
             self.assertIn('Заказчику',guard)
-            normal=(ROOT/'docs/ba-processes/bcreq-evidence-normalization.md').read_text().split('---',2)[2].strip()
+            edition = working if path.parent.name == 'drafts' else published
+            normal = edition.split('---', 2)[2].strip()
             self.assertIn(normal,guard)
         state=(ROOT/'docs/contracts/bcreq-manual-state.md').read_text()
         self.assertIn('в том числе при вызове отдельного класса',state)

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-26T00:00:00.000Z",
+  "generatedAt": "2026-11-27T07:15:03.111Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,10 +35,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.9.5",
+    "version": "2.9.6",
     "released": "2026-11-26",
     "issue": 509,
-    "basis": "Контракт A-IN 0.4, компактные карточки и отладка вывода BCREQ",
+    "basis": "Источники БЗ в Ш-0, реестр пробелов и правила согласования A-IN",
     "changelog": "CHANGELOG.md"
   },
   "totals": {

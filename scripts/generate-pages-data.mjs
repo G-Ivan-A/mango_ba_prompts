@@ -115,10 +115,10 @@ const RELEASE_STAGE = { id: "bcreq-release", label: "Выпуск BCREQ", emoji:
 // ссылок на приватный репозиторий, HTML-комментариев и кейс-лексики; данные
 // сайта хранят пути от корня репо. Только патч серии 2.9.x (дополнение 2 к #495).
 const SITE_VERSION = {
-  version: "2.9.5",
+  version: "2.9.6",
   released: "2026-11-26",
   issue: 509,
-  basis: "Контракт A-IN 0.4, компактные карточки и отладка вывода BCREQ",
+  basis: "Источники БЗ в Ш-0, реестр пробелов и правила согласования A-IN",
   changelog: "CHANGELOG.md",
 };
 
@@ -1566,7 +1566,10 @@ export async function makeTestKit(markdown, prompts, handoff = null) {
       steps: Object.fromEntries(
         Object.entries(handoff.steps)
           .filter(([id]) => id.startsWith("AIN-"))
-          .map(([id, item]) => [id, { goal: item.goal, checkKind: item.checkKind, check: item.check }]),
+          .map(([id, item]) => [id, {
+            goal: item.goal, checkKind: item.checkKind, check: item.check,
+            ...(item.acceptOnSilence ? { acceptOnSilence: true } : {}),
+          }]),
       ),
     },
     groups: groups.map((group) => ({

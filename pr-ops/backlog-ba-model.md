@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.8
-updated: 2026-11-19
+version: 2.9
+updated: 2026-11-26
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -635,14 +635,17 @@ LG-5 ADR-014 Хаба, без блокировки локальных право
 
 **Вход из BL-194 (#509).** Общие фрагменты SSOT:
 [`bcreq-evidence-normalization.md`](../docs/ba-processes/bcreq-evidence-normalization.md)
-(«Доступ и пробелы»; политика ждёт Р-ОТЛ-1/2) и
+(«Доступ и пробелы»; Р-ОТЛ-1/2) и
 [`bcreq-ba-output.md`](../docs/ba-processes/bcreq-ba-output.md)
 («Правила вывода для БА»). Реестр решений и гейты —
 [`bcreq-decision-context.md`](../docs/ba-processes/bcreq-decision-context.md).
 Кейсы RG-01…RG-10 — [`regressions.json`](../experiments/issue_509/regressions.json):
-принципы без цитат клиента; pending-кейсы не считать пройденными.
+принципы без цитат клиента. Проверка моделей следует после деплоя.
 Контракт грузится клиентом в AGENTS.md/skill, доступ объявляется конфигурацией,
-реестры решений и пробелов хранятся в состоянии задачи. Триггер BL-131 не меняется.
+реестры решений и пробелов хранятся в состоянии задачи. Перед шагом
+оркестратор предзагружает разрешённые файлы по плану, повторно использует
+прочитанные фрагменты той же версии из кэша сессии и передаёт их происхождение
+в receipt. Триггер BL-131 не меняется.
 
 **Зависит от.** BL-113, BL-121.
 
@@ -2601,11 +2604,13 @@ US, ОРР. Задача РТ-2 в разделе 6 реестра есть, з�
 
 ### BL-191. RFC универсального агентного контекста runtime
 
-**Статус.** `review`: [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
-[PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) и [PR #494](https://github.com/G-Ivan-A/mango_ba_prompts/pull/494)
-с [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md). Анализ и
-RFC `proposed`: структура runtime, тексты промптов и навыков, SHA реестра не
-менялись. Проверки: `validate_issue_rt25_agent_context.py`, `make validate-full`;
+**Статус.** `DONE`: [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) (`16c11e55`) и
+[PR #494](https://github.com/G-Ivan-A/mango_ba_prompts/pull/494) (`e051e0fa`) слиты 19.11;
+[решение владельца](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26#issuecomment-7020333876) — Р-RT-2…Р-RT-4 и Р-RT-6, по Р-RT-7 выбор не
+сделан; RFC-RT-002 остаётся `proposed` до записи решений в разделе 9.
+Производство — BL-192. Ранее — `review`: [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25),
+PR runtime #26 и PR #494 с [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md).
+Проверки: `validate_issue_rt25_agent_context.py`, `make validate-full`;
 в runtime — `tests/runtime-smoke.sh` и unittest.
 
 **Почему.** Этап 2 читает контекст из runtime клиентом OpenCode. Отдельные
@@ -2635,6 +2640,17 @@ runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 —
 
 ### BL-192. Производство универсального агентного контекста runtime
 
+**Статус.** `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
+[PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) слит 26.11 (`bee5f9ba`). Э1 — зеркало `.agents/skills/<имя>/SKILL.md`
+(`tests/build_skills_mirror.py`, сверка sha256 в `tests/test_skills_mirror.py`
+и `tests/runtime-smoke.sh`); Э2 — `AGENTS.md` 0.8 (`ACCESS_GAP` в правиле 10,
+раздел «Поиск в базе знаний» по `docs/kb/USAGE.md`), манифест компиляции 0.8,
+README 0.8; Э4 — `tests/opencode_smoke.py` в CI на OpenCode V1 1.19.6 и
+V2 2.4.2. Защищённые каталоги и SHA реестра не менялись. Нормативного текста
+`AGENTS.md` в `ba-ai-metamodel` нет, правка записана в `transformed`
+манифеста по прецеденту ХАБ-1 и B-248. Ранее — `deferred (triggered)` → `review`.
+Проверки: `validate_issue_rt27_agent_context_production.py`.
+
 **Почему.** RFC-RT-002 описывает раскладку, но по разделу 5 runtime #25 не
 производит её: зеркало навыков, поправку smoke и правку `AGENTS.md` делает
 отдельная задача после решений владельца.
@@ -2655,12 +2671,12 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 
 **Зависит от.** BL-191; Р-RT-2, Р-RT-3, Р-RT-4.
 
-**Решение владельца.** Р-RT-2…Р-RT-4; issue в runtime и в `ba-ai-metamodel`
-создаёт владелец.
+**Решение владельца.** Р-RT-2…Р-RT-4 приняты
+([комментарий](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26#issuecomment-7020333876)); задача — [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27).
 
 **Готово, когда.** Зеркало проходит сверку sha256 со `skills/`; smoke runtime
-и валидаторы спицы на SHA реестра — 0 провалов; OpenCode закреплённой версии
-загружает `AGENTS.md` и показывает 11 навыков.
+и валидаторы спицы на SHA реестра — 0 провалов; OpenCode V1 и V2
+загружают `AGENTS.md` и показывают 11 навыков. Закрепление версии — BL-132.
 
 ### BL-193. Прогон 1143: проблемы промптов и RFC отладки
 
@@ -2700,9 +2716,10 @@ UC, но модель на каждом шаге отрицала веб-инс�
 ### BL-194. Отладка и оптимизация промптов BCREQ по RFC-BCREQ-PROMPT-DEBUG-001
 
 **Статус.** `review`: [PR #511](https://github.com/G-Ivan-A/mango_ba_prompts/pull/511), [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509).
-Незаблокированные правки подготовлены: черновики 0.4, сайт 2.9.5.
-Правки 2.1–2.3 и 2.11, поле БЗ и новая сводка BLOCKED **не выполнены**:
-ждут Р-ОТЛ-1, Р-ОТЛ-2, Р-ОТЛ-5. Полная карточка по умолчанию до прогона БА.
+PR #511 подготовил черновики 0.4 и сайт 2.9.5. Follow-up #510 применяет
+[Р-ОТЛ-1/2/5](https://github.com/G-Ivan-A/mango_ba_prompts/pull/510#issuecomment-7211969383):
+правки 2.1–2.3 и 2.11, поле БЗ и условия BLOCKED в черновиках 0.5 / сайте 2.9.6.
+Полная карточка по умолчанию до прогона БА.
 
 **Почему.** Проблемы ПР-01…ПР-16 прогона 1143 вызваны текстом промптов:
 общим контрактом AIN, ИШ-6 «Итога шага», формами AIN-03/04/22 и Ш-3. Без
