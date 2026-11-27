@@ -150,9 +150,10 @@ HTOM-команды.
 ### Веб-ресурс (app) после приватизации
 
 Веб-каталог проекта сегодня публикуется через GitHub Pages: сборка данных
-`node scripts/generate-pages-data.mjs` → статика в `site/` → деплой
-[`.github/workflows/github-pages.yml`](../.github/workflows/github-pages.yml) в
-ветку `gh-pages`. **GitHub Pages не работает для приватных репозиториев на
+`node scripts/generate-pages-data.mjs` → статика в `site/` → проверка и пакет
+в [`.github/workflows/github-pages.yml`](../.github/workflows/github-pages.yml).
+Принятый пакет [публикуется вручную](../docs/site-access.md#ручной-деплой)
+в ветку `gh-pages`. **GitHub Pages не работает для приватных репозиториев на
 бесплатном плане**, поэтому перевод в Private выключает текущий канал
 публикации веб-ресурса. Это фиксируется как блокер Q1 наравне со сменой
 видимости.

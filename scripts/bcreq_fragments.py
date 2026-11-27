@@ -7,7 +7,8 @@ from prompt_purity import project
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs/ba-processes"
-VERSION = "0.4"
+VERSION = "0.5"
+DATE = "2026-11-27"
 
 
 def body(name):
@@ -19,7 +20,6 @@ def response_order():
 
 
 def access():
-    # The access policy is unchanged until Р-ОТЛ-1/2; reuse the #474 SSOT.
     return "## Доступ и пробелы\n\n" + body("bcreq-evidence-normalization.md")
 
 
@@ -48,10 +48,7 @@ def lessons(sid=None):
 
 def common():
     source = body("bcreq-a-in-common.md")
-    normal = body("bcreq-evidence-normalization.md")
-    if source.count(normal) != 1:
-        raise ValueError("A-IN common and evidence normalization SSOT differ")
-    return project(source.replace(normal, access())
+    return project(source.replace("{{access}}", access())
                    .replace("{{ba_output}}", output())
                    .replace("{{general_lessons}}", lessons())
                    .replace("{{decision_context}}", decisions()))

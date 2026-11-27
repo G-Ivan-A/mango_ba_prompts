@@ -140,8 +140,11 @@ class BacklogTest(unittest.TestCase):
         self.assertIn("Миграция защищённых путей", chain)
 
     def test_statuses(self):
-        self.assertRegex(self.backlog, r"(?m)^\| BL-191 \| .*\| review \|")
-        self.assertRegex(self.backlog, r"(?m)^\| BL-192 \| .*\| deferred \(triggered\) \|")
+        # Статусы на момент runtime #25 и их движение вперёд по цепочке
+        # (runtime #27: BL-191 DONE, BL-192 review; проверка —
+        # validate_issue_rt27_agent_context_production.py).
+        self.assertRegex(self.backlog, r"(?m)^\| BL-191 \| .*\| (review|DONE) \|")
+        self.assertRegex(self.backlog, r"(?m)^\| BL-192 \| .*\| (deferred \(triggered\)|review|DONE) \|")
 
 
 class PromptsUnchangedTest(unittest.TestCase):

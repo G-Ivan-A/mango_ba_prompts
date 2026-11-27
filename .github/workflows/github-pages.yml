@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 concurrency:
   group: github-pages-${{ github.ref }}
@@ -73,22 +73,35 @@ jobs:
       - name: Validate issue #388 BCREQ site and password gate
         run: python3 scripts/validate_issue_388_bcreq_site.py
 
+      - name: Test BCREQ starter and card copying
+        run: node --test experiments/issue_509/site.test.cjs
+
       - name: Prepare artifact
         run: |
           mkdir -p pages-dist
-          rsync -a --delete site/ pages-dist/
+          cp -a site/. pages-dist/
           touch pages-dist/.nojekyll
+          tar -czf pages-dist.tar.gz -C pages-dist .
 
-      - name: Deploy to gh-pages
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Upload site package
+        uses: actions/upload-artifact@v7
+        with:
+          name: pages-dist
+          path: pages-dist.tar.gz
+          if-no-files-found: error
+          retention-days: 7
+          compression-level: 0
+
+  publication-source:
+    name: Check production Pages source
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    permissions:
+      contents: read
+      pages: read
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check configured gh-pages source
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          cd pages-dist
-          git init
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "deploy: update GitHub Pages"
-          git branch -M gh-pages
-          git push --force "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bash scripts/check-pages-source.sh

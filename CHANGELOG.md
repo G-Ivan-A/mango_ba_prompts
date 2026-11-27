@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.54
-updated: 2026-11-26
+version: 0.55
+updated: 2026-11-27
 temperature: 0.1
 ---
 
@@ -12,6 +12,16 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+- Issue #512 / PR #513. Аудит доступа и GitHub Actions, инструкция по
+  восстановлению Pages. CI собирает пакет сайта для ручной публикации
+  по BL-232 и проверяет источник Pages на `main`.
+
+- Issue #509 / PR #513 (BL-194, перенос из #510 после #511). Версия сайта 2.9.6 и контракт A-IN 0.5:
+  источники БЗ в Ш-0, строка «Источники» при чтении, кэш сессии и реестр
+  пробелов. Обычный пробел сохраняется в состоянии, блокирующий требует
+  решения по гейту. AIN-06/22 технические с обязательным «Итогом шага»,
+  AIN-18 запрашивает согласование один раз.
 
 - Issue #509 / PR #511 (BL-194). Версия сайта 2.9.5 (подготовка): черновики BCREQ 0.4, Контракт A-IN и полная/
   компактная формы из одного SSOT; реестр решений БА, явный допуск, роли
@@ -33,6 +43,19 @@ temperature: 0.1
 - Бэклог: BL-230 и BL-231 отмечены `DONE`; добавлены BL-193 `review` и
   BL-194 `TODO`. Промпты и сайт не менялись. Связность проверяет
   `scripts/validate_issue_505_prompt_debugging.py`.
+
+
+### Changed — runtime issue #27: BL-192, производство универсального агентного контекста runtime
+
+- Бэклог: BL-191 `review` → `DONE` (PR runtime #26 и #494 слиты, решение владельца по Р-RT-2…Р-RT-4
+  и Р-RT-6), BL-192 `deferred (triggered)` → `review` → `DONE` после слияния PR runtime #29 (`bee5f9ba`): зеркало
+  навыков `.agents/skills/<имя>/SKILL.md` со сверкой sha256, `AGENTS.md` 0.8 (`ACCESS_GAP`, поиск
+  в базе знаний по `docs/kb/USAGE.md`), smoke инициализации OpenCode V1 и V2 в CI. Э3 (приём SSOT,
+  BL-185…BL-188) ждёт выбора по Р-RT-7; BL-132 (закрепление версии OpenCode) не сдвинут.
+- `scripts/validate_issue_rt27_agent_context_production.py`: статусы и движение по цепочке, соседние
+  задачи и статус RFC-RT-002 без изменений, коммиты задачи не трогают `prompts/`; при
+  `RUNTIME_RT27_CLONE` — зеркало и маркеры `AGENTS.md` в клоне runtime.
+  `validate_issue_rt25_agent_context.py` принимает дальнейшее движение BL-191 и BL-192.
 
 ### Added — Issue #500: варианты дальше в «Процессах» (ФТ-4)
 
