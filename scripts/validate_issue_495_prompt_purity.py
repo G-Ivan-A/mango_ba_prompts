@@ -309,7 +309,7 @@ class OverCleaningTest(unittest.TestCase):
         for marker in ["[ТРЕБУЕТСЯ УТОЧНЕНИЕ]", "Итог шага", "АД-8", "ACCESS_GAP"]:
             with self.subTest(marker=marker):
                 self.assertIn(marker, texts[rel])
-                mutated = dict(texts, **{rel: texts[rel].replace(marker, "…", 1)})
+                mutated = dict(texts, **{rel: texts[rel].replace(marker, "…")})
                 self.assertTrue(any(d.startswith(rel) for d in self.drops(mutated)), marker)
         self.assertTrue(self.drops({k: v for k, v in texts.items() if k != rel}))
 

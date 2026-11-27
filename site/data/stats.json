@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-22T15:45:27.002Z",
+  "generatedAt": "2026-11-26T00:00:00.000Z",
   "sourceFiles": [
     {
       "path": "prompts/README.md",
@@ -35,10 +35,10 @@
     }
   ],
   "siteVersion": {
-    "version": "2.9.4",
-    "released": "2026-11-22",
-    "issue": 500,
-    "basis": "Продолжение и возврат по нормативному маршруту BCREQ v0.3",
+    "version": "2.9.5",
+    "released": "2026-11-26",
+    "issue": 509,
+    "basis": "Контракт A-IN 0.4, компактные карточки и отладка вывода BCREQ",
     "changelog": "CHANGELOG.md"
   },
   "totals": {

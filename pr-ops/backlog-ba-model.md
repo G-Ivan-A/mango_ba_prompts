@@ -633,6 +633,17 @@ LG-5 ADR-014 Хаба, без блокировки локальных право
 - [`docs/rfc/2026-10-repository-modernization.md`](../docs/rfc/2026-10-repository-modernization.md#dec-06-ssot-пакета-этапа-2-f-06),
   раздел «DEC-06»: “ADR-016 спицы переписывается в профиль применения пакета”
 
+**Вход из BL-194 (#509).** Общие фрагменты SSOT:
+[`bcreq-evidence-normalization.md`](../docs/ba-processes/bcreq-evidence-normalization.md)
+(«Доступ и пробелы»; политика ждёт Р-ОТЛ-1/2) и
+[`bcreq-ba-output.md`](../docs/ba-processes/bcreq-ba-output.md)
+(«Правила вывода для БА»). Реестр решений и гейты —
+[`bcreq-decision-context.md`](../docs/ba-processes/bcreq-decision-context.md).
+Кейсы RG-01…RG-10 — [`regressions.json`](../experiments/issue_509/regressions.json):
+принципы без цитат клиента; pending-кейсы не считать пройденными.
+Контракт грузится клиентом в AGENTS.md/skill, доступ объявляется конфигурацией,
+реестры решений и пробелов хранятся в состоянии задачи. Триггер BL-131 не меняется.
+
 **Зависит от.** BL-113, BL-121.
 
 **Решение владельца.** Р-01, Р-06.
@@ -2653,7 +2664,7 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 
 ### BL-193. Прогон 1143: проблемы промптов и RFC отладки
 
-**Статус.** `review`: [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505),
+**Статус.** `DONE`: [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505),
 [PR #507](https://github.com/G-Ivan-A/mango_ba_prompts/pull/507). RUN-0096, анализ
 и RFC `proposed`; промпты, сборщики и сайт не менялись. Расшифровка чата в
 репозиторий не входит: sha256, счётчики и номера строк. Проверки:
@@ -2688,8 +2699,10 @@ UC, но модель на каждом шаге отрицала веб-инс�
 
 ### BL-194. Отладка и оптимизация промптов BCREQ по RFC-BCREQ-PROMPT-DEBUG-001
 
-**Статус.** `TODO`: [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509).
-Правки 2.1–2.3 и 2.11 ждут Р-ОТЛ-1, Р-ОТЛ-2, Р-ОТЛ-5.
+**Статус.** `review`: [PR #511](https://github.com/G-Ivan-A/mango_ba_prompts/pull/511), [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509).
+Незаблокированные правки подготовлены: черновики 0.4, сайт 2.9.5.
+Правки 2.1–2.3 и 2.11, поле БЗ и новая сводка BLOCKED **не выполнены**:
+ждут Р-ОТЛ-1, Р-ОТЛ-2, Р-ОТЛ-5. Полная карточка по умолчанию до прогона БА.
 
 **Почему.** Проблемы ПР-01…ПР-16 прогона 1143 вызваны текстом промптов:
 общим контрактом AIN, ИШ-6 «Итога шага», формами AIN-03/04/22 и Ш-3. Без
