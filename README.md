@@ -161,7 +161,7 @@ self-test evidence живёт в [`runs/`](runs/).
 | `pr-ops/BACKLOG.md` | Операционный бэклог и единый трекер открытых вопросов проекта. |
 | `pr-ops/session-digests.md` | Индекс суммарий длинных сессий для передачи контекста между чатами. |
 | `.gitignore` | Игнорируемые артефакты редакторов и ОС. |
-| `.github/workflows/github-pages.yml` | Генерация данных и публикация статического интерфейса в `gh-pages`. |
+| `.github/workflows/github-pages.yml` | Сборка и проверка пакета сайта для [ручной публикации](docs/site-access.md#ручной-деплой). |
 | `scripts/` | Локальные генераторы, включая сборку JSON для GitHub Pages. |
 | `tools/` | Рабочие копии валидаторов Хаба (`make validate`): frontmatter, именование файлов и базовая структура репозитория. Дельты — [`tools/README.md`](tools/README.md). |
 | `.archive/` | Скрытый архив `superseded`-артефактов: сохраняются ради traceability, точками входа не являются ([`.archive/README.md`](.archive/README.md)). |
