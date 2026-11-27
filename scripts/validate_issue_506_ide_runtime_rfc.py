@@ -18,8 +18,9 @@ LLM, без сети и без клона runtime:
 * карта гейтов ``bcreq-ide-gates.json``: генератор ``--check`` не находит
   расхождений, 14 технических шагов, 5 гейтов, 4 процесса, поля журнала;
 * реестр RFC: строка RFC-RT-003 ``accepted`` и записи журнала;
-* бэклог: BL-244 ``DONE``, BL-192 ``review`` (Э5, PR runtime #30), новая
-  BL-245 (M6), цепочка #506: предыдущий, текущий и следующий шаг;
+* бэклог: BL-244 ``DONE``, BL-192 ``DONE`` (Э5, PR runtime #30 слит 27.11;
+  ранее ``review``), новая BL-245 (M6), цепочка #506: предыдущий, текущий
+  и следующий шаг;
 * клиентские данные не коммитятся: в документах задачи нет длинных цитат
   из чата и e-mail, только sha256 и указатель;
 * тексты промптов, SHA реестра runtime и сайт не менялись: коммиты задачи
@@ -401,11 +402,11 @@ class BacklogTest(unittest.TestCase):
         self.assertIn("**Статус.** `DONE`", card)
         self.assertIn(OWNER_DECISION, card)
 
-    def test_bl192_e5_review(self):
-        """Р-RT-19: Э5 расширяет BL-192, новой задачи нет."""
-        self.assertRegex(self.backlog, rf"(?m)^\| BL-192 \| .*\| review \|.*{re.escape(RUNTIME_PR)}")
+    def test_bl192_e5_done(self):
+        """Р-RT-19: Э5 расширяет BL-192, новой задачи нет; PR runtime #30 слит 27.11."""
+        self.assertRegex(self.backlog, rf"(?m)^\| BL-192 \| .*\| DONE \|.*{re.escape(RUNTIME_PR)}")
         card = self.model.split("### BL-192.", 1)[1].split("\n### ", 1)[0]
-        for needle in ("**Статус.** `review`", "ADR-020", "Э5", RUNTIME_PR, OWNER_DECISION):
+        for needle in ("**Статус.** `DONE`", "4bd5597", "ADR-020", "Э5", RUNTIME_PR, OWNER_DECISION):
             with self.subTest(needle=needle):
                 self.assertIn(needle, card)
 

@@ -1,14 +1,14 @@
 ---
 status: accepted
-version: 0.2
+version: 0.3
 updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518, https://github.com/G-Ivan-A/mango_ba_prompts/pull/515, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE"
 rfc-scope: multi
 type: rfc
-related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/ba-processes/bcreq-ide-gates.json, scripts/build_bcreq_ide_gates.py, docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md, experiments/issue_506/audit_runtime_ide_readiness.py, experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md, docs/rfc/2026-11-runtime-universal-agent-context.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/ba-processes/bcreq-manual-process.md, docs/ba-processes/bcreq-a-in-execution.md, docs/ba-processes/bcreq-a-in-route.json, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md, pr-ops/BACKLOG.md, scripts/validate_issue_506_ide_runtime_rfc.py"
+related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/ba-processes/bcreq-ide-gates.json, scripts/build_bcreq_ide_gates.py, docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md, experiments/issue_506/audit_runtime_ide_readiness.py, experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md, docs/rfc/2026-11-runtime-universal-agent-context.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/ba-processes/bcreq-manual-process.md, docs/ba-processes/bcreq-a-in-execution.md, docs/ba-processes/bcreq-a-in-route.json, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md, pr-ops/BACKLOG.md, scripts/validate_issue_506_ide_runtime_rfc.py, docs/contracts/ssot-stage1-handoff-manifest.json, docs/contracts/ssot-stage1-handoff-manifest.md, docs/contracts/ssot-stage1-link-map.json, experiments/issue_506/m2_transfer_dry_run.py, experiments/issue_506/m2-transfer-dry-run.log, scripts/validate_issue_506_m2_transfer.py"
 ---
 
 # RFC-RT-003: IDE-слой runtime для этапа 2 — оркестратор, гейты, MCP
@@ -25,6 +25,13 @@ related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/
 >   [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30).
 > - PR #508 закрыт без слияния из-за инцидента в репозитории. Его
 >   содержание перенесено в [PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514).
+>
+> **v0.3, 27.11 — M2.** Блокер «BL-185…BL-188: приём SSOT этапа 1» после
+> слияния PR #514 и PR runtime #30 **не снят**: в runtime нет `ssot/`. Сторона
+> спицы закрыта [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515): манифест 0.2, карта ссылок, Р-RT-7 = 7а,
+> пробная передача. Постановка для runtime — раздел 12, задача —
+> [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE). Первое предусловие — решение владельца о
+> публикации Р-RT-22.
 
 Задача — [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506).
 Это анализ и RFC. Спица не меняет runtime, тексты промптов и SHA реестра.
@@ -101,6 +108,7 @@ IDE-среда. Не хватает пяти вещей:
 | ФТ-5. Всё в спице, runtime не трогать, задачу описать | раздел 11, «Обоснованные обходы» |
 | Решение владельца, шаг 3: постановка BL-192 Э5 в runtime (SSOT, ФТ, НФТ, граничные кейсы, решения) и PR в runtime | раздел 11; [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) |
 | Решение владельца: задача тестовых прогонов M6 | BL-245, раздел 10 |
+| [Комментарий владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518): снят ли блокер M2; выставить задачу в runtime; движение по бэклогу | раздел 12 (ответ, постановка, Р-RT-22); раздел 10.1 |
 
 Вне рамок:
 
@@ -493,7 +501,7 @@ BL-131 (Р-RT-8).
 | --- | --- | --- | --- | --- | --- |
 | **M0** | Решение владельца по ADR-020 и Р-RT-10…21 | спица | этот PR | закрытие PR = отказ | — |
 | **M1** | Базовый слой: зеркало, `AGENTS.md` 0.8, `ACCESS_GAP`, smoke OpenCode | runtime, BL-192, PR #29 | Р-RT-2…4 | revert PR #29 | smoke runtime; 11 навыков в OpenCode |
-| **M2** | Приём SSOT этапа 1: маршрут A-IN, итог шага, гейты; карта раздела 5 в машинном виде | runtime `ssot/` ← спица, BL-185…BL-188 | M1; манифест #492 | удаление каталога `ssot/` | сверка sha256 с SHA спицы |
+| **M2** | Приём SSOT этапа 1: маршрут A-IN, итог шага, гейты; карта раздела 5 в машинном виде | runtime `ssot/` ← спица, BL-185…BL-188; постановка — раздел 12 | M1; манифест 0.2 (PR #515); Р-RT-22 | удаление каталога `ssot/` | сторож sha256 в CI runtime; `test_map_matches_the_layer` без пропуска |
 | **M3** | IDE-слой: `opencode.json`, `.opencode/agents`, `.opencode/commands`, раздел `AGENTS.md`, `work/` в `.gitignore`, поправка smoke | runtime, задача раздела 11 ([PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30)) | M2; BL-132 (диалект). Слой производится до M2 и до него отвечает `BLOCKED` (раздел 11.8, решение 11) | удалить `.opencode/` и `opencode.json`, вернуть раздел `AGENTS.md` прежней компиляцией | smoke; OpenCode видит 4 команды и 3 агента; сухой тест без модели: сторожа разрешений |
 | **M4** | Ссылки: сборка навыков переписывает 130 закреплённых URL runtime в относительные пути; цель `ba-ai-metamodel` (27 ссылок) передаётся в runtime | runtime, сборка; спица — без правки текстов (BL-190) | M2 | пересборка без слоя | 0 удалённых URL в собранных навыках |
 | **M5** | Закрепление SHA справочников И-11, И-12 и транспорт конституции | BL-242, BL-243 | M3 | по их карточкам | по их карточкам |
@@ -537,8 +545,41 @@ MCP; MCP 2025-06-18; human in the loop. Колонка «Если промолч
 
 ## 10. Движение по бэклогу
 
-Таблица ведётся в [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md), блок
-«Движение по цепочке (#506)».
+Таблицы ведутся в [`pr-ops/BACKLOG.md`](../../pr-ops/BACKLOG.md), блоки
+«Движение по цепочке (#506, M2)» (10.1) и «Движение по цепочке (#506)»
+(10.2).
+
+### 10.1. PR #515: M2 — постановка приёма SSOT (27.11)
+
+| Шаг | Задача | Статус | Полнота |
+| --- | --- | --- | --- |
+| Предыдущий | BL-244 (PR #514) и BL-192 Э5 «IDE-слой» ([PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), `4bd5597`) | BL-244 `DONE`; BL-192 `review` → `DONE` | полностью по разделу 11.9, кроме двух пунктов, которые по постановке ждут M2 и M6 |
+| Текущий, закрывается этим PR | BL-246: подготовка M2 в спице — манифест 0.2, карта ссылок, Р-RT-7 = 7а, постановка раздела 12, пробная передача | `review` → `DONE` слиянием [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515) | полностью для спицы; исполнение — в runtime |
+| Открывается этим PR | BL-185…BL-188: приём SSOT этапа 1 (M2) | `TODO`; задача — runtime #RTISSUE | стоп до решения Р-RT-22 |
+| Новая задача | BL-247: вторая передача SSOT этапа 1 (нормативные цели вне первой) | `deferred (triggered)` | триггер — `DONE` BL-185…BL-188 и `ACCESS_GAP` на цели из 14 кандидатов |
+
+- BL-190 (замена ссылок в текстах промптов) — `deferred (triggered)`,
+  статус не меняется. Его триггер — M2.
+- Слой ссылок M4 (Р-RT-17) карточки не имеет. Заводить её до M2 рано:
+  состав ссылок зависит от того, что примет runtime. Решение — после
+  `DONE` BL-185…BL-188, в следующем шаге цепочки.
+- BL-245 (M6) — `deferred (triggered)`, без изменений.
+
+**Следующие шаги.**
+
+1. Слить PR #515. Это предусловие П-1: манифест 0.2 становится SSOT на
+   `main`. Публикацией слияние не является.
+2. Владелец пишет в runtime #RTISSUE решение Р-RT-22. Рекомендация — А,
+   публикация 135 артефактов. Обоснование — раздел 12.4: проверка байтов
+   нашла 0 совпадений, а Б и В ломают Р-RT-6 и веб-канал этапа 1.
+3. Запустить исполнителя на runtime #RTISSUE и принять его PR. После
+   слияния BL-185…BL-188 → `DONE`, а `test_map_matches_the_layer`
+   проходит без пропуска.
+4. Решить по M4 и M5: карточка слоя ссылок и BL-242, BL-243. Затем BL-245
+   (M6) с разрешением на стоимость.
+5. BL-247 — когда сработает её триггер.
+
+### 10.2. PR #514: аудит, RFC-RT-003, Э5 (26–27.11)
 
 | Шаг | Задача | Статус | Полнота |
 | --- | --- | --- | --- |
@@ -557,7 +598,7 @@ MCP; MCP 2025-06-18; human in the loop. Колонка «Если промолч
   [#509](https://github.com/G-Ivan-A/mango_ba_prompts/issues/509). Слой
   Э5 текстов промптов не меняет.
 
-**Следующие шаги.**
+**Шаги PR #514.** Шаги 1 и 2 исполнены 27.11, шаг 3 — раздел 10.1.
 
 1. Слить PR #514. Это закрывает BL-244 и фиксирует карту гейтов в спице.
 2. Принять PR runtime #30 (BL-192 Э5 → `DONE`). Слой не меняет канал
@@ -616,7 +657,7 @@ M2 (решение 14).
 | --- | --- | --- |
 | M0: ADR-020, Р-RT-10…Р-RT-21 | приняты владельцем 26.11 | Э5 запущен |
 | M1: базовый контекст ([PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29)) | слит, `bee5f9b` | слой ставится поверх |
-| M2: приём SSOT этапа 1 (BL-185…BL-188, Р-RT-7) | не сделан | карты и текстов шагов в runtime нет. Оркестратор отвечает `ACCESS_GAP` и `BLOCKED` (fail-closed). Слой готов, процесс заработает после M2 без правки слоя |
+| M2: приём SSOT этапа 1 (BL-185…BL-188, Р-RT-7) | не сделан; спица готова (манифест 0.2, Р-RT-7 = 7а), постановка — раздел 12 | карты и текстов шагов в runtime нет. Оркестратор отвечает `ACCESS_GAP` и `BLOCKED` (fail-closed). Слой готов, процесс заработает после M2 без правки слоя |
 | BL-132: версия OpenCode | не закреплена | слой проверен на обеих линиях: V1 1.19.6 и V2 2.4.2 |
 | M4: слой ссылок (130 URL на runtime@68ad8fcf и 27 на ba-ai-metamodel в промптах спицы) | заблокирован M2 | до M4 удалённые ссылки дают `ACCESS_GAP`, потому что встроенный веб запрещён |
 | M5: BL-242, BL-243 | по их карточкам | не блокирует слой |
@@ -738,7 +779,7 @@ M2 (решение 14).
 | Живая запись вне `work/`, в обход через `..`, файлом инструкций и через `git diff --output` отклонена; запись в `work/` прошла | ✅ smoke V1, V2 |
 | Тесты без модели и runtime-smoke зелёные | ✅ 111 тестов, 1 пропуск; 143 проверки |
 | Защищённые пути, промпты спицы и SHA реестра не тронуты | ✅ |
-| Карта гейтов совпадает со слоем | ⏳ после M2: `test_map_matches_the_layer` пропущен, пока нет `ssot/` |
+| Карта гейтов совпадает со слоем | ⏳ после M2: `test_map_matches_the_layer` пропущен, пока нет `ssot/`. Пробная передача (раздел 12.10) — тест проходит без правки слоя |
 | Процесс исполняется в IDE на кейсе | ⏳ M6 (BL-245), после M2 и разрешения владельца |
 
 ### 11.10. Не входит
@@ -972,6 +1013,12 @@ runtime принято владельцем раньше, но публикац�
 - Метрики раздела 10 — гипотезы.
 - 1143 — один прогон с одним БА, обобщение ограничено.
 - Ограничения слоя Э5 — раздел 11.12.
+- M2 исполнен только пробно, в отсоединённом worktree, без публикации
+  (раздел 12.10). Решение о публикации Р-RT-22 — за владельцем.
+- Сканер шаблонов персональных данных и внутреннего контура ищет по
+  регулярным выражениям. Он не заменяет человеческого просмотра перед
+  публикацией. 0 совпадений не доказывает отсутствие чувствительных
+  сведений в формулировках.
 
 ## Проверки
 
@@ -983,6 +1030,9 @@ runtime принято владельцем раньше, но публикац�
 | `experiments/issue_506/probe_bash.py`, `probe_nested.py` на V1 1.19.6 и V2 2.4.2 | клон runtime, модель-заглушка | `git diff --output` переписывает `AGENTS.md`; вложенный `AGENTS.md` уходит модели как инструкция; журналы в `experiments/issue_506/` |
 | Тесты и smoke [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) | runtime | раздел 11.11 |
 | `scripts/validate_issue_506_ide_runtime_rfc.py`, `make validate-full` | спица | 0 провалов (журнал в PR) |
+| `experiments/issue_492/build_ssot_manifest.py --check` | спица | манифест 0.2 и карта ссылок актуальны для `40ef5edd` |
+| `experiments/issue_506/m2_transfer_dry_run.py` на runtime `4bd5597` | отсоединённый worktree клона runtime, без `push` | `ИТОГ: OK`, раздел 12.10; [журнал](../../experiments/issue_506/m2-transfer-dry-run.log) |
+| `scripts/validate_issue_506_m2_transfer.py` | спица | манифест, карта ссылок, журнал пробной передачи, раздел 12 и бэклог согласованы |
 
 ## Operating Mode
 
@@ -1005,6 +1055,10 @@ runtime принято владельцем раньше, но публикац�
   - прецеденты — RFC-RT-001 и RFC-RT-002.
 - Э5 исполнен в runtime отдельным PR по шагу 3 решения владельца:
   [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) из форка, без issue в runtime.
+- Задачу M2 в runtime (runtime #RTISSUE) создал исполнитель, а не владелец
+  (Р-RT-19 — «issue создаёт владелец»). Основание —
+  [комментарий владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518): «выставить для запуска
+  исполнения». В issue — только пути, счёт и sha256.
 - Чат 1143 и экспорт диалога в репозиторий не попали. В аудите — только
   sha256, номера строк и нейтральные описания процесса.
 
@@ -1016,4 +1070,5 @@ runtime принято владельцем раньше, но публикац�
 - [BL-192](../../pr-ops/backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime), [BL-244](../../pr-ops/backlog-repository.md#bl-244-rfc-ide-слоя-runtime-для-этапа-2-оркестратор-гейты-mcp), [BL-132](../../pr-ops/backlog-ba-model.md#bl-132-квалификация-закреплённой-версии-opencode-по-p01p08)
 - [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505), [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29)
 - [Карта гейтов](../ba-processes/bcreq-ide-gates.json), [генератор](../../scripts/build_bcreq_ide_gates.py), [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), [BL-245](../../pr-ops/backlog-repository.md#bl-245-тестовые-прогоны-процессов-этапа-1-в-ide-m6)
-- [Валидатор](../../scripts/validate_issue_506_ide_runtime_rfc.py)
+- [Валидатор](../../scripts/validate_issue_506_ide_runtime_rfc.py), [валидатор M2](../../scripts/validate_issue_506_m2_transfer.py)
+- M2: [манифест 0.2](../contracts/ssot-stage1-handoff-manifest.json) ([`.md`](../contracts/ssot-stage1-handoff-manifest.md)), [карта ссылок](../contracts/ssot-stage1-link-map.json), [пробная передача](../../experiments/issue_506/m2_transfer_dry_run.py) и [журнал](../../experiments/issue_506/m2-transfer-dry-run.log), [BL-246](../../pr-ops/backlog-repository.md#bl-246-подготовка-приёма-ssot-этапа-1-в-runtime-m2-манифест-02-карта-ссылок-постановка), [BL-247](../../pr-ops/backlog-repository.md#bl-247-вторая-передача-ssot-этапа-1-нормативные-цели-вне-первой-передачи), [BL-185](../../pr-ops/backlog-ba-model.md#bl-185-конституция-ш-0-и-промпты-набора-этапа-1-в-runtime), runtime #RTISSUE
