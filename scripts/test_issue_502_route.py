@@ -206,6 +206,54 @@ class RouteTests(unittest.TestCase):
                             self.go({**s, cause: True}, target, action=action, reason="контекст")
         self.assertEqual(self.go(s, "Ш-3")["current"], "Ш-3")
 
+    def test_open_gaps_only_block_the_gate_that_requires_the_fact(self):
+        for track, source, gate, outcome, owner, target, facts in (
+            ("decomposed", "AIN-21", "AIN-21", "allow", "БА", "AIN-22",
+             {"критерии-AIN-21", "отдельный-вызов"}),
+            ("decomposed", "AIN-24", "Г-IN", "дальше", "БА", "Ш-3", set()),
+            ("system", "Ш-2", "Г-IN", "дальше", "БА", "Ш-3", set()),
+            ("system", "Ш-5", "Г-С1", "согласование", "Заказчик", "Ш-6",
+             {"оценка-от", "покрытие-100%"}),
+        ):
+            with self.subTest(source=source):
+                s = state(track, source, source, "AIN-21", facts=facts)
+                if source == "AIN-24":
+                    record(s, "AIN-21", "AIN-21", "allow", "БА")
+                record(s, source, gate, outcome, owner)
+                gap = {"id": "П-1", "status": "open"}
+                s["access_gaps"] = [gap]
+                self.assertEqual(self.go(s, target)["access_gaps"], [gap])
+                gap["required_for_gate"] = gate
+                with self.assertRaisesRegex(ValueError, "BLOCKED.*обязательный факт"):
+                    self.go(s, target)
+                if target == "Ш-3":
+                    with self.assertRaisesRegex(ValueError, "BLOCKED.*обязательный факт"):
+                        manual.check_sh3_input(self.route, s)
+                gap["status"] = "closed"
+                self.assertEqual(self.go(s, target)["current"], target)
+
+    def test_hybrid_acceptance_keeps_review_and_execution_separate(self):
+        for source, target in (("AIN-06", "AIN-07"), ("AIN-22", "AIN-23")):
+            with self.subTest(source=source):
+                s = state("decomposed", source, source)
+                s["accepted"].clear()
+                with self.assertRaisesRegex(ValueError, "следующий промпт"):
+                    self.go(s, target)
+                s["facts"].add("ввод-промпта")
+                self.assertEqual(self.go(s, target)["accepted"][source], "r1")
+                self.assertEqual(s["accepted"], {})
+                s["rejected"] = {source: "r1"}
+                with self.assertRaisesRegex(ValueError, "БА возразил"):
+                    self.go(s, target)
+                s["results"][source] = "r2"
+                self.assertEqual(self.go(s, target)["accepted"][source], "r2")
+        s = state("decomposed", "AIN-18", "AIN-18", facts={"ввод-промпта"})
+        s["accepted"].clear()
+        with self.assertRaisesRegex(ValueError, "явное подтверждение БА"):
+            self.go(s, "AIN-19")
+        s["accepted"]["AIN-18"] = "r1"
+        self.assertEqual(self.go(s, "AIN-19")["current"], "AIN-19")
+
     def test_stage_gates_both_uc_invocations_and_terminal_outcomes(self):
         s = state("system", "Ш-5", "Ш-5", facts={"оценка-от"})
         record(s, "Ш-5", "Г-С1", "согласование", "Заказчик")

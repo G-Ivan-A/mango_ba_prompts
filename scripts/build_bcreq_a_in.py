@@ -30,7 +30,7 @@ id: mango-bcreq-{sid.lower()}-stepwise
 title: "BCREQ {sid}: {step['name']}"
 status: draft
 version: {fragments.VERSION}
-updated: 2026-11-26
+updated: {fragments.DATE}
 temperature: 0.1
 operation: understanding
 processes: ["Приём и контекст"]

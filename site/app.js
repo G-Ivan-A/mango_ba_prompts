@@ -14,6 +14,7 @@ const state = {
   ainKit: null,
   ainForms: {},
   stepFormat: "decomposed",
+  kbSources: "",
   selectedFilters: new Set(),
   query: "",
   sort: "updated",
@@ -1485,7 +1486,8 @@ function ainHandoff(kit, id) {
   if (!handoff?.goal || !handoff?.check) {
     throw new Error(`Нет «Итога шага» для ${id}; пересоберите данные сайта`);
   }
-  return { goal: handoff.goal, checkKind: handoff.checkKind, check: handoff.check, handoffBlock: "" };
+  return { goal: handoff.goal, checkKind: handoff.checkKind, check: handoff.check,
+    acceptOnSilence: handoff.acceptOnSilence, handoffBlock: "" };
 }
 
 // Issue #490, п. 2.2: системный (комплексный) формат — Ш-А, Ш-1, Ш-2 текстом
@@ -1742,7 +1744,7 @@ function testKitBody(step, kind) {
     return state.ainKit.steps.find(({ id }) => id === step.ainId)?.compactPrompt || "";
   }
   if (body && stepCode(step) === "Ш-0") {
-    return `${body.trimEnd()}\n\nФормат шагов: ${STEP_FORMATS[state.stepFormat].short}\n`;
+    return `${body.trimEnd()}\n\nФормат шагов: ${STEP_FORMATS[state.stepFormat].short}\nИсточники БЗ: ${state.kbSources.trim() || "нет"}\n`;
   }
   return body && kind === "published" && step.handoffBlock
     ? `${body.trimEnd()}\n\n${step.handoffBlock}` : body;
@@ -1819,7 +1821,25 @@ function testKitReader(step, index) {
   note.setAttribute("aria-live", "polite");
 
   const reader = el("div", "testkit-reader");
-  reader.append(bar, note, el("p", "testkit-size"), text);
+  const size = el("p", "testkit-size");
+  if (stepCode(step) === "Ш-0") {
+    const label = el("label", "testkit-kb-sources", "Источники БЗ");
+    const input = el("input");
+    input.type = "text";
+    input.value = state.kbSources;
+    input.placeholder = "Адрес или нет";
+    input.autocomplete = "off";
+    input.spellcheck = false;
+    label.append(input);
+    input.addEventListener("input", () => {
+      state.kbSources = input.value;
+      const body = testKitBody(step, copy.dataset.testkitKind);
+      text.textContent = body;
+      size.textContent = promptSizeLabel(body);
+    });
+    reader.append(label);
+  }
+  reader.append(bar, note, size, text);
   return reader;
 }
 
@@ -1963,6 +1983,9 @@ function testKitStep(step, index) {
   if (step.checkKind === "technical") {
     check.append(el("strong", "", "Шаг технический, "),
       document.createTextNode(`можно проверить (${step.check}), но не обязательно.`));
+    if (step.acceptOnSilence) {
+      check.append(document.createTextNode(" Проверьте «Итог шага». Если возражений нет, текущий результат принят."));
+    }
   } else {
     check.append(el("strong", "", "БА — проверить: "), document.createTextNode(step.check));
   }
@@ -2047,7 +2070,7 @@ function renderTestKit() {
     source,
     document.createTextNode(". "),
     linkTo(kit.route.source, "Нормативный маршрут v0.3"),
-    document.createTextNode(". При незакрытом ACCESS_GAP или критическом конфликте норм остановите прогон (BLOCKED) до устранения причины."),
+    document.createTextNode(". При пробеле в БЗ продолжайте. Остановитесь (BLOCKED), если без факта нельзя пройти гейт или нормы критически противоречат друг другу."),
   );
   nodes.testKitSteps.replaceChildren(
     ...kit.groups.map((group) => {

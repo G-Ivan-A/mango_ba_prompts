@@ -66,10 +66,10 @@ class Debugging(unittest.TestCase):
             self.assertIn("шаг не выполняй", compact)
             for text, key in [(full, "promptSha256"), (compact, "compactPromptSha256")]:
                 self.assertEqual(hashlib.sha256(text.encode()).hexdigest(), step[key])
-                self.assertIn(f"КОНЕЦ {step['id']} 0.4", text)
+                self.assertIn(f"КОНЕЦ {step['id']} {fragments.VERSION}", text)
                 self.assertNotIn("КОНЕЦ " + step["id"] + " <версия результата>", text)
         contract = self.kit["contract"]
-        self.assertEqual(contract["prompt"], f"# Контракт A-IN 0.4\n\n{common}\n")
+        self.assertEqual(contract["prompt"], f"# Контракт A-IN {fragments.VERSION}\n\n{common}\n")
         self.assertEqual(hashlib.sha256(contract["prompt"].encode()).hexdigest(), contract["promptSha256"])
         self.assertEqual(self.kit["defaultForm"], "full")
 
@@ -102,13 +102,36 @@ class Debugging(unittest.TestCase):
         for n in (12, 14, 18, 20):
             self.assertIn("LE-21", self.kit["steps"][n-1]["prompt"])
 
-    def test_owner_dependencies_do_not_silently_change_policy(self):
+    def test_review_uses_silence_only_for_the_two_approved_technical_steps(self):
         data = bcreq_handoff.load()
-        self.assertEqual(data["steps"]["AIN-22"]["checkKind"], "technical")
-        self.assertEqual(data["steps"]["AIN-18"]["checkKind"], "required")
-        self.assertIn("блокер, конфликт норм или ACCESS_GAP", data["approveTechnical"])
-        self.assertIn("Перед каждым вызовом явно выдай «Доступ к БЗ»", fragments.access())
-        self.assertIn("При незакрытом ACCESS_GAP", read("site/app.js"))
+        self.assertEqual({sid for sid, step in data["steps"].items() if step.get("acceptOnSilence")},
+                         {"AIN-06", "AIN-22"})
+        for sid in ("AIN-06", "AIN-22"):
+            handoff = bcreq_handoff.render([sid], data)
+            self.assertIn("При отсутствии возражений БА текущая версия принята", handoff)
+            self.assertIn("отдельный вызов БА", handoff)
+            self.assertIn("Итог шага", handoff)
+        self.assertEqual({sid for sid, step in data["steps"].items() if step.get("approvalOnce")}, {"AIN-18"})
+        handoff = bcreq_handoff.render(["AIN-18"], data)
+        self.assertEqual(handoff.count("запроси решение один раз"), 1)
+        self.assertNotIn("БА — проверить:", handoff)
+
+    def test_access_contract_replaces_legacy_rules_in_working_editions(self):
+        policy = fragments.access()
+        for token in ("конфигурация клиента", "оркестратор до шага предзагружает", "в кэше текущей сессии",
+                      "На AIN-07…12", "при смене доступа", "поиска нет"):
+            self.assertIn(token, policy)
+        for token in ("стабильный ID П-n", "пробел П-n открыт", "Не требуй приложить файл",
+                      "`[ACCESS_GAP: П-n — <тема>]` выдай только в строке «Отклонения» receipt",
+                      "Г-IN, допуск AIN-21, Г-С1"):
+            self.assertIn(token, policy)
+        self.assertNotIn("ACCESS_GAP", bcreq_handoff.load()["approveTechnical"])
+        self.assertIn("Обычный пробел БЗ на согласование не выноси", bcreq_handoff.load()["approveTechnical"])
+        legacy = "Перед каждым вызовом явно выдай «Доступ к БЗ»"
+        for step in self.kit["steps"]:
+            self.assertNotIn(legacy, step["prompt"], step["id"])
+        for prompt in system.build().values():
+            self.assertLess(prompt.index("ниже заменяют правила доступа и пробелов"), prompt.index(policy))
 
     def test_regression_inventory_and_stage_two_inputs(self):
         cases = json.loads(read("experiments/issue_509/regressions.json"))
@@ -151,9 +174,22 @@ class Debugging(unittest.TestCase):
         changes = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(changes)
         registry = json.loads(read("experiments/issue_509/prompt-edits.json"))
+        followup = changes.FOLLOWUP
+        paths = subprocess.check_output([
+            "git", "diff", "--name-only", followup["base"], "--", "prompts/drafts",
+        ], cwd=ROOT).decode().splitlines()
+        self.assertEqual(set(followup["files"]), set(paths))
+        for path in paths:
+            current = read(path)
+            prior = changes.git_text("show", f"{followup['base']}:{path}")
+            self.assertEqual(changes.revert_followup(path, current), prior)
+            self.assertEqual(changes.revert_followup(path, current + "\nUnreviewed drift"), prior + "\nUnreviewed drift")
+            with self.assertRaisesRegex(ValueError, "reviewed 0.5 edition"):
+                changes.revert_followup(path, current.replace("Итог шага", "Changed", 1))
         for path, entry in registry["files"].items():
             current = read(path)
-            self.assertEqual(hashlib.sha256(current.encode()).hexdigest(), entry["sha256_after"])
+            old = changes.revert_followup(path, current)
+            self.assertEqual(hashlib.sha256(old.encode()).hexdigest(), entry["sha256_after"])
             before = subprocess.check_output(["git", "show", f"{registry['base']}:{path}"], cwd=ROOT).decode()
             self.assertEqual(changes.revert(path, current), before)
             self.assertEqual(changes.revert(path, current + "\nUnreviewed drift"), before + "\nUnreviewed drift")

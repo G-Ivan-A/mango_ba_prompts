@@ -9,6 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[2]
 BASE = "b0caecd30968fb7e62678e78fffc43a4031d3f3f"
+MERGED = "70cf31c803443f563ee852b3daf27cb972706c4b"
 OUT = Path(__file__).with_name("prompt-edits.json")
 spec = importlib.util.spec_from_file_location("hunks495", ROOT / "experiments/issue_495/build_prompt_edits.py")
 helper = importlib.util.module_from_spec(spec)
@@ -16,11 +17,11 @@ spec.loader.exec_module(helper)
 
 
 def build():
-    names = helper.git("diff", "--name-only", BASE, "--", "prompts/drafts").splitlines()
+    names = helper.git("diff", "--name-only", BASE, MERGED, "--", "prompts/drafts").splitlines()
     files = {}
     for name in names:
         before = helper.git("show", f"{BASE}:{name}")
-        after = (ROOT / name).read_text()
+        after = helper.git("show", f"{MERGED}:{name}")
         if before == after:
             continue
         for context in range(1, 8):
