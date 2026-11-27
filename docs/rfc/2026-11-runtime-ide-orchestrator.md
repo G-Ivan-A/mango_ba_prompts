@@ -5,7 +5,7 @@ updated: 2026-11-27
 temperature: 0.1
 owner: G-Ivan-A
 source: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506"
-related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518, https://github.com/G-Ivan-A/mango_ba_prompts/pull/515, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE"
+related_issues: "https://github.com/G-Ivan-A/mango_ba_prompts/issues/506, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508, https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514, https://github.com/G-Ivan-A/mango_ba_prompts/issues/505, https://github.com/G-Ivan-A/mango_ba_prompts/issues/492, https://github.com/G-Ivan-A/mango_ba_prompts/pull/494, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29, https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30, https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518, https://github.com/G-Ivan-A/mango_ba_prompts/pull/515, https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31"
 rfc-scope: multi
 type: rfc
 related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/ba-processes/bcreq-ide-gates.json, scripts/build_bcreq_ide_gates.py, docs/adr/2026-11-adr-020-ide-orchestrator-runtime.md, experiments/issue_506/audit_runtime_ide_readiness.py, experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md, docs/rfc/2026-11-runtime-universal-agent-context.md, docs/adr/2026-10-adr-016-ide-client-process.md, docs/ba-processes/bcreq-manual-process.md, docs/ba-processes/bcreq-a-in-execution.md, docs/ba-processes/bcreq-a-in-route.json, pr-ops/backlog-ba-model.md, pr-ops/backlog-repository.md, pr-ops/BACKLOG.md, scripts/validate_issue_506_ide_runtime_rfc.py, docs/contracts/ssot-stage1-handoff-manifest.json, docs/contracts/ssot-stage1-handoff-manifest.md, docs/contracts/ssot-stage1-link-map.json, experiments/issue_506/m2_transfer_dry_run.py, experiments/issue_506/m2-transfer-dry-run.log, scripts/validate_issue_506_m2_transfer.py"
@@ -30,7 +30,7 @@ related_artifacts: "docs/audit/2026-11-26-runtime-stage2-ide-readiness.md, docs/
 > слияния PR #514 и PR runtime #30 **не снят**: в runtime нет `ssot/`. Сторона
 > спицы закрыта [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515): манифест 0.2, карта ссылок, Р-RT-7 = 7а,
 > пробная передача. Постановка для runtime — раздел 12, задача —
-> [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE). Первое предусловие — решение владельца о
+> [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31). Первое предусловие — решение владельца о
 > публикации Р-RT-22.
 
 Задача — [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506).
@@ -555,7 +555,7 @@ MCP; MCP 2025-06-18; human in the loop. Колонка «Если промолч
 | --- | --- | --- | --- |
 | Предыдущий | BL-244 (PR #514) и BL-192 Э5 «IDE-слой» ([PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), `4bd5597`) | BL-244 `DONE`; BL-192 `review` → `DONE` | полностью по разделу 11.9, кроме двух пунктов, которые по постановке ждут M2 и M6 |
 | Текущий, закрывается этим PR | BL-246: подготовка M2 в спице — манифест 0.2, карта ссылок, Р-RT-7 = 7а, постановка раздела 12, пробная передача | `review` → `DONE` слиянием [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515) | полностью для спицы; исполнение — в runtime |
-| Открывается этим PR | BL-185…BL-188: приём SSOT этапа 1 (M2) | `TODO`; задача — runtime #RTISSUE | стоп до решения Р-RT-22 |
+| Открывается этим PR | BL-185…BL-188: приём SSOT этапа 1 (M2) | `TODO`; задача — runtime #31 | стоп до решения Р-RT-22 |
 | Новая задача | BL-247: вторая передача SSOT этапа 1 (нормативные цели вне первой) | `deferred (triggered)` | триггер — `DONE` BL-185…BL-188 и `ACCESS_GAP` на цели из 14 кандидатов |
 
 - BL-190 (замена ссылок в текстах промптов) — `deferred (triggered)`,
@@ -569,10 +569,10 @@ MCP; MCP 2025-06-18; human in the loop. Колонка «Если промолч
 
 1. Слить PR #515. Это предусловие П-1: манифест 0.2 становится SSOT на
    `main`. Публикацией слияние не является.
-2. Владелец пишет в runtime #RTISSUE решение Р-RT-22. Рекомендация — А,
+2. Владелец пишет в runtime #31 решение Р-RT-22. Рекомендация — А,
    публикация 135 артефактов. Обоснование — раздел 12.4: проверка байтов
    нашла 0 совпадений, а Б и В ломают Р-RT-6 и веб-канал этапа 1.
-3. Запустить исполнителя на runtime #RTISSUE и принять его PR. После
+3. Запустить исполнителя на runtime #31 и принять его PR. После
    слияния BL-185…BL-188 → `DONE`, а `test_map_matches_the_layer`
    проходит без пропуска.
 4. Решить по M4 и M5: карточка слоя ссылок и BL-242, BL-243. Затем BL-245
@@ -823,7 +823,7 @@ smoke падает на обеих линиях: `AGENTS.md` перезапис�
 Постановка составлена по
 [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518):
 «если необходимо выставить задачу в runtime — выставить для запуска
-исполнения». Задача в runtime — [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE).
+исполнения». Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31).
 Её описание ссылается на этот раздел. Карточки — BL-185…BL-188, этап M2
 таблицы раздела 8, одна передача по Р-RT-6.
 
@@ -855,7 +855,7 @@ Runtime получает побайтную закреплённую копию 
 
 | Что | Где | Статус |
 | --- | --- | --- |
-| Состав, sha256, статусы цепочки | [`docs/contracts/ssot-stage1-handoff-manifest.json`](../contracts/ssot-stage1-handoff-manifest.json) спицы, версия 0.2, `source_commit` `40ef5edd` (слияние PR #514); человекочитаемо — [`.md`](../contracts/ssot-stage1-handoff-manifest.md) | этот PR; заменяет 0.1 |
+| Состав, sha256, статусы цепочки | [`docs/contracts/ssot-stage1-handoff-manifest.json`](../contracts/ssot-stage1-handoff-manifest.json) спицы, версия 0.2, `source_commit` `40ef5edd` (слияние PR #514); человекочитаемо — [`.md`](../contracts/ssot-stage1-handoff-manifest.md); sha256 файла — `fa25616fea25a427d0c8c18f1a386195b16fe0b1631312665b122f5bf7b17ea8` | этот PR; заменяет 0.1 |
 | Ссылки из переносимых файлов | [`docs/contracts/ssot-stage1-link-map.json`](../contracts/ssot-stage1-link-map.json) спицы | этот PR, Р-RT-7 = 7а |
 | Раскладка и одна передача | RFC-RT-002, Р-RT-6 | `accepted` владельцем |
 | Политика синхронизации | манифест, `sync_policy`, правила 1–6 | этот PR |
@@ -869,8 +869,8 @@ Runtime получает побайтную закреплённую копию 
 
 | № | Предусловие | Как проверить | Если не выполнено |
 | --- | --- | --- | --- |
-| П-0 | Владелец разрешил публикацию 135 артефактов (Р-RT-22) | комментарий владельца в runtime #RTISSUE | стоп до первого `git push`, в том числе в форк; ответ `BLOCKED: Р-RT-22` |
-| П-1 | Этот PR слит; манифест 0.2 на `main` спицы | sha256 файла манифеста на `main` равен значению в runtime #RTISSUE | стоп: манифест ветки не является SSOT |
+| П-0 | Владелец разрешил публикацию 135 артефактов (Р-RT-22) | комментарий владельца в runtime #31 | стоп до первого `git push`, в том числе в форк; ответ `BLOCKED: Р-RT-22` |
+| П-1 | Этот PR слит; манифест 0.2 на `main` спицы | sha256 файла манифеста на `main` равен значению в runtime #31 | стоп: манифест ветки не является SSOT |
 | П-2 | Исполнитель читает спицу (репозиторий приватный) | `git show 40ef5edd:<путь>` | `ACCESS_GAP`, стоп; байты не восстанавливаются по памяти |
 
 **Почему П-0 отдельным действием.** Спица — `PRIVATE`, runtime — `PUBLIC`.
@@ -888,7 +888,7 @@ runtime принято владельцем раньше, но публикац�
 
 | № | Вопрос | Рекомендация | Почему | Если промолчать |
 | --- | --- | --- | --- | --- |
-| Р-RT-22 | Как SSOT этапа 1 из приватной спицы попадает в публичный runtime | **А. Публикация 135 артефактов манифеста 0.2** явным комментарием владельца в runtime #RTISSUE. Б, В, Г — ниже | Р-RT-6 принят; `AGENTS.md` runtime 0.9 (PR #30) уже объявляет `ssot/mango_ba_prompts/`; проверка байтов — 0 совпадений (раздел 12.10) | M2 не начинается, оркестратор стоит в `BLOCKED` |
+| Р-RT-22 | Как SSOT этапа 1 из приватной спицы попадает в публичный runtime | **А. Публикация 135 артефактов манифеста 0.2** явным комментарием владельца в runtime #31. Б, В, Г — ниже | Р-RT-6 принят; `AGENTS.md` runtime 0.9 (PR #30) уже объявляет `ssot/mango_ba_prompts/`; проверка байтов — 0 совпадений (раздел 12.10) | M2 не начинается, оркестратор стоит в `BLOCKED` |
 
 | Вариант | Цена | Почему не рекомендован |
 | --- | --- | --- |
@@ -918,7 +918,7 @@ runtime принято владельцем раньше, но публикац�
 | № | Требование |
 | --- | --- |
 | ФТ-1 | Скопировать 135 артефактов манифеста с `source_commit` спицы (не с `HEAD`) по раскладке 12.5 |
-| ФТ-2 | Положить копии манифеста и карты ссылок. sha256 копии манифеста равен значению в runtime #RTISSUE |
+| ФТ-2 | Положить копии манифеста и карты ссылок. sha256 копии манифеста равен значению в runtime #31 |
 | ФТ-3 | Завести `ssot/TRANSFERS.md`: номер передачи 1, источник, `source_commit`, версия и sha256 манифеста, 135 артефактов, BL-185…BL-188, ссылка на решение Р-RT-22, PR runtime |
 | ФТ-4 | Тест-сторож `tests/test_ssot_transfer.py` без сети и без доступа к спице. Набор файлов равен манифесту; sha256 каждого файла равен манифесту; sha256 манифеста равен журналу; `source_commit` карты ссылок равен манифесту; каждая ссылка класса `inside` ведёт в существующий файл копии; `sources` карты гейтов совпадают с манифестом. Отрицательные проверки на временной копии: лишний, недостающий и изменённый файл ловятся |
 | ФТ-5 | `test_map_matches_the_layer` проходит без пропуска; слой Э5 не меняется |
@@ -942,7 +942,7 @@ runtime принято владельцем раньше, но публикац�
 | --- | --- | --- |
 | 1 | Решения Р-RT-22 нет | стоп до `push`; `BLOCKED: Р-RT-22`; ничего не публикуется |
 | 2 | Владелец выбрал Б или В | задача не исполняется; раздел 12 пересматривается в спице |
-| 3 | Этот PR не слит или манифест на `main` другой | стоп; sha256 манифеста сверяется с runtime #RTISSUE |
+| 3 | Этот PR не слит или манифест на `main` другой | стоп; sha256 манифеста сверяется с runtime #31 |
 | 4 | Нет доступа к спице | `ACCESS_GAP`; байты не берутся из кэша, памяти или форка |
 | 5 | Спица ушла вперёд после `40ef5edd` | копия всё равно с `source_commit`; новые правки — передача №2 |
 | 6 | Один sha256 не совпал | передача не коммитится целиком (НФТ-2) |
@@ -988,7 +988,7 @@ runtime принято владельцем раньше, но публикац�
 | `runtime-smoke.sh` — `passed`; `git status` меняет только `ssot/` | ✅ |
 | Шаблоны персональных данных, секретов и внутреннего контура — 0 | ✅ |
 | Решение Р-RT-22 | ⏳ владелец |
-| PR runtime слит, сторож ФТ-4 в CI зелёный | ⏳ runtime #RTISSUE |
+| PR runtime слит, сторож ФТ-4 в CI зелёный | ⏳ runtime #31 |
 | BL-185…BL-188 → `DONE` в спице с ссылкой на PR runtime | ⏳ после слияния |
 
 Пробная передача сделана в отсоединённом worktree клона runtime на
@@ -1055,7 +1055,7 @@ runtime принято владельцем раньше, но публикац�
   - прецеденты — RFC-RT-001 и RFC-RT-002.
 - Э5 исполнен в runtime отдельным PR по шагу 3 решения владельца:
   [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) из форка, без issue в runtime.
-- Задачу M2 в runtime (runtime #RTISSUE) создал исполнитель, а не владелец
+- Задачу M2 в runtime (runtime #31) создал исполнитель, а не владелец
   (Р-RT-19 — «issue создаёт владелец»). Основание —
   [комментарий владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518): «выставить для запуска
   исполнения». В issue — только пути, счёт и sha256.
@@ -1071,4 +1071,4 @@ runtime принято владельцем раньше, но публикац�
 - [#505](https://github.com/G-Ivan-A/mango_ba_prompts/issues/505), [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29)
 - [Карта гейтов](../ba-processes/bcreq-ide-gates.json), [генератор](../../scripts/build_bcreq_ide_gates.py), [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30), [BL-245](../../pr-ops/backlog-repository.md#bl-245-тестовые-прогоны-процессов-этапа-1-в-ide-m6)
 - [Валидатор](../../scripts/validate_issue_506_ide_runtime_rfc.py), [валидатор M2](../../scripts/validate_issue_506_m2_transfer.py)
-- M2: [манифест 0.2](../contracts/ssot-stage1-handoff-manifest.json) ([`.md`](../contracts/ssot-stage1-handoff-manifest.md)), [карта ссылок](../contracts/ssot-stage1-link-map.json), [пробная передача](../../experiments/issue_506/m2_transfer_dry_run.py) и [журнал](../../experiments/issue_506/m2-transfer-dry-run.log), [BL-246](../../pr-ops/backlog-repository.md#bl-246-подготовка-приёма-ssot-этапа-1-в-runtime-m2-манифест-02-карта-ссылок-постановка), [BL-247](../../pr-ops/backlog-repository.md#bl-247-вторая-передача-ssot-этапа-1-нормативные-цели-вне-первой-передачи), [BL-185](../../pr-ops/backlog-ba-model.md#bl-185-конституция-ш-0-и-промпты-набора-этапа-1-в-runtime), runtime #RTISSUE
+- M2: [манифест 0.2](../contracts/ssot-stage1-handoff-manifest.json) ([`.md`](../contracts/ssot-stage1-handoff-manifest.md)), [карта ссылок](../contracts/ssot-stage1-link-map.json), [пробная передача](../../experiments/issue_506/m2_transfer_dry_run.py) и [журнал](../../experiments/issue_506/m2-transfer-dry-run.log), [BL-246](../../pr-ops/backlog-repository.md#bl-246-подготовка-приёма-ssot-этапа-1-в-runtime-m2-манифест-02-карта-ссылок-постановка), [BL-247](../../pr-ops/backlog-repository.md#bl-247-вторая-передача-ssot-этапа-1-нормативные-цели-вне-первой-передачи), [BL-185](../../pr-ops/backlog-ba-model.md#bl-185-конституция-ш-0-и-промпты-набора-этапа-1-в-runtime), runtime #31

@@ -2438,7 +2438,7 @@ runtime; issue в runtime создаёт владелец (раздел 6 рее
 
 ### BL-185. Конституция Ш-0 и промпты набора этапа 1 в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE),
+**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
 выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
 Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
 одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
@@ -2476,7 +2476,7 @@ sha256 из манифеста и записью в журнале переда�
 
 ### BL-186. Маршрут A-IN, контракты AIN и итог шага в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE),
+**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
 выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
 Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
 одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
@@ -2511,7 +2511,7 @@ sha256 из манифеста и записью в журнале переда�
 
 ### BL-187. Стандарты исполнения шагов в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE),
+**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
 выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
 Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
 одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
@@ -2547,7 +2547,7 @@ runtime есть шаблон документа и значения таксо�
 
 ### BL-188. Контракт гейтов и поток CS в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE),
+**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
 выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
 Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
 одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —

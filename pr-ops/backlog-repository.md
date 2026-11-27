@@ -906,7 +906,7 @@ OpenCode закреплённой версии (BL-132) на кейсах runtim
 
 **Статус.** `review`: [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515) по
 [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518). Задача в runtime —
-[runtime #RTISSUE](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/RTISSUE). Проверки: `validate_issue_506_m2_transfer.py`,
+[runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31). Проверки: `validate_issue_506_m2_transfer.py`,
 `validate_issue_492_ssot_handoff.py`, `make validate-full`.
 
 **Почему.** После слияния PR #514 и PR runtime #30 владелец спросил, снят
