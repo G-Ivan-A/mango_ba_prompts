@@ -38,19 +38,20 @@ related_issues: [512, 509]
 
 | Дата и время | Подтверждённое событие |
 | --- | --- |
-| 23.11 16:23:08 | Последний найденный успешный [деплой Pages 8004433258](https://github.com/G-Ivan-A/mango_ba_prompts/deployments/github-pages) связывает канонический URL с веткой `gh-pages`, SHA `deed5000e9c7854d72d8e11a0a4f82d1aad29659`, версия 2.9.3. Ветка по-прежнему указывает на этот SHA. |
+| 23.11 16:23:08 | Последний найденный успешный [деплой Pages 8004433258](https://github.com/G-Ivan-A/mango_ba_prompts/deployments/github-pages) связывает канонический URL с веткой `gh-pages`, SHA `deed5000e9c7854d72d8e11a0a4f82d1aad29659`. Ветка по-прежнему указывает на этот SHA. В `index.html` и `data/stats.json` указана версия 2.9.4. Дерево совпадает с `site/` в `38c3ba4f`, с добавленным `.nojekyll`. В сообщении коммита деплоя ошибочно указана 2.9.3. |
 | 26.11 15:10:24 | REST `GET /repos/…` показывает это значение в `updated_at`. Поле общее, из него нельзя вывести название изменённой настройки. |
 | 26.11 21:14:54 | REST events содержит `MemberEvent/added` для текущего collaborator. Сейчас REST показывает роль `write`. Эта запись не показывает операцию снятия доступа или смены видимости. |
 | 26.11 21:44 | Три ручных запуска для SHA `372bdee9…` приняты API. На 27.11 у них `queued`, `jobs: []`. При запросе логов GitHub возвращает `run … is still in progress`. [Governance](https://github.com/G-Ivan-A/mango_ba_prompts/actions/runs/45900185953), [Pages](https://github.com/G-Ivan-A/mango_ba_prompts/actions/runs/45900231627), [KB](https://github.com/G-Ivan-A/mango_ba_prompts/actions/runs/45900234755). |
 | 27.11 06:50:13 | PR #511 слит в `main` (`70cf31c8`). |
-| 27.11 07:16:17 | Timeline #510 одновременно показывает `closed` и `head_ref_force_pushed` к `b7bd94c7`. PR не слит. Известная попытка переоткрыть вернула 422. Репозиторий head сейчас отдельный, `fork: false`, без `parent`. [История #510](https://github.com/G-Ivan-A/mango_ba_prompts/pull/510#issuecomment-7212616980) |
+| 27.11 07:16:17 | Timeline #510 одновременно показывает `closed` и `head_ref_force_pushed` к `b7bd94c7`. PR не слит. Известная попытка переоткрыть вернула 422. Репозиторий head сейчас публичный и отдельный, `fork: false`, без `parent`. [История #510](https://github.com/G-Ivan-A/mango_ba_prompts/pull/510#issuecomment-7212616980) |
 | 27.11 | Канонический URL отвечает 404 с шаблоном GitHub Pages «Site not found». REST репозитория сообщает `private: true`, `has_pages: false`, REST Pages и Pages builds отвечают 404. |
 
 Владелец сообщил об уведомлении GitHub, повторном добавлении collaborator
 и ответе интерфейса «This repository is currently private». По этим данным
 можно установить текущую видимость. Исторического значения перед
 `updated_at`, текста уведомления и записи о самой смене видимости в
-доступных источниках нет. GitHub документирует, что при public → private
+доступных источниках нет. REST Activity за 25–27.11 показывает push,
+создание веток и merge PR. GitHub документирует, что при public → private
 публичные форки отсоединяются, а сайт Pages на GitHub Free снимается с
 публикации автоматически. Это объяснение согласуется с текущими признаками.
 Точную причину закрытия #510 и смены видимости определяет только журнал
