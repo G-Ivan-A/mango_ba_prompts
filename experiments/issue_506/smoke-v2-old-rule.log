@@ -1,0 +1,108 @@
+# opencode opencode v2.4.2 (line V2)
+ok - opencode run reaches the mock model
+ok - AGENTS.md is loaded as project instructions
+ok - AGENTS.md reaches the model in full
+ok - skill ambiguity-detection-contact-center is offered to the model
+ok - skill ambiguity-detection-contact-center keeps its description
+ok - skill answer-integration-contact-center is offered to the model
+ok - skill answer-integration-contact-center keeps its description
+ok - skill bcreq-assembly-contact-center is offered to the model
+ok - skill bcreq-assembly-contact-center keeps its description
+ok - skill bcreq-decomposition-contact-center is offered to the model
+ok - skill bcreq-decomposition-contact-center keeps its description
+ok - skill context-extraction-contact-center is offered to the model
+ok - skill context-extraction-contact-center keeps its description
+ok - skill core-assembly-contact-center is offered to the model
+ok - skill core-assembly-contact-center keeps its description
+ok - skill problem-statement-contact-center is offered to the model
+ok - skill problem-statement-contact-center keeps its description
+ok - skill question-formation-contact-center is offered to the model
+ok - skill question-formation-contact-center keeps its description
+ok - skill question-prioritization-contact-center is offered to the model
+ok - skill question-prioritization-contact-center keeps its description
+ok - skill transcript-normalization-contact-center is offered to the model
+ok - skill transcript-normalization-contact-center keeps its description
+ok - skill value-hypothesis-contact-center is offered to the model
+ok - skill value-hypothesis-contact-center keeps its description
+ok - no other project skills are offered
+ok - control without the mirror offers no route skills
+ok - agent bcreq-orchestrator is primary
+ok - agent bcreq-step is subagent, hidden
+ok - agent bcreq-reviewer is subagent, hidden
+ok - bcreq-orchestrator: edit AGENTS.md is deny
+ok - bcreq-orchestrator: edit .opencode/agents/bcreq-orchestrator.md is deny
+ok - bcreq-orchestrator: edit ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json is deny
+ok - bcreq-orchestrator: edit work/SMOKE-1/AIN-01.md is allow
+ok - bcreq-orchestrator: read .env is deny
+ok - bcreq-orchestrator: webfetch * is deny
+ok - bcreq-orchestrator: websearch * is deny
+ok - bcreq-orchestrator: external_directory /etc/hosts is deny
+ok - bcreq-orchestrator: execute * is deny
+ok - bcreq-orchestrator: subagent general is deny
+ok - bcreq-orchestrator: subagent bcreq-step is allow
+ok - bcreq-orchestrator: question * is allow
+ok - bcreq-orchestrator: jira_create_issue * is deny
+ok - bcreq-orchestrator: confluence_update_page * is deny
+ok - bcreq-orchestrator: jira_get_issue * is ask
+ok - bcreq-orchestrator: shell git status is allow
+ok - bcreq-orchestrator: shell rm -rf work is ask
+not ok - bcreq-orchestrator: shell git diff --output=AGENTS.md is ask: allow
+not ok - bcreq-orchestrator: shell git diff --no-index /dev/null .env is ask: allow
+ok - bcreq-step: edit AGENTS.md is deny
+ok - bcreq-step: edit .opencode/agents/bcreq-orchestrator.md is deny
+ok - bcreq-step: edit ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json is deny
+ok - bcreq-step: edit work/SMOKE-1/AIN-01.md is allow
+ok - bcreq-step: read .env is deny
+ok - bcreq-step: webfetch * is deny
+ok - bcreq-step: websearch * is deny
+ok - bcreq-step: external_directory /etc/hosts is deny
+ok - bcreq-step: execute * is deny
+ok - bcreq-step: subagent general is deny
+ok - bcreq-step: subagent bcreq-step is deny
+ok - bcreq-step: question * is deny
+ok - bcreq-step: jira_create_issue * is deny
+ok - bcreq-step: confluence_update_page * is deny
+ok - bcreq-step: jira_get_issue * is ask
+ok - bcreq-step: shell git status is deny
+ok - bcreq-reviewer: edit AGENTS.md is deny
+ok - bcreq-reviewer: edit .opencode/agents/bcreq-orchestrator.md is deny
+ok - bcreq-reviewer: edit ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json is deny
+ok - bcreq-reviewer: edit work/SMOKE-1/AIN-01.md is deny
+ok - bcreq-reviewer: read .env is deny
+ok - bcreq-reviewer: webfetch * is deny
+ok - bcreq-reviewer: websearch * is deny
+ok - bcreq-reviewer: external_directory /etc/hosts is deny
+ok - bcreq-reviewer: execute * is deny
+ok - bcreq-reviewer: subagent general is deny
+ok - bcreq-reviewer: subagent bcreq-step is deny
+ok - bcreq-reviewer: question * is deny
+ok - bcreq-reviewer: jira_create_issue * is deny
+ok - bcreq-reviewer: confluence_update_page * is deny
+ok - bcreq-reviewer: jira_get_issue * is ask
+ok - bcreq-reviewer: shell git status is deny
+ok - build: edit AGENTS.md is deny
+ok - build: edit .opencode/agents/bcreq-orchestrator.md is deny
+ok - build: edit ssot/mango_ba_prompts/docs/ba-processes/bcreq-ide-gates.json is deny
+ok - build: edit work/SMOKE-1/AIN-01.md is allow
+ok - build: read .env is deny
+ok - build: webfetch * is deny
+ok - build: websearch * is deny
+ok - build: external_directory /etc/hosts is deny
+ok - build: execute * is deny
+ok - build: subagent general is deny
+ok - build: subagent bcreq-step is deny
+ok - build: question * is deny
+ok - build: jira_create_issue * is deny
+ok - build: confluence_update_page * is deny
+ok - build: jira_get_issue * is ask
+ok - build: shell git status is allow
+ok - build: shell rm -rf work is ask
+not ok - build: shell git diff --output=AGENTS.md is ask: allow
+not ok - build: shell git diff --no-index /dev/null .env is ask: allow
+ok - the orchestrator run reaches the mock model
+ok - the model gets the orchestrator prompt
+ok - the client answers every write and shell call
+not ok - writes to AGENTS.md and work/SMOKE-1/../../AGENTS.md, and `git diff --output=AGENTS.md` are refused
+ok - a write to work/SMOKE-1/probe.md is done
+ok - nothing else is written to work/
+# failed: 5 check(s)

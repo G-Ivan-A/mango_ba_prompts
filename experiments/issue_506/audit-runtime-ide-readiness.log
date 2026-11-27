@@ -1,0 +1,4 @@
+[main] fe623c6b: проверок 16, нет: 11 (RT-03, RT-04, RT-05, RT-06, RT-07, RT-08, RT-09, RT-10, RT-11, RT-12, RT-16)
+[pr29] 9421edad: проверок 16, нет: 8 (RT-04, RT-05, RT-06, RT-07, RT-08, RT-09, RT-11, RT-12)
+[spoke] промптов 62, с URL G-Ivan-A: 30, с «Продолжаем?»: 0
+выход: experiments/issue_506/runtime-ide-readiness.json, experiments/issue_506/runtime-ide-readiness.md
