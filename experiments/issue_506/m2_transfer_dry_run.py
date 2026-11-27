@@ -12,8 +12,9 @@
    набору манифеста; порча одного байта ловится (отрицательная проверка);
 5. проверяет согласованность карты гейтов: её ``sources`` совпадают по sha256
    с артефактами передачи, ``runtime_path`` указывает в каталог копии;
-6. считает совпадения шаблонов персональных данных (почта, телефон) и
-   секретов в переносимых байтах — только пути и счёт, без содержимого:
+6. считает совпадения шаблонов персональных данных (почта, телефон),
+   секретов и внутреннего контура (корпоративные хосты, локальные домены,
+   частные IP) в переносимых байтах — только пути и счёт, без содержимого:
    runtime публичен, перенос публикует байты;
 7. после копии — тесты runtime и ``tests/runtime-smoke.sh``; отдельно —
    ``test_ide_layer`` с проверкой, что ``test_map_matches_the_layer`` не
@@ -43,6 +44,11 @@ LINK_MAP = ROOT / "docs/contracts/ssot-stage1-link-map.json"
 EMAIL = re.compile(rb"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}")
 PHONE = re.compile(rb"(?<![\d.])(?:\+7|8)[\s(-]*\d{3}[\s)-]*\d{3}[\s-]*\d{2}[\s-]*\d{2}(?!\d)")
 SECRET = re.compile(rb"(?i)(?:api[_-]?key|secret|token|password)\s*[:=]\s*['\"]?[A-Za-z0-9_\-]{16,}")
+# Внутренний контур: корпоративные хосты, локальные домены, частные адреса.
+INTERNAL = re.compile(rb"https?://[^\s)>\]]*(?:jira|confluence|wiki|gitlab|corp|intra)[^\s)>\]]*"
+                      rb"|\b[\w-]+\.(?:local|lan|corp|internal)\b"
+                      rb"|\b(?:10|192\.168|172\.(?:1[6-9]|2\d|3[01]))\.\d+\.\d+(?:\.\d+)?\b")
+KINDS = (("почта", EMAIL), ("телефон", PHONE), ("секрет", SECRET), ("внутренний контур", INTERNAL))
 
 
 def run(cmd: list[str], cwd: Path, **kw) -> subprocess.CompletedProcess:
@@ -133,12 +139,14 @@ def main() -> int:
         hits = {}
         for a in m["artifacts"]:
             data = (dest / a["path"]).read_bytes()
-            found = {k: len(rx.findall(data)) for k, rx in (("почта", EMAIL), ("телефон", PHONE),
-                                                              ("секрет", SECRET))}
+            found = {k: len(rx.findall(data)) for k, rx in KINDS}
             if any(found.values()):
                 hits[a["path"]] = found
-        total = {k: sum(h[k] for h in hits.values()) for k in ("почта", "телефон", "секрет")}
+        total = {k: sum(h[k] for h in hits.values()) for k, _ in KINDS}
         print(f"файлов с совпадениями: {len(hits)}; всего: {total}")
+        size = sum((dest / a["path"]).stat().st_size for a in m["artifacts"])
+        crlf = sum(b"\r\n" in (dest / a["path"]).read_bytes() for a in m["artifacts"])
+        print(f"объём передачи: {size} байт; файлов с CRLF: {crlf}")
         for path, found in sorted(hits.items()):
             print(f"  {path}: {found}")
         print("  (совпадение шаблона — кандидат на ручной просмотр перед публикацией, не вывод о данных)")
