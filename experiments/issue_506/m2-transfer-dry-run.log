@@ -1,0 +1,36 @@
+манифест 0.2: 135 артефактов, source_commit=40ef5edd0938b9a5e961dec2e46e625b6c7a2576
+runtime origin/main=4bd5597f82ba00c5494ee8825f01257c0ba4acef
+
+## До копии
+ssot/ в runtime: нет
+[до] unittest runtime: rc=0
+    ----------------------------------------------------------------------
+    Ran 112 tests in 13.390s
+    
+    OK (skipped=1)
+
+## Копия
+файлов в ssot/mango_ba_prompts/: 135; в манифесте: 135; лишних: 0; недостающих: 0
+сверка sha256: совпало 135 из 135
+отрицательная проверка (лишний байт в docs/ba-processes/bcreq-a-in-common.md): поймана
+карта гейтов 0.1 (accepted): источников 3, не совпало с передачей: 0; runtime_path в каталоге копии: True
+
+## Публикация: шаблоны персональных данных и секретов в переносимых байтах
+файлов с совпадениями: 0; всего: {'почта': 0, 'телефон': 0, 'секрет': 0}
+  (совпадение шаблона — кандидат на ручной просмотр перед публикацией, не вывод о данных)
+
+## После копии
+[после] unittest runtime: rc=0
+    ----------------------------------------------------------------------
+    Ran 112 tests in 12.216s
+    
+    OK
+test_ide_layer: rc=0; test_map_matches_the_layer (tests.test_ide_layer.GateMap.test_map_matches_the_layer) ... ok
+runtime-smoke.sh: rc=0
+    ok - declared function queue-callback-offer is outside catalog
+    runtime smoke test passed
+git status worktree: 1 записей, все внутри ssot/: True
+
+worktree удалён; клон runtime: чист
+
+ИТОГ: OK
