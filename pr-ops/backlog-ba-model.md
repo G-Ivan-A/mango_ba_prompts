@@ -2637,15 +2637,15 @@ runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 —
 
 ### BL-192. Производство универсального агентного контекста runtime
 
-**Статус.** `review`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
-[PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29). Э1 — зеркало `.agents/skills/<имя>/SKILL.md`
+**Статус.** `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
+[PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) слит 26.11 (`bee5f9ba`). Э1 — зеркало `.agents/skills/<имя>/SKILL.md`
 (`tests/build_skills_mirror.py`, сверка sha256 в `tests/test_skills_mirror.py`
 и `tests/runtime-smoke.sh`); Э2 — `AGENTS.md` 0.8 (`ACCESS_GAP` в правиле 10,
 раздел «Поиск в базе знаний» по `docs/kb/USAGE.md`), манифест компиляции 0.8,
 README 0.8; Э4 — `tests/opencode_smoke.py` в CI на OpenCode V1 1.19.6 и
 V2 2.4.2. Защищённые каталоги и SHA реестра не менялись. Нормативного текста
 `AGENTS.md` в `ba-ai-metamodel` нет, правка записана в `transformed`
-манифеста по прецеденту ХАБ-1 и B-248. Ранее — `deferred (triggered)`.
+манифеста по прецеденту ХАБ-1 и B-248. Ранее — `deferred (triggered)` → `review`.
 Проверки: `validate_issue_rt27_agent_context_production.py`.
 
 **Почему.** RFC-RT-002 описывает раскладку, но по разделу 5 runtime #25 не
@@ -2672,8 +2672,8 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 ([комментарий](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26#issuecomment-7020333876)); задача — [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27).
 
 **Готово, когда.** Зеркало проходит сверку sha256 со `skills/`; smoke runtime
-и валидаторы спицы на SHA реестра — 0 провалов; OpenCode закреплённой версии
-загружает `AGENTS.md` и показывает 11 навыков.
+и валидаторы спицы на SHA реестра — 0 провалов; OpenCode V1 и V2
+загружают `AGENTS.md` и показывают 11 навыков. Закрепление версии — BL-132.
 
 ### BL-193. Прогон 1143: проблемы промптов и RFC отладки
 

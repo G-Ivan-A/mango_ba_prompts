@@ -5,7 +5,7 @@
 бэклога — в спице. Проверяет без LLM и без сети:
 
 * движение по цепочке: BL-191 ``DONE`` (PR runtime #26 и PR #494 слиты,
-  решение владельца по Р-RT-2…Р-RT-4 и Р-RT-6), BL-192 ``review`` со ссылками
+  решение владельца по Р-RT-2…Р-RT-4 и Р-RT-6), BL-192 ``DONE`` со ссылками
   на runtime #27 и PR runtime #29 — в таблице, в карточках и в блоке
   «Движение по цепочке (runtime #27)»;
 * соседние задачи не сдвинуты без основания: BL-132 ``deferred (triggered)``,
@@ -62,22 +62,22 @@ class ChainTest(unittest.TestCase):
         for evidence in (f"{RT}/pull/26", "pull/494", "16c11e55", "e051e0fa", OWNER_DECISION):
             self.assertIn(evidence, text)
 
-    def test_bl192_review(self):
+    def test_bl192_done(self):
         line = row(self.backlog, "BL-192")
-        self.assertRegex(line, r"\| review \|")
+        self.assertRegex(line, r"\| DONE \|")
         self.assertIn(ISSUE, line)
         self.assertIn(PR, line)
         text = card(self.model, "BL-192")
-        self.assertIn("**Статус.** `review`", text)
+        self.assertIn("**Статус.** `DONE`", text)
         for evidence in (ISSUE, PR, ".agents/skills/<имя>/SKILL.md", "ACCESS_GAP", "tests/opencode_smoke.py",
-                         "Ранее — `deferred (triggered)`", OWNER_DECISION):
+                         "Ранее — `deferred (triggered)` → `review`", "bee5f9ba", OWNER_DECISION):
             self.assertIn(evidence, text)
 
     def test_chain_block(self):
         block = self.backlog.split("**Движение по цепочке (runtime #27).**", 1)
         self.assertEqual(len(block), 2, "нет блока движения по цепочке runtime #27")
         text = block[1].split("\n\n", 1)[0]
-        for step in ("BL-191 `review` → `DONE`", "BL-192 `deferred (triggered)` →\n`review`", "Р-RT-7",
+        for step in ("BL-191 `review` → `DONE`", "BL-192 `deferred (triggered)` →\n`review` → `DONE`", "bee5f9ba", "Р-RT-7",
                      "BL-185…BL-188", "BL-132", OWNER_DECISION, ISSUE, PR):
             self.assertIn(step, text)
 

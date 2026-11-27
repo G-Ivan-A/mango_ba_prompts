@@ -772,7 +772,7 @@ IDE-пакетах и предлагает один агентный конте�
 | ID | Название | Приоритет | Зависимости | Статус | Issue | Источник | Краткое содержание | Режим запуска |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | BL-191 | [RFC универсального агентного контекста runtime](backlog-ba-model.md#bl-191-rfc-универсального-агентного-контекста-runtime) | P1 | BL-184 | DONE | [runtime #25](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/25), [PR runtime #26](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/26) | [RFC-RT-002](../docs/rfc/2026-11-runtime-universal-agent-context.md) | Аудит As-Is скриптом в runtime (Г1 исполнена, Г2 частично, Г3 подтверждена), матрица клиентов, зеркало `.agents/skills`, план приёма SSOT с картой ссылок, вывод legacy, миграция с откатом, Р-RT-1…Р-RT-9 | Creative |
-| BL-192 | [Производство универсального агентного контекста runtime](backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime) | P1 | BL-191; Р-RT-2, Р-RT-3, Р-RT-4 | review | [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) | [RFC-RT-002, раздел 8](../docs/rfc/2026-11-runtime-universal-agent-context.md#8-миграция-валидация-и-откат-фт-6) | Решения Р-RT-2…Р-RT-4 приняты. Зеркало навыков и поправка smoke, `ACCESS_GAP` и навигация БЗ в `AGENTS.md`, smoke OpenCode V1 1.19.6 и V2 2.4.2; защищённые пути не перемещаются | Structured |
+| BL-192 | [Производство универсального агентного контекста runtime](backlog-ba-model.md#bl-192-производство-универсального-агентного-контекста-runtime) | P1 | BL-191; Р-RT-2, Р-RT-3, Р-RT-4 | DONE | [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) | [RFC-RT-002, раздел 8](../docs/rfc/2026-11-runtime-universal-agent-context.md#8-миграция-валидация-и-откат-фт-6) | Решения Р-RT-2…Р-RT-4 приняты. Зеркало навыков и поправка smoke, `ACCESS_GAP` и навигация БЗ в `AGENTS.md`, smoke OpenCode V1 1.19.6 и V2 2.4.2; защищённые пути не перемещаются | Structured |
 
 **Движение по цепочке (runtime #25).** Предыдущий BL-184 `review` → `DONE`:
 PR #493 слит (`7611c041`), манифест передан в RFC-задачу runtime #25.
@@ -790,8 +790,8 @@ PR runtime #26 (`16c11e55`) и PR #494 (`e051e0fa`) слиты 19.11;
 зеркало `.agents/skills/<имя>/SKILL.md`, тонкие адаптеры без дублирования
 контента) и Р-RT-6 (приём 133 артефактов одной передачей с путями источника);
 по Р-RT-7 названы оба варианта без выбора. BL-192 `deferred (triggered)` →
-`review`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) —
-Э1 (зеркало, сверка sha256, поправка smoke), Э2 (`AGENTS.md` 0.8:
+`review` → `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27), [PR runtime #29](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/29) —
+слит 26.11 (`bee5f9ba`). Э1 (зеркало, сверка sha256, поправка smoke), Э2 (`AGENTS.md` 0.8:
 `ACCESS_GAP`, поиск в БЗ по `USAGE.md`), Э4 (smoke OpenCode). Следующий шаг —
 BL-185…BL-188 `TODO` после выбора Р-RT-7; версию OpenCode закрепляет BL-132
 (`deferred (triggered)`), адаптеры клиентов — по решению на клиента (Р-RT-9).

@@ -38,7 +38,7 @@ temperature: 0.1
 ### Changed — runtime issue #27: BL-192, производство универсального агентного контекста runtime
 
 - Бэклог: BL-191 `review` → `DONE` (PR runtime #26 и #494 слиты, решение владельца по Р-RT-2…Р-RT-4
-  и Р-RT-6), BL-192 `deferred (triggered)` → `review` — производство в PR runtime #29: зеркало
+  и Р-RT-6), BL-192 `deferred (triggered)` → `review` → `DONE` после слияния PR runtime #29 (`bee5f9ba`): зеркало
   навыков `.agents/skills/<имя>/SKILL.md` со сверкой sha256, `AGENTS.md` 0.8 (`ACCESS_GAP`, поиск
   в базе знаний по `docs/kb/USAGE.md`), smoke инициализации OpenCode V1 и V2 в CI. Э3 (приём SSOT,
   BL-185…BL-188) ждёт выбора по Р-RT-7; BL-132 (закрепление версии OpenCode) не сдвинут.
