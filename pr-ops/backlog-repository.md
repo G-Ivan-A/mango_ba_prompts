@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 1.10
-updated: 2026-11-27
+version: 1.11
+updated: 2026-11-28
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -904,7 +904,7 @@ OpenCode закреплённой версии (BL-132) на кейсах runtim
 
 ### BL-246. Подготовка приёма SSOT этапа 1 в runtime (M2): манифест 0.2, карта ссылок, постановка
 
-**Статус.** `review`: [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515) по
+**Статус.** `DONE`: [#506](https://github.com/G-Ivan-A/mango_ba_prompts/issues/506), [PR #515](https://github.com/G-Ivan-A/mango_ba_prompts/pull/515) по
 [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518). Задача в runtime —
 [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31). Проверки: `validate_issue_506_m2_transfer.py`,
 `validate_issue_492_ssot_handoff.py`, `make validate-full`.
@@ -931,8 +931,8 @@ OpenCode закреплённой версии (BL-132) на кейсах runtim
 
 **Зависит от.** BL-244, BL-192 Э5, BL-184.
 
-**Решение владельца.** Р-RT-22 — публикация 135 артефактов в runtime
-(рекомендация А, раздел 12.4 RFC-RT-003).
+**Решение владельца.** [Р-RT-22 = А](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319): опубликованы 135 артефактов
+манифеста 0.2 ([PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32)).
 
 **Готово, когда.** PR #515 слит; манифест 0.2 и карта ссылок на `main`;
 задача M2 выставлена в runtime; BL-185…BL-188 ссылаются на неё.

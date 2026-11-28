@@ -10,9 +10,9 @@
   «Движение по цепочке (runtime #27)». После #506 BL-192 снова ``review``:
   Р-RT-19 расширяет её этапом Э5 (PR runtime #30); свидетельства Э1, Э2, Э4
   в карточке остаются;
-* соседние задачи не сдвинуты без основания: BL-132 ``deferred (triggered)``,
-  BL-185 ``TODO``; RFC-RT-002 остаётся ``proposed`` (решения в разделе 9
-  записывает владелец);
+* BL-132 ждёт своего триггера, RFC-RT-002 остаётся ``proposed`` (решения
+  в разделе 9 записывает владелец); статусы BL-185…BL-188 проверяет
+  валидатор передачи M2;
 * тексты промптов не менялись: коммиты задачи (``runtime-27`` в сообщении)
   не трогают ``prompts/``;
 * при ``RUNTIME_RT27_CLONE=<клон runtime с PR #29>`` — результат в runtime:
@@ -87,7 +87,6 @@ class ChainTest(unittest.TestCase):
 
     def test_neighbours_unchanged(self):
         self.assertRegex(row(self.backlog, "BL-132"), r"\| deferred \(triggered\) \|")
-        self.assertRegex(row(self.backlog, "BL-185"), r"\| TODO \|")
         self.assertRegex(read(RFC), r"(?m)^status: proposed$")
 
 

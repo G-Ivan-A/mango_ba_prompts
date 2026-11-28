@@ -21,9 +21,9 @@
 * RFC-RT-003, раздел 12: подразделы 12.1…12.N без пропусков, ≥ 20 граничных
   кейсов без пропусков, Р-RT-22 и варианты А…Г, предусловия П-0…П-2,
   sha256 файла манифеста, ссылка на комментарий владельца и задачу runtime;
-* бэклог: BL-185…BL-188 ``TODO`` со ссылкой на задачу runtime, BL-246
-  ``review`` или ``DONE``, BL-247 ``deferred (triggered)``, блок «Движение по
-  цепочке (#506, M2)»: предыдущий, текущий и открываемый шаг;
+* бэклог: BL-185…BL-188 ``DONE`` со ссылками на задачу, PR runtime и Р-RT-22,
+  BL-246 ``DONE``, для BL-190 зафиксирован триггер, блок
+  «Движение по цепочке (#506, M2)»: предыдущий, текущий и открываемый шаг;
 * заглушки номера задачи runtime не осталось.
 """
 import hashlib
@@ -48,6 +48,8 @@ REPOSITORY = ROOT / "pr-ops/backlog-repository.md"
 OWNER_COMMENT = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518"
 PR = "https://github.com/G-Ivan-A/mango_ba_prompts/pull/515"
 RUNTIME_ISSUE = re.compile(r"https://github\.com/G-Ivan-A/mango-ba-ai-runtime/issues/(\d+)")
+RUNTIME_PR = "https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32"
+PUBLICATION_DECISION = "https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319"
 GATE_MAP = "docs/ba-processes/bcreq-ide-gates.json"
 CARDS = {"BL-185": 38, "BL-186": 31, "BL-187": 62, "BL-188": 4}
 ARTIFACTS = sum(CARDS.values())
@@ -258,17 +260,21 @@ class BacklogTest(unittest.TestCase):
         for code in CARDS:
             with self.subTest(card=code):
                 line = row(self.backlog, code)
-                self.assertIn("| TODO |", line)
-                self.assertIn(self.issue, line)
-                self.assertIn("Р-RT-22", line)
+                self.assertIn("| DONE |", line)
                 body = card(self.model, code)
-                self.assertIn("**Статус.** `TODO`", body)
-                self.assertIn(self.issue, body)
+                self.assertIn("**Статус.** `DONE`", body)
+                for evidence in (self.issue, RUNTIME_PR, PUBLICATION_DECISION):
+                    self.assertIn(evidence, line)
+                    self.assertIn(evidence, body)
 
     def test_new_cards(self):
-        self.assertRegex(row(self.backlog, "BL-246"), r"\| (review|DONE) \|")
+        self.assertIn("| DONE |", row(self.backlog, "BL-246"))
         self.assertIn(PR, row(self.backlog, "BL-246"))
-        self.assertIn("| deferred (triggered) |", row(self.backlog, "BL-247"))
+        self.assertIn("**Статус.** `DONE`", card(self.repository, "BL-246"))
+        link_card = row(self.backlog, "BL-190")
+        self.assertIn(RUNTIME_PR, link_card)
+        self.assertNotIn("| deferred (triggered) |", link_card)
+        self.assertTrue(row(self.backlog, "BL-247"))
         for code in ("BL-246", "BL-247"):
             body = card(self.repository, code)
             for field in ("**Статус.**", "**Почему.**", "**Что меняется.**", "**Источники.**",
@@ -279,7 +285,8 @@ class BacklogTest(unittest.TestCase):
     def test_chain(self):
         chain = self.backlog.split("**Движение по цепочке (#506, M2).**", 1)[1].split("\n\n", 1)[0]
         for needle in ("Предыдущий шаг", "Текущий шаг", "Открывается", "BL-244", "BL-192",
-                       "BL-246", "BL-247", "BL-185", "Р-RT-22", PR, OWNER_COMMENT, self.issue):
+                       "BL-246", "BL-247", "BL-185", "BL-190", "Р-RT-22",
+                       PR, OWNER_COMMENT, self.issue, RUNTIME_PR):
             with self.subTest(needle=needle):
                 self.assertIn(needle, chain)
 

@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.32
-updated: 2026-11-27
+version: 0.33
+updated: 2026-11-28
 ai-generated: true
 type: register
 scope: governance
@@ -523,6 +523,9 @@ BL-164, `deferred (triggered)` до оценки тендерного ТЗ.
   Манифест 0.2 (135 артефактов на `40ef5edd`), карта ссылок (Р-RT-7 = 7а),
   пробная передача без публикации; Р-RT-22 (публикация) ждёт владельца.
   Задача — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31). Остальные строки реестра не меняются.
+- **2026-11-28** — RFC-RT-003 v0.4 фиксирует приём SSOT этапа 1 (M2)
+  в разделе 12.10. [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32)
+  слит, сторож и проверка карты гейтов прошли в CI runtime.
 
 ## Поток ТТЗ (issue #466)
 

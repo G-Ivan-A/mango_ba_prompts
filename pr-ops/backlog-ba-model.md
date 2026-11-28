@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 2.10
-updated: 2026-11-27
+version: 2.11
+updated: 2026-11-28
 temperature: 0.1
 owner: G-Ivan-A
 type: backlog
@@ -2438,12 +2438,9 @@ runtime; issue в runtime создаёт владелец (раздел 6 рее
 
 ### BL-185. Конституция Ш-0 и промпты набора этапа 1 в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
-выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
-Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
-одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
-решение владельца о публикации Р-RT-22: спица приватна, runtime публичен.
-Подготовка в спице — BL-246.
+**Статус.** `DONE`. [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32) слит в `e5747df`
+по [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31), публикация разрешена ([Р-RT-22 = А](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319)).
+Передача №1 по манифесту 0.2, подготовка в спице — BL-246.
 
 **Почему.** Конституция Ш-0 — самая частая нормативная ссылка промптов
 (80 ссылок класса (б) в 54 промптах), её нет в runtime. Внешний чат этапа 2
@@ -2476,12 +2473,9 @@ sha256 из манифеста и записью в журнале переда�
 
 ### BL-186. Маршрут A-IN, контракты AIN и итог шага в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
-выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
-Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
-одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
-решение владельца о публикации Р-RT-22: спица приватна, runtime публичен.
-Подготовка в спице — BL-246.
+**Статус.** `DONE`. [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32) слит в `e5747df`
+по [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31), публикация разрешена ([Р-RT-22 = А](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319)).
+Передача №1 по манифесту 0.2, подготовка в спице — BL-246.
 
 **Почему.** Формат шагов по умолчанию — Ш-0 → AIN-01…24. Промпты AIN
 ссылаются на RFC-AIN-001, `bcreq-a-in-execution.md` и `bcreq-step-handoff.md`
@@ -2511,12 +2505,9 @@ sha256 из манифеста и записью в журнале переда�
 
 ### BL-187. Стандарты исполнения шагов в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
-выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
-Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
-одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
-решение владельца о публикации Р-RT-22: спица приватна, runtime публичен.
-Подготовка в спице — BL-246.
+**Статус.** `DONE`. [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32) слит в `e5747df`
+по [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31), публикация разрешена ([Р-RT-22 = А](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319)).
+Передача №1 по манифесту 0.2, подготовка в спице — BL-246.
 
 **Почему.** Промпты ссылаются на мета-стандарты разделов, стандарт
 композиции, архитектуру промптов, контракт классификации продукта и
@@ -2547,21 +2538,17 @@ runtime есть шаблон документа и значения таксо�
 
 ### BL-188. Контракт гейтов и поток CS в runtime
 
-**Статус.** `TODO`. Задача в runtime — [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31),
-выставлена исполнителем по [комментарию владельца к PR #514](https://github.com/G-Ivan-A/mango_ba_prompts/pull/514#issuecomment-7225787518).
-Постановка — [RFC-RT-003, раздел 12](../docs/rfc/2026-11-runtime-ide-orchestrator.md#12-постановка-m2-приём-ssot-этапа-1-задача-runtime),
-одна передача по манифесту 0.2 для BL-185…BL-188. Предусловие П-0 —
-решение владельца о публикации Р-RT-22: спица приватна, runtime публичен.
-Подготовка в спице — BL-246.
+**Статус.** `DONE`. [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32) слит в `e5747df`
+по [runtime #31](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31), публикация разрешена ([Р-RT-22 = А](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/31#issuecomment-7226978319)).
+Передача №1 по манифесту 0.2, подготовка в спице — BL-246.
 
 **Почему.** 13 промптов ссылаются на контракт гейтов (Г-IN, Г-W, возвраты),
 6 — на заглушку потока CS. В runtime есть только чек-лист G-human (И-8, гейт типа `человек`),
 гейтов и возвратов нет: модель этапа 2 не знает условия перехода стадии.
 
-**Что меняется.** Закреплённая копия в `mango-ba-ai-runtime` группы
-`gates-and-cs`: `docs/contracts/bcreq-stage-gates.md` и
-`docs/ba-processes/cs-flow-stub.md`, sha256 из манифеста. Заглушка CS
-переносится как заглушка; поток CS — BL-235, не эта карточка.
+**Что меняется.** Закреплённая копия группы `gates-and-cs` в runtime:
+`bcreq-stage-gates.md`, `cs-flow-stub.md`, `bcreq-ide-gates.json` и
+`bcreq-manual-process.md`. Заглушка CS переносится как есть. Поток CS ведётся в BL-235.
 
 **Источники.**
 - [Issue #492](https://github.com/G-Ivan-A/mango_ba_prompts/issues/492),
@@ -2574,8 +2561,9 @@ runtime есть шаблон документа и значения таксо�
 **Решение владельца.** Создать RFC-задачу в runtime вместе с BL-186:
 гейт Г-IN завершает маршрут A-IN.
 
-**Готово, когда.** В runtime есть копии двух артефактов группы с sha256
-манифеста; ссылки (б) на гейты и поток CS имеют цель в runtime.
+**Готово, когда.** В runtime есть четыре артефакта группы с sha256
+манифеста 0.2. Ссылки (б) на гейты и поток CS имеют цель в runtime,
+`test_map_matches_the_layer` проходит без пропуска.
 
 ### BL-189. Примеры разделов И-4 (РТ-2, заглушка З-2)
 
@@ -2604,6 +2592,8 @@ US, ОРР. Задача РТ-2 в разделе 6 реестра есть, з�
 коммите; заглушка З-2 снята в реестре, SHA раздела 1 обновлён.
 
 ### BL-190. Замена ссылок (б) в текстах промптов на runtime
+
+**Статус.** `TODO`. Триггер выполнен слиянием [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32).
 
 **Почему.** После переноса BL-185…BL-188 318 ссылок класса (б) по-прежнему
 ведут на спицу, а не на runtime. Правка текстов в #492 запрещена: её делают
@@ -2669,8 +2659,8 @@ runtime: Г1 подтверждена и исполнена (`a4b1377`), Г2 —
 ### BL-192. Производство универсального агентного контекста runtime
 
 **Статус.** `DONE`: этап Э5 «IDE-слой» — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30) слит 27.11
-(`4bd5597`) по Р-RT-19 ([решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) от 26.11). Два пункта
-«Готово, когда» Э5 по постановке ждут M2 (BL-185…BL-188) и M6 (BL-245).
+(`4bd5597`) по Р-RT-19 ([решение владельца](https://github.com/G-Ivan-A/mango_ba_prompts/pull/508#issuecomment-7196820484) от 26.11). M2 (BL-185…BL-188) завершён
+([PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32)). Модельные прогоны по пункту «Готово, когда» относятся к M6 (BL-245).
 Ранее — `review` за Э5, до этого `DONE` за этапы Э1, Э2, Э4.
 
 Э1, Э2, Э4 — `DONE`: [runtime #27](https://github.com/G-Ivan-A/mango-ba-ai-runtime/issues/27),
@@ -2709,8 +2699,8 @@ BL-185…BL-188 (Р-RT-6, Р-RT-7). Защищённые пути не пере�
 права клиента (`work/` — запись, MCP выключены, чтение — `ask`, запись —
 `deny`); журнал решений `work/<ключ>/decisions.jsonl`. Постановка —
 [RFC-RT-003, раздел 11](../docs/rfc/2026-11-runtime-ide-orchestrator.md),
-реализация — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30). До приёма SSOT BL-185…BL-188
-оркестратор отвечает `ACCESS_GAP` и `BLOCKED`. Тестовые прогоны — BL-245.
+реализация — [PR runtime #30](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/30). Оркестратор получает карту гейтов с передачей №1 ([PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32)).
+Тестовые прогоны — BL-245.
 
 **Зависит от.** BL-191; Р-RT-2, Р-RT-3, Р-RT-4.
 
