@@ -1,7 +1,7 @@
 ---
 status: draft
-version: 0.56
-updated: 2026-11-27
+version: 0.57
+updated: 2026-11-28
 temperature: 0.1
 ---
 
@@ -12,6 +12,10 @@ temperature: 0.1
 [Semantic Versioning](https://semver.org/lang/ru/).
 
 ## Unreleased
+
+- M2: [PR runtime #32](https://github.com/G-Ivan-A/mango-ba-ai-runtime/pull/32) доставил 135 артефактов SSOT этапа 1.
+  В бэклоге BL-185…BL-188 и BL-246 отмечены `DONE`, BL-190 — `TODO`.
+  Проверка карты гейтов в CI runtime прошла без пропуска.
 
 - Issue #512 / PR #513. Аудит доступа и GitHub Actions, инструкция по
   восстановлению Pages. CI собирает пакет сайта для ручной публикации
